@@ -9,8 +9,12 @@ tags:
   - election-law
   - multi-jurisdiction
   - organizational-structure
+image: /assets/og-images/knowledge/legal/legal-framework-og.png
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/legal/legal-framework-infographic.png)
+
 
 ```{python}
 #| echo: false

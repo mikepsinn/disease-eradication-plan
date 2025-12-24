@@ -319,7 +319,7 @@ fig.show()
 
 1. **Peace Dividend**: {{< var peace_dividend_annual_societal_benefit >}} from 1% military spending reduction
 2. **R&D Savings**: $50B from 82x cheaper pragmatic clinical trials
-3. **Earlier Drug Access**: $300B from 7-year acceleration to market
+3. **Earlier Drug Access**: {{< var global_pharma_rd_spending_annual >}} from 7-year acceleration to market
 4. **Trial Capacity Expansion**: $100B from {{< var trial_capacity_multiplier >}}× trial capacity
 5. **Rare Diseases**: $400B from orphan drug economic viability
 6. **Drug Price Reduction**: $100B from R&D savings passed to consumers

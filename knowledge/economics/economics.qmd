@@ -49,8 +49,6 @@ image: /assets/og-images/knowledge/economics/economics-og.png
 
 **Planned Contributors:** (Your name will appear here if you provide substantial feedback or analysis)
 
----
-
 ## Abstract
 
 A one-time {{< var efficacy_lag_years >}}-year timeline shift in patient access to future cures would save {{< var disease_eradication_delay_deaths_total >}} lives, valued at {{< var disease_eradication_delay_economic_loss >}}. This shift can be achieved by redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials that allow patient access after Phase I safety trials rather than waiting {{< var efficacy_lag_years >}} additional years for efficacy confirmation. The intervention delivers healthcare's most cost-effective option: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
@@ -250,6 +248,7 @@ The cost reduction stems from eliminating unnecessary overhead, not reducing evi
 **Integrated surveillance alternative**: Every prescription automatically becomes a tracked data point. When patients get lab tests or report symptoms at routine visits, the system captures these outcomes. No extra paperwork required. Like how credit card companies detect fraud patterns across millions of transactions in real-time, integrated health systems can detect treatment effects across millions of patients.
 
 The system automatically aggregates outcomes:
+
 - **10,000 patients prescribed Drug X** → System tracks all subsequent lab results, ER visits, and reported symptoms
 - **120 patients (1.2%) show elevated liver enzymes within 30 days** → Automated flag triggers
 - **Pattern detected after 5,000 prescriptions** → Public alert issued, rather than waiting for 100,000+ prescriptions and years of voluntary reports
@@ -320,7 +319,7 @@ Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confide
 
 ### Research Acceleration
 
-{{< var trial_capacity_multiplier >}}× faster medical progress ({{< var trial_capacity_cumulative_years_20yr >}} years of medical advancement in 20 years)
+{{< var trial_capacity_multiplier >}}× more trial capacity ({{< var trial_capacity_cumulative_years_20yr >}} years of medical advancement in 20 years)
 
 {{< var trial_capacity_multiplier_latex >}}
 
@@ -1180,7 +1179,7 @@ The funding uses an **80/10/10 automatic allocation**:
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA platform |
+| **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA framework |
 | **VICTORY IAB Investor Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Rewards for supporting legislators](../solution/incentive-alignment-bonds.qmd) |
 
@@ -1191,7 +1190,7 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
    - Patients bring subsidies to trials; providers collect payment when patients enroll
    - Makes trial participation profitable for providers instead of costly
 
-2. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
+2. **Coordination Framework** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
 **Why costs are low:** A dFDA provides coordination protocols (like HTTP for the internet), not a competing platform.
 
@@ -1199,11 +1198,11 @@ The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built 
 
 Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
-For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
+For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-framework-costs-rom-estimates-partnership-model).
 
 **Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-framework-costs-rom-estimates-partnership-model).
 
 ### What You Get Back
 
@@ -1543,7 +1542,7 @@ Effective ones scale instantly.
 
 ### Step 5: Eradicate Disease
 
-- Medical progress accelerates {{< var trial_capacity_multiplier >}}×
+- {{< var trial_capacity_multiplier >}}× more trial capacity to test treatments simultaneously
 - Disease categories start collapsing
 - Healthspan overtakes pathology
 - Investors profit massively
@@ -1964,6 +1963,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 **Key insight**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates cure discovery for all diseases affecting developing nations.
 
 **Practical application**:
+
 - **Current approach**: USAID spends billions on malaria bed nets (excellent intervention, {{< var bed_nets_cost_per_daly >}}/DALY)
 - **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to cure malaria entirely
 - **Result**: Keep funding bed nets (they work!) AND accelerate development of malaria vaccines and treatments through massively expanded trial capacity
@@ -1987,6 +1987,7 @@ Current global health funding relies on unpredictable philanthropic donations an
 **Key insight**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund uses an 80/10/10 split:
+
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) → bond investor returns
 - {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) → political incentive alignment
@@ -2013,6 +2014,7 @@ Policy adoption requires coordination across three levels:
 ### Bottom Line for Policymakers
 
 This intervention is **cost-dominant** (saves money while improving outcomes), making it one of the rarest findings in health economics. It doesn't require:
+
 - New taxes
 - Reduced health spending
 - Cuts to popular programs
@@ -2030,6 +2032,7 @@ International treaty adoption is fundamentally a political and diplomatic proces
 ### Why Simultaneous Commitment Works
 
 Unilateral military reduction is politically infeasible:
+
 - Creates perceived security vulnerability
 - "Free rider" problem: non-participants benefit from reduced global conflict risk without contributing
 - Domestic opposition from defense industries
@@ -2051,6 +2054,7 @@ The 1% Treaty follows this model, with the advantage that it offers immediate ec
 ### Demonstrating Feasibility
 
 While the treaty itself requires simultaneous adoption, individual nations or sub-national jurisdictions could demonstrate pragmatic trial feasibility:
+
 - Oxford RECOVERY trial already proved {{< var recovery_trial_cost_per_patient >}}/patient cost ({{< var trial_cost_reduction_factor >}}× reduction) is achievable
 - Nations could pilot expanded pragmatic trial systems domestically to demonstrate health and economic benefits
 - This builds empirical evidence for treaty negotiations but is not a prerequisite
@@ -2103,3 +2107,4 @@ For complete bibliography, data sources, and citations, see:
 - **[Data Sources](../appendix/parameters-and-calculations.qmd#sec-external)** - 130 external parameters from peer-reviewed sources
 
 ## References {.unnumbered}
+

@@ -108,7 +108,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
 
 #### 6. Output and Human Review
 
-- **Tool:** Google Sheets/Airtable/Postgres Node, Email/Slack Node.
+- **Tool:** Postgres, Email/Slack Node.
 - **Action:**
   - Saves all data and scores to a central database.
   - For candidates scoring above a threshold (e.g., > 75), a summary is generated for review.

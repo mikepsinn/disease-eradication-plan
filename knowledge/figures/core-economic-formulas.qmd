@@ -268,7 +268,7 @@ print(f"Value created per hour: ${total['hourly_value_created']/1e9:.1f}B")
 #| echo: true
 def calculate_acceleration_impact(
     current_approvals: int = 50,  # FDA approvals per year
-    acceleration_factor: int = 80,  # 80x more trials possible
+    acceleration_factor: float = 22.8,  # 22.8x more trial capacity
     value_per_therapy: float = 1_620_000_000  # $1.62B average
 ) -> Dict[str, float]:
     """

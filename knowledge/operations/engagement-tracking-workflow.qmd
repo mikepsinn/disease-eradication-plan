@@ -6,7 +6,7 @@ description: CRM system using Airtable for automated lead capture, classificatio
 
 
 **Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
-**System:** Airtable + Email + Calendar + Automation
+**System:** Database + Email + Calendar + Automation
 **Goal:** Turn every interaction into a tracked, measurable opportunity to advance the mission
 
 ### The Philosophy: CRM as a Second Brain
@@ -29,7 +29,7 @@ Think of it as a conveyor belt for converting interest into impact.
 
 ##### Source: Website Form Submission
 
-- User submits referendum vote → Airtable record created in `Global Referendum`
+- User submits referendum vote → database record created in `Global Referendum`
 - Automation creates linked record in `Personnel Roster`
 - Automation creates record in `Engagements` with Type = "Enlistment"
 
@@ -50,7 +50,7 @@ Think of it as a conveyor belt for converting interest into impact.
 - Harder to automate, but possible with APIs
 - Manual fallback: Daily 5-minute sweep to log DMs
 
-**The Rule:** If it's not in Airtable, it didn't happen.
+**The Rule:** If it's not in a cloud database, it didn't happen.
 
 #### Step 2: Classify (Automatic Tagging)
 
@@ -69,7 +69,7 @@ Investment Inquiry       →  Prospect (VIP tag)
 Partnership Inquiry      →  Prospect (Partnership tag)
 ```
 
-**Implementation:** Airtable automation
+**Implementation:** database automation
 
 - Trigger: New record in `Engagements`
 - Condition: Check engagement type
@@ -87,7 +87,7 @@ Not all leads are equal. Route to the right person:
 | Volunteer Interest | Volunteer Coordinator | 72 hours |
 | General Inquiry | Anyone available | 5 days |
 
-**Implementation:** Airtable automation
+**Implementation:** database automation
 
 - Trigger: New `Engagement` record created
 - Condition: If Type = "Investment Inquiry" AND Amount > $100,000
@@ -125,7 +125,7 @@ People need multiple touches before they act. Build sequences:
   - Email: "Here's what's happened since you voted..."
   - Show referendum progress, new milestone
 
-**Implementation:** Use Airtable automations + delay steps
+**Implementation:** Use database automations + delay steps
 
 ```
 Automation: "Referendum Voter Nurture Sequence"
@@ -216,7 +216,7 @@ Stage                     Target Conversion   How to Track
 ─────────────────────────────────────────────────────────
 Website Visit               100%             Google Analytics
 → Form View                 30%              GA pageview
-→ Form Start                50%              Airtable log
+→ Form Start                50%              a cloud database log
 → Form Submit               80%              Record created
 → Email Confirmed           90%              Email bounce check
 → Shared w/ 1 Friend        30%              Referral field filled
@@ -224,7 +224,7 @@ Website Visit               100%             Google Analytics
 → Became Volunteer          5%               Status = Active
 ```
 
-**Implementation:** Create Airtable formulas to calculate these
+**Implementation:** Create database formulas to calculate these
 
 ##### Formula Example: "Conversion to Recruiter"
 
@@ -264,23 +264,23 @@ Watch for patterns that need human intervention:
    - Condition: One country suddenly has 100+ votes in 24 hours
    - Action: Investigate (could be fraud OR awesome organic growth)
 
-**Implementation:** Airtable automations with conditional logic
+**Implementation:** database automations with conditional logic
 
 ### Advanced: Email Automation Integration
 
 For sophisticated email sequences, integrate with:
 
-#### Option A: Airtable Native Email (Basic)
+#### Option A: database-native Email (Basic)
 
 - Pros: Simple, built-in
 - Cons: Limited styling, no A/B testing, manual unsubscribe handling
 
-#### Option B: Airtable + MailerLite/Mailchimp (Better)
+#### Option B: Database + MailerLite/Mailchimp (Better)
 
 - Pros: Professional emails, automation, unsubscribe management
 - Cons: Extra cost ($10-50/month), requires Zapier integration
 
-#### Option C: Airtable + Customer.io or Intercom (Best)
+#### Option C: Database + Customer.io or Intercom (Best)
 
 - Pros: Sophisticated triggers, behavior-based sequences, analytics
 - Cons: Expensive ($100-500/month), more complex setup
@@ -376,7 +376,7 @@ Actions:
        Amount Interest: ${Amount Invested}
        Notes: {Notes}
 
-<!--        [Open in Airtable]({Record URL}) -->
+<!--        [Open in a cloud database]({Record URL}) -->
 
        Response SLA: 4 hours
 
@@ -438,7 +438,7 @@ Actions:
 
 #### 2. Under-Tracking
 
-**Problem:** Having conversations outside Airtable, losing follow-ups
+**Problem:** Having conversations outside a cloud database, losing follow-ups
 **Solution:** "If it's not logged, it didn't happen" rule
 
 #### 3. No Segmentation
@@ -462,7 +462,7 @@ Track these weekly:
 
 | Metric | Target | How to Measure |
 |--------|--------|----------------|
-| Engagement Log Rate | 100% | All interactions logged in Airtable |
+| Engagement Log Rate | 100% | All interactions logged in a cloud database |
 | Follow-Up On-Time Rate | 90%+ | Follow-ups completed by due date |
 | Response Rate | 40%+ | Replies to outreach emails |
 | Conversion: Prospect → Active | 20%+ | Status changes in Personnel |

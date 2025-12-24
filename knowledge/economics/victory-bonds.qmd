@@ -9,9 +9,13 @@ tags:
   - campaign-finance
   - capital-raising
 title-id: sec-victory-bonds
+image: /assets/og-images/knowledge/economics/victory-bonds-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/economics/victory-bonds-infographic.png)
+
 
 ![VICTORY Bonds and 1% Treaty](../../assets/infographics/Victory Bonds and 1 Percent Treaty Infographic.png)
 
@@ -136,7 +140,7 @@ $$
 
 | How Skeptical You Are | Total Lifetime Value | Your {{< var treaty_campaign_total_cost >}} Becomes |
 |---------------|-----|---------------------------|
-| Mildly skeptical (3% discount) | $90B | 90x your money |
+| Mildly skeptical (3% discount) | {{< var global_clinical_trials_spending_annual >}} | 90x your money |
 | Pretty skeptical (5% discount) | $54B | 54x your money |
 | Very skeptical (10% discount) | $27B | 27x your money |
 

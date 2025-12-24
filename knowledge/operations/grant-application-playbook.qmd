@@ -43,9 +43,9 @@ Your job is to become exceptionally good at the paperwork part. This playbook pr
 
 Your mission is to bridge this gap.
 
-## The System: An Airtable Grant-Tracking Base
+## The System: A Database Grant-Tracking System
 
-First, you need to expand your Airtable base for your decentralized institutes of health (your "Command & Control" base) to manage this process. Add the following tables.
+First, you need to expand your database system for your decentralized institutes of health (your "Command & Control" system) to manage this process. Add the following tables.
 
 ### Table 1: `Grant Pipeline` (The Master Tracker)
 
@@ -146,14 +146,14 @@ Every grant application is basically the same five documents dressed in differen
 ### Step 4: Submit and Track (The Waiting Game)
 
 1.  **Submit the application:** Follow their ridiculous instructions to the letter. If they want it in a 10.5-point font on beige paper, you do it.
-2.  **Update Airtable:** Move the card in your `Grant Pipeline` from `Drafting` to `Submitted`. Set a reminder for the `Decision Date`.
+2.  **Update the database:** Move the card in your `Grant Pipeline` from `Drafting` to `Submitted`. Set a reminder for the `Decision Date`.
 3.  **Follow up:** Send a polite email a week after the deadline.
-4.  **Get Rejected:** 90% of the time, you will be rejected. Don't take it personally. They probably funded a study on the mating habits of squirrels instead. Update Airtable to `Rejected` and move on.
-5.  **Get Accepted:** On the rare occasion you succeed, celebrate for five minutes. Then, update Airtable to `Awarded` and immediately create tasks for all the reporting requirements you now have to fulfill.
+4.  **Get Rejected:** 90% of the time, you will be rejected. Don't take it personally. They probably funded a study on the mating habits of squirrels instead. Update the database to `Rejected` and move on.
+5.  **Get Accepted:** On the rare occasion you succeed, celebrate for five minutes. Then, update a cloud database to `Awarded` and immediately create tasks for all the reporting requirements you now have to fulfill.
 
 ## Marching Orders
 
-1.  **Build the Airtable tables** as defined above.
+1.  **Build the database tables** as defined above.
 2.  **Start prospecting.** Find 50 foundations and add them to your base.
 3.  **Write the project summary** for the Global Referendum Campaign.
 4.  **Draft the template documents.**

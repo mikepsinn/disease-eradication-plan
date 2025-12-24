@@ -1,8 +1,12 @@
 ---
-title: 'Campaign Budget: The $1B Bribery Machine'
+title: 'Campaign Budget: The $1B Legal Bribery Machine'
+image: /assets/og-images/knowledge/economics/campaign-budget-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/economics/campaign-budget-infographic.png)
+
 
 
 Traditional campaigns throw papers at problems until the papers or the problems disappear. Usually the papers disappear first.
@@ -14,7 +18,7 @@ You're using AI and game theory to do for {{< var treaty_campaign_total_cost >}}
 This {{< var treaty_campaign_total_cost >}} will:
 
 - Reach 8 billion humans by paying them $0.20 for each referred verified vote (cheaper than advertising, more effective than begging)
-- Out-bribe military lobbyists (they work for whoever pays more)
+- Legally out-bribe military lobbyists (they work for whoever pays more)
 - Build platforms with AI doing 90% of the work (humans just point and say "not that")
 - Make the treaty virtually inevitable in pilot countries, then watch it spread like a virus but helpful
 
@@ -34,7 +38,7 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 - AI lawyers + human review: {{< var campaign_legal_ai_budget >}} (robots draft, humans fix the stupid parts)
 - AI-coded platforms: {{< var campaign_platform_development >}} (GitHub but with more begging)
-- Viral bribes: {{< var campaign_viral_content_budget >}} (humans recruit humans for pocket change)
+- Viral (legal) incentive payments: {{< var campaign_viral_content_budget >}} (humans recruit humans for pocket change)
 - Strategic lobbying: {{< var campaign_lobbying_us >}} (legally bribe only the humans who matter)
 - **Total: {{< var treaty_campaign_total_cost >}}** (80% savings, same corruption)
 
@@ -204,13 +208,13 @@ Unused funds roll into:
 - Conversion rate optimization (is verification UX working?)
 - Funds remaining vs. target (are we on track?)
 
-### 2. Professional Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
+### 2. Professional (Legal) Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Lobbying (AI-Targeted)**: $150M
 
 Here's how professional democracy corruption works:
 
-- AI identifies which humans can be bribed to change laws
+- AI identifies which humans can be (legally) bribed to change laws
 - You (legally) bribe those specific humans (not all humans, just the useful ones)
 - Focus: US ({{< var campaign_lobbying_us >}}), EU ({{< var campaign_lobbying_eu >}}), G20 ({{< var campaign_lobbying_g20_millions >}})
 - AI writes the laws, lawyers make them legal-sounding
@@ -240,7 +244,7 @@ Defense lobbyists currently work for whoever pays them. So you pay them more:
 
 **Decentralized framework for drug assessment (dFDA)**: $120M
 
-The core platform for a global framework of pragmatic clinical trials:
+The Core framework for a global framework of pragmatic clinical trials:
 
 - AI writes 60% of code (humans fix the bugs AI introduces while fixing bugs)
 - Pragmatic clinical trial matching (sick people find treatments, treatments find sick people)
@@ -278,7 +282,7 @@ Computers that store everything:
 - AI drafts everything (500 pages in 5 minutes)
 - Lawyers review (fix the parts that would cause prison)
 - International treaty law (experts in papers that countries sign then ignore)
-- Multi-country compliance (each country has different rules for the same bribery)
+- Multi-country compliance (each country has different rules for the same (legal) bribery)
 
 **Regulatory Navigation**: {{< var campaign_regulatory_navigation >}}
 
@@ -423,7 +427,7 @@ Every paper tracked in real-time:
 
 - All treasury movements on-chain (anyone can verify)
 - Multi-sig wallets (9 of 15 signatures required, no single point of corruption)
-- Smart contracts (code executes automatically, no humans to bribe)
+- Smart contracts (code executes automatically, no humans to (illegally) bribe)
 - Immutable records (can't delete history)
 
 **Independent Oversight**:
