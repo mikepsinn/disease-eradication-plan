@@ -90,7 +90,7 @@ export function createBookChatAgent(vectorStore: BookVectorStore): Agent {
 Your mission is to help readers understand the book's content about:
 - A 1% treaty to redirect 1% of military spending to cure diseases
 - The unnecessary suffering from war (14M deaths/year) and disease (55M deaths/year)
-- Systems that are 80X more efficient than current approaches
+- Proven decentralized trial methods (RECOVERY trial: $500/patient vs $41K traditional)
 - Public Choice Theory and incentive engineering
 
 Guidelines:

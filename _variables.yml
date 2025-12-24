@@ -253,14 +253,31 @@
   \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal (SE:\
   \ 0.07 weight) | Unit: weight | Click to view details, calculation & sources\">0.35</a>"
 "chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
+"clinical_trial_cost_per_approved_drug": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-clinical_trial_cost_per_approved_drug\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual clinical trial spending per approved drug\
+  \ (trials only, excluding other R&D costs like discovery, preclinical, manufacturing).\
+  \ Note: $60B ÷ 50 drugs = $1.2B per drug. | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TOTAL_TRIAL_SPENDING / NEW_DRUGS | Unit: USD | Click to view details,\
+  \ calculation & sources\">$0</a>"
+"clinical_trial_cost_per_approved_drug_latex": "$$\n\\text{Cost/Drug} = \\frac{\\\
+  $60B}{50} = \\$1.2B\n$$"
+"clinical_trial_cost_per_participant_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-clinical_trial_cost_per_participant_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Average annual cost per clinical trial participant\
+  \ (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: TOTAL_SPENDING / PARTICIPANTS\
+  \ | Unit: USD | Click to view details, calculation & sources\">$0</a>"
+"clinical_trial_cost_per_participant_annual_latex": "$$\n\\text{Cost/Participant}\
+  \ = \\frac{\\$60B}{1.9M} = \\$31{,}579\n$$"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
   \ and health dividends for ROI calculation | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$155B</a>"
+  \ calculation & sources\">$144B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nDividend_{ann} =\
-  \ Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$41.50B = \\$155.05B\n$$"
+  \ Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B\n$$"
 "concentrated_interest_sector_market_cap_usd": "<span class=\"parameter-definition\"\
   \ title=\"Estimated combined market capitalization of concentrated interest opposition\
   \ (defense, fossil fuel, etc.) | Unit: USD | Core definition\">$5T</span>"
@@ -356,9 +373,9 @@
   \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
   \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$41.5B</a>"
+  \ calculation & sources\">$30B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
-  \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
+  \ Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B\n$$"
 "dfda_expected_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_expected_roi\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Expected ROI for 1% treaty accounting for political\
@@ -375,7 +392,7 @@
   \ from R&D cost reduction only (gross savings minus operational costs, excludes\
   \ regulatory delay value) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ GROSS_SAVINGS - ANNUAL_OPEX | Unit: USD/year | Click to view details, calculation\
-  \ & sources\">$41.5B</a>"
+  \ & sources\">$30B</a>"
 "dfda_net_savings_rd_only_annual_latex": "$$\nSavings_{net} = \\$41.5B - \\$0.04B\
   \ = \\$41.46B\n$$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_adoption_ramp_years\"\
@@ -386,7 +403,7 @@
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_annual_opex\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
-  \ Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)\
+  \ Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)\
   \ | ✓ High confidence | 95% CI: [$11M, $26.5M] | Dist: Lognormal | Unit: USD/year\
   \ | Click to view details, calculation & sources\">$18.9M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_annual_opex_total\"\
@@ -403,7 +420,7 @@
   \ Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year\
   \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: Sum of discounted annual net R&D savings with linear\
-  \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$275B</a>"
+  \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$199B</a>"
 "dfda_npv_benefit_rd_only_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -413,7 +430,7 @@
   \ using R&D savings only (most conservative financial estimate, excludes regulatory\
   \ delay health value) | Calculated from 1 input | ✓ High confidence | Formula: NPV\
   \ of net R&D savings with 5-year linear adoption ramp | Unit: USD | Click to view\
-  \ details, calculation & sources\">$275B</a>"
+  \ details, calculation & sources\">$199B</a>"
 "dfda_npv_net_benefit_rd_only_latex": "$$\nBenefit_{NPV} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -436,8 +453,8 @@
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_upfront_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
-  \ Framework for Drug Assessment core platform build cost | ✓ High confidence | 95%\
-  \ CI: [$25M, $65M] | Dist: Lognormal | Unit: USD | Click to view details, calculation\
+  \ Framework for Drug Assessment Core framework build cost | ✓ High confidence |\
+  \ 95% CI: [$25M, $65M] | Dist: Lognormal | Unit: USD | Click to view details, calculation\
   \ & sources\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_upfront_cost_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
@@ -462,7 +479,7 @@
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_pct_of_treaty_funding\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
-  \ treaty funding allocated to Decentralized Framework for Drug Assessment platform\
+  \ treaty funding allocated to Decentralized Framework for Drug Assessment framework\
   \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
   \ | Click to view details, calculation & sources\">0.147%</a>"
 "dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.18B =\
@@ -491,15 +508,15 @@
   \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
   \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$41.5B</a>"
+  \ calculation & sources\">$30B</a>"
 "dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{gross,ann} = Trials_{ann} \\times\
-  \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
+  \ Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_rd_savings_daily\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
   \ from trial cost reduction (opportunity cost of delay) | Calculated from 1 input\
   \ | ✓ High confidence | Formula: ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR | Unit: USD/day\
-  \ | Click to view details, calculation & sources\">$114M</a>"
+  \ | Click to view details, calculation & sources\">$82.2M</a>"
 "dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\frac{\\$41.5B}{365} = \\$113.7M\n\
   $$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_roi_rd_only\"\
@@ -508,7 +525,7 @@
   \ Framework for Drug Assessment R&D savings only (10-year NPV, most conservative\
   \ estimate) | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
   \ ÷ NPV_TOTAL_COST | Unit: ratio | Click to view details, calculation & sources\"\
-  >451</a>"
+  >326</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_roi_simple\"\
@@ -516,9 +533,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simple ROI without\
   \ NPV adjustment (gross savings / annual opex) | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: GROSS_SAVINGS ÷ ANNUAL_OPEX | Unit: ratio | Click to view\
-  \ details, calculation & sources\">1.04k</a>"
+  \ details, calculation & sources\">750</a>"
 "dfda_roi_simple_latex": "$$\nROI_{DFDA} = \\frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}}\
-  \ = \\frac{\\$41.50B}{\\$40.0M} = 1{,}038\n$$"
+  \ = \\frac{\\$30.00B}{\\$40.0M} = 750\n$$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_target_cost_per_patient_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
@@ -1075,12 +1092,13 @@
 "global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B \\text{ (direct)}\
   \ + \\$3,700B \\text{ (indirect)} = \\$11,355B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"industry-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
-  \ on clinical trials (Total: Government + Industry) | ✓ High confidence | 95% CI:\
-  \ [$60B, $110B] | Dist: Lognormal (SE: $12.5B) | Unit: USD | Click to view details,\
-  \ calculation & sources\">$83B</a>"
-"global_clinical_trials_spending_annual_cite": "@global-clinical-trials-market-2024"
+  \ on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B).\
+  \ Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market\
+  \ size projections. | ✓ High confidence | 95% CI: [$50B, $75B] | Dist: Lognormal\
+  \ (SE: $10B) | Unit: USD | Click to view details, calculation & sources\">$60B</a>"
+"global_clinical_trials_spending_annual_cite": "@industry-clinical-trial-spending-estimate"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_cost_per_life_saved_med_research_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
@@ -1152,9 +1170,9 @@
   \ data-confidence=\"high\" title=\"Annual global industry spending on clinical trials\
   \ (Total - Government) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS | Unit: USD | Click to view details,\
-  \ calculation & sources\">$78.5B</a>"
+  \ calculation & sources\">$55.5B</a>"
 "global_industry_clinical_trials_spending_annual_latex": "$$\nTrials_{ann} = Trials_{ann}\
-  \ - Trials_{ann} = \\$83.00B - \\$4.50B = \\$78.50B\n$$"
+  \ - Trials_{ann} = \\$60.00B - \\$4.50B = \\$55.50B\n$$"
 "global_life_expectancy_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_life_expectancy_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -1190,6 +1208,19 @@
   \ details, calculation & sources\">$2.69T</a>"
 "global_military_spending_post_treaty_annual_2024_latex": "$$\nPostTreaty_{military}\
   \ = \\$2,718B \\times 0.99 = \\$2,690.82B\n$$"
+"global_nonprofit_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_nonprofit_clinical_trials_spending_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"nonprofit-clinical-trial-spending-estimate\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global nonprofit\
+  \ spending on clinical trials (foundations, disease advocacy groups) | ✓ High confidence\
+  \ | 95% CI: [$2B, $5B] | Unit: USD | Click to view details, calculation & sources\"\
+  >$3.5B</a>"
+"global_nonprofit_clinical_trials_spending_annual_cite": "@nonprofit-clinical-trial-spending-estimate"
+"global_pharma_rd_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_pharma_rd_spending_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"global-pharma-rd-spending-300b\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total global pharmaceutical R&D spending\
+  \ ($300B annually, clinical trials represent 15-20% of this total) | ✓ High confidence\
+  \ | Unit: USD | Click to view details, calculation & sources\">$300B</a>"
+"global_pharma_rd_spending_annual_cite": "@global-pharma-rd-spending-300b"
 "global_population_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_population_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-population-8-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population in 2024 | ✓ High confidence\
@@ -1271,9 +1302,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
   \ Ratio of the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio |\
-  \ Click to view details, calculation & sources\">207</a>"
+  \ Click to view details, calculation & sources\">191</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
-  \ = \\frac{\\$155.05B}{\\$750.0M} = 206.73\n$$"
+  \ = \\frac{\\$143.55B}{\\$750.0M} = 191.4\n$$"
 "iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Annual funding for IAB political incentive mechanism\
@@ -1298,7 +1329,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of Industry\
   \ to Government spending on clinical trials (approx 90/10 split) | Calculated from\
   \ 2 inputs | ✓ High confidence | Formula: (TOTAL - GOVT) / GOVT | Unit: ratio |\
-  \ Click to view details, calculation & sources\">17.4</a>"
+  \ Click to view details, calculation & sources\">12.3</a>"
 "institutional_investor_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-institutional_investor_min\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Minimum investment\
@@ -1350,6 +1381,15 @@
   \ from mental health issues (beyond treatment costs) | ✓ High confidence | Unit:\
   \ USD/year | Click to view details, calculation & sources\">$2K</a>"
 "mental_health_productivity_loss_per_capita_cite": "@mental-health-burden"
+"military_to_clinical_trials_spending_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_to_clinical_trials_spending_ratio\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Ratio of global military spending to all clinical\
+  \ trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING /\
+  \ TOTAL_CLINICAL_TRIALS | Unit: ratio | Click to view details, calculation & sources\"\
+  >0</a>"
+"military_to_clinical_trials_spending_ratio_latex": "$$\n\\text{Ratio} = \\frac{\\\
+  $2.7T}{\\$60B} = 45\\times\n$$"
 "military_to_government_clinical_trials_spending_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_to_government_clinical_trials_spending_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Ratio of global military spending to government\
@@ -1863,9 +1903,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT\
-  \ | Unit: ratio | Click to view details, calculation & sources\">10.3</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">9.57</a>"
 "treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}}\
-  \ = \\frac{\\$155.05B}{\\$15.00B} = 10.34\n$$"
+  \ = \\frac{\\$143.55B}{\\$15.00B} = 9.57\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_annual_cost_amortized\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Amortized annual\
@@ -2003,9 +2043,9 @@
   \ benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings\
   \ only (2 of 8 benefit categories, excludes regulatory delay value) | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS\
-  \ | Unit: USD/year | Click to view details, calculation & sources\">$155B</a>"
+  \ | Unit: USD/year | Click to view details, calculation & sources\">$144B</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefit_{ann} = Cost_{soc,ann}\
-  \ + Benefit_{gross,ann} = \\$113.55B + \\$41.50B = \\$155.05B\n$$"
+  \ + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
@@ -2020,9 +2060,9 @@
   \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
-  \ USD/year | Click to view details, calculation & sources\">$155B</a>"
+  \ USD/year | Click to view details, calculation & sources\">$144B</a>"
 "treaty_recurring_benefits_annual_latex": "$$\nBenefit_{ann} = Benefit_{DFDA,ann}\
-  \ + Cost_{soc,ann} = \\$41.50B + \\$113.55B = \\$155.05B\n$$"
+  \ + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_roi_historical_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_historical_rate\"\
@@ -2071,9 +2111,9 @@
   \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
-  \ USD/year | Click to view details, calculation & sources\">$155B</a>"
+  \ USD/year | Click to view details, calculation & sources\">$144B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nBenefit_{total} = Benefit_{DFDA,ann}\
-  \ + Cost_{soc,ann} = \\$41.50B + \\$113.55B = \\$155.05B\n$$"
+  \ + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B\n$$"
 "treaty_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"How many times more cost-effective than bed nets\
@@ -2257,6 +2297,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "331"
-"total_latex_equation_count": "122"
-"total_citation_count": "133"
+"total_parameter_count": "336"
+"total_latex_equation_count": "125"
+"total_citation_count": "135"
