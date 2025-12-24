@@ -44,7 +44,7 @@ with dot.subgraph(name='cluster_dfda') as dfda:
     dfda.node('Data', 'Data Commons\n& Rankings', shape='box')
 
     # What a dFDA-style framework provides
-    dfda.node('dFDADoes', 'A dFDA provides:\n• Platform infrastructure\n• Pragmatic trial marketplace\n• Outcome rankings\n• Data protocol\n• NO budget authority',
+    dfda.node('dFDADoes', 'A dFDA provides:\n• Framework infrastructure\n• Pragmatic trial marketplace\n• Outcome rankings\n• Data protocol\n• NO budget authority',
               shape='note', style='filled', fillcolor='white')
 
 # Connections: Fund -> Governance -> Platform
@@ -64,7 +64,7 @@ dot.edge('Campaigns', 'Protocol', label='Funds dFDA as\none campaign', style='bo
 
 # Prevention of capture
 
-dot.node('Capture', 'If a platform gets captured:\nFund an alternative',
+dot.node('Capture', 'If a framework gets captured:\nFund an alternative',
          shape='note', style='dashed')
 dot.edge('Campaigns', 'Capture', style='dashed')
 

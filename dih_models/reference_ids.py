@@ -312,6 +312,7 @@ class ReferenceID(str, Enum):
     GLOBAL_MILITARY_SPENDING_2_44T = "global-military-spending-2-44t"
     GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY = "global-new-drug-approvals-50-annually"
     GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B = "global-nuclear-weapon-maintenance-100b"
+    GLOBAL_PHARMA_RD_SPENDING_300B = "global-pharma-rd-spending-300b"
     GLOBAL_POPULATION_8_BILLION = "global-population-8-billion"
     GLOBAL_RARE_DISEASE_RESEARCH_SPENDING_6B = "global-rare-disease-research-spending-6b"
     GLOBAL_RARE_DISEASE_SPENDING_2B = "global-rare-disease-spending-2b"

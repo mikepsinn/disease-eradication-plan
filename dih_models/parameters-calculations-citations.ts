@@ -794,6 +794,27 @@ export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   stdError: 271800000000.0,
 };
 
+export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
+  value: 3500000000.0,
+  unit: "USD",
+  displayName: "Annual Global Nonprofit Spending on Clinical Trials",
+  description: "Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)",
+  sourceType: "external",
+  sourceRef: "nonprofit-clinical-trial-spending-estimate",
+  confidence: "high",
+  confidenceInterval: [2000000000.0, 5000000000.0],
+};
+
+export const GLOBAL_PHARMA_RD_SPENDING_ANNUAL: Parameter = {
+  value: 300000000000.0,
+  unit: "USD",
+  displayName: "Annual Global Pharmaceutical R&D Spending",
+  description: "Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)",
+  sourceType: "external",
+  sourceRef: "global-pharma-rd-spending-300b",
+  confidence: "high",
+};
+
 export const GLOBAL_POPULATION_2024: Parameter = {
   value: 8000000000.0,
   unit: "of people",
@@ -1491,6 +1512,28 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 // Calculated Values
 // ============================================================================
 
+export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
+  value: 0.0,
+  unit: "USD",
+  displayName: "Clinical Trial Cost Per Approved Drug",
+  description: "Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TOTAL_TRIAL_SPENDING / NEW_DRUGS",
+  latex: "\\text{Cost/Drug} = \\frac{\\$60B}{50} = \\$1.2B",
+};
+
+export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
+  value: 0.0,
+  unit: "USD",
+  displayName: "Annual Cost Per Clinical Trial Participant",
+  description: "Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TOTAL_SPENDING / PARTICIPANTS",
+  latex: "\\text{Cost/Participant} = \\frac{\\$60B}{1.9M} = \\$31{,}579",
+};
+
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   value: 143551000000.0,
   unit: "USD/year",
@@ -2115,6 +2158,17 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
   confidence: "high",
   formula: "MED_RESEARCH ÷ TOTAL_BURDEN",
   latex: "\\frac{\\$67.5\\text{B}}{\\$128.6\\text{T}} = 0.052\\%",
+};
+
+export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
+  value: 0.0,
+  unit: "ratio",
+  displayName: "Ratio of Military to Clinical Trials Spending",
+  description: "Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",
+  latex: "\\text{Ratio} = \\frac{\\$2.7T}{\\$60B} = 45\\times",
 };
 
 export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -3694,6 +3748,8 @@ export const parameters = {
   GLOBAL_LIFE_EXPECTANCY_2024,
   GLOBAL_MED_RESEARCH_SPENDING,
   GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
+  GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+  GLOBAL_PHARMA_RD_SPENDING_ANNUAL,
   GLOBAL_POPULATION_2024,
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
@@ -3759,6 +3815,8 @@ export const parameters = {
   WATER_FLUORIDATION_ROI,
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
+  CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
+  CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
   COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
@@ -3813,6 +3871,7 @@ export const parameters = {
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN,
+  MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_VS_MEDICAL_RESEARCH_RATIO,
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
@@ -4552,6 +4611,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://cen.acs.org/pharmaceuticals/50-new-drugs-received-FDA/103/i2",
         note: "C&EN, 2025, 50 new drugs received FDA approval in 2024 | FDA, Novel Drug Approvals | Note: Average ~50 per year 2018-2024; 32 small molecules + 18 biologics in 2024",
   },
+  "global-pharma-rd-spending-300b": {
+        id: "global-pharma-rd-spending-300b",
+        type: "report",
+        title: "Global pharmaceutical R&D spending",
+        author: [
+          {
+            literal: "Industry reports: IQVIA"
+          },
+        ],
+        publisher: "Industry reports: IQVIA",
+        note: "Industry reports: IQVIA, EvaluatePharma, PhRMA",
+  },
   "global-population-8-billion": {
         id: "global-population-8-billion",
         type: "article-journal",
@@ -4837,6 +4908,18 @@ export const citations: Record<string, Citation> = {
         'container-title': "Bentley et al.",
         URL: "https://www.fiercebiotech.com/biotech/nih-spending-clinical-trials-reached-81b-over-decade",
         note: "Bentley et al., 2023 | Fierce Biotech: NIH Spending",
+  },
+  "nonprofit-clinical-trial-spending-estimate": {
+        id: "nonprofit-clinical-trial-spending-estimate",
+        type: "legislation",
+        title: "Nonprofit clinical trial funding estimate",
+        author: [
+          {
+            literal: "Estimated from major foundation budgets and activities"
+          },
+        ],
+        publisher: "Estimated from major foundation budgets and activities",
+        note: "Estimated from major foundation budgets and activities",
   },
   "patient-willingness-clinical-trials": {
         id: "patient-willingness-clinical-trials",
@@ -5328,11 +5411,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 331,
-  external: 133,
-  calculated: 105,
+  total: 336,
+  external: 135,
+  calculated: 108,
   definitions: 93,
-  citations: 100,
+  citations: 102,
 } as const;
 
 // ============================================================================

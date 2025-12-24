@@ -1,6 +1,6 @@
 ---
 title: 'Economic Value: Medical Progress'
-description: Estimates the economic value of new therapies, including their market valuation and potential impact when accelerating medical progress by 80X.
+description: Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var trial_capacity_multiplier >}}×.
 published: true
 tags:
   - medical-progress
@@ -23,7 +23,7 @@ Understanding the economic value of new therapies is essential for evaluating th
 
 - The **average economic value** of a new therapy.
 - The **total annual value** based on the average number of new therapies approved each year.
-- An estimation of the potential value created by **accelerating medical progress by 80X**.
+- An estimation of the potential value created by **increasing trial capacity by {{< var trial_capacity_multiplier >}}×**.
 
 ## **Average Economic Value of a New Therapy**
 
@@ -37,12 +37,12 @@ The value of a new therapy can be assessed through market performance and societ
 - **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **{{< var current_drug_approvals_per_year >}} new drugs annually**.
 - **Total Annual Value:** Multiplying **{{< var current_drug_approvals_per_year >}} approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
 
-## **Impact of Accelerating Medical Progress by 80X**
+## **Impact of {{< var trial_capacity_multiplier >}}× More Trial Capacity**
 
-What would happen if medical progress accelerated by 80-fold?
+What would happen with {{< var trial_capacity_multiplier >}}× more trial capacity to test treatments simultaneously?
 
-- **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × 80 = **4,000 new therapies annually**.
-- **Projected Economic Value:** 4,000 therapies × **$1.62 billion** = **$6.48 trillion** per year.
+- **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var trial_capacity_multiplier >}} = **{{< var trial_capacity_multiplier >}}× {{< var current_drug_approvals_per_year >}} new therapies annually**.
+- **Projected Economic Value:** This increased capacity could dramatically accelerate cure discovery, though actual approval rates depend on regulatory capacity and market dynamics.
 
 ## **Considerations and Context**
 
@@ -52,7 +52,7 @@ What would happen if medical progress accelerated by 80-fold?
 
 ## **Conclusion**
 
-Accelerating medical progress by 80X could generate **$6.48 trillion annually**, a dramatic increase from the current **$81 billion**. While market dynamics and system capacities are important considerations, the potential economic and societal impacts underscore the transformative value of advancing medical innovation.
+Increasing trial capacity by {{< var trial_capacity_multiplier >}}× through lower-cost decentralized trials (RECOVERY: $500/patient vs $41K traditional) enables testing far more treatments simultaneously. While market dynamics and system capacities are important considerations, the potential economic and societal impacts underscore the transformative value of advancing medical innovation.
 
 ## **Sources**
 

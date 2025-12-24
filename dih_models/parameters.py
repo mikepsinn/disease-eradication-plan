@@ -1071,6 +1071,76 @@ INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     compute=lambda ctx: (ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]) / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
 )
 
+# Total pharma R&D spending (clinical trials are 15-20% of this)
+GLOBAL_PHARMA_RD_SPENDING_ANNUAL = Parameter(
+    300_000_000_000,
+    source_ref="global-pharma-rd-spending-300b",  # TODO: Add to references.qmd
+    source_type=SourceType.EXTERNAL,
+    description="Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)",
+    display_name="Annual Global Pharmaceutical R&D Spending",
+    unit="USD",
+    display_value="$300B",
+    keywords=["pharma", "r&d", "research", "development", "300b", "pharmaceutical", "drug", "industry"]
+)
+
+# Nonprofit clinical trials funding
+GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
+    3_500_000_000,
+    source_ref=ReferenceID.NONPROFIT_CLINICAL_TRIAL_SPENDING_ESTIMATE,
+    source_type=SourceType.EXTERNAL,
+    description="Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)",
+    display_name="Annual Global Nonprofit Spending on Clinical Trials",
+    unit="USD",
+    display_value="$3.5B",
+    confidence_interval=(2_000_000_000, 5_000_000_000),
+    keywords=["nonprofit", "foundation", "clinical trials", "2-5b", "philanthropy", "advocacy"]
+)
+
+# Calculated: Cost per participant
+CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
+    0,  # Calculated via compute lambda
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
+    display_name="Annual Cost Per Clinical Trial Participant",
+    unit="USD",
+    formula="TOTAL_SPENDING / PARTICIPANTS",
+    latex=r"\text{Cost/Participant} = \frac{\$60B}{1.9M} = \$31{,}579",
+    keywords=["cost", "participant", "per patient", "trial cost", "enrollment"],
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"]
+)
+
+# Calculated: Cost per approved drug (from trials only)
+CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
+    0,  # Calculated via compute lambda
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
+    display_name="Clinical Trial Cost Per Approved Drug",
+    unit="USD",
+    formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",
+    latex=r"\text{Cost/Drug} = \frac{\$60B}{50} = \$1.2B",
+    keywords=["cost", "drug", "approval", "fda", "trial cost", "1.2b"],
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_DRUG_APPROVALS_PER_YEAR"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"]
+)
+
+# Calculated: Military vs ALL clinical trials ratio
+MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
+    0,  # Calculated via compute lambda
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
+    display_name="Ratio of Military to Clinical Trials Spending",
+    unit="ratio",
+    formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",
+    latex=r"\text{Ratio} = \frac{\$2.7T}{\$60B} = 45\times",
+    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "45x", "misallocation"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+)
+
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,
     source_ref="dct-cost-reductions-evidence",

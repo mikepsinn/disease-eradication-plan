@@ -16,9 +16,9 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 83000000000.0
-low = 60000000000
-high = 110000000000
+central_value = 60000000000.0
+low = 50000000000
+high = 75000000000
 dist_type = "lognormal"
 display_name = "Annual Global Spending on Clinical Trials"
 unit = "USD"

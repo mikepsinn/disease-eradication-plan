@@ -140,7 +140,7 @@ add_watermark(fig)
 
 fig.text(
     0.5, 0.02,
-    'Total Initiative Cost (excluding core platform): Best Case $4.5M | Medium Case $213M | Worst Case $1.98B',
+    'Total Initiative Cost (excluding Core framework): Best Case $4.5M | Medium Case $213M | Worst Case $1.98B',
     ha='center', fontsize=16, style='italic', color=COLOR_BLACK
 )
 

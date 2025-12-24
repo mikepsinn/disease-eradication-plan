@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Decentralized Framework for Drug Assessment Core framework Annual OPEX"
+#| fig-cap: "Probability Distribution: Annual Global Nonprofit Spending on Clinical Trials"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,12 +16,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 18950000.0
-low = 11000000
-high = 26500000
-dist_type = "lognormal"
-display_name = "Decentralized Framework for Drug Assessment Core framework Annual OPEX"
-unit = "USD/year"
+central_value = 3500000000.0
+low = 2000000000
+high = 5000000000
+dist_type = "normal"
+display_name = "Annual Global Nonprofit Spending on Clinical Trials"
+unit = "USD"
 
 # Calculate distribution parameters
 
@@ -138,7 +138,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-dfda_npv_annual_opex.png')
+output_path = get_figure_output_path('distribution-global_nonprofit_clinical_trials_spending_annual.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
