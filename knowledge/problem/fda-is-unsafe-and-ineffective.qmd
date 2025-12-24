@@ -9,9 +9,13 @@ tags:
   - drug-approval
   - bureaucracy
   - regulatory-capture
+image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/problem/fda-is-unsafe-and-ineffective-infographic.png)
+
 
 ```{python}
 #| echo: false
@@ -427,10 +431,12 @@ The regulatory system claims to prevent harm by screening out unsafe drugs (Type
 Let's quantify both types of harm:
 
 **Type I Harm (approving unsafe drugs):**
+
 - Even with generous overestimates, prevented harm: ~{{< var type_i_error_benefit_dalys >}} DALYs saved (1962-2024)
 - This assumes ALL drug withdrawals were prevented by the 1962 efficacy requirements (they weren't; Phase I safety testing already existed)
 
 **Type II Harm (delaying beneficial treatments):**
+
 - Documented harm: {{< var disease_eradication_delay_dalys >}} DALYs lost (1962-2024)
 - This is from delayed access alone, not counting the additional safety failures the system creates
 
@@ -584,12 +590,14 @@ The result: Drugs are approved as "safe" based on tiny, artificial samples, then
 Post-approval, the FDA relies on the **FDA Adverse Event Reporting System (FAERS)**, a passive, voluntary system where doctors report problems they happen to notice and connect to a specific drug.
 
 **Reality:**
+
 - **Estimated capture rate:** [Less than 10% of actual adverse events](../references.qmd#adverse-event-underreporting) (empirical studies show ~6% reporting rate, meaning 94% underreported)
 - **Reporting burden:** Voluntary, time-consuming paperwork doctors often skip
 - **Attribution difficulty:** Hard to prove causation in individual cases
 - **No systematic follow-up:** Most patients disappear after prescription
 
 **Examples of failures:**
+
 - **Vioxx:** Killed an estimated [38,000-55,000 Americans](../references.qmd#vioxx-deaths) before voluntary reporting caught the cardiovascular risks
 - **Benadryl:** Took decades to discover the [dementia risk](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) from long-term use
 - **Thalidomide in Europe:** Thousands of birth defects before passive reporting identified the pattern
