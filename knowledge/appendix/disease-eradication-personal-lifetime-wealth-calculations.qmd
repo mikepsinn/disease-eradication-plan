@@ -12,8 +12,12 @@ tags:
   - sensitivity-analysis
   - calculations
   - mathematical-framework
+image: /assets/og-images/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations-og.png
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations-infographic.png)
+
 
 
 The **Disease Eradication Model** properly accounts for {{< var trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.

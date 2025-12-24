@@ -988,18 +988,21 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
 
 # Clinical trial market
 # Source: knowledge/appendix/dfda-roi-calculations.qmd
+# Updated from market size ($83B) to conservative pharma R&D-based estimate ($60B)
+# Industry ($45-60B = 15-20% of $300B pharma R&D) + Government ($3-6B) + Nonprofits ($2-5B) = $50-71B total
+# Market reports ($83B) inflate actual spending by including CRO revenue projections and double-counting
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
-    83_000_000_000,
-    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
+    60_000_000_000,
+    source_ref=ReferenceID.INDUSTRY_CLINICAL_TRIAL_SPENDING_ESTIMATE,
     source_type=SourceType.EXTERNAL,
-    description="Annual global spending on clinical trials (Total: Government + Industry)",
+    description="Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.",
     display_name="Annual Global Spending on Clinical Trials",
     unit="USD",
-    display_value="$83B",
+    display_value="$60B",
     distribution=DistributionType.LOGNORMAL,
-    std_error=12_500_000_000,
-    confidence_interval=(60_000_000_000, 110_000_000_000),
-    keywords=["83b", "clinical trials", "market size", "global spending", "research", "industry"]
+    std_error=10_000_000_000,
+    confidence_interval=(50_000_000_000, 75_000_000_000),
+    keywords=["60b", "clinical trials", "pharma r&d", "global spending", "research", "industry", "conservative"]
 )
 
 GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
@@ -2999,18 +3002,18 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 # ---
 
 # NPV Model - Component Costs
-# Core platform and broader initiative costs (for detailed breakdowns)
+# Core framework and broader initiative costs (for detailed breakdowns)
 DFDA_NPV_UPFRONT_COST = Parameter(
     40_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment core platform build cost",
-    display_name="Decentralized Framework for Drug Assessment Core Platform Build Cost",
+    description="Decentralized Framework for Drug Assessment Core framework build cost",
+    display_name="Decentralized Framework for Drug Assessment Core framework Build Cost",
     unit="USD",
     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(25_000_000, 65_000_000),  # $25M-$65M (±40% - IT projects have high variance)
-)  # $40M core platform build
+)  # $40M Core framework build
 
 DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     229_750_000,
@@ -3028,13 +3031,13 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
     18_950_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)",
-    display_name="Decentralized Framework for Drug Assessment Core Platform Annual OPEX",
+    description="Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
+    display_name="Decentralized Framework for Drug Assessment Core framework Annual OPEX",
     unit="USD/year",
     keywords=["18.9m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(11_000_000, 26_500_000),  # $11M-$26.5M (actual range from source)
-)  # $19M core platform (midpoint of $11-26.5M)
+)  # $19M Core framework (midpoint of $11-26.5M)
 
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     21_100_000,
@@ -3049,7 +3052,7 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
 )  # $21.1M medium case broader initiatives
 
 # NPV Model - Primary Parameters (dFDA-specific)
-# Total upfront costs (C0): combines core dFDA platform + broader DIH initiative setup
+# Total upfront costs (C0): combines core dFDA framework + broader DIH initiative setup
 DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
@@ -3067,7 +3070,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     compute=lambda ctx: ctx["DFDA_NPV_UPFRONT_COST"] + ctx["DIH_NPV_UPFRONT_COST_INITIATIVES"],
 )  # C0 = $0.26975B
 
-# Total annual operational costs (Cop): combines core dFDA platform + broader DIH initiative annual costs
+# Total annual operational costs (Cop): combines core dFDA framework + broader DIH initiative annual costs
 DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
@@ -3407,7 +3410,7 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
     source_type="definition",
     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
-    description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment platform overhead",
+    description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
     unit="rate",
     formula="DFDA_OPEX / TREATY_FUNDING",

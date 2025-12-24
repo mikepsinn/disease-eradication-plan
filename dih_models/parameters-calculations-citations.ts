@@ -670,15 +670,15 @@ export const GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS: Parameter = {
 };
 
 export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
-  value: 83000000000.0,
+  value: 60000000000.0,
   unit: "USD",
   displayName: "Annual Global Spending on Clinical Trials",
-  description: "Annual global spending on clinical trials (Total: Government + Industry)",
+  description: "Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.",
   sourceType: "external",
-  sourceRef: "global-clinical-trials-market-2024",
+  sourceRef: "industry-clinical-trial-spending-estimate",
   confidence: "high",
-  confidenceInterval: [60000000000.0, 110000000000.0],
-  stdError: 12500000000.0,
+  confidenceInterval: [50000000000.0, 75000000000.0],
+  stdError: 10000000000.0,
 };
 
 export const GLOBAL_DAILY_DEATHS_CURABLE_DISEASES: Parameter = {
@@ -1492,7 +1492,7 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 // ============================================================================
 
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
-  value: 155051000000.0,
+  value: 143551000000.0,
   unit: "USD/year",
   displayName: "Combined Peace and Health Dividends for ROI Calculation",
   description: "Combined peace and health dividends for ROI calculation",
@@ -1515,7 +1515,7 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
 };
 
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
-  value: 41500000000.0,
+  value: 30000000000.0,
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
   description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
@@ -1537,7 +1537,7 @@ export const DFDA_EXPECTED_ROI: Parameter = {
 };
 
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
-  value: 41460000000.0,
+  value: 29960000000.0,
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
   description: "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
@@ -1561,7 +1561,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
 };
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
-  value: 275468208149.5121,
+  value: 199059997977.79504,
   unit: "USD",
   displayName: "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
   description: "NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
@@ -1573,7 +1573,7 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
 };
 
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
-  value: 275468208149.5121,
+  value: 199059997977.79504,
   unit: "USD",
   displayName: "NPV Net Benefit (R&D Only, Conservative)",
   description: "NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
@@ -1621,7 +1621,7 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
 };
 
 export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
-  value: 41500000000.0,
+  value: 30000000000.0,
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
   description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
@@ -1632,7 +1632,7 @@ export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
 };
 
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
-  value: 113698630.1369863,
+  value: 82191780.8219178,
   unit: "USD/day",
   displayName: "Daily R&D Savings from Trial Cost Reduction",
   description: "Daily R&D savings from trial cost reduction (opportunity cost of delay)",
@@ -1644,7 +1644,7 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
 };
 
 export const DFDA_ROI_RD_ONLY: Parameter = {
-  value: 450.5645014781041,
+  value: 325.5888196884708,
   unit: "ratio",
   displayName: "ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
   description: "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
@@ -1656,7 +1656,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
 };
 
 export const DFDA_ROI_SIMPLE: Parameter = {
-  value: 1037.5,
+  value: 750.0,
   unit: "ratio",
   displayName: "Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment",
   description: "Simple ROI without NPV adjustment (gross savings / annual opex)",
@@ -2004,7 +2004,7 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
 };
 
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
-  value: 78500000000.0,
+  value: 55500000000.0,
   unit: "USD",
   displayName: "Annual Global Industry Spending on Clinical Trials",
   description: "Annual global industry spending on clinical trials (Total - Government)",
@@ -2073,7 +2073,7 @@ export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
-  value: 206.73466666666667,
+  value: 191.40133333333333,
   unit: "ratio",
   displayName: "IAB Mechanism Benefit-Cost Ratio",
   description: "Benefit-Cost Ratio of the IAB mechanism itself",
@@ -2095,7 +2095,7 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
 };
 
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
-  value: 17.444444444444443,
+  value: 12.333333333333334,
   unit: "ratio",
   displayName: "Ratio of Industry to Government Clinical Trials Spending",
   description: "Ratio of Industry to Government spending on clinical trials (approx 90/10 split)",
@@ -2418,7 +2418,7 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
 };
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
-  value: 10.336733333333333,
+  value: 9.570066666666667,
   unit: "ratio",
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
@@ -2522,7 +2522,7 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
-  value: 155051000000.0,
+  value: 143551000000.0,
   unit: "USD/year",
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
   description: "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
@@ -2544,7 +2544,7 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
-  value: 155051000000.0,
+  value: 143551000000.0,
   unit: "USD/year",
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
@@ -2600,7 +2600,7 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 };
 
 export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
-  value: 155051000000.0,
+  value: 143551000000.0,
   unit: "USD/year",
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
@@ -3055,8 +3055,8 @@ export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
 export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   value: 18950000.0,
   unit: "USD/year",
-  displayName: "Decentralized Framework for Drug Assessment Core Platform Annual OPEX",
-  description: "Decentralized Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)",
+  displayName: "Decentralized Framework for Drug Assessment Core framework Annual OPEX",
+  description: "Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -3066,8 +3066,8 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
   value: 40000000.0,
   unit: "USD",
-  displayName: "Decentralized Framework for Drug Assessment Core Platform Build Cost",
-  description: "Decentralized Framework for Drug Assessment core platform build cost",
+  displayName: "Decentralized Framework for Drug Assessment Core framework Build Cost",
+  description: "Decentralized Framework for Drug Assessment Core framework build cost",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -3100,7 +3100,7 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   value: 0.0014716703458425313,
   unit: "rate",
   displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
-  description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment platform overhead",
+  description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
@@ -4649,6 +4649,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://icd.who.int/browse10/2019/en",
         note: "WHO, ICD-10 Browser",
   },
+  "industry-clinical-trial-spending-estimate": {
+        id: "industry-clinical-trial-spending-estimate",
+        type: "webpage",
+        title: "Private industry clinical trial spending",
+        author: [
+          {
+            literal: "Derived from global market size and public/private funding ratios"
+          },
+        ],
+        publisher: "Derived from global market size and public/private funding ratios",
+        note: "Derived from global market size and public/private funding ratios",
+  },
   "industry-vs-government-trial-spending-split": {
         id: "industry-vs-government-trial-spending-split",
         type: "article-journal",
@@ -5320,7 +5332,7 @@ export const PARAMETER_STATS = {
   external: 133,
   calculated: 105,
   definitions: 93,
-  citations: 99,
+  citations: 100,
 } as const;
 
 // ============================================================================

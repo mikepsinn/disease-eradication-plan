@@ -40,10 +40,13 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
-image: /assets/og-images/knowledge/appendix/wishocracy-paper.png
+image: /assets/og-images/knowledge/appendix/wishocracy-paper-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/appendix/wishocracy-paper-infographic.png)
+
 
 *Version 0.9 - Working Draft*
 
@@ -67,7 +70,7 @@ Democratic institutions face a fundamental challenge: how to aggregate citizen p
 
 Modern democracies face an increasingly acute challenge: how to translate the diverse, often conflicting preferences of millions of citizens into coherent public policy. Traditional electoral mechanisms were designed for an era of limited communication, discrete choices, and relatively homogeneous electorates. Today's policy landscape (spanning healthcare allocation, infrastructure investment, climate adaptation, research funding, and social services) demands more sophisticated preference elicitation than periodic elections can provide.
 
-The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Humans struggle to make consistent judgments over large sets of options. Pairwise comparisons keep each decision local and cognitively manageable even when the full budget has thousands of items.
+The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@miller-1956]. Humans struggle to make consistent judgments over large sets of options. Pairwise comparisons keep each decision local and cognitively manageable even when the full budget has thousands of items.
 
 Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
 
@@ -190,10 +193,12 @@ r_{i,A,B} = \frac{\rho_{i,A,B} + \epsilon}{1 - \rho_{i,A,B} + \epsilon}
 $$
 where $\epsilon$ is a small constant (e.g., $10^{-3}$) to prevent singularities.
 
-**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison using the **Geometric Mean** of individual odds ratios:
+**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison using the **Geometric Mean** of individual odds ratios (following @aczel-saaty-1983, which proves geometric mean is necessary to preserve the reciprocal property in pairwise comparisons):
 $$
 a_{jk} = \left( \prod_{i \in S_{jk}} r_{i,j,k} \right)^{\frac{1}{|S_{jk}|}}
 $$
+
+*Note: While we use geometric mean to aggregate individual pairwise comparisons (to preserve reciprocity), the resulting eigenvector priority weights approximate the arithmetic mean of individual utilities under appropriate conditions (see @saaty-1980 for details).*
 where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair. This produces a sparse $m \times m$ comparison matrix $\mathbf{A}$.
 
 **Priority Synthesis:** We compute priorities from the sparse matrix $\mathbf{A}$. While classical AHP uses the principal eigenvector of a dense matrix, for sparse data we employ logarithmic least squares (LLSM) or iterative methods to recover the global priority vector $\mathbf{w} = (w_1, ..., w_m)^T$ such that $a_{jk} \approx w_j / w_k$.
