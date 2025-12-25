@@ -34,7 +34,6 @@ dot.node('C', 'Trial Coverage Pool')
 dot.node('D', 'Covers Patient Costs')
 dot.node('E', 'Medications')
 dot.node('F', 'Testing')
-dot.node('G', 'Travel/Time')
 dot.node('H', 'Patient Copay $20-50')
 dot.node('I', 'Data Generated')
 dot.node('J', 'Drug Assessment Database')
@@ -45,7 +44,6 @@ dot.edge('B', 'C')
 dot.edge('C', 'D')
 dot.edge('D', 'E')
 dot.edge('D', 'F')
-dot.edge('D', 'G')
 dot.edge('H', 'D')
 dot.edge('I', 'J')
 dot.edge('J', 'K')
@@ -148,11 +146,10 @@ Before the 1962 Kefauver-Harris Amendment:
 
 - Medication costs: $200-2000/month (covered by the trial coverage pool)
 - Monitoring costs: $100-500/month (covered by the trial coverage pool)
-- Travel/time: $50-200/month (covered by the trial coverage pool)
 - **Patient copay: $20-50/month**
 - Data collection: $10/month (automated)
 
-**Total trial fund cost per patient:** $360-2,710/month
+**Total trial fund cost per patient:** $310-2,510/month (decentralized model eliminates travel costs)
 **Traditional trial cost per patient:** [$6,800-13,600/month](../references.qmd#trial-costs-fda-study)
 
 #### Efficiency gain: 75-80% cost reduction

@@ -110,6 +110,7 @@ book:
     - part: "Essential References"
       chapters:
         - knowledge/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
+        - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis (1883-1962 timeline, thalidomide, diminishing returns rebuttal) ~12p
         # historical-evidence-supporting-decentralized-efficacy-trials.qmd content merged into fda-is-unsafe-and-ineffective.qmd
 
     # Strategic Implementation
