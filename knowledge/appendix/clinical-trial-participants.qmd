@@ -14,17 +14,9 @@ image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og.png
 ![Infographic](/assets/infographics/knowledge/appendix/clinical-trial-participants-infographic.png)
 
 
-Here's a fun fact: humanity spends [{{< var global_clinical_trials_spending_annual >}} a year on clinical trials](../references.qmd#industry-clinical-trial-spending-estimate), but **nobody tracks how many people actually participate**.
+Humanity spends [{{< var global_clinical_trials_spending_annual >}} a year on clinical trials](../references.qmd#industry-clinical-trial-spending-estimate). Here are the actual enrollment numbers:
 
-Not the WHO. Not the FDA. Not ClinicalTrials.gov. Nobody.
-
-We can tell you how many trials exist (515,000 registered globally). We can tell you how much money gets spent ({{< var global_clinical_trials_spending_annual >}}). But ask "how many humans participated last year?" and you get... silence.
-
-It's like running a restaurant that tracks food costs and table counts but has no idea how many customers showed up.
-
-## So We Built a Script and Did the Math
-
-We pulled 100,000 trials from ClinicalTrials.gov and counted actual enrollment numbers:
+## Enrollment Data from ClinicalTrials.gov
 
 ### US Trials (Cumulative)
 
@@ -163,9 +155,9 @@ Even counting all clinical research, it's just 0.2% (5M participants).
 
 The other 99.92% (or 99.8% counting all research) get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
 
-## The Data We Have
+## Enrollment Data by Phase
 
-Here's what we pulled from [ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api):
+Data from [ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api):
 
 | Phase | Trials | Total Enrollment | Median/Trial | Cost/Patient |
 |-------|--------|------------------|--------------|--------------|
@@ -175,8 +167,6 @@ Here's what we pulled from [ClinicalTrials.gov](https://clinicaltrials.gov/data-
 | Phase 4 | 5,790 | 2,718,541 | 90 | $6,437 |
 
 (Cost per patient calculated from [phase spending estimates](global-clinical-trial-spending-by-phase.qmd) divided by participant counts)
-
-**The absurd part:** These are the *best* numbers available, and they're educated guesses based on trial durations we estimated from other research.
 
 ## What a 1% Treaty Could Do
 
@@ -212,11 +202,7 @@ The data would be better too. More diverse. More representative. Collected from 
 
 ## The Bottom Line
 
-Nobody knows how many people participate in clinical trials because nobody bothers to track it.
-
-We had to build a script to count.
-
-The answer: **{{< var current_trial_slots_available >}} people a year (drug trials, IQVIA 2022), at a cost of $43,684 each.**
+**{{< var current_trial_slots_available >}} people a year (drug trials, IQVIA 2022), at a cost of $43,684 each.**
 
 Or **~5 million** if you count all clinical research (observational, device, behavioral) at **$16,600 each**.
 
@@ -228,4 +214,4 @@ The 99.92% who don't get access to drug trials (or 99.8% for all research)? They
 
 ---
 
-**Methodology:** Primary source: [IQVIA 2022 report](../references.qmd#global-trial-participant-capacity) showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api) (November 2025), analyzing 100,000 active/recruiting/completed trials. Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). See [spending breakdown](global-clinical-trial-spending-by-phase.qmd).
+**Methodology:** Primary source: [IQVIA 2022 report](../references.qmd#global-trial-participant-capacity) showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api). Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). See [spending breakdown](global-clinical-trial-spending-by-phase.qmd).
