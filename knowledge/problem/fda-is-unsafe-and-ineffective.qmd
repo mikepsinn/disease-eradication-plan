@@ -45,6 +45,34 @@ The FDA employees executing this system didn't design it. Congress did, in 1962,
 When this chapter says "the FDA does X," read it as "the 1962 law requires the FDA to do X." The humans at the agency are following the rules they were given. The rules are the problem.
 :::
 
+::: {.callout-note}
+## Confidence Levels: What We Know vs. What We Model
+
+This chapter relies on three tiers of evidence:
+
+**Irrefutable Facts** (direct empirical data):
+
+- 82× cost differential: Oxford trial ($15/patient) vs. standard Phase III ($1,230/patient)
+- 70% drug approval reduction: Immediate drop from 46/year (1960) to 13/year (1963)
+- Beta-blocker deaths: 100,000+ Americans died during decade-long delay
+- COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
+
+**Strong Evidence** (peer-reviewed research):
+
+- 86.1% trial exclusion rates for real-world patients
+- <10% adverse event capture rate in FAERS
+- Historical life expectancy slowdown post-1962
+- Publication bias (37% negative vs. 94% positive)
+
+**Model-Dependent Estimates** (quantitative analysis):
+
+- {{< var historical_progress_deaths_total >}}-{{< var disease_eradication_plus_acceleration_deaths_total >}} death toll range (PRIMARY: {{< var disease_eradication_delay_deaths_total >}})
+- {{< var disease_eradication_delay_dalys >}} DALYs lost
+- {{< var type_ii_error_cost_ratio >}}:1 Type II/Type I error ratio
+
+Even if you reject all model-dependent estimates, the empirical facts alone demonstrate the system is broken.
+:::
+
 ## The {{< var trial_cost_reduction_factor >}}× Inefficiency Tax
 
 Compare two real-world systems for testing drugs:
@@ -95,9 +123,22 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 [Real-World Evidence Historical Success (Pre-1962)](../appendix/real-world-evidence-historical-success.qmd)
 :::
 
+### Pre- vs. Post-1962: What Changed
+
+| Metric | Pre-1962 (1883-1962) | Post-1962 (1962-Present) | Change |
+|--------|---------------------|-------------------------|--------|
+| **Efficacy Testing** | {{< var pre_1962_physician_count >}} independent physicians | Drug company-run trials | -99.8% independence |
+| **Cost per Drug** | {{< var pre_1962_drug_development_cost >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× increase |
+| **New Approvals** | 46/year (1960) | 13/year (1963) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
+| **Life Expectancy Growth** | 4 years/decade | 2 years/decade | 50% reduction |
+| **Trial Cost** | $15/patient (Oxford-style) | {{< var traditional_phase3_cost_per_patient >}}/patient | {{< var trial_cost_reduction_factor >}}× increase |
+| **Time to Approval** | 2-3 years | {{< var fda_approval_timeline_avg_years >}} years | 5-8× slower |
+
+The temporal break is exact. Every negative metric changed immediately in 1962.
+
 ### The Modern Consequences
 
-The current system works like this:
+Even if you're skeptical of historical analysis, the current system's failures are undeniable. It works like this:
 
 1. Scientists discover a cure for your disease
 2. You wait 17 years
@@ -133,33 +174,15 @@ Which would you choose if you were a rational sociopath in a suit?
 
 The profit incentive doesn't just fail to reward better treatments. It actively punishes them.
 
-##### Cures Are Economically Stupid
+### Off-Patent Drugs and Rare Diseases: Mathematically Doomed
 
-Quick business question: Would you rather sell someone one pill that cures them, or sell them pills every month for the rest of their life?
+The 1962 law creates a death spiral for unprofitable treatments:
 
-If you answered "cure them," congratulations on failing capitalism.
+- **95% of diseases are rare:** Development cost ({{< var pharma_drug_development_cost_current >}}) ÷ patient population (10,000) = $260,000/patient
+- **No patent = no funding:** Off-patent drugs can't attract billion-dollar investments
+- **Pre-specification kills serendipity:** Must predict what drug cures before testing
 
-A permanent cure is a one-time purchase. Lifetime treatment is a subscription model. When it costs a billion dollars to develop either option, which do you think companies choose?
-
-The more expensive drug development becomes, the fewer companies can afford it. The fewer companies, the more monopolistic the industry. The more monopolistic, the more situations where curing your existing customers would be financial suicide.
-
-This system has financial incentive for medical progress the way casinos have incentives to help you win.
-
-### Off-Patent Drugs: Cures Nobody Can Afford to Find
-
-Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The 1962 law requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
-
-No patent = no billion-dollar investment = no trials = no approval = people die.
-
-#### Rare Diseases: Mathematically Doomed
-
-Development cost: $2.6 billion
-Patients with rare disease: 10,000
-Price per patient to break even: $260,000
-
-Nobody pays that. Nobody develops the drug. 95% of diseases have zero treatments.
-
-When something costs more, you get less of it. For people dying of diseases nobody can afford to cure, this isn't philosophy. It's math.
+When something costs more, you get less of it. For 95% of diseases with zero treatments, this isn't philosophy. It's math.
 
 
 
@@ -173,9 +196,15 @@ But that was just the US. And just the visible delays.
 
 A [comprehensive quantitative analysis](../appendix/regulatory-mortality-analysis.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of the 1962 efficacy requirements:
 
-**{{< var disease_eradication_delay_deaths_total >}} preventable deaths** (1962-2024)
+**Death toll range:** {{< var historical_progress_deaths_total >}}-{{< var disease_eradication_plus_acceleration_deaths_total >}} preventable deaths (PRIMARY estimate: {{< var disease_eradication_delay_deaths_total >}})
 
-That's more than World War I and World War II *combined*. 
+**The conclusion holds across all scenarios:**
+
+- **Conservative** ({{< var historical_progress_deaths_total >}}): Counts only delayed access to existing drugs
+- **PRIMARY** ({{< var disease_eradication_delay_deaths_total >}}): Accounts for disease eradication timeline shift
+- **Optimistic** ({{< var disease_eradication_plus_acceleration_deaths_total >}}): Includes innovation acceleration effects
+
+Even the Conservative estimate represents a humanitarian catastrophe larger than any war in modern history. 
 
 But deaths alone don't capture the suffering. People don't just die, they live for years with untreated diseases while waiting for approval.
 
@@ -194,6 +223,8 @@ $$
 - **GDP equivalent:** ~8-12% of global GDP consumed annually
 
 For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.
+
+**Even if you think these estimates are off by a factor of 10**, the core problem remains: a system that costs 82× more per patient, takes 36× longer than proven alternatives, and produces less safety data from smaller, less representative populations.
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people who die from lack of access to life-saving treatments that might have been.
 
@@ -223,10 +254,6 @@ Following the 1962 increase in US regulations, you can see a divergence from Swi
 Perhaps it's coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
 ![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../assets/us-swiss-life-expectancy-drug-approvals.png)
-
-### Modern Example: Closed-Loop Neuromodulation
-
-Closed-loop neuromodulation for treatment-resistant depression shows 60-80% response rates in pilot trials, with Phase I safety established. Yet FDA/EMA approval is unlikely before 2035, costing an estimated $1.5 trillion/year in foregone welfare and millions of preventable deaths. For detailed analysis, see [Appendix: Neuromodulation Case Study](../appendix/neuromodulation-case-study.qmd).
 
 ## How the Incentives Work
 
@@ -328,10 +355,6 @@ In 2007, Dendreon submitted evidence that its immunotherapy drug Provenge signif
 Finding a decline in deaths wasn't enough. The paperwork wasn't filled out in the correct order. Three more years and another large trial were required before the life-saving medication was approved.
 
 Due to these additional costs, Dendreon ultimately [filed for chapter 11 bankruptcy](https://www.targetedonc.com/view/dendreon-files-for-bankruptcy-provenge-still-available).
-
-## Industry-Funded Trials: The Fox Guarding the Henhouse
-
-The 1962 regulations require expensive trials that only pharmaceutical companies can afford to run. This creates a fundamental conflict of interest: companies test their own products, and their economic survival depends on positive results.
 
 ## The Negative Results Black Hole
 
