@@ -12,7 +12,7 @@ const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.
  * Text legibility requirements based on Gemini 3 Pro Image best practices
  * Research: ~94% text accuracy achievable with explicit instructions
  */
-const TEXT_LEGIBILITY_RULES = `TEXT: Large.`;
+const TEXT_LEGIBILITY_RULES = `TEXT: Ensure all text is large and legible.`;
 
 /**
  * Generate OG image prompt (optimized for social media thumbnails)

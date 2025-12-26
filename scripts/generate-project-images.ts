@@ -218,9 +218,10 @@ async function generateImageForFile(
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
-    console.log(`  [LLM] Filtering content for OG image...`);
-    const ogFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'og');
-    const ogPrompt = ImagePrompts.og.buildPrompt(ogFilteredContent);
+    // console.log(`  [LLM] Filtering content for OG image...`);
+    // const ogFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'og');
+    // const ogPrompt = ImagePrompts.og.buildPrompt(ogFilteredContent);
+    const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody);
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
@@ -240,9 +241,10 @@ async function generateImageForFile(
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
-    console.log(`  [LLM] Filtering content for infographic...`);
-    const infographicFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'infographic');
-    const infographicPrompt = ImagePrompts.infographic.buildPrompt(infographicFilteredContent);
+    // console.log(`  [LLM] Filtering content for infographic...`);
+    // const infographicFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'infographic');
+    // const infographicPrompt = ImagePrompts.infographic.buildPrompt(infographicFilteredContent);
+    const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody);
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
@@ -262,9 +264,10 @@ async function generateImageForFile(
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
-    console.log(`  [LLM] Filtering content for slide...`);
-    const slideFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'slide');
-    const slidePrompt = ImagePrompts.slide.buildPrompt(slideFilteredContent);
+    // console.log(`  [LLM] Filtering content for slide...`);
+    // const slideFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'slide');
+    // const slidePrompt = ImagePrompts.slide.buildPrompt(slideFilteredContent);
+    const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody);
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
