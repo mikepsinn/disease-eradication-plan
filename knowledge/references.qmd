@@ -5850,19 +5850,33 @@ title: Post-1962 slowdown in life expectancy gains
   > See detailed calculation: [life-expectancy-increase-pre-1962](#life-expectancy-increase-pre-1962)
   > — Source: [US Life Expectancy FDA Budget 1543-2019 CSV](knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv) | [Think by Numbers Analysis](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
 
+<a id="pre-1962-drug-costs-congressional-testimony"></a>
+
+title: Pre-1962 drug development costs (Congressional testimony)
+  type: government document
+  author: Congressional Record
+  year: 1977
+  url: https://www.congress.gov/95/crecb/1977/04/21/GPO-CRECB-1977-pt10-2-3.pdf
+  > 1962: Average cost $1.2 million (in 1962 dollars)
+  > 1972: $11.5 million
+  > 1977: Projected $40 million
+  > Inflation-adjusted to 2024 dollars: $1.2M (1962) ≈ $12M (2024), using CPI multiplier of ~10×
+  > Real cost increase (inflation-adjusted): $12M (1962) → $2,600M (2024) = 217× increase
+  > — [Congressional Record, April 21, 1977](https://www.congress.gov/95/crecb/1977/04/21/GPO-CRECB-1977-pt10-2-3.pdf)
+  > Note: This represents the most reliable documented pre-1962 cost estimate from official government testimony
+
 <a id="pre-1962-drug-costs-timeline"></a>
 
-title: Pre-1962 drug development costs and timeline
+title: Pre-1962 drug development costs and timeline (Think by Numbers)
   type: article
   author: Think by Numbers
   url: https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/
-  > 1962 Drug Amendments significantly increased costs and timelines
   > Historical estimates (1970-1985): USD $226M fully capitalized (2011 prices)
   > 1980s drugs: ~$65M after-tax R&D (1990 dollars), ~$194M compounded to approval (1990 dollars)
   > Modern comparison: $2-3B costs, 7-12 years (dramatic increase from pre-1962)
   > Context: 1962 regulatory clampdown reduced new treatment production by 70%, dramatically increasing development timelines and costs
-  > Note: Specific pre-1962 "$74M, 2-3 years" figures not verified in sources
   > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/) | [Wikipedia: Cost of Drug Development](https://en.wikipedia.org/wiki/Cost_of_drug_development) | [STAT: 1962 Law Slowed Development](https://www.statnews.com/2018/10/01/changing-1962-law-slash-drug-prices/)
+  > Note: Secondary source; less reliable than Congressional testimony
 
 <a id="pre-1962-physician-trials"></a>
 

@@ -1,6 +1,6 @@
 ---
 title: The FDA Is Unsafe and Ineffective
-description: How FDA efficacy regulations made drugs 82X more expensive while making them demonstrably less safe.
+description: How FDA efficacy regulations made clinical trials 82× more expensive per patient while making drugs demonstrably less safe.
 published: true
 tags:
   - problem
@@ -130,6 +130,18 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 | **Time to Approval** | 2-3 years | {{< var fda_approval_timeline_avg_years >}} years | 5-8× slower |
 
 The temporal break is exact. Every negative metric changed immediately in 1962.
+
+::: {.callout-note}
+## Detailed Cost Analysis
+
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase is rigorously documented with multiple data sources, CPI adjustments, and sensitivity analysis. See [Drug Development Cost Analysis](../appendix/drug-development-cost-analysis.qmd) for:
+
+- Congressional testimony and alternative data sources
+- Exact inflation calculations (1962 → 2024)
+- Why it's not just inflation (timeline expansion, failure rates, trial complexity)
+- Sensitivity analysis and independent validation
+- Transparent methodology addressing common objections
+:::
 
 ### The Modern Consequences
 
