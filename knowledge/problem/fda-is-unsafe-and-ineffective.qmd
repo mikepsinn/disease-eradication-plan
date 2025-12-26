@@ -47,7 +47,7 @@ This chapter relies on three tiers of evidence:
 
 **Irrefutable Facts** (direct empirical data):
 
-- 82× cost differential: Oxford trial ($15/patient) vs. standard Phase III ($1,230/patient)
+- 82× cost differential: Oxford trial ({{< var recovery_trial_cost_per_patient >}}) vs. standard Phase III ({{< var traditional_phase3_cost_per_patient >}})
 - 70% drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
 - Beta-blocker deaths: [100,000 Americans died](../references.qmd#beta-blocker-drug-lag-deaths) during decade-long delay
 - COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
@@ -126,7 +126,7 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 | **Cost per Drug** | {{< var pre_1962_drug_development_cost >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× increase |
 | **New Approvals** | [46/year (1960)](../references.qmd#post-1962-drug-approval-drop) | [13/year (1963)](../references.qmd#post-1962-drug-approval-drop) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
 | **Life Expectancy Growth** | [3.82 years/decade](../references.qmd#life-expectancy-increase-pre-1962) | [1.54 years/decade](../references.qmd#post-1962-life-expectancy-slowdown) | [60% reduction](../references.qmd#post-1962-life-expectancy-slowdown) |
-| **Trial Cost** | $15/patient (Oxford-style) | {{< var traditional_phase3_cost_per_patient >}}/patient | {{< var trial_cost_reduction_factor >}}× increase |
+| **Trial Cost** | {{< var recovery_trial_cost_per_patient >}} (pragmatic) | {{< var traditional_phase3_cost_per_patient >}} | {{< var trial_cost_reduction_factor >}}× increase |
 | **Time to Approval** | 2-3 years | {{< var fda_approval_timeline_avg_years >}} years | 5-8× slower |
 
 The temporal break is exact. Every negative metric changed immediately in 1962.

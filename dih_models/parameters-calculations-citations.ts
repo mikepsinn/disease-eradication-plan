@@ -959,6 +959,8 @@ export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
   sourceType: "external",
   sourceRef: "patient-willingness-clinical-trials",
   confidence: "medium",
+  confidenceInterval: [0.4, 0.5],
+  stdError: 0.025,
 };
 
 export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
@@ -1296,30 +1298,10 @@ export const THALIDOMIDE_US_POPULATION_SHARE_1960: Parameter = {
 };
 
 export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
-  value: 80000.0,
-  unit: "USD/patient",
-  displayName: "Phase 3 Cost per Patient",
-  description: "Phase 3 cost per patient (median)",
-  sourceType: "external",
-  sourceRef: "phase-3-cost-per-patient-113k",
-  confidence: "high",
-};
-
-export const TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K: Parameter = {
-  value: 48000.0,
-  unit: "USD/patient",
-  displayName: "Example Phase 3 Trial Cost per Patient",
-  description: "Example Phase 3 trial cost per patient ($48K)",
-  sourceType: "external",
-  sourceRef: "clinical-trial-cost-per-patient",
-  confidence: "high",
-};
-
-export const TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K: Parameter = {
   value: 41000.0,
   unit: "USD/patient",
-  displayName: "FDA Cited Phase 3 Cost per Patient",
-  description: "FDA cited Phase 3 cost per patient ($41K)",
+  displayName: "Phase 3 Cost per Patient",
+  description: "Phase 3 cost per patient (median from FDA study)",
   sourceType: "external",
   sourceRef: "trial-costs-fda-study",
   confidence: "high",
@@ -2744,6 +2726,18 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
 };
 
+export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
+  value: 1075200000.0,
+  unit: "people",
+  displayName: "Global Patients Willing to Participate in Clinical Trials",
+  description: "Global chronic disease patients willing to participate in trials (2.4B × 44.8%)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/clinical-trial-participants#willingness-gap",
+  confidence: "medium",
+  formula: "CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
+  latex: "2.4B \\times 0.448 = 1.075B",
+};
+
 // ============================================================================
 // Core Definitions
 // ============================================================================
@@ -3798,8 +3792,6 @@ export const parameters = {
   THALIDOMIDE_SURVIVOR_LIFESPAN,
   THALIDOMIDE_US_POPULATION_SHARE_1960,
   TRADITIONAL_PHASE3_COST_PER_PATIENT,
-  TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K,
-  TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K,
   TREATMENT_ACCELERATION_YEARS_CURRENT,
   TRIAL_COST_REDUCTION_FACTOR,
   TYPICAL_CEO_HOURLY_RATE,
@@ -3925,6 +3917,7 @@ export const parameters = {
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
+  WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   APPROVED_DRUG_DISEASE_PAIRINGS,
   CAMPAIGN_CELEBRITY_ENDORSEMENT,
   CAMPAIGN_COMMUNITY_ORGANIZING,
@@ -4223,19 +4216,6 @@ export const citations: Record<string, Citation> = {
         ],
         publisher: "Industry estimates",
         note: "Industry estimates",
-  },
-  "clinical-trial-cost-per-patient": {
-        id: "clinical-trial-cost-per-patient",
-        type: "article-journal",
-        title: "Clinical trial cost per patient (traditional Phase III)",
-        author: [
-          {
-            literal: "ProRelix Research"
-          },
-        ],
-        'container-title': "ProRelix Research",
-        URL: "https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/",
-        note: "ProRelix Research, Phase-by-Phase Clinical Trial Costs | WithPower, Clinical Trial Cost Per Patient | JAMA, Cost of Bringing a New Drug",
   },
   "clinical-trial-patient-participation-rate": {
         id: "clinical-trial-patient-participation-rate",
@@ -4964,19 +4944,6 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.deloitte.com/ch/en/Industries/life-sciences-health-care/research/measuring-return-from-pharmaceutical-innovation.html",
         note: "Deloitte: Measuring Pharmaceutical Innovation 2025 | Deloitte 2023: Pharma R&D ROI Falls | HIT Consultant: 13-Year Low",
   },
-  "phase-3-cost-per-patient-113k": {
-        id: "phase-3-cost-per-patient-113k",
-        type: "article-journal",
-        title: "Phase 3 cost per patient",
-        author: [
-          {
-            literal: "JAMA Internal Medicine"
-          },
-        ],
-        'container-title': "JAMA Internal Medicine",
-        URL: "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287",
-        note: "JAMA Internal Medicine, Clinical Trial Cost Breakdown",
-  },
   "phase-3-cost-per-trial-range": {
         id: "phase-3-cost-per-trial-range",
         type: "article-journal",
@@ -5429,11 +5396,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 336,
-  external: 135,
-  calculated: 108,
+  total: 335,
+  external: 133,
+  calculated: 109,
   definitions: 93,
-  citations: 103,
+  citations: 101,
 } as const;
 
 // ============================================================================

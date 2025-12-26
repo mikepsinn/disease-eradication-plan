@@ -1345,16 +1345,6 @@ CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
 )  # 0.08% of disease patients participate in trials (1.9M / 2.4B, IQVIA 2022)
 
 # Traditional Trial Economics
-TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
-    80000,
-    source_ref=ReferenceID.PHASE_3_COST_PER_PATIENT_113K,
-    source_type="external",
-    description="Phase 3 cost per patient (median)",
-    display_name="Phase 3 Cost per Patient",
-    unit="USD/patient",
-    keywords=["80k", "50th percentile", "confirmatory trial", "middle value", "third phase", "participant", "subject"]
-)  # $40k-$120k range, using midpoint
-
 PHASE_3_TRIAL_COST_MIN = Parameter(
     20_000_000,
     source_ref=ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE,
@@ -3712,8 +3702,26 @@ PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     display_name="Patient Willingness to Participate in Clinical Trials",
     unit="percentage",
     confidence="medium",
-    keywords=["willingness", "willing", "volunteer", "interest", "clinical trial", "participation", "survey"]
+    keywords=["willingness", "willing", "volunteer", "interest", "clinical trial", "participation", "survey"],
+    distribution="normal",
+    confidence_interval=(0.40, 0.50),  # ±11% variation from survey heterogeneity
+    std_error=0.025  # Survey response variance across populations
 )  # 44.8% willing for drug trials specifically
+
+WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
+    CURRENT_DISEASE_PATIENTS_GLOBAL * PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
+    source_ref="/knowledge/appendix/clinical-trial-participants.qmd#willingness-gap",
+    source_type="calculated",
+    description="Global chronic disease patients willing to participate in trials (2.4B × 44.8%)",
+    display_name="Global Patients Willing to Participate in Clinical Trials",
+    unit="people",
+    formula="CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
+    latex=r"2.4B \times 0.448 = 1.075B",
+    confidence="medium",
+    keywords=["willing", "volunteer", "participants", "chronic disease", "trial capacity", "1.075b", "1.1b"],
+    inputs=['CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT'],
+    compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"]
+)  # 1.075 billion willing participants
 
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
@@ -4412,25 +4420,15 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
 )  # 280M people = 3.5% of 8B (critical mass threshold)
 
 # Clinical Trial Cost Examples & Comparisons
-TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = Parameter(
-    48000,
-    source_ref=ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT,
-    source_type="external",
-    description="Example Phase 3 trial cost per patient ($48K)",
-    display_name="Example Phase 3 Trial Cost per Patient",
-    unit="USD/patient",
-    keywords=["48k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer"]
-)  # USD per trial patient, specific example from text for comparison
-
-TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K = Parameter(
+TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
     41000,
     source_ref=ReferenceID.TRIAL_COSTS_FDA_STUDY,
     source_type="external",
-    description="FDA cited Phase 3 cost per patient ($41K)",
-    display_name="FDA Cited Phase 3 Cost per Patient",
+    description="Phase 3 cost per patient (median from FDA study)",
+    display_name="Phase 3 Cost per Patient",
     unit="USD/patient",
-    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer"]
-)  # USD per patient, cited FDA cost example for comparison
+    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer", "median"]
+)  # Median cost per patient from FDA/JAMA study (Moore et al. 2020)
 
 # Historical & Comparison Multipliers
 MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(

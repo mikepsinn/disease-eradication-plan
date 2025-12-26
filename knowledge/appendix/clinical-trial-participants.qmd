@@ -73,17 +73,19 @@ This represents post-COVID normalization from the 4 million peak in 2021 (when C
 
 ## The Tragedy in Numbers
 
-World population: 8 billion
+Chronic disease patients globally: {{< var current_disease_patients_global >}}
+
+Willing to participate in trials: {{< var willing_trial_participants_global >}} ({{< var patient_willingness_trial_participation_pct >}})
 
 Clinical trial participants annually: **{{< var current_trial_slots_available >}}** (interventional drug trials, IQVIA 2022)
 
 Or **~5 million** if counting all clinical research (observational, device, behavioral)
 
-### Participation rate: 0.024% (drug trials) or 0.06% (all clinical research)
+### Among those who could benefit and are willing to help:
 
-Using the conservative IQVIA figure (1.9M ÷ 8B = 0.024%), your odds of participating in a drug trial are **1 in 4,211**.
+Using the conservative IQVIA figure ({{< var current_trial_slots_available >}} ÷ {{< var willing_trial_participants_global >}} = 0.18%), your odds of actually getting into a drug trial are **1 in 566**.
 
-Even if you count all clinical research (5M ÷ 8B = 0.06%), your odds are only **1 in 1,600**.
+Even if you count all clinical research (5M ÷ {{< var willing_trial_participants_global >}} = 0.46%), your odds are only **1 in 215**.
 
 Meanwhile, {{< var global_daily_deaths_curable_diseases >}} people die every day from diseases we're studying.
 
@@ -116,9 +118,9 @@ The system isn't failing because people don't want to help find cures. It's fail
 - Eligibility criteria exclude 90% of patients
 - Enrollment caps fill up instantly
 
-We have 1.2 billion people with chronic disease who are willing and able to participate. We're enrolling {{< var current_trial_slots_available >}} in drug trials (or ~5M counting all clinical research).
+We have {{< var willing_trial_participants_global >}} with chronic disease who are willing and able to participate. We're enrolling {{< var current_trial_slots_available >}} in drug trials (or ~5M counting all clinical research).
 
-**We're turning away 99.84% of willing participants** (using drug trials), or 99.6% if counting all clinical research.
+**We're turning away 99.82% of willing participants** (using drug trials), or 99.5% if counting all clinical research.
 
 ## The Cost Per Patient
 
@@ -153,7 +155,7 @@ The system isn't designed to help sick people try treatments. It's designed to g
 
 Even counting all clinical research, it's just 0.2% (5M participants).
 
-The other 99.92% (or 99.8% counting all research) get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
+The other 99.92% of disease patients (or 99.82% of willing participants) get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
 
 ## Enrollment Data by Phase
 
@@ -196,7 +198,7 @@ The math is straightforward:
 - Current: {{< var current_trial_slots_available >}}/year (IQVIA 2022)
 - **{{< var trial_capacity_multiplier >}}× more trial capacity** means testing {{< var trial_capacity_multiplier >}}× more treatments simultaneously
 
-And we'd only be using **3.6% of available capacity** (43.4M ÷ 1.2 billion willing participants).
+And we'd only be using **4.0% of available capacity** (43.4M ÷ {{< var willing_trial_participants_global >}}).
 
 The data would be better too. More diverse. More representative. Collected from people living their actual lives instead of visiting clinics every week.
 
@@ -208,9 +210,11 @@ Or **~5 million** if you count all clinical research (observational, device, beh
 
 **{{< var current_disease_patients_global >}} people are living with chronic disease.**
 
-### The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research).
+### The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research) among disease patients.
 
-The 99.92% who don't get access to drug trials (or 99.8% for all research)? They suffer. And {{< var global_daily_deaths_curable_diseases >}} die every day.
+Among willing participants: 1 in 566 (drug trials) or 1 in 215 (all research).
+
+The 99.92% of disease patients (99.82% of willing participants) who don't get access to drug trials? They suffer. And {{< var global_daily_deaths_curable_diseases >}} die every day.
 
 ---
 

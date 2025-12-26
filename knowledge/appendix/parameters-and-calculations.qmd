@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 336
+**Total parameters**: 335
 
-- External sources (peer-reviewed): 135
-- Calculated values: 108
+- External sources (peer-reviewed): 133
+- Calculated values: 109
 - Core definitions: 93
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (108 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+[Calculated Values](#sec-calculated) (109 parameters) • [External Data Sources](#sec-external) (133 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3784,6 +3784,41 @@ $$
 
 :::
 
+### Global Patients Willing to Participate in Clinical Trials: 1.08B people {#sec-willing_trial_participants_global}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
+
+**Inputs**:
+
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.40B people (95% CI: 2.00B people - 2.80B people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+
+$$
+2.4B \times 0.448 = 1.075B
+$$
+
+**Methodology**: [../appendix/clinical-trial-participants#willingness-gap](../appendix/clinical-trial-participants#willingness-gap)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-willing_trial_participants_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-willing_trial_participants_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-willing_trial_participants_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
@@ -5350,6 +5385,18 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 **Source**: [Trials - Patient willingness to participate in clinical trials](../references.qmd#patient-willingness-clinical-trials)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 50%] • Distribution: Normal (SE: 2.5%)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 50% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -5882,35 +5929,11 @@ US share of world population in 1960
 
 :::
 
-### Phase 3 Cost per Patient: $80K {#sec-traditional_phase3_cost_per_patient}
+### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Phase 3 cost per patient (median)
-
-**Source**: [JAMA Internal Medicine - Phase 3 cost per patient](../references.qmd#phase-3-cost-per-patient-113k)
-
-*✓ High confidence*
-
-:::
-
-### Example Phase 3 Trial Cost per Patient: $48K {#sec-traditional_phase3_cost_per_patient_example_48k}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Example Phase 3 trial cost per patient ($48K)
-
-**Source**: [ProRelix Research - Clinical trial cost per patient (traditional Phase III)](../references.qmd#clinical-trial-cost-per-patient)
-
-*✓ High confidence*
-
-:::
-
-### FDA Cited Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient_fda_example_41k}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-FDA cited Phase 3 cost per patient ($41K)
+Phase 3 cost per patient (median from FDA study)
 
 **Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
 

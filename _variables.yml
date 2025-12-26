@@ -1443,8 +1443,8 @@
   \ class=\"parameter-link\" data-source-ref=\"patient-willingness-clinical-trials\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Patient willingness\
   \ to participate in drug trials (44.8% in surveys, 88% when actually approached)\
-  \ | ~ Medium confidence | Unit: percentage | Click to view details, calculation\
-  \ & sources\">44.8%</a>"
+  \ | ~ Medium confidence | 95% CI: [40%, 50%] | Dist: Normal (SE: 2.5%) | Unit: percentage\
+  \ | Click to view details, calculation & sources\">44.8%</a>"
 "patient_willingness_trial_participation_pct_cite": "@patient-willingness-clinical-trials"
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_annual_societal_benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd\"\
@@ -1872,23 +1872,11 @@
 "total_research_funding_with_treaty_latex": "$$\nFunding_{total} = Spending_{global}\
   \ + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B\n$$"
 "traditional_phase3_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-patient-113k\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median) |\
-  \ ✓ High confidence | Unit: USD/patient | Click to view details, calculation & sources\"\
-  >$80K</a>"
-"traditional_phase3_cost_per_patient_cite": "@phase-3-cost-per-patient-113k"
-"traditional_phase3_cost_per_patient_example_48k": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient_example_48k\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Example Phase 3 trial cost per patient\
-  \ ($48K) | ✓ High confidence | Unit: USD/patient | Click to view details, calculation\
-  \ & sources\">$48K</a>"
-"traditional_phase3_cost_per_patient_example_48k_cite": "@clinical-trial-cost-per-patient"
-"traditional_phase3_cost_per_patient_fda_example_41k": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient_fda_example_41k\"\
   \ class=\"parameter-link\" data-source-ref=\"trial-costs-fda-study\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"FDA cited Phase 3 cost per patient ($41K)\
-  \ | ✓ High confidence | Unit: USD/patient | Click to view details, calculation &\
-  \ sources\">$41K</a>"
-"traditional_phase3_cost_per_patient_fda_example_41k_cite": "@trial-costs-fda-study"
+  external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median from\
+  \ FDA study) | ✓ High confidence | Unit: USD/patient | Click to view details, calculation\
+  \ & sources\">$41K</a>"
+"traditional_phase3_cost_per_patient_cite": "@trial-costs-fda-study"
 "treatment_acceleration_years_current": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_acceleration_years_current\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
@@ -2293,12 +2281,20 @@
   \ costs) | ✓ High confidence | Unit: USD/QALY | Click to view details, calculation\
   \ & sources\">$50K</a>"
 "who_qaly_threshold_cost_effective_cite": "@who-cost-effectiveness-threshold"
+"willing_trial_participants_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-willing_trial_participants_global\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/clinical-trial-participants.qmd#willingness-gap\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Global chronic\
+  \ disease patients willing to participate in trials (2.4B × 44.8%) | Calculated\
+  \ from 2 inputs | ~ Medium confidence | Formula: CURRENT_DISEASE_PATIENTS_GLOBAL\
+  \ × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT | Unit: people | Click to view details,\
+  \ calculation & sources\">1.08B</a>"
+"willing_trial_participants_global_latex": "$$\n2.4B \\times 0.448 = 1.075B\n$$"
 "workforce_with_productivity_loss": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-workforce_with_productivity_loss\"\
   \ class=\"parameter-link\" data-source-ref=\"chronic-illness-workforce-productivity-loss\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of workforce\
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "336"
-"total_latex_equation_count": "125"
-"total_citation_count": "135"
+"total_parameter_count": "335"
+"total_latex_equation_count": "126"
+"total_citation_count": "133"
