@@ -4063,13 +4063,33 @@ title: Contribution of smoking reduction to life expectancy gains
 
 <a id="life-expectancy-increase-pre-1962"></a>
 
-title: Claim of linear 4-year life expectancy increase from 1890-1960
-  type: article
-  author: Our World in Data
-  url: https://ourworldindata.org/life-expectancy
-  > Global life expectancy increased from 32 years (1900) to 73 years (2023) - more than doubled
-  > This represents an average increase of 41 years over 123 years
-  > — [Our World in Data: Life Expectancy](https://ourworldindata.org/life-expectancy) | [WHO: Global Health Estimates](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy)
+title: US life expectancy growth 1880-1960: 3.82 years per decade
+  type: data
+  source: Historical US life expectancy data (1543-2019)
+  file: knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv
+  calculation: |
+    Pre-1962 period (1880-1960):
+    - 1880: 39.41 years
+    - 1960: 69.94 years
+    - Change: 69.94 - 39.41 = 30.53 years
+    - Duration: 80 years = 8 decades
+    - Growth rate: 30.53 ÷ 8 = 3.82 years/decade
+
+    Post-1962 period (1962-2019):
+    - 1962: 70.064 years
+    - 2019: 78.862 years
+    - Change: 78.862 - 70.064 = 8.798 years
+    - Duration: 57 years = 5.7 decades
+    - Growth rate: 8.798 ÷ 5.7 = 1.54 years/decade
+  notes: |
+    1880 used as proxy for 1883 (JAMA founding) as it's the closest available data point.
+    The growth rate reduction from 3.82 years/decade to 1.54 years/decade represents a
+    60% decline in life expectancy improvements, occurring immediately after the 1962
+    Kefauver-Harris Amendment mandated FDA efficacy testing requirements.
+  > Pre-1962: 3.82 years/decade
+  > Post-1962: 1.54 years/decade
+  > Reduction: 60% decline in life expectancy growth rate
+  > — Source: [US Life Expectancy FDA Budget 1543-2019 CSV](knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv) | [Our World in Data: Life Expectancy](https://ourworldindata.org/life-expectancy)
 
 <a id="life-sciences-venture-capital-2024"></a>
 
@@ -5820,14 +5840,15 @@ title: Post-1962 explosion in drug development costs
 <a id="post-1962-life-expectancy-slowdown"></a>
 
 title: Post-1962 slowdown in life expectancy gains
-  type: article
-  author: Think by Numbers
-  url: https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/
-  > Pre-1962: Lifespan growth increased by ~4 years per decade
-  > Post-1962: Lifespan growth declined to ~2 years per decade (50.0% reduction)
-  > Correlation: Slowdown directly coincided with 70% reduction in new drug approvals following 1962 Kefauver-Harris Amendment
-  > Context: Regulatory clampdown on approvals immediately reduced production of new treatments by 70%
-  > — [Think by Numbers: How Many Lives Does FDA Save?](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
+  type: data
+  source: Historical US life expectancy data (1543-2019)
+  file: knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv
+  > Pre-1962 (1880-1960): 3.82 years/decade
+  > Post-1962 (1962-2019): 1.54 years/decade
+  > Reduction: 60% decline
+  > Temporal correlation: Slowdown occurred immediately after 1962 Kefauver-Harris Amendment
+  > See detailed calculation: [life-expectancy-increase-pre-1962](#life-expectancy-increase-pre-1962)
+  > — Source: [US Life Expectancy FDA Budget 1543-2019 CSV](knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv) | [Think by Numbers Analysis](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
 
 <a id="pre-1962-drug-costs-timeline"></a>
 

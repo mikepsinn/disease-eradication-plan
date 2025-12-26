@@ -46,7 +46,7 @@ Crowdsourced, observational, objective, peer-reviewed clinical research. And it 
 
 ### The Result
 
-After 10,000 years of zero progress, human life expectancy suddenly increased by 4 years every decade. For 80 years.
+After 10,000 years of zero progress, human life expectancy suddenly increased by [3.82 years every decade](../references.qmd#life-expectancy-increase-pre-1962) (calculated from 1880-1960 data). For 80 years.
 
 The most linear relationship in medical history. Suspiciously perfect. It lasted from 1883 to 1960.
 
@@ -60,7 +60,7 @@ Congress [reacted](https://en.wikipedia.org/wiki/Elixir_sulfanilamide) by requir
 
 These requirements evolved into the [Phase 1 Safety Trial](https://en.wikipedia.org/wiki/Phase_1_safety_trial). This was reasonable - testing if a compound kills people before giving it to patients makes sense.
 
-The consistent four-year-per-decade increase in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
+The consistent [3.82 years per decade increase](../references.qmd#life-expectancy-increase-pre-1962) in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
 
 ![Fda safety trials life expectancy](../../assets/fda-safety-trials-life-expectancy.png)
 
@@ -146,21 +146,17 @@ The placebo-controlled, randomized controlled trial helped gauge individual drug
 
 ### What Happened to Life Expectancy (The Part That Matters)
 
-Remember that suspiciously linear 4-year increase in life expectancy every decade from 1883 to 1960?
+Remember that suspiciously linear [3.82-year increase](../references.qmd#life-expectancy-increase-pre-1962) in life expectancy every decade from 1883 to 1960?
 
 Here's what happened in 1962:
 
-It immediately cut in half. To 2 years per decade.
+It strangely quickly dropped by [60%](../references.qmd#post-1962-life-expectancy-slowdown). To 1.54 years per decade.
 
 ![Average Life Expectancy Over Time](../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
-Not gradually. Not "it slowed down over the next decade."
+From 1880 to 1960: [3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962).
 
-Immediately.
-
-From 1883 to 1960: 4 years per decade.
-
-From 1962 onward: 2 years per decade.
+From 1962 onward: [1.54 years per decade](../references.qmd#post-1962-life-expectancy-slowdown).
 
 The break is so clean you can see exactly when Congress decided to "help."
 
@@ -205,8 +201,8 @@ More people survive as more treatments are developed. There's a [strong correlat
 ## The Summary
 
 - 10,000 years: Zero progress
-- 1883: Decentralized real-world trials, 4 years/decade progress
-- 1962: Kefauver-Harris passes, progress cut in half
+- 1880-1960: Decentralized real-world trials, [3.82 years/decade progress](../references.qmd#life-expectancy-increase-pre-1962)
+- 1962: Kefauver-Harris passes, progress [drops 60%](../references.qmd#post-1962-life-expectancy-slowdown) to 1.54 years/decade
 - 2025: Still stuck with the broken system
 
 Humanity solved medical progress in 1883. Congress broke it in 1962.

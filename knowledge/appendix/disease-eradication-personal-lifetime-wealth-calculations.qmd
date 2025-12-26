@@ -33,55 +33,6 @@ The **Disease Eradication Model** properly accounts for {{< var trial_capacity_m
 | *Evidence-Based Conservative* | *$584K* | *5 years* | *For skeptics - antibiotic precedent* |
 | *Evidence-Based Moderate* | *$902K* | *10 years* | *For skeptics - antibiotic precedent* |
 
-## Why This Model is Correct
-
-### The Problem with Antibiotic Precedent
-
-Previous models used antibiotics as a precedent:
-
-- **Antibiotics**: ONE technology solving ONE disease category (infectious diseases)
-- Added 10 years to life expectancy over ~20 years (1940s-1960s)
-- Sequential research, not parallel
-
-**This comparison is fundamentally wrong** because a 1% treaty creates:
-
-- **Multiple breakthrough technologies simultaneously** (gene therapy, epigenetics, stem cells, AI)
-- **{{< var trial_capacity_multiplier >}}× trial capacity per year** (not 1 year per year like antibiotics)
-- **ALL disease categories tackled in parallel**
-- **Near-zero trial costs** removing pharma's biggest barrier
-
-### The Math
-
-**20 years of {{< var trial_capacity_multiplier >}}× trial capacity expansion:**
-
-- Year 1: {{< var trial_capacity_multiplier >}} trial-capacity-equivalent years
-- Year 2: ~51 cumulative trial-capacity-equivalent years
-- ...
-- Year 20: **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**
-
-#### For comparison
-
-- Total medical progress 1900-2024: 124 years → +32 years life expectancy
-- 2,300 years = **18.5x the entire modern medical revolution**
-
-**Therefore:** Expecting only 10 years life extension (like antibiotics) is absurd. The realistic expectation is **50-70 years** in 20 years.
-
-### Aging Reversal = Accident-Limited Lifespan
-
-If we can:
-
-- **Regenerate organs** (stem cells)
-- **Reprogram DNA** (gene therapy)
-- **Reverse epigenetic aging** (cellular reprogramming)
-
-Then there's **NO biological reason for aging-related death**. Life expectancy becomes limited primarily by:
-
-- **Accidents**: 62.3 per 100,000 = 0.0623% per year
-- **Expected lifespan if only accidents**: ~1,600 years
-- **Practical limit** (accounting for irreducible accidents): 150-200 years
-
-The Disease Eradication Model scales toward this accident-limited lifespan.
-
 ## The Model Components
 
 ### 1. Disease-by-Disease Eradication (CDC Burden Data)

@@ -53,8 +53,8 @@ This chapter relies on three tiers of evidence:
 **Irrefutable Facts** (direct empirical data):
 
 - 82× cost differential: Oxford trial ($15/patient) vs. standard Phase III ($1,230/patient)
-- 70% drug approval reduction: Immediate drop from 46/year (1960) to 13/year (1963)
-- Beta-blocker deaths: 100,000+ Americans died during decade-long delay
+- 70% drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
+- Beta-blocker deaths: [100,000 Americans died](../references.qmd#beta-blocker-drug-lag-deaths) during decade-long delay
 - COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
 
 **Strong Evidence** (peer-reviewed research):
@@ -101,7 +101,7 @@ You're two lifetimes from applying the scientific method to medicine. That's 0.0
 
 ## Historical Evidence: The Pre-1962 System Worked
 
-For 10,000 years, life expectancy remained at 30 years. Then in 1883, something changed: doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}} physicians** tested treatments on real patients and published results. Life expectancy increased by 4 years every decade for 80 years.
+For 10,000 years, life expectancy remained at 30 years. Then in 1883, something changed: doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}} physicians** tested treatments on real patients and published results. Life expectancy increased by [3.82 years every decade](../references.qmd#life-expectancy-increase-pre-1962) (calculated from 1880-1960 data) for 80 years.
 
 In 1938, Phase I safety testing was added after the Elixir sulfanilamide disaster. This was reasonable and didn't slow progress. Safety regulations worked perfectly—preventing all US deaths from thalidomide while Europe had thousands.
 
@@ -110,7 +110,7 @@ Then in 1962, Congress responded to this success by adding massive **efficacy** 
 - Replaced {{< var pre_1962_physician_count >}} independent doctors with drug company-run trials
 - Made trials {{< var trial_cost_reduction_factor >}}× more expensive
 - Reduced drug approvals by {{< var post_1962_drug_approval_reduction_pct >}} immediately
-- Cut life expectancy growth from 4 years/decade to 2 years/decade
+- Cut life expectancy growth [by 60%](../references.qmd#post-1962-life-expectancy-slowdown): from 3.82 years/decade to 1.54 years/decade
 
 The temporal break is exact. Life expectancy growth cut in half the moment regulations changed in 1962.
 
@@ -129,8 +129,8 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 |--------|---------------------|-------------------------|--------|
 | **Efficacy Testing** | {{< var pre_1962_physician_count >}} independent physicians | Drug company-run trials | -99.8% independence |
 | **Cost per Drug** | {{< var pre_1962_drug_development_cost >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× increase |
-| **New Approvals** | 46/year (1960) | 13/year (1963) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
-| **Life Expectancy Growth** | 4 years/decade | 2 years/decade | 50% reduction |
+| **New Approvals** | [46/year (1960)](../references.qmd#post-1962-drug-approval-drop) | [13/year (1963)](../references.qmd#post-1962-drug-approval-drop) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
+| **Life Expectancy Growth** | [3.82 years/decade](../references.qmd#life-expectancy-increase-pre-1962) | [1.54 years/decade](../references.qmd#post-1962-life-expectancy-slowdown) | [60% reduction](../references.qmd#post-1962-life-expectancy-slowdown) |
 | **Trial Cost** | $15/patient (Oxford-style) | {{< var traditional_phase3_cost_per_patient >}}/patient | {{< var trial_cost_reduction_factor >}}× increase |
 | **Time to Approval** | 2-3 years | {{< var fda_approval_timeline_avg_years >}} years | 5-8× slower |
 
@@ -178,11 +178,11 @@ The profit incentive doesn't just fail to reward better treatments. It actively 
 
 The 1962 law creates a death spiral for unprofitable treatments:
 
-- **95% of diseases are rare:** Development cost ({{< var pharma_drug_development_cost_current >}}) ÷ patient population (10,000) = $260,000/patient
+- **[95% of diseases are rare](../references.qmd#n95-pct-diseases-no-treatment):** Development cost ({{< var pharma_drug_development_cost_current >}}) ÷ patient population (~10,000 patients) = $260,000/patient
 - **No patent = no funding:** Off-patent drugs can't attract billion-dollar investments
 - **Pre-specification kills serendipity:** Must predict what drug cures before testing
 
-When something costs more, you get less of it. For 95% of diseases with zero treatments, this isn't philosophy. It's math.
+When something costs more, you get less of it. For [95% of diseases](../references.qmd#n95-pct-diseases-no-treatment) with zero treatments, this isn't philosophy. It's math.
 
 
 
@@ -239,7 +239,7 @@ This means it's logical for regulators to reject drug applications by default. T
 | FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah. |
 | FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
 
-The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the US regulatory process delayed. And delayed. The decade-long lag in approving them for their most common use killed an estimated **[over 100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the US regulatory process delayed. And delayed. The decade-long lag in approving them for their most common use killed an estimated **[100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
 
 More Americans than died in Vietnam and Korea combined. From one drug delay. Here's a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 

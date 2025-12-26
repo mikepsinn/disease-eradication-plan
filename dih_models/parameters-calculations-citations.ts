@@ -4775,16 +4775,17 @@ export const citations: Record<string, Citation> = {
   },
   "life-expectancy-increase-pre-1962": {
         id: "life-expectancy-increase-pre-1962",
-        type: "article-journal",
-        title: "Claim of linear 4-year life expectancy increase from 1890-1960",
+        type: "webpage",
+        title: "US life expectancy growth 1880-1960: ~4 years per decade",
         author: [
           {
-            literal: "Our World in Data"
+            literal: "Source: US Life Expectancy FDA Budget 1543-2019 CSV"
           },
         ],
-        'container-title': "Our World in Data: Life Expectancy",
-        URL: "https://ourworldindata.org/life-expectancy",
-        note: "Our World in Data: Life Expectancy | WHO: Global Health Estimates",
+        issued: { 'date-parts': [[2019]] },
+        publisher: "Source: US Life Expectancy FDA Budget 1543-2019 CSV",
+        URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy",
   },
   "lobbying-spend-defense": {
         id: "lobbying-spend-defense",

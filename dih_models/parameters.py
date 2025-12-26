@@ -1241,6 +1241,7 @@ POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
     keywords=["kefauver", "harris", "amendment", "1962", "regulation", "fda", "approval", "drop", "decline"]
 )
 
+
 FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     (FDA_PHASE_1_TO_APPROVAL_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
