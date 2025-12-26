@@ -19,13 +19,13 @@ display_name = "Drug Cost Increase: Pre-1962 to Current"
 
 # Baseline and units
 
-baseline = 52.0
+baseline = 216.66666666666666
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PRE_1962_DRUG_DEVELOPMENT_COST', 'PHARMA_DRUG_DEVELOPMENT_COST_CURRENT']
-impacts_low = [208.0, -22.0]
-impacts_high = [0.0, 28.0]
+drivers = ['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST']
+impacts_low = [-91.66666666666666, 43.33333333333334]
+impacts_high = [116.66666666666666, -43.333333333333314]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -19,13 +19,13 @@ display_name = "Ratio of Industry to Government Clinical Trials Spending"
 
 # Baseline and units
 
-baseline = 17.444444444444443
+baseline = 12.333333333333334
 
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL']
-impacts_low = [9.222222222222225, -5.111111111111109]
-impacts_high = [-4.611111111111109, 6.0]
+impacts_low = [6.666666666666666, -2.222222222222223]
+impacts_high = [-3.333333333333334, 3.333333333333332]
 
 # Convert deltas to absolute values (baseline + delta)
 

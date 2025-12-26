@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Pre-1962 Drug Development Cost (Inflation-Adjusted)"
+#| fig-cap: "Probability Distribution: Average Annual New Drug Approvals Globally"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,12 +16,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 12000000.0
-low = 10000000
-high = 15000000
+central_value = 50.0
+low = 45
+high = 60
 dist_type = "lognormal"
-display_name = "Pre-1962 Drug Development Cost (Inflation-Adjusted)"
-unit = "USD"
+display_name = "Average Annual New Drug Approvals Globally"
+unit = "drugs/year"
 
 # Calculate distribution parameters
 
@@ -138,7 +138,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-pre_1962_drug_development_cost.png')
+output_path = get_figure_output_path('distribution-current_drug_approvals_per_year.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -15,17 +15,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "ROI from Decentralized Framework for Drug Assessment R&D Savings Only"
+display_name = "Ratio of Military to Clinical Trials Spending"
 
 # Baseline and units
 
-baseline = 325.8161133942169
+baseline = 45.3
 
 # Tornado data from sensitivity analysis
 
-drivers = ['TRIAL_COST_REDUCTION_PCT', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DIH_NPV_UPFRONT_COST_INITIATIVES', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_NPV_UPFRONT_COST', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-65.25022297614498, -54.37518581345415, 48.914604999920925, 24.510706714960406, 14.27780857318919, 14.27780857318919, 9.381823470116672, 8.200646304567499, 4.624489798286959]
-impacts_high = [97.8753344642173, 81.56277872018109, -53.58171895778162, -29.077587573922813, -21.311833089962363, -17.2749201361176, -13.129812207900727, -12.80808069323649, -4.497133607839146]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
+impacts_low = [9.060000000000002, -4.533333333333331]
+impacts_high = [-9.059999999999995, 4.5333333333333385]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -87,7 +87,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('tornado-dfda_roi_rd_only.png')
+output_path = get_figure_output_path('tornado-military_to_clinical_trials_spending_ratio.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
