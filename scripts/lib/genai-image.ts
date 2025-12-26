@@ -14,6 +14,69 @@ const log = {
   error: (...args: any[]) => console.error('[genai-image]', ...args),
 }
 
+// --- Image Model Cost Configuration ---
+
+interface ImageModelConfig {
+  id: string
+  costPerImage: number // USD per image
+  maxImagesPerRequest: number
+}
+
+const IMAGE_MODEL_CONFIGS: Record<string, ImageModelConfig> = {
+  // Gemini Imagen models
+  // Pricing from: https://ai.google.dev/pricing
+  'gemini-3-pro-image-preview': {
+    id: 'gemini-3-pro-image-preview',
+    costPerImage: 0.04, // $0.04 per image (standard quality)
+    maxImagesPerRequest: 8,
+  },
+}
+
+/**
+ * Calculate cost for image generation
+ */
+function calculateImageCost(imageCount: number, modelId: string): number {
+  const config = IMAGE_MODEL_CONFIGS[modelId]
+  if (!config) {
+    console.warn(`⚠️  Unknown image model ${modelId}, cannot estimate cost`)
+    return 0
+  }
+
+  return imageCount * config.costPerImage
+}
+
+/**
+ * Log image generation request details
+ */
+function logImageRequest(modelId: string, imageCount: number, aspectRatio: string, promptPreview: string): void {
+  const config = IMAGE_MODEL_CONFIGS[modelId]
+  const estimatedCost = calculateImageCost(imageCount, modelId)
+
+  console.log('─'.repeat(80))
+  console.log(`🖼️  Image Generation Request: ${modelId}`)
+  console.log(`📐 Aspect ratio: ${aspectRatio}`)
+  console.log(`🔢 Image count: ${imageCount}`)
+  console.log(`📝 Prompt preview: ${promptPreview.substring(0, 100)}${promptPreview.length > 100 ? '...' : ''}`)
+  if (config) {
+    console.log(`💵 Cost per image: $${config.costPerImage.toFixed(4)} USD`)
+  }
+  console.log(`💰 Estimated total cost: $${estimatedCost.toFixed(4)} USD`)
+  console.log('⏳ Generating images...')
+}
+
+/**
+ * Log image generation response details with actual cost
+ */
+function logImageResponse(modelId: string, imagesGenerated: number, totalRequested: number): void {
+  const actualCost = calculateImageCost(imagesGenerated, modelId)
+  const success = imagesGenerated === totalRequested
+
+  console.log(success ? `✅ Images generated successfully` : `⚠️  Partial generation (${imagesGenerated}/${totalRequested})`)
+  console.log(`🖼️  Images generated: ${imagesGenerated}`)
+  console.log(`💰 Actual cost: $${actualCost.toFixed(4)} USD`)
+  console.log('─'.repeat(80))
+}
+
 /**
  * Initialize the Google Gen AI client
  */
@@ -108,12 +171,8 @@ export async function generateImages(
     negativePrompt,
   } = options
 
-  log.info('Generating images', {
-    prompt: prompt.substring(0, 100),
-    count,
-    aspectRatio,
-    model,
-  })
+  // Log request with cost estimate
+  logImageRequest(model, count, aspectRatio, prompt)
 
   try {
     const client = getClient()
@@ -154,10 +213,8 @@ export async function generateImages(
       throw new Error('No images were generated')
     }
 
-    log.info('Images generated successfully', {
-      count: images.length,
-      model,
-    })
+    // Log response with actual cost
+    logImageResponse(model, images.length, count)
 
     return {
       images,
