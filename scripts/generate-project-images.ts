@@ -9,6 +9,7 @@ import fs from 'fs/promises';
 import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
 import { generateAndSaveImages } from './lib/genai-image.js';
+import { generateGeminiFlashContent } from './lib/llm.js';
 import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
@@ -21,6 +22,35 @@ dotenv.config();
 
 // Lock file configuration
 const LOCK_FILE = path.join(process.cwd(), '.generate-images.lock');
+
+/**
+ * Clean content for image generation using LLM
+ * Removes meta-content, navigation, chapter references, etc.
+ */
+async function cleanContentForImageGeneration(
+  content: string,
+  imageType: 'og' | 'infographic' | 'slide'
+): Promise<string> {
+  const prompt = `Remove content that would be absolutely useless for generating a ${imageType} image.
+
+Character limit: ${imageType === 'og' ? '1600 max' : imageType === 'infographic' ? '4000 max' : '2400 max'}
+
+Filter out: methodology details, citations, navigation, chapter references, verbose explanations.
+Keep exact wording - do not rephrase anything.
+
+${content}
+
+FILTERED:`;
+
+  try {
+    const responseText = await generateGeminiFlashContent(prompt);
+    return responseText.trim();
+  } catch (error) {
+    console.error('[WARN] Error cleaning content with LLM, using original:', error);
+    // Fallback to original content if LLM cleaning fails
+    return content;
+  }
+}
 
 /**
  * Check if a process is running (Windows-compatible)
@@ -188,7 +218,9 @@ async function generateImageForFile(
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
-    const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody);
+    console.log(`  [LLM] Filtering content for OG image...`);
+    const ogFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'og');
+    const ogPrompt = ImagePrompts.og.buildPrompt(ogFilteredContent);
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
@@ -208,7 +240,9 @@ async function generateImageForFile(
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
-    const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody);
+    console.log(`  [LLM] Filtering content for infographic...`);
+    const infographicFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'infographic');
+    const infographicPrompt = ImagePrompts.infographic.buildPrompt(infographicFilteredContent);
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
@@ -228,7 +262,9 @@ async function generateImageForFile(
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
-    const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody);
+    console.log(`  [LLM] Filtering content for slide...`);
+    const slideFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'slide');
+    const slidePrompt = ImagePrompts.slide.buildPrompt(slideFilteredContent);
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
