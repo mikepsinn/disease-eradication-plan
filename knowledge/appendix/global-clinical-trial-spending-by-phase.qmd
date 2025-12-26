@@ -18,7 +18,9 @@ image: /assets/og-images/knowledge/appendix/global-clinical-trial-spending-by-ph
 
 Here's where every dollar goes in the global clinical trials industry, broken down by who's paying and which phase they're funding.
 
-## The Bottom Line: [{{< var global_clinical_trials_spending_annual >}} Annually](../references.qmd#industry-clinical-trial-spending-estimate) (2024)
+## The Bottom Line: {{< var global_clinical_trials_spending_annual >}} Annually (2024)
+
+Source: [Industry clinical trial spending estimate](../references.qmd#industry-clinical-trial-spending-estimate)
 
 Global clinical trial spending totals approximately **{{< var global_clinical_trials_spending_annual >}}** (95% CI: $50-75B), using conservative pharma R&D estimates rather than inflated market reports:
 
@@ -375,7 +377,7 @@ Why Phase 3 dominates:
 
 #### The Bad News
 
-- [{{< var global_clinical_trials_spending_annual >}} annually, yet most diseases still have no treatment](../references.qmd#95-pct-diseases-no-treatment)
+- {{< var global_clinical_trials_spending_annual >}} annually, yet [most diseases still have no treatment](../references.qmd#95-pct-diseases-no-treatment)
 - [95% of spending goes to Phase 2-3 trials](../references.qmd#phase-2-3-spending-percentage) for molecules that can be patented
 - [Success rate: 12%](../references.qmd#phase-1-to-approval-success-rate)
 - [Average time to develop one drug: 10+ years](../references.qmd#drug-development-timeline-17-years)

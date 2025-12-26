@@ -2,6 +2,7 @@
 title: "Drug Development Cost Increase Analysis"
 description: "Rigorous analysis of the 217× increase in drug development costs from 1962 to 2024, with multiple data sources, CPI adjustments, and sensitivity analysis"
 date: last-modified
+jupyter: dih-project-kernel
 ---
 
 ## Executive Summary
@@ -145,7 +146,7 @@ $$
 \frac{\$4{,}100}{\$50} = 82\text{×}
 $$
 
-See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd#trial-cost-analysis) for full derivation.
+See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for full derivation.
 
 ### 4. Preclinical Requirements
 
@@ -324,9 +325,9 @@ Many molecules exist in both FDA-approved prescription form and dietary suppleme
 
 | Product | Supplement Form | Prescription Form | Price Ratio |
 |---------|----------------|-------------------|-------------|
-| **Vitamin D** | $`{python} f"{vitamin_d_supplement_per_1000iu_low:.2f}"}`-`{python} f"{vitamin_d_supplement_per_1000iu_high:.2f}"` per 1000 IU | $`{python} f"{vitamin_d_prescription_per_1000iu_low:.2f}"}`-`{python} f"{vitamin_d_prescription_per_1000iu_high:.2f}"` per 1000 IU (prescription D2) | **`{python} f"{vitamin_d_ratio_low:.0f}"`-`{python} f"{vitamin_d_ratio_high:.0f}"`×** |
-| **Fish Oil (Omega-3)** | $`{python} f"{fish_oil_supplement_per_gram_low:.2f}"}`-`{python} f"{fish_oil_supplement_per_gram_high:.2f}"` per gram EPA/DHA | $`{python} f"{fish_oil_prescription_per_gram_low:.0f}"}`-`{python} f"{fish_oil_prescription_per_gram_high:.0f}"` per gram (Lovaza prescription) | **`{python} f"{fish_oil_ratio_low:.0f}"`-`{python} f"{fish_oil_ratio_high:.0f}"`×** |
-| **Niacin** | $`{python} f"{niacin_supplement_per_500mg:.2f}"` per 500mg | $`{python} f"{niacin_prescription_per_500mg_low:.0f}"}`-`{python} f"{niacin_prescription_per_500mg_high:.0f}"` per 500mg (Niaspan prescription) | **`{python} f"{niacin_ratio_low:.0f}"`-`{python} f"{niacin_ratio_high:.0f}"`×** |
+| **Vitamin D** | $`{python} f"{vitamin_d_supplement_per_1000iu_low:.2f}"`-`{python} f"{vitamin_d_supplement_per_1000iu_high:.2f}"` per 1000 IU | $`{python} f"{vitamin_d_prescription_per_1000iu_low:.2f}"`-`{python} f"{vitamin_d_prescription_per_1000iu_high:.2f}"` per 1000 IU (prescription D2) | **`{python} f"{vitamin_d_ratio_low:.0f}"`-`{python} f"{vitamin_d_ratio_high:.0f}"`×** |
+| **Fish Oil (Omega-3)** | $`{python} f"{fish_oil_supplement_per_gram_low:.2f}"`-`{python} f"{fish_oil_supplement_per_gram_high:.2f}"` per gram EPA/DHA | $`{python} f"{fish_oil_prescription_per_gram_low:.0f}"`-`{python} f"{fish_oil_prescription_per_gram_high:.0f}"` per gram (Lovaza prescription) | **`{python} f"{fish_oil_ratio_low:.0f}"`-`{python} f"{fish_oil_ratio_high:.0f}"`×** |
+| **Niacin** | $`{python} f"{niacin_supplement_per_500mg:.2f}"` per 500mg | $`{python} f"{niacin_prescription_per_500mg_low:.0f}"`-`{python} f"{niacin_prescription_per_500mg_high:.0f}"` per 500mg (Niaspan prescription) | **`{python} f"{niacin_ratio_low:.0f}"`-`{python} f"{niacin_ratio_high:.0f}"`×** |
 | **Melatonin** | $0.10 per 3mg | Not available as prescription in US | N/A |
 
 **Manufacturing complexity:** Identical. Vitamin D capsules require the same equipment whether sold as supplements or prescriptions.
@@ -342,13 +343,13 @@ Many molecules exist in both FDA-approved prescription form and dietary suppleme
 Compounding pharmacies make custom medications without requiring FDA approval for each formulation. Their pricing reveals manufacturing costs:
 
 **Example: Testosterone replacement**
-- Compounded testosterone cream: $`{python} f"{testosterone_compounded_low:.0f}"}`-`{python} f"{testosterone_compounded_high:.0f}"`/month
-- FDA-approved AndroGel: $`{python} f"{testosterone_fda_low:.0f}"}`-`{python} f"{testosterone_fda_high:.0f}"`/month
+- Compounded testosterone cream: $`{python} f"{testosterone_compounded_low:.0f}"`-`{python} f"{testosterone_compounded_high:.0f}"`/month
+- FDA-approved AndroGel: $`{python} f"{testosterone_fda_low:.0f}"`-`{python} f"{testosterone_fda_high:.0f}"`/month
 - **Price ratio: `{python} f"{testosterone_ratio_low:.0f}"`-`{python} f"{testosterone_ratio_high:.0f}"`×**
 
 **Example: Thyroid medication**
-- Compounded T3/T4 combo: $`{python} f"{thyroid_compounded_low:.0f}"}`-`{python} f"{thyroid_compounded_high:.0f}"`/month  
-- FDA-approved Synthroid + Cytomel: $`{python} f"{thyroid_fda_low:.0f}"}`-`{python} f"{thyroid_fda_high:.0f}"`/month
+- Compounded T3/T4 combo: $`{python} f"{thyroid_compounded_low:.0f}"`-`{python} f"{thyroid_compounded_high:.0f}"`/month  
+- FDA-approved Synthroid + Cytomel: $`{python} f"{thyroid_fda_low:.0f}"`-`{python} f"{thyroid_fda_high:.0f}"`/month
 - **Price ratio: `{python} f"{thyroid_ratio_low:.0f}"`-`{python} f"{thyroid_ratio_high:.0f}"`×**
 
 Compounding pharmacies still face quality control requirements but skip the multi-year, multi-billion-dollar FDA approval process. Their lower prices reflect the true manufacturing cost.
@@ -358,8 +359,8 @@ Compounding pharmacies still face quality control requirements but skip the mult
 Some medications exist in both veterinary and human formulations with different regulatory pathways:
 
 **Example: Antibiotics**
-- Veterinary amoxicillin: $`{python} f"{amoxicillin_vet_low:.2f}"}`-`{python} f"{amoxicillin_vet_high:.2f}"` per dose
-- Human prescription amoxicillin: $`{python} f"{amoxicillin_human_low:.2f}"}`-`{python} f"{amoxicillin_human_high:.2f}"` per dose
+- Veterinary amoxicillin: $`{python} f"{amoxicillin_vet_low:.2f}"`-`{python} f"{amoxicillin_vet_high:.2f}"` per dose
+- Human prescription amoxicillin: $`{python} f"{amoxicillin_human_low:.2f}"`-`{python} f"{amoxicillin_human_high:.2f}"` per dose
 - **Price ratio: `{python} f"{amoxicillin_ratio_low:.0f}"`-`{python} f"{amoxicillin_ratio_high:.0f}"`×**
 
 **Note:** Price differences also reflect insurance/pharmacy markup systems, but the veterinary pathway faces substantially less regulatory burden than human drug approval.
@@ -372,9 +373,9 @@ The previous comparisons show 3-100× premiums, but none reach 217×. **Why?** B
 
 | Drug | Annual Cost per Patient | Comparable Non-Orphan Alternative | Ratio |
 |------|------------------------|-----------------------------------|-------|
-| **Zolgensma** (spinal muscular atrophy) | $`{python} f"{zolgensma_price:,.0f}"` (one-time) | Supportive care: $`{python} f"{zolgensma_supportive_care_low:,.0f}"}`-`{python} f"{zolgensma_supportive_care_high:,.0f}"`/year | **`{python} f"{zolgensma_ratio_low:.0f}"`-`{python} f"{zolgensma_ratio_high:.0f}"`×** |
-| **Soliris** (paroxysmal nocturnal hemoglobinuria) | $`{python} f"{soliris_annual_low:,.0f}"}`-`{python} f"{soliris_annual_high:,.0f}"`/year | Immunosuppressants: $`{python} f"{soliris_alternative_low:,.0f}"}`-`{python} f"{soliris_alternative_high:,.0f}"`/year | **`{python} f"{soliris_ratio_low:.0f}"`-`{python} f"{soliris_ratio_high:.0f}"`×** |
-| **Myalept** (leptin deficiency) | $`{python} f"{myalept_annual:,.0f}"`/year | Hormone replacement: $`{python} f"{myalept_alternative_low:,.0f}"}`-`{python} f"{myalept_alternative_high:,.0f}"`/year | **`{python} f"{myalept_ratio_low:.0f}"`-`{python} f"{myalept_ratio_high:.0f}"`×** |
+| **Zolgensma** (spinal muscular atrophy) | $`{python} f"{zolgensma_price:,.0f}"` (one-time) | Supportive care: $`{python} f"{zolgensma_supportive_care_low:,.0f}"`-`{python} f"{zolgensma_supportive_care_high:,.0f}"`/year | **`{python} f"{zolgensma_ratio_low:.0f}"`-`{python} f"{zolgensma_ratio_high:.0f}"`×** |
+| **Soliris** (paroxysmal nocturnal hemoglobinuria) | $`{python} f"{soliris_annual_low:,.0f}"`-`{python} f"{soliris_annual_high:,.0f}"`/year | Immunosuppressants: $`{python} f"{soliris_alternative_low:,.0f}"`-`{python} f"{soliris_alternative_high:,.0f}"`/year | **`{python} f"{soliris_ratio_low:.0f}"`-`{python} f"{soliris_ratio_high:.0f}"`×** |
+| **Myalept** (leptin deficiency) | $`{python} f"{myalept_annual:,.0f}"`/year | Hormone replacement: $`{python} f"{myalept_alternative_low:,.0f}"`-`{python} f"{myalept_alternative_high:,.0f}"`/year | **`{python} f"{myalept_ratio_low:.0f}"`-`{python} f"{myalept_ratio_high:.0f}"`×** |
 | **Brineura** (CLN2 Batten disease) | $`{python} f"{brineura_annual:,.0f}"`/year | No direct comparison (unique mechanism) | N/A |
 | **Luxturna** (inherited retinal disease) | $`{python} f"{luxturna_onetime:,.0f}"` (one-time) | Supportive care: minimal cost | **Effectively ∞** |
 
@@ -391,7 +392,7 @@ For a rare disease with `{python} f"{rare_disease_patients_10k:,.0f}"` US patien
 
 For ultra-rare diseases (`{python} f"{ultra_rare_patients_1k:,.0f}"` patients):
 - Per-patient development cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B ÷ `{python} f"{ultra_rare_patients_1k * amortization_years:,.0f}"` patient-years = **$`{python} f"{dev_cost_amortized_1k:,.0f}"`/year**
-- Add manufacturing/profit → **$`{python} f"{soliris_annual_low:,.0f}"}`-`{python} f"{soliris_annual_high:,.0f}"`/year** (matches Soliris pricing)
+- Add manufacturing/profit → **$`{python} f"{soliris_annual_low:,.0f}"`-`{python} f"{soliris_annual_high:,.0f}"`/year** (matches Soliris pricing)
 
 **This is why orphan drugs cost $`{python} f"{myalept_annual:,.0f}"`-$`{python} f"{soliris_annual_high:,.0f}"`/year:** The 217× development cost increase means small patient populations cannot amortize the regulatory burden.
 
@@ -441,7 +442,7 @@ The last two comparisons **expose the full 217× burden or greater**:
 
 ## Addressing Common Objections
 
-### "That can't be right—it's too high!"
+### "That can't be right. It's too high!"
 
 **Response:** Multiple independent sources confirm a 100× to 400× increase:
 
@@ -500,7 +501,7 @@ Drugs developed under the pre-1962 regime (safety-only testing):
 - **Antihistamines** (benadryl, dramamine)
 - **Beta blockers** (propranolol)
 
-These drugs saved **millions of lives** and remain in use today. The thalidomide tragedy was **a safety failure**, not an efficacy failure—the pre-1962 system already required safety testing.
+These drugs saved **millions of lives** and remain in use today. The thalidomide tragedy was **a safety failure**, not an efficacy failure. The pre-1962 system already required safety testing.
 
 ### 3. Real-World Evidence Can Reverse This
 
@@ -529,8 +530,8 @@ The Kefauver-Harris Amendment (1962) transformed drug development from a **2-3 y
 
 See [References](../references.qmd) for full citations:
 
-- Congressional Record (1977): [Pre-1962 drug costs](.../references.qmd#pre-1962-drug-costs-congressional-testimony)
-- Tufts CSDD (2014): [Current drug development costs](../references.qmd#pharma-drug-costs-tufts)
+- Congressional Record (1977): [Pre-1962 drug costs](../references.qmd#pre-1962-drug-costs-congressional-testimony)
+- Tufts CSDD (2014): [Current drug development costs](../references.qmd#tufts-drug-development-cost-2021)
 - RECOVERY trial: [Low-cost trial methodology](../appendix/recovery-trial.qmd)
 - Regulatory Mortality: [Detailed cost analysis](../appendix/regulatory-mortality-analysis.qmd)
 
@@ -548,4 +549,5 @@ For reproducibility, all calculations use parameters from [`parameters.py`](../a
 | `TRIAL_COST_REDUCTION_FACTOR` | {{< var trial_cost_reduction_factor >}} | Per-patient cost increase |
 
 See [Parameters & Calculations](../appendix/parameters-and-calculations.qmd) for complete methodology and source links.
+
 

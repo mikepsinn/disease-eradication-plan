@@ -23,7 +23,7 @@ image: /assets/og-images/knowledge/appendix/fundraising-strategy-og.png
 
 ### On How to Raise {{< var treaty_campaign_total_cost >}} to Unlock {{< var treaty_annual_funding >}}/Year Forever
 
-The capital required for a [1% treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **[{{< var treaty_annual_funding >}} annually](../references.qmd#value-captured-by-1pct-treaty)** for global health.
+The capital required for a [1% treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **{{< var treaty_annual_funding >}} annually** for global health.^[[Value captured by 1% treaty](../references.qmd#value-captured-by-1pct-treaty)]
 
 Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dispenses {{< var treaty_annual_funding >}} per year. Forever.
 
