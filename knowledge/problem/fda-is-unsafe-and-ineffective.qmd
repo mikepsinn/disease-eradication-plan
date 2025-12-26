@@ -1,6 +1,6 @@
 ---
 title: The FDA Is Unsafe and Ineffective
-description: How the FDA makes medicine 82X more expensive while operating at the speed of continental drift. A factual comedy about bureaucratic excellence.
+description: How FDA efficacy regulations made drugs 82X more expensive while making them demonstrably less safe.
 published: true
 tags:
   - problem
@@ -17,12 +17,7 @@ image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og.png
 ![Infographic](/assets/infographics/knowledge/problem/fda-is-unsafe-and-ineffective-infographic.png)
 
 
-```{python}
-#| echo: false
-import os
 
-from dih_models.parameters import *
-```
 
 The FDA's 1962 efficacy mandate was supposed to make drugs safer and more effective. Instead, it made them more dangerous.
 

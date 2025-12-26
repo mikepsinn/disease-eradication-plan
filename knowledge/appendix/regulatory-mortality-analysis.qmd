@@ -18,12 +18,7 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og.png
 ![Infographic](/assets/infographics/knowledge/appendix/regulatory-mortality-analysis-infographic.png)
 
 
-```{python}
-#| echo: false
-import os
 
-from dih_models.parameters import *
-```
 
 ::: {.callout-note}
 ## The Short Version
