@@ -25,7 +25,7 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og.png
 
 The 1962 Kefauver-Harris Amendments require an 8-year efficacy delay after drugs are proven safe. During those 8 years, people die. This document counts them.
 
-**The number:** {{< var disease_eradication_delay_deaths_total >}} preventable deaths since 1962.
+**The number:** {{< var disease_eradication_delay_deaths_total >}} preventable deaths from eliminating the 8.2-year efficacy lag.
 
 **The math:** Rigorous, peer-reviewable, and deeply depressing.
 
@@ -644,7 +644,7 @@ That's the number that matters.
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var disease_eradication_delay_deaths_total >}} preventable deaths** (1962-2024)
+- **{{< var disease_eradication_delay_deaths_total >}} preventable deaths from 8.2-year timeline shift**
 - **{{< var disease_eradication_delay_dalys >}} DALYs lost**
 - **{{< var disease_eradication_delay_economic_loss >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)
