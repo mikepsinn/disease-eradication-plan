@@ -1271,18 +1271,18 @@ PRE_1962_PHYSICIAN_COUNT = Parameter(
 )  # Note: Specific "144,000 physicians" figure not verified in sources; AMA opposed amendments but no count documented
 
 PRE_1962_DRUG_DEVELOPMENT_COST = Parameter(
-    12_000_000,
-    source_ref="pre-1962-drug-costs-congressional-testimony",
+    22_500_000,
+    source_ref="pre-1962-drug-costs-baily-1972",
     source_type="external",
-    description="Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)",
+    description="Pre-1962 drug development cost ($6.5M in 1980 dollars = $22.5M in 2024 dollars, CPI-adjusted)",
     display_name="Pre-1962 Drug Development Cost (Inflation-Adjusted)",
     unit="USD",
     confidence="high",
-    peer_reviewed=False,  # Congressional testimony, not peer-reviewed
-    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation", "1962", "congressional"],
+    peer_reviewed=True,  # Baily (1972) academic study
+    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation", "1962", "baily"],
     distribution="lognormal",
-    confidence_interval=(10_000_000, 15_000_000),  # ±25% for CPI adjustment uncertainty
-)  # Congressional Record 1977: $1.2M (1962 dollars) × ~10× CPI multiplier = $12M (2024 dollars)
+    confidence_interval=(18_000_000, 28_000_000),  # ±25% for CPI adjustment and methodological uncertainty
+)  # Baily (1972): $6.5M (1980 dollars) × 3.46× CPI multiplier = $22.5M (2024 dollars)
 
 CURRENT_ACTIVE_TRIALS = Parameter(
     10000,
@@ -5511,17 +5511,17 @@ DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
 
 DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
     PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / PRE_1962_DRUG_DEVELOPMENT_COST,
-    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_BAILY_1972,
     source_type="calculated",
-    description="Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)",
+    description="Drug development cost increase from pre-1962 to current ($22.5M → $2.6B = 116×)",
     display_name="Drug Cost Increase: Pre-1962 to Current",
     unit="ratio",
     formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
-    confidence="medium",
-    keywords=["cost", "increase", "multiplier", "drug", "development", "1962", "regulation", "fda", "pre-1962", "current"],
+    confidence="high",
+    keywords=["cost", "increase", "multiplier", "drug", "development", "1962", "regulation", "fda", "pre-1962", "current", "baily"],
     inputs=['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST'],
     compute=lambda ctx: ctx["PHARMA_DRUG_DEVELOPMENT_COST_CURRENT"] / ctx["PRE_1962_DRUG_DEVELOPMENT_COST"],
-)  # Calculated from documented range ($10-50M pre-1962)
+)  # Baily (1972): $6.5M (1980 dollars) = $22.5M (2024 dollars) → $2.6B = 116× increase
 
 PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
     0.10,

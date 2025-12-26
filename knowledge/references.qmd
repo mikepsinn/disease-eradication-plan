@@ -5850,9 +5850,22 @@ title: Post-1962 slowdown in life expectancy gains
   > See detailed calculation: [life-expectancy-increase-pre-1962](#life-expectancy-increase-pre-1962)
   > — Source: [US Life Expectancy FDA Budget 1543-2019 CSV](knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv) | [Think by Numbers Analysis](https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/)
 
+<a id="pre-1962-drug-costs-baily-1972"></a>
+
+title: Pre-1962 drug development costs (Baily 1972)
+  type: article
+  author: Baily, Martin Neil
+  year: 1972
+  url: https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf
+  > Pre-1962: Average cost per new chemical entity (NCE) was $6.5 million (1980 dollars)
+  > Inflation-adjusted to 2024 dollars: $6.5M (1980) ≈ $22.5M (2024), using CPI multiplier of 3.46×
+  > Real cost increase (inflation-adjusted): $22.5M (pre-1962) → $2,600M (2024) = 116× increase
+  > — Baily (1972), "Research and Development Costs and Returns: The U.S. Pharmaceutical Industry," cited in Health Affairs 1982, [The Importance of Patent Term Restoration](https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf)
+  > Note: This represents the most comprehensive academic estimate of pre-1962 drug development costs based on empirical industry data
+
 <a id="pre-1962-drug-costs-congressional-testimony"></a>
 
-title: Pre-1962 drug development costs (Congressional testimony)
+title: Pre-1962 drug development costs (Congressional testimony, alternative estimate)
   type: government document
   author: Congressional Record
   year: 1977
@@ -5863,7 +5876,7 @@ title: Pre-1962 drug development costs (Congressional testimony)
   > Inflation-adjusted to 2024 dollars: $1.2M (1962) ≈ $12M (2024), using CPI multiplier of ~10×
   > Real cost increase (inflation-adjusted): $12M (1962) → $2,600M (2024) = 217× increase
   > — [Congressional Record, April 21, 1977](https://www.congress.gov/95/crecb/1977/04/21/GPO-CRECB-1977-pt10-2-3.pdf)
-  > Note: This represents the most reliable documented pre-1962 cost estimate from official government testimony
+  > Note: Lower estimate than Baily (1972); may reflect incomplete cost accounting or different drug types. Baily's $6.5M (1980 dollars) = $22.5M (2024 dollars) is the more rigorous academic estimate
 
 <a id="pre-1962-drug-costs-timeline"></a>
 

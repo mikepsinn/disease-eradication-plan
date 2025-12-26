@@ -1082,14 +1082,15 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
 };
 
 export const PRE_1962_DRUG_DEVELOPMENT_COST: Parameter = {
-  value: 12000000.0,
+  value: 22500000.0,
   unit: "USD",
   displayName: "Pre-1962 Drug Development Cost (Inflation-Adjusted)",
-  description: "Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)",
+  description: "Pre-1962 drug development cost ($6.5M in 1980 dollars = $22.5M in 2024 dollars, CPI-adjusted)",
   sourceType: "external",
-  sourceRef: "pre-1962-drug-costs-congressional-testimony",
+  sourceRef: "pre-1962-drug-costs-baily-1972",
   confidence: "high",
-  confidenceInterval: [10000000.0, 15000000.0],
+  confidenceInterval: [18000000.0, 28000000.0],
+  peerReviewed: true,
 };
 
 export const PRE_1962_PHYSICIAN_COUNT: Parameter = {
@@ -1861,13 +1862,13 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
 };
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
-  value: 216.66666666666666,
+  value: 115.55555555555556,
   unit: "ratio",
   displayName: "Drug Cost Increase: Pre-1962 to Current",
-  description: "Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)",
+  description: "Drug development cost increase from pre-1962 to current ($22.5M → $2.6B = 116×)",
   sourceType: "calculated",
-  sourceRef: "pre-1962-drug-costs-timeline",
-  confidence: "medium",
+  sourceRef: "pre-1962-drug-costs-baily-1972",
+  confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
 };
 
@@ -5016,19 +5017,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Kefauver-Harris Amendment | PMC: Lost Medicines",
   },
-  "pre-1962-drug-costs-congressional-testimony": {
-        id: "pre-1962-drug-costs-congressional-testimony",
-        type: "webpage",
-        title: "Pre-1962 drug development costs (Congressional testimony)",
+  "pre-1962-drug-costs-baily-1972": {
+        id: "pre-1962-drug-costs-baily-1972",
+        type: "article-journal",
+        title: "Pre-1962 drug development costs (Baily 1972)",
         author: [
           {
-            literal: "Congressional Record"
+            family: "Baily",
+            given: "Martin Neil"
           },
         ],
-        issued: { 'date-parts': [[1977]] },
-        publisher: "Congressional Record",
-        URL: "https://www.congress.gov/95/crecb/1977/04/21/GPO-CRECB-1977-pt10-2-3.pdf",
-        note: "Congressional Record, April 21, 1977",
+        issued: { 'date-parts': [[1972]] },
+        'container-title': "Baily (1972)",
+        URL: "https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf",
+        note: "Baily (1972), \"Research and Development Costs and Returns: The U.S. Pharmaceutical Industry,\" cited in Health Affairs 1982, The Importance of Patent Term Restoration",
   },
   "pre-1962-drug-costs-timeline": {
         id: "pre-1962-drug-costs-timeline",

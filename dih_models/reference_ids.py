@@ -586,6 +586,7 @@ class ReferenceID(str, Enum):
     POST_1962_LIFE_EXPECTANCY_SLOWDOWN = "post-1962-life-expectancy-slowdown"
     PRAGMATIC_TRIALS_COST_ADVANTAGE = "pragmatic-trials-cost-advantage"
     PRAGMATIC_TRIALS_PATSOPOULOS_2011 = "pragmatic-trials-patsopoulos-2011"
+    PRE_1962_DRUG_COSTS_BAILY_1972 = "pre-1962-drug-costs-baily-1972"
     PRE_1962_DRUG_COSTS_CONGRESSIONAL_TESTIMONY = "pre-1962-drug-costs-congressional-testimony"
     PRE_1962_DRUG_COSTS_TIMELINE = "pre-1962-drug-costs-timeline"
     PRE_1962_PHYSICIAN_TRIALS = "pre-1962-physician-trials"

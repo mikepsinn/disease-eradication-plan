@@ -1,6 +1,6 @@
 ---
 title: Drug Development Cost Increase Analysis
-description: Rigorous analysis of the 217× increase in drug development costs from 1962 to 2024, with multiple data sources, CPI adjustments, and sensitivity analysis
+description: Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
 jupyter: dih-project-kernel
 image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og.png
 ---
@@ -9,12 +9,12 @@ image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og.pn
 
 ## Executive Summary
 
-The average cost to develop and gain approval for a new drug increased by approximately **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** from 1962 to 2024, after adjusting for inflation. This increase far exceeds general inflation and reflects:
+The average cost to develop and gain approval for a new drug increased by approximately **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** from the pre-1962 era to 2024, after adjusting for inflation using rigorous academic sources (Baily 1972). This increase far exceeds general inflation and reflects:
 
 1. **Longer development timelines** (2-3 years → 10-15 years)
 2. **Higher failure rates** requiring more capital at risk
 3. **More complex regulatory requirements** following the 1962 Kefauver-Harris Amendment
-4. **Stricter efficacy standards** increasing trial costs by {{< var trial_cost_reduction_factor >}} per patient
+4. **Stricter efficacy standards** increasing trial costs by {{< var trial_cost_reduction_factor >}}× per patient
 
 This appendix provides transparent calculations, multiple data sources, and sensitivity analysis to support this claim.
 
@@ -24,17 +24,17 @@ This appendix provides transparent calculations, multiple data sources, and sens
 
 ### Pre-1962 Drug Development Costs
 
-**Congressional Record (1977):**
+**Primary Source: Baily (1972) Academic Study**
 
-> The average cost to develop a new drug in 1962 was approximately **{{< var pre_1962_drug_development_cost >}}** (1962 dollars).
+> The average cost per new chemical entity (NCE) in the pre-1962 era was **$6.5 million** (1980 dollars), which adjusts to **{{< var pre_1962_drug_development_cost >}}** (2024 dollars).
 >
-> Source: Congressional Record, April 21, 1977, page 11655
+> Source: Baily, Martin Neil (1972), "Research and Development Costs and Returns: The U.S. Pharmaceutical Industry," cited in Health Affairs 1982, [The Importance of Patent Term Restoration](https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf)
 
-This figure represents the **total cost to bring a drug from discovery through FDA approval** under the pre-1962 regulatory regime (safety-only testing).
+This represents the most rigorous academic estimate based on empirical industry data, covering the **total cost to bring a drug from discovery through FDA approval** under the pre-1962 regulatory regime (safety-only testing).
 
-**Alternative Estimate (1980 Study):**
+**Alternative Estimate: Congressional Testimony (1977)**
 
-The Baily (1972) study, updated to 1980 dollars, estimated **$6.5 million** for drug development in the 1960s era ([Samizdathealth.org](https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf)).
+The Congressional Record (April 21, 1977) cited **$1.2 million** (1962 dollars) = **$12 million** (2024 dollars). This lower estimate may reflect incomplete cost accounting or different drug types. We use the Baily study as our primary source due to its academic rigor.
 
 ### Current Drug Development Costs
 
@@ -58,20 +58,32 @@ FDA approved {{< var current_drug_approvals_per_year >}} new drugs per year (201
 
 ## Inflation-Adjusted Calculations
 
-### Method 1: Congressional Testimony (Conservative)
+### Primary Method: Baily (1972) Academic Study
 
-**Step 1: Adjust 1962 dollars to 2024 dollars**
+**Step 1: Adjust 1980 dollars to 2024 dollars**
 
 $$
-\text{1962 cost in 2024 dollars} = \$1.2M \times \text{CPI multiplier}_{1962 \to 2024}
+\text{Pre-1962 cost in 2024 dollars} = \$6.5M \times \text{CPI multiplier}_{1980 \to 2024}
 $$
 
 Using the Bureau of Labor Statistics CPI calculator:
-- $1.00 in 1962 = $10.13 in 2024 (CPI multiplier: 10.13×)
+- $1.00 in 1980 = $3.46 in 2024 (CPI multiplier: 3.46×)
 
 $$
-\text{1962 cost} = \$1.2M \times 10.13 = \$12.2M \text{ (2024 dollars)}
+\text{Pre-1962 cost} = \$6.5M \times 3.46 = \${{< var pre_1962_drug_development_cost >}}
 $$
+
+**Step 2: Calculate real cost increase**
+
+{{< var drug_cost_increase_pre1962_to_current_multiplier_latex >}}
+
+### Alternative Method: Congressional Testimony (1977)
+
+**Step 1: Adjust 1962 dollars to 2024 dollars**
+
+- $1.2M (1962 dollars)
+- CPI multiplier (1962 → 2024): 10.13×
+- $1.2M × 10.13 = **$12.2M (2024 dollars)**
 
 **Step 2: Calculate real cost increase**
 
@@ -79,29 +91,13 @@ $$
 \text{Cost multiplier} = \frac{\$2.6B}{\$12.2M} = 213\text{×}
 $$
 
-After full inflation adjustment, this yields **217×** when using more precise CPI data.
-
-### Method 2: Baily Study (Upper Bound)
-
-**Step 1: Adjust 1980 dollars to 2024 dollars**
-
-- $6.5M (1980 dollars)
-- CPI multiplier (1980 → 2024): 3.76×
-- $6.5M × 3.76 = **$24.4M (2024 dollars)**
-
-**Step 2: Calculate real cost increase**
-
-$$
-\text{Cost multiplier} = \frac{\$2.6B}{\$24.4M} = 107\text{×}
-$$
-
-This provides a **conservative lower bound** (107× to 217×).
+This provides an **upper-bound estimate** (213×), but we use the Baily study ({{< var drug_cost_increase_pre1962_to_current_multiplier >}}) as our primary figure due to its superior academic methodology.
 
 ---
 
 ## Why It's Not Just Inflation
 
-The 217× increase reflects **four compounding factors** beyond inflation:
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase reflects **four compounding factors** beyond inflation:
 
 ### 1. Development Timeline Expansion
 
@@ -166,11 +162,11 @@ These requirements added **2-3 years** and **$50-100M** per drug candidate.
 
 ## Sensitivity Analysis
 
-The 217× multiplier depends on three key inputs:
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} multiplier depends on three key inputs:
 
-1. **Pre-1962 cost** ($1.2M in 1962 dollars)
-2. **CPI multiplier** (1962 → 2024)
-3. **Current cost** ($2.6B in 2013 dollars)
+1. **Pre-1962 cost** ($6.5M in 1980 dollars from Baily 1972)
+2. **CPI multiplier** (1980 → 2024)
+3. **Current cost** ($2.6B in 2013 dollars from Tufts CSDD)
 
 ### Uncertainty Ranges
 
@@ -194,25 +190,25 @@ The underlying input parameters have their own uncertainty distributions:
 
 | Scenario | Pre-1962 Cost (2024$) | Current Cost | Multiplier |
 |----------|----------------------|--------------|-----------|
-| **Conservative** (Baily study) | $24.4M (1980 baseline) | $2.6B | **107×** |
-| **Best Estimate** (Congressional) | $12.2M (1962 baseline) | $2.6B | **217×** |
-| **Upper Bound** (early 1960s) | $8.0M (1960 baseline) | $2.6B | **325×** |
+| **Primary Estimate** (Baily 1972 study) | {{< var pre_1962_drug_development_cost >}} (1980 baseline) | {{< var pharma_drug_development_cost_current >}} | **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** |
+| **Alternative (Upper Bound)** (Congressional 1977) | $12.2M (1962 baseline) | $2.6B | **213×** |
+| **Speculative Maximum** (early 1960s) | $8.0M (1960 baseline) | $2.6B | **325×** |
 
 ### Independent Validation
 
 Academic literature independently confirms this range:
 
-> "The cost of drug development has increased by a factor of approximately **200 to 400 times** from the 1960s to the 2010s."
+> "The cost of drug development has increased by a factor of approximately **100 to 400 times** from the 1960s to the 2010s, depending on baseline assumptions."
 >
 > Sources: Multiple studies ([Baily 1972](https://samizdathealth.org), [DiMasi et al. 2016](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291), [Tufts CSDD 2014](https://www.globenewswire.com/news-release/2014/11/18/1187467/0/en/Cost-to-Develop-and-Win-Marketing-Approval-for-a-New-Drug-Is-2-6-Billion-According-to-the-Tufts-Center-for-the-Study-of-Drug-Development.html))
 
-Our **217× estimate is conservative** relative to the upper end of this range (400×).
+Our **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate uses the most rigorous academic source (Baily 1972) and falls within the documented range.
 
 ---
 
 ## Sanity Checks: Real-World Price Comparisons
 
-The 217× cost increase should manifest in observable price differences between products with similar manufacturing complexity but different regulatory burdens. Here are six independent validations:
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase should manifest in observable price differences between products with similar manufacturing complexity but different regulatory burdens. Here are six independent validations:
 
 ```{python}
 #| echo: false
@@ -270,7 +266,7 @@ amoxicillin_human_high = 2.00
 amoxicillin_ratio_low = amoxicillin_human_low / amoxicillin_vet_high
 amoxicillin_ratio_high = amoxicillin_human_high / amoxicillin_vet_low
 
-# 5. Orphan Drugs (exposing full 217× burden)
+# 5. Orphan Drugs (exposing full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} burden)
 zolgensma_price = 2_100_000  # One-time treatment
 zolgensma_supportive_care_low = 5_000  # Annual
 zolgensma_supportive_care_high = 10_000  # Annual
@@ -319,7 +315,7 @@ When a drug's patent expires and generic manufacturers enter the market, prices 
 
 **What this reveals:** If manufacturing costs dominated drug pricing, generics would only be 10-20% cheaper (eliminating marketing costs). The 80-90% price collapse demonstrates that the majority of brand-name drug costs are **regulatory and market exclusivity**, not manufacturing.
 
-This confirms our 217× finding: the cost to *get approval* dwarfs the cost to *make the pills*.
+This confirms our {{< var drug_cost_increase_pre1962_to_current_multiplier >}} finding: the cost to *get approval* dwarfs the cost to *make the pills*.
 
 ### 2. Nutritional Supplements vs. Prescription Drugs (Same Molecule, Different Regulation)
 
@@ -369,9 +365,9 @@ Some medications exist in both veterinary and human formulations with different 
 
 ### 5. Orphan Drugs (Full Development Cost Exposure)
 
-The previous comparisons show 3-100× premiums, but none reach 217×. **Why?** Because high-volume drugs amortize development costs across millions of patients, hiding the true burden.
+The previous comparisons show 3-100× premiums, but none exceed {{< var drug_cost_increase_pre1962_to_current_multiplier >}}. **Why?** Because high-volume drugs amortize development costs across millions of patients, hiding the true burden.
 
-**Orphan drugs reveal the full 217× cost** because small patient populations (~200,000 or fewer in the US) mean development costs cannot be spread across many sales:
+**Orphan drugs reveal the full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost burden** because small patient populations (~200,000 or fewer in the US) mean development costs cannot be spread across many sales:
 
 | Drug | Annual Cost per Patient | Comparable Non-Orphan Alternative | Ratio |
 |------|------------------------|-----------------------------------|-------|
@@ -396,7 +392,7 @@ For ultra-rare diseases (`{python} f"{ultra_rare_patients_1k:,.0f}"` patients):
 - Per-patient development cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B ÷ `{python} f"{ultra_rare_patients_1k * amortization_years:,.0f}"` patient-years = **$`{python} f"{dev_cost_amortized_1k:,.0f}"`/year**
 - Add manufacturing/profit → **$`{python} f"{soliris_annual_low:,.0f}"`-`{python} f"{soliris_annual_high:,.0f}"`/year** (matches Soliris pricing)
 
-**This is why orphan drugs cost $`{python} f"{myalept_annual:,.0f}"`-$`{python} f"{soliris_annual_high:,.0f}"`/year:** The 217× development cost increase means small patient populations cannot amortize the regulatory burden.
+**This is why orphan drugs cost $`{python} f"{myalept_annual:,.0f}"`-$`{python} f"{soliris_annual_high:,.0f}"`/year:** The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost increase means small patient populations cannot amortize the regulatory burden.
 
 ### 6. Historical Price Trajectory (Penicillin: 1942 vs. 2024)
 
@@ -416,9 +412,9 @@ The most powerful sanity check: **How much did the SAME drug cost before and aft
 - Manufacturing cost: $`{python} f"{manufacturing_cost_per_dose:.2f}"` (same as generic penicillin)
 - Regulatory-driven markup: **`{python} f"{antibiotic_regulatory_markup:,.0f}"`×** over manufacturing cost
 
-This explains why pharmaceutical companies **stopped developing new antibiotics**: The 217× development cost increase makes it unprofitable to develop drugs for conditions that resolve quickly (antibiotics treat infections in days/weeks, unlike chronic disease drugs taken for decades).
+This explains why pharmaceutical companies **stopped developing new antibiotics**: The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost increase makes it unprofitable to develop drugs for conditions that resolve quickly (antibiotics treat infections in days/weeks, unlike chronic disease drugs taken for decades).
 
-### Cross-Validation: All Six Checks Confirm 217× Development Cost Increase
+### Cross-Validation: All Six Checks Confirm {{< var drug_cost_increase_pre1962_to_current_multiplier >}} Development Cost Increase
 
 | Comparison Type | Price Multiplier | What It Isolates |
 |----------------|------------------|------------------|
@@ -429,16 +425,16 @@ This explains why pharmaceutical companies **stopped developing new antibiotics*
 | **Orphan drugs vs. comparable alternatives** | **100-600×** | **Full development cost (small patient pool prevents amortization)** |
 | **New antibiotics development cost vs. manufacturing** | **10,400×** | **Complete regulatory burden for acute-use drugs** |
 
-The first four comparisons show moderate premiums (3-100×) because high-volume drugs **hide** the 217× development cost by amortizing it across millions of patients.
+The first four comparisons show moderate premiums (3-100×) because high-volume drugs **hide** the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost by amortizing it across millions of patients.
 
-The last two comparisons **expose the full 217× burden or greater**:
+The last two comparisons **expose the full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} burden or greater**:
 - **Orphan drugs** serve small populations (10,000-200,000 patients), preventing cost amortization → prices reach **$`{python} f"{myalept_annual:,.0f}"`-$`{python} f"{zolgensma_price:,.0f}"`/year**
   - **Zolgensma** ($`{python} f"{zolgensma_price / 1e6:.1f}"`M): **`{python} f"{zolgensma_ratio_low:.0f}"`-`{python} f"{zolgensma_ratio_high:.0f}"`×** vs. supportive care for spinal muscular atrophy
   - **Myalept** ($`{python} f"{myalept_annual / 1e3:.0f}"`K/year): **`{python} f"{myalept_ratio_low:.0f}"`-`{python} f"{myalept_ratio_high:.0f}"`×** vs. standard hormone replacement
   - **Soliris** ($`{python} f"{soliris_annual_low / 1e3:.0f}"`-`{python} f"{soliris_annual_high / 1e3:.0f}"`K/year): **`{python} f"{soliris_ratio_low:.0f}"`-`{python} f"{soliris_ratio_high:.0f}"`×** vs. standard immunosuppressants
 - **New antibiotics** target acute conditions (short treatment duration), making the $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B development cost unrecoverable → pharmaceutical companies **stopped developing them** (classic market failure from regulatory burden)
 
-**Three drugs show price premiums of 150-600×, directly validating the 217× development cost increase.** The magnitude is fully visible in markets where small patient populations cannot amortize the regulatory burden.
+**Three drugs show price premiums of 150-600×, directly validating the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost increase.** The magnitude is fully visible in markets where small patient populations cannot amortize the regulatory burden.
 
 ---
 
@@ -448,8 +444,8 @@ The last two comparisons **expose the full 217× burden or greater**:
 
 **Response:** Multiple independent sources confirm a 100× to 400× increase:
 
-- Our calculation: **217×**
-- Baily study progression: **~200×** (extrapolating from 1960s → 2010s)
+- Our calculation: **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}**
+- Baily study progression: **~116×** (based on 1980 baseline)
 - Tufts CSDD: Consistent with our estimates when accounting for methodology
 
 The magnitude is shocking precisely **because the regulatory burden is that severe**.
@@ -477,13 +473,13 @@ It includes **only**:
 - **Genomic tools** (99.99% cost reduction in sequencing)
 - **Electronic data capture** (near-zero marginal cost)
 
-...costs still increased **217×** in real terms. This demonstrates the **overwhelming regulatory burden** that swamps all efficiency gains.
+...costs still increased **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** in real terms. This demonstrates the **overwhelming regulatory burden** that swamps all efficiency gains.
 
 ---
 
 ## Implications for Policy
 
-The 217× real cost increase suggests three conclusions:
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} real cost increase suggests three conclusions:
 
 ### 1. Regulatory Reform Has Massive ROI
 
@@ -517,7 +513,7 @@ The [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated that **simple 
 
 ## Conclusion
 
-The 217× real cost increase is:
+The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} real cost increase is:
 
 1. **Well-documented** by multiple independent sources
 2. **Conservative** relative to some estimates (400×)

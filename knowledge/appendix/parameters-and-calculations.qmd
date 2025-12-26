@@ -1078,24 +1078,24 @@ $$
 
 :::
 
-### Drug Cost Increase: Pre-1962 to Current: 217 ratio {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+### Drug Cost Increase: Pre-1962 to Current: 116 ratio {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
+Drug development cost increase from pre-1962 to current ($22.5M → $2.6B = 116×)
 
 **Inputs**:
 
 - [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
-- [Pre-1962 Drug Development Cost (Inflation-Adjusted)](#sec-pre_1962_drug_development_cost) 📊: $12M (95% CI: $10M - $15M)
+- [Pre-1962 Drug Development Cost (Inflation-Adjusted)](#sec-pre_1962_drug_development_cost) 📊: $22.5M (95% CI: $18M - $28M)
 
 $$
-Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$12.0M} = 216.67
+Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$22.5M} = 115.56
 $$
 
-**Methodology**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline (Think by Numbers)](../references.qmd#pre-1962-drug-costs-timeline)
+**Methodology**: [Baily, Martin Neil (1972) - Pre-1962 drug development costs (Baily 1972)](../references.qmd#pre-1962-drug-costs-baily-1972)
 
-*~ Medium confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
@@ -5522,19 +5522,19 @@ Percentage military spending cut after WW2 (historical precedent)
 
 :::
 
-### Pre-1962 Drug Development Cost (Inflation-Adjusted): $12M {#sec-pre_1962_drug_development_cost}
+### Pre-1962 Drug Development Cost (Inflation-Adjusted): $22.5M {#sec-pre_1962_drug_development_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)
+Pre-1962 drug development cost ($6.5M in 1980 dollars = $22.5M in 2024 dollars, CPI-adjusted)
 
-**Source**: [Congressional Record (1977) - Pre-1962 drug development costs (Congressional testimony)](../references.qmd#pre-1962-drug-costs-congressional-testimony)
+**Source**: [Baily, Martin Neil (1972) - Pre-1962 drug development costs (Baily 1972)](../references.qmd#pre-1962-drug-costs-baily-1972)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $15M] • Distribution: Lognormal
+**Technical**: 95% CI: [$18M, $28M] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $10M and $15M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $18M and $28M (±22%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5542,7 +5542,7 @@ Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CP
 
 {{< include ../figures/distribution-pre_1962_drug_development_cost.qmd >}}
 
-*✓ High confidence*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 

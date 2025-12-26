@@ -725,13 +725,13 @@
 "drug_cost_increase_1980s_to_current_multiplier_latex": "$$\nMultiplier_{curr} = \\\
   frac{Cost_{curr}}{Cost_{80s}} = \\frac{\\$2.60B}{\\$194.0M} = 13.4\n$$"
 "drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_pre1962_to_current_multiplier\"\
-  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
-  calculated\" data-confidence=\"medium\" title=\"Drug development cost increase from\
-  \ pre-1962 to current ($50M → $2.6B = 52x) | Calculated from 2 inputs | ~ Medium\
+  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-baily-1972\" data-source-type=\"\
+  calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
+  \ pre-1962 to current ($22.5M → $2.6B = 116×) | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST\
-  \ | Unit: ratio | Click to view details, calculation & sources\">217</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">116</a>"
 "drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\nMultiplier_{curr} =\
-  \ \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$12.0M} = 216.67\n$$"
+  \ \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$22.5M} = 115.56\n$$"
 "drug_development_cost_1980s": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_development_cost_1980s\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
@@ -1659,12 +1659,12 @@
   \ | Click to view details, calculation & sources\">30%</a>"
 "post_ww2_military_cut_pct_cite": "@us-post-wwii-military-spending-cut"
 "pre_1962_drug_development_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pre_1962_drug_development_cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-congressional-testimony\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Pre-1962 drug development\
-  \ cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted) | ✓ High confidence\
-  \ | 95% CI: [$10M, $15M] | Dist: Lognormal | Unit: USD | Click to view details,\
-  \ calculation & sources\">$12M</a>"
-"pre_1962_drug_development_cost_cite": "@pre-1962-drug-costs-congressional-testimony"
+  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-baily-1972\" data-source-type=\"\
+  external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Pre-1962\
+  \ drug development cost ($6.5M in 1980 dollars = $22.5M in 2024 dollars, CPI-adjusted)\
+  \ | ✓ High confidence | \U0001F4CA Peer-reviewed | 95% CI: [$18M, $28M] | Dist:\
+  \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$22.5M</a>"
+"pre_1962_drug_development_cost_cite": "@pre-1962-drug-costs-baily-1972"
 "pre_1962_physician_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pre_1962_physician_count\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-physician-trials\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Estimated physicians conducting real-world\
