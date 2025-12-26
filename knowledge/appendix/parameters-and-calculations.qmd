@@ -15,20 +15,86 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 331
+**Total parameters**: 336
 
-- External sources (peer-reviewed): 133
-- Calculated values: 105
+- External sources (peer-reviewed): 135
+- Calculated values: 108
 - Core definitions: 93
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (105 parameters) • [External Data Sources](#sec-external) (133 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+[Calculated Values](#sec-calculated) (108 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Clinical Trial Cost Per Approved Drug: $0 {#sec-clinical_trial_cost_per_approved_drug}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year) 📊: 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
+
+$$
+\text{Cost/Drug} = \frac{\$60B}{50} = \$1.2B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-clinical_trial_cost_per_approved_drug.qmd >}}
+
+{{< include ../figures/sensitivity-table-clinical_trial_cost_per_approved_drug.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-clinical_trial_cost_per_approved_drug.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-clinical_trial_cost_per_approved_drug.qmd >}}
+
+:::
+
+### Annual Cost Per Clinical Trial Participant: $0 {#sec-clinical_trial_cost_per_participant_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
+
+$$
+\text{Cost/Participant} = \frac{\$60B}{1.9M} = \$31{,}579
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-clinical_trial_cost_per_participant_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-clinical_trial_cost_per_participant_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-clinical_trial_cost_per_participant_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-clinical_trial_cost_per_participant_annual.qmd >}}
+
+:::
 
 ### Combined Peace and Health Dividends for ROI Calculation: $144B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
@@ -992,7 +1058,7 @@ $$
 Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{80s}} = \frac{\$2.60B}{\$194.0M} = 13.4
 $$
 
-**Methodology**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline](../references.qmd#pre-1962-drug-costs-timeline)
+**Methodology**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline (Think by Numbers)](../references.qmd#pre-1962-drug-costs-timeline)
 
 *✓ High confidence*
 
@@ -1012,7 +1078,7 @@ $$
 
 :::
 
-### Drug Cost Increase: Pre-1962 to Current: 52 ratio {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+### Drug Cost Increase: Pre-1962 to Current: 217 ratio {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1021,13 +1087,13 @@ Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
 **Inputs**:
 
 - [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
-- [Pre-1962 Drug Development Cost](#sec-pre_1962_drug_development_cost) 📊: $50M (95% CI: $10M - $50M)
+- [Pre-1962 Drug Development Cost (Inflation-Adjusted)](#sec-pre_1962_drug_development_cost) 📊: $12M (95% CI: $10M - $15M)
 
 $$
-Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$50.0M} = 52
+Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$12.0M} = 216.67
 $$
 
-**Methodology**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline](../references.qmd#pre-1962-drug-costs-timeline)
+**Methodology**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline (Think by Numbers)](../references.qmd#pre-1962-drug-costs-timeline)
 
 *~ Medium confidence*
 
@@ -1920,6 +1986,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-medical_research_pct_of_disease_burden.qmd >}}
+
+:::
+
+### Ratio of Military to Clinical Trials Spending: 0 ratio {#sec-military_to_clinical_trials_spending_ratio}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+
+$$
+\text{Ratio} = \frac{\$2.7T}{\$60B} = 45\times
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_to_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_to_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_to_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_to_clinical_trials_spending_ratio.qmd >}}
 
 :::
 
@@ -3929,6 +4028,18 @@ Average annual new drug approvals globally
 
 **Source**: [C&EN (2025) - Annual number of new drugs approved globally: ~50](../references.qmd#global-new-drug-approvals-50-annually)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45 drugs/year, 60 drugs/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 45 drugs/year and 60 drugs/year (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_drug_approvals_per_year.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -4023,7 +4134,7 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 
 Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
-**Source**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline](../references.qmd#pre-1962-drug-costs-timeline)
+**Source**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline (Think by Numbers)](../references.qmd#pre-1962-drug-costs-timeline)
 
 #### Uncertainty Range
 
@@ -4973,6 +5084,40 @@ Global military spending in 2024
 
 :::
 
+### Annual Global Nonprofit Spending on Clinical Trials: $3.50B {#sec-global_nonprofit_clinical_trials_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)
+
+**Source**: [Estimated from major foundation budgets and activities - Nonprofit clinical trial funding estimate](../references.qmd#nonprofit-clinical-trial-spending-estimate)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2B, $5B]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $2B and $5B (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_nonprofit_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Global Pharmaceutical R&D Spending: $300B {#sec-global_pharma_rd_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)
+
+**Source**: [Industry reports: IQVIA - Global pharmaceutical R&D spending](../references.qmd#global-pharma-rd-spending-300b)
+
+*✓ High confidence*
+
+:::
+
 ### Global Population in 2024: 8.00B of people {#sec-global_population_2024}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -5377,19 +5522,19 @@ Percentage military spending cut after WW2 (historical precedent)
 
 :::
 
-### Pre-1962 Drug Development Cost: $50M {#sec-pre_1962_drug_development_cost}
+### Pre-1962 Drug Development Cost (Inflation-Adjusted): $12M {#sec-pre_1962_drug_development_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
+Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)
 
-**Source**: [Think by Numbers (1962) - Pre-1962 drug development costs and timeline](../references.qmd#pre-1962-drug-costs-timeline)
+**Source**: [Congressional Record (1977) - Pre-1962 drug development costs (Congressional testimony)](../references.qmd#pre-1962-drug-costs-congressional-testimony)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $50M] • Distribution: Lognormal
+**Technical**: 95% CI: [$10M, $15M] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $50M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $10M and $15M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5397,7 +5542,7 @@ Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
 
 {{< include ../figures/distribution-pre_1962_drug_development_cost.qmd >}}
 
-*~ Medium confidence*
+*✓ High confidence*
 
 :::
 

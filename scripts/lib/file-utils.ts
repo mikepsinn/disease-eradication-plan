@@ -789,7 +789,7 @@ export function replaceQuartoVariables(
 
 /**
  * Clean Quarto/Markdown content for LLM processing
- * Strips includes, simplifies links, removes HTML tags, removes chapter references
+ * Removes document markup, navigation, and structural elements to leave only core content
  * @param content Raw QMD content
  * @returns Cleaned content suitable for LLM
  */
@@ -799,23 +799,46 @@ export function cleanContentForLLM(content: string): string {
   // 1. Remove Quarto includes (e.g., {{< include /path/to/file.qmd >}})
   cleaned = cleaned.replace(/\{\{<\s*include\s+[^>]+>\}\}/gi, '');
 
-  // 2. Strip HTML tags (keep the text inside)
+  // 2. Remove Quarto shortcodes except variables (video, embed, etc.)
+  // Preserves {{< var name >}} but removes {{< video ... >}}, {{< embed ... >}}, etc.
+  cleaned = cleaned.replace(/\{\{<\s*(?!var\s)[^>]+>\}\}/gi, '');
+
+  // 3. Remove callout block fences but keep content
+  // Removes ::: {.callout-note} and ::: but keeps the text between them
+  cleaned = cleaned.replace(/^:::\s*\{[^}]*\}\s*$/gm, '');
+  cleaned = cleaned.replace(/^:::\s*$/gm, '');
+
+  // 4. Remove image references completely (they're output, not input for LLM)
+  // Matches: ![alt text](url) or ![alt text]
+  cleaned = cleaned.replace(/!\[([^\]]*)\](?:\([^)]*\))?/g, '');
+
+  // 5. Strip HTML tags and comments (keep the text inside tags)
+  cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, ''); // Remove comments first
   cleaned = cleaned.replace(/<[^>]+>/g, '');
 
-  // 3. Simplify markdown links: [text](url) -> text
+  // 6. Simplify markdown links: [text](url) -> text
+  // Keep the linked text as it's often meaningful content
   cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 
-  // 4. Remove citation syntax: [@citation] -> citation
+  // 7. Remove citation syntax: [@citation] -> citation
   cleaned = cleaned.replace(/\[@([^\]]+)\]/g, '$1');
 
-  // 5. Remove sentences mentioning "chapter" or "chapters" (case-insensitive)
-  // Matches sentences containing the word "chapter" and removes them
+  // 8. Remove sentences mentioning "chapter" or "chapters" (navigation references)
   cleaned = cleaned.replace(/[^.!?]*\bchapters?\b[^.!?]*[.!?]\s*/gi, '');
 
-  // 6. Remove excessive blank lines (more than 2 consecutive newlines)
+  // 9. Remove list items with "Chapter X:" references (after links are simplified)
+  cleaned = cleaned.replace(/^[-*]\s+Chapter \d+:[^\n]*/gm, '');
+
+  // 10. Remove "See also:", "Read more:", etc. patterns (navigation helpers)
+  cleaned = cleaned.replace(/^[-*]?\s*(See also|Read more|For more details|Learn more|Further reading):[^\n]*/gmi, '');
+
+  // 11. Remove table of contents patterns (links to anchors on same page)
+  cleaned = cleaned.replace(/^[-*]\s*\[.*?\]\(#.*?\).*$/gm, '');
+
+  // 12. Remove excessive blank lines (more than 2 consecutive newlines)
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
-  // 7. Trim whitespace
+  // 13. Trim whitespace
   cleaned = cleaned.trim();
 
   return cleaned;

@@ -1199,7 +1199,9 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     description="Average annual new drug approvals globally",
     display_name="Average Annual New Drug Approvals Globally",
     unit="drugs/year",
-    keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "earth"]
+    keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "earth"],
+    distribution="lognormal",  # Count data with right skew
+    confidence_interval=(45, 60),  # FDA approval rate varies 45-60/year
 )  # FDA ~50-55/year
 
 # Historical FDA/Drug Development Parameters
@@ -1269,17 +1271,18 @@ PRE_1962_PHYSICIAN_COUNT = Parameter(
 )  # Note: Specific "144,000 physicians" figure not verified in sources; AMA opposed amendments but no count documented
 
 PRE_1962_DRUG_DEVELOPMENT_COST = Parameter(
-    50_000_000,
-    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    12_000_000,
+    source_ref="pre-1962-drug-costs-congressional-testimony",
     source_type="external",
-    description="Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)",
-    display_name="Pre-1962 Drug Development Cost",
+    description="Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)",
+    display_name="Pre-1962 Drug Development Cost (Inflation-Adjusted)",
     unit="USD",
-    confidence="medium",
-    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation"],
-    distribution="lognormal",  # Cost data with right skew; historical estimates vary widely
-    confidence_interval=(10_000_000, 50_000_000),  # Documented range $10M-$50M
-)  # Documented range was $10-50M; using upper bound
+    confidence="high",
+    peer_reviewed=False,  # Congressional testimony, not peer-reviewed
+    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation", "1962", "congressional"],
+    distribution="lognormal",
+    confidence_interval=(10_000_000, 15_000_000),  # ±25% for CPI adjustment uncertainty
+)  # Congressional Record 1977: $1.2M (1962 dollars) × ~10× CPI multiplier = $12M (2024 dollars)
 
 CURRENT_ACTIVE_TRIALS = Parameter(
     10000,

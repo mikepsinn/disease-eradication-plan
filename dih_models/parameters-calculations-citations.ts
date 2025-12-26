@@ -236,6 +236,7 @@ export const CURRENT_DRUG_APPROVALS_PER_YEAR: Parameter = {
   sourceType: "external",
   sourceRef: "global-new-drug-approvals-50-annually",
   confidence: "high",
+  confidenceInterval: [45.0, 60.0],
 };
 
 export const CURRENT_TRIALS_PER_YEAR: Parameter = {
@@ -1081,14 +1082,14 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
 };
 
 export const PRE_1962_DRUG_DEVELOPMENT_COST: Parameter = {
-  value: 50000000.0,
+  value: 12000000.0,
   unit: "USD",
-  displayName: "Pre-1962 Drug Development Cost",
-  description: "Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)",
+  displayName: "Pre-1962 Drug Development Cost (Inflation-Adjusted)",
+  description: "Pre-1962 drug development cost ($1.2M in 1962 dollars = $12M in 2024 dollars, CPI-adjusted)",
   sourceType: "external",
-  sourceRef: "pre-1962-drug-costs-timeline",
-  confidence: "medium",
-  confidenceInterval: [10000000.0, 50000000.0],
+  sourceRef: "pre-1962-drug-costs-congressional-testimony",
+  confidence: "high",
+  confidenceInterval: [10000000.0, 15000000.0],
 };
 
 export const PRE_1962_PHYSICIAN_COUNT: Parameter = {
@@ -1860,7 +1861,7 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
 };
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
-  value: 52.0,
+  value: 216.66666666666666,
   unit: "ratio",
   displayName: "Drug Cost Increase: Pre-1962 to Current",
   description: "Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)",
@@ -4776,7 +4777,7 @@ export const citations: Record<string, Citation> = {
   "life-expectancy-increase-pre-1962": {
         id: "life-expectancy-increase-pre-1962",
         type: "webpage",
-        title: "US life expectancy growth 1880-1960: ~4 years per decade",
+        title: "US life expectancy growth 1880-1960: 3.82 years per decade",
         author: [
           {
             literal: "Source: US Life Expectancy FDA Budget 1543-2019 CSV"
@@ -5015,10 +5016,24 @@ export const citations: Record<string, Citation> = {
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Kefauver-Harris Amendment | PMC: Lost Medicines",
   },
+  "pre-1962-drug-costs-congressional-testimony": {
+        id: "pre-1962-drug-costs-congressional-testimony",
+        type: "webpage",
+        title: "Pre-1962 drug development costs (Congressional testimony)",
+        author: [
+          {
+            literal: "Congressional Record"
+          },
+        ],
+        issued: { 'date-parts': [[1977]] },
+        publisher: "Congressional Record",
+        URL: "https://www.congress.gov/95/crecb/1977/04/21/GPO-CRECB-1977-pt10-2-3.pdf",
+        note: "Congressional Record, April 21, 1977",
+  },
   "pre-1962-drug-costs-timeline": {
         id: "pre-1962-drug-costs-timeline",
         type: "article-journal",
-        title: "Pre-1962 drug development costs and timeline",
+        title: "Pre-1962 drug development costs and timeline (Think by Numbers)",
         author: [
           {
             literal: "Think by Numbers"
@@ -5416,7 +5431,7 @@ export const PARAMETER_STATS = {
   external: 135,
   calculated: 108,
   definitions: 93,
-  citations: 102,
+  citations: 103,
 } as const;
 
 // ============================================================================
