@@ -7,11 +7,11 @@ tags:
   - participants
   - statistics
   - data-gap
-image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og.png
+image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro.png
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![Infographic](/assets/infographics/knowledge/appendix/clinical-trial-participants-infographic.png)
+![Infographic](/assets/infographics/knowledge/appendix/clinical-trial-participants-infographic-retro.png)
 
 
 Humanity spends {{< var global_clinical_trials_spending_annual >}} a year on [clinical trials](../references.qmd#industry-clinical-trial-spending-estimate). Here are the actual enrollment numbers:
