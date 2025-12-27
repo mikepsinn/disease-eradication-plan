@@ -33,6 +33,13 @@ book:
         href: knowledge/appendix/wishocracy-paper.qmd
       - text: "References"
         href: knowledge/references.qmd
+      - icon: file-pdf
+        text: "Download Book"
+        menu:
+          - text: "PDF"
+            href: /How-to-End-War-and-Disease.pdf
+          - text: "EPUB"
+            href: /How-to-End-War-and-Disease.epub
       - text: "VOTE"
         href: https://DIH.earth
   sidebar:
@@ -324,6 +331,11 @@ format:
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong> 
+              <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">📕 PDF</a> |
+              <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">📱 EPUB</a>
+            </p>
           </div>
     include-after-body:
       - text: |
@@ -342,6 +354,11 @@ format:
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong> 
+              <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">📕 PDF</a> |
+              <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">📱 EPUB</a>
             </p>
           </footer>
       - text: |
@@ -402,6 +419,7 @@ format:
           <meta property="og:url" content="https://manual.WarOnDisease.org">
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
+    output-file: "How-to-End-War-and-Disease.epub"
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.png
     # Math rendering: Use webtex to convert LaTeX to images (works in all e-readers, including Kindle)
@@ -495,6 +513,7 @@ format:
     # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
     # corruption issues with large documents (900+ pages, 81 files, complex TOC)
     # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
+    output-file: "How-to-End-War-and-Disease.pdf"
     documentclass: report
     echo: false
     toc: true

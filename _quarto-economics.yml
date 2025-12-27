@@ -49,6 +49,8 @@ project:
     - knowledge/appendix/regulatory-mortality-analysis.qmd
     - knowledge/appendix/command-and-control-systems.qmd
     - knowledge/appendix/recovery-trial.qmd
+    - knowledge/appendix/drug-development-cost-analysis.qmd
+    - knowledge/appendix/real-world-evidence-historical-success.qmd
     # Detailed Calculations
     - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
     - knowledge/appendix/peace-dividend-calculations.qmd # ✓ Style reviewed 2025-01-15
@@ -211,6 +213,10 @@ website:
             text: "Clinical Trial Participation Rates"
           - href: knowledge/appendix/recovery-trial.qmd
             text: "RECOVERY Trial Case Study"
+          - href: knowledge/appendix/drug-development-cost-analysis.qmd
+            text: "Drug Development Cost Analysis"
+          - href: knowledge/appendix/real-world-evidence-historical-success.qmd
+            text: "Real-World Evidence Historical Success"
           - href: knowledge/appendix/data-storage-costs.qmd
             text: "Data Infrastructure Costs"
           - href: knowledge/appendix/regulatory-mortality-analysis.qmd
@@ -336,6 +342,10 @@ format:
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong> 
+              <a href="/economics/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
+            </p>
           </div>
     include-after-body:
       - text: |
@@ -354,6 +364,10 @@ format:
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong> 
+              <a href="/economics/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </footer>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
