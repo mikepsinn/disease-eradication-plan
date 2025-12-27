@@ -206,28 +206,29 @@ async function generateImageForFile(
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
-  // Check if image files already exist on disk (both retro and academic versions)
-  const ogImageFileRetro = path.join(ogOutputDir, `${fileName}-og-retro.png`);
-  const ogImageFileAcademic = path.join(ogOutputDir, `${fileName}-og-academic.png`);
-  const infographicImageFileRetro = path.join(infographicOutputDir, `${fileName}-infographic-retro.png`);
-  const infographicImageFileAcademic = path.join(infographicOutputDir, `${fileName}-infographic-academic.png`);
-  const slideImageFileRetro = path.join(slideOutputDir, `${fileName}-slide-retro.png`);
-  const slideImageFileAcademic = path.join(slideOutputDir, `${fileName}-slide-academic.png`);
+  // Check which styles already have images
+  const styleExistence: Record<string, { og: boolean; infographic: boolean; slide: boolean }> = {};
 
-  const hasOgImageRetro = await fs.access(ogImageFileRetro).then(() => true).catch(() => false);
-  const hasOgImageAcademic = await fs.access(ogImageFileAcademic).then(() => true).catch(() => false);
-  const hasInfographicRetro = await fs.access(infographicImageFileRetro).then(() => true).catch(() => false);
-  const hasInfographicAcademic = await fs.access(infographicImageFileAcademic).then(() => true).catch(() => false);
-  const hasSlideRetro = await fs.access(slideImageFileRetro).then(() => true).catch(() => false);
-  const hasSlideAcademic = await fs.access(slideImageFileAcademic).then(() => true).catch(() => false);
+  for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
+    const suffix = styleConfig.suffix;
+    const ogImageFile = path.join(ogOutputDir, `${fileName}-og${suffix}.png`);
+    const infographicImageFile = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.png`);
+    const slideImageFile = path.join(slideOutputDir, `${fileName}-slide${suffix}.png`);
 
-  const hasOgImage = hasOgImageRetro && hasOgImageAcademic;
-  const hasInfographic = hasInfographicRetro && hasInfographicAcademic;
-  const hasSlide = hasSlideRetro && hasSlideAcademic;
+    styleExistence[styleName] = {
+      og: await fs.access(ogImageFile).then(() => true).catch(() => false),
+      infographic: await fs.access(infographicImageFile).then(() => true).catch(() => false),
+      slide: await fs.access(slideImageFile).then(() => true).catch(() => false),
+    };
+  }
 
-  // Skip if already has all images in both styles (unless forceRegenerate is true)
-  if (!forceRegenerate && hasOgImage && hasInfographic && hasSlide) {
-    console.log(`[SKIP] Already has all images in both styles (OG, infographic, slide)`);
+  // Skip if ALL styles have ALL images (unless forceRegenerate is true)
+  const allStylesComplete = Object.values(styleExistence).every(
+    style => style.og && style.infographic && style.slide
+  );
+
+  if (!forceRegenerate && allStylesComplete) {
+    console.log(`[SKIP] Already has all images in all ${Object.keys(VisualStyles).length} styles`);
     return;
   }
 
@@ -235,15 +236,15 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Generate images in both styles (retro + academic)
+  // Generate images in all styles
   for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
     const suffix = styleConfig.suffix;
     console.log(`\n  --- ${styleConfig.description.toUpperCase()} STYLE ---`);
 
     // Check if this specific style version exists
-    const hasThisStyleOg = styleName === 'retro' ? hasOgImageRetro : hasOgImageAcademic;
-    const hasThisStyleInfographic = styleName === 'retro' ? hasInfographicRetro : hasInfographicAcademic;
-    const hasThisStyleSlide = styleName === 'retro' ? hasSlideRetro : hasSlideAcademic;
+    const hasThisStyleOg = styleExistence[styleName].og;
+    const hasThisStyleInfographic = styleExistence[styleName].infographic;
+    const hasThisStyleSlide = styleExistence[styleName].slide;
 
     // Generate OG image (optimized for social media thumbnails)
     if (!hasThisStyleOg || forceRegenerate) {
@@ -335,39 +336,23 @@ async function generateImageForFile(
     let updatedBody = body;
     const updatedFrontmatter = { ...frontmatter };
 
-    // Check if user has manually set an academic style preference
-    const hasAcademicOgImage = frontmatter.image && frontmatter.image.includes('-academic.png');
-    const hasAcademicInfographic = body.includes('-infographic-academic.png');
-
-    // Add OG image to frontmatter (respect existing style choice)
+    // Add OG image to frontmatter (defaults to retro style)
     if (ogImagePath) {
       // Only update if not already set or if we should update
       if (!frontmatter.image || forceRegenerate) {
-        // Use academic style if user has that preference, otherwise default to retro
-        const preferredOgPath = hasAcademicOgImage
-          ? ogImagePath.replace('-retro.png', '-academic.png')
-          : ogImagePath;
-        updatedFrontmatter.image = `/${preferredOgPath}`;
+        // Default to retro unless user has set a different style
+        updatedFrontmatter.image = `/${ogImagePath}`;
       }
     }
 
     // Insert infographic at top of content (after setup-parameters include)
     if (infographicImagePath) {
-      // Check if infographic reference already exists in the body
-      const infographicPatternRetro = `${fileName}-infographic-retro.png`;
-      const infographicPatternAcademic = `${fileName}-infographic-academic.png`;
-      const hasExistingInfographic = updatedBody.includes(infographicPatternRetro) ||
-                                     updatedBody.includes(infographicPatternAcademic);
+      // Check if any infographic reference already exists in the body
+      const hasExistingInfographic = body.includes(`${fileName}-infographic-`);
 
       if (!hasExistingInfographic) {
         const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
-
-        // Use academic style if user has that preference, otherwise default to retro
-        const preferredInfographicPath = hasAcademicInfographic
-          ? infographicImagePath.replace('-retro.png', '-academic.png')
-          : infographicImagePath;
-
-        const infographicMarkdown = `![Infographic](/${preferredInfographicPath})`;
+        const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
 
         // Find the include directive and insert infographic after it
         if (updatedBody.includes(includeDirective)) {

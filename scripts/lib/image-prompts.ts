@@ -8,7 +8,7 @@
  */
 export const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.`;
 
-export const ACADEMIC_STYLE = `Use a professional black and white academic style.`;
+export const ACADEMIC_STYLE = `Use a retro scientific black and white academic style.`;
 
 /**
  * Text legibility requirements based on Gemini 3 Pro Image best practices
@@ -48,7 +48,7 @@ ${content}
  * Generate presentation slide prompt (PowerPoint-optimized)
  */
 export function buildSlidePrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
-  return `Please generate a simple PowerPoint presentation slide for the following content.
+  return `Please generate a presentation slide to graphically illustrate the following content.
 ${style}
 ${TEXT_LEGIBILITY_RULES}
 

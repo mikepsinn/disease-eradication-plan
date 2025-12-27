@@ -63,9 +63,21 @@ Diseases cured: Zero.
 
 Well, technically that's not fair. They cured... let me check my notes... no, it's zero.
 
-To be clear, they've learned lots of interesting things about how diseases work. They just haven't gotten around to the part where people stop dying from them. It's like spending fifty years studying how cars work without ever actually driving anywhere (you just publish papers about theoretical carburetor optimization while everyone walks to work).
+Here's where it gets interesting. The NIH has a $51 billion annual budget. Of that, only 3.3% goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, training researchers, and publishing papers nobody reads.
 
-The NIH tests about 5,000 treatment combinations per year. There are 166 billion possible combinations. At this rate, they'll be done by the year 33,200,000. Mark your calendars (use pencil, timelines may shift due to budget constraints and the eventual heat death of the universe).
+It's like if you spent 97% of your grocery budget on cookbooks and 3% on food, then wondered why you're starving.
+
+But it gets worse. The NIH RECOVER Initiative spent $1.665 billion over four years testing COVID treatments. Trials completed: zero. Cost per patient: $55,500.
+
+Meanwhile, the UK's RECOVERY trial spent $20 million over six months, enrolled 48,000 patients, found multiple effective treatments, and saved over 1 million lives. Cost per patient: {{< var recovery_trial_cost_per_patient >}}.
+
+The NIH spent 133 times more per patient to achieve infinitely less (dividing by zero is still infinity, even in government accounting).
+
+This inefficiency has a body count. The misallocation costs approximately 100 million quality-adjusted life-years annually. That's 7 million death-equivalents per year from choosing the wrong research instead of the right research.
+
+The system is operating at 2% of its potential capacity to save lives.
+
+Also, NIH funding priorities have a 0.07 correlation with actual disease burden. That's essentially random. You could allocate the budget by throwing darts at a disease list and get better results (darts don't have institutional overhead or grant-writing requirements).
 
 ## On the FDA
 
