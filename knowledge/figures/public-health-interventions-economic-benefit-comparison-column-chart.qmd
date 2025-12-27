@@ -81,7 +81,7 @@ ax.text(x_pos, total_benefit + 3, f'${total_benefit:.1f}B\ntotal',
 
 # Add title
 
-ax.set_title('Gross Annual Economic Benefit of a 1% treaty and decentralized framework for drug assessment', fontsize=18, color=COLOR_BLACK, weight='bold', pad=20)
+ax.set_title('Gross Annual Economic Benefit of a 1% Treaty and Decentralized Drug Assessment Framework', fontsize=18, color=COLOR_BLACK, weight='bold', pad=20)
 
 # Add annotations
 

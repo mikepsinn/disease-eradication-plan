@@ -102,6 +102,35 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
         if ref_data and ref_data.get('title'):
             # Create proper BibTeX entry with real data
             entry_type = ref_data.get('type', 'misc')
+            
+            # Sanitize entry type: map multi-word types to valid BibTeX types
+            # BibTeX entry types cannot contain spaces
+            entry_type_map = {
+                'government document': 'techreport',
+                'government report': 'techreport',
+                'technical report': 'techreport',
+                'conference paper': 'inproceedings',
+                'journal article': 'article',
+                'book chapter': 'incollection',
+                'phd thesis': 'phdthesis',
+                'masters thesis': 'mastersthesis',
+                'web page': 'misc',
+                'blog post': 'misc',
+            }
+            entry_type = entry_type_map.get(entry_type.lower(), entry_type)
+            
+            # Remove any remaining spaces (fallback)
+            entry_type = entry_type.replace(' ', '')
+            
+            # Ensure it's a valid BibTeX type (fallback to misc if unknown)
+            valid_types = {
+                'article', 'book', 'booklet', 'conference', 'inbook', 
+                'incollection', 'inproceedings', 'manual', 'mastersthesis',
+                'misc', 'phdthesis', 'proceedings', 'techreport', 'unpublished'
+            }
+            if entry_type.lower() not in valid_types:
+                entry_type = 'misc'
+            
             title = ref_data.get('title', citation_key)
             author = ref_data.get('author', '')
             year = ref_data.get('year', 'n.d.')
