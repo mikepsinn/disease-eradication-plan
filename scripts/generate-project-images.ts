@@ -16,7 +16,7 @@ import {
   getCleanedContentForLLM,
   extractReferenceImages
 } from './lib/file-utils.js';
-import { ImagePrompts } from './lib/image-prompts.js';
+import { ImagePrompts, VisualStyles, VisualStyleName } from './lib/image-prompts.js';
 
 // Load environment variables
 dotenv.config();
@@ -206,18 +206,28 @@ async function generateImageForFile(
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
-  // Check if image files already exist on disk
-  const ogImageFile = path.join(ogOutputDir, `${fileName}-og.png`);
-  const infographicImageFile = path.join(infographicOutputDir, `${fileName}-infographic.png`);
-  const slideImageFile = path.join(slideOutputDir, `${fileName}-slide.png`);
+  // Check if image files already exist on disk (both retro and academic versions)
+  const ogImageFileRetro = path.join(ogOutputDir, `${fileName}-og-retro.png`);
+  const ogImageFileAcademic = path.join(ogOutputDir, `${fileName}-og-academic.png`);
+  const infographicImageFileRetro = path.join(infographicOutputDir, `${fileName}-infographic-retro.png`);
+  const infographicImageFileAcademic = path.join(infographicOutputDir, `${fileName}-infographic-academic.png`);
+  const slideImageFileRetro = path.join(slideOutputDir, `${fileName}-slide-retro.png`);
+  const slideImageFileAcademic = path.join(slideOutputDir, `${fileName}-slide-academic.png`);
 
-  const hasOgImage = await fs.access(ogImageFile).then(() => true).catch(() => false);
-  const hasInfographic = await fs.access(infographicImageFile).then(() => true).catch(() => false);
-  const hasSlide = await fs.access(slideImageFile).then(() => true).catch(() => false);
+  const hasOgImageRetro = await fs.access(ogImageFileRetro).then(() => true).catch(() => false);
+  const hasOgImageAcademic = await fs.access(ogImageFileAcademic).then(() => true).catch(() => false);
+  const hasInfographicRetro = await fs.access(infographicImageFileRetro).then(() => true).catch(() => false);
+  const hasInfographicAcademic = await fs.access(infographicImageFileAcademic).then(() => true).catch(() => false);
+  const hasSlideRetro = await fs.access(slideImageFileRetro).then(() => true).catch(() => false);
+  const hasSlideAcademic = await fs.access(slideImageFileAcademic).then(() => true).catch(() => false);
 
-  // Skip if already has all images (unless forceRegenerate is true)
+  const hasOgImage = hasOgImageRetro && hasOgImageAcademic;
+  const hasInfographic = hasInfographicRetro && hasInfographicAcademic;
+  const hasSlide = hasSlideRetro && hasSlideAcademic;
+
+  // Skip if already has all images in both styles (unless forceRegenerate is true)
   if (!forceRegenerate && hasOgImage && hasInfographic && hasSlide) {
-    console.log(`[SKIP] Already has all images (OG, infographic, slide)`);
+    console.log(`[SKIP] Already has all images in both styles (OG, infographic, slide)`);
     return;
   }
 
@@ -225,75 +235,98 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Generate OG image (optimized for social media thumbnails)
-  if (!hasOgImage || forceRegenerate) {
-    console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
-    // console.log(`  [LLM] Filtering content for OG image...`);
-    // const ogFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'og');
-    // const ogPrompt = ImagePrompts.og.buildPrompt(ogFilteredContent);
-    const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody);
+  // Generate images in both styles (retro + academic)
+  for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
+    const suffix = styleConfig.suffix;
+    console.log(`\n  --- ${styleConfig.description.toUpperCase()} STYLE ---`);
 
-    const ogFiles = await generateAndSaveImages({
-      prompt: ogPrompt,
-      aspectRatio: ImagePrompts.og.aspectRatio,
-      outputDir: ogOutputDir,
-      filePrefix: `${fileName}-og`,
-      referenceImages,
-    });
+    // Check if this specific style version exists
+    const hasThisStyleOg = styleName === 'retro' ? hasOgImageRetro : hasOgImageAcademic;
+    const hasThisStyleInfographic = styleName === 'retro' ? hasInfographicRetro : hasInfographicAcademic;
+    const hasThisStyleSlide = styleName === 'retro' ? hasSlideRetro : hasSlideAcademic;
 
-    if (ogFiles && ogFiles.length > 0) {
-      ogImagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] Generated OG image: ${ogImagePath}`);
+    // Generate OG image (optimized for social media thumbnails)
+    if (!hasThisStyleOg || forceRegenerate) {
+      console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
+      const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
+
+      const ogFiles = await generateAndSaveImages({
+        prompt: ogPrompt,
+        aspectRatio: ImagePrompts.og.aspectRatio,
+        outputDir: ogOutputDir,
+        filePrefix: `${fileName}-og${suffix}`,
+        referenceImages,
+      });
+
+      if (ogFiles && ogFiles.length > 0) {
+        const imagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
+        console.log(`  [OK] Generated OG image (${styleName}): ${imagePath}`);
+
+        // Default to retro style for frontmatter
+        if (styleName === 'retro') {
+          ogImagePath = imagePath;
+        }
+      } else {
+        console.log(`  [WARN] No OG image generated (${styleName})`);
+      }
     } else {
-      console.log(`  [WARN] No OG image generated`);
+      console.log(`  [SKIP] OG image (${styleName}) already exists`);
     }
-  }
 
-  // Generate infographic (detailed, full-size)
-  if (!hasInfographic || forceRegenerate) {
-    console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
-    // console.log(`  [LLM] Filtering content for infographic...`);
-    // const infographicFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'infographic');
-    // const infographicPrompt = ImagePrompts.infographic.buildPrompt(infographicFilteredContent);
-    const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody);
+    // Generate infographic (detailed, full-size)
+    if (!hasThisStyleInfographic || forceRegenerate) {
+      console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
+      const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
 
-    const infographicFiles = await generateAndSaveImages({
-      prompt: infographicPrompt,
-      aspectRatio: ImagePrompts.infographic.aspectRatio,
-      outputDir: infographicOutputDir,
-      filePrefix: `${fileName}-infographic`,
-      referenceImages,
-    });
+      const infographicFiles = await generateAndSaveImages({
+        prompt: infographicPrompt,
+        aspectRatio: ImagePrompts.infographic.aspectRatio,
+        outputDir: infographicOutputDir,
+        filePrefix: `${fileName}-infographic${suffix}`,
+        referenceImages,
+      });
 
-    if (infographicFiles && infographicFiles.length > 0) {
-      infographicImagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] Generated infographic: ${infographicImagePath}`);
+      if (infographicFiles && infographicFiles.length > 0) {
+        const imagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
+        console.log(`  [OK] Generated infographic (${styleName}): ${imagePath}`);
+
+        // Default to retro style for content
+        if (styleName === 'retro') {
+          infographicImagePath = imagePath;
+        }
+      } else {
+        console.log(`  [WARN] No infographic generated (${styleName})`);
+      }
     } else {
-      console.log(`  [WARN] No infographic generated`);
+      console.log(`  [SKIP] Infographic (${styleName}) already exists`);
     }
-  }
 
-  // Generate slide (PowerPoint-optimized presentation)
-  if (!hasSlide || forceRegenerate) {
-    console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
-    // console.log(`  [LLM] Filtering content for slide...`);
-    // const slideFilteredContent = await cleanContentForImageGeneration(cleanedBody, 'slide');
-    // const slidePrompt = ImagePrompts.slide.buildPrompt(slideFilteredContent);
-    const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody);
+    // Generate slide (PowerPoint-optimized presentation)
+    if (!hasThisStyleSlide || forceRegenerate) {
+      console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
+      const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody, styleConfig.style);
 
-    const slideFiles = await generateAndSaveImages({
-      prompt: slidePrompt,
-      aspectRatio: ImagePrompts.slide.aspectRatio,
-      outputDir: slideOutputDir,
-      filePrefix: `${fileName}-slide`,
-      referenceImages,
-    });
+      const slideFiles = await generateAndSaveImages({
+        prompt: slidePrompt,
+        aspectRatio: ImagePrompts.slide.aspectRatio,
+        outputDir: slideOutputDir,
+        filePrefix: `${fileName}-slide${suffix}`,
+        referenceImages,
+      });
 
-    if (slideFiles && slideFiles.length > 0) {
-      slideImagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] Generated slide: ${slideImagePath}`);
+      if (slideFiles && slideFiles.length > 0) {
+        const imagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
+        console.log(`  [OK] Generated slide (${styleName}): ${imagePath}`);
+
+        // Default to retro style (slides are not typically embedded in QMD)
+        if (styleName === 'retro') {
+          slideImagePath = imagePath;
+        }
+      } else {
+        console.log(`  [WARN] No slide generated (${styleName})`);
+      }
     } else {
-      console.log(`  [WARN] No slide generated`);
+      console.log(`  [SKIP] Slide (${styleName}) already exists`);
     }
   }
 
@@ -302,18 +335,39 @@ async function generateImageForFile(
     let updatedBody = body;
     const updatedFrontmatter = { ...frontmatter };
 
-    // Add OG image to frontmatter
+    // Check if user has manually set an academic style preference
+    const hasAcademicOgImage = frontmatter.image && frontmatter.image.includes('-academic.png');
+    const hasAcademicInfographic = body.includes('-infographic-academic.png');
+
+    // Add OG image to frontmatter (respect existing style choice)
     if (ogImagePath) {
-      updatedFrontmatter.image = `/${ogImagePath}`;
+      // Only update if not already set or if we should update
+      if (!frontmatter.image || forceRegenerate) {
+        // Use academic style if user has that preference, otherwise default to retro
+        const preferredOgPath = hasAcademicOgImage
+          ? ogImagePath.replace('-retro.png', '-academic.png')
+          : ogImagePath;
+        updatedFrontmatter.image = `/${preferredOgPath}`;
+      }
     }
 
     // Insert infographic at top of content (after setup-parameters include)
     if (infographicImagePath) {
       // Check if infographic reference already exists in the body
-      const infographicPattern = `${fileName}-infographic.png`;
-      if (!updatedBody.includes(infographicPattern)) {
+      const infographicPatternRetro = `${fileName}-infographic-retro.png`;
+      const infographicPatternAcademic = `${fileName}-infographic-academic.png`;
+      const hasExistingInfographic = updatedBody.includes(infographicPatternRetro) ||
+                                     updatedBody.includes(infographicPatternAcademic);
+
+      if (!hasExistingInfographic) {
         const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
-        const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
+
+        // Use academic style if user has that preference, otherwise default to retro
+        const preferredInfographicPath = hasAcademicInfographic
+          ? infographicImagePath.replace('-retro.png', '-academic.png')
+          : infographicImagePath;
+
+        const infographicMarkdown = `![Infographic](/${preferredInfographicPath})`;
 
         // Find the include directive and insert infographic after it
         if (updatedBody.includes(includeDirective)) {

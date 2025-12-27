@@ -6,7 +6,9 @@
 /**
  * Visual style instruction - simple and consistent
  */
-const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.`;
+export const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.`;
+
+export const ACADEMIC_STYLE = `Use a professional black and white academic style.`;
 
 /**
  * Text legibility requirements based on Gemini 3 Pro Image best practices
@@ -17,9 +19,9 @@ const TEXT_LEGIBILITY_RULES = `TEXT: Ensure all text is large and legible.`;
 /**
  * Generate OG image prompt (optimized for social media thumbnails)
  */
-export function buildOgImagePrompt(content: string): string {
+export function buildOgImagePrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
   return `Please generate an engaging, simple social media image for the following content.
-${RETRO_FUTURISTIC_STYLE}
+${style}
 ${TEXT_LEGIBILITY_RULES}
 
 Here is the content to illustrate:
@@ -31,9 +33,9 @@ ${content}
 /**
  * Generate infographic prompt (detailed, full-size vertical image)
  */
-export function buildInfographicPrompt(content: string): string {
+export function buildInfographicPrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
   return `Please generate a SIMPLE infographic for the following content.
-${RETRO_FUTURISTIC_STYLE}
+${style}
 ${TEXT_LEGIBILITY_RULES}
 
 Here is the content to illustrate:
@@ -45,9 +47,9 @@ ${content}
 /**
  * Generate presentation slide prompt (PowerPoint-optimized)
  */
-export function buildSlidePrompt(content: string): string {
+export function buildSlidePrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
   return `Please generate a simple PowerPoint presentation slide for the following content.
-${RETRO_FUTURISTIC_STYLE}
+${style}
 ${TEXT_LEGIBILITY_RULES}
 
 Here is the content to illustrate:
@@ -61,7 +63,7 @@ ${content}
  */
 export interface ImagePromptConfig {
   /** Function to build the prompt from content */
-  buildPrompt: (content: string) => string;
+  buildPrompt: (content: string, style?: string) => string;
   /** Aspect ratio for the image */
   aspectRatio: '16:9' | '9:16' | '1:1';
   /** Human-readable description of image type */
@@ -88,6 +90,26 @@ export const ImagePrompts = {
     description: 'PowerPoint-optimized',
   },
 } as const;
+
+/**
+ * Available visual styles
+ */
+export const VisualStyles = {
+  retro: {
+    name: 'retro',
+    style: RETRO_FUTURISTIC_STYLE,
+    suffix: '-retro',
+    description: 'fun retro futuristic',
+  },
+  academic: {
+    name: 'academic',
+    style: ACADEMIC_STYLE,
+    suffix: '-academic',
+    description: 'professional black and white',
+  },
+} as const;
+
+export type VisualStyleName = keyof typeof VisualStyles;
 
 /**
  * Example: Custom prompt builder with different style
