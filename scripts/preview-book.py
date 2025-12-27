@@ -22,6 +22,7 @@ from pathlib import Path
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from quarto_prep import prepare_book
+from render_utils import setup_jupyter_kernel
 
 
 def main():
@@ -44,6 +45,9 @@ def main():
     # Prepare book files (config + index) - project_root auto-detected from cwd
     if not prepare_book():
         sys.exit(1)
+
+    # Ensure Jupyter kernel exists (creates it automatically if missing)
+    setup_jupyter_kernel()
 
     # Build preview command
     cmd = ["quarto", "preview"]

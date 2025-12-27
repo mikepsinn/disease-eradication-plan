@@ -4,6 +4,7 @@
 Shared utilities for Quarto render scripts
 """
 
+import json
 import os
 import platform
 import re
@@ -57,6 +58,103 @@ def setup_quarto_python_env():
 
 # Auto-configure Quarto Python when this module is imported
 setup_quarto_python_env()
+
+
+def ensure_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name: str = "DIH Project") -> bool:
+    """
+    Ensure the Jupyter kernel exists, creating it if necessary.
+
+    This function checks if the specified Jupyter kernel is installed,
+    and if not, installs ipykernel in the venv and creates the kernel spec.
+
+    Args:
+        kernel_name: Name of the kernel (e.g., 'dih-project-kernel')
+        display_name: Display name for the kernel
+
+    Returns:
+        bool: True if kernel exists or was created successfully, False on error
+    """
+    from pathlib import Path
+
+    # Check if kernel already exists
+    try:
+        result = subprocess.run(
+            ["jupyter", "kernelspec", "list", "--json"],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        kernels = json.loads(result.stdout)
+        if kernel_name in kernels.get("kernelspecs", {}):
+            print(f"[OK] Jupyter kernel '{kernel_name}' found")
+            return True
+    except (subprocess.CalledProcessError, FileNotFoundError, json.JSONDecodeError):
+        pass  # Fall through to kernel creation
+
+    print(f"[*] Jupyter kernel '{kernel_name}' not found, creating it...")
+
+    # Find venv Python
+    project_root = Path(__file__).parent.parent.parent.absolute()
+    if sys.platform == 'win32':
+        venv_python = project_root / ".venv" / "Scripts" / "python.exe"
+    else:
+        venv_python = project_root / ".venv" / "bin" / "python"
+
+    if not venv_python.exists():
+        print(f"[ERROR] Virtual environment Python not found: {venv_python}", file=sys.stderr)
+        print("        Run 'python -m venv .venv' to create virtual environment", file=sys.stderr)
+        return False
+
+    # Ensure ipykernel is installed in venv
+    print(f"[*] Ensuring ipykernel is installed in virtual environment...")
+    try:
+        subprocess.run(
+            [str(venv_python), "-m", "pip", "install", "-q", "ipykernel"],
+            check=True,
+            capture_output=True
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"[ERROR] Failed to install ipykernel: {e}", file=sys.stderr)
+        return False
+
+    # Create kernel spec
+    try:
+        subprocess.run(
+            [
+                str(venv_python), "-m", "ipykernel", "install",
+                "--user",
+                "--name", kernel_name,
+                "--display-name", display_name
+            ],
+            check=True,
+            capture_output=True
+        )
+        print(f"[OK] Created Jupyter kernel '{kernel_name}'")
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"[ERROR] Failed to create kernel: {e}", file=sys.stderr)
+        return False
+
+
+def setup_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name: str = "DIH Project"):
+    """
+    Set up Jupyter kernel with user-friendly error handling.
+
+    This is a convenience wrapper around ensure_jupyter_kernel() that:
+    - Attempts to create the kernel if missing
+    - Prints helpful warning messages if setup fails
+    - Continues execution (soft failure) rather than exiting
+
+    Use this in preview/render scripts for consistent error handling.
+
+    Args:
+        kernel_name: Name of the kernel (e.g., 'dih-project-kernel')
+        display_name: Display name for the kernel
+    """
+    if not ensure_jupyter_kernel(kernel_name, display_name):
+        print("\n[WARNING] Failed to set up Jupyter kernel (see errors above)", file=sys.stderr)
+        print("          Preview will continue, but may fail if Python code cells are executed", file=sys.stderr)
+        print("          To fix: Ensure .venv exists and run 'pip install ipykernel'\n", file=sys.stderr)
 
 
 class BuildMonitor:
