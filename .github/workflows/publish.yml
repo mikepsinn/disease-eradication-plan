@@ -62,12 +62,12 @@ jobs:
         run: python scripts/render-book-website.py
         timeout-minutes: 25
 
-      - name: Upload Main Site artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: main-site
-          path: _book/warondisease
-          retention-days: 1
+     # - name: Upload Main Site artifact
+        #uses: actions/upload-artifact@v4
+        #with:
+          #name: main-site
+          #path: _book/warondisease
+          #retention-days: 1
 
       - name: Deploy Main Site to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
@@ -132,12 +132,12 @@ jobs:
         run: python scripts/render-economics-website.py --output-dir _site/economics
         timeout-minutes: 25
 
-      - name: Upload Economics artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: economics-site
-          path: _site/economics
-          retention-days: 1
+     # - name: Upload Economics artifact
+        #uses: actions/upload-artifact@v4
+        #with:
+          #name: economics-site
+          #path: _site/economics
+          #retention-days: 1
 
       - name: Deploy Economics Site to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
@@ -205,12 +205,12 @@ jobs:
         run: python scripts/render-wishocracy.py
         timeout-minutes: 10
 
-      - name: Upload Wishocracy artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: wishocracy-site
-          path: _site/wishocracy
-          retention-days: 1
+     # - name: Upload Wishocracy artifact
+        #uses: actions/upload-artifact@v4
+        #with:
+          #name: wishocracy-site
+          #path: _site/wishocracy
+          #retention-days: 1
 
       - name: Deploy Wishocracy Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
@@ -278,12 +278,12 @@ jobs:
         run: python scripts/render-iab.py
         timeout-minutes: 10
 
-      - name: Upload IAB artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: iab-site
-          path: _site/iab
-          retention-days: 1
+     # - name: Upload IAB artifact
+        #uses: actions/upload-artifact@v4
+        #with:
+          #name: iab-site
+          #path: _site/iab
+          #retention-days: 1
 
       - name: Deploy IAB Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
