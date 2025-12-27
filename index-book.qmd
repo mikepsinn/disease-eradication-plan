@@ -391,7 +391,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}), demonstrating a {{< var trial_cost_reduction_factor >}}x cost reduction at scale. Not in theory. In reality. With actual dying people who became not-dying people.
+- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var trial_cost_reduction_factor >}}x cost reduction at scale. Not in theory. In reality. With actual dying people who became not-dying people.
 - **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%. 
 
 {{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
@@ -560,7 +560,7 @@ The entire system runs on greed, like capitalism, except instead of destroying t
 
 **Insurance Companies**: "Healthy people file zero claims. Sick people file all the claims. We'll let you do the math since you love math.
 
-**Big Pharma**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} per trial patient, they pay YOU. It's like if your costs became revenue. We call it 'reverse expenses' or 'profit.'"
+**Big Pharma**: "Instead of paying {{< var traditional_phase3_cost_per_patient >}} per trial patient, they pay YOU. It's like if your costs became revenue. We call it 'reverse expenses' or 'profit.'"
 
 **Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice."
 

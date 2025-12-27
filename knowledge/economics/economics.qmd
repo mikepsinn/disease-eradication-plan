@@ -189,7 +189,7 @@ The bottleneck isn't basic research or laboratory science. It's **clinical trial
 
 - **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year in lost productivity, premature death, disability
 
-- **Curative research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} billion/year
+- **Curative research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}}/year
 
 That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden spent on actually fixing the problem:
 
@@ -860,8 +860,6 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 **Higher Completion Rates**: More of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
-**Increased Funding**: A 1% treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
-
 These improvements compound multiplicatively to produce the {{< var trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
 **Sensitivity of research acceleration estimate:** The tornado chart below shows which input parameters have the largest impact on the trial capacity multiplier. The width of each bar shows how much the multiplier changes when that parameter varies across its uncertainty range:
@@ -1001,7 +999,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
-- **Pre-1962 system**: {{< var pre_1962_drug_development_cost >}} {{< var pre_1962_drug_development_cost_cite >}} per drug (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
+- **Pre-1962 system**: {{< var pre_1962_drug_development_cost_2024_usd >}} {{< var pre_1962_drug_development_cost_2024_usd_cite >}} per drug (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
 - **Post-1962 system**: {{< var pharma_drug_development_cost_current >}} per drug average, a **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 

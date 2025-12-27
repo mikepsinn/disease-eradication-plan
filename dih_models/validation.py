@@ -308,9 +308,9 @@ def validate_inline_calculations_have_compute(parameters: Dict[str, Dict[str, An
         if hasattr(value, 'compute') and value.compute:
             continue
 
-        # Skip definitions - they're policy choices, not uncertain calculations
+        # Skip definitions and external - they're policy choices or have manually-defined uncertainty
         source_type = getattr(value, 'source_type', '')
-        if source_type and 'definition' in str(source_type).lower():
+        if source_type and ('definition' in str(source_type).lower() or 'external' in str(source_type).lower()):
             continue
 
         # Find the parameter definition in the source

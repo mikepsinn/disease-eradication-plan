@@ -197,6 +197,17 @@ export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
   peerReviewed: true,
 };
 
+export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
+  value: 3.8,
+  unit: "ratio",
+  displayName: "CPI Multiplier: 1980 to 2024",
+  description: "CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)",
+  sourceType: "external",
+  sourceRef: "bls-cpi-inflation-calculator",
+  confidence: "high",
+  confidenceInterval: [3.75, 3.85],
+};
+
 export const CURRENT_ACTIVE_TRIALS: Parameter = {
   value: 10000.0,
   unit: "trials",
@@ -1083,15 +1094,27 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
   confidence: "high",
 };
 
-export const PRE_1962_DRUG_DEVELOPMENT_COST: Parameter = {
-  value: 22500000.0,
-  unit: "USD",
-  displayName: "Pre-1962 Drug Development Cost (Inflation-Adjusted)",
-  description: "Pre-1962 drug development cost ($6.5M in 1980 dollars = $22.5M in 2024 dollars, CPI-adjusted)",
+export const PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD: Parameter = {
+  value: 6500000.0,
+  unit: "USD_1980",
+  displayName: "Pre-1962 Drug Development Cost (1980 Dollars)",
+  description: "Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)",
   sourceType: "external",
   sourceRef: "pre-1962-drug-costs-baily-1972",
   confidence: "high",
-  confidenceInterval: [18000000.0, 28000000.0],
+  confidenceInterval: [5200000.0, 7800000.0],
+  peerReviewed: true,
+};
+
+export const PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD: Parameter = {
+  value: 24700000.0,
+  unit: "USD",
+  displayName: "Pre-1962 Drug Development Cost (2024 Dollars)",
+  description: "Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)",
+  sourceType: "external",
+  sourceRef: "pre-1962-drug-costs-baily-1972",
+  confidence: "high",
+  confidenceInterval: [19500000.0, 30000000.0],
   peerReviewed: true,
 };
 
@@ -1844,14 +1867,14 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
 };
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
-  value: 115.55555555555556,
+  value: 105.26315789473684,
   unit: "ratio",
   displayName: "Drug Cost Increase: Pre-1962 to Current",
-  description: "Drug development cost increase from pre-1962 to current ($22.5M → $2.6B = 116×)",
+  description: "Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)",
   sourceType: "calculated",
   sourceRef: "pre-1962-drug-costs-baily-1972",
   confidence: "high",
-  formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
+  formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",
 };
 
 export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
@@ -3689,6 +3712,7 @@ export const parameters = {
   CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
   CHILDHOOD_VACCINATION_ROI,
   CHRONIC_DISEASE_DISABILITY_WEIGHT,
+  CPI_MULTIPLIER_1980_TO_2024,
   CURRENT_ACTIVE_TRIALS,
   CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE,
   CURRENT_DISEASE_PATIENTS_GLOBAL,
@@ -3771,7 +3795,8 @@ export const parameters = {
   POLITICAL_SUCCESS_PROBABILITY,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
   POST_WW2_MILITARY_CUT_PCT,
-  PRE_1962_DRUG_DEVELOPMENT_COST,
+  PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD,
+  PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
   PRE_1962_PHYSICIAN_COUNT,
   RARE_DISEASES_COUNT_GLOBAL,
   RECOVERY_TRIAL_COST_PER_PATIENT,
@@ -4121,6 +4146,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Biotechnology Innovation Organization (BIO)",
         URL: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
         note: "Biotechnology Innovation Organization (BIO), 2021, Clinical Development Success Rates and Contributing Factors 2011-2020",
+  },
+  "bls-cpi-inflation-calculator": {
+        id: "bls-cpi-inflation-calculator",
+        type: "webpage",
+        title: "CPI Inflation Calculator",
+        author: [
+          {
+            literal: "U.S. Bureau of Labor Statistics"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "U.S. Bureau of Labor Statistics",
+        URL: "https://www.bls.gov/data/inflation_calculator.htm",
+        note: "U.S. Bureau of Labor Statistics, 2024, CPI Inflation Calculator",
   },
   "ceo-compensation": {
         id: "ceo-compensation",
@@ -5396,11 +5435,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 335,
-  external: 133,
+  total: 337,
+  external: 135,
   calculated: 109,
   definitions: 93,
-  citations: 101,
+  citations: 102,
 } as const;
 
 // ============================================================================

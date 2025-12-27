@@ -13,7 +13,8 @@ import { generateGeminiFlashContent } from './lib/llm.js';
 import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
-  getCleanedContentForLLM
+  getCleanedContentForLLM,
+  extractReferenceImages
 } from './lib/file-utils.js';
 import { ImagePrompts } from './lib/image-prompts.js';
 
@@ -166,10 +167,12 @@ process.on('uncaughtException', async (error) => {
  * Generate OG image, infographic, and slide for a single file
  * @param filePath Path to the QMD file
  * @param forceRegenerate If true, regenerate images even if they already exist
+ * @param includeReferenceImages If true, extract images from QMD and pass as reference images to Gemini
  */
 async function generateImageForFile(
   filePath: string,
-  forceRegenerate = false
+  forceRegenerate = false,
+  includeReferenceImages = false
 ): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
 
@@ -186,6 +189,13 @@ async function generateImageForFile(
   if (!frontmatter.title && !frontmatter.description) {
     console.log(`[SKIP] No title or description for prompt generation`);
     return;
+  }
+
+  // Extract reference images if requested
+  let referenceImages: Array<{ data: string; mimeType: string }> = [];
+  if (includeReferenceImages) {
+    console.log(`  Extracting reference images from QMD file...`);
+    referenceImages = await extractReferenceImages(filePath);
   }
 
   console.log(`  Title: ${frontmatter.title || '(no title)'}`);
@@ -228,6 +238,7 @@ async function generateImageForFile(
       aspectRatio: ImagePrompts.og.aspectRatio,
       outputDir: ogOutputDir,
       filePrefix: `${fileName}-og`,
+      referenceImages,
     });
 
     if (ogFiles && ogFiles.length > 0) {
@@ -251,6 +262,7 @@ async function generateImageForFile(
       aspectRatio: ImagePrompts.infographic.aspectRatio,
       outputDir: infographicOutputDir,
       filePrefix: `${fileName}-infographic`,
+      referenceImages,
     });
 
     if (infographicFiles && infographicFiles.length > 0) {
@@ -274,6 +286,7 @@ async function generateImageForFile(
       aspectRatio: ImagePrompts.slide.aspectRatio,
       outputDir: slideOutputDir,
       filePrefix: `${fileName}-slide`,
+      referenceImages,
     });
 
     if (slideFiles && slideFiles.length > 0) {
@@ -328,7 +341,7 @@ async function generateImageForFile(
 /**
  * Generate OG images for book chapters
  */
-async function generateBookChapterImages(fileFilter?: string): Promise<void> {
+async function generateBookChapterImages(fileFilter?: string, includeReferenceImages = false): Promise<void> {
   console.log('\n' + '='.repeat(60));
   console.log('Generating OG images for book chapters');
   console.log('='.repeat(60) + '\n');
@@ -377,7 +390,7 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   for (const filePath of bookFiles) {
     try {
       filesProcessed++;
-      await generateImageForFile(filePath, forceRegenerate);
+      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
@@ -430,11 +443,32 @@ async function main() {
     fileFilter = args[0];
   }
 
+  // Check for --with-reference-images flag
+  const includeReferenceImages = args.includes('--with-reference-images');
+
   if (fileFilter) {
+    // If fileFilter looks like a file path (contains / or ends with .qmd), verify it exists
+    if (fileFilter.includes('/') || fileFilter.endsWith('.qmd')) {
+      const fullPath = path.join(process.cwd(), fileFilter);
+      if (!existsSync(fullPath)) {
+        console.error(`\nERROR: File not found: ${fileFilter}`);
+        console.error(`Full path checked: ${fullPath}`);
+        console.error('\nIf you want to search by keyword, use a simple keyword without path separators.');
+        console.error('Example: npx tsx scripts/generate-project-images.ts economics');
+        console.error('\nIf you want to specify a file, use the full path:');
+        console.error('Example: npx tsx scripts/generate-project-images.ts knowledge/economics/economics.qmd');
+        await releaseLock();
+        process.exit(1);
+      }
+    }
     console.log(`\nGenerating image for file matching: "${fileFilter}"\n`);
   }
 
-  await generateBookChapterImages(fileFilter);
+  if (includeReferenceImages) {
+    console.log(`[INFO] Reference images from QMD files will be included in generation context\n`);
+  }
+
+  await generateBookChapterImages(fileFilter, includeReferenceImages);
 }
 
 // Run the script

@@ -927,3 +927,125 @@ export async function getCleanedContentForLLM(filePath: string): Promise<string>
   // Prepare content for LLM (replaces variables and cleans markup)
   return prepareContentForLLM(contentWithHeader);
 }
+
+/**
+ * Extract image paths from QMD content
+ * Finds all markdown image references: ![alt](path)
+ * @param content QMD file content
+ * @returns Array of image paths (relative to project root)
+ */
+export function extractImagePaths(content: string): string[] {
+  const imagePaths: string[] = [];
+
+  // Match markdown image syntax: ![alt text](path)
+  const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  let match;
+
+  while ((match = imageRegex.exec(content)) !== null) {
+    const imagePath = match[2];
+    // Skip external URLs
+    if (!imagePath.startsWith('http://') && !imagePath.startsWith('https://')) {
+      imagePaths.push(imagePath);
+    }
+  }
+
+  return imagePaths;
+}
+
+/**
+ * Load image as base64
+ * @param imagePath Path to image (can be absolute, relative to project root, or start with /)
+ * @param sourceFilePath Optional path to the source QMD file (for resolving relative paths)
+ * @returns Object with base64 data and MIME type
+ */
+export async function loadImageAsBase64(
+  imagePath: string,
+  sourceFilePath?: string
+): Promise<{ data: string; mimeType: string } | null> {
+  try {
+    let absolutePath: string;
+
+    if (path.isAbsolute(imagePath)) {
+      // Already absolute path
+      absolutePath = imagePath;
+    } else if (imagePath.startsWith('/')) {
+      // Path starting with / is relative to project root (common in web contexts)
+      absolutePath = path.join(getProjectRoot(), imagePath.substring(1));
+    } else if (sourceFilePath) {
+      // Relative path - resolve relative to source file
+      const sourceDir = path.dirname(sourceFilePath);
+      absolutePath = path.join(sourceDir, imagePath);
+    } else {
+      // Fallback: relative to project root
+      absolutePath = path.join(getProjectRoot(), imagePath);
+    }
+
+    // Normalize path (resolve .. and .)
+    absolutePath = path.resolve(absolutePath);
+
+    // Check if file exists
+    if (!fsSync.existsSync(absolutePath)) {
+      console.warn(`  [WARN] Image not found: ${imagePath}`);
+      return null;
+    }
+
+    // Read file as buffer
+    const imageBuffer = await fs.readFile(absolutePath);
+
+    // Convert to base64
+    const base64Data = imageBuffer.toString('base64');
+
+    // Determine MIME type from extension
+    const ext = path.extname(absolutePath).toLowerCase();
+    const mimeTypes: Record<string, string> = {
+      '.png': 'image/png',
+      '.jpg': 'image/jpeg',
+      '.jpeg': 'image/jpeg',
+      '.gif': 'image/gif',
+      '.webp': 'image/webp',
+      '.svg': 'image/svg+xml',
+    };
+
+    const mimeType = mimeTypes[ext] || 'image/png';
+
+    return { data: base64Data, mimeType };
+  } catch (error) {
+    console.warn(`  [WARN] Failed to load image: ${imagePath}`, error);
+    return null;
+  }
+}
+
+/**
+ * Extract and load reference images from QMD file
+ * @param filePath Path to QMD file
+ * @param maxImages Maximum number of images to load (default: 14, Gemini's limit)
+ * @returns Array of reference images with base64 data and MIME types
+ */
+export async function extractReferenceImages(
+  filePath: string,
+  maxImages: number = 14
+): Promise<Array<{ data: string; mimeType: string }>> {
+  const { body } = await readFileWithMatter(filePath);
+  const imagePaths = extractImagePaths(body);
+
+  console.log(`  [INFO] Found ${imagePaths.length} image references in ${path.basename(filePath)}`);
+
+  // Limit to maxImages
+  const pathsToLoad = imagePaths.slice(0, maxImages);
+  if (imagePaths.length > maxImages) {
+    console.log(`  [INFO] Limiting to first ${maxImages} images (Gemini's max)`);
+  }
+
+  const referenceImages: Array<{ data: string; mimeType: string }> = [];
+
+  for (const imagePath of pathsToLoad) {
+    const imageData = await loadImageAsBase64(imagePath, filePath);
+    if (imageData) {
+      referenceImages.push(imageData);
+    }
+  }
+
+  console.log(`  [INFO] Successfully loaded ${referenceImages.length} reference images`);
+
+  return referenceImages;
+}

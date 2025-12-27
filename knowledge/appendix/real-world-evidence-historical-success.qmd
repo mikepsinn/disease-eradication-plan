@@ -92,7 +92,7 @@ The problem wasn't safety testing - that was fine. The problem was taking over e
 
 Before 1962:
 
-- Drug companies spent **{{< var pre_1962_drug_development_cost >}}** (inflation-adjusted) to prove safety (see [reference](../references.qmd#pre-1962-drug-costs-timeline))
+- Drug companies spent **{{< var pre_1962_drug_development_cost_2024_usd >}}** (inflation-adjusted) to prove safety (see [reference](../references.qmd#pre-1962-drug-costs-timeline))
 - Once approved as safe, **{{< var pre_1962_physician_count >}} independent doctors tested efficacy** on real patients (see [reference](../references.qmd#pre-1962-physician-trials))
 - The third-party AMA compiled results and published findings
 
@@ -126,7 +126,7 @@ Not gradually. Immediately.
 
 #### What Happened to Costs
 
-Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost >}} to over $1 billion** ([source](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm)) (inflation-adjusted).
+Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost_2024_usd >}} to over $1 billion** ([source](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm)) (inflation-adjusted).
 
 A {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x increase. For worse results.
 

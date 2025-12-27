@@ -48,7 +48,7 @@ function calculateImageCost(imageCount: number, modelId: string): number {
 /**
  * Log image generation request details
  */
-function logImageRequest(modelId: string, imageCount: number, aspectRatio: string, promptPreview: string): void {
+function logImageRequest(modelId: string, imageCount: number, aspectRatio: string, promptPreview: string, referenceImageCount: number = 0): void {
   const config = IMAGE_MODEL_CONFIGS[modelId]
   const estimatedCost = calculateImageCost(imageCount, modelId)
 
@@ -56,6 +56,9 @@ function logImageRequest(modelId: string, imageCount: number, aspectRatio: strin
   console.log(`🖼️  Image Generation Request: ${modelId}`)
   console.log(`📐 Aspect ratio: ${aspectRatio}`)
   console.log(`🔢 Image count: ${imageCount}`)
+  if (referenceImageCount > 0) {
+    console.log(`🎨 Reference images: ${referenceImageCount}`)
+  }
   console.log(`📝 Prompt preview: ${promptPreview.substring(0, 100)}${promptPreview.length > 100 ? '...' : ''}`)
   if (config) {
     console.log(`💵 Cost per image: $${config.costPerImage.toFixed(4)} USD`)
@@ -114,6 +117,19 @@ export interface ImageGenerationOptions {
 
   /** Person generation setting */
   personGeneration?: 'dont_allow' | 'allow_adult' | 'allow_all'
+
+  /** Reference images for style/composition guidance (up to 14 images supported) */
+  referenceImages?: ReferenceImage[]
+}
+
+/**
+ * Reference image for image generation
+ */
+export interface ReferenceImage {
+  /** Base64-encoded image data */
+  data: string
+  /** MIME type (e.g., 'image/png', 'image/jpeg') */
+  mimeType: string
 }
 
 /**
@@ -169,10 +185,11 @@ export async function generateImages(
     aspectRatio = '1:1',
     model = 'gemini-3-pro-image-preview',
     negativePrompt,
+    referenceImages = [],
   } = options
 
   // Log request with cost estimate
-  logImageRequest(model, count, aspectRatio, prompt)
+  logImageRequest(model, count, aspectRatio, prompt, referenceImages.length)
 
   try {
     const client = getClient()
@@ -184,12 +201,28 @@ export async function generateImages(
     if (negativePrompt) {
       fullPrompt += `\n\nDO NOT include: ${negativePrompt}`
     }
+    if (referenceImages.length > 0) {
+      fullPrompt += `\n\nReference images are provided for style and composition guidance.`
+    }
+
+    // Build contents array with text and reference images
+    const contentParts: any[] = [{ text: fullPrompt }]
+
+    // Add reference images to content
+    for (const refImage of referenceImages) {
+      contentParts.push({
+        inlineData: {
+          mimeType: refImage.mimeType,
+          data: refImage.data,
+        },
+      })
+    }
 
     // Generate images one at a time (Gemini doesn't support batch generation in one call)
     for (let i = 0; i < count; i++) {
       const response = await client.models.generateContent({
         model,
-        contents: fullPrompt,
+        contents: contentParts,
       })
 
       // Extract image from response
@@ -287,6 +320,7 @@ export async function generateAndSaveImages(options: {
   outputDir: string
   filePrefix: string
   format?: 'png' | 'jpg'
+  referenceImages?: ReferenceImage[]
 }): Promise<string[]> {
   const {
     prompt,
@@ -295,12 +329,14 @@ export async function generateAndSaveImages(options: {
     outputDir,
     filePrefix,
     format = 'png',
+    referenceImages,
   } = options
 
   const result = await generateImages({
     prompt,
     count,
     aspectRatio,
+    referenceImages,
   })
 
   const filePaths: string[] = []

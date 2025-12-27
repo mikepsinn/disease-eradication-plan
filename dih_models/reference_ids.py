@@ -69,6 +69,7 @@ class ReferenceID(str, Enum):
     BIO_CLINICAL_DEVELOPMENT_2021 = "bio-clinical-development-2021"
     BIOLOGICAL_IMMORTALITY_IN_NATURE = "biological-immortality-in-nature"
     BLOOM_IDEAS_GETTING_HARDER_2020 = "bloom-ideas-getting-harder-2020"
+    BLS_CPI_INFLATION_CALCULATOR = "bls-cpi-inflation-calculator"
     BOEING_DEFENSE_ANNUAL_REVENUE_26B = "boeing-defense-annual-revenue-26b"
     BRADLEY_TERRY_PAGERANK_MODELS = "bradley-terry-pagerank-models"
     BRAZIL_MEDICAL_RESEARCH_SPENDING_600M = "brazil-medical-research-spending-600m"

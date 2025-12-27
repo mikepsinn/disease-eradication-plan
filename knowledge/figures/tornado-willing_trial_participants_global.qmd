@@ -15,17 +15,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Drug Cost Increase: Pre-1962 to Current"
+display_name = "Global Patients Willing to Participate in Clinical Trials"
 
 # Baseline and units
 
-baseline = 105.26315789473684
+baseline = 1075200000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD']
-impacts_low = [-44.534412955465584, 28.070175438596507]
-impacts_high = [56.680161943319845, -18.596491228070164]
+drivers = ['CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
+impacts_low = [-179200000.0, -115200000.0]
+impacts_high = [179200000.0, 124800000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -67,7 +67,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "ratio"
+units_label = "people"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -87,7 +87,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('tornado-drug_cost_increase_pre1962_to_current_multiplier.png')
+output_path = get_figure_output_path('tornado-willing_trial_participants_global.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
