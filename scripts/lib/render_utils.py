@@ -27,6 +27,38 @@ except ImportError:
     PSUTIL_AVAILABLE = False
 
 
+def setup_quarto_python_env():
+    """
+    Configure Quarto to use virtual environment Python (cross-platform)
+
+    Sets QUARTO_PYTHON environment variable to point to the project's venv,
+    preventing Quarto from using the wrong system Python installation.
+
+    This solves PATH ordering issues when multiple Python installations exist.
+    """
+    from pathlib import Path
+
+    # Detect project root (render_utils.py is in scripts/lib/)
+    project_root = Path(__file__).parent.parent.parent.absolute()
+
+    # Detect venv Python path (cross-platform)
+    if sys.platform == 'win32':
+        venv_python = project_root / '.venv' / 'Scripts' / 'python.exe'
+    else:
+        venv_python = project_root / '.venv' / 'bin' / 'python'
+
+    if venv_python.exists():
+        os.environ['QUARTO_PYTHON'] = str(venv_python)
+        print(f"[*] Using venv Python: {venv_python}")
+    else:
+        print(f"[WARN] Virtual environment not found at {venv_python}")
+        print(f"[WARN] Quarto will use system Python (may cause kernel errors)")
+
+
+# Auto-configure Quarto Python when this module is imported
+setup_quarto_python_env()
+
+
 class BuildMonitor:
     def __init__(self, timeout_seconds: int = 180, fail_on_warnings: bool = True, log_file: str = "build.log"):
         """

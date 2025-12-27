@@ -283,6 +283,7 @@ execute:
   fig-path: "knowledge/figures/"
 
 # Tell Quarto to use the project's virtual environment
+# (QUARTO_PYTHON environment variable is set automatically by render_utils.py)
 jupyter: dih-project-kernel
 
 format:
