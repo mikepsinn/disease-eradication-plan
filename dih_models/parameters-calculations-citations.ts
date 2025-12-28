@@ -487,7 +487,7 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS: Parameter = {
 export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   value: 55000000.0,
   unit: "deaths/year",
-  displayName: "Annual Deaths from Curable Diseases Globally",
+  displayName: "Annual Deaths from All Diseases and Aging Globally",
   description: "Annual deaths from all diseases and aging globally",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
@@ -691,17 +691,6 @@ export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   confidence: "high",
   confidenceInterval: [50000000000.0, 75000000000.0],
   stdError: 10000000000.0,
-};
-
-export const GLOBAL_DAILY_DEATHS_CURABLE_DISEASES: Parameter = {
-  value: 150000.0,
-  unit: "deaths/day",
-  displayName: "Daily Deaths from Curable Diseases Globally",
-  description: "Daily deaths from all diseases and aging globally",
-  sourceType: "external",
-  sourceRef: "who-daily-deaths",
-  confidence: "high",
-  confidenceInterval: [120000.0, 180000.0],
 };
 
 export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
@@ -2564,11 +2553,11 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 7.069077378457,
   unit: "ratio",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
-  description: "Expected value multiplier vs bed nets (accounts for political uncertainty)",
+  description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "E[\\text{Multiplier}] = \\frac{\\$89}{\\$0.51} = 175\\times",
+  latex: "E[\\text{Multiplier}] = \\frac{\\$89}{\\$12.7} \\approx 7\\times",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -3758,7 +3747,6 @@ export const parameters = {
   GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT,
   GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS,
   GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
-  GLOBAL_DAILY_DEATHS_CURABLE_DISEASES,
   GLOBAL_DISEASE_DEATHS_DAILY,
   GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL,
   GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL,
@@ -5389,21 +5377,6 @@ export const citations: Record<string, Citation> = {
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
         note: "PMC, Country-Level Cost-Effectiveness Thresholds | WHO, WHO-CHOICE Methods Update",
   },
-  "who-daily-deaths": {
-        id: "who-daily-deaths",
-        type: "article-journal",
-        title: "150,000 deaths per day from all causes",
-        author: [
-          {
-            family: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150",
-            given: "000 per day | WHO"
-          },
-        ],
-        issued: { 'date-parts': [[2024]] },
-        'container-title': "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150",
-        URL: "https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death",
-        note: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150,000 per day | WHO, 2024, The top 10 causes of death",
-  },
   "who-global-health-estimates-2024": {
         id: "who-global-health-estimates-2024",
         type: "article-journal",
@@ -5435,11 +5408,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 337,
-  external: 135,
+  total: 336,
+  external: 134,
   calculated: 109,
   definitions: 93,
-  citations: 102,
+  citations: 101,
 } as const;
 
 // ============================================================================

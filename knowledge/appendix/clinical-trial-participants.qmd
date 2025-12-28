@@ -87,7 +87,7 @@ Using the conservative IQVIA figure ({{< var current_trial_slots_available >}} ร
 
 Even if you count all clinical research (5M รท {{< var willing_trial_participants_global >}} = 0.46%), your odds are only **1 in 215**.
 
-Meanwhile, {{< var global_daily_deaths_curable_diseases >}} people die every day from diseases we're studying.
+Meanwhile, {{< var global_disease_deaths_daily >}} people die every day from diseases we're studying.
 
 ## The Access Lottery
 
@@ -155,7 +155,7 @@ The system isn't designed to help sick people try treatments. It's designed to g
 
 Even counting all clinical research, it's just 0.2% (5M participants).
 
-The other 99.92% of disease patients (or 99.82% of willing participants) get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
+The other 99.92% of disease patients (or 99.82% of willing participants) get to wait. And suffer. And while they wait, {{< var global_disease_deaths_daily >}} die every day.
 
 ## Enrollment Data by Phase
 
@@ -214,7 +214,7 @@ Or **~5 million** if you count all clinical research (observational, device, beh
 
 Among willing participants: 1 in 566 (drug trials) or 1 in 215 (all research).
 
-The 99.92% of disease patients (99.82% of willing participants) who don't get access to drug trials? They suffer. And {{< var global_daily_deaths_curable_diseases >}} die every day.
+The 99.92% of disease patients (99.82% of willing participants) who don't get access to drug trials? They suffer. And {{< var global_disease_deaths_daily >}} die every day.
 
 ---
 

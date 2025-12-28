@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 337
+**Total parameters**: 336
 
-- External sources (peer-reviewed): 135
+- External sources (peer-reviewed): 134
 - Calculated values: 109
 - Core definitions: 93
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (109 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+[Calculated Values](#sec-calculated) (109 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3200,7 +3200,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Expected value multiplier vs bed nets (accounts for political uncertainty)
+Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)
 
 **Inputs**:
 
@@ -3208,7 +3208,7 @@ Expected value multiplier vs bed nets (accounts for political uncertainty)
 - [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $13
 
 $$
-E[\text{Multiplier}] = \frac{\$89}{\$0.51} = 175\times
+E[\text{Multiplier}] = \frac{\$89}{\$12.7} \approx 7\times
 $$
 
 *? Low confidence*
@@ -4479,7 +4479,7 @@ Annual deaths from terror attacks globally
 
 :::
 
-### Annual Deaths from Curable Diseases Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4918,30 +4918,6 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 #### Input Distribution
 
 {{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Daily Deaths from Curable Diseases Globally: 150k deaths/day {#sec-global_daily_deaths_curable_diseases}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Daily deaths from all diseases and aging globally
-
-**Source**: [Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150,000 per day | WHO (2024) - 150,000 deaths per day from all causes](../references.qmd#who-daily-deaths)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [120k deaths/day, 180k deaths/day] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120k deaths/day and 180k deaths/day (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_daily_deaths_curable_diseases.qmd >}}
 
 *✓ High confidence*
 

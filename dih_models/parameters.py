@@ -3603,28 +3603,17 @@ GLOBAL_POPULATION_2024 = Parameter(
     keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"]
 )  # UN World Population Prospects 2022
 
-GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
-    150000,
-    source_ref=ReferenceID.WHO_DAILY_DEATHS,
-    source_type="external",
-    description="Daily deaths from all diseases and aging globally",
-    display_name="Daily Deaths from Curable Diseases Globally",
-    unit="deaths/day",
-    keywords=["150k", "day", "each day", "per day", "worldwide", "fatalities", "casualties"],
-    distribution="lognormal",
-    confidence_interval=(120_000, 180_000),  # ±20% - disease mortality estimates vary by methodology
-)  # Daily deaths from curable diseases
-
+# NOTE: Daily deaths (150k/day) defined above as GLOBAL_DISEASE_DEATHS_DAILY (line ~1903)
 # Annual disease deaths (from WHO global health estimates)
 GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     55_000_000,
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Annual deaths from all diseases and aging globally",
-    display_name="Annual Deaths from Curable Diseases Globally",
+    display_name="Annual Deaths from All Diseases and Aging Globally",
     unit="deaths/year",
     keywords=["worldwide", "yearly", "fatalities", "casualties"],
-)  # 55 million deaths/year from WHO
+)  # 55 million deaths/year from WHO (all diseases + aging)
 
 # Disease economic burden
 GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
@@ -4083,7 +4072,7 @@ DFDA_EXPECTED_ROI = Parameter(
 # Reason: These parameters were conceptually confused. They calculated the daily cost by dividing
 # DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS by 8.2 years, but that $529T was itself derived from
 # daily disease burden × 8.2 years, making the calculation circular. The daily disease burden
-# should be calculated directly from GLOBAL_DAILY_DEATHS_CURABLE_DISEASES (150,000 deaths/day)
+# should be calculated directly from GLOBAL_DISEASE_DEATHS_DAILY (150,000 deaths/day)
 # rather than through this circular division.
 
 # ---
@@ -4293,11 +4282,11 @@ TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
 TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY,
     source_type="calculated",
-    description="Expected value multiplier vs bed nets (accounts for political uncertainty)",
+    description="Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
     display_name="Expected Cost-Effectiveness vs Bed Nets Multiplier",
     unit="ratio",
     formula="BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-    latex=r"E[\text{Multiplier}] = \frac{\$89}{\$0.51} = 175\times",
+    latex=r"E[\text{Multiplier}] = \frac{\$89}{\$12.7} \approx 7\times",
     confidence="low",
     inputs=['BED_NETS_COST_PER_DALY', 'TREATY_EXPECTED_COST_PER_DALY'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_EXPECTED_COST_PER_DALY"],

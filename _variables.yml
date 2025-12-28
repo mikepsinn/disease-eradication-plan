@@ -1115,13 +1115,6 @@
   \ calculation & sources\">$16.1K</a>"
 "global_cost_per_life_saved_med_research_annual_latex": "$$\nCostPerLifeSaved = \\\
   frac{\\$67.5B \\times 10^9}{4,200,000} \\approx \\$16,071\n$$"
-"global_daily_deaths_curable_diseases": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_daily_deaths_curable_diseases\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-daily-deaths\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Daily deaths from all diseases and aging\
-  \ globally | ✓ High confidence | 95% CI: [120k deaths/day, 180k deaths/day] | Dist:\
-  \ Lognormal | Unit: deaths/day | Click to view details, calculation & sources\"\
-  >150k</a>"
-"global_daily_deaths_curable_diseases_cite": "@who-daily-deaths"
 "global_disease_deaths_daily": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_disease_deaths_daily\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -2030,11 +2023,11 @@
 "treaty_expected_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Expected value multiplier vs bed nets (accounts\
-  \ for political uncertainty) | Calculated from 2 inputs | ? Low confidence | Formula:\
-  \ BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY | Unit: ratio | Click to\
-  \ view details, calculation & sources\">7.07</a>"
+  \ for political uncertainty at 1% success rate) | Calculated from 2 inputs | ? Low\
+  \ confidence | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY |\
+  \ Unit: ratio | Click to view details, calculation & sources\">7.07</a>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
-  $89}{\\$0.51} = 175\\times\n$$"
+  $89}{\\$12.7} \\approx 7\\times\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2311,6 +2304,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "337"
+"total_parameter_count": "336"
 "total_latex_equation_count": "126"
-"total_citation_count": "135"
+"total_citation_count": "134"
