@@ -81,8 +81,8 @@ export const ImagePrompts = {
   },
   infographic: {
     buildPrompt: buildInfographicPrompt,
-    aspectRatio: '9:16' as const,
-    description: 'detailed vertical',
+    aspectRatio: '3:4' as const,
+    description: 'book-friendly portrait',
   },
   slide: {
     buildPrompt: buildSlidePrompt,

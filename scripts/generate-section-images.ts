@@ -29,7 +29,7 @@ import { existsSync } from 'fs';
 import { generateGeminiFlashContent } from './lib/llm.js';
 import { generateAndSaveImages } from './lib/genai-image.js';
 import { getCleanedContentForLLM } from './lib/file-utils.js';
-import { VisualStyles, ImagePrompts } from './lib/image-prompts.js';
+import { VisualStyles } from './lib/image-prompts.js';
 
 dotenv.config();
 
@@ -68,9 +68,9 @@ async function analyzeFileForSectionImages(
   console.log(`\n[*] Analyzing file with Gemini Flash...`);
   console.log(`  File: ${filePath}`);
 
-  // Read raw file to get line numbers
-  const rawContent = await fs.readFile(filePath, 'utf-8');
-  const lines = rawContent.split('\n');
+  // Use cleaned content (with variables replaced) for analysis
+  // Line numbers from cleaned content should match raw file since variable replacement is inline
+  const lines = cleanedContent.split('\n');
 
   const prompt = `You are an expert academic editor analyzing a scholarly document. Your task is to identify sections that would benefit from visual aids (diagrams, charts, infographics, or flowcharts).
 
@@ -86,7 +86,7 @@ FILE METADATA:
 - Total lines: ${lines.length}
 - Word count: ~${cleanedContent.split(/\s+/).length}
 
-FILE CONTENT WITH LINE NUMBERS:
+FILE CONTENT WITH LINE NUMBERS (Quarto variables replaced with actual values):
 ---
 ${lines.map((line, idx) => `${idx + 1}: ${line}`).join('\n')}
 ---
@@ -188,6 +188,9 @@ async function generateSectionImages(
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const lines = fileContent.split('\n');
 
+  // Get cleaned content with variables replaced (for image generation)
+  const cleanedContent = await getCleanedContentForLLM(filePath);
+
   // Generate images for each recommendation
   const generatedImages: Array<{ lineNumber: number; imagePath: string }> = [];
 
@@ -198,21 +201,18 @@ async function generateSectionImages(
     const style = useAcademicStyle ? VisualStyles.academic : VisualStyles['retro-futuristic'];
     const suffix = useAcademicStyle ? '-academic' : '-retro-futuristic';
 
-    // Use Gemini's curated excerpt (200-500 words specifically chosen for visualization)
-    // This is more focused than the full section and prevents cluttered images
-    // The excerpt is already provided by Gemini during analysis
-    const contentWithGoal = `VISUALIZATION GOAL: ${rec.visualizationGoal}
+    // Use cleaned content with Quarto variables replaced
+    // This ensures variables like {{< var treaty_annual_funding >}} are replaced with actual values
+    // Simple prompt: just style + content, no meta-instructions that might leak into images
+    const imagePrompt = `${style.style}
 
-${rec.contentExcerpt}`;
-
-    // Use the infographic prompt builder for consistency with project images
-    const imagePrompt = ImagePrompts.infographic.buildPrompt(contentWithGoal, style.style);
+${cleanedContent}`;
 
     try {
-      // Mobile-first: use portrait 9:16 for all images
-      // Portrait images scroll naturally on phones without requiring zoom/pan
-      // Desktop users can zoom in, but mobile users have limited screen real estate
-      const aspectRatio = '9:16' as const;
+      // Book-friendly: use portrait 3:4 (closest to standard book format)
+      // Balances mobile readability with print compatibility (1:1.33 aspect ratio)
+      // Fits printed pages better than 9:16 (1:1.78) without excessive scaling
+      const aspectRatio = '3:4' as const;
 
       // Generate descriptive filename from section title
       const sectionSlug = toKebabCase(rec.sectionTitle);
