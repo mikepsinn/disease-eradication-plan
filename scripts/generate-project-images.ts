@@ -328,10 +328,10 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Determine which style to use
+  // Determine which style to use (default to academic only)
   const stylesToGenerate = useAcademicStyle
     ? { academic: VisualStyles.academic }
-    : VisualStyles;
+    : { academic: VisualStyles.academic };
 
   // Generate images in selected styles
   for (const [styleName, styleConfig] of Object.entries(stylesToGenerate)) {
@@ -360,8 +360,8 @@ async function generateImageForFile(
         const imagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
         console.log(`  [OK] Generated OG image (${styleName}): ${imagePath}`);
 
-        // Default to retro style for frontmatter
-        if (styleName === 'retro') {
+        // Default to academic style for frontmatter
+        if (styleName === 'academic') {
           ogImagePath = imagePath;
         }
       } else {
@@ -388,8 +388,8 @@ async function generateImageForFile(
         const imagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
         console.log(`  [OK] Generated infographic (${styleName}): ${imagePath}`);
 
-        // Use academic style if requested, otherwise retro
-        if ((useAcademicStyle && styleName === 'academic') || (!useAcademicStyle && styleName === 'retro')) {
+        // Use academic style (default)
+        if (styleName === 'academic') {
           infographicImagePath = imagePath;
         }
       } else {
@@ -416,8 +416,8 @@ async function generateImageForFile(
         const imagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
         console.log(`  [OK] Generated slide (${styleName}): ${imagePath}`);
 
-        // Default to retro style (slides are not typically embedded in QMD)
-        if (styleName === 'retro') {
+        // Default to academic style (slides are not typically embedded in QMD)
+        if (styleName === 'academic') {
           slideImagePath = imagePath;
         }
       } else {
@@ -433,11 +433,10 @@ async function generateImageForFile(
     let updatedBody = body;
     const updatedFrontmatter = { ...frontmatter };
 
-    // Add OG image to frontmatter (defaults to retro style)
+    // Add OG image to frontmatter (defaults to academic style)
     if (ogImagePath) {
       // Only update if not already set or if we should update
       if (!frontmatter.image || forceRegenerate) {
-        // Default to retro unless user has set a different style
         updatedFrontmatter.image = `/${ogImagePath}`;
       }
     }
@@ -449,7 +448,10 @@ async function generateImageForFile(
 
       if (!hasExistingInfographic) {
         const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
-        const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
+
+        // Generate meaningful alt text from frontmatter
+        const altText = frontmatter.description || frontmatter.title || 'Chapter infographic';
+        const infographicMarkdown = `![${altText}](/${infographicImagePath})`;
 
         // Find the include directive and insert infographic after it
         if (updatedBody.includes(includeDirective)) {
@@ -481,7 +483,8 @@ async function generateBookChapterImages(
   fileFilter?: string,
   includeReferenceImages = false,
   analyzeFirst = false,
-  useAcademicStyle = false
+  useAcademicStyle = false,
+  forceRegenerate = false
 ): Promise<void> {
   console.log('\n' + '='.repeat(60));
   console.log('Generating OG images for book chapters');
@@ -530,9 +533,6 @@ async function generateBookChapterImages(
   const filesSkipped = 0;
   let filesGenerated = 0;
   let filesFailed = 0;
-
-  // Force regeneration if processing a specific file
-  const forceRegenerate = !!fileFilter;
 
   for (const filePath of bookFiles) {
     try {
@@ -594,12 +594,16 @@ async function main() {
   const includeReferenceImages = args.includes('--with-reference-images');
   const analyzeFirst = args.includes('--analyze-first');
   const useAcademicStyle = args.includes('--academic-style');
+  const forceRegenerate = args.includes('--force');
 
   if (analyzeFirst) {
     console.log('[INFO] Using Gemini Flash to analyze if images would be helpful before generating\n');
   }
   if (useAcademicStyle) {
     console.log('[INFO] Generating in academic style (black and white scientific)\n');
+  }
+  if (forceRegenerate) {
+    console.log('[INFO] FORCE MODE - Regenerating all images even if they already exist\n');
   }
 
   if (fileFilter) {
@@ -624,7 +628,7 @@ async function main() {
     console.log(`[INFO] Reference images from QMD files will be included in generation context\n`);
   }
 
-  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle);
+  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle, forceRegenerate);
 }
 
 // Run the script
