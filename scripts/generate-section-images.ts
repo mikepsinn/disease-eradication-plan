@@ -148,15 +148,9 @@ async function analyzeFileForSectionImages(
   console.log(`\n[*] Analyzing file with Gemini Flash...`);
   console.log(`  File: ${filePath}`);
 
-  const prompt = `You are an expert academic editor analyzing a scholarly document. Your task is to identify sections that would benefit from visual aids (diagrams, charts, infographics, or flowcharts).
+  const prompt = `Analyze this document and identify sections needing visual aids (diagrams, charts, infographics, flowcharts). Be selective—only recommend where visualization significantly enhances understanding.
 
-IMPORTANT GUIDELINES:
-1. **Be selective**: Only recommend images where visualization would significantly enhance understanding
-2. **Quality over quantity**: Each image should clarify complex relationships, data, or processes
-3. **Placement matters**: Images should go AFTER complete structural units (paragraphs, lists), not in the middle
-4. **Natural flow**: Images should complement the text, not interrupt the narrative
-
-FILE CONTENT (Quarto variables replaced with actual values):
+FILE CONTENT:
 ---
 ${cleanedContent}
 ---
@@ -165,53 +159,36 @@ Respond with JSON:
 {
   "recommendations": [
     {
-      "sectionHeading": "<exact markdown heading, e.g., '## Problem Statement'>",
-      "anchorText": "<last 5-10 words of the paragraph BEFORE where image should go>",
-      "placementHint": "<brief description, e.g., 'after the 4-point list explaining differences'>",
-      "sectionTitle": "<section heading text for filename>",
-      "contentExcerpt": "<relevant 200-500 word excerpt to visualize>",
+      "sectionHeading": "<exact markdown heading: '## Problem Statement'>",
+      "anchorText": "<last 5-10 words before image placement>",
+      "placementHint": "<e.g., 'after the 4-point list'>",
+      "sectionTitle": "<section name for filename>",
+      "contentExcerpt": "<200-500 word excerpt to visualize>",
       "imageType": "diagram" | "chart" | "infographic" | "flowchart",
       "visualizationGoal": "<detailed technical prompt for image generation>",
-      "caption": "<natural, human-readable caption for alt text (1-2 sentences describing what the image shows)>",
-      "reasoning": "<1-2 sentences: why is this image necessary?>"
+      "caption": "<1-2 sentence description, NO figure numbers like 'Figure 1:'>",
+      "reasoning": "<why this image is necessary>"
     }
   ],
   "totalRecommendations": <number>,
-  "reasoning": "<overall assessment: how many visuals does this document truly need?>"
+  "reasoning": "<overall assessment>"
 }
 
-PLACEMENT STRATEGY:
-Instead of line numbers, provide:
-1. **sectionHeading**: The exact heading text (with markdown syntax like "##")
-2. **anchorText**: Last few words of paragraph/sentence before image placement
-3. **placementHint**: Human-readable description (e.g., "after explaining the 4 critical differences")
+RECOMMEND ONLY IF:
+- Complex quantitative comparisons hard to grasp as text
+- Multi-step processes (4+ steps) or interconnected relationships (5+ entities)
+- Substantial context (200+ words) with data visualization value
 
-The script will intelligently find the best location by:
-- Locating the section heading
-- Finding the anchor text
-- Skipping over lists, headers, code blocks
-- Placing after complete structural units
+PLACEMENT:
+- Provide sectionHeading (exact markdown), anchorText (last words before placement), placementHint
+- Script finds location by: locating heading → finding anchor → skipping lists/headers/code → placing after complete paragraphs
+- Examples: "after the 4-point explanation", "after ROI calculation", "after defining key terms"
 
-CRITERIA FOR RECOMMENDATION:
-✅ RECOMMEND if:
-- Complex quantitative comparisons that are hard to grasp as pure text
-- Multi-step processes or workflows (4+ steps)
-- Relationships between multiple entities (5+ interconnected elements)
-- Data visualization would genuinely clarify the concept
-- Section has substantial explanatory text (200+ words) establishing context
+CAPTION FORMAT:
+- Natural descriptions: "Comparison of traditional trial costs ($41K/patient) vs. pragmatic trials ($500/patient)."
+- NO figure numbers: ❌ "Figure 1:", "Fig. 1:"
 
-❌ DO NOT recommend if:
-- Section is primarily narrative without complex data/relationships
-- Content is already clear from text alone
-- Would not significantly enhance understanding
-
-GOOD PLACEMENT EXAMPLES:
-- "after the 4-point explanation of why this differs"
-- "after defining all key terms"
-- "after the ROI calculation and explanation"
-- "after explaining the budget allocation breakdown"
-
-Be thoughtful and selective. Only recommend images that truly add value.`;
+Be selective. Quality over quantity.`;
 
   try {
     const response = await generateGeminiProContent(prompt);
@@ -264,7 +241,8 @@ Be thoughtful and selective. Only recommend images that truly add value.`;
 async function generateSectionImages(
   filePath: string,
   recommendations: ImageRecommendation[],
-  useAcademicStyle: boolean
+  useAcademicStyle: boolean,
+  cleanedContent: string
 ): Promise<void> {
   if (recommendations.length === 0) {
     console.log(`\n[SKIP] No images to generate`);
@@ -277,9 +255,12 @@ async function generateSectionImages(
   const relativePath = path.relative(process.cwd(), filePath);
   const outputDir = path.join(process.cwd(), 'assets', 'section-images', path.dirname(relativePath));
 
-  // Read file content (raw, for line number mapping and insertion)
+  // Read file content (raw, for insertion)
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const lines = fileContent.split('\n');
+
+  // Also split cleaned content (for anchor text matching, since LLM analyzed cleaned content)
+  const cleanedLines = cleanedContent.split('\n');
 
   // Generate images for each recommendation
   const generatedImages: Array<{ lineNumber: number; imagePath: string; caption: string }> = [];
@@ -288,8 +269,8 @@ async function generateSectionImages(
     const rec = recommendations[i];
     console.log(`\n  [${i + 1}/${recommendations.length}] Generating: ${rec.sectionTitle}`);
 
-    // Find smart placement using section heading and anchor text
-    const placementLine = findSmartPlacement(lines, rec.sectionHeading, rec.anchorText, rec.placementHint);
+    // Find smart placement using section heading and anchor text (search in cleaned content since that's what LLM analyzed)
+    const placementLine = findSmartPlacement(cleanedLines, rec.sectionHeading, rec.anchorText, rec.placementHint);
 
     if (placementLine === null) {
       console.log(`  [SKIP] Could not find safe placement location`);
@@ -423,12 +404,12 @@ async function main() {
     // Match section images with any surrounding newlines (1+ before and after)
     // Replace with exactly 2 newlines to maintain paragraph spacing
     const sectionImagePattern = /\n+!\[.*?\]\(\/assets\/section-images\/.*?\)\n+/g;
-    let cleanedContent = fileContent.replace(sectionImagePattern, '\n\n');
+    let fileWithoutImages = fileContent.replace(sectionImagePattern, '\n\n');
     // Consolidate any remaining multiple consecutive newlines (3+ → 2)
-    cleanedContent = cleanedContent.replace(/\n{3,}/g, '\n\n');
+    fileWithoutImages = fileWithoutImages.replace(/\n{3,}/g, '\n\n');
 
-    if (cleanedContent !== fileContent) {
-      await fs.writeFile(filePath, cleanedContent, 'utf-8');
+    if (fileWithoutImages !== fileContent) {
+      await fs.writeFile(filePath, fileWithoutImages, 'utf-8');
       const removedCount = (fileContent.match(sectionImagePattern) || []).length;
       console.log(`[FORCE] Removed ${removedCount} section image references from file\n`);
     }
@@ -446,7 +427,7 @@ async function main() {
   }
 
   // Generate and insert images
-  await generateSectionImages(filePath, analysis.recommendations, useAcademicStyle);
+  await generateSectionImages(filePath, analysis.recommendations, useAcademicStyle, cleanedContent);
 
   console.log('\n='.repeat(80));
   console.log('✓ Complete');
