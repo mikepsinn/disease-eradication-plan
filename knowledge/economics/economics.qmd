@@ -104,7 +104,7 @@ A one-time {{< var efficacy_lag_years >}}-year timeline shift in patient access 
 ### Historical Context: When Grand Challenges Succeed
 
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-problem-statement-academic.png)
+
 
 Health economics literature identifies three historical interventions that achieved cost-dominant status (saving money while improving health):
 
@@ -125,6 +125,9 @@ The Oxford RECOVERY trial demonstrated that pragmatic trial design can reduce pe
 Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
 This intervention differs in four critical ways:
+
+![A comparative bar chart or 'budget scale' visualization contrasting Global Military Spending ($2.72T) vs. Government Clinical Trial Funding ($4.5B). A secondary visual element should highlight the cost disparity between Traditional Trials ($41k/patient) and Pragmatic Trials ($500/patient).](/assets/section-images/knowledge/economics/economics-section-problem-statement-current-resource-allocation-academic.png)
+
 
 1. **Empirical grounding**: Cost estimates based on demonstrated RECOVERY trial results, not theoretical projections. The {{< var recovery_trial_cost_per_patient >}}/patient cost is a proven fact, not a forecast.
 
@@ -163,7 +166,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 - Self-funding threshold: Annual benefits exceed annual costs by year 3 of implementation
 
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-a-decentralized-framework-for-drug-assessment-academic.png)
+
 
 ## Nomenclature and Key Terms
 
@@ -186,6 +189,9 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 **A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to pragmatic clinical trials infrastructure.
 
 **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
+
+
+![A 'Before and After' process diagram. Top half shows 'Traditional Trials' with redundant infrastructure (separate sites, parallel data entry, travel costs). Bottom half shows 'Pragmatic/dFDA Trials' overlaying existing infrastructure (hospital + EHR = data), illustrating how the 82x cost reduction is achieved structurally.](/assets/section-images/knowledge/economics/economics-section-trial-cost-reduction-academic.png)
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 
@@ -311,7 +317,7 @@ Based on systematic outcome collection across thousands of patients, labels show
 - **Sample size and confidence**: "Based on 4,200 patients, 95% CI"
 
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-why-1-is-enough-academic.png)
+
 
 This is measured data from actual patient outcomes, not marketing claims or lawyer-drafted disclaimers.
 
@@ -458,6 +464,9 @@ The {{< var treaty_reduction_pct >}} Treaty isn't just a budget cut; it's an **o
 
 By successfully executing a verified, mutual reduction in military spending to fund a shared global good (curing disease), humanity establishes a proof-of-concept for cooperation.
 
+
+![A circular 'Virtuous Cycle' or network diagram showing the flow of value in the IAB (Incentive Alignment Bond) model. Arrows should connect Investors (capital), Politicians (votes/career), Defense (returns), and Patients (cures), demonstrating how the 1% redirection satisfies all distinct self-interests simultaneously.](/assets/section-images/knowledge/economics/economics-section-stakeholder-alignment-academic.png)
+
 1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure required for larger steps.
 2.  **The Ratchet Mechanism**: Once the economic benefits of the "Peace Dividend" (wealth, health, longevity) materialize, the incentive to increase the treaty percentage grows. We move from a negative-sum arms race to a positive-sum "peace race."
 3.  **Existential Risk Reduction**: Gradually increasing the percentage creates a trajectory toward phasing out large-scale conflict entirely. Since a primary driver of existential risk is **autonomous murder-maximizing AI produced by military arms races**, de-escalating this race via the treaty is arguably the single most effective X-Risk strategy available.
@@ -485,7 +494,7 @@ Politicians, however, see their rewards grow with each expansion. This creates s
 
 The 80/10/10 allocation structure functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-dominance-analysis-academic.png)
+
 
 
 
@@ -1157,6 +1166,9 @@ This scenario includes only R&D efficiency savings, excluding peace dividends, e
 
 Simple ROI calculation:
 
+
+![A Sankey diagram. Input: '1% Military Budget Redirection ($27.2B)'. Split flows: 'Treaty Fund Allocations' (Trials, Investors, Politics). Output flows: 'Peace Dividend ($114B)' and 'R&D Efficiency ($30B)' merging into 'Total Annual Economic Benefit ($144B)'.](/assets/section-images/knowledge/economics/economics-section-scenario-analysis-conservative-case-academic.png)
+
 {{< var dfda_roi_rd_only_latex >}}
 
 Total cost: {{< var dfda_npv_total_cost >}}.
@@ -1440,7 +1452,7 @@ This represents the funding capacity from the 1% Treaty Fund alone, without assu
 - From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-implementation-strategy-academic.png)
+
 
 **Why More Trials = More Cures (No Diminishing Returns)**:
 Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity translates directly into medical progress because humanity has empirically tested only **0.417%** of the known therapeutic landscape. We are not facing diminishing returns; we are facing a cost barrier that has prevented us from testing 99.6% of plausible treatments. See **[The Myth of Diminishing Returns](#the-myth-of-diminishing-returns)** for the mathematical proof that the search space is effectively infinite relative to our current efforts.
@@ -1531,7 +1543,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
 - **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-risk-analysis-and-mitigation-academic.png)
+
 
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis and implementation strategy.
@@ -1621,7 +1633,7 @@ This budget is designed for a 3-5 year campaign to achieve treaty ratification b
 
 This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 returns regardless of the specific path to adoption.
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-limitations-and-uncertainties-academic.png)
+
 
 
 ## Detailed Technical References
@@ -1702,6 +1714,9 @@ A decentralized institutes of health put patients in control through trial parti
 **Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what {{< var global_population_2024 >}} humans can try when dying
 
 **New system**: Patients choose which trials to join. Trials that attract patients get funded. Trials that don't, die.
+
+
+![A Treemap or 'Pixel Grid' visualization representing the total search space (9.5M combinations). A tiny, distinctively colored sliver (0.4%) represents 'Current Knowledge,' while the vast remainder is 'Unexplored Opportunity.'](/assets/section-images/knowledge/economics/economics-section-the-myth-of-diminishing-returns-academic.png)
 
 Patient subsidies follow them to whichever trial they join. Researchers compete to design trials that patients actually want to participate in. No committees, no grant-writing contests, no bureaucrats deciding what's "worthy" of study.
 
@@ -1965,7 +1980,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 
 
-![Section Image](/assets/section-images/knowledge/economics/economics-section-treaty-adoption-political-will-and-diplomatic-strategy-academic.png)
+
 
 
 

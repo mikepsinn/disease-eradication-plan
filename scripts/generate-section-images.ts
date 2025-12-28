@@ -324,10 +324,11 @@ async function main() {
 
     // Remove existing section image references from file
     const fileContent = await fs.readFile(filePath, 'utf-8');
-    // Match section images with surrounding blank lines (any alt text)
-    const sectionImagePattern = /\n*!\[.*?\]\(\/assets\/section-images\/.*?\)\n*/g;
-    let cleanedContent = fileContent.replace(sectionImagePattern, '\n');
-    // Consolidate any multiple consecutive newlines left behind (3+ → 2)
+    // Match section images with any surrounding newlines (1+ before and after)
+    // Replace with exactly 2 newlines to maintain paragraph spacing
+    const sectionImagePattern = /\n+!\[.*?\]\(\/assets\/section-images\/.*?\)\n+/g;
+    let cleanedContent = fileContent.replace(sectionImagePattern, '\n\n');
+    // Consolidate any remaining multiple consecutive newlines (3+ → 2)
     cleanedContent = cleanedContent.replace(/\n{3,}/g, '\n\n');
 
     if (cleanedContent !== fileContent) {
