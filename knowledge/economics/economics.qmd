@@ -125,6 +125,9 @@ This intervention differs in four critical ways:
 
 2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
 
+![Section Image](/assets/section-images/knowledge/economics/economics-section-current-resource-allocation-academic.png)
+
+
 3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
 4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors (10% returns), politicians (10% political incentive fund), and patients (80% pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
@@ -191,6 +194,9 @@ Humanity's budget priorities, explained simply:
 
 - **Government clinical trials spending**: {{< var global_government_clinical_trials_spending_annual >}} {{< var global_government_clinical_trials_spending_annual_cite >}}/year (testing which medicines actually work)
 
+![Section Image](/assets/section-images/knowledge/economics/economics-section-enhanced-safety-monitoring-academic.png)
+
+
 - **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}}:1 (you spend {{< var military_to_government_clinical_trials_spending_ratio >}}× more on weapons than on discovering which drugs cure diseases)
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
@@ -231,6 +237,8 @@ This mortality burden exceeds:
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
 ## How It Works
+
+
 
 The mechanism is financial, not bureaucratic:
 
@@ -396,6 +404,9 @@ Bombs are expensive. Breaking things costs money. Repairing broken things costs 
 A {{< var treaty_reduction_pct >}} reduction in weapons procurement saves {{< var peace_dividend_annual_societal_benefit >}} annually.
 That's roughly the GDP of Austria, just sitting there in the "please don't explode us" budget.
 
+
+![Section Image](/assets/section-images/knowledge/economics/economics-section-mechanism-architecture-academic.png)
+
 ### 2. The Research Efficiency Dividend
 
 {{< var dfda_rd_gross_savings_annual >}}–{{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}
@@ -504,6 +515,9 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 | Action | Expected Outcome |
 |:-------|:-----------------|
 | Vote Yes | Defense lobby attack ads; reduced industry support |
+
+![Section Image](/assets/section-images/knowledge/economics/economics-section-quantitative-comparison-academic.png)
+
 | Vote No | Retained military contractor funding; no electoral risk |
 
 **With IABs:**
@@ -930,6 +944,9 @@ All data sources include confidence levels and last-update dates. See [Reference
 
 The analysis employs comprehensive sensitivity testing across multiple scenarios to assess robustness of findings:
 
+![Section Image](/assets/section-images/knowledge/economics/economics-section-historical-precedent-pre-1962-physician-led-efficacy-trials-academic.png)
+
+
 **Conservative Scenario ({{< var dfda_roi_rd_only >}}:1 ROI):**
 
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}}
@@ -1286,6 +1303,9 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 - **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
 
 {{< var treaty_vs_bed_nets_multiplier_latex >}}
+
+![Section Image](/assets/section-images/knowledge/economics/economics-section-total-recurring-benefits-breakdown-academic.png)
+
 
 - **Risk-adjusted expected value**: {{< var treaty_expected_cost_per_daly >}}/DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets)
 
@@ -1680,6 +1700,9 @@ A decentralized institutes of health put patients in control through trial parti
 Your subsidy follows you to whichever trial you join. Researchers compete to design trials that patients actually want to participate in. No committees, no grant-writing contests, no bureaucrats deciding what's "worthy" of study.
 
 All transactions publicly recorded. All spending transparent. All decisions auditable.
+
+![Section Image](/assets/section-images/knowledge/economics/economics-section-the-myth-of-diminishing-returns-academic.png)
+
 
 Patients select which trials to join. Trials that attract participants receive funding. Researchers compete for patient participation rather than committee grants.
 
