@@ -225,8 +225,21 @@ def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
     return None
 
 
+def round_to_n_sigfigs(value: float, n: int = 3) -> str:
+    """Round a value to n significant figures and format cleanly."""
+    if value == 0:
+        return "0"
+    # Use general format with n significant figures
+    formatted = f"{value:.{n}g}"
+    # Clean up scientific notation if present
+    if 'e' in formatted.lower():
+        # Convert back to regular notation if reasonable
+        return f"{float(formatted):.{n-1}f}".rstrip('0').rstrip('.')
+    return formatted
+
+
 def format_latex_value(value: float, unit: str) -> str:
-    """Format a numeric value for LaTeX display with proper units and scaling."""
+    """Format a numeric value for LaTeX display with proper units and scaling (3 sig figs)."""
     is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
     is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
     is_in_billions = "billion" in unit.lower()
@@ -253,8 +266,11 @@ def format_latex_value(value: float, unit: str) -> str:
                 return f"\\${value/1e6:.1f}M"
             elif abs_val >= 1e3:
                 return f"\\${value/1e3:.1f}K"
+            elif abs_val >= 1:
+                return f"\\${value:.2f}".rstrip('0').rstrip('.')
             else:
-                return f"\\${value:.0f}"
+                # Values < $1: preserve decimals
+                return f"\\${value:.3f}".rstrip('0').rstrip('.')
     elif is_percentage:
         if abs_val <= 1:
             return f"{value * 100:.1f}\\%"
@@ -270,12 +286,21 @@ def format_latex_value(value: float, unit: str) -> str:
             formatted = f"{value/1e6:.1f}M"
             return formatted.replace('.0M', 'M')
         elif abs_val >= 1e3:
-            # Use thousands separator
-            return f"{value:,.0f}".replace(',', '{,}')
+            # Use thousands separator with 3 sig figs
+            rounded = round_to_n_sigfigs(value, 3)
+            # Add thousands separators
+            if '.' in rounded:
+                int_part, dec_part = rounded.split('.')
+                int_part = f"{int(int_part):,}".replace(',', '{,}')
+                return f"{int_part}.{dec_part}"
+            else:
+                return f"{int(rounded):,}".replace(',', '{,}')
         elif abs_val >= 1:
-            return f"{value:.2f}".rstrip('0').rstrip('.')
+            # 3 significant figures for values >= 1
+            return round_to_n_sigfigs(value, 3)
         else:
-            return f"{value:.4f}".rstrip('0').rstrip('.')
+            # 3 significant figures for values < 1
+            return round_to_n_sigfigs(value, 3)
 
 
 def create_short_label(display_name: str, param_name: str = "") -> str:

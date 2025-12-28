@@ -2534,7 +2534,6 @@ export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.94B} = \\$0.126",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
@@ -2557,7 +2556,6 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "E[\\text{Multiplier}] = \\frac{\\$89}{\\$12.7} \\approx 7\\times",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -2668,7 +2666,6 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "\\text{Multiplier} = \\frac{\\$89}{\\$0.126} = 707\\times",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {

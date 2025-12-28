@@ -557,7 +557,7 @@
   \ × TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view details, calculation\
   \ & sources\">75.4k</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
-  \ Multiplier = 3{,}300 \\times 22.85 = 75{,}392\n$$"
+  \ Multiplier = 3{,}300 \\times 22.8 = 75{,}400\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_upfront_build\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -738,7 +738,7 @@
   \ confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD\
   \ | Unit: ratio | Click to view details, calculation & sources\">105</a>"
 "drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\nMultiplier_{curr} =\
-  \ \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$24.7M} = 105.26\n$$"
+  \ \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$24.7M} = 105\n$$"
 "drug_development_cost_1980s": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_development_cost_1980s\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
@@ -923,7 +923,7 @@
   \ Formula: COMBAT_DEATHS × VSL  | Unit: USD/year | Click to view details, calculation\
   \ & sources\">$2.34T</a>"
 "global_annual_human_cost_active_combat_latex": "$$\nCost_{human,ann} = Deaths_{combat,ann}\
-  \ \\times Value = 233{,}600 \\times \\$10.0M = \\$2.34T\n$$"
+  \ \\times Value = 234{,}000 \\times \\$10.0M = \\$2.34T\n$$"
 "global_annual_human_cost_state_violence": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_human_cost_state_violence\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual cost of\
@@ -1305,7 +1305,7 @@
   \ | Formula: TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio |\
   \ Click to view details, calculation & sources\">191</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
-  \ = \\frac{\\$143.55B}{\\$750.0M} = 191.4\n$$"
+  \ = \\frac{\\$143.55B}{\\$750.0M} = 191\n$$"
 "iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Annual funding for IAB political incentive mechanism\
@@ -2008,8 +2008,8 @@
   \ bed nets while also being self-funding. | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view\
   \ details, calculation & sources\">$0.126</a>"
-"treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
-  $1.0B}{7.94B} = \\$0.126\n$$"
+"treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\nCost_{DFDA,treaty} = \\frac{Cost_{camp,total}}{DALYs_{dis}}\
+  \ = \\frac{\\$1.00B}{7.94B} = \\$0.126\n$$"
 "treaty_expected_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected cost\
@@ -2026,8 +2026,8 @@
   \ for political uncertainty at 1% success rate) | Calculated from 2 inputs | ? Low\
   \ confidence | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY |\
   \ Unit: ratio | Click to view details, calculation & sources\">7.07</a>"
-"treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
-  $89}{\\$12.7} \\approx 7\\times\n$$"
+"treaty_expected_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{net,treaty} = \\\
+  frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$12.59} = 7.07\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2035,7 +2035,7 @@
   \ confidence | Formula: TOTAL_DEATHS × REDUCTION_PCT | Unit: lives/year | Click\
   \ to view details, calculation & sources\">2.45k</a>"
 "treaty_lives_saved_annual_global_latex": "$$\nDeaths_{ann} = Deaths_{total} \\times\
-  \ Reduction_{treaty} = 244{,}600 \\times 1.0\\% = 2{,}446\n$$"
+  \ Reduction_{treaty} = 245{,}000 \\times 1.0\\% = 2{,}450\n$$"
 "treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Basic annual\
@@ -2052,7 +2052,7 @@
   \ | ✓ High confidence | Formula: LIVES_SAVED × QALYS_PER_LIFE | Unit: QALYs/year\
   \ | Click to view details, calculation & sources\">85.6k</a>"
 "treaty_qalys_gained_annual_global_latex": "$$\nDividend_{ann} = QALYs_{RD} \\times\
-  \ Deaths_{ann} = 35 \\times 2{,}446 = 85{,}610\n$$"
+  \ Deaths_{ann} = 35 \\times 2{,}450 = 85{,}600\n$$"
 "treaty_recurring_benefits_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_recurring_benefits_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
@@ -2073,7 +2073,7 @@
   \ Formula: HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST | Unit: ratio | Click to view\
   \ details, calculation & sources\">251k</a>"
 "treaty_roi_historical_rate_latex": "$$\nROI_{treaty} = \\frac{Delay_{total}}{Cost_{camp,total}}\
-  \ = \\frac{\\$250.92T}{\\$1.00B} = 250{,}920\n$$"
+  \ = \\frac{\\$250.92T}{\\$1.00B} = 251{,}000\n$$"
 "treaty_roi_innovation_acceleration": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_innovation_acceleration\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Treaty ROI based\
@@ -2119,8 +2119,8 @@
   \ (using $89/DALY midpoint estimate) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio | Click\
   \ to view details, calculation & sources\">707</a>"
-"treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
-  $0.126} = 707\\times\n$$"
+"treaty_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{DFDA,treaty}}\
+  \ = \\frac{\\$89}{\\$0.126} = 707\n$$"
 "trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\
@@ -2135,7 +2135,7 @@
   \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
   \ view details, calculation & sources\">22.8</a>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
-  \ = \\frac{43.4M}{1.9M} = 22.85\n$$"
+  \ = \\frac{43.4M}{1.9M} = 22.8\n$$"
 "trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_cost_reduction_factor\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
@@ -2161,7 +2161,7 @@
   \ from 2 inputs | ~ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT |\
   \ Unit: ratio | Click to view details, calculation & sources\">3.07k</a>"
 "type_ii_error_cost_ratio_latex": "$$\nCost = \\frac{DALYs_{dis}}{DALYs} = \\frac{7.94B}{2.6M}\
-  \ = 3{,}068\n$$"
+  \ = 3{,}070\n$$"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-type_i_error_benefit_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
