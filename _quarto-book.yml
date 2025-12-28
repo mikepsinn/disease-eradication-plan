@@ -422,9 +422,10 @@ format:
     output-file: "How-to-End-War-and-Disease.epub"
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.png
-    # Math rendering: Use webtex to convert LaTeX to images (works in all e-readers, including Kindle)
-    # MathML (default) doesn't work in Kindle and many other readers
-    html-math-method: webtex
+    # Math rendering: Use mathml (fast) instead of webtex (slow)
+    # MathML works in most modern e-readers (Apple Books, Kobo, Nook)
+    # Kindle users should use the PDF version for equations
+    html-math-method: mathml
     # Table of contents
     toc: true
     toc-depth: 3
