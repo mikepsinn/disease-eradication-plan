@@ -36,7 +36,8 @@
   "scripts": {
     "generate:everything": "python scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:website": "python scripts/render-book-website.py",
-    "images:generate": "tsx scripts/generate-project-images.ts --force",
+    "images:generate": "tsx scripts/generate-project-images.ts",
+    "images:generate:force": "tsx scripts/generate-project-images.ts --force",
     "images:sections": "tsx scripts/generate-section-images.ts",
     "images:sections:retro-futuristic": "tsx scripts/generate-section-images.ts --retro-futuristic",
     "images:sections:force": "tsx scripts/generate-section-images.ts --force",

@@ -1098,7 +1098,7 @@ GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 
 # Calculated: Cost per participant
 CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
-    0,  # Calculated via compute lambda
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
@@ -1113,7 +1113,7 @@ CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
 
 # Calculated: Cost per approved drug (from trials only)
 CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
-    0,  # Calculated via compute lambda
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_DRUG_APPROVALS_PER_YEAR,
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
@@ -1128,7 +1128,7 @@ CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
 
 # Calculated: Military vs ALL clinical trials ratio
 MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
-    0,  # Calculated via compute lambda
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",

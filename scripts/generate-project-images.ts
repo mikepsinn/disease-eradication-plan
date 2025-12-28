@@ -6,11 +6,15 @@
  *   npx tsx scripts/generate-project-images.ts [file-filter] [options]
  *
  * Options:
+ *   --force                   Regenerate all images even if they already exist
  *   --analyze-first           Use Gemini Flash to analyze if image would be helpful before generating
  *   --academic-style          Generate in academic style (black & white) instead of retro
  *   --with-reference-images   Extract existing images from QMD and use as reference for generation
  *
  * Examples:
+ *   # Force regenerate all images in academic style
+ *   npx tsx scripts/generate-project-images.ts --force
+ *
  *   # Generate with intelligent analysis for economics.qmd
  *   npx tsx scripts/generate-project-images.ts economics --analyze-first --academic-style
  *
