@@ -26,7 +26,6 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-import sharp from 'sharp';
 import { generateGeminiProContent } from './lib/llm.js';
 import { generateAndSaveImages } from './lib/genai-image.js';
 import { getCleanedContentForLLM } from './lib/file-utils.js';
@@ -57,52 +56,6 @@ function toKebabCase(text: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric with hyphens
     .replace(/^-+|-+$/g, '');      // Remove leading/trailing hyphens
-}
-
-/**
- * Add watermark to image
- */
-async function addWatermark(imagePath: string): Promise<void> {
-  const text = 'WarOnDisease.org';
-  const fontSize = 16;
-  const padding = 10;
-
-  // Create SVG watermark with white background and black text
-  const svgWatermark = `
-    <svg width="200" height="40">
-      <rect x="0" y="0" width="200" height="40" fill="white" opacity="0.9"/>
-      <text x="100" y="25" font-family="'Courier New', Courier, monospace"
-            font-size="${fontSize}" fill="black" text-anchor="middle">
-        ${text}
-      </text>
-    </svg>
-  `;
-
-  const watermarkBuffer = Buffer.from(svgWatermark);
-
-  // Load image and get dimensions
-  const image = sharp(imagePath);
-  const metadata = await image.metadata();
-
-  if (!metadata.width || !metadata.height) {
-    throw new Error('Could not read image dimensions');
-  }
-
-  // Position watermark in lower right corner
-  const left = metadata.width - 200 - padding;
-  const top = metadata.height - 40 - padding;
-
-  // Composite watermark onto image
-  await image
-    .composite([{
-      input: watermarkBuffer,
-      left,
-      top,
-    }])
-    .toFile(imagePath + '.tmp');
-
-  // Replace original with watermarked version
-  await fs.rename(imagePath + '.tmp', imagePath);
 }
 
 /**
@@ -279,9 +232,6 @@ ${rec.contentExcerpt}`;
       if (imageFiles && imageFiles.length > 0) {
         const absolutePath = imageFiles[0];
         const relativePath = path.relative(process.cwd(), absolutePath).replace(/\\/g, '/');
-
-        // Add watermark
-        await addWatermark(absolutePath);
 
         console.log(`  [OK] Generated: ${relativePath}`);
         generatedImages.push({
