@@ -259,6 +259,9 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
+![Figure 2: The 1% Treaty Operational Flow. Funding follows the patient, converting clinical trials from cost centers into revenue-generating activities for healthcare providers.](/assets/section-images/knowledge/economics/economics-section-mechanism-of-action-academic.png)
+
+
 ## A decentralized framework for drug assessment
 
 The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works, but what measurably happens to real humans taking real treatments.
@@ -337,6 +340,9 @@ This is measured data from actual patient outcomes, not marketing claims or lawy
 5. Next doctor/patient looking at that treatment sees current evidence, not 5-year-old clinical trial results
 
 No extra paperwork. No dedicated research staff. Just making routine clinical data actually useful for evidence generation.
+
+
+![Figure 3: Structural Comparison of Traditional vs. Pragmatic Trials. Leveraging existing healthcare infrastructure reduces costs by 98% while increasing speed and generalizability.](/assets/section-images/knowledge/economics/economics-section-traditional-vs-pragmatic-infrastructure-academic.png)
 
 ## Summary of Results
 
@@ -536,7 +542,7 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 
 | Action | Expected Outcome |
 |:-------|:-----------------|
-| Vote Yes | Defense lobby attack ads; reduced industry support |
+| Vote Yes | Military lobby attack ads; reduced industry support |
 | Vote No | Retained military contractor funding; no electoral risk |
 
 **With IABs:**
@@ -554,7 +560,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Defense Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). The treaty creates new revenue streams without threatening core business.
+**Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). The treaty creates new revenue streams without threatening core business.
 
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
@@ -569,6 +575,9 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
+
+![Figure 4: Incentive Alignment Architecture. The mechanism ensures every key stakeholder group derives direct economic or political benefit from treaty adoption.](/assets/section-images/knowledge/economics/economics-section-stakeholder-incentive-alignment-academic.png)
+
 
 #### VICTORY Incentive Alignment Bonds
 
@@ -629,6 +638,9 @@ With $1B allocated toward saving lives, here's what each option delivers:
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
+
+
+![Figure 5: Cost-Effectiveness Landscape. The 1% Treaty offers orders-of-magnitude efficiency gains compared to traditional 'best buy' health interventions.](/assets/section-images/knowledge/economics/economics-section-cost-effectiveness-comparison-academic.png)
 
 ### Why This Dominates
 
@@ -1128,7 +1140,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
 
-**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
+**Concentrated costs, diffuse benefits**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
 **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
 
@@ -1543,7 +1555,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
-- **Defense sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
+- **Military sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases {{< var trial_capacity_multiplier >}}×
 - **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ({{< var global_disease_economic_burden_annual >}} current economic cost)
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
@@ -1625,7 +1637,7 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
 | **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_referendum >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
-| **[Legislative Advocacy](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, defense industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
+| **[Legislative Advocacy](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
 
@@ -1663,7 +1675,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Why this actually won't happen**:
 
-Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. The system offers VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Military lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. The system offers VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
@@ -1919,7 +1931,7 @@ This analysis models economic returns conditional on treaty ratification. Politi
 
 - **Geopolitical stability:** International cooperation requirements may face challenges during periods of global tension
 - **Domestic politics:** Military budget reductions face constituency resistance in military-dependent regions
-- **Lobbying influence:** Defense industry opposition may impede adoption
+- **Lobbying influence:** Military industry opposition may impede adoption
 
 **Risk assessment:** The {{< var treaty_reduction_pct >}} reduction is intentionally modest to minimize political resistance. Historical precedents (military-to-civilian conversions post-Cold War) demonstrate feasibility.
 
@@ -2033,7 +2045,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 
 The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund.
 
-### Defense Budget Allocation
+### Military Budget Allocation
 
 Military planners optimize for national security. This analysis demonstrates that {{< var treaty_reduction_pct >}} of military spending provides near-zero marginal security value while generating enormous economic returns when redirected.
 
@@ -2098,7 +2110,7 @@ Unilateral military reduction is politically infeasible:
 
 - Creates perceived security vulnerability
 - "Free rider" problem: non-participants benefit from reduced global conflict risk without contributing
-- Domestic opposition from defense industries
+- Domestic opposition from military industries
 
 **Simultaneous binding commitment solves this**: All signatories reduce 1% together, maintaining relative military balance while collectively redirecting {{< var treaty_annual_funding >}}/year to health research that benefits all participants.
 
