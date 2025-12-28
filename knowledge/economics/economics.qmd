@@ -129,6 +129,9 @@ This intervention differs in four critical ways:
 
 1. **Empirical grounding**: Cost estimates based on demonstrated RECOVERY trial results, not theoretical projections. The {{< var recovery_trial_cost_per_patient >}}/patient cost is a proven fact, not a forecast.
 
+
+![Comparison of global resource allocation: Military spending dwarfs clinical trial funding by a factor of 604:1.](/assets/section-images/knowledge/economics/economics-section-problem-statement-academic.png)
+
 2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
 
 3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
@@ -177,6 +180,9 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 **ROI (Return on Investment)**: Ratio of net benefits to costs. Calculated as NPV(Benefits) / NPV(Costs) for time-adjusted analysis, or Annual Benefits / Annual Costs for simple analysis.
 
 **A decentralized framework for drug assessment (dFDA)**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, a dFDA abstracts away regulatory complexity: researchers define hypotheses, and the framework handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
+
+
+![The dFDA ecosystem: Financial flows align incentives for patients, providers, and researchers to accelerate evidence generation.](/assets/section-images/knowledge/economics/economics-section-how-it-works-academic.png)
 
 **decentralized institutes of health (DIH)**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. Your decentralized institutes of health (DIH) can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
 
@@ -261,11 +267,12 @@ This isn't "funding infrastructure" - it's making trial participation financiall
 
 ![Figure 2: The 1% Treaty Operational Flow. Funding follows the patient, converting clinical trials from cost centers into revenue-generating activities for healthcare providers.](/assets/section-images/knowledge/economics/economics-section-mechanism-of-action-academic.png)
 
-![The operational flow of the 1% Treaty, converting military budget redirection into patient subsidies and real-world evidence generation.](/assets/section-images/knowledge/economics/economics-section-how-it-works-academic.png)
-
 
 
 ## A decentralized framework for drug assessment
+
+
+![Concept for standardized Outcome Labels: Replacing legal disclaimers with quantified, real-world patient data similar to nutrition facts.](/assets/section-images/knowledge/economics/economics-section-a-decentralized-framework-for-drug-assessment-academic.png)
 
 The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works, but what measurably happens to real humans taking real treatments.
 
@@ -297,6 +304,9 @@ The system automatically aggregates outcomes:
 - **Pattern detected after 5,000 prescriptions** → Public alert issued, rather than waiting for 100,000+ prescriptions and years of voluntary reports
 
 This isn't hypothetical. Analogous systems already exist: the Sentinel Initiative monitors 200+ million patients across US health systems for drug safety signals. The difference is making this the default infrastructure for all treatments, not a separate monitoring program.
+
+![Timeline Shift: Eliminating the 8.2-year efficacy gap allows patient access immediately after safety verification.](/assets/section-images/knowledge/economics/economics-section-summary-of-results-academic.png)
+
 
 ### Comparative Effectiveness Rankings
 
@@ -463,6 +473,9 @@ All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 ### What doesn't change
 
 * Power balances (everyone cuts equally)
+
+![Incentive Alignment Bonds restructure political payoffs, making treaty support the rational career choice for legislators.](/assets/section-images/knowledge/economics/economics-section-political-economy-and-financing-academic.png)
+
 * Deterrence (still plenty of weapons)
 * Force ratios (relative strength identical)
 * Strategic stability (same as before, just {{< var treaty_reduction_pct >}} less apocalyptic)
@@ -557,8 +570,6 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 
 The mechanism changes the math. Supporting beneficial policy becomes professionally advantageous rather than requiring self-sacrifice.
 
-![Incentive structure transformation for legislators, contrasting the risks of supporting peace under the status quo against the rewards under the Incentive Alignment Bond system.](/assets/section-images/knowledge/economics/economics-section-political-economy-academic.png)
-
 
 #### Stakeholder Alignment
 
@@ -571,6 +582,9 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
 **Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
+
+
+![Cost-Effectiveness Comparison: The 1% Treaty offers systemic leverage far exceeding traditional linear interventions like bed nets.](/assets/section-images/knowledge/economics/economics-section-dominance-analysis-academic.png)
 
 **Politicians**: {{< var treaty_campaign_voting_bloc_target >}} million voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
 
@@ -647,8 +661,6 @@ With $1B allocated toward saving lives, here's what each option delivers:
 
 
 ![Figure 5: Cost-Effectiveness Landscape. The 1% Treaty offers orders-of-magnitude efficiency gains compared to traditional 'best buy' health interventions.](/assets/section-images/knowledge/economics/economics-section-cost-effectiveness-comparison-academic.png)
-
-![Cost-effectiveness comparison ($/DALY) of the 1% Treaty against standard highly-effective interventions like bed nets and deworming.](/assets/section-images/knowledge/economics/economics-section-dominance-analysis-academic.png)
 
 
 ### Why This Dominates
@@ -1537,6 +1549,9 @@ This doesn't spend money. It **generates profit** while saving lives.
 
 - Best charity: Costs {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} per life saved (excellent)
 - This system: Makes $1.1M profit per life saved
+
+![Implementation Roadmap: A self-reinforcing sequence moving from philanthropic catalyst to global treaty adoption.](/assets/section-images/knowledge/economics/economics-section-implementation-strategy-academic.png)
+
 
 One requires infinite fundraising from finite donors. The other prints money while curing diseases.
 
