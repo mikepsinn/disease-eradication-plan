@@ -39,14 +39,15 @@ const IMAGE_MODEL_CONFIGS: Record<string, ImageModelConfig> = {
 async function addWatermark(imagePath: string): Promise<void> {
   const text = 'WarOnDisease.org';
   const fontSize = 16;
-  const padding = 10;
 
-  // Create SVG watermark with white background and black text
+  // Create SVG watermark with transparent background and white text with black stroke
+  // Tight bounds around text (width ~160px for 16 chars, height ~24px for 16px font)
+  const svgWidth = 165;
+  const svgHeight = 24;
   const svgWatermark = `
-    <svg width="200" height="40">
-      <rect x="0" y="0" width="200" height="40" fill="white" opacity="0.9"/>
-      <text x="100" y="25" font-family="'Courier New', Courier, monospace"
-            font-size="${fontSize}" fill="black" text-anchor="middle">
+    <svg width="${svgWidth}" height="${svgHeight}">
+      <text x="${svgWidth / 2}" y="18" font-family="'Courier New', Courier, monospace"
+            font-size="${fontSize}" fill="white" stroke="black" stroke-width="1" text-anchor="middle">
         ${text}
       </text>
     </svg>
@@ -62,9 +63,9 @@ async function addWatermark(imagePath: string): Promise<void> {
     throw new Error('Could not read image dimensions');
   }
 
-  // Position watermark in lower right corner
-  const left = metadata.width - 200 - padding;
-  const top = metadata.height - 40 - padding;
+  // Position watermark flush with bottom-right corner (no padding)
+  const left = metadata.width - svgWidth;
+  const top = metadata.height - svgHeight;
 
   // Composite watermark onto image
   await image
@@ -78,6 +79,33 @@ async function addWatermark(imagePath: string): Promise<void> {
   // Replace original with watermarked version
   const fs = await import('fs/promises');
   await fs.rename(imagePath + '.tmp', imagePath);
+}
+
+/**
+ * Add metadata to image
+ */
+async function addImageMetadata(imagePath: string): Promise<void> {
+  const fs = await import('fs/promises');
+
+  // Add EXIF/XMP metadata using sharp
+  const image = sharp(imagePath);
+
+  // Metadata to embed
+  const metadata = {
+    exif: {
+      IFD0: {
+        Copyright: '© Mike P. Sinn - WarOnDisease.org',
+      }
+    }
+  };
+
+  // Write metadata
+  await image
+    .withMetadata(metadata)
+    .toFile(imagePath + '.meta.tmp');
+
+  // Replace original with metadata version
+  await fs.rename(imagePath + '.meta.tmp', imagePath);
 }
 
 /**
@@ -344,10 +372,13 @@ export async function saveImage(
   const buffer = Buffer.from(image.imageBytes, 'base64')
   await fs.writeFile(filePath, buffer)
 
+  // Add metadata (copyright, source, AI generation info)
+  await addImageMetadata(filePath)
+
   // Add watermark to all generated images
   await addWatermark(filePath)
 
-  log.info('Image saved and watermarked', { filePath, size: buffer.length })
+  log.info('Image saved with metadata and watermark', { filePath, size: buffer.length })
 }
 
 /**

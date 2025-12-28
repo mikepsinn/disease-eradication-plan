@@ -326,7 +326,9 @@ async function main() {
     const fileContent = await fs.readFile(filePath, 'utf-8');
     // Match section images with surrounding blank lines (any alt text)
     const sectionImagePattern = /\n*!\[.*?\]\(\/assets\/section-images\/.*?\)\n*/g;
-    const cleanedContent = fileContent.replace(sectionImagePattern, '\n');
+    let cleanedContent = fileContent.replace(sectionImagePattern, '\n');
+    // Consolidate any multiple consecutive newlines left behind (3+ → 2)
+    cleanedContent = cleanedContent.replace(/\n{3,}/g, '\n\n');
 
     if (cleanedContent !== fileContent) {
       await fs.writeFile(filePath, cleanedContent, 'utf-8');
