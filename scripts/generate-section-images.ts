@@ -75,11 +75,10 @@ async function analyzeFileForSectionImages(
   const prompt = `You are an expert academic editor analyzing a scholarly document. Your task is to identify sections that would benefit from visual aids (diagrams, charts, infographics, or flowcharts).
 
 IMPORTANT GUIDELINES:
-1. **Use reasoning**: Only recommend images where visualization would significantly improve comprehension
-2. **Quality over quantity**: An image should clarify complex relationships, data, processes, or concepts
-3. **No arbitrary limits**: Recommend as many or as few images as genuinely needed
-4. **Consider the trade-off**: Each image has a cost (reader attention, page space, generation time)
-5. **Ask yourself**: "Would I struggle to understand this section without a visual aid?"
+1. **Default to YES**: Recommend images for ALL major sections (## headings) unless the image would be actively unhelpful
+2. **Bias towards visuals**: When in doubt, include the image - visual aids enhance engagement and comprehension
+3. **Only skip if harmful**: Skip images only if they would distract, confuse, or provide zero value
+4. **Err on the side of more**: Better to have too many visuals than too few in an academic book
 
 FILE METADATA:
 - Path: ${filePath}
@@ -104,24 +103,30 @@ Respond with JSON:
     }
   ],
   "totalRecommendations": <number>,
-  "reasoning": "<overall assessment: does this document need visual aids? why or why not?>"
+  "reasoning": "<overall assessment: how many visuals does this document need?>"
 }
 
 CRITERIA FOR RECOMMENDATION:
-✅ Recommend if:
-- Complex quantitative comparisons (e.g., ROI across interventions)
-- Multi-step processes or workflows (e.g., clinical trial phases)
-- Relationships between entities (e.g., funding flows, causal chains)
-- Timeline comparisons (e.g., traditional vs. accelerated pathways)
-- Data that's hard to grasp as text (e.g., scale discrepancies)
+✅ ALWAYS recommend for:
+- Any section with quantitative comparisons or data
+- Any section describing processes, workflows, or systems
+- Any section with multiple stakeholders or entities
+- Any section with timelines, pathways, or alternatives
+- Any section where spatial/visual relationships matter
 
-❌ Skip if:
-- Concept is already clear in text
-- Section is primarily narrative or argumentative
-- Would be decorative rather than educational
-- Text already has tables/figures that convey the information
+✅ STRONGLY CONSIDER for:
+- Abstract concepts that could be made concrete
+- Lists of 3+ items that could be shown visually
+- Cause-and-effect relationships
+- Before/after scenarios
 
-Think step-by-step and be selective. Only recommend where images truly add value.`;
+❌ ONLY skip if:
+- Section is purely introductory/transitional (<100 words)
+- Section is entirely citations/references
+- Would be genuinely confusing or distracting
+- Already has comprehensive tables/figures
+
+When in doubt, INCLUDE the image. Visuals are valuable.`;
 
   try {
     const response = await generateGeminiFlashContent(prompt);

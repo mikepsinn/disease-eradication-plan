@@ -8,7 +8,7 @@
  */
 export const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.`;
 
-export const ACADEMIC_STYLE = `Use a monochromatic scientific illustration style.`;
+export const ACADEMIC_STYLE = `Use a black and white scientific illustration style.`;
 
 //export const ACADEMIC_STYLE = `Use a retro scientific black and white academic style.`;
 
