@@ -7,13 +7,15 @@ Shared utilities for preparing Quarto files before rendering:
 - Copying and updating relative paths for economics.qmd -> index.qmd
 - Copying index-book.qmd -> index.qmd for book rendering
 - Copying config files (_quarto-book.yml, _quarto-economics.yml -> _quarto.yml)
+- Rewriting links to removed files as absolute URLs to the full book
 """
 
 import re
 import shutil
 import sys
+import yaml
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Set
 
 
 def _find_project_root(start_path: Optional[Path] = None) -> Path:
@@ -47,9 +49,200 @@ def _find_project_root(start_path: Optional[Path] = None) -> Path:
     return current
 
 
+def _extract_economics_files(verbose: bool = False) -> Set[str]:
+    """
+    Extract list of files from _quarto-economics.yml.
+
+    Args:
+        verbose: Whether to print status messages
+
+    Returns:
+        Set of file paths (relative to project root) in economics render
+
+    Raises:
+        FileNotFoundError: If _quarto-economics.yml not found
+    """
+    project_root = _find_project_root()
+    economics_yml = project_root / "_quarto-economics.yml"
+
+    if not economics_yml.exists():
+        raise FileNotFoundError(f"Missing {economics_yml}")
+
+    try:
+        with open(economics_yml, encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+
+        files = set()
+        render_list = config.get("project", {}).get("render", [])
+
+        for item in render_list:
+            if isinstance(item, str):
+                files.add(item)
+
+        if verbose:
+            print(f"[*] Found {len(files)} files in economics config", flush=True)
+
+        return files
+
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Failed to parse _quarto-economics.yml: {e}", file=sys.stderr)
+        raise
+
+
+def _extract_book_files(verbose: bool = False) -> Set[str]:
+    """
+    Extract list of files from _quarto-book.yml.
+
+    Args:
+        verbose: Whether to print status messages
+
+    Returns:
+        Set of file paths (relative to project root) in book render
+
+    Raises:
+        FileNotFoundError: If _quarto-book.yml not found
+    """
+    project_root = _find_project_root()
+    book_yml = project_root / "_quarto-book.yml"
+
+    if not book_yml.exists():
+        raise FileNotFoundError(f"Missing {book_yml}")
+
+    try:
+        with open(book_yml, encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+
+        files = set()
+
+        def extract_chapters(items):
+            """Recursively extract chapter files from nested structure."""
+            if not isinstance(items, list):
+                return
+
+            for item in items:
+                if isinstance(item, str):
+                    files.add(item)
+                elif isinstance(item, dict):
+                    # Handle 'href' key (direct file reference)
+                    if "href" in item:
+                        files.add(item["href"])
+                    # Handle 'chapters' key (nested chapters)
+                    if "chapters" in item:
+                        extract_chapters(item["chapters"])
+                    # Handle 'contents' key (sidebar contents)
+                    if "contents" in item:
+                        extract_chapters(item["contents"])
+
+        # Extract from book.chapters
+        book_config = config.get("book", {})
+        if "chapters" in book_config:
+            extract_chapters(book_config["chapters"])
+
+        if verbose:
+            print(f"[*] Found {len(files)} files in book config", flush=True)
+
+        return files
+
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Failed to parse _quarto-book.yml: {e}", file=sys.stderr)
+        raise
+
+
+def _rewrite_qmd_links_to_book(content: str, source_file: str, economics_files: Set[str], book_files: Set[str],
+                                book_url: str = "https://manual.WarOnDisease.org",
+                                verbose: bool = False) -> str:
+    """
+    Rewrite .qmd links to files not in economics render as absolute URLs to the book site.
+
+    Args:
+        content: File content to process
+        source_file: Path to source file (for resolving relative links)
+        economics_files: Set of files in economics render
+        book_files: Set of files in book render
+        book_url: Base URL of book site
+        verbose: Whether to print status messages
+
+    Returns:
+        Content with rewritten links
+
+    Raises:
+        ValueError: If a .qmd link target is not in economics OR book
+    """
+    rewritten_count = 0
+    errors = []
+
+    # Get source file's directory for resolving relative paths
+    source_path = Path(source_file)
+    source_dir = source_path.parent
+    project_root = _find_project_root()
+
+    def rewrite_link(match):
+        nonlocal rewritten_count
+        link_text = match.group(1)
+        link_path = match.group(2)
+
+        # Skip if not a .qmd file
+        if not link_path.endswith(".qmd"):
+            return match.group(0)
+
+        # Skip URLs, anchors, absolute paths
+        if (link_path.startswith("http://") or link_path.startswith("https://") or
+            link_path.startswith("#") or link_path.startswith("/") or "://" in link_path):
+            return match.group(0)
+
+        # Resolve relative path from source file's directory
+        if link_path.startswith("../") or link_path.startswith("./"):
+            try:
+                resolved_path = (source_dir / link_path).resolve()
+                # Make it relative to project root
+                normalized_path = str(resolved_path.relative_to(project_root)).replace("\\", "/")
+            except (ValueError, OSError):
+                # Path is outside project root or doesn't resolve, use as-is
+                normalized_path = link_path
+        else:
+            # Already a path from project root or same directory
+            normalized_path = link_path
+
+        # If in economics, keep as-is
+        if normalized_path in economics_files:
+            return match.group(0)
+
+        # Check if it's in the book
+        if normalized_path in book_files:
+            # Rewrite to absolute URL
+            html_path = normalized_path.replace(".qmd", ".html")
+            new_url = f"{book_url}/{html_path}"
+            rewritten_count += 1
+            if verbose:
+                print(f"[*] Rewriting: {normalized_path} -> {new_url}", flush=True)
+            return f"[{link_text}]({new_url})"
+
+        # Not in economics OR book - this is an error
+        errors.append(normalized_path)
+        return match.group(0)  # Keep as-is for now, will raise error after
+
+    # Process all markdown links
+    content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", rewrite_link, content)
+
+    # Raise error if any broken links found
+    if errors:
+        error_msg = f"Broken .qmd links found (not in economics OR book):\n"
+        for path in sorted(set(errors)):
+            error_msg += f"  - {path}\n"
+        raise ValueError(error_msg)
+
+    if verbose and rewritten_count > 0:
+        print(f"[*] Rewrote {rewritten_count} .qmd links to book site", flush=True)
+
+    return content
+
+
 def prepare_economics_index(verbose: bool = True) -> bool:
     """
     Copy economics.qmd to index.qmd and update relative paths.
+    Rewrites .qmd links to removed files as absolute URLs to the book site.
 
     Args:
         verbose: Whether to print status messages
@@ -72,6 +265,10 @@ def prepare_economics_index(verbose: bool = True) -> bool:
         print(f"[*] Copying {economics_qmd.relative_to(project_root)} -> index.qmd", flush=True)
 
     try:
+        # Load file lists for link rewriting
+        economics_files = _extract_economics_files(verbose=verbose)
+        book_files = _extract_book_files(verbose=verbose)
+
         with open(economics_qmd, encoding="utf-8") as f:
             content = f.read()
 
@@ -119,6 +316,15 @@ def prepare_economics_index(verbose: bool = True) -> bool:
 
         # Match markdown links: [text](path)
         content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", replace_same_dir_link, content)
+
+        # Rewrite .qmd links to removed files as absolute URLs to book site
+        content = _rewrite_qmd_links_to_book(
+            content,
+            source_file="index.qmd",  # Treating as if already copied to root
+            economics_files=economics_files,
+            book_files=book_files,
+            verbose=verbose
+        )
 
         with open(index_qmd, "w", encoding="utf-8") as f:
             f.write(content)
@@ -196,11 +402,75 @@ def prepare_quarto_config(config_name: str, verbose: bool = True) -> bool:
         return False
 
 
+def _process_all_economics_files(verbose: bool = True) -> bool:
+    """
+    Process all files in economics render to rewrite .qmd links to book URLs.
+
+    Args:
+        verbose: Whether to print status messages
+
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        project_root = _find_project_root()
+        economics_files = _extract_economics_files(verbose=verbose)
+        book_files = _extract_book_files(verbose=verbose)
+
+        files_processed = 0
+
+        for file_path in economics_files:
+            # Skip index.qmd (already processed in prepare_economics_index)
+            if file_path == "index.qmd":
+                continue
+
+            full_path = project_root / file_path
+            if not full_path.exists():
+                if verbose:
+                    print(f"[WARNING] Skipping missing file: {file_path}", file=sys.stderr, flush=True)
+                continue
+
+            try:
+                with open(full_path, encoding="utf-8") as f:
+                    content = f.read()
+
+                # Rewrite .qmd links
+                processed_content = _rewrite_qmd_links_to_book(
+                    content,
+                    source_file=file_path,
+                    economics_files=economics_files,
+                    book_files=book_files,
+                    verbose=False  # Don't print per-file details, too noisy
+                )
+
+                # Only write if content changed
+                if processed_content != content:
+                    with open(full_path, "w", encoding="utf-8") as f:
+                        f.write(processed_content)
+                    files_processed += 1
+
+            except Exception as e:
+                if verbose:
+                    print(f"[WARNING] Failed to process {file_path}: {e}", file=sys.stderr, flush=True)
+                continue
+
+        if verbose and files_processed > 0:
+            print(f"[*] Processed {files_processed} economics files for link rewriting", flush=True)
+
+        return True
+
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Failed to process economics files: {e}", file=sys.stderr)
+        return False
+
+
 def prepare_economics(verbose: bool = True) -> bool:
     """
     Prepare everything needed for economics rendering:
     - Copy _quarto-economics.yml to _quarto.yml
     - Copy economics.qmd to index.qmd with updated paths
+    - Process all economics files to rewrite .qmd links to book URLs
 
     Args:
         verbose: Whether to print status messages
@@ -212,6 +482,9 @@ def prepare_economics(verbose: bool = True) -> bool:
         return False
 
     if not prepare_economics_index(verbose):
+        return False
+
+    if not _process_all_economics_files(verbose):
         return False
 
     return True
