@@ -34,11 +34,14 @@ import { VisualStyles } from './lib/image-prompts.js';
 dotenv.config();
 
 interface ImageRecommendation {
-  lineNumber: number;
+  sectionHeading: string;  // The actual markdown heading (e.g., "## Problem Statement")
+  anchorText: string;      // Last few words of paragraph before image (for finding position)
+  placementHint: string;   // Description like "after the 4-point list"
   sectionTitle: string;
   contentExcerpt: string;
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart';
-  visualizationGoal: string;
+  visualizationGoal: string;  // Detailed prompt for image generation
+  caption: string;            // Natural, human-readable caption for alt text
   reasoning: string;
 }
 
@@ -59,6 +62,83 @@ function toKebabCase(text: string): string {
 }
 
 /**
+ * Find intelligent placement location based on section heading and anchor text
+ * Avoids placing before lists, after colons, or before headers
+ */
+function findSmartPlacement(
+  lines: string[],
+  sectionHeading: string,
+  anchorText: string,
+  placementHint: string
+): number | null {
+  // Find section heading
+  const headingLine = lines.findIndex(line => line.trim() === sectionHeading.trim());
+
+  if (headingLine === -1) {
+    console.log(`  [WARN] Could not find section heading: "${sectionHeading}"`);
+    return null;
+  }
+
+  // Search for anchor text after the heading
+  let anchorLine = -1;
+  const normalizedAnchor = anchorText.toLowerCase().trim();
+
+  for (let i = headingLine + 1; i < lines.length; i++) {
+    const normalizedLine = lines[i].toLowerCase().trim();
+    if (normalizedLine.includes(normalizedAnchor)) {
+      anchorLine = i;
+      break;
+    }
+  }
+
+  if (anchorLine === -1) {
+    console.log(`  [WARN] Could not find anchor text: "${anchorText}" in section "${sectionHeading}"`);
+    console.log(`  [INFO] Placement hint: ${placementHint}`);
+    return null;
+  }
+
+  // Find next safe insertion point after anchor
+  for (let i = anchorLine + 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
+
+    // Stop at next section heading
+    if (line.startsWith('#')) {
+      console.log(`  [INFO] Reached next section at line ${i}, placing before it`);
+      return i;
+    }
+
+    // Skip blank lines
+    if (line === '') {
+      continue;
+    }
+
+    // Check if this is a safe insertion point
+    const isList = /^(\d+\.|[-*+])\s/.test(line) || /^(\d+\.|[-*+])\s/.test(nextLine);
+    const isHeader = line.startsWith('#') || nextLine.startsWith('#');
+    const endsWithColon = line.endsWith(':');
+    const isCodeBlock = line.startsWith('```') || line.startsWith('~~~');
+
+    // Skip unsafe locations
+    if (isList || isHeader || endsWithColon || isCodeBlock) {
+      continue;
+    }
+
+    // Found a safe spot after a complete paragraph
+    if (line.endsWith('.') || line.endsWith('"') || line.endsWith(')')) {
+      // Make sure next line isn't a list or header
+      if (!isList && !isHeader) {
+        return i + 1; // Insert after this complete paragraph
+      }
+    }
+  }
+
+  // Fallback: place right after anchor line
+  console.log(`  [INFO] Using fallback placement after anchor line ${anchorLine}`);
+  return anchorLine + 1;
+}
+
+/**
  * Analyze entire file and get section-specific image recommendations
  */
 async function analyzeFileForSectionImages(
@@ -68,43 +148,49 @@ async function analyzeFileForSectionImages(
   console.log(`\n[*] Analyzing file with Gemini Flash...`);
   console.log(`  File: ${filePath}`);
 
-  // Use cleaned content (with variables replaced) for analysis
-  // Line numbers from cleaned content should match raw file since variable replacement is inline
-  const lines = cleanedContent.split('\n');
-
   const prompt = `You are an expert academic editor analyzing a scholarly document. Your task is to identify sections that would benefit from visual aids (diagrams, charts, infographics, or flowcharts).
 
 IMPORTANT GUIDELINES:
 1. **Be selective**: Only recommend images where visualization would significantly enhance understanding
 2. **Quality over quantity**: Each image should clarify complex relationships, data, or processes
-3. **Placement matters**: Insert images AFTER paragraphs that establish context, not before bullet lists or section breaks
+3. **Placement matters**: Images should go AFTER complete structural units (paragraphs, lists), not in the middle
 4. **Natural flow**: Images should complement the text, not interrupt the narrative
 
-FILE METADATA:
-- Path: ${filePath}
-- Total lines: ${lines.length}
-- Word count: ~${cleanedContent.split(/\s+/).length}
-
-FILE CONTENT WITH LINE NUMBERS (Quarto variables replaced with actual values):
+FILE CONTENT (Quarto variables replaced with actual values):
 ---
-${lines.map((line, idx) => `${idx + 1}: ${line}`).join('\n')}
+${cleanedContent}
 ---
 
 Respond with JSON:
 {
   "recommendations": [
     {
-      "lineNumber": <line number AFTER a complete paragraph that provides context, NOT before lists or headers>,
-      "sectionTitle": "<section heading text>",
+      "sectionHeading": "<exact markdown heading, e.g., '## Problem Statement'>",
+      "anchorText": "<last 5-10 words of the paragraph BEFORE where image should go>",
+      "placementHint": "<brief description, e.g., 'after the 4-point list explaining differences'>",
+      "sectionTitle": "<section heading text for filename>",
       "contentExcerpt": "<relevant 200-500 word excerpt to visualize>",
       "imageType": "diagram" | "chart" | "infographic" | "flowchart",
-      "visualizationGoal": "<specific description: what should the image show?>",
+      "visualizationGoal": "<detailed technical prompt for image generation>",
+      "caption": "<natural, human-readable caption for alt text (1-2 sentences describing what the image shows)>",
       "reasoning": "<1-2 sentences: why is this image necessary?>"
     }
   ],
   "totalRecommendations": <number>,
   "reasoning": "<overall assessment: how many visuals does this document truly need?>"
 }
+
+PLACEMENT STRATEGY:
+Instead of line numbers, provide:
+1. **sectionHeading**: The exact heading text (with markdown syntax like "##")
+2. **anchorText**: Last few words of paragraph/sentence before image placement
+3. **placementHint**: Human-readable description (e.g., "after explaining the 4 critical differences")
+
+The script will intelligently find the best location by:
+- Locating the section heading
+- Finding the anchor text
+- Skipping over lists, headers, code blocks
+- Placing after complete structural units
 
 CRITERIA FOR RECOMMENDATION:
 ✅ RECOMMEND if:
@@ -115,18 +201,15 @@ CRITERIA FOR RECOMMENDATION:
 - Section has substantial explanatory text (200+ words) establishing context
 
 ❌ DO NOT recommend if:
-- Placed immediately after transition sentences or colons
-- Placed immediately before bullet lists (breaks flow)
-- Placed right before section headers
 - Section is primarily narrative without complex data/relationships
 - Content is already clear from text alone
-- Would interrupt the natural reading flow
+- Would not significantly enhance understanding
 
-PLACEMENT RULES:
-- Insert AFTER complete paragraphs (ending with periods)
-- Ensure preceding text establishes sufficient context
-- Avoid breaking up lists or splitting related content
-- Place where a reader would naturally pause to reflect
+GOOD PLACEMENT EXAMPLES:
+- "after the 4-point explanation of why this differs"
+- "after defining all key terms"
+- "after the ROI calculation and explanation"
+- "after explaining the budget allocation breakdown"
 
 Be thoughtful and selective. Only recommend images that truly add value.`;
 
@@ -152,8 +235,11 @@ Be thoughtful and selective. Only recommend images that truly add value.`;
     if (analysis.recommendations.length > 0) {
       console.log(`\n[RECOMMENDED IMAGES]`);
       analysis.recommendations.forEach((rec, idx) => {
-        console.log(`\n  ${idx + 1}. Line ${rec.lineNumber}: ${rec.sectionTitle}`);
+        console.log(`\n  ${idx + 1}. Section "${rec.sectionHeading}": ${rec.sectionTitle}`);
         console.log(`     Type: ${rec.imageType}`);
+        console.log(`     Placement: ${rec.placementHint}`);
+        console.log(`     Anchor: "${rec.anchorText}"`);
+        console.log(`     Caption: ${rec.caption}`);
         console.log(`     Goal: ${rec.visualizationGoal}`);
         console.log(`     Why: ${rec.reasoning}`);
       });
@@ -196,11 +282,21 @@ async function generateSectionImages(
   const lines = fileContent.split('\n');
 
   // Generate images for each recommendation
-  const generatedImages: Array<{ lineNumber: number; imagePath: string; visualizationGoal: string }> = [];
+  const generatedImages: Array<{ lineNumber: number; imagePath: string; caption: string }> = [];
 
   for (let i = 0; i < recommendations.length; i++) {
     const rec = recommendations[i];
     console.log(`\n  [${i + 1}/${recommendations.length}] Generating: ${rec.sectionTitle}`);
+
+    // Find smart placement using section heading and anchor text
+    const placementLine = findSmartPlacement(lines, rec.sectionHeading, rec.anchorText, rec.placementHint);
+
+    if (placementLine === null) {
+      console.log(`  [SKIP] Could not find safe placement location`);
+      continue;
+    }
+
+    console.log(`  [INFO] Placement found at line ${placementLine}: ${rec.placementHint}`);
 
     const style = useAcademicStyle ? VisualStyles.academic : VisualStyles['retro-futuristic'];
     const suffix = useAcademicStyle ? '-academic' : '-retro-futuristic';
@@ -235,9 +331,9 @@ ${rec.contentExcerpt}`;
 
         console.log(`  [OK] Generated: ${relativePath}`);
         generatedImages.push({
-          lineNumber: rec.lineNumber,
+          lineNumber: placementLine,
           imagePath: `/${relativePath}`,
-          visualizationGoal: rec.visualizationGoal
+          caption: rec.caption
         });
       } else {
         console.log(`  [WARN] No image generated for: ${rec.sectionTitle}`);
@@ -254,8 +350,8 @@ ${rec.contentExcerpt}`;
     // Sort by line number descending (to insert from bottom up)
     generatedImages.sort((a, b) => b.lineNumber - a.lineNumber);
 
-    for (const { lineNumber, imagePath, visualizationGoal } of generatedImages) {
-      const imageMarkdown = `\n![${visualizationGoal}](${imagePath})\n`;
+    for (const { lineNumber, imagePath, caption } of generatedImages) {
+      const imageMarkdown = `\n![${caption}](${imagePath})\n`;
       lines.splice(lineNumber, 0, imageMarkdown);
       console.log(`  Inserted image at line ${lineNumber}`);
     }

@@ -126,8 +126,6 @@ Large-scale interventions face legitimate skepticism. The development economics 
 
 This intervention differs in four critical ways:
 
-![A comparative bar chart or 'budget scale' visualization contrasting Global Military Spending ($2.72T) vs. Government Clinical Trial Funding ($4.5B). A secondary visual element should highlight the cost disparity between Traditional Trials ($41k/patient) and Pragmatic Trials ($500/patient).](/assets/section-images/knowledge/economics/economics-section-problem-statement-current-resource-allocation-academic.png)
-
 
 1. **Empirical grounding**: Cost estimates based on demonstrated RECOVERY trial results, not theoretical projections. The {{< var recovery_trial_cost_per_patient >}}/patient cost is a proven fact, not a forecast.
 
@@ -191,8 +189,6 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
 
 
-![A 'Before and After' process diagram. Top half shows 'Traditional Trials' with redundant infrastructure (separate sites, parallel data entry, travel costs). Bottom half shows 'Pragmatic/dFDA Trials' overlaying existing infrastructure (hospital + EHR = data), illustrating how the 82x cost reduction is achieved structurally.](/assets/section-images/knowledge/economics/economics-section-trial-cost-reduction-academic.png)
-
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 
 ## Problem Statement
@@ -209,9 +205,15 @@ Humanity's budget priorities, explained simply:
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
 
+![Disparity between global military spending ($2.72T) and government clinical trial spending ($4.5B).](/assets/section-images/knowledge/economics/economics-section-problem-statement-academic.png)
+
+
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
+
+
+![A 'Discovery Void' diagram (e.g., an iceberg or vast grid) showing the tiny sliver of tested compounds (0.342%) versus the massive ocean of untested but safe candidates (99.7%).](/assets/section-images/knowledge/economics/economics-section-problem-statement-academic.png)
 
 #### Disease treatment vs. curing disease
 
@@ -273,6 +275,9 @@ The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospita
 
 The cost reduction stems from eliminating unnecessary overhead, not reducing evidence quality. Hospitals already exist. Electronic health records already exist. Doctors already see patients. The trial infrastructure simply uses what's already there rather than building dedicated research facilities.
 
+
+![Traditional Trial costs ($41K/patient) with Pragmatic Trial costs ($500/patient), highlighting where the savings occur (infrastructure/staff vs. data integration).](/assets/section-images/knowledge/economics/economics-section-a-decentralized-framework-for-drug-assessment-academic.png)
+
 ### Enhanced Safety Monitoring
 
 **Current system pain point**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until 100,000+ prescriptions have been written, because adverse event reporting is voluntary. Doctors must notice the problem, remember to file a report, and actually complete the paperwork. Estimated reporting rate: 1-10% of actual adverse events.
@@ -308,6 +313,9 @@ Like Amazon rankings based on verified purchase reviews, except based on measure
 **Standardized outcome labels**: Quantified summaries of what actually happens to patients taking each treatment, displayed like nutrition labels:
 
 ![Outcome Labels Example](/assets/dfda-outcome-labels.png)
+
+!['Drug Outcome Label' (modeled after a Nutrition Facts label) showing benefits, side effects, and confidence intervals in a consumer-friendly format.](/assets/section-images/knowledge/economics/economics-section-a-decentralized-framework-for-drug-assessment-academic.png)
+
 
 Based on systematic outcome collection across thousands of patients, labels show:
 
@@ -464,8 +472,6 @@ The {{< var treaty_reduction_pct >}} Treaty isn't just a budget cut; it's an **o
 
 By successfully executing a verified, mutual reduction in military spending to fund a shared global good (curing disease), humanity establishes a proof-of-concept for cooperation.
 
-
-![A circular 'Virtuous Cycle' or network diagram showing the flow of value in the IAB (Incentive Alignment Bond) model. Arrows should connect Investors (capital), Politicians (votes/career), Defense (returns), and Patients (cures), demonstrating how the 1% redirection satisfies all distinct self-interests simultaneously.](/assets/section-images/knowledge/economics/economics-section-stakeholder-alignment-academic.png)
 
 1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure required for larger steps.
 2.  **The Ratchet Mechanism**: Once the economic benefits of the "Peace Dividend" (wealth, health, longevity) materialize, the incentive to increase the treaty percentage grows. We move from a negative-sum arms race to a positive-sum "peace race."
@@ -638,6 +644,9 @@ None offer **{{< var trial_capacity_multiplier >}}× leverage**.
 
 The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make 99.6% of potential drug-disease combinations economically infeasible to test).
 
+
+
+![A 'Cost-Effectiveness Plane' (scatter plot quadrants) placing standard interventions (positive cost, positive health) in the top-right and the 1% Treaty (negative cost/profit, positive health) in the bottom-right 'Dominant' quadrant.](/assets/section-images/knowledge/economics/economics-section-dominance-analysis-academic.png)
 
 ## Methodology
 
@@ -1166,8 +1175,6 @@ This scenario includes only R&D efficiency savings, excluding peace dividends, e
 
 Simple ROI calculation:
 
-
-![A Sankey diagram. Input: '1% Military Budget Redirection ($27.2B)'. Split flows: 'Treaty Fund Allocations' (Trials, Investors, Politics). Output flows: 'Peace Dividend ($114B)' and 'R&D Efficiency ($30B)' merging into 'Total Annual Economic Benefit ($144B)'.](/assets/section-images/knowledge/economics/economics-section-scenario-analysis-conservative-case-academic.png)
 
 {{< var dfda_roi_rd_only_latex >}}
 
@@ -1715,8 +1722,6 @@ A decentralized institutes of health put patients in control through trial parti
 
 **New system**: Patients choose which trials to join. Trials that attract patients get funded. Trials that don't, die.
 
-
-![A Treemap or 'Pixel Grid' visualization representing the total search space (9.5M combinations). A tiny, distinctively colored sliver (0.4%) represents 'Current Knowledge,' while the vast remainder is 'Unexplored Opportunity.'](/assets/section-images/knowledge/economics/economics-section-the-myth-of-diminishing-returns-academic.png)
 
 Patient subsidies follow them to whichever trial they join. Researchers compete to design trials that patients actually want to participate in. No committees, no grant-writing contests, no bureaucrats deciding what's "worthy" of study.
 
