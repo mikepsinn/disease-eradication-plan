@@ -89,6 +89,16 @@ def main():
 
     exit_code = monitor.run_build(command, build_type="HTML render")
 
+    # Post-process economics HTML if this is an economics render
+    if exit_code == 0 and args.output_dir == "_site/economics":
+        print("=" * 80, flush=True)
+        print("POST-PROCESSING ECONOMICS HTML", flush=True)
+        print("=" * 80, flush=True)
+        from quarto_prep import postprocess_economics_html
+        if not postprocess_economics_html(build_dir=args.output_dir, verbose=True):
+            print("[ERROR] HTML post-processing failed", file=sys.stderr, flush=True)
+            sys.exit(1)
+
     # Run post-validation if build succeeded and not skipped
     if exit_code == 0 and not args.skip_post_validation:
         validation_exit_code = run_post_validation(output_dir=args.output_dir)
