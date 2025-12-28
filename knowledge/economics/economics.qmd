@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
-description: Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.
+description: Redirecting 1% of global military spending ({{< var treaty_annual_funding >}}/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.
 author:
   - name: Decentralized Institutes of Health
     affiliation:
@@ -1590,7 +1590,7 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks the private capital raise. (Your money unlocks the **$1B** bond market).
 2.  **Phase 2 (The Outcome):** That $1B campaign unlocks **{{< var treaty_annual_funding >}}/year** in public funding.
 
-**Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This is a **270x annual return** on philanthropic capital.
+**Total Leverage**: Your **$100M** catalyst effectively unlocks a **{{< var treaty_annual_funding >}}/year** revenue stream for global health. This is a **270x annual return** on philanthropic capital.
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The referendum component isn't a "magic wand"; it's a mechanism to generate the **political capital** required to force the treaty onto the agenda of sovereign nations.
 
@@ -1921,7 +1921,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 ### General Equilibrium Effects
 
-This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the $27.2B annual reallocation from military to pragmatic clinical trials spending.
+This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the {{< var treaty_annual_funding >}} annual reallocation from military to pragmatic clinical trials spending.
 
 **Unmodeled general equilibrium effects include**:
 

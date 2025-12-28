@@ -1,6 +1,21 @@
 /**
  * Generate OG images for book chapters
  * Uses a lock file to prevent multiple instances from running simultaneously
+ *
+ * Usage:
+ *   npx tsx scripts/generate-project-images.ts [file-filter] [options]
+ *
+ * Options:
+ *   --analyze-first           Use Gemini Flash to analyze if image would be helpful before generating
+ *   --academic-style          Generate in academic style (black & white) instead of retro
+ *   --with-reference-images   Extract existing images from QMD and use as reference for generation
+ *
+ * Examples:
+ *   # Generate with intelligent analysis for economics.qmd
+ *   npx tsx scripts/generate-project-images.ts economics --analyze-first --academic-style
+ *
+ *   # Generate all missing images with analysis
+ *   npx tsx scripts/generate-project-images.ts --analyze-first --academic-style
  */
 
 import dotenv from 'dotenv';
@@ -164,15 +179,82 @@ process.on('uncaughtException', async (error) => {
 });
 
 /**
+ * Analyze if a file would benefit from an image using Gemini Flash
+ */
+async function analyzeIfImageNeeded(
+  filePath: string,
+  cleanedContent: string
+): Promise<{ recommend: boolean; reasoning: string; focusContent?: string }> {
+  console.log(`  [*] Analyzing with Gemini Flash...`);
+
+  const wordCount = cleanedContent.split(/\s+/).length;
+
+  // Skip very short content
+  if (wordCount < 500) {
+    return {
+      recommend: false,
+      reasoning: `Too short (${wordCount} words) - infographics work best for substantial content`,
+    };
+  }
+
+  const prompt = `Analyze this academic content and determine if a visual infographic would significantly improve reader comprehension.
+
+Content (${wordCount} words):
+---
+${cleanedContent.substring(0, 6000)} ${wordCount > 1500 ? '... [truncated for analysis]' : ''}
+---
+
+Respond with JSON only:
+{
+  "recommend": true/false,
+  "reasoning": "1-2 sentence explanation of why this would/wouldn't benefit from visualization",
+  "focusContent": "If recommending, what specific concept or data should the infographic illustrate?"
+}
+
+Only recommend if visualization adds substantial educational value beyond the text.
+Consider: Does this content have complex relationships, data, processes, or concepts that would be clearer visually?`;
+
+  try {
+    const response = await generateGeminiFlashContent(prompt);
+    const jsonMatch = response.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.log(`  [WARN] Could not parse analysis response, assuming no image needed`);
+      return { recommend: false, reasoning: 'Analysis parsing failed' };
+    }
+
+    const analysis = JSON.parse(jsonMatch[0]);
+
+    console.log(`  Decision: ${analysis.recommend ? '✅ RECOMMEND' : '❌ SKIP'}`);
+    console.log(`  Reason: ${analysis.reasoning}`);
+    if (analysis.focusContent) {
+      console.log(`  Focus: ${analysis.focusContent}`);
+    }
+
+    return {
+      recommend: analysis.recommend ?? false,
+      reasoning: analysis.reasoning ?? 'No reasoning provided',
+      focusContent: analysis.focusContent,
+    };
+  } catch (error) {
+    console.error(`  [ERROR] Analysis failed:`, error);
+    return { recommend: false, reasoning: 'Analysis error' };
+  }
+}
+
+/**
  * Generate OG image, infographic, and slide for a single file
  * @param filePath Path to the QMD file
  * @param forceRegenerate If true, regenerate images even if they already exist
  * @param includeReferenceImages If true, extract images from QMD and pass as reference images to Gemini
+ * @param analyzeFirst If true, use Gemini Flash to analyze if image would be helpful before generating
+ * @param useAcademicStyle If true, generate in academic style instead of retro
  */
 async function generateImageForFile(
   filePath: string,
   forceRegenerate = false,
-  includeReferenceImages = false
+  includeReferenceImages = false,
+  analyzeFirst = false,
+  useAcademicStyle = false
 ): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
 
@@ -189,6 +271,16 @@ async function generateImageForFile(
   if (!frontmatter.title && !frontmatter.description) {
     console.log(`[SKIP] No title or description for prompt generation`);
     return;
+  }
+
+  // Analyze first if requested
+  if (analyzeFirst) {
+    const analysis = await analyzeIfImageNeeded(filePath, cleanedBody);
+    if (!analysis.recommend) {
+      console.log(`[SKIP] ${analysis.reasoning}`);
+      return;
+    }
+    console.log(`[PROCEED] Generating image based on analysis recommendation`);
   }
 
   // Extract reference images if requested
@@ -236,8 +328,13 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Generate images in all styles
-  for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
+  // Determine which style to use
+  const stylesToGenerate = useAcademicStyle
+    ? { academic: VisualStyles.academic }
+    : VisualStyles;
+
+  // Generate images in selected styles
+  for (const [styleName, styleConfig] of Object.entries(stylesToGenerate)) {
     const suffix = styleConfig.suffix;
     console.log(`\n  --- ${styleConfig.description.toUpperCase()} STYLE ---`);
 
@@ -291,8 +388,8 @@ async function generateImageForFile(
         const imagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
         console.log(`  [OK] Generated infographic (${styleName}): ${imagePath}`);
 
-        // Default to retro style for content
-        if (styleName === 'retro') {
+        // Use academic style if requested, otherwise retro
+        if ((useAcademicStyle && styleName === 'academic') || (!useAcademicStyle && styleName === 'retro')) {
           infographicImagePath = imagePath;
         }
       } else {
@@ -380,9 +477,20 @@ async function generateImageForFile(
 /**
  * Generate OG images for book chapters
  */
-async function generateBookChapterImages(fileFilter?: string, includeReferenceImages = false): Promise<void> {
+async function generateBookChapterImages(
+  fileFilter?: string,
+  includeReferenceImages = false,
+  analyzeFirst = false,
+  useAcademicStyle = false
+): Promise<void> {
   console.log('\n' + '='.repeat(60));
   console.log('Generating OG images for book chapters');
+  if (analyzeFirst) {
+    console.log('Mode: INTELLIGENT ANALYSIS (Gemini Flash decides)');
+  }
+  if (useAcademicStyle) {
+    console.log('Style: ACADEMIC (black and white scientific)');
+  }
   console.log('='.repeat(60) + '\n');
 
   // Get all book files
@@ -429,7 +537,7 @@ async function generateBookChapterImages(fileFilter?: string, includeReferenceIm
   for (const filePath of bookFiles) {
     try {
       filesProcessed++;
-      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages);
+      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
@@ -482,8 +590,17 @@ async function main() {
     fileFilter = args[0];
   }
 
-  // Check for --with-reference-images flag
+  // Check for flags
   const includeReferenceImages = args.includes('--with-reference-images');
+  const analyzeFirst = args.includes('--analyze-first');
+  const useAcademicStyle = args.includes('--academic-style');
+
+  if (analyzeFirst) {
+    console.log('[INFO] Using Gemini Flash to analyze if images would be helpful before generating\n');
+  }
+  if (useAcademicStyle) {
+    console.log('[INFO] Generating in academic style (black and white scientific)\n');
+  }
 
   if (fileFilter) {
     // If fileFilter looks like a file path (contains / or ends with .qmd), verify it exists
@@ -507,7 +624,7 @@ async function main() {
     console.log(`[INFO] Reference images from QMD files will be included in generation context\n`);
   }
 
-  await generateBookChapterImages(fileFilter, includeReferenceImages);
+  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle);
 }
 
 // Run the script

@@ -125,7 +125,7 @@
     "images:analyze:all": "tsx scripts/generate-image-metadata.ts --all",
     "images:guide": "tsx scripts/generate-image-metadata.ts --guide-only",
     "find-duplicates": "tsx scripts/find-duplicates.ts",
-    "find-hardcoded": "npx tsx scripts/find-hardcoded-numbers.ts",
+    "review-hardcoded": "tsx scripts/review-hardcoded-values.ts",
     "find-replace": "tsx scripts/find-and-replace.ts",
     "search": "rg -i -n --glob '*.qmd'",
     "search:bribe": "rg -i -n --glob '*.qmd' '\\bbribe\\b'",
