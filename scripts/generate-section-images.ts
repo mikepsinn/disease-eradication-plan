@@ -4,22 +4,28 @@
  * Gives Gemini the entire file and asks it to identify sections that would
  * benefit from visual aids (diagrams, charts, infographics, flowcharts).
  *
+ * Defaults to academic style (black & white scientific) for professional publications.
+ * All images use 9:16 portrait aspect ratio for mobile-first design.
+ *
  * Usage:
  *   npx tsx scripts/generate-section-images.ts <file.qmd> [options]
  *
  * Options:
- *   --academic-style    Generate in academic style (black & white)
- *   --dry-run           Show recommendations without generating images
+ *   --retro-futuristic    Generate in retro-futuristic style (default: academic)
+ *   --dry-run             Show recommendations without generating images
+ *   --force               Delete existing section images and regenerate all
  *
- * Example:
- *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --academic-style
+ * Examples:
+ *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd
+ *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --retro-futuristic
+ *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --dry-run
+ *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --force
  */
 
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-import matter from 'gray-matter';
 import { generateGeminiFlashContent } from './lib/llm.js';
 import { generateAndSaveImages } from './lib/genai-image.js';
 import { getCleanedContentForLLM } from './lib/file-utils.js';
@@ -40,6 +46,16 @@ interface AnalysisResponse {
   recommendations: ImageRecommendation[];
   totalRecommendations: number;
   reasoning: string;
+}
+
+/**
+ * Convert section title to kebab-case for use in filenames
+ */
+function toKebabCase(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric with hyphens
+    .replace(/^-+|-+$/g, '');      // Remove leading/trailing hyphens
 }
 
 /**
@@ -150,40 +166,6 @@ Think step-by-step and be selective. Only recommend where images truly add value
 }
 
 /**
- * Extract full section content from line number to next section heading
- */
-function extractFullSectionContent(lines: string[], startLine: number): string {
-  // Start from the recommended line
-  const contentLines: string[] = [];
-
-  // Look backward to find the section heading
-  let headingLine = startLine;
-  for (let i = startLine; i >= 0; i--) {
-    if (lines[i].match(/^#{1,4}\s+/)) {
-      headingLine = i;
-      break;
-    }
-  }
-
-  // Collect lines from heading until next heading of same or higher level
-  const headingMatch = lines[headingLine].match(/^(#{1,4})\s+/);
-  const headingLevel = headingMatch ? headingMatch[1].length : 2;
-
-  for (let i = headingLine; i < lines.length; i++) {
-    const line = lines[i];
-
-    // Stop at next heading of same or higher level (fewer #'s)
-    if (i > headingLine && line.match(new RegExp(`^#{1,${headingLevel}}\\s+`))) {
-      break;
-    }
-
-    contentLines.push(line);
-  }
-
-  return contentLines.join('\n').trim();
-}
-
-/**
  * Generate and insert section images based on recommendations
  */
 async function generateSectionImages(
@@ -206,10 +188,6 @@ async function generateSectionImages(
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const lines = fileContent.split('\n');
 
-  // Get cleaned content with variables replaced (for image generation)
-  const cleanedContent = await getCleanedContentForLLM(filePath);
-  const cleanedLines = cleanedContent.split('\n');
-
   // Generate images for each recommendation
   const generatedImages: Array<{ lineNumber: number; imagePath: string }> = [];
 
@@ -217,32 +195,33 @@ async function generateSectionImages(
     const rec = recommendations[i];
     console.log(`\n  [${i + 1}/${recommendations.length}] Generating: ${rec.sectionTitle}`);
 
-    const style = useAcademicStyle ? VisualStyles.academic : VisualStyles.retro;
-    const suffix = useAcademicStyle ? '-academic' : '-retro';
+    const style = useAcademicStyle ? VisualStyles.academic : VisualStyles['retro-futuristic'];
+    const suffix = useAcademicStyle ? '-academic' : '-retro-futuristic';
 
-    // Extract full section content from cleaned file (variables replaced, includes all context)
-    const fullSectionContent = extractFullSectionContent(cleanedLines, rec.lineNumber - 1); // Convert to 0-indexed
-
-    // Build prompt using same style instructions as project image generator
-    // Use full section content instead of excerpt for better context
+    // Use Gemini's curated excerpt (200-500 words specifically chosen for visualization)
+    // This is more focused than the full section and prevents cluttered images
+    // The excerpt is already provided by Gemini during analysis
     const contentWithGoal = `VISUALIZATION GOAL: ${rec.visualizationGoal}
 
-${fullSectionContent}`;
+${rec.contentExcerpt}`;
 
     // Use the infographic prompt builder for consistency with project images
     const imagePrompt = ImagePrompts.infographic.buildPrompt(contentWithGoal, style.style);
 
     try {
-      // Determine aspect ratio based on image type
-      const aspectRatio = rec.imageType === 'flowchart' || rec.imageType === 'diagram'
-        ? '9:16' as const
-        : '16:9' as const;
+      // Mobile-first: use portrait 9:16 for all images
+      // Portrait images scroll naturally on phones without requiring zoom/pan
+      // Desktop users can zoom in, but mobile users have limited screen real estate
+      const aspectRatio = '9:16' as const;
+
+      // Generate descriptive filename from section title
+      const sectionSlug = toKebabCase(rec.sectionTitle);
 
       const imageFiles = await generateAndSaveImages({
         prompt: imagePrompt,
         aspectRatio,
         outputDir,
-        filePrefix: `${fileName}-section-${i + 1}${suffix}`,
+        filePrefix: `${fileName}-section-${sectionSlug}${suffix}`,
         referenceImages: [],
       });
 
@@ -281,13 +260,20 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args.length === 0 || args[0].startsWith('--')) {
-    console.error('Usage: npx tsx scripts/generate-section-images.ts <file.qmd> [--academic-style] [--dry-run]');
+    console.error('Usage: npx tsx scripts/generate-section-images.ts <file.qmd> [--retro-futuristic] [--dry-run] [--force]');
+    console.error('');
+    console.error('Options:');
+    console.error('  --retro-futuristic    Use retro-futuristic style (default: academic black & white)');
+    console.error('  --dry-run             Show recommendations without generating images');
+    console.error('  --force               Delete existing section images and regenerate all');
     process.exit(1);
   }
 
   const filePath = args[0];
   const dryRun = args.includes('--dry-run');
-  const useAcademicStyle = args.includes('--academic-style');
+  const force = args.includes('--force');
+  // Default to academic style (black & white), use --retro-futuristic for fun retro futuristic style
+  const useAcademicStyle = !args.includes('--retro-futuristic');
 
   console.log('📊 Section-Specific Image Generator');
   console.log('='.repeat(80));
@@ -297,11 +283,46 @@ async function main() {
     process.exit(1);
   }
 
-  if (useAcademicStyle) {
-    console.log('[INFO] Using academic style (black and white scientific)');
-  }
+  console.log(`[INFO] Style: ${useAcademicStyle ? 'Academic (black and white scientific)' : 'Retro-futuristic'}`);
   if (dryRun) {
     console.log('[INFO] DRY RUN - will show recommendations without generating');
+  }
+  if (force) {
+    console.log('[INFO] FORCE MODE - will delete existing images and regenerate all');
+  }
+
+  // Force mode: clean up existing section images and references
+  if (force && !dryRun) {
+    const fileName = path.basename(filePath, '.qmd');
+    const relativePath = path.relative(process.cwd(), filePath);
+    const outputDir = path.join(process.cwd(), 'assets', 'section-images', path.dirname(relativePath));
+
+    // Delete existing section images
+    if (existsSync(outputDir)) {
+      const { readdirSync, unlinkSync } = await import('fs');
+      const files = readdirSync(outputDir);
+      const sectionImages = files.filter(f => f.startsWith(`${fileName}-section-`) && f.endsWith('.png'));
+
+      if (sectionImages.length > 0) {
+        console.log(`\n[FORCE] Deleting ${sectionImages.length} existing section images...`);
+        for (const img of sectionImages) {
+          unlinkSync(path.join(outputDir, img));
+          console.log(`  Deleted: ${img}`);
+        }
+      }
+    }
+
+    // Remove existing section image references from file
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    // Match section images with surrounding blank lines
+    const sectionImagePattern = /\n*!\[Section Image\]\(\/assets\/section-images\/.*?\)\n*/g;
+    const cleanedContent = fileContent.replace(sectionImagePattern, '\n');
+
+    if (cleanedContent !== fileContent) {
+      await fs.writeFile(filePath, cleanedContent, 'utf-8');
+      const removedCount = (fileContent.match(sectionImagePattern) || []).length;
+      console.log(`[FORCE] Removed ${removedCount} section image references from file\n`);
+    }
   }
 
   // Get cleaned content for analysis

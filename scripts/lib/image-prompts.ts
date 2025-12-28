@@ -95,10 +95,10 @@ export const ImagePrompts = {
  * Available visual styles
  */
 export const VisualStyles = {
-  retro: {
-    name: 'retro',
+  'retro-futuristic': {
+    name: 'retro-futuristic',
     style: RETRO_FUTURISTIC_STYLE,
-    suffix: '-retro',
+    suffix: '-retro-futuristic',
     description: 'fun retro futuristic',
   },
   academic: {

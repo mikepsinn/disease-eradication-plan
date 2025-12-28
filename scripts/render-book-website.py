@@ -45,15 +45,15 @@ def main():
     if not prepare_book():
         sys.exit(1)
 
-    # Build command for HTML rendering with validation
-    print("[*] Rendering HTML website with validation...")
+    # Build command for all formats (HTML, PDF, EPUB) with validation
+    print("[*] Rendering all formats (HTML + PDF + EPUB) with validation...")
     cmd = [
         sys.executable,
         "scripts/render_html.py",
         "--output-dir",
         args.output_dir,
         "--command",
-        "quarto render --to html",
+        "quarto render",
     ]
     if args.quarto_args:
         cmd.extend(args.quarto_args)
@@ -61,7 +61,7 @@ def main():
     # Run command
     try:
         result = subprocess.run(cmd, check=True)
-        print("[OK] Website render complete!")
+        print("[OK] All formats rendered successfully!")
         sys.exit(result.returncode)
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Render failed with exit code {e.returncode}", file=sys.stderr)

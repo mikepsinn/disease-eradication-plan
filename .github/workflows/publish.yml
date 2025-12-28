@@ -14,15 +14,15 @@ concurrency:
 
 jobs:
   # Build strategy:
-  # 1. All HTML sites build in parallel (main, economics, wishocracy, iab)
-  # 2. PDF and EPUB build in parallel after HTML completes (both reuse HTML's freeze cache)
-  # 3. No artifacts uploaded - PDF/EPUB are deployed with website to Netlify
+  # 1. All sites build in parallel (main HTML+PDF+EPUB, economics, wishocracy, iab)
+  # 2. Main job builds HTML, then PDF, then EPUB sequentially before deploying
+  # 3. All formats (HTML, PDF, EPUB) deployed together to Netlify
   # This approach:
-  # - Deploys HTML ~50 min faster than waiting for all formats
-  # - Reuses computations via freeze cache (saves ~10 min per format)
+  # - Ensures all download links (PDF, EPUB) work immediately on deployment
+  # - Reuses computations via freeze cache within the same job
   # - Costs $0 in artifact storage
   build-main-html:
-    name: Build Main Book (HTML)
+    name: Build Main Book (HTML + PDF + EPUB)
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -65,9 +65,12 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Render Main Book (HTML)
+      - name: Install LaTeX for PDF/EPUB
+        run: quarto install tinytex
+
+      - name: Render all formats (HTML + PDF + EPUB)
         run: python scripts/render-book-website.py
-        timeout-minutes: 25
+        timeout-minutes: 75
 
      # - name: Upload Main Site artifact
         #uses: actions/upload-artifact@v4
@@ -306,123 +309,3 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1
-
-  build-pdf:
-    name: Build Book PDF
-    runs-on: ubuntu-latest
-    needs: build-main-html  # Wait for HTML to reuse freeze cache
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Restore Quarto freeze from HTML build
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-main-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render Book PDF
-        run: python scripts/render-book-pdf.py
-        timeout-minutes: 20
-
-     # - name: Upload PDF artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: book-pdf
-          #path: '_book/warondisease/*.pdf'
-          #retention-days: 30
-          #if-no-files-found: error
-
-  build-epub:
-    name: Build Book EPUB
-    runs-on: ubuntu-latest
-    needs: build-main-html  # Build in parallel with PDF (both use HTML's freeze cache)
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Restore Quarto freeze from HTML build
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-main-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render Book EPUB
-        run: python scripts/render-book-epub.py
-        timeout-minutes: 30
-
-     # - name: Upload EPUB artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: book-epub
-          #path: '_book/warondisease/*.epub'
-          #retention-days: 30
-          #if-no-files-found: error
