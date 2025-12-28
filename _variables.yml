@@ -259,7 +259,7 @@
   \ (trials only, excluding other R&D costs like discovery, preclinical, manufacturing).\
   \ Note: $60B ÷ 50 drugs = $1.2B per drug. | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: TOTAL_TRIAL_SPENDING / NEW_DRUGS | Unit: USD | Click to view details,\
-  \ calculation & sources\">$0</a>"
+  \ calculation & sources\">$1.20B</a>"
 "clinical_trial_cost_per_approved_drug_latex": "$$\n\\text{Cost/Drug} = \\frac{\\\
   $60B}{50} = \\$1.2B\n$$"
 "clinical_trial_cost_per_participant_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-clinical_trial_cost_per_participant_annual\"\
@@ -267,7 +267,7 @@
   \ data-confidence=\"high\" title=\"Average annual cost per clinical trial participant\
   \ (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TOTAL_SPENDING / PARTICIPANTS\
-  \ | Unit: USD | Click to view details, calculation & sources\">$0</a>"
+  \ | Unit: USD | Click to view details, calculation & sources\">$31.6K</a>"
 "clinical_trial_cost_per_participant_annual_latex": "$$\n\\text{Cost/Participant}\
   \ = \\frac{\\$60B}{1.9M} = \\$31{,}579\n$$"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
@@ -1388,7 +1388,7 @@
   \ trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING /\
   \ TOTAL_CLINICAL_TRIALS | Unit: ratio | Click to view details, calculation & sources\"\
-  >0</a>"
+  >45.3</a>"
 "military_to_clinical_trials_spending_ratio_latex": "$$\n\\text{Ratio} = \\frac{\\\
   $2.7T}{\\$60B} = 45\\times\n$$"
 "military_to_government_clinical_trials_spending_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_to_government_clinical_trials_spending_ratio\"\

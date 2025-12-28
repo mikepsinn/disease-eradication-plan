@@ -1096,51 +1096,6 @@ GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     keywords=["nonprofit", "foundation", "clinical trials", "2-5b", "philanthropy", "advocacy"]
 )
 
-# Calculated: Cost per participant
-CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
-    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
-    source_ref="",
-    source_type=SourceType.CALCULATED,
-    description="Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
-    display_name="Annual Cost Per Clinical Trial Participant",
-    unit="USD",
-    formula="TOTAL_SPENDING / PARTICIPANTS",
-    latex=r"\text{Cost/Participant} = \frac{\$60B}{1.9M} = \$31{,}579",
-    keywords=["cost", "participant", "per patient", "trial cost", "enrollment"],
-    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"]
-)
-
-# Calculated: Cost per approved drug (from trials only)
-CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
-    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_DRUG_APPROVALS_PER_YEAR,
-    source_ref="",
-    source_type=SourceType.CALCULATED,
-    description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
-    display_name="Clinical Trial Cost Per Approved Drug",
-    unit="USD",
-    formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",
-    latex=r"\text{Cost/Drug} = \frac{\$60B}{50} = \$1.2B",
-    keywords=["cost", "drug", "approval", "fda", "trial cost", "1.2b"],
-    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_DRUG_APPROVALS_PER_YEAR"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"]
-)
-
-# Calculated: Military vs ALL clinical trials ratio
-MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
-    source_ref="",
-    source_type=SourceType.CALCULATED,
-    description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
-    display_name="Ratio of Military to Clinical Trials Spending",
-    unit="ratio",
-    formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",
-    latex=r"\text{Ratio} = \frac{\$2.7T}{\$60B} = 45\times",
-    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "45x", "misallocation"],
-    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
-    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"]
-)
-
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,
     source_ref="dct-cost-reductions-evidence",
@@ -1347,6 +1302,51 @@ CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
     distribution="lognormal",
     keywords=["1.9m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research", "iqvia"]
 )  # 1.9M patients/year (IQVIA 2022, post-COVID normalization from 4M peak in 2021)
+
+# Calculated: Cost per participant
+CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
+    display_name="Annual Cost Per Clinical Trial Participant",
+    unit="USD",
+    formula="TOTAL_SPENDING / PARTICIPANTS",
+    latex=r"\text{Cost/Participant} = \frac{\$60B}{1.9M} = \$31{,}579",
+    keywords=["cost", "participant", "per patient", "trial cost", "enrollment"],
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"]
+)
+
+# Calculated: Cost per approved drug (from trials only)
+CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_DRUG_APPROVALS_PER_YEAR,
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
+    display_name="Clinical Trial Cost Per Approved Drug",
+    unit="USD",
+    formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",
+    latex=r"\text{Cost/Drug} = \frac{\$60B}{50} = \$1.2B",
+    keywords=["cost", "drug", "approval", "fda", "trial cost", "1.2b"],
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_DRUG_APPROVALS_PER_YEAR"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"]
+)
+
+# Calculated: Military vs ALL clinical trials ratio
+MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
+    display_name="Ratio of Military to Clinical Trials Spending",
+    unit="ratio",
+    formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",
+    latex=r"\text{Ratio} = \frac{\$2.7T}{\$60B} = 45\times",
+    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "45x", "misallocation"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+)
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     2_400_000_000,

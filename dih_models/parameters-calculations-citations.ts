@@ -1509,7 +1509,7 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 // ============================================================================
 
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
-  value: 0.0,
+  value: 1200000000.0,
   unit: "USD",
   displayName: "Clinical Trial Cost Per Approved Drug",
   description: "Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
@@ -1520,7 +1520,7 @@ export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
 };
 
 export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
-  value: 0.0,
+  value: 31578.947368421053,
   unit: "USD",
   displayName: "Annual Cost Per Clinical Trial Participant",
   description: "Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
@@ -2173,7 +2173,7 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
 };
 
 export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
-  value: 0.0,
+  value: 45.3,
   unit: "ratio",
   displayName: "Ratio of Military to Clinical Trials Spending",
   description: "Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
