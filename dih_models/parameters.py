@@ -4235,16 +4235,16 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DISEASE_ERADICATION_DELAY_DALYS,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
-    description=f"Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost ${BED_NETS_COST_PER_DALY}/DALY, deworming costs $4-10/DALY. This intervention is {int(BED_NETS_COST_PER_DALY/0.127)}x more cost-effective than bed nets while also being self-funding.",
+    description=f"Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost ${BED_NETS_COST_PER_DALY}/DALY, deworming costs $4-10/DALY. This intervention is {int(BED_NETS_COST_PER_DALY/0.126)}x more cost-effective than bed nets while also being self-funding.",
     display_name="Cost per DALY Averted (Timeline Shift)",
     unit="USD/DALY",
     formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-    latex=r"\text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127",
+    latex=r"\text{Cost/DALY} = \frac{\$1.0B}{7.94B} = \$0.126",
     confidence="high",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"],
     inputs=["TREATY_CAMPAIGN_TOTAL_COST", "DISEASE_ERADICATION_DELAY_DALYS"],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DISEASE_ERADICATION_DELAY_DALYS"]
-)  # $0.127 per DALY (~700x better than bed nets, while being self-funding)
+)  # $0.126 per DALY (~707x better than bed nets, while being self-funding)
 
 # Expected cost per DALY using the unified political success probability
 # The "conservative" label is retained for compatibility, but uses the unified parameter
@@ -4273,7 +4273,7 @@ TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
     display_name="Cost-Effectiveness vs Bed Nets Multiplier",
     unit="ratio",
     formula="BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-    latex=r"\text{Multiplier} = \frac{\$89}{\$0.127} = 701\times",
+    latex=r"\text{Multiplier} = \frac{\$89}{\$0.126} = 707\times",
     confidence="high",
     inputs=['BED_NETS_COST_PER_DALY', 'TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT"],

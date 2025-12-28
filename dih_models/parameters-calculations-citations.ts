@@ -2529,12 +2529,12 @@ export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   value: 0.12590044674178746,
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Timeline Shift)",
-  description: "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
+  description: "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 706x more cost-effective than bed nets while also being self-funding.",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.90B} = \\$0.127",
+  latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.94B} = \\$0.126",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
@@ -2668,7 +2668,7 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "\\text{Multiplier} = \\frac{\\$89}{\\$0.127} = 701\\times",
+  latex: "\\text{Multiplier} = \\frac{\\$89}{\\$0.126} = 707\\times",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {

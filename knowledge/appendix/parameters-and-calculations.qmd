@@ -3130,7 +3130,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
+Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 706x more cost-effective than bed nets while also being self-funding.
 
 **Inputs**:
 
@@ -3138,7 +3138,7 @@ Cost per DALY averted from one-time timeline shift (8.2 years). This is a conser
 - [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
 
 $$
-\text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127
+\text{Cost/DALY} = \frac{\$1.0B}{7.94B} = \$0.126
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
@@ -3557,7 +3557,7 @@ How many times more cost-effective than bed nets (using $89/DALY midpoint estima
 - [Cost per DALY Averted (Timeline Shift)](#sec-treaty_dfda_cost_per_daly_timeline_shift) 🔢: $0.126
 
 $$
-\text{Multiplier} = \frac{\$89}{\$0.127} = 701\times
+\text{Multiplier} = \frac{\$89}{\$0.126} = 707\times
 $$
 
 *✓ High confidence*
