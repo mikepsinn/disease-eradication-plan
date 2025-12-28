@@ -26,7 +26,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-import { generateGeminiFlashContent } from './lib/llm.js';
+import sharp from 'sharp';
+import { generateGeminiProContent } from './lib/llm.js';
 import { generateAndSaveImages } from './lib/genai-image.js';
 import { getCleanedContentForLLM } from './lib/file-utils.js';
 import { VisualStyles } from './lib/image-prompts.js';
@@ -59,6 +60,52 @@ function toKebabCase(text: string): string {
 }
 
 /**
+ * Add watermark to image
+ */
+async function addWatermark(imagePath: string): Promise<void> {
+  const text = 'WarOnDisease.org';
+  const fontSize = 16;
+  const padding = 10;
+
+  // Create SVG watermark with white background and black text
+  const svgWatermark = `
+    <svg width="200" height="40">
+      <rect x="0" y="0" width="200" height="40" fill="white" opacity="0.9"/>
+      <text x="100" y="25" font-family="'Courier New', Courier, monospace"
+            font-size="${fontSize}" fill="black" text-anchor="middle">
+        ${text}
+      </text>
+    </svg>
+  `;
+
+  const watermarkBuffer = Buffer.from(svgWatermark);
+
+  // Load image and get dimensions
+  const image = sharp(imagePath);
+  const metadata = await image.metadata();
+
+  if (!metadata.width || !metadata.height) {
+    throw new Error('Could not read image dimensions');
+  }
+
+  // Position watermark in lower right corner
+  const left = metadata.width - 200 - padding;
+  const top = metadata.height - 40 - padding;
+
+  // Composite watermark onto image
+  await image
+    .composite([{
+      input: watermarkBuffer,
+      left,
+      top,
+    }])
+    .toFile(imagePath + '.tmp');
+
+  // Replace original with watermarked version
+  await fs.rename(imagePath + '.tmp', imagePath);
+}
+
+/**
  * Analyze entire file and get section-specific image recommendations
  */
 async function analyzeFileForSectionImages(
@@ -75,10 +122,10 @@ async function analyzeFileForSectionImages(
   const prompt = `You are an expert academic editor analyzing a scholarly document. Your task is to identify sections that would benefit from visual aids (diagrams, charts, infographics, or flowcharts).
 
 IMPORTANT GUIDELINES:
-1. **Default to YES**: Recommend images for ALL major sections (## headings) unless the image would be actively unhelpful
-2. **Bias towards visuals**: When in doubt, include the image - visual aids enhance engagement and comprehension
-3. **Only skip if harmful**: Skip images only if they would distract, confuse, or provide zero value
-4. **Err on the side of more**: Better to have too many visuals than too few in an academic book
+1. **Be selective**: Only recommend images where visualization would significantly enhance understanding
+2. **Quality over quantity**: Each image should clarify complex relationships, data, or processes
+3. **Placement matters**: Insert images AFTER paragraphs that establish context, not before bullet lists or section breaks
+4. **Natural flow**: Images should complement the text, not interrupt the narrative
 
 FILE METADATA:
 - Path: ${filePath}
@@ -94,7 +141,7 @@ Respond with JSON:
 {
   "recommendations": [
     {
-      "lineNumber": <exact line number where image should be inserted>,
+      "lineNumber": <line number AFTER a complete paragraph that provides context, NOT before lists or headers>,
       "sectionTitle": "<section heading text>",
       "contentExcerpt": "<relevant 200-500 word excerpt to visualize>",
       "imageType": "diagram" | "chart" | "infographic" | "flowchart",
@@ -103,33 +150,35 @@ Respond with JSON:
     }
   ],
   "totalRecommendations": <number>,
-  "reasoning": "<overall assessment: how many visuals does this document need?>"
+  "reasoning": "<overall assessment: how many visuals does this document truly need?>"
 }
 
 CRITERIA FOR RECOMMENDATION:
-✅ ALWAYS recommend for:
-- Any section with quantitative comparisons or data
-- Any section describing processes, workflows, or systems
-- Any section with multiple stakeholders or entities
-- Any section with timelines, pathways, or alternatives
-- Any section where spatial/visual relationships matter
+✅ RECOMMEND if:
+- Complex quantitative comparisons that are hard to grasp as pure text
+- Multi-step processes or workflows (4+ steps)
+- Relationships between multiple entities (5+ interconnected elements)
+- Data visualization would genuinely clarify the concept
+- Section has substantial explanatory text (200+ words) establishing context
 
-✅ STRONGLY CONSIDER for:
-- Abstract concepts that could be made concrete
-- Lists of 3+ items that could be shown visually
-- Cause-and-effect relationships
-- Before/after scenarios
+❌ DO NOT recommend if:
+- Placed immediately after transition sentences or colons
+- Placed immediately before bullet lists (breaks flow)
+- Placed right before section headers
+- Section is primarily narrative without complex data/relationships
+- Content is already clear from text alone
+- Would interrupt the natural reading flow
 
-❌ ONLY skip if:
-- Section is purely introductory/transitional (<100 words)
-- Section is entirely citations/references
-- Would be genuinely confusing or distracting
-- Already has comprehensive tables/figures
+PLACEMENT RULES:
+- Insert AFTER complete paragraphs (ending with periods)
+- Ensure preceding text establishes sufficient context
+- Avoid breaking up lists or splitting related content
+- Place where a reader would naturally pause to reflect
 
-When in doubt, INCLUDE the image. Visuals are valuable.`;
+Be thoughtful and selective. Only recommend images that truly add value.`;
 
   try {
-    const response = await generateGeminiFlashContent(prompt);
+    const response = await generateGeminiProContent(prompt);
     const jsonMatch = response.match(/\{[\s\S]*\}/);
 
     if (!jsonMatch) {
@@ -194,7 +243,7 @@ async function generateSectionImages(
   const lines = fileContent.split('\n');
 
   // Generate images for each recommendation
-  const generatedImages: Array<{ lineNumber: number; imagePath: string }> = [];
+  const generatedImages: Array<{ lineNumber: number; imagePath: string; visualizationGoal: string }> = [];
 
   for (let i = 0; i < recommendations.length; i++) {
     const rec = recommendations[i];
@@ -228,9 +277,18 @@ ${rec.contentExcerpt}`;
       });
 
       if (imageFiles && imageFiles.length > 0) {
-        const imagePath = path.relative(process.cwd(), imageFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Generated: ${imagePath}`);
-        generatedImages.push({ lineNumber: rec.lineNumber, imagePath: `/${imagePath}` });
+        const absolutePath = imageFiles[0];
+        const relativePath = path.relative(process.cwd(), absolutePath).replace(/\\/g, '/');
+
+        // Add watermark
+        await addWatermark(absolutePath);
+
+        console.log(`  [OK] Generated: ${relativePath}`);
+        generatedImages.push({
+          lineNumber: rec.lineNumber,
+          imagePath: `/${relativePath}`,
+          visualizationGoal: rec.visualizationGoal
+        });
       } else {
         console.log(`  [WARN] No image generated for: ${rec.sectionTitle}`);
       }
@@ -246,8 +304,8 @@ ${rec.contentExcerpt}`;
     // Sort by line number descending (to insert from bottom up)
     generatedImages.sort((a, b) => b.lineNumber - a.lineNumber);
 
-    for (const { lineNumber, imagePath } of generatedImages) {
-      const imageMarkdown = `\n![Section Image](${imagePath})\n`;
+    for (const { lineNumber, imagePath, visualizationGoal } of generatedImages) {
+      const imageMarkdown = `\n![${visualizationGoal}](${imagePath})\n`;
       lines.splice(lineNumber, 0, imageMarkdown);
       console.log(`  Inserted image at line ${lineNumber}`);
     }
@@ -316,8 +374,8 @@ async function main() {
 
     // Remove existing section image references from file
     const fileContent = await fs.readFile(filePath, 'utf-8');
-    // Match section images with surrounding blank lines
-    const sectionImagePattern = /\n*!\[Section Image\]\(\/assets\/section-images\/.*?\)\n*/g;
+    // Match section images with surrounding blank lines (any alt text)
+    const sectionImagePattern = /\n*!\[.*?\]\(\/assets\/section-images\/.*?\)\n*/g;
     const cleanedContent = fileContent.replace(sectionImagePattern, '\n');
 
     if (cleanedContent !== fileContent) {
