@@ -27,9 +27,6 @@ tags:
   - impact-assessment
   - health-economics
 bibliography: ../../references.bib
-
-![Section Image](/assets/section-images/knowledge/economics/economics-section-abstract-academic.png)
-
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 link-citations: true
 citation-hover: true
@@ -39,6 +36,7 @@ fig-cap-location: bottom
 tbl-cap-location: top
 image: /assets/og-images/knowledge/economics/economics-og-academic.png
 ---
+
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ![Infographic](/assets/infographics/knowledge/economics/economics-infographic-academic.png)
