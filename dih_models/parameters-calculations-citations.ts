@@ -1539,6 +1539,7 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition",
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
+  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -1562,6 +1563,7 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
+  latex: "Benefit_{DFDA,ann} = Trials_{ann} \\times Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B",
 };
 
 export const DFDA_EXPECTED_ROI: Parameter = {
@@ -1668,6 +1670,7 @@ export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
+  latex: "Benefit_{gross,ann} = Trials_{ann} \\times Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B",
 };
 
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
@@ -1703,6 +1706,7 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
+  latex: "ROI_{DFDA} = \\frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \\frac{\\$30.00B}{\\$40.0M} = 750",
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
@@ -1713,6 +1717,7 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
+  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.8 = 75{,}400",
 };
 
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
@@ -1724,6 +1729,7 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
+  latex: "Fundable_{ann} = \\frac{Treasury_{ann}}{Cost} = \\frac{\\$21.70B}{\\$500} = 43.4M",
 };
 
 export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
@@ -1794,6 +1800,7 @@ export const DISEASE_ERADICATION_DELAY_YLD: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "medium",
   formula: "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
+  latex: "Delay_{dis} = Deaths_{total} \\times Deaths \\times Chronic = 415.9M \\times 6 \\times 0.35 = 873.3M",
 };
 
 export const DISEASE_ERADICATION_DELAY_YLL: Parameter = {
@@ -1853,6 +1860,7 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   sourceRef: "pre-1962-drug-costs-timeline",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
+  latex: "Multiplier_{curr} = \\frac{Cost_{curr}}{Cost_{80s}} = \\frac{\\$2.60B}{\\$194.0M} = 13.4",
 };
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
@@ -1864,6 +1872,7 @@ export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   sourceRef: "pre-1962-drug-costs-baily-1972",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",
+  latex: "Multiplier_{curr} = \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$24.7M} = 105",
 };
 
 export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
@@ -1923,6 +1932,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "COMBAT_DEATHS × VSL ",
+  latex: "Cost_{human,ann} = Deaths_{combat,ann} \\times Value = 234{,}000 \\times \\$10.0M = \\$2.34T",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
@@ -1934,6 +1944,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "STATE_DEATHS × VSL ",
+  latex: "Cost_{human,ann} = Deaths_{ann} \\times Value = 2{,}700 \\times \\$10.0M = \\$27.00B",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
@@ -1945,6 +1956,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "TERROR_DEATHS × VSL ",
+  latex: "Cost_{human,ann} = Deaths_{terror,ann} \\times Value = 8{,}300 \\times \\$10.0M = \\$83.00B",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
@@ -2040,6 +2052,7 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   sourceRef: "disease-economic-burden-109t",
   confidence: "high",
   formula: "MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
+  latex: "Burden_{ann} = Cost_{direct,ann} + Loss_{human,ann} + Loss_{ann} = \\$9.90T + \\$94.20T + \\$5.00T = \\$109.10T",
 };
 
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
@@ -2050,6 +2063,7 @@ export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS",
+  latex: "Trials_{ann} = Trials_{ann} - Trials_{ann} = \\$60.00B - \\$4.50B = \\$55.50B",
 };
 
 export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
@@ -2085,6 +2099,7 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/humanity-budget-overview",
   confidence: "high",
   formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
+  latex: "Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \\$11.36T + \\$109.10T + \\$8.20T = \\$128.66T",
 };
 
 export const HISTORICAL_PROGRESS_DEATHS_TOTAL: Parameter = {
@@ -2120,6 +2135,7 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
+  latex: "Cost = \\frac{Benefit_{ann}}{Cost_{ann}} = \\frac{\\$143.55B}{\\$750.0M} = 191",
 };
 
 export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
@@ -2211,6 +2227,7 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/peace-dividend-calculations",
   confidence: "high",
   formula: "TOTAL_WAR_COST × 1%",
+  latex: "Cost_{soc,ann} = Cost_{war,total} \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.55B",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
@@ -2234,6 +2251,7 @@ export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "DIRECT_COSTS × 1%",
+  latex: "Cost_{direct,peace} = Cost_{direct,total} \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.55B",
 };
 
 export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
@@ -2245,6 +2263,7 @@ export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "ENVIRONMENTAL_DAMAGE × 1%",
+  latex: "Savings_{env,peace} = Cost_{env,ann} \\times Reduction_{treaty} = \\$100.00B \\times 1.0\\% = \\$1.00B",
 };
 
 export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
@@ -2256,6 +2275,7 @@ export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "HUMAN_LIFE_LOSSES × 1%",
+  latex: "Savings_{human,peace} = Loss_{human,ann} \\times Reduction_{treaty} = \\$2.45T \\times 1.0\\% = \\$24.46B",
 };
 
 export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
@@ -2267,6 +2287,7 @@ export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "INDIRECT_COSTS × 1%",
+  latex: "Cost_{indirect,peace} = Cost_{indirect,total} \\times Reduction_{treaty} = \\$3.70T \\times 1.0\\% = \\$37.00B",
 };
 
 export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
@@ -2278,6 +2299,7 @@ export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "INFRASTRUCTURE_DESTRUCTION × 1%",
+  latex: "Savings_{infra,peace} = Infrastructure_{global} \\times Reduction_{treaty} = \\$1.88T \\times 1.0\\% = \\$18.75B",
 };
 
 export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
@@ -2289,6 +2311,7 @@ export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_ECONOMIC_GROWTH × 1%",
+  latex: "Savings_{lost_econ,peace} = Cost_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B",
 };
 
 export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
@@ -2300,6 +2323,7 @@ export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_HUMAN_CAPITAL × 1%",
+  latex: "Savings_{human,peace} = Lost_{global} \\times Reduction_{treaty} = \\$300.00B \\times 1.0\\% = \\$3.00B",
 };
 
 export const PEACE_DIVIDEND_PTSD: Parameter = {
@@ -2311,6 +2335,7 @@ export const PEACE_DIVIDEND_PTSD: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "PTSD_COSTS × 1%",
+  latex: "Cost_{PTSD,peace} = Cost_{ann} \\times Reduction_{treaty} = \\$232.00B \\times 1.0\\% = \\$2.32B",
 };
 
 export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
@@ -2322,6 +2347,7 @@ export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "REFUGEE_SUPPORT × 1%",
+  latex: "Cost_{ref,peace} = Cost_{ref,ann} \\times Reduction_{treaty} = \\$150.00B \\times 1.0\\% = \\$1.50B",
 };
 
 export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
@@ -2333,6 +2359,7 @@ export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "TRADE_DISRUPTION × 1%",
+  latex: "Savings_{trade,peace} = Disruption_{trade,ann} \\times Reduction_{treaty} = \\$616.00B \\times 1.0\\% = \\$6.16B",
 };
 
 export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
@@ -2344,6 +2371,7 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "VETERAN_HEALTHCARE × 1%",
+  latex: "Cost_{vet,peace} = Cost_{vet,ann} \\times Reduction_{treaty} = \\$200.10B \\times 1.0\\% = \\$2.00B",
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
@@ -2366,6 +2394,7 @@ export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION",
+  latex: "Cost_{percap,dis} = \\frac{Spending_{chronic,ann}}{Population} = \\frac{\\$4.10T}{335M} = \\$12.2K",
 };
 
 export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
@@ -2376,6 +2405,7 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "US_MENTAL_HEALTH_COST ÷ US_POPULATION",
+  latex: "Cost_{percap,health} = \\frac{Cost_{mental,ann}}{Population} = \\frac{\\$350.00B}{335M} = \\$1.0K",
 };
 
 export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
@@ -2465,6 +2495,7 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
+  latex: "Funding_{total} = Spending_{global} + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B",
 };
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
@@ -2476,6 +2507,7 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics#better-than-the-best-charities",
   confidence: "high",
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
+  latex: "Multiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}} = \\frac{\\$143.55B}{\\$15.00B} = 9.57",
 };
 
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
@@ -2511,6 +2543,7 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#voting-bloc",
   confidence: "high",
   formula: "GLOBAL_POPULATION × 3.5%",
+  latex: "Campaign_{camp,treaty} = Population_{global} \\times Threshold_{global} = 8.00B \\times 3.5\\% = 280M",
 };
 
 export const TREATY_COMPLETE_ROI_ALL_BENEFITS: Parameter = {
@@ -2534,6 +2567,7 @@ export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
+  latex: "Cost_{DFDA,treaty} = \\frac{Cost_{camp,total}}{DALYs_{dis}} = \\frac{\\$1.00B}{7.94B} = \\$0.126",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
@@ -2556,6 +2590,7 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$12.59} = 7.07",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -2567,6 +2602,7 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global",
   confidence: "high",
   formula: "TOTAL_DEATHS × REDUCTION_PCT",
+  latex: "Deaths_{ann} = Deaths_{total} \\times Reduction_{treaty} = 245{,}000 \\times 1.0\\% = 2{,}450",
 };
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
@@ -2578,6 +2614,7 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
+  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B",
 };
 
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
@@ -2589,6 +2626,7 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global",
   confidence: "high",
   formula: "LIVES_SAVED × QALYS_PER_LIFE",
+  latex: "Dividend_{ann} = QALYs_{RD} \\times Deaths_{ann} = 35 \\times 2{,}450 = 85{,}600",
 };
 
 export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
@@ -2600,6 +2638,7 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
+  latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B",
 };
 
 export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
@@ -2611,6 +2650,7 @@ export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "high",
   formula: "HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
+  latex: "ROI_{treaty} = \\frac{Delay_{total}}{Cost_{camp,total}} = \\frac{\\$250.92T}{\\$1.00B} = 251{,}000",
 };
 
 export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
@@ -2622,6 +2662,7 @@ export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "low",
   formula: "DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
+  latex: "ROI_{treaty} = \\frac{Ratio_{total}}{Cost_{camp,total}} = \\frac{\\$2382.84T}{\\$1.00B} = 2.4M",
 };
 
 export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
@@ -2645,6 +2686,7 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs",
   confidence: "high",
   formula: "CAMPAIGN_ANNUAL + DFDA_OPEX",
+  latex: "Cost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann} = \\$40.0M + \\$250.0M = \\$290.0M",
 };
 
 export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
@@ -2656,6 +2698,7 @@ export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
+  latex: "Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B",
 };
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
@@ -2666,6 +2709,7 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{DFDA,treaty}} = \\frac{\\$89}{\\$0.126} = 707",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
@@ -2687,6 +2731,7 @@ export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{43.4M}{1.9M} = 22.8",
 };
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
@@ -2698,6 +2743,7 @@ export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#risk-analysis",
   confidence: "medium",
   formula: "TYPE_II_COST ÷ TYPE_I_BENEFIT",
+  latex: "Cost = \\frac{DALYs_{dis}}{DALYs} = \\frac{7.94B}{2.6M} = 3{,}070",
 };
 
 export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
@@ -2733,6 +2779,7 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   sourceRef: "https://impact.dih.earth/knowledge/solution/aligning-incentives#insurance-companies",
   confidence: "high",
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
+  latex: "Cost_{total} = Cost_{alz,ann} + Cost_{cancer,ann} + Cost_{diab,ann} + Cost_{heart,ann} = \\$355.00B + \\$208.00B + \\$327.00B + \\$363.00B = \\$1.25T",
 };
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
@@ -3076,6 +3123,7 @@ export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   sourceRef: "clinical-trial-patient-participation-rate",
   confidence: "high",
   formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
+  latex: "Rate_{curr} = \\frac{Trials_{curr}}{Population_{curr,global}} = \\frac{1.9M}{2.40B} = 0.1\\%",
 };
 
 export const DAYS_PER_YEAR: Parameter = {
@@ -3528,6 +3576,7 @@ export const TREATY_ANNUAL_FUNDING: Parameter = {
   sourceType: "definition",
   confidence: "high",
   formula: "MILITARY_SPENDING × 1%",
+  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B",
 };
 
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
@@ -3658,6 +3707,7 @@ export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   sourceType: "definition",
   confidence: "high",
   formula: "TREATY_FUNDING × BOND_PCT",
+  latex: "Victory_{annual} = Funding_{ann} \\times Funding = \\$27.18B \\times 10.0\\% = \\$2.72B",
 };
 
 export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {

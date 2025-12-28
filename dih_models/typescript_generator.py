@@ -24,6 +24,7 @@ import re
 import shutil
 
 from dih_models.reference_parser import parse_references_qmd_detailed
+from dih_models.latex_generation import generate_auto_latex
 
 
 def _escape_typescript_string(s: str) -> str:
@@ -196,7 +197,8 @@ def generate_typescript_parameters(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
     include_metadata: bool = True,
-    references_path: Optional[Path] = None
+    references_path: Optional[Path] = None,
+    params_file: Optional[Path] = None
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -214,6 +216,7 @@ def generate_typescript_parameters(
         output_path: Path to write the .ts file
         include_metadata: Include full metadata (default: True)
         references_path: Path to references.qmd for citation data (optional)
+        params_file: Path to parameters.py for auto-generating LaTeX (optional)
     """
     # Parse citation data from references.qmd
     citation_data = {}
@@ -323,7 +326,9 @@ def generate_typescript_parameters(
 
         for param_name, param_data in external_params:
             value_obj = param_data["value"]
-            param_lines, citation = _generate_parameter_constant(param_name, value_obj, include_metadata, citation_data)
+            param_lines, citation = _generate_parameter_constant(
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+            )
             content.extend(param_lines)
             if citation:
                 all_citations[citation['id']] = citation
@@ -338,7 +343,9 @@ def generate_typescript_parameters(
 
         for param_name, param_data in calculated_params:
             value_obj = param_data["value"]
-            param_lines, citation = _generate_parameter_constant(param_name, value_obj, include_metadata, citation_data)
+            param_lines, citation = _generate_parameter_constant(
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+            )
             content.extend(param_lines)
             if citation:
                 all_citations[citation['id']] = citation
@@ -353,7 +360,9 @@ def generate_typescript_parameters(
 
         for param_name, param_data in definition_params:
             value_obj = param_data["value"]
-            param_lines, citation = _generate_parameter_constant(param_name, value_obj, include_metadata, citation_data)
+            param_lines, citation = _generate_parameter_constant(
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+            )
             content.extend(param_lines)
             if citation:
                 all_citations[citation['id']] = citation
@@ -845,10 +854,20 @@ def _generate_parameter_constant(
     param_name: str,
     value_obj: Any,
     include_metadata: bool,
-    citation_data: Dict[str, Any] = None
+    citation_data: Optional[Dict[str, Any]] = None,
+    parameters: Optional[Dict[str, Dict[str, Any]]] = None,
+    params_file: Optional[Path] = None
 ) -> tuple[list, Optional[Dict[str, Any]]]:
     """
     Generate TypeScript constant declaration for a parameter.
+
+    Args:
+        param_name: Name of the parameter constant
+        value_obj: Parameter object with value and metadata
+        include_metadata: Whether to include full metadata
+        citation_data: Citation lookup data from references.qmd (optional)
+        parameters: Full parameters dict for auto-generating LaTeX (optional)
+        params_file: Path to parameters.py for auto-generating LaTeX (optional)
 
     Returns:
         Tuple of (lines, citation) where citation is the CSL JSON object if found
@@ -931,8 +950,15 @@ def _generate_parameter_constant(
         if formula:
             lines.append(f"  formula: {_format_typescript_value(formula)},")
 
-        # LaTeX
+        # LaTeX - use explicit or auto-generate
         latex = getattr(value_obj, "latex", None)
+        if not latex and parameters and params_file:
+            # Auto-generate LaTeX if not explicitly provided
+            try:
+                latex = generate_auto_latex(param_name, value_obj, parameters, params_file)
+            except Exception:
+                # Silently skip if auto-generation fails
+                pass
         if latex:
             lines.append(f"  latex: {_format_typescript_value(latex)},")
 

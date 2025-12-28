@@ -496,7 +496,7 @@ def main():
     # Generate TypeScript parameters file for Next.js/React apps
     print("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=references_path)
+    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=references_path, params_file=parameters_path)
     print()
 
     # Generate TypeScript survey file (if survey exists)
