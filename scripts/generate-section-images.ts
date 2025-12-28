@@ -188,9 +188,6 @@ async function generateSectionImages(
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const lines = fileContent.split('\n');
 
-  // Get cleaned content with variables replaced (for image generation)
-  const cleanedContent = await getCleanedContentForLLM(filePath);
-
   // Generate images for each recommendation
   const generatedImages: Array<{ lineNumber: number; imagePath: string }> = [];
 
@@ -201,12 +198,12 @@ async function generateSectionImages(
     const style = useAcademicStyle ? VisualStyles.academic : VisualStyles['retro-futuristic'];
     const suffix = useAcademicStyle ? '-academic' : '-retro-futuristic';
 
-    // Use cleaned content with Quarto variables replaced
-    // This ensures variables like {{< var treaty_annual_funding >}} are replaced with actual values
+    // Use Gemini's curated excerpt (200-500 words specifically chosen for visualization)
+    // Since we analyze cleaned content, the excerpt already has variables replaced
     // Simple prompt: just style + content, no meta-instructions that might leak into images
     const imagePrompt = `${style.style}
 
-${cleanedContent}`;
+${rec.contentExcerpt}`;
 
     try {
       // Book-friendly: use portrait 3:4 (closest to standard book format)
