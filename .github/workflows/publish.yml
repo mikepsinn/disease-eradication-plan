@@ -138,6 +138,9 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
+      - name: Install LaTeX for PDF
+        run: quarto install tinytex
+
       - name: Render Economics Website
         run: python scripts/render-economics-website.py --output-dir _site/economics
         timeout-minutes: 25

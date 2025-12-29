@@ -48,15 +48,15 @@ def main():
     if not prepare_economics():
         sys.exit(1)
 
-    # Build command for HTML rendering with validation
-    print("[*] Rendering economics HTML website with validation...")
+    # Build command for all formats (HTML + PDF) with validation
+    print("[*] Rendering economics website (HTML + PDF) with validation...")
     cmd = [
         sys.executable,
         "scripts/render_html.py",
         "--output-dir",
         args.output_dir,
         "--command",
-        "quarto render --to html",
+        "quarto render",
     ]
     if args.quarto_args:
         cmd.extend(args.quarto_args)

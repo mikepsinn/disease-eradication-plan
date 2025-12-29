@@ -57,7 +57,7 @@ website:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /economics/dih-economic-models.pdf
+        href: /dih-economic-models.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "IAB Paper"
@@ -240,7 +240,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/economics/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </div>
     include-after-body:
@@ -263,7 +263,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/economics/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </footer>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
