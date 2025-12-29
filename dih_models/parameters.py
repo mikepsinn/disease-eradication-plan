@@ -310,17 +310,15 @@ SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * MINUTES_PER_HOUR * SECONDS_PE
 
 # Direct costs
 GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
-    2_718_000_000_000,
+    2_720_000_000_000,  # 3 sig figs
     source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending in 2024",
     display_name="Global Military Spending in 2024",
     unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    std_error=271_800_000_000,  # Assumed 10% uncertainty
-    confidence_interval=(2_446_000_000_000, 2_990_000_000_000),
+    distribution="fixed",  # Using point estimate for clean presentation throughout book
     keywords=["2024", "2.7t", "dod", "pentagon", "national security", "army", "navy"]
-)  # SIPRI 2024
+)  # SIPRI 2024 (rounded to 3 sig figs for clarity)
 
 # Value of Statistical Life (VSL)
 VALUE_OF_STATISTICAL_LIFE = Parameter(
@@ -632,7 +630,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
     display_name="Total Annual Direct War Costs",
     unit="USD/year",
     formula="MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE",
-    latex=r"DirectCosts = \$2,718B \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,655B",
+    latex=r"DirectCosts = \$2.72T \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,657B",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "worldwide"],
     inputs=['GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"]
@@ -747,7 +745,7 @@ GLOBAL_ANNUAL_WAR_TOTAL_COST = Parameter(
     display_name="Total Annual Cost of War Worldwide",
     unit="USD/year",
     formula="DIRECT_COSTS + INDIRECT_COSTS",
-    latex=r"TotalWarCost = \$7,655B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,355B",
+    latex=r"TotalWarCost = \$7,657B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,357B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "war"],
     # Uncertainty derived from inputs (DIRECT + INDIRECT costs)
     validation_min=8_000_000_000_000,   # Floor: Direct costs only, conservative VSL
@@ -771,26 +769,26 @@ TREATY_REDUCTION_PCT = Parameter(
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
     source_ref="",
-    source_type="calculated",  # Calculated: military spending (uncertain) × 1% (fixed policy choice)
-    description="Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)",
+    source_type="calculated",
+    description="Annual funding from 1% of global military spending redirected to DIH",
     display_name="Annual Funding from 1% of Global Military Spending Redirected to DIH",
     unit="USD/year",
     formula="MILITARY_SPENDING × 1%",
     keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * ctx["TREATY_REDUCTION_PCT"],
-)  # $27.18B (95% CI: $24.5B-$29.9B from military spending uncertainty)
+)  # $27.2B (clean display throughout book)
 
 # ==============================================================================
-# PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($113.55B/year perpetual)
+# PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($114B/year perpetual)
 # ==============================================================================
-# A 1% treaty redirects 1% of military spending ($27.18B/year) to pragmatic clinical trials.
+# A 1% treaty redirects 1% of military spending ($27.2B/year) to pragmatic clinical trials.
 # This generates recurring annual benefits from reduced conflict costs:
 #   - Direct military savings
 #   - Reduced infrastructure destruction
 #   - Fewer casualties and refugee costs
 #   - Reduced lost economic growth
-# Total recurring peace dividend: $113.55B/year (happens every year forever)
+# Total recurring peace dividend: $114B/year (happens every year forever)
 # ==============================================================================
 
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
@@ -960,7 +958,7 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     source_type="definition",  # This is a policy-derived value (1% of military spending)
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
-    latex=r"PeaceDividend_{fiscal} = \$27.18B",
+    latex=r"PeaceDividend_{fiscal} = \$27.2B",
     description="Direct fiscal savings from 1% military spending reduction (high confidence)",
     display_name="Direct Fiscal Savings from 1% Military Spending Reduction",
     unit="USD/year",
@@ -973,7 +971,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     source_type="calculated",
     confidence="low",
     formula="PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING",
-    latex=r"PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B",
+    latex=r"PeaceDividend_{conflict} = \$114B - \$27.2B = \$86.8B",
     description="Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)",
     display_name="Conflict Reduction Benefits from 1% Less Military Spending",
     unit="USD/year",
@@ -3451,7 +3449,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     display_name="Annual IAB Political Incentive Funding",
     unit="USD/year",
     formula="TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
-    latex=r"IABFunding = \$27.18B \times 0.10 = \$2.718B",
+    latex=r"IABFunding = \$27.2B \times 0.10 = \$2.72B",
     keywords=["incentive alignment bond", "iab", "political incentives", "pac", "fellowship", "scoring", "electoral", "public good score"],
     inputs=['TREATY_ANNUAL_FUNDING', 'IAB_POLITICAL_INCENTIVE_FUNDING_PCT'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["IAB_POLITICAL_INCENTIVE_FUNDING_PCT"],
@@ -3469,7 +3467,7 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
     display_name="Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
     unit="ratio",
     formula="TREATY_FUNDING ÷ DFDA_OPEX",
-    latex=r"Coverage = \$27.18B / \$0.04B = 679x",
+    latex=r"Coverage = \$27.2B / \$0.04B = 680x",
     keywords=["pragmatic trials", "real world evidence", "multiple", "decentralized trials", "drug agency", "food and drug administration", "international agreement"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] / ctx["DFDA_ANNUAL_OPEX"],
@@ -3482,7 +3480,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
-    latex=r"ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B",
+    latex=r"ResearchFunding = \$27.2B - \$2.72B - \$2.72B = \$21.76B",
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
     inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT', 'IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"] - ctx["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"],
@@ -3523,7 +3521,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     display_name="Medical Research Percentage of Treaty Funding",
     unit="rate",
     formula="MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-    latex=r"MedicalResearchPct = \$21.744B / \$27.18B = 0.80 = 80\%",
+    latex=r"MedicalResearchPct = \$21.76B / \$27.2B = 0.80 = 80\%",
     confidence="high",
     keywords=["allocation", "percentage", "medical research", "funding"],
 )  # 80%
@@ -3536,7 +3534,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
     unit="rate",
     formula="TRIAL_SUBSIDIES / TREATY_FUNDING",
-    latex=r"TrialSubsidiesPct = \$21.70B / \$27.18B = 0.7985 = 79.85\%",
+    latex=r"TrialSubsidiesPct = \$21.72B / \$27.2B = 0.7985 = 79.85\%",
     confidence="high",
     keywords=["allocation", "percentage", "patient", "trial", "subsidy"],
 )  # 79.85%
@@ -3549,7 +3547,7 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
     unit="rate",
     formula="DFDA_OPEX / TREATY_FUNDING",
-    latex=r"DFDAOpexPct = \$0.04B / \$27.18B = 0.00147 = 0.15\%",
+    latex=r"DFDAOpexPct = \$0.04B / \$27.2B = 0.00147 = 0.15\%",
     confidence="high",
     keywords=["allocation", "percentage", "overhead", "platform", "opex"],
 )  # 0.15%
@@ -3865,7 +3863,7 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     display_name="Per Capita Military Spending Globally",
     unit="USD/person/year",
     formula="MILITARY_SPENDING ÷ POPULATION",
-    latex=r"PerCapita_{military} = \$2,718B / 8.0B = \$339.75",
+    latex=r"PerCapita_{military} = \$2.72T / 8.0B = \$340",
     keywords=["dod", "pentagon", "average person", "national security", "army", "individual", "navy"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'GLOBAL_POPULATION_2024'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_POPULATION_2024"],
@@ -4129,7 +4127,7 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     display_name="Global Military Spending After 1% Treaty Reduction",
     unit="USD/year",
     formula="MILITARY_SPENDING × (1 - REDUCTION)",
-    latex=r"PostTreaty_{military} = \$2,718B \times 0.99 = \$2,690.82B",
+    latex=r"PostTreaty_{military} = \$2.72T \times 0.99 = \$2.69T",
     keywords=["2024", "dod", "pentagon", "deployment rate", "market penetration", "participation rate", "national security"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * (1 - ctx["TREATY_REDUCTION_PCT"]),
@@ -4496,7 +4494,7 @@ MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     display_name="Ratio of Military Spending to Medical Research Spending",
     unit="ratio",
     formula="MILITARY_SPENDING ÷ MEDICAL_RESEARCH",
-    latex=r"Ratio = \frac{\$2,718B}{\$67.5B} \approx 40.3:1",
+    latex=r"Ratio = \frac{\$2.72T}{\$67.5B} \approx 40.3:1",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict"],
     inputs=['GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_MED_RESEARCH_SPENDING"],
