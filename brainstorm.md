@@ -61,7 +61,7 @@ Yes, but only if you use it in a very specific way.
        * Platform trials.
        * Community-based pragmatic trials.
        * Repurposing cheap generics and lifestyle protocols.
-   * This is exactly the niche you’re arguing the dFDA / Right to Trial / DIH should fill.
+   * This is exactly the niche you’re arguing a dFDA / Right to Trial / DIH should fill.
 
 ### How I’d actually use it in your “scathing” piece
 
