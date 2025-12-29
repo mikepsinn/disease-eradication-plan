@@ -7,7 +7,7 @@ This repository uses GitHub Actions to automatically build and deploy multiple s
 | Site | URL | Netlify Secret | Output Directory |
 |------|-----|----------------|------------------|
 | **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_book/warondisease` |
-| **Economics** | https://impact.dih.earth | `NETLIFY_ECONOMICS_SITE_ID` | `_site/economics` |
+| **Economics** | https://impact.warondisease.org | `NETLIFY_ECONOMICS_SITE_ID` | `_site/economics` |
 | **Wishocracy Paper** | https://paper.wishocracy.org | `NETLIFY_WISHOCRACY_SITE_ID` | `_site/wishocracy` |
 | **IAB Paper** | https://iab.warondisease.org | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
 
@@ -33,7 +33,7 @@ The Netlify site ID for WarOnDisease.org
 3. Copy the **Site ID** (format: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`)
 
 ### 3. NETLIFY_ECONOMICS_SITE_ID
-The Netlify site ID for impact.dih.earth
+The Netlify site ID for impact.warondisease.org
 
 ### 4. NETLIFY_WISHOCRACY_SITE_ID ⚠️ **NEW - Required**
 The Netlify site ID for paper.wishocracy.org
@@ -62,7 +62,7 @@ The GitHub Actions workflow (`.github/workflows/publish.yml`) performs these ste
 2. **Render main book** - Full book to `_book/warondisease/`
 3. **Deploy main site** - Upload to Netlify (WarOnDisease.org)
 4. **Render economics** - Economics site to `_site/economics/`
-5. **Deploy economics** - Upload to Netlify (impact.dih.earth)
+5. **Deploy economics** - Upload to Netlify (impact.warondisease.org)
 6. **Render Wishocracy paper** - Paper to `_site/wishocracy/`
 7. **Deploy Wishocracy** - Upload to Netlify (paper.wishocracy.org)
 8. **Render IAB paper** - Paper to `_site/iab/`

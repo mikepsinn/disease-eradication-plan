@@ -23,7 +23,7 @@ python scripts/render-book-website.py
 ### 2. Economics Analysis
 **Config**: `_quarto-economics.yml`
 **Output**: `_site/economics/`
-**Site**: https://impact.dih.earth
+**Site**: https://impact.warondisease.org
 
 Renders just the economic analysis and cost-benefit calculations.
 
@@ -118,7 +118,7 @@ python scripts/render-iab.py
 After rendering:
 
 1. **Full Book**: Deploy `_book/warondisease/` to WarOnDisease.org via GitHub Pages
-2. **Economics**: Deploy `_site/economics/` to impact.dih.earth
+2. **Economics**: Deploy `_site/economics/` to impact.warondisease.org
 3. **Wishocracy**:
    - Automatically copied to `../wishocracy/public/paper/`
    - Commit and push the wishocracy submodule

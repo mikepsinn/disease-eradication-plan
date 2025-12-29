@@ -50,7 +50,7 @@ profiles:
 website:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
   description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
-  site-url: https://impact.dih.earth
+  site-url: https://impact.warondisease.org
   favicon: assets/icons/dih-icon-square.png
   page-navigation: true
   navbar:
@@ -299,18 +299,18 @@ format:
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
           <!-- Social Media / Open Graph -->
-          <meta property="og:image" content="https://impact.dih.earth/assets/icons/war-on-disease-og-1200x630.png">
+          <meta property="og:image" content="https://impact.warondisease.org/assets/icons/war-on-disease-og-1200x630.png">
           <meta property="og:image:width" content="1200">
           <meta property="og:image:height" content="630">
           <meta property="og:image:type" content="image/png">
           <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="https://impact.dih.earth/assets/icons/war-on-disease-og-1200x630.png">
+          <meta name="twitter:image" content="https://impact.warondisease.org/assets/icons/war-on-disease-og-1200x630.png">
           <meta name="twitter:title" content="The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials">
           <meta name="twitter:description" content="Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.">
           <meta property="og:title" content="The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials">
           <meta property="og:description" content="Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.">
           <meta property="og:type" content="website">
-          <meta property="og:url" content="https://impact.dih.earth">
+          <meta property="og:url" content="https://impact.warondisease.org">
   pdf:
     output-file: "dih-economic-models.pdf"
     documentclass: article

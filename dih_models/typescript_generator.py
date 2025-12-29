@@ -918,7 +918,7 @@ def _generate_parameter_constant(
             if '/' in source_ref or '.qmd' in source_ref:
                 # This is an internal path, convert to URL
                 if not source_ref.startswith('http://') and not source_ref.startswith('https://'):
-                    base = 'https://impact.dih.earth'
+                    base = 'https://impact.warondisease.org'
                     path = source_ref.replace('//', '/').lstrip('/')  # Normalize slashes
                     path = path.replace('.qmd#', '#').replace('.qmd', '')  # Remove .qmd
                     source_ref = f"{base}/{path}"
