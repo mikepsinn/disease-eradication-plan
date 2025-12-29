@@ -188,7 +188,7 @@ Here's what you have:
 
 1. **Temporal correlation**: Life expectancy growth cut in half immediately after 1962 regulations
 2. **Mechanism**: Regulations reduced new treatments by {{< var post_1962_drug_approval_reduction_pct >}}, increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x, banned real-world efficacy trials
-3. **Alternative explanations**: None that explain a sudden linear break in 1962
+3. **Alternative explanations**: Alternative explanations exist (increasing disease complexity, higher safety standards), but the timing and magnitude and linearity of the change in the slope after the break strongly suggest the discrete event of regulatory latency is a major contributor rather that other causes that would produce far more gradual change in the slope over time.
 
 This is how clinical trials work: temporal correlation + mechanism of action = inference of causation.
 
