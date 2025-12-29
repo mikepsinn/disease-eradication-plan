@@ -771,15 +771,15 @@ TREATY_REDUCTION_PCT = Parameter(
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
     source_ref="",
-    source_type="definition",
-    description="Annual funding from 1% of global military spending redirected to DIH",
+    source_type="calculated",  # Calculated: military spending (uncertain) × 1% (fixed policy choice)
+    description="Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)",
     display_name="Annual Funding from 1% of Global Military Spending Redirected to DIH",
     unit="USD/year",
     formula="MILITARY_SPENDING × 1%",
     keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * ctx["TREATY_REDUCTION_PCT"],
-)  # $27.18B
+)  # $27.18B (95% CI: $24.5B-$29.9B from military spending uncertainty)
 
 # ==============================================================================
 # PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($113.55B/year perpetual)
