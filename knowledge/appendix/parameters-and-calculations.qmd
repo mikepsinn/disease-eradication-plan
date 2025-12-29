@@ -15,20 +15,53 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 336
+**Total parameters**: 353
 
-- External sources (peer-reviewed): 134
-- Calculated values: 106
-- Core definitions: 96
+- External sources (peer-reviewed): 137
+- Calculated values: 119
+- Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (106 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Additional Drug Approvals from Cost Elimination: 20 drugs/year {#sec-additional_drugs_from_cost_elimination}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.
+
+**Inputs**:
+
+- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year) 📊: 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
+- [Valley of Death Attrition Rate](#sec-valley_of_death_attrition_pct) 📊: 40% (95% CI: 25% - 55%)
+
+$$
+AdditionalDrugs = 50 \text{ drugs/yr} \times 0.40 = 20 \text{ drugs/yr}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-additional_drugs_from_cost_elimination.qmd >}}
+
+{{< include ../figures/sensitivity-table-additional_drugs_from_cost_elimination.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-additional_drugs_from_cost_elimination.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
 
 ### Clinical Trial Cost Per Approved Drug: $1.20B {#sec-clinical_trial_cost_per_approved_drug}
 
@@ -201,6 +234,105 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
+### dFDA Combined Cure Speedup Multiplier: 32 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.
+
+**Inputs**:
+
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4 multiplier
+
+$$
+Speedup_{dFDA} = 25.7 \times 1.4 = 36\times
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_combined_cure_speedup_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_combined_cure_speedup_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_combined_cure_speedup_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_combined_cure_speedup_multiplier.qmd >}}
+
+:::
+
+### dFDA Diseases Cured Per Year: 343 diseases/year {#sec-dfda_cures_per_year}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 10 diseases/year - 25 diseases/year)
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+
+$$
+CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_cures_per_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_cures_per_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_cures_per_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_cures_per_year.qmd >}}
+
+:::
+
+### dFDA Cure Timeline Acceleration: 212 years {#sec-dfda_cure_timeline_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+
+**Inputs**:
+
+- [Status Quo Average Years to Cure](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+
+$$
+Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_cure_timeline_acceleration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_cure_timeline_acceleration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_cure_timeline_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_cure_timeline_acceleration_years.qmd >}}
 
 :::
 
@@ -484,6 +616,39 @@ $$
 
 :::
 
+### dFDA Queue Clearance Time: 19.4 years {#sec-dfda_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.
+
+**Inputs**:
+
+- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+
+$$
+QueueClearance_{dFDA} = \frac{443 \text{ years}}{23} = 19 \text{ years}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_clearance_years.qmd >}}
+
+:::
+
 ### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $30B {#sec-dfda_rd_gross_savings_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -625,6 +790,135 @@ $$
 
 :::
 
+### Total DALYs from Full Timeline Shift: 213B DALYs {#sec-dfda_total_timeline_shift_dalys}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.
+
+**Inputs**:
+
+- [Total Lives Saved from Average Timeline Shift](#sec-dfda_total_timeline_shift_lives_saved) 🔢: 11.2B deaths
+
+*Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_total_timeline_shift_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_total_timeline_shift_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_total_timeline_shift_dalys.qmd >}}
+
+:::
+
+### Total Economic Value from Full Timeline Shift: $32 quadrillion {#sec-dfda_total_timeline_shift_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.
+
+**Inputs**:
+
+- [Total DALYs from Full Timeline Shift](#sec-dfda_total_timeline_shift_dalys) 🔢: 213B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+Time_{DFDA,total} = DALYs_{DFDA,total} \times QALYs_{RD} = 213.26B \times \$150.0K = \$31989.75T
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_total_timeline_shift_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_total_timeline_shift_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_total_timeline_shift_economic_value.qmd >}}
+
+:::
+
+### Total Lives Saved from Average Timeline Shift: 11.2B deaths {#sec-dfda_total_timeline_shift_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_total_timeline_shift_years) 🔢: 220 years
+
+$$
+Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_total_timeline_shift_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_total_timeline_shift_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_total_timeline_shift_lives_saved.qmd >}}
+
+:::
+
+### dFDA Average Total Timeline Shift: 220 years {#sec-dfda_total_timeline_shift_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.
+
+**Inputs**:
+
+- [dFDA Cure Timeline Acceleration](#sec-dfda_cure_timeline_acceleration_years) 🔢: 212 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+
+$$
+TimelineShift_{avg} = 212 \text{ yrs} + 8.2 \text{ yrs} = 220 \text{ years}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_total_timeline_shift_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_total_timeline_shift_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_total_timeline_shift_years.qmd >}}
+
+:::
+
 ### Decentralized Framework for Drug Assessment Maximum Trials per Year: 75.4k trials/year {#sec-dfda_trials_per_year_capacity}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -655,6 +949,36 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trials_per_year_capacity.qmd >}}
+
+:::
+
+### dFDA Valley of Death Rescue Multiplier: 1.4 multiplier {#sec-dfda_valley_of_death_rescue_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.
+
+**Inputs**:
+
+- [Valley of Death Attrition Rate](#sec-valley_of_death_attrition_pct) 📊: 40% (95% CI: 25% - 55%)
+
+$$
+RescueMultiplier_{dFDA} = 1 + 0.40 = 1.4\times
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_valley_of_death_rescue_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_valley_of_death_rescue_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_valley_of_death_rescue_multiplier.qmd >}}
 
 :::
 
@@ -725,6 +1049,40 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dih_treasury_trial_subsidies_annual.qmd >}}
+
+:::
+
+### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.
+
+**Inputs**:
+
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+
+$$
+DiseasesWithoutTreatment = 7{,}000 \times 0.95 = 6{,}650
+$$
+
+**Methodology**: [Orphanet Journal of Rare Diseases (2024) (2024) - Rare Disease Treatment Gap](../references.qmd#rare-disease-only-5pct-have-treatment)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
+
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
 
 :::
 
@@ -2577,6 +2935,75 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-per_capita_mental_health_cost.qmd >}}
+
+:::
+
+### Status Quo Average Years to Cure: 222 years {#sec-status_quo_avg_years_to_cure}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
+
+**Inputs**:
+
+- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+
+$$
+AvgYearsToCure_{status\ quo} = \frac{443 \text{ years}}{2} = 222 \text{ years}
+$$
+
+**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_avg_years_to_cure.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_avg_years_to_cure.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_avg_years_to_cure.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_avg_years_to_cure.qmd >}}
+
+:::
+
+### Status Quo Queue Clearance Time: 443 years {#sec-status_quo_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.
+
+**Inputs**:
+
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65k diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 10 diseases/year - 25 diseases/year)
+
+$$
+QueueClearance_{status\ quo} = \frac{6{,}650 \text{ diseases}}{15 \text{ /year}} = 443 \text{ years}
+$$
+
+**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_clearance_years.qmd >}}
 
 :::
 
@@ -5227,6 +5654,30 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 
 :::
 
+### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
+
+**Source**: [Calculated from Orphanet Journal of Rare Diseases (2024) (2024) - Diseases Getting First Effective Treatment Each Year](../references.qmd#diseases-getting-first-treatment-annually)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10 diseases/year, 25 diseases/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 10 diseases/year and 25 diseases/year (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-new_disease_first_treatments_per_year.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### NIH Clinical Trials Spending Percentage: 3.3% {#sec-nih_clinical_trials_spending_pct}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -5391,6 +5842,26 @@ Phase I safety trial duration
 
 :::
 
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [Research and Markets (2024) - Global clinical trials market 2024](../references.qmd#global-clinical-trials-market-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -5530,6 +6001,18 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 Total number of rare diseases globally
 
 **Source**: [GAO (2025) - 95% of diseases have no effective treatment](../references.qmd#95-pct-diseases-no-treatment)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6.00k diseases, 10.0k diseases] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k diseases and 10.0k diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
 
 *✓ High confidence*
 
@@ -6084,6 +6567,30 @@ US population in 2024
 {{< include ../figures/distribution-us_population_2024.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Valley of Death Attrition Rate: 40% {#sec-valley_of_death_attrition_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Percentage of promising Phase 1-passed compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure). Conservative estimate: many rare disease, natural compound, and low-margin drugs never tested.
+
+**Source**: [Hutchinson & Kirk (2011) (2011) - Valley of Death in Drug Development](../references.qmd#valley-of-death-attrition)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25%, 55%] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 25% and 55% (±38%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-valley_of_death_attrition_pct.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -7174,6 +7681,20 @@ Standard time horizon for NPV analysis
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Direct fiscal savings from 1% military spending reduction (high confidence)
+
+*Core definition*
+
+:::
+
+### Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B {#sec-pharma_phase_2_3_cost_barrier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $200M)
 
 *Core definition*
 

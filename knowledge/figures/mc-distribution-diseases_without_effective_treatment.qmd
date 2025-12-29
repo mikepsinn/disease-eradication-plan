@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: Diseases Without Effective Treatment (10,000 simulations)"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Simulation results
+
+samples = [6945, 5700, 7377, 7561, 5700, 5700, 6773, 6343, 6633, 5823, 7502, 7403, 6714, 7742, 7103, 5817, 7007, 5720, 7501, 6601, 6470, 5989, 7835, 6500, 6234, 6308, 7166, 7004, 7050, 7067, 8726, 6256, 6153, 5861, 7247, 7744, 6539, 5835, 5850, 7280, 7370, 7176, 6004, 6875, 6763, 6861, 7494, 6866, 7308, 6715, 6930, 7261, 5700, 6340, 6194, 6030, 6383, 8099, 5810, 7588, 5700, 6325, 6807, 7218, 7339, 7419, 6311, 6201, 7481, 6464, 5700, 5700, 5758, 7131, 6788, 7319, 6235, 6803, 7256, 6350, 7092, 6008, 6298, 6279, 5700, 7122, 6194, 6662, 7116, 7082, 7295, 6554, 6239, 6572, 5700, 5700, 5700, 5700, 7037, 5772, 6283, 7909, 6304, 7364, 5744, 6450, 5729, 6321, 7464, 5700, 7071, 6880, 6074, 5700, 6719, 6136, 6875, 6671, 8202, 6417, 5700, 6823, 6863, 7967, 7459, 6995, 8068, 5700, 6029, 5751, 6272, 5700, 7265, 6434, 5700, 5700, 6953, 7462, 8585, 9474, 7051, 5700, 5700, 6909, 5861, 6247, 6056, 6513, 7683, 6802, 6496, 5700, 5700, 6178, 6597, 8363, 6776, 7602, 6165, 5700, 5714, 5946, 8713, 5853, 7462, 5774, 7553, 7023, 6498, 6610, 6015, 7082, 6208, 5700, 5700, 6817, 8180, 6805, 6534, 6927, 7916, 6862, 6251, 7722, 7065, 8138, 6827, 5700, 5700, 8250, 8320, 6475, 6278, 8066, 5700, 5782, 7273, 6267, 6645, 6491, 6977, 8014, 6737, 7274, 5700, 6602, 5832, 5700, 5798, 6326, 7537, 5700, 6679, 6180, 6332, 7622, 7171, 7946, 6500, 5975, 6432, 6885, 6821, 5700, 6737, 6871, 9090, 8469, 5822, 6371, 5700, 6077, 6955, 7818, 5943, 6015, 5700, 6492, 5700, 6136, 5799, 6558, 5700, 5700, 8714, 5700, 5700, 8430, 9466, 5700, 6293, 6981, 8325, 5700, 6412, 7403, 7071, 6285, 6520, 5700, 6419, 6391, 6875, 6111, 7107, 7631, 6800, 6990, 6701, 6650, 5950, 6956, 6555, 8679, 8175, 7024, 5910, 5700, 7804, 6904, 7115, 5700, 7549, 7090, 5700, 6192, 6905, 6700, 6366, 6549, 6405, 6797, 8076, 5700, 6420, 6821, 6936, 6289, 5700, 6967, 8324, 5700, 7487, 6331, 6590, 5700, 6325, 7910, 7214, 8329, 7791, 7075, 8340, 7075, 7452, 6362, 6714, 5973, 7609, 5700, 7408, 6465, 7785, 7377, 8414, 7358, 5700, 6585, 5700, 6147, 8114, 7268, 5972, 5700, 6681, 5700, 5999, 6952, 7769, 7240, 5700, 6945, 6719, 7051, 8216, 5700, 6076, 7222, 5700, 8080, 7007, 7470, 6096, 7438, 7685, 6875, 6877, 6912, 5813, 6506, 6502, 7021, 7619, 5700, 6528, 8086, 5929, 5852, 6846, 7468, 6661, 7938, 7480, 7466, 7187, 8906, 6451, 5700, 8205, 6206, 6754, 7919, 5700, 5700, 5700, 5880, 7076, 7158, 6917, 5700, 5700, 6702, 6192, 7095, 7330, 6784, 7386, 6872, 7163, 5966, 6475, 6840, 7445, 6268, 7155, 6392, 6536, 7454, 5700, 5700, 5700, 5700, 5992, 7376, 6373, 6841, 7705, 7937, 6582, 7962, 6739, 5838, 6073, 5700, 5789, 6302, 7428, 8318, 5700, 7030, 5700, 7110, 6522, 5700, 7549, 6063, 6132, 5700, 6015, 7064, 6466, 6968, 7000, 7930, 6317, 5700, 7684, 6328, 7730, 7021, 6522, 6988, 8541, 8663, 6717, 6805, 7693, 5830, 6972, 6624, 6954, 5842, 5700, 5700, 5700, 6205, 6365, 8527, 7722, 5717, 6987, 6255, 6374, 6829, 7250, 6321, 7681, 5700, 6656, 9168, 6866, 8039, 6738, 7212, 6594, 6484, 5894, 7067, 5824, 7295, 7702, 7005, 6372, 7090, 6350, 7556, 5700, 6324, 5700, 5700, 7972, 7517, 5952, 5700, 5700, 6123, 8996, 7071, 6107, 7100, 5700, 6361, 6746, 6566, 7416, 6984, 7297, 5982, 7520, 8229, 5709, 5789, 7944, 6464, 8010, 6221, 8060, 6777, 6900, 8166, 6299, 5737, 6215, 7088, 5700, 7267, 6127, 7762, 5700, 5887, 5700, 5849, 6890, 6476, 6404, 6495, 6847, 5700, 7335, 7292, 7023, 7189, 6937, 8622, 6565, 6352, 5919, 5700, 5700, 5788, 6581, 6974, 6699, 5907, 7522, 7366, 6495, 6017, 7181, 6832, 5700, 6584, 6904, 5777, 6834, 5700, 7945, 7859, 6405, 7002, 5700, 5700, 6365, 5700, 7342, 8586, 5700, 5838, 6878, 8211, 5700, 6891, 8415, 5700, 5700, 6239, 6145, 7437, 6884, 5700, 7149, 6090, 7885, 6041, 6032, 7174, 7389, 7084, 5700, 7171, 5700, 6878, 5700, 7082, 5868, 5700, 7341, 6884, 6054, 8056, 6222, 6681, 6910, 6049, 7106, 6132, 6250, 7970, 5700, 5700, 8211, 9121, 6257, 5700, 6349, 6372, 6465, 5700, 7211, 7158, 5700, 7327, 8639, 6816, 6323, 6512, 7246, 5700, 6809, 6271, 8441, 6481, 8266, 5700, 7219, 6959, 5807, 6821, 7825, 6336, 5700, 6632, 5775, 6318, 6570, 5700, 5700, 7117, 6143, 5700, 7410, 6914, 5957, 5700, 7460, 6988, 8959, 7057, 7025, 6488, 7441, 7255, 7863, 6144, 6227, 6185, 7416, 8102, 6205, 6238, 6954, 6411, 7572, 5700, 5848, 5891, 5700, 5715, 5762, 6455, 7728, 6412, 5700, 6594, 7667, 5703, 5767, 7191, 6435, 7277, 6636, 7330, 5700, 6638, 6445, 5700, 5700, 7314, 6309, 5700, 6556, 7743, 5700, 5700, 5755, 8066, 6923, 7393, 5700, 5700, 7084, 6706, 7181, 6468, 6919, 6803, 7403, 7432, 5700, 5700, 7621, 7801, 5700, 5700, 6746, 7552, 8392, 7150, 6289, 5784, 6661, 6359, 5700, 8636, 8380, 7751, 5757, 7478, 7270, 7078, 7861, 7265, 7367, 7267, 6980, 5700, 6731, 6110, 5700, 8280, 8326, 7967, 6897, 7959, 6661, 6846, 5700, 7034, 6708, 5700, 6600, 6572, 8392, 7516, 6661, 6891, 6692, 6453, 5700, 6503, 5926, 5700, 7145, 7029, 5700, 6531, 7615, 7676, 7644, 6687, 5830, 5700, 6984, 7017, 7897, 7716, 6521, 5700, 6340, 6860, 6454, 6089, 6895, 6161, 6041, 6951, 6260, 6886, 6914, 5700, 6183, 8043, 5700, 5700, 5700, 6678, 6679, 6535, 7827, 5700, 7033, 8163, 5700, 6281, 5920, 5783, 6333, 8033, 8431, 6324, 8496, 6684, 8350, 6559, 6777, 7004, 9500, 7475, 5964, 7589, 6299, 6175, 7530, 6680, 6920, 6663, 6976, 7061, 5700, 7296, 5700, 5700, 6593, 6731, 5977, 7455, 5700, 6255, 6083, 6604, 6920, 5700, 7352, 6711, 5700, 5700, 6638, 6435, 6549, 6622, 6868, 7568, 5700, 5700, 5700, 6930, 7856, 6231, 5700, 5700, 5842, 6109, 6254, 6687, 6347, 7667, 5994, 5814, 7114, 5700, 7027, 6749, 6507, 8189, 6046, 8647, 6431, 5700, 6717, 5700, 5921, 7034, 7188, 6046, 7607, 7772, 8042, 7163, 7971, 5700, 6341, 5809, 6765, 6096, 6488, 8474, 6485, 7051, 6424, 6723, 6655, 7084, 7779, 8246, 6950, 7221, 5700, 6564, 7561, 7489, 6855, 7509, 7125, 7813, 6930, 6305, 6975, 5700, 7021, 5700, 5700, 7087, 7112, 5700, 5959, 7978, 6180, 8824, 6648, 7045, 8217, 6777, 5700, 6543, 6615, 5700, 6401, 5930, 7546, 6683, 6375, 6547, 6866, 7247, 5700, 5700, 7720, 6250, 5700, 7080, 7099, 5700, 6872, 7363, 7012, 7262, 5700, 6970, 6356, 6181, 7493, 8083, 8389, 7924, 6543, 6991, 7393, 6767, 6776, 7448]  # Truncate for embedding
+baseline = 6650.0
+mean = 6727.0957
+std = 834.4491007494166
+p5 = 5700.0
+p50 = 6637.0
+p95 = 8242.0
+display_name = "Diseases Without Effective Treatment"
+units = "diseases"
+
+# Create figure with two subplots
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+
+# Handle edge case where all samples are identical (zero variance)
+
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {format_parameter_value(p50, units)}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {format_parameter_value(p5, units)}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key percentiles
+
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
+output_path = get_figure_output_path('mc-distribution-diseases_without_effective_treatment.png')
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Simulation Results Summary: Diseases Without Effective Treatment**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 6.65k |
+| Mean (expected value) | 6.73k |
+| Median (50th percentile) | 6.64k |
+| Standard Deviation | 834 |
+| 90% Confidence Interval | [5.70k, 8.24k] |
+
+*The histogram shows the distribution of Diseases Without Effective Treatment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -14,6 +14,7 @@ Usage:
     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
+import math
 from enum import Enum
 from typing import Optional, List, Tuple, Union, Callable, Any  # noqa: F401
 
@@ -3616,6 +3617,339 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     compute=lambda ctx: int(ctx["TRIAL_CAPACITY_MULTIPLIER"] * 20),
 )  # ~514 trial-capacity-equivalent years (25.7x capacity × 20 years)
 
+# ==============================================================================
+# CURE TIMELINE ACCELERATION PARAMETERS
+# ==============================================================================
+# These parameters model how increased trial capacity and cost elimination
+# accelerate the timeline for discovering and approving cures.
+#
+# Two mechanisms:
+# 1. PARALLEL SEARCH: 25.7× capacity means testing 25.7× more candidates
+#    simultaneously, compressing discovery timelines
+# 2. COST BARRIER REMOVAL: Eliminating Phase 2/3 costs enables more drugs
+#    to enter development (valley of death elimination)
+# ==============================================================================
+
+# Clinical Trial Phase Cost Breakdown
+# Source: Global clinical trials market ~$60B annually
+# Phase 2: ~$15-25B (24%), Phase 3: ~$29-45B (45%), combined ~69%
+PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
+    0.69,
+    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
+    source_type="external",
+    description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
+    display_name="Phase 2/3 Share of Clinical Trial Costs",
+    unit="percentage",
+    confidence="high",
+    keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
+    distribution="normal",
+    std_error=0.05,  # ±7% uncertainty in cost allocation estimates
+)  # 69% of trial costs are Phase 2/3 efficacy testing
+
+# Cost barrier pharma faces for Phase 2/3 (per drug)
+# Current drug development: $2.6B (PHARMA_DRUG_DEVELOPMENT_COST_CURRENT), ~60% is Phase 2/3/4 efficacy testing
+PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
+    1_560_000_000,  # $2.6B × 60% = $1.56B
+    source_ref=ReferenceID.DRUG_DEVELOPMENT_COST,
+    source_type="definition",  # Model estimate: 60% of $2.6B total drug dev cost
+    description="Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)",
+    display_name="Pharma Phase 2/3 Cost Barrier Per Drug",
+    unit="USD",
+    confidence="high",
+    keywords=["phase 2", "phase 3", "cost", "barrier", "pharma", "drug development"],
+    distribution="normal",
+    std_error=200_000_000,  # ±$200M uncertainty in cost allocation
+)  # $1.56B cost barrier per drug for Phase 2/3 testing
+
+# Valley of Death: Percentage of Phase 1-passed compounds abandoned due to Phase 2/3 costs
+# Evidence: Only 12 drugs/year approved from 7,500+ Phase 1-passed compounds
+# ~99.8% attrition, but not all due to cost - maybe 30-50% could succeed if funded
+VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
+    0.40,
+    source_ref=ReferenceID.VALLEY_OF_DEATH_ATTRITION,
+    source_type="external",
+    description="Percentage of promising Phase 1-passed compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure). Conservative estimate: many rare disease, natural compound, and low-margin drugs never tested.",
+    display_name="Valley of Death Attrition Rate",
+    unit="percentage",
+    confidence="medium",
+    keywords=["valley of death", "attrition", "abandoned", "cost barrier", "phase 2", "phase 3"],
+    distribution="uniform",
+    confidence_interval=(0.25, 0.55),  # Wide range: 25-55% abandoned due to cost
+)  # ~40% of Phase 1-passed compounds abandoned due to cost (not science)
+
+# ==============================================================================
+# SIMPLIFIED CURE ACCELERATION MODEL
+# ==============================================================================
+# Simple model: Speedup factor × baseline time = acceleration
+#
+# Speedup from two sources (multiplicative):
+# 1. Trial capacity multiplier (25.7×) - test more compounds in parallel
+# 2. Cost barrier rescue factor (1.4×) - 40% more drugs enter development
+#
+# Combined speedup: 25.7 × 1.4 = ~36×
+# Acceleration = Baseline × (1 - 1/Speedup) ≈ Baseline × 97%
+#
+# The key insight: With 36× speedup, cures that would take T years now take T/36.
+# Acceleration ≈ T (you get almost all the baseline time back).
+#
+# Uncertainty is primarily in the BASELINE estimate:
+# - Well-funded diseases: maybe 30-50 years to cure
+# - Underfunded/rare diseases: could be 200-500+ years (or never)
+# - Average across ALL diseases (including neglected 90%): wide range
+# ==============================================================================
+
+# Additional drug approvals when Phase 2/3 cost barrier eliminated
+# Conservative: 40% of abandoned compounds could succeed = 40% more drugs
+# 50 drugs/year × 40% valley-of-death compounds = 20 additional drugs/year
+ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
+    int(CURRENT_DRUG_APPROVALS_PER_YEAR * VALLEY_OF_DEATH_ATTRITION_PCT),
+    source_type="calculated",
+    description="Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.",
+    display_name="Additional Drug Approvals from Cost Elimination",
+    unit="drugs/year",
+    formula="CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT",
+    latex=r"AdditionalDrugs = 50 \text{ drugs/yr} \times 0.40 = 20 \text{ drugs/yr}",
+    confidence="medium",
+    keywords=["additional", "drugs", "cost", "elimination", "valley of death"],
+    inputs=['CURRENT_DRUG_APPROVALS_PER_YEAR', 'VALLEY_OF_DEATH_ATTRITION_PCT'],
+    compute=lambda ctx: int(ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"] * ctx["VALLEY_OF_DEATH_ATTRITION_PCT"]),
+)  # ~20 additional drugs/year from eliminating cost barrier
+
+# Valley of death rescue multiplier: eliminating Phase 2/3 costs rescues abandoned drugs
+# 40% more drugs enter development when cost barrier removed
+DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
+    1 + float(VALLEY_OF_DEATH_ATTRITION_PCT),
+    source_type="calculated",
+    description="Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
+    display_name="dFDA Valley of Death Rescue Multiplier",
+    unit="multiplier",
+    formula="1 + VALLEY_OF_DEATH_ATTRITION_PCT",
+    latex=r"RescueMultiplier_{dFDA} = 1 + 0.40 = 1.4\times",
+    confidence="medium",
+    keywords=["dfda", "valley of death", "rescue", "multiplier", "cost barrier"],
+    inputs=['VALLEY_OF_DEATH_ATTRITION_PCT'],
+    compute=lambda ctx: 1 + ctx["VALLEY_OF_DEATH_ATTRITION_PCT"],
+)  # 1.4× more drugs when dFDA eliminates cost barrier
+
+# Combined cure speedup from dFDA implementation
+# Trial capacity (25.7×) × valley of death rescue (1.4×) = ~36×
+DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER = Parameter(
+    float(TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
+    source_type="calculated",
+    description="Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+    display_name="dFDA Combined Cure Speedup Multiplier",
+    unit="multiplier",
+    formula="TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+    latex=r"Speedup_{dFDA} = 25.7 \times 1.4 = 36\times",
+    confidence="medium",
+    keywords=["dfda", "cure", "speedup", "combined", "multiplier"],
+    inputs=['TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
+    compute=lambda ctx: ctx["TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
+)  # ~36× combined speedup from dFDA
+
+# Rare diseases (moved here to enable calculated parameters below)
+RARE_DISEASES_COUNT_GLOBAL = Parameter(
+    7000,
+    source_ref=ReferenceID.N95_PCT_DISEASES_NO_TREATMENT,
+    source_type="external",
+    description="Total number of rare diseases globally",
+    display_name="Total Number of Rare Diseases Globally",
+    unit="diseases",
+    keywords=["7k", "worldwide", "illness", "rare", "diseases", "count", "international"],
+    distribution="normal",
+    confidence_interval=(6000, 10000),  # Could be 6K-10K depending on definitions
+)  # ~7,000 rare diseases
+
+# Diseases without effective treatment (queue size for curing all diseases)
+# 95% of ~7,000 rare diseases have no treatment
+DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
+    int(float(RARE_DISEASES_COUNT_GLOBAL) * 0.95),  # ~6,650 diseases
+    source_ref=ReferenceID.RARE_DISEASE_ONLY_5PCT_HAVE_TREATMENT,
+    source_type="calculated",
+    description="Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.",
+    display_name="Diseases Without Effective Treatment",
+    unit="diseases",
+    formula="RARE_DISEASES_COUNT_GLOBAL × 0.95",
+    latex=r"DiseasesWithoutTreatment = 7{,}000 \times 0.95 = 6{,}650",
+    confidence="medium",
+    keywords=["diseases", "untreatable", "no treatment", "queue", "rare diseases"],
+    inputs=['RARE_DISEASES_COUNT_GLOBAL'],
+    compute=lambda ctx: int(ctx["RARE_DISEASES_COUNT_GLOBAL"] * 0.95),
+)  # ~6,650 diseases (uncertainty propagated from RARE_DISEASES_COUNT_GLOBAL)
+
+# Diseases getting FIRST effective treatment per year under status quo
+# ~9 rare diseases/year (350 over 40 years of ODA) + ~5-10 common diseases
+NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
+    15,  # Central estimate: ~15 diseases/year get FIRST treatment
+    source_ref=ReferenceID.DISEASES_GETTING_FIRST_TREATMENT_ANNUALLY,
+    source_type="external",
+    description="Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.",
+    display_name="Diseases Getting First Treatment Per Year",
+    unit="diseases/year",
+    confidence="low",
+    keywords=["first treatment", "new cures", "diseases per year", "status quo", "rate"],
+    distribution="lognormal",
+    confidence_interval=(10.0, 25.0),  # Could be 10-25 depending on definitions
+)  # ~15 diseases/year get FIRST treatment
+
+# Time to clear entire disease queue under status quo
+# ~6,650 diseases ÷ ~15 cures/year = ~443 years to cure ALL diseases
+STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
+    float(DISEASES_WITHOUT_EFFECTIVE_TREATMENT) / float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR),
+    source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
+    source_type="calculated",
+    description="Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.",
+    display_name="Status Quo Queue Clearance Time",
+    unit="years",
+    formula="DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+    latex=r"QueueClearance_{status\ quo} = \frac{6{,}650 \text{ diseases}}{15 \text{ /year}} = 443 \text{ years}",
+    confidence="low",
+    keywords=["status quo", "queue", "clearance", "total", "years"],
+    inputs=['DISEASES_WITHOUT_EFFECTIVE_TREATMENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR'],
+    compute=lambda ctx: ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"] / ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"],
+)  # ~443 years to cure ALL diseases
+
+# Average time to cure under current/status quo system (BASELINE)
+# Average disease is in middle of queue, so waits half the queue clearance time
+# ~443 years ÷ 2 = ~222 years for the average disease
+STATUS_QUO_AVG_YEARS_TO_CURE = Parameter(
+    float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / 2,
+    source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
+    source_type="calculated",
+    description="Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
+    display_name="Status Quo Average Years to Cure",
+    unit="years",
+    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2",
+    latex=r"AvgYearsToCure_{status\ quo} = \frac{443 \text{ years}}{2} = 222 \text{ years}",
+    confidence="low",
+    keywords=["status quo", "current system", "average", "time", "cure", "years", "baseline"],
+    inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS'],
+    compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / 2,
+)  # ~222 years for average disease (half the queue)
+
+# Cure timeline acceleration from dFDA implementation (trial capacity only)
+# Acceleration = Status Quo Baseline × (1 - 1/Speedup)
+# With ~23× speedup: Accel = 222 × (1 - 1/23) = 222 × 0.957 = ~212 years
+# Note: Using only trial capacity multiplier, not combined with valley of death rescue,
+# because valley of death rescue adds more drug candidates but doesn't directly speed up queue processing
+DFDA_CURE_TIMELINE_ACCELERATION_YEARS = Parameter(
+    float(STATUS_QUO_AVG_YEARS_TO_CURE) * (1 - 1 / float(TRIAL_CAPACITY_MULTIPLIER)),
+    source_type="calculated",
+    description="Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+    display_name="dFDA Cure Timeline Acceleration",
+    unit="years",
+    formula="STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
+    latex=r"Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}",
+    confidence="low",
+    keywords=["dfda", "acceleration", "cure", "timeline", "years"],
+    inputs=['STATUS_QUO_AVG_YEARS_TO_CURE', 'TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_CURE"] * (1 - 1 / ctx["TRIAL_CAPACITY_MULTIPLIER"]),
+)  # ~212 years acceleration from dFDA (trial capacity only)
+
+# Total average timeline shift from dFDA implementation
+# Combines two effects:
+# 1. Cure timeline acceleration (~212 years on average) - average disease cured earlier
+# 2. Efficacy lag elimination (8.2 years) - once discovered, deployed without delay
+# Total = ~220 years earlier cure delivery on average
+DFDA_TOTAL_TIMELINE_SHIFT_YEARS = Parameter(
+    float(DFDA_CURE_TIMELINE_ACCELERATION_YEARS) + float(EFFICACY_LAG_YEARS),
+    source_type="calculated",
+    description="Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
+    display_name="dFDA Average Total Timeline Shift",
+    unit="years",
+    formula="DFDA_CURE_TIMELINE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+    latex=r"TimelineShift_{avg} = 212 \text{ yrs} + 8.2 \text{ yrs} = 220 \text{ years}",
+    confidence="low",
+    keywords=["dfda", "total", "timeline", "shift", "acceleration", "efficacy lag", "years", "average"],
+    inputs=['DFDA_CURE_TIMELINE_ACCELERATION_YEARS', 'EFFICACY_LAG_YEARS'],
+    compute=lambda ctx: ctx["DFDA_CURE_TIMELINE_ACCELERATION_YEARS"] + ctx["EFFICACY_LAG_YEARS"],
+)  # ~220 years average total timeline shift from dFDA
+
+# dFDA cure rate (diseases getting first treatment per year)
+# Status quo: ~15 diseases/year → dFDA: ~343 diseases/year
+DFDA_CURES_PER_YEAR = Parameter(
+    float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(TRIAL_CAPACITY_MULTIPLIER),
+    source_type="calculated",
+    description="Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
+    display_name="dFDA Diseases Cured Per Year",
+    unit="diseases/year",
+    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × TRIAL_CAPACITY_MULTIPLIER",
+    latex=r"CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}",
+    confidence="low",
+    keywords=["dfda", "cures", "diseases", "per year", "rate", "first treatment"],
+    inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["TRIAL_CAPACITY_MULTIPLIER"],
+)  # ~343 diseases/year get first treatment with dFDA
+
+# Time to cure ALL diseases with dFDA
+# Status quo: ~443 years → dFDA: ~19 years
+DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
+    float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(TRIAL_CAPACITY_MULTIPLIER),
+    source_type="calculated",
+    description="Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+    display_name="dFDA Queue Clearance Time",
+    unit="years",
+    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
+    latex=r"QueueClearance_{dFDA} = \frac{443 \text{ years}}{23} = 19 \text{ years}",
+    confidence="low",
+    keywords=["dfda", "queue", "clearance", "all diseases", "cure all", "years"],
+    inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["TRIAL_CAPACITY_MULTIPLIER"],
+)  # ~19 years to cure ALL diseases with dFDA
+
+# ============================================================================
+# TOTAL LIVES SAVED FROM AVERAGE TIMELINE SHIFT (~220 years)
+# ============================================================================
+# These parameters use the AVERAGE timeline shift (cure acceleration + efficacy lag)
+# rather than just the efficacy lag. On average, disease cures become available
+# ~220 years earlier (some diseases sooner, some later based on queue position).
+
+# Total lives saved from ~220-year average timeline shift
+DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED = Parameter(
+    int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TOTAL_TIMELINE_SHIFT_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    source_type="calculated",
+    description="Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
+    display_name="Total Lives Saved from Average Timeline Shift",
+    unit="deaths",
+    formula="ANNUAL_DEATHS × DFDA_TOTAL_TIMELINE_SHIFT_YEARS × AVOIDABLE_PCT",
+    latex=r"Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B",
+    confidence="low",
+    keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "220 years", "average"],
+    inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TOTAL_TIMELINE_SHIFT_YEARS'],
+    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TOTAL_TIMELINE_SHIFT_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+)  # ~11.1B lives saved from ~220-year average timeline shift
+
+# Total DALYs averted from full 220-year timeline shift
+# Using same DALY multiplier as efficacy lag calculation
+_daly_multiplier_from_deaths = float(DISEASE_ERADICATION_DELAY_DALYS) / float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL)
+
+DFDA_TOTAL_TIMELINE_SHIFT_DALYS = Parameter(
+    int(float(DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED) * _daly_multiplier_from_deaths),
+    source_type="calculated",
+    description="Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
+    display_name="Total DALYs from Full Timeline Shift",
+    unit="DALYs",
+    formula="LIVES_SAVED × DALY_PER_DEATH_RATIO",
+    confidence="low",
+    keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag"],
+    inputs=['DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED'],
+    compute=lambda ctx: int(ctx["DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED"] * _daly_multiplier_from_deaths),
+)  # ~213B DALYs from full 220-year timeline shift
+
+# Total economic value from full 220-year timeline shift
+DFDA_TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE = Parameter(
+    int(float(DFDA_TOTAL_TIMELINE_SHIFT_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
+    source_type="calculated",
+    description="Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
+    display_name="Total Economic Value from Full Timeline Shift",
+    unit="USD",
+    formula="DALYS × STANDARD_QALY_VALUE",
+    confidence="low",
+    keywords=["total", "economic", "value", "timeline shift", "USD"],
+    inputs=['DFDA_TOTAL_TIMELINE_SHIFT_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
+    compute=lambda ctx: int(ctx["DFDA_TOTAL_TIMELINE_SHIFT_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
+)  # Economic value from full timeline shift
+
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     int(CURRENT_TRIALS_PER_YEAR * TRIAL_CAPACITY_MULTIPLIER),
@@ -3790,17 +4124,6 @@ US_MILITARY_SPENDING_PCT_GDP = Parameter(
     unit="rate",
     keywords=["4%", "dod", "pentagon", "national security", "army", "navy", "armed forces"]
 )  # 3.5% of GDP
-
-# Rare diseases
-RARE_DISEASES_COUNT_GLOBAL = Parameter(
-    7000,
-    source_ref=ReferenceID.N95_PCT_DISEASES_NO_TREATMENT,
-    source_type="external",
-    description="Total number of rare diseases globally",
-    display_name="Total Number of Rare Diseases Globally",
-    unit="diseases",
-    keywords=["7k", "worldwide", "illness", "rare", "diseases", "count", "international"]
-)  # ~7,000 rare diseases
 
 # Historical terrorism deaths
 TERRORISM_DEATHS_911 = Parameter(

@@ -928,6 +928,17 @@ export const MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA: Parameter = {
   confidence: "high",
 };
 
+export const NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR: Parameter = {
+  value: 15.0,
+  unit: "diseases/year",
+  displayName: "Diseases Getting First Treatment Per Year",
+  description: "Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.",
+  sourceType: "external",
+  sourceRef: "diseases-getting-first-treatment-annually",
+  confidence: "low",
+  confidenceInterval: [10.0, 25.0],
+};
+
 export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   value: 0.033,
   unit: "percentage",
@@ -1029,6 +1040,17 @@ export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   peerReviewed: true,
 };
 
+export const PHASE_2_3_CLINICAL_TRIAL_COST_PCT: Parameter = {
+  value: 0.69,
+  unit: "percentage",
+  displayName: "Phase 2/3 Share of Clinical Trial Costs",
+  description: "Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
+  sourceType: "external",
+  sourceRef: "global-clinical-trials-market-2024",
+  confidence: "high",
+  stdError: 0.05,
+};
+
 export const PHASE_3_TRIAL_COST_MIN: Parameter = {
   value: 20000000.0,
   unit: "USD/trial",
@@ -1123,6 +1145,7 @@ export const RARE_DISEASES_COUNT_GLOBAL: Parameter = {
   sourceType: "external",
   sourceRef: "95-pct-diseases-no-treatment",
   confidence: "high",
+  confidenceInterval: [6000.0, 10000.0],
 };
 
 export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
@@ -1440,6 +1463,17 @@ export const US_POPULATION_2024: Parameter = {
   confidenceInterval: [330000000.0, 340000000.0],
 };
 
+export const VALLEY_OF_DEATH_ATTRITION_PCT: Parameter = {
+  value: 0.4,
+  unit: "percentage",
+  displayName: "Valley of Death Attrition Rate",
+  description: "Percentage of promising Phase 1-passed compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure). Conservative estimate: many rare disease, natural compound, and low-margin drugs never tested.",
+  sourceType: "external",
+  sourceRef: "valley-of-death-attrition",
+  confidence: "medium",
+  confidenceInterval: [0.25, 0.55],
+};
+
 export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
   value: 10000000.0,
   unit: "USD",
@@ -1506,6 +1540,17 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 // Calculated Values
 // ============================================================================
 
+export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
+  value: 20.0,
+  unit: "drugs/year",
+  displayName: "Additional Drug Approvals from Cost Elimination",
+  description: "Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT",
+  latex: "AdditionalDrugs = 50 \\text{ drugs/yr} \\times 0.40 = 20 \\text{ drugs/yr}",
+};
+
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
   value: 1200000000.0,
   unit: "USD",
@@ -1562,6 +1607,39 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
   latex: "Benefit_{DFDA,ann} = Trials_{ann} \\times Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B",
+};
+
+export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
+  value: 32.008421052631576,
+  unit: "multiplier",
+  displayName: "dFDA Combined Cure Speedup Multiplier",
+  description: "Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+  latex: "Speedup_{dFDA} = 25.7 \\times 1.4 = 36\\times",
+};
+
+export const DFDA_CURES_PER_YEAR: Parameter = {
+  value: 342.9473684210526,
+  unit: "diseases/year",
+  displayName: "dFDA Diseases Cured Per Year",
+  description: "Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × TRIAL_CAPACITY_MULTIPLIER",
+  latex: "CuresPerYear_{dFDA} = 15 \\times 23 = 343 \\text{ diseases/year}",
+};
+
+export const DFDA_CURE_TIMELINE_ACCELERATION_YEARS: Parameter = {
+  value: 211.97130141190914,
+  unit: "years",
+  displayName: "dFDA Cure Timeline Acceleration",
+  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
+  latex: "Accel_{dFDA} = 222 \\text{ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}",
 };
 
 export const DFDA_EXPECTED_ROI: Parameter = {
@@ -1659,6 +1737,17 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   latex: "C_0 = \\$0.040B + \\$0.22975B = \\$0.26975B \\text{ (upfront cost)}",
 };
 
+export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
+  value: 19.39073050951504,
+  unit: "years",
+  displayName: "dFDA Queue Clearance Time",
+  description: "Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
+  latex: "QueueClearance_{dFDA} = \\frac{443 \\text{ years}}{23} = 19 \\text{ years}",
+};
+
 export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   value: 30000000000.0,
   unit: "USD/year",
@@ -1707,6 +1796,49 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   latex: "ROI_{DFDA} = \\frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \\frac{\\$30.00B}{\\$40.0M} = 750",
 };
 
+export const DFDA_TOTAL_TIMELINE_SHIFT_DALYS: Parameter = {
+  value: 213264999765.0,
+  unit: "DALYs",
+  displayName: "Total DALYs from Full Timeline Shift",
+  description: "Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
+};
+
+export const DFDA_TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE: Parameter = {
+  value: 3.198974996475e+16,
+  unit: "USD",
+  displayName: "Total Economic Value from Full Timeline Shift",
+  description: "Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DALYS × STANDARD_QALY_VALUE",
+  latex: "Time_{DFDA,total} = DALYs_{DFDA,total} \\times QALYs_{RD} = 213.26B \\times \\$150.0K = \\$31989.75T",
+};
+
+export const DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED: Parameter = {
+  value: 11165706794.0,
+  unit: "deaths",
+  displayName: "Total Lives Saved from Average Timeline Shift",
+  description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "ANNUAL_DEATHS × DFDA_TOTAL_TIMELINE_SHIFT_YEARS × AVOIDABLE_PCT",
+  latex: "Lives_{saved} = 54.75M \\times 220 \\times 92.1\\% = 11.1B",
+};
+
+export const DFDA_TOTAL_TIMELINE_SHIFT_YEARS: Parameter = {
+  value: 220.17130141190913,
+  unit: "years",
+  displayName: "dFDA Average Total Timeline Shift",
+  description: "Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DFDA_CURE_TIMELINE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+  latex: "TimelineShift_{avg} = 212 \\text{ yrs} + 8.2 \\text{ yrs} = 220 \\text{ years}",
+};
+
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   value: 75448.0,
   unit: "trials/year",
@@ -1716,6 +1848,17 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   confidence: "high",
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
   latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.9 = 75{,}400",
+};
+
+export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
+  value: 1.4,
+  unit: "multiplier",
+  displayName: "dFDA Valley of Death Rescue Multiplier",
+  description: "Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "1 + VALLEY_OF_DEATH_ATTRITION_PCT",
+  latex: "RescueMultiplier_{dFDA} = 1 + 0.40 = 1.4\\times",
 };
 
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
@@ -1740,6 +1883,18 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   confidence: "high",
   formula: "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
   latex: "TrialSubsidies = \\$24.462B - \\$0.04B = \\$24.422B",
+};
+
+export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
+  value: 6650.0,
+  unit: "diseases",
+  displayName: "Diseases Without Effective Treatment",
+  description: "Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.",
+  sourceType: "calculated",
+  sourceRef: "rare-disease-only-5pct-have-treatment",
+  confidence: "medium",
+  formula: "RARE_DISEASES_COUNT_GLOBAL × 0.95",
+  latex: "DiseasesWithoutTreatment = 7{,}000 \\times 0.95 = 6{,}650",
 };
 
 export const DISEASE_ERADICATION_DELAY_DALYS: Parameter = {
@@ -2370,6 +2525,30 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   confidence: "high",
   formula: "US_MENTAL_HEALTH_COST ÷ US_POPULATION",
   latex: "Cost_{percap,health} = \\frac{Cost_{mental,ann}}{Population} = \\frac{\\$350.00B}{335M} = \\$1.0K",
+};
+
+export const STATUS_QUO_AVG_YEARS_TO_CURE: Parameter = {
+  value: 221.66666666666666,
+  unit: "years",
+  displayName: "Status Quo Average Years to Cure",
+  description: "Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
+  sourceType: "calculated",
+  sourceRef: "status-quo-cure-timeline-estimate",
+  confidence: "low",
+  formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2",
+  latex: "AvgYearsToCure_{status\\ quo} = \\frac{443 \\text{ years}}{2} = 222 \\text{ years}",
+};
+
+export const STATUS_QUO_QUEUE_CLEARANCE_YEARS: Parameter = {
+  value: 443.3333333333333,
+  unit: "years",
+  displayName: "Status Quo Queue Clearance Time",
+  description: "Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.",
+  sourceType: "calculated",
+  sourceRef: "status-quo-cure-timeline-estimate",
+  confidence: "low",
+  formula: "DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+  latex: "QueueClearance_{status\\ quo} = \\frac{6{,}650 \\text{ diseases}}{15 \\text{ /year}} = 443 \\text{ years}",
 };
 
 export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
@@ -3536,6 +3715,17 @@ export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   latex: "PeaceDividend_{fiscal} = \\$27.2B",
 };
 
+export const PHARMA_PHASE_2_3_COST_BARRIER: Parameter = {
+  value: 1560000000.0,
+  unit: "USD",
+  displayName: "Pharma Phase 2/3 Cost Barrier Per Drug",
+  description: "Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)",
+  sourceType: "definition",
+  sourceRef: "drug-development-cost",
+  confidence: "high",
+  stdError: 200000000.0,
+};
+
 export const PRE_1962_VALIDATION_YEARS: Parameter = {
   value: 77.0,
   unit: "years",
@@ -3835,6 +4025,7 @@ export const parameters = {
   LOBBYIST_SALARY_MIN_K,
   MEASLES_VACCINATION_ROI,
   MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA,
+  NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR,
   NIH_CLINICAL_TRIALS_SPENDING_PCT,
   OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
   PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
@@ -3844,6 +4035,7 @@ export const parameters = {
   PHARMA_SUCCESS_RATE_CURRENT_PCT,
   PHASE_1_PASSED_COMPOUNDS_GLOBAL,
   PHASE_1_SAFETY_DURATION_YEARS,
+  PHASE_2_3_CLINICAL_TRIAL_COST_PCT,
   PHASE_3_TRIAL_COST_MIN,
   POLIO_VACCINATION_ROI,
   POLITICAL_SUCCESS_PROBABILITY,
@@ -3882,17 +4074,22 @@ export const parameters = {
   US_MENTAL_HEALTH_COST_ANNUAL,
   US_MILITARY_SPENDING_PCT_GDP,
   US_POPULATION_2024,
+  VALLEY_OF_DEATH_ATTRITION_PCT,
   VALUE_OF_STATISTICAL_LIFE,
   VITAMIN_A_COST_PER_DALY,
   WATER_FLUORIDATION_ANNUAL_BENEFIT,
   WATER_FLUORIDATION_ROI,
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
+  ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
   CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
   COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
+  DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER,
+  DFDA_CURES_PER_YEAR,
+  DFDA_CURE_TIMELINE_ACCELERATION_YEARS,
   DFDA_EXPECTED_ROI,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
@@ -3901,13 +4098,20 @@ export const parameters = {
   DFDA_NPV_PV_ANNUAL_OPEX,
   DFDA_NPV_TOTAL_COST,
   DFDA_NPV_UPFRONT_COST_TOTAL,
+  DFDA_QUEUE_CLEARANCE_YEARS,
   DFDA_RD_GROSS_SAVINGS_ANNUAL,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
   DFDA_ROI_SIMPLE,
+  DFDA_TOTAL_TIMELINE_SHIFT_DALYS,
+  DFDA_TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE,
+  DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED,
+  DFDA_TOTAL_TIMELINE_SHIFT_YEARS,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
+  DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER,
   DIH_PATIENTS_FUNDABLE_ANNUALLY,
   DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL,
+  DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
   DISEASE_ERADICATION_DELAY_DALYS,
   DISEASE_ERADICATION_DELAY_DEATHS_TOTAL,
   DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS,
@@ -3961,6 +4165,8 @@ export const parameters = {
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
+  STATUS_QUO_AVG_YEARS_TO_CURE,
+  STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   SUFFERING_HOURS_ELIMINATED_TOTAL,
   THALIDOMIDE_DALYS_PER_EVENT,
   THALIDOMIDE_DEATHS_PER_EVENT,
@@ -4069,6 +4275,7 @@ export const parameters = {
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
+  PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
   SAFE_COMPOUNDS_COUNT,
   SECONDS_PER_MINUTE,
@@ -4471,6 +4678,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "ScienceDaily: GBD 2015 Study",
         URL: "https://www.sciencedaily.com/releases/2015/06/150608081753.htm",
         note: "ScienceDaily: GBD 2015 Study | PMC: Burden of Chronic Disease | PMC: Multiple Chronic Conditions",
+  },
+  "diseases-getting-first-treatment-annually": {
+        id: "diseases-getting-first-treatment-annually",
+        type: "article-journal",
+        title: "Diseases Getting First Effective Treatment Each Year",
+        author: [
+          {
+            literal: "Calculated from Orphanet Journal of Rare Diseases (2024)"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Calculated from Orphanet Journal of Rare Diseases (2024)",
+        URL: "https://ojrd.biomedcentral.com/articles/10.1186/s13023-024-03398-1",
+        note: "Calculated from Orphanet Journal of Rare Diseases (2024), FDA Novel Drug Approvals data",
   },
   "disparity-ratio-weapons-vs-cures": {
         id: "disparity-ratio-weapons-vs-cures",
@@ -5147,6 +5368,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf",
         note: "ICER, Reference Case",
   },
+  "rare-disease-only-5pct-have-treatment": {
+        id: "rare-disease-only-5pct-have-treatment",
+        type: "article-journal",
+        title: "Rare Disease Treatment Gap",
+        author: [
+          {
+            literal: "Orphanet Journal of Rare Diseases (2024)"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Orphanet Journal of Rare Diseases (2024)",
+        URL: "https://ojrd.biomedcentral.com/articles/10.1186/s13023-024-03398-1",
+        note: "Orphanet Journal of Rare Diseases (2024)",
+  },
   "recovery-cost-500": {
         id: "recovery-cost-500",
         type: "article-journal",
@@ -5199,6 +5434,18 @@ export const citations: Record<string, Citation> = {
         'container-title': "CSIS",
         URL: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
         note: "CSIS, Smallpox Eradication Model: Global Cooperation | PMC3720047, Link",
+  },
+  "status-quo-cure-timeline-estimate": {
+        id: "status-quo-cure-timeline-estimate",
+        type: "webpage",
+        title: "Average Time to Cure Under Current System",
+        author: [
+          {
+            literal: "Composite estimate based on Orphanet"
+          },
+        ],
+        publisher: "Composite estimate based on Orphanet",
+        note: "Composite estimate based on Orphanet, FDA approval data, and queue theory",
   },
   "sugar-subsidies-cost": {
         id: "sugar-subsidies-cost",
@@ -5388,6 +5635,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.census.gov/newsroom/press-releases/2025/2024-presidential-election-voting-registration-tables.html",
         note: "US Census Bureau, 2024 Voting and Registration | US EAC, 2024 Election Survey Report",
   },
+  "valley-of-death-attrition": {
+        id: "valley-of-death-attrition",
+        type: "webpage",
+        title: "Valley of Death in Drug Development",
+        author: [
+          {
+            literal: "Hutchinson & Kirk (2011)"
+          },
+        ],
+        issued: { 'date-parts': [[2011]] },
+        publisher: "Hutchinson & Kirk (2011)",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3324971/",
+        note: "Hutchinson & Kirk (2011), Drug Discov Today; conservative estimate 40% abandoned due to cost",
+  },
   "veteran-healthcare-cost-projections": {
         id: "veteran-healthcare-cost-projections",
         type: "article-journal",
@@ -5474,11 +5735,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 336,
-  external: 134,
-  calculated: 106,
-  definitions: 96,
-  citations: 101,
+  total: 353,
+  external: 137,
+  calculated: 119,
+  definitions: 97,
+  citations: 105,
 } as const;
 
 // ============================================================================

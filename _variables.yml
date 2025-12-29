@@ -11,6 +11,16 @@
 #   {{< var total_citation_count >}} - Number of citations
 #
 
+"additional_drugs_from_cost_elimination": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-additional_drugs_from_cost_elimination\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Additional drug approvals per year when Phase\
+  \ 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due\
+  \ to cost) would have similar success rate to funded compounds. | Calculated from\
+  \ 2 inputs | ~ Medium confidence | Formula: CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT\
+  \ | Unit: drugs/year | Click to view details, calculation & sources\">19 (95% CI:\
+  \ 18-22)</a>"
+"additional_drugs_from_cost_elimination_latex": "$$\nAdditionalDrugs = 50 \\text{\
+  \ drugs/yr} \\times 0.40 = 20 \\text{ drugs/yr}\n$$"
 "antidepressant_trial_exclusion_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-antidepressant_trial_exclusion_rate\"\
   \ class=\"parameter-link\" data-source-ref=\"antidepressant-trial-exclusion-rates\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Mean exclusion\
@@ -390,6 +400,36 @@
   \ calculation & sources\">$29.4B (95% CI: $21.6B-$40.2B)</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
   \ Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B\n$$"
+"dfda_combined_cure_speedup_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_combined_cure_speedup_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Combined speedup factor for cure discovery\
+  \ from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×).\
+  \ With 36× speedup, diseases that would take T years to cure now take T/36 years.\
+  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
+  \ × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER | Unit: multiplier | Click to view details,\
+  \ calculation & sources\">32.8 (95% CI: 20.5-52.7)</a>"
+"dfda_combined_cure_speedup_multiplier_latex": "$$\nSpeedup_{dFDA} = 25.7 \\times\
+  \ 1.4 = 36\\times\n$$"
+"dfda_cures_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_cures_per_year\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
+  \ treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year\
+  \ to ~343/year. | Calculated from 2 inputs | ? Low confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR\
+  \ × TRIAL_CAPACITY_MULTIPLIER | Unit: diseases/year | Click to view details, calculation\
+  \ & sources\">340 (95% CI: 323-376)</a>"
+"dfda_cures_per_year_latex": "$$\nCuresPerYear_{dFDA} = 15 \\times 23 = 343 \\text{\
+  \ diseases/year}\n$$"
+"dfda_cure_timeline_acceleration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_cure_timeline_acceleration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Years earlier the average cure arrives due to\
+  \ dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures\
+  \ arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with\
+  \ valley of death rescue) because additional candidates don't directly speed queue\
+  \ processing. | Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_CURE\
+  \ × (1 - 1/TRIAL_CAPACITY_MULTIPLIER) | Unit: years | Click to view details, calculation\
+  \ & sources\">219 (95% CI: 175-277)</a>"
+"dfda_cure_timeline_acceleration_years_latex": "$$\nAccel_{dFDA} = 222 \\text{ yrs}\
+  \ \\times (1 - \\frac{1}{23}) = 212 \\text{ years}\n$$"
 "dfda_expected_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_expected_roi\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Expected ROI for 1% treaty accounting for political\
@@ -517,6 +557,15 @@
   \ Framework for Drug Assessment staff costs (minimal, AI-assisted) | ✓ High confidence\
   \ | 95% CI: [$7M, $15M] | Dist: Lognormal | Unit: USD/year | Click to view details,\
   \ calculation & sources\">$10M (95% CI: $7M-$13.7M)</a>"
+"dfda_queue_clearance_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_queue_clearance_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Years to cure all ~6,650 currently untreatable\
+  \ diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops\
+  \ from ~443 years to ~19 years. | Calculated from 2 inputs | ? Low confidence |\
+  \ Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER | Unit:\
+  \ years | Click to view details, calculation & sources\">19.5 (95% CI: 15.2-25.7)</a>"
+"dfda_queue_clearance_years_latex": "$$\nQueueClearance_{dFDA} = \\frac{443 \\text{\
+  \ years}}{23} = 19 \\text{ years}\n$$"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_rd_gross_savings_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
@@ -557,6 +606,44 @@
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view details, calculation & sources\"\
   >$1K</a>"
+"dfda_total_timeline_shift_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_total_timeline_shift_dalys\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total DALYs averted from the full dFDA timeline\
+  \ shift (~220 years). Scales proportionally from the lives saved using the same\
+  \ DALY/death ratio. | Calculated from 1 input | ? Low confidence | Formula: LIVES_SAVED\
+  \ × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to view details, calculation & sources\"\
+  >220B (95% CI: 195B-250B)</a>"
+"dfda_total_timeline_shift_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_total_timeline_shift_economic_value\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total economic value from the full dFDA timeline\
+  \ shift (~220 years). DALYs valued at standard economic rate. | Calculated from\
+  \ 2 inputs | ? Low confidence | Formula: DALYS × STANDARD_QALY_VALUE | Unit: USD\
+  \ | Click to view details, calculation & sources\">$32.9 quadrillion (95% CI: $25.2\
+  \ quadrillion-$38.1 quadrillion)</a>"
+"dfda_total_timeline_shift_economic_value_latex": "$$\nTime_{DFDA,total} = DALYs_{DFDA,total}\
+  \ \\times QALYs_{RD} = 213.26B \\times \\$150.0K = \\$31989.75T\n$$"
+"dfda_total_timeline_shift_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_total_timeline_shift_lives_saved\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from the average\
+  \ dFDA timeline shift (~220 years). On average, disease cures become available ~220\
+  \ years earlier: cure acceleration (~212 years average from 23× trial capacity)\
+  \ plus efficacy lag elimination (8.2 years once discovered). | Calculated from 2\
+  \ inputs | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TOTAL_TIMELINE_SHIFT_YEARS\
+  \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
+  >11.5B (95% CI: 10.2B-13.1B)</a>"
+"dfda_total_timeline_shift_lives_saved_latex": "$$\nLives_{saved} = 54.75M \\times\
+  \ 220 \\times 92.1\\% = 11.1B\n$$"
+"dfda_total_timeline_shift_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_total_timeline_shift_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Average years earlier patients receive cures due\
+  \ to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from\
+  \ ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy\
+  \ lag elimination (8.2 years) - once discovered, treatments deploy without post-safety\
+  \ delay. | Calculated from 2 inputs | ? Low confidence | Formula: DFDA_CURE_TIMELINE_ACCELERATION_YEARS\
+  \ + EFFICACY_LAG_YEARS | Unit: years | Click to view details, calculation & sources\"\
+  >227 (95% CI: 185-284)</a>"
+"dfda_total_timeline_shift_years_latex": "$$\nTimelineShift_{avg} = 212 \\text{ yrs}\
+  \ + 8.2 \\text{ yrs} = 220 \\text{ years}\n$$"
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trials_per_year_capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
@@ -575,6 +662,15 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
   \ Framework for Drug Assessment one-time build cost (high estimate) | ✓ High confidence\
   \ | Unit: USD | Click to view details, calculation & sources\">$46M</a>"
+"dfda_valley_of_death_rescue_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_valley_of_death_rescue_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Factor increase in drugs entering development\
+  \ when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes\
+  \ new drugs, so 1 + 0.40 = 1.4× more drugs. | Calculated from 1 input | ~ Medium\
+  \ confidence | Formula: 1 + VALLEY_OF_DEATH_ATTRITION_PCT | Unit: multiplier | Click\
+  \ to view details, calculation & sources\">1.4</a>"
+"dfda_valley_of_death_rescue_multiplier_latex": "$$\nRescueMultiplier_{dFDA} = 1 +\
+  \ 0.40 = 1.4\\times\n$$"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_npv_annual_opex_initiatives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
@@ -626,6 +722,16 @@
   \ calculation & sources\">79.9%</a>"
 "dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$21.72B / \\\
   $27.2B = 0.7985 = 79.85\\%\n$$"
+"diseases_without_effective_treatment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-diseases_without_effective_treatment\"\
+  \ class=\"parameter-link\" data-source-ref=\"rare-disease-only-5pct-have-treatment\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Number of diseases\
+  \ without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment\
+  \ (per Orphanet 2024). This is the 'queue' of diseases waiting for cures. | Calculated\
+  \ from 1 input | ~ Medium confidence | Formula: RARE_DISEASES_COUNT_GLOBAL × 0.95\
+  \ | Unit: diseases | Click to view details, calculation & sources\">6.64k (95% CI:\
+  \ 5.70k-8.24k)</a>"
+"diseases_without_effective_treatment_latex": "$$\nDiseasesWithoutTreatment = 7{,}000\
+  \ \\times 0.95 = 6{,}650\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_eradication_delay_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -1438,6 +1544,16 @@
   $16,071} \\approx 2,889x\n$$"
 "months_per_year": "<span class=\"parameter-link\" title=\"Parameter: MONTHS_PER_YEAR\"\
   >12</span>"
+"new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
+  \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
+  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
+  \ that receive their FIRST effective treatment each year under current system. ~9\
+  \ rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years),\
+  \ plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for\
+  \ diseases that already have treatments. | ? Low confidence | 95% CI: [10 diseases/year,\
+  \ 25 diseases/year] | Dist: Lognormal | Unit: diseases/year | Click to view details,\
+  \ calculation & sources\">15 (95% CI: 10-22)</a>"
+"new_disease_first_treatments_per_year_cite": "@diseases-getting-first-treatment-annually"
 "nih_clinical_trials_spending_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nih_clinical_trials_spending_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"nih-clinical-trials-spending-pct-3-3\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of NIH\
@@ -1618,6 +1734,12 @@
   \ follow-up 13.2 years) | ✓ High confidence | \U0001F4CA Peer-reviewed | Unit: USD\
   \ | Click to view details, calculation & sources\">$6.70B</a>"
 "pharma_drug_revenue_average_current_cite": "@pharma-drug-revenue-average"
+"pharma_phase_2_3_cost_barrier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_phase_2_3_cost_barrier\"\
+  \ class=\"parameter-link\" data-source-ref=\"drug-development-cost\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Average Phase 2/3 efficacy testing\
+  \ cost per drug that pharma must fund (~60% of $2.6B total) | ✓ High confidence\
+  \ | Dist: Normal (SE: $200M) | Unit: USD | Click to view details, calculation &\
+  \ sources\">$1.56B (95% CI: $1.23B-$1.89B)</a>"
 "pharma_roi_current_system_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_roi_current_system_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"pharma-roi-current\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"ROI for\
@@ -1646,6 +1768,13 @@
   \ safety trial duration | ✓ High confidence | \U0001F4CA Peer-reviewed | Updated:\
   \ 2021 | Unit: years | Click to view details, calculation & sources\">2.3</a>"
 "phase_1_safety_duration_years_cite": "@bio-clinical-development-2021"
+"phase_2_3_clinical_trial_cost_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-phase_2_3_clinical_trial_cost_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of total\
+  \ clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3:\
+  \ 45%) | ✓ High confidence | Dist: Normal (SE: 5%) | Unit: percentage | Click to\
+  \ view details, calculation & sources\">69% (95% CI: 60.6%-77.2%)</a>"
+"phase_2_3_clinical_trial_cost_pct_cite": "@global-clinical-trials-market-2024"
 "phase_3_trial_cost_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-phase_3_trial_cost_min\"\
   \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-trial-range\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 trial total cost (minimum) |\
@@ -1711,8 +1840,9 @@
 "rare_diseases_count_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-rare_diseases_count_global\"\
   \ class=\"parameter-link\" data-source-ref=\"95-pct-diseases-no-treatment\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total number of rare diseases globally\
-  \ | ✓ High confidence | Unit: diseases | Click to view details, calculation & sources\"\
-  >7.00k</a>"
+  \ | ✓ High confidence | 95% CI: [6.00k diseases, 10.0k diseases] | Dist: Normal\
+  \ | Unit: diseases | Click to view details, calculation & sources\">7.00k (95% CI:\
+  \ 6.00k-8.68k)</a>"
 "rare_diseases_count_global_cite": "@95-pct-diseases-no-treatment"
 "recovery_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-cost-500\" data-source-type=\"\
@@ -1776,6 +1906,26 @@
   \ | ✓ High confidence | Dist: Normal (SE: 7 QALYs/life) | Unit: QALYs/life | Click\
   \ to view details, calculation & sources\">35 (95% CI: 23.3-46.5)</a>"
 "standard_qalys_per_life_saved_cite": "@qaly-value"
+"status_quo_avg_years_to_cure": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-status_quo_avg_years_to_cure\"\
+  \ class=\"parameter-link\" data-source-ref=\"status-quo-cure-timeline-estimate\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Average years\
+  \ until cure discovered for a typical disease under current system. The average\
+  \ disease is in the middle of the queue, so it waits half the total queue clearance\
+  \ time (~443/2 = ~222 years). | Calculated from 1 input | ? Low confidence | Formula:\
+  \ STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2 | Unit: years | Click to view details, calculation\
+  \ & sources\">229 (95% CI: 188-285)</a>"
+"status_quo_avg_years_to_cure_latex": "$$\nAvgYearsToCure_{status\\ quo} = \\frac{443\
+  \ \\text{ years}}{2} = 222 \\text{ years}\n$$"
+"status_quo_queue_clearance_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-status_quo_queue_clearance_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"status-quo-cure-timeline-estimate\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Years to clear\
+  \ entire queue of diseases without treatment. At current rate of ~15 diseases/year\
+  \ getting first treatments, the queue of ~6,650 would take ~443 years to completely\
+  \ clear. | Calculated from 2 inputs | ? Low confidence | Formula: DISEASES_WITHOUT_EFFECTIVE_TREATMENT\
+  \ ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR | Unit: years | Click to view details,\
+  \ calculation & sources\">458 (95% CI: 377-570)</a>"
+"status_quo_queue_clearance_years_latex": "$$\nQueueClearance_{status\\ quo} = \\\
+  frac{6{,}650 \\text{ diseases}}{15 \\text{ /year}} = 443 \\text{ years}\n$$"
 "suffering_hours_eliminated_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-suffering_hours_eliminated_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total hours\
@@ -2277,6 +2427,14 @@
   \ | 95% CI: [330M people, 340M people] | Dist: Lognormal | Unit: people | Click\
   \ to view details, calculation & sources\">335M (95% CI: 331M-339M)</a>"
 "us_population_2024_cite": "@us-voter-population"
+"valley_of_death_attrition_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-valley_of_death_attrition_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"valley-of-death-attrition\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Percentage of promising Phase 1-passed\
+  \ compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure).\
+  \ Conservative estimate: many rare disease, natural compound, and low-margin drugs\
+  \ never tested. | ~ Medium confidence | 95% CI: [25%, 55%] | Dist: Uniform | Unit:\
+  \ percentage | Click to view details, calculation & sources\">40%</a>"
+"valley_of_death_attrition_pct_cite": "@valley-of-death-attrition"
 "value_of_statistical_life": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-value_of_statistical_life\"\
   \ class=\"parameter-link\" data-source-ref=\"dot-vsl-13-6m\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Value of Statistical Life (conservative\
@@ -2336,6 +2494,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "336"
-"total_latex_equation_count": "126"
-"total_citation_count": "134"
+"total_parameter_count": "353"
+"total_latex_equation_count": "138"
+"total_citation_count": "137"

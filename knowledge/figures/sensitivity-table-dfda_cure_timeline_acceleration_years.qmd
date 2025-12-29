@@ -1,0 +1,10 @@
+**Sensitivity Indices for dFDA Cure Timeline Acceleration**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Status Quo Avg Years To Cure | 0.9862 | Strong driver |
+| Trial Capacity Multiplier | 0.0138 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

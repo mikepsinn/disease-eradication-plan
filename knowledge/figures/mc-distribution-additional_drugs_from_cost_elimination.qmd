@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: Additional Drug Approvals from Cost Elimination (10,000 simulations)"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Simulation results
+
+samples = [20, 18, 21, 21, 18, 18, 20, 19, 19, 18, 21, 21, 20, 21, 20, 18, 20, 18, 21, 19, 19, 18, 21, 19, 19, 19, 20, 20, 20, 20, 23, 19, 19, 18, 20, 21, 19, 18, 18, 20, 21, 20, 18, 20, 20, 20, 21, 20, 21, 20, 20, 20, 18, 19, 19, 18, 19, 22, 18, 21, 18, 19, 20, 20, 21, 21, 19, 19, 21, 19, 18, 18, 18, 20, 20, 21, 19, 20, 20, 19, 20, 18, 19, 19, 18, 20, 19, 19, 20, 20, 20, 19, 19, 19, 18, 18, 18, 18, 20, 18, 19, 22, 19, 21, 18, 19, 18, 19, 21, 18, 20, 20, 19, 18, 20, 19, 20, 19, 22, 19, 18, 20, 20, 22, 21, 20, 22, 18, 18, 18, 19, 18, 20, 19, 18, 18, 20, 21, 23, 24, 20, 18, 18, 20, 18, 19, 19, 19, 21, 20, 19, 18, 18, 19, 19, 22, 20, 21, 19, 18, 18, 18, 23, 18, 21, 18, 21, 20, 19, 19, 18, 20, 19, 18, 18, 20, 22, 20, 19, 20, 22, 20, 19, 21, 20, 22, 20, 18, 18, 22, 22, 19, 19, 22, 18, 18, 20, 19, 19, 19, 20, 22, 20, 20, 18, 19, 18, 18, 18, 19, 21, 18, 19, 19, 19, 21, 20, 22, 19, 18, 19, 20, 20, 18, 20, 20, 24, 23, 18, 19, 18, 19, 20, 21, 18, 18, 18, 19, 18, 19, 18, 19, 18, 18, 23, 18, 18, 22, 24, 18, 19, 20, 22, 18, 19, 21, 20, 19, 19, 18, 19, 19, 20, 19, 20, 21, 20, 20, 20, 19, 18, 20, 19, 23, 22, 20, 18, 18, 21, 20, 20, 18, 21, 20, 18, 19, 20, 20, 19, 19, 19, 20, 22, 18, 19, 20, 20, 19, 18, 20, 22, 18, 21, 19, 19, 18, 19, 22, 20, 22, 21, 20, 22, 20, 21, 19, 20, 18, 21, 18, 21, 19, 21, 21, 22, 21, 18, 19, 18, 19, 22, 20, 18, 18, 19, 18, 18, 20, 21, 20, 18, 20, 20, 20, 22, 18, 19, 20, 18, 22, 20, 21, 19, 21, 21, 20, 20, 20, 18, 19, 19, 20, 21, 18, 19, 22, 18, 18, 20, 21, 19, 22, 21, 21, 20, 23, 19, 18, 22, 19, 20, 22, 18, 18, 18, 18, 20, 20, 20, 18, 18, 20, 19, 20, 21, 20, 21, 20, 20, 18, 19, 20, 21, 19, 20, 19, 19, 21, 18, 18, 18, 18, 18, 21, 19, 20, 21, 22, 19, 22, 20, 18, 19, 18, 18, 19, 21, 22, 18, 20, 18, 20, 19, 18, 21, 19, 19, 18, 18, 20, 19, 20, 20, 22, 19, 18, 21, 19, 21, 20, 19, 20, 23, 23, 20, 20, 21, 18, 20, 19, 20, 18, 18, 18, 18, 19, 19, 23, 21, 18, 20, 19, 19, 20, 20, 19, 21, 18, 19, 24, 20, 22, 20, 20, 19, 19, 18, 20, 18, 20, 21, 20, 19, 20, 19, 21, 18, 19, 18, 18, 22, 21, 18, 18, 18, 19, 23, 20, 19, 20, 18, 19, 20, 19, 21, 20, 20, 18, 21, 22, 18, 18, 22, 19, 22, 19, 22, 20, 20, 22, 19, 18, 19, 20, 18, 20, 19, 21, 18, 18, 18, 18, 20, 19, 19, 19, 20, 18, 21, 20, 20, 20, 20, 23, 19, 19, 18, 18, 18, 18, 19, 20, 20, 18, 21, 21, 19, 18, 20, 20, 18, 19, 20, 18, 20, 18, 22, 21, 19, 20, 18, 18, 19, 18, 21, 23, 18, 18, 20, 22, 18, 20, 22, 18, 18, 19, 19, 21, 20, 18, 20, 19, 21, 19, 18, 20, 21, 20, 18, 20, 18, 20, 18, 20, 18, 18, 21, 20, 19, 22, 19, 19, 20, 19, 20, 19, 19, 22, 18, 18, 22, 24, 19, 18, 19, 19, 19, 18, 20, 20, 18, 21, 23, 20, 19, 19, 20, 18, 20, 19, 22, 19, 22, 18, 20, 20, 18, 20, 21, 19, 18, 19, 18, 19, 19, 18, 18, 20, 19, 18, 21, 20, 18, 18, 21, 20, 23, 20, 20, 19, 21, 20, 21, 19, 19, 19, 21, 22, 19, 19, 20, 19, 21, 18, 18, 18, 18, 18, 18, 19, 21, 19, 18, 19, 21, 18, 18, 20, 19, 20, 19, 21, 18, 19, 19, 18, 18, 21, 19, 18, 19, 21, 18, 18, 18, 22, 20, 21, 18, 18, 20, 20, 20, 19, 20, 20, 21, 21, 18, 18, 21, 21, 18, 18, 20, 21, 22, 20, 19, 18, 19, 19, 18, 23, 22, 21, 18, 21, 20, 20, 21, 20, 21, 20, 20, 18, 20, 19, 18, 22, 22, 22, 20, 22, 19, 20, 18, 20, 20, 18, 19, 19, 22, 21, 19, 20, 20, 19, 18, 19, 18, 18, 20, 20, 18, 19, 21, 21, 21, 20, 18, 18, 20, 20, 22, 21, 19, 18, 19, 20, 19, 19, 20, 19, 19, 20, 19, 20, 20, 18, 19, 22, 18, 18, 18, 19, 19, 19, 21, 18, 20, 22, 18, 19, 18, 18, 19, 22, 22, 19, 23, 19, 22, 19, 20, 20, 24, 21, 18, 21, 19, 19, 21, 19, 20, 19, 20, 20, 18, 20, 18, 18, 19, 20, 18, 21, 18, 19, 19, 19, 20, 18, 21, 20, 18, 18, 19, 19, 19, 19, 20, 21, 18, 18, 18, 20, 21, 19, 18, 18, 18, 19, 19, 20, 19, 21, 18, 18, 20, 18, 20, 20, 19, 22, 19, 23, 19, 18, 20, 18, 18, 20, 20, 19, 21, 21, 22, 20, 22, 18, 19, 18, 20, 19, 19, 23, 19, 20, 19, 20, 19, 20, 21, 22, 20, 20, 18, 19, 21, 21, 20, 21, 20, 21, 20, 19, 20, 18, 20, 18, 18, 20, 20, 18, 18, 22, 19, 23, 19, 20, 22, 20, 18, 19, 19, 18, 19, 18, 21, 19, 19, 19, 20, 20, 18, 18, 21, 19, 18, 20, 20, 18, 20, 21, 20, 20, 18, 20, 19, 19, 21, 22, 22, 22, 19, 20, 21, 20, 20, 21]  # Truncate for embedding
+baseline = 20.0
+mean = 19.5933
+std = 1.379817056714404
+p5 = 18.0
+p50 = 19.0
+p95 = 22.0
+display_name = "Additional Drug Approvals from Cost Elimination"
+units = "drugs/year"
+
+# Create figure with two subplots
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+
+# Handle edge case where all samples are identical (zero variance)
+
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {format_parameter_value(p50, units)}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {format_parameter_value(p5, units)}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key percentiles
+
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
+output_path = get_figure_output_path('mc-distribution-additional_drugs_from_cost_elimination.png')
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Simulation Results Summary: Additional Drug Approvals from Cost Elimination**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 20 |
+| Mean (expected value) | 19.6 |
+| Median (50th percentile) | 19 |
+| Standard Deviation | 1.38 |
+| 90% Confidence Interval | [18, 22] |
+
+*The histogram shows the distribution of Additional Drug Approvals from Cost Elimination across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
