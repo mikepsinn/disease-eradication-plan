@@ -18,12 +18,12 @@ This appendix provides comprehensive documentation of all parameters and calcula
 **Total parameters**: 336
 
 - External sources (peer-reviewed): 134
-- Calculated values: 109
-- Core definitions: 93
+- Calculated values: 110
+- Core definitions: 92
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (109 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+[Calculated Values](#sec-calculated) (110 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (92 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -701,7 +701,7 @@ Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incen
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
 - [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
 
@@ -1017,7 +1017,7 @@ Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment
 **Inputs**:
 
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 
 $$
 Coverage = \$27.18B / \$0.04B = 679x
@@ -1896,7 +1896,7 @@ Annual funding for IAB political incentive mechanism (independent expenditures s
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
 
 $$
@@ -2170,7 +2170,7 @@ Conflict reduction benefits from 1% less military spending (lower confidence - a
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 
 $$
 PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B
@@ -2923,7 +2923,7 @@ Total global research funding (baseline + 1% treaty funding)
 **Inputs**:
 
 - [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 
 $$
 Funding_{total} = Spending_{global} + Funding_{ann} = \$67.50B + \$27.18B = \$94.68B
@@ -2946,6 +2946,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-total_research_funding_with_treaty.qmd >}}
+
+:::
+
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1.0\% = \$27.18B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_annual_funding.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_annual_funding.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
 
 :::
 
@@ -7322,16 +7355,6 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total words in the book
-
-*Core definition*
-
-:::
-
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Annual funding from 1% of global military spending redirected to DIH
 
 *Core definition*
 

@@ -2498,6 +2498,17 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   latex: "Funding_{total} = Spending_{global} + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B",
 };
 
+export const TREATY_ANNUAL_FUNDING: Parameter = {
+  value: 27180000000.0,
+  unit: "USD/year",
+  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
+  description: "Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "MILITARY_SPENDING × 1%",
+  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B",
+};
+
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   value: 9.570066666666667,
   unit: "ratio",
@@ -3589,17 +3600,6 @@ export const TOTAL_BOOK_WORDS: Parameter = {
   confidence: "high",
 };
 
-export const TREATY_ANNUAL_FUNDING: Parameter = {
-  value: 27180000000.0,
-  unit: "USD/year",
-  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
-  description: "Annual funding from 1% of global military spending redirected to DIH",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "MILITARY_SPENDING × 1%",
-  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B",
-};
-
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   value: 650000000.0,
   unit: "USD",
@@ -3974,6 +3974,7 @@ export const parameters = {
   THALIDOMIDE_YLD_PER_EVENT,
   THALIDOMIDE_YLL_PER_EVENT,
   TOTAL_RESEARCH_FUNDING_WITH_TREATY,
+  TREATY_ANNUAL_FUNDING,
   TREATY_BENEFIT_MULTIPLIER_VS_VACCINES,
   TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED,
   TREATY_CAMPAIGN_TOTAL_COST,
@@ -4077,7 +4078,6 @@ export const parameters = {
   SECONDS_PER_YEAR,
   TESTED_RELATIONSHIPS_ESTIMATE,
   TOTAL_BOOK_WORDS,
-  TREATY_ANNUAL_FUNDING,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
   TREATY_CAMPAIGN_BUDGET_REFERENDUM,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
@@ -5478,8 +5478,8 @@ export const citations: Record<string, Citation> = {
 export const PARAMETER_STATS = {
   total: 336,
   external: 134,
-  calculated: 109,
-  definitions: 93,
+  calculated: 110,
+  definitions: 92,
   citations: 101,
 } as const;
 

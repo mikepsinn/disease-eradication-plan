@@ -1924,9 +1924,13 @@
   \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
   >17</a>"
 "treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
-"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
-  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
-  \ definition\">$27.2B (95% CI: $24.5B-$29.9B)</span>"
+"treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
+  \ redirected to DIH (uncertainty inherited from military spending estimates; the\
+  \ 1% itself is a fixed policy choice) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: MILITARY_SPENDING × 1% | Unit: USD/year | Click to view details, calculation\
+  \ & sources\">$27B (95% CI: $24.5B-$29.9B)</a>"
 "treaty_annual_funding_latex": "$$\nFunding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty}\
   \ = \\$2.72T \\times 1.0\\% = \\$27.18B\n$$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_benefit_multiplier_vs_vaccines\"\
