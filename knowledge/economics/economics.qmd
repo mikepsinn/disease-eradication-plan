@@ -415,7 +415,9 @@ Of {{< var global_disease_deaths_daily >}} daily deaths:
 - **{{< var eventually_avoidable_death_pct >}} eventually avoidable** with sufficient biomedical research (gene therapy, AI drug discovery, cellular reprogramming, etc.)
 - **{{< var fundamentally_unavoidable_death_pct >}} fundamentally unavoidable** (primarily accidents, even with advanced prevention)
 
-This distinction maintains intellectual honesty while acknowledging that most disease deaths are preventable with advanced biotechnology. The calculation accounts for maximum achievable cure rates by disease category based on research acceleration potential.
+This differs from "currently preventable" deaths (20-30M annually via vaccines, sanitation, behavior change). The {{< var eventually_avoidable_death_pct >}} figure represents maximum achievable with advanced biotechnology over decades, not current interventions.
+
+The lives saved calculation measures **timeline acceleration**, not current curability. If an Alzheimer's cure would arrive in 3025, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag makes it available in 3017. This saves everyone who would have died in those {{< var efficacy_lag_years >}} years. This logic applies to all future cures across all diseases, independent of when discoveries occur.
 
 ### Annual Savings
 
@@ -437,9 +439,14 @@ This makes it a fire hose.
 
 {{< var peace_dividend_annual_societal_benefit >}}/year
 
-Bombs are expensive. Breaking things costs money. Repairing broken things costs more money.
-A {{< var treaty_reduction_pct >}} reduction in weapons procurement saves {{< var peace_dividend_annual_societal_benefit >}} annually.
-That's roughly the GDP of Austria, just sitting there in the "please don't explode us" budget.
+**How the peace dividend is calculated:**
+
+The peace dividend doesn't assume the treaty prevents wars. It's based on the **economic multiplier effect** of resource reallocation: military spending generates {{< var economic_multiplier_military_spending >}} in economic value per dollar spent, while healthcare research generates {{< var economic_multiplier_healthcare_investment >}}× per dollar. Redirecting {{< var treaty_annual_funding >}} from military to medical research produces a net economic gain of {{< var peace_dividend_annual_societal_benefit >}}/year simply from the multiplier differential, independent of whether conflicts occur.
+
+This is standard economics: moving money from low-multiplier activities (weapons manufacturing, which creates jobs but doesn't compound) to high-multiplier activities (medical research, which saves healthcare costs and increases workforce productivity) generates measurable GDP gains.
+
+A {{< var treaty_reduction_pct >}} reduction in weapons procurement redirects {{< var peace_dividend_annual_societal_benefit >}} annually from activities with 0.5-1.0× multipliers to activities with 2-3× multipliers.
+That's roughly the GDP of Austria, reallocated from "please don't explode us" to "please don't die from curable diseases."
 
 
 
@@ -674,6 +681,12 @@ Not other treaties (good luck).
 
 All valuable. All recommended.
 None offer **{{< var trial_capacity_multiplier >}}× leverage**.
+
+**Why the {{< var treaty_vs_bed_nets_multiplier >}}× better cost-effectiveness vs. bed nets is plausible:**
+
+Bed nets are a consumable intervention requiring ongoing replacement every 3-5 years. To save 1,000 lives over 20 years requires purchasing and distributing thousands of bed nets repeatedly. Total cost scales linearly with lives saved.
+
+The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be 707× better than excellent linear interventions like bed nets.
 
 The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make 99.6% of potential drug-disease combinations economically infeasible to test).
 
@@ -1091,21 +1104,17 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)
 
-The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development. It was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
+The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development or increasing drug complexity. It was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
+
+**The regulatory causation is clear:** The same types of compounds (small molecules, biologics) that cost {{< var pre_1962_drug_development_cost_2024_usd >}} to develop in 1960 now cost {{< var pharma_drug_development_cost_current >}}. The molecules didn't get more complex; the regulatory requirements did. Aspirin, if discovered today under current regulations, would cost billions to approve despite being chemically identical to the version approved for pennies in the pre-1962 era.
 
 #### Historical operational model
 
-From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized, pragmatic trial system coincided with dramatic improvements in life expectancy during the early-to-mid 20th century.
+From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
 
-![Life expectancy was flat for 10,000 years, then exploded starting in 1883](../../assets/life-expectancy-historical.jpg)
+**Safety record, the thalidomide success story:** The pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed** - the safety testing framework worked exactly as intended.
 
-Human life expectancy remained essentially unchanged from the Bronze Age through 1883. Then something unprecedented happened: organized medical research began, physicians started systematically testing treatments, and life expectancy doubled within {{< var pre_1962_validation_years >}} years. This dramatic acceleration occurred under the decentralized physician-led model (1883-1960), not the centralized pharmaceutical trial system that replaced it after 1962.
-
-**Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed**, the safety testing framework worked exactly as intended.
-
-The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation, safety testing had succeeded. The response was to take efficacy testing away from {{< var pre_1962_physician_count >}} independent physicians and centralize it within pharmaceutical companies, increasing costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing approvals substantially.
-
-**Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns.
+The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation; safety testing had succeeded. The response was to take efficacy testing away from {{< var pre_1962_physician_count >}} independent physicians and centralize it within pharmaceutical companies, increasing costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing approvals substantially.
 
 #### Implications for generalizability
 
@@ -1808,6 +1817,12 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
 
+**What RECOVERY demonstrates vs. what the base estimate assumes:**
+
+The RECOVERY trial proves two things: (1) pragmatic trials can cost {{< var recovery_trial_cost_per_patient >}}/patient instead of {{< var traditional_phase3_cost_per_patient >}}, and (2) this approach can accelerate research dramatically (47,000 patients in 3 months).
+
+Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}:1) uses only the cost reduction**, not the acceleration effect. It assumes we run the same number of trials at lower cost, not 22× more trials. The 22× acceleration multiplier is excluded from conservative estimates precisely because it requires extrapolating RECOVERY's recruitment success across all disease areas. This provides substantial margin of safety against overgeneralization.
+
 **Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one modern case study. {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift.
 
 **Trial complexity variation:** RECOVERY studied repurposed drugs (dexamethasone, hydroxychloroquine) for acute COVID-19 treatment. Novel therapeutics for chronic diseases may face different challenges. However:
@@ -1816,7 +1831,7 @@ The analysis relies significantly on the Oxford RECOVERY trial as empirical evid
 - Pre-1962 system achieved similar efficiencies across diverse therapeutic areas (not limited to repurposed drugs)
 - [Pragmatic trial literature](../references.qmd#pragmatic-trials-patsopoulos-2011) consistently shows 50-95% cost reductions across multiple contexts
 
-**Conclusion:** While RECOVERY provides modern validation, the fundamental approach (decentralized physician-led efficacy testing) has extensive historical precedent suggesting generalizability beyond single case studies.
+**Conclusion:** While RECOVERY provides modern validation, the fundamental approach (decentralized physician-led efficacy testing) has extensive historical precedent suggesting generalizability beyond single case studies. More importantly, the base estimate uses only RECOVERY's demonstrated cost structure, not its acceleration potential, making it robust to concerns about extrapolating success rates across disease areas.
 
 ### Diminishing Returns in Research Productivity
 
