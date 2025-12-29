@@ -25,7 +25,7 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-aca
 
 The 1962 Kefauver-Harris Amendments require an 8-year efficacy delay after drugs are proven safe. During those 8 years, people die. This document counts them.
 
-**The number:** {{< var disease_eradication_delay_deaths_total >}} eventually avoidable deaths from eliminating the 8.2-year efficacy lag.
+**The number:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from eliminating the 8.2-year efficacy lag.
 
 **The math:** Rigorous, peer-reviewable, and deeply depressing.
 
@@ -36,15 +36,13 @@ For the narrative version, see [The FDA Is Unsafe and Ineffective](../problem/fd
 
 This study quantifies the cumulative mortality and morbidity costs associated with the **Unitary Pre-Market Approval (UPMA)** model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of **{{< var efficacy_lag_years >}} years** post-safety verification.
 
-Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we present **three scenarios** estimating the mortality cost of this delay:
+Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate the mortality cost of this {{< var efficacy_lag_years >}}-year delay:
 
-- **Conservative (Historical Progress):** {{< var historical_progress_deaths_total >}} deaths total - Based on delayed access to existing life-saving drugs
-- **Moderate (Disease Eradication Delay - PRIMARY):** {{< var disease_eradication_delay_deaths_total >}} deaths total - Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years
-- **Optimistic (Acceleration Effects):** {{< var disease_eradication_plus_acceleration_deaths_total >}} deaths total - Includes innovation acceleration from lower costs and faster trials
+**{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths** from the efficacy lag, with **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity.
 
-When adjusted for morbidity, the **PRIMARY estimate** burden is **{{< var disease_eradication_delay_dalys >}} Disability-Adjusted Life Years (DALYs)**.
+All estimates include Monte Carlo confidence intervals. See the sensitivity analysis sections for parameter uncertainty.
 
-Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var disease_eradication_delay_economic_loss >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
+Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
 
 ## 1. Introduction
 
@@ -155,17 +153,11 @@ We present three distinct methodologies for estimating the mortality cost of the
 
 | Scenario | Total Deaths | Methodology | Confidence |
 |:---------|:--------------|:------------|:-----------|
-| **Conservative<br/>(Historical Progress)** | **{{< var historical_progress_deaths_total >}}** | Based on observed life-saving impact of drugs approved 1962-2024. Assumes only *existing* therapeutic classes are delayed. | High |
-| **Moderate<br/>(Disease Eradication - PRIMARY)** | **{{< var disease_eradication_delay_deaths_total >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
-| **Optimistic<br/>(Acceleration Effects)** | **{{< var disease_eradication_plus_acceleration_deaths_total >}}** | PRIMARY estimate plus innovation acceleration from reduced costs and faster iteration cycles. | Low |
+| **Efficacy Lag Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
 
-### 3.2 Recommended Use by Audience
+**Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
 
-- **For Gates Foundation / Policy Makers:** Lead with **Conservative** estimate ({{< var historical_progress_deaths_total >}}) for maximum defensibility
-- **For Internal Analysis:** Use **PRIMARY** estimate ({{< var disease_eradication_delay_deaths_total >}}) for realistic impact assessment
-- **For Innovation Advocates:** Reference **Optimistic** estimate ({{< var disease_eradication_plus_acceleration_deaths_total >}}) to show maximum potential
-
-**Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_total >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
+See the tornado diagrams and sensitivity tables below for confidence intervals and parameter uncertainty.
 
 ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
@@ -177,7 +169,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
 - **YLL Total:**
 
-{{< var disease_eradication_delay_yll_latex >}} {#eq-yll}
+{{< var dfda_efficacy_lag_elimination_yll_latex >}} {#eq-yll}
 
 ### 4.2 Years Lived with Disability (YLD)
 
@@ -185,13 +177,13 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}} years
 - **YLD Total:**
 
-{{< var disease_eradication_delay_yld_latex >}} {#eq-yld}
+{{< var dfda_efficacy_lag_elimination_yld_latex >}} {#eq-yld}
 
 ### 4.3 Cumulative DALY Burden
 
-{{< var disease_eradication_delay_dalys_latex >}} {#eq-total-dalys}
+{{< var dfda_efficacy_lag_elimination_dalys_latex >}} {#eq-total-dalys}
 
-**Interpretation:** The regulatory framework has effectively deleted **{{< var disease_eradication_delay_dalys >}} billion years of healthy human life**.
+**Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life**.
 
 ## 5. Economic Valuation {#economic-valuation}
 
@@ -203,11 +195,11 @@ $$ {#eq-dwl}
 
 Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >}}**:
 
-{{< var disease_eradication_delay_economic_loss_latex >}} {#eq-dwl-calculation}
+{{< var dfda_efficacy_lag_elimination_economic_value_latex >}} {#eq-dwl-calculation}
 
 ### 5.1 Contextualizing the Loss
 
-- **Total Loss (1962-2024):** {{< var disease_eradication_delay_economic_loss >}} over 62 years
+- **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
 - **Annualized Loss:** ~$19T/year (total loss ÷ 62 years)
 - **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
 
@@ -215,7 +207,7 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 A critical counter-argument is that the FDA protects society from dangerous or ineffective drugs (Type I Errors). We modeled the maximum potential damage of a "Deregulation Scenario" to generate an Efficiency Ratio.
 
-- **The Cost of Protection (Type II):** {{< var disease_eradication_delay_dalys >}} DALYs lost.
+- **The Cost of Protection (Type II):** {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs lost.
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (an extreme overestimate), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}.
   - *Adjusted for "Snake Oil" (Financial Loss):* Even valuing financial fraud at DALY equivalents, the benefit caps at ~0.6 Billion DALYs.
 
@@ -325,7 +317,7 @@ This analysis will face predictable objections. We address them here not defensi
 
 ### 10.1 "The PRIMARY Estimate Is Too Speculative"
 
-**Critique:** The PRIMARY estimate ({{< var disease_eradication_delay_deaths_total >}}) assumes we would have eradicated diseases by now without regulations. This is unproven and overly optimistic.
+**Critique:** The PRIMARY estimate ({{< var dfda_efficacy_lag_elimination_deaths_averted >}}) assumes we would have eradicated diseases by now without regulations. This is unproven and overly optimistic.
 
 **Response:**
 
@@ -352,7 +344,7 @@ The PRIMARY estimate asks: "How many people died during those lost 12.4 years?"
 
 Even if you **reject the PRIMARY estimate entirely** and use only the Conservative scenario:
 
-- Conservative deaths: {{< var historical_progress_deaths_total >}}
+- Conservative deaths: {{< var existing_drugs_efficacy_lag_deaths_total >}}
 - Type I benefits: ~{{< var type_i_error_benefit_dalys >}} DALYs
 - **Ratio: 18:1** (Type II harm still dominates)
 
@@ -589,9 +581,9 @@ Political impossibility is not a critique of the **analysis**. It's a critique o
 
 This document doesn't claim reform is easy. It quantifies what's at stake:
 
-- **{{< var disease_eradication_delay_deaths_total >}} lives** (PRIMARY estimate)
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives** (PRIMARY estimate)
 - **{{< var global_disease_deaths_daily >}} deaths per day** (ongoing)
-- **{{< var disease_eradication_delay_economic_loss >}}** economic loss
+- **{{< var dfda_efficacy_lag_elimination_economic_value >}}** economic loss
 
 **The purpose of this analysis:** Show the stakes clearly enough that political will becomes possible.
 
@@ -645,9 +637,9 @@ That's the number that matters.
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var disease_eradication_delay_deaths_total >}} eventually avoidable deaths from 8.2-year timeline shift**
-- **{{< var disease_eradication_delay_dalys >}} DALYs lost**
-- **{{< var disease_eradication_delay_economic_loss >}} economic destruction**
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from 8.2-year timeline shift**
+- **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs lost**
+- **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)
 
 These costs dwarf the benefits by three orders of magnitude. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).

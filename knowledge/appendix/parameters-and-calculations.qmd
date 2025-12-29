@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 353
+**Total parameters**: 350
 
 - External sources (peer-reviewed): 137
-- Calculated values: 119
+- Calculated values: 116
 - Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (116 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -138,10 +138,10 @@ Combined peace and health dividends for ROI calculation
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 
 $$
-Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.57B + \$30.00B = \$143.57B
+Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$30.00B = \$143.57B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations#peace-dividend-composition](../appendix/peace-dividend-calculations#peace-dividend-composition)
@@ -303,40 +303,184 @@ $$
 
 :::
 
-### dFDA Cure Timeline Acceleration: 212 years {#sec-dfda_cure_timeline_acceleration_years}
+### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Status Quo Average Years to Cure](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07B years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
 
 $$
-Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
+DALY_{total} = 7.03B \text{ (YLL)} + 0.87B \text{ (YLD)} = 7.90B
 $$
 
-*? Low confidence*
+**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-dfda_cure_timeline_acceleration_years.qmd >}}
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
-{{< include ../figures/sensitivity-table-dfda_cure_timeline_acceleration_years.qmd >}}
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-dfda_cure_timeline_acceleration_years.qmd >}}
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-dfda_cure_timeline_acceleration_years.qmd >}}
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 11.9k {#sec-dfda_expected_roi}
+### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+
+$$
+D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+:::
+
+### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
+
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+:::
+
+### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years Lived with Disability during disease eradication delay (PRIMARY estimate)
+
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
+
+$$
+Delay_{DFDA} = Deaths_{DFDA} \times Deaths \times Chronic = 415.9M \times 6 \times 0.35 = 873.3M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+:::
+
+### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
+
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+
+$$
+YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+:::
+
+### Expected Treaty ROI (Risk-Adjusted): 320k {#sec-dfda_expected_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -344,11 +488,11 @@ Expected ROI for 1% treaty accounting for political success probability uncertai
 
 **Inputs**:
 
-- [Treaty ROI - Lag Elimination (PRIMARY)](#sec-treaty_roi_lag_elimination) 🔢: 1.19M ratio
+- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 32.0M ratio
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
-E[ROI] = ROI_{conditional} \times P_{success} = ROI_{treaty} \times 0.01
+ROI_{DFDA,exp} = ROI_{treaty} \times Probability = 32M \times 1.0\% = 320{,}000
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -379,7 +523,7 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
@@ -649,41 +793,6 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $30B {#sec-dfda_rd_gross_savings_annual}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
-
-**Inputs**:
-
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
-- [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
-
-$$
-Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$60.00B \times 50.0\% = \$30.00B
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_rd_gross_savings_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_rd_gross_savings_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_rd_gross_savings_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_rd_gross_savings_annual.qmd >}}
-
-:::
-
 ### Daily R&D Savings from Trial Cost Reduction: $82.2M {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -726,7 +835,7 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
@@ -763,11 +872,11 @@ Simple ROI without NPV adjustment (gross savings / annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
-ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$30.00B}{\$40.0M} = 750
+ROI_{DFDA} = \frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \frac{\$30.00B}{\$40.0M} = 750
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -787,135 +896,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_roi_simple.qmd >}}
-
-:::
-
-### Total DALYs from Full Timeline Shift: 213B DALYs {#sec-dfda_total_timeline_shift_dalys}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.
-
-**Inputs**:
-
-- [Total Lives Saved from Average Timeline Shift](#sec-dfda_total_timeline_shift_lives_saved) 🔢: 11.2B deaths
-
-*Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_total_timeline_shift_dalys.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_dalys.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_dalys.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_total_timeline_shift_dalys.qmd >}}
-
-:::
-
-### Total Economic Value from Full Timeline Shift: $32 quadrillion {#sec-dfda_total_timeline_shift_economic_value}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.
-
-**Inputs**:
-
-- [Total DALYs from Full Timeline Shift](#sec-dfda_total_timeline_shift_dalys) 🔢: 213B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
-
-$$
-Time_{DFDA,total} = DALYs_{DFDA,total} \times QALYs_{RD} = 213.26B \times \$150.0K = \$31989.75T
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_total_timeline_shift_economic_value.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_economic_value.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_economic_value.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_total_timeline_shift_economic_value.qmd >}}
-
-:::
-
-### Total Lives Saved from Average Timeline Shift: 11.2B deaths {#sec-dfda_total_timeline_shift_lives_saved}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).
-
-**Inputs**:
-
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-- [dFDA Average Total Timeline Shift](#sec-dfda_total_timeline_shift_years) 🔢: 220 years
-
-$$
-Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_total_timeline_shift_lives_saved.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_lives_saved.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_lives_saved.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_total_timeline_shift_lives_saved.qmd >}}
-
-:::
-
-### dFDA Average Total Timeline Shift: 220 years {#sec-dfda_total_timeline_shift_years}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.
-
-**Inputs**:
-
-- [dFDA Cure Timeline Acceleration](#sec-dfda_cure_timeline_acceleration_years) 🔢: 212 years
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
-
-$$
-TimelineShift_{avg} = 212 \text{ yrs} + 8.2 \text{ yrs} = 220 \text{ years}
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_total_timeline_shift_years.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_total_timeline_shift_years.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_years.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_total_timeline_shift_years.qmd >}}
 
 :::
 
@@ -949,6 +929,264 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trials_per_year_capacity.qmd >}}
+
+:::
+
+### dFDA Cure Timeline Acceleration: 212 years {#sec-dfda_trial_capacity_cure_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+
+**Inputs**:
+
+- [Status Quo Average Years to Cure](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+
+$$
+Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_cure_acceleration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_cure_acceleration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_cure_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_cure_acceleration_years.qmd >}}
+
+:::
+
+### DALYs Averted from Trial Capacity Increase: 205B DALYs {#sec-dfda_trial_capacity_dalys_averted}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.
+
+**Inputs**:
+
+- [Lives Saved from Trial Capacity Increase](#sec-dfda_trial_capacity_lives_saved) 🔢: 10.7B deaths
+
+*Formula*: `DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO`
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_dalys_averted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_dalys_averted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_dalys_averted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_dalys_averted.qmd >}}
+
+:::
+
+### Economic Value from Trial Capacity Increase: $30.8 quadrillion {#sec-dfda_trial_capacity_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.
+
+**Inputs**:
+
+- [DALYs Averted from Trial Capacity Increase](#sec-dfda_trial_capacity_dalys_averted) 🔢: 205B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+Increase_{DFDA} = Increase_{DFDA} \times QALYs_{RD} = 205.32B \times \$150.0K = \$30798.33T
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_economic_value.qmd >}}
+
+:::
+
+### Lives Saved from Trial Capacity Increase: 10.7B deaths {#sec-dfda_trial_capacity_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 212 years
+
+$$
+Lives_{trial\ capacity} = 54.75M \times 212 \times 92.1\% = 10.7B
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_lives_saved.qmd >}}
+
+:::
+
+### Total DALYs from Full Timeline Shift: 213B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.
+
+**Inputs**:
+
+- [Total Lives Saved from Average Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 11.2B deaths
+
+*Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+:::
+
+### Total Economic Value from Full Timeline Shift: $32 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.
+
+**Inputs**:
+
+- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 213B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+Capacity_{DFDA} = DALYs_{DFDA} \times QALYs_{RD} = 213.26B \times \$150.0K = \$31989.75T
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+:::
+
+### Total Lives Saved from Average Timeline Shift: 11.2B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 220 years
+
+$$
+Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+:::
+
+### dFDA Average Total Timeline Shift: 220 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.
+
+**Inputs**:
+
+- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 212 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+
+$$
+TimelineShift_{avg} = 212 \text{ yrs} + 8.2 \text{ yrs} = 220 \text{ years}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
 
 :::
 
@@ -1086,252 +1324,6 @@ $$
 
 :::
 
-### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-disease_eradication_delay_dalys}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
-
-**Inputs**:
-
-- [Years of Life Lost from Disease Eradication Delay](#sec-disease_eradication_delay_yll) 🔢: 7.07B years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-disease_eradication_delay_yld) 🔢: 873M years
-
-$$
-DALY_{total} = 7.03B \text{ (YLL)} + 0.87B \text{ (YLD)} = 7.90B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_dalys.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_dalys.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_delay_dalys.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_delay_dalys.qmd >}}
-
-:::
-
-### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-disease_eradication_delay_deaths_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
-
-**Inputs**:
-
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-
-$$
-D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_deaths_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_deaths_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_delay_deaths_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_delay_deaths_total.qmd >}}
-
-:::
-
-### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-disease_eradication_delay_economic_loss}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
-
-**Inputs**:
-
-- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
-
-$$
-Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_economic_loss.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_economic_loss.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_delay_economic_loss.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_delay_economic_loss.qmd >}}
-
-:::
-
-### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-disease_eradication_delay_yld}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Years Lived with Disability during disease eradication delay (PRIMARY estimate)
-
-**Inputs**:
-
-- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
-- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
-- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
-
-$$
-Delay_{dis} = Deaths_{total} \times Deaths \times Chronic = 415.9M \times 6 \times 0.35 = 873.3M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_yld.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_yld.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_delay_yld.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_delay_yld.qmd >}}
-
-:::
-
-### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-disease_eradication_delay_yll}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
-
-**Inputs**:
-
-- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
-
-$$
-YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_yll.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_yll.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_delay_yll.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_delay_yll.qmd >}}
-
-:::
-
-### Total Deaths from Disease Eradication + Innovation Acceleration: 898M deaths {#sec-disease_eradication_plus_acceleration_deaths_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.
-
-**Inputs**:
-
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-
-$$
-D_{total} = (54.75M \times 2) \times 8.2 = 898M
-$$
-
-**Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_plus_acceleration_deaths_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_plus_acceleration_deaths_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_plus_acceleration_deaths_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_plus_acceleration_deaths_total.qmd >}}
-
-:::
-
-### Total Economic Loss from Disease Eradication + Innovation Acceleration: $2.38 quadrillion {#sec-disease_eradication_plus_acceleration_economic_loss_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).
-
-**Inputs**:
-
-- [Total Economic Loss from Disease Eradication Delay](#sec-disease_eradication_delay_economic_loss) 🔢: $1.19 quadrillion
-
-$$
-Loss_{total} = \$1,286T \times 2 = \$2,572T
-$$
-
-**Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
-
-:::
-
 ### Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680 ratio {#sec-dividend_coverage_factor}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -1459,6 +1451,77 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-drug_disease_combinations_possible.qmd >}}
+
+:::
+
+### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+
+$$
+D_{total} = 12M \times 8.2 = 98.4M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
+
+### Total Economic Loss from Historical Progress Delays: $251T {#sec-existing_drugs_efficacy_lag_economic_loss}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 98.4M deaths
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+Loss_{total} = 98.4M \times 17 \times \$150k = \$251T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_economic_loss.qmd >}}
 
 :::
 
@@ -2068,77 +2131,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_total_health_and_war_cost_annual.qmd >}}
-
-:::
-
-### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-historical_progress_deaths_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.
-
-**Inputs**:
-
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
-
-$$
-D_{total} = 12M \times 8.2 = 98.4M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-historical_progress_deaths_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-historical_progress_deaths_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-historical_progress_deaths_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-historical_progress_deaths_total.qmd >}}
-
-:::
-
-### Total Economic Loss from Historical Progress Delays: $251T {#sec-historical_progress_economic_loss_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total economic loss from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.
-
-**Inputs**:
-
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Total Deaths from Historical Progress Delays](#sec-historical_progress_deaths_total) 🔢: 98.4M deaths
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
-
-$$
-Loss_{total} = 98.4M \times 17 \times \$150k = \$251T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-historical_progress_economic_loss_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-historical_progress_economic_loss_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-historical_progress_economic_loss_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-historical_progress_economic_loss_total.qmd >}}
 
 :::
 
@@ -3015,7 +3007,7 @@ Total hours of human suffering eliminated by 8.2-year disease eradication timeli
 
 **Inputs**:
 
-- [Years Lived with Disability During Disease Eradication Delay](#sec-disease_eradication_delay_yld) 🔢: 873M years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
 
 $$
 Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T
@@ -3415,55 +3407,19 @@ $$
 
 :::
 
-### Treaty ROI - Lag Elimination (PRIMARY): 1.19M ratio {#sec-treaty_complete_roi_all_benefits}
+### Cost per DALY Averted (Timeline Shift): $0.0047 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
-
-**Inputs**:
-
-- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-
-$$
-ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
-$$
-
-**Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_complete_roi_all_benefits.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_complete_roi_all_benefits.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_complete_roi_all_benefits.qmd >}}
-
-:::
-
-### Cost per DALY Averted (Timeline Shift): $0.126 {#sec-treaty_dfda_cost_per_daly_timeline_shift}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 706x more cost-effective than bed nets while also being self-funding.
+Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x trial capacity + ~8.2 years from efficacy lag elimination). This only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY.
 
 **Inputs**:
 
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 213B DALYs
 
 $$
-Cost_{DFDA,treaty} = \frac{Cost_{camp,total}}{DALYs_{dis}} = \frac{\$1.00B}{7.94B} = \$0.126
+Cost_{treaty} = \frac{Cost_{camp,total}}{DALYs_{DFDA}} = \frac{\$1.00B}{213.26B} = \$0.005
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
@@ -3472,21 +3428,21 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/tornado-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/mc-distribution-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/exceedance-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
 :::
 
-### Expected Cost per DALY (Risk-Adjusted): $13 {#sec-treaty_expected_cost_per_daly}
+### Expected Cost per DALY (Risk-Adjusted): $0.469 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3494,7 +3450,7 @@ Expected cost per DALY accounting for political success probability uncertainty.
 
 **Inputs**:
 
-- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_dfda_cost_per_daly_timeline_shift) 🔢: $0.126
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0047
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
@@ -3521,7 +3477,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 7.07 ratio {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 190 ratio {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3530,10 +3486,10 @@ Expected value multiplier vs bed nets (accounts for political uncertainty at 1% 
 **Inputs**:
 
 - [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $13
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.469
 
 $$
-Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$12.59} = 7.07
+Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.469} = 190
 $$
 
 *? Low confidence*
@@ -3598,10 +3554,10 @@ Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessm
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 
 $$
-Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.57B + \$30.00B = \$143.57B
+Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$30.00B = \$143.57B
 $$
 
 **Methodology**: [../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits](../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits)
@@ -3694,19 +3650,19 @@ $$
 
 :::
 
-### Treaty ROI - Historical Rate (Conservative Floor): 251k ratio {#sec-treaty_roi_historical_rate}
+### Treaty ROI - Historical Rate (Existing Drugs): 251k ratio {#sec-treaty_roi_existing_drugs_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
+Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost. Excludes future innovation effects.
 
 **Inputs**:
 
-- [Total Economic Loss from Historical Progress Delays](#sec-historical_progress_economic_loss_total) 🔢: $251T
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $251T
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
-ROI_{treaty} = \frac{Delay_{total}}{Cost_{camp,total}} = \frac{\$250.92T}{\$1.00B} = 251{,}000
+ROI_{treaty} = \frac{Delay}{Cost_{camp,total}} = \frac{\$250.92T}{\$1.00B} = 251{,}000
 $$
 
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
@@ -3715,69 +3671,33 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_roi_historical_rate.qmd >}}
+{{< include ../figures/tornado-treaty_roi_existing_drugs_only.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_roi_historical_rate.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_roi_historical_rate.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_roi_historical_rate.qmd >}}
-
-:::
-
-### Treaty ROI - Innovation Acceleration (Optimistic): 2.38M ratio {#sec-treaty_roi_innovation_acceleration}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
-
-**Inputs**:
-
-- [Total Economic Loss from Disease Eradication + Innovation Acceleration](#sec-disease_eradication_plus_acceleration_economic_loss_total) 🔢: $2.38 quadrillion
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-
-$$
-ROI_{treaty} = \frac{Ratio_{total}}{Cost_{camp,total}} = \frac{\$2382.84T}{\$1.00B} = 2.4M
-$$
-
-**Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_roi_innovation_acceleration.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_roi_innovation_acceleration.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_roi_existing_drugs_only.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_roi_innovation_acceleration.qmd >}}
+{{< include ../figures/mc-distribution-treaty_roi_existing_drugs_only.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_roi_innovation_acceleration.qmd >}}
+{{< include ../figures/exceedance-treaty_roi_existing_drugs_only.qmd >}}
 
 :::
 
-### Treaty ROI - Lag Elimination (PRIMARY): 1.19M ratio {#sec-treaty_roi_lag_elimination}
+### Treaty ROI - Full Timeline Shift (PRIMARY): 32.0M ratio {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
+Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capacity + ~8.2 years from efficacy lag elimination). Total one-time benefit divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Total Economic Value from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $32 quadrillion
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
-ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
+ROI_{treaty} = \frac{Capacity_{DFDA}}{Cost_{camp,total}} = \frac{\$31989.75T}{\$1.00B} = 32M
 $$
 
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
@@ -3786,17 +3706,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_roi_lag_elimination.qmd >}}
+{{< include ../figures/tornado-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_roi_lag_elimination.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_roi_lag_elimination.qmd >}}
+{{< include ../figures/mc-distribution-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_roi_lag_elimination.qmd >}}
+{{< include ../figures/exceedance-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 :::
 
@@ -3835,42 +3755,7 @@ $$
 
 :::
 
-### 1% treaty Recurring Annual Benefits: $144B {#sec-treaty_total_complete_benefits_annual}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
-
-**Inputs**:
-
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
-- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-
-$$
-Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.57B = \$143.57B
-$$
-
-**Methodology**: [../economics/economics](../economics/economics)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_total_complete_benefits_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_total_complete_benefits_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_total_complete_benefits_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_total_complete_benefits_annual.qmd >}}
-
-:::
-
-### Cost-Effectiveness vs Bed Nets Multiplier: 707 ratio {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 19.0k ratio {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3879,10 +3764,10 @@ How many times more cost-effective than bed nets (using $89/DALY midpoint estima
 **Inputs**:
 
 - [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_dfda_cost_per_daly_timeline_shift) 🔢: $0.126
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0047
 
 $$
-Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{DFDA,treaty}} = \frac{\$89}{\$0.126} = 707
+Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.005} = 19{,}000
 $$
 
 *✓ High confidence*
@@ -3976,11 +3861,11 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
 - [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
 
 $$
-Cost = \frac{DALYs_{dis}}{DALYs} = \frac{7.94B}{2.6M} = 3{,}070
+Cost = \frac{DALYs_{DFDA}}{DALYs} = \frac{7.94B}{2.6M} = 3{,}070
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)

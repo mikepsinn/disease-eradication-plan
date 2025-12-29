@@ -1582,7 +1582,7 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition",
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
-  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
+  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -1631,26 +1631,75 @@ export const DFDA_CURES_PER_YEAR: Parameter = {
   latex: "CuresPerYear_{dFDA} = 15 \\times 23 = 343 \\text{ diseases/year}",
 };
 
-export const DFDA_CURE_TIMELINE_ACCELERATION_YEARS: Parameter = {
-  value: 211.97130141190914,
-  unit: "years",
-  displayName: "dFDA Cure Timeline Acceleration",
-  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+export const DFDA_EFFICACY_LAG_ELIMINATION_DALYS: Parameter = {
+  value: 7942783571.3,
+  unit: "DALYs",
+  displayName: "Total DALYs Lost from Disease Eradication Delay",
+  description: "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
   sourceType: "calculated",
-  confidence: "low",
-  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
-  latex: "Accel_{dFDA} = 222 \\text{ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
+  confidence: "medium",
+  formula: "YLL + YLD",
+  latex: "DALY_{total} = 7.03B \\text{ (YLL)} + 0.87B \\text{ (YLD)} = 7.90B",
+};
+
+export const DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED: Parameter = {
+  value: 415852543.0,
+  unit: "deaths",
+  displayName: "Total Deaths from Disease Eradication Delay",
+  description: "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay",
+  confidence: "medium",
+  formula: "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+  latex: "D_{total} = 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M",
+};
+
+export const DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE: Parameter = {
+  value: 1191417535695000.0,
+  unit: "USD",
+  displayName: "Total Economic Loss from Disease Eradication Delay",
+  description: "Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#economic-valuation",
+  confidence: "medium",
+  formula: "DALYS_TOTAL × VSLY",
+  latex: "Loss = 7.90B \\times \\$150k = \\$1.185\\text{ quadrillion}",
+};
+
+export const DFDA_EFFICACY_LAG_ELIMINATION_YLD: Parameter = {
+  value: 873290340.3,
+  unit: "years",
+  displayName: "Years Lived with Disability During Disease Eradication Delay",
+  description: "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
+  confidence: "medium",
+  formula: "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
+  latex: "Delay_{DFDA} = Deaths_{DFDA} \\times Deaths \\times Chronic = 415.9M \\times 6 \\times 0.35 = 873.3M",
+};
+
+export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
+  value: 7069493231.0,
+  unit: "years",
+  displayName: "Years of Life Lost from Disease Eradication Delay",
+  description: "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
+  confidence: "medium",
+  formula: "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
+  latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
 };
 
 export const DFDA_EXPECTED_ROI: Parameter = {
-  value: 11914.175356950002,
+  value: 319897.4996475,
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
   description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
   sourceType: "calculated",
   sourceRef: "calculated",
   confidence: "low",
-  formula: "TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY",
-  latex: "E[ROI] = ROI_{conditional} \\times P_{success} = ROI_{treaty} \\times 0.01",
+  formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
+  latex: "ROI_{DFDA,exp} = ROI_{treaty} \\times Probability = 32M \\times 1.0\\% = 320{,}000",
 };
 
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
@@ -1748,18 +1797,6 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
   latex: "QueueClearance_{dFDA} = \\frac{443 \\text{ years}}{23} = 19 \\text{ years}",
 };
 
-export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
-  value: 30000000000.0,
-  unit: "USD/year",
-  displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
-  description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
-  confidence: "high",
-  formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
-  latex: "Benefit_{gross,ann} = Trials_{ann} \\times Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B",
-};
-
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
   value: 82191780.8219178,
   unit: "USD/day",
@@ -1793,50 +1830,7 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
-  latex: "ROI_{DFDA} = \\frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \\frac{\\$30.00B}{\\$40.0M} = 750",
-};
-
-export const DFDA_TOTAL_TIMELINE_SHIFT_DALYS: Parameter = {
-  value: 213264999765.0,
-  unit: "DALYs",
-  displayName: "Total DALYs from Full Timeline Shift",
-  description: "Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
-};
-
-export const DFDA_TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE: Parameter = {
-  value: 3.198974996475e+16,
-  unit: "USD",
-  displayName: "Total Economic Value from Full Timeline Shift",
-  description: "Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "DALYS × STANDARD_QALY_VALUE",
-  latex: "Time_{DFDA,total} = DALYs_{DFDA,total} \\times QALYs_{RD} = 213.26B \\times \\$150.0K = \\$31989.75T",
-};
-
-export const DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED: Parameter = {
-  value: 11165706794.0,
-  unit: "deaths",
-  displayName: "Total Lives Saved from Average Timeline Shift",
-  description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "ANNUAL_DEATHS × DFDA_TOTAL_TIMELINE_SHIFT_YEARS × AVOIDABLE_PCT",
-  latex: "Lives_{saved} = 54.75M \\times 220 \\times 92.1\\% = 11.1B",
-};
-
-export const DFDA_TOTAL_TIMELINE_SHIFT_YEARS: Parameter = {
-  value: 220.17130141190913,
-  unit: "years",
-  displayName: "dFDA Average Total Timeline Shift",
-  description: "Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "DFDA_CURE_TIMELINE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
-  latex: "TimelineShift_{avg} = 212 \\text{ yrs} + 8.2 \\text{ yrs} = 220 \\text{ years}",
+  latex: "ROI_{DFDA} = \\frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \\frac{\\$30.00B}{\\$40.0M} = 750",
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
@@ -1848,6 +1842,92 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   confidence: "high",
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
   latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.9 = 75{,}400",
+};
+
+export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
+  value: 211.97130141190914,
+  unit: "years",
+  displayName: "dFDA Cure Timeline Acceleration",
+  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
+  latex: "Accel_{dFDA} = 222 \\text{ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}",
+};
+
+export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
+  value: 205322216175.0,
+  unit: "DALYs",
+  displayName: "DALYs Averted from Trial Capacity Increase",
+  description: "Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
+};
+
+export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
+  value: 3.079833242625e+16,
+  unit: "USD",
+  displayName: "Economic Value from Trial Capacity Increase",
+  description: "Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
+  latex: "Increase_{DFDA} = Increase_{DFDA} \\times QALYs_{RD} = 205.32B \\times \\$150.0K = \\$30798.33T",
+};
+
+export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
+  value: 10749854250.0,
+  unit: "deaths",
+  displayName: "Lives Saved from Trial Capacity Increase",
+  description: "Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT",
+  latex: "Lives_{trial\\ capacity} = 54.75M \\times 212 \\times 92.1\\% = 10.7B",
+};
+
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
+  value: 213264999765.0,
+  unit: "DALYs",
+  displayName: "Total DALYs from Full Timeline Shift",
+  description: "Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
+};
+
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
+  value: 3.198974996475e+16,
+  unit: "USD",
+  displayName: "Total Economic Value from Full Timeline Shift",
+  description: "Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DALYS × STANDARD_QALY_VALUE",
+  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times QALYs_{RD} = 213.26B \\times \\$150.0K = \\$31989.75T",
+};
+
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
+  value: 11165706794.0,
+  unit: "deaths",
+  displayName: "Total Lives Saved from Average Timeline Shift",
+  description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT",
+  latex: "Lives_{saved} = 54.75M \\times 220 \\times 92.1\\% = 11.1B",
+};
+
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
+  value: 220.17130141190913,
+  unit: "years",
+  displayName: "dFDA Average Total Timeline Shift",
+  description: "Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+  latex: "TimelineShift_{avg} = 212 \\text{ yrs} + 8.2 \\text{ yrs} = 220 \\text{ years}",
 };
 
 export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
@@ -1897,90 +1977,6 @@ export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
   latex: "DiseasesWithoutTreatment = 7{,}000 \\times 0.95 = 6{,}650",
 };
 
-export const DISEASE_ERADICATION_DELAY_DALYS: Parameter = {
-  value: 7942783571.3,
-  unit: "DALYs",
-  displayName: "Total DALYs Lost from Disease Eradication Delay",
-  description: "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
-  confidence: "medium",
-  formula: "YLL + YLD",
-  latex: "DALY_{total} = 7.03B \\text{ (YLL)} + 0.87B \\text{ (YLD)} = 7.90B",
-};
-
-export const DISEASE_ERADICATION_DELAY_DEATHS_TOTAL: Parameter = {
-  value: 415852543.0,
-  unit: "deaths",
-  displayName: "Total Deaths from Disease Eradication Delay",
-  description: "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay",
-  confidence: "medium",
-  formula: "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
-  latex: "D_{total} = 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M",
-};
-
-export const DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS: Parameter = {
-  value: 1191417535695000.0,
-  unit: "USD",
-  displayName: "Total Economic Loss from Disease Eradication Delay",
-  description: "Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#economic-valuation",
-  confidence: "medium",
-  formula: "DALYS_TOTAL × VSLY",
-  latex: "Loss = 7.90B \\times \\$150k = \\$1.185\\text{ quadrillion}",
-};
-
-export const DISEASE_ERADICATION_DELAY_YLD: Parameter = {
-  value: 873290340.3,
-  unit: "years",
-  displayName: "Years Lived with Disability During Disease Eradication Delay",
-  description: "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
-  confidence: "medium",
-  formula: "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
-  latex: "Delay_{dis} = Deaths_{total} \\times Deaths \\times Chronic = 415.9M \\times 6 \\times 0.35 = 873.3M",
-};
-
-export const DISEASE_ERADICATION_DELAY_YLL: Parameter = {
-  value: 7069493231.0,
-  unit: "years",
-  displayName: "Years of Life Lost from Disease Eradication Delay",
-  description: "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
-  confidence: "medium",
-  formula: "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
-  latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
-};
-
-export const DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL: Parameter = {
-  value: 897899999.9999999,
-  unit: "deaths",
-  displayName: "Total Deaths from Disease Eradication + Innovation Acceleration",
-  description: "Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/references#pharmaceutical-innovation-acceleration-economics",
-  confidence: "low",
-  formula: "(ANNUAL_DEATHS × 2) × EFFICACY_LAG_YEARS",
-  latex: "D_{total} = (54.75M \\times 2) \\times 8.2 = 898M",
-};
-
-export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Parameter = {
-  value: 2382835071390000.0,
-  unit: "USD",
-  displayName: "Total Economic Loss from Disease Eradication + Innovation Acceleration",
-  description: "Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/references#pharmaceutical-innovation-acceleration-economics",
-  confidence: "low",
-  formula: "PRIMARY_TOTAL × 2 (combined timeline + volume effects)",
-  latex: "Loss_{total} = \\$1,286T \\times 2 = \\$2,572T",
-};
-
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   value: 680.0,
   unit: "ratio",
@@ -2027,6 +2023,30 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   confidence: "high",
   formula: "SAFE_COMPOUNDS × DISEASES",
   latex: "N_{combinations} = N_{compounds} \\times N_{diseases} = 9{,}500 \\times 1{,}000 = 9{,}500{,}000",
+};
+
+export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
+  value: 98399999.99999999,
+  unit: "deaths",
+  displayName: "Total Deaths from Historical Progress Delays",
+  description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
+  confidence: "high",
+  formula: "12M × EFFICACY_LAG_YEARS",
+  latex: "D_{total} = 12M \\times 8.2 = 98.4M",
+};
+
+export const EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS: Parameter = {
+  value: 250919999999999.97,
+  unit: "USD",
+  displayName: "Total Economic Loss from Historical Progress Delays",
+  description: "Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
+  confidence: "high",
+  formula: "DEATHS_TOTAL × YLL × VSLY",
+  latex: "Loss_{total} = 98.4M \\times 17 \\times \\$150k = \\$251T",
 };
 
 export const EXPLORATION_RATIO: Parameter = {
@@ -2230,30 +2250,6 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   confidence: "high",
   formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
   latex: "Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \\$11.36T + \\$109.10T + \\$8.20T = \\$128.66T",
-};
-
-export const HISTORICAL_PROGRESS_DEATHS_TOTAL: Parameter = {
-  value: 98399999.99999999,
-  unit: "deaths",
-  displayName: "Total Deaths from Historical Progress Delays",
-  description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
-  confidence: "high",
-  formula: "12M × EFFICACY_LAG_YEARS",
-  latex: "D_{total} = 12M \\times 8.2 = 98.4M",
-};
-
-export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
-  value: 250919999999999.97,
-  unit: "USD",
-  displayName: "Total Economic Loss from Historical Progress Delays",
-  description: "Total economic loss from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
-  confidence: "high",
-  formula: "DEATHS_TOTAL × YLL × VSLY",
-  latex: "Loss_{total} = 98.4M \\times 17 \\times \\$150k = \\$251T",
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
@@ -2689,32 +2685,20 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   latex: "Campaign_{camp,treaty} = Population_{global} \\times Threshold_{global} = 8.00B \\times 3.5\\% = 280M",
 };
 
-export const TREATY_COMPLETE_ROI_ALL_BENEFITS: Parameter = {
-  value: 1191417.535695,
-  unit: "ratio",
-  displayName: "Treaty ROI - Lag Elimination (PRIMARY)",
-  description: "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
-  confidence: "medium",
-  formula: "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
-  latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
-};
-
-export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
-  value: 0.12590044674178746,
+export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
+  value: 0.004689001951102691,
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Timeline Shift)",
-  description: "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 706x more cost-effective than bed nets while also being self-funding.",
+  description: "Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x trial capacity + ~8.2 years from efficacy lag elimination). This only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "Cost_{DFDA,treaty} = \\frac{Cost_{camp,total}}{DALYs_{dis}} = \\frac{\\$1.00B}{7.94B} = \\$0.126",
+  latex: "Cost_{treaty} = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1.00B}{213.26B} = \\$0.005",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
-  value: 12.590044674178746,
+  value: 0.46890019511026915,
   unit: "USD/DALY",
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
   description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
@@ -2726,14 +2710,14 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
 };
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 7.069077378457,
+  value: 189.80584979085,
   unit: "ratio",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
   description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$12.59} = 7.07",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.469} = 190",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -2757,7 +2741,7 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
-  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
+  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
 };
 
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
@@ -2784,40 +2768,28 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B",
 };
 
-export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
+export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
   value: 250919.99999999997,
   unit: "ratio",
-  displayName: "Treaty ROI - Historical Rate (Conservative Floor)",
-  description: "Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.",
+  displayName: "Treaty ROI - Historical Rate (Existing Drugs)",
+  description: "Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost. Excludes future innovation effects.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "high",
   formula: "HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
-  latex: "ROI_{treaty} = \\frac{Delay_{total}}{Cost_{camp,total}} = \\frac{\\$250.92T}{\\$1.00B} = 251{,}000",
+  latex: "ROI_{treaty} = \\frac{Delay}{Cost_{camp,total}} = \\frac{\\$250.92T}{\\$1.00B} = 251{,}000",
 };
 
-export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
-  value: 2382835.07139,
+export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
+  value: 31989749.96475,
   unit: "ratio",
-  displayName: "Treaty ROI - Innovation Acceleration (Optimistic)",
-  description: "Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
-  confidence: "low",
-  formula: "DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
-  latex: "ROI_{treaty} = \\frac{Ratio_{total}}{Cost_{camp,total}} = \\frac{\\$2382.84T}{\\$1.00B} = 2.4M",
-};
-
-export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
-  value: 1191417.535695,
-  unit: "ratio",
-  displayName: "Treaty ROI - Lag Elimination (PRIMARY)",
-  description: "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+  displayName: "Treaty ROI - Full Timeline Shift (PRIMARY)",
+  description: "Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capacity + ~8.2 years from efficacy lag elimination). Total one-time benefit divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "medium",
-  formula: "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
-  latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
+  latex: "ROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}} = \\frac{\\$31989.75T}{\\$1.00B} = 32M",
 };
 
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
@@ -2832,27 +2804,15 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   latex: "Cost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann} = \\$40.0M + \\$250.0M = \\$290.0M",
 };
 
-export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
-  value: 143571000000.0,
-  unit: "USD/year",
-  displayName: "1% treaty Recurring Annual Benefits",
-  description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
-  confidence: "high",
-  formula: "PEACE_DIVIDEND + RD_SAVINGS",
-  latex: "Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B",
-};
-
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 706.9077378456999,
+  value: 18980.584979085,
   unit: "ratio",
   displayName: "Cost-Effectiveness vs Bed Nets Multiplier",
   description: "How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{DFDA,treaty}} = \\frac{\\$89}{\\$0.126} = 707",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.005} = 19{,}000",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
@@ -2886,7 +2846,7 @@ export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#risk-analysis",
   confidence: "medium",
   formula: "TYPE_II_COST ÷ TYPE_I_BENEFIT",
-  latex: "Cost = \\frac{DALYs_{dis}}{DALYs} = \\frac{7.94B}{2.6M} = 3{,}070",
+  latex: "Cost = \\frac{DALYs_{DFDA}}{DALYs} = \\frac{7.94B}{2.6M} = 3{,}070",
 };
 
 export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
@@ -4089,7 +4049,11 @@ export const parameters = {
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER,
   DFDA_CURES_PER_YEAR,
-  DFDA_CURE_TIMELINE_ACCELERATION_YEARS,
+  DFDA_EFFICACY_LAG_ELIMINATION_DALYS,
+  DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED,
+  DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE,
+  DFDA_EFFICACY_LAG_ELIMINATION_YLD,
+  DFDA_EFFICACY_LAG_ELIMINATION_YLL,
   DFDA_EXPECTED_ROI,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
@@ -4099,30 +4063,28 @@ export const parameters = {
   DFDA_NPV_TOTAL_COST,
   DFDA_NPV_UPFRONT_COST_TOTAL,
   DFDA_QUEUE_CLEARANCE_YEARS,
-  DFDA_RD_GROSS_SAVINGS_ANNUAL,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
   DFDA_ROI_SIMPLE,
-  DFDA_TOTAL_TIMELINE_SHIFT_DALYS,
-  DFDA_TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE,
-  DFDA_TOTAL_TIMELINE_SHIFT_LIVES_SAVED,
-  DFDA_TOTAL_TIMELINE_SHIFT_YEARS,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
+  DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS,
+  DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
+  DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE,
+  DFDA_TRIAL_CAPACITY_LIVES_SAVED,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS,
   DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER,
   DIH_PATIENTS_FUNDABLE_ANNUALLY,
   DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL,
   DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
-  DISEASE_ERADICATION_DELAY_DALYS,
-  DISEASE_ERADICATION_DELAY_DEATHS_TOTAL,
-  DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS,
-  DISEASE_ERADICATION_DELAY_YLD,
-  DISEASE_ERADICATION_DELAY_YLL,
-  DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL,
-  DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL,
   DIVIDEND_COVERAGE_FACTOR,
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+  EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
+  EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
@@ -4140,8 +4102,6 @@ export const parameters = {
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
-  HISTORICAL_PROGRESS_DEATHS_TOTAL,
-  HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN,
@@ -4179,19 +4139,16 @@ export const parameters = {
   TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED,
   TREATY_CAMPAIGN_TOTAL_COST,
   TREATY_CAMPAIGN_VOTING_BLOC_TARGET,
-  TREATY_COMPLETE_ROI_ALL_BENEFITS,
-  TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT,
+  TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_EXPECTED_COST_PER_DALY,
   TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER,
   TREATY_LIVES_SAVED_ANNUAL_GLOBAL,
   TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS,
   TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
   TREATY_RECURRING_BENEFITS_ANNUAL,
-  TREATY_ROI_HISTORICAL_RATE,
-  TREATY_ROI_INNOVATION_ACCELERATION,
-  TREATY_ROI_LAG_ELIMINATION,
+  TREATY_ROI_EXISTING_DRUGS_ONLY,
+  TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_TOTAL_ANNUAL_COSTS,
-  TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL,
   TREATY_VS_BED_NETS_MULTIPLIER,
   TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR,
   TRIAL_CAPACITY_MULTIPLIER,
@@ -5735,9 +5692,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 353,
+  total: 350,
   external: 137,
-  calculated: 119,
+  calculated: 116,
   definitions: 97,
   citations: 105,
 } as const;

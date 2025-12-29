@@ -69,9 +69,9 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.png
 
 ## Abstract
 
-On average, the typical disease cure becomes available to patients {{< var dfda_total_timeline_shift_years >}} years earlier - saving {{< var dfda_total_timeline_shift_lives_saved >}} lives, valued at {{< var dfda_total_timeline_shift_economic_value >}}. This shift can be achieved by redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials that allow patient access after Phase I safety trials. The intervention delivers healthcare's most cost-effective option: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
+On average, the typical disease cure becomes available to patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier - saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. This shift can be achieved by redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials that allow patient access after Phase I safety trials. The intervention delivers healthcare's most cost-effective option: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
 
-**Impact Mechanism**: The {{< var dfda_total_timeline_shift_years >}}-year average timeline shift combines two effects: (1) **Cure acceleration** ({{< var dfda_cure_timeline_acceleration_years >}} years on average) from {{< var trial_capacity_multiplier >}}× trial capacity that processes the disease queue faster ({{< var dfda_queue_clearance_years >}} years to cure all diseases vs {{< var status_quo_queue_clearance_years >}} years), and (2) **Efficacy lag elimination** ({{< var efficacy_lag_years >}} years) from deploying treatments without post-safety regulatory delay once discovered. Redirecting {{< var treaty_annual_funding >}}/year at {{< var recovery_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing centuries of traditional clinical research into decades. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. The total economic value of {{< var dfda_total_timeline_shift_economic_value >}} uses standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY) across {{< var dfda_total_timeline_shift_lives_saved >}} lives saved and {{< var dfda_total_timeline_shift_dalys >}} DALYs averted.
+**Impact Mechanism**: The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two effects: (1) **Cure acceleration** ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average) from {{< var trial_capacity_multiplier >}}× trial capacity that processes the disease queue faster ({{< var dfda_queue_clearance_years >}} years to cure all diseases vs {{< var status_quo_queue_clearance_years >}} years), and (2) **Efficacy lag elimination** ({{< var efficacy_lag_years >}} years) from deploying treatments without post-safety regulatory delay once discovered. Redirecting {{< var treaty_annual_funding >}}/year at {{< var recovery_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing centuries of traditional clinical research into decades. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} uses standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY) across {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted.
 
 **Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials confirms the intervention maintains cost-dominance under all plausible parameter scenarios.
 
@@ -87,17 +87,17 @@ On average, the typical disease cure becomes available to patients {{< var dfda_
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Total Economic Value** | {{< var dfda_total_timeline_shift_economic_value >}} | {{< var dfda_total_timeline_shift_lives_saved >}} lives × standard QALY valuation |
-| **Cost-Effectiveness** | {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY | {{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) |
+| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives × standard QALY valuation |
+| **Cost-Effectiveness** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY | {{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) |
 | **Cost-Effectiveness (Risk-Adjusted)** | {{< var treaty_expected_cost_per_daly >}}/DALY | At {{< var political_success_probability >}} success probability, still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets |
 | **ROI (Conservative)** | {{< var dfda_roi_rd_only >}}:1 | Trial cost savings only ({{< var trial_cost_reduction_factor >}}× cheaper per patient) |
-| **ROI (Complete)** | {{< var treaty_complete_roi_all_benefits >}}:1 | Includes peace dividend from reduced conflict costs |
-| **Lives Saved** | {{< var dfda_total_timeline_shift_lives_saved >}} | From {{< var dfda_total_timeline_shift_years >}}-year average timeline shift (average cure arrives earlier) |
-| **DALYs Averted** | {{< var dfda_total_timeline_shift_dalys >}} | Disability-adjusted life years (captures morbidity, not just mortality) |
+| **ROI (Complete)** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Includes peace dividend from reduced conflict costs |
+| **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | From {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (average cure arrives earlier) |
+| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Disability-adjusted life years (captures morbidity, not just mortality) |
 | **Research Acceleration** | {{< var trial_capacity_multiplier >}}× | {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 calendar years |
-| **Cure Timeline Acceleration** | {{< var dfda_cure_timeline_acceleration_years >}} years | Average disease cured earlier (vs. {{< var status_quo_avg_years_to_cure >}}-year status quo wait) |
+| **Cure Timeline Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years | Average disease cured earlier (vs. {{< var status_quo_avg_years_to_cure >}}-year status quo wait) |
 | **Queue Clearance** | {{< var dfda_queue_clearance_years >}} years | Time to cure ALL diseases (vs. {{< var status_quo_queue_clearance_years >}} years status quo) |
-| **Total Timeline Shift** | {{< var dfda_total_timeline_shift_years >}} years | Cure acceleration ({{< var dfda_cure_timeline_acceleration_years >}} yrs) + efficacy lag elimination ({{< var efficacy_lag_years >}} yrs) |
+| **Total Timeline Shift** | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years | Cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} yrs) + efficacy lag elimination ({{< var efficacy_lag_years >}} yrs) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}) exceed costs |
 
 **Bottom line**: Cost-dominant intervention. Saves money while saving lives. Comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
@@ -145,7 +145,7 @@ This intervention differs in four critical ways:
 
 This paper makes three contributions to health economics literature:
 
-1. **Quantification of regulatory delay costs**: First comprehensive estimate of lives lost and economic value foregone due to the {{< var efficacy_lag_years >}}-year efficacy trial delay, valued at {{< var disease_eradication_delay_economic_loss >}} using standard QALY methodology.
+1. **Quantification of regulatory delay costs**: First comprehensive estimate of lives lost and economic value foregone due to the {{< var efficacy_lag_years >}}-year efficacy trial delay, valued at {{< var dfda_efficacy_lag_elimination_economic_value >}} using standard QALY methodology.
 
 2. **Cost-effectiveness analysis under political uncertainty**: Demonstrates that even at {{< var political_success_probability >}} adoption probability, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) exceeds established interventions like malaria bed nets by {{< var treaty_expected_vs_bed_nets_multiplier >}}×.
 
@@ -156,7 +156,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 ## Research Hypothesis
 
-**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmatic clinical trials generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
+**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmatic clinical trials generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
@@ -352,23 +352,23 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 ## Summary of Results
 
-**{{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI**
+**{{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI**
 
 ### Total Economic Value
 
-**{{< var dfda_total_timeline_shift_economic_value >}}** in total economic value from the {{< var dfda_total_timeline_shift_years >}}-year timeline shift.
+**{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
 
-This is the monetized value of {{< var dfda_total_timeline_shift_lives_saved >}} lives saved and {{< var dfda_total_timeline_shift_dalys >}} healthy life-years gained. On average, disease cures become available {{< var dfda_total_timeline_shift_years >}} years earlier - combining cure acceleration ({{< var dfda_cure_timeline_acceleration_years >}} years average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} years from deploying treatments once discovered).
+This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained. On average, disease cures become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier - combining cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} years from deploying treatments once discovered).
 
 ##### Uncertainty Analysis: Total Economic Value
 
-{{< include ../figures/tornado-dfda_total_timeline_shift_economic_value.qmd >}}
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
 The tornado diagram shows that timeline shift duration and QALY valuation dominate the uncertainty in total economic value. Even under conservative parameter assumptions, the intervention generates quadrillions in economic value.
 
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_economic_value.qmd >}}
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
-Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for total economic value remains in the quadrillions, demonstrating that the {{< var dfda_total_timeline_shift_years >}}-year timeline shift generates exceptional economic value under all plausible scenarios.
+Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for total economic value remains in the quadrillions, demonstrating that the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift generates exceptional economic value under all plausible scenarios.
 
 **Investment required**: {{< var treaty_campaign_total_cost >}}
 
@@ -382,13 +382,13 @@ Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confide
 
 ### Cure Timeline Acceleration
 
-Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new cures/year, the average disease waits {{< var status_quo_avg_years_to_cure >}} years for a cure. With dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, cures arrive **{{< var dfda_cure_timeline_acceleration_years >}} years earlier**.
+Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new cures/year, the average disease waits {{< var status_quo_avg_years_to_cure >}} years for a cure. With dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, cures arrive **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**.
 
-{{< var dfda_cure_timeline_acceleration_years_latex >}}
+{{< var dfda_trial_capacity_cure_acceleration_years_latex >}}
 
-**Total Timeline Shift**: Combining cure acceleration ({{< var dfda_cure_timeline_acceleration_years >}} years) with efficacy lag elimination ({{< var efficacy_lag_years >}} years) yields a **{{< var dfda_total_timeline_shift_years >}}-year total timeline shift** in when patients receive effective treatments.
+**Total Timeline Shift**: Combining cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years) with efficacy lag elimination ({{< var efficacy_lag_years >}} years) yields a **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year total timeline shift** in when patients receive effective treatments.
 
-{{< var dfda_total_timeline_shift_years_latex >}}
+{{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
 ### Suffering Reduction
 
@@ -398,13 +398,13 @@ Under the status quo, {{< var diseases_without_effective_treatment >}} diseases 
 
 ### Lives Saved
 
-**{{< var dfda_total_timeline_shift_lives_saved >}} lives from {{< var dfda_total_timeline_shift_years >}}-year average timeline shift**
+**{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift**
 
-{{< var dfda_total_timeline_shift_lives_saved_latex >}}
+{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex >}}
 
 This total combines two effects:
 
-- **Cure acceleration ({{< var dfda_cure_timeline_acceleration_years >}} years on average)**: With {{< var trial_capacity_multiplier >}}× trial capacity, the average disease is cured ~{{< var dfda_cure_timeline_acceleration_years >}} years earlier
+- **Cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average)**: With {{< var trial_capacity_multiplier >}}× trial capacity, the average disease is cured ~{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier
 - **Efficacy lag elimination ({{< var efficacy_lag_years >}} years)**: Once discovered, treatments are deployed without post-safety delay
 - **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction; recurring annual benefit)
 
@@ -412,7 +412,7 @@ For context: **{{< var global_disease_deaths_daily >}} people die every day** un
 
 The Monte Carlo distribution below shows the range of lives saved estimates across 10,000 simulations, accounting for uncertainty in timeline shift, daily mortality rates, and avoidable death percentages:
 
-{{< include ../figures/mc-distribution-dfda_total_timeline_shift_lives_saved.qmd >}}
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
 ### Why "Eventually Avoidable" Matters
 
@@ -423,11 +423,11 @@ Of {{< var global_disease_deaths_daily >}} daily deaths:
 
 This differs from "currently preventable" deaths (20-30M annually via vaccines, sanitation, behavior change). The {{< var eventually_avoidable_death_pct >}} figure represents maximum achievable with advanced biotechnology over decades, not current interventions.
 
-The lives saved calculation measures **timeline acceleration**, not current curability. With a dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, the average disease is cured ~{{< var dfda_cure_timeline_acceleration_years >}} years earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases - some cures arrive much sooner (early in the queue), others somewhat later (end of queue), with {{< var dfda_cure_timeline_acceleration_years >}} years being the average acceleration.
+The lives saved calculation measures **timeline acceleration**, not current curability. With a dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, the average disease is cured ~{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases - some cures arrive much sooner (early in the queue), others somewhat later (end of queue), with {{< var dfda_trial_capacity_cure_acceleration_years >}} years being the average acceleration.
 
 ### Annual Savings
 
-{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_rd_gross_savings_annual >}} saved per year.
+{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_benefit_rd_only_annual >}} saved per year.
 
 
 * **Oxford RECOVERY** proved trials cost **{{< var trial_cost_reduction_factor >}}× less** by using existing hospital infrastructure instead of dedicated trial sites
@@ -458,7 +458,7 @@ This represents approximately the GDP of Austria, reallocated from military spen
 
 ### 2. The Research Efficiency Dividend
 
-{{< var dfda_rd_gross_savings_annual >}}–{{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}
+{{< var dfda_benefit_rd_only_annual >}}–{{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}
 
 Traditional trials require:
 
@@ -653,7 +653,7 @@ With $1B allocated toward saving lives, here's what each option delivers:
 
 | Intervention | Cost per DALY | Scale | Economic Model |
 |:-------------|:--------------|:------|:---------------|
-| **1% Treaty (Timeline Shift)** | {{< var treaty_dfda_cost_per_daly_timeline_shift >}} | {{< var disease_eradication_delay_dalys >}} | Cost-dominant (generates profit) |
+| **1% Treaty (Timeline Shift)** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Cost-dominant (generates profit) |
 | **1% Treaty (Expected Value)** | {{< var treaty_expected_cost_per_daly >}} | At {{< var political_success_probability >}} success probability | {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets |
 | **Malaria Bed Nets** | {{< var bed_nets_cost_per_daly >}} | Proven, scalable | Linear scaling |
 | **Childhood Vaccinations** | Self-funding | Annual benefit: ~{{< var childhood_vaccination_annual_benefit >}} | Self-funding |
@@ -747,9 +747,9 @@ Spending $1 returns ${{< var dfda_roi_rd_only >}}. This beats most legal activit
 
 **Complete scenario** (PRIMARY estimate including all core benefits):
 
-{{< var treaty_complete_roi_all_benefits_latex >}}
+{{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-A $1 billion campaign investment could plausibly generate: (1) a ~{{< var dfda_total_timeline_shift_years >}}-year average timeline shift (the average disease cure becomes available ~{{< var dfda_total_timeline_shift_years >}} years earlier), plus (2) ~${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
+A $1 billion campaign investment could plausibly generate: (1) a ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (the average disease cure becomes available ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier), plus (2) ~${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
 
 ## Cost-Effectiveness Analysis
 
@@ -761,9 +761,9 @@ Translation: "How much does it cost per year of healthy life created?"
 
 WHO says interventions under {{< var who_qaly_threshold_cost_effective >}} {{< var who_qaly_threshold_cost_effective_cite >}} per QALY are "cost-effective." Most successful health programs cost [$3,000-10,000](../references.qmd#who-cost-effectiveness-threshold) per QALY.
 
-This system's upfront cost: **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY**
+This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY**
 
-But here's the key: this intervention is **cost-dominant** (saves more money than it costs). The upfront campaign cost of {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits. Economists call this a "dominant intervention" because the choice between saving money and saving lives disappears.
+But here's the key: this intervention is **cost-dominant** (saves more money than it costs). The upfront campaign cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits. Economists call this a "dominant intervention" because the choice between saving money and saving lives disappears.
 
 This approach doesn't just cost money to save lives. It generates profit while saving lives.
 
@@ -774,9 +774,9 @@ This approach: "We saved a life as a side effect of doing profitable things"
 
 ### Expected Value Under Political Uncertainty
 
-**Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY
+**Conditional on success**: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY
 
-{{< var treaty_dfda_cost_per_daly_timeline_shift_latex >}}
+{{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag_latex >}}
 
 **Risk-adjusted expected value**: {{< var treaty_expected_cost_per_daly >}} per DALY
 
@@ -794,11 +794,11 @@ Monte Carlo simulation confirms that accounting for political risk, the 95% conf
 
 #### Uncertainty in Cost-Effectiveness (Conditional on Success)
 
-{{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/tornado-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
 The tornado diagram shows that timeline shift assumptions and discount rate dominate uncertainty in cost-effectiveness. Even under conservative parameter assumptions, the intervention remains highly cost-effective.
 
-{{< include ../figures/mc-distribution-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+{{< include ../figures/mc-distribution-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
 
 Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for cost per DALY remains well below $1/DALY across all scenarios, maintaining dominance over bed nets ({{< var bed_nets_cost_per_daly >}}/DALY).
 
@@ -818,7 +818,7 @@ where $C_{0}$ is upfront costs (platform development, legal structure, data inte
 
 #### NPV of Benefits
 
-**Note:** The NPV calculation includes **only annual recurring R&D savings**, not the one-time 8.2-year timeline shift in disease eradication. The timeline shift is a separate one-time benefit that occurs when the regulatory delay is eliminated (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
+**Note:** The NPV calculation includes **only annual recurring R&D savings**, not the timeline shift benefits. The full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years on average, combining cure acceleration and efficacy lag elimination) is a separate benefit analyzed below. This section focuses on the efficacy lag component ({{< var efficacy_lag_years >}} years) for NPV purposes. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
 Annual benefits $S(t)$ are calculated as:
 $$
@@ -836,29 +836,29 @@ The NPV of benefits (R&D savings only):
 
 This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over {{< var npv_time_horizon_years >}} years.
 
-**Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the one-time 8.2-year timeline shift in disease eradication, as this represents the primary health benefit from eliminating the regulatory delay (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
+**Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (cure acceleration + efficacy lag elimination), as this represents the primary health benefit. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
-For a dFDA's cost per health benefit averted (8.2-year timeline shift):
+For a dFDA's cost per health benefit averted (using the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
-**Cost per DALY averted: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}**
+**Cost per DALY averted: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}**
 
-This represents {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per year of healthy life gained. The negative ICER (cost-dominant intervention) indicates cost savings while improving health. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. The negative ICER (cost-dominant intervention) indicates cost savings while improving health. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
 #### NPV of Regulatory Delay Avoidance
 
-The conservative NPV above excludes the one-time benefit from eliminating the regulatory delay (8.2-year timeline shift in disease eradication). However, we can calculate the NPV of this benefit by modeling when it occurs.
+The conservative NPV above excludes the benefit from eliminating the regulatory delay. This section calculates the NPV of just the **efficacy lag component** ({{< var efficacy_lag_years >}} years) - a subset of the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
 
-**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them 8.2 years earlier (years 92-100). This is a simple timeline shift: the full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
+**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them {{< var efficacy_lag_years >}} years earlier. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
 
 The NPV of regulatory delay avoidance (assuming average cure time of 100 years):
 
-Using the disease eradication delay benefit of {{< var disease_eradication_delay_economic_loss >}}, applied across 8.2 years with future discounting at {{< var npv_discount_rate_standard >}}.
+Using the efficacy lag elimination benefit of {{< var dfda_efficacy_lag_elimination_economic_value >}}, applied across {{< var efficacy_lag_years >}} years with future discounting at {{< var npv_discount_rate_standard >}}.
 
-This yields an NPV assuming cures occur 100 years in the future on average. The discount factor at year 92 (when benefits begin) is approximately (1 + {{< var npv_discount_rate_standard >}})^92, making far-future benefits much smaller than if they occurred immediately.
+This yields an NPV assuming cures occur 100 years in the future on average. The discount factor at year ~92 (when benefits begin) makes far-future benefits much smaller than if they occurred immediately.
 
-**Calculation details**: The full annual benefit ({{< var disease_eradication_delay_economic_loss >}}) applies for all 8.2 years (years 92-100), with each year's value discounted back to present. This represents the monetized value of 8.2 years of QALYs/DALYs that occur 100 years in the future, shifted 8.2 years earlier by eliminating the regulatory delay.
+**Note**: This NPV calculation covers only the efficacy lag component ({{< var efficacy_lag_years >}} years). The cure acceleration component (~{{< var dfda_trial_capacity_cure_acceleration_years >}} years on average) would add substantially more value, but is harder to model with NPV due to uncertainty in when each disease would be cured.
 
-**Comparison**: The regulatory delay avoidance benefit ({{< var disease_eradication_delay_economic_loss >}} annually) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
+**Comparison**: The regulatory delay avoidance benefit ({{< var dfda_efficacy_lag_elimination_economic_value >}} annually) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
 
 **Key insight**: Eliminating the regulatory delay still provides value even if cures are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases are actually cured, which varies by disease category. Some may be cured in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to cure.
 
@@ -868,7 +868,7 @@ QALYs represent the standard metric in health economics for comparing health int
 
 ### QALY Calculation Model
 
-The total annual QALY gain ({{< var disease_eradication_delay_dalys >}} QALYs baseline) derives from three distinct benefit streams:
+The total annual QALY gain ({{< var dfda_efficacy_lag_elimination_dalys >}} QALYs baseline) derives from three distinct benefit streams:
 
 **A. Accelerated Development of Existing Pipeline Drugs**
 
@@ -876,7 +876,7 @@ Health gains from bringing effective treatments to patients faster through short
 
 - **Baseline:** Research shows treatment delays significantly increase cancer mortality, with studies indicating approximately [10%](https://www.lshtm.ac.uk/newsevents/news/2020/every-month-delayed-cancer-treatment-can-raise-risk-death-around-10) increased risk per month of delay ([systematic review](https://pubmed.ncbi.nlm.nih.gov/33148535/))
 - **Estimate:** 2-year average acceleration across pharmaceutical pipeline
-- **Impact:** Significant contribution to the total {{< var dfda_total_timeline_shift_dalys >}} DALYs averted from the average ~{{< var dfda_total_timeline_shift_years >}}-year timeline shift 
+- **Impact:** Significant contribution to the total {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift 
 
 **B. Improved Preventative Care via Real-World Evidence**
 
@@ -884,7 +884,7 @@ Value of using comprehensive data to optimize preventative care and treatment ef
 
 - **Baseline:** Cancer screenings alone have saved millions of life-years; significant untapped potential remains
 - **Mechanism:** Large-scale identification of at-risk populations and real-world effectiveness measurement
-- **Impact:** Contributes to the total {{< var dfda_total_timeline_shift_dalys >}} DALYs averted
+- **Impact:** Contributes to the total {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted
 
 **C. Enabling Research for Previously Untreatable Diseases**
 
@@ -892,13 +892,13 @@ Transformative potential to create viable research pathways for conditions ignor
 
 - **Baseline:** {{< var rare_diseases_count_global >}} {{< var rare_diseases_count_global_cite >}}+ rare diseases, 95% lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
-- **Impact:** Major contributor to the total {{< var dfda_total_timeline_shift_dalys >}} DALYs averted
+- **Impact:** Major contributor to the total {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted
 
 **QALY Valuation:** Standard economic valuations range from {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY. This analysis uses conservative mid-range values.
 
 The distribution below shows the uncertainty range in DALYs averted from the efficacy lag elimination component ({{< var efficacy_lag_years >}} years), based on Monte Carlo simulation of input parameter uncertainty:
 
-{{< include ../figures/mc-distribution-disease_eradication_delay_dalys.qmd >}}
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
@@ -916,7 +916,7 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a dFDA**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
 
-**Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
+**Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
 ## Peace Dividend Calculation Methodology
 
@@ -994,13 +994,13 @@ This queue-based calculation is empirically grounded: only ~5% of the ~7,000 rar
 - Trial capacity increases {{< var trial_capacity_multiplier >}}×, directly accelerating the cure queue
 - Cure rate: **{{< var dfda_cures_per_year >}} diseases/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
 - Queue clearance: **{{< var dfda_queue_clearance_years >}} years** to cure all diseases (vs {{< var status_quo_queue_clearance_years >}} years)
-- Average cure arrives **{{< var dfda_cure_timeline_acceleration_years >}} years earlier**
+- Average cure arrives **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**
 
 {{< var dfda_queue_clearance_years_latex >}}
 
-Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. The **total timeline shift** is {{< var dfda_total_timeline_shift_years >}} years (cure acceleration + efficacy lag elimination).
+Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. The **total timeline shift** is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years (cure acceleration + efficacy lag elimination).
 
-{{< var dfda_total_timeline_shift_years_latex >}}
+{{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
 *Note: Valley of death rescue ({{< var dfda_valley_of_death_rescue_multiplier >}}×) adds more drug candidates to the pipeline but doesn't directly accelerate queue processing, so is not included in the cure timeline calculation.*
 
@@ -1041,18 +1041,18 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 **Conservative Scenario ({{< var dfda_roi_rd_only >}}:1 ROI):**
 
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}}
-- QALY gains: {{< var disease_eradication_delay_dalys >}} annually
+- QALY gains: {{< var dfda_efficacy_lag_elimination_dalys >}} annually
 - Adoption timeline: {{< var dfda_npv_adoption_ramp_years >}} years to full adoption
 - Includes only R&D efficiency savings (excludes peace dividend and six additional benefit categories)
 
 
-**Optimistic Scenario ({{< var treaty_roi_lag_elimination >}}:1 ROI):**
+**Optimistic Scenario ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):**
 
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}} (RECOVERY trial-like efficiency)
-- QALY gains: {{< var disease_eradication_delay_dalys >}} annually
+- QALY gains: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
 - Faster adoption and broader scope
 
-**Complete Case ({{< var treaty_complete_roi_all_benefits >}}:1 ROI):**
+**Complete Case ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):**
 
 - Includes all eight quantifiable benefit categories
 - Peace dividend: {{< var peace_dividend_annual_societal_benefit >}}
@@ -1153,7 +1153,7 @@ The cost reduction estimates (50-95%) are conservative relative to historical co
 
 **Justification:** Historical treaty adoption timelines vary (Nuclear Non-Proliferation Treaty: 3 years; Paris Climate Agreement: 5 years). This analysis focuses on economic value *conditional* on implementation, not probability of political success.
 
-**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case ({{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
+**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case ({{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
 
 ### Expected Value Analysis Accounting for Political Risk
 
@@ -1187,7 +1187,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 - Against Malaria Foundation: ~8:1 equivalent ROI
 - **1% treaty (central estimate, P={{< var political_success_probability >}})**: {{< var dfda_expected_roi >}}:1 expected ROI
 
-**Interpretation**: The high conditional ROI ({{< var treaty_roi_lag_elimination >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
+**Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
 **Note**: The uncertainty analysis samples political probability from a beta distribution with 5th percentile at 0.1% and 95th percentile at 10%. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
@@ -1250,7 +1250,7 @@ Total return: {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_hor
 
 That's ${{< var dfda_roi_rd_only >}} appearing for every $1 invested. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}} years, not the one-time 8.2-year timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}} years, not the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
@@ -1327,12 +1327,12 @@ This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption
 
 - **Money**: {{< var dfda_npv_net_benefit_rd_only >}} in R&D savings ({{< var npv_time_horizon_years >}} years)
 - **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}:1** ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
-- **Not dying**: {{< var disease_eradication_delay_dalys >}} quality-adjusted life years annually
+- **Not dying**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} quality-adjusted life years (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
 
 **Two money fountains from one budget shift**:
 
 1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year (from building {{< var treaty_reduction_pct >}} fewer things that explode)
-2. **Research efficiency**: {{< var dfda_rd_gross_savings_annual >}}/year (from not requiring PhDs to document paperwork about paperwork for {{< var treatment_acceleration_years_current >}} {{< var treatment_acceleration_years_current_cite >}} years)
+2. **Research efficiency**: {{< var dfda_benefit_rd_only_annual >}}/year (from not requiring PhDs to document paperwork about paperwork for {{< var treatment_acceleration_years_current >}} {{< var treatment_acceleration_years_current_cite >}} years)
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year
 
@@ -1362,15 +1362,15 @@ ICER measures the cost per year of healthy life gained (QALY):
 
 **ICER = (Intervention Cost) / (QALYs Gained)**
 
-For a dFDA (using the ~{{< var dfda_total_timeline_shift_years >}}-year average timeline shift):
+For a dFDA (using the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
-**Cost per DALY: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}** (negative = cost-dominant)
+**Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (negative = cost-dominant)
 
 **Translation:** The intervention saves money while saving lives. Cost-dominant interventions are rare.
 
 Normally, money is *spent* to save lives. Good interventions cost {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. Great interventions cost $3,000-{{< var who_qaly_threshold_cost_effective >}}.
 
-This one is cost-dominant ({{< var treaty_dfda_cost_per_daly_timeline_shift >}} upfront cost per DALY), meaning it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in economic benefits. It saves money while saving lives.
+This one is cost-dominant ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} upfront cost per DALY), meaning it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in economic benefits. It saves money while saving lives.
 
 Economists call this "dominant" because the choice between "saving money" and "saving lives" disappears. Both happen simultaneously. The net economic effect is positive: more value created than spent.
 
@@ -1388,7 +1388,7 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 
 **A 1% Treaty/decentralized framework for drug assessment:**
 
-- **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
+- **Conditional on success**: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
 
 {{< var treaty_vs_bed_nets_multiplier_latex >}}
 
@@ -1428,10 +1428,10 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
    - **ALL remaining funds go to patient subsidies** - no separate bureaucracy or overhead budget
 2. **Decentralized Framework for Drug Assessment Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
 
-- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_rd_gross_savings_annual >}})
+- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_benefit_rd_only_annual >}})
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_peace_plus_rd_annual_benefits >}} annual surplus after all costs
-- **Lives Saved**: {{< var disease_eradication_delay_deaths_total >}} annually
+- **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} (from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
 - **Cost per Life Saved**: Net societal benefit per life (negative cost indicates net profit, meaning the system generates economic value while saving lives)
 
 This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
@@ -1440,36 +1440,36 @@ The self-funding nature eliminates traditional barriers to scale, as the interve
 
 ## Scenario Analysis: Complete Case
 
-**{{< var treaty_complete_roi_all_benefits >}}:1 ROI**
+**{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI**
 
 The conservative scenario counted only R&D efficiency gains. This section includes all quantifiable benefit categories.
 
 ### Annual Recurring Benefits Breakdown
 
-{{< var treaty_total_complete_benefits_annual >}} in **recurring annual benefits** (perpetual)
+{{< var treaty_recurring_benefits_annual >}} in **recurring annual benefits** (perpetual)
 
 Core recurring benefit streams:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Building {{< var treaty_reduction_pct >}} fewer things that explode
-2. **R&D cost savings** ({{< var dfda_rd_gross_savings_annual >}}) - Trials cost {{< var trial_cost_reduction_factor >}} {{< var trial_cost_reduction_factor_cite >}}× less
+2. **R&D cost savings** ({{< var dfda_benefit_rd_only_annual >}}) - Trials cost {{< var trial_cost_reduction_factor >}} {{< var trial_cost_reduction_factor_cite >}}× less
 
 #### Total recurring annual benefits
 
-{{< var treaty_total_complete_benefits_annual_latex >}}
+{{< var treaty_recurring_benefits_annual_latex >}}
 
-That's **{{< var treaty_total_complete_benefits_annual >}} per year** (recurring perpetually).
+That's **{{< var treaty_recurring_benefits_annual >}} per year** (recurring perpetually).
 
-**Important Note:** Regulatory delay elimination provides a **one-time 8.2-year timeline shift** forward in curing diseases, not an annual recurring benefit. This one-time benefit is massive ({{< var disease_eradication_delay_economic_loss >}} total economic value from timeline shift) but occurs once when the delay is eliminated, not every year. The recurring annual benefits above ($155.1B/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for the one-time timeline shift methodology.
+**Important Note:** The dFDA provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (cure acceleration + efficacy lag elimination) in when diseases are cured, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when cures become available, not an annual stream. The recurring annual benefits above ({{< var treaty_recurring_benefits_annual >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for timeline shift methodology.
 
 #### Complete Case ROI
 
-{{< var treaty_complete_roi_all_benefits_latex >}}
+{{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-**Translation:** Every $1 invested returns ${{< var treaty_complete_roi_all_benefits >}} in **recurring annual benefits** (peace dividend + R&D savings), plus a ~{{< var dfda_total_timeline_shift_years >}}-year average timeline shift in disease eradication (not included in annual figure).
+**Translation:** Every $1 invested returns ${{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} in **recurring annual benefits** (peace dividend + R&D savings), plus a ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (not included in annual figure).
 
 **Sensitivity of complete ROI:** The tornado chart below shows which parameters most affect the complete ROI estimate:
 
-{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
+{{< include ../figures/tornado-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 These estimates derive from:
 
@@ -1481,11 +1481,11 @@ These estimates derive from:
 
 | Benefit Category | Type | Value | Frequency | Description |
 |:---|:---:|---:|:---|:---|
-| **Timeline Shift** | Average | {{< var dfda_total_timeline_shift_economic_value >}} | Per disease | Average ~{{< var dfda_total_timeline_shift_years >}}-year timeline acceleration: cure acceleration (~{{< var dfda_cure_timeline_acceleration_years >}} yrs from {{< var trial_capacity_multiplier >}}× trial capacity) + efficacy lag elimination (~{{< var efficacy_lag_years >}} yrs). Saves {{< var dfda_total_timeline_shift_lives_saved >}} lives and {{< var dfda_total_timeline_shift_dalys >}} DALYs. |
+| **Timeline Shift** | Average | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | Per disease | Average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline acceleration: cure acceleration (~{{< var dfda_trial_capacity_cure_acceleration_years >}} yrs from {{< var trial_capacity_multiplier >}}× trial capacity) + efficacy lag elimination (~{{< var efficacy_lag_years >}} yrs). Saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs. |
 | **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to pragmatic clinical trials |
-| **R&D Savings** | Recurring | {{< var dfda_rd_gross_savings_annual >}}/year | Perpetual | {{< var trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
-| **Total Recurring** | Recurring | {{< var treaty_total_complete_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
-| **Total Value** | Combined | {{< var dfda_total_timeline_shift_economic_value >}} + recurring | Average + perpetual | Average timeline shift + perpetual annual benefits |
+| **R&D Savings** | Recurring | {{< var dfda_benefit_rd_only_annual >}}/year | Perpetual | {{< var trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
+| **Total Recurring** | Recurring | {{< var treaty_recurring_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
+| **Total Value** | Combined | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} + recurring | Average + perpetual | Average timeline shift + perpetual annual benefits |
 
 **Investment required**: {{< var treaty_campaign_total_cost >}} (one-time campaign cost)
 
@@ -1532,7 +1532,7 @@ Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity tran
 
 ## Individual-Level Economic Impact
 
-The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var treaty_total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
+The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var treaty_recurring_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
 {{< include ../figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
@@ -1549,7 +1549,7 @@ This section compares a 1% treaty/decentralized framework for drug assessment sy
 | Intervention Type | Metric | Performance | Annual Benefit |
 |:---|:---|---:|---:|
 | **1% Treaty/dFDA** | Cost per life saved | **$1.1M profit** | {{< var combined_peace_health_dividends_annual_for_roi_calc >}} |
-| **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_dfda_cost_per_daly_timeline_shift >}} (cost-dominant) | {{< var disease_eradication_delay_dalys >}} QALYs |
+| **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (cost-dominant) | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} QALYs (total) |
 | **Childhood Vaccinations** | Annual benefit | Self-funding | ~{{< var childhood_vaccination_annual_benefit >}} |
 | **GiveWell Top Charities** | Cost per life saved | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
 | **GiveWell Top Charities** | Cost per QALY | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
@@ -1686,7 +1686,7 @@ Nobody needs to be convinced. They just need to count.
 
 ### Campaign Budget Breakdown
 
-The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var treaty_complete_roi_all_benefits >}}:1 ROI) allocates funds across three strategic categories:
+The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI) allocates funds across three strategic categories:
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
@@ -1704,7 +1704,7 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The referendum component isn't a "magic wand"; it's a mechanism to generate the **political capital** required to force the treaty onto the agenda of sovereign nations.
 
-This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 returns regardless of the specific path to adoption.
+This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns regardless of the specific path to adoption.
 
 
 
@@ -1739,7 +1739,7 @@ This doesn't defeat greed. It aligns economic incentives to direct existing prof
 
 **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
 
-If politicians fail to adopt the treaty and enable this 25X increase in clinical trial capacity and shift forward in the availability of life-saving treatments, they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
+If politicians fail to adopt the treaty and enable this 25X increase in clinical trial capacity and shift forward in the availability of life-saving treatments, they are technically responsible for the **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
@@ -1785,7 +1785,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 **Type II error dominance**: [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) quantifies the harm ratio at {{< var type_ii_error_cost_ratio >}}:1. For every person protected from an unsafe drug approval (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current regulatory framework successfully prevents toxic compounds from reaching patients through Phase I safety testing - as demonstrated by thalidomide's prevention in the United States - but the barriers placed between patients and beneficial treatments after safety verification cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent.
 
-**Quantified mortality from efficacy delay**: The {{< var efficacy_lag_years >}}-year delay between Phase I safety verification and final approval has resulted in an estimated {{< var disease_eradication_delay_deaths_total >}} deaths from 1962-2024 by delaying patient access to beneficial treatments that had already passed safety testing. This figure represents the cumulative mortality from requiring patients to wait ~8 years for efficacy confirmation after treatments are confirmed non-toxic, when those patients could have voluntarily participated in efficacy trials immediately following Phase I completion.
+**Quantified mortality from efficacy delay**: The {{< var efficacy_lag_years >}}-year delay between Phase I safety verification and final approval has resulted in an estimated {{< var dfda_efficacy_lag_elimination_deaths_averted >}} deaths from 1962-2024 by delaying patient access to beneficial treatments that had already passed safety testing. This figure represents the cumulative mortality from requiring patients to wait ~8 years for efficacy confirmation after treatments are confirmed non-toxic, when those patients could have voluntarily participated in efficacy trials immediately following Phase I completion.
 
 **Cost reduction does not imply quality reduction**: The 82× cost reduction achieved by the RECOVERY trial came from eliminating duplicative infrastructure (using existing hospitals instead of building dedicated trial sites, using existing EHR data instead of parallel data collection systems), not from reducing sample sizes, shortening observation periods, or relaxing safety standards. Lower cost reflects infrastructure efficiency, not reduced scientific rigor.
 
@@ -1951,15 +1951,21 @@ These meta-analytic findings support the validity of pragmatic trial designs use
 
 ### QALY Calculation Uncertainties
 
-The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates three benefit streams with varying levels of empirical support.
+The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALY estimate aggregates benefits from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift across three benefit streams with varying levels of empirical support.
 
-**Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var disease_eradication_delay_economic_loss >}} derives from shifting disease eradication forward by {{< var efficacy_lag_years >}} years.
+**Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} derives from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift in disease eradication.
 
-**This estimate is extremely conservative for three reasons:**
+**How the timeline shift is calculated:**
 
-1.  **It ignores the {{< var trial_capacity_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that a dFDA system accelerates the *pace of research itself* by {{< var trial_capacity_multiplier >}}x. With {{< var trial_capacity_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
-2.  **It assumes a fixed timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by 8.2 years saves 8.2 years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
-3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields over **$120 trillion** in value. The ROI is positive even at 1/100th of the projected success rate.
+1. **Cure acceleration (~{{< var dfda_trial_capacity_cure_acceleration_years >}} years on average)**: With {{< var trial_capacity_multiplier >}}× trial capacity, the average disease is cured ~{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier. This is based on a queue model: {{< var diseases_without_effective_treatment >}} diseases without treatment ÷ ~15 cures/year = {{< var status_quo_queue_clearance_years >}} years to cure all. With {{< var trial_capacity_multiplier >}}× capacity, queue clears in ~{{< var dfda_queue_clearance_years >}} years. Average disease waits half the queue time, so acceleration ≈ {{< var dfda_trial_capacity_cure_acceleration_years >}} years.
+
+2. **Efficacy lag elimination (~{{< var efficacy_lag_years >}} years)**: Once a cure is discovered, it reaches patients immediately instead of waiting ~{{< var efficacy_lag_years >}} years for post-safety regulatory approval.
+
+**Why this estimate is still conservative:**
+
+1.  **It assumes a fixed far-future timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years on average saves that many years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
+2.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields enormous value. The ROI is positive even at 1/100th of the projected success rate.
+3.  **It uses average acceleration**: Some diseases at the front of the queue would be cured much sooner (approaching 0 years wait); diseases at the end would see less acceleration. The {{< var dfda_trial_capacity_cure_acceleration_years >}}-year figure is the average.
 
 **Stream A (Accelerated Drug Access):** High confidence, based on well-documented costs of delayed access (84,000 life-years lost per year delay in cancer therapies alone).
 
@@ -1967,7 +1973,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 
 **Stream C (Rare Disease Treatments):** Lower confidence, economic viability of rare disease research is theoretically sound but empirically unproven at scale.
 
-**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var disease_eradication_delay_dalys >}} annually yields {{< var dfda_roi_rd_only >}}:1 ROI using R&D savings alone).
+**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs yields {{< var dfda_roi_rd_only >}}:1 ROI using R&D savings alone).
 
 ### Data Limitations
 
@@ -2045,7 +2051,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 - **Risk-adjusted ({{< var dfda_expected_roi >}}:1 expected ROI):** Central estimate with political success probability uncertainty (5%-50% range), intervention generates substantial positive returns
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
-- **Complete ({{< var treaty_complete_roi_all_benefits >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
+- **Complete ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the dominant driver of uncertainty.
 
@@ -2075,7 +2081,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var treaty_complete_roi_all_benefits >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* a dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* a dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ### Limitations Summary
 
@@ -2084,7 +2090,7 @@ Despite these limitations, several factors support the analysis's robustness:
 1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var dfda_roi_rd_only >}}:1)
 2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
-4. **Dominant intervention status:** Cost-dominant intervention ({{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY) means it saves money even if health benefits are substantially overstated
+4. **Dominant intervention status:** Cost-dominant intervention ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY) means it saves money even if health benefits are substantially overstated
 
 **Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
@@ -2101,7 +2107,7 @@ Traditional health budgets face impossible trade-offs: every dollar spent on can
 
 **Key insight**: Health ministries can achieve {{< var trial_capacity_multiplier >}}× more clinical research without reducing current health spending or raising taxes. The funding comes from military budgets, not health budgets.
 
-**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining 99% of its military capacity. The resulting health gains ({{< var disease_eradication_delay_deaths_total >}} lives saved globally, proportional by population) far exceed any marginal security value of that 1%.
+**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining 99% of its military capacity. The resulting health gains ({{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved globally, proportional by population) far exceed any marginal security value of that 1%.
 
 ### International Development Priorities
 
@@ -2112,7 +2118,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 **Practical application**:
 
 - **Current approach**: USAID spends billions on malaria bed nets (excellent intervention, {{< var bed_nets_cost_per_daly >}}/DALY)
-- **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to cure malaria entirely
+- **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to cure malaria entirely
 - **Result**: Keep funding bed nets (they work!) AND accelerate development of malaria vaccines and treatments through massively expanded trial capacity
 
 The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund.
@@ -2219,7 +2225,7 @@ Treaty adoption depends on:
 
 ## Conclusion
 
-Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, depending on which benefits are counted.
+Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI, depending on which benefits are counted.
 
 **The Numbers**:
 
@@ -2231,8 +2237,8 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to prag
 
 ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 
-- **Complete case**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI including all eight benefit streams ({{< var treaty_total_complete_benefits_annual >}} annually)
-- **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} while generating net profit
+- **Complete case**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI including all eight benefit streams ({{< var treaty_recurring_benefits_annual >}} annually)
+- **Lives saved**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} while generating net profit
 - **Political feasibility**: Everyone profits (nobody needs to be convinced, just paid)
 
 **Comparison**: Exceeds smallpox eradication and childhood vaccinations (history's previous best public health achievements) while requiring zero charitable donations. ([Detailed comparisons](../appendix/intervention-comparison-table.qmd))

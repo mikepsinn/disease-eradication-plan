@@ -594,9 +594,9 @@ This beats:
 You stop paying smart humans to write grant applications.
 You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
-- **{{< var dfda_rd_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
-- **{{< var disease_eradication_delay_deaths_total >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
-  - **{{< var disease_eradication_delay_dalys >}} DALYs averted** from the one-time timeline shift
+- **{{< var dfda_benefit_rd_only_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
+  - **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted** from the one-time timeline shift
   - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/regulatory-mortality-analysis.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness
   - For context: {{< var global_disease_deaths_daily >}} people die daily from disease and aging. Slower testing and rollout means some fraction of those deaths are avoidable by earlier access to effective treatments ([see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd))
 
@@ -633,7 +633,7 @@ $$
 For humans who peaked at counting on fingers:
 
 - **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}} (money saved by not building things whose only purpose is making other things stop existing)
-- **Health dividend**: {{< var dfda_rd_gross_savings_annual >}} (money saved by not paying 10,000 people to document why 1 person is dying)
+- **Health dividend**: {{< var dfda_benefit_rd_only_annual >}} (money saved by not paying 10,000 people to document why 1 person is dying)
 - **Total**: More money than 73% of countries have in their entire GDP, appearing annually from the quantum void of redirected stupidity
 
 ([See peace dividend calculation](knowledge/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](knowledge/economics/economics.qmd))
@@ -643,7 +643,7 @@ For humans who peaked at counting on fingers:
 - **You spend**: Zero new dollars (you just move existing dollars from the "making corpses" column to the "preventing corpses" column)
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
 - **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
-- **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} (dFDA timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
+- **Lives saved**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (dFDA timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
 - **Per life saved**: Society makes net profit
 
 Math says this is the best possible use of a billion dollars.
@@ -654,7 +654,7 @@ This is the only health intervention in history where you PROFIT from saving liv
 
 You're weaponizing capitalism's greatest strength (greed) against humanity's greatest weakness (dying). It's economic jiu-jitsu.
 
-Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var disease_eradication_delay_deaths_total >}} lives (dFDA timeline shift), operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
+Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives (dFDA timeline shift), operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
 
 ### 2nd Best Idea in the World
 
@@ -697,7 +697,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Novel Concept for Humanity*
 
-- {{< var disease_eradication_delay_deaths_total >}} lives saved from dFDA timeline shift ({{< var efficacy_lag_years >}}-year acceleration)
+- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved from dFDA timeline shift ({{< var efficacy_lag_years >}}-year acceleration)
 - {{< var combined_peace_health_dividends_annual_for_roi_calc >}} appears annually like magic, except it's just arithmetic
 - Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)

@@ -1,6 +1,6 @@
 ---
 title: Health Dividend
-description: How a {{< var dfda_annual_opex >}} framework generates {{< var dfda_rd_gross_savings_annual >}} in annual savings through 80x cost reduction
+description: How a {{< var dfda_annual_opex >}} framework generates {{< var dfda_benefit_rd_only_annual >}} in annual savings through 80x cost reduction
 published: true
 tags:
   - dfda
@@ -21,8 +21,8 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-academic.png
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Your decentralized framework for drug assessment (dFDA) costs {{< var dfda_annual_opex >}}/year to run.
-It saves {{< var dfda_rd_gross_savings_annual >}}/year in clinical trial waste.
-That's {{< var treaty_complete_roi_all_benefits >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
+It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
+That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
 
 **Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
@@ -40,17 +40,17 @@ The Oxford RECOVERY trial proved humans can do the same thing for **{{< var reco
 
 Your decentralized framework for drug assessment takes this model global. **80-160x cost reduction**. Same quality data. Better real-world applicability. Turns out you don't need 17 committees to ask "did the medicine work?"
 
-## Where the {{< var dfda_rd_gross_savings_annual >}} Comes From
+## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing).
 
 Conservative estimate: A decentralized framework for drug assessment captures 50% efficiency gains across the market.
 
-- 50% of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_rd_gross_savings_annual >}} saved annually**
+- 50% of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
 Optimistic scenarios show up to 95% cost reduction (like RECOVERY achieved), potentially saving up to **$57B annually** (95% of {{< var global_clinical_trials_spending_annual >}}).
 
-## What {{< var dfda_rd_gross_savings_annual >}} Buys You
+## What {{< var dfda_benefit_rd_only_annual >}} Buys You
 
 With the money saved every year, humans could:
 
@@ -61,7 +61,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var disease_eradication_delay_dalys >}} DALYs total** lost to delayed treatments ({{< var disease_eradication_delay_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
+Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs total** lost to delayed treatments ({{< var dfda_efficacy_lag_elimination_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
 
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
@@ -73,11 +73,11 @@ Your decentralized framework for drug assessment costs approximately **{{< var d
 
 ## ROI Scenarios
 
-**Recommended**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
+**Recommended**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
 
 **Conservative**: {{< var dfda_roi_rd_only >}}:1 ROI (R&D savings only, NPV-adjusted over 10 years)
 
-**PRIMARY estimate**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI (including all core benefits)
+**PRIMARY estimate**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI (including all core benefits)
 
 Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
@@ -96,12 +96,12 @@ Until now. Your decentralized framework for drug assessment changes the game by 
 
 ## The ROI
 
-{{< var dfda_annual_opex >}} to save {{< var dfda_rd_gross_savings_annual >}}.
-{{< var treaty_complete_roi_all_benefits >}}:1 ROI (recommended).
+{{< var dfda_annual_opex >}} to save {{< var dfda_benefit_rd_only_annual >}}.
+{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI (recommended).
 80x cost reduction per patient.
 {{< var trial_capacity_multiplier >}}× more trial capacity (43.4M participants annually vs 1.9M currently).
 
-This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving {{< var dfda_rd_gross_savings_annual >}} is worth {{< var dfda_annual_opex >}}, which is like debating whether picking up a hundred-dollar bill is worth bending over.
+This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving {{< var dfda_benefit_rd_only_annual >}} is worth {{< var dfda_annual_opex >}}, which is like debating whether picking up a hundred-dollar bill is worth bending over.
 
 Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency and delays treatment for millions. But at least the paperwork is properly filed.
 
@@ -112,7 +112,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency a
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var disease_eradication_delay_dalys >}} DALYs (post-safety efficacy lag elimination)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs (post-safety efficacy lag elimination)
 
 #### Key Sources
 
