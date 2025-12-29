@@ -544,7 +544,7 @@ $$
 
 A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of post-safety efficacy lag costs (1962-2024) found:
 
-- **Total Deaths**: {{< var disease_eradication_delay_deaths_total >}} preventable deaths over {{< var efficacy_lag_years >}}-year efficacy lag (1962-2024)
+- **Total Deaths**: {{< var disease_eradication_delay_deaths_total >}} eventually avoidable deaths over {{< var efficacy_lag_years >}}-year efficacy lag (1962-2024)
 - **Total DALYs**: {{< var disease_eradication_delay_dalys >}} Disability-Adjusted Life Years lost
 - **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}}-year acceleration in disease eradication
 

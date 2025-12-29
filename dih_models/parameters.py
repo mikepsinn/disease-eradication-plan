@@ -1992,7 +1992,7 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
 EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     1 - _unavoidable_pct,
     source_type="definition",
-    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement",
+    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)",
     display_name="Eventually Avoidable Death Percentage",
     unit="percentage",
     formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
@@ -2680,7 +2680,9 @@ CAMPAIGN_PHASE1_BUDGET = Parameter(
     description="Phase 1 campaign budget (Foundation, Year 1)",
     display_name="Phase 1 Campaign Budget",
     unit="USD",
-    keywords=["200.0m", "first phase", "safety trial", "p1", "phase i", "phase1", "campaign"]
+    keywords=["200.0m", "first phase", "safety trial", "p1", "phase i", "phase1", "campaign"],
+    confidence_interval=(140_000_000, 260_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )  # $200M for Phase 1
 
 CAMPAIGN_PHASE2_BUDGET = Parameter(
@@ -2690,7 +2692,9 @@ CAMPAIGN_PHASE2_BUDGET = Parameter(
     description="Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
     display_name="Phase 2 Campaign Budget",
     unit="USD",
-    keywords=["500.0m", "efficacy trial", "second phase", "p2", "phase ii", "phase2", "campaign"]
+    keywords=["500.0m", "efficacy trial", "second phase", "p2", "phase ii", "phase2", "campaign"],
+    confidence_interval=(350_000_000, 650_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )  # $500M for Phase 2
 
 CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
@@ -2700,7 +2704,9 @@ CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
     description="Minimum mass media campaign budget",
     display_name="Minimum Mass Media Campaign Budget",
     unit="USD",
-    keywords=["campaign", "media", "budget", "min", "500.0m"]
+    keywords=["campaign", "media", "budget", "min", "500.0m"],
+    confidence_interval=(350_000_000, 650_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )  # $500M minimum for mass media
 
 CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
@@ -2710,7 +2716,9 @@ CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
     description="Maximum mass media campaign budget",
     display_name="Maximum Mass Media Campaign Budget",
     unit="USD",
-    keywords=["campaign", "media", "budget", "max", "1.0b"]
+    keywords=["campaign", "media", "budget", "max", "1.0b"],
+    confidence_interval=(700_000_000, 1_300_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )  # $1B maximum for mass media
 
 CAMPAIGN_STAFF_BUDGET = Parameter(
@@ -2720,7 +2728,9 @@ CAMPAIGN_STAFF_BUDGET = Parameter(
     description="Campaign core team staff budget",
     display_name="Campaign Core Team Staff Budget",
     unit="USD",
-    keywords=["campaign", "staff", "budget", "40.0m"]
+    keywords=["campaign", "staff", "budget", "40.0m"],
+    confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )  # $40M for core team
 
 # Detailed campaign budget line items (in millions USD)
@@ -2731,7 +2741,9 @@ CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
     description="AI-assisted legal work budget",
     display_name="AI-Assisted Legal Work Budget",
     unit="USD",
-    keywords=["campaign", "legal", "budget", "50.0m"]
+    keywords=["campaign", "legal", "budget", "50.0m"],
+    confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
@@ -2741,7 +2753,9 @@ CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
     description="Viral marketing content creation budget",
     display_name="Viral Marketing Content Creation Budget",
     unit="USD",
-    keywords=["campaign", "viral", "content", "budget", "40.0m"]
+    keywords=["campaign", "viral", "content", "budget", "40.0m"],
+    confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
@@ -2751,7 +2765,9 @@ CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
     description="Community organizing and ambassador program budget",
     display_name="Community Organizing and Ambassador Program Budget",
     unit="USD",
-    keywords=["campaign", "community", "organizing", "30.0m"]
+    keywords=["campaign", "community", "organizing", "30.0m"],
+    confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_LOBBYING_US = Parameter(
@@ -2761,7 +2777,9 @@ CAMPAIGN_LOBBYING_US = Parameter(
     description="US lobbying campaign budget",
     display_name="US Lobbying Campaign Budget",
     unit="USD",
-    keywords=["campaign", "lobbying", "50.0m"]
+    keywords=["campaign", "lobbying", "50.0m"],
+    confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_LOBBYING_EU = Parameter(
@@ -2771,7 +2789,9 @@ CAMPAIGN_LOBBYING_EU = Parameter(
     description="EU lobbying campaign budget",
     display_name="EU Lobbying Campaign Budget",
     unit="USD",
-    keywords=["campaign", "lobbying", "40.0m"]
+    keywords=["campaign", "lobbying", "40.0m"],
+    confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
@@ -2791,7 +2811,9 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
     description="Budget for co-opting defense industry lobbyists",
     display_name="Budget for Co-Opting Defense Industry Lobbyists",
     unit="USD",
-    keywords=["50.0m", "armed forces", "conflict", "lobbyist", "armed conflict", "military action", "warfare"]
+    keywords=["50.0m", "armed forces", "conflict", "lobbyist", "armed conflict", "military action", "warfare"],
+    confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 DEFENSE_LOBBYING_ANNUAL = Parameter(
@@ -2814,7 +2836,9 @@ CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
     description="Super PAC campaign expenditures",
     display_name="Super PAC Campaign Expenditures",
     unit="USD",
-    keywords=["campaign", "super", "pac", "budget", "30.0m"]
+    keywords=["campaign", "super", "pac", "budget", "30.0m"],
+    confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
@@ -2824,7 +2848,9 @@ CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
     description="Opposition research and rapid response",
     display_name="Opposition Research and Rapid Response",
     unit="USD",
-    keywords=["25.0m", "investigation", "r&d", "science", "study", "discovery", "innovation"]
+    keywords=["25.0m", "investigation", "r&d", "science", "study", "discovery", "innovation"],
+    confidence_interval=(17_500_000, 32_500_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_PILOT_PROGRAMS = Parameter(
@@ -2834,7 +2860,9 @@ CAMPAIGN_PILOT_PROGRAMS = Parameter(
     description="Pilot program testing in small countries",
     display_name="Pilot Program Testing in Small Countries",
     unit="USD",
-    keywords=["campaign", "pilot", "programs", "30.0m"]
+    keywords=["campaign", "pilot", "programs", "30.0m"],
+    confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_LEGAL_WORK = Parameter(
@@ -2862,7 +2890,9 @@ CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
     description="Regulatory compliance and navigation",
     display_name="Regulatory Compliance and Navigation",
     unit="USD",
-    keywords=["20.0m", "approval", "authorization", "oversight", "regulation", "compliance", "regulatory"]
+    keywords=["20.0m", "approval", "authorization", "oversight", "regulation", "compliance", "regulatory"],
+    confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_LEGAL_DEFENSE = Parameter(
@@ -2872,7 +2902,9 @@ CAMPAIGN_LEGAL_DEFENSE = Parameter(
     description="Legal defense fund",
     display_name="Legal Defense Fund",
     unit="USD",
-    keywords=["20.0m", "armed forces", "conflict", "legal", "armed conflict", "military action", "warfare"]
+    keywords=["20.0m", "armed forces", "conflict", "legal", "armed conflict", "military action", "warfare"],
+    confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_DEFENSE_CONVERSION = Parameter(
@@ -2900,7 +2932,9 @@ CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
     description="Healthcare industry alignment and partnerships",
     display_name="Healthcare Industry Alignment and Partnerships",
     unit="USD",
-    keywords=["campaign", "healthcare", "alignment", "35.0m"]
+    keywords=["campaign", "healthcare", "alignment", "35.0m"],
+    confidence_interval=(24_500_000, 45_500_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
@@ -2910,7 +2944,9 @@ CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
     description="Tech industry partnerships and infrastructure",
     display_name="Tech Industry Partnerships and Infrastructure",
     unit="USD",
-    keywords=["campaign", "tech", "partnerships", "25.0m"]
+    keywords=["campaign", "tech", "partnerships", "25.0m"],
+    confidence_interval=(17_500_000, 32_500_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
@@ -2920,7 +2956,9 @@ CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
     description="Celebrity and influencer endorsements",
     display_name="Celebrity and Influencer Endorsements",
     unit="USD",
-    keywords=["campaign", "celebrity", "endorsement", "15.0m"]
+    keywords=["campaign", "celebrity", "endorsement", "15.0m"],
+    confidence_interval=(10_500_000, 19_500_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_INFRASTRUCTURE = Parameter(
@@ -2930,7 +2968,9 @@ CAMPAIGN_INFRASTRUCTURE = Parameter(
     description="Campaign operational infrastructure",
     display_name="Campaign Operational Infrastructure",
     unit="USD",
-    keywords=["campaign", "infrastructure", "20.0m"]
+    keywords=["campaign", "infrastructure", "20.0m"],
+    confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_CONTINGENCY = Parameter(
@@ -2976,7 +3016,9 @@ CAMPAIGN_SCALING_PREP = Parameter(
     description="Scaling preparation and blueprints",
     display_name="Scaling Preparation and Blueprints",
     unit="USD",
-    keywords=["campaign", "scaling", "prep", "30.0m"]
+    keywords=["campaign", "scaling", "prep", "30.0m"],
+    confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
+    confidence="medium"
 )
 
 CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(

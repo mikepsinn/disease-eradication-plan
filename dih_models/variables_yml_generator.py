@@ -19,21 +19,32 @@ Usage:
 """
 
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+import json
 
 import yaml
 
 from dih_models.latex_generation import generate_auto_latex
 from dih_models.quarto_formatting import generate_html_with_tooltip
 from dih_models.reference_parser import sanitize_bibtex_key
+from dih_models.formatting import format_parameter_value
 
 
-def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path, citation_mode: str = "none", params_file: Path = None):
+def generate_variables_yml(
+    parameters: Dict[str, Dict[str, Any]],
+    output_path: Path,
+    citation_mode: str = "none",
+    params_file: Optional[Path] = None,
+    samples_json_path: Optional[Path] = None
+):
     """
     Generate _variables.yml file from parameters.
 
     Creates YAML with lowercase variable names mapped to formatted HTML values.
     Also exports LaTeX equations as {param_name}_latex variables.
+
+    For calculated parameters with Monte Carlo uncertainty (from samples.json),
+    embeds 95% confidence intervals in the base variable value.
 
     Args:
         parameters: Dict of parameter metadata
@@ -44,9 +55,16 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             - "separate": Export citation keys as {param_name}_cite variables
             - "both": Both inline AND separate variables
         params_file: Path to parameters.py for sympy-based LaTeX generation
+        samples_json_path: Optional path to samples.json with Monte Carlo uncertainty data
     """
     variables = {}
     citation_count = 0
+
+    # Load Monte Carlo uncertainty data if available
+    uncertainty_data = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, "r", encoding="utf-8") as f:
+            uncertainty_data = json.load(f)
 
     # Sort parameters by name for consistent output
     for param_name in sorted(parameters.keys()):
@@ -57,9 +75,70 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         # Use lowercase name for Quarto variables (convention)
         var_name = param_name.lower()
 
+        # Check if this parameter has Monte Carlo uncertainty data
+        # If so, embed 95% CI in the display value (but only if there's actual variance)
+        value_with_ci = value
+        if param_name in uncertainty_data:
+            unc = uncertainty_data[param_name]
+            p5 = unc.get("p5")
+            p50 = unc.get("p50")
+            p95 = unc.get("p95")
+
+            # Only embed CI if there's meaningful uncertainty
+            # Skip if p5 == p95 (zero variance) or variance < 0.1% of median
+            has_meaningful_uncertainty = False
+            if p50 != 0:
+                relative_variance = abs(p95 - p5) / abs(p50)
+                has_meaningful_uncertainty = relative_variance > 0.001  # >0.1% variance
+            else:
+                has_meaningful_uncertainty = abs(p95 - p5) > 0
+
+            if has_meaningful_uncertainty:
+                # Determine if this is a calculated parameter or input parameter
+                source_type_str = ""
+                if hasattr(value, "source_type"):
+                    source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+                is_calculated = source_type_str == "calculated"
+
+                # For calculated parameters: use p50 (median from Monte Carlo)
+                # For input parameters: use base value (parameter's original value)
+                unit = getattr(value, "unit", None)
+                if is_calculated:
+                    # Calculated: p50 is the meaningful central value
+                    central_value = p50
+                else:
+                    # Input: base parameter value is the meaningful central value
+                    central_value = float(value)
+
+                central_formatted = format_parameter_value(central_value, unit, include_unit=False)
+                p5_formatted = format_parameter_value(p5, unit, include_unit=False)
+                p95_formatted = format_parameter_value(p95, unit, include_unit=False)
+
+                # Embed CI in display value
+                display_value_with_ci = f"{central_formatted} (95% CI: {p5_formatted}-{p95_formatted})"
+
+                # Create a copy of the value object with display_value override
+                # This uses the Parameter's display_value feature to override formatting
+                class ValueWithCI:
+                    def __init__(self, original_value, display_override):
+                        self._original = original_value
+                        self.display_value = display_override
+                        # Copy all attributes from original
+                        for attr in dir(original_value):
+                            if not attr.startswith('_') and attr != 'display_value':
+                                try:
+                                    setattr(self, attr, getattr(original_value, attr))
+                                except (AttributeError, TypeError):
+                                    pass
+
+                    def __float__(self):
+                        return float(self._original)
+
+                value_with_ci = ValueWithCI(value, display_value_with_ci)
+
         # Generate formatted HTML with tooltip
         include_inline_citation = citation_mode in ("inline", "both")
-        html_value = generate_html_with_tooltip(param_name, value, comment, include_citation=include_inline_citation)
+        html_value = generate_html_with_tooltip(param_name, value_with_ci, comment, include_citation=include_inline_citation)
 
         variables[var_name] = html_value
 

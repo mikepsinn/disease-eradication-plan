@@ -481,11 +481,8 @@ def main():
         print("[FATAL] Validation errors found. Fix the issues above before continuing.", file=sys.stderr)
         sys.exit(1)
 
-    # Generate _variables.yml
-    print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
-    output_path = project_root / "_variables.yml"
-    generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
-    print()
+    # NOTE: _variables.yml generation moved to AFTER Monte Carlo simulation
+    # so we can embed confidence intervals from samples.json
 
     # Generate references.bib (with full citation data from references.qmd)
     print("[*] Generating references.bib...")
@@ -567,6 +564,14 @@ def main():
             with open(analysis_dir / "samples.json", "w", encoding="utf-8") as f:
                 json.dump(summaries, f, indent=2)
             print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
+            print()
+
+            # Generate _variables.yml with embedded confidence intervals
+            print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
+            output_path = project_root / "_variables.yml"
+            samples_json_path = analysis_dir / "samples.json"
+            generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
+            print()
 
             # Generate input distribution charts for parameters with uncertainty metadata
             print("[*] Generating input distribution charts...")
@@ -997,8 +1002,18 @@ def main():
         else:
             print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
             print()
+            # Generate _variables.yml without confidence intervals
+            print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
+            output_path = project_root / "_variables.yml"
+            generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
+            print()
     except Exception as e:
         print(f"[WARN] Uncertainty generation skipped: {e}")
+        print()
+        # Generate _variables.yml without confidence intervals as fallback
+        print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
+        output_path = project_root / "_variables.yml"
+        generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
         print()
 
     # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created

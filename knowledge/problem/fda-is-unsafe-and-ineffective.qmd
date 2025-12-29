@@ -203,7 +203,7 @@ But that was just the US. And just the visible delays.
 
 A [comprehensive quantitative analysis](../appendix/regulatory-mortality-analysis.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of blocking patient access during the 8.2-year post-safety efficacy delay:
 
-**Death toll range:** {{< var historical_progress_deaths_total >}}-{{< var disease_eradication_plus_acceleration_deaths_total >}} preventable deaths (PRIMARY estimate: {{< var disease_eradication_delay_deaths_total >}})
+**Death toll range:** {{< var historical_progress_deaths_total >}}-{{< var disease_eradication_plus_acceleration_deaths_total >}} eventually avoidable deaths (PRIMARY estimate: {{< var disease_eradication_delay_deaths_total >}})
 
 **The conclusion holds across all scenarios:**
 
@@ -252,7 +252,7 @@ More Americans than died in Vietnam and Korea combined. From one drug delay. Her
 
 * interleukin-2, Taxotere, vasoseal, ancrod, Glucophage, navelbine, Lamictal, ethyol, photofrin, rilutek, citicoline, panorex, Femara, ProStar, omnicath
 
-Each name on that list represents preventable deaths.
+Each name on that list represents eventually avoidable deaths.
 
 Following the 1962 increase in US regulations, you can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
 
@@ -487,7 +487,7 @@ Phase I safety testing works. Keep it.
 
 Blocking patient access during the 8.2-year post-safety efficacy delay kills people. Replace it with real-world evidence collection.
 
-The technology exists. The data is clear. The solution is obvious.
+Many pieces already exist. The bottleneck is scale, incentives, and time-to-answer. The core idea is straightforward even if implementation is hard.
 
 What's missing is the political will to admit that the 1962 "reforms" were a catastrophic mistake.
 

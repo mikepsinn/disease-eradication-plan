@@ -2816,7 +2816,8 @@ export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   description: "Celebrity and influencer endorsements",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [10500000.0, 19500000.0],
 };
 
 export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
@@ -2826,7 +2827,8 @@ export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   description: "Community organizing and ambassador program budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [21000000.0, 39000000.0],
 };
 
 export const CAMPAIGN_CONTINGENCY: Parameter = {
@@ -2858,7 +2860,8 @@ export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   description: "Budget for co-opting defense industry lobbyists",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [35000000.0, 65000000.0],
 };
 
 export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
@@ -2868,7 +2871,8 @@ export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   description: "Healthcare industry alignment and partnerships",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [24500000.0, 45500000.0],
 };
 
 export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
@@ -2878,7 +2882,8 @@ export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   description: "Campaign operational infrastructure",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [14000000.0, 26000000.0],
 };
 
 export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
@@ -2888,7 +2893,8 @@ export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   description: "AI-assisted legal work budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [35000000.0, 65000000.0],
 };
 
 export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
@@ -2898,7 +2904,8 @@ export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   description: "Legal defense fund",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [14000000.0, 26000000.0],
 };
 
 export const CAMPAIGN_LEGAL_WORK: Parameter = {
@@ -2919,7 +2926,8 @@ export const CAMPAIGN_LOBBYING_EU: Parameter = {
   description: "EU lobbying campaign budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [28000000.0, 52000000.0],
 };
 
 export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
@@ -2939,7 +2947,8 @@ export const CAMPAIGN_LOBBYING_US: Parameter = {
   description: "US lobbying campaign budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [35000000.0, 65000000.0],
 };
 
 export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
@@ -2949,7 +2958,8 @@ export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   description: "Maximum mass media campaign budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [700000000.0, 1300000000.0],
 };
 
 export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
@@ -2959,7 +2969,8 @@ export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   description: "Minimum mass media campaign budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [350000000.0, 650000000.0],
 };
 
 export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
@@ -2969,7 +2980,8 @@ export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   description: "Opposition research and rapid response",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [17500000.0, 32500000.0],
 };
 
 export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
@@ -2979,7 +2991,8 @@ export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   description: "Phase 1 campaign budget (Foundation, Year 1)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [140000000.0, 260000000.0],
 };
 
 export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
@@ -2989,7 +3002,8 @@ export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   description: "Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [350000000.0, 650000000.0],
 };
 
 export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
@@ -2999,7 +3013,8 @@ export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   description: "Pilot program testing in small countries",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [21000000.0, 39000000.0],
 };
 
 export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
@@ -3020,7 +3035,8 @@ export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   description: "Regulatory compliance and navigation",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [14000000.0, 26000000.0],
 };
 
 export const CAMPAIGN_SCALING_PREP: Parameter = {
@@ -3030,7 +3046,8 @@ export const CAMPAIGN_SCALING_PREP: Parameter = {
   description: "Scaling preparation and blueprints",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [21000000.0, 39000000.0],
 };
 
 export const CAMPAIGN_STAFF_BUDGET: Parameter = {
@@ -3040,7 +3057,8 @@ export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   description: "Campaign core team staff budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [28000000.0, 52000000.0],
 };
 
 export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
@@ -3050,7 +3068,8 @@ export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   description: "Super PAC campaign expenditures",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [21000000.0, 39000000.0],
 };
 
 export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
@@ -3060,7 +3079,8 @@ export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   description: "Tech industry partnerships and infrastructure",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [17500000.0, 32500000.0],
 };
 
 export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
@@ -3081,7 +3101,8 @@ export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   description: "Viral marketing content creation budget",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [28000000.0, 52000000.0],
 };
 
 export const CAREGIVER_COST_ANNUAL: Parameter = {
@@ -3374,7 +3395,7 @@ export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.9262780790085205,
   unit: "percentage",
   displayName: "Eventually Avoidable Death Percentage",
-  description: "Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement",
+  description: "Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)",
   sourceType: "definition",
   confidence: "medium",
   formula: "1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",

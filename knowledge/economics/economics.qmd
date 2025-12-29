@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
-description: Redirecting 1% of global military spending ({{< var treaty_annual_funding >}}/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.
+description: Redirecting 1% of global military spending ({{< var treaty_annual_funding >}}/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~413M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.
 author:
   - name: Decentralized Institutes of Health
     affiliation:
@@ -236,7 +236,7 @@ That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden 
 
 ### Mortality and Morbidity Burden
 
-The World Health Organization reports {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}} daily deaths from preventable or potentially curable diseases ({{< var global_annual_deaths_curable_diseases >}} annually).
+The World Health Organization reports {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}} daily deaths from disease and aging. Many of these are eventually avoidable with accelerated biomedical progress ({{< var global_annual_deaths_curable_diseases >}} annually).
 
 <!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
 
@@ -741,7 +741,7 @@ Spending $1 returns ${{< var dfda_roi_rd_only >}}. This beats most legal activit
 
 {{< var treaty_complete_roi_all_benefits_latex >}}
 
-A one-time $1 billion investment returns ${{< var treaty_complete_roi_all_benefits >}} billion every year in recurring benefits.
+A one-time $1 billion campaign investment could plausibly generate: (1) a one-time timeline shift value from accelerating disease cure access by ~8.2 years, plus (2) ~${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
 
 ## Cost-Effectiveness Analysis
 
