@@ -278,9 +278,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
   \ and health dividends for ROI calculation | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$141B (95% CI: $112B-$180B)</a>"
+  \ calculation & sources\">$141B (95% CI: $115B-$178B)</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nDividend_{ann} =\
-  \ Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B\n$$"
+  \ Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B\n$$"
 "concentrated_interest_sector_market_cap_usd": "<span class=\"parameter-definition\"\
   \ title=\"Estimated combined market capitalization of concentrated interest opposition\
   \ (defense, fossil fuel, etc.) | Unit: USD | Core definition\">$5T</span>"
@@ -497,7 +497,7 @@
   \ treaty funding allocated to Decentralized Framework for Drug Assessment framework\
   \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
   \ | Click to view details, calculation & sources\">0.147%</a>"
-"dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.18B =\
+"dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.2B =\
   \ 0.00147 = 0.15\\%\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_platform_maintenance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
@@ -562,9 +562,9 @@
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
   \ multiplier | Calculated from 2 inputs | ✓ High confidence | Formula: CURRENT_TRIALS\
   \ × TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view details, calculation\
-  \ & sources\">76.3k (95% CI: 62.4k-93.6k)</a>"
+  \ & sources\">76.9k (95% CI: 56.8k-104k)</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
-  \ Multiplier = 3{,}300 \\times 22.8 = 75{,}400\n$$"
+  \ Multiplier = 3{,}300 \\times 22.9 = 75{,}400\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_upfront_build\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -592,33 +592,30 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
   \ fundable annually at RECOVERY trial cost | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: TRIAL_SUBSIDIES ÷ COST_PER_PATIENT | Unit: patients/year | Click to\
-  \ view details, calculation & sources\">43.9M (95% CI: 36.2M-53.4M)</a>"
+  \ view details, calculation & sources\">44.2M (95% CI: 33.0M-59.4M)</a>"
 "dih_patients_fundable_annually_latex": "$$\nFundable_{ann} = \\frac{Treasury_{ann}}{Cost}\
-  \ = \\frac{\\$21.70B}{\\$500} = 43.4M\n$$"
+  \ = \\frac{\\$21.72B}{\\$500} = 43.4M\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_medical_research_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to medical research (after bond payouts and IAB incentives)\
   \ | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit:\
   \ rate | Click to view details, calculation & sources\">80%</a>"
-"dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$21.744B /\
-  \ \\$27.18B = 0.80 = 80\\%\n$$"
-"dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_to_medical_research_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Annual funding for pragmatic clinical trials\
-  \ (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political\
-  \ incentive mechanism) | Calculated from 3 inputs | ✓ High confidence | Formula:\
-  \ TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING | Unit: USD/year\
-  \ | Click to view details, calculation & sources\">$21.6B (95% CI: $19.6B-$23.9B)</a>"
-"dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
-  \ - \\$2.718B - \\$2.718B = \\$21.744B\n$$"
+"dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$21.76B / \\\
+  $27.2B = 0.80 = 80\\%\n$$"
+"dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
+  Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive\
+  \ Alignment Bond payouts and IAB political incentive mechanism) | Unit: USD/year\
+  \ | Core definition\">$21.8B</span>"
+"dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.2B -\
+  \ \\$2.72B - \\$2.72B = \\$21.76B\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
   \ trial patient subsidies (all medical research funds after Decentralized Framework\
   \ for Drug Assessment operations) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX | Unit: USD/year | Click to view\
-  \ details, calculation & sources\">$21.6B (95% CI: $19.5B-$23.9B)</a>"
+  \ details, calculation & sources\">$21.7B (95% CI: $21.7B-$21.7B)</a>"
 "dih_treasury_trial_subsidies_annual_latex": "$$\nTrialSubsidies = \\$24.462B - \\\
   $0.04B = \\$24.422B\n$$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_pct\"\
@@ -627,8 +624,8 @@
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view details,\
   \ calculation & sources\">79.9%</a>"
-"dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$21.70B / \\\
-  $27.18B = 0.7985 = 79.85\\%\n$$"
+"dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$21.72B / \\\
+  $27.2B = 0.7985 = 79.85\\%\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_eradication_delay_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -732,9 +729,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Coverage factor\
   \ of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability\
   \ margin) | Calculated from 2 inputs | ✓ High confidence | Formula: TREATY_FUNDING\
-  \ ÷ DFDA_OPEX | Unit: ratio | Click to view details, calculation & sources\">693\
-  \ (95% CI: 538-895)</a>"
-"dividend_coverage_factor_latex": "$$\nCoverage = \\$27.18B / \\$0.04B = 679x\n$$"
+  \ ÷ DFDA_OPEX | Unit: ratio | Click to view details, calculation & sources\">698\
+  \ (95% CI: 489-995)</a>"
+"dividend_coverage_factor_latex": "$$\nCoverage = \\$27.2B / \\$0.04B = 680x\n$$"
 "drug_cost_increase_1980s_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_1980s_to_current_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
@@ -1099,10 +1096,10 @@
   \ direct war costs (military spending + infrastructure + human life + trade disruption)\
   \ | Calculated from 4 inputs | ✓ High confidence | Formula: MILITARY + INFRASTRUCTURE\
   \ + HUMAN_LIFE + TRADE | Unit: USD/year | Click to view details, calculation & sources\"\
-  >$7.51T (95% CI: $5.89T-$9.64T)</a>"
-"global_annual_war_direct_costs_total_latex": "$$\nDirectCosts = \\$2,718B \\text{\
+  >$7.53T (95% CI: $6.14T-$9.40T)</a>"
+"global_annual_war_direct_costs_total_latex": "$$\nDirectCosts = \\$2.72T \\text{\
   \ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\\
-  text{ (trade)} = \\$7,655B\n$$"
+  text{ (trade)} = \\$7,657B\n$$"
 "global_annual_war_indirect_costs_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_war_indirect_costs_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#indirect-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1119,9 +1116,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ cost of war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click\
-  \ to view details, calculation & sources\">$11.2T (95% CI: $8.74T-$14.3T)</a>"
-"global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B \\text{ (direct)}\
-  \ + \\$3,700B \\text{ (indirect)} = \\$11,355B\n$$"
+  \ to view details, calculation & sources\">$11.2T (95% CI: $9.01T-$14.1T)</a>"
+"global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,657B \\text{ (direct)}\
+  \ + \\$3,700B \\text{ (indirect)} = \\$11,357B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"industry-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
@@ -1214,25 +1211,25 @@
 "global_military_spending_annual_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_annual_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global military spending in 2024 | ✓\
-  \ High confidence | 95% CI: [$2.45T, $2.99T] | Dist: Lognormal (SE: $272B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$2.72T (95% CI: $2.45T-$2.99T)</a>"
+  \ High confidence | Dist: Fixed | Unit: USD | Click to view details, calculation\
+  \ & sources\">$2.72T</a>"
 "global_military_spending_annual_2024_cite": "@global-military-spending"
 "global_military_spending_per_capita_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_per_capita_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Per capita military\
   \ spending globally | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING\
   \ ÷ POPULATION | Unit: USD/person/year | Click to view details, calculation & sources\"\
-  >$338 (95% CI: $310-$368)</a>"
+  >$340 (95% CI: $333-$347)</a>"
 "global_military_spending_per_capita_annual_latex": "$$\nPerCapita_{military} = \\\
-  $2,718B / 8.0B = \\$339.75\n$$"
+  $2.72T / 8.0B = \\$340\n$$"
 "global_military_spending_post_treaty_annual_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_post_treaty_annual_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global military\
-  \ spending after 1% treaty reduction | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: MILITARY_SPENDING × (1 - REDUCTION) | Unit: USD/year | Click to view\
-  \ details, calculation & sources\">$2.67T (95% CI: $2.42T-$2.96T)</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Global military\
+  \ spending after 1% treaty reduction | ✓ High confidence | Formula: MILITARY_SPENDING\
+  \ × (1 - REDUCTION) | Unit: USD/year | Click to view details, calculation & sources\"\
+  >$2.69T</a>"
 "global_military_spending_post_treaty_annual_2024_latex": "$$\nPostTreaty_{military}\
-  \ = \\$2,718B \\times 0.99 = \\$2,690.82B\n$$"
+  \ = \\$2.72T \\times 0.99 = \\$2.69T\n$$"
 "global_nonprofit_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_nonprofit_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"nonprofit-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global nonprofit\
@@ -1271,7 +1268,7 @@
   \ cost of war and disease with all externalities (direct + indirect costs for both)\
   \ | Calculated from 3 inputs | ✓ High confidence | Formula: WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT\
   \ + DISEASE_BURDEN | Unit: USD/year | Click to view details, calculation & sources\"\
-  >$126T (95% CI: $95.5T-$168T)</a>"
+  >$126T (95% CI: $95.8T-$168T)</a>"
 "global_total_health_and_war_cost_annual_latex": "$$\nCost_{total} = Cost_{war,total}\
   \ + Burden_{ann} + Spending_{sympt,ann} = \\$11.36T + \\$109.10T + \\$8.20T = \\\
   $128.66T\n$$"
@@ -1328,18 +1325,15 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
   \ Ratio of the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio |\
-  \ Click to view details, calculation & sources\">188 (95% CI: 149-241)</a>"
+  \ Click to view details, calculation & sources\">188 (95% CI: 153-237)</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
-  \ = \\frac{\\$143.55B}{\\$750.0M} = 191\n$$"
-"iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Annual funding for IAB political incentive mechanism\
-  \ (independent expenditures supporting high-scoring politicians, post-office fellowship\
-  \ endowments, Public Good Score infrastructure) | Calculated from 2 inputs | ✓ High\
-  \ confidence | Formula: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT | Unit: USD/year\
-  \ | Click to view details, calculation & sources\">$2.70B (95% CI: $2.45B-$2.99B)</a>"
-"iab_political_incentive_funding_annual_latex": "$$\nIABFunding = \\$27.18B \\times\
-  \ 0.10 = \\$2.718B\n$$"
+  \ = \\frac{\\$143.57B}{\\$750.0M} = 191\n$$"
+"iab_political_incentive_funding_annual": "<span class=\"parameter-definition\" title=\"\
+  Annual funding for IAB political incentive mechanism (independent expenditures supporting\
+  \ high-scoring politicians, post-office fellowship endowments, Public Good Score\
+  \ infrastructure) | Unit: USD/year | Core definition\">$2.72B</span>"
+"iab_political_incentive_funding_annual_latex": "$$\nIABFunding = \\$27.2B \\times\
+  \ 0.10 = \\$2.72B\n$$"
 "iab_political_incentive_funding_pct": "<span class=\"parameter-definition\" title=\"\
   Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for\
   \ political incentives (independent expenditures/PACs, post-office fellowships,\
@@ -1398,7 +1392,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Medical research\
   \ spending as percentage of total disease burden | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: MED_RESEARCH ÷ TOTAL_BURDEN | Unit: rate | Click to\
-  \ view details, calculation & sources\">0.053% (95% CI: 0.0473%-0.059%)</a>"
+  \ view details, calculation & sources\">0.053% (95% CI: 0.0474%-0.0588%)</a>"
 "medical_research_pct_of_disease_burden_latex": "$$\n\\frac{\\$67.5\\text{B}}{\\$128.6\\\
   text{T}} = 0.052\\%\n$$"
 "mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-mental_health_productivity_loss_per_capita\"\
@@ -1413,7 +1407,7 @@
   \ trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING /\
   \ TOTAL_CLINICAL_TRIALS | Unit: ratio | Click to view details, calculation & sources\"\
-  >45.7 (95% CI: 39.9-48.9)</a>"
+  >46.1 (95% CI: 36.3-54.4)</a>"
 "military_to_clinical_trials_spending_ratio_latex": "$$\n\\text{Ratio} = \\frac{\\\
   $2.7T}{\\$60B} = 45\\times\n$$"
 "military_to_government_clinical_trials_spending_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_to_government_clinical_trials_spending_ratio\"\
@@ -1421,7 +1415,7 @@
   \ data-confidence=\"high\" title=\"Ratio of global military spending to government\
   \ clinical trials spending | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING | Unit: ratio | Click to view\
-  \ details, calculation & sources\">617 (95% CI: 498-804)</a>"
+  \ details, calculation & sources\">621 (95% CI: 453-894)</a>"
 "military_to_government_clinical_trials_spending_ratio_latex": "$$\n\\text{Ratio}\
   \ = \\frac{\\$2.7T}{\\$4.5B} \\approx 600\\times\n$$"
 "military_vs_medical_research_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_vs_medical_research_ratio\"\
@@ -1429,8 +1423,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of military\
   \ spending to medical research spending | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: MILITARY_SPENDING ÷ MEDICAL_RESEARCH | Unit: ratio | Click to view\
-  \ details, calculation & sources\">40.3 (95% CI: 37.7-43.2)</a>"
-"military_vs_medical_research_ratio_latex": "$$\nRatio = \\frac{\\$2,718B}{\\$67.5B}\
+  \ details, calculation & sources\">40.6 (95% CI: 34.3-48)</a>"
+"military_vs_medical_research_ratio_latex": "$$\nRatio = \\frac{\\$2.72T}{\\$67.5B}\
   \ \\approx 40.3:1\n$$"
 "minutes_per_hour": "<span class=\"parameter-link\" title=\"Parameter: MINUTES_PER_HOUR\"\
   >60</span>"
@@ -1439,7 +1433,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Misallocation\
   \ factor: cost to kill vs cost to save | Calculated from 3 inputs | ✓ High confidence\
   \ | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view\
-  \ details, calculation & sources\">2.84k (95% CI: 2.42k-3.38k)</a>"
+  \ details, calculation & sources\">2.84k (95% CI: 2.48k-3.32k)</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
   $16,071} \\approx 2,889x\n$$"
 "months_per_year": "<span class=\"parameter-link\" title=\"Parameter: MONTHS_PER_YEAR\"\
@@ -1476,9 +1470,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
   \ dividend from 1% reduction in total war costs | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$112B (95% CI: $87.4B-$143B)</a>"
+  \ calculation & sources\">$112B (95% CI: $90.1B-$141B)</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\nCost_{soc,ann} = Cost_{war,total}\
-  \ \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.55B\n$$"
+  \ \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.57B\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_conflict_reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Conflict reduction benefits from 1% less military\
@@ -1486,22 +1480,22 @@
   \ 2 inputs | ? Low confidence | Formula: PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT\
   \ - TREATY_ANNUAL_FUNDING | Unit: USD/year | Click to view details, calculation\
   \ & sources\">$84.6B (95% CI: $62.9B-$113B)</a>"
-"peace_dividend_conflict_reduction_latex": "$$\nPeaceDividend_{conflict} = \\$113.55B\
-  \ - \\$27.18B = \\$86.37B\n$$"
+"peace_dividend_conflict_reduction_latex": "$$\nPeaceDividend_{conflict} = \\$114B\
+  \ - \\$27.2B = \\$86.8B\n$$"
 "peace_dividend_direct_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_direct_costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in direct war costs | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: DIRECT_COSTS × 1% | Unit: USD/year | Click to view details, calculation\
-  \ & sources\">$75.1B (95% CI: $58.9B-$96.4B)</a>"
+  \ & sources\">$75.3B (95% CI: $61.4B-$94B)</a>"
 "peace_dividend_direct_costs_latex": "$$\nCost_{direct,peace} = Cost_{direct,total}\
-  \ \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.55B\n$$"
+  \ \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.57B\n$$"
 "peace_dividend_direct_fiscal_savings": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_direct_fiscal_savings\"\
   \ class=\"parameter-link\" data-source-ref=\"sipri2024\" data-source-type=\"definition\"\
   \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
   \ reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
   \ | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
-"peace_dividend_direct_fiscal_savings_latex": "$$\nPeaceDividend_{fiscal} = \\$27.18B\n\
+"peace_dividend_direct_fiscal_savings_latex": "$$\nPeaceDividend_{fiscal} = \\$27.2B\n\
   $$"
 "peace_dividend_environmental": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_environmental\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
@@ -1909,9 +1903,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total global\
   \ research funding (baseline + 1% treaty funding) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING\
-  \ | Unit: USD | Click to view details, calculation & sources\">$94.1B (95% CI: $81.1B-$109B)</a>"
+  \ | Unit: USD | Click to view details, calculation & sources\">$94.3B (95% CI: $83.8B-$107B)</a>"
 "total_research_funding_with_treaty_latex": "$$\nFunding_{total} = Spending_{global}\
-  \ + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B\n$$"
+  \ + Funding_{ann} = \\$67.50B + \\$27.20B = \\$94.70B\n$$"
 "traditional_phase3_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"trial-costs-fda-study\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median from\
@@ -1924,23 +1918,19 @@
   \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
   >17</a>"
 "treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
-"treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
-  \ redirected to DIH (uncertainty inherited from military spending estimates; the\
-  \ 1% itself is a fixed policy choice) | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: MILITARY_SPENDING × 1% | Unit: USD/year | Click to view details, calculation\
-  \ & sources\">$27B (95% CI: $24.5B-$29.9B)</a>"
+"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
+  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
+  \ definition\">$27.2B</span>"
 "treaty_annual_funding_latex": "$$\nFunding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty}\
-  \ = \\$2.72T \\times 1.0\\% = \\$27.18B\n$$"
+  \ = \\$2.72T \\times 1.0\\% = \\$27.20B\n$$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_benefit_multiplier_vs_vaccines\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT\
-  \ | Unit: ratio | Click to view details, calculation & sources\">9.84 (95% CI: 7.53-13.2)</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">9.86 (95% CI: 7.42-13.5)</a>"
 "treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}}\
-  \ = \\frac{\\$143.55B}{\\$15.00B} = 9.57\n$$"
+  \ = \\frac{\\$143.57B}{\\$15.00B} = 9.57\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_annual_cost_amortized\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Amortized annual\
@@ -2081,9 +2071,9 @@
   \ only (2 of 8 benefit categories, excludes regulatory delay value) | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS\
   \ | Unit: USD/year | Click to view details, calculation & sources\">$141B (95% CI:\
-  \ $112B-$180B)</a>"
+  \ $115B-$178B)</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefit_{ann} = Cost_{soc,ann}\
-  \ + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B\n$$"
+  \ + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
@@ -2098,9 +2088,9 @@
   \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
-  \ USD/year | Click to view details, calculation & sources\">$141B (95% CI: $112B-$180B)</a>"
+  \ USD/year | Click to view details, calculation & sources\">$141B (95% CI: $115B-$178B)</a>"
 "treaty_recurring_benefits_annual_latex": "$$\nBenefit_{ann} = Benefit_{DFDA,ann}\
-  \ + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B\n$$"
+  \ + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_roi_historical_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_historical_rate\"\
@@ -2150,9 +2140,9 @@
   \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
-  \ USD/year | Click to view details, calculation & sources\">$141B (95% CI: $112B-$180B)</a>"
+  \ USD/year | Click to view details, calculation & sources\">$141B (95% CI: $115B-$178B)</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nBenefit_{total} = Benefit_{DFDA,ann}\
-  \ + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B\n$$"
+  \ + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B\n$$"
 "treaty_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"How many times more cost-effective than bed nets\
@@ -2165,8 +2155,8 @@
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\
   \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
-  \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">465\
-  \ (95% CI: 321-676)</a>"
+  \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">468\
+  \ (95% CI: 292-752)</a>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
   \ 20 = 514 \\text{ years}\n$$"
 "trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_multiplier\"\
@@ -2174,9 +2164,9 @@
   \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
   \ vs. current global trial participation | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
-  \ view details, calculation & sources\">23.3 (95% CI: 16.1-33.8)</a>"
+  \ view details, calculation & sources\">23.4 (95% CI: 14.6-37.6)</a>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
-  \ = \\frac{43.4M}{1.9M} = 22.8\n$$"
+  \ = \\frac{43.4M}{1.9M} = 22.9\n$$"
 "trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_cost_reduction_factor\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
@@ -2295,9 +2285,9 @@
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
 "victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
   \ VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage) | Unit:\
-  \ USD/year | Core definition\">$2.72B (95% CI: $2.45B-$2.99B)</span>"
+  \ USD/year | Core definition\">$2.72B</span>"
 "victory_bond_annual_payout_latex": "$$\nVictory_{annual} = Funding_{ann} \\times\
-  \ Funding = \\$27.18B \\times 10.0\\% = \\$2.72B\n$$"
+  \ Funding = \\$27.20B \\times 10.0\\% = \\$2.72B\n$$"
 "victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
   \ return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core\
   \ definition\">272%</span>"

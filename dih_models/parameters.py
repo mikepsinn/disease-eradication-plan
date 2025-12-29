@@ -769,7 +769,7 @@ TREATY_REDUCTION_PCT = Parameter(
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
     source_ref="",
-    source_type="calculated",
+    source_type="definition",  # Policy-derived: calculated from fixed military spending ($2.72T) and fixed 1% treaty proposal
     description="Annual funding from 1% of global military spending redirected to DIH",
     display_name="Annual Funding from 1% of Global Military Spending Redirected to DIH",
     unit="USD/year",
@@ -3444,7 +3444,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
 IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING * IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
     source_ref="",
-    source_type="calculated",
+    source_type="definition",  # Policy-derived: calculated from fixed treaty funding and fixed 10% allocation
     description="Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
     display_name="Annual IAB Political Incentive Funding",
     unit="USD/year",
@@ -3475,7 +3475,7 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
     source_ref="",
-    source_type="calculated",
+    source_type="definition",  # Policy-derived: calculated from fixed allocations (treaty funding, bond %, IAB %)
     description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
     display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
@@ -4122,7 +4122,7 @@ DFDA_EXPECTED_ROI = Parameter(
 GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (1 - TREATY_REDUCTION_PCT),
     source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty",
-    source_type="calculated",
+    source_type="definition",  # Policy-derived: calculated from fixed military spending and fixed 1% reduction
     description="Global military spending after 1% treaty reduction",
     display_name="Global Military Spending After 1% Treaty Reduction",
     unit="USD/year",

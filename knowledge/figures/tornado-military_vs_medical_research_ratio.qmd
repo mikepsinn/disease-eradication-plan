@@ -19,13 +19,13 @@ display_name = "Ratio of Military Spending to Medical Research Spending"
 
 # Baseline and units
 
-baseline = 40.266666666666666
+baseline = 40.2962962962963
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
-impacts_low = [10.06666666666667, -4.029629629629632]
-impacts_high = [-6.711111111111109, 4.029629629629632]
+drivers = ['GLOBAL_MED_RESEARCH_SPENDING']
+impacts_low = [10.074074074074076]
+impacts_high = [-6.716049382716051]
 
 # Convert deltas to absolute values (baseline + delta)
 

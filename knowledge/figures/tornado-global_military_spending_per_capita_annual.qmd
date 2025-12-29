@@ -19,13 +19,13 @@ display_name = "Per Capita Military Spending Globally"
 
 # Baseline and units
 
-baseline = 339.75
+baseline = 340.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'GLOBAL_POPULATION_2024']
-impacts_low = [-34.0, 8.711538461538453]
-impacts_high = [34.0, -8.286585365853682]
+drivers = ['GLOBAL_POPULATION_2024']
+impacts_low = [8.71794871794873]
+impacts_high = [-8.292682926829286]
 
 # Convert deltas to absolute values (baseline + delta)
 

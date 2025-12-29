@@ -19,13 +19,13 @@ display_name = "Total Global Research Funding (Baseline + 1% treaty Funding)"
 
 # Baseline and units
 
-baseline = 94680000000.0
+baseline = 94700000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
-impacts_low = [-13500000000.0, -2720000000.0]
-impacts_high = [13500000000.0, 2720000000.0]
+drivers = ['GLOBAL_MED_RESEARCH_SPENDING']
+impacts_low = [-13500000000.0]
+impacts_high = [13500000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

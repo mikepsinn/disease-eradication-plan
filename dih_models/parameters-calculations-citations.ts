@@ -784,15 +784,13 @@ export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
 };
 
 export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
-  value: 2718000000000.0,
+  value: 2720000000000.0,
   unit: "USD",
   displayName: "Global Military Spending in 2024",
   description: "Global military spending in 2024",
   sourceType: "external",
   sourceRef: "global-military-spending",
   confidence: "high",
-  confidenceInterval: [2446000000000.0, 2990000000000.0],
-  stdError: 271800000000.0,
 };
 
 export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
@@ -1531,7 +1529,7 @@ export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
 };
 
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
-  value: 143551000000.0,
+  value: 143571000000.0,
   unit: "USD/year",
   displayName: "Combined Peace and Health Dividends for ROI Calculation",
   description: "Combined peace and health dividends for ROI calculation",
@@ -1539,7 +1537,7 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition",
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
-  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B",
+  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -1710,18 +1708,18 @@ export const DFDA_ROI_SIMPLE: Parameter = {
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
-  value: 75392.0,
+  value: 75448.0,
   unit: "trials/year",
   displayName: "Decentralized Framework for Drug Assessment Maximum Trials per Year",
   description: "Maximum trials per year possible with trial capacity multiplier",
   sourceType: "calculated",
   confidence: "high",
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
-  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.8 = 75{,}400",
+  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.9 = 75{,}400",
 };
 
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
-  value: 43408000.0,
+  value: 43440000.0,
   unit: "patients/year",
   displayName: "Patients Fundable Annually",
   description: "Number of patients fundable annually at RECOVERY trial cost",
@@ -1729,22 +1727,11 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
-  latex: "Fundable_{ann} = \\frac{Treasury_{ann}}{Cost} = \\frac{\\$21.70B}{\\$500} = 43.4M",
-};
-
-export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
-  value: 21744000000.0,
-  unit: "USD/year",
-  displayName: "Annual Funding for Pragmatic Clinical Trials",
-  description: "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
-  latex: "ResearchFunding = \\$27.18B - \\$2.718B - \\$2.718B = \\$21.744B",
+  latex: "Fundable_{ann} = \\frac{Treasury_{ann}}{Cost} = \\frac{\\$21.72B}{\\$500} = 43.4M",
 };
 
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
-  value: 21704000000.0,
+  value: 21720000000.0,
   unit: "USD/year",
   displayName: "Annual Clinical Trial Patient Subsidies",
   description: "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
@@ -1840,7 +1827,7 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Paramete
 };
 
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
-  value: 679.5,
+  value: 680.0,
   unit: "ratio",
   displayName: "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
   description: "Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)",
@@ -1848,7 +1835,7 @@ export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/strategy/roadmap#sustainability",
   confidence: "high",
   formula: "TREATY_FUNDING ÷ DFDA_OPEX",
-  latex: "Coverage = \\$27.18B / \\$0.04B = 679x",
+  latex: "Coverage = \\$27.2B / \\$0.04B = 680x",
 };
 
 export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
@@ -1996,7 +1983,7 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
 };
 
 export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
-  value: 7655000000000.0,
+  value: 7657000000000.0,
   unit: "USD/year",
   displayName: "Total Annual Direct War Costs",
   description: "Total annual direct war costs (military spending + infrastructure + human life + trade disruption)",
@@ -2004,7 +1991,7 @@ export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#direct-costs",
   confidence: "high",
   formula: "MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE",
-  latex: "DirectCosts = \\$2,718B \\text{ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\text{ (trade)} = \\$7,655B",
+  latex: "DirectCosts = \\$2.72T \\text{ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\text{ (trade)} = \\$7,657B",
 };
 
 export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
@@ -2020,7 +2007,7 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
 };
 
 export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
-  value: 11355100000000.0,
+  value: 11357100000000.0,
   unit: "USD/year",
   displayName: "Total Annual Cost of War Worldwide",
   description: "Total annual cost of war worldwide (direct + indirect costs)",
@@ -2028,7 +2015,7 @@ export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#total-cost",
   confidence: "high",
   formula: "DIRECT_COSTS + INDIRECT_COSTS",
-  latex: "TotalWarCost = \\$7,655B \\text{ (direct)} + \\$3,700B \\text{ (indirect)} = \\$11,355B",
+  latex: "TotalWarCost = \\$7,657B \\text{ (direct)} + \\$3,700B \\text{ (indirect)} = \\$11,357B",
 };
 
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
@@ -2067,7 +2054,7 @@ export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
 };
 
 export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
-  value: 339.75,
+  value: 340.0,
   unit: "USD/person/year",
   displayName: "Per Capita Military Spending Globally",
   description: "Per capita military spending globally",
@@ -2075,23 +2062,11 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#per-capita",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ POPULATION",
-  latex: "PerCapita_{military} = \\$2,718B / 8.0B = \\$339.75",
-};
-
-export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
-  value: 2690820000000.0,
-  unit: "USD/year",
-  displayName: "Global Military Spending After 1% Treaty Reduction",
-  description: "Global military spending after 1% treaty reduction",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/strategy/treaty-adoption-strategy#post-treaty",
-  confidence: "high",
-  formula: "MILITARY_SPENDING × (1 - REDUCTION)",
-  latex: "PostTreaty_{military} = \\$2,718B \\times 0.99 = \\$2,690.82B",
+  latex: "PerCapita_{military} = \\$2.72T / 8.0B = \\$340",
 };
 
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
-  value: 128655100000000.0,
+  value: 128657100000000.0,
   unit: "USD/year",
   displayName: "Total Annual Cost of War and Disease with All Externalities",
   description: "Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
@@ -2127,7 +2102,7 @@ export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
-  value: 191.40133333333333,
+  value: 191.428,
   unit: "ratio",
   displayName: "IAB Mechanism Benefit-Cost Ratio",
   description: "Benefit-Cost Ratio of the IAB mechanism itself",
@@ -2135,18 +2110,7 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
-  latex: "Cost = \\frac{Benefit_{ann}}{Cost_{ann}} = \\frac{\\$143.55B}{\\$750.0M} = 191",
-};
-
-export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
-  value: 2718000000.0,
-  unit: "USD/year",
-  displayName: "Annual IAB Political Incentive Funding",
-  description: "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
-  latex: "IABFunding = \\$27.18B \\times 0.10 = \\$2.718B",
+  latex: "Cost = \\frac{Benefit_{ann}}{Cost_{ann}} = \\frac{\\$143.57B}{\\$750.0M} = 191",
 };
 
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -2161,7 +2125,7 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
 };
 
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
-  value: 0.0005246585638657154,
+  value: 0.0005246504079448395,
   unit: "rate",
   displayName: "Medical Research Spending as Percentage of Total Disease Burden",
   description: "Medical research spending as percentage of total disease burden",
@@ -2173,7 +2137,7 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
 };
 
 export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
-  value: 45.3,
+  value: 45.333333333333336,
   unit: "ratio",
   displayName: "Ratio of Military to Clinical Trials Spending",
   description: "Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
@@ -2184,7 +2148,7 @@ export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
 };
 
 export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
-  value: 604.0,
+  value: 604.4444444444445,
   unit: "ratio",
   displayName: "Ratio of Military to Government Clinical Trials Spending",
   description: "Ratio of global military spending to government clinical trials spending",
@@ -2195,7 +2159,7 @@ export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
 };
 
 export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
-  value: 40.266666666666666,
+  value: 40.2962962962963,
   unit: "ratio",
   displayName: "Ratio of Military Spending to Medical Research Spending",
   description: "Ratio of military spending to medical research spending",
@@ -2203,11 +2167,11 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#misallocation",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ MEDICAL_RESEARCH",
-  latex: "Ratio = \\frac{\\$2,718B}{\\$67.5B} \\approx 40.3:1",
+  latex: "Ratio = \\frac{\\$2.72T}{\\$67.5B} \\approx 40.3:1",
 };
 
 export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
-  value: 2888.550922140456,
+  value: 2889.0596892886347,
   unit: "ratio",
   displayName: "Misallocation Factor: Cost to Kill vs Cost to Save",
   description: "Misallocation factor: cost to kill vs cost to save",
@@ -2219,7 +2183,7 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
 };
 
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
-  value: 113551000000.0,
+  value: 113571000000.0,
   unit: "USD/year",
   displayName: "Annual Peace Dividend from 1% Reduction in Total War Costs",
   description: "Annual peace dividend from 1% reduction in total war costs",
@@ -2227,7 +2191,7 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations",
   confidence: "high",
   formula: "TOTAL_WAR_COST × 1%",
-  latex: "Cost_{soc,ann} = Cost_{war,total} \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.55B",
+  latex: "Cost_{soc,ann} = Cost_{war,total} \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.57B",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
@@ -2239,11 +2203,11 @@ export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
   sourceRef: "calculated",
   confidence: "low",
   formula: "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING",
-  latex: "PeaceDividend_{conflict} = \\$113.55B - \\$27.18B = \\$86.37B",
+  latex: "PeaceDividend_{conflict} = \\$114B - \\$27.2B = \\$86.8B",
 };
 
 export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
-  value: 76550000000.0,
+  value: 76570000000.0,
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Direct War Costs",
   description: "Annual savings from 1% reduction in direct war costs",
@@ -2251,7 +2215,7 @@ export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "DIRECT_COSTS × 1%",
-  latex: "Cost_{direct,peace} = Cost_{direct,total} \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.55B",
+  latex: "Cost_{direct,peace} = Cost_{direct,total} \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.57B",
 };
 
 export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
@@ -2375,7 +2339,7 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
-  value: 507984.80978508206,
+  value: 508007.2978006117,
   unit: "usd",
   displayName: "Personal Lifetime Wealth (Age 30, 1% Treaty)",
   description: "Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
@@ -2487,7 +2451,7 @@ export const THALIDOMIDE_YLL_PER_EVENT: Parameter = {
 };
 
 export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
-  value: 94680000000.0,
+  value: 94700000000.0,
   unit: "USD",
   displayName: "Total Global Research Funding (Baseline + 1% treaty Funding)",
   description: "Total global research funding (baseline + 1% treaty funding)",
@@ -2495,22 +2459,11 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
-  latex: "Funding_{total} = Spending_{global} + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B",
-};
-
-export const TREATY_ANNUAL_FUNDING: Parameter = {
-  value: 27180000000.0,
-  unit: "USD/year",
-  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
-  description: "Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "MILITARY_SPENDING × 1%",
-  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B",
+  latex: "Funding_{total} = Spending_{global} + Funding_{ann} = \\$67.50B + \\$27.20B = \\$94.70B",
 };
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
-  value: 9.570066666666667,
+  value: 9.5714,
   unit: "ratio",
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
@@ -2518,7 +2471,7 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#better-than-the-best-charities",
   confidence: "high",
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
-  latex: "Multiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}} = \\frac{\\$143.55B}{\\$15.00B} = 9.57",
+  latex: "Multiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}} = \\frac{\\$143.57B}{\\$15.00B} = 9.57",
 };
 
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
@@ -2617,7 +2570,7 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
-  value: 143551000000.0,
+  value: 143571000000.0,
   unit: "USD/year",
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
   description: "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
@@ -2625,7 +2578,7 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
-  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$30.00B = \\$143.55B",
+  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
 };
 
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
@@ -2641,7 +2594,7 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
-  value: 143551000000.0,
+  value: 143571000000.0,
   unit: "USD/year",
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
@@ -2649,7 +2602,7 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
-  latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B",
+  latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B",
 };
 
 export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
@@ -2701,7 +2654,7 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 };
 
 export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
-  value: 143551000000.0,
+  value: 143571000000.0,
   unit: "USD/year",
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
@@ -2709,7 +2662,7 @@ export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
-  latex: "Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.55B = \\$143.55B",
+  latex: "Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B",
 };
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
@@ -2724,7 +2677,7 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
-  value: 456.0,
+  value: 457.0,
   unit: "years",
   displayName: "Cumulative Trial Capacity Years Over 20 Years",
   description: "Cumulative trial-capacity-equivalent years over 20-year period",
@@ -2735,14 +2688,14 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
 };
 
 export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
-  value: 22.846315789473685,
+  value: 22.86315789473684,
   unit: "ratio",
   displayName: "Trial Capacity Multiplier",
   description: "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
   sourceType: "calculated",
   confidence: "high",
   formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
-  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{43.4M}{1.9M} = 22.8",
+  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{43.4M}{1.9M} = 22.9",
 };
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
@@ -3236,7 +3189,7 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
 };
 
 export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
-  value: 0.0014716703458425313,
+  value: 0.0014705882352941176,
   unit: "rate",
   displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
   description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
@@ -3244,7 +3197,7 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "DFDA_OPEX / TREATY_FUNDING",
-  latex: "DFDAOpexPct = \\$0.04B / \\$27.18B = 0.00147 = 0.15\\%",
+  latex: "DFDAOpexPct = \\$0.04B / \\$27.2B = 0.00147 = 0.15\\%",
 };
 
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
@@ -3341,11 +3294,22 @@ export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-  latex: "MedicalResearchPct = \\$21.744B / \\$27.18B = 0.80 = 80\\%",
+  latex: "MedicalResearchPct = \\$21.76B / \\$27.2B = 0.80 = 80\\%",
+};
+
+export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
+  value: 21760000000.0,
+  unit: "USD/year",
+  displayName: "Annual Funding for Pragmatic Clinical Trials",
+  description: "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
+  sourceType: "definition",
+  confidence: "high",
+  formula: "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
+  latex: "ResearchFunding = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.76B",
 };
 
 export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
-  value: 0.7985283296541574,
+  value: 0.7985294117647059,
   unit: "rate",
   displayName: "Patient Trial Subsidies Percentage of Treaty Funding",
   description: "Percentage of treaty funding going directly to patient trial subsidies",
@@ -3353,7 +3317,7 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES / TREATY_FUNDING",
-  latex: "TrialSubsidiesPct = \\$21.70B / \\$27.18B = 0.7985 = 79.85\\%",
+  latex: "TrialSubsidiesPct = \\$21.72B / \\$27.2B = 0.7985 = 79.85\\%",
 };
 
 export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
@@ -3434,6 +3398,18 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   latex: "P_{\\text{unavoidable}} = \\sum_{\\text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) = 7.91\\%",
 };
 
+export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
+  value: 2692800000000.0,
+  unit: "USD/year",
+  displayName: "Global Military Spending After 1% Treaty Reduction",
+  description: "Global military spending after 1% treaty reduction",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/strategy/treaty-adoption-strategy#post-treaty",
+  confidence: "high",
+  formula: "MILITARY_SPENDING × (1 - REDUCTION)",
+  latex: "PostTreaty_{military} = \\$2.72T \\times 0.99 = \\$2.69T",
+};
+
 export const HOURS_PER_DAY: Parameter = {
   value: 24.0,
 };
@@ -3478,6 +3454,17 @@ export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   confidenceInterval: [160000000.0, 750000000.0],
+};
+
+export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
+  value: 2720000000.0,
+  unit: "USD/year",
+  displayName: "Annual IAB Political Incentive Funding",
+  description: "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+  sourceType: "definition",
+  confidence: "high",
+  formula: "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
+  latex: "IABFunding = \\$27.2B \\times 0.10 = \\$2.72B",
 };
 
 export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
@@ -3538,7 +3525,7 @@ export const NPV_TIME_HORIZON_YEARS: Parameter = {
 };
 
 export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
-  value: 27180000000.0,
+  value: 27200000000.0,
   unit: "USD/year",
   displayName: "Direct Fiscal Savings from 1% Military Spending Reduction",
   description: "Direct fiscal savings from 1% military spending reduction (high confidence)",
@@ -3546,7 +3533,7 @@ export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   sourceRef: "sipri2024",
   confidence: "high",
   formula: "TREATY_ANNUAL_FUNDING",
-  latex: "PeaceDividend_{fiscal} = \\$27.18B",
+  latex: "PeaceDividend_{fiscal} = \\$27.2B",
 };
 
 export const PRE_1962_VALIDATION_YEARS: Parameter = {
@@ -3598,6 +3585,17 @@ export const TOTAL_BOOK_WORDS: Parameter = {
   sourceType: "definition",
   sourceRef: "book-word-count",
   confidence: "high",
+};
+
+export const TREATY_ANNUAL_FUNDING: Parameter = {
+  value: 27200000000.0,
+  unit: "USD/year",
+  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
+  description: "Annual funding from 1% of global military spending redirected to DIH",
+  sourceType: "definition",
+  confidence: "high",
+  formula: "MILITARY_SPENDING × 1%",
+  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.20B",
 };
 
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
@@ -3721,18 +3719,18 @@ export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
 };
 
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
-  value: 2718000000.0,
+  value: 2720000000.0,
   unit: "USD/year",
   displayName: "Annual VICTORY Incentive Alignment Bond Payout",
   description: "Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
   sourceType: "definition",
   confidence: "high",
   formula: "TREATY_FUNDING × BOND_PCT",
-  latex: "Victory_{annual} = Funding_{ann} \\times Funding = \\$27.18B \\times 10.0\\% = \\$2.72B",
+  latex: "Victory_{annual} = Funding_{ann} \\times Funding = \\$27.20B \\times 10.0\\% = \\$2.72B",
 };
 
 export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
-  value: 2.718,
+  value: 2.72,
   unit: "rate",
   displayName: "Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
   description: "Annual return percentage for VICTORY Incentive Alignment Bondholders",
@@ -3909,7 +3907,6 @@ export const parameters = {
   DFDA_ROI_SIMPLE,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
   DIH_PATIENTS_FUNDABLE_ANNUALLY,
-  DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL,
   DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL,
   DISEASE_ERADICATION_DELAY_DALYS,
   DISEASE_ERADICATION_DELAY_DEATHS_TOTAL,
@@ -3938,12 +3935,10 @@ export const parameters = {
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
-  GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   HISTORICAL_PROGRESS_DEATHS_TOTAL,
   HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
-  IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN,
   MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO,
@@ -3974,7 +3969,6 @@ export const parameters = {
   THALIDOMIDE_YLD_PER_EVENT,
   THALIDOMIDE_YLL_PER_EVENT,
   TOTAL_RESEARCH_FUNDING_WITH_TREATY,
-  TREATY_ANNUAL_FUNDING,
   TREATY_BENEFIT_MULTIPLIER_VS_VACCINES,
   TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED,
   TREATY_CAMPAIGN_TOTAL_COST,
@@ -4050,6 +4044,7 @@ export const parameters = {
   DIH_NPV_ANNUAL_OPEX_INITIATIVES,
   DIH_NPV_UPFRONT_COST_INITIATIVES,
   DIH_TREASURY_MEDICAL_RESEARCH_PCT,
+  DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL,
   DIH_TREASURY_TRIAL_SUBSIDIES_PCT,
   DISEASE_RELATED_CAREGIVER_PCT,
   DISEASE_VS_TERRORISM_DEATHS_RATIO,
@@ -4058,12 +4053,14 @@ export const parameters = {
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
+  GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD,
   IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD,
   IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD,
   IAB_MECHANISM_ANNUAL_COST,
+  IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
   INSTITUTIONAL_INVESTOR_MIN,
   LOBBYIST_BOND_INVESTMENT_MAX,
@@ -4078,6 +4075,7 @@ export const parameters = {
   SECONDS_PER_YEAR,
   TESTED_RELATIONSHIPS_ESTIMATE,
   TOTAL_BOOK_WORDS,
+  TREATY_ANNUAL_FUNDING,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
   TREATY_CAMPAIGN_BUDGET_REFERENDUM,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
@@ -5478,8 +5476,8 @@ export const citations: Record<string, Citation> = {
 export const PARAMETER_STATS = {
   total: 336,
   external: 134,
-  calculated: 110,
-  definitions: 92,
+  calculated: 106,
+  definitions: 96,
   citations: 101,
 } as const;
 

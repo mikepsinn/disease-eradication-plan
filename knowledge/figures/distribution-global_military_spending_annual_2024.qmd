@@ -16,10 +16,10 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 2718000000000.0
-low = 2446000000000
-high = 2990000000000
-dist_type = "lognormal"
+central_value = 2720000000000.0
+low = 2176000000000.0
+high = 3264000000000.0
+dist_type = "fixed"
 display_name = "Global Military Spending in 2024"
 unit = "USD"
 

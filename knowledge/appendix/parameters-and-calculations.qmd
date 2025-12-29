@@ -18,12 +18,12 @@ This appendix provides comprehensive documentation of all parameters and calcula
 **Total parameters**: 336
 
 - External sources (peer-reviewed): 134
-- Calculated values: 110
-- Core definitions: 92
+- Calculated values: 106
+- Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (110 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (92 parameters)
+[Calculated Values](#sec-calculated) (106 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -108,7 +108,7 @@ Combined peace and health dividends for ROI calculation
 - [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 
 $$
-Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$30.00B = \$143.55B
+Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.57B + \$30.00B = \$143.57B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations#peace-dividend-composition](../appendix/peace-dividend-calculations#peace-dividend-composition)
@@ -634,10 +634,10 @@ Maximum trials per year possible with trial capacity multiplier
 **Inputs**:
 
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
 
 $$
-Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 22.8 = 75{,}400
+Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 22.9 = 75{,}400
 $$
 
 *✓ High confidence*
@@ -670,7 +670,7 @@ Number of patients fundable annually at RECOVERY trial cost
 - [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $350 - $700)
 
 $$
-Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$21.70B}{\$500} = 43.4M
+Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$21.72B}{\$500} = 43.4M
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -693,40 +693,6 @@ $$
 
 :::
 
-### Annual Funding for Pragmatic Clinical Trials: $21.7B {#sec-dih_treasury_to_medical_research_annual}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
-- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
-
-$$
-ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dih_treasury_to_medical_research_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-dih_treasury_to_medical_research_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
-
-:::
-
 ### Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -736,7 +702,7 @@ Annual clinical trial patient subsidies (all medical research funds after Decent
 **Inputs**:
 
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.7B
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual): $21.8B
 
 $$
 TrialSubsidies = \$24.462B - \$0.04B = \$24.422B
@@ -1017,10 +983,10 @@ Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment
 **Inputs**:
 
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
-Coverage = \$27.18B / \$0.04B = 679x
+Coverage = \$27.2B / \$0.04B = 680x
 $$
 
 **Methodology**: [../strategy/roadmap#sustainability](../strategy/roadmap#sustainability)
@@ -1472,10 +1438,10 @@ Total annual direct war costs (military spending + infrastructure + human life +
 - [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
 - [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
 - [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 
 $$
-DirectCosts = \$2,718B \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,655B
+DirectCosts = \$2.72T \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,657B
 $$
 
 **Methodology**: [../problem/cost-of-war#direct-costs](../problem/cost-of-war#direct-costs)
@@ -1549,7 +1515,7 @@ Total annual cost of war worldwide (direct + indirect costs)
 - [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
 
 $$
-TotalWarCost = \$7,655B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,355B
+TotalWarCost = \$7,657B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,357B
 $$
 
 **Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
@@ -1684,11 +1650,11 @@ Per capita military spending globally
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8.00B of people (95% CI: 7.80B of people - 8.20B of people)
 
 $$
-PerCapita_{military} = \$2,718B / 8.0B = \$339.75
+PerCapita_{military} = \$2.72T / 8.0B = \$340
 $$
 
 **Methodology**: [../problem/cost-of-war#per-capita](../problem/cost-of-war#per-capita)
@@ -1708,41 +1674,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_military_spending_per_capita_annual.qmd >}}
-
-:::
-
-### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Global military spending after 1% treaty reduction
-
-**Inputs**:
-
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
-- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
-
-$$
-PostTreaty_{military} = \$2,718B \times 0.99 = \$2,690.82B
-$$
-
-**Methodology**: [../strategy/treaty-adoption-strategy#post-treaty](../strategy/treaty-adoption-strategy#post-treaty)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_military_spending_post_treaty_annual_2024.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_military_spending_post_treaty_annual_2024.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_military_spending_post_treaty_annual_2024.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_military_spending_post_treaty_annual_2024.qmd >}}
 
 :::
 
@@ -1865,7 +1796,7 @@ Benefit-Cost Ratio of the IAB mechanism itself
 - [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750M (95% CI: $160M - $750M)
 
 $$
-Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$143.55B}{\$750.0M} = 191
+Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$143.57B}{\$750.0M} = 191
 $$
 
 **Methodology**: [../appendix/incentive-alignment-bonds-paper#welfare-analysis](../appendix/incentive-alignment-bonds-paper#welfare-analysis)
@@ -1885,39 +1816,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-iab_mechanism_benefit_cost_ratio.qmd >}}
-
-:::
-
-### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-- [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
-
-$$
-IABFunding = \$27.18B \times 0.10 = \$2.718B
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-iab_political_incentive_funding_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-iab_political_incentive_funding_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
 
 :::
 
@@ -1997,7 +1895,7 @@ Ratio of global military spending to all clinical trials spending (government + 
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 
 $$
@@ -2030,7 +1928,7 @@ Ratio of global military spending to government clinical trials spending
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
 $$
@@ -2064,10 +1962,10 @@ Ratio of military spending to medical research spending
 **Inputs**:
 
 - [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 
 $$
-Ratio = \frac{\$2,718B}{\$67.5B} \approx 40.3:1
+Ratio = \frac{\$2.72T}{\$67.5B} \approx 40.3:1
 $$
 
 **Methodology**: [../problem/cost-of-war#misallocation](../problem/cost-of-war#misallocation)
@@ -2138,7 +2036,7 @@ Annual peace dividend from 1% reduction in total war costs
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
-Cost_{soc,ann} = Cost_{war,total} \times Reduction_{treaty} = \$11.36T \times 1.0\% = \$113.55B
+Cost_{soc,ann} = Cost_{war,total} \times Reduction_{treaty} = \$11.36T \times 1.0\% = \$113.57B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations](../appendix/peace-dividend-calculations)
@@ -2170,10 +2068,10 @@ Conflict reduction benefits from 1% less military spending (lower confidence - a
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
-PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B
+PeaceDividend_{conflict} = \$114B - \$27.2B = \$86.8B
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -2196,7 +2094,7 @@ $$
 
 :::
 
-### Annual Savings from 1% Reduction in Direct War Costs: $76.5B {#sec-peace_dividend_direct_costs}
+### Annual Savings from 1% Reduction in Direct War Costs: $76.6B {#sec-peace_dividend_direct_costs}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2208,7 +2106,7 @@ Annual savings from 1% reduction in direct war costs
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
-Cost_{direct,peace} = Cost_{direct,total} \times Reduction_{treaty} = \$7.66T \times 1.0\% = \$76.55B
+Cost_{direct,peace} = Cost_{direct,total} \times Reduction_{treaty} = \$7.66T \times 1.0\% = \$76.57B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -2590,7 +2488,7 @@ Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% tre
 **Inputs**:
 
 - [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
 
 $$
 \text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
@@ -2923,10 +2821,10 @@ Total global research funding (baseline + 1% treaty funding)
 **Inputs**:
 
 - [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
-Funding_{total} = Spending_{global} + Funding_{ann} = \$67.50B + \$27.18B = \$94.68B
+Funding_{total} = Spending_{global} + Funding_{ann} = \$67.50B + \$27.20B = \$94.70B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -2949,39 +2847,6 @@ $$
 
 :::
 
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Annual funding from 1% of global military spending redirected to DIH (uncertainty inherited from military spending estimates; the 1% itself is a fixed policy choice)
-
-**Inputs**:
-
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
-- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
-
-$$
-Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1.0\% = \$27.18B
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_annual_funding.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_annual_funding.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
-
-:::
-
 ### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 9.57 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -2994,7 +2859,7 @@ Treaty system benefit multiplier vs childhood vaccination programs
 - [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $144B
 
 $$
-Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$143.55B}{\$15.00B} = 9.57
+Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$143.57B}{\$15.00B} = 9.57
 $$
 
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
@@ -3309,7 +3174,7 @@ Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessm
 - [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 
 $$
-Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$30.00B = \$143.55B
+Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.57B + \$30.00B = \$143.57B
 $$
 
 **Methodology**: [../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits](../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits)
@@ -3379,7 +3244,7 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
-Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.55B = \$143.55B
+Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.57B = \$143.57B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -3555,7 +3420,7 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
-Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.55B = \$143.55B
+Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.57B = \$143.57B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -3611,7 +3476,7 @@ $$
 
 :::
 
-### Cumulative Trial Capacity Years Over 20 Years: 456 years {#sec-trial_capacity_cumulative_years_20yr}
+### Cumulative Trial Capacity Years Over 20 Years: 457 years {#sec-trial_capacity_cumulative_years_20yr}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3619,7 +3484,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
 
 $$
 Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
@@ -3643,7 +3508,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 22.8 ratio {#sec-trial_capacity_multiplier}
+### Trial Capacity Multiplier: 22.9 ratio {#sec-trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3655,7 +3520,7 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 - [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 43.4M patients/year
 
 $$
-Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{43.4M}{1.9M} = 22.8
+Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{43.4M}{1.9M} = 22.9
 $$
 
 *✓ High confidence*
@@ -5138,11 +5003,7 @@ Global military spending in 2024
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$2.45T, $2.99T] • Distribution: Lognormal (SE: $272B)
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $2.45T and $2.99T (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+**Technical**: Distribution: Fixed
 
 #### Input Distribution
 
@@ -7058,6 +6919,16 @@ Percentage of treaty funding allocated to medical research (after bond payouts a
 
 :::
 
+### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
+
+*Core definition*
+
+:::
+
 ### Patient Trial Subsidies Percentage of Treaty Funding: 79.9% {#sec-dih_treasury_trial_subsidies_pct}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -7138,6 +7009,16 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 :::
 
+### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Global military spending after 1% treaty reduction
+
+*Core definition*
+
+:::
+
 ### Hours Per Day: 24 {#sec-hours_per_day}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -7195,6 +7076,16 @@ Estimated annual cost of the IAB mechanism (high-end estimate including regulato
 **Technical**: 95% CI: [$160M, $750M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $160M and $750M (±39%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*Core definition*
+
+:::
+
+### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
 
 *Core definition*
 
@@ -7355,6 +7246,16 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total words in the book
+
+*Core definition*
+
+:::
+
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual funding from 1% of global military spending redirected to DIH
 
 *Core definition*
 

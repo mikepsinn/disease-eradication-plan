@@ -742,10 +742,14 @@ def main():
                     sys.exit(1)
 
                 # Auto-discover parameters with compute functions
+                # Exclude source_type="definition" - these are policy-derived fixed values
                 analyzable_params = []
                 for param_name, meta in parameters.items():
                     val = meta.get("value")
                     if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+                        # Skip parameters marked as "definition" - they're policy-derived, not truly calculated
+                        if hasattr(val, "source_type") and val.source_type == "definition":
+                            continue
                         # Wrap as Outcome for tornado/sensitivity
                         outcome = Outcome(
                             name=param_name,

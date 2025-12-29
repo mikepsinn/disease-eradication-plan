@@ -19,13 +19,13 @@ display_name = "Ratio of Military to Clinical Trials Spending"
 
 # Baseline and units
 
-baseline = 45.3
+baseline = 45.333333333333336
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
-impacts_low = [9.060000000000002, -4.533333333333331]
-impacts_high = [-9.059999999999995, 4.5333333333333385]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL']
+impacts_low = [9.066666666666663]
+impacts_high = [-9.06666666666667]
 
 # Convert deltas to absolute values (baseline + delta)
 
