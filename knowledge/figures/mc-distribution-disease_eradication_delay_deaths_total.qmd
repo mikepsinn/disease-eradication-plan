@@ -117,7 +117,7 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 416M |
+| Baseline (deterministic) | 413M |
 | Mean (expected value) | 418M |
 | Median (50th percentile) | 415M |
 | Standard Deviation | 71.2M |

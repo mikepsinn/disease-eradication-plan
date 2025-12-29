@@ -1,7 +1,7 @@
 ---
 title: The Human Capital Cost of Regulatory Latency
 subtitle: A Quantitative Analysis of Type II Errors and Welfare Loss in Global Pharmaceutical Licensing (1962–2024)
-description: PRIMARY METHODOLOGY - Rigorous top-down analysis estimating 184.6M preventable deaths, 3.53B DALYs, and $529T economic loss from 8.2-year efficacy lag. Source of 54M annual QALY estimate.
+description: PRIMARY METHODOLOGY - Rigorous top-down analysis estimating 184.6M eventually avoidable deaths, 3.53B DALYs, and $529T economic loss from 8.2-year efficacy lag. Source of 54M annual QALY estimate.
 published: true
 tags:
   - appendix
@@ -25,7 +25,7 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-aca
 
 The 1962 Kefauver-Harris Amendments require an 8-year efficacy delay after drugs are proven safe. During those 8 years, people die. This document counts them.
 
-**The number:** {{< var disease_eradication_delay_deaths_total >}} preventable deaths from eliminating the 8.2-year efficacy lag.
+**The number:** {{< var disease_eradication_delay_deaths_total >}} eventually avoidable deaths from eliminating the 8.2-year efficacy lag.
 
 **The math:** Rigorous, peer-reviewable, and deeply depressing.
 
@@ -165,7 +165,7 @@ We present three distinct methodologies for estimating the mortality cost of the
 - **For Internal Analysis:** Use **PRIMARY** estimate ({{< var disease_eradication_delay_deaths_total >}}) for realistic impact assessment
 - **For Innovation Advocates:** Reference **Optimistic** estimate ({{< var disease_eradication_plus_acceleration_deaths_total >}}) to show maximum potential
 
-**Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_total >}} total preventable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
+**Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_total >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
 
 ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
@@ -421,7 +421,7 @@ We have:
 
 1. **Temporal correlation:** Life expectancy growth halved in 1962
 2. **Mechanism:** Drug approvals dropped 70%, costs increased 13×, real-world trials banned
-3. **Alternative explanations:** None that explain a sudden linear break at exactly 1962
+3. **Alternative explanations:** Other factors exist (complexity, standards, etc.), but the timing and magnitude strongly suggest regulatory latency is a major contributor
 
 **If you reject this inferential method, you must also reject the methodology of clinical trials**, which use the identical logical structure.
 
@@ -644,7 +644,7 @@ That's the number that matters.
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var disease_eradication_delay_deaths_total >}} preventable deaths from 8.2-year timeline shift**
+- **{{< var disease_eradication_delay_deaths_total >}} eventually avoidable deaths from 8.2-year timeline shift**
 - **{{< var disease_eradication_delay_dalys >}} DALYs lost**
 - **{{< var disease_eradication_delay_economic_loss >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)

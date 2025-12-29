@@ -797,7 +797,7 @@ $$
 
 :::
 
-### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-disease_eradication_delay_deaths_total}
+### Total Deaths from Disease Eradication Delay: ~413M deaths {#sec-disease_eradication_delay_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -875,12 +875,12 @@ Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: ~413M deaths
 - [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
 - [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
 $$
-Delay_{dis} = Deaths_{total} \times Deaths \times Chronic = 415.9M \times 6 \times 0.35 = 873.3M
+Delay_{dis} = Deaths_{total} \times Deaths \times Chronic = 413.4M \times 6 \times 0.35 = 868.1M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -911,7 +911,7 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: ~413M deaths
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
@@ -6949,11 +6949,11 @@ Lifetime benefit for age 30 baseline scenario ($4.3M)
 
 :::
 
-### Eventually Avoidable Death Percentage: 92.6% {#sec-eventually_avoidable_death_pct}
+### Eventually Avoidable Death Percentage: 92.1% {#sec-eventually_avoidable_death_pct}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)
 
 *Core definition*
 
