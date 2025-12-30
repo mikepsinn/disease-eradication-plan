@@ -120,3 +120,8 @@ _analysis/
 assets/need-watermark/
 assets/watermarked/
 .generate-images.lock
+
+# Test workflow logs
+economics-render.log
+economics-render-test.log
+act-artifacts/

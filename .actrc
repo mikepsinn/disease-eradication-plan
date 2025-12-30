@@ -1,0 +1,8 @@
+# ACT configuration for local GitHub Actions testing
+# See: https://github.com/nektos/act
+
+# Use medium-sized Docker image (includes Python, Node, etc.)
+-P ubuntu-latest=catthehacker/ubuntu:act-latest
+
+# Increase verbosity for debugging
+-v

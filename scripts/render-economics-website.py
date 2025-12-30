@@ -56,7 +56,7 @@ def main():
         "--output-dir",
         args.output_dir,
         "--command",
-        "quarto render",
+        "quarto render",  # For type: book, renders all formats by default
     ]
     if args.quarto_args:
         cmd.extend(args.quarto_args)
