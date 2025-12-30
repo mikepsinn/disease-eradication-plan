@@ -120,8 +120,10 @@ values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
 
-fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
 
 y_pos = np.arange(len(drivers))
 
@@ -173,9 +175,10 @@ clean_spines(ax)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 150 DPI for PDF compatibility (vs 200 DPI which can exceed LaTeX limits)
 
 output_path = get_figure_output_path('tornado-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -427,7 +430,7 @@ elif dist_type == "pert":
 
 # Create figure
 
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 
 # Plot distribution
 
@@ -473,7 +476,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('distribution-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -563,7 +566,7 @@ units = "{units}"
 
 # Create figure with two subplots
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 6))
 fig.subplots_adjust(wspace=0.3)
 
 # --- Left: Histogram ---
@@ -637,7 +640,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('mc-distribution-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -740,7 +743,7 @@ exceedance = 1 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
 
 # Create figure
 
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 
 # Plot exceedance curve
 
@@ -777,7 +780,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('exceedance-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,

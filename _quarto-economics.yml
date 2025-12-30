@@ -16,7 +16,7 @@ profiles:
 
 book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-  author: "Mike P. Sinn"
+  description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
   site-url: https://impact.warondisease.org
   favicon: assets/icons/dih-icon-square.png
   page-navigation: true
@@ -43,7 +43,7 @@ book:
     contents:
       - section: "Academic Paper"
         contents:
-          - href: knowledge/economics/economics.qmd
+          - href: index.html
             text: "The 1% Treaty: Economic Analysis"
           - href: knowledge/references.qmd
             text: "References & Citations"

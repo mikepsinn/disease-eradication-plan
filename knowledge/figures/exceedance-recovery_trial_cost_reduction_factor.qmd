@@ -28,7 +28,7 @@ exceedance = 1 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
 
 # Create figure
 
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 
 # Plot exceedance curve
 
@@ -65,7 +65,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('exceedance-recovery_trial_cost_reduction_factor.png')
-plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
