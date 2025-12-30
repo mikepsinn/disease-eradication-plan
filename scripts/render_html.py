@@ -95,7 +95,7 @@ def main():
         print("=" * 80, flush=True)
         print("POST-PROCESSING ECONOMICS HTML", flush=True)
         print("=" * 80, flush=True)
-        from quarto_prep import postprocess_economics_html, postprocess_economics_pdf
+        from quarto_post_build import postprocess_economics_html, postprocess_economics_pdf
 
         # HTML post-processing (only fail if exit code was 0 originally)
         if not postprocess_economics_html(build_dir=args.output_dir, verbose=True):
