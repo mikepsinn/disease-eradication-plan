@@ -29,9 +29,9 @@ economic_impacts = pd.DataFrame({
     'Benefit Value (Trillions)': [
         float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000_000,
         float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000_000,
-        float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
-        float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / 1_000_000_000_000,
-        float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
+        float(EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS) / 1_000_000_000_000,
+        float(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE) / 1_000_000_000_000,
+        float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE) / 1_000_000_000_000,
         np.nan,
         np.nan,  # ROI only
         np.nan   # ROI only
@@ -39,9 +39,9 @@ economic_impacts = pd.DataFrame({
     'ROI Ratio': [
         np.nan,
         np.nan,
-        float(TREATY_ROI_HISTORICAL_RATE),
-        float(TREATY_ROI_LAG_ELIMINATION),
-        float(TREATY_ROI_INNOVATION_ACCELERATION),
+        float(TREATY_ROI_EXISTING_DRUGS_ONLY),
+        float(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE) / float(TREATY_CAMPAIGN_TOTAL_COST),
+        float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG),
         np.nan,
         float(DFDA_ROI_RD_ONLY),
         float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
