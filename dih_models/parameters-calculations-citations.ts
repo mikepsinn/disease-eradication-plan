@@ -1923,8 +1923,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = {
   value: 192741210547318.0,
   unit: "hours",
-  displayName: "Total Suffering Hours Eliminated (Complete Scenario)",
-  description: "Total hours of human suffering eliminated by ~220-year complete timeline shift (trial capacity + efficacy lag). One-time benefit from YLD component, not annual recurring.",
+  displayName: "Suffering Hours Eliminated from Full Timeline Shift",
+  description: "Hours of suffering eliminated from the full dFDA timeline shift (~220 years): trial capacity increase (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "low",

@@ -602,7 +602,7 @@ async function refactorParameter(options: RefactorOptions): Promise<void> {
     console.log(`\nOpen the review file to check each usage:`);
     console.log(`   ${reviewFilePath}`);
     console.log(`\nAfter review, run without --review-only to apply changes:`);
-    console.log(`   npx tsx scripts/refactor-parameter.ts ${oldName} ${newName}`);
+    console.log(`   npx tsx scripts/rename-parameter.ts ${oldName} ${newName}`);
     console.log('━'.repeat(80));
     return;
   }

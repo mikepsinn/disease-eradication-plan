@@ -718,10 +718,11 @@
   \ \\times 220 \\times 92.1\\% = 11.1B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total hours of\
-  \ human suffering eliminated by ~220-year complete timeline shift (trial capacity\
-  \ + efficacy lag). One-time benefit from YLD component, not annual recurring. |\
-  \ Calculated from 1 input | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Hours of suffering\
+  \ eliminated from the full dFDA timeline shift (~220 years): trial capacity increase\
+  \ (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component\
+  \ of DALYs (years lived with disability × hours per year). One-time benefit, not\
+  \ annual recurring. | Calculated from 1 input | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS\
   \ × YLD_RATIO × HOURS_PER_YEAR | Unit: hours | Click to view details, calculation\
   \ & sources\">209T (95% CI: 134T-292T)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex": "$$\nHours = 213B \\\

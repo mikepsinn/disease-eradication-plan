@@ -4027,21 +4027,21 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
 )  # Economic value from full timeline shift
 
-# Suffering Hours (one-time benefit from complete timeline shift)
+# Suffering Hours (one-time benefit from full timeline shift)
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * _yld_ratio_of_dalys * HOURS_PER_YEAR),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
-    description="Total hours of human suffering eliminated by ~220-year complete timeline shift (trial capacity + efficacy lag). One-time benefit from YLD component, not annual recurring.",
-    display_name="Total Suffering Hours Eliminated (Complete Scenario)",
+    description="Hours of suffering eliminated from the full dFDA timeline shift (~220 years): trial capacity increase (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
+    display_name="Suffering Hours Eliminated from Full Timeline Shift",
     unit="hours",
     formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
     latex=r"Hours = 213B \text{ (DALYs)} \times 0.11 \text{ (YLD ratio)} \times 8{,}760 \text{ (hrs/yr)} = 205T",
     confidence="low",
-    keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "complete scenario"],
+    keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * _yld_ratio_of_dalys * HOURS_PER_YEAR),
-)  # ~205 trillion hours from complete timeline shift
+)  # ~193 trillion hours from full timeline shift
 
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
