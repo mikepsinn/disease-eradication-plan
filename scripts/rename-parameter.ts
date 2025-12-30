@@ -17,9 +17,9 @@
  *   --review-only  Output all usages with context to a file for review (no changes made)
  *
  * Example:
- *   npx tsx scripts/refactor-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --review-only
- *   npx tsx scripts/refactor-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --dry-run
- *   npx tsx scripts/refactor-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS
+ *   npx tsx scripts/rename-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --review-only
+ *   npx tsx scripts/rename-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --dry-run
+ *   npx tsx scripts/rename-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS
  */
 
 import fs from 'fs/promises';
@@ -63,14 +63,14 @@ function parseArgs(): RefactorOptions {
   const args = process.argv.slice(2);
 
   if (args.length < 2) {
-    console.error('Usage: npx tsx scripts/refactor-parameter.ts <old_name> <new_name> [--dry-run] [--review-only]');
+    console.error('Usage: npx tsx scripts/rename-parameter.ts <old_name> <new_name> [--dry-run] [--review-only]');
     console.error('');
     console.error('Options:');
     console.error('  --dry-run      Show what would be changed without making changes');
     console.error('  --review-only  Output all usages with context to a file for review (no changes made)');
     console.error('');
     console.error('Example:');
-    console.error('  npx tsx scripts/refactor-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --review-only');
+    console.error('  npx tsx scripts/rename-parameter.ts DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS EFFICACY_LAG_ECONOMIC_LOSS --review-only');
     process.exit(1);
   }
 
