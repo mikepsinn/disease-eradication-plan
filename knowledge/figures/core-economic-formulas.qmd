@@ -134,7 +134,7 @@ print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```{python}
 #| echo: true
 def calculate_qaly_value(
-    qalys_generated: int = int(DISEASE_ERADICATION_DELAY_DALYS),
+    qalys_generated: int = int(DFDA_EFFICACY_LAG_ELIMINATION_DALYS),
     value_per_qaly: float = QALY_VALUE
 ) -> Dict[str, float]:
     """
@@ -144,7 +144,7 @@ def calculate_qaly_value(
     total_value = qalys_generated * value_per_qaly
 
     # Cost per DALY (for cost-dominant intervention)
-    cost_per_daly = float(TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT)
+    cost_per_daly = float(TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
 
     return {
         'total_dalys': qalys_generated,

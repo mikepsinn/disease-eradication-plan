@@ -1209,14 +1209,14 @@ dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ({{< var dfda_upfront
 
 # Baseline QALYs generated annually
 
-daly_gains_timeline_shift = DISEASE_ERADICATION_DELAY_DALYS  # {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted
+daly_gains_timeline_shift = DFDA_EFFICACY_LAG_ELIMINATION_DALYS  # {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted
 value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # Value per quality-adjusted life year
 
 # --- Calculations for Framework Benefits ---
 
 # Gross R&D savings
 
-gross_rd_savings = DFDA_RD_GROSS_SAVINGS_ANNUAL  # Pre-calculated: {{< var dfda_benefit_rd_only_annual >}}
+gross_rd_savings = DFDA_BENEFIT_RD_ONLY_ANNUAL  # Pre-calculated: {{< var dfda_benefit_rd_only_annual >}}
 
 # Net R&D savings (after operational costs)
 
@@ -1233,7 +1233,7 @@ dfda_roi_npv = DFDA_ROI_RD_ONLY  # Conservative R&D-only (from 10-year NPV analy
 
 # Monetized value of QALY gains
 
-monetized_daly_value = DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS  # {{< var dfda_efficacy_lag_elimination_economic_value >}}
+monetized_daly_value = DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE  # {{< var dfda_efficacy_lag_elimination_economic_value >}}
 
 # --- Connecting to the Peace Dividend ---
 # The captured dividend must cover the operational cost.

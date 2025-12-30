@@ -45,12 +45,12 @@ costs = [
 # For the 1% Treaty Fund bar, we'll stack it to show peace dividend vs R&D savings
 # Total QALYs from parameters:
 #   - Peace: TREATY_QALYS_GAINED_ANNUAL_GLOBAL (85,610 annual recurring)
-#   - Pragmatic Trials: DISEASE_ERADICATION_DELAY_DALYS (8.57B total from one-time timeline shift)
+#   - Pragmatic Trials: DFDA_EFFICACY_LAG_ELIMINATION_DALYS (8.57B total from one-time timeline shift)
 # Note: These represent different timeframes but the proportional split shows contribution sources
 # We'll show them as proportional contributions to the total -$5.87M
 
 peace_qalys = float(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
-pragmatic_trials_qalys = float(DISEASE_ERADICATION_DELAY_DALYS)
+pragmatic_trials_qalys = float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS)
 total_qalys = peace_qalys + pragmatic_trials_qalys
 
 peace_dividend_per_life = -5870000 * (peace_qalys / total_qalys)  # Proportional to QALYs
