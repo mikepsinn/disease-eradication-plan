@@ -24,8 +24,8 @@ baseline = 98399999.99999999
 # Tornado data from sensitivity analysis
 
 drivers = ['EFFICACY_LAG_YEARS']
-impacts_low = [-12000000.0]
-impacts_high = [12000000.0]
+impacts_low = [-24000000.0]
+impacts_high = [24000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

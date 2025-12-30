@@ -71,7 +71,7 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.png
 
 On average, the typical disease cure becomes available to patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier - saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. This shift can be achieved by redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials that allow patient access after Phase I safety trials. The intervention delivers healthcare's most cost-effective option: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
 
-**Impact Mechanism**: The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two effects: (1) **Cure acceleration** ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average) from {{< var trial_capacity_multiplier >}}× trial capacity that processes the disease queue faster ({{< var dfda_queue_clearance_years >}} years to cure all diseases vs {{< var status_quo_queue_clearance_years >}} years), and (2) **Efficacy lag elimination** ({{< var efficacy_lag_years >}} years) from deploying treatments without post-safety regulatory delay once discovered. Redirecting {{< var treaty_annual_funding >}}/year at {{< var recovery_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing centuries of traditional clinical research into decades. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} uses standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY) across {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted.
+**Impact Mechanism**: The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two effects: (1) **Cure acceleration** ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average) from {{< var trial_capacity_multiplier >}}× trial capacity that processes the disease queue faster ({{< var dfda_queue_clearance_years >}} years to cure all diseases vs {{< var status_quo_queue_clearance_years >}} years), and (2) **Efficacy lag elimination** ({{< var efficacy_lag_years >}} years) from deploying treatments without post-safety regulatory delay once discovered. Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing centuries of traditional clinical research into decades. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} uses standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY) across {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted.
 
 **Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials confirms the intervention maintains cost-dominance under all plausible parameter scenarios.
 
@@ -254,7 +254,7 @@ Despite this disparity in mortality burden, resource allocation heavily favors s
 
 The mechanism is financial, not bureaucratic:
 
-1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
+1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
 3. **Easy enrollment**: A decentralized framework for drug assessment infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
@@ -590,7 +590,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
-**Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
+**Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
 
 **Politicians**: {{< var treaty_campaign_voting_bloc_target >}} million voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
 
@@ -1305,7 +1305,7 @@ The funding uses an **80/10/10 automatic allocation**:
 Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
 1. **Patient Trial Subsidies** ({{< var dih_treasury_trial_subsidies_pct >}}): {{< var dih_treasury_trial_subsidies_annual >}}/year
-   - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient
+   - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient
    - Patients bring subsidies to trials; providers collect payment when patients enroll
    - Makes trial participation profitable for providers instead of costly
 
@@ -1423,7 +1423,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
 1. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
-   - At {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient ([RECOVERY trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
+   - At {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient ([pragmatic trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
    - Patients choose which trials to join; trials that attract patients get funded
    - **ALL remaining funds go to patient subsidies** - no separate bureaucracy or overhead budget
 2. **Decentralized Framework for Drug Assessment Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
@@ -1512,7 +1512,7 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 **How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
 
-The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [RECOVERY trial cost](../references.qmd#recovery-cost-500) ({{< var recovery_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
+The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [pragmatic trial cost](../references.qmd#recovery-cost-500) ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
 {{< var trial_capacity_multiplier_latex >}}
 
@@ -2063,7 +2063,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the system leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
-2. **Clinical trial market price effects**: Increasing trial demand by {{< var trial_capacity_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient; decentralized trials target {{< var recovery_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
+2. **Clinical trial market price effects**: Increasing trial demand by {{< var trial_capacity_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient; decentralized trials target {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
 
 3. **Crowding out effects**: Do billions in new pragmatic clinical trials displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
@@ -2173,7 +2173,7 @@ This intervention is **cost-dominant** (saves money while improving outcomes), m
 - Cuts to popular programs
 - Technological breakthroughs
 
-It requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at {{< var recovery_trial_cost_per_patient >}}/patient).
+It requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
 The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty more profitable for politicians than opposing it.
 

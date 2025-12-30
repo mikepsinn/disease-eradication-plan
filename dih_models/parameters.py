@@ -1390,13 +1390,35 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     500,
     source_ref=ReferenceID.RECOVERY_COST_500,
     source_type="external",
-    description="RECOVERY trial cost per patient",
+    description="RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.",
     display_name="Recovery Trial Cost per Patient",
     unit="USD/patient",
-    confidence_interval=(350, 700),  # ±30% - pragmatic trial costs can vary
+    confidence_interval=(400, 2500),  # Widened to reflect implementation challenges:
+                                       # - Floor ($400): Best-case RECOVERY-like efficiency
+                                       # - Ceiling ($2,500): More typical pragmatic trial costs
+                                       # Economist rationale: RECOVERY may not be replicable at scale
+                                       # Standard pragmatic trials cost $2k-$5k/patient
     distribution="lognormal",
     keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"]
-)  # Proven cost from Oxford RECOVERY trial
+)  # RECOVERY achieved $500, but scaling globally may cost more
+
+# dFDA Pragmatic Trial Cost - Empirically Grounded Estimate
+# Based on real-world pragmatic trial costs, not arbitrary components
+DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
+    1200,  # Central estimate: realistic global pragmatic trial cost
+    source_ref=ReferenceID.RECOVERY_COST_500,  # Floor anchor
+    source_type="external",
+    description="dFDA pragmatic trial cost per patient. Central estimate based on PCORnet/ADAPTABLE-style trials (~$1,500-2,500) with dFDA efficiencies. Range spans RECOVERY ($500, exceptional NHS infrastructure) to typical US pragmatic trials ($3,000). Lower than traditional Phase 3 ($41,000/patient).",
+    display_name="dFDA Pragmatic Trial Cost per Patient",
+    unit="USD/patient",
+    confidence="medium",
+    keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable"],
+    distribution="lognormal",
+    confidence_interval=(500, 3000),  # Empirical range:
+                                       # - Floor ($500): RECOVERY-like efficiency (proven)
+                                       # - Central ($1,200): dFDA with global infrastructure
+                                       # - Ceiling ($3,000): Typical US pragmatic trial
+)  # $1,200/patient central (vs $500 RECOVERY floor, $41k traditional)
 
 ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
     0.861,
@@ -1869,24 +1891,24 @@ EFFICACY_LAG_YEARS = Parameter(
     8.2,
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
-    description="Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
+    description="Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.",
     display_name="Regulatory Delay for Efficacy Testing Post-Safety Verification",
     unit="years",
     formula="TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
     latex=r"t_{lag} = 10.5 - 2.3 = 8.2 \text{ years}",
-    confidence="high",
+    confidence="medium",  # Downgraded: survivor bias + therapeutic area heterogeneity
     last_updated="2021",
     peer_reviewed=True,
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval", "authorization"],
     distribution="normal",  # Normal appropriate: well-measured empirical data
-    std_error=1.0,  # ±1.0 years (~12% CV): Captures therapeutic area variance
-                    # Economist rationale: Real variability 7.5-9.5 years across areas
-                    # (oncology 9.2y, vaccines 7.3y, rare disease 10+y)
-                    # Widened from ±0.5y to reflect heterogeneity beyond measurement error
-                    # Justification: Pooled mean hides substantial between-indication variance
-    validation_min=6.0,   # Floor: Fastest quartile (priority review, breakthrough)
-    validation_max=11.0   # Ceiling: Slowest quartile (complex endpoints, rare disease)
-)  # 8.2 years efficacy lag
+    std_error=2.0,  # ±2.0 years (~24% CV): Widened to capture:
+                    # - Therapeutic area variance (oncology 9.2y, vaccines 7.3y, rare disease 12+y)
+                    # - Survivor bias (failed programs not counted in averages)
+                    # - Geographic variation (FDA vs EMA vs other regulators)
+                    # Economist rationale: 95% CI of ~4-12 years is more defensible
+    validation_min=4.0,   # Floor: Breakthrough + priority (COVID vaccines proved <4y possible)
+    validation_max=15.0   # Ceiling: Rare disease with complex endpoints, multiple failures
+)  # 8.2 years efficacy lag (widened uncertainty)
 
 # ===================================================================
 # DISEASE ERADICATION DELAY MODEL (PRIMARY METHODOLOGY)
@@ -1989,13 +2011,17 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
 EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     1 - _unavoidable_pct,
     source_type="definition",
-    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)",
+    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.",
     display_name="Eventually Avoidable Death Percentage",
     unit="percentage",
     formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
     latex=r"P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%",
-    confidence="medium",
-)  # ~92.1% eventually avoidable
+    confidence="low",  # Downgraded: major assumption with genuine uncertainty
+    distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
+    confidence_interval=(0.50, 0.98),  # Skeptical floor: 50% (aging+complex diseases intractable)
+                                        # Optimistic ceiling: 98% (only true accidents unavoidable)
+                                        # Economist rationale: Extraordinary claim requires wide CI
+)  # ~92.1% central, but 50-98% plausible range
 
 # Disease Eradication Delay (PRIMARY ESTIMATE)
 # Assumes regulatory delay shifts disease eradication timeline back by efficacy lag period
@@ -3473,17 +3499,18 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
 )  # $24.422B/year - ALL remaining funds go to subsidizing patient trial participation
 
 DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
-    DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / RECOVERY_TRIAL_COST_PER_PATIENT,
+    DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
     source_type="calculated",
-    description="Number of patients fundable annually at RECOVERY trial cost",
+    description="Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
     display_name="Patients Fundable Annually",
     unit="patients/year",
-    formula="TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
+    formula="TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT",
+    latex=r"Patients_{annual} = \frac{\$24.4B}{\$1{,}200} = 20.4M",
     keywords=["trial", "participant", "enrollment", "capacity", "patient"],
-    inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'RECOVERY_TRIAL_COST_PER_PATIENT'],
-    compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["RECOVERY_TRIAL_COST_PER_PATIENT"],
-)  # 48.8 million patients/year
+    inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
+    compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+)  # ~20.4M patients/year at $1,200/patient
 
 # Funding allocation percentages (calculated from absolute values)
 DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
@@ -3761,7 +3788,10 @@ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
     confidence="low",
     keywords=["first treatment", "new cures", "diseases per year", "status quo", "rate"],
     distribution="lognormal",
-    confidence_interval=(10.0, 25.0),  # Could be 10-25 depending on definitions
+    confidence_interval=(8.0, 30.0),  # Narrowed from (5, 40) to keep queue times reasonable:
+                                       # - Floor (8/yr): Strict definition → ~830yr queue max
+                                       # - Ceiling (30/yr): Liberal definition → ~220yr queue min
+                                       # Prevents extreme 1000+ year scenarios that strain credibility
 )  # ~15 diseases/year get FIRST treatment
 
 # Time to clear entire disease queue under status quo

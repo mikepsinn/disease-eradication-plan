@@ -17,8 +17,8 @@ setup_chart_style()
 # Parameter values
 
 central_value = 8.2
-low = 6.239999999999999
-high = 10.16
+low = 4.279999999999999
+high = 12.12
 dist_type = "normal"
 display_name = "Regulatory Delay for Efficacy Testing Post-Safety Verification"
 unit = "years"

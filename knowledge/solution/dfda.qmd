@@ -616,7 +616,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 Your decentralized framework for drug assessment achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
 
-- **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient >}}
+- **Cost per patient**: {{< var dfda_pragmatic_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient >}}
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates) currently
 

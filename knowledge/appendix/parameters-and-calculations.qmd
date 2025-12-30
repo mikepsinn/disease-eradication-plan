@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 350
+**Total parameters**: 351
 
-- External sources (peer-reviewed): 137
+- External sources (peer-reviewed): 138
 - Calculated values: 116
 - Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (116 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (116 parameters) • [External Data Sources](#sec-external) (138 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -237,7 +237,7 @@ $$
 
 :::
 
-### dFDA Combined Cure Speedup Multiplier: 32 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
+### dFDA Combined Cure Speedup Multiplier: 13.3 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -245,7 +245,7 @@ Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier 
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 - [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4 multiplier
 
 $$
@@ -270,7 +270,7 @@ $$
 
 :::
 
-### dFDA Diseases Cured Per Year: 343 diseases/year {#sec-dfda_cures_per_year}
+### dFDA Diseases Cured Per Year: 143 diseases/year {#sec-dfda_cures_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -278,8 +278,8 @@ Diseases per year receiving their first effective treatment with dFDA. With ~23�
 
 **Inputs**:
 
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 10 diseases/year - 25 diseases/year)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}
@@ -346,7 +346,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 - [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
 
 $$
@@ -480,7 +480,7 @@ $$
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 320k {#sec-dfda_expected_roi}
+### Expected Treaty ROI (Risk-Adjusted): 300k {#sec-dfda_expected_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -488,11 +488,11 @@ Expected ROI for 1% treaty accounting for political success probability uncertai
 
 **Inputs**:
 
-- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 32.0M ratio
+- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 30.0M ratio
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
-ROI_{DFDA,exp} = ROI_{treaty} \times Probability = 32M \times 1.0\% = 320{,}000
+ROI_{DFDA,exp} = ROI_{treaty} \times Probability = 30M \times 1.0\% = 300{,}000
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -760,7 +760,7 @@ $$
 
 :::
 
-### dFDA Queue Clearance Time: 19.4 years {#sec-dfda_queue_clearance_years}
+### dFDA Queue Clearance Time: 46.5 years {#sec-dfda_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -769,7 +769,7 @@ Years to cure all ~6,650 currently untreatable diseases with dFDA implementation
 **Inputs**:
 
 - [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 QueueClearance_{dFDA} = \frac{443 \text{ years}}{23} = 19 \text{ years}
@@ -899,7 +899,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Maximum Trials per Year: 75.4k trials/year {#sec-dfda_trials_per_year_capacity}
+### Decentralized Framework for Drug Assessment Maximum Trials per Year: 31.4k trials/year {#sec-dfda_trials_per_year_capacity}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -908,10 +908,10 @@ Maximum trials per year possible with trial capacity multiplier
 **Inputs**:
 
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
-Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 22.9 = 75{,}400
+Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 9.53 = 31{,}400
 $$
 
 *✓ High confidence*
@@ -932,7 +932,7 @@ $$
 
 :::
 
-### dFDA Cure Timeline Acceleration: 212 years {#sec-dfda_trial_capacity_cure_acceleration_years}
+### dFDA Cure Timeline Acceleration: 198 years {#sec-dfda_trial_capacity_cure_acceleration_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -941,7 +941,7 @@ Years earlier the average cure arrives due to dFDA's trial capacity increase. Wi
 **Inputs**:
 
 - [Status Quo Average Years to Cure](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
@@ -965,7 +965,7 @@ $$
 
 :::
 
-### DALYs Averted from Trial Capacity Increase: 205B DALYs {#sec-dfda_trial_capacity_dalys_averted}
+### DALYs Averted from Trial Capacity Increase: 192B DALYs {#sec-dfda_trial_capacity_dalys_averted}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -973,7 +973,7 @@ Total DALYs averted from trial capacity increase alone (~212 years acceleration)
 
 **Inputs**:
 
-- [Lives Saved from Trial Capacity Increase](#sec-dfda_trial_capacity_lives_saved) 🔢: 10.7B deaths
+- [Lives Saved from Trial Capacity Increase](#sec-dfda_trial_capacity_lives_saved) 🔢: 10.1B deaths
 
 *Formula*: `DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO`
 
@@ -995,7 +995,7 @@ Total DALYs averted from trial capacity increase alone (~212 years acceleration)
 
 :::
 
-### Economic Value from Trial Capacity Increase: $30.8 quadrillion {#sec-dfda_trial_capacity_economic_value}
+### Economic Value from Trial Capacity Increase: $28.8 quadrillion {#sec-dfda_trial_capacity_economic_value}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1003,11 +1003,11 @@ Total economic value from trial capacity increase alone (~212 years acceleration
 
 **Inputs**:
 
-- [DALYs Averted from Trial Capacity Increase](#sec-dfda_trial_capacity_dalys_averted) 🔢: 205B DALYs
+- [DALYs Averted from Trial Capacity Increase](#sec-dfda_trial_capacity_dalys_averted) 🔢: 192B DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
-Increase_{DFDA} = Increase_{DFDA} \times QALYs_{RD} = 205.32B \times \$150.0K = \$30798.33T
+Increase_{DFDA} = Increase_{DFDA} \times QALYs_{RD} = 192.17B \times \$150.0K = \$28826.17T
 $$
 
 *? Low confidence*
@@ -1028,7 +1028,7 @@ $$
 
 :::
 
-### Lives Saved from Trial Capacity Increase: 10.7B deaths {#sec-dfda_trial_capacity_lives_saved}
+### Lives Saved from Trial Capacity Increase: 10.1B deaths {#sec-dfda_trial_capacity_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1037,7 +1037,7 @@ Total eventually avoidable deaths from trial capacity increase alone (~212 years
 **Inputs**:
 
 - [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 212 years
+- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
 
 $$
 Lives_{trial\ capacity} = 54.75M \times 212 \times 92.1\% = 10.7B
@@ -1061,7 +1061,7 @@ $$
 
 :::
 
-### Total DALYs from Full Timeline Shift: 213B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+### Total DALYs from Full Timeline Shift: 200B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1069,7 +1069,7 @@ Total DALYs averted from the full dFDA timeline shift (~220 years). Scales propo
 
 **Inputs**:
 
-- [Total Lives Saved from Average Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 11.2B deaths
+- [Total Lives Saved from Average Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.5B deaths
 
 *Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
 
@@ -1091,7 +1091,7 @@ Total DALYs averted from the full dFDA timeline shift (~220 years). Scales propo
 
 :::
 
-### Total Economic Value from Full Timeline Shift: $32 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+### Total Economic Value from Full Timeline Shift: $30 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1099,11 +1099,11 @@ Total economic value from the full dFDA timeline shift (~220 years). DALYs value
 
 **Inputs**:
 
-- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 213B DALYs
+- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 200B DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
-Capacity_{DFDA} = DALYs_{DFDA} \times QALYs_{RD} = 213.26B \times \$150.0K = \$31989.75T
+Capacity_{DFDA} = DALYs_{DFDA} \times QALYs_{RD} = 200.12B \times \$150.0K = \$30017.59T
 $$
 
 *? Low confidence*
@@ -1124,7 +1124,7 @@ $$
 
 :::
 
-### Total Lives Saved from Average Timeline Shift: 11.2B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+### Total Lives Saved from Average Timeline Shift: 10.5B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1133,7 +1133,7 @@ Total eventually avoidable deaths from the average dFDA timeline shift (~220 yea
 **Inputs**:
 
 - [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 220 years
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 207 years
 
 $$
 Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B
@@ -1157,7 +1157,7 @@ $$
 
 :::
 
-### dFDA Average Total Timeline Shift: 220 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
+### dFDA Average Total Timeline Shift: 207 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1165,8 +1165,8 @@ Average years earlier patients receive cures due to dFDA. Combines: (1) cure tim
 
 **Inputs**:
 
-- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 212 years
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 TimelineShift_{avg} = 212 \text{ yrs} + 8.2 \text{ yrs} = 220 \text{ years}
@@ -1220,19 +1220,19 @@ $$
 
 :::
 
-### Patients Fundable Annually: 43.4M patients/year {#sec-dih_patients_fundable_annually}
+### Patients Fundable Annually: 18.1M patients/year {#sec-dih_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Number of patients fundable annually at RECOVERY trial cost
+Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
 - [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $350 - $700)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $1.20K (95% CI: $500 - $3K)
 
 $$
-Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$21.72B}{\$500} = 43.4M
+Patients_{annual} = \frac{\$24.4B}{\$1{,}200} = 20.4M
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -1462,7 +1462,7 @@ Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time i
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 D_{total} = 12M \times 8.2 = 98.4M
@@ -2829,7 +2829,7 @@ $$
 
 :::
 
-### Personal Lifetime Wealth (Age 30, 1% Treaty): $508K {#sec-personal_lifetime_wealth}
+### Personal Lifetime Wealth (Age 30, 1% Treaty): $490K {#sec-personal_lifetime_wealth}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2838,7 +2838,7 @@ Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% tre
 **Inputs**:
 
 - [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 \text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
@@ -2973,7 +2973,7 @@ Years to clear entire queue of diseases without treatment. At current rate of ~1
 **Inputs**:
 
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65k diseases
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 10 diseases/year - 25 diseases/year)
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
 QueueClearance_{status\ quo} = \frac{6{,}650 \text{ diseases}}{15 \text{ /year}} = 443 \text{ years}
@@ -3407,7 +3407,7 @@ $$
 
 :::
 
-### Cost per DALY Averted (Timeline Shift): $0.0047 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+### Cost per DALY Averted (Timeline Shift): $0.0050 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3416,10 +3416,10 @@ Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x 
 **Inputs**:
 
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 213B DALYs
+- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 200B DALYs
 
 $$
-Cost_{treaty} = \frac{Cost_{camp,total}}{DALYs_{DFDA}} = \frac{\$1.00B}{213.26B} = \$0.005
+Cost_{treaty} = \frac{Cost_{camp,total}}{DALYs_{DFDA}} = \frac{\$1.00B}{200.12B} = \$0.005
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
@@ -3442,7 +3442,7 @@ $$
 
 :::
 
-### Expected Cost per DALY (Risk-Adjusted): $0.469 {#sec-treaty_expected_cost_per_daly}
+### Expected Cost per DALY (Risk-Adjusted): $0.500 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3450,7 +3450,7 @@ Expected cost per DALY accounting for political success probability uncertainty.
 
 **Inputs**:
 
-- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0047
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0050
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
@@ -3477,7 +3477,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 190 ratio {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 178 ratio {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3486,10 +3486,10 @@ Expected value multiplier vs bed nets (accounts for political uncertainty at 1% 
 **Inputs**:
 
 - [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.469
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.500
 
 $$
-Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.469} = 190
+Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.5} = 178
 $$
 
 *? Low confidence*
@@ -3685,7 +3685,7 @@ $$
 
 :::
 
-### Treaty ROI - Full Timeline Shift (PRIMARY): 32.0M ratio {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
+### Treaty ROI - Full Timeline Shift (PRIMARY): 30.0M ratio {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3693,11 +3693,11 @@ Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capa
 
 **Inputs**:
 
-- [Total Economic Value from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $32 quadrillion
+- [Total Economic Value from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $30 quadrillion
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
-ROI_{treaty} = \frac{Capacity_{DFDA}}{Cost_{camp,total}} = \frac{\$31989.75T}{\$1.00B} = 32M
+ROI_{treaty} = \frac{Capacity_{DFDA}}{Cost_{camp,total}} = \frac{\$30017.59T}{\$1.00B} = 30M
 $$
 
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
@@ -3755,7 +3755,7 @@ $$
 
 :::
 
-### Cost-Effectiveness vs Bed Nets Multiplier: 19.0k ratio {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 17.8k ratio {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3764,10 +3764,10 @@ How many times more cost-effective than bed nets (using $89/DALY midpoint estima
 **Inputs**:
 
 - [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0047
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0050
 
 $$
-Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.005} = 19{,}000
+Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.005} = 17{,}800
 $$
 
 *✓ High confidence*
@@ -3788,7 +3788,7 @@ $$
 
 :::
 
-### Cumulative Trial Capacity Years Over 20 Years: 457 years {#sec-trial_capacity_cumulative_years_20yr}
+### Cumulative Trial Capacity Years Over 20 Years: 190 years {#sec-trial_capacity_cumulative_years_20yr}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3796,7 +3796,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.9 ratio
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
@@ -3820,7 +3820,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 22.9 ratio {#sec-trial_capacity_multiplier}
+### Trial Capacity Multiplier: 9.53 ratio {#sec-trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3829,10 +3829,10 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 **Inputs**:
 
 - [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 43.4M patients/year
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 18.1M patients/year
 
 $$
-Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{43.4M}{1.9M} = 22.9
+Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{18.1M}{1.9M} = 9.53
 $$
 
 *✓ High confidence*
@@ -4397,6 +4397,30 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 
 :::
 
+### dFDA Pragmatic Trial Cost per Patient: $1.20K {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+dFDA pragmatic trial cost per patient. Central estimate based on PCORnet/ADAPTABLE-style trials (~$1,500-2,500) with dFDA efficiencies. Range spans RECOVERY ($500, exceptional NHS infrastructure) to typical US pragmatic trials ($3,000). Lower than traditional Phase 3 ($41,000/patient).
+
+**Source**: [Oren Cass, Manhattan Institute (2023) - RECOVERY Trial Cost per Patient](../references.qmd#recovery-cost-500)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500, $3K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500 and $3K (±104%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -4481,19 +4505,19 @@ Economic multiplier for military spending (0.6x ROI)
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Regulatory delay for efficacy testing (Phase II/III) post-safety verification
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
 **Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 1 years)
+**Technical**: Distribution: Normal (SE: 2 years)
 
 #### Input Distribution
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
@@ -5549,9 +5573,9 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10 diseases/year, 25 diseases/year] • Distribution: Lognormal
+**Technical**: 95% CI: [8 diseases/year, 30 diseases/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10 diseases/year and 25 diseases/year (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 8 diseases/year and 30 diseases/year (±73%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5907,15 +5931,15 @@ Total number of rare diseases globally
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-RECOVERY trial cost per patient
+RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
 **Source**: [Oren Cass, Manhattan Institute (2023) - RECOVERY Trial Cost per Patient](../references.qmd#recovery-cost-500)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$350, $700] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $350 and $700 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -7375,7 +7399,15 @@ Lifetime benefit for age 30 baseline scenario ($4.3M)
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50%, 98%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
 
 *Core definition*
 

@@ -24,8 +24,8 @@ baseline = 221.66666666666666
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL']
-impacts_low = [110.83333333333334, -31.666666666666657]
-impacts_high = [-88.66666666666666, 95.00000000000003]
+impacts_low = [193.95833333333334, -31.666666666666657]
+impacts_high = [-110.83333333333333, 95.00000000000003]
 
 # Convert deltas to absolute values (baseline + delta)
 

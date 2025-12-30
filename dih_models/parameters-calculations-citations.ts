@@ -303,6 +303,17 @@ export const DEWORMING_COST_PER_DALY: Parameter = {
   confidence: "low",
 };
 
+export const DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT: Parameter = {
+  value: 1200.0,
+  unit: "USD/patient",
+  displayName: "dFDA Pragmatic Trial Cost per Patient",
+  description: "dFDA pragmatic trial cost per patient. Central estimate based on PCORnet/ADAPTABLE-style trials (~$1,500-2,500) with dFDA efficiencies. Range spans RECOVERY ($500, exceptional NHS infrastructure) to typical US pragmatic trials ($3,000). Lower than traditional Phase 3 ($41,000/patient).",
+  sourceType: "external",
+  sourceRef: "recovery-cost-500",
+  confidence: "medium",
+  confidenceInterval: [500.0, 3000.0],
+};
+
 export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   value: 194000000.0,
   unit: "USD",
@@ -367,13 +378,13 @@ export const EFFICACY_LAG_YEARS: Parameter = {
   value: 8.2,
   unit: "years",
   displayName: "Regulatory Delay for Efficacy Testing Post-Safety Verification",
-  description: "Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
+  description: "Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
-  confidence: "high",
+  confidence: "medium",
   formula: "TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
   latex: "t_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}",
-  stdError: 1.0,
+  stdError: 2.0,
   peerReviewed: true,
 };
 
@@ -936,7 +947,7 @@ export const NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR: Parameter = {
   sourceType: "external",
   sourceRef: "diseases-getting-first-treatment-annually",
   confidence: "low",
-  confidenceInterval: [10.0, 25.0],
+  confidenceInterval: [8.0, 30.0],
 };
 
 export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
@@ -1152,11 +1163,11 @@ export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 500.0,
   unit: "USD/patient",
   displayName: "Recovery Trial Cost per Patient",
-  description: "RECOVERY trial cost per patient",
+  description: "RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.",
   sourceType: "external",
   sourceRef: "recovery-cost-500",
   confidence: "high",
-  confidenceInterval: [350.0, 700.0],
+  confidenceInterval: [400.0, 2500.0],
 };
 
 export const REGULATORY_DELAY_MEAN_AGE_OF_DEATH: Parameter = {
@@ -1610,7 +1621,7 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
 };
 
 export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
-  value: 32.008421052631576,
+  value: 13.336842105263159,
   unit: "multiplier",
   displayName: "dFDA Combined Cure Speedup Multiplier",
   description: "Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
@@ -1621,7 +1632,7 @@ export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
 };
 
 export const DFDA_CURES_PER_YEAR: Parameter = {
-  value: 342.9473684210526,
+  value: 142.89473684210526,
   unit: "diseases/year",
   displayName: "dFDA Diseases Cured Per Year",
   description: "Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
@@ -1692,14 +1703,14 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
 };
 
 export const DFDA_EXPECTED_ROI: Parameter = {
-  value: 319897.4996475,
+  value: 300175.8905295,
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
   description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
   sourceType: "calculated",
   sourceRef: "calculated",
   confidence: "low",
   formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
-  latex: "ROI_{DFDA,exp} = ROI_{treaty} \\times Probability = 32M \\times 1.0\\% = 320{,}000",
+  latex: "ROI_{DFDA,exp} = ROI_{treaty} \\times Probability = 30M \\times 1.0\\% = 300{,}000",
 };
 
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
@@ -1787,7 +1798,7 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
 };
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
-  value: 19.39073050951504,
+  value: 46.53775322283609,
   unit: "years",
   displayName: "dFDA Queue Clearance Time",
   description: "Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
@@ -1834,18 +1845,18 @@ export const DFDA_ROI_SIMPLE: Parameter = {
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
-  value: 75448.0,
+  value: 31436.0,
   unit: "trials/year",
   displayName: "Decentralized Framework for Drug Assessment Maximum Trials per Year",
   description: "Maximum trials per year possible with trial capacity multiplier",
   sourceType: "calculated",
   confidence: "high",
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
-  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 22.9 = 75{,}400",
+  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 9.53 = 31{,}400",
 };
 
 export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
-  value: 211.97130141190914,
+  value: 198.39779005524863,
   unit: "years",
   displayName: "dFDA Cure Timeline Acceleration",
   description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
@@ -1856,7 +1867,7 @@ export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
-  value: 205322216175.0,
+  value: 192174476763.0,
   unit: "DALYs",
   displayName: "DALYs Averted from Trial Capacity Increase",
   description: "Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.",
@@ -1866,18 +1877,18 @@ export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
-  value: 3.079833242625e+16,
+  value: 2.882617151445e+16,
   unit: "USD",
   displayName: "Economic Value from Trial Capacity Increase",
   description: "Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
-  latex: "Increase_{DFDA} = Increase_{DFDA} \\times QALYs_{RD} = 205.32B \\times \\$150.0K = \\$30798.33T",
+  latex: "Increase_{DFDA} = Increase_{DFDA} \\times QALYs_{RD} = 192.17B \\times \\$150.0K = \\$28826.17T",
 };
 
 export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
-  value: 10749854250.0,
+  value: 10061490930.0,
   unit: "deaths",
   displayName: "Lives Saved from Trial Capacity Increase",
   description: "Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.",
@@ -1888,7 +1899,7 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
-  value: 213264999765.0,
+  value: 200117260353.0,
   unit: "DALYs",
   displayName: "Total DALYs from Full Timeline Shift",
   description: "Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
@@ -1898,18 +1909,18 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
-  value: 3.198974996475e+16,
+  value: 3.001758905295e+16,
   unit: "USD",
   displayName: "Total Economic Value from Full Timeline Shift",
   description: "Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DALYS × STANDARD_QALY_VALUE",
-  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times QALYs_{RD} = 213.26B \\times \\$150.0K = \\$31989.75T",
+  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times QALYs_{RD} = 200.12B \\times \\$150.0K = \\$30017.59T",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
-  value: 11165706794.0,
+  value: 10477343474.0,
   unit: "deaths",
   displayName: "Total Lives Saved from Average Timeline Shift",
   description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
@@ -1920,7 +1931,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
-  value: 220.17130141190913,
+  value: 206.59779005524862,
   unit: "years",
   displayName: "dFDA Average Total Timeline Shift",
   description: "Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
@@ -1942,15 +1953,15 @@ export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
 };
 
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
-  value: 43440000.0,
+  value: 18100000.0,
   unit: "patients/year",
   displayName: "Patients Fundable Annually",
-  description: "Number of patients fundable annually at RECOVERY trial cost",
+  description: "Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
-  formula: "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
-  latex: "Fundable_{ann} = \\frac{Treasury_{ann}}{Cost} = \\frac{\\$21.72B}{\\$500} = 43.4M",
+  formula: "TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT",
+  latex: "Patients_{annual} = \\frac{\\$24.4B}{\\$1{,}200} = 20.4M",
 };
 
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
@@ -2490,7 +2501,7 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
-  value: 508007.2978006117,
+  value: 490326.8779900508,
   unit: "usd",
   displayName: "Personal Lifetime Wealth (Age 30, 1% Treaty)",
   description: "Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
@@ -2686,7 +2697,7 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
 };
 
 export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 0.004689001951102691,
+  value: 0.004997070208916684,
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Timeline Shift)",
   description: "Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x trial capacity + ~8.2 years from efficacy lag elimination). This only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY.",
@@ -2694,11 +2705,11 @@ export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = 
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "Cost_{treaty} = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1.00B}{213.26B} = \\$0.005",
+  latex: "Cost_{treaty} = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1.00B}{200.12B} = \\$0.005",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
-  value: 0.46890019511026915,
+  value: 0.49970702089166835,
   unit: "USD/DALY",
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
   description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
@@ -2710,14 +2721,14 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
 };
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 189.80584979085,
+  value: 178.10436171416998,
   unit: "ratio",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
   description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.469} = 190",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.5} = 178",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -2781,7 +2792,7 @@ export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
 };
 
 export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 31989749.96475,
+  value: 30017589.05295,
   unit: "ratio",
   displayName: "Treaty ROI - Full Timeline Shift (PRIMARY)",
   description: "Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capacity + ~8.2 years from efficacy lag elimination). Total one-time benefit divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
@@ -2789,7 +2800,7 @@ export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
-  latex: "ROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}} = \\frac{\\$31989.75T}{\\$1.00B} = 32M",
+  latex: "ROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}} = \\frac{\\$30017.59T}{\\$1.00B} = 30M",
 };
 
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
@@ -2805,18 +2816,18 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 };
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 18980.584979085,
+  value: 17810.436171416997,
   unit: "ratio",
   displayName: "Cost-Effectiveness vs Bed Nets Multiplier",
   description: "How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.005} = 19{,}000",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.005} = 17{,}800",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
-  value: 457.0,
+  value: 190.0,
   unit: "years",
   displayName: "Cumulative Trial Capacity Years Over 20 Years",
   description: "Cumulative trial-capacity-equivalent years over 20-year period",
@@ -2827,14 +2838,14 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
 };
 
 export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
-  value: 22.86315789473684,
+  value: 9.526315789473685,
   unit: "ratio",
   displayName: "Trial Capacity Multiplier",
   description: "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
   sourceType: "calculated",
   confidence: "high",
   formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
-  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{43.4M}{1.9M} = 22.9",
+  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{18.1M}{1.9M} = 9.53",
 };
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
@@ -3509,11 +3520,12 @@ export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.9262780790085205,
   unit: "percentage",
   displayName: "Eventually Avoidable Death Percentage",
-  description: "Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement (assumption based on ~7.9% fundamentally unavoidable deaths, primarily accidents)",
+  description: "Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.",
   sourceType: "definition",
-  confidence: "medium",
+  confidence: "low",
   formula: "1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
   latex: "P_{\\text{avoidable}} = 1 - 0.0791 = 92.09\\%",
+  confidenceInterval: [0.5, 0.98],
 };
 
 export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
@@ -3927,6 +3939,7 @@ export const parameters = {
   CURRENT_TRIAL_SLOTS_AVAILABLE,
   DEFENSE_LOBBYING_ANNUAL,
   DEWORMING_COST_PER_DALY,
+  DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
   DRUG_DEVELOPMENT_COST_1980S,
   DRUG_REPURPOSING_SUCCESS_RATE,
   ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT,
@@ -5692,8 +5705,8 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 350,
-  external: 137,
+  total: 351,
+  external: 138,
   calculated: 116,
   definitions: 97,
   citations: 105,

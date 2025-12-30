@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Recovery Trial Cost per Patient"
+#| fig-cap: "Probability Distribution: dFDA Pragmatic Trial Cost per Patient"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,11 +16,11 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 500.0
-low = 400
-high = 2500
+central_value = 1200.0
+low = 500
+high = 3000
 dist_type = "lognormal"
-display_name = "Recovery Trial Cost per Patient"
+display_name = "dFDA Pragmatic Trial Cost per Patient"
 unit = "USD/patient"
 
 # Calculate distribution parameters
@@ -138,7 +138,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-recovery_trial_cost_per_patient.png')
+output_path = get_figure_output_path('distribution-dfda_pragmatic_trial_cost_per_patient.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -80,7 +80,7 @@ Goals:
 
 #### Decentralized trial costs modeled on Oxford RECOVERY
 
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}} per patient**.
+- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
 - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 ### Technical Feasibility
@@ -413,8 +413,8 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   3. Focused, pragmatic trial designs.
 
 - **Extrapolation to New System**:
-  - A well-integrated global framework could approach {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
-  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of ~{{< var recovery_trial_cost_per_patient >}}-\$1,000 against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
+  - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
+  - Up to **~{{< var trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
 
   The cost reduction factor can be formalized as:
 
@@ -436,7 +436,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 1. **By Reducing Per-Patient Costs**
 
-   - If a trial with 5,000 participants costs {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}}/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
+   - If a trial with 5,000 participants costs {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, total cost is ~\$6 million, versus \$200 - \$600 million under traditional models.
    - This magnitude of savings can drastically reduce the total cost of clinical development.
 
    For a trial with $x$ participants, the total cost savings is:
@@ -446,15 +446,12 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
    $$
 
    Where:
-   - $c_t$ is the traditional cost per patient (\$40,000 - \$120,000)
-   - $c_d$ is the decentralized cost per patient ({{< var recovery_trial_cost_per_patient >}} - \$1,000)
+   - $c_t$ is the traditional cost per patient ({{< var traditional_phase3_cost_per_patient >}})
+   - $c_d$ is the decentralized cost per patient ({{< var dfda_pragmatic_trial_cost_per_patient >}})
 
-   For a trial with $x = 5,000$ participants, the savings range from:
+   For a trial with $x = 5,000$ participants, savings are approximately:
 
-   - Minimum savings: $(\$40,000 - \$1,000) \times 5,000 = \$195$ million
-  - Maximum savings: $(\$120,000 - \$500) \times 5,000 = \$597.5$ million (using the RECOVERY per-patient baseline of {{< var recovery_trial_cost_per_patient >}})
-
-   This yields a savings range of approximately **\$195 - \$598 million per trial**.
+   $$(\text{Traditional} - \text{Pragmatic}) \times 5{,}000 \approx \$194\text{M per trial}$$
 
 2. **Volume of Trials & Speed**
 
@@ -797,7 +794,7 @@ This full range sensitivity analysis demonstrates that the ROI for such an initi
 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
-   - Oxford RECOVERY trial press releases and scientific papers indicating {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}}/patient cost.
+   - Oxford RECOVERY trial press releases and scientific papers indicating {{< var recovery_trial_cost_per_patient >}}/patient cost, informing pragmatic trial cost estimates of {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient.
 
 2. **ROI Calculation Method**:
 
@@ -1478,7 +1475,7 @@ For a complete breakdown of the assumptions, data sources (including NBER workin
 - **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the framework's operational costs, derived from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section.
 - **Core framework Ops (Midpoint):** $0.01875B ($18.75M) / year
 - **Core framework + Medium Broader Initiative:** $0.04B ({{< var dfda_upfront_build >}}) / year
-- **Illustrative Total Ecosystem (Low-Medium):** $0.5B ({{< var recovery_trial_cost_per_patient >}}) / year
+- **Illustrative Total Ecosystem (Low-Medium):** $0.5B / year
 - **Illustrative Total Ecosystem (High):** $5B / year
 
 #### Sensitivity Analysis: Overall Cost-Effectiveness of the Framework
@@ -1489,12 +1486,12 @@ This table analyzes the ICER for such an infrastructure by varying key assumptio
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Base Case: Core framework Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var dfda_efficacy_lag_elimination_dalys >}}**                     | Cost-Saving + Health Gain   | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. DALYs from regulatory delay elimination.                                                              |
 | Core framework + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
-| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}})              | -$49.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
+| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B              | -$49.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
 | Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
-| Conservative R&D Savings & Health Gains              | 30% ($30.0B Savings)           | $0.5B ({{< var recovery_trial_cost_per_patient >}})              | -$29.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & conservative health impact.                                                                                                                                                                                                                        |
-| Optimistic R&D Savings & Health Gains                | 70% ($70B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}})              | -$69.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                       | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
-| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95.0B Savings)     | **$0.5B ({{< var recovery_trial_cost_per_patient >}})**          | **-$94.5B**                   | **{{< var dfda_efficacy_lag_elimination_dalys >}}**                   | Cost-Saving + Health Gain   | **Dominant**                            | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
-| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B ({{< var recovery_trial_cost_per_patient >}})              | $0                            | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Neutral + Health Gain  | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & base health impact.                                                                                                                                                                                                                            |
+| Conservative R&D Savings & Health Gains              | 30% ($30.0B Savings)           | $0.5B              | -$29.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & conservative health impact.                                                                                                                                                                                                                        |
+| Optimistic R&D Savings & Health Gains                | 70% ($70B Savings)         | $0.5B              | -$69.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                       | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95.0B Savings)     | **$0.5B**          | **-$94.5B**                   | **{{< var dfda_efficacy_lag_elimination_dalys >}}**                   | Cost-Saving + Health Gain   | **Dominant**                            | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B              | $0                            | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Neutral + Health Gain  | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & base health impact.                                                                                                                                                                                                                            |
 
 _Note: An infrastructure for a decentralized framework is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core framework Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
 
@@ -1526,7 +1523,7 @@ The following table provides the data and sources that support the chart. The li
 | **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
-| **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs {{< var lobbyist_bond_investment_max >}}-{{< var recovery_trial_cost_per_patient >}}/DALY averted. Community water supply improvements cost $200/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
+| **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
 | **Hypertension Screening**             |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
 | **Generic Drug Substitution**          |       **+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. ([WHO, 2015](../references.qmd#who-generic-drug-policy))                                                        |
 | **Statins / Polypill**                 |         **67+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. ([eClinicalMedicine, 2022](../references.qmd#eclinicalmedicine-statins-polypill))                                               |
@@ -1571,7 +1568,7 @@ To provide context for the estimated costs of a decentralized framework, it is u
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
 | **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_upfront_build >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
-| **NIH "All of Us" Research Program** | \*\*~{{< var recovery_trial_cost_per_patient >}} / year (FY23 Approx. Budget) | **~12.5x**                            | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
+| **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                             | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
 

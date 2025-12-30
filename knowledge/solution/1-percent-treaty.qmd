@@ -282,7 +282,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 #### With a 1% treaty + a decentralized framework for drug assessment
 
 - $110B total funding ({{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty)
-- Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient ({{< var trial_cost_reduction_factor >}}× cheaper)
+- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient ({{< var trial_cost_reduction_factor >}}× cheaper)
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants
 
