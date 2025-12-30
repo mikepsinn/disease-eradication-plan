@@ -259,7 +259,7 @@ The mechanism makes trial participation financially attractive for both patients
 ## A Decentralized Framework for Drug Assessment
 
 
-The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works, but what measurably happens to real humans taking real treatments.
+The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works ([published trials show 94% positive results while FDA data shows only 51%](../references.qmd#publication-bias-clinical-trials)), but what measurably happens to real humans taking real treatments.
 
 This architectural shift from centralized regulatory gatekeeping to distributed, real-world evidence generation achieves a **{{< var dfda_trial_cost_reduction_factor >}}x cost reduction** while providing superior safety monitoring and treatment selection capabilities.
 
@@ -1573,7 +1573,7 @@ Both are good. One breaks the usual economic rules.
 
 **Why this is different from other interventions:**
 
-Vaccines and smoking cessation programs solve specific problems with high returns; they're amazing interventions.
+Vaccines and smoking cessation programs solve specific problems with high returns.
 
 The {{< var treaty_reduction_pct >}} Treaty pays for itself by solving two problems at once:
 
@@ -1607,11 +1607,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 
 ## Adoption Dynamics: Game-Theoretic Analysis
 
-Western economies are facing a solvency crisis driven by healthcare inflation and aging populations.
-
-* **Austerity** (cutting benefits) is political suicide.
-* **Printing Money** (MMT) is inflationary suicide.
-* **The Third Option**: **Technological Deflation**.
+Western economies are facing a solvency crisis driven by healthcare inflation and aging populations. Traditional approaches face severe constraints: austerity programs cutting benefits generate political backlash, while monetary expansion through Modern Monetary Theory risks inflation. Technological deflation through dramatically reduced clinical trial costs offers an alternative path.
 
 By collapsing the cost of clinical trials by {{< var dfda_trial_cost_reduction_factor >}}x, we fundamentally alter the cost structure of healthcare. We replace expensive "chronic disease management" with cheap "curative interventions." This is the **only mathematically viable path** to long-term fiscal solvency for G7 nations. It is impossible *not* to fund this, because the alternative is national bankruptcy.
 
@@ -1720,10 +1716,6 @@ This creates a financial "kill switch": if the treaty is not respected, this mas
 **Budgetary Reality**: The Pentagon has failed its sixth consecutive audit and cannot account for **$2.5 trillion** in assets. A {{< var treaty_reduction_pct >}} reduction is statistical noise in a system that can't locate trillions. It doesn't require firing people or closing factories; it requires accounting for rounding errors.
 
 This doesn't defeat greed. It aligns economic incentives to direct existing profit motives toward pragmatic clinical trials.
-
-**The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
-
-If politicians fail to adopt the treaty and enable this 25X increase in clinical trial capacity and shift forward in the availability of life-saving treatments, they are technically responsible for the **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
