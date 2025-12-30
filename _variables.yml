@@ -716,6 +716,17 @@
   >11.3B (95% CI: 7.30B-15.9B)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex": "$$\nLives_{saved} = 54.75M\
   \ \\times 220 \\times 92.1\\% = 11.1B\n$$"
+"dfda_trial_capacity_plus_efficacy_lag_suffering_hours": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total hours of\
+  \ human suffering eliminated by ~220-year complete timeline shift (trial capacity\
+  \ + efficacy lag). One-time benefit from YLD component, not annual recurring. |\
+  \ Calculated from 1 input | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS\
+  \ × YLD_RATIO × HOURS_PER_YEAR | Unit: hours | Click to view details, calculation\
+  \ & sources\">209T (95% CI: 134T-292T)</a>"
+"dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex": "$$\nHours = 213B \\\
+  text{ (DALYs)} \\times 0.11 \\text{ (YLD ratio)} \\times 8{,}760 \\text{ (hrs/yr)}\
+  \ = 205T\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Average years earlier patients receive cures due\
@@ -1961,15 +1972,6 @@
   \ calculation & sources\">475 (95% CI: 324-712)</a>"
 "status_quo_queue_clearance_years_latex": "$$\nQueueClearance_{status\\ quo} = \\\
   frac{6{,}650 \\text{ diseases}}{15 \\text{ /year}} = 443 \\text{ years}\n$$"
-"suffering_hours_eliminated_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-suffering_hours_eliminated_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total hours\
-  \ of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time\
-  \ benefit from YLD component, not annual recurring) | Calculated from 1 input |\
-  \ ~ Medium confidence | Formula: YLD × HOURS_PER_YEAR | Unit: hours | Click to view\
-  \ details, calculation & sources\">7.41T (95% CI: 1.90T-21.3T)</a>"
-"suffering_hours_eliminated_total_latex": "$$\nHours = 868M \\text{ (YLD)} \\times\
-  \ 8{,}760 \\text{ (hrs/yr)} = 7.60T\n$$"
 "sugar_subsidy_cost_per_person_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-sugar_subsidy_cost_per_person_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"sugar-subsidies-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual cost of sugar subsidies per person\

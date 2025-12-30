@@ -2265,22 +2265,6 @@ DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
     compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLL"] + ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLD"]
 )  # 7.90B DALYs
 
-# Suffering Hours (one-time benefit from timeline shift)
-SUFFERING_HOURS_ELIMINATED_TOTAL = Parameter(
-    DFDA_EFFICACY_LAG_ELIMINATION_YLD * HOURS_PER_YEAR,  # YLD in years × hours per year
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
-    source_type="calculated",
-    description="Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)",
-    display_name="Total Suffering Hours Eliminated",
-    unit="hours",
-    formula="YLD × HOURS_PER_YEAR",
-    latex=r"Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T",
-    confidence="medium",
-    keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden"],
-    inputs=['DFDA_EFFICACY_LAG_ELIMINATION_YLD'],
-    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLD"] * HOURS_PER_YEAR,
-)  # 7.65 trillion hours total
-
 # Economic Valuation (using standardized $150k VSLY)
 DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
@@ -3908,6 +3892,9 @@ DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
 # Define DALY multiplier here (ratio of DALYs to deaths from efficacy lag data)
 _daly_multiplier_from_deaths = float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS) / float(DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED)
 
+# Define YLD ratio for calculating suffering hours from complete scenario DALYs
+_yld_ratio_of_dalys = float(DFDA_EFFICACY_LAG_ELIMINATION_YLD) / float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS)
+
 DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_LIVES_SAVED) * _daly_multiplier_from_deaths),
     source_type="calculated",
@@ -4039,6 +4026,22 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
 )  # Economic value from full timeline shift
+
+# Suffering Hours (one-time benefit from complete timeline shift)
+DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
+    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * _yld_ratio_of_dalys * HOURS_PER_YEAR),
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_type="calculated",
+    description="Total hours of human suffering eliminated by ~220-year complete timeline shift (trial capacity + efficacy lag). One-time benefit from YLD component, not annual recurring.",
+    display_name="Total Suffering Hours Eliminated (Complete Scenario)",
+    unit="hours",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
+    latex=r"Hours = 213B \text{ (DALYs)} \times 0.11 \text{ (YLD ratio)} \times 8{,}760 \text{ (hrs/yr)} = 205T",
+    confidence="low",
+    keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "complete scenario"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS'],
+    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * _yld_ratio_of_dalys * HOURS_PER_YEAR),
+)  # ~205 trillion hours from complete timeline shift
 
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(

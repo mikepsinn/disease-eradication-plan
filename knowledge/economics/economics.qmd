@@ -381,9 +381,9 @@ Under the status quo, {{< var diseases_without_effective_treatment >}} diseases 
 
 ### Suffering Reduction
 
-{{< var suffering_hours_eliminated_total >}} hours of human suffering eliminated (from {{< var efficacy_lag_years >}}-year efficacy lag elimination)
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} hours of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift)
 
-{{< var suffering_hours_eliminated_total_latex >}}
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex >}}
 
 ### Lives Saved
 

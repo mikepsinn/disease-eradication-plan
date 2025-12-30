@@ -1920,6 +1920,18 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
   latex: "Lives_{saved} = 54.75M \\times 220 \\times 92.1\\% = 11.1B",
 };
 
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = {
+  value: 192741210547318.0,
+  unit: "hours",
+  displayName: "Total Suffering Hours Eliminated (Complete Scenario)",
+  description: "Total hours of human suffering eliminated by ~220-year complete timeline shift (trial capacity + efficacy lag). One-time benefit from YLD component, not annual recurring.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
+  confidence: "low",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
+  latex: "Hours = 213B \\text{ (DALYs)} \\times 0.11 \\text{ (YLD ratio)} \\times 8{,}760 \\text{ (hrs/yr)} = 205T",
+};
+
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
   value: 206.59779005524862,
   unit: "years",
@@ -2582,18 +2594,6 @@ export const STATUS_QUO_QUEUE_CLEARANCE_YEARS: Parameter = {
   confidence: "low",
   formula: "DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
   latex: "QueueClearance_{status\\ quo} = \\frac{6{,}650 \\text{ diseases}}{15 \\text{ /year}} = 443 \\text{ years}",
-};
-
-export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
-  value: 7650023381028.0,
-  unit: "hours",
-  displayName: "Total Suffering Hours Eliminated",
-  description: "Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
-  confidence: "medium",
-  formula: "YLD × HOURS_PER_YEAR",
-  latex: "Hours = 868M \\text{ (YLD)} \\times 8{,}760 \\text{ (hrs/yr)} = 7.60T",
 };
 
 export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
@@ -4101,6 +4101,7 @@ export const parameters = {
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS,
   DFDA_TRIAL_COST_REDUCTION_FACTOR,
   DFDA_TRIAL_COST_REDUCTION_PCT,
@@ -4157,7 +4158,6 @@ export const parameters = {
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   STATUS_QUO_AVG_YEARS_TO_CURE,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
-  SUFFERING_HOURS_ELIMINATED_TOTAL,
   THALIDOMIDE_DALYS_PER_EVENT,
   THALIDOMIDE_DEATHS_PER_EVENT,
   THALIDOMIDE_SURVIVORS_PER_EVENT,

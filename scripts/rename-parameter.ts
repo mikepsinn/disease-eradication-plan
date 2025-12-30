@@ -581,7 +581,7 @@ async function refactorParameter(options: RefactorOptions): Promise<void> {
   const modeLabel = reviewOnly ? ' [REVIEW ONLY]' : dryRun ? ' [DRY RUN]' : '';
 
   console.log('━'.repeat(80));
-  console.log(`🔧 Parameter Refactoring Tool${modeLabel}`);
+  console.log(`🔧 Parameter Rename/Refactoring Tool${modeLabel}`);
   console.log('━'.repeat(80));
   console.log(`Old name: ${oldName}`);
   console.log(`New name: ${newName}`);

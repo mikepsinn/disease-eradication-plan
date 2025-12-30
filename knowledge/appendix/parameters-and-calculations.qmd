@@ -1157,6 +1157,40 @@ $$
 
 :::
 
+### Total Suffering Hours Eliminated (Complete Scenario): 193T hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total hours of human suffering eliminated by ~220-year complete timeline shift (trial capacity + efficacy lag). One-time benefit from YLD component, not annual recurring.
+
+**Inputs**:
+
+- [Total DALYs from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 200B DALYs
+
+$$
+Hours = 213B \text{ (DALYs)} \times 0.11 \text{ (YLD ratio)} \times 8{,}760 \text{ (hrs/yr)} = 205T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+:::
+
 ### dFDA Average Total Timeline Shift: 207 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -3101,40 +3135,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-status_quo_queue_clearance_years.qmd >}}
-
-:::
-
-### Total Suffering Hours Eliminated: 7.65T hours {#sec-suffering_hours_eliminated_total}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)
-
-**Inputs**:
-
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
-
-$$
-Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-suffering_hours_eliminated_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-suffering_hours_eliminated_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-suffering_hours_eliminated_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-suffering_hours_eliminated_total.qmd >}}
 
 :::
 
