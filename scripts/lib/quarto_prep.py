@@ -600,37 +600,67 @@ def postprocess_economics_pdf(
                 print(f"[OK] PDF found in correct location: {build_dir}/{expected_pdf}")
             return True
 
-        # Search for PDF in project root (common wrong location for book type)
-        # Look for PDFs with similar names
-        potential_names = [
-            expected_pdf,
-            "The-1%-Treaty--Health-and-Economic-Impact-of-Redirecting-1%-of-Global-Military-Spending-to-Pragmatic-Clinical-Trials.pdf",
-            "The-1-Treaty--Health-and-Economic-Impact-of-Redirecting-1-of-Global-Military-Spending-to-Pragmatic-Clinical-Trials.pdf",
-        ]
+        # Search for PDF in TWO locations using glob patterns
+        # 1. Build directory (Quarto book type behavior)
+        # 2. Project root (alternate Quarto behavior)
+        
+        # We look for PDFs starting with "The" (from "The 1% Treaty")
+        # Quarto might replace % with various things or nothing
+        patterns = ["The*.pdf", "the*.pdf"]
+        
+        found_pdfs = []
+        
+        # Helper to find PDFs
+        def find_pdfs_in_dir(directory):
+            pdfs = []
+            for pattern in patterns:
+                pdfs.extend(list(directory.glob(pattern)))
+            return pdfs
 
-        for pdf_name in potential_names:
-            source_pdf = project_root / pdf_name
-            if source_pdf.exists():
+        # First check build directory
+        if build_path.exists():
+            found_pdfs = find_pdfs_in_dir(build_path)
+            
+            # Filter out the expected PDF itself if it exists (though we checked that above)
+            found_pdfs = [p for p in found_pdfs if p.name != expected_pdf]
+            
+            if found_pdfs:
+                source_pdf = found_pdfs[0]  # Take the first match
                 if verbose:
-                    print(f"[*] Found PDF in wrong location: {pdf_name}")
-                    print(f"[*] Moving to: {build_dir}/{expected_pdf}")
+                    print(f"[*] Found PDF in build dir with name: {source_pdf.name}")
+                    print(f"[*] Renaming to: {expected_pdf}")
 
-                # Ensure target directory exists
-                build_path.mkdir(parents=True, exist_ok=True)
-
-                # Move PDF to correct location
-                import shutil
+                # Rename PDF to correct name
                 shutil.move(str(source_pdf), str(target_pdf))
 
                 if verbose:
-                    print(f"[OK] PDF moved successfully")
+                    print(f"[OK] PDF renamed successfully")
                 return True
+
+        # Then check project root
+        found_pdfs = find_pdfs_in_dir(project_root)
+        
+        if found_pdfs:
+            source_pdf = found_pdfs[0]
+            if verbose:
+                print(f"[*] Found PDF in wrong location: {source_pdf.name}")
+                print(f"[*] Moving to: {build_dir}/{expected_pdf}")
+
+            # Ensure target directory exists
+            build_path.mkdir(parents=True, exist_ok=True)
+
+            # Move PDF to correct location
+            shutil.move(str(source_pdf), str(target_pdf))
+
+            if verbose:
+                print(f"[OK] PDF moved successfully")
+            return True
 
         # PDF not found anywhere
         if verbose:
             print(f"[ERROR] PDF not found in expected locations", file=sys.stderr)
             print(f"        Expected: {target_pdf}", file=sys.stderr)
-            print(f"        Searched project root for: {', '.join(potential_names)}", file=sys.stderr)
+            print(f"        Searched for patterns: {', '.join(patterns)}", file=sys.stderr)
         return False
 
     except Exception as e:
