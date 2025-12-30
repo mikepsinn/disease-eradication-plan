@@ -20,6 +20,7 @@ Exit codes:
 import argparse
 import re
 import sys
+import yaml
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import urlparse, unquote
@@ -251,9 +252,10 @@ def check_broken_internal_links(content, file_path, output_dir):
     errors = []
     lines = content.split("\n")
 
-    # Pattern to match href attributes
-    # Matches: href="path" or href='path' or href=path
+    # Pattern to match href attributes and img src attributes
+    # Matches: href="path" or href='path' or src="path" or src='path'
     href_pattern = r'href\s*=\s*["\']([^"\']+)["\']'
+    img_pattern = r'src\s*=\s*["\']([^"\']+)["\']'
 
     # Get the directory containing the current HTML file
     file_dir = file_path.parent
@@ -265,8 +267,12 @@ def check_broken_internal_links(content, file_path, output_dir):
         if "<script" in line.lower():
             continue
 
-        matches = re.finditer(href_pattern, line)
-        for match in matches:
+        # Check both href and img src attributes
+        all_matches = []
+        all_matches.extend([(match, 'href') for match in re.finditer(href_pattern, line)])
+        all_matches.extend([(match, 'src') for match in re.finditer(img_pattern, line)])
+
+        for match, attr_type in all_matches:
             href_value = match.group(1)
 
             # Skip external links (http, https, mailto, etc.)
@@ -303,8 +309,9 @@ def check_broken_internal_links(content, file_path, output_dir):
                 target_path = target_path.resolve()
             except (OSError, ValueError):
                 # Invalid path
-                context = f"Invalid link path: `{href_value}` (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
-                errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+                error_type = "BROKEN_IMAGE" if attr_type == 'src' else "BROKEN_LINK"
+                context = f"Invalid {'image' if attr_type == 'src' else 'link'} path: `{href_value}` (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                errors.append(ValidationError(file_path, i, error_type, context))
                 continue
 
             # Check if file exists
@@ -312,11 +319,12 @@ def check_broken_internal_links(content, file_path, output_dir):
             if target_path.exists():
                 # Path exists, check if it's a directory
                 if target_path.is_dir():
-                    # Directory link - check for index.html
-                    index_path = target_path / "index.html"
-                    if not index_path.exists():
-                        context = f"Broken link to directory (no index.html): `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
-                        errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+                    # Directory link - check for index.html (only for href, not img src)
+                    if attr_type == 'href':
+                        index_path = target_path / "index.html"
+                        if not index_path.exists():
+                            context = f"Broken link to directory (no index.html): `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                            errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
                 # If it's a file, it exists - no error
             else:
                 # File doesn't exist - check if it's within the output directory
@@ -326,15 +334,76 @@ def check_broken_internal_links(content, file_path, output_dir):
                     # Link points outside output directory - might be intentional, skip
                     continue
 
-                # Check if it's a file without extension and .html version exists
-                html_path = target_path.with_suffix('.html')
-                if html_path.exists():
-                    # The .html version exists, so the link should work
-                    continue
+                # Check if it's a file without extension and .html version exists (only for href)
+                if attr_type == 'href':
+                    html_path = target_path.with_suffix('.html')
+                    if html_path.exists():
+                        # The .html version exists, so the link should work
+                        continue
 
                 # File doesn't exist and no .html version found
-                context = f"Broken internal link: `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
-                errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+                error_type = "BROKEN_IMAGE" if attr_type == 'src' else "BROKEN_LINK"
+                resource_type = "image" if attr_type == 'src' else "internal link"
+                context = f"Broken {resource_type}: `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                errors.append(ValidationError(file_path, i, error_type, context))
+
+    return errors
+
+
+def check_quarto_config_resources(output_dir):
+    """Check that resources referenced in _quarto.yml exist in output directory"""
+    errors = []
+
+    # Look for _quarto.yml in project root (parent of output dir)
+    project_root = output_dir.parent.parent if "/_" in str(output_dir) or "\\_" in str(output_dir) else output_dir.parent
+    quarto_config = project_root / "_quarto.yml"
+
+    if not quarto_config.exists():
+        # No _quarto.yml found, skip this check
+        return errors
+
+    try:
+        with open(quarto_config, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+    except Exception as e:
+        errors.append(ValidationError(quarto_config, 0, "YAML_PARSE_ERROR", f"Failed to parse _quarto.yml: {e}"))
+        return errors
+
+    # Check PDF output file if specified
+    if 'format' in config and 'pdf' in config['format']:
+        pdf_config = config['format']['pdf']
+        if 'output-file' in pdf_config:
+            pdf_filename = pdf_config['output-file']
+            pdf_path = output_dir / pdf_filename
+
+            if not pdf_path.exists():
+                context = f"PDF file referenced in config not found: {pdf_filename}"
+                errors.append(ValidationError(quarto_config, 0, "MISSING_PDF", context))
+
+    # Check navbar/sidebar PDF links
+    def check_pdf_links(obj, path=""):
+        """Recursively check for PDF links in config structure"""
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                new_path = f"{path}.{key}" if path else key
+                if key == 'href' and isinstance(value, str) and value.endswith('.pdf'):
+                    # Found a PDF link, check if it exists
+                    # Remove leading slash for local files
+                    pdf_file = value.lstrip('/')
+                    pdf_path = output_dir / pdf_file
+                    if not pdf_path.exists():
+                        context = f"PDF linked in config not found: {value} (checked: {pdf_path})"
+                        errors.append(ValidationError(quarto_config, 0, "MISSING_PDF_LINK", context))
+                else:
+                    check_pdf_links(value, new_path)
+        elif isinstance(obj, list):
+            for item in obj:
+                check_pdf_links(item, path)
+
+    if 'book' in config:
+        check_pdf_links(config['book'])
+    if 'website' in config:
+        check_pdf_links(config['website'])
 
     return errors
 
@@ -382,6 +451,14 @@ def main():
             all_errors.extend(errors)
             for error in errors:
                 errors_by_type[error.error_type].append(error)
+
+    # Check Quarto config resources (PDFs, etc.)
+    print("   Checking Quarto config resources...")
+    config_errors = check_quarto_config_resources(output_dir)
+    if config_errors:
+        all_errors.extend(config_errors)
+        for error in config_errors:
+            errors_by_type[error.error_type].append(error)
 
     # Print results
     if not all_errors:
@@ -432,8 +509,21 @@ def main():
         print("     Check that all referenced files were rendered")
         print("     Verify that relative paths are correct")
         print("     Ensure that directory links have an index.html file")
+    if "BROKEN_IMAGE" in errors_by_type:
+        print("   - Broken images: Some img src paths point to files that don't exist")
+        print("     Check that image files were generated/copied during render")
+        print("     Verify that relative image paths are correct")
+        print("     For Quarto-generated figures, ensure _files/ directories are included in output")
     if "POSIXPATH_IN_OUTPUT" in errors_by_type:
         print("   - PosixPath in output: A pathlib.PosixPath object was not converted to string")
+    if "MISSING_PDF" in errors_by_type:
+        print("   - Missing PDF: PDF file specified in _quarto.yml output-file not found in output directory")
+        print("     Check that PDF format is being rendered (format: pdf: section in config)")
+        print("     Verify the PDF was successfully generated during render")
+    if "MISSING_PDF_LINK" in errors_by_type:
+        print("   - Missing PDF link: PDF file linked in navbar/sidebar not found in output directory")
+        print("     Ensure the PDF file exists or is generated during render")
+        print("     Check that the href path in config matches the actual file location")
 
     return 1
 

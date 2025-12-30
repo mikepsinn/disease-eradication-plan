@@ -32,15 +32,15 @@ treaty_campaign_cost = float(TREATY_CAMPAIGN_TOTAL_COST) / BILLION  # One-time c
 # PRIMARY: Disease eradication delay elimination (8.2-year timeline shift)
 # Optimistic: Plus acceleration effects (innovation cascade multipliers)
 
-health_gains_conservative = float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / BILLION
-health_gains_primary = float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / BILLION
-health_gains_optimistic = float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / BILLION
+health_gains_conservative = float(EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS) / BILLION
+health_gains_primary = float(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE) / BILLION
+health_gains_optimistic = float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE) / BILLION
 
 # Component values for equations
 
-conservative_deaths_total = float(HISTORICAL_PROGRESS_DEATHS_TOTAL) / 1e6
-primary_deaths_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL) / 1e6
-optimistic_deaths_total = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL) / 1e6
+conservative_deaths_total = float(EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL) / 1e6
+primary_deaths_total = float(DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED) / 1e6
+optimistic_deaths_total = float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) / 1e6
 
 # Calculate annual rates from totals for display
 
@@ -90,9 +90,9 @@ def format_as_trillions(value_usd):
     result = result.replace(".0T", "T")
     return result
 
-conservative_value = format_as_trillions(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
-primary_value = format_as_trillions(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
-optimistic_value = format_as_trillions(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+conservative_value = format_as_trillions(EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS)
+primary_value = format_as_trillions(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE)
+optimistic_value = format_as_trillions(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE)
 
 bar_conservative = ax.bar(x_positions[2], health_gains_conservative, bar_width,
                          color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
@@ -138,7 +138,7 @@ ax.text(x_positions[1], gross_rd_savings + 10,
 
 # Conservative tier (bottom)
 
-conservative_label = format_as_trillions(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+conservative_label = format_as_trillions(EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS)
 ax.text(x_positions[2], health_gains_conservative / 2,
         conservative_label,
         ha='center', va='center', fontsize=22,
@@ -147,7 +147,7 @@ ax.text(x_positions[2], health_gains_conservative / 2,
 
 # PRIMARY tier (middle)
 
-primary_label = format_as_trillions(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+primary_label = format_as_trillions(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE)
 ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - health_gains_conservative) / 2,
         primary_label,
         ha='center', va='center', fontsize=26,
@@ -156,7 +156,7 @@ ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - heal
 
 # Optimistic tier (top)
 
-optimistic_label = format_as_trillions(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+optimistic_label = format_as_trillions(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE)
 ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health_gains_primary) / 2,
         optimistic_label,
         ha='center', va='center', fontsize=22,
