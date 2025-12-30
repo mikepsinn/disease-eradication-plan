@@ -5927,7 +5927,8 @@ DRUG_DEVELOPMENT_COST_1980S = Parameter(
     unit="USD",
     confidence="high",
     keywords=["pharma", "drug", "development", "cost", "1980s", "historical"],
-    distribution="fixed",  # Historical documented value; uncertainty is in the methodology, not measurement
+    distribution="lognormal",  # Source indicates approximation (~$194M); lognormal appropriate for cost data
+    confidence_interval=(145_500_000, 242_500_000),  # ±25% for measurement uncertainty (source uses "~" indicating approximation)
 )
 
 DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
