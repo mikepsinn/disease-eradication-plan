@@ -31,7 +31,7 @@ with dot.subgraph(name='cluster_repdem') as c:
 
     # Output: policy (with information loss)
     c.node('repdem_policy', 'Policy Outcome\n(High Information Loss)', shape='box', style='filled,rounded,dashed', fillcolor='white', fontsize='9', color='black')
-    c.edge('repdem_vote', 'repdem_policy', color='black', penwidth='2.0', label='C ≈ 0 bits', fontsize='7')
+    c.edge('repdem_vote', 'repdem_policy', color='black', penwidth='2.0', xlabel='C ≈ 0 bits', fontsize='7')
 
 # -- RAPPA (Bottom): Parallel Channels --
 with dot.subgraph(name='cluster_rappa') as c:
@@ -52,7 +52,7 @@ with dot.subgraph(name='cluster_rappa') as c:
 
     # Output: policy (with preserved information) - solid border for emphasis
     c.node('rappa_policy', 'Policy Outcome\n(Preserved Intensity)', shape='box', style='filled,rounded', fillcolor='white', fontsize='9', color='black', penwidth='2')
-    c.edge('rappa_agg', 'rappa_policy', color='black', penwidth='2.0', label='C ∝ N·c̄·H(S)', fontsize='7')
+    c.edge('rappa_agg', 'rappa_policy', color='black', penwidth='2.0', xlabel='C ∝ N·c̄·H(S)', fontsize='7')
 
 png_path = render_graphviz_with_watermark(dot, 'rappa-information-flow-diagram')
 display(IPImage(str(png_path)))
