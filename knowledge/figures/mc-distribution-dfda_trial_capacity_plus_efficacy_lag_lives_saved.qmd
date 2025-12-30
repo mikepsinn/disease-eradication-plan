@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Total Lives Saved from Average Timeline Shift (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Total Lives Saved from Full Timeline Shift (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 2401567988.0441346
 p5 = 7298130419.45
 p50 = 11342526956.5
 p95 = 15874368212.549997
-display_name = "Total Lives Saved from Average Timeline Shift"
+display_name = "Total Lives Saved from Full Timeline Shift"
 units = "deaths"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Total Lives Saved from Average Timeline Shift**
+**Simulation Results Summary: Total Lives Saved from Full Timeline Shift**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 2.40B |
 | 90% Confidence Interval | [7.30B, 15.9B] |
 
-*The histogram shows the distribution of Total Lives Saved from Average Timeline Shift across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Total Lives Saved from Full Timeline Shift across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
