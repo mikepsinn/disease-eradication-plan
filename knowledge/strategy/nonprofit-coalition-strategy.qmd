@@ -99,7 +99,7 @@ A 1% treaty is not a peace movement. It's a **resource-reallocation movement**. 
 
 **If you're a peace organization:** You've been making moral appeals for 70 years. It hasn't worked. Try something else. A 1% treaty makes peace more profitable than war. It's not a moral argument; it's a financial one. And in a world run by greed, that's the only argument that matters.
 
-**If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. A 1% treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases clinical trials capacity by {{< var military_to_government_clinical_trials_spending_ratio >}} times and makes the testing process 82x more efficient. The bottleneck isn't ideas or molecules - it's running enough trials to find out what works. This solves that.
+**If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. A 1% treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases clinical trials capacity by {{< var military_to_government_clinical_trials_spending_ratio >}} times and makes the testing process {{< var recovery_trial_cost_reduction_factor >}}x more efficient. The bottleneck isn't ideas or molecules - it's running enough trials to find out what works. This solves that.
 
 ## "But Shouldn't Nonprofits Focus on Their Core Mission?"
 

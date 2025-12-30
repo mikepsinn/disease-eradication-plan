@@ -47,7 +47,7 @@ This chapter relies on three tiers of evidence:
 
 **Irrefutable Facts** (direct empirical data):
 
-- 82× cost differential: Oxford trial ({{< var recovery_trial_cost_per_patient >}}) vs. standard Phase III ({{< var traditional_phase3_cost_per_patient >}})
+- {{< var recovery_trial_cost_reduction_factor >}}× cost differential: Oxford trial ({{< var recovery_trial_cost_per_patient >}}) vs. standard Phase III ({{< var traditional_phase3_cost_per_patient >}})
 - 70% drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
 - Beta-blocker deaths: [100,000 Americans died](../references.qmd#beta-blocker-drug-lag-deaths) during decade-long delay
 - COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
@@ -225,7 +225,7 @@ $$
 
 For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.
 
-**Even if you think these estimates are off by a factor of 10**, the core problem remains: a system that costs 82× more per patient, takes 36× longer than proven alternatives, and produces less safety data from smaller, less representative populations.
+**Even if you think these estimates are off by a factor of 10**, the core problem remains: a system that costs {{< var recovery_trial_cost_reduction_factor >}}× more per patient, takes 36× longer than proven alternatives, and produces less safety data from smaller, less representative populations.
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people who die from lack of access to life-saving treatments that might have been.
 

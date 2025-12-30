@@ -125,9 +125,8 @@ The Tufts CSDD estimate includes **cost of failures**:
 - Total capital at risk: 10× nominal cost per successful drug
 - Pre-1962 failure rates were lower (simpler approval, shorter timelines, less capital at risk)
 
-### 3. Trial Complexity: The 82× Factor
+### 3. Trial Complexity
 
-Clinical trial costs **per patient** increased by {{< var recovery_trial_cost_reduction_factor >}} from 1962 to 2024:
 
 **Pre-1962 (RECOVERY trial equivalent):**
 - Simple randomization
@@ -140,10 +139,6 @@ Clinical trial costs **per patient** increased by {{< var recovery_trial_cost_re
 - Separate CRO infrastructure
 - Extensive monitoring and auditing
 - Cost per patient: ~$4,100
-
-$$
-\frac{\$4{,}100}{\$50} = 82\text{×}
-$$
 
 See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for full derivation.
 
@@ -506,7 +501,7 @@ These drugs saved **millions of lives** and remain in use today. The thalidomide
 
 The [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated that **simple randomization** can:
 
-- Reduce cost per patient by **82×**
+- Reduce cost per patient by **{{< var recovery_trial_cost_reduction_factor >}}×**
 - Maintain scientific rigor
 - Accelerate results (6 months vs. 5+ years)
 

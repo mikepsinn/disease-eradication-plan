@@ -29,7 +29,7 @@ Oxford saved a million lives in [100 days](references.qmd#recovery-trial-100-day
 Pharma saved zero lives in 10 years.
 
 That's not a 10% improvement.
-That's **[82 times better](references.qmd#recovery-trial-82x-cost-reduction)**.
+That's **[{{< var recovery_trial_cost_reduction_factor >}} times better](references.qmd#recovery-trial-82x-cost-reduction)**.
 The model exists.
 It's been proven.
 Now you scale it.
