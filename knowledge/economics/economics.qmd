@@ -37,10 +37,6 @@ tbl-cap-location: top
 image: /assets/og-images/knowledge/economics/economics-og-academic.png
 ---
 
-{{< include /knowledge/includes/setup-parameters.qmd >}}
-
-![](/assets/infographics/knowledge/economics/economics-infographic-academic.png)
-
 
 ::: {.content-visible when-format="pdf"}
 
@@ -131,9 +127,6 @@ This intervention differs in four critical ways:
 
 
 1. **Empirical grounding**: Cost estimates based on demonstrated RECOVERY trial results, not theoretical projections. The {{< var recovery_trial_cost_per_patient >}}/patient cost is a proven fact, not a forecast.
-
-
-![Comparison of global resource allocation: Military spending dwarfs clinical trial funding by a factor of 604:1.](/assets/section-images/knowledge/economics/economics-section-problem-statement-academic.png)
 
 2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
 
@@ -263,8 +256,6 @@ The mechanism makes trial participation financially attractive for both patients
 
 ![Figure 2: The 1% Treaty Operational Flow. Funding follows the patient, converting clinical trials from cost centers into revenue-generating activities for healthcare providers.](/assets/section-images/knowledge/economics/economics-section-mechanism-of-action-academic.png)
 
-
-
 ## A Decentralized Framework for Drug Assessment
 
 
@@ -325,7 +316,6 @@ Like Amazon rankings based on verified purchase reviews, except based on measure
 
 ![Outcome Labels Example](/assets/dfda-outcome-labels.png)
 
-
 Based on systematic outcome collection across thousands of patients, labels show:
 
 - **Quantified benefits**: "Memory improved 35%, Executive Function improved 22%"
@@ -347,8 +337,7 @@ This is measured data from actual patient outcomes, not marketing claims or lawy
 
 No extra paperwork. No dedicated research staff. Just making routine clinical data actually useful for evidence generation.
 
-
-![Figure 3: Structural Comparison of Traditional vs. Pragmatic Trials. Leveraging existing healthcare infrastructure reduces costs by 98% while increasing speed and generalizability.](/assets/section-images/knowledge/economics/economics-section-traditional-vs-pragmatic-infrastructure-academic.png)
+![ Structural Comparison of Traditional vs. Pragmatic Trials. Leveraging existing healthcare infrastructure reduces costs by 98% while increasing speed and generalizability.](/assets/section-images/knowledge/economics/economics-section-traditional-vs-pragmatic-infrastructure-academic.png)
 
 ## Summary of Results
 
@@ -602,8 +591,7 @@ The mechanism redirects competitive incentives from zero-sum conflicts toward po
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
-![Figure 4: Incentive Alignment Architecture. The mechanism ensures every key stakeholder group derives direct economic or political benefit from treaty adoption.](/assets/section-images/knowledge/economics/economics-section-stakeholder-incentive-alignment-academic.png)
-
+![Incentive Alignment Architecture. The mechanism ensures every key stakeholder group derives direct economic or political benefit from treaty adoption.](/assets/section-images/knowledge/economics/economics-section-stakeholder-incentive-alignment-academic.png)
 
 #### VICTORY Incentive Alignment Bonds
 
@@ -684,10 +672,6 @@ Bed nets are a consumable intervention requiring ongoing replacement every 3-5 y
 The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be 707× better than excellent linear interventions like bed nets.
 
 The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make 99.6% of potential drug-disease combinations economically infeasible to test).
-
-
-
-![A 'Cost-Effectiveness Plane' (scatter plot quadrants) placing standard interventions (positive cost, positive health) in the top-right and the 1% Treaty (negative cost/profit, positive health) in the bottom-right 'Dominant' quadrant.](/assets/section-images/knowledge/economics/economics-section-dominance-analysis-academic.png)
 
 ## Methodology
 

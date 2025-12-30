@@ -1,19 +1,9 @@
 project:
-  type: website
+  type: book
   output-dir: _site/economics
   execute-dir: project
   resources:
     - assets/
-  render:
-    # Main Academic Paper
-    - knowledge/economics/economics.qmd
-
-    # Essential Appendices
-    - knowledge/appendix/parameters-and-calculations.qmd
-    - knowledge/appendix/regulatory-mortality-analysis.qmd
-
-    # Bibliography
-    - knowledge/references.qmd
 
 profiles:
   default:
@@ -24,12 +14,17 @@ profiles:
   # post-render:
   #   - python scripts/post-render-validation.py
 
-website:
+book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-  description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
+  author: "Mike P. Sinn"
   site-url: https://impact.warondisease.org
   favicon: assets/icons/dih-icon-square.png
   page-navigation: true
+  chapters:
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+    - knowledge/appendix/regulatory-mortality-analysis.qmd
+    - knowledge/references.qmd
   navbar:
     right:
       - icon: file-pdf
