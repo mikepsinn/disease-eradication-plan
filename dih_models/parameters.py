@@ -3988,7 +3988,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
     source_type="calculated",
     description="Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
-    display_name="Total Lives Saved from Average Timeline Shift",
+    display_name="Total Lives Saved from Full Timeline Shift",
     unit="deaths",
     formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT",
     latex=r"Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B",

@@ -1069,7 +1069,7 @@ Total DALYs averted from the full dFDA timeline shift (~220 years). Scales propo
 
 **Inputs**:
 
-- [Total Lives Saved from Average Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.5B deaths
+- [Total Lives Saved from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.5B deaths
 
 *Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
 
@@ -1124,7 +1124,7 @@ $$
 
 :::
 
-### Total Lives Saved from Average Timeline Shift: 10.5B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+### Total Lives Saved from Full Timeline Shift: 10.5B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 

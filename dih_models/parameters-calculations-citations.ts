@@ -1912,7 +1912,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
   value: 10477343474.0,
   unit: "deaths",
-  displayName: "Total Lives Saved from Average Timeline Shift",
+  displayName: "Total Lives Saved from Full Timeline Shift",
   description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
   sourceType: "calculated",
   confidence: "low",
