@@ -749,7 +749,7 @@ Spending $1 returns ${{< var dfda_roi_rd_only >}}. This beats most legal activit
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-A $1 billion campaign investment could plausibly generate: (1) a ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (the average disease cure becomes available ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier), plus (2) ~${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
+A $1 billion campaign investment could plausibly generate: (1) a {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (the average disease cure becomes available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier), plus (2) ${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
 
 ## Cost-Effectiveness Analysis
 
