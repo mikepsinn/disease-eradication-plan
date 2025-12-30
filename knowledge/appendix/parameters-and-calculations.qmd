@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 351
+**Total parameters**: 352
 
-- External sources (peer-reviewed): 138
-- Calculated values: 116
-- Core definitions: 97
+- External sources (peer-reviewed): 137
+- Calculated values: 119
+- Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (116 parameters) • [External Data Sources](#sec-external) (138 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -129,7 +129,7 @@ $$
 
 :::
 
-### Combined Peace and Health Dividends for ROI Calculation: $144B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
+### Combined Peace and Health Dividends for ROI Calculation: $172B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -138,10 +138,10 @@ Combined peace and health dividends for ROI calculation
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 
 $$
-Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$30.00B = \$143.57B
+Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$58.24B = \$171.81B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations#peace-dividend-composition](../appendix/peace-dividend-calculations#peace-dividend-composition)
@@ -202,7 +202,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $30B {#sec-dfda_benefit_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.2B {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -211,10 +211,10 @@ Annual Decentralized Framework for Drug Assessment benefit from R&D savings (tri
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
-- [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.1%
 
 $$
-Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$60.00B \times 50.0\% = \$30.00B
+Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60.00B \times 97.1\% = \$58.24B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -515,7 +515,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $30B {#sec-dfda_net_savings_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.2B {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -523,7 +523,7 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
@@ -585,7 +585,7 @@ $$
 
 :::
 
-### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $199B {#sec-dfda_npv_benefit_rd_only}
+### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $387B {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -593,7 +593,7 @@ NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.2B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -620,7 +620,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only, Conservative): $199B {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only, Conservative): $387B {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -628,7 +628,7 @@ NPV net benefit using R&D savings only (most conservative financial estimate, ex
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $199B
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $387B
 
 $$
 Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
@@ -793,7 +793,7 @@ $$
 
 :::
 
-### Daily R&D Savings from Trial Cost Reduction: $82.2M {#sec-dfda_rd_savings_daily}
+### Daily R&D Savings from Trial Cost Reduction: $160M {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -801,7 +801,7 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 
 $$
 Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M
@@ -827,7 +827,7 @@ $$
 
 :::
 
-### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 326 ratio {#sec-dfda_roi_rd_only}
+### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 633 ratio {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -835,7 +835,7 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
@@ -864,7 +864,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment: 750 ratio {#sec-dfda_roi_simple}
+### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment: 1.46k ratio {#sec-dfda_roi_simple}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -872,11 +872,11 @@ Simple ROI without NPV adjustment (gross savings / annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
-ROI_{DFDA} = \frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \frac{\$30.00B}{\$40.0M} = 750
+ROI_{DFDA} = \frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \frac{\$58.24B}{\$40.0M} = 1{,}460
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -1187,6 +1187,76 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+:::
+
+### dFDA Trial Cost Reduction Factor: 34.2 multiplier {#sec-dfda_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $1.20K (95% CI: $500 - $3K)
+
+$$
+CRF_{dFDA} = \frac{\$41{,}000}{\$1{,}200} = 34\times
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_factor.qmd >}}
+
+:::
+
+### dFDA Trial Cost Reduction Percentage: 97.1% {#sec-dfda_trial_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+
+**Inputs**:
+
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $1.20K (95% CI: $500 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+
+$$
+R_{pct} = 1 - \frac{\$1{,}200}{\$41{,}000} = 97.07\%
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
 
 :::
 
@@ -2134,7 +2204,7 @@ $$
 
 :::
 
-### IAB Mechanism Benefit-Cost Ratio: 191 ratio {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Benefit-Cost Ratio: 229 ratio {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2142,11 +2212,11 @@ Benefit-Cost Ratio of the IAB mechanism itself
 
 **Inputs**:
 
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $144B
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172B
 - [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750M (95% CI: $160M - $750M)
 
 $$
-Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$143.57B}{\$750.0M} = 191
+Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$171.81B}{\$750.0M} = 229
 $$
 
 **Methodology**: [../appendix/incentive-alignment-bonds-paper#welfare-analysis](../appendix/incentive-alignment-bonds-paper#welfare-analysis)
@@ -2930,6 +3000,41 @@ $$
 
 :::
 
+### RECOVERY Trial Cost Reduction Factor: 82 multiplier {#sec-recovery_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
+
+$$
+CRF_{RECOVERY} = \frac{\$41{,}000}{\$500} = 82\times
+$$
+
+**Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
+
+:::
+
 ### Status Quo Average Years to Cure: 222 years {#sec-status_quo_avg_years_to_cure}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -3266,7 +3371,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 9.57 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3275,10 +3380,10 @@ Treaty system benefit multiplier vs childhood vaccination programs
 **Inputs**:
 
 - [Estimated Annual Global Economic Benefit from Childhood Vaccination Programs](#sec-childhood_vaccination_annual_benefit) 📊: $15B (SE: ±$4.50B)
-- [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $144B
+- [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $172B
 
 $$
-Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$143.57B}{\$15.00B} = 9.57
+Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$171.81B}{\$15.00B} = 11.5
 $$
 
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
@@ -3545,7 +3650,7 @@ $$
 
 :::
 
-### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $144B {#sec-treaty_peace_plus_rd_annual_benefits}
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B {#sec-treaty_peace_plus_rd_annual_benefits}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3554,10 +3659,10 @@ Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessm
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 
 $$
-Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$30.00B = \$143.57B
+Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$113.57B + \$58.24B = \$171.81B
 $$
 
 **Methodology**: [../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits](../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits)
@@ -3615,7 +3720,7 @@ $$
 
 :::
 
-### 1% treaty Recurring Annual Benefits: $144B {#sec-treaty_recurring_benefits_annual}
+### 1% treaty Recurring Annual Benefits: $172B {#sec-treaty_recurring_benefits_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3623,11 +3728,11 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
-Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.57B = \$143.57B
+Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$58.24B + \$113.57B = \$171.81B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -6247,6 +6352,18 @@ Phase 3 cost per patient (median from FDA study)
 
 **Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -6258,30 +6375,6 @@ Phase 3 cost per patient (median from FDA study)
 Traditional FDA drug development timeline
 
 **Source**: [Drugs.com - FDA drug approval timeline](../references.qmd#fda-approval-timeline-10-years)
-
-*✓ High confidence*
-
-:::
-
-### Cost Reduction Factor Demonstrated by Recovery Trial: 82 ratio {#sec-trial_cost_reduction_factor}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Cost reduction factor demonstrated by RECOVERY trial
-
-**Source**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [20 ratio, 150 ratio] • Distribution: Lognormal (SE: 20 ratio)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 20 ratio and 150 ratio (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
 
 *✓ High confidence*
 
@@ -7820,24 +7913,6 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage: 50% {#sec-trial_cost_reduction_pct}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Trial cost reduction percentage (50% baseline, conservative)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [40%, 65%] • Distribution: Beta
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 65% (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
 
 *Core definition*
 

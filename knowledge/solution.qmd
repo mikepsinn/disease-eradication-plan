@@ -119,7 +119,7 @@ The important part is there's no committee. No gatekeepers. No humans with the p
 
 ##### Your decentralized framework for drug assessment
 
-The FDA currently makes drugs {{< var trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
+The FDA currently makes drugs {{< var dfda_trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
 
 Your decentralized framework for drug assessment (dFDA) does three things:
 
@@ -301,7 +301,7 @@ The rest of Part II explains each component in detail:
 - How to structure a 1% treaty so countries actually sign it
 - How to build your decentralized institutes of health so they can't be corrupted
 - How Wishocracy prevents lobbyists from stealing all the money
-- How your global trial framework achieves {{< var trial_cost_reduction_factor >}}× cost reduction
+- How your global trial framework achieves {{< var dfda_trial_cost_reduction_factor >}}× cost reduction
 - How everyone makes money
 - How to make selfishness save humanity
 

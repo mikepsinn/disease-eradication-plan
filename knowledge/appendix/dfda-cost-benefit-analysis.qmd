@@ -414,7 +414,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 - **Extrapolation to New System**:
   - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
-  - Up to **~{{< var trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
+  - Up to **~{{< var dfda_trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
 
   The cost reduction factor can be formalized as:
 
@@ -1204,7 +1204,7 @@ from dih_models.parameters import *
 # Use parameters from dih_models/parameters.py
 
 global_clinical_trial_market = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}}
-dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
+dfda_rd_cost_reduction_pct = DFDA_TRIAL_COST_REDUCTION_PCT  # 50%
 dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ({{< var dfda_upfront_build >}})
 
 # Baseline QALYs generated annually
@@ -1337,7 +1337,7 @@ Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiat
 # Savings (in billions USD) - from dih_models/parameters.py
 
 Rd = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}} annual global R&D spend on clinical trials
-alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
+alpha = DFDA_TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
 # Financial Parameters - from dih_models/parameters.py
 

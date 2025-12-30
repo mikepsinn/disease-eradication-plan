@@ -50,6 +50,8 @@ interface UsageContext {
 interface RefactorStats {
   pythonUpdates: number;
   qmdUpdates: number;
+  pyScriptUpdates: number;
+  tsUpdates: number;
   filesModified: string[];
   warnings: string[];
 }
@@ -110,6 +112,61 @@ async function findQmdFiles(): Promise<string[]> {
 
   await walk(path.join(PROJECT_ROOT, 'knowledge'));
   return qmdFiles;
+}
+
+/**
+ * Find all Python scripts (excluding parameters.py which is handled separately)
+ */
+async function findPythonScripts(): Promise<string[]> {
+  const pyFiles: string[] = [];
+  const excludeDirs = ['node_modules', '.venv', 'venv', '_freeze', '.quarto', '_site', '__pycache__'];
+
+  async function walk(dir: string) {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (!excludeDirs.includes(entry.name)) {
+          await walk(fullPath);
+        }
+      } else if (entry.name.endsWith('.py') && entry.name !== 'parameters.py') {
+        pyFiles.push(fullPath);
+      }
+    }
+  }
+
+  await walk(PROJECT_ROOT);
+  return pyFiles;
+}
+
+/**
+ * Find all TypeScript files
+ */
+async function findTypeScriptFiles(): Promise<string[]> {
+  const tsFiles: string[] = [];
+  const excludeDirs = ['node_modules', '.venv', 'venv', '_freeze', '.quarto', '_site'];
+  const excludeFiles = ['parameters-calculations-citations.ts']; // Auto-generated
+
+  async function walk(dir: string) {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (!excludeDirs.includes(entry.name)) {
+          await walk(fullPath);
+        }
+      } else if (entry.name.endsWith('.ts') && !excludeFiles.includes(entry.name)) {
+        tsFiles.push(fullPath);
+      }
+    }
+  }
+
+  await walk(PROJECT_ROOT);
+  return tsFiles;
 }
 
 /**
@@ -302,7 +359,7 @@ async function updatePythonFile(
 }
 
 /**
- * Update QMD files
+ * Update QMD files (both Quarto variables and embedded Python code)
  */
 async function updateQmdFiles(
   oldName: string,
@@ -340,6 +397,7 @@ async function updateQmdFiles(
   for (const file of qmdFiles) {
     let fileModified = false;
 
+    // Replace Quarto variable patterns
     for (const pattern of patterns) {
       const count = await replaceInFile(file, pattern.old, pattern.new, dryRun);
       if (count > 0) {
@@ -348,7 +406,102 @@ async function updateQmdFiles(
       }
     }
 
+    // Also replace UPPERCASE parameter name in embedded Python code
+    // Uses word boundary regex to avoid partial matches
+    const content = await fs.readFile(file, 'utf-8');
+    const regex = new RegExp(`(?<![A-Za-z_])${escapeRegExp(oldName)}(?![A-Za-z_])`, 'g');
+    const matches = content.match(regex);
+    if (matches && matches.length > 0) {
+      if (!dryRun) {
+        const newContent = content.replace(regex, newName);
+        await fs.writeFile(file, newContent, 'utf-8');
+      }
+      totalCount += matches.length;
+      fileModified = true;
+    }
+
     if (fileModified) {
+      modifiedFiles.push(path.relative(PROJECT_ROOT, file));
+    }
+  }
+
+  return { count: totalCount, files: modifiedFiles };
+}
+
+/**
+ * Update Python scripts (excluding parameters.py)
+ */
+async function updatePythonScripts(
+  oldName: string,
+  newName: string,
+  dryRun: boolean
+): Promise<{ count: number; files: string[] }> {
+  const pyFiles = await findPythonScripts();
+  let totalCount = 0;
+  const modifiedFiles: string[] = [];
+
+  // Word boundary regex for Python identifiers
+  const regex = new RegExp(`(?<![A-Za-z_])${escapeRegExp(oldName)}(?![A-Za-z_])`, 'g');
+
+  for (const file of pyFiles) {
+    const content = await fs.readFile(file, 'utf-8');
+    const matches = content.match(regex);
+
+    if (matches && matches.length > 0) {
+      if (!dryRun) {
+        const newContent = content.replace(regex, newName);
+        await fs.writeFile(file, newContent, 'utf-8');
+      }
+      totalCount += matches.length;
+      modifiedFiles.push(path.relative(PROJECT_ROOT, file));
+    }
+  }
+
+  return { count: totalCount, files: modifiedFiles };
+}
+
+/**
+ * Update TypeScript files
+ */
+async function updateTypeScriptFiles(
+  oldName: string,
+  newName: string,
+  dryRun: boolean
+): Promise<{ count: number; files: string[] }> {
+  const tsFiles = await findTypeScriptFiles();
+  let totalCount = 0;
+  const modifiedFiles: string[] = [];
+
+  // Word boundary regex - matches both UPPERCASE and lowercase versions
+  const oldVarName = toQmdVariableName(oldName);
+  const newVarName = toQmdVariableName(newName);
+
+  for (const file of tsFiles) {
+    let content = await fs.readFile(file, 'utf-8');
+    let fileModified = false;
+
+    // Replace UPPERCASE version
+    const upperRegex = new RegExp(`(?<![A-Za-z_])${escapeRegExp(oldName)}(?![A-Za-z_])`, 'g');
+    const upperMatches = content.match(upperRegex);
+    if (upperMatches && upperMatches.length > 0) {
+      content = content.replace(upperRegex, newName);
+      totalCount += upperMatches.length;
+      fileModified = true;
+    }
+
+    // Replace lowercase version (in strings, etc.)
+    const lowerRegex = new RegExp(`(?<![a-z_])${escapeRegExp(oldVarName)}(?![a-z_])`, 'g');
+    const lowerMatches = content.match(lowerRegex);
+    if (lowerMatches && lowerMatches.length > 0) {
+      content = content.replace(lowerRegex, newVarName);
+      totalCount += lowerMatches.length;
+      fileModified = true;
+    }
+
+    if (fileModified) {
+      if (!dryRun) {
+        await fs.writeFile(file, content, 'utf-8');
+      }
       modifiedFiles.push(path.relative(PROJECT_ROOT, file));
     }
   }
@@ -419,6 +572,8 @@ async function refactorParameter(options: RefactorOptions): Promise<void> {
   const stats: RefactorStats = {
     pythonUpdates: 0,
     qmdUpdates: 0,
+    pyScriptUpdates: 0,
+    tsUpdates: 0,
     filesModified: [],
     warnings: [],
   };
@@ -457,29 +612,43 @@ async function refactorParameter(options: RefactorOptions): Promise<void> {
   stats.pythonUpdates = await updatePythonFile(oldName, newName, dryRun);
   console.log(`   Found ${stats.pythonUpdates} references in Python file`);
 
-  // Step 3: Update QMD files
+  // Step 3: Update QMD files (including embedded Python code)
   console.log('\n📝 Step 3: Updating QMD files...');
   const qmdResult = await updateQmdFiles(oldName, newName, dryRun);
   stats.qmdUpdates = qmdResult.count;
-  stats.filesModified = qmdResult.files;
-  console.log(`   Found ${stats.qmdUpdates} references across ${stats.filesModified.length} files`);
+  stats.filesModified = [...qmdResult.files];
+  console.log(`   Found ${stats.qmdUpdates} references across ${qmdResult.files.length} files`);
+
+  // Step 4: Update Python scripts (excluding parameters.py)
+  console.log('\n📝 Step 4: Updating Python scripts...');
+  const pyResult = await updatePythonScripts(oldName, newName, dryRun);
+  stats.pyScriptUpdates = pyResult.count;
+  stats.filesModified.push(...pyResult.files);
+  console.log(`   Found ${stats.pyScriptUpdates} references across ${pyResult.files.length} files`);
+
+  // Step 5: Update TypeScript files
+  console.log('\n📝 Step 5: Updating TypeScript files...');
+  const tsResult = await updateTypeScriptFiles(oldName, newName, dryRun);
+  stats.tsUpdates = tsResult.count;
+  stats.filesModified.push(...tsResult.files);
+  console.log(`   Found ${stats.tsUpdates} references across ${tsResult.files.length} files`);
 
   if (stats.filesModified.length > 0) {
     console.log('\n   Modified files:');
-    for (const file of stats.filesModified.slice(0, 10)) {
+    for (const file of stats.filesModified.slice(0, 15)) {
       console.log(`   - ${file}`);
     }
-    if (stats.filesModified.length > 10) {
-      console.log(`   ... and ${stats.filesModified.length - 10} more`);
+    if (stats.filesModified.length > 15) {
+      console.log(`   ... and ${stats.filesModified.length - 15} more`);
     }
   }
 
-  // Step 4: Regenerate variables
-  console.log('\n📝 Step 4: Regenerating variables...');
+  // Step 6: Regenerate variables
+  console.log('\n📝 Step 6: Regenerating variables...');
   await regenerateVariables(dryRun);
 
-  // Step 5: Validate no broken references
-  console.log('\n📝 Step 5: Validating references...');
+  // Step 7: Validate no broken references
+  console.log('\n📝 Step 7: Validating references...');
   stats.warnings = await validateReferences(oldName);
 
   if (stats.warnings.length > 0) {
@@ -496,8 +665,10 @@ async function refactorParameter(options: RefactorOptions): Promise<void> {
   console.log('📊 Summary');
   console.log('━'.repeat(80));
   console.log(`Usages found:      ${usages.length}`);
-  console.log(`Python updates:    ${stats.pythonUpdates}`);
+  console.log(`Python params:     ${stats.pythonUpdates}`);
   console.log(`QMD updates:       ${stats.qmdUpdates}`);
+  console.log(`Python scripts:    ${stats.pyScriptUpdates}`);
+  console.log(`TypeScript:        ${stats.tsUpdates}`);
   console.log(`Files modified:    ${stats.filesModified.length}`);
   console.log(`Warnings:          ${stats.warnings.length}`);
   console.log(`Review file:       ${path.relative(PROJECT_ROOT, reviewFilePath)}`);

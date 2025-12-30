@@ -24,7 +24,7 @@ setup_chart_style()
 BILLION = 1_000_000_000
 
 global_clinical_trial_market = float(GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL) / BILLION  # Convert raw USD to billions
-dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT
+dfda_rd_cost_reduction_pct = DFDA_TRIAL_COST_REDUCTION_PCT
 treaty_campaign_cost = float(TREATY_CAMPAIGN_TOTAL_COST) / BILLION  # One-time cost to pass the treaty
 
 # Health gains - 3-tier methodology (TOTAL one-time benefits, not amortized annual)

@@ -953,55 +953,6 @@ def main():
                 print(f"[OK] Generated {exceedance_count} exceedance charts in knowledge/figures/")
                 print(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
 
-                # Discount rate sensitivity for ROI_complete
-                try:
-                    roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
-                    if roi_outcome:
-                        discount_curve = []
-                        for rate in [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07]:
-                            ctx_disc = {}
-                            for inp in roi_outcome.inputs:
-                                meta = parameters.get(inp, {})
-                                val = meta.get("value")
-                                if inp == "NPV_DISCOUNT_RATE_STANDARD":
-                                    ctx_disc[inp] = rate
-                                else:
-                                    ctx_disc[inp] = float(val) if val is not None else 0.0
-                            roi_val = roi_outcome.compute(ctx_disc)
-                            discount_curve.append({"discount_rate": rate, "roi": float(roi_val)})
-                        with open(analysis_dir / "discount_curve_ROI.json", "w", encoding="utf-8") as f:
-                            json.dump(discount_curve, f, indent=2)
-                except Exception as e:
-                    print(f"[WARN] Discount curve generation skipped: {e}")
-
-                # Scenario bands for ROI_complete
-                try:
-                    roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
-                    if roi_outcome:
-                        scenarios = {
-                            "worst": 0.5,  # benefits half
-                            "conservative": 0.8,
-                            "baseline": 1.0,
-                            "optimistic": 1.5,
-                        }
-                        scenario_results = []
-                        for scenario_name, multiplier in scenarios.items():
-                            ctx_scen = {}
-                            for inp in roi_outcome.inputs:
-                                meta = parameters.get(inp, {})
-                                val = meta.get("value")
-                                v = float(val) if val is not None else 0.0
-                                # Scale benefits, keep costs fixed
-                                if inp in ["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "TRIAL_COST_REDUCTION_PCT"]:
-                                    v *= multiplier
-                                ctx_scen[inp] = v
-                            roi_val = roi_outcome.compute(ctx_scen)
-                            scenario_results.append({"scenario": scenario_name, "roi": float(roi_val)})
-                        with open(analysis_dir / "scenario_bands_ROI.json", "w", encoding="utf-8") as f:
-                            json.dump(scenario_results, f, indent=2)
-                except Exception as e:
-                    print(f"[WARN] Scenario bands generation skipped: {e}")
-
             print()
         else:
             print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")

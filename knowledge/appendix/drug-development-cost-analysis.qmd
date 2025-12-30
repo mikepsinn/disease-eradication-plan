@@ -14,7 +14,7 @@ The average cost to develop and gain approval for a new drug increased by approx
 1. **Longer development timelines** (2-3 years → 10-15 years)
 2. **Higher failure rates** requiring more capital at risk
 3. **More complex regulatory requirements** following the 1962 Kefauver-Harris Amendment
-4. **Stricter efficacy standards** increasing trial costs by {{< var trial_cost_reduction_factor >}}× per patient
+4. **Stricter efficacy standards** increasing trial costs by {{< var recovery_trial_cost_reduction_factor >}}× per patient
 
 This appendix provides transparent calculations, multiple data sources, and sensitivity analysis to support this claim.
 
@@ -127,7 +127,7 @@ The Tufts CSDD estimate includes **cost of failures**:
 
 ### 3. Trial Complexity: The 82× Factor
 
-Clinical trial costs **per patient** increased by {{< var trial_cost_reduction_factor >}} from 1962 to 2024:
+Clinical trial costs **per patient** increased by {{< var recovery_trial_cost_reduction_factor >}} from 1962 to 2024:
 
 **Pre-1962 (RECOVERY trial equivalent):**
 - Simple randomization
@@ -545,7 +545,7 @@ For reproducibility, all calculations use parameters from [`parameters.py`](../a
 | `PRE_1962_DRUG_DEVELOPMENT_COST` | {{< var pre_1962_drug_development_cost_2024_usd >}} | Congressional testimony (1962 dollars) |
 | `PHARMA_DRUG_DEVELOPMENT_COST_CURRENT` | {{< var pharma_drug_development_cost_current >}} | Tufts CSDD (2013 dollars) |
 | `DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER` | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} | Calculated with inflation adjustment |
-| `TRIAL_COST_REDUCTION_FACTOR` | {{< var trial_cost_reduction_factor >}} | Per-patient cost increase |
+| `TRIAL_COST_REDUCTION_FACTOR` | {{< var recovery_trial_cost_reduction_factor >}} | Per-patient cost increase |
 
 See [Parameters & Calculations](../appendix/parameters-and-calculations.qmd) for complete methodology and source links.
 

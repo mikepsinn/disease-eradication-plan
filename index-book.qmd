@@ -391,7 +391,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var trial_cost_reduction_factor >}}x cost reduction at scale. Not in theory. In reality. With actual dying people who became not-dying people.
+- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var recovery_trial_cost_reduction_factor >}}x cost reduction at scale. Not in theory. In reality. With actual dying people who became not-dying people.
 - **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%. 
 
 {{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
@@ -472,7 +472,7 @@ It's the Louisiana Purchase of clinical trials, except instead of buying land fr
 
 *Make Humans Click a Button to Not Die*
 
-You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on this question: "Pragmatic trials integrated into standard healthcare cost {{< var trial_cost_reduction_factor >}}x less than traditional methods. If all nations redirect just 1% of military spending to fund these trials, everyone gets 1% more security (1% fewer nuclear bombs pointed at you) and access to treatments years sooner. Should your country participate?"
+You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on this question: "Pragmatic trials integrated into standard healthcare cost {{< var dfda_trial_cost_reduction_factor >}}x less than traditional methods. If all nations redirect just 1% of military spending to fund these trials, everyone gets 1% more security (1% fewer nuclear bombs pointed at you) and access to treatments years sooner. Should your country participate?"
 
 Even humans, who once thought the Earth was flat and diseases were caused by bad smells, can handle this level of complexity.
 
@@ -594,7 +594,7 @@ This beats:
 You stop paying smart humans to write grant applications.
 You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
-- **{{< var dfda_benefit_rd_only_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
+- **{{< var dfda_benefit_rd_only_annual >}} in annual R&D cost savings**: {{< var dfda_trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var dfda_trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var dfda_trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
 - **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
   - **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted** from the one-time timeline shift
   - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/regulatory-mortality-analysis.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness

@@ -1,6 +1,6 @@
 ---
 title: The FDA Is Unsafe and Ineffective
-description: How blocking patient access during 8+ years of efficacy testing made clinical trials 82× more expensive per patient while making drugs demonstrably more dangerous.
+description: How blocking patient access during 8+ years of efficacy testing made clinical trials 34× more expensive per patient while making drugs demonstrably more dangerous.
 published: true
 tags:
   - problem
@@ -68,14 +68,14 @@ This chapter relies on three tiers of evidence:
 Even if you reject all model-dependent estimates, the empirical facts alone demonstrate the system is broken.
 :::
 
-## The {{< var trial_cost_reduction_factor >}}× Inefficiency Tax
+## The {{< var dfda_trial_cost_reduction_factor >}}× Inefficiency Tax
 
 Compare two real-world systems for testing drugs:
 
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
 
-The current system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
+The current system costs **{{< var dfda_trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
 
 ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
 
@@ -103,7 +103,7 @@ In 1938, Phase I safety testing was added after the Elixir sulfanilamide disaste
 Then in 1962, Congress responded to this success by adding massive **pre-approval efficacy requirements** via the [Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962), blocking patient access for years during testing. The new system:
 
 - Replaced {{< var pre_1962_physician_count >}} independent doctors with drug company-run trials
-- Made trials {{< var trial_cost_reduction_factor >}}× more expensive
+- Made trials {{< var dfda_trial_cost_reduction_factor >}}× more expensive
 - Reduced drug approvals by {{< var post_1962_drug_approval_reduction_pct >}} immediately
 - Cut life expectancy growth [by 60%](../references.qmd#post-1962-life-expectancy-slowdown): from 3.82 years/decade to 1.54 years/decade
 
@@ -126,7 +126,7 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 | **Cost per Drug** | {{< var pre_1962_drug_development_cost_2024_usd >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× increase |
 | **New Approvals** | [46/year (1960)](../references.qmd#post-1962-drug-approval-drop) | [13/year (1963)](../references.qmd#post-1962-drug-approval-drop) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
 | **Life Expectancy Growth** | [3.82 years/decade](../references.qmd#life-expectancy-increase-pre-1962) | [1.54 years/decade](../references.qmd#post-1962-life-expectancy-slowdown) | [60% reduction](../references.qmd#post-1962-life-expectancy-slowdown) |
-| **Trial Cost** | {{< var dfda_pragmatic_trial_cost_per_patient >}} (pragmatic) | {{< var traditional_phase3_cost_per_patient >}} | {{< var trial_cost_reduction_factor >}}× increase |
+| **Trial Cost** | {{< var dfda_pragmatic_trial_cost_per_patient >}} (pragmatic) | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_trial_cost_reduction_factor >}}× increase |
 | **Time to Approval** | 2-3 years | {{< var fda_phase_1_to_approval_years >}} years | 5-8× slower |
 
 The temporal break is exact. Every negative metric changed immediately in 1962.

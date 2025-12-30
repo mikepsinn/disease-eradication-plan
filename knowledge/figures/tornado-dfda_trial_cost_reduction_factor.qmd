@@ -15,17 +15,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings"
+display_name = "dFDA Trial Cost Reduction Factor"
 
 # Baseline and units
 
-baseline = 58243902439.02439
+baseline = 34.166666666666664
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-impacts_low = [-9707317073.17073, 1024390243.9024353, -1843902439.0243912]
-impacts_high = [14560975609.756096, -2634146341.4634094, 1156097560.9756088]
+drivers = ['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT']
+impacts_low = [-17.499999999999996, 47.833333333333336]
+impacts_high = [65.83333333333334, -20.5]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -67,7 +67,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD/year"
+units_label = "multiplier"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -87,7 +87,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('tornado-dfda_benefit_rd_only_annual.png')
+output_path = get_figure_output_path('tornado-dfda_trial_cost_reduction_factor.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

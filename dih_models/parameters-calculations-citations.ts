@@ -1349,6 +1349,7 @@ export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
   sourceType: "external",
   sourceRef: "trial-costs-fda-study",
   confidence: "high",
+  confidenceInterval: [20000.0, 120000.0],
 };
 
 export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
@@ -1359,18 +1360,6 @@ export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
   sourceType: "external",
   sourceRef: "fda-approval-timeline-10-years",
   confidence: "high",
-};
-
-export const TRIAL_COST_REDUCTION_FACTOR: Parameter = {
-  value: 82.0,
-  unit: "ratio",
-  displayName: "Cost Reduction Factor Demonstrated by Recovery Trial",
-  description: "Cost reduction factor demonstrated by RECOVERY trial",
-  sourceType: "external",
-  sourceRef: "recovery-trial-82x-cost-reduction",
-  confidence: "high",
-  confidenceInterval: [20.0, 150.0],
-  stdError: 20.0,
 };
 
 export const TYPICAL_CEO_HOURLY_RATE: Parameter = {
@@ -1585,7 +1574,7 @@ export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
 };
 
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
-  value: 143571000000.0,
+  value: 171814902439.02438,
   unit: "USD/year",
   displayName: "Combined Peace and Health Dividends for ROI Calculation",
   description: "Combined peace and health dividends for ROI calculation",
@@ -1593,7 +1582,7 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition",
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
-  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
+  latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$58.24B = \\$171.81B",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -1609,7 +1598,7 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
 };
 
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
-  value: 30000000000.0,
+  value: 58243902439.02439,
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
   description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
@@ -1617,7 +1606,7 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
-  latex: "Benefit_{DFDA,ann} = Trials_{ann} \\times Reduction = \\$60.00B \\times 50.0\\% = \\$30.00B",
+  latex: "Benefit_{DFDA,ann} = Trials_{ann} \\times Reduction_{DFDA} = \\$60.00B \\times 97.1\\% = \\$58.24B",
 };
 
 export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
@@ -1714,7 +1703,7 @@ export const DFDA_EXPECTED_ROI: Parameter = {
 };
 
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
-  value: 29960000000.0,
+  value: 58203902439.02439,
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
   description: "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
@@ -1738,7 +1727,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
 };
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
-  value: 199059997977.79504,
+  value: 386717913945.66003,
   unit: "USD",
   displayName: "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
   description: "NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
@@ -1750,7 +1739,7 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
 };
 
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
-  value: 199059997977.79504,
+  value: 386717913945.66003,
   unit: "USD",
   displayName: "NPV Net Benefit (R&D Only, Conservative)",
   description: "NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
@@ -1809,7 +1798,7 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
 };
 
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
-  value: 82191780.8219178,
+  value: 159572335.4493819,
   unit: "USD/day",
   displayName: "Daily R&D Savings from Trial Cost Reduction",
   description: "Daily R&D savings from trial cost reduction (opportunity cost of delay)",
@@ -1821,7 +1810,7 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
 };
 
 export const DFDA_ROI_RD_ONLY: Parameter = {
-  value: 325.5888196884708,
+  value: 632.5280339247282,
   unit: "ratio",
   displayName: "ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
   description: "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
@@ -1833,7 +1822,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
 };
 
 export const DFDA_ROI_SIMPLE: Parameter = {
-  value: 750.0,
+  value: 1456.0975609756097,
   unit: "ratio",
   displayName: "Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment",
   description: "Simple ROI without NPV adjustment (gross savings / annual opex)",
@@ -1841,7 +1830,7 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
-  latex: "ROI_{DFDA} = \\frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \\frac{\\$30.00B}{\\$40.0M} = 750",
+  latex: "ROI_{DFDA} = \\frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \\frac{\\$58.24B}{\\$40.0M} = 1{,}460",
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
@@ -1939,6 +1928,30 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
   latex: "TimelineShift_{avg} = 212 \\text{ yrs} + 8.2 \\text{ yrs} = 220 \\text{ years}",
+};
+
+export const DFDA_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
+  value: 34.166666666666664,
+  unit: "multiplier",
+  displayName: "dFDA Trial Cost Reduction Factor",
+  description: "Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
+  confidence: "high",
+  formula: "TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",
+  latex: "CRF_{dFDA} = \\frac{\\$41{,}000}{\\$1{,}200} = 34\\times",
+};
+
+export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
+  value: 0.9707317073170731,
+  unit: "percentage",
+  displayName: "dFDA Trial Cost Reduction Percentage",
+  description: "Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
+  confidence: "high",
+  formula: "1 - (DFDA_COST / TRADITIONAL_COST)",
+  latex: "R_{pct} = 1 - \\frac{\\$1{,}200}{\\$41{,}000} = 97.07\\%",
 };
 
 export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
@@ -2264,7 +2277,7 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
-  value: 191.428,
+  value: 229.08653658536585,
   unit: "ratio",
   displayName: "IAB Mechanism Benefit-Cost Ratio",
   description: "Benefit-Cost Ratio of the IAB mechanism itself",
@@ -2272,7 +2285,7 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
-  latex: "Cost = \\frac{Benefit_{ann}}{Cost_{ann}} = \\frac{\\$143.57B}{\\$750.0M} = 191",
+  latex: "Cost = \\frac{Benefit_{ann}}{Cost_{ann}} = \\frac{\\$171.81B}{\\$750.0M} = 229",
 };
 
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -2534,6 +2547,18 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   latex: "Cost_{percap,health} = \\frac{Cost_{mental,ann}}{Population} = \\frac{\\$350.00B}{335M} = \\$1.0K",
 };
 
+export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
+  value: 82.0,
+  unit: "multiplier",
+  displayName: "RECOVERY Trial Cost Reduction Factor",
+  description: "Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)",
+  sourceType: "calculated",
+  sourceRef: "recovery-trial-82x-cost-reduction",
+  confidence: "high",
+  formula: "TRADITIONAL_PHASE3_COST / RECOVERY_COST",
+  latex: "CRF_{RECOVERY} = \\frac{\\$41{,}000}{\\$500} = 82\\times",
+};
+
 export const STATUS_QUO_AVG_YEARS_TO_CURE: Parameter = {
   value: 221.66666666666666,
   unit: "years",
@@ -2649,7 +2674,7 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
 };
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
-  value: 9.5714,
+  value: 11.454326829268291,
   unit: "ratio",
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
@@ -2657,7 +2682,7 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#better-than-the-best-charities",
   confidence: "high",
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
-  latex: "Multiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}} = \\frac{\\$143.57B}{\\$15.00B} = 9.57",
+  latex: "Multiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}} = \\frac{\\$171.81B}{\\$15.00B} = 11.5",
 };
 
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
@@ -2744,7 +2769,7 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
-  value: 143571000000.0,
+  value: 171814902439.02438,
   unit: "USD/year",
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
   description: "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
@@ -2752,7 +2777,7 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
-  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$30.00B = \\$143.57B",
+  latex: "Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$113.57B + \\$58.24B = \\$171.81B",
 };
 
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
@@ -2768,7 +2793,7 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
 };
 
 export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
-  value: 143571000000.0,
+  value: 171814902439.02438,
   unit: "USD/year",
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
@@ -2776,7 +2801,7 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
-  latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$30.00B + \\$113.57B = \\$143.57B",
+  latex: "Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \\$58.24B + \\$113.57B = \\$171.81B",
 };
 
 export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
@@ -3858,17 +3883,6 @@ export const TREATY_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
-export const TRIAL_COST_REDUCTION_PCT: Parameter = {
-  value: 0.5,
-  unit: "rate",
-  displayName: "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
-  description: "Trial cost reduction percentage (50% baseline, conservative)",
-  sourceType: "definition",
-  sourceRef: "dct-cost-reductions-evidence",
-  confidence: "high",
-  confidenceInterval: [0.4, 0.65],
-};
-
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   value: 1000.0,
   unit: "diseases",
@@ -4037,7 +4051,6 @@ export const parameters = {
   THALIDOMIDE_US_POPULATION_SHARE_1960,
   TRADITIONAL_PHASE3_COST_PER_PATIENT,
   TREATMENT_ACCELERATION_YEARS_CURRENT,
-  TRIAL_COST_REDUCTION_FACTOR,
   TYPICAL_CEO_HOURLY_RATE,
   US_ALZHEIMERS_ANNUAL_COST,
   US_CANCER_ANNUAL_COST,
@@ -4088,6 +4101,8 @@ export const parameters = {
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS,
+  DFDA_TRIAL_COST_REDUCTION_FACTOR,
+  DFDA_TRIAL_COST_REDUCTION_PCT,
   DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER,
   DIH_PATIENTS_FUNDABLE_ANNUALLY,
   DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL,
@@ -4138,6 +4153,7 @@ export const parameters = {
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
+  RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   STATUS_QUO_AVG_YEARS_TO_CURE,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   SUFFERING_HOURS_ELIMINATED_TOTAL,
@@ -4262,7 +4278,6 @@ export const parameters = {
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC,
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE,
   TREATY_REDUCTION_PCT,
-  TRIAL_COST_REDUCTION_PCT,
   TRIAL_RELEVANT_DISEASES_COUNT,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
@@ -4540,20 +4555,6 @@ export const citations: Record<string, Citation> = {
         'container-title': "Credit Suisse/UBS",
         URL: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
         note: "Credit Suisse/UBS, 2023, Global Wealth Report 2023",
-  },
-  "dct-cost-reductions-evidence": {
-        id: "dct-cost-reductions-evidence",
-        type: "article-journal",
-        title: "Decentralized Clinical Trials (DCT) cost reduction evidence",
-        author: [
-          {
-            literal: "Rogers et al."
-          },
-        ],
-        issued: { 'date-parts': [[2022]] },
-        'container-title': "Rogers et al.",
-        URL: "https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf",
-        note: "Rogers et al., 2022, Systematic review of methods used to conduct decentralised clinical trials | Valachis & Lindman, 2024, Lessons learned from an unsuccessful DCT in Oncology",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
@@ -5705,11 +5706,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 351,
-  external: 138,
-  calculated: 116,
-  definitions: 97,
-  citations: 105,
+  total: 352,
+  external: 137,
+  calculated: 119,
+  definitions: 96,
+  citations: 104,
 } as const;
 
 // ============================================================================

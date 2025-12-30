@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage"
+#| fig-cap: "Probability Distribution: Phase 3 Cost per Patient"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,12 +16,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 0.5
-low = 0.4
-high = 0.65
-dist_type = "beta"
-display_name = "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage"
-unit = "rate"
+central_value = 41000.0
+low = 20000
+high = 120000
+dist_type = "lognormal"
+display_name = "Phase 3 Cost per Patient"
+unit = "USD/patient"
 
 # Calculate distribution parameters
 
@@ -138,7 +138,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-trial_cost_reduction_pct.png')
+output_path = get_figure_output_path('distribution-traditional_phase3_cost_per_patient.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

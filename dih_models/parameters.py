@@ -1095,40 +1095,6 @@ GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     keywords=["nonprofit", "foundation", "clinical trials", "2-5b", "philanthropy", "advocacy"]
 )
 
-TRIAL_COST_REDUCTION_PCT = Parameter(
-    0.50,
-    source_ref="dct-cost-reductions-evidence",
-    source_type="definition",
-    description="Trial cost reduction percentage (50% baseline, conservative)",
-    display_name="Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
-    unit="rate",
-    distribution=DistributionType.BETA,  # Beta distribution mandatory for [0,1] bounded probabilities
-    confidence_interval=(0.40, 0.65),  # 40-65% reduction range (widened from 30-70%)
-    # Economist rationale: Evidence-based range from published trials:
-    # RECOVERY trial: 80% cost reduction (£2.70/patient vs £13.50 traditional RCT)
-    # Decentralized Clinical Trials (DCTs): 30-50% reduction (NEJM, JAMA literature)
-    # Pragmatic trials: 50-70% reduction (NIH Collaboratory, PCORI evidence)
-    # Using 50% ±10pp (40-60%) as pragmatic midpoint across trial types.
-    # CRITICAL: Beta distribution captures bounded uncertainty—can't exceed 100% or go negative.
-    # Asymmetric risk: easier to underperform (regulatory resistance, adoption lag) than overperform.
-    validation_min=0,    # Floor: No cost reduction (regulatory capture)
-    validation_max=1,    # Ceiling: 100% reduction (theoretical maximum)
-    keywords=["50%", "rct", "clinical study", "clinical trial", "low estimate", "research trial", "randomized controlled trial"]
-)  # 50% baseline reduction (conservative)
-
-TRIAL_COST_REDUCTION_FACTOR = Parameter(
-    82,
-    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
-    source_type="external",
-    description="Cost reduction factor demonstrated by RECOVERY trial",
-    display_name="Cost Reduction Factor Demonstrated by Recovery Trial",
-    unit="ratio",
-    distribution=DistributionType.LOGNORMAL,
-    std_error=20,  # High variance in applicability
-    confidence_interval=(20, 150),
-    keywords=["rct", "multiple", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
-)  # 82x reduction proven by RECOVERY trial
-
 # ---
 # RESEARCH ACCELERATION MECHANISM PARAMETERS
 # ---
@@ -1419,6 +1385,73 @@ DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
                                        # - Central ($1,200): dFDA with global infrastructure
                                        # - Ceiling ($3,000): Typical US pragmatic trial
 )  # $1,200/patient central (vs $500 RECOVERY floor, $41k traditional)
+
+# Traditional Phase 3 Cost (baseline for comparison)
+TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
+    41000,
+    source_ref=ReferenceID.TRIAL_COSTS_FDA_STUDY,
+    source_type="external",
+    description="Phase 3 cost per patient (median from FDA study)",
+    display_name="Phase 3 Cost per Patient",
+    unit="USD/patient",
+    distribution=DistributionType.LOGNORMAL,  # Right-skewed: simple trials ~$20K, complex ~$120K+
+    confidence_interval=(20000, 120000),  # Range from Moore et al. 2020 FDA study
+    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer", "median"]
+)  # Median cost per patient from FDA/JAMA study (Moore et al. 2020)
+
+# Trial Cost Reduction Factors (calculated from cost per patient comparisons)
+
+# RECOVERY Trial Cost Reduction (historical evidence)
+# $41,000 traditional / $500 RECOVERY = 82x
+RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
+    TRADITIONAL_PHASE3_COST_PER_PATIENT / RECOVERY_TRIAL_COST_PER_PATIENT,
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="calculated",
+    description="Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)",
+    display_name="RECOVERY Trial Cost Reduction Factor",
+    unit="multiplier",
+    formula="TRADITIONAL_PHASE3_COST / RECOVERY_COST",
+    latex=r"CRF_{RECOVERY} = \frac{\$41{,}000}{\$500} = 82\times",
+    keywords=["oxford", "recovery", "82x", "rct", "clinical trial", "cost reduction", "historical"],
+    inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'RECOVERY_TRIAL_COST_PER_PATIENT'],
+    compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["RECOVERY_TRIAL_COST_PER_PATIENT"],
+)  # 82x reduction proven by RECOVERY trial ($41K / $500)
+
+# dFDA Pragmatic Trial Cost Reduction (forward-looking projection)
+# $41,000 traditional / $1,200 dFDA pragmatic = 34.17x
+DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
+    TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_type="calculated",
+    description="Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)",
+    display_name="dFDA Trial Cost Reduction Factor",
+    unit="multiplier",
+    formula="TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",
+    latex=r"CRF_{dFDA} = \frac{\$41{,}000}{\$1{,}200} = 34\times",
+    keywords=["dfda", "pragmatic", "34x", "rct", "clinical trial", "cost reduction", "projected"],
+    inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
+    compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+)  # 34x reduction projected for dFDA ($41K / $1,200)
+
+# dFDA Trial Cost Reduction as Percentage (derived from factor)
+DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
+    1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_type="calculated",
+    description="Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%",
+    display_name="dFDA Trial Cost Reduction Percentage",
+    unit="percentage",
+    formula="1 - (DFDA_COST / TRADITIONAL_COST)",
+    latex=r"R_{pct} = 1 - \frac{\$1{,}200}{\$41{,}000} = 97.07\%",
+    # Derived from: DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT ($1,200) vs TRADITIONAL_PHASE3_COST_PER_PATIENT ($41,000)
+    # This matches DFDA_TRIAL_COST_REDUCTION_FACTOR = 34× (which is the inverse: $41K / $1.2K)
+    # RECOVERY trial achieved 82× (98.8%), so 97% is conservative relative to historical evidence
+    validation_min=0.90,   # Floor: 90% reduction (minimum based on RECOVERY-like efficiency)
+    validation_max=0.99,   # Ceiling: 99% reduction (approaching theoretical maximum)
+    inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
+    compute=lambda ctx: 1 - (ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"]),
+    keywords=["97%", "rct", "clinical study", "clinical trial", "cost reduction", "research trial", "randomized controlled trial"]
+)  # 97% reduction = 34× cost reduction factor
 
 ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
     0.861,
@@ -1780,7 +1813,7 @@ DFDA_ANNUAL_OPEX = Parameter(
 
 # R&D Savings from Trial Cost Reduction (~$50B/year recurring)
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
-    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * TRIAL_COST_REDUCTION_PCT,
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
     source_type="calculated",
     description="Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
@@ -1791,8 +1824,8 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     # Uncertainty derived from inputs (TRIAL_SPENDING × COST_REDUCTION_PCT)
     validation_min=25_000_000_000,   # Floor: 30% cost reduction at $83B market
     validation_max=65_000_000_000,   # Ceiling: 70% cost reduction at $97B market
-    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "TRIAL_COST_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["TRIAL_COST_REDUCTION_PCT"]
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "DFDA_TRIAL_COST_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"]
 )  # $41.5B from automating Phase 2/3/4 trials
 
 # Note: DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL defined later (after DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL)
@@ -4833,17 +4866,6 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
 )  # 280M people = 3.5% of 8B (critical mass threshold)
-
-# Clinical Trial Cost Examples & Comparisons
-TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
-    41000,
-    source_ref=ReferenceID.TRIAL_COSTS_FDA_STUDY,
-    source_type="external",
-    description="Phase 3 cost per patient (median from FDA study)",
-    display_name="Phase 3 Cost per Patient",
-    unit="USD/patient",
-    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer", "median"]
-)  # Median cost per patient from FDA/JAMA study (Moore et al. 2020)
 
 # Historical & Comparison Multipliers
 MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(

@@ -143,7 +143,7 @@ The NIH model produces papers. The smallpox model produced results. This plan at
 
 **The returns** are high because the system captures value from a $109T disease burden. Economic benefits work out to over $7.5 million per person globally over 50 years. That's {{< var victory_bond_funding_pct >}} of {{< var treaty_annual_funding >}} yearly inflows divided among bondholders. The math appears to check out.
 
-**The cures** may be achievable because Oxford proved the model works, we're removing the FDA bottleneck, trials cost {{< var trial_cost_reduction_factor >}}× less, and the timeline matches historical eradication efforts.
+**The cures** may be achievable because Oxford proved the model works, we're removing the FDA bottleneck, trials cost {{< var dfda_trial_cost_reduction_factor >}}× less, and the timeline matches historical eradication efforts.
 
 It sounds too good because we've been failing for so long, we forgot what success looks like.
 
@@ -269,7 +269,7 @@ Still better than:
 - NIH: Fund safe research confirming water is wet
 - FDA: Block trials because paperwork had typos
 
-Science works through experimentation. The decentralized framework lets us experiment {{< var trial_cost_reduction_factor >}}× faster and cheaper.
+Science works through experimentation. The decentralized framework lets us run {{< var dfda_trial_cost_reduction_factor >}}× more trials for the same budget.
 
 Even if 90% fail, we could still get 10× more cures than today.
 

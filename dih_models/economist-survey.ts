@@ -594,7 +594,7 @@ export const economistSurvey: EconomistSurvey = {
     },
     {
       rank: 12,
-      name: "TRIAL_COST_REDUCTION_PCT",
+      name: "DFDA_TRIAL_COST_REDUCTION_PCT",
       displayName: "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
       value: 0.5,
       unit: "rate",
