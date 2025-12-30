@@ -201,6 +201,7 @@ def prepare_economics_index(verbose: bool = True) -> bool:
             if (
                 link_path.startswith("http://")
                 or link_path.startswith("https://")
+                or link_path.startswith("mailto:")
                 or link_path.startswith("#")
                 or link_path.startswith("/")
                 or "://" in link_path
