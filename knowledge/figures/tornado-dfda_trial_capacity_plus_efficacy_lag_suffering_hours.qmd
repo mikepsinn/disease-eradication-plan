@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Total Suffering Hours Eliminated"
+display_name = "Total Suffering Hours Eliminated (Complete Scenario)"
 
 # Baseline and units
 
-baseline = 7650023381028.0
+baseline = 192741210547318.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'EFFICACY_LAG_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT', 'GLOBAL_DISEASE_DEATHS_DAILY']
-impacts_low = [-2550007793676.001, -1865859370200.0, -1530004676205.6006, -382501166292.001]
-impacts_high = [3825011690513.998, 1865859370200.0, 1530004676205.5996, 382501166292.0]
+drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_DISEASE_DEATHS_DAILY', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+impacts_low = [161954788758959.0, -26441598161701.0, 12663131634720.0, -9637060532518.0, 4570152772019.0, -1865859370200.0, 4996133041.0, 2997959521.0, 2997959521.0, 1998725400.0, 999418081.0]
+impacts_high = [-92545593574621.0, 79324794502440.0, -32562338478960.0, 9637060532519.0, -4570152772981.0, 1865859370200.0, -6998463478.0, -4998432059.0, -3998572859.0, -2998786859.0, -999509579.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 150 DPI for PDF compatibility (vs 200 DPI which can exceed LaTeX limits)
 
-output_path = get_figure_output_path('tornado-suffering_hours_eliminated_total.png')
+output_path = get_figure_output_path('tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.png')
 plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
