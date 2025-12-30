@@ -15,7 +15,7 @@ from dih_models.plotting.chart_style import (
 # Import parameters
 
 from dih_models.parameters import (
-    TREATY_COMPLETE_ROI_ALL_BENEFITS,  # PRIMARY: R&D + disease eradication delay
+    TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,  # PRIMARY: R&D + efficacy lag elimination
     DFDA_TRIAL_COST_REDUCTION_PCT,
     DFDA_NPV_ADOPTION_RAMP_YEARS,
     NPV_DISCOUNT_RATE_STANDARD,
@@ -38,7 +38,7 @@ qaly_multiplier_samples = np.clip(np.random.normal(1.0, 0.15, N_ITERATIONS), 0.7
 
 # Calculate ROI for each iteration
 
-base_roi = float(TREATY_COMPLETE_ROI_ALL_BENEFITS)  # PRIMARY: R&D + disease eradication delay
+base_roi = float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)  # PRIMARY: R&D + efficacy lag elimination
 cost_reduction_factor = cost_reduction_samples / (float(DFDA_TRIAL_COST_REDUCTION_PCT) / 100)
 discount_rate_factor = (1 + float(NPV_DISCOUNT_RATE_STANDARD) / 100) / (1 + discount_rate_samples)
 adoption_factor = float(DFDA_NPV_ADOPTION_RAMP_YEARS) / adoption_years_samples

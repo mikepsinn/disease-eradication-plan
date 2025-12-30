@@ -21,7 +21,7 @@ setup_chart_style()
 
 interventions = {
     'Decentralized Framework for Drug Assessment': {
-        'roi': float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: includes R&D + disease eradication delay
+        'roi': float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG),  # PRIMARY: includes R&D + efficacy lag elimination
         'category': 'proposed',
         'note': 'Leverages all global R&D'
     },

@@ -44,7 +44,7 @@ economic_impacts = pd.DataFrame({
         float(TREATY_ROI_INNOVATION_ACCELERATION),
         np.nan,
         float(DFDA_ROI_RD_ONLY),
-        float(TREATY_COMPLETE_ROI_ALL_BENEFITS)
+        float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
     ],
     'Investment Cost (Billions)': [
         np.nan,  # Ongoing benefit
