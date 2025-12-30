@@ -5,37 +5,14 @@ project:
   resources:
     - assets/
   render:
-    # Economics Analysis
-    - knowledge/economics/economics.qmd # Primary economic analysis (serves as index via copy)
-    - knowledge/economics/health-dividend.qmd # dFDA cost-benefit analysis
-    # Essential Problem Analysis
-    - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # Budget allocation analysis (84.9% vs 3.3%)
-    - knowledge/problem/untapped-therapeutic-frontier.qmd # Unexplored therapeutic space economic analysis
-    # Economic Mechanism Design
-    - knowledge/solution/aligning-incentives.qmd # Stakeholder economic incentive analysis
-    - knowledge/solution/incentive-alignment-bonds.qmd # Financial instrument mechanism design
-    # Academic Working Papers
-    - knowledge/appendix/incentive-alignment-bonds-paper.qmd # IAB working paper
-    - knowledge/appendix/wishocracy-paper.qmd # Wishocracy working paper
-    # Feasibility Analysis
-    - knowledge/appendix/treaty-feasibility.qmd # Empirical cost analysis
-    # Treaty Structure
-    - knowledge/legal/treaty-framework.qmd # Treaty framework with economic enforcement
-    # Essential Data Sources
-    - knowledge/appendix/global-government-medical-research-spending.qmd # Research vs trials spending distinction
-    - knowledge/appendix/military-vs-clinical-trials-funding-imbalance.qmd # 604:1 ratio derivation
-    - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # Baseline spending data
-    - knowledge/appendix/clinical-trial-participants.qmd # Trial capacity baseline
-    - knowledge/appendix/regulatory-mortality-analysis.qmd # Primary mortality/DALY source
-    - knowledge/appendix/drug-development-cost-analysis.qmd # 105× cost increase proof
-    - knowledge/appendix/real-world-evidence-historical-success.qmd # Historical validation (1883-1962)
-    - knowledge/appendix/recovery-trial.qmd # Oxford RECOVERY trial cost benchmarks (82× cost reduction proof)
-    # Core Economic Calculations
-    - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference
-    - knowledge/appendix/peace-dividend-calculations.qmd # Peace dividend methodology breakdown
-    - knowledge/appendix/dfda-cost-benefit-analysis.qmd # NPV methodology, ICER analysis
-    - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # Trial capacity multiplier
-    # References
+    # Main Academic Paper
+    - knowledge/economics/economics.qmd
+
+    # Essential Appendices
+    - knowledge/appendix/parameters-and-calculations.qmd
+    - knowledge/appendix/regulatory-mortality-analysis.qmd
+
+    # Bibliography
     - knowledge/references.qmd
 
 profiles:
@@ -60,10 +37,6 @@ website:
         href: /dih-economic-models.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "IAB Paper"
-        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
-      - text: "Wishocracy Paper"
-        href: knowledge/appendix/wishocracy-paper.qmd
       - text: "References"
         href: knowledge/references.qmd
       - text: "VOTE"
@@ -73,62 +46,26 @@ website:
     style: "floating"
     search: true
     contents:
-      - section: "Key Resources"
+      - section: "Academic Paper"
         contents:
           - href: knowledge/economics/economics.qmd
-            text: "Economic Analysis"
-          - href: knowledge/appendix/parameters-and-calculations.qmd
-            text: "Parameters & Calculations"
-          - href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
-            text: "Incentive Alignment Bonds Paper"
-          - href: knowledge/appendix/wishocracy-paper.qmd
-            text: "Wishocracy Paper"
+            text: "The 1% Treaty: Economic Analysis"
           - href: knowledge/references.qmd
             text: "References & Citations"
-      - section: "Problem Analysis"
+
+      - section: "Appendices"
         contents:
-          - href: knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
-            text: "NIH Budget Allocation Analysis"
-          - href: knowledge/problem/untapped-therapeutic-frontier.qmd
-            text: "Unexplored Therapeutic Space"
-      - section: "Economic Mechanism Design"
-        contents:
-          - href: knowledge/economics/health-dividend.qmd
-            text: "dFDA Health Dividend Model"
-          - href: knowledge/solution/aligning-incentives.qmd
-            text: "Incentive Alignment"
-          - href: knowledge/solution/incentive-alignment-bonds.qmd
-            text: "VICTORY Incentive Alignment Bonds"
-          - href: knowledge/legal/treaty-framework.qmd
-            text: "Treaty Economic Enforcement"
-      - section: "Cost-Benefit Analysis"
-        contents:
-          - href: knowledge/appendix/dfda-cost-benefit-analysis.qmd
-            text: "dFDA Cost-Benefit Framework"
-          - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
-            text: "Value of Accelerated Drug Development"
-          - href: knowledge/appendix/treaty-feasibility.qmd
-            text: "Treaty Campaign Cost Analysis"
-      - section: "Supporting Data & Evidence"
-        contents:
+          - href: knowledge/appendix/parameters-and-calculations.qmd
+            text: "Parameters & Calculations"
           - href: knowledge/appendix/regulatory-mortality-analysis.qmd
-            text: "Regulatory Mortality & DALY Analysis"
-          - href: knowledge/appendix/drug-development-cost-analysis.qmd
-            text: "Drug Development Cost Analysis"
-          - href: knowledge/appendix/real-world-evidence-historical-success.qmd
-            text: "Historical Evidence (1883-1962)"
-          - href: knowledge/appendix/global-government-medical-research-spending.qmd
-            text: "Government Medical R&D Spending"
-          - href: knowledge/appendix/military-vs-clinical-trials-funding-imbalance.qmd
-            text: "Military vs Clinical Trials Spending"
-          - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-            text: "Clinical Trial Cost by Phase"
-          - href: knowledge/appendix/clinical-trial-participants.qmd
-            text: "Clinical Trial Participation Data"
-          - href: knowledge/appendix/recovery-trial.qmd
-            text: "RECOVERY Trial Cost Benchmarks"
-          - href: knowledge/appendix/peace-dividend-calculations.qmd
-            text: "Peace Dividend Methodology"
+            text: "Regulatory Mortality Analysis"
+
+      - section: "Related Materials"
+        contents:
+          - href: https://iab.warondisease.org
+            text: "IAB Working Paper →"
+          - href: https://paper.wishocracy.org
+            text: "Wishocracy Working Paper →"
 
 execute:
   fig-path: "knowledge/figures/"
@@ -234,8 +171,7 @@ format:
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
               <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
-              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
+              <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
@@ -257,8 +193,7 @@ format:
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
               <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
-              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
+              <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
@@ -326,5 +261,5 @@ format:
       - right=1in
     fontsize: 11pt
     variables:
-      title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-      description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
+      title: "The 1\\% Treaty: Health and Economic Impact of Redirecting 1\\% of Global Military Spending to Pragmatic Clinical Trials"
+      description: "Redirecting 1\\% of global military spending (\\$27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈\\$0.13 per DALY and generating ≈\\$1.19 quadrillion in long-run value."
