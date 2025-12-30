@@ -4,7 +4,7 @@
 
 /* Book-like color palette */
 :root {
-    --book-bg: #fdfdf8;          /* Cream paper */
+    --book-bg: #ffffff;          /* White paper */
     --book-text: #2a2a2a;        /* Soft black */
     --book-accent: #8b7355;      /* Leather brown */
     --book-border: #d4c5b9;      /* Subtle tan */
