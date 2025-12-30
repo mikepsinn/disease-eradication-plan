@@ -568,3 +568,72 @@ def postprocess_economics_html(
         if verbose:
             print(f"[ERROR] Failed to post-process HTML: {e}", file=sys.stderr)
         return False
+
+
+def postprocess_economics_pdf(
+    build_dir: str = "_site/economics",
+    expected_pdf: str = "dih-economic-models.pdf",
+    verbose: bool = True
+) -> bool:
+    """
+    Post-process PDF generation to ensure PDF is in the correct location.
+
+    Quarto book type sometimes places PDFs in the project root with title-based names.
+    This function finds the PDF and moves it to the correct location.
+
+    Args:
+        build_dir: Path to rendered output directory (relative to project root)
+        expected_pdf: Expected PDF filename
+        verbose: Whether to print status messages
+
+    Returns:
+        True if PDF exists in correct location, False otherwise
+    """
+    try:
+        project_root = _find_project_root()
+        build_path = project_root / build_dir
+        target_pdf = build_path / expected_pdf
+
+        # Check if PDF already in correct location
+        if target_pdf.exists():
+            if verbose:
+                print(f"[OK] PDF found in correct location: {build_dir}/{expected_pdf}")
+            return True
+
+        # Search for PDF in project root (common wrong location for book type)
+        # Look for PDFs with similar names
+        potential_names = [
+            expected_pdf,
+            "The-1%-Treaty--Health-and-Economic-Impact-of-Redirecting-1%-of-Global-Military-Spending-to-Pragmatic-Clinical-Trials.pdf",
+            "The-1-Treaty--Health-and-Economic-Impact-of-Redirecting-1-of-Global-Military-Spending-to-Pragmatic-Clinical-Trials.pdf",
+        ]
+
+        for pdf_name in potential_names:
+            source_pdf = project_root / pdf_name
+            if source_pdf.exists():
+                if verbose:
+                    print(f"[*] Found PDF in wrong location: {pdf_name}")
+                    print(f"[*] Moving to: {build_dir}/{expected_pdf}")
+
+                # Ensure target directory exists
+                build_path.mkdir(parents=True, exist_ok=True)
+
+                # Move PDF to correct location
+                import shutil
+                shutil.move(str(source_pdf), str(target_pdf))
+
+                if verbose:
+                    print(f"[OK] PDF moved successfully")
+                return True
+
+        # PDF not found anywhere
+        if verbose:
+            print(f"[ERROR] PDF not found in expected locations", file=sys.stderr)
+            print(f"        Expected: {target_pdf}", file=sys.stderr)
+            print(f"        Searched project root for: {', '.join(potential_names)}", file=sys.stderr)
+        return False
+
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Failed to post-process PDF: {e}", file=sys.stderr)
+        return False

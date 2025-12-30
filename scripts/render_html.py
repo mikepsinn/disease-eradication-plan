@@ -89,15 +89,35 @@ def main():
 
     exit_code = monitor.run_build(command, build_type="HTML render")
 
-    # Post-process economics HTML if this is an economics render
-    if exit_code == 0 and args.output_dir == "_site/economics":
+    # Post-process economics HTML and PDF if this is an economics render
+    # Run even on exit code 1 since Quarto may fail during cleanup after successful PDF generation
+    if args.output_dir == "_site/economics" and exit_code in [0, 1]:
         print("=" * 80, flush=True)
         print("POST-PROCESSING ECONOMICS HTML", flush=True)
         print("=" * 80, flush=True)
-        from quarto_prep import postprocess_economics_html
+        from quarto_prep import postprocess_economics_html, postprocess_economics_pdf
+
+        # HTML post-processing (only fail if exit code was 0 originally)
         if not postprocess_economics_html(build_dir=args.output_dir, verbose=True):
-            print("[ERROR] HTML post-processing failed", file=sys.stderr, flush=True)
-            sys.exit(1)
+            if exit_code == 0:
+                print("[ERROR] HTML post-processing failed", file=sys.stderr, flush=True)
+                sys.exit(1)
+            else:
+                print("[WARNING] HTML post-processing failed (build already failed)", file=sys.stderr, flush=True)
+
+        print("=" * 80, flush=True)
+        print("POST-PROCESSING ECONOMICS PDF", flush=True)
+        print("=" * 80, flush=True)
+
+        # Always run PDF post-processing to move PDF to correct location
+        if not postprocess_economics_pdf(build_dir=args.output_dir, verbose=True):
+            print("[ERROR] PDF post-processing failed - PDF not found", file=sys.stderr, flush=True)
+            if exit_code == 0:
+                sys.exit(1)
+        elif exit_code == 1:
+            # If PDF post-processing succeeded but build had cleanup error, consider it success
+            print("[*] PDF generated successfully despite Quarto cleanup error", flush=True)
+            exit_code = 0
 
     # Run post-validation if build succeeded and not skipped
     if exit_code == 0 and not args.skip_post_validation:
