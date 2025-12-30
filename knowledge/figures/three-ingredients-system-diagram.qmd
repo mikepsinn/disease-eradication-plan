@@ -7,17 +7,21 @@ from pathlib import Path
 from IPython.display import Image as IPImage, display
 
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from dih_models.parameters import DFDA_TRIAL_COST_REDUCTION_FACTOR
 
 dot = graphviz.Digraph(comment='Three Ingredients System', format='png')
 dot.attr(rankdir='TB', size='10,12')
 setup_graphviz_style(dot)
+
+# Get parameter value for use in node label
+recovery_factor = int(DFDA_TRIAL_COST_REDUCTION_FACTOR)
 
 with dot.subgraph(name='cluster_system') as system:
     system.attr(label='How to Trick Humanity Into Not Killing Itself', style='dashed')
     system.node('Military', '$2.7 TRILLION\nMurder Budget\n(current situation)')
     system.node('Treaty', 'Steal 1%\n($27B/year)\nNobody notices')
     system.node('Fund', '1% Treaty Fund\nHolds the money\nDemocracy but working', penwidth='3')
-    system.node('Trials', 'Global Trial Framework\nConsumer Reports for Drugs\n82X cheaper trials')
+    system.node('Trials', f'Global Trial Framework\nConsumer Reports for Drugs\n{recovery_factor}X cheaper trials')
     system.node('Cures', 'CURES\nCancer gone\nDeath optional')
     system.node('Feedback', 'Everyone profits\n270% returns\nRepeat until death optional')
 
