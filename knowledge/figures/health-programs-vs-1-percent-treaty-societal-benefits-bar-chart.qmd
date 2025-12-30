@@ -28,7 +28,7 @@ interventions_data = {
 
 peace_dividend_components = {
     'Peace Dividend': float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1e9,
-    'dFDA R&D\nSavings': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1e9,
+    'dFDA R&D\nSavings': float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1e9,
     'Disease\nReduction': 10.9,
     'GDP\nGrowth': 27.2
 }

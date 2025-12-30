@@ -18,19 +18,19 @@ setup_chart_style()
 # --- Data from current parameters ---
 # Three-tier ROI based on different health benefit scenarios (all use $1B campaign cost)
 
-scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Innovation Acceleration\n(With Cascading Effects)']
+scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Full Timeline Shift\n(Trial Capacity + Lag)']
 roi_parameters = [
-    TREATY_ROI_HISTORICAL_RATE,        # Conservative: $251T / $1B = 250,920:1
-    TREATY_ROI_LAG_ELIMINATION,        # PRIMARY: $1,286T / $1B = 1,286,242:1
-    TREATY_ROI_INNOVATION_ACCELERATION # Optimistic: $2,572T / $1B = 2,572,484:1
+    TREATY_ROI_EXISTING_DRUGS_ONLY,                      # Conservative: Existing drugs only
+    DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE / TREATY_CAMPAIGN_TOTAL_COST,  # PRIMARY: Efficacy lag elimination
+    TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG          # Full: Trial capacity + efficacy lag (~220 years)
 ]
 roi_values = [float(roi) for roi in roi_parameters]
 
 # Format benefit labels with parameter formatter
 
-benefit_historical = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
-benefit_primary = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
-benefit_optimistic = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+benefit_historical = format_parameter_value(EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS)
+benefit_primary = format_parameter_value(DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE)
+benefit_optimistic = format_parameter_value(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE)
 
 benefits = [
     f'{benefit_historical} benefit',
@@ -133,7 +133,7 @@ from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_
 add_png_metadata(
     output_path,
     title="1% treaty Return on Investment - Three Health Benefit Scenarios",
-    description=f"ROI analysis across three health benefit tiers based on $1B campaign cost. Historical Rate (existing drugs only): {float(TREATY_ROI_HISTORICAL_RATE):,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {float(TREATY_ROI_LAG_ELIMINATION):,.0f}:1 ({benefit_primary}). Innovation Acceleration: {float(TREATY_ROI_INNOVATION_ACCELERATION):,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
+    description=f"ROI analysis across three health benefit tiers based on $1B campaign cost. Historical Rate (existing drugs only): {roi_values[0]:,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {roi_values[1]:,.0f}:1 ({benefit_primary}). Full Timeline Shift: {roi_values[2]:,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
 )
 
 plt.show()

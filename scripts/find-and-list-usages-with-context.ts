@@ -1,0 +1,443 @@
+#!/usr/bin/env tsx
+/**
+ * Find and List Usages with Context
+ * ==================================
+ * 
+ * Search for any pattern/string across the codebase and generate a detailed
+ * markdown report with context lines. Always outputs a report file.
+ * Respects .gitignore patterns and automatically excludes auto-generated files.
+ * 
+ * Usage:
+ *   # Search for a specific number (always generates report)
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "82"
+ * 
+ *   # Search with regex pattern
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "/\b82\b/"
+ * 
+ *   # Search in specific file types only
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "82" --ext .qmd,.md
+ * 
+ *   # Case-insensitive search
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "dFDA" --ignore-case
+ * 
+ *   # Custom output file name
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "82" --output hardcoded-82-report.md
+ * 
+ * Options:
+ *   --ext <extensions>    Comma-separated file extensions (default: .qmd,.md,.py,.ts,.yml,.yaml)
+ *   --ignore-case, -i    Case-insensitive search
+ *   --context <lines>     Number of context lines before/after (default: 3)
+ *   --output <file>, -o   Output markdown file (default: pattern-usages-report.md)
+ *   --help, -h            Show this help message
+ * 
+ * Examples:
+ *   # Find all hardcoded "82" values (generates pattern-usages-report.md)
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "82"
+ * 
+ *   # Find "82x" or "82 x" patterns
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "/82\s*[x×]/"
+ * 
+ *   # Find percentage values with custom output
+ *   npx tsx scripts/find-and-list-usages-with-context.ts "/\d+%/" --output percentages-report.md
+ * 
+ * Note: This script ALWAYS generates a markdown report file, even if no matches are found.
+ */
+
+import * as fs from 'fs';
+import * as path from 'path';
+import { findFiles } from './lib/file-utils';
+import { getProjectRoot } from './lib/file-utils';
+
+interface SearchResult {
+  file: string;
+  line: number;
+  match: string;
+  content: string;
+  context: string[];
+  contextStart: number;
+  matchLineIdx: number;
+}
+
+interface Options {
+  extensions: string[];
+  ignoreCase: boolean;
+  contextLines: number;
+  outputFile: string;
+  maxResultsPerFile?: number;
+  maxTotalResults?: number;
+}
+
+function parseArgs(args: string[]): { pattern: string | RegExp; options: Options; showHelp: boolean } {
+  const options: Options = {
+    extensions: ['.qmd', '.md', '.py', '.ts', '.yml', '.yaml'],
+    ignoreCase: false,
+    contextLines: 3,
+    outputFile: 'pattern-usages-report.md',
+    maxResultsPerFile: undefined,
+    maxTotalResults: undefined,
+  };
+  let pattern: string | RegExp | null = null;
+  let showHelp = false;
+
+  let i = 0;
+  while (i < args.length) {
+    const arg = args[i];
+
+    if (arg === '--help' || arg === '-h') {
+      showHelp = true;
+      break;
+    }
+
+    if (arg === '--ext' || arg === '--extension') {
+      options.extensions = args[i + 1].split(',').map(ext => ext.startsWith('.') ? ext : `.${ext}`);
+      i += 2;
+      continue;
+    }
+
+    if (arg === '--ignore-case' || arg === '-i') {
+      options.ignoreCase = true;
+      i++;
+      continue;
+    }
+
+    if (arg === '--context') {
+      options.contextLines = parseInt(args[i + 1], 10);
+      i += 2;
+      continue;
+    }
+
+    if (arg === '--output' || arg === '-o') {
+      options.outputFile = args[i + 1];
+      i += 2;
+      continue;
+    }
+
+    if (arg === '--max-results-per-file' || arg === '--max-per-file') {
+      options.maxResultsPerFile = parseInt(args[i + 1], 10);
+      i += 2;
+      continue;
+    }
+
+    if (arg === '--max-total-results' || arg === '--max-total') {
+      options.maxTotalResults = parseInt(args[i + 1], 10);
+      i += 2;
+      continue;
+    }
+
+    // First non-option argument is the pattern
+    if (!pattern && !arg.startsWith('--')) {
+      // Check if it's a regex pattern (wrapped in slashes)
+      const regexMatch = arg.match(/^\/(.+)\/([gimuy]*)$/);
+      if (regexMatch) {
+        const patternStr = regexMatch[1];
+        let flags = regexMatch[2] + (options.ignoreCase ? 'i' : '');
+        // Ensure 'g' flag for matchAll
+        if (!flags.includes('g')) {
+          flags += 'g';
+        }
+        pattern = new RegExp(patternStr, flags);
+      } else {
+        // Plain string - escape special regex characters and add word boundaries for numbers
+        const escaped = arg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        // For numeric strings, use word boundaries to avoid matching parts of larger numbers
+        // For non-numeric, just escape and search
+        const isNumeric = /^\d+$/.test(arg);
+        const patternStr = isNumeric ? `\\b${escaped}\\b` : escaped;
+        // Always add 'g' flag for matchAll
+        pattern = new RegExp(patternStr, (options.ignoreCase ? 'i' : '') + 'g');
+      }
+      i++;
+      continue;
+    }
+
+    i++;
+  }
+
+  if (!pattern && !showHelp) {
+    throw new Error('No search pattern provided. Use --help for usage information.');
+  }
+
+  return { pattern: pattern || /./, options, showHelp };
+}
+
+function printHelp(): void {
+  const help = `
+Find and List Usages with Context
+==================================
+
+Search for any pattern/string across the codebase and generate a detailed
+markdown report with context lines. Always outputs a report file.
+Respects .gitignore patterns and automatically excludes auto-generated files.
+
+Usage:
+  npx tsx scripts/find-and-list-usages-with-context.ts <pattern> [options]
+
+Arguments:
+  <pattern>              Search pattern (string or regex like /pattern/flags)
+
+Options:
+  --ext <extensions>     Comma-separated file extensions 
+                        (default: .qmd,.md,.py,.ts,.yml,.yaml)
+  --ignore-case, -i      Case-insensitive search
+  --context <lines>      Number of context lines before/after (default: 3)
+  --output <file>, -o    Output markdown file (default: pattern-usages-report.md)
+  --max-results-per-file Limit number of results shown per file (prevents huge reports)
+  --max-total-results    Limit total number of results shown across all files
+  --help, -h             Show this help message
+
+Examples:
+  # Search for hardcoded "82" (generates pattern-usages-report.md)
+  npx tsx scripts/find-and-list-usages-with-context.ts "82"
+
+  # Search with regex for "82x" or "82 x"
+  npx tsx scripts/find-and-list-usages-with-context.ts "/82\\s*[x×]/"
+
+  # Case-insensitive search
+  npx tsx scripts/find-and-list-usages-with-context.ts "dFDA" --ignore-case
+
+  # Search only in QMD files
+  npx tsx scripts/find-and-list-usages-with-context.ts "82" --ext .qmd
+
+  # Custom output file
+  npx tsx scripts/find-and-list-usages-with-context.ts "82" --output hardcoded-82-report.md
+
+  # Limit results to prevent huge reports
+  npx tsx scripts/find-and-list-usages-with-context.ts "82" --max-results-per-file 10 --max-total-results 100
+
+Note: This script ALWAYS generates a markdown report file, even if no matches are found.
+Auto-generated files (e.g., _variables.yml, distribution charts) are automatically excluded.
+`;
+  console.log(help);
+}
+
+async function searchInFile(
+  filePath: string,
+  pattern: RegExp,
+  contextLines: number
+): Promise<SearchResult[]> {
+  const results: SearchResult[] = [];
+  
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const lines = content.split('\n');
+
+    for (let lineNum = 0; lineNum < lines.length; lineNum++) {
+      const line = lines[lineNum];
+      const matches = Array.from(line.matchAll(pattern));
+
+      for (const match of matches) {
+        // Get context
+        const startLine = Math.max(0, lineNum - contextLines);
+        const endLine = Math.min(lines.length, lineNum + contextLines + 1);
+        const context = lines.slice(startLine, endLine);
+        const matchLineIdx = lineNum - startLine;
+
+        results.push({
+          file: path.relative(getProjectRoot(), filePath),
+          line: lineNum + 1,
+          match: match[0],
+          content: line.trim(),
+          context,
+          contextStart: startLine + 1,
+          matchLineIdx,
+        });
+      }
+    }
+  } catch (error) {
+    console.error(`[WARN] Could not read ${filePath}: ${error}`);
+  }
+
+  return results;
+}
+
+function generateMarkdownReport(
+  pattern: string | RegExp,
+  results: SearchResult[],
+  options: Options
+): string {
+  const patternStr = pattern instanceof RegExp ? pattern.toString() : pattern;
+  const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
+
+  // Group by file
+  const byFile = new Map<string, SearchResult[]>();
+  for (const result of results) {
+    if (!byFile.has(result.file)) {
+      byFile.set(result.file, []);
+    }
+    byFile.get(result.file)!.push(result);
+  }
+
+  // Extract limits for use in template
+  const maxTotal = options.maxTotalResults;
+  const maxPerFile = options.maxResultsPerFile;
+
+  let content = `# Pattern Usage Report
+
+Generated: ${timestamp}
+
+## Search Pattern
+
+\`\`\`
+${patternStr}
+\`\`\`
+
+## Summary
+
+Found **${results.length}** occurrence(s) across **${byFile.size}** file(s).
+${maxTotal || maxPerFile ? `\n*Note: Results may be truncated due to limits (see Truncation Notice below)*` : ''}
+
+## Options
+
+- File extensions: ${options.extensions.join(', ')}
+- Case insensitive: ${options.ignoreCase}
+- Context lines: ${options.contextLines}
+
+---
+
+`;
+
+  // If no results, return early with a simple report
+  if (results.length === 0) {
+    content += `\n**No matches found.**\n\n`;
+    content += `This is good! The pattern \`${patternStr}\` does not appear in the searched files.\n`;
+    return content;
+  }
+
+  // Sort files for consistent output
+  const sortedFiles = Array.from(byFile.entries()).sort(([a], [b]) => a.localeCompare(b));
+
+  // Apply limits if specified
+  let totalShown = 0;
+
+  for (const [filePath, fileResults] of sortedFiles) {
+    // Skip if we've hit the total limit
+    if (maxTotal && totalShown >= maxTotal) {
+      break;
+    }
+
+    // Limit results per file if specified
+    const resultsToShow = maxPerFile ? fileResults.slice(0, maxPerFile) : fileResults;
+    const truncated = maxPerFile && fileResults.length > maxPerFile;
+
+    content += `## File: \`${filePath}\`\n\n`;
+    if (truncated) {
+      content += `**Found ${fileResults.length} occurrence(s) (showing first ${maxPerFile})**\n\n`;
+    } else {
+      content += `**Found ${fileResults.length} occurrence(s)**\n\n`;
+    }
+
+    for (let idx = 0; idx < resultsToShow.length; idx++) {
+      // Check total limit
+      if (maxTotal && totalShown >= maxTotal) {
+        break;
+      }
+      const result = fileResults[idx];
+      content += `### Occurrence ${idx + 1}: Line ${result.line}\n\n`;
+      content += `**Match:** \`${result.match}\`\n\n`;
+      content += `**Line content:**\n\`\`\`\n${result.content}\n\`\`\`\n\n`;
+
+      // Add context
+      content += `**Context (${options.contextLines} lines before and after):**\n\`\`\`\n`;
+      for (let i = 0; i < result.context.length; i++) {
+        const lineNum = result.contextStart + i;
+        const marker = i === result.matchLineIdx ? '>>> ' : '    ';
+        content += `${marker}${lineNum.toString().padStart(4)} | ${result.context[i]}\n`;
+      }
+      content += '```\n\n';
+      content += '---\n\n';
+      totalShown++;
+    }
+
+    // Add note if file was truncated
+    if (truncated) {
+      content += `*Note: ${fileResults.length - maxPerFile!} more occurrence(s) in this file were truncated*\n\n`;
+      content += '---\n\n';
+    }
+  }
+
+  // Add summary if results were truncated
+  if (maxTotal && totalShown < results.length) {
+    content += `\n## Truncation Notice\n\n`;
+    content += `**Total occurrences found:** ${results.length}\n`;
+    content += `**Shown in report:** ${totalShown}\n`;
+    content += `**Truncated:** ${results.length - totalShown}\n\n`;
+    content += `Use --max-total-results with a higher value to see more results.\n\n`;
+  }
+
+  content += `## Notes
+
+- This report searches for the pattern: \`${patternStr}\`
+- Files are automatically filtered by .gitignore patterns
+- Auto-generated files are excluded (e.g., _variables.yml, parameters-and-calculations.qmd, distribution charts, etc.)
+- Only files with extensions: ${options.extensions.join(', ')} were searched
+- Review each occurrence to determine if it should be replaced with a variable or updated
+`;
+
+  return content;
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+
+  try {
+    const { pattern, options, showHelp } = parseArgs(args);
+
+    if (showHelp) {
+      printHelp();
+      process.exit(0);
+    }
+
+    console.log(`[*] Searching for pattern: ${pattern}`);
+    console.log(`[*] File extensions: ${options.extensions.join(', ')}`);
+    console.log(`[*] Case insensitive: ${options.ignoreCase}`);
+    if (options.maxResultsPerFile) {
+      console.log(`[*] Max results per file: ${options.maxResultsPerFile}`);
+    }
+    if (options.maxTotalResults) {
+      console.log(`[*] Max total results: ${options.maxTotalResults}`);
+    }
+    console.log();
+
+    // Build glob pattern for file extensions
+    const globPattern = `**/*{${options.extensions.join(',')}}`;
+
+    // Find all matching files (respects .gitignore and excludes auto-generated files)
+    const files = await findFiles(globPattern, { excludeAutoGenerated: true });
+
+    console.log(`[*] Found ${files.length} files to search`);
+    console.log();
+
+    // Search in each file
+    const allResults: SearchResult[] = [];
+    for (const file of files) {
+      const results = await searchInFile(file, pattern as RegExp, options.contextLines);
+      allResults.push(...results);
+    }
+
+    // Always generate markdown report (even if no matches found)
+    const report = generateMarkdownReport(pattern, allResults, options);
+    const outputPath = path.join(getProjectRoot(), options.outputFile);
+    fs.writeFileSync(outputPath, report, 'utf-8');
+
+    if (allResults.length === 0) {
+      console.log('[OK] No matches found!');
+      console.log(`[OK] Report generated: ${options.outputFile} (empty report)`);
+      return;
+    }
+
+    console.log(`[FOUND] ${allResults.length} occurrence(s) in ${new Set(allResults.map(r => r.file)).size} file(s)`);
+    console.log();
+    console.log(`[OK] Report generated: ${options.outputFile}`);
+    console.log(`[OK] Total: ${allResults.length} occurrence(s) in ${new Set(allResults.map(r => r.file)).size} file(s)`);
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('No search pattern')) {
+      printHelp();
+      process.exit(1);
+    }
+    console.error('[ERROR]', error);
+    process.exit(1);
+  }
+}
+
+main();
+
