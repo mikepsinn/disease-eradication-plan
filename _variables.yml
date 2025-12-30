@@ -860,7 +860,7 @@
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
   \ 1980s to current ($194M → $2.6B = 13.4x) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S\
-  \ | Unit: ratio | Click to view details, calculation & sources\">13.1 (95% CI: 9.57-18)</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">13.3 (95% CI: 11.9-14.7)</a>"
 "drug_cost_increase_1980s_to_current_multiplier_latex": "$$\nMultiplier_{curr} = \\\
   frac{Cost_{curr}}{Cost_{80s}} = \\frac{\\$2.60B}{\\$194.0M} = 13.4\n$$"
 "drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_pre1962_to_current_multiplier\"\
@@ -874,8 +874,9 @@
 "drug_development_cost_1980s": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_development_cost_1980s\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
-  \ to approval, 1990 dollars) | ✓ High confidence | Dist: Fixed | Unit: USD | Click\
-  \ to view details, calculation & sources\">$194M</a>"
+  \ to approval, 1990 dollars) | ✓ High confidence | 95% CI: [$146M, $242M] | Dist:\
+  \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$194M (95%\
+  \ CI: $156M-$237M)</a>"
 "drug_development_cost_1980s_cite": "@pre-1962-drug-costs-timeline"
 "drug_disease_combinations_possible": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_disease_combinations_possible\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\

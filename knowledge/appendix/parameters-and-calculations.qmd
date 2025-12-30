@@ -1437,7 +1437,7 @@ Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
 
 **Inputs**:
 
-- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M
+- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M (95% CI: $146M - $242M)
 - [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
 
 $$
@@ -4536,7 +4536,11 @@ Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [$146M, $242M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $146M and $242M (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 #### Input Distribution
 

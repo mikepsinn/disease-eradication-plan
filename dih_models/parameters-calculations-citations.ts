@@ -322,6 +322,7 @@ export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   sourceType: "external",
   sourceRef: "pre-1962-drug-costs-timeline",
   confidence: "high",
+  confidenceInterval: [145500000.0, 242500000.0],
 };
 
 export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {

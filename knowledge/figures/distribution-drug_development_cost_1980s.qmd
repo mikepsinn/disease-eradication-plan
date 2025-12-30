@@ -17,9 +17,9 @@ setup_chart_style()
 # Parameter values
 
 central_value = 194000000.0
-low = 155200000.0
-high = 232800000.0
-dist_type = "fixed"
+low = 145500000
+high = 242500000
+dist_type = "lognormal"
 display_name = "Drug Development Cost (1980s)"
 unit = "USD"
 
