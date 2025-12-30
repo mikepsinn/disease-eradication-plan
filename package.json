@@ -91,7 +91,7 @@
     "archive:file": "tsx scripts/review/archive-process-file.ts",
     "archive:all": "tsx scripts/review/archive-process-all.ts",
     "apply-instruction:all": "tsx scripts/review/apply-instruction-all-files.ts",
-    "refactor:parameter": "tsx scripts/refactor-parameter.ts",
+    "refactor:parameter": "tsx scripts/rename-parameter.ts",
     "tone-down:all": "tsx scripts/review/tone-down-overclaims.ts",
     "economics:find-appendix-content": "tsx scripts/review/find-economics-appendix-content.ts",
     "generate:audience:baseline": "tsx scripts/review/copy-baseline-audience-versions.ts",

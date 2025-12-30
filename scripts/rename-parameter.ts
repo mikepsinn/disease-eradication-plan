@@ -10,7 +10,7 @@
  * 5. Validating no broken references remain
  *
  * Usage:
- *   npx tsx scripts/refactor-parameter.ts <old_name> <new_name> [--dry-run] [--review-only]
+ *   npx tsx scripts/rename-parameter.ts <old_name> <new_name> [--dry-run] [--review-only]
  *
  * Options:
  *   --dry-run      Show what would be changed without making changes
