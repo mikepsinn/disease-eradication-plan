@@ -778,8 +778,6 @@ This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_e
 
 But here's the key: this intervention is **cost-dominant** (saves more money than it costs). The upfront campaign cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits. Economists call this a "dominant intervention" because the choice between saving money and saving lives disappears.
 
-This approach doesn't just cost money to save lives. It generates profit while saving lives.
-
 Traditional charity: "Please donate {{< var givewell_cost_per_life_avg >}} to save [one life](../references.qmd#givewell-cost-per-life-saved)"
 This approach: "We saved a life as a side effect of doing profitable things"
 
@@ -995,19 +993,19 @@ The {{< var trial_capacity_multiplier >}}× research acceleration has profound i
 
 - **{{< var diseases_without_effective_treatment >}} diseases** currently lack effective treatment
 - **{{< var new_disease_first_treatments_per_year >}} diseases/year** receive their first effective treatment
-- **{{< var status_quo_queue_clearance_years >}} years** to cure all untreated diseases (queue clearance)
-- **{{< var status_quo_avg_years_to_cure >}} years** average wait for a randomly selected disease
+- **{{< var status_quo_queue_clearance_years >}} years** to test first treatments for all untreated diseases (queue clearance)
+- **{{< var status_quo_avg_years_to_cure >}} years** average wait for a randomly selected disease to receive its first treatment
 
 {{< var status_quo_avg_years_to_cure_latex >}}
 
-This queue-based calculation is empirically grounded: only ~5% of the ~7,000 rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of ~15 diseases/year getting first treatments, a disease entering the queue today would wait an average of {{< var status_quo_avg_years_to_cure >}} years for a cure.
+This queue-based calculation is empirically grounded: only ~5% of the ~7,000 rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of ~15 diseases/year getting first treatments, a disease entering the queue today would wait an average of {{< var status_quo_avg_years_to_cure >}} years for its first effective treatment to be tested and approved.
 
 **With dFDA implementation**:
 
-- Trial capacity increases {{< var trial_capacity_multiplier >}}×, directly accelerating the cure queue
-- Cure rate: **{{< var dfda_cures_per_year >}} diseases/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
-- Queue clearance: **{{< var dfda_queue_clearance_years >}} years** to cure all diseases (vs {{< var status_quo_queue_clearance_years >}} years)
-- Average cure arrives **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**
+- Trial capacity increases {{< var trial_capacity_multiplier >}}×, directly accelerating the treatment testing queue
+- Trial completion rate: **{{< var dfda_cures_per_year >}} diseases receiving first treatments/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
+- Queue clearance: **{{< var dfda_queue_clearance_years >}} years** to test first treatments for all diseases (vs {{< var status_quo_queue_clearance_years >}} years)
+- Average disease receives first treatment **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**
 
 {{< var dfda_queue_clearance_years_latex >}}
 
