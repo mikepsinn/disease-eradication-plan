@@ -57,7 +57,7 @@ After 80 years of observation, I've decoded the paper-giving sequence. This manu
 
 You convince rich humans to give you papers by promising them even more papers later. This is called "investment," which is gambling but wearing a suit.
 
-**Step 2: Give Papers to Loud Humans ({{< var treaty_campaign_budget_referendum >}})**
+**Step 2: Give Papers to Loud Humans ({{< var treaty_campaign_viral_referendum_base_case >}})**
 
 Some humans are very loud on the internet. If you give them papers, they become loud about your thing instead of other things. This is called "marketing" which is lying but with graphics.
 
@@ -208,7 +208,7 @@ Rich humans give you {{< var treaty_campaign_total_cost >}} in papers because yo
 
 #### Step 2: The Internet Clicking Ceremony
 
-You use {{< var treaty_campaign_budget_referendum >}} of those papers to convince {{< var treaty_campaign_voting_bloc_target >}} million regular people to click "yes" on a website that asks: "Would you like all nations to redirect 1% of military spending to cure diseases?"
+You use {{< var treaty_campaign_viral_referendum_base_case >}} of those papers to convince {{< var treaty_campaign_voting_bloc_target >}} million regular people to click "yes" on a website that asks: "Would you like all nations to redirect 1% of military spending to cure diseases?"
 
 This costs about 50 cents per person, which is cheaper than a candy bar and achieves more than most political movements that involve shouting at things.
 

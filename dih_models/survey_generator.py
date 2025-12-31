@@ -495,7 +495,7 @@ class QuestionGenerator:
         example = formula
 
         # Build mapping of abbreviated names to full parameter names from inputs list
-        # e.g., "REFERENDUM" -> "TREATY_CAMPAIGN_BUDGET_REFERENDUM"
+        # e.g., "REFERENDUM" -> "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"
         abbrev_to_full = {}
         if inputs:
             for full_name in inputs:

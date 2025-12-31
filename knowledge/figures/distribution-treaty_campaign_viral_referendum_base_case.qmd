@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance"
+#| fig-cap: "Probability Distribution: Viral Referendum Budget"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,11 +17,11 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 300000000.0
-low = 180000000.0
-high = 500000000.0
-dist_type = "lognormal"
-display_name = "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance"
+central_value = 250000000.0
+low = 150000000
+high = 410000000
+dist_type = "normal"
+display_name = "Viral Referendum Budget"
 unit = "USD"
 
 # Calculate distribution parameters
@@ -139,7 +139,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-treaty_campaign_budget_referendum.png')
+output_path = get_figure_output_path('distribution-treaty_campaign_viral_referendum_base_case.png')
 plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

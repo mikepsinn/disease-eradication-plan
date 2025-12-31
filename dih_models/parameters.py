@@ -2555,23 +2555,28 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     confidence_interval=(3, 5),  # 3-5 year range as specified
 )  # 3-5 year range, using midpoint
 
-# Campaign budget breakdown - Two main categories
-TREATY_CAMPAIGN_BUDGET_REFERENDUM = Parameter(
-    300_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+# Campaign budget breakdown - Three main categories
+
+# Viral Referendum Budget (with uncertainty range from optimistic to worst-case scenarios)
+# Calculation for 280M verified votes:
+# - Optimistic ($150M): $0.20/vote avg (strong virality, minimal tiered pricing) = $35M platform + $58M verification + $56M referrals + $5M marketing
+# - Realistic ($250M): $0.50/vote avg (moderate tiered pricing per diffusion curve) = $35M platform + $62M verification + $140M referrals + $15M marketing
+# - Worst-case ($410M): $1.05/vote avg (heavy tiered to reach laggards) = $35M platform + $67M verification + $294M referrals + $15M marketing
+# Based on research: PayPal optimal $10-20/referral (1999-2001, ~$18-36 inflation-adjusted), but survey votes worth less than financial product signups.
+# Biometric verification: $0.15-0.25 at 300M+ scale (ComplyCube, Ondato pricing data from references.qmd).
+# Diffusion theory predicts increasing marginal costs: innovators/early adopters ($0.20-0.25), early majority ($0.50), late majority ($0.75-1.00), laggards ($1.50-2.00).
+TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
+    250_000_000,  # Realistic scenario with $0.50/vote average
+    confidence_interval=(150_000_000, 410_000_000),  # Optimistic ($0.20/vote) to worst-case ($1.05/vote)
+    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
-    description="Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
-    display_name="Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
+    description="Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
+    display_name="Viral Referendum Budget",
     unit="USD",
+    formula="PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
     confidence="medium",
-    keywords=["300.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
-    distribution="lognormal",  # Right-skewed: campaign overruns more likely than savings
-    confidence_interval=(180e6, 500e6),  # 80% CI: $180M-$500M (±40% uncertainty)
-    # Rationale: Digital campaigns can be lean ($180M), but traditional media + partnerships
-    # could balloon to $500M. Brexit referendum ~£40M scaled globally suggests wide range.
-    validation_min=100_000_000,   # Floor: Digital-only minimal campaign
-    validation_max=800_000_000    # Ceiling: Full traditional media saturation
-)  # $300M total referendum campaign (includes all support costs)
+    keywords=["150.0m", "250.0m", "410.0m", "1%", "viral referendum", "global survey", "one percent", "campaign budget", "referendum cost", "280m votes", "0.20 per vote", "0.50 per vote"]
+)  # Base: $250M (realistic $0.50/vote avg), Range: $150M (optimistic $0.20/vote) to $410M (worst-case $1.05/vote)
 
 TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     650_000_000,
@@ -2593,16 +2598,16 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
 )  # $650M total lobbying (outspends pharma + MIC combined)
 
 TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
-    50_000_000,
+    100_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="definition",
-    description="Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
+    description="Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.",
     display_name="Reserve Fund / Contingency Buffer",
     unit="USD",
     confidence="medium",
-    keywords=["50.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
+    keywords=["100.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
     distribution="lognormal",
-    confidence_interval=(20e6, 100e6),  # 80% CI: $20M-$100M (±60% uncertainty)
+    confidence_interval=(20e6, 150e6),  # 80% CI: $20M-$150M (reflects 2-15% contingency range)
     # Rationale: Contingency by definition covers unknowns. Could be barely tapped ($20M)
     # or fully depleted + need more ($100M). Wide range reflects inherent unpredictability.
     validation_min=10_000_000,   # Floor: Minimal contingency
@@ -2611,14 +2616,14 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
 
 # Total campaign cost (calculated from components)
 TREATY_CAMPAIGN_TOTAL_COST = Parameter(
-    TREATY_CAMPAIGN_BUDGET_REFERENDUM + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
+    TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation",
     source_type="calculated",
     description="Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
     display_name="Total 1% Treaty Campaign Cost",
     unit="USD",
     formula="REFERENDUM + LOBBYING + RESERVE",
-    latex=r"CampaignCost = \$300M \text{ (ref)} + \$650M \text{ (lob)} + \$50M \text{ (res)} = \$1.0B",
+    latex=r"CampaignCost = \$250M \text{ (ref)} + \$650M \text{ (lob)} + \$100M \text{ (res)} = \$1.0B",
     confidence="high",
     keywords=["1%", "impact investing", "pay for success", "one percent", "debt instrument", "development finance", "fixed income"],
     # UNCERTAINTY: Propagates from component budgets (REFERENDUM, LOBBYING, RESERVE)
@@ -2629,48 +2634,9 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     # Tornado analysis will show which budget components drive most variance
     validation_min=500_000_000,   # Floor: Bare minimum (digital-only, no paid media)
     validation_max=3_000_000_000,  # Ceiling: Full traditional + opposition response
-    inputs=["TREATY_CAMPAIGN_BUDGET_REFERENDUM", "TREATY_CAMPAIGN_BUDGET_LOBBYING", "TREATY_CAMPAIGN_BUDGET_RESERVE"],
-    compute=lambda ctx: ctx["TREATY_CAMPAIGN_BUDGET_REFERENDUM"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"]
+    inputs=["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE", "TREATY_CAMPAIGN_BUDGET_LOBBYING", "TREATY_CAMPAIGN_BUDGET_RESERVE"],
+    compute=lambda ctx: ctx["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"]
 )  # $1B total campaign cost (all VICTORY Incentive Alignment Bonds)
-
-# Viral Referendum Scenario Budgets (Tiered Budget Calculations with Increasing Marginal Costs)
-TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
-    140_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd#base-case-scenario",
-    source_type="definition",
-    description="Base case viral referendum budget (assumes flat $0.50/vote, optimistic)",
-    display_name="Base Case Viral Referendum Budget",
-    unit="USD",
-    formula="PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE",
-    confidence="medium",
-    keywords=["140.0m", "1%", "high estimate", "best case", "ambitious", "overestimate", "one percent"]
-)  # $140M base case (optimistic, assumes no increasing marginal costs)
-
-TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE = Parameter(
-    406_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
-    source_type="definition",
-    description="Worst-case viral referendum budget (tiered pricing with increasing marginal costs)",
-    display_name="Worst-Case Viral Referendum Budget",
-    unit="USD",
-    formula="PLATFORM + VERIFICATION + TIERED_PAYMENTS",
-    latex=r"Budget_{worst} = \$35M_{platform} + \$59M_{verification} + \$312M_{tiered\ payments} = \$406M",
-    confidence="medium",
-    keywords=["406.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
-)  # $406M worst case: 10M×$0.25 + 90M×$0.50 + 100M×$1.00 + 80M×$2.00 = $312M payments
-
-TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC = Parameter(
-    220_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd#realistic-scenario",
-    source_type="definition",
-    description="Realistic viral referendum budget (moderate tiered pricing)",
-    display_name="Realistic Viral Referendum Budget",
-    unit="USD",
-    formula="PLATFORM + VERIFICATION + MODERATE_TIERED_PAYMENTS",
-    latex=r"Budget_{realistic} = \$35M_{platform} + \$59M_{verification} + \$126M_{tiered\ payments} = \$220M",
-    confidence="high",
-    keywords=["220.0m", "1%", "likely", "moderate", "probable", "one percent", "international agreement"]
-)  # $220M realistic: 10M×$0.25 + 90M×$0.50 + 100M×$0.75 + 80M×$1.00 = $126M payments
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / TREATY_CAMPAIGN_DURATION_YEARS,
@@ -3752,8 +3718,8 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
 DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER = Parameter(
     float(TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
     source_type="calculated",
-    description="Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
-    display_name="dFDA Combined Cure Speedup Multiplier",
+    description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+    display_name="dFDA Combined Treatment Discovery Speedup Multiplier",
     unit="multiplier",
     formula="TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
     latex=r"Speedup_{dFDA} = 25.7 \times 1.4 = 36\times",
@@ -3836,7 +3802,7 @@ STATUS_QUO_AVG_YEARS_TO_CURE = Parameter(
     source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
     source_type="calculated",
     description="Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
-    display_name="Status Quo Average Years to Cure",
+    display_name="Status Quo Average Years to First Treatment",
     unit="years",
     formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2",
     latex=r"AvgYearsToCure_{status\ quo} = \frac{443 \text{ years}}{2} = 222 \text{ years}",
@@ -3855,7 +3821,7 @@ DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS = Parameter(
     float(STATUS_QUO_AVG_YEARS_TO_CURE) * (1 - 1 / float(TRIAL_CAPACITY_MULTIPLIER)),
     source_type="calculated",
     description="Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
-    display_name="dFDA Cure Timeline Acceleration",
+    display_name="dFDA Treatment Timeline Acceleration",
     unit="years",
     formula="STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
     latex=r"Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}",
@@ -3950,7 +3916,7 @@ DFDA_CURES_PER_YEAR = Parameter(
     float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
     description="Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
-    display_name="dFDA Diseases Cured Per Year",
+    display_name="dFDA New Treatments Per Year",
     unit="diseases/year",
     formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × TRIAL_CAPACITY_MULTIPLIER",
     latex=r"CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}",
@@ -3965,7 +3931,7 @@ DFDA_CURES_PER_YEAR = Parameter(
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
-    description="Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+    description="Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
     display_name="dFDA Queue Clearance Time",
     unit="years",
     formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
@@ -4544,7 +4510,7 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
 # REGULATORY MORTALITY COST PARAMETERS
 # ============================================================================
 # Quantitative analysis of Type II regulatory errors (delayed access)
-# Based on: "The Human Capital Cost of Regulatory Latency" (2025)
+# Based on: "The Human Cost of Regulatory Latency" (2025)
 # See: knowledge/appendix/regulatory-mortality-analysis.qmd
 
 # Drug Development Phase Durations

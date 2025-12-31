@@ -141,7 +141,7 @@ export const economistSurvey: EconomistSurvey = {
     },
     {
       rank: 2,
-      name: "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+      name: "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE",
       displayName: "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
       value: 300000000.0,
       unit: "USD",

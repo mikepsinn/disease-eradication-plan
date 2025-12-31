@@ -75,7 +75,7 @@ They'll check the math. The math checks out. They give you papers.
 
 Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being short-sighted:
 
-- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_referendum >}})
+- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_viral_referendum_base_case >}})
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_lobbying >}})
 - **Build the actual tech** - a decentralized framework for drug assessment (dFDA) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
 - **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve >}})
@@ -254,7 +254,7 @@ This structure legally separates the investment activities from the philanthropi
 
 Protect investors by releasing funds in tranches tied to achievements:
 
-**Phase 1 milestone ({{< var treaty_campaign_budget_referendum >}} release)**:
+**Phase 1 milestone ({{< var treaty_campaign_viral_referendum_base_case >}} release)**:
 
 - Launch platform MVP
 - Achieve 50M+ referendum votes

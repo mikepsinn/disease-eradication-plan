@@ -1,7 +1,6 @@
 ---
-title: The Human Capital Cost of Regulatory Latency
-subtitle: A Quantitative Analysis of Type II Errors and Welfare Loss in Global Pharmaceutical Licensing (1962–2024)
-description: PRIMARY METHODOLOGY - Rigorous top-down analysis estimating 184.6M eventually avoidable deaths, 3.53B DALYs, and $529T economic loss from 8.2-year efficacy lag. Source of 54M annual QALY estimate.
+title: The Human Cost of Regulatory Latency
+description: Top-down analysis estimating avoidable deaths, DALYs, and economic loss from 8.2-year efficacy lag.
 published: true
 tags:
   - appendix
@@ -14,11 +13,6 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-aca
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
-![](/assets/infographics/knowledge/appendix/regulatory-mortality-analysis-infographic-academic.png)
-
-
-
 
 ::: {.callout-note}
 ## The Short Version

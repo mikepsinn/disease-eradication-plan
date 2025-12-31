@@ -1613,8 +1613,8 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
 export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
   value: 13.336842105263159,
   unit: "multiplier",
-  displayName: "dFDA Combined Cure Speedup Multiplier",
-  description: "Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+  displayName: "dFDA Combined Treatment Discovery Speedup Multiplier",
+  description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
   sourceType: "calculated",
   confidence: "medium",
   formula: "TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
@@ -1624,7 +1624,7 @@ export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
 export const DFDA_CURES_PER_YEAR: Parameter = {
   value: 142.89473684210526,
   unit: "diseases/year",
-  displayName: "dFDA Diseases Cured Per Year",
+  displayName: "dFDA New Treatments Per Year",
   description: "Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
   sourceType: "calculated",
   confidence: "low",
@@ -1791,7 +1791,7 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
   value: 46.53775322283609,
   unit: "years",
   displayName: "dFDA Queue Clearance Time",
-  description: "Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+  description: "Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
@@ -1848,7 +1848,7 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
 export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
   value: 198.39779005524863,
   unit: "years",
-  displayName: "dFDA Cure Timeline Acceleration",
+  displayName: "dFDA Treatment Timeline Acceleration",
   description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
   sourceType: "calculated",
   confidence: "low",
@@ -2575,7 +2575,7 @@ export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
 export const STATUS_QUO_AVG_YEARS_TO_CURE: Parameter = {
   value: 221.66666666666666,
   unit: "years",
-  displayName: "Status Quo Average Years to Cure",
+  displayName: "Status Quo Average Years to First Treatment",
   description: "Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
   sourceType: "calculated",
   sourceRef: "status-quo-cure-timeline-estimate",
@@ -2707,7 +2707,7 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/fundraising-strategy#capital-structure-campaign-vs-implementation",
   confidence: "high",
   formula: "REFERENDUM + LOBBYING + RESERVE",
-  latex: "CampaignCost = \\$300M \\text{ (ref)} + \\$650M \\text{ (lob)} + \\$50M \\text{ (res)} = \\$1.0B",
+  latex: "CampaignCost = \\$250M \\text{ (ref)} + \\$650M \\text{ (lob)} + \\$100M \\text{ (res)} = \\$1.0B",
 };
 
 export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
@@ -3797,26 +3797,15 @@ export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   confidenceInterval: [325000000.0, 1300000000.0],
 };
 
-export const TREATY_CAMPAIGN_BUDGET_REFERENDUM: Parameter = {
-  value: 300000000.0,
-  unit: "USD",
-  displayName: "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
-  description: "Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
-  confidence: "medium",
-  confidenceInterval: [180000000.0, 500000000.0],
-};
-
 export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
-  value: 50000000.0,
+  value: 100000000.0,
   unit: "USD",
   displayName: "Reserve Fund / Contingency Buffer",
-  description: "Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
+  description: "Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.",
   sourceType: "definition",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "medium",
-  confidenceInterval: [20000000.0, 100000000.0],
+  confidenceInterval: [20000000.0, 150000000.0],
 };
 
 export const TREATY_CAMPAIGN_BUDGET_SUPER_PACS: Parameter = {
@@ -3841,38 +3830,15 @@ export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
 };
 
 export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
-  value: 140000000.0,
+  value: 250000000.0,
   unit: "USD",
-  displayName: "Base Case Viral Referendum Budget",
-  description: "Base case viral referendum budget (assumes flat $0.50/vote, optimistic)",
+  displayName: "Viral Referendum Budget",
+  description: "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget#base-case-scenario",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
-  formula: "PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE",
-};
-
-export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC: Parameter = {
-  value: 220000000.0,
-  unit: "USD",
-  displayName: "Realistic Viral Referendum Budget",
-  description: "Realistic viral referendum budget (moderate tiered pricing)",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget#realistic-scenario",
-  confidence: "high",
-  formula: "PLATFORM + VERIFICATION + MODERATE_TIERED_PAYMENTS",
-  latex: "Budget_{realistic} = \\$35M_{platform} + \\$59M_{verification} + \\$126M_{tiered\\ payments} = \\$220M",
-};
-
-export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE: Parameter = {
-  value: 406000000.0,
-  unit: "USD",
-  displayName: "Worst-Case Viral Referendum Budget",
-  description: "Worst-case viral referendum budget (tiered pricing with increasing marginal costs)",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget#worst-case-scenario",
-  confidence: "medium",
-  formula: "PLATFORM + VERIFICATION + TIERED_PAYMENTS",
-  latex: "Budget_{worst} = \\$35M_{platform} + \\$59M_{verification} + \\$312M_{tiered\\ payments} = \\$406M",
+  formula: "PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
+  confidenceInterval: [150000000.0, 410000000.0],
 };
 
 export const TREATY_REDUCTION_PCT: Parameter = {
@@ -4271,13 +4237,10 @@ export const parameters = {
   TOTAL_BOOK_WORDS,
   TREATY_ANNUAL_FUNDING,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
-  TREATY_CAMPAIGN_BUDGET_REFERENDUM,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
   TREATY_CAMPAIGN_BUDGET_SUPER_PACS,
   TREATY_CAMPAIGN_DURATION_YEARS,
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE,
-  TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC,
-  TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE,
   TREATY_REDUCTION_PCT,
   TRIAL_RELEVANT_DISEASES_COUNT,
   VICTORY_BOND_ANNUAL_PAYOUT,
@@ -5707,10 +5670,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 352,
+  total: 349,
   external: 137,
   calculated: 119,
-  definitions: 96,
+  definitions: 93,
   citations: 104,
 } as const;
 

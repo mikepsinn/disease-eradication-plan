@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 352
+**Total parameters**: 349
 
 - External sources (peer-reviewed): 137
 - Calculated values: 119
-- Core definitions: 96
+- Core definitions: 93
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -237,11 +237,11 @@ $$
 
 :::
 
-### dFDA Combined Cure Speedup Multiplier: 13.3 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
+### dFDA Combined Treatment Discovery Speedup Multiplier: 13.3 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Combined speedup factor for cure discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.
+Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.
 
 **Inputs**:
 
@@ -270,7 +270,7 @@ $$
 
 :::
 
-### dFDA Diseases Cured Per Year: 143 diseases/year {#sec-dfda_cures_per_year}
+### dFDA New Treatments Per Year: 143 diseases/year {#sec-dfda_cures_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -764,7 +764,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Years to cure all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.
+Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.
 
 **Inputs**:
 
@@ -932,7 +932,7 @@ $$
 
 :::
 
-### dFDA Cure Timeline Acceleration: 198 years {#sec-dfda_trial_capacity_cure_acceleration_years}
+### dFDA Treatment Timeline Acceleration: 198 years {#sec-dfda_trial_capacity_cure_acceleration_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -940,7 +940,7 @@ Years earlier the average cure arrives due to dFDA's trial capacity increase. Wi
 
 **Inputs**:
 
-- [Status Quo Average Years to Cure](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
 - [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
@@ -1037,7 +1037,7 @@ Total eventually avoidable deaths from trial capacity increase alone (~212 years
 **Inputs**:
 
 - [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
 
 $$
 Lives_{trial\ capacity} = 54.75M \times 212 \times 92.1\% = 10.7B
@@ -1199,7 +1199,7 @@ Average years earlier patients receive cures due to dFDA. Combines: (1) cure tim
 
 **Inputs**:
 
-- [dFDA Cure Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
@@ -3069,7 +3069,7 @@ $$
 
 :::
 
-### Status Quo Average Years to Cure: 222 years {#sec-status_quo_avg_years_to_cure}
+### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_cure}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3449,12 +3449,12 @@ Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 
 **Inputs**:
 
-- [Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance](#sec-treaty_campaign_budget_referendum): $300M (95% CI: $180M - $500M)
+- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250M (95% CI: $150M - $410M)
 - [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.30B)
-- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $50M (95% CI: $20M - $100M)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100M (95% CI: $20M - $150M)
 
 $$
-CampaignCost = \$300M \text{ (ref)} + \$650M \text{ (lob)} + \$50M \text{ (res)} = \$1.0B
+CampaignCost = \$250M \text{ (ref)} + \$650M \text{ (lob)} + \$100M \text{ (res)} = \$1.0B
 $$
 
 **Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)
@@ -7814,35 +7814,17 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 :::
 
-### Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance: $300M {#sec-treaty_campaign_budget_referendum}
+### Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance
+Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$180M, $500M] • Distribution: Lognormal
+**Technical**: 95% CI: [$20M, $150M] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $180M and $500M (±53%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-*Core definition*
-
-:::
-
-### Reserve Fund / Contingency Buffer: $50M {#sec-treaty_campaign_budget_reserve}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$20M, $100M] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20M and $100M (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20M and $150M (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -7878,31 +7860,17 @@ Treaty campaign duration (3-5 year range, using midpoint)
 
 :::
 
-### Base Case Viral Referendum Budget: $140M {#sec-treaty_campaign_viral_referendum_base_case}
+### Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
+Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
 
-*Core definition*
+#### Uncertainty Range
 
-:::
+**Technical**: 95% CI: [$150M, $410M]
 
-### Realistic Viral Referendum Budget: $220M {#sec-treaty_campaign_viral_referendum_realistic}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Realistic viral referendum budget (moderate tiered pricing)
-
-*Core definition*
-
-:::
-
-### Worst-Case Viral Referendum Budget: $406M {#sec-treaty_campaign_viral_referendum_worst_case}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Worst-case viral referendum budget (tiered pricing with increasing marginal costs)
+**What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *Core definition*
 
