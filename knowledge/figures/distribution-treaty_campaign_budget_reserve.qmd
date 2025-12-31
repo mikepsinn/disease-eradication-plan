@@ -17,9 +17,9 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 50000000.0
+central_value = 100000000.0
 low = 20000000.0
-high = 100000000.0
+high = 150000000.0
 dist_type = "lognormal"
 display_name = "Reserve Fund / Contingency Buffer"
 unit = "USD"

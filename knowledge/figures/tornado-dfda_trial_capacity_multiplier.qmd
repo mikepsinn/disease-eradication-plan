@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Amortized Annual Treaty Campaign Cost"
+display_name = "Trial Capacity Multiplier"
 
 # Baseline and units
 
-baseline = 250000000.0
+baseline = 9.526315789473685
 
 # Tornado data from sensitivity analysis
 
-drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_DURATION_YEARS', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
-impacts_low = [-81250000.0, 83333333.33333331, -25000000.0, -20000000.0]
-impacts_high = [162500000.0, -50000000.0, 40000000.0, 12500000.0]
+drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+impacts_low = [13.336842105263155, 2.5403508771929815, 0.002192982456140413, 0.0013157894736828268, 0.0013157894736828268, 0.00087719298245581, 0.0004385964912270168]
+impacts_high = [-5.715789473684211, -1.6567505720823803, -0.003070175438596223, -0.0021929824561421896, -0.00175438596491162, -0.0013157894736846032, -0.0004385964912287932]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -70,7 +70,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD/year"
+units_label = "ratio"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 150 DPI for PDF compatibility (vs 200 DPI which can exceed LaTeX limits)
 
-output_path = get_figure_output_path('tornado-treaty_campaign_annual_cost_amortized.png')
+output_path = get_figure_output_path('tornado-dfda_trial_capacity_multiplier.png')
 plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

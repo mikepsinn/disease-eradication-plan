@@ -1,10 +1,10 @@
-**Sensitivity Indices for Treaty ROI - Full Timeline Shift (PRIMARY)**
+**Sensitivity Indices for Trial Capacity Multiplier**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Campaign Total Cost | -1.1301 | Strong driver |
-| dFDA Trial Capacity Plus Efficacy Lag Economic Value | -0.2379 | Weak driver |
+| DIH Patients Fundable Annually | 1.1813 | Strong driver |
+| Current Trial Slots Available | 0.1902 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

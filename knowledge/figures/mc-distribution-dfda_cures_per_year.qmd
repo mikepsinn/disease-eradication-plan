@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Diseases Cured Per Year (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: dFDA New Treatments Per Year (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 35.14793152140966
 p5 = 102.03530247160799
 p50 = 152.9301042024344
 p95 = 220.2114486470778
-display_name = "dFDA Diseases Cured Per Year"
+display_name = "dFDA New Treatments Per Year"
 units = "diseases/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Diseases Cured Per Year**
+**Simulation Results Summary: dFDA New Treatments Per Year**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 35.1 |
 | 90% Confidence Interval | [102, 220] |
 
-*The histogram shows the distribution of dFDA Diseases Cured Per Year across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of dFDA New Treatments Per Year across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

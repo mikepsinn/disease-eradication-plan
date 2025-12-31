@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Status Quo Average Years to Cure (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Status Quo Average Years to First Treatment (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 53.17437616866686
 p5 = 161.85446464051637
 p50 = 237.33019740962646
 p95 = 356.25
-display_name = "Status Quo Average Years to Cure"
+display_name = "Status Quo Average Years to First Treatment"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Status Quo Average Years to Cure**
+**Simulation Results Summary: Status Quo Average Years to First Treatment**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 53.2 |
 | 90% Confidence Interval | [162, 356] |
 
-*The histogram shows the distribution of Status Quo Average Years to Cure across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Status Quo Average Years to First Treatment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
