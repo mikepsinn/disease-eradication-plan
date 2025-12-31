@@ -437,10 +437,12 @@ Confounders work **against** the hypothesis, making the observed effect more rem
 **Quantitative test:**
 
 If confounders explained the effect, we would expect:
+
 - Gradual change over the 1960s (as various policies took effect)
 - Recovery after confounders resolved (e.g., Vietnam War ended 1973)
 
 Instead, we observe:
+
 - Instant break in 1962
 - Sustained reduction for 62+ years
 
@@ -468,6 +470,7 @@ AI drug discovery, mRNA platforms, and gene therapy are accelerating exponential
 **2. Provides upper bound for uncertainty range**
 
 Good analysis spans the uncertainty:
+
 - Conservative (55M): Only counts delayed access to existing drugs
 - PRIMARY (184.6M): Accounts for timeline shift
 - Upper Bound (449M): Assumes breakthrough is imminent
@@ -499,6 +502,7 @@ Not just one estimate, but a range spanning Conservative to Optimistic. This ack
 **2. Sensitivity Analysis ([Section 8](#sensitivity-analysis))**
 
 Tested across parameter ranges:
+
 - Discount rates: 3%, 5%, 7%
 - Innovation elasticity: 0.3–0.8
 - VSLY: $50K–$200K
@@ -527,6 +531,7 @@ For the conclusion to reverse (benefits > costs), we would need:
 Neither is remotely plausible.
 
 **Even if every assumption is biased against regulations by 10×:**
+
 - Type II harm: 483M DALYs
 - Type I benefit: 30M DALYs
 - **Ratio: 16:1** (conclusion unchanged)
@@ -558,6 +563,7 @@ The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis
 **Historical evidence:**
 
 The pre-1962 system (1883-1962) had:
+
 - Phase I safety testing (post-1938)
 - Decentralized efficacy trials (150,000 physicians)
 - Third-party review (AMA seal of approval)

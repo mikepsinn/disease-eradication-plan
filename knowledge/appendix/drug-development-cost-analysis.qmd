@@ -4,6 +4,8 @@ description: Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_curr
 jupyter: dih-project-kernel
 image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-academic.png
 ---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ![](/assets/infographics/knowledge/appendix/drug-development-cost-analysis-infographic-academic.png)
 
 
@@ -17,8 +19,6 @@ The average cost to develop and gain approval for a new drug increased by approx
 4. **Stricter efficacy standards** increasing trial costs by {{< var recovery_trial_cost_reduction_factor >}}× per patient
 
 This appendix provides transparent calculations, multiple data sources, and sensitivity analysis to support this claim.
-
----
 
 ## Historical Data Sources
 
@@ -45,6 +45,7 @@ The Congressional Record (April 21, 1977) cited **$1.2 million** (1962 dollars) 
 > Source: Tufts Center for the Study of Drug Development, 2014
 
 This includes:
+
 - Preclinical research
 - Clinical trials (Phases I-III)
 - Cost of failures (for every approved drug, ~9 fail)
@@ -53,8 +54,6 @@ This includes:
 **FDA Data (2023):**
 
 FDA approved {{< var current_drug_approvals_per_year >}} new drugs per year (2018-2023 average), down from 60+ per year in the 1950s, despite vastly higher R&D spending.
-
----
 
 ## Inflation-Adjusted Calculations
 
@@ -94,8 +93,6 @@ $$
 
 This provides an **upper-bound estimate** (213×), but we use the Baily study ({{< var drug_cost_increase_pre1962_to_current_multiplier >}}) as our primary figure due to its superior academic methodology.
 
----
-
 ## Why It's Not Just Inflation
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase reflects **four compounding factors** beyond inflation:
@@ -129,12 +126,14 @@ The Tufts CSDD estimate includes **cost of failures**:
 
 
 **Pre-1962 (RECOVERY trial equivalent):**
+
 - Simple randomization
 - Hospital-integrated data collection
 - Minimal regulatory burden
 - Cost per patient: ~$50
 
 **Post-1962 (typical FDA Phase III):**
+
 - Complex inclusion/exclusion criteria
 - Separate CRO infrastructure
 - Extensive monitoring and auditing
@@ -153,8 +152,6 @@ Post-1962 regulations added extensive preclinical requirements:
 - Good Laboratory Practice (GLP) compliance
 
 These requirements added **2-3 years** and **$50-100M** per drug candidate.
-
----
 
 ## Sensitivity Analysis
 
@@ -200,8 +197,6 @@ Academic literature independently confirms this range:
 
 Our **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate uses the most rigorous academic source (Baily 1972) and falls within the documented range.
 
----
-
 ## Sanity Checks: Real-World Price Comparisons
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase should manifest in observable price differences between products with similar manufacturing complexity but different regulatory burdens. Here are six independent validations:
@@ -212,6 +207,7 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase s
 # === Drug Price Comparisons for Sanity Checks ===
 
 # 1. Generic vs. Brand-Name (Lipitor example)
+
 lipitor_brand_monthly = 175
 lipitor_generic_monthly_low = 10
 lipitor_generic_monthly_high = 20
@@ -219,6 +215,7 @@ lipitor_drop_pct_low = (1 - lipitor_generic_monthly_high / lipitor_brand_monthly
 lipitor_drop_pct_high = (1 - lipitor_generic_monthly_low / lipitor_brand_monthly) * 100
 
 # 2. Supplements vs. Prescription Drugs
+
 vitamin_d_supplement_per_1000iu_low = 0.05
 vitamin_d_supplement_per_1000iu_high = 0.10
 vitamin_d_prescription_per_1000iu_low = 1.50
@@ -240,6 +237,7 @@ niacin_ratio_low = niacin_prescription_per_500mg_low / niacin_supplement_per_500
 niacin_ratio_high = niacin_prescription_per_500mg_high / niacin_supplement_per_500mg
 
 # 3. Compounding Pharmacies
+
 testosterone_compounded_low = 30
 testosterone_compounded_high = 80
 testosterone_fda_low = 400
@@ -255,6 +253,7 @@ thyroid_ratio_low = thyroid_fda_low / thyroid_compounded_high
 thyroid_ratio_high = thyroid_fda_high / thyroid_compounded_low
 
 # 4. Veterinary vs. Human
+
 amoxicillin_vet_low = 0.10
 amoxicillin_vet_high = 0.30
 amoxicillin_human_low = 0.50
@@ -263,6 +262,7 @@ amoxicillin_ratio_low = amoxicillin_human_low / amoxicillin_vet_high
 amoxicillin_ratio_high = amoxicillin_human_high / amoxicillin_vet_low
 
 # 5. Orphan Drugs (exposing full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} burden)
+
 zolgensma_price = 2_100_000  # One-time treatment
 zolgensma_supportive_care_low = 5_000  # Annual
 zolgensma_supportive_care_high = 10_000  # Annual
@@ -286,6 +286,7 @@ brineura_annual = 700_000
 luxturna_onetime = 850_000
 
 # 6. New Antibiotic Development Economics
+
 new_drug_dev_cost = 2_600_000_000
 rare_infection_patients_annual = 50_000
 amortization_years = 10
@@ -294,6 +295,7 @@ manufacturing_cost_per_dose = 0.50
 antibiotic_regulatory_markup = dev_cost_per_patient / manufacturing_cost_per_dose
 
 # Orphan drug amortization examples
+
 rare_disease_patients_10k = 10_000
 ultra_rare_patients_1k = 1_000
 dev_cost_amortized_10k = new_drug_dev_cost / (rare_disease_patients_10k * amortization_years)
@@ -305,6 +307,7 @@ dev_cost_amortized_1k = new_drug_dev_cost / (ultra_rare_patients_1k * amortizati
 When a drug's patent expires and generic manufacturers enter the market, prices typically drop **80-90%** within the first year ([FDA Generic Drug Facts](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)).
 
 **Example: Lipitor (atorvastatin)**
+
 - Brand-name price (under patent): ~$`{python} f"{lipitor_brand_monthly:.0f}"`/month
 - Generic price (post-patent): ~$`{python} f"{lipitor_generic_monthly_low:.0f}"`-`{python} f"{lipitor_generic_monthly_high:.0f}"`/month
 - **Price drop: `{python} f"{lipitor_drop_pct_low:.0f}"`-`{python} f"{lipitor_drop_pct_high:.0f}"`%**
@@ -327,6 +330,7 @@ Many molecules exist in both FDA-approved prescription form and dietary suppleme
 **Manufacturing complexity:** Identical. Vitamin D capsules require the same equipment whether sold as supplements or prescriptions.
 
 **Regulatory difference:** 
+
 - Supplements: Minimal FDA oversight under DSHEA (1994)
 - Prescriptions: Full FDA approval process ($`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B average)
 
@@ -337,11 +341,13 @@ Many molecules exist in both FDA-approved prescription form and dietary suppleme
 Compounding pharmacies make custom medications without requiring FDA approval for each formulation. Their pricing reveals manufacturing costs:
 
 **Example: Testosterone replacement**
+
 - Compounded testosterone cream: $`{python} f"{testosterone_compounded_low:.0f}"`-`{python} f"{testosterone_compounded_high:.0f}"`/month
 - FDA-approved AndroGel: $`{python} f"{testosterone_fda_low:.0f}"`-`{python} f"{testosterone_fda_high:.0f}"`/month
 - **Price ratio: `{python} f"{testosterone_ratio_low:.0f}"`-`{python} f"{testosterone_ratio_high:.0f}"`×**
 
 **Example: Thyroid medication**
+
 - Compounded T3/T4 combo: $`{python} f"{thyroid_compounded_low:.0f}"`-`{python} f"{thyroid_compounded_high:.0f}"`/month  
 - FDA-approved Synthroid + Cytomel: $`{python} f"{thyroid_fda_low:.0f}"`-`{python} f"{thyroid_fda_high:.0f}"`/month
 - **Price ratio: `{python} f"{thyroid_ratio_low:.0f}"`-`{python} f"{thyroid_ratio_high:.0f}"`×**
@@ -353,6 +359,7 @@ Compounding pharmacies still face quality control requirements but skip the mult
 Some medications exist in both veterinary and human formulations with different regulatory pathways:
 
 **Example: Antibiotics**
+
 - Veterinary amoxicillin: $`{python} f"{amoxicillin_vet_low:.2f}"`-`{python} f"{amoxicillin_vet_high:.2f}"` per dose
 - Human prescription amoxicillin: $`{python} f"{amoxicillin_human_low:.2f}"`-`{python} f"{amoxicillin_human_high:.2f}"` per dose
 - **Price ratio: `{python} f"{amoxicillin_ratio_low:.0f}"`-`{python} f"{amoxicillin_ratio_high:.0f}"`×**
@@ -380,11 +387,13 @@ $$
 $$
 
 For a rare disease with `{python} f"{rare_disease_patients_10k:,.0f}"` US patients:
+
 - Development cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B (amortized over `{python} amortization_years` years, `{python} f"{rare_disease_patients_10k * amortization_years:,.0f}"` patient-years)
 - Per-patient cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B ÷ `{python} f"{rare_disease_patients_10k * amortization_years:,.0f}"` = **$`{python} f"{dev_cost_amortized_10k:,.0f}"`/year** (just for development cost recovery)
 - Add manufacturing, distribution, profit → **$50,000-100,000/year** realistic
 
 For ultra-rare diseases (`{python} f"{ultra_rare_patients_1k:,.0f}"` patients):
+
 - Per-patient development cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B ÷ `{python} f"{ultra_rare_patients_1k * amortization_years:,.0f}"` patient-years = **$`{python} f"{dev_cost_amortized_1k:,.0f}"`/year**
 - Add manufacturing/profit → **$`{python} f"{soliris_annual_low:,.0f}"`-`{python} f"{soliris_annual_high:,.0f}"`/year** (matches Soliris pricing)
 
@@ -395,6 +404,7 @@ For ultra-rare diseases (`{python} f"{ultra_rare_patients_1k:,.0f}"` patients):
 The most powerful sanity check: **How much did the SAME drug cost before and after 1962?**
 
 **Penicillin production cost:**
+
 - 1942 (first mass production): $20 per dose (equivalent to ~$400 in 2024 dollars, during wartime scarcity)
 - 1950s (post-scaling): $0.05 per dose (equivalent to ~$0.60 in 2024 dollars)
 - 2024 (generic amoxicillin): $0.50-2.00 per dose
@@ -402,6 +412,7 @@ The most powerful sanity check: **How much did the SAME drug cost before and aft
 **Key insight:** Penicillin-class antibiotics got **660× cheaper** (1942→1950s) due to manufacturing scale-up, then stayed roughly constant (inflation-adjusted) through today.
 
 **But if a NEW antibiotic were developed today:**
+
 - Development cost: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B (full FDA approval process)
 - If targeting a rare infection (`{python} f"{rare_infection_patients_annual:,.0f}"` patients/year in US):
 - Development amortization: $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B ÷ (`{python} f"{rare_infection_patients_annual:,.0f}"` × `{python} amortization_years` years) = **$`{python} f"{dev_cost_per_patient:,.0f}"` per patient**
@@ -424,15 +435,15 @@ This explains why pharmaceutical companies **stopped developing new antibiotics*
 The first four comparisons show moderate premiums (3-100×) because high-volume drugs **hide** the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost by amortizing it across millions of patients.
 
 The last two comparisons **expose the full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} burden or greater**:
+
 - **Orphan drugs** serve small populations (10,000-200,000 patients), preventing cost amortization → prices reach **$`{python} f"{myalept_annual:,.0f}"`-$`{python} f"{zolgensma_price:,.0f}"`/year**
   - **Zolgensma** ($`{python} f"{zolgensma_price / 1e6:.1f}"`M): **`{python} f"{zolgensma_ratio_low:.0f}"`-`{python} f"{zolgensma_ratio_high:.0f}"`×** vs. supportive care for spinal muscular atrophy
   - **Myalept** ($`{python} f"{myalept_annual / 1e3:.0f}"`K/year): **`{python} f"{myalept_ratio_low:.0f}"`-`{python} f"{myalept_ratio_high:.0f}"`×** vs. standard hormone replacement
   - **Soliris** ($`{python} f"{soliris_annual_low / 1e3:.0f}"`-`{python} f"{soliris_annual_high / 1e3:.0f}"`K/year): **`{python} f"{soliris_ratio_low:.0f}"`-`{python} f"{soliris_ratio_high:.0f}"`×** vs. standard immunosuppressants
+
 - **New antibiotics** target acute conditions (short treatment duration), making the $`{python} f"{new_drug_dev_cost / 1e9:.1f}"`B development cost unrecoverable → pharmaceutical companies **stopped developing them** (classic market failure from regulatory burden)
 
 **Three drugs show price premiums of 150-600×, directly validating the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} development cost increase.** The magnitude is fully visible in markets where small patient populations cannot amortize the regulatory burden.
-
----
 
 ## Addressing Common Objections
 
@@ -449,11 +460,13 @@ The magnitude is shocking precisely **because the regulatory burden is that seve
 ### "Doesn't that include marketing costs?"
 
 **No.** The Tufts CSDD $2.6B figure explicitly **excludes**:
+
 - Marketing and advertising
 - Post-approval Phase IV studies
 - Manufacturing scale-up
 
 It includes **only**:
+
 - Preclinical research
 - Clinical trials (Phases I-III)
 - Regulatory affairs
@@ -470,8 +483,6 @@ It includes **only**:
 - **Electronic data capture** (near-zero marginal cost)
 
 ...costs still increased **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** in real terms. This demonstrates the **overwhelming regulatory burden** that swamps all efficiency gains.
-
----
 
 ## Implications for Policy
 
@@ -505,8 +516,6 @@ The [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated that **simple 
 - Maintain scientific rigor
 - Accelerate results (6 months vs. 5+ years)
 
----
-
 ## Conclusion
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} real cost increase is:
@@ -518,8 +527,6 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} real cost incre
 
 The Kefauver-Harris Amendment (1962) transformed drug development from a **2-3 year, $1.2M process** into a **10-15 year, $2.6B gauntlet**. This increase represents the **quantifiable cost of regulatory excess**, not the inevitable cost of scientific progress.
 
----
-
 ## References
 
 See [References](../references.qmd) for full citations:
@@ -528,8 +535,6 @@ See [References](../references.qmd) for full citations:
 - Tufts CSDD (2014): [Current drug development costs](../references.qmd#tufts-drug-development-cost-2021)
 - RECOVERY trial: [Low-cost trial methodology](../appendix/recovery-trial.qmd)
 - Regulatory Mortality: [Detailed cost analysis](../appendix/regulatory-mortality-analysis.qmd)
-
----
 
 ## Technical Parameters
 

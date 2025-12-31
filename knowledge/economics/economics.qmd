@@ -38,6 +38,8 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.png
 ---
 
 
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ::: {.content-visible when-format="pdf"}
 
 *Version 0.9 - Working Draft*
@@ -289,6 +291,7 @@ The system automatically aggregates outcomes:
 - **Mass notification system** → All patients currently taking the drug receive automated alerts through patient portals, enabling immediate clinical review and alternative treatment consideration
 
 **Detection timeline comparison ([Vioxx cardiovascular risk](../references.qmd#vioxx-deaths)):**
+
 - **Actual detection with voluntary reporting**: 5 years from approval (1999) to withdrawal (2004), [38,000-55,000 estimated deaths](../references.qmd#vioxx-deaths)
 - **Projected with ubiquitous EHR monitoring**: 6-12 months from widespread use to pattern detection (automated cardiovascular event surveillance comparing treated patients to matched controls)
 
@@ -1725,6 +1728,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 **Response**: The empirical evidence indicates the opposite. The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions: sample size, population diversity, monitoring duration, publication completeness, and adverse event detection speed.
 
 **Current system limitations**:
+
 - Voluntary adverse event reporting captures an estimated 1-10% of actual events (FDA assessment)
 - Traditional Phase III trials test 100-300 patients for 3-12 months, then monitoring stops
 - Approximately 50% of trial results go unpublished, with publication bias favoring positive findings 3:1
@@ -2231,8 +2235,6 @@ For complete bibliography, data sources, and citations, see:
 - **[References](../references.qmd)** - Comprehensive bibliography of all cited sources
 - **[Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd)** - Complete documentation of all 422 parameters with LaTeX equations, confidence indicators, and source attribution
 - **[Data Sources](../appendix/parameters-and-calculations.qmd#sec-external)** - 130 external parameters from peer-reviewed sources
-
----
 
 ## Supplementary Materials
 

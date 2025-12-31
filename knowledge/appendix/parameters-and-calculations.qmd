@@ -1,6 +1,6 @@
 ---
-title: "Parameters and Calculations Reference"
-subtitle: "Comprehensive Documentation of Economic Model Variables"
+title: Parameters and Calculations Reference
+subtitle: Comprehensive Documentation of Economic Model Variables
 aliases:
   - /calculations.html
 format:
@@ -11,7 +11,8 @@ format:
     code-fold: true
 ---
 
-## Overview
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
