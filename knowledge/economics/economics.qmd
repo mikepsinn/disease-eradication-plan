@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
-description: Redirecting 1% of global military spending to pragmatic clinical trials advances cure access over 8 years, saving hundreds of millions of lives at highly cost-effective rates.
+description: Redirecting 1% of global military spending to pragmatic clinical trials advances treatment access over 8 years, saving hundreds of millions of lives at highly cost-effective rates.
 author:
   - name: Decentralized Institutes of Health
     affiliation:
@@ -67,9 +67,17 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.png
 
 ## Abstract
 
-On average, the typical disease cure becomes available to patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier - saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. This shift can be achieved by redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials that allow patient access after Phase I safety trials. The intervention delivers healthcare's most cost-effective option: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
+Approximately {{< var diseases_without_effective_treatment >}} diseases currently lack effective first treatments. At the current research pace of {{< var new_disease_first_treatments_per_year >}} new disease treatments per year, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}} years. Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials scales trial capacity {{< var trial_capacity_multiplier >}}× (to ~{{< var dfda_cures_per_year >}} diseases/year), reducing queue clearance to ~{{< var dfda_queue_clearance_years >}} years while eliminating the {{< var efficacy_lag_years >}}-year regulatory delay after safety verification. Combined, these effects advance treatment delivery by an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years ({{< var dfda_trial_capacity_cure_acceleration_years >}} years from queue acceleration + {{< var efficacy_lag_years >}} years from efficacy lag elimination). This one-time timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives over the acceleration period, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. The intervention delivers healthcare's most cost-effective option: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete estimate including peace dividend). This qualifies as cost-dominant: it reduces costs while improving outcomes.
 
-**Impact Mechanism**: The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two effects: (1) **Cure acceleration** ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average) from {{< var trial_capacity_multiplier >}}× trial capacity that processes the disease queue faster ({{< var dfda_queue_clearance_years >}} years to cure all diseases vs {{< var status_quo_queue_clearance_years >}} years), and (2) **Efficacy lag elimination** ({{< var efficacy_lag_years >}} years) from deploying treatments without post-safety regulatory delay once discovered. Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing centuries of traditional clinical research into decades. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} uses standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY) across {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted.
+**Impact Mechanism:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two complementary effects:
+
+| Benefit Type | Timeline Shift | Mechanism | Impact |
+|--------------|----------------|-----------|--------|
+| **Efficacy Lag Elimination** | {{< var efficacy_lag_years >}} years | Deploy treatments immediately after Phase I safety verification, eliminating Phase II/III efficacy testing delay | All newly discovered treatments reach patients {{< var efficacy_lag_years >}} years sooner |
+| **Queue Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years average | Scale trial capacity {{< var trial_capacity_multiplier >}}× (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year), reducing queue clearance from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} years | Average disease in queue receives first effective treatment {{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier |
+| **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years** | Both effects act simultaneously | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift** for treatment delivery |
+
+**How the {{< var trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (Oxford RECOVERY trial cost) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 **Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials confirms the intervention maintains cost-dominance under all plausible parameter scenarios.
 
@@ -85,17 +93,18 @@ On average, the typical disease cure becomes available to patients {{< var dfda_
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives × standard QALY valuation |
+| **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} years | Immediate access after Phase I safety verification |
 | **Cost-Effectiveness** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY | {{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) |
 | **Cost-Effectiveness (Risk-Adjusted)** | {{< var treaty_expected_cost_per_daly >}}/DALY | At {{< var political_success_probability >}} success probability, still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets |
-| **ROI (Conservative)** | {{< var dfda_roi_rd_only >}}:1 | Trial cost savings only ({{< var dfda_trial_cost_reduction_factor >}}× cheaper per patient) |
+| **ROI (Conservative)** | {{< var dfda_roi_rd_only >}}:1 | R&D savings only ({{< var dfda_trial_cost_reduction_factor >}}× cheaper trials) |
 | **ROI (Complete)** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Includes peace dividend from reduced conflict costs |
-| **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | From {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (average cure arrives earlier) |
-| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Disability-adjusted life years (captures morbidity, not just mortality) |
+| **Queue Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years average | From {{< var trial_capacity_multiplier >}}× trial capacity increase |
+| **Total Timeline Shift** | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years | Queue acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} yrs) + efficacy lag ({{< var efficacy_lag_years >}} yrs) |
+| **Lives Saved (Total)** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | One-time benefit over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift |
+| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Captures morbidity, not just mortality |
+| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives × standard QALY valuation |
 | **Research Acceleration** | {{< var trial_capacity_multiplier >}}× | {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 calendar years |
-| **Cure Timeline Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years | Average disease cured earlier (vs. {{< var status_quo_avg_years_to_cure >}}-year status quo wait) |
-| **Queue Clearance** | {{< var dfda_queue_clearance_years >}} years | Time to cure ALL diseases (vs. {{< var status_quo_queue_clearance_years >}} years status quo) |
-| **Total Timeline Shift** | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years | Cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} yrs) + efficacy lag elimination ({{< var efficacy_lag_years >}} yrs) |
+| **Queue Clearance** | {{< var dfda_queue_clearance_years >}} years | Time to provide first effective treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}} years status quo) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}) exceed costs |
 
 **Bottom line**: Cost-dominant intervention. Saves money while saving lives. Comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
@@ -117,9 +126,16 @@ These successes share common features: systemic interventions that address root 
 
 ### The Medical Research Bottleneck
 
-Current medical research faces a fundamental capacity constraint. {{< var current_clinical_trial_participation_rate >}} of willing patients can access clinical trials [@clinical-trial-patient-participation-rate], and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve [@drug-repurposing-rate]. This represents exploration of {{< var exploration_ratio >}} of the theoretically testable drug-disease space. This limitation exists not because promising candidates don't exist, but because traditional Phase II-III randomized controlled trials cost {{< var traditional_phase3_cost_per_patient >}} per patient {{< var traditional_phase3_cost_per_patient_cite >}}, making comprehensive exploration economically infeasible.
+Current medical research faces fundamental capacity constraints that limit our ability to discover which treatments actually work:
 
-The Oxford RECOVERY trial demonstrated that pragmatic trial design can reduce per-patient costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} while maintaining scientific rigor and delivering results in <100 days [@recovery-trial-82x-cost-reduction]. This {{< var recovery_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
+| Current System Limitation | Value | Impact |
+|---------------------------|-------|--------|
+| **Trial participation rate** | {{< var current_clinical_trial_participation_rate >}} of willing patients | Massive unmet research capacity [@clinical-trial-patient-participation-rate] |
+| **Untested safe compounds** | {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS) | {{< var exploration_ratio >}} of drug-disease space explored [@drug-repurposing-rate] |
+| **Traditional trial cost** | {{< var traditional_phase3_cost_per_patient >}}/patient | Makes comprehensive testing economically infeasible {{< var traditional_phase3_cost_per_patient_cite >}} |
+| **Pragmatic trial cost** | {{< var recovery_trial_cost_per_patient >}}/patient (RECOVERY) | {{< var recovery_trial_cost_reduction_factor >}}× cost reduction enables systematic exploration {{< var recovery_trial_cost_per_patient_cite >}} |
+
+The Oxford RECOVERY trial demonstrated that pragmatic trial design can maintain scientific rigor while delivering results in <100 days [@recovery-trial-82x-cost-reduction]. This {{< var recovery_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
 ### Addressing Skepticism: Why This Differs from Failed Megaprojects
 
@@ -138,13 +154,25 @@ This intervention differs in four critical ways:
 
 ### Contribution to Literature
 
-This paper makes three contributions to health economics literature:
+**Key Contributions to Health Economics Literature:**
 
-1. **Quantification of regulatory delay costs**: First comprehensive estimate of lives lost and economic value foregone due to the {{< var efficacy_lag_years >}}-year efficacy trial delay, valued at {{< var dfda_efficacy_lag_elimination_economic_value >}} using standard QALY methodology.
+1. **Regulatory delay cost quantification**
+   - First comprehensive estimate of the {{< var efficacy_lag_years >}}-year efficacy lag cost
+   - {{< var dfda_efficacy_lag_elimination_economic_value >}} in foregone economic value
+   - {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives lost (excludes unavoidable deaths)
+   - Uses standard QALY methodology ({{< var standard_economic_qaly_value_usd >}}/QALY)
 
-2. **Cost-effectiveness analysis under political uncertainty**: Demonstrates that even at {{< var political_success_probability >}} adoption probability, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) exceeds established interventions like malaria bed nets by {{< var treaty_expected_vs_bed_nets_multiplier >}}×.
+2. **Cost-effectiveness under political uncertainty**
+   - Risk-adjusted analysis at {{< var political_success_probability >}} adoption probability
+   - Still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets ({{< var treaty_expected_cost_per_daly >}}/DALY)
+   - Monte Carlo validation across 10,000 scenarios
+   - Demonstrates robustness to parameter uncertainty
 
-3. **Mechanism design for global public goods**: Proposes a self-sustaining funding mechanism that converts military spending (economic multiplier {{< var economic_multiplier_military_spending >}}) into health research (economic multiplier {{< var economic_multiplier_healthcare_investment >}}) through legally-binding treaty with market-based incentive alignment.
+3. **Self-sustaining funding mechanism**
+   - VICTORY Incentive Alignment Bonds align investors, politicians, patients
+   - Converts military spending ({{< var economic_multiplier_military_spending >}}× economic multiplier) → health research ({{< var economic_multiplier_healthcare_investment >}}× multiplier)
+   - Legally-binding treaty with market-based incentives
+   - No reliance on altruism or bureaucratic mandate
 
 The analysis that follows uses standard cost-benefit methodology (NPV, QALY modeling, ICER analysis) applied to SIPRI military expenditure data, WHO mortality statistics, and published clinical trial cost literature. All parameter uncertainty is quantified through Monte Carlo simulation (10,000 trials) with tornado diagrams identifying key drivers of variance.
 
@@ -202,12 +230,12 @@ Humanity's budget priorities, explained simply:
 
 - **Government clinical trials spending**: {{< var global_government_clinical_trials_spending_annual >}} {{< var global_government_clinical_trials_spending_annual_cite >}}/year (testing which medicines actually work)
 
-- **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}}:1 (global spending on weapons exceeds spending on discovering which drugs cure diseases by {{< var military_to_government_clinical_trials_spending_ratio >}}×)
+- **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}}:1 (global spending on weapons exceeds spending on discovering which drugs treat diseases by {{< var military_to_government_clinical_trials_spending_ratio >}}×)
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
 
 
-The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
+The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
@@ -372,13 +400,13 @@ Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confide
 
 {{< var trial_capacity_cumulative_years_20yr_latex >}}
 
-### Cure Timeline Acceleration
+### Treatment Timeline Acceleration
 
-Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new cures/year, the average disease waits {{< var status_quo_avg_years_to_cure >}} years for a cure. With dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, cures arrive **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**.
+Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_cure >}} years for a treatment. With dFDA's {{< var trial_capacity_multiplier >}}× trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier**.
 
 {{< var dfda_trial_capacity_cure_acceleration_years_latex >}}
 
-**Total Timeline Shift**: Combining cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years) with efficacy lag elimination ({{< var efficacy_lag_years >}} years) yields a **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year total timeline shift** in when patients receive effective treatments.
+**Total Timeline Shift**: Combining treatment acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years) with efficacy lag elimination ({{< var efficacy_lag_years >}} years) yields a **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year total timeline shift** in when patients receive effective treatments.
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
@@ -396,9 +424,8 @@ Under the status quo, {{< var diseases_without_effective_treatment >}} diseases 
 
 This total combines two effects:
 
-- **Cure acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average)**: With {{< var trial_capacity_multiplier >}}× trial capacity, the average disease is cured ~{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier
+- **Treatment acceleration ({{< var dfda_trial_capacity_cure_acceleration_years >}} years on average)**: With {{< var trial_capacity_multiplier >}}× trial capacity, the average disease receives first effective treatment ~{{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier
 - **Efficacy lag elimination ({{< var efficacy_lag_years >}} years)**: Once discovered, treatments are deployed without post-safety delay
-- **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction; recurring annual benefit)
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current system.
 
@@ -465,7 +492,7 @@ This structural difference explains why costs drop **{{< var recovery_trial_cost
 
 ### 3. 15–40 "NIH equivalents" of new research capacity
 
-Currently, diseases kill people faster than we cure them.
+Currently, diseases kill people faster than we develop effective treatments.
 This would change that.
 
 
@@ -492,7 +519,7 @@ All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 The {{< var treaty_reduction_pct >}} Treaty is the first step in a **gradual off-ramp from the arms race**.
 
-By successfully executing a verified, mutual reduction in military spending to fund a shared global good (curing disease), humanity establishes a proof-of-concept for cooperation.
+By successfully executing a verified, mutual reduction in military spending to fund a shared global good (developing disease treatments), humanity establishes a proof-of-concept for cooperation.
 
 
 1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure required for larger steps.
@@ -735,7 +762,7 @@ Spending $1 returns ${{< var dfda_roi_rd_only >}}. This beats most legal activit
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-A $1 billion campaign investment could plausibly generate: (1) a {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (the average disease cure becomes available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier), plus (2) ${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
+A $1 billion campaign investment could plausibly generate: (1) a {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (the average disease treatment becomes available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years earlier), plus (2) ${{< var treaty_recurring_benefits_annual >}}/year in recurring economic benefits (peace dividend + R&D savings).
 
 ## Cost-Effectiveness Analysis
 

@@ -12,10 +12,12 @@ node_modules/
 
 # Temporary files
 temp-repo/
+_build_temp/
 # TODO.md
 url-check-results.json
 temp_urls.txt
 prompt.md
+test-links.pdf
 
 # Logs
 *.log

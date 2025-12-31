@@ -1,0 +1,47 @@
+---
+title: "Test Economics Document"
+description: "Minimal test document for verifying PDF link rewriting"
+---
+
+# Introduction
+
+This is a minimal test document to verify PDF link preprocessing works correctly.
+
+## Link Test Cases
+
+### 1. Internal Links (Should Remain as .qmd)
+
+These links point to files that ARE in the test config, so they should remain unchanged:
+
+- Link to parameters: [Test Parameters](/knowledge/test/test-parameters.qmd)
+- Link with anchor: [Parameters intro](/knowledge/test/test-parameters.qmd#introduction)
+
+### 2. External Cross-Site Links (Should Become Absolute URLs)
+
+These links point to files that are NOT in test config but ARE in book config, so they should be rewritten to https://manual.WarOnDisease.org:
+
+- Link to economics chapter: [Economics Analysis](/knowledge/economics/economics.qmd)
+- Link to drug development analysis: [Drug Development Cost Analysis](/knowledge/appendix/drug-development-cost-analysis.qmd)
+- Link to DFDA analysis: [DFDA Cost Benefit Analysis](/knowledge/appendix/dfda-cost-benefit-analysis.qmd)
+
+### 3. Absolute URLs (Should Remain Unchanged)
+
+These are already absolute URLs and should not be touched:
+
+- External site: [War on Disease](https://WarOnDisease.org)
+- DIH site: [Decentralized Institutes of Health](https://dih.earth)
+- GitHub: [GitHub Repository](https://github.com/mikepsinn)
+
+### 4. Anchor Links (Should Remain Unchanged)
+
+- Jump to section: [Link Test Cases](#link-test-cases)
+- Another anchor: [Introduction](#introduction)
+
+## Conclusion
+
+If all links are processed correctly:
+
+1. Internal links (to files in test config) will remain as `.qmd` paths
+2. Cross-site links (to files in book config but not test config) will become `https://manual.WarOnDisease.org/...`
+3. Absolute URLs will remain unchanged
+4. Anchor-only links will remain unchanged

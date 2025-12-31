@@ -1,0 +1,22 @@
+---
+title: "Test Parameters Document"
+description: "Minimal parameters document for testing"
+---
+
+# Introduction
+
+This is a minimal parameters document for testing cross-references.
+
+## Test Parameters
+
+- Global population: 8 billion
+- Test metric: 100%
+- Sample value: $1,000,000
+
+## Cross-Site References
+
+These should become absolute URLs since they're NOT in the test config:
+
+- Economics chapter: [Economics Analysis](/knowledge/economics/economics.qmd)
+- Full analysis: [DFDA Cost Benefit Analysis](/knowledge/appendix/dfda-cost-benefit-analysis.qmd)
+- Drug development: [Drug Development Cost Analysis](/knowledge/appendix/drug-development-cost-analysis.qmd)

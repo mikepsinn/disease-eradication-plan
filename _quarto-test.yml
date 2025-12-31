@@ -1,0 +1,46 @@
+project:
+  type: book
+  output-dir: _site/test
+  execute-dir: project
+  resources:
+    - assets/
+
+book:
+  title: "Test PDF Link Rewriting"
+  description: "Minimal test configuration for verifying PDF link preprocessing"
+  site-url: https://test.warondisease.org
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - knowledge/test/test-parameters.qmd
+    - knowledge/references.qmd
+
+execute:
+  cache: false
+  freeze: false
+
+metadata:
+  title: "Test PDF Link Rewriting"
+  description: "Minimal test configuration"
+
+format:
+  html:
+    theme: cosmo
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 2
+  pdf:
+    output-file: "test-links.pdf"
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
