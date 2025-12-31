@@ -196,7 +196,7 @@ The math is straightforward:
 
 - {{< var dih_treasury_trial_subsidies_annual >}} ÷ {{< var dfda_pragmatic_trial_cost_per_patient >}} = **{{< var dih_patients_fundable_annually >}}/year**
 - Current: {{< var current_trial_slots_available >}}/year (IQVIA 2022)
-- **{{< var trial_capacity_multiplier >}}× more trial capacity** means testing {{< var trial_capacity_multiplier >}}× more treatments simultaneously
+- **{{< var dfda_trial_capacity_multiplier >}}× more trial capacity** means testing {{< var dfda_trial_capacity_multiplier >}}× more treatments simultaneously
 
 And we'd only be using **4.0% of available capacity** (43.4M ÷ {{< var willing_trial_participants_global >}}).
 

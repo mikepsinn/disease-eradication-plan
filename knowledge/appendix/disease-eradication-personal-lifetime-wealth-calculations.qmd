@@ -20,7 +20,7 @@ image: /assets/og-images/knowledge/appendix/disease-eradication-personal-lifetim
 
 
 
-The **Disease Eradication Model** properly accounts for {{< var trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
+The **Disease Eradication Model** properly accounts for {{< var dfda_trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 
 **This is the default model to use.** Conservative baselines (Evidence-Based models using antibiotic precedent) are available for skeptical audiences.
 
@@ -89,7 +89,7 @@ Based on IBI 2024 workforce data:
 
 ### 5. GDP Boost
 
-{{< var trial_capacity_multiplier >}}× research acceleration creates innovation spillovers:
+{{< var dfda_trial_capacity_multiplier >}}× research acceleration creates innovation spillovers:
 
 - 0.25% additional GDP growth per year (1% treaty)
 - Compounds over extended lifetime
@@ -174,12 +174,12 @@ Our unified `PERSONAL_LIFETIME_WEALTH` model uses uncertainty in the inputs (par
 
 The conservative baseline models assume a 1% treaty has the same impact as antibiotics - ONE technology solving ONE disease category over 20 years. This comparison is fundamentally wrong because a 1% treaty creates:
 
-- **{{< var trial_capacity_multiplier >}}× trial capacity per year** (not 1 year per year like antibiotics)
+- **{{< var dfda_trial_capacity_multiplier >}}× trial capacity per year** (not 1 year per year like antibiotics)
 - **Multiple breakthrough technologies simultaneously** (gene therapy, epigenetics, stem cells, AI)
 - **ALL disease categories tackled in parallel** (not just infectious diseases)
 - **Near-zero trial costs** removing pharma's biggest barrier
 
-Use these conservative numbers to establish credibility with skeptics, then build up to the realistic Disease Eradication Model ($4.3M, 72yr) which properly accounts for {{< var trial_capacity_multiplier >}}× cumulative trial capacity expansion.
+Use these conservative numbers to establish credibility with skeptics, then build up to the realistic Disease Eradication Model ($4.3M, 72yr) which properly accounts for {{< var dfda_trial_capacity_multiplier >}}× cumulative trial capacity expansion.
 
 ## When to Use Each Model
 
@@ -198,7 +198,7 @@ Start with **Evidence-Based Conservative** ($584K, 5yr), then build up:
 
 - "Our most conservative estimate, using antibiotic precedent: $584K"
 - "But antibiotics were ONE technology. A 1% treaty enables:"
-- "{{< var trial_capacity_multiplier >}}× research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
+- "{{< var dfda_trial_capacity_multiplier >}}× research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
 - "Realistic accounting shows: $4.3M over 20 years"
 
 ### For Investor Pitches
@@ -565,7 +565,7 @@ Productivity, caregiver, and life expectancy data cited in:
 
 It's the only model that properly accounts for:
 
-- {{< var trial_capacity_multiplier >}}× cumulative trial capacity expansion ({{< var trial_capacity_cumulative_years_20yr >}} equivalent years in 20 years)
+- {{< var dfda_trial_capacity_multiplier >}}× cumulative trial capacity expansion ({{< var trial_capacity_cumulative_years_20yr >}} equivalent years in 20 years)
 - Multiple breakthrough technologies converging (gene, epigenetic, stem cell, AI)
 - Disease-by-disease systematic eradication with real CDC data
 - Aging reversal approaching accident-limited lifespan

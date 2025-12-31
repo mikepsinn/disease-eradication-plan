@@ -383,7 +383,7 @@ class QuestionGenerator:
         """
         Convert PARAMETER_NAME to "Parameter Name" for display.
 
-        Example: TRIAL_CAPACITY_MULTIPLIER -> "Trial Capacity Multiplier"
+        Example: DFDA_TRIAL_CAPACITY_MULTIPLIER -> "Trial Capacity Multiplier"
         """
         # Replace underscores with spaces and convert to title case
         words = param_name.lower().split('_')

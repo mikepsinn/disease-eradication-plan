@@ -1349,7 +1349,7 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
     keywords=["20.0m", "confirmatory trial", "third phase", "rct", "p3", "phase iii", "clinical study"]
 )  # $20M minimum for Phase 3 trials
 
-# (DFDA_ACTIVE_TRIALS moved to after TRIAL_CAPACITY_MULTIPLIER definition)
+# (DFDA_ACTIVE_TRIALS moved to after DFDA_TRIAL_CAPACITY_MULTIPLIER definition)
 
 # dFDA Trial Economics
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
@@ -3574,7 +3574,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
 # DIH funding can support 48.8M patients/year at RECOVERY trial cost ($500/patient)
 # Current global trial capacity: 1.9M patients/year (IQVIA 2022)
 # Capacity Multiplier = DIH capacity / Current capacity
-TRIAL_CAPACITY_MULTIPLIER = Parameter(
+DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
     DIH_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
     source_type="calculated",
     description="Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
@@ -3587,16 +3587,16 @@ TRIAL_CAPACITY_MULTIPLIER = Parameter(
 )  # 25.7x trial capacity multiplier from simple funding economics
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
-    int(TRIAL_CAPACITY_MULTIPLIER * 20),
+    int(DFDA_TRIAL_CAPACITY_MULTIPLIER * 20),
     source_type="calculated",
     description="Cumulative trial-capacity-equivalent years over 20-year period",
     display_name="Cumulative Trial Capacity Years Over 20 Years",
     unit="years",
-    formula="TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
+    formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
     latex=r"Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}",
     keywords=["trial", "capacity", "cumulative", "20 years"],
-    inputs=['TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: int(ctx["TRIAL_CAPACITY_MULTIPLIER"] * 20),
+    inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20),
 )  # ~514 trial-capacity-equivalent years (25.7x capacity × 20 years)
 
 # ==============================================================================
@@ -3716,17 +3716,17 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
 # Combined cure speedup from dFDA implementation
 # Trial capacity (25.7×) × valley of death rescue (1.4×) = ~36×
 DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER = Parameter(
-    float(TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
+    float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
     source_type="calculated",
     description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
     display_name="dFDA Combined Treatment Discovery Speedup Multiplier",
     unit="multiplier",
-    formula="TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+    formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
     latex=r"Speedup_{dFDA} = 25.7 \times 1.4 = 36\times",
     confidence="medium",
     keywords=["dfda", "cure", "speedup", "combined", "multiplier"],
-    inputs=['TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
-    compute=lambda ctx: ctx["TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
+    inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
 )  # ~36× combined speedup from dFDA
 
 # Rare diseases (moved here to enable calculated parameters below)
@@ -3818,17 +3818,17 @@ STATUS_QUO_AVG_YEARS_TO_CURE = Parameter(
 # Note: Using only trial capacity multiplier, not combined with valley of death rescue,
 # because valley of death rescue adds more drug candidates but doesn't directly speed up queue processing
 DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS = Parameter(
-    float(STATUS_QUO_AVG_YEARS_TO_CURE) * (1 - 1 / float(TRIAL_CAPACITY_MULTIPLIER)),
+    float(STATUS_QUO_AVG_YEARS_TO_CURE) * (1 - 1 / float(DFDA_TRIAL_CAPACITY_MULTIPLIER)),
     source_type="calculated",
     description="Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
     display_name="dFDA Treatment Timeline Acceleration",
     unit="years",
-    formula="STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
+    formula="STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
     latex=r"Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}",
     confidence="low",
     keywords=["dfda", "acceleration", "cure", "timeline", "years"],
-    inputs=['STATUS_QUO_AVG_YEARS_TO_CURE', 'TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_CURE"] * (1 - 1 / ctx["TRIAL_CAPACITY_MULTIPLIER"]),
+    inputs=['STATUS_QUO_AVG_YEARS_TO_CURE', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_CURE"] * (1 - 1 / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
 )  # ~212 years acceleration from dFDA (trial capacity only)
 
 # ============================================================================
@@ -3913,33 +3913,33 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
 # dFDA cure rate (diseases getting first treatment per year)
 # Status quo: ~15 diseases/year → dFDA: ~343 diseases/year
 DFDA_CURES_PER_YEAR = Parameter(
-    float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(TRIAL_CAPACITY_MULTIPLIER),
+    float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
     description="Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
     display_name="dFDA New Treatments Per Year",
     unit="diseases/year",
-    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × TRIAL_CAPACITY_MULTIPLIER",
+    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
     latex=r"CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}",
     confidence="low",
     keywords=["dfda", "cures", "diseases", "per year", "rate", "first treatment"],
-    inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["TRIAL_CAPACITY_MULTIPLIER"],
+    inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
 )  # ~343 diseases/year get first treatment with dFDA
 
 # Time to cure ALL diseases with dFDA
 # Status quo: ~443 years → dFDA: ~19 years
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
-    float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(TRIAL_CAPACITY_MULTIPLIER),
+    float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
     description="Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
     display_name="dFDA Queue Clearance Time",
     unit="years",
-    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
+    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
     latex=r"QueueClearance_{dFDA} = \frac{443 \text{ years}}{23} = 19 \text{ years}",
     confidence="low",
     keywords=["dfda", "queue", "clearance", "all diseases", "cure all", "years"],
-    inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["TRIAL_CAPACITY_MULTIPLIER"],
+    inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
 )  # ~19 years to cure ALL diseases with dFDA
 
 # ============================================================================
@@ -4011,15 +4011,15 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
 
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
-    int(CURRENT_TRIALS_PER_YEAR * TRIAL_CAPACITY_MULTIPLIER),
+    int(CURRENT_TRIALS_PER_YEAR * DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
     description="Maximum trials per year possible with trial capacity multiplier",
     display_name="Decentralized Framework for Drug Assessment Maximum Trials per Year",
     unit="trials/year",
-    formula="CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
+    formula="CURRENT_TRIALS × DFDA_TRIAL_CAPACITY_MULTIPLIER",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
-    inputs=['CURRENT_TRIALS_PER_YEAR', 'TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["TRIAL_CAPACITY_MULTIPLIER"]),
+    inputs=['CURRENT_TRIALS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
+    compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
 )  # Maximum trials/year possible with trial capacity multiplier
 
 
@@ -4666,6 +4666,63 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     compute=lambda ctx: ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"] / ctx["POLITICAL_SUCCESS_PROBABILITY"],
 )  # Expected cost per DALY at 1% probability (still better than bed nets)
 
+# ---
+# DIRECT FUNDING SCENARIO (Alternative to Treaty Campaign)
+# ---
+# What if philanthropists/governments directly funded $21.76B/year instead of
+# spending $1B on a treaty campaign? This shows the cost-effectiveness trade-off.
+
+# NPV of direct funding for queue clearance period
+DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
+    DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL
+    * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
+    / NPV_DISCOUNT_RATE_STANDARD,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_type="definition",  # Policy-derived: calculated from fixed allocations and discount rate
+    description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
+    display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
+    unit="USD",
+    formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
+    latex=r"NPV_{direct} = \$21.76B \times \frac{1 - 1.03^{-46.5}}{0.03} \approx \$541.9B",
+    keywords=["philanthropy", "direct funding", "alternative", "open philanthropy", "gates foundation", "npv", "queue clearance"],
+    inputs=['DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
+    compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
+        * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
+        / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+)  # ~$541.9B NPV (vs $1B treaty campaign)
+
+# Cost per DALY for direct funding scenario
+DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
+    DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_type="definition",  # Policy-derived: comparison metric using fixed inputs
+    description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    display_name="dFDA Direct Funding Cost per DALY",
+    unit="USD/DALY",
+    formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
+    latex=r"\text{Cost/DALY}_{direct} = \frac{\$541.9B}{200B \text{ DALYs}} \approx \$2.71/\text{DALY}",
+    confidence="medium",
+    keywords=["philanthropy", "direct funding", "cost effectiveness", "open philanthropy", "gates foundation"],
+    inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+)  # ~$2.71/DALY (still excellent, but 542× worse than treaty campaign)
+
+# Treaty campaign leverage vs direct funding
+TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
+    DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_type="definition",  # Policy-derived: comparison metric using fixed inputs
+    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+    display_name="Treaty Campaign Leverage vs Direct Funding",
+    unit="ratio",
+    formula="DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
+    latex=r"\text{Leverage}_{treaty} = \frac{\$2.71/\text{DALY}}{\$0.005/\text{DALY}} \approx 542\times",
+    confidence="high",
+    keywords=["leverage", "campaign effectiveness", "treaty advantage", "cost comparison", "queue clearance"],
+    inputs=['DFDA_DIRECT_FUNDING_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
+    compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
+)  # ~542× - treaty campaign achieves massive leverage
+
 # Cost-effectiveness multipliers vs. bed nets
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
@@ -5043,10 +5100,10 @@ def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     """
     Calculate trial capacity multiplier for a given treaty percentage.
 
-    Uses linear scaling from the base TRIAL_CAPACITY_MULTIPLIER (25.7x at 1% treaty).
+    Uses linear scaling from the base DFDA_TRIAL_CAPACITY_MULTIPLIER (25.7x at 1% treaty).
 
     Formula:
-        Multiplier = TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01)
+        Multiplier = DFDA_TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01)
 
     Examples:
     - 1% treaty: 25.7 × (0.01 / 0.01) = 25.7x
@@ -5060,7 +5117,7 @@ def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     Returns:
         Trial capacity multiplier (e.g., 25.7 = 25.7x more trial slots available)
     """
-    return float(TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
+    return float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
 
 
 def compound_sum(annual_benefit: float, years: float, growth_rate: float, discount_rate: float = 0.03) -> float:
@@ -5520,7 +5577,7 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
     keywords=["personal", "lifetime", "wealth", "individual benefit", "age 30", "npv", "life extension"],
     inputs=[
         "LIFE_EXTENSION_YEARS",  # Primary driver: 66% of benefit from extended earnings
-        "TRIAL_CAPACITY_MULTIPLIER",  # Drives healthcare, productivity, GDP boost (~30%)
+        "DFDA_TRIAL_CAPACITY_MULTIPLIER",  # Drives healthcare, productivity, GDP boost (~30%)
     ],
     compute=lambda ctx: calculate_personal_lifetime_wealth_conservative_baseline(
         treaty_pct=0.01,

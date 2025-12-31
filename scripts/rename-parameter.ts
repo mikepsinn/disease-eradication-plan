@@ -26,10 +26,11 @@ import fs from 'fs/promises';
 import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import { getAllSourceFiles, getProjectRoot } from './lib/file-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PROJECT_ROOT = path.resolve(__dirname, '..');
+const PROJECT_ROOT = getProjectRoot();
 
 interface RefactorOptions {
   oldName: string;
@@ -91,27 +92,11 @@ function toQmdVariableName(pythonName: string): string {
 }
 
 /**
- * Find all QMD files in knowledge directory
+ * Find all QMD files in the project (including root-level files like index-book.qmd)
+ * Uses shared file-utils to respect .gitignore and exclude auto-generated files
  */
 async function findQmdFiles(): Promise<string[]> {
-  const qmdFiles: string[] = [];
-
-  async function walk(dir: string) {
-    const entries = await fs.readdir(dir, { withFileTypes: true });
-
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-
-      if (entry.isDirectory()) {
-        await walk(fullPath);
-      } else if (entry.name.endsWith('.qmd')) {
-        qmdFiles.push(fullPath);
-      }
-    }
-  }
-
-  await walk(path.join(PROJECT_ROOT, 'knowledge'));
-  return qmdFiles;
+  return getAllSourceFiles(['.qmd']);
 }
 
 /**

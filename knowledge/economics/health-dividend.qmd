@@ -99,7 +99,7 @@ Until now. Your decentralized framework for drug assessment changes the game by 
 {{< var dfda_annual_opex >}} to save {{< var dfda_benefit_rd_only_annual >}}.
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI (recommended).
 80x cost reduction per patient.
-{{< var trial_capacity_multiplier >}}× more trial capacity (43.4M participants annually vs 1.9M currently).
+{{< var dfda_trial_capacity_multiplier >}}× more trial capacity (43.4M participants annually vs 1.9M currently).
 
 This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving {{< var dfda_benefit_rd_only_annual >}} is worth {{< var dfda_annual_opex >}}, which is like debating whether picking up a hundred-dollar bill is worth bending over.
 

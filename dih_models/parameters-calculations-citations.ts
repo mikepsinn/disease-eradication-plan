@@ -1617,7 +1617,7 @@ export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
   description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
   sourceType: "calculated",
   confidence: "medium",
-  formula: "TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+  formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
   latex: "Speedup_{dFDA} = 25.7 \\times 1.4 = 36\\times",
 };
 
@@ -1628,7 +1628,7 @@ export const DFDA_CURES_PER_YEAR: Parameter = {
   description: "Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × TRIAL_CAPACITY_MULTIPLIER",
+  formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
   latex: "CuresPerYear_{dFDA} = 15 \\times 23 = 343 \\text{ diseases/year}",
 };
 
@@ -1794,7 +1794,7 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
   description: "Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER",
+  formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
   latex: "QueueClearance_{dFDA} = \\frac{443 \\text{ years}}{23} = 19 \\text{ years}",
 };
 
@@ -1841,8 +1841,8 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   description: "Maximum trials per year possible with trial capacity multiplier",
   sourceType: "calculated",
   confidence: "high",
-  formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
-  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier = 3{,}300 \\times 9.53 = 31{,}400",
+  formula: "CURRENT_TRIALS × DFDA_TRIAL_CAPACITY_MULTIPLIER",
+  latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier_{DFDA} = 3{,}300 \\times 9.53 = 31{,}400",
 };
 
 export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
@@ -1852,7 +1852,7 @@ export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
   description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/TRIAL_CAPACITY_MULTIPLIER)",
+  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
   latex: "Accel_{dFDA} = 222 \\text{ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}",
 };
 
@@ -1886,6 +1886,17 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
   confidence: "low",
   formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT",
   latex: "Lives_{trial\\ capacity} = 54.75M \\times 212 \\times 92.1\\% = 10.7B",
+};
+
+export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
+  value: 9.526315789473685,
+  unit: "ratio",
+  displayName: "Trial Capacity Multiplier",
+  description: "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+  latex: "Multiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{18.1M}{1.9M} = 9.53",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
@@ -2859,19 +2870,8 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   description: "Cumulative trial-capacity-equivalent years over 20-year period",
   sourceType: "calculated",
   confidence: "high",
-  formula: "TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
+  formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
   latex: "Capacity_{20yr} = 25.7 \\times 20 = 514 \\text{ years}",
-};
-
-export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
-  value: 9.526315789473685,
-  unit: "ratio",
-  displayName: "Trial Capacity Multiplier",
-  description: "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
-  latex: "Multiplier = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{18.1M}{1.9M} = 9.53",
 };
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
@@ -3308,6 +3308,30 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   description: "Percentage of budget defense sector keeps under 1% treaty",
   sourceType: "definition",
   confidence: "high",
+};
+
+export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
+  value: 2.7086638759381048,
+  unit: "USD/DALY",
+  displayName: "dFDA Direct Funding Cost per DALY",
+  description: "Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
+  confidence: "medium",
+  formula: "NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
+  latex: "\\text{Cost/DALY}_{direct} = \\frac{\\$541.9B}{200B \\text{ DALYs}} \\approx \\$2.71/\\text{DALY}",
+};
+
+export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
+  value: 542050394069.87177,
+  unit: "USD",
+  displayName: "dFDA Direct Funding NPV (Queue Clearance Period)",
+  description: "NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
+  confidence: "high",
+  formula: "ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
+  latex: "NPV_{direct} = \\$21.76B \\times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B",
 };
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
@@ -3850,6 +3874,18 @@ export const TREATY_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
+export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
+  value: 542.0503940698718,
+  unit: "ratio",
+  displayName: "Treaty Campaign Leverage vs Direct Funding",
+  description: "How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
+  confidence: "high",
+  formula: "DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
+  latex: "\\text{Leverage}_{treaty} = \\frac{\\$2.71/\\text{DALY}}{\\$0.005/\\text{DALY}} \\approx 542\\times",
+};
+
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   value: 1000.0,
   unit: "diseases",
@@ -4064,6 +4100,7 @@ export const parameters = {
   DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
   DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_LIVES_SAVED,
+  DFDA_TRIAL_CAPACITY_MULTIPLIER,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
@@ -4147,7 +4184,6 @@ export const parameters = {
   TREATY_TOTAL_ANNUAL_COSTS,
   TREATY_VS_BED_NETS_MULTIPLIER,
   TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR,
-  TRIAL_CAPACITY_MULTIPLIER,
   TYPE_II_ERROR_COST_RATIO,
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
@@ -4188,6 +4224,8 @@ export const parameters = {
   DAYS_PER_YEAR,
   DCT_PLATFORM_FUNDING_MEDIUM,
   DEFENSE_SECTOR_RETENTION_PCT,
+  DFDA_DIRECT_FUNDING_COST_PER_DALY,
+  DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
   DFDA_NPV_ADOPTION_RAMP_YEARS,
   DFDA_NPV_ANNUAL_OPEX,
   DFDA_NPV_UPFRONT_COST,
@@ -4242,6 +4280,7 @@ export const parameters = {
   TREATY_CAMPAIGN_DURATION_YEARS,
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE,
   TREATY_REDUCTION_PCT,
+  TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
@@ -5670,10 +5709,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 349,
+  total: 352,
   external: 137,
   calculated: 119,
-  definitions: 93,
+  definitions: 96,
   citations: 104,
 } as const;
 

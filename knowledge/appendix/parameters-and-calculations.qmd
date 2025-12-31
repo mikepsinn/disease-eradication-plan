@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 349
+**Total parameters**: 352
 
 - External sources (peer-reviewed): 137
 - Calculated values: 119
-- Core definitions: 93
+- Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (137 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -245,7 +245,7 @@ Combined speedup factor for treatment discovery from dFDA. Trial capacity multip
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 - [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4 multiplier
 
 $$
@@ -279,7 +279,7 @@ Diseases per year receiving their first effective treatment with dFDA. With ~23�
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 CuresPerYear_{dFDA} = 15 \times 23 = 343 \text{ diseases/year}
@@ -769,7 +769,7 @@ Years to treatments all ~6,650 currently untreatable diseases with dFDA implemen
 **Inputs**:
 
 - [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 QueueClearance_{dFDA} = \frac{443 \text{ years}}{23} = 19 \text{ years}
@@ -908,10 +908,10 @@ Maximum trials per year possible with trial capacity multiplier
 **Inputs**:
 
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
-Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 9.53 = 31{,}400
+Capacity_{DFDA} = Trials_{curr} \times Multiplier_{DFDA} = 3{,}300 \times 9.53 = 31{,}400
 $$
 
 *✓ High confidence*
@@ -941,7 +941,7 @@ Years earlier the average cure arrives due to dFDA's trial capacity increase. Wi
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
@@ -1058,6 +1058,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_lives_saved.qmd >}}
+
+:::
+
+### Trial Capacity Multiplier: 9.53 ratio {#sec-dfda_trial_capacity_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Trial capacity multiplier from DIH funding capacity vs. current global trial participation
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 18.1M patients/year
+
+$$
+Multiplier_{DFDA} = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{18.1M}{1.9M} = 9.53
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
 
 :::
 
@@ -2942,7 +2975,7 @@ Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% tre
 **Inputs**:
 
 - [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 \text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
@@ -3901,7 +3934,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 9.53 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
 Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
@@ -3922,39 +3955,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-trial_capacity_cumulative_years_20yr.qmd >}}
-
-:::
-
-### Trial Capacity Multiplier: 9.53 ratio {#sec-trial_capacity_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Trial capacity multiplier from DIH funding capacity vs. current global trial participation
-
-**Inputs**:
-
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 18.1M patients/year
-
-$$
-Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{18.1M}{1.9M} = 9.53
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-trial_capacity_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-trial_capacity_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-trial_capacity_multiplier.qmd >}}
 
 :::
 
@@ -7210,6 +7210,26 @@ Percentage of budget defense sector keeps under 1% treaty
 
 :::
 
+### dFDA Direct Funding Cost per DALY: $2.71 {#sec-dfda_direct_funding_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).
+
+*Core definition*
+
+:::
+
+### dFDA Direct Funding NPV (Queue Clearance Period): $542B {#sec-dfda_direct_funding_queue_clearance_npv}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.
+
+*Core definition*
+
+:::
+
 ### Years to Reach Full Decentralized Framework for Drug Assessment Adoption: 5 years {#sec-dfda_npv_adoption_ramp_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -7885,6 +7905,16 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Treaty Campaign Leverage vs Direct Funding: 542 ratio {#sec-treaty_vs_direct_funding_leverage}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.
 
 *Core definition*
 

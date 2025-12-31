@@ -405,7 +405,7 @@
   \ data-confidence=\"medium\" title=\"Combined speedup factor for treatment discovery\
   \ from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×).\
   \ With 36× speedup, diseases that would take T years to cure now take T/36 years.\
-  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
+  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
   \ × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER | Unit: multiplier | Click to view details,\
   \ calculation & sources\">15.3 (95% CI: 5.61-38.5)</a>"
 "dfda_combined_cure_speedup_multiplier_latex": "$$\nSpeedup_{dFDA} = 25.7 \\times\
@@ -415,10 +415,36 @@
   \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
   \ treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year\
   \ to ~343/year. | Calculated from 2 inputs | ? Low confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR\
-  \ × TRIAL_CAPACITY_MULTIPLIER | Unit: diseases/year | Click to view details, calculation\
-  \ & sources\">153 (95% CI: 102-220)</a>"
+  \ × DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: diseases/year | Click to view details,\
+  \ calculation & sources\">153 (95% CI: 102-220)</a>"
 "dfda_cures_per_year_latex": "$$\nCuresPerYear_{dFDA} = 15 \\times 23 = 343 \\text{\
   \ diseases/year}\n$$"
+"dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Cost per DALY\
+  \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue\
+  \ clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves\
+  \ 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B),\
+  \ avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline\
+  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | ~ Medium confidence\
+  \ | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click\
+  \ to view details, calculation & sources\">$2.71 (95% CI: $1.26-$4.73)</a>"
+"dfda_direct_funding_cost_per_daly_latex": "$$\n\\text{Cost/DALY}_{direct} = \\frac{\\\
+  $541.9B}{200B \\text{ DALYs}} \\approx \\$2.71/\\text{DALY}\n$$"
+"dfda_direct_funding_queue_clearance_npv": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_queue_clearance_npv\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"NPV of direct\
+  \ funding ($21.76B/year for medical research after bond/IAB allocations) for the\
+  \ ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty\
+  \ campaign to unlock government funding, philanthropists/NIH directly fund clinical\
+  \ trials until disease queue is cleared. Funding period is queue clearance time\
+  \ (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years).\
+  \ After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.\
+  \ | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T\
+  \ = queue clearance time | Unit: USD | Click to view details, calculation & sources\"\
+  >$542B (95% CI: $388B-$659B)</a>"
+"dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = \\$21.76B \\\
+  times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -608,7 +634,7 @@
   \ data-confidence=\"low\" title=\"Years to treatments all ~6,650 currently untreatable\
   \ diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops\
   \ from ~443 years to ~19 years. | Calculated from 2 inputs | ? Low confidence |\
-  \ Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ TRIAL_CAPACITY_MULTIPLIER | Unit:\
+  \ Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit:\
   \ years | Click to view details, calculation & sources\">43.4 (95% CI: 25.9-80.8)</a>"
 "dfda_queue_clearance_years_latex": "$$\nQueueClearance_{dFDA} = \\frac{443 \\text{\
   \ years}}{23} = 19 \\text{ years}\n$$"
@@ -647,10 +673,10 @@
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
   \ multiplier | Calculated from 2 inputs | ✓ High confidence | Formula: CURRENT_TRIALS\
-  \ × TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view details, calculation\
-  \ & sources\">35.9k (95% CI: 15.5k-76.2k)</a>"
+  \ × DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view details,\
+  \ calculation & sources\">35.9k (95% CI: 15.5k-76.2k)</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
-  \ Multiplier = 3{,}300 \\times 9.53 = 31{,}400\n$$"
+  \ Multiplier_{DFDA} = 3{,}300 \\times 9.53 = 31{,}400\n$$"
 "dfda_trial_capacity_cure_acceleration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_cure_acceleration_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Years earlier the average cure arrives due to\
@@ -658,8 +684,8 @@
   \ arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with\
   \ valley of death rescue) because additional candidates don't directly speed queue\
   \ processing. | Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_CURE\
-  \ × (1 - 1/TRIAL_CAPACITY_MULTIPLIER) | Unit: years | Click to view details, calculation\
-  \ & sources\">216 (95% CI: 121-343)</a>"
+  \ × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) | Unit: years | Click to view details,\
+  \ calculation & sources\">216 (95% CI: 121-343)</a>"
 "dfda_trial_capacity_cure_acceleration_years_latex": "$$\nAccel_{dFDA} = 222 \\text{\
   \ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}\n$$"
 "dfda_trial_capacity_dalys_averted": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_dalys_averted\"\
@@ -688,6 +714,14 @@
   >10.9B (95% CI: 6.67B-15.7B)</a>"
 "dfda_trial_capacity_lives_saved_latex": "$$\nLives_{trial\\ capacity} = 54.75M \\\
   times 212 \\times 92.1\\% = 10.7B\n$$"
+"dfda_trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
+  \ vs. current global trial participation | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
+  \ view details, calculation & sources\">10.9 (95% CI: 4.01-27.5)</a>"
+"dfda_trial_capacity_multiplier_latex": "$$\nMultiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}}\
+  \ = \\frac{18.1M}{1.9M} = 9.53\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total DALYs averted from the full dFDA timeline\
@@ -2292,22 +2326,27 @@
   \ to view details, calculation & sources\">20.3k (95% CI: 9.04k-38.9k)</a>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}}\
   \ = \\frac{\\$89}{\\$0.005} = 17{,}800\n$$"
+"treaty_vs_direct_funding_leverage": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_direct_funding_leverage\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"How many times\
+  \ more cost-effective the treaty campaign is vs direct funding. Treaty achieves\
+  \ 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years\
+  \ (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly\
+  \ commit this amount. Both approaches achieve same 200B DALY timeline shift benefit\
+  \ by clearing disease queue 9.5× faster. Treaty spreads cost across governments\
+  \ while building sustainable public funding infrastructure. | ✓ High confidence\
+  \ | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio\
+  \ | Click to view details, calculation & sources\">542 (95% CI: 435-613)</a>"
+"treaty_vs_direct_funding_leverage_latex": "$$\n\\text{Leverage}_{treaty} = \\frac{\\\
+  $2.71/\\text{DALY}}{\\$0.005/\\text{DALY}} \\approx 542\\times\n$$"
 "trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\
-  \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
+  \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
   \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">218\
   \ (95% CI: 80-550)</a>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
   \ 20 = 514 \\text{ years}\n$$"
-"trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_multiplier\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
-  \ vs. current global trial participation | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
-  \ view details, calculation & sources\">10.9 (95% CI: 4.01-27.5)</a>"
-"trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
-  \ = \\frac{18.1M}{1.9M} = 9.53\n$$"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
@@ -2473,6 +2512,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "349"
-"total_latex_equation_count": "135"
+"total_parameter_count": "352"
+"total_latex_equation_count": "138"
 "total_citation_count": "137"
