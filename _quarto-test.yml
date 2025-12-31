@@ -13,7 +13,6 @@ book:
   chapters:
     - index.qmd
     - knowledge/test/test-parameters.qmd
-    - knowledge/references.qmd
 
 execute:
   cache: false
@@ -32,7 +31,7 @@ format:
     toc-depth: 2
   pdf:
     output-file: "test-links.pdf"
-    documentclass: article
+    documentclass: report
     echo: false
     toc: true
     toc-depth: 2
