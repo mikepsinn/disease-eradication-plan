@@ -111,6 +111,13 @@ BLACKLISTED_PATTERNS = [
         "skip_in_comments": True,
         "skip_in_scripts": True,
     },
+    {
+        "regex": re.compile(r"Try using xlabels", re.IGNORECASE),
+        "error_type": "MATPLOTLIB_XLABELS_WARNING",
+        "message": "Matplotlib xlabels warning in output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
 ]
 
 
