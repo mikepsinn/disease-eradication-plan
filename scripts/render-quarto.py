@@ -206,6 +206,15 @@ def render_quarto(
                 shutil.copytree(site_dir, dest_site)
                 print(f"[OK] Copied _site/ directory")
 
+            # Copy _book directory if it exists (for book config)
+            book_dir = build_temp / "_book"
+            if book_dir.exists():
+                dest_book = project_root / "_book"
+                if dest_book.exists():
+                    shutil.rmtree(dest_book)
+                shutil.copytree(book_dir, dest_book)
+                print(f"[OK] Copied _book/ directory")
+
         # 5. Run verification tests if requested (test config only)
         if verify and config_name == "test" and exit_code == 0:
             print("=" * 80)

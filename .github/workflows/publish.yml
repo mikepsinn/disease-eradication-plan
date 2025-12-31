@@ -69,7 +69,7 @@ jobs:
         run: quarto install tinytex
 
       - name: Render all formats (HTML + PDF + EPUB)
-        run: python scripts/render-book-website.py
+        run: python scripts/render-quarto.py book
         timeout-minutes: 75
 
      # - name: Upload Main Site artifact
@@ -142,7 +142,7 @@ jobs:
         run: quarto install tinytex
 
       - name: Render Economics Website
-        run: python scripts/render-economics-website.py --output-dir _site/economics
+        run: python scripts/render-quarto.py economics
         timeout-minutes: 25
 
      # - name: Upload Economics artifact
@@ -215,7 +215,7 @@ jobs:
         run: quarto install tinytex
 
       - name: Render Wishocracy Paper
-        run: python scripts/render-wishocracy.py
+        run: python scripts/render-quarto.py wishocracy
         timeout-minutes: 10
 
      # - name: Upload Wishocracy artifact
@@ -288,7 +288,7 @@ jobs:
         run: quarto install tinytex
 
       - name: Render IAB Paper
-        run: python scripts/render-iab.py
+        run: python scripts/render-quarto.py iab
         timeout-minutes: 10
 
      # - name: Upload IAB artifact
