@@ -191,11 +191,25 @@ def render_quarto(
         if build_temp:
             print("[*] Copying outputs from temp to original location...")
 
-            # Copy PDFs
+            # Copy PDFs to both project root and output directory
             for pdf_file in build_temp.glob("*.pdf"):
-                dest = project_root / pdf_file.name
-                shutil.copy2(pdf_file, dest)
-                print(f"[OK] Copied {pdf_file.name}")
+                # Copy to project root (for convenience)
+                dest_root = project_root / pdf_file.name
+                shutil.copy2(pdf_file, dest_root)
+                print(f"[OK] Copied {pdf_file.name} to project root")
+
+                # Also copy to output directory (for deployment)
+                # Determine output directory based on config
+                if config_name == "book":
+                    output_dir = project_root / "_book" / "warondisease"
+                else:
+                    output_dir = project_root / "_site" / config_name
+
+                # Ensure output directory exists before copying
+                output_dir.mkdir(parents=True, exist_ok=True)
+                dest_output = output_dir / pdf_file.name
+                shutil.copy2(pdf_file, dest_output)
+                print(f"[OK] Copied {pdf_file.name} to {output_dir.relative_to(project_root)}")
 
             # Copy HTML output directory if it exists
             site_dir = build_temp / "_site"

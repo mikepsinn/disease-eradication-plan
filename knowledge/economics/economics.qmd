@@ -59,8 +59,6 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.png
 
 **Seeking peer review and contributions.** If you have expertise in health economics, cost-effectiveness analysis, clinical trial design, or peace economics, your feedback and potential co-authorship would be greatly valued. Please annotate via the sidebar or contact [mike@warondisease.org](mailto:mike@warondisease.org).
 
-**Planned Contributors:** (Your name will appear here if you provide substantial feedback or analysis)
-
 ---
 
 :::
@@ -533,20 +531,9 @@ This gradual approach steers nations toward a safer equilibrium, one percentage 
 
 The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
-The key insight: {{< var iab_political_incentive_funding_pct >}} of treaty revenue funds political incentives. This amount scales with treaty size:
+The key insight: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds VICTORY Incentive Alignment Bond investor returns.
 
-| Treaty Level | Total Revenue | IAB Political Funding | Pragmatic Trial Funding |
-|:-------------|:--------------|:---------------------|:-----------------|
-| 1% | {{< var treaty_annual_funding >}} | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year |
-| 2% | $54B | $5.4B/year | $43.2B/year |
-| 5% | $135B | $13.5B/year | $108B/year |
-| 10% | $270B | $27B/year | $216B/year |
-| 50% | $1.35T | $135B/year | $1.08T/year |
-| 100% | $2.7T | $270B/year | $2.16T/year |
-
-VICTORY Incentive Alignment Bond investors are satisfied at 1%. They receive {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
-
-Politicians, however, see their rewards grow with each expansion. This creates sustained pressure to increase treaty percentages. By the time redirection reaches 50%, the political incentive pool ($135B/year) exceeds all current global lobbying combined.
+VICTORY Incentive Alignment Bond investors receive {{< var victory_bond_annual_return_pct >}} annual returns on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains dominant.
 
 The 80/10/10 allocation structure functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
@@ -838,7 +825,7 @@ The $1B treaty campaign unlocks the same {{< var dfda_direct_funding_queue_clear
 **Risk-adjusted leverage** (accounting for {{< var political_success_probability >}} political success probability):
 
 $$
-\text{Expected Leverage} = \frac{\$2.71/\text{DALY}}{\$511/\text{DALY}} \approx 5.4\times
+\text{Expected Leverage} = \frac{\$0.50/\text{DALY}}{\$3/\text{DALY}} \approx 5.4\times
 $$
 
 Even accounting for political risk, the treaty campaign remains 5× more cost-effective than direct funding. The treaty approach:
@@ -1929,9 +1916,7 @@ Even restricting ourselves to compounds humans *already know are safe* (FDA-appr
 
 We can express the exploration gap mathematically as:
 
-$$
-\text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,000} \approx 0.417\%
-$$
+{{< var exploration_ratio_latex >}}
 
 We have empirically tested **{{< var exploration_ratio >}}** of the drug-disease relationships possible using *existing, approved, safe compounds*. The other {{< var unexplored_ratio >}} remains unexplored due to transaction costs. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for full analysis.
 
