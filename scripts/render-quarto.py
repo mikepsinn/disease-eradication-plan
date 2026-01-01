@@ -265,6 +265,65 @@ def render_quarto(
         # Change back to original directory
         os.chdir(original_cwd)
 
+        # Validate PDF exists in deployment directory before cleanup
+        if build_temp and rendering_pdf and exit_code == 0:
+            print("=" * 80)
+            print("VALIDATION: PDF DEPLOYMENT CHECK")
+            print("=" * 80)
+
+            # Read PDF filename from Quarto config
+            import yaml
+
+            quarto_config_path = project_root / "_quarto.yml"
+            if quarto_config_path.exists():
+                try:
+                    with open(quarto_config_path, 'r', encoding='utf-8') as f:
+                        quarto_config = yaml.safe_load(f)
+
+                    # Get PDF output filename from config
+                    expected_pdf = None
+                    if 'format' in quarto_config and 'pdf' in quarto_config['format']:
+                        pdf_config = quarto_config['format']['pdf']
+                        if 'output-file' in pdf_config:
+                            expected_pdf = pdf_config['output-file']
+
+                    if expected_pdf:
+                        # Determine deployment directory from config
+                        if 'project' in quarto_config and 'output-dir' in quarto_config['project']:
+                            output_dir_str = quarto_config['project']['output-dir']
+                            deployment_dir = project_root / output_dir_str
+                        else:
+                            # Fallback to default locations
+                            if config_name == "book":
+                                deployment_dir = project_root / "_book" / "warondisease"
+                            else:
+                                deployment_dir = project_root / "_site" / config_name
+
+                        expected_path = deployment_dir / expected_pdf
+
+                        if not expected_path.exists():
+                            error_msg = (
+                                f"[FATAL] PDF not found in deployment directory!\n"
+                                f"        Expected: {expected_path}\n"
+                                f"        Config: {config_name} ({quarto_config_path.name})\n"
+                                f"        PDF filename from config: {expected_pdf}\n"
+                                f"        This PDF will NOT be deployed to production.\n"
+                                f"        Aborting to prevent incomplete deployment."
+                            )
+                            print(error_msg, file=sys.stderr)
+                            raise FileNotFoundError(error_msg)
+                        else:
+                            print(f"[OK] PDF verified in deployment directory: {expected_path.relative_to(project_root)}")
+                    else:
+                        print(f"[INFO] No PDF output-file specified in {quarto_config_path.name}")
+
+                except Exception as e:
+                    print(f"[WARNING] Failed to validate PDF from config: {e}", file=sys.stderr)
+            else:
+                print(f"[WARNING] Quarto config not found: {quarto_config_path}", file=sys.stderr)
+
+            print()
+
         # Clean up temp directory
         if build_temp and build_temp.exists():
             print("=" * 80)
