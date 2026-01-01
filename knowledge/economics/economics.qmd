@@ -149,7 +149,7 @@ This intervention differs in four critical ways:
 
 3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
-4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors (10% returns), politicians (10% political incentive fund), and patients (80% pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
+4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
 
 ### Contribution to Literature
 
@@ -688,7 +688,7 @@ Bed nets are a consumable intervention requiring ongoing replacement every 3-5 y
 
 The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be 707× better than excellent linear interventions like bed nets.
 
-The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make 99.6% of potential drug-disease combinations economically infeasible to test).
+The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make {{< var unexplored_ratio >}} of potential drug-disease combinations economically infeasible to test).
 
 ## Methodology
 
@@ -1015,7 +1015,7 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration has profo
 
 {{< var status_quo_avg_years_to_cure_latex >}}
 
-This queue-based calculation is empirically grounded: only ~5% of the ~7,000 rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of ~15 diseases/year getting first treatments, a disease entering the queue today would wait an average of {{< var status_quo_avg_years_to_cure >}} years for its first effective treatment to be tested and approved.
+This queue-based calculation is empirically grounded: only ~5% of the {{< var rare_diseases_count_global >}} rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} diseases/year getting first treatments, a disease entering the queue today would wait an average of {{< var status_quo_avg_years_to_cure >}} years for its first effective treatment to be tested and approved.
 
 **With dFDA implementation**:
 

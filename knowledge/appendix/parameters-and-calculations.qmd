@@ -241,7 +241,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.
+Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to cure now take T/speedup years.
 
 **Inputs**:
 
@@ -249,7 +249,7 @@ Combined speedup factor for treatment discovery from dFDA. Trial capacity multip
 - [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4 multiplier
 
 $$
-Speedup_{dFDA} = 25.7 \times 1.4 = 36\times
+Multiplier_{DFDA} = Multiplier_{DFDA} \times Multiplier_{DFDA} = 9.53 \times 1.4 = 13.3
 $$
 
 *~ Medium confidence*
@@ -975,7 +975,9 @@ Total DALYs averted from trial capacity increase alone (~212 years acceleration)
 
 - [Lives Saved from Trial Capacity Increase](#sec-dfda_trial_capacity_lives_saved) 🔢: 10.1B deaths
 
-*Formula*: `DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO`
+$$
+Increase_{DFDA} = Increase_{DFDA} \times 19 = 10.06B \times 19 = 192.17B
+$$
 
 *? Low confidence*
 
@@ -1104,7 +1106,9 @@ Total DALYs averted from the full dFDA timeline shift (~220 years). Scales propo
 
 - [Total Lives Saved from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.5B deaths
 
-*Formula*: `LIVES_SAVED × DALY_PER_DEATH_RATIO`
+$$
+DALYs_{DFDA} = Capacity_{DFDA} \times 19 = 10.48B \times 19 = 200.12B
+$$
 
 *? Low confidence*
 
@@ -3937,7 +3941,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
-Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
+Capacity = Multiplier_{DFDA} \times 20 = 9.53 \times 20 = 190
 $$
 
 *✓ High confidence*

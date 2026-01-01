@@ -105,14 +105,17 @@ def smart_title_case(param_name: str) -> str:
     return ' '.join(result)
 
 
-def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, str | None]:
+def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, str | float | None]:
     """
     Infer operation type by testing the compute function with known values.
 
     Returns:
-        Tuple of (operation_type, order) where:
-        - operation_type: 'sum', 'multiply', 'divide', 'subtract', 'identity', 'complex'
-        - order: For division/subtraction, 'first_over_second' or 'second_over_first'
+        Tuple of (operation_type, metadata) where:
+        - operation_type: 'sum', 'multiply', 'divide', 'subtract', 'identity',
+                         'multiply_constant', 'divide_constant', 'add_constant', 'subtract_constant', 'complex'
+        - metadata: For binary ops between params: 'first_over_second', 'second_over_first', etc.
+                   For constant ops: the constant value (float)
+                   Otherwise: None
     """
     if not hasattr(param_value, 'compute') or not param_value.compute:
         return 'complex', None
@@ -132,9 +135,65 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         return 'complex', None
 
     if n == 1:
-        # Single input - check for identity or simple transformation
-        if abs(result - test_vals[0]) < 0.01:
+        # Single input - check for identity or operations with constants
+        v1 = test_vals[0]  # 2.0
+        r1 = result
+
+        # Check identity first
+        if abs(r1 - v1) < 0.01:
             return 'identity', None
+
+        # Test with a second value to detect constant operations
+        # Use a different test value to extract the constant
+        v2 = 5.0
+        ctx2 = {inputs[0]: v2}
+        try:
+            r2 = param_value.compute(ctx2)
+        except Exception:
+            return 'transform', None
+
+        # Detect multiply by constant: r = v * c
+        # From two tests: r1 = v1 * c, r2 = v2 * c
+        # Therefore: c = r1 / v1 = r2 / v2 (should be equal)
+        if abs(v1) > 0.01 and abs(v2) > 0.01:
+            c1 = r1 / v1
+            c2 = r2 / v2
+            if abs(c1 - c2) < 0.01:
+                # Constant multiplication detected
+                return 'multiply_constant', c1
+
+        # Detect add constant: r = v + c
+        # From two tests: r1 = v1 + c, r2 = v2 + c
+        # Therefore: c = r1 - v1 = r2 - v2 (should be equal)
+        c1 = r1 - v1
+        c2 = r2 - v2
+        if abs(c1 - c2) < 0.01:
+            # Constant addition detected
+            return 'add_constant', c1
+
+        # Detect divide by constant: r = v / c
+        # From two tests: r1 = v1 / c, r2 = v2 / c
+        # Therefore: c = v1 / r1 = v2 / r2 (should be equal)
+        if abs(r1) > 0.01 and abs(r2) > 0.01:
+            c1 = v1 / r1
+            c2 = v2 / r2
+            if abs(c1 - c2) < 0.01:
+                # Constant division detected
+                return 'divide_constant', c1
+
+        # Detect subtract constant: r = v - c OR r = c - v
+        # Case 1: r = v - c, then c = v - r
+        c1 = v1 - r1
+        c2 = v2 - r2
+        if abs(c1 - c2) < 0.01:
+            return 'subtract_constant', c1
+
+        # Case 2: r = c - v, then c = r + v
+        c1 = r1 + v1
+        c2 = r2 + v2
+        if abs(c1 - c2) < 0.01:
+            return 'constant_minus_var', c1
+
         return 'transform', None
 
     elif n == 2:
@@ -695,6 +754,44 @@ def generate_auto_latex(
         symbolic = f"{first['symbolic']} - {second['symbolic']}"
         numeric = f"{first['formatted']} - {second['formatted']}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'multiply_constant' and len(input_data) == 1:
+        # Multiply by constant: X = A × c = val × const = result
+        inp = input_data[0]
+        constant = order  # The constant value is stored in order parameter
+        # Format constant as plain number (no units)
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        latex = f"{lhs_short} = {inp['symbolic']} \\times {const_formatted} = {inp['formatted']} \\times {const_formatted} = {result_formatted}"
+
+    elif operation == 'divide_constant' and len(input_data) == 1:
+        # Divide by constant: X = A / c = val / const = result
+        inp = input_data[0]
+        constant = order
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        symbolic = f"\\frac{{{inp['symbolic']}}}{{{const_formatted}}}"
+        numeric = f"\\frac{{{inp['formatted']}}}{{{const_formatted}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'add_constant' and len(input_data) == 1:
+        # Add constant: X = A + c = val + const = result
+        inp = input_data[0]
+        constant = order
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        latex = f"{lhs_short} = {inp['symbolic']} + {const_formatted} = {inp['formatted']} + {const_formatted} = {result_formatted}"
+
+    elif operation == 'subtract_constant' and len(input_data) == 1:
+        # Subtract constant: X = A - c = val - const = result
+        inp = input_data[0]
+        constant = order
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        latex = f"{lhs_short} = {inp['symbolic']} - {const_formatted} = {inp['formatted']} - {const_formatted} = {result_formatted}"
+
+    elif operation == 'constant_minus_var' and len(input_data) == 1:
+        # Constant minus variable: X = c - A = const - val = result
+        inp = input_data[0]
+        constant = order
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        latex = f"{lhs_short} = {const_formatted} - {inp['symbolic']} = {const_formatted} - {inp['formatted']} = {result_formatted}"
 
     elif operation in ('identity', 'transform') and len(input_data) == 1:
         # Single input transformation: X = A = val = result

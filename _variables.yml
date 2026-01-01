@@ -403,13 +403,13 @@
 "dfda_combined_cure_speedup_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_combined_cure_speedup_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"Combined speedup factor for treatment discovery\
-  \ from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×).\
-  \ With 36× speedup, diseases that would take T years to cure now take T/36 years.\
-  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
+  \ from dFDA. Trial capacity multiplier times valley of death rescue multiplier.\
+  \ Diseases that would take T years to cure now take T/speedup years. | Calculated\
+  \ from 2 inputs | ~ Medium confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
   \ × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER | Unit: multiplier | Click to view details,\
   \ calculation & sources\">15.3 (95% CI: 5.61-38.5)</a>"
-"dfda_combined_cure_speedup_multiplier_latex": "$$\nSpeedup_{dFDA} = 25.7 \\times\
-  \ 1.4 = 36\\times\n$$"
+"dfda_combined_cure_speedup_multiplier_latex": "$$\nMultiplier_{DFDA} = Multiplier_{DFDA}\
+  \ \\times Multiplier_{DFDA} = 9.53 \\times 1.4 = 13.3\n$$"
 "dfda_cures_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_cures_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
@@ -695,6 +695,8 @@
   \ the same DALY/death ratio. | Calculated from 1 input | ? Low confidence | Formula:\
   \ DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to\
   \ view details, calculation & sources\">209B (95% CI: 127B-299B)</a>"
+"dfda_trial_capacity_dalys_averted_latex": "$$\nIncrease_{DFDA} = Increase_{DFDA}\
+  \ \\times 19 = 10.06B \\times 19 = 192.17B\n$$"
 "dfda_trial_capacity_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total economic value from trial capacity increase\
@@ -729,6 +731,8 @@
   \ DALY/death ratio. | Calculated from 1 input | ? Low confidence | Formula: LIVES_SAVED\
   \ × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to view details, calculation & sources\"\
   >217B (95% CI: 139B-303B)</a>"
+"dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\nDALYs_{DFDA} = Capacity_{DFDA}\
+  \ \\times 19 = 10.48B \\times 19 = 200.12B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total economic value from the full dFDA timeline\
@@ -2345,8 +2349,8 @@
   \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
   \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">218\
   \ (95% CI: 80-550)</a>"
-"trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
-  \ 20 = 514 \\text{ years}\n$$"
+"trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity = Multiplier_{DFDA} \\\
+  times 20 = 9.53 \\times 20 = 190\n$$"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
@@ -2513,5 +2517,5 @@
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "total_parameter_count": "352"
-"total_latex_equation_count": "138"
+"total_latex_equation_count": "140"
 "total_citation_count": "137"

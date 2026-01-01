@@ -3584,7 +3584,7 @@ DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"],
     inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DIH_PATIENTS_FUNDABLE_ANNUALLY'],
     compute=lambda ctx: ctx["DIH_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
-)  # 25.7x trial capacity multiplier from simple funding economics
+)  # Trial capacity multiplier from simple funding economics (DIH patients fundable / current trial slots)
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     int(DFDA_TRIAL_CAPACITY_MULTIPLIER * 20),
@@ -3593,11 +3593,10 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     display_name="Cumulative Trial Capacity Years Over 20 Years",
     unit="years",
     formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
-    latex=r"Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}",
     keywords=["trial", "capacity", "cumulative", "20 years"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20),
-)  # ~514 trial-capacity-equivalent years (25.7x capacity × 20 years)
+)  # Auto-generated LaTeX from calculated value
 
 # ==============================================================================
 # CURE TIMELINE ACCELERATION PARAMETERS
@@ -3606,7 +3605,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
 # accelerate the timeline for discovering and approving cures.
 #
 # Two mechanisms:
-# 1. PARALLEL SEARCH: 25.7× capacity means testing 25.7× more candidates
+# 1. PARALLEL SEARCH: Higher trial capacity means testing more candidates
 #    simultaneously, compressing discovery timelines
 # 2. COST BARRIER REMOVAL: Eliminating Phase 2/3 costs enables more drugs
 #    to enter development (valley of death elimination)
@@ -3665,14 +3664,14 @@ VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
 # Simple model: Speedup factor × baseline time = acceleration
 #
 # Speedup from two sources (multiplicative):
-# 1. Trial capacity multiplier (25.7×) - test more compounds in parallel
-# 2. Cost barrier rescue factor (1.4×) - 40% more drugs enter development
+# 1. Trial capacity multiplier - test more compounds in parallel
+# 2. Cost barrier rescue factor (~1.4×) - valley of death elimination
 #
-# Combined speedup: 25.7 × 1.4 = ~36×
-# Acceleration = Baseline × (1 - 1/Speedup) ≈ Baseline × 97%
+# Combined speedup = Trial capacity × Cost barrier rescue
+# Acceleration = Baseline × (1 - 1/Speedup)
 #
-# The key insight: With 36× speedup, cures that would take T years now take T/36.
-# Acceleration ≈ T (you get almost all the baseline time back).
+# The key insight: With higher speedup, cures that would take T years now take T/speedup.
+# Acceleration ≈ T × (1 - 1/speedup) (you get most of the baseline time back).
 #
 # Uncertainty is primarily in the BASELINE estimate:
 # - Well-funded diseases: maybe 30-50 years to cure
@@ -3714,20 +3713,19 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
 )  # 1.4× more drugs when dFDA eliminates cost barrier
 
 # Combined cure speedup from dFDA implementation
-# Trial capacity (25.7×) × valley of death rescue (1.4×) = ~36×
+# Trial capacity multiplier × valley of death rescue multiplier
 DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
     source_type="calculated",
-    description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+    description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to cure now take T/speedup years.",
     display_name="dFDA Combined Treatment Discovery Speedup Multiplier",
     unit="multiplier",
     formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
-    latex=r"Speedup_{dFDA} = 25.7 \times 1.4 = 36\times",
     confidence="medium",
     keywords=["dfda", "cure", "speedup", "combined", "multiplier"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
-)  # ~36× combined speedup from dFDA
+)  # Auto-generated LaTeX from calculated value
 
 # Rare diseases (moved here to enable calculated parameters below)
 RARE_DISEASES_COUNT_GLOBAL = Parameter(
@@ -5100,22 +5098,22 @@ def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     """
     Calculate trial capacity multiplier for a given treaty percentage.
 
-    Uses linear scaling from the base DFDA_TRIAL_CAPACITY_MULTIPLIER (25.7x at 1% treaty).
+    Uses linear scaling from the base DFDA_TRIAL_CAPACITY_MULTIPLIER at 1% treaty.
 
     Formula:
         Multiplier = DFDA_TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01)
 
-    Examples:
-    - 1% treaty: 25.7 × (0.01 / 0.01) = 25.7x
-    - 2% treaty: 25.7 × (0.02 / 0.01) = 51.4x
-    - 5% treaty: 25.7 × (0.05 / 0.01) = 128.5x
-    - 10% treaty: 25.7 × (0.10 / 0.01) = 257x
+    Examples (assuming base multiplier of 9.53x):
+    - 1% treaty: 9.53 × (0.01 / 0.01) = 9.53x
+    - 2% treaty: 9.53 × (0.02 / 0.01) = 19.1x
+    - 5% treaty: 9.53 × (0.05 / 0.01) = 47.7x
+    - 10% treaty: 9.53 × (0.10 / 0.01) = 95.3x
 
     Args:
         treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
 
     Returns:
-        Trial capacity multiplier (e.g., 25.7 = 25.7x more trial slots available)
+        Trial capacity multiplier (scales with treaty percentage)
     """
     return float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
 

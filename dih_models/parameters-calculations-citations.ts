@@ -1614,11 +1614,11 @@ export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
   value: 13.336842105263159,
   unit: "multiplier",
   displayName: "dFDA Combined Treatment Discovery Speedup Multiplier",
-  description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier (25.7×) times valley of death rescue (1.4×). With 36× speedup, diseases that would take T years to cure now take T/36 years.",
+  description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to cure now take T/speedup years.",
   sourceType: "calculated",
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
-  latex: "Speedup_{dFDA} = 25.7 \\times 1.4 = 36\\times",
+  latex: "Multiplier_{DFDA} = Multiplier_{DFDA} \\times Multiplier_{DFDA} = 9.53 \\times 1.4 = 13.3",
 };
 
 export const DFDA_CURES_PER_YEAR: Parameter = {
@@ -1864,6 +1864,7 @@ export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
+  latex: "Increase_{DFDA} = Increase_{DFDA} \\times 19 = 10.06B \\times 19 = 192.17B",
 };
 
 export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
@@ -1907,6 +1908,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
+  latex: "DALYs_{DFDA} = Capacity_{DFDA} \\times 19 = 10.48B \\times 19 = 200.12B",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
@@ -2871,7 +2873,7 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
-  latex: "Capacity_{20yr} = 25.7 \\times 20 = 514 \\text{ years}",
+  latex: "Capacity = Multiplier_{DFDA} \\times 20 = 9.53 \\times 20 = 190",
 };
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
