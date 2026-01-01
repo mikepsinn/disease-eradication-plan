@@ -1,234 +1,187 @@
-#!/usr/bin/env tsx
+#!/usr/bin/env node
 /**
- * Find and Replace Across QMD Files
- * ==================================
- *
- * Performs bulk find-and-replace operations across all .qmd files in the project.
- * Uses the centralized file-utils library for consistent file handling.
- *
+ * Bulk find-and-replace across multiple file types in the project
+ * 
  * Usage:
- *   # Basic find and replace (dry run by default)
- *   npx tsx scripts/find-and-replace.ts "old text" "new text"
- *
- *   # Multiple replacements
- *   npx tsx scripts/find-and-replace.ts "text1" "replacement1" "text2" "replacement2"
- *
- *   # Using regex (wrap in slashes)
- *   npx tsx scripts/find-and-replace.ts "/word—word/g" "word, word"
- *
- *   # Actually apply changes (not dry run)
- *   npx tsx scripts/find-and-replace.ts --apply "old text" "new text"
- *
- *   # Search in specific directory
- *   npx tsx scripts/find-and-replace.ts --path knowledge/proof "old" "new"
- *
+ *   npx tsx scripts/find-and-replace.ts "search" "replace" [options]
+ *   npx tsx scripts/find-and-replace.ts --pairs pairs.json [options]
+ * 
  * Options:
- *   --apply         Actually apply changes (default: dry run)
- *   --path <dir>    Limit search to specific directory (default: all .qmd files)
- *   --help          Show this help message
- *
+ *   --dry-run              Show what would be changed without making changes
+ *   --extensions .ext,...  File extensions to search (default: .qmd,.md,.py,.yml,.yaml,.ts,.js)
+ *   --path <path>          Base path to search (default: project root)
+ *   --include-generated    Include auto-generated files (default: exclude)
+ *   --pairs <file>         JSON file with array of [search, replace] pairs
+ *   --regex                Treat search pattern as regex
+ * 
  * Examples:
- *   # Replace em-dashes with comma-space (dry run)
- *   npx tsx scripts/find-and-replace.ts "/([a-zA-Z])—([a-zA-Z])/g" "$1, $2"
- *
- *   # Replace outdated term across all files
- *   npx tsx scripts/find-and-replace.ts --apply "dFDA" "Decentralized FDA"
- *
- *   # Multiple replacements in one pass
- *   npx tsx scripts/find-and-replace.ts --apply \
- *     "utilise" "use" \
- *     "optimise" "optimize" \
- *     "grey" "gray"
+ *   # Simple replacement
+ *   npx tsx scripts/find-and-replace.ts "old-text" "new-text"
+ * 
+ *   # Multiple file types
+ *   npx tsx scripts/find-and-replace.ts "old-text" "new-text" --extensions .qmd,.md
+ * 
+ *   # Dry run to preview changes
+ *   npx tsx scripts/find-and-replace.ts "old-text" "new-text" --dry-run
+ * 
+ *   # From JSON file with multiple pairs
+ *   npx tsx scripts/find-and-replace.ts --pairs replacements.json
+ * 
+ *   # Regex replacement
+ *   npx tsx scripts/find-and-replace.ts "image-(\d+)\.png" "figure-$1.jpg" --regex
  */
 
-import { bulkReplaceInQmdFiles, type BulkReplaceResult } from './lib/file-utils';
+import * as fs from 'fs/promises';
+import { bulkReplaceInFiles } from './lib/file-utils';
 
-function parseArgs(args: string[]): {
-  replacements: Map<string | RegExp, string>;
-  options: { basePath?: string; dryRun: boolean };
-  showHelp: boolean;
-} {
-  const replacements = new Map<string | RegExp, string>();
-  const options: { basePath?: string; dryRun: boolean } = { dryRun: true };
-  let showHelp = false;
+interface Args {
+  search?: string;
+  replace?: string;
+  dryRun: boolean;
+  extensions: string[];
+  basePath: string;
+  includeGenerated: boolean;
+  pairsFile?: string;
+  useRegex: boolean;
+}
 
-  let i = 0;
-  while (i < args.length) {
+function parseArgs(): Args {
+  const args = process.argv.slice(2);
+  
+  const parsed: Args = {
+    dryRun: false,
+    extensions: ['.qmd', '.md', '.py', '.yml', '.yaml', '.ts', '.js'],
+    basePath: '',
+    includeGenerated: false,
+    useRegex: false,
+  };
+
+  for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-
-    if (arg === '--help' || arg === '-h') {
-      showHelp = true;
-      break;
+    
+    switch (arg) {
+      case '--dry-run':
+        parsed.dryRun = true;
+        break;
+      case '--regex':
+        parsed.useRegex = true;
+        break;
+      case '--include-generated':
+        parsed.includeGenerated = true;
+        break;
+      case '--extensions':
+        if (i + 1 < args.length) {
+          parsed.extensions = args[++i].split(',').map(ext => 
+            ext.startsWith('.') ? ext : `.${ext}`
+          );
+        }
+        break;
+      case '--path':
+        if (i + 1 < args.length) {
+          parsed.basePath = args[++i];
+        }
+        break;
+      case '--pairs':
+        if (i + 1 < args.length) {
+          parsed.pairsFile = args[++i];
+        }
+        break;
+      default:
+        if (!arg.startsWith('--')) {
+          if (!parsed.search) {
+            parsed.search = arg;
+          } else if (!parsed.replace) {
+            parsed.replace = arg;
+          }
+        }
+        break;
     }
-
-    if (arg === '--apply') {
-      options.dryRun = false;
-      i++;
-      continue;
-    }
-
-    if (arg === '--path') {
-      options.basePath = args[i + 1];
-      i += 2;
-      continue;
-    }
-
-    // Remaining args should be find/replace pairs
-    const searchArg = args[i];
-    const replaceArg = args[i + 1];
-
-    if (!searchArg || !replaceArg) {
-      throw new Error(`Invalid argument pair at position ${i}. Expected: "search" "replace"`);
-    }
-
-    // Check if search arg is a regex (wrapped in slashes)
-    const regexMatch = searchArg.match(/^\/(.+)\/([gimuy]*)$/);
-    if (regexMatch) {
-      const pattern = regexMatch[1];
-      const flags = regexMatch[2];
-      replacements.set(new RegExp(pattern, flags), replaceArg);
-    } else {
-      replacements.set(searchArg, replaceArg);
-    }
-
-    i += 2;
   }
 
-  return { replacements, options, showHelp };
-}
-
-function printHelp(): void {
-  const helpText = `
-Find and Replace Across QMD Files
-==================================
-
-Performs bulk find-and-replace operations across all .qmd files in the project.
-
-USAGE:
-  npx tsx scripts/find-and-replace.ts [OPTIONS] <search> <replace> [<search2> <replace2> ...]
-
-OPTIONS:
-  --apply         Actually apply changes (default: dry run)
-  --path <dir>    Limit search to specific directory (default: all .qmd files)
-  --help, -h      Show this help message
-
-ARGUMENTS:
-  <search>        Text or regex pattern to find (regex: /pattern/flags)
-  <replace>       Replacement text (can use $1, $2 for regex groups)
-
-EXAMPLES:
-  # Dry run - preview changes without applying
-  npx tsx scripts/find-and-replace.ts "old text" "new text"
-
-  # Apply changes
-  npx tsx scripts/find-and-replace.ts --apply "old text" "new text"
-
-  # Replace with regex (em-dashes to comma-space)
-  npx tsx scripts/find-and-replace.ts --apply "/([a-zA-Z])—([a-zA-Z])/g" "$1, $2"
-
-  # Multiple replacements in one pass
-  npx tsx scripts/find-and-replace.ts --apply \\
-    "utilise" "use" \\
-    "optimise" "optimize" \\
-    "grey" "gray"
-
-  # Limit to specific directory
-  npx tsx scripts/find-and-replace.ts --apply --path knowledge/proof "old" "new"
-
-NOTES:
-  - Dry run is the default - use --apply to actually modify files
-  - Respects .gitignore patterns
-  - Regex flags: g (global), i (case-insensitive), m (multiline)
-  - Use double quotes around patterns with special characters
-`;
-  console.log(helpText);
-}
-
-function printResults(result: BulkReplaceResult, dryRun: boolean): void {
-  console.log('\n' + '='.repeat(80));
-  console.log(dryRun ? 'DRY RUN RESULTS (no files modified)' : 'REPLACEMENT RESULTS');
-  console.log('='.repeat(80));
-  console.log(`Total files scanned: ${result.totalFiles}`);
-  console.log(`Files with changes: ${result.filesChanged}`);
-  console.log(`Total replacements: ${result.totalChanges}`);
-
-  if (result.filesChanged > 0) {
-    console.log('\n' + '-'.repeat(80));
-    console.log('FILES MODIFIED:');
-    console.log('-'.repeat(80));
-
-    for (const { file, changes } of result.details) {
-      console.log(`  ${file} (${changes} replacement${changes !== 1 ? 's' : ''})`);
-    }
-  } else {
-    console.log('\nNo files matched the search pattern(s).');
-  }
-
-  if (dryRun && result.filesChanged > 0) {
-    console.log('\n' + '='.repeat(80));
-    console.log('⚠️  DRY RUN MODE - No files were actually modified');
-    console.log('Run with --apply to apply these changes');
-    console.log('='.repeat(80));
-  }
-
-  console.log();
+  return parsed;
 }
 
 async function main() {
-  try {
-    const { replacements, options, showHelp } = parseArgs(process.argv.slice(2));
+  const args = parseArgs();
 
-    if (showHelp) {
-      printHelp();
-      process.exit(0);
+  // Build replacement map
+  const replacements = new Map<string | RegExp, string>();
+
+  if (args.pairsFile) {
+    // Load from JSON file
+    console.log(`Loading replacement pairs from ${args.pairsFile}...`);
+    const jsonContent = await fs.readFile(args.pairsFile, 'utf-8');
+    const pairs: Array<[string, string]> = JSON.parse(jsonContent);
+    
+    for (const [search, replace] of pairs) {
+      replacements.set(search, replace);
     }
-
-    if (replacements.size === 0) {
-      console.error('Error: No search/replace pairs provided\n');
-      printHelp();
-      process.exit(1);
-    }
-
-    // Show what we're searching for
-    console.log('\n' + '='.repeat(80));
-    console.log('FIND AND REPLACE CONFIGURATION');
-    console.log('='.repeat(80));
-    console.log(`Mode: ${options.dryRun ? 'DRY RUN (preview only)' : 'APPLY CHANGES'}`);
-    console.log(`Path: ${options.basePath || 'all .qmd files'}`);
-    console.log('\nReplacements:');
-
-    let index = 1;
-    for (const [search, replace] of replacements.entries()) {
-      const searchStr = search instanceof RegExp ? `/${search.source}/${search.flags}` : `"${search}"`;
-      const replaceStr = `"${replace}"`;
-      console.log(`  ${index}. ${searchStr} → ${replaceStr}`);
-      index++;
-    }
-
-    console.log('='.repeat(80));
-    console.log('\nProcessing files...\n');
-
-    // Perform the replacement
-    const result = await bulkReplaceInQmdFiles(replacements, options);
-
-    // Print results
-    printResults(result, options.dryRun);
-
-    // Exit with error code if dry run and changes were found (to indicate action needed)
-    if (options.dryRun && result.filesChanged > 0) {
-      process.exit(1);
-    }
-
-    process.exit(0);
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(`\nError: ${error.message}\n`);
-    } else {
-      console.error('\nUnknown error occurred\n');
-    }
-    printHelp();
+    
+    console.log(`Loaded ${pairs.length} replacement pairs`);
+  } else if (args.search && args.replace) {
+    // Single pair from command line
+    const searchPattern = args.useRegex 
+      ? new RegExp(args.search, 'g')
+      : args.search;
+    replacements.set(searchPattern, args.replace);
+  } else {
+    console.error('Error: Must provide either search/replace arguments or --pairs file');
+    console.error('\nUsage:');
+    console.error('  npx tsx scripts/find-and-replace.ts "search" "replace" [options]');
+    console.error('  npx tsx scripts/find-and-replace.ts --pairs pairs.json [options]');
     process.exit(1);
   }
+
+  console.log('\n' + '='.repeat(80));
+  console.log('BULK FIND AND REPLACE');
+  console.log('='.repeat(80));
+  console.log(`Mode: ${args.dryRun ? 'DRY RUN (preview only)' : 'LIVE (making changes)'}`);
+  console.log(`File types: ${args.extensions.join(', ')}`);
+  console.log(`Base path: ${args.basePath || 'project root'}`);
+  console.log(`Include auto-generated: ${args.includeGenerated ? 'yes' : 'no'}`);
+  console.log(`Replacements: ${replacements.size} pair(s)`);
+  
+  // Show replacement pairs
+  console.log('\nReplacement pairs:');
+  for (const [search, replace] of replacements.entries()) {
+    const searchStr = search instanceof RegExp ? search.source : search;
+    console.log(`  "${searchStr}" -> "${replace}"`);
+  }
+
+  console.log('\nSearching files...\n');
+
+  const result = await bulkReplaceInFiles(replacements, {
+    extensions: args.extensions,
+    basePath: args.basePath,
+    dryRun: args.dryRun,
+    excludeAutoGenerated: !args.includeGenerated,
+  });
+
+  console.log('='.repeat(80));
+  console.log('RESULTS');
+  console.log('='.repeat(80));
+  console.log(`Files scanned: ${result.totalFiles}`);
+  console.log(`Files changed: ${result.filesChanged}`);
+  console.log(`Total changes: ${result.totalChanges}`);
+
+  if (result.filesChanged > 0) {
+    console.log('\nFiles with changes:');
+    for (const detail of result.details) {
+      console.log(`  ${detail.file} (${detail.changes} change${detail.changes > 1 ? 's' : ''})`);
+    }
+  }
+
+  if (args.dryRun && result.filesChanged > 0) {
+    console.log('\n' + '='.repeat(80));
+    console.log('DRY RUN: No files were modified.');
+    console.log('Run without --dry-run to apply changes.');
+    console.log('='.repeat(80));
+  }
+
+  process.exit(0);
 }
 
-main();
+main().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

@@ -1,0 +1,257 @@
+#!/usr/bin/env node
+/**
+ * Fix image file extensions that don't match their actual format
+ * Renames mismatched files and updates all references in the codebase
+ * 
+ * Usage:
+ *   npx tsx scripts/fix-image-extensions.ts [options]
+ * 
+ * Options:
+ *   --dry-run    Preview changes without modifying files
+ *   --dir <path> Directory to scan (default: assets)
+ */
+
+import * as fs from 'fs/promises';
+import * as fsSync from 'fs';
+import * as path from 'path';
+import { glob } from 'glob';
+import { bulkReplaceInFiles, getProjectRoot } from './lib/file-utils';
+
+interface MismatchedImage {
+  path: string;
+  currentExt: string;
+  actualFormat: string;
+  newExt: string;
+}
+
+const FORMAT_TO_EXT: Record<string, string> = {
+  'JPEG': '.jpg',
+  'PNG': '.png',
+  'GIF': '.gif',
+  'WEBP': '.webp',
+  'BMP': '.bmp',
+  'TIFF': '.tiff',
+};
+
+const EXT_TO_FORMAT: Record<string, string> = {
+  '.png': 'PNG',
+  '.jpg': 'JPEG',
+  '.jpeg': 'JPEG',
+  '.gif': 'GIF',
+  '.webp': 'WEBP',
+  '.bmp': 'BMP',
+  '.tiff': 'TIFF',
+};
+
+/**
+ * Check image format using magic bytes (file signature)
+ * More reliable than file extension
+ */
+function getImageFormat(filePath: string): string | null {
+  try {
+    const buffer = fsSync.readFileSync(filePath);
+    
+    // Check magic bytes
+    if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
+      return 'PNG';
+    }
+    if (buffer[0] === 0xFF && buffer[1] === 0xD8 && buffer[2] === 0xFF) {
+      return 'JPEG';
+    }
+    if (buffer[0] === 0x47 && buffer[1] === 0x49 && buffer[2] === 0x46) {
+      return 'GIF';
+    }
+    if (buffer[8] === 0x57 && buffer[9] === 0x45 && buffer[10] === 0x42 && buffer[11] === 0x50) {
+      return 'WEBP';
+    }
+    if (buffer[0] === 0x42 && buffer[1] === 0x4D) {
+      return 'BMP';
+    }
+    
+    return null;
+  } catch (error) {
+    console.error(`  [ERROR] Could not read ${filePath}:`, error);
+    return null;
+  }
+}
+
+async function findMismatchedImages(rootDir: string): Promise<MismatchedImage[]> {
+  const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.tiff'];
+  const mismatches: MismatchedImage[] = [];
+  
+  // Find all image files
+  const allFiles: string[] = [];
+  for (const ext of imageExtensions) {
+    const pattern = `${rootDir}/**/*${ext}`;
+    const files = await glob(pattern);
+    allFiles.push(...files);
+  }
+  
+  console.log(`Found ${allFiles.length} image files to check...`);
+  
+  for (const filePath of allFiles) {
+    const ext = path.extname(filePath).toLowerCase();
+    const actualFormat = getImageFormat(filePath);
+    
+    if (!actualFormat) {
+      continue;
+    }
+    
+    const expectedFormat = EXT_TO_FORMAT[ext];
+    
+    if (actualFormat !== expectedFormat) {
+      const newExt = FORMAT_TO_EXT[actualFormat];
+      if (newExt && newExt !== ext) {
+        mismatches.push({
+          path: filePath,
+          currentExt: ext,
+          actualFormat,
+          newExt
+        });
+      }
+    }
+  }
+  
+  return mismatches;
+}
+
+async function renameFiles(mismatches: MismatchedImage[], dryRun: boolean): Promise<Map<string, string>> {
+  const replacements = new Map<string, string>();
+  let renamed = 0;
+  
+  console.log('\n' + '='.repeat(80));
+  console.log(`${dryRun ? 'DRY RUN: ' : ''}RENAMING FILES`);
+  console.log('='.repeat(80));
+  
+  for (const item of mismatches) {
+    const oldPath = item.path;
+    const newPath = oldPath.replace(new RegExp(`${item.currentExt}$`), item.newExt);
+    
+    // Use forward slashes for consistency (works cross-platform)
+    const oldRef = oldPath.replace(/\\/g, '/');
+    const newRef = newPath.replace(/\\/g, '/');
+    
+    console.log(`${dryRun ? '[DRY RUN] ' : ''}${oldRef}`);
+    console.log(`       -> ${newRef}`);
+    
+    if (!dryRun) {
+      try {
+        // Check if target exists
+        if (fsSync.existsSync(newPath)) {
+          console.log(`  [WARNING] Target exists, skipping`);
+          continue;
+        }
+        
+        await fs.rename(oldPath, newPath);
+        renamed++;
+      } catch (error) {
+        console.log(`  [ERROR] Failed to rename: ${error}`);
+        continue;
+      }
+    } else {
+      renamed++;
+    }
+    
+    replacements.set(oldRef, newRef);
+  }
+  
+  console.log(`\n${dryRun ? 'Would rename' : 'Renamed'} ${renamed} files`);
+  
+  return replacements;
+}
+
+async function updateReferences(replacements: Map<string, string>, dryRun: boolean): Promise<void> {
+  if (replacements.size === 0) {
+    console.log('\nNo references to update');
+    return;
+  }
+  
+  console.log('\n' + '='.repeat(80));
+  console.log(`${dryRun ? 'DRY RUN: ' : ''}UPDATING REFERENCES`);
+  console.log('='.repeat(80));
+  console.log(`Processing ${replacements.size} replacements...`);
+  console.log(`File types: .qmd, .md, .py, .yml, .yaml, .ts, .js\n`);
+  
+  const result = await bulkReplaceInFiles(replacements, {
+    extensions: ['.qmd', '.md', '.py', '.yml', '.yaml', '.ts', '.js'],
+    dryRun,
+    excludeAutoGenerated: false, // Include all files for image path updates
+  });
+  
+  console.log('='.repeat(80));
+  console.log('REFERENCE UPDATE RESULTS');
+  console.log('='.repeat(80));
+  console.log(`Files scanned: ${result.totalFiles}`);
+  console.log(`Files updated: ${result.filesChanged}`);
+  console.log(`Total changes: ${result.totalChanges}`);
+  
+  if (result.filesChanged > 0) {
+    console.log('\nFiles with changes:');
+    const sortedDetails = result.details.sort((a, b) => b.changes - a.changes);
+    for (const detail of sortedDetails.slice(0, 20)) {
+      console.log(`  ${detail.file} (${detail.changes} change${detail.changes > 1 ? 's' : ''})`);
+    }
+    if (result.details.length > 20) {
+      console.log(`  ... and ${result.details.length - 20} more files`);
+    }
+  }
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const dryRun = args.includes('--dry-run');
+  const dirIndex = args.indexOf('--dir');
+  const scanDir = dirIndex >= 0 && args[dirIndex + 1] ? args[dirIndex + 1] : 'assets';
+  
+  console.log('='.repeat(80));
+  console.log('FIX IMAGE EXTENSIONS');
+  console.log('='.repeat(80));
+  console.log(`Mode: ${dryRun ? 'DRY RUN (preview only)' : 'LIVE (making changes)'}`);
+  console.log(`Directory: ${scanDir}`);
+  console.log();
+  
+  // Step 1: Find mismatched files
+  console.log('Scanning for mismatched image extensions...');
+  const mismatches = await findMismatchedImages(scanDir);
+  
+  if (mismatches.length === 0) {
+    console.log('\n✓ All image files have correct extensions!');
+    return;
+  }
+  
+  console.log(`\nFound ${mismatches.length} files with mismatched extensions:`);
+  
+  // Group by type
+  const byType = new Map<string, number>();
+  for (const item of mismatches) {
+    const key = `${item.currentExt} (actually ${item.actualFormat})`;
+    byType.set(key, (byType.get(key) || 0) + 1);
+  }
+  
+  for (const [type, count] of byType) {
+    console.log(`  ${count} files: ${type}`);
+  }
+  
+  // Step 2: Rename files
+  const replacements = await renameFiles(mismatches, dryRun);
+  
+  // Step 3: Update references
+  await updateReferences(replacements, dryRun);
+  
+  // Final summary
+  console.log('\n' + '='.repeat(80));
+  if (dryRun) {
+    console.log('DRY RUN COMPLETE');
+    console.log('Run without --dry-run to apply changes');
+  } else {
+    console.log('✓ COMPLETE');
+    console.log(`Renamed ${replacements.size} files and updated all references`);
+  }
+  console.log('='.repeat(80));
+}
+
+main().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});
+
