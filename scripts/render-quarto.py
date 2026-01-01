@@ -29,18 +29,20 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from typing import Optional
 
 # Set UTF-8 encoding for stdout on Windows
-if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
 
 # Force line buffering for GitHub Actions (ensures output appears immediately)
-sys.stdout.reconfigure(line_buffering=True)
-sys.stderr.reconfigure(line_buffering=True)
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(line_buffering=True)  # type: ignore[union-attr]
+    sys.stderr.reconfigure(line_buffering=True)  # type: ignore[union-attr]
 
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
-from quarto_pre_build import (
+from quarto_pre_build import (  # type: ignore[import-not-found]
     prepare_economics,
     prepare_wishocracy,
     prepare_iab,
@@ -48,7 +50,7 @@ from quarto_pre_build import (
     prepare_book,
     prepare_pdf_build_temp
 )
-from render_utils import (
+from render_utils import (  # type: ignore[import-not-found]
     BuildMonitor,
     create_latex_parser,
     ensure_jupyter_kernel,
@@ -91,11 +93,11 @@ CONFIGS = {
 
 def render_quarto(
     config_name: str,
-    format_override: str = None,
+    format_override: Optional[str] = None,
     verify: bool = False,
-    quarto_args: list = None,
+    quarto_args: Optional[list] = None,
     timeout: int = 900,
-    log_file: str = None,
+    log_file: Optional[str] = None,
     fail_on_warnings: bool = True,
     kill_existing: bool = False
 ) -> int:
