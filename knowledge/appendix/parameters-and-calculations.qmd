@@ -899,7 +899,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+Years earlier the average cure arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
 
 **Inputs**:
 
@@ -907,7 +907,7 @@ Years earlier the average cure arrives due to dFDA's trial capacity increase. Wi
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 9.53 ratio
 
 $$
-Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}
+Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 198
 $$
 
 *? Low confidence*
@@ -932,7 +932,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.
+Total DALYs averted from trial capacity increase alone. Scales proportionally from lives saved using the same DALY/death ratio.
 
 **Inputs**:
 
@@ -964,7 +964,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.
+Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.
 
 **Inputs**:
 
@@ -997,7 +997,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.
+Total eventually avoidable deaths from trial capacity increase alone. Represents cures arriving earlier due to faster queue processing from increased trial capacity.
 
 **Inputs**:
 
@@ -1005,7 +1005,7 @@ Total eventually avoidable deaths from trial capacity increase alone (~212 years
 - [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 198 years
 
 $$
-Lives_{trial\ capacity} = 54.75M \times 212 \times 92.1\% = 10.7B
+Increase_{DFDA} = ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \times AVOIDABLE_PCT = 10.1B
 $$
 
 *? Low confidence*
@@ -1063,7 +1063,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.
+Total DALYs averted from the combined dFDA timeline shift. Scales proportionally from lives saved using the same DALY/death ratio.
 
 **Inputs**:
 
@@ -1095,7 +1095,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.
+Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.
 
 **Inputs**:
 
@@ -1128,7 +1128,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).
+Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
 
 **Inputs**:
 
@@ -1136,7 +1136,7 @@ Total eventually avoidable deaths from the average dFDA timeline shift (~220 yea
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 207 years
 
 $$
-Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B
+Capacity_{DFDA} = ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS \times AVOIDABLE_PCT = 10.5B
 $$
 
 *? Low confidence*
@@ -1161,7 +1161,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Hours of suffering eliminated from the full dFDA timeline shift (~220 years): trial capacity increase (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.
+Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.
 
 **Inputs**:
 
@@ -1195,7 +1195,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.
+Average years earlier patients receive cures due to dFDA. Combines cure timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
 
 **Inputs**:
 
@@ -2284,7 +2284,9 @@ Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
-*Formula*: `(TOTAL - GOVT) / GOVT`
+$$
+Ratio = (TOTAL - GOVT) / GOVT = 12.3
+$$
 
 **Methodology**: [Applied Clinical Trials - Industry vs. Government Clinical Trial Spending Split (90/10)](../references.qmd#industry-vs-government-trial-spending-split)
 

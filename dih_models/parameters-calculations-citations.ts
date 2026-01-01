@@ -1837,18 +1837,18 @@ export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
   value: 198.39779005524863,
   unit: "years",
   displayName: "dFDA Treatment Timeline Acceleration",
-  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
-  latex: "Accel_{dFDA} = 222 \\text{ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}",
+  latex: "Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 198",
 };
 
 export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
   value: 192174476763.0,
   unit: "DALYs",
   displayName: "DALYs Averted from Trial Capacity Increase",
-  description: "Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.",
+  description: "Total DALYs averted from trial capacity increase alone. Scales proportionally from lives saved using the same DALY/death ratio.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
@@ -1859,7 +1859,7 @@ export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
   value: 2.882617151445e+16,
   unit: "USD",
   displayName: "Economic Value from Trial Capacity Increase",
-  description: "Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.",
+  description: "Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
@@ -1870,11 +1870,11 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
   value: 10061490930.0,
   unit: "deaths",
   displayName: "Lives Saved from Trial Capacity Increase",
-  description: "Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.",
+  description: "Total eventually avoidable deaths from trial capacity increase alone. Represents cures arriving earlier due to faster queue processing from increased trial capacity.",
   sourceType: "calculated",
   confidence: "low",
   formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT",
-  latex: "Lives_{trial\\ capacity} = 54.75M \\times 212 \\times 92.1\\% = 10.7B",
+  latex: "Increase_{DFDA} = ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.1B",
 };
 
 export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
@@ -1892,7 +1892,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
   value: 200117260353.0,
   unit: "DALYs",
   displayName: "Total DALYs from Full Timeline Shift",
-  description: "Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
+  description: "Total DALYs averted from the combined dFDA timeline shift. Scales proportionally from lives saved using the same DALY/death ratio.",
   sourceType: "calculated",
   confidence: "low",
   formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
@@ -1903,7 +1903,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
   value: 3.001758905295e+16,
   unit: "USD",
   displayName: "Total Economic Value from Full Timeline Shift",
-  description: "Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
+  description: "Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DALYS × STANDARD_QALY_VALUE",
@@ -1914,18 +1914,18 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
   value: 10477343474.0,
   unit: "deaths",
   displayName: "Total Lives Saved from Full Timeline Shift",
-  description: "Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
+  description: "Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
   sourceType: "calculated",
   confidence: "low",
   formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT",
-  latex: "Lives_{saved} = 54.75M \\times 220 \\times 92.1\\% = 11.1B",
+  latex: "Capacity_{DFDA} = ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS \\times AVOIDABLE_PCT = 10.5B",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = {
   value: 192741210547318.0,
   unit: "hours",
   displayName: "Suffering Hours Eliminated from Full Timeline Shift",
-  description: "Hours of suffering eliminated from the full dFDA timeline shift (~220 years): trial capacity increase (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
+  description: "Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "low",
@@ -1937,7 +1937,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
   value: 206.59779005524862,
   unit: "years",
   displayName: "dFDA Average Total Timeline Shift",
-  description: "Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
+  description: "Average years earlier patients receive cures due to dFDA. Combines cure timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
@@ -2311,6 +2311,7 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   sourceRef: "industry-vs-government-trial-spending-split",
   confidence: "high",
   formula: "(TOTAL - GOVT) / GOVT",
+  latex: "Ratio = (TOTAL - GOVT) / GOVT = 12.3",
 };
 
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {

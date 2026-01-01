@@ -667,42 +667,42 @@
 "dfda_trial_capacity_cure_acceleration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_cure_acceleration_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Years earlier the average cure arrives due to\
-  \ dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures\
-  \ arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with\
-  \ valley of death rescue) because additional candidates don't directly speed queue\
-  \ processing. | Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_CURE\
-  \ × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) | Unit: years | Click to view details,\
-  \ calculation & sources\">198 (95% CI: 121-343)</a>"
-"dfda_trial_capacity_cure_acceleration_years_latex": "$$\nAccel_{dFDA} = 222 \\text{\
-  \ yrs} \\times (1 - \\frac{1}{23}) = 212 \\text{ years}\n$$"
+  \ dFDA's trial capacity increase. Calculated as the status quo timeline reduced\
+  \ by the inverse of the capacity multiplier. Uses only trial capacity multiplier\
+  \ (not combined with valley of death rescue) because additional candidates don't\
+  \ directly speed queue processing. | Calculated from 2 inputs | ? Low confidence\
+  \ | Formula: STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)\
+  \ | Unit: years | Click to view details, calculation & sources\">198 (95% CI: 121-343)</a>"
+"dfda_trial_capacity_cure_acceleration_years_latex": "$$\nRatio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE\
+  \ \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 198\n$$"
 "dfda_trial_capacity_dalys_averted": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_dalys_averted\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total DALYs averted from trial capacity increase\
-  \ alone (~212 years acceleration). Scales proportionally from lives saved using\
-  \ the same DALY/death ratio. | Calculated from 1 input | ? Low confidence | Formula:\
-  \ DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to\
-  \ view details, calculation & sources\">192B (95% CI: 127B-299B)</a>"
+  \ alone. Scales proportionally from lives saved using the same DALY/death ratio.\
+  \ | Calculated from 1 input | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_LIVES_SAVED\
+  \ × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to view details, calculation & sources\"\
+  >192B (95% CI: 127B-299B)</a>"
 "dfda_trial_capacity_dalys_averted_latex": "$$\nIncrease_{DFDA} = Increase_{DFDA}\
   \ \\times 19 = 10.1B \\times 19 = 192B\n$$"
 "dfda_trial_capacity_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total economic value from trial capacity increase\
-  \ alone (~212 years acceleration). DALYs valued at standard economic rate. | Calculated\
-  \ from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_DALYS_AVERTED\
-  \ × STANDARD_QALY_VALUE | Unit: USD | Click to view details, calculation & sources\"\
-  >$28.8 quadrillion (95% CI: $25.4 quadrillion-$31.3 quadrillion)</a>"
+  \ alone. DALYs valued at standard economic rate. | Calculated from 2 inputs | ?\
+  \ Low confidence | Formula: DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE\
+  \ | Unit: USD | Click to view details, calculation & sources\">$28.8 quadrillion\
+  \ (95% CI: $25.4 quadrillion-$31.3 quadrillion)</a>"
 "dfda_trial_capacity_economic_value_latex": "$$\nIncrease_{DFDA} = Increase_{DFDA}\
   \ \\times QALYs_{RD} = 192B \\times \\$150K = \\$28800T\n$$"
 "dfda_trial_capacity_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from trial capacity\
-  \ increase alone (~212 years acceleration). This represents cures arriving earlier\
-  \ due to faster queue processing with 23× trial capacity. | Calculated from 2 inputs\
-  \ | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS\
-  \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
-  >10.1B (95% CI: 6.67B-15.7B)</a>"
-"dfda_trial_capacity_lives_saved_latex": "$$\nLives_{trial\\ capacity} = 54.75M \\\
-  times 212 \\times 92.1\\% = 10.7B\n$$"
+  \ increase alone. Represents cures arriving earlier due to faster queue processing\
+  \ from increased trial capacity. | Calculated from 2 inputs | ? Low confidence |\
+  \ Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT\
+  \ | Unit: deaths | Click to view details, calculation & sources\">10.1B (95% CI:\
+  \ 6.67B-15.7B)</a>"
+"dfda_trial_capacity_lives_saved_latex": "$$\nIncrease_{DFDA} = ANNUAL_DEATHS \\times\
+  \ DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.1B\n$$"
 "dfda_trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
@@ -713,38 +713,36 @@
   \ = \\frac{18.1M}{1.9M} = 9.53\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total DALYs averted from the full dFDA timeline\
-  \ shift (~220 years). Scales proportionally from the lives saved using the same\
-  \ DALY/death ratio. | Calculated from 1 input | ? Low confidence | Formula: LIVES_SAVED\
-  \ × DALY_PER_DEATH_RATIO | Unit: DALYs | Click to view details, calculation & sources\"\
-  >200B (95% CI: 139B-303B)</a>"
+  \ data-confidence=\"low\" title=\"Total DALYs averted from the combined dFDA timeline\
+  \ shift. Scales proportionally from lives saved using the same DALY/death ratio.\
+  \ | Calculated from 1 input | ? Low confidence | Formula: LIVES_SAVED × DALY_PER_DEATH_RATIO\
+  \ | Unit: DALYs | Click to view details, calculation & sources\">200B (95% CI: 139B-303B)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\nDALYs_{DFDA} = Capacity_{DFDA}\
   \ \\times 19 = 10.5B \\times 19 = 200B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total economic value from the full dFDA timeline\
-  \ shift (~220 years). DALYs valued at standard economic rate. | Calculated from\
-  \ 2 inputs | ? Low confidence | Formula: DALYS × STANDARD_QALY_VALUE | Unit: USD\
-  \ | Click to view details, calculation & sources\">$30 quadrillion (95% CI: $27.8\
-  \ quadrillion-$32.4 quadrillion)</a>"
+  \ data-confidence=\"low\" title=\"Total economic value from the combined dFDA timeline\
+  \ shift. DALYs valued at standard economic rate. | Calculated from 2 inputs | ?\
+  \ Low confidence | Formula: DALYS × STANDARD_QALY_VALUE | Unit: USD | Click to view\
+  \ details, calculation & sources\">$30 quadrillion (95% CI: $27.8 quadrillion-$32.4\
+  \ quadrillion)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value_latex": "$$\nCapacity_{DFDA}\
   \ = DALYs_{DFDA} \\times QALYs_{RD} = 200B \\times \\$150K = \\$30000T\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from the average\
-  \ dFDA timeline shift (~220 years). On average, disease cures become available ~220\
-  \ years earlier: cure acceleration (~212 years average from 23× trial capacity)\
-  \ plus efficacy lag elimination (8.2 years once discovered). | Calculated from 2\
-  \ inputs | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS\
+  \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from the combined\
+  \ dFDA timeline shift. Represents deaths prevented when cures arrive earlier due\
+  \ to both increased trial capacity and eliminated efficacy lag. | Calculated from\
+  \ 2 inputs | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS\
   \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
   >10.5B (95% CI: 7.30B-15.9B)</a>"
-"dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex": "$$\nLives_{saved} = 54.75M\
-  \ \\times 220 \\times 92.1\\% = 11.1B\n$$"
+"dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex": "$$\nCapacity_{DFDA} =\
+  \ ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS \\times AVOIDABLE_PCT\
+  \ = 10.5B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Hours of suffering\
-  \ eliminated from the full dFDA timeline shift (~220 years): trial capacity increase\
-  \ (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component\
+  \ eliminated from the combined dFDA timeline shift. Calculated from YLD component\
   \ of DALYs (years lived with disability × hours per year). One-time benefit, not\
   \ annual recurring. | Calculated from 1 input | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS\
   \ × YLD_RATIO × HOURS_PER_YEAR | Unit: hours | Click to view details, calculation\
@@ -754,10 +752,9 @@
 "dfda_trial_capacity_plus_efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Average years earlier patients receive cures due\
-  \ to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from\
-  \ ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy\
-  \ lag elimination (8.2 years) - once discovered, treatments deploy without post-safety\
-  \ delay. | Calculated from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS\
+  \ to dFDA. Combines cure timeline acceleration from increased trial capacity with\
+  \ efficacy lag elimination for treatments already discovered. | Calculated from\
+  \ 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS\
   \ + EFFICACY_LAG_YEARS | Unit: years | Click to view details, calculation & sources\"\
   >207 (95% CI: 133-348)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_years_latex": "$$\nCapacity_{DFDA} = Ratio_{DFDA}\
@@ -1516,6 +1513,8 @@
   \ to Government spending on clinical trials (approx 90/10 split) | Calculated from\
   \ 2 inputs | ✓ High confidence | Formula: (TOTAL - GOVT) / GOVT | Unit: ratio |\
   \ Click to view details, calculation & sources\">12.3 (95% CI: 11.5-15.4)</a>"
+"industry_vs_government_clinical_trials_spending_ratio_latex": "$$\nRatio = (TOTAL\
+  \ - GOVT) / GOVT = 12.3\n$$"
 "institutional_investor_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-institutional_investor_min\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Minimum investment\
@@ -2515,5 +2514,5 @@
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "total_parameter_count": "352"
-"total_latex_equation_count": "139"
+"total_latex_equation_count": "140"
 "total_citation_count": "137"

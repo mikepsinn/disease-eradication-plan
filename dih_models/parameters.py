@@ -3729,45 +3729,41 @@ STATUS_QUO_AVG_YEARS_TO_CURE = Parameter(
 )  # ~222 years for average disease (half the queue)
 
 # Cure timeline acceleration from dFDA implementation (trial capacity only)
-# Acceleration = Status Quo Baseline × (1 - 1/Speedup)
-# With ~23× speedup: Accel = 222 × (1 - 1/23) = 222 × 0.957 = ~212 years
-# Note: Using only trial capacity multiplier, not combined with valley of death rescue,
-# because valley of death rescue adds more drug candidates but doesn't directly speed up queue processing
+# Calculated as: Status Quo Baseline × (1 - 1/Speedup)
+# Uses only trial capacity multiplier, not combined with valley of death rescue,
+# because valley of death rescue adds more drug candidates but doesn't directly speed queue processing
 DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS = Parameter(
     float(STATUS_QUO_AVG_YEARS_TO_CURE) * (1 - 1 / float(DFDA_TRIAL_CAPACITY_MULTIPLIER)),
     source_type="calculated",
-    description="Years earlier the average cure arrives due to dFDA's trial capacity increase. With ~222 year baseline and ~23× speedup, cures arrive ~212 years earlier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+    description="Years earlier the average cure arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
     display_name="dFDA Treatment Timeline Acceleration",
     unit="years",
     formula="STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
-    latex=r"Accel_{dFDA} = 222 \text{ yrs} \times (1 - \frac{1}{23}) = 212 \text{ years}",
     confidence="low",
     keywords=["dfda", "acceleration", "cure", "timeline", "years"],
     inputs=['STATUS_QUO_AVG_YEARS_TO_CURE', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_CURE"] * (1 - 1 / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
-)  # ~212 years acceleration from dFDA (trial capacity only)
+)
 
 # ============================================================================
-# TRIAL CAPACITY BENEFITS (from ~212 year cure acceleration)
+# TRIAL CAPACITY BENEFITS (cure acceleration from trial capacity alone)
 # ============================================================================
 # These parameters capture the benefits from increased trial capacity ALONE,
 # separate from efficacy lag elimination. The trial capacity increase allows
 # more diseases to be cured simultaneously, reducing the average wait time.
 
-# Lives saved from trial capacity increase (~212 years acceleration)
 DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
     source_type="calculated",
-    description="Total eventually avoidable deaths from trial capacity increase alone (~212 years acceleration). This represents cures arriving earlier due to faster queue processing with 23× trial capacity.",
+    description="Total eventually avoidable deaths from trial capacity increase alone. Represents cures arriving earlier due to faster queue processing from increased trial capacity.",
     display_name="Lives Saved from Trial Capacity Increase",
     unit="deaths",
     formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT",
-    latex=r"Lives_{trial\ capacity} = 54.75M \times 212 \times 92.1\% = 10.7B",
     confidence="low",
-    keywords=["trial capacity", "lives saved", "cure acceleration", "212 years"],
+    keywords=["trial capacity", "lives saved", "cure acceleration"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
-)  # ~10.7B lives saved from trial capacity increase
+)
 
 # DALYs averted from trial capacity increase
 # Using same DALY multiplier as efficacy lag calculation
@@ -3780,7 +3776,7 @@ _yld_ratio_of_dalys = float(DFDA_EFFICACY_LAG_ELIMINATION_YLD) / float(DFDA_EFFI
 DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_LIVES_SAVED) * _daly_multiplier_from_deaths),
     source_type="calculated",
-    description="Total DALYs averted from trial capacity increase alone (~212 years acceleration). Scales proportionally from lives saved using the same DALY/death ratio.",
+    description="Total DALYs averted from trial capacity increase alone. Scales proportionally from lives saved using the same DALY/death ratio.",
     display_name="DALYs Averted from Trial Capacity Increase",
     unit="DALYs",
     formula="DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
@@ -3788,13 +3784,12 @@ DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     keywords=["trial capacity", "dalys", "cure acceleration"],
     inputs=['DFDA_TRIAL_CAPACITY_LIVES_SAVED'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_LIVES_SAVED"] * _daly_multiplier_from_deaths),
-)  # DALYs from trial capacity increase
+)
 
-# Economic value from trial capacity increase
 DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_DALYS_AVERTED) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
     source_type="calculated",
-    description="Total economic value from trial capacity increase alone (~212 years acceleration). DALYs valued at standard economic rate.",
+    description="Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
     display_name="Economic Value from Trial Capacity Increase",
     unit="USD",
     formula="DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
@@ -3802,27 +3797,26 @@ DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     keywords=["trial capacity", "economic", "value", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_DALYS_AVERTED', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_DALYS_AVERTED"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
-)  # Economic value from trial capacity increase
+)
 
 # ============================================================================
 # COMBINED BENEFITS (Trial Capacity + Efficacy Lag)
 # ============================================================================
-# Total average timeline shift from dFDA implementation
-# Combines two effects:
-# 1. Cure timeline acceleration (~212 years on average) - average disease cured earlier
-# 2. Efficacy lag elimination (8.2 years) - once discovered, deployed without delay
-# Total = ~220 years earlier cure delivery on average
+# Combines two independent effects:
+# 1. Cure timeline acceleration - average disease cured earlier due to increased capacity
+# 2. Efficacy lag elimination - once discovered, treatments deploy without post-safety delay
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
     float(DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS) + float(EFFICACY_LAG_YEARS),
     source_type="calculated",
-    description="Average years earlier patients receive cures due to dFDA. Combines: (1) cure timeline acceleration (~212 years on average from ~23× trial capacity) - the average disease is cured earlier, and (2) efficacy lag elimination (8.2 years) - once discovered, treatments deploy without post-safety delay.",
+    description="Average years earlier patients receive cures due to dFDA. Combines cure timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
     display_name="dFDA Average Total Timeline Shift",
     unit="years",
-    formula="DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",    confidence="low",
+    formula="DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+    confidence="low",
     keywords=["dfda", "total", "timeline", "shift", "acceleration", "efficacy lag", "years", "average"],
     inputs=['DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS', 'EFFICACY_LAG_YEARS'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS"] + ctx["EFFICACY_LAG_YEARS"],
-)  # ~220 years average total timeline shift from dFDA
+)  # ~207 years average total timeline shift from dFDA
 
 # dFDA cure rate (diseases getting first treatment per year)
 # Status quo: ~15 diseases/year → dFDA: ~343 diseases/year
@@ -3853,33 +3847,28 @@ DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
 )  # ~19 years to cure ALL diseases with dFDA
 
 # ============================================================================
-# TOTAL LIVES SAVED FROM AVERAGE TIMELINE SHIFT (~220 years)
+# TOTAL LIVES SAVED FROM COMBINED TIMELINE SHIFT
 # ============================================================================
-# These parameters use the AVERAGE timeline shift (cure acceleration + efficacy lag)
-# rather than just the efficacy lag. On average, disease cures become available
-# ~220 years earlier (some diseases sooner, some later based on queue position).
+# These parameters use the combined timeline shift from both cure acceleration
+# and efficacy lag elimination.
 
-# Total lives saved from ~220-year average timeline shift
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
     source_type="calculated",
-    description="Total eventually avoidable deaths from the average dFDA timeline shift (~220 years). On average, disease cures become available ~220 years earlier: cure acceleration (~212 years average from 23× trial capacity) plus efficacy lag elimination (8.2 years once discovered).",
+    description="Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
     display_name="Total Lives Saved from Full Timeline Shift",
     unit="deaths",
     formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT",
-    latex=r"Lives_{saved} = 54.75M \times 220 \times 92.1\% = 11.1B",
     confidence="low",
-    keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "220 years", "average"],
+    keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "average"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
-)  # ~11.1B lives saved from ~220-year average timeline shift
+)
 
-# Total DALYs averted from full 220-year timeline shift
-# Uses same DALY multiplier defined above in trial capacity section
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) * _daly_multiplier_from_deaths),
     source_type="calculated",
-    description="Total DALYs averted from the full dFDA timeline shift (~220 years). Scales proportionally from the lives saved using the same DALY/death ratio.",
+    description="Total DALYs averted from the combined dFDA timeline shift. Scales proportionally from lives saved using the same DALY/death ratio.",
     display_name="Total DALYs from Full Timeline Shift",
     unit="DALYs",
     formula="LIVES_SAVED × DALY_PER_DEATH_RATIO",
@@ -3887,13 +3876,12 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] * _daly_multiplier_from_deaths),
-)  # ~213B DALYs from full 220-year timeline shift
+)
 
-# Total economic value from full 220-year timeline shift
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
     source_type="calculated",
-    description="Total economic value from the full dFDA timeline shift (~220 years). DALYs valued at standard economic rate.",
+    description="Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
     display_name="Total Economic Value from Full Timeline Shift",
     unit="USD",
     formula="DALYS × STANDARD_QALY_VALUE",
@@ -3901,17 +3889,17 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     keywords=["total", "economic", "value", "timeline shift", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
-)  # Economic value from full timeline shift
+)
 
-# Suffering Hours (one-time benefit from full timeline shift)
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * _yld_ratio_of_dalys * HOURS_PER_YEAR),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
-    description="Hours of suffering eliminated from the full dFDA timeline shift (~220 years): trial capacity increase (~212 years) plus efficacy lag elimination (8.2 years). Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
+    description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
     display_name="Suffering Hours Eliminated from Full Timeline Shift",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",    confidence="low",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
+    confidence="low",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * _yld_ratio_of_dalys * HOURS_PER_YEAR),

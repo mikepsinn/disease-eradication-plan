@@ -803,8 +803,25 @@ def generate_auto_latex(
         latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"
 
     else:
-        # Complex or unrecognized - skip auto-generation
-        # (hardcoded latex can still be used)
-        return None
+        # Complex or unrecognized operation
+        # Try to use the symbolic formula if available
+        formula = getattr(param_value, 'formula', '') or ''
+        if formula:
+            # Convert formula symbols to LaTeX-compatible format
+            # Replace × with \times, ÷ with \div, etc.
+            formula_latex = (formula
+                .replace('×', r'\times')
+                .replace('÷', r'\div')
+                .replace('≤', r'\leq')
+                .replace('≥', r'\geq')
+                .replace('²', r'^2')
+                .replace('³', r'^3'))
+
+            # Create equation: LHS = formula = result
+            latex = f"{lhs_short} = {formula_latex} = {result_formatted}"
+        else:
+            # No formula available - skip auto-generation
+            # (hardcoded latex can still be used)
+            return None
 
     return latex
