@@ -81,7 +81,7 @@ Your decentralized framework for drug assessment costs approximately **{{< var d
 
 Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
-**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
+**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Financial Analysis Summary](../appendix/dfda-cost-benefit-analysis.qmd#financial-analysis-summary).
 
 ## Why This Isn't Happening Already
 
@@ -110,7 +110,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency a
 ### Detailed Analysis
 
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
-- [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
+- [Financial Analysis Summary](../appendix/dfda-cost-benefit-analysis.qmd#financial-analysis-summary) - NPV/ROI analysis and computational models
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
 - [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs (post-safety efficacy lag elimination)
 

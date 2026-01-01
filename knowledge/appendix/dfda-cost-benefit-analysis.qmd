@@ -17,9 +17,9 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 
 - **Saves ~{{< var dfda_benefit_rd_only_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
-- **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_benefit_rd_only_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}** (PRIMARY recommended estimate).
+- **Return on Investment (R&D Only)**: {{< var dfda_roi_rd_only >}}:1. A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_benefit_rd_only_annual >}} in industry-wide savings, yielding an NPV of ~{{< var dfda_npv_net_benefit_rd_only >}} [over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1** (PRIMARY recommended estimate).
 - **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, a decentralized framework for drug assessment (dFDA) eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var dfda_efficacy_lag_elimination_dalys >}} QALYs average per year during the shift** (valued at **{{< var dfda_efficacy_lag_elimination_economic_value >}} total economic value**).
-- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}}/year** including [post-safety efficacy lag elimination](#regulatory-delay-avoidance).
+- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from efficacy lag elimination only (8.2-year timeline shift); comprehensive top-down estimate of **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: Such a framework is a dominant intervention that both saves money and improves health.
 - **[\$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without such a framework represents a societal opportunity cost of ~\$137M in economic waste and ~2,301 lost QALYs.
 
@@ -33,7 +33,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 - **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs [80-100x](#decentralized-trial-costs-modeled-on-oxford-recovery) without killing anyone extra. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
-- **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (from 23× trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
+- **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
 #### Exceptional Economic Value
 
@@ -863,6 +863,14 @@ This appendix provides the detailed models and data used in the cost-benefit ana
 
 ### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
 
+**Important Note on NPV Time Horizons**: This analysis primarily uses a **10-year NPV horizon** for standard business ROI analysis:
+
+**10-Year NPV (R&D Operational Savings)**: The dFDA platform makes trials 50-95% cheaper every year, indefinitely. We discount 10 years of future operational savings to present value (~{{< var dfda_npv_net_benefit_rd_only >}}) for ROI analysis. This is standard business practice for evaluating ongoing cost efficiencies.
+
+**Why 10 years?** Standard business analysis horizon. The benefits continue beyond 10 years, but we use this conservative timeframe to calculate NPV and ROI (~{{< var dfda_roi_rd_only >}}:1).
+
+---
+
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
 
 #### Definitions and Parameters
@@ -1183,75 +1191,25 @@ In this rough example, even **partial adoption** in the early years delivers lar
 
 Even so, the core takeaway remains: **If the framework is widely adopted and per-patient trial costs drop substantially, the net benefits likely dwarf the initial investments.**
 
-### Interactive Financial Modeling & Computational Analysis {#interactive-financial-modeling--computational-analysis}
+### Financial Analysis Summary {#financial-analysis-summary}
 
-This section provides executable Python code that implements the financial models described above using the LaTeX equations. This computational companion allows you to run sensitivity analyses, generate visualizations, and verify the calculations programmatically. All parameters are sourced from the centralized `dih_models/parameters.py` module to ensure consistency across the analysis.
+All values below are sourced from the centralized `dih_models/parameters.py` module to ensure consistency across the analysis.
 
-```{python}
-#| echo: false
-# Import all parameters from single source of truth
+#### Framework Cost-Benefit Analysis (Baseline)
 
-import os
-from pathlib import Path
+- **Annual Gross R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}
+- **Annual Framework Operational Cost**: {{< var dfda_annual_opex >}}
+- **Simple ROI (Gross/Opex)**: {{< var dfda_roi_simple >}}:1
+- **NPV-Adjusted ROI (10-year)**: {{< var dfda_roi_rd_only >}}:1 ← CANONICAL FIGURE
 
-# Find project root dynamically (works regardless of where Quarto executes from)
+**Health Impact:**
 
-from dih_models.plotting.chart_style import get_project_root
+- **DALYs Averted (Full Timeline Shift)**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
+- **Monetized Value of DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}
 
-project_root = get_project_root()
-from dih_models.parameters import *
+**Funding:**
 
-# Use parameters from dih_models/parameters.py
-
-global_clinical_trial_market = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}}
-dfda_rd_cost_reduction_pct = DFDA_TRIAL_COST_REDUCTION_PCT  # 50%
-dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ({{< var dfda_upfront_build >}})
-
-# Baseline QALYs generated annually
-
-daly_gains_timeline_shift = DFDA_EFFICACY_LAG_ELIMINATION_DALYS  # {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted
-value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # Value per quality-adjusted life year
-
-# --- Calculations for Framework Benefits ---
-
-# Gross R&D savings
-
-gross_rd_savings = DFDA_BENEFIT_RD_ONLY_ANNUAL  # Pre-calculated: {{< var dfda_benefit_rd_only_annual >}}
-
-# Net R&D savings (after operational costs)
-
-net_rd_savings = DFDA_NET_SAVINGS_RD_ONLY_ANNUAL  # Pre-calculated: $49.96B
-
-# Simple ROI Calculation (not NPV-adjusted)
-# ROI = (Gross Savings / Annual Opex)
-
-dfda_roi_simple = DFDA_ROI_SIMPLE  # {{< var dfda_roi_simple >}}:1
-
-# NPV-adjusted ROI (canonical figure)
-
-dfda_roi_npv = DFDA_ROI_RD_ONLY  # Conservative R&D-only (from 10-year NPV analysis)
-
-# Monetized value of QALY gains
-
-monetized_daly_value = DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE  # {{< var dfda_efficacy_lag_elimination_economic_value >}}
-
-# --- Connecting to the Peace Dividend ---
-# The captured dividend must cover the operational cost.
-
-captured_dividend = TREATY_ANNUAL_FUNDING  # $27.18B from 1% military redirect
-funding_coverage_ratio = DIVIDEND_COVERAGE_FACTOR  # Pre-calculated coverage ratio (~679x)
-
-print(f"--- Framework Cost-Benefit Analysis (Baseline) ---")
-print(f"Annual Gross R&D Savings: ${gross_rd_savings:,.1f} Billion")
-print(f"Annual Framework Operational Cost: ${dfda_annual_operational_cost:,.3f} Billion")
-print(f"Simple ROI (Gross/Opex): {dfda_roi_simple:,.0f}:1")
-print(f"NPV-Adjusted ROI (10-year): {dfda_roi_npv:,.0f}:1  ← CANONICAL FIGURE")
-print("-" * 45)
-print(f"DALYs Averted (Timeline Shift): {daly_gains_timeline_shift:,.0f}")
-print(f"Monetized Value of DALYs Averted: ${monetized_daly_value:,.1f} Billion")
-print("-" * 45)
-print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
-```
+- **Funding Coverage (Captured Dividend / OpEx)**: {{< var dividend_coverage_factor >}}×
 
 **Note**: The conservative R&D-only ROI ({{< var dfda_roi_rd_only >}}:1) is the most defensible baseline figure, accounting for time value of money and gradual adoption.
 
@@ -1267,143 +1225,30 @@ This chart shows the dramatic return on investment for an infrastructure support
 
 #### Sensitivity Analysis
 
-This sensitivity analysis explores how the financial viability of such a framework, specifically its Return on Investment (ROI), changes under different assumptions. You test the two most critical drivers of the financial model:
+This sensitivity analysis explores how the financial viability of such a framework, specifically its Return on Investment (ROI), changes under different parameter assumptions.
 
-1. **R&D Cost Reduction %**: The actual savings achieved could be lower or higher than the 50.0% baseline. You model a range from 30% to 70%.
-2. **Annual Operational Cost**: The framework could be cheaper or more expensive to run than the estimated $40M. You model a range from {{< var lobbyist_bond_investment_max >}} to $80M.
+{{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
 
-```{python}
-#| echo: false
-# Define the ranges for a dFDA sensitivity analysis
-
-rd_reduction_scenarios = [0.3, 0.4, 0.5, 0.6, 0.7]
-operational_cost_scenarios = [0.020, 0.040, 0.060, 0.080] # In billions of USD
-
-# Create an empty list to store results
-
-dfda_results = []
-
-# Loop through each combination of parameters
-
-for redux_pct in rd_reduction_scenarios:
-    for op_cost in operational_cost_scenarios:
-
-        # Recalculate gross savings for this scenario
-        gross_savings = global_clinical_trial_market * redux_pct
-
-        # Recalculate ROI for this scenario
-        # Handle case where op_cost is zero to avoid division error, though not in our scenarios
-        if op_cost > 0:
-            roi = gross_savings / op_cost
-        else:
-            roi = float('inf')
-
-        # Store the result
-        dfda_results.append({
-            "R&D Reduction %": f"{redux_pct:.0%}",
-            "Annual OpEx ($B)": f"${op_cost:.3f}",
-            "ROI (x:1)": f"{roi:,.0f}"
-        })
-
-# Create and pivot the DataFrame
-
-dfda_df = pd.DataFrame(dfda_results)
-dfda_pivot = dfda_df.pivot(index="Annual OpEx ($B)", columns="R&D Reduction %", values="ROI (x:1)")
-
-print("--- Sensitivity Analysis: Framework Return on Investment (ROI) ---")
-print(dfda_pivot)
-```
+{{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
 
 #### Rigorous Financial Model: Net Present Value (NPV) Analysis
 
 The simple ROI calculation is useful for a high-level summary, but a more rigorous financial analysis uses **Net Present Value (NPV)**. This method accounts for the "time value of money" by using a discount rate to value future savings and costs in today's dollars. It provides a much more accurate picture of the investment's long-term value.
 
-This model calculates:
+**NPV Model Parameters** (from `dih_models/parameters.py`):
 
-1. The NPV of all costs (upfront and operational) over a 10-year horizon
-2. The NPV of all savings (ramping up as the framework is adopted)
-3. A more robust ROI and Net Benefit based on these NPV figures
+- **Upfront Cost**: {{< var dfda_npv_upfront_cost_total >}}
+- **Annual OpEx**: {{< var dfda_npv_annual_opex_total >}}
+- **Discount Rate**: {{< var npv_discount_rate_standard >}}
+- **Time Horizon**: {{< var npv_time_horizon_years >}} years
+- **Adoption Ramp**: {{< var dfda_npv_adoption_ramp_years >}} years to 100%
 
-```{python}
-#| echo: false
-# NPV Model Parameters
-# Source: dih_models/parameters.py
+**NPV Analysis Results:**
 
-# Costs (in billions USD) - from dih_models/parameters.py
-
-C0 = DFDA_NPV_UPFRONT_COST_TOTAL  # $0.26975B (Core framework + medium broader initiatives)
-Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
-
-# Savings (in billions USD) - from dih_models/parameters.py
-
-Rd = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}} annual global R&D spend on clinical trials
-alpha = DFDA_TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
-
-# Financial Parameters - from dih_models/parameters.py
-
-r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% annual discount rate)
-T = NPV_TIME_HORIZON_YEARS  # 10 years
-adoption_ramp_years = DFDA_NPV_ADOPTION_RAMP_YEARS  # 5 years to full adoption
-
-# Adoption Curve p(t)
-# Linear ramp from 0% to 100% over adoption_ramp_years, then constant at 100%
-
-def adoption_rate(t):
-    if t == 0:
-        return 0
-    elif t <= adoption_ramp_years:
-        return t / adoption_ramp_years
-    else:
-        return 1.0
-
-# Calculate the annual savings for each year, considering the adoption rate
-# This is needed for the NPV visualization
-
-annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, int(T) + 1)]
-
-print("NPV Model Parameters Loaded from dih_models/parameters.py")
-print(f"Upfront Cost (C0): ${C0:.4f}B")
-print(f"Annual OpEx (Cop): ${Cop:.4f}B")
-print(f"Discount Rate (r): {r:.0%}")
-print(f"Time Horizon (T): {T} years")
-print(f"Adoption Ramp: {adoption_ramp_years} years to 100%")
-```
-
-```{python}
-#| echo: false
-import numpy_financial as npf
-
-# --- NPV of Costs ---
-# Create a stream of operational costs over the time horizon
-
-operational_costs_stream = [Cop] * int(T)
-# The npv function in numpy_financial takes the rate and a stream of cash flows.
-# It assumes the first cash flow is at t=1.
-
-npv_of_ops = npf.npv(r, operational_costs_stream)
-# Total NPV of costs is the upfront cost plus the discounted stream of operational costs
-
-npv_costs = C0 + npv_of_ops
-
-# --- NPV of Savings ---
-# Calculate the NPV of this savings stream
-
-npv_savings = npf.npv(r, annual_savings_stream)
-
-# --- Final ROI and Net Benefit ---
-
-robust_roi = npv_savings / npv_costs
-net_benefit = npv_savings - npv_costs
-
-# --- Display Results ---
-
-print("--- Rigorous Financial Analysis Results ---")
-print(f"NPV of Total Costs over {T} years: ${npv_costs:,.3f} Billion")
-print(f"NPV of Total Savings over {T} years: ${npv_savings:,.3f} Billion")
-print("-" * 40)
-print(f"Net Benefit (NPV Savings - NPV Costs): ${net_benefit:,.3f} Billion")
-print(f"Robust ROI (NPV Savings / NPV Costs): {robust_roi:,.0f}:1")
-```
+- **NPV of Total Costs** ({{< var npv_time_horizon_years >}} years): {{< var dfda_npv_total_cost >}}
+- **NPV of Total Savings** ({{< var npv_time_horizon_years >}} years): {{< var dfda_npv_benefit_rd_only >}}
+- **Net Benefit** (NPV Savings - NPV Costs): {{< var dfda_npv_net_benefit_rd_only >}}
+- **NPV-Adjusted ROI** (NPV Savings / NPV Costs): {{< var dfda_roi_rd_only >}}:1
 
 #### NPV Analysis Over Time
 
@@ -1411,9 +1256,9 @@ This chart shows how the investment pays back over time, accounting for the time
 
 {{< include ../figures/dfda-npv-analysis-over-time-line-chart.qmd >}}
 
-#### Computational Model Key Findings
+#### Key Findings
 
-A cost-benefit analysis of the framework reveals:
+The cost-benefit analysis of the framework reveals:
 
 1. **Exceptional ROI**: The framework generates a {{< var dfda_roi_simple >}}:1 return on investment ($50.0B savings from {{< var dfda_upfront_build >}} cost)
 2. **Massive Health Benefits**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in monetized value
@@ -1437,7 +1282,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
 - **Cost-Effectiveness**: A decentralized framework for drug assessment achieves cost-effectiveness through dual pathways:
   1. **R&D Savings**: $50B+ annual savings from 50% trial cost reduction
-  2. **Health Gains**: {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs averted from eliminating post-safety efficacy lag (8.2-year timeline shift)
+  2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
 
   This combination creates a **dominant intervention**: simultaneously saves money and improves health outcomes.
 
@@ -1468,7 +1313,7 @@ Where:
   - R&D Trial Cost Reduction due to the framework (Baseline): **50.0%**. (Leads to {{< var dfda_benefit_rd_only_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, framework-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from trial capacity increase + efficacy lag elimination):
-- **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from 23× trial capacity + efficacy lag elimination)
+- **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
 
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)**.
 
@@ -1484,14 +1329,14 @@ This table analyzes the ICER for such an infrastructure by varying key assumptio
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Base Case: Core framework Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var dfda_efficacy_lag_elimination_dalys >}}**                     | Cost-Saving + Health Gain   | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. DALYs from regulatory delay elimination.                                                              |
-| Core framework + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
-| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B              | -$49.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
-| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
-| Conservative R&D Savings & Health Gains              | 30% ($30.0B Savings)           | $0.5B              | -$29.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & conservative health impact.                                                                                                                                                                                                                        |
-| Optimistic R&D Savings & Health Gains                | 70% ($70B Savings)         | $0.5B              | -$69.5B                       | {{< var dfda_efficacy_lag_elimination_dalys >}}                       | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
-| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95.0B Savings)     | **$0.5B**          | **-$94.5B**                   | **{{< var dfda_efficacy_lag_elimination_dalys >}}**                   | Cost-Saving + Health Gain   | **Dominant**                            | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
-| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B              | $0                            | {{< var dfda_efficacy_lag_elimination_dalys >}}                         | Cost-Neutral + Health Gain  | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & base health impact.                                                                                                                                                                                                                            |
+| **Base Case: Core framework Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}**                     | Cost-Saving + Health Gain   | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. DALYs from full timeline shift (trial capacity + efficacy lag elimination).                                                              |
+| Core framework + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
+| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B              | -$49.5B                       | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
+| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
+| Conservative R&D Savings & Health Gains              | 30% ($30.0B Savings)           | $0.5B              | -$29.5B                       | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & conservative health impact.                                                                                                                                                                                                                        |
+| Optimistic R&D Savings & Health Gains                | 70% ($70B Savings)         | $0.5B              | -$69.5B                       | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                       | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95.0B Savings)     | **$0.5B**          | **-$94.5B**                   | **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}**                   | Cost-Saving + Health Gain   | **Dominant**                            | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B              | $0                            | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}                         | Cost-Neutral + Health Gain  | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & base health impact.                                                                                                                                                                                                                            |
 
 _Note: An infrastructure for a decentralized framework is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core framework Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
 
@@ -1499,10 +1344,10 @@ _Note: An infrastructure for a decentralized framework is cost-saving while also
 
 The analysis robustly demonstrates that the **infrastructure for a decentralized framework is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the Core framework's technical operational costs.**
 
-- **Massive Cost Savings & Exceptional Value**: The core infrastructure for the framework (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs through regulatory delay elimination. This combination creates exceptional value.
+- **Massive Cost Savings & Exceptional Value**: The core infrastructure for the framework (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). This combination creates exceptional value.
 - **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), such an initiative remains dominant and highly cost-saving across all scenarios.
 
-**Summary: An initiative to build a decentralized framework for drug assessment is projected to be a dominant healthcare transformation. The core technology framework itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs through regulatory delay elimination. The combination of massive financial returns and significant health gains makes such a framework an exceptionally compelling investment.**
+**Summary: An initiative to build a decentralized framework for drug assessment is projected to be a dominant healthcare transformation. The core technology framework itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). The combination of massive financial returns and significant health gains makes such a framework an exceptionally compelling investment.**
 
 *(Optional: A note could be added here that specific programs _built upon_ this infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying infrastructure.)*
 
