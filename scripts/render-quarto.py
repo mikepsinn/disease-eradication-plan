@@ -118,7 +118,18 @@ def render_quarto(
             print("[WARNING] Jupyter kernel setup failed, continuing anyway...")
         print()
 
-        # 2. Run pre-validation
+        # 2. Clean up any stale temp build folders before validation
+        stale_temp = project_root / "_build_temp"
+        if stale_temp.exists():
+            print("[*] Cleaning up stale temp build folder...")
+            try:
+                shutil.rmtree(stale_temp)
+                print(f"[OK] Removed stale temp directory: {stale_temp}")
+            except Exception as e:
+                print(f"[WARNING] Failed to remove stale temp directory: {e}", file=sys.stderr)
+        print()
+
+        # 3. Run pre-validation
         print("=" * 80)
         print("VALIDATION: PRE-RENDER")
         print("=" * 80)
