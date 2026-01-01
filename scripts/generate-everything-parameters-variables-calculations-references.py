@@ -9,8 +9,9 @@ Reads all numeric constants from dih_models/parameters.py and generates:
 2. knowledge/appendix/parameters-and-calculations.qmd - Academic reference with LaTeX
 3. knowledge/references.json - Structured JSON from references.qmd
 4. references.bib - BibTeX export for LaTeX submissions
-5. Search indexes for all Quarto configs (warondisease, economics, iab, wishocracy)
-6. (Optional) Inject citations into economics.qmd
+5. _analysis/parameter-summary.md - Compact parameter name/value reference (one per line)
+6. Search indexes for all Quarto configs (warondisease, economics, iab, wishocracy)
+7. (Optional) Inject citations into economics.qmd
 
 Usage:
     python scripts/generate-everything-parameters-variables-calculations-references.py [options]
@@ -42,6 +43,7 @@ Output:
     _variables.yml in project root
     knowledge/appendix/parameters-and-calculations.qmd
     references.bib in project root
+    _analysis/parameter-summary.md
     _book/warondisease/search-index.json
     _site/economics/search-index.json
     _site/iab/search-index.json
@@ -111,6 +113,7 @@ from dih_models.validation import (
     validate_inline_calculations_have_compute,
 )
 from dih_models.variables_yml_generator import generate_variables_yml
+from dih_models.formatting import format_parameter_value
 
 # Delayed imports placeholders
 simulate = None
@@ -307,6 +310,71 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
 # - generate_input_distribution_chart_qmd() -> chart_generators
 # - generate_monte_carlo_distribution_chart_qmd() -> chart_generators
 # - generate_cdf_chart_qmd() -> chart_generators
+
+
+def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_path: Path, samples_json_path: Path = None):
+    """
+    Generate a compact parameter summary file for easy reference.
+
+    Creates a markdown file with one parameter per line: NAME: value (uncertainty)
+    Format optimized for quick searching and copy-pasting.
+
+    Args:
+        parameters: Dict of parameter metadata from parse_parameters_file()
+        output_path: Where to write the summary (e.g., _analysis/parameter-summary.md)
+        samples_json_path: Optional path to samples.json with Monte Carlo confidence intervals
+    """
+    import json
+
+    # Load samples data if available
+    samples_data = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, encoding="utf-8") as f:
+            samples_data = json.load(f)
+
+    lines = ["# Parameter Summary\n"]
+    lines.append("One parameter per line for easy searching and copy-pasting.\n")
+    lines.append("Format: `PARAMETER_NAME: value (95% CI: low-high)`\n\n")
+
+    for param_name, param_data in sorted(parameters.items()):
+        value = param_data["value"]
+
+        # Get unit if available
+        unit = getattr(value, "unit", "")
+
+        # Format the baseline value
+        formatted_value = format_parameter_value(value, unit, include_unit=True)
+
+        # Check if we have Monte Carlo confidence intervals
+        if param_name in samples_data:
+            stats = samples_data[param_name]
+            p5 = stats.get("p5", 0)
+            p95 = stats.get("p95", 0)
+
+            # Format confidence interval bounds with same unit
+            p5_formatted = format_parameter_value(p5, unit, include_unit=False)
+            p95_formatted = format_parameter_value(p95, unit, include_unit=False)
+
+            # Extract unit suffix if present
+            unit_suffix = ""
+            if unit:
+                # Get the suffix from the formatted value (e.g., "M", "B", "K")
+                parts = formatted_value.split()
+                if len(parts) > 1:
+                    unit_suffix = " " + parts[-1]
+
+            line = f"{param_name}: {formatted_value} (95% CI: {p5_formatted}-{p95_formatted}{unit_suffix})\n"
+        else:
+            # No uncertainty data - just include the formatted value
+            line = f"{param_name}: {formatted_value}\n"
+
+        lines.append(line)
+
+    # Write to file
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
+    print(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
 
 
 def main():
@@ -566,10 +634,16 @@ def main():
             print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
             print()
 
+            # Generate parameter summary (compact reference file)
+            print("[*] Generating parameter summary...")
+            summary_path = analysis_dir / "parameter-summary.md"
+            samples_json_path = analysis_dir / "samples.json"
+            generate_parameter_summary(parameters, summary_path, samples_json_path)
+            print()
+
             # Generate _variables.yml with embedded confidence intervals
             print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
             output_path = project_root / "_variables.yml"
-            samples_json_path = analysis_dir / "samples.json"
             generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
             print()
 
@@ -957,6 +1031,15 @@ def main():
         else:
             print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
             print()
+
+            # Generate parameter summary without uncertainty
+            print("[*] Generating parameter summary...")
+            analysis_dir = project_root / "_analysis"
+            analysis_dir.mkdir(exist_ok=True)
+            summary_path = analysis_dir / "parameter-summary.md"
+            generate_parameter_summary(parameters, summary_path)
+            print()
+
             # Generate _variables.yml without confidence intervals
             print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
             output_path = project_root / "_variables.yml"
@@ -965,6 +1048,15 @@ def main():
     except Exception as e:
         print(f"[WARN] Uncertainty generation skipped: {e}")
         print()
+
+        # Generate parameter summary without uncertainty (fallback)
+        print("[*] Generating parameter summary...")
+        analysis_dir = project_root / "_analysis"
+        analysis_dir.mkdir(exist_ok=True)
+        summary_path = analysis_dir / "parameter-summary.md"
+        generate_parameter_summary(parameters, summary_path)
+        print()
+
         # Generate _variables.yml without confidence intervals as fallback
         print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
         output_path = project_root / "_variables.yml"
@@ -1024,6 +1116,7 @@ def main():
     print(f"       - {bib_output.relative_to(project_root)}")
     print(f"       - {reference_ids_path.relative_to(project_root)}")
     print(f"       - {ts_output.relative_to(project_root)}")
+    print(f"       - _analysis/parameter-summary.md")
     print("       - OUTLINE-GENERATED.MD")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")

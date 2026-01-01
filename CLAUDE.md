@@ -100,6 +100,15 @@ if sys.platform == 'win32':
    ```
    Output: "Foundation funding: $519M" (with HTML tooltip and source link)
 
+### Quick Parameter Lookup
+
+**Use `_analysis/parameter-summary.md` to quickly get calculated values** (auto-generated, one parameter per line):
+
+```bash
+grep "TREATY_ANNUAL_FUNDING" _analysis/parameter-summary.md
+# → TREATY_ANNUAL_FUNDING: $27.2B (95% CI: $27.2B-$27.2B)
+```
+
 ### Parameter Naming Rules
 
 **CRITICAL: Parameter names must be SELF-DOCUMENTING. A reader should know EXACTLY what is being measured without looking at the description.**
