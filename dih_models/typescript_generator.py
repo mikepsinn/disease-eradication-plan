@@ -523,7 +523,7 @@ def generate_typescript_parameters(
 
     # Write file
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
     print(f"[OK] Generated {output_path}")
@@ -827,7 +827,7 @@ def generate_typescript_survey(
 
     # Write file
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
     print(f"[OK] Generated {output_path}")

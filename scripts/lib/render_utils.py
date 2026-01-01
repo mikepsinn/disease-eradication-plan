@@ -188,7 +188,7 @@ class BuildMonitor:
         self.phase_timings = {}  # Dict of phase_name -> (start_time, end_time)
 
         # Open log file
-        self.log_handle = open(self.log_file, "w", encoding="utf-8")
+        self.log_handle = open(self.log_file, "w", encoding="utf-8", newline='\n')
 
     def __del__(self):
         """Close log file on cleanup"""

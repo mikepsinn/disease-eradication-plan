@@ -292,7 +292,7 @@ def postprocess_html_links(
 
                 # Only write if content changed
                 if content != original_content:
-                    with open(html_file, "w", encoding="utf-8") as f:
+                    with open(html_file, "w", encoding="utf-8", newline='\n') as f:
                         f.write(content)
                     files_modified += 1
 

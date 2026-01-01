@@ -290,7 +290,7 @@ def prepare_pdf_build_temp(
 
                 # Only write if content changed
                 if modified_content != content:
-                    with open(qmd_file, "w", encoding="utf-8") as f:
+                    with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
                         f.write(modified_content)
                     files_modified += 1
 
@@ -387,7 +387,7 @@ def prepare_economics_index(verbose: bool = True) -> bool:
         # Match markdown links: [text](path)
         content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", replace_same_dir_link, content)
 
-        with open(index_qmd, "w", encoding="utf-8") as f:
+        with open(index_qmd, "w", encoding="utf-8", newline='\n') as f:
             f.write(content)
 
         return True
@@ -548,7 +548,7 @@ def prepare_paper_index(paper_path: str, verbose: bool = True) -> bool:
         # Replace remaining ../ with knowledge/ (goes to knowledge/)
         content = re.sub(r"\.\./", "knowledge/", content)
 
-        with open(index_qmd, "w", encoding="utf-8") as f:
+        with open(index_qmd, "w", encoding="utf-8", newline='\n') as f:
             f.write(content)
 
         return True
@@ -638,7 +638,7 @@ def prepare_test_index(verbose: bool = True) -> bool:
         # Replace remaining ../ with knowledge/ (goes to knowledge/)
         content = re.sub(r"\.\./", "knowledge/", content)
 
-        with open(index_qmd, "w", encoding="utf-8") as f:
+        with open(index_qmd, "w", encoding="utf-8", newline='\n') as f:
             f.write(content)
 
         return True

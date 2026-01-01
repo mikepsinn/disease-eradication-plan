@@ -141,13 +141,13 @@ format:
     fontsize: 11pt
 """
 
-    with open(quarto_config, 'w', encoding='utf-8') as f:
+    with open(quarto_config, 'w', encoding='utf-8', newline='\n') as f:
         f.write(config_content)
 
     # Create minimal index.qmd
     print("[*] Creating minimal index.qmd")
     index_qmd = project_root / "index.qmd"
-    with open(index_qmd, 'w', encoding='utf-8') as f:
+    with open(index_qmd, 'w', encoding='utf-8', newline='\n') as f:
         f.write("---\ntitle: PDF Test\n---\n\n# PDF Rendering Test\n\nThis is a test render.\n")
 
     print(f"[*] Using Python: {sys.executable}")

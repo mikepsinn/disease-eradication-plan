@@ -275,7 +275,7 @@ def delete_unused_parameters(parameters_file: Path, unused_params: Set[str], dry
     if not dry_run:
         # Write back
         print(f"Writing updated file to {parameters_file}...")
-        with open(parameters_file, 'w', encoding='utf-8') as f:
+        with open(parameters_file, 'w', encoding='utf-8', newline='\n') as f:
             f.write(new_content)
         print("Done!")
     else:

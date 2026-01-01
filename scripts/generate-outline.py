@@ -343,7 +343,7 @@ def main():
     # Output - always write to file now (default: OUTLINE-GENERATED.MD)
     output_path = project_root / args.output
     try:
-        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
             f.write(outline)
         print(f"Outline written to {output_path}")
     except Exception as e:

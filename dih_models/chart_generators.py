@@ -197,7 +197,7 @@ plt.show()
     # Write QMD file
     output_file = output_dir / f'tornado-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write(qmd_content)
 
     return output_file
@@ -275,7 +275,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
     # Write QMD file
     output_file = output_dir / f'sensitivity-table-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write(qmd_content)
 
     return output_file
@@ -503,7 +503,7 @@ plt.show()
     # Write QMD file
     output_file = output_dir / f'distribution-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write(qmd_content)
 
     return output_file
@@ -677,7 +677,7 @@ plt.show()
     # Write QMD file
     output_file = output_dir / f'mc-distribution-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write(qmd_content)
 
     return output_file
@@ -807,7 +807,7 @@ plt.show()
     # Write QMD file
     output_file = output_dir / f'exceedance-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write(qmd_content)
 
     return output_file

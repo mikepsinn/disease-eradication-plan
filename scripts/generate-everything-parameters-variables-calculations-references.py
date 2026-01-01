@@ -294,7 +294,7 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
     changes = sum(1 for a, b in zip(content, modified_content) if a != b)
     if changes > 0:
         # Write back
-        with open(qmd_path, "w", encoding="utf-8") as f:
+        with open(qmd_path, "w", encoding="utf-8", newline='\n') as f:
             f.write(modified_content)
 
         print(f"[OK] Injected citations into {qmd_path}")
@@ -371,7 +371,7 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
         lines.append(line)
 
     # Write to file
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.writelines(lines)
 
     print(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
@@ -629,7 +629,7 @@ def main():
                         "p50": pct(50),
                         "p95": pct(95),
                     }
-            with open(analysis_dir / "samples.json", "w", encoding="utf-8") as f:
+            with open(analysis_dir / "samples.json", "w", encoding="utf-8", newline='\n') as f:
                 json.dump(summaries, f, indent=2)
             print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
             print()
@@ -704,7 +704,7 @@ def main():
 
             if target and _sens is not None:
                 sens = _sens(parameters, target_name=target, n=2000)
-                with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8") as f:
+                with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8", newline='\n') as f:
                     json.dump(sens, f, indent=2)
                 print(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
             else:
@@ -905,7 +905,7 @@ def main():
 
                             # Tornado deltas for this outcome
                             tornado = tornado_deltas(parameters, outcome)
-                            with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8") as f:
+                            with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
                                 json.dump(tornado, f, indent=2)
                             analysis_json_count += 1
 
@@ -957,7 +957,7 @@ def main():
                             else:
                                 sens_indices = {inp: 0.0 for inp in input_sims.keys()}
 
-                            with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8") as f:
+                            with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
                                 json.dump(sens_indices, f, indent=2)
                             analysis_json_count += 1
 
@@ -1004,7 +1004,7 @@ def main():
                     except Exception as e:
                         print(f"[WARN] Skipped outcome {outcome.name}: {e}")
 
-                with open(analysis_dir / "outcomes.json", "w", encoding="utf-8") as f:
+                with open(analysis_dir / "outcomes.json", "w", encoding="utf-8", newline='\n') as f:
                     json.dump(outcomes_data, f, indent=2)
 
                 # Clean up orphaned PNG files (PNGs without matching QMD)

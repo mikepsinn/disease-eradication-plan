@@ -208,7 +208,7 @@ def apply_fixes(qmd_path: Path, matches: List[tuple]) -> int:
         lines[line_idx] = modified_line
 
     # Write back to file
-    with open(qmd_path, "w", encoding="utf-8") as f:
+    with open(qmd_path, "w", encoding="utf-8", newline='\n') as f:
         f.writelines(lines)
 
     return replacements

@@ -201,8 +201,8 @@ def main():
     issues = validator.scan_all(Path(args.path))
 
     if args.report:
-        with open(args.report, "w") as f:
-            json.dumps(issues, f, indent=2)
+        with open(args.report, "w", encoding="utf-8", newline='\n') as f:
+            json.dump(issues, f, indent=2)
         print(f"Report written to {args.report}")
     else:
         validator.print_report(issues)

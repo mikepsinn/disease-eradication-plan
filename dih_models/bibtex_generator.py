@@ -209,7 +209,7 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
             entries_placeholder += 1
 
     # Write file
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
     print(f"[OK] Generated {output_path}")

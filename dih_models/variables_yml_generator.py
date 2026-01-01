@@ -167,7 +167,7 @@ def generate_variables_yml(
         variables["total_citation_count"] = str(cite_count)
 
     # Write YAML file
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         # Add header comment
         f.write("# AUTO-GENERATED FILE - DO NOT EDIT\n")
         f.write("# Generated from dih_models/parameters.py\n")

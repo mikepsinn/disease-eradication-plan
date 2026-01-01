@@ -83,7 +83,7 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     content.append("")
 
     # Write file
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
     print(f"[OK] Generated {output_path}")

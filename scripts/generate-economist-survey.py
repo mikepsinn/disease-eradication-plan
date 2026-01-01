@@ -89,7 +89,7 @@ def main():
     # Save usage data
     usage_output = Path("_analysis/document-usage.json")
     usage_output.parent.mkdir(exist_ok=True, parents=True)
-    with open(usage_output, "w", encoding="utf-8") as f:
+    with open(usage_output, "w", encoding="utf-8", newline='\n') as f:
         json.dump(usage_data, f, indent=2, ensure_ascii=False)
     print(f"      Saved usage data to {usage_output}")
 
@@ -139,7 +139,7 @@ def main():
     output_path = Path(args.output)
     output_path.parent.mkdir(exist_ok=True, parents=True)
 
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         json.dump(survey, f, indent=2, ensure_ascii=False)
 
     # Also save to surveys/ folder for version control
@@ -148,7 +148,7 @@ def main():
     version = survey["metadata"]["version"]
     surveys_path = surveys_dir / f"economist-survey-v{version}.json"
 
-    with open(surveys_path, "w", encoding="utf-8") as f:
+    with open(surveys_path, "w", encoding="utf-8", newline='\n') as f:
         json.dump(survey, f, indent=2, ensure_ascii=False)
 
     print(f"\n[OK] Survey saved to {output_path}")
