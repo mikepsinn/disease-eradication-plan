@@ -1502,9 +1502,9 @@ def main():
 
     # Find all .qmd files
     qmd_files = glob("**/*.qmd", recursive=True)
-    # Filter out node_modules, _book, .quarto, _site, __tests__, _build_temp directories
+    # Filter out node_modules, _book, .quarto, _site, __tests__ directories
     qmd_files = [
-        f for f in qmd_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp"])
+        f for f in qmd_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
     ]
     # Exclude references.qmd from validation
     qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
@@ -1513,9 +1513,9 @@ def main():
 
     # Find all .md files
     md_files = glob("**/*.md", recursive=True)
-    # Filter out node_modules, _book, .quarto, _site, __tests__, _build_temp directories
+    # Filter out node_modules, _book, .quarto, _site, __tests__ directories
     md_files = [
-        f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp"])
+        f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
     ]
     # Exclude files in the root directory (files with no directory component)
     md_files = [f for f in md_files if os.path.dirname(f)]
