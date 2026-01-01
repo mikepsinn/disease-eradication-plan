@@ -411,7 +411,7 @@ format:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     output-file: "How-to-End-War-and-Disease.epub"
     # Cover image for EPUB (required for most e-book platforms)
-    epub-cover-image: assets/cover/book-cover-3.png
+    epub-cover-image: assets/cover/book-cover-3.jpg
     # Math rendering: Use mathml (fast) instead of webtex (slow)
     # MathML works in most modern e-readers (Apple Books, Kobo, Nook)
     # Kindle users should use the PDF version for equations

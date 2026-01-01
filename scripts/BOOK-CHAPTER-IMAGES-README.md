@@ -135,7 +135,7 @@ Generating OG images for book chapters
   [OK] Updated frontmatter in knowledge/problem.qmd
 
 [2/84] Processing: knowledge/economics/economics.qmd
-  [SKIP] knowledge/economics/economics.qmd - already has image: /assets/economics/economics-og.png
+  [SKIP] knowledge/economics/economics.qmd - already has image: /assets/economics/economics-og.jpg
 
 ...
 
