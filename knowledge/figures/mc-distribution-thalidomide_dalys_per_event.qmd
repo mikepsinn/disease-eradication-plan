@@ -102,7 +102,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('mc-distribution-thalidomide_dalys_per_event.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,

@@ -180,10 +180,10 @@ clean_spines(ax)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
-# Use 150 DPI for PDF compatibility (vs 200 DPI which can exceed LaTeX limits)
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
 output_path = get_figure_output_path('tornado-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -466,6 +466,10 @@ ax.set_xlabel(f'{{display_name}} ({{unit}})' if unit else display_name, fontsize
 ax.set_ylabel('Probability Density', fontsize=12)
 ax.set_title(f'Assumed Distribution: {{display_name}}', fontsize=14, weight='bold', pad=15)
 
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=unit))
+
 # Legend
 
 ax.legend(loc='upper right', fontsize=10)
@@ -482,7 +486,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('distribution-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -646,7 +650,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('mc-distribution-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
@@ -786,7 +790,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
 output_path = get_figure_output_path('exceedance-{param_name.lower()}.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,

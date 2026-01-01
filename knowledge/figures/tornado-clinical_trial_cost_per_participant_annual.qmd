@@ -93,10 +93,10 @@ clean_spines(ax)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
-# Use 150 DPI for PDF compatibility (vs 200 DPI which can exceed LaTeX limits)
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
 output_path = get_figure_output_path('tornado-clinical_trial_cost_per_participant_annual.png')
-plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,

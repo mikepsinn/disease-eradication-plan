@@ -170,13 +170,13 @@ def get_monospace_font():
     return _find_first_available_font(tuple(MONOSPACE_FONT_PREFERENCES))
 
 
-def setup_chart_style(style="light", dpi=150):
+def setup_chart_style(style="light", dpi=96):
     """
     Apply consistent styling to all matplotlib charts.
 
     Args:
         style: 'light' (light background) or 'dark' (dark background)
-        dpi: Resolution for saved figures (default 150 for high quality)
+        dpi: Resolution for saved figures (default 96 for web-optimized output)
     """
     # Suppress font warnings during style setup
     import contextlib
