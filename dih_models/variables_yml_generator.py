@@ -94,21 +94,10 @@ def generate_variables_yml(
                 has_meaningful_uncertainty = abs(p95 - p5) > 0
 
             if has_meaningful_uncertainty:
-                # Determine if this is a calculated parameter or input parameter
-                source_type_str = ""
-                if hasattr(value, "source_type"):
-                    source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
-                is_calculated = source_type_str == "calculated"
-
-                # For calculated parameters: use p50 (median from Monte Carlo)
-                # For input parameters: use base value (parameter's original value)
+                # Always use deterministic baseline for consistency with tooltips, LaTeX, and parameter-summary.md
+                # The confidence interval will still show Monte Carlo uncertainty range
                 unit = getattr(value, "unit", None)
-                if is_calculated:
-                    # Calculated: p50 is the meaningful central value
-                    central_value = p50
-                else:
-                    # Input: base parameter value is the meaningful central value
-                    central_value = float(value)
+                central_value = float(value)
 
                 central_formatted = format_parameter_value(central_value, unit, include_unit=False)
                 p5_formatted = format_parameter_value(p5, unit, include_unit=False)

@@ -147,7 +147,7 @@ This is deliberately ultra-conservative. An economist reviewing our expected val
 
 At {{< var political_success_probability >}} probability of success:
 
-- **Expected ROI**: {{< var dfda_expected_roi >}}:1 (still positive)
+- **Expected ROI**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 (still positive)
 - **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets)
 
 The intervention remains economically justified even assuming a 99% chance of failure because:

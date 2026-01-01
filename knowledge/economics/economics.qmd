@@ -1195,17 +1195,17 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 {{< include ../figures/distribution-political_success_probability.qmd >}}
 
-**Risk-adjusted expected ROI**: {{< var dfda_expected_roi >}}:1
+**Risk-adjusted expected ROI**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1
 
-{{< var dfda_expected_roi_latex >}}
+{{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
 The tornado chart below shows how expected ROI varies with political success probability - this is the dominant driver of uncertainty:
 
-{{< include ../figures/tornado-dfda_expected_roi.qmd >}}
+{{< include ../figures/tornado-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 The Monte Carlo distribution shows the full range of expected ROI outcomes when sampling political success probability from its uncertainty distribution:
 
-{{< include ../figures/mc-distribution-dfda_expected_roi.qmd >}}
+{{< include ../figures/mc-distribution-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 **Key insight**: Even at the 5th percentile (P≈0.1%), expected ROI substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
 
@@ -1213,7 +1213,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 - Childhood vaccination programs: {{< var childhood_vaccination_roi >}} {{< var childhood_vaccination_roi_cite >}}:1 ROI with P≈1.0
 - Against Malaria Foundation: ~8:1 equivalent ROI
-- **1% treaty (central estimate, P={{< var political_success_probability >}})**: {{< var dfda_expected_roi >}}:1 expected ROI
+- **1% treaty (central estimate, P={{< var political_success_probability >}})**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
@@ -2067,7 +2067,7 @@ The following table summarizes key risk factors and their mitigation strategies:
 
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
-- **Risk-adjusted ({{< var dfda_expected_roi >}}:1 expected ROI):** Central estimate with political success probability uncertainty (5%-50% range), intervention generates substantial positive returns
+- **Risk-adjusted ({{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI):** Central estimate with political success probability uncertainty (5%-50% range), intervention generates substantial positive returns
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
 - **Complete ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 

@@ -191,12 +191,18 @@ def render_quarto(
         if build_temp:
             print("[*] Copying outputs from temp to original location...")
 
+            # Debug: List all PDFs found in temp directory
+            pdf_files = list(build_temp.glob("*.pdf"))
+            print(f"[DEBUG] Found {len(pdf_files)} PDF file(s) in temp directory: {[p.name for p in pdf_files]}")
+
             # Copy PDFs to both project root and output directory
-            for pdf_file in build_temp.glob("*.pdf"):
+            for pdf_file in pdf_files:
+                print(f"[DEBUG] Processing PDF: {pdf_file.name} (size: {pdf_file.stat().st_size} bytes)")
+
                 # Copy to project root (for convenience)
                 dest_root = project_root / pdf_file.name
                 shutil.copy2(pdf_file, dest_root)
-                print(f"[OK] Copied {pdf_file.name} to project root")
+                print(f"[OK] Copied {pdf_file.name} to project root: {dest_root}")
 
                 # Also copy to output directory (for deployment)
                 # Determine output directory based on config
@@ -205,11 +211,17 @@ def render_quarto(
                 else:
                     output_dir = project_root / "_site" / config_name
 
+                print(f"[DEBUG] Target deployment directory: {output_dir}")
+
                 # Ensure output directory exists before copying
                 output_dir.mkdir(parents=True, exist_ok=True)
                 dest_output = output_dir / pdf_file.name
                 shutil.copy2(pdf_file, dest_output)
-                print(f"[OK] Copied {pdf_file.name} to {output_dir.relative_to(project_root)}")
+                print(f"[OK] Copied {pdf_file.name} to deployment directory: {dest_output}")
+                print(f"[DEBUG] Deployment file size: {dest_output.stat().st_size} bytes")
+
+            if not pdf_files:
+                print("[WARNING] No PDF files found in temp directory to copy!")
 
             # Copy HTML output directory if it exists
             site_dir = build_temp / "_site"
@@ -270,15 +282,26 @@ def render_quarto(
             print("=" * 80)
             print("VALIDATION: PDF DEPLOYMENT CHECK")
             print("=" * 80)
+            print(f"[DEBUG] build_temp={build_temp}")
+            print(f"[DEBUG] rendering_pdf={rendering_pdf}")
+            print(f"[DEBUG] exit_code={exit_code}")
+            print(f"[DEBUG] config_name={config_name}")
 
             # Read PDF filename from Quarto config
             import yaml
 
             quarto_config_path = project_root / "_quarto.yml"
+            print(f"[DEBUG] Looking for Quarto config at: {quarto_config_path}")
+            print(f"[DEBUG] Config exists: {quarto_config_path.exists()}")
+
             if quarto_config_path.exists():
                 try:
                     with open(quarto_config_path, 'r', encoding='utf-8') as f:
                         quarto_config = yaml.safe_load(f)
+
+                    print(f"[DEBUG] Config has 'format' key: {'format' in quarto_config}")
+                    if 'format' in quarto_config:
+                        print(f"[DEBUG] Config has 'pdf' in format: {'pdf' in quarto_config['format']}")
 
                     # Get PDF output filename from config
                     expected_pdf = None
@@ -286,20 +309,36 @@ def render_quarto(
                         pdf_config = quarto_config['format']['pdf']
                         if 'output-file' in pdf_config:
                             expected_pdf = pdf_config['output-file']
+                            print(f"[DEBUG] Expected PDF filename from config: {expected_pdf}")
 
                     if expected_pdf:
                         # Determine deployment directory from config
                         if 'project' in quarto_config and 'output-dir' in quarto_config['project']:
                             output_dir_str = quarto_config['project']['output-dir']
                             deployment_dir = project_root / output_dir_str
+                            print(f"[DEBUG] Using output-dir from config: {output_dir_str}")
                         else:
                             # Fallback to default locations
                             if config_name == "book":
                                 deployment_dir = project_root / "_book" / "warondisease"
                             else:
                                 deployment_dir = project_root / "_site" / config_name
+                            print(f"[DEBUG] Using fallback deployment directory")
+
+                        print(f"[DEBUG] Deployment directory: {deployment_dir}")
+                        print(f"[DEBUG] Deployment directory exists: {deployment_dir.exists()}")
 
                         expected_path = deployment_dir / expected_pdf
+                        print(f"[DEBUG] Checking for PDF at: {expected_path}")
+                        print(f"[DEBUG] PDF exists: {expected_path.exists()}")
+
+                        if expected_path.exists():
+                            print(f"[DEBUG] PDF file size: {expected_path.stat().st_size} bytes")
+
+                        # List all files in deployment directory for debugging
+                        if deployment_dir.exists():
+                            all_files = list(deployment_dir.glob("*"))
+                            print(f"[DEBUG] Files in deployment directory ({len(all_files)}): {[f.name for f in all_files[:20]]}")  # First 20 files
 
                         if not expected_path.exists():
                             error_msg = (

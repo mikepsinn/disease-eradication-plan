@@ -480,41 +480,6 @@ $$
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 300k {#sec-dfda_expected_roi}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.
-
-**Inputs**:
-
-- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 30.0M ratio
-- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
-
-$$
-ROI_{DFDA,exp} = ROI_{treaty} \times Probability = 30M \times 1\% = 300{,}000
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_expected_roi.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_expected_roi.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_expected_roi.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_expected_roi.qmd >}}
-
-:::
-
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.2B {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -3614,6 +3579,41 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_expected_cost_per_daly.qmd >}}
+
+:::
+
+### Expected Treaty ROI (Risk-Adjusted): 300k {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.
+
+**Inputs**:
+
+- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 30.0M ratio
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
+
+$$
+ROI_{treaty} = ROI_{treaty} \times Probability = 30M \times 1\% = 300{,}000
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 :::
 

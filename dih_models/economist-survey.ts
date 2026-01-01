@@ -1140,7 +1140,7 @@ export const economistSurvey: EconomistSurvey = {
     },
     {
       rank: 25,
-      name: "DFDA_EXPECTED_ROI",
+      name: "TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
       displayName: "Expected Treaty ROI (Risk-Adjusted)",
       value: 11914.175356950002,
       formattedValue: "11.9k",

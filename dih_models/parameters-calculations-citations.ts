@@ -1692,17 +1692,6 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
   latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
 };
 
-export const DFDA_EXPECTED_ROI: Parameter = {
-  value: 300175.8905295,
-  displayName: "Expected Treaty ROI (Risk-Adjusted)",
-  description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
-  sourceType: "calculated",
-  sourceRef: "calculated",
-  confidence: "low",
-  formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
-  latex: "ROI_{DFDA,exp} = ROI_{treaty} \\times Probability = 30M \\times 1\\% = 300{,}000",
-};
-
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 58203902439.02439,
   unit: "USD/year",
@@ -2756,6 +2745,17 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   confidence: "low",
   formula: "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
   latex: "Cost_{treaty} = \\frac{Cost_{treaty}}{Probability} = \\frac{\\$0.005}{1\\%} = \\$0.5",
+};
+
+export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
+  value: 300175.8905295,
+  displayName: "Expected Treaty ROI (Risk-Adjusted)",
+  description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
+  sourceType: "calculated",
+  sourceRef: "calculated",
+  confidence: "low",
+  formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
+  latex: "ROI_{treaty} = ROI_{treaty} \\times Probability = 30M \\times 1\\% = 300{,}000",
 };
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
@@ -4084,7 +4084,6 @@ export const parameters = {
   DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE,
   DFDA_EFFICACY_LAG_ELIMINATION_YLD,
   DFDA_EFFICACY_LAG_ELIMINATION_YLL,
-  DFDA_EXPECTED_ROI,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
   DFDA_NPV_BENEFIT_RD_ONLY,
@@ -4175,6 +4174,7 @@ export const parameters = {
   TREATY_CAMPAIGN_VOTING_BLOC_TARGET,
   TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_EXPECTED_COST_PER_DALY,
+  TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER,
   TREATY_LIVES_SAVED_ANNUAL_GLOBAL,
   TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS,

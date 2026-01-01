@@ -3299,7 +3299,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
               "adoption", "success", "campaign", "voting", "referendum"],
 )
 
-# NOTE: DFDA_EXPECTED_ROI is defined later in the file (after TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
+# NOTE: TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG is defined later in the file (after TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
 # because it depends on that parameter which is calculated from other treaty parameters.
 
 # ---
@@ -4357,7 +4357,7 @@ TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 
 # Expected ROI accounting for political implementation uncertainty
 # Uses the uncertain POLITICAL_SUCCESS_PROBABILITY - Monte Carlo will sample the full distribution
-DFDA_EXPECTED_ROI = Parameter(
+TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG) * float(POLITICAL_SUCCESS_PROBABILITY),
     source_ref="calculated",
     source_type="calculated",
