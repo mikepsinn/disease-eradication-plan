@@ -145,8 +145,27 @@ def prepare_pdf_build_temp(
             "__pycache__",
             ".venv",
             "*.pyc",
-            ".jupyter_cache"
+            ".jupyter_cache",
+            "nul"  # Windows reserved filename
         ]
+
+        # Read .gitignore if it exists
+        gitignore_path = project_root / ".gitignore"
+        if gitignore_path.exists():
+            try:
+                with open(gitignore_path, encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        # Skip comments and empty lines
+                        if line and not line.startswith('#'):
+                            # Remove trailing slashes from directory patterns
+                            pattern = line.rstrip('/')
+                            ignore_patterns.append(pattern)
+                if verbose:
+                    print(f"[*] Loaded {len(ignore_patterns)} ignore patterns from .gitignore", flush=True)
+            except Exception as e:
+                if verbose:
+                    print(f"[WARNING] Failed to read .gitignore: {e}", file=sys.stderr)
 
         if verbose:
             print(f"[*] Copying project files to _build_temp/...", flush=True)
@@ -165,10 +184,17 @@ def prepare_pdf_build_temp(
             if item.name in ignore_patterns or item.name.startswith('.'):
                 continue
             dest = build_temp / item.name
-            if item.is_dir():
-                shutil.copytree(item, dest, ignore=ignore_files)
-            else:
-                shutil.copy2(item, dest)
+            try:
+                if item.is_dir():
+                    if verbose:
+                        print(f"[*] Copying directory: {item.name}", flush=True)
+                    shutil.copytree(item, dest, ignore=ignore_files, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(item, dest)
+            except Exception as e:
+                if verbose:
+                    print(f"[ERROR] Failed to copy {item.name}: {e}", file=sys.stderr)
+                raise
 
         if verbose:
             print(f"[OK] Copied project files to _build_temp/", flush=True)
