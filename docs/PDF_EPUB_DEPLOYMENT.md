@@ -115,6 +115,19 @@ Similar setup for the Incentive Alignment Bonds paper.
 
 ## Troubleshooting
 
+### Multi-Site PDFs (Economics, Wishocracy, IAB)
+
+**Issue**: PDF download links returning 404 errors on multi-site deployments.
+
+**Root Cause**: PDFs are generated at project root but not copied into output directories before deployment.
+
+**Solution (2025-01-01)**: Updated `scripts/render-quarto.py` to automatically copy PDFs:
+- `dih-economic-models.pdf` → `_site/economics/dih-economic-models.pdf`
+- `wishocracy-rappa-paper.pdf` → `_site/wishocracy/wishocracy-rappa-paper.pdf`  
+- `incentive-alignment-bonds-paper.pdf` → `_site/iab/incentive-alignment-bonds-paper.pdf`
+
+The render script now reads each config's `format.pdf.output-file` and `project.output-dir` settings and copies PDFs after rendering completes. No workflow changes needed.
+
 ### PDFs not showing up?
 
 1. **Check build logs**: Ensure PDF/EPUB generation succeeded
