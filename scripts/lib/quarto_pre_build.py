@@ -149,23 +149,9 @@ def prepare_pdf_build_temp(
             "nul"  # Windows reserved filename
         ]
 
-        # Read .gitignore if it exists
-        gitignore_path = project_root / ".gitignore"
-        if gitignore_path.exists():
-            try:
-                with open(gitignore_path, encoding="utf-8") as f:
-                    for line in f:
-                        line = line.strip()
-                        # Skip comments and empty lines
-                        if line and not line.startswith('#'):
-                            # Remove trailing slashes from directory patterns
-                            pattern = line.rstrip('/')
-                            ignore_patterns.append(pattern)
-                if verbose:
-                    print(f"[*] Loaded {len(ignore_patterns)} ignore patterns from .gitignore", flush=True)
-            except Exception as e:
-                if verbose:
-                    print(f"[WARNING] Failed to read .gitignore: {e}", file=sys.stderr)
+        # NOTE: We DON'T read .gitignore because simple substring matching is too broad
+        # (e.g., "dist/" becomes "dist" which incorrectly matches "distribution-*.qmd")
+        # The hardcoded ignore_patterns above are sufficient for temp folder copy
 
         if verbose:
             print(f"[*] Copying project files to _build_temp/...", flush=True)
@@ -173,10 +159,22 @@ def prepare_pdf_build_temp(
         def ignore_files(directory, files):
             """Return files to ignore during copy."""
             ignored = []
+            # Debug: Log when processing figures directory
+            is_figures_dir = 'figures' in str(directory)
+            if verbose and is_figures_dir:
+                print(f"[DEBUG] Processing directory: {directory}", flush=True)
+                print(f"[DEBUG] Files to check: {len(files)} files", flush=True)
+
             for pattern in ignore_patterns:
                 for file in files:
                     if pattern in file or file.startswith('.'):
                         ignored.append(file)
+                        if verbose and is_figures_dir and file.endswith('.qmd'):
+                            print(f"[DEBUG] IGNORING {file} (pattern '{pattern}' matched)", file=sys.stderr, flush=True)
+
+            if verbose and is_figures_dir and ignored:
+                print(f"[DEBUG] Ignored {len(ignored)} files in figures directory", flush=True)
+
             return set(ignored)
 
         # Copy all files except ignored ones

@@ -638,6 +638,17 @@ def main():
             print("[*] Generating parameter summary...")
             summary_path = analysis_dir / "parameter-summary.md"
             samples_json_path = analysis_dir / "samples.json"
+
+            # CRITICAL: Validate samples.json exists before proceeding
+            # Without this file, confidence intervals cannot be embedded in _variables.yml
+            if not samples_json_path.exists():
+                raise FileNotFoundError(
+                    f"CRITICAL: {samples_json_path.relative_to(project_root)} not found!\n"
+                    f"This file is required for embedding confidence intervals in _variables.yml.\n"
+                    f"The uncertainty simulation should have created this file but failed.\n"
+                    f"Check the Monte Carlo simulation output above for errors."
+                )
+
             generate_parameter_summary(parameters, summary_path, samples_json_path)
             print()
 
