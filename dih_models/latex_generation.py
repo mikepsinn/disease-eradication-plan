@@ -309,41 +309,40 @@ def format_latex_value(value: float, unit: str) -> str:
         if is_in_billions:
             if abs_val >= 1000:
                 scaled = value / 1000
-                return f"\\${scaled:.1f}T" if abs(scaled) < 100 else f"\\${scaled:.0f}T"
+                return f"\\${round_to_n_sigfigs(scaled, 3)}T"
             elif abs_val >= 1:
-                return f"\\${value:.1f}B" if abs_val < 100 else f"\\${value:.0f}B"
+                return f"\\${round_to_n_sigfigs(value, 3)}B"
             else:
                 scaled = value * 1000
-                return f"\\${scaled:.0f}M"
+                return f"\\${round_to_n_sigfigs(scaled, 3)}M"
         else:
             # Raw USD value
             if abs_val >= 1e12:
-                return f"\\${value/1e12:.2f}T"
+                return f"\\${round_to_n_sigfigs(value/1e12, 3)}T"
             elif abs_val >= 1e9:
-                return f"\\${value/1e9:.2f}B"
+                return f"\\${round_to_n_sigfigs(value/1e9, 3)}B"
             elif abs_val >= 1e6:
-                return f"\\${value/1e6:.1f}M"
+                return f"\\${round_to_n_sigfigs(value/1e6, 3)}M"
             elif abs_val >= 1e3:
-                return f"\\${value/1e3:.1f}K"
+                return f"\\${round_to_n_sigfigs(value/1e3, 3)}K"
             elif abs_val >= 1:
-                return f"\\${value:.2f}".rstrip('0').rstrip('.')
+                return f"\\${round_to_n_sigfigs(value, 3)}"
             else:
-                # Values < $1: preserve decimals
-                return f"\\${value:.3f}".rstrip('0').rstrip('.')
+                # Values < $1: preserve 3 sig figs
+                return f"\\${round_to_n_sigfigs(value, 3)}"
     elif is_percentage:
         if abs_val <= 1:
-            return f"{value * 100:.1f}\\%"
+            return f"{round_to_n_sigfigs(value * 100, 3)}\\%"
         else:
-            return f"{value:.1f}\\%"
+            return f"{round_to_n_sigfigs(value, 3)}\\%"
     else:
         # Non-currency, non-percentage
         if abs_val >= 1e12:
-            return f"{value/1e12:.2f}T"
+            return f"{round_to_n_sigfigs(value/1e12, 3)}T"
         elif abs_val >= 1e9:
-            return f"{value/1e9:.2f}B"
+            return f"{round_to_n_sigfigs(value/1e9, 3)}B"
         elif abs_val >= 1e6:
-            formatted = f"{value/1e6:.1f}M"
-            return formatted.replace('.0M', 'M')
+            return f"{round_to_n_sigfigs(value/1e6, 3)}M"
         elif abs_val >= 1e3:
             # Use thousands separator with 3 sig figs
             rounded = round_to_n_sigfigs(value, 3)
