@@ -1,5 +1,5 @@
 /**
- * Generate section-specific images using intelligent analysis
+ * Generate images for specific sections within chapters using intelligent analysis
  *
  * Gives Gemini the entire file and asks it to identify sections that would
  * benefit from visual aids (diagrams, charts, infographics, flowcharts).
@@ -8,7 +8,7 @@
  * All images use 9:16 portrait aspect ratio for mobile-first design.
  *
  * Usage:
- *   npx tsx scripts/generate-section-images.ts <file.qmd> [options]
+ *   npx tsx scripts/images/generate-sections.ts <file.qmd> [options]
  *
  * Options:
  *   --retro-futuristic    Generate in retro-futuristic style (default: academic)
@@ -16,20 +16,20 @@
  *   --force               Delete existing section images and regenerate all
  *
  * Examples:
- *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd
- *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --retro-futuristic
- *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --dry-run
- *   npx tsx scripts/generate-section-images.ts knowledge/economics/economics.qmd --force
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --retro-futuristic
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --dry-run
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --force
  */
 
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-import { generateGeminiProContent } from './lib/llm.js';
-import { generateAndSaveImages } from './lib/gemini-images.js';
-import { getCleanedContentForLLM } from './lib/file-utils.js';
-import { VisualStyles } from './lib/image-prompts.js';
+import { generateGeminiProContent } from '../lib/llm.js';
+import { generateAndSaveImages } from '../lib/gemini-images.js';
+import { getCleanedContentForLLM } from '../lib/file-utils.js';
+import { VisualStyles } from '../lib/image-prompts.js';
 
 dotenv.config();
 

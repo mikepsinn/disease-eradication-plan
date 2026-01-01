@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * Generate Image Metadata and Guide
+ * AI Image Analysis and Metadata Tagging
  *
  * This script:
  * 1. Scans all images in assets/ folder
@@ -9,7 +9,7 @@
  * 4. Generates assets/IMAGE-GUIDE.md with all image information
  *
  * Usage:
- *   pnpm tsx scripts/generate-image-metadata.ts [options]
+ *   pnpm tsx scripts/images/analyze-and-tag.ts [options]
  *
  * Options:
  *   --all              Process all images (default: only unprocessed)
@@ -25,7 +25,7 @@ import path from 'path';
 import sharp from 'sharp';
 import dotenv from 'dotenv';
 import { exiftool } from 'exiftool-vendored';
-import { saveFile } from './lib/file-utils';
+import { saveFile } from '../lib/file-utils';
 
 dotenv.config();
 

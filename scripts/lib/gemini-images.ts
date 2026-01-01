@@ -12,6 +12,7 @@ import sharp from 'sharp'
 // Simple logger to avoid env validation issues in standalone scripts
 const log = {
   info: (...args: any[]) => console.log('[genai-image]', ...args),
+  warn: (...args: any[]) => console.warn('[genai-image]', ...args),
   error: (...args: any[]) => console.error('[genai-image]', ...args),
 }
 
@@ -55,7 +56,7 @@ async function addWatermark(imagePath: string): Promise<void> {
 
   const watermarkBuffer = Buffer.from(svgWatermark);
 
-  // Load image and get dimensions
+  // Load image and get dimensions and format
   const image = sharp(imagePath);
   const metadata = await image.metadata();
 
@@ -67,14 +68,23 @@ async function addWatermark(imagePath: string): Promise<void> {
   const left = metadata.width - svgWidth;
   const top = metadata.height - svgHeight;
 
-  // Composite watermark onto image
-  await image
-    .composite([{
-      input: watermarkBuffer,
-      left,
-      top,
-    }])
-    .toFile(imagePath + '.tmp');
+  // Composite watermark onto image, preserving format
+  let pipeline = image.composite([{
+    input: watermarkBuffer,
+    left,
+    top,
+  }]);
+
+  // Ensure output format matches input
+  if (metadata.format === 'png') {
+    pipeline = pipeline.png();
+  } else if (metadata.format === 'jpeg') {
+    pipeline = pipeline.jpeg({ quality: 95 });
+  } else if (metadata.format === 'webp') {
+    pipeline = pipeline.webp({ quality: 95 });
+  }
+
+  await pipeline.toFile(imagePath + '.tmp');
 
   // Replace original with watermarked version
   const fs = await import('fs/promises');
@@ -89,6 +99,7 @@ async function addImageMetadata(imagePath: string): Promise<void> {
 
   // Add EXIF/XMP metadata using sharp
   const image = sharp(imagePath);
+  const existingMetadata = await image.metadata();
 
   // Metadata to embed
   const metadata = {
@@ -99,10 +110,19 @@ async function addImageMetadata(imagePath: string): Promise<void> {
     }
   };
 
-  // Write metadata
-  await image
-    .withMetadata(metadata)
-    .toFile(imagePath + '.meta.tmp');
+  // Write metadata, preserving format
+  let pipeline = image.withMetadata(metadata);
+
+  // Ensure output format matches input
+  if (existingMetadata.format === 'png') {
+    pipeline = pipeline.png();
+  } else if (existingMetadata.format === 'jpeg') {
+    pipeline = pipeline.jpeg({ quality: 95 });
+  } else if (existingMetadata.format === 'webp') {
+    pipeline = pipeline.webp({ quality: 95 });
+  }
+
+  await pipeline.toFile(imagePath + '.meta.tmp');
 
   // Replace original with metadata version
   await fs.rename(imagePath + '.meta.tmp', imagePath);
@@ -372,13 +392,49 @@ export async function saveImage(
   const buffer = Buffer.from(image.imageBytes, 'base64')
   await fs.writeFile(filePath, buffer)
 
+  // Detect actual format and convert if necessary
+  const requestedExt = path.extname(filePath).toLowerCase()
+  const sharpImage = sharp(filePath)
+  const metadata = await sharpImage.metadata()
+  
+  // Map sharp format to expected extension
+  const formatToExt: Record<string, string> = {
+    'jpeg': '.jpg',
+    'png': '.png',
+    'webp': '.webp',
+    'gif': '.gif',
+    'tiff': '.tiff',
+  }
+  
+  const actualExt = metadata.format ? formatToExt[metadata.format] : null
+  
+  if (actualExt && actualExt !== requestedExt) {
+    log.warn(`Image format mismatch: requested ${requestedExt} but got ${actualExt}. Converting...`, { filePath })
+    
+    // Convert to requested format
+    const tmpPath = filePath + '.converting.tmp'
+    if (requestedExt === '.png') {
+      await sharpImage.png().toFile(tmpPath)
+    } else if (requestedExt === '.jpg' || requestedExt === '.jpeg') {
+      await sharpImage.jpeg({ quality: 95 }).toFile(tmpPath)
+    } else if (requestedExt === '.webp') {
+      await sharpImage.webp({ quality: 95 }).toFile(tmpPath)
+    } else {
+      // For other formats, just use default sharp conversion
+      await sharpImage.toFile(tmpPath)
+    }
+    
+    // Replace original with converted version
+    await fs.rename(tmpPath, filePath)
+  }
+
   // Add metadata (copyright, source, AI generation info)
   await addImageMetadata(filePath)
 
   // Add watermark to all generated images
   await addWatermark(filePath)
 
-  log.info('Image saved with metadata and watermark', { filePath, size: buffer.length })
+  log.info('Image saved with metadata and watermark', { filePath, size: buffer.length, format: metadata.format })
 }
 
 /**

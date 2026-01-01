@@ -23,7 +23,7 @@ npm run images:generate:chapters
 Or directly:
 
 ```bash
-npx tsx scripts/generate-project-images.ts book-chapters
+npx tsx scripts/images/generate-chapters.ts book-chapters
 ```
 
 ### Prerequisites

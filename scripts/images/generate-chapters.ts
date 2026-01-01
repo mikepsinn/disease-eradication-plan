@@ -1,9 +1,9 @@
 /**
- * Generate OG images for book chapters
+ * Generate OG images, infographics, and slides for book chapters
  * Uses a lock file to prevent multiple instances from running simultaneously
  *
  * Usage:
- *   npx tsx scripts/generate-project-images.ts [file-filter] [options]
+ *   npx tsx scripts/images/generate-chapters.ts [file-filter] [options]
  *
  * Options:
  *   --force                   Regenerate all images even if they already exist
@@ -13,13 +13,13 @@
  *
  * Examples:
  *   # Force regenerate all images in academic style
- *   npx tsx scripts/generate-project-images.ts --force
+ *   npx tsx scripts/images/generate-chapters.ts --force
  *
  *   # Generate with intelligent analysis for economics.qmd
- *   npx tsx scripts/generate-project-images.ts economics --analyze-first --academic-style
+ *   npx tsx scripts/images/generate-chapters.ts economics --analyze-first --academic-style
  *
  *   # Generate all missing images with analysis
- *   npx tsx scripts/generate-project-images.ts --analyze-first --academic-style
+ *   npx tsx scripts/images/generate-chapters.ts --analyze-first --academic-style
  */
 
 import dotenv from 'dotenv';
@@ -27,15 +27,15 @@ import path from 'path';
 import fs from 'fs/promises';
 import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
-import { generateAndSaveImages } from './lib/gemini-images.js';
-import { generateGeminiFlashContent } from './lib/llm.js';
+import { generateAndSaveImages } from '../lib/gemini-images.js';
+import { generateGeminiFlashContent } from '../lib/llm.js';
 import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
   getCleanedContentForLLM,
   extractReferenceImages
-} from './lib/file-utils.js';
-import { ImagePrompts, VisualStyles, VisualStyleName } from './lib/image-prompts.js';
+} from '../lib/file-utils.js';
+import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts.js';
 
 // Load environment variables
 dotenv.config();
