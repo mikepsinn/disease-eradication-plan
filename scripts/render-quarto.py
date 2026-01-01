@@ -22,6 +22,7 @@ import os
 import shutil
 import subprocess
 import sys
+import yaml
 from pathlib import Path
 
 # Add scripts/lib to path for imports
@@ -214,6 +215,40 @@ def render_quarto(
                     shutil.rmtree(dest_book)
                 shutil.copytree(book_dir, dest_book)
                 print(f"[OK] Copied _book/ directory")
+
+        # Copy PDF to output directory if both HTML and PDF were rendered
+        # This happens after temp folder cleanup to ensure PDF is in project root
+        if format_override is None and exit_code == 0:
+            # We're rendering both HTML and PDF (default behavior)
+            # Copy the PDF into the HTML output directory for deployment
+            try:
+                config_path = project_root / config["config_file"]
+                with open(config_path, encoding="utf-8") as f:
+                    config_data = yaml.safe_load(f)
+                
+                # Get PDF filename from config
+                pdf_filename = config_data.get("format", {}).get("pdf", {}).get("output-file")
+                
+                # Get HTML output directory from config
+                output_dir = config_data.get("project", {}).get("output-dir")
+                
+                if pdf_filename and output_dir:
+                    pdf_path = project_root / pdf_filename
+                    output_pdf_path = project_root / output_dir / pdf_filename
+                    
+                    if pdf_path.exists():
+                        # Ensure output directory exists
+                        output_pdf_path.parent.mkdir(parents=True, exist_ok=True)
+                        
+                        # Copy PDF to output directory
+                        shutil.copy2(pdf_path, output_pdf_path)
+                        print(f"[OK] Copied {pdf_filename} to {output_dir}/ for deployment")
+                    else:
+                        print(f"[INFO] No PDF found at {pdf_filename}, skipping copy to output directory")
+                
+            except Exception as e:
+                print(f"[WARNING] Failed to copy PDF to output directory: {e}", file=sys.stderr)
+                # Don't fail the build for this
 
         # 5. Run verification tests if requested (test config only)
         if verify and config_name == "test" and exit_code == 0:
