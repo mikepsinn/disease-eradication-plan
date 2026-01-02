@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 355
+**Total parameters**: 354
 
 - External sources (peer-reviewed): 139
-- Calculated values: 119
+- Calculated values: 118
 - Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (139 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (118 parameters) • [External Data Sources](#sec-external) (139 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -824,41 +824,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
-
-:::
-
-### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment: 1.46k ratio {#sec-dfda_roi_simple}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Simple ROI without NPV adjustment (gross savings / annual opex)
-
-**Inputs**:
-
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.2B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-
-$$
-ROI_{DFDA} = \frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \frac{\$58.2B}{\$40M} = 1{,}460
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_roi_simple.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_roi_simple.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_roi_simple.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_roi_simple.qmd >}}
 
 :::
 

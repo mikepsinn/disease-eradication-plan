@@ -1834,18 +1834,6 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
 };
 
-export const DFDA_ROI_SIMPLE: Parameter = {
-  value: 1456.0975609756097,
-  unit: "ratio",
-  displayName: "Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment",
-  description: "Simple ROI without NPV adjustment (gross savings / annual opex)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
-  confidence: "high",
-  formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
-  latex: "ROI_{DFDA} = \\frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}} = \\frac{\\$58.2B}{\\$40M} = 1{,}460",
-};
-
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   value: 31436.0,
   unit: "trials/year",
@@ -4132,7 +4120,6 @@ export const parameters = {
   DFDA_QUEUE_CLEARANCE_YEARS,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
-  DFDA_ROI_SIMPLE,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
   DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS,
   DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
@@ -5763,9 +5750,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 355,
+  total: 354,
   external: 139,
-  calculated: 119,
+  calculated: 118,
   definitions: 97,
   citations: 105,
 } as const;

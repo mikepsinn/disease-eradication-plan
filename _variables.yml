@@ -642,14 +642,6 @@
   >633 (95% CI: 567-782)</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
-"dfda_roi_simple": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_roi_simple\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simple ROI without\
-  \ NPV adjustment (gross savings / annual opex) | Calculated from 2 inputs | ✓ High\
-  \ confidence | Formula: GROSS_SAVINGS ÷ ANNUAL_OPEX | Unit: ratio | Click to view\
-  \ details, calculation & sources\">1.46k (95% CI: 1.31k-1.78k)</a>"
-"dfda_roi_simple_latex": "$$\nROI_{DFDA} = \\frac{Benefit_{DFDA,ann}}{Cost_{DFDA,ann}}\
-  \ = \\frac{\\$58.2B}{\\$40M} = 1{,}460\n$$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_target_cost_per_patient_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
@@ -2539,6 +2531,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "355"
-"total_latex_equation_count": "140"
+"total_parameter_count": "354"
+"total_latex_equation_count": "139"
 "total_citation_count": "139"
