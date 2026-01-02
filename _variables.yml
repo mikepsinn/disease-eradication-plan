@@ -445,6 +445,26 @@
   >$542B (95% CI: $388B-$659B)</a>"
 "dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = \\$21.76B \\\
   times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B\n$$"
+"dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from direct\
+  \ philanthropic/government funding of medical research (vs treaty campaign). Same\
+  \ benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent\
+  \ ROI, but treaty campaign achieves 542× better leverage. | Calculated from 2 inputs\
+  \ | ✓ High confidence | Formula: ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV | Unit: ratio\
+  \ | Click to view details, calculation & sources\">153k (95% CI: 105k-231k)</a>"
+"dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag_latex": "$$\nFunding_{direct,DFDA}\
+  \ = \\frac{Capacity_{DFDA}}{Funding_{direct,DFDA}} = \\frac{\\$82700T}{\\$542B}\
+  \ = 153{,}000\n$$"
+"dfda_direct_funding_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_vs_bed_nets_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"How many times more cost-effective direct funding\
+  \ is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical\
+  \ research is highly cost-effective. | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY | Unit: ratio\
+  \ | Click to view details, calculation & sources\">90.5 (95% CI: 54.2-177)</a>"
+"dfda_direct_funding_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{direct,DFDA}\
+  \ = \\frac{Cost_{net}}{Cost_{direct,DFDA}} = \\frac{\\$89}{\\$0.984} = 90.5\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -1639,6 +1659,15 @@
   \ | Dist: Beta | Unit: percentage | Click to view details, calculation & sources\"\
   >3.3% (95% CI: 2.14%-4.63%)</a>"
 "nih_clinical_trials_spending_pct_cite": "@nih-clinical-trials-spending-pct-3-3"
+"nih_standard_research_cost_per_qaly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nih_standard_research_cost_per_qaly\"\
+  \ class=\"parameter-link\" data-source-ref=\"standard-medical-research-roi\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Typical cost per QALY for standard\
+  \ NIH-funded medical research portfolio. Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY\
+  \ thresholds for value-based pricing. This reflects the inefficiency of traditional\
+  \ RCTs and basic research-heavy allocation. | ~ Medium confidence | 95% CI: [$20K,\
+  \ $100K] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
+  \ & sources\">$50K (95% CI: $24K-$88.2K)</a>"
+"nih_standard_research_cost_per_qaly_cite": "@standard-medical-research-roi"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (3% annual, social discount rate) | Unit: rate\
   \ | Core definition\">3%</span>"
@@ -1887,6 +1916,24 @@
   \ spending cut after WW2 (historical precedent) | ✓ High confidence | Unit: rate\
   \ | Click to view details, calculation & sources\">30%</a>"
 "post_ww2_military_cut_pct_cite": "@us-post-wwii-military-spending-cut"
+"pragmatic_trial_cost_per_qaly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pragmatic_trial_cost_per_qaly\"\
+  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-roi\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Cost per QALY for pragmatic platform\
+  \ trials like UK RECOVERY. RECOVERY cost ~$2.7M for dexamethasone arm and saved\
+  \ ~1 million lives globally. Implied cost per QALY is ~$300 or less - approximately\
+  \ 50-100x more efficient than standard interventions. | ✓ High confidence | 95%\
+  \ CI: [$100, $500] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
+  \ & sources\">$300 (95% CI: $163-$489)</a>"
+"pragmatic_trial_cost_per_qaly_cite": "@recovery-trial-roi"
+"pragmatic_vs_nih_efficiency_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pragmatic_vs_nih_efficiency_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"How many times more cost-effective pragmatic\
+  \ trials are vs standard NIH research. Every $1 spent on pragmatic trials buys ~167x\
+  \ more health than NIH standard allocation. | Calculated from 2 inputs | ~ Medium\
+  \ confidence | Formula: NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY | Unit: ratio\
+  \ | Click to view details, calculation & sources\">167 (95% CI: 148-181)</a>"
+"pragmatic_vs_nih_efficiency_multiplier_latex": "$$\nMultiplier = \\frac{Cost_{RD}}{Cost}\
+  \ = \\frac{\\$50K}{\\$300} = 167\n$$"
 "pre_1962_drug_development_cost_1980_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pre_1962_drug_development_cost_1980_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-baily-1972\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Average\
@@ -2531,6 +2578,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "354"
-"total_latex_equation_count": "139"
-"total_citation_count": "139"
+"total_parameter_count": "359"
+"total_latex_equation_count": "142"
+"total_citation_count": "141"

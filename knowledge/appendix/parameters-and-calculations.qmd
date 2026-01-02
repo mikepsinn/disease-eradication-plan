@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 354
+**Total parameters**: 359
 
-- External sources (peer-reviewed): 139
-- Calculated values: 118
+- External sources (peer-reviewed): 141
+- Calculated values: 121
 - Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (118 parameters) • [External Data Sources](#sec-external) (139 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (121 parameters) • [External Data Sources](#sec-external) (141 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -300,6 +300,74 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_cures_per_year.qmd >}}
+
+:::
+
+### Direct Funding ROI - Full Timeline Shift: 153k ratio {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+ROI from direct philanthropic/government funding of medical research (vs treaty campaign). Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent ROI, but treaty campaign achieves 542× better leverage.
+
+**Inputs**:
+
+- [Total Economic Value from Full Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $82.7 quadrillion
+- [dFDA Direct Funding NPV (Queue Clearance Period)](#sec-dfda_direct_funding_queue_clearance_npv): $542B
+
+$$
+Funding_{direct,DFDA} = \frac{Capacity_{DFDA}}{Funding_{direct,DFDA}} = \frac{\$82700T}{\$542B} = 153{,}000
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Direct Funding Cost-Effectiveness vs Bed Nets: 90.5 ratio {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+How many times more cost-effective direct funding is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical research is highly cost-effective.
+
+**Inputs**:
+
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [dFDA Direct Funding Cost per DALY](#sec-dfda_direct_funding_cost_per_daly): $0.984
+
+$$
+Multiplier_{direct,DFDA} = \frac{Cost_{net}}{Cost_{direct,DFDA}} = \frac{\$89}{\$0.984} = 90.5
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_vs_bed_nets_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_vs_bed_nets_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_vs_bed_nets_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_vs_bed_nets_multiplier.qmd >}}
 
 :::
 
@@ -3003,6 +3071,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-per_capita_mental_health_cost.qmd >}}
+
+:::
+
+### Pragmatic Trial Efficiency Multiplier vs NIH: 167 ratio {#sec-pragmatic_vs_nih_efficiency_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+How many times more cost-effective pragmatic trials are vs standard NIH research. Every $1 spent on pragmatic trials buys ~167x more health than NIH standard allocation.
+
+**Inputs**:
+
+- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
+- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 📊: $300 (95% CI: $100 - $500)
+
+$$
+Multiplier = \frac{Cost_{RD}}{Cost} = \frac{\$50K}{\$300} = 167
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
 
 :::
 
@@ -5734,6 +5835,30 @@ Percentage of NIH budget spent on clinical trials (3.3%)
 
 :::
 
+### NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Typical cost per QALY for standard NIH-funded medical research portfolio. Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY thresholds for value-based pricing. This reflects the inefficiency of traditional RCTs and basic research-heavy allocation.
+
+**Source**: [PMC (1990) - Standard Medical Research ROI ($20k-$100k/QALY)](../references.qmd#standard-medical-research-roi)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $100K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $100K (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nih_standard_research_cost_per_qaly.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -5961,6 +6086,30 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 Percentage military spending cut after WW2 (historical precedent)
 
 **Source**: [Wikipedia (2020) - US military spending reduction after WWII](../references.qmd#us-post-wwii-military-spending-cut)
+
+*✓ High confidence*
+
+:::
+
+### Pragmatic Trial Cost per QALY (RECOVERY): $300 {#sec-pragmatic_trial_cost_per_qaly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost per QALY for pragmatic platform trials like UK RECOVERY. RECOVERY cost ~$2.7M for dexamethasone arm and saved ~1 million lives globally. Implied cost per QALY is ~$300 or less - approximately 50-100x more efficient than standard interventions.
+
+**Source**: [RECOVERY Collaborative Group - RECOVERY Trial Cost-Effectiveness (~$300/QALY)](../references.qmd#recovery-trial-roi)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100, $500] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100 and $500 (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pragmatic_trial_cost_per_qaly.qmd >}}
 
 *✓ High confidence*
 

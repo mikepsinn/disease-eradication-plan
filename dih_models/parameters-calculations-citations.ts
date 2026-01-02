@@ -986,6 +986,17 @@ export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   confidenceInterval: [0.02, 0.05],
 };
 
+export const NIH_STANDARD_RESEARCH_COST_PER_QALY: Parameter = {
+  value: 50000.0,
+  unit: "USD/QALY",
+  displayName: "NIH Standard Research Cost per QALY",
+  description: "Typical cost per QALY for standard NIH-funded medical research portfolio. Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY thresholds for value-based pricing. This reflects the inefficiency of traditional RCTs and basic research-heavy allocation.",
+  sourceType: "external",
+  sourceRef: "standard-medical-research-roi",
+  confidence: "medium",
+  confidenceInterval: [20000.0, 100000.0],
+};
+
 export const OXFORD_RECOVERY_TRIAL_DURATION_MONTHS: Parameter = {
   value: 3.0,
   unit: "months",
@@ -1137,6 +1148,17 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
   sourceType: "external",
   sourceRef: "us-post-wwii-military-spending-cut",
   confidence: "high",
+};
+
+export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
+  value: 300.0,
+  unit: "USD/QALY",
+  displayName: "Pragmatic Trial Cost per QALY (RECOVERY)",
+  description: "Cost per QALY for pragmatic platform trials like UK RECOVERY. RECOVERY cost ~$2.7M for dexamethasone arm and saved ~1 million lives globally. Implied cost per QALY is ~$300 or less - approximately 50-100x more efficient than standard interventions.",
+  sourceType: "external",
+  sourceRef: "recovery-trial-roi",
+  confidence: "high",
+  confidenceInterval: [100.0, 500.0],
 };
 
 export const PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD: Parameter = {
@@ -1654,6 +1676,29 @@ export const DFDA_CURES_PER_YEAR: Parameter = {
   confidence: "low",
   formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
   latex: "DFDA = New \\times Multiplier_{DFDA} = 15 \\times 9.53 = 143",
+};
+
+export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
+  value: 152514.50174279098,
+  unit: "ratio",
+  displayName: "Direct Funding ROI - Full Timeline Shift",
+  description: "ROI from direct philanthropic/government funding of medical research (vs treaty campaign). Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent ROI, but treaty campaign achieves 542× better leverage.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
+  confidence: "high",
+  formula: "ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV",
+  latex: "Funding_{direct,DFDA} = \\frac{Capacity_{DFDA}}{Funding_{direct,DFDA}} = \\frac{\\$82700T}{\\$542B} = 153{,}000",
+};
+
+export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
+  value: 90.49193770072266,
+  unit: "ratio",
+  displayName: "Direct Funding Cost-Effectiveness vs Bed Nets",
+  description: "How many times more cost-effective direct funding is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical research is highly cost-effective.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY",
+  latex: "Multiplier_{direct,DFDA} = \\frac{Cost_{net}}{Cost_{direct,DFDA}} = \\frac{\\$89}{\\$0.984} = 90.5",
 };
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_DALYS: Parameter = {
@@ -2572,6 +2617,17 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   confidence: "high",
   formula: "US_MENTAL_HEALTH_COST ÷ US_POPULATION",
   latex: "Cost_{percap,health} = \\frac{Cost_{mental,ann}}{Population} = \\frac{\\$350B}{335M} = \\$1.04K",
+};
+
+export const PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER: Parameter = {
+  value: 166.66666666666666,
+  unit: "ratio",
+  displayName: "Pragmatic Trial Efficiency Multiplier vs NIH",
+  description: "How many times more cost-effective pragmatic trials are vs standard NIH research. Every $1 spent on pragmatic trials buys ~167x more health than NIH standard allocation.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY",
+  latex: "Multiplier = \\frac{Cost_{RD}}{Cost} = \\frac{\\$50K}{\\$300} = 167",
 };
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -4044,6 +4100,7 @@ export const parameters = {
   MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA,
   NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR,
   NIH_CLINICAL_TRIALS_SPENDING_PCT,
+  NIH_STANDARD_RESEARCH_COST_PER_QALY,
   OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
   PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
   PHARMA_DRUG_DEVELOPMENT_COST_CURRENT,
@@ -4058,6 +4115,7 @@ export const parameters = {
   POLITICAL_SUCCESS_PROBABILITY,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
   POST_WW2_MILITARY_CUT_PCT,
+  PRAGMATIC_TRIAL_COST_PER_QALY,
   PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD,
   PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
   PRE_1962_PHYSICIAN_COUNT,
@@ -4105,6 +4163,8 @@ export const parameters = {
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER,
   DFDA_CURES_PER_YEAR,
+  DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
+  DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER,
   DFDA_EFFICACY_LAG_ELIMINATION_DALYS,
   DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED,
   DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE,
@@ -4183,6 +4243,7 @@ export const parameters = {
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
+  PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   STATUS_QUO_AVG_YEARS_TO_CURE,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
@@ -5425,6 +5486,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Manhattan Institute: Slow Costly Trials | PMC: Establishing RECOVERY at Scale",
   },
+  "recovery-trial-roi": {
+        id: "recovery-trial-roi",
+        type: "article-journal",
+        title: "RECOVERY Trial Cost-Effectiveness (~$300/QALY)",
+        author: [
+          {
+            literal: "RECOVERY Collaborative Group"
+          },
+        ],
+        'container-title': "RECOVERY Trial Results",
+        URL: "https://www.recoverytrial.net/results",
+        note: "RECOVERY Trial Results",
+  },
   "sipri2024": {
         id: "sipri2024",
         type: "report",
@@ -5449,6 +5523,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "CSIS",
         URL: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
         note: "CSIS, Smallpox Eradication Model: Global Cooperation | PMC3720047, Link",
+  },
+  "standard-medical-research-roi": {
+        id: "standard-medical-research-roi",
+        type: "article-journal",
+        title: "Standard Medical Research ROI ($20k-$100k/QALY)",
+        author: [
+          {
+            literal: "PMC"
+          },
+        ],
+        issued: { 'date-parts': [[1990]] },
+        'container-title': "PMC: Cost-effectiveness Thresholds Used by Study Authors",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10114019/",
+        note: "PMC: Cost-effectiveness Thresholds Used by Study Authors, 1990-2021 | ICER Cost-Effectiveness Methods",
   },
   "status-quo-cure-timeline-estimate": {
         id: "status-quo-cure-timeline-estimate",
@@ -5750,11 +5838,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 354,
-  external: 139,
-  calculated: 118,
+  total: 359,
+  external: 141,
+  calculated: 121,
   definitions: 97,
-  citations: 105,
+  citations: 107,
 } as const;
 
 // ============================================================================

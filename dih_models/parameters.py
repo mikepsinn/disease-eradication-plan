@@ -4549,6 +4549,55 @@ CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
     keywords=["vaccination", "immunization", "childhood", "cost effectiveness", "benchmark", "comparison", "vaccines for children", "VFC"]
 )
 
+# ---
+# NIH vs PRAGMATIC TRIAL COST-EFFECTIVENESS COMPARISON
+# ---
+# These compare the efficiency of standard NIH-funded research vs pragmatic trials like RECOVERY
+
+NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
+    50_000,  # Midpoint of $20,000-$100,000 range
+    source_ref=ReferenceID.STANDARD_MEDICAL_RESEARCH_ROI,
+    source_type="external",
+    description="Typical cost per QALY for standard NIH-funded medical research portfolio. "
+                "Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY thresholds for value-based pricing. "
+                "This reflects the inefficiency of traditional RCTs and basic research-heavy allocation.",
+    display_name="NIH Standard Research Cost per QALY",
+    unit="USD/QALY",
+    confidence="medium",
+    confidence_interval=(20_000, 100_000),
+    distribution=DistributionType.LOGNORMAL,
+    keywords=["nih", "research", "cost effectiveness", "qaly", "standard", "traditional", "rct"],
+)
+
+PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
+    300,  # Based on RECOVERY trial: ~$2.7M for dexamethasone arm, ~1M lives saved
+    source_ref=ReferenceID.RECOVERY_TRIAL_ROI,
+    source_type="external",
+    description="Cost per QALY for pragmatic platform trials like UK RECOVERY. "
+                "RECOVERY cost ~$2.7M for dexamethasone arm and saved ~1 million lives globally. "
+                "Implied cost per QALY is ~$300 or less - approximately 50-100x more efficient than standard interventions.",
+    display_name="Pragmatic Trial Cost per QALY (RECOVERY)",
+    unit="USD/QALY",
+    confidence="high",
+    confidence_interval=(100, 500),
+    distribution=DistributionType.LOGNORMAL,
+    keywords=["pragmatic", "recovery", "trial", "cost effectiveness", "qaly", "efficient", "platform"],
+)
+
+PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
+    NIH_STANDARD_RESEARCH_COST_PER_QALY / PRAGMATIC_TRIAL_COST_PER_QALY,
+    source_type="calculated",
+    description="How many times more cost-effective pragmatic trials are vs standard NIH research. "
+                "Every $1 spent on pragmatic trials buys ~167x more health than NIH standard allocation.",
+    display_name="Pragmatic Trial Efficiency Multiplier vs NIH",
+    unit="ratio",
+    formula="NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY",
+    confidence="medium",
+    keywords=["efficiency", "multiplier", "pragmatic", "nih", "comparison", "cost effectiveness"],
+    inputs=["NIH_STANDARD_RESEARCH_COST_PER_QALY", "PRAGMATIC_TRIAL_COST_PER_QALY"],
+    compute=lambda ctx: ctx["NIH_STANDARD_RESEARCH_COST_PER_QALY"] / ctx["PRAGMATIC_TRIAL_COST_PER_QALY"],
+)  # ~167x more efficient
+
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a
 # cost-dominant intervention that saves money while improving health. Traditional ICER
@@ -4624,7 +4673,40 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     keywords=["philanthropy", "direct funding", "cost effectiveness", "open philanthropy", "gates foundation"],
     inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-)  # ~$2.71/DALY (still excellent, but 542× worse than treaty campaign)
+)  # ~$0.98/DALY (still excellent, but 542× worse than treaty campaign)
+
+# Direct funding ROI (mirrors TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
+# What if philanthropists/governments directly funded medical research instead of treaty campaign?
+DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
+    DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_type="calculated",
+    description="ROI from direct philanthropic/government funding of medical research (vs treaty campaign). "
+                "Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. "
+                "Still excellent ROI, but treaty campaign achieves 542× better leverage.",
+    display_name="Direct Funding ROI - Full Timeline Shift",
+    unit="ratio",
+    formula="ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV",
+    confidence="high",
+    keywords=["direct funding", "philanthropy", "roi", "timeline shift", "trial capacity", "efficacy lag"],
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
+)  # ~152,000:1 ROI (still massive, but 542× less than treaty campaign's 82.7M:1)
+
+# Direct funding vs bed nets comparison
+DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
+    BED_NETS_COST_PER_DALY / DFDA_DIRECT_FUNDING_COST_PER_DALY,
+    source_type="calculated",
+    description="How many times more cost-effective direct funding is vs bed nets ($89/DALY). "
+                "Even without treaty leverage, direct funding of medical research is highly cost-effective.",
+    display_name="Direct Funding Cost-Effectiveness vs Bed Nets",
+    unit="ratio",
+    formula="BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY",
+    confidence="high",
+    keywords=["direct funding", "bed nets", "cost effectiveness", "comparison"],
+    inputs=['BED_NETS_COST_PER_DALY', 'DFDA_DIRECT_FUNDING_COST_PER_DALY'],
+    compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"],
+)  # ~90× more cost-effective than bed nets
 
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
