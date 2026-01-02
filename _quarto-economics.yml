@@ -9,6 +9,7 @@ project:
 dih-render:
   index-source: knowledge/economics/economics.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  pdf-output-file: dih-economic-models.pdf
 
 profiles:
   default:
