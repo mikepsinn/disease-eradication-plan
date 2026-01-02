@@ -82,7 +82,7 @@ jobs:
       - name: Deploy Main Site to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_book/warondisease'
+          publish-dir: '_build_temp/book/_book/warondisease'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy main site from GitHub Actions"
@@ -155,7 +155,7 @@ jobs:
       - name: Deploy Economics Site to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_site/economics'
+          publish-dir: '_build_temp/economics/_site/economics'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy economics site from GitHub Actions"
@@ -228,7 +228,7 @@ jobs:
       - name: Deploy Wishocracy Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_site/wishocracy'
+          publish-dir: '_build_temp/wishocracy/_site/wishocracy'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy wishocracy paper from GitHub Actions"
@@ -301,7 +301,7 @@ jobs:
       - name: Deploy IAB Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_site/iab'
+          publish-dir: '_build_temp/iab/_site/iab'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy IAB paper from GitHub Actions"

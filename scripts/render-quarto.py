@@ -602,15 +602,13 @@ def render_quarto(
                 exit_code = validation_exit
             print()
 
-        # 6. Copy outputs from temp directory (skip in preview mode)
+        # 6. Validate and verify outputs in temp directory (skip in preview mode)
         if not preview and build_temp:
             print("=" * 80)
-            print("COPYING BUILD OUTPUTS")
+            print("VALIDATING BUILD OUTPUTS")
             print("=" * 80)
 
-            # Determine output directories
-            output_dir = project_root / metadata["output_dir"]
-            output_dir.mkdir(parents=True, exist_ok=True)
+            # Determine output directory in temp build folder
             temp_output_dir = build_temp / metadata["output_dir"]
 
             # Rename PDFs in temp folder to match config output-file
@@ -631,31 +629,11 @@ def render_quarto(
                         print(f"[*] Renaming {epub_file.name} -> {expected_epub}")
                         epub_file.rename(new_path)
 
-            # Copy _site directory
-            if (build_temp / "_site").exists():
-                dest = project_root / "_site"
-                if dest.exists():
-                    shutil.rmtree(dest)
-                shutil.copytree(build_temp / "_site", dest)
-                print("[OK] Copied _site/ directory")
-
-            # Copy _book directory
-            if (build_temp / "_book").exists():
-                dest = project_root / "_book"
-                if dest.exists():
-                    shutil.rmtree(dest)
-                shutil.copytree(build_temp / "_book", dest)
-                print("[OK] Copied _book/ directory")
-
-            # Copy PDFs to project root and validate
-            for pdf_file in (project_root / metadata["output_dir"]).glob("*.pdf"):
+            # Validate PDFs for Python code leakage
+            for pdf_file in temp_output_dir.glob("*.pdf"):
                 size_mb = pdf_file.stat().st_size / (1024 * 1024)
-                dest_path = project_root / pdf_file.name
-                print(f"[*] PDF source: {pdf_file} ({size_mb:.2f} MB)")
-                shutil.copy2(pdf_file, dest_path)
-                print(f"[OK] Copied PDF to: {dest_path}")
+                print(f"[*] PDF: {pdf_file} ({size_mb:.2f} MB)")
 
-                # Validate PDF for Python code leakage
                 print("=" * 80)
                 print("VALIDATION: PDF PYTHON CODE CHECK")
                 print("=" * 80)
@@ -671,12 +649,10 @@ def render_quarto(
                 else:
                     print("[OK] PDF validation passed")
 
-            # Copy EPUBs to project root
-            for epub_file in (project_root / metadata["output_dir"]).glob("*.epub"):
+            # Log EPUB files
+            for epub_file in temp_output_dir.glob("*.epub"):
                 size_mb = epub_file.stat().st_size / (1024 * 1024)
-                print(f"[*] {epub_file.name}: {size_mb:.2f} MB")
-                shutil.copy2(epub_file, project_root / epub_file.name)
-                print(f"[OK] Copied {epub_file.name} to project root")
+                print(f"[*] EPUB: {epub_file} ({size_mb:.2f} MB)")
 
             # Verify expected outputs exist
             print("=" * 80)
@@ -684,24 +660,22 @@ def render_quarto(
             print("=" * 80)
 
             # Check PDF if expected
-            expected_pdf = metadata.get("pdf_output_file")
             if expected_pdf and (format_override is None or format_override == "pdf"):
-                pdf_path = output_dir / expected_pdf
+                pdf_path = temp_output_dir / expected_pdf
                 if pdf_path.exists():
                     size_mb = pdf_path.stat().st_size / (1024 * 1024)
-                    print(f"[OK] PDF exists: {expected_pdf} ({size_mb:.2f} MB)")
+                    print(f"[OK] PDF exists: {pdf_path} ({size_mb:.2f} MB)")
                 else:
                     print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
                     print(f"        Expected at: {pdf_path}", file=sys.stderr)
                     exit_code = 1
 
             # Check EPUB if expected
-            expected_epub = metadata.get("epub_output_file")
             if expected_epub and (format_override is None or format_override == "epub"):
-                epub_path = output_dir / expected_epub
+                epub_path = temp_output_dir / expected_epub
                 if epub_path.exists():
                     size_mb = epub_path.stat().st_size / (1024 * 1024)
-                    print(f"[OK] EPUB exists: {expected_epub} ({size_mb:.2f} MB)")
+                    print(f"[OK] EPUB exists: {epub_path} ({size_mb:.2f} MB)")
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)
@@ -709,13 +683,21 @@ def render_quarto(
 
             # Check HTML output directory if expected
             if format_override is None or format_override == "html":
-                html_index = output_dir / "index.html"
+                html_index = temp_output_dir / "index.html"
                 if html_index.exists():
-                    print(f"[OK] HTML exists: {output_dir}/index.html")
+                    print(f"[OK] HTML exists: {html_index}")
                 else:
                     print(f"[ERROR] Expected HTML not found: index.html", file=sys.stderr)
                     print(f"        Expected at: {html_index}", file=sys.stderr)
                     exit_code = 1
+
+            # Print deployment path for GitHub Actions
+            print("=" * 80)
+            print("DEPLOYMENT INFO")
+            print("=" * 80)
+            print(f"[*] Deploy from: {temp_output_dir}")
+            print(f"[*] Example: publish-dir: '{temp_output_dir.relative_to(project_root)}'")
+            print()
 
         # 7. Run verification tests (test config only, skip in preview mode)
         if not preview and verify and config_name == "test" and exit_code == 0:
@@ -751,16 +733,9 @@ def render_quarto(
     finally:
         os.chdir(original_cwd)
 
-        # Clean up temp directory
-        if build_temp and build_temp.exists():
-            print("=" * 80)
-            print("CLEANING UP TEMP DIRECTORY")
-            print("=" * 80)
-            try:
-                shutil.rmtree(build_temp)
-                print(f"[OK] Removed temp directory")
-            except Exception as e:
-                print(f"[WARNING] Failed to remove temp directory: {e}", file=sys.stderr)
+        # Note: Temp directory (_build_temp/) is NOT cleaned up automatically
+        # - In CI: GitHub Actions runner is destroyed after job completes
+        # - Locally: Run `git clean -fdx _build_temp/` to clean up manually
 
         # Close BuildMonitor's log handle
         if monitor and hasattr(monitor, 'log_handle') and monitor.log_handle:
