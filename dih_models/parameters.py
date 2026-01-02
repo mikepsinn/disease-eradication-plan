@@ -13,6 +13,7 @@ Usage:
     print(f"Military spending: {format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
+from __future__ import annotations
 
 import math
 from enum import Enum
