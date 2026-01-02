@@ -1822,21 +1822,6 @@ DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"]
 )  # $41.46B (R&D savings only, most conservative financial estimate)
 
-# Simple ROI (not NPV-adjusted)
-DFDA_ROI_SIMPLE = Parameter(
-    DFDA_BENEFIT_RD_ONLY_ANNUAL / DFDA_ANNUAL_OPEX,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
-    source_type="calculated",
-    description="Simple ROI without NPV adjustment (gross savings / annual opex)",
-    display_name="Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment",
-    unit="ratio",
-    formula="GROSS_SAVINGS ÷ ANNUAL_OPEX",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
-    inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL', 'DFDA_ANNUAL_OPEX'],
-    compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] / ctx["DFDA_ANNUAL_OPEX"],
-)  # 1,038:1
-# NOTE: For NPV-adjusted ROI (463:1), use DFDA_ROI_RD_ONLY below
-# The NPV-based calculation accounts for time value of money and gradual adoption
 
 # ---
 # HEALTH IMPACT PARAMETERS

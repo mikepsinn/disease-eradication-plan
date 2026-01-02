@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost-Benefit & ROI
-description: Analysis and Return on Investment - How to slash per-patient trial costs by up to 80×, generate approximately {{< var dfda_benefit_rd_only_annual >}} in annual gross R&D savings, and deliver ROI ranging from {{< var dfda_roi_rd_only >}} (R&D only) to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} (with post-safety efficacy lag elimination).
+description: Analysis and Return on Investment - How to slash per-patient trial costs by up to {{< var dfda_trial_cost_reduction_factor >}}, generate approximately {{< var dfda_benefit_rd_only_annual >}} in annual gross R&D savings, and deliver ROI of {{< var dfda_roi_rd_only >}}:1.
 published: true
 tags:
   - dfda
@@ -17,11 +17,11 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 
 - **Saves ~{{< var dfda_benefit_rd_only_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **{{< var dfda_trial_cost_reduction_pct >}}**, with up to **95%** savings in optimal scenarios.
-- **Return on Investment (R&D Only)**: {{< var dfda_roi_rd_only >}}:1. A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_benefit_rd_only_annual >}} in industry-wide savings, yielding an NPV of ~{{< var dfda_npv_net_benefit_rd_only >}} [over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1** (PRIMARY recommended estimate).
+- **Return on Investment**: {{< var dfda_roi_rd_only >}}:1. A 10-year NPV cost of {{< var dfda_npv_total_cost >}} generates {{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings [over 10 years](#final-roi-and-net-benefit).
 - **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, a decentralized framework for drug assessment (dFDA) eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var dfda_efficacy_lag_elimination_dalys >}} QALYs average per year during the shift** (valued at **{{< var dfda_efficacy_lag_elimination_economic_value >}} total economic value**).
 - **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from efficacy lag elimination only (8.2-year timeline shift); comprehensive top-down estimate of **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: Such a framework is a dominant intervention that both saves money and improves health.
-- **[\$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without such a framework represents a societal opportunity cost of ~\$137M in economic waste and ~2,301 lost QALYs.
+- **{{< var dfda_rd_savings_daily >}}+ Daily Cost of Inaction**: Each day without such a framework represents a societal opportunity cost of ~{{< var dfda_rd_savings_daily >}} in economic waste. [See details](#daily-opportunity-cost-of-inaction).
 
 ## Executive Summary
 
@@ -37,9 +37,9 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 #### Exceptional Economic Value
 
-- **Return on Investment (ROI):** A dFDA Infrastructure has an extremely high ROI. Based on Core framework operational costs (ROM estimate {{< var dfda_upfront_build >}} per year including medium broader initiative costs) against **{{< var dfda_benefit_rd_only_annual >}} in annual R and D savings** (**{{< var dfda_trial_cost_reduction_pct >}} reduction scenario**, [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **66:1 to 2,577:1** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately **{{< var dfda_roi_rd_only >}}:1** over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** A dFDA Infrastructure has an extremely high ROI. Based on total 10-year NPV costs of {{< var dfda_npv_total_cost >}} against **{{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings** (**{{< var dfda_trial_cost_reduction_pct >}} cost reduction**, [see Market Size and Impact](#market-size-and-impact)), Monte Carlo analysis yields an ROI of **{{< var dfda_roi_rd_only >}}:1** ([see ROI Uncertainty Analysis](#roi-uncertainty-analysis-monte-carlo)). A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility:** A dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes, far exceeding standard government value thresholds.
-- **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
+- **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately **{{< var dfda_rd_savings_daily >}}** in wasted R&D spending.
 
 **Conclusion:** A decentralized framework for drug assessment slashes costs, speeds up medical innovation, and saves lives. The math supports building it, as shown by legislative frameworks like the "Right to Trial & FDA Upgrade Act."
 
@@ -49,7 +49,7 @@ Below is a conceptual, high-level analysis of the costs, benefits, and return on
 
 Because this analysis deals with a massive transformation nobody's tried before, the numbers are estimates and ranges. But they give you a way to think about costs, savings, and what happens to medical progress.
 
-## Overview of a Decentralized Framework for Drug Assessment - Vision and Capabilities
+## Vision and Capabilities
 
 Goals:
 
@@ -95,7 +95,7 @@ Goals:
 
 These assumptions set a stage where the framework can indeed function at scale, but this remains a forward-looking scenario.
 
-## Costs for a Decentralized Framework - ROM Estimates (Partnership Model) {#dfda-framework-costs-rom-estimates-partnership-model}
+## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates-partnership-model}
 
 > **Section Summary - Partnership Approach**
 >
@@ -107,7 +107,7 @@ These assumptions set a stage where the framework can indeed function at scale, 
 >
 > **Build-Everything Model (Not Recommended)**:
 > - **Upfront full platform build:** \$37.5–{{< var dfda_upfront_build_max >}}
-> - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
+> - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs)
 > - **Broader initiative (medium scenario):** [\$228 million upfront, \$21.3 million annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
 >
 > **Key Takeaway:** The **partnership approach costs 50-75% less** than building a competing platform. By establishing an open protocol and leveraging existing infrastructure (Epic, Cerner, Medable, Science 37), you avoid building consumer-facing apps, trial management systems, and global EHR integrations. The protocol layer costs $15-25M to build vs. $500M+ for a full-stack solution.
@@ -116,7 +116,7 @@ These assumptions set a stage where the framework can indeed function at scale, 
 
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on a **partnership-first strategy** where a dFDA provides open protocol infrastructure rather than competing with existing platforms.
 
-### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
+### Upfront Build Costs (30 Months) {#upfront-build-costs}
 
 1. **Core Engineering & Development Effort:**
 
@@ -137,17 +137,17 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
    - _Activities:_ Establishing cloud accounts, VPCs, Kubernetes cluster (EKS) setup, database provisioning (RDS/TimescaleDB), S3 buckets, CI/CD pipeline setup, initial IaC development (Terraform).
    - _Costs:_ Includes initial compute/storage during development/testing, potential small upfront reservations.
-   - **Estimated ROM:** [\$1 - \$3 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** [\$1 - \$3 Million](#upfront-build-costs)
 
 3. **Software Licenses & Tooling (Initial):**
 
    - _Examples:_ Potential costs for monitoring tools (Datadog), security scanners (Snyk), specialized libraries, collaboration tools if not already covered.
-   - **Estimated ROM:** [\$0.5 - \$1 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** [\$0.5 - \$1 Million](#upfront-build-costs)
 
 4. **Compliance, Legal & Security (Initial Setup):**
 
    - _Activities:_ Initial HIPAA/GDPR compliance assessment, policy development, security architecture review, legal consultation for data sharing frameworks.
-   - **Estimated ROM:** [\$1 - \$2 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** [\$1 - \$2 Million](#upfront-build-costs)
 
 The total upfront cost is the sum of all components:
 
@@ -190,7 +190,7 @@ Based on these market comparables, the total investment required to fund a globa
 
 This top-down estimate matches the bottom-up analysis. While a core, open-source framework can start for tens of millions (upfront build ROM), a fully-realized, globally adopted decentralized framework for drug assessment represents a **multi-hundred-million-dollar undertaking**, consistent with "Medium Case" and "Worst Case" scenarios.
 
-### Annual Operational Costs Illustrative at Target Scale of 5M MAU 50TB Ingest Month
+### Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
 
 1. **Cloud Infrastructure Costs (AWS):**
 
@@ -249,7 +249,7 @@ Where:
 The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the framework, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
 
 - **Average Cost Range Per User (at 5M MAU):**
-  - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)**, the average cost per user is:
+  - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs)**, the average cost per user is:
     $$
     \frac{\$11,000,000 \text{ to } \$26,500,000}{5{,}000{,}000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
     $$
@@ -383,7 +383,7 @@ Even when pursuing efficient strategies, the potential cost for the full initiat
 Based on the detailed technical specification, a ROM estimate suggests:
 
 - **Initial Core framework Build (~2.5 years): ~\$37.5 - {{< var dfda_upfront_build_max >}}**
-- **Annual Core framework Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)** (These framework operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by platform bounties)
+- **Annual Core framework Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs)** (These framework operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by platform bounties)
 
 This revised, bottom-up ROM highlights that while the core _technology platform_ build might be achievable within tens of millions, the previously estimated billions likely reflect the total cost of the entire global initiative. This includes massive integration efforts, legal frameworks, global rollout, and the financial ecosystem involving participant contributions and the direct NIH-funded discounts to patient costs, rather than direct platform-disbursed compensation. This conclusion is further supported by the top-down analogous estimate derived from market comparables, which points to a **total initiative investment in the range of \$50 million to {{< var dct_platform_funding_medium >}}** for a commercial-grade equivalent.
 
@@ -604,7 +604,7 @@ Where:
     S_{\text{annual}} = 0.95 \times \$100.0\text{B} = \$95\text{B} \text{ annually}
     $$
 
-#### For detailed source citations, see
+#### Key Sources
 
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
 - [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
@@ -623,8 +623,8 @@ The return on investment for an infrastructure supporting a decentralized framew
 
 2. **Model Inputs**
 
-   - **Upfront Cost (Core framework Build):** Based on the ROM estimate of **~\$37.5 - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
-   - **Annual Operational Cost (Core framework):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month).
+   - **Upfront Cost (Core framework Build):** Based on the ROM estimate of **~\$37.5 - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-build-costs). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
+   - **Annual Operational Cost (Core framework):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines Core framework operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global vision for a decentralized framework, which were significantly larger, are superseded by these more granular figures from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section for the purpose of this ROI calculation.)_
 
@@ -640,13 +640,13 @@ _The following ROI calculation primarily uses cost figures derived from the deta
 - **Industry R&D Spend** (Baseline): {{< var global_clinical_trials_spending_annual >}}/year globally (approx.).
 - **Potential Savings**: {{< var dfda_trial_cost_reduction_pct >}} reduction implies {{< var dfda_benefit_rd_only_annual >}}/year saved if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
-  - **Upfront Cost (Core framework Build):** ~{{< var dfda_upfront_build >}} (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
+  - **Upfront Cost (Core framework Build):** ~{{< var dfda_upfront_build >}} (representative figure from [Upfront (Capital) Expenditure](#upfront-build-costs)).
   - **Annual Operational Cost Scenarios:**
-    - **Scenario 1: Core framework Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)).
+    - **Scenario 1: Core framework Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs)).
 
       Let's use a midpoint of ~$19 Million/year for calculation.
     - **Scenario 2: Lean Ecosystem (Core framework + Medium Broader Initiatives):**
-      - Core framework Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): ~$19 Million/year
+      - Core framework Ops (midpoint from [Annual Operational Costs](#annual-operational-costs)): ~$19 Million/year
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~{{< var dfda_npv_annual_opex >}} + ~{{< var dih_npv_annual_opex_initiatives >}} = **~{{< var dfda_upfront_build >}}/year** (or $0.04 Billion/year).
 
@@ -677,14 +677,14 @@ Where:
 
 For the Lean Ecosystem scenario:
 
-- **Upfront Cost** (Core framework Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): {{< var dfda_upfront_build >}}
+- **Upfront Cost** (Core framework Build from [Upfront (Capital) Expenditure](#upfront-build-costs)): {{< var dfda_upfront_build >}}
 
   Amortized over 5 years:
   $$
   \frac{\$40\text{M}}{5} = \$8 \text{ Million/year}
   $$
 
-- **Annual Operational Cost** (Lean Ecosystem - Core framework Ops from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~{{< var dfda_upfront_build >}}/year
+- **Annual Operational Cost** (Lean Ecosystem - Core framework Ops from [Annual Operational Costs](#annual-operational-costs) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~{{< var dfda_upfront_build >}}/year
 
 - **Total Annualized Cost**:
   $$
@@ -697,64 +697,41 @@ _This simplified calculation, based on a basic amortization of upfront costs, yi
 
 _The NPV analysis provides the final estimated ROI of approximately **{{< var dfda_roi_rd_only >}}:1**, which is the figure cited throughout this document._
 
-### Full Range ROI Sensitivity Analysis
+### ROI Uncertainty Analysis (Monte Carlo)
 
-To provide a comprehensive view, you can calculate the ROI across the full spectrum of cost possibilities by combining the Core Framework costs with the Broader Initiative scenarios from [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model).
+Rather than relying on discrete "best/worst case" scenarios, we use Monte Carlo simulation to propagate uncertainty through all input parameters. This provides statistically rigorous confidence intervals for the ROI estimate.
 
-#### Assumptions for Full Range ROI Calculation
+#### Key Cost and Benefit Parameters
 
-- Net Annual Savings: {{< var dfda_benefit_rd_only_annual >}}/year (from {{< var dfda_trial_cost_reduction_pct >}} R&D cost reduction).
-- Amortization Period for Upfront Costs: 5 years.
+| Parameter | Central Estimate | 95% Confidence Interval |
+|:----------|:-----------------|:------------------------|
+| **Annual R&D Savings** | {{< var dfda_benefit_rd_only_annual >}} | From {{< var dfda_trial_cost_reduction_pct >}} cost reduction |
+| **Total Upfront Cost** | {{< var dfda_npv_upfront_cost_total >}} | Core framework + broader initiatives |
+| **Annual Operating Cost** | {{< var dfda_npv_annual_opex_total >}} | Core ops + initiative costs |
+| **10-Year NPV Total Cost** | {{< var dfda_npv_total_cost >}} | Upfront + discounted annual costs |
+| **10-Year NPV Net Benefit** | {{< var dfda_npv_net_benefit_rd_only >}} | With 5-year adoption ramp |
 
-#### 1. Lowest Total Cost Scenario (Best Case Core framework + Best Case Broader Initiatives)
+#### ROI Distribution
 
-- **Upfront Costs:**
-  - Core framework Build (Low end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): [~\$37.5 Million](#upfront-capital-expenditure-initial-build-illustrative-30-months)
-  - Broader Initiatives (Best Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$4.5 Million](#scenario-based-rom-estimates-for-broader-initiative-costs)
-  - _Total Lowest Upfront Cost:_ $37.5M + $4.5M = **\$42 Million**
-  - _Amortized over 5 years:_ [\$42M](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **\$8.4 Million/year**
+The ROI calculation propagates uncertainty from all input parameters:
 
-- **Annual Operational Costs:**
-  - Core framework Operations (Low end from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): [~\$11 Million/year](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
-  - Broader Initiatives (Best Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$0 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
-  - _Total Lowest Annual Operational Cost:_ **\$11 Million/year**
+{{< var dfda_roi_rd_only_latex >}}
 
-- **Total Lowest Annualized Cost:**
-  $$
-  C_{\text{annualized}}^{\text{low}} = \frac{C_0^{\text{low}}}{n} + C_{\text{op}}^{\text{low}} = \frac{\$42\text{M}}{5} + \$11\text{M} = \$19.4 \text{ Million/year}
-  $$
+**Central ROI Estimate: {{< var dfda_roi_rd_only >}}:1**
 
-- **ROI (Lowest Cost Scenario):**
-  $$
-  \text{ROI}^{\text{low}} = \frac{S_{\text{annual}}}{C_{\text{annualized}}^{\text{low}}} = \frac{\$50.0\text{B}}{\$0.0194\text{B}} \approx 2577:1
-  $$
+{{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
 
-#### 2. Highest Total Cost Scenario (Worst Case Core framework + Worst Case Broader Initiatives)
+The Monte Carlo distribution shows that even at the 5th percentile (conservative end), the ROI remains strongly positive. This is because the annual R&D savings ({{< var dfda_benefit_rd_only_annual >}}) vastly exceed even the highest plausible cost estimates.
 
-- **Upfront Costs:**
-  - Core framework Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~{{< var dfda_upfront_build_max >}}
-  - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$2.231 Billion](#scenario-based-rom-estimates-for-broader-initiative-costs)
-  - _Total Highest Upfront Cost:_ {{< var dfda_upfront_build_max >}} + $2.231B = **~\$2.277 Billion**
-  - _Amortized over 5 years:_ [\$2.277B](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **~\$455.4 Million/year**
+#### NPV Benefit Distribution
 
-- **Annual Operational Costs:**
-  - Core framework Operations (High end from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): [~\$26.5 Million/year](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
-  - Broader Initiatives (Worst Case Annual from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$271 Million/year](#scenario-based-rom-estimates-for-broader-initiative-costs)
-  - _Total Highest Annual Operational Cost:_ $26.5M + $271M = **~\$297.5 Million/year**
+{{< include ../figures/mc-distribution-dfda_npv_net_benefit_rd_only.qmd >}}
 
-- **Total Highest Annualized Cost:**
-  $$
-  C_{\text{annualized}}^{\text{high}} = \frac{C_0^{\text{high}}}{n} + C_{\text{op}}^{\text{high}} = \frac{\$2.277\text{B}}{5} + \$297.5\text{M} = \$752.9 \text{ Million/year}
-  $$
+#### Cost Distribution
 
-- **ROI (Highest Cost Scenario):**
-  $$
-  \text{ROI}^{\text{high}} = \frac{S_{\text{annual}}}{C_{\text{annualized}}^{\text{high}}} = \frac{\$50.0\text{B}}{\$0.7529\text{B}} \approx 66:1
-  $$
+{{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
 
-This full range sensitivity analysis demonstrates that the ROI for such an initiative remains exceptionally positive. Even at the highest conceivable costs derived from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section, the financial return is substantial.
-
-{{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
+This Monte Carlo analysis replaces the need for discrete scenario analysis by capturing the full probability distribution of outcomes. The 95% confidence intervals provide a statistically rigorous range that accounts for uncertainty in all input parameters simultaneously.
 
 ## Broader Impacts on Medical Progress
 
@@ -819,19 +796,14 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
-- **Daily DALYs Lost:**
-  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects a baseline of **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag over the 8.2-year timeline shift.
-  - The daily opportunity cost in lost health is therefore:
-    $$
-    \frac{74{,}148{,}065\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{203,145\ \text{QALYs lost per day}}
-    $$
+- **Total DALYs at Stake:**
+  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag. This represents the one-time health benefit from accelerating the cure timeline.
 
-- **Daily Financial Value Lost:**
-  - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **{{< var dfda_benefit_rd_only_annual >}} per year** by reducing the costs of the **{{< var global_clinical_trials_spending_annual >}} global clinical trial market** by **{{< var dfda_trial_cost_reduction_pct >}}**. This represents value that is currently being spent inefficiently.
+- **Daily R&D Waste:**
+  - The analysis ([Gross R&D Savings](#gross-r-and-d-savings-from-implementing-a-decentralized-framework)) projects gross R&D savings of **{{< var dfda_benefit_rd_only_annual >}} per year** by reducing the costs of the **{{< var global_clinical_trials_spending_annual >}} global clinical trial market** by **{{< var dfda_trial_cost_reduction_pct >}}**. This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
-    $$
-    \frac{\$50{,}000{,}000{,}000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
-    $$
+
+{{< var dfda_rd_savings_daily_latex >}}
 
 
 
@@ -849,7 +821,7 @@ The total one-time benefit from eliminating the efficacy lag depends on several 
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology framework is estimated to be on the order of **~\$37.5 - {{< var dfda_upfront_build_max >}}**, plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to {{< var dct_platform_funding_medium >}}** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around {{< var global_clinical_trials_spending_annual >}} per year on R and D and that a large share of those expenses go to clinical trials, even a {{< var dfda_trial_cost_reduction_pct >}} reduction in trial costs, combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately **{{< var dfda_roi_rd_only >}}:1** (with a full range of **66:1 to 2,577:1**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to {{< var dfda_trial_cost_reduction_factor >}}), accelerating the pace of approvals, and broadening the scope of what treatments get tested. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront + discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends around {{< var global_clinical_trials_spending_annual >}} per year on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** once adopted at scale.
 
 Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this framework creates personalized healthcare that actually works, globally.
 
@@ -997,7 +969,7 @@ For a concrete (though simplified) scenario, assume:
      C_0 = 0.26975 \text{ billion USD}
    $$
 
-   _(This represents an estimated cost for initial Core framework build (see [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) for the FDA v2 platform. This combined figure is distinct from the Core framework build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)_
+   _(This represents an estimated cost for initial Core framework build (see [Upfront (Capital) Expenditure](#upfront-build-costs)), foundational broader initiative setup, and early legal/regulatory framework alignment (see medium case upfront costs in [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)), consistent with multi-year funding such as in the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) for the FDA v2 platform. This combined figure is distinct from the Core framework build ROM alone and serves as an illustrative figure for this NPV example that is lower than the previous $3B placeholder.)_
 
 2. **Annual Operating Costs** ($C_{\text{op}}(t)$):
 
@@ -1005,7 +977,7 @@ For a concrete (though simplified) scenario, assume:
      C_{\text{op}}(t) = 0.04005 \text{ billion USD (constant)}
    $$
 
-   _(This figure is also explicitly derived from the ROM estimates. It represents the sum of the midpoint of the Annual Core framework Operations from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) (~\$18.75M) and the Medium Case annual costs for Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs) (~\$21.3M). This excludes large-scale, direct participant compensation programs which would be funded separately, as discussed in Annual Operational Costs.)_
+   _(This figure is also explicitly derived from the ROM estimates. It represents the sum of the midpoint of the Annual Core framework Operations from [Annual Operational Costs](#annual-operational-costs) (~\$18.75M) and the Medium Case annual costs for Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs) (~\$21.3M). This excludes large-scale, direct participant compensation programs which would be funded separately, as discussed in Annual Operational Costs.)_
 
 3. **Annual Global R&D Spend** ($R_d$):
    $$
@@ -1198,24 +1170,16 @@ All values below are sourced from the centralized `dih_models/parameters.py` mod
 #### Framework Cost-Benefit Analysis (Baseline)
 
 - **Annual Gross R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}
-- **Annual Framework Operational Cost**: {{< var dfda_annual_opex >}}
-- **Simple ROI (Gross/Opex)**: {{< var dfda_roi_simple >}}:1
-- **NPV-Adjusted ROI (10-year)**: {{< var dfda_roi_rd_only >}}:1 ← CANONICAL FIGURE
+- **10-Year NPV Total Cost**: {{< var dfda_npv_total_cost >}}
+- **10-Year NPV Net Benefit**: {{< var dfda_npv_net_benefit_rd_only >}}
+- **ROI (10-year NPV)**: {{< var dfda_roi_rd_only >}}:1
 
 **Health Impact:**
 
 - **DALYs Averted (Full Timeline Shift)**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
 - **Monetized Value of DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}
 
-**Funding:**
-
-- **Funding Coverage (Captured Dividend / OpEx)**: {{< var dividend_coverage_factor >}}×
-
-**Note**: The conservative R&D-only ROI ({{< var dfda_roi_rd_only >}}:1) is the most defensible baseline figure, accounting for time value of money and gradual adoption.
-
-**ROI Estimates**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only) to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (PRIMARY recommended estimate including all core benefits).
-
-The simple ROI ({{< var dfda_roi_simple >}}:1) is useful for comparison but doesn't discount future cash flows.
+**ROI Estimate**: {{< var dfda_roi_rd_only >}}:1 (10-year NPV, accounting for time value of money and 5-year adoption ramp).
 
 #### Investment Returns Visualization
 
@@ -1260,10 +1224,10 @@ This chart shows how the investment pays back over time, accounting for the time
 
 The cost-benefit analysis of the framework reveals:
 
-1. **Exceptional ROI**: The framework generates a {{< var dfda_roi_simple >}}:1 return on investment ($50.0B savings from {{< var dfda_upfront_build >}} cost)
+1. **Exceptional ROI**: The framework generates a {{< var dfda_roi_rd_only >}}:1 return on investment ({{< var dfda_npv_net_benefit_rd_only >}} NPV benefit from {{< var dfda_npv_total_cost >}} NPV cost)
 2. **Massive Health Benefits**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in monetized value
 3. **Robust Financial Model**: NPV analysis confirms strong returns even with conservative assumptions
-4. **Self-Funding**: The captured peace dividend ($27.2B) easily covers operational costs ({{< var dfda_upfront_build >}})
+4. **Self-Funding**: Annual R&D savings ({{< var dfda_benefit_rd_only_annual >}}) vastly exceed operational costs ({{< var dfda_npv_annual_opex_total >}})
 5. **Sensitivity Resilience**: ROI remains strong even under conservative scenarios (30% cost reduction, higher operational costs)
 
 This analysis demonstrates that such a framework represents one of the most compelling investment opportunities in human history, combining massive financial returns with unprecedented health benefits.
@@ -1333,7 +1297,7 @@ The following auto-generated sensitivity analyses show how cost-effectiveness va
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
-_Note: An infrastructure for a decentralized framework is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core framework Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
+_Note: An infrastructure for a decentralized framework is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core framework Ops" is per the ['Annual Operational Costs'](#annual-operational-costs) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
 
 #### Discussion: Policy Implications
 

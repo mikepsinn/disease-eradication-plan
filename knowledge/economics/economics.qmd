@@ -2,16 +2,7 @@
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
 description: Redirecting 1% of global military spending to pragmatic clinical trials advances treatment access over 8 years, saving hundreds of millions of lives at highly cost-effective rates.
 author:
-  - name: Decentralized Institutes of Health
-    affiliation:
-      name: Decentralized Institutes of Health
-      url: https://dih.earth
-    roles:
-      - conceptualization
-      - methodology
   - name: Mike P. Sinn
-    affiliation:
-      name: Decentralized Institutes of Health
     roles:
       - conceptualization
       - writing – original draft
@@ -272,8 +263,6 @@ Despite this disparity in mortality burden, resource allocation heavily favors s
 
 ## How It Works
 
-
-
 The mechanism is financial, not bureaucratic:
 
 1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
@@ -283,10 +272,7 @@ The mechanism is financial, not bureaucratic:
 
 The mechanism makes trial participation financially attractive for both patients and providers while streamlining evidence collection through existing healthcare delivery infrastructure.
 
-![Figure 2: The 1% Treaty Operational Flow. Funding follows the patient, converting clinical trials from cost centers into revenue-generating activities for healthcare providers.](/assets/section-images/knowledge/economics/economics-section-mechanism-of-action-academic.jpg)
-
 ## A Decentralized Framework for Drug Assessment
-
 
 The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works ([published trials show 94% positive results while FDA data shows only 51%](../references.qmd#publication-bias-clinical-trials)), but what measurably happens to real humans taking real treatments.
 
@@ -353,9 +339,6 @@ Based on systematic outcome collection across thousands of patients, labels show
 - **Treatment persistence**: "2.3% discontinued due to side effects"
 - **Sample size and confidence**: "Based on 4,200 patients, 95% CI"
 
-
-
-
 This is measured data from actual patient outcomes, not marketing claims or lawyer-drafted disclaimers.
 
 **Implementation workflow**:
@@ -367,7 +350,6 @@ This is measured data from actual patient outcomes, not marketing claims or lawy
 
 No extra paperwork. No dedicated research staff. Just making routine clinical data actually useful for evidence generation.
 
-![ Structural Comparison of Traditional vs. Pragmatic Trials. Leveraging existing healthcare infrastructure reduces costs by 98% while increasing speed and generalizability.](/assets/section-images/knowledge/economics/economics-section-traditional-vs-pragmatic-infrastructure-academic.jpg)
 
 ## Summary of Results
 
@@ -617,8 +599,6 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
-
-![Incentive Alignment Architecture. The mechanism ensures every key stakeholder group derives direct economic or political benefit from treaty adoption.](/assets/section-images/knowledge/economics/economics-section-stakeholder-incentive-alignment-academic.jpg)
 
 #### VICTORY Incentive Alignment Bonds
 
