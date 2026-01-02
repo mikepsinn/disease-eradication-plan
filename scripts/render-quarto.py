@@ -4,52 +4,53 @@
 Render Quarto Config
 ====================
 
-Unified script to render any Quarto configuration. Automatically handles:
-- HTML rendering with post-processing link rewriting
-- PDF rendering with pre-processing link rewriting in temp folder
-- Mixed formats (renders both HTML and PDF as configured)
+Unified script to render or preview any Quarto configuration. Configuration is
+data-driven from dih-render sections in _quarto-*.yml files.
+
+Features:
+- Automatic cross-site link rewriting (QMD links to book chapters become absolute URLs)
 - Build monitoring with timeout detection (prevents hung CI builds)
 - Real-time progress tracking and profiling
 - PDF validation for Python code leakage
+- Live preview mode with hot reload
 
 Usage:
-    python render-quarto.py economics                # Render economics (all formats in config)
-    python render-quarto.py wishocracy               # Render wishocracy (all formats in config)
-    python render-quarto.py iab                      # Render IAB (all formats in config)
+    python render-quarto.py economics                # Render economics (all formats)
+    python render-quarto.py wishocracy               # Render wishocracy (all formats)
+    python render-quarto.py iab                      # Render IAB (all formats)
     python render-quarto.py test --verify            # Render test config with verification
     python render-quarto.py economics --to pdf       # Render only PDF format
     python render-quarto.py economics --to html      # Render only HTML format
     python render-quarto.py book --timeout 1800      # Custom timeout (30 min)
     python render-quarto.py book --kill-existing     # Kill stale Quarto processes first
+    python render-quarto.py economics --preview      # Preview with live reload
+    python render-quarto.py book --preview --port 4200  # Preview on custom port
 """
 
 import argparse
 import os
+import re
 import shutil
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List, Set, Dict, Any
+
+import yaml
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
 
-# Force line buffering for GitHub Actions (ensures output appears immediately)
+# Force line buffering for GitHub Actions
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(line_buffering=True)  # type: ignore[union-attr]
     sys.stderr.reconfigure(line_buffering=True)  # type: ignore[union-attr]
 
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
-from quarto_pre_build import (  # type: ignore[import-not-found]
-    prepare_economics,
-    prepare_wishocracy,
-    prepare_iab,
-    prepare_test,
-    prepare_book,
-    prepare_pdf_build_temp
-)
+from build_logger import BuildLogger  # type: ignore[import-not-found]
 from render_utils import (  # type: ignore[import-not-found]
     BuildMonitor,
     create_latex_parser,
@@ -61,34 +62,358 @@ from render_utils import (  # type: ignore[import-not-found]
 )
 
 
-# Configuration mapping
-CONFIGS = {
-    "economics": {
-        "config_file": "_quarto-economics.yml",
-        "prepare_fn": prepare_economics,
-        "description": "Economics models"
-    },
-    "wishocracy": {
-        "config_file": "_quarto-wishocracy.yml",
-        "prepare_fn": prepare_wishocracy,
-        "description": "Wishocracy paper"
-    },
-    "iab": {
-        "config_file": "_quarto-iab.yml",
-        "prepare_fn": prepare_iab,
-        "description": "Incentive Alignment Bonds paper"
-    },
-    "test": {
-        "config_file": "_quarto-test.yml",
-        "prepare_fn": prepare_test,
-        "description": "Test configuration"
-    },
-    "book": {
-        "config_file": "_quarto-book.yml",
-        "prepare_fn": prepare_book,
-        "description": "Complete book"
+# =============================================================================
+# Pre-Build Functions (formerly in quarto_pre_build.py)
+# =============================================================================
+
+def _find_project_root(start_path: Optional[Path] = None) -> Path:
+    """Find the project root by looking for package.json or _quarto-book.yml."""
+    if start_path is None:
+        start_path = Path.cwd()
+
+    current = Path(start_path).resolve()
+    markers = ["package.json", "_quarto-book.yml", "_quarto-economics.yml"]
+
+    for path in [current] + list(current.parents):
+        for marker in markers:
+            if (path / marker).exists():
+                return path
+
+    return current
+
+
+def _extract_files_from_config(config: dict) -> Set[str]:
+    """Extract list of QMD files from a Quarto config dictionary."""
+    files: Set[str] = set()
+
+    def extract_chapters(items: Any) -> None:
+        if not isinstance(items, list):
+            return
+        for item in items:
+            if isinstance(item, str):
+                files.add(item)
+            elif isinstance(item, dict):
+                if "href" in item:
+                    files.add(item["href"])
+                if "chapters" in item:
+                    extract_chapters(item["chapters"])
+                if "contents" in item:
+                    extract_chapters(item["contents"])
+
+    # Book format
+    if "chapters" in config.get("book", {}):
+        extract_chapters(config["book"]["chapters"])
+
+    # Website format
+    for item in config.get("project", {}).get("render", []):
+        if isinstance(item, str):
+            files.add(item)
+
+    return files
+
+
+def get_config_metadata(config_name: str) -> Dict[str, Any]:
+    """
+    Read build configuration from dih-render section of a Quarto config file.
+
+    Args:
+        config_name: Name of configuration (economics, wishocracy, iab, test, book)
+
+    Returns:
+        Dictionary with: config_file, index_source, target_url, description, output_dir,
+                        pdf_output_file, epub_output_file
+    """
+    project_root = _find_project_root()
+    config_file = f"_quarto-{config_name}.yml"
+    config_path = project_root / config_file
+
+    if not config_path.exists():
+        raise FileNotFoundError(f"Config file not found: {config_file}")
+
+    with open(config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    dih_render = config.get("dih-render", {})
+
+    return {
+        "config_file": config_file,
+        "index_source": dih_render.get("index-source"),
+        "target_url": dih_render.get("target-url"),
+        "description": (
+            config.get("book", {}).get("title") or
+            config.get("website", {}).get("title") or
+            config_name.title()
+        ),
+        "output_dir": config.get("project", {}).get("output-dir", f"_site/{config_name}"),
+        # Read desired output filenames from dih-render section (renamed after build)
+        "pdf_output_file": dih_render.get("pdf-output-file"),
+        "epub_output_file": dih_render.get("epub-output-file"),
     }
-}
+
+
+def prepare_config(config_name: str, verbose: bool = True) -> bool:
+    """
+    Prepare for rendering: copy config to _quarto.yml, copy/transform index.qmd.
+
+    Args:
+        config_name: Name of configuration (economics, wishocracy, iab, test, book)
+        verbose: Whether to print status messages
+
+    Returns:
+        True if successful, False otherwise
+    """
+    project_root = _find_project_root()
+
+    try:
+        metadata = get_config_metadata(config_name)
+    except FileNotFoundError as e:
+        if verbose:
+            print(f"[ERROR] {e}", file=sys.stderr)
+        return False
+
+    # Copy config file to _quarto.yml
+    config_src = project_root / metadata["config_file"]
+    config_dst = project_root / "_quarto.yml"
+
+    if verbose:
+        print(f"[*] Copying {metadata['config_file']} -> _quarto.yml", flush=True)
+
+    shutil.copy2(config_src, config_dst)
+
+    # Copy and transform index file if specified
+    index_source = metadata["index_source"]
+    if not index_source:
+        return True
+
+    source_path = project_root / index_source
+    target_path = project_root / "index.qmd"
+
+    if not source_path.exists():
+        if verbose:
+            print(f"[ERROR] Missing {index_source}", file=sys.stderr)
+        return False
+
+    if verbose:
+        print(f"[*] Copying {index_source} -> index.qmd", flush=True)
+
+    with open(source_path, encoding="utf-8") as f:
+        content = f.read()
+
+    # Calculate path depth for transformation
+    source_parts = Path(index_source).parts
+    depth = len(source_parts) - 1  # Exclude filename
+
+    if depth > 0:
+        source_dir = "/".join(source_parts[:-1])
+
+        # Replace relative paths from deepest to shallowest
+        for i in range(depth, 0, -1):
+            pattern = "../" * i
+            replacement = "" if i == depth else "/".join(source_parts[:depth - i]) + "/"
+            content = content.replace(pattern, replacement)
+
+        # Transform same-directory links
+        root_dirs = ["assets/", "scripts/", "dih_models/", "brain/", "references.bib"]
+
+        def fix_same_dir_link(match: re.Match[str]) -> str:
+            text, path = match.group(1), match.group(2)
+
+            # Skip URLs, anchors, absolute paths, already-transformed paths
+            if (path.startswith(("http://", "https://", "mailto:", "#", "/")) or
+                "://" in path or
+                ("/" in path and not path.startswith("./")) or
+                any(path.startswith(d) for d in root_dirs)):
+                return match.group(0)
+
+            # Add source directory prefix
+            new_path = source_dir + "/" + (path[2:] if path.startswith("./") else path)
+            return f"[{text}]({new_path})"
+
+        content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", fix_same_dir_link, content)
+
+    with open(target_path, "w", encoding="utf-8", newline='\n') as f:
+        f.write(content)
+
+    return True
+
+
+def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]:
+    """
+    Create temp build directory with cross-site link rewriting.
+
+    Copies project to _build_temp/{config_name}/, rewrites links to book chapters
+    as absolute URLs. Config-specific subfolders enable parallel builds.
+
+    Args:
+        config_name: Name of configuration (economics, wishocracy, iab, test, book)
+        verbose: Whether to print status messages
+
+    Returns:
+        Path to temp build directory, or None if failed
+    """
+    project_root = _find_project_root()
+
+    try:
+        metadata = get_config_metadata(config_name)
+    except FileNotFoundError as e:
+        if verbose:
+            print(f"[ERROR] {e}", file=sys.stderr)
+        return None
+
+    # Create config-specific temp directory (enables parallel builds)
+    build_temp_root = project_root / "_build_temp"
+    build_temp = build_temp_root / config_name
+
+    # Clean up existing config-specific directory only
+    if build_temp.exists():
+        if verbose:
+            print(f"[*] Cleaning up existing _build_temp/{config_name}/", flush=True)
+        shutil.rmtree(build_temp)
+
+    build_temp.mkdir(parents=True)
+    if verbose:
+        print(f"[*] Created build directory: _build_temp/{config_name}/", flush=True)
+
+    # Copy project files
+    ignore_patterns = {
+        "_build_temp", "_site", "_book", ".quarto", "node_modules",
+        ".git", "__pycache__", ".venv", ".jupyter_cache",
+        # Windows reserved device names
+        "nul", "con", "prn", "aux", "com1", "lpt1"
+    }
+
+    if verbose:
+        print(f"[*] Copying project files to _build_temp/{config_name}/...", flush=True)
+
+    for item in project_root.iterdir():
+        if item.name in ignore_patterns or item.name.startswith('.'):
+            continue
+
+        dest = build_temp / item.name
+        if item.is_dir():
+            shutil.copytree(
+                item, dest,
+                ignore=lambda d, f: {x for x in f if x in ignore_patterns or x.startswith('.')}
+            )
+        else:
+            shutil.copy2(item, dest)
+
+    if verbose:
+        print(f"[OK] Copied project files to _build_temp/{config_name}/", flush=True)
+
+    # Prepare config and index in temp directory
+    original_cwd = os.getcwd()
+    os.chdir(build_temp)
+    try:
+        if not prepare_config(config_name, verbose=verbose):
+            return None
+    finally:
+        os.chdir(original_cwd)
+
+    # Cross-site link rewriting
+    target_url = metadata.get("target_url")
+    if not target_url:
+        if verbose:
+            print("[*] No target-url, skipping cross-site link rewriting", flush=True)
+        return build_temp
+
+    target_yml = project_root / "_quarto-book.yml"
+    if not target_yml.exists():
+        if verbose:
+            print("[WARNING] _quarto-book.yml not found, skipping link rewriting", file=sys.stderr)
+        return build_temp
+
+    # Parse configs to get file lists
+    with open(project_root / metadata["config_file"], encoding="utf-8") as f:
+        source_cfg = yaml.safe_load(f)
+    with open(target_yml, encoding="utf-8") as f:
+        target_cfg = yaml.safe_load(f)
+
+    source_files = _extract_files_from_config(source_cfg)
+    target_files = _extract_files_from_config(target_cfg)
+
+    if verbose:
+        print(f"[*] Preprocessing QMD links in _build_temp/{config_name}/", flush=True)
+
+    links_rewritten = 0
+    files_modified = 0
+
+    # Process source files + index.qmd
+    files_to_process = list(source_files)
+    if (build_temp / "index.qmd").exists():
+        files_to_process.append("index.qmd")
+
+    for file_path_str in files_to_process:
+        qmd_file = build_temp / file_path_str
+        if not qmd_file.exists():
+            continue
+
+        with open(qmd_file, encoding="utf-8") as f:
+            content = f.read()
+
+        original = content
+
+        def rewrite_link(match: re.Match[str]) -> str:
+            nonlocal links_rewritten
+            text, path = match.group(1), match.group(2)
+
+            # Skip external/anchor links
+            if path.startswith(("http://", "https://", "#", "mailto:")) or ".qmd" not in path:
+                return match.group(0)
+
+            # Resolve relative path
+            if path.startswith("/"):
+                resolved = os.path.normpath(path[1:]).replace("\\", "/")
+            elif path.startswith(("../", "./")):
+                file_dir = qmd_file.relative_to(build_temp).parent
+                resolved = os.path.normpath(os.path.join(str(file_dir), path)).replace("\\", "/")
+            else:
+                resolved = path
+
+            # Handle anchors
+            anchor = ""
+            if "#" in resolved:
+                resolved, anchor = resolved.split("#", 1)
+                anchor = f"#{anchor}"
+
+            # Rewrite if in target but not in source
+            if resolved in target_files and resolved not in source_files:
+                new_url = f"{target_url}/{resolved.replace('.qmd', '.html')}{anchor}"
+                if verbose:
+                    print(f"[*] {file_path_str}: {path} -> {new_url}")
+                links_rewritten += 1
+                return f"[{text}]({new_url})"
+
+            return match.group(0)
+
+        content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", rewrite_link, content)
+
+        if content != original:
+            with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
+                f.write(content)
+            files_modified += 1
+
+    if verbose:
+        if links_rewritten > 0:
+            print(f"[OK] Preprocessed {files_modified} files, rewrote {links_rewritten} links", flush=True)
+        else:
+            print("[*] No links needed rewriting", flush=True)
+
+    return build_temp
+
+
+# =============================================================================
+# Main Render Functions
+# =============================================================================
+
+def get_available_configs() -> List[str]:
+    """Discover available configs from _quarto-*.yml files."""
+    project_root = Path(__file__).parent.parent
+    configs = []
+    for yml in project_root.glob("_quarto-*.yml"):
+        name = yml.stem.replace("_quarto-", "")
+        configs.append(name)
+    return sorted(configs)
 
 
 def render_quarto(
@@ -99,60 +424,79 @@ def render_quarto(
     timeout: int = 900,
     log_file: Optional[str] = None,
     fail_on_warnings: bool = True,
-    kill_existing: bool = False
+    kill_existing: bool = False,
+    preview: bool = False,
+    port: Optional[int] = None,
+    host: Optional[str] = None,
+    no_browser: bool = False
 ) -> int:
     """
-    Render Quarto configuration.
+    Render or preview Quarto configuration.
 
     Args:
         config_name: Name of configuration (economics, wishocracy, iab, test, book)
         format_override: Override format (pdf, html, or None for all formats in config)
         verify: Run verification tests after rendering (test config only)
-        quarto_args: Additional arguments to pass to quarto render
+        quarto_args: Additional arguments to pass to quarto render/preview
         timeout: Seconds with no output before killing build (default: 900 = 15min)
         log_file: Path to log file (default: build-{config}.log)
         fail_on_warnings: Whether to fail build on warnings (default: True)
         kill_existing: Kill existing Quarto/LaTeX processes before starting
+        preview: Run in preview mode with live reload instead of rendering
+        port: Port for preview server (preview mode only)
+        host: Host for preview server (preview mode only)
+        no_browser: Do not open browser automatically (preview mode only)
 
     Returns:
         Exit code (0 for success, non-zero for failure)
     """
-    if config_name not in CONFIGS:
-        print(f"[ERROR] Unknown config: {config_name}", file=sys.stderr)
-        print(f"        Available configs: {', '.join(CONFIGS.keys())}", file=sys.stderr)
-        return 1
-
-    config = CONFIGS[config_name]
-
-    # Get project root (parent of scripts directory)
     project_root = Path(__file__).parent.parent.absolute()
     original_cwd = os.getcwd()
 
-    # Set default log file if not specified
-    if log_file is None:
-        log_file = f"build-{config_name}.log"
+    # Get config metadata from YAML
+    try:
+        metadata = get_config_metadata(config_name)
+    except FileNotFoundError:
+        print(f"[ERROR] Unknown config: {config_name}", file=sys.stderr)
+        print(f"        Available: {', '.join(get_available_configs())}", file=sys.stderr)
+        return 1
+
+    description = metadata["description"]
+
+    # Create logger that writes to both console and log file
+    log_file_name = log_file or f"build-{config_name}.log"
+    logger = BuildLogger(log_file_name)
+
+    # Write build metadata to log
+    if logger.log_handle:
+        logger.log_handle.write(f"Config: {config_name}\n")
+        logger.log_handle.write(f"Format: {format_override or 'all'}\n")
+        logger.log_handle.write("=" * 80 + "\n\n")
+        logger.log_handle.flush()
 
     exit_code = 0
     build_temp = None
     monitor = None
 
     try:
-        # Determine if we're rendering PDF
+        # Start capturing ALL stdout/stderr to log file
+        logger.start_capture()
+
+        # Determine if we're rendering PDF (affects timeout and LaTeX parser)
         rendering_pdf = format_override == "pdf" or format_override is None
 
-        # Change to project root for setup
+        # Use temp directory for builds with cross-site links
+        use_temp_dir = metadata.get("target_url") is not None
+
         os.chdir(project_root)
 
-        # 0. Kill existing Quarto/LaTeX processes if requested
+        # 0. Kill existing processes if requested
         if kill_existing:
             print("=" * 80)
             print("KILLING EXISTING QUARTO/LaTeX PROCESSES")
             print("=" * 80)
             killed = kill_existing_quarto_processes(include_latex=rendering_pdf)
-            if killed > 0:
-                print(f"[OK] Killed {killed} existing process(es)")
-            else:
-                print("[*] No existing processes found")
+            print(f"[OK] Killed {killed} process(es)" if killed else "[*] No processes found")
             print()
 
         # 1. Ensure Jupyter kernel exists
@@ -173,191 +517,230 @@ def render_quarto(
             return validation_exit
         print()
 
-        # 3. Prepare files in project root (config + index)
+        # 3. Prepare build directory
         print("=" * 80)
-        print(f"SETUP: PREPARING {config['description'].upper()} FILES")
+        print(f"SETUP: PREPARING {description.upper()}")
         print("=" * 80)
-        print(f"[*] Preparing {config['description']} files...")
-        if not config["prepare_fn"]():
-            return 1
 
-        # If rendering PDF, use temp folder approach
-        if rendering_pdf:
-            print("=" * 80)
-            print("CREATING TEMPORARY BUILD DIRECTORY FOR PDF")
-            print("=" * 80)
-            build_temp = prepare_pdf_build_temp(
-                source_config=config["config_file"],
-                target_config="_quarto-book.yml",
-                target_url="https://manual.WarOnDisease.org",
-                verbose=True
-            )
-
+        if use_temp_dir:
+            build_temp = prepare_build_temp(config_name, verbose=True)
             if build_temp is None:
                 print("[ERROR] Failed to create temp build directory", file=sys.stderr)
                 return 1
-
-            # Change to temp directory for rendering
             os.chdir(build_temp)
             print(f"[*] Changed to temp directory: {build_temp}")
-
-        # Build quarto render command
-        print("=" * 80)
-        print(f"RENDERING {config['description'].upper()}")
-        print("=" * 80)
-        cmd = ["quarto", "render"]
-
-        # Add format override if specified
-        if format_override:
-            cmd.extend(["--to", format_override])
-
-        # Add additional quarto args
-        if quarto_args:
-            cmd.extend(quarto_args)
-
-        # Create BuildMonitor for timeout detection, logging, and progress tracking
-        # Use longer timeout for PDF builds (LaTeX can be slow)
-        effective_timeout = timeout if not rendering_pdf else max(timeout, 900)
-        monitor = BuildMonitor(
-            timeout_seconds=effective_timeout,
-            fail_on_warnings=fail_on_warnings,
-            log_file=log_file
-        )
-
-        # Set up custom parsers (LaTeX parser for PDF builds)
-        custom_parsers = []
-        if rendering_pdf:
-            custom_parsers.append(create_latex_parser())
-
-        # Run render command with monitoring
-        build_type = f"{config['description']} ({format_override or 'all formats'})"
-        exit_code = monitor.run_build(cmd, build_type=build_type, custom_parsers=custom_parsers)
-
-        if exit_code != 0:
-            print(f"[ERROR] {config['description']} render failed with exit code {exit_code}", file=sys.stderr)
-            # Don't return yet - still need to copy outputs and clean up
         else:
-            print(f"[OK] {config['description']} render complete!")
+            # For book config (no cross-site links), just prepare in place
+            if not prepare_config(config_name, verbose=True):
+                return 1
+        print()
 
-        # 4. Run post-validation for HTML builds
-        if not rendering_pdf and exit_code == 0:
+        # 4. Run Quarto render or preview
+        print("=" * 80)
+        if preview:
+            print(f"PREVIEWING {description.upper()}")
+        else:
+            print(f"RENDERING {description.upper()}")
+        print("=" * 80)
+
+        if preview:
+            # Preview mode - run quarto preview directly
+            cmd = ["quarto", "preview"]
+            if port:
+                cmd.extend(["--port", str(port)])
+            if host:
+                cmd.extend(["--host", host])
+            if no_browser:
+                cmd.append("--no-browser")
+            if quarto_args:
+                cmd.extend(quarto_args)
+
+            print(f"[*] Command: {' '.join(cmd)}")
+            print()
+
+            try:
+                subprocess.run(cmd, check=True)
+                exit_code = 0
+            except KeyboardInterrupt:
+                print("\n[*] Preview server stopped")
+                exit_code = 0
+            except subprocess.CalledProcessError as e:
+                exit_code = e.returncode
+        else:
+            # Render mode - use build monitor
+            cmd = ["quarto", "render"]
+            if format_override:
+                cmd.extend(["--to", format_override])
+            if quarto_args:
+                cmd.extend(quarto_args)
+
+            # Stop capture before BuildMonitor (it has its own logging)
+            logger.stop_capture()
+
+            # Create build monitor (appends to existing log file)
+            effective_timeout = max(timeout, 900) if rendering_pdf else timeout
+            monitor = BuildMonitor(
+                timeout_seconds=effective_timeout,
+                fail_on_warnings=fail_on_warnings,
+                log_file=str(logger.log_path)
+            )
+
+            custom_parsers = [create_latex_parser()] if rendering_pdf else []
+            build_type = f"{description} ({format_override or 'all formats'})"
+            exit_code = monitor.run_build(cmd, build_type=build_type, custom_parsers=custom_parsers)
+
+            # Resume capture for post-build output
+            logger.start_capture()
+
+            if exit_code != 0:
+                print(f"[ERROR] {description} render failed with exit code {exit_code}", file=sys.stderr)
+            else:
+                print(f"[OK] {description} render complete!")
+
+        # 5. Post-validation for HTML builds (skip in preview mode)
+        # Runs when HTML is rendered (either all formats or html-only)
+        if not preview and (format_override is None or format_override == "html") and exit_code == 0:
             print("=" * 80)
             print("VALIDATION: POST-RENDER (HTML)")
             print("=" * 80)
-            # Determine output directory based on config
-            output_dir = f"_site/{config_name}" if config_name != "book" else "_site"
+            output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)
             if validation_exit != 0:
                 print("[WARNING] Post-validation found issues", file=sys.stderr)
-                # Don't fail the build, just warn
             print()
 
-        # If we used temp folder, copy outputs back
-        if build_temp:
-            print("[*] Copying outputs from temp to original location...")
+        # 6. Copy outputs from temp directory (skip in preview mode)
+        if not preview and build_temp:
+            print("=" * 80)
+            print("COPYING BUILD OUTPUTS")
+            print("=" * 80)
 
-            # Copy PDFs to both project root and output directory
-            for pdf_file in build_temp.glob("*.pdf"):
-                # Report file size
-                file_size_mb = pdf_file.stat().st_size / (1024 * 1024)
-                print(f"[*] {pdf_file.name}: {file_size_mb:.2f} MB")
+            # Determine output directories
+            output_dir = project_root / metadata["output_dir"]
+            output_dir.mkdir(parents=True, exist_ok=True)
+            temp_output_dir = build_temp / metadata["output_dir"]
 
-                # Copy to project root (for convenience)
-                dest_root = project_root / pdf_file.name
-                shutil.copy2(pdf_file, dest_root)
+            # Rename PDFs in temp folder to match config output-file
+            expected_pdf = metadata.get("pdf_output_file")
+            if expected_pdf:
+                for pdf_file in temp_output_dir.glob("*.pdf"):
+                    if pdf_file.name != expected_pdf:
+                        new_path = pdf_file.parent / expected_pdf
+                        print(f"[*] Renaming {pdf_file.name} -> {expected_pdf}")
+                        pdf_file.rename(new_path)
+
+            # Rename EPUBs in temp folder to match config output-file
+            expected_epub = metadata.get("epub_output_file")
+            if expected_epub:
+                for epub_file in temp_output_dir.glob("*.epub"):
+                    if epub_file.name != expected_epub:
+                        new_path = epub_file.parent / expected_epub
+                        print(f"[*] Renaming {epub_file.name} -> {expected_epub}")
+                        epub_file.rename(new_path)
+
+            # Copy _site directory
+            if (build_temp / "_site").exists():
+                dest = project_root / "_site"
+                if dest.exists():
+                    shutil.rmtree(dest)
+                shutil.copytree(build_temp / "_site", dest)
+                print("[OK] Copied _site/ directory")
+
+            # Copy _book directory
+            if (build_temp / "_book").exists():
+                dest = project_root / "_book"
+                if dest.exists():
+                    shutil.rmtree(dest)
+                shutil.copytree(build_temp / "_book", dest)
+                print("[OK] Copied _book/ directory")
+
+            # Copy PDFs to project root and validate
+            for pdf_file in (project_root / metadata["output_dir"]).glob("*.pdf"):
+                size_mb = pdf_file.stat().st_size / (1024 * 1024)
+                print(f"[*] {pdf_file.name}: {size_mb:.2f} MB")
+                shutil.copy2(pdf_file, project_root / pdf_file.name)
                 print(f"[OK] Copied {pdf_file.name} to project root")
 
-                # Also copy to output directory (for deployment)
-                # Determine output directory based on config
-                if config_name == "book":
-                    output_dir = project_root / "_book" / "warondisease"
-                else:
-                    output_dir = project_root / "_site" / config_name
-
-                # Ensure output directory exists before copying
-                output_dir.mkdir(parents=True, exist_ok=True)
-                dest_output = output_dir / pdf_file.name
-                shutil.copy2(pdf_file, dest_output)
-                print(f"[OK] Copied {pdf_file.name} to {output_dir.relative_to(project_root)}")
-
-                # Run PDF validation for Python code leakage
+                # Validate PDF for Python code leakage
                 print("=" * 80)
                 print("VALIDATION: PDF PYTHON CODE CHECK")
                 print("=" * 80)
-                found_issues, issues = validate_pdf_for_python_code(str(dest_output))
+                found_issues, issues = validate_pdf_for_python_code(str(pdf_file))
                 if found_issues:
-                    print("[ERROR] PDF validation failed: Python code detected in PDF!", file=sys.stderr)
-                    for issue in issues[:5]:  # Show first 5 issues
-                        # Handle Unicode encoding issues
-                        safe_issue = issue.encode("ascii", errors="replace").decode("ascii", errors="replace")
-                        print(f"  {safe_issue}", file=sys.stderr)
+                    print("[ERROR] PDF validation failed: Python code detected!", file=sys.stderr)
+                    for issue in issues[:5]:
+                        safe = issue.encode("ascii", errors="replace").decode("ascii")
+                        print(f"  {safe}", file=sys.stderr)
                     if len(issues) > 5:
-                        print(f"  ... and {len(issues) - 5} more issues", file=sys.stderr)
+                        print(f"  ... and {len(issues) - 5} more", file=sys.stderr)
                     exit_code = 1
                 else:
-                    print("[OK] PDF validation passed: No Python code leakage detected")
+                    print("[OK] PDF validation passed")
 
-            # Copy EPUBs and report file size
-            for epub_file in build_temp.glob("*.epub"):
-                file_size_mb = epub_file.stat().st_size / (1024 * 1024)
-                print(f"[*] {epub_file.name}: {file_size_mb:.2f} MB")
-
-                # Copy to project root
-                dest_root = project_root / epub_file.name
-                shutil.copy2(epub_file, dest_root)
+            # Copy EPUBs to project root
+            for epub_file in (project_root / metadata["output_dir"]).glob("*.epub"):
+                size_mb = epub_file.stat().st_size / (1024 * 1024)
+                print(f"[*] {epub_file.name}: {size_mb:.2f} MB")
+                shutil.copy2(epub_file, project_root / epub_file.name)
                 print(f"[OK] Copied {epub_file.name} to project root")
 
-                # Copy to output directory
-                if config_name == "book":
-                    output_dir = project_root / "_book" / "warondisease"
+            # Verify expected outputs exist
+            print("=" * 80)
+            print("VERIFICATION: EXPECTED OUTPUTS")
+            print("=" * 80)
+
+            # Check PDF if expected
+            expected_pdf = metadata.get("pdf_output_file")
+            if expected_pdf and (format_override is None or format_override == "pdf"):
+                pdf_path = output_dir / expected_pdf
+                if pdf_path.exists():
+                    size_mb = pdf_path.stat().st_size / (1024 * 1024)
+                    print(f"[OK] PDF exists: {expected_pdf} ({size_mb:.2f} MB)")
                 else:
-                    output_dir = project_root / "_site" / config_name
-                output_dir.mkdir(parents=True, exist_ok=True)
-                dest_output = output_dir / epub_file.name
-                shutil.copy2(epub_file, dest_output)
-                print(f"[OK] Copied {epub_file.name} to {output_dir.relative_to(project_root)}")
+                    print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
+                    print(f"        Expected at: {pdf_path}", file=sys.stderr)
+                    exit_code = 1
 
-            # Copy HTML output directory if it exists
-            site_dir = build_temp / "_site"
-            if site_dir.exists():
-                dest_site = project_root / "_site"
-                if dest_site.exists():
-                    shutil.rmtree(dest_site)
-                shutil.copytree(site_dir, dest_site)
-                print(f"[OK] Copied _site/ directory")
+            # Check EPUB if expected
+            expected_epub = metadata.get("epub_output_file")
+            if expected_epub and (format_override is None or format_override == "epub"):
+                epub_path = output_dir / expected_epub
+                if epub_path.exists():
+                    size_mb = epub_path.stat().st_size / (1024 * 1024)
+                    print(f"[OK] EPUB exists: {expected_epub} ({size_mb:.2f} MB)")
+                else:
+                    print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
+                    print(f"        Expected at: {epub_path}", file=sys.stderr)
+                    exit_code = 1
 
-            # Copy _book directory if it exists (for book config)
-            book_dir = build_temp / "_book"
-            if book_dir.exists():
-                dest_book = project_root / "_book"
-                if dest_book.exists():
-                    shutil.rmtree(dest_book)
-                shutil.copytree(book_dir, dest_book)
-                print(f"[OK] Copied _book/ directory")
+            # Check HTML output directory if expected
+            if format_override is None or format_override == "html":
+                html_index = output_dir / "index.html"
+                if html_index.exists():
+                    print(f"[OK] HTML exists: {output_dir}/index.html")
+                else:
+                    print(f"[ERROR] Expected HTML not found: index.html", file=sys.stderr)
+                    print(f"        Expected at: {html_index}", file=sys.stderr)
+                    exit_code = 1
 
-        # 5. Run verification tests if requested (test config only)
-        if verify and config_name == "test" and exit_code == 0:
+        # 7. Run verification tests (test config only, skip in preview mode)
+        if not preview and verify and config_name == "test" and exit_code == 0:
             print("=" * 80)
             print("VERIFICATION: PDF LINK TESTS")
             print("=" * 80)
             verify_script = project_root / "scripts" / "test" / "verify-pdf-links.py"
             if verify_script.exists() and build_temp:
                 os.chdir(project_root)
-                verify_result = subprocess.run(
-                    [sys.executable, str(verify_script), str(build_temp)],
-                    check=False
-                )
-                if verify_result.returncode != 0:
+                result = subprocess.run([sys.executable, str(verify_script), str(build_temp)], check=False)
+                if result.returncode != 0:
                     print("[ERROR] Verification tests failed", file=sys.stderr)
-                    exit_code = verify_result.returncode
-                print()
+                    exit_code = result.returncode
             else:
-                print(f"[WARNING] Verification script not found or no temp folder", file=sys.stderr)
-                print()
+                print("[WARNING] Verification script not found", file=sys.stderr)
+            print()
 
     except subprocess.CalledProcessError as e:
-        # This catches errors from pre-validation, verification, etc. (not main render)
-        print(f"[ERROR] Subprocess failed with exit code {e.returncode}", file=sys.stderr)
+        print(f"[ERROR] Subprocess failed: {e.returncode}", file=sys.stderr)
         exit_code = e.returncode
     except FileNotFoundError as e:
         print(f"[ERROR] Command not found: {e}", file=sys.stderr)
@@ -372,7 +755,6 @@ def render_quarto(
         traceback.print_exc()
         exit_code = 1
     finally:
-        # Change back to original directory
         os.chdir(original_cwd)
 
         # Clean up temp directory
@@ -382,34 +764,39 @@ def render_quarto(
             print("=" * 80)
             try:
                 shutil.rmtree(build_temp)
-                print(f"[OK] Removed temp directory: {build_temp}")
+                print(f"[OK] Removed temp directory")
             except Exception as e:
                 print(f"[WARNING] Failed to remove temp directory: {e}", file=sys.stderr)
 
-        # Close BuildMonitor log file if it exists
+        # Close BuildMonitor's log handle
         if monitor and hasattr(monitor, 'log_handle') and monitor.log_handle:
             try:
                 monitor.log_handle.close()
             except Exception:
                 pass
 
+        # Stop capture and close logger (writes footer automatically)
+        logger.stop_capture()
+        logger.close(exit_code)
+
     return exit_code
 
 
 def main():
+    available = get_available_configs()
+
     parser = argparse.ArgumentParser(
-        description="Render Quarto configuration with build monitoring, timeout detection, and validation",
+        description="Render Quarto configuration with build monitoring and validation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
     parser.add_argument(
         "config",
-        choices=list(CONFIGS.keys()),
-        help=f"Configuration to render: {', '.join(CONFIGS.keys())}"
+        choices=available,
+        help=f"Configuration to render: {', '.join(available)}"
     )
     parser.add_argument(
         "--to",
-        type=str,
         choices=["pdf", "html", "epub", "all"],
         default=None,
         help="Format to render (default: all formats in config)"
@@ -423,7 +810,7 @@ def main():
         "--timeout",
         type=int,
         default=900,
-        help="Seconds with no output before killing build (default: 900 = 15min)"
+        help="Seconds with no output before killing build (default: 900)"
     )
     parser.add_argument(
         "--log-file",
@@ -434,7 +821,7 @@ def main():
     parser.add_argument(
         "--no-fail-on-warnings",
         action="store_true",
-        help="Do not fail build on warnings (warnings fail by default)"
+        help="Do not fail build on warnings"
     )
     parser.add_argument(
         "--kill-existing",
@@ -442,27 +829,47 @@ def main():
         help="Kill existing Quarto/LaTeX processes before starting"
     )
     parser.add_argument(
+        "--preview",
+        action="store_true",
+        help="Run in preview mode with live reload instead of rendering"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        help="Port for preview server (preview mode only)"
+    )
+    parser.add_argument(
+        "--host",
+        type=str,
+        help="Host for preview server (preview mode only)"
+    )
+    parser.add_argument(
+        "--no-browser",
+        action="store_true",
+        help="Do not open browser automatically (preview mode only)"
+    )
+    parser.add_argument(
         "quarto_args",
         nargs="*",
-        help="Additional arguments to pass to quarto render"
+        help="Additional arguments to pass to quarto render/preview"
     )
 
     args = parser.parse_args()
 
-    format_override = None if args.to == "all" else args.to
-
-    exit_code = render_quarto(
+    sys.exit(render_quarto(
         config_name=args.config,
-        format_override=format_override,
+        format_override=None if args.to == "all" else args.to,
         verify=args.verify,
         quarto_args=args.quarto_args,
         timeout=args.timeout,
         log_file=args.log_file,
         fail_on_warnings=not args.no_fail_on_warnings,
-        kill_existing=args.kill_existing
-    )
-
-    sys.exit(exit_code)
+        kill_existing=args.kill_existing,
+        preview=args.preview,
+        port=args.port,
+        host=args.host,
+        no_browser=args.no_browser
+    ))
 
 
 if __name__ == "__main__":

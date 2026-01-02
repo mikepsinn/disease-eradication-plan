@@ -5,6 +5,11 @@ project:
   resources:
     - assets/
 
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/economics/economics.qmd
+  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+
 profiles:
   default:
     dotenv:

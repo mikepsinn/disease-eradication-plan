@@ -5,6 +5,12 @@ project:
   resources:
     - assets/
 
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/test/test-economics.qmd
+  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  pdf-output-file: test-links.pdf  # Desired PDF filename (renamed after build)
+
 book:
   title: "Test PDF Link Rewriting"
   description: "Minimal test configuration for verifying PDF link preprocessing"
@@ -30,7 +36,6 @@ format:
     toc: true
     toc-depth: 2
   pdf:
-    output-file: "test-links.pdf"
     documentclass: report
     echo: false
     toc: true
