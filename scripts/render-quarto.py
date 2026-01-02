@@ -650,9 +650,10 @@ def render_quarto(
             # Copy PDFs to project root and validate
             for pdf_file in (project_root / metadata["output_dir"]).glob("*.pdf"):
                 size_mb = pdf_file.stat().st_size / (1024 * 1024)
-                print(f"[*] {pdf_file.name}: {size_mb:.2f} MB")
-                shutil.copy2(pdf_file, project_root / pdf_file.name)
-                print(f"[OK] Copied {pdf_file.name} to project root")
+                dest_path = project_root / pdf_file.name
+                print(f"[*] PDF source: {pdf_file} ({size_mb:.2f} MB)")
+                shutil.copy2(pdf_file, dest_path)
+                print(f"[OK] Copied PDF to: {dest_path}")
 
                 # Validate PDF for Python code leakage
                 print("=" * 80)
