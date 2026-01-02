@@ -496,6 +496,18 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS: Parameter = {
   confidenceInterval: [6000.0, 12000.0],
 };
 
+export const GLOBAL_ANNUAL_DALY_BURDEN: Parameter = {
+  value: 2880000000.0,
+  unit: "DALYs/year",
+  displayName: "Global Annual DALY Burden",
+  description: "Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.",
+  sourceType: "external",
+  sourceRef: "ihme-gbd-2021",
+  confidence: "high",
+  stdError: 150000000.0,
+  peerReviewed: true,
+};
+
 export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   value: 55000000.0,
   unit: "deaths/year",
@@ -857,6 +869,18 @@ export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
   sourceRef: "disease-economic-burden-109t",
   confidence: "high",
   confidenceInterval: [6500000000000.0, 10000000000000.0],
+};
+
+export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
+  value: 0.39,
+  unit: "proportion",
+  displayName: "YLD Proportion of Total DALYs",
+  description: "Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.",
+  sourceType: "external",
+  sourceRef: "ihme-gbd-2021",
+  confidence: "high",
+  stdError: 0.03,
+  peerReviewed: true,
 };
 
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
@@ -1625,7 +1649,7 @@ export const DFDA_CURES_PER_YEAR: Parameter = {
   value: 142.89473684210526,
   unit: "diseases/year",
   displayName: "dFDA New Treatments Per Year",
-  description: "Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
+  description: "Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
   sourceType: "calculated",
   confidence: "low",
   formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -1779,7 +1803,7 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
   value: 46.53775322283609,
   unit: "years",
   displayName: "dFDA Queue Clearance Time",
-  description: "Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+  description: "Years to treat all currently untreatable diseases with dFDA implementation. Queue clearance time divided by trial capacity multiplier.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -1845,25 +1869,25 @@ export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
-  value: 192174476763.0,
+  value: 529261988693.0,
   unit: "DALYs",
   displayName: "DALYs Averted from Trial Capacity Increase",
-  description: "Total DALYs averted from trial capacity increase alone. Scales proportionally from lives saved using the same DALY/death ratio.",
+  description: "Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × cure acceleration years. Includes both fatal and non-fatal diseases.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
-  latex: "Increase_{DFDA} = Increase_{DFDA} \\times 19 = 10.1B \\times 19 = 192B",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × CURE_ACCELERATION_YEARS",
+  latex: "Increase_{DFDA} = DALYs_{ann} \\times DALYs \\times Ratio_{DFDA} = 2.88B \\times 92.6\\% \\times 198 = 529B",
 };
 
 export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
-  value: 2.882617151445e+16,
+  value: 7.938929830395e+16,
   unit: "USD",
   displayName: "Economic Value from Trial Capacity Increase",
   description: "Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
-  latex: "Increase_{DFDA} = Increase_{DFDA} \\times QALYs_{RD} = 192B \\times \\$150K = \\$28800T",
+  latex: "Increase_{DFDA} = Increase_{DFDA} \\times QALYs_{RD} = 529B \\times \\$150K = \\$79400T",
 };
 
 export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
@@ -1889,25 +1913,25 @@ export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
-  value: 200117260353.0,
+  value: 551136971807.0,
   unit: "DALYs",
   displayName: "Total DALYs from Full Timeline Shift",
-  description: "Total DALYs averted from the combined dFDA timeline shift. Scales proportionally from lives saved using the same DALY/death ratio.",
+  description: "Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
   sourceType: "calculated",
   confidence: "low",
-  formula: "LIVES_SAVED × DALY_PER_DEATH_RATIO",
-  latex: "DALYs_{DFDA} = Capacity_{DFDA} \\times 19 = 10.5B \\times 19 = 200B",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
+  latex: "DALYs_{averted} = 2.88B \\times 92.1\\% \\times 207 = 549B",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
-  value: 3.001758905295e+16,
+  value: 8.267054577105e+16,
   unit: "USD",
   displayName: "Total Economic Value from Full Timeline Shift",
   description: "Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "DALYS × STANDARD_QALY_VALUE",
-  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times QALYs_{RD} = 200B \\times \\$150K = \\$30000T",
+  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times QALYs_{RD} = 551B \\times \\$150K = \\$82700T",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
@@ -1922,15 +1946,15 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = {
-  value: 192741210547318.0,
+  value: 1882904350481435.0,
   unit: "hours",
   displayName: "Suffering Hours Eliminated from Full Timeline Shift",
-  description: "Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
+  description: "Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "low",
-  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
-  latex: "Capacity_{DFDA} = DALYs_{DFDA} \\times 963 = 200B \\times 963 = 193T",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR",
+  latex: "Capacity_{DFDA} = DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS \\times GLOBAL_YLD_PROPORTION \\times HOURS_PER_YEAR = 1880T",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
@@ -2725,19 +2749,19 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
 };
 
 export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 0.004997070208916684,
+  value: 0.0018144309874935866,
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Timeline Shift)",
-  description: "Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x trial capacity + ~8.2 years from efficacy lag elimination). This only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY.",
+  description: "Cost per DALY averted from full timeline shift (trial capacity acceleration + efficacy lag elimination). Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "Cost_{treaty} = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1B}{200B} = \\$0.005",
+  latex: "Cost_{treaty} = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1B}{551B} = \\$0.00181",
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
-  value: 0.49970702089166835,
+  value: 0.18144309874935866,
   unit: "USD/DALY",
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
   description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
@@ -2745,29 +2769,29 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "low",
   formula: "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
-  latex: "Cost_{treaty} = \\frac{Cost_{treaty}}{Probability} = \\frac{\\$0.005}{1\\%} = \\$0.5",
+  latex: "Cost_{treaty} = \\frac{Cost_{treaty}}{Probability} = \\frac{\\$0.00181}{1\\%} = \\$0.181",
 };
 
 export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 300175.8905295,
+  value: 826705.4577105001,
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
   description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
   sourceType: "calculated",
   sourceRef: "calculated",
   confidence: "low",
   formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
-  latex: "ROI_{treaty} = ROI_{treaty} \\times Probability = 30M \\times 1\\% = 300{,}000",
+  latex: "ROI_{treaty} = ROI_{treaty} \\times Probability = 82.7M \\times 1\\% = 827{,}000",
 };
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 178.10436171416998,
+  value: 490.51190490823,
   unit: "ratio",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
   description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.5} = 178",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.181} = 491",
 };
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
@@ -2831,15 +2855,15 @@ export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
 };
 
 export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 30017589.05295,
+  value: 82670545.77105,
   unit: "ratio",
   displayName: "Treaty ROI - Full Timeline Shift (PRIMARY)",
-  description: "Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capacity + ~8.2 years from efficacy lag elimination). Total one-time benefit divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+  description: "Treaty ROI from full timeline shift (trial capacity acceleration + efficacy lag elimination). Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
-  latex: "ROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}} = \\frac{\\$30000T}{\\$1B} = 30M",
+  latex: "ROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}} = \\frac{\\$82700T}{\\$1B} = 82.7M",
 };
 
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
@@ -2855,14 +2879,14 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 };
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 17810.436171416997,
+  value: 49051.190490823,
   unit: "ratio",
   displayName: "Cost-Effectiveness vs Bed Nets Multiplier",
   description: "How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.005} = 17{,}800",
+  latex: "Multiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.00181} = 49{,}100",
 };
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
@@ -3313,7 +3337,7 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
 };
 
 export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
-  value: 2.7086638759381048,
+  value: 0.9835130317834851,
   unit: "USD/DALY",
   displayName: "dFDA Direct Funding Cost per DALY",
   description: "Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).",
@@ -3321,7 +3345,7 @@ export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "medium",
   formula: "NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
-  latex: "Cost_{direct,DFDA} = \\frac{Funding_{direct,DFDA}}{DALYs_{DFDA}} = \\frac{\\$542B}{200B} = \\$2.71",
+  latex: "Cost_{direct,DFDA} = \\frac{Funding_{direct,DFDA}}{DALYs_{DFDA}} = \\frac{\\$542B}{551B} = \\$0.984",
 };
 
 export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
@@ -3566,6 +3590,17 @@ export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   confidence: "high",
   formula: "Total lifetime health gains from 1% treaty",
   latex: "Benefit = \\$4,300,000",
+};
+
+export const EVENTUALLY_AVOIDABLE_DALY_PCT: Parameter = {
+  value: 0.9262780790085205,
+  unit: "percentage",
+  displayName: "Eventually Avoidable DALY Percentage",
+  description: "Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.",
+  sourceType: "definition",
+  confidence: "low",
+  formula: "1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+  confidenceInterval: [0.5, 0.98],
 };
 
 export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
@@ -3885,7 +3920,7 @@ export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "Funding_{direct,treaty} = \\frac{Cost_{direct,DFDA}}{Cost_{treaty}} = \\frac{\\$2.71}{\\$0.005} = 542",
+  latex: "Funding_{direct,treaty} = \\frac{Cost_{direct,DFDA}}{Cost_{treaty}} = \\frac{\\$0.984}{\\$0.00181} = 542",
 };
 
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
@@ -3976,6 +4011,7 @@ export const parameters = {
   GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS,
+  GLOBAL_ANNUAL_DALY_BURDEN,
   GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES,
   GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT,
   GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT,
@@ -4009,6 +4045,7 @@ export const parameters = {
   GLOBAL_POPULATION_2024,
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
+  GLOBAL_YLD_PROPORTION_OF_DALYS,
   HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT,
   HUMAN_INTERACTOME_TARGETED_PCT,
   ICD_10_TOTAL_CODES,
@@ -4249,6 +4286,7 @@ export const parameters = {
   DISEASE_VS_TERRORISM_DEATHS_RATIO,
   DISEASE_VS_WAR_DEATHS_RATIO,
   EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT,
+  EVENTUALLY_AVOIDABLE_DALY_PCT,
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
@@ -4992,6 +5030,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://icd.who.int/browse10/2019/en",
         note: "WHO, ICD-10 Browser",
   },
+  "ihme-gbd-2021": {
+        id: "ihme-gbd-2021",
+        type: "article-journal",
+        title: "IHME Global Burden of Disease 2021 (2.88B DALYs, 1.13B YLD)",
+        author: [
+          {
+            literal: "Institute for Health Metrics and Evaluation (IHME)"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Institute for Health Metrics and Evaluation (IHME)",
+        URL: "https://vizhub.healthdata.org/gbd-results/",
+        note: "Institute for Health Metrics and Evaluation (IHME), GBD Results Tool | The Lancet, 2024, Global burden of 371 diseases and injuries, and 87 risk factors, in 204 countries, 2000-202100757-8/fulltext) | IHME, Global Burden of Disease Study 2021",
+  },
   "industry-clinical-trial-spending-estimate": {
         id: "industry-clinical-trial-spending-estimate",
         type: "webpage",
@@ -5711,11 +5763,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 352,
-  external: 137,
+  total: 355,
+  external: 139,
   calculated: 119,
-  definitions: 96,
-  citations: 104,
+  definitions: 97,
+  citations: 105,
 } as const;
 
 // ============================================================================

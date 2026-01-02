@@ -363,6 +363,7 @@ class ReferenceID(str, Enum):
     IEA_NET_ZERO_ROADMAP_COST = "iea-net-zero-roadmap-cost"
     IHI_HORIZON_EUROPE = "ihi-horizon-europe"
     IHME_GBD_2019 = "ihme-gbd-2019"
+    IHME_GBD_2021 = "ihme-gbd-2021"
     ILLINOIS_BIPA = "illinois-bipa"
     IMF2023 = "imf2023"
     IMMUNOTHERAPY_PIONEERS_NIH_REJECTION = "immunotherapy-pioneers-nih-rejection"

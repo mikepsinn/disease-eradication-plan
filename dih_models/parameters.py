@@ -2020,6 +2020,55 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
                                         # Economist rationale: Extraordinary claim requires wide CI
 )  # ~92.1% central, but 50-98% plausible range
 
+# ============================================================================
+# GLOBAL DALY BURDEN (WHO Global Burden of Disease)
+# ============================================================================
+# Used for calculating DALYs averted from accelerating cures
+
+GLOBAL_ANNUAL_DALY_BURDEN = Parameter(
+    2_880_000_000,  # 2.88 billion DALYs/year
+    source_ref=ReferenceID.IHME_GBD_2021,
+    source_type="external",
+    description="Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.",
+    display_name="Global Annual DALY Burden",
+    unit="DALYs/year",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["DALY", "disability", "burden", "WHO", "GBD", "global", "annual", "YLL", "YLD"],
+    distribution="normal",
+    std_error=150_000_000,  # ~5% uncertainty in measurement methodology
+)  # 2.88B DALYs/year (GBD 2021)
+
+# YLD as proportion of total DALYs (for suffering hours calculation)
+GLOBAL_YLD_PROPORTION_OF_DALYS = Parameter(
+    0.39,  # ~39% of DALYs are YLD (GBD 2021: 1.13B YLD / 2.88B DALYs)
+    source_ref=ReferenceID.IHME_GBD_2021,
+    source_type="external",
+    description="Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.",
+    display_name="YLD Proportion of Total DALYs",
+    unit="proportion",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["YLD", "YLL", "DALY", "proportion", "disability", "mortality", "GBD"],
+    distribution="normal",
+    std_error=0.03,  # ~8% relative uncertainty (range 33-45% across regions/years)
+)  # 39% YLD, 61% YLL
+
+# Eventually avoidable DALY percentage
+# Similar to death percentage but accounts for non-fatal chronic conditions
+EVENTUALLY_AVOIDABLE_DALY_PCT = Parameter(
+    1 - _unavoidable_pct,  # Use same base calculation as deaths
+    source_type="definition",
+    description="Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.",
+    display_name="Eventually Avoidable DALY Percentage",
+    unit="percentage",
+    formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+    confidence="low",
+    distribution=DistributionType.BETA,
+    confidence_interval=(0.50, 0.98),  # Same range as death percentage
+    keywords=["DALY", "avoidable", "curable", "disability", "chronic disease"],
+)  # ~92% - assumes most disease burden is eventually addressable
+
 # Disease Eradication Delay (PRIMARY ESTIMATE)
 # Assumes regulatory delay shifts disease eradication timeline back by efficacy lag period
 # Adjusted to exclude fundamentally unavoidable deaths (primarily accidents)
@@ -2278,7 +2327,7 @@ EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
 # DELETED: EFFICACY_LAG_WITH_INNOVATION_CASCADE_DEATHS_TOTAL and EFFICACY_LAG_WITH_INNOVATION_CASCADE_ECONOMIC_LOSS
 # Reason: These used an arbitrary 2× "innovation cascade" multiplier. Replaced by the more rigorous
 # queue-based model: TRIAL_CAPACITY_PLUS_EFFICACY_LAG_* parameters which use the empirically-derived
-# 23× trial capacity increase to calculate cure acceleration (~212 years + 8.2 years = ~220 years).
+# trial capacity multiplier to calculate cure acceleration.
 
 # Type I vs Type II Error Ratio - Thalidomide Baseline
 
@@ -3774,16 +3823,16 @@ _daly_multiplier_from_deaths = float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS) / floa
 _yld_ratio_of_dalys = float(DFDA_EFFICACY_LAG_ELIMINATION_YLD) / float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS)
 
 DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_LIVES_SAVED) * _daly_multiplier_from_deaths),
+    int(float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS)),
     source_type="calculated",
-    description="Total DALYs averted from trial capacity increase alone. Scales proportionally from lives saved using the same DALY/death ratio.",
+    description="Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × cure acceleration years. Includes both fatal and non-fatal diseases.",
     display_name="DALYs Averted from Trial Capacity Increase",
     unit="DALYs",
-    formula="DFDA_TRIAL_CAPACITY_LIVES_SAVED × DALY_PER_DEATH_RATIO",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × CURE_ACCELERATION_YEARS",
     confidence="low",
-    keywords=["trial capacity", "dalys", "cure acceleration"],
-    inputs=['DFDA_TRIAL_CAPACITY_LIVES_SAVED'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_LIVES_SAVED"] * _daly_multiplier_from_deaths),
+    keywords=["trial capacity", "dalys", "cure acceleration", "WHO", "GBD"],
+    inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS'],
+    compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS"]),
 )
 
 DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
@@ -3819,32 +3868,32 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
 )  # ~207 years average total timeline shift from dFDA
 
 # dFDA cure rate (diseases getting first treatment per year)
-# Status quo: ~15 diseases/year → dFDA: ~343 diseases/year
 DFDA_CURES_PER_YEAR = Parameter(
     float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
-    description="Diseases per year receiving their first effective treatment with dFDA. With ~23× trial capacity, the rate increases from ~15/year to ~343/year.",
+    description="Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
     display_name="dFDA New Treatments Per Year",
     unit="diseases/year",
-    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",    confidence="low",
+    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    confidence="low",
     keywords=["dfda", "cures", "diseases", "per year", "rate", "first treatment"],
     inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
-)  # ~343 diseases/year get first treatment with dFDA
+)
 
 # Time to cure ALL diseases with dFDA
-# Status quo: ~443 years → dFDA: ~19 years
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
-    description="Years to treatments all ~6,650 currently untreatable diseases with dFDA implementation. With ~23× trial capacity, queue clearance drops from ~443 years to ~19 years.",
+    description="Years to treat all currently untreatable diseases with dFDA implementation. Queue clearance time divided by trial capacity multiplier.",
     display_name="dFDA Queue Clearance Time",
     unit="years",
-    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",    confidence="low",
+    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    confidence="low",
     keywords=["dfda", "queue", "clearance", "all diseases", "cure all", "years"],
     inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
-)  # ~19 years to cure ALL diseases with dFDA
+)
 
 # ============================================================================
 # TOTAL LIVES SAVED FROM COMBINED TIMELINE SHIFT
@@ -3866,17 +3915,18 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) * _daly_multiplier_from_deaths),
+    int(float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS)),
     source_type="calculated",
-    description="Total DALYs averted from the combined dFDA timeline shift. Scales proportionally from lives saved using the same DALY/death ratio.",
+    description="Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
     display_name="Total DALYs from Full Timeline Shift",
     unit="DALYs",
-    formula="LIVES_SAVED × DALY_PER_DEATH_RATIO",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
+    latex=r"DALYs_{averted} = 2.88B \times 92.1\% \times 207 = 549B",
     confidence="low",
-    keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag"],
-    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] * _daly_multiplier_from_deaths),
-)
+    keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag", "WHO", "GBD"],
+    inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
+    compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"]),
+)  # ~549B DALYs averted (vs old 200B - now includes non-fatal chronic diseases)
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
@@ -3892,18 +3942,18 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * _yld_ratio_of_dalys * HOURS_PER_YEAR),
+    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
-    description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (years lived with disability × hours per year). One-time benefit, not annual recurring.",
+    description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
     display_name="Suffering Hours Eliminated from Full Timeline Shift",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × YLD_RATIO × HOURS_PER_YEAR",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR",
     confidence="low",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
-    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * _yld_ratio_of_dalys * HOURS_PER_YEAR),
-)  # ~193 trillion hours from full timeline shift
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'GLOBAL_YLD_PROPORTION_OF_DALYS'],
+    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"] * HOURS_PER_YEAR),
+)  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
@@ -4324,20 +4374,15 @@ TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / TREATY_CAMPAIGN_TOTAL_COST,
     source_ref="/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
     source_type="calculated",
-    description="Treaty ROI from full timeline shift (~220 years: ~212 years from 23× trial capacity + ~8.2 years from efficacy lag elimination). Total one-time benefit divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+    description="Treaty ROI from full timeline shift (trial capacity acceleration + efficacy lag elimination). Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.",
     display_name="Treaty ROI - Full Timeline Shift (PRIMARY)",
     unit="ratio",
     formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
     confidence="medium",
-    keywords=["trial capacity", "efficacy lag", "primary", "timeline shift", "roi", "220 years"],
+    keywords=["trial capacity", "efficacy lag", "primary", "timeline shift", "roi"],
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "TREATY_CAMPAIGN_TOTAL_COST"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"]
-)  # ROI from full ~220-year timeline shift
-
-# DELETED: TREATY_ROI_WITH_INNOVATION_CASCADE
-# Reason: Used the arbitrary 2× "innovation cascade" multiplier. The more rigorous
-# TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG uses the empirically-derived queue-based model
-# (23× trial capacity + 8.2-year efficacy lag elimination = ~220-year timeline shift).
+)
 
 # ---
 # EXPECTED ROI WITH POLITICAL UNCERTAINTY
@@ -4529,7 +4574,7 @@ TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
-    description=f"Cost per DALY averted from full timeline shift (~220 years: ~212 years from 23x trial capacity + ~8.2 years from efficacy lag elimination). This only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost ${BED_NETS_COST_PER_DALY}/DALY, deworming costs $4-10/DALY.",
+    description="Cost per DALY averted from full timeline shift (trial capacity acceleration + efficacy lag elimination). Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
     display_name="Cost per DALY Averted (Timeline Shift)",
     unit="USD/DALY",
     formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",

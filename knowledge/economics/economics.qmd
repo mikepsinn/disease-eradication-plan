@@ -432,6 +432,16 @@ The Monte Carlo distribution below shows the range of lives saved estimates acro
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
+### DALYs Averted
+
+**{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs** (Disability-Adjusted Life Years) averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_dalys_latex >}}
+
+DALYs capture both mortality (years of life lost) AND morbidity (years lived with disability). This includes non-fatal chronic conditions like arthritis, depression, diabetes, and chronic pain that cause suffering but don't appear in mortality statistics. The WHO Global Burden of Disease estimates {{< var global_annual_daly_burden >}} annually, of which {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research.
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
 ### Why "Eventually Avoidable" Matters
 
 Of {{< var global_disease_deaths_daily >}} daily deaths:
