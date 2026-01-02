@@ -485,9 +485,6 @@ def render_quarto(
         # Determine if we're rendering PDF (affects timeout and LaTeX parser)
         rendering_pdf = format_override == "pdf" or format_override is None
 
-        # Use temp directory for builds with cross-site links
-        use_temp_dir = metadata.get("target_url") is not None
-
         os.chdir(project_root)
 
         # 0. Kill existing processes if requested
@@ -517,22 +514,17 @@ def render_quarto(
             return validation_exit
         print()
 
-        # 3. Prepare build directory
+        # 3. Prepare build directory (always use temp directory for clean builds)
         print("=" * 80)
         print(f"SETUP: PREPARING {description.upper()}")
         print("=" * 80)
 
-        if use_temp_dir:
-            build_temp = prepare_build_temp(config_name, verbose=True)
-            if build_temp is None:
-                print("[ERROR] Failed to create temp build directory", file=sys.stderr)
-                return 1
-            os.chdir(build_temp)
-            print(f"[*] Changed to temp directory: {build_temp}")
-        else:
-            # For book config (no cross-site links), just prepare in place
-            if not prepare_config(config_name, verbose=True):
-                return 1
+        build_temp = prepare_build_temp(config_name, verbose=True)
+        if build_temp is None:
+            print("[ERROR] Failed to create temp build directory", file=sys.stderr)
+            return 1
+        os.chdir(build_temp)
+        print(f"[*] Changed to temp directory: {build_temp}")
         print()
 
         # 4. Run Quarto render or preview
