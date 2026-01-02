@@ -78,10 +78,10 @@ Goals:
 
 ### Cost Reductions
 
-#### Decentralized trial costs modeled on Oxford RECOVERY
+#### Cost Reduction Assumptions
 
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
-- Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
+- Decentralized trial costs drop closer to the [Oxford RECOVERY model](#decentralized-trial-costs-modeled-on-oxford-recovery): from [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
+- Regulatory oversight is streamlined through continuous data auditing, reducing administrative overhead.
 
 ### Technical Feasibility
 
