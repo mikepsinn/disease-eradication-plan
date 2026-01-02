@@ -598,7 +598,8 @@ def render_quarto(
             output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)
             if validation_exit != 0:
-                print("[WARNING] Post-validation found issues", file=sys.stderr)
+                print("[ERROR] Post-validation failed", file=sys.stderr)
+                exit_code = validation_exit
             print()
 
         # 6. Copy outputs from temp directory (skip in preview mode)
