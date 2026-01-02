@@ -1315,7 +1315,7 @@ Where:
 - **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from trial capacity increase + efficacy lag elimination):
 - **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
 
-For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)**.
+For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Cost-Utility Framework](#dfda-icer-analysis---cost-utility-framework)**.
 
 - **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the framework's operational costs, derived from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section.
 - **Core framework Ops (Midpoint):** $0.01875B ($18.75M) / year
