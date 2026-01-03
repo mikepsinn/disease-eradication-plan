@@ -212,7 +212,8 @@ metadata:
   
   # Bibliographic metadata
   title: "How to End War and Disease"
-  description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+  # description: Removed from metadata section to allow page-level descriptions to override for og:description
+  # (Book-level description is already set in the 'book' section above)
   abstract: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"

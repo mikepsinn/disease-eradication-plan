@@ -55,7 +55,10 @@ export async function getGitignorePatterns(): Promise<string[]> {
   const gitignorePath = path.join(ROOT_DIR, '.gitignore');
   try {
     const gitignoreContent = await fs.readFile(gitignorePath, 'utf-8');
-    return gitignoreContent.split('\n').filter(line => line.trim() && !line.startsWith('#'));
+    return gitignoreContent
+      .split('\n')
+      .map(line => line.replace(/\r$/, '')) // Remove Windows CRLF line endings
+      .filter(line => line.trim() && !line.startsWith('#'));
   } catch (error) {
     console.error("Could not read .gitignore file:", error);
     return [];

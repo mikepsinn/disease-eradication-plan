@@ -13,7 +13,7 @@ dih-render:
 
 book:
   title: "Test PDF Link Rewriting"
-  description: "Minimal test configuration for verifying PDF link preprocessing"
+  # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://test.warondisease.org
   page-navigation: true
   chapters:
@@ -26,7 +26,9 @@ execute:
 
 metadata:
   title: "Test PDF Link Rewriting"
-  description: "Minimal test configuration"
+  # description: Removed from metadata section to allow page-level descriptions to override for og:description
+  # (Book-level description is already set in the 'book' section above)
+  open-graph: true
 
 format:
   html:

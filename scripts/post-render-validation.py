@@ -357,6 +357,45 @@ def check_broken_internal_links(content, file_path, output_dir):
     return errors
 
 
+def check_meta_description_match(content, file_path):
+    """Check that og:description and name="description" meta tags have matching values"""
+    errors = []
+    
+    # Pattern to match meta description tags
+    # Matches: <meta name="description" content="...">
+    # Matches: <meta property="og:description" content="...">
+    name_desc_pattern = r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']+)["\']'
+    og_desc_pattern = r'<meta\s+property=["\']og:description["\']\s+content=["\']([^"\']+)["\']'
+    
+    name_desc_match = re.search(name_desc_pattern, content, re.IGNORECASE)
+    og_desc_match = re.search(og_desc_pattern, content, re.IGNORECASE)
+    
+    # If neither exists, that's fine (some pages might not have descriptions)
+    if not name_desc_match and not og_desc_match:
+        return errors
+    
+    # If only one exists, that's an error
+    if name_desc_match and not og_desc_match:
+        context = f"Has <meta name=\"description\"> but missing <meta property=\"og:description\">"
+        errors.append(ValidationError(file_path, 0, "MISSING_OG_DESCRIPTION", context))
+        return errors
+    
+    if og_desc_match and not name_desc_match:
+        context = f"Has <meta property=\"og:description\"> but missing <meta name=\"description\">"
+        errors.append(ValidationError(file_path, 0, "MISSING_META_DESCRIPTION", context))
+        return errors
+    
+    # Both exist - check if they match
+    name_desc_value = name_desc_match.group(1)
+    og_desc_value = og_desc_match.group(1)
+    
+    if name_desc_value != og_desc_value:
+        context = f"Description mismatch: name=\"description\" = \"{name_desc_value[:80]}...\" vs og:description = \"{og_desc_value[:80]}...\""
+        errors.append(ValidationError(file_path, 0, "DESCRIPTION_MISMATCH", context))
+    
+    return errors
+
+
 def check_quarto_config_resources(output_dir):
     """Check that resources referenced in _quarto.yml exist in output directory"""
     errors = []
@@ -429,6 +468,7 @@ def validate_file(file_path, output_dir):
     errors.extend(check_blacklisted_strings(content, file_path))
     errors.extend(check_qmd_file_links(content, file_path))
     errors.extend(check_broken_internal_links(content, file_path, output_dir))
+    errors.extend(check_meta_description_match(content, file_path))
 
     return errors
 
@@ -531,6 +571,17 @@ def main():
         print("   - Missing PDF link: PDF file linked in navbar/sidebar not found in output directory")
         print("     Ensure the PDF file exists or is generated during render")
         print("     Check that the href path in config matches the actual file location")
+    if "DESCRIPTION_MISMATCH" in errors_by_type:
+        print("   - Description mismatch: <meta name=\"description\"> and <meta property=\"og:description\">")
+        print("     have different values. They should match - page-level descriptions should be used")
+        print("     for both. Check that description is removed from project-level metadata section")
+        print("     in _quarto.yml to allow page-level descriptions to override.")
+    if "MISSING_OG_DESCRIPTION" in errors_by_type:
+        print("   - Missing og:description: Page has <meta name=\"description\"> but no <meta property=\"og:description\">")
+        print("     Ensure open-graph: true is set in metadata section of _quarto.yml")
+    if "MISSING_META_DESCRIPTION" in errors_by_type:
+        print("   - Missing meta description: Page has <meta property=\"og:description\"> but no <meta name=\"description\">")
+        print("     This is unusual - both should be present. Check Quarto configuration.")
 
     return 1
 
