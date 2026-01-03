@@ -211,10 +211,10 @@ metadata:
   contact: "mike@warondisease.org"
   
   # Bibliographic metadata
-  title: "How to End War and Disease"
+  # title: Removed - each page defines its own title in frontmatter
   # description: Removed from metadata section to allow page-level descriptions to override for og:description
   # (Book-level description is already set in the 'book' section above)
-  abstract: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+  # abstract: Removed - pages can define their own abstract in frontmatter if needed
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"

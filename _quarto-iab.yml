@@ -57,9 +57,10 @@ metadata:
   author-url: "https://iab.warondisease.org"
   author-website: "https://iab.warondisease.org"
   contact: "mike@warondisease.org"
-  title: "Incentive Alignment Bonds: A Mechanism for Aligning Political Incentives with Public Welfare"
-  description: "A mechanism design for inducing welfare-maximizing behavior in political agents through conditional electoral support, post-office opportunities, and legacy benefits tied to performance on public good provision"
-  abstract: "Politicians systematically underinvest in public goods and overprovide concentrated benefits to organized interests. We propose Incentive Alignment Bonds (IABs): a mechanism that ties electoral support, post-office career opportunities, and legacy benefits to measurable outcomes on public good provision. By making politician utility functions depend on scores derived from their voting records on prioritized programs, IABs transform rent-seeking incentives into welfare-maximizing ones."
+  # title: Removed - each page defines its own title in frontmatter
+  # description: Removed from metadata section to allow page-level descriptions to override for og:description
+  # (Website-level description is already set in the 'website' section above)
+  # abstract: Removed - pages can define their own abstract in frontmatter if needed
   language: "en-US"
   subject: "Mechanism Design, Political Economy, Public Choice, Electoral Reform"
   category: "Academic Paper, Public Policy, Political Science, Economics"

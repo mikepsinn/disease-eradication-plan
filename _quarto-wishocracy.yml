@@ -59,9 +59,10 @@ metadata:
   author-url: "https://wishocracy.org"
   author-website: "https://wishocracy.org"
   contact: "mike@warondisease.org"
-  title: "Wishocracy: Randomized Pairwise Budget Allocation for Preference Aggregation"
-  description: "A governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation"
-  abstract: "Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation."
+  # title: Removed - each page defines its own title in frontmatter
+  # description: Removed from metadata section to allow page-level descriptions to override for og:description
+  # (Website-level description is already set in the 'website' section above)
+  # abstract: Removed - pages can define their own abstract in frontmatter if needed
   language: "en-US"
   subject: "Mechanism Design, Collective Decision-Making, Participatory Democracy, Preference Aggregation"
   category: "Academic Paper, Public Policy, Political Science"

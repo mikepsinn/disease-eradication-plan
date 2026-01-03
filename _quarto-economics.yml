@@ -22,7 +22,7 @@ profiles:
 
 book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-  description: "Redirecting 1% of global military spending ($27.2B/yr) to pragmatic clinical trials advances treatment access 207 years saving 10.5B lives at $0.0050 per DALY and generating $30 quadrillion in long-run value."
+  # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://impact.warondisease.org
   favicon: assets/icons/dih-icon-square.png
   page-navigation: true
@@ -86,9 +86,10 @@ metadata:
   author-url: "https://WarOnDisease.org"
   author-website: "https://WarOnDisease.org"
   contact: "mike@warondisease.org"
-  title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-  description: "Redirecting 1% of global military spending ($27.2B/yr) to pragmatic clinical trials advances treatment access 207 years saving 10.5B lives at $0.0050 per DALY and generating $30 quadrillion in long-run value."
-  abstract: "By redirecting 1% of global military spending to pragmatic clinical trials, humanity can achieve 207 years of medical research in 20 years, saving 10.5 billion lives and generating $30 quadrillion in value."
+  # title: Removed - each page defines its own title in frontmatter
+  # description: Removed from metadata section to allow page-level descriptions to override for og:description
+  # (Book-level description is already set in the 'book' section above)
+  # abstract: Removed - pages can define their own abstract in frontmatter if needed
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
