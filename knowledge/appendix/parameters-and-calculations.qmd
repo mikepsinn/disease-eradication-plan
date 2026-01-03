@@ -15,15 +15,15 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 366
+**Total parameters**: 382
 
 - External sources (peer-reviewed): 144
-- Calculated values: 123
-- Core definitions: 99
+- Calculated values: 136
+- Core definitions: 102
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (123 parameters) • [External Data Sources](#sec-external) (144 parameters) • [Core Definitions](#sec-definitions) (99 parameters)
+[Calculated Values](#sec-calculated) (136 parameters) • [External Data Sources](#sec-external) (144 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -60,6 +60,29 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
+
+### Cell Therapy Combinations: 500k combinations {#sec-cell_therapy_disease_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cell therapy approach-disease combinations
+
+**Inputs**:
+
+- [Cell Therapy Approaches](#sec-cell_therapy_approaches): 500 approaches (95% CI: 300 approaches - 800 approaches)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+Cell = Cell \times Trials_{dis} = 500 \times 1{,}000 = 500{,}000
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-cell_therapy_disease_combinations.qmd >}}
 
 :::
 
@@ -129,6 +152,49 @@ $$
 
 :::
 
+### Combination Therapy Space: 45.1B combinations {#sec-combination_therapy_disease_space}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.
+
+**Inputs**:
+
+- [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1M combinations
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+Combination = Combination \times Trials_{dis} = 45.1M \times 1{,}000 = 45.1B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-combination_therapy_disease_space.qmd >}}
+
+:::
+
+### Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Unique pairwise drug combinations from known safe compounds (n choose 2)
+
+**Inputs**:
+
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50k compounds (95% CI: 7.00k compounds - 12.0k compounds)
+
+*Formula*: `SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2`
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-combination_therapy_pairs.qmd >}}
+
+:::
+
 ### Combined Peace and Health Dividends for ROI Calculation: $172B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -161,6 +227,105 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
+
+:::
+
+### Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.
+
+**Inputs**:
+
+- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1B combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+
+$$
+Ratio_{curr} = COMBINATION_SPACE \div CURRENT_TRIALS_PER_YEAR = 13.7M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_combination_exploration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_combination_exploration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_combination_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_combination_exploration_years.qmd >}}
+
+:::
+
+### Known Safe Exploration Time (Current): 2.88k years {#sec-current_known_safe_exploration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to test all known safe drug-disease combinations at current global trial capacity
+
+**Inputs**:
+
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+
+$$
+Ratio_{curr} = DRUG_DISEASE_COMBINATIONS \div CURRENT_TRIALS_PER_YEAR = 2{,}880
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_known_safe_exploration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_known_safe_exploration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_known_safe_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_known_safe_exploration_years.qmd >}}
+
+:::
+
+### Total Exploration Time (Current): 15.6k years {#sec-current_total_exploration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity
+
+**Inputs**:
+
+- [Total Testable Therapeutic Space](#sec-total_testable_therapeutic_combinations) 🔢: 51.5M combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+
+$$
+Ratio_{curr,total} = TOTAL_COMBINATIONS \div CURRENT_TRIALS_PER_YEAR = 15{,}600
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_total_exploration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_total_exploration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_total_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_total_exploration_years.qmd >}}
 
 :::
 
@@ -548,6 +713,39 @@ $$
 
 :::
 
+### Known Safe Exploration Time (dFDA): 233 years {#sec-dfda_known_safe_exploration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to test all known safe drug-disease combinations with dFDA trial capacity
+
+**Inputs**:
+
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Decentralized Framework for Drug Assessment Maximum Trials per Year](#sec-dfda_trials_per_year_capacity) 🔢: 40.6k trials/year
+
+$$
+Ratio_{DFDA} = DRUG_DISEASE_COMBINATIONS \div DFDA_TRIALS_PER_YEAR = 233
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_known_safe_exploration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_known_safe_exploration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_known_safe_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_known_safe_exploration_years.qmd >}}
+
+:::
+
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -892,6 +1090,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
+
+:::
+
+### Total Exploration Time (dFDA): 1.27k years {#sec-dfda_total_exploration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity
+
+**Inputs**:
+
+- [Total Testable Therapeutic Space](#sec-total_testable_therapeutic_combinations) 🔢: 51.5M combinations
+- [Decentralized Framework for Drug Assessment Maximum Trials per Year](#sec-dfda_trials_per_year_capacity) 🔢: 40.6k trials/year
+
+$$
+Ratio_{DFDA,total} = TOTAL_COMBINATIONS \div DFDA_TRIALS_PER_YEAR = 1{,}270
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_total_exploration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_total_exploration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_total_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_total_exploration_years.qmd >}}
 
 :::
 
@@ -1596,6 +1827,54 @@ $$
 
 :::
 
+### Emerging Modality Combinations: 42.0M combinations {#sec-emerging_modality_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total emerging modality combinations (gene therapy + mRNA + epigenetics + cell therapy)
+
+**Inputs**:
+
+- [Gene Therapy Combinations](#sec-gene_therapy_disease_combinations) 🔢: 20.0M combinations
+- [mRNA Therapeutic Combinations](#sec-mrna_therapeutic_combinations) 🔢: 20.0M combinations
+- [Epigenetic Therapy Combinations](#sec-epigenetic_disease_combinations) 🔢: 1.50M combinations
+- [Cell Therapy Combinations](#sec-cell_therapy_disease_combinations) 🔢: 500k combinations
+
+$$
+Emerging = Gene + Mrna + Epigenetic + Cell = 20M + 20M + 1.5M + 500{,}000 = 42M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-emerging_modality_combinations.qmd >}}
+
+:::
+
+### Epigenetic Therapy Combinations: 1.50M combinations {#sec-epigenetic_disease_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Epigenetic reprogramming target-disease combinations
+
+**Inputs**:
+
+- [Epigenetic Drug Targets](#sec-epigenetic_targets_count): 1.50k targets (95% CI: 1.00k targets - 2.00k targets)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+Epigenetic = Epigenetic \times Trials_{dis} = 1{,}500 \times 1{,}000 = 1.5M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-epigenetic_disease_combinations.qmd >}}
+
+:::
+
 ### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -1734,6 +2013,29 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
+
+:::
+
+### Gene Therapy Combinations: 20.0M combinations {#sec-gene_therapy_disease_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Gene therapy target-disease combinations (CRISPR, base editing, viral vectors)
+
+**Inputs**:
+
+- [Human Protein-Coding Genes](#sec-human_protein_coding_genes): 20.0k genes (95% CI: 19.0k genes - 21.0k genes)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+Gene = Human \times Trials_{dis} = 20{,}000 \times 1{,}000 = 20M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gene_therapy_disease_combinations.qmd >}}
 
 :::
 
@@ -2515,6 +2817,29 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
+
+:::
+
+### mRNA Therapeutic Combinations: 20.0M combinations {#sec-mrna_therapeutic_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+mRNA therapeutic combinations (protein replacement, vaccines, enzyme delivery)
+
+**Inputs**:
+
+- [Human Protein-Coding Genes](#sec-human_protein_coding_genes): 20.0k genes (95% CI: 19.0k genes - 21.0k genes)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+Mrna = Human \times Trials_{dis} = 20{,}000 \times 1{,}000 = 20M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mrna_therapeutic_combinations.qmd >}}
 
 :::
 
@@ -3509,6 +3834,29 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-total_research_funding_with_treaty.qmd >}}
+
+:::
+
+### Total Testable Therapeutic Space: 51.5M combinations {#sec-total_testable_therapeutic_combinations}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total testable therapeutic combinations (known safe compounds + emerging modalities)
+
+**Inputs**:
+
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Emerging Modality Combinations](#sec-emerging_modality_combinations) 🔢: 42.0M combinations
+
+$$
+Testable_{total} = Drug + Emerging = 9.5M + 42M = 51.5M
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-total_testable_therapeutic_combinations.qmd >}}
 
 :::
 
@@ -7465,6 +7813,24 @@ Annual cost of unpaid caregiving (replacement cost method)
 
 :::
 
+### Cell Therapy Approaches: 500 approaches {#sec-cell_therapy_approaches}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [300 approaches, 800 approaches] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 300 approaches and 800 approaches (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
+:::
+
 ### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -7825,6 +8191,24 @@ Lifetime benefit for age 30 baseline scenario ($4.3M)
 
 :::
 
+### Epigenetic Drug Targets: 1.50k targets {#sec-epigenetic_targets_count}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.00k targets, 2.00k targets] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.00k targets and 2.00k targets (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
+:::
+
 ### Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -7902,6 +8286,24 @@ Global military spending after 1% treaty reduction
 ### Hours Per Year: 8.76k {#sec-hours_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
+
+*Core definition*
+
+:::
+
+### Human Protein-Coding Genes: 20.0k genes {#sec-human_protein_coding_genes}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [19.0k genes, 21.0k genes] • Distribution: Uniform
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 19.0k genes and 21.0k genes (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
 
 *Core definition*
 

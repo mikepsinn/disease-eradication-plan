@@ -1045,12 +1045,19 @@ A common objection is that "more trials won't produce proportionally more cures,
 
 #### Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
 
-The diminishing returns objection assumes we've exhausted low-hanging fruit. But we've tested <1% of drug-disease combinations:
+The diminishing returns objection assumes we've exhausted low-hanging fruit. But we've barely begun:
 
-1. **The unexplored space is enormous**: {{< var drug_disease_combinations_possible >}} possible combinations, <1% tested
-2. **Repurposing success proves cures exist**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating the unexplored space contains discoveries
-3. **Most biology is untargeted**: Only {{< var human_interactome_targeted_pct >}} of the human interactome has been targeted. We're ignoring 88% of our own biology.
-4. **RECOVERY found treatments in months**: The Oxford trial discovered multiple effective COVID treatments rapidly *because it looked systematically*
+1. **Single compounds alone**: {{< var drug_disease_combinations_possible >}} possible combinations of known safe compounds × diseases. At current trial capacity, systematically testing these would take **{{< var current_known_safe_exploration_years >}}**. We won't finish until the year 5000.
+
+2. **Combination therapies expand the space**: Modern medicine relies on multi-drug regimens (oncology, HIV, cardiology). Pairwise combinations of safe compounds create **{{< var combination_therapy_disease_space >}}** possibilities, requiring **{{< var current_combination_exploration_years >}}** at current pace, longer than *Homo sapiens* has existed.
+
+3. **Repurposing success proves cures exist**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating the unexplored space contains discoveries.
+
+4. **Most biology is untargeted**: Only {{< var human_interactome_targeted_pct >}} of the human interactome has been targeted. We're ignoring 88% of our own biology.
+
+5. **RECOVERY found treatments in months**: The Oxford trial discovered multiple effective COVID treatments rapidly *because it looked systematically*.
+
+See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for the complete tiered analysis of therapeutic space.
 
 You cannot have diminishing returns when you've barely started.
 

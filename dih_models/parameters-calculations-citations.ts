@@ -1631,6 +1631,17 @@ export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
   latex: "Cost = Drug_{current} \\times Deaths = 50 \\times 40\\% = 20",
 };
 
+export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
+  value: 500000.0,
+  unit: "combinations",
+  displayName: "Cell Therapy Combinations",
+  description: "Cell therapy approach-disease combinations",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CELL_APPROACHES × DISEASES",
+  latex: "Cell = Cell \\times Trials_{dis} = 500 \\times 1{,}000 = 500{,}000",
+};
+
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
   value: 1200000000.0,
   unit: "USD",
@@ -1653,6 +1664,27 @@ export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
   latex: "Cost_{ann} = \\frac{Trials_{ann}}{Trials_{curr}} = \\frac{\\$60B}{1.9M} = \\$31.6K",
 };
 
+export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
+  value: 45120250000.0,
+  unit: "combinations",
+  displayName: "Combination Therapy Space",
+  description: "Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DRUG_PAIRS × DISEASES",
+  latex: "Combination = Combination \\times Trials_{dis} = 45.1M \\times 1{,}000 = 45.1B",
+};
+
+export const COMBINATION_THERAPY_PAIRS: Parameter = {
+  value: 45120250.0,
+  unit: "combinations",
+  displayName: "Pairwise Drug Combinations",
+  description: "Unique pairwise drug combinations from known safe compounds (n choose 2)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
+};
+
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   value: 172211487804.87805,
   unit: "USD/year",
@@ -1663,6 +1695,39 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
   latex: "Dividend_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$114B + \\$58.6B = \\$172B",
+};
+
+export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
+  value: 13672803.0,
+  unit: "years",
+  displayName: "Combination Therapy Exploration Time (Current)",
+  description: "Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR",
+  latex: "Ratio_{curr} = COMBINATION_SPACE \\div CURRENT_TRIALS_PER_YEAR = 13.7M",
+};
+
+export const CURRENT_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
+  value: 2878.0,
+  unit: "years",
+  displayName: "Known Safe Exploration Time (Current)",
+  description: "Years to test all known safe drug-disease combinations at current global trial capacity",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
+  latex: "Ratio_{curr} = DRUG_DISEASE_COMBINATIONS \\div CURRENT_TRIALS_PER_YEAR = 2{,}880",
+};
+
+export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
+  value: 15606.0,
+  unit: "years",
+  displayName: "Total Exploration Time (Current)",
+  description: "Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
+  latex: "Ratio_{curr,total} = TOTAL_COMBINATIONS \\div CURRENT_TRIALS_PER_YEAR = 15{,}600",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -1794,6 +1859,17 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
   latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
 };
 
+export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
+  value: 233.0,
+  unit: "years",
+  displayName: "Known Safe Exploration Time (dFDA)",
+  description: "Years to test all known safe drug-disease combinations with dFDA trial capacity",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
+  latex: "Ratio_{DFDA} = DRUG_DISEASE_COMBINATIONS \\div DFDA_TRIALS_PER_YEAR = 233",
+};
+
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 58600487804.878044,
   unit: "USD/year",
@@ -1910,6 +1986,17 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   confidence: "high",
   formula: "NPV_BENEFIT ÷ NPV_TOTAL_COST",
   latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
+};
+
+export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
+  value: 1268.0,
+  unit: "years",
+  displayName: "Total Exploration Time (dFDA)",
+  description: "Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
+  latex: "Ratio_{DFDA,total} = TOTAL_COMBINATIONS \\div DFDA_TRIALS_PER_YEAR = 1{,}270",
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
@@ -2153,6 +2240,28 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   latex: "Drug = Safe \\times Trials_{dis} = 9{,}500 \\times 1{,}000 = 9.5M",
 };
 
+export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
+  value: 42000000.0,
+  unit: "combinations",
+  displayName: "Emerging Modality Combinations",
+  description: "Total emerging modality combinations (gene therapy + mRNA + epigenetics + cell therapy)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GENE + MRNA + EPIGENETIC + CELL",
+  latex: "Emerging = Gene + Mrna + Epigenetic + Cell = 20M + 20M + 1.5M + 500{,}000 = 42M",
+};
+
+export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
+  value: 1500000.0,
+  unit: "combinations",
+  displayName: "Epigenetic Therapy Combinations",
+  description: "Epigenetic reprogramming target-disease combinations",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "EPIGENETIC_TARGETS × DISEASES",
+  latex: "Epigenetic = Epigenetic \\times Trials_{dis} = 1{,}500 \\times 1{,}000 = 1.5M",
+};
+
 export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
   value: 98399999.99999999,
   unit: "deaths",
@@ -2199,6 +2308,17 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   confidence: "high",
   formula: "FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
   latex: "\\frac{9.1 \\text{ years} \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4",
+};
+
+export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
+  value: 20000000.0,
+  unit: "combinations",
+  displayName: "Gene Therapy Combinations",
+  description: "Gene therapy target-disease combinations (CRISPR, base editing, viral vectors)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GENES × DISEASES",
+  latex: "Gene = Human \\times Trials_{dis} = 20{,}000 \\times 1{,}000 = 20M",
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
@@ -2460,6 +2580,17 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   confidence: "high",
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "Misallocation = \\frac{\\$46.4M}{\\$16,071} \\approx 2,889x",
+};
+
+export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
+  value: 20000000.0,
+  unit: "combinations",
+  displayName: "mRNA Therapeutic Combinations",
+  description: "mRNA therapeutic combinations (protein replacement, vaccines, enzyme delivery)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PROTEINS × DISEASES",
+  latex: "Mrna = Human \\times Trials_{dis} = 20{,}000 \\times 1{,}000 = 20M",
 };
 
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
@@ -2798,6 +2929,17 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   confidence: "high",
   formula: "GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
   latex: "Funding_{total} = Spending_{global} + Funding_{ann} = \\$67.5B + \\$27.2B = \\$94.7B",
+};
+
+export const TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS: Parameter = {
+  value: 51500000.0,
+  unit: "combinations",
+  displayName: "Total Testable Therapeutic Space",
+  description: "Total testable therapeutic combinations (known safe compounds + emerging modalities)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "KNOWN_SAFE + EMERGING_MODALITIES",
+  latex: "Testable_{total} = Drug + Emerging = 9.5M + 42M = 51.5M",
 };
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
@@ -3392,6 +3534,17 @@ export const CAREGIVER_COST_ANNUAL: Parameter = {
   formula: "HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
 };
 
+export const CELL_THERAPY_APPROACHES: Parameter = {
+  value: 500.0,
+  unit: "approaches",
+  displayName: "Cell Therapy Approaches",
+  description: "Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [300.0, 800.0],
+};
+
 export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   value: 30.0,
   unit: "USD/DALY",
@@ -3702,6 +3855,17 @@ export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   latex: "Benefit = \\$4,300,000",
 };
 
+export const EPIGENETIC_TARGETS_COUNT: Parameter = {
+  value: 1500.0,
+  unit: "targets",
+  displayName: "Epigenetic Drug Targets",
+  description: "Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [1000.0, 2000.0],
+};
+
 export const EVENTUALLY_AVOIDABLE_DALY_PCT: Parameter = {
   value: 0.9262780790085205,
   unit: "percentage",
@@ -3764,6 +3928,17 @@ export const HOURS_PER_DAY: Parameter = {
 
 export const HOURS_PER_YEAR: Parameter = {
   value: 8760.0,
+};
+
+export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
+  value: 20000.0,
+  unit: "genes",
+  displayName: "Human Protein-Coding Genes",
+  description: "Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [19000.0, 21000.0],
 };
 
 export const IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD: Parameter = {
@@ -4235,9 +4410,15 @@ export const parameters = {
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
   ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
+  CELL_THERAPY_DISEASE_COMBINATIONS,
   CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
+  COMBINATION_THERAPY_DISEASE_SPACE,
+  COMBINATION_THERAPY_PAIRS,
   COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC,
+  CURRENT_COMBINATION_EXPLORATION_YEARS,
+  CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
+  CURRENT_TOTAL_EXPLORATION_YEARS,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER,
@@ -4249,6 +4430,7 @@ export const parameters = {
   DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE,
   DFDA_EFFICACY_LAG_ELIMINATION_YLD,
   DFDA_EFFICACY_LAG_ELIMINATION_YLL,
+  DFDA_KNOWN_SAFE_EXPLORATION_YEARS,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
   DFDA_NPV_BENEFIT_RD_ONLY,
@@ -4259,6 +4441,7 @@ export const parameters = {
   DFDA_QUEUE_CLEARANCE_YEARS,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
+  DFDA_TOTAL_EXPLORATION_YEARS,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
   DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS,
   DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
@@ -4280,10 +4463,13 @@ export const parameters = {
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+  EMERGING_MODALITY_COMBINATIONS,
+  EPIGENETIC_DISEASE_COMBINATIONS,
   EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
+  GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
   GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT,
   GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE,
@@ -4306,6 +4492,7 @@ export const parameters = {
   MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_VS_MEDICAL_RESEARCH_RATIO,
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
+  MRNA_THERAPEUTIC_COMBINATIONS,
   PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
   PEACE_DIVIDEND_CONFLICT_REDUCTION,
   PEACE_DIVIDEND_DIRECT_COSTS,
@@ -4335,6 +4522,7 @@ export const parameters = {
   THALIDOMIDE_YLD_PER_EVENT,
   THALIDOMIDE_YLL_PER_EVENT,
   TOTAL_RESEARCH_FUNDING_WITH_TREATY,
+  TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS,
   TREATY_BENEFIT_MULTIPLIER_VS_VACCINES,
   TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED,
   TREATY_CAMPAIGN_TOTAL_COST,
@@ -4387,6 +4575,7 @@ export const parameters = {
   CAMPAIGN_TREATY_IMPLEMENTATION,
   CAMPAIGN_VIRAL_CONTENT_BUDGET,
   CAREGIVER_COST_ANNUAL,
+  CELL_THERAPY_APPROACHES,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
   CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -4416,6 +4605,7 @@ export const parameters = {
   DISEASE_VS_TERRORISM_DEATHS_RATIO,
   DISEASE_VS_WAR_DEATHS_RATIO,
   EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT,
+  EPIGENETIC_TARGETS_COUNT,
   EVENTUALLY_AVOIDABLE_DALY_PCT,
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
@@ -4423,6 +4613,7 @@ export const parameters = {
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
+  HUMAN_PROTEIN_CODING_GENES,
   IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD,
   IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD,
   IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD,
@@ -5936,10 +6127,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 366,
+  total: 382,
   external: 144,
-  calculated: 123,
-  definitions: 99,
+  calculated: 136,
+  definitions: 102,
   citations: 108,
 } as const;
 

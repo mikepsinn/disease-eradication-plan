@@ -1667,6 +1667,157 @@ UNEXPLORED_RATIO = Parameter(
     compute=lambda ctx: 1 - (ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"])
 )
 
+# =============================================================================
+# THERAPEUTIC SPACE: EMERGING MODALITIES (Tier 2)
+# =============================================================================
+# Beyond known safe small molecules, emerging modalities vastly expand the
+# therapeutic frontier: gene therapies, mRNA, epigenetics, cell therapies.
+
+HUMAN_PROTEIN_CODING_GENES = Parameter(
+    20_000,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)",
+    display_name="Human Protein-Coding Genes",
+    unit="genes",
+    keywords=["genes", "genome", "protein", "targets", "gene therapy", "mRNA"],
+    confidence_interval=(19_000, 21_000),
+    distribution=DistributionType.UNIFORM
+)
+
+GENE_THERAPY_DISEASE_COMBINATIONS = Parameter(
+    HUMAN_PROTEIN_CODING_GENES * TRIAL_RELEVANT_DISEASES_COUNT,
+    source_type="calculated",
+    description="Gene therapy target-disease combinations (CRISPR, base editing, viral vectors)",
+    display_name="Gene Therapy Combinations",
+    unit="combinations",
+    formula="GENES × DISEASES",
+    keywords=["gene therapy", "crispr", "base editing", "combinations", "therapeutic frontier"],
+    inputs=["HUMAN_PROTEIN_CODING_GENES", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+)
+
+MRNA_THERAPEUTIC_COMBINATIONS = Parameter(
+    HUMAN_PROTEIN_CODING_GENES * TRIAL_RELEVANT_DISEASES_COUNT,
+    source_type="calculated",
+    description="mRNA therapeutic combinations (protein replacement, vaccines, enzyme delivery)",
+    display_name="mRNA Therapeutic Combinations",
+    unit="combinations",
+    formula="PROTEINS × DISEASES",
+    keywords=["mrna", "rna", "protein replacement", "combinations", "therapeutic frontier"],
+    inputs=["HUMAN_PROTEIN_CODING_GENES", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+)
+
+EPIGENETIC_TARGETS_COUNT = Parameter(
+    1_500,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)",
+    display_name="Epigenetic Drug Targets",
+    unit="targets",
+    keywords=["epigenetic", "hdac", "dnmt", "histone", "chromatin", "reprogramming"],
+    confidence_interval=(1_000, 2_000),
+    distribution=DistributionType.UNIFORM
+)
+
+EPIGENETIC_DISEASE_COMBINATIONS = Parameter(
+    EPIGENETIC_TARGETS_COUNT * TRIAL_RELEVANT_DISEASES_COUNT,
+    source_type="calculated",
+    description="Epigenetic reprogramming target-disease combinations",
+    display_name="Epigenetic Therapy Combinations",
+    unit="combinations",
+    formula="EPIGENETIC_TARGETS × DISEASES",
+    keywords=["epigenetic", "reprogramming", "combinations", "therapeutic frontier"],
+    inputs=["EPIGENETIC_TARGETS_COUNT", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: ctx["EPIGENETIC_TARGETS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+)
+
+CELL_THERAPY_APPROACHES = Parameter(
+    500,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)",
+    display_name="Cell Therapy Approaches",
+    unit="approaches",
+    keywords=["cell therapy", "car-t", "ipsc", "stem cell", "msc", "organoid"],
+    confidence_interval=(300, 800),
+    distribution=DistributionType.UNIFORM
+)
+
+CELL_THERAPY_DISEASE_COMBINATIONS = Parameter(
+    CELL_THERAPY_APPROACHES * TRIAL_RELEVANT_DISEASES_COUNT,
+    source_type="calculated",
+    description="Cell therapy approach-disease combinations",
+    display_name="Cell Therapy Combinations",
+    unit="combinations",
+    formula="CELL_APPROACHES × DISEASES",
+    keywords=["cell therapy", "combinations", "therapeutic frontier"],
+    inputs=["CELL_THERAPY_APPROACHES", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: ctx["CELL_THERAPY_APPROACHES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+)
+
+# Total emerging modalities
+EMERGING_MODALITY_COMBINATIONS = Parameter(
+    int(GENE_THERAPY_DISEASE_COMBINATIONS) + int(MRNA_THERAPEUTIC_COMBINATIONS) +
+    int(EPIGENETIC_DISEASE_COMBINATIONS) + int(CELL_THERAPY_DISEASE_COMBINATIONS),
+    source_type="calculated",
+    description="Total emerging modality combinations (gene therapy + mRNA + epigenetics + cell therapy)",
+    display_name="Emerging Modality Combinations",
+    unit="combinations",
+    formula="GENE + MRNA + EPIGENETIC + CELL",
+    keywords=["emerging", "modalities", "gene therapy", "mrna", "epigenetic", "cell therapy", "total"],
+    inputs=["GENE_THERAPY_DISEASE_COMBINATIONS", "MRNA_THERAPEUTIC_COMBINATIONS",
+            "EPIGENETIC_DISEASE_COMBINATIONS", "CELL_THERAPY_DISEASE_COMBINATIONS"],
+    compute=lambda ctx: (int(ctx["GENE_THERAPY_DISEASE_COMBINATIONS"]) +
+                         int(ctx["MRNA_THERAPEUTIC_COMBINATIONS"]) +
+                         int(ctx["EPIGENETIC_DISEASE_COMBINATIONS"]) +
+                         int(ctx["CELL_THERAPY_DISEASE_COMBINATIONS"]))
+)
+
+# Total testable therapeutic space (Tier 1 + Tier 2)
+TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
+    int(DRUG_DISEASE_COMBINATIONS_POSSIBLE) + int(EMERGING_MODALITY_COMBINATIONS),
+    source_type="calculated",
+    description="Total testable therapeutic combinations (known safe compounds + emerging modalities)",
+    display_name="Total Testable Therapeutic Space",
+    unit="combinations",
+    formula="KNOWN_SAFE + EMERGING_MODALITIES",
+    keywords=["total", "testable", "therapeutic", "combinations", "frontier", "all modalities"],
+    inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "EMERGING_MODALITY_COMBINATIONS"],
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]) + int(ctx["EMERGING_MODALITY_COMBINATIONS"])
+)
+
+# =============================================================================
+# COMBINATION THERAPY SPACE
+# =============================================================================
+# Pairwise combinations of known safe compounds - highly defensible because
+# combination therapy is standard practice in oncology, HIV, cardiology, etc.
+
+COMBINATION_THERAPY_PAIRS = Parameter(
+    int(SAFE_COMPOUNDS_COUNT * (SAFE_COMPOUNDS_COUNT - 1) / 2),
+    source_type="calculated",
+    description="Unique pairwise drug combinations from known safe compounds (n choose 2)",
+    display_name="Pairwise Drug Combinations",
+    unit="combinations",
+    formula="SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
+    keywords=["combination", "pairwise", "polypharmacy", "multi-drug", "synergy"],
+    inputs=["SAFE_COMPOUNDS_COUNT"],
+    compute=lambda ctx: int(ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2)
+)
+
+COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
+    int(COMBINATION_THERAPY_PAIRS) * int(TRIAL_RELEVANT_DISEASES_COUNT),
+    source_type="calculated",
+    description="Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.",
+    display_name="Combination Therapy Space",
+    unit="combinations",
+    formula="DRUG_PAIRS × DISEASES",
+    keywords=["combination", "therapy", "space", "polypharmacy", "frontier"],
+    inputs=["COMBINATION_THERAPY_PAIRS", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_PAIRS"]) * int(ctx["TRIAL_RELEVANT_DISEASES_COUNT"])
+)
+
 # Additional context: Biological targets
 
 HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
@@ -3995,6 +4146,71 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
 )  # Maximum trials/year possible with trial capacity multiplier
 
+# =============================================================================
+# THERAPEUTIC SPACE EXPLORATION TIMELINES
+# =============================================================================
+# How long to systematically test all therapeutic combinations at current vs dFDA capacity
+
+CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
+    int(float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(CURRENT_TRIALS_PER_YEAR)),
+    source_type="calculated",
+    description="Years to test all known safe drug-disease combinations at current global trial capacity",
+    display_name="Known Safe Exploration Time (Current)",
+    unit="years",
+    formula="DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
+    keywords=["exploration", "therapeutic frontier", "timeline", "current pace", "known safe", "years"],
+    inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "CURRENT_TRIALS_PER_YEAR"],
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+)
+
+DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
+    int(float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(DFDA_TRIALS_PER_YEAR_CAPACITY)),
+    source_type="calculated",
+    description="Years to test all known safe drug-disease combinations with dFDA trial capacity",
+    display_name="Known Safe Exploration Time (dFDA)",
+    unit="years",
+    formula="DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
+    keywords=["exploration", "therapeutic frontier", "timeline", "dfda", "accelerated", "known safe", "years"],
+    inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"])
+)
+
+CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
+    int(float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(CURRENT_TRIALS_PER_YEAR)),
+    source_type="calculated",
+    description="Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
+    display_name="Total Exploration Time (Current)",
+    unit="years",
+    formula="TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
+    keywords=["exploration", "total", "all modalities", "timeline", "current pace", "years"],
+    inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "CURRENT_TRIALS_PER_YEAR"],
+    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+)
+
+DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
+    int(float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(DFDA_TRIALS_PER_YEAR_CAPACITY)),
+    source_type="calculated",
+    description="Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
+    display_name="Total Exploration Time (dFDA)",
+    unit="years",
+    formula="TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
+    keywords=["exploration", "total", "all modalities", "timeline", "dfda", "accelerated", "years"],
+    inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
+    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"])
+)
+
+# Combination therapy exploration (pairwise drug combinations - standard in modern medicine)
+CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
+    int(float(COMBINATION_THERAPY_DISEASE_SPACE) / float(CURRENT_TRIALS_PER_YEAR)),
+    source_type="calculated",
+    description="Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.",
+    display_name="Combination Therapy Exploration Time (Current)",
+    unit="years",
+    formula="COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR",
+    keywords=["combination", "exploration", "timeline", "years", "polypharmacy"],
+    inputs=["COMBINATION_THERAPY_DISEASE_SPACE", "CURRENT_TRIALS_PER_YEAR"],
+    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+)
 
 # Population
 GLOBAL_POPULATION_2024 = Parameter(

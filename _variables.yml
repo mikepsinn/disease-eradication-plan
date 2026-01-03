@@ -260,6 +260,19 @@
   \ cost per hour of caregiving | ✓ High confidence | Unit: USD/hour | Click to view\
   \ details, calculation & sources\">$25</a>"
 "caregiver_value_per_hour_simple_cite": "@unpaid-caregiver-hours-economic-value"
+"cell_therapy_approaches": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-cell_therapy_approaches\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Distinct cell\
+  \ therapy approaches (CAR-T variants, iPSCs, MSCs, organoids) | ✓ High confidence\
+  \ | 95% CI: [300 approaches, 800 approaches] | Dist: Uniform | Unit: approaches\
+  \ | Click to view details, calculation & sources\">500</a>"
+"cell_therapy_disease_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-cell_therapy_disease_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Cell therapy approach-disease combinations |\
+  \ Calculated from 2 inputs | ✓ High confidence | Formula: CELL_APPROACHES × DISEASES\
+  \ | Unit: combinations | Click to view details, calculation & sources\">500k</a>"
+"cell_therapy_disease_combinations_latex": "$$\nCell = Cell \\times Trials_{dis} =\
+  \ 500 \\times 1{,}000 = 500{,}000\n$$"
 "childhood_vaccination_annual_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-childhood_vaccination_annual_benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-economic-benefits\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated annual\
@@ -305,6 +318,20 @@
   \ | Unit: USD | Click to view details, calculation & sources\">$31.6K (95% CI: $29.8K-$33.6K)</a>"
 "clinical_trial_cost_per_participant_annual_latex": "$$\nCost_{ann} = \\frac{Trials_{ann}}{Trials_{curr}}\
   \ = \\frac{\\$60B}{1.9M} = \\$31.6K\n$$"
+"combination_therapy_disease_space": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combination_therapy_disease_space\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Total combination therapy space (pairwise drug\
+  \ combinations × diseases). Standard in oncology, HIV, cardiology. | Calculated\
+  \ from 2 inputs | ✓ High confidence | Formula: DRUG_PAIRS × DISEASES | Unit: combinations\
+  \ | Click to view details, calculation & sources\">45.1B</a>"
+"combination_therapy_disease_space_latex": "$$\nCombination = Combination \\times\
+  \ Trials_{dis} = 45.1M \\times 1{,}000 = 45.1B\n$$"
+"combination_therapy_pairs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combination_therapy_pairs\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Unique pairwise drug combinations from known\
+  \ safe compounds (n choose 2) | Calculated from 1 input | ✓ High confidence | Formula:\
+  \ SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2 | Unit: combinations | Click to view\
+  \ details, calculation & sources\">45.1M</a>"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
@@ -335,6 +362,15 @@
   \ trial participation rate (0.06% of population) | ✓ High confidence | Unit: rate\
   \ | Click to view details, calculation & sources\">0.06%</a>"
 "current_clinical_trial_participation_rate_cite": "@clinical-trial-patient-participation-rate"
+"current_combination_exploration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_combination_exploration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Years to test all pairwise drug combinations\
+  \ at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: COMBINATION_SPACE ÷\
+  \ CURRENT_TRIALS_PER_YEAR | Unit: years | Click to view details, calculation & sources\"\
+  >13.7M (95% CI: 11.6M-16.3M)</a>"
+"current_combination_exploration_years_latex": "$$\nRatio_{curr} = COMBINATION_SPACE\
+  \ \\div CURRENT_TRIALS_PER_YEAR = 13.7M\n$$"
 "current_disease_patients_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_disease_patients_global\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-prevalence-2-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population with chronic diseases\
@@ -348,6 +384,14 @@
   \ | Dist: Lognormal | Unit: drugs/year | Click to view details, calculation & sources\"\
   >50 (95% CI: 45-56.5)</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
+"current_known_safe_exploration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_known_safe_exploration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Years to test all known safe drug-disease combinations\
+  \ at current global trial capacity | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR | Unit: years |\
+  \ Click to view details, calculation & sources\">2.88k (95% CI: 2.45k-3.43k)</a>"
+"current_known_safe_exploration_years_latex": "$$\nRatio_{curr} = DRUG_DISEASE_COMBINATIONS\
+  \ \\div CURRENT_TRIALS_PER_YEAR = 2{,}880\n$$"
 "current_patient_participation_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_patient_participation_rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-patient-participation-rate\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Current patient\
@@ -357,6 +401,14 @@
   \ 0.0761%-0.0819%)</a>"
 "current_patient_participation_rate_latex": "$$\nRate_{curr} = \\frac{Trials_{curr}}{Population_{curr,global}}\
   \ = \\frac{1.9M}{2.4B} = 0.0792\\%\n$$"
+"current_total_exploration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_total_exploration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Years to test all therapeutic combinations (known\
+  \ safe + emerging modalities) at current capacity | Calculated from 2 inputs | ✓\
+  \ High confidence | Formula: TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR | Unit:\
+  \ years | Click to view details, calculation & sources\">15.6k (95% CI: 13.3k-18.6k)</a>"
+"current_total_exploration_years_latex": "$$\nRatio_{curr,total} = TOTAL_COMBINATIONS\
+  \ \\div CURRENT_TRIALS_PER_YEAR = 15{,}600\n$$"
 "current_trials_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trials_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current global\
@@ -535,6 +587,14 @@
   \ 4.21B-9.68B)</a>"
 "dfda_efficacy_lag_elimination_yll_latex": "$$\nYLL = 413.4M \\times 17 \\text{ (years\
   \ lost)} = 7.03B\n$$"
+"dfda_known_safe_exploration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_known_safe_exploration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Years to test all known safe drug-disease combinations\
+  \ with dFDA trial capacity | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR | Unit: years | Click to view\
+  \ details, calculation & sources\">233 (95% CI: 124-540)</a>"
+"dfda_known_safe_exploration_years_latex": "$$\nRatio_{DFDA} = DRUG_DISEASE_COMBINATIONS\
+  \ \\div DFDA_TRIALS_PER_YEAR = 233\n$$"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_net_savings_rd_only_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -689,6 +749,14 @@
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view details, calculation & sources\"\
   >$1K</a>"
+"dfda_total_exploration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_total_exploration_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Years to test all therapeutic combinations (known\
+  \ safe + emerging modalities) with dFDA capacity | Calculated from 2 inputs | ✓\
+  \ High confidence | Formula: TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR | Unit: years\
+  \ | Click to view details, calculation & sources\">1.27k (95% CI: 675-2.93k)</a>"
+"dfda_total_exploration_years_latex": "$$\nRatio_{DFDA,total} = TOTAL_COMBINATIONS\
+  \ \\div DFDA_TRIALS_PER_YEAR = 1{,}270\n$$"
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trials_per_year_capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
@@ -1004,6 +1072,28 @@
   \ | Unit: years | Click to view details, calculation & sources\">8.2 (95% CI: 4.85-11.5)</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
+"emerging_modality_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-emerging_modality_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Total emerging modality combinations (gene therapy\
+  \ + mRNA + epigenetics + cell therapy) | Calculated from 4 inputs | ✓ High confidence\
+  \ | Formula: GENE + MRNA + EPIGENETIC + CELL | Unit: combinations | Click to view\
+  \ details, calculation & sources\">42.0M</a>"
+"emerging_modality_combinations_latex": "$$\nEmerging = Gene + Mrna + Epigenetic +\
+  \ Cell = 20M + 20M + 1.5M + 500{,}000 = 42M\n$$"
+"epigenetic_disease_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-epigenetic_disease_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Epigenetic reprogramming target-disease combinations\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: EPIGENETIC_TARGETS ×\
+  \ DISEASES | Unit: combinations | Click to view details, calculation & sources\"\
+  >1.50M</a>"
+"epigenetic_disease_combinations_latex": "$$\nEpigenetic = Epigenetic \\times Trials_{dis}\
+  \ = 1{,}500 \\times 1{,}000 = 1.5M\n$$"
+"epigenetic_targets_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-epigenetic_targets_count\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Druggable epigenetic\
+  \ targets (HDACs, DNMTs, histone modifiers, bromodomains) | ✓ High confidence |\
+  \ 95% CI: [1.00k targets, 2.00k targets] | Dist: Uniform | Unit: targets | Click\
+  \ to view details, calculation & sources\">1.50k</a>"
 "eventually_avoidable_daly_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of DALYs that are eventually avoidable with sufficient biomedical research. Uses\
   \ same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions\
@@ -1094,6 +1184,14 @@
 "fundamentally_unavoidable_death_pct_latex": "$$\nP_{\\text{unavoidable}} = \\sum_{\\\
   text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) =\
   \ 7.91\\%\n$$"
+"gene_therapy_disease_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-gene_therapy_disease_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Gene therapy target-disease combinations (CRISPR,\
+  \ base editing, viral vectors) | Calculated from 2 inputs | ✓ High confidence |\
+  \ Formula: GENES × DISEASES | Unit: combinations | Click to view details, calculation\
+  \ & sources\">20.0M</a>"
+"gene_therapy_disease_combinations_latex": "$$\nGene = Human \\times Trials_{dis}\
+  \ = 20{,}000 \\times 1{,}000 = 20M\n$$"
 "givewell_cost_per_life_avg": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-givewell_cost_per_life_avg\"\
   \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"GiveWell average cost per life saved\
@@ -1529,6 +1627,12 @@
   \ interactome (protein-protein interactions) targeted by drugs | ✓ High confidence\
   \ | Unit: percentage | Click to view details, calculation & sources\">12%</a>"
 "human_interactome_targeted_pct_cite": "@clinical-trials-puzzle-interactome"
+"human_protein_coding_genes": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-human_protein_coding_genes\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Human protein-coding\
+  \ genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)\
+  \ | ✓ High confidence | 95% CI: [19.0k genes, 21.0k genes] | Dist: Uniform | Unit:\
+  \ genes | Click to view details, calculation & sources\">20.0k</a>"
 "iab_bootstrap_campaign_cost_base_usd": "<span class=\"parameter-definition\" title=\"\
   Base case estimate for bootstrap campaign cost | Unit: USD | Core definition\">$100M</span>"
 "iab_bootstrap_campaign_cost_conservative_usd": "<span class=\"parameter-definition\"\
@@ -1663,6 +1767,14 @@
   $16,071} \\approx 2,889x\n$$"
 "months_per_year": "<span class=\"parameter-link\" title=\"Parameter: MONTHS_PER_YEAR\"\
   >12</span>"
+"mrna_therapeutic_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-mrna_therapeutic_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"mRNA therapeutic combinations (protein replacement,\
+  \ vaccines, enzyme delivery) | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ PROTEINS × DISEASES | Unit: combinations | Click to view details, calculation\
+  \ & sources\">20.0M</a>"
+"mrna_therapeutic_combinations_latex": "$$\nMrna = Human \\times Trials_{dis} = 20{,}000\
+  \ \\times 1{,}000 = 20M\n$$"
 "new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
@@ -2240,6 +2352,14 @@
   \ | Unit: USD | Click to view details, calculation & sources\">$94.7B (95% CI: $83.8B-$107B)</a>"
 "total_research_funding_with_treaty_latex": "$$\nFunding_{total} = Spending_{global}\
   \ + Funding_{ann} = \\$67.5B + \\$27.2B = \\$94.7B\n$$"
+"total_testable_therapeutic_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-total_testable_therapeutic_combinations\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Total testable therapeutic combinations (known\
+  \ safe compounds + emerging modalities) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: KNOWN_SAFE + EMERGING_MODALITIES | Unit: combinations | Click to view\
+  \ details, calculation & sources\">51.5M</a>"
+"total_testable_therapeutic_combinations_latex": "$$\nTestable_{total} = Drug + Emerging\
+  \ = 9.5M + 42M = 51.5M\n$$"
 "traditional_phase3_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"trial-costs-fda-study\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median from\
@@ -2634,6 +2754,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "366"
-"total_latex_equation_count": "144"
+"total_parameter_count": "382"
+"total_latex_equation_count": "156"
 "total_citation_count": "144"

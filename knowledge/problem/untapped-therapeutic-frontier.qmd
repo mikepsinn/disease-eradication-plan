@@ -105,18 +105,45 @@ It's not because science is hard. It's because:
 
 4. **Neglect:** If you have a rare disease with no market, you don't get a drug. Sorry. Your cells malfunction in an unprofitable way. The invisible hand of the market has determined your death is not worth preventing.
 
+## How Long to Explore Everything?
+
+At the current pace of {{< var current_trials_per_year >}} trials per year, how long would it take to systematically test therapeutic possibilities?
+
+### Tier 1: Single Compounds (Most Conservative)
+
+Testing every known safe compound against every major disease:
+
+**{{< var drug_disease_combinations_possible >}} combinations ÷ {{< var current_trials_per_year >}} trials/year = {{< var current_known_safe_exploration_years >}}**
+
+That's almost 3,000 years to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
+
+### Tier 2: Combination Therapies (Still Defensible)
+
+Modern medicine increasingly relies on multi-drug regimens. Oncology, HIV treatment, cardiology, and psychiatry all routinely use drug combinations. Testing pairwise combinations of safe compounds:
+
+**{{< var combination_therapy_disease_space >}} combinations ÷ {{< var current_trials_per_year >}} trials/year = {{< var current_combination_exploration_years >}}**
+
+That's longer than *Homo sapiens* has existed as a species. Using only compounds with established safety data. Testing only pairs, not triplets or higher-order combinations.
+
+### Tier 3: The Full Chemical Universe (Illustrative)
+
+Beyond known compounds lies the vast chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed.
+
+We haven't even started.
+
 ## The Fix
 
 The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in [<100 days](../references.qmd#recovery-trial-100-days-to-cure).
 
-{{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}. 
+{{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}.
 
-If you automate this via your decentralized framework for drug assessment:
+With a [decentralized framework for drug assessment](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
-* You can run **100x-1,000x more trials per year**.
-* Testing **100,000+ drug-condition pairs** becomes realistic.
-* You stop guessing and start exploring the "dark matter" of medical therapeutics.
-* You enter the theme park instead of photographing the parking lot.
+**{{< var drug_disease_combinations_possible >}} combinations ÷ {{< var dfda_trials_per_year_capacity >}} trials/year = {{< var dfda_known_safe_exploration_years >}}**
+
+Still a long time, but within the planning horizon of institutions. The first few decades would capture the highest-value discoveries, the low-hanging fruit that current trial scarcity forces us to ignore.
+
+More importantly, dFDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish", it's to stop leaving cures on the table while we form subcommittees.
 
 ## The Bottom Line
 
