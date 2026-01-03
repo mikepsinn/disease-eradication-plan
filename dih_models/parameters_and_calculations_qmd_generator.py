@@ -126,10 +126,20 @@ def generate_parameters_and_calculations_qmd(
     # Generate QMD content
     content = []
     content.append("---")
-    content.append('title: "Parameters and Calculations Reference"')
-    content.append('subtitle: "Comprehensive Documentation of Economic Model Variables"')
+    content.append('title: "Show Your Work: Complete Methodology"')
+    content.append('description: "Full methodological transparency for the 1% Treaty economic analysis. Every parameter sourced, every calculation shown, every assumption testable. Cost-benefit analysis of redirecting military spending to clinical trials and medical research."')
+    content.append("keywords:")
+    content.append("  - health economics methodology")
+    content.append("  - clinical trial cost analysis")
+    content.append("  - medical research ROI")
+    content.append("  - cost-benefit analysis healthcare")
+    content.append("  - sensitivity analysis")
+    content.append("  - Monte Carlo simulation")
+    content.append("  - DALY calculation")
+    content.append("  - pragmatic clinical trials")
     content.append("aliases:")
     content.append("  - /calculations.html")
+    content.append("  - /methodology.html")
     content.append("format:")
     content.append("  html:")
     content.append("    toc: true")
@@ -141,7 +151,7 @@ def generate_parameters_and_calculations_qmd(
     content.append("## Overview")
     content.append("")
     content.append(
-        "This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment."
+        "This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself."
     )
     content.append("")
     content.append(f"**Total parameters**: {len(parameters)}")
