@@ -12,7 +12,7 @@ image: /assets/og-images/knowledge/appendix/faq-og-academic.jpg
 
 **Objection**: "Nice idea, but it likely won't happen."
 
-**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months, saved 1 million lives, and cost {{< var recovery_trial_cost_per_patient >}} per patient. The FDA's equivalent costs $48,000 per patient, which is approximately the price of a luxury car per question about whether aspirin works.
+**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months, saved 1 million lives, and cost {{< var recovery_trial_cost_per_patient >}} per patient. The FDA's equivalent costs {{< var traditional_phase3_cost_per_patient >}} per patient, which is approximately the price of a luxury car per question about whether aspirin works.
 
 The trial used existing hospital systems. Hospitals, it turns out, already contain sick people.
 

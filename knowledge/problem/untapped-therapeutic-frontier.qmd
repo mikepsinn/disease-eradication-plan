@@ -109,7 +109,7 @@ It's not because science is hard. It's because:
 
 The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in [<100 days](../references.qmd#recovery-trial-100-days-to-cure).
 
-{{< var recovery_trial_cost_per_patient >}} vs $41,000. 
+{{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}. 
 
 If you automate this via your decentralized framework for drug assessment:
 

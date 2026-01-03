@@ -80,7 +80,7 @@ Goals:
 
 #### Cost Reduction Assumptions
 
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](#decentralized-trial-costs-modeled-on-oxford-recovery): from [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
+- Decentralized trial costs drop closer to the [Oxford RECOVERY model](#decentralized-trial-costs-modeled-on-oxford-recovery): from {{< var traditional_phase3_cost_per_patient >}} per patient to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
 - Regulatory oversight is streamlined through continuous data auditing, reducing administrative overhead.
 
 ### Technical Feasibility
@@ -403,7 +403,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   - Phase II: \$10 - \$50 million/trial (depending on disease area).
   - Phase III: \$100 - {{< var dct_platform_funding_medium >}}/trial (large patient populations).
 
-- **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](../references.qmd#clinical-trial-cost-per-patient) (site fees, overhead, staff, monitoring, data management).
+- **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} per patient (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Pragmatic Trials
 
@@ -420,7 +420,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 - **Extrapolation to New System**:
   - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
-  - Up to **~{{< var dfda_trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
+  - Up to **~{{< var dfda_trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of {{< var traditional_phase3_cost_per_patient >}}.
 
   The cost reduction factor can be formalized as:
 

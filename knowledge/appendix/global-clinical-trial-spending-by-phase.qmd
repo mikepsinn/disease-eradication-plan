@@ -86,7 +86,7 @@ Why Phase 3 dominates:
 
 #### Cost per patient
 
-- Traditional Phase 3: [$40,000-$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient)
+- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
 - Average: [$113,000 per patient](../references.qmd#phase-3-cost-per-patient-113k)
 
 #### As percentage of total drug development
@@ -408,7 +408,7 @@ Why Phase 3 dominates:
 
 #### The waste
 
-- [Traditional Phase 3: $40,000-$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient)
+- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
 - RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient
 - **That's an 80-240× markup for bureaucracy**
 
