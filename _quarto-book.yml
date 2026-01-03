@@ -19,8 +19,9 @@ website:
 
 book:
   title: "How to End War and Disease"
-  author: " Mike P. Sinn"
-  description: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
+  author: "Mike P. Sinn"
+  # description: Removed to allow page-level descriptions to override for og:description
+  # Original: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
   favicon: assets/icons/war-on-disease-icon-square.png
   site-url: https://manual.WarOnDisease.org
