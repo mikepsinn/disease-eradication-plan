@@ -11,6 +11,28 @@
 #   {{< var total_citation_count >}} - Number of citations
 #
 
+"adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
+  \ class=\"parameter-link\" data-source-ref=\"pragmatic-trials-cost-advantage\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Cost per patient in ADAPTABLE trial\
+  \ ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true\
+  \ cost including in-kind may be 10-40% higher. | ~ Medium confidence | 95% CI: [$929,\
+  \ $1.40K] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
+  \ & sources\">$929 (95% CI: $929-$1.14K)</a>"
+"adaptable_trial_cost_per_patient_cite": "@pragmatic-trials-cost-advantage"
+"adaptable_trial_patients": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_patients\"\
+  \ class=\"parameter-link\" data-source-ref=\"pragmatic-trials-cost-advantage\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Patients enrolled in ADAPTABLE trial\
+  \ (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial\
+  \ completion records. | ✓ High confidence | Unit: patients | Click to view details,\
+  \ calculation & sources\">15.1k</a>"
+"adaptable_trial_total_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_total_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"pragmatic-trials-cost-advantage\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"PCORI grant for ADAPTABLE trial (2016-2019).\
+  \ Note: Direct funding only; total costs including site overhead and in-kind contributions\
+  \ from health systems may be higher. | ~ Medium confidence | 95% CI: [$14M, $20M]\
+  \ | Dist: Lognormal | Unit: USD | Click to view details, calculation & sources\"\
+  >$14M (95% CI: $14M-$16.6M)</a>"
+"adaptable_trial_total_cost_cite": "@pragmatic-trials-cost-advantage"
 "additional_drugs_from_cost_elimination": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-additional_drugs_from_cost_elimination\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"Additional drug approvals per year when Phase\
@@ -290,7 +312,7 @@
   \ | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: USD/year | Click to view details,\
   \ calculation & sources\">$172B (95% CI: $139B-$213B)</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nDividend_{ann} =\
-  \ Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$114B + \\$58.2B = \\$172B\n$$"
+  \ Cost_{soc,ann} + Benefit_{DFDA,ann} = \\$114B + \\$58.6B = \\$172B\n$$"
 "concentrated_interest_sector_market_cap_usd": "<span class=\"parameter-definition\"\
   \ title=\"Estimated combined market capitalization of concentrated interest opposition\
   \ (defense, fossil fuel, etc.) | Unit: USD | Core definition\">$5T</span>"
@@ -397,9 +419,9 @@
   \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
   \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$58.2B (95% CI: $48.6B-$73B)</a>"
+  \ calculation & sources\">$58.6B (95% CI: $48.8B-$73.2B)</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
-  \ Reduction_{DFDA} = \\$60B \\times 97.1\\% = \\$58.2B\n$$"
+  \ Reduction_{DFDA} = \\$60B \\times 97.7\\% = \\$58.6B\n$$"
 "dfda_combined_cure_speedup_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_combined_cure_speedup_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"Combined speedup factor for treatment discovery\
@@ -407,18 +429,18 @@
   \ Diseases that would take T years to cure now take T/speedup years. | Calculated\
   \ from 2 inputs | ~ Medium confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
   \ × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER | Unit: multiplier | Click to view details,\
-  \ calculation & sources\">13.3 (95% CI: 5.61-38.5)</a>"
+  \ calculation & sources\">17.2 (95% CI: 6.35-38.5)</a>"
 "dfda_combined_cure_speedup_multiplier_latex": "$$\nMultiplier_{DFDA} = Multiplier_{DFDA}\
-  \ \\times Multiplier_{DFDA} = 9.53 \\times 1.4 = 13.3\n$$"
+  \ \\times Multiplier_{DFDA} = 12.3 \\times 1.4 = 17.2\n$$"
 "dfda_cures_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_cures_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
   \ treatment with dFDA. Scales proportionally with trial capacity multiplier. | Calculated\
   \ from 2 inputs | ? Low confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR\
   \ × DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: diseases/year | Click to view details,\
-  \ calculation & sources\">143 (95% CI: 102-220)</a>"
+  \ calculation & sources\">185 (95% CI: 115-265)</a>"
 "dfda_cures_per_year_latex": "$$\nDFDA = New \\times Multiplier_{DFDA} = 15 \\times\
-  \ 9.53 = 143\n$$"
+  \ 12.3 = 185\n$$"
 "dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Cost per DALY\
@@ -428,9 +450,9 @@
   \ avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline\
   \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | ~ Medium confidence\
   \ | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click\
-  \ to view details, calculation & sources\">$0.984 (95% CI: $0.449-$1.81)</a>"
+  \ to view details, calculation & sources\">$0.841 (95% CI: $0.443-$1.70)</a>"
 "dfda_direct_funding_cost_per_daly_latex": "$$\nCost_{direct,DFDA} = \\frac{Funding_{direct,DFDA}}{DALYs_{DFDA}}\
-  \ = \\frac{\\$542B}{551B} = \\$0.984\n$$"
+  \ = \\frac{\\$475B}{565B} = \\$0.841\n$$"
 "dfda_direct_funding_queue_clearance_npv": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_queue_clearance_npv\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"NPV of direct\
@@ -442,7 +464,7 @@
   \ After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.\
   \ | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T\
   \ = queue clearance time | Unit: USD | Click to view details, calculation & sources\"\
-  >$542B (95% CI: $388B-$659B)</a>"
+  >$475B (95% CI: $351B-$637B)</a>"
 "dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = \\$21.76B \\\
   times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B\n$$"
 "dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag\"\
@@ -452,19 +474,19 @@
   \ benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent\
   \ ROI, but treaty campaign achieves 542× better leverage. | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV | Unit: ratio\
-  \ | Click to view details, calculation & sources\">153k (95% CI: 105k-231k)</a>"
+  \ | Click to view details, calculation & sources\">178k (95% CI: 113k-264k)</a>"
 "dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag_latex": "$$\nFunding_{direct,DFDA}\
-  \ = \\frac{Capacity_{DFDA}}{Funding_{direct,DFDA}} = \\frac{\\$82700T}{\\$542B}\
-  \ = 153{,}000\n$$"
+  \ = \\frac{Capacity_{DFDA}}{Funding_{direct,DFDA}} = \\frac{\\$84800T}{\\$475B}\
+  \ = 178{,}000\n$$"
 "dfda_direct_funding_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"How many times more cost-effective direct funding\
   \ is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical\
   \ research is highly cost-effective. | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY | Unit: ratio\
-  \ | Click to view details, calculation & sources\">90.5 (95% CI: 54.2-177)</a>"
+  \ | Click to view details, calculation & sources\">106 (95% CI: 57.7-182)</a>"
 "dfda_direct_funding_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{direct,DFDA}\
-  \ = \\frac{Cost_{net}}{Cost_{direct,DFDA}} = \\frac{\\$89}{\\$0.984} = 90.5\n$$"
+  \ = \\frac{Cost_{net}}{Cost_{direct,DFDA}} = \\frac{\\$89}{\\$0.841} = 106\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -519,9 +541,9 @@
   \ from R&D cost reduction only (gross savings minus operational costs, excludes\
   \ regulatory delay value) | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ GROSS_SAVINGS - ANNUAL_OPEX | Unit: USD/year | Click to view details, calculation\
-  \ & sources\">$58.2B (95% CI: $48.5B-$72.9B)</a>"
+  \ & sources\">$58.6B (95% CI: $48.7B-$73.1B)</a>"
 "dfda_net_savings_rd_only_annual_latex": "$$\nSavings_{net,ann} = Benefit_{DFDA,ann}\
-  \ - Cost_{DFDA,ann} = \\$58.2B - \\$40M = \\$58.2B\n$$"
+  \ - Cost_{DFDA,ann} = \\$58.6B - \\$40M = \\$58.6B\n$$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_adoption_ramp_years\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Years to reach\
@@ -547,8 +569,8 @@
   \ Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year\
   \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: Sum of discounted annual net R&D savings with linear\
-  \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$387B\
-  \ (95% CI: $322B-$484B)</a>"
+  \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$389B\
+  \ (95% CI: $324B-$486B)</a>"
 "dfda_npv_benefit_rd_only_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -558,7 +580,7 @@
   \ using R&D savings only (most conservative financial estimate, excludes regulatory\
   \ delay health value) | Calculated from 1 input | ✓ High confidence | Formula: NPV\
   \ of net R&D savings with 5-year linear adoption ramp | Unit: USD | Click to view\
-  \ details, calculation & sources\">$387B (95% CI: $322B-$484B)</a>"
+  \ details, calculation & sources\">$389B (95% CI: $324B-$486B)</a>"
 "dfda_npv_pv_annual_opex": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_pv_annual_opex\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Present value\
@@ -628,38 +650,37 @@
   \ | 95% CI: [$7M, $15M] | Dist: Lognormal | Unit: USD/year | Click to view details,\
   \ calculation & sources\">$10M (95% CI: $7M-$13.7M)</a>"
 "dfda_pragmatic_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_pragmatic_trial_cost_per_patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"recovery-cost-500\" data-source-type=\"\
+  \ class=\"parameter-link\" data-source-ref=\"pragmatic-trials-cost-advantage\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"dFDA pragmatic trial cost per patient.\
-  \ Central estimate based on PCORnet/ADAPTABLE-style trials (~$1,500-2,500) with\
-  \ dFDA efficiencies. Range spans RECOVERY ($500, exceptional NHS infrastructure)\
-  \ to typical US pragmatic trials ($3,000). Lower than traditional Phase 3 ($41,000/patient).\
-  \ | ~ Medium confidence | 95% CI: [$500, $3K] | Dist: Lognormal | Unit: USD/patient\
-  \ | Click to view details, calculation & sources\">$1.20K (95% CI: $500-$2.40K)</a>"
-"dfda_pragmatic_trial_cost_per_patient_cite": "@recovery-cost-500"
+  \ Central estimate based on ADAPTABLE trial. Confidence interval spans RECOVERY\
+  \ floor (exceptional NHS/COVID conditions) to complex chronic disease trials. |\
+  \ ~ Medium confidence | 95% CI: [$500, $3K] | Dist: Lognormal | Unit: USD/patient\
+  \ | Click to view details, calculation & sources\">$929 (95% CI: $500-$2.13K)</a>"
+"dfda_pragmatic_trial_cost_per_patient_cite": "@pragmatic-trials-cost-advantage"
 "dfda_queue_clearance_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_queue_clearance_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Years to treat all currently untreatable diseases\
   \ with dFDA implementation. Queue clearance time divided by trial capacity multiplier.\
   \ | Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS\
   \ ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: years | Click to view details, calculation\
-  \ & sources\">46.5 (95% CI: 25.9-80.8)</a>"
+  \ & sources\">36 (95% CI: 22.3-71.4)</a>"
 "dfda_queue_clearance_years_latex": "$$\nTime_{DFDA} = \\frac{Time}{Multiplier_{DFDA}}\
-  \ = \\frac{443}{9.53} = 46.5\n$$"
+  \ = \\frac{443}{12.3} = 36\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_rd_savings_daily\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
   \ from trial cost reduction (opportunity cost of delay) | Calculated from 1 input\
   \ | ✓ High confidence | Formula: ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR | Unit: USD/day\
-  \ | Click to view details, calculation & sources\">$160M (95% CI: $133M-$200M)</a>"
+  \ | Click to view details, calculation & sources\">$161M (95% CI: $134M-$201M)</a>"
 "dfda_rd_savings_daily_latex": "$$\nCost_{DFDA,daily} = Benefit_{DFDA,ann} \\times\
-  \ 0.00274 = \\$58.2B \\times 0.00274 = \\$160M\n$$"
+  \ 0.00274 = \\$58.6B \\times 0.00274 = \\$161M\n$$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_roi_rd_only\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from Decentralized\
   \ Framework for Drug Assessment R&D savings only (10-year NPV, most conservative\
   \ estimate) | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
   \ ÷ NPV_TOTAL_COST | Unit: ratio | Click to view details, calculation & sources\"\
-  >633 (95% CI: 567-782)</a>"
+  >637 (95% CI: 569-782)</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_target_cost_per_patient_usd\"\
@@ -673,9 +694,9 @@
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
   \ multiplier | Calculated from 2 inputs | ✓ High confidence | Formula: CURRENT_TRIALS\
   \ × DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view details,\
-  \ calculation & sources\">31.4k (95% CI: 15.5k-76.2k)</a>"
+  \ calculation & sources\">40.6k (95% CI: 17.6k-76.2k)</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
-  \ Multiplier_{DFDA} = 3{,}300 \\times 9.53 = 31{,}400\n$$"
+  \ Multiplier_{DFDA} = 3{,}300 \\times 12.3 = 40{,}600\n$$"
 "dfda_trial_capacity_cure_acceleration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_cure_acceleration_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Years earlier the average cure arrives due to\
@@ -684,9 +705,9 @@
   \ (not combined with valley of death rescue) because additional candidates don't\
   \ directly speed queue processing. | Calculated from 2 inputs | ? Low confidence\
   \ | Formula: STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)\
-  \ | Unit: years | Click to view details, calculation & sources\">198 (95% CI: 121-343)</a>"
+  \ | Unit: years | Click to view details, calculation & sources\">204 (95% CI: 126-343)</a>"
 "dfda_trial_capacity_cure_acceleration_years_latex": "$$\nRatio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE\
-  \ \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 198\n$$"
+  \ \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204\n$$"
 "dfda_trial_capacity_dalys_averted": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_dalys_averted\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total DALYs averted from trial capacity increase\
@@ -694,36 +715,36 @@
   \ × cure acceleration years. Includes both fatal and non-fatal diseases. | Calculated\
   \ from 3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT\
   \ × CURE_ACCELERATION_YEARS | Unit: DALYs | Click to view details, calculation &\
-  \ sources\">529B (95% CI: 327B-846B)</a>"
+  \ sources\">543B (95% CI: 334B-847B)</a>"
 "dfda_trial_capacity_dalys_averted_latex": "$$\nIncrease_{DFDA} = DALYs_{ann} \\times\
-  \ DALYs \\times Ratio_{DFDA} = 2.88B \\times 92.6\\% \\times 198 = 529B\n$$"
+  \ DALYs \\times Ratio_{DFDA} = 2.88B \\times 92.6\\% \\times 204 = 543B\n$$"
 "dfda_trial_capacity_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total economic value from trial capacity increase\
   \ alone. DALYs valued at standard economic rate. | Calculated from 2 inputs | ?\
   \ Low confidence | Formula: DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE\
-  \ | Unit: USD | Click to view details, calculation & sources\">$79.4 quadrillion\
-  \ (95% CI: $58 quadrillion-$91.2 quadrillion)</a>"
+  \ | Unit: USD | Click to view details, calculation & sources\">$81.5 quadrillion\
+  \ (95% CI: $59.4 quadrillion-$93.6 quadrillion)</a>"
 "dfda_trial_capacity_economic_value_latex": "$$\nIncrease_{DFDA} = Increase_{DFDA}\
-  \ \\times QALYs_{RD} = 529B \\times \\$150K = \\$79400T\n$$"
+  \ \\times QALYs_{RD} = 543B \\times \\$150K = \\$81500T\n$$"
 "dfda_trial_capacity_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from trial capacity\
   \ increase alone. Represents cures arriving earlier due to faster queue processing\
   \ from increased trial capacity. | Calculated from 2 inputs | ? Low confidence |\
   \ Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT\
-  \ | Unit: deaths | Click to view details, calculation & sources\">10.1B (95% CI:\
-  \ 6.67B-15.7B)</a>"
+  \ | Unit: deaths | Click to view details, calculation & sources\">10.3B (95% CI:\
+  \ 6.92B-15.7B)</a>"
 "dfda_trial_capacity_lives_saved_latex": "$$\nIncrease_{DFDA} = ANNUAL_DEATHS \\times\
-  \ DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.1B\n$$"
+  \ DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.3B\n$$"
 "dfda_trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
   \ vs. current global trial participation | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
-  \ view details, calculation & sources\">9.53 (95% CI: 4.01-27.5)</a>"
+  \ view details, calculation & sources\">12.3 (95% CI: 4.53-27.5)</a>"
 "dfda_trial_capacity_multiplier_latex": "$$\nMultiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}}\
-  \ = \\frac{18.1M}{1.9M} = 9.53\n$$"
+  \ = \\frac{23.4M}{1.9M} = 12.3\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total DALYs averted from the combined dFDA timeline\
@@ -731,7 +752,7 @@
   \ × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).\
   \ | Calculated from 3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN\
   \ × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT | Unit: DALYs | Click to view\
-  \ details, calculation & sources\">551B (95% CI: 358B-858B)</a>"
+  \ details, calculation & sources\">565B (95% CI: 365B-859B)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\nDALYs_{averted} = 2.88B\
   \ \\times 92.1\\% \\times 207 = 549B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value\"\
@@ -739,10 +760,10 @@
   \ data-confidence=\"low\" title=\"Total economic value from the combined dFDA timeline\
   \ shift. DALYs valued at standard economic rate. | Calculated from 2 inputs | ?\
   \ Low confidence | Formula: DALYS × STANDARD_QALY_VALUE | Unit: USD | Click to view\
-  \ details, calculation & sources\">$82.7 quadrillion (95% CI: $60.8 quadrillion-$94.4\
+  \ details, calculation & sources\">$84.8 quadrillion (95% CI: $62.5 quadrillion-$96.9\
   \ quadrillion)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value_latex": "$$\nCapacity_{DFDA}\
-  \ = DALYs_{DFDA} \\times QALYs_{RD} = 551B \\times \\$150K = \\$82700T\n$$"
+  \ = DALYs_{DFDA} \\times QALYs_{RD} = 565B \\times \\$150K = \\$84800T\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from the combined\
@@ -750,10 +771,10 @@
   \ to both increased trial capacity and eliminated efficacy lag. | Calculated from\
   \ 2 inputs | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS\
   \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
-  >10.5B (95% CI: 7.30B-15.9B)</a>"
+  >10.7B (95% CI: 7.55B-15.9B)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex": "$$\nCapacity_{DFDA} =\
   \ ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS \\times AVOIDABLE_PCT\
-  \ = 10.5B\n$$"
+  \ = 10.7B\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Hours of suffering\
@@ -761,10 +782,10 @@
   \ of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.\
   \ | Calculated from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS\
   \ × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR | Unit: hours | Click to view details,\
-  \ calculation & sources\">1883T (95% CI: 1340T-2562T)</a>"
+  \ calculation & sources\">1931T (95% CI: 1372T-2570T)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex": "$$\nCapacity_{DFDA}\
   \ = DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS \\times GLOBAL_YLD_PROPORTION \\\
-  times HOURS_PER_YEAR = 1880T\n$$"
+  times HOURS_PER_YEAR = 1930T\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Average years earlier patients receive cures due\
@@ -772,25 +793,25 @@
   \ efficacy lag elimination for treatments already discovered. | Calculated from\
   \ 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS\
   \ + EFFICACY_LAG_YEARS | Unit: years | Click to view details, calculation & sources\"\
-  >207 (95% CI: 133-348)</a>"
+  >212 (95% CI: 138-348)</a>"
 "dfda_trial_capacity_plus_efficacy_lag_years_latex": "$$\nCapacity_{DFDA} = Ratio_{DFDA}\
-  \ + Delay = 198 + 8.2 = 207\n$$"
+  \ + Delay = 204 + 8.2 = 212\n$$"
 "dfda_trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_factor\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost reduction\
   \ factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
   \ / DFDA_PRAGMATIC_COST | Unit: multiplier | Click to view details, calculation\
-  \ & sources\">34.2 (95% CI: 31-40)</a>"
+  \ & sources\">44.1 (95% CI: 40-46.7)</a>"
 "dfda_trial_cost_reduction_factor_latex": "$$\nCost_{DFDA} = \\frac{Cost}{Cost_{DFDA}}\
-  \ = \\frac{\\$41K}{\\$1.2K} = 34.2\n$$"
+  \ = \\frac{\\$41K}{\\$929} = 44.1\n$$"
 "dfda_trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial cost reduction\
   \ percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97% |\
   \ Calculated from 2 inputs | ✓ High confidence | Formula: 1 - (DFDA_COST / TRADITIONAL_COST)\
-  \ | Unit: percentage | Click to view details, calculation & sources\">97.1% (95%\
-  \ CI: 96.8%-97.5%)</a>"
+  \ | Unit: percentage | Click to view details, calculation & sources\">97.7% (95%\
+  \ CI: 97.5%-97.9%)</a>"
 "dfda_trial_cost_reduction_pct_latex": "$$\nR_{pct} = 1 - \\frac{\\$1{,}200}{\\$41{,}000}\
   \ = 97.07\\%\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_upfront_build\"\
@@ -830,10 +851,10 @@
   \ fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical\
   \ pragmatic trial costs (RECOVERY to PCORnet range). | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT | Unit:\
-  \ patients/year | Click to view details, calculation & sources\">18.1M (95% CI:\
-  \ 9.03M-43.5M)</a>"
+  \ patients/year | Click to view details, calculation & sources\">23.4M (95% CI:\
+  \ 10.2M-43.5M)</a>"
 "dih_patients_fundable_annually_latex": "$$\nFundable_{ann} = \\frac{Treasury_{ann}}{Cost_{DFDA}}\
-  \ = \\frac{\\$21.7B}{\\$1.2K} = 18.1M\n$$"
+  \ = \\frac{\\$21.7B}{\\$929} = 23.4M\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_medical_research_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
@@ -1527,9 +1548,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
   \ Ratio of the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio |\
-  \ Click to view details, calculation & sources\">229 (95% CI: 185-283)</a>"
+  \ Click to view details, calculation & sources\">230 (95% CI: 185-284)</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
-  \ = \\frac{\\$172B}{\\$750M} = 229\n$$"
+  \ = \\frac{\\$172B}{\\$750M} = 230\n$$"
 "iab_political_incentive_funding_annual": "<span class=\"parameter-definition\" title=\"\
   Annual funding for IAB political incentive mechanism (independent expenditures supporting\
   \ high-scoring politicians, post-office fellowship endowments, Public Good Score\
@@ -1662,10 +1683,10 @@
 "nih_standard_research_cost_per_qaly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nih_standard_research_cost_per_qaly\"\
   \ class=\"parameter-link\" data-source-ref=\"standard-medical-research-roi\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Typical cost per QALY for standard\
-  \ NIH-funded medical research portfolio. Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY\
-  \ thresholds for value-based pricing. This reflects the inefficiency of traditional\
-  \ RCTs and basic research-heavy allocation. | ~ Medium confidence | 95% CI: [$20K,\
-  \ $100K] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
+  \ NIH-funded medical research portfolio. Reflects the inefficiency of traditional\
+  \ RCTs and basic research-heavy allocation. See confidence_interval for range; ICER\
+  \ uses higher thresholds for value-based pricing. | ~ Medium confidence | 95% CI:\
+  \ [$20K, $100K] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
   \ & sources\">$50K (95% CI: $24K-$88.2K)</a>"
 "nih_standard_research_cost_per_qaly_cite": "@standard-medical-research-roi"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
@@ -1808,7 +1829,7 @@
   \ outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.\
   \ | Calculated from 2 inputs | ~ Medium confidence | Formula: NPV(peace_dividend\
   \ + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)\
-  \ | Unit: usd | Click to view details, calculation & sources\">$490K (95% CI: $191K-$789K)</a>"
+  \ | Unit: usd | Click to view details, calculation & sources\">$494K (95% CI: $194K-$794K)</a>"
 "personal_lifetime_wealth_latex": "$$\n\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\\
   frac{B_t}{(1+r)^t}\n$$"
 "per_capita_chronic_disease_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-per_capita_chronic_disease_cost\"\
@@ -1917,23 +1938,27 @@
   \ | Click to view details, calculation & sources\">30%</a>"
 "post_ww2_military_cut_pct_cite": "@us-post-wwii-military-spending-cut"
 "pragmatic_trial_cost_per_qaly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pragmatic_trial_cost_per_qaly\"\
-  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Cost per QALY for pragmatic platform\
-  \ trials like UK RECOVERY. RECOVERY cost ~$2.7M for dexamethasone arm and saved\
-  \ ~1 million lives globally. Implied cost per QALY is ~$300 or less - approximately\
-  \ 50-100x more efficient than standard interventions. | ✓ High confidence | 95%\
-  \ CI: [$100, $500] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
-  \ & sources\">$300 (95% CI: $163-$489)</a>"
-"pragmatic_trial_cost_per_qaly_cite": "@recovery-trial-roi"
+  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost per QALY\
+  \ for pragmatic platform trials, calculated from RECOVERY trial data. Uses global\
+  \ impact methodology: trial cost divided by total QALYs from downstream adoption.\
+  \ This measures research efficiency (discovery value), not clinical intervention\
+  \ ICER. | Calculated from 2 inputs | ~ Medium confidence | Formula: TRIAL_COST ÷\
+  \ TOTAL_QALYS_GENERATED | Unit: USD/QALY | Click to view details, calculation &\
+  \ sources\">$4.00 (95% CI: $1.71-$10)</a>"
+"pragmatic_trial_cost_per_qaly_latex": "$$\nCost = \\frac{Cost_{total}}{Rate_{total}}\
+  \ = \\frac{\\$20M}{5M} = \\$4\n$$"
 "pragmatic_vs_nih_efficiency_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pragmatic_vs_nih_efficiency_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"How many times more cost-effective pragmatic\
-  \ trials are vs standard NIH research. Every $1 spent on pragmatic trials buys ~167x\
-  \ more health than NIH standard allocation. | Calculated from 2 inputs | ~ Medium\
-  \ confidence | Formula: NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY | Unit: ratio\
-  \ | Click to view details, calculation & sources\">167 (95% CI: 148-181)</a>"
+  \ trials are vs standard NIH research. Calculated using global impact methodology\
+  \ (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency\
+  \ gap between discovery-focused pragmatic trials and standard research. | Calculated\
+  \ from 2 inputs | ~ Medium confidence | Formula: NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY\
+  \ | Unit: ratio | Click to view details, calculation & sources\">12.5k (95% CI:\
+  \ 2.26k-51.5k)</a>"
 "pragmatic_vs_nih_efficiency_multiplier_latex": "$$\nMultiplier = \\frac{Cost_{RD}}{Cost}\
-  \ = \\frac{\\$50K}{\\$300} = 167\n$$"
+  \ = \\frac{\\$50K}{\\$4} = 12{,}500\n$$"
 "pre_1962_drug_development_cost_1980_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pre_1962_drug_development_cost_1980_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-baily-1972\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Average\
@@ -1962,6 +1987,10 @@
   \ validation for physician-led pragmatic trials (1883-1960) | ✓ High confidence\
   \ | Formula: 1960 - 1883 | Unit: years | Click to view details, calculation & sources\"\
   >77</a>"
+"qalys_per_covid_death_averted": "<span class=\"parameter-definition\" title=\"Average\
+  \ QALYs gained per COVID death averted. Conservative estimate reflecting older age\
+  \ distribution of COVID mortality. See confidence_interval for range. | Unit: QALYs/death\
+  \ | Core definition\">5 (95% CI: 3-8.32)</span>"
 "rare_diseases_count_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-rare_diseases_count_global\"\
   \ class=\"parameter-link\" data-source-ref=\"95-pct-diseases-no-treatment\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total number of rare diseases globally\
@@ -1987,6 +2016,33 @@
   >82 (95% CI: 50-94.1)</a>"
 "recovery_trial_cost_reduction_factor_latex": "$$\nCost = \\frac{Cost}{Cost} = \\\
   frac{\\$41K}{\\$500} = 82\n$$"
+"recovery_trial_global_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved\"\
+  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-1m-lives-saved\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Estimated lives saved globally by\
+  \ RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based\
+  \ on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial\
+  \ mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations.\
+  \ Wide uncertainty range reflects extrapolation assumptions. | ~ Medium confidence\
+  \ | 95% CI: [500k lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to\
+  \ view details, calculation & sources\">1.00M (95% CI: 503k-1.71M)</a>"
+"recovery_trial_global_lives_saved_cite": "@recovery-trial-1m-lives-saved"
+"recovery_trial_total_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_total_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total cost of UK\
+  \ RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment\
+  \ arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.\
+  \ | ✓ High confidence | 95% CI: [$15M, $25M] | Dist: Lognormal | Unit: USD | Click\
+  \ to view details, calculation & sources\">$20M (95% CI: $16M-$24.4M)</a>"
+"recovery_trial_total_cost_cite": "@recovery-trial-82x-cost-reduction"
+"recovery_trial_total_qalys_generated": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_total_qalys_generated\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Total QALYs generated by RECOVERY trial's discoveries\
+  \ (lives saved × QALYs per life). Uses global impact methodology: counts all downstream\
+  \ health gains from the discovery. | Calculated from 2 inputs | ~ Medium confidence\
+  \ | Formula: LIVES_SAVED × QALYS_PER_DEATH_AVERTED | Unit: QALYs | Click to view\
+  \ details, calculation & sources\">5.00M (95% CI: 1.51M-14.3M)</a>"
+"recovery_trial_total_qalys_generated_latex": "$$\nRate_{total} = Trials_{global}\
+  \ \\times Deaths = 1M \\times 5 = 5M\n$$"
 "regulatory_delay_mean_age_of_death": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-regulatory_delay_mean_age_of_death\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
@@ -2206,7 +2262,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT\
-  \ | Unit: ratio | Click to view details, calculation & sources\">11.5 (95% CI: 9-16)</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">11.5 (95% CI: 9.01-16)</a>"
 "treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}}\
   \ = \\frac{\\$172B}{\\$15B} = 11.5\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_annual_cost_amortized\"\
@@ -2283,9 +2339,9 @@
   \ Only counts campaign cost; ignores economic benefits from funding and R&D savings.\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT\
   \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.0018 (95%\
-  \ CI: $0.0007-$0.0042)</a>"
+  \ CI: $0.0007-$0.0040)</a>"
 "treaty_cost_per_daly_trial_capacity_plus_efficacy_lag_latex": "$$\nCost_{treaty}\
-  \ = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1B}{551B} = \\$0.00181\n\
+  \ = \\frac{Cost_{camp,total}}{DALYs_{DFDA}} = \\frac{\\$1B}{565B} = \\$0.00177\n\
   $$"
 "treaty_expected_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
@@ -2294,10 +2350,10 @@
   \ samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate,\
   \ this is still more cost-effective than bed nets ($89.0/DALY). | Calculated from\
   \ 2 inputs | ? Low confidence | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY\
-  \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.181 (95%\
-  \ CI: $0.030-$3.28)</a>"
+  \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.177 (95%\
+  \ CI: $0.029-$3.17)</a>"
 "treaty_expected_cost_per_daly_latex": "$$\nCost_{treaty} = \\frac{Cost_{treaty}}{Probability}\
-  \ = \\frac{\\$0.00181}{1\\%} = \\$0.181\n$$"
+  \ = \\frac{\\$0.00177}{1\\%} = \\$0.177\n$$"
 "treaty_expected_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Expected ROI for 1% treaty accounting for political\
@@ -2305,17 +2361,17 @@
   \ from beta(0.1%, 10%) distribution to generate full expected value distribution.\
   \ Central value uses 1% probability. | Calculated from 2 inputs | ? Low confidence\
   \ | Formula: TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY\
-  \ | Click to view details, calculation & sources\">827k (95% CI: 56.6k-4.63M)</a>"
+  \ | Click to view details, calculation & sources\">848k (95% CI: 58.5k-4.75M)</a>"
 "treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex": "$$\nROI_{treaty} =\
-  \ ROI_{treaty} \\times Probability = 82.7M \\times 1\\% = 827{,}000\n$$"
+  \ ROI_{treaty} \\times Probability = 84.8M \\times 1\\% = 848{,}000\n$$"
 "treaty_expected_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Expected value multiplier vs bed nets (accounts\
   \ for political uncertainty at 1% success rate) | Calculated from 2 inputs | ? Low\
   \ confidence | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY |\
-  \ Unit: ratio | Click to view details, calculation & sources\">491 (95% CI: 29.2-2.92k)</a>"
+  \ Unit: ratio | Click to view details, calculation & sources\">503 (95% CI: 30.2-2.98k)</a>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{net,treaty} = \\\
-  frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.181} = 491\n$$"
+  frac{Cost_{net}}{Cost_{treaty}} = \\frac{\\$89}{\\$0.177} = 503\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2333,7 +2389,7 @@
   \ | Unit: USD/year | Click to view details, calculation & sources\">$172B (95% CI:\
   \ $139B-$213B)</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefit_{ann} = Cost_{soc,ann}\
-  \ + Benefit_{DFDA,ann} = \\$114B + \\$58.2B = \\$172B\n$$"
+  \ + Benefit_{DFDA,ann} = \\$114B + \\$58.6B = \\$172B\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
@@ -2350,7 +2406,7 @@
   \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
   \ USD/year | Click to view details, calculation & sources\">$172B (95% CI: $139B-$213B)</a>"
 "treaty_recurring_benefits_annual_latex": "$$\nBenefit_{ann} = Benefit_{DFDA,ann}\
-  \ + Cost_{soc,ann} = \\$58.2B + \\$114B = \\$172B\n$$"
+  \ + Cost_{soc,ann} = \\$58.6B + \\$114B = \\$172B\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_roi_existing_drugs_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_existing_drugs_only\"\
@@ -2370,10 +2426,10 @@
   \ Total one-time benefit divided by campaign cost. This is the primary ROI estimate\
   \ for total health benefits. | Calculated from 2 inputs | ~ Medium confidence |\
   \ Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST\
-  \ | Unit: ratio | Click to view details, calculation & sources\">82.7M (95% CI:\
-  \ 45.7M-141M)</a>"
+  \ | Unit: ratio | Click to view details, calculation & sources\">84.8M (95% CI:\
+  \ 47.3M-141M)</a>"
 "treaty_roi_trial_capacity_plus_efficacy_lag_latex": "$$\nROI_{treaty} = \\frac{Capacity_{DFDA}}{Cost_{camp,total}}\
-  \ = \\frac{\\$82700T}{\\$1B} = 82.7M\n$$"
+  \ = \\frac{\\$84800T}{\\$1B} = 84.8M\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -2388,9 +2444,9 @@
   \ data-confidence=\"high\" title=\"How many times more cost-effective than bed nets\
   \ (using $89/DALY midpoint estimate) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio | Click\
-  \ to view details, calculation & sources\">49.1k (95% CI: 23.5k-109k)</a>"
+  \ to view details, calculation & sources\">50.3k (95% CI: 24.3k-109k)</a>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\nMultiplier_{net,treaty} = \\frac{Cost_{net}}{Cost_{treaty}}\
-  \ = \\frac{\\$89}{\\$0.00181} = 49{,}100\n$$"
+  \ = \\frac{\\$89}{\\$0.00177} = 50{,}300\n$$"
 "treaty_vs_direct_funding_leverage": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_direct_funding_leverage\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"How many times\
@@ -2401,17 +2457,17 @@
   \ by clearing disease queue 9.5× faster. Treaty spreads cost across governments\
   \ while building sustainable public funding infrastructure. | ✓ High confidence\
   \ | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio\
-  \ | Click to view details, calculation & sources\">542 (95% CI: 435-613)</a>"
+  \ | Click to view details, calculation & sources\">475 (95% CI: 421-613)</a>"
 "treaty_vs_direct_funding_leverage_latex": "$$\nFunding_{direct,treaty} = \\frac{Cost_{direct,DFDA}}{Cost_{treaty}}\
-  \ = \\frac{\\$0.984}{\\$0.00181} = 542\n$$"
+  \ = \\frac{\\$0.841}{\\$0.00177} = 475\n$$"
 "trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\
   \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
-  \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">190\
-  \ (95% CI: 80-550)</a>"
+  \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">246\
+  \ (95% CI: 90-550)</a>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity = Multiplier_{DFDA} \\\
-  times 20 = 9.53 \\times 20 = 190\n$$"
+  times 20 = 12.3 \\times 20 = 246\n$$"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
@@ -2578,6 +2634,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "359"
-"total_latex_equation_count": "142"
-"total_citation_count": "141"
+"total_parameter_count": "366"
+"total_latex_equation_count": "144"
+"total_citation_count": "144"

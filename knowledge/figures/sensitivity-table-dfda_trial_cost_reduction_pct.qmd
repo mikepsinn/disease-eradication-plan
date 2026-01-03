@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Traditional Phase3 Cost Per Patient | 7.2814 | Strong driver |
-| dFDA Pragmatic Trial Cost Per Patient | -6.8539 | Strong driver |
+| dFDA Pragmatic Trial Cost Per Patient | -12.1779 | Strong driver |
+| Traditional Phase3 Cost Per Patient | 12.0195 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

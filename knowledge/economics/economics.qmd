@@ -66,7 +66,7 @@ Approximately {{< var diseases_without_effective_treatment >}} diseases currentl
 | **Queue Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years average | Scale trial capacity {{< var dfda_trial_capacity_multiplier >}}× (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year), reducing queue clearance from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} years | Average disease in queue receives first effective treatment {{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier |
 | **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years** | Both effects act simultaneously | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift** for treatment delivery |
 
-**How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (Oxford RECOVERY trial cost) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 **Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials confirms the intervention maintains cost-dominance under all plausible parameter scenarios.
 
@@ -125,7 +125,7 @@ Current medical research faces fundamental capacity constraints that limit our a
 | **Traditional trial cost** | {{< var traditional_phase3_cost_per_patient >}}/patient | Makes comprehensive testing economically infeasible {{< var traditional_phase3_cost_per_patient_cite >}} |
 | **Pragmatic trial cost** | {{< var recovery_trial_cost_per_patient >}}/patient (RECOVERY) | {{< var recovery_trial_cost_reduction_factor >}}× cost reduction enables systematic exploration {{< var recovery_trial_cost_per_patient_cite >}} |
 
-The Oxford RECOVERY trial demonstrated that pragmatic trial design can maintain scientific rigor while delivering results in <100 days [@recovery-trial-82x-cost-reduction]. This {{< var recovery_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
+The Oxford RECOVERY trial demonstrated that pragmatic trial design can maintain scientific rigor while delivering results in <100 days [@recovery-trial-82x-cost-reduction]. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure and COVID emergency conditions; our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) This {{< var recovery_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
 ### Addressing Skepticism: Why This Differs from Failed Megaprojects
 
@@ -134,7 +134,7 @@ Large-scale interventions face legitimate skepticism. The development economics 
 This intervention differs in four critical ways:
 
 
-1. **Empirical grounding**: Cost estimates based on demonstrated RECOVERY trial results, not theoretical projections. The {{< var recovery_trial_cost_per_patient >}}/patient cost is a proven fact, not a forecast.
+1. **Empirical grounding**: Cost estimates based on demonstrated pragmatic trial results, not theoretical projections. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial. (RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions; confidence interval captures this range.)
 
 2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
 
@@ -282,7 +282,7 @@ This architectural shift from centralized regulatory gatekeeping to distributed,
 
 Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient because they require dedicated infrastructure: specialized research sites, dedicated research coordinators, custom data collection systems, patient travel reimbursement, and extensive monitoring visits. This overhead exists independent of the actual treatment being tested.
 
-The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. Same quality evidence. {{< var recovery_trial_cost_reduction_factor >}}x lower cost.
+The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. (Note: RECOVERY benefited from NHS/COVID conditions; typical pragmatic trials like ADAPTABLE cost {{< var adaptable_trial_cost_per_patient >}}/patient, and our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient.) Same quality evidence. {{< var recovery_trial_cost_reduction_factor >}}x lower cost.
 
 **Concrete example**: A hospital already tracks patient lab results, symptoms, and outcomes in electronic health records. Traditional trials build a parallel research infrastructure to collect the same information again. Pragmatic trials simply flag which patients are enrolled and automatically extract relevant data from existing systems. No duplicate infrastructure, no dedicated research staff per trial.
 
@@ -716,7 +716,7 @@ Military spending generates economic multiplier effects of {{< var economic_mult
 
 **2. Trial cost reduction through infrastructure efficiency**
 
-Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. The Oxford RECOVERY trial cost {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by using existing hospital infrastructure, minimal additional data collection beyond standard care, and simplified consent processes.
+Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. The Oxford RECOVERY trial cost {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by using existing hospital infrastructure, minimal additional data collection beyond standard care, and simplified consent processes. (Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions; our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.)
 
 This represents an {{< var recovery_trial_cost_reduction_factor >}}× cost reduction achieved by eliminating duplicative overhead and leveraging existing healthcare infrastructure.
 
@@ -1129,8 +1129,9 @@ This analysis rests on several core assumptions that should be made explicit for
 
 #### Empirical basis
 
-- Oxford RECOVERY trial: {{< var recovery_trial_cost_reduction_factor >}}× cost reduction ({{< var recovery_trial_cost_per_patient >}} per patient vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
-- ADAPTABLE trial: Similar cost structure using pragmatic design
+- Oxford RECOVERY trial: {{< var recovery_trial_cost_reduction_factor >}}× cost reduction ({{< var recovery_trial_cost_per_patient >}} per patient vs. {{< var traditional_phase3_cost_per_patient >}} traditional). Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions.
+- ADAPTABLE trial: {{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} patients = {{< var adaptable_trial_cost_per_patient >}}/patient using PCORnet pragmatic design, more representative of typical pragmatic trial costs.
+- Our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 - Literature on pragmatic trials consistently shows 50-95% cost reductions
 
 **Sensitivity:** Conservative scenario ({{< var dfda_roi_rd_only >}}:1 ROI) uses {{< var dfda_trial_cost_reduction_pct >}} reduction; optimistic case uses 95%.
@@ -1161,7 +1162,7 @@ The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in res
 
 #### Implications for generalizability
 
-The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one case study.
+The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. (Our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one case study.
 
 The cost reduction estimates (50-95%) are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} [(compounded, 1990 dollars)](../references.qmd#pre-1962-drug-costs-timeline) compared to modern {{< var pharma_drug_development_cost_current >}} [costs](../references.qmd#pre-1962-drug-costs-timeline), representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
@@ -1392,6 +1393,13 @@ This intervention delivers {{< var combined_peace_health_dividends_annual_for_ro
 
 The standard metric for comparing health interventions is **cost per DALY** (Disability-Adjusted Life Year) - the cost to save one year of healthy life.
 
+**NIH Standard Research (Current Status Quo):**
+
+- **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}}/QALY {{< var nih_standard_research_cost_per_qaly_cite >}}. Current research spending efficiency.
+- **Pragmatic Trials:** {{< var pragmatic_trial_cost_per_qaly >}}/QALY. Calculated from RECOVERY trial's exceptional global impact ({{< var recovery_trial_total_cost >}} spent, {{< var recovery_trial_global_lives_saved >}} lives saved). Note: RECOVERY was an outlier with exceptional NHS infrastructure and COVID emergency conditions. Critics note this may not be representative of typical pragmatic trials. For operational cost projections, we use the more conservative {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (2.4× higher than RECOVERY's {{< var recovery_trial_cost_per_patient >}}).
+
+**Efficiency gap:** {{< var pragmatic_vs_nih_efficiency_multiplier >}}. Even using RECOVERY's exceptional results, the gap demonstrates pragmatic trials' transformative potential.
+
 **GiveWell Top Charities (Gold Standard for Cost-Effectiveness):**
 
 - **[Bed Nets](../references.qmd#givewell-cost-per-life-saved)**: {{< var bed_nets_cost_per_daly >}}/DALY (Against Malaria Foundation)
@@ -1524,7 +1532,7 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplie
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× Multiplier Works**:
 
-The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [pragmatic trial cost](../references.qmd#recovery-cost-500) ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
+The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [pragmatic trial cost](../references.qmd#pragmatic-trials-cost-advantage) ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE trial), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
 {{< var dfda_trial_capacity_multiplier_latex >}}
 
@@ -1534,7 +1542,7 @@ This represents the funding capacity from the 1% Treaty Fund alone, without assu
 
 - {{< var dfda_trial_capacity_multiplier >}}× more completed trials/year
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → proportionally more approvals
-- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} cost per patient ({{< var recovery_trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var dfda_pragmatic_trial_cost_per_patient >}} cost per patient (using conservative ADAPTABLE-based estimate; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}} under exceptional conditions)
 
 
 

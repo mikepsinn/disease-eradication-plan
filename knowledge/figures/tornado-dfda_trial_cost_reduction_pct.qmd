@@ -20,13 +20,13 @@ display_name = "dFDA Trial Cost Reduction Percentage"
 
 # Baseline and units
 
-baseline = 0.9707317073170731
+baseline = 0.9773414634146341
 
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-impacts_low = [0.017073170731707332, -0.030731707317073198]
-impacts_high = [-0.04390243902439017, 0.019268292682926846]
+impacts_low = [0.01046341463414635, -0.023791463414634118]
+impacts_high = [-0.05051219512195115, 0.014916869918699227]
 
 # Convert deltas to absolute values (baseline + delta)
 

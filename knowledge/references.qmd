@@ -9435,19 +9435,19 @@ url: https://www.ox.ac.uk/news/2020-06-16-dexamethasone-reduces-death-hospitalis
 
 <a id="recovery-trial-1m-lives-saved"></a>
 
-title: RECOVERY trial global lives saved
+title: RECOVERY trial global lives saved (~1 million)
 
 type: article
 
-author: NHS England
+author: NHS England; Águas et al.
 
 url: https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/
 
-> Dexamethasone saved ~1 million lives worldwide (by March 2021, 9 months after discovery)
-> UK alone: 22,000 lives saved
-> June 2020 announcement: Dexamethasone reduced deaths by up to 1/3 (ventilated patients), 1/5 (oxygen patients)
-> Impact immediate: Adopted into standard care globally within hours of announcement
-> — [NHS England: 1 Million Lives Saved](https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/) | [Pharmaceutical Journal: 1M Lives Saved](https://pharmaceutical-journal.com/article/news/steroid-has-saved-the-lives-of-one-million-covid-19-patients-worldwide-figures-show) | [RECOVERY Trial: Dexamethasone Result](https://www.recoverytrial.net/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)
+> Dexamethasone saved ~1 million lives worldwide (NHS England estimate, March 2021, 9 months after discovery).
+> UK alone: 22,000 lives saved. Methodology: Águas et al. Nature Communications 2021 estimated 650,000 lives (range: 240,000-1,400,000) for July-December 2020 alone, based on RECOVERY trial mortality reductions (36% for ventilated, 18% for oxygen-only patients) applied to global COVID hospitalizations.
+> June 2020 announcement: Dexamethasone reduced deaths by up to 1/3 (ventilated patients), 1/5 (oxygen patients).
+> Impact immediate: Adopted into standard care globally within hours of announcement.
+> — [NHS England: 1 Million Lives Saved](https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/) | [Águas et al. Nature Communications 2021](https://www.nature.com/articles/s41467-021-21134-2) | [Pharmaceutical Journal](https://pharmaceutical-journal.com/article/news/steroid-has-saved-the-lives-of-one-million-covid-19-patients-worldwide-figures-show) | [RECOVERY Trial](https://www.recoverytrial.net/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)
 
 ---
 
@@ -12486,7 +12486,7 @@ url: https://www.hhs.gov/about/budget/budget-in-brief/nih/index.html
 
 <a id="recovery-trial-roi"></a>
 
-title: RECOVERY Trial Cost-Effectiveness (~$300/QALY)
+title: RECOVERY Trial Cost-Effectiveness (~$4/QALY, Global Impact Methodology)
 
 type: article
 
@@ -12494,7 +12494,7 @@ author: RECOVERY Collaborative Group
 
 url: https://www.recoverytrial.net/results
 
-> RECOVERY trial (UK) cost ~$2.7M for the dexamethasone arm and saved ~1 million lives globally in 9 months. Implied cost per QALY is ~$300 or less, approx. 50-100x more efficient than standard care interventions.
+> RECOVERY trial (UK) cost ~$20M total and discovered that dexamethasone reduces COVID mortality by 1/3 in severe cases, saving ~1 million lives globally. Using global impact methodology (research discovery value): $20M / (1M lives × 5 QALYs/life) = ~$4/QALY. This is ~12,500× more cost-effective than standard NIH research allocation ($50,000/QALY).
 > — [RECOVERY Trial Results](https://www.recoverytrial.net/results)
 
 ---
@@ -12539,8 +12539,8 @@ author: NIH Common Fund
 
 url: https://commonfund.nih.gov/hcscollaboratory
 
-> The NIH Pragmatic Trials Collaboratory funds trials at **$500K for planning phase, $1M/year for implementation**—a tiny fraction of NIH's budget. The ADAPTABLE trial cost **$14 million** versus **$420 million** for a similar traditional RCT (30x cheaper), yet pragmatic trials remain severely underfunded. PCORnet infrastructure enables real-world trials embedded in healthcare systems, but receives minimal support compared to basic research funding.
-> — [NIH Common Fund: HCS Research Collaboratory](https://commonfund.nih.gov/hcscollaboratory) | [PMC: Pragmatic Clinical Trials in Healthcare Systems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5604499/) | [PMC: Pragmatic Trials and Real-World Evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC11902901/)
+> The NIH Pragmatic Trials Collaboratory funds trials at **$500K for planning phase, $1M/year for implementation**—a tiny fraction of NIH's budget. The ADAPTABLE trial cost **$14 million** for **15,076 patients** (= **$929/patient**) versus **$420 million** for a similar traditional RCT (30x cheaper), yet pragmatic trials remain severely underfunded. PCORnet infrastructure enables real-world trials embedded in healthcare systems, but receives minimal support compared to basic research funding.
+> — [NIH Common Fund: HCS Research Collaboratory](https://commonfund.nih.gov/hcscollaboratory) | [PCORnet ADAPTABLE Summary](https://pcornet.org/wp-content/uploads/2025/08/ADAPTABLE_Lay_Summary_21JUL2025.pdf) | [PMC: Pragmatic Clinical Trials in Healthcare Systems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5604499/)
 
 ---
 

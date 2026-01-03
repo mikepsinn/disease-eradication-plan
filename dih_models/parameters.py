@@ -1346,23 +1346,64 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"]
 )  # RECOVERY achieved $500, but scaling globally may cost more
 
-# dFDA Pragmatic Trial Cost - Empirically Grounded Estimate
-# Based on real-world pragmatic trial costs, not arbitrary components
-DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
-    1200,  # Central estimate: realistic global pragmatic trial cost
-    source_ref=ReferenceID.RECOVERY_COST_500,  # Floor anchor
+# ADAPTABLE Trial - PCORnet's First Large-Scale Pragmatic Trial
+# Source: PCORI 2015 award ($14M grant), PCORnet summary (15,076 patients)
+# Note: $14M is the PCORI grant; true costs may be 10-40% higher with in-kind contributions
+ADAPTABLE_TRIAL_TOTAL_COST = Parameter(
+    14_000_000,  # $14M PCORI grant (floor estimate)
+    source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
-    description="dFDA pragmatic trial cost per patient. Central estimate based on PCORnet/ADAPTABLE-style trials (~$1,500-2,500) with dFDA efficiencies. Range spans RECOVERY ($500, exceptional NHS infrastructure) to typical US pragmatic trials ($3,000). Lower than traditional Phase 3 ($41,000/patient).",
+    description="PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.",
+    display_name="ADAPTABLE Trial Total Cost",
+    unit="USD",
+    confidence="medium",  # Medium: in-kind costs not included in $14M figure
+    confidence_interval=(14_000_000, 20_000_000),  # Grant to estimated true cost
+    distribution="lognormal",
+    keywords=["adaptable", "pcornet", "pragmatic", "trial", "cost"],
+)
+
+ADAPTABLE_TRIAL_PATIENTS = Parameter(
+    15076,  # 15,076 patients enrolled (precise count)
+    source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
+    source_type="definition",  # Precise count, no uncertainty
+    description="Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.",
+    display_name="ADAPTABLE Trial Patients Enrolled",
+    unit="patients",
+    confidence="high",
+    keywords=["adaptable", "pcornet", "enrollment", "patients"],
+)
+
+ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
+    929,  # $14M / 15,076 patients = $929/patient
+    source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
+    source_type="external",
+    description="Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.",
+    display_name="ADAPTABLE Trial Cost per Patient",
+    unit="USD/patient",
+    confidence="medium",
+    confidence_interval=(929, 1400),  # Grant cost to estimated true cost with in-kind
+    distribution="lognormal",
+    keywords=["adaptable", "pcornet", "cost per patient", "pragmatic"],
+)  # $929/patient from PCORI grant; up to ~$1,400 with in-kind
+
+# dFDA Pragmatic Trial Cost - Based on ADAPTABLE Trial
+# Central estimate uses ADAPTABLE's empirical cost; uncertainty reflects dFDA implementation range
+# RECOVERY ($500) was exceptional due to NHS/COVID; used as confidence interval floor
+DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
+    929,  # ADAPTABLE trial empirical cost (see ADAPTABLE_TRIAL_COST_PER_PATIENT)
+    source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
+    source_type="external",
+    description="dFDA pragmatic trial cost per patient. Central estimate based on ADAPTABLE trial. Confidence interval spans RECOVERY floor (exceptional NHS/COVID conditions) to complex chronic disease trials.",
     display_name="dFDA Pragmatic Trial Cost per Patient",
     unit="USD/patient",
     confidence="medium",
     keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable"],
     distribution="lognormal",
     confidence_interval=(500, 3000),  # Empirical range:
-                                       # - Floor ($500): RECOVERY-like efficiency (proven)
-                                       # - Central ($1,200): dFDA with global infrastructure
-                                       # - Ceiling ($3,000): Typical US pragmatic trial
-)  # $1,200/patient central (vs $500 RECOVERY floor, $41k traditional)
+                                       # - Floor ($500): RECOVERY-like efficiency (exceptional)
+                                       # - Central ($929): ADAPTABLE trial (empirical)
+                                       # - Ceiling ($3,000): Complex chronic disease trials
+)  # Central = ADAPTABLE; uncertainty = dFDA implementation range
 
 # Traditional Phase 3 Cost (baseline for comparison)
 TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
@@ -4554,13 +4595,71 @@ CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
 # ---
 # These compare the efficiency of standard NIH-funded research vs pragmatic trials like RECOVERY
 
+# RECOVERY trial component parameters for calculating cost per QALY
+RECOVERY_TRIAL_TOTAL_COST = Parameter(
+    20_000_000,  # ~$20M total trial cost (£20M, ~$20M USD)
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="external",
+    description="Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across "
+                "multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.",
+    display_name="RECOVERY Trial Total Cost",
+    unit="USD",
+    confidence="high",
+    confidence_interval=(15_000_000, 25_000_000),  # Accounting for currency conversion uncertainty
+    distribution=DistributionType.LOGNORMAL,
+    keywords=["recovery", "trial", "cost", "total", "uk", "pragmatic"],
+)
+
+RECOVERY_TRIAL_GLOBAL_LIVES_SAVED = Parameter(
+    1_000_000,  # ~1 million lives saved globally from dexamethasone adoption (NHS England, March 2021)
+    source_ref=ReferenceID.RECOVERY_TRIAL_1M_LIVES_SAVED,
+    source_type="external",
+    description="Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. "
+                "NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 "
+                "methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) "
+                "to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.",
+    display_name="RECOVERY Trial Global Lives Saved",
+    unit="lives",
+    confidence="medium",
+    confidence_interval=(500_000, 2_000_000),  # Águas et al. reported 240K-1.4M for 6 months; extrapolated
+    distribution=DistributionType.LOGNORMAL,
+    keywords=["recovery", "lives", "saved", "dexamethasone", "global", "impact", "nhs england"],
+)
+
+QALYS_PER_COVID_DEATH_AVERTED = Parameter(
+    5,  # Conservative: COVID deaths skewed toward elderly, so fewer remaining life-years
+    source_type="definition",
+    description="Average QALYs gained per COVID death averted. Conservative estimate reflecting "
+                "older age distribution of COVID mortality. See confidence_interval for range.",
+    display_name="QALYs per COVID Death Averted",
+    unit="QALYs/death",
+    confidence="low",
+    confidence_interval=(3, 10),  # Lower for elderly, higher if including long COVID prevention
+    distribution=DistributionType.LOGNORMAL,
+    keywords=["qaly", "covid", "death", "averted", "life years"],
+)
+
+RECOVERY_TRIAL_TOTAL_QALYS_GENERATED = Parameter(
+    RECOVERY_TRIAL_GLOBAL_LIVES_SAVED * QALYS_PER_COVID_DEATH_AVERTED,
+    source_type="calculated",
+    description="Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). "
+                "Uses global impact methodology: counts all downstream health gains from the discovery.",
+    display_name="RECOVERY Trial Total QALYs Generated",
+    unit="QALYs",
+    formula="LIVES_SAVED × QALYS_PER_DEATH_AVERTED",
+    confidence="medium",
+    keywords=["recovery", "qalys", "total", "generated", "global"],
+    inputs=["RECOVERY_TRIAL_GLOBAL_LIVES_SAVED", "QALYS_PER_COVID_DEATH_AVERTED"],
+    compute=lambda ctx: ctx["RECOVERY_TRIAL_GLOBAL_LIVES_SAVED"] * ctx["QALYS_PER_COVID_DEATH_AVERTED"],
+)  # ~5 million QALYs
+
 NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
     50_000,  # Midpoint of $20,000-$100,000 range
     source_ref=ReferenceID.STANDARD_MEDICAL_RESEARCH_ROI,
     source_type="external",
     description="Typical cost per QALY for standard NIH-funded medical research portfolio. "
-                "Range $20,000-$100,000. ICER uses $100,000-$150,000/QALY thresholds for value-based pricing. "
-                "This reflects the inefficiency of traditional RCTs and basic research-heavy allocation.",
+                "Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. "
+                "See confidence_interval for range; ICER uses higher thresholds for value-based pricing.",
     display_name="NIH Standard Research Cost per QALY",
     unit="USD/QALY",
     confidence="medium",
@@ -4570,25 +4669,27 @@ NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
 )
 
 PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
-    300,  # Based on RECOVERY trial: ~$2.7M for dexamethasone arm, ~1M lives saved
-    source_ref=ReferenceID.RECOVERY_TRIAL_ROI,
-    source_type="external",
-    description="Cost per QALY for pragmatic platform trials like UK RECOVERY. "
-                "RECOVERY cost ~$2.7M for dexamethasone arm and saved ~1 million lives globally. "
-                "Implied cost per QALY is ~$300 or less - approximately 50-100x more efficient than standard interventions.",
+    RECOVERY_TRIAL_TOTAL_COST / RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="calculated",
+    description="Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. "
+                "Uses global impact methodology: trial cost divided by total QALYs from downstream adoption. "
+                "This measures research efficiency (discovery value), not clinical intervention ICER.",
     display_name="Pragmatic Trial Cost per QALY (RECOVERY)",
     unit="USD/QALY",
-    confidence="high",
-    confidence_interval=(100, 500),
-    distribution=DistributionType.LOGNORMAL,
-    keywords=["pragmatic", "recovery", "trial", "cost effectiveness", "qaly", "efficient", "platform"],
-)
+    formula="TRIAL_COST ÷ TOTAL_QALYS_GENERATED",
+    confidence="medium",
+    keywords=["pragmatic", "recovery", "trial", "cost effectiveness", "qaly", "efficient", "platform", "global impact"],
+    inputs=["RECOVERY_TRIAL_TOTAL_COST", "RECOVERY_TRIAL_TOTAL_QALYS_GENERATED"],
+    compute=lambda ctx: ctx["RECOVERY_TRIAL_TOTAL_COST"] / ctx["RECOVERY_TRIAL_TOTAL_QALYS_GENERATED"],
+)  # ~$4/QALY (global impact methodology)
 
 PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
     NIH_STANDARD_RESEARCH_COST_PER_QALY / PRAGMATIC_TRIAL_COST_PER_QALY,
     source_type="calculated",
     description="How many times more cost-effective pragmatic trials are vs standard NIH research. "
-                "Every $1 spent on pragmatic trials buys ~167x more health than NIH standard allocation.",
+                "Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). "
+                "Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.",
     display_name="Pragmatic Trial Efficiency Multiplier vs NIH",
     unit="ratio",
     formula="NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY",
@@ -4596,7 +4697,7 @@ PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
     keywords=["efficiency", "multiplier", "pragmatic", "nih", "comparison", "cost effectiveness"],
     inputs=["NIH_STANDARD_RESEARCH_COST_PER_QALY", "PRAGMATIC_TRIAL_COST_PER_QALY"],
     compute=lambda ctx: ctx["NIH_STANDARD_RESEARCH_COST_PER_QALY"] / ctx["PRAGMATIC_TRIAL_COST_PER_QALY"],
-)  # ~167x more efficient
+)  # ~12,500x more efficient (global impact methodology)
 
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a

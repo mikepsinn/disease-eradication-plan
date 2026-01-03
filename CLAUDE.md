@@ -76,6 +76,19 @@ if sys.platform == 'win32':
 
 **Before hardcoding ANY value in QMD files, check `_variables.yml` first.** All available variables are listed there in lowercase format (e.g., `global_military_spending_annual_2024`, `treaty_annual_funding`).
 
+### When Editing QMD Files
+
+**ALWAYS check for hardcoded numbers that should be variables:**
+- When you edit a QMD file, scan for hardcoded numbers like `$14M`, `$929`, `15,076`, etc.
+- Search `_variables.yml` for existing variables: `grep "keyword" _variables.yml`
+- If a variable exists, use `{{< var variable_name >}}` instead of the hardcoded value
+- If no variable exists but should, create it in `dih_models/parameters.py` first
+
+**Common hardcoded values to replace:**
+- Trial costs: Use `{{< var adaptable_trial_cost_per_patient >}}`, `{{< var recovery_trial_cost_per_patient >}}`
+- Patient counts: Use `{{< var adaptable_trial_patients >}}`, `{{< var recovery_trial_patients >}}`
+- Cost reductions: Use `{{< var dfda_trial_cost_reduction_factor >}}`
+
 ### How It Works
 
 1. **Define parameters** in `dih_models/parameters.py`:

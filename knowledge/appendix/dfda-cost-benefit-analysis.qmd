@@ -31,7 +31,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 ### What You Get
 
-- **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs [80-100x](#decentralized-trial-costs-modeled-on-oxford-recovery) without killing anyone extra. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
+- **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs {{< var recovery_trial_cost_reduction_factor >}} without killing anyone extra. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/). Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
 - **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
@@ -66,7 +66,7 @@ Goals:
 ### Potential Impact on the Status Quo
 
 - **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.
-- **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).
+- **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
 - **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
 - **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
 
@@ -405,12 +405,18 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 - **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](../references.qmd#clinical-trial-cost-per-patient) (site fees, overhead, staff, monitoring, data management).
 
-### Decentralized Trial Costs Modeled on Oxford RECOVERY
+### Decentralized Trial Costs Modeled on Pragmatic Trials
 
 - **Oxford RECOVERY**: Achieved **~{{< var recovery_trial_cost_per_patient >}} per patient**. Key strategies included:
   1. Embedding trial protocols within routine hospital care.
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
+
+  *Important caveat*: RECOVERY's exceptional cost efficiency benefited from NHS infrastructure integration and COVID-19 emergency conditions that may not be replicable globally.
+
+- **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} patients = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
+
+- **dFDA Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
 - **Extrapolation to New System**:
   - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
@@ -574,8 +580,8 @@ For detailed methodology and assumptions, see [The Human Cost of Regulatory Late
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
 - **Source/Rationale**:
   - [Decentralized Clinical Trials (DCTs) have demonstrated potential for significant cost reductions](../references.qmd#dct-cost-reductions-evidence) (20-50.0% or more) through reduced site management, travel, and streamlined data collection.
-  - The [UK RECOVERY trial achieved cost reductions of ~80-98% per patient](../references.qmd#recovery-trial-cost-reduction) compared to traditional trials.
-  - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), the average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
+  - The [UK RECOVERY trial achieved cost reductions of ~80-98% per patient](../references.qmd#recovery-trial-cost-reduction) compared to traditional trials. The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_cost_per_patient >}}/patient) demonstrates similar efficiencies are achievable outside NHS infrastructure and emergency conditions.
+  - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), these results benefited from NHS infrastructure and COVID-19 emergency conditions. ADAPTABLE provides a more typical benchmark (~98% savings vs. traditional trials). The average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
 
 The annual gross R&D savings can be calculated as:
 
@@ -771,7 +777,7 @@ This Monte Carlo analysis replaces the need for discrete scenario analysis by ca
 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
-   - Oxford RECOVERY trial press releases and scientific papers indicating {{< var recovery_trial_cost_per_patient >}}/patient cost, informing pragmatic trial cost estimates of {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient.
+   - Oxford RECOVERY trial: {{< var recovery_trial_cost_per_patient >}}/patient (exceptional NHS/COVID conditions). ADAPTABLE trial: {{< var adaptable_trial_cost_per_patient >}}/patient (typical US pragmatic trial). Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE; confidence interval captures uncertainty.
 
 2. **ROI Calculation Method**:
 
@@ -1331,6 +1337,8 @@ The following table provides the data and sources that support the chart. The li
 | **Hypertension Screening**             |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
 | **Generic Drug Substitution**          |       **+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. ([WHO, 2015](../references.qmd#who-generic-drug-policy))                                                        |
 | **Statins / Polypill**                 |         **67+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. ([eClinicalMedicine, 2022](../references.qmd#eclinicalmedicine-statins-polypill))                                               |
+| **Pragmatic Trials (RECOVERY model)** | **~250,000** | **{{< var pragmatic_trial_cost_per_qaly >}}/QALY** | Highly Cost-Effective | UK RECOVERY trial: {{< var recovery_trial_total_cost >}} spent, saving {{< var recovery_trial_global_lives_saved >}} lives globally via dexamethasone discovery. {{< var pragmatic_vs_nih_efficiency_multiplier >}} more efficient than standard research. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure; ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in US settings.) |
+| **NIH Standard Research Portfolio** | **~20** | **{{< var nih_standard_research_cost_per_qaly >}}/QALY** | Inefficient Baseline | Standard NIH-funded research. Represents current status quo efficiency. {{< var nih_standard_research_cost_per_qaly_cite >}} |
 
 ### Methodology Notes
 

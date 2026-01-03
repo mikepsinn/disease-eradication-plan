@@ -373,7 +373,7 @@ Why Phase 3 dominates:
 
 - [Industry spending grew 44% (2012-2022)](../references.qmd#industry-rd-growth-2012-2022)
 - More trials running globally than ever
-- Technology enabling cheaper trials (see: [RECOVERY trial at $500/patient](../references.qmd#recovery-trial-cost-reduction))
+- Technology enabling cheaper trials (see: RECOVERY trial at {{< var recovery_trial_cost_per_patient >}}/patient)
 
 #### The Bad News
 
@@ -401,7 +401,7 @@ Why Phase 3 dominates:
 
 **What the same money could buy (with a decentralized framework for drug assessment):**
 
-- At [$500/patient (RECOVERY model)](../references.qmd#recovery-trial-cost-reduction): **120 million patient-participants**
+- At {{< var recovery_trial_cost_per_patient >}}/patient (RECOVERY model): **120 million patient-participants**
 - At $2 million per efficient trial: **30,000 trials annually**
 - Instead of 50 drugs: **Hundreds or thousands of treatments tested**
 - Instead of 10 years: **Months to years**
@@ -409,7 +409,7 @@ Why Phase 3 dominates:
 #### The waste
 
 - [Traditional Phase 3: $40,000-$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient)
-- [RECOVERY achieved: $500 per patient](../references.qmd#recovery-trial-cost-reduction)
+- RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient
 - **That's an 80-240× markup for bureaucracy**
 
 ## Summary Table

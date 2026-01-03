@@ -76,14 +76,14 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (generous estimate)
-- **Pragmatic Platform Trials (RECOVERY model):** {{< var pragmatic_trial_cost_per_qaly >}} per QALY {{< var pragmatic_trial_cost_per_qaly_cite >}}
+- **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY 
 - **NIH pragmatic trials funding:** [Capped at $500K planning + $1M/year implementation](../references.qmd#pragmatic-trials-cost-advantage). This is a tiny fraction of the $47B budget
 
 **The Multiplier:**
 
 Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH mix.
 
-Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ($14M vs $420M).
+Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ({{< var adaptable_trial_total_cost >}} vs $420M).
 
 ### The "Death Equivalent" of Budget Misallocation
 

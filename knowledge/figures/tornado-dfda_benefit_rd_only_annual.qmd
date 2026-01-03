@@ -20,13 +20,13 @@ display_name = "Decentralized Framework for Drug Assessment Annual Benefit: R&D 
 
 # Baseline and units
 
-baseline = 58243902439.02439
+baseline = 58640487804.878044
 
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-impacts_low = [-9707317073.17073, 1024390243.9024353, -1843902439.0243912]
-impacts_high = [14560975609.756096, -2634146341.4634094, 1156097560.9756088]
+impacts_low = [-9773414634.14634, 627804878.0487823, -1427487804.8780441]
+impacts_high = [14660121951.21952, -3030731707.3170624, 895012195.1219559]
 
 # Convert deltas to absolute values (baseline + delta)
 

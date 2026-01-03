@@ -17,7 +17,7 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 1200.0
+central_value = 929.0
 low = 500
 high = 3000
 dist_type = "lognormal"
