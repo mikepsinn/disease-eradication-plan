@@ -131,6 +131,18 @@ Beyond known compounds lies the vast chemical space of 10^23 to 10^60 drug-like 
 
 We haven't even started.
 
+### "But Won't We Run Out of Easy Discoveries?"
+
+Some will argue "diminishing returns": the more we search, the harder each new discovery becomes. This assumes we've already picked the low-hanging fruit.
+
+We haven't picked *any* fruit. We're still in the parking lot.
+
+Diminishing returns only dominates after you've explored a significant fraction of the space. At <1% explored, every trial teaches us something new about human biology, improving our ability to predict which combinations will work next. Learning effects compound; depletion effects are negligible.
+
+The math: even with weak learning, diminishing returns only matters after exploring ~37% of therapeutic space. For combination therapies, that crossover is **~7 million years away** at current pace.
+
+You cannot have diminishing returns when you've barely started looking. See [the formal analysis](../economics/economics.qmd#mathematical-framework-when-would-diminishing-returns-dominate) for the equations.
+
 ## The Fix
 
 The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in [<100 days](../references.qmd#recovery-trial-100-days-to-cure).

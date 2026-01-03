@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: Known Safe Exploration Time (Current) (10,000 simulations)"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Simulation results
+
+samples = [2805, 3216, 2680, 2629, 3529, 3303, 2856, 2988, 2898, 3156, 2645, 2673, 2874, 2580, 2759, 3158, 2787, 3190, 2646, 2908, 2948, 3101, 2555, 2939, 3022, 2999, 2741, 2788, 2774, 2769, 2398, 3015, 3048, 3143, 2717, 2579, 2927, 3152, 3147, 2708, 2682, 2738, 3096, 2826, 2859, 2830, 2648, 2828, 2700, 2873, 2809, 2713, 3356, 2989, 3035, 3088, 2975, 2485, 3160, 2622, 3434, 2994, 2846, 2726, 2691, 2669, 2998, 3033, 2651, 2950, 3294, 3247, 3177, 2750, 2852, 2697, 3022, 2847, 2715, 2986, 2762, 3095, 3002, 3008, 3268, 2753, 3035, 2890, 2755, 2765, 2704, 2922, 3021, 2917, 3435, 3352, 3310, 3202, 2778, 3173, 3007, 2535, 3000, 2684, 3182, 2954, 3187, 2995, 2656, 3449, 2768, 2824, 3074, 3352, 2872, 3053, 2826, 2887, 2458, 2965, 3211, 2841, 2829, 2519, 2657, 2790, 2493, 3265, 3088, 3179, 3010, 3328, 2712, 2959, 3361, 3208, 2802, 2657, 2398, 2398, 2774, 3200, 3594, 2815, 3143, 3018, 3079, 2935, 2596, 2847, 2940, 3215, 3431, 3040, 2909, 2417, 2855, 2618, 3044, 3264, 3192, 3115, 2398, 3146, 2657, 3172, 2631, 2782, 2940, 2905, 3093, 2765, 3030, 3278, 3295, 2843, 2464, 2846, 2928, 2810, 2533, 2829, 3017, 2585, 2770, 2475, 2840, 3277, 3326, 2446, 2428, 2947, 3008, 2493, 3238, 3169, 2710, 3012, 2895, 2942, 2796, 2507, 2867, 2710, 3565, 2908, 3153, 3275, 3164, 2993, 2636, 3311, 2884, 3039, 2991, 2612, 2739, 2525, 2939, 3106, 2960, 2823, 2842, 3231, 2867, 2827, 2398, 2398, 3156, 2979, 3358, 3073, 2802, 2559, 3116, 3092, 3598, 2942, 3224, 3053, 3163, 2921, 3460, 3359, 2398, 3298, 3235, 2400, 2398, 3260, 3004, 2794, 2426, 3199, 2966, 2673, 2768, 3006, 2933, 3328, 2964, 2973, 2826, 3061, 2758, 2610, 2848, 2791, 2878, 2893, 3114, 2802, 2922, 2398, 2465, 2782, 3127, 3240, 2563, 2817, 2755, 3455, 2633, 2762, 3239, 3035, 2817, 2878, 2981, 2924, 2968, 2849, 2491, 3598, 2964, 2842, 2807, 3005, 3460, 2798, 2427, 3382, 2650, 2992, 2911, 3221, 2993, 2535, 2727, 2425, 2566, 2767, 2423, 2767, 2659, 2982, 2874, 3106, 2616, 3262, 2672, 2950, 2568, 2680, 2404, 2686, 3395, 2913, 3260, 3050, 2481, 2711, 3107, 3208, 2884, 3275, 3098, 2803, 2572, 2719, 3598, 2805, 2872, 2774, 2454, 3569, 3073, 2724, 3399, 2490, 2787, 2654, 3066, 2663, 2595, 2825, 2825, 2815, 3159, 2937, 2939, 2782, 2613, 3222, 2930, 2488, 3121, 3146, 2834, 2655, 2890, 2527, 2652, 2656, 2735, 2398, 2954, 3548, 2457, 3031, 2862, 2532, 3406, 3286, 3405, 3137, 2767, 2743, 2813, 3341, 3598, 2877, 3036, 2761, 2694, 2853, 2678, 2827, 2741, 3108, 2947, 2836, 2661, 3012, 2744, 2973, 2928, 2659, 3544, 3301, 3364, 3598, 3100, 2681, 2978, 2836, 2590, 2527, 2914, 2521, 2866, 3151, 3074, 3364, 3167, 3001, 2666, 2428, 3330, 2780, 3217, 2757, 2932, 3486, 2632, 3077, 3055, 3226, 3092, 2770, 2950, 2798, 2789, 2529, 2996, 3363, 2595, 2993, 2583, 2783, 2932, 2792, 2398, 2398, 2873, 2846, 2593, 3153, 2797, 2901, 2802, 3149, 3401, 3573, 3242, 3032, 2981, 2398, 2585, 3191, 2793, 3016, 2978, 2839, 2717, 2995, 2596, 3250, 2891, 2398, 2828, 2500, 2866, 2727, 2910, 2944, 3132, 2769, 3155, 2704, 2591, 2787, 2979, 2763, 2986, 2630, 3486, 2994, 3543, 3369, 2518, 2641, 3113, 3371, 3598, 3058, 2398, 2768, 3063, 2759, 3391, 2982, 2864, 2919, 2669, 2793, 2703, 3103, 2641, 2451, 3194, 3167, 2525, 2950, 2508, 3027, 2495, 2855, 2818, 2467, 3002, 3184, 3028, 2763, 3393, 2711, 3056, 2574, 3598, 3134, 3435, 3147, 2821, 2947, 2969, 2941, 2834, 3206, 2692, 2705, 2782, 2734, 2807, 2398, 2919, 2985, 3124, 3214, 3284, 3167, 2914, 2796, 2878, 3128, 2640, 2683, 2941, 3092, 2736, 2838, 3353, 2913, 2817, 3171, 2838, 3355, 2525, 2548, 2969, 2788, 3598, 3255, 2981, 3227, 2690, 2398, 3261, 3151, 2825, 2456, 3277, 2821, 2404, 3423, 3296, 3021, 3051, 2664, 2823, 3466, 2745, 3068, 2541, 3084, 3087, 2738, 2677, 2764, 3435, 2739, 3214, 2825, 3344, 2765, 3141, 3297, 2690, 2823, 3080, 2496, 3026, 2884, 2815, 3082, 2758, 3055, 3017, 2519, 3217, 3598, 2456, 2398, 3015, 3524, 2986, 2979, 2950, 3240, 2727, 2743, 3369, 2694, 2398, 2843, 2994, 2935, 2718, 3451, 2845, 3011, 2398, 2945, 2441, 3237, 2725, 2801, 3161, 2841, 2557, 2990, 3437, 2898, 3172, 2996, 2917, 3442, 3410, 2755, 3051, 3598, 2671, 2814, 3111, 3308, 2657, 2792, 2398, 2772, 2781, 2943, 2662, 2715, 2547, 3051, 3024, 3038, 2669, 2484, 3032, 3021, 2802, 2967, 2626, 3598, 3147, 3133, 3598, 3191, 3176, 2953, 2583, 2966, 3213, 2910, 2600, 3195, 3174, 2733, 2959, 2709, 2897, 2694, 3215, 2897, 2956, 3274, 3392, 2698, 2998, 3211, 2922, 2579, 3598, 3369, 3178, 2493, 2811, 2676, 3249, 3242, 2764, 2876, 2736, 2949, 2812, 2847, 2673, 2665, 3412, 3598, 2613, 2564, 3210, 3496, 2864, 2632, 2409, 2745, 3005, 3169, 2890, 2983, 3208, 2398, 2412, 2577, 3178, 2652, 2711, 2766, 2548, 2712, 2683, 2712, 2795, 3469, 2869, 3062, 3296, 2438, 2426, 2519, 2819, 2522, 2890, 2834, 3234, 2779, 2876, 3303, 2908, 2917, 2409, 2642, 2890, 2821, 2880, 2954, 3230, 2938, 3122, 3286, 2747, 2780, 3470, 2930, 2614, 2598, 2606, 2882, 3153, 3231, 2794, 2784, 2538, 2587, 2932, 3284, 2989, 2830, 2953, 3069, 2820, 3046, 3084, 2803, 3014, 2822, 2814, 3249, 3038, 2499, 3257, 3589, 3497, 2885, 2884, 2928, 2557, 3598, 2779, 2468, 3245, 3007, 3124, 3169, 2991, 2502, 2400, 2994, 2398, 2883, 2420, 2921, 2855, 2788, 2398, 2653, 3109, 2621, 3002, 3041, 2638, 2884, 2812, 2889, 2796, 2771, 3524, 2703, 3197, 3351, 2910, 2869, 3105, 2659, 3317, 3016, 3071, 2907, 2812, 3206, 2688, 2875, 3508, 3532, 2897, 2959, 2924, 2901, 2828, 2627, 3240, 3260, 3234, 2809, 2549, 3023, 3598, 3441, 3149, 3062, 3016, 2882, 2987, 2600, 3099, 3159, 2756, 3383, 2781, 2863, 2937, 2461, 3082, 2398, 2960, 3295, 2873, 3228, 3123, 2779, 2734, 3082, 2617, 2572, 2500, 2741, 2518, 3504, 2988, 3160, 2858, 3067, 2943, 2398, 2944, 2774, 2962, 2871, 2891, 2764, 2570, 2447, 2803, 2725, 3253, 2919, 2629, 2649, 2832, 2644, 2752, 2560, 2809, 3000, 2796, 3598, 2783, 3598, 3448, 2763, 2756, 3257, 3111, 2516, 3039, 2398, 2894, 2776, 2454, 2855, 3204, 2926, 2904, 3324, 2970, 3120, 2633, 2883, 2978, 2925, 2828, 2717, 3203, 3217, 2586, 3017, 3342, 2765, 2760, 3381, 2826, 2685, 2785, 2713, 3338, 2797, 2984, 3039, 2648, 2489, 2410, 2531, 2926, 2791, 2676, 2858, 2855, 2661]  # Truncate for embedding
+baseline = 2878.0
+mean = 2912.0936
+std = 285.7878483054169
+p5 = 2448.0
+p50 = 2897.0
+p95 = 3431.0
+display_name = "Known Safe Exploration Time (Current)"
+units = "years"
+
+# Create figure with two subplots
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+
+# Handle edge case where all samples are identical (zero variance)
+
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {format_parameter_value(p50, units)}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {format_parameter_value(p5, units)}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key percentiles
+
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
+output_path = get_figure_output_path('mc-distribution-current_known_safe_exploration_years.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Simulation Results Summary: Known Safe Exploration Time (Current)**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 2.88k |
+| Mean (expected value) | 2.91k |
+| Median (50th percentile) | 2.90k |
+| Standard Deviation | 286 |
+| 90% Confidence Interval | [2.45k, 3.43k] |
+
+*The histogram shows the distribution of Known Safe Exploration Time (Current) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: Total Exploration Time (dFDA) (10,000 simulations)"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Simulation results
+
+samples = [1265, 678, 1673, 1884, 674, 677, 1132, 856, 1034, 678, 1813, 1701, 1089, 2118, 1400, 678, 1316, 678, 1812, 1012, 930, 681, 2249, 948, 798, 837, 1459, 1314, 1353, 1369, 3995, 809, 757, 679, 1537, 2121, 972, 678, 678, 1571, 1665, 1469, 688, 1208, 1124, 1198, 1804, 1202, 1599, 1090, 1252, 1552, 676, 855, 778, 700, 879, 2668, 678, 1917, 675, 847, 1157, 1509, 1632, 1718, 839, 781, 1789, 926, 677, 677, 678, 1427, 1142, 1611, 799, 1154, 1547, 860, 1391, 689, 832, 822, 677, 1418, 778, 1053, 1412, 1382, 1586, 982, 801, 993, 675, 676, 677, 678, 1342, 678, 824, 2360, 835, 1659, 678, 918, 678, 844, 1770, 675, 1372, 1212, 719, 676, 1093, 749, 1209, 1059, 2853, 899, 678, 1169, 1199, 2450, 1764, 1307, 2616, 677, 699, 678, 818, 676, 1556, 909, 676, 678, 1272, 1767, 3650, 4135, 1355, 678, 674, 1235, 679, 805, 711, 956, 2039, 1153, 946, 678, 675, 770, 1010, 3167, 1133, 1935, 764, 677, 678, 679, 3962, 679, 1767, 678, 1874, 1330, 947, 1018, 693, 1382, 785, 677, 677, 1164, 2813, 1155, 970, 1250, 2370, 1199, 807, 2091, 1367, 2737, 1172, 677, 676, 2943, 3080, 933, 821, 2613, 677, 678, 1564, 815, 1041, 943, 1291, 2526, 1106, 1564, 674, 1013, 678, 677, 678, 847, 1855, 677, 1065, 771, 850, 1959, 1464, 2417, 948, 679, 908, 1216, 1167, 677, 1105, 1205, 4135, 3388, 678, 872, 676, 721, 1273, 2226, 679, 693, 673, 943, 678, 749, 678, 984, 675, 676, 3964, 677, 677, 3307, 4135, 677, 829, 1294, 3090, 678, 895, 1701, 1372, 825, 960, 676, 899, 884, 1208, 737, 1404, 1972, 1151, 1302, 1080, 1045, 679, 1274, 983, 3876, 2803, 1331, 679, 677, 2205, 1232, 1412, 675, 1869, 1389, 677, 777, 1232, 1079, 870, 979, 892, 1149, 2629, 673, 900, 1167, 1258, 827, 675, 1283, 3087, 676, 1796, 850, 1005, 678, 847, 2361, 1505, 3097, 2186, 1376, 3119, 1376, 1756, 867, 1089, 679, 1943, 677, 1706, 927, 2178, 1673, 3273, 1652, 676, 1002, 677, 755, 2696, 1558, 679, 678, 1066, 677, 685, 1270, 2156, 1530, 673, 1264, 1093, 1354, 2879, 674, 721, 1513, 676, 2637, 1316, 1776, 730, 1740, 2042, 1209, 1210, 1238, 678, 952, 949, 1328, 1956, 678, 966, 2646, 679, 679, 1186, 1774, 1052, 2404, 1788, 1771, 1479, 4135, 918, 674, 2858, 784, 1118, 2375, 676, 677, 676, 679, 1376, 1451, 1242, 676, 673, 1081, 777, 1393, 1622, 1139, 1683, 1206, 1457, 679, 933, 1182, 1748, 816, 1448, 884, 970, 1758, 674, 677, 676, 673, 682, 1671, 874, 1182, 2069, 2402, 1000, 2442, 1107, 678, 719, 676, 678, 834, 1729, 3074, 676, 1336, 678, 1407, 962, 675, 1870, 715, 747, 678, 693, 1366, 928, 1284, 1311, 2392, 842, 676, 2040, 848, 2102, 1328, 962, 1300, 3548, 3837, 1091, 1155, 2052, 678, 1287, 1028, 1272, 678, 676, 674, 677, 783, 869, 3518, 2090, 678, 1299, 809, 874, 1173, 1540, 844, 2036, 677, 1049, 4135, 1201, 2567, 1106, 1504, 1008, 939, 679, 1368, 678, 1586, 2063, 1315, 873, 1389, 861, 1878, 675, 846, 674, 676, 2457, 1831, 679, 676, 673, 743, 4135, 1372, 735, 1398, 676, 867, 1112, 990, 1715, 1297, 1589, 679, 1835, 2902, 678, 678, 2415, 926, 2520, 791, 2602, 1134, 1228, 2788, 832, 678, 788, 1387, 676, 1558, 745, 2146, 673, 679, 675, 678, 1220, 933, 891, 945, 1187, 678, 1627, 1583, 1330, 1481, 1258, 3738, 989, 861, 679, 678, 677, 678, 999, 1288, 1079, 679, 1837, 1661, 945, 693, 1473, 1175, 676, 1001, 1231, 678, 1177, 676, 2415, 2285, 891, 1312, 673, 677, 869, 678, 1635, 3652, 677, 678, 1211, 2870, 677, 1221, 3275, 675, 677, 801, 753, 1739, 1215, 675, 1443, 727, 2324, 704, 701, 1467, 1686, 1384, 675, 1464, 678, 1211, 676, 1382, 679, 677, 1635, 1215, 711, 2596, 792, 1066, 1236, 708, 1404, 747, 807, 2456, 678, 673, 2870, 4135, 810, 674, 860, 873, 927, 677, 1502, 1451, 676, 1620, 3780, 1163, 845, 955, 1536, 675, 1158, 818, 3328, 936, 2974, 677, 1510, 1276, 678, 1167, 2235, 852, 675, 1033, 678, 843, 992, 675, 675, 1413, 752, 673, 1709, 1239, 679, 677, 1765, 1300, 4135, 1360, 1332, 941, 1744, 1546, 2291, 753, 795, 773, 1715, 2674, 783, 800, 1272, 895, 1898, 673, 678, 679, 673, 678, 678, 921, 2100, 896, 678, 1008, 2017, 678, 678, 1483, 909, 1568, 1036, 1622, 678, 1037, 915, 677, 676, 1606, 838, 678, 983, 2120, 673, 676, 678, 2612, 1247, 1690, 677, 677, 1383, 1083, 1474, 928, 1244, 1153, 1701, 1733, 675, 673, 1958, 2200, 678, 675, 1111, 1873, 3226, 1444, 827, 678, 1052, 866, 678, 3770, 3201, 2130, 678, 1786, 1560, 1379, 2288, 1556, 1662, 1558, 1293, 675, 1101, 737, 677, 3000, 3090, 2450, 1226, 2437, 1052, 1186, 677, 1340, 1085, 677, 1011, 993, 3226, 1830, 1052, 1221, 1074, 920, 678, 950, 679, 677, 1439, 1335, 675, 967, 1951, 2030, 1988, 1070, 678, 678, 1297, 1325, 2342, 2083, 961, 677, 855, 1197, 920, 727, 1224, 761, 704, 1270, 812, 1217, 1240, 677, 772, 2574, 677, 674, 675, 1064, 1065, 970, 2237, 673, 1339, 2782, 677, 823, 679, 678, 851, 2558, 3308, 846, 3448, 1068, 3138, 985, 1134, 1314, 4135, 1782, 679, 1918, 832, 768, 1847, 1065, 1244, 1054, 1290, 1364, 674, 1587, 678, 676, 1007, 1101, 679, 1759, 677, 809, 724, 1014, 1244, 678, 1645, 1087, 674, 674, 1036, 909, 979, 1026, 1203, 1893, 677, 677, 677, 1252, 2281, 797, 673, 675, 678, 736, 808, 1070, 859, 2017, 683, 678, 1410, 676, 1334, 1114, 952, 2829, 707, 3798, 907, 677, 1091, 678, 679, 1340, 1480, 707, 1941, 2159, 2572, 1456, 2457, 674, 856, 678, 1126, 730, 941, 3400, 939, 1354, 903, 1095, 1048, 1384, 2170, 2936, 1268, 1512, 677, 988, 1884, 1798, 1193, 1821, 1421, 2218, 1252, 836, 1289, 673, 1328, 673, 675, 1387, 1409, 677, 679, 2468, 771, 4135, 1043, 1349, 2880, 1134, 678, 975, 1021, 676, 890, 679, 1865, 1067, 875, 977, 1201, 1538, 678, 678, 2089, 806, 676, 1380, 1397, 676, 1206, 1657, 1321, 1553, 676, 1286, 864, 771, 1803, 2642, 3220, 2383, 975, 1303, 1690, 1127, 1134, 1751]  # Truncate for embedding
+baseline = 1268.0
+mean = 1297.0063
+std = 758.2338956155351
+p5 = 675.0
+p50 = 1036.0
+p95 = 2927.0499999999993
+display_name = "Total Exploration Time (dFDA)"
+units = "years"
+
+# Create figure with two subplots
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+
+# Handle edge case where all samples are identical (zero variance)
+
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {format_parameter_value(p50, units)}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {format_parameter_value(p5, units)}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key percentiles
+
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
+output_path = get_figure_output_path('mc-distribution-dfda_total_exploration_years.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Simulation Results Summary: Total Exploration Time (dFDA)**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 1.27k |
+| Mean (expected value) | 1.30k |
+| Median (50th percentile) | 1.04k |
+| Standard Deviation | 758 |
+| 90% Confidence Interval | [675, 2.93k] |
+
+*The histogram shows the distribution of Total Exploration Time (dFDA) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

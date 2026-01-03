@@ -1078,6 +1078,86 @@ Platform technologies may actually produce *increasing* returns per trial over t
 - **Network pharmacology**: Understanding how drugs affect biological networks (not just single targets) reveals unexpected therapeutic applications. More data = better network models = higher hit rates
 - **Biomarker discovery**: Large-scale trial data identifies patient subpopulations who respond to specific treatments, enabling precision targeting that increases trial success rates
 - **Failure analysis**: Systematically studying why trials fail (wrong dose, wrong population, wrong endpoint) improves future trial design
+- **Biological model refinement**: Every trial (success or failure) teaches us how human biology responds to interventions. This cumulative knowledge improves our mechanistic understanding of disease pathways, enabling increasingly accurate prediction of which candidates will work. The ratio of effective treatments per trial should *increase* over time, not decrease.
+
+#### Mathematical Framework: When Would Diminishing Returns Dominate?
+
+We can formalize the competing models to identify when diminishing returns would actually matter.
+
+**Model 1: Linear (Baseline)**
+
+$$
+T_{discovered} = k_0 \cdot N_{trials}
+$$
+
+Where $k_0$ is the constant discovery rate (effective treatments per trial). This assumes the therapeutic space is sampled uniformly at random.
+
+**Model 2: Diminishing Returns (Pessimistic)**
+
+As we exhaust the therapeutic space, the hit rate decreases:
+
+$$
+k_{dim}(s) = k_0 \cdot (1 - s)
+$$
+
+Where $s = S_{explored}/S_{total}$ is the fraction of therapeutic space already tested. At current exploration ($s < 0.01$), this gives $k_{dim} \approx 0.99 \cdot k_0$, virtually identical to linear.
+
+**Model 3: Learning/Compounding (Optimistic)**
+
+Each trial improves our biological models, increasing future hit rates:
+
+$$
+k_{learn}(n) = k_0 \cdot \left(1 + \alpha \cdot \ln(1 + n)\right)
+$$
+
+Where $\alpha$ is the learning coefficient and $n$ is cumulative trials completed. Even modest learning ($\alpha = 0.1$) with 100,000 trials yields $k_{learn} \approx 2.15 \cdot k_0$.
+
+**Model 4: Combined (Realistic)**
+
+Both effects operate simultaneously:
+
+$$
+k_{combined}(s, n) = k_0 \cdot (1 - s) \cdot \left(1 + \alpha \cdot \ln(1 + n)\right)
+$$
+
+**The Crossover Point: When Does Depletion Dominate Learning?**
+
+Diminishing returns dominates when the depletion factor exceeds the learning factor:
+
+$$
+(1 - s) < \frac{1}{1 + \alpha \cdot \ln(1 + n)}
+$$
+
+Solving for the critical exploration fraction:
+
+$$
+s_{crossover} = 1 - \frac{1}{1 + \alpha \cdot \ln(1 + n)}
+$$
+
+**Numerical Analysis:**
+
+| Learning Coefficient ($\alpha$) | Trials Completed ($n$) | Crossover Exploration ($s_{crossover}$) |
+|:---:|:---:|:---:|
+| 0.05 (weak) | 100,000 | 37% |
+| 0.10 (modest) | 100,000 | 53% |
+| 0.15 (strong) | 100,000 | 63% |
+| 0.10 (modest) | 1,000,000 | 61% |
+
+**Interpretation**: Even with weak learning effects, diminishing returns only dominates after exploring 37%+ of therapeutic space. With modest learning, the crossover occurs at 53%+ exploration.
+
+**Timeline to Crossover:**
+
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require:
+
+- **Current pace** ({{< var current_trials_per_year >}} trials/year): ~1,500 years for single compounds
+- **With dFDA** ({{< var dfda_trials_per_year_capacity >}} trials/year): ~125 years
+
+For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take:
+
+- **Current pace**: ~7 million years
+- **With dFDA**: ~600,000 years
+
+**Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
 #### The Conservative Default: Linear Assumption
 
