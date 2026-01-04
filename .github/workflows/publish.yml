@@ -312,3 +312,69 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1
+
+  build-radar:
+    name: Build RADAR Paper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-radar-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-radar-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render RADAR Paper
+        run: python scripts/render-quarto.py radar
+        timeout-minutes: 10
+
+      - name: Deploy RADAR Paper to Netlify (immediate)
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/radar/_site/radar'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy RADAR paper from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RADAR_SITE_ID }}
+        timeout-minutes: 1

@@ -52,6 +52,7 @@ const QUARTO_CONFIGS = [
   '_quarto-economics.yml',
   '_quarto-iab.yml',
   '_quarto-wishocracy.yml',
+  '_quarto-radar.yml',
   '_quarto-test.yml',
 ];
 
@@ -115,7 +116,7 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
 
 /**
  * Generate prompt for favicon based on config
- * Uses bold black & white design with content-relevant symbols
+ * Uses ultra-minimalist 2-color (black & white) design
  */
 function generateFaviconPrompt(config: QuartoConfig): string {
   const configName = config.fileName.toLowerCase();
@@ -128,56 +129,38 @@ function generateFaviconPrompt(config: QuartoConfig): string {
 The symbol should clearly communicate "death to disease" or "no more disease".
 Think: a warning sign or prohibition symbol, but for disease/death.`;
   } else if (configName.includes('economics')) {
-    // 1% Treaty economics paper - about redirecting 1% of military spending
-    iconConcept = `A bold "1%" symbol, or a COIN/DOLLAR being transformed into a MEDICAL CROSS or PILL.
-Could also be a PIE CHART with 1% slice highlighted, or military symbol (star/tank) morphing into medical symbol.
-The symbol should communicate "small percentage = big health impact".`;
+    iconConcept = `"1%" text on a scroll or treaty document shape.`;
   } else if (configName.includes('iab')) {
-    // Incentive Alignment Bonds - aligning political incentives
-    iconConcept = `A HANDSHAKE symbol, or SCALES OF JUSTICE perfectly balanced, or two ARROWS pointing toward each other meeting in the middle.
-Could also be a MAGNET attracting something, or puzzle pieces clicking together.
-The symbol should communicate "alignment" or "agreement" or "balanced incentives".`;
+    iconConcept = `Letters "IAB" inside a certificate/ribbon badge shape.`;
   } else if (configName.includes('wishocracy')) {
-    // Wishocracy - democratic wish allocation via RAPPA
-    iconConcept = `A BALLOT BOX with a STAR or SPARKLE coming out of it, or a RAISED HAND (voting) with a star/wish symbol.
-Could also be a CHECKBOX with a star, or speech bubbles converging into one.
-The symbol should communicate "collective wishes" or "democratic choice".`;
+    iconConcept = `Letter "W" with a star above it (wish + star).`;
+  } else if (configName.includes('radar')) {
+    iconConcept = `Letter "R" inside concentric radar circles.`;
+  } else if (configName.includes('dfda')) {
+    iconConcept = `Pill/capsule inside a magnifying glass.`;
   } else if (configName.includes('test')) {
-    // Test config
-    iconConcept = `A simple FLASK or BEAKER, or a CHECKMARK inside a circle, or a magnifying glass.
-Basic "testing/verification" symbol.`;
+    iconConcept = `Checkmark.`;
   } else {
-    // Default - global health
-    iconConcept = `A GLOBE with a HEARTBEAT LINE across it, or a MEDICAL CROSS inside a circle.
-The symbol should communicate "global health".`;
+    iconConcept = `Medical cross (plus sign).`;
   }
 
-  return `Create a bold favicon icon in BLACK, RED, and WHITE.
+  return `Create an ultra-minimalist favicon icon using ONLY 2 COLORS: BLACK and WHITE.
 
 STRICT COLOR RULES:
 - Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
-- Icon colors ONLY: BLACK (#000000), RED (#DC2626), and WHITE (#FFFFFF)
-- NO other colors, NO gray, NO gradients
-- The magenta background is a "green screen" - it will be removed
+- Maximum 2 colors in the final icon
 
 DESIGN REQUIREMENTS:
-- BOLD, thick BLACK outlines (minimum 4-6px at 512px resolution)
-- RED for fills or accents
-- WHITE for highlights or negative space within the icon
-- Simple shape that reads clearly at 16x16 pixels
-- Single unified shape - no scattered elements
-- CHUNKY and GEOMETRIC - nothing thin or delicate
+- EXTREMELY SIMPLE
+- Thick bold lines (minimum 8px at 512px resolution)
+- Must be recognizable at 16x16 pixels
+- Think: app icon, not illustration
 
 ICON CONCEPT:
 ${iconConcept}
 
-CRITICAL:
-- Must be instantly recognizable when squinting
-- No fine details - they disappear at small sizes
-- Think: Soviet propaganda poster aesthetic - bold, high contrast
-- The simpler the better
 
-Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black, red, and white.`;
+Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
 }
 
 /**
