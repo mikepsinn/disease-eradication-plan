@@ -13,6 +13,7 @@ dih-render:
 
 book:
   title: "Test PDF Link Rewriting"
+  favicon: assets/icons/test-favicon.png
   # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://test.warondisease.org
   page-navigation: true
@@ -37,6 +38,14 @@ format:
     number-sections: false
     toc: true
     toc-depth: 2
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/test-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/test-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/test-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/test-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/test-android-chrome-512x512.png">
   pdf:
     documentclass: report
     echo: false

@@ -24,7 +24,7 @@ book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
   # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://impact.warondisease.org
-  favicon: assets/icons/dih-icon-square.png
+  favicon: assets/icons/economics-favicon.png
   page-navigation: true
   chapters:
     - index.qmd
@@ -220,10 +220,11 @@ format:
     include-in-header:
       - text: |
           <!-- Icons -->
-          <link rel="icon" href="assets/icons/favicon.ico">
-          <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/economics-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/economics-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/economics-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/economics-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/economics-android-chrome-512x512.png">
 
           <!-- Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>

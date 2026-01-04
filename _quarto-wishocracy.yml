@@ -22,7 +22,7 @@ website:
   title: "Wishocracy"
   description: "Randomized Aggregated Pairwise Preference Allocation (RAPPA) for Democratic Resource Allocation"
   site-url: https://paper.wishocracy.org
-  favicon: assets/icons/dih-icon-square.png
+  favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
   navbar:
     left:
@@ -149,8 +149,11 @@ format:
     include-in-header:
       - text: |
           <!-- Icons -->
-          <link rel="icon" href="assets/icons/favicon.ico">
-          <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/wishocracy-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/wishocracy-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/wishocracy-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/wishocracy-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/wishocracy-android-chrome-512x512.png">
 
           <!-- Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
