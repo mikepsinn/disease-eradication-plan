@@ -1,0 +1,6 @@
+# Netlify redirects for subsites
+# If a page doesn't exist locally, redirect to the main book site
+# The absence of ! means Netlify tries local files first
+# 301 = permanent (cached, SEO transfers to main site)
+
+/*    https://manual.warondisease.org/:splat    301

@@ -4,6 +4,7 @@ project:
   execute-dir: project
   resources:
     - assets/
+    - _redirects
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd

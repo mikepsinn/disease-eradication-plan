@@ -4,6 +4,7 @@ project:
   execute-dir: project
   resources:
     - assets/
+    - _redirects
 
 # Custom fields for render-quarto.py
 dih-render:
