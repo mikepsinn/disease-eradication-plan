@@ -39,7 +39,7 @@ format:
 
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
-We present a comprehensive statistical framework for generating quantitative "outcome labels" from aggregated N-of-1 observational studies. Our approach integrates data from thousands of individual longitudinal natural experiments, applies temporal precedence analysis with automated hyperparameter optimization, and produces treatment rankings with effect sizes expressed as percent change from baseline. The framework explicitly addresses six of the nine Bradford Hill criteria for causality through a composite quality score, enabling principled prioritization of causal hypotheses.
+We present a comprehensive statistical framework for generating quantitative "outcome labels" from aggregated N-of-1 observational studies [@duan-2013-n-of-1; @lillie-2011-n-of-1]. Our approach integrates data from thousands of individual longitudinal natural experiments, applies temporal precedence analysis with automated hyperparameter optimization, and produces treatment rankings with effect sizes expressed as percent change from baseline. The framework explicitly addresses six of the nine Bradford Hill criteria for causality through a composite quality score, enabling principled prioritization of causal hypotheses.
 
 We describe the complete methodology including: (1) data collection and integration from heterogeneous sources; (2) temporal alignment with onset delay and duration of action optimization; (3) baseline/follow-up separation for within-subject comparison; (4) statistical methods including Pearson and Spearman correlation coefficients with z-score normalization; (5) outcome label generation through predictor analysis; (6) treatment ranking systems; and (7) safety and efficacy signal quantification.
 
@@ -97,7 +97,7 @@ We present a framework that transforms real-world health data into actionable ph
 1. **Quantitative Outcome Labels**: For each treatment, generate effect sizes (percent change from baseline) for all measured outcomes
 2. **Treatment Rankings**: Rank treatments by efficacy and safety within therapeutic categories
 3. **Automated Signal Detection**: Identify safety concerns (negative correlations) and efficacy signals (positive correlations)
-4. **Bradford Hill Integration**: Composite scoring that operationalizes causal inference criteria
+4. **Bradford Hill Integration**: Composite scoring that operationalizes causal inference criteria [@pearl-2009-causality; @hernan-robins-2020]
 5. **Scalable Implementation**: Analyze millions of treatment-outcome pairs automatically
 
 This is not a replacement for RCTs but a complement, providing continuous, population-scale monitoring that can:
@@ -1301,7 +1301,7 @@ Flagged studies are:
 
 ### 12.3 The Confounding Problem
 
-The fundamental challenge:
+As extensively documented in comparative effectiveness research [@schneeweiss-2007-confounding], the fundamental challenge:
 
 $$\text{Treatment} \leftarrow \text{Severity} \rightarrow \text{Outcome}$$
 
@@ -1878,25 +1878,6 @@ This framework represents **the FDA of the Future**, a decentralized system that
 - Operates transparently with open-source methodology and reproducible analyses
 
 The technology exists. The methodology is sound. The data is available. We present this framework not as a replacement for regulatory bodies, but as the infrastructure they will need to fulfill their mission in an era of ubiquitous health data. What remains is the institutional will to build it.
-
----
-
-## References
-
-1. Hill, A.B. (1965). The environment and disease: association or causation? *Proceedings of the Royal Society of Medicine*, 58(5), 295-300.
-
-2. Hazell, L., & Shakir, S.A. (2006). Under-reporting of adverse drug reactions: a systematic review. *Drug Safety*, 29(5), 385-396.
-
-3. Lillie, E.O., et al. (2011). The n-of-1 clinical trial: the ultimate strategy for individualizing medicine? *Personalized Medicine*, 8(2), 161-173.
-
-4. Pearl, J. (2009). *Causality: Models, Reasoning, and Inference*. Cambridge University Press.
-
-5. Hernán, M.A., & Robins, J.M. (2020). *Causal Inference: What If*. Chapman & Hall/CRC.
-
-6. Schneeweiss, S. (2007). Developments in post-marketing comparative effectiveness research. *Clinical Pharmacology & Therapeutics*, 82(2), 143-156.
-
-7. Duan, N., et al. (2013). Single-patient (n-of-1) trials: a pragmatic clinical decision methodology for patient-centered comparative effectiveness research. *Journal of Clinical Epidemiology*, 66(8), S21-S28.
-
 
 ---
 

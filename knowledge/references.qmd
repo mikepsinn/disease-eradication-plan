@@ -5249,6 +5249,29 @@ url: https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
 
 ---
 
+<a id="pearl-2009-causality"></a>
+
+title: Causality: Models, Reasoning, and Inference
+
+type: book
+
+author: Judea Pearl
+
+year: 2009
+
+publisher: Cambridge University Press
+
+url: https://www.cambridge.org/core/books/causality/B0046844FAE10CBF274D4ACBDAEB5F5B
+
+> Foundational text on causal inference introducing do-calculus, structural causal models (SCMs), and graphical causal models
+> Provides mathematical framework for defining and computing causal effects from observational and experimental data
+> Introduces key concepts: interventions (do operator), confounding, counterfactuals, d-separation, causal discovery algorithms
+> First edition 2000, second edition 2009 with new material on counterfactuals and mediation
+> Over 45,000 citations - the seminal work that launched modern causal inference as a discipline
+> — Pearl, J. (2009). [Causality: Models, Reasoning, and Inference](https://www.cambridge.org/core/books/causality/B0046844FAE10CBF274D4ACBDAEB5F5B). Cambridge University Press. 2nd Edition. | [Amazon](https://www.amazon.com/Causality-Reasoning-Inference-Judea-Pearl/dp/052189560X) | [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&citation_for_view=bAipNH8AAAAJ:8k81kl-MbHgC)
+
+---
+
 <a id="historical-healthcare-inflation-rate"></a>
 
 title: Historical healthcare inflation rate (6.2%)
@@ -9905,6 +9928,27 @@ url: https://www.inderscienceonline.com/doi/abs/10.1504/IJSSci.2008.01759
 
 > Decisions involve many intangibles that need to be traded off. To do that, they have to be measured along side tangibles whose measurements must also be evaluated as to, how well, they serve the objectives of the decision maker. The Analytic Hierarchy Process (AHP) is a theory of measurement through pairwise comparisons and relies on the judgements of experts to derive priority scales. This paper has been cited 9,181 times, with 1,042 highly influential citations.
 > — Saaty, T. L. (2008). [Decision making with the analytic hierarchy process](https://www.inderscienceonline.com/doi/abs/10.1504/IJSSci.2008.01759). *International Journal of Services Sciences*, 1(1), 83-98. | [Semantic Scholar](https://www.semanticscholar.org/paper/DECISION-MAKING-WITH-THE-ANALYTIC-HIERARCHY-PROCESS-Saaty/e3c561049eb532e328fc2b8288c490986cd9403f) | [ResearchGate](https://www.researchgate.net/publication/228628807_Decision_making_with_the_Analytic_Hierarchy_Process)
+
+---
+
+<a id="schneeweiss-2007-confounding"></a>
+
+title: Developments in post-marketing comparative effectiveness research
+
+type: article
+
+author: Sebastian Schneeweiss, Jerry Avorn
+
+year: 2007
+
+url: https://pubmed.ncbi.nlm.nih.gov/17522621/
+
+> Seminal review of methods for comparative effectiveness research using real-world healthcare databases
+> Addresses confounding control in observational studies: propensity scores, high-dimensional propensity scores, instrumental variables
+> Discusses administrative data sources: insurance claims, electronic health records, registries
+> Published in Clinical Pharmacology & Therapeutics, 82(2): 143-156
+> Over 700 citations - foundational for pharmacoepidemiology and real-world evidence methods
+> — Schneeweiss, S., & Avorn, J. (2007). [Developments in post-marketing comparative effectiveness research](https://ascpt.onlinelibrary.wiley.com/doi/10.1038/sj.clpt.6100249). *Clinical Pharmacology & Therapeutics*, 82(2), 143-156. | [PubMed](https://pubmed.ncbi.nlm.nih.gov/17522621/) | [Wiley Online](https://ascpt.onlinelibrary.wiley.com/doi/10.1038/sj.clpt.6100249)
 
 ---
 
