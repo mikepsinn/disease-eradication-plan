@@ -415,6 +415,7 @@ class ReferenceID(str, Enum):
     LIFE_EXPECTANCY_GAINS_SMOKING_REDUCTION = "life-expectancy-gains-smoking-reduction"
     LIFE_EXPECTANCY_INCREASE_PRE_1962 = "life-expectancy-increase-pre-1962"
     LIFE_SCIENCES_VENTURE_CAPITAL_2024 = "life-sciences-venture-capital-2024"
+    LILLIE_2011_N_OF_1 = "lillie-2011-n-of-1"
     LOBBYING_100M = "lobbying-100m"
     LOBBYING_BREAST_CANCER_FUNDING = "lobbying-breast-cancer-funding"
     LOBBYING_IMPACT_NIH_FUNDING = "lobbying-impact-nih-funding"

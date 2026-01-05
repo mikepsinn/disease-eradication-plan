@@ -1,0 +1,2039 @@
+---
+title: "The FDA of the Future: A Decentralized Framework for Drug Assessment and Precision Medicine"
+description: "A comprehensive methodology for generating quantitative outcome labels from aggregated N-of-1 observational studies. The framework integrates real-world data from millions of participants, operationalizes Bradford Hill causality criteria through the Predictor Impact Score, and enables personalized optimal daily values for precision medicine."
+author: "Mike P. Sinn"
+affiliation: "Decentralized FDA"
+date: last-modified
+published: true
+tags:
+  - appendix
+  - working-paper
+  - methodology
+  - n-of-1-trials
+  - real-world-evidence
+  - pharmacovigilance
+  - causal-inference
+  - bradford-hill
+  - statistical-methods
+keywords:
+  - pharmacovigilance
+  - real-world evidence
+  - N-of-1 trials
+  - causal inference
+  - Bradford Hill criteria
+  - treatment effects
+  - adverse events
+  - outcome labels
+  - variable relationships
+  - predictor-outcome analysis
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Abstract
+
+Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
+
+We present a comprehensive statistical framework for generating quantitative "outcome labels" from aggregated N-of-1 observational studies. Our approach integrates data from thousands of individual longitudinal natural experiments, applies temporal precedence analysis with automated hyperparameter optimization, and produces treatment rankings with effect sizes expressed as percent change from baseline. The framework explicitly addresses six of the nine Bradford Hill criteria for causality through a composite quality score, enabling principled prioritization of causal hypotheses.
+
+We describe the complete methodology including: (1) data collection and integration from heterogeneous sources; (2) temporal alignment with onset delay and duration of action optimization; (3) baseline/follow-up separation for within-subject comparison; (4) statistical methods including Pearson and Spearman correlation coefficients with z-score normalization; (5) outcome label generation through predictor analysis; (6) treatment ranking systems; and (7) safety and efficacy signal quantification.
+
+While not a replacement for randomized controlled trials, this framework provides a scalable, real-time complement to traditional pharmacovigilance, transforming passive adverse event collection into active, quantitative safety and efficacy monitoring. We present this as both a scientific contribution and an implementation guide for next-generation regulatory systems.
+
+**Keywords**: pharmacovigilance, real-world evidence, N-of-1 trials, causal inference, Bradford Hill criteria, treatment effects, adverse events, outcome labels, variable relationships, predictor-outcome analysis
+
+---
+
+## 1. Introduction
+
+### 1.1 The Pharmacovigilance Gap
+
+Modern pharmacovigilance (the science of detecting, assessing, and preventing adverse effects of pharmaceutical products) faces fundamental limitations:
+
+**Spontaneous Reporting Systems** (e.g., FDA FAERS, EU EudraVigilance):
+- Estimated 1-10% of adverse events are reported [@adverse-event-underreporting]
+- No denominator data (cannot calculate incidence rates)
+- Cannot quantify effect sizes or establish causality
+- Significant reporting lag (months to years)
+- Subject to stimulated reporting and notoriety bias
+
+**Pre-Market Clinical Trials**:
+- Limited sample sizes (typically hundreds to low thousands)
+- Short duration (weeks to months)
+- Homogeneous populations (exclusion criteria eliminate comorbidities)
+- Controlled conditions unlike real-world use
+- Cannot detect rare or delayed adverse events
+- Cost: Average Phase III trial costs $19M and takes 3+ years [@phase-3-cost-per-trial-range]
+
+**Post-Market Studies**:
+- Expensive and time-consuming
+- Often industry-sponsored with potential conflicts
+- Limited to specific questions rather than comprehensive monitoring
+
+### 1.2 The Real-World Data Opportunity
+
+The past decade has seen explosive growth in patient-generated health data:
+
+- **Wearable devices**: 500+ million users globally tracking sleep, activity, heart rate [@wearable-device-adoption-2024]
+- **Health apps**: Symptom trackers, mood journals, medication reminders
+- **Connected health platforms**: Comprehensive longitudinal health records
+- **Patient-reported outcomes**: Systematic symptom and quality-of-life tracking
+
+This data is characterized by:
+- **Longitudinal structure**: Repeated measurements over months to years
+- **Natural variation**: Patients modify treatments without experimental control
+- **Real-world conditions**: Actual usage patterns, not controlled settings
+- **Scale**: Millions of potential participants
+
+### 1.3 Our Contribution
+
+We present a framework that transforms real-world health data into actionable pharmacovigilance intelligence:
+
+1. **Quantitative Outcome Labels**: For each treatment, generate effect sizes (percent change from baseline) for all measured outcomes
+2. **Treatment Rankings**: Rank treatments by efficacy and safety within therapeutic categories
+3. **Automated Signal Detection**: Identify safety concerns (negative correlations) and efficacy signals (positive correlations)
+4. **Bradford Hill Integration**: Composite scoring that operationalizes causal inference criteria
+5. **Scalable Implementation**: Analyze millions of treatment-outcome pairs automatically
+
+This is not a replacement for RCTs but a complement, providing continuous, population-scale monitoring that can:
+- Generate hypotheses for experimental validation
+- Detect signals missed by spontaneous reporting
+- Quantify effects that RCTs can only describe qualitatively
+- Enable personalized benefit-risk assessment
+
+---
+
+## 2. Data Collection and Integration
+
+### 2.1 Data Sources
+
+Our framework integrates data from multiple sources, each contributing different variable types:
+
+| Source Category | Examples | Data Types |
+|----------------|----------|------------|
+| **Wearables** | Fitbit, Apple Watch, Oura Ring, Garmin | Sleep, steps, heart rate, HRV |
+| **Health Apps** | Symptom trackers, mood journals | Symptoms, mood, energy, pain |
+| **Medication Trackers** | Medisafe, MyTherapy | Drug intake, dosage, timing |
+| **Diet Trackers** | MyFitnessPal, Cronometer | Foods, nutrients, calories |
+| **Lab Integrations** | Quest, LabCorp APIs | Biomarkers, blood tests |
+| **EHR Connections** | FHIR-enabled systems | Diagnoses, prescriptions, vitals |
+| **Manual Entry** | Custom tracking | Any user-defined variable |
+| **Environmental** | Weather APIs, air quality | Temperature, humidity, pollution |
+
+### 2.2 Variable Ontology
+
+Variables are organized into semantic categories that inform default processing parameters:
+
+| Category | Examples | Onset Delay | Duration | Filling |
+|----------|----------|-------------|----------|---------|
+| **Treatments** | Drugs, supplements | 30 min | 24 hours | Zero |
+| **Foods** | Diet, beverages | 30 min | 10 days | Zero |
+| **Symptoms** | Pain, fatigue, nausea | 0 | 24 hours | None |
+| **Emotions** | Mood, anxiety, depression | 0 | 24 hours | None |
+| **Vital Signs** | Blood pressure, glucose | 0 | 24 hours | None |
+| **Sleep** | Duration, quality, latency | 0 | 24 hours | None |
+| **Physical Activity** | Steps, exercise, calories burned | 0 | 24 hours | None |
+| **Environment** | Weather, air quality, allergens | 0 | 24 hours | None |
+| **Physique** | Weight, body fat, measurements | 0 | 7 days | None |
+
+### 2.3 Measurement Structure
+
+Each measurement includes:
+
+```
+Measurement {
+    variable_id: int           // Reference to variable definition
+    user_id: int               // Anonymized participant identifier
+    value: float               // Numeric measurement value
+    unit_id: int               // Standardized unit reference
+    start_time: timestamp      // When measurement was taken
+    source_id: int             // Data source for provenance
+    note: string (optional)    // User annotation
+}
+```
+
+### 2.4 Unit Standardization
+
+All measurements are converted to standardized units for cross-source compatibility:
+- Weights → kilograms
+- Distances → meters
+- Temperatures → Celsius
+- Dosages → milligrams
+- Durations → seconds
+- Percentages → 0-100 scale
+- Ratings → 1-5 scale (normalized)
+
+---
+
+## 3. Mathematical Framework
+
+### 3.1 Data Structure
+
+For each participant $i \in \{1, ..., N\}$, we observe time series of predictor variable $P$ (e.g., treatment) and outcome variable $O$ (e.g., symptom):
+
+$$P_i = \{(t_{i,1}^P, p_{i,1}), (t_{i,2}^P, p_{i,2}), ..., (t_{i,n_i}^P, p_{i,n_i})\}$$
+
+$$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_i})\}$$
+
+where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. Our framework handles asynchronous, irregular sampling.
+
+### 3.2 Temporal Alignment
+
+#### 3.2.1 Onset Delay and Duration of Action
+
+A key insight is that treatments do not produce immediate effects. We define:
+
+- **Onset delay** $\delta$: Time lag before treatment produces observable effect
+- **Duration of action** $\tau$: Time window over which effect persists
+
+Constraints:
+$$0 \leq \delta \leq 8{,}640{,}000 \text{ seconds (100 days)}$$
+$$600 \leq \tau \leq 7{,}776{,}000 \text{ seconds (90 days)}$$
+
+#### 3.2.2 Outcome Window Calculation
+
+For a predictor measurement at time $t$, we associate it with outcome measurements in the window:
+
+$$W(t) = \{t_j : t + \delta \leq t_j \leq t + \delta + \tau\}$$
+
+The aligned outcome value is computed as the mean:
+
+$$\bar{o}(t) = \frac{1}{|W(t)|} \sum_{t_j \in W(t)} o_j$$
+
+### 3.3 Pair Generation Strategies
+
+We employ two complementary strategies depending on variable characteristics:
+
+#### 3.3.1 Outcome-Based Pairing (Predictor has Filling Value)
+
+When the predictor has a filling value (e.g., zero for "not taken"), we create one pair per outcome measurement:
+
+```
+For each outcome measurement (t_o, o):
+    window_end = t_o - δ
+    window_start = window_end - τ + 1
+
+    predictor_values = measurements in [window_start, window_end]
+
+    if predictor_values is empty:
+        predictor_value = filling_value  // e.g., 0
+    else:
+        predictor_value = mean(predictor_values)
+
+    create_pair(predictor_value, o)
+```
+
+#### 3.3.2 Predictor-Based Pairing (No Filling Value)
+
+When the predictor has no filling value, we create one pair per predictor measurement:
+
+```
+For each predictor measurement (t_p, p):
+    window_start = t_p + δ
+    window_end = window_start + τ - 1
+
+    outcome_values = measurements in [window_start, window_end]
+
+    if outcome_values is empty:
+        skip this pair
+    else:
+        outcome_value = mean(outcome_values)
+        create_pair(p, outcome_value)
+```
+
+### 3.4 Filling Value Logic
+
+#### 3.4.1 Filling Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| **Zero** | Missing = 0 | Treatments (assume not taken) |
+| **Value** | Missing = specific constant | Known default states |
+| **None** | No imputation | Continuous outcomes |
+| **Interpolation** | Linear interpolation | Slowly-changing variables |
+
+#### 3.4.2 Temporal Boundaries
+
+To prevent spurious correlations from extended filling periods:
+
+- **Earliest filling time**: First recorded measurement (tracking start)
+- **Latest filling time**: Last recorded measurement (tracking end)
+
+Pairs outside these boundaries are excluded. This prevents filling zeros for a treatment before the participant started tracking it.
+
+#### 3.4.3 Conservative Bias
+
+Our filling strategy is deliberately conservative:
+- Zero-filling for treatments assumes non-adherence when no measurement exists
+- This biases toward null findings (attenuated correlations) rather than false positives
+- True effects must overcome this conservative bias to appear significant
+
+### 3.5 Baseline Definition and Outcome Estimation
+
+#### 3.5.1 Within-Subject Comparison
+
+For each participant $i$, we compute the mean predictor value:
+
+$$\bar{p}_i = \frac{1}{n_i} \sum_{j=1}^{n_i} p_{i,j}$$
+
+We partition measurements into **baseline** and **follow-up** periods:
+
+$$\text{Baseline}_i = \{(p, o) : p < \bar{p}_i\}$$
+$$\text{Follow-up}_i = \{(p, o) : p \geq \bar{p}_i\}$$
+
+This creates a natural within-subject comparison:
+- **Baseline**: Periods of below-average predictor exposure
+- **Follow-up**: Periods of above-average predictor exposure
+
+#### 3.5.2 Outcome Means
+
+$$\mu_{\text{baseline},i} = \mathbb{E}[o \mid p < \bar{p}_i]$$
+$$\mu_{\text{follow-up},i} = \mathbb{E}[o \mid p \geq \bar{p}_i]$$
+
+### 3.6 Percent Change from Baseline
+
+The primary effect size metric:
+
+$$\Delta_i = \frac{\mu_{\text{follow-up},i} - \mu_{\text{baseline},i}}{\mu_{\text{baseline},i}} \times 100$$
+
+**Advantages**:
+- **Interpretability**: "15% reduction in pain" is intuitive
+- **Scale invariance**: Enables comparison across different outcome measures
+- **Clinical relevance**: Standard metric in medical literature
+- **Regulatory familiarity**: FDA uses percent change in efficacy assessments
+
+### 3.7 Correlation Coefficients
+
+We compute both parametric and non-parametric measures:
+
+#### 3.7.1 Pearson Correlation (Linear Relationships)
+
+$$r_{\text{Pearson}} = \frac{\sum_{j=1}^{n}(p_j - \bar{p})(o_j - \bar{o})}{\sqrt{\sum_{j=1}^{n}(p_j - \bar{p})^2} \cdot \sqrt{\sum_{j=1}^{n}(o_j - \bar{o})^2}}$$
+
+#### 3.7.2 Spearman Rank Correlation (Monotonic Relationships)
+
+$$r_{\text{Spearman}} = 1 - \frac{6 \sum_{j=1}^{n} d_j^2}{n(n^2 - 1)}$$
+
+where $d_j = \text{rank}(p_j) - \text{rank}(o_j)$.
+
+#### 3.7.3 Forward and Reverse Correlations
+
+We compute both:
+- **Forward**: $P \to O$ (predictor predicts outcome)
+- **Reverse**: $O \to P$ (outcome predicts predictor)
+
+If reverse correlation is stronger, this suggests:
+- Reverse causality (symptom drives treatment-seeking)
+- Confounding by indication
+- Bidirectional relationship
+
+### 3.8 Z-Score Normalization
+
+To assess effect magnitude relative to natural variability:
+
+$$z = \frac{|\Delta|}{\text{RSD}_{\text{baseline}}}$$
+
+where relative standard deviation:
+
+$$\text{RSD}_{\text{baseline}} = \frac{\sigma_{\text{baseline}}}{\mu_{\text{baseline}}} \times 100$$
+
+**Interpretation**: $z > 2$ indicates $p < 0.05$ under normality, meaning the observed effect exceeds typical baseline fluctuation.
+
+### 3.9 Statistical Significance
+
+Two-tailed t-test for correlation significance:
+
+$$t = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}$$
+
+with $n-2$ degrees of freedom. Reject null hypothesis ($H_0: \rho = 0$) at $\alpha = 0.05$ when:
+
+$$|t| > t_{\text{critical}}(n-2, \alpha/2)$$
+
+### 3.10 Hyperparameter Optimization
+
+The onset delay $\delta^*$ and duration of action $\tau^*$ are selected to maximize correlation coefficient strength:
+
+$$(\delta^*, \tau^*) = \underset{\delta, \tau}{\text{argmax}} \; |r(\delta, \tau)|$$
+
+**Search Strategy**:
+1. Initialize with category defaults (e.g., 30 min onset, 24 hr duration for drugs)
+2. Grid search over physiologically plausible ranges
+3. Select parameters yielding strongest correlation coefficient
+
+**Overfitting Mitigation**:
+- Restrict search to category-appropriate ranges
+- Require minimum sample size before optimization
+- Report both optimized and default-parameter results
+
+---
+
+## 4. Population Aggregation
+
+### 4.1 Individual to Population
+
+For population-level estimates, aggregate across $N$ participants:
+
+$$\bar{r} = \frac{1}{N} \sum_{i=1}^{N} r_i$$
+
+$$\bar{\Delta} = \frac{1}{N} \sum_{i=1}^{N} \Delta_i$$
+
+### 4.2 Standard Error and Confidence Intervals
+
+$$\text{SE}_{\bar{r}} = \frac{\sigma_r}{\sqrt{N}}$$
+
+$$\text{CI}_{95\%} = \bar{r} \pm 1.96 \cdot \text{SE}_{\bar{r}}$$
+
+### 4.3 Heterogeneity Assessment
+
+Between-participant variance:
+
+$$\sigma^2_{\text{between}} = \text{Var}(r_i)$$
+
+High heterogeneity suggests:
+- Subgroup effects (responders vs. non-responders)
+- Interaction with unmeasured factors
+- Need for personalized analysis
+
+---
+
+## 5. Data Quality Requirements
+
+### 5.1 Minimum Thresholds
+
+| Requirement | Threshold | Rationale |
+|------------|-----------|-----------|
+| Predictor value changes | $\geq 5$ | Ensures sufficient variance |
+| Outcome value changes | $\geq 5$ | Ensures sufficient variance |
+| Overlapping pairs | $\geq 30$ | Central limit theorem |
+| Baseline fraction | $\geq 10\%$ | Adequate baseline |
+| Follow-up fraction | $\geq 10\%$ | Adequate predictor exposure |
+| Processed daily measurements | $\geq 4$ | Minimum data density |
+
+### 5.2 Variance Validation
+
+Before computing variable relationships, validate sufficient variance:
+
+$$\text{changes}(X) = \sum_{j=1}^{n-1} \mathbb{1}[x_j \neq x_{j+1}]$$
+
+If $\text{changes}(P) < 5$ or $\text{changes}(O) < 5$, abort with `InsufficientVarianceException`.
+
+### 5.3 Outcome Value Spread
+
+$$\text{spread}_O = \max(O) - \min(O)$$
+
+Variable relationships with zero spread are undefined and excluded.
+
+---
+
+## 6. Predictor Impact Score
+
+The **Predictor Impact Score (PIS)** is a composite metric that quantifies treatment-outcome relationship strength from patient health data, operationalizing Bradford Hill causality criteria to prioritize drug effects for clinical trial validation. It integrates correlation strength, statistical significance, effect magnitude, and multiple Bradford Hill criteria into a single interpretable score. Higher scores indicate predictors with greater, more reliable impact on the outcome.
+
+> **Citation format**: When citing this metric in academic work, use "Predictor Impact Score" with reference to this methodology document.
+
+### 6.0 What Makes the Predictor Impact Score Novel
+
+Unlike simple correlation coefficients, PIS addresses fundamental limitations of observational analysis:
+
+1. **Sample size agnosticism**: Raw correlations don't account for whether N=10 or N=10,000. PIS incorporates saturation functions that weight evidence accumulation.
+
+2. **Temporal ambiguity**: Correlations can't distinguish A→B from B→A. PIS includes a temporality factor comparing forward vs. reverse correlations.
+
+3. **Effect magnitude blindness**: Statistical significance ≠ practical significance. PIS incorporates z-scores to assess effect magnitude relative to baseline variability.
+
+4. **Isolated metrics**: Traditional analysis reports correlation, p-value, and effect size separately. PIS integrates them into a single prioritization metric aligned with Bradford Hill criteria.
+
+**The Predictor Impact Score is not a causal proof**. It's a principled heuristic for ranking which predictor-outcome relationships warrant further investigation, including experimental validation.
+
+### 6.1 User-Level Predictor Impact Score
+
+For individual participant (N-of-1) analyses, we compute:
+
+$$\text{PIS}_{\text{user}} = |r| \cdot S \cdot \phi_z \cdot \phi_{\text{temporal}} \cdot f_{\text{interest}} + \text{PIS}_{\text{agg}}$$
+
+Where:
+- $|r|$ = absolute value of the correlation coefficient (strength)
+- $S$ = statistical significance (1 - p-value)
+- $\phi_z$ = normalized z-score factor (effect magnitude)
+- $\phi_{\text{temporal}}$ = temporality factor (forward vs. reverse causation)
+- $f_{\text{interest}}$ = interest factor (penalizes spurious variable pairs)
+- $\text{PIS}_{\text{agg}}$ = population-level aggregate score (provides context from broader population)
+
+### 6.2 Aggregate (Population-Level) Predictor Impact Score
+
+For population-level analyses aggregated across multiple participants:
+
+$$\text{PIS}_{\text{agg}} = |r_{\text{forward}}| \cdot w \cdot \phi_{\text{users}} \cdot \phi_{\text{pairs}} \cdot \phi_{\text{change}} \cdot \phi_{\text{gradient}}$$
+
+Where:
+- $|r_{\text{forward}}|$ = absolute forward Pearson correlation coefficient (strength)
+- $w$ = weighted average of community votes on plausibility
+- $\phi_{\text{users}} = 1 - e^{-N / N_{\text{sig}}}$ (user saturation, $N_{\text{sig}} = 10$)
+- $\phi_{\text{pairs}} = 1 - e^{-n / n_{\text{sig}}}$ (pair saturation, $n_{\text{sig}}$ = significant pairs threshold)
+- $\phi_{\text{change}} = 1 - e^{-\Delta_{\text{spread}} / \Delta_{\text{sig}}}$ (change spread saturation)
+- $\phi_{\text{gradient}}$ = biological gradient coefficient (dose-response)
+
+The saturation functions asymptotically approach 1 as sample sizes increase, reflecting that consistent findings across more participants strengthen causal inference.
+
+### 6.3 Z-Score and Effect Magnitude Factor
+
+The z-score quantifies the magnitude of the outcome change relative to baseline variability:
+
+$$z = \frac{|\Delta\%_{\text{baseline}}|}{\text{RSD}_{\text{baseline}}}$$
+
+Where:
+- $\Delta\%_{\text{baseline}}$ = percent change from baseline (see below)
+- $\text{RSD}_{\text{baseline}}$ = relative standard deviation of outcome during baseline period
+
+A z-score > 2 indicates statistical significance (p < 0.05), meaning the observed change is unlikely due to random variation.
+
+The **normalized z-score factor** incorporates effect magnitude into the PIS score:
+
+$$\phi_z = \frac{|z|}{|z| + z_{\text{ref}}}$$
+
+Where $z_{\text{ref}} = 2$ (the conventional significance threshold). This saturating function:
+- Approaches 0 for negligible effects (z → 0)
+- Equals 0.5 at the significance threshold (z = 2)
+- Approaches 1 for very large effects (z → ∞)
+
+### 6.4 Temporality Factor
+
+The temporality factor quantifies evidence that the predictor precedes and causes the outcome (rather than reverse causation):
+
+$$\phi_{\text{temporal}} = \frac{|r_{\text{forward}}|}{|r_{\text{forward}}| + |r_{\text{reverse}}|}$$
+
+Where:
+- $r_{\text{forward}}$ = correlation when predictor precedes outcome (P → O)
+- $r_{\text{reverse}}$ = correlation when outcome precedes predictor (O → P)
+
+This factor:
+- Equals 0.5 when forward and reverse correlations are equal (ambiguous causality)
+- Approaches 1 when forward correlation dominates (supports predictor → outcome)
+- Approaches 0 when reverse correlation dominates (suggests reverse causation or confounding by indication)
+
+### 6.5 Percent Change from Baseline
+
+The primary effect size metric expressing treatment impact:
+
+$$\Delta\%_{\text{baseline}} = \frac{\bar{O}_{\text{follow-up}} - \bar{O}_{\text{baseline}}}{\bar{O}_{\text{baseline}}} \times 100$$
+
+Where:
+- $\bar{O}_{\text{follow-up}}$ = mean outcome value during follow-up period (after predictor exposure)
+- $\bar{O}_{\text{baseline}}$ = mean outcome value during baseline period (before predictor exposure)
+
+For outcomes measured in percentages or with zero baseline, we use absolute change instead:
+$$\Delta_{\text{abs}} = \bar{O}_{\text{follow-up}} - \bar{O}_{\text{baseline}}$$
+
+### 6.6 Statistical Significance
+
+The statistical significance component captures confidence in the relationship:
+
+$$S = 1 - p$$
+
+Where $p$ is the p-value from the correlation significance test. Higher values indicate greater confidence that the observed relationship is not due to chance.
+
+### 6.7 Interest Factor
+
+The interest factor $f_{\text{interest}}$ penalizes likely spurious or uninteresting variable pairs:
+
+$$f_{\text{interest}} = f_P \cdot f_O \cdot f_{\text{pair}}$$
+
+Where:
+- $f_P$ = predictor interest factor (reduced for test variables, apps, addresses)
+- $f_O$ = outcome interest factor (reduced for non-outcome categories)
+- $f_{\text{pair}}$ = pair appropriateness (reduced for illogical category combinations)
+
+### 6.8 Additional Data Quality Components
+
+**Skewness Coefficient** (penalizes non-normal distributions):
+$$\phi_{\text{skew}} = \frac{1}{1 + \gamma_{P}^2} \cdot \frac{1}{1 + \gamma_{O}^2}$$
+
+**Kurtosis Coefficient** (penalizes heavy tails):
+$$\phi_{\text{kurt}} = \frac{1}{1 + \kappa_{P}^2} \cdot \frac{1}{1 + \kappa_{O}^2}$$
+
+**Biological Gradient** (dose-response relationship):
+$$\phi_{\text{gradient}} = \left(\frac{\bar{p}_{\text{high}} - \bar{p}}{\sigma_P} - \frac{\bar{p}_{\text{low}} - \bar{p}}{\sigma_P}\right)^2$$
+
+Measures the standardized difference between predictor values that predict high vs. low outcomes.
+
+### 6.9 Bradford Hill Criteria Mapping {#bradford-hill-mapping}
+
+The PIS operationalizes six of the nine Bradford Hill criteria for causality [@bradford-hill-1965]:
+
+| Component | Formula | Bradford Hill Criterion | In PIS Formula |
+|-----------|---------|------------------------|----------------|
+| $\|r\|$ | Correlation magnitude | **Strength** | Yes (direct) |
+| $\phi_z$ | Normalized z-score | **Strength** (effect magnitude) | Yes (user-level) |
+| $\Delta\%$ | Percent change from baseline | **Strength** (clinical significance) | Yes (via $\phi_z$) |
+| $\phi_{\text{users}}, \phi_{\text{pairs}}$ | Sample saturation | **Consistency** | Yes (aggregate) |
+| $\phi_{\text{gradient}}$ | Dose-response coefficient | **Biological Gradient** | Yes (aggregate) |
+| $w$ | Weighted community votes | **Plausibility** | Yes (aggregate) |
+| $f_{\text{interest}}$ | Category appropriateness | **Specificity** | Yes (user-level) |
+| $\phi_{\text{temporal}}$ | Forward/reverse ratio | **Temporality** | Yes (user-level) |
+| $\delta > 0$ | Onset delay requirement | **Temporality** | Enforced in design |
+
+### 6.10 Interpreting Predictor Impact Scores
+
+PIS scores range from 0 to approximately 1 (though values slightly above 1 are possible with very strong evidence). Guidelines for interpretation:
+
+| PIS Range | Interpretation | Recommended Action |
+|-----------|----------------|-------------------|
+| **≥ 0.5** | Strong evidence | High priority for RCT validation |
+| **0.3 - 0.5** | Moderate evidence | Consider for experimental investigation |
+| **0.1 - 0.3** | Weak evidence | Monitor for additional data |
+| **< 0.1** | Insufficient evidence | Low priority; may be noise |
+
+**Important caveats**:
+- These thresholds are preliminary and should be validated against RCT outcomes
+- PIS is relative, not absolute. Use it for prioritization, not proof.
+- High PIS does not guarantee causation; low PIS does not rule it out
+- Context matters: a PIS of 0.2 for a novel relationship may be more interesting than 0.5 for a known one
+
+### 6.11 Optimal Daily Value for Precision Dosing
+
+A key output of our analysis is the **optimal daily value**, the predictor value that historically precedes the best outcomes. This enables personalized, precision dosing recommendations.
+
+#### 6.11.1 Value Predicting High Outcome
+
+The **Value Predicting High Outcome** ($V_{\text{high}}$) is the average predictor value observed when the outcome exceeds its mean:
+
+$$V_{\text{high}} = \frac{1}{|H|} \sum_{(p, o) \in H} p$$
+
+Where:
+- $H = \{(p, o) : o > \bar{O}\}$ is the set of predictor-outcome pairs where outcome exceeds its average
+- $\bar{O}$ = mean outcome value across all pairs
+- $p$ = predictor (cause) value for each pair
+
+**Calculation Process**:
+1. Compute the average outcome value ($\bar{O}$) across all predictor-outcome pairs
+2. Filter pairs to include only those where outcome > $\bar{O}$ (the "high effect" pairs)
+3. Calculate the mean predictor value across these high-effect pairs
+
+#### 6.11.2 Value Predicting Low Outcome
+
+The **Value Predicting Low Outcome** ($V_{\text{low}}$) is the average predictor value observed when the outcome is below its mean:
+
+$$V_{\text{low}} = \frac{1}{|L|} \sum_{(p, o) \in L} p$$
+
+Where:
+- $L = \{(p, o) : o < \bar{O}\}$ is the set of predictor-outcome pairs where outcome is below its average
+
+#### 6.11.3 Grouped Optimal Values
+
+For interpretability, we also calculate **grouped optimal values** that map to common dosing intervals:
+
+- **Grouped Value Predicting High Outcome**: The nearest grouped predictor value (e.g., rounded to typical dosing units) to $V_{\text{high}}$
+- **Grouped Value Predicting Low Outcome**: The nearest grouped predictor value to $V_{\text{low}}$
+
+This allows recommendations like "400mg of Magnesium" rather than "412.7mg of Magnesium."
+
+#### 6.11.4 Precision Dosing Recommendations
+
+These optimal values enable personalized recommendations:
+
+**For Positive Valence Outcomes** (where higher is better, e.g., energy, sleep quality):
+> "Your [Outcome] was highest after [Grouped Value Predicting High Outcome] of [Predictor] over the previous [Duration of Action]."
+>
+> Example: "Your Sleep Quality was highest after 400mg of Magnesium over the previous 24 hours."
+
+**For Negative Valence Outcomes** (where lower is better, e.g., pain, anxiety):
+> "Your [Outcome] was lowest after [Grouped Value Predicting Low Outcome] of [Predictor] over the previous [Duration of Action]."
+>
+> Example: "Your Anxiety Severity was lowest after 100mg of Sertraline over the previous 24 hours."
+
+#### 6.11.5 Mathematical Relationship to Biological Gradient
+
+The optimal values are closely related to the **biological gradient coefficient** ($\phi_{\text{gradient}}$):
+
+$$\phi_{\text{gradient}} = \left(\frac{V_{\text{high}} - \bar{P}}{\sigma_P} - \frac{V_{\text{low}} - \bar{P}}{\sigma_P}\right)^2$$
+
+A larger separation between $V_{\text{high}}$ and $V_{\text{low}}$ indicates:
+- Stronger dose-response relationship
+- More reliable precision dosing recommendations
+- Higher biological gradient coefficient
+
+#### 6.11.6 Clinical Applications
+
+| Metric | Definition | Clinical Use |
+|--------|------------|--------------|
+| $V_{\text{high}}$ | Avg predictor when outcome > mean | Optimal dose for positive outcomes |
+| $V_{\text{low}}$ | Avg predictor when outcome < mean | Dose to avoid for positive outcomes |
+| $V_{\text{high}} - V_{\text{low}}$ | Optimal value spread | Magnitude of dose-response effect |
+
+**Example Application**:
+For a participant tracking Magnesium supplementation and Sleep Quality:
+- $V_{\text{high}}$ = 412mg → Grouped = 400mg (sleep quality highest after this dose)
+- $V_{\text{low}}$ = 127mg → Grouped = 125mg (sleep quality lowest after this dose)
+- Recommendation: "Take approximately 400mg of Magnesium for optimal sleep quality"
+
+#### 6.11.7 Limitations
+
+1. **Correlation ≠ Causation**: Optimal values reflect associations, not guaranteed causal effects
+2. **Individual Variation**: Population optimal values may not be optimal for all individuals
+3. **Context Dependence**: Optimal values may vary by timing, combination with other factors
+4. **Grouping Artifacts**: Rounding to common doses may lose precision
+
+**Best Practice**: Use optimal values as starting points for personal experimentation, not as definitive prescriptions.
+
+#### 6.11.8 Confidence Intervals for Optimal Values
+
+Optimal values should be reported with uncertainty bounds to convey reliability:
+
+$$\text{CI}_{V_{\text{high}}} = V_{\text{high}} \pm t_{\alpha/2} \cdot \frac{\sigma_{p|H}}{\sqrt{|H|}}$$
+
+Where:
+- $\sigma_{p|H}$ = standard deviation of predictor values in high-outcome set $H$
+- $|H|$ = number of pairs in high-outcome set
+- $t_{\alpha/2}$ = critical t-value for desired confidence level
+
+**Interpretation Guidelines**:
+
+| CI Width (relative to mean) | Reliability | Recommendation |
+|----------------------------|-------------|----------------|
+| < 10% | High | Use as primary recommendation |
+| 10-25% | Moderate | Present as range (e.g., "350-450mg") |
+| 25-50% | Low | Insufficient precision for dosing |
+| > 50% | Very Low | Do not use for recommendations |
+
+**Example**: If $V_{\text{high}} = 400\text{mg}$ with 95% CI [380, 420], report: "Optimal dose: 400mg (95% CI: 380-420mg)"
+
+#### 6.11.9 Individual vs Population Optimal Values
+
+Both individual and population optimal values are computed and stored. Guidelines for use:
+
+| Scenario | Recommended Source | Rationale |
+|----------|-------------------|-----------|
+| User has ≥50 paired measurements | Individual $V_{\text{high}}$ | Sufficient personal data |
+| User has 20-50 measurements | Weighted blend | $0.5 \cdot V_{\text{user}} + 0.5 \cdot V_{\text{pop}}$ |
+| User has <20 measurements | Population $V_{\text{high}}$ | Insufficient personal data |
+| User's optimal differs >50% from population | Flag for review | May indicate unique response or data quality issue |
+
+**Blending Formula**:
+
+$$V_{\text{recommended}} = w \cdot V_{\text{user}} + (1-w) \cdot V_{\text{pop}}$$
+
+Where $w = \min(1, n_{\text{user}} / n_{\text{threshold}})$ with $n_{\text{threshold}} = 50$ pairs.
+
+#### 6.11.10 Temporal Stability and Recalculation
+
+Optimal values may drift over time due to:
+- Physiological changes (age, weight, health status)
+- Tolerance development
+- Seasonal factors
+- Lifestyle changes
+
+**Recalculation Policy**:
+
+| Trigger | Action |
+|---------|--------|
+| New measurements added | Recalculate after every 10 new pairs |
+| Time elapsed | Recalculate monthly regardless of new data |
+| Significant life change | User-triggered recalculation |
+| Optimal value drift >20% | Alert user to potential change |
+
+**Rolling Window Option**: For treatments where tolerance is expected, compute optimal values using only the most recent 90 days of data rather than all historical data.
+
+**Stability Metric**:
+$$\text{Stability} = 1 - \frac{|V_{\text{high}}^{\text{current}} - V_{\text{high}}^{\text{previous}}|}{V_{\text{high}}^{\text{previous}}}$$
+
+Stability < 0.8 (>20% change) triggers a notification to the user.
+
+#### 6.11.11 Edge Cases: Minimal Dose-Response
+
+When $V_{\text{high}} \approx V_{\text{low}}$, the predictor shows no clear dose-response relationship:
+
+**Detection Criterion**:
+$$\frac{|V_{\text{high}} - V_{\text{low}}|}{\sigma_P} < 0.5$$
+
+(Less than half a standard deviation apart)
+
+**Possible Interpretations**:
+1. **Threshold effect**: Any dose above zero works equally well
+2. **No effect**: Predictor doesn't influence outcome
+3. **Non-linear response**: U-shaped or inverted-U curve not captured by simple high/low split
+4. **Insufficient variance**: User takes similar doses, preventing detection
+
+**Handling**:
+- Do not display optimal value recommendations when dose-response is minimal
+- Instead report: "No clear dose-response relationship detected for [Predictor] → [Outcome]"
+- Flag for potential non-linear analysis in future versions
+
+#### 6.11.12 Validation of Optimal Values
+
+**The Critical Question**: Do users who follow optimal value recommendations actually experience better outcomes than those who don't?
+
+**Proposed Validation Study**:
+
+1. **Prospective A/B Test**:
+   - Group A: Receives personalized optimal value recommendations
+   - Group B: Receives no recommendations (continues current behavior)
+   - Compare outcome trajectories over 30-90 days
+
+2. **Retrospective Adherence Analysis**:
+   - For users with established optimal values, calculate "adherence score":
+   $$\text{Adherence} = \frac{\text{Days within } \pm 20\% \text{ of } V_{\text{high}}}{\text{Total tracking days}}$$
+   - Correlate adherence with outcome improvement
+
+**Success Metrics**:
+- Users in top adherence quartile should show >15% better outcomes than bottom quartile
+- Optimal value recommendations should outperform random dosing by >10%
+
+**Current Status**: This validation has not been performed. Until validated, optimal values should be presented as "data-driven suggestions" rather than "clinically validated recommendations."
+
+### 6.12 Saturation Constant Rationale
+
+The saturation constants (N_sig, n_sig, etc.) reflect pragmatic thresholds based on statistical and clinical considerations:
+
+| Constant | Value | Rationale |
+|----------|-------|-----------|
+| N_sig (users) | 10 | At N=10, user saturation ≈ 0.63. By N=30, ≈ 0.95. Reflects that consistency across 10+ individuals provides meaningful replication. |
+| n_sig (pairs) | 100 | Central limit theorem suggests n≥30 for normality. We use 100 as the "strong evidence" threshold. |
+| Δ_sig (change spread) | 10% | A 10% change is often considered clinically meaningful across many health outcomes. |
+| z_ref | 2 | Corresponds to p < 0.05 under normality (the conventional significance threshold). |
+
+**These constants are not empirically optimized**. Future work should:
+1. Validate constants against known causal relationships (from RCTs)
+2. Consider domain-specific thresholds (e.g., psychiatric vs. cardiovascular outcomes)
+3. Implement sensitivity analyses to assess robustness to constant choices
+
+### 6.13 Effect Following High vs Low Predictor Values
+
+Beyond optimal values, we calculate the **average outcome following different predictor levels** to quantify dose-response relationships:
+
+#### 6.13.1 Average Outcome Metrics
+
+| Metric | Definition | Clinical Interpretation |
+|--------|------------|------------------------|
+| `average_outcome` | Mean outcome across all pairs | Baseline outcome level |
+| `average_outcome_following_high_predictor` | Mean outcome when predictor > mean | Outcome after high exposure |
+| `average_outcome_following_low_predictor` | Mean outcome when predictor < mean | Outcome after low exposure |
+| `average_daily_high_predictor` | Mean predictor in upper 51% of spread | "High dose" value |
+| `average_daily_low_predictor` | Mean predictor in lower 49% of spread | "Low dose" value |
+
+#### 6.13.2 Calculation
+
+$$\bar{O}_{\text{high}} = \mathbb{E}[O \mid P > \bar{P}]$$
+$$\bar{O}_{\text{low}} = \mathbb{E}[O \mid P \leq \bar{P}]$$
+
+Where $\bar{P}$ is the mean predictor value across all pairs.
+
+**Effect Size from High to Low Cause**:
+$$\Delta_{\text{high-low}} = \frac{\bar{O}_{\text{high}} - \bar{O}_{\text{low}}}{\bar{O}_{\text{low}}} \times 100$$
+
+This metric directly shows the percent difference in outcome between high and low predictor exposure periods.
+
+### 6.14 Predictor Baseline and Treatment Averages
+
+For treatment-response analysis, we distinguish between **baseline** (non-treatment) and **treatment** periods:
+
+| Metric | Definition | Use Case |
+|--------|------------|----------|
+| `predictor_baseline_average_per_day` | Average daily predictor during low-exposure periods | Typical non-treatment value |
+| `predictor_treatment_average_per_day` | Average daily predictor during high-exposure periods | Typical treatment dosage |
+| `predictor_baseline_average_per_duration_of_action` | Baseline cumulative over duration of action | For longer-acting effects |
+| `predictor_treatment_average_per_duration_of_action` | Treatment cumulative over duration of action | Cumulative treatment dose |
+
+**Example**: For a user taking Magnesium supplements:
+- `predictor_baseline_average_per_day` = 50mg (days not supplementing, dietary only)
+- `predictor_treatment_average_per_day` = 400mg (days actively supplementing)
+- This reveals the effective treatment dose vs. background exposure
+
+### 6.15 Relationship Quality Filters
+
+Not all statistically significant relationships are useful. We apply **quality filters** to prioritize actionable findings:
+
+#### 6.15.1 Filter Flags
+
+| Flag | Description | Impact on Ranking |
+|------|-------------|-------------------|
+| `predictor_is_controllable` | User can directly modify this predictor (e.g., food, supplements) | Required for actionable recommendations |
+| `outcome_is_a_goal` | Outcome is something users want to optimize (e.g., mood, energy) | Required for relevance |
+| `plausibly_causal` | Plausible biological mechanism exists | Increases confidence |
+| `obvious` | Relationship is already well-known (e.g., caffeine → alertness) | May deprioritize for discovery |
+| `boring` | Relationship unlikely to interest users | Filters from default views |
+| `interesting_variable_category_pair` | Category combination is typically meaningful (e.g., Treatment → Symptom) | Prioritizes for analysis |
+
+#### 6.15.2 Boring Relationship Definition
+
+A relationship is marked `boring = TRUE` if ANY of:
+- Predictor is not controllable AND outcome is not a goal
+- Relationship could not plausibly be causal
+- Confidence level is LOW
+- Effect size is negligible (|Δ| < 1%)
+- Relationship is trivially obvious
+
+#### 6.15.3 Usefulness and Causality Voting
+
+Users can vote on individual relationships:
+
+| Vote Type | Values | Purpose |
+|-----------|--------|---------|
+| `usefulness_vote` | -1, 0, 1 | Whether knowledge of this relationship is useful |
+| `causality_vote` | -1, 0, 1 | Whether there's a plausible causal mechanism |
+
+Aggregate votes contribute to the PIS plausibility weight ($w$).
+
+### 6.16 Variable Valence
+
+**Valence** indicates whether higher values of a variable are inherently good, bad, or neutral:
+
+| Valence | Meaning | Examples |
+|---------|---------|----------|
+| `positive` | Higher is better | Energy, Sleep Quality, Productivity |
+| `negative` | Lower is better | Pain, Anxiety, Fatigue |
+| `neutral` | Direction depends on context | Heart Rate, Weight |
+
+#### 6.16.1 Impact on Interpretation
+
+Valence affects how we interpret correlation direction:
+
+| Predictor-Outcome Valence | Positive Correlation | Negative Correlation |
+|---------------------------|---------------------|---------------------|
+| Positive → Positive | Both improve together | Trade-off |
+| Positive → Negative | Predictor worsens outcome | Predictor improves outcome |
+| Treatment → Negative Symptom | Side effect | Therapeutic effect |
+
+**Example**: A positive correlation between Sertraline and Depression Severity is BAD (depression has negative valence, so lower is better). The same positive correlation between Sertraline and Energy would be GOOD.
+
+### 6.17 Temporal Parameter Optimization
+
+We optimize `onset_delay` (δ) and `duration_of_action` (τ) to find the temporal parameters that maximize correlation strength:
+
+#### 6.17.1 Stored Optimization Data
+
+| Field | Description |
+|-------|-------------|
+| `correlations_over_delays` | Pearson r values for various onset delays |
+| `correlations_over_durations` | Pearson r values for various durations of action |
+| `onset_delay_with_strongest_pearson_correlation` | Optimal δ value |
+| `pearson_correlation_with_no_onset_delay` | Baseline r for immediate effect |
+| `average_forward_pearson_correlation_over_onset_delays` | Mean r across all tested delays |
+| `average_reverse_pearson_correlation_over_onset_delays` | Mean reverse r across delays |
+
+#### 6.17.2 Optimization Grid
+
+For each predictor-outcome pair, we test:
+- **Onset delays**: 0, 30min, 1hr, 2hr, 4hr, 8hr, 12hr, 24hr, 48hr, 72hr...
+- **Durations**: 1hr, 4hr, 12hr, 24hr, 48hr, 72hr, 1 week, 2 weeks...
+
+The parameters yielding the strongest |r| are selected, subject to category-specific physiological constraints.
+
+#### 6.17.3 Overfitting Protection
+
+To prevent spurious optimization:
+1. **Minimum pairs required**: Only optimize if n > 50 pairs
+2. **Category constraints**: Limit search to plausible ranges (e.g., caffeine onset < 2hr)
+3. **Report both**: Show optimized AND default-parameter results
+4. **Consistency check**: Compare forward vs reverse optimization
+
+### 6.18 Spearman Rank Correlation
+
+In addition to Pearson correlation, we compute **Spearman rank correlation** (`forward_spearman_correlation_coefficient`) for robustness:
+
+$$r_s = 1 - \frac{6 \sum d_i^2}{n(n^2-1)}$$
+
+Where $d_i$ = difference in ranks for each pair.
+
+**Advantages over Pearson**:
+- Robust to outliers
+- Captures monotonic (not just linear) relationships
+- Less affected by skewed distributions
+
+**When to prefer Spearman**:
+- Outcome has skewed distribution (e.g., symptom severity with many zeros)
+- Relationship is monotonic but non-linear (e.g., diminishing returns)
+- Data contains outliers from measurement errors
+
+---
+
+## 7. Outcome Label Generation
+
+### 7.1 Predictor Analysis Reports
+
+For each outcome variable (e.g., Depression Severity), we generate comprehensive "outcome labels" showing:
+
+1. **All predictors ranked by effect size**
+2. **Positive predictors** (treatments/factors that improve the outcome)
+3. **Negative predictors** (treatments/factors that worsen the outcome)
+4. **Effect sizes as percent change from baseline**
+5. **Confidence levels and sample sizes**
+
+### 7.2 Report Structure
+
+```
+Outcome Label: [Outcome Variable Name]
+Population: N = [number] participants
+Total Studies: [number] treatment-outcome pairs analyzed
+
+POSITIVE EFFECTS (Treatments predicting IMPROVEMENT)
+================================================
+Rank | Treatment | Effect Size | 95% CI | N | Confidence
+-----|-----------|-------------|--------|---|------------
+1    | Treatment A | +23.5% | [18.2, 28.8] | 1,247 | High
+2    | Treatment B | +18.2% | [12.1, 24.3] | 892 | High
+3    | Treatment C | +12.7% | [8.3, 17.1] | 2,103 | High
+...
+
+NEGATIVE EFFECTS (Treatments predicting WORSENING)
+=================================================
+Rank | Treatment | Effect Size | 95% CI | N | Confidence
+-----|-----------|-------------|--------|---|------------
+1    | Treatment X | -15.3% | [-20.1, -10.5] | 567 | Medium
+2    | Treatment Y | -8.7% | [-12.3, -5.1] | 1,892 | High
+...
+
+NO SIGNIFICANT EFFECT
+=====================
+[List of treatments with |Δ| < threshold or p > 0.05]
+```
+
+### 7.3 Category-Specific Analysis
+
+Reports are organized by predictor category:
+
+1. **Treatments** (Drugs, Supplements)
+   - Ranked by efficacy (positive Δ)
+   - Safety signals highlighted (negative Δ)
+
+2. **Foods & Nutrients**
+   - Dietary factors affecting outcome
+
+3. **Lifestyle Factors**
+   - Sleep, exercise, activities
+
+4. **Environmental Factors**
+   - Weather, pollution, allergens
+
+5. **Comorbid Conditions**
+   - Other symptoms/conditions as predictors
+
+### 7.4 Verification Status
+
+Each study is classified by verification status:
+
+| Status | Icon | Description |
+|--------|------|-------------|
+| **Verified** | ✓ | Up-voted by users; data reviewed and valid |
+| **Unverified** | ? | Awaiting review |
+| **Flagged** | ✗ | Down-voted; potential data quality issues |
+
+### 7.5 Outcome Labels vs. FDA Drug Labels
+
+Traditional FDA drug labels are **per-drug documents** that list qualitative adverse events and indications based on pre-market trials. They are static (updated infrequently), qualitative ("may cause drowsiness"), and organized around the drug rather than the patient's condition.
+
+**Outcome Labels** invert this paradigm: they are **per-outcome documents** that rank all treatments by quantitative effect size for a given health outcome. They are dynamic (updated continuously as data arrives), quantitative ("↓24.7% depression severity"), and organized around what the patient wants to optimize. This enables patients and clinicians to answer the question: "What works best for my condition?" This is a question traditional drug labels cannot answer.
+
+### 7.6 Worked Example: Complete Outcome Label
+
+**OUTCOME LABEL: Depression Severity**
+*Based on 47,832 participants tracking depression outcomes*
+*Last updated: 2026-01-04 | Data period: 2020-2026*
+
+```
+═══════════════════════════════════════════════════════════════════════════════
+TREATMENTS IMPROVING DEPRESSION (ranked by effect size)
+═══════════════════════════════════════════════════════════════════════════════
+
+Rank  Treatment           Effect      95% CI          N       PIS    Optimal Dose
+─────────────────────────────────────────────────────────────────────────────────
+1     Exercise            ↓ 31.2%    [27.1, 35.3]    12,847  0.67   45 min/day
+2     Bupropion           ↓ 28.3%    [22.1, 34.5]    2,847   0.54   300mg
+3     Sertraline          ↓ 24.7%    [19.8, 29.6]    5,123   0.51   100mg
+4     Sleep (7-9 hrs)     ↓ 22.1%    [18.4, 25.8]    31,204  0.48   8.2 hrs
+5     Venlafaxine         ↓ 21.2%    [15.3, 27.1]    1,892   0.44   150mg
+6     Omega-3             ↓ 18.9%    [14.2, 23.6]    4,521   0.38   2000mg EPA+DHA
+7     Meditation          ↓ 16.4%    [12.1, 20.7]    8,932   0.35   20 min/day
+8     Fluoxetine          ↓ 15.8%    [11.2, 20.4]    3,456   0.33   40mg
+9     Vitamin D           ↓ 12.3%    [8.7, 15.9]     6,789   0.28   4000 IU
+10    Social interaction  ↓ 11.7%    [8.2, 15.2]     9,234   0.26   3+ hrs/day
+
+═══════════════════════════════════════════════════════════════════════════════
+TREATMENTS WORSENING DEPRESSION (safety signals)
+═══════════════════════════════════════════════════════════════════════════════
+
+Rank  Treatment           Effect      95% CI          N       PIS    Note
+─────────────────────────────────────────────────────────────────────────────────
+1     Alcohol (>2/day)    ↑ 23.4%    [18.9, 27.9]    7,234   0.52   Dose-dependent
+2     Sleep deprivation   ↑ 19.8%    [15.2, 24.4]    14,521  0.47   <6 hrs/night
+3     Social isolation    ↑ 15.2%    [11.3, 19.1]    5,892   0.38   <1 hr/day
+4     Refined sugar       ↑ 8.7%     [5.2, 12.2]     11,234  0.24   >50g/day
+
+═══════════════════════════════════════════════════════════════════════════════
+NO SIGNIFICANT EFFECT (|Δ| < 5% or p > 0.05)
+═══════════════════════════════════════════════════════════════════════════════
+
+Multivitamin, Probiotics, B-complex, Magnesium (for depression specifically),
+Ashwagandha, 5-HTP, SAMe, St. John's Wort*
+
+*Note: St. John's Wort shows high heterogeneity (some responders, some non-responders)
+
+Legend: ↓ = improvement (reduction), ↑ = worsening (increase)
+        PIS = Predictor Impact Score (0-1 scale, higher = stronger evidence)
+        Optimal Dose = V_high (predictor value associated with best outcomes)
+```
+
+**Interpretation**: This outcome label shows that for depression, exercise and sleep optimization rival or exceed pharmaceutical interventions in effect size, with stronger evidence bases (higher N). Bupropion and Sertraline lead among medications. The safety signals section highlights modifiable risk factors that worsen depression.
+
+---
+
+## 8. Treatment Ranking System
+
+### 8.1 Within-Category Rankings
+
+For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
+
+1. **Primary**: Effect size (percent change from baseline)
+2. **Secondary**: Confidence level (High > Medium > Low)
+3. **Tertiary**: Sample size
+
+### 8.2 Ranking Algorithm
+
+```
+For each treatment T in category:
+    effect_size = mean(Δ across all participants)
+    confidence = calculate_confidence(p_value, N, n_pairs)
+    PIS = calculate_predicted_impact_score(T)
+
+    rank_score = effect_size × confidence_weight × PIS
+
+Sort treatments by rank_score descending
+```
+
+### 8.3 Confidence Weighting
+
+| Confidence Level | Weight | Criteria |
+|-----------------|--------|----------|
+| **High** | 1.0 | p < 0.01 OR N > 100 OR pairs > 500 |
+| **Medium** | 0.7 | p < 0.05 OR N > 10 OR pairs > 100 |
+| **Low** | 0.4 | Meets minimum thresholds only |
+
+### 8.4 Comparative Effectiveness Display
+
+```
+ANTIDEPRESSANTS RANKED BY EFFICACY FOR DEPRESSION
+=================================================
+
+Rank | Treatment | Effect on Depression | 95% CI | Participants | Confidence
+-----|-----------|---------------------|--------|--------------|------------
+1    | Bupropion 300mg | ↓ 28.3% | [22.1, 34.5] | 2,847 | High
+2    | Sertraline 100mg | ↓ 24.7% | [19.8, 29.6] | 5,123 | High
+3    | Venlafaxine 150mg | ↓ 21.2% | [15.3, 27.1] | 1,892 | High
+4    | Fluoxetine 40mg | ↓ 18.9% | [13.2, 24.6] | 3,456 | High
+...
+
+Legend: ↓ = improvement (reduction in depression severity)
+        ↑ = worsening (increase in depression severity)
+```
+
+---
+
+## 9. Safety and Efficacy Quantification
+
+### 9.1 Safety Signal Detection
+
+**Adverse Effect Identification**:
+- Negative correlations between treatment and beneficial outcomes
+- Positive correlations between treatment and harmful outcomes
+
+```
+SAFETY SIGNALS FOR [TREATMENT NAME]
+===================================
+
+POTENTIAL ADVERSE EFFECTS (statistically significant negative correlations)
+
+Outcome | Effect | 95% CI | Mechanism Plausibility | Action
+--------|--------|--------|----------------------|--------
+Fatigue | +18.3% | [12.1, 24.5] | High (known sedation) | Monitor
+Nausea | +15.7% | [8.9, 22.5] | High (GI effects) | Monitor
+Weight Gain | +8.2% | [4.1, 12.3] | Medium | Long-term monitoring
+Anxiety | +6.5% | [2.1, 10.9] | Low (paradoxical) | Investigate
+```
+
+### 9.2 Efficacy Signal Detection
+
+**Therapeutic Effect Identification**:
+- Positive correlations between treatment and beneficial outcomes
+- Negative correlations between treatment and harmful outcomes (symptom reduction)
+
+```
+EFFICACY SIGNALS FOR [TREATMENT NAME]
+=====================================
+
+THERAPEUTIC EFFECTS (statistically significant positive correlations)
+
+Outcome | Effect | 95% CI | Primary/Secondary | Evidence Strength
+--------|--------|--------|-------------------|------------------
+Depression | ↓ 24.7% | [19.8, 29.6] | Primary | Strong
+Anxiety | ↓ 18.2% | [12.3, 24.1] | Secondary | Strong
+Sleep Quality | ↑ 15.3% | [10.1, 20.5] | Secondary | Moderate
+Energy | ↑ 12.1% | [7.2, 17.0] | Secondary | Moderate
+```
+
+### 9.3 Benefit-Risk Assessment
+
+**Net Clinical Benefit Score**:
+
+$$\text{NCB} = \sum_{i \in \text{benefits}} w_i \cdot |\Delta_i| - \sum_{j \in \text{risks}} w_j \cdot |\Delta_j|$$
+
+where $w$ are importance weights assigned by clinical relevance.
+
+**Example Output**:
+```
+BENEFIT-RISK PROFILE: Sertraline 100mg
+======================================
+
+BENEFITS                          RISKS
+--------                          -----
+Depression: ↓24.7% (w=1.0)       Nausea: ↑8.3% (w=0.3)
+Anxiety: ↓18.2% (w=0.8)          Insomnia: ↑5.1% (w=0.4)
+                                  Sexual dysfunction: ↑12.7% (w=0.5)
+
+Weighted Benefit: 39.26
+Weighted Risk: 8.93
+Net Clinical Benefit: +30.33
+
+OVERALL ASSESSMENT: Favorable benefit-risk profile for depression/anxiety
+```
+
+---
+
+## 10. Addressing the Bradford Hill Criteria {#addressing-bradford-hill}
+
+The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framework for assessing causation from observational data. This section details how our framework addresses each criterion.
+
+### 10.1 Complete Criteria Mapping
+
+| Criterion | How Addressed | Quantitative Metric | In PIS? |
+|-----------|---------------|---------------------|--------------|
+| **Strength** | Effect size magnitude | Pearson $r$, $\Delta$% | Yes |
+| **Consistency** | Cross-participant aggregation | $N$, $n$, SE, CI | Yes |
+| **Specificity** | Category appropriateness | Interest factor | Yes |
+| **Temporality** | Onset delay requirement | $\delta > 0$ enforced | Yes |
+| **Biological Gradient** | Dose-response analysis | Gradient coefficient | Yes |
+| **Plausibility** | Community voting | Up/down votes | Yes |
+| **Coherence** | Literature cross-reference | Narrative | No |
+| **Experiment** | N-of-1 natural experiments | Study design | No |
+| **Analogy** | Similar variable comparison | Narrative | No |
+
+### 10.2 Quantitative Criteria Details
+
+**Strength**:
+- Reports Pearson $r$ with classification (very strong: ≥0.8, strong: ≥0.6, moderate: ≥0.4, weak: ≥0.2, very weak: <0.2)
+- Example: "There is a moderately positive (R = 0.45) relationship between Sertraline and Depression improvement."
+
+**Consistency**:
+- Reports $N$ participants, $n$ paired measurements
+- Notes that spurious associations naturally dissipate as participants modify behaviors based on non-replicating findings
+
+**Temporality**:
+- Onset delay $\delta$ explicitly encodes treatment-to-effect lag
+- Forward vs. reverse correlation comparison identifies potential reverse causality
+
+**Plausibility**:
+- Users vote on biological mechanism plausibility
+- Weighted average contributes to ranking
+- Crowd-sources expert and patient knowledge
+
+---
+
+## 11. Validation and Quality Assurance
+
+### 11.1 User Voting System
+
+Each study can receive user votes:
+
+| Vote | Meaning | Effect |
+|------|---------|--------|
+| **Up-vote** (👍) | Data appears valid, relationship plausible | Included in verified results |
+| **Down-vote** (👎) | Data issues or implausible relationship | Flagged for review |
+| **No vote** | Not yet reviewed | Included in unverified results |
+
+### 11.2 Automated Quality Checks
+
+Before inclusion in reports:
+
+1. **Variance check**: Minimum 5 value changes in both variables
+2. **Sample size check**: Minimum 30 paired measurements
+3. **Baseline adequacy**: ≥10% of data in baseline period
+4. **Effect spread check**: Non-zero outcome variance
+5. **Temporal coverage**: Adequate follow-up duration
+
+### 11.3 Flagged Study Handling
+
+Studies may be flagged for:
+- Insufficient data
+- Extreme outliers
+- Implausible effect sizes (>200% change)
+- Data entry errors
+- Measurement device malfunctions
+
+Flagged studies are:
+- Excluded from primary rankings
+- Available for review in separate section
+- Can be un-flagged after data correction
+
+---
+
+## 12. Limitations and Honest Assessment
+
+### 12.1 Fundamental Limitations
+
+1. **Cannot prove causation**: Observational data cannot rule out unmeasured confounders
+2. **Cannot replace RCTs**: Regulatory approval requires experimental validation
+3. **Cannot handle strong confounding**: Confounding by indication is a major concern for treatments
+4. **Cannot generalize beyond population**: Results reflect the participant population
+
+### 12.2 Methodological Weaknesses
+
+1. **Arbitrary baseline definition**: Using mean as cutoff is convenient but not principled
+2. **Hyperparameter optimization may overfit**: Selecting δ and τ to maximize correlation coefficient risks spurious optima
+3. **Self-selection bias**: Health trackers are not representative of general population
+4. **Measurement error**: Self-reported data contains recall and social desirability biases
+5. **Hawthorne effect**: Tracking may itself change behavior
+6. **Multiple testing**: Millions of pairs inflate false positive rates
+7. **Temporal confounding**: Seasonal effects, life events create spurious correlations
+8. **Confounding by indication**: Sicker patients take more treatments
+
+### 12.3 The Confounding Problem
+
+The fundamental challenge:
+
+$$\text{Treatment} \leftarrow \text{Severity} \rightarrow \text{Outcome}$$
+
+Sicker patients both take more treatment AND have worse outcomes, creating spurious negative correlations.
+
+**Mitigations** (partial):
+- Within-subject comparison reduces between-subject confounding
+- Temporal precedence rules out reverse causation
+- Reverse correlation check identifies bidirectional relationships
+- Large $N$ reduces idiosyncratic confounding
+- Subgroup analysis can identify responder populations
+
+### 12.4 What This Framework CAN Do
+
+Despite limitations:
+
+1. **Generate hypotheses**: Prioritize treatment-outcome pairs for RCT investigation
+2. **Estimate effect sizes**: Provide quantitative estimates absent from spontaneous reports
+3. **Scale discovery**: Analyze millions of pairs automatically
+4. **Real-time monitoring**: Continuous signal detection vs. periodic reviews
+5. **Ecological validity**: Capture real-world conditions
+6. **Personalized insights**: Individual-level alongside population estimates
+7. **Reduce research waste**: Focus RCT resources on promising signals
+
+---
+
+## 13. Implementation Guide
+
+### 13.1 System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     DATA INGESTION LAYER                     │
+├──────────┬──────────┬──────────┬──────────┬────────────────┤
+│ Wearables│ Apps     │ EHR/FHIR │ Manual   │ Environmental  │
+└────┬─────┴────┬─────┴────┬─────┴────┬─────┴───────┬────────┘
+     │          │          │          │             │
+     v          v          v          v             v
+┌─────────────────────────────────────────────────────────────┐
+│                MEASUREMENT NORMALIZATION                     │
+│  • Unit conversion    • Timestamp standardization           │
+│  • Deduplication      • Source attribution                  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              v
+┌─────────────────────────────────────────────────────────────┐
+│                   VARIABLE ONTOLOGY                          │
+│  • Category assignment  • Default parameters                │
+│  • Filling value logic  • Onset/duration defaults           │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              v
+┌─────────────────────────────────────────────────────────────┐
+│              VARIABLE RELATIONSHIP ANALYSIS ENGINE           │
+│  • Pair generation      • Temporal alignment                │
+│  • Statistical tests    • Hyperparameter optimization       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              v
+┌─────────────────────────────────────────────────────────────┐
+│                 POPULATION AGGREGATION                       │
+│  • Cross-user aggregation  • Confidence intervals           │
+│  • Heterogeneity analysis  • Subgroup detection             │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              v
+┌─────────────────────────────────────────────────────────────┐
+│                  REPORT GENERATION                           │
+│  • Outcome labels       • Treatment rankings                │
+│  • Safety signals       • Efficacy signals                  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 13.2 Core Algorithm: Pair Generation
+
+```python
+def generate_pairs(predictor_measurements, outcome_measurements,
+                   onset_delay, duration_of_action, filling_value=None):
+    """
+    Generate predictor-outcome pairs with temporal alignment.
+
+    Args:
+        predictor_measurements: List of (timestamp, value) tuples
+        outcome_measurements: List of (timestamp, value) tuples
+        onset_delay: Seconds before outcome observable
+        duration_of_action: Seconds outcome effect persists
+        filling_value: Value to use when no measurements (None = skip)
+
+    Returns:
+        List of (predictor_value, outcome_value) pairs
+    """
+    pairs = []
+
+    if filling_value is not None:
+        # Outcome-based pairing: one pair per outcome measurement
+        for t_outcome, outcome_value in outcome_measurements:
+            window_end = t_outcome - onset_delay
+            window_start = window_end - duration_of_action + 1
+
+            predictor_values = [p for t, p in predictor_measurements
+                               if window_start <= t <= window_end]
+
+            if predictor_values:
+                predictor_value = mean(predictor_values)
+            else:
+                predictor_value = filling_value
+
+            pairs.append((predictor_value, outcome_value))
+    else:
+        # Predictor-based pairing: one pair per predictor measurement
+        for t_predictor, predictor_value in predictor_measurements:
+            window_start = t_predictor + onset_delay
+            window_end = window_start + duration_of_action - 1
+
+            outcome_values = [o for t, o in outcome_measurements
+                             if window_start <= t <= window_end]
+
+            if outcome_values:
+                outcome_value = mean(outcome_values)
+                pairs.append((predictor_value, outcome_value))
+            # Skip if no outcome measurements in window
+
+    return pairs
+```
+
+### 13.3 Core Algorithm: Baseline Separation
+
+```python
+def separate_baseline_followup(pairs):
+    """
+    Separate pairs into baseline and follow-up based on predictor mean.
+
+    Args:
+        pairs: List of (predictor_value, outcome_value) tuples
+
+    Returns:
+        baseline_pairs, followup_pairs
+    """
+    predictor_values = [p for p, o in pairs]
+    predictor_mean = mean(predictor_values)
+
+    baseline = [(p, o) for p, o in pairs if p < predictor_mean]
+    followup = [(p, o) for p, o in pairs if p >= predictor_mean]
+
+    return baseline, followup
+
+
+def calculate_percent_change(baseline_pairs, followup_pairs):
+    """
+    Calculate percent change from baseline.
+    """
+    baseline_outcomes = [o for p, o in baseline_pairs]
+    followup_outcomes = [o for p, o in followup_pairs]
+
+    mu_baseline = mean(baseline_outcomes)
+    mu_followup = mean(followup_outcomes)
+
+    if mu_baseline == 0:
+        return None  # Cannot compute percent change
+
+    percent_change = ((mu_followup - mu_baseline) / mu_baseline) * 100
+    return percent_change
+```
+
+### 13.4 Core Algorithm: Predictor Impact Score
+
+```python
+def calculate_user_pis(correlation, statistical_significance, z_score,
+                        interest_factor, aggregate_pis):
+    """
+    Calculate user-level PIS for individual N-of-1 analysis.
+
+    PIS_user = |r| × S × φ_z × φ_temporal × f_interest + PIS_agg
+    """
+    Z_REF = 2  # Reference z-score (significance threshold)
+
+    # Strength: absolute correlation
+    r = abs(correlation.forward_pearson)
+
+    # Effect magnitude: normalized z-score factor
+    phi_z = abs(z_score) / (abs(z_score) + Z_REF) if z_score else 0.5
+
+    # Temporality: forward vs reverse correlation ratio
+    r_fwd = abs(correlation.forward_pearson)
+    r_rev = abs(correlation.reverse_pearson)
+    phi_temporal = r_fwd / (r_fwd + r_rev) if (r_fwd + r_rev) > 0 else 0.5
+
+    # Composite user-level score
+    radar = r * statistical_significance * phi_z * phi_temporal * interest_factor
+    radar += aggregate_pis
+
+    return round(radar, 4)
+
+
+def calculate_aggregate_pis(correlation, n_users, n_pairs,
+                             high_outcome_change, low_outcome_change,
+                             weighted_avg_vote, gradient_coefficient):
+    """
+    Calculate population-level aggregate PIS.
+
+    PIS_agg = |r_forward| × w × φ_users × φ_pairs × φ_change × φ_gradient
+    """
+    SIGNIFICANT_USERS = 10
+    SIGNIFICANT_PAIRS = 100
+    SIGNIFICANT_CHANGE_SPREAD = 10
+
+    # Strength: absolute forward correlation
+    r_forward = abs(correlation.forward_pearson)
+
+    # Consistency: user saturation
+    user_saturation = 1 - exp(-n_users / SIGNIFICANT_USERS)
+
+    # Consistency: pair saturation
+    pair_saturation = 1 - exp(-n_pairs / SIGNIFICANT_PAIRS)
+
+    # Clinical significance: change spread saturation
+    change_spread = abs(high_outcome_change - low_outcome_change)
+    if change_spread == 0:
+        change_spread = 1  # Prevent zero PIS
+    change_saturation = 1 - exp(-change_spread / SIGNIFICANT_CHANGE_SPREAD)
+
+    # Biological gradient: dose-response
+    gradient_factor = min(gradient_coefficient, 1.0)  # Cap at 1.0
+
+    # Composite aggregate score
+    radar = (r_forward * weighted_avg_vote * user_saturation *
+            pair_saturation * change_saturation * gradient_factor)
+
+    return round(radar, 4)
+
+
+def calculate_z_score(outcome_percent_change, baseline_rsd):
+    """
+    Calculate z-score: effect magnitude normalized by baseline variability.
+
+    z = |Δ%| / RSD_baseline
+
+    z > 2 indicates p < 0.05 (statistically significant)
+    """
+    if baseline_rsd and baseline_rsd > 0:
+        return round(abs(outcome_percent_change) / baseline_rsd, 2)
+    return None
+
+
+def calculate_temporality_factor(forward_correlation, reverse_correlation):
+    """
+    Calculate temporality factor: evidence for forward causation.
+
+    φ_temporal = |r_forward| / (|r_forward| + |r_reverse|)
+
+    Returns 0.5 if ambiguous, approaches 1 if forward dominates.
+    """
+    r_fwd = abs(forward_correlation)
+    r_rev = abs(reverse_correlation)
+    if r_fwd + r_rev == 0:
+        return 0.5  # No evidence either way
+    return round(r_fwd / (r_fwd + r_rev), 4)
+
+
+def calculate_percent_change_from_baseline(baseline_mean, followup_mean,
+                                            is_percent_unit=False):
+    """
+    Calculate percent change from baseline.
+
+    Δ% = ((followup - baseline) / baseline) × 100
+    """
+    if baseline_mean == 0 or is_percent_unit:
+        return round(followup_mean - baseline_mean, 1)
+    return round((followup_mean - baseline_mean) / baseline_mean * 100, 1)
+
+
+def calculate_interest_factor(predictor_var, outcome_var):
+    """
+    Calculate interest factor penalizing spurious variable pairs.
+
+    f_interest = f_predictor × f_outcome × f_pair
+    """
+    factor = 1.0
+
+    # Predictor-specific penalties
+    if predictor_var.is_test_variable():
+        factor /= 2
+    if predictor_var.is_app_or_website():
+        factor /= 2
+    if predictor_var.is_address():
+        factor /= 2
+
+    # Outcome-specific penalties
+    if outcome_var.is_test_variable():
+        factor /= 2
+    if not outcome_var.is_outcome():
+        factor /= 2
+
+    # Pair appropriateness
+    if not predictor_var.is_predictor():
+        factor /= 2
+    if is_illogical_category_pair(predictor_var, outcome_var):
+        factor /= 10
+
+    return factor
+```
+
+### 13.5 Database Schema (Key Tables)
+
+```sql
+-- Variables (predictors, outcomes, etc.)
+CREATE TABLE variables (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    variable_category_id INT,
+    default_unit_id INT,
+    filling_value FLOAT,
+    filling_type ENUM('zero', 'value', 'none', 'interpolation'),
+    onset_delay INT,  -- seconds, default delay before effect
+    duration_of_action INT,  -- seconds, how long effect persists
+    outcome BOOLEAN,  -- is this an outcome variable?
+    predictor_only BOOLEAN,  -- can only be a predictor (e.g., weather)
+    valence ENUM('positive', 'negative', 'neutral'),  -- interpretation of higher values
+    is_goal BOOLEAN,  -- something users want to optimize
+    controllable BOOLEAN,  -- user can directly modify
+    boring BOOLEAN,  -- filter flag for uninteresting variables
+    predictor BOOLEAN,  -- can influence outcomes
+    optimal_value_message VARCHAR(500),  -- pre-computed recommendation text
+    best_predictor_variable_id INT,  -- strongest predictor for this outcome
+    best_outcome_variable_id INT  -- most affected outcome by this predictor
+);
+
+-- Measurements
+CREATE TABLE measurements (
+    id BIGINT PRIMARY KEY,
+    user_id BIGINT,
+    variable_id INT,
+    value FLOAT,
+    unit_id INT,
+    start_time TIMESTAMP,
+    source_id INT
+);
+
+-- Individual variable relationships (per-user N-of-1 analyses)
+-- Contains correlation coefficients, effect sizes, PIS scores, and Bradford Hill metrics
+CREATE TABLE user_variable_relationships (
+    id BIGINT PRIMARY KEY,
+    user_id BIGINT,
+    predictor_variable_id INT,
+    outcome_variable_id INT,
+
+    -- Correlation coefficients
+    forward_pearson_correlation_coefficient FLOAT,  -- Pearson r
+    reverse_pearson_correlation_coefficient FLOAT,  -- reverse r (for temporality)
+    forward_spearman_correlation_coefficient FLOAT,  -- Spearman r (robust)
+    predictive_pearson_correlation_coefficient FLOAT,  -- with optimized params
+
+    -- Temporal parameters
+    onset_delay INT,  -- optimized delay (seconds)
+    duration_of_action INT,  -- optimized duration (seconds)
+    onset_delay_with_strongest_pearson_correlation INT,  -- best delay found
+    correlations_over_delays TEXT,  -- JSON: r values for each tested delay
+    correlations_over_durations TEXT,  -- JSON: r values for each tested duration
+
+    -- Effect size metrics
+    outcome_follow_up_percent_change_from_baseline FLOAT,  -- Δ%
+    average_outcome FLOAT,  -- mean outcome
+    average_outcome_following_high_predictor FLOAT,  -- outcome when predictor > mean
+    average_outcome_following_low_predictor FLOAT,  -- outcome when predictor < mean
+    average_daily_high_predictor FLOAT,  -- high predictor value
+    average_daily_low_predictor FLOAT,  -- low predictor value
+    predicts_high_outcome_change INT,  -- % change at high predictor
+    predicts_low_outcome_change INT,  -- % change at low predictor
+
+    -- Baseline/treatment metrics
+    outcome_baseline_average FLOAT,
+    outcome_baseline_standard_deviation FLOAT,
+    outcome_baseline_relative_standard_deviation FLOAT,  -- RSD
+    outcome_follow_up_average FLOAT,
+    predictor_baseline_average_per_day FLOAT,  -- non-treatment daily avg
+    predictor_treatment_average_per_day FLOAT,  -- treatment daily avg
+    predictor_baseline_average_per_duration_of_action FLOAT,
+    predictor_treatment_average_per_duration_of_action FLOAT,
+
+    -- Statistical significance
+    z_score FLOAT,  -- effect magnitude / baseline RSD
+    p_value FLOAT,
+    t_value FLOAT,
+    critical_t_value FLOAT,
+    confidence_interval FLOAT,
+    statistical_significance FLOAT,
+
+    -- Optimal values for precision dosing
+    value_predicting_high_outcome FLOAT,  -- V_high
+    value_predicting_low_outcome FLOAT,  -- V_low
+    grouped_predictor_value_closest_to_value_predicting_high_outcome FLOAT,
+    grouped_predictor_value_closest_to_value_predicting_low_outcome FLOAT,
+
+    -- Quality metrics
+    predicted_impact_score FLOAT,  -- PIS_user
+    number_of_pairs INT,
+    predictor_changes INT,  -- variance in predictor
+    outcome_changes INT,  -- variance in outcome
+
+    -- Relationship classification
+    strength_level ENUM('VERY STRONG', 'STRONG', 'MODERATE', 'WEAK', 'VERY WEAK'),
+    confidence_level ENUM('HIGH', 'MEDIUM', 'LOW'),
+    relationship ENUM('POSITIVE', 'NEGATIVE', 'NONE'),
+
+    -- Quality filters
+    boring BOOLEAN,
+    outcome_is_goal BOOLEAN,
+    predictor_is_controllable BOOLEAN,
+    plausibly_causal BOOLEAN,
+    obvious BOOLEAN,
+    interesting_variable_category_pair BOOLEAN,
+
+    -- User feedback
+    usefulness_vote INT,  -- -1, 0, 1
+    causality_vote INT,  -- -1, 0, 1
+    number_of_up_votes INT,
+    number_of_down_votes INT
+);
+
+-- Population-level variable relationships (aggregated N-of-1 analyses)
+-- Combines individual analyses across participants for population-level estimates
+CREATE TABLE global_variable_relationships (
+    id BIGINT PRIMARY KEY,
+    predictor_variable_id INT,
+    outcome_variable_id INT,
+
+    -- Aggregated correlation coefficients
+    forward_pearson_correlation_coefficient FLOAT,
+    reverse_pearson_correlation_coefficient FLOAT,
+    predictive_pearson_correlation_coefficient FLOAT,
+    population_trait_pearson_correlation_coefficient FLOAT,  -- user-level avg correlation
+
+    -- Sample size metrics
+    number_of_users INT,  -- N participants
+    number_of_correlations INT,  -- individual analyses aggregated
+    number_of_pairs INT,  -- total pairs across all users
+
+    -- Aggregated effect sizes
+    outcome_follow_up_percent_change_from_baseline FLOAT,
+    aggregate_predicted_impact_score FLOAT,  -- PIS_agg
+    gradient_coefficient FLOAT,  -- φ_gradient: dose-response
+    confidence_level ENUM('high', 'medium', 'low'),
+    up_votes INT,
+    down_votes INT,
+    -- Population-level optimal values for precision dosing
+    average_daily_high_predictor FLOAT,       -- Avg predictor in upper 51% of spread
+    average_daily_low_predictor FLOAT,        -- Avg predictor in lower 49% of spread
+    value_predicting_high_outcome FLOAT,  -- Population avg V_high
+    value_predicting_low_outcome FLOAT    -- Population avg V_low
+);
+```
+
+---
+
+## 14. Regulatory Considerations
+
+### 14.1 Positioning Relative to RCTs
+
+This framework is **not** intended to:
+- Replace RCTs for regulatory approval
+- Provide definitive causal proof
+- Serve as sole basis for clinical decisions
+
+This framework **is** intended to:
+- Complement spontaneous reporting with quantitative signals
+- Prioritize hypotheses for experimental investigation
+- Provide continuous post-market surveillance
+- Enable real-time safety signal detection
+- Generate evidence for benefit-risk reassessment
+
+### 14.2 Evidence Hierarchy Integration
+
+| Evidence Level | Source | Role of This Framework |
+|---------------|--------|----------------------|
+| Level I | RCTs, Meta-analyses | Gold standard for approval |
+| Level II | Cohort studies | **This framework provides quantitative RWE** |
+| Level III | Case-control | Traditional pharmacovigilance |
+| Level IV | Case series | Spontaneous reports (FAERS) |
+
+### 14.3 FDA Real-World Evidence Framework Alignment
+
+The 21st Century Cures Act mandates FDA evaluation of RWE. This framework supports:
+
+- **FDA Sentinel System**: Provides complementary patient-reported data
+- **Post-market commitments**: Continuous safety monitoring
+- **Label updates**: Quantitative basis for efficacy/safety updates
+- **Comparative effectiveness**: Treatment rankings within classes
+
+---
+
+## 15. Validation Framework
+
+### 15.1 The Critical Question
+
+The ultimate test of PIS validity: **Do high-PIS relationships replicate in RCTs more often than low-PIS ones?**
+
+Until this validation is performed, PIS should be treated as a theoretically-motivated heuristic, not a validated predictive tool.
+
+### 15.2 Proposed Validation Study
+
+**Design**: Retrospective comparison of PIS predictions against published RCT results.
+
+**Method**:
+1. Identify treatment-outcome pairs where both (a) we have sufficient observational data to compute PIS, and (b) RCT evidence exists
+2. Compute PIS for each pair using only data collected before RCT publication
+3. Compare PIS rankings to RCT effect sizes
+4. Assess calibration: Do high-PIS pairs show larger RCT effects?
+
+**Success Metrics**:
+- **Discrimination**: AUC for PIS predicting "RCT shows significant effect" (yes/no)
+- **Calibration**: Correlation between PIS and RCT effect size
+- **Prioritization value**: Proportion of high-PIS pairs validated by RCT vs. low-PIS pairs
+
+**Expected Outcomes**:
+- If PIS ≥ 0.5 pairs have RCT validation rate of 60%+ and PIS < 0.1 pairs have rate < 20%, the metric has practical utility
+- If no discrimination, saturation constants need recalibration or the approach needs fundamental revision
+
+### 15.3 Known Limitations Requiring Validation
+
+1. **Confounding by indication**: Does the temporality factor adequately address reverse causation in treatment contexts?
+2. **Saturation constant sensitivity**: How robust are rankings to ±50% changes in N_sig, n_sig?
+3. **Population generalizability**: Do PIS values from health-tracker users predict effects in general populations?
+
+---
+
+## 16. Future Directions
+
+### 16.1 Methodological Improvements
+
+1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for graph structure learning
+2. **Propensity score integration**: Covariate adjustment for measured confounders
+3. **Bayesian hierarchical models**: More principled cross-participant pooling with uncertainty quantification
+4. **Time-varying effects**: Model how relationships change over time (effect modification)
+5. **Subgroup analysis**: Identify responder vs. non-responder populations using heterogeneity metrics
+6. **Multiple testing correction**: Benjamini-Hochberg for family-wise error control across millions of pairs
+7. **Sensitivity analysis**: E-values or other methods to quantify robustness to unmeasured confounding
+8. **Causal mediation**: Identify mechanisms through which treatments affect outcomes
+9. **Drug-drug interactions**: Detect combination effects and synergies
+
+### 16.2 Validation Priorities
+
+1. **Retrospective RCT comparison**: Compare PIS predictions to published trial results (highest priority)
+2. **Prospective prediction study**: Pre-register PIS predictions, validate against future RCTs
+3. **Domain expert review**: Have clinicians and pharmacologists assess biological plausibility of top PIS relationships
+4. **Sensitivity benchmarking**: Test robustness to different saturation constants and aggregation methods
+
+### 16.3 Implementation Enhancements
+
+1. **Real-time signal detection**: Automated alerts when new high-PIS relationships emerge
+2. **Confidence intervals for PIS**: Bootstrap or Bayesian intervals to quantify uncertainty
+3. **Interactive exploration**: Tools for users to explore their individual PIS relationships
+4. **API access**: Enable researchers to query PIS data programmatically
+
+---
+
+## 17. Conclusion
+
+We have presented a comprehensive framework for generating quantitative pharmacovigilance signals from aggregated N-of-1 observational studies. Key contributions include:
+
+1. **Quantitative outcome labels**: Percent change from baseline for all treatment-outcome pairs
+2. **Treatment ranking systems**: Efficacy and safety rankings within therapeutic categories
+3. **Bradford Hill integration**: Six of nine criteria operationalized in composite Predictor Impact Score
+4. **Scalable implementation**: Automated analysis of millions of variable relationships
+5. **Honest limitations**: Clear acknowledgment of what observational data cannot do
+
+This is not a replacement for RCTs but a powerful complement, providing continuous, population-scale, real-time monitoring that transforms passive adverse event collection into active quantitative pharmacovigilance.
+
+This framework represents **the FDA of the Future**, a decentralized system that:
+- Receives continuous real-world evidence streams from millions of participants
+- Publishes dynamic outcome labels with quantitative effect sizes
+- Maintains treatment rankings updated in real-time
+- Detects safety signals weeks or months before traditional systems
+- Enables truly personalized precision medicine through individual optimal value calculations
+- Operates transparently with open-source methodology and reproducible analyses
+
+The technology exists. The methodology is sound. The data is available. We present this framework not as a replacement for regulatory bodies, but as the infrastructure they will need to fulfill their mission in an era of ubiquitous health data. What remains is the institutional will to build it.
+
+---
+
+## References
+
+1. Hill, A.B. (1965). The environment and disease: association or causation? *Proceedings of the Royal Society of Medicine*, 58(5), 295-300.
+
+2. Hazell, L., & Shakir, S.A. (2006). Under-reporting of adverse drug reactions: a systematic review. *Drug Safety*, 29(5), 385-396.
+
+3. Lillie, E.O., et al. (2011). The n-of-1 clinical trial: the ultimate strategy for individualizing medicine? *Personalized Medicine*, 8(2), 161-173.
+
+4. Pearl, J. (2009). *Causality: Models, Reasoning, and Inference*. Cambridge University Press.
+
+5. Hernán, M.A., & Robins, J.M. (2020). *Causal Inference: What If*. Chapman & Hall/CRC.
+
+6. Schneeweiss, S. (2007). Developments in post-marketing comparative effectiveness research. *Clinical Pharmacology & Therapeutics*, 82(2), 143-156.
+
+7. Duan, N., et al. (2013). Single-patient (n-of-1) trials: a pragmatic clinical decision methodology for patient-centered comparative effectiveness research. *Journal of Clinical Epidemiology*, 66(8), S21-S28.
+
+
+---
+
+## Appendix A: Effect Size Classification
+
+| Absolute Correlation | Classification |
+|---------------------|----------------|
+| $\|r\| \geq 0.8$ | Very Strong |
+| $0.6 \leq \|r\| < 0.8$ | Strong |
+| $0.4 \leq \|r\| < 0.6$ | Moderate |
+| $0.2 \leq \|r\| < 0.4$ | Weak |
+| $\|r\| < 0.2$ | Very Weak |
+
+## Appendix B: Variable Category Defaults
+
+| Category | Onset Delay | Duration of Action | Filling Value |
+|----------|-------------|-------------------|---------------|
+| Treatments | 1,800s (30 min) | 86,400s (1 day) | 0 |
+| Foods | 1,800s (30 min) | 864,000s (10 days) | 0 |
+| Emotions | 0 | 86,400s (1 day) | None |
+| Symptoms | 0 | 86,400s (1 day) | None |
+| Vital Signs | 0 | 86,400s (1 day) | None |
+| Sleep | 0 | 86,400s (1 day) | None |
+| Physical Activity | 0 | 86,400s (1 day) | None |
+| Environment | 0 | 86,400s (1 day) | None |
+
+## Appendix C: Glossary
+
+- **Predictor Variable**: The independent variable hypothesized to influence the outcome (e.g., treatment, food, activity). Formerly called "cause variable."
+- **Outcome Variable**: The dependent variable being measured for changes (e.g., symptom, mood, biomarker). Formerly called "effect variable."
+- **User Variable Relationship**: A per-user N-of-1 analysis record containing correlation coefficients, effect sizes (percent change from baseline), Predictor Impact Scores, and Bradford Hill metrics for a specific predictor-outcome pair. Stored in `user_variable_relationships` table.
+- **Global Variable Relationship**: A population-level aggregation of user variable relationships, combining individual N-of-1 analyses across participants. Stored in `global_variable_relationships` table.
+- **Correlation Coefficient**: The Pearson or Spearman statistical measure of linear/monotonic association between predictor and outcome variables (a component of a variable relationship).
+- **Predictor Impact Score (PIS)**: Composite metric quantifying how much a predictor impacts an outcome. Integrates correlation strength, statistical significance, z-score (effect magnitude), temporality factor, and interest factor at the user level; adds consistency, plausibility, and biological gradient at the aggregate level. Higher scores indicate predictors with greater, more reliable impact. Ranges from 0 to ~1.
+- **Onset Delay ($\delta$)**: Time between predictor exposure and first observable outcome change
+- **Duration of Action ($\tau$)**: Time window over which predictor influence on outcome persists
+- **Baseline Period**: Measurements when predictor exposure is below participant's average
+- **Follow-up Period**: Measurements when predictor exposure is at or above participant's average
+- **Percent Change from Baseline ($\Delta\%$)**: Relative difference between follow-up and baseline outcome means
+- **Z-Score**: Effect magnitude normalized by baseline variability; z > 2 indicates statistical significance
+- **Temporality Factor ($\phi_{\text{temporal}}$)**: Ratio of forward to total correlation, measuring evidence for correct causal direction
+- **Filling Value**: Default value imputed for missing measurements
+- **Outcome Label**: A per-outcome document that ranks all treatments and predictors by their quantitative effect size on a specific health outcome. Unlike traditional FDA drug labels (which are per-drug and qualitative), outcome labels are per-outcome, quantitative, and dynamically updated. They answer the question: "What works best for this condition?" See Section 7.5 for comparison with FDA labels.
+- **Treatment Ranking**: Ordered list of treatments by efficacy or safety for a given outcome, sorted by effect size with confidence weighting. Rankings include percent change from baseline, confidence intervals, sample sizes, and Predictor Impact Scores. See Section 8 for ranking methodology.
+- **Value Predicting High Outcome ($V_{\text{high}}$)**: The average predictor value observed when the outcome exceeds its mean. Used for precision dosing recommendations. This is the "optimal daily value" for achieving better outcomes.
+- **Value Predicting Low Outcome ($V_{\text{low}}$)**: The average predictor value observed when the outcome is below its mean. Represents the predictor value associated with worse outcomes.
+- **Grouped Optimal Value**: The nearest commonly-used dosing value to the calculated optimal value, enabling practical recommendations (e.g., "400mg" instead of "412.7mg")
+- **Optimal Value Spread ($V_{\text{high}} - V_{\text{low}}$)**: The difference between high and low outcome predictor values, indicating the magnitude of dose-response effect
+- **Precision Dosing**: Personalized treatment recommendations based on an individual's historical optimal values, enabling targeted interventions at the dose most likely to produce beneficial outcomes
+- **Average Outcome Following High Predictor ($\bar{O}_{\text{high}}$)**: Mean outcome value observed following above-average predictor exposure
+- **Average Outcome Following Low Predictor ($\bar{O}_{\text{low}}$)**: Mean outcome value observed following below-average predictor exposure
+- **Predictor Baseline Average**: Average predictor value during low-exposure (non-treatment) periods
+- **Predictor Treatment Average**: Average predictor value during high-exposure (treatment) periods
+- **Valence**: Whether higher values of a variable are inherently good (positive), bad (negative), or context-dependent (neutral)
+- **Predictor Is Controllable**: Flag indicating whether the user can directly modify this predictor (e.g., supplements, food, activities)
+- **Outcome Is Goal**: Flag indicating whether this outcome is something users want to optimize
+- **Plausibly Causal**: Flag indicating whether a plausible biological mechanism exists for this relationship
+- **Boring**: Flag indicating relationships unlikely to interest users due to being uncontrollable, non-goal, implausible, or obvious
+- **Interesting Variable Category Pair**: Flag for category combinations that are typically meaningful (e.g., Treatment → Symptom)
+- **Usefulness Vote**: User rating (-1, 0, 1) on whether knowledge of a relationship is practically useful
+- **Causality Vote**: User rating (-1, 0, 1) on whether a plausible causal mechanism exists
+- **Correlations Over Delays**: Stored correlation coefficients calculated with various onset delay values for temporal optimization
+- **Correlations Over Durations**: Stored correlation coefficients calculated with various duration of action values
+- **Forward Spearman Correlation**: Rank-based correlation coefficient that captures monotonic relationships and is robust to outliers
+- **Optimal Value Confidence Interval**: Uncertainty bounds around $V_{\text{high}}$ or $V_{\text{low}}$, reflecting reliability of the estimate based on sample size and variance
+- **Optimal Value Stability**: Metric measuring how much the optimal value has changed over time; stability < 0.8 indicates significant drift
+- **Adherence Score**: Proportion of tracking days where actual predictor value was within ±20% of the recommended optimal value
+- **Dose-Response Detection Threshold**: Criterion ($|V_{\text{high}} - V_{\text{low}}| / \sigma_P < 0.5$) below which no meaningful dose-response exists
+- **Rolling Window Optimal Value**: Optimal value calculated using only recent data (e.g., 90 days) rather than all historical data, useful when tolerance effects are expected
+
+## Appendix D: Worked Example
+
+### Example: Calculating Predictor Impact Score for "Magnesium → Sleep Quality"
+
+**Given data** (hypothetical):
+- N = 47 users tracked both magnesium supplementation and sleep quality
+- n = 2,340 paired observations across all users
+- Forward correlation: r_forward = 0.31
+- Reverse correlation: r_reverse = 0.12
+- Percent change from baseline: Δ% = +18.5% (sleep quality improved)
+- Baseline RSD: 23%
+- Community votes: 15 up, 2 down
+- Effect spread: 22% (difference between high and low magnesium outcomes)
+
+**Step 1: Calculate z-score**
+$$z = \frac{|18.5\%|}{23\%} = 0.80$$
+
+**Step 2: Calculate temporality factor**
+$$\phi_{\text{temporal}} = \frac{|0.31|}{|0.31| + |0.12|} = \frac{0.31}{0.43} = 0.72$$
+
+This suggests forward causation (magnesium → sleep) is more likely than reverse (poor sleep → taking magnesium).
+
+**Step 3: Calculate saturation factors**
+- User saturation: $\phi_{\text{users}} = 1 - e^{-47/10} = 1 - 0.009 = 0.991$
+- Pair saturation: $\phi_{\text{pairs}} = 1 - e^{-2340/100} = 1 - e^{-23.4} ≈ 1.0$
+- Change saturation: $\phi_{\text{change}} = 1 - e^{-22/10} = 1 - 0.11 = 0.89$
+
+**Step 4: Calculate plausibility weight**
+$$w = \frac{15}{15 + 2} = 0.88$$
+
+**Step 5: Compute aggregate PIS**
+$$\text{PIS}_{\text{agg}} = 0.31 × 0.88 × 0.991 × 1.0 × 0.89 × 0.72 = 0.17$$
+
+**Interpretation**: PIS = 0.17 falls in the "weak evidence" range (0.1-0.3). The relationship shows:
+- Modest correlation strength (r = 0.31)
+- Good temporal evidence (φ = 0.72, forward > reverse)
+- Strong consistency (many users and pairs)
+- High plausibility (community agrees mechanism is plausible)
+
+**Recommendation**: This relationship warrants monitoring. As more data accumulates or if effect size increases, it could become a candidate for experimental validation. The temporality factor is encouraging. This doesn't appear to be reverse causation.
+
+---
+
+## Appendix E: Analysis Workflow
+
+1. **Data ingestion**: Collect measurements from all sources
+2. **Normalization**: Standardize units, deduplicate
+3. **Variable assignment**: Map to ontology, assign category defaults
+4. **Pair generation**: Create predictor-outcome pairs with temporal alignment
+5. **Baseline separation**: Partition by below/above average predictor exposure
+6. **Correlation calculation**: Pearson, Spearman, forward/reverse
+7. **Hyperparameter optimization**: Find optimal onset delay and duration
+8. **Effect size calculation**: Percent change from baseline, z-score
+9. **Statistical testing**: p-value, confidence intervals
+10. **Temporality assessment**: Forward/reverse correlation ratio
+11. **Predictor Impact Score calculation**: Composite PIS metric
+12. **User variable relationship storage**: Save individual N-of-1 analyses
+13. **Population aggregation**: Combine into global variable relationships
+14. **Report generation**: Outcome labels, treatment rankings
+
+---
+
+*Decentralized FDA*
+
+---
+
+**Corresponding Author**: M.P. Sinn, Decentralized FDA
+**Conflicts of Interest**: None declared
+**Funding**: None
+**Data Availability**: Framework is open-source; individual patient data not shared
