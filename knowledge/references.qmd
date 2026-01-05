@@ -694,6 +694,26 @@ url: https://arxiv.org/abs/2402.07811
 
 ---
 
+<a id="bradford-hill-1965"></a>
+
+title: The Environment and Disease: Association or Causation?
+
+type: article
+
+author: Austin Bradford Hill
+
+year: 1965
+
+url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1898525/
+
+> Original paper establishing the 9 criteria for evaluating causal relationships in epidemiology
+> Criteria: Strength, Consistency, Specificity, Temporality, Biological Gradient, Plausibility, Coherence, Experiment, Analogy
+> Published in Proceedings of the Royal Society of Medicine
+> Most influential framework for assessing causation from observational data
+> — [PubMed Central: Hill 1965](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1898525/) | [Wikipedia: Bradford Hill Criteria](https://en.wikipedia.org/wiki/Bradford_Hill_criteria)
+
+---
+
 <a id="brazil-medical-research-spending-600m"></a>
 
 title: Brazil medical research spending: $600 million
@@ -2067,6 +2087,27 @@ url: https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_202
 > "DCTs are developing rapidly. However, there is insufficient evidence to confirm which methods are most effective in trial recruitment, retention, or overall cost." Despite this, DCTs have demonstrated potential for significant cost reductions (20-50.0% or more) through reduced site management, travel, and streamlined data collection.
 > "DCTs are considered cost-saving by reducing the number of onsite patient visits and decreasing the costs related to time for study nurses and clinicians."
 > — Rogers et al., 2022, [Systematic review of methods used to conduct decentralised clinical trials](https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf) | Valachis & Lindman, 2024, [Lessons learned from an unsuccessful DCT in Oncology](https://www.nature.com/articles/s41746-024-01214-5)
+
+---
+
+<a id="duan-2013-n-of-1"></a>
+
+title: Single-patient (n-of-1) trials: a pragmatic clinical decision methodology
+
+type: article
+
+author: Naihua Duan, Richard L. Kravitz, Christopher H. Schmid
+
+year: 2013
+
+url: https://pubmed.ncbi.nlm.nih.gov/23849149/
+
+> Single-patient trials (SPTs, a.k.a. n-of-1 trials) are multiple-period crossover trials conducted within individual patients
+> Application of 2,154 single-patient trials in 108 studies for diverse clinical conditions
+> Conditions addressed: neuropsychiatric (36%), musculoskeletal (21%), pulmonary (13%)
+> Published in Journal of Clinical Epidemiology, 66(8 Suppl): S21-S28
+> DOI: 10.1016/j.jclinepi.2013.04.006
+> — [PubMed](https://pubmed.ncbi.nlm.nih.gov/23849149/) | [PMC Full Text](https://pmc.ncbi.nlm.nih.gov/articles/PMC3972259/) | [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S089543561300156X)
 
 ---
 
@@ -5188,6 +5229,26 @@ url: https://heliosvoting.org/
 
 ---
 
+<a id="hernan-robins-2020"></a>
+
+title: Causal Inference: What If
+
+type: book
+
+author: Miguel A. Hernán, James M. Robins
+
+year: 2020
+
+url: https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
+
+> Freely available online textbook on causal inference for scientists who design studies and analyze data
+> Covers counterfactuals, DAGs, randomized experiments, confounding, selection bias, inverse probability weighting, g-estimation, instrumental variables
+> Publisher: Chapman & Hall/CRC
+> Continuously updated - current version available at author's website
+> — [Official Book Website](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/) | [Harvard PDF](https://content.sph.harvard.edu/wwwhsph/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf) | [Code Examples (R/Stata)](https://remlapmot.github.io/cibookex-r/)
+
+---
+
 <a id="historical-healthcare-inflation-rate"></a>
 
 title: Historical healthcare inflation rate (6.2%)
@@ -6178,6 +6239,27 @@ notes: |
 > Post-1962: 1.54 years/decade
 > Reduction: 60% decline in life expectancy growth rate
 > — Source: [US Life Expectancy FDA Budget 1543-2019 CSV](knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv) | [Our World in Data: Life Expectancy](https://ourworldindata.org/life-expectancy)
+
+---
+
+<a id="lillie-2011-n-of-1"></a>
+
+title: The n-of-1 clinical trial: the ultimate strategy for individualizing medicine?
+
+type: article
+
+author: Elizabeth O. Lillie, Bradley Patay, Joel Diamant, Brian Issell, Eric J. Topol, Nicholas J. Schork
+
+year: 2011
+
+url: https://pubmed.ncbi.nlm.nih.gov/21695041/
+
+> N-of-1 trials consider an individual patient as the sole unit of observation investigating efficacy or side-effects
+> Goal: determine optimal intervention for individual patient using objective data-driven criteria
+> Can leverage randomization, washout, crossover periods, and placebo controls
+> Argues for serious attention given contemporary focus on individualized medicine
+> Published in Personalized Medicine, 8(2): 161-173. DOI: 10.2217/pme.11.7
+> — [PubMed](https://pubmed.ncbi.nlm.nih.gov/21695041/) | [PMC Full Text](https://pmc.ncbi.nlm.nih.gov/articles/PMC3118090/) | [Taylor & Francis](https://www.tandfonline.com/doi/full/10.2217/pme.11.7)
 
 ---
 
@@ -11555,6 +11637,27 @@ url: https://www.startus-insights.com/innovators-guide/defence-industry-report/
 
 > "Global military workforce: 11.6 million military industry contractors + ~27 million active military personnel worldwide = approximately 38-40 million total. Biopharmaceutical industry employs 2.2 million worldwide (including manufacturing, marketing, admin), with R&D scientists representing a subset of ~1 million working on actual cures."
 > — StartUs Insights, [Defense Industry Report 2026](https://www.startus-insights.com/innovators-guide/defence-industry-report/) (11.6M contractors) | RUSI/Militarnyi, [Russian Defense Industry Employs 4.5M](https://militarnyi.com/en/news/rusi-russian-military-industry-employs-approximately-4-5-million-people/) | World Bank, Armed Forces Personnel (~27M active military 2020) | StartUs Insights, [Biopharmaceutical Report 2024](https://www.startus-insights.com/innovators-guide/biopharmaceutical-report/) (2.2M biopharm total)
+
+---
+
+<a id="wearable-device-adoption-2024"></a>
+
+title: Wearable Device Market and Adoption Statistics
+
+type: article
+
+author: Statista / IDC
+
+year: 2024
+
+url: https://www.statista.com/topics/1556/wearable-technology/
+
+> Global wearable device users: 1.1 billion in 2024, projected 1.5 billion by 2028
+> Smartwatch users: ~500 million globally (2024)
+> Fitness tracker users: ~300 million globally
+> Primary use cases: Health/fitness tracking (sleep, steps, heart rate, activity)
+> Market value: $186 billion (2024), projected $390 billion by 2030
+> — [Statista: Wearable Technology](https://www.statista.com/topics/1556/wearable-technology/) | [IDC: Wearables Market](https://www.idc.com/promo/wearablevendor) | [Insider Intelligence: Wearables Report](https://www.insiderintelligence.com/insights/wearable-technology-healthcare-medical-devices/)
 
 ---
 

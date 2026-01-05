@@ -212,6 +212,17 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
             replacement = "" if i == depth else "/".join(source_parts[:depth - i]) + "/"
             content = content.replace(pattern, replacement)
 
+    # Use per-paper filtered bibliography if available (fixes all-refs-in-PDF issue)
+    # This ensures standalone paper PDFs only include cited references
+    filtered_bib = project_root / f"references-{config_name}.bib"
+    if filtered_bib.exists():
+        # Replace bibliography path in frontmatter with filtered version
+        # Matches: bibliography:\n  - path or bibliography: path
+        bib_pattern = r'(bibliography:\s*\n\s*-\s*)[^\n]+'
+        content = re.sub(bib_pattern, f'\\1references-{config_name}.bib', content)
+        if verbose:
+            print(f"[*] Using filtered bibliography: references-{config_name}.bib", flush=True)
+
         # Transform same-directory links
         root_dirs = ["assets/", "scripts/", "dih_models/", "brain/", "references.bib"]
 

@@ -11,7 +11,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  index-source: knowledge/appendix/radar-aggregated-n-of-1-framework.qmd
+  index-source: knowledge/appendix/dfda-paper.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
 
 profiles:
@@ -34,7 +34,7 @@ website:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /radar-aggregated-n-of-1-framework.pdf
+        href: /dfda-paper.pdf
       - text: "References"
         href: /#references
       - text: "DIH"
@@ -141,7 +141,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/radar-aggregated-n-of-1-framework.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/dfda-paper.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </div>
     include-in-header:
@@ -169,7 +169,7 @@ format:
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   pdf:
-    output-file: "radar-aggregated-n-of-1-framework.pdf"
+    output-file: "dfda-paper.pdf"
     documentclass: article
     echo: false
     toc: true

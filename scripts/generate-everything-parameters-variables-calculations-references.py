@@ -74,6 +74,7 @@ from generate_references_json import generate_references_json  # noqa: E402
 
 # Import all generator modules
 from dih_models.bibtex_generator import generate_bibtex
+from dih_models.paper_bibliography_generator import generate_all_paper_bibliographies
 from dih_models.chart_generators import (
     generate_tornado_chart_qmd,
     generate_sensitivity_table_qmd,
@@ -556,6 +557,15 @@ def main():
     print("[*] Generating references.bib...")
     bib_output = project_root / "references.bib"
     generate_bibtex(parameters, bib_output, available_refs=available_refs, references_path=references_path)
+    print()
+
+    # Generate per-paper filtered bibliographies (only cited refs in standalone PDFs)
+    print("[*] Generating per-paper filtered bibliographies...")
+    paper_bib_results = generate_all_paper_bibliographies(project_root)
+    if paper_bib_results:
+        print(f"[OK] Generated {len(paper_bib_results)} paper bibliographies")
+    else:
+        print("[*] No standalone papers found or no citations to filter")
     print()
 
     # Generate TypeScript parameters file for Next.js/React apps

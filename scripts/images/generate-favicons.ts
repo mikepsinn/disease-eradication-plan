@@ -52,7 +52,7 @@ const QUARTO_CONFIGS = [
   '_quarto-economics.yml',
   '_quarto-iab.yml',
   '_quarto-wishocracy.yml',
-  '_quarto-radar.yml',
+  '_quarto-dfda.yml',
   '_quarto-test.yml',
 ];
 
@@ -134,8 +134,6 @@ Think: a warning sign or prohibition symbol, but for disease/death.`;
     iconConcept = `Letters "IAB" inside a certificate/ribbon badge shape.`;
   } else if (configName.includes('wishocracy')) {
     iconConcept = `Letter "W" with a star above it (wish + star).`;
-  } else if (configName.includes('radar')) {
-    iconConcept = `Letter "R" inside concentric radar circles.`;
   } else if (configName.includes('dfda')) {
     iconConcept = `Pill/capsule inside a magnifying glass.`;
   } else if (configName.includes('test')) {
