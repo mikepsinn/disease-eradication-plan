@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
-description: Redirecting 1% of global military spending to pragmatic clinical trials advances treatment access over 8 years, saving hundreds of millions of lives at highly cost-effective rates.
+description: Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials saves {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. Cost-saving intervention comparable to smallpox eradication.
 author:
   - name: Mike P. Sinn
     roles:
