@@ -39,19 +39,23 @@ format:
 
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
-We present a comprehensive statistical framework for generating quantitative "outcome labels" from aggregated N-of-1 observational studies [@duan-2013-n-of-1; @lillie-2011-n-of-1]. Our approach integrates data from thousands of individual longitudinal natural experiments, applies temporal precedence analysis with automated hyperparameter optimization, and produces treatment rankings with effect sizes expressed as percent change from baseline. The framework explicitly addresses six of the nine Bradford Hill criteria for causality through a composite quality score, enabling principled prioritization of causal hypotheses.
+We present a comprehensive **two-stage framework** for generating **validated outcome labels** with quantitative effect sizes:
 
-We describe the complete methodology including: (1) data collection and integration from heterogeneous sources; (2) temporal alignment with onset delay and duration of action optimization; (3) baseline/follow-up separation for within-subject comparison; (4) statistical methods including Pearson and Spearman correlation coefficients with z-score normalization; (5) outcome label generation through predictor analysis; (6) treatment ranking systems; and (7) safety and efficacy signal quantification.
+**Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~$0.10 per patient.
 
-While not a replacement for randomized controlled trials, this framework provides a scalable, real-time complement to traditional pharmacovigilance, transforming passive adverse event collection into active, quantitative safety and efficacy monitoring. We present this as both a scientific contribution and an implementation guide for next-generation regulatory systems.
+**Stage 2 (Causal Confirmation)**: High-priority signals (top 0.1-1% by PIS) proceed to pragmatic randomized trials following the RECOVERY/ADAPTABLE model [@recovery-trial-efficiency; @pragmatic-trials-cost-advantage]. Simple randomization embedded in routine care confirms causation at ~$500 per patient (80× cheaper than traditional Phase III trials) while eliminating confounding concerns inherent in observational data.
 
-**Keywords**: pharmacovigilance, real-world evidence, N-of-1 trials, causal inference, Bradford Hill criteria, treatment effects, adverse events, outcome labels, variable relationships, predictor-outcome analysis
+The complete methodology includes: (1) data collection from heterogeneous sources; (2) temporal alignment with onset delay optimization; (3) within-subject baseline/follow-up comparison; (4) Predictor Impact Score calculation operationalizing Bradford Hill criteria; (5) Trial Priority Score for signal-to-trial prioritization; (6) pragmatic trial protocols for causal confirmation; and (7) validated outcome label generation with evidence grades.
+
+This two-stage design addresses the fundamental limitations of purely observational pharmacovigilance (confounding, self-selection, and inability to prove causation) while maintaining the scale and cost advantages of real-world data. The result is a complete pipeline from passive data collection to validated treatment rankings, presented as both scientific methodology and implementation blueprint for next-generation regulatory systems.
+
+**Keywords**: pharmacovigilance, real-world evidence, N-of-1 trials, pragmatic trials, causal inference, Bradford Hill criteria, treatment effects, validated outcome labels, comparative effectiveness, precision medicine
 
 ---
 
-## 1. Introduction
+## Introduction
 
-### 1.1 The Pharmacovigilance Gap
+### The Pharmacovigilance Gap
 
 Modern pharmacovigilance (the science of detecting, assessing, and preventing adverse effects of pharmaceutical products) faces fundamental limitations:
 
@@ -75,7 +79,7 @@ Modern pharmacovigilance (the science of detecting, assessing, and preventing ad
 - Often industry-sponsored with potential conflicts
 - Limited to specific questions rather than comprehensive monitoring
 
-### 1.2 The Real-World Data Opportunity
+### The Real-World Data Opportunity
 
 The past decade has seen explosive growth in patient-generated health data:
 
@@ -90,7 +94,7 @@ This data is characterized by:
 - **Real-world conditions**: Actual usage patterns, not controlled settings
 - **Scale**: Millions of potential participants
 
-### 1.3 Our Contribution
+### Our Contribution
 
 We present a framework that transforms real-world health data into actionable pharmacovigilance intelligence:
 
@@ -108,9 +112,9 @@ This is not a replacement for RCTs but a complement, providing continuous, popul
 
 ---
 
-## 2. Data Collection and Integration
+## Data Collection and Integration
 
-### 2.1 Data Sources
+### Data Sources
 
 Our framework integrates data from multiple sources, each contributing different variable types:
 
@@ -125,7 +129,7 @@ Our framework integrates data from multiple sources, each contributing different
 | **Manual Entry** | Custom tracking | Any user-defined variable |
 | **Environmental** | Weather APIs, air quality | Temperature, humidity, pollution |
 
-### 2.2 Variable Ontology
+### Variable Ontology
 
 Variables are organized into semantic categories that inform default processing parameters:
 
@@ -141,7 +145,7 @@ Variables are organized into semantic categories that inform default processing 
 | **Environment** | Weather, air quality, allergens | 0 | 24 hours | None |
 | **Physique** | Weight, body fat, measurements | 0 | 7 days | None |
 
-### 2.3 Measurement Structure
+### Measurement Structure
 
 Each measurement includes:
 
@@ -157,7 +161,7 @@ Measurement {
 }
 ```
 
-### 2.4 Unit Standardization
+### Unit Standardization
 
 All measurements are converted to standardized units for cross-source compatibility:
 - Weights → kilograms
@@ -170,9 +174,9 @@ All measurements are converted to standardized units for cross-source compatibil
 
 ---
 
-## 3. Mathematical Framework
+## Mathematical Framework
 
-### 3.1 Data Structure
+### Data Structure
 
 For each participant $i \in \{1, ..., N\}$, we observe time series of predictor variable $P$ (e.g., treatment) and outcome variable $O$ (e.g., symptom):
 
@@ -182,7 +186,7 @@ $$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_
 
 where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. Our framework handles asynchronous, irregular sampling.
 
-### 3.2 Temporal Alignment
+### Temporal Alignment
 
 #### 3.2.1 Onset Delay and Duration of Action
 
@@ -205,7 +209,7 @@ The aligned outcome value is computed as the mean:
 
 $$\bar{o}(t) = \frac{1}{|W(t)|} \sum_{t_j \in W(t)} o_j$$
 
-### 3.3 Pair Generation Strategies
+### Pair Generation Strategies
 
 We employ two complementary strategies depending on variable characteristics:
 
@@ -246,7 +250,7 @@ For each predictor measurement (t_p, p):
         create_pair(p, outcome_value)
 ```
 
-### 3.4 Filling Value Logic
+### Filling Value Logic
 
 #### 3.4.1 Filling Types
 
@@ -273,7 +277,7 @@ Our filling strategy is deliberately conservative:
 - This biases toward null findings (attenuated correlations) rather than false positives
 - True effects must overcome this conservative bias to appear significant
 
-### 3.5 Baseline Definition and Outcome Estimation
+### Baseline Definition and Outcome Estimation
 
 #### 3.5.1 Within-Subject Comparison
 
@@ -295,7 +299,7 @@ This creates a natural within-subject comparison:
 $$\mu_{\text{baseline},i} = \mathbb{E}[o \mid p < \bar{p}_i]$$
 $$\mu_{\text{follow-up},i} = \mathbb{E}[o \mid p \geq \bar{p}_i]$$
 
-### 3.6 Percent Change from Baseline
+### Percent Change from Baseline
 
 The primary effect size metric:
 
@@ -307,7 +311,7 @@ $$\Delta_i = \frac{\mu_{\text{follow-up},i} - \mu_{\text{baseline},i}}{\mu_{\tex
 - **Clinical relevance**: Standard metric in medical literature
 - **Regulatory familiarity**: FDA uses percent change in efficacy assessments
 
-### 3.7 Correlation Coefficients
+### Correlation Coefficients
 
 We compute both parametric and non-parametric measures:
 
@@ -332,7 +336,7 @@ If reverse correlation is stronger, this suggests:
 - Confounding by indication
 - Bidirectional relationship
 
-### 3.8 Z-Score Normalization
+### Z-Score Normalization
 
 To assess effect magnitude relative to natural variability:
 
@@ -344,7 +348,7 @@ $$\text{RSD}_{\text{baseline}} = \frac{\sigma_{\text{baseline}}}{\mu_{\text{base
 
 **Interpretation**: $z > 2$ indicates $p < 0.05$ under normality, meaning the observed effect exceeds typical baseline fluctuation.
 
-### 3.9 Statistical Significance
+### Statistical Significance
 
 Two-tailed t-test for correlation significance:
 
@@ -354,7 +358,7 @@ with $n-2$ degrees of freedom. Reject null hypothesis ($H_0: \rho = 0$) at $\alp
 
 $$|t| > t_{\text{critical}}(n-2, \alpha/2)$$
 
-### 3.10 Hyperparameter Optimization
+### Hyperparameter Optimization
 
 The onset delay $\delta^*$ and duration of action $\tau^*$ are selected to maximize correlation coefficient strength:
 
@@ -372,9 +376,9 @@ $$(\delta^*, \tau^*) = \underset{\delta, \tau}{\text{argmax}} \; |r(\delta, \tau
 
 ---
 
-## 4. Population Aggregation
+## Population Aggregation
 
-### 4.1 Individual to Population
+### Individual to Population
 
 For population-level estimates, aggregate across $N$ participants:
 
@@ -382,13 +386,13 @@ $$\bar{r} = \frac{1}{N} \sum_{i=1}^{N} r_i$$
 
 $$\bar{\Delta} = \frac{1}{N} \sum_{i=1}^{N} \Delta_i$$
 
-### 4.2 Standard Error and Confidence Intervals
+### Standard Error and Confidence Intervals
 
 $$\text{SE}_{\bar{r}} = \frac{\sigma_r}{\sqrt{N}}$$
 
 $$\text{CI}_{95\%} = \bar{r} \pm 1.96 \cdot \text{SE}_{\bar{r}}$$
 
-### 4.3 Heterogeneity Assessment
+### Heterogeneity Assessment
 
 Between-participant variance:
 
@@ -401,9 +405,9 @@ High heterogeneity suggests:
 
 ---
 
-## 5. Data Quality Requirements
+## Data Quality Requirements
 
-### 5.1 Minimum Thresholds
+### Minimum Thresholds
 
 | Requirement | Threshold | Rationale |
 |------------|-----------|-----------|
@@ -414,7 +418,7 @@ High heterogeneity suggests:
 | Follow-up fraction | $\geq 10\%$ | Adequate predictor exposure |
 | Processed daily measurements | $\geq 4$ | Minimum data density |
 
-### 5.2 Variance Validation
+### Variance Validation
 
 Before computing variable relationships, validate sufficient variance:
 
@@ -422,7 +426,7 @@ $$\text{changes}(X) = \sum_{j=1}^{n-1} \mathbb{1}[x_j \neq x_{j+1}]$$
 
 If $\text{changes}(P) < 5$ or $\text{changes}(O) < 5$, abort with `InsufficientVarianceException`.
 
-### 5.3 Outcome Value Spread
+### Outcome Value Spread
 
 $$\text{spread}_O = \max(O) - \min(O)$$
 
@@ -430,13 +434,13 @@ Variable relationships with zero spread are undefined and excluded.
 
 ---
 
-## 6. Predictor Impact Score
+## Predictor Impact Score
 
 The **Predictor Impact Score (PIS)** is a composite metric that quantifies treatment-outcome relationship strength from patient health data, operationalizing Bradford Hill causality criteria to prioritize drug effects for clinical trial validation. It integrates correlation strength, statistical significance, effect magnitude, and multiple Bradford Hill criteria into a single interpretable score. Higher scores indicate predictors with greater, more reliable impact on the outcome.
 
 > **Citation format**: When citing this metric in academic work, use "Predictor Impact Score" with reference to this methodology document.
 
-### 6.0 What Makes the Predictor Impact Score Novel
+### What Makes the Predictor Impact Score Novel
 
 Unlike simple correlation coefficients, PIS addresses fundamental limitations of observational analysis:
 
@@ -450,7 +454,7 @@ Unlike simple correlation coefficients, PIS addresses fundamental limitations of
 
 **The Predictor Impact Score is not a causal proof**. It's a principled heuristic for ranking which predictor-outcome relationships warrant further investigation, including experimental validation.
 
-### 6.1 User-Level Predictor Impact Score
+### User-Level Predictor Impact Score
 
 For individual participant (N-of-1) analyses, we compute:
 
@@ -464,7 +468,7 @@ Where:
 - $f_{\text{interest}}$ = interest factor (penalizes spurious variable pairs)
 - $\text{PIS}_{\text{agg}}$ = population-level aggregate score (provides context from broader population)
 
-### 6.2 Aggregate (Population-Level) Predictor Impact Score
+### Aggregate (Population-Level) Predictor Impact Score
 
 For population-level analyses aggregated across multiple participants:
 
@@ -480,7 +484,7 @@ Where:
 
 The saturation functions asymptotically approach 1 as sample sizes increase, reflecting that consistent findings across more participants strengthen causal inference.
 
-### 6.3 Z-Score and Effect Magnitude Factor
+### Z-Score and Effect Magnitude Factor
 
 The z-score quantifies the magnitude of the outcome change relative to baseline variability:
 
@@ -501,7 +505,7 @@ Where $z_{\text{ref}} = 2$ (the conventional significance threshold). This satur
 - Equals 0.5 at the significance threshold (z = 2)
 - Approaches 1 for very large effects (z → ∞)
 
-### 6.4 Temporality Factor
+### Temporality Factor
 
 The temporality factor quantifies evidence that the predictor precedes and causes the outcome (rather than reverse causation):
 
@@ -516,7 +520,7 @@ This factor:
 - Approaches 1 when forward correlation dominates (supports predictor → outcome)
 - Approaches 0 when reverse correlation dominates (suggests reverse causation or confounding by indication)
 
-### 6.5 Percent Change from Baseline
+### Percent Change from Baseline
 
 The primary effect size metric expressing treatment impact:
 
@@ -529,7 +533,7 @@ Where:
 For outcomes measured in percentages or with zero baseline, we use absolute change instead:
 $$\Delta_{\text{abs}} = \bar{O}_{\text{follow-up}} - \bar{O}_{\text{baseline}}$$
 
-### 6.6 Statistical Significance
+### Statistical Significance
 
 The statistical significance component captures confidence in the relationship:
 
@@ -537,7 +541,7 @@ $$S = 1 - p$$
 
 Where $p$ is the p-value from the correlation significance test. Higher values indicate greater confidence that the observed relationship is not due to chance.
 
-### 6.7 Interest Factor
+### Interest Factor
 
 The interest factor $f_{\text{interest}}$ penalizes likely spurious or uninteresting variable pairs:
 
@@ -548,7 +552,7 @@ Where:
 - $f_O$ = outcome interest factor (reduced for non-outcome categories)
 - $f_{\text{pair}}$ = pair appropriateness (reduced for illogical category combinations)
 
-### 6.8 Additional Data Quality Components
+### Additional Data Quality Components
 
 **Skewness Coefficient** (penalizes non-normal distributions):
 $$\phi_{\text{skew}} = \frac{1}{1 + \gamma_{P}^2} \cdot \frac{1}{1 + \gamma_{O}^2}$$
@@ -561,7 +565,7 @@ $$\phi_{\text{gradient}} = \left(\frac{\bar{p}_{\text{high}} - \bar{p}}{\sigma_P
 
 Measures the standardized difference between predictor values that predict high vs. low outcomes.
 
-### 6.9 Bradford Hill Criteria Mapping {#bradford-hill-mapping}
+### Bradford Hill Criteria Mapping {#bradford-hill-mapping}
 
 The PIS operationalizes six of the nine Bradford Hill criteria for causality [@bradford-hill-1965]:
 
@@ -577,7 +581,7 @@ The PIS operationalizes six of the nine Bradford Hill criteria for causality [@b
 | $\phi_{\text{temporal}}$ | Forward/reverse ratio | **Temporality** | Yes (user-level) |
 | $\delta > 0$ | Onset delay requirement | **Temporality** | Enforced in design |
 
-### 6.10 Interpreting Predictor Impact Scores
+### Interpreting Predictor Impact Scores
 
 PIS scores range from 0 to approximately 1 (though values slightly above 1 are possible with very strong evidence). Guidelines for interpretation:
 
@@ -594,7 +598,7 @@ PIS scores range from 0 to approximately 1 (though values slightly above 1 are p
 - High PIS does not guarantee causation; low PIS does not rule it out
 - Context matters: a PIS of 0.2 for a novel relationship may be more interesting than 0.5 for a known one
 
-### 6.11 Optimal Daily Value for Precision Dosing
+### Optimal Daily Value for Precision Dosing
 
 A key output of our analysis is the **optimal daily value**, the predictor value that historically precedes the best outcomes. This enables personalized, precision dosing recommendations.
 
@@ -785,7 +789,7 @@ $$\frac{|V_{\text{high}} - V_{\text{low}}|}{\sigma_P} < 0.5$$
 
 **Current Status**: This validation has not been performed. Until validated, optimal values should be presented as "data-driven suggestions" rather than "clinically validated recommendations."
 
-### 6.12 Saturation Constant Rationale
+### Saturation Constant Rationale
 
 The saturation constants (N_sig, n_sig, etc.) reflect pragmatic thresholds based on statistical and clinical considerations:
 
@@ -801,7 +805,7 @@ The saturation constants (N_sig, n_sig, etc.) reflect pragmatic thresholds based
 2. Consider domain-specific thresholds (e.g., psychiatric vs. cardiovascular outcomes)
 3. Implement sensitivity analyses to assess robustness to constant choices
 
-### 6.13 Effect Following High vs Low Predictor Values
+### Effect Following High vs Low Predictor Values
 
 Beyond optimal values, we calculate the **average outcome following different predictor levels** to quantify dose-response relationships:
 
@@ -827,7 +831,7 @@ $$\Delta_{\text{high-low}} = \frac{\bar{O}_{\text{high}} - \bar{O}_{\text{low}}}
 
 This metric directly shows the percent difference in outcome between high and low predictor exposure periods.
 
-### 6.14 Predictor Baseline and Treatment Averages
+### Predictor Baseline and Treatment Averages
 
 For treatment-response analysis, we distinguish between **baseline** (non-treatment) and **treatment** periods:
 
@@ -843,7 +847,7 @@ For treatment-response analysis, we distinguish between **baseline** (non-treatm
 - `predictor_treatment_average_per_day` = 400mg (days actively supplementing)
 - This reveals the effective treatment dose vs. background exposure
 
-### 6.15 Relationship Quality Filters
+### Relationship Quality Filters
 
 Not all statistically significant relationships are useful. We apply **quality filters** to prioritize actionable findings:
 
@@ -878,7 +882,7 @@ Users can vote on individual relationships:
 
 Aggregate votes contribute to the PIS plausibility weight ($w$).
 
-### 6.16 Variable Valence
+### Variable Valence
 
 **Valence** indicates whether higher values of a variable are inherently good, bad, or neutral:
 
@@ -900,7 +904,7 @@ Valence affects how we interpret correlation direction:
 
 **Example**: A positive correlation between Sertraline and Depression Severity is BAD (depression has negative valence, so lower is better). The same positive correlation between Sertraline and Energy would be GOOD.
 
-### 6.17 Temporal Parameter Optimization
+### Temporal Parameter Optimization
 
 We optimize `onset_delay` (δ) and `duration_of_action` (τ) to find the temporal parameters that maximize correlation strength:
 
@@ -931,7 +935,7 @@ To prevent spurious optimization:
 3. **Report both**: Show optimized AND default-parameter results
 4. **Consistency check**: Compare forward vs reverse optimization
 
-### 6.18 Spearman Rank Correlation
+### Spearman Rank Correlation
 
 In addition to Pearson correlation, we compute **Spearman rank correlation** (`forward_spearman_correlation_coefficient`) for robustness:
 
@@ -951,9 +955,9 @@ Where $d_i$ = difference in ranks for each pair.
 
 ---
 
-## 7. Outcome Label Generation
+## Outcome Label Generation
 
-### 7.1 Predictor Analysis Reports
+### Predictor Analysis Reports
 
 For each outcome variable (e.g., Depression Severity), we generate comprehensive "outcome labels" showing:
 
@@ -963,7 +967,7 @@ For each outcome variable (e.g., Depression Severity), we generate comprehensive
 4. **Effect sizes as percent change from baseline**
 5. **Confidence levels and sample sizes**
 
-### 7.2 Report Structure
+### Report Structure
 
 ```
 Outcome Label: [Outcome Variable Name]
@@ -992,7 +996,7 @@ NO SIGNIFICANT EFFECT
 [List of treatments with |Δ| < threshold or p > 0.05]
 ```
 
-### 7.3 Category-Specific Analysis
+### Category-Specific Analysis
 
 Reports are organized by predictor category:
 
@@ -1012,7 +1016,7 @@ Reports are organized by predictor category:
 5. **Comorbid Conditions**
    - Other symptoms/conditions as predictors
 
-### 7.4 Verification Status
+### Verification Status
 
 Each study is classified by verification status:
 
@@ -1022,13 +1026,13 @@ Each study is classified by verification status:
 | **Unverified** | ? | Awaiting review |
 | **Flagged** | ✗ | Down-voted; potential data quality issues |
 
-### 7.5 Outcome Labels vs. FDA Drug Labels
+### Outcome Labels vs. FDA Drug Labels
 
 Traditional FDA drug labels are **per-drug documents** that list qualitative adverse events and indications based on pre-market trials. They are static (updated infrequently), qualitative ("may cause drowsiness"), and organized around the drug rather than the patient's condition.
 
 **Outcome Labels** invert this paradigm: they are **per-outcome documents** that rank all treatments by quantitative effect size for a given health outcome. They are dynamic (updated continuously as data arrives), quantitative ("↓24.7% depression severity"), and organized around what the patient wants to optimize. This enables patients and clinicians to answer the question: "What works best for my condition?" This is a question traditional drug labels cannot answer.
 
-### 7.6 Worked Example: Complete Outcome Label
+### Worked Example: Complete Outcome Label
 
 **OUTCOME LABEL: Depression Severity**
 *Based on 47,832 participants tracking depression outcomes*
@@ -1081,9 +1085,9 @@ Legend: ↓ = improvement (reduction), ↑ = worsening (increase)
 
 ---
 
-## 8. Treatment Ranking System
+## Treatment Ranking System
 
-### 8.1 Within-Category Rankings
+### Within-Category Rankings
 
 For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
 
@@ -1091,7 +1095,7 @@ For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
 2. **Secondary**: Confidence level (High > Medium > Low)
 3. **Tertiary**: Sample size
 
-### 8.2 Ranking Algorithm
+### Ranking Algorithm
 
 ```
 For each treatment T in category:
@@ -1104,7 +1108,7 @@ For each treatment T in category:
 Sort treatments by rank_score descending
 ```
 
-### 8.3 Confidence Weighting
+### Confidence Weighting
 
 | Confidence Level | Weight | Criteria |
 |-----------------|--------|----------|
@@ -1112,7 +1116,7 @@ Sort treatments by rank_score descending
 | **Medium** | 0.7 | p < 0.05 OR N > 10 OR pairs > 100 |
 | **Low** | 0.4 | Meets minimum thresholds only |
 
-### 8.4 Comparative Effectiveness Display
+### Comparative Effectiveness Display
 
 ```
 ANTIDEPRESSANTS RANKED BY EFFICACY FOR DEPRESSION
@@ -1132,9 +1136,9 @@ Legend: ↓ = improvement (reduction in depression severity)
 
 ---
 
-## 9. Safety and Efficacy Quantification
+## Safety and Efficacy Quantification
 
-### 9.1 Safety Signal Detection
+### Safety Signal Detection
 
 **Adverse Effect Identification**:
 - Negative correlations between treatment and beneficial outcomes
@@ -1154,7 +1158,7 @@ Weight Gain | +8.2% | [4.1, 12.3] | Medium | Long-term monitoring
 Anxiety | +6.5% | [2.1, 10.9] | Low (paradoxical) | Investigate
 ```
 
-### 9.2 Efficacy Signal Detection
+### Efficacy Signal Detection
 
 **Therapeutic Effect Identification**:
 - Positive correlations between treatment and beneficial outcomes
@@ -1174,7 +1178,7 @@ Sleep Quality | ↑ 15.3% | [10.1, 20.5] | Secondary | Moderate
 Energy | ↑ 12.1% | [7.2, 17.0] | Secondary | Moderate
 ```
 
-### 9.3 Benefit-Risk Assessment
+### Benefit-Risk Assessment
 
 **Net Clinical Benefit Score**:
 
@@ -1202,11 +1206,11 @@ OVERALL ASSESSMENT: Favorable benefit-risk profile for depression/anxiety
 
 ---
 
-## 10. Addressing the Bradford Hill Criteria {#addressing-bradford-hill}
+## Addressing the Bradford Hill Criteria {#addressing-bradford-hill}
 
 The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framework for assessing causation from observational data. This section details how our framework addresses each criterion.
 
-### 10.1 Complete Criteria Mapping
+### Complete Criteria Mapping
 
 | Criterion | How Addressed | Quantitative Metric | In PIS? |
 |-----------|---------------|---------------------|--------------|
@@ -1220,7 +1224,7 @@ The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framew
 | **Experiment** | N-of-1 natural experiments | Study design | No |
 | **Analogy** | Similar variable comparison | Narrative | No |
 
-### 10.2 Quantitative Criteria Details
+### Quantitative Criteria Details
 
 **Strength**:
 - Reports Pearson $r$ with classification (very strong: ≥0.8, strong: ≥0.6, moderate: ≥0.4, weak: ≥0.2, very weak: <0.2)
@@ -1241,9 +1245,9 @@ The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framew
 
 ---
 
-## 11. Validation and Quality Assurance
+## Validation and Quality Assurance
 
-### 11.1 User Voting System
+### User Voting System
 
 Each study can receive user votes:
 
@@ -1253,7 +1257,7 @@ Each study can receive user votes:
 | **Down-vote** (👎) | Data issues or implausible relationship | Flagged for review |
 | **No vote** | Not yet reviewed | Included in unverified results |
 
-### 11.2 Automated Quality Checks
+### Automated Quality Checks
 
 Before inclusion in reports:
 
@@ -1263,7 +1267,7 @@ Before inclusion in reports:
 4. **Effect spread check**: Non-zero outcome variance
 5. **Temporal coverage**: Adequate follow-up duration
 
-### 11.3 Flagged Study Handling
+### Flagged Study Handling
 
 Studies may be flagged for:
 - Insufficient data
@@ -1279,58 +1283,178 @@ Flagged studies are:
 
 ---
 
-## 12. Limitations and Honest Assessment
+## Stage 2: Pragmatic Trial Confirmation
 
-### 12.1 Fundamental Limitations
+The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
-1. **Cannot prove causation**: Observational data cannot rule out unmeasured confounders
-2. **Cannot replace RCTs**: Regulatory approval requires experimental validation
-3. **Cannot handle strong confounding**: Confounding by indication is a major concern for treatments
-4. **Cannot generalize beyond population**: Results reflect the participant population
+### The Two-Stage Pipeline
 
-### 12.2 Methodological Weaknesses
+Our complete methodology operates as a two-stage pipeline:
 
-1. **Arbitrary baseline definition**: Using mean as cutoff is convenient but not principled
-2. **Hyperparameter optimization may overfit**: Selecting δ and τ to maximize correlation coefficient risks spurious optima
-3. **Self-selection bias**: Health trackers are not representative of general population
-4. **Measurement error**: Self-reported data contains recall and social desirability biases
-5. **Hawthorne effect**: Tracking may itself change behavior
-6. **Multiple testing**: Millions of pairs inflate false positive rates
-7. **Temporal confounding**: Seasonal effects, life events create spurious correlations
-8. **Confounding by indication**: Sicker patients take more treatments
+| Stage | Method | Cost | Purpose | Output |
+|-------|--------|------|---------|--------|
+| **Stage 1: Signal Detection** | Aggregated N-of-1 observational analysis | ~$0.10/patient | Hypothesis generation | Ranked PIS signals |
+| **Stage 2: Causal Confirmation** | Pragmatic randomized trials | ~$500/patient | Causation proof | Validated effect sizes |
 
-### 12.3 The Confounding Problem
+This design leverages the complementary strengths of each approach:
 
-As extensively documented in comparative effectiveness research [@schneeweiss-2007-confounding], the fundamental challenge:
+- **Stage 1** scales to millions of treatment-outcome pairs at minimal cost, identifying the most promising candidates
+- **Stage 2** applies experimental rigor to confirm causation for high-priority signals
 
-$$\text{Treatment} \leftarrow \text{Severity} \rightarrow \text{Outcome}$$
+### Pragmatic Trial Methodology
 
-Sicker patients both take more treatment AND have worse outcomes, creating spurious negative correlations.
+Pragmatic trials differ fundamentally from traditional Phase III trials [@recovery-trial-efficiency]:
 
-**Mitigations** (partial):
-- Within-subject comparison reduces between-subject confounding
-- Temporal precedence rules out reverse causation
-- Reverse correlation check identifies bidirectional relationships
-- Large $N$ reduces idiosyncratic confounding
-- Subgroup analysis can identify responder populations
+| Dimension | Traditional Phase III | Pragmatic Trial (RECOVERY Model) |
+|-----------|----------------------|----------------------------------|
+| **Cost per patient** | $41,000 | $500 |
+| **Time to results** | 3-7 years | 3-6 months |
+| **Patient population** | Homogeneous (strict exclusion) | Real-world (minimal exclusion) |
+| **Setting** | Specialized research centers | Routine clinical care |
+| **Data collection** | Extensive case report forms | Minimal essential outcomes |
+| **Randomization** | Complex stratification | Simple 1:1 or 1:1:1 |
+| **Sample size** | Hundreds to thousands | Thousands to tens of thousands |
 
-### 12.4 What This Framework CAN Do
+The Oxford RECOVERY trial demonstrated this model's effectiveness: 49,000 patients enrolled across 186 hospitals, 12 treatments evaluated, first life-saving result (dexamethasone) in 100 days, over 1 million lives saved globally [@recovery-trial-1m-lives-saved].
 
-Despite limitations:
+### Signal-to-Trial Prioritization
 
-1. **Generate hypotheses**: Prioritize treatment-outcome pairs for RCT investigation
-2. **Estimate effect sizes**: Provide quantitative estimates absent from spontaneous reports
-3. **Scale discovery**: Analyze millions of pairs automatically
-4. **Real-time monitoring**: Continuous signal detection vs. periodic reviews
-5. **Ecological validity**: Capture real-world conditions
-6. **Personalized insights**: Individual-level alongside population estimates
-7. **Reduce research waste**: Focus RCT resources on promising signals
+Not all observational signals warrant pragmatic trial confirmation. We propose a **Trial Priority Score (TPS)** combining:
+
+$$TPS = PIS \times \sqrt{DALYs_{addressable}} \times \text{Novelty} \times \text{Feasibility}$$
+
+Where:
+
+- **PIS**: Predictor Impact Score from Stage 1 (higher = stronger signal)
+- **DALYs_{addressable}**: Disease burden addressable by the treatment
+- **Novelty**: Inverse of existing evidence (new signals prioritized)
+- **Feasibility**: Practical considerations (drug availability, safety profile, cost)
+
+Signals in the top 0.1-1% by TPS are candidates for pragmatic trial confirmation.
+
+### Comparative Effectiveness Randomization
+
+For treatments already in clinical use, we employ **comparative effectiveness** designs following the ADAPTABLE trial model [@pragmatic-trials-cost-advantage]:
+
+1. **Embedded randomization**: Randomization occurs within routine care visits
+2. **Minimal disruption**: Patients receive standard care with random assignment between active comparators
+3. **Real-world endpoints**: Primary outcomes are events captured in EHR (mortality, hospitalization, symptom resolution)
+4. **Large simple design**: Thousands of patients, minimal per-patient data collection
+
+Example protocol for a high-PIS signal (Treatment A vs. Treatment B for Outcome X):
+
+```
+Eligibility: Patients with Condition Y initiating treatment for Outcome X
+Randomization: 1:1 to Treatment A vs. Treatment B
+Primary endpoint: Change in Outcome X at 90 days
+Data collection: Baseline characteristics (EHR), outcome at 90 days (patient-reported or EHR)
+Sample size: 2,000 patients (1,000 per arm)
+Cost: ~$1M total ($500/patient)
+Timeline: 6-12 months
+```
+
+### Feedback Loop: Trial Results Improve Observational Models
+
+Pragmatic trial results feed back to improve Stage 1 methodology:
+
+1. **Calibration**: Compare observational effect sizes to randomized effect sizes; develop correction factors
+2. **Confounding identification**: Trials where observational and randomized effects diverge identify confounders
+3. **Subgroup discovery**: Trial heterogeneity analysis identifies responder populations, improving PIS stratification
+4. **Hyperparameter validation**: Optimal onset delays and durations validated against experimental ground truth
+
+This creates a **learning health system** where observational and experimental evidence continuously refine each other.
+
+### Output: Validated Outcome Labels
+
+The two-stage pipeline produces **validated outcome labels** with the following structure:
+
+```
+ValidatedOutcomeLabel {
+    treatment: string              // e.g., "Vitamin D 2000 IU"
+    outcome: string               // e.g., "Depression Severity"
+
+    // Stage 1: Observational evidence
+    observational_effect: float   // e.g., -12% (symptom reduction)
+    observational_ci: [float, float]  // e.g., [-15%, -9%]
+    observational_n: int          // e.g., 45,000 participants
+    pis_score: float              // e.g., 0.72
+
+    // Stage 2: Experimental evidence (if available)
+    experimental_effect: float    // e.g., -8% (from pragmatic trial)
+    experimental_ci: [float, float]  // e.g., [-12%, -4%]
+    experimental_n: int           // e.g., 3,000 participants
+    trial_id: string              // e.g., "DFDA-VIT-D-001"
+
+    // Combined assessment
+    evidence_grade: enum          // "Validated", "Promising", "Signal"
+    causal_confidence: float      // 0-1 scale
+    last_updated: timestamp
+}
+```
+
+**Evidence grades**:
+- **Validated**: Confirmed by pragmatic RCT (p < 0.05, consistent direction)
+- **Promising**: High PIS (>0.6), awaiting or in trial
+- **Signal**: Moderate PIS (0.3-0.6), hypothesis only
 
 ---
 
-## 13. Implementation Guide
+## Limitations and How They're Addressed
 
-### 13.1 System Architecture
+The two-stage design addresses the fundamental limitations of purely observational pharmacovigilance while acknowledging residual constraints.
+
+### Fundamental Limitations: Observational Stage
+
+These limitations apply to Stage 1 (observational analysis) but are addressed by Stage 2 (pragmatic trials):
+
+| Limitation | Stage 1 Status | Stage 2 Resolution |
+|------------|---------------|-------------------|
+| **Cannot prove causation** | Hypothesis only | Randomization establishes causation |
+| **Cannot replace RCTs** | Generates candidates | Pragmatic trials ARE simplified RCTs |
+| **Cannot handle strong confounding** | Confounding by indication | Randomization eliminates confounding |
+| **Cannot generalize beyond population** | Self-selected trackers | Pragmatic trials use real-world populations |
+
+### Methodological Weaknesses: Addressed by Two-Stage Design
+
+| Weakness | Stage 1 Impact | Two-Stage Resolution |
+|----------|---------------|---------------------|
+| Arbitrary baseline definition | Acceptable for signal ranking | Trial uses randomized comparison, no baseline needed |
+| Hyperparameter overfitting | May inflate some correlations | Trial confirms true effect, calibrates models |
+| Self-selection bias | Non-representative sample | Pragmatic trials embed in routine care |
+| Measurement error | Self-report limitations | Trials can use objective endpoints |
+| Hawthorne effect | Tracking changes behavior | Trials embedded in normal care minimize this |
+| Multiple testing | Millions of comparisons | Only top signals proceed to trial (TPS filter) |
+| Temporal confounding | Seasonal/life event effects | Randomization eliminates systematic bias |
+| Confounding by indication | Sicker patients take more treatment | Randomization balances severity |
+
+### Residual Limitations
+
+Even with the two-stage design, certain limitations remain:
+
+1. **Resource constraints**: Cannot trial all promising signals; prioritization required
+2. **External validity**: Pragmatic trial populations still may not represent all subgroups
+3. **Rare outcomes**: Very rare adverse events may require larger observational signals
+4. **Behavioral interventions**: Some treatments (diet, exercise) difficult to blind
+5. **Long-term effects**: Pragmatic trials typically 6-12 months; decades-long effects require observational follow-up
+6. **Interaction effects**: Two-way drug interactions testable; higher-order interactions remain observational
+
+### What This Framework CAN Now Do
+
+With pragmatic trial integration, the complete framework can:
+
+1. **Establish causation**: For high-priority signals, randomization proves causal relationships
+2. **Generate validated outcome labels**: Quantitative effect sizes with experimental backing
+3. **Scale discovery**: Analyze millions of pairs observationally, confirm thousands experimentally
+4. **Continuous validation**: Learning loop improves both observational and experimental components
+5. **Enable precision medicine**: Subgroup analyses identify responders vs. non-responders
+6. **Inform regulatory decisions**: Validated labels provide evidence for treatment recommendations
+7. **Reduce research waste**: Focus expensive trials on signals most likely to confirm
+
+---
+
+## Implementation Guide
+
+### System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -1375,7 +1499,7 @@ Despite limitations:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 13.2 Core Algorithm: Pair Generation
+### Core Algorithm: Pair Generation
 
 ```python
 def generate_pairs(predictor_measurements, outcome_measurements,
@@ -1427,7 +1551,7 @@ def generate_pairs(predictor_measurements, outcome_measurements,
     return pairs
 ```
 
-### 13.3 Core Algorithm: Baseline Separation
+### Core Algorithm: Baseline Separation
 
 ```python
 def separate_baseline_followup(pairs):
@@ -1466,7 +1590,7 @@ def calculate_percent_change(baseline_pairs, followup_pairs):
     return percent_change
 ```
 
-### 13.4 Core Algorithm: Predictor Impact Score
+### Core Algorithm: Predictor Impact Score
 
 ```python
 def calculate_user_pis(correlation, statistical_significance, z_score,
@@ -1604,7 +1728,7 @@ def calculate_interest_factor(predictor_var, outcome_var):
     return factor
 ```
 
-### 13.5 Database Schema (Key Tables)
+### Database Schema (Key Tables)
 
 ```sql
 -- Variables (predictors, outcomes, etc.)
@@ -1756,9 +1880,9 @@ CREATE TABLE global_variable_relationships (
 
 ---
 
-## 14. Regulatory Considerations
+## Regulatory Considerations
 
-### 14.1 Positioning Relative to RCTs
+### Positioning Relative to RCTs
 
 This framework is **not** intended to:
 - Replace RCTs for regulatory approval
@@ -1772,7 +1896,7 @@ This framework **is** intended to:
 - Enable real-time safety signal detection
 - Generate evidence for benefit-risk reassessment
 
-### 14.2 Evidence Hierarchy Integration
+### Evidence Hierarchy Integration
 
 | Evidence Level | Source | Role of This Framework |
 |---------------|--------|----------------------|
@@ -1781,7 +1905,7 @@ This framework **is** intended to:
 | Level III | Case-control | Traditional pharmacovigilance |
 | Level IV | Case series | Spontaneous reports (FAERS) |
 
-### 14.3 FDA Real-World Evidence Framework Alignment
+### FDA Real-World Evidence Framework Alignment
 
 The 21st Century Cures Act mandates FDA evaluation of RWE. This framework supports:
 
@@ -1792,15 +1916,15 @@ The 21st Century Cures Act mandates FDA evaluation of RWE. This framework suppor
 
 ---
 
-## 15. Validation Framework
+## Validation Framework
 
-### 15.1 The Critical Question
+### The Critical Question
 
 The ultimate test of PIS validity: **Do high-PIS relationships replicate in RCTs more often than low-PIS ones?**
 
 Until this validation is performed, PIS should be treated as a theoretically-motivated heuristic, not a validated predictive tool.
 
-### 15.2 Proposed Validation Study
+### Proposed Validation Study
 
 **Design**: Retrospective comparison of PIS predictions against published RCT results.
 
@@ -1819,7 +1943,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 - If PIS ≥ 0.5 pairs have RCT validation rate of 60%+ and PIS < 0.1 pairs have rate < 20%, the metric has practical utility
 - If no discrimination, saturation constants need recalibration or the approach needs fundamental revision
 
-### 15.3 Known Limitations Requiring Validation
+### Known Limitations Requiring Validation
 
 1. **Confounding by indication**: Does the temporality factor adequately address reverse causation in treatment contexts?
 2. **Saturation constant sensitivity**: How robust are rankings to ±50% changes in N_sig, n_sig?
@@ -1827,9 +1951,9 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 ---
 
-## 16. Future Directions
+## Future Directions
 
-### 16.1 Methodological Improvements
+### Methodological Improvements
 
 1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for graph structure learning
 2. **Propensity score integration**: Covariate adjustment for measured confounders
@@ -1841,14 +1965,14 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 8. **Causal mediation**: Identify mechanisms through which treatments affect outcomes
 9. **Drug-drug interactions**: Detect combination effects and synergies
 
-### 16.2 Validation Priorities
+### Validation Priorities
 
 1. **Retrospective RCT comparison**: Compare PIS predictions to published trial results (highest priority)
 2. **Prospective prediction study**: Pre-register PIS predictions, validate against future RCTs
 3. **Domain expert review**: Have clinicians and pharmacologists assess biological plausibility of top PIS relationships
 4. **Sensitivity benchmarking**: Test robustness to different saturation constants and aggregation methods
 
-### 16.3 Implementation Enhancements
+### Implementation Enhancements
 
 1. **Real-time signal detection**: Automated alerts when new high-PIS relationships emerge
 2. **Confidence intervals for PIS**: Bootstrap or Bayesian intervals to quantify uncertainty
@@ -1857,27 +1981,29 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 ---
 
-## 17. Conclusion
+## Conclusion
 
-We have presented a comprehensive framework for generating quantitative pharmacovigilance signals from aggregated N-of-1 observational studies. Key contributions include:
+We have presented a comprehensive **two-stage framework** for generating **validated outcome labels** from real-world health data. Key contributions include:
 
-1. **Quantitative outcome labels**: Percent change from baseline for all treatment-outcome pairs
-2. **Treatment ranking systems**: Efficacy and safety rankings within therapeutic categories
-3. **Bradford Hill integration**: Six of nine criteria operationalized in composite Predictor Impact Score
-4. **Scalable implementation**: Automated analysis of millions of variable relationships
-5. **Honest limitations**: Clear acknowledgment of what observational data cannot do
+1. **Stage 1: Scalable signal detection**: Aggregated N-of-1 observational analysis processes millions of treatment-outcome pairs at ~$0.10/patient, generating ranked hypotheses through the Predictor Impact Score
+2. **Stage 2: Causal confirmation**: Pragmatic randomized trials following the RECOVERY/ADAPTABLE model confirm top signals at ~$500/patient (80× cheaper than traditional trials) while eliminating confounding
+3. **Bradford Hill operationalization**: Six of nine causality criteria quantified in composite scoring system
+4. **Trial Priority Score**: Principled prioritization of which signals warrant experimental confirmation
+5. **Validated outcome labels**: Three-tier evidence grading (Validated, Promising, Signal) with both observational and experimental effect sizes
+6. **Learning health system**: Feedback loop where trial results continuously calibrate observational models
 
-This is not a replacement for RCTs but a powerful complement, providing continuous, population-scale, real-time monitoring that transforms passive adverse event collection into active quantitative pharmacovigilance.
+This two-stage design directly addresses the fundamental limitations of purely observational pharmacovigilance. Confounding by indication, self-selection bias, and inability to prove causation are all resolved through Stage 2 randomization for high-priority signals, while Stage 1 maintains the scale and cost advantages necessary for comprehensive monitoring.
 
 This framework represents **the FDA of the Future**, a decentralized system that:
 - Receives continuous real-world evidence streams from millions of participants
-- Publishes dynamic outcome labels with quantitative effect sizes
-- Maintains treatment rankings updated in real-time
-- Detects safety signals weeks or months before traditional systems
-- Enables truly personalized precision medicine through individual optimal value calculations
+- Generates ranked treatment-outcome hypotheses through automated observational analysis
+- Confirms top signals through embedded pragmatic trials at 80× lower cost than traditional methods
+- Publishes validated outcome labels with quantitative effect sizes and evidence grades
+- Maintains treatment rankings updated in real-time with experimental backing
+- Enables precision medicine through personalized optimal value calculations
 - Operates transparently with open-source methodology and reproducible analyses
 
-The technology exists. The methodology is sound. The data is available. We present this framework not as a replacement for regulatory bodies, but as the infrastructure they will need to fulfill their mission in an era of ubiquitous health data. What remains is the institutional will to build it.
+The technology exists. The methodology is sound. The data is available. The pragmatic trial model is proven. We present this framework not as a replacement for regulatory bodies, but as the complete infrastructure (from passive data collection to validated causal claims) that they will need to fulfill their mission in an era of ubiquitous health data. What remains is the institutional will to build it.
 
 ---
 

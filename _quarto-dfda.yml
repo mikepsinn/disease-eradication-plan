@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/radar
+  output-dir: _site/dfda
   execute-dir: project
   resources:
     - assets/
@@ -20,10 +20,10 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "RADAR Framework"
-  description: "RADAR: Real-world Association Detection And Ranking for Aggregated N-of-1 Trials"
-  site-url: https://radar.warondisease.org
-  favicon: assets/icons/radar-favicon.png
+  title: "Decentralized FDA"
+  description: "The FDA of the Future: A Decentralized Framework for Drug Assessment and Precision Medicine"
+  site-url: https://dfda.earth
+  favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   navbar:
     left:
@@ -64,7 +64,8 @@ metadata:
   subject: "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods"
   category: "Academic Paper, Medical Research, Methodology"
   keywords:
-    - radar-score
+    - dfda
+    - predictor-impact-score
     - pharmacovigilance
     - real-world-evidence
     - n-of-1-trials
@@ -98,11 +99,11 @@ metadata:
   medium: "Digital"
   twitter-site: "@thinkbynumbers"
   twitter-creator: "@thinkbynumbers"
-  og-site-name: "RADAR Framework"
+  og-site-name: "Decentralized FDA"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://radar.warondisease.org/assets/radar-og-1200x630.png"
+  image: "https://dfda.earth/assets/dfda-og-1200x630.png"
 
 # Remove "Appendix" prefix
 language:
@@ -147,11 +148,11 @@ format:
     include-in-header:
       - text: |
           <!-- Icons -->
-          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/radar-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/radar-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/radar-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/radar-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/radar-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/dfda-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/dfda-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/dfda-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/dfda-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/dfda-android-chrome-512x512.png">
 
           <!-- Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
