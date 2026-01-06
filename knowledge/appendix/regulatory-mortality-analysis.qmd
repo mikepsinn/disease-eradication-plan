@@ -92,17 +92,15 @@ Using [WHO Global Burden of Disease](../references.qmd#ihme-gbd-2019) data, we c
 
 The "max potential" estimates above are grounded in peer-reviewed research:
 
-1. **Biological immortality exists.** [Hydra, planarian worms, and naked mole rats](../references.qmd#biological-immortality-in-nature) demonstrate that aging is not thermodynamically mandatory. Some organisms simply don't age.
+1. **Aging has been reversed in mammals.** [Yamanaka factor therapy extended remaining lifespan by 109% in aged mice](../references.qmd#aging-reversal-mammals-yamanaka) and reversed epigenetic age in human skin cells by 30 years. The mechanisms are understood; we lack only the engineering to apply them safely in humans.
 
-2. **Aging has been reversed in mammals.** [Yamanaka factor therapy extended remaining lifespan by 109% in aged mice](../references.qmd#aging-reversal-mammals-yamanaka) and reversed epigenetic age in human skin cells by 30 years. The mechanisms are understood; we lack only the engineering to apply them safely in humans.
+2. **Cardiovascular disease is 80-90% preventable.** [WHO and Cleveland Clinic data](../references.qmd#cvd-80-percent-preventable) show that addressing lifestyle and environmental risk factors prevents the vast majority of heart attacks and strokes. With gene therapy addressing genetic predisposition, 95% is achievable.
 
-3. **Cardiovascular disease is 80-90% preventable.** [WHO and Cleveland Clinic data](../references.qmd#cvd-80-percent-preventable) show that addressing lifestyle and environmental risk factors prevents the vast majority of heart attacks and strokes. With gene therapy addressing genetic predisposition, 95% is achievable.
+3. **Cancer is 90-95% environmental/lifestyle-driven.** [Only 5-10% of cancers are purely genetic](../references.qmd#cancer-30-50-percent-preventable); the remainder have modifiable causes (tobacco, diet, infections, pollutants). Perfect prevention + early AI detection + immunotherapy approaches 95%.
 
-4. **Cancer is 90-95% environmental/lifestyle-driven.** [Only 5-10% of cancers are purely genetic](../references.qmd#cancer-30-50-percent-preventable); the remainder have modifiable causes (tobacco, diet, infections, pollutants). Perfect prevention + early AI detection + immunotherapy approaches 95%.
+4. **Neurodegenerative diseases have regenerative potential.** [Stem cell therapy shows promise](../references.qmd#neurodegenerative-stem-cell-potential) for Alzheimer's, Parkinson's, and ALS. The 80% max reflects early intervention before irreversible damage.
 
-5. **Neurodegenerative diseases have regenerative potential.** [Stem cell therapy shows promise](../references.qmd#neurodegenerative-stem-cell-potential) for Alzheimer's, Parkinson's, and ALS. The 80% max reflects early intervention before irreversible damage.
-
-6. **Accidents remain the hard floor.** [WHO recognizes most injuries as preventable](../references.qmd#injuries-largely-preventable), but ~40% of accidental deaths involve instantaneous trauma (explosions, severe falls) beyond any medical intervention. This accounts for the {{< var fundamentally_unavoidable_death_pct >}} unavoidable baseline.
+5. **Accidents remain the hard floor.** [WHO recognizes most injuries as preventable](../references.qmd#injuries-largely-preventable), but ~40% of accidental deaths involve instantaneous trauma (explosions, severe falls) beyond any medical intervention. This accounts for the {{< var fundamentally_unavoidable_death_pct >}} unavoidable baseline.
 
 #### The {{< var fundamentally_unavoidable_death_pct >}} Floor
 
@@ -311,10 +309,9 @@ Correct. That's what "eventually" means.
 
 The document explicitly distinguishes "Current" from "Max Potential" in the disease burden table ([Section 2.2](#eventually-preventable)). The 92% represents the **theoretical upper bound** based on:
 
-1. **Biological immortality exists in nature:** [Hydra, planarian worms, naked mole rats](../references.qmd#biological-immortality-in-nature) demonstrate aging is not thermodynamically mandatory
-2. **Aging reversed in mammals:** [Yamanaka factors extended remaining lifespan by 109% in aged mice](../references.qmd#aging-reversal-mammals-yamanaka)
-3. **Cardiovascular disease 80-90% preventable NOW:** [WHO data](../references.qmd#cvd-80-percent-preventable) with current interventions
-4. **Cancer 90-95% environmental:** [Only 5-10% purely genetic](../references.qmd#cancer-30-50-percent-preventable), remainder has modifiable causes
+1. **Aging reversed in mammals:** [Yamanaka factors extended remaining lifespan by 109% in aged mice](../references.qmd#aging-reversal-mammals-yamanaka)
+2. **Cardiovascular disease 80-90% preventable NOW:** [WHO data](../references.qmd#cvd-80-percent-preventable) with current interventions
+3. **Cancer 90-95% environmental:** [Only 5-10% purely genetic](../references.qmd#cancer-30-50-percent-preventable), remainder has modifiable causes
 
 **The relevant question isn't "Can we achieve 92%?"**
 
