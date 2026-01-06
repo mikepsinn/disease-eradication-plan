@@ -6,17 +6,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/validate-qmd-changes.py\"",
+            "command": "python .claude/hooks/validate-qmd-changes.py",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/auto-regenerate-variables.sh\"",
+            "command": "bash .claude/hooks/auto-regenerate-variables.sh",
             "timeout": 60
           },
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/check-python-errors.sh\"",
+            "command": "bash .claude/hooks/check-python-errors.sh",
             "timeout": 30
           }
         ]
@@ -34,11 +34,10 @@
     ],
     "SessionStart": [
       {
-        "matcher": "startup",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/load-book-context.sh\"",
+            "command": "bash .claude/hooks/load-book-context.sh",
             "timeout": 10
           }
         ]
