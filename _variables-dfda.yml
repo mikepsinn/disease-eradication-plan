@@ -1,1 +1,44 @@
-# AUTO-GENERATED - No variables used in this paper
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (10 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+phase_3_trial_cost_min: '<a href="/knowledge/appendix/parameters-and-calculations#sec-phase_3_trial_cost_min"
+  class="parameter-link" data-source-ref="phase-3-cost-per-trial-range" data-source-type="external"
+  data-confidence="high" title="Phase 3 trial total cost (minimum) | ✓ High confidence
+  | Unit: USD/trial | Click to view details, calculation & sources">$20M</a>'
+phase_3_trial_cost_min_cite: '@phase-3-cost-per-trial-range'
+recovery_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_per_patient"
+  class="parameter-link" data-source-ref="recovery-cost-500" data-source-type="external"
+  data-confidence="high" title="RECOVERY trial cost per patient. Note: RECOVERY was
+  an outlier - hospital-based during COVID emergency, minimal extra procedures, existing
+  NHS infrastructure, streamlined consent. Replicating this globally will be harder.
+  | ✓ High confidence | 95% CI: [$400, $2.50K] | Dist: Lognormal | Unit: USD/patient
+  | Click to view details, calculation & sources">$500 (95% CI: $400-$1.43K)</a>'
+recovery_trial_cost_per_patient_cite: '@recovery-cost-500'
+recovery_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_reduction_factor"
+  class="parameter-link" data-source-ref="recovery-trial-82x-cost-reduction" data-source-type="calculated"
+  data-confidence="high" title="Cost reduction factor demonstrated by RECOVERY trial
+  ($41K traditional / $500 RECOVERY = 82x) | Calculated from 2 inputs | ✓ High confidence
+  | Formula: TRADITIONAL_PHASE3_COST / RECOVERY_COST | Unit: multiplier | Click to
+  view details, calculation & sources">82 (95% CI: 50-94.1)</a>'
+recovery_trial_cost_reduction_factor_latex: '$$
+
+  Cost = \frac{Cost}{Cost} = \frac{\$41K}{\$500} = 82
+
+  $$'
+recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved"
+  class="parameter-link" data-source-ref="recovery-trial-1m-lives-saved" data-source-type="external"
+  data-confidence="medium" title="Estimated lives saved globally by RECOVERY trial''s
+  dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al.
+  Nature Communications 2021 methodology applying RECOVERY trial mortality reductions
+  (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty
+  range reflects extrapolation assumptions. | ~ Medium confidence | 95% CI: [500k
+  lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to view details, calculation
+  & sources">1.00M (95% CI: 503k-1.71M)</a>'
+recovery_trial_global_lives_saved_cite: '@recovery-trial-1m-lives-saved'
+traditional_phase3_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient"
+  class="parameter-link" data-source-ref="trial-costs-fda-study" data-source-type="external"
+  data-confidence="high" title="Phase 3 cost per patient (median from FDA study) |
+  ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit: USD/patient
+  | Click to view details, calculation & sources">$41K (95% CI: $20K-$89.1K)</a>'
+traditional_phase3_cost_per_patient_cite: '@trial-costs-fda-study'

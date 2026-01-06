@@ -43,7 +43,7 @@ We present a comprehensive **two-stage framework** for generating **validated ou
 
 **Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~$0.10 per patient.
 
-**Stage 2 (Causal Confirmation)**: High-priority signals (top 0.1-1% by PIS) proceed to pragmatic randomized trials following the RECOVERY/ADAPTABLE model [@recovery-trial-efficiency; @pragmatic-trials-cost-advantage]. Simple randomization embedded in routine care confirms causation at ~$500 per patient (80× cheaper than traditional Phase III trials) while eliminating confounding concerns inherent in observational data.
+**Stage 2 (Causal Confirmation)**: High-priority signals (top 0.1-1% by PIS) proceed to pragmatic randomized trials following the RECOVERY/ADAPTABLE model [@recovery-trial-efficiency; @pragmatic-trials-cost-advantage]. Simple randomization embedded in routine care confirms causation at ~{{< var recovery_trial_cost_per_patient >}} per patient ({{< var recovery_trial_cost_reduction_factor >}} cheaper than traditional Phase III trials) while eliminating confounding concerns inherent in observational data.
 
 The complete methodology includes: (1) data collection from heterogeneous sources; (2) temporal alignment with onset delay optimization; (3) within-subject baseline/follow-up comparison; (4) Predictor Impact Score calculation operationalizing Bradford Hill criteria; (5) Trial Priority Score for signal-to-trial prioritization; (6) pragmatic trial protocols for causal confirmation; and (7) validated outcome label generation with evidence grades.
 
@@ -72,7 +72,7 @@ Modern pharmacovigilance (the science of detecting, assessing, and preventing ad
 - Homogeneous populations (exclusion criteria eliminate comorbidities)
 - Controlled conditions unlike real-world use
 - Cannot detect rare or delayed adverse events
-- Cost: Average Phase III trial costs $19M and takes 3+ years [@phase-3-cost-per-trial-range]
+- Cost: Average Phase III trial costs {{< var phase_3_trial_cost_min >}} and takes 3+ years [@phase-3-cost-per-trial-range]
 
 **Post-Market Studies**:
 - Expensive and time-consuming
@@ -1294,7 +1294,7 @@ Our complete methodology operates as a two-stage pipeline:
 | Stage | Method | Cost | Purpose | Output |
 |-------|--------|------|---------|--------|
 | **Stage 1: Signal Detection** | Aggregated N-of-1 observational analysis | ~$0.10/patient | Hypothesis generation | Ranked PIS signals |
-| **Stage 2: Causal Confirmation** | Pragmatic randomized trials | ~$500/patient | Causation proof | Validated effect sizes |
+| **Stage 2: Causal Confirmation** | Pragmatic randomized trials | ~{{< var recovery_trial_cost_per_patient >}}/patient | Causation proof | Validated effect sizes |
 
 This design leverages the complementary strengths of each approach:
 
@@ -1307,7 +1307,7 @@ Pragmatic trials differ fundamentally from traditional Phase III trials [@recove
 
 | Dimension | Traditional Phase III | Pragmatic Trial (RECOVERY Model) |
 |-----------|----------------------|----------------------------------|
-| **Cost per patient** | $41,000 | $500 |
+| **Cost per patient** | {{< var traditional_phase3_cost_per_patient >}} | {{< var recovery_trial_cost_per_patient >}} |
 | **Time to results** | 3-7 years | 3-6 months |
 | **Patient population** | Homogeneous (strict exclusion) | Real-world (minimal exclusion) |
 | **Setting** | Specialized research centers | Routine clinical care |
@@ -1315,7 +1315,7 @@ Pragmatic trials differ fundamentally from traditional Phase III trials [@recove
 | **Randomization** | Complex stratification | Simple 1:1 or 1:1:1 |
 | **Sample size** | Hundreds to thousands | Thousands to tens of thousands |
 
-The Oxford RECOVERY trial demonstrated this model's effectiveness: 49,000 patients enrolled across 186 hospitals, 12 treatments evaluated, first life-saving result (dexamethasone) in 100 days, over 1 million lives saved globally [@recovery-trial-1m-lives-saved].
+The Oxford RECOVERY trial demonstrated this model's effectiveness: 49,000 patients enrolled across 186 hospitals, 12 treatments evaluated, first life-saving result (dexamethasone) in 100 days, {{< var recovery_trial_global_lives_saved >}} lives saved globally [@recovery-trial-1m-lives-saved].
 
 ### Signal-to-Trial Prioritization
 
@@ -1349,7 +1349,7 @@ Randomization: 1:1 to Treatment A vs. Treatment B
 Primary endpoint: Change in Outcome X at 90 days
 Data collection: Baseline characteristics (EHR), outcome at 90 days (patient-reported or EHR)
 Sample size: 2,000 patients (1,000 per arm)
-Cost: ~$1M total ($500/patient)
+Cost: ~$1M total ({{< var recovery_trial_cost_per_patient >}}/patient)
 Timeline: 6-12 months
 ```
 
@@ -1986,7 +1986,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 We have presented a comprehensive **two-stage framework** for generating **validated outcome labels** from real-world health data. Key contributions include:
 
 1. **Stage 1: Scalable signal detection**: Aggregated N-of-1 observational analysis processes millions of treatment-outcome pairs at ~$0.10/patient, generating ranked hypotheses through the Predictor Impact Score
-2. **Stage 2: Causal confirmation**: Pragmatic randomized trials following the RECOVERY/ADAPTABLE model confirm top signals at ~$500/patient (80× cheaper than traditional trials) while eliminating confounding
+2. **Stage 2: Causal confirmation**: Pragmatic randomized trials following the RECOVERY/ADAPTABLE model confirm top signals at ~{{< var recovery_trial_cost_per_patient >}}/patient ({{< var recovery_trial_cost_reduction_factor >}} cheaper than traditional trials) while eliminating confounding
 3. **Bradford Hill operationalization**: Six of nine causality criteria quantified in composite scoring system
 4. **Trial Priority Score**: Principled prioritization of which signals warrant experimental confirmation
 5. **Validated outcome labels**: Three-tier evidence grading (Validated, Promising, Signal) with both observational and experimental effect sizes
@@ -1997,7 +1997,7 @@ This two-stage design directly addresses the fundamental limitations of purely o
 This framework represents **the FDA of the Future**, a decentralized system that:
 - Receives continuous real-world evidence streams from millions of participants
 - Generates ranked treatment-outcome hypotheses through automated observational analysis
-- Confirms top signals through embedded pragmatic trials at 80× lower cost than traditional methods
+- Confirms top signals through embedded pragmatic trials at {{< var recovery_trial_cost_reduction_factor >}} lower cost than traditional methods
 - Publishes validated outcome labels with quantitative effect sizes and evidence grades
 - Maintains treatment rankings updated in real-time with experimental backing
 - Enables precision medicine through personalized optimal value calculations

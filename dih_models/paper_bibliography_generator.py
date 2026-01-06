@@ -221,7 +221,7 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Path = None) -> Set
             content = f.read()
 
         # Find all citation patterns:
-        # 1. [@key] - standard bracketed citations
+        # 1. [@key] or [-@key] - standard and suppress-author bracketed citations
         # 2. @key (followed by punctuation/whitespace) - inline citations (Pandoc style)
         # Skip @ patterns in code blocks, frontmatter, and URLs
         skip_patterns = {
@@ -236,8 +236,8 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Path = None) -> Set
         # Skip cross-reference prefixes (eq-, fig-, tbl-, sec-, etc.)
         skip_prefixes = ('eq-', 'fig-', 'tbl-', 'sec-', 'lst-', 'thm-', 'def-', 'lem-', 'cor-', 'prp-')
 
-        # Pattern 1: Bracketed citations [@key]
-        for match in re.finditer(r'\[@([a-zA-Z0-9_-]+)', content):
+        # Pattern 1: Bracketed citations [@key] or [-@key] (suppress-author format)
+        for match in re.finditer(r'\[-?@([a-zA-Z0-9_-]+)', content):
             key = match.group(1)
             if key not in skip_patterns and not key.startswith(skip_prefixes):
                 citations.add(key)
