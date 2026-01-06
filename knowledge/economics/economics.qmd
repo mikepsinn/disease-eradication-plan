@@ -62,7 +62,7 @@ This is a **model-based scenario analysis**, not an empirical study. All quantit
 
 ## Abstract
 
-Approximately {{< var diseases_without_effective_treatment >}} diseases currently lack effective first treatments, while {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations remain untested (<1% of therapeutic space explored). At the current research pace of {{< var new_disease_first_treatments_per_year >}} new disease treatments per year, systematically exploring this space would take ~{{< var status_quo_queue_clearance_years >}} years (effectively never). Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials scales trial capacity {{< var dfda_trial_capacity_multiplier >}}× (to ~{{< var dfda_cures_per_year >}} diseases/year), reducing exploration time to ~{{< var dfda_queue_clearance_years >}} years while eliminating the {{< var efficacy_lag_years >}}-year regulatory delay after safety verification. Combined, these effects advance treatment delivery by an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years ({{< var dfda_trial_capacity_cure_acceleration_years >}} years from discovery acceleration + {{< var efficacy_lag_years >}} years from efficacy lag elimination). This one-time timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives over the acceleration period, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Under modeled assumptions, the intervention ranks among the most cost-effective health interventions analyzed: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete health benefits estimate). This qualifies as cost-dominant: it reduces costs while improving outcomes.
+Approximately {{< var diseases_without_effective_treatment >}} diseases currently lack effective first treatments, while {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations remain untested (<1% of therapeutic space explored). At the current research pace of {{< var new_disease_first_treatments_per_year >}} new disease treatments per year, systematically exploring this space would take ~{{< var status_quo_queue_clearance_years >}} years (effectively never). Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials scales trial capacity {{< var dfda_trial_capacity_multiplier >}}× (to ~{{< var dfda_cures_per_year >}} diseases/year), reducing exploration time to ~{{< var dfda_queue_clearance_years >}} years while eliminating the {{< var efficacy_lag_years >}}-year regulatory delay after safety verification. Combined, these effects advance treatment delivery by an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years ({{< var dfda_trial_capacity_cure_acceleration_years >}} years from discovery acceleration + {{< var efficacy_lag_years >}} years from efficacy lag elimination). This one-time timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives over the acceleration period, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Under modeled assumptions, the intervention ranks among the most cost-effective health interventions analyzed: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete health benefits estimate). This qualifies as cost-saving: it reduces costs while improving outcomes.
 
 **Impact Mechanism:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two complementary effects:
 
@@ -84,11 +84,11 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
-**Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials indicates the intervention maintains cost-dominance across the sensitivity ranges explored here.
+**Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials indicates the intervention remains cost-saving across the sensitivity ranges explored here.
 
 **Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
-**Implications**: Comparable to history's most successful public health intervention (smallpox eradication: {{< var smallpox_eradication_roi >}}:1 ROI), this intervention represents a dominant strategy that simultaneously addresses military spending inefficiency and medical research bottlenecks.
+**Implications**: This intervention corrects a fundamental capital misallocation: military spending creates depreciating assets (weapons become obsolete), while medical research creates appreciating assets (treatments compound in value). Comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI), it represents the highest-ROI reallocation available to policymakers.
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, pragmatic clinical trials, regulatory delay, cost-effectiveness analysis, DALY, peace dividend
 
@@ -113,7 +113,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 | **Therapeutic Space Explored** | {{< var dfda_queue_clearance_years >}} years | Time to test first treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}} years, effectively never) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}) exceed costs |
 
-**Bottom line**: Cost-dominant intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
+**Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
 
 ## Introduction
 
@@ -122,7 +122,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 
 
 
-Health economics literature identifies three historical cost-dominant interventions:
+Health economics literature identifies three historical cost-saving interventions:
 
 1. **Smallpox eradication** (1967-1980): {{< var smallpox_eradication_roi >}}:1 ROI {{< var smallpox_eradication_roi_cite >}}, eliminating a disease that killed 300-500 million people in the 20th century alone
 2. **Childhood vaccination programs**: Self-funding interventions generating {{< var childhood_vaccination_annual_benefit >}} in annual economic benefits {{< var childhood_vaccination_annual_benefit_cite >}}
@@ -154,7 +154,7 @@ This intervention differs in four critical ways:
 
 2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
 
-3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
+3. **Cost-saving intervention status**: Cost-saving interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
 4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
 
@@ -217,7 +217,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
-**Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Generally recommended regardless of willingness-to-pay thresholds when dominance is established (e.g., vaccination programs, smoking cessation).
+**Cost-Saving Intervention** (technical term: "dominant intervention"): Interventions that both reduce costs AND improve health outcomes. Generally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
 
 **A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to pragmatic clinical trials infrastructure.
 
@@ -528,8 +528,7 @@ The {{< var treaty_reduction_pct >}} Treaty is the first step in a **gradual off
 
 By successfully executing a verified, mutual reduction in military spending to fund a shared global good (developing disease treatments), humanity establishes a proof-of-concept for cooperation.
 
-
-1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure required for larger steps.
+1.  **Historical precedent works**: Costa Rica abolished its military entirely in 1948, redirecting defense spending to universal healthcare and education. Result: highest life expectancy in Central America (80 years), 98% literacy, and stable democracy for 75+ years. The 1% Treaty requires far less. It maintains virtually all military capacity while redirecting just {{< var treaty_reduction_pct >}} to health research.
 2.  **The Ratchet Mechanism**: Once the economic benefits of the "Peace Dividend" (wealth, health, longevity) materialize, the incentive to increase the treaty percentage grows. We move from a negative-sum arms race to a positive-sum "peace race."
 3.  **Existential Risk Reduction**: Gradually increasing the percentage creates a trajectory toward phasing out large-scale conflict entirely. Since a primary driver of existential risk is **autonomous murder-maximizing AI produced by military arms races**, de-escalating this race via the treaty is arguably the single most effective X-Risk strategy available.
 
@@ -541,7 +540,7 @@ The ratchet mechanism isn't just economic gravity. It's engineered through [Ince
 
 The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds VICTORY Incentive Alignment Bond investor returns.
 
-VICTORY Incentive Alignment Bond investors receive {{< var victory_bond_annual_return_pct >}} annual returns on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains dominant.
+VICTORY Incentive Alignment Bond investors receive {{< var victory_bond_annual_return_pct >}} annual returns on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains the largest share.
 
 This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical research, {{< var victory_bond_funding_pct >}} investor returns, {{< var iab_political_incentive_funding_pct >}} political incentives) functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
@@ -656,7 +655,7 @@ For objectives including:
 * Not suffering unnecessarily
 
 
-Redirection of 1% of military spending to pragmatic trials is the **mathematically dominant strategy**.
+Redirection of 1% of military spending to pragmatic trials delivers exceptional returns.
 
 ### Quantitative Comparison
 
@@ -664,7 +663,7 @@ With $1B allocated toward saving lives, here's what each option delivers:
 
 | Intervention | Cost per DALY | Scale | Economic Model |
 |:-------------|:--------------|:------|:---------------|
-| **1% Treaty (Timeline Shift)** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Cost-dominant |
+| **1% Treaty (Timeline Shift)** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Cost-saving |
 | **1% Treaty (Expected Value)** | {{< var treaty_expected_cost_per_daly >}} | At {{< var political_success_probability >}} success probability | {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets |
 | **Malaria Bed Nets** | {{< var bed_nets_cost_per_daly >}} | Proven, scalable | Linear scaling |
 | **Childhood Vaccinations** | Self-funding | Annual benefit: ~{{< var childhood_vaccination_annual_benefit >}} | Self-funding |
@@ -690,11 +689,11 @@ None offer **{{< var dfda_trial_capacity_multiplier >}}× leverage**.
 
 **Why the {{< var treaty_vs_bed_nets_multiplier >}}× better cost-effectiveness vs. bed nets is plausible:**
 
-Bed nets are a consumable intervention requiring ongoing replacement every 3-5 years. To save 1,000 lives over 20 years requires purchasing and distributing thousands of bed nets repeatedly. Total cost scales linearly with lives saved.
+Bed nets are **consumable interventions** requiring ongoing replacement every 3-5 years. To save 1,000 lives over 20 years requires purchasing and distributing thousands of bed nets repeatedly. Total cost scales linearly with lives saved.
 
-The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be {{< var treaty_vs_bed_nets_multiplier >}}× better than excellent linear interventions like bed nets.
+The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely.
 
-The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make {{< var unexplored_ratio >}} of potential drug-disease combinations economically infeasible to test).
+**Asset class comparison**: Bed nets are **depreciating assets** (consumed, worn out, require replacement). Medical treatments are **appreciating assets**. Once discovered, they compound in value forever; penicillin discovered in 1928 still saves lives today. Military spending creates **depreciating assets** (weapons become obsolete, require replacement). This reallocation shifts capital from depreciating to appreciating asset classes, explaining why ROI can be {{< var treaty_vs_bed_nets_multiplier >}}× better than excellent consumable interventions like bed nets.
 
 ## Methodology
 
@@ -768,7 +767,7 @@ WHO says interventions under {{< var who_qaly_threshold_cost_effective >}} {{< v
 
 This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY**
 
-But here's the key: this intervention is **cost-dominant**. The upfront campaign cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits.
+But here's the key: this intervention is **cost-saving**. The upfront campaign cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits.
 
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). For detailed analysis: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
@@ -809,6 +808,24 @@ For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban
 ### Treaty Campaign Leverage vs Direct Funding
 
 A natural question: Why not skip the $1B treaty campaign and simply convince major philanthropists (Gates Foundation, Open Philanthropy) or expand NIH budgets to directly fund {{< var dih_treasury_to_medical_research_annual >}}/year for clinical trials?
+
+#### Why Billionaires Buy Lottery Tickets Instead of the Casino
+
+The world's richest people (who will die of cancer, heart disease, or aging just like everyone else) are not exclusively focused on passing this treaty. This is arguably the single most puzzling fact about modern philanthropy.
+
+Four structural barriers explain this coordination failure:
+
+**1. The "Bio-Research" Fallacy (buying the wrong asset)**: Billionaires spend billions on health, but on the wrong part of the supply chain. They build labs (Chan Zuckerberg Biohub, Altos Labs, Broad Institute) and hire Nobel laureates, assuming the bottleneck is *scientific discovery*. It isn't. We have thousands of promising compounds on shelves. The real bottleneck is the **Clinical Trial Valley of Death**: proving drugs work costs $100M-$1B per drug. No amount of "basic science" funding solves the regulatory/cost engine being too slow and expensive. Building a lab wing named after yourself is prestigious; funding a "Treaty Lobbying Organization" is invisible, unsexy, and bureaucratic.
+
+**2. The Scale Mismatch**: Mark Zuckerberg is worth ~$175B. If he spent *every penny*, he could fund the US military for approximately **2 months**. The only pot of money large enough to fund global disease eradication is the **Global Military Budget** ($2.2T/year, *every year*). Billionaires try to pay for the *research* out of pocket (which runs out) instead of paying for the *key* (the treaty) that unlocks the government's vault.
+
+**3. The "Politics is Toxic" Problem**: To pass a 1% Treaty, you fight the Defense Industrial Complex. Any billionaire saying "take 1% of military budgets" gets immediately attacked as "weak on national security." Most billionaires are risk-averse regarding public image, preferring "safe" charities (libraries, scholarships, malaria nets) over "radical" geopolitical restructuring.
+
+**4. The "Advisor" Agency Problem**: Who advises billionaires? Scientists say "give money to my university lab." Wealth managers say "don't do anything politically controversial." Almost no one in a billionaire's inner circle is a "Grand Strategy" expert who would say: *"The most efficient use of your capital is not to hire scientists, but to hire lobbyists to force governments to redirect 1% of military spending into a dFDA."*
+
+**The arbitrage opportunity**: Billionaires are buying **lottery tickets** (individual research projects with 0.01% probability of curing cancer) when they should be buying the **casino** (changing the rules via treaty). A billionaire spends $1B on a cancer center with ~0.01% probability of success. The same $1B spent on treaty campaign has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year forever. The "lobbying" bet is mathematically thousands of times better than the "science" bet, but feels "weird" because it's political, not medical.
+
+#### Numerical Comparison: Treaty vs Direct Funding
 
 The answer reveals the treaty campaign's massive leverage advantage:
 
@@ -874,7 +891,7 @@ For a dFDA's cost per health benefit averted (using the full ~{{< var dfda_trial
 
 **Cost per DALY averted: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}**
 
-This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. This extremely low cost per DALY, combined with net economic benefits that exceed costs, qualifies this as a cost-dominant intervention under model assumptions. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-dominant interventions are generally prioritized regardless of threshold.
+This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. This extremely low cost per DALY, combined with net economic benefits that exceed costs, qualifies this as a cost-saving intervention under model assumptions. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-saving interventions are generally prioritized regardless of threshold.
 
 #### NPV of Regulatory Delay Avoidance
 
@@ -948,7 +965,7 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a dFDA**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
 
-**Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
+**Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-saving: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
 ## Peace Dividend Calculation Methodology
 
@@ -1350,7 +1367,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-The tornado chart below shows how expected ROI varies with political success probability - this is the dominant driver of uncertainty:
+The tornado chart below shows how expected ROI varies with political success probability - this is the primary driver of uncertainty:
 
 {{< include ../figures/tornado-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
@@ -1373,9 +1390,11 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
 
-**Concentrated costs, diffuse benefits**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
+**The Iron Triangle problem**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually), creating tight coordination between defense industry, congressional committees, and Pentagon bureaucracy. Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries who lack equivalent lobbying infrastructure. This asymmetry (concentrated producer benefits vs. diffuse consumer benefits) creates political economy barriers to reallocation even when aggregate welfare gains are enormous.
 
-**Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
+**The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike defense contractors who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, cures for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or cures that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
+
+**Historical precedent: Why past peace dividends failed**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam (1970s) and post-Cold War (1990s): initial reductions followed by reversals within 5-10 years. The critical failure: **savings weren't bound to a substitute industry**. Money reverted to general budgets, making re-militarization politically costless. The 1% Treaty solves this by **contractually binding savings to health research infrastructure**, creating a new constituency (patients, researchers, pharmaceutical companies) with incentives to defend the reallocation.
 
 **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties ratified, but many failed to meet funding commitments. As of 2024, developed countries have not met the $100B annual climate finance pledge despite treaty obligations. Treaty ratification creates moral commitment but weak enforcement mechanisms for sustained budgetary allocations.
 
@@ -1463,7 +1482,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 {{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
 
-**Sensitivity of peace dividend estimate:** The tornado chart below shows which cost components have the largest impact on the total peace dividend. The dominant drivers are infrastructure destruction costs and lost economic growth:
+**Sensitivity of peace dividend estimate:** The tornado chart below shows which cost components have the largest impact on the total peace dividend. The primary drivers are infrastructure destruction costs and lost economic growth:
 
 {{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
 
@@ -1527,9 +1546,9 @@ The conservative case excludes faster drug access, better treatment selection, r
 
 {{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
-### Cost-Effectiveness: Dominant Health Intervention
+### Cost-Effectiveness: Cost-Saving Health Intervention
 
-Smallpox eradication is the historical precedent for cost-dominant interventions.
+Smallpox eradication is the historical precedent for cost-saving interventions.
 
 #### Incremental Cost-Effectiveness Ratio (ICER)
 
@@ -1539,7 +1558,7 @@ ICER measures the cost per year of healthy life gained (QALY):
 
 For a dFDA (using the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
-**Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (cost-dominant: net economic benefits exceed costs)
+**Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (cost-saving: net economic benefits exceed costs)
 
 Normally, money is *spent* to save lives. Good interventions cost {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. Great interventions cost $3,000-{{< var who_qaly_threshold_cost_effective >}}.
 
@@ -1610,7 +1629,7 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_peace_plus_rd_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} (from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
-- **Cost per Life Saved**: Net societal benefit per life (negative cost indicates net profit, meaning the system generates economic value while saving lives)
+- **Cost per Life Saved**: Net societal benefit per life (the system generates economic value while saving lives, making it cost-saving rather than cost-incurring)
 
 This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
@@ -1727,7 +1746,7 @@ This section compares a 1% treaty/decentralized framework for drug assessment sy
 | Intervention Type | Metric | Performance | Annual Benefit |
 |:---|:---|---:|---:|
 | **1% Treaty/dFDA** | Cost per life saved | **$1.1M profit** | {{< var combined_peace_health_dividends_annual_for_roi_calc >}} |
-| **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (cost-dominant) | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} QALYs (total) |
+| **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (cost-saving) | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} QALYs (total) |
 | **Childhood Vaccinations** | Annual benefit | Self-funding | ~{{< var childhood_vaccination_annual_benefit >}} |
 | **GiveWell Top Charities** | Cost per life saved | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
 | **GiveWell Top Charities** | Cost per QALY | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
@@ -1747,7 +1766,7 @@ Standard interventions (Bed Nets, Vaccines) are **linear**: to save 2x more live
 
 A 1% treaty is **systemic and exponential**:
 
-1.  **Negative Cost**: It unlocks a *new* funding source (military waste), effectively having an infinite ROI compared to spending existing philanthropic capital.
+1.  **Self-Funding**: It unlocks a *new* funding source (military waste), effectively having an infinite ROI compared to spending existing philanthropic capital.
 2.  **Multiplier Effect**: It accelerates the *rate* of treatment discovery for *all* diseases ({{< var dfda_trial_capacity_multiplier >}}× acceleration), compounding benefits over time.
 
 ### The Critical Difference
@@ -2227,7 +2246,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
 - **Complete ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
-**Robustness:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the dominant driver of uncertainty.
+**Robustness:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the primary driver of uncertainty.
 
 ### General Equilibrium Effects
 
@@ -2264,7 +2283,7 @@ Despite these limitations, several factors support the analysis's robustness:
 1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var dfda_roi_rd_only >}}:1)
 2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
-4. **Dominant intervention status:** Cost-dominant intervention ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY) means it saves money even if health benefits are substantially overstated
+4. **Dominant intervention status:** Cost-saving intervention ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY) means it saves money even if health benefits are substantially overstated
 
 **Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
@@ -2295,7 +2314,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 - **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to cure malaria entirely
 - **Result**: Keep funding bed nets (they work!) AND accelerate development of malaria vaccines and treatments through massively expanded trial capacity
 
-The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund.
+The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund. The Gates Foundation's historical pattern (spending billions on individual disease programs when the same capital could lobby for treaty passage and unlock {{< var treaty_annual_funding >}}/year in government funding) exemplifies the "lottery tickets vs casino" problem described earlier. Advocacy for structural change offers superior ROI to direct program spending.
 
 ### Military Budget Allocation
 
@@ -2340,7 +2359,7 @@ Policy adoption requires coordination across three levels:
 
 ### Bottom Line for Policymakers
 
-This intervention is **cost-dominant**, making it one of the rarest findings in health economics. It doesn't require:
+This intervention is **cost-saving**, making it one of the rarest findings in health economics. It doesn't require:
 
 - New taxes
 - Reduced health spending
@@ -2356,15 +2375,16 @@ The political challenge isn't economic: the ROI speaks for itself. The challenge
 
 International treaty adoption is fundamentally a political and diplomatic process, not a technical implementation timeline. The 1% Treaty's viability depends on **simultaneous multilateral commitment**: no nation reduces military spending unilaterally, creating security vulnerabilities or free-rider problems. All signatories reduce together.
 
-### Why Simultaneous Commitment Works
+### Why Simultaneous Commitment Works: Escaping the Prisoner's Dilemma
 
-Unilateral military reduction is politically infeasible:
+Unilateral military reduction is politically infeasible. This is a classic **Prisoner's Dilemma**:
 
-- Creates perceived security vulnerability
-- "Free rider" problem: non-participants benefit from reduced global conflict risk without contributing
-- Domestic opposition from military industries
+- **If I reduce alone**: Security vulnerability while others maintain full capacity (worst outcome)
+- **If I don't reduce but others do**: Free-ride on reduced conflict risk (tempting but unsustainable)
+- **If nobody reduces**: Arms race continues, all players worse off (current equilibrium)
+- **If all reduce together**: Maintain relative balance, redirect savings to health (optimal Nash equilibrium)
 
-**Simultaneous binding commitment solves this**: All signatories reduce 1% together, maintaining relative military balance while collectively redirecting {{< var treaty_annual_funding >}}/year to health research that benefits all participants.
+**Simultaneous binding commitment solves the coordination problem**: All signatories reduce {{< var treaty_reduction_pct >}} together, maintaining relative military balance while collectively redirecting {{< var treaty_annual_funding >}}/year to health research that benefits all participants. The treaty converts a Prisoner's Dilemma (where rational self-interest produces suboptimal outcomes) into a coordination game with enforceable commitments.
 
 ### Historical Treaty Precedents
 
@@ -2399,7 +2419,7 @@ Treaty adoption depends on:
 
 ## Conclusion
 
-Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials delivers {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI using standard health economics methodology (NPV, QALYs, ICER). The intervention qualifies as cost-dominant and requires no new taxes, only reallocation of existing budgets to higher-ROI activities.
+Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials delivers {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI using standard health economics methodology (NPV, QALYs, ICER). The intervention qualifies as cost-saving and requires no new taxes, only reallocation of existing budgets to higher-ROI activities.
 
 See [complete analysis](../appendix/dfda-cost-benefit-analysis.qmd) and [detailed comparisons](../appendix/intervention-comparison-table.qmd).
 
