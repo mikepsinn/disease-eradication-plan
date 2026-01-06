@@ -236,7 +236,7 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 3. **Attribution Challenge:** Difficult to separate FDA effects from broader trends
 4. **Data Quality:** Early period (1960s-1970s) relies on retrospective estimates
 
-Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase), provides strong inferential evidence for causation.
+Despite these limitations, the **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase) provides strong inferential evidence that regulatory changes significantly impacted drug development.
 
 ## Policy Implications
 
@@ -334,20 +334,13 @@ Counterfactuals are never directly observable. That's why science uses **natural
 
 #### Natural Experiments
 
-**1. Temporal Comparison (US Pre/Post-1962):**
-
-- 1883-1962: Linear {{< var life_expectancy_gain_1883_1962_years_per_decade >}} life expectancy gain
-- 1962-2019: Linear {{< var life_expectancy_gain_1962_2019_years_per_decade >}} gain
-- **Break is exact:** Slope changed in 1962, not gradually over the decade
-- **Mechanism identified:** {{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase
-
-**2. Geographic Comparison (Switzerland vs. US):**
+**1. Geographic Comparison (Switzerland vs. US):**
 
 - Swiss regulations less restrictive than US post-1962
-- [Life expectancy gap widened after 1962](../problem/fda-is-unsafe-and-ineffective.qmd)
+- [Health outcome gap widened after 1962](../problem/fda-is-unsafe-and-ineffective.qmd)
 - Gap correlates with US drug approval rates (narrows when US approvals increase, widens when they decrease)
 
-**3. Alternative Regulatory Models:**
+**2. Alternative Regulatory Models:**
 
 - **Japan's Regenerative Medicine Act:** Conditional approval after Phase II, 2-3 years vs. {{< var fda_phase_1_to_approval_years >}}
 - **EU Compassionate Use:** Terminal patients access experimental drugs
@@ -363,8 +356,8 @@ $$
 
 We have:
 
-1. **Temporal correlation:** Life expectancy growth halved in 1962
-2. **Mechanism:** Drug approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}, costs increased {{< var drug_cost_increase_1980s_to_current_multiplier >}}, real-world trials banned
+1. **Temporal correlation:** Drug approvals dropped {{< var post_1962_drug_approval_reduction_pct >}} immediately after 1962
+2. **Mechanism:** Costs increased {{< var drug_cost_increase_1980s_to_current_multiplier >}}, real-world trials banned, efficacy requirements added {{< var efficacy_lag_years >}} years to development
 3. **Alternative explanations:** Other factors exist (complexity, standards, etc.), but the timing and magnitude strongly suggest regulatory latency is a major contributor
 
 **If you reject this inferential method, you must also reject the methodology of clinical trials**, which use the identical logical structure.
@@ -377,13 +370,13 @@ We have:
 
 Confounders work **against** the hypothesis, making the observed effect more remarkable.
 
-**Medicare (1965):** Expanded healthcare access → *should have increased* life expectancy growth → Yet it halved
+**Medicare (1965):** Expanded healthcare access → *should have increased* drug demand and development → Yet approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}
 
 **NIH Funding:** Grew dramatically 1960s-1980s → *should have accelerated* drug development → Yet approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}
 
-**Vietnam War (1965-1973):** Primarily affected young males, minimal impact on overall life expectancy trends
+**Vietnam War (1965-1973):** Primarily affected young males, minimal impact on overall drug development patterns
 
-**The temporal precision matters:** Life expectancy slope changed in **1962**, not 1965 (Medicare) or 1964 (Gulf of Tonkin). The break coincides exactly with the Kefauver-Harris Amendments, not with other major policy changes.
+**The temporal precision matters:** Drug approval rates dropped {{< var post_1962_drug_approval_reduction_pct >}} in **1962**, not 1965 (Medicare) or 1964 (Gulf of Tonkin). The break coincides exactly with the Kefauver-Harris Amendments, not with other major policy changes.
 
 **Quantitative test:**
 
@@ -394,8 +387,9 @@ If confounders explained the effect, we would expect:
 
 Instead, we observe:
 
-- Instant break in 1962
-- Sustained reduction for 62+ years
+- Immediate {{< var post_1962_drug_approval_reduction_pct >}} drop in drug approvals in 1962
+- Sustained reduction in approval rates for 62+ years
+- Development costs increased {{< var drug_cost_increase_1980s_to_current_multiplier >}}
 
 The hypothesis that fits the data is: **structural change in drug approval requirements permanently reduced the rate of biomedical progress.**
 
@@ -429,7 +423,7 @@ The pre-1962 system (1883-1962) had:
 - Phase I safety testing (post-1938)
 - Decentralized efficacy trials (150,000 physicians)
 - Third-party review (AMA seal of approval)
-- **Result:** Linear {{< var life_expectancy_gain_1883_1962_years_per_decade >}} life expectancy gain for 80 years
+- **Result:** Robust drug development pipeline with higher approval rates
 
 **Current system failures:**
 
