@@ -1548,7 +1548,7 @@ LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
     peer_reviewed=True,
     keywords=["life expectancy", "pre-1962", "historical", "biomedical progress", "years per decade"],
     inputs=["US_LIFE_EXPECTANCY_1962", "US_LIFE_EXPECTANCY_1880"],
-    compute=lambda ctx: round((ctx.US_LIFE_EXPECTANCY_1962 - ctx.US_LIFE_EXPECTANCY_1880) / 7.9, 2),
+    compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_1962"] - ctx["US_LIFE_EXPECTANCY_1880"]) / 7.9, 2),
 )
 
 LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
@@ -1563,7 +1563,7 @@ LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
     peer_reviewed=True,
     keywords=["life expectancy", "post-1962", "slowdown", "biomedical progress", "years per decade", "kefauver-harris"],
     inputs=["US_LIFE_EXPECTANCY_2019", "US_LIFE_EXPECTANCY_1962"],
-    compute=lambda ctx: round((ctx.US_LIFE_EXPECTANCY_2019 - ctx.US_LIFE_EXPECTANCY_1962) / 5.7, 2),
+    compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_2019"] - ctx["US_LIFE_EXPECTANCY_1962"]) / 5.7, 2),
 )
 
 # Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)

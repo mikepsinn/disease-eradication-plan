@@ -24,7 +24,7 @@ Usage:
 
 import re
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from .formatting import format_parameter_value
 
@@ -626,7 +626,7 @@ def generate_auto_latex(
     param_name: str,
     param_value: Any,
     parameters: Dict[str, Dict[str, Any]],
-    params_file: Path = None
+    params_file: Optional[Path] = None
 ) -> str | None:
     r"""
     Generate LaTeX equation from parameter metadata.

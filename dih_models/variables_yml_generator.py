@@ -30,6 +30,23 @@ from dih_models.reference_parser import sanitize_bibtex_key
 from dih_models.formatting import format_parameter_value
 
 
+class ValueWithCI:
+    """Wrapper to override display_value with confidence interval."""
+    def __init__(self, original_value: Any, display_override: str):
+        self._original = original_value
+        self.display_value = display_override
+        # Copy all attributes from original
+        for attr in dir(original_value):
+            if not attr.startswith('_') and attr != 'display_value':
+                try:
+                    setattr(self, attr, getattr(original_value, attr))
+                except (AttributeError, TypeError):
+                    pass
+
+    def __float__(self) -> float:
+        return float(self._original)
+
+
 def generate_variables_yml(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
@@ -75,10 +92,38 @@ def generate_variables_yml(
         # Use lowercase name for Quarto variables (convention)
         var_name = param_name.lower()
 
-        # Check if this parameter has Monte Carlo uncertainty data
-        # If so, embed 95% CI in the display value (but only if there's actual variance)
+        # Check if this parameter has uncertainty data to embed in display value
+        # Priority: 1) Specified confidence_interval on parameter, 2) Monte Carlo derived CI
         value_with_ci = value
-        if param_name in uncertainty_data:
+        unit = getattr(value, "unit", None)
+        central_value = float(value)
+
+        # First, check if parameter has an explicitly specified confidence_interval
+        # This is preferred as it represents the author's judgment about plausible ranges
+        specified_ci = getattr(value, "confidence_interval", None)
+
+        if specified_ci and len(specified_ci) == 2:
+            ci_low, ci_high = specified_ci
+            # Check if there's meaningful uncertainty in the specified CI
+            has_meaningful_uncertainty = abs(ci_high - ci_low) > 0.001
+
+            if has_meaningful_uncertainty:
+                central_formatted = format_parameter_value(central_value, unit, include_unit=False)
+
+                # Format CI bounds - for percentages, multiply by 100 and format as percent
+                if unit == "percentage":
+                    ci_low_formatted = f"{ci_low * 100:.0f}%"
+                    ci_high_formatted = f"{ci_high * 100:.0f}%"
+                else:
+                    ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=False)
+                    ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=False)
+
+                # Embed specified CI in display value
+                display_value_with_ci = f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
+                value_with_ci = ValueWithCI(value, display_value_with_ci)
+
+        # Fall back to Monte Carlo derived CI if no specified CI
+        elif param_name in uncertainty_data:
             unc = uncertainty_data[param_name]
             p5 = unc.get("p5")
             p50 = unc.get("p50")
@@ -96,33 +141,12 @@ def generate_variables_yml(
             if has_meaningful_uncertainty:
                 # Always use deterministic baseline for consistency with tooltips, LaTeX, and parameter-summary.md
                 # The confidence interval will still show Monte Carlo uncertainty range
-                unit = getattr(value, "unit", None)
-                central_value = float(value)
-
                 central_formatted = format_parameter_value(central_value, unit, include_unit=False)
                 p5_formatted = format_parameter_value(p5, unit, include_unit=False)
                 p95_formatted = format_parameter_value(p95, unit, include_unit=False)
 
                 # Embed CI in display value
                 display_value_with_ci = f"{central_formatted} (95% CI: {p5_formatted}-{p95_formatted})"
-
-                # Create a copy of the value object with display_value override
-                # This uses the Parameter's display_value feature to override formatting
-                class ValueWithCI:
-                    def __init__(self, original_value, display_override):
-                        self._original = original_value
-                        self.display_value = display_override
-                        # Copy all attributes from original
-                        for attr in dir(original_value):
-                            if not attr.startswith('_') and attr != 'display_value':
-                                try:
-                                    setattr(self, attr, getattr(original_value, attr))
-                                except (AttributeError, TypeError):
-                                    pass
-
-                    def __float__(self):
-                        return float(self._original)
-
                 value_with_ci = ValueWithCI(value, display_value_with_ci)
 
         # Generate formatted HTML with tooltip

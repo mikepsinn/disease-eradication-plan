@@ -2677,6 +2677,20 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-life_expectancy_gain_1883_1962_years_per_decade.qmd >}}
+
+{{< include ../figures/sensitivity-table-life_expectancy_gain_1883_1962_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1883_1962_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1883_1962_years_per_decade.qmd >}}
+
 :::
 
 ### Life Expectancy Gain Rate (1962-2019): 0 years/decade {#sec-life_expectancy_gain_1962_2019_years_per_decade}
@@ -2697,6 +2711,18 @@ $$
 **Methodology**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - Post-1962 slowdown in life expectancy gains](../references.qmd#post-1962-life-expectancy-slowdown)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
 :::
 

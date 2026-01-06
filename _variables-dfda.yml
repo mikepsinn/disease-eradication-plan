@@ -13,7 +13,7 @@ recovery_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-ca
   an outlier - hospital-based during COVID emergency, minimal extra procedures, existing
   NHS infrastructure, streamlined consent. Replicating this globally will be harder.
   | ✓ High confidence | 95% CI: [$400, $2.50K] | Dist: Lognormal | Unit: USD/patient
-  | Click to view details, calculation & sources">$500 (95% CI: $400-$1.43K)</a>'
+  | Click to view details, calculation & sources">$500 (95% CI: $400-$2.50K)</a>'
 recovery_trial_cost_per_patient_cite: '@recovery-cost-500'
 recovery_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_reduction_factor"
   class="parameter-link" data-source-ref="recovery-trial-82x-cost-reduction" data-source-type="calculated"
@@ -34,11 +34,11 @@ recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-
   (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty
   range reflects extrapolation assumptions. | ~ Medium confidence | 95% CI: [500k
   lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to view details, calculation
-  & sources">1.00M (95% CI: 503k-1.71M)</a>'
+  & sources">1.00M (95% CI: 500k-2.00M)</a>'
 recovery_trial_global_lives_saved_cite: '@recovery-trial-1m-lives-saved'
 traditional_phase3_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient"
   class="parameter-link" data-source-ref="trial-costs-fda-study" data-source-type="external"
   data-confidence="high" title="Phase 3 cost per patient (median from FDA study) |
   ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit: USD/patient
-  | Click to view details, calculation & sources">$41K (95% CI: $20K-$89.1K)</a>'
+  | Click to view details, calculation & sources">$41K (95% CI: $20K-$120K)</a>'
 traditional_phase3_cost_per_patient_cite: '@trial-costs-fda-study'

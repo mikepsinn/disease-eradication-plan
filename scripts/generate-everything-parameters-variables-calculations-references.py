@@ -346,8 +346,26 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
         # Format the baseline value
         formatted_value = format_parameter_value(value, unit, include_unit=True)
 
-        # Check if we have Monte Carlo confidence intervals
-        if param_name in samples_data:
+        # Priority: 1) Specified confidence_interval on parameter, 2) Monte Carlo derived CI
+        specified_ci = getattr(value, "confidence_interval", None)
+
+        if specified_ci and len(specified_ci) == 2:
+            ci_low, ci_high = specified_ci
+            # Check if there's meaningful uncertainty
+            if abs(ci_high - ci_low) > 0.001:
+                # Format CI bounds - for percentages, multiply by 100 and format as percent
+                if unit == "percentage":
+                    ci_low_formatted = f"{ci_low * 100:.0f}%"
+                    ci_high_formatted = f"{ci_high * 100:.0f}%"
+                else:
+                    ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=False)
+                    ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=False)
+
+                line = f"{param_name}: {formatted_value} (95% CI: {ci_low_formatted}-{ci_high_formatted})\n"
+            else:
+                line = f"{param_name}: {formatted_value}\n"
+        # Fall back to Monte Carlo confidence intervals
+        elif param_name in samples_data:
             stats = samples_data[param_name]
             p5 = stats.get("p5", 0)
             p95 = stats.get("p95", 0)
