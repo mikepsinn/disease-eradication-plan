@@ -50,7 +50,7 @@ We define the Total Mortality Cost ($D_{total}$) as the sum of two distinct vari
 
 $$
 D_{total} = D_{lag} + D_{void}
-$$ {#eq-total-mortality}
+$$
 
 ### 2.1 Variable Definitions {#mortality-estimates}
 
@@ -163,7 +163,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
 - **YLL Total:**
 
-{{< var dfda_efficacy_lag_elimination_yll_latex >}} {#eq-yll}
+{{< var dfda_efficacy_lag_elimination_yll_latex >}}
 
 ### 4.2 Years Lived with Disability (YLD)
 
@@ -171,11 +171,11 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}} years
 - **YLD Total:**
 
-{{< var dfda_efficacy_lag_elimination_yld_latex >}} {#eq-yld}
+{{< var dfda_efficacy_lag_elimination_yld_latex >}}
 
 ### 4.3 Cumulative DALY Burden
 
-{{< var dfda_efficacy_lag_elimination_dalys_latex >}} {#eq-total-dalys}
+{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
 **Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life**.
 
@@ -185,11 +185,11 @@ To quantify the **Deadweight Loss (DWL)** to the global economy, we apply the Va
 
 $$
 DWL = \sum (DALY_{loss} \times VSLY)
-$$ {#eq-dwl}
+$$
 
 Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >}}**:
 
-{{< var dfda_efficacy_lag_elimination_economic_value_latex >}} {#eq-dwl-calculation}
+{{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
 
 ### 5.1 Contextualizing the Loss
 
@@ -207,7 +207,7 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 
 ### The Risk Trade-off Ratio
 
-{{< var type_ii_error_cost_ratio_latex >}} {#eq-type-i-ii-ratio}
+{{< var type_ii_error_cost_ratio_latex >}}
 
 **Conclusion:** For every 1 unit of harm the FDA prevents (Type I errors: approving dangerous/ineffective drugs), it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay (Type II errors: blocking effective drugs).
 
