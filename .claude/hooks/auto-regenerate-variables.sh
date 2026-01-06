@@ -1,8 +1,10 @@
 #!/bin/bash
 # PostToolUse hook: Auto-regenerate variables after parameters.py changes
-# Runs after Edit/Write operations on parameters.py
+# Reads file path from stdin JSON (tool_input.file_path)
 
-FILE_PATH="${CLAUDE_HOOK_FILE_PATH:-}"
+# Read JSON from stdin and extract file_path
+INPUT=$(cat)
+FILE_PATH=$(echo "$INPUT" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('file_path',''))" 2>/dev/null)
 
 # Only regenerate if parameters.py changed
 if [[ ! "$FILE_PATH" =~ parameters\.py$ ]]; then
@@ -14,7 +16,7 @@ cd "$PROJECT_DIR" || exit 0
 
 echo "[Auto-Regenerate] Parameters changed, regenerating variables..." >&2
 
-# Run the generation script
+# Determine Python command
 if [[ -f ".venv/Scripts/python.exe" ]]; then
     PYTHON_CMD=".venv/Scripts/python.exe"
 elif [[ -f ".venv/bin/python" ]]; then

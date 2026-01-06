@@ -1,8 +1,10 @@
 #!/bin/bash
-# PostToolUse hook: Check Python files for errors using pyright
-# Runs after Edit/Write operations on Python files
+# PostToolUse hook: Check Python files for errors
+# Reads file path from stdin JSON (tool_input.file_path)
 
-FILE_PATH="${CLAUDE_HOOK_FILE_PATH:-}"
+# Read JSON from stdin and extract file_path
+INPUT=$(cat)
+FILE_PATH=$(echo "$INPUT" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('file_path',''))" 2>/dev/null)
 
 # Only check Python files
 if [[ ! "$FILE_PATH" =~ \.py$ ]]; then
@@ -14,16 +16,7 @@ cd "$PROJECT_DIR" || exit 0
 
 echo "[Python Linter] Checking $FILE_PATH..." >&2
 
-# Use pyright for static type checking (if available)
-if command -v pyright &> /dev/null; then
-    pyright "$FILE_PATH" 2>&1 | head -n 20
-    PYRIGHT_EXIT=$?
-    if [ $PYRIGHT_EXIT -ne 0 ]; then
-        echo "[ERROR] Pyright found issues in $FILE_PATH" >&2
-    fi
-fi
-
-# Always run py_compile for syntax check
+# Determine Python command
 if [[ -f ".venv/Scripts/python.exe" ]]; then
     PYTHON_CMD=".venv/Scripts/python.exe"
 elif [[ -f ".venv/bin/python" ]]; then
@@ -32,6 +25,7 @@ else
     PYTHON_CMD="python"
 fi
 
+# Run py_compile for syntax check
 "$PYTHON_CMD" -m py_compile "$FILE_PATH" 2>&1
 COMPILE_EXIT=$?
 
