@@ -9,7 +9,9 @@ This is a minimal parameters document for testing cross-references.
 
 ## Test Parameters
 
-- Global population: 8 billion
+Testing if using ANY variable from _variables.yml triggers citation warnings for ALL embedded citations:
+
+- ADAPTABLE trial cost per patient: {{< var adaptable_trial_cost_per_patient >}}
 - Test metric: 100%
 - Sample value: $1,000,000
 

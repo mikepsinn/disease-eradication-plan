@@ -1,0 +1,37 @@
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (9 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+average_market_return_pct: '<a href="/knowledge/appendix/parameters-and-calculations#sec-average_market_return_pct"
+  class="parameter-link" data-source-ref="warren-buffett-career-average-return-20-pct"
+  data-source-type="external" data-confidence="high" title="Average annual stock market
+  return (10%) | ✓ High confidence | Unit: rate | Click to view details, calculation
+  & sources">10%</a>'
+average_market_return_pct_cite: '@warren-buffett-career-average-return-20-pct'
+concentrated_interest_sector_market_cap_usd: '<span class="parameter-definition" title="Estimated
+  combined market capitalization of concentrated interest opposition (defense, fossil
+  fuel, etc.) | Unit: USD | Core definition">$5T</span>'
+global_household_wealth_usd: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd"
+  class="parameter-link" data-source-ref="cs-global-wealth-report-2023" data-source-type="external"
+  data-confidence="high" title="Total global household wealth (2022/2023 estimate)
+  | ✓ High confidence | Unit: USD | Click to view details, calculation & sources">$454T</a>'
+global_household_wealth_usd_cite: '@cs-global-wealth-report-2023'
+iab_mechanism_benefit_cost_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_benefit_cost_ratio"
+  class="parameter-link" data-source-ref="/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis"
+  data-source-type="calculated" data-confidence="high" title="Benefit-Cost Ratio of
+  the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence | Formula:
+  TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio | Click to view
+  details, calculation & sources">230 (95% CI: 185-284)</a>'
+iab_mechanism_benefit_cost_ratio_latex: '$$
+
+  Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$172B}{\$750M} = 230
+
+  $$'
+victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
+  return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core
+  definition">272%</span>'
+victory_bond_annual_return_pct_latex: '$$
+
+  Return = \$2.718B / \$1B = 2.718 = 271.8\%
+
+  $$'

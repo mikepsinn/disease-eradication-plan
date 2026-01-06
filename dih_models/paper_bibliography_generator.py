@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Per-Paper Bibliography Generator
-================================
+Per-Paper Bibliography and Variables Generator
+===============================================
 
-Generate filtered .bib files for standalone papers, containing only citations
-actually used in each paper. This ensures PDFs include only relevant references.
+Generate filtered .bib and _variables.yml files for standalone papers.
+This ensures:
+1. PDFs include only cited references (not all 700+ from references.bib)
+2. Citeproc doesn't warn about citations embedded in unused variables
 
 Functions:
 - extract_citations_from_qmd() - Find all [@key] citations in a QMD file
+- extract_variables_from_qmd() - Find all {{< var name >}} usages in a QMD file
+- extract_citations_from_variable_values() - Find @citations embedded in variable HTML
+- generate_filtered_variables_yml() - Create filtered _variables-{paper}.yml
 - generate_paper_bibliography() - Create filtered .bib for a single paper
 - generate_all_paper_bibliographies() - Process all standalone papers
 
@@ -23,11 +28,170 @@ Usage:
 import re
 import sys
 from pathlib import Path
-from typing import Set, Dict, List, Optional
+from typing import Set, Dict, List, Optional, Tuple
+
+import yaml
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
+
+
+def extract_variables_from_qmd(qmd_path: Path, project_root: Path = None) -> Set[str]:
+    """
+    Extract all Quarto variable names used in a QMD file, including from {{< include >}} files.
+
+    Pattern matched: {{< var variable_name >}}
+
+    Args:
+        qmd_path: Path to the QMD file to analyze
+        project_root: Project root for resolving absolute include paths
+
+    Returns:
+        Set of variable names used in the file
+    """
+    if not qmd_path.exists():
+        return set()
+
+    variables: Set[str] = set()
+    processed_files: Set[Path] = set()
+
+    # Pattern to match Quarto variable references: {{< var variable_name >}}
+    var_pattern = re.compile(r"\{\{<\s*var\s+([^\s>]+)\s*>\}\}")
+
+    def process_file(file_path: Path):
+        """Recursively process a file and its includes."""
+        if file_path in processed_files or not file_path.exists():
+            return
+        processed_files.add(file_path)
+
+        with open(file_path, encoding='utf-8') as f:
+            content = f.read()
+
+        # Find all variable references
+        for match in var_pattern.finditer(content):
+            var_name = match.group(1).strip()
+            variables.add(var_name)
+
+        # Find and process {{< include >}} directives
+        include_pattern = r'\{\{<\s*include\s+([^>]+)\s*>\}\}'
+        for match in re.finditer(include_pattern, content):
+            include_path_str = match.group(1).strip().strip('"\'')
+
+            # Resolve include path
+            if include_path_str.startswith('/'):
+                if project_root:
+                    include_path = project_root / include_path_str.lstrip('/')
+                else:
+                    include_path = Path(include_path_str.lstrip('/'))
+            else:
+                include_path = file_path.parent / include_path_str
+
+            process_file(include_path.resolve())
+
+    process_file(qmd_path.resolve())
+    return variables
+
+
+def extract_citations_from_variable_values(
+    variable_names: Set[str],
+    variables_yml_path: Path
+) -> Set[str]:
+    """
+    Extract citation keys embedded in the values of specific variables.
+
+    Variable values contain citations in two forms:
+    1. data-source-ref="citation-key" attributes in HTML
+    2. @citation-key patterns (in _cite variables)
+
+    Args:
+        variable_names: Set of variable names to check
+        variables_yml_path: Path to _variables.yml
+
+    Returns:
+        Set of citation keys found in the variable values
+    """
+    if not variables_yml_path.exists():
+        return set()
+
+    with open(variables_yml_path, encoding='utf-8') as f:
+        all_variables = yaml.safe_load(f)
+
+    if not isinstance(all_variables, dict):
+        return set()
+
+    citations: Set[str] = set()
+
+    for var_name in variable_names:
+        if var_name not in all_variables:
+            continue
+
+        value = str(all_variables[var_name])
+
+        # Pattern 1: data-source-ref="citation-key" in HTML attributes
+        for match in re.finditer(r'data-source-ref="([^"]+)"', value):
+            ref = match.group(1).strip()
+            # Skip empty refs and file paths
+            if ref and not ref.startswith('/'):
+                citations.add(ref)
+
+        # Pattern 2: @citation-key (for _cite variables like @who-report-2024)
+        # Match @ followed by valid citation key characters
+        for match in re.finditer(r'@([a-zA-Z][a-zA-Z0-9_-]+)', value):
+            citations.add(match.group(1))
+
+    return citations
+
+
+def generate_filtered_variables_yml(
+    variable_names: Set[str],
+    full_variables_path: Path,
+    output_path: Path
+) -> int:
+    """
+    Generate a filtered _variables.yml containing only specified variables.
+
+    Args:
+        variable_names: Set of variable names to include
+        full_variables_path: Path to the full _variables.yml
+        output_path: Path to write the filtered file
+
+    Returns:
+        Number of variables in the filtered file
+    """
+    if not full_variables_path.exists():
+        print(f"[ERROR] Variables file not found: {full_variables_path}")
+        return 0
+
+    with open(full_variables_path, encoding='utf-8') as f:
+        all_variables = yaml.safe_load(f)
+
+    if not isinstance(all_variables, dict):
+        return 0
+
+    # Filter to only requested variables
+    filtered = {}
+    for name in variable_names:
+        if name in all_variables:
+            filtered[name] = all_variables[name]
+            # Also include the _cite variant if it exists
+            cite_name = f"{name}_cite"
+            if cite_name in all_variables:
+                filtered[cite_name] = all_variables[cite_name]
+            # Also include the _latex variant if it exists
+            latex_name = f"{name}_latex"
+            if latex_name in all_variables:
+                filtered[latex_name] = all_variables[latex_name]
+
+    # Write filtered variables
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
+        f.write("# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT\n")
+        f.write(f"# Contains only variables used in this paper ({len(filtered)} entries)\n")
+        f.write("# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py\n\n")
+        yaml.dump(filtered, f, allow_unicode=True, default_flow_style=False, sort_keys=True)
+
+    return len(filtered)
 
 
 def extract_citations_from_qmd(qmd_path: Path, project_root: Path = None) -> Set[str]:
@@ -111,31 +275,47 @@ def generate_paper_bibliography(
     paper_path: Path,
     main_bib_path: Path,
     output_bib_path: Path,
-    project_root: Path = None
-) -> int:
+    project_root: Path = None,
+    variables_yml_path: Path = None
+) -> Tuple[int, Set[str]]:
     """
     Generate a filtered .bib file containing only citations used in a paper.
+
+    Includes citations from:
+    1. Direct [@key] citations in QMD content
+    2. Citations embedded in variable values (data-source-ref and @citation patterns)
 
     Args:
         paper_path: Path to the paper's QMD file
         main_bib_path: Path to the main references.bib file
         output_bib_path: Path to write the filtered .bib file
         project_root: Project root for resolving include paths
+        variables_yml_path: Path to _variables.yml for extracting variable citations
 
     Returns:
-        Number of entries in the filtered bibliography
+        Tuple of (number of entries in filtered bibliography, set of used variable names)
     """
-    # Extract citations from the paper
+    # Extract direct citations from the paper content
     citations = extract_citations_from_qmd(paper_path, project_root)
+
+    # Extract variables used in the paper
+    used_variables = extract_variables_from_qmd(paper_path, project_root)
+
+    # Extract citations embedded in those variable values
+    if variables_yml_path and variables_yml_path.exists() and used_variables:
+        variable_citations = extract_citations_from_variable_values(
+            used_variables, variables_yml_path
+        )
+        citations = citations | variable_citations
 
     if not citations:
         print(f"[WARN] No citations found in {paper_path.name}")
-        return 0
+        return (0, used_variables)
 
     # Read the main bibliography
     if not main_bib_path.exists():
         print(f"[ERROR] Main bibliography not found: {main_bib_path}")
-        return 0
+        return (0, used_variables)
 
     with open(main_bib_path, encoding='utf-8') as f:
         main_bib_content = f.read()
@@ -201,14 +381,20 @@ def generate_paper_bibliography(
     with open(output_bib_path, 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(content))
 
-    return len(filtered_entries)
+    return (len(filtered_entries), used_variables)
 
 
 def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
     """
-    Generate filtered bibliographies for all standalone papers.
+    Generate filtered bibliographies AND filtered _variables.yml for all standalone papers.
 
-    Looks for papers defined in _quarto-*.yml configs with dih-render.index-source.
+    For each paper defined in _quarto-*.yml configs with dih-render.index-source:
+    1. Generates references-{paper}.bib with only used citations
+    2. Generates _variables-{paper}.yml with only used variables
+
+    This ensures:
+    - PDFs only include cited references (not all 700+ entries)
+    - Citeproc doesn't warn about citations in unused variable values
 
     Args:
         project_root: Path to project root
@@ -216,13 +402,12 @@ def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
     Returns:
         Dict mapping paper names to number of entries in their bibliography
     """
-    import yaml
-
     main_bib = project_root / "references.bib"
     if not main_bib.exists():
         print("[ERROR] references.bib not found")
         return {}
 
+    variables_yml = project_root / "_variables.yml"
     results: Dict[str, int] = {}
 
     # Find all standalone paper configs
@@ -247,18 +432,38 @@ def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
             print(f"[WARN] Paper not found: {index_source}")
             continue
 
-        # Generate filtered bibliography
+        # Generate filtered bibliography (also extracts used variables)
         output_bib = project_root / f"references-{config_name}.bib"
-        count = generate_paper_bibliography(
+        count, used_variables = generate_paper_bibliography(
             paper_path=paper_path,
             main_bib_path=main_bib,
             output_bib_path=output_bib,
-            project_root=project_root
+            project_root=project_root,
+            variables_yml_path=variables_yml
         )
 
         if count > 0:
             print(f"[OK] Generated {output_bib.name}: {count} entries")
             results[config_name] = count
+
+        # Generate filtered variables file
+        if used_variables:
+            output_vars = project_root / f"_variables-{config_name}.yml"
+            var_count = generate_filtered_variables_yml(
+                variable_names=used_variables,
+                full_variables_path=variables_yml,
+                output_path=output_vars
+            )
+            if var_count > 0:
+                print(f"[OK] Generated {output_vars.name}: {var_count} variables")
+        else:
+            # Create empty variables file if no variables used
+            output_vars = project_root / f"_variables-{config_name}.yml"
+            output_vars.write_text(
+                "# AUTO-GENERATED - No variables used in this paper\n",
+                encoding='utf-8'
+            )
+            print(f"[OK] Generated {output_vars.name}: 0 variables (empty)")
 
     return results
 

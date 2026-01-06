@@ -21,6 +21,9 @@ book:
     - index.qmd
     - knowledge/test/test-parameters.qmd
 
+bibliography:
+  - references.bib
+
 execute:
   cache: false
   freeze: false

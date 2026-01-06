@@ -313,8 +313,8 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1
 
-  build-radar:
-    name: Build RADAR Paper
+  build-dfda:
+    name: Build dFDA Paper
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -324,9 +324,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-radar-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-dfda-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
           restore-keys: |
-            quarto-freeze-radar-
+            quarto-freeze-dfda-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -360,21 +360,21 @@ jobs:
       - name: Install LaTeX
         run: quarto install tinytex
 
-      - name: Render RADAR Paper
-        run: python scripts/render-quarto.py radar
+      - name: Render dFDA Paper
+        run: python scripts/render-quarto.py dfda
         timeout-minutes: 10
 
-      - name: Deploy RADAR Paper to Netlify (immediate)
+      - name: Deploy dFDA Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_build_temp/radar/_site/radar'
+          publish-dir: '_build_temp/dfda/_site/dfda'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy RADAR paper from GitHub Actions"
+          deploy-message: "Deploy dFDA paper from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RADAR_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_SITE_ID }}
         timeout-minutes: 1
