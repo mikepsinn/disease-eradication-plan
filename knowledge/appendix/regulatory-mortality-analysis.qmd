@@ -88,7 +88,7 @@ Using [WHO Global Burden of Disease](../references.qmd#ihme-gbd-2019) data, we c
 
 **Result:** {{< var eventually_avoidable_death_pct >}} of deaths are eventually avoidable with sufficient research.
 
-#### Why 92%? The Biological and Epidemiological Evidence
+#### Why This Upper Bound? The Biological and Epidemiological Evidence
 
 The "max potential" estimates above are grounded in peer-reviewed research:
 
@@ -299,7 +299,7 @@ Even if you **adjust the primary estimate significantly**:
 - **The ratio remains extreme across the entire uncertainty distribution**
 
 
-### "The 92% 'Eventually Preventable' Is Theoretical"
+### "The 'Eventually Preventable' Estimate Is Theoretical"
 
 **Critique:** The claim that {{< var eventually_avoidable_death_pct >}} of deaths are eventually preventable is based on theoretical biological potential, not demonstrated medical capability.
 
@@ -307,19 +307,19 @@ Even if you **adjust the primary estimate significantly**:
 
 Correct. That's what "eventually" means.
 
-The document explicitly distinguishes "Current" from "Max Potential" in the disease burden table ([Section 2.2](#eventually-preventable)). The 92% represents the **theoretical upper bound** based on:
+The document explicitly distinguishes "Current" from "Max Potential" in the disease burden table ([Section 2.2](#eventually-preventable)). The {{< var eventually_avoidable_death_pct >}} represents the **theoretical upper bound** based on:
 
 1. **Aging reversed in mammals:** [Yamanaka factors extended remaining lifespan by 109% in aged mice](../references.qmd#aging-reversal-mammals-yamanaka)
 2. **Cardiovascular disease 80-90% preventable NOW:** [WHO data](../references.qmd#cvd-80-percent-preventable) with current interventions
 3. **Cancer 90-95% environmental:** [Only 5-10% purely genetic](../references.qmd#cancer-30-50-percent-preventable), remainder has modifiable causes
 
-**The relevant question isn't "Can we achieve 92%?"**
+**The relevant question isn't "Can we achieve this upper bound?"**
 
 The question is: **"When do we achieve it?"**
 
 If the answer is "2050 without regulations, 2058 with regulations," then the 8-year delay kills everyone who dies during 2050-2058. The regulatory framework doesn't just delay individual drugs. It delays the entire trajectory of biomedical progress.
 
-**Note:** The PRIMARY estimate uses global disease mortality rates, not the 92% ceiling. The 92% provides context for the theoretical upper bound scenario.
+**Note:** The PRIMARY estimate uses global disease mortality rates, not the {{< var eventually_avoidable_death_pct >}} ceiling. This upper bound provides context for the theoretical maximum scenario.
 
 ### "Counterfactual Uncertainty - We Can't Know What Would Have Happened"
 
@@ -331,17 +331,11 @@ Counterfactuals are never directly observable. That's why science uses **natural
 
 #### Natural Experiments
 
-**1. Geographic Comparison (Switzerland vs. US):**
+**Alternative Regulatory Models:**
 
-- Swiss regulations less restrictive than US post-1962
-- [Health outcome gap widened after 1962](../problem/fda-is-unsafe-and-ineffective.qmd)
-- Gap correlates with US drug approval rates (narrows when US approvals increase, widens when they decrease)
-
-**2. Alternative Regulatory Models:**
-
-- **Japan's Regenerative Medicine Act:** Conditional approval after Phase II, 2-3 years vs. {{< var fda_phase_1_to_approval_years >}}
-- **EU Compassionate Use:** Terminal patients access experimental drugs
-- Americans fly to these countries for treatments unavailable in the US
+- **Japan's Regenerative Medicine Act (2014):** Conditional approval after Phase II safety data, with 2-3 year timelines vs. {{< var fda_phase_1_to_approval_years >}}. Critics note quality concerns; proponents note faster access for terminal patients with no alternatives.
+- **EU Compassionate Use:** Terminal patients access experimental drugs before approval
+- **Medical tourism:** Americans travel abroad for treatments unavailable in the US, demonstrating revealed preference for faster access
 
 #### The Standard for Causal Inference
 
@@ -415,20 +409,19 @@ The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis
 
 **Historical evidence:**
 
-The pre-1962 system (1883-1962) had:
+The pre-1962 system (1938-1962) included:
 
-- Phase I safety testing (post-1938)
-- Decentralized efficacy trials (150,000 physicians)
-- Third-party review (AMA seal of approval)
-- **Result:** Robust drug development pipeline with higher approval rates
+- Phase I safety testing (mandated by 1938 Food, Drug, and Cosmetic Actr)
+- Decentralized efficacy assessment by ~150,000 practicing physicians
+- Third-party review via AMA Council on Pharmacy provided independent evaluation
+- **Result:** Higher approval rates with safety maintained by mandatory Phase I testing
 
 **Current system failures:**
 
-- Vioxx: [38,000-55,000 American deaths](../references.qmd#vioxx-deaths) despite Phase II/III trials
-- Benadryl: Decades to discover [dementia risk from long-term use](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745)
-- Small trials (3,000 patients) miss rare adverse events (1-in-10,000)
+- **Vioxx:** [38,000-55,000 American deaths](../references.qmd#vioxx-deaths) from cardiovascular events that Phase II/III trials (N≈3,000) were statistically underpowered to detect. The 1-in-1,000 risk required millions of patient-years to surface.
+- **Statistical reality:** Trials with 3,000 patients cannot reliably detect adverse events rarer than ~1-in-1,000
 
-**The safety paradox:** Testing on 3,000 cherry-picked patients, then hoping 6% voluntary reporting catches problems in millions of real patients is **more dangerous** than testing on millions with active surveillance.
+**The detection paradox:** Pre-market trials on 3,000 selected patients, followed by 6% voluntary post-market reporting, is far **more dangerous** than active surveillance of millions of real-world patients. The current system catches common problems early but misses rare-but-deadly risks until thousands have died.
 
 
 ## Conclusion
