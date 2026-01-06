@@ -56,6 +56,9 @@ git diff knowledge/
 - Verify each exists in `_variables.yml`
 - Check for hardcoded values that should be variables
 - Ensure variable names are lowercase (not uppercase)
+- For detailed hardcoded value analysis, run: `npm run review-hardcoded <file.qmd>`
+  - Generates markdown report with exact variable matches
+  - Provides line numbers and replacement suggestions
 
 ### 4. Cross-File Link Validation
 - Find all `[text](path)` links

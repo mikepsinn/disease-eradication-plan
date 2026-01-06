@@ -138,6 +138,28 @@ searches for source, adds to references.qmd, adds citation
 
 ## 🎨 CLI Tools
 
+### review-hardcoded-values.ts
+**Detailed analysis of hardcoded values with variable suggestions**
+
+```bash
+# Analyze a specific file for hardcoded values
+npm run review-hardcoded knowledge/economics/economics.qmd
+
+# Generates: hardcoded-review-economics.md with:
+# - Exact variable matches for each hardcoded value
+# - Line numbers and context
+# - Checkbox suggestions for replacement
+```
+
+**What it finds:**
+- Currency values: `$27B`, `$1M`, `$100K`
+- Percentages: `92%`, `10%` (excludes `1%` treaty concept)
+- Years: `1948`, `2024`
+- Matches against `_variables.yml` for exact replacements
+
+**Integration with hooks:**
+The QMD validation hook detects hardcoded values and suggests running this script for detailed review.
+
 ### generate-image.ts
 **On-demand image generation for chapters**
 
