@@ -80,6 +80,12 @@ if issues:
     print("\n[QMD Validation]", file=sys.stderr)
     for issue in issues:
         print(f"  {issue}", file=sys.stderr)
+
+    # Suggest detailed review if hardcoded values found
+    if any("hardcoded" in issue.lower() for issue in issues):
+        print("\n  TIP: For detailed review with variable suggestions, run:", file=sys.stderr)
+        print(f"       npm run review-hardcoded {file_path}", file=sys.stderr)
+
     print("", file=sys.stderr)
     # Exit 0 to warn without blocking
     sys.exit(0)

@@ -8,7 +8,7 @@ tools:
   - Bash
   - Grep
   - Glob
-model: sonnet
+model: opus
 skills:
   - validate-and-regenerate-parameters
 ---

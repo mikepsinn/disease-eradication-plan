@@ -8,9 +8,10 @@ tools:
   - Bash
   - Edit
   - Write
-model: sonnet
+model: opus
 skills:
   - qmd-consistency-check
+  - verify-and-add-sources
 ---
 
 # Book Reviewer Agent
@@ -28,6 +29,16 @@ Review Quarto book changes for:
 6. **Style**: No em-dashes, consistent voice, academic tone
 
 ## Review Process
+
+### 0. Verify Citations and Sources
+
+CRITICAL: Before reviewing content, check that all factual claims have proper citations:
+- Statistics must cite sources
+- Research findings must link to studies
+- Historical facts must have references
+- If claim lacks citation, use `verify-and-add-sources` skill to find and add source
+- If source exists in `references.qmd`, add citation [@reference-id]
+- If source doesn't exist, search web and add to `references.qmd`
 
 ### 1. Check What Changed
 ```bash
