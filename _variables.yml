@@ -2049,10 +2049,10 @@
 "political_success_probability": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_success_probability\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Estimated probability of treaty ratification\
-  \ and sustained implementation. Central estimate 1% is ultra-conservative. This\
-  \ assumes 99% chance of failure.  | ? Low confidence | 95% CI: [0.1%, 10%] | Dist:\
-  \ Beta (SE: 2%) | Unit: rate | Click to view details, calculation & sources\">1%\
-  \ (95% CI: 0.1%-10%)</a>"
+  \ and sustained implementation. Central estimate 1% is conservative. This assumes\
+  \ 99% chance of failure.  | ? Low confidence | 95% CI: [0.1%, 10%] | Dist: Beta\
+  \ (SE: 2%) | Unit: rate | Click to view details, calculation & sources\">1% (95%\
+  \ CI: 0.1%-10%)</a>"
 "political_success_probability_cite": "@icbl-ottawa-treaty"
 "post_1962_drug_approval_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-post_1962_drug_approval_reduction_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"post-1962-drug-approval-drop\" data-source-type=\"\
@@ -2487,9 +2487,9 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected cost\
   \ per DALY accounting for political success probability uncertainty. Monte Carlo\
-  \ samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate,\
-  \ this is still more cost-effective than bed nets ($89.0/DALY). | Calculated from\
-  \ 2 inputs | ? Low confidence | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY\
+  \ samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this\
+  \ is still more cost-effective than bed nets ($89.0/DALY). | Calculated from 2 inputs\
+  \ | ? Low confidence | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY\
   \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.177 (95%\
   \ CI: $0.029-$3.17)</a>"
 "treaty_expected_cost_per_daly_latex": "$$\nCost_{treaty} = \\frac{Cost_{treaty}}{Probability}\

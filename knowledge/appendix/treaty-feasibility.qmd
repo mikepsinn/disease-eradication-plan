@@ -136,7 +136,7 @@ Based on this analysis, economists would find the following defensible:
 
 **Our model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
 
-This is deliberately ultra-conservative. An economist reviewing our expected value calculations should find:
+This is deliberately conservative. An economist reviewing our expected value calculations should find:
 
 - The {{< var political_success_probability >}} central estimate assumes a **99% chance of complete failure**
 - The 0.1% floor admits this could be nearly impossible

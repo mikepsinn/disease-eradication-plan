@@ -3584,7 +3584,7 @@ DFDA_ROI_RD_ONLY = Parameter(
 #
 # Conservative 10% central estimate with 2%-25% range reflects:
 # - Floor (2%): Black swan scenario requiring unprecedented global cooperation
-# - Central (1%): Ultra-conservative - assumes 99% chance of failure
+# - Central (1%): conservative - assumes 99% chance of failure
 # - Floor (0.1%): Near-impossibility scenarios (gridlock, competing crises)
 # - Ceiling (10%): Optimistic scenario where major crisis creates political window
 POLITICAL_SUCCESS_PROBABILITY = Parameter(
@@ -3593,7 +3593,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
     source_type="external",
     confidence="low",
     description="Estimated probability of treaty ratification and sustained implementation. "
-                "Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. ",
+                "Central estimate 1% is conservative. This assumes 99% chance of failure. ",
     display_name="Political Success Probability",
     unit="rate",
     distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
@@ -5020,7 +5020,7 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
     description=f"Expected cost per DALY accounting for political success probability uncertainty. "
-                f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, "
+                f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, "
                 f"this is still more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="Expected Cost per DALY (Risk-Adjusted)",
     unit="USD/DALY",

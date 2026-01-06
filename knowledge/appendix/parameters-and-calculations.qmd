@@ -4118,7 +4118,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
+Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
 
 **Inputs**:
 
@@ -6589,7 +6589,7 @@ Return on investment from sustaining polio vaccination assets and integrating in
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. 
+Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is conservative. This assumes 99% chance of failure. 
 
 **Source**: [ICRC (1997) - International Campaign to Ban Landmines (ICBL) - Ottawa Treaty (1997)](../references.qmd#icbl-ottawa-treaty)
 

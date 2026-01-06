@@ -539,11 +539,11 @@ This gradual approach steers nations toward a safer equilibrium, one percentage 
 
 The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
-The key insight: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds VICTORY Incentive Alignment Bond investor returns.
+The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds VICTORY Incentive Alignment Bond investor returns.
 
 VICTORY Incentive Alignment Bond investors receive {{< var victory_bond_annual_return_pct >}} annual returns on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains dominant.
 
-The 80/10/10 allocation structure functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
+This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical research, {{< var victory_bond_funding_pct >}} investor returns, {{< var iab_political_incentive_funding_pct >}} political incentives) functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
 
 
@@ -692,7 +692,7 @@ None offer **{{< var dfda_trial_capacity_multiplier >}}× leverage**.
 
 Bed nets are a consumable intervention requiring ongoing replacement every 3-5 years. To save 1,000 lives over 20 years requires purchasing and distributing thousands of bed nets repeatedly. Total cost scales linearly with lives saved.
 
-The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be 707× better than excellent linear interventions like bed nets.
+The 1% Treaty is a **one-time campaign cost** ({{< var treaty_campaign_total_cost >}}) that unlocks a **permanent infrastructure shift**. Once the treaty passes, it redirects {{< var treaty_annual_funding >}}/year in perpetuity, funding millions of trial participants annually. The campaign cost is paid once; the benefits compound indefinitely. This is why cost per DALY can be {{< var treaty_vs_bed_nets_multiplier >}}× better than excellent linear interventions like bed nets.
 
 The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **systemic** (unlocks exponential research acceleration by removing cost barriers that currently make {{< var unexplored_ratio >}} of potential drug-disease combinations economically infeasible to test).
 
@@ -802,7 +802,7 @@ The tornado diagram shows that timeline shift assumptions and discount rate domi
 
 Monte Carlo analysis confirms the 95% confidence interval for cost per DALY remains well below $1/DALY, maintaining dominance.
 
-Accounting for political uncertainty ({{< var political_success_probability >}} central, 0.1%-10% range), this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
+Accounting for political uncertainty ({{< var political_success_probability >}}), this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
 
 For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban) was called a "bold gamble" that succeeded with [122 states signing](../references.qmd#icbl-ottawa-treaty) in just 14 months.
 
@@ -892,7 +892,7 @@ This yields an NPV assuming cures occur 100 years in the future on average. The 
 
 **Comparison**: The regulatory delay avoidance benefit ({{< var dfda_efficacy_lag_elimination_economic_value >}} annually) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
 
-**Key insight**: Eliminating the regulatory delay still provides value even if cures are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases are actually cured, which varies by disease category. Some may be cured in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to cure.
+**Why this matters**: Eliminating the regulatory delay still provides value even if cures are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases are actually cured, which varies by disease category. Some may be cured in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to cure.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -1182,7 +1182,7 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 3. **It's empirically defensible**: The RECOVERY trial's success (multiple treatments found with increased search) is consistent with linear or better returns
 4. **It avoids both failure modes**: Assuming diminishing returns would justify inaction; assuming compounding returns might overstate benefits. Linearity is the responsible middle ground
 
-**The key insight**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}}× more trials produces {{< var dfda_trial_capacity_multiplier >}}× more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
+**Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}}× more trials produces {{< var dfda_trial_capacity_multiplier >}}× more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
 
 ## Data Sources and Primary Inputs
 
@@ -1239,7 +1239,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 **Probabilistic sensitivity analysis:** We ran 10,000 Monte Carlo simulations where each uncertain parameter was randomly sampled from probability distributions. The chart below shows the resulting ROI distributions with 95% confidence intervals.
 
-**What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), discount rate (1-7%), and QALY gains (0.7-1.3× baseline).
+**What we varied:** Cost reduction (50-95%), political success probability, adoption timeline (3-8 years), discount rate (1-7%), and QALY gains (0.7-1.3× baseline).
 
 {{< include ../figures/monte-carlo-roi-distribution-chart.qmd >}}
 
@@ -1342,7 +1342,7 @@ $$E[ROI] = ROI_{conditional} \times P_{success}$$
 
 The preceding analysis presents *conditional* benefits (returns IF implementation succeeds). Expected value analysis incorporates the probability of achieving political ratification and sustained commitment.
 
-**Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conservative, assuming 99% failure rate) and an uncertainty range of 0.1%-10% reflecting geopolitical uncertainty. The distribution below shows the assumed probability range:
+**Political success probability**: We model political success as uncertain ({{< var political_success_probability >}}) reflecting geopolitical uncertainty. The distribution below shows the assumed probability range:
 
 {{< include ../figures/distribution-political_success_probability.qmd >}}
 
@@ -1358,7 +1358,6 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 {{< include ../figures/mc-distribution-treaty_expected_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
-**Key insight**: Even at the 5th percentile (P≈0.1%), expected ROI substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
 
 **Comparison to traditional interventions** (assuming 100% implementation probability):
 
@@ -1368,7 +1367,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
-**Note**: The uncertainty analysis samples political probability from a beta distribution with 5th percentile at 0.1% and 95th percentile at 10%. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+**Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Time Inconsistency and Commitment Credibility
 
@@ -1421,7 +1420,6 @@ This scenario includes only R&D efficiency savings, excluding peace dividends, e
 
 Simple ROI calculation:
 
-
 {{< var dfda_roi_rd_only_latex >}}
 
 Total cost: {{< var dfda_npv_total_cost >}}.
@@ -1473,7 +1471,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 **Total annual treaty funding**: {{< var treaty_annual_funding >}}
 
-The funding uses an **80/10/10 automatic allocation**:
+The funding uses an automatic allocation:
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
@@ -1498,7 +1496,7 @@ Data stays federated (in Epic/Cerner/Apple Health systems). No massive centraliz
 
 For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-framework-costs-rom-estimates-partnership-model).
 
-**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
+**Where the money goes**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
 This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-framework-costs-rom-estimates-partnership-model).
 
@@ -1592,7 +1590,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 - **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
 
-**Funding Allocation** (80/10/10 split):
+**Funding Allocation**:
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
@@ -2229,7 +2227,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
 - **Complete ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
-**Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the dominant driver of uncertainty.
+**Robustness:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the dominant driver of uncertainty.
 
 ### General Equilibrium Effects
 
@@ -2281,15 +2279,15 @@ This analysis has direct implications for resource allocation decisions across m
 
 Traditional health budgets face impossible trade-offs: every dollar spent on cancer treatment is a dollar not spent on heart disease prevention. This intervention eliminates that constraint by redirecting funds from outside the health sector.
 
-**Key insight**: Health ministries can achieve {{< var dfda_trial_capacity_multiplier >}}× more clinical research without reducing current health spending or raising taxes. The funding comes from military budgets, not health budgets.
+**The opportunity**: Health ministries can achieve {{< var dfda_trial_capacity_multiplier >}}× more clinical research without reducing current health spending or raising taxes. The funding comes from military budgets, not health budgets.
 
-**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining 99% of its military capacity. The resulting health gains ({{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved globally, proportional by population) far exceed any marginal security value of that 1%.
+**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining virtually all of its military capacity. The resulting health gains ({{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved globally, proportional by population) far exceed any marginal security value of that {{< var treaty_reduction_pct >}}.
 
 ### International Development Priorities
 
 Development agencies face a fundamental problem: the most cost-effective interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY, vaccines) can only scale linearly. Doubling impact requires doubling spending.
 
-**Key insight**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates cure discovery for all diseases affecting developing nations.
+**The difference**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates cure discovery for all diseases affecting developing nations.
 
 **Practical application**:
 
@@ -2303,7 +2301,7 @@ The Gates Foundation, USAID, and WHO should advocate for treaty adoption as thei
 
 Military planners optimize for national security. This analysis demonstrates that {{< var treaty_reduction_pct >}} of military spending provides near-zero marginal security value while generating enormous economic returns when redirected.
 
-**Key insight**: The economic multiplier for military spending is {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}} (generates $0.50-$1.00 back per dollar spent). The economic multiplier for healthcare investment is {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}} (generates $2-$3 back per dollar spent).
+**The economic case**: The economic multiplier for military spending is {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}} (generates $0.50-$1.00 back per dollar spent). The economic multiplier for healthcare investment is {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}} (generates $2-$3 back per dollar spent).
 
 **Strategic perspective**: A nation's long-term security depends more on economic strength and healthy populations than on marginal weapons systems. Redirecting 1% from the {{< var global_military_spending_annual_2024 >}} global military budget doesn't compromise military (99% remains) but generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits.
 
@@ -2313,9 +2311,9 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Key insight**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Why this works**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
-**Mechanism design**: The 1% Treaty Fund uses an 80/10/10 split:
+**Mechanism design**: The 1% Treaty Fund allocates:
 
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) → bond investor returns
