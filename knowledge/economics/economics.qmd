@@ -728,8 +728,6 @@ This generates benefits through two mechanisms:
 
 Military spending generates economic multiplier effects of {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}} (50 cents to $1 of economic value per dollar spent). Medical research generates multiplier effects of {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}} ($2-3 of economic value per dollar spent). Reallocating funds from low-multiplier to high-multiplier activities produces measurable GDP gains.
 
-
-
 **2. Trial cost reduction through infrastructure efficiency**
 
 Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. The Oxford RECOVERY trial cost {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by using existing hospital infrastructure, minimal additional data collection beyond standard care, and simplified consent processes. (Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions; our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.)
@@ -1326,7 +1324,7 @@ The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in res
 
 The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. (Our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one case study.
 
-The cost reduction estimates (50-95%) are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} [(compounded, 1990 dollars)](../references.qmd#pre-1962-drug-costs-timeline) compared to modern {{< var pharma_drug_development_cost_current >}} [costs](../references.qmd#pre-1962-drug-costs-timeline), representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
+The cost reduction estimates are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} [(compounded, 1990 dollars)](../references.qmd#pre-1962-drug-costs-timeline) compared to modern {{< var pharma_drug_development_cost_current >}} [costs](../references.qmd#pre-1962-drug-costs-timeline), representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
 ### Political Feasibility Assumption
 

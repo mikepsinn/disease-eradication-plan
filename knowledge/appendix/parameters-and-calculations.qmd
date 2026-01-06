@@ -25,15 +25,15 @@ format:
 
 This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself.
 
-**Total parameters**: 382
+**Total parameters**: 387
 
-- External sources (peer-reviewed): 144
-- Calculated values: 136
+- External sources (peer-reviewed): 147
+- Calculated values: 138
 - Core definitions: 102
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (136 parameters) • [External Data Sources](#sec-external) (144 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
+[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (147 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2655,6 +2655,48 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+:::
+
+### Life Expectancy Gain Rate (1883-1962): 0 years/decade {#sec-life_expectancy_gain_1883_1962_years_per_decade}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).
+
+**Inputs**:
+
+- [US Life Expectancy (1962)](#sec-us_life_expectancy_1962) 📊: 70.1 years (95% CI: 69.8 years - 70.3 years)
+- [US Life Expectancy (1880)](#sec-us_life_expectancy_1880) 📊: 39.4 years (95% CI: 38.9 years - 39.9 years)
+
+$$
+Rate = (life_exp_1962 - life_exp_1880) / 7.9 decades = 0
+$$
+
+**Methodology**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - US life expectancy growth 1880-1960: 3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962)
+
+*✓ High confidence*
+
+:::
+
+### Life Expectancy Gain Rate (1962-2019): 0 years/decade {#sec-life_expectancy_gain_1962_2019_years_per_decade}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).
+
+**Inputs**:
+
+- [US Life Expectancy (2019)](#sec-us_life_expectancy_2019) 📊: 78.9 years (95% CI: 78.6 years - 79.1 years)
+- [US Life Expectancy (1962)](#sec-us_life_expectancy_1962) 📊: 70.1 years (95% CI: 69.8 years - 70.3 years)
+
+$$
+Rate = (life_exp_2019 - life_exp_1962) / 5.7 decades = 0
+$$
+
+**Methodology**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - Post-1962 slowdown in life expectancy gains](../references.qmd#post-1962-life-expectancy-slowdown)
+
+*✓ High confidence*
 
 :::
 
@@ -7172,6 +7214,78 @@ Annual US cost of heart disease and stroke (direct and indirect)
 #### Input Distribution
 
 {{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Life Expectancy (1880): 39.4 years {#sec-us_life_expectancy_1880}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy in 1880 (closest available data point to 1883).
+
+**Source**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - US life expectancy growth 1880-1960: 3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [38.9 years, 39.9 years] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 38.9 years and 39.9 years (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_life_expectancy_1880.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Life Expectancy (1962): 70.1 years {#sec-us_life_expectancy_1962}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy in 1962 (year of Kefauver-Harris Amendments).
+
+**Source**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - US life expectancy growth 1880-1960: 3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [69.8 years, 70.3 years] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 69.8 years and 70.3 years (±0%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_life_expectancy_1962.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Life Expectancy (2019): 78.9 years {#sec-us_life_expectancy_2019}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy in 2019 (latest available data).
+
+**Source**: [Source: US Life Expectancy FDA Budget 1543-2019 CSV (2019) - Post-1962 slowdown in life expectancy gains](../references.qmd#post-1962-life-expectancy-slowdown)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [78.6 years, 79.1 years] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 78.6 years and 79.1 years (±0%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_life_expectancy_2019.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
 

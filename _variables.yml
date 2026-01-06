@@ -1684,6 +1684,24 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Minimum investment\
   \ for institutional investors | ✓ High confidence | Unit: USD | Click to view details,\
   \ calculation & sources\">$10M</a>"
+"life_expectancy_gain_1883_1962_years_per_decade": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-life_expectancy_gain_1883_1962_years_per_decade\"\
+  \ class=\"parameter-link\" data-source-ref=\"life-expectancy-increase-pre-1962\"\
+  \ data-source-type=\"calculated\" data-peer-reviewed=\"true\" data-confidence=\"\
+  high\" title=\"US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).\
+  \ | Calculated from 2 inputs | ✓ High confidence | \U0001F4CA Peer-reviewed | Formula:\
+  \ (life_exp_1962 - life_exp_1880) / 7.9 decades | Unit: years/decade | Click to\
+  \ view details, calculation & sources\">0</a>"
+"life_expectancy_gain_1883_1962_years_per_decade_latex": "$$\nRate = (life_exp_1962\
+  \ - life_exp_1880) / 7.9 decades = 0\n$$"
+"life_expectancy_gain_1962_2019_years_per_decade": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-life_expectancy_gain_1962_2019_years_per_decade\"\
+  \ class=\"parameter-link\" data-source-ref=\"post-1962-life-expectancy-slowdown\"\
+  \ data-source-type=\"calculated\" data-peer-reviewed=\"true\" data-confidence=\"\
+  high\" title=\"US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).\
+  \ | Calculated from 2 inputs | ✓ High confidence | \U0001F4CA Peer-reviewed | Formula:\
+  \ (life_exp_2019 - life_exp_1962) / 5.7 decades | Unit: years/decade | Click to\
+  \ view details, calculation & sources\">0</a>"
+"life_expectancy_gain_1962_2019_years_per_decade_latex": "$$\nRate = (life_exp_2019\
+  \ - life_exp_1962) / 5.7 decades = 0\n$$"
 "life_extension_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-life_extension_years\"\
   \ class=\"parameter-link\" data-source-ref=\"longevity-escape-velocity\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Expected years of life extension from\
@@ -2658,6 +2676,29 @@
   \ confidence | \U0001F4CA Peer-reviewed | 95% CI: [$309B, $417B] | Dist: Lognormal\
   \ | Unit: USD | Click to view details, calculation & sources\">$363B (95% CI: $319B-$410B)</a>"
 "us_heart_disease_annual_cost_cite": "@disease-cost-heart-disease-2100b"
+"us_life_expectancy_1880": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_1880\"\
+  \ class=\"parameter-link\" data-source-ref=\"life-expectancy-increase-pre-1962\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"US life expectancy in 1880 (closest available data point to 1883). | ✓\
+  \ High confidence | \U0001F4CA Peer-reviewed | 95% CI: [38.9 years, 39.9 years]\
+  \ | Dist: Normal | Unit: years | Click to view details, calculation & sources\"\
+  >39.4 (95% CI: 39-39.8)</a>"
+"us_life_expectancy_1880_cite": "@life-expectancy-increase-pre-1962"
+"us_life_expectancy_1962": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_1962\"\
+  \ class=\"parameter-link\" data-source-ref=\"life-expectancy-increase-pre-1962\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"US life expectancy in 1962 (year of Kefauver-Harris Amendments). | ✓ High\
+  \ confidence | \U0001F4CA Peer-reviewed | 95% CI: [69.8 years, 70.3 years] | Dist:\
+  \ Normal | Unit: years | Click to view details, calculation & sources\">70.1 (95%\
+  \ CI: 69.9-70.3)</a>"
+"us_life_expectancy_1962_cite": "@life-expectancy-increase-pre-1962"
+"us_life_expectancy_2019": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_2019\"\
+  \ class=\"parameter-link\" data-source-ref=\"post-1962-life-expectancy-slowdown\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"US life expectancy in 2019 (latest available data). | ✓ High confidence\
+  \ | \U0001F4CA Peer-reviewed | 95% CI: [78.6 years, 79.1 years] | Dist: Normal |\
+  \ Unit: years | Click to view details, calculation & sources\">78.9 (95% CI: 78.6-79.1)</a>"
+"us_life_expectancy_2019_cite": "@post-1962-life-expectancy-slowdown"
 "us_major_diseases_total_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_major_diseases_total_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/aligning-incentives.qmd#insurance-companies\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -2754,6 +2795,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "382"
-"total_latex_equation_count": "156"
-"total_citation_count": "144"
+"total_parameter_count": "387"
+"total_latex_equation_count": "158"
+"total_citation_count": "147"

@@ -1489,6 +1489,83 @@ PRE_1962_VALIDATION_YEARS = Parameter(
     keywords=["pre-1962", "historical", "validation", "physician", "trials", "life expectancy"]
 )
 
+# Life Expectancy Data Points - Historical Evidence for Regulatory Impact
+# Source: knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv
+# Uncertainty: ±0.5 years for historical census/vital statistics data
+
+US_LIFE_EXPECTANCY_1880 = Parameter(
+    39.41,
+    source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
+    source_type="external",
+    description="US life expectancy in 1880 (closest available data point to 1883).",
+    display_name="US Life Expectancy (1880)",
+    unit="years",
+    confidence="high",
+    confidence_interval=(38.9, 39.9),
+    distribution="normal",
+    peer_reviewed=True,
+    keywords=["life expectancy", "1880", "historical", "baseline"],
+)
+
+US_LIFE_EXPECTANCY_1962 = Parameter(
+    70.064,
+    source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
+    source_type="external",
+    description="US life expectancy in 1962 (year of Kefauver-Harris Amendments).",
+    display_name="US Life Expectancy (1962)",
+    unit="years",
+    confidence="high",
+    confidence_interval=(69.8, 70.3),
+    distribution="normal",
+    peer_reviewed=True,
+    keywords=["life expectancy", "1962", "kefauver-harris", "baseline"],
+)
+
+US_LIFE_EXPECTANCY_2019 = Parameter(
+    78.862,
+    source_ref=ReferenceID.POST_1962_LIFE_EXPECTANCY_SLOWDOWN,
+    source_type="external",
+    description="US life expectancy in 2019 (latest available data).",
+    display_name="US Life Expectancy (2019)",
+    unit="years",
+    confidence="high",
+    confidence_interval=(78.6, 79.1),
+    distribution="normal",
+    peer_reviewed=True,
+    keywords=["life expectancy", "2019", "current", "baseline"],
+)
+
+# Life Expectancy Gain Rates - Calculated from data points
+LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
+    0,  # Placeholder, computed below
+    source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
+    source_type="calculated",
+    description="US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
+    display_name="Life Expectancy Gain Rate (1883-1962)",
+    unit="years/decade",
+    formula="(life_exp_1962 - life_exp_1880) / 7.9 decades",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["life expectancy", "pre-1962", "historical", "biomedical progress", "years per decade"],
+    inputs=["US_LIFE_EXPECTANCY_1962", "US_LIFE_EXPECTANCY_1880"],
+    compute=lambda ctx: round((ctx.US_LIFE_EXPECTANCY_1962 - ctx.US_LIFE_EXPECTANCY_1880) / 7.9, 2),
+)
+
+LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
+    0,  # Placeholder, computed below
+    source_ref=ReferenceID.POST_1962_LIFE_EXPECTANCY_SLOWDOWN,
+    source_type="calculated",
+    description="US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
+    display_name="Life Expectancy Gain Rate (1962-2019)",
+    unit="years/decade",
+    formula="(life_exp_2019 - life_exp_1962) / 5.7 decades",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["life expectancy", "post-1962", "slowdown", "biomedical progress", "years per decade", "kefauver-harris"],
+    inputs=["US_LIFE_EXPECTANCY_2019", "US_LIFE_EXPECTANCY_1962"],
+    compute=lambda ctx: round((ctx.US_LIFE_EXPECTANCY_2019 - ctx.US_LIFE_EXPECTANCY_1962) / 5.7, 2),
+)
+
 # Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)
 # See calculation block after TOTAL_RESEARCH_FUNDING_WITH_TREATY
 

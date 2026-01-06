@@ -1511,6 +1511,42 @@ export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
+export const US_LIFE_EXPECTANCY_1880: Parameter = {
+  value: 39.41,
+  unit: "years",
+  displayName: "US Life Expectancy (1880)",
+  description: "US life expectancy in 1880 (closest available data point to 1883).",
+  sourceType: "external",
+  sourceRef: "life-expectancy-increase-pre-1962",
+  confidence: "high",
+  confidenceInterval: [38.9, 39.9],
+  peerReviewed: true,
+};
+
+export const US_LIFE_EXPECTANCY_1962: Parameter = {
+  value: 70.064,
+  unit: "years",
+  displayName: "US Life Expectancy (1962)",
+  description: "US life expectancy in 1962 (year of Kefauver-Harris Amendments).",
+  sourceType: "external",
+  sourceRef: "life-expectancy-increase-pre-1962",
+  confidence: "high",
+  confidenceInterval: [69.8, 70.3],
+  peerReviewed: true,
+};
+
+export const US_LIFE_EXPECTANCY_2019: Parameter = {
+  value: 78.862,
+  unit: "years",
+  displayName: "US Life Expectancy (2019)",
+  description: "US life expectancy in 2019 (latest available data).",
+  sourceType: "external",
+  sourceRef: "post-1962-life-expectancy-slowdown",
+  confidence: "high",
+  confidenceInterval: [78.6, 79.1],
+  peerReviewed: true,
+};
+
 export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
   value: 350000000000.0,
   unit: "USD/year",
@@ -2522,6 +2558,32 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   confidence: "high",
   formula: "(TOTAL - GOVT) / GOVT",
   latex: "Ratio = (TOTAL - GOVT) / GOVT = 12.3",
+};
+
+export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
+  value: 0.0,
+  unit: "years/decade",
+  displayName: "Life Expectancy Gain Rate (1883-1962)",
+  description: "US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
+  sourceType: "calculated",
+  sourceRef: "life-expectancy-increase-pre-1962",
+  confidence: "high",
+  formula: "(life_exp_1962 - life_exp_1880) / 7.9 decades",
+  latex: "Rate = (life_exp_1962 - life_exp_1880) / 7.9 decades = 0",
+  peerReviewed: true,
+};
+
+export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
+  value: 0.0,
+  unit: "years/decade",
+  displayName: "Life Expectancy Gain Rate (1962-2019)",
+  description: "US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
+  sourceType: "calculated",
+  sourceRef: "post-1962-life-expectancy-slowdown",
+  confidence: "high",
+  formula: "(life_exp_2019 - life_exp_1962) / 5.7 decades",
+  latex: "Rate = (life_exp_2019 - life_exp_1962) / 5.7 decades = 0",
+  peerReviewed: true,
 };
 
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
@@ -4399,6 +4461,9 @@ export const parameters = {
   US_CHRONIC_DISEASE_SPENDING_ANNUAL,
   US_DIABETES_ANNUAL_COST,
   US_HEART_DISEASE_ANNUAL_COST,
+  US_LIFE_EXPECTANCY_1880,
+  US_LIFE_EXPECTANCY_1962,
+  US_LIFE_EXPECTANCY_2019,
   US_MENTAL_HEALTH_COST_ANNUAL,
   US_MILITARY_SPENDING_PCT_GDP,
   US_POPULATION_2024,
@@ -4487,6 +4552,8 @@ export const parameters = {
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
+  LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE,
+  LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE,
   MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN,
   MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
@@ -5431,7 +5498,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2019]] },
         publisher: "Source: US Life Expectancy FDA Budget 1543-2019 CSV",
         URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
-        note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy",
+        note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "lobbying-spend-defense": {
         id: "lobbying-spend-defense",
@@ -5647,6 +5714,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Think by Numbers: How Many Lives Does FDA Save?",
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Kefauver-Harris Amendment | PMC: Lost Medicines",
+  },
+  "post-1962-life-expectancy-slowdown": {
+        id: "post-1962-life-expectancy-slowdown",
+        type: "webpage",
+        title: "Post-1962 slowdown in life expectancy gains",
+        author: [
+          {
+            literal: "Source: US Life Expectancy FDA Budget 1543-2019 CSV"
+          },
+        ],
+        issued: { 'date-parts': [[2019]] },
+        publisher: "Source: US Life Expectancy FDA Budget 1543-2019 CSV",
+        URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "pragmatic-trials-cost-advantage": {
         id: "pragmatic-trials-cost-advantage",
@@ -6127,11 +6208,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 382,
-  external: 144,
-  calculated: 136,
+  total: 387,
+  external: 147,
+  calculated: 138,
   definitions: 102,
-  citations: 108,
+  citations: 109,
 } as const;
 
 // ============================================================================

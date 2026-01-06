@@ -118,7 +118,7 @@ These represent the hard physical limits of medicine. Everything else, including
 ### Data Sources & Parameterization
 
 1. **Development Timelines:** *Biotechnology Innovation Organization (BIO) Clinical Development Success Rates 2011–2020*.
-   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}} years. Total Time to Market = 10.5 years. **Lag = {{< var efficacy_lag_years >}} Years.**
+   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}} years. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}} Years.**
    - *Source:* [BIO.org Clinical Development Report](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf)
 
 2. **Mortality Aversion Rates ($M_{saved}$):** Aggregated from *WHO Global Health Estimates* and *The Lancet*.
@@ -236,7 +236,7 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 3. **Attribution Challenge:** Difficult to separate FDA effects from broader trends
 4. **Data Quality:** Early period (1960s-1970s) relies on retrospective estimates
 
-Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, 13x cost increase), provides strong inferential evidence for causation.
+Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase), provides strong inferential evidence for causation.
 
 ## Policy Implications
 
@@ -267,12 +267,11 @@ This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} 
 
 If implemented today, the bifurcated model would:
 
-- **Save ~1.5M lives annually** (based on current drug lag estimates)
-- **Generate ~50M QALYs/year** (valuation: ~$7.5T annually at {{< var standard_economic_qaly_value_usd >}}/QALY)
-- **Reduce R&D costs by 82%** (from $2.6B to $350M per drug)
-- **Accelerate rare disease treatments** (95% currently have zero therapies)
+- **Eliminate the {{< var efficacy_lag_years >}}-year efficacy lag** for drugs with demonstrated safety
+- **Reduce trial costs by {{< var dfda_trial_cost_reduction_pct >}}** (from {{< var pharma_drug_development_cost_current >}} per drug)
+- **Accelerate treatments for {{< var diseases_without_effective_treatment >}} diseases** currently without effective therapy
 
-See [1% treaty impact analysis](../economics/economics.qmd) for full cost-benefit analysis.
+See [1% treaty impact analysis](../economics/economics.qmd) for full quantified cost-benefit analysis.
 
 ## Addressing Common Critiques
 
@@ -290,18 +289,8 @@ This critique misunderstands the methodology. The PRIMARY scenario does **not** 
 
 1. Every drug takes {{< var efficacy_lag_years >}} years longer to reach patients (BIO data, [Section 2.3](#data-sources--parameterization))
 2. Downstream research depends on upstream results (Drug B builds on Drug A's findings)
-3. Capital allocation: $2.6B cost vs. $350M means 7× fewer parallel research tracks
+3. Capital allocation: {{< var pharma_drug_development_cost_current >}} cost limits parallel research tracks ({{< var dfda_trial_cost_reduction_pct >}} reduction enables proportionally more simultaneous trials)
 4. Knowledge accumulation delays compound across the entire field
-
-This isn't speculation about hypothetical cures. It's arithmetic applied to observed timeline delays.
-
-**Historical validation:**
-
-- 1883-1962: 4 years/decade life expectancy gain
-- 1962-2024: 2 years/decade gain
-- **We lost 2 years/decade × 6.2 decades = 12.4 years of progress**
-
-The PRIMARY estimate asks: "How many people died during those lost 12.4 years?"
 
 **Robustness test:**
 
@@ -311,7 +300,6 @@ Even if you **adjust the primary estimate significantly**:
 - Type I benefits: ~{{< var type_i_error_benefit_dalys >}} DALYs
 - **The ratio remains extreme across the entire uncertainty distribution**
 
-**The conclusion holds even if we're wrong by 3×.**
 
 ### "The 92% 'Eventually Preventable' Is Theoretical"
 
@@ -348,10 +336,10 @@ Counterfactuals are never directly observable. That's why science uses **natural
 
 **1. Temporal Comparison (US Pre/Post-1962):**
 
-- 1883-1962: Linear 4 years/decade life expectancy gain
-- 1962-2024: Linear 2 years/decade gain
+- 1883-1962: Linear {{< var life_expectancy_gain_1883_1962_years_per_decade >}} life expectancy gain
+- 1962-2019: Linear {{< var life_expectancy_gain_1962_2019_years_per_decade >}} gain
 - **Break is exact:** Slope changed in 1962, not gradually over the decade
-- **Mechanism identified:** {{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, 13× cost increase
+- **Mechanism identified:** {{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase
 
 **2. Geographic Comparison (Switzerland vs. US):**
 
@@ -361,7 +349,7 @@ Counterfactuals are never directly observable. That's why science uses **natural
 
 **3. Alternative Regulatory Models:**
 
-- **Japan's Regenerative Medicine Act:** Conditional approval after Phase II, 2-3 years vs. 10.5 years
+- **Japan's Regenerative Medicine Act:** Conditional approval after Phase II, 2-3 years vs. {{< var fda_phase_1_to_approval_years >}}
 - **EU Compassionate Use:** Terminal patients access experimental drugs
 - Americans fly to these countries for treatments unavailable in the US
 
@@ -376,7 +364,7 @@ $$
 We have:
 
 1. **Temporal correlation:** Life expectancy growth halved in 1962
-2. **Mechanism:** Drug approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}, costs increased 13×, real-world trials banned
+2. **Mechanism:** Drug approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}, costs increased {{< var drug_cost_increase_1980s_to_current_multiplier >}}, real-world trials banned
 3. **Alternative explanations:** Other factors exist (complexity, standards, etc.), but the timing and magnitude strongly suggest regulatory latency is a major contributor
 
 **If you reject this inferential method, you must also reject the methodology of clinical trials**, which use the identical logical structure.
@@ -441,7 +429,7 @@ The pre-1962 system (1883-1962) had:
 - Phase I safety testing (post-1938)
 - Decentralized efficacy trials (150,000 physicians)
 - Third-party review (AMA seal of approval)
-- **Result:** 4 years/decade life expectancy gain for 80 years
+- **Result:** Linear {{< var life_expectancy_gain_1883_1962_years_per_decade >}} life expectancy gain for 80 years
 
 **Current system failures:**
 
