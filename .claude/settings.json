@@ -13,6 +13,11 @@
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/auto-regenerate-variables.sh\"",
             "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/check-python-errors.sh\"",
+            "timeout": 30
           }
         ]
       }
