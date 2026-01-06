@@ -31,6 +31,12 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.jpg
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+::: {.callout-warning}
+## Preprint / Not Peer Reviewed
+
+This is a **model-based scenario analysis**, not an empirical study. All quantitative estimates are derived from economic modeling with explicit assumptions. Large figures (e.g., billions of lives, quadrillions of dollars) represent **cumulative long-run counterfactual projections** that depend critically on "eventually avoidable" mortality assumptions documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd). Interpret as scenario estimates, not predictions.
+:::
+
 ::: {.content-visible when-format="pdf"}
 
 *Version 0.9 - Working Draft*
@@ -56,19 +62,29 @@ image: /assets/og-images/knowledge/economics/economics-og-academic.jpg
 
 ## Abstract
 
-Approximately {{< var diseases_without_effective_treatment >}} diseases currently lack effective first treatments, while {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations remain untested (<1% of therapeutic space explored). At the current research pace of {{< var new_disease_first_treatments_per_year >}} new disease treatments per year, systematically exploring this space would take ~{{< var status_quo_queue_clearance_years >}} years (effectively never). Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials scales trial capacity {{< var dfda_trial_capacity_multiplier >}}× (to ~{{< var dfda_cures_per_year >}} diseases/year), reducing exploration time to ~{{< var dfda_queue_clearance_years >}} years while eliminating the {{< var efficacy_lag_years >}}-year regulatory delay after safety verification. Combined, these effects advance treatment delivery by an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years ({{< var dfda_trial_capacity_cure_acceleration_years >}} years from discovery acceleration + {{< var efficacy_lag_years >}} years from efficacy lag elimination). This one-time timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives over the acceleration period, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. The intervention delivers healthcare's most cost-effective option: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete health benefits estimate). This qualifies as cost-dominant: it reduces costs while improving outcomes.
+Approximately {{< var diseases_without_effective_treatment >}} diseases currently lack effective first treatments, while {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations remain untested (<1% of therapeutic space explored). At the current research pace of {{< var new_disease_first_treatments_per_year >}} new disease treatments per year, systematically exploring this space would take ~{{< var status_quo_queue_clearance_years >}} years (effectively never). Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials scales trial capacity {{< var dfda_trial_capacity_multiplier >}}× (to ~{{< var dfda_cures_per_year >}} diseases/year), reducing exploration time to ~{{< var dfda_queue_clearance_years >}} years while eliminating the {{< var efficacy_lag_years >}}-year regulatory delay after safety verification. Combined, these effects advance treatment delivery by an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years ({{< var dfda_trial_capacity_cure_acceleration_years >}} years from discovery acceleration + {{< var efficacy_lag_years >}} years from efficacy lag elimination). This one-time timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} lives over the acceleration period, valued at {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Under modeled assumptions, the intervention ranks among the most cost-effective health interventions analyzed: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better than malaria bed nets) with ROI between {{< var dfda_roi_rd_only >}}:1 (conservative, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete health benefits estimate). This qualifies as cost-dominant: it reduces costs while improving outcomes.
 
 **Impact Mechanism:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift combines two complementary effects:
 
 | Benefit Type | Timeline Shift | Mechanism | Impact |
 |--------------|----------------|-----------|--------|
-| **Efficacy Lag Elimination** | {{< var efficacy_lag_years >}} years | Deploy treatments immediately after Phase I safety verification, eliminating Phase II/III efficacy testing delay | All newly discovered treatments reach patients {{< var efficacy_lag_years >}} years sooner |
+| **Efficacy Lag Elimination** | {{< var efficacy_lag_years >}} years | Offer conditional access via opt-in pragmatic trials after Phase I safety, with continuous real-world monitoring replacing Phase II/III efficacy delay | All newly discovered treatments reach patients {{< var efficacy_lag_years >}} years sooner |
 | **Discovery Acceleration** | {{< var dfda_trial_capacity_cure_acceleration_years >}} years average | Scale trial capacity {{< var dfda_trial_capacity_multiplier >}}× (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year), enabling parallel exploration of therapeutic space | Treatments that already exist among safe compounds are discovered {{< var dfda_trial_capacity_cure_acceleration_years >}} years earlier |
 | **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years** | Both effects act simultaneously | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift** for treatment delivery |
 
+::: {.callout-note}
+## Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
+
+This is a **queue/throughput model result**, not "time travel" or a prediction that we will achieve results centuries from now:
+
+- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} years to clear this "queue." Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces queue clearance to ~{{< var dfda_queue_clearance_years >}} years.
+- **The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years" represents**: The average time a treatment that *could* be discovered today would have waited under the old system versus the new system.
+- **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
+:::
+
 **How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_cures_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
-**Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials confirms the intervention maintains cost-dominance under all plausible parameter scenarios.
+**Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials indicates the intervention maintains cost-dominance across the sensitivity ranges explored here.
 
 **Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
@@ -82,7 +98,7 @@ Approximately {{< var diseases_without_effective_treatment >}} diseases currentl
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} years | Immediate access after Phase I safety verification |
+| **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} years | Conditional access via opt-in pragmatic trials after Phase I safety |
 | **Cost-Effectiveness** | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY | {{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) |
 | **Cost-Effectiveness (Risk-Adjusted)** | {{< var treaty_expected_cost_per_daly >}}/DALY | At {{< var political_success_probability >}} success probability, still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets |
 | **Treaty Leverage** | {{< var treaty_vs_direct_funding_leverage >}}× | $1B campaign unlocks {{< var dfda_direct_funding_queue_clearance_npv >}} (vs direct funding at {{< var dfda_direct_funding_cost_per_daly >}}/DALY) |
@@ -201,7 +217,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
-**Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Unconditionally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
+**Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Generally recommended regardless of willingness-to-pay thresholds when dominance is established (e.g., vaccination programs, smoking cessation).
 
 **A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to pragmatic clinical trials infrastructure.
 
@@ -860,7 +876,7 @@ For a dFDA's cost per health benefit averted (using the full ~{{< var dfda_trial
 
 **Cost per DALY averted: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}**
 
-This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. The negative ICER indicates a cost-dominant intervention. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-dominant interventions are unconditionally recommended.
+This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. This extremely low cost per DALY, combined with net economic benefits that exceed costs, qualifies this as a cost-dominant intervention under model assumptions. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-dominant interventions are generally prioritized regardless of threshold.
 
 #### NPV of Regulatory Delay Avoidance
 
@@ -1527,7 +1543,7 @@ ICER measures the cost per year of healthy life gained (QALY):
 
 For a dFDA (using the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
-**Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (negative = cost-dominant)
+**Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (cost-dominant: net economic benefits exceed costs)
 
 Normally, money is *spent* to save lives. Good interventions cost {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. Great interventions cost $3,000-{{< var who_qaly_threshold_cost_effective >}}.
 
@@ -1983,7 +1999,7 @@ The system operates through distributed infrastructure:
 - Public reporting of all spending and outcomes
 - Milestone-based funding (money releases when targets hit)
 
-See [Governance and Accountability](../appendix/governance.qmd) and [Legal Structure](../appendix/legal-compliance-framework.qmd) for the complete system that prevents this from becoming another bureaucratic nightmare where nothing happens and everyone dies while committees meet.
+See [Governance and Accountability](../appendix/governance.qmd) and [Legal Structure](../appendix/legal-compliance-framework.qmd) for accountability mechanisms designed to prevent administrative delays and ensure timely fund deployment.
 
 
 ## Limitations and Uncertainties
