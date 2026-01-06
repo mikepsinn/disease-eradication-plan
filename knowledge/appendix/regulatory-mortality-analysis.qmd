@@ -729,12 +729,11 @@ In the "Upper Bound" scenario, we aren't just looking at preventable *premature*
 
 ##### The Equation
 
-$$D_{total} = M_{daily} \times T_{lag}$$
+$$D_{total} = M_{daily} \times T_{lag} \times \text{Avoidable\%}$$
 
 ##### The Calculation
 
-$$150,000 \text{ deaths/day} \times 2,993 \text{ days}$$
-$$= \mathbf{448,950,000 \text{ Deaths}}$$
+{{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
 
 ##### Step-by-Step for the 5th Grader
 
@@ -760,8 +759,7 @@ $$H_{lost} \text{ (Healthy Years Lost)} = D_{total} \times Y_{lost}$$
 
 ##### The Calculation
 
-$$449,000,000 \text{ people} \times 25 \text{ years}$$
-$$= \mathbf{11.2 \ Billion \ Life-Years \ Lost}$$
+{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
 ##### Step-by-Step for the 5th Grader
 
@@ -787,8 +785,7 @@ $$E_{cost} = H_{lost} \times V_{year}$$
 
 ##### The Calculation
 
-$$11,200,000,000 \text{ Life-Years} \times \$100,000$$
-$$= \mathbf{\$1.12 \ Quadrillion}$$
+{{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
 
 ##### Step-by-Step for the 5th Grader
 
