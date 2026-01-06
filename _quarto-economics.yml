@@ -10,7 +10,7 @@ project:
 dih-render:
   index-source: knowledge/economics/economics.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
-  pdf-output-file: dih-economic-models.pdf
+  pdf-output-file: 1-percent-treaty-impact.pdf
 
 profiles:
   default:
@@ -36,7 +36,7 @@ book:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /dih-economic-models.pdf
+        href: /1-percent-treaty-impact.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "References"
@@ -183,7 +183,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/1-percent-treaty-impact.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </div>
     include-after-body:
@@ -205,7 +205,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/dih-economic-models.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/1-percent-treaty-impact.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </footer>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
@@ -241,7 +241,7 @@ format:
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   pdf:
-    output-file: "dih-economic-models.pdf"
+    output-file: "1-percent-treaty-impact.pdf"
     documentclass: report
     echo: false
     toc: true

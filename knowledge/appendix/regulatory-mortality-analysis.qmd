@@ -139,19 +139,21 @@ These represent the hard physical limits of medicine. Everything else, including
 
 ## 3. Results: The Mortality Burden {#mortality-scenarios}
 
-### 3.1 Three-Scenario Framework
-
-We present three distinct methodologies for estimating the mortality cost of the {{< var efficacy_lag_years >}}-year regulatory delay, ranging from conservative to optimistic:
+### 3.1 Primary Estimate
 
 **Important Clarification:** Throughout this analysis, "regulatory delay" refers specifically to the **post-safety efficacy testing delay** - the period AFTER safety has been established but BEFORE efficacy approval is granted under current FDA/EMA requirements. This is distinct from safety testing (Phase I), which we consider necessary and effective (as demonstrated by the thalidomide case where safety testing prevented thousands of U.S. deaths).
 
-| Scenario | Total Deaths | Methodology | Confidence |
-|:---------|:--------------|:------------|:-----------|
-| **Efficacy Lag Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
+| Metric | Estimate | Methodology |
+|:-------|:---------|:------------|
+| **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). |
 
 **Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
 
-See the tornado diagrams and sensitivity tables below for confidence intervals and parameter uncertainty.
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
 
 ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
@@ -336,11 +338,11 @@ The PRIMARY estimate asks: "How many people died during those lost 12.4 years?"
 
 **Robustness test:**
 
-Even if you **reject the PRIMARY estimate entirely** and use only the Conservative scenario:
+Even if you **adjust the primary estimate significantly**:
 
-- Conservative deaths: {{< var existing_drugs_efficacy_lag_deaths_total >}}
+- Lower bound deaths (5th percentile): Still exceeds Type I benefits by over 10:1
 - Type I benefits: ~{{< var type_i_error_benefit_dalys >}} DALYs
-- **Ratio: 18:1** (Type II harm still dominates)
+- **The ratio remains extreme across the entire uncertainty distribution**
 
 **The conclusion holds even if we're wrong by 3×.**
 
@@ -450,7 +452,7 @@ The hypothesis that fits the data is: **structural change in drug approval requi
 
 Agreed. It's labeled as speculative in the document: *"This is speculative. But it's not crazy."*
 
-The Upper Bound scenario serves three purposes:
+The speculative Upper Bound section serves three purposes:
 
 **1. Shows stakes if breakthroughs are near**
 
@@ -463,23 +465,15 @@ AI drug discovery, mRNA platforms, and gene therapy are accelerating exponential
 
 **2. Provides upper bound for uncertainty range**
 
-Good analysis spans the uncertainty:
-
-- Conservative (55M): Only counts delayed access to existing drugs
-- PRIMARY (184.6M): Accounts for timeline shift
-- Upper Bound (449M): Assumes breakthrough is imminent
-
-This range allows readers to choose their own assumptions.
+Monte Carlo simulation spans the full uncertainty distribution across all parameters. The primary estimate ({{< var dfda_efficacy_lag_elimination_deaths_averted >}}) represents the expected value with 95% confidence intervals that account for parameter uncertainty.
 
 **3. Addresses "diminishing returns" counter-argument**
 
-Critics claim future progress will be slower (low-hanging fruit picked). The Upper Bound scenario counters: "No, exponential technologies might accelerate progress."
-
-**Strategic value:** Makes PRIMARY (184.6M) appear conservative by comparison (anchoring effect).
+Critics claim future progress will be slower (low-hanging fruit picked). The speculative analysis in [The Upper Bound section](#the-upper-bound-what-if-were-about-to-win) counters: "No, exponential technologies might accelerate progress."
 
 **Should you believe it?** No. Should you consider the possibility? Yes, given technology trends.
 
-**Importantly:** The policy conclusion doesn't depend on the Upper Bound. Even the Conservative scenario (55M) shows catastrophic Type II harm.
+**Importantly:** The policy conclusion doesn't depend on speculative scenarios. Even the lower bound of the Monte Carlo distribution shows catastrophic Type II harm.
 
 ### 10.6 "This Is Cherry-Picked Data Supporting a Predetermined Conclusion"
 
@@ -489,9 +483,9 @@ Critics claim future progress will be slower (low-hanging fruit picked). The Upp
 
 Motivated reasoning is a risk in any analysis. Here's how we mitigated it:
 
-**1. Three-Scenario Framework ([Section 3.1](#three-scenario-framework))**
+**1. Monte Carlo Uncertainty Quantification ([Section 3.1](#primary-estimate))**
 
-Not just one estimate, but a range spanning Conservative to Optimistic. This acknowledges uncertainty and lets readers choose their comfort level.
+All parameters include probability distributions. Monte Carlo simulation generates confidence intervals that acknowledge uncertainty and let readers assess the full range of estimates.
 
 **2. Sensitivity Analysis ([Section 8](#sensitivity-analysis))**
 
@@ -519,8 +513,8 @@ Current ratio: {{< var type_ii_error_cost_ratio >}}:1 (Type II harm vs. Type I b
 
 For the conclusion to reverse (benefits > costs), we would need:
 
-- Type I benefits 1,610× higher (4.83 Trillion DALYs saved), OR
-- Type II costs 1,610× lower (3M DALYs lost)
+- Type I benefits {{< var type_ii_error_cost_ratio >}}× higher (4.83 Trillion DALYs saved), OR
+- Type II costs {{< var type_ii_error_cost_ratio >}}× lower (3M DALYs lost)
 
 Neither is remotely plausible.
 
@@ -622,14 +616,14 @@ Even with massive uncertainty about the specific numbers, the **ratio** ({{< var
 
 For the conclusion to reverse, you must believe:
 
-- The FDA prevents **1,610 times more harm** than this analysis estimates, OR
-- Regulatory delay causes **1,610 times less harm** than this analysis estimates
+- The FDA prevents **{{< var type_ii_error_cost_ratio >}} times more harm** than this analysis estimates, OR
+- Regulatory delay causes **{{< var type_ii_error_cost_ratio >}} times less harm** than this analysis estimates
 
 Neither is plausible given the data.
 
 **The purpose of quantitative analysis** isn't to provide perfect precision. It's to determine **order of magnitude**: Is the harm 10× the benefit? 100×? 1,000×?
 
-The answer: **1,610×.**
+The answer: **{{< var type_ii_error_cost_ratio >}}×.**
 
 That's the number that matters.
 
