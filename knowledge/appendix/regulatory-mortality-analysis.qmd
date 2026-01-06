@@ -17,9 +17,9 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-aca
 ::: {.callout-note}
 ## The Short Version
 
-The 1962 Kefauver-Harris Amendments require an 8-year efficacy delay after drugs are proven safe. During those 8 years, people die. 
+The 1962 Kefauver-Harris Amendments require a multi-year efficacy delay after drugs are proven safe. During those {{< var efficacy_lag_years >}} years, people die. 
 
-**The number:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from eliminating the 8.2-year efficacy lag.
+**The number:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag.
 
 :::
 
@@ -190,8 +190,7 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 ### Contextualizing the Loss
 
 - **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
-- **Annualized Loss:** ~$19T/year (total loss ÷ 62 years)
-- **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
+- **Annualized Loss:** Total loss ÷ 62 years represents a substantial fraction of global economic output in lost human capital and foregone productivity
 
 ## Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
@@ -317,7 +316,7 @@ The document explicitly distinguishes "Current" from "Max Potential" in the dise
 
 The question is: **"When do we achieve it?"**
 
-If the answer is "2050 without regulations, 2058 with regulations," then the 8-year delay kills everyone who dies during 2050-2058. The regulatory framework doesn't just delay individual drugs. It delays the entire trajectory of biomedical progress.
+If regulations delay progress by {{< var efficacy_lag_years >}} years, everyone who dies during that window dies because of the delay. 
 
 **Note:** The PRIMARY estimate uses global disease mortality rates, not the {{< var eventually_avoidable_death_pct >}} ceiling. This upper bound provides context for the theoretical maximum scenario.
 
@@ -411,7 +410,7 @@ The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis
 
 The pre-1962 system (1938-1962) included:
 
-- Phase I safety testing (mandated by 1938 Food, Drug, and Cosmetic Actr)
+- Phase I safety testing (mandated by 1938 Food, Drug, and Cosmetic Act)
 - Decentralized efficacy assessment by ~150,000 practicing physicians
 - Third-party review via AMA Council on Pharmacy provided independent evaluation
 - **Result:** Higher approval rates with safety maintained by mandatory Phase I testing
@@ -428,11 +427,11 @@ The pre-1962 system (1938-1962) included:
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from 8.2-year timeline shift**
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from {{< var efficacy_lag_years >}}-year timeline shift**
 - **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs lost**
 - **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)
 
-These costs dwarf the benefits by three orders of magnitude. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).
+The {{< var type_ii_error_cost_ratio >}}:1 ratio demonstrates that these costs dwarf the benefits. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).
 
 The path forward is clear: maintain safety testing, eliminate efficacy delay, and deploy distributed real-world evidence systems. 
