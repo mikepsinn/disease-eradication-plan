@@ -132,7 +132,6 @@ These represent the hard physical limits of medicine. Everything else, including
 
 3. **Economic Valuation:** *Standard QALY Valuation*.
    - **VSLY (Value of a Statistical Life Year):** Standardized at **{{< var standard_economic_qaly_value_usd >}}** (consistent with project-wide QALY valuations).
-   - *Note:* This represents a conservative global average; values range from $50K-$200K across different regulatory frameworks.
 
 ## Results: The Mortality Burden {#mortality-scenarios}
 
@@ -215,7 +214,7 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 ### Key Assumptions
 
 1. **Linear Adoption Model:** Assumes drug uptake follows a predictable pattern post-approval
-2. **Constant VSLY:** Uses global average of {{< var standard_economic_qaly_value_usd >}}/year (varies by country: $50K-$200K)
+2. **Constant VSLY:** Uses global average of {{< var standard_economic_qaly_value_usd >}}/year
 3. **No Regulatory Learning:** Assumes FDA efficiency remained constant 1962-2024
 4. **Independence:** Treats each drug approval as independent (may underestimate synergies)
 
@@ -223,10 +222,10 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 
 The model was tested across multiple scenarios:
 
-- **Discount Rates:** 3%, 5%, 7% (base case: 5%)
+- **Discount Rates:** {{< var npv_discount_rate_standard >}} (base case)
 - **Innovation Elasticity:** 0.3–0.8 (base case: 0.5)
 - **"Snake Oil" Rate:** 10%–40% (base case: 20%)
-- **VSLY Range:** $50K–$200K (base case: {{< var standard_economic_qaly_value_usd >}})
+- **VSLY:** {{< var standard_economic_qaly_value_usd >}}
 
 Results remain robust across all reasonable parameter ranges, with lower bound estimates exceeding 100M deaths in all scenarios.
 
@@ -237,7 +236,7 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 3. **Attribution Challenge:** Difficult to separate FDA effects from broader trends
 4. **Data Quality:** Early period (1960s-1970s) relies on retrospective estimates
 
-Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** (70% drop in approvals, 13x cost increase), provides strong inferential evidence for causation.
+Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, 13x cost increase), provides strong inferential evidence for causation.
 
 ## Policy Implications
 
@@ -251,7 +250,7 @@ The current debate frames drug approval as a choice between:
 This is a false dichotomy. The evidence suggests:
 
 - **Phase I safety testing works** (Thalidomide prevented in US)
-- **Phase II/III efficacy mandates fail** (70% fewer approvals, worse real-world outcomes)
+- **Phase II/III efficacy mandates fail** ({{< var post_1962_drug_approval_reduction_pct >}} fewer approvals, worse real-world outcomes)
 
 ### The Bifurcated Alternative
 
@@ -352,7 +351,7 @@ Counterfactuals are never directly observable. That's why science uses **natural
 - 1883-1962: Linear 4 years/decade life expectancy gain
 - 1962-2024: Linear 2 years/decade gain
 - **Break is exact:** Slope changed in 1962, not gradually over the decade
-- **Mechanism identified:** 70% drop in approvals, 13× cost increase
+- **Mechanism identified:** {{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, 13× cost increase
 
 **2. Geographic Comparison (Switzerland vs. US):**
 
@@ -377,7 +376,7 @@ $$
 We have:
 
 1. **Temporal correlation:** Life expectancy growth halved in 1962
-2. **Mechanism:** Drug approvals dropped 70%, costs increased 13×, real-world trials banned
+2. **Mechanism:** Drug approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}, costs increased 13×, real-world trials banned
 3. **Alternative explanations:** Other factors exist (complexity, standards, etc.), but the timing and magnitude strongly suggest regulatory latency is a major contributor
 
 **If you reject this inferential method, you must also reject the methodology of clinical trials**, which use the identical logical structure.
@@ -392,7 +391,7 @@ Confounders work **against** the hypothesis, making the observed effect more rem
 
 **Medicare (1965):** Expanded healthcare access → *should have increased* life expectancy growth → Yet it halved
 
-**NIH Funding:** Grew dramatically 1960s-1980s → *should have accelerated* drug development → Yet approvals dropped 70%
+**NIH Funding:** Grew dramatically 1960s-1980s → *should have accelerated* drug development → Yet approvals dropped {{< var post_1962_drug_approval_reduction_pct >}}
 
 **Vietnam War (1965-1973):** Primarily affected young males, minimal impact on overall life expectancy trends
 
