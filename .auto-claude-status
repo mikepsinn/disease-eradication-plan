@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "006-foundation-ready-grant-proposal-version",
+  "state": "building",
+  "subtasks": {
+    "completed": 3,
+    "total": 15,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Core Grant Content Creation",
+    "id": null,
+    "total": 4
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 5,
+    "started_at": "2026-01-08T06:29:36.186472"
+  },
+  "last_update": "2026-01-08T06:53:24.739892"
+}
