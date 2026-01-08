@@ -16,7 +16,7 @@ with dot.subgraph(name='cluster_machine') as machine:
     machine.attr(label='The VICTORY Incentive Alignment Bond Money Machine', style='dashed')
     machine.node('Investors', 'You invest\n$1B')
     machine.node('Campaign', 'Fund AI campaign\n(lobbying + viral)')
-    machine.node('Treaty', '1% Treaty passes\n$27B/year redirected')
+    machine.node('Treaty', f'1% Treaty passes\n{TREATY_ANNUAL_FUNDING}/year redirected')
     machine.node('Returns', f'You get {VICTORY_BOND_ANNUAL_PAYOUT}\n({VICTORY_BOND_ANNUAL_RETURN_PCT} returns forever)')
     machine.node('Cures', f'A 1% Treaty Fund allocates\n{DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL} to efficient\ndecentralized pragmatic trials')
 

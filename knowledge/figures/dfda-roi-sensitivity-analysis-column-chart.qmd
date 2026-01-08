@@ -16,7 +16,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # --- Data from current parameters ---
-# Three-tier ROI based on different health benefit scenarios (all use $1B campaign cost)
+# Three-tier ROI based on different health benefit scenarios (all use TREATY_CAMPAIGN_TOTAL_COST campaign cost)
 
 scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Full Timeline Shift\n(Trial Capacity + Lag)']
 roi_parameters = [
@@ -94,7 +94,7 @@ ax.set_title(
 )
 
 ax.set_ylabel(
-    'Return on Investment\n(Total Benefit ÷ $1B Campaign Cost)',
+    f'Return on Investment\n(Total Benefit ÷ {TREATY_CAMPAIGN_TOTAL_COST} Campaign Cost)',
     fontsize=18,
     color=COLOR_BLACK, labelpad=15
 )
@@ -133,7 +133,7 @@ from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_
 add_png_metadata(
     output_path,
     title="1% treaty Return on Investment - Three Health Benefit Scenarios",
-    description=f"ROI analysis across three health benefit tiers based on $1B campaign cost. Historical Rate (existing drugs only): {roi_values[0]:,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {roi_values[1]:,.0f}:1 ({benefit_primary}). Full Timeline Shift: {roi_values[2]:,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
+    description=f"ROI analysis across three health benefit tiers based on {TREATY_CAMPAIGN_TOTAL_COST} campaign cost. Historical Rate (existing drugs only): {roi_values[0]:,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {roi_values[1]:,.0f}:1 ({benefit_primary}). Full Timeline Shift: {roi_values[2]:,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
 )
 
 plt.show()

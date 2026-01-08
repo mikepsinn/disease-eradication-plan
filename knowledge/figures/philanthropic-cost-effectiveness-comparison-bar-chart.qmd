@@ -133,7 +133,7 @@ ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.5)
 # Add explanatory annotations - moved away from bars with arrows
 # Annotation for top charities (upper right, away from bars)
 
-ax.annotate('GiveWell Top Charities:\nSociety PAYS $3,500-$5,500\nto save one life\n(excellent, but costs money)',
+ax.annotate(f'GiveWell Top Charities:\nSociety PAYS {GIVEWELL_COST_PER_LIFE_MIN}-{GIVEWELL_COST_PER_LIFE_MAX}\nto save one life\n(excellent, but costs money)',
             xy=(1.5, 6500), xytext=(0.5, -2000000),
             ha='center', fontsize=10, color=COLOR_BLACK,
             bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),

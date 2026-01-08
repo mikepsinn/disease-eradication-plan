@@ -30,7 +30,7 @@ fig.text(0.5, 0.95, 'Money Flow: From Treaty to Impact', fontsize=36,
 # Define positions and boxes - use BLACK for all
 
 boxes = [
-    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},
+    {'pos': (1, 5), 'size': (1.5, 1.2), 'text': f'1% Treaty\n{TREATY_ANNUAL_FUNDING}/year', 'color': COLOR_BLACK},
     {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\nFund', 'color': COLOR_BLACK},
     {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLACK},
     {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLACK},

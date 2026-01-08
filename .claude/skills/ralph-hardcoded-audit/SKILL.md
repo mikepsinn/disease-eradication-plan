@@ -88,6 +88,43 @@ Process these first (most hardcoded values):
 4. `knowledge/solution/dfda.qmd`
 5. `knowledge/economics/campaign-budget.qmd`
 
+## LaTeX Equation Handling
+
+**CRITICAL: Quarto variables don't work inside `$$` blocks.**
+
+Instead of trying to replace values inside LaTeX equations, check if a `_latex` variable exists:
+
+```bash
+# Search for LaTeX variables
+grep "_latex" _variables.yml | head -20
+```
+
+**Before (hardcoded LaTeX):**
+```markdown
+$$
+PD_{annual} = \$11,355B \times 0.01 = \$113.55B
+$$
+```
+
+**After (using _latex variable):**
+```markdown
+{{< var peace_dividend_annual_societal_benefit_latex >}}
+```
+
+Common `_latex` variables:
+- `peace_dividend_annual_societal_benefit_latex`
+- `treaty_annual_funding_latex`
+- `dfda_trial_cost_reduction_factor_latex`
+- `recovery_trial_cost_reduction_factor_latex`
+
+## Files to Skip
+
+The audit script automatically excludes:
+- `_build_temp/` - Build artifacts
+- `references.qmd` - Citation database
+- `parameters-and-calculations.qmd` - Parameter definitions (source of truth)
+- `futures/` - Fictional scenarios with intentional values
+
 ## Related Commands
 
 - `/cancel-ralph` - Stop an active Ralph loop
