@@ -86,9 +86,7 @@ Here's the breakdown of where the time goes:
 
 The math is simple: If you die in year 5 and the drug gets approved in year 10, the regulatory process murdered you.
 
-$$
-t_{lag} = t_{total} - t_{safety} = 10.5 - 2.3 = 8.2 \text{ years}
-$$
+{{< var efficacy_lag_years_latex >}}
 
 That's {{< var efficacy_lag_years >}} sitting in regulatory purgatory *after* we already know the drug won't kill you.
 
@@ -213,11 +211,9 @@ But deaths alone don't capture the suffering. People don't just die, they live f
 
 When you account for both premature death and years lived with disability:
 
-$$
-DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B
-$$
+{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
-**{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life** deleted by the regulatory framework.
+**{{< var dfda_efficacy_lag_elimination_dalys >}}** years of healthy human life deleted by the regulatory framework.
 
 - **Economic cost:** {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD)
 - **Annualized loss:** {{< var dfda_efficacy_lag_elimination_economic_value >}}/year ({{< var dfda_efficacy_lag_elimination_economic_value >}} ÷ 62 years from 1962-2024)
@@ -295,9 +291,7 @@ Let's quantify both types of harm:
 - Documented harm: {{< var dfda_efficacy_lag_elimination_dalys >}} lost (1962-2024)
 - This is from delayed access alone, not counting the additional safety failures the system creates
 
-$$
-\frac{\text{Cost of Regulatory Delay}}{\text{Benefit of Screening}} = \frac{4.83B}{0.003B} = 1{,}610:1
-$$
+{{< var type_ii_error_cost_ratio_latex >}}
 
 **For every 1 unit of harm prevented by the current regulatory framework, it creates {{< var type_ii_error_cost_ratio >}} units of harm through delay and inadequate safety monitoring.**
 

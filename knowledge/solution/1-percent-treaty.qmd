@@ -24,6 +24,8 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
 3.  **The Prize:** That 1%, a **{{< var treaty_annual_funding >}}-a-year river of cash**, is redirected to cure all human diseases.
 
+{{< var treaty_annual_funding_latex >}}
+
 ### How It Works
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**

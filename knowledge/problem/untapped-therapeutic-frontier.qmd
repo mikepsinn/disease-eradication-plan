@@ -63,6 +63,8 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 {{< var tested_relationships_estimate >}} tested / {{< var drug_disease_combinations_possible >}} possibilities = {{< var exploration_ratio >}}
 
+{{< var exploration_ratio_latex >}}
+
 **Humanity has explored less than 1% of the theoretically testable drug-disease space.**
 
 You are missing {{< var unexplored_ratio >}} of the picture.

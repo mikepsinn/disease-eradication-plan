@@ -238,6 +238,8 @@ Humanity's budget priorities, explained simply:
 
 - **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}} (global spending on weapons exceeds spending on discovering which drugs treat diseases by {{< var military_to_government_clinical_trials_spending_ratio >}}×)
 
+{{< var military_vs_medical_research_ratio_latex >}}
+
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
 
 
@@ -303,6 +305,8 @@ The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospita
 **Concrete example**: A hospital already tracks patient lab results, symptoms, and outcomes in electronic health records. Traditional trials build a parallel research infrastructure to collect the same information again. Pragmatic trials simply flag which patients are enrolled and automatically extract relevant data from existing systems. No duplicate infrastructure, no dedicated research staff per trial.
 
 The cost reduction stems from eliminating unnecessary overhead, not reducing evidence quality. Hospitals already exist. Electronic health records already exist. Doctors already see patients. The trial infrastructure simply uses what's already there rather than building dedicated research facilities.
+
+{{< var recovery_trial_cost_reduction_factor_latex >}}
 
 ### Enhanced Safety Monitoring
 
@@ -455,6 +459,7 @@ The lives saved calculation measures **timeline acceleration**, not current cura
 
 {{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_benefit_rd_only_annual >}} saved per year.
 
+{{< var dfda_benefit_rd_only_annual_latex >}}
 
 * **Oxford RECOVERY** proved trials cost **{{< var recovery_trial_cost_reduction_factor >}}× less** by using existing hospital infrastructure instead of dedicated trial sites
 * This single trial enrolled [47,000+](../references.qmd#recovery-trial-summary-quote) patients across [nearly 200](../references.qmd#recovery-trial-summary-quote) hospitals, found [dexamethasone (reducing deaths by one-third in ventilated patients)](../references.qmd#recovery-trial-dexamethasone-results), ruled out hydroxychloroquine, and identified effective treatments faster than traditional regulatory processes
@@ -1532,6 +1537,8 @@ This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year
 
+{{< var combined_peace_health_dividends_annual_for_roi_calc_latex >}}
+
 ##### Uncertainty Analysis: Combined Annual Benefits
 
 {{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
@@ -1885,6 +1892,8 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 | **[Legislative Advocacy](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
+
+{{< var treaty_campaign_total_cost_latex >}}
 
 **Philanthropic Leverage**: For a philanthropic partner, the leverage works in two phases:
 
