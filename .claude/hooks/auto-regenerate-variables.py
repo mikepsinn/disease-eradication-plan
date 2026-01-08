@@ -16,9 +16,24 @@ if sys.platform == 'win32':
     if hasattr(sys.stderr, 'reconfigure'):
         sys.stderr.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
 
+# Import hook logger
+def log_hook(name: str, msg: str) -> None:
+    """Fallback no-op logger"""
+    pass
+
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from hook_logger import log_hook  # type: ignore[no-redef]
+except ImportError:
+    pass  # Use fallback defined above
+
+log_hook("auto-regenerate-variables", "hook triggered")
+
 try:
     input_data = json.load(sys.stdin)
+    log_hook("auto-regenerate-variables", f"input: {input_data.get('tool_input', {}).get('file_path', 'unknown')}")
 except Exception:
+    log_hook("auto-regenerate-variables", "failed to parse stdin")
     sys.exit(0)
 
 file_path = input_data.get('tool_input', {}).get('file_path', '')

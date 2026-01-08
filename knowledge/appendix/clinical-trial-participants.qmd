@@ -198,7 +198,7 @@ The math is straightforward:
 - Current: {{< var current_trial_slots_available >}}/year (IQVIA 2022)
 - **{{< var dfda_trial_capacity_multiplier >}}× more trial capacity** means testing {{< var dfda_trial_capacity_multiplier >}}× more treatments simultaneously
 
-And we'd only be using **4.0% of available capacity** (43.4M ÷ {{< var willing_trial_participants_global >}}).
+And we'd only be using a fraction of available capacity ({{< var dih_patients_fundable_annually >}} ÷ {{< var willing_trial_participants_global >}}).
 
 The data would be better too. More diverse. More representative. Collected from people living their actual lives instead of visiting clinics every week.
 
