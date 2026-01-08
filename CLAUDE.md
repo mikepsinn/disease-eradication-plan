@@ -332,6 +332,243 @@ Quarto automatically converts `.qmd` links to the appropriate format:
 **External URLs** (outside the book) should use full URLs:
 <!-- Example: [External Link](https://example.com/page.html) -->
 
+## Foundation Grant Proposal System
+
+The project includes a specialized version of the book formatted for foundation grant applications, with executive summary, budget breakdowns, and impact metrics suitable for philanthropic evaluation.
+
+### Overview
+
+The foundation grant proposal system extracts key content from the main book and reformats it for foundation program officers and philanthropic evaluators. It's a separate Quarto configuration that generates both a standalone website and a PDF suitable for grant portal uploads.
+
+**Key Files:**
+- **`_quarto-foundation.yml`**: Quarto configuration for the foundation grant proposal
+- **`_variables-foundation-manual-DO-NOT-DELETE.yml`**: Foundation-specific variables (80+ simplified metrics, grant-ready text snippets)
+- **`knowledge/grant-proposal/`**: Grant proposal content (8 QMD files)
+- **Output**: HTML site at `_site/foundation-grant/` and PDF at `Foundation-Grant-Proposal.pdf`
+
+### How to Render the Grant Proposal
+
+**Render all formats (HTML + PDF):**
+```bash
+python scripts/render-quarto.py foundation
+```
+
+**Render only PDF:**
+```bash
+python scripts/render-quarto.py foundation --to pdf
+```
+
+**Render only HTML:**
+```bash
+python scripts/render-quarto.py foundation --to html
+```
+
+**Live preview with hot reload:**
+```bash
+python scripts/render-quarto.py foundation --preview
+```
+
+The render script automatically:
+- Copies relevant files to `_build_temp/foundation/`
+- Rewrites cross-site links (QMD links to main book chapters become absolute URLs)
+- Validates the PDF for any code leakage
+- Generates filtered `_variables-foundation.yml` (only variables used in grant proposal)
+
+### Grant Proposal Structure
+
+The proposal is organized for efficient evaluation by foundation program officers:
+
+**Core Proposal** (~25 pages, essential reading):
+1. **`index.qmd`**: Cover letter with overview and funding request
+2. **`executive-summary.qmd`**: Comprehensive summary with key metrics
+3. **`budget-breakdown.qmd`**: Detailed financial plan and ROI analysis
+4. **`theory-of-change.qmd`**: Logic model and causal pathway diagram
+5. **`evaluation-framework.qmd`**: KPIs and monitoring plan
+
+**Supporting Documentation** (~20 pages):
+6. **`organizational-capacity.qmd`**: Team, governance, partnerships
+7. **`risk-analysis.qmd`**: Comprehensive risk assessment and mitigation
+8. **`evidence-base.qmd`**: Historical precedents (Ottawa Treaty, RECOVERY trial) and academic validation
+
+**Appendices** (reference materials):
+- **`parameters-and-calculations.qmd`**: Complete methodology and source data
+- **`references.qmd`**: 500+ peer-reviewed citations
+
+### Customization for Specific Foundations
+
+The grant proposal system is designed to be easily customized for specific foundation requirements.
+
+**1. Edit Foundation Variables**
+
+Edit `_variables-foundation-manual-DO-NOT-DELETE.yml` to customize:
+
+```yaml
+# Funding amounts (adjust based on foundation's grant size)
+foundation_amount_requested_full: "$1.02B (full campaign budget)"
+foundation_amount_requested_seed: "$250M-$400M (Phase 1 seed funding)"
+foundation_amount_requested_anchor: "$50M-$100M (anchor donation)"
+
+# Contact information
+foundation_contact_name: "Mike P. Sinn"
+foundation_contact_email: "mike@warondisease.org"
+foundation_org_legal_name: "Decentralized Institutes of Health Foundation"
+
+# Pitch customization (50/100/250-word versions available)
+foundation_summary_50_words: "..."
+foundation_summary_100_words: "..."
+foundation_summary_250_words: "..."
+```
+
+**Common Customization Scenarios:**
+
+- **Different funding tiers**: Edit `foundation_amount_requested_*` variables
+- **Foundation-specific requirements**: Add new variables for required fields
+- **Different emphasis**: Edit `foundation_pitch`, `foundation_primary_impact` for specific foundation priorities
+- **Geographic scope**: Adjust `foundation_geographic_scope` if targeting regional foundations
+- **Beneficiary focus**: Customize `foundation_beneficiaries` for specific populations
+
+**2. Add Foundation-Specific Content**
+
+For foundations with unique requirements, edit the QMD files in `knowledge/grant-proposal/`:
+
+```bash
+# Edit any grant proposal file
+code knowledge/grant-proposal/executive-summary.qmd
+```
+
+**3. Regenerate Variables**
+
+After editing parameters in `dih_models/parameters.py`, regenerate all variables including foundation-specific ones:
+
+```bash
+python scripts/generate-everything-parameters-variables-calculations-references.py
+```
+
+This automatically:
+- Updates `_variables.yml` (main book variables)
+- Updates `_variables-foundation.yml` (filtered subset used in grant proposal)
+- Keeps `_variables-foundation-manual-DO-NOT-DELETE.yml` unchanged (manual customizations preserved)
+- Regenerates `parameters-and-calculations.qmd` appendix
+
+### Relationship to Main Book Content
+
+The foundation grant proposal is a **targeted subset** of the main book, reformatted for philanthropic evaluation:
+
+**Content Reuse:**
+- **Parameters**: Grant proposal uses the same parameter system as main book (`_variables.yml`)
+- **Calculations**: `parameters-and-calculations.qmd` appendix is identical to main book
+- **References**: `references.qmd` uses the same bibliography
+- **Evidence**: Grant proposal cites specific sections from main book for deeper exploration
+
+**Key Differences:**
+- **Tone**: Grant proposal uses more conservative, academically rigorous language suitable for foundation review
+- **Length**: Core proposal is ~45 pages (vs. 300+ page main book)
+- **Structure**: Organized around standard grant proposal sections (executive summary, budget, theory of change, evaluation framework)
+- **Metrics**: Emphasizes cost-effectiveness comparisons to GiveWell top charities (bed nets, deworming, cash transfers)
+- **PDF Format**: Optimized for grant portal uploads (US Letter, 1-inch margins, embedded fonts, numbered sections)
+
+**Cross-Links:**
+- Grant proposal HTML site includes links back to main book for detailed exploration
+- Main book doesn't link to grant proposal (grant proposal is standalone for foundation distribution)
+- Links in PDF are maintained as absolute URLs for accessibility
+
+### Foundation-Specific Variables
+
+The `_variables-foundation-manual-DO-NOT-DELETE.yml` file provides 80+ pre-formatted variables designed for grant proposals:
+
+**Quick Reference Snippets:**
+- `foundation_summary_50_words`: Elevator pitch for grant forms
+- `foundation_summary_100_words`: Brief executive summary
+- `foundation_summary_250_words`: Extended summary with problem/solution/impact
+
+**Cost-Effectiveness Metrics:**
+- `foundation_cost_per_daly_headline`: "$0.84 per DALY averted"
+- `foundation_campaign_leverage`: "2,659× annual leverage"
+- `foundation_campaign_roi_simple`: "542× return on investment"
+- `foundation_lives_per_dollar`: "1 life saved per $97"
+
+**Comparison Benchmarks:**
+- `foundation_comparison_bed_nets`: "Bed nets: $89/DALY | 105× less efficient"
+- `foundation_comparison_deworming`: "Deworming: $100-300/DALY | 119-357× less efficient"
+- `foundation_comparison_vitamin_a`: "Vitamin A: $15-25/DALY | 18-30× less efficient"
+
+**Theory of Change:**
+- `foundation_toc_inputs`: Campaign funding, staff, partnerships, technology
+- `foundation_toc_activities`: Lobbying, referendums, public education
+- `foundation_toc_outputs`: Voter commitments, policy support, treaty ratification
+- `foundation_toc_outcomes`: Funding stream, trials launched, cost reduction
+- `foundation_toc_impact`: Lives saved, DALYs averted, economic value
+
+**Risk Summaries:**
+- `foundation_risk_political`: Political risk assessment and mitigation
+- `foundation_risk_implementation`: Implementation risk and proven model
+- `foundation_risk_financial`: Financial risk and VICTORY Bond structure
+- `foundation_risk_timeline`: Timeline risk and multi-path strategy
+
+**Evidence Base:**
+- `foundation_evidence_ottawa`: Ottawa Treaty precedent (133 nations, <$50M budget)
+- `foundation_evidence_recovery`: RECOVERY trial (15K patients, $500/patient, 1M lives saved)
+- `foundation_evidence_smallpox`: Smallpox eradication precedent
+- `foundation_evidence_academic`: 500+ peer-reviewed citations
+
+**Use in QMD files:**
+```markdown
+{{< var foundation_pitch >}}
+{{< var foundation_cost_per_daly_headline >}}
+{{< var foundation_evidence_recovery >}}
+```
+
+### PDF Output Optimization
+
+The foundation grant proposal PDF is optimized for grant portal uploads:
+
+**Format Settings:**
+- **Paper**: US Letter (8.5" × 11")
+- **Margins**: 1 inch all sides (standard for grant portals)
+- **Font**: 11pt with embedded fonts (ensures consistent rendering)
+- **Spacing**: 1.5 line spacing (professional formatting)
+- **Sections**: Numbered sections (typical for grant proposals)
+- **TOC**: 3-level table of contents
+- **Headers/Footers**: Organization name, page numbers
+
+**Validation:**
+The render script automatically validates the PDF:
+- Checks for Python code leakage (ensures no implementation details exposed)
+- Verifies all fonts are embedded
+- Confirms proper section numbering
+- Validates internal cross-references
+
+### NPM Scripts for Foundation Proposal
+
+While not currently in `package.json`, you can add these for convenience:
+
+```json
+{
+  "scripts": {
+    "render:foundation": "python scripts/render-quarto.py foundation",
+    "render:foundation:pdf": "python scripts/render-quarto.py foundation --to pdf --verify",
+    "preview:foundation": "python scripts/render-quarto.py foundation --preview"
+  }
+}
+```
+
+### Troubleshooting
+
+**Issue**: Variables not updating in grant proposal
+- **Solution**: Run `python scripts/generate-everything-parameters-variables-calculations-references.py` to regenerate all variables
+
+**Issue**: Cross-links broken in PDF
+- **Solution**: Ensure target files are listed in `_quarto-foundation.yml` chapters, use `.qmd` extensions for internal links
+
+**Issue**: PDF render fails
+- **Solution**: Check `build-foundation.log` for LaTeX errors, ensure Python virtual environment is activated
+
+**Issue**: Grant proposal includes outdated metrics
+- **Solution**: Verify `_variables-foundation.yml` is up-to-date, regenerate with generate script
+
+**Issue**: Need foundation-specific version
+- **Solution**: Edit `_variables-foundation-manual-DO-NOT-DELETE.yml`, add foundation name to filename for tracking (e.g., `_variables-gates-foundation.yml`)
+
 ## Content Standards
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
