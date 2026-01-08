@@ -12,6 +12,11 @@ dih-render:
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
   pdf-output-file: Foundation-Grant-Proposal.pdf
 
+# Load foundation-specific variables in addition to main _variables.yml
+metadata-files:
+  - _variables.yml
+  - _variables-foundation.yml
+
 profiles:
   default:
     dotenv:

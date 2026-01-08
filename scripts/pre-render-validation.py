@@ -1110,15 +1110,11 @@ def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]
 
 def load_defined_variables() -> Set[str]:
     """
-    Load all defined variables from _variables.yml
+    Load all defined variables from _variables.yml and _variables-foundation.yml
     Returns a set of variable names that are defined.
     """
-    variables_file = "_variables.yml"
+    variables_files = ["_variables.yml", "_variables-foundation.yml"]
     defined_vars: Set[str] = set()
-
-    if not os.path.exists(variables_file):
-        print(f"Warning: {variables_file} not found, skipping variable validation\n")
-        return defined_vars
 
     try:
         import yaml
@@ -1127,18 +1123,24 @@ def load_defined_variables() -> Set[str]:
         print("  Install with: pip install pyyaml\n")
         return defined_vars
 
-    try:
-        with open(variables_file, encoding="utf-8") as f:
-            variables = yaml.safe_load(f)
+    for variables_file in variables_files:
+        if not os.path.exists(variables_file):
+            if variables_file == "_variables.yml":
+                print(f"Warning: {variables_file} not found, skipping variable validation\n")
+            continue
 
-        # Variables are the top-level keys in the YAML file
-        if isinstance(variables, dict):
-            defined_vars = set(variables.keys())
+        try:
+            with open(variables_file, encoding="utf-8") as f:
+                variables = yaml.safe_load(f)
 
-        return defined_vars
-    except Exception as e:
-        print(f"Warning: Failed to parse {variables_file}: {str(e)}\n")
-        return defined_vars
+            # Variables are the top-level keys in the YAML file
+            if isinstance(variables, dict):
+                defined_vars.update(variables.keys())
+
+        except Exception as e:
+            print(f"Warning: Failed to parse {variables_file}: {str(e)}\n")
+
+    return defined_vars
 
 
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str]):
@@ -1465,7 +1467,7 @@ def main():
     print("Running pre-render validation checks on .qmd files...\n")
 
     # Load defined variables from _variables.yml
-    print("Loading defined variables from _variables.yml...")
+    print("Loading defined variables from _variables.yml and _variables-foundation.yml...")
     defined_vars = load_defined_variables()
     if defined_vars:
         print(f"Loaded {len(defined_vars)} defined variables\n")
