@@ -1,0 +1,290 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+LaTeX Mobile-Friendly Wrapping Utilities
+=========================================
+
+Converts wide LaTeX equations to mobile-responsive format using aligned environments.
+
+Functions:
+- wrap_latex_for_mobile: Convert single long equation to wrapped format
+- process_all_latex_variables: Process _variables.yml and wrap long equations
+
+Usage:
+    from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
+
+    # Wrap a single equation
+    wrapped = wrap_latex_for_mobile(long_latex, max_width=60)
+
+    # Or run directly to process _variables.yml:
+    python -m dih_models.latex_mobile_wrap
+"""
+
+import re
+from typing import Optional
+
+
+def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
+    """
+    Convert a wide LaTeX equation to mobile-friendly wrapped format.
+
+    Uses \\begin{aligned} environment with line breaks at logical points:
+    - After = signs (main equation structure)
+    - After + signs in long sums
+    - After \\times in long products
+
+    Args:
+        latex: LaTeX equation string (without $$ delimiters)
+        max_width: Target maximum width per line (approximate)
+
+    Returns:
+        Wrapped LaTeX string using aligned environment
+    """
+    latex = latex.strip()
+
+    # Skip if already wrapped or using environments
+    if '\\begin{' in latex:
+        return latex
+
+    # Skip short equations
+    if len(latex) <= max_width:
+        return latex
+
+    # Strategy 1: Break on multiple = signs (common pattern: X = A + B = result)
+    # Split by = but preserve the = in result
+    equals_parts = re.split(r'\s*=\s*', latex)
+
+    if len(equals_parts) >= 2:
+        # Use aligned environment for multi-step equations
+        lines = []
+        for i, part in enumerate(equals_parts):
+            part = part.strip()
+            if i == 0:
+                # First part (LHS)
+                lines.append(part)
+            else:
+                # Subsequent parts get & = alignment
+                # Check if this part is long and contains + or \\times
+                if len(part) > max_width:
+                    # Try to break long sums/products within this part
+                    wrapped_part = _break_long_expression(part, max_width)
+                    lines.append(f"&= {wrapped_part}")
+                else:
+                    lines.append(f"&= {part}")
+
+        # Join with line breaks
+        wrapped = " \\\\\n".join(lines)
+        return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+
+    # Strategy 2: Break long sums (no = signs)
+    if '+' in latex and len(latex) > max_width:
+        wrapped = _break_long_expression(latex, max_width)
+        if '\n' in wrapped:
+            return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+        return wrapped
+
+    # Strategy 3: Break long products
+    if '\\times' in latex and len(latex) > max_width:
+        wrapped = _break_long_expression(latex, max_width, break_on='\\times')
+        if '\n' in wrapped:
+            return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+        return wrapped
+
+    # Can't wrap effectively - return original
+    return latex
+
+
+def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> str:
+    """
+    Break a long expression at + or \\times operators.
+
+    Args:
+        expr: Expression to break
+        max_width: Target width per line
+        break_on: Operator to break on ('+' or '\\times')
+
+    Returns:
+        Expression with line breaks (using \\\\ and &)
+    """
+    # Determine the split pattern
+    if break_on == '+':
+        # Split on + but keep the + at start of next segment
+        parts = re.split(r'\s*\+\s*', expr)
+        joiner = ' + '
+        continuation = '&\\quad + '
+    elif break_on == '\\times':
+        parts = re.split(r'\s*\\times\s*', expr)
+        joiner = ' \\times '
+        continuation = '&\\quad \\times '
+    else:
+        return expr
+
+    if len(parts) <= 1:
+        return expr
+
+    # Build lines respecting max_width
+    lines = []
+    current_line = parts[0]
+
+    for part in parts[1:]:
+        # Check if adding this part would exceed width
+        test_line = current_line + joiner + part
+        if len(test_line) <= max_width:
+            current_line = test_line
+        else:
+            # Start new line
+            lines.append(current_line)
+            current_line = continuation.lstrip('&') + part
+
+    # Don't forget last line
+    lines.append(current_line)
+
+    if len(lines) == 1:
+        return lines[0]
+
+    # Format for aligned environment
+    result = lines[0] + " \\\\\n"
+    for line in lines[1:-1]:
+        result += "&" + line.lstrip() + " \\\\\n"
+    result += "&" + lines[-1].lstrip()
+
+    return result
+
+
+def estimate_rendered_width(latex: str) -> int:
+    """
+    Estimate the rendered width of a LaTeX expression.
+
+    This is approximate - LaTeX commands like \\frac take less space
+    than their character count suggests.
+
+    Args:
+        latex: LaTeX string
+
+    Returns:
+        Estimated width in "characters"
+    """
+    # Remove LaTeX commands (they render smaller than their text length)
+    cleaned = re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', lambda m: 'X' * min(len(m.group(0))//3, 5), latex)
+    # Remove braces
+    cleaned = re.sub(r'[{}]', '', cleaned)
+    return len(cleaned)
+
+
+def process_variables_yml(
+    input_path: str = "_variables.yml",
+    output_path: Optional[str] = None,
+    max_width: int = 60,
+    dry_run: bool = False
+) -> dict:
+    """
+    Process _variables.yml and wrap all long LaTeX equations.
+
+    Args:
+        input_path: Path to input _variables.yml
+        output_path: Path to write output (None = overwrite input)
+        max_width: Target maximum width per line
+        dry_run: If True, don't write output, just return stats
+
+    Returns:
+        Dict with statistics: {'total': N, 'wrapped': M, 'unchanged': K}
+    """
+    import yaml
+
+    with open(input_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Parse YAML preserving structure
+    # We need to process the raw text to preserve formatting
+
+    stats = {'total': 0, 'wrapped': 0, 'unchanged': 0, 'examples': []}
+
+    # Find all _latex variables
+    # Pattern: "name_latex": "$$\n...content...\n$$"
+    def wrap_latex_match(match):
+        name = match.group(1)
+        full_value = match.group(2)
+
+        stats['total'] += 1
+
+        # Extract content between $$ markers
+        inner_match = re.search(r'\$\$\\n(.+?)\\n\$\$', full_value, re.DOTALL)
+        if not inner_match:
+            # Try without \\n escaping
+            inner_match = re.search(r'\$\$\n(.+?)\n\$\$', full_value, re.DOTALL)
+
+        if not inner_match:
+            stats['unchanged'] += 1
+            return match.group(0)
+
+        inner_latex = inner_match.group(1)
+        # Unescape the LaTeX
+        inner_latex = inner_latex.replace('\\n', '\n').replace('\\"', '"')
+
+        # Check if needs wrapping
+        if len(inner_latex.replace('\n', '')) <= max_width:
+            stats['unchanged'] += 1
+            return match.group(0)
+
+        # Wrap it
+        wrapped = wrap_latex_for_mobile(inner_latex, max_width)
+
+        if wrapped == inner_latex:
+            stats['unchanged'] += 1
+            return match.group(0)
+
+        stats['wrapped'] += 1
+        if len(stats['examples']) < 3:
+            stats['examples'].append({
+                'name': name,
+                'before': inner_latex[:60] + '...',
+                'after': wrapped[:80] + '...'
+            })
+
+        # Re-escape for YAML
+        wrapped_escaped = wrapped.replace('\n', '\\n').replace('"', '\\"')
+        new_value = f'$$\\n{wrapped_escaped}\\n$$'
+
+        return f'"{name}": "{new_value}"'
+
+    # Process all _latex entries
+    pattern = r'"(\w+_latex)": "((?:[^"\\]|\\.)*)"'
+    new_content = re.sub(pattern, wrap_latex_match, content)
+
+    if not dry_run and output_path:
+        with open(output_path or input_path, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(new_content)
+
+    return stats
+
+
+if __name__ == "__main__":
+    import sys
+
+    # Set UTF-8 encoding for stdout on Windows
+    if sys.platform == 'win32':
+        if hasattr(sys.stdout, 'reconfigure'):
+            sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
+
+    print("LaTeX Mobile Wrapping Utility")
+    print("=" * 40)
+    print()
+
+    # Run dry-run first to show stats
+    stats = process_variables_yml(dry_run=True, max_width=60)
+
+    print(f"Total _latex variables: {stats['total']}")
+    print(f"Would wrap: {stats['wrapped']}")
+    print(f"Unchanged: {stats['unchanged']}")
+    print()
+
+    if stats['examples']:
+        print("Example transformations:")
+        for ex in stats['examples']:
+            print(f"\n{ex['name']}:")
+            print(f"  Before: {ex['before']}")
+            print(f"  After:  {ex['after']}")
+
+    print()
+    print("To apply changes, run:")
+    print("  python -c \"from dih_models.latex_mobile_wrap import process_variables_yml; process_variables_yml(dry_run=False)\"")

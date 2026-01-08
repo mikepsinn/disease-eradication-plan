@@ -24,7 +24,17 @@ iab_mechanism_benefit_cost_ratio: '<a href="/knowledge/appendix/parameters-and-c
   details, calculation & sources">230:1 (95% CI: 185:1-284:1)</a>'
 iab_mechanism_benefit_cost_ratio_latex: '$$
 
-  Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$172B}{\$750M} = 230
+  \begin{aligned}
+
+  Cost \\
+
+  &= \frac{Benefit_{ann}}{Cost_{ann}} \\
+
+  &= \frac{\$172B}{\$750M} \\
+
+  &= 230
+
+  \end{aligned}
 
   $$'
 victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
