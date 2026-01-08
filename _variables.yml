@@ -1314,6 +1314,15 @@
   \ all diseases and aging globally | ✓ High confidence | Unit: deaths/year | Click\
   \ to view details, calculation & sources\">55.0M deaths/year</a>"
 "global_annual_deaths_curable_diseases_cite": "@who-global-health-estimates-2024"
+"global_annual_direct_indirect_war_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_direct_indirect_war_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
+  \ cost of war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓\
+  \ High confidence | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click\
+  \ to view details, calculation & sources\">$11.4T (95% CI: $9.01T-$14.1T)</a>"
+"global_annual_direct_indirect_war_cost_latex": "$$\n\\begin{aligned}\nCost_{indirect,ann}\
+  \ \\\\\n&= Cost_{direct,total} + Cost_{indirect,total} \\\\\n&= \\$7.66T + \\$3.7T\
+  \ \\\\\n&= \\$11.4T\n\\end{aligned}\n$$"
 "global_annual_environmental_damage_conflict": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_environmental_damage_conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
@@ -1508,15 +1517,6 @@
   \ \\\\\n&= Cost_{env,ann} + Cost_{mil,ann} + Lost_{global} + Cost_{ann} \\\\\n&\\\
   quad + Cost_{ref,ann} + Cost_{vet,ann} \\\\\n&= \\$100B + \\$2.72T + \\$300B + \\\
   $232B + \\$150B + \\$200B \\\\\n&= \\$3.7T\n\\end{aligned}\n$$"
-"global_annual_war_total_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_war_total_cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ cost of war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓\
-  \ High confidence | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click\
-  \ to view details, calculation & sources\">$11.4T (95% CI: $9.01T-$14.1T)</a>"
-"global_annual_war_total_cost_latex": "$$\n\\begin{aligned}\nCost_{war,total} \\\\\
-  \n&= Cost_{direct,total} + Cost_{indirect,total} \\\\\n&= \\$7.66T + \\$3.7T \\\\\
-  \n&= \\$11.4T\n\\end{aligned}\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"industry-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
@@ -1672,8 +1672,8 @@
   \ + DISEASE_BURDEN | Unit: USD/year | Click to view details, calculation & sources\"\
   >$129T (95% CI: $95.8T-$168T)</a>"
 "global_total_health_and_war_cost_annual_latex": "$$\n\\begin{aligned}\nCost_{total}\
-  \ \\\\\n&= Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} \\\\\n&= \\$11.4T\
-  \ + \\$109T + \\$8.2T \\\\\n&= \\$129T\n\\end{aligned}\n$$"
+  \ \\\\\n&= Cost_{indirect,ann} + Burden_{ann} + Spending_{sympt,ann} \\\\\n&= \\\
+  $11.4T + \\$109T + \\$8.2T \\\\\n&= \\$129T\n\\end{aligned}\n$$"
 "global_yld_proportion_of_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_yld_proportion_of_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"ihme-gbd-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Proportion\
@@ -1927,7 +1927,7 @@
   \ confidence | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year | Click to view details,\
   \ calculation & sources\">$114B (95% CI: $90.1B-$141B)</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\n\\begin{aligned}\nCost_{soc,ann}\
-  \ \\\\\n&= Cost_{war,total} \\times Reduction_{treaty} \\\\\n&= \\$11.4T \\times\
+  \ \\\\\n&= Cost_{indirect,ann} \\times Reduction_{treaty} \\\\\n&= \\$11.4T \\times\
   \ 1\\% \\\\\n&= \\$114B\n\\end{aligned}\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_conflict_reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\

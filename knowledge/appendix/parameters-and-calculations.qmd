@@ -2085,6 +2085,41 @@ $$
 
 :::
 
+### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total annual cost of war worldwide (direct + indirect costs)
+
+**Inputs**:
+
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
+
+$$
+Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total} = \$7.66T + \$3.7T = \$11.4T
+$$
+
+**Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_direct_indirect_war_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_direct_indirect_war_cost.qmd >}}
+
+:::
+
 ### Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -2378,41 +2413,6 @@ $$
 
 :::
 
-### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_war_total_cost}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Total annual cost of war worldwide (direct + indirect costs)
-
-**Inputs**:
-
-- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
-- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
-
-$$
-Cost_{war,total} = Cost_{direct,total} + Cost_{indirect,total} = \$7.66T + \$3.7T = \$11.4T
-$$
-
-**Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_annual_war_total_cost.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_annual_war_total_cost.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_annual_war_total_cost.qmd >}}
-
-:::
-
 ### Cost per Life Saved by Medical Research: $16.1K {#sec-global_cost_per_life_saved_med_research_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -2560,12 +2560,12 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 
 **Inputs**:
 
-- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
 - [Total Economic Burden of Disease Globally](#sec-global_disease_economic_burden_annual) 🔢: $109T
 - [Annual Global Spending on Symptomatic Disease Treatment](#sec-global_symptomatic_disease_treatment_annual) 📊: $8.20T (95% CI: $6.50T - $10T)
 
 $$
-Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \$11.4T + \$109T + \$8.2T = \$129T
+Cost_{total} = Cost_{indirect,ann} + Burden_{ann} + Spending_{sympt,ann} = \$11.4T + \$109T + \$8.2T = \$129T
 $$
 
 **Methodology**: [../appendix/humanity-budget-overview](../appendix/humanity-budget-overview)
@@ -2863,7 +2863,7 @@ Misallocation factor: cost to kill vs cost to save
 **Inputs**:
 
 - [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245k deaths/year
-- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
 - [Cost per Life Saved by Medical Research](#sec-global_cost_per_life_saved_med_research_annual) 🔢: $16.1K
 
 $$
@@ -2921,11 +2921,11 @@ Annual peace dividend from 1% reduction in total war costs
 
 **Inputs**:
 
-- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
-Cost_{soc,ann} = Cost_{war,total} \times Reduction_{treaty} = \$11.4T \times 1\% = \$114B
+Cost_{soc,ann} = Cost_{indirect,ann} \times Reduction_{treaty} = \$11.4T \times 1\% = \$114B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations](../appendix/peace-dividend-calculations)

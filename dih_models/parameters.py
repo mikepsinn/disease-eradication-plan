@@ -736,7 +736,7 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
 )  # $3,700.1B
 
 # Grand total war costs
-GLOBAL_ANNUAL_WAR_TOTAL_COST = Parameter(
+GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST = Parameter(
     GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL + GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
     source_ref="/knowledge/problem/cost-of-war.qmd#total-cost",
     source_type="calculated",
@@ -789,7 +789,7 @@ TREATY_ANNUAL_FUNDING = Parameter(
 # ==============================================================================
 
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
+    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * TREATY_REDUCTION_PCT,
     source_ref="/knowledge/appendix/peace-dividend-calculations.qmd",
     source_type="calculated",
     description="Annual peace dividend from 1% reduction in total war costs",
@@ -800,8 +800,8 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     # Uncertainty derived from inputs (WAR_COST × REDUCTION_PCT)
     validation_min=70_000_000_000,   # Floor: Conservative war cost estimates, 50% realization
     validation_max=180_000_000_000,  # Ceiling: Including all indirect costs, full compliance
-    inputs=["GLOBAL_ANNUAL_WAR_TOTAL_COST", "TREATY_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_TOTAL_COST"] * ctx["TREATY_REDUCTION_PCT"]
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "TREATY_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * ctx["TREATY_REDUCTION_PCT"]
 )  # $113.55B, rounded to $114B
 
 # Individual peace dividend components (1% savings breakdown)
@@ -4387,7 +4387,7 @@ GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
 )  # $109.1 trillion annually
 
 GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
     source_ref="/knowledge/appendix/humanity-budget-overview.qmd",
     source_type="calculated",
     description="Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
@@ -4395,8 +4395,8 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     unit="USD/year",
     formula="WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
     keywords=["deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly", "conflict"],
-    inputs=['GLOBAL_ANNUAL_WAR_TOTAL_COST', 'GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL', 'GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL'],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_TOTAL_COST"] + ctx["GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL"] + ctx["GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL"],
+    inputs=['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL', 'GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL'],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] + ctx["GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL"] + ctx["GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL"],
 )  # $128.6 trillion = $11.355T (war with externalities) + $8.2T + $109T
 
 # Defense and research participation rates
@@ -5173,7 +5173,7 @@ from dih_models.formatting import (
 if __name__ == "__main__":
     # Print some key parameters when module is executed directly
     print(f"Military spending: {format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
-    print(f"Total war costs: {format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
+    print(f"Total war costs: {format_parameter_value(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST)}")
     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
     print(f"Decentralized Framework for Drug Assessment savings: {format_parameter_value(DFDA_BENEFIT_RD_ONLY_ANNUAL)}")
     print(f"Total benefits: {format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)}")
@@ -5203,7 +5203,7 @@ GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
     compute=lambda ctx: ctx["GLOBAL_MED_RESEARCH_SPENDING"] / ctx["GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH"],
 )  # ~$16,071
 MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
-    (GLOBAL_ANNUAL_WAR_TOTAL_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
+    (GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
     / GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
     source_ref="/knowledge/problem/cost-of-war.qmd#grotesque-mathematics",
     source_type="calculated",
@@ -5213,8 +5213,8 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     formula="COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
     latex=r"Misallocation = \frac{\$46.4M}{\$16,071} \approx 2,889x",
     keywords=["multiple", "fatalities", "casualties", "deaths", "investigation", "r&d", "science"],
-    inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'GLOBAL_ANNUAL_WAR_TOTAL_COST', 'GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL'],
-    compute=lambda ctx: (ctx["GLOBAL_ANNUAL_WAR_TOTAL_COST"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"])
+    inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL'],
+    compute=lambda ctx: (ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"])
     / ctx["GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL"],
 )  # ~2,889x
 

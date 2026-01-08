@@ -2369,6 +2369,18 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   latex: "Deaths_{total} = Deaths_{combat,ann} + Deaths_{ann} + Deaths_{terror,ann} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000",
 };
 
+export const GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST: Parameter = {
+  value: 11357100000000.0,
+  unit: "USD/year",
+  displayName: "Total Annual Cost of War Worldwide",
+  description: "Total annual cost of war worldwide (direct + indirect costs)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#total-cost",
+  confidence: "high",
+  formula: "DIRECT_COSTS + INDIRECT_COSTS",
+  latex: "Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total} = \\$7.66T + \\$3.7T = \\$11.4T",
+};
+
 export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   value: 2336000000000.0,
   unit: "USD/year",
@@ -2465,18 +2477,6 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   latex: "Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global} + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T",
 };
 
-export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
-  value: 11357100000000.0,
-  unit: "USD/year",
-  displayName: "Total Annual Cost of War Worldwide",
-  description: "Total annual cost of war worldwide (direct + indirect costs)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#total-cost",
-  confidence: "high",
-  formula: "DIRECT_COSTS + INDIRECT_COSTS",
-  latex: "Cost_{war,total} = Cost_{direct,total} + Cost_{indirect,total} = \\$7.66T + \\$3.7T = \\$11.4T",
-};
-
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   value: 16071.42857142857,
   unit: "USD/life",
@@ -2533,7 +2533,7 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/humanity-budget-overview",
   confidence: "high",
   formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
-  latex: "Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \\$11.4T + \\$109T + \\$8.2T = \\$129T",
+  latex: "Cost_{total} = Cost_{indirect,ann} + Burden_{ann} + Spending_{sympt,ann} = \\$11.4T + \\$109T + \\$8.2T = \\$129T",
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
@@ -2664,7 +2664,7 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations",
   confidence: "high",
   formula: "TOTAL_WAR_COST × 1%",
-  latex: "Cost_{soc,ann} = Cost_{war,total} \\times Reduction_{treaty} = \\$11.4T \\times 1\\% = \\$114B",
+  latex: "Cost_{soc,ann} = Cost_{indirect,ann} \\times Reduction_{treaty} = \\$11.4T \\times 1\\% = \\$114B",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
@@ -4537,6 +4537,7 @@ export const parameters = {
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
+  GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST,
   GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT,
   GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE,
   GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS,
@@ -4545,7 +4546,6 @@ export const parameters = {
   GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT,
   GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL,
   GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
-  GLOBAL_ANNUAL_WAR_TOTAL_COST,
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,

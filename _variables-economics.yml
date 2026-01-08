@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (298 entries)
+# Contains only variables used in this paper (296 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -1127,27 +1127,6 @@ global_annual_veteran_healthcare_costs: '<a href="/knowledge/appendix/parameters
   | ✓ High confidence | 95% CI: [$140B, $280B] | Dist: Lognormal | Unit: USD | Click
   to view details, calculation & sources">$200B (95% CI: $140B-$280B)</a>'
 global_annual_veteran_healthcare_costs_cite: '@veteran-healthcare-cost-projections'
-global_annual_war_total_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_war_total_cost"
-  class="parameter-link" data-source-ref="/knowledge/problem/cost-of-war.qmd#total-cost"
-  data-source-type="calculated" data-confidence="high" title="Total annual cost of
-  war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓ High confidence
-  | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view details,
-  calculation & sources">$11.4T (95% CI: $9.01T-$14.1T)</a>'
-global_annual_war_total_cost_latex: '$$
-
-  \begin{aligned}
-
-  Cost_{war,total} \\
-
-  &= Cost_{direct,total} + Cost_{indirect,total} \\
-
-  &= \$7.66T + \$3.7T \\
-
-  &= \$11.4T
-
-  \end{aligned}
-
-  $$'
 global_clinical_trials_spending_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual"
   class="parameter-link" data-source-ref="industry-clinical-trial-spending-estimate"
   data-source-type="external" data-confidence="high" title="Annual global spending

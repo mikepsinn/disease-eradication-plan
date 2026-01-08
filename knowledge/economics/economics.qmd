@@ -1462,7 +1462,7 @@ That's ${{< var dfda_roi_rd_only >}} appearing for every $1 invested. It's like 
 - **Funding**: {{< var global_annual_human_cost_state_violence >}}/year to spend on not-dying
 - **Bonus savings**: {{< var peace_dividend_annual_societal_benefit >}}/year in economic value from building {{< var treaty_reduction_pct >}} fewer things that explode
 
-The peace dividend math is simple: wars cost {{< var global_annual_war_total_cost >}}/year. {{< var treaty_reduction_pct >}} less war costs {{< var treaty_reduction_pct >}} less money.
+The peace dividend math is simple: wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. {{< var treaty_reduction_pct >}} less war costs {{< var treaty_reduction_pct >}} less money.
 
 {{< var peace_dividend_annual_societal_benefit_latex >}}
 
@@ -1478,7 +1478,7 @@ The peace dividend math is simple: wars cost {{< var global_annual_war_total_cos
 | **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} {{< var global_annual_lost_human_capital_conflict_cite >}} | Productive capacity lost from casualties and displacement |
-| **Total War Costs** | **{{< var global_annual_war_total_cost >}}** | Combined direct and indirect annual costs |
+| **Total War Costs** | **{{< var global_annual_direct_indirect_war_cost >}}** | Combined direct and indirect annual costs |
 | **{{< var treaty_reduction_pct >}} Reduction** | **{{< var peace_dividend_annual_societal_benefit >}}** | Peace dividend from {{< var treaty_reduction_pct >}} treaty implementation |
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
@@ -1907,7 +1907,7 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 - Climate advocacy: $50M campaigns regularly shift billions in energy policy
 - Tobacco control: Bloomberg's $1B unlocked $15B+ in government tobacco control spending (15x leverage)
 
-The 1% Treaty targets a much larger budget reallocation ({{< var treaty_reduction_pct >}} of {{< var global_annual_war_total_cost >}} global military spending), making the leverage ratio proportionally higher. The key difference: military budgets are ~1000x larger than typical philanthropic targets, enabling proportionally higher leverage when successfully redirected.
+The 1% Treaty targets a much larger budget reallocation ({{< var treaty_reduction_pct >}} of {{< var global_annual_direct_indirect_war_cost >}} global military spending), making the leverage ratio proportionally higher. The key difference: military budgets are ~1000x larger than typical philanthropic targets, enabling proportionally higher leverage when successfully redirected.
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The referendum component isn't a "magic wand"; it's a mechanism to generate the **political capital** required to force the treaty onto the agenda of sovereign nations.
 

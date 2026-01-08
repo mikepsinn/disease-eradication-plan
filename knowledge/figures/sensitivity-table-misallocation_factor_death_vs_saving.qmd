@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual War Total Cost | 1.4972 | Strong driver |
+| Global Annual Direct Indirect War Cost | 1.4972 | Strong driver |
 | Global Annual Conflict Deaths Total | -0.9832 | Strong driver |
 | Global Cost Per Life Saved Med Research Annual | -0.3858 | Moderate driver |
 

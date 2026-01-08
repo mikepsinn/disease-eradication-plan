@@ -43,9 +43,9 @@ This {{< var treaty_annual_funding >}} funds your decentralized framework for dr
 
 That's what you capture. Here's what you save.
 
-Wars cost {{< var global_annual_war_total_cost >}}/year. Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
+Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
-{{< var global_annual_war_total_cost >}} × 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
+{{< var global_annual_direct_indirect_war_cost >}} × 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
 
 Money no longer spent on:
 
@@ -74,7 +74,7 @@ Based on [Cost of War analysis](../problem/cost-of-war.qmd):
 | Environmental damage | {{< var global_annual_environmental_damage_conflict >}} | {{< var peace_dividend_environmental >}} |
 | PTSD and mental health | {{< var global_annual_psychological_impact_costs_conflict >}} | {{< var peace_dividend_ptsd >}} |
 | Lost human capital | {{< var global_annual_lost_human_capital_conflict >}} | {{< var peace_dividend_lost_human_capital >}} |
-| **Total** | **{{< var global_annual_war_total_cost >}}** | **{{< var peace_dividend_annual_societal_benefit >}}** |
+| **Total** | **{{< var global_annual_direct_indirect_war_cost >}}** | **{{< var peace_dividend_annual_societal_benefit >}}** |
 
 You capture {{< var treaty_annual_funding >}} for pragmatic clinical trials.
 
