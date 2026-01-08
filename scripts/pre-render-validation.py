@@ -857,7 +857,7 @@ def check_quarto_variables_in_links(content: str, filepath: str):
                 ValidationError(
                     file=filepath,
                     line=line_index + 1,
-                    message="Quarto variable inside link text - variables do not work as link text. Move variable outside the link or use plain text. Most quarto variables already have links so if it's going to the same place, you can simply remove the link.",
+                    message="Quarto variable inside link text - variables do not render inside links. Remove the link brackets since variables already have their own links built-in.",
                     context=context,
                 )
             )

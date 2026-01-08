@@ -35,10 +35,10 @@ Switzerland made chocolate.
 
 ### Result
 
-- [25% richer than Americans ($93K vs $76K GDP per capita)](references.qmd#swiss-vs-us-gdp-per-capita)
+- [25% richer than Americans](references.qmd#swiss-vs-us-gdp-per-capita) ({{< var switzerland_gdp_per_capita_k >}} vs $76K GDP per capita)
 - Live [5 years longer (84 vs 79 years)](references.qmd#swiss-vs-us-life-expectancy)
 - Haven't had a [war death since 1847](references.qmd#switzerland-last-war-death-1847)
-- Military budget: [0.7% GDP](references.qmd#swiss-military-budget-0-7-pct-gdp) (US: {{< var us_military_spending_pct_gdp >}})
+- Military budget: {{< var switzerland_defense_spending_pct >}} GDP ([source](references.qmd#swiss-military-budget-0-7-pct-gdp)) (US: {{< var us_military_spending_pct_gdp >}})
 
 The difference went to education, healthcare, and trains that actually work.
 Peace dividends compound over centuries.

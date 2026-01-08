@@ -73,11 +73,11 @@ The formula worked: mix moral incentives (patriotism) with financial self-intere
 
 **What they have:** Mountains, cows, and a complete lack of natural resources. They're surrounded by countries that kept starting world wars. They have been neutral since 1815.
 
-**What they spend on defense:** 0.7% of GDP (purely defensive - they're not invading anyone with those Alps)
+**What they spend on defense:** {{< var switzerland_defense_spending_pct >}} of GDP (purely defensive - they're not invading anyone with those Alps)
 
 #### The results
 
-  - $93K GDP per capita (vs US $76K)
+  - {{< var switzerland_gdp_per_capita_k >}} GDP per capita (vs US $76K)
   - Universal healthcare, excellent quality, 12% of GDP (vs US 18%)
   - Life expectancy: 84 years (vs US 79)
   - Last invaded: Never (Napoleon tried in 1798, didn't go well for him)

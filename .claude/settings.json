@@ -11,12 +11,12 @@
           },
           {
             "type": "command",
-            "command": "bash .claude/hooks/auto-regenerate-variables.sh",
-            "timeout": 60
+            "command": "python .claude/hooks/auto-regenerate-variables.py",
+            "timeout": 120
           },
           {
             "type": "command",
-            "command": "bash .claude/hooks/check-python-errors.sh",
+            "command": "python .claude/hooks/check-python-errors.py",
             "timeout": 30
           }
         ]
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/load-book-context.sh",
+            "command": "python .claude/hooks/load-book-context.py",
             "timeout": 10
           }
         ]
