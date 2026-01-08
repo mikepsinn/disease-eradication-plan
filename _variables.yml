@@ -659,8 +659,8 @@
   \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$389B\
   \ (95% CI: $324B-$486B)</a>"
 "dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nPV_{benefits} \\\\\n&= \\\
-  sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1 \\\\\n&\\quad + r)^t}\
-  \ \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}\n\\end{aligned}\n$$"
+  sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\\
+  $249.3B \\text{ (5-year linear adoption ramp)}\n\\end{aligned}\n$$"
 "dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\

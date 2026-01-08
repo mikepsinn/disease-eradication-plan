@@ -138,8 +138,57 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
     return latex
 
 
-def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> str:
+def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
     """
+    Split expression on operator, but only at top level (not inside braces).
+
+    Args:
+        expr: Expression to split
+        operator: Operator to split on ('+' or '\\times')
+
+    Returns:
+        List of parts
+    """
+    parts = []
+    current = []
+    brace_depth = 0
+    i = 0
+
+    while i < len(expr):
+        # Check for multi-char operator like \times
+        if operator == '\\times' and expr[i:i+6] == '\\times' and brace_depth == 0:
+            parts.append(''.join(current).strip())
+            current = []
+            i += 6
+            # Skip whitespace after operator
+            while i < len(expr) and expr[i] in ' \t':
+                i += 1
+            continue
+
+        char = expr[i]
+
+        if char == '{':
+            brace_depth += 1
+            current.append(char)
+        elif char == '}':
+            brace_depth -= 1
+            current.append(char)
+        elif char == '+' and operator == '+' and brace_depth == 0:
+            parts.append(''.join(current).strip())
+            current = []
+        else:
+            current.append(char)
+
+        i += 1
+
+    if current:
+        parts.append(''.join(current).strip())
+
+    return parts
+
+
+def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> str:
+    r"""
     Break a long expression at + or \\times operators.
 
     Args:
@@ -150,14 +199,13 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
     Returns:
         Expression with line breaks (using \\\\ and &)
     """
-    # Determine the split pattern
+    # Determine the split pattern - use brace-aware splitting
     if break_on == '+':
-        # Split on + but keep the + at start of next segment
-        parts = re.split(r'\s*\+\s*', expr)
+        parts = _split_at_top_level_operator(expr, '+')
         joiner = ' + '
         continuation = '&\\quad + '
     elif break_on == '\\times':
-        parts = re.split(r'\s*\\times\s*', expr)
+        parts = _split_at_top_level_operator(expr, '\\times')
         joiner = ' \\times '
         continuation = '&\\quad \\times '
     else:
