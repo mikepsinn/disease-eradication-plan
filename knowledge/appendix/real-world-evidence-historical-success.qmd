@@ -128,7 +128,7 @@ Not gradually. Immediately.
 
 Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost_2024_usd >}} to over $1 billion** ([source](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm)) (inflation-adjusted).
 
-A {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x increase. For worse results.
+A {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. For worse results.
 
 {{< include ../figures/fda-drug-development-cost-increase-line-chart.qmd >}}
 
@@ -187,7 +187,7 @@ But correlation + mechanism + temporal precision is how science works.
 Here's what you have:
 
 1. **Temporal correlation**: Life expectancy growth cut in half immediately after 1962 regulations
-2. **Mechanism**: Regulations reduced new treatments by {{< var post_1962_drug_approval_reduction_pct >}}, increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x, banned real-world efficacy trials
+2. **Mechanism**: Regulations reduced new treatments by {{< var post_1962_drug_approval_reduction_pct >}}, increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}, banned real-world efficacy trials
 3. **Alternative explanations**: Alternative explanations exist (increasing disease complexity, higher safety standards), but the timing and magnitude and linearity of the change in the slope after the break strongly suggest the discrete event of regulatory latency is a major contributor rather that other causes that would produce far more gradual change in the slope over time.
 
 This is how clinical trials work: temporal correlation + mechanism of action = inference of causation.

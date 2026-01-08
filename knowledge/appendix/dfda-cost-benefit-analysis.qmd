@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost-Benefit & ROI
-description: Analysis and Return on Investment - How to slash per-patient trial costs by up to {{< var dfda_trial_cost_reduction_factor >}}, generate approximately {{< var dfda_benefit_rd_only_annual >}} in annual gross R&D savings, and deliver ROI of {{< var dfda_roi_rd_only >}}:1.
+description: Analysis and Return on Investment - How to slash per-patient trial costs by up to {{< var dfda_trial_cost_reduction_factor >}}, generate approximately {{< var dfda_benefit_rd_only_annual >}} in annual gross R&D savings, and deliver ROI of {{< var dfda_roi_rd_only >}}.
 published: true
 tags:
   - dfda
@@ -17,9 +17,9 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 
 - **Saves ~{{< var dfda_benefit_rd_only_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **{{< var dfda_trial_cost_reduction_pct >}}**, with up to **95%** savings in optimal scenarios.
-- **Return on Investment**: {{< var dfda_roi_rd_only >}}:1. A 10-year NPV cost of {{< var dfda_npv_total_cost >}} generates {{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings [over 10 years](#final-roi-and-net-benefit).
+- **Return on Investment**: {{< var dfda_roi_rd_only >}}. A 10-year NPV cost of {{< var dfda_npv_total_cost >}} generates {{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings [over 10 years](#final-roi-and-net-benefit).
 - **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, a decentralized framework for drug assessment (dFDA) eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var dfda_efficacy_lag_elimination_dalys >}} QALYs average per year during the shift** (valued at **{{< var dfda_efficacy_lag_elimination_economic_value >}} total economic value**).
-- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from efficacy lag elimination only (8.2-year timeline shift); comprehensive top-down estimate of **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination).
+- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from efficacy lag elimination only (8.2-year timeline shift); comprehensive top-down estimate of **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: Such a framework is a dominant intervention that both saves money and improves health.
 - **{{< var dfda_rd_savings_daily >}}+ Daily Cost of Inaction**: Each day without such a framework represents a societal opportunity cost of ~{{< var dfda_rd_savings_daily >}} in economic waste. [See details](#daily-opportunity-cost-of-inaction).
 
@@ -37,7 +37,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 #### Exceptional Economic Value
 
-- **Return on Investment (ROI):** A dFDA Infrastructure has an extremely high ROI. Based on total 10-year NPV costs of {{< var dfda_npv_total_cost >}} against **{{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings** (**{{< var dfda_trial_cost_reduction_pct >}} cost reduction**, [see Market Size and Impact](#market-size-and-impact)), Monte Carlo analysis yields an ROI of **{{< var dfda_roi_rd_only >}}:1** ([see ROI Uncertainty Analysis](#roi-uncertainty-analysis-monte-carlo)). A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** A dFDA Infrastructure has an extremely high ROI. Based on total 10-year NPV costs of {{< var dfda_npv_total_cost >}} against **{{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings** (**{{< var dfda_trial_cost_reduction_pct >}} cost reduction**, [see Market Size and Impact](#market-size-and-impact)), Monte Carlo analysis yields an ROI of **{{< var dfda_roi_rd_only >}}** ([see ROI Uncertainty Analysis](#roi-uncertainty-analysis-monte-carlo)). A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility:** A dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes, far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately **{{< var dfda_rd_savings_daily >}}** in wasted R&D spending.
 
@@ -414,7 +414,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
   *Important caveat*: RECOVERY's exceptional cost efficiency benefited from NHS infrastructure integration and COVID-19 emergency conditions that may not be replicable globally.
 
-- **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} patients = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
+- **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 
 - **dFDA Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
@@ -557,7 +557,7 @@ The analysis shows that for every 1 unit of harm the FDA prevents through safety
 
 Such a framework provides **provisional access post-Phase I** via trial participation:
 
-1. **Phase I Safety Testing**: Maintained at {{< var phase_1_safety_duration_years >}} years (no change)
+1. **Phase I Safety Testing**: Maintained at {{< var phase_1_safety_duration_years >}} (no change)
 2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
 3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}}-year pre-market efficacy delay
 
@@ -701,7 +701,7 @@ For the Lean Ecosystem scenario:
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
 
-_The NPV analysis provides the final estimated ROI of approximately **{{< var dfda_roi_rd_only >}}:1**, which is the figure cited throughout this document._
+_The NPV analysis provides the final estimated ROI of approximately **{{< var dfda_roi_rd_only >}}**, which is the figure cited throughout this document._
 
 ### ROI Uncertainty Analysis (Monte Carlo)
 
@@ -723,7 +723,7 @@ The ROI calculation propagates uncertainty from all input parameters:
 
 {{< var dfda_roi_rd_only_latex >}}
 
-**Central ROI Estimate: {{< var dfda_roi_rd_only >}}:1**
+**Central ROI Estimate: {{< var dfda_roi_rd_only >}}**
 
 {{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
 
@@ -827,7 +827,7 @@ The total one-time benefit from eliminating the efficacy lag depends on several 
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to {{< var dfda_trial_cost_reduction_factor >}}), accelerating the pace of approvals, and broadening the scope of what treatments get tested. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront + discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends around {{< var global_clinical_trials_spending_annual >}} per year on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to {{< var dfda_trial_cost_reduction_factor >}}), accelerating the pace of approvals, and broadening the scope of what treatments get tested. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront + discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends around {{< var global_clinical_trials_spending_annual >}} per year on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}** once adopted at scale.
 
 Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this framework creates personalized healthcare that actually works, globally.
 
@@ -845,7 +845,7 @@ This appendix provides the detailed models and data used in the cost-benefit ana
 
 **10-Year NPV (R&D Operational Savings)**: The dFDA platform makes trials 50-95% cheaper every year, indefinitely. We discount 10 years of future operational savings to present value (~{{< var dfda_npv_net_benefit_rd_only >}}) for ROI analysis. This is standard business practice for evaluating ongoing cost efficiencies.
 
-**Why 10 years?** Standard business analysis horizon. The benefits continue beyond 10 years, but we use this conservative timeframe to calculate NPV and ROI (~{{< var dfda_roi_rd_only >}}:1).
+**Why 10 years?** Standard business analysis horizon. The benefits continue beyond 10 years, but we use this conservative timeframe to calculate NPV and ROI (~{{< var dfda_roi_rd_only >}}).
 
 ---
 
@@ -1178,14 +1178,14 @@ All values below are sourced from the centralized `dih_models/parameters.py` mod
 - **Annual Gross R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}
 - **10-Year NPV Total Cost**: {{< var dfda_npv_total_cost >}}
 - **10-Year NPV Net Benefit**: {{< var dfda_npv_net_benefit_rd_only >}}
-- **ROI (10-year NPV)**: {{< var dfda_roi_rd_only >}}:1
+- **ROI (10-year NPV)**: {{< var dfda_roi_rd_only >}}
 
 **Health Impact:**
 
 - **DALYs Averted (Full Timeline Shift)**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
 - **Monetized Value of DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}
 
-**ROI Estimate**: {{< var dfda_roi_rd_only >}}:1 (10-year NPV, accounting for time value of money and 5-year adoption ramp).
+**ROI Estimate**: {{< var dfda_roi_rd_only >}} (10-year NPV, accounting for time value of money and 5-year adoption ramp).
 
 #### Investment Returns Visualization
 
@@ -1210,15 +1210,15 @@ The simple ROI calculation is useful for a high-level summary, but a more rigoro
 - **Upfront Cost**: {{< var dfda_npv_upfront_cost_total >}}
 - **Annual OpEx**: {{< var dfda_npv_annual_opex_total >}}
 - **Discount Rate**: {{< var npv_discount_rate_standard >}}
-- **Time Horizon**: {{< var npv_time_horizon_years >}} years
-- **Adoption Ramp**: {{< var dfda_npv_adoption_ramp_years >}} years to 100%
+- **Time Horizon**: {{< var npv_time_horizon_years >}}
+- **Adoption Ramp**: {{< var dfda_npv_adoption_ramp_years >}} to 100%
 
 **NPV Analysis Results:**
 
-- **NPV of Total Costs** ({{< var npv_time_horizon_years >}} years): {{< var dfda_npv_total_cost >}}
-- **NPV of Total Savings** ({{< var npv_time_horizon_years >}} years): {{< var dfda_npv_benefit_rd_only >}}
+- **NPV of Total Costs** ({{< var npv_time_horizon_years >}}): {{< var dfda_npv_total_cost >}}
+- **NPV of Total Savings** ({{< var npv_time_horizon_years >}}): {{< var dfda_npv_benefit_rd_only >}}
 - **Net Benefit** (NPV Savings - NPV Costs): {{< var dfda_npv_net_benefit_rd_only >}}
-- **NPV-Adjusted ROI** (NPV Savings / NPV Costs): {{< var dfda_roi_rd_only >}}:1
+- **NPV-Adjusted ROI** (NPV Savings / NPV Costs): {{< var dfda_roi_rd_only >}}
 
 #### NPV Analysis Over Time
 
@@ -1230,8 +1230,8 @@ This chart shows how the investment pays back over time, accounting for the time
 
 The cost-benefit analysis of the framework reveals:
 
-1. **Exceptional ROI**: The framework generates a {{< var dfda_roi_rd_only >}}:1 return on investment ({{< var dfda_npv_net_benefit_rd_only >}} NPV benefit from {{< var dfda_npv_total_cost >}} NPV cost)
-2. **Massive Health Benefits**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in monetized value
+1. **Exceptional ROI**: The framework generates a {{< var dfda_roi_rd_only >}} return on investment ({{< var dfda_npv_net_benefit_rd_only >}} NPV benefit from {{< var dfda_npv_total_cost >}} NPV cost)
+2. **Massive Health Benefits**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in monetized value
 3. **Robust Financial Model**: NPV analysis confirms strong returns even with conservative assumptions
 4. **Self-Funding**: Annual R&D savings ({{< var dfda_benefit_rd_only_annual >}}) vastly exceed operational costs ({{< var dfda_npv_annual_opex_total >}})
 5. **Sensitivity Resilience**: ROI remains strong even under conservative scenarios (30% cost reduction, higher operational costs)
@@ -1252,7 +1252,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
 - **Cost-Effectiveness**: A decentralized framework for drug assessment achieves cost-effectiveness through dual pathways:
   1. **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}+ annual savings from {{< var dfda_trial_cost_reduction_pct >}} trial cost reduction
-  2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
+  2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
 
   This combination creates a **dominant intervention**: simultaneously saves money and improves health outcomes.
 
@@ -1282,7 +1282,7 @@ Where:
   - Global Clinical Trial Spending Addressable by the framework: **{{< var global_clinical_trials_spending_annual >}} / year**.
   - R&D Trial Cost Reduction due to the framework (Baseline): **{{< var dfda_trial_cost_reduction_pct >}}**. (Leads to {{< var dfda_benefit_rd_only_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, framework-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
-- **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years from trial capacity increase + efficacy lag elimination):
+- **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from trial capacity increase + efficacy lag elimination):
 - **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
 
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Cost-Utility Framework](#dfda-icer-analysis---cost-utility-framework)**.
@@ -1309,10 +1309,10 @@ _Note: An infrastructure for a decentralized framework is cost-saving while also
 
 The analysis robustly demonstrates that the **infrastructure for a decentralized framework is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the Core framework's technical operational costs.**
 
-- **Massive Cost Savings & Exceptional Value**: The core infrastructure for the framework (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). This combination creates exceptional value.
+- **Massive Cost Savings & Exceptional Value**: The core infrastructure for the framework (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). This combination creates exceptional value.
 - **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), such an initiative remains dominant and highly cost-saving across all scenarios.
 
-**Summary: An initiative to build a decentralized framework for drug assessment is projected to be a dominant healthcare transformation. The core technology framework itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). The combination of massive financial returns and significant health gains makes such a framework an exceptionally compelling investment.**
+**Summary: An initiative to build a decentralized framework for drug assessment is projected to be a dominant healthcare transformation. The core technology framework itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). The combination of massive financial returns and significant health gains makes such a framework an exceptionally compelling investment.**
 
 *(Optional: A note could be added here that specific programs _built upon_ this infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying infrastructure.)*
 
@@ -1330,14 +1330,14 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
+| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
 | **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
 | **Hypertension Screening**             |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
 | **Generic Drug Substitution**          |       **+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. ([WHO, 2015](../references.qmd#who-generic-drug-policy))                                                        |
 | **Statins / Polypill**                 |         **67+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. ([eClinicalMedicine, 2022](../references.qmd#eclinicalmedicine-statins-polypill))                                               |
-| **Pragmatic Trials (RECOVERY model)** | **~250,000** | **{{< var pragmatic_trial_cost_per_qaly >}}/QALY** | Highly Cost-Effective | UK RECOVERY trial: {{< var recovery_trial_total_cost >}} spent, saving {{< var recovery_trial_global_lives_saved >}} lives globally via dexamethasone discovery. {{< var pragmatic_vs_nih_efficiency_multiplier >}} more efficient than standard research. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure; ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in US settings.) |
+| **Pragmatic Trials (RECOVERY model)** | **~250,000** | **{{< var pragmatic_trial_cost_per_qaly >}}/QALY** | Highly Cost-Effective | UK RECOVERY trial: {{< var recovery_trial_total_cost >}} spent, saving {{< var recovery_trial_global_lives_saved >}} globally via dexamethasone discovery. {{< var pragmatic_vs_nih_efficiency_multiplier >}} more efficient than standard research. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure; ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in US settings.) |
 | **NIH Standard Research Portfolio** | **~20** | **{{< var nih_standard_research_cost_per_qaly >}}/QALY** | Inefficient Baseline | Standard NIH-funded research. Represents current status quo efficiency. {{< var nih_standard_research_cost_per_qaly_cite >}} |
 
 ### Methodology Notes

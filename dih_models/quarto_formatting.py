@@ -25,7 +25,9 @@ Usage:
     uncertainty_lines = generate_uncertainty_section(parameter_instance, unit="USD")
 """
 
-from typing import Any, Union
+from __future__ import annotations
+
+from typing import Any
 
 from dih_models.formatting import format_parameter_value
 
@@ -52,7 +54,7 @@ def convert_qmd_to_html(path: str) -> str:
     return path
 
 
-def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], comment: str = "", include_citation: bool = False) -> str:
+def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", include_citation: bool = False) -> str:
     """
     Generate HTML link with tooltip for a parameter.
 
@@ -73,7 +75,7 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
     if hasattr(value, "display_value") and value.display_value:
         formatted_value = value.display_value
     else:
-        formatted_value = format_parameter_value(value, unit, include_unit=False)
+        formatted_value = format_parameter_value(value, unit, include_unit=True)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, "source_ref") and value.source_ref

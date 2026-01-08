@@ -43,6 +43,12 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
     # Detect percentage parameters
     is_percentage = "%" in unit_check or "percent" in unit_check or "rate" in unit_check
 
+    # Detect ratio parameters (should format as X:1)
+    is_ratio = unit_check == "ratio"
+
+    # Detect multiplier/factor parameters (should format as Xx)
+    is_multiplier = "multiplier" in unit_check or "factor" in unit_check
+
     # Check if value is already scaled (e.g. input is in billions)
     is_in_billions = "billion" in unit_check
     is_in_millions = "million" in unit_check
@@ -146,6 +152,52 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             pct_formatted = clean_number(f"{pct_val:.3g}")
             
         return f"{pct_formatted}%"
+
+    elif is_ratio:
+        # Format as X:1 (e.g., 847,733:1 for ROI)
+        if abs(value) >= 1e6:
+            scaled = value / 1e6
+            if abs(scaled) >= 100:
+                ratio_formatted = f"{scaled:.0f}M"
+            elif abs(scaled) >= 10:
+                ratio_formatted = clean_number(f"{scaled:.1f}M")
+            else:
+                ratio_formatted = clean_number(f"{scaled:.2f}M")
+        elif abs(value) >= 1e3:
+            scaled = value / 1e3
+            if abs(scaled) >= 100:
+                ratio_formatted = f"{scaled:.0f}k"
+            elif abs(scaled) >= 10:
+                ratio_formatted = clean_number(f"{scaled:.1f}k")
+            else:
+                ratio_formatted = clean_number(f"{scaled:.2f}k")
+        elif abs(value) >= 100:
+            ratio_formatted = f"{value:,.0f}"
+        elif abs(value) >= 10:
+            ratio_formatted = clean_number(f"{value:.1f}")
+        elif abs(value) >= 1:
+            ratio_formatted = clean_number(f"{value:.2f}")
+        else:
+            ratio_formatted = clean_number(f"{value:.3g}")
+        return f"{ratio_formatted}:1"
+
+    elif is_multiplier:
+        # Format as Xx (e.g., 22x for multipliers)
+        if abs(value) >= 1e6:
+            scaled = value / 1e6
+            multiplier_formatted = clean_number(f"{scaled:.1f}M")
+        elif abs(value) >= 1e3:
+            scaled = value / 1e3
+            multiplier_formatted = clean_number(f"{scaled:.1f}k")
+        elif abs(value) >= 100:
+            multiplier_formatted = f"{value:,.0f}"
+        elif abs(value) >= 10:
+            multiplier_formatted = clean_number(f"{value:.1f}")
+        elif abs(value) >= 1:
+            multiplier_formatted = clean_number(f"{value:.2f}")
+        else:
+            multiplier_formatted = clean_number(f"{value:.3g}")
+        return f"{multiplier_formatted}x"
 
     else:
         # Standard number formatting with auto-scaling

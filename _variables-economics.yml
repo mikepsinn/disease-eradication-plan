@@ -14,7 +14,8 @@ adaptable_trial_patients: '<a href="/knowledge/appendix/parameters-and-calculati
   class="parameter-link" data-source-ref="pragmatic-trials-cost-advantage" data-source-type="definition"
   data-confidence="high" title="Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019).
   Enrolled across 40 clinical sites. Precise count from trial completion records.
-  | ✓ High confidence | Unit: patients | Click to view details, calculation & sources">15.1k</a>'
+  | ✓ High confidence | Unit: patients | Click to view details, calculation & sources">15.1k
+  patients</a>'
 adaptable_trial_total_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_total_cost"
   class="parameter-link" data-source-ref="pragmatic-trials-cost-advantage" data-source-type="external"
   data-confidence="medium" title="PCORI grant for ADAPTABLE trial (2016-2019). Note:
@@ -52,14 +53,14 @@ childhood_vaccination_annual_benefit_cite: '@childhood-vaccination-economic-bene
 childhood_vaccination_roi: '<a href="/knowledge/appendix/parameters-and-calculations#sec-childhood_vaccination_roi"
   class="parameter-link" data-source-ref="childhood-vaccination-roi" data-source-type="external"
   data-confidence="high" title="Return on investment from childhood vaccination programs
-  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">13</a>'
+  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">13:1</a>'
 childhood_vaccination_roi_cite: '@childhood-vaccination-roi'
 combination_therapy_disease_space: '<a href="/knowledge/appendix/parameters-and-calculations#sec-combination_therapy_disease_space"
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Total combination therapy space (pairwise drug combinations × diseases).
   Standard in oncology, HIV, cardiology. | Calculated from 2 inputs | ✓ High confidence
   | Formula: DRUG_PAIRS × DISEASES | Unit: combinations | Click to view details, calculation
-  & sources">45.1B</a>'
+  & sources">45.1B combinations</a>'
 combination_therapy_disease_space_latex: '$$
 
   Combination = Combination \times Trials_{dis} = 45.1M \times 1{,}000 = 45.1B
@@ -80,7 +81,7 @@ current_active_trials: '<a href="/knowledge/appendix/parameters-and-calculations
   class="parameter-link" data-source-ref="clinicaltrials-gov-enrollment-data-2025"
   data-source-type="external" data-confidence="high" title="Current active trials
   at any given time (3-5 year duration) | ✓ High confidence | Unit: trials | Click
-  to view details, calculation & sources">10.0k</a>'
+  to view details, calculation & sources">10.0k trials</a>'
 current_active_trials_cite: '@clinicaltrials-gov-enrollment-data-2025'
 current_clinical_trial_participation_rate: '<a href="/knowledge/appendix/parameters-and-calculations#sec-current_clinical_trial_participation_rate"
   class="parameter-link" data-source-ref="clinical-trial-patient-participation-rate"
@@ -93,7 +94,8 @@ current_combination_exploration_years: '<a href="/knowledge/appendix/parameters-
   title="Years to test all pairwise drug combinations at current trial capacity. Combination
   therapy is standard in oncology, HIV, cardiology. | Calculated from 2 inputs | ✓
   High confidence | Formula: COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR | Unit: years
-  | Click to view details, calculation & sources">13.7M (95% CI: 11.6M-16.3M)</a>'
+  | Click to view details, calculation & sources">13.7M years (95% CI: 11.6M years-16.3M
+  years)</a>'
 current_combination_exploration_years_latex: '$$
 
   Ratio_{curr} = COMBINATION_SPACE \div CURRENT_TRIALS_PER_YEAR = 13.7M
@@ -103,14 +105,15 @@ current_disease_patients_global: '<a href="/knowledge/appendix/parameters-and-ca
   class="parameter-link" data-source-ref="disease-prevalence-2-billion" data-source-type="external"
   data-confidence="high" title="Global population with chronic diseases | ✓ High confidence
   | 95% CI: [2.00B people, 2.80B people] | Dist: Lognormal | Unit: people | Click
-  to view details, calculation & sources">2.40B (95% CI: 2.00B-2.80B)</a>'
+  to view details, calculation & sources">2.40B people (95% CI: 2.00B people-2.80B
+  people)</a>'
 current_disease_patients_global_cite: '@disease-prevalence-2-billion'
 current_known_safe_exploration_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-current_known_safe_exploration_years"
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Years to test all known safe drug-disease combinations at current global
   trial capacity | Calculated from 2 inputs | ✓ High confidence | Formula: DRUG_DISEASE_COMBINATIONS
   ÷ CURRENT_TRIALS_PER_YEAR | Unit: years | Click to view details, calculation & sources">2.88k
-  (95% CI: 2.45k-3.43k)</a>'
+  years (95% CI: 2.45k years-3.43k years)</a>'
 current_known_safe_exploration_years_latex: '$$
 
   Ratio_{curr} = DRUG_DISEASE_COMBINATIONS \div CURRENT_TRIALS_PER_YEAR = 2{,}880
@@ -138,13 +141,14 @@ current_trial_slots_available: '<a href="/knowledge/appendix/parameters-and-calc
   data-confidence="high" title="Annual global clinical trial participants (IQVIA 2022:
   1.9M post-COVID normalization) | ✓ High confidence | 95% CI: [1.50M patients/year,
   2.30M patients/year] | Dist: Lognormal | Unit: patients/year | Click to view details,
-  calculation & sources">1.90M (95% CI: 1.50M-2.30M)</a>'
+  calculation & sources">1.90M patients/year (95% CI: 1.50M patients/year-2.30M patients/year)</a>'
 current_trial_slots_available_cite: '@global-trial-participant-capacity'
 current_trials_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#sec-current_trials_per_year"
   class="parameter-link" data-source-ref="global-clinical-trials-market-2024" data-source-type="external"
   data-confidence="high" title="Current global clinical trials per year | ✓ High confidence
   | 95% CI: [2.64k trials/year, 3.96k trials/year] | Dist: Lognormal | Unit: trials/year
-  | Click to view details, calculation & sources">3.30k (95% CI: 2.64k-3.96k)</a>'
+  | Click to view details, calculation & sources">3.30k trials/year (95% CI: 2.64k
+  trials/year-3.96k trials/year)</a>'
 current_trials_per_year_cite: '@global-clinical-trials-market-2024'
 defense_lobbying_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-defense_lobbying_annual"
   class="parameter-link" data-source-ref="lobbying-spend-defense" data-source-type="external"
@@ -192,8 +196,8 @@ dfda_cures_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#s
   title="Diseases per year receiving their first effective treatment with dFDA. Scales
   proportionally with trial capacity multiplier. | Calculated from 2 inputs | ? Low
   confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER
-  | Unit: diseases/year | Click to view details, calculation & sources">185 (95% CI:
-  115-265)</a>'
+  | Unit: diseases/year | Click to view details, calculation & sources">185 diseases/year
+  (95% CI: 115 diseases/year-265 diseases/year)</a>'
 dfda_cures_per_year_latex: '$$
 
   DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
@@ -236,7 +240,7 @@ dfda_efficacy_lag_elimination_dalys: '<a href="/knowledge/appendix/parameters-an
   data-source-type="calculated" data-confidence="medium" title="Total Disability-Adjusted
   Life Years lost from disease eradication delay (PRIMARY estimate) | Calculated from
   2 inputs | ~ Medium confidence | Formula: YLL + YLD | Unit: DALYs | Click to view
-  details, calculation & sources">7.94B (95% CI: 4.43B-12.1B)</a>'
+  details, calculation & sources">7.94B DALYs (95% CI: 4.43B DALYs-12.1B DALYs)</a>'
 dfda_efficacy_lag_elimination_dalys_latex: '$$
 
   DALYs_{DFDA} = Delay_{DFDA} + Delay_{DFDA} = 7.07B + 873M = 7.94B
@@ -249,7 +253,7 @@ dfda_efficacy_lag_elimination_deaths_averted: '<a href="/knowledge/appendix/para
   Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%). | Calculated
   from 2 inputs | ~ Medium confidence | Formula: ANNUAL_DEATHS × EFFICACY_LAG_YEARS
   × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view details, calculation
-  & sources">416M (95% CI: 225M-630M)</a>'
+  & sources">416M deaths (95% CI: 225M deaths-630M deaths)</a>'
 dfda_efficacy_lag_elimination_deaths_averted_latex: '$$
 
   D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{
@@ -273,7 +277,7 @@ dfda_npv_adoption_ramp_years: '<a href="/knowledge/appendix/parameters-and-calcu
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve"
   data-source-type="definition" data-confidence="high" title="Years to reach full
   Decentralized Framework for Drug Assessment adoption | ✓ High confidence | Unit:
-  years | Click to view details, calculation & sources">5</a>'
+  years | Click to view details, calculation & sources">5 years</a>'
 dfda_npv_benefit_rd_only: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_benefit_rd_only"
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit"
   data-source-type="calculated" data-confidence="high" title="NPV of Decentralized
@@ -330,7 +334,8 @@ dfda_queue_clearance_years: '<a href="/knowledge/appendix/parameters-and-calcula
   title="Years to treat all currently untreatable diseases with dFDA implementation.
   Queue clearance time divided by trial capacity multiplier. | Calculated from 2 inputs
   | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER
-  | Unit: years | Click to view details, calculation & sources">36 (95% CI: 22.3-71.4)</a>'
+  | Unit: years | Click to view details, calculation & sources">36 years (95% CI:
+  22.3 years-71.4 years)</a>'
 dfda_queue_clearance_years_latex: '$$
 
   Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} = 36
@@ -341,7 +346,7 @@ dfda_roi_rd_only: '<a href="/knowledge/appendix/parameters-and-calculations#sec-
   data-source-type="calculated" data-confidence="high" title="ROI from Decentralized
   Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
   | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST
-  | Unit: ratio | Click to view details, calculation & sources">637 (95% CI: 569-782)</a>'
+  | Unit: ratio | Click to view details, calculation & sources">637:1 (95% CI: 569:1-782:1)</a>'
 dfda_roi_rd_only_latex: '$$
 
   ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
@@ -354,7 +359,8 @@ dfda_trial_capacity_cure_acceleration_years: '<a href="/knowledge/appendix/param
   Uses only trial capacity multiplier (not combined with valley of death rescue) because
   additional candidates don''t directly speed queue processing. | Calculated from
   2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)
-  | Unit: years | Click to view details, calculation & sources">204 (95% CI: 126-343)</a>'
+  | Unit: years | Click to view details, calculation & sources">204 years (95% CI:
+  126 years-343 years)</a>'
 dfda_trial_capacity_cure_acceleration_years_latex: '$$
 
   Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)
@@ -365,8 +371,8 @@ dfda_trial_capacity_multiplier: '<a href="/knowledge/appendix/parameters-and-cal
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Trial capacity multiplier from DIH funding capacity vs. current global trial
   participation | Calculated from 2 inputs | ✓ High confidence | Formula: DIH_PATIENTS_FUNDABLE
-  ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to view details, calculation & sources">12.3
-  (95% CI: 4.53-27.5)</a>'
+  ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to view details, calculation & sources">12.3:1
+  (95% CI: 4.53:1-27.5:1)</a>'
 dfda_trial_capacity_multiplier_latex: '$$
 
   Multiplier_{DFDA} = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{23.4M}{1.9M} =
@@ -380,7 +386,7 @@ dfda_trial_capacity_plus_efficacy_lag_dalys: '<a href="/knowledge/appendix/param
   Includes both fatal and non-fatal diseases (WHO GBD methodology). | Calculated from
   3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT
   × TIMELINE_SHIFT | Unit: DALYs | Click to view details, calculation & sources">565B
-  (95% CI: 365B-859B)</a>'
+  DALYs (95% CI: 365B DALYs-859B DALYs)</a>'
 dfda_trial_capacity_plus_efficacy_lag_dalys_latex: '$$
 
   DALYs_{averted} = 2.88B \times 92.1\% \times 207 = 549B
@@ -403,7 +409,8 @@ dfda_trial_capacity_plus_efficacy_lag_lives_saved: '<a href="/knowledge/appendix
   Represents deaths prevented when cures arrive earlier due to both increased trial
   capacity and eliminated efficacy lag. | Calculated from 2 inputs | ? Low confidence
   | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT
-  | Unit: deaths | Click to view details, calculation & sources">10.7B (95% CI: 7.55B-15.9B)</a>'
+  | Unit: deaths | Click to view details, calculation & sources">10.7B deaths (95%
+  CI: 7.55B deaths-15.9B deaths)</a>'
 dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex: '$$
 
   Capacity_{DFDA} = ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS
@@ -417,7 +424,7 @@ dfda_trial_capacity_plus_efficacy_lag_suffering_hours: '<a href="/knowledge/appe
   of total DALYs × hours per year). One-time benefit, not annual recurring. | Calculated
   from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS
   × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR | Unit: hours | Click to view details,
-  calculation & sources">1931T (95% CI: 1372T-2570T)</a>'
+  calculation & sources">1931T hours (95% CI: 1372T hours-2570T hours)</a>'
 dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex: '$$
 
   Capacity_{DFDA} = DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS \times GLOBAL_YLD_PROPORTION
@@ -430,7 +437,7 @@ dfda_trial_capacity_plus_efficacy_lag_years: '<a href="/knowledge/appendix/param
   acceleration from increased trial capacity with efficacy lag elimination for treatments
   already discovered. | Calculated from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS
   + EFFICACY_LAG_YEARS | Unit: years | Click to view details, calculation & sources">212
-  (95% CI: 138-348)</a>'
+  years (95% CI: 138 years-348 years)</a>'
 dfda_trial_capacity_plus_efficacy_lag_years_latex: '$$
 
   Capacity_{DFDA} = Ratio_{DFDA} + Delay = 204 + 8.2 = 212
@@ -441,8 +448,8 @@ dfda_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-and-c
   data-source-type="calculated" data-confidence="high" title="Cost reduction factor
   projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x) | Calculated
   from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST
-  | Unit: multiplier | Click to view details, calculation & sources">44.1 (95% CI:
-  40-46.7)</a>'
+  | Unit: multiplier | Click to view details, calculation & sources">44.1x (95% CI:
+  40x-46.7x)</a>'
 dfda_trial_cost_reduction_factor_latex: '$$
 
   Cost_{DFDA} = \frac{Cost}{Cost_{DFDA}} = \frac{\$41K}{\$929} = 44.1
@@ -464,8 +471,8 @@ dfda_trials_per_year_capacity: '<a href="/knowledge/appendix/parameters-and-calc
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Maximum trials per year possible with trial capacity multiplier | Calculated
   from 2 inputs | ✓ High confidence | Formula: CURRENT_TRIALS × DFDA_TRIAL_CAPACITY_MULTIPLIER
-  | Unit: trials/year | Click to view details, calculation & sources">40.6k (95% CI:
-  17.6k-76.2k)</a>'
+  | Unit: trials/year | Click to view details, calculation & sources">40.6k trials/year
+  (95% CI: 17.6k trials/year-76.2k trials/year)</a>'
 dfda_trials_per_year_capacity_latex: '$$
 
   Capacity_{DFDA} = Trials_{curr} \times Multiplier_{DFDA} = 3{,}300 \times 12.3 =
@@ -478,7 +485,7 @@ dfda_valley_of_death_rescue_multiplier: '<a href="/knowledge/appendix/parameters
   2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40
   = 1.4× more drugs. | Calculated from 1 input | ~ Medium confidence | Formula: 1
   + VALLEY_OF_DEATH_ATTRITION_PCT | Unit: multiplier | Click to view details, calculation
-  & sources">1.4</a>'
+  & sources">1.4x</a>'
 dfda_valley_of_death_rescue_multiplier_latex: '$$
 
   Multiplier_{DFDA} = Deaths + 1 = 40\% + 1 = 1.4
@@ -490,7 +497,8 @@ dih_patients_fundable_annually: '<a href="/knowledge/appendix/parameters-and-cal
   annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic
   trial costs (RECOVERY to PCORnet range). | Calculated from 2 inputs | ✓ High confidence
   | Formula: TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT | Unit: patients/year | Click
-  to view details, calculation & sources">23.4M (95% CI: 10.2M-43.5M)</a>'
+  to view details, calculation & sources">23.4M patients/year (95% CI: 10.2M patients/year-43.5M
+  patients/year)</a>'
 dih_patients_fundable_annually_latex: '$$
 
   Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
@@ -542,7 +550,7 @@ disease_vs_terrorism_deaths_ratio: '<a href="/knowledge/appendix/parameters-and-
   class="parameter-link" data-source-ref="/knowledge/economics/economics.qmd" data-source-type="definition"
   data-confidence="high" title="Ratio of annual disease deaths to 9/11 terrorism deaths
   | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS | Unit: ratio
-  | Click to view details, calculation & sources">18.4k</a>'
+  | Click to view details, calculation & sources">18.4k:1</a>'
 disease_vs_terrorism_deaths_ratio_latex: '$$
 
   \frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
@@ -552,7 +560,7 @@ disease_vs_war_deaths_ratio: '<a href="/knowledge/appendix/parameters-and-calcul
   class="parameter-link" data-source-ref="/knowledge/economics/economics.qmd" data-source-type="definition"
   data-confidence="high" title="Ratio of annual disease deaths to war deaths | ✓ High
   confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS | Unit: ratio | Click to
-  view details, calculation & sources">225</a>'
+  view details, calculation & sources">225:1</a>'
 disease_vs_war_deaths_ratio_latex: '$$
 
   \frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
@@ -564,7 +572,8 @@ diseases_without_effective_treatment: '<a href="/knowledge/appendix/parameters-a
   95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This
   is the ''queue'' of diseases waiting for cures. | Calculated from 1 input | ~ Medium
   confidence | Formula: RARE_DISEASES_COUNT_GLOBAL × 0.95 | Unit: diseases | Click
-  to view details, calculation & sources">6.65k (95% CI: 5.70k-8.24k)</a>'
+  to view details, calculation & sources">6.65k diseases (95% CI: 5.70k diseases-8.24k
+  diseases)</a>'
 diseases_without_effective_treatment_latex: '$$
 
   Diseases = Rare_{global} + -1 = 7{,}000 + -1 = 6{,}650
@@ -575,7 +584,7 @@ drug_cost_increase_1980s_to_current_multiplier: '<a href="/knowledge/appendix/pa
   data-confidence="high" title="Drug development cost increase from 1980s to current
   ($194M → $2.6B = 13.4x) | Calculated from 2 inputs | ✓ High confidence | Formula:
   PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S | Unit: ratio
-  | Click to view details, calculation & sources">13.4 (95% CI: 11.9-14.7)</a>'
+  | Click to view details, calculation & sources">13.4:1 (95% CI: 11.9:1-14.7:1)</a>'
 drug_cost_increase_1980s_to_current_multiplier_latex: '$$
 
   Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{80s}} = \frac{\$2.6B}{\$194M} = 13.4
@@ -586,7 +595,7 @@ drug_cost_increase_pre1962_to_current_multiplier: '<a href="/knowledge/appendix/
   data-confidence="high" title="Drug development cost increase from pre-1962 to current
   ($24.7M → $2.6B = 105×) | Calculated from 2 inputs | ✓ High confidence | Formula:
   PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD |
-  Unit: ratio | Click to view details, calculation & sources">105 (95% CI: 90.6-119)</a>'
+  Unit: ratio | Click to view details, calculation & sources">105:1 (95% CI: 90.6:1-119:1)</a>'
 drug_cost_increase_pre1962_to_current_multiplier_latex: '$$
 
   Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.6B}{\$24.7M} =
@@ -604,7 +613,7 @@ drug_disease_combinations_possible: '<a href="/knowledge/appendix/parameters-and
   data-source-type="calculated" data-confidence="high" title="Total possible drug-disease
   combinations using existing safe compounds | Calculated from 2 inputs | ✓ High confidence
   | Formula: SAFE_COMPOUNDS × DISEASES | Unit: combinations | Click to view details,
-  calculation & sources">9.50M</a>'
+  calculation & sources">9.50M combinations</a>'
 drug_disease_combinations_possible_latex: '$$
 
   Drug = Safe \times Trials_{dis} = 9{,}500 \times 1{,}000 = 9.5M
@@ -620,12 +629,12 @@ economic_multiplier_healthcare_investment: '<a href="/knowledge/appendix/paramet
   class="parameter-link" data-source-ref="healthcare-investment-economic-multiplier"
   data-source-type="external" data-confidence="high" title="Economic multiplier for
   healthcare investment (4.3x ROI) | ✓ High confidence | Unit: ratio | Click to view
-  details, calculation & sources">4.3</a>'
+  details, calculation & sources">4.3:1</a>'
 economic_multiplier_healthcare_investment_cite: '@healthcare-investment-economic-multiplier'
 economic_multiplier_military_spending: '<a href="/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_military_spending"
   class="parameter-link" data-source-ref="military-spending-economic-multiplier" data-source-type="external"
   data-confidence="high" title="Economic multiplier for military spending (0.6x ROI)
-  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">0.6</a>'
+  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">0.6:1</a>'
 economic_multiplier_military_spending_cite: '@military-spending-economic-multiplier'
 efficacy_lag_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years"
   class="parameter-link" data-source-ref="bio-clinical-development-2021" data-source-type="external"
@@ -635,7 +644,7 @@ efficacy_lag_years: '<a href="/knowledge/appendix/parameters-and-calculations#se
   delay for any given disease may be longer if candidates fail and must restart. |
   ~ Medium confidence | 📊 Peer-reviewed | Dist: Normal (SE: 2 years) | Updated: 2021
   | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION | Unit: years | Click to view
-  details, calculation & sources">8.2 (95% CI: 4.85-11.5)</a>'
+  details, calculation & sources">8.2 years (95% CI: 4.85 years-11.5 years)</a>'
 efficacy_lag_years_cite: '@bio-clinical-development-2021'
 efficacy_lag_years_latex: '$$
 
@@ -695,7 +704,8 @@ global_annual_conflict_deaths_total: '<a href="/knowledge/appendix/parameters-an
   data-source-type="calculated" data-confidence="high" title="Total annual conflict
   deaths globally (sum of combat, terror, state violence) | Calculated from 3 inputs
   | ✓ High confidence | Formula: COMBAT + TERROR + STATE_VIOLENCE | Unit: deaths/year
-  | Click to view details, calculation & sources">245k (95% CI: 194k-302k)</a>'
+  | Click to view details, calculation & sources">245k deaths/year (95% CI: 194k deaths/year-302k
+  deaths/year)</a>'
 global_annual_conflict_deaths_total_latex: '$$
 
   Deaths_{total} = Deaths_{combat,ann} + Deaths_{ann} + Deaths_{terror,ann} = 234{,}000
@@ -708,12 +718,14 @@ global_annual_daly_burden: '<a href="/knowledge/appendix/parameters-and-calculat
   from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes
   both YLL (years of life lost) and YLD (years lived with disability) from all causes.
   | ✓ High confidence | 📊 Peer-reviewed | Dist: Normal (SE: 150M DALYs/year) | Unit:
-  DALYs/year | Click to view details, calculation & sources">2.88B (95% CI: 2.63B-3.13B)</a>'
+  DALYs/year | Click to view details, calculation & sources">2.88B DALYs/year (95%
+  CI: 2.63B DALYs/year-3.13B DALYs/year)</a>'
 global_annual_daly_burden_cite: '@ihme-gbd-2021'
 global_annual_deaths_curable_diseases: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_deaths_curable_diseases"
   class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
   data-confidence="high" title="Annual deaths from all diseases and aging globally
-  | ✓ High confidence | Unit: deaths/year | Click to view details, calculation & sources">55.0M</a>'
+  | ✓ High confidence | Unit: deaths/year | Click to view details, calculation & sources">55.0M
+  deaths/year</a>'
 global_annual_deaths_curable_diseases_cite: '@who-global-health-estimates-2024'
 global_annual_environmental_damage_conflict: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_environmental_damage_conflict"
   class="parameter-link" data-source-ref="environmental-cost-of-war" data-source-type="external"
@@ -828,7 +840,8 @@ global_disease_deaths_daily: '<a href="/knowledge/appendix/parameters-and-calcul
   data-peer-reviewed="true" data-confidence="high" title="Total global deaths per
   day from all disease and aging (WHO Global Burden of Disease 2024) | ✓ High confidence
   | 📊 Peer-reviewed | Dist: Normal (SE: 7.50k deaths/day) | Unit: deaths/day | Click
-  to view details, calculation & sources">150k (95% CI: 137k-162k)</a>'
+  to view details, calculation & sources">150k deaths/day (95% CI: 137k deaths/day-162k
+  deaths/day)</a>'
 global_disease_deaths_daily_cite: '@who-global-health-estimates-2024'
 global_disease_economic_burden_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_disease_economic_burden_annual"
   class="parameter-link" data-source-ref="disease-economic-burden-109t" data-source-type="calculated"
@@ -864,7 +877,8 @@ global_population_2024: '<a href="/knowledge/appendix/parameters-and-calculation
   class="parameter-link" data-source-ref="global-population-8-billion" data-source-type="external"
   data-confidence="high" title="Global population in 2024 | ✓ High confidence | 95%
   CI: [7.80B of people, 8.20B of people] | Dist: Lognormal | Unit: of people | Click
-  to view details, calculation & sources">8.00B (95% CI: 7.80B-8.20B)</a>'
+  to view details, calculation & sources">8.00B of people (95% CI: 7.80B of people-8.20B
+  of people)</a>'
 global_population_2024_cite: '@global-population-8-billion'
 global_symptomatic_disease_treatment_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_symptomatic_disease_treatment_annual"
   class="parameter-link" data-source-ref="disease-economic-burden-109t" data-source-type="external"
@@ -907,7 +921,7 @@ military_to_government_clinical_trials_spending_ratio: '<a href="/knowledge/appe
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Ratio of global military spending to government clinical trials spending
   | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING
-  | Unit: ratio | Click to view details, calculation & sources">604 (95% CI: 453-894)</a>'
+  | Unit: ratio | Click to view details, calculation & sources">604:1 (95% CI: 453:1-894:1)</a>'
 military_to_government_clinical_trials_spending_ratio_latex: '$$
 
   Ratio_{mil} = \frac{Spending_{mil,ann}}{Trials_{ann}} = \frac{\$2.72T}{\$4.5B} =
@@ -922,7 +936,7 @@ new_disease_first_treatments_per_year: '<a href="/knowledge/appendix/parameters-
   common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that
   already have treatments. | ? Low confidence | 95% CI: [8 diseases/year, 30 diseases/year]
   | Dist: Lognormal | Unit: diseases/year | Click to view details, calculation & sources">15
-  (95% CI: 8-30)</a>'
+  diseases/year (95% CI: 8 diseases/year-30 diseases/year)</a>'
 new_disease_first_treatments_per_year_cite: '@diseases-getting-first-treatment-annually'
 nih_standard_research_cost_per_qaly: '<a href="/knowledge/appendix/parameters-and-calculations#sec-nih_standard_research_cost_per_qaly"
   class="parameter-link" data-source-ref="standard-medical-research-roi" data-source-type="external"
@@ -940,7 +954,7 @@ npv_discount_rate_standard_latex: '$$
 
   $$'
 npv_time_horizon_years: '<span class="parameter-definition" title="Standard time horizon
-  for NPV analysis | Unit: years | Core definition">10</span>'
+  for NPV analysis | Unit: years | Core definition">10 years</span>'
 npv_time_horizon_years_latex: '$$
 
   T = 10 \text{ (time horizon, years)}
@@ -991,7 +1005,7 @@ phase_1_safety_duration_years: '<a href="/knowledge/appendix/parameters-and-calc
   class="parameter-link" data-source-ref="bio-clinical-development-2021" data-source-type="external"
   data-peer-reviewed="true" data-confidence="high" title="Phase I safety trial duration
   | ✓ High confidence | 📊 Peer-reviewed | Updated: 2021 | Unit: years | Click to view
-  details, calculation & sources">2.3</a>'
+  details, calculation & sources">2.3 years</a>'
 phase_1_safety_duration_years_cite: '@bio-clinical-development-2021'
 political_success_probability: '<a href="/knowledge/appendix/parameters-and-calculations#sec-political_success_probability"
   class="parameter-link" data-source-ref="icbl-ottawa-treaty" data-source-type="external"
@@ -1026,7 +1040,7 @@ pragmatic_vs_nih_efficiency_multiplier: '<a href="/knowledge/appendix/parameters
   QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic
   trials and standard research. | Calculated from 2 inputs | ~ Medium confidence |
   Formula: NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY | Unit: ratio | Click to view
-  details, calculation & sources">12.5k (95% CI: 2.26k-51.5k)</a>'
+  details, calculation & sources">12.5k:1 (95% CI: 2.26k:1-51.5k:1)</a>'
 pragmatic_vs_nih_efficiency_multiplier_latex: '$$
 
   Multiplier = \frac{Cost_{RD}}{Cost} = \frac{\$50K}{\$4} = 12{,}500
@@ -1043,18 +1057,19 @@ pre_1962_physician_count: '<a href="/knowledge/appendix/parameters-and-calculati
   class="parameter-link" data-source-ref="pre-1962-physician-trials" data-source-type="external"
   data-confidence="low" title="Estimated physicians conducting real-world efficacy
   trials pre-1962 (unverified estimate) | ? Low confidence | Unit: physicians | Click
-  to view details, calculation & sources">144k</a>'
+  to view details, calculation & sources">144k physicians</a>'
 pre_1962_physician_count_cite: '@pre-1962-physician-trials'
 pre_1962_validation_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-pre_1962_validation_years"
   class="parameter-link" data-source-ref="life-expectancy-increase-pre-1962" data-source-type="definition"
   data-confidence="high" title="Years of empirical validation for physician-led pragmatic
   trials (1883-1960) | ✓ High confidence | Formula: 1960 - 1883 | Unit: years | Click
-  to view details, calculation & sources">77</a>'
+  to view details, calculation & sources">77 years</a>'
 rare_diseases_count_global: '<a href="/knowledge/appendix/parameters-and-calculations#sec-rare_diseases_count_global"
   class="parameter-link" data-source-ref="95-pct-diseases-no-treatment" data-source-type="external"
   data-confidence="high" title="Total number of rare diseases globally | ✓ High confidence
   | 95% CI: [6.00k diseases, 10.0k diseases] | Dist: Normal | Unit: diseases | Click
-  to view details, calculation & sources">7.00k (95% CI: 6.00k-10.0k)</a>'
+  to view details, calculation & sources">7.00k diseases (95% CI: 6.00k diseases-10.0k
+  diseases)</a>'
 rare_diseases_count_global_cite: '@95-pct-diseases-no-treatment'
 recovery_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_per_patient"
   class="parameter-link" data-source-ref="recovery-cost-500" data-source-type="external"
@@ -1069,7 +1084,7 @@ recovery_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-a
   data-confidence="high" title="Cost reduction factor demonstrated by RECOVERY trial
   ($41K traditional / $500 RECOVERY = 82x) | Calculated from 2 inputs | ✓ High confidence
   | Formula: TRADITIONAL_PHASE3_COST / RECOVERY_COST | Unit: multiplier | Click to
-  view details, calculation & sources">82 (95% CI: 50-94.1)</a>'
+  view details, calculation & sources">82x (95% CI: 50x-94.1x)</a>'
 recovery_trial_cost_reduction_factor_latex: '$$
 
   Cost = \frac{Cost}{Cost} = \frac{\$41K}{\$500} = 82
@@ -1083,7 +1098,7 @@ recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-
   (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty
   range reflects extrapolation assumptions. | ~ Medium confidence | 95% CI: [500k
   lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to view details, calculation
-  & sources">1.00M (95% CI: 500k-2.00M)</a>'
+  & sources">1.00M lives (95% CI: 500k lives-2.00M lives)</a>'
 recovery_trial_global_lives_saved_cite: '@recovery-trial-1m-lives-saved'
 recovery_trial_total_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_total_cost"
   class="parameter-link" data-source-ref="recovery-trial-82x-cost-reduction" data-source-type="external"
@@ -1099,11 +1114,11 @@ safe_compounds_count: '<a href="/knowledge/appendix/parameters-and-calculations#
   available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000
   range) | ✓ High confidence | 95% CI: [7.00k compounds, 12.0k compounds] | Dist:
   Uniform | Unit: compounds | Click to view details, calculation & sources">9.50k
-  (95% CI: 7.00k-12.0k)</a>'
+  compounds (95% CI: 7.00k compounds-12.0k compounds)</a>'
 smallpox_eradication_roi: '<a href="/knowledge/appendix/parameters-and-calculations#sec-smallpox_eradication_roi"
   class="parameter-link" data-source-ref="smallpox-eradication-roi" data-source-type="external"
   data-confidence="high" title="Return on investment from smallpox eradication campaign
-  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">280</a>'
+  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">280:1</a>'
 smallpox_eradication_roi_cite: '@smallpox-eradication-roi'
 standard_economic_qaly_value_usd: '<a href="/knowledge/appendix/parameters-and-calculations#sec-standard_economic_qaly_value_usd"
   class="parameter-link" data-source-ref="qaly-value" data-source-type="external"
@@ -1117,7 +1132,8 @@ status_quo_avg_years_to_cure: '<a href="/knowledge/appendix/parameters-and-calcu
   under current system. The average disease is in the middle of the queue, so it waits
   half the total queue clearance time (~443/2 = ~222 years). | Calculated from 1 input
   | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2 | Unit: years
-  | Click to view details, calculation & sources">222 (95% CI: 162-356)</a>'
+  | Click to view details, calculation & sources">222 years (95% CI: 162 years-356
+  years)</a>'
 status_quo_avg_years_to_cure_latex: '$$
 
   Status = Time \times 0.5 = 443 \times 0.5 = 222
@@ -1129,7 +1145,8 @@ status_quo_queue_clearance_years: '<a href="/knowledge/appendix/parameters-and-c
   At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650
   would take ~443 years to completely clear. | Calculated from 2 inputs | ? Low confidence
   | Formula: DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
-  | Unit: years | Click to view details, calculation & sources">443 (95% CI: 324-712)</a>'
+  | Unit: years | Click to view details, calculation & sources">443 years (95% CI:
+  324 years-712 years)</a>'
 status_quo_queue_clearance_years_latex: '$$
 
   Time = \frac{Diseases}{New} = \frac{6{,}650}{15} = 443
@@ -1141,7 +1158,7 @@ tested_relationships_estimate: '<a href="/knowledge/appendix/parameters-and-calc
   relationships actually tested (approved uses + repurposed + failed trials, midpoint
   of 15,000-50,000 range) | ✓ High confidence | 95% CI: [15.0k relationships, 50.0k
   relationships] | Dist: Lognormal | Unit: relationships | Click to view details,
-  calculation & sources">32.5k (95% CI: 15.0k-50.0k)</a>'
+  calculation & sources">32.5k relationships (95% CI: 15.0k relationships-50.0k relationships)</a>'
 traditional_phase3_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient"
   class="parameter-link" data-source-ref="trial-costs-fda-study" data-source-type="external"
   data-confidence="high" title="Phase 3 cost per patient (median from FDA study) |
@@ -1151,7 +1168,7 @@ traditional_phase3_cost_per_patient_cite: '@trial-costs-fda-study'
 treatment_acceleration_years_current: '<a href="/knowledge/appendix/parameters-and-calculations#sec-treatment_acceleration_years_current"
   class="parameter-link" data-source-ref="fda-approval-timeline-10-years" data-source-type="external"
   data-confidence="high" title="Traditional FDA drug development timeline | ✓ High
-  confidence | Unit: years | Click to view details, calculation & sources">17</a>'
+  confidence | Unit: years | Click to view details, calculation & sources">17 years</a>'
 treatment_acceleration_years_current_cite: '@fda-approval-timeline-10-years'
 treaty_annual_funding: '<span class="parameter-definition" title="Annual funding from
   1% of global military spending redirected to DIH | Unit: USD/year | Core definition">$27.2B</span>'
@@ -1166,7 +1183,7 @@ treaty_benefit_multiplier_vs_vaccines: '<a href="/knowledge/appendix/parameters-
   data-source-type="calculated" data-confidence="high" title="Treaty system benefit
   multiplier vs childhood vaccination programs | Calculated from 2 inputs | ✓ High
   confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT
-  | Unit: ratio | Click to view details, calculation & sources">11.5 (95% CI: 9.01-16)</a>'
+  | Unit: ratio | Click to view details, calculation & sources">11.5:1 (95% CI: 9.01:1-16:1)</a>'
 treaty_benefit_multiplier_vs_vaccines_latex: '$$
 
   Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$172B}{\$15B}
@@ -1225,7 +1242,8 @@ treaty_campaign_voting_bloc_target: '<a href="/knowledge/appendix/parameters-and
   data-source-type="calculated" data-confidence="high" title="Target voting bloc size
   for campaign (3.5% of global population - critical mass for social change) | Calculated
   from 2 inputs | ✓ High confidence | Formula: GLOBAL_POPULATION × 3.5% | Unit: of
-  people | Click to view details, calculation & sources">280M (95% CI: 213M-359M)</a>'
+  people | Click to view details, calculation & sources">280M of people (95% CI: 213M
+  of people-359M of people)</a>'
 treaty_campaign_voting_bloc_target_latex: '$$
 
   Campaign_{camp,treaty} = Population_{global} \times Threshold_{global} = 8B \times
@@ -1265,7 +1283,7 @@ treaty_expected_roi_trial_capacity_plus_efficacy_lag: '<a href="/knowledge/appen
   from beta(0.1%, 10%) distribution to generate full expected value distribution.
   Central value uses 1% probability. | Calculated from 2 inputs | ? Low confidence
   | Formula: TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY
-  | Click to view details, calculation & sources">848k (95% CI: 58.5k-4.75M)</a>'
+  | Unit: ratio | Click to view details, calculation & sources">848k:1 (95% CI: 58.5k:1-4.75M:1)</a>'
 treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   ROI_{treaty} = ROI_{treaty} \times Probability = 84.8M \times 1\% = 848{,}000
@@ -1276,7 +1294,7 @@ treaty_expected_vs_bed_nets_multiplier: '<a href="/knowledge/appendix/parameters
   title="Expected value multiplier vs bed nets (accounts for political uncertainty
   at 1% success rate) | Calculated from 2 inputs | ? Low confidence | Formula: BED_NETS_COST_PER_DALY
   ÷ TREATY_EXPECTED_COST_PER_DALY | Unit: ratio | Click to view details, calculation
-  & sources">503 (95% CI: 30.2-2.98k)</a>'
+  & sources">503:1 (95% CI: 30.2:1-2.98k:1)</a>'
 treaty_expected_vs_bed_nets_multiplier_latex: '$$
 
   Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.177}
@@ -1315,8 +1333,8 @@ treaty_roi_trial_capacity_plus_efficacy_lag: '<a href="/knowledge/appendix/param
   timeline shift (trial capacity acceleration + efficacy lag elimination). Total one-time
   benefit divided by campaign cost. This is the primary ROI estimate for total health
   benefits. | Calculated from 2 inputs | ~ Medium confidence | Formula: DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE
-  ÷ CAMPAIGN_COST | Unit: ratio | Click to view details, calculation & sources">84.8M
-  (95% CI: 47.3M-141M)</a>'
+  ÷ CAMPAIGN_COST | Unit: ratio | Click to view details, calculation & sources">84.8M:1
+  (95% CI: 47.3M:1-141M:1)</a>'
 treaty_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   ROI_{treaty} = \frac{Capacity_{DFDA}}{Cost_{camp,total}} = \frac{\$84800T}{\$1B}
@@ -1338,8 +1356,8 @@ treaty_vs_bed_nets_multiplier: '<a href="/knowledge/appendix/parameters-and-calc
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="How many times more cost-effective than bed nets (using $89/DALY midpoint
   estimate) | Calculated from 2 inputs | ✓ High confidence | Formula: BED_NETS_COST_PER_DALY
-  ÷ TREATY_COST_PER_DALY | Unit: ratio | Click to view details, calculation & sources">50.3k
-  (95% CI: 24.3k-109k)</a>'
+  ÷ TREATY_COST_PER_DALY | Unit: ratio | Click to view details, calculation & sources">50.3k:1
+  (95% CI: 24.3k:1-109k:1)</a>'
 treaty_vs_bed_nets_multiplier_latex: '$$
 
   Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.00177}
@@ -1355,8 +1373,8 @@ treaty_vs_direct_funding_leverage: '<a href="/knowledge/appendix/parameters-and-
   Both approaches achieve same 200B DALY timeline shift benefit by clearing disease
   queue 9.5× faster. Treaty spreads cost across governments while building sustainable
   public funding infrastructure. | ✓ High confidence | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY
-  ÷ TREATY_COST_PER_DALY | Unit: ratio | Click to view details, calculation & sources">475
-  (95% CI: 421-613)</a>'
+  ÷ TREATY_COST_PER_DALY | Unit: ratio | Click to view details, calculation & sources">475:1
+  (95% CI: 421:1-613:1)</a>'
 treaty_vs_direct_funding_leverage_latex: '$$
 
   Funding_{direct,treaty} = \frac{Cost_{direct,DFDA}}{Cost_{treaty}} = \frac{\$0.841}{\$0.00177}
@@ -1367,8 +1385,8 @@ trial_capacity_cumulative_years_20yr: '<a href="/knowledge/appendix/parameters-a
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Cumulative trial-capacity-equivalent years over 20-year period | Calculated
   from 1 input | ✓ High confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER × 20
-  YEARS | Unit: years | Click to view details, calculation & sources">246 (95% CI:
-  90-550)</a>'
+  YEARS | Unit: years | Click to view details, calculation & sources">246 years (95%
+  CI: 90 years-550 years)</a>'
 trial_capacity_cumulative_years_20yr_latex: '$$
 
   Capacity = Multiplier_{DFDA} \times 20 = 12.3 \times 20 = 246
@@ -1379,13 +1397,14 @@ trial_relevant_diseases_count: '<a href="/knowledge/appendix/parameters-and-calc
   data-source-type="definition" data-confidence="high" title="Consolidated count of
   trial-relevant diseases worth targeting (after grouping ICD-10 codes) | ✓ High confidence
   | 95% CI: [800 diseases, 1.20k diseases] | Dist: Uniform | Unit: diseases | Click
-  to view details, calculation & sources">1.00k (95% CI: 800-1.20k)</a>'
+  to view details, calculation & sources">1.00k diseases (95% CI: 800 diseases-1.20k
+  diseases)</a>'
 type_ii_error_cost_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-type_ii_error_cost_ratio"
   class="parameter-link" data-source-ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis"
   data-source-type="calculated" data-confidence="medium" title="Ratio of Type II error
   cost to Type I error benefit (harm from delay vs. harm prevented) | Calculated from
   2 inputs | ~ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT | Unit:
-  ratio | Click to view details, calculation & sources">3.07k (95% CI: 2.89k-3.13k)</a>'
+  ratio | Click to view details, calculation & sources">3.07k:1 (95% CI: 2.89k:1-3.13k:1)</a>'
 type_ii_error_cost_ratio_latex: '$$
 
   Cost = \frac{DALYs_{DFDA}}{DALYs} = \frac{7.94B}{2.59M} = 3{,}070
@@ -1437,7 +1456,7 @@ vitamin_a_cost_per_daly_cite: '@vitamin-a-cost-per-daly'
 water_fluoridation_roi: '<a href="/knowledge/appendix/parameters-and-calculations#sec-water_fluoridation_roi"
   class="parameter-link" data-source-ref="clean-water-sanitation-roi" data-source-type="external"
   data-confidence="high" title="Return on investment from water fluoridation programs
-  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">23</a>'
+  | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">23:1</a>'
 water_fluoridation_roi_cite: '@clean-water-sanitation-roi'
 who_qaly_threshold_cost_effective: '<a href="/knowledge/appendix/parameters-and-calculations#sec-who_qaly_threshold_cost_effective"
   class="parameter-link" data-source-ref="who-cost-effectiveness-threshold" data-source-type="external"

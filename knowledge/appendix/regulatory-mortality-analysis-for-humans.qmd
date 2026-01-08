@@ -19,15 +19,15 @@ In 1962, Congress passed the Kefauver-Harris Amendments requiring proof of effic
 
 Nobody at the FDA chose this. They're executing the law Congress wrote. But the law has a cost, and humanity pays it daily.
 
-**The Setup:** Imagine a time machine that brings cures from {{< var efficacy_lag_years >}} years in the future to today. Scientists built one. It's called "letting people try drugs after they're proven safe." The 1962 law locked the time machine.
+**The Setup:** Imagine a time machine that brings cures from {{< var efficacy_lag_years >}} in the future to today. Scientists built one. It's called "letting people try drugs after they're proven safe." The 1962 law locked the time machine.
 
-**The Cost:** Everyone who dies during those {{< var efficacy_lag_years >}} years of waiting.
+**The Cost:** Everyone who dies during those {{< var efficacy_lag_years >}} of waiting.
 
 ### Line Item 1: Deaths
 
 *How many people die while the cure sits in the "waiting room"?*
 
-Modern medicine saves about **{{< var baseline_lives_saved_annual >}} million lives a year**. The current framework makes those cures wait {{< var efficacy_lag_years >}} years after they're proven safe. During those {{< var efficacy_lag_years >}} years, the people who needed them die.
+Modern medicine saves about **{{< var baseline_lives_saved_annual >}} million lives a year**. The current framework makes those cures wait {{< var efficacy_lag_years >}} after they're proven safe. During those {{< var efficacy_lag_years >}}, the people who needed them die.
 
 | | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
@@ -86,7 +86,7 @@ The efficacy delay costs more per day than any terrorist attack in history. Ever
 
 1. **Imagine a bus.** It holds 32,000 people.
 2. **Scientists built it.** It works. It's safe. They checked.
-3. **The law says:** "Wait. We need to check if the bus is effective at being a bus. This will take {{< var efficacy_lag_years >}} years."
+3. **The law says:** "Wait. We need to check if the bus is effective at being a bus. This will take {{< var efficacy_lag_years >}}."
 4. **Meanwhile:** The bus drives off a cliff. Every day.
 5. **The question:** Why not check the bus while driving it?
 
@@ -97,7 +97,7 @@ That's your plan. It's a decentralized framework for drug assessment. Check the 
 
 The analysis above is conservative. It only counts deaths from drugs we *already have*.
 
-But what if humanity is about to cure everything? Cancer. Heart disease. Aging. What if the finish line is in sight, but the 1962 efficacy mandate makes us stand still for {{< var efficacy_lag_years >}} years before we can cross it?
+But what if humanity is about to cure everything? Cancer. Heart disease. Aging. What if the finish line is in sight, but the 1962 efficacy mandate makes us stand still for {{< var efficacy_lag_years >}} before we can cross it?
 
 In that scenario, the cost isn't just "delayed access to existing drugs." The cost is **everyone who dies during the {{< var efficacy_lag_years >}}-year pause before total victory**.
 
@@ -105,7 +105,7 @@ This is speculative. But it's not crazy. Gene therapy, AI drug discovery, and mR
 
 **The premise:** The Cure for All Disease is a finish line.
 
-**The reality:** We're running toward it. The current law requires us to stop and stand still for {{< var efficacy_lag_years >}} years before crossing.
+**The reality:** We're running toward it. The current law requires us to stop and stand still for {{< var efficacy_lag_years >}} before crossing.
 
 **The cost:** Everyone who dies while we're standing still.
 
@@ -118,7 +118,7 @@ In the "Upper Bound" scenario, we aren't just looking at preventable *premature*
 ##### The Variables
 
 * $M_{daily}$ = Total Global Deaths per Day from Disease/Aging ({{< var global_disease_deaths_daily >}}).
-* $T_{lag}$ = The Regulatory Delay ({{< var efficacy_lag_years >}} Years).
+* $T_{lag}$ = The Regulatory Delay ({{< var efficacy_lag_years >}}).
 
 ##### The Equation
 
@@ -131,7 +131,7 @@ $$D_{total} = M_{daily} \times T_{lag} \times \text{Avoidable\%}$$
 ##### Step-by-Step for the 5th Grader
 
 1.  Every day, **{{< var global_disease_deaths_daily >}} people** die from health problems (heart attacks, cancer, old age).
-2.  We delayed the solution to these problems by **{{< var efficacy_lag_years >}} years**.
+2.  We delayed the solution to these problems by **{{< var efficacy_lag_years >}}**.
 3.  That means we let **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} people** die who would have been saved if we had arrived at the finish line on time.
 
 #### THE SUFFERING EQUATION (DALYs)
@@ -157,7 +157,7 @@ $$H_{lost} \text{ (Healthy Years Lost)} = D_{total} \times Y_{lost}$$
 ##### Step-by-Step for the 5th Grader
 
 1.  Those {{< var dfda_efficacy_lag_elimination_deaths_averted >}} people didn't just die; they missed out on decades of life.
-2.  If you add up all the birthdays they missed, it equals **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs**.
+2.  If you add up all the birthdays they missed, it equals **{{< var dfda_efficacy_lag_elimination_dalys >}}**.
 3.  That is more time than the Earth has existed (4.5 Billion years).
 
 #### THE ECONOMIC EQUATION (The GDP Loss)
@@ -192,7 +192,7 @@ If we assume we *will* eventually cure all disease, but the law requires us to w
 
 **INVOICE: THE COST OF DELAYING THE CURE**
 
-*Scenario: Total Eradication Delayed by {{< var efficacy_lag_years >}} Years*
+*Scenario: Total Eradication Delayed by {{< var efficacy_lag_years >}}*
 
 * **Daily Lives Cost:** **{{< var global_disease_deaths_daily >}}** people died today. (The entire population of Savannah, Georgia, wiped out every morning.)
 * **Total Lives Cost:** **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** over the {{< var efficacy_lag_years >}}-year delay.
@@ -202,6 +202,6 @@ If we assume we *will* eventually cure all disease, but the law requires us to w
 ##### The 5th Grader Logic
 
 Imagine you have a winning lottery ticket worth **Infinity Dollars** (The Cure).
-The government says, "You can't cash this for {{< var efficacy_lag_years >}} years because we need to check if the paper is safe."
-While you wait {{< var efficacy_lag_years >}} years, your family starves to death.
+The government says, "You can't cash this for {{< var efficacy_lag_years >}} because we need to check if the paper is safe."
+While you wait {{< var efficacy_lag_years >}}, your family starves to death.
 ###### That is the Upper Bound Cost.

@@ -127,7 +127,7 @@ Your decentralized framework for drug assessment (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial. The trial costs {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} for FDA approval while you die, you join a trial. The trial costs {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The framework publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 

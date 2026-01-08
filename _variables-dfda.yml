@@ -20,7 +20,7 @@ recovery_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-a
   data-confidence="high" title="Cost reduction factor demonstrated by RECOVERY trial
   ($41K traditional / $500 RECOVERY = 82x) | Calculated from 2 inputs | ✓ High confidence
   | Formula: TRADITIONAL_PHASE3_COST / RECOVERY_COST | Unit: multiplier | Click to
-  view details, calculation & sources">82 (95% CI: 50-94.1)</a>'
+  view details, calculation & sources">82x (95% CI: 50x-94.1x)</a>'
 recovery_trial_cost_reduction_factor_latex: '$$
 
   Cost = \frac{Cost}{Cost} = \frac{\$41K}{\$500} = 82
@@ -34,7 +34,7 @@ recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-
   (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty
   range reflects extrapolation assumptions. | ~ Medium confidence | 95% CI: [500k
   lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to view details, calculation
-  & sources">1.00M (95% CI: 500k-2.00M)</a>'
+  & sources">1.00M lives (95% CI: 500k lives-2.00M lives)</a>'
 recovery_trial_global_lives_saved_cite: '@recovery-trial-1m-lives-saved'
 traditional_phase3_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient"
   class="parameter-link" data-source-ref="trial-costs-fda-study" data-source-type="external"

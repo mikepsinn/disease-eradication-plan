@@ -412,7 +412,7 @@ $$
 
 :::
 
-### dFDA Combined Treatment Discovery Speedup Multiplier: 17.2 multiplier {#sec-dfda_combined_cure_speedup_multiplier}
+### dFDA Combined Treatment Discovery Speedup Multiplier: 17.2x {#sec-dfda_combined_cure_speedup_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -420,8 +420,8 @@ Combined speedup factor for treatment discovery from dFDA. Trial capacity multip
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
-- [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4 multiplier
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4x
 
 $$
 Multiplier_{DFDA} = Multiplier_{DFDA} \times Multiplier_{DFDA} = 12.3 \times 1.4 = 17.2
@@ -454,7 +454,7 @@ Diseases per year receiving their first effective treatment with dFDA. Scales pr
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
@@ -478,7 +478,7 @@ $$
 
 :::
 
-### Direct Funding ROI - Full Timeline Shift: 178k ratio {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+### Direct Funding ROI - Full Timeline Shift: 178k:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -513,7 +513,7 @@ $$
 
 :::
 
-### Direct Funding Cost-Effectiveness vs Bed Nets: 106 ratio {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
+### Direct Funding Cost-Effectiveness vs Bed Nets: 106:1 {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1008,7 +1008,7 @@ Years to treat all currently untreatable diseases with dFDA implementation. Queu
 **Inputs**:
 
 - [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} = 36
@@ -1066,7 +1066,7 @@ $$
 
 :::
 
-### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637 ratio {#sec-dfda_roi_rd_only}
+### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1145,7 +1145,7 @@ Maximum trials per year possible with trial capacity multiplier
 **Inputs**:
 
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 Capacity_{DFDA} = Trials_{curr} \times Multiplier_{DFDA} = 3{,}300 \times 12.3 = 40{,}600
@@ -1178,7 +1178,7 @@ Years earlier the average cure arrives due to dFDA's trial capacity increase. Ca
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
@@ -1302,7 +1302,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3 ratio {#sec-dfda_trial_capacity_multiplier}
+### Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1503,7 +1503,7 @@ $$
 
 :::
 
-### dFDA Trial Cost Reduction Factor: 44.1 multiplier {#sec-dfda_trial_cost_reduction_factor}
+### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1573,7 +1573,7 @@ $$
 
 :::
 
-### dFDA Valley of Death Rescue Multiplier: 1.4 multiplier {#sec-dfda_valley_of_death_rescue_multiplier}
+### dFDA Valley of Death Rescue Multiplier: 1.4x {#sec-dfda_valley_of_death_rescue_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1707,7 +1707,7 @@ $$
 
 :::
 
-### Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680 ratio {#sec-dividend_coverage_factor}
+### Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1 {#sec-dividend_coverage_factor}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1742,7 +1742,7 @@ $$
 
 :::
 
-### Drug Cost Increase: 1980s to Current: 13.4 ratio {#sec-drug_cost_increase_1980s_to_current_multiplier}
+### Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1777,7 +1777,7 @@ $$
 
 :::
 
-### Drug Cost Increase: Pre-1962 to Current: 105 ratio {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+### Drug Cost Increase: Pre-1962 to Current: 105:1 {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1991,7 +1991,7 @@ $$
 
 :::
 
-### FDA to Oxford RECOVERY Trial Time Multiplier: 36.4 ratio {#sec-fda_to_oxford_recovery_trial_time_multiplier}
+### FDA to Oxford RECOVERY Trial Time Multiplier: 36.4:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2588,7 +2588,7 @@ $$
 
 :::
 
-### IAB Mechanism Benefit-Cost Ratio: 230 ratio {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2623,7 +2623,7 @@ $$
 
 :::
 
-### Ratio of Industry to Government Clinical Trials Spending: 12.3 ratio {#sec-industry_vs_government_clinical_trials_spending_ratio}
+### Ratio of Industry to Government Clinical Trials Spending: 12.3:1 {#sec-industry_vs_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2716,14 +2716,6 @@ $$
 
 {{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
-
 :::
 
 ### Medical Research Spending as Percentage of Total Disease Burden: 0.0525% {#sec-medical_research_pct_of_disease_burden}
@@ -2761,7 +2753,7 @@ $$
 
 :::
 
-### Ratio of Military to Clinical Trials Spending: 45.3 ratio {#sec-military_to_clinical_trials_spending_ratio}
+### Ratio of Military to Clinical Trials Spending: 45.3:1 {#sec-military_to_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2794,7 +2786,7 @@ $$
 
 :::
 
-### Ratio of Military to Government Clinical Trials Spending: 604 ratio {#sec-military_to_government_clinical_trials_spending_ratio}
+### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2827,7 +2819,7 @@ $$
 
 :::
 
-### Ratio of Military Spending to Medical Research Spending: 40.3 ratio {#sec-military_vs_medical_research_ratio}
+### Ratio of Military Spending to Medical Research Spending: 40.3:1 {#sec-military_vs_medical_research_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2862,7 +2854,7 @@ $$
 
 :::
 
-### Misallocation Factor: Cost to Kill vs Cost to Save: 2.89k ratio {#sec-misallocation_factor_death_vs_saving}
+### Misallocation Factor: Cost to Kill vs Cost to Save: 2.89k:1 {#sec-misallocation_factor_death_vs_saving}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3385,7 +3377,7 @@ Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% tre
 **Inputs**:
 
 - [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 \text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
@@ -3512,7 +3504,7 @@ $$
 
 :::
 
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k ratio {#sec-pragmatic_vs_nih_efficiency_multiplier}
+### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3545,7 +3537,7 @@ $$
 
 :::
 
-### RECOVERY Trial Cost Reduction Factor: 82 multiplier {#sec-recovery_trial_cost_reduction_factor}
+### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3822,7 +3814,7 @@ Years Lived with Disability per thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4 ratio (95% CI: 0.32 ratio - 0.48 ratio)
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
 - [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
 - [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
 
@@ -3938,7 +3930,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5:1 {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4149,7 +4141,7 @@ $$
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 848k {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
+### Expected Treaty ROI (Risk-Adjusted): 848k:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4157,7 +4149,7 @@ Expected ROI for 1% treaty accounting for political success probability uncertai
 
 **Inputs**:
 
-- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 84.8M ratio
+- [Treaty ROI - Full Timeline Shift (PRIMARY)](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 84.8M:1
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
@@ -4184,7 +4176,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503 ratio {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503:1 {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4357,7 +4349,7 @@ $$
 
 :::
 
-### Treaty ROI - Historical Rate (Existing Drugs): 251k ratio {#sec-treaty_roi_existing_drugs_only}
+### Treaty ROI - Historical Rate (Existing Drugs): 251k:1 {#sec-treaty_roi_existing_drugs_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4392,7 +4384,7 @@ $$
 
 :::
 
-### Treaty ROI - Full Timeline Shift (PRIMARY): 84.8M ratio {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
+### Treaty ROI - Full Timeline Shift (PRIMARY): 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4462,7 +4454,7 @@ $$
 
 :::
 
-### Cost-Effectiveness vs Bed Nets Multiplier: 50.3k ratio {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 50.3k:1 {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4503,7 +4495,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3 ratio
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 Capacity = Multiplier_{DFDA} \times 20 = 12.3 \times 20 = 246
@@ -4527,7 +4519,7 @@ $$
 
 :::
 
-### Ratio of Type Ii Error Cost to Type I Error Benefit: 3.07k ratio {#sec-type_ii_error_cost_ratio}
+### Ratio of Type Ii Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4907,7 +4899,7 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 
 :::
 
-### Return on Investment from Childhood Vaccination Programs: 13 ratio {#sec-childhood_vaccination_roi}
+### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4939,7 +4931,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 :::
 
-### CPI Multiplier: 1980 to 2024: 3.8 ratio {#sec-cpi_multiplier_1980_to_2024}
+### CPI Multiplier: 1980 to 2024: 3.8:1 {#sec-cpi_multiplier_1980_to_2024}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -4949,9 +4941,9 @@ CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3.75 ratio, 3.85 ratio] • Distribution: Normal
+**Technical**: 95% CI: [3.75:1, 3.85:1] • Distribution: Normal
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between 3.75 ratio and 3.85 ratio (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between 3.75:1 and 3.85:1 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -5179,7 +5171,7 @@ Percentage of drugs that gain at least one new indication after initial approval
 
 :::
 
-### Economic Multiplier for Education Investment: 2.1 ratio {#sec-economic_multiplier_education_investment}
+### Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -5191,7 +5183,7 @@ Economic multiplier for education investment (2.1x ROI)
 
 :::
 
-### Economic Multiplier for Healthcare Investment: 4.3 ratio {#sec-economic_multiplier_healthcare_investment}
+### Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -5203,7 +5195,7 @@ Economic multiplier for healthcare investment (4.3x ROI)
 
 :::
 
-### Economic Multiplier for Infrastructure Investment: 1.6 ratio {#sec-economic_multiplier_infrastructure_investment}
+### Economic Multiplier for Infrastructure Investment: 1.6:1 {#sec-economic_multiplier_infrastructure_investment}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -5215,7 +5207,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 
 :::
 
-### Economic Multiplier for Military Spending: 0.6 ratio {#sec-economic_multiplier_military_spending}
+### Economic Multiplier for Military Spending: 0.6:1 {#sec-economic_multiplier_military_spending}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -6305,7 +6297,7 @@ Minimum annual lobbyist salary range
 
 :::
 
-### Return on Investment from Measles Vaccination Programs: 14 ratio {#sec-measles_vaccination_roi}
+### Return on Investment from Measles Vaccination Programs: 14:1 {#sec-measles_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -6573,7 +6565,7 @@ Phase 3 trial total cost (minimum)
 
 :::
 
-### Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs: 39 ratio {#sec-polio_vaccination_roi}
+### Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs: 39:1 {#sec-polio_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -6833,7 +6825,7 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
-### Return on Investment from Smallpox Eradication Campaign: 280 ratio {#sec-smallpox_eradication_roi}
+### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -6981,7 +6973,7 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 :::
 
-### Thalidomide Disability Weight: 0.4 ratio {#sec-thalidomide_disability_weight}
+### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -6991,9 +6983,9 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [0.32 ratio, 0.48 ratio] • Distribution: Lognormal
+**Technical**: 95% CI: [0.32:1, 0.48:1] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 ratio and 0.48 ratio (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32:1 and 0.48:1 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -7449,7 +7441,7 @@ Estimated annual global economic benefit from water fluoridation programs
 
 :::
 
-### Return on Investment from Water Fluoridation Programs: 23 ratio {#sec-water_fluoridation_roi}
+### Return on Investment from Water Fluoridation Programs: 23:1 {#sec-water_fluoridation_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -8311,7 +8303,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 :::
 
-### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k ratio {#sec-disease_vs_terrorism_deaths_ratio}
+### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1 {#sec-disease_vs_terrorism_deaths_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -8321,7 +8313,7 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 
 :::
 
-### Ratio of Annual Disease Deaths to War Deaths: 225 ratio {#sec-disease_vs_war_deaths_ratio}
+### Ratio of Annual Disease Deaths to War Deaths: 225:1 {#sec-disease_vs_war_deaths_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -8811,7 +8803,7 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 :::
 
-### Treaty Campaign Leverage vs Direct Funding: 475 ratio {#sec-treaty_vs_direct_funding_leverage}
+### Treaty Campaign Leverage vs Direct Funding: 475:1 {#sec-treaty_vs_direct_funding_leverage}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 

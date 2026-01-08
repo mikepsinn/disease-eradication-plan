@@ -22,9 +22,9 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-academic.jpg
 
 Your decentralized framework for drug assessment (dFDA) costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
-That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
+That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns (recommended estimate including post-safety efficacy lag elimination).
 
-**Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
+**Conservative estimate**: {{< var dfda_roi_rd_only >}} (R&D savings only)
 
 Here's the breakdown.
 
@@ -61,7 +61,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs total** lost to delayed treatments ({{< var dfda_efficacy_lag_elimination_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
+Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_efficacy_lag_elimination_dalys >}} total** lost to delayed treatments ({{< var dfda_efficacy_lag_elimination_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
 
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
@@ -73,11 +73,11 @@ Your decentralized framework for drug assessment costs approximately **{{< var d
 
 ## ROI Scenarios
 
-**Recommended**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
+**Recommended**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
 
-**Conservative**: {{< var dfda_roi_rd_only >}}:1 ROI (R&D savings only, NPV-adjusted over 10 years)
+**Conservative**: {{< var dfda_roi_rd_only >}} ROI (R&D savings only, NPV-adjusted over 10 years)
 
-**PRIMARY estimate**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI (including all core benefits)
+**PRIMARY estimate**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (including all core benefits)
 
 Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
@@ -97,7 +97,7 @@ Until now. Your decentralized framework for drug assessment changes the game by 
 ## The ROI
 
 {{< var dfda_annual_opex >}} to save {{< var dfda_benefit_rd_only_annual >}}.
-{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI (recommended).
+{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (recommended).
 80x cost reduction per patient.
 {{< var dfda_trial_capacity_multiplier >}}× more trial capacity (43.4M participants annually vs 1.9M currently).
 
@@ -112,7 +112,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency a
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Financial Analysis Summary](../appendix/dfda-cost-benefit-analysis.qmd#financial-analysis-summary) - NPV/ROI analysis and computational models
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs (post-safety efficacy lag elimination)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} (post-safety efficacy lag elimination)
 
 #### Key Sources
 

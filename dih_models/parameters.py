@@ -16,6 +16,7 @@ Usage:
 from __future__ import annotations
 
 import math
+import warnings
 from enum import Enum
 from typing import Optional, List, Tuple, Union, Callable, Any  # noqa: F401
 
@@ -249,6 +250,14 @@ class Parameter(float):
                     f"Value {value} outside interval [{lower}, {upper}]. "
                     f"Desc: {description or 'N/A'}"
                 )
+
+        # Validation: require unit to be specified (units are required for proper formatting)
+        if not unit:
+            raise ValueError(
+                f"Parameter missing required 'unit': {description or 'unnamed'} (value={value}). "
+                f"All parameters must specify unit='USD', 'years', 'deaths', 'ratio', 'multiplier', 'percentage', etc. "
+                f"This ensures consistent formatting with auto-scaling (e.g., $27.2B, 8.2 years, 463:1)."
+            )
 
         instance = super().__new__(cls, value)
         instance.source_ref = source_ref
@@ -4718,6 +4727,7 @@ TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
                 "Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution "
                 "to generate full expected value distribution. Central value uses 1% probability.",
     display_name="Expected Treaty ROI (Risk-Adjusted)",
+    unit="ratio",
     formula="TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
     confidence="low",
     keywords=["expected value", "risk-adjusted", "political risk", "bcr", "benefit cost ratio",

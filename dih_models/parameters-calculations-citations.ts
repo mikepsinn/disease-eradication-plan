@@ -3078,6 +3078,7 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
 
 export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   value: 847733.0038500001,
+  unit: "ratio",
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
   description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
   sourceType: "calculated",

@@ -61,9 +61,9 @@ This chapter relies on three tiers of evidence:
 
 **Model-Dependent Estimates** (quantitative analysis with Monte Carlo confidence intervals):
 
-- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} deaths from {{< var efficacy_lag_years >}}-year efficacy lag
-- {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs lost
-- {{< var type_ii_error_cost_ratio >}}:1 Type II/Type I error ratio
+- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} from {{< var efficacy_lag_years >}}-year efficacy lag
+- {{< var dfda_efficacy_lag_elimination_dalys >}} lost
+- {{< var type_ii_error_cost_ratio >}} Type II/Type I error ratio
 
 Even if you reject all model-dependent estimates, the empirical facts alone demonstrate the system is broken.
 :::
@@ -75,14 +75,14 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
 
-The current system costs **{{< var dfda_trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
+The current system costs **{{< var dfda_trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. Not a small difference - the difference between functional and designed-to-fail.
 
 ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
 
 Here's the breakdown of where the time goes:
 
-- **Phase I (Safety Testing):** {{< var phase_1_safety_duration_years >}} years - Tests if the drug kills people. *This part works.*
-- **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} years - Tests if the drug works better than placebo. *This is where people die waiting.*
+- **Phase I (Safety Testing):** {{< var phase_1_safety_duration_years >}} - Tests if the drug kills people. *This part works.*
+- **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} - Tests if the drug works better than placebo. *This is where people die waiting.*
 
 The math is simple: If you die in year 5 and the drug gets approved in year 10, the regulatory process murdered you.
 
@@ -90,7 +90,7 @@ $$
 t_{lag} = t_{total} - t_{safety} = 10.5 - 2.3 = 8.2 \text{ years}
 $$
 
-That's {{< var efficacy_lag_years >}} years sitting in regulatory purgatory *after* we already know the drug won't kill you.
+That's {{< var efficacy_lag_years >}} sitting in regulatory purgatory *after* we already know the drug won't kill you.
 
 You're two lifetimes from applying the scientific method to medicine. That's 0.0001% of human history - you invented science yesterday, cosmically speaking. The more clinical research you read, the more you realize you know nothing. Nearly every study ends with "more research is needed" (scientist-speak for "we have no idea what's happening, please give us more grant money"). This would be fine except people are dying while you figure it out.
 
@@ -127,7 +127,7 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 | **New Approvals** | [46/year (1960)](../references.qmd#post-1962-drug-approval-drop) | [13/year (1963)](../references.qmd#post-1962-drug-approval-drop) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
 | **Life Expectancy Growth** | [3.82 years/decade](../references.qmd#life-expectancy-increase-pre-1962) | [1.54 years/decade](../references.qmd#post-1962-life-expectancy-slowdown) | [60% reduction](../references.qmd#post-1962-life-expectancy-slowdown) |
 | **Trial Cost** | {{< var dfda_pragmatic_trial_cost_per_patient >}} (pragmatic) | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_trial_cost_reduction_factor >}}× increase |
-| **Time to Approval** | 2-3 years | {{< var fda_phase_1_to_approval_years >}} years | 5-8× slower |
+| **Time to Approval** | 2-3 years | {{< var fda_phase_1_to_approval_years >}} | 5-8× slower |
 
 The temporal break is exact. Every negative metric changed immediately in 1962.
 
@@ -287,12 +287,12 @@ Let's quantify both types of harm:
 
 **Type I Harm (approving unsafe drugs):**
 
-- Even with generous overestimates, prevented harm: ~{{< var type_i_error_benefit_dalys >}} DALYs saved (1962-2024)
+- Even with generous overestimates, prevented harm: ~{{< var type_i_error_benefit_dalys >}} saved (1962-2024)
 - This assumes ALL drug withdrawals were prevented by the 1962 changes that blocked patient access during lengthy efficacy trials (they weren't; Phase I safety testing already existed)
 
 **Type II Harm (delaying beneficial treatments):**
 
-- Documented harm: {{< var dfda_efficacy_lag_elimination_dalys >}} DALYs lost (1962-2024)
+- Documented harm: {{< var dfda_efficacy_lag_elimination_dalys >}} lost (1962-2024)
 - This is from delayed access alone, not counting the additional safety failures the system creates
 
 $$
@@ -471,11 +471,11 @@ Phase I safety testing works. It screens out immediately toxic compounds. But bl
 
 ## The Bottom Line
 
-- **{{< var efficacy_lag_years >}} years** of post-safety efficacy lag (Phase II/III delay after Phase I safety verification)
-- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} deaths** from eliminating the 8.2-year efficacy lag
-- **{{< var dfda_efficacy_lag_elimination_dalys >}} DALYs** destroyed 
+- **{{< var efficacy_lag_years >}}** of post-safety efficacy lag (Phase II/III delay after Phase I safety verification)
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** from eliminating the 8.2-year efficacy lag
+- **{{< var dfda_efficacy_lag_elimination_dalys >}}** destroyed 
 - **{{< var dfda_efficacy_lag_elimination_economic_value >}}** in economic carnage
-- **{{< var type_ii_error_cost_ratio >}}:1** harm ratio (delay vs. prevention)
+- **{{< var type_ii_error_cost_ratio >}}** harm ratio (delay vs. prevention)
 
 Phase I safety testing works. Keep it.
 
