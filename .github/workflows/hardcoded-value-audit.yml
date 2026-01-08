@@ -1,0 +1,160 @@
+name: Daily Hardcoded Value Audit
+
+on:
+  schedule:
+    # Run daily at 3 AM UTC (10 PM EST / 7 PM PST)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      max_files:
+        description: 'Maximum files to process (0 = all)'
+        required: false
+        default: '10'
+      dry_run:
+        description: 'Dry run (no PR created)'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  audit-hardcoded-values:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Find files with hardcoded values
+        id: find-files
+        run: |
+          # Find QMD files with potential hardcoded values (excluding _build_temp)
+          echo "Scanning for hardcoded values..."
+
+          # Create list of files with hardcoded currency/percentages
+          FILES=$(grep -rl '\$[0-9,]\+[KMB]\?\|[0-9]\+%' knowledge/ \
+            --include="*.qmd" \
+            | grep -v "_build_temp" \
+            | grep -v "references.qmd" \
+            | head -${{ github.event.inputs.max_files || 10 }} \
+            || true)
+
+          if [ -z "$FILES" ]; then
+            echo "No files with hardcoded values found"
+            echo "has_files=false" >> $GITHUB_OUTPUT
+          else
+            echo "Found files:"
+            echo "$FILES"
+            # Save to file for later use
+            echo "$FILES" > /tmp/files-to-process.txt
+            echo "has_files=true" >> $GITHUB_OUTPUT
+            echo "file_count=$(echo "$FILES" | wc -l)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Claude Code Audit
+        if: steps.find-files.outputs.has_files == 'true'
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          additional_permissions: |
+            contents: write
+            pull-requests: write
+          prompt: |
+            TASK: Replace hardcoded values with variables from _variables.yml
+
+            PROCESS:
+            1. First, read _analysis/parameter-summary.md to build your lookup table of available variables
+            2. For each file listed below, find hardcoded values and replace with {{< var name >}}
+
+            FILES TO PROCESS:
+            $(cat /tmp/files-to-process.txt 2>/dev/null || echo "No files")
+
+            RULES:
+            - SKIP "1%" - this is the treaty concept, not a variable
+            - SKIP years in citations (e.g., @source-2024)
+            - SKIP lines that are already fully using variables
+            - DO find hardcoded values on lines that have SOME variables but also hardcoded numbers
+            - VERIFY semantic context matches before replacing (same number can mean different things)
+
+            MATCHING STRATEGY:
+            1. Normalize values: $14M, $14,000,000, $14000000 all match
+            2. Match by type: currency matches currency, percentage matches percentage
+            3. If multiple variables have same value, check context to pick correct one
+
+            COMMON PATTERNS:
+            - $14M (ADAPTABLE trial) -> {{< var adaptable_trial_total_cost >}}
+            - 15,076 patients -> {{< var adaptable_trial_patients >}}
+            - $27B or $27.2B (treaty) -> {{< var treaty_annual_funding >}}
+            - 86.1% (exclusion rate) -> {{< var antidepressant_trial_exclusion_rate >}}
+            - $2.6B (drug dev) -> {{< var fda_phase_2_3_cost >}}
+
+            OUTPUT:
+            After making changes, create a summary of:
+            - Files modified
+            - Replacements made (old value -> variable name)
+            - Values without matches (may need new parameters)
+
+            If no changes needed, say "NO_CHANGES_NEEDED" and explain why.
+
+            DRY RUN: ${{ github.event.inputs.dry_run || 'false' }}
+            If dry run is true, only report what WOULD be changed, don't edit files.
+          claude_args: |
+            --model claude-sonnet-4-20250514
+            --max-tokens 16000
+
+      - name: Create Pull Request
+        if: steps.find-files.outputs.has_files == 'true' && github.event.inputs.dry_run != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: replace hardcoded values with variables"
+          title: "[Automated] Replace hardcoded values with variables"
+          body: |
+            ## Automated Hardcoded Value Replacement
+
+            This PR was automatically generated by the daily hardcoded value audit workflow.
+
+            ### What Changed
+            - Scanned ${{ steps.find-files.outputs.file_count }} QMD files
+            - Replaced hardcoded numbers with `{{< var name >}}` references
+
+            ### Review Checklist
+            - [ ] Verify semantic context is correct for each replacement
+            - [ ] Check that 1% treaty references were NOT replaced
+            - [ ] Confirm no false positives (same number, different meaning)
+
+            ### Claude's Summary
+            See workflow run for detailed changes.
+
+            ---
+            *Run ID: ${{ github.run_id }}*
+          branch: automated/hardcoded-value-replacement
+          delete-branch: true
+          labels: |
+            automated
+            variables
+            maintenance
