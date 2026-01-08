@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (297 entries)
+# Contains only variables used in this paper (298 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -1286,6 +1286,21 @@ military_to_government_clinical_trials_spending_ratio_latex: '$$
   &= \frac{\$2.72T}{\$4.5B} \\
 
   &= 604
+
+  \end{aligned}
+
+  $$'
+military_vs_medical_research_ratio_latex: '$$
+
+  \begin{aligned}
+
+  Ratio_{mil,RD} \\
+
+  &= \frac{Spending_{mil,ann}}{Spending_{global}} \\
+
+  &= \frac{\$2.72T}{\$67.5B} \\
+
+  &= 40.3
 
   \end{aligned}
 
