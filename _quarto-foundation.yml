@@ -29,7 +29,7 @@ book:
   page-navigation: true
   chapters:
     # Cover page / Introduction
-    - knowledge/grant-proposal/index.qmd
+    - index.qmd
 
     # Core grant proposal content (to be created in Phase 2)
     - knowledge/grant-proposal/executive-summary.qmd
@@ -93,6 +93,7 @@ book:
             text: "References & Citations"
 
 execute:
+  enabled: false  # Disable code execution for grant proposal (no dynamic content needed)
   fig-path: "knowledge/figures/"
   cache: false
   freeze: auto  # Only re-run cells when content changes
@@ -169,7 +170,7 @@ language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
 
-jupyter: dih-project-kernel
+jupyter: python3
 
 format:
   html:
@@ -290,6 +291,13 @@ format:
         \usepackage[T1]{fontenc}
         \usepackage{lmodern}
 
+        % Unicode support for special characters
+        \usepackage{newunicodechar}
+        \DeclareUnicodeCharacter{2713}{\checkmark}
+        \DeclareUnicodeCharacter{2705}{\checkmark}
+        \DeclareUnicodeCharacter{00D7}{\texttimes}
+        \DeclareUnicodeCharacter{2265}{$\geq$}
+
         % Professional formatting for grant proposals
         \usepackage{setspace}
         \onehalfspacing
@@ -370,8 +378,9 @@ format:
         \setlength{\parskip}{6pt plus 2pt minus 1pt}
         \setlength{\parindent}{0pt}
 
-        % Section formatting
-        \usepackage{titlesec}
+        % Section formatting (with nobottomtitles option to prevent orphaned headers)
+        \usepackage[nobottomtitles]{titlesec}
+        \renewcommand{\bottomtitlespace}{0.2\textheight}
         \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
         \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
         \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
@@ -380,7 +389,3 @@ format:
         \titlespacing*{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
         \titlespacing*{\subsection}{0pt}{18pt plus 3pt minus 2pt}{8pt plus 2pt minus 2pt}
         \titlespacing*{\subsubsection}{0pt}{14pt plus 2pt minus 2pt}{6pt plus 2pt minus 2pt}
-
-        % Keep sections with following content
-        \usepackage[nobottomtitles]{titlesec}
-        \renewcommand{\bottomtitlespace}{0.2\textheight}

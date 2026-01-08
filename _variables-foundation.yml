@@ -1,226 +1,153 @@
-# Foundation Grant Proposal Variables
-# DO NOT EDIT - This file provides simplified, grant-friendly presentations of metrics
-# These variables reference parameters from _variables.yml but format them for foundation program officers
-#
-# Use in grant proposal QMD files with: {{< var foundation_variable_name >}}
-#
-# Re-generate the source parameters with:
-# python scripts/generate-everything-parameters-variables-calculations-references.py
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (22 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+additional_drugs_from_cost_elimination: '<a href="/knowledge/appendix/parameters-and-calculations#sec-additional_drugs_from_cost_elimination"
+  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="medium"
+  title="Additional drug approvals per year when Phase 2/3 cost barrier eliminated.
+  Assumes valley-of-death compounds (abandoned due to cost) would have similar success
+  rate to funded compounds. | Calculated from 2 inputs | ~ Medium confidence | Formula:
+  CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT | Unit: drugs/year | Click to view details,
+  calculation & sources">20 drugs/year (95% CI: 18 drugs/year-22 drugs/year)</a>'
+additional_drugs_from_cost_elimination_latex: '$$
+
+  Cost = Drug_{current} \times Deaths = 50 \times 40\% = 20
+
+  $$'
+bed_nets_cost_per_daly: '<a href="/knowledge/appendix/parameters-and-calculations#sec-bed_nets_cost_per_daly"
+  class="parameter-link" data-source-ref="givewell-cost-per-life-saved" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="high" title="GiveWell cost per DALY for
+  insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted
+  Life Years) measure disease burden by combining years of life lost and years lived
+  with disability. Bed nets prevent malaria deaths and are considered a gold standard
+  benchmark for cost-effective global health interventions - if an intervention costs
+  less per DALY than bed nets, it''s exceptionally cost-effective. GiveWell synthesizes
+  peer-reviewed academic research with transparent, rigorous methodology and extensive
+  external expert review. | ✓ High confidence | 📊 Peer-reviewed | 95% CI: [$78, $100]
+  | Dist: Normal | Unit: USD/DALY | Click to view details, calculation & sources">$89
+  (95% CI: $78-$100)</a>'
+bed_nets_cost_per_daly_cite: '@givewell-cost-per-life-saved'
+dfda_trial_capacity_plus_efficacy_lag_dalys: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_dalys"
+  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
+  title="Total DALYs averted from the combined dFDA timeline shift. Calculated as
+  annual global DALY burden × eventually avoidable percentage × timeline shift years.
+  Includes both fatal and non-fatal diseases (WHO GBD methodology). | Calculated from
+  3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT
+  × TIMELINE_SHIFT | Unit: DALYs | Click to view details, calculation & sources">565B
+  DALYs (95% CI: 365B DALYs-859B DALYs)</a>'
+dfda_trial_capacity_plus_efficacy_lag_dalys_latex: '$$
+
+  DALYs_{averted} = 2.88B \times 92.1\% \times 207 = 549B
+
+  $$'
+dfda_trial_capacity_plus_efficacy_lag_lives_saved: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved"
+  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
+  title="Total eventually avoidable deaths from the combined dFDA timeline shift.
+  Represents deaths prevented when cures arrive earlier due to both increased trial
+  capacity and eliminated efficacy lag. | Calculated from 2 inputs | ? Low confidence
+  | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT
+  | Unit: deaths | Click to view details, calculation & sources">10.7B deaths (95%
+  CI: 7.55B deaths-15.9B deaths)</a>'
+dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex: '$$
+
+  \begin{aligned}
+
+  Capacity_{DFDA} \\
+
+  &= ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS \times AVOIDABLE_PCT
+  \\
+
+  &= 10.7B
+
+  \end{aligned}
+
+  $$'
+global_military_spending_annual_2024: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_annual_2024"
+  class="parameter-link" data-source-ref="global-military-spending" data-source-type="external"
+  data-confidence="high" title="Global military spending in 2024 | ✓ High confidence
+  | Dist: Fixed | Unit: USD | Click to view details, calculation & sources">$2.72T</a>'
+global_military_spending_annual_2024_cite: '@global-military-spending'
+recovery_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_per_patient"
+  class="parameter-link" data-source-ref="recovery-cost-500" data-source-type="external"
+  data-confidence="high" title="RECOVERY trial cost per patient. Note: RECOVERY was
+  an outlier - hospital-based during COVID emergency, minimal extra procedures, existing
+  NHS infrastructure, streamlined consent. Replicating this globally will be harder.
+  | ✓ High confidence | 95% CI: [$400, $2.50K] | Dist: Lognormal | Unit: USD/patient
+  | Click to view details, calculation & sources">$500 (95% CI: $400-$2.50K)</a>'
+recovery_trial_cost_per_patient_cite: '@recovery-cost-500'
+recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved"
+  class="parameter-link" data-source-ref="recovery-trial-1m-lives-saved" data-source-type="external"
+  data-confidence="medium" title="Estimated lives saved globally by RECOVERY trial''s
+  dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al.
+  Nature Communications 2021 methodology applying RECOVERY trial mortality reductions
+  (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty
+  range reflects extrapolation assumptions. | ~ Medium confidence | 95% CI: [500k
+  lives, 2.00M lives] | Dist: Lognormal | Unit: lives | Click to view details, calculation
+  & sources">1.00M lives (95% CI: 500k lives-2.00M lives)</a>'
+recovery_trial_global_lives_saved_cite: '@recovery-trial-1m-lives-saved'
+traditional_phase3_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient"
+  class="parameter-link" data-source-ref="trial-costs-fda-study" data-source-type="external"
+  data-confidence="high" title="Phase 3 cost per patient (median from FDA study) |
+  ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit: USD/patient
+  | Click to view details, calculation & sources">$41K (95% CI: $20K-$120K)</a>'
+traditional_phase3_cost_per_patient_cite: '@trial-costs-fda-study'
+treaty_annual_funding: '<span class="parameter-definition" title="Annual funding from
+  1% of global military spending redirected to DIH | Unit: USD/year | Core definition">$27.2B</span>'
+treaty_annual_funding_latex: '$$
+
+  \begin{aligned}
+
+  Funding_{ann} \\
+
+  &= Spending_{mil,ann} \times Reduction_{treaty} \\
 
-# =============================================================================
-# EXECUTIVE SUMMARY METRICS
-# =============================================================================
+  &= \$2.72T \times 1\% \\
 
-# One-sentence pitch for grant proposal cover letters
-foundation_pitch: "The Decentralized Institutes of Health seeks funding to establish a global treaty redirecting 1% of military spending ($27.2B/year) to pragmatic clinical trials, achieving cost-effectiveness of $0.84 per DALY - 105× better than bed nets."
+  &= \$27.2B
 
-# Problem statement - disease burden
-foundation_problem_statement: "Current regulatory barriers and clinical trial inefficiencies cause 184.6M preventable deaths over 13 years, 4.83B DALYs lost, and $11 trillion in economic losses. The cost to conduct clinical trials is 82× higher than necessary, limiting treatment access for billions."
+  \end{aligned}
 
-# Solution statement
-foundation_solution_statement: "The 1% Treaty redirects $27.2B annually from military to medical research, funding pragmatic trials that reduce costs by 82× (from $41K to $500 per patient). The Decentralized FDA (dFDA) automates trial enrollment from electronic health records, eliminating efficacy lags that cost 7.94B DALYs."
+  $$'
+treaty_lives_saved_annual_global: '<a href="/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global"
+  class="parameter-link" data-source-ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global"
+  data-source-type="calculated" data-confidence="high" title="Annual lives saved from
+  1% reduction in conflict deaths | Calculated from 2 inputs | ✓ High confidence |
+  Formula: TOTAL_DEATHS × REDUCTION_PCT | Unit: lives/year | Click to view details,
+  calculation & sources">2.45k lives/year (95% CI: 1.94k lives/year-3.02k lives/year)</a>'
+treaty_lives_saved_annual_global_latex: '$$
 
-# Funding request
-foundation_funding_request: "$1.02B campaign funding to achieve treaty ratification, unlocking $27.2B annually in perpetuity. Campaign budget includes $650M for lobbying (exceeding pharmaceutical industry spend of $300M/year) and $288M for global public referendum reaching 208M verified voters."
+  \begin{aligned}
 
-# Primary impact metric for foundations
-foundation_primary_impact: "**Cost per DALY: $0.84** (105× more cost-effective than bed nets at $89/DALY, the gold standard for global health interventions)"
+  Deaths_{ann} \\
 
-# =============================================================================
-# COST-EFFECTIVENESS COMPARISONS
-# =============================================================================
+  &= Deaths_{total} \times Reduction_{treaty} \\
 
-# Cost per DALY compared to GiveWell top charities
-foundation_cost_per_daly_headline: "$0.84 per DALY averted"
+  &= 245{,}000 \times 1\% \\
 
-foundation_cost_per_daly_context: "This intervention achieves exceptional cost-effectiveness at $0.84 per DALY, compared to: bed nets ($89/DALY), deworming programs ($100-300/DALY), and vitamin A supplementation ($15-25/DALY). Only unconditional cash transfers to extremely poor households achieve comparable efficiency."
+  &= 2{,}450
 
-# Leverage ratio for campaign investment
-foundation_campaign_leverage: "**2,659× annual leverage:** Each $1 invested in the treaty campaign generates $2,659 annually in perpetual health funding. Campaign cost of $1.02B unlocks $27.2B/year forever."
+  \end{aligned}
 
-foundation_campaign_roi_simple: "**542× return on investment** from direct treaty benefits (R&D cost savings + efficacy lag elimination), not including additional peace dividend, economic growth, or compounding effects."
+  $$'
+treaty_peace_plus_rd_annual_benefits: '<a href="/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits"
+  class="parameter-link" data-source-ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits"
+  data-source-type="calculated" data-confidence="high" title="Basic annual benefits:
+  peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2
+  of 8 benefit categories, excludes regulatory delay value) | Calculated from 2 inputs
+  | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS | Unit: USD/year
+  | Click to view details, calculation & sources">$172B (95% CI: $139B-$213B)</a>'
+treaty_peace_plus_rd_annual_benefits_latex: '$$
 
-# Lives saved per dollar invested
-foundation_lives_per_dollar: "**1 life saved per $97** invested in the treaty campaign (10.5B lives saved over 13 years from $1.02B campaign investment)"
+  \begin{aligned}
 
-# =============================================================================
-# BUDGET SUMMARY VARIABLES
-# =============================================================================
+  Benefit_{ann} \\
 
-# Total campaign budget with breakdown
-foundation_budget_total: "**Total Campaign Budget:** $1.02B over 36 months, structured as success-contingent VICTORY Bonds (paid only upon treaty ratification)"
+  &= Cost_{soc,ann} + Benefit_{DFDA,ann} \\
 
-foundation_budget_lobbying: "**Lobbying Campaign:** $650M - Exceeds combined annual spend of pharmaceutical industry ($300M) and military-industrial complex ($150M) to achieve policy breakthrough"
+  &= \$114B + \$58.6B \\
 
-foundation_budget_referendum: "**Global Referendum:** $288M - Public education and verified voting platform to demonstrate popular mandate (target: 208M verified voters representing 2.5% of global population)"
+  &= \$172B
 
-foundation_budget_reserve: "**Strategic Reserve:** $80M - Contingency fund for extended campaigns or unexpected opposition"
+  \end{aligned}
 
-# Phase-based funding
-foundation_phase_1_seed: "**Phase 1 (Seed):** $250M-$400M to build engagement platform, prove model in pilot countries, achieve 50M verified participants"
-
-foundation_phase_2_series_a: "**Phase 2 (Series A):** $500M-$1B to scale to all G7 nations, achieve 2.5% global participation threshold (280M people)"
-
-foundation_phase_3_growth: "**Phase 3 (Growth):** $500M-$1.1B to secure ratification in major powers, capitalize 1% Treaty Fund"
-
-# =============================================================================
-# OUTCOME METRICS FOR M&E FRAMEWORKS
-# =============================================================================
-
-# Short-term outcomes (0-3 years) - Campaign phase
-foundation_outcomes_short_term: "**0-3 Years (Campaign):** 208M verified voter commitments, 50+ patient advocacy partnerships, policy support in 3+ G7 nations, platform demonstrating scalable trial enrollment"
-
-# Medium-term outcomes (3-5 years) - Early implementation
-foundation_outcomes_medium_term: "**3-5 Years (Early Implementation):** Treaty ratification by 67+ nations (UN threshold), first $27.2B annual disbursement, 500+ pragmatic trials launched, dFDA platform processing 10M+ patient records"
-
-# Long-term impact (5-13 years) - Full implementation
-foundation_outcomes_long_term: "**5-13 Years (Full Impact):** 184.6M lives saved, 4.83B DALYs averted, 500+ new drug approvals via pragmatic trials, $11 trillion economic value generated, efficacy lag reduced from 13 years to near-zero"
-
-# Key performance indicators
-foundation_kpi_engagement: "**Engagement KPI:** Verified voter participation rate (target: 208M = 2.5% global population)"
-
-foundation_kpi_policy: "**Policy KPI:** Number of G7/G20 nations with formal treaty support commitments (target: 15 of 27 nations by Year 2)"
-
-foundation_kpi_trials: "**Implementation KPI:** Pragmatic trials launched per quarter post-ratification (target: 125 trials/quarter = 500 trials/year)"
-
-foundation_kpi_cost: "**Efficiency KPI:** Average cost per trial participant (target: maintain <$1,000/patient, 41× reduction from traditional $41K/patient)"
-
-# =============================================================================
-# RISK MITIGATION SUMMARIES
-# =============================================================================
-
-# Political risk
-foundation_risk_political: "**Political Risk - MODERATE:** Opposition from pharmaceutical industry ($300M/year lobbying) and defense contractors. **Mitigation:** Campaign budget ($650M lobbying) exceeds opposition 2:1; success-contingent VICTORY Bonds align incentives; public referendum demonstrates popular mandate reducing political risk."
-
-# Implementation risk
-foundation_risk_implementation: "**Implementation Risk - LOW:** Pragmatic trial model proven by RECOVERY trial (15,000 patients, $500/patient, 1M lives saved). **Mitigation:** Pilot phase demonstrates scalability before full deployment; existing EHR infrastructure leveraged; experienced clinical trial operators as implementation partners."
-
-# Financial risk
-foundation_risk_financial: "**Financial Risk - LOW:** VICTORY Bond structure ensures campaign costs only paid upon success. **Mitigation:** Bonds issued by governments post-ratification, backed by treaty revenue ($27.2B/year); phased funding approach with go/no-go decision points; reserve fund ($80M) covers 12 months extended operations."
-
-# Timeline risk
-foundation_risk_timeline: "**Timeline Risk - MODERATE:** Treaty ratification may extend beyond 36-month target. **Mitigation:** Multi-path strategy (direct democracy referendum + parliamentary lobbying + diplomatic channels); early wins in pilot countries create momentum; reserve funding extends runway to 48 months if needed."
-
-# =============================================================================
-# THEORY OF CHANGE - CAUSAL PATHWAY
-# =============================================================================
-
-# Inputs
-foundation_toc_inputs: "**Inputs:** $1.02B campaign funding, 200+ FTE staff, partnerships with 50+ patient advocacy groups, technology platform for verified voting, policy expertise in 27 G7/G20 nations, diplomatic engagement with treaty negotiators"
-
-# Activities
-foundation_toc_activities: "**Activities:** Lobbying campaigns in G7/G20 nations, global public referendum with 208M verified voters, public education on regulatory inefficiency costs, partnership building with patient groups, diplomatic engagement for treaty text negotiation, technology platform development for trial enrollment"
-
-# Outputs
-foundation_toc_outputs: "**Outputs:** 208M verified voter commitments, policy support resolutions in 15+ nations, treaty text ratified by 67+ nations, VICTORY Bond issuance generating $1.02B campaign reimbursement, dFDA platform operational with 10M+ patient records"
-
-# Outcomes
-foundation_toc_outcomes: "**Outcomes:** $27.2B annual funding stream established, 500 pragmatic trials launched per year, clinical trial cost reduced 82× (from $41K to $500 per patient), efficacy lag reduced from 13 years to <1 year, 20 additional drug approvals per year from eliminated cost barriers"
-
-# Long-term impact
-foundation_toc_impact: "**Impact:** 184.6M lives saved over 13 years, 4.83B DALYs averted, $11 trillion economic value generated, health spending efficiency improves globally, pharmaceutical R&D costs reduced by $249B over 13 years, template established for evidence-based reallocation of military spending to public health"
-
-# =============================================================================
-# EVIDENCE BASE SUMMARIES
-# =============================================================================
-
-# Historical precedent - Ottawa Treaty
-foundation_evidence_ottawa: "**Ottawa Treaty Precedent (1997):** International treaty banning landmines achieved 133 nation ratifications in 10 years through civil society campaign with <$50M budget. Demonstrates feasibility of rapid treaty adoption via public pressure despite defense industry opposition."
-
-# Historical precedent - RECOVERY trial
-foundation_evidence_recovery: "**RECOVERY Trial (2020-2021):** Pragmatic trial enrolled 15,000 COVID patients at $500/patient (82× cheaper than traditional $41K/patient cost), discovered dexamethasone treatment saving 1M lives globally. Proves pragmatic trial model works at scale with dramatic cost reduction and life-saving outcomes."
-
-# Historical precedent - Smallpox eradication
-foundation_evidence_smallpox: "**Smallpox Eradication (1967-1980):** International cooperation eradicated disease killing 300M+ people in 20th century. Demonstrates possibility of global coordination on health emergencies and massive returns from public health investment ($300M campaign preventing $1B+ annual costs)."
-
-# Academic validation
-foundation_evidence_academic: "**Academic Foundation:** 500+ peer-reviewed citations on regulatory delay costs, clinical trial inefficiencies, pragmatic trial benefits, health economics, peace dividend calculations, and pharmaceutical R&D models. Full bibliography with confidence ratings available in appendices."
-
-# Cost-effectiveness validation
-foundation_evidence_cost_effectiveness: "**Cost-Effectiveness Methodology:** Conservative estimates using established health economics frameworks. Cost per DALY calculations follow GiveWell methodology. Confidence intervals based on Monte Carlo analysis (10,000 simulations). All parameters traceable to peer-reviewed sources or official statistics (WHO, SIPRI, FDA)."
-
-# =============================================================================
-# ORGANIZATIONAL CAPACITY HIGHLIGHTS
-# =============================================================================
-
-# Legal structure
-foundation_org_structure: "**Four-Part Legal Architecture:** (1) 501(c)(3) nonprofit foundation for charitable activities and grant management, (2) 501(c)(4) advocacy organization for lobbying and policy campaigns, (3) Super PAC for election-related advocacy, (4) International treaty support organization. Structure ensures compliance while maximizing advocacy effectiveness."
-
-# Financial management
-foundation_org_financial: "**Financial Management:** Success-contingent VICTORY Bond structure minimizes upfront cash requirements. Transparent budget tracking with quarterly reporting. Independent audit committee. Reserves maintained at 12 months operating expenses. Government bond backing post-ratification ensures campaign reimbursement."
-
-# Governance
-foundation_org_governance: "**Governance Framework:** Independent board with expertise in public health, diplomacy, advocacy, and health economics. Advisory council including former WHO officials, clinical trial researchers, health economists, and patient advocates. Conflict of interest policies prohibiting pharmaceutical industry board members. Quarterly stakeholder reports with impact metrics."
-
-# Track record
-foundation_org_track_record: "**Relevant Experience:** Project lead Mike P. Sinn has 15+ years in health technology and clinical trial optimization. Advisory team includes academics from Johns Hopkins, Harvard, and Oxford with peer-reviewed publications in health economics and regulatory policy. Partnership discussions underway with established patient advocacy groups representing 50M+ patients globally."
-
-# =============================================================================
-# QUICK REFERENCE SNIPPETS FOR GRANT FORMS
-# =============================================================================
-
-# 50-word executive summary
-foundation_summary_50_words: "Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials via international treaty. Campaign cost: $1.02B unlocking perpetual funding. Cost-effectiveness: $0.84 per DALY (105× better than bed nets). Impact: 184.6M lives saved, 4.83B DALYs averted, $11 trillion economic value over 13 years."
-
-# 100-word executive summary
-foundation_summary_100_words: "The Decentralized Institutes of Health proposes a campaign to pass an international treaty redirecting 1% of global military spending ($27.2B annually) to pragmatic clinical trials and decentralized drug assessment. Campaign budget of $1.02B (structured as success-contingent VICTORY Bonds) will fund lobbying exceeding pharmaceutical industry spend and a global referendum reaching 208M verified voters. The intervention achieves exceptional cost-effectiveness at $0.84 per DALY - 105× better than bed nets. Projected impact: 184.6M lives saved, 4.83B DALYs averted, and $11 trillion in economic value over 13 years. The model is proven by the RECOVERY trial (15,000 patients, $500/patient, 1M lives saved)."
-
-# 250-word executive summary
-foundation_summary_250_words: "The Decentralized Institutes of Health seeks funding to establish a global treaty redirecting 1% of military spending ($27.2B/year) to pragmatic clinical trials, achieving exceptional cost-effectiveness of $0.84 per DALY - 105× better than insecticide-treated bed nets ($89/DALY), the gold standard for global health interventions.\n\n**The Problem:** Current regulatory barriers and clinical trial inefficiencies cause 184.6M preventable deaths over 13 years, 4.83B DALYs lost, and $11 trillion in economic losses. Traditional clinical trials cost $41K per patient - 82× higher than necessary, limiting treatment access for billions.\n\n**The Solution:** A treaty-funded system redirecting $27.2B annually from military to medical research. Pragmatic trials reduce costs 82× (to $500/patient) while maintaining scientific rigor. The Decentralized FDA (dFDA) automates trial enrollment from electronic health records, eliminating the 13-year efficacy lag that currently costs 7.94B DALYs.\n\n**Funding Request:** $1.02B campaign budget to achieve treaty ratification, structured as success-contingent VICTORY Bonds (paid only upon treaty passage). Includes $650M for lobbying (exceeding pharmaceutical industry's $300M/year) and $288M for global referendum reaching 208M verified voters.\n\n**Proven Model:** The RECOVERY trial demonstrated this approach works - 15,000 COVID patients enrolled at $500/patient (82× cheaper), discovering dexamethasone treatment that saved 1M lives globally.\n\n**Impact:** 184.6M lives saved, 4.83B DALYs averted, $11 trillion economic value generated over 13 years. Each $1 invested generates $2,659 annually in perpetual health funding - a 2,659× annual leverage ratio unprecedented in global health."
-
-# Amount requested (varies by foundation)
-foundation_amount_requested_full: "$1.02B (full campaign budget)"
-foundation_amount_requested_seed: "$250M-$400M (Phase 1 seed funding)"
-foundation_amount_requested_anchor: "$50M-$100M (anchor donation to catalyze larger fundraise)"
-
-# Geographic scope
-foundation_geographic_scope: "Global - treaty requires ratification by 67 nations (UN threshold). Campaign focuses on G7/G20 nations representing 60% of global military spending. Implementation benefits all nations via accelerated drug development and reduced pharmaceutical costs."
-
-# Beneficiary population
-foundation_beneficiaries: "Primary: 8 billion people globally benefiting from accelerated treatment access and reduced clinical trial barriers. Secondary: 207M annual patients with rare diseases gaining access to trials previously deemed 'not economically viable'. Tertiary: Taxpayers in treaty nations benefiting from $249B pharmaceutical R&D cost savings over 13 years."
-
-# =============================================================================
-# COMPARISON TO OTHER INTERVENTIONS (for philanthropic context)
-# =============================================================================
-
-# GiveWell top charities comparison table data
-foundation_comparison_bed_nets: "Bed nets: $89/DALY | 105× less efficient than 1% treaty ($0.84/DALY)"
-foundation_comparison_deworming: "Deworming: $100-300/DALY | 119-357× less efficient than 1% treaty"
-foundation_comparison_cash_transfers: "Cash transfers: $50-200/DALY | 60-238× less efficient than 1% treaty"
-foundation_comparison_vitamin_a: "Vitamin A: $15-25/DALY | 18-30× less efficient than 1% treaty"
-
-# Scale comparison
-foundation_scale_context: "While GiveWell top charities serve millions annually with budgets of $10M-$200M, the 1% treaty operates at unprecedented scale: $27.2B/year serving 8 billion people. This is not 'moving a few bed nets to the margin' - it's restructuring the entire pharmaceutical R&D system."
-
-# Neglectedness
-foundation_neglectedness: "**Highly neglected:** Zero major foundations currently funding treaty-based approaches to medical research reform. All focus on marginal improvements within existing system rather than systemic change. $300M/year spent by pharmaceutical industry to *prevent* the reforms we're proposing."
-
-# Tractability
-foundation_tractability: "**Tractable:** Historical precedents demonstrate feasibility (Ottawa Treaty, smallpox eradication). Pragmatic trial model proven at scale (RECOVERY trial). Public polling shows 70%+ support for reducing military spending in most democracies. Campaign budget exceeds opposition 2:1."
-
-# =============================================================================
-# CONTACT AND LOGISTICS
-# =============================================================================
-
-foundation_contact_name: "Mike P. Sinn"
-foundation_contact_title: "Founder, Decentralized Institutes of Health"
-foundation_contact_email: "mike@warondisease.org"
-foundation_contact_website: "https://WarOnDisease.org"
-foundation_contact_phone: "TBD - Provide if required by foundation"
-
-foundation_org_legal_name: "Decentralized Institutes of Health Foundation (501(c)(3) - incorporation in progress)"
-foundation_org_ein: "TBD - Provide once 501(c)(3) approved"
-foundation_org_address: "TBD - Provide registered office address"
-
-# Grant proposal document
-foundation_proposal_date: "2025"
-foundation_proposal_version: "1.0.0"
-foundation_proposal_pdf: "Foundation-Grant-Proposal.pdf"
-
-# =============================================================================
-# METADATA
-# =============================================================================
-
-foundation_variables_count: "80+ foundation-specific variables for grant proposals"
-foundation_variables_source: "Generated from parameters in _variables.yml, reformatted for philanthropic audiences"
-foundation_last_updated: "2025-01-08"
+  $$'

@@ -218,12 +218,12 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 - **Risk Threshold**: If blended cost exceeds $2/vote sustained for 8 weeks, trigger pricing/strategy review
 
 **KPI 1.3: Geographic Distribution**
-- **Definition**: Number of countries with ≥100K verified voter commitments
+- **Definition**: Number of countries with >=100K verified voter commitments
 - **Measurement Method**: Platform database with IP geolocation and government ID verification
 - **Baseline**: 0 (campaign start)
 - **Phase 1 Target**: 25 countries (pilot phase)
 - **Phase 2 Target**: 150+ countries (global representation)
-- **Phase 3 Target**: All G7/G20 nations with ≥1M voters each
+- **Phase 3 Target**: All G7/G20 nations with >=1M voters each
 - **Reporting Frequency**: Monthly
 - **Data Source**: Platform database geographic analytics
 - **Risk Threshold**: If <10 G7 nations reach 1M voters by Phase 2 end, escalate ratification difficulty assessment
@@ -335,8 +335,8 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 - **Definition**: Percentage of dFDA trials leading to regulatory approval (FDA, EMA, etc.)
 - **Measurement Method**: Approved drugs ÷ trials completed and submitted for approval
 - **Baseline**: ~10% (traditional Phase 2 success rate into Phase 3 approval)
-- **Phase 3 Target**: ≥40% (real-world evidence reduces approval failures)
-- **Year 2-3 Target**: ≥50% (pragmatic trial model matures, better drug selection)
+- **Phase 3 Target**: >=40% (real-world evidence reduces approval failures)
+- **Year 2-3 Target**: >=50% (pragmatic trial model matures, better drug selection)
 - **Reporting Frequency**: Annually (trials require 2-5 years to complete)
 - **Data Source**: FDA/EMA approval databases + dFDA platform tracking
 - **Risk Threshold**: If success rate <30% after first 20 completed trials, trigger regulatory strategy review
@@ -377,7 +377,7 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 - **Definition**: Months of operating expenses covered by strategic reserve
 - **Measurement Method**: Reserve fund balance ÷ average monthly expenses
 - **Baseline**: 12 months ({{< var treaty_campaign_budget_reserve >}} reserve fund)
-- **Phase 1-2 Target**: ≥12 months (full runway for extended campaigns)
+- **Phase 1-2 Target**: >=12 months (full runway for extended campaigns)
 - **Phase 3 Target**: 12-18 months (buffer for ratification delays)
 - **Post-Ratification Target**: 6-12 months (treaty revenue reduces reserve dependency)
 - **Reporting Frequency**: Monthly
@@ -568,13 +568,13 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 ### Phase 1 Decision Point (Month 12)
 
 **GO Criteria (All Must Be Met)**:
-1. ✅ Platform operational with 99.9% uptime and <1% fraud rate
-2. ✅ 50M verified voter commitments achieved
-3. ✅ Cost-per-vote <$10 average (with clear path to <$1.50 in Phase 2)
-4. ✅ 2+ pilot countries with >60% public support in polling
-5. ✅ 20+ patient advocacy partnerships representing 10M+ patients
-6. ✅ No critical technical blockers (platform scales to 100M+ users)
-7. ✅ No critical legal blockers (campaign finance compliance validated in pilot countries)
+1. [OK] Platform operational with 99.9% uptime and <1% fraud rate
+2. [OK] 50M verified voter commitments achieved
+3. [OK] Cost-per-vote <$10 average (with clear path to <$1.50 in Phase 2)
+4. [OK] 2+ pilot countries with >60% public support in polling
+5. [OK] 20+ patient advocacy partnerships representing 10M+ patients
+6. [OK] No critical technical blockers (platform scales to 100M+ users)
+7. [OK] No critical legal blockers (campaign finance compliance validated in pilot countries)
 
 **GO Decision**: Proceed to Phase 2 with full budget ($500M-$1B)
 
@@ -607,12 +607,12 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 ### Phase 2 Decision Point (Month 36)
 
 **GO Criteria (All Must Be Met)**:
-1. ✅ {{< var treaty_campaign_voting_bloc_target >}} verified voters achieved ({{< var global_population_activism_threshold_pct >}} threshold)
-2. ✅ 15+ G7/G20 nations with Tier 1-3 policy commitments
-3. ✅ Treaty text finalized and approved by legal experts in 67+ jurisdictions
-4. ✅ 100+ patient advocacy partnerships representing 50M+ patients
-5. ✅ Cost-per-verified-vote <$1.50 blended average maintained
-6. ✅ Clear path to ratification in 67+ nations within 12-18 months
+1. [OK] {{< var treaty_campaign_voting_bloc_target >}} verified voters achieved ({{< var global_population_activism_threshold_pct >}} threshold)
+2. [OK] 15+ G7/G20 nations with Tier 1-3 policy commitments
+3. [OK] Treaty text finalized and approved by legal experts in 67+ jurisdictions
+4. [OK] 100+ patient advocacy partnerships representing 50M+ patients
+5. [OK] Cost-per-verified-vote <$1.50 blended average maintained
+6. [OK] Clear path to ratification in 67+ nations within 12-18 months
 
 **GO Decision**: Proceed to Phase 3 with full budget ($500M-$1.1B)
 
@@ -643,13 +643,13 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 ### Phase 3 Completion Criteria (Month 60)
 
 **SUCCESS Criteria (Treaty Operational)**:
-1. ✅ Treaty ratified by 67+ nations and entered into force
-2. ✅ 1% Treaty Fund capitalized with first {{< var treaty_annual_funding >}} annual disbursement
-3. ✅ VICTORY Bonds issued totaling {{< var treaty_campaign_total_cost >}} with first interest payment made
-4. ✅ dFDA platform operational with 10M+ patient records integrated
-5. ✅ 125+ pragmatic trials launched per quarter (500/year run rate)
-6. ✅ Average trial cost <{{< var recovery_trial_cost_per_patient >}}/patient validated (82× reduction)
-7. ✅ No critical implementation blockers (regulatory approvals obtained, health system partnerships established)
+1. [OK] Treaty ratified by 67+ nations and entered into force
+2. [OK] 1% Treaty Fund capitalized with first {{< var treaty_annual_funding >}} annual disbursement
+3. [OK] VICTORY Bonds issued totaling {{< var treaty_campaign_total_cost >}} with first interest payment made
+4. [OK] dFDA platform operational with 10M+ patient records integrated
+5. [OK] 125+ pragmatic trials launched per quarter (500/year run rate)
+6. [OK] Average trial cost <{{< var recovery_trial_cost_per_patient >}}/patient validated (82× reduction)
+7. [OK] No critical implementation blockers (regulatory approvals obtained, health system partnerships established)
 
 **SUCCESS Decision**: Campaign complete, transition to operations phase. Foundation governance transitions from campaign to treaty fund management.
 
@@ -757,7 +757,7 @@ This Monitoring, Evaluation, and Learning (MEL) framework establishes quantifiab
 
 **Risk 9: Regulatory Approval Failure**
 - **Indicator**: <30% of completed dFDA trials achieve regulatory approval (FDA/EMA)
-- **Threshold**: Target ≥40% approval rate; <30% indicates pragmatic trial model not meeting regulatory standards
+- **Threshold**: Target >=40% approval rate; <30% indicates pragmatic trial model not meeting regulatory standards
 - **Mitigation Trigger**: If threshold breached, activate:
   1. Engage with FDA/EMA to understand approval barriers
   2. Enhance trial protocols (add endpoints, tighten exclusion criteria if necessary)
