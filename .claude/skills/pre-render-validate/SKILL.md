@@ -72,6 +72,7 @@ Errors are grouped by file and type. Common error patterns:
 - `GIF file not wrapped` - Wrap in HTML-only block
 - `Unclosed code block` - Add missing closing ```
 - `Parameter 'X' used but not imported` - Add import statement
+- `Quarto variable inside link text` - Remove link brackets (variables have built-in links)
 
 ### 3. Fix each error type
 
@@ -122,6 +123,24 @@ Find the code block opening and add closing ```:
 ```{python}
 # code here
 ```  <-- Add this
+```
+
+#### Quarto variable inside link text
+Variables have built-in links to their source, so wrapping them in additional links breaks rendering.
+
+**Wrong:**
+```markdown
+[{{< var treaty_campaign_total_cost >}}](../economics/victory-bonds.qmd)
+```
+
+**Right** (variable alone, it has its own link):
+```markdown
+{{< var treaty_campaign_total_cost >}}
+```
+
+**Right** (if descriptive link text needed):
+```markdown
+{{< var treaty_campaign_total_cost >}} via [VICTORY Bonds](../economics/victory-bonds.qmd)
 ```
 
 ### 4. Re-run validation

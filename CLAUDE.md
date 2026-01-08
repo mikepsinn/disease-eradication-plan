@@ -286,6 +286,17 @@ $$
 - Maintains consistency between LaTeX formulas and their component parameters
 - Quarto variables cannot be used INSIDE `$$` blocks, but LaTeX variables work OUTSIDE them
 
+**IMPORTANT for hardcoded value audits:**
+When auditing QMD files for hardcoded values to replace with variables:
+1. **NEVER try to replace values inside LaTeX `$$` blocks** - Quarto variables don't render there
+2. **Check `_variables.yml` for `_latex` suffixed variables** (e.g., `peace_dividend_annual_societal_benefit_latex`)
+3. **Replace the entire LaTeX block** with the latex variable if one exists
+4. **Leave LaTeX hardcoded values as-is** if no suitable `_latex` variable exists
+5. **REMOVE hyperlinks from around variables** - Variables have built-in links to their source
+   - Wrong: `[{{< var treaty_campaign_total_cost >}}](../economics/victory-bonds.qmd)`
+   - Right: `{{< var treaty_campaign_total_cost >}}` (variable already links to source)
+   - If link text is needed: `{{< var treaty_campaign_total_cost >}} via [VICTORY Bonds](../economics/victory-bonds.qmd)`
+
 ### Why This Matters
 
 - **Single source of truth**: All values come from parameters.py

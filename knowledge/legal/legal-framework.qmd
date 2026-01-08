@@ -104,7 +104,7 @@ display(IPImage(str(png_path)))
 ### What It Does
 
 - **Issues VICTORY Incentive Alignment Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
-- **Funds Bribery Operations:** Uses $1.0B raised to fund lobbying and campaigns
+- **Funds Bribery Operations:** Uses {{< var treaty_campaign_total_cost >}} raised to fund lobbying and campaigns
 - **Delivers Returns:** Manages treaty inflows to pay bondholders
 
 **Why Delaware:** Established corporate law. [More corporations than humans live there](../references.qmd#delaware-corporate-population). Citizens United means corporations have political speech rights.

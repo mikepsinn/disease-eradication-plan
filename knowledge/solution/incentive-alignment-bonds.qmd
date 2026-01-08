@@ -404,7 +404,7 @@ Expected post-office income by tier:
 
 #### The Setup
 
-[VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) have raised $1B from investors who want 270% returns. That money has funded:
+[VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) have raised {{< var treaty_campaign_total_cost >}} from investors who want {{< var victory_bond_annual_return_pct >}} returns. That money has funded:
 
 - A referendum showing 70% of Americans support reallocating 1% of military spending to pragmatic clinical trials
 - A lobbying campaign that's converted several military contractors (they did the math on their own mortality)
@@ -510,7 +510,7 @@ The flywheel spins. Each expansion increases the stakes, which increases the sco
 
 #### The Math for VICTORY Incentive Alignment Bond Investors
 
-The investors who funded the $1B campaign see:
+The investors who funded the {{< var treaty_campaign_total_cost >}} campaign see:
 
 - Treaty passes → {{< var treaty_annual_funding >}}/year flows to the 1% Treaty Fund
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}/year) flows to bondholders → {{< var victory_bond_annual_return_pct >}} annual returns
@@ -605,7 +605,7 @@ However, the instrument has two distinct "engines" inside it. One pays investors
 | **Who's incentivized** | Investors | Politicians |
 | **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers |
 | **Funding source** | {{< var victory_bond_funding_pct >}} of treaty revenue ({{< var victory_bond_annual_payout >}}/year) | {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) |
-| **Role** | **Solves the Capital Problem**<br>Raises $1B to fund the campaign | **Solves the Political Problem**<br>Makes politicians *want* to support the treaty |
+| **Role** | **Solves the Capital Problem**<br>Raises {{< var treaty_campaign_total_cost >}} to fund the campaign | **Solves the Political Problem**<br>Makes politicians *want* to support the treaty |
 
 The relationship is complementary:
 
