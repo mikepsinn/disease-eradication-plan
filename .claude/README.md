@@ -113,6 +113,40 @@ Run automatically after every file edit:
 6. GIF wrapping (PDF build only)
 7. Em-dashes (style issue)
 
+### 5. latex-equation-audit
+**When to use:** After adding calculated variables to QMD files, or to enhance calculation transparency
+
+**What it does:**
+- Finds calculated variables that have corresponding `_latex` equations
+- Reviews context where variables are used
+- Adds LaTeX equations where they would enhance understanding
+- Uses Ralph Loop for systematic processing
+
+**Usage:** `/latex-equation-audit` or "Use latex-equation-audit skill"
+
+**Decision Logic:**
+- **Add equation when:** Introducing/explaining a calculation, in methodology sections
+- **Skip when:** In bullet lists, tables, passing mentions, equation already nearby
+
+**Example:**
+```
+Before: The dFDA enables {{< var dfda_cures_per_year >}} new cures annually.
+After:  The dFDA enables {{< var dfda_cures_per_year >}} new cures annually.
+
+        {{< var dfda_cures_per_year_latex >}}
+```
+
+### 6. ralph-hardcoded-audit
+**When to use:** To systematically replace hardcoded numbers with variables
+
+**What it does:**
+- Scans all QMD files for hardcoded currency, percentages, large numbers
+- Matches against `_variables.yml` for replacement candidates
+- Uses Ralph Loop for iterative processing across all files
+- Tracks progress and generates report
+
+**Usage:** `/ralph-hardcoded-audit` or "Use ralph-hardcoded-audit skill"
+
 ## 🤖 Agents (Autonomous Specialists)
 
 ### 1. parameter-manager (Opus)

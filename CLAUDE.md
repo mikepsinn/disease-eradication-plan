@@ -297,6 +297,9 @@ When auditing QMD files for hardcoded values to replace with variables:
    - Right: `{{< var treaty_campaign_total_cost >}}` (variable already links to source)
    - If link text is needed: `{{< var treaty_campaign_total_cost >}} via [VICTORY Bonds](../economics/victory-bonds.qmd)`
 
+**Systematic LaTeX Equation Audit:**
+Use `/latex-equation-audit` to systematically find calculated variables and add their `_latex` equations where contextually appropriate. The skill uses Ralph Loop to process all files iteratively.
+
 ### Why This Matters
 
 - **Single source of truth**: All values come from parameters.py
