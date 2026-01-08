@@ -75,17 +75,17 @@ function loadVariables(): Variable[] {
 function findHardcodedNumbers(line: string): Array<{ value: string; type: Variable['unitType'] }> {
   const found: Array<{ value: string; type: Variable['unitType'] }> = [];
 
-  // Skip if already a variable reference
-  if (line.includes('{{< var ')) return found;
+  // Remove variable references from line before searching (so we find hardcoded values on mixed lines)
+  const lineWithoutVars = line.replace(/\{\{<\s*var\s+\w+\s*>\}\}/g, 'VAR_PLACEHOLDER');
 
   // Currency: $X, $XB, $XM, $XK
-  const currencyMatches = line.matchAll(/\$\d+(?:\.\d+)?(?:[KMB]|(?:\s*(?:billion|million|trillion)))?/gi);
+  const currencyMatches = lineWithoutVars.matchAll(/\$\d+(?:\.\d+)?(?:[KMB]|(?:\s*(?:billion|million|trillion)))?/gi);
   for (const match of currencyMatches) {
     found.push({ value: match[0], type: 'currency' });
   }
 
   // Percentages: X% (but skip "1%" which refers to the treaty concept)
-  const percentMatches = line.matchAll(/\d+(?:\.\d+)?%/g);
+  const percentMatches = lineWithoutVars.matchAll(/\d+(?:\.\d+)?%/g);
   for (const match of percentMatches) {
     if (match[0] !== '1%') {
       found.push({ value: match[0], type: 'percentage' });
@@ -93,8 +93,8 @@ function findHardcodedNumbers(line: string): Array<{ value: string; type: Variab
   }
 
   // Years: 19XX, 20XX (not in citations)
-  if (!line.includes('@')) {
-    const yearMatches = line.matchAll(/\b(19|20)\d{2}\b/g);
+  if (!lineWithoutVars.includes('@')) {
+    const yearMatches = lineWithoutVars.matchAll(/\b(19|20)\d{2}\b/g);
     for (const match of yearMatches) {
       found.push({ value: match[0], type: 'year' });
     }

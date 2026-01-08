@@ -34,11 +34,40 @@ except:
     sys.exit(0)
 
 # Check 1: Warn about hardcoded dollar amounts that might be variables
+# Load parameter summary for quick lookups
+param_lookup = {}
+try:
+    proj_dir = os.environ.get('CLAUDE_PROJECT_DIR', os.getcwd())
+    summary_file = os.path.join(proj_dir, '_analysis', 'parameter-summary.md')
+    if os.path.exists(summary_file):
+        with open(summary_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                # Parse "PARAM_NAME: $14M (...)" format
+                match = re.match(r'^([A-Z_]+):\s*(\$?[\d,.]+[KMB%]?)', line)
+                if match:
+                    param_name, value = match.groups()
+                    # Normalize value for lookup
+                    norm_val = value.lower().replace(',', '').replace(' ', '')
+                    param_lookup[norm_val] = param_name.lower()
+except:
+    pass
+
+# Remove variable references before searching (catch mixed lines)
+content_without_vars = re.sub(r'\{\{<\s*var\s+\w+\s*>\}\}', 'VAR_PLACEHOLDER', content)
+
 hardcoded_money_pattern = r'\$[\d,]+(?:\.\d{1,2})?[MBK]?\b'
-hardcoded_matches = re.findall(hardcoded_money_pattern, content)
+hardcoded_matches = re.findall(hardcoded_money_pattern, content_without_vars)
 if hardcoded_matches:
-    unique_amounts = list(set(hardcoded_matches))[:3]  # Show first 3 examples
-    issues.append(f"WARNING: Found {len(hardcoded_matches)} hardcoded values (e.g., {', '.join(unique_amounts)}). Check _variables.yml for matching parameters.")
+    unique_amounts = list(set(hardcoded_matches))[:5]
+    suggestions = []
+    for amt in unique_amounts:
+        norm_amt = amt.lower().replace(',', '').replace(' ', '')
+        if norm_amt in param_lookup:
+            suggestions.append(f"  -> {amt} = {{{{< var {param_lookup[norm_amt]} >}}}}")
+
+    issues.append(f"WARNING: Found {len(hardcoded_matches)} hardcoded values (e.g., {', '.join(unique_amounts[:3])}).")
+    if suggestions:
+        issues.append("SUGGESTIONS:\n" + "\n".join(suggestions[:3]))
 
 # Check 2: Find all variable references and validate syntax
 var_refs = re.findall(r'\{\{<\s*var\s+(\w+)\s*>\}\}', content)
