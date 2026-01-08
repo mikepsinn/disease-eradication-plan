@@ -295,9 +295,16 @@ format:
         \onehalfspacing
 
         % Better table formatting
-        \usepackage{booktabs}
-        \usepackage{longtable}
-        \usepackage{array}
+        \usepackage{booktabs}      % Professional table rules
+        \usepackage{longtable}     % Multi-page tables
+        \usepackage{array}         % Enhanced column types
+        \usepackage{tabularx}      % Auto-width tables with text wrapping
+        \usepackage{makecell}      % Multi-line cells and better cell formatting
+
+        % Define custom column types for better text wrapping
+        \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+        \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+        \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
         % Page break controls
         \usepackage{needspace}
@@ -308,6 +315,10 @@ format:
         \fancyhead[L]{Decentralized Institutes of Health}
         \fancyhead[R]{Grant Proposal}
         \fancyfoot[C]{\thepage}
+        \fancyfoot[L]{}
+        \fancyfoot[R]{}
+        \renewcommand{\headrulewidth}{0.4pt}
+        \renewcommand{\footrulewidth}{0pt}
 
         % Use Arabic numerals for appendix chapters (not letters)
         \usepackage{etoolbox}
@@ -315,4 +326,61 @@ format:
 
         % Ensure figures don't float too far
         \usepackage{float}
-        \floatplacement{figure}{H}
+        \floatplacement{figure}{htbp}
+        \floatplacement{table}{htbp}
+
+        % Better figure and table captions
+        \usepackage[font=small,labelfont=bf,textfont=it]{caption}
+        \captionsetup{justification=centering}
+        \setlength{\belowcaptionskip}{10pt}
+        \setlength{\abovecaptionskip}{10pt}
+
+        % Improved list formatting
+        \usepackage{enumitem}
+        \setlist{nosep, leftmargin=*, topsep=6pt, itemsep=3pt}
+        \setlist[itemize]{label=\textbullet}
+
+        % Better URL handling (line breaks for long URLs)
+        \usepackage{url}
+        \urlstyle{same}
+        \usepackage[hyphens]{url}
+
+        % Hyperlink formatting (should come near end)
+        \usepackage{hyperref}
+        \hypersetup{
+          colorlinks=true,
+          linkcolor=black,
+          urlcolor=blue,
+          citecolor=blue,
+          pdfborder={0 0 0},
+          breaklinks=true
+        }
+
+        % Better widow/orphan control
+        \widowpenalty=10000
+        \clubpenalty=10000
+        \raggedbottom
+
+        % Improved spacing around floats
+        \setlength{\textfloatsep}{20pt plus 2pt minus 4pt}
+        \setlength{\floatsep}{12pt plus 2pt minus 2pt}
+        \setlength{\intextsep}{14pt plus 4pt minus 4pt}
+
+        % Better paragraph spacing
+        \setlength{\parskip}{6pt plus 2pt minus 1pt}
+        \setlength{\parindent}{0pt}
+
+        % Section formatting
+        \usepackage{titlesec}
+        \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+        \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+        \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+        % Spacing before/after sections
+        \titlespacing*{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+        \titlespacing*{\subsection}{0pt}{18pt plus 3pt minus 2pt}{8pt plus 2pt minus 2pt}
+        \titlespacing*{\subsubsection}{0pt}{14pt plus 2pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+        % Keep sections with following content
+        \usepackage[nobottomtitles]{titlesec}
+        \renewcommand{\bottomtitlespace}{0.2\textheight}

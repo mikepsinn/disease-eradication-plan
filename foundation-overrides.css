@@ -1,0 +1,380 @@
+/* ==========================================
+   FOUNDATION GRANT PROPOSAL CSS OVERRIDES
+   ==========================================
+
+   This file contains style overrides specific to the foundation grant proposal.
+   It loads after styles.css, so any rules here will override the base styles.
+
+   Goals:
+   - Professional, formal typography suitable for foundation review
+   - Clean, scannable layout optimized for program officers
+   - Print-friendly styling for PDF generation
+   - Emphasis on data tables and metrics
+   ========================================== */
+
+/* ==========================================
+   PROFESSIONAL TYPOGRAPHY FOR GRANT PROPOSALS
+   ========================================== */
+
+/* Slightly reduce font size for more content per page */
+body {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* More formal heading hierarchy */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--book-border);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+}
+
+/* Tighter paragraph spacing for grant proposals */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   CALLOUTS - GRANT PROPOSAL EMPHASIS
+   ========================================== */
+
+/* More prominent callouts for key metrics */
+.callout {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--book-light);
+    border-left: 4px solid var(--book-accent);
+}
+
+/* Highlight important metrics in callouts */
+.callout-important {
+    background-color: #f9f8f3;
+    border-left-color: #8b7355;
+}
+
+.callout-note {
+    background-color: #fdfdf8;
+    border-left-color: #9a8a7a;
+}
+
+/* ==========================================
+   TABLES - CLEAN AND PROFESSIONAL
+   ========================================== */
+
+/* Enhanced table styling for grant proposals */
+table {
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead {
+    background-color: var(--book-light);
+    border-bottom: 2px solid var(--book-accent);
+}
+
+table th {
+    font-weight: 600;
+    text-align: left;
+    padding: 0.875rem 1rem;
+    color: var(--book-heading);
+    border-bottom: 2px solid var(--book-border);
+}
+
+table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--book-border);
+    vertical-align: top;
+}
+
+/* Zebra striping for better readability */
+table tbody tr:nth-child(even) {
+    background-color: #fdfdf8;
+}
+
+table tbody tr:hover {
+    background-color: var(--book-light);
+}
+
+/* Numeric columns - right align */
+table td:last-child,
+table th:last-child {
+    text-align: right;
+}
+
+/* First column - keep left aligned */
+table td:first-child,
+table th:first-child {
+    text-align: left;
+}
+
+/* ==========================================
+   METRICS AND STATISTICS
+   ========================================== */
+
+/* Emphasized statistics for grant proposals */
+.stat-number {
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: var(--book-accent);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--book-text);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+
+/* ==========================================
+   LISTS - CLEAR HIERARCHY
+   ========================================== */
+
+/* Tighter list spacing for grant proposals */
+ul, ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Nested lists with better hierarchy */
+li ul,
+li ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   FIGURES AND DIAGRAMS
+   ========================================== */
+
+/* Clean figure presentation */
+figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: var(--book-accent);
+    margin-top: 0.75rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Mermaid diagrams - professional styling */
+.mermaid {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid var(--book-border);
+}
+
+/* ==========================================
+   PAGE BREAKS FOR PRINT/PDF
+   ========================================== */
+
+/* Ensure sections start on new page for important content */
+.page-break-before {
+    page-break-before: always;
+    break-before: page;
+}
+
+.page-break-after {
+    page-break-after: always;
+    break-after: page;
+}
+
+/* Avoid breaking these elements */
+.no-break,
+table,
+figure,
+.callout {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* ==========================================
+   PRINT STYLES FOR PDF GENERATION
+   ========================================== */
+
+@media print {
+    /* Optimize for print */
+    body {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    /* Ensure proper page breaks */
+    h2 {
+        page-break-before: auto;
+        page-break-after: avoid;
+    }
+
+    h3, h4 {
+        page-break-after: avoid;
+    }
+
+    /* Keep tables together */
+    table {
+        page-break-inside: avoid;
+    }
+
+    /* Keep figures together */
+    figure {
+        page-break-inside: avoid;
+    }
+
+    /* Remove background colors for print */
+    .callout {
+        background-color: transparent !important;
+        border: 1px solid #ccc;
+    }
+
+    /* Ensure links are visible in print */
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* Show URLs for external links */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-style: italic;
+    }
+
+    /* Hide navigation elements */
+    .navbar,
+    .sidebar,
+    .quarto-sidebar,
+    .page-footer,
+    nav {
+        display: none !important;
+    }
+}
+
+/* ==========================================
+   GRANT-SPECIFIC CONTENT ELEMENTS
+   ========================================== */
+
+/* Budget tables - special formatting */
+.budget-table td:last-child,
+.budget-table th:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Timeline tables */
+.timeline-table {
+    border-left: 3px solid var(--book-accent);
+}
+
+/* Risk matrix */
+.risk-matrix td {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* KPI tables */
+.kpi-table th {
+    background-color: var(--book-accent);
+    color: white;
+}
+
+/* ==========================================
+   HIDE ELEMENTS NOT NEEDED FOR GRANT PROPOSALS
+   ========================================== */
+
+/* Hide author metadata in formal grant proposals */
+.quarto-title-meta-author {
+    display: none !important;
+}
+
+/* Optionally hide full title meta container */
+.quarto-title-meta {
+    margin-bottom: 1rem;
+}
+
+/* Hide abstract/keywords if they're redundant with executive summary */
+.abstract,
+.keywords {
+    display: none;
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 767px) {
+    /* Maintain readability on mobile */
+    body {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Stack tables horizontally on mobile */
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* Adjust callout padding */
+    .callout {
+        padding: 1rem 1.25rem;
+    }
+}
