@@ -65,9 +65,9 @@ This one touches military budgets - the sacred cow of national sovereignty. Gove
 ### The Math
 
 Signing the treaty: ~$90M.
-What the treaty unlocks: $27 Billion/year. Forever.
+What the treaty unlocks: {{< var treaty_annual_funding >}}/year. Forever.
 
-The diplomatic process costs ~0.3% of a single year's funding. Three days of the future annual flow. You're buying a $27B/year annuity for $90M. That's a 300:1 return on paperwork.
+The diplomatic process costs ~0.3% of a single year's funding. Three days of the future annual flow. You're buying a {{< var treaty_annual_funding >}}/year annuity for $90M. That's a 300:1 return on paperwork.
 
 ## How to Make Governments Sign Things
 
@@ -153,7 +153,7 @@ At {{< var political_success_probability >}} probability of success:
 The intervention remains economically justified even assuming a 99% chance of failure because:
 1. The conditional benefits ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI if successful) are enormous
 2. Even the expected value at {{< var political_success_probability >}} success beats the best alternative by {{< var treaty_expected_vs_bed_nets_multiplier >}}
-3. The downside is capped at campaign cost (~$1B), while upside is unbounded
+3. The downside is capped at campaign cost (~{{< var treaty_campaign_total_cost >}}), while upside is unbounded
 
 ## Why The Treaty Won't Stop at 1%
 
@@ -161,7 +161,7 @@ Most international commitments stagnate after initial signing. The table above s
 
 **Because we've built a scaling engine into the mechanism.**
 
-The [80/10/10 funding structure](../solution/incentive-alignment-bonds.qmd) allocates {{< var iab_political_incentive_funding_pct >}}% of treaty funding ($2.7B/year at 1%) to [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) - securities that pay out when treaties *expand*, not just maintain.
+The [80/10/10 funding structure](../solution/incentive-alignment-bonds.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) - securities that pay out when treaties *expand*, not just maintain.
 
 ### The Expansion Mechanism
 

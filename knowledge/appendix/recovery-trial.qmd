@@ -133,11 +133,11 @@ Excellent question. Let me show you the proof.
 
 ### The Oxford RECOVERY Trial
 
-**$500 vs FDA's $41,000 Per Patient**
+**{{< var recovery_trial_cost_per_patient >}} vs FDA's {{< var traditional_phase3_cost_per_patient >}} Per Patient**
 
-The UK spent $500 per patient testing COVID treatments. Saved a million lives.
+The UK spent {{< var recovery_trial_cost_per_patient >}} per patient testing COVID treatments. Saved a million lives.
 
-The U.S. equivalent often costs $41,000 per patient, with a significant portion dedicated to extensive regulatory paperwork.
+The U.S. equivalent often costs {{< var traditional_phase3_cost_per_patient >}} per patient, with a significant portion dedicated to extensive regulatory paperwork.
 
 ### The Math
 

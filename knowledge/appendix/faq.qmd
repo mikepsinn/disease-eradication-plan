@@ -352,8 +352,8 @@ Reality check: 55 million people die unnecessarily each year from treatable caus
 
 - 200+ years avoiding major wars
 - Surrounded by both World Wars (literally in the middle of apocalypse, made chocolate)
-- GDP per capita: $93,000 (not killing people is profitable)
-- Defense spending: 0.7% of GDP
+- GDP per capita: {{< var switzerland_gdp_per_capita_k >}} (not killing people is profitable)
+- Defense spending: {{< var switzerland_defense_spending_pct >}} of GDP
 - Life expectancy: 84 years (5 years longer than Americans who spend 5× more on "military")
 - Being neutral can be an excellent defense strategy
 

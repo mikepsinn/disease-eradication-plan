@@ -67,7 +67,7 @@ The strategy: Generate referral links, pay people $0.25-0.30 per verified vote, 
 
 Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedia). You're 96% cheaper.
 
-**Target: 280M verified votes** (3.5% of global population = tipping point for social change)
+**Target: {{< var treaty_campaign_voting_bloc_target >}} verified votes** ({{< var global_population_activism_threshold_pct >}} of global population = tipping point for social change)
 
 #### Payment structure
 
@@ -107,7 +107,7 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Total Budget: {{< var treaty_campaign_viral_referendum_base_case >}}**
 
-**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But to hit 280M votes (3.5% of global population), you need skeptics and the actively resistant.
+**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But to hit {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var global_population_activism_threshold_pct >}} of global population), you need skeptics and the actively resistant.
 
 **Diffusion of innovations theory** (Rogers, 2003) predicts increasing marginal costs:
 
@@ -134,8 +134,8 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Still dramatically cheaper than alternatives**:
 
-- Traditional petition gathering: 280M × $14.87 = $4.2B
-- Digital advertising: 280M × $10 avg = $2.8B
+- Traditional petition gathering: {{< var treaty_campaign_voting_bloc_target >}} × $14.87 = $4.2B
+- Digital advertising: {{< var treaty_campaign_voting_bloc_target >}} × $10 avg = $2.8B
 - This approach (upper bound): $406M
 
 **You're 90% cheaper in the worst case.**
@@ -303,7 +303,7 @@ Papers for when plans fail (plans always fail somewhere)
 
 **Years 2-3** ({{< var campaign_phase2_budget >}}): Scale
 
-- 280M total votes
+- {{< var treaty_campaign_voting_bloc_target >}} total votes
 - 20+ countries negotiating treaties
 - Platform handles global traffic
 

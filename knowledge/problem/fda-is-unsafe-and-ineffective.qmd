@@ -48,7 +48,7 @@ This chapter relies on three tiers of evidence:
 **Irrefutable Facts** (direct empirical data):
 
 - {{< var recovery_trial_cost_reduction_factor >}}× cost differential: Oxford trial ({{< var recovery_trial_cost_per_patient >}}) vs. standard Phase III ({{< var traditional_phase3_cost_per_patient >}})
-- 70% drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
+- {{< var post_1962_drug_approval_reduction_pct >}} drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
 - Beta-blocker deaths: [100,000 Americans died](../references.qmd#beta-blocker-drug-lag-deaths) during decade-long delay
 - COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
 
@@ -163,18 +163,18 @@ However, validating that large-scale real-world evidence produces better health 
 
 In the past: Genius scientist invents cure, raises a few million, tests safety. Simple.
 
-Now: Genius scientist must convince one of three mega-corporations to spend a billion dollars on a 10% chance of success. Those corporations already sell inferior drugs for the same condition.
+Now: Genius scientist must convince one of three mega-corporations to spend {{< var pharma_drug_development_cost_current >}} on a {{< var pharma_success_rate_current_pct >}} chance of success. Those corporations already sell inferior drugs for the same condition.
 
 The math for the mega-corporation:
 
-**Option 1: Spend $1 billion on trials**
+**Option 1: Spend {{< var pharma_drug_development_cost_current >}} on trials**
 
 - 90% chance: Lose everything
 - 10% chance: Succeed, then cannibalize your own profitable drug
 
 **Option 2: Buy the patent, put it on a shelf**
 
-- 0% chance of losing a billion dollars
+- 0% chance of losing {{< var pharma_drug_development_cost_current >}}
 - 100% chance your inferior cash cow keeps printing money
 
 Which would you choose if you were a rational sociopath in a suit?
@@ -326,11 +326,11 @@ Trials under the current system [exclude](../references.qmd#antidepressant-trial
 - **Anyone on other medications:** Everyone elderly (can't detect drug interactions)
 - **Anyone too far from trial sites:** Poor and rural populations
 
-**Result:** Drugs are tested on the 15% of unusually healthy patients least likely to experience adverse events, then prescribed to everyone else where safety problems finally emerge.
+**Result:** Drugs are tested on a small fraction of unusually healthy patients least likely to experience adverse events ({{< var antidepressant_trial_exclusion_rate >}} are excluded in antidepressant trials alone), then prescribed to everyone else where safety problems finally emerge.
 
 ### Why This Makes Drugs More Dangerous
 
-When you exclude 85% of real patients from trials:
+When trials exclude most real patients ({{< var antidepressant_trial_exclusion_rate >}} in antidepressant studies):
 
 - **Drug interactions go undetected:** Elderly patients on multiple medications face risks never tested
 - **Metabolic differences are missed:** Children and elderly metabolize drugs differently

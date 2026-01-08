@@ -425,7 +425,12 @@ async function main() {
 
   console.log('Finding QMD files...');
   let files = await glob('knowledge/**/*.qmd', {
-    ignore: ['**/knowledge/_build_temp/**', '**/references.qmd']
+    ignore: [
+      '**/knowledge/_build_temp/**',
+      '**/references.qmd',
+      '**/parameters-and-calculations.qmd',  // Auto-generated, defines the parameters
+      '**/knowledge/futures/**'               // Fictional scenarios with intentional values
+    ]
   });
 
   if (limit > 0) {

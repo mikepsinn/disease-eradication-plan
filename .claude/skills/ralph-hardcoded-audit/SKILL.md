@@ -61,7 +61,13 @@ RULES:
 - Process ONE file per iteration
 - NEVER replace 1% (treaty percentage)
 - NEVER modify _build_temp/ files
-- Skip references.qmd, futures/ chapters
+- Skip references.qmd, futures/ chapters, parameters-and-calculations.qmd
+
+LATEX EQUATIONS:
+- Variables DON'T work INSIDE $$ blocks
+- Check for {param_name}_latex variables in _variables.yml
+- Replace ENTIRE LaTeX block with {{< var param_name_latex >}}
+- Example: Replace $$ PD = $11,355B \times 0.01 $$ with {{< var peace_dividend_annual_societal_benefit_latex >}}
 ```
 
 ## Single File Mode
