@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 84.8M |
-| Mean (expected value) | 94.6M |
-| Median (50th percentile) | 95.6M |
-| Standard Deviation | 27.3M |
-| 90% Confidence Interval | [47.3M, 141M] |
+| Baseline (deterministic) | 84.8M:1 |
+| Mean (expected value) | 94.6M:1 |
+| Median (50th percentile) | 95.6M:1 |
+| Standard Deviation | 27.3M:1 |
+| 90% Confidence Interval | [47.3M:1, 141M:1] |
 
 *The histogram shows the distribution of Treaty ROI - Full Timeline Shift (PRIMARY) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

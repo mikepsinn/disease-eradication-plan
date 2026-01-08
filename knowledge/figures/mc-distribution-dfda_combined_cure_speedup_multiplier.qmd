@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 17.2 |
-| Mean (expected value) | 22.4 |
-| Median (50th percentile) | 21.2 |
-| Standard Deviation | 10.9 |
-| 90% Confidence Interval | [6.35, 38.5] |
+| Baseline (deterministic) | 17.2x |
+| Mean (expected value) | 22.4x |
+| Median (50th percentile) | 21.2x |
+| Standard Deviation | 10.9x |
+| 90% Confidence Interval | [6.35x, 38.5x] |
 
 *The histogram shows the distribution of dFDA Combined Treatment Discovery Speedup Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

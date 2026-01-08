@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 44.1 |
-| Mean (expected value) | 43.7 |
-| Median (50th percentile) | 44.2 |
-| Standard Deviation | 2.27 |
-| 90% Confidence Interval | [40, 46.7] |
+| Baseline (deterministic) | 44.1x |
+| Mean (expected value) | 43.7x |
+| Median (50th percentile) | 44.2x |
+| Standard Deviation | 2.27x |
+| 90% Confidence Interval | [40x, 46.7x] |
 
 *The histogram shows the distribution of dFDA Trial Cost Reduction Factor across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
