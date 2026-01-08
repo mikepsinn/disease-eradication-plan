@@ -393,7 +393,7 @@ The key insight: **IAB funding scales with treaty size.**
 
 | Treaty Level | VICTORY Incentive Alignment Bond Returns | IAB Political Funding |
 |:-------------|:--------------------|:---------------------|
-| 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | $2.7B/year |
+| 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | {{< var iab_political_incentive_funding_annual >}}/year |
 | 2% | {{< var victory_bond_annual_return_pct >}} (fixed) | $5.4B/year |
 | 5% | {{< var victory_bond_annual_return_pct >}} (fixed) | $13.5B/year |
 | 10% | {{< var victory_bond_annual_return_pct >}} (fixed) | $27B/year |

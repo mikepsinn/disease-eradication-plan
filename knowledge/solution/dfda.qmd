@@ -19,11 +19,11 @@ image: /assets/og-images/knowledge/solution/dfda-og-academic.jpg
 
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
-Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **0.2%**.
+Out of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} [participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **{{< var current_clinical_trial_participation_rate >}}**.
 
 [Half of humanity would volunteer](../references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject [86.1% of actual patients](../references.qmd#antidepressant-trial-exclusion-rates).
+This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject {{< var antidepressant_trial_exclusion_rate >}} [of actual patients](../references.qmd#antidepressant-trial-exclusion-rates).
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
@@ -46,7 +46,7 @@ Your decentralized framework for drug assessment (dFDA) is a **two-sided marketp
 **Why?**
 
 - Patients pay for treatment (covers manufacturing/delivery)
-- Patients provide data (eliminates data collection cost ~$41k/patient)
+- Patients provide data (eliminates data collection cost ~{{< var traditional_phase3_cost_per_patient >}}/patient)
 - Platform handles analysis (eliminates analysis cost)
 - Insurance is built-in (eliminates liability cost)
 
@@ -73,7 +73,7 @@ Your decentralized framework for drug assessment (dFDA) is a **two-sided marketp
 - $100/month from patient
 - Manufacturing cost: $20/month
 - Profit: $80/month per patient
-- Plus: Free clinical trial data worth $41k/patient in traditional system
+- Plus: Free clinical trial data worth {{< var traditional_phase3_cost_per_patient >}}/patient in traditional system
 
 ### Why This Creates Unlimited Research Capacity
 
@@ -258,7 +258,7 @@ Think of it like the internet. We didn't build one website that everyone has to 
 
 ### The Players Already in the Game
 
-Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M raised), [Science 37](../references.qmd#dct-platform-funding-others) (~$100M raised), and others have already built decentralized clinical trial platforms. They're good at it. They have users. They have infrastructure.
+Companies like [Medable](../references.qmd#dct-platform-funding-medable) ({{< var dct_platform_funding_medium >}} raised), [Science 37](../references.qmd#dct-platform-funding-others) (~$100M raised), and others have already built decentralized clinical trial platforms. They're good at it. They have users. They have infrastructure.
 
 Why compete with them? Partner instead.
 
@@ -350,7 +350,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | :--- | :--- | :--- | :--- | :--- |
 | Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#drug-development-timeline-17-years)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../references.qmd#beta-blocker-drug-lag-deaths) |
 | Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
-| Who can participate | **[13.9% of patients](../references.qmd#antidepressant-trial-exclusion-rates)** | **100% of patients** | 86.1% inclusion rate | Everyone |
+| Who can participate | **[13.9% of patients](../references.qmd#antidepressant-trial-exclusion-rates)** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#95-pct-diseases-no-treatment)** | **Eventually 100%** | Priceless | Millions |
 
 ### The Itemized Receipt of Eliminated Stupidity
@@ -618,6 +618,6 @@ Your decentralized framework for drug assessment achieves **{{< var dfda_trial_c
 
 - **Cost per patient**: {{< var dfda_pragmatic_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient >}}
 - **Time to results**: 2 years vs the current 17 years
-- **Patient access**: Universal access vs [86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates) currently
+- **Patient access**: Universal access vs {{< var antidepressant_trial_exclusion_rate >}} excluded currently
 
 {{< include ../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

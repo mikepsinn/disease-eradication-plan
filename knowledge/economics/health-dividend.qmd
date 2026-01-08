@@ -30,7 +30,7 @@ Here's the breakdown.
 
 ## The Math: From {{< var traditional_phase3_cost_per_patient >}} to {{< var recovery_trial_cost_per_patient >}} Per Patient
 
-Traditional Phase III trials cost **$40,000-120,000 per patient**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
+Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}} per patient**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
 
 The Oxford RECOVERY trial proved humans can do the same thing for **{{< var recovery_trial_cost_per_patient >}} per patient**. They tested COVID treatments on 40,000+ patients by:
 
@@ -57,7 +57,7 @@ With the money saved every year, humans could:
 - Fund **10,000 new pragmatic clinical trials** (at $5M each using efficient methods)
 - Test treatments for **7,000 rare diseases** currently ignored (because orphan diseases aren't profitable enough for your orphan-making economic system)
 - Cut drug development time from 17 years to 3-5 years (most terminal patients don't have 17 years, which seems like a design flaw)
-- Make medicines affordable by eliminating $2.2B development costs (the $2.2B is mostly lawyers arguing about commas)
+- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs (this is mostly lawyers arguing about commas)
 
 ## Daily Opportunity Cost
 

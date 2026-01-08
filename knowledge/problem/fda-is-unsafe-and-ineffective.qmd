@@ -54,7 +54,7 @@ This chapter relies on three tiers of evidence:
 
 **Strong Evidence** (peer-reviewed research):
 
-- 86.1% trial exclusion rates for real-world patients
+- {{< var antidepressant_trial_exclusion_rate >}} trial exclusion rates for real-world patients
 - <10% adverse event capture rate in FAERS
 - Historical life expectancy slowdown post-1962
 - Publication bias (37% negative vs. 94% positive)
@@ -223,7 +223,7 @@ $$
 - **Annualized loss:** {{< var dfda_efficacy_lag_elimination_economic_value >}}/year ({{< var dfda_efficacy_lag_elimination_economic_value >}} ÷ 62 years from 1962-2024)
 - **GDP equivalent:** ~8-12% of global GDP consumed annually
 
-For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.
+For comparison: The entire global pharmaceutical R&D budget is ~{{< var global_pharma_rd_spending_annual >}}/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.
 
 **Even if you think these estimates are off by a factor of 10**, the core problem remains: a system that costs {{< var recovery_trial_cost_reduction_factor >}}× more per patient, takes 36× longer than proven alternatives, and produces less safety data from smaller, less representative populations.
 
@@ -313,7 +313,7 @@ Dr. Henry I. Miller ran the FDA team reviewing recombinant human insulin in the 
 
 The personal risk of approving a drug vastly exceeds the risk of rejecting it. Dead patients don't testify before Congress.
 
-## Clinical Trial Theater: Excluding 86.1% of Reality Makes Drugs More Dangerous
+## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
 The FDA requires rigorous trials to ensure safety. Then it systematically excludes the populations most at risk of adverse events.
 

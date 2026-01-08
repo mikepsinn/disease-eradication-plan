@@ -88,6 +88,31 @@ Run automatically after every file edit:
 
 **Usage:** Called by book-reviewer agent automatically
 
+### 4. pre-render-validate
+**When to use:** Before rendering or committing changes
+
+**What it does:**
+- Runs `scripts/pre-render-validation.py` to detect all errors
+- Systematically fixes each error type:
+  - Em-dashes → appropriate punctuation
+  - Unknown variables → add to parameters.py or fix typo
+  - Missing citations → add to references.qmd or fix key
+  - Broken links → fix paths
+  - Missing imports → add import statements
+  - GIF wrapping → wrap in HTML-only blocks
+  - Unclosed code blocks → add closing ```
+
+**Usage:** `/pre-render-validate` or "Use pre-render-validate skill"
+
+**Error Priority:**
+1. Unclosed code blocks (breaks render)
+2. Missing imports (Python failures)
+3. Broken links (navigation failures)
+4. Unknown variables (raw {{< var >}} in output)
+5. Missing citations ([?] in output)
+6. GIF wrapping (PDF build only)
+7. Em-dashes (style issue)
+
 ## 🤖 Agents (Autonomous Specialists)
 
 ### 1. parameter-manager (Opus)

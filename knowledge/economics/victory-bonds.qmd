@@ -43,7 +43,7 @@ Investors fund the campaign. Politicians get career benefits for supporting it. 
 
 A financial instrument that generates massive returns while accidentally curing diseases as a side effect:
 
-- Collect $1.0B in papers from rich humans who like more papers
+- Collect {{< var treaty_campaign_total_cost >}} in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
 - Once the treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to a 1% Treaty Fund
 - Give the rich humans {{< var victory_bond_funding_pct >}} of that ({{< var victory_bond_annual_payout >}}) every year, forever
@@ -58,7 +58,7 @@ A financial instrument that generates massive returns while accidentally curing 
 
 ### Phase 1: Collect Papers From People With Too Many Papers
 
-Find humans who have more papers than they need and convince them to give you $1.0B worth.
+Find humans who have more papers than they need and convince them to give you {{< var treaty_campaign_total_cost >}} worth.
 
 #### Who has that many papers
 
@@ -73,7 +73,7 @@ They'll check the math. The math checks out. They give you papers.
 
 ### Phase 2: Spend the Papers Correctly
 
-Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being short-sighted:
+Use the {{< var treaty_campaign_total_cost >}} according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being short-sighted:
 
 - **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_viral_referendum_base_case >}})
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_lobbying >}})
@@ -110,7 +110,7 @@ No maturity date means the money never stops. As long as the treaty exists, bond
 
 ### Show Them Where the Papers Come From
 
-**Current global spending on ending human life**: [$2.7 trillion/year](../references.qmd#sipri2024)
+**Current global spending on ending human life**: {{< var global_military_spending_annual_2024 >}}/year
 
 **What 1% of that is**: 1% = {{< var treaty_annual_funding >}}/year (enough to cure most diseases, apparently)
 
@@ -148,7 +148,7 @@ Even at 10% discount (which assumes this is as risky as funding a Mars casino), 
 
 **Translation for those who prefer simple math:**
 
-- You give: $1 billion in papers
+- You give: {{< var treaty_campaign_total_cost >}} in papers
 - You get: $54-90 billion equivalent in papers
 - Time required: Wait for politicians to be politicians
 - Effort required: Literally none after Phase 1
@@ -367,7 +367,7 @@ It's not a Ponzi scheme. It's weaponized lobbying economics pointed at diseases 
 
 ### "What happens when this fails and I lose my billion dollars?"
 
-"If the treaty fails completely, you lose your $1B. It gets spent on the campaign - convincing humans to click buttons, bribing lobbyists, building platforms, paying lawyers to make bribery legal.
+"If the treaty fails completely, you lose your {{< var treaty_campaign_total_cost >}}. It gets spent on the campaign - convincing humans to click buttons, bribing lobbyists, building platforms, paying lawyers to make bribery legal.
 
 This is the primary risk. You're essentially funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
 

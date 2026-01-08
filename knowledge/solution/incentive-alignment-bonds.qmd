@@ -319,7 +319,7 @@ Abstract mechanisms are great for economists and terrible for everyone else. Her
 The whole point of this system is to increase two numbers:
 
 1. **% of military spending reallocated** (starts at 1%, goal is expansion to 2%, 5%, 10%+)
-2. **$ flowing to 1% Treaty Fund annually** (starts at $27B, scales with %)
+2. **$ flowing to 1% Treaty Fund annually** (starts at {{< var treaty_annual_funding >}}, scales with %)
 
 Every politician's score is tied to their impact on these numbers. Vote to increase them? Score goes up. Vote to decrease them? Score goes down. It's that simple.
 
@@ -545,7 +545,7 @@ Except it's not, for four reasons that matter to lawyers:
 4. **Scores are based on public voting records.**
    * No "impact oracle" needed - just public voting records from official government sources.
    * Did the politician vote YES on treaty funding? That's verifiable, ungameable, and directly attributable.
-   * The 10% political incentive fund flows automatically based on treasury inflows - pure math, no discretion.
+   * The {{< var iab_political_incentive_funding_pct >}} political incentive fund flows automatically based on treasury inflows - pure math, no discretion.
 
 Bribery **corrupts** alignment. ("Here's money to screw the public.")
 IABs **create** alignment. ("Support policies that save lives and your career benefits.")
@@ -757,7 +757,7 @@ Without a mechanism for **sustained political pressure**, the treaty stalls at 1
 
 #### IABs Are the Political Ratchet
 
-The 10% IAB allocation creates something social impact bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
+The {{< var iab_political_incentive_funding_pct >}} IAB allocation creates something social impact bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
 
 | Treaty Level | Total Revenue | 1% Treaty Fund Revenue | Research Funding | Political Incentive |
 |:-------------|:--------------|:------------|:-----------------|:--------------------|
@@ -773,11 +773,11 @@ At 100% redirection, the IAB mechanism would fund **$270 billion per year** in p
 
 #### The Math Changes Everything
 
-At 1%: "Is $2.7B/year for political incentives worth it?"
+At 1%: "Is {{< var iab_political_incentive_funding_annual >}}/year for political incentives worth it?"
 
 At 100%: "$270B/year in political incentives unlocks $2.16 *trillion* per year in funding for pragmatic clinical trials."
 
-The 10% isn't a cost. It's the **engine** that drives the entire expansion. Without it, you get a one-time win. With it, you get a self-reinforcing cycle that makes each expansion easier than the last.
+The {{< var iab_political_incentive_funding_pct >}} isn't a cost. It's the **engine** that drives the entire expansion. Without it, you get a one-time win. With it, you get a self-reinforcing cycle that makes each expansion easier than the last.
 
 #### Why VICTORY Incentive Alignment Bonds Alone Won't Scale
 
