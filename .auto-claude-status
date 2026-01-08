@@ -3,13 +3,13 @@
   "spec": "006-foundation-ready-grant-proposal-version",
   "state": "building",
   "subtasks": {
-    "completed": 11,
+    "completed": 12,
     "total": 15,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "Integration and PDF Generation",
+    "current": "Quality Assurance and Documentation",
     "id": null,
     "total": 3
   },
@@ -18,8 +18,8 @@
     "max": 1
   },
   "session": {
-    "number": 13,
+    "number": 14,
     "started_at": "2026-01-08T06:29:36.186472"
   },
-  "last_update": "2026-01-08T07:54:39.300679"
+  "last_update": "2026-01-08T08:33:39.465287"
 }

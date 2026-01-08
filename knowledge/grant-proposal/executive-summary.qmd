@@ -9,7 +9,7 @@ subtitle: "The 1% Treaty: A Global Health Initiative to Redirect Military Spendi
 
 {{< var foundation_pitch >}}
 
-This proposal outlines a strategic campaign to establish an international treaty redirecting 1% of global military spending ({{< var treaty_annual_funding >}} annually) to pragmatic clinical trials and decentralized drug assessment infrastructure. The intervention represents exceptional value for philanthropic investment, achieving cost-effectiveness of {{< var foundation_cost_per_daly_headline >}} (105× more efficient than insecticide-treated bed nets, the gold standard benchmark for global health interventions).
+This proposal outlines a strategic campaign to establish an international treaty redirecting 1% of global military spending ({{< var treaty_annual_funding >}} annually) to pragmatic clinical trials and decentralized drug assessment infrastructure. Based on conservative estimates and proven models (RECOVERY trial, Ottawa Treaty), the intervention may represent exceptional value for philanthropic investment, with projected cost-effectiveness of {{< var foundation_cost_per_daly_headline >}} (105× more efficient than insecticide-treated bed nets, the gold standard benchmark for global health interventions).
 
 ## The Problem: Preventable Deaths from Regulatory Inefficiency
 
@@ -19,8 +19,8 @@ This proposal outlines a strategic campaign to establish an international treaty
 
 Current pharmaceutical development and regulatory systems create artificial barriers that prevent life-saving treatments from reaching patients:
 
-- **Mortality Impact**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} preventable deaths over 13 years from regulatory delays and clinical trial inefficiencies
-- **Disability Burden**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs (Disability-Adjusted Life Years) lost to delayed or foregone treatments
+- **Mortality Impact**: An estimated {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} preventable deaths over 13 years from regulatory delays and clinical trial inefficiencies
+- **Disability Burden**: Projected {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs (Disability-Adjusted Life Years) lost to delayed or foregone treatments
 - **Economic Cost**: {{< var global_annual_war_total_cost >}} in annual global military spending, compared to urgent unmet medical needs
 - **Systemic Inefficiency**: Traditional clinical trials cost {{< var traditional_phase3_cost_per_patient >}} per patient (82× higher than demonstrated pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}})
 
@@ -40,13 +40,13 @@ The current system suffers from three critical inefficiencies:
 
 **Part 1: The 1% Treaty** (International agreement redirecting 1% of military budgets to global health):
 
-- **Annual Funding**: {{< var treaty_annual_funding >}} in perpetual funding for pragmatic trials and medical research
+- **Annual Funding**: Projected {{< var treaty_annual_funding >}} in perpetual funding for pragmatic trials and medical research upon successful ratification
 - **Precedent**: Based on the Ottawa Treaty (1997, 133 nations, landmine ban) and other successful international health agreements
 - **Mechanism**: Treaty establishes the 1% Treaty Fund, with contributions from ratifying nations proportional to their military spending
 
 **Part 2: Decentralized FDA (dFDA)** (Automated system for pragmatic clinical trials):
 
-- **Cost Reduction**: Reduces trial costs 82× through electronic health record integration and streamlined protocols (proven by RECOVERY trial: 15,000 patients enrolled at {{< var recovery_trial_cost_per_patient >}}/patient)
+- **Cost Reduction**: Designed to reduce trial costs 82× through electronic health record integration and streamlined protocols (validated by RECOVERY trial: 15,000 patients enrolled at {{< var recovery_trial_cost_per_patient >}}/patient)
 - **Efficacy Acceleration**: Eliminates 13-year regulatory lag through real-world effectiveness monitoring
 - **Evidence Base**: RECOVERY trial (2020-2021) demonstrated the model's viability, discovering dexamethasone treatment that saved {{< var recovery_trial_global_lives_saved >}} globally
 
@@ -72,7 +72,7 @@ The current system suffers from three critical inefficiencies:
 
 {{< var foundation_budget_total >}}
 
-The campaign budget is structured across three strategic components:
+The proposed campaign budget is structured across three strategic components:
 
 **1. Lobbying Campaign** ({{< var treaty_campaign_budget_lobbying >}}):
 {{< var foundation_budget_lobbying >}}
@@ -103,11 +103,11 @@ The campaign budget is structured across three strategic components:
 
 ### Financial Innovation: Success-Contingent VICTORY Bonds
 
-All major campaign costs are structured as VICTORY (Value-Indexed, Conditional, Treaty-Outcome-Reimbursed Yield) Bonds, government-issued securities that are only paid upon treaty ratification. This structure:
+All major campaign costs are designed to be structured as VICTORY (Value-Indexed, Conditional, Treaty-Outcome-Reimbursed Yield) Bonds, government-issued securities that are only paid upon treaty ratification. This structure is intended to:
 
-- **Aligns Incentives**: Contractors, lobbyists, and service providers only get paid if the treaty passes
-- **Minimizes Risk**: Foundations provide seed funding; major costs backed by future treaty revenue
-- **Maximizes Leverage**: {{< var campaign_lobbying_us >}} in lobbying exceeds pharmaceutical industry's annual $300M spend, ensuring competitive positioning
+- **Align Incentives**: Contractors, lobbyists, and service providers only get paid if the treaty passes
+- **Minimize Risk**: Foundations provide seed funding; major costs backed by future treaty revenue
+- **Maximize Leverage**: Planned {{< var campaign_lobbying_us >}} in lobbying exceeds pharmaceutical industry's annual $300M spend, designed to ensure competitive positioning
 
 **Bondholder Returns**: {{< var victory_bond_annual_return_pct >}} annual returns ({{< var victory_bond_annual_payout >}}/year from {{< var treaty_annual_funding >}} annual treaty fund), backed by government sovereign debt
 
@@ -117,7 +117,7 @@ All major campaign costs are structured as VICTORY (Value-Indexed, Conditional, 
 
 {{< var foundation_primary_impact >}}
 
-This intervention achieves exceptional cost-effectiveness compared to established global health benchmarks:
+Based on conservative projections, this intervention may achieve exceptional cost-effectiveness compared to established global health benchmarks:
 
 | Intervention | Cost per DALY | Efficiency vs 1% Treaty |
 |-------------|---------------|------------------------|
@@ -137,12 +137,12 @@ This intervention achieves exceptional cost-effectiveness compared to establishe
 
 {{< var foundation_lives_per_dollar >}}
 
-### Projected 13-Year Impact
+### Projected 13-Year Impact (Conservative Estimates)
 
-- **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} ({{< var treaty_lives_saved_annual_global >}} annually)
-- **DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
-- **Economic Value**: {{< var treaty_peace_plus_rd_annual_benefits >}}/year from R&D cost savings, efficacy lag elimination, and health productivity gains
-- **Additional Drug Approvals**: {{< var additional_drugs_from_cost_elimination >}} annually (from eliminated cost barriers)
+- **Lives Saved**: Estimated {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} ({{< var treaty_lives_saved_annual_global >}} annually)
+- **DALYs Averted**: Projected {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
+- **Economic Value**: Estimated {{< var treaty_peace_plus_rd_annual_benefits >}}/year from R&D cost savings, efficacy lag elimination, and health productivity gains
+- **Additional Drug Approvals**: Projected {{< var additional_drugs_from_cost_elimination >}} annually (from eliminated cost barriers)
 - **Pharmaceutical R&D Savings**: 82× cost reduction applied to industry-wide Phase 2/3 spending ({{< var pharma_phase_2_3_cost_barrier >}} annual barrier eliminated)
 
 ## Timeline and Milestones
@@ -309,7 +309,7 @@ The campaign employs iterative decision-making with quarterly reviews:
 
 ## Conclusion and Call to Action
 
-The 1% Treaty represents a transformative opportunity to redirect global resources from military spending to life-saving medical research. With exceptional cost-effectiveness of **$0.84 per DALY** (105× better than bed nets), this intervention offers unparalleled philanthropic return on investment.
+The 1% Treaty may represent a transformative opportunity to redirect global resources from military spending to life-saving medical research. With projected cost-effectiveness of **$0.84 per DALY** (105× better than bed nets), this intervention may offer exceptional philanthropic return on investment, subject to successful treaty passage (30-40% political risk acknowledged).
 
 **The Ask**: {{< var foundation_amount_requested_full >}} in campaign funding to unlock {{< var treaty_annual_funding >}} annually in perpetuity.
 

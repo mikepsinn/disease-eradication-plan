@@ -466,7 +466,7 @@ The campaign requires structured philanthropic investment across three phases:
 
 ### Impact 1: Lives Saved ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} Over 13 Years)
 
-**Mechanism**: Accelerated drug discovery and approval through cost reduction and efficacy lag elimination.
+**Mechanism**: Projected accelerated drug discovery and approval through cost reduction and efficacy lag elimination.
 
 **Pathways to Lives Saved**:
 
@@ -482,7 +482,7 @@ The campaign requires structured philanthropic investment across three phases:
    - Faster access to life-saving treatments for existing promising compounds
    - Deaths averted: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} over 13 years
 
-**Total Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} (sum of both pathways)
+**Total Lives Saved (Projected)**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} (sum of both pathways, using conservative estimates)
 
 **Conservative Assumptions**:
 - Uses median estimates (not optimistic upper bounds)
@@ -529,7 +529,7 @@ The campaign requires structured philanthropic investment across three phases:
 
 ### Impact 3: Economic Value ({{< var treaty_peace_plus_rd_annual_benefits >}}/year)
 
-**Description**: Economic benefits from R&D cost savings, health productivity gains, and reallocated military spending.
+**Description**: Projected economic benefits from R&D cost savings, health productivity gains, and reallocated military spending.
 
 **Benefit Categories**:
 
@@ -554,7 +554,7 @@ The campaign requires structured philanthropic investment across three phases:
 
 **13-Year Total**: ~$550B (not including compounding effects or benefits beyond Year 13)
 
-**Return on Investment**: Campaign investment of {{< var treaty_campaign_total_cost >}} generates 542× return over 13 years.
+**Return on Investment**: Campaign investment of {{< var treaty_campaign_total_cost >}} projected to generate 542× return over 13 years (subject to successful treaty passage and dFDA implementation).
 
 **Measurement**:
 - Annual R&D cost savings (industry self-reporting, financial disclosures)
@@ -564,7 +564,7 @@ The campaign requires structured philanthropic investment across three phases:
 
 ### Impact 4: Drug Discovery Acceleration ({{< var additional_drugs_from_cost_elimination >}} Additional Drugs/Year)
 
-**Description**: Elimination of cost barriers enables {{< var additional_drugs_from_cost_elimination >}} additional drug approvals annually, accelerating medical progress.
+**Description**: Elimination of cost barriers projected to enable {{< var additional_drugs_from_cost_elimination >}} additional drug approvals annually, accelerating medical progress.
 
 **Current Bottleneck**:
 - ~50 new drugs approved annually (FDA)
@@ -595,7 +595,7 @@ The campaign requires structured philanthropic investment across three phases:
 
 ### Impact 5: Systemic Reform (Pharmaceutical R&D Transformed Globally)
 
-**Description**: dFDA model becomes international standard, reforming pharmaceutical R&D globally and creating permanent infrastructure for continuous medical progress.
+**Description**: dFDA model designed to become international standard, potentially reforming pharmaceutical R&D globally and creating permanent infrastructure for continuous medical progress.
 
 **Systemic Changes**:
 
