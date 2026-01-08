@@ -20,8 +20,52 @@ Usage:
     python -m dih_models.latex_mobile_wrap
 """
 
+from __future__ import annotations
+
 import re
 from typing import Optional
+
+
+def _split_at_top_level_equals(latex: str) -> list[str]:
+    r"""
+    Split LaTeX string on '=' signs, but only at the top level.
+
+    Does NOT split on '=' inside braces (e.g., \sum_{t=1} stays intact).
+
+    Args:
+        latex: LaTeX equation string
+
+    Returns:
+        List of parts split by top-level '=' signs
+    """
+    parts = []
+    current = []
+    brace_depth = 0
+    i = 0
+
+    while i < len(latex):
+        char = latex[i]
+
+        if char == '{':
+            brace_depth += 1
+            current.append(char)
+        elif char == '}':
+            brace_depth -= 1
+            current.append(char)
+        elif char == '=' and brace_depth == 0:
+            # Top-level equals sign - split here
+            parts.append(''.join(current).strip())
+            current = []
+        else:
+            current.append(char)
+
+        i += 1
+
+    # Don't forget the last part
+    if current:
+        parts.append(''.join(current).strip())
+
+    return parts
 
 
 def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
@@ -51,8 +95,8 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
         return latex
 
     # Strategy 1: Break on multiple = signs (common pattern: X = A + B = result)
-    # Split by = but preserve the = in result
-    equals_parts = re.split(r'\s*=\s*', latex)
+    # Split by = but ONLY at top level (not inside braces like \sum_{t=1})
+    equals_parts = _split_at_top_level_equals(latex)
 
     if len(equals_parts) >= 2:
         # Use aligned environment for multi-step equations
