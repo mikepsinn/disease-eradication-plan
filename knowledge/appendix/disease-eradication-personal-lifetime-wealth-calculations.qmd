@@ -83,7 +83,7 @@ As diseases are eradicated, healthcare costs drop:
 
 Based on IBI 2024 workforce data:
 
-- 28% of employees have productivity loss from chronic illness
+- {{< var workforce_with_productivity_loss >}} of employees have productivity loss from chronic illness
 - Average loss: $4,798/year per affected employee
 - Disease eradication recovers this lost productivity
 

@@ -25,6 +25,7 @@ import json
 import yaml
 
 from dih_models.latex_generation import generate_auto_latex
+from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import generate_html_with_tooltip
 from dih_models.reference_parser import sanitize_bibtex_key
 from dih_models.formatting import format_parameter_value
@@ -52,7 +53,8 @@ def generate_variables_yml(
     output_path: Path,
     citation_mode: str = "none",
     params_file: Optional[Path] = None,
-    samples_json_path: Optional[Path] = None
+    samples_json_path: Optional[Path] = None,
+    wrap_latex_width: int = 60
 ):
     """
     Generate _variables.yml file from parameters.
@@ -73,6 +75,7 @@ def generate_variables_yml(
             - "both": Both inline AND separate variables
         params_file: Path to parameters.py for sympy-based LaTeX generation
         samples_json_path: Optional path to samples.json with Monte Carlo uncertainty data
+        wrap_latex_width: Max width for LaTeX equations before wrapping (0 = no wrap)
     """
     variables = {}
     citation_count = 0
@@ -176,10 +179,16 @@ def generate_variables_yml(
         if hardcoded_latex:
             # Use hardcoded (preferred - hand-crafted with semantic labels)
             latex_var_name = f"{var_name}_latex"
+            # Apply mobile-friendly wrapping if enabled
+            if wrap_latex_width > 0:
+                hardcoded_latex = wrap_latex_for_mobile(hardcoded_latex, max_width=wrap_latex_width)
             variables[latex_var_name] = f"$$\n{hardcoded_latex}\n$$"
         elif auto_latex:
             # Fall back to auto-generated for params without hardcoded
             latex_var_name = f"{var_name}_latex"
+            # Apply mobile-friendly wrapping if enabled
+            if wrap_latex_width > 0:
+                auto_latex = wrap_latex_for_mobile(auto_latex, max_width=wrap_latex_width)
             variables[latex_var_name] = f"$$\n{auto_latex}\n$$"
 
     # Count exports by type BEFORE adding metadata variables

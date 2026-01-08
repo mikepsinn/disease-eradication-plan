@@ -121,6 +121,33 @@ malformed_vars = re.findall(r'\{\{<var\s+\w+>\}\}', content)  # Missing space af
 if malformed_vars:
     issues.append(f"ERROR: Malformed variable syntax (missing space after '<'): {len(malformed_vars)} instances")
 
+# Check 6: Variables wrapped in markdown links (variables have built-in links)
+vars_in_links = re.findall(r'\[\{\{<\s*var\s+(\w+)\s*>\}\}\]\([^)]+\)', content)
+if vars_in_links:
+    issues.append(f"ERROR: Variables wrapped in links (remove link, variables have built-in links): {', '.join(vars_in_links[:3])}")
+
+# Check 7: LaTeX blocks that might have _latex variable equivalents
+latex_blocks = re.findall(r'\$\$[^$]+\$\$', content, re.DOTALL)
+if latex_blocks:
+    # Load available _latex variables
+    latex_vars = []
+    try:
+        proj_dir = os.environ.get('CLAUDE_PROJECT_DIR', os.getcwd())
+        var_file = os.path.join(proj_dir, '_variables.yml')
+        if os.path.exists(var_file):
+            with open(var_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    if '_latex":' in line:
+                        match = re.match(r'"(\w+_latex)":', line)
+                        if match:
+                            latex_vars.append(match.group(1))
+    except:
+        pass
+
+    if latex_vars and len(latex_blocks) > 0:
+        issues.append(f"INFO: Found {len(latex_blocks)} LaTeX blocks. Check if any can be replaced with _latex variables.")
+        issues.append(f"  Available _latex vars: {', '.join(latex_vars[:5])}... (grep '_latex' _variables.yml for full list)")
+
 if issues:
     print("\n[QMD Validation]", file=sys.stderr)
     for issue in issues:

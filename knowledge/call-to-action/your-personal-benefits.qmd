@@ -81,14 +81,14 @@ You're not being asked to donate your time. You're being offered the highest-pay
 - Taking actions: 0.5 hours ([Vote 2 min + Invest 10 min + Recruit 15 min](three-actions.qmd))
 - **Total: 14.8 hours**
 
-**Effective Hourly Rate: $291k/hour**
+**Effective Hourly Rate: {{< var effective_hourly_rate_lifetime_benefit >}}/hour**
 
 This is:
 
-- **9,700x** the average US wage (~$30/hour)
+- **9,700x** the average US wage ({{< var average_us_hourly_wage >}}/hour)
 - **29x** a CEO's hourly rate (~$10,000/hour)
 
-The catch? You only get paid if the plan works. But if it does, you just made $291k/hour for 14.8 hours of work.
+The catch? You only get paid if the plan works. But if it does, you just made {{< var effective_hourly_rate_lifetime_benefit >}}/hour for 14.8 hours of work.
 
 **Your choice. But choose fast.** While you were reading this, another person just died.
 

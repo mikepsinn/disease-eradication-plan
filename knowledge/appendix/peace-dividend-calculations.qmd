@@ -135,7 +135,7 @@ print(pivot_df)
 
 The peace dividend analysis reveals:
 
-1.  **Massive Scale**: Even a 1% reduction in conflict costs generates $114+ billion annually in societal benefits
+1.  **Massive Scale**: Even a 1% reduction in conflict costs generates {{< var peace_dividend_annual_societal_benefit >}}+ annually in societal benefits
 2.  **Two-Tier Benefits**:
 
     -   **Captured Dividend**: {{< var treaty_annual_funding >}} annually (direct military budget reallocation)

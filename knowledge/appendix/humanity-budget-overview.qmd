@@ -46,13 +46,13 @@ If you ran a business like this, you'd go bankrupt. When humanity does it, we ca
 
 ## On The Most Absurd Disparity in Human History
 
-The disease burden: [$109 trillion annually](../references.qmd#disease-economic-burden-109t)
+The disease burden: {{< var global_disease_economic_burden_annual >}} annually
 
 What humans spend trying to cure disease: Look at this chart and try not to laugh or cry.
 
 {{< include ../figures/disease-vs-curing-costs-column-chart.qmd >}}
 
-The problem costs $109 trillion. Humans spend {{< var global_med_research_spending >}} trying to solve it.
+The problem costs {{< var global_disease_economic_burden_annual >}}. Humans spend {{< var global_med_research_spending >}} trying to solve it.
 
 That's like your house being on fire and deciding to address it with a water pistol. Technically you're trying, but you're not really trying.
 
