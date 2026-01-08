@@ -1113,7 +1113,7 @@ def load_defined_variables() -> Set[str]:
     Load all defined variables from _variables.yml and _variables-foundation.yml
     Returns a set of variable names that are defined.
     """
-    variables_files = ["_variables.yml", "_variables-foundation.yml"]
+    variables_files = ["_variables.yml", "_variables-foundation.yml", "_variables-foundation-manual-DO-NOT-DELETE.yml"]
     defined_vars: Set[str] = set()
 
     try:
@@ -1467,7 +1467,7 @@ def main():
     print("Running pre-render validation checks on .qmd files...\n")
 
     # Load defined variables from _variables.yml
-    print("Loading defined variables from _variables.yml and _variables-foundation.yml...")
+    print("Loading defined variables from _variables.yml, _variables-foundation.yml, and _variables-foundation-manual-DO-NOT-DELETE.yml...")
     defined_vars = load_defined_variables()
     if defined_vars:
         print(f"Loaded {len(defined_vars)} defined variables\n")

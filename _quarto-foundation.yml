@@ -15,7 +15,7 @@ dih-render:
 # Load foundation-specific variables in addition to main _variables.yml
 metadata-files:
   - _variables.yml
-  - _variables-foundation.yml
+  - _variables-foundation-manual-DO-NOT-DELETE.yml  # Manual foundation-specific text snippets
 
 profiles:
   default:

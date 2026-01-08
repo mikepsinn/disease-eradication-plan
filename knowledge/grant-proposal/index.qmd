@@ -1,0 +1,143 @@
+---
+title: "Grant Proposal Cover Letter"
+subtitle: "Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
+date: "2025"
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+::: {.callout-note appearance="simple"}
+**Document Type:** Foundation Grant Proposal
+**Prepared by:** {{< var foundation_contact_name >}}, {{< var foundation_org_legal_name >}}
+**Date:** {{< var foundation_proposal_date >}}
+**Version:** {{< var foundation_proposal_version >}}
+:::
+
+## Dear Foundation Program Officer,
+
+Thank you for considering this proposal from the Decentralized Institutes of Health. We are seeking philanthropic investment to establish an international treaty that redirects 1% of global military spending to pragmatic clinical trials and decentralized drug assessment infrastructure.
+
+### The Opportunity
+
+{{< var foundation_pitch >}}
+
+This intervention represents a unique opportunity to achieve systemic change in global health financing through evidence-based policy reform. The 1% Treaty would generate {{< var treaty_annual_funding >}} annually in perpetuity, funding pragmatic clinical trials that reduce costs by 82× while accelerating treatment access for billions.
+
+### The Problem We're Solving
+
+{{< var foundation_problem_statement >}}
+
+Current pharmaceutical development creates a "valley of death" where promising treatments are abandoned due to prohibitive trial costs ({{< var traditional_phase3_cost_per_patient >}} per patient) rather than lack of efficacy. Simultaneously, global military spending of {{< var global_military_spending_annual_2024 >}} annually addresses conflicts that cause a fraction of the mortality burden compared to treatable diseases.
+
+### Our Solution
+
+{{< var foundation_solution_statement >}}
+
+The intervention builds on proven models:
+
+- **RECOVERY Trial (2020-2021)**: Enrolled 15,000 COVID patients at {{< var recovery_trial_cost_per_patient >}} per patient (82× cheaper than traditional trials), discovered dexamethasone treatment saving {{< var recovery_trial_global_lives_saved >}} globally
+- **Ottawa Treaty (1997)**: Achieved 133 nation ratifications in 10 years through civil society campaign with <$50M budget, demonstrating feasibility of rapid treaty adoption despite industry opposition
+
+### Funding Request
+
+We are seeking foundation support for one or more of the following funding tiers:
+
+| Tier | Amount | Purpose | Timeline |
+|------|--------|---------|----------|
+| **Full Campaign** | {{< var foundation_amount_requested_full >}} | Complete treaty campaign through ratification | 36 months |
+| **Phase 1 Seed** | {{< var foundation_amount_requested_seed >}} | Proof of concept in pilot countries | 12 months |
+| **Anchor Donation** | {{< var foundation_amount_requested_anchor >}} | Catalyze larger fundraise with credibility signal | Immediate |
+
+All major campaign costs are structured as success-contingent **VICTORY Bonds** (Value-Indexed, Conditional, Treaty-Outcome-Reimbursed Yield) - government-issued securities paid only upon treaty ratification. This structure minimizes risk while maximizing campaign effectiveness.
+
+### Expected Impact
+
+**Cost-Effectiveness:** {{< var foundation_primary_impact >}}
+
+This dramatically exceeds the performance of established global health interventions:
+
+- Insecticide-treated bed nets: {{< var bed_nets_cost_per_daly >}} per DALY (the gold standard benchmark)
+- Deworming programs: $100-300 per DALY
+- Vitamin A supplementation: $15-25 per DALY
+
+**Campaign Leverage:** {{< var foundation_campaign_leverage >}}
+
+**Projected 13-Year Outcomes:**
+
+- **Lives Saved:** {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} ({{< var treaty_lives_saved_annual_global >}} annually)
+- **DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
+- **Economic Value:** {{< var treaty_peace_plus_rd_annual_benefits >}} per year from R&D cost savings, efficacy lag elimination, and health productivity gains
+- **Additional Drug Approvals:** {{< var additional_drugs_from_cost_elimination >}} annually (from eliminated cost barriers)
+
+### Why This Proposal Deserves Consideration
+
+1. **Proven Model:** RECOVERY trial demonstrated pragmatic trials work at scale with 82× cost reduction
+2. **Historical Precedent:** Ottawa Treaty proved rapid international agreement possible via civil society pressure
+3. **Exceptional ROI:** {{< var foundation_campaign_roi_simple >}} from direct treaty benefits
+4. **De-Risked Structure:** Success-contingent financing ensures campaign costs only paid upon ratification
+5. **Academic Rigor:** 500+ peer-reviewed citations, GiveWell-standard cost-effectiveness methodology, Monte Carlo uncertainty analysis
+
+### Proposal Structure
+
+This proposal is organized for efficient evaluation:
+
+::: {.callout-tip}
+## Quick Navigation
+
+**Core Proposal** (Essential reading, ~25 pages):
+
+- **[Executive Summary](executive-summary.qmd)** - Comprehensive overview with all key metrics
+- **[Budget Breakdown](budget-breakdown.qmd)** - Detailed financial plan and ROI analysis
+- **[Theory of Change](theory-of-change.qmd)** - Logic model and causal pathway
+- **[Evaluation Framework](evaluation-framework.qmd)** - KPIs and monitoring plan
+
+**Supporting Documentation** (~20 pages):
+
+- **[Organizational Capacity](organizational-capacity.qmd)** - Team, governance, partnerships
+- **[Risk Analysis](risk-analysis.qmd)** - Comprehensive risk assessment and mitigation
+- **[Evidence Base](evidence-base.qmd)** - Historical precedents and academic validation
+
+**Appendices** (Available for reference):
+
+- **[Parameters & Calculations](../appendix/parameters-and-calculations.qmd)** - Complete methodology and source data
+- **[References & Citations](../references.qmd)** - 500+ peer-reviewed sources
+:::
+
+### Next Steps
+
+We welcome the opportunity to:
+
+1. **Present findings** to your program officers or grant review committee
+2. **Provide additional analysis** tailored to your foundation's impact metrics
+3. **Discuss partnership opportunities** including co-funding arrangements
+4. **Share pilot results** from early-stage voter engagement campaigns
+
+For foundations requiring specific grant portal formats or additional documentation, we are prepared to provide customized materials within 48 hours.
+
+### Contact Information
+
+{{< var foundation_contact_name >}}
+{{< var foundation_contact_title >}}
+Email: {{< var foundation_contact_email >}}
+Website: {{< var foundation_contact_website >}}
+
+**Organization:** {{< var foundation_org_legal_name >}}
+
+**Download Full Proposal:** [PDF Version](../../{{< var foundation_proposal_pdf >}})
+
+---
+
+We appreciate your consideration of this proposal and your foundation's commitment to evidence-based, high-impact global health interventions. The 1% Treaty represents a transformative opportunity to redirect global resources from military spending to life-saving medical research, and we believe your foundation's support could be catalytic in achieving this historic reform.
+
+Sincerely,
+
+**Mike P. Sinn**
+Founder, Decentralized Institutes of Health
+
+::: {.callout-note appearance="minimal"}
+## About This Proposal
+
+This proposal has been prepared with rigorous attention to cost-effectiveness methodology, following GiveWell's standards for philanthropic evaluation. All parameters are traceable to peer-reviewed sources or official statistics (WHO, SIPRI, FDA). Confidence intervals reflect Monte Carlo analysis (10,000 simulations) to quantify uncertainty.
+
+For transparency, our complete calculation methodology and source citations are available in the [Parameters & Calculations](../appendix/parameters-and-calculations.qmd) appendix.
+:::
