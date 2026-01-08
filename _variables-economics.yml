@@ -400,9 +400,8 @@ dfda_npv_benefit_rd_only_latex: '$$
 
   PV_{benefits} \\
 
-  &= \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \\
-
-  &\approx \$249.3B \text{ (5-year linear adoption ramp)}
+  &= \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+  \text{ (5-year linear adoption ramp)}
 
   \end{aligned}
 
