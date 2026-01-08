@@ -21,7 +21,16 @@
 # Run manually with: npm run wishonia
 
 echo "Running pre-render validation..."
-if ! python scripts/pre-render-validation.py; then
+# Use venv Python to ensure consistent NumPy version for reproducible Monte Carlo
+if [ -f ".venv/Scripts/python.exe" ]; then
+    PYTHON_CMD=".venv/Scripts/python.exe"
+elif [ -f ".venv/bin/python" ]; then
+    PYTHON_CMD=".venv/bin/python"
+else
+    PYTHON_CMD="python"
+fi
+
+if ! $PYTHON_CMD scripts/pre-render-validation.py; then
     echo "Pre-render validation failed. Fix issues before committing."
     exit 1
 fi
