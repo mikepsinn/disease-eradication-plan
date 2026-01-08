@@ -1,0 +1,313 @@
+project:
+  type: book
+  output-dir: _site/foundation-grant
+  execute-dir: project
+  resources:
+    - assets/
+    - _redirects
+
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/grant-proposal/index.qmd
+  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  pdf-output-file: Foundation-Grant-Proposal.pdf
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+book:
+  title: "Decentralized Institutes of Health: Foundation Grant Proposal"
+  site-url: https://grant.warondisease.org
+  favicon: assets/icons/book-favicon.png
+  page-navigation: true
+  chapters:
+    # Cover page / Introduction
+    - knowledge/grant-proposal/index.qmd
+
+    # Core grant proposal content (to be created in Phase 2)
+    - knowledge/grant-proposal/executive-summary.qmd
+    - knowledge/grant-proposal/budget-breakdown.qmd
+    - knowledge/grant-proposal/theory-of-change.qmd
+    - knowledge/grant-proposal/evaluation-framework.qmd
+
+    # Supporting documentation (to be created in Phase 3)
+    - knowledge/grant-proposal/organizational-capacity.qmd
+    - knowledge/grant-proposal/risk-analysis.qmd
+    - knowledge/grant-proposal/evidence-base.qmd
+
+    # Essential appendices from main book
+    - knowledge/appendix/parameters-and-calculations.qmd
+    - knowledge/references.qmd
+
+  navbar:
+    right:
+      - icon: file-pdf
+        text: "Download Proposal"
+        href: /Foundation-Grant-Proposal.pdf
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "References"
+        href: knowledge/references.qmd
+      - text: "Main Site"
+        href: https://warondisease.org
+
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    search: true
+    contents:
+      - section: "Grant Proposal"
+        contents:
+          - href: index.html
+            text: "Cover Letter"
+          - href: knowledge/grant-proposal/executive-summary.qmd
+            text: "Executive Summary"
+          - href: knowledge/grant-proposal/budget-breakdown.qmd
+            text: "Budget & ROI"
+          - href: knowledge/grant-proposal/theory-of-change.qmd
+            text: "Theory of Change"
+          - href: knowledge/grant-proposal/evaluation-framework.qmd
+            text: "Evaluation Framework"
+
+      - section: "Supporting Documentation"
+        contents:
+          - href: knowledge/grant-proposal/organizational-capacity.qmd
+            text: "Organizational Capacity"
+          - href: knowledge/grant-proposal/risk-analysis.qmd
+            text: "Risk Analysis"
+          - href: knowledge/grant-proposal/evidence-base.qmd
+            text: "Evidence Base"
+
+      - section: "Appendices"
+        contents:
+          - href: knowledge/appendix/parameters-and-calculations.qmd
+            text: "Parameters & Calculations"
+          - href: knowledge/references.qmd
+            text: "References & Citations"
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  # Author and organization
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn, Decentralized Institutes of Health"
+  byline: "Mike P. Sinn, Decentralized Institutes of Health"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://WarOnDisease.org"
+  author-website: "https://WarOnDisease.org"
+  contact: "mike@warondisease.org"
+
+  # Document classification
+  language: "en-US"
+  subject: "Public Health, Medical Research, Foundation Grant Proposal, Global Health Economics"
+  category: "Grant Proposal, Public Health, Impact Investing"
+  keywords:
+    - foundation-grant
+    - grant-proposal
+    - public-health
+    - medical-research
+    - 1-percent-treaty
+    - decentralized-institutes-of-health
+    - clinical-trials
+    - cost-effectiveness
+    - health-economics
+    - peace-dividend
+    - philanthropic-investment
+    - impact-metrics
+    - roi-analysis
+    - daly-cost-effectiveness
+
+  # Version and copyright
+  version: "1.0.0"
+  edition: "Foundation Grant Proposal - 2025"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+
+  # Publisher information
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://WarOnDisease.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+
+  # Repository information
+  repo-url: "https://github.com/mikepsinn"
+  issue-url: "https://github.com/mikepsinn"
+  source-url: "https://github.com/mikepsinn"
+
+  # Audience and scope
+  geographic-coverage: "Global"
+  audience: "Foundation Program Officers, Philanthropists, Impact Investors, Grant Review Committees"
+  format: "Grant Proposal"
+  type: "Foundation Grant Application"
+  genre: "Grant Proposal, Public Health, Cost-Benefit Analysis"
+  medium: "Digital, Print"
+
+  # Open Graph metadata
+  open-graph: true
+  image: "https://grant.warondisease.org/assets/icons/war-on-disease-og-1200x630.png"
+
+# Remove "Appendix" prefix from appendix chapters
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral  # Professional grayscale for diagrams
+    echo: false
+    number-sections: true  # Grant proposals typically use numbered sections
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - foundation-overrides.css
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | Decentralized Institutes of Health"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[WarOnDisease.org](https://WarOnDisease.org)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              Decentralized Institutes of Health |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="/" style="color: #8b7355;">Grant Proposal</a> |
+              <a href="/knowledge/appendix/parameters-and-calculations.html" style="color: #8b7355;">Calculations</a> |
+              <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
+              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Contact:</strong> <a href="mailto:mike@warondisease.org" style="color: #8b7355;">mike@warondisease.org</a>
+            </p>
+          </div>
+    include-after-body:
+      - text: |
+          <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid #d4c5b9; margin-top: 4rem; color: #8b7355; font-size: 0.9rem; background-color: #fdfdf8;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              Decentralized Institutes of Health |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="/" style="color: #8b7355;">Grant Proposal</a> |
+              <a href="/knowledge/appendix/parameters-and-calculations.html" style="color: #8b7355;">Calculations</a> |
+              <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
+              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Contact:</strong> <a href="mailto:mike@warondisease.org" style="color: #8b7355;">mike@warondisease.org</a>
+            </p>
+          </footer>
+          <!-- Quarto Sidebar Horizontal Overlap Fix -->
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/quarto-sidebar-fix.js';
+              document.body.appendChild(script);
+            })();
+          </script>
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/book-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/book-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/book-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/book-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/book-android-chrome-512x512.png">
+
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+
+          <!-- Professional fonts for grant proposals -->
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  pdf:
+    # PDF output optimized for grant portal uploads
+    output-file: "Foundation-Grant-Proposal.pdf"
+    documentclass: report  # Standard report class for grant proposals
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true  # Grant proposals typically use numbered sections
+    colorlinks: true
+
+    # Standard page geometry for grant portals (US Letter)
+    geometry:
+      - paper=letterpaper
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+
+    # Professional font sizing
+    fontsize: 11pt
+
+    # Ensure fonts are embedded for portal compatibility
+    pdf-engine: pdflatex
+
+    variables:
+      title: "Decentralized Institutes of Health: Foundation Grant Proposal"
+      description: "A proposal to redirect 1\\% of global military spending (\\$27.2B/year) to pragmatic clinical trials and decentralized drug assessment, advancing treatment access 207 years, saving 10.5B lives, and generating \\$30 quadrillion in long-run value."
+
+    include-in-header:
+      text: |
+        % Ensure proper font encoding and embedding for grant portals
+        \usepackage[T1]{fontenc}
+        \usepackage{lmodern}
+
+        % Professional formatting for grant proposals
+        \usepackage{setspace}
+        \onehalfspacing
+
+        % Better table formatting
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+
+        % Page break controls
+        \usepackage{needspace}
+
+        % Headers and footers
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhead[L]{Decentralized Institutes of Health}
+        \fancyhead[R]{Grant Proposal}
+        \fancyfoot[C]{\thepage}
+
+        % Use Arabic numerals for appendix chapters (not letters)
+        \usepackage{etoolbox}
+        \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
+
+        % Ensure figures don't float too far
+        \usepackage{float}
+        \floatplacement{figure}{H}
