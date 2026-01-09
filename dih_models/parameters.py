@@ -3562,7 +3562,6 @@ DFDA_ROI_RD_ONLY = Parameter(
     display_name="ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
     unit="ratio",
     formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
-    latex=r"ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "low estimate"],
     inputs=["DFDA_BENEFIT_RD_ONLY_ANNUAL", "DFDA_ANNUAL_OPEX", "NPV_DISCOUNT_RATE_STANDARD", "DFDA_NPV_UPFRONT_COST_TOTAL"],
     compute=lambda ctx: (
@@ -3573,7 +3572,7 @@ DFDA_ROI_RD_ONLY = Parameter(
             ctx["DFDA_NPV_UPFRONT_COST_TOTAL"] + ctx["DFDA_ANNUAL_OPEX"] * ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -10) / ctx["NPV_DISCOUNT_RATE_STANDARD"])
         )
     )
-)  # ~463:1 - Most conservative, R&D cost savings only (NPV-adjusted)
+)  # ~637:1 - Most conservative, R&D cost savings only (NPV-adjusted)
 
 
 # ---
@@ -4823,7 +4822,7 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 # ---
 # Self-documenting parameter names clarify exactly what's included:
 #
-# - DFDA_ROI_RD_ONLY (463:1):
+# - DFDA_ROI_RD_ONLY (637:1):
 #   R&D cost savings only (NPV-adjusted, 10-year timeframe)
 #   Most conservative estimate
 #
@@ -4839,9 +4838,9 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 #   Use cautiously, appropriate for comprehensive/academic analyses
 #
 # Usage guidelines:
-# - Skeptical audiences / conservative pitches: DFDA_ROI_RD_ONLY (463:1)
+# - Skeptical audiences / conservative pitches: DFDA_ROI_RD_ONLY (637:1)
 # - Balanced presentations / general use: DFDA_ROI_RD_PLUS_DELAY (6,489:1) **RECOMMENDED**
-# - Academic/comprehensive analyses: Show full range 463:1 to 11,540:1
+# - Academic/comprehensive analyses: Show full range 637:1 to 11,540:1
 # - Advocacy (use cautiously): DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1)
 
 
