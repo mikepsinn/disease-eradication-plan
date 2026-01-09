@@ -20,8 +20,8 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "Wishocracy"
-  description: "Randomized Aggregated Pairwise Preference Allocation (RAPPA) for Democratic Resource Allocation"
+  title: "Wishocracy: Aggregating Citizen Preferences and Knowledge for Optimal Public Resource Allocation"
+  description: "A mechanism for solving the democratic principal-agent problem through collective intelligence and pairwise preference aggregation"
   site-url: https://paper.wishocracy.org
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
@@ -65,17 +65,17 @@ metadata:
   # (Website-level description is already set in the 'website' section above)
   # abstract: Removed - pages can define their own abstract in frontmatter if needed
   language: "en-US"
-  subject: "Mechanism Design, Collective Decision-Making, Participatory Democracy, Preference Aggregation"
+  subject: "Mechanism Design, Collective Intelligence, Direct Democracy, Principal-Agent Problem, Public Resource Allocation"
   category: "Academic Paper, Public Policy, Political Science"
   keywords:
     - mechanism-design
-    - collective-decision-making
-    - participatory-democracy
-    - preference-aggregation
-    - quadratic-voting
-    - analytic-hierarchy-process
-    - participatory-budgeting
     - collective-intelligence
+    - direct-democracy
+    - principal-agent-problem
+    - preference-aggregation
+    - participatory-budgeting
+    - analytic-hierarchy-process
+    - democratic-resource-allocation
     - wishocracy
     - RAPPA
     - democratic-innovation
