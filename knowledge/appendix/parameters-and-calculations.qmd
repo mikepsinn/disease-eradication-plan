@@ -460,11 +460,11 @@ $$
 
 :::
 
-### dFDA Combined Treatment Discovery Speedup Multiplier: 17.2x {#sec-dfda_combined_cure_speedup_multiplier}
+### dFDA Combined Treatment Discovery Speedup Multiplier: 17.2x {#sec-dfda_combined_treatment_speedup_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to cure now take T/speedup years.
+Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.
 
 **Inputs**:
 
@@ -484,50 +484,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-dfda_combined_cure_speedup_multiplier.qmd >}}
+{{< include ../figures/tornado-dfda_combined_treatment_speedup_multiplier.qmd >}}
 
-{{< include ../figures/sensitivity-table-dfda_combined_cure_speedup_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_combined_cure_speedup_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_combined_cure_speedup_multiplier.qmd >}}
-
-:::
-
-### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_cures_per_year}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
-
-**Inputs**:
-
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
-
-$$
-DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_cures_per_year.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_cures_per_year.qmd >}}
+{{< include ../figures/sensitivity-table-dfda_combined_treatment_speedup_multiplier.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-dfda_cures_per_year.qmd >}}
+{{< include ../figures/mc-distribution-dfda_combined_treatment_speedup_multiplier.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-dfda_cures_per_year.qmd >}}
+{{< include ../figures/exceedance-dfda_combined_treatment_speedup_multiplier.qmd >}}
 
 :::
 
@@ -802,6 +769,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+:::
+
+### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+
+$$
+DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
@@ -1202,7 +1202,7 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 - [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
-ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
+Savings_{DFDA,RD} = NPV_BENEFIT \div NPV_TOTAL_COST = 637
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -1300,54 +1300,17 @@ $$
 
 :::
 
-### dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_cure_acceleration_years}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Years earlier the average cure arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
-
-**Inputs**:
-
-- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_cure) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
-
-$$
-\begin{aligned}
-Ratio_{DFDA} \\
-&= STATUS_QUO_AVG_YEARS_TO_CURE \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) \\
-&= 204
-\end{aligned}
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_trial_capacity_cure_acceleration_years.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_trial_capacity_cure_acceleration_years.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_trial_capacity_cure_acceleration_years.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_trial_capacity_cure_acceleration_years.qmd >}}
-
-:::
-
 ### DALYs Averted from Trial Capacity Increase: 543B DALYs {#sec-dfda_trial_capacity_dalys_averted}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × cure acceleration years. Includes both fatal and non-fatal diseases.
+Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × treatment acceleration years. Includes both fatal and non-fatal diseases.
 
 **Inputs**:
 
 - [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88B DALYs/year (SE: ±150M DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 204 years
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
 
 $$
 \begin{aligned}
@@ -1418,17 +1381,17 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total eventually avoidable deaths from trial capacity increase alone. Represents cures arriving earlier due to faster queue processing from increased trial capacity.
+Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster queue processing from increased trial capacity.
 
 **Inputs**:
 
 - [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 204 years
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
 
 $$
 \begin{aligned}
 Increase_{DFDA} \\
-&= ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \times AVOIDABLE_PCT \\
+&= ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS \times AVOIDABLE_PCT \\
 &= 10.3B
 \end{aligned}
 $$
@@ -1641,11 +1604,11 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Average years earlier patients receive cures due to dFDA. Combines cure timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
+Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
 
 **Inputs**:
 
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_cure_acceleration_years) 🔢: 204 years
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
@@ -1667,6 +1630,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+:::
+
+### dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_treatment_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+
+**Inputs**:
+
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+
+$$
+\begin{aligned}
+Ratio_{DFDA} \\
+&= STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) \\
+&= 204
+\end{aligned}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
 
 :::
 
@@ -4035,11 +4035,11 @@ $$
 
 :::
 
-### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_cure}
+### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
+Average years until first treatment discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
 
 **Inputs**:
 
@@ -4055,17 +4055,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-status_quo_avg_years_to_cure.qmd >}}
+{{< include ../figures/tornado-status_quo_avg_years_to_first_treatment.qmd >}}
 
-{{< include ../figures/sensitivity-table-status_quo_avg_years_to_cure.qmd >}}
+{{< include ../figures/sensitivity-table-status_quo_avg_years_to_first_treatment.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-status_quo_avg_years_to_cure.qmd >}}
+{{< include ../figures/mc-distribution-status_quo_avg_years_to_first_treatment.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-status_quo_avg_years_to_cure.qmd >}}
+{{< include ../figures/exceedance-status_quo_avg_years_to_first_treatment.qmd >}}
 
 :::
 

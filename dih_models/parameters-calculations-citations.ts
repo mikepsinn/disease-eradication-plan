@@ -1790,26 +1790,15 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   latex: "Benefit_{DFDA,ann} = Trials_{ann} \\times Reduction_{DFDA} = \\$60B \\times 97.7\\% = \\$58.6B",
 };
 
-export const DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER: Parameter = {
+export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
   value: 17.22735255792873,
   unit: "multiplier",
   displayName: "dFDA Combined Treatment Discovery Speedup Multiplier",
-  description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to cure now take T/speedup years.",
+  description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.",
   sourceType: "calculated",
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
   latex: "Multiplier_{DFDA} = Multiplier_{DFDA} \\times Multiplier_{DFDA} = 12.3 \\times 1.4 = 17.2",
-};
-
-export const DFDA_CURES_PER_YEAR: Parameter = {
-  value: 184.57877740637923,
-  unit: "diseases/year",
-  displayName: "dFDA New Treatments Per Year",
-  description: "Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
-  latex: "DFDA = New \\times Multiplier_{DFDA} = 15 \\times 12.3 = 185",
 };
 
 export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
@@ -1893,6 +1882,17 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
   confidence: "medium",
   formula: "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
   latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
+};
+
+export const DFDA_FIRST_TREATMENTS_PER_YEAR: Parameter = {
+  value: 184.57877740637923,
+  unit: "diseases/year",
+  displayName: "dFDA New Treatments Per Year",
+  description: "Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
+  latex: "DFDA = New \\times Multiplier_{DFDA} = 15 \\times 12.3 = 185",
 };
 
 export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
@@ -2021,7 +2021,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "NPV_BENEFIT ÷ NPV_TOTAL_COST",
-  latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
+  latex: "Savings_{DFDA,RD} = NPV_BENEFIT \\div NPV_TOTAL_COST = 637",
 };
 
 export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
@@ -2046,25 +2046,14 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   latex: "Capacity_{DFDA} = Trials_{curr} \\times Multiplier_{DFDA} = 3{,}300 \\times 12.3 = 40{,}600",
 };
 
-export const DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS: Parameter = {
-  value: 203.65267802332718,
-  unit: "years",
-  displayName: "dFDA Treatment Timeline Acceleration",
-  description: "Years earlier the average cure arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
-  sourceType: "calculated",
-  confidence: "low",
-  formula: "STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
-  latex: "Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_CURE \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204",
-};
-
 export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
   value: 543280352787.0,
   unit: "DALYs",
   displayName: "DALYs Averted from Trial Capacity Increase",
-  description: "Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × cure acceleration years. Includes both fatal and non-fatal diseases.",
+  description: "Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × treatment acceleration years. Includes both fatal and non-fatal diseases.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × CURE_ACCELERATION_YEARS",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TREATMENT_ACCELERATION_YEARS",
   latex: "Increase_{DFDA} = DALYs_{ann} \\times DALYs \\times Ratio_{DFDA} = 2.88B \\times 92.6\\% \\times 204 = 543B",
 };
 
@@ -2083,11 +2072,11 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
   value: 10327985873.0,
   unit: "deaths",
   displayName: "Lives Saved from Trial Capacity Increase",
-  description: "Total eventually avoidable deaths from trial capacity increase alone. Represents cures arriving earlier due to faster queue processing from increased trial capacity.",
+  description: "Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster queue processing from increased trial capacity.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS × AVOIDABLE_PCT",
-  latex: "Increase_{DFDA} = ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.3B",
+  formula: "ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS × AVOIDABLE_PCT",
+  latex: "Increase_{DFDA} = ANNUAL_DEATHS \\times DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS \\times AVOIDABLE_PCT = 10.3B",
 };
 
 export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
@@ -2150,11 +2139,22 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
   value: 211.85267802332717,
   unit: "years",
   displayName: "dFDA Average Total Timeline Shift",
-  description: "Average years earlier patients receive cures due to dFDA. Combines cure timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
+  description: "Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+  formula: "DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
   latex: "Capacity_{DFDA} = Ratio_{DFDA} + Delay = 204 + 8.2 = 212",
+};
+
+export const DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS: Parameter = {
+  value: 203.65267802332718,
+  unit: "years",
+  displayName: "dFDA Treatment Timeline Acceleration",
+  description: "Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
+  latex: "Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204",
 };
 
 export const DFDA_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -2891,11 +2891,11 @@ export const RECOVERY_TRIAL_TOTAL_QALYS_GENERATED: Parameter = {
   latex: "Rate_{total} = Trials_{global} \\times Deaths = 1M \\times 5 = 5M",
 };
 
-export const STATUS_QUO_AVG_YEARS_TO_CURE: Parameter = {
+export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
   value: 221.66666666666666,
   unit: "years",
   displayName: "Status Quo Average Years to First Treatment",
-  description: "Average years until cure discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
+  description: "Average years until first treatment discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
   sourceType: "calculated",
   sourceRef: "status-quo-cure-timeline-estimate",
   confidence: "low",
@@ -4487,8 +4487,7 @@ export const parameters = {
   CURRENT_TOTAL_EXPLORATION_YEARS,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
-  DFDA_COMBINED_CURE_SPEEDUP_MULTIPLIER,
-  DFDA_CURES_PER_YEAR,
+  DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER,
   DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER,
   DFDA_EFFICACY_LAG_ELIMINATION_DALYS,
@@ -4496,6 +4495,7 @@ export const parameters = {
   DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE,
   DFDA_EFFICACY_LAG_ELIMINATION_YLD,
   DFDA_EFFICACY_LAG_ELIMINATION_YLL,
+  DFDA_FIRST_TREATMENTS_PER_YEAR,
   DFDA_KNOWN_SAFE_EXPLORATION_YEARS,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
@@ -4509,7 +4509,6 @@ export const parameters = {
   DFDA_ROI_RD_ONLY,
   DFDA_TOTAL_EXPLORATION_YEARS,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
-  DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS,
   DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
   DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_LIVES_SAVED,
@@ -4519,6 +4518,7 @@ export const parameters = {
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS,
+  DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS,
   DFDA_TRIAL_COST_REDUCTION_FACTOR,
   DFDA_TRIAL_COST_REDUCTION_PCT,
   DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER,
@@ -4581,7 +4581,7 @@ export const parameters = {
   PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
-  STATUS_QUO_AVG_YEARS_TO_CURE,
+  STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   THALIDOMIDE_DALYS_PER_EVENT,
   THALIDOMIDE_DEATHS_PER_EVENT,

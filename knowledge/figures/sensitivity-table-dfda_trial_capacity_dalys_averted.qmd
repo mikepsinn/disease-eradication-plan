@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Trial Capacity Cure Acceleration Years | 0.9185 | Strong driver |
+| dFDA Trial Capacity Treatment Acceleration Years | 0.9185 | Strong driver |
 | Eventually Avoidable DALY % | 0.4698 | Moderate driver |
 | Global Annual DALY Burden | 0.0526 | Minimal effect |
 

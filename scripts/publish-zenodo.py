@@ -108,10 +108,12 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     author_name = metadata.get("human-author", metadata.get("creator", "Mike P. Sinn"))
     creators = [{"name": author_name}]
 
-    # Add ORCID if available (you can add this to your _quarto-*.yml files)
+    # Add ORCID if available in metadata, otherwise use default for Mike P. Sinn
     orcid = metadata.get("orcid")
     if orcid:
         creators[0]["orcid"] = orcid
+    elif "Mike" in author_name and "Sinn" in author_name:
+        creators[0]["orcid"] = "0000-0002-4817-1912"
 
     # Keywords
     keywords = metadata.get("keywords", [])
@@ -153,9 +155,10 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
         "description": description,
         "creators": creators,
         "keywords": keywords,
-        "license": {"id": zenodo_license},
+        "license": zenodo_license,
         "publication_date": datetime.now().strftime("%Y-%m-%d"),
-        "resource_type": {"id": PAPERS[paper_key]["resource_type"]},
+        "upload_type": "publication",
+        "publication_type": "workingpaper",
         "publisher": metadata.get("publisher", "Decentralized Institutes of Health"),
     }
 
@@ -307,7 +310,7 @@ def publish_paper(
 
     print(f"[OK] Title: {metadata['title']}")
     print(f"[OK] Authors: {', '.join(c['name'] for c in metadata['creators'])}")
-    print(f"[OK] License: {metadata['license']['id']}")
+    print(f"[OK] License: {metadata['license']}")
 
     if dry_run:
         print("\n[DRY RUN] Would upload with metadata:")
@@ -321,9 +324,11 @@ def publish_paper(
 
         if existing_draft:
             deposit_id = existing_draft["id"]
-            bucket_url = existing_draft["links"]["bucket"]
             print(f"[OK] Found existing draft: {deposit_id}")
             print("  -> Updating existing draft...")
+            # Get full deposit details to get bucket URL
+            full_deposit = client.get_deposit(deposit_id)
+            bucket_url = full_deposit["links"]["bucket"]
             # Delete old files before uploading new one
             client.delete_all_files(deposit_id)
         else:

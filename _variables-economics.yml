@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (298 entries)
+# Contains only variables used in this paper (300 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -256,18 +256,6 @@ dfda_benefit_rd_only_annual_latex: '$$
   \end{aligned}
 
   $$'
-dfda_cures_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_cures_per_year"
-  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
-  title="Diseases per year receiving their first effective treatment with dFDA. Scales
-  proportionally with trial capacity multiplier. | Calculated from 2 inputs | ? Low
-  confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER
-  | Unit: diseases/year | Click to view details, calculation & sources">185 diseases/year
-  (95% CI: 115 diseases/year-265 diseases/year)</a>'
-dfda_cures_per_year_latex: '$$
-
-  DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
-
-  $$'
 dfda_direct_funding_cost_per_daly: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly"
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd"
   data-source-type="definition" data-confidence="medium" title="Cost per DALY if philanthropists/governments
@@ -381,6 +369,18 @@ dfda_efficacy_lag_elimination_economic_value_latex: '$$
   \end{aligned}
 
   $$'
+dfda_first_treatments_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_first_treatments_per_year"
+  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
+  title="Diseases per year receiving their first effective treatment with dFDA. Scales
+  proportionally with trial capacity multiplier. | Calculated from 2 inputs | ? Low
+  confidence | Formula: NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER
+  | Unit: diseases/year | Click to view details, calculation & sources">185 diseases/year
+  (95% CI: 115 diseases/year-265 diseases/year)</a>'
+dfda_first_treatments_per_year_latex: '$$
+
+  DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
+
+  $$'
 dfda_npv_adoption_ramp_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_adoption_ramp_years"
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve"
   data-source-type="definition" data-confidence="high" title="Years to reach full
@@ -434,6 +434,27 @@ dfda_npv_total_cost_latex: '$$
   \end{aligned}
 
   $$'
+dfda_npv_upfront_cost_total: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_upfront_cost_total"
+  class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs"
+  data-source-type="calculated" data-confidence="high" title="Total NPV upfront costs
+  (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated
+  from 2 inputs | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit:
+  USD | Click to view details, calculation & sources">$270M (95% CI: $181M-$380M)</a>'
+dfda_npv_upfront_cost_total_latex: '$$
+
+  \begin{aligned}
+
+  Cost_{DFDA,total} \\
+
+  &= Cost_{DFDA,NPV} + Cost_{NPV} \\
+
+  &= \$40M + \$230M \\
+
+  &= \$270M
+
+  \end{aligned}
+
+  $$'
 dfda_opex_pct_of_treaty_funding: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_pct_of_treaty_funding"
   class="parameter-link" data-source-ref="/knowledge/economics/economics.qmd#funding-allocation"
   data-source-type="definition" data-confidence="high" title="Percentage of treaty
@@ -483,29 +504,7 @@ dfda_roi_rd_only: '<a href="/knowledge/appendix/parameters-and-calculations#sec-
   | Unit: ratio | Click to view details, calculation & sources">637:1 (95% CI: 569:1-782:1)</a>'
 dfda_roi_rd_only_latex: '$$
 
-  ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
-
-  $$'
-dfda_trial_capacity_cure_acceleration_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_cure_acceleration_years"
-  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
-  title="Years earlier the average cure arrives due to dFDA''s trial capacity increase.
-  Calculated as the status quo timeline reduced by the inverse of the capacity multiplier.
-  Uses only trial capacity multiplier (not combined with valley of death rescue) because
-  additional candidates don''t directly speed queue processing. | Calculated from
-  2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_CURE × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)
-  | Unit: years | Click to view details, calculation & sources">204 years (95% CI:
-  126 years-343 years)</a>'
-dfda_trial_capacity_cure_acceleration_years_latex: '$$
-
-  \begin{aligned}
-
-  Ratio_{DFDA} \\
-
-  &= STATUS_QUO_AVG_YEARS_TO_CURE \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) \\
-
-  &= 204
-
-  \end{aligned}
+  Savings_{DFDA,RD} = NPV_BENEFIT \div NPV_TOTAL_COST = 637
 
   $$'
 dfda_trial_capacity_multiplier: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier"
@@ -609,14 +608,38 @@ dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex: '$$
   $$'
 dfda_trial_capacity_plus_efficacy_lag_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_years"
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
-  title="Average years earlier patients receive cures due to dFDA. Combines cure timeline
-  acceleration from increased trial capacity with efficacy lag elimination for treatments
-  already discovered. | Calculated from 2 inputs | ? Low confidence | Formula: DFDA_TRIAL_CAPACITY_CURE_ACCELERATION_YEARS
-  + EFFICACY_LAG_YEARS | Unit: years | Click to view details, calculation & sources">212
-  years (95% CI: 138 years-348 years)</a>'
+  title="Average years earlier patients receive treatments due to dFDA. Combines treatment
+  timeline acceleration from increased trial capacity with efficacy lag elimination
+  for treatments already discovered. | Calculated from 2 inputs | ? Low confidence
+  | Formula: DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS + EFFICACY_LAG_YEARS
+  | Unit: years | Click to view details, calculation & sources">212 years (95% CI:
+  138 years-348 years)</a>'
 dfda_trial_capacity_plus_efficacy_lag_years_latex: '$$
 
   Capacity_{DFDA} = Ratio_{DFDA} + Delay = 204 + 8.2 = 212
+
+  $$'
+dfda_trial_capacity_treatment_acceleration_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_treatment_acceleration_years"
+  class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="low"
+  title="Years earlier the average first treatment arrives due to dFDA''s trial capacity
+  increase. Calculated as the status quo timeline reduced by the inverse of the capacity
+  multiplier. Uses only trial capacity multiplier (not combined with valley of death
+  rescue) because additional candidates don''t directly speed queue processing. |
+  Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT
+  × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) | Unit: years | Click to view details,
+  calculation & sources">204 years (95% CI: 126 years-343 years)</a>'
+dfda_trial_capacity_treatment_acceleration_years_latex: '$$
+
+  \begin{aligned}
+
+  Ratio_{DFDA} \\
+
+  &= STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)
+  \\
+
+  &= 204
+
+  \end{aligned}
 
   $$'
 dfda_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_factor"
@@ -1539,15 +1562,15 @@ standard_economic_qaly_value_usd: '<a href="/knowledge/appendix/parameters-and-c
   | Dist: Normal (SE: $30K) | Unit: USD/QALY | Click to view details, calculation
   & sources">$150K (95% CI: $100K-$199K)</a>'
 standard_economic_qaly_value_usd_cite: '@qaly-value'
-status_quo_avg_years_to_cure: '<a href="/knowledge/appendix/parameters-and-calculations#sec-status_quo_avg_years_to_cure"
+status_quo_avg_years_to_first_treatment: '<a href="/knowledge/appendix/parameters-and-calculations#sec-status_quo_avg_years_to_first_treatment"
   class="parameter-link" data-source-ref="status-quo-cure-timeline-estimate" data-source-type="calculated"
-  data-confidence="low" title="Average years until cure discovered for a typical disease
-  under current system. The average disease is in the middle of the queue, so it waits
-  half the total queue clearance time (~443/2 = ~222 years). | Calculated from 1 input
-  | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2 | Unit: years
-  | Click to view details, calculation & sources">222 years (95% CI: 162 years-356
-  years)</a>'
-status_quo_avg_years_to_cure_latex: '$$
+  data-confidence="low" title="Average years until first treatment discovered for
+  a typical disease under current system. The average disease is in the middle of
+  the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
+  | Calculated from 1 input | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS
+  ÷ 2 | Unit: years | Click to view details, calculation & sources">222 years (95%
+  CI: 162 years-356 years)</a>'
+status_quo_avg_years_to_first_treatment_latex: '$$
 
   Status = Time \times 0.5 = 443 \times 0.5 = 222
 
