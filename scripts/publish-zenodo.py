@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Zenodo Publishing Script
+Zenodo Upload Script
 
-Automates publishing of Quarto-generated PDFs to Zenodo.
-Reads metadata from _quarto-*.yml files and uploads PDFs with proper academic metadata.
+Uploads Quarto-generated PDFs to Zenodo as drafts.
+Reads metadata from _quarto-*.yml files and creates drafts with proper academic metadata.
+You publish manually on Zenodo when ready (https://zenodo.org/me/uploads).
 
 Usage:
-    python scripts/publish-zenodo.py                    # Publish all papers
-    python scripts/publish-zenodo.py --paper iab        # Publish specific paper
-    python scripts/publish-zenodo.py --sandbox          # Use Zenodo sandbox for testing
+    python scripts/publish-zenodo.py --draft            # Upload all papers as drafts
+    python scripts/publish-zenodo.py --draft --paper iab  # Upload specific paper
+    python scripts/publish-zenodo.py --sandbox --draft  # Use Zenodo sandbox for testing
     python scripts/publish-zenodo.py --dry-run          # Show what would be uploaded
 
 Environment variables:
@@ -70,23 +71,6 @@ PAPERS = {
     },
 }
 
-# Zenodo deposit IDs file (tracks existing deposits for versioning)
-ZENODO_IDS_FILE = PROJECT_ROOT / "zenodo-deposits.json"
-
-
-def load_zenodo_ids() -> dict:
-    """Load existing Zenodo deposit IDs from config file."""
-    if ZENODO_IDS_FILE.exists():
-        with open(ZENODO_IDS_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {"production": {}, "sandbox": {}}
-
-
-def save_zenodo_ids(ids: dict) -> None:
-    """Save Zenodo deposit IDs to config file."""
-    with open(ZENODO_IDS_FILE, "w", encoding="utf-8") as f:
-        json.dump(ids, f, indent=2)
-    print(f"[OK] Saved deposit IDs to {ZENODO_IDS_FILE}")
 
 
 def load_quarto_config(config_file: str) -> dict:
@@ -275,24 +259,37 @@ class ZenodoClient:
         response.raise_for_status()
         return response.json()
 
+    def find_draft_by_title(self, title: str) -> Optional[dict]:
+        """Find an existing draft deposit by title."""
+        response = requests.get(
+            f"{self.base_url}/deposit/depositions",
+            headers=self.headers,
+            params={"status": "draft"},
+        )
+        response.raise_for_status()
+
+        for deposit in response.json():
+            deposit_title = deposit.get("metadata", {}).get("title", "")
+            if deposit_title == title:
+                return deposit
+        return None
+
 
 def publish_paper(
     paper_key: str,
     client: ZenodoClient,
-    zenodo_ids: dict,
     dry_run: bool = False,
     skip_publish: bool = False,
 ) -> Optional[dict]:
     """
-    Publish a single paper to Zenodo.
+    Upload a paper to Zenodo as a draft.
 
     Returns the deposit info if successful, None otherwise.
     """
     paper_config = PAPERS[paper_key]
-    env_key = "sandbox" if client.sandbox else "production"
 
     print(f"\n{'='*60}")
-    print(f"Publishing: {paper_key}")
+    print(f"Uploading: {paper_key}")
     print(f"{'='*60}")
 
     # Check if PDF exists
@@ -317,22 +314,23 @@ def publish_paper(
         print(json.dumps(metadata, indent=2))
         return None
 
-    # Check for existing deposit
-    existing_id = zenodo_ids.get(env_key, {}).get(paper_key)
-
     try:
-        if existing_id:
-            print(f"[OK] Found existing deposit: {existing_id}")
-            print("  -> Creating new version...")
-            deposit = client.create_new_version(existing_id)
-            # Delete old files from draft
-            client.delete_all_files(deposit["id"])
-        else:
-            print("[OK] Creating new deposit...")
-            deposit = client.create_deposit()
+        # Check for existing draft with same title (to update instead of creating duplicates)
+        print("[OK] Checking for existing draft...")
+        existing_draft = client.find_draft_by_title(metadata["title"])
 
-        deposit_id = deposit["id"]
-        bucket_url = deposit["links"]["bucket"]
+        if existing_draft:
+            deposit_id = existing_draft["id"]
+            bucket_url = existing_draft["links"]["bucket"]
+            print(f"[OK] Found existing draft: {deposit_id}")
+            print("  -> Updating existing draft...")
+            # Delete old files before uploading new one
+            client.delete_all_files(deposit_id)
+        else:
+            print("[OK] No existing draft found, creating new deposit...")
+            deposit = client.create_deposit()
+            deposit_id = deposit["id"]
+            bucket_url = deposit["links"]["bucket"]
 
         print(f"[OK] Deposit ID: {deposit_id}")
 
@@ -345,8 +343,8 @@ def publish_paper(
         client.upload_file(deposit_id, pdf_path, bucket_url)
 
         if skip_publish:
-            print("[OK] Skipping publish (draft saved)")
-            print(f"  -> Edit at: {client.base_url.replace('/api', '')}/deposit/{deposit_id}")
+            print("[OK] Draft saved (not published)")
+            print(f"  -> Review at: {client.base_url.replace('/api', '')}/deposit/{deposit_id}")
         else:
             # Publish
             print("[OK] Publishing...")
@@ -360,11 +358,7 @@ def publish_paper(
             print(f"  Concept DOI: {concept_doi}")
             print(f"  URL: {result['links']['html']}")
 
-            # Save the concept record ID for future versions
-            zenodo_ids.setdefault(env_key, {})[paper_key] = result["conceptrecid"]
-            save_zenodo_ids(zenodo_ids)
-
-        return deposit
+        return {"id": deposit_id, "bucket": bucket_url}
 
     except requests.HTTPError as e:
         print(f"ERROR: Zenodo API error: {e}")
@@ -374,14 +368,14 @@ def publish_paper(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Publish Quarto papers to Zenodo",
+        description="Upload Quarto papers to Zenodo as drafts",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
     parser.add_argument(
         "--paper",
         choices=list(PAPERS.keys()),
-        help="Publish specific paper (default: all)",
+        help="Upload specific paper (default: all)",
     )
     parser.add_argument(
         "--sandbox",
@@ -429,21 +423,19 @@ def main():
 
     # Initialize client
     client = ZenodoClient(token, sandbox=args.sandbox)
-    zenodo_ids = load_zenodo_ids()
 
     env_name = "SANDBOX" if args.sandbox else "PRODUCTION"
     print(f"Zenodo Environment: {env_name}")
     print(f"API: {client.base_url}")
 
-    # Determine which papers to publish
-    papers_to_publish = [args.paper] if args.paper else list(PAPERS.keys())
+    # Determine which papers to upload
+    papers_to_upload = [args.paper] if args.paper else list(PAPERS.keys())
 
     results = {}
-    for paper_key in papers_to_publish:
+    for paper_key in papers_to_upload:
         result = publish_paper(
             paper_key,
             client,
-            zenodo_ids,
             dry_run=args.dry_run,
             skip_publish=args.draft,
         )
@@ -455,7 +447,7 @@ def main():
     print(f"{'='*60}")
 
     for paper_key, result in results.items():
-        status = "[OK] Published" if result else "[--] Skipped"
+        status = "[OK] Uploaded" if result else "[--] Skipped"
         print(f"  {paper_key}: {status}")
 
     return 0

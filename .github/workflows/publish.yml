@@ -3,7 +3,7 @@ on:
   push:
     branches: [main, master]
 
-name: Lint, Build, and Deploy Quarto site to Netlify
+name: Build, Deploy to Netlify, and Upload to Zenodo
 
 permissions:
   contents: read
@@ -167,6 +167,13 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
         timeout-minutes: 1
 
+      - name: Upload Economics PDF to Zenodo (draft)
+        if: ${{ secrets.ZENODO_TOKEN != '' }}
+        continue-on-error: true
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/publish-zenodo.py --draft --paper economics
+
   build-wishocracy:
     name: Build Wishocracy Paper
     runs-on: ubuntu-latest
@@ -239,6 +246,13 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
         timeout-minutes: 1
+
+      - name: Upload Wishocracy PDF to Zenodo (draft)
+        if: ${{ secrets.ZENODO_TOKEN != '' }}
+        continue-on-error: true
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/publish-zenodo.py --draft --paper wishocracy
 
   build-iab:
     name: Build IAB Paper
@@ -313,6 +327,13 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1
 
+      - name: Upload IAB PDF to Zenodo (draft)
+        if: ${{ secrets.ZENODO_TOKEN != '' }}
+        continue-on-error: true
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/publish-zenodo.py --draft --paper iab
+
   build-dfda:
     name: Build dFDA Paper
     runs-on: ubuntu-latest
@@ -378,3 +399,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_SITE_ID }}
         timeout-minutes: 1
+
+      - name: Upload dFDA PDF to Zenodo (draft)
+        if: ${{ secrets.ZENODO_TOKEN != '' }}
+        continue-on-error: true
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/publish-zenodo.py --draft --paper dfda

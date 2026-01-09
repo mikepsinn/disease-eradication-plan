@@ -49,25 +49,24 @@ This approach:
 
 ## Usage
 
-### Upload via GitHub Actions
+### Automatic Upload on Every Push
 
-1. Go to Actions > "Upload Papers to Zenodo"
-2. Click "Run workflow"
-3. Options:
-   - **Paper**: Select specific paper or leave empty for all
-   - **Use sandbox**: Test with sandbox.zenodo.org first
+The main CI workflow (`publish.yml`) automatically:
+1. Builds each paper's PDF
+2. Deploys to Netlify
+3. Uploads PDF as draft to Zenodo
 
-### Automatic Upload on Releases
-
-When you create a GitHub Release, all papers are automatically uploaded as drafts to Zenodo.
+This happens on every push to master - your Zenodo drafts stay up-to-date automatically.
 
 ### Publish on Zenodo
 
-After CI uploads your drafts:
+When you're ready to create a citable DOI:
 1. Go to https://zenodo.org/me/uploads
 2. Review the draft(s) - check title, description, authors
 3. Edit metadata if needed
-4. Click "Publish" when ready
+4. Click "Publish"
+
+You control when to publish - CI just keeps drafts current.
 
 ### Local Testing
 
@@ -104,9 +103,9 @@ The script reads metadata from your `_quarto-*.yml` files:
 
 ### Versioning
 
-- First publish creates a new deposit with a unique DOI
-- Subsequent publishes create new versions under the same "concept DOI"
-- The `zenodo-deposits.json` file tracks deposit IDs for versioning
+- Each CI run creates a new draft deposit
+- When you publish on Zenodo, you can link it to an existing record for versioning
+- Zenodo handles concept DOIs automatically when you create new versions
 
 ### DOI Structure
 
@@ -142,11 +141,11 @@ Available resource types:
 
 ## Recommended Workflow
 
-1. **First time**: Use sandbox + dry-run to verify metadata extraction
-2. **Test**: Upload draft to sandbox, review on Zenodo, publish there
-3. **Production**: Run workflow for production, review drafts at zenodo.org/me/uploads
-4. **Updates**: Create GitHub Release to auto-upload new versions as drafts
-5. **Publish**: Manually publish on Zenodo when you're ready for a new DOI version
+1. **Add secret**: Add `ZENODO_TOKEN` to GitHub repo secrets
+2. **Push changes**: Every push auto-uploads drafts to Zenodo
+3. **Review**: Go to https://zenodo.org/me/uploads to see your drafts
+4. **Publish**: Click "Publish" when ready for a citable DOI
+5. **New versions**: Future pushes update the draft; publish again for new DOI version
 
 ## Adding ORCID
 
