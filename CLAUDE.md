@@ -14,243 +14,133 @@ This is a Quarto-based book project: "How to End War and Disease" - a guide to g
 
 ### Applying Global Changes to All QMD Files
 
-When the user requests a change that should be applied to all QMD chapter/appendix files (e.g., "replace all instances of X with Y", "fix all occurrences of...", "update formatting for..."), use the automated batch processing script:
+For batch changes across all chapters (style fixes, term replacements, formatting updates):
 
 ```bash
-npx tsx scripts/review/apply-instruction-all-files.ts "Your instruction here"
-```
-
-**Examples:**
-```bash
-# Style/formatting changes
 npx tsx scripts/review/apply-instruction-all-files.ts "Replace all instances of 'utilise' with 'use'"
-
-# Consistency fixes
-npx tsx scripts/review/apply-instruction-all-files.ts "Ensure all section headers use sentence case, not title case"
-
-# Content updates
-npx tsx scripts/review/apply-instruction-all-files.ts "Replace references to 'FDA approval timeline' with 'regulatory approval timeline'"
 ```
 
-**How it works:**
-- Loops through all book QMD files (excludes references.qmd, vision.qmd, futures chapters)
-- Sends each file to Gemini Pro with your instruction
-- Shows 5-second preview with file list before processing
-- Tracks statistics (modified/unchanged/errors)
-- Continues processing if individual files fail
+Loops through all book QMD files, sends each to Gemini Pro, shows preview before processing.
 
 ### Python Scripts on Windows
 
-**CRITICAL: All Python scripts must handle Windows console encoding.**
-
-Add this header to every Python script:
+**CRITICAL:** Add UTF-8 encoding header to all Python scripts:
 ```python
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import sys
-
-# Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
 ```
 
-**Avoid Unicode characters in print statements** that may fail on Windows console (arrows, emojis, checkmarks). Use ASCII alternatives: `->`, `WARNING:`, `[OK]`.
+Avoid Unicode characters in print statements. Use ASCII: `->`, `WARNING:`, `[OK]`.
 
 ## Code Quality and Verification Standards
 
-**CRITICAL: These rules exist to prevent careless errors that have caused significant problems in the past.**
-
 ### Commit Rules
 
-**NEVER commit changes unless:**
-1. The user has **explicitly requested** a commit
-2. You have **reviewed EVERY SINGLE CHANGE** for errors
-3. You have **verified all parameter names** match `_variables.yml` (lowercase format)
-4. You have **run validation checks** to ensure no regressions
+**NEVER commit unless:**
+1. User has **explicitly requested** a commit
+2. You have **reviewed EVERY CHANGE** for errors
+3. All parameter names match `_variables.yml` (lowercase format)
+4. Validation checks pass with no regressions
 
 ## Parameter and Variable System
 
 **CRITICAL: Use the automated parameter/variable system for all numeric values.**
 
-**Before hardcoding ANY value in QMD files, check `_variables.yml` first.** All available variables are listed there in lowercase format (e.g., `global_military_spending_annual_2024`, `treaty_annual_funding`).
+Before hardcoding ANY value, check `_variables.yml` first: `grep "keyword" _variables.yml`
 
-### When Editing QMD Files
+### Workflow
 
-**ALWAYS check for hardcoded numbers that should be variables:**
-- When you edit a QMD file, scan for hardcoded numbers like `$14M`, `$929`, `15,076`, etc.
-- Search `_variables.yml` for existing variables: `grep "keyword" _variables.yml`
-- If a variable exists, use `{{< var variable_name >}}` instead of the hardcoded value
-- If no variable exists but should, create it in `dih_models/parameters.py` first
-
-**Common hardcoded values to replace:**
-- Trial costs: Use `{{< var adaptable_trial_cost_per_patient >}}`, `{{< var recovery_trial_cost_per_patient >}}`
-- Patient counts: Use `{{< var adaptable_trial_patients >}}`, `{{< var recovery_trial_patients >}}`
-- Cost reductions: Use `{{< var dfda_trial_cost_reduction_factor >}}`
-
-### How It Works
-
-1. **Define parameters** in `dih_models/parameters.py`:
+1. **Define** in `dih_models/parameters.py`:
    ```python
    FOUNDATION_FUNDING_REALISTIC = Parameter(
-       519_000_000,  # Use underscores for readability
-       unit="USD",   # Formatter auto-scales to "$519M"
+       519_000_000, unit="USD",
        source_ref="/knowledge/appendix/fundraising-strategy.qmd#...",
-       description="Nonprofit foundation funding in realistic scenario",
-       confidence="high"
+       description="Nonprofit foundation funding in realistic scenario"
    )
    ```
 
-2. **Generate variables** by running:
-   ```bash
-   .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py
-   ```
+2. **Generate**: `.venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py`
 
-3. **Use in QMD files** (formatter handles all formatting):
-   ```markdown
-   Foundation funding: {{< var foundation_funding_realistic >}}
-   ```
-   Output: "Foundation funding: $519M" (with HTML tooltip and source link)
+3. **Use**: `{{< var foundation_funding_realistic >}}` -> renders as "$519M" with tooltip
 
-### Quick Parameter Lookup
-
-**Use `_analysis/parameter-summary.md` to quickly get calculated values** (auto-generated, one parameter per line):
-
-```bash
-grep "TREATY_ANNUAL_FUNDING" _analysis/parameter-summary.md
-# -> TREATY_ANNUAL_FUNDING: $27.2B (95% CI: $27.2B-$27.2B)
-```
+**Lookup**: `grep "PARAM_NAME" _analysis/parameter-summary.md`
 
 ### Parameter Naming Rules
 
-**CRITICAL: Parameter names must be SELF-DOCUMENTING. A reader should know EXACTLY what is being measured without looking at the description.**
+**Names must be SELF-DOCUMENTING: `[SCOPE]_[METRIC]_[MODIFIERS]_[UNIT_TYPE]`**
 
-**Naming Structure: `[SCOPE]_[METRIC]_[MODIFIERS]_[UNIT_TYPE]`**
+| Component | Examples |
+|-----------|----------|
+| SCOPE | DFDA, TREATY, GLOBAL, PERSONAL, VICTORY_BOND |
+| METRIC | ROI, COST, BENEFIT, DEATHS, DALYS |
+| MODIFIERS | scenario, timeframe, calculation method |
+| UNIT_TYPE | ANNUAL, PCT, RATIO (optional) |
 
-- **SCOPE**: What entity? (DFDA, TREATY, GLOBAL, PERSONAL, VICTORY_BOND, etc.)
-- **METRIC**: What's being measured? (ROI, COST, BENEFIT, DEATHS, DALYS, etc.)
-- **MODIFIERS**: Scenario, timeframe, calculation method
-- **UNIT_TYPE**: Optional for clarity (ANNUAL, PCT, RATIO, etc.)
-
-**Good names (self-documenting):**
-- `TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE` - Clear: Treaty, complete benefits, expected value, 95th percentile
-- `DFDA_ROI_RD_ONLY` - Clear: dFDA, R&D savings only
-- `PERSONAL_LIFE_EXTENSION_YEARS_AGE_30` - Clear: Personal benefit, life extension, for age 30
-
-**Bad names (ambiguous):**
-- `PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND` - ROI of WHAT?
-- `ANNUAL_BENEFIT` - Benefit of WHAT? Which scenario?
-- `TOTAL_COST` - Total cost of WHAT?
+Good: `TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE`, `DFDA_ROI_RD_ONLY`
+Bad: `PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND` (ROI of what?), `TOTAL_COST` (of what?)
 
 **Rules:**
 
 | Rule | Correct | Wrong |
 |------|---------|-------|
-| Parameter name format | `FOUNDATION_FUNDING_REALISTIC` (uppercase) | - |
-| Variable name format | `foundation_funding_realistic` (lowercase, auto-generated) | - |
 | Store raw values | `Parameter(519_000_000, unit="USD")` | `Parameter(519, unit="millions USD")` |
 | No scale in name | `REGULATORY_DELAY_DEATHS` | `REGULATORY_DELAY_DEATHS_MILLIONS` |
-| No manual formatting in QMD | `{{< var foundation_funding_realistic >}}` | `${{< var foundation_funding_realistic >}}M` |
-| Include scope prefix | `TREATY_COMPLETE_ROI_CONSERVATIVE` | `CONSERVATIVE_ROI` |
+| No manual formatting | `{{< var param >}}` | `${{< var param >}}M` |
+| Include scope prefix | `TREATY_ROI_CONSERVATIVE` | `CONSERVATIVE_ROI` |
 
-**Why**: The formatter automatically determines appropriate scale ($519M, 184.6M, $113.55B). Pre-scaled values break the auto-scaling logic, and scale suffixes in names are redundant.
-
-### Formatter Capabilities
-
-The `format_parameter_value()` function automatically:
-- **Currency**: `unit="USD"` -> auto-scales to $519M, $1.02B, $50K, $483T
-- **Large numbers**: Auto-scales deaths/DALYs/years to M/B/K (>=100K)
-- **Percentages**: `unit="percentage"` -> "51%"
-- **Small numbers**: Uses commas (1,000-99,999) or raw values (<1,000)
-- **3 significant figures** precision for all scaled values
+The formatter auto-scales: `unit="USD"` -> $519M, $1.02B; large numbers -> M/B/K; percentages -> "51%".
 
 ### Calculated Parameters
 
-**CRITICAL: Parameters marked as `source_type="calculated"` MUST use formulas, not hardcoded values.**
+**Parameters with `source_type="calculated"` MUST use formulas, not hardcoded values:**
 
-Correct (calculated using inline formulas):
 ```python
+# Correct: formula-based
 PEACE_DIVIDEND_ANNUAL = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
-    source_type="calculated",
-    description="Annual peace dividend from 1% treaty",
-    unit="USD",
-    formula="GLOBAL_WAR_COST x 1%"
+    source_type="calculated", unit="USD", formula="GLOBAL_WAR_COST x 1%"
 )
+
+# Wrong: hardcoded result breaks traceability
+PEACE_DIVIDEND_ANNUAL = Parameter(113_550_000_000, source_type="calculated", ...)
 ```
 
-Wrong (hardcoded value marked as calculated):
-```python
-PEACE_DIVIDEND_ANNUAL = Parameter(
-    113_550_000_000,  # Hardcoded result - breaks traceability
-    source_type="calculated",
-    ...
-)
-```
-
-**When to use each source_type:**
-- `source_type="external"`: Data from external sources (WHO, SIPRI, papers)
-- `source_type="calculated"`: Derived using formulas from other parameters
-- `source_type="definition"`: Fixed values, core assumptions, legacy compatibility values
+**source_type values:** `"external"` (WHO, SIPRI), `"calculated"` (formulas), `"definition"` (fixed assumptions)
 
 ### LaTeX Math Block Variables
 
-**CRITICAL: Quarto variables do NOT work inside `$$` LaTeX blocks.**
+**CRITICAL: Quarto variables do NOT work inside `$$` blocks.**
 
-The `generate-variables-yml.py` script exports LaTeX equations as `{param_name}_latex` variables. Use these instead of hardcoding LaTeX or trying to embed variables in math blocks.
+Use pre-built LaTeX variables instead: `{{< var peace_dividend_annual_societal_benefit_latex >}}`
 
-Correct (use pre-built LaTeX variable):
-```markdown
-{{< var peace_dividend_annual_societal_benefit_latex >}}
-```
+**Hardcoded value audits:**
+- Never replace values inside `$$` blocks - check for `_latex` suffixed variables instead
+- Replace entire LaTeX blocks with latex variables when available
+- Remove hyperlinks around variables - they have built-in source links
 
-Wrong (variables don't render inside $$):
-```markdown
-$$
-\${{< var global_annual_war_total_cost >}} \times {{< var treaty_reduction_pct >}}
-$$
-```
-
-**When auditing for hardcoded values:**
-1. Never try to replace values inside LaTeX `$$` blocks
-2. Check `_variables.yml` for `_latex` suffixed variables
-3. Replace the entire LaTeX block with the latex variable if one exists
-4. Leave LaTeX hardcoded values as-is if no suitable `_latex` variable exists
-5. Remove hyperlinks from around variables - they have built-in source links
-   - Wrong: `[{{< var cost >}}](../economics/victory-bonds.qmd)`
-   - Right: `{{< var cost >}}`
-
-**Systematic LaTeX Equation Audit:** Use `/latex-equation-audit` to find calculated variables and add their `_latex` equations where appropriate.
+Use `/latex-equation-audit` for systematic LaTeX equation additions.
 
 ### Why This Matters
 
-- **Single source of truth**: All values come from parameters.py
+- **Single source of truth**: Change once in parameters.py, updates everywhere
 - **Automatic tooltips**: Hover shows source, confidence, formula
-- **Consistency**: Same value displayed identically everywhere
-- **Zero maintenance**: Change parameter once, regenerates everywhere
 - **Academic rigor**: Auto-generates parameters-and-calculations.qmd appendix
 
 ## Cross-Format Linking (HTML, PDF, EPUB)
 
-**CRITICAL: Always use `.qmd` extensions for internal links in source files.**
+**CRITICAL: Always use `.qmd` extensions for internal links.**
 
-Quarto automatically converts `.qmd` links to the appropriate format:
-- **HTML output**: `.qmd` -> `.html`
-- **PDF/EPUB output**: `.qmd` -> internal references
+Quarto converts `.qmd` -> `.html` (web) or internal references (PDF/EPUB).
 
-Correct: `[Link Text](../path/to/file.qmd)` or `[Link with Anchor](../path/to/file.qmd#section-id)`
+Correct: `[Link](../path/to/file.qmd#section-id)`
+Wrong: `[Link](../path/to/file.html)` (breaks PDF/EPUB)
 
-Wrong: `[Link Text](../path/to/file.html)` (breaks PDF/EPUB)
-
-**IMPORTANT**: Links only work if the target file is listed in `_quarto-book.yml` chapters. If post-validation reports `QMD_FILE_LINK` errors:
-
-1. Check if target `.qmd` file exists
-2. Add it to `_quarto-book.yml` in the appropriate section
-3. Re-render - Quarto will handle format conversion
-
-**External URLs** (outside the book) should use full URLs: `[External Link](https://example.com/page.html)`
+Links only work if target is in `_quarto-book.yml`. External URLs use full paths.
 
 ## Content Standards
 
-**See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
+**See `CONTRIBUTING.md` for complete writing guidelines.**
 
-Please render and critically review output images of quarto files whenever you modify figure-generating files.
+Render and critically review output images whenever you modify figure-generating files.

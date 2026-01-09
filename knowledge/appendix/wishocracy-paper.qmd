@@ -70,7 +70,7 @@ image: /assets/og-images/knowledge/appendix/wishocracy-paper-og-academic.png
 
 **The Problem in One Sentence:** Representative democracy suffers from an inescapable principal-agent problem: elected officials face incentives (re-election, donor pressure, special interests) that systematically diverge from citizen welfare, while direct democracy mechanisms are too cognitively demanding to scale beyond binary referenda.
 
-**The Solution:** Wishocracy eliminates the intermediary entirely by using simple pairwise comparisons ('allocate $100 between cancer research and infrastructure') to directly translate citizen preferences into budget allocations, harnessing collective intelligence to aggregate millions of intuitive trade-off judgments into resource distributions that approximate utilitarian social welfare.
+**The Solution:** Wishocracy aggregates citizen preferences through simple pairwise comparisons ('allocate $100 between cancer research and military spending') and creates accountability for elected officials by publishing how their voting records align with these preferences. This channels electoral and financial resources toward politicians who actually represent what citizens want.
 
 # **Abstract**
 
@@ -90,7 +90,7 @@ Existing solutions fall into three inadequate categories. First, representative 
 
 Wishocracy offers a fourth path: a mechanism that harnesses collective intelligence through structured preference elicitation while respecting cognitive constraints, incorporating preference intensity, and maintaining democratic legitimacy. By presenting citizens with simple pairwise comparisons ('Given $100 to allocate between cancer research and Alzheimer's research, how would you divide it?'), the mechanism decomposes the impossible n-dimensional comparison into tractable binary choices. Aggregated across millions of such comparisons from thousands of participants, the system converges on a preference ordering that approximates the utilitarian social welfare function under stated assumptions.
 
-**RAPPA's Contribution:** Wishocracy synthesizes three critical properties into a single framework:
+**RAPPA's Contribution:** Wishocracy synthesizes four properties into a single framework:
 
 1. **Cognitive Tractability:** By decomposing n-dimensional budget allocation into pairwise comparisons (drawing on AHP), RAPPA respects the well-documented cognitive limit of $7 \pm 2$ simultaneous comparisons, making participation feasible for all citizens regardless of education or available time.
 
@@ -98,9 +98,9 @@ Wishocracy offers a fourth path: a mechanism that harnesses collective intellige
 
 3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods, the mechanism uses diversity to cancel individual errors while aggregating true signals into allocations that approximate utilitarian social welfare.
 
-4. **Principal-Agent Elimination:** By directly translating citizen preferences into resource allocation without intermediaries, RAPPA removes the systematic distortions introduced by representatives who face misaligned incentives.
+4. **Accountability Integration:** By producing clear, quantifiable preference signals that can be compared against politician voting records, RAPPA enables accountability mechanisms (Citizen Alignment Scores, Incentive Alignment Bonds) that align representative behavior with citizen welfare.
 
-To our knowledge, no widely deployed mechanism combines all four properties. Traditional voting captures neither intensity nor tractability. The Analytic Hierarchy Process provides tractability but has been deployed primarily for expert decision-making, not large-scale collective governance. Representative democracy introduces principal-agent distortions that systematically misalign policy with citizen preferences. RAPPA synthesizes insights from decision science and collective intelligence into a unified framework for direct democratic resource allocation.
+To our knowledge, no widely deployed mechanism combines all four properties. Traditional voting captures neither intensity nor tractability. The Analytic Hierarchy Process provides tractability but has been deployed primarily for expert decision-making, not large-scale collective governance. Existing accountability mechanisms (interest group scorecards) reflect narrow priorities rather than aggregated citizen preferences. RAPPA synthesizes insights from decision science and collective intelligence to enable genuine democratic accountability.
 
 # **Theoretical Foundations**
 
@@ -158,15 +158,15 @@ The Wishocracy mechanism operates through the following process, which we term R
 
 {{< include ../figures/rappa-mechanism-flow-diagram.qmd >}}
 
-### Scenario: The Town Budget
+### Scenario: Federal Budget Preferences
 
-Imagine Citizen Alice opening the Wishocracy app to help set her town's budget.
+Imagine Citizen Alice opening the Wishocracy app to express her preferences on federal spending.
 
-1.  **Comparison 1:** She is presented with a pair: **"Renovate Dealing Park" vs. "Fix Potholes on Main St"**.
-2.  **Decision:** Alice cares deeply about the park. She slides the allocator to give **80%** to the Park and **20%** to Potholes. This expresses strong intensity.
-3.  **Comparison 2:** Next, she sees **"Fix Potholes" vs. "New Library Books"**. She thinks both are somewhat important but slightly prefers roads. She allocates **55%** to Potholes and **45%** to Books.
-4.  **Aggregation:** Thousands of other citizens make similar pairwise comparisons. Alice never sees "Park vs. Library," but the system infers the relationship (Park > Potholes > Library) through the transitive network of all citizens' choices.
-5.  **Result:** The aggregate preferences form a priority list where the Park gets the largest budget share, reflecting the high intensity of support from Alice and her neighbors.
+1.  **Comparison 1:** She is presented with a pair: **"Medical Research (NIH)" vs. "Military Weapons Systems"**.
+2.  **Decision:** Alice lost her mother to Alzheimer's and believes medical research is severely underfunded. She slides the allocator to give **85%** to Medical Research and **15%** to Military. This expresses strong intensity.
+3.  **Comparison 2:** Next, she sees **"Military Weapons Systems" vs. "Drug Enforcement (DEA)"**. She thinks both receive more than they should but slightly prefers maintaining military capability. She allocates **60%** to Military and **40%** to Drug Enforcement.
+4.  **Aggregation:** Millions of other citizens make similar pairwise comparisons. Alice never sees "Medical Research vs. Drug Enforcement," but the system infers the relationship (Medical Research > Military > Drug Enforcement) through the transitive network of all citizens' choices.
+5.  **Result:** The aggregate preferences reveal that citizens would allocate significantly more to medical research and less to military and drug enforcement than Congress currently does. This "Preference Gap" becomes the basis for Citizen Alignment Scores: politicians who vote to increase NIH funding score higher; those who vote for military expansion despite citizen preferences score lower.
 
 ## **Formal Properties**
 
@@ -374,6 +374,96 @@ To validate the technical feasibility of the RAPPA mechanism, a reference implem
 
 The repository is available for public audit, allowing researchers to verify that the theoretical properties described in Section 3 transform correctly into executable code.
 
+### **Category Selection and Validation Methodology**
+
+The reference implementation uses official federal budget categories drawn from OMB and CBO classifications. Participants see neutral descriptions based on government terminology, not researcher-created labels or value judgments about which programs are "good" or "bad."
+
+**For research validation purposes only** (not shown to participants), we track existing benefit-cost ratio estimates from established sources:
+
+| Category | External BCR Estimate | Source |
+|----------|----------------------|--------|
+| Medical Research | 45:1 | Copenhagen Consensus |
+| Early Childhood Programs | 13:1 | Heckman Equation |
+| Substance Abuse Treatment | 7:1 | NIDA |
+| Drug Enforcement | Contested | Various |
+| Energy Subsidies | Contested | IMF, industry groups |
+| Corrections | Contested | Vera Institute, DOJ |
+
+These estimates allow researchers to test a key empirical question: **Does RAPPA converge toward allocations that maximize estimated social welfare, or do citizen preferences systematically diverge from expert BCR estimates?** Either finding is informative. Convergence suggests collective intelligence successfully aggregates welfare-relevant information. Divergence suggests either (a) BCR estimates miss welfare dimensions citizens care about, (b) citizens have information economists lack, or (c) preference aggregation reflects values beyond utilitarian welfare maximization.
+
+BCR estimates are contested and often politically coded. The same program may have "high ROI" according to one source and "negative ROI" according to another. RAPPA does not assume any particular BCR estimate is correct. The mechanism reveals citizen preferences; researchers can then compare those preferences to various expert estimates.
+
+### **Zero-Funding Filter Optimization**
+
+A naive implementation of RAPPA requires $\frac{n(n-1)}{2}$ pairwise comparisons for $n$ categories. For 10 categories, this means 45 pairs per participant (cognitively burdensome and likely to produce survey fatigue).
+
+The reference implementation adds a preliminary question: "Should the government fund [category] at all?" Participants can respond Yes, No, or Unsure. Categories marked "No" are excluded from that participant's pairwise comparisons.
+
+**Complexity reduction:** If a participant eliminates $k$ categories, their required comparisons drop from $\frac{n(n-1)}{2}$ to $\frac{(n-k)(n-k-1)}{2}$. For $n=10$ and $k=3$:
+
+$$
+\text{Pairs} = \frac{10 \times 9}{2} = 45 \rightarrow \frac{7 \times 6}{2} = 21 \text{ (53\% reduction)}
+$$
+
+**Information preservation:** The zero-funding response is itself preference data. A participant who excludes "Nuclear Weapons Modernization" has revealed an extreme preference (0% allocation) that can be incorporated into the aggregation. The mechanism effectively captures both intensive margin preferences (slider allocations between funded categories) and extensive margin preferences (whether to fund at all).
+
+**Cognitive benefits:** Participants report higher engagement when they feel the comparisons are relevant to their values. Forcing someone who believes drug enforcement should be defunded to repeatedly compare it against other categories produces frustration without additional information.
+
+### **Hierarchical Category Structure**
+
+A fundamental design question is granularity: should RAPPA operate on a flat list of thousands of budget line items, or on a hierarchical structure that mirrors how budgets are actually organized?
+
+**Flat structure** (thousands of items, sparse sampling): Each participant sees a random subset of pairs from the full item space. With enough participants, the law of large numbers ensures convergence. However, voters cannot have informed opinions on obscure line items ("Naval Air Systems Command Procurement Account 1319"). Aggregating uninformed noise produces meaningless allocations.
+
+**Hierarchical structure** (category → subcategory → line item): Participants first allocate across high-level categories (Defense, Healthcare, Education, Infrastructure). Those who want to engage further can drill down: Defense → Personnel vs. Procurement vs. R&D; Healthcare → Medicare vs. Medicaid vs. NIH. This matches how AHP was designed. It decomposes complex decisions into hierarchies of criteria and sub-criteria.
+
+The reference implementation uses a **hybrid approach**:
+
+1. **Required**: High-level allocation across ~10-15 major budget functions (using OMB classifications)
+2. **Optional**: Drill-down within categories of interest
+3. **Aggregation**: High-level weights determine category budgets; drill-down weights allocate within categories
+
+This structure has several advantages:
+
+- Citizens can have informed opinions at the category level
+- Engaged participants can express fine-grained preferences
+- Aggregation is tractable (hierarchical eigenvector methods)
+- Results map directly onto existing budget structures
+
+The tradeoff is that participants who don't drill down delegate sub-allocation to those who do. If only defense hawks drill down within the Defense category, sub-allocations will skew hawkish even if the population-level Defense allocation is modest. Mitigation: weight drill-down responses by high-level allocation (a participant who allocated 5% to Defense gets less influence on Defense sub-allocation than one who allocated 30%).
+
+### **Framing Bias and Mitigation**
+
+How categories are named, described, and presented can systematically bias outcomes. This is not a hypothetical concern. Decades of survey research demonstrate that framing effects routinely shift responses by 10-30 percentage points.
+
+**Sources of framing bias:**
+
+1. **Category naming**: "Investment in clean energy" vs. "Energy subsidies" vs. "Renewable energy programs" will produce different allocations for identical spending.
+
+2. **Description length**: Categories with longer, more detailed descriptions may receive more funding simply because participants understand them better.
+
+3. **Presentation order**: Categories shown first or last may receive systematically different allocations.
+
+4. **Anchoring**: Showing current spending levels may anchor participants toward the status quo.
+
+5. **Loaded language**: "Waste, fraud, and abuse" vs. "Program integrity" describes the same spending.
+
+**Mitigation strategies in the reference implementation:**
+
+| Bias Source | Mitigation |
+|-------------|------------|
+| Category naming | Use official OMB/CBO terminology; A/B test alternative phrasings |
+| Description asymmetry | Standardize descriptions to ~25 words with consistent structure |
+| Order effects | Randomize category order for each participant |
+| Anchoring | Option to show/hide current spending (test whether it changes allocations) |
+| Loaded language | Adversarial review by politically diverse panel before deployment |
+
+**Validation approach**: Run parallel surveys with different framings on matched samples. If allocations shift significantly based on framing, that framing is biased and should be revised. The goal is descriptions where reasonable people across the political spectrum agree the language is neutral, even if they disagree on the allocation.
+
+**Transparency**: All category names, descriptions, and any A/B test results should be publicly documented. If critics can identify biased framing, that's valuable feedback for improvement.
+
+No framing is perfectly neutral. The choice to include or exclude a category is itself a framing decision. But rigorous attention to framing bias distinguishes legitimate preference aggregation from push polling.
+
 # **Addressing Potential Criticisms**
 
 ## **Participation and Digital Divide**
@@ -442,11 +532,11 @@ The most severe resource misallocations occur at the federal level: $886 billion
 
 ## **Why Information Alone Fails: Politicians Respond to Incentives**
 
-Rankings of government programs by net social value already exist and are systematically ignored. The Copenhagen Consensus has published rigorous benefit-cost analyses since 2004: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). These dramatically outperform military spending beyond deterrence requirements (~0.7:1 BCR) and fossil fuel subsidies (negative net social value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
+Rankings of government programs by net societal value already exist and are systematically ignored. The Copenhagen Consensus has published rigorous benefit-cost analyses since 2004: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). These dramatically outperform military spending beyond deterrence requirements (~0.7:1 BCR) and fossil fuel subsidies (negative net societal value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
 
 Yet government spending patterns have not shifted. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero.
 
-**The marginal value of producing another ranking is zero.** Politicians already know which programs produce net social value. They don't act on this knowledge because acting on it doesn't appear in their utility function (reelection probability, campaign contributions, post-office career prospects). The solution is not more information but better incentives.
+**The marginal value of producing another ranking is zero.** Politicians already know which programs produce net societal value. They don't act on this knowledge because acting on it doesn't appear in their utility function (reelection probability, campaign contributions, post-office career prospects). The solution is not more information but better incentives.
 
 ## **Three-Phase Implementation**
 
@@ -596,17 +686,17 @@ For detailed treatment of the IAB mechanism, including formal models, legal anal
 
 Representative democracy's principal-agent problem is not a bug but a structural feature: elected officials inevitably face incentives that diverge from citizen welfare. No amount of campaign finance reform, term limits, or transparency requirements can eliminate the fundamental misalignment between representatives who must satisfy donors and constituents simultaneously. Meanwhile, direct democracy mechanisms remain cognitively infeasible for the complex, multidimensional trade-offs that characterize modern governance.
 
-Wishocracy offers a structural solution: eliminate the intermediary entirely. Through Randomized Aggregated Pairwise Preference Allocation, the mechanism translates citizen preferences directly into resource allocations without passing through representatives who can be captured, misled, or misaligned. The theoretical foundations combine the Analytic Hierarchy Process (for cognitive tractability) with collective intelligence research (for aggregation), decomposing n-dimensional preference spaces into simple pairwise comparisons that any citizen can complete.
+Wishocracy offers a different approach: rather than replacing representatives, align their incentives with citizen preferences. Through Randomized Aggregated Pairwise Preference Allocation, the mechanism aggregates citizen preferences into a clear signal of what voters actually want. Combined with Citizen Alignment Scores and Incentive Alignment Bonds, this creates accountability pressure that makes welfare-improving votes politically and financially rewarding. The theoretical foundations combine the Analytic Hierarchy Process (for cognitive tractability) with collective intelligence research (for aggregation), decomposing n-dimensional preference spaces into simple pairwise comparisons that any citizen can complete.
 
-The empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research demonstrate that citizens can and will engage productively with pairwise preference-expressing mechanisms. These real-world experiments validate the core assumptions underlying Wishocracy while revealing the institutional fragility of advisory mechanisms without binding authority.
+The empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research demonstrate that citizens can and will engage productively with pairwise preference-expressing mechanisms. These real-world experiments validate the core assumptions underlying Wishocracy while revealing the institutional fragility of advisory mechanisms that lack connection to electoral incentives.
 
-Several critical questions require further research. First, what is the minimum sample size and comparison density needed for preference convergence across different problem domains? Second, how does preference stability vary with issue complexity and temporal distance? Third, what are the optimal methods for integrating RAPPA outputs with existing legislative and executive institutions? Fourth, how can the mechanism be adapted for federated systems where preference aggregation must occur across multiple jurisdictional levels?
+Several questions require further research. First, what is the minimum sample size and comparison density needed for preference convergence across different problem domains? Second, how does preference stability vary with issue complexity and temporal distance? Third, what scoring methodologies best capture alignment between voting records and citizen preferences? Fourth, how can the mechanism be adapted for parliamentary systems, multi-party democracies, and other institutional contexts beyond the U.S. Congress?
 
 The mechanism design presented here represents one point in a broader design space of democratic innovations. Alternative aggregation methods (Bradley-Terry models, Bayesian updating, deep learning approaches), different elicitation formats (rating scales, probability distributions, stochastic choice), and various institutional embeddings (legislative priority-setting, constitutional conventions, international treaty negotiations) warrant systematic exploration.
 
-Wishocracy addresses the central failure mode of democratic governance: the principal-agent problem that inevitably corrupts representative institutions. The mechanism's key innovation lies in its four-part synthesis: AHP's cognitive tractability, slider-based preference intensity capture, collective intelligence aggregation, and, most critically, the complete elimination of intermediaries between citizen preferences and resource allocation.
+Wishocracy addresses the central failure mode of democratic governance: the principal-agent problem that corrupts representative institutions. The mechanism combines four elements: AHP's cognitive tractability, slider-based preference intensity capture, collective intelligence aggregation, and (critically) integration with incentive mechanisms that make representatives care about alignment scores. Information alone changes nothing. Information plus incentives can change everything.
 
-The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. A reference implementation is available at [wishocracy.org](https://wishocracy.org) for public testing and audit. Whether Wishocracy can achieve its theoretical promise, truly aligning public resource allocation with citizen welfare, remains an open empirical question that only real-world deployment can answer.
+The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. A reference implementation is available at [wishocracy.org](https://wishocracy.org) for public testing and audit. Whether Wishocracy can achieve its theoretical promise (truly aligning public resource allocation with citizen welfare) remains an open empirical question that only real-world deployment can answer.
 
 # **Appendix A: The Service Provider Layer**
 

@@ -1,6 +1,6 @@
 ---
-title: 'Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy'
-description: 'This paper introduces Incentive Alignment Bonds (IABs), a new class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use.'
+title: 'Incentive Alignment Bonds: Turning General Welfare into an Asset Class'
+description: 'This paper introduces Incentive Alignment Bonds (IABs), a mechanism design approach that makes supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use.'
 aliases:
   - /iab.html
 author:
@@ -74,7 +74,7 @@ image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-a
 
 ## Abstract
 
-This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net social value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
+This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net societal value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
 
 We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to {{< var victory_bond_annual_return_pct >}}+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control {{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds {{< var iab_mechanism_benefit_cost_ratio >}} (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
 
@@ -90,13 +90,13 @@ We prove conditions for Nash equilibrium, provide explicit functional forms and 
 
 A central puzzle in political economy is why policies with large positive net social welfare often fail to be adopted. The economic case for many global public goods, including climate mitigation, pandemic preparedness, and clinical trials, is overwhelming, yet governments don't do them. **The conventional diagnosis is wrong**: the problem is not lack of information or resources, but wrong incentives.
 
-**Rankings of government programs by net social value already exist and are systematically ignored.** The Copenhagen Consensus has published rigorous benefit-cost ratio (BCR) analyses since 2004 [@copenhagenconsensus2023]. Their findings are clear: childhood vaccinations (101:1 BCR), e-government procurement (125:1), and maternal health interventions (87:1) dramatically outperform military spending beyond deterrence requirements (~0.7:1) and fossil fuel subsidies (negative net social value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
+**Rankings of government programs by net societal value already exist and are systematically ignored.** The Copenhagen Consensus has published rigorous benefit-cost ratio (BCR) analyses since 2004 [@copenhagenconsensus2023]. Their findings are clear: childhood vaccinations (101:1 BCR), e-government procurement (125:1), and maternal health interventions (87:1) dramatically outperform military spending beyond deterrence requirements (~0.7:1) and fossil fuel subsidies (negative net societal value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
 
-Yet government spending patterns have not shifted. The U.S. spends $16 on military operations for every $1 on diplomacy and humanitarian aid. Programs with benefit-cost ratios exceeding 100:1 receive single-digit billions while programs with negative net social value receive hundreds of billions.
+Yet government spending patterns have not shifted. The U.S. spends $16 on military operations for every $1 on diplomacy and humanitarian aid. Programs with benefit-cost ratios exceeding 100:1 receive single-digit billions while programs with negative net societal value receive hundreds of billions.
 
 **Put another way:** If a private equity firm allocated capital like the U.S. government, it invests $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
-**The marginal value of producing another ranking is zero.** We don't need more information. Politicians already know which programs produce net social value. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
+**The marginal value of producing another ranking is zero.** We don't need more information. Politicians already know which programs produce net societal value. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
 This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
 
@@ -292,7 +292,7 @@ $$
 NSV_i = B_i - C_i
 $$ {#eq-nsv}
 
-where $NSV_i$ is net social value of program $i$, $B_i$ is measurable social benefits (including economic multiplier effects), and $C_i$ is total costs (including both direct expenditure and opportunity costs of foregone alternatives).
+where $NSV_i$ is net societal value of program $i$, $B_i$ is measurable social benefits (including economic multiplier effects), and $C_i$ is total costs (including both direct expenditure and opportunity costs of foregone alternatives).
 
 A program is an appropriate IAB funding source if:
 
@@ -321,7 +321,7 @@ More comprehensive analysis includes:
 
 : Estimated Annual Societal Cost of Global Military Spending {#tbl-military-cost}
 
-A large literature suggests the net social value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to pragmatic clinical trials, which has positive externalities and high multipliers, would be welfare-improving on net.
+A large literature suggests the net societal value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to pragmatic clinical trials, which has positive externalities and high multipliers, would be welfare-improving on net.
 
 Similar analysis applies to other Olsonian programs:
 
@@ -377,7 +377,7 @@ This paper makes four contributions:
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
 
-4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough (needed) to achieve real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
+4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net societal value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough (needed) to achieve real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
 ### Roadmap
 
@@ -480,7 +480,7 @@ This formulation is consistent with public choice theory's treatment of politici
 
 ### The Utility Function Transformation
 
-The key mechanism design insight is that IABs transform the politician's utility function by introducing a dependency on net social value (NSV) rankings through an intermediate score variable.
+The key mechanism design insight is that IABs transform the politician's utility function by introducing a dependency on net societal value (NSV) rankings through an intermediate score variable.
 
 **Pre-IAB utility function:** Let $R$ denote the ranking of programs by NSV (as produced by Copenhagen Consensus, GiveWell, etc.). In the status quo:
 
@@ -1154,7 +1154,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 
 The Wishocracy mechanism can be extended beyond government program allocation to replace traditional research grants and contracts entirely. Instead of government bureaucracies deciding which projects to fund, researchers create crowdfunding campaigns. These campaigns explain:
 
-- Why their project creates the greatest marginal net social value per dollar
+- Why their project creates the greatest marginal net societal value per dollar
 - Evidence they can implement (past results, team credentials, methodology)
 - Expected outcomes and benefit-cost ratios
 

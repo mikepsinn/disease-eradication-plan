@@ -13,6 +13,7 @@ project:
 dih-render:
   index-source: knowledge/appendix/dfda-paper.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  pdf-output-file: dfda-paper.pdf
 
 profiles:
   default:
