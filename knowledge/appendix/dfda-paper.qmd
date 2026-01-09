@@ -31,6 +31,10 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
