@@ -1,6 +1,6 @@
 ---
-title: "The FDA of the Future: A Decentralized Framework for Drug Assessment and Precision Medicine"
-description: "A comprehensive methodology for generating quantitative outcome labels from aggregated N-of-1 observational studies. The framework integrates real-world data from millions of participants, operationalizes Bradford Hill causality criteria through the Predictor Impact Score, and enables personalized optimal daily values for precision medicine."
+title: "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
+description: "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at 100x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations."
 author: "Mike P. Sinn"
 affiliation: "Decentralized FDA"
 date: last-modified
