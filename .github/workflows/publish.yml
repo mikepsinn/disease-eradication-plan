@@ -168,7 +168,6 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload Economics PDF to Zenodo (draft)
-        if: ${{ secrets.ZENODO_TOKEN != '' }}
         continue-on-error: true
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -248,7 +247,6 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload Wishocracy PDF to Zenodo (draft)
-        if: ${{ secrets.ZENODO_TOKEN != '' }}
         continue-on-error: true
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -328,7 +326,6 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload IAB PDF to Zenodo (draft)
-        if: ${{ secrets.ZENODO_TOKEN != '' }}
         continue-on-error: true
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -401,7 +398,6 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload dFDA PDF to Zenodo (draft)
-        if: ${{ secrets.ZENODO_TOKEN != '' }}
         continue-on-error: true
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
