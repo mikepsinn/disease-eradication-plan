@@ -29,6 +29,7 @@ from typing import Any, Dict
 
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_auto_latex, smart_title_case
+from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
 from dih_models.reference_parser import parse_references_qmd_detailed
 
@@ -261,13 +262,17 @@ def generate_parameters_and_calculations_qmd(
             auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
 
             if hardcoded_latex:
+                # Wrap for mobile if equation is wide
+                wrapped_latex = wrap_latex_for_mobile(hardcoded_latex, max_width=60)
                 content.append("$$")
-                content.append(hardcoded_latex)
+                content.append(wrapped_latex)
                 content.append("$$")
                 content.append("")
             elif auto_latex:
+                # Wrap for mobile if equation is wide
+                wrapped_latex = wrap_latex_for_mobile(auto_latex, max_width=60)
                 content.append("$$")
-                content.append(auto_latex)
+                content.append(wrapped_latex)
                 content.append("$$")
                 content.append("")
             elif hasattr(value, "formula") and value.formula:
