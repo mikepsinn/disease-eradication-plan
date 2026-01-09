@@ -960,17 +960,25 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only, Conservative): $389B {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only): $389B {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)
+NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
 - [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
-*Formula*: `NPV of net R&D savings with 5-year linear adoption ramp`
+$$
+\begin{aligned}
+Benefit_{net,RD} \\
+&= Benefit_{DFDA,RD} - Cost_{DFDA,total} \\
+&= \$389B - \$611M \\
+&= \$389B
+\end{aligned}
+$$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-net-benefit](../appendix/dfda-cost-benefit-analysis#npv-net-benefit)
 

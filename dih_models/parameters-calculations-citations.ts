@@ -1944,14 +1944,15 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
 };
 
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
-  value: 389352903335.6751,
+  value: 388741518712.06226,
   unit: "USD",
-  displayName: "NPV Net Benefit (R&D Only, Conservative)",
-  description: "NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
+  displayName: "NPV Net Benefit (R&D Only)",
+  description: "NPV net benefit using R&D savings only (benefits minus costs)",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#npv-net-benefit",
   confidence: "high",
-  formula: "NPV of net R&D savings with 5-year linear adoption ramp",
+  formula: "NPV_BENEFIT - NPV_COST",
+  latex: "Benefit_{net,RD} = Benefit_{DFDA,RD} - Cost_{DFDA,total} = \\$389B - \\$611M = \\$389B",
 };
 
 export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {

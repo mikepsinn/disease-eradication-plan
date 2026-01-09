@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (300 entries)
+# Contains only variables used in this paper (301 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -409,10 +409,24 @@ dfda_npv_benefit_rd_only_latex: '$$
 dfda_npv_net_benefit_rd_only: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only"
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit"
   data-source-type="calculated" data-confidence="high" title="NPV net benefit using
-  R&D savings only (most conservative financial estimate, excludes regulatory delay
-  health value) | Calculated from 1 input | ✓ High confidence | Formula: NPV of net
-  R&D savings with 5-year linear adoption ramp | Unit: USD | Click to view details,
-  calculation & sources">$389B (95% CI: $324B-$486B)</a>'
+  R&D savings only (benefits minus costs) | Calculated from 2 inputs | ✓ High confidence
+  | Formula: NPV_BENEFIT - NPV_COST | Unit: USD | Click to view details, calculation
+  & sources">$389B (95% CI: $323B-$485B)</a>'
+dfda_npv_net_benefit_rd_only_latex: '$$
+
+  \begin{aligned}
+
+  Benefit_{net,RD} \\
+
+  &= Benefit_{DFDA,RD} - Cost_{DFDA,total} \\
+
+  &= \$389B - \$611M \\
+
+  &= \$389B
+
+  \end{aligned}
+
+  $$'
 dfda_npv_total_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_total_cost"
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost"
   data-source-type="calculated" data-confidence="high" title="Total NPV cost (upfront

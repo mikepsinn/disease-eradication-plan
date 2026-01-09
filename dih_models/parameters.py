@@ -3523,16 +3523,17 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
 )  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
-    DFDA_NPV_BENEFIT_RD_ONLY,
+    DFDA_NPV_BENEFIT_RD_ONLY - DFDA_NPV_TOTAL_COST,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit",
     source_type="calculated",
-    description="NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
-    display_name="NPV Net Benefit (R&D Only, Conservative)",
+    description="NPV net benefit using R&D savings only (benefits minus costs)",
+    display_name="NPV Net Benefit (R&D Only)",
     unit="USD",
-    formula="NPV of net R&D savings with 5-year linear adoption ramp",    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"],
-    inputs=['DFDA_NPV_BENEFIT_RD_ONLY'],
-    compute=lambda ctx: ctx["DFDA_NPV_BENEFIT_RD_ONLY"],
-)  # ~$249.3B (R&D savings only, most defensible financial case)
+    formula="NPV_BENEFIT - NPV_COST",
+    keywords=["pragmatic trials", "real world evidence", "net benefit", "conservative"],
+    inputs=['DFDA_NPV_BENEFIT_RD_ONLY', 'DFDA_NPV_TOTAL_COST'],
+    compute=lambda ctx: ctx["DFDA_NPV_BENEFIT_RD_ONLY"] - ctx["DFDA_NPV_TOTAL_COST"],
+)  # ~$248.7B (benefits minus costs)
 
 # NPV of Regulatory Delay Avoidance (Disease Eradication Delay Elimination)
 # This calculates the present value of eliminating the 8.2-year regulatory delay,

@@ -1109,26 +1109,13 @@ Let's approximate numerically:
 
 Thus,
 
-$$
-  \text{NPV}(\text{Savings})
-  \approx 113.65 + 135.88
-  = 249.53 \text{ (billion USD)}
-$$
+{{< var dfda_npv_benefit_rd_only_latex >}}
 
 ##### Final ROI and Net Benefit
 
-$$
-  \text{ROI}
-  = \frac{249.53}{0.53845}
-  \approx 463.4
-  \quad (\text{i.e., about } 463:1)
-$$
+{{< var dfda_roi_rd_only_latex >}}
 
-$$
-  \text{Net Benefit}
-  = 249.53 - 0.53845
-  = 248.99155 \text{ (billion USD)}
-$$
+{{< var dfda_npv_net_benefit_rd_only_latex >}}
 
 In this rough example, even **partial adoption** in the early years delivers large returns. If $\alpha$ or $p(t)$ were higher, or if the discount rate $r$ were lower, the ROI would increase further. _This ROI is based on a cost model that is now explicitly derived from the detailed component estimates in the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section, providing a more transparent and verifiable result._
 
