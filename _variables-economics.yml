@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (296 entries)
+# Contains only variables used in this paper (298 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -998,6 +998,27 @@ global_annual_deaths_curable_diseases: '<a href="/knowledge/appendix/parameters-
   | ✓ High confidence | Unit: deaths/year | Click to view details, calculation & sources">55.0M
   deaths/year</a>'
 global_annual_deaths_curable_diseases_cite: '@who-global-health-estimates-2024'
+global_annual_direct_indirect_war_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_direct_indirect_war_cost"
+  class="parameter-link" data-source-ref="/knowledge/problem/cost-of-war.qmd#total-cost"
+  data-source-type="calculated" data-confidence="high" title="Total annual cost of
+  war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓ High confidence
+  | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view details,
+  calculation & sources">$11.4T (95% CI: $9.01T-$14.1T)</a>'
+global_annual_direct_indirect_war_cost_latex: '$$
+
+  \begin{aligned}
+
+  Cost_{indirect,ann} \\
+
+  &= Cost_{direct,total} + Cost_{indirect,total} \\
+
+  &= \$7.66T + \$3.7T \\
+
+  &= \$11.4T
+
+  \end{aligned}
+
+  $$'
 global_annual_environmental_damage_conflict: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_environmental_damage_conflict"
   class="parameter-link" data-source-ref="environmental-cost-of-war" data-source-type="external"
   data-confidence="high" title="Annual environmental damage and restoration costs
@@ -1325,7 +1346,7 @@ peace_dividend_annual_societal_benefit_latex: '$$
 
   Cost_{soc,ann} \\
 
-  &= Cost_{war,total} \times Reduction_{treaty} \\
+  &= Cost_{indirect,ann} \times Reduction_{treaty} \\
 
   &= \$11.4T \times 1\% \\
 
