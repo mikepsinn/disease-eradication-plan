@@ -6,13 +6,8 @@
 # If this causes problems for you with git, refresh your repo according
 # to the instructions at https://help.github.com/articles/dealing-with-line-endings/
 
-# If you want files you check in to be normalized, do this: Set text=auto in your .gitattributes for all files:
-* text=auto
-
-# Common settings that generally should always be used with your language specific settings
-
-# Auto detect text files and perform LF normalization
-*          text=auto
+# Force LF line endings for all text files (prevents CRLF issues on Windows)
+* text=auto eol=lf
 
 #
 # The above will handle all files NOT found below
@@ -30,7 +25,7 @@
 *.PDF      diff=astextplain
 *.rtf      diff=astextplain
 *.RTF      diff=astextplain
-*.md       text diff=markdown
+*.md       text eol=lf diff=markdown
 *.tex      text diff=tex
 *.adoc     text
 *.textile  text
@@ -67,11 +62,24 @@
 *.ps1      text eol=crlf
 
 # Serialisation
-*.json     text
-*.toml     text
-*.xml      text
-*.yaml     text
-*.yml      text
+*.json     text eol=lf
+*.toml     text eol=lf
+*.xml      text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+
+# Code files (explicit LF for cross-platform consistency)
+*.py       text eol=lf
+*.ts       text eol=lf
+*.js       text eol=lf
+*.tsx      text eol=lf
+*.jsx      text eol=lf
+*.css      text eol=lf
+*.scss     text eol=lf
+*.html     text eol=lf
+*.qmd      text eol=lf
+*.Rmd      text eol=lf
+*.bib      text eol=lf
 
 # Archives
 *.7z       binary
