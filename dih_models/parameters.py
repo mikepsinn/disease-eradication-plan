@@ -3563,15 +3563,8 @@ DFDA_ROI_RD_ONLY = Parameter(
     unit="ratio",
     formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "low estimate"],
-    inputs=["DFDA_BENEFIT_RD_ONLY_ANNUAL", "DFDA_ANNUAL_OPEX", "NPV_DISCOUNT_RATE_STANDARD", "DFDA_NPV_UPFRONT_COST_TOTAL"],
-    compute=lambda ctx: (
-        sum([
-            (ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"]) * (min(year, 5) / 5) / (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** year
-            for year in range(1, 11)
-        ]) / (
-            ctx["DFDA_NPV_UPFRONT_COST_TOTAL"] + ctx["DFDA_ANNUAL_OPEX"] * ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -10) / ctx["NPV_DISCOUNT_RATE_STANDARD"])
-        )
-    )
+    inputs=["DFDA_NPV_BENEFIT_RD_ONLY", "DFDA_NPV_TOTAL_COST"],
+    compute=lambda ctx: ctx["DFDA_NPV_BENEFIT_RD_ONLY"] / ctx["DFDA_NPV_TOTAL_COST"],
 )  # ~637:1 - Most conservative, R&D cost savings only (NPV-adjusted)
 
 
@@ -3650,8 +3643,9 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     display_name="Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
     unit="rate",
     formula="PAYOUT ÷ CAMPAIGN_COST",
-    latex=r"Return = \$2.718B / \$1B = 2.718 = 271.8\%",
-    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
+    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"],
+    inputs=["VICTORY_BOND_ANNUAL_PAYOUT", "TREATY_CAMPAIGN_TOTAL_COST"],
+    compute=lambda ctx: ctx["VICTORY_BOND_ANNUAL_PAYOUT"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"],
 )  # 271.8% (reported as 270%)
 
 # ---
@@ -3744,9 +3738,10 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     display_name="Medical Research Percentage of Treaty Funding",
     unit="rate",
     formula="MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-    latex=r"MedicalResearchPct = \$21.76B / \$27.2B = 0.80 = 80\%",
     confidence="high",
     keywords=["allocation", "percentage", "medical research", "funding"],
+    inputs=["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"] / ctx["TREATY_ANNUAL_FUNDING"],
 )  # 80%
 
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
@@ -3757,9 +3752,10 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
     unit="rate",
     formula="TRIAL_SUBSIDIES / TREATY_FUNDING",
-    latex=r"TrialSubsidiesPct = \$21.72B / \$27.2B = 0.7985 = 79.85\%",
     confidence="high",
     keywords=["allocation", "percentage", "patient", "trial", "subsidy"],
+    inputs=["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["TREATY_ANNUAL_FUNDING"],
 )  # 79.85%
 
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
@@ -3770,9 +3766,10 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
     unit="rate",
     formula="DFDA_OPEX / TREATY_FUNDING",
-    latex=r"DFDAOpexPct = \$0.04B / \$27.2B = 0.00147 = 0.15\%",
     confidence="high",
     keywords=["allocation", "percentage", "overhead", "platform", "opex"],
+    inputs=["DFDA_ANNUAL_OPEX", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["DFDA_ANNUAL_OPEX"] / ctx["TREATY_ANNUAL_FUNDING"],
 )  # 0.15%
 
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
@@ -4320,6 +4317,9 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     display_name="Annual Deaths from All Diseases and Aging Globally",
     unit="deaths/year",
     keywords=["worldwide", "yearly", "fatalities", "casualties"],
+    confidence="high",
+    distribution="normal",
+    std_error=5_000_000,  # ±5M (~10% uncertainty in WHO estimates)
 )  # 55 million deaths/year from WHO (all diseases + aging)
 
 # Disease economic burden
@@ -4464,7 +4464,9 @@ TERRORISM_DEATHS_911 = Parameter(
     description="Deaths from 9/11 terrorist attacks",
     display_name="Deaths from 9/11 Terrorist Attacks",
     unit="deaths",
-    keywords=["911", "3k", "fatalities", "casualties", "mortality", "terrorism", "loss of life"]
+    keywords=["911", "3k", "fatalities", "casualties", "mortality", "terrorism", "loss of life"],
+    confidence="high",
+    distribution="fixed",  # Historical fact, no uncertainty
 )  # 2,996 deaths
 
 # Research acceleration multipliers
@@ -4477,8 +4479,9 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     display_name="Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
     unit="ratio",
     formula="ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
-    latex=r"\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1",
     keywords=["fatalities", "casualties", "illness", "mortality", "worldwide", "yearly", "disease"],
+    inputs=["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "TERRORISM_DEATHS_911"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"] / ctx["TERRORISM_DEATHS_911"],
 )  # ~18,274:1
 
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
@@ -4489,8 +4492,9 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     display_name="Ratio of Annual Disease Deaths to War Deaths",
     unit="ratio",
     formula="ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
-    latex=r"\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1",
     keywords=["armed forces", "conflict", "fatalities", "casualties", "illness", "mortality", "worldwide"],
+    inputs=["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"],
 )  # ~137:1
 
 # Medical research as percentage of disease burden
@@ -5391,6 +5395,22 @@ COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_BENEFIT_RD_ONLY_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
+)
+
+# Infinite ROI equation - redirected spending means $0 new cost
+# Note: Uses hardcoded latex because float('inf') breaks Monte Carlo simulation
+# The dividend value is calculated dynamically from COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC
+_infinite_roi_dividends = round(float(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC) / 1e9)
+TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
+    0,  # Placeholder - conceptual parameter for the latex equation only
+    source_ref="/knowledge/economics/economics.qmd#infinite-roi",
+    source_type="definition",
+    description="ROI when redirecting existing spending (no new costs = infinite return)",
+    display_name="Infinite ROI from Redirected Spending",
+    unit="ratio",
+    formula="COMBINED_DIVIDENDS ÷ 0 = ∞",
+    keywords=["infinite", "roi", "redirected", "spending", "zero cost"],
+    latex=f'''\\text{{ROI}} = \\frac{{\\text{{Annual Benefits}}}}{{\\text{{New Spending}}}} = \\frac{{\\${_infinite_roi_dividends}B}}{{0}} = \\infty''',
 )
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(

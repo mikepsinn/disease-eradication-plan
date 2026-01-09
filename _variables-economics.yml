@@ -460,10 +460,20 @@ dfda_opex_pct_of_treaty_funding: '<a href="/knowledge/appendix/parameters-and-ca
   data-source-type="definition" data-confidence="high" title="Percentage of treaty
   funding allocated to Decentralized Framework for Drug Assessment framework overhead
   | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate | Click to
-  view details, calculation & sources">0.147%</a>'
+  view details, calculation & sources">0.147% (95% CI: 0.1%-0.204%)</a>'
 dfda_opex_pct_of_treaty_funding_latex: '$$
 
-  DFDAOpexPct = \$0.04B / \$27.2B = 0.00147 = 0.15\%
+  \begin{aligned}
+
+  OPEX_{DFDA,treaty} \\
+
+  &= \frac{Cost_{DFDA,ann}}{Funding_{ann}} \\
+
+  &= \frac{\$40M}{\$27.2B} \\
+
+  &= 0.147\%
+
+  \end{aligned}
 
   $$'
 dfda_pragmatic_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_pragmatic_trial_cost_per_patient"
@@ -500,11 +510,21 @@ dfda_roi_rd_only: '<a href="/knowledge/appendix/parameters-and-calculations#sec-
   class="parameter-link" data-source-ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple"
   data-source-type="calculated" data-confidence="high" title="ROI from Decentralized
   Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
-  | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST
-  | Unit: ratio | Click to view details, calculation & sources">637:1 (95% CI: 569:1-782:1)</a>'
+  | Calculated from 2 inputs | ✓ High confidence | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST
+  | Unit: ratio | Click to view details, calculation & sources">637:1 (95% CI: 570:1-779:1)</a>'
 dfda_roi_rd_only_latex: '$$
 
-  Savings_{DFDA,RD} = NPV_BENEFIT \div NPV_TOTAL_COST = 637
+  \begin{aligned}
+
+  Savings_{DFDA,RD} \\
+
+  &= \frac{Benefit_{DFDA,RD}}{Cost_{DFDA,total}} \\
+
+  &= \frac{\$389B}{\$611M} \\
+
+  &= 637
+
+  \end{aligned}
 
   $$'
 dfda_trial_capacity_multiplier: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier"
@@ -740,7 +760,17 @@ dih_treasury_medical_research_pct: '<a href="/knowledge/appendix/parameters-and-
   | Click to view details, calculation & sources">80%</a>'
 dih_treasury_medical_research_pct_latex: '$$
 
-  MedicalResearchPct = \$21.76B / \$27.2B = 0.80 = 80\%
+  \begin{aligned}
+
+  Treasury_{RD} \\
+
+  &= \frac{Treasury_{ann}}{Funding_{ann}} \\
+
+  &= \frac{\$21.8B}{\$27.2B} \\
+
+  &= 80\%
+
+  \end{aligned}
 
   $$'
 dih_treasury_to_medical_research_annual: '<span class="parameter-definition" title="Annual
@@ -778,30 +808,60 @@ dih_treasury_trial_subsidies_pct: '<a href="/knowledge/appendix/parameters-and-c
   data-source-type="definition" data-confidence="high" title="Percentage of treaty
   funding going directly to patient trial subsidies | ✓ High confidence | Formula:
   TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view details, calculation
-  & sources">79.9%</a>'
+  & sources">79.9% (95% CI: 79.8%-79.9%)</a>'
 dih_treasury_trial_subsidies_pct_latex: '$$
 
-  TrialSubsidiesPct = \$21.72B / \$27.2B = 0.7985 = 79.85\%
+  \begin{aligned}
+
+  Treasury \\
+
+  &= \frac{Treasury_{ann}}{Funding_{ann}} \\
+
+  &= \frac{\$21.7B}{\$27.2B} \\
+
+  &= 79.9\%
+
+  \end{aligned}
 
   $$'
 disease_vs_terrorism_deaths_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-disease_vs_terrorism_deaths_ratio"
   class="parameter-link" data-source-ref="/knowledge/economics/economics.qmd" data-source-type="definition"
   data-confidence="high" title="Ratio of annual disease deaths to 9/11 terrorism deaths
   | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS | Unit: ratio
-  | Click to view details, calculation & sources">18.4k:1</a>'
+  | Click to view details, calculation & sources">18.4k:1 (95% CI: 15.6k:1-21.1k:1)</a>'
 disease_vs_terrorism_deaths_ratio_latex: '$$
 
-  \frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
+  \begin{aligned}
+
+  Deaths_{terror,dis} \\
+
+  &= \frac{Deaths_{ann}}{Deaths_{terror}} \\
+
+  &= \frac{55M}{3{,}000} \\
+
+  &= 18{,}400
+
+  \end{aligned}
 
   $$'
 disease_vs_war_deaths_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-disease_vs_war_deaths_ratio"
   class="parameter-link" data-source-ref="/knowledge/economics/economics.qmd" data-source-type="definition"
   data-confidence="high" title="Ratio of annual disease deaths to war deaths | ✓ High
   confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS | Unit: ratio | Click to
-  view details, calculation & sources">225:1</a>'
+  view details, calculation & sources">225:1 (95% CI: 210:1-239:1)</a>'
 disease_vs_war_deaths_ratio_latex: '$$
 
-  \frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
+  \begin{aligned}
+
+  Deaths_{war} \\
+
+  &= \frac{Deaths_{ann}}{Deaths_{total}} \\
+
+  &= \frac{55M}{245{,}000} \\
+
+  &= 225
+
+  \end{aligned}
 
   $$'
 diseases_without_effective_treatment: '<a href="/knowledge/appendix/parameters-and-calculations#sec-diseases_without_effective_treatment"
@@ -1018,8 +1078,9 @@ global_annual_daly_burden_cite: '@ihme-gbd-2021'
 global_annual_deaths_curable_diseases: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_deaths_curable_diseases"
   class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
   data-confidence="high" title="Annual deaths from all diseases and aging globally
-  | ✓ High confidence | Unit: deaths/year | Click to view details, calculation & sources">55.0M
-  deaths/year</a>'
+  | ✓ High confidence | Dist: Normal (SE: 5.00M deaths/year) | Unit: deaths/year |
+  Click to view details, calculation & sources">55.0M deaths/year (95% CI: 46.6M deaths/year-63.2M
+  deaths/year)</a>'
 global_annual_deaths_curable_diseases_cite: '@who-global-health-estimates-2024'
 global_annual_direct_indirect_war_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_direct_indirect_war_cost"
   class="parameter-link" data-source-ref="/knowledge/problem/cost-of-war.qmd#total-cost"
@@ -2047,10 +2108,20 @@ victory_bond_annual_payout_latex: '$$
   $$'
 victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
   return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core
-  definition">272%</span>'
+  definition">272% (95% CI: 180%-430%)</span>'
 victory_bond_annual_return_pct_latex: '$$
 
-  Return = \$2.718B / \$1B = 2.718 = 271.8\%
+  \begin{aligned}
+
+  Victory_{annual} \\
+
+  &= \frac{Victory_{annual}}{Cost_{camp,total}} \\
+
+  &= \frac{\$2.72B}{\$1B} \\
+
+  &= 272\%
+
+  \end{aligned}
 
   $$'
 victory_bond_funding_pct: '<span class="parameter-definition" title="Percentage of

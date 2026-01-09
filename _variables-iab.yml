@@ -39,9 +39,19 @@ iab_mechanism_benefit_cost_ratio_latex: '$$
   $$'
 victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
   return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core
-  definition">272%</span>'
+  definition">272% (95% CI: 180%-430%)</span>'
 victory_bond_annual_return_pct_latex: '$$
 
-  Return = \$2.718B / \$1B = 2.718 = 271.8\%
+  \begin{aligned}
+
+  Victory_{annual} \\
+
+  &= \frac{Victory_{annual}}{Cost_{camp,total}} \\
+
+  &= \frac{\$2.72B}{\$1B} \\
+
+  &= 272\%
+
+  \end{aligned}
 
   $$'

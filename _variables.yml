@@ -717,9 +717,10 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to Decentralized Framework for Drug Assessment framework\
   \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
-  \ | Click to view details, calculation & sources\">0.147%</a>"
-"dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.2B =\
-  \ 0.00147 = 0.15\\%\n$$"
+  \ | Click to view details, calculation & sources\">0.147% (95% CI: 0.1%-0.204%)</a>"
+"dfda_opex_pct_of_treaty_funding_latex": "$$\n\\begin{aligned}\nOPEX_{DFDA,treaty}\
+  \ \\\\\n&= \\frac{Cost_{DFDA,ann}}{Funding_{ann}} \\\\\n&= \\frac{\\$40M}{\\$27.2B}\
+  \ \\\\\n&= 0.147\\%\n\\end{aligned}\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_platform_maintenance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -769,11 +770,11 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from Decentralized\
   \ Framework for Drug Assessment R&D savings only (10-year NPV, most conservative\
-  \ estimate) | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
+  \ estimate) | Calculated from 2 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
   \ ÷ NPV_TOTAL_COST | Unit: ratio | Click to view details, calculation & sources\"\
-  >637:1 (95% CI: 569:1-782:1)</a>"
-"dfda_roi_rd_only_latex": "$$\nSavings_{DFDA,RD} = NPV_BENEFIT \\div NPV_TOTAL_COST\
-  \ = 637\n$$"
+  >637:1 (95% CI: 570:1-779:1)</a>"
+"dfda_roi_rd_only_latex": "$$\n\\begin{aligned}\nSavings_{DFDA,RD} \\\\\n&= \\frac{Benefit_{DFDA,RD}}{Cost_{DFDA,total}}\
+  \ \\\\\n&= \\frac{\\$389B}{\\$611M} \\\\\n&= 637\n\\end{aligned}\n$$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_target_cost_per_patient_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
@@ -973,8 +974,9 @@
   \ treaty funding allocated to medical research (after bond payouts and IAB incentives)\
   \ | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit:\
   \ rate | Click to view details, calculation & sources\">80%</a>"
-"dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$21.76B / \\\
-  $27.2B = 0.80 = 80\\%\n$$"
+"dih_treasury_medical_research_pct_latex": "$$\n\\begin{aligned}\nTreasury_{RD} \\\
+  \\\n&= \\frac{Treasury_{ann}}{Funding_{ann}} \\\\\n&= \\frac{\\$21.8B}{\\$27.2B}\
+  \ \\\\\n&= 80\\%\n\\end{aligned}\n$$"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
   Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive\
   \ Alignment Bond payouts and IAB political incentive mechanism) | Unit: USD/year\
@@ -996,9 +998,10 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view details,\
-  \ calculation & sources\">79.9%</a>"
-"dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$21.72B / \\\
-  $27.2B = 0.7985 = 79.85\\%\n$$"
+  \ calculation & sources\">79.9% (95% CI: 79.8%-79.9%)</a>"
+"dih_treasury_trial_subsidies_pct_latex": "$$\n\\begin{aligned}\nTreasury \\\\\n&=\
+  \ \\frac{Treasury_{ann}}{Funding_{ann}} \\\\\n&= \\frac{\\$21.7B}{\\$27.2B} \\\\\
+  \n&= 79.9\\%\n\\end{aligned}\n$$"
 "diseases_without_effective_treatment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-diseases_without_effective_treatment\"\
   \ class=\"parameter-link\" data-source-ref=\"rare-disease-only-5pct-have-treatment\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Number of diseases\
@@ -1019,16 +1022,20 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
   \ disease deaths to 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
-  \ ÷ 911_DEATHS | Unit: ratio | Click to view details, calculation & sources\">18.4k:1</a>"
-"disease_vs_terrorism_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{3{,}000\\\
-  text{ terrorism deaths}} \\approx 18{,}274:1\n$$"
+  \ ÷ 911_DEATHS | Unit: ratio | Click to view details, calculation & sources\">18.4k:1\
+  \ (95% CI: 15.6k:1-21.1k:1)</a>"
+"disease_vs_terrorism_deaths_ratio_latex": "$$\n\\begin{aligned}\nDeaths_{terror,dis}\
+  \ \\\\\n&= \\frac{Deaths_{ann}}{Deaths_{terror}} \\\\\n&= \\frac{55M}{3{,}000} \\\
+  \\\n&= 18{,}400\n\\end{aligned}\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_war_deaths_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
   \ disease deaths to war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
-  \ ÷ WAR_DEATHS | Unit: ratio | Click to view details, calculation & sources\">225:1</a>"
-"disease_vs_war_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{400{,}000\\\
-  text{ conflict deaths}} \\approx 137:1\n$$"
+  \ ÷ WAR_DEATHS | Unit: ratio | Click to view details, calculation & sources\">225:1\
+  \ (95% CI: 210:1-239:1)</a>"
+"disease_vs_war_deaths_ratio_latex": "$$\n\\begin{aligned}\nDeaths_{war} \\\\\n&=\
+  \ \\frac{Deaths_{ann}}{Deaths_{total}} \\\\\n&= \\frac{55M}{245{,}000} \\\\\n&=\
+  \ 225\n\\end{aligned}\n$$"
 "dividend_coverage_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dividend_coverage_factor\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Coverage factor\
@@ -1312,8 +1319,9 @@
 "global_annual_deaths_curable_diseases": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_deaths_curable_diseases\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
-  \ all diseases and aging globally | ✓ High confidence | Unit: deaths/year | Click\
-  \ to view details, calculation & sources\">55.0M deaths/year</a>"
+  \ all diseases and aging globally | ✓ High confidence | Dist: Normal (SE: 5.00M\
+  \ deaths/year) | Unit: deaths/year | Click to view details, calculation & sources\"\
+  >55.0M deaths/year (95% CI: 46.6M deaths/year-63.2M deaths/year)</a>"
 "global_annual_deaths_curable_diseases_cite": "@who-global-health-estimates-2024"
 "global_annual_direct_indirect_war_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_direct_indirect_war_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
@@ -2371,8 +2379,8 @@
 "terrorism_deaths_911": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-terrorism_deaths_911\"\
   \ class=\"parameter-link\" data-source-ref=\"chance-of-dying-from-terrorism-1-in-30m\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Deaths from 9/11\
-  \ terrorist attacks | ✓ High confidence | Unit: deaths | Click to view details,\
-  \ calculation & sources\">3.00k deaths</a>"
+  \ terrorist attacks | ✓ High confidence | Dist: Fixed | Unit: deaths | Click to\
+  \ view details, calculation & sources\">3.00k deaths</a>"
 "terrorism_deaths_911_cite": "@chance-of-dying-from-terrorism-1-in-30m"
 "tested_relationships_estimate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-tested_relationships_estimate\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
@@ -2671,6 +2679,15 @@
 "treaty_recurring_benefits_annual_latex": "$$\n\\begin{aligned}\nBenefit_{ann} \\\\\
   \n&= Benefit_{DFDA,ann} + Cost_{soc,ann} \\\\\n&= \\$58.6B + \\$114B \\\\\n&= \\\
   $172B\n\\end{aligned}\n$$"
+"treaty_redirected_spending_infinite_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_redirected_spending_infinite_roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#infinite-roi\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"ROI when redirecting\
+  \ existing spending (no new costs = infinite return) | ✓ High confidence | Formula:\
+  \ COMBINED_DIVIDENDS ÷ 0 = ∞ | Unit: ratio | Click to view details, calculation\
+  \ & sources\">0:1</a>"
+"treaty_redirected_spending_infinite_roi_latex": "$$\n\\begin{aligned}\n\\text{ROI}\
+  \ \\\\\n&= \\frac{\\text{Annual Benefits}}{\\text{New Spending}} \\\\\n&= \\frac{\\\
+  $172B}{0} \\\\\n&= \\infty\n\\end{aligned}\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_roi_existing_drugs_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_existing_drugs_only\"\
@@ -2887,9 +2904,10 @@
   \\end{aligned}\n$$"
 "victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
   \ return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core\
-  \ definition\">272%</span>"
-"victory_bond_annual_return_pct_latex": "$$\nReturn = \\$2.718B / \\$1B = 2.718 =\
-  \ 271.8\\%\n$$"
+  \ definition\">272% (95% CI: 180%-430%)</span>"
+"victory_bond_annual_return_pct_latex": "$$\n\\begin{aligned}\nVictory_{annual} \\\
+  \\\n&= \\frac{Victory_{annual}}{Cost_{camp,total}} \\\\\n&= \\frac{\\$2.72B}{\\\
+  $1B} \\\\\n&= 272\\%\n\\end{aligned}\n$$"
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of captured dividend funding VICTORY Incentive Alignment Bonds (10%) | Unit: rate\
   \ | Core definition\">10%</span>"
@@ -2935,6 +2953,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "387"
-"total_latex_equation_count": "158"
+"total_parameter_count": "388"
+"total_latex_equation_count": "159"
 "total_citation_count": "147"

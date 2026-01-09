@@ -538,6 +538,7 @@ export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
   confidence: "high",
+  stdError: 5000000.0,
 };
 
 export const GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT: Parameter = {
@@ -2021,7 +2022,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "NPV_BENEFIT ÷ NPV_TOTAL_COST",
-  latex: "Savings_{DFDA,RD} = NPV_BENEFIT \\div NPV_TOTAL_COST = 637",
+  latex: "Savings_{DFDA,RD} = \\frac{Benefit_{DFDA,RD}}{Cost_{DFDA,total}} = \\frac{\\$389B}{\\$611M} = 637",
 };
 
 export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
@@ -3749,7 +3750,7 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "DFDA_OPEX / TREATY_FUNDING",
-  latex: "DFDAOpexPct = \\$0.04B / \\$27.2B = 0.00147 = 0.15\\%",
+  latex: "OPEX_{DFDA,treaty} = \\frac{Cost_{DFDA,ann}}{Funding_{ann}} = \\frac{\\$40M}{\\$27.2B} = 0.147\\%",
 };
 
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
@@ -3846,7 +3847,7 @@ export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-  latex: "MedicalResearchPct = \\$21.76B / \\$27.2B = 0.80 = 80\\%",
+  latex: "Treasury_{RD} = \\frac{Treasury_{ann}}{Funding_{ann}} = \\frac{\\$21.8B}{\\$27.2B} = 80\\%",
 };
 
 export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
@@ -3869,7 +3870,7 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES / TREATY_FUNDING",
-  latex: "TrialSubsidiesPct = \\$21.72B / \\$27.2B = 0.7985 = 79.85\\%",
+  latex: "Treasury = \\frac{Treasury_{ann}}{Funding_{ann}} = \\frac{\\$21.7B}{\\$27.2B} = 79.9\\%",
 };
 
 export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
@@ -3891,7 +3892,7 @@ export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
-  latex: "\\frac{54.75\\text{M disease deaths}}{3{,}000\\text{ terrorism deaths}} \\approx 18{,}274:1",
+  latex: "Deaths_{terror,dis} = \\frac{Deaths_{ann}}{Deaths_{terror}} = \\frac{55M}{3{,}000} = 18{,}400",
 };
 
 export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
@@ -3903,7 +3904,7 @@ export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
-  latex: "\\frac{54.75\\text{M disease deaths}}{400{,}000\\text{ conflict deaths}} \\approx 137:1",
+  latex: "Deaths_{war} = \\frac{Deaths_{ann}}{Deaths_{total}} = \\frac{55M}{245{,}000} = 225",
 };
 
 export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
@@ -4260,6 +4261,18 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   confidenceInterval: [150000000.0, 410000000.0],
 };
 
+export const TREATY_REDIRECTED_SPENDING_INFINITE_ROI: Parameter = {
+  value: 0.0,
+  unit: "ratio",
+  displayName: "Infinite ROI from Redirected Spending",
+  description: "ROI when redirecting existing spending (no new costs = infinite return)",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#infinite-roi",
+  confidence: "high",
+  formula: "COMBINED_DIVIDENDS ÷ 0 = ∞",
+  latex: "\\text{ROI} = \\frac{\\text{Annual Benefits}}{\\text{New Spending}} = \\frac{\\$172B}{0} = \\infty",
+};
+
 export const TREATY_REDUCTION_PCT: Parameter = {
   value: 0.01,
   unit: "rate",
@@ -4311,7 +4324,7 @@ export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
   sourceType: "definition",
   confidence: "high",
   formula: "PAYOUT ÷ CAMPAIGN_COST",
-  latex: "Return = \\$2.718B / \\$1B = 2.718 = 271.8\\%",
+  latex: "Victory_{annual} = \\frac{Victory_{annual}}{Cost_{camp,total}} = \\frac{\\$2.72B}{\\$1B} = 272\\%",
 };
 
 export const VICTORY_BOND_FUNDING_PCT: Parameter = {
@@ -4709,6 +4722,7 @@ export const parameters = {
   TREATY_CAMPAIGN_BUDGET_SUPER_PACS,
   TREATY_CAMPAIGN_DURATION_YEARS,
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE,
+  TREATY_REDIRECTED_SPENDING_INFINITE_ROI,
   TREATY_REDUCTION_PCT,
   TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
@@ -6209,10 +6223,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 387,
+  total: 388,
   external: 147,
   calculated: 138,
-  definitions: 102,
+  definitions: 103,
   citations: 109,
 } as const;
 

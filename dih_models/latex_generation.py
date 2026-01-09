@@ -331,7 +331,10 @@ def format_latex_value(value: float, unit: str) -> str:
                 # Values < $1: preserve 3 sig figs
                 return f"\\${round_to_n_sigfigs(value, 3)}"
     elif is_percentage:
-        if abs_val <= 1:
+        # "rate" unit = decimal ratio that always needs *100 conversion (e.g., 2.72 → 272%)
+        # "percent"/"%" = may already be percentage value if > 1
+        is_rate_unit = "rate" in unit.lower()
+        if is_rate_unit or abs_val <= 1:
             return f"{round_to_n_sigfigs(value * 100, 3)}\\%"
         else:
             return f"{round_to_n_sigfigs(value, 3)}\\%"

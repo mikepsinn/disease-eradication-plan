@@ -25,15 +25,15 @@ format:
 
 This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself.
 
-**Total parameters**: 387
+**Total parameters**: 388
 
 - External sources (peer-reviewed): 147
 - Calculated values: 138
-- Core definitions: 102
+- Core definitions: 103
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (147 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
+[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (147 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1196,13 +1196,16 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
-Savings_{DFDA,RD} = NPV_BENEFIT \div NPV_TOTAL_COST = 637
+\begin{aligned}
+Savings_{DFDA,RD} \\
+&= \frac{Benefit_{DFDA,RD}}{Cost_{DFDA,total}} \\
+&= \frac{\$389B}{\$611M} \\
+&= 637
+\end{aligned}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -6014,6 +6017,14 @@ Annual deaths from all diseases and aging globally
 
 **Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5.00M deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -7499,6 +7510,14 @@ Switzerland GDP per capita
 Deaths from 9/11 terrorist attacks
 
 **Source**: [Cato Institute - Chance of dying from terrorism statistic](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+#### Input Distribution
+
+{{< include ../figures/distribution-terrorism_deaths_911.qmd >}}
 
 *✓ High confidence*
 
@@ -9339,6 +9358,16 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 **Technical**: 95% CI: [$150M, $410M]
 
 **What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*Core definition*
+
+:::
+
+### Infinite ROI from Redirected Spending: 0:1 {#sec-treaty_redirected_spending_infinite_roi}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+ROI when redirecting existing spending (no new costs = infinite return)
 
 *Core definition*
 
