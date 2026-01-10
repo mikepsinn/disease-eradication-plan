@@ -1,9 +1,11 @@
 ---
 title: 'dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation'
 description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at 100x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
-author: Mike P. Sinn
-affiliation: Decentralized FDA
-date: ""
+author:
+  - name: Mike P. Sinn
+    affiliations:
+      - name: Decentralized Institutes of Health
+date: last-modified
 published: true
 tags:
   - appendix

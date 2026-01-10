@@ -23,6 +23,10 @@ profiles:
 
 book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
+  author:
+    - name: Mike P. Sinn
+      affiliations:
+        - name: Decentralized Institutes of Health
   description: "Quantitative analysis showing how redirecting 1% of global military spending ($27.2B/year) to pragmatic clinical trials could advance treatment access by 207 years, save 10.5 billion life-years, and generate $30 quadrillion in long-run economic value."
   abstract: |
     Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D

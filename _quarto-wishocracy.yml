@@ -22,22 +22,6 @@ profiles:
 website:
   title: "Wishocracy: Aggregating Citizen Preferences and Knowledge for Optimal Public Resource Allocation"
   description: "A mechanism for solving the democratic principal-agent problem through collective intelligence and pairwise preference aggregation"
-  abstract: |
-    Representative democracy faces a fundamental principal-agent problem: elected officials optimize for
-    reelection rather than constituent welfare, while citizens lack the information and coordination mechanisms
-    to effectively guide resource allocation. We present RAPPA (Rank-Aggregated Pairwise Preference Allocation),
-    a mechanism design framework that enables optimal public resource allocation through scalable preference
-    elicitation and collective intelligence aggregation. RAPPA combines three innovations: (1) pairwise
-    comparison interfaces that reduce cognitive load and enable preference expression across thousands of
-    policy options, (2) modified Analytic Hierarchy Process algorithms that aggregate heterogeneous preferences
-    into consistent priority rankings while preserving minority viewpoints, and (3) knowledge markets that
-    weight preferences by demonstrated predictive accuracy on outcome-relevant questions. We prove that RAPPA
-    satisfies key mechanism design properties including incentive compatibility, individual rationality, and
-    Pareto efficiency under specified conditions. Simulation results demonstrate 3-5x improvement in measured
-    citizen satisfaction versus representative voting and 2x improvement versus direct referendum systems.
-    The framework is deployed as Wishocracy, an open-source platform enabling participatory budgeting at
-    municipal through national scales. We discuss implementation considerations, attack resistance, and
-    integration pathways with existing democratic institutions.
   site-url: https://paper.wishocracy.org
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
@@ -201,3 +185,6 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
+    variables:
+      author: "Mike P. Sinn"
+      affiliation: "Decentralized Institutes of Health"

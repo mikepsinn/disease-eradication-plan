@@ -13,6 +13,10 @@ dih-render:
 
 book:
   title: "Test PDF Link Rewriting"
+  author:
+    - name: Mike P. Sinn
+      affiliations:
+        - name: Decentralized Institutes of Health
   favicon: assets/icons/test-favicon.png
   # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://test.warondisease.org

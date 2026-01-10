@@ -23,23 +23,6 @@ profiles:
 website:
   title: "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
   description: "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at 100x lower cost than traditional Phase III trials—enabling continuous, population-scale pharmacovigilance and precision dosing recommendations."
-  abstract: |
-    Current pharmaceutical development requires $2.3 billion and 15 years per approved drug, while post-market
-    surveillance remains inadequate—adverse drug reactions cause over 100,000 US deaths annually. We present
-    the Decentralized Framework for Drug Assessment (dFDA), a two-stage evidence generation system that
-    combines real-world observational data with targeted pragmatic trials. Stage 1 introduces the Predictor
-    Impact Score (PIS), a novel composite metric that operationalizes the Bradford Hill causality criteria
-    for automated treatment effect detection from aggregated N-of-1 observational studies. The PIS integrates
-    seven weighted components: temporal precedence, effect magnitude, dose-response relationship, consistency
-    across populations, biological plausibility scores, specificity of association, and coherence with
-    established mechanisms. Stage 2 validates high-PIS signals through streamlined pragmatic trials following
-    the RECOVERY trial model, which demonstrated definitive treatment validation at $929 per patient versus
-    $40,000+ in traditional Phase III trials. Mathematical analysis shows this framework achieves 100x cost
-    reduction while maintaining Type I error rates below 0.05. We present validation results from 10 million+
-    participant-months of self-tracked outcome data, demonstrating successful replication of 73% of known
-    drug-outcome relationships while identifying 12 novel signals subsequently confirmed in literature. The
-    dFDA architecture enables continuous, population-scale pharmacovigilance and personalized dosing
-    recommendations, fundamentally restructuring the economics of treatment discovery and safety monitoring.
   site-url: https://dfda.earth
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
@@ -202,3 +185,6 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
+    variables:
+      author: "Mike P. Sinn"
+      affiliation: "Decentralized Institutes of Health"

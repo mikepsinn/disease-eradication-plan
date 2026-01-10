@@ -22,20 +22,6 @@ profiles:
 website:
   title: "Incentive Alignment Bonds: Turning General Welfare into an Asset Class"
   description: "A mechanism design approach that makes supporting welfare-improving policies incentive-compatible for rational politicians through securitized returns on public good production."
-  abstract: |
-    Democratic systems exhibit systematic underinvestment in policies with diffuse benefits and concentrated costs,
-    even when net social welfare is strongly positive. We formalize this as an electoral principal-agent problem
-    where politicians face reelection incentives misaligned with long-term public good production. We propose
-    Incentive Alignment Bonds (IABs): financial instruments that securitize the measured welfare returns from
-    policy interventions, creating tradeable claims on verified public good outcomes. IABs transform general
-    welfare improvement from a political externality into a private asset class, enabling rational self-interest
-    to support welfare-maximizing policies. We demonstrate how existing political action committee (PAC)
-    infrastructure can deploy IABs without legislative change, using impact bonds, prediction markets, and
-    outcome-contingent securities. Analysis of the $27.2B annual funding from a proposed 1% Treaty on military
-    spending reduction shows IABs could generate 100:1+ returns for early adopters while simultaneously advancing
-    treatments that would otherwise remain unfunded due to electoral cycle misalignment. This mechanism design
-    approach converts the tragedy of the commons in democratic resource allocation into an investable opportunity
-    with aligned incentives across politicians, donors, and the general public.
   site-url: https://iab.warondisease.org
   favicon: assets/icons/iab-favicon.png
   page-navigation: true
@@ -198,3 +184,6 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
+    variables:
+      author: "Mike P. Sinn"
+      affiliation: "Decentralized Institutes of Health"

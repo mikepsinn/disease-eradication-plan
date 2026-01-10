@@ -19,7 +19,10 @@ website:
 
 book:
   title: "How to End War and Disease"
-  author: "Mike P. Sinn"
+  author:
+    - name: Mike P. Sinn
+      affiliations:
+        - name: Decentralized Institutes of Health
   # description: Removed to allow page-level descriptions to override for og:description
   # Original: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
