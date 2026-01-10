@@ -612,37 +612,10 @@ def publish_paper(
     quarto_config = load_quarto_config(paper_config["quarto_config"])
     metadata = extract_zenodo_metadata(quarto_config, paper_key)
 
-    # Add dates from git history
-    git_dates = get_git_dates(paper_config["quarto_config"])
-    if git_dates:
-        # Zenodo uses 'dates' array with type and description
-        # Validate dates are not in the future (Zenodo rejects future dates)
-        today = datetime.now().date().isoformat()
-        dates = []
-        if git_dates.get("created"):
-            created_date = git_dates["created"]
-            # Only add if date is not in the future
-            if created_date <= today:
-                dates.append({
-                    "date": created_date,
-                    "type": "created",
-                    "description": "Initial commit date",
-                })
-            else:
-                print(f"[WARNING] Skipping future creation date: {created_date} (today: {today})")
-        if git_dates.get("updated"):
-            updated_date = git_dates["updated"]
-            # Only add if date is not in the future
-            if updated_date <= today:
-                dates.append({
-                    "date": updated_date,
-                    "type": "updated",
-                    "description": "Last modification date",
-                })
-            else:
-                print(f"[WARNING] Skipping future update date: {updated_date} (today: {today})")
-        if dates:
-            metadata["dates"] = dates
+    # Note: Git dates are intentionally NOT submitted to Zenodo.
+    # Zenodo validates dates against their server time and rejects "future" dates,
+    # which causes issues when local system time differs from Zenodo's server.
+    # The publication_date field (set to today) is sufficient for Zenodo metadata.
 
     # Parse and add bibliography references
     bib_file = paper_config.get("bib_file")
@@ -662,9 +635,6 @@ def publish_paper(
         print(f"[OK] References: {len(metadata['references'])} citation(s)")
     if metadata.get('communities'):
         print(f"[OK] Community: {metadata['communities'][0]['identifier']}")
-    if metadata.get('dates'):
-        date_info = ", ".join(f"{d['type']}: {d['date']}" for d in metadata['dates'])
-        print(f"[OK] Dates: {date_info}")
     desc_preview = metadata.get('description', '')[:100]
     if desc_preview:
         print(f"[OK] Description: {desc_preview}...")
