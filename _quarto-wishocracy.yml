@@ -20,7 +20,7 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "Wishocracy: Aggregating Citizen Preferences and Knowledge for Optimal Public Resource Allocation"
+  title: "Wishocracy: Scalable Preference Aggregation for Public Goods Allocation Using Collective Intelligence"
   description: "A mechanism for solving the democratic principal-agent problem through collective intelligence and pairwise preference aggregation"
   site-url: https://paper.wishocracy.org
   favicon: assets/icons/wishocracy-favicon.png

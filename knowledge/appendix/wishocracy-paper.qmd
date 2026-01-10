@@ -1,7 +1,6 @@
 ---
-title: 'Wishocracy: Aggregating Citizen Preferences and Knowledge for Optimal Public Resource Allocation'
-subtitle: A Mechanism for Solving the Democratic Principal-Agent Problem
-description: This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to eliminate the principal-agent problem in democratic resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons and aggregating collective intelligence, the mechanism enables direct citizen control over public budgets while approximating utilitarian welfare.
+title: 'Wishocracy: Scalable Preference Aggregation for Public Goods Allocation Using Collective Intelligence'
+description: Wishocracy is a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to eliminate the principal-agent problem in democratic resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons and aggregating collective intelligence, the mechanism enables direct citizen control over public budgets while approximating utilitarian welfare.
 aliases:
   - /wishocracy.html
 author:
