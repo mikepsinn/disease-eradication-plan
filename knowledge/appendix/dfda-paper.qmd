@@ -3,6 +3,7 @@ title: 'dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real
 description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at 100x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
 author: Mike P. Sinn
 affiliation: Decentralized FDA
+date: ""
 published: true
 tags:
   - appendix
@@ -834,11 +835,11 @@ Beyond optimal values, we calculate the **average outcome following different pr
 
 | Metric | Definition | Clinical Interpretation |
 |--------|------------|------------------------|
-| `average_outcome` | Mean outcome across all pairs | Baseline outcome level |
-| `average_outcome_following_high_predictor` | Mean outcome when predictor > mean | Outcome after high exposure |
-| `average_outcome_following_low_predictor` | Mean outcome when predictor < mean | Outcome after low exposure |
-| `average_daily_high_predictor` | Mean predictor in upper 51% of spread | "High dose" value |
-| `average_daily_low_predictor` | Mean predictor in lower 49% of spread | "Low dose" value |
+| Average Outcome | Mean outcome across all pairs | Baseline outcome level |
+| Average Outcome Following High Predictor | Mean outcome when predictor > mean | Outcome after high exposure |
+| Average Outcome Following Low Predictor | Mean outcome when predictor < mean | Outcome after low exposure |
+| Average Daily High Predictor | Mean predictor in upper 51% of spread | "High dose" value |
+| Average Daily Low Predictor | Mean predictor in lower 49% of spread | "Low dose" value |
 
 #### 6.13.2 Calculation
 
@@ -858,10 +859,10 @@ For treatment-response analysis, we distinguish between **baseline** (non-treatm
 
 | Metric | Definition | Use Case |
 |--------|------------|----------|
-| `predictor_baseline_average_per_day` | Average daily predictor during low-exposure periods | Typical non-treatment value |
-| `predictor_treatment_average_per_day` | Average daily predictor during high-exposure periods | Typical treatment dosage |
-| `predictor_baseline_average_per_duration_of_action` | Baseline cumulative over duration of action | For longer-acting effects |
-| `predictor_treatment_average_per_duration_of_action` | Treatment cumulative over duration of action | Cumulative treatment dose |
+| Predictor Baseline Average Per Day | Average daily predictor during low-exposure periods | Typical non-treatment value |
+| Predictor Treatment Average Per Day | Average daily predictor during high-exposure periods | Typical treatment dosage |
+| Predictor Baseline Average Per Duration Of Action | Baseline cumulative over duration of action | For longer-acting effects |
+| Predictor Treatment Average Per Duration Of Action | Treatment cumulative over duration of action | Cumulative treatment dose |
 
 **Example**: For a user taking Magnesium supplements:
 
@@ -877,12 +878,12 @@ Not all statistically significant relationships are useful. We apply **quality f
 
 | Flag | Description | Impact on Ranking |
 |------|-------------|-------------------|
-| `predictor_is_controllable` | User can directly modify this predictor (e.g., food, supplements) | Required for actionable recommendations |
-| `outcome_is_a_goal` | Outcome is something users want to optimize (e.g., mood, energy) | Required for relevance |
-| `plausibly_causal` | Plausible biological mechanism exists | Increases confidence |
-| `obvious` | Relationship is already well-known (e.g., caffeine → alertness) | May deprioritize for discovery |
-| `boring` | Relationship unlikely to interest users | Filters from default views |
-| `interesting_variable_category_pair` | Category combination is typically meaningful (e.g., Treatment → Symptom) | Prioritizes for analysis |
+| Predictor Is Controllable | User can directly modify this predictor (e.g., food, supplements) | Required for actionable recommendations |
+| Outcome Is A Goal | Outcome is something users want to optimize (e.g., mood, energy) | Required for relevance |
+| Plausibly Causal | Plausible biological mechanism exists | Increases confidence |
+| Obvious | Relationship is already well-known (e.g., caffeine → alertness) | May deprioritize for discovery |
+| Boring | Relationship unlikely to interest users | Filters from default views |
+| Interesting Variable Category Pair | Category combination is typically meaningful (e.g., Treatment → Symptom) | Prioritizes for analysis |
 
 #### 6.15.2 Boring Relationship Definition
 
@@ -900,8 +901,8 @@ Users can vote on individual relationships:
 
 | Vote Type | Values | Purpose |
 |-----------|--------|---------|
-| `usefulness_vote` | -1, 0, 1 | Whether knowledge of this relationship is useful |
-| `causality_vote` | -1, 0, 1 | Whether there's a plausible causal mechanism |
+| Usefulness Vote | -1, 0, 1 | Whether knowledge of this relationship is useful |
+| Causality Vote | -1, 0, 1 | Whether there's a plausible causal mechanism |
 
 Aggregate votes contribute to the PIS plausibility weight ($w$).
 
@@ -911,9 +912,9 @@ Aggregate votes contribute to the PIS plausibility weight ($w$).
 
 | Valence | Meaning | Examples |
 |---------|---------|----------|
-| `positive` | Higher is better | Energy, Sleep Quality, Productivity |
-| `negative` | Lower is better | Pain, Anxiety, Fatigue |
-| `neutral` | Direction depends on context | Heart Rate, Weight |
+| Positive | Higher is better | Energy, Sleep Quality, Productivity |
+| Negative | Lower is better | Pain, Anxiety, Fatigue |
+| Neutral | Direction depends on context | Heart Rate, Weight |
 
 #### 6.16.1 Impact on Interpretation
 
@@ -935,12 +936,12 @@ We optimize `onset_delay` (δ) and `duration_of_action` (τ) to find the tempora
 
 | Field | Description |
 |-------|-------------|
-| `correlations_over_delays` | Pearson r values for various onset delays |
-| `correlations_over_durations` | Pearson r values for various durations of action |
-| `onset_delay_with_strongest_pearson_correlation` | Optimal δ value |
-| `pearson_correlation_with_no_onset_delay` | Baseline r for immediate effect |
-| `average_forward_pearson_correlation_over_onset_delays` | Mean r across all tested delays |
-| `average_reverse_pearson_correlation_over_onset_delays` | Mean reverse r across delays |
+| Correlations Over Delays | Pearson r values for various onset delays |
+| Correlations Over Durations | Pearson r values for various durations of action |
+| Onset Delay With Strongest Pearson Correlation | Optimal δ value |
+| Pearson Correlation With No Onset Delay | Baseline r for immediate effect |
+| Average Forward Pearson Correlation Over Onset Delays | Mean r across all tested delays |
+| Average Reverse Pearson Correlation Over Onset Delays | Mean reverse r across delays |
 
 #### 6.17.2 Optimization Grid
 
