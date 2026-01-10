@@ -616,19 +616,31 @@ def publish_paper(
     git_dates = get_git_dates(paper_config["quarto_config"])
     if git_dates:
         # Zenodo uses 'dates' array with type and description
+        # Validate dates are not in the future (Zenodo rejects future dates)
+        today = datetime.now().date().isoformat()
         dates = []
         if git_dates.get("created"):
-            dates.append({
-                "date": git_dates["created"],
-                "type": "created",
-                "description": "Initial commit date",
-            })
+            created_date = git_dates["created"]
+            # Only add if date is not in the future
+            if created_date <= today:
+                dates.append({
+                    "date": created_date,
+                    "type": "created",
+                    "description": "Initial commit date",
+                })
+            else:
+                print(f"[WARNING] Skipping future creation date: {created_date} (today: {today})")
         if git_dates.get("updated"):
-            dates.append({
-                "date": git_dates["updated"],
-                "type": "updated",
-                "description": "Last modification date",
-            })
+            updated_date = git_dates["updated"]
+            # Only add if date is not in the future
+            if updated_date <= today:
+                dates.append({
+                    "date": updated_date,
+                    "type": "updated",
+                    "description": "Last modification date",
+                })
+            else:
+                print(f"[WARNING] Skipping future update date: {updated_date} (today: {today})")
         if dates:
             metadata["dates"] = dates
 
@@ -816,9 +828,20 @@ def main():
     print("Summary")
     print(f"{'='*60}")
 
+    failed = False
     for paper_key, result in results.items():
-        status = "[OK] Uploaded" if result else "[--] Skipped"
+        if result is None:
+            status = "[ERROR] Failed"
+            failed = True
+        elif result:
+            status = "[OK] Uploaded"
+        else:
+            status = "[--] Skipped"
         print(f"  {paper_key}: {status}")
+
+    # Exit with error code if any upload failed
+    if failed:
+        return 1
 
     return 0
 
