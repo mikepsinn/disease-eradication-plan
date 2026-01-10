@@ -75,33 +75,93 @@ ZENODO_COMMUNITY = "dih"
 # Project root
 PROJECT_ROOT = Path(__file__).parent.parent
 
-# Paper configurations
-PAPERS = {
-    "iab": {
-        "quarto_config": "_quarto-iab.yml",
-        "pdf_path": "_build_temp/iab/_site/iab/incentive-alignment-bonds-paper.pdf",
-        "bib_file": "references-iab.bib",
-        "resource_type": "publication-workingpaper",
-    },
-    "dfda": {
-        "quarto_config": "_quarto-dfda.yml",
-        "pdf_path": "_build_temp/dfda/_site/dfda/dfda-paper.pdf",
-        "bib_file": "references-dfda.bib",
-        "resource_type": "publication-workingpaper",
-    },
-    "economics": {
-        "quarto_config": "_quarto-economics.yml",
-        "pdf_path": "_build_temp/economics/_site/economics/1-percent-treaty-impact.pdf",
-        "bib_file": "references-economics.bib",
-        "resource_type": "publication-workingpaper",
-    },
-    "wishocracy": {
-        "quarto_config": "_quarto-wishocracy.yml",
-        "pdf_path": "_build_temp/wishocracy/_site/wishocracy/wishocracy-rappa-paper.pdf",
-        "bib_file": "references-wishocracy.bib",
-        "resource_type": "publication-workingpaper",
-    },
-}
+
+def discover_papers() -> dict:
+    """
+    Auto-discover Quarto paper configs from _quarto-*.yml files.
+
+    Only includes configs that:
+    - Have a PDF output file configured
+    - Have dih-render.zenodo set to true, OR
+    - Are not in the skip list (book, test, etc.)
+
+    Returns dict mapping paper key to config info:
+    {
+        "iab": {
+            "quarto_config": "_quarto-iab.yml",
+            "pdf_path": "_build_temp/iab/_site/iab/paper.pdf",
+            "bib_file": "references-iab.bib",
+            "resource_type": "publication-workingpaper",
+        },
+        ...
+    }
+    """
+    papers = {}
+
+    # Configs to skip (not standalone papers)
+    SKIP_CONFIGS = {"book", "test", "main", "base"}
+
+    # Find all _quarto-*.yml files (exclude base _quarto.yml)
+    for config_path in PROJECT_ROOT.glob("_quarto-*.yml"):
+        # Extract paper key from filename: _quarto-iab.yml -> iab
+        key = config_path.stem.replace("_quarto-", "")
+
+        # Skip if key is empty, just "quarto", or in skip list
+        if not key or key == "quarto" or key in SKIP_CONFIGS:
+            continue
+
+        # Load config to get PDF filename
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = yaml.safe_load(f)
+        except Exception as e:
+            print(f"WARNING: Could not read {config_path}: {e}")
+            continue
+
+        # Check for explicit zenodo flag in dih-render section
+        dih_render = config.get("dih-render", {})
+
+        # If zenodo is explicitly set to false, skip this config
+        if dih_render.get("zenodo") is False:
+            continue
+
+        # Get PDF filename from config (check multiple locations)
+        pdf_filename = None
+
+        # Check dih-render.pdf-output-file first (our custom field)
+        if dih_render.get("pdf-output-file"):
+            pdf_filename = dih_render["pdf-output-file"]
+
+        # Fall back to format.pdf.output-file
+        if not pdf_filename:
+            format_config = config.get("format", {})
+            pdf_config = format_config.get("pdf", {})
+            if pdf_config.get("output-file"):
+                pdf_filename = pdf_config["output-file"]
+
+        # Fall back to default naming
+        if not pdf_filename:
+            pdf_filename = f"{key}-paper.pdf"
+
+        # Construct PDF path using build convention
+        pdf_path = f"_build_temp/{key}/_site/{key}/{pdf_filename}"
+
+        # Look for bibliography file
+        bib_file = f"references-{key}.bib"
+        if not (PROJECT_ROOT / bib_file).exists():
+            # Try alternate naming
+            bib_file = f"{key}-references.bib"
+            if not (PROJECT_ROOT / bib_file).exists():
+                bib_file = None
+
+        papers[key] = {
+            "quarto_config": config_path.name,
+            "pdf_path": pdf_path,
+            "bib_file": bib_file,
+            "resource_type": "publication-workingpaper",
+        }
+
+    return papers
 
 
 
@@ -517,6 +577,7 @@ class ZenodoClient:
 
 def publish_paper(
     paper_key: str,
+    paper_config: dict,
     client: Optional["ZenodoClient"],
     dry_run: bool = False,
     skip_publish: bool = False,
@@ -524,9 +585,15 @@ def publish_paper(
     """
     Upload a paper to Zenodo as a draft.
 
+    Args:
+        paper_key: Short identifier for the paper (e.g., "iab", "dfda")
+        paper_config: Config dict with quarto_config, pdf_path, bib_file, resource_type
+        client: ZenodoClient instance (None for dry-run)
+        dry_run: If True, show what would be uploaded without uploading
+        skip_publish: If True, create draft without publishing
+
     Returns the deposit info if successful, None otherwise.
     """
-    paper_config = PAPERS[paper_key]
 
     print(f"\n{'='*60}")
     print(f"Uploading: {paper_key}")
@@ -653,6 +720,13 @@ def publish_paper(
 
 
 def main():
+    # Discover papers first so we can use them in argument choices
+    papers = discover_papers()
+
+    if not papers:
+        print("ERROR: No Quarto paper configs found (_quarto-*.yml)")
+        return 1
+
     parser = argparse.ArgumentParser(
         description="Upload Quarto papers to Zenodo as drafts",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -660,7 +734,7 @@ def main():
     )
     parser.add_argument(
         "--paper",
-        choices=list(PAPERS.keys()),
+        choices=list(papers.keys()),
         help="Upload specific paper (default: all)",
     )
     parser.add_argument(
@@ -688,9 +762,10 @@ def main():
     args = parser.parse_args()
 
     if args.list_papers:
-        print("Configured papers:")
-        for key, config in PAPERS.items():
-            print(f"  {key}: {config['quarto_config']}")
+        print(f"Discovered {len(papers)} paper(s):")
+        for key, config in sorted(papers.items()):
+            bib_status = "[bib]" if config.get("bib_file") else ""
+            print(f"  {key}: {config['quarto_config']} {bib_status}")
         return 0
 
     # Load .env file if present
@@ -723,12 +798,13 @@ def main():
         print("API: (dry-run mode - no connection)")
 
     # Determine which papers to upload
-    papers_to_upload = [args.paper] if args.paper else list(PAPERS.keys())
+    papers_to_upload = [args.paper] if args.paper else list(papers.keys())
 
     results = {}
     for paper_key in papers_to_upload:
         result = publish_paper(
             paper_key,
+            papers[paper_key],  # Pass config directly
             client,
             dry_run=args.dry_run,
             skip_publish=args.draft,
