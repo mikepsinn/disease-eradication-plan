@@ -523,6 +523,7 @@ format:
     toc-depth: 3
     number-sections: false
     colorlinks: true
+    date: ""
     geometry:
       - top=1in
       - bottom=1in
