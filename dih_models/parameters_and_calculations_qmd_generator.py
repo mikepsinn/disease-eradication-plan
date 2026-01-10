@@ -127,7 +127,7 @@ def generate_parameters_and_calculations_qmd(
     # Generate QMD content
     content = []
     content.append("---")
-    content.append('title: "Show Your Work: Complete Methodology"')
+    content.append('title: "Methodology, Parameters, and Calculations"')
     content.append('description: "Full methodological transparency for the 1% Treaty economic analysis. Every parameter sourced, every calculation shown, every assumption testable. Cost-benefit analysis of redirecting military spending to clinical trials and medical research."')
     content.append("keywords:")
     content.append("  - health economics methodology")
