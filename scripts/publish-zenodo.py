@@ -40,9 +40,37 @@ except ImportError:
     print("ERROR: PyYAML not installed. Run: pip install pyyaml")
     sys.exit(1)
 
+
+def load_dotenv(env_file: Path) -> None:
+    """Load environment variables from a .env file if it exists."""
+    if not env_file.exists():
+        return
+
+    with open(env_file, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            # Skip empty lines and comments
+            if not line or line.startswith("#"):
+                continue
+            # Parse KEY=VALUE format
+            if "=" in line:
+                key, _, value = line.partition("=")
+                key = key.strip()
+                value = value.strip()
+                # Remove surrounding quotes if present
+                if (value.startswith('"') and value.endswith('"')) or \
+                   (value.startswith("'") and value.endswith("'")):
+                    value = value[1:-1]
+                # Only set if not already in environment
+                if key and key not in os.environ:
+                    os.environ[key] = value
+
 # Zenodo API endpoints
 ZENODO_API = "https://zenodo.org/api"
 ZENODO_SANDBOX_API = "https://sandbox.zenodo.org/api"
+
+# Zenodo community ID (https://zenodo.org/communities/dih)
+ZENODO_COMMUNITY = "dih"
 
 # Project root
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -52,25 +80,74 @@ PAPERS = {
     "iab": {
         "quarto_config": "_quarto-iab.yml",
         "pdf_path": "_build_temp/iab/_site/iab/incentive-alignment-bonds-paper.pdf",
+        "bib_file": "references-iab.bib",
         "resource_type": "publication-workingpaper",
     },
     "dfda": {
         "quarto_config": "_quarto-dfda.yml",
         "pdf_path": "_build_temp/dfda/_site/dfda/dfda-paper.pdf",
+        "bib_file": "references-dfda.bib",
         "resource_type": "publication-workingpaper",
     },
     "economics": {
         "quarto_config": "_quarto-economics.yml",
         "pdf_path": "_build_temp/economics/_site/economics/1-percent-treaty-impact.pdf",
+        "bib_file": "references-economics.bib",
         "resource_type": "publication-workingpaper",
     },
     "wishocracy": {
         "quarto_config": "_quarto-wishocracy.yml",
         "pdf_path": "_build_temp/wishocracy/_site/wishocracy/wishocracy-rappa-paper.pdf",
+        "bib_file": "references-wishocracy.bib",
         "resource_type": "publication-workingpaper",
     },
 }
 
+
+
+def get_git_dates(file_path: str) -> dict:
+    """
+    Get creation and last modification dates from git history.
+
+    Returns dict with 'created' and 'updated' dates in ISO format,
+    or empty dict if git info unavailable.
+    """
+    import subprocess
+
+    dates = {}
+    full_path = PROJECT_ROOT / file_path
+
+    if not full_path.exists():
+        return dates
+
+    try:
+        # Get first commit date (creation)
+        result = subprocess.run(
+            ["git", "log", "--follow", "--format=%aI", "--reverse", str(full_path)],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            first_line = result.stdout.strip().split("\n")[0]
+            dates["created"] = first_line[:10]  # Just the date part
+
+        # Get last commit date (updated)
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%aI", str(full_path)],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            dates["updated"] = result.stdout.strip()[:10]
+
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        pass
+
+    return dates
 
 
 def load_quarto_config(config_file: str) -> dict:
@@ -81,6 +158,84 @@ def load_quarto_config(config_file: str) -> dict:
 
     with open(config_path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+
+def parse_bibtex_references(bib_file: str) -> list[str]:
+    """
+    Parse a BibTeX file and return formatted citation strings for Zenodo.
+
+    Returns a list of citation strings like:
+    "Author (Year). Title. Journal/Publisher."
+    """
+    bib_path = PROJECT_ROOT / bib_file
+    if not bib_path.exists():
+        return []
+
+    references = []
+
+    with open(bib_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # Simple regex-based BibTeX parser
+    # Match entries like @article{key, ... } or @book{key, ... }
+    import re
+    entry_pattern = re.compile(
+        r'@(\w+)\s*\{\s*([^,]+)\s*,([^@]*?)(?=\n@|\Z)',
+        re.DOTALL
+    )
+
+    for match in entry_pattern.finditer(content):
+        entry_type = match.group(1).lower()
+        fields_text = match.group(3)
+
+        # Parse individual fields
+        fields = {}
+        # Match field = {value} or field = "value" patterns
+        field_pattern = re.compile(
+            r'(\w+)\s*=\s*(?:\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}|"([^"]*)")',
+            re.DOTALL
+        )
+        for field_match in field_pattern.finditer(fields_text):
+            field_name = field_match.group(1).lower()
+            field_value = field_match.group(2) or field_match.group(3) or ""
+            # Clean up whitespace
+            field_value = " ".join(field_value.split())
+            fields[field_name] = field_value
+
+        # Format citation string
+        author = fields.get("author", "Unknown Author")
+        year = fields.get("year", "n.d.")
+        title = fields.get("title", "Untitled")
+
+        # Get journal/publisher based on entry type
+        venue = ""
+        if entry_type == "article":
+            venue = fields.get("journal", "")
+            if fields.get("volume"):
+                venue += f", {fields['volume']}"
+                if fields.get("number"):
+                    venue += f"({fields['number']})"
+                if fields.get("pages"):
+                    venue += f", {fields['pages']}"
+        elif entry_type == "book":
+            venue = fields.get("publisher", "")
+        elif entry_type == "inproceedings":
+            venue = fields.get("booktitle", "")
+        elif entry_type == "misc" or entry_type == "online":
+            venue = fields.get("howpublished", fields.get("url", ""))
+
+        # Build citation string
+        citation = f"{author} ({year}). {title}."
+        if venue:
+            citation += f" {venue}."
+
+        # Add DOI if present
+        if fields.get("doi"):
+            citation += f" https://doi.org/{fields['doi']}"
+
+        references.append(citation)
+
+    return references
 
 
 def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
@@ -97,12 +252,26 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     # Title: prefer book/website title over metadata
     title = book.get("title") or website.get("title") or metadata.get("title", f"Paper: {paper_key}")
 
-    # Description
-    description = (
+    # Description: prefer abstract (longer, more detailed) over description
+    abstract = book.get("abstract") or website.get("abstract") or metadata.get("abstract", "")
+    short_description = (
         book.get("description") or
         website.get("description") or
         metadata.get("description", "")
     )
+
+    # Clean up abstract (remove extra whitespace from YAML multiline)
+    if abstract:
+        abstract = " ".join(abstract.split())
+
+    # Use abstract as description if available, otherwise use short description
+    # For Zenodo, a rich description helps with discoverability
+    if abstract:
+        description = f"<p><strong>Abstract:</strong> {abstract}</p>"
+        if short_description:
+            description += f"<p><strong>Summary:</strong> {short_description}</p>"
+    else:
+        description = short_description
 
     # Authors/Creators
     author_name = metadata.get("human-author", metadata.get("creator", "Mike P. Sinn"))
@@ -114,6 +283,9 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
         creators[0]["orcid"] = orcid
     elif "Mike" in author_name and "Sinn" in author_name:
         creators[0]["orcid"] = "0000-0002-4817-1912"
+
+    # Add affiliation
+    creators[0]["affiliation"] = metadata.get("publisher", "Decentralized Institutes of Health")
 
     # Keywords
     keywords = metadata.get("keywords", [])
@@ -149,6 +321,46 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
             "resource_type": "software",
         })
 
+    # Language (ISO 639-3 code - "eng" for English)
+    language_map = {
+        "en-US": "eng",
+        "en-GB": "eng",
+        "en": "eng",
+    }
+    quarto_language = metadata.get("language", "en-US")
+    zenodo_language = language_map.get(quarto_language, "eng")
+
+    # Version
+    version = metadata.get("version", "1.0")
+
+    # Subjects - map Quarto subject/category to Zenodo subjects
+    # Zenodo uses free-text subjects for custom classifications
+    subjects = []
+    subject_text = metadata.get("subject", "")
+    if subject_text:
+        # Split comma-separated subjects and clean them up
+        for subj in subject_text.split(","):
+            subj = subj.strip()
+            if subj:
+                subjects.append({"term": subj, "scheme": "user-defined"})
+
+    # Contributors (editors, data curators, etc.)
+    contributors = []
+    contributor_list = metadata.get("contributors", [])
+    if isinstance(contributor_list, list):
+        for contrib in contributor_list:
+            if isinstance(contrib, dict):
+                contributors.append({
+                    "name": contrib.get("name", ""),
+                    "type": contrib.get("type", "Other"),
+                    "affiliation": contrib.get("affiliation", ""),
+                })
+            elif isinstance(contrib, str):
+                contributors.append({"name": contrib, "type": "Other"})
+
+    # Method/methodology (if available)
+    method = metadata.get("method", "")
+
     # Build Zenodo metadata
     zenodo_metadata = {
         "title": title,
@@ -156,19 +368,44 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
         "creators": creators,
         "keywords": keywords,
         "license": zenodo_license,
+        "access_right": "open",  # Open access for all papers
         "publication_date": datetime.now().strftime("%Y-%m-%d"),
         "upload_type": "publication",
         "publication_type": "workingpaper",
         "publisher": metadata.get("publisher", "Decentralized Institutes of Health"),
+        "language": zenodo_language,
+        "version": version,
     }
 
     if related:
         zenodo_metadata["related_identifiers"] = related
 
-    # Add subject/category if available
-    subject = metadata.get("subject")
-    if subject:
-        zenodo_metadata["notes"] = f"Subject: {subject}"
+    if subjects:
+        zenodo_metadata["subjects"] = subjects
+
+    if contributors:
+        zenodo_metadata["contributors"] = contributors
+
+    if method:
+        zenodo_metadata["method"] = method
+
+    # Add community
+    zenodo_metadata["communities"] = [{"identifier": ZENODO_COMMUNITY}]
+
+    # Add notes with category/genre information if available
+    notes_parts = []
+    category = metadata.get("category")
+    if category:
+        notes_parts.append(f"Category: {category}")
+    genre = metadata.get("genre")
+    if genre:
+        notes_parts.append(f"Genre: {genre}")
+    audience = metadata.get("audience")
+    if audience:
+        notes_parts.append(f"Target Audience: {audience}")
+
+    if notes_parts:
+        zenodo_metadata["notes"] = " | ".join(notes_parts)
 
     return zenodo_metadata
 
@@ -280,7 +517,7 @@ class ZenodoClient:
 
 def publish_paper(
     paper_key: str,
-    client: ZenodoClient,
+    client: Optional["ZenodoClient"],
     dry_run: bool = False,
     skip_publish: bool = False,
 ) -> Optional[dict]:
@@ -308,14 +545,58 @@ def publish_paper(
     quarto_config = load_quarto_config(paper_config["quarto_config"])
     metadata = extract_zenodo_metadata(quarto_config, paper_key)
 
+    # Add dates from git history
+    git_dates = get_git_dates(paper_config["quarto_config"])
+    if git_dates:
+        # Zenodo uses 'dates' array with type and description
+        dates = []
+        if git_dates.get("created"):
+            dates.append({
+                "date": git_dates["created"],
+                "type": "created",
+                "description": "Initial commit date",
+            })
+        if git_dates.get("updated"):
+            dates.append({
+                "date": git_dates["updated"],
+                "type": "updated",
+                "description": "Last modification date",
+            })
+        if dates:
+            metadata["dates"] = dates
+
+    # Parse and add bibliography references
+    bib_file = paper_config.get("bib_file")
+    if bib_file:
+        references = parse_bibtex_references(bib_file)
+        if references:
+            metadata["references"] = references
+
     print(f"[OK] Title: {metadata['title']}")
     print(f"[OK] Authors: {', '.join(c['name'] for c in metadata['creators'])}")
     print(f"[OK] License: {metadata['license']}")
+    print(f"[OK] Version: {metadata.get('version', 'N/A')}")
+    print(f"[OK] Language: {metadata.get('language', 'N/A')}")
+    if metadata.get('subjects'):
+        print(f"[OK] Subjects: {len(metadata['subjects'])} subject(s)")
+    if metadata.get('references'):
+        print(f"[OK] References: {len(metadata['references'])} citation(s)")
+    if metadata.get('communities'):
+        print(f"[OK] Community: {metadata['communities'][0]['identifier']}")
+    if metadata.get('dates'):
+        date_info = ", ".join(f"{d['type']}: {d['date']}" for d in metadata['dates'])
+        print(f"[OK] Dates: {date_info}")
+    desc_preview = metadata.get('description', '')[:100]
+    if desc_preview:
+        print(f"[OK] Description: {desc_preview}...")
 
     if dry_run:
         print("\n[DRY RUN] Would upload with metadata:")
         print(json.dumps(metadata, indent=2))
         return None
+
+    # Client is required for actual uploads (not dry-run)
+    assert client is not None, "Client is required for non-dry-run operations"
 
     try:
         # Check for existing draft with same title (to update instead of creating duplicates)
@@ -412,26 +693,34 @@ def main():
             print(f"  {key}: {config['quarto_config']}")
         return 0
 
-    # Get API token
-    if args.sandbox:
-        token = os.environ.get("ZENODO_SANDBOX_TOKEN")
-        if not token:
-            print("ERROR: ZENODO_SANDBOX_TOKEN environment variable not set")
-            print("  Get token at: https://sandbox.zenodo.org/account/settings/applications/")
-            return 1
-    else:
-        token = os.environ.get("ZENODO_TOKEN")
-        if not token:
-            print("ERROR: ZENODO_TOKEN environment variable not set")
-            print("  Get token at: https://zenodo.org/account/settings/applications/")
-            return 1
+    # Load .env file if present
+    load_dotenv(PROJECT_ROOT / ".env")
 
-    # Initialize client
-    client = ZenodoClient(token, sandbox=args.sandbox)
+    # Get API token (not required for dry-run)
+    client = None
+    if not args.dry_run:
+        if args.sandbox:
+            token = os.environ.get("ZENODO_SANDBOX_TOKEN")
+            if not token:
+                print("ERROR: ZENODO_SANDBOX_TOKEN environment variable not set")
+                print("  Get token at: https://sandbox.zenodo.org/account/settings/applications/")
+                return 1
+        else:
+            token = os.environ.get("ZENODO_TOKEN")
+            if not token:
+                print("ERROR: ZENODO_TOKEN environment variable not set")
+                print("  Get token at: https://zenodo.org/account/settings/applications/")
+                return 1
+
+        # Initialize client
+        client = ZenodoClient(token, sandbox=args.sandbox)
 
     env_name = "SANDBOX" if args.sandbox else "PRODUCTION"
     print(f"Zenodo Environment: {env_name}")
-    print(f"API: {client.base_url}")
+    if client:
+        print(f"API: {client.base_url}")
+    else:
+        print("API: (dry-run mode - no connection)")
 
     # Determine which papers to upload
     papers_to_upload = [args.paper] if args.paper else list(PAPERS.keys())

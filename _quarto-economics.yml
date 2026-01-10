@@ -23,7 +23,22 @@ profiles:
 
 book:
   title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
-  # description: Removed to allow page-level descriptions to override for og:description
+  description: "Quantitative analysis showing how redirecting 1% of global military spending ($27.2B/year) to pragmatic clinical trials could advance treatment access by 207 years, save 10.5 billion life-years, and generate $30 quadrillion in long-run economic value."
+  abstract: |
+    Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D
+    productivity continues to decline—costing $2.3 billion per approved drug with 15-year development timelines.
+    We analyze the health and economic impact of an international treaty redirecting 1% of military spending
+    ($27.2 billion annually) to pragmatic clinical trials modeled on the RECOVERY trial framework, which
+    demonstrated treatment validation at $929 per patient versus traditional trial costs exceeding $40,000.
+    Using Monte Carlo simulation with empirically-derived parameters, we estimate this reallocation could:
+    (1) advance global treatment access by 207 years relative to current trajectories, (2) prevent 10.5 billion
+    cumulative disability-adjusted life years (DALYs) lost to untreated disease, and (3) generate $30 quadrillion
+    in present-value economic benefits through reduced mortality, morbidity, and healthcare costs. The intervention
+    achieves a cost-effectiveness ratio of $0.0050 per DALY averted—approximately 10,000 times more cost-effective
+    than the WHO threshold for highly cost-effective interventions. We present sensitivity analyses across
+    conservative, expected, and optimistic scenarios, demonstrating robust positive returns under all examined
+    parameter combinations. The analysis provides quantitative support for international coordination on
+    medical research funding as a complement to existing health security frameworks.
   site-url: https://impact.warondisease.org
   favicon: assets/icons/economics-favicon.png
   page-navigation: true
