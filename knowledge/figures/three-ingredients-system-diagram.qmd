@@ -14,6 +14,7 @@ dot.attr(rankdir='TB', size='10,12')
 setup_graphviz_style(dot)
 
 # Get parameter value for use in node label
+
 recovery_factor = int(DFDA_TRIAL_COST_REDUCTION_FACTOR)
 
 with dot.subgraph(name='cluster_system') as system:

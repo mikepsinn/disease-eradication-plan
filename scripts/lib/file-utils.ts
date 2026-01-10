@@ -273,7 +273,16 @@ function formatFrontmatter(content: string): string {
   return stringifyWithFrontmatter(body, data);
 }
 
-export function programmaticFormat(content: string): string {
+export interface ProgrammaticFormatOptions {
+  /** Add the setup-parameters include directive at the start (default: false) */
+  addIncludeDirective?: boolean;
+  /** Remove the first heading after the include directive (default: false) */
+  removeFirstHeading?: boolean;
+}
+
+export function programmaticFormat(content: string, options: ProgrammaticFormatOptions = {}): string {
+  const { addIncludeDirective = false, removeFirstHeading = false } = options;
+  
   let result = content;
 
   // Format frontmatter first
@@ -286,52 +295,57 @@ export function programmaticFormat(content: string): string {
   // Normalize line endings to LF for consistent processing
   processedBody = processedBody.replace(/\r\n/g, '\n');
 
-  // Ensure the first line is the setup-parameters include
   const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
-  const lines = processedBody.split('\n');
 
-  // Check if first non-empty line is the include directive
-  let firstNonEmptyIndex = lines.findIndex(line => line.trim() !== '');
-  if (firstNonEmptyIndex === -1) {
-    // Empty body, just add the include
-    processedBody = includeDirective + '\n\n';
-  } else if (lines[firstNonEmptyIndex]?.trim() !== includeDirective) {
-    // Include directive is missing, add it at the beginning
-    lines.splice(firstNonEmptyIndex, 0, includeDirective, '');
-    processedBody = lines.join('\n');
+  // Optionally ensure the first line is the setup-parameters include
+  if (addIncludeDirective) {
+    const lines = processedBody.split('\n');
+
+    // Check if first non-empty line is the include directive
+    let firstNonEmptyIndex = lines.findIndex(line => line.trim() !== '');
+    if (firstNonEmptyIndex === -1) {
+      // Empty body, just add the include
+      processedBody = includeDirective + '\n\n';
+    } else if (lines[firstNonEmptyIndex]?.trim() !== includeDirective) {
+      // Include directive is missing, add it at the beginning
+      lines.splice(firstNonEmptyIndex, 0, includeDirective, '');
+      processedBody = lines.join('\n');
+    }
   }
 
-  // Remove first heading after the include directive (headings come from frontmatter)
-  const contentLines = processedBody.split('\n');
-  let foundInclude = false;
-  let firstHeadingIndex = -1;
+  // Optionally remove first heading after the include directive (headings come from frontmatter)
+  if (removeFirstHeading) {
+    const contentLines = processedBody.split('\n');
+    let foundInclude = false;
+    let firstHeadingIndex = -1;
 
-  for (let i = 0; i < contentLines.length; i++) {
-    const line = contentLines[i].trim();
+    for (let i = 0; i < contentLines.length; i++) {
+      const line = contentLines[i].trim();
 
-    // Track when we've passed the include directive
-    if (line === includeDirective) {
-      foundInclude = true;
-      continue;
-    }
+      // Track when we've passed the include directive
+      if (line === includeDirective) {
+        foundInclude = true;
+        continue;
+      }
 
-    // After include, find first non-empty line
-    if (foundInclude && line !== '') {
-      // Check if it's a heading (starts with #)
-      if (/^#{1,6}\s/.test(line)) {
-        firstHeadingIndex = i;
-        break;
-      } else {
-        // First non-empty line after include is not a heading, stop looking
-        break;
+      // After include, find first non-empty line
+      if (foundInclude && line !== '') {
+        // Check if it's a heading (starts with #)
+        if (/^#{1,6}\s/.test(line)) {
+          firstHeadingIndex = i;
+          break;
+        } else {
+          // First non-empty line after include is not a heading, stop looking
+          break;
+        }
       }
     }
-  }
 
-  // Remove the first heading if found
-  if (firstHeadingIndex !== -1) {
-    contentLines.splice(firstHeadingIndex, 1);
-    processedBody = contentLines.join('\n');
+    // Remove the first heading if found
+    if (firstHeadingIndex !== -1) {
+      contentLines.splice(firstHeadingIndex, 1);
+      processedBody = contentLines.join('\n');
+    }
   }
 
   // 1. Replace em-dashes with comma and space (only when surrounded by letters)
@@ -383,8 +397,12 @@ export function programmaticFormat(content: string): string {
 }
 
 // Shared file-saving function that applies programmatic formatting.
-export async function saveFile(filePath: string, content: string): Promise<void> {
-  let formattedContent = programmaticFormat(content);
+export async function saveFile(
+  filePath: string, 
+  content: string, 
+  options: ProgrammaticFormatOptions = {}
+): Promise<void> {
+  let formattedContent = programmaticFormat(content, options);
 
   const dir = path.dirname(filePath);
   await fs.mkdir(dir, { recursive: true });

@@ -1,11 +1,35 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { saveFile } from '../lib/file-utils';
+import { saveFile, ProgrammaticFormatOptions } from '../lib/file-utils';
+
+function parseArgs(): { filePath: string; options: ProgrammaticFormatOptions } {
+    const args = process.argv.slice(2);
+    let filePath = '';
+    const options: ProgrammaticFormatOptions = {
+        addIncludeDirective: false,
+        removeFirstHeading: false,
+    };
+
+    for (const arg of args) {
+        if (arg === '--add-include') {
+            options.addIncludeDirective = true;
+        } else if (arg === '--remove-heading') {
+            options.removeFirstHeading = true;
+        } else if (!arg.startsWith('--')) {
+            filePath = arg;
+        }
+    }
+
+    return { filePath, options };
+}
 
 async function formatFile() {
-    const filePath = process.argv[2];
+    const { filePath, options } = parseArgs();
+    
     if (!filePath) {
-        console.error('Please provide a file path as an argument.');
+        console.error('Usage: npx tsx scripts/review/programmatic-format-file.ts <file-path> [--add-include] [--remove-heading]');
+        console.error('  --add-include    Add the setup-parameters include directive at the start');
+        console.error('  --remove-heading Remove the first heading after the include directive');
         process.exit(1);
     }
 
@@ -28,7 +52,7 @@ async function formatFile() {
         const originalContent = fileContent;
 
         // saveFile will apply formatting internally, so just call it
-        await saveFile(fullPath, fileContent);
+        await saveFile(fullPath, fileContent, options);
 
         // Read back to check if it changed
         const newContent = fs.readFileSync(fullPath, 'utf-8');

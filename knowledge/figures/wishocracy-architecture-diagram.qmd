@@ -6,13 +6,16 @@ from IPython.display import Image as IPImage, display
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create diagram
+
 dot = graphviz.Digraph(comment='Wishocracy Architecture', format='png')
 dot.attr(rankdir='TB', size='8,10', nodesep='0.8', ranksep='0.5')
 
 # Apply design guide styling
+
 setup_graphviz_style(dot)
 
 # -- LAYER 1: DEMOCRATIC VALUES --
+
 with dot.subgraph(name='cluster_layer1') as c1:
     c1.attr(label='LAYER 1: DEMOCRATIC VALUES (What we want)', style='dashed', color='black')
     c1.node('Citizens', 'Citizens\n(All Stakeholders)', shape='ellipse')
@@ -23,11 +26,13 @@ with dot.subgraph(name='cluster_layer1') as c1:
     c1.edge('RAPPA', 'Priorities', label=' Output (Weights)')
 
 # -- INTERFACE --
+
 with dot.subgraph(name='cluster_interface') as ci:
     ci.attr(label='', penwidth='0') # Invisible container for alignment
     ci.node('Mandate', label='<<B>FUNDED MANDATE</B><BR/><B>(Budget + Goals)</B>>', shape='doubleoctagon', style='filled', fillcolor='black', fontcolor='white')
 
 # -- LAYER 2: TECHNOCRATIC EXECUTION --
+
 with dot.subgraph(name='cluster_layer2') as c2:
     c2.attr(label='LAYER 2: TECHNOCRATIC EXECUTION (How we get it)', style='dashed', color='black')
     c2.node('GenieDAOs', 'GenieDAOs\n(Expert Teams)', shape='box')
@@ -40,10 +45,12 @@ with dot.subgraph(name='cluster_layer2') as c2:
     c2.edge('Selection', 'Action', label=' Fund')
 
 # -- CONNECT LAYERS --
+
 dot.edge('Priorities', 'Mandate', label=' Defined By')
 dot.edge('Mandate', 'GenieDAOs', label=' Bounties For')
 
 # Render
+
 png_path = render_graphviz_with_watermark(dot, 'wishocracy-architecture-diagram')
 display(IPImage(str(png_path)))
 ```

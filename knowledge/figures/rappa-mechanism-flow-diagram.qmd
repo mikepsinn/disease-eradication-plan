@@ -6,10 +6,12 @@ from IPython.display import Image as IPImage, display
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create diagram
+
 dot = graphviz.Digraph(comment='RAPPA Mechanism Flow', format='png')
 dot.attr(rankdir='TB', size='8,12')
 
 # Apply design guide styling
+
 setup_graphviz_style(dot)
 
 # Define Nodes
@@ -36,6 +38,7 @@ with dot.subgraph(name='cluster_output') as c:
     c.node('Budget', 'Final Budget\nAllocation', shape='doubleoctagon')
 
 # Define Edges
+
 dot.edge('Citizens', 'Pairs', label=' View')
 dot.edge('Pairs', 'Ratios', label=' Allocate')
 dot.edge('Ratios', 'GeoMean', label=' Aggregate')
@@ -46,6 +49,7 @@ dot.edge('Weights', 'Budget', label=' Map to $')
 
 # Render with watermark and metadata
 # This will save to knowledge/figures/rappa-mechanism-flow-diagram.png
+
 png_path = render_graphviz_with_watermark(dot, 'rappa-mechanism-flow-diagram')
 display(IPImage(str(png_path)))
 ```

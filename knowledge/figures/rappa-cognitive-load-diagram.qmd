@@ -13,6 +13,7 @@ dot.attr(rankdir='LR', compound='true')
 setup_graphviz_style(dot)
 
 # Budget items for traditional voting
+
 items = [
     'Schools', 'Roads', 'Parks', 'Health', 'Police', 'Fire',
     'Libraries', 'Transit', 'Sewers', 'Housing', 'Childcare',
@@ -20,6 +21,7 @@ items = [
 ]
 
 # -- Subgraph: Traditional Voting (Overload) --
+
 with dot.subgraph(name='cluster_traditional') as c:
     c.attr(label='Traditional Budgeting: Choice Overload (n >> 7±2)', style='dashed', color='black')
     c.node('Citizen1', 'Citizen', shape='circle', style='filled', fillcolor='white', fontsize='10', color='black')
@@ -32,6 +34,7 @@ with dot.subgraph(name='cluster_traditional') as c:
         c.edge('Citizen1', node_id, color='black', style='dashed', penwidth='0.5', arrowsize='0.5')
 
 # -- Subgraph: RAPPA (Flow) --
+
 with dot.subgraph(name='cluster_rappa') as c:
     c.attr(label='Wishocracy (RAPPA): Tractable Pairwise (n = 2 < 7±2)', style='solid', color='black', penwidth='2')
     c.node('Citizen2', 'Citizen', shape='circle', style='filled', fillcolor='black', fontcolor='white', fontsize='10', color='black')

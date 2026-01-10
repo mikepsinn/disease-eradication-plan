@@ -15,36 +15,44 @@ from dih_models.plotting.chart_style import (
 )
 
 # Apply consistent style
+
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Generate right-skewed distribution (lognormal) representing health needs
+
 np.random.seed(42)
 needs = np.random.lognormal(mean=1.5, sigma=1.2, size=1000)
 needs = np.clip(needs, 0, 50)  # Clip extreme outliers
 
 # Calculate median and mean
+
 median_need = np.median(needs)
 mean_need = np.mean(needs)
 
 # Create histogram
+
 counts, bins, patches = ax.hist(needs, bins=40, alpha=0.6, color='steelblue', edgecolor='black', linewidth=0.5)
 
 # Highlight median vs mean regions
+
 ax.axvline(median_need, color='red', linestyle='--', linewidth=2.5, label=f'Median (RepDem): {median_need:.1f}\n(Ignores tail risk)', zorder=5)
 ax.axvline(mean_need, color='green', linestyle='--', linewidth=2.5, label=f'Mean (RAPPA): {mean_need:.1f}\n(Respects intensity)', zorder=5)
 
 # Shade the tail region (those with intense needs)
+
 tail_threshold = np.percentile(needs, 75)
 ax.axvspan(tail_threshold, 50, alpha=0.2, color='red', label='High-Need Minority\n(Underserved by Median)')
 
 # Labels and title
+
 ax.set_xlabel('Intensity of Need (e.g., DALYs, healthcare priority)', fontsize=11)
 ax.set_ylabel('Number of Citizens', fontsize=11)
 ax.set_title('Median Voter Theorem Fails Under Preference Skewness', fontsize=13, fontweight='bold')
 ax.legend(loc='upper right', fontsize=9)
 
 # Add annotations
+
 ax.annotate(
     'Median ignores\nintense minorities',
     xy=(median_need, max(counts) * 0.8),
@@ -69,6 +77,7 @@ ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
 plt.tight_layout()
 
 # Add watermark and save
+
 add_watermark(fig)
 output_path = get_figure_output_path('rappa-median-vs-mean-welfare.png')
 save_figure_with_margins(fig, output_path)

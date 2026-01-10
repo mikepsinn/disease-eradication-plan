@@ -11,15 +11,19 @@ from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_gra
 dot = graphviz.Digraph(comment='Sybil Dilution Diagram', format='png')
 dot.attr(rankdir='LR') 
 # Use global design guide settings
+
 setup_graphviz_style(dot)
 
 # -- Attackers --
+
 dot.node('Attackers', 'Coordinated Attackers\n(Targeting "Policy A")', shape='box', style='filled', fillcolor='black', fontcolor='white')
 
 # -- The Mechanism --
+
 dot.node('Randomizer', 'Random Pair Assignment\n(The "Shuffle")', shape='circle', style='filled', fillcolor='white', fontcolor='black', width='1.5')
 
 # -- The Outcome Space (Pairs) --
+
 with dot.subgraph(name='cluster_pairs') as c:
     c.attr(label='Pairwise Comparison Space', color='black')
     
@@ -32,9 +36,11 @@ with dot.subgraph(name='cluster_pairs') as c:
     c.node('Target', 'Target: Policy A\nvs Policy B', shape='box', style='bold')
 
 # -- Edges --
+
 dot.edge('Attackers', 'Randomizer', label='1,000 Fake Votes')
 
 # Diluted edges
+
 dot.edge('Randomizer', 'Pair1', style='dashed', label='~0.1%')
 dot.edge('Randomizer', 'Pair2', style='dashed', label='~0.1%')
 dot.edge('Randomizer', 'Pair3', style='dashed', label='~0.1%')

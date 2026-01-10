@@ -13,6 +13,7 @@ dot.attr(rankdir='LR', compound='true', splines='ortho')
 setup_graphviz_style(dot)
 
 # -- Representative Democracy (Top): Bottleneck --
+
 with dot.subgraph(name='cluster_repdem') as c:
     c.attr(label='Representative Democracy: Information Bottleneck', style='dashed', color='black')
 
@@ -34,6 +35,7 @@ with dot.subgraph(name='cluster_repdem') as c:
     c.edge('repdem_vote', 'repdem_policy', color='black', penwidth='2.0')
 
 # -- RAPPA (Bottom): Parallel Channels --
+
 with dot.subgraph(name='cluster_rappa') as c:
     c.attr(label='RAPPA: High-Bandwidth Parallel Channels', style='solid', color='black', penwidth='2')
 

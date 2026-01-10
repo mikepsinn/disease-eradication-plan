@@ -15,20 +15,25 @@ from dih_models.plotting.chart_style import (
 )
 
 # Apply consistent styling
+
 setup_chart_style()
 
 # Create figure with subplots
+
 fig = plt.figure(figsize=(14, 6))
 
 # Options for visualization
+
 options = ['Healthcare', 'Education', 'Defense', 'Parks']
 n_options = len(options)
 
 # --- Subplot 1: Individual Sparse Matrices ---
+
 ax1 = plt.subplot(1, 4, 1)
 ax1.set_title('Citizen 1\n(Sparse Matrix)', fontsize=10, fontweight='bold')
 
 # Create sparse matrix (mostly NaN, few comparisons)
+
 matrix1 = np.full((n_options, n_options), np.nan)
 matrix1[0, 1] = 0.7  # Healthcare vs Education: 70/30
 matrix1[1, 0] = 0.3
@@ -42,6 +47,7 @@ ax1.set_xticklabels(options, rotation=45, ha='right', fontsize=8)
 ax1.set_yticklabels(options, fontsize=8)
 
 # Add text values
+
 for i in range(n_options):
     for j in range(n_options):
         if not np.isnan(matrix1[i, j]):
@@ -49,6 +55,7 @@ for i in range(n_options):
                            ha="center", va="center", color="black", fontsize=8)
 
 # --- Subplot 2: Another Individual Sparse Matrix ---
+
 ax2 = plt.subplot(1, 4, 2)
 ax2.set_title('Citizen 2\n(Sparse Matrix)', fontsize=10, fontweight='bold')
 
@@ -71,10 +78,12 @@ for i in range(n_options):
                            ha="center", va="center", color="black", fontsize=8)
 
 # --- Subplot 3: Aggregated Matrix (Geometric Mean) ---
+
 ax3 = plt.subplot(1, 4, 3)
 ax3.set_title('Aggregated Matrix\n(Geometric Mean)', fontsize=10, fontweight='bold')
 
 # Create a denser aggregated matrix (combining all citizens' inputs)
+
 matrix_agg = np.array([
     [0.50, 0.65, 0.75, 0.55],
     [0.35, 0.50, 0.60, 0.52],
@@ -94,10 +103,12 @@ for i in range(n_options):
                        ha="center", va="center", color="black", fontsize=7)
 
 # --- Subplot 4: Priority Vector (Eigenvector) ---
+
 ax4 = plt.subplot(1, 4, 4)
 ax4.set_title('Global Priority\n(Eigenvector)', fontsize=10, fontweight='bold')
 
 # Calculate priority vector (normalized weights)
+
 priorities = np.array([0.35, 0.28, 0.20, 0.17])  # Healthcare > Education > Defense > Parks
 
 colors = ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3']
@@ -107,15 +118,18 @@ ax4.set_xlim(0, 0.4)
 ax4.invert_yaxis()
 
 # Add percentage labels
+
 for i, (opt, priority) in enumerate(zip(options, priorities)):
     ax4.text(priority + 0.01, i, f'{priority:.0%}', va='center', fontsize=8, fontweight='bold')
 
 # Add arrows between subplots to show flow
+
 fig.text(0.23, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
 fig.text(0.46, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
 fig.text(0.69, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
 
 # Add explanatory text
+
 fig.text(0.23, 0.08, 'Many Citizens\n(Sparse Inputs)', fontsize=8, ha='center', style='italic', color='gray')
 fig.text(0.46, 0.08, 'Geometric Mean\nAggregation', fontsize=8, ha='center', style='italic', color='gray')
 fig.text(0.69, 0.08, 'Eigenvector\nCentrality', fontsize=8, ha='center', style='italic', color='gray')
@@ -123,6 +137,7 @@ fig.text(0.69, 0.08, 'Eigenvector\nCentrality', fontsize=8, ha='center', style='
 plt.tight_layout(rect=[0, 0.12, 1, 1])
 
 # Add watermark and save
+
 add_watermark(fig)
 output_path = get_figure_output_path('rappa-matrix-aggregation.png')
 save_figure_with_margins(fig, output_path)
