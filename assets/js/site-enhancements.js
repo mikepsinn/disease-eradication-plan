@@ -2,96 +2,17 @@
  * Site Enhancements for Quarto Sites
  *
  * Features:
- * 1. Impact loader with death counter (150K deaths/day from curable diseases)
- * 2. Auto-expand collapsed callouts when navigating to hash anchors
- * 3. Smooth scroll to hash targets with visual highlight
- * 4. Toggle to show/hide uncertainty parameters (95% CI ranges)
+ * 1. Auto-expand collapsed callouts when navigating to hash anchors
+ * 2. Smooth scroll to hash targets with visual highlight
+ * 3. Toggle to show/hide uncertainty parameters (95% CI ranges)
  *
- * Version: 3.0.0 - Impact Loader Edition
+ * Note: Page loader is handled separately in page-loader.html
+ *
+ * Version: 3.1.0
  */
 
 (function() {
   'use strict';
-
-  // ========================================
-  // IMPACT LOADER - DEATH COUNTER
-  // ========================================
-
-  const DEATHS_PER_DAY = 150000;
-  const DEATHS_PER_SECOND = DEATHS_PER_DAY / 86400; // 1.736 deaths/second
-  const GRAVESTONE_ICONS = ['💀']; // Skulls only
-
-  let loaderStartTime = null;
-  let loaderUpdateInterval = null;
-  let gravestoneInterval = null;
-  let isLoaderActive = false;
-
-  function startImpactLoader() {
-    const loader = document.getElementById('page-loader');
-    if (!loader) return;
-
-    loaderStartTime = Date.now();
-    isLoaderActive = true;
-
-    const deathCounter = document.getElementById('deathCounter');
-    const gravestoneGrid = document.getElementById('gravestoneGrid');
-
-    if (!deathCounter || !gravestoneGrid) return;
-
-    // Update death counter (starts at 1)
-    loaderUpdateInterval = setInterval(function() {
-      if (!isLoaderActive) return;
-
-      const elapsedSeconds = (Date.now() - loaderStartTime) / 1000;
-      const deathCount = 1 + Math.floor(elapsedSeconds * DEATHS_PER_SECOND);
-
-      deathCounter.textContent = deathCount.toLocaleString();
-    }, 50);
-
-    // Add gravestones periodically
-    gravestoneInterval = setInterval(function() {
-      if (!isLoaderActive) return;
-
-      const currentDeaths = Math.floor(((Date.now() - loaderStartTime) / 1000) * DEATHS_PER_SECOND);
-      const gravestoneCount = gravestoneGrid.querySelectorAll('.gravestone').length;
-
-      if (currentDeaths > gravestoneCount) {
-        const gravestone = document.createElement('div');
-        gravestone.className = 'gravestone';
-        gravestone.textContent = GRAVESTONE_ICONS[Math.floor(Math.random() * GRAVESTONE_ICONS.length)];
-        gravestoneGrid.appendChild(gravestone);
-
-        setTimeout(function() {
-          gravestone.classList.add('show');
-        }, 10);
-
-        // Limit to 100 gravestones for performance
-        const gravestones = gravestoneGrid.querySelectorAll('.gravestone');
-        if (gravestones.length > 100) {
-          gravestones[0].remove();
-        }
-      }
-    }, 200);
-  }
-
-  function stopImpactLoader() {
-    isLoaderActive = false;
-    if (loaderUpdateInterval) clearInterval(loaderUpdateInterval);
-    if (gravestoneInterval) clearInterval(gravestoneInterval);
-  }
-
-  function hideLoader() {
-    const loader = document.getElementById('page-loader');
-    if (loader) {
-      stopImpactLoader();
-      loader.classList.add('hidden');
-      setTimeout(function() {
-        if (loader.parentNode) {
-          loader.parentNode.removeChild(loader);
-        }
-      }, 600);
-    }
-  }
 
   // ========================================
   // AUTO-EXPAND HASH TARGETS
@@ -272,11 +193,8 @@
 
   function onPageReady() {
     setTimeout(function() {
-      startImpactLoader();
       expandHashTarget();
       createUncertaintyToggle();
-      // Hide loader after page is fully ready
-      setTimeout(hideLoader, 200);
     }, 100);
   }
 
