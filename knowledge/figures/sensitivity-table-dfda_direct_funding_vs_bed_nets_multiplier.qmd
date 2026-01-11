@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Direct Funding Cost Per DALY | -0.5205 | Strong driver |
-| Bed Nets Cost Per DALY | -0.4554 | Moderate driver |
+| Bed Nets Cost Per DALY | -1.0555 | Strong driver |
+| dFDA Direct Funding Cost Per DALY | 0.2032 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -25,7 +25,7 @@ baseline = 40607.0
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_TRIALS_PER_YEAR', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [34841.0, 10828.0, -8122.0, 9.0, 5.0, 5.0, 4.0, 2.0]
+impacts_low = [348302.0, 10828.0, -8122.0, 9.0, 5.0, 5.0, 4.0, 2.0]
 impacts_high = [-28033.0, -7062.0, 8121.0, -13.0, -10.0, -8.0, -6.0, -2.0]
 
 # Convert deltas to absolute values (baseline + delta)

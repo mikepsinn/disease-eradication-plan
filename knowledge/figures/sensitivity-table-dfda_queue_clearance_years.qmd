@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Trial Capacity Multiplier | -1.0580 | Strong driver |
-| Status Quo Queue Clearance Years | 0.2077 | Weak driver |
+| Status Quo Queue Clearance Years | -1.3322 | Strong driver |
+| dFDA Trial Capacity Multiplier | 0.4868 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Trial Capacity Treatment Acceleration Years | 0.9185 | Strong driver |
-| Eventually Avoidable DALY % | 0.4698 | Moderate driver |
-| Global Annual DALY Burden | 0.0526 | Minimal effect |
+| dFDA Trial Capacity Treatment Acceleration Years | 0.9014 | Strong driver |
+| Eventually Avoidable DALY % | 0.4552 | Moderate driver |
+| Global Annual DALY Burden | 0.0273 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

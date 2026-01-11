@@ -2281,7 +2281,7 @@ Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1
 **Inputs**:
 
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $500 - $3K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{aligned}
@@ -2320,7 +2320,7 @@ Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $500 - $3K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
@@ -2386,7 +2386,7 @@ Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patien
 **Inputs**:
 
 - [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $500 - $3K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{aligned}
@@ -6797,15 +6797,15 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-dFDA pragmatic trial cost per patient. Central estimate based on ADAPTABLE trial. Confidence interval spans RECOVERY floor (exceptional NHS/COVID conditions) to complex chronic disease trials.
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
 **Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$500, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $500 and $3K (±135%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

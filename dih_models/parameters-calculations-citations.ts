@@ -329,11 +329,11 @@ export const DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 929.0,
   unit: "USD/patient",
   displayName: "dFDA Pragmatic Trial Cost per Patient",
-  description: "dFDA pragmatic trial cost per patient. Central estimate based on ADAPTABLE trial. Confidence interval spans RECOVERY floor (exceptional NHS/COVID conditions) to complex chronic disease trials.",
+  description: "dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
   sourceType: "external",
   sourceRef: "pragmatic-trials-cost-advantage",
   confidence: "medium",
-  confidenceInterval: [500.0, 3000.0],
+  confidenceInterval: [97.0, 3000.0],
 };
 
 export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {

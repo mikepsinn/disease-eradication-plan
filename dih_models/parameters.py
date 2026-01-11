@@ -1395,24 +1395,28 @@ ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
     keywords=["adaptable", "pcornet", "cost per patient", "pragmatic"],
 )  # $929/patient from PCORI grant; up to ~$1,400 with in-kind
 
-# dFDA Pragmatic Trial Cost - Based on ADAPTABLE Trial
-# Central estimate uses ADAPTABLE's empirical cost; uncertainty reflects dFDA implementation range
-# RECOVERY ($500) was exceptional due to NHS/COVID; used as confidence interval floor
+# dFDA Pragmatic Trial Cost - Based on ADAPTABLE Trial (DELIBERATELY CONSERVATIVE)
+# Harvard meta-analysis of 108 trials (Ramsberg & Platt 2017) found median $97/patient
+# We use ADAPTABLE ($929) - a 10x more conservative estimate for credibility
+# Reference: embedded-pragmatic-trials-meta-analysis in references.qmd
+# Central estimate uses ADAPTABLE's empirical cost ($929)
+# Meta-analysis shows median is only $97 - we use the HIGHER value for credibility
+# This means our projections likely UNDERSTATE the true potential by ~10x
 DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
-    929,  # ADAPTABLE trial empirical cost (see ADAPTABLE_TRIAL_COST_PER_PATIENT)
+    929,  # ADAPTABLE trial empirical cost - CONSERVATIVE choice
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
-    description="dFDA pragmatic trial cost per patient. Central estimate based on ADAPTABLE trial. Confidence interval spans RECOVERY floor (exceptional NHS/COVID conditions) to complex chronic disease trials.",
+    description="dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
     display_name="dFDA Pragmatic Trial Cost per Patient",
     unit="USD/patient",
     confidence="medium",
-    keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable"],
+    keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable", "conservative"],
     distribution="lognormal",
-    confidence_interval=(500, 3000),  # Empirical range:
-                                       # - Floor ($500): RECOVERY-like efficiency (exceptional)
-                                       # - Central ($929): ADAPTABLE trial (empirical)
-                                       # - Ceiling ($3,000): Complex chronic disease trials
-)  # Central = ADAPTABLE; uncertainty = dFDA implementation range
+    confidence_interval=(97, 3000),  # Evidence-based range:
+                                      # - Floor ($97): Meta-analysis median (n=108 trials)
+                                      # - Central ($929): ADAPTABLE trial (conservative choice)
+                                      # - Ceiling ($3,000): Complex chronic disease trials
+)  # Central = ADAPTABLE (conservative); meta-analysis suggests $97 median
 
 # Traditional Phase 3 Cost (baseline for comparison)
 TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
