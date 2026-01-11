@@ -21,11 +21,12 @@ body {
     line-height: 1.7;
 }
 
-/* Optimal reading measure (line length) */
-main {
-    max-width: 800px;
-    margin: 0 auto;
+/* Optimal reading measure - do NOT override Quarto's grid layout */
+/* Quarto uses CSS Grid for page-layout-article to manage sidebar/content/margin areas */
+/* Setting max-width and margin:auto on main breaks the grid, causing sidebar overlap */
+main.content {
     padding: 0 1.5rem;
+    /* Let Quarto's grid control the width - grid settings are in _quarto-*.yml */
 }
 
 /* Hero Banner - Elegant and Understated */
