@@ -21,11 +21,20 @@ recovery_trial_cost_reduction_factor: '<a href="/knowledge/appendix/parameters-a
   ($41K traditional / $500 RECOVERY = 82x) | Calculated from 2 inputs | ✓ High confidence
   | Formula: TRADITIONAL_PHASE3_COST / RECOVERY_COST | Unit: multiplier | Click to
   view details, calculation & sources">82x (95% CI: 50x-94.1x)</a>'
-recovery_trial_cost_reduction_factor_latex: '$$
+recovery_trial_cost_reduction_factor_latex: '<div class="equation-accessible" data-latex-source="Cost
+  = \frac{Cost}{Cost} = \frac{\$41K}{\$500} = 82" data-equation-text="Cost = (Cost
+  / Cost) = ($41K / $500) = 82" data-param="recovery_trial_cost_reduction_factor">
+
+  <span class="sr-only visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Cost
+  = (Cost / Cost) = ($41K / $500) = 82</span>
+
+  $$
 
   Cost = \frac{Cost}{Cost} = \frac{\$41K}{\$500} = 82
 
-  $$'
+  $$
+
+  </div>'
 recovery_trial_global_lives_saved: '<a href="/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved"
   class="parameter-link" data-source-ref="recovery-trial-1m-lives-saved" data-source-type="external"
   data-confidence="medium" title="Estimated lives saved globally by RECOVERY trial''s

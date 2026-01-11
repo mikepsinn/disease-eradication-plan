@@ -24,7 +24,7 @@ import re
 import shutil
 
 from dih_models.reference_parser import parse_references_qmd_detailed
-from dih_models.latex_generation import generate_auto_latex
+from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex
 
 
 def _escape_typescript_string(s: str) -> str:
@@ -950,12 +950,14 @@ def _generate_parameter_constant(
         if formula:
             lines.append(f"  formula: {_format_typescript_value(formula)},")
 
-        # LaTeX - use explicit or auto-generate
+        # LaTeX - use explicit or auto-generate with full expansion
+        # Expanded equations show the complete derivation chain for AI verification
         latex = getattr(value_obj, "latex", None)
         if not latex and parameters and params_file:
-            # Auto-generate LaTeX if not explicitly provided
+            # Auto-generate EXPANDED LaTeX if not explicitly provided
+            # This shows the complete derivation chain for maximum transparency
             try:
-                latex = generate_auto_latex(param_name, value_obj, parameters, params_file)
+                latex = generate_expanded_latex(param_name, value_obj, parameters, params_file)
             except Exception:
                 # Silently skip if auto-generation fails
                 pass

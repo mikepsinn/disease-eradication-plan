@@ -27,7 +27,7 @@ import yaml
 import html
 import re
 
-from dih_models.latex_generation import generate_auto_latex
+from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import generate_html_with_tooltip
 from dih_models.reference_parser import sanitize_bibtex_key
@@ -308,26 +308,31 @@ def generate_variables_yml(
                     citation_count += 1
 
         # Export LaTeX equation: prefer hardcoded (hand-crafted with good labels),
-        # fall back to auto-generated for params without hardcoded latex
+        # fall back to auto-generated EXPANDED equations for params without hardcoded latex
+        # Expanded equations show the full derivation chain for maximum transparency
         hardcoded_latex = getattr(value, "latex", None)
-        auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file)
+        
+        # Use expanded (recursive) LaTeX for auto-generated equations
+        # This shows the complete derivation chain for AI verification and due diligence
+        expanded_latex = generate_expanded_latex(param_name, value, parameters, params_file=params_file)
 
         if hardcoded_latex:
             # Use hardcoded (preferred - hand-crafted with semantic labels)
+            # TODO: Consider expanding hardcoded too by appending derivations of calculated inputs
             latex_var_name = f"{var_name}_latex"
             # Apply mobile-friendly wrapping if enabled
             if wrap_latex_width > 0:
                 hardcoded_latex = wrap_latex_for_mobile(hardcoded_latex, max_width=wrap_latex_width)
             # Wrap with accessibility metadata for AI and screen readers
             variables[latex_var_name] = wrap_latex_with_accessibility(hardcoded_latex, param_name)
-        elif auto_latex:
-            # Fall back to auto-generated for params without hardcoded
+        elif expanded_latex:
+            # Use fully expanded auto-generated equations showing complete derivation chain
             latex_var_name = f"{var_name}_latex"
             # Apply mobile-friendly wrapping if enabled
             if wrap_latex_width > 0:
-                auto_latex = wrap_latex_for_mobile(auto_latex, max_width=wrap_latex_width)
+                expanded_latex = wrap_latex_for_mobile(expanded_latex, max_width=wrap_latex_width)
             # Wrap with accessibility metadata for AI and screen readers
-            variables[latex_var_name] = wrap_latex_with_accessibility(auto_latex, param_name)
+            variables[latex_var_name] = wrap_latex_with_accessibility(expanded_latex, param_name)
 
     # Count exports by type BEFORE adding metadata variables
     latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))

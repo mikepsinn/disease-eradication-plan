@@ -211,6 +211,7 @@ class ReferenceID(str, Enum):
     DUNBAR_NUMBER = "dunbar-number"
     ECLINICALMEDICINE_STATINS_POLYPILL = "eclinicalmedicine-statins-polypill"
     EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER = "education-investment-economic-multiplier"
+    EMBEDDED_PRAGMATIC_TRIALS_META_ANALYSIS = "embedded-pragmatic-trials-meta-analysis"
     ENGLAND_TRIAL_PARTICIPANTS_2023_24 = "england-trial-participants-2023-24"
     ENVIRONMENTAL_COST_OF_WAR = "environmental-cost-of-war"
     EO_13944_ESSENTIAL_MEDICINES = "eo-13944-essential-medicines"

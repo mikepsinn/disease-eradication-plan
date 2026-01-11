@@ -22,36 +22,254 @@ iab_mechanism_benefit_cost_ratio: '<a href="/knowledge/appendix/parameters-and-c
   the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence | Formula:
   TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST | Unit: ratio | Click to view
   details, calculation & sources">230:1 (95% CI: 185:1-284:1)</a>'
-iab_mechanism_benefit_cost_ratio_latex: '$$
+iab_mechanism_benefit_cost_ratio_latex: '<div class="equation-accessible" data-latex-source="\begin{aligned}
+
+  Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$172B}{\$750M} = 230
+
+  \\[0.5em]
+
+  \text{where } Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$114B + \$58.6B
+  = \$172B
+
+  \\[0.5em]
+
+  \text{where } Cost_{soc,ann} = Cost_{indirect,ann} \times Reduction_{treaty} = \$11.4T
+  \times 1\% = \$114B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total}
+  = \$7.66T + \$3.7T = \$11.4T
+
+  \\[0.5em]
+
+  \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
+  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
+  = \$7.66T
+
+  \\[0.5em]
+
+  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  = \$2.34T + \$27B + \$83B = \$2.45T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \$10M = \$2.34T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
+  = \$27B
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \$10M = \$83B
+
+  \\[0.5em]
+
+  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
+  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
+
+  \\[0.5em]
+
+  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
+  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
+  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
+  + \$150B + \$200B = \$3.7T
+
+  \\[0.5em]
+
+  \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B
+  \times 97.7\% = \$58.6B
+
+  \\[0.5em]
+
+  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+
+  \end{aligned}" data-equation-text="Cost = (Benefit_ann / Cost_ann) = ($172B / $750M)
+  = 230 [0.5em] where Benefit_ann = Cost_soc,ann + Benefit_DFDA,ann = $114B + $58.6B
+  = $172B [0.5em] where Cost_soc,ann = Cost_indirect,ann × Reduction_treaty = $11.4T
+  × 1% = $114B [0.5em] where Cost_indirect,ann = Cost_direct,total + Cost_indirect,total
+  = $7.66T + $3.7T = $11.4T [0.5em] where Cost_direct,total = Loss_human,ann + Infrastructure_global
+  + Disruption_trade,ann + Spending_mil,ann = $2.45T + $1.88T + $616B + $2.72T = $7.66T
+  [0.5em] where Loss_human,ann = Cost_human,ann + Cost_human,ann + Cost_human,ann
+  = $2.34T + $27B + $83B = $2.45T [0.5em] where Cost_human,ann = Deaths_combat,ann
+  × Value = 234,000 × $10M = $2.34T [0.5em] where Cost_human,ann = Deaths_ann × Value
+  = 2,700 × $10M = $27B [0.5em] where Cost_human,ann = Deaths_terror,ann × Value =
+  8,300 × $10M = $83B [0.5em] where Infrastructure_global = Damage_infra,ann + Damage_infra,ann
+  + Damage_infra,ann + Damage_infra,ann + Damage_infra,ann + Damage_infra,ann = $298B
+  + $234B + $422B + $166B + $487B + $268B = $1.88T [0.5em] where Disruption_trade,ann
+  = Cost_trade,ann + Cost_trade,ann + Cost_trade,ann + Cost_trade,ann = $57.4B + $125B
+  + $247B + $187B = $616B [0.5em] where Cost_indirect,total = Cost_env,ann + Cost_mil,ann
+  + Lost_global + Cost_ann + Cost_ref,ann + Cost_vet,ann = $100B + $2.72T + $300B
+  + $232B + $150B + $200B = $3.7T [0.5em] where Benefit_DFDA,ann = Trials_ann × Reduction_DFDA
+  = $60B × 97.7% = $58.6B [0.5em] where Reduction_DFDA = 1 - (DFDA_COST / TRADITIONAL_COST)
+  = 97.7%" data-param="iab_mechanism_benefit_cost_ratio">
+
+  <span class="sr-only visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Cost
+  = (Benefit_ann / Cost_ann) = ($172B / $750M) = 230 [0.5em] where Benefit_ann = Cost_soc,ann
+  + Benefit_DFDA,ann = $114B + $58.6B = $172B [0.5em] where Cost_soc,ann = Cost_indirect,ann
+  × Reduction_treaty = $11.4T × 1% = $114B [0.5em] where Cost_indirect,ann = Cost_direct,total
+  + Cost_indirect,total = $7.66T + $3.7T = $11.4T [0.5em] where Cost_direct,total
+  = Loss_human,ann + Infrastructure_global + Disruption_trade,ann + Spending_mil,ann
+  = $2.45T + $1.88T + $616B + $2.72T = $7.66T [0.5em] where Loss_human,ann = Cost_human,ann
+  + Cost_human,ann + Cost_human,ann = $2.34T + $27B + $83B = $2.45T [0.5em] where
+  Cost_human,ann = Deaths_combat,ann × Value = 234,000 × $10M = $2.34T [0.5em] where
+  Cost_human,ann = Deaths_ann × Value = 2,700 × $10M = $27B [0.5em] where Cost_human,ann
+  = Deaths_terror,ann × Value = 8,300 × $10M = $83B [0.5em] where Infrastructure_global
+  = Damage_infra,ann + Damage_infra,ann + Damage_infra,ann + Damage_infra,ann + Damage_infra,ann
+  + Damage_infra,ann = $298B + $234B + $422B + $166B + $487B + $268B = $1.88T [0.5em]
+  where Disruption_trade,ann = Cost_trade,ann + Cost_trade,ann + Cost_trade,ann +
+  Cost_trade,ann = $57.4B + $125B + $247B + $187B = $616B [0.5em] where Cost_indirect,total
+  = Cost_env,ann + Cost_mil,ann + Lost_global + Cost_ann + Cost_ref,ann + Cost_vet,ann
+  = $100B + $2.72T + $300B + $232B + $150B + $200B = $3.7T [0.5em] where Benefit_DFDA,ann
+  = Trials_ann × Reduction_DFDA = $60B × 97.7% = $58.6B [0.5em] where Reduction_DFDA
+  = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7%</span>
+
+  $$
 
   \begin{aligned}
 
-  Cost \\
+  Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$172B}{\$750M} = 230
 
-  &= \frac{Benefit_{ann}}{Cost_{ann}} \\
+  \\[0.5em]
 
-  &= \frac{\$172B}{\$750M} \\
+  \text{where } Benefit_{ann} = Cost_{soc,ann} + Benefit_{DFDA,ann} = \$114B + \$58.6B
+  = \$172B
 
-  &= 230
+  \\[0.5em]
+
+  \text{where } Cost_{soc,ann} = Cost_{indirect,ann} \times Reduction_{treaty} = \$11.4T
+  \times 1\% = \$114B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total}
+  = \$7.66T + \$3.7T = \$11.4T
+
+  \\[0.5em]
+
+  \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
+  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
+  = \$7.66T
+
+  \\[0.5em]
+
+  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  = \$2.34T + \$27B + \$83B = \$2.45T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \$10M = \$2.34T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
+  = \$27B
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \$10M = \$83B
+
+  \\[0.5em]
+
+  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
+  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
+
+  \\[0.5em]
+
+  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
+  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
+  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
+  + \$150B + \$200B = \$3.7T
+
+  \\[0.5em]
+
+  \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B
+  \times 97.7\% = \$58.6B
+
+  \\[0.5em]
+
+  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
 
   \end{aligned}
 
-  $$'
+  $$
+
+  </div>'
 victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
   return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core
   definition">272% (95% CI: 180%-430%)</span>'
-victory_bond_annual_return_pct_latex: '$$
+victory_bond_annual_return_pct_latex: '<div class="equation-accessible" data-latex-source="\begin{aligned}
+
+  Victory_{annual} = \frac{Victory_{annual}}{Cost_{camp,total}} = \frac{\$2.72B}{\$1B}
+  = 272\%
+
+  \\[0.5em]
+
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Cost_{camp,total} = Campaign_{camp,treaty} + Campaign_{camp,treaty}
+  + Campaign_{camp,treaty} = \$250M + \$650M + \$100M = \$1B
+
+  \end{aligned}" data-equation-text="Victory_annual = (Victory_annual / Cost_camp,total)
+  = ($2.72B / $1B) = 272% [0.5em] where Victory_annual = Funding_ann × Funding = $27.2B
+  × 10% = $2.72B [0.5em] where Funding_ann = Spending_mil,ann × Reduction_treaty =
+  $2.72T × 1% = $27.2B [0.5em] where Cost_camp,total = Campaign_camp,treaty + Campaign_camp,treaty
+  + Campaign_camp,treaty = $250M + $650M + $100M = $1B" data-param="victory_bond_annual_return_pct">
+
+  <span class="sr-only visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Victory_annual
+  = (Victory_annual / Cost_camp,total) = ($2.72B / $1B) = 272% [0.5em] where Victory_annual
+  = Funding_ann × Funding = $27.2B × 10% = $2.72B [0.5em] where Funding_ann = Spending_mil,ann
+  × Reduction_treaty = $2.72T × 1% = $27.2B [0.5em] where Cost_camp,total = Campaign_camp,treaty
+  + Campaign_camp,treaty + Campaign_camp,treaty = $250M + $650M + $100M = $1B</span>
+
+  $$
 
   \begin{aligned}
 
-  Victory_{annual} \\
+  Victory_{annual} = \frac{Victory_{annual}}{Cost_{camp,total}} = \frac{\$2.72B}{\$1B}
+  = 272\%
 
-  &= \frac{Victory_{annual}}{Cost_{camp,total}} \\
+  \\[0.5em]
 
-  &= \frac{\$2.72B}{\$1B} \\
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
 
-  &= 272\%
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Cost_{camp,total} = Campaign_{camp,treaty} + Campaign_{camp,treaty}
+  + Campaign_{camp,treaty} = \$250M + \$650M + \$100M = \$1B
 
   \end{aligned}
 
-  $$'
+  $$
+
+  </div>'

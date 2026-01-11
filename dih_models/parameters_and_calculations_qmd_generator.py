@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 from dih_models.formatting import format_parameter_value
-from dih_models.latex_generation import generate_auto_latex, smart_title_case
+from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
 from dih_models.reference_parser import parse_references_qmd_detailed
@@ -256,10 +256,11 @@ def generate_parameters_and_calculations_qmd(
 
                 content.append("")
 
-            # LaTeX equation - prominently displayed
-            # Priority: hardcoded latex > auto-generated latex > formula
+            # LaTeX equation - prominently displayed with full expansion
+            # Priority: hardcoded latex > auto-generated expanded latex > formula
+            # Expanded equations show the complete derivation chain for AI verification
             hardcoded_latex = getattr(value, "latex", None)
-            auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
+            expanded_latex = generate_expanded_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
 
             if hardcoded_latex:
                 # Wrap for mobile if equation is wide
@@ -268,9 +269,9 @@ def generate_parameters_and_calculations_qmd(
                 content.append(wrapped_latex)
                 content.append("$$")
                 content.append("")
-            elif auto_latex:
+            elif expanded_latex:
                 # Wrap for mobile if equation is wide
-                wrapped_latex = wrap_latex_for_mobile(auto_latex, max_width=60)
+                wrapped_latex = wrap_latex_for_mobile(expanded_latex, max_width=60)
                 content.append("$$")
                 content.append(wrapped_latex)
                 content.append("$$")

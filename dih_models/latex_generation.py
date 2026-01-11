@@ -625,6 +625,121 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         return main_text
 
 
+def generate_expanded_latex(
+    param_name: str,
+    param_value: Any,
+    parameters: Dict[str, Dict[str, Any]],
+    params_file: Optional[Path] = None,
+    max_depth: int = 10,
+    _depth: int = 0,
+    _visited: set | None = None
+) -> str | None:
+    r"""
+    Generate FULLY EXPANDED LaTeX equation with recursive derivation of all calculated inputs.
+    
+    This creates a complete derivation chain showing how every intermediate value
+    is calculated, all the way down to leaf parameters (external sources/definitions).
+    
+    Example output for DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED:
+    
+    \begin{aligned}
+    Lives_{saved} &= Deaths_{daily} \times Years_{shift} \times 365 \times 0.919 \\
+                  &= 190K \times 207 \times 365 \times 0.919 = 184.6M \\[0.5em]
+    \text{where } Years_{shift} &= Years_{accel} + Years_{efficacy} \\
+                                &= 197 + 10 = 207 \\[0.5em]
+    \text{where } Years_{accel} &= \frac{Queue_{current} - Queue_{dfda}}{Rate} \\
+                                &= \frac{451 - 36}{2.2} = 197
+    \end{aligned}
+    
+    Args:
+        param_name: Name of the parameter
+        param_value: Parameter object with metadata
+        parameters: Full parameters dict for looking up input values
+        params_file: Path to parameters.py for lambda extraction
+        max_depth: Maximum recursion depth (prevents infinite loops)
+        _depth: Current recursion depth (internal use)
+        _visited: Set of already-visited params (cycle detection, internal use)
+        
+    Returns:
+        Fully expanded LaTeX string with derivation chain, or None if cannot generate
+    """
+    if _visited is None:
+        _visited = set()
+    
+    # Cycle detection
+    if param_name in _visited:
+        return None
+    _visited = _visited | {param_name}
+    
+    # Depth limit
+    if _depth > max_depth:
+        return None
+    
+    # Generate equation for this level
+    this_level = generate_auto_latex(param_name, param_value, parameters, params_file)
+    if this_level is None:
+        # Try to use hardcoded latex if available
+        this_level = getattr(param_value, 'latex', None)
+    
+    if this_level is None:
+        return None
+    
+    # Find calculated inputs that need expansion
+    inputs = getattr(param_value, 'inputs', None) or []
+    calculated_inputs = []
+    
+    for inp_name in inputs:
+        inp_meta = parameters.get(inp_name, {})
+        inp_value = inp_meta.get('value')
+        if inp_value is None:
+            continue
+        
+        # Check if this input is itself calculated (has inputs and compute)
+        has_inputs = hasattr(inp_value, 'inputs') and inp_value.inputs
+        has_compute = hasattr(inp_value, 'compute') and inp_value.compute
+        
+        if has_inputs and has_compute:
+            calculated_inputs.append((inp_name, inp_value))
+    
+    # If no calculated inputs or at max depth, return single equation
+    if not calculated_inputs or _depth >= max_depth:
+        return this_level
+    
+    # Build multi-step derivation
+    lines = []
+    
+    # Add the main equation
+    lines.append(this_level)
+    
+    # Recursively expand each calculated input
+    for inp_name, inp_value in calculated_inputs:
+        sub_latex = generate_expanded_latex(
+            inp_name, inp_value, parameters, params_file,
+            max_depth=max_depth,
+            _depth=_depth + 1,
+            _visited=_visited
+        )
+        
+        if sub_latex:
+            # Add "where" prefix and indent
+            # Handle if sub_latex is already an aligned environment
+            if r'\begin{aligned}' in sub_latex:
+                # Extract content from aligned environment
+                inner = sub_latex.replace(r'\begin{aligned}', '').replace(r'\end{aligned}', '').strip()
+                lines.append(f"\\\\[0.5em]\n\\text{{where }} {inner}")
+            else:
+                lines.append(f"\\\\[0.5em]\n\\text{{where }} {sub_latex}")
+    
+    # Combine into aligned environment
+    combined = '\n'.join(lines)
+    
+    # Only wrap in aligned if not already wrapped and we have multiple lines
+    if r'\begin{aligned}' not in combined and len(lines) > 1:
+        return f"\\begin{{aligned}}\n{combined}\n\\end{{aligned}}"
+    
+    return combined
+
+
 def generate_auto_latex(
     param_name: str,
     param_value: Any,
@@ -632,7 +747,7 @@ def generate_auto_latex(
     params_file: Optional[Path] = None
 ) -> str | None:
     r"""
-    Generate LaTeX equation from parameter metadata.
+    Generate LaTeX equation from parameter metadata (single level, no expansion).
 
     Strategy:
     1. First try sympy-based conversion (parses actual compute lambda)
