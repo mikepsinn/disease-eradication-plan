@@ -24,11 +24,147 @@ import json
 
 import yaml
 
+import html
+import re
+
 from dih_models.latex_generation import generate_auto_latex
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import generate_html_with_tooltip
 from dih_models.reference_parser import sanitize_bibtex_key
 from dih_models.formatting import format_parameter_value
+
+
+def latex_to_readable_text(latex: str) -> str:
+    """
+    Convert LaTeX equation to human-readable plain text for screen readers and AI.
+    
+    This ensures AI models parsing the rendered HTML can understand the equations,
+    since MathJax renders LaTeX as character-spaced gibberish in accessibility trees.
+    
+    Examples:
+        Cost_{ann} = \\frac{A}{B} = $10M  →  Cost_ann = (A / B) = $10M
+        \\text{Lives} \\times 365  →  Lives × 365
+    """
+    text = latex
+    
+    # First, handle escaped dollar signs BEFORE other processing
+    # \$ in LaTeX means literal $ sign
+    text = text.replace(r'\$', '$')
+    
+    # Remove LaTeX environments
+    text = re.sub(r'\\begin\{aligned\}', '', text)
+    text = re.sub(r'\\end\{aligned\}', '', text)
+    text = re.sub(r'\\begin\{array\}.*?\\end\{array\}', '[array]', text, flags=re.DOTALL)
+    
+    # Handle fractions: \frac{A}{B} → (A / B)
+    # Use a loop to handle nested fractions
+    prev_text = None
+    while prev_text != text:
+        prev_text = text
+        # Match \frac followed by two brace groups
+        text = re.sub(
+            r'\\frac\s*\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}\s*\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}',
+            r'(\1 / \2)',
+            text
+        )
+    
+    # Handle text blocks: \text{word} → word
+    text = re.sub(r'\\text\s*\{([^{}]*)\}', r'\1', text)
+    
+    # Handle subscripts: _{text} → _text (simplified)
+    text = re.sub(r'_\{([^{}]*)\}', r'_\1', text)
+    
+    # Handle superscripts: ^{text} → ^text  
+    text = re.sub(r'\^\{([^{}]*)\}', r'^\1', text)
+    
+    # Handle underbrace: \underbrace{X}_{label} → X (label)
+    text = re.sub(r'\\underbrace\s*\{([^{}]*)\}\s*_\s*\{([^{}]*)\}', r'\1 (\2)', text)
+    
+    # Replace LaTeX symbols with readable equivalents
+    # Order matters: process longer patterns first, escape backslashes properly
+    symbol_replacements = [
+        (r'\\times', ' × '),
+        (r'\\div', ' ÷ '),
+        (r'\\cdot', ' · '),
+        (r'\\pm', ' ± '),
+        (r'\\leq', ' ≤ '),
+        (r'\\geq', ' ≥ '),
+        (r'\\neq', ' ≠ '),
+        (r'\\approx', ' ≈ '),
+        (r'\\infty', '∞'),
+        (r'\\sum', 'Σ'),
+        (r'\\prod', 'Π'),
+        (r'\\left\(', '('),
+        (r'\\right\)', ')'),
+        (r'\\left\[', '['),
+        (r'\\right\]', ']'),
+        (r'\\quad', ' '),
+        (r'\\qquad', '  '),
+        (r'\\,', ' '),
+        (r'\\;', ' '),
+        (r'\\!', ''),
+        (r'\\\s', ' '),  # Line breaks in aligned
+        (r'\\\\', ' '),  # Double backslash = newline
+        (r'&=', ' = '),
+        (r'&', ' '),
+        (r'\\%', '%'),
+    ]
+    
+    for pattern, replacement in symbol_replacements:
+        text = re.sub(pattern, replacement, text)
+    
+    # Handle sqrt: \sqrt{X} → √(X)
+    text = re.sub(r'\\sqrt\s*\{([^{}]*)\}', r'√(\1)', text)
+    
+    # Handle {,} thousands separator in LaTeX (e.g., 1{,}000 → 1,000)
+    text = re.sub(r'\{,\}', ',', text)
+    
+    # Remove remaining backslash commands we don't recognize
+    text = re.sub(r'\\[a-zA-Z]+', '', text)
+    
+    # Clean up braces
+    text = text.replace('{', '').replace('}', '')
+    
+    # Normalize whitespace (collapse multiple spaces, trim)
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    return text
+
+
+def wrap_latex_with_accessibility(latex_content: str, param_name: str = "") -> str:
+    """
+    Wrap LaTeX equation with accessibility metadata for AI and screen readers.
+    
+    Generates HTML that includes:
+    1. data-latex-source attribute with raw LaTeX (for AI parsing HTML)
+    2. A visually-hidden span with human-readable text (for screen readers)
+    3. The original $$ block for MathJax rendering (for visual display)
+    
+    Args:
+        latex_content: The LaTeX equation (without $$ delimiters)
+        param_name: Parameter name for semantic labeling
+        
+    Returns:
+        HTML string with wrapped equation
+    """
+    # Generate human-readable version
+    readable = latex_to_readable_text(latex_content)
+    
+    # Escape for HTML attribute
+    latex_escaped = html.escape(latex_content, quote=True)
+    readable_escaped = html.escape(readable, quote=True)
+    
+    # Build the accessible wrapper
+    # The sr-only class makes text visually hidden but available to screen readers and AI
+    # The data-latex-source attribute provides raw LaTeX for AI parsing the DOM
+    wrapper = f'''<div class="equation-accessible" data-latex-source="{latex_escaped}" data-equation-text="{readable_escaped}" data-param="{param_name.lower()}">
+<span class="sr-only visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{readable}</span>
+$$
+{latex_content}
+$$
+</div>'''
+    
+    return wrapper
 
 
 class ValueWithCI:
@@ -182,14 +318,16 @@ def generate_variables_yml(
             # Apply mobile-friendly wrapping if enabled
             if wrap_latex_width > 0:
                 hardcoded_latex = wrap_latex_for_mobile(hardcoded_latex, max_width=wrap_latex_width)
-            variables[latex_var_name] = f"$$\n{hardcoded_latex}\n$$"
+            # Wrap with accessibility metadata for AI and screen readers
+            variables[latex_var_name] = wrap_latex_with_accessibility(hardcoded_latex, param_name)
         elif auto_latex:
             # Fall back to auto-generated for params without hardcoded
             latex_var_name = f"{var_name}_latex"
             # Apply mobile-friendly wrapping if enabled
             if wrap_latex_width > 0:
                 auto_latex = wrap_latex_for_mobile(auto_latex, max_width=wrap_latex_width)
-            variables[latex_var_name] = f"$$\n{auto_latex}\n$$"
+            # Wrap with accessibility metadata for AI and screen readers
+            variables[latex_var_name] = wrap_latex_with_accessibility(auto_latex, param_name)
 
     # Count exports by type BEFORE adding metadata variables
     latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
