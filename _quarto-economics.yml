@@ -180,6 +180,7 @@ format:
     css:
       - styles.css
       - economics-overrides.css
+      - assets/css/page-loader.css
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
@@ -228,6 +229,15 @@ format:
               <a href="/1-percent-treaty-impact.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </footer>
+          <!-- Site Enhancements: Page Loader & Auto-Expand Hash Targets -->
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+              document.body.appendChild(script);
+            })();
+          </script>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
           <script>
             (function() {
@@ -260,6 +270,8 @@ format:
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    include-before-body:
+      - file: assets/html/page-loader.html
   pdf:
     output-file: "1-percent-treaty-impact.pdf"
     documentclass: report

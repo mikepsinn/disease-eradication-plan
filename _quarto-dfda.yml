@@ -126,6 +126,19 @@ format:
     css:
       - styles.css
       - economics-overrides.css
+      - assets/css/page-loader.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - text: |
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+              document.body.appendChild(script);
+            })();
+          </script>
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"

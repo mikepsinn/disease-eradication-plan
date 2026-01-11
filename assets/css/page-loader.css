@@ -1,0 +1,266 @@
+/**
+ * Page Loader Styles - Impact Version
+ * Shows death toll from curable diseases while page loads
+ */
+
+/* ========================================
+   Page Loader - Impact Version
+   ======================================== */
+
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+
+#page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 40px 20px;
+}
+
+/* Impact Message */
+.impact-header {
+  font-size: 18px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.death-counter {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ef4444;
+  margin: 20px 0;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+  50% { text-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+}
+
+.impact-message {
+  font-size: 24px;
+  color: #e2e8f0;
+  margin: 20px 0;
+  line-height: 1.5;
+}
+
+.impact-subtext {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* Gravestone Grid */
+.gravestone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 8px;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  min-height: 150px;
+}
+
+.gravestone {
+  font-size: 28px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+  filter: grayscale(1);
+  transform: scale(0);
+}
+
+.gravestone.show {
+  transform: scale(1);
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0) translateY(-10px);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Loading Spinner */
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 30px auto;
+  border: 3px solid rgba(148, 163, 184, 0.2);
+  border-top-color: #94a3b8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .loader-content {
+    padding: 20px 15px;
+  }
+
+  .impact-header {
+    font-size: 14px;
+  }
+
+  .death-counter {
+    font-size: 48px;
+  }
+
+  .impact-message {
+    font-size: 18px;
+  }
+
+  .impact-subtext {
+    font-size: 12px;
+  }
+
+  .gravestone-grid {
+    gap: 6px;
+    padding: 15px;
+    min-height: 120px;
+  }
+
+  .gravestone {
+    font-size: 24px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .death-counter {
+    font-size: 36px;
+  }
+
+  .impact-message {
+    font-size: 16px;
+  }
+
+  .gravestone {
+    font-size: 20px;
+  }
+
+  .loader-spinner {
+    width: 30px;
+    height: 30px;
+    margin: 20px auto;
+  }
+}
+
+/* ========================================
+   Hash Target Highlighting
+   ======================================== */
+
+@keyframes highlight-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.callout.hash-target-highlight {
+  animation: highlight-pulse 1.5s ease-out;
+}
+
+.hash-target-heading {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.1) 0%, transparent 100%);
+  border-left: 3px solid #2563eb;
+  padding-left: 8px;
+  margin-left: -11px;
+}
+
+/* ========================================
+   Uncertainty Toggle
+   ======================================== */
+
+#uncertainty-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+#uncertainty-toggle:hover {
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#uncertainty-toggle .toggle-icon {
+  font-size: 14px;
+}
+
+#uncertainty-toggle.ci-hidden {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+body.hide-uncertainty .ci-range,
+body.hide-uncertainty .uncertainty-range {
+  display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #uncertainty-toggle {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+  }
+
+  #uncertainty-toggle:hover {
+    background: #334155;
+  }
+
+  #uncertainty-toggle.ci-hidden {
+    background: #78350f;
+    border-color: #f59e0b;
+  }
+}
+
+@media (max-width: 768px) {
+  #uncertainty-toggle {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

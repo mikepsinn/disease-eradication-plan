@@ -320,9 +320,10 @@ format:
     number-sections: false
     toc: true
     toc-depth: 3
-    css: 
+    css:
       - styles.css
       - book-overrides.css
+      - assets/css/page-loader.css
     # Footer with copyright and license information
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
@@ -377,6 +378,15 @@ format:
             </p>
           </footer>
       - text: |
+          <!-- Site Enhancements: Page Loader & Auto-Expand Hash Targets -->
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+              document.body.appendChild(script);
+            })();
+          </script>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
           <script>
             (function() {
@@ -419,6 +429,8 @@ format:
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    include-before-body:
+      - file: assets/html/page-loader.html
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     output-file: "How-to-End-War-and-Disease.epub"
