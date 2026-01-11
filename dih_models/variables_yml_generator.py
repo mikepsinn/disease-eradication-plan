@@ -133,38 +133,24 @@ def latex_to_readable_text(latex: str) -> str:
 
 def wrap_latex_with_accessibility(latex_content: str, param_name: str = "") -> str:
     """
-    Wrap LaTeX equation with accessibility metadata for AI and screen readers.
+    Wrap LaTeX equation for display.
     
-    Generates HTML that includes:
-    1. data-latex-source attribute with raw LaTeX (for AI parsing HTML)
-    2. A visually-hidden span with human-readable text (for screen readers)
-    3. The original $$ block for MathJax rendering (for visual display)
+    Note: Previously this generated HTML wrappers for AI accessibility, but that broke
+    PDF/LaTeX compilation because HTML elements aren't valid in LaTeX context.
+    Now generates plain $$ blocks that work for both HTML and PDF.
+    
+    The accessibility metadata (data-latex-source, sr-only text) has been removed
+    to ensure cross-format compatibility. AI can still read the rendered MathML/MathJax.
     
     Args:
         latex_content: The LaTeX equation (without $$ delimiters)
-        param_name: Parameter name for semantic labeling
+        param_name: Parameter name (unused, kept for API compatibility)
         
     Returns:
-        HTML string with wrapped equation
+        LaTeX block with $$ delimiters
     """
-    # Generate human-readable version
-    readable = latex_to_readable_text(latex_content)
-    
-    # Escape for HTML attribute
-    latex_escaped = html.escape(latex_content, quote=True)
-    readable_escaped = html.escape(readable, quote=True)
-    
-    # Build the accessible wrapper
-    # The sr-only class makes text visually hidden but available to screen readers and AI
-    # The data-latex-source attribute provides raw LaTeX for AI parsing the DOM
-    wrapper = f'''<div class="equation-accessible" data-latex-source="{latex_escaped}" data-equation-text="{readable_escaped}" data-param="{param_name.lower()}">
-<span class="sr-only visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{readable}</span>
-$$
-{latex_content}
-$$
-</div>'''
-    
-    return wrapper
+    # Simple $$ block that works for both HTML (MathJax) and PDF (LaTeX)
+    return f"$$\n{latex_content}\n$$"
 
 
 class ValueWithCI:
