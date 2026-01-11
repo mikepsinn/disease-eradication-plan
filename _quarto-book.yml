@@ -323,7 +323,6 @@ format:
     css:
       - styles.css
       - book-overrides.css
-      - assets/css/page-loader.css
     # Footer with copyright and license information
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"

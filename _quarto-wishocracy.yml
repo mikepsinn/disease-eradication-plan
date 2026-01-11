@@ -127,7 +127,6 @@ format:
     css:
       - styles.css
       - economics-overrides.css
-      - assets/css/page-loader.css
     include-before-body:
       - file: assets/html/page-loader.html
     include-after-body:

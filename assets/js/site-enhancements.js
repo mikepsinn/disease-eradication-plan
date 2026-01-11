@@ -38,12 +38,12 @@
 
     if (!deathCounter || !gravestoneGrid) return;
 
-    // Update death counter
+    // Update death counter (starts at 1)
     loaderUpdateInterval = setInterval(function() {
       if (!isLoaderActive) return;
 
       const elapsedSeconds = (Date.now() - loaderStartTime) / 1000;
-      const deathCount = Math.floor(elapsedSeconds * DEATHS_PER_SECOND);
+      const deathCount = 1 + Math.floor(elapsedSeconds * DEATHS_PER_SECOND);
 
       deathCounter.textContent = deathCount.toLocaleString();
     }, 50);

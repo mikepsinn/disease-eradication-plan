@@ -180,7 +180,6 @@ format:
     css:
       - styles.css
       - economics-overrides.css
-      - assets/css/page-loader.css
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
