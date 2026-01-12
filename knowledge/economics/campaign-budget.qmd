@@ -1,5 +1,5 @@
 ---
-title: 'Campaign Budget: The $1B Legal Bribery Machine'
+title: 'Campaign Budget: The {{< var campaign_media_budget_max >}} Legal Bribery Machine'
 image: /assets/og-images/knowledge/economics/campaign-budget-og-academic.jpg
 ---
 
@@ -121,7 +121,7 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Core Components**:
 
-- **Platform Development**: $35M (biometric verification, 50+ languages, mobile-first)
+- **Platform Development**: {{< var campaign_platform_development >}} (biometric verification, 50+ languages, mobile-first)
 - **Verification Infrastructure**: $59-63M (330-350M verification attempts × $0.18, accounting for 15-20% friction)
 - **Tiered Referral Payments**: $40-312M (varies by virality strength and marginal cost assumptions)
 - **Seed Marketing**: $5-40M (optional acceleration, or let referral economics drive virality)

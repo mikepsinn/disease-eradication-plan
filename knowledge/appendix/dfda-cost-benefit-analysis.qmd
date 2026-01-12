@@ -397,11 +397,11 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 This analysis uses a conservative baseline estimate of [**$100.0B per year in global clinical trial spending**](../references.qmd#clinical-trial-spending-dfda-baseline) that is potentially addressable by a decentralized framework through decentralization, automation, and real-world data integration. This figure accounts for future market growth and the expanding scope of trials that could benefit from the methodologies of a decentralized framework.
 
-- **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
+- **Current Average Costs**: Estimates suggest {{< var pharma_drug_development_cost_current >}} to bring a new drug from discovery through FDA approval, spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
   - Phase I: \$2 - \$5 million/trial (smaller scale).
   - Phase II: \$10 - \$50 million/trial (depending on disease area).
-  - Phase III: \$100 - {{< var dct_platform_funding_medium >}}/trial (large patient populations).
+  - Phase III: \$100M - \$500M/trial (large patient populations).
 
 - **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} per patient (site fees, overhead, staff, monitoring, data management).
 

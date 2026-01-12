@@ -1,5 +1,5 @@
 ---
-title: 'Medical Research Spending: The $68 Billion Lie'
+title: 'Medical Research Spending: The {{< var global_med_research_spending >}} Lie'
 description: A comprehensive breakdown of how little humanity invests in not dying, distinguishing broad "research" from actual cures.
 published: true
 tags:
@@ -19,7 +19,7 @@ Here is the complete accounting of humanity's commitment to curing disease. Spoi
 
 ## The Broad Number vs. The Real Number
 
-Governments love to claim they spend billions on "medical research." In 2024, the official global total for government medical R&D was approximately **$68 billion**.
+Governments claim they spend billions on "medical research." In 2024, the official global total for government medical R&D was approximately **{{< var global_med_research_spending >}}**.
 
 It sounds like a lot. It is a lie.
 
@@ -66,7 +66,7 @@ This creates a fatal incentive structure:
 
 ## Broad R&D Breakdown: The Hall of Shame
 
-*Note: These figures refer to the broader "Medical Research" budgets (the $68B figure), not the specific clinical trial spending.*
+*Note: These figures refer to the broader "Medical Research" budgets (the {{< var global_med_research_spending >}} figure), not the specific clinical trial spending.*
 
 ### United States: The Alleged Leader
 

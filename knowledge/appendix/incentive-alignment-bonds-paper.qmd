@@ -10,7 +10,7 @@ abstract: |
   welfare improvement from a political externality into a private asset class, enabling rational self-interest
   to support welfare-maximizing policies. We demonstrate how existing political action committee (PAC)
   infrastructure can deploy IABs without legislative change, using impact bonds, prediction markets, and
-  outcome-contingent securities. Analysis of the $27.2B annual funding from a proposed 1% Treaty on military
+  outcome-contingent securities. Analysis of the {{< var treaty_annual_funding >}} annual funding from a proposed 1% Treaty on military
   spending reduction shows IABs could generate 100:1+ returns for early adopters while simultaneously advancing
   treatments that would otherwise remain unfunded due to electoral cycle misalignment. This mechanism design
   approach converts the tragedy of the commons in democratic resource allocation into an investable opportunity
@@ -259,9 +259,9 @@ The expected first-year ROI is {{< var victory_bond_annual_return_pct >}}, with 
 | Success probability | 10% | 20% | 40% | 36% / 444% / 2,076% |
 | Campaign cost | \$200M | \$100M | \$50M | 36% / 444% / 2,076% |
 | Investor share | 10% | 10% | 15% | 36% / 444% / 2,076% |
-| Treaty size | \$27.2B/year | \$24B/year | \$48B/year | 36% / 444% / 2,076% |
+| Treaty size | {{< var treaty_annual_funding >}}/year | \$24B/year | \$48B/year | 36% / 444% / 2,076% |
 
-Even under conservative assumptions (10% success, \$200M cost, 10% investor share, \$27.2B treaty), expected first-year ROI is 36% positive. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
+Even under conservative assumptions (10% success, \$200M cost, 10% investor share, {{< var treaty_annual_funding >}} treaty), expected first-year ROI is 36% positive. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
 
 ### The Capital Asymmetry: Why IABs Can Outcompete Incumbent Lobbying
 
@@ -1417,8 +1417,8 @@ First-year expected ROI: 272%, with the revenue stream continuing in perpetuity.
 
 The bootstrap phase requires \$200M-$500M for initial proof-of-concept, which is small relative to the aggregate capital available to diffuse beneficiaries:
 
-- **Concentrated opposition** (military contractors, fossil fuel companies): \$5 trillion market cap, spending \$100M-$1B/year on lobbying
-- **Diffuse beneficiaries** (everyone who benefits from cures, climate stability): \$454 trillion household wealth (Section 2.3)
+- **Concentrated opposition** (military contractors, fossil fuel companies): {{< var concentrated_interest_sector_market_cap_usd >}} market cap, spending \$100M-$1B/year on lobbying
+- **Diffuse beneficiaries** (everyone who benefits from cures, climate stability): {{< var global_household_wealth_usd >}} household wealth (Section 2.3)
 
 The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If military contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that military contractors exploit becomes accessible to millions of retail investors.
 

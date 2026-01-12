@@ -198,9 +198,9 @@ The political pressure for expansion *accelerates* with each success:
 
 | Treaty Level | IAB Political Funding | What It Buys |
 |:-------------|:---------------------|:-------------|
-| 1% | $2.7B/year | Passage pressure |
+| 1% | {{< var iab_political_incentive_funding_annual >}}/year | Passage pressure |
 | 5% | $13.5B/year | Overwhelming lobbying |
-| 10% | $27B/year | Defense industry pivot |
+| 10% | {{< var treaty_annual_funding >}}/year | Defense industry pivot |
 | 50%+ | $135B+/year | War becomes economically obsolete |
 
 This is why the [80/10/10 split](solution/incentive-alignment-bonds.qmd) exists. The {{< var dih_treasury_medical_research_pct >}} cures diseases. The {{< var victory_bond_funding_pct >}} to investors pays back the people who funded the initial campaign. The {{< var iab_political_incentive_funding_pct >}} to political incentives ensures the campaign never stops.
