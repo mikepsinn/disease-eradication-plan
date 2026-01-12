@@ -111,6 +111,10 @@ language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
 
+# Bibliography configuration
+bibliography: references-dfda.bib
+csl: nature.csl
+
 jupyter: dih-project-kernel
 
 format:
