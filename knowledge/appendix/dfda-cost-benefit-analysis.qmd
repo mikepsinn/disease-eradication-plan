@@ -412,7 +412,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
 
-  *Important caveat*: RECOVERY's exceptional cost efficiency benefited from NHS infrastructure integration and COVID-19 emergency conditions that may not be replicable globally.
+- **Systematic Review Evidence**: A systematic review of 64 embedded pragmatic clinical trials found a **median cost per patient of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}** (IQR {{< var pmc_pragmatic_trial_median_cost_per_patient_ci_low >}}–{{< var pmc_pragmatic_trial_median_cost_per_patient_ci_high >}}) [@pmc-pragmatic-trial-cost]. This confirms that low-cost execution is a replicable property of the pragmatic design, not an anomaly of any single trial.
 
 - **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 

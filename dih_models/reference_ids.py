@@ -592,6 +592,7 @@ class ReferenceID(str, Enum):
     PHASE_4_GROWTH_RATE = "phase-4-growth-rate"
     PHASE_4_SPENDING_2007 = "phase-4-spending-2007"
     PHASE_4_SPENDING_2024_ESTIMATE = "phase-4-spending-2024-estimate"
+    PMC_PRAGMATIC_TRIAL_COST = "pmc-pragmatic-trial-cost"
     POLIO_VACCINATION_ROI = "polio-vaccination-roi"
     POLYPILL_PREVENTION_QALY = "polypill-prevention-qaly"
     POS_ENERGY_EFFICIENCY = "pos-energy-efficiency"

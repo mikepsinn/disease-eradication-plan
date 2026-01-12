@@ -65,7 +65,7 @@ The difference between efficient and inefficient trial design isn't theoretical.
 **Treatments found:** [Multiple, including dexamethasone](../references.qmd#recovery-trial-summary-quote) (saved over 1 million lives)
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
-The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
+The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This massive efficiency gap is not unique to RECOVERY; a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
 This proves the problem isn't that curing disease is hard. The problem is that the NIH funds the wrong things.
 

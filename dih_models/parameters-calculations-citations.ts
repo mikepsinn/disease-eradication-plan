@@ -1131,6 +1131,17 @@ export const PHASE_3_TRIAL_COST_MIN: Parameter = {
   confidence: "high",
 };
 
+export const PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT: Parameter = {
+  value: 97.0,
+  unit: "USD/patient",
+  displayName: "Pragmatic Trial Median Cost per Patient (PMC Review)",
+  description: "Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $42-$509.",
+  sourceType: "external",
+  sourceRef: "pmc-pragmatic-trial-cost",
+  confidence: "high",
+  confidenceInterval: [42.0, 509.0],
+};
+
 export const POLIO_VACCINATION_ROI: Parameter = {
   value: 39.0,
   unit: "ratio",
@@ -4441,6 +4452,7 @@ export const parameters = {
   PHASE_1_SAFETY_DURATION_YEARS,
   PHASE_2_3_CLINICAL_TRIAL_COST_PCT,
   PHASE_3_TRIAL_COST_MIN,
+  PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT,
   POLIO_VACCINATION_ROI,
   POLITICAL_SUCCESS_PROBABILITY,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
@@ -5704,6 +5716,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost",
         note: "SofproMed, How Much Does a Clinical Trial Cost | CBO, Research and Development in the Pharmaceutical Industry",
   },
+  "pmc-pragmatic-trial-cost": {
+        id: "pmc-pragmatic-trial-cost",
+        type: "article-journal",
+        title: "Pragmatic Trial Cost per Patient (Median $97)",
+        author: [
+          {
+            literal: "PMC"
+          },
+        ],
+        'container-title': "PMC: Costs of Pragmatic Clinical Trials",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6508852/",
+        note: "PMC: Costs of Pragmatic Clinical Trials",
+  },
   "polio-vaccination-roi": {
         id: "polio-vaccination-roi",
         type: "article-journal",
@@ -6224,11 +6249,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 388,
-  external: 147,
+  total: 389,
+  external: 148,
   calculated: 138,
   definitions: 103,
-  citations: 109,
+  citations: 110,
 } as const;
 
 // ============================================================================

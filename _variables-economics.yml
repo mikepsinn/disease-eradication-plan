@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (301 entries)
+# Contains only variables used in this paper (303 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -2697,6 +2697,13 @@ phase_1_safety_duration_years: '<a href="/knowledge/appendix/parameters-and-calc
   | ✓ High confidence | 📊 Peer-reviewed | Updated: 2021 | Unit: years | Click to view
   details, calculation & sources">2.3 years</a>'
 phase_1_safety_duration_years_cite: '@bio-clinical-development-2021'
+pmc_pragmatic_trial_median_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-pmc_pragmatic_trial_median_cost_per_patient"
+  class="parameter-link" data-source-ref="pmc-pragmatic-trial-cost" data-source-type="external"
+  data-confidence="high" title="Median cost per patient in embedded pragmatic clinical
+  trials (systematic review of 64 trials). IQR: $42-$509. | ✓ High confidence | 95%
+  CI: [$42, $509] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation
+  & sources">$97 (95% CI: $42-$509)</a>'
+pmc_pragmatic_trial_median_cost_per_patient_cite: '@pmc-pragmatic-trial-cost'
 political_success_probability: '<a href="/knowledge/appendix/parameters-and-calculations#sec-political_success_probability"
   class="parameter-link" data-source-ref="icbl-ottawa-treaty" data-source-type="external"
   data-confidence="low" title="Estimated probability of treaty ratification and sustained

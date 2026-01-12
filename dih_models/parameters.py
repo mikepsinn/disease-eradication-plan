@@ -4299,6 +4299,21 @@ CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
     compute=lambda ctx: int(ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"])
 )
 
+# PMC Systematic Review - Pragmatic Trial Costs
+# Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC6508852/
+PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
+    97.0,
+    source_ref="pmc-pragmatic-trial-cost",
+    source_type="external",
+    description="Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $42-$509.",
+    display_name="Pragmatic Trial Median Cost per Patient (PMC Review)",
+    unit="USD/patient",
+    confidence="high",
+    confidence_interval=(42, 509),  # IQR from the study
+    distribution="lognormal",
+    keywords=["$97", "pmc", "pragmatic", "trial cost", "median", "embedded"],
+)
+
 # Population
 GLOBAL_POPULATION_2024 = Parameter(
     8_000_000_000,
