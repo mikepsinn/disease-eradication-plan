@@ -162,7 +162,7 @@ combined_peace_health_dividends_annual_for_roi_calc_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \end{aligned}
 
@@ -190,7 +190,7 @@ current_combination_exploration_years_latex: '$$
 
   \begin{aligned}
 
-  Ratio_{curr} = COMBINATION_SPACE \div CURRENT_TRIALS_PER_YEAR = 13.7M
+  Ratio_{curr} = COMBINATION\_SPACE \div CURRENT\_TRIALS\_PER\_YEAR = 13.7M
 
   \\[0.5em]
 
@@ -217,7 +217,7 @@ current_known_safe_exploration_years_latex: '$$
 
   \begin{aligned}
 
-  Ratio_{curr} = DRUG_DISEASE_COMBINATIONS \div CURRENT_TRIALS_PER_YEAR = 2{,}880
+  Ratio_{curr} = DRUG\_DISEASE\_COMBINATIONS \div CURRENT\_TRIALS\_PER\_YEAR = 2{,}880
 
   \\[0.5em]
 
@@ -321,7 +321,7 @@ dfda_benefit_rd_only_annual_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \end{aligned}
 
@@ -345,12 +345,12 @@ dfda_direct_funding_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Funding_{direct,DFDA} = ANNUAL_FUNDING \times [(1 - (1 + r)^-T) /
+  \text{where } Funding_{direct,DFDA} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) /
   r] where T = queue clearance time = \$475B
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -414,7 +414,7 @@ dfda_direct_funding_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -453,8 +453,8 @@ dfda_direct_funding_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -491,7 +491,7 @@ dfda_direct_funding_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -537,12 +537,12 @@ dfda_direct_funding_queue_clearance_npv_latex: '$$
 
   \begin{aligned}
 
-  Funding_{direct,DFDA} = ANNUAL_FUNDING \times [(1 - (1 + r)^-T) / r] where T = queue
-  clearance time = \$475B
+  Funding_{direct,DFDA} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T =
+  queue clearance time = \$475B
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -606,7 +606,7 @@ dfda_direct_funding_queue_clearance_npv_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -651,13 +651,13 @@ dfda_efficacy_lag_elimination_dalys_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Delay_{DFDA} = DEATHS_TOTAL \times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)
+  \text{where } Delay_{DFDA} = DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH)
   = 7.07B
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \\[0.5em]
 
@@ -666,8 +666,8 @@ dfda_efficacy_lag_elimination_dalys_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \end{aligned}
 
@@ -686,7 +686,7 @@ dfda_efficacy_lag_elimination_deaths_averted_latex: '$$
 
   Deaths_{DFDA} \\
 
-  &= ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
+  &= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT
   \\
 
   &= 416M
@@ -714,13 +714,13 @@ dfda_efficacy_lag_elimination_economic_value_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Delay_{DFDA} = DEATHS_TOTAL \times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)
+  \text{where } Delay_{DFDA} = DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH)
   = 7.07B
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \\[0.5em]
 
@@ -729,8 +729,8 @@ dfda_efficacy_lag_elimination_economic_value_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \end{aligned}
 
@@ -744,8 +744,8 @@ dfda_efficacy_lag_elimination_yld_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \end{aligned}
 
@@ -754,12 +754,13 @@ dfda_efficacy_lag_elimination_yll_latex: '$$
 
   \begin{aligned}
 
-  Delay_{DFDA} = DEATHS_TOTAL \times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B
+  Delay_{DFDA} = DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH) =
+  7.07B
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \end{aligned}
 
@@ -800,7 +801,7 @@ dfda_first_treatments_per_year_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -863,7 +864,7 @@ dfda_npv_benefit_rd_only_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \\[0.5em]
 
@@ -904,7 +905,7 @@ dfda_npv_net_benefit_rd_only_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \\[0.5em]
 
@@ -1064,7 +1065,7 @@ dfda_queue_clearance_years_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1125,7 +1126,7 @@ dfda_roi_rd_only_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \\[0.5em]
 
@@ -1186,7 +1187,7 @@ dfda_trial_capacity_multiplier_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1238,8 +1239,8 @@ dfda_trial_capacity_plus_efficacy_lag_dalys_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -1276,7 +1277,7 @@ dfda_trial_capacity_plus_efficacy_lag_dalys_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1330,8 +1331,8 @@ dfda_trial_capacity_plus_efficacy_lag_economic_value_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -1368,7 +1369,7 @@ dfda_trial_capacity_plus_efficacy_lag_economic_value_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1411,8 +1412,8 @@ dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex: '$$
 
   \begin{aligned}
 
-  Capacity_{max,DFDA} = ANNUAL_DEATHS \times DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS
-  \times AVOIDABLE_PCT = 10.7B
+  Capacity_{max,DFDA} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_YEARS
+  \times AVOIDABLE\_PCT = 10.7B
 
   \\[0.5em]
 
@@ -1420,8 +1421,8 @@ dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -1458,7 +1459,7 @@ dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1501,8 +1502,8 @@ dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex: '$$
 
   \begin{aligned}
 
-  Capacity_{max,DFDA} = DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS \times GLOBAL_YLD_PROPORTION
-  \times HOURS_PER_YEAR = 1930T
+  Capacity_{max,DFDA} = DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_DALYS \times GLOBAL\_YLD\_PROPORTION
+  \times HOURS\_PER\_YEAR = 1930T
 
   \\[0.5em]
 
@@ -1515,8 +1516,8 @@ dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -1553,7 +1554,7 @@ dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1600,8 +1601,8 @@ dfda_trial_capacity_plus_efficacy_lag_years_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -1638,7 +1639,7 @@ dfda_trial_capacity_plus_efficacy_lag_years_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1682,7 +1683,7 @@ dfda_trial_capacity_treatment_acceleration_years_latex: '$$
 
   \begin{aligned}
 
-  Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)
+  Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER)
   = 204
 
   \\[0.5em]
@@ -1720,7 +1721,7 @@ dfda_trial_capacity_treatment_acceleration_years_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1786,7 +1787,7 @@ dfda_trial_cost_reduction_pct_latex: '$$
 
   Reduction_{DFDA} \\
 
-  &= 1 - (DFDA_COST / TRADITIONAL_COST) \\
+  &= 1 - (DFDA\_COST / TRADITIONAL\_COST) \\
 
   &= 97.7\%
 
@@ -1829,7 +1830,7 @@ dfda_trials_per_year_capacity_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1899,7 +1900,7 @@ dih_patients_fundable_annually_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1945,7 +1946,7 @@ dih_treasury_medical_research_pct_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -1988,7 +1989,7 @@ dih_treasury_to_medical_research_annual_latex: '$$
 
   \begin{aligned}
 
-  Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -2040,7 +2041,7 @@ dih_treasury_trial_subsidies_annual_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -2096,7 +2097,7 @@ dih_treasury_trial_subsidies_pct_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -3291,7 +3292,7 @@ treaty_benefit_multiplier_vs_vaccines_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \end{aligned}
 
@@ -3407,8 +3408,8 @@ treaty_cost_per_daly_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -3445,7 +3446,7 @@ treaty_cost_per_daly_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -3512,8 +3513,8 @@ treaty_expected_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -3550,7 +3551,7 @@ treaty_expected_cost_per_daly_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -3617,8 +3618,8 @@ treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -3655,7 +3656,7 @@ treaty_expected_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -3720,8 +3721,8 @@ treaty_expected_vs_bed_nets_multiplier_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -3758,7 +3759,7 @@ treaty_expected_vs_bed_nets_multiplier_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -3852,7 +3853,7 @@ treaty_peace_plus_rd_annual_benefits_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \end{aligned}
 
@@ -3877,7 +3878,7 @@ treaty_recurring_benefits_annual_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \\[0.5em]
 
@@ -3968,8 +3969,8 @@ treaty_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -4006,7 +4007,7 @@ treaty_roi_trial_capacity_plus_efficacy_lag_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4107,8 +4108,8 @@ treaty_vs_bed_nets_multiplier_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -4145,7 +4146,7 @@ treaty_vs_bed_nets_multiplier_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4201,12 +4202,12 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Funding_{direct,DFDA} = ANNUAL_FUNDING \times [(1 - (1 + r)^-T) /
+  \text{where } Funding_{direct,DFDA} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) /
   r] where T = queue clearance time = \$475B
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4270,7 +4271,7 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4309,8 +4310,8 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -4347,7 +4348,7 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4396,8 +4397,8 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
-  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+  \text{where } Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times
+  (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
 
   \\[0.5em]
 
@@ -4434,7 +4435,7 @@ treaty_vs_direct_funding_leverage_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4500,7 +4501,7 @@ trial_capacity_cumulative_years_20yr_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING
   = \$21.8B
 
   \\[0.5em]
@@ -4562,7 +4563,7 @@ type_i_error_benefit_dalys_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Thalidomide = US_CASES \times (1 - MORTALITY_RATE) = 540
+  \text{where } Thalidomide = US\_CASES \times (1 - MORTALITY\_RATE) = 540
 
   \\[0.5em]
 
@@ -4604,13 +4605,13 @@ type_ii_error_cost_ratio_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Delay_{DFDA} = DEATHS_TOTAL \times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)
+  \text{where } Delay_{DFDA} = DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH)
   = 7.07B
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \\[0.5em]
 
@@ -4619,8 +4620,8 @@ type_ii_error_cost_ratio_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
-  = 416M
+  \text{where } Deaths_{DFDA} = ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times
+  EVENTUALLY\_AVOIDABLE\_DEATH\_PCT = 416M
 
   \\[0.5em]
 
@@ -4637,7 +4638,7 @@ type_ii_error_cost_ratio_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Thalidomide = US_CASES \times (1 - MORTALITY_RATE) = 540
+  \text{where } Thalidomide = US\_CASES \times (1 - MORTALITY\_RATE) = 540
 
   \\[0.5em]
 
@@ -4671,7 +4672,7 @@ unexplored_ratio_latex: '$$
 
   \begin{aligned}
 
-  Ratio = 1 - EXPLORATION_RATIO = 99.7\%
+  Ratio = 1 - EXPLORATION\_RATIO = 99.7\%
 
   \\[0.5em]
 

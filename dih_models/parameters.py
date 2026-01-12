@@ -1176,6 +1176,10 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
     unit="ratio",
     formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+    latex=r"""\begin{aligned}
+\text{Multiplier}_{RD} &= \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\
+&= \frac{9.1 \times 12}{3} = 36.4
+\end{aligned}""",
     confidence="high",
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
     inputs=['FDA_PHASE_1_TO_APPROVAL_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],

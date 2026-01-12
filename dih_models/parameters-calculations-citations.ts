@@ -2366,7 +2366,7 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   sourceRef: "recovery-trial-82x-cost-reduction",
   confidence: "high",
   formula: "FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-  latex: "\\begin{aligned}\nMultiplier_{RD} \\\\\n&= FDA\\_PHASE\\_1\\_TO\\_APPROVAL\\_YEARS \\times MONTHS\\_PER\\_YEAR \\div OXFORD\\_RECOVERY\\_TRIAL\\_DURATION\\_MONTHS \\\\\n&= 36.4\n\\end{aligned}",
+  latex: "\\begin{aligned}\n\\text{Multiplier}_{RD} &= \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\\n&= \\frac{9.1 \\times 12}{3} = 36.4\n\\end{aligned}",
 };
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {

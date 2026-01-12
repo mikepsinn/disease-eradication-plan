@@ -152,7 +152,7 @@ iab_mechanism_benefit_cost_ratio_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+  \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 
   \end{aligned}
 
