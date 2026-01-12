@@ -851,3 +851,82 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
         font-weight: normal;
     }
 }
+
+/* ==========================================
+   CONFIDENCE INTERVAL TOGGLE BUTTON
+   ========================================== */
+
+/* Floating toggle button - bottom right corner */
+#uncertainty-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--book-text, #2a2a2a);
+    transition: all 0.2s ease;
+}
+
+#uncertainty-toggle:hover {
+    background-color: var(--book-light, #f9f8f3);
+    border-color: var(--book-accent, #8b7355);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+#uncertainty-toggle:focus {
+    outline: none;
+    border-color: var(--book-accent, #8b7355);
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
+}
+
+#uncertainty-toggle .toggle-icon {
+    font-size: 1rem;
+}
+
+#uncertainty-toggle .toggle-text {
+    white-space: nowrap;
+}
+
+/* When CI is hidden, show muted state */
+#uncertainty-toggle.ci-hidden {
+    background-color: var(--book-light, #f9f8f3);
+    color: var(--book-accent, #8b7355);
+}
+
+/* Hide toggle on print */
+@media print {
+    #uncertainty-toggle {
+        display: none !important;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    #uncertainty-toggle {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================
+   HIDE UNCERTAINTY CONTENT (when toggled)
+   ========================================== */
+
+/* Hide CI text in inline content when body has hide-uncertainty class */
+body.hide-uncertainty .ci-range,
+body.hide-uncertainty [data-ci-hidden] {
+    display: none !important;
+}
