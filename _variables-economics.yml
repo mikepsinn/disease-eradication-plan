@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (303 entries)
+# Contains only variables used in this paper (321 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -30,6 +30,13 @@ average_market_return_pct: '<a href="/knowledge/appendix/parameters-and-calculat
   return (10%) | ✓ High confidence | Unit: rate | Click to view details, calculation
   & sources">10%</a>'
 average_market_return_pct_cite: '@warren-buffett-career-average-return-20-pct'
+baseline_lives_saved_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-baseline_lives_saved_annual"
+  class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="medium" title="Baseline annual lives
+  saved by pharmaceuticals (conservative aggregate) | ~ Medium confidence | 📊 Peer-reviewed
+  | Conservative estimate | Updated: 2024 | Unit: deaths/year | Click to view details,
+  calculation & sources">12 deaths/year</a>'
+baseline_lives_saved_annual_cite: '@who-global-health-estimates-2024'
 bed_nets_cost_per_daly: '<a href="/knowledge/appendix/parameters-and-calculations#sec-bed_nets_cost_per_daly"
   class="parameter-link" data-source-ref="givewell-cost-per-life-saved" data-source-type="external"
   data-peer-reviewed="true" data-confidence="high" title="GiveWell cost per DALY for
@@ -55,6 +62,13 @@ childhood_vaccination_roi: '<a href="/knowledge/appendix/parameters-and-calculat
   data-confidence="high" title="Return on investment from childhood vaccination programs
   | ✓ High confidence | Unit: ratio | Click to view details, calculation & sources">13:1</a>'
 childhood_vaccination_roi_cite: '@childhood-vaccination-roi'
+chronic_disease_disability_weight: '<a href="/knowledge/appendix/parameters-and-calculations#sec-chronic_disease_disability_weight"
+  class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="medium" title="Disability weight for
+  untreated chronic conditions (WHO Global Burden of Disease) | ~ Medium confidence
+  | 📊 Peer-reviewed | Dist: Normal (SE: 0.07 weight) | Unit: weight | Click to view
+  details, calculation & sources">0.35 weight (95% CI: 0.233 weight-0.465 weight)</a>'
+chronic_disease_disability_weight_cite: '@who-global-health-estimates-2024'
 combination_therapy_disease_space: '<a href="/knowledge/appendix/parameters-and-calculations#sec-combination_therapy_disease_space"
   class="parameter-link" data-source-ref="" data-source-type="calculated" data-confidence="high"
   title="Total combination therapy space (pairwise drug combinations × diseases).
@@ -624,6 +638,26 @@ dfda_efficacy_lag_elimination_economic_value_latex: '$$
   = 416M
 
   \end{aligned}
+
+  $$'
+dfda_efficacy_lag_elimination_yld_latex: '$$
+
+  \begin{aligned}
+
+  Delay_{DFDA} = Deaths_{DFDA} \times Deaths \times Chronic = 416M \times 6 \times
+  0.35 = 873M
+
+  \\[0.5em]
+
+  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
+  = 416M
+
+  \end{aligned}
+
+  $$'
+dfda_efficacy_lag_elimination_yll_latex: '$$
+
+  YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
 
   $$'
 dfda_first_treatments_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_first_treatments_per_year"
@@ -2034,6 +2068,13 @@ exploration_ratio_latex: '$$
   \end{aligned}
 
   $$'
+fda_phase_1_to_approval_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-fda_phase_1_to_approval_years"
+  class="parameter-link" data-source-ref="fda-approval-timeline-10-years" data-source-type="external"
+  data-confidence="high" title="FDA timeline from Phase 1 start to approval (Phase
+  1-3 + NDA review) | ✓ High confidence | 95% CI: [6 years, 12 years] | Dist: Gamma
+  (SE: 2 years) | Unit: years | Click to view details, calculation & sources">9.1
+  years (95% CI: 6 years-12 years)</a>'
+fda_phase_1_to_approval_years_cite: '@fda-approval-timeline-10-years'
 fundamentally_unavoidable_death_pct: '<span class="parameter-definition" title="Percentage
   of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily
   accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all
@@ -2343,6 +2384,13 @@ global_government_clinical_trials_spending_annual: '<a href="/knowledge/appendix
   | 95% CI: [$3B, $6B] | Dist: Lognormal (SE: $1B) | Unit: USD | Click to view details,
   calculation & sources">$4.50B (95% CI: $3B-$6B)</a>'
 global_government_clinical_trials_spending_annual_cite: '@global-government-clinical-trial-spending-estimate'
+global_life_expectancy_2024: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_life_expectancy_2024"
+  class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="high" title="Global life expectancy (2024)
+  | ✓ High confidence | 📊 Peer-reviewed | Dist: Normal (SE: 2 years) | Updated: 2024
+  | Unit: years | Click to view details, calculation & sources">79 years (95% CI:
+  75.7 years-82.3 years)</a>'
+global_life_expectancy_2024_cite: '@who-global-health-estimates-2024'
 global_med_research_spending: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_med_research_spending"
   class="parameter-link" data-source-ref="global-gov-med-research-spending" data-source-type="external"
   data-confidence="high" title="Global government medical research spending | ✓ High
@@ -2711,6 +2759,12 @@ political_success_probability: '<a href="/knowledge/appendix/parameters-and-calc
   failure.  | ? Low confidence | 95% CI: [0.1%, 10%] | Dist: Beta (SE: 2%) | Unit:
   rate | Click to view details, calculation & sources">1% (95% CI: 0.1%-10%)</a>'
 political_success_probability_cite: '@icbl-ottawa-treaty'
+post_1962_drug_approval_reduction_pct: '<a href="/knowledge/appendix/parameters-and-calculations#sec-post_1962_drug_approval_reduction_pct"
+  class="parameter-link" data-source-ref="post-1962-drug-approval-drop" data-source-type="external"
+  data-confidence="high" title="Reduction in new drug approvals after 1962 Kefauver-Harris
+  Amendment (70% drop from 43→17 drugs/year) | ✓ High confidence | Updated: 1962-1970
+  | Unit: percentage | Click to view details, calculation & sources">70%</a>'
+post_1962_drug_approval_reduction_pct_cite: '@post-1962-drug-approval-drop'
 post_ww2_military_cut_pct: '<a href="/knowledge/appendix/parameters-and-calculations#sec-post_ww2_military_cut_pct"
   class="parameter-link" data-source-ref="us-post-wwii-military-spending-cut" data-source-type="external"
   data-confidence="high" title="Percentage military spending cut after WW2 (historical
@@ -2825,6 +2879,21 @@ recovery_trial_total_cost: '<a href="/knowledge/appendix/parameters-and-calculat
   | Dist: Lognormal | Unit: USD | Click to view details, calculation & sources">$20M
   (95% CI: $15M-$25M)</a>'
 recovery_trial_total_cost_cite: '@recovery-trial-82x-cost-reduction'
+regulatory_delay_mean_age_of_death: '<a href="/knowledge/appendix/parameters-and-calculations#sec-regulatory_delay_mean_age_of_death"
+  class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="medium" title="Mean age of preventable
+  death from post-safety efficacy testing regulatory delay (Phase 2-4) | ~ Medium
+  confidence | 📊 Peer-reviewed | Dist: Normal (SE: 3 years) | Unit: years | Click
+  to view details, calculation & sources">62 years (95% CI: 57 years-66.9 years)</a>'
+regulatory_delay_mean_age_of_death_cite: '@who-global-health-estimates-2024'
+regulatory_delay_suffering_period_years: '<a href="/knowledge/appendix/parameters-and-calculations#sec-regulatory_delay_suffering_period_years"
+  class="parameter-link" data-source-ref="who-global-health-estimates-2024" data-source-type="external"
+  data-peer-reviewed="true" data-confidence="medium" title="Pre-death suffering period
+  during post-safety efficacy testing delay (average years lived with untreated condition
+  while awaiting Phase 2-4 completion) | ~ Medium confidence | 📊 Peer-reviewed | 95%
+  CI: [4 years, 9 years] | Dist: Lognormal | Unit: years | Click to view details,
+  calculation & sources">6 years (95% CI: 4 years-9 years)</a>'
+regulatory_delay_suffering_period_years_cite: '@who-global-health-estimates-2024'
 safe_compounds_count: '<a href="/knowledge/appendix/parameters-and-calculations#sec-safe_compounds_count"
   class="parameter-link" data-source-ref="/knowledge/problem/untapped-therapeutic-frontier.qmd"
   data-source-type="definition" data-confidence="high" title="Total safe compounds
@@ -4235,6 +4304,53 @@ trial_relevant_diseases_count: '<a href="/knowledge/appendix/parameters-and-calc
   | 95% CI: [800 diseases, 1.20k diseases] | Dist: Uniform | Unit: diseases | Click
   to view details, calculation & sources">1.00k diseases (95% CI: 800 diseases-1.20k
   diseases)</a>'
+type_i_error_benefit_dalys: '<a href="/knowledge/appendix/parameters-and-calculations#sec-type_i_error_benefit_dalys"
+  class="parameter-link" data-source-ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis"
+  data-source-type="calculated" data-confidence="low" title="Maximum DALYs saved by
+  FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate:
+  one Thalidomide-scale event per year) | Calculated from 1 input | ? Low confidence
+  | Formula: THALIDOMIDE_DALYS_PER_EVENT × 62 years | Unit: DALYs | Click to view
+  details, calculation & sources">2.59M DALYs (95% CI: 1.54M DALYs-4.15M DALYs)</a>'
+type_i_error_benefit_dalys_latex: '$$
+
+  \begin{aligned}
+
+  DALYs = DALYs \times 62 = 41{,}800 \times 62 = 2.59M
+
+  \\[0.5em]
+
+  \text{where } DALYs = YLD + YLL = 13{,}000 + 28{,}800 = 41{,}800
+
+  \\[0.5em]
+
+  \text{where } YLD = Thalidomide \times Thalidomide \times Thalidomide = 0.4 \times
+  540 \times 60 = 13{,}000
+
+  \\[0.5em]
+
+  \text{where } Thalidomide = US_CASES \times (1 - MORTALITY_RATE) = 540
+
+  \\[0.5em]
+
+  \text{where } ThalidomideUS = Thalidomide \times Population = 15{,}000 \times 6\%
+  = 900
+
+  \\[0.5em]
+
+  \text{where } YLL = Deaths \times 80 = 360 \times 80 = 28{,}800
+
+  \\[0.5em]
+
+  \text{where } Deaths = Rate \times ThalidomideUS = 40\% \times 900 = 360
+
+  \\[0.5em]
+
+  \text{where } ThalidomideUS = Thalidomide \times Population = 15{,}000 \times 6\%
+  = 900
+
+  \end{aligned}
+
+  $$'
 type_ii_error_cost_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-type_ii_error_cost_ratio"
   class="parameter-link" data-source-ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis"
   data-source-type="calculated" data-confidence="medium" title="Ratio of Type II error

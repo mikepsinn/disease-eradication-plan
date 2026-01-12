@@ -1,1 +1,12 @@
-# AUTO-GENERATED - No variables used in this paper
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (2 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
+  class="parameter-link" data-source-ref="pragmatic-trials-cost-advantage" data-source-type="external"
+  data-confidence="medium" title="Cost per patient in ADAPTABLE trial ($14M PCORI
+  grant / 15,076 patients). Note: This is the direct grant cost; true cost including
+  in-kind may be 10-40% higher. | ~ Medium confidence | 95% CI: [$929, $1.40K] | Dist:
+  Lognormal | Unit: USD/patient | Click to view details, calculation & sources">$929
+  (95% CI: $929-$1.40K)</a>'
+adaptable_trial_cost_per_patient_cite: '@pragmatic-trials-cost-advantage'

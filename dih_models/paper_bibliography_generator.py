@@ -28,7 +28,7 @@ Usage:
 import re
 import sys
 from pathlib import Path
-from typing import Set, Dict, List, Optional, Tuple
+from typing import Set, Dict, List, Optional, Tuple, Any
 
 import yaml
 
@@ -384,13 +384,52 @@ def generate_paper_bibliography(
     return (len(filtered_entries), used_variables)
 
 
+def _extract_chapters_from_config(config: dict) -> List[str]:
+    """
+    Extract list of QMD files from a Quarto config's book.chapters section.
+
+    Handles nested structures with sections and various formats.
+
+    Args:
+        config: Parsed Quarto YAML config
+
+    Returns:
+        List of QMD file paths
+    """
+    files: List[str] = []
+
+    def extract_items(items):
+        if not isinstance(items, list):
+            return
+        for item in items:
+            if isinstance(item, str):
+                if item.endswith('.qmd'):
+                    files.append(item)
+            elif isinstance(item, dict):
+                if "href" in item:
+                    href = item["href"]
+                    if href.endswith('.qmd'):
+                        files.append(href)
+                if "chapters" in item:
+                    extract_items(item["chapters"])
+                if "contents" in item:
+                    extract_items(item["contents"])
+
+    book = config.get("book", {})
+    if "chapters" in book:
+        extract_items(book["chapters"])
+
+    return files
+
+
 def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
     """
     Generate filtered bibliographies AND filtered _variables.yml for all standalone papers.
 
-    For each paper defined in _quarto-*.yml configs with dih-render.index-source:
-    1. Generates references-{paper}.bib with only used citations
-    2. Generates _variables-{paper}.yml with only used variables
+    For each paper defined in _quarto-*.yml configs:
+    1. Scans the index-source file AND all book.chapters for variable usage
+    2. Generates references-{paper}.bib with only used citations
+    3. Generates _variables-{paper}.yml with only used variables
 
     This ensures:
     - PDFs only include cited references (not all 700+ entries)
@@ -424,33 +463,66 @@ def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
         dih_render = config.get("dih-render", {})
         index_source = dih_render.get("index-source")
 
-        if not index_source:
+        # Collect all QMD files to scan: index-source + all chapters
+        qmd_files_to_scan: List[Path] = []
+
+        if index_source:
+            paper_path = project_root / index_source
+            if paper_path.exists():
+                qmd_files_to_scan.append(paper_path)
+            else:
+                print(f"[WARN] Paper not found: {index_source}")
+
+        # Also scan all chapters listed in book.chapters
+        chapter_files = _extract_chapters_from_config(config)
+        for chapter_file in chapter_files:
+            chapter_path = project_root / chapter_file
+            if chapter_path.exists() and chapter_path not in qmd_files_to_scan:
+                qmd_files_to_scan.append(chapter_path)
+
+        if not qmd_files_to_scan:
             continue
 
-        paper_path = project_root / index_source
-        if not paper_path.exists():
-            print(f"[WARN] Paper not found: {index_source}")
-            continue
+        # Aggregate citations and variables from all files
+        all_citations: Set[str] = set()
+        all_variables: Set[str] = set()
 
-        # Generate filtered bibliography (also extracts used variables)
-        output_bib = project_root / f"references-{config_name}.bib"
-        count, used_variables = generate_paper_bibliography(
-            paper_path=paper_path,
-            main_bib_path=main_bib,
-            output_bib_path=output_bib,
-            project_root=project_root,
-            variables_yml_path=variables_yml
-        )
+        for qmd_path in qmd_files_to_scan:
+            # Extract variables
+            file_vars = extract_variables_from_qmd(qmd_path, project_root)
+            all_variables.update(file_vars)
 
-        if count > 0:
-            print(f"[OK] Generated {output_bib.name}: {count} entries")
-            results[config_name] = count
+            # Extract direct citations
+            file_citations = extract_citations_from_qmd(qmd_path, project_root)
+            all_citations.update(file_citations)
+
+        # Extract citations embedded in variable values
+        if variables_yml.exists() and all_variables:
+            variable_citations = extract_citations_from_variable_values(
+                all_variables, variables_yml
+            )
+            all_citations.update(variable_citations)
+
+        print(f"[*] {config_name}: scanned {len(qmd_files_to_scan)} files, found {len(all_variables)} variables, {len(all_citations)} citations")
+
+        # Generate filtered bibliography
+        if all_citations:
+            output_bib = project_root / f"references-{config_name}.bib"
+            count = _write_filtered_bibliography(
+                citations=all_citations,
+                main_bib_path=main_bib,
+                output_bib_path=output_bib,
+                paper_name=config_name
+            )
+            if count > 0:
+                print(f"[OK] Generated {output_bib.name}: {count} entries")
+                results[config_name] = count
 
         # Generate filtered variables file
-        if used_variables:
+        if all_variables:
             output_vars = project_root / f"_variables-{config_name}.yml"
             var_count = generate_filtered_variables_yml(
-                variable_names=used_variables,
+                variable_names=all_variables,
                 full_variables_path=variables_yml,
                 output_path=output_vars
             )
@@ -466,6 +538,87 @@ def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
             print(f"[OK] Generated {output_vars.name}: 0 variables (empty)")
 
     return results
+
+
+def _write_filtered_bibliography(
+    citations: Set[str],
+    main_bib_path: Path,
+    output_bib_path: Path,
+    paper_name: str
+) -> int:
+    """
+    Write a filtered .bib file containing only specified citations.
+
+    Args:
+        citations: Set of citation keys to include
+        main_bib_path: Path to the main references.bib file
+        output_bib_path: Path to write the filtered .bib file
+        paper_name: Name of the paper for header comment
+
+    Returns:
+        Number of entries written
+    """
+    if not main_bib_path.exists():
+        print(f"[ERROR] Main bibliography not found: {main_bib_path}")
+        return 0
+
+    with open(main_bib_path, encoding='utf-8') as f:
+        main_bib_content = f.read()
+
+    # Parse BibTeX entries
+    entries = []
+    entry_starts = [(m.start(), m.group(1)) for m in re.finditer(r'(@\w+)\{', main_bib_content)]
+
+    for i, (start, entry_type) in enumerate(entry_starts):
+        key_match = re.match(r'@\w+\{([^,\s]+)', main_bib_content[start:])
+        if not key_match:
+            continue
+        entry_key = key_match.group(1).strip()
+
+        if i + 1 < len(entry_starts):
+            end = entry_starts[i + 1][0]
+        else:
+            end = len(main_bib_content)
+
+        entry_text = main_bib_content[start:end].strip()
+        if not entry_text.endswith('}'):
+            last_brace = entry_text.rfind('}')
+            if last_brace > 0:
+                entry_text = entry_text[:last_brace + 1]
+
+        entries.append((entry_text, entry_key))
+
+    # Filter entries to only include cited ones
+    filtered_entries = []
+    found_citations = set()
+
+    for entry_text, entry_key in entries:
+        entry_key = entry_key.strip()
+        if entry_key in citations:
+            filtered_entries.append(entry_text)
+            found_citations.add(entry_key)
+
+    # Check for missing citations
+    missing = citations - found_citations
+    if missing:
+        print(f"[WARN] Citations not found in references.bib: {', '.join(sorted(missing)[:10])}")
+        if len(missing) > 10:
+            print(f"       ... and {len(missing) - 10} more")
+
+    # Write filtered bibliography
+    content = [
+        "% AUTO-GENERATED FILE - DO NOT EDIT",
+        f"% Filtered bibliography for {paper_name}",
+        "% Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py",
+        "",
+    ]
+    content.extend(filtered_entries)
+
+    output_bib_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_bib_path, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(content))
+
+    return len(filtered_entries)
 
 
 def update_paper_frontmatter(paper_path: Path, new_bib_path: str) -> bool:
