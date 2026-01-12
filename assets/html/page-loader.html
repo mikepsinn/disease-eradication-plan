@@ -168,11 +168,9 @@
 
   // Hide when page is fully loaded
   if (document.readyState === 'complete') {
-    setTimeout(hideLoader, 200);
+    hideLoader();
   } else {
-    window.addEventListener('load', function() {
-      setTimeout(hideLoader, 200);
-    });
+    window.addEventListener('load', hideLoader);
   }
 })();
 </script>
