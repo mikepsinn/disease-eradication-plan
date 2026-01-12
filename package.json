@@ -35,6 +35,7 @@
   },
   "scripts": {
     "generate:everything": "python scripts/generate-everything-parameters-variables-calculations-references.py",
+    "render:economics:pdf": "python scripts/render-quarto.py economics --to pdf",
     "audit-hardcoded": "tsx scripts/audit-hardcoded-all.ts",
     "preview:economics": "python scripts/render-quarto.py economics --preview",
     "render:website": "python scripts/render-quarto.py book --to html",
@@ -114,7 +115,6 @@
     "validate:pre-render": "python scripts/pre-render-validation.py",
     "validate:post-render": "python scripts/post-render-validation.py",
     "render:economics": "python scripts/render-quarto.py economics --to html",
-    "render:economics:pdf": "python scripts/render-quarto.py economics --to pdf",
     "render:wishocracy": "python scripts/render-quarto.py wishocracy",
     "render:wishocracy:pdf": "python scripts/render-quarto.py wishocracy --to pdf",
     "render:iab": "python scripts/render-quarto.py iab",
