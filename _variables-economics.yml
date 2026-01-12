@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (321 entries)
+# Contains only variables used in this paper (315 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 adaptable_trial_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient"
@@ -535,9 +535,101 @@ dfda_direct_funding_queue_clearance_npv_latex: '$$
 
   \begin{aligned}
 
-  NPV_{direct} \\
+  Funding_{direct,DFDA} = ANNUAL_FUNDING \times [(1 - (1 + r)^-T) / r] where T = queue
+  clearance time = \$475B
 
-  &= \$21.76B \times \frac{1 - 1.03^{-46.5}}{0.03} \approx \$541.9B
+  \\[0.5em]
+
+  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  = \$21.8B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} =
+  36
+
+  \\[0.5em]
+
+  \text{where } Time = \frac{Diseases}{New} = \frac{6{,}650}{15} = 443
+
+  \\[0.5em]
+
+  \text{where } Diseases = Rare_{global} + -1 = 7{,}000 + -1 = 6{,}650
+
+  \\[0.5em]
+
+  \text{where } Multiplier_{DFDA} = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{23.4M}{1.9M}
+  = 12.3
+
+  \\[0.5em]
+
+  \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929}
+  = 23.4M
+
+  \\[0.5em]
+
+  \text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M
+  = \$21.7B
+
+  \\[0.5em]
+
+  \text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} +
+  Cost_{DFDA} + Cost_{DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+
+  \\[0.5em]
+
+  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  = \$21.8B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
 
   \end{aligned}
 
@@ -589,12 +681,12 @@ dfda_efficacy_lag_elimination_deaths_averted_latex: '$$
 
   \begin{aligned}
 
-  D_{total} \\
+  Deaths_{DFDA} \\
 
-  &= 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)}
+  &= ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
   \\
 
-  &= 413.4M
+  &= 416M
 
   \end{aligned}
 
@@ -657,7 +749,16 @@ dfda_efficacy_lag_elimination_yld_latex: '$$
   $$'
 dfda_efficacy_lag_elimination_yll_latex: '$$
 
-  YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
+  \begin{aligned}
+
+  Delay_{DFDA} = DEATHS_TOTAL \times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B
+
+  \\[0.5em]
+
+  \text{where } Deaths_{DFDA} = ANNUAL_DEATHS \times EFFICACY_LAG_YEARS \times EVENTUALLY_AVOIDABLE_DEATH_PCT
+  = 416M
+
+  \end{aligned}
 
   $$'
 dfda_first_treatments_per_year: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_first_treatments_per_year"
@@ -743,10 +844,27 @@ dfda_npv_benefit_rd_only_latex: '$$
 
   \begin{aligned}
 
-  PV_{benefits} \\
+  Benefit_{DFDA,RD} = Sum of discounted annual net R&D savings with linear adoption
+  ramp = \$389B
 
-  &= \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
-  \text{ (5-year linear adoption ramp)}
+  \\[0.5em]
+
+  \text{where } Savings_{net,ann} = Benefit_{DFDA,ann} - Cost_{DFDA,ann} = \$58.6B
+  - \$40M = \$58.6B
+
+  \\[0.5em]
+
+  \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B
+  \times 97.7\% = \$58.6B
+
+  \\[0.5em]
+
+  \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+
+  \\[0.5em]
+
+  \text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} +
+  Cost_{DFDA} + Cost_{DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 
   \end{aligned}
 
@@ -1098,7 +1216,83 @@ dfda_trial_capacity_plus_efficacy_lag_dalys: '<a href="/knowledge/appendix/param
   DALYs (95% CI: 361B DALYs-877B DALYs)</a>'
 dfda_trial_capacity_plus_efficacy_lag_dalys_latex: '$$
 
-  DALYs_{averted} = 2.88B \times 92.1\% \times 207 = 549B
+  \begin{aligned}
+
+  DALYs_{DFDA} = DALYs_{ann} \times DALYs \times Capacity_{DFDA} = 2.88B \times 92.6\%
+  \times 212 = 565B
+
+  \\[0.5em]
+
+  \text{where } Capacity_{DFDA} = Ratio_{DFDA} + Delay = 204 + 8.2 = 212
+
+  \\[0.5em]
+
+  \text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT \times (1 -
+  1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204
+
+  \\[0.5em]
+
+  \text{where } Status = Time \times 0.5 = 443 \times 0.5 = 222
+
+  \\[0.5em]
+
+  \text{where } Time = \frac{Diseases}{New} = \frac{6{,}650}{15} = 443
+
+  \\[0.5em]
+
+  \text{where } Diseases = Rare_{global} + -1 = 7{,}000 + -1 = 6{,}650
+
+  \\[0.5em]
+
+  \text{where } Multiplier_{DFDA} = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{23.4M}{1.9M}
+  = 12.3
+
+  \\[0.5em]
+
+  \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929}
+  = 23.4M
+
+  \\[0.5em]
+
+  \text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M
+  = \$21.7B
+
+  \\[0.5em]
+
+  \text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} +
+  Cost_{DFDA} + Cost_{DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+
+  \\[0.5em]
+
+  \text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  = \$21.8B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \end{aligned}
 
   $$'
 dfda_trial_capacity_plus_efficacy_lag_economic_value: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value"
@@ -1571,7 +1765,15 @@ dfda_trial_cost_reduction_pct: '<a href="/knowledge/appendix/parameters-and-calc
   97.5%-98.9%)</a>'
 dfda_trial_cost_reduction_pct_latex: '$$
 
-  R_{pct} = 1 - \frac{\$1{,}200}{\$41{,}000} = 97.07\%
+  \begin{aligned}
+
+  Reduction_{DFDA} \\
+
+  &= 1 - (DFDA_COST / TRADITIONAL_COST) \\
+
+  &= 97.7\%
+
+  \end{aligned}
 
   $$'
 dfda_trials_per_year_capacity: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dfda_trials_per_year_capacity"
@@ -1765,7 +1967,37 @@ dih_treasury_to_medical_research_annual: '<span class="parameter-definition" tit
   Bond payouts and IAB political incentive mechanism) | Unit: USD/year | Core definition">$21.8B</span>'
 dih_treasury_to_medical_research_annual_latex: '$$
 
-  ResearchFunding = \$27.2B - \$2.72B - \$2.72B = \$21.76B
+  \begin{aligned}
+
+  Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING
+  = \$21.8B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\%
+  = \$2.72B
+
+  \\[0.5em]
+
+  \text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T
+  \times 1\% = \$27.2B
+
+  \end{aligned}
 
   $$'
 dih_treasury_trial_subsidies_annual: '<a href="/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_annual"
@@ -2027,11 +2259,6 @@ efficacy_lag_years: '<a href="/knowledge/appendix/parameters-and-calculations#se
   | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION | Unit: years | Click to view
   details, calculation & sources">8.2 years (95% CI: 4.85 years-11.5 years)</a>'
 efficacy_lag_years_cite: '@bio-clinical-development-2021'
-efficacy_lag_years_latex: '$$
-
-  t_{lag} = 10.5 - 2.3 = 8.2 \text{ years}
-
-  $$'
 eventually_avoidable_daly_pct: '<span class="parameter-definition" title="Percentage
   of DALYs that are eventually avoidable with sufficient biomedical research. Uses
   same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions
@@ -2044,11 +2271,6 @@ eventually_avoidable_death_pct: '<span class="parameter-definition" title="Perce
   (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable
   vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial
   disease complexity. | Unit: percentage | Core definition">92.6% (95% CI: 50%-98%)</span>'
-eventually_avoidable_death_pct_latex: '$$
-
-  P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%
-
-  $$'
 exploration_ratio: '<a href="/knowledge/appendix/parameters-and-calculations#sec-exploration_ratio"
   class="parameter-link" data-source-ref="/knowledge/problem/untapped-therapeutic-frontier.qmd"
   data-source-type="calculated" data-confidence="high" title="Fraction of possible
@@ -2079,20 +2301,6 @@ fundamentally_unavoidable_death_pct: '<span class="parameter-definition" title="
   of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily
   accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all
   disease categories. | Unit: percentage | Core definition">7.37%</span>'
-fundamentally_unavoidable_death_pct_latex: '$$
-
-  \begin{aligned}
-
-  P_{\text{unavoidable}} \\
-
-  &= \sum_{\text{categories}} (\text{disease burden} \times (1 - \text{max cure rate}))
-  \\
-
-  &= 7.91\%
-
-  \end{aligned}
-
-  $$'
 givewell_cost_per_life_max: '<a href="/knowledge/appendix/parameters-and-calculations#sec-givewell_cost_per_life_max"
   class="parameter-link" data-source-ref="givewell-cost-per-life-saved" data-source-type="external"
   data-confidence="high" title="GiveWell cost per life saved (Against Malaria Foundation)
@@ -2572,18 +2780,8 @@ nih_standard_research_cost_per_qaly: '<a href="/knowledge/appendix/parameters-an
 nih_standard_research_cost_per_qaly_cite: '@standard-medical-research-roi'
 npv_discount_rate_standard: '<span class="parameter-definition" title="Standard discount
   rate for NPV analysis (3% annual, social discount rate) | Unit: rate | Core definition">3%</span>'
-npv_discount_rate_standard_latex: '$$
-
-  r = 0.03 \text{ (discount rate)}
-
-  $$'
 npv_time_horizon_years: '<span class="parameter-definition" title="Standard time horizon
   for NPV analysis | Unit: years | Core definition">10 years</span>'
-npv_time_horizon_years_latex: '$$
-
-  T = 10 \text{ (time horizon, years)}
-
-  $$'
 peace_dividend_annual_societal_benefit: '<a href="/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_annual_societal_benefit"
   class="parameter-link" data-source-ref="/knowledge/appendix/peace-dividend-calculations.qmd"
   data-source-type="calculated" data-confidence="high" title="Annual peace dividend
@@ -2727,11 +2925,6 @@ peace_dividend_direct_fiscal_savings: '<a href="/knowledge/appendix/parameters-a
   data-confidence="high" title="Direct fiscal savings from 1% military spending reduction
   (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING | Unit: USD/year
   | Click to view details, calculation & sources">$27.2B</a>'
-peace_dividend_direct_fiscal_savings_latex: '$$
-
-  PeaceDividend_{fiscal} = \$27.2B
-
-  $$'
 pharma_drug_development_cost_current: '<a href="/knowledge/appendix/parameters-and-calculations#sec-pharma_drug_development_cost_current"
   class="parameter-link" data-source-ref="drug-development-cost" data-source-type="external"
   data-peer-reviewed="true" data-confidence="high" title="Average cost to develop
@@ -4435,13 +4628,11 @@ unexplored_ratio_latex: '$$
 
   \begin{aligned}
 
-  \text{Unexplored} \\
+  Ratio = 1 - EXPLORATION_RATIO = 99.7\%
 
-  &= 1 - \text{Exploration Ratio} \\
+  \\[0.5em]
 
-  &= 1 - 0.00342 \\
-
-  &= 99.66\%
+  \text{where } Drug = Safe \times Trials_{dis} = 9{,}500 \times 1{,}000 = 9.5M
 
   \end{aligned}
 

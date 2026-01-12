@@ -955,7 +955,6 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     source_type="definition",  # This is a policy-derived value (1% of military spending)
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
-    latex=r"PeaceDividend_{fiscal} = \$27.2B",
     description="Direct fiscal savings from 1% military spending reduction (high confidence)",
     display_name="Direct Fiscal Savings from 1% Military Spending Reduction",
     unit="USD/year",
@@ -1177,7 +1176,6 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
     unit="ratio",
     formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-    latex=r"\frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4",
     confidence="high",
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
     inputs=['FDA_PHASE_1_TO_APPROVAL_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
@@ -1482,7 +1480,6 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     display_name="dFDA Trial Cost Reduction Percentage",
     unit="percentage",
     formula="1 - (DFDA_COST / TRADITIONAL_COST)",
-    latex=r"R_{pct} = 1 - \frac{\$1{,}200}{\$41{,}000} = 97.07\%",
     # Derived from: DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT ($1,200) vs TRADITIONAL_PHASE3_COST_PER_PATIENT ($41,000)
     # This matches DFDA_TRIAL_COST_REDUCTION_FACTOR = 34× (which is the inverse: $41K / $1.2K)
     # RECOVERY trial achieved 82× (98.8%), so 97% is conservative relative to historical evidence
@@ -1763,7 +1760,6 @@ UNEXPLORED_RATIO = Parameter(
     display_name="Unexplored Therapeutic Frontier",
     unit="percentage",
     formula="1 - EXPLORATION_RATIO",
-    latex=r"\text{Unexplored} = 1 - \text{Exploration Ratio} = 1 - 0.00342 = 99.66\%",
     keywords=["unexplored", "untapped", "therapeutic frontier", "opportunity", "discovery"],
     inputs=["TESTED_RELATIONSHIPS_ESTIMATE", "DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
     compute=lambda ctx: 1 - (ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"])
@@ -2172,7 +2168,6 @@ EFFICACY_LAG_YEARS = Parameter(
     display_name="Regulatory Delay for Efficacy Testing Post-Safety Verification",
     unit="years",
     formula="TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
-    latex=r"t_{lag} = 10.5 - 2.3 = 8.2 \text{ years}",
     confidence="medium",  # Downgraded: survivor bias + therapeutic area heterogeneity
     last_updated="2021",
     peer_reviewed=True,
@@ -2281,7 +2276,6 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
     display_name="Fundamentally Unavoidable Death Percentage",
     unit="percentage",
     formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
-    latex=r"P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{disease burden} \times (1 - \text{max cure rate})) = 7.91\%",
     confidence="medium",
 )  # ~7.9% unavoidable with aging_related at 0.99
 
@@ -2292,7 +2286,6 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     display_name="Eventually Avoidable Death Percentage",
     unit="percentage",
     formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
-    latex=r"P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%",
     confidence="low",  # Downgraded: major assumption with genuine uncertainty
     distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
     confidence_interval=(0.50, 0.98),  # Skeptical floor: 50% (aging+complex diseases intractable)
@@ -2360,7 +2353,6 @@ DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
     display_name="Total Deaths from Disease Eradication Delay",
     unit="deaths",
     formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
-    latex=r"D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M",
     confidence="medium",
     keywords=["disease eradication", "regulatory delay", "efficacy lag", "primary estimate", "eventually avoidable"],
     # Uncertainty derived from inputs (DEATHS_DAILY × EFFICACY_LAG × AVOIDABILITY)
@@ -2511,7 +2503,6 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
     display_name="Years of Life Lost from Disease Eradication Delay",
     unit="years",
     formula="DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
-    latex=r"YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B",
     confidence="medium",
     keywords=["disease eradication", "YLL", "years of life lost", "disease burden", "mortality burden"],
     inputs=["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED", "GLOBAL_LIFE_EXPECTANCY_2024", "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"],
@@ -2597,7 +2588,6 @@ EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
     display_name="Total Economic Loss from Historical Progress Delays",
     unit="USD",
     formula="DEATHS_TOTAL × YLL × VSLY",
-    latex=r"Loss_{total} = 98.4M \times 17 \times \$150k = \$251T",
     confidence="high",
     keywords=["$251t", "historical", "total", "one-time", "existing drugs"],
     inputs=['GLOBAL_LIFE_EXPECTANCY_2024', 'EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
@@ -2721,7 +2711,6 @@ THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
     display_name="Thalidomide Survivors Per Event",
     unit="cases",
     formula="US_CASES × (1 - MORTALITY_RATE)",
-    latex=r"900 \text{ (cases)} \times 60\% \text{ (survival)} = 540 \text{ survivors}",
     confidence="medium",
     keywords=["thalidomide", "survivors"],
     inputs=['THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_CASES_PREVENTED'],
@@ -3360,7 +3349,6 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
     description="Standard discount rate for NPV analysis (3% annual, social discount rate)",
     display_name="Standard Discount Rate for NPV Analysis",
     unit="rate",
-    latex=r"r = 0.03 \text{ (discount rate)}",
     keywords=["3%", "yearly", "npv", "discount", "standard", "pa", "per annum"],
     distribution="fixed",  # Methodological choice - not empirical uncertainty
     # Economist rationale: Using 3% social discount rate per:
@@ -3380,7 +3368,6 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
 NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
     display_name="Standard Time Horizon for NPV Analysis",
-    latex=r"T = 10 \text{ (time horizon, years)}",
     keywords=["npv", "time", "horizon", "years"],
     distribution="fixed",  # Methodological choice: standard 10-year NPV analysis window
 )  # Standard 10-year analysis window (T)
@@ -3491,7 +3478,6 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     display_name="Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
     unit="USD",
     formula="OPEX × [(1 - (1 + r)^-T) / r]",
-    latex=r"PV_{opex} = \$0.04005B \times \frac{1 - 1.08^{-10}}{0.08} \approx \$0.269B",
     keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly"],
     inputs=['DFDA_NPV_ANNUAL_OPEX_TOTAL', 'NPV_DISCOUNT_RATE_STANDARD', 'NPV_TIME_HORIZON_YEARS'],
     compute=lambda ctx: ctx["DFDA_NPV_ANNUAL_OPEX_TOTAL"]
@@ -3527,7 +3513,6 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
     formula="Sum of discounted annual net R&D savings with linear adoption ramp",
-    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"],
     inputs=['DFDA_NET_SAVINGS_RD_ONLY_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD'],
     compute=lambda ctx: sum(
@@ -3717,7 +3702,6 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
-    latex=r"ResearchFunding = \$27.2B - \$2.72B - \$2.72B = \$21.76B",
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
     inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT', 'IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"] - ctx["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"],
@@ -4198,7 +4182,6 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     display_name="Total DALYs from Full Timeline Shift",
     unit="DALYs",
     formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
-    latex=r"DALYs_{averted} = 2.88B \times 92.1\% \times 207 = 549B",
     confidence="low",
     keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag", "WHO", "GBD"],
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
@@ -4793,7 +4776,6 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     display_name="Global Military Spending After 1% Treaty Reduction",
     unit="USD/year",
     formula="MILITARY_SPENDING × (1 - REDUCTION)",
-    latex=r"PostTreaty_{military} = \$2.72T \times 0.99 = \$2.69T",
     keywords=["2024", "dod", "pentagon", "deployment rate", "market penetration", "participation rate", "national security"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * (1 - ctx["TREATY_REDUCTION_PCT"]),
@@ -5094,7 +5076,6 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
-    latex=r"NPV_{direct} = \$21.76B \times \frac{1 - 1.03^{-46.5}}{0.03} \approx \$541.9B",
     keywords=["philanthropy", "direct funding", "alternative", "open philanthropy", "gates foundation", "npv", "queue clearance"],
     inputs=['DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
@@ -5248,7 +5229,6 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     display_name="Misallocation Factor: Cost to Kill vs Cost to Save",
     unit="ratio",
     formula="COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
-    latex=r"Misallocation = \frac{\$46.4M}{\$16,071} \approx 2,889x",
     keywords=["multiple", "fatalities", "casualties", "deaths", "investigation", "r&d", "science"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL'],
     compute=lambda ctx: (ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"])
@@ -5493,7 +5473,6 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     display_name="Lifetime Benefit for Age 30 Baseline Scenario",
     unit="USD",
     formula="Total lifetime health gains from 1% treaty",
-    latex=r"Benefit = \$4,300,000",
     keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"]
 )
 
@@ -6025,7 +6004,6 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
     display_name="Personal Lifetime Wealth (Age 30, 1% Treaty)",
     unit="usd",
     formula="NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
-    latex=r"\text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}",
     confidence="medium",
     keywords=["personal", "lifetime", "wealth", "individual benefit", "age 30", "npv", "life extension"],
     inputs=[

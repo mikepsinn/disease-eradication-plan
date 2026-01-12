@@ -625,9 +625,36 @@
   \ | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T\
   \ = queue clearance time | Unit: USD | Click to view details, calculation & sources\"\
   >$475B (95% CI: $211B-$651B)</a>"
-"dfda_direct_funding_queue_clearance_npv_latex": "$$\n\\begin{aligned}\nNPV_{direct}\
-  \ \\\\\n&= \\$21.76B \\times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B\n\
-  \\end{aligned}\n$$"
+"dfda_direct_funding_queue_clearance_npv_latex": "$$\n\\begin{aligned}\nFunding_{direct,DFDA}\
+  \ = ANNUAL_FUNDING \\times [(1 - (1 + r)^-T) / r] where T = queue clearance time\
+  \ = \\$475B\n\\\\[0.5em]\n\\text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT\
+  \ - IAB_POLITICAL_INCENTIVE_FUNDING = \\$21.8B\n\\\\[0.5em]\n\\text{where } Funding_{ann}\
+  \ = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\
+  \\\\[0.5em]\n\\text{where } Victory_{annual} = Funding_{ann} \\times Funding = \\\
+  $27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann}\
+  \ \\times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\\
+  text{where } Funding_{ann} = Funding_{ann} \\times Funding = \\$27.2B \\times 10\\\
+  % = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann} \\\
+  times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where\
+  \ } Time_{DFDA} = \\frac{Time}{Multiplier_{DFDA}} = \\frac{443}{12.3} = 36\n\\\\\
+  [0.5em]\n\\text{where } Time = \\frac{Diseases}{New} = \\frac{6{,}650}{15} = 443\n\
+  \\\\[0.5em]\n\\text{where } Diseases = Rare_{global} + -1 = 7{,}000 + -1 = 6{,}650\n\
+  \\\\[0.5em]\n\\text{where } Multiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}}\
+  \ = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } Fundable_{ann} = \\\
+  frac{Treasury_{ann}}{Cost_{DFDA}} = \\frac{\\$21.7B}{\\$929} = 23.4M\n\\\\[0.5em]\n\
+  \\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \\$21.8B - \\\
+  $40M = \\$21.7B\n\\\\[0.5em]\n\\text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA}\
+  \ + Cost_{infra,DFDA} + Cost_{DFDA} + Cost_{DFDA} = \\$15M + \\$10M + \\$8M + \\\
+  $5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Treasury_{ann} = TREATY_FUNDING\
+  \ - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = \\$21.8B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Victory_{annual} = Funding_{ann}\
+  \ \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Funding_{ann}\
+  \ \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
 "dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from direct\
@@ -776,9 +803,9 @@
   \ ~7.9%). | Calculated from 2 inputs | ~ Medium confidence | Formula: ANNUAL_DEATHS\
   \ × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to\
   \ view details, calculation & sources\">416M deaths (95% CI: 225M deaths-630M deaths)</a>"
-"dfda_efficacy_lag_elimination_deaths_averted_latex": "$$\n\\begin{aligned}\nD_{total}\
-  \ \\\\\n&= 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\\
-  text{ (avoidable)} \\\\\n&= 413.4M\n\\end{aligned}\n$$"
+"dfda_efficacy_lag_elimination_deaths_averted_latex": "$$\n\\begin{aligned}\nDeaths_{DFDA}\
+  \ \\\\\n&= ANNUAL_DEATHS \\times EFFICACY_LAG_YEARS \\times EVENTUALLY_AVOIDABLE_DEATH_PCT\
+  \ \\\\\n&= 416M\n\\end{aligned}\n$$"
 "dfda_efficacy_lag_elimination_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
@@ -816,8 +843,10 @@
   \ 3 inputs | ~ Medium confidence | Formula: DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)\
   \ | Unit: years | Click to view details, calculation & sources\">7.07B years (95%\
   \ CI: 4.21B years-9.68B years)</a>"
-"dfda_efficacy_lag_elimination_yll_latex": "$$\nYLL = 413.4M \\times 17 \\text{ (years\
-  \ lost)} = 7.03B\n$$"
+"dfda_efficacy_lag_elimination_yll_latex": "$$\n\\begin{aligned}\nDelay_{DFDA} = DEATHS_TOTAL\
+  \ \\times (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B\n\\\\[0.5em]\n\\text{where\
+  \ } Deaths_{DFDA} = ANNUAL_DEATHS \\times EFFICACY_LAG_YEARS \\times EVENTUALLY_AVOIDABLE_DEATH_PCT\
+  \ = 416M\n\\end{aligned}\n$$"
 "dfda_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
@@ -910,9 +939,15 @@
   \ High confidence | Formula: Sum of discounted annual net R&D savings with linear\
   \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$389B\
   \ (95% CI: $327B-$485B)</a>"
-"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nPV_{benefits} \\\\\n&= \\\
-  sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\\
-  $249.3B \\text{ (5-year linear adoption ramp)}\n\\end{aligned}\n$$"
+"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nBenefit_{DFDA,RD} = Sum of\
+  \ discounted annual net R&D savings with linear adoption ramp = \\$389B\n\\\\[0.5em]\n\
+  \\text{where } Savings_{net,ann} = Benefit_{DFDA,ann} - Cost_{DFDA,ann} = \\$58.6B\
+  \ - \\$40M = \\$58.6B\n\\\\[0.5em]\n\\text{where } Benefit_{DFDA,ann} = Trials_{ann}\
+  \ \\times Reduction_{DFDA} = \\$60B \\times 97.7\\% = \\$58.6B\n\\\\[0.5em]\n\\\
+  text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\\%\n\\\
+  \\[0.5em]\n\\text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA}\
+  \ + Cost_{DFDA} + Cost_{DFDA} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\
+  \\end{aligned}\n$$"
 "dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\
@@ -940,8 +975,10 @@
   \ of annual opex over 10 years (NPV formula) | Calculated from 3 inputs | ✓ High\
   \ confidence | Formula: OPEX × [(1 - (1 + r)^-T) / r] | Unit: USD | Click to view\
   \ details, calculation & sources\">$342M (95% CI: $235M-$473M)</a>"
-"dfda_npv_pv_annual_opex_latex": "$$\n\\begin{aligned}\nPV_{opex} \\\\\n&= \\$0.04005B\
-  \ \\times \\frac{1 - 1.08^{-10}}{0.08} \\approx \\$0.269B\n\\end{aligned}\n$$"
+"dfda_npv_pv_annual_opex_latex": "$$\n\\begin{aligned}\nOPEX_{DFDA,ann} = OPEX \\\
+  times [(1 - (1 + r)^-T) / r] = \\$342M\n\\\\[0.5em]\n\\text{where } OPEX_{DFDA,total}\
+  \ = OPEX_{DFDA,ann} + OPEX_{opex,ann} = \\$18.9M + \\$21.1M = \\$40M\n\\end{aligned}\n\
+  $$"
 "dfda_npv_total_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_total_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV cost\
@@ -1265,8 +1302,29 @@
   \ | Calculated from 3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN\
   \ × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT | Unit: DALYs | Click to view\
   \ details, calculation & sources\">565B DALYs (95% CI: 361B DALYs-877B DALYs)</a>"
-"dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\nDALYs_{averted} = 2.88B\
-  \ \\times 92.1\\% \\times 207 = 549B\n$$"
+"dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\n\\begin{aligned}\nDALYs_{DFDA}\
+  \ = DALYs_{ann} \\times DALYs \\times Capacity_{DFDA} = 2.88B \\times 92.6\\% \\\
+  times 212 = 565B\n\\\\[0.5em]\n\\text{where } Capacity_{DFDA} = Ratio_{DFDA} + Delay\
+  \ = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } Ratio_{DFDA} = STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT\
+  \ \\times (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER) = 204\n\\\\[0.5em]\n\\text{where\
+  \ } Status = Time \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where\
+  \ } Time = \\frac{Diseases}{New} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where\
+  \ } Diseases = Rare_{global} + -1 = 7{,}000 + -1 = 6{,}650\n\\\\[0.5em]\n\\text{where\
+  \ } Multiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}} = \\frac{23.4M}{1.9M}\
+  \ = 12.3\n\\\\[0.5em]\n\\text{where } Fundable_{ann} = \\frac{Treasury_{ann}}{Cost_{DFDA}}\
+  \ = \\frac{\\$21.7B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Treasury_{ann}\
+  \ = Treasury_{ann} - Cost_{DFDA,ann} = \\$21.8B - \\$40M = \\$21.7B\n\\\\[0.5em]\n\
+  \\text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} +\
+  \ Cost_{DFDA} + Cost_{DFDA} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\
+  \\\\[0.5em]\n\\text{where } Treasury_{ann} = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING\
+  \ = \\$21.8B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann} \\\
+  times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where\
+  \ } Victory_{annual} = Funding_{ann} \\times Funding = \\$27.2B \\times 10\\% =\
+  \ \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann} \\times\
+  \ Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Funding_{ann} \\times Funding = \\$27.2B \\times 10\\% = \\\
+  $2.72B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty}\
+  \ = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
 "dfda_trial_capacity_plus_efficacy_lag_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total economic value from the combined dFDA timeline\
@@ -1441,8 +1499,8 @@
   \ Calculated from 2 inputs | ✓ High confidence | Formula: 1 - (DFDA_COST / TRADITIONAL_COST)\
   \ | Unit: percentage | Click to view details, calculation & sources\">97.7% (95%\
   \ CI: 97.5%-98.9%)</a>"
-"dfda_trial_cost_reduction_pct_latex": "$$\nR_{pct} = 1 - \\frac{\\$1{,}200}{\\$41{,}000}\
-  \ = 97.07\\%\n$$"
+"dfda_trial_cost_reduction_pct_latex": "$$\n\\begin{aligned}\nReduction_{DFDA} \\\\\
+  \n&= 1 - (DFDA_COST / TRADITIONAL_COST) \\\\\n&= 97.7\\%\n\\end{aligned}\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_upfront_build\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -1520,8 +1578,16 @@
   Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive\
   \ Alignment Bond payouts and IAB political incentive mechanism) | Unit: USD/year\
   \ | Core definition\">$21.8B</span>"
-"dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.2B -\
-  \ \\$2.72B - \\$2.72B = \\$21.76B\n$$"
+"dih_treasury_to_medical_research_annual_latex": "$$\n\\begin{aligned}\nTreasury_{ann}\
+  \ = TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = \\$21.8B\n\\\
+  \\[0.5em]\n\\text{where } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty}\
+  \ = \\$2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Victory_{annual}\
+  \ = Funding_{ann} \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\
+  \\text{where } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\\
+  $2.72T \\times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Funding_{ann}\
+  \ \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
@@ -1684,7 +1750,6 @@
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
   \ health gains from 1% treaty | Unit: USD | Click to view details, calculation &\
   \ sources\">$4.30M</a>"
-"effective_hourly_rate_lifetime_benefit_latex": "$$\nBenefit = \\$4,300,000\n$$"
 "efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Regulatory\
@@ -1696,7 +1761,6 @@
   \ | Unit: years | Click to view details, calculation & sources\">8.2 years (95%\
   \ CI: 4.85 years-11.5 years)</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
-"efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
 "emerging_modality_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-emerging_modality_combinations\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Total emerging modality combinations (gene therapy\
@@ -1739,8 +1803,6 @@
   \ aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases,\
   \ (3) multifactorial disease complexity. | Unit: percentage | Core definition\"\
   >92.6% (95% CI: 50%-98%)</span>"
-"eventually_avoidable_death_pct_latex": "$$\nP_{\\text{avoidable}} = 1 - 0.0791 =\
-  \ 92.09\\%\n$$"
 "existing_drugs_efficacy_lag_deaths_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-existing_drugs_efficacy_lag_deaths_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total deaths\
@@ -1760,8 +1822,9 @@
   \ of eliminating Phase 2-4 delay. Excludes innovation acceleration effects. | Calculated\
   \ from 4 inputs | ✓ High confidence | Formula: DEATHS_TOTAL × YLL × VSLY | Unit:\
   \ USD | Click to view details, calculation & sources\">$251T (95% CI: $109T-$422T)</a>"
-"existing_drugs_efficacy_lag_economic_loss_latex": "$$\nLoss_{total} = 98.4M \\times\
-  \ 17 \\times \\$150k = \\$251T\n$$"
+"existing_drugs_efficacy_lag_economic_loss_latex": "$$\n\\begin{aligned}\nDelay =\
+  \ DEATHS_TOTAL \\times YLL \\times VSLY = \\$251T\n\\\\[0.5em]\n\\text{where } Deaths_{total}\
+  \ = Delay \\times 12000000 = 8.2 \\times 12000000 = 98.4M\n\\end{aligned}\n$$"
 "exploration_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-exploration_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
@@ -1811,16 +1874,13 @@
   \ from 2 inputs | ✓ High confidence | Formula: FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR\
   \ ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS | Unit: ratio | Click to view details,\
   \ calculation & sources\">36.4:1 (95% CI: 24.3:1-48:1)</a>"
-"fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\begin{aligned}\n\\frac{9.1\
-  \ \\text{ years} \\times 12 \\text{ months/year}}{3 \\text{ months}} \\\\\n&= 36.4\n\
-  \\end{aligned}\n$$"
+"fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\begin{aligned}\nMultiplier_{RD}\
+  \ \\\\\n&= FDA_PHASE_1_TO_APPROVAL_YEARS \\times MONTHS_PER_YEAR \\div OXFORD_RECOVERY_TRIAL_DURATION_MONTHS\
+  \ \\\\\n&= 36.4\n\\end{aligned}\n$$"
 "fundamentally_unavoidable_death_pct": "<span class=\"parameter-definition\" title=\"\
   Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology\
   \ (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential))\
   \ across all disease categories. | Unit: percentage | Core definition\">7.37%</span>"
-"fundamentally_unavoidable_death_pct_latex": "$$\n\\begin{aligned}\nP_{\\text{unavoidable}}\
-  \ \\\\\n&= \\sum_{\\text{categories}} (\\text{disease burden} \\times (1 - \\text{max\
-  \ cure rate})) \\\\\n&= 7.91\\%\n\\end{aligned}\n$$"
 "gene_therapy_disease_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-gene_therapy_disease_combinations\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Gene therapy target-disease combinations (CRISPR,\
@@ -2240,8 +2300,9 @@
   \ spending after 1% treaty reduction | ✓ High confidence | Formula: MILITARY_SPENDING\
   \ × (1 - REDUCTION) | Unit: USD/year | Click to view details, calculation & sources\"\
   >$2.69T</a>"
-"global_military_spending_post_treaty_annual_2024_latex": "$$\nPostTreaty_{military}\
-  \ = \\$2.72T \\times 0.99 = \\$2.69T\n$$"
+"global_military_spending_post_treaty_annual_2024_latex": "$$\n\\begin{aligned}\n\
+  Spending_{mil,ann} \\\\\n&= MILITARY_SPENDING \\times (1 - REDUCTION) \\\\\n&= \\\
+  $2.69T\n\\end{aligned}\n$$"
 "global_nonprofit_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_nonprofit_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"nonprofit-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global nonprofit\
@@ -2535,8 +2596,29 @@
   \ factor: cost to kill vs cost to save | Calculated from 3 inputs | ✓ High confidence\
   \ | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view\
   \ details, calculation & sources\">2.89k:1 (95% CI: 2.48k:1-3.32k:1)</a>"
-"misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
-  $16,071} \\approx 2,889x\n$$"
+"misallocation_factor_death_vs_saving_latex": "$$\n\\begin{aligned}\nCost = COST_PER_DEATH\
+  \ \\div COST_PER_LIFE_SAVED = 2{,}890\n\\\\[0.5em]\n\\text{where } Deaths_{total}\
+  \ = Deaths_{combat,ann} + Deaths_{ann} + Deaths_{terror,ann} = 234{,}000 + 2{,}700\
+  \ + 8{,}300 = 245{,}000\n\\\\[0.5em]\n\\text{where } Cost_{indirect,ann} = Cost_{direct,total}\
+  \ + Cost_{indirect,total} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where\
+  \ } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} + Disruption_{trade,ann}\
+  \ + Spending_{mil,ann} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\
+  \\[0.5em]\n\\text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann}\
+  \ + Cost_{human,ann} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where\
+  \ } Cost_{human,ann} = Deaths_{combat,ann} \\times Value = 234{,}000 \\times \\\
+  $10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{human,ann} = Deaths_{ann} \\\
+  times Value = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{human,ann}\
+  \ = Deaths_{terror,ann} \\times Value = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\
+  \\text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}\
+  \ + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}\
+  \ = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\
+  \\text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}\
+  \ + Cost_{trade,ann} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\
+  \\text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}\
+  \ + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \\$100B + \\$2.72T + \\$300B\
+  \ + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Cost_{ann}\
+  \ = \\frac{Spending_{global}}{Lives_{ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K\n\
+  \\end{aligned}\n$$"
 "months_per_year": "<span class=\"parameter-link\" title=\"Parameter: MONTHS_PER_YEAR\"\
   >12</span>"
 "mrna_therapeutic_combinations": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-mrna_therapeutic_combinations\"\
@@ -2583,10 +2665,8 @@
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (3% annual, social discount rate) | Unit: rate\
   \ | Core definition\">3%</span>"
-"npv_discount_rate_standard_latex": "$$\nr = 0.03 \\text{ (discount rate)}\n$$"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
   \ horizon for NPV analysis | Unit: years | Core definition\">10 years</span>"
-"npv_time_horizon_years_latex": "$$\nT = 10 \\text{ (time horizon, years)}\n$$"
 "oxford_recovery_trial_duration_months": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-oxford_recovery_trial_duration_months\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Oxford RECOVERY\
@@ -2684,8 +2764,6 @@
   \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
   \ reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
   \ | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
-"peace_dividend_direct_fiscal_savings_latex": "$$\nPeaceDividend_{fiscal} = \\$27.2B\n\
-  $$"
 "peace_dividend_environmental": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_environmental\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
@@ -2798,8 +2876,24 @@
   \ | Calculated from 2 inputs | ~ Medium confidence | Formula: NPV(peace_dividend\
   \ + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)\
   \ | Unit: usd | Click to view details, calculation & sources\">$494K (95% CI: $194K-$794K)</a>"
-"personal_lifetime_wealth_latex": "$$\n\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\\
-  frac{B_t}{(1+r)^t}\n$$"
+"personal_lifetime_wealth_latex": "$$\n\\begin{aligned}\nTime = NPV(peace_dividend\
+  \ + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)\
+  \ = \\$494K\n\\\\[0.5em]\n\\text{where } Multiplier_{DFDA} = \\frac{Fundable_{ann}}{Trials_{curr}}\
+  \ = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } Fundable_{ann} = \\\
+  frac{Treasury_{ann}}{Cost_{DFDA}} = \\frac{\\$21.7B}{\\$929} = 23.4M\n\\\\[0.5em]\n\
+  \\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \\$21.8B - \\\
+  $40M = \\$21.7B\n\\\\[0.5em]\n\\text{where } Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA}\
+  \ + Cost_{infra,DFDA} + Cost_{DFDA} + Cost_{DFDA} = \\$15M + \\$10M + \\$8M + \\\
+  $5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Treasury_{ann} = TREATY_FUNDING\
+  \ - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = \\$21.8B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Victory_{annual} = Funding_{ann}\
+  \ \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\\\[0.5em]\n\\text{where } Funding_{ann} = Funding_{ann}\
+  \ \\times Funding = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where\
+  \ } Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\\
+  times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
 "per_capita_chronic_disease_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-per_capita_chronic_disease_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"US per capita chronic disease cost | Calculated\
@@ -3190,8 +3284,9 @@
   \ Calculated from 2 inputs | ~ Medium confidence | Formula: US_CASES × (1 - MORTALITY_RATE)\
   \ | Unit: cases | Click to view details, calculation & sources\">540 cases (95%\
   \ CI: 398 cases-698 cases)</a>"
-"thalidomide_survivors_per_event_latex": "$$\n\\begin{aligned}\n900 \\text{ (cases)}\
-  \ \\times 60\\% \\text{ (survival)} \\\\\n&= 540 \\text{ survivors}\n\\end{aligned}\n\
+"thalidomide_survivors_per_event_latex": "$$\n\\begin{aligned}\nThalidomide = US_CASES\
+  \ \\times (1 - MORTALITY_RATE) = 540\n\\\\[0.5em]\n\\text{where } ThalidomideUS\
+  \ = Thalidomide \\times Population = 15{,}000 \\times 6\\% = 900\n\\end{aligned}\n\
   $$"
 "thalidomide_survivor_lifespan": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-thalidomide_survivor_lifespan\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-survivors-health\" data-source-type=\"\
@@ -3906,9 +4001,9 @@
   \ drug-disease space that remains unexplored (>99%) | Calculated from 2 inputs |\
   \ ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click\
   \ to view details, calculation & sources\">99.7% (95% CI: 99.5%-99.8%)</a>"
-"unexplored_ratio_latex": "$$\n\\begin{aligned}\n\\text{Unexplored} \\\\\n&= 1 - \\\
-  text{Exploration Ratio} \\\\\n&= 1 - 0.00342 \\\\\n&= 99.66\\%\n\\end{aligned}\n\
-  $$"
+"unexplored_ratio_latex": "$$\n\\begin{aligned}\nRatio = 1 - EXPLORATION_RATIO = 99.7\\\
+  %\n\\\\[0.5em]\n\\text{where } Drug = Safe \\times Trials_{dis} = 9{,}500 \\times\
+  \ 1{,}000 = 9.5M\n\\end{aligned}\n$$"
 "us_alzheimers_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_alzheimers_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-cost-alzheimers-1300b\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Annual US\
@@ -4075,5 +4170,5 @@
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "total_parameter_count": "390"
-"total_latex_equation_count": "160"
+"total_latex_equation_count": "153"
 "total_citation_count": "149"
