@@ -18,8 +18,8 @@ setup_chart_style()
 # Parameter values
 
 central_value = 97.0
-low = 42
-high = 509
+low = 19
+high = 478
 dist_type = "lognormal"
 display_name = "Pragmatic Trial Median Cost per Patient (PMC Review)"
 unit = "USD/patient"

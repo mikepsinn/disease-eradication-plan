@@ -409,7 +409,7 @@ Why Phase 3 dominates:
 #### The waste
 
 - Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
-- RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient
+- RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
 - **That's an 80-240× markup for bureaucracy**
 
 ## Summary Table

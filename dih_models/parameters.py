@@ -4301,15 +4301,17 @@ CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
 
 # PMC Systematic Review - Pragmatic Trial Costs
 # Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC6508852/
+# Note: 25% of trials <$19/patient, 10 trials >$1,000/patient
+# U.S. median $187, non-U.S. median $27 (2015 USD)
 PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
     97.0,
     source_ref="pmc-pragmatic-trial-cost",
     source_type="external",
-    description="Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $42-$509.",
+    description="Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).",
     display_name="Pragmatic Trial Median Cost per Patient (PMC Review)",
     unit="USD/patient",
     confidence="high",
-    confidence_interval=(42, 509),  # IQR from the study
+    confidence_interval=(19, 478),  # IQR from the study (2015 USD)
     distribution="lognormal",
     keywords=["$97", "pmc", "pragmatic", "trial cost", "median", "embedded"],
 )

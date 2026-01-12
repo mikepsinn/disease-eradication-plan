@@ -50,9 +50,10 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
   - Blood disorders: $200,000-422,000
   - [Average across areas: $41,117](../references.qmd#trial-costs-fda-study)
 
-### Pragmatic Trials (RECOVERY Example)
+### Pragmatic Trials (RECOVERY & Broader Evidence)
 
-- Cost savings of 68-78% compared to traditional trials
+- **Systematic Review**: Median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient across 64 trials [@pmc-pragmatic-trial-cost]
+- **RECOVERY Trial Example**: Cost savings of ~80X compared to traditional trials
 - Utilized existing healthcare infrastructure
 - Minimal additional staff costs
 - Reduced monitoring costs

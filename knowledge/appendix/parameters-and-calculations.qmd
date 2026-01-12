@@ -8259,15 +8259,15 @@ Phase 3 trial total cost (minimum)
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $42-$509.
+Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
 
 **Source**: [PMC - Pragmatic Trial Cost per Patient (Median $97)](../references.qmd#pmc-pragmatic-trial-cost)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$42, $509] • Distribution: Lognormal
+**Technical**: 95% CI: [$19, $478] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $42 and $509 (±241%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $19 and $478 (±237%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

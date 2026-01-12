@@ -1135,11 +1135,11 @@ export const PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT: Parameter = {
   value: 97.0,
   unit: "USD/patient",
   displayName: "Pragmatic Trial Median Cost per Patient (PMC Review)",
-  description: "Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $42-$509.",
+  description: "Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).",
   sourceType: "external",
   sourceRef: "pmc-pragmatic-trial-cost",
   confidence: "high",
-  confidenceInterval: [42.0, 509.0],
+  confidenceInterval: [19.0, 478.0],
 };
 
 export const POLIO_VACCINATION_ROI: Parameter = {

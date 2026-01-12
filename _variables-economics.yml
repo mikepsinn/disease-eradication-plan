@@ -2700,9 +2700,9 @@ phase_1_safety_duration_years_cite: '@bio-clinical-development-2021'
 pmc_pragmatic_trial_median_cost_per_patient: '<a href="/knowledge/appendix/parameters-and-calculations#sec-pmc_pragmatic_trial_median_cost_per_patient"
   class="parameter-link" data-source-ref="pmc-pragmatic-trial-cost" data-source-type="external"
   data-confidence="high" title="Median cost per patient in embedded pragmatic clinical
-  trials (systematic review of 64 trials). IQR: $42-$509. | ✓ High confidence | 95%
-  CI: [$42, $509] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation
-  & sources">$97 (95% CI: $42-$509)</a>'
+  trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD). | ✓ High confidence
+  | 95% CI: [$19, $478] | Dist: Lognormal | Unit: USD/patient | Click to view details,
+  calculation & sources">$97 (95% CI: $19-$478)</a>'
 pmc_pragmatic_trial_median_cost_per_patient_cite: '@pmc-pragmatic-trial-cost'
 political_success_probability: '<a href="/knowledge/appendix/parameters-and-calculations#sec-political_success_probability"
   class="parameter-link" data-source-ref="icbl-ottawa-treaty" data-source-type="external"
