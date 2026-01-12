@@ -29,6 +29,106 @@ from typing import Any, Dict, Optional
 from .formatting import format_parameter_value
 
 
+def extract_distinguishing_suffix(param_name: str, all_input_names: list[str] | None = None) -> str | None:
+    """
+    Extract the distinguishing part of a parameter name when it's part of a group.
+    
+    When multiple parameters share a common prefix (like DFDA_OPEX_*), this returns
+    the unique suffix that distinguishes them (e.g., "platform", "staff", "infra").
+    
+    Args:
+        param_name: Full parameter name like "DFDA_OPEX_PLATFORM_MAINTENANCE"
+        all_input_names: List of sibling parameter names to find common prefix
+        
+    Returns:
+        Distinguishing suffix like "platform" or None if no clear suffix found
+        
+    Examples:
+        >>> extract_distinguishing_suffix("DFDA_OPEX_PLATFORM_MAINTENANCE", 
+        ...     ["DFDA_OPEX_STAFF", "DFDA_OPEX_INFRASTRUCTURE"])
+        "platform"
+        >>> extract_distinguishing_suffix("GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT",
+        ...     ["GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT"])
+        "transport"
+    """
+    if not all_input_names:
+        return None
+    
+    parts = param_name.upper().split('_')
+    
+    # Find common prefix length among all inputs
+    common_prefix_len = 0
+    for i in range(len(parts)):
+        prefix = '_'.join(parts[:i+1]) + '_'
+        # Check if other inputs share this prefix
+        others_share = sum(1 for other in all_input_names 
+                          if other.upper().startswith(prefix) and other != param_name)
+        if others_share > 0:
+            common_prefix_len = i + 1
+        else:
+            break
+    
+    if common_prefix_len == 0 or common_prefix_len >= len(parts):
+        return None
+    
+    # Get the distinguishing parts (after common prefix, before common suffix like "CONFLICT")
+    suffix_parts = parts[common_prefix_len:]
+    
+    # Remove common suffixes that don't distinguish
+    common_suffixes = {'CONFLICT', 'ANNUAL', 'GLOBAL', 'TOTAL', 'COST', 'VALUE'}
+    suffix_parts = [p for p in suffix_parts if p not in common_suffixes]
+    
+    if not suffix_parts:
+        return None
+    
+    # Map to readable short names
+    suffix_map = {
+        'PLATFORM_MAINTENANCE': 'platform',
+        'PLATFORM': 'platform',
+        'MAINTENANCE': 'maint',
+        'STAFF': 'staff',
+        'INFRASTRUCTURE': 'infra',
+        'REGULATORY': 'reg',
+        'COMMUNITY': 'community',
+        'TRANSPORTATION': 'transport',
+        'ENERGY': 'energy',
+        'COMMUNICATIONS': 'comms',
+        'WATER': 'water',
+        'EDUCATION': 'edu',
+        'HEALTHCARE': 'health',
+        'ACTIVE_COMBAT': 'combat',
+        'COMBAT': 'combat',
+        'STATE_VIOLENCE': 'state',
+        'STATE': 'state',
+        'TERROR_ATTACKS': 'terror',
+        'TERROR': 'terror',
+        'SHIPPING': 'shipping',
+        'CURRENCY': 'currency',
+        'CAPITAL': 'capital',
+        'OPPORTUNITY': 'opp',
+        'PTSD': 'PTSD',
+        'REFUGEE': 'refugee',
+        'VETERAN': 'veteran',
+        'ENVIRONMENTAL': 'env',
+        'LOST_HUMAN_CAPITAL': 'human_cap',
+        'LOST_ECONOMIC_GROWTH': 'econ_growth',
+        'HUMAN_CAPITAL': 'human_cap',
+        'ECONOMIC_GROWTH': 'econ_growth',
+    }
+    
+    # Try to match the full suffix first, then progressively shorter
+    suffix_str = '_'.join(suffix_parts)
+    if suffix_str in suffix_map:
+        return suffix_map[suffix_str]
+    
+    # Try first part only
+    if suffix_parts[0] in suffix_map:
+        return suffix_map[suffix_parts[0]]
+    
+    # Fall back to lowercase first part
+    return suffix_parts[0].lower()
+
+
 def smart_title_case(param_name: str) -> str:
     """
     Convert parameter name to title case, preserving common acronyms.
@@ -438,7 +538,11 @@ def create_short_label(display_name: str, param_name: str = "") -> str:
     return f"\\text{{{display_name[:8]}}}"
 
 
-def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
+def create_latex_variable_name(
+    param_name: str, 
+    display_name: str = "",
+    sibling_names: list[str] | None = None
+) -> str:
     """
     Create a meaningful LaTeX variable name from parameter info.
 
@@ -450,7 +554,14 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
     Args:
         param_name: Parameter name like DFDA_ANNUAL_OPEX
         display_name: Human-readable name like "DFDA Annual Operating Expenses"
+        sibling_names: Optional list of sibling parameter names (for finding distinguishing suffix)
     """
+    # First, try to extract a distinguishing suffix if this is part of a group
+    distinguishing = extract_distinguishing_suffix(param_name, sibling_names)
+    if distinguishing:
+        # Use the distinguishing suffix as the primary subscript
+        # Still need to find the main concept for the base name
+        pass  # Will use distinguishing below
     # Domain-specific main concepts - USE LIST for priority ordering
     # More specific terms should come FIRST
     main_concepts = [
@@ -498,9 +609,50 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
     # Priority subscripts - distinguishing modifiers (checked first, only one picked)
     # Order matters! Check longer strings first to avoid substring matches
     priority_subscripts = [
-        ('per_capita', 'percap'),  # Per capita metrics
+        # Complex multi-word patterns first
+        ('direct_funding_roi_trial_capacity_plus_efficacy_lag', 'direct_funding'),
+        ('trial_capacity_plus_efficacy_lag', 'max'),  # Combined max scenario
+        ('platform_maintenance', 'platform'),  # DFDA OPEX components
+        ('active_combat', 'combat'),
+        ('state_violence', 'state'),
+        ('terror_attacks', 'terror'),
+        ('lost_human_capital', 'human_cap'),
+        ('lost_economic_growth', 'econ_growth'),
+        ('human_capital', 'human_cap'),
+        ('economic_growth', 'econ_growth'),
+        # Infrastructure damage types
+        ('damage_transportation', 'transport'),
+        ('damage_energy', 'energy'),
+        ('damage_communications', 'comms'),
+        ('damage_water', 'water'),
+        ('damage_education', 'edu'),
+        ('damage_healthcare', 'health'),
+        # Trade disruption types
+        ('disruption_shipping', 'shipping'),
+        ('disruption_currency', 'currency'),
+        ('disruption_capital', 'capital'),
+        ('disruption_opportunity', 'opp'),
+        # Two-word patterns
+        ('per_capita', 'percap'),
         ('mental_health', 'mental'),
         ('chronic_disease', 'chronic'),
+        ('pre_1962', 'pre62'),
+        ('war_total', 'war'),
+        # OPEX component types (for DFDA)
+        ('opex_platform', 'platform'),
+        ('opex_staff', 'staff'),
+        ('opex_infrastructure', 'infra'),
+        ('opex_regulatory', 'reg'),
+        ('opex_community', 'community'),
+        # Single words - infrastructure types
+        ('transportation', 'transport'),
+        ('communications', 'comms'),
+        ('platform', 'platform'),
+        ('staff', 'staff'),
+        ('regulatory', 'reg'),
+        ('community', 'community'),
+        ('education', 'edu'),
+        # Cost/damage categories
         ('symptomatic', 'sympt'),
         ('indirect', 'indirect'),  # Check before 'direct'
         ('direct', 'direct'),
@@ -511,6 +663,7 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         ('infra', 'infra'),
         ('combat', 'combat'),
         ('terror', 'terror'),
+        ('state', 'state'),
         ('trade', 'trade'),
         ('military', 'mil'),
         ('environmental', 'env'),
@@ -518,11 +671,8 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         ('refugee', 'ref'),
         ('ptsd', 'PTSD'),
         ('current', 'curr'),
-        ('pre_1962', 'pre62'),
         ('pre1962', 'pre62'),
         ('1980', '80s'),
-        ('lost_human', 'lost_cap'),  # Human capital
-        ('lost_economic', 'lost_econ'),
         ('lost', 'lost'),
         # Disease-specific
         ('alzheimer', 'alz'),
@@ -531,13 +681,18 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         ('heart', 'heart'),
         ('stroke', 'stroke'),
         ('obesity', 'obes'),
+        # Energy/utility
+        ('energy', 'energy'),
+        ('water', 'water'),
+        ('shipping', 'shipping'),
+        ('currency', 'currency'),
+        ('capital', 'capital'),
+        ('opportunity', 'opp'),
         # Source-specific
         ('dfda', 'DFDA'),
         ('campaign', 'camp'),
         ('opex', 'opex'),
         ('societal', 'soc'),
-        ('symptomatic', 'sympt'),
-        ('war_total', 'war'),  # War total cost
     ]
 
     # Secondary subscripts - context modifiers
@@ -586,10 +741,13 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
     # Build the LaTeX name
     if main:
         subs = []
-        if priority_sub:
+        # If we have a distinguishing suffix from sibling analysis, use it preferentially
+        if distinguishing and distinguishing not in (priority_sub or ''):
+            subs.append(distinguishing)
+        elif priority_sub:
             subs.append(priority_sub)
         # Add at most one secondary subscript
-        if secondary_subs:
+        if secondary_subs and len(subs) < 2:
             subs.append(secondary_subs[0])
 
         if subs:
@@ -632,13 +790,17 @@ def generate_expanded_latex(
     params_file: Optional[Path] = None,
     max_depth: int = 10,
     _depth: int = 0,
-    _visited: set | None = None
+    _visited: set | None = None,
+    _memoized: dict | None = None
 ) -> str | None:
     r"""
     Generate FULLY EXPANDED LaTeX equation with recursive derivation of all calculated inputs.
     
     This creates a complete derivation chain showing how every intermediate value
     is calculated, all the way down to leaf parameters (external sources/definitions).
+    
+    Uses memoization to avoid repeating the same derivation multiple times when
+    the same intermediate parameter is used in multiple branches.
     
     Example output for DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED:
     
@@ -659,12 +821,19 @@ def generate_expanded_latex(
         max_depth: Maximum recursion depth (prevents infinite loops)
         _depth: Current recursion depth (internal use)
         _visited: Set of already-visited params (cycle detection, internal use)
+        _memoized: Cache of already-generated LaTeX (prevents duplication, internal use)
         
     Returns:
         Fully expanded LaTeX string with derivation chain, or None if cannot generate
     """
     if _visited is None:
         _visited = set()
+    if _memoized is None:
+        _memoized = {}
+    
+    # Check memoization cache first (but only at depth > 0 to avoid caching root)
+    if _depth > 0 and param_name in _memoized:
+        return _memoized[param_name]
     
     # Cycle detection
     if param_name in _visited:
@@ -703,6 +872,8 @@ def generate_expanded_latex(
     
     # If no calculated inputs or at max depth, return single equation
     if not calculated_inputs or _depth >= max_depth:
+        # Cache and return
+        _memoized[param_name] = this_level
         return this_level
     
     # Build multi-step derivation
@@ -711,16 +882,25 @@ def generate_expanded_latex(
     # Add the main equation
     lines.append(this_level)
     
+    # Track which sub-derivations we've already added to avoid duplicates
+    added_derivations = set()
+    
     # Recursively expand each calculated input
     for inp_name, inp_value in calculated_inputs:
+        # Skip if we've already added this derivation
+        if inp_name in added_derivations:
+            continue
+        
         sub_latex = generate_expanded_latex(
             inp_name, inp_value, parameters, params_file,
             max_depth=max_depth,
             _depth=_depth + 1,
-            _visited=_visited
+            _visited=_visited,
+            _memoized=_memoized
         )
         
         if sub_latex:
+            added_derivations.add(inp_name)
             # Add "where" prefix and indent
             # Handle if sub_latex is already an aligned environment
             if r'\begin{aligned}' in sub_latex:
@@ -735,9 +915,13 @@ def generate_expanded_latex(
     
     # Only wrap in aligned if not already wrapped and we have multiple lines
     if r'\begin{aligned}' not in combined and len(lines) > 1:
-        return f"\\begin{{aligned}}\n{combined}\n\\end{{aligned}}"
+        result = f"\\begin{{aligned}}\n{combined}\n\\end{{aligned}}"
+    else:
+        result = combined
     
-    return combined
+    # Cache the result
+    _memoized[param_name] = result
+    return result
 
 
 def generate_auto_latex(
@@ -783,6 +967,7 @@ def generate_auto_latex(
     operation, order = infer_operation_from_compute(param_value, inputs)
 
     # Get input values and format them
+    # Pass all input names as siblings so we can extract distinguishing suffixes
     input_data = []
     for inp_name in inputs:
         inp_meta = parameters.get(inp_name, {})
@@ -801,7 +986,8 @@ def generate_auto_latex(
         short_label = create_short_label(inp_display, inp_name)
 
         # Create symbolic name for traceable equations
-        inp_symbolic = create_latex_variable_name(inp_name, inp_display)
+        # Pass sibling names to find distinguishing suffixes for grouped inputs
+        inp_symbolic = create_latex_variable_name(inp_name, inp_display, sibling_names=inputs)
 
         input_data.append({
             'name': inp_name,
@@ -875,7 +1061,7 @@ def generate_auto_latex(
     elif operation == 'multiply_constant' and len(input_data) == 1:
         # Multiply by constant: X = A × c = val × const = result
         inp = input_data[0]
-        constant = order  # The constant value is stored in order parameter
+        constant = float(order)  # The constant value is stored in order parameter
         # Format constant as plain number (no units)
         const_formatted = round_to_n_sigfigs(constant, 3)
         latex = f"{lhs_short} = {inp['symbolic']} \\times {const_formatted} = {inp['formatted']} \\times {const_formatted} = {result_formatted}"
@@ -883,7 +1069,7 @@ def generate_auto_latex(
     elif operation == 'divide_constant' and len(input_data) == 1:
         # Divide by constant: X = A / c = val / const = result
         inp = input_data[0]
-        constant = order
+        constant = float(order)
         const_formatted = round_to_n_sigfigs(constant, 3)
         symbolic = f"\\frac{{{inp['symbolic']}}}{{{const_formatted}}}"
         numeric = f"\\frac{{{inp['formatted']}}}{{{const_formatted}}}"
@@ -891,24 +1077,42 @@ def generate_auto_latex(
 
     elif operation == 'add_constant' and len(input_data) == 1:
         # Add constant: X = A + c = val + const = result
+        # Handle negative constants as subtraction for cleaner display
         inp = input_data[0]
-        constant = order
-        const_formatted = round_to_n_sigfigs(constant, 3)
-        latex = f"{lhs_short} = {inp['symbolic']} + {const_formatted} = {inp['formatted']} + {const_formatted} = {result_formatted}"
+        constant = float(order)
+        if constant < 0:
+            # Negative constant: show as subtraction
+            const_formatted = round_to_n_sigfigs(abs(constant), 3)
+            latex = f"{lhs_short} = {inp['symbolic']} - {const_formatted} = {inp['formatted']} - {const_formatted} = {result_formatted}"
+        else:
+            const_formatted = round_to_n_sigfigs(constant, 3)
+            latex = f"{lhs_short} = {inp['symbolic']} + {const_formatted} = {inp['formatted']} + {const_formatted} = {result_formatted}"
 
     elif operation == 'subtract_constant' and len(input_data) == 1:
         # Subtract constant: X = A - c = val - const = result
+        # Handle negative constants (subtracting negative = adding)
         inp = input_data[0]
-        constant = order
-        const_formatted = round_to_n_sigfigs(constant, 3)
-        latex = f"{lhs_short} = {inp['symbolic']} - {const_formatted} = {inp['formatted']} - {const_formatted} = {result_formatted}"
+        constant = float(order)
+        if constant < 0:
+            # Subtracting negative: show as addition
+            const_formatted = round_to_n_sigfigs(abs(constant), 3)
+            latex = f"{lhs_short} = {inp['symbolic']} + {const_formatted} = {inp['formatted']} + {const_formatted} = {result_formatted}"
+        else:
+            const_formatted = round_to_n_sigfigs(constant, 3)
+            latex = f"{lhs_short} = {inp['symbolic']} - {const_formatted} = {inp['formatted']} - {const_formatted} = {result_formatted}"
 
     elif operation == 'constant_minus_var' and len(input_data) == 1:
         # Constant minus variable: X = c - A = const - val = result
         inp = input_data[0]
-        constant = order
-        const_formatted = round_to_n_sigfigs(constant, 3)
-        latex = f"{lhs_short} = {const_formatted} - {inp['symbolic']} = {const_formatted} - {inp['formatted']} = {result_formatted}"
+        constant = float(order)
+        if constant < 0:
+            # Negative constant minus var: (-c) - A = -(c + A)
+            # Show as: -c - A for clarity
+            const_formatted = round_to_n_sigfigs(abs(constant), 3)
+            latex = f"{lhs_short} = -{const_formatted} - {inp['symbolic']} = -{const_formatted} - {inp['formatted']} = {result_formatted}"
+        else:
+            const_formatted = round_to_n_sigfigs(constant, 3)
+            latex = f"{lhs_short} = {const_formatted} - {inp['symbolic']} = {const_formatted} - {inp['formatted']} = {result_formatted}"
 
     elif operation in ('identity', 'transform') and len(input_data) == 1:
         # Single input transformation: X = A = val = result

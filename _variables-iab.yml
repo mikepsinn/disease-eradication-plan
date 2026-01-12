@@ -27,45 +27,45 @@ global_annual_direct_indirect_war_cost_latex: '$$
   \\[0.5em]
 
   \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
-  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
-  = \$7.66T
+  Disruption_{trade,ann} + Spending_{military,ann} = \$2.45T + \$1.88T + \$616B +
+  \$2.72T = \$7.66T
 
   \\[0.5em]
 
-  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  \text{where } Loss_{human,ann} = Cost_{combat,ann} + Cost_{state,ann} + Cost_{terror,ann}
   = \$2.34T + \$27B + \$83B = \$2.45T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \text{where } Cost_{combat,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
   \$10M = \$2.34T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
-  = \$27B
+  \text{where } Cost_{state,ann} = Deaths_{state,ann} \times Value = 2{,}700 \times
+  \$10M = \$27B
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \text{where } Cost_{terror,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
   \$10M = \$83B
 
   \\[0.5em]
 
-  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
-  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  \text{where } Infrastructure_{global} = Damage_{comms,ann} + Damage_{edu,ann} +
+  Damage_{energy,ann} + Damage_{health,ann} + Damage_{transport,ann} + Damage_{water,ann}
   = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
 
   \\[0.5em]
 
-  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
-  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+  \text{where } Disruption_{trade,ann} = Cost_{currency,ann} + Cost_{energy,ann} +
+  Cost_{shipping,ann} + Cost_{supply,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
 
   \\[0.5em]
 
-  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
-  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
-  + \$150B + \$200B = \$3.7T
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{economic,ann} + Lost_{global}
+  + Cost_{psychological,ann} + Cost_{refugee,ann} + Cost_{veteran,ann} = \$100B +
+  \$2.72T + \$300B + \$232B + \$150B + \$200B = \$3.7T
 
   \end{aligned}
 
@@ -105,45 +105,45 @@ iab_mechanism_benefit_cost_ratio_latex: '$$
   \\[0.5em]
 
   \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
-  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
-  = \$7.66T
+  Disruption_{trade,ann} + Spending_{military,ann} = \$2.45T + \$1.88T + \$616B +
+  \$2.72T = \$7.66T
 
   \\[0.5em]
 
-  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  \text{where } Loss_{human,ann} = Cost_{combat,ann} + Cost_{state,ann} + Cost_{terror,ann}
   = \$2.34T + \$27B + \$83B = \$2.45T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \text{where } Cost_{combat,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
   \$10M = \$2.34T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
-  = \$27B
+  \text{where } Cost_{state,ann} = Deaths_{state,ann} \times Value = 2{,}700 \times
+  \$10M = \$27B
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \text{where } Cost_{terror,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
   \$10M = \$83B
 
   \\[0.5em]
 
-  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
-  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  \text{where } Infrastructure_{global} = Damage_{comms,ann} + Damage_{edu,ann} +
+  Damage_{energy,ann} + Damage_{health,ann} + Damage_{transport,ann} + Damage_{water,ann}
   = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
 
   \\[0.5em]
 
-  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
-  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+  \text{where } Disruption_{trade,ann} = Cost_{currency,ann} + Cost_{energy,ann} +
+  Cost_{shipping,ann} + Cost_{supply,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
 
   \\[0.5em]
 
-  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
-  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
-  + \$150B + \$200B = \$3.7T
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{economic,ann} + Lost_{global}
+  + Cost_{psychological,ann} + Cost_{refugee,ann} + Cost_{veteran,ann} = \$100B +
+  \$2.72T + \$300B + \$232B + \$150B + \$200B = \$3.7T
 
   \\[0.5em]
 
@@ -182,45 +182,45 @@ peace_dividend_annual_societal_benefit_latex: '$$
   \\[0.5em]
 
   \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
-  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
-  = \$7.66T
+  Disruption_{trade,ann} + Spending_{military,ann} = \$2.45T + \$1.88T + \$616B +
+  \$2.72T = \$7.66T
 
   \\[0.5em]
 
-  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  \text{where } Loss_{human,ann} = Cost_{combat,ann} + Cost_{state,ann} + Cost_{terror,ann}
   = \$2.34T + \$27B + \$83B = \$2.45T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \text{where } Cost_{combat,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
   \$10M = \$2.34T
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
-  = \$27B
+  \text{where } Cost_{state,ann} = Deaths_{state,ann} \times Value = 2{,}700 \times
+  \$10M = \$27B
 
   \\[0.5em]
 
-  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \text{where } Cost_{terror,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
   \$10M = \$83B
 
   \\[0.5em]
 
-  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
-  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  \text{where } Infrastructure_{global} = Damage_{comms,ann} + Damage_{edu,ann} +
+  Damage_{energy,ann} + Damage_{health,ann} + Damage_{transport,ann} + Damage_{water,ann}
   = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
 
   \\[0.5em]
 
-  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
-  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+  \text{where } Disruption_{trade,ann} = Cost_{currency,ann} + Cost_{energy,ann} +
+  Cost_{shipping,ann} + Cost_{supply,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
 
   \\[0.5em]
 
-  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
-  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
-  + \$150B + \$200B = \$3.7T
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{economic,ann} + Lost_{global}
+  + Cost_{psychological,ann} + Cost_{refugee,ann} + Cost_{veteran,ann} = \$100B +
+  \$2.72T + \$300B + \$232B + \$150B + \$200B = \$3.7T
 
   \end{aligned}
 
@@ -279,8 +279,8 @@ victory_bond_annual_return_pct_latex: '$$
 
   \\[0.5em]
 
-  \text{where } Cost_{camp,total} = Campaign_{camp,treaty} + Campaign_{camp,treaty}
-  + Campaign_{camp,treaty} = \$250M + \$650M + \$100M = \$1B
+  \text{where } Cost_{camp,total} = Campaign_{viral,treaty} + Campaign_{lobbying,treaty}
+  + Campaign_{reserve,treaty} = \$250M + \$650M + \$100M = \$1B
 
   \end{aligned}
 
