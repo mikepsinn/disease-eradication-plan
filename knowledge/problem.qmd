@@ -118,7 +118,7 @@ Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity
 This includes:
 
 - {{< var global_symptomatic_disease_treatment_annual >}} on healthcare (treating symptoms because cures are bad for business)
-- $100.9 trillion in economic losses (dead people are notoriously unproductive)
+- {{< var global_disease_economic_burden_annual >}} in economic losses (dead people are notoriously unproductive)
 - 10 million cancer deaths per year (cancer: 10 million, humanity: 0)
 - 2 billion people with chronic diseases (right now, as you read this)
 - 1 billion depressed humans (costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist")
