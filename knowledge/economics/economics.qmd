@@ -62,7 +62,7 @@ This is a **model-based scenario analysis**, not an empirical study. All quantit
 
 ## Abstract
 
-**The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}—effectively never.
+**The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.
 
 **The solution:** Redirecting {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to pragmatic clinical trials increases capacity {{< var dfda_trial_capacity_multiplier >}}× (to ~{{< var dfda_first_treatments_per_year >}} treatments/year). Pragmatic trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient versus {{< var traditional_phase3_cost_per_patient >}}/patient for traditional trials, enabling vastly more parallel research. This reduces time to explore all therapeutic possibilities from ~{{< var status_quo_queue_clearance_years >}} to ~{{< var dfda_queue_clearance_years >}}.
 
