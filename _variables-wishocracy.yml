@@ -1,1 +1,12 @@
-# AUTO-GENERATED - No variables used in this paper
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (3 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+concentrated_interest_sector_market_cap_usd: '<span class="parameter-definition" title="Estimated
+  combined market capitalization of concentrated interest opposition (defense, fossil
+  fuel, etc.) | Unit: USD | Core definition">$5T</span>'
+global_household_wealth_usd: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd"
+  class="parameter-link" data-source-ref="cs-global-wealth-report-2023" data-source-type="external"
+  data-confidence="high" title="Total global household wealth (2022/2023 estimate)
+  | ✓ High confidence | Unit: USD | Click to view details, calculation & sources">$454T</a>'
+global_household_wealth_usd_cite: '@cs-global-wealth-report-2023'

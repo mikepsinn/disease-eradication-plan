@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (9 entries)
+# Contains only variables used in this paper (11 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 average_market_return_pct: '<a href="/knowledge/appendix/parameters-and-calculations#sec-average_market_return_pct"
@@ -94,6 +94,23 @@ iab_mechanism_benefit_cost_ratio_latex: '$$
   \\[0.5em]
 
   \text{where } Reduction_{DFDA} = 1 - (DFDA_COST / TRADITIONAL_COST) = 97.7\%
+
+  \end{aligned}
+
+  $$'
+treaty_annual_funding: '<span class="parameter-definition" title="Annual funding from
+  1% of global military spending redirected to DIH | Unit: USD/year | Core definition">$27.2B</span>'
+treaty_annual_funding_latex: '$$
+
+  \begin{aligned}
+
+  Funding_{ann} \\
+
+  &= Spending_{mil,ann} \times Reduction_{treaty} \\
+
+  &= \$2.72T \times 1\% \\
+
+  &= \$27.2B
 
   \end{aligned}
 
