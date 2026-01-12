@@ -1676,7 +1676,7 @@ export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "CELL_APPROACHES × DISEASES",
-  latex: "Cell = Cell \\times Trials_{dis} = 500 \\times 1{,}000 = 500{,}000",
+  latex: "\\begin{aligned}\nCell \\\\\n&= Cell \\times Trials_{dis} \\\\\n&= 500 \\times 1{,}000 \\\\\n&= 500{,}000\n\\end{aligned}",
 };
 
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
@@ -1687,7 +1687,7 @@ export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "TOTAL_TRIAL_SPENDING / NEW_DRUGS",
-  latex: "Cost = \\frac{Trials_{ann}}{Drug_{current}} = \\frac{\\$60B}{50} = \\$1.2B",
+  latex: "\\begin{aligned}\nCost \\\\\n&= \\frac{Trials_{ann}}{Drug_{current}} \\\\\n&= \\frac{\\$60B}{50} \\\\\n&= \\$1.2B\n\\end{aligned}",
 };
 
 export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
@@ -1698,7 +1698,7 @@ export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "TOTAL_SPENDING / PARTICIPANTS",
-  latex: "Cost_{ann} = \\frac{Trials_{ann}}{Trials_{curr}} = \\frac{\\$60B}{1.9M} = \\$31.6K",
+  latex: "\\begin{aligned}\nCost_{ann} \\\\\n&= \\frac{Trials_{ann}}{Trials_{curr}} \\\\\n&= \\frac{\\$60B}{1.9M} \\\\\n&= \\$31.6K\n\\end{aligned}",
 };
 
 export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
@@ -1709,7 +1709,7 @@ export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DRUG_PAIRS × DISEASES",
-  latex: "Combination = Combination \\times Trials_{dis} = 45.1M \\times 1{,}000 = 45.1B",
+  latex: "\\begin{aligned}\nCombination \\\\\n&= Combination \\times Trials_{dis} \\\\\n&= 45.1M \\times 1{,}000 \\\\\n&= 45.1B\n\\end{aligned}",
 };
 
 export const COMBINATION_THERAPY_PAIRS: Parameter = {
@@ -1776,7 +1776,7 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   formula: "PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
-  latex: "Cost_{DFDA,ann} = Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} + Cost_{DFDA} + Cost_{DFDA} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M",
+  latex: "\\begin{aligned}\nCost_{DFDA,ann} \\\\\n&= Cost_{DFDA} + Cost_{DFDA} + Cost_{infra,DFDA} + Cost_{DFDA} \\\\\n&\\quad + Cost_{DFDA} \\\\\n&= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n&= \\$40M\n\\end{aligned}",
 };
 
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
@@ -1846,7 +1846,7 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay",
   confidence: "medium",
   formula: "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
-  latex: "D_{total} = 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M",
+  latex: "\\begin{aligned}\nD_{total} \\\\\n&= 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} \\\\\n&= 413.4M\n\\end{aligned}",
 };
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE: Parameter = {
@@ -1928,7 +1928,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   formula: "DFDA_OPEX + DIH_OPEX",
-  latex: "OPEX_{DFDA,total} = OPEX_{DFDA,ann} + OPEX_{opex,ann} = \\$18.9M + \\$21.1M = \\$40M",
+  latex: "\\begin{aligned}\nOPEX_{DFDA,total} \\\\\n&= OPEX_{DFDA,ann} + OPEX_{opex,ann} \\\\\n&= \\$18.9M + \\$21.1M \\\\\n&= \\$40M\n\\end{aligned}",
 };
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
@@ -1940,7 +1940,7 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit",
   confidence: "high",
   formula: "Sum of discounted annual net R&D savings with linear adoption ramp",
-  latex: "PV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}",
+  latex: "\\begin{aligned}\nPV_{benefits} \\\\\n&= \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}\n\\end{aligned}",
 };
 
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
@@ -1964,7 +1964,7 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#npv-calculation",
   confidence: "high",
   formula: "OPEX × [(1 - (1 + r)^-T) / r]",
-  latex: "PV_{opex} = \\$0.04005B \\times \\frac{1 - 1.08^{-10}}{0.08} \\approx \\$0.269B",
+  latex: "\\begin{aligned}\nPV_{opex} \\\\\n&= \\$0.04005B \\times \\frac{1 - 1.08^{-10}}{0.08} \\approx \\$0.269B\n\\end{aligned}",
 };
 
 export const DFDA_NPV_TOTAL_COST: Parameter = {
@@ -1988,7 +1988,7 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   formula: "DFDA_BUILD + DIH_INITIATIVES",
-  latex: "Cost_{DFDA,total} = Cost_{DFDA,NPV} + Cost_{NPV} = \\$40M + \\$230M = \\$270M",
+  latex: "\\begin{aligned}\nCost_{DFDA,total} \\\\\n&= Cost_{DFDA,NPV} + Cost_{NPV} \\\\\n&= \\$40M + \\$230M \\\\\n&= \\$270M\n\\end{aligned}",
 };
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
@@ -2168,7 +2168,7 @@ export const DFDA_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",
-  latex: "Cost_{DFDA} = \\frac{Cost}{Cost_{DFDA}} = \\frac{\\$41K}{\\$929} = 44.1",
+  latex: "\\begin{aligned}\nCost_{DFDA} \\\\\n&= \\frac{Cost}{Cost_{DFDA}} \\\\\n&= \\frac{\\$41K}{\\$929} \\\\\n&= 44.1\n\\end{aligned}",
 };
 
 export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
@@ -2251,7 +2251,7 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   sourceRef: "pre-1962-drug-costs-timeline",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
-  latex: "Multiplier_{curr} = \\frac{Cost_{curr}}{Cost_{80s}} = \\frac{\\$2.6B}{\\$194M} = 13.4",
+  latex: "\\begin{aligned}\nMultiplier_{curr} \\\\\n&= \\frac{Cost_{curr}}{Cost_{80s}} \\\\\n&= \\frac{\\$2.6B}{\\$194M} \\\\\n&= 13.4\n\\end{aligned}",
 };
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
@@ -2263,7 +2263,7 @@ export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   sourceRef: "pre-1962-drug-costs-baily-1972",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",
-  latex: "Multiplier_{curr} = \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.6B}{\\$24.7M} = 105",
+  latex: "\\begin{aligned}\nMultiplier_{curr} \\\\\n&= \\frac{Cost_{curr}}{Cost_{pre62}} \\\\\n&= \\frac{\\$2.6B}{\\$24.7M} \\\\\n&= 105\n\\end{aligned}",
 };
 
 export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
@@ -2275,7 +2275,7 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
   confidence: "high",
   formula: "SAFE_COMPOUNDS × DISEASES",
-  latex: "Drug = Safe \\times Trials_{dis} = 9{,}500 \\times 1{,}000 = 9.5M",
+  latex: "\\begin{aligned}\nDrug \\\\\n&= Safe \\times Trials_{dis} \\\\\n&= 9{,}500 \\times 1{,}000 \\\\\n&= 9.5M\n\\end{aligned}",
 };
 
 export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
@@ -2297,7 +2297,7 @@ export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "EPIGENETIC_TARGETS × DISEASES",
-  latex: "Epigenetic = Epigenetic \\times Trials_{dis} = 1{,}500 \\times 1{,}000 = 1.5M",
+  latex: "\\begin{aligned}\nEpigenetic \\\\\n&= Epigenetic \\times Trials_{dis} \\\\\n&= 1{,}500 \\times 1{,}000 \\\\\n&= 1.5M\n\\end{aligned}",
 };
 
 export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
@@ -2309,7 +2309,7 @@ export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
   confidence: "high",
   formula: "12M × EFFICACY_LAG_YEARS",
-  latex: "Deaths_{total} = Delay \\times 12000000 = 8.2 \\times 12000000 = 98.4M",
+  latex: "\\begin{aligned}\nDeaths_{total} \\\\\n&= Delay \\times 12000000 \\\\\n&= 8.2 \\times 12000000 \\\\\n&= 98.4M\n\\end{aligned}",
 };
 
 export const EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS: Parameter = {
@@ -2345,7 +2345,7 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   sourceRef: "recovery-trial-82x-cost-reduction",
   confidence: "high",
   formula: "FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-  latex: "\\frac{9.1 \\text{ years} \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4",
+  latex: "\\begin{aligned}\n\\frac{9.1 \\text{ years} \\times 12 \\text{ months/year}}{3 \\text{ months}} \\\\\n&= 36.4\n\\end{aligned}",
 };
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -2356,7 +2356,7 @@ export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "GENES × DISEASES",
-  latex: "Gene = Human \\times Trials_{dis} = 20{,}000 \\times 1{,}000 = 20M",
+  latex: "\\begin{aligned}\nGene \\\\\n&= Human \\times Trials_{dis} \\\\\n&= 20{,}000 \\times 1{,}000 \\\\\n&= 20M\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
@@ -2368,7 +2368,7 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#death-accounting",
   confidence: "high",
   formula: "COMBAT + TERROR + STATE_VIOLENCE",
-  latex: "Deaths_{total} = Deaths_{combat,ann} + Deaths_{ann} + Deaths_{terror,ann} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000",
+  latex: "\\begin{aligned}\nDeaths_{total} \\\\\n&= Deaths_{combat,ann} + Deaths_{ann} + Deaths_{terror,ann} \\\\\n&= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n&= 245{,}000\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST: Parameter = {
@@ -2392,7 +2392,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "COMBAT_DEATHS × VSL ",
-  latex: "Cost_{human,ann} = Deaths_{combat,ann} \\times Value = 234{,}000 \\times \\$10M = \\$2.34T",
+  latex: "\\begin{aligned}\nCost_{human,ann} \\\\\n&= Deaths_{combat,ann} \\times Value \\\\\n&= 234{,}000 \\times \\$10M \\\\\n&= \\$2.34T\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
@@ -2404,7 +2404,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "STATE_DEATHS × VSL ",
-  latex: "Cost_{human,ann} = Deaths_{ann} \\times Value = 2{,}700 \\times \\$10M = \\$27B",
+  latex: "\\begin{aligned}\nCost_{human,ann} \\\\\n&= Deaths_{ann} \\times Value \\\\\n&= 2{,}700 \\times \\$10M \\\\\n&= \\$27B\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
@@ -2416,7 +2416,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "TERROR_DEATHS × VSL ",
-  latex: "Cost_{human,ann} = Deaths_{terror,ann} \\times Value = 8{,}300 \\times \\$10M = \\$83B",
+  latex: "\\begin{aligned}\nCost_{human,ann} \\\\\n&= Deaths_{terror,ann} \\times Value \\\\\n&= 8{,}300 \\times \\$10M \\\\\n&= \\$83B\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
@@ -2440,7 +2440,7 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#infrastructure-damage",
   confidence: "high",
   formula: "TRANSPORT + ENERGY + COMMS + WATER + EDUCATION + HEALTHCARE",
-  latex: "Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T",
+  latex: "\\begin{aligned}\nInfrastructure_{global} \\\\\n&= Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} \\\\\n&\\quad + Damage_{infra,ann} + Damage_{infra,ann} \\\\\n&\\quad + Damage_{infra,ann} \\\\\n&= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n&= \\$1.88T\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
@@ -2452,7 +2452,7 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#trade-disruption",
   confidence: "high",
   formula: "SHIPPING + SUPPLY_CHAIN + ENERGY_PRICE + CURRENCY",
-  latex: "Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B",
+  latex: "\\begin{aligned}\nDisruption_{trade,ann} \\\\\n&= Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann} \\\\\n&\\quad + Cost_{trade,ann} \\\\\n&= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n&= \\$616B\n\\end{aligned}",
 };
 
 export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
@@ -2476,7 +2476,7 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#indirect-costs",
   confidence: "high",
   formula: "OPPORTUNITY + VETERANS + REFUGEES + ENVIRONMENT + MENTAL_HEALTH + LOST_CAPITAL",
-  latex: "Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global} + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T",
+  latex: "\\begin{aligned}\nCost_{indirect,total} \\\\\n&= Cost_{env,ann} + Cost_{mil,ann} + Lost_{global} + Cost_{ann} \\\\\n&\\quad + Cost_{ref,ann} + Cost_{vet,ann} \\\\\n&= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n&= \\$3.7T\n\\end{aligned}",
 };
 
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
@@ -2488,7 +2488,7 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#grotesque-mathematics",
   confidence: "high",
   formula: "(RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED",
-  latex: "Cost_{ann} = \\frac{Spending_{global}}{Lives_{ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K",
+  latex: "\\begin{aligned}\nCost_{ann} \\\\\n&= \\frac{Spending_{global}}{Lives_{ann}} \\\\\n&= \\frac{\\$67.5B}{4.2M} \\\\\n&= \\$16.1K\n\\end{aligned}",
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
@@ -2500,7 +2500,7 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   sourceRef: "disease-economic-burden-109t",
   confidence: "high",
   formula: "MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
-  latex: "Burden_{ann} = Cost_{direct,ann} + Loss_{human,ann} + Loss_{ann} = \\$9.9T + \\$94.2T + \\$5T = \\$109T",
+  latex: "\\begin{aligned}\nBurden_{ann} \\\\\n&= Cost_{direct,ann} + Loss_{human,ann} + Loss_{ann} \\\\\n&= \\$9.9T + \\$94.2T + \\$5T \\\\\n&= \\$109T\n\\end{aligned}",
 };
 
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
@@ -2511,7 +2511,7 @@ export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS",
-  latex: "Trials_{ann} = Trials_{ann} - Trials_{ann} = \\$60B - \\$4.5B = \\$55.5B",
+  latex: "\\begin{aligned}\nTrials_{ann} \\\\\n&= Trials_{ann} - Trials_{ann} \\\\\n&= \\$60B - \\$4.5B \\\\\n&= \\$55.5B\n\\end{aligned}",
 };
 
 export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
@@ -2523,7 +2523,7 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#per-capita",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ POPULATION",
-  latex: "Spending_{percap,ann} = \\frac{Spending_{mil,ann}}{Population_{global}} = \\frac{\\$2.72T}{8B} = \\$340",
+  latex: "\\begin{aligned}\nSpending_{percap,ann} \\\\\n&= \\frac{Spending_{mil,ann}}{Population_{global}} \\\\\n&= \\frac{\\$2.72T}{8B} \\\\\n&= \\$340\n\\end{aligned}",
 };
 
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
@@ -2608,7 +2608,7 @@ export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",
-  latex: "Ratio_{mil} = \\frac{Spending_{mil,ann}}{Trials_{ann}} = \\frac{\\$2.72T}{\\$60B} = 45.3",
+  latex: "\\begin{aligned}\nRatio_{mil} \\\\\n&= \\frac{Spending_{mil,ann}}{Trials_{ann}} \\\\\n&= \\frac{\\$2.72T}{\\$60B} \\\\\n&= 45.3\n\\end{aligned}",
 };
 
 export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -2619,7 +2619,7 @@ export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   sourceType: "calculated",
   confidence: "high",
   formula: "MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING",
-  latex: "Ratio_{mil} = \\frac{Spending_{mil,ann}}{Trials_{ann}} = \\frac{\\$2.72T}{\\$4.5B} = 604",
+  latex: "\\begin{aligned}\nRatio_{mil} \\\\\n&= \\frac{Spending_{mil,ann}}{Trials_{ann}} \\\\\n&= \\frac{\\$2.72T}{\\$4.5B} \\\\\n&= 604\n\\end{aligned}",
 };
 
 export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
@@ -2631,7 +2631,7 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/cost-of-war#misallocation",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ MEDICAL_RESEARCH",
-  latex: "Ratio_{mil,RD} = \\frac{Spending_{mil,ann}}{Spending_{global}} = \\frac{\\$2.72T}{\\$67.5B} = 40.3",
+  latex: "\\begin{aligned}\nRatio_{mil,RD} \\\\\n&= \\frac{Spending_{mil,ann}}{Spending_{global}} \\\\\n&= \\frac{\\$2.72T}{\\$67.5B} \\\\\n&= 40.3\n\\end{aligned}",
 };
 
 export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
@@ -2654,7 +2654,7 @@ export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "PROTEINS × DISEASES",
-  latex: "Mrna = Human \\times Trials_{dis} = 20{,}000 \\times 1{,}000 = 20M",
+  latex: "\\begin{aligned}\nMrna \\\\\n&= Human \\times Trials_{dis} \\\\\n&= 20{,}000 \\times 1{,}000 \\\\\n&= 20M\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
@@ -2702,7 +2702,7 @@ export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "ENVIRONMENTAL_DAMAGE × 1%",
-  latex: "Savings_{env,peace} = Cost_{env,ann} \\times Reduction_{treaty} = \\$100B \\times 1\\% = \\$1B",
+  latex: "\\begin{aligned}\nSavings_{env,peace} \\\\\n&= Cost_{env,ann} \\times Reduction_{treaty} \\\\\n&= \\$100B \\times 1\\% \\\\\n&= \\$1B\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
@@ -2750,7 +2750,7 @@ export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_ECONOMIC_GROWTH × 1%",
-  latex: "Savings_{lost_econ,peace} = Cost_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B",
+  latex: "\\begin{aligned}\nSavings_{lost_econ,peace} \\\\\n&= Cost_{mil,ann} \\times Reduction_{treaty} \\\\\n&= \\$2.72T \\times 1\\% \\\\\n&= \\$27.2B\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
@@ -2762,7 +2762,7 @@ export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_HUMAN_CAPITAL × 1%",
-  latex: "Savings_{human,peace} = Lost_{global} \\times Reduction_{treaty} = \\$300B \\times 1\\% = \\$3B",
+  latex: "\\begin{aligned}\nSavings_{human,peace} \\\\\n&= Lost_{global} \\times Reduction_{treaty} \\\\\n&= \\$300B \\times 1\\% \\\\\n&= \\$3B\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_PTSD: Parameter = {
@@ -2774,7 +2774,7 @@ export const PEACE_DIVIDEND_PTSD: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "PTSD_COSTS × 1%",
-  latex: "Cost_{PTSD,peace} = Cost_{ann} \\times Reduction_{treaty} = \\$232B \\times 1\\% = \\$2.32B",
+  latex: "\\begin{aligned}\nCost_{PTSD,peace} \\\\\n&= Cost_{ann} \\times Reduction_{treaty} \\\\\n&= \\$232B \\times 1\\% \\\\\n&= \\$2.32B\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
@@ -2786,7 +2786,7 @@ export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "REFUGEE_SUPPORT × 1%",
-  latex: "Cost_{ref,peace} = Cost_{ref,ann} \\times Reduction_{treaty} = \\$150B \\times 1\\% = \\$1.5B",
+  latex: "\\begin{aligned}\nCost_{ref,peace} \\\\\n&= Cost_{ref,ann} \\times Reduction_{treaty} \\\\\n&= \\$150B \\times 1\\% \\\\\n&= \\$1.5B\n\\end{aligned}",
 };
 
 export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
@@ -2810,7 +2810,7 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "VETERAN_HEALTHCARE × 1%",
-  latex: "Cost_{vet,peace} = Cost_{vet,ann} \\times Reduction_{treaty} = \\$200B \\times 1\\% = \\$2B",
+  latex: "\\begin{aligned}\nCost_{vet,peace} \\\\\n&= Cost_{vet,ann} \\times Reduction_{treaty} \\\\\n&= \\$200B \\times 1\\% \\\\\n&= \\$2B\n\\end{aligned}",
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
@@ -2833,7 +2833,7 @@ export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION",
-  latex: "Cost_{percap,dis} = \\frac{Spending_{chronic,ann}}{Population} = \\frac{\\$4.1T}{335M} = \\$12.2K",
+  latex: "\\begin{aligned}\nCost_{percap,dis} \\\\\n&= \\frac{Spending_{chronic,ann}}{Population} \\\\\n&= \\frac{\\$4.1T}{335M} \\\\\n&= \\$12.2K\n\\end{aligned}",
 };
 
 export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
@@ -2844,7 +2844,7 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "US_MENTAL_HEALTH_COST ÷ US_POPULATION",
-  latex: "Cost_{percap,health} = \\frac{Cost_{mental,ann}}{Population} = \\frac{\\$350B}{335M} = \\$1.04K",
+  latex: "\\begin{aligned}\nCost_{percap,health} \\\\\n&= \\frac{Cost_{mental,ann}}{Population} \\\\\n&= \\frac{\\$350B}{335M} \\\\\n&= \\$1.04K\n\\end{aligned}",
 };
 
 export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
@@ -2890,7 +2890,7 @@ export const RECOVERY_TRIAL_TOTAL_QALYS_GENERATED: Parameter = {
   sourceType: "calculated",
   confidence: "medium",
   formula: "LIVES_SAVED × QALYS_PER_DEATH_AVERTED",
-  latex: "Rate_{total} = Trials_{global} \\times Deaths = 1M \\times 5 = 5M",
+  latex: "\\begin{aligned}\nRate_{total} \\\\\n&= Trials_{global} \\times Deaths \\\\\n&= 1M \\times 5 \\\\\n&= 5M\n\\end{aligned}",
 };
 
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
@@ -2947,7 +2947,7 @@ export const THALIDOMIDE_SURVIVORS_PER_EVENT: Parameter = {
   sourceType: "calculated",
   confidence: "medium",
   formula: "US_CASES × (1 - MORTALITY_RATE)",
-  latex: "900 \\text{ (cases)} \\times 60\\% \\text{ (survival)} = 540 \\text{ survivors}",
+  latex: "\\begin{aligned}\n900 \\text{ (cases)} \\times 60\\% \\text{ (survival)} \\\\\n&= 540 \\text{ survivors}\n\\end{aligned}",
 };
 
 export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
@@ -2958,7 +2958,7 @@ export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
   sourceType: "calculated",
   confidence: "medium",
   formula: "WORLDWIDE_CASES × US_POPULATION_SHARE",
-  latex: "ThalidomideUS = Thalidomide \\times Population = 15{,}000 \\times 6\\% = 900",
+  latex: "\\begin{aligned}\nThalidomideUS \\\\\n&= Thalidomide \\times Population \\\\\n&= 15{,}000 \\times 6\\% \\\\\n&= 900\n\\end{aligned}",
 };
 
 export const THALIDOMIDE_YLD_PER_EVENT: Parameter = {
@@ -3039,7 +3039,7 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/fundraising-strategy#capital-structure-campaign-vs-implementation",
   confidence: "high",
   formula: "REFERENDUM + LOBBYING + RESERVE",
-  latex: "Cost_{camp,total} = Campaign_{camp,treaty} + Campaign_{camp,treaty} + Campaign_{camp,treaty} = \\$250M + \\$650M + \\$100M = \\$1B",
+  latex: "\\begin{aligned}\nCost_{camp,total} \\\\\n&= Campaign_{camp,treaty} + Campaign_{camp,treaty} \\\\\n&\\quad + Campaign_{camp,treaty} \\\\\n&= \\$250M + \\$650M + \\$100M \\\\\n&= \\$1B\n\\end{aligned}",
 };
 
 export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
@@ -3051,7 +3051,7 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/strategy/roadmap#voting-bloc",
   confidence: "high",
   formula: "GLOBAL_POPULATION × 3.5%",
-  latex: "Campaign_{camp,treaty} = Population_{global} \\times Threshold_{global} = 8B \\times 3.5\\% = 280M",
+  latex: "\\begin{aligned}\nCampaign_{camp,treaty} \\\\\n&= Population_{global} \\times Threshold_{global} \\\\\n&= 8B \\times 3.5\\% \\\\\n&= 280M\n\\end{aligned}",
 };
 
 export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
@@ -3240,7 +3240,7 @@ export const UNEXPLORED_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
   confidence: "high",
   formula: "1 - EXPLORATION_RATIO",
-  latex: "\\text{Unexplored} = 1 - \\text{Exploration Ratio} = 1 - 0.00342 = 99.66\\%",
+  latex: "\\begin{aligned}\n\\text{Unexplored} \\\\\n&= 1 - \\text{Exploration Ratio} \\\\\n&= 1 - 0.00342 \\\\\n&= 99.66\\%\n\\end{aligned}",
 };
 
 export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
@@ -3252,7 +3252,7 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/solution/aligning-incentives#insurance-companies",
   confidence: "high",
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
-  latex: "Cost_{total} = Cost_{alz,ann} + Cost_{cancer,ann} + Cost_{diab,ann} + Cost_{heart,ann} = \\$355B + \\$208B + \\$327B + \\$363B = \\$1.25T",
+  latex: "\\begin{aligned}\nCost_{total} \\\\\n&= Cost_{alz,ann} + Cost_{cancer,ann} + Cost_{diab,ann} \\\\\n&\\quad + Cost_{heart,ann} \\\\\n&= \\$355B + \\$208B + \\$327B + \\$363B \\\\\n&= \\$1.25T\n\\end{aligned}",
 };
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
@@ -3264,7 +3264,7 @@ export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/clinical-trial-participants#willingness-gap",
   confidence: "medium",
   formula: "CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
-  latex: "Patients_{global} = Population_{curr,global} \\times Patients = 2.4B \\times 44.8\\% = 1.08B",
+  latex: "\\begin{aligned}\nPatients_{global} \\\\\n&= Population_{curr,global} \\times Patients \\\\\n&= 2.4B \\times 44.8\\% \\\\\n&= 1.08B\n\\end{aligned}",
 };
 
 // ============================================================================
@@ -3638,7 +3638,7 @@ export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   sourceRef: "clinical-trial-patient-participation-rate",
   confidence: "high",
   formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
-  latex: "Rate_{curr} = \\frac{Trials_{curr}}{Population_{curr,global}} = \\frac{1.9M}{2.4B} = 0.0792\\%",
+  latex: "\\begin{aligned}\nRate_{curr} \\\\\n&= \\frac{Trials_{curr}}{Population_{curr,global}} \\\\\n&= \\frac{1.9M}{2.4B} \\\\\n&= 0.0792\\%\n\\end{aligned}",
 };
 
 export const DAYS_PER_YEAR: Parameter = {
@@ -3685,7 +3685,7 @@ export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
-  latex: "NPV_{direct} = \\$21.76B \\times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B",
+  latex: "\\begin{aligned}\nNPV_{direct} \\\\\n&= \\$21.76B \\times \\frac{1 - 1.03^{-46.5}}{0.03} \\approx \\$541.9B\n\\end{aligned}",
 };
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
@@ -3893,7 +3893,7 @@ export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics",
   confidence: "high",
   formula: "ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
-  latex: "Deaths_{terror,dis} = \\frac{Deaths_{ann}}{Deaths_{terror}} = \\frac{55M}{3{,}000} = 18{,}400",
+  latex: "\\begin{aligned}\nDeaths_{terror,dis} \\\\\n&= \\frac{Deaths_{ann}}{Deaths_{terror}} \\\\\n&= \\frac{55M}{3{,}000} \\\\\n&= 18{,}400\n\\end{aligned}",
 };
 
 export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
@@ -3972,7 +3972,7 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   sourceType: "definition",
   confidence: "medium",
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
-  latex: "P_{\\text{unavoidable}} = \\sum_{\\text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) = 7.91\\%",
+  latex: "\\begin{aligned}\nP_{\\text{unavoidable}} \\\\\n&= \\sum_{\\text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) \\\\\n&= 7.91\\%\n\\end{aligned}",
 };
 
 export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
@@ -4204,7 +4204,7 @@ export const TREATY_ANNUAL_FUNDING: Parameter = {
   sourceType: "definition",
   confidence: "high",
   formula: "MILITARY_SPENDING × 1%",
-  latex: "Funding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B",
+  latex: "\\begin{aligned}\nFunding_{ann} \\\\\n&= Spending_{mil,ann} \\times Reduction_{treaty} \\\\\n&= \\$2.72T \\times 1\\% \\\\\n&= \\$27.2B\n\\end{aligned}",
 };
 
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
@@ -4271,7 +4271,7 @@ export const TREATY_REDIRECTED_SPENDING_INFINITE_ROI: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/economics#infinite-roi",
   confidence: "high",
   formula: "COMBINED_DIVIDENDS ÷ 0 = ∞",
-  latex: "\\text{ROI} = \\frac{\\text{Annual Benefits}}{\\text{New Spending}} = \\frac{\\$172B}{0} = \\infty",
+  latex: "\\begin{aligned}\n\\text{ROI} \\\\\n&= \\frac{\\text{Annual Benefits}}{\\text{New Spending}} \\\\\n&= \\frac{\\$172B}{0} \\\\\n&= \\infty\n\\end{aligned}",
 };
 
 export const TREATY_REDUCTION_PCT: Parameter = {
