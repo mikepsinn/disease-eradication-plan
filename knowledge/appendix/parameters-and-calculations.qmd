@@ -25,15 +25,15 @@ format:
 
 This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself.
 
-**Total parameters**: 389
+**Total parameters**: 390
 
-- External sources (peer-reviewed): 148
+- External sources (peer-reviewed): 149
 - Calculated values: 138
 - Core definitions: 103
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (148 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
+[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -8032,6 +8032,28 @@ Number of diseases that receive their FIRST effective treatment each year under 
 {{< include ../figures/distribution-new_disease_first_treatments_per_year.qmd >}}
 
 *? Low confidence*
+
+:::
+
+### NIH Annual Budget: $47B {#sec-nih_annual_budget}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+NIH annual budget (FY2024/2025)
+
+**Source**: [NIH (2024) - NIH Budget (FY 2025)](../references.qmd#nih-budget-fy2025)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$45B, $50B]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $45B and $50B (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nih_annual_budget.qmd >}}
+
+*✓ High confidence*
 
 :::
 

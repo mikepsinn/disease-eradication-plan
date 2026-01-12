@@ -99,7 +99,7 @@ Nobody has to vote on this again. The funding is automatic. The papers just flow
 
 Set up automatic payments that continue until the heat death of the universe:
 
-- **Year 1**: {{< var victory_bond_annual_payout >}} distributed to bondholders (271.8% returns, investors buying yachts)
+- **Year 1**: {{< var victory_bond_annual_payout >}} distributed to bondholders ({{< var victory_bond_annual_return_pct >}} returns, investors buying yachts)
 - **Year 2**: {{< var victory_bond_annual_payout >}} distributed to bondholders (still buying yachts)
 - **Year 3**: {{< var victory_bond_annual_payout >}} distributed to bondholders (yacht accessories now)
 - **Year 4+**: Scale up as treaty expands (2% = $5.4B, 5% = $13.5B, etc.)

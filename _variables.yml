@@ -2558,6 +2558,12 @@
   \ 30 diseases/year] | Dist: Lognormal | Unit: diseases/year | Click to view details,\
   \ calculation & sources\">15 diseases/year (95% CI: 8 diseases/year-30 diseases/year)</a>"
 "new_disease_first_treatments_per_year_cite": "@diseases-getting-first-treatment-annually"
+"nih_annual_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nih_annual_budget\"\
+  \ class=\"parameter-link\" data-source-ref=\"nih-budget-fy2025\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"NIH annual budget (FY2024/2025) | ✓\
+  \ High confidence | 95% CI: [$45B, $50B] | Unit: USD | Click to view details, calculation\
+  \ & sources\">$47B (95% CI: $45B-$50B)</a>"
+"nih_annual_budget_cite": "@nih-budget-fy2025"
 "nih_clinical_trials_spending_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nih_clinical_trials_spending_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"nih-clinical-trials-spending-pct-3-3\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of NIH\
@@ -4068,6 +4074,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "389"
+"total_parameter_count": "390"
 "total_latex_equation_count": "160"
-"total_citation_count": "148"
+"total_citation_count": "149"

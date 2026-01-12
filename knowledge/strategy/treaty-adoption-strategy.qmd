@@ -136,7 +136,7 @@ Pitch: "Be first, be heroes, minimal military impact (1%), maximum PR benefit"
 
 Different pitch for each:
 
-**United States:** "Lead the world in curing disease, not just weapons. Maintain military dominance (99% intact), PR victory, voters love it, [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) create new financial market."
+**United States:** "Lead the world in curing disease, not just weapons. Maintain military dominance ({{< var defense_sector_retention_pct >}} intact), PR victory, voters love it, [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) create new financial market."
 
 **China:** "Global leadership through health innovation. Soft power expansion. Domestic legitimacy boost."
 
@@ -160,7 +160,7 @@ Compliance becomes easier than resistance.
 You're NOT asking for:
 
 - Peace (they can keep fighting)
-- Disarmament (they keep 99%)
+- Disarmament (they keep {{< var defense_sector_retention_pct >}})
 - Political change
 - Economic restructuring
 
@@ -262,7 +262,7 @@ Everyone wins = Everyone supports.
 
 **"We need full military budget for security"**
 
-Response: "You're keeping 99%. Your citizens dying of disease is the bigger security threat."
+Response: "You're keeping {{< var defense_sector_retention_pct >}}. Your citizens dying of disease is the bigger security threat."
 
 **"This violates sovereignty"**
 
@@ -284,18 +284,3 @@ Response: "All countries have sick citizens wanting cures. This transcends polit
 
 **Pessimistic (10+ years):** Significant resistance, generational change needed
 
-Even pessimistic scenario = victory. Because once signed, it's forever. And millions saved per year.
-
-## The Secret Weapon: Inevitability
-
-Once [280 million people demand it](../references.qmd#3-5-rule):
-
-- Politicians can't ignore them
-- Corporations support it
-- Bondholders fund it
-- Diplomats have cover
-- Movement is unstoppable
-
-Governments sign not because they want to, but because they have to.
-
-And that's how treaties actually pass.

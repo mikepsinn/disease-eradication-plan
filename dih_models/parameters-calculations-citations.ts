@@ -998,6 +998,17 @@ export const NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR: Parameter = {
   confidenceInterval: [8.0, 30.0],
 };
 
+export const NIH_ANNUAL_BUDGET: Parameter = {
+  value: 47000000000.0,
+  unit: "USD",
+  displayName: "NIH Annual Budget",
+  description: "NIH annual budget (FY2024/2025)",
+  sourceType: "external",
+  sourceRef: "nih-budget-fy2025",
+  confidence: "high",
+  confidenceInterval: [45000000000.0, 50000000000.0],
+};
+
 export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   value: 0.033,
   unit: "percentage",
@@ -4440,6 +4451,7 @@ export const parameters = {
   MEASLES_VACCINATION_ROI,
   MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA,
   NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR,
+  NIH_ANNUAL_BUDGET,
   NIH_CLINICAL_TRIALS_SPENDING_PCT,
   NIH_STANDARD_RESEARCH_COST_PER_QALY,
   OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
@@ -5637,6 +5649,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.mercatus.org/research/research-papers/defense-spending-and-economy",
         note: "Mercatus: Defense Spending and Economy | CEPR: WWII Spending Multipliers | RAND: Defense Spending Economic Growth",
   },
+  "nih-budget-fy2025": {
+        id: "nih-budget-fy2025",
+        type: "article-journal",
+        title: "NIH Budget (FY 2025)",
+        author: [
+          {
+            literal: "NIH"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "NIH",
+        URL: "https://www.nih.gov/about-nih/organization/budget",
+        note: "NIH, 2024, Budget Overview | NIH, Office of Budget | Note: FY2024 budget was $47.1B",
+  },
   "nih-clinical-trials-spending-pct-3-3": {
         id: "nih-clinical-trials-spending-pct-3-3",
         type: "article-journal",
@@ -6249,11 +6275,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 389,
-  external: 148,
+  total: 390,
+  external: 149,
   calculated: 138,
   definitions: 103,
-  citations: 110,
+  citations: 111,
 } as const;
 
 // ============================================================================

@@ -502,7 +502,7 @@ As cures emerge, public pressure builds. Politicians who supported 1% now suppor
 
 | Year | Treaty % | 1% Treaty Fund Revenue | Bondholder Payout |
 |:-----|:---------|:------------|:------------------|
-| 1 | 1% | $27B | $2.7B |
+| 1 | 1% | {{< var treaty_annual_funding >}} | {{< var victory_bond_annual_payout >}} |
 | 3 | 2% | $54B | $5.4B |
 | 5 | 5% | $135B | $13.5B |
 
@@ -761,7 +761,7 @@ The {{< var iab_political_incentive_funding_pct >}} IAB allocation creates somet
 
 | Treaty Level | Total Revenue | 1% Treaty Fund Revenue | Research Funding | Political Incentive |
 |:-------------|:--------------|:------------|:-----------------|:--------------------|
-| 1% | $27B | $2.7B/year | $21.7B/year | Politicians rewarded for passage |
+| 1% | {{< var treaty_annual_funding >}} | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_trial_subsidies_annual >}}/year | Politicians rewarded for passage |
 | 2% | $54B | $5.4B/year | $43.2B/year | Politicians compete to expand |
 | 5% | $135B | $13.5B/year | $108B/year | Defense industry pivots to health |
 | 10% | $270B | $27B/year | $216B/year | War becomes economically obsolete |

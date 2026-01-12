@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/strategy/co-opting-defense-contractors-og-aca
 ![](/assets/infographics/knowledge/strategy/co-opting-defense-contractors-infographic-academic.jpg)
 
 
-Defense lobbyists spend [~$100M/year](../references.qmd#lobbying-100m) on lobbying and get $181B in government contracts back. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
+Defense lobbyists spend {{< var defense_lobbying_annual >}} on lobbying and get $181B in government contracts back. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
 
 They will kill any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
 
@@ -50,7 +50,7 @@ You give them:
 
 - Pay: $5-20M in bonds
 - Returns: {{< var victory_bond_annual_return_pct >}} annually, forever
-- Job security: Better (99% of military budget still exists)
+- Job security: Better ({{< var defense_sector_retention_pct >}} of military budget still exists)
 - Upside: Generational wealth
 - Legacy: "Accidentally saved humanity while getting rich"
 
@@ -66,8 +66,8 @@ That's it. That's the whole reason.
 
 ### The Treaty Doesn't Actually Hurt Them
 
-- Military budget drops 1% (from $2.75T to $2.72T)
-- They still have 99% to protect
+- Military budget drops 1% (from {{< var global_military_spending_annual_2024 >}} to {{< var global_military_spending_post_treaty_annual_2024 >}})
+- They still have {{< var defense_sector_retention_pct >}} to protect
 - Defense contracts still flow
 - Jobs stay
 - Weapons still get built
@@ -94,7 +94,7 @@ Their kids might even respect them. Probably not, but maybe.
 
 Private. No witnesses. Simple pitch:
 
-> "This treaty might happen. You can support it and become wealthy. Here are VICTORY Incentive Alignment Bonds paying {{< var victory_bond_annual_return_pct >}} annually. Forever. Your clients keep 99% of their budgets. What's your price?"
+> "This treaty might happen. You can support it and become wealthy. Here are VICTORY Incentive Alignment Bonds paying {{< var victory_bond_annual_return_pct >}} annually. Forever. Your clients keep {{< var defense_sector_retention_pct >}} of their budgets. What's your price?"
 
 ### Step 3: The Flip
 
@@ -124,7 +124,7 @@ It's the most important money you'll spend. These humans can kill the treaty or 
 
 ### You're Using Their Own Playbook
 
-Defense contractors spend $100M on lobbying and get $181B back.
+Defense contractors spend {{< var defense_lobbying_annual >}} on lobbying and get $181B back.
 
 You're offering them BETTER returns to lobby for something else.
 
@@ -166,7 +166,7 @@ You're ONLY asking them to:
 - Stop blocking the treaty
 - Maybe say nice things about it publicly
 
-That's it. They keep 99% of their current income PLUS get rich from bonds.
+That's it. They keep {{< var defense_sector_retention_pct >}} of their current income PLUS get rich from bonds.
 
 ## The Irony
 
@@ -188,7 +188,7 @@ This is either brilliant or ridiculous. Possibly both. You won't know until you 
 
 **Private Investor** (to partners):
 
-"These bonds pay {{< var victory_bond_annual_return_pct >}} vs market's 10%. Treaty passes = we're rich. Treaty fails = we take the loss. But I ran the numbers. It's passing. Get in early."
+"These bonds pay {{< var victory_bond_annual_return_pct >}} vs market's {{< var average_market_return_pct >}}. Treaty passes = we're rich. Treaty fails = we take the loss. But I ran the numbers. It's passing. Get in early."
 
 **Lobbyist** (to military contractor):
 

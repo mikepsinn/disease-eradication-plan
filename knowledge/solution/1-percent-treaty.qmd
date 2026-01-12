@@ -302,7 +302,7 @@ The military-industrial complex will LOVE this.
 
 Why? Because they get to:
 
-1.  **Keep 99% of their budget** (still plenty for bombs)
+1.  **Keep {{< var defense_sector_retention_pct >}} of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (higher profit margins)
 3.  **Look like heroes** (rare for arms dealers)
 4.  **Invest in the fund** ({{< var victory_bond_annual_return_pct >}} annual returns, remember?)
@@ -372,7 +372,7 @@ They do, or they're not part of the treaty. It's simultaneous. Like synchronized
 
 **"This makes us weak!"**
 
-You still have 99% of your weapons. You can still end the world. You're fine.
+You still have {{< var defense_sector_retention_pct >}} of your weapons. You can still end the world. You're fine.
 
 **"The military creates jobs!"**
 
@@ -388,7 +388,7 @@ We put humans on the moon with slide rules. We can figure out how to move money 
 
 **"What if there's a war?"**
 
-There's always a war. We'll still have 99% of your capacity to wage it. Plus, healthy populations fight better. Ask the Spartans. (Actually don't, they're all dead. But you get the point.)
+There's always a war. We'll still have {{< var defense_sector_retention_pct >}} of your capacity to wage it. Plus, healthy populations fight better. Ask the Spartans. (Actually don't, they're all dead. But you get the point.)
 
 ## Summary
 

@@ -19,7 +19,7 @@ image: /assets/og-images/knowledge/solution/dih-og-academic.jpg
 
 ![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
 
-The NIH spends $47 billion a year. Scientists spend [50-67% of their time writing grant applications](../references.qmd#grant-writing-time-50pct) instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
+The NIH spends {{< var nih_annual_budget >}} a year. Scientists spend [50-67% of their time writing grant applications](../references.qmd#grant-writing-time-50pct) instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
 
 Here's what an alternative might look like.
 
@@ -142,7 +142,7 @@ No committees. No lobbying. Just millions of pairwise preferences aggregated int
 
 **4. Campaigns Compete for Funding**
 
-- **Patient subsidies:** Automatically funded (formulaic, ~80% of treasury)
+- **Patient subsidies:** Automatically funded (formulaic, {{< var dih_treasury_trial_subsidies_pct >}} of treasury)
 - **Infrastructure campaigns:** Multiple providers compete (a decentralized framework for drug assessment (dFDA), data storage, integrations)
 - **Research prizes:** Bounties for specific breakthroughs
 - **Public goods:** Market failures that need direct funding

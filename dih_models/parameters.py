@@ -1012,6 +1012,18 @@ GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     keywords=["4.5b", "clinical trials", "government spending", "nih", "public funding"]
 )
 
+NIH_ANNUAL_BUDGET = Parameter(
+    47_000_000_000,
+    source_ref="nih-budget-fy2025",
+    source_type=SourceType.EXTERNAL,
+    description="NIH annual budget (FY2024/2025)",
+    display_name="NIH Annual Budget",
+    unit="USD",
+    confidence="high",
+    confidence_interval=(45_000_000_000, 50_000_000_000),
+    keywords=["$47", "47b", "nih", "budget", "annual", "national institutes of health"]
+)
+
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     0.033,
     source_ref=ReferenceID.NIH_CLINICAL_TRIALS_SPENDING_PCT_3_3,

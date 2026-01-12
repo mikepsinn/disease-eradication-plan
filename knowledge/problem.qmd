@@ -66,7 +66,7 @@ Diseases cured: Zero.
 
 Well, technically that's not fair. They cured... let me check my notes... no, it's zero.
 
-Here's where it gets interesting. The NIH has a $51 billion annual budget. Of that, only 3.3% goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, training researchers, and publishing papers nobody reads.
+Here's where it gets interesting. The NIH has a {{< var nih_annual_budget >}} annual budget. Of that, only {{< var nih_clinical_trials_spending_pct >}} goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, training researchers, and publishing papers nobody reads.
 
 It's like if you spent 97% of your grocery budget on cookbooks and 3% on food, then wondered why you're starving.
 

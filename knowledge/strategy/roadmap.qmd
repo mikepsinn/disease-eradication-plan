@@ -57,7 +57,7 @@ The strategy is simple: make it more profitable for everyone - military contract
 
 You use the {{< var treaty_campaign_total_cost >}} from the VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) to offer everyone a better deal:
 
-- Defense contractors keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds
+- Defense contractors keep {{< var defense_sector_retention_pct >}} of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds
 - Politicians get campaign funding AND 280 million voters who want to not die
 - Insurance companies realize healthy people file fewer death claims
 
@@ -91,7 +91,7 @@ As treaty percentage increases, IAB funding scales proportionally:
 
 | Phase | Year | Treaty % | Political Incentive Pool | What Happens |
 |:------|:-----|:---------|:------------------------|:-------------|
-| 3 | 1-3 | 1% | $2.7B/year | Treaty passes, cures begin |
+| 3 | 1-3 | 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes, cures begin |
 | 4 | 4-7 | 2% | $5.4B/year | Politicians compete to expand |
 | 5 | 8-12 | 5% | $13.5B/year | Defense lobby can't compete |
 | 6 | 13-20 | 10% | $27B/year | War becomes economically obsolete |

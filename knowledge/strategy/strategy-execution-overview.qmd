@@ -87,7 +87,7 @@ Here's the precise order in which to distribute papers to specific categories of
 
 **Who you're (legally) bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The (legal) bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
+**The (legal) bribe you offer:** Give us {{< var treaty_campaign_viral_referendum_base_case >}} in papers now, get {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
 
 **Why they accept:** Because even billionaires can count to {{< var victory_bond_annual_return_pct >}}, and {{< var victory_bond_annual_return_pct >}} beats everything else including insider trading, which is illegal but also less profitable.
 
@@ -117,7 +117,7 @@ They choose Option B. Not because they've become better people, but because they
 
 **Who you're (legally) bribing:** Humans who believe in curing diseases AND want to control a multi-billion dollar budget. These exist. They're called "effective altruists" except rich.
 
-**The (legal) bribe you offer:** Fund the [$100-200M referendum campaign](../economics/campaign-budget.qmd) and receive special [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) with governance rights. This means they get {{< var victory_bond_annual_return_pct >}} returns PLUS they get to decide how the $27.2B gets spent.
+**The (legal) bribe you offer:** Fund the {{< var campaign_phase1_budget >}} referendum campaign and receive special [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) with governance rights. This means they get {{< var victory_bond_annual_return_pct >}} returns PLUS they get to decide how the {{< var treaty_annual_funding >}} gets spent.
 
 **What they fund:** The [Global Referendum](global-referendum.qmd) - basically paying 280 million people to click YES on a website.
 

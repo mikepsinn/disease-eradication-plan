@@ -26,7 +26,7 @@ Historical analysis shows: Every peaceful movement that gets **{{< var global_po
 ### What Does Go Viral
 
 - "Humanity has [13,000 nukes](../references.qmd#world-warheads) but no cure for your kid's cancer" (rage-inducing)
-- "You're spending $340/year on killing people, $8/year on curing them" (shocking)
+- "You're spending {{< var global_military_spending_per_capita_annual >}}/year on killing people, $8/year on curing them" (shocking)
 - "{{< var victory_bond_annual_return_pct >}} investment returns while saving humanity" (greed + altruism)
 
 ## The Viral Formula
@@ -44,7 +44,7 @@ $$
 
 ### Personal Stake
 
-- "Your tax dollars: $340 to war, $8 to cures"
+- "Your tax dollars: {{< var global_military_spending_per_capita_annual >}} to war, $8 to cures"
 - "Your mom dies while bureaucrats meet"
 - "Your kid's rare disease: $0 funding"
 
@@ -193,7 +193,7 @@ $$
 
 ### Personal Calculators
 
-- "Your tax contribution to war: $340"
+- "Your tax contribution to war: {{< var global_military_spending_per_capita_annual >}}"
 - "Your tax contribution to cures: $8"
 - "If you redirected 1%: Lives saved: 0.003"
 
@@ -207,7 +207,7 @@ $$
 ### Hot Takes That Generate Engagement
 
 - "[FDA has killed more Americans than terrorists](../references.qmd#gieringer-drug-lag-estimate)"
-- "NIH is a [$48B](../references.qmd#nih-budget-fy2025) jobs program, not a cure program"
+- "NIH is a {{< var nih_annual_budget >}} jobs program, not a cure program"
 - "Your vote doesn't matter (Princeton proved it)"
 - "We're building Skynet while your mom dies"
 
@@ -223,7 +223,7 @@ $$
 
 **"The military needs its budget!"**
 
-→ "The treaty takes 1%. Nations keep 99%. Relax."
+→ "The treaty takes 1%. Nations keep {{< var defense_sector_retention_pct >}}. Relax."
 
 ## The Metrics
 
