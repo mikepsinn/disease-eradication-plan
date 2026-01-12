@@ -43,10 +43,7 @@ interface HardcodedMatch {
   line: number;
   value: string;
   context: string;
-  suggestedVar?: string;
-  confidence: 'high' | 'medium' | 'low' | 'none';
   hasExistingVar: boolean;
-  alternativeVars?: string[];  // Other variables with same value
   inCodeBlock: boolean;  // Whether this is inside a Python/code block
   inLatexBlock: boolean;  // Whether this is inside a $$ LaTeX block
 }
@@ -222,20 +219,6 @@ function findHardcodedLatexBlocks(content: string, filePath: string): HardcodedL
   return blocks;
 }
 
-// Score how well context matches variable keywords (0-100)
-function scoreContextMatch(varKeywords: string[], lineContext: string): number {
-  const contextLower = lineContext.toLowerCase();
-  let matchCount = 0;
-
-  for (const keyword of varKeywords) {
-    if (contextLower.includes(keyword)) {
-      matchCount++;
-    }
-  }
-
-  if (varKeywords.length === 0) return 0;
-  return Math.round((matchCount / varKeywords.length) * 100);
-}
 
 // Find hardcoded values in content
 function findHardcodedValues(content: string, filePath: string): HardcodedMatch[] {
@@ -301,7 +284,6 @@ function findHardcodedValues(content: string, filePath: string): HardcodedMatch[
           line: idx + 1,
           value,
           context: line.trim().substring(0, 120),
-          confidence: 'none',
           hasExistingVar: hasVar,
           inCodeBlock,
           inLatexBlock
@@ -313,83 +295,6 @@ function findHardcodedValues(content: string, filePath: string): HardcodedMatch[
   return matches;
 }
 
-// Check if unit types are compatible
-function unitTypesCompatible(hardcodedType: 'currency' | 'percentage' | 'count' | 'other',
-                              varType: 'currency' | 'percentage' | 'count' | 'other'): boolean {
-  // Exact match always OK
-  if (hardcodedType === varType) return true;
-  // 'other' is compatible with anything
-  if (hardcodedType === 'other' || varType === 'other') return true;
-  // Currency and counts should NOT match each other
-  if ((hardcodedType === 'currency' && varType === 'count') ||
-      (hardcodedType === 'count' && varType === 'currency')) return false;
-  // Percentages should only match percentages
-  if (hardcodedType === 'percentage' || varType === 'percentage') return hardcodedType === varType;
-  return true;
-}
-
-// Match hardcoded values to variables with semantic context awareness
-function matchToVariables(matches: HardcodedMatch[], variables: Variable[]): HardcodedMatch[] {
-  return matches.map(match => {
-    const matchNumeric = toNumeric(match.value);
-    const matchNormalized = normalize(match.value);
-    const matchUnitType = detectHardcodedUnitType(match.value);
-
-    // Find all variables with matching value AND compatible unit type
-    const valueMatches = variables.filter(v => {
-      // Check unit type compatibility first
-      if (!unitTypesCompatible(matchUnitType, v.unitType)) return false;
-      // Exact normalized match
-      if (v.normalizedValue === matchNormalized) return true;
-      // Approximate numeric match (within 5%) - only for same unit types
-      if (matchUnitType === v.unitType && approxEqual(v.numericValue, matchNumeric)) return true;
-      return false;
-    });
-
-    if (valueMatches.length === 0) {
-      return { ...match, confidence: 'none' as const };
-    }
-
-    if (valueMatches.length === 1) {
-      // Single match - check context for confidence
-      const contextScore = scoreContextMatch(valueMatches[0].keywords, match.context);
-      const confidence = contextScore >= 50 ? 'high' : contextScore >= 20 ? 'medium' : 'low';
-      return {
-        ...match,
-        suggestedVar: valueMatches[0].name,
-        confidence: confidence as 'high' | 'medium' | 'low'
-      };
-    }
-
-    // Multiple matches - use context to disambiguate
-    const scored = valueMatches
-      .map(v => ({
-        var: v,
-        score: scoreContextMatch(v.keywords, match.context)
-      }))
-      .sort((a, b) => b.score - a.score);
-
-    const best = scored[0];
-    const alternatives = scored.slice(1).map(s => s.var.name);
-
-    // Determine confidence based on score difference
-    let confidence: 'high' | 'medium' | 'low';
-    if (best.score >= 50 && (scored.length === 1 || best.score - scored[1].score >= 20)) {
-      confidence = 'high';
-    } else if (best.score >= 20) {
-      confidence = 'medium';
-    } else {
-      confidence = 'low';
-    }
-
-    return {
-      ...match,
-      suggestedVar: best.var.name,
-      confidence,
-      alternativeVars: alternatives.length > 0 ? alternatives.slice(0, 3) : undefined
-    };
-  });
-}
 
 // Generate markdown report
 function generateReport(matches: HardcodedMatch[], variables: Variable[]): string {
@@ -398,20 +303,59 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
   lines.push('# Hardcoded Value Audit Report\n');
   lines.push(`Generated: ${new Date().toISOString()}\n`);
 
+  // Add comprehensive introduction
+  lines.push('## 📖 What Is This Report?\n');
+  lines.push('This report identifies **hardcoded numbers** in the book\'s QMD files that could be replaced with **Quarto variables**.\n');
+  lines.push('### Why Replace Hardcoded Values?');
+  lines.push('- **Single source of truth**: Change a value once in `parameters.py`, it updates everywhere');
+  lines.push('- **Automatic formatting**: Variables display with proper units ($27B, 10%, etc.)');
+  lines.push('- **Built-in tooltips**: Hovering shows source, confidence interval, and formula');
+  lines.push('- **Academic rigor**: Auto-generates the parameters appendix with citations\n');
+
+  lines.push('### How Variables Work');
+  lines.push('Variables are defined in `dih_models/parameters.py` and generated into `_variables.yml`.\n');
+  lines.push('**Syntax:** `{{< var variable_name >}}` renders as formatted value with tooltip.\n');
+  lines.push('**Example:**');
+  lines.push('```markdown');
+  lines.push('Before: The treaty provides $27.2 billion annually.');
+  lines.push('After:  The treaty provides {{< var treaty_annual_funding >}} annually.');
+  lines.push('```\n');
+
+  lines.push('### How To Make Replacements');
+  lines.push('1. **Open the file** listed in the section header (e.g., `knowledge/solution.qmd`)');
+  lines.push('2. **Go to the line number** shown (e.g., Line 42)');
+  lines.push('3. **Find the hardcoded value** (e.g., `$27.2B`)');
+  lines.push('4. **Replace with the suggested variable** (e.g., `{{< var treaty_annual_funding >}}`)');
+  lines.push('5. **Check the checkbox** `[ ]` → `[x]` to track progress');
+  lines.push('6. **Mark as SKIP** if the value should NOT be replaced: `[ ]` → `[SKIP]`\n');
+
+  lines.push('### After Making Changes');
+  lines.push('Run validation to check for errors:');
+  lines.push('```bash');
+  lines.push('.venv/Scripts/python.exe scripts/pre-render-validation.py');
+  lines.push('```\n');
+
+  lines.push('### Report Sections');
+  lines.push('| Section | Description |');
+  lines.push('|:--------|:------------|');
+  lines.push('| **Hardcoded Values by File** | All detected values needing review |');
+  lines.push('| **LaTeX Equations** | Standalone `$$...$$` blocks that could use `_latex` variables |');
+  lines.push('| **Variable Reference** | All available variables grouped by type (💰📊🔢📝) |');
+  lines.push('| **LaTeX Reference** | All available `_latex` equation variables |\n');
+
   // Summary stats
-  const highConf = matches.filter(m => m.confidence === 'high');
-  const medConf = matches.filter(m => m.confidence === 'medium');
-  const lowConf = matches.filter(m => m.confidence === 'low');
-  const noMatch = matches.filter(m => m.confidence === 'none');
+  const inCodeBlocks = matches.filter(m => m.inCodeBlock);
+  const inLatexBlocks = matches.filter(m => m.inLatexBlock);
+  const inMarkdown = matches.filter(m => !m.inCodeBlock && !m.inLatexBlock);
   const onMixedLines = matches.filter(m => m.hasExistingVar);
 
   lines.push('## Summary\n');
   lines.push(`- **Total hardcoded values found**: ${matches.length}`);
-  lines.push(`- **High confidence matches**: ${highConf.length} (safe to replace)`);
-  lines.push(`- **Medium confidence matches**: ${medConf.length} (review context)`);
-  lines.push(`- **Low confidence matches**: ${lowConf.length} (likely wrong match)`);
-  lines.push(`- **No match found**: ${noMatch.length} (may need new param)`);
+  lines.push(`- **In regular markdown** (can use \`{{< var >}}\`): ${inMarkdown.length}`);
+  lines.push(`- **In code blocks** (need Python import): ${inCodeBlocks.length}`);
+  lines.push(`- **In LaTeX blocks** (need \`_latex\` variable): ${inLatexBlocks.length}`);
   lines.push(`- **On lines with existing variables**: ${onMixedLines.length}\n`);
+  lines.push('> **Tip:** Use the Variable Reference at the end to find the right variable for each value.\n');
 
   // Add critical guidelines
   lines.push('## ⚠️ Critical Replacement Guidelines\n');
@@ -438,121 +382,30 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
     byFile.set(match.file, existing);
   }
 
-  // High confidence section first
-  if (highConf.length > 0) {
-    lines.push('## High Confidence Replacements\n');
-    lines.push('*These matches have strong context alignment and are safe to replace.*\n');
+  // List all hardcoded values by file
+  lines.push('## Hardcoded Values by File\n');
+  lines.push('*Review each value and find the appropriate variable in the reference section below.*\n');
 
-    for (const [file, fileMatches] of byFile) {
-      const highInFile = fileMatches.filter(m => m.confidence === 'high');
-      if (highInFile.length === 0) continue;
-
-      lines.push(`### ${file}\n`);
-      for (const match of highInFile) {
-        const mixed = match.hasExistingVar ? ' [MIXED]' : '';
-        // Pre-mark items that can't use Quarto variables
-        let checkbox = '[ ]';
-        let skipReason = '';
-        if (match.inCodeBlock) {
-          checkbox = '[SKIP:CODE]';
-          skipReason = ' ⚠️ In code block - use Python import';
-        } else if (match.inLatexBlock) {
-          checkbox = '[SKIP:LATEX]';
-          skipReason = ' ⚠️ In LaTeX - use _latex variable';
-        }
-        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}${skipReason}`);
-        lines.push(`  > ${match.context}...`);
+  for (const [file, fileMatches] of byFile) {
+    // Make file path relative and shorter
+    const shortFile = file.replace(/.*\\knowledge\\/, 'knowledge/').replace(/\\/g, '/');
+    lines.push(`### ${shortFile}\n`);
+    
+    for (const match of fileMatches) {
+      const mixed = match.hasExistingVar ? ' [MIXED]' : '';
+      let checkbox = '[ ]';
+      let note = '';
+      if (match.inCodeBlock) {
+        checkbox = '[CODE]';
+        note = ' *(in code block)*';
+      } else if (match.inLatexBlock) {
+        checkbox = '[LATEX]';
+        note = ' *(in LaTeX block)*';
       }
-      lines.push('');
+      lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\`${mixed}${note}`);
+      lines.push(`  > ${match.context}...`);
     }
-  }
-
-  // Medium confidence section
-  if (medConf.length > 0) {
-    lines.push('## Medium Confidence (Review Context)\n');
-    lines.push('*These have partial context match. Verify the semantic meaning before replacing.*\n');
-
-    for (const [file, fileMatches] of byFile) {
-      const medInFile = fileMatches.filter(m => m.confidence === 'medium');
-      if (medInFile.length === 0) continue;
-
-      lines.push(`### ${file}\n`);
-      for (const match of medInFile) {
-        const mixed = match.hasExistingVar ? ' [MIXED]' : '';
-        const alts = match.alternativeVars ? ` | Also: ${match.alternativeVars.join(', ')}` : '';
-        // Pre-mark items that can't use Quarto variables
-        let checkbox = '[ ]';
-        let skipReason = '';
-        if (match.inCodeBlock) {
-          checkbox = '[SKIP:CODE]';
-          skipReason = ' ⚠️ In code block';
-        } else if (match.inLatexBlock) {
-          checkbox = '[SKIP:LATEX]';
-          skipReason = ' ⚠️ In LaTeX block';
-        }
-        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}${alts}${skipReason}`);
-        lines.push(`  > ${match.context}...`);
-      }
-      lines.push('');
-    }
-  }
-
-  // Low confidence section
-  if (lowConf.length > 0) {
-    lines.push('## Low Confidence (Likely Wrong Match)\n');
-    lines.push('*Value matches but context does not. These are probably false positives.*\n');
-
-    for (const [file, fileMatches] of byFile) {
-      const lowInFile = fileMatches.filter(m => m.confidence === 'low');
-      if (lowInFile.length === 0) continue;
-
-      lines.push(`### ${file}\n`);
-      for (const match of lowInFile) {
-        const alts = match.alternativeVars ? ` | Also: ${match.alternativeVars.join(', ')}` : '';
-        // Pre-mark items that can't use Quarto variables
-        let checkbox = '[ ]';
-        let skipReason = '';
-        if (match.inCodeBlock) {
-          checkbox = '[SKIP:CODE]';
-          skipReason = ' ⚠️ In code block';
-        } else if (match.inLatexBlock) {
-          checkbox = '[SKIP:LATEX]';
-          skipReason = ' ⚠️ In LaTeX block';
-        }
-        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` ≈ \`${match.suggestedVar}\`${alts}${skipReason} ⚠️`);
-        lines.push(`  > ${match.context}...`);
-      }
-      lines.push('');
-    }
-  }
-
-  // No match section
-  if (noMatch.length > 0) {
-    lines.push('## No Variable Match\n');
-    lines.push('*These values have no matching variable. Consider creating new parameters.*\n');
-
-    // Group by unique value
-    const byValue = new Map<string, HardcodedMatch[]>();
-    for (const match of noMatch) {
-      const existing = byValue.get(match.value) || [];
-      existing.push(match);
-      byValue.set(match.value, existing);
-    }
-
-    // Sort by occurrence count
-    const sorted = [...byValue.entries()].sort((a, b) => b[1].length - a[1].length);
-
-    for (const [value, occurrences] of sorted.slice(0, 30)) {
-      lines.push(`### \`${value}\` (${occurrences.length} occurrences)\n`);
-      for (const match of occurrences.slice(0, 5)) {
-        lines.push(`- ${match.file}:${match.line}`);
-        lines.push(`  > ${match.context.substring(0, 80)}...`);
-      }
-      if (occurrences.length > 5) {
-        lines.push(`- ... and ${occurrences.length - 5} more`);
-      }
-      lines.push('');
-    }
+    lines.push('');
   }
 
   // Variable Reference section - grouped by unit type for easy lookup
@@ -682,16 +535,12 @@ async function main() {
     allLatexBlocks = allLatexBlocks.concat(latexBlocks);
   }
 
-  console.log(`Found ${allMatches.length} hardcoded values, ${allLatexBlocks.length} LaTeX blocks`);
+  const inMarkdown = allMatches.filter(m => !m.inCodeBlock && !m.inLatexBlock).length;
+  const inCode = allMatches.filter(m => m.inCodeBlock).length;
+  const inLatex = allMatches.filter(m => m.inLatexBlock).length;
 
-  // Match to variables
-  allMatches = matchToVariables(allMatches, variables);
-
-  const highConf = allMatches.filter(m => m.confidence === 'high').length;
-  const medConf = allMatches.filter(m => m.confidence === 'medium').length;
-  const lowConf = allMatches.filter(m => m.confidence === 'low').length;
-
-  console.log(`Matches: ${highConf} high, ${medConf} medium, ${lowConf} low confidence`);
+  console.log(`Found ${allMatches.length} hardcoded values (${inMarkdown} in markdown, ${inCode} in code, ${inLatex} in LaTeX)`);
+  console.log(`Found ${allLatexBlocks.length} standalone LaTeX blocks`);
 
   // Generate report
   const report = generateReport(allMatches, variables);
@@ -699,14 +548,7 @@ async function main() {
   fs.writeFileSync(outputFile, report + latexReport);
   console.log(`Report written to ${outputFile}`);
 
-  // Exit with code based on findings
-  if (highConf > 0) {
-    console.log(`\n✓ ${highConf} high-confidence values can be replaced with variables`);
-    process.exit(1);
-  } else if (medConf > 0) {
-    console.log(`\n~ ${medConf} medium-confidence matches need review`);
-    process.exit(0);
-  }
+  console.log(`\n✓ Review the report and use the Variable Reference to find appropriate replacements.`);
 }
 
 main().catch(err => {
