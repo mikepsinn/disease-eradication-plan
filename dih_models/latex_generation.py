@@ -1131,7 +1131,9 @@ def generate_auto_latex(
         if formula:
             # Convert formula symbols to LaTeX-compatible format
             # Replace × with \times, ÷ with \div, etc.
+            # IMPORTANT: Escape underscores to prevent "double subscript" errors
             formula_latex = (formula
+                .replace('_', r'\_')
                 .replace('×', r'\times')
                 .replace('÷', r'\div')
                 .replace('≤', r'\leq')
