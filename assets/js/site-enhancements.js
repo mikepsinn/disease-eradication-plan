@@ -8,7 +8,7 @@
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 3.1.0
+ * Version: 3.2.0
  */
 
 (function() {
@@ -33,10 +33,30 @@
 
     var calloutToExpand = null;
 
-    // Case 1: Target inside collapse container
+    // Case 1: Target is inside a collapse container directly
     calloutToExpand = targetElement.closest('.callout-collapse');
 
-    // Case 2: Target is heading, look for next sibling callout
+    // Case 2: Target is a section/heading, look for callout INSIDE it (Quarto structure)
+    // Quarto puts #sec-xxx IDs on <section> elements that contain headings AND callouts
+    if (!calloutToExpand) {
+      var calloutInside = targetElement.querySelector('.callout .callout-collapse');
+      if (calloutInside) {
+        calloutToExpand = calloutInside;
+      }
+    }
+
+    // Case 3: Look for first callout child within the target element
+    if (!calloutToExpand) {
+      var firstCallout = targetElement.querySelector('.callout');
+      if (firstCallout) {
+        var collapseDiv = firstCallout.querySelector('.callout-collapse');
+        if (collapseDiv) {
+          calloutToExpand = collapseDiv;
+        }
+      }
+    }
+
+    // Case 4: Target is heading, look for next sibling callout
     if (!calloutToExpand) {
       var sibling = targetElement.nextElementSibling;
       while (sibling) {
@@ -51,7 +71,7 @@
       }
     }
 
-    // Case 3: Target in parent callout
+    // Case 5: Target in parent callout
     if (!calloutToExpand) {
       var parentCallout = targetElement.closest('.callout');
       if (parentCallout) {
@@ -64,39 +84,22 @@
 
     // Expand callout if found
     if (calloutToExpand && !calloutToExpand.classList.contains('show')) {
-      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
-        var bsCollapse = new bootstrap.Collapse(calloutToExpand, { toggle: false });
-        bsCollapse.show();
-      } else {
-        calloutToExpand.classList.add('show');
-        var calloutContainer = calloutToExpand.closest('.callout');
-        if (calloutContainer) {
-          var toggleBtn = calloutContainer.querySelector('.callout-btn-toggle');
-          if (toggleBtn) {
-            toggleBtn.setAttribute('aria-expanded', 'true');
-          }
-        }
-      }
-
-      // Add highlight effect
-      var calloutContainer = calloutToExpand.closest('.callout');
-      if (calloutContainer) {
-        calloutContainer.classList.add('hash-target-highlight');
-        setTimeout(function() {
-          calloutContainer.classList.remove('hash-target-highlight');
-        }, 1500);
-      }
+      expandCallout(calloutToExpand);
     }
 
-    // Highlight heading
-    if (targetElement.tagName && targetElement.tagName.match(/^H[1-6]$/)) {
-      targetElement.classList.add('hash-target-heading');
+    // Highlight heading (check both target and first heading child)
+    var headingElement = targetElement;
+    if (!headingElement.tagName || !headingElement.tagName.match(/^H[1-6]$/)) {
+      headingElement = targetElement.querySelector('h1, h2, h3, h4, h5, h6');
+    }
+    if (headingElement && headingElement.tagName && headingElement.tagName.match(/^H[1-6]$/)) {
+      headingElement.classList.add('hash-target-heading');
       setTimeout(function() {
-        targetElement.classList.remove('hash-target-heading');
+        headingElement.classList.remove('hash-target-heading');
       }, 3000);
     }
 
-    // Scroll to target
+    // Scroll to target after expansion
     setTimeout(function() {
       var headerOffset = 80;
       var elementPosition = targetElement.getBoundingClientRect().top;
@@ -105,7 +108,46 @@
         top: offsetPosition,
         behavior: 'smooth'
       });
-    }, 150);
+    }, 300);
+  }
+
+  function expandCallout(collapseDiv) {
+    // Try Bootstrap Collapse API first
+    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+      try {
+        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapseDiv, { toggle: false });
+        bsCollapse.show();
+      } catch (e) {
+        // Fallback to manual expansion
+        manualExpandCallout(collapseDiv);
+      }
+    } else {
+      manualExpandCallout(collapseDiv);
+    }
+
+    // Add highlight effect
+    var calloutContainer = collapseDiv.closest('.callout');
+    if (calloutContainer) {
+      calloutContainer.classList.add('hash-target-highlight');
+      setTimeout(function() {
+        calloutContainer.classList.remove('hash-target-highlight');
+      }, 2000);
+    }
+  }
+
+  function manualExpandCallout(collapseDiv) {
+    collapseDiv.classList.add('show');
+    collapseDiv.style.height = '';
+
+    var calloutContainer = collapseDiv.closest('.callout');
+    if (calloutContainer) {
+      // Update toggle button state
+      var toggleBtn = calloutContainer.querySelector('.callout-btn-toggle, [data-bs-toggle="collapse"]');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.classList.remove('collapsed');
+      }
+    }
   }
 
   // ========================================
@@ -192,10 +234,11 @@
   // ========================================
 
   function onPageReady() {
+    // Wait longer for large pages to fully render (loader takes 600ms to fade)
     setTimeout(function() {
       expandHashTarget();
       createUncertaintyToggle();
-    }, 100);
+    }, 800);
   }
 
   if (document.readyState === 'complete') {
