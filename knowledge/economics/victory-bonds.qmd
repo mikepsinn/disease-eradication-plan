@@ -144,7 +144,7 @@ $$
 | Pretty skeptical (5% discount) | $54B | 54x your money |
 | Very skeptical (10% discount) | $27B | 27x your money |
 
-Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth $27B total.
+Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth {{< var treaty_annual_funding >}} total.
 
 **Translation for those who prefer simple math:**
 

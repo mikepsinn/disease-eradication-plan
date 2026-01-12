@@ -175,7 +175,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **BCR (Benefit-Cost Ratio):** For every $1 spent, how many $ of social benefit (100:1 BCR = $100 benefit per $1 spent)
 - **NSV (Net Social Value):** Total benefit minus total cost to society
 - **DALYs:** Disability-Adjusted Life Years. This is a measure of disease burden combining mortality and quality of life
-- **VSL (Value of Statistical Life):** How much society values preventing one death (EPA uses ~$10M)
+- **VSL (Value of Statistical Life):** How much society values preventing one death (EPA uses ~{{< var value_of_statistical_life >}})
 
 For additional terms: definitions in parentheses on first use throughout the paper.
 
@@ -796,7 +796,7 @@ The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
 - **80%** to the public good itself (pragmatic clinical trials)
 - **10%** to investor returns (perpetual payments to those who funded the campaign to pass the treaty)
-- **10%** to political incentives (funding the three-layer architecture)
+- **{{< var iab_political_incentive_funding_pct >}}** to political incentives (funding the three-layer architecture)
 
 This allocation structure creates aligned incentives across all participants. Investors who funded the initial campaign receive perpetual returns (\$2.4B annually) as long as the treaty continues, giving them strong incentives to support treaty expansion and defend against repeal. The political incentive allocation (\$2.4B annually) funds the three-layer architecture:
 
@@ -1315,7 +1315,7 @@ The paper demonstrates that IABs redirect resources from low-NSV to high-NSV pro
 
 | Benefit Category | Estimated Annual Value | Source |
 |:-----------------|:----------------------|:-------|
-| Peace dividend (reduced conflict costs) | \$113.55B | 1% × \$11.355T global war costs |
+| Peace dividend (reduced conflict costs) | {{< var peace_dividend_annual_societal_benefit >}} | 1% × {{< var global_annual_direct_indirect_war_cost >}} global war costs |
 | Pragmatic clinical trials acceleration | \$24B reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
 | **Total annual benefits** | **\$227.55B** | Conservative estimate |
 
@@ -1405,7 +1405,7 @@ The bootstrap problem, raising $200M-$500M for initial proof-of-concept before c
 
 **ROI makes bootstrap funding rational for risk-tolerant capital:**
 
-As shown in Section 2.2, a \$100M campaign with 20% success probability passing a \$24B/year treaty (10% to investors) yields:
+As shown, a {{< var treaty_campaign_budget_reserve >}} campaign with 20% success probability passing a {{< var treaty_annual_funding >}}/year treaty ({{< var victory_bond_funding_pct >}} to investors) yields:
 
 $$
 E[V] = 0.20 \times \$2.4\text{B/year} = \$480\text{M/year}

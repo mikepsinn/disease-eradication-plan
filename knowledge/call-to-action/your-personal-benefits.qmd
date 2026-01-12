@@ -45,7 +45,7 @@ Here's what a typical 30-year-old making $50,000/year gets with 20 years of life
 Where does this come from?
 
 - **Extended Earnings**: You live extra years beyond age 80. That's more years of earning, investing, and compounding.
-- **GDP Boost (Mil→Research)**: Redirecting military spending to research creates GDP growth (post-WW2: 30% military cut → 8% GDP growth). This compounds over your extended lifetime.
+- **GDP Boost (Mil→Research)**: Redirecting military spending to research creates GDP growth (post-WW2: {{< var post_ww2_military_cut_pct >}} military cut → 8% GDP growth). This compounds over your extended lifetime.
 - **Healthcare Savings**: Diseases get cured, your insurance premiums drop.
 - **Productivity Gains**: You're healthier, you work better, you earn more.
 
@@ -86,7 +86,7 @@ You're not being asked to donate your time. You're being offered the highest-pay
 This is:
 
 - **9,700x** the average US wage ({{< var average_us_hourly_wage >}}/hour)
-- **29x** a CEO's hourly rate (~$10,000/hour)
+- **29x** a CEO's hourly rate (~{{< var typical_ceo_hourly_rate >}}/hour)
 
 The catch? You only get paid if the plan works. But if it does, you just made {{< var effective_hourly_rate_lifetime_benefit >}}/hour for 14.8 hours of work.
 

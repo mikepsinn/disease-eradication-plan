@@ -352,7 +352,7 @@ To understand realistic funding strategies, we examined historical evidence from
 ##### Calculation
 
 - Current: Spend $150M lobbying → Get $750B contracts → 15% margins = $112B profit
-- New model: Spend $150M lobbying for treaty → Keep $2.67T military budget (99%) + earn {{< var victory_bond_annual_return_pct >}} on $27B health budget
+- New model: Spend $150M lobbying for treaty → Keep $2.67T military budget (99%) + earn {{< var victory_bond_annual_return_pct >}} on {{< var treaty_annual_funding >}} health budget
 - Defense budget stays at $2.67T (barely changes)
 - They get NEW income stream: {{< var treaty_annual_funding >}} × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year to VICTORY Incentive Alignment Bondholders
 - Plus they can BUY VICTORY Incentive Alignment Bonds with their existing profits
@@ -603,7 +603,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | :------------------------------------- | :---------- | :---------- | :------------------------------------------------------------- |
 | **Operations (Core Team)**             | $10M        | $15M        | Lean founding team (15-20 people) with VICTORY tokens          |
 | **Platform & Tech MVP**                | $50M        | $75M        | Engineering costs with 50.0% cash / 50.0% token split          |
-| **Legal & Framework (Pilots)**         | $40M        | $60M        | Top-tier law firms with success fees tied to the creation of future government-issued VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) upon treaty ratification |
+| **Legal & Framework (Pilots)**         | $40M        | {{< var campaign_legal_work >}}        | Top-tier law firms with success fees tied to the creation of future government-issued VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) upon treaty ratification |
 | **Pilot Public Engagement & Policy Education** | $100M       | $150M       | Competitive prize for organizations demonstrating the most effective public engagement and policy education leading to increased public support |
 | **Referendum Points System**           | $5M         | $10M        | Infrastructure for non-financial incentives                    |
 | **Contingency**                        | $45M       | $90M        | 20-30% buffer for high-uncertainty policy initiative           |
@@ -625,7 +625,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | **Global Public Education Initiatives** | $300M       | $750M       | Competitive prize model for organizations achieving significant public and policy maker engagement in nations yet to fully embrace the treaty |
 | **Industry Collaboration (Final Tranche)** | $50M        | $100M       | Entirely success-based incentives for corporate collaboration to support treaty implementation |
 | **Treasury & Governance Launch**       | $100M       | $150M       | Developer bonuses tied to a flawless policy recommendation framework and technical launch for your 1% Treaty Fund |
-| **Contingency**                        | $50M        | $100M       | Final buffer for most critical policy advancement phase   |
+| **Contingency**                        | {{< var campaign_contingency >}}        | $100M       | Final buffer for most critical policy advancement phase   |
 
 ### Bottom-Up Budget Justification
 
@@ -663,7 +663,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 - **Best for:** Crypto whales who understand token mechanics
 - **Timeline:** 2-4 weeks to close
-- **Minimum:** $5M investment
+- **Minimum:** {{< var family_office_investment_min >}} investment
 
 #### Option 2: Convertible Note
 

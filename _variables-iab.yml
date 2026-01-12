@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (11 entries)
+# Contains only variables used in this paper (20 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 average_market_return_pct: '<a href="/knowledge/appendix/parameters-and-calculations#sec-average_market_return_pct"
@@ -11,6 +11,65 @@ average_market_return_pct_cite: '@warren-buffett-career-average-return-20-pct'
 concentrated_interest_sector_market_cap_usd: '<span class="parameter-definition" title="Estimated
   combined market capitalization of concentrated interest opposition (defense, fossil
   fuel, etc.) | Unit: USD | Core definition">$5T</span>'
+global_annual_direct_indirect_war_cost: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_annual_direct_indirect_war_cost"
+  class="parameter-link" data-source-ref="/knowledge/problem/cost-of-war.qmd#total-cost"
+  data-source-type="calculated" data-confidence="high" title="Total annual cost of
+  war worldwide (direct + indirect costs) | Calculated from 2 inputs | ✓ High confidence
+  | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view details,
+  calculation & sources">$11.4T (95% CI: $9.01T-$14.1T)</a>'
+global_annual_direct_indirect_war_cost_latex: '$$
+
+  \begin{aligned}
+
+  Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total} = \$7.66T + \$3.7T
+  = \$11.4T
+
+  \\[0.5em]
+
+  \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
+  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
+  = \$7.66T
+
+  \\[0.5em]
+
+  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  = \$2.34T + \$27B + \$83B = \$2.45T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \$10M = \$2.34T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
+  = \$27B
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \$10M = \$83B
+
+  \\[0.5em]
+
+  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
+  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
+
+  \\[0.5em]
+
+  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
+  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
+  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
+  + \$150B + \$200B = \$3.7T
+
+  \end{aligned}
+
+  $$'
 global_household_wealth_usd: '<a href="/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd"
   class="parameter-link" data-source-ref="cs-global-wealth-report-2023" data-source-type="external"
   data-confidence="high" title="Total global household wealth (2022/2023 estimate)
@@ -98,6 +157,74 @@ iab_mechanism_benefit_cost_ratio_latex: '$$
   \end{aligned}
 
   $$'
+iab_political_incentive_funding_pct: '<span class="parameter-definition" title="Percentage
+  of treaty funding allocated to Incentive Alignment Bond mechanism for political
+  incentives (independent expenditures/PACs, post-office fellowships, Public Good
+  Score infrastructure) | Unit: rate | Core definition">10%</span>'
+peace_dividend_annual_societal_benefit: '<a href="/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_annual_societal_benefit"
+  class="parameter-link" data-source-ref="/knowledge/appendix/peace-dividend-calculations.qmd"
+  data-source-type="calculated" data-confidence="high" title="Annual peace dividend
+  from 1% reduction in total war costs | Calculated from 2 inputs | ✓ High confidence
+  | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year | Click to view details, calculation
+  & sources">$114B (95% CI: $90.1B-$141B)</a>'
+peace_dividend_annual_societal_benefit_latex: '$$
+
+  \begin{aligned}
+
+  Cost_{soc,ann} = Cost_{indirect,ann} \times Reduction_{treaty} = \$11.4T \times
+  1\% = \$114B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,ann} = Cost_{direct,total} + Cost_{indirect,total}
+  = \$7.66T + \$3.7T = \$11.4T
+
+  \\[0.5em]
+
+  \text{where } Cost_{direct,total} = Loss_{human,ann} + Infrastructure_{global} +
+  Disruption_{trade,ann} + Spending_{mil,ann} = \$2.45T + \$1.88T + \$616B + \$2.72T
+  = \$7.66T
+
+  \\[0.5em]
+
+  \text{where } Loss_{human,ann} = Cost_{human,ann} + Cost_{human,ann} + Cost_{human,ann}
+  = \$2.34T + \$27B + \$83B = \$2.45T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{combat,ann} \times Value = 234{,}000 \times
+  \$10M = \$2.34T
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10M
+  = \$27B
+
+  \\[0.5em]
+
+  \text{where } Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times
+  \$10M = \$83B
+
+  \\[0.5em]
+
+  \text{where } Infrastructure_{global} = Damage_{infra,ann} + Damage_{infra,ann}
+  + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann} + Damage_{infra,ann}
+  = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B = \$1.88T
+
+  \\[0.5em]
+
+  \text{where } Disruption_{trade,ann} = Cost_{trade,ann} + Cost_{trade,ann} + Cost_{trade,ann}
+  + Cost_{trade,ann} = \$57.4B + \$125B + \$247B + \$187B = \$616B
+
+  \\[0.5em]
+
+  \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{mil,ann} + Lost_{global}
+  + Cost_{ann} + Cost_{ref,ann} + Cost_{vet,ann} = \$100B + \$2.72T + \$300B + \$232B
+  + \$150B + \$200B = \$3.7T
+
+  \end{aligned}
+
+  $$'
 treaty_annual_funding: '<span class="parameter-definition" title="Annual funding from
   1% of global military spending redirected to DIH | Unit: USD/year | Core definition">$27.2B</span>'
 treaty_annual_funding_latex: '$$
@@ -115,6 +242,21 @@ treaty_annual_funding_latex: '$$
   \end{aligned}
 
   $$'
+treaty_campaign_budget_reserve: '<a href="/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_budget_reserve"
+  class="parameter-link" data-source-ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown"
+  data-source-type="definition" data-confidence="medium" title="Reserve fund / contingency
+  buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns
+  with potential for unforeseen legal challenges, opposition response, or regulatory
+  delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation
+  and predictable referendum/lobbying costs. | ~ Medium confidence | 95% CI: [$20M,
+  $150M] | Dist: Lognormal | Unit: USD | Click to view details, calculation & sources">$100M
+  (95% CI: $20M-$150M)</a>'
+value_of_statistical_life: '<a href="/knowledge/appendix/parameters-and-calculations#sec-value_of_statistical_life"
+  class="parameter-link" data-source-ref="dot-vsl-13-6m" data-source-type="external"
+  data-confidence="high" title="Value of Statistical Life (conservative estimate)
+  | ✓ High confidence | 95% CI: [$5M, $15M] | Dist: Gamma (SE: $3M) | Unit: USD |
+  Click to view details, calculation & sources">$10M (95% CI: $5M-$15M)</a>'
+value_of_statistical_life_cite: '@dot-vsl-13-6m'
 victory_bond_annual_return_pct: '<span class="parameter-definition" title="Annual
   return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core
   definition">272% (95% CI: 180%-430%)</span>'
@@ -143,3 +285,6 @@ victory_bond_annual_return_pct_latex: '$$
   \end{aligned}
 
   $$'
+victory_bond_funding_pct: '<span class="parameter-definition" title="Percentage of
+  captured dividend funding VICTORY Incentive Alignment Bonds (10%) | Unit: rate |
+  Core definition">10%</span>'

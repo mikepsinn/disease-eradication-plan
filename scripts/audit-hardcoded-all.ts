@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Audit all QMD files for hardcoded values and generate replacement report
- * Usage: npx tsx scripts/audit-hardcoded-all.ts [--output report.md] [--limit 10]
+ * Usage: npx tsx scripts/audit-hardcoded-all.ts [--output report.md]
  *
  * Features:
  * - Semantic context matching (uses variable name keywords to disambiguate)
@@ -23,6 +23,21 @@ interface Variable {
   unitType: 'currency' | 'percentage' | 'count' | 'other';
 }
 
+interface LatexVariable {
+  name: string;  // e.g., "treaty_annual_funding_latex"
+  baseName: string;  // e.g., "treaty_annual_funding"
+  preview: string;  // First 80 chars of the LaTeX content
+}
+
+interface HardcodedLatexBlock {
+  file: string;
+  startLine: number;
+  endLine: number;
+  content: string;
+  preview: string;
+  suggestedVar?: string;
+}
+
 interface HardcodedMatch {
   file: string;
   line: number;
@@ -32,6 +47,8 @@ interface HardcodedMatch {
   confidence: 'high' | 'medium' | 'low' | 'none';
   hasExistingVar: boolean;
   alternativeVars?: string[];  // Other variables with same value
+  inCodeBlock: boolean;  // Whether this is inside a Python/code block
+  inLatexBlock: boolean;  // Whether this is inside a $$ LaTeX block
 }
 
 // Parse command line args
@@ -39,9 +56,6 @@ const args = process.argv.slice(2);
 const outputFile = args.includes('--output')
   ? args[args.indexOf('--output') + 1]
   : '_hardcoded-audit-report.md';
-const limit = args.includes('--limit')
-  ? parseInt(args[args.indexOf('--limit') + 1], 10)
-  : 0;
 
 // Extract keywords from variable name (e.g., "treaty_annual_funding" -> ["treaty", "annual", "funding"])
 function extractKeywords(varName: string): string[] {
@@ -148,6 +162,66 @@ function loadVariables(): Variable[] {
   return vars;
 }
 
+// Load LaTeX variables from _variables.yml
+function loadLatexVariables(): LatexVariable[] {
+  const content = fs.readFileSync('_variables.yml', 'utf-8');
+  const parsed = yaml.load(content) as Record<string, string>;
+
+  const vars: LatexVariable[] = [];
+  for (const [name, value] of Object.entries(parsed)) {
+    if (typeof value === 'string' && name.endsWith('_latex')) {
+      const baseName = name.replace(/_latex$/, '');
+      // Extract preview - first meaningful line of the LaTeX
+      const preview = value
+        .replace(/^\$\$\n?/, '')
+        .replace(/\\begin\{aligned\}\n?/, '')
+        .split('\n')[0]
+        .substring(0, 80);
+      vars.push({ name, baseName, preview });
+    }
+  }
+  return vars;
+}
+
+// Find hardcoded LaTeX blocks in content
+function findHardcodedLatexBlocks(content: string, filePath: string): HardcodedLatexBlock[] {
+  const blocks: HardcodedLatexBlock[] = [];
+  const lines = content.split('\n');
+
+  let inLatexBlock = false;
+  let blockStart = 0;
+  let blockContent: string[] = [];
+
+  lines.forEach((line, idx) => {
+    if (line.trim() === '$$') {
+      if (!inLatexBlock) {
+        // Start of block
+        inLatexBlock = true;
+        blockStart = idx + 1;
+        blockContent = [];
+      } else {
+        // End of block
+        inLatexBlock = false;
+        const fullContent = blockContent.join('\n');
+        // Only include if it doesn't already use a variable
+        if (!fullContent.includes('{{< var ')) {
+          blocks.push({
+            file: filePath,
+            startLine: blockStart,
+            endLine: idx + 1,
+            content: fullContent,
+            preview: fullContent.substring(0, 100).replace(/\n/g, ' ')
+          });
+        }
+      }
+    } else if (inLatexBlock) {
+      blockContent.push(line);
+    }
+  });
+
+  return blocks;
+}
+
 // Score how well context matches variable keywords (0-100)
 function scoreContextMatch(varKeywords: string[], lineContext: string): number {
   const contextLower = lineContext.toLowerCase();
@@ -168,6 +242,10 @@ function findHardcodedValues(content: string, filePath: string): HardcodedMatch[
   const matches: HardcodedMatch[] = [];
   const lines = content.split('\n');
 
+  // Track block state
+  let inCodeBlock = false;
+  let inLatexBlock = false;
+
   // Patterns to find
   const patterns = [
     /\$[\d,]+(?:\.\d+)?[KMB]?(?:\s*(?:billion|million|trillion))?/gi,  // Currency
@@ -176,6 +254,18 @@ function findHardcodedValues(content: string, filePath: string): HardcodedMatch[
   ];
 
   lines.forEach((line, idx) => {
+    // Track code block state
+    if (line.trim().startsWith('```')) {
+      inCodeBlock = !inCodeBlock;
+      return;
+    }
+
+    // Track LaTeX block state
+    if (line.trim() === '$$') {
+      inLatexBlock = !inLatexBlock;
+      return;
+    }
+
     // Skip lines that are already all variables
     if (!line.includes('$') && !line.includes('%') && !/\d{4,}/.test(line)) return;
 
@@ -212,7 +302,9 @@ function findHardcodedValues(content: string, filePath: string): HardcodedMatch[
           value,
           context: line.trim().substring(0, 120),
           confidence: 'none',
-          hasExistingVar: hasVar
+          hasExistingVar: hasVar,
+          inCodeBlock,
+          inLatexBlock
         });
       }
     }
@@ -321,6 +413,23 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
   lines.push(`- **No match found**: ${noMatch.length} (may need new param)`);
   lines.push(`- **On lines with existing variables**: ${onMixedLines.length}\n`);
 
+  // Add critical guidelines
+  lines.push('## ⚠️ Critical Replacement Guidelines\n');
+  lines.push('**Before replacing ANY value, follow these rules:**\n');
+  lines.push('### ❌ DO NOT:');
+  lines.push('1. **Put variables inside markdown links** - Variables are already hyperlinks with tooltips. Remove link wrapper: `[{{< var x >}}](url)` → `{{< var x >}}`');
+  lines.push('2. **Keep partial ranges** - If text says "$1B to $2.6B", replace the ENTIRE range with one variable. Variables already include confidence intervals in their display.');
+  lines.push('3. **Replace illustrative/fictional numbers** - Jokes, hypothetical examples, and made-up scenarios should stay hardcoded (e.g., "30% success: Hopping lessons + Prayer")');
+  lines.push('4. **Replace values in Python/code blocks** - Quarto variables don\'t work inside ```` ```python ```` blocks. These need Python imports from parameters.py.');
+  lines.push('5. **Replace values in LaTeX blocks with regular vars** - Quarto `{{< var >}}` syntax does NOT work inside `$$...$$`. Use `_latex` variables instead.');
+  lines.push('6. **Replace historical one-off values** - Things like "WWII cost $4T" are historical facts, not parameters.\n');
+  lines.push('### ✅ DO:');
+  lines.push('1. **Replace entire ranges** - `$1.0 billion to $2.6 billion` → `{{< var pharma_drug_development_cost_current >}}` (CI shown automatically)');
+  lines.push('2. **Remove link wrappers** - Variables have built-in source links via tooltips');
+  lines.push('3. **Mark as [SKIP]** - Change `[ ]` to `[SKIP]` for items that should NOT be replaced');
+  lines.push('4. **Verify semantic match** - "10%" could be success rate, discount rate, or allocation - check context!');
+  lines.push('5. **Replace entire LaTeX blocks** - If a `_latex` variable exists, replace the whole `$$...$$` with `{{< var param_name_latex >}}`\n');
+
   // Group by file
   const byFile = new Map<string, HardcodedMatch[]>();
   for (const match of matches) {
@@ -341,7 +450,17 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
       lines.push(`### ${file}\n`);
       for (const match of highInFile) {
         const mixed = match.hasExistingVar ? ' [MIXED]' : '';
-        lines.push(`- [ ] **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}`);
+        // Pre-mark items that can't use Quarto variables
+        let checkbox = '[ ]';
+        let skipReason = '';
+        if (match.inCodeBlock) {
+          checkbox = '[SKIP:CODE]';
+          skipReason = ' ⚠️ In code block - use Python import';
+        } else if (match.inLatexBlock) {
+          checkbox = '[SKIP:LATEX]';
+          skipReason = ' ⚠️ In LaTeX - use _latex variable';
+        }
+        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}${skipReason}`);
         lines.push(`  > ${match.context}...`);
       }
       lines.push('');
@@ -361,7 +480,17 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
       for (const match of medInFile) {
         const mixed = match.hasExistingVar ? ' [MIXED]' : '';
         const alts = match.alternativeVars ? ` | Also: ${match.alternativeVars.join(', ')}` : '';
-        lines.push(`- [ ] **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}${alts}`);
+        // Pre-mark items that can't use Quarto variables
+        let checkbox = '[ ]';
+        let skipReason = '';
+        if (match.inCodeBlock) {
+          checkbox = '[SKIP:CODE]';
+          skipReason = ' ⚠️ In code block';
+        } else if (match.inLatexBlock) {
+          checkbox = '[SKIP:LATEX]';
+          skipReason = ' ⚠️ In LaTeX block';
+        }
+        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` → \`{{< var ${match.suggestedVar} >}}\`${mixed}${alts}${skipReason}`);
         lines.push(`  > ${match.context}...`);
       }
       lines.push('');
@@ -380,7 +509,17 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
       lines.push(`### ${file}\n`);
       for (const match of lowInFile) {
         const alts = match.alternativeVars ? ` | Also: ${match.alternativeVars.join(', ')}` : '';
-        lines.push(`- [ ] **Line ${match.line}**: \`${match.value}\` ≈ \`${match.suggestedVar}\`${alts} ⚠️`);
+        // Pre-mark items that can't use Quarto variables
+        let checkbox = '[ ]';
+        let skipReason = '';
+        if (match.inCodeBlock) {
+          checkbox = '[SKIP:CODE]';
+          skipReason = ' ⚠️ In code block';
+        } else if (match.inLatexBlock) {
+          checkbox = '[SKIP:LATEX]';
+          skipReason = ' ⚠️ In LaTeX block';
+        }
+        lines.push(`- ${checkbox} **Line ${match.line}**: \`${match.value}\` ≈ \`${match.suggestedVar}\`${alts}${skipReason} ⚠️`);
         lines.push(`  > ${match.context}...`);
       }
       lines.push('');
@@ -459,10 +598,60 @@ function generateReport(matches: HardcodedMatch[], variables: Variable[]): strin
   return lines.join('\n');
 }
 
+// Generate LaTeX blocks report section
+function generateLatexReport(latexBlocks: HardcodedLatexBlock[], latexVars: LatexVariable[]): string {
+  const lines: string[] = [];
+
+  lines.push('\n## 📐 Hardcoded LaTeX Equations\n');
+  lines.push('*These `$$...$$` blocks could potentially be replaced with pre-built `_latex` variables.*\n');
+  lines.push('**Instructions:** Check if a `_latex` variable exists that matches the equation. If so, replace the entire `$$...$$` block with `{{< var variable_name_latex >}}`.\n');
+
+  if (latexBlocks.length === 0) {
+    lines.push('No hardcoded LaTeX blocks found (all use variables or are in code blocks).\n');
+  } else {
+    // Group by file
+    const byFile = new Map<string, HardcodedLatexBlock[]>();
+    for (const block of latexBlocks) {
+      const existing = byFile.get(block.file) || [];
+      existing.push(block);
+      byFile.set(block.file, existing);
+    }
+
+    lines.push(`Found **${latexBlocks.length}** hardcoded LaTeX blocks:\n`);
+
+    for (const [file, blocks] of byFile) {
+      lines.push(`### ${file}\n`);
+      for (const block of blocks) {
+        lines.push(`- [ ] **Lines ${block.startLine}-${block.endLine}**`);
+        lines.push(`  > \`${block.preview}...\``);
+      }
+      lines.push('');
+    }
+  }
+
+  // LaTeX variable reference
+  lines.push('## 📐 LaTeX Variable Reference\n');
+  lines.push('*Available `_latex` variables. Use `{{< var variable_name_latex >}}` to insert entire equation blocks.*\n');
+  lines.push('| Variable | Preview |');
+  lines.push('|:---------|:--------|');
+
+  // Sort alphabetically by base name
+  latexVars.sort((a, b) => a.baseName.localeCompare(b.baseName));
+
+  for (const v of latexVars) {
+    const safePreview = v.preview.replace(/\|/g, '\\|').replace(/\n/g, ' ');
+    lines.push(`| \`${v.name}\` | \`${safePreview}...\` |`);
+  }
+  lines.push('');
+
+  return lines.join('\n');
+}
+
 async function main() {
   console.log('Loading variables from _variables.yml...');
   const variables = loadVariables();
-  console.log(`Loaded ${variables.length} variables`);
+  const latexVars = loadLatexVariables();
+  console.log(`Loaded ${variables.length} variables, ${latexVars.length} LaTeX variables`);
 
   console.log('Finding QMD files (excluding auto-generated)...');
   // Use findFiles from file-utils which respects .gitignore and excludes auto-generated files
@@ -478,22 +667,22 @@ async function main() {
     return true;
   });
 
-  if (limit > 0) {
-    files = files.slice(0, limit);
-    console.log(`Limited to ${limit} files`);
-  }
-
   console.log(`Scanning ${files.length} files...`);
 
   let allMatches: HardcodedMatch[] = [];
+  let allLatexBlocks: HardcodedLatexBlock[] = [];
 
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8');
     const matches = findHardcodedValues(content, file);
     allMatches = allMatches.concat(matches);
+    
+    // Also find hardcoded LaTeX blocks
+    const latexBlocks = findHardcodedLatexBlocks(content, file);
+    allLatexBlocks = allLatexBlocks.concat(latexBlocks);
   }
 
-  console.log(`Found ${allMatches.length} hardcoded values`);
+  console.log(`Found ${allMatches.length} hardcoded values, ${allLatexBlocks.length} LaTeX blocks`);
 
   // Match to variables
   allMatches = matchToVariables(allMatches, variables);
@@ -506,7 +695,8 @@ async function main() {
 
   // Generate report
   const report = generateReport(allMatches, variables);
-  fs.writeFileSync(outputFile, report);
+  const latexReport = generateLatexReport(allLatexBlocks, latexVars);
+  fs.writeFileSync(outputFile, report + latexReport);
   console.log(`Report written to ${outputFile}`);
 
   // Exit with code based on findings

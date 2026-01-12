@@ -178,7 +178,7 @@ If the mechanism design works as intended, a decentralized institute of health c
 | Metric | NIH (Current) | A DIH (Theoretical) | Potential Improvement |
 |--------|---------------|-----------------|-------------|
 | **Payment trigger** | Grant approved | Results achieved | Incentive alignment |
-| **Cost per QALY** | [$50,000-$150,000](../references.qmd#qaly-value) | $5,000-$15,000 | ~10x reduction (theoretical) |
+| **Cost per QALY** | {{< var standard_economic_qaly_value_usd >}} | $5,000-$15,000 | ~10x reduction (theoretical) |
 | **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | ~6x reduction in overhead |
 | **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline-17-years) | 2-4 years | ~4x faster (theoretical) |
 | **Publication rate** | ~50% (positive results only) | 100% (all results) | 2x knowledge base |

@@ -51,7 +51,7 @@ The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your
 
 - They have billions in pension obligations
 - Current portfolio returns: 6-8% (barely covers inflation)
-- Add 10% VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
+- Add {{< var victory_bond_funding_pct >}} VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + {{< var victory_bond_funding_pct >}} at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
 - Their retirees get paid, they get bonuses, everyone wins
 
 #### The PR Victory
@@ -377,7 +377,7 @@ VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.
 - Investors get {{< var victory_bond_annual_return_pct >}} returns forever
 - Creates the financial coalition to pass the first treaty
 
-But after the 1% treaty passes, VICTORY Incentive Alignment Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10% treaties. Their job is done.
+But after the 1% treaty passes, VICTORY Incentive Alignment Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or {{< var victory_bond_funding_pct >}} treaties. Their job is done.
 
 ### Engine 2: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (The Scaling Engine)
 
@@ -396,7 +396,7 @@ The key insight: **IAB funding scales with treaty size.**
 | 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | {{< var iab_political_incentive_funding_annual >}}/year |
 | 2% | {{< var victory_bond_annual_return_pct >}} (fixed) | $5.4B/year |
 | 5% | {{< var victory_bond_annual_return_pct >}} (fixed) | $13.5B/year |
-| 10% | {{< var victory_bond_annual_return_pct >}} (fixed) | $27B/year |
+| {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_return_pct >}} (fixed) | {{< var treaty_annual_funding >}}/year |
 | 50% | {{< var victory_bond_annual_return_pct >}} (fixed) | $135B/year |
 | 100% | {{< var victory_bond_annual_return_pct >}} (fixed) | $270B/year |
 
