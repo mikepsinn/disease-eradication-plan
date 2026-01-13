@@ -121,9 +121,10 @@ def main():
         
         f.write('# Parameters needing latex_symbol - REVIEW AND EDIT THESE\n')
         f.write('# Set to None to skip (use auto-generated symbol)\n')
+        f.write('# Format: "PARAM_NAME": r"Symbol_{subscript}",\n')
         f.write('SYMBOLS = {\n')
         
-        # Group by prefix for easier review
+        # Group by prefix for easier review - COMPACT format
         prefixes = {}
         for entry in needs_symbol:
             parts = entry['name'].split('_')
@@ -134,15 +135,10 @@ def main():
         
         for prefix in sorted(prefixes.keys()):
             entries = prefixes[prefix]
-            f.write(f'\n    # === {prefix} ({len(entries)} parameters) ===\n')
+            f.write(f'\n    # {prefix} ({len(entries)})\n')
             for entry in entries:
-                desc = entry['description']
-                if len(desc) > 60:
-                    desc = desc[:57] + '...'
-                f.write(f'    # {desc}\n')
-                f.write(f'    # Unit: {entry["unit"]}\n')
+                # Compact single-line format
                 f.write(f'    "{entry["name"]}": r"{entry["suggested"]}",\n')
-                f.write('\n')
         
         f.write('}\n')
     
