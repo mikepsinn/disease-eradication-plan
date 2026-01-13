@@ -331,7 +331,8 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
     display_name="Global Military Spending in 2024",
     unit="USD",
     distribution="fixed",  # Using point estimate for clean presentation throughout book
-    keywords=["2024", "2.7t", "dod", "pentagon", "national security", "army", "navy"]
+    keywords=["2024", "2.7t", "dod", "pentagon", "national security", "army", "navy"],
+    latex_symbol=r"Spending_{mil}",  # LaTeX symbol for equations
 )  # SIPRI 2024 (rounded to 3 sig figs for clarity)
 
 # Value of Statistical Life (VSL)
@@ -346,7 +347,8 @@ VALUE_OF_STATISTICAL_LIFE = Parameter(
     std_error=3_000_000,  # Significant variation in VSL estimates
     validation_min=1_000_000,  # Hard lower bound
     confidence_interval=(5_000_000, 15_000_000),
-    keywords=["10.0m", "low estimate", "cautious", "pessimistic", "worst case", "conservative", "underestimate"]
+    keywords=["10.0m", "low estimate", "cautious", "pessimistic", "worst case", "conservative", "underestimate"],
+    latex_symbol=r"VSL",  # LaTeX symbol for equations
 )  # US DOT uses $13.6M, we use $10M conservatively
 
 # Conflict death breakdown (for QALY calculations)
@@ -361,6 +363,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
     keywords=["234k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "active"],
     distribution="lognormal",
     confidence_interval=(180_000, 300_000),  # ±20% - conflict data has high uncertainty
+    latex_symbol=r"Deaths_{combat}",  # LaTeX symbol for equations
 )  # ACLED data
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
@@ -373,6 +376,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
     keywords=["8k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "terror"],
     distribution="lognormal",
     confidence_interval=(6_000, 12_000),  # ±25% - terrorism data varies by definition
+    latex_symbol=r"Deaths_{terror}",  # LaTeX symbol for equations
 )  # Global Terrorism Database
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
@@ -385,6 +389,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
     keywords=["3k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "state"],
     distribution="lognormal",
     confidence_interval=(1_500, 5_000),  # ±40% - state violence often underreported
+    latex_symbol=r"Deaths_{state}",  # LaTeX symbol for equations
 )  # Uppsala Conflict Data Program
 
 # Total conflict deaths (calculated from breakdown)
@@ -402,6 +407,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT"]
     + ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS"]
     + ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE"],
+    latex_symbol=r"Deaths_{conflict}",  # LaTeX symbol for equations
 )  # 244,600
 
 # Breakdown of Human Life Loss Costs (billions USD)
@@ -416,6 +422,7 @@ GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = Parameter(
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    latex_symbol=r"Cost_{combat,human}",  # LaTeX symbol for equations
 )  # $2,336B
 
 GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
@@ -429,6 +436,7 @@ GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    latex_symbol=r"Cost_{terror,human}",  # LaTeX symbol for equations
 )  # $83B
 
 GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = Parameter(
@@ -442,6 +450,7 @@ GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = Parameter(
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    latex_symbol=r"Cost_{state,human}",  # LaTeX symbol for equations
 )  # $27B
 
 # Total human life losses (calculated from breakdown)
@@ -459,6 +468,7 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = Parameter(
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT"]
     + ctx["GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS"]
     + ctx["GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE"],
+    latex_symbol=r"Loss_{life,conflict}",  # LaTeX symbol for equations
 )  # $2,446B
 
 # Infrastructure Damage Breakdown (billions USD)
@@ -472,6 +482,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
     keywords=["487.3b", "worldwide", "yearly", "infrastructure", "damage", "transportation", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(340_000_000_000, 680_000_000_000),  # ±30% - damage estimates highly variable
+    latex_symbol=r"Damage_{transport}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
@@ -484,6 +495,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
     keywords=["421.7b", "worldwide", "yearly", "infrastructure", "damage", "energy", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(295_000_000_000, 590_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{energy}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
@@ -496,6 +508,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
     keywords=["298.1b", "worldwide", "yearly", "infrastructure", "damage", "communications", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(209_000_000_000, 418_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{comms}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
@@ -508,6 +521,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
     keywords=["267.8b", "worldwide", "yearly", "infrastructure", "damage", "water", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(187_000_000_000, 375_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{water}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
@@ -520,6 +534,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
     keywords=["234.5b", "worldwide", "yearly", "infrastructure", "damage", "education", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(164_000_000_000, 328_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{edu}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
@@ -532,6 +547,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
     keywords=["165.6b", "worldwide", "yearly", "infrastructure", "damage", "healthcare", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(116_000_000_000, 232_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{health}",  # LaTeX symbol for equations
 )
 
 # Total infrastructure destruction (calculated from breakdown)
@@ -555,6 +571,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = Parameter(
     + ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT"],
+    latex_symbol=r"Damage_{infra,total}",  # LaTeX symbol for equations
 )  # $1,875B
 
 # Trade Disruption Breakdown (billions USD)
@@ -568,6 +585,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
     keywords=["247.1b", "worldwide", "yearly", "trade", "disruption", "shipping", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(173_000_000_000, 346_000_000_000),  # ±30% - economic cost estimates variable
+    latex_symbol=r"Disruption_{shipping}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
@@ -580,6 +598,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
     keywords=["186.8b", "worldwide", "yearly", "trade", "disruption", "supply", "chain"],
     distribution="lognormal",
     confidence_interval=(131_000_000_000, 262_000_000_000),  # ±30%
+    latex_symbol=r"Disruption_{supply}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
@@ -592,6 +611,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
     keywords=["124.7b", "worldwide", "yearly", "trade", "disruption", "energy", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(87_000_000_000, 175_000_000_000),  # ±30%
+    latex_symbol=r"Disruption_{energy}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
@@ -604,6 +624,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
     keywords=["57.4b", "worldwide", "yearly", "trade", "disruption", "currency", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(40_000_000_000, 80_000_000_000),  # ±30%
+    latex_symbol=r"Disruption_{currency}",  # LaTeX symbol for equations
 )
 
 # Total trade disruption (calculated from breakdown)
@@ -623,6 +644,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = Parameter(
     + ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT"],
+    latex_symbol=r"Disruption_{trade}",  # LaTeX symbol for equations
 )  # $616B
 
 GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
@@ -641,6 +663,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
     + ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT"],
+    latex_symbol=r"Cost_{war,direct}",  # LaTeX symbol for equations
 )  # $7,655B
 
 # Indirect costs
@@ -654,6 +677,7 @@ GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
     keywords=["2.7t", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
     distribution="lognormal",
     confidence_interval=(1_900_000_000_000, 3_800_000_000_000),  # ±30% - opportunity cost estimates vary
+    latex_symbol=r"Loss_{growth,mil}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
@@ -666,6 +690,7 @@ GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
     keywords=["200.1b", "worldwide", "yearly", "funding", "investment", "veteran", "healthcare"],
     distribution="lognormal",
     confidence_interval=(140_000_000_000, 280_000_000_000),  # ±30%
+    latex_symbol=r"Cost_{vet}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
@@ -678,6 +703,7 @@ GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
     keywords=["150.0b", "worldwide", "yearly", "funding", "investment", "refugee", "support"],
     distribution="lognormal",
     confidence_interval=(105_000_000_000, 210_000_000_000),  # ±30%
+    latex_symbol=r"Cost_{refugee}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
@@ -690,6 +716,7 @@ GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
     keywords=["100.0b", "worldwide", "yearly", "environmental", "damage", "armed conflict", "military action"],
     distribution="lognormal",
     confidence_interval=(70_000_000_000, 140_000_000_000),  # ±30%
+    latex_symbol=r"Damage_{env}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
@@ -702,6 +729,7 @@ GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
     keywords=["232.0b", "worldwide", "yearly", "funding", "investment", "psychological", "impact"],
     distribution="lognormal",
     confidence_interval=(162_000_000_000, 325_000_000_000),  # ±30%
+    latex_symbol=r"Cost_{psych}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
@@ -714,6 +742,7 @@ GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
     keywords=["300.0b", "worldwide", "yearly", "lost", "human", "capital", "armed conflict"],
     distribution="lognormal",
     confidence_interval=(210_000_000_000, 420_000_000_000),  # ±30%
+    latex_symbol=r"Loss_{capital,conflict}",  # LaTeX symbol for equations
 )
 
 GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
@@ -736,6 +765,7 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
     + ctx["GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT"]
     + ctx["GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT"],
+    latex_symbol=r"Cost_{war,indirect}",  # LaTeX symbol for equations
 )  # $3,700.1B
 
 # Grand total war costs
@@ -751,7 +781,8 @@ GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST = Parameter(
     validation_min=8_000_000_000_000,   # Floor: Direct costs only, conservative VSL
     validation_max=16_000_000_000_000,  # Ceiling: Including all indirect/long-term costs
     inputs=["GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL", "GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL"],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL"] + ctx["GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL"]
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL"] + ctx["GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL"],
+    latex_symbol=r"Cost_{war,total}",  # LaTeX symbol for equations
 )  # $11,355.1B
 
 # Treaty parameters
@@ -764,6 +795,7 @@ TREATY_REDUCTION_PCT = Parameter(
     unit="rate",
     keywords=["1%", "dod", "pentagon", "national security", "army", "navy", "one percent"],
     distribution="fixed",  # Policy choice: the 1% is our proposal, not uncertain
+    latex_symbol=r"Reduce_{treaty}",  # LaTeX symbol for equations
 )  # Core treaty definition - the 1% is our proposal, not derived from external data
 
 TREATY_ANNUAL_FUNDING = Parameter(
@@ -805,7 +837,8 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     validation_min=70_000_000_000,   # Floor: Conservative war cost estimates, 50% realization
     validation_max=180_000_000_000,  # Ceiling: Including all indirect costs, full compliance
     inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "TREATY_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * ctx["TREATY_REDUCTION_PCT"]
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Benefit_{peace,soc}",  # LaTeX symbol for equations
 )  # $113.55B, rounded to $114B
 
 # Individual peace dividend components (1% savings breakdown)
@@ -820,6 +853,7 @@ PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"],
     inputs=['GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{direct}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
@@ -833,6 +867,7 @@ PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{infra}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
@@ -846,6 +881,7 @@ PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{casualties}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
@@ -859,6 +895,7 @@ PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{trade}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
@@ -872,6 +909,7 @@ PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"],
     inputs=['GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{indirect}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
@@ -885,6 +923,7 @@ PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"],
     inputs=['GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{growth}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
@@ -898,6 +937,7 @@ PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{vet}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
@@ -911,6 +951,7 @@ PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{refugee}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
@@ -924,6 +965,7 @@ PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{env}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_PTSD = Parameter(
@@ -937,6 +979,7 @@ PEACE_DIVIDEND_PTSD = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{PTSD}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
@@ -950,6 +993,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Savings_{capital}",  # LaTeX symbol for equations
 )
 
 # Separate peace dividend into confidence levels
@@ -963,6 +1007,7 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     display_name="Direct Fiscal Savings from 1% Military Spending Reduction",
     unit="USD/year",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"],
+    latex_symbol=r"Savings_{fiscal}",  # LaTeX symbol for equations
 )
 
 PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
@@ -976,6 +1021,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"],
     inputs=['PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: float(ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"]) - float(ctx["TREATY_ANNUAL_FUNDING"]),
+    latex_symbol=r"Savings_{conflict}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -998,7 +1044,8 @@ GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     distribution=DistributionType.LOGNORMAL,
     std_error=10_000_000_000,
     confidence_interval=(50_000_000_000, 75_000_000_000),
-    keywords=["60b", "clinical trials", "pharma r&d", "global spending", "research", "industry", "conservative"]
+    keywords=["60b", "clinical trials", "pharma r&d", "global spending", "research", "industry", "conservative"],
+    latex_symbol=r"Spending_{trials}",  # LaTeX symbol for equations
 )
 
 GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
@@ -1012,7 +1059,8 @@ GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     distribution=DistributionType.LOGNORMAL,
     std_error=1_000_000_000,
     confidence_interval=(3_000_000_000, 6_000_000_000),
-    keywords=["4.5b", "clinical trials", "government spending", "nih", "public funding"]
+    keywords=["4.5b", "clinical trials", "government spending", "nih", "public funding"],
+    latex_symbol=r"Spending_{trials,gov}",  # LaTeX symbol for equations
 )
 
 NIH_ANNUAL_BUDGET = Parameter(
@@ -1024,7 +1072,8 @@ NIH_ANNUAL_BUDGET = Parameter(
     unit="USD",
     confidence="high",
     confidence_interval=(45_000_000_000, 50_000_000_000),
-    keywords=["$47", "47b", "nih", "budget", "annual", "national institutes of health"]
+    keywords=["$47", "47b", "nih", "budget", "annual", "national institutes of health"],
+    latex_symbol=r"Budget_{NIH}",  # LaTeX symbol for equations
 )
 
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
@@ -1037,7 +1086,8 @@ NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     display_value="3.3%",
     distribution=DistributionType.BETA,
     confidence_interval=(0.02, 0.05),
-    keywords=["3.3%", "nih", "clinical trials", "budget", "percentage"]
+    keywords=["3.3%", "nih", "clinical trials", "budget", "percentage"],
+    latex_symbol=r"Pct_{NIH,trials}",  # LaTeX symbol for equations
 )
 
 MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
@@ -1050,7 +1100,8 @@ MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     formula="MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING",
     keywords=["ratio", "military", "clinical trials", "disparity", "spending", "government"],
     inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
-    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    latex_symbol=r"Ratio_{mil:gov}",  # LaTeX symbol for equations
 )
 
 GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
@@ -1062,7 +1113,8 @@ GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     unit="USD",
     formula="TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS",
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    latex_symbol=r"Spending_{trials,industry}",  # LaTeX symbol for equations
 )
 
 INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
@@ -1075,7 +1127,8 @@ INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     formula="(TOTAL - GOVT) / GOVT",
     keywords=["ratio", "industry", "government", "clinical trials", "funding"],
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
-    compute=lambda ctx: (ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]) / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+    compute=lambda ctx: (ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]) / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    latex_symbol=r"Ratio_{ind:gov}",  # LaTeX symbol for equations
 )
 
 # Total pharma R&D spending (clinical trials are 15-20% of this)
@@ -1087,7 +1140,8 @@ GLOBAL_PHARMA_RD_SPENDING_ANNUAL = Parameter(
     display_name="Annual Global Pharmaceutical R&D Spending",
     unit="USD",
     display_value="$300B",
-    keywords=["pharma", "r&d", "research", "development", "300b", "pharmaceutical", "drug", "industry"]
+    keywords=["pharma", "r&d", "research", "development", "300b", "pharmaceutical", "drug", "industry"],
+    latex_symbol=r"Spending_{pharma,RD}",  # LaTeX symbol for equations
 )
 
 # Nonprofit clinical trials funding
@@ -1100,7 +1154,8 @@ GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     unit="USD",
     display_value="$3.5B",
     confidence_interval=(2_000_000_000, 5_000_000_000),
-    keywords=["nonprofit", "foundation", "clinical trials", "2-5b", "philanthropy", "advocacy"]
+    keywords=["nonprofit", "foundation", "clinical trials", "2-5b", "philanthropy", "advocacy"],
+    latex_symbol=r"Spending_{trials,nonprofit}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -1118,6 +1173,7 @@ CURRENT_TRIALS_PER_YEAR = Parameter(
     keywords=["3k", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"],
     distribution="lognormal",  # Count data with right skew; different registries report 3000-4000
     confidence_interval=(2640, 3960),  # ±20% to account for registry counting differences
+    latex_symbol=r"Trials_{ann,curr}",  # LaTeX symbol for equations
 )  # Global clinical trials per year
 
 CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
@@ -1130,6 +1186,7 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "earth"],
     distribution="lognormal",  # Count data with right skew
     confidence_interval=(45, 60),  # FDA approval rate varies 45-60/year
+    latex_symbol=r"Drugs_{ann,curr}",  # LaTeX symbol for equations
 )  # FDA ~50-55/year
 
 # Historical FDA/Drug Development Parameters
@@ -1142,7 +1199,8 @@ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
     display_name="Oxford RECOVERY Trial Duration",
     unit="months",
     confidence="high",
-    keywords=["recovery", "covid", "trial", "timeline", "duration", "oxford", "pragmatic"]
+    keywords=["recovery", "covid", "trial", "timeline", "duration", "oxford", "pragmatic"],
+    latex_symbol=r"T_{RECOVERY}",  # LaTeX symbol for equations
 )
 
 FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
@@ -1156,7 +1214,8 @@ FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
     distribution=DistributionType.GAMMA,
     std_error=2.0,  # Timeline variation
     confidence_interval=(6.0, 12.0),
-    keywords=["fda", "clinical", "development", "timeline", "approval", "phase 1", "phase 2", "phase 3"]
+    keywords=["fda", "clinical", "development", "timeline", "approval", "phase 1", "phase 2", "phase 3"],
+    latex_symbol=r"T_{FDA}",  # LaTeX symbol for equations
 )  # Clinical development + NDA review: ~9 years (per FDA references)
 
 POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
@@ -1168,7 +1227,8 @@ POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
     unit="percentage",
     confidence="high",
     last_updated="1962-1970",
-    keywords=["kefauver", "harris", "amendment", "1962", "regulation", "fda", "approval", "drop", "decline"]
+    keywords=["kefauver", "harris", "amendment", "1962", "regulation", "fda", "approval", "drop", "decline"],
+    latex_symbol=r"Reduce_{post62}",  # LaTeX symbol for equations
 )
 
 
@@ -1188,6 +1248,7 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
     inputs=['FDA_PHASE_1_TO_APPROVAL_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
     compute=lambda ctx: (ctx["FDA_PHASE_1_TO_APPROVAL_YEARS"] * MONTHS_PER_YEAR) / ctx["OXFORD_RECOVERY_TRIAL_DURATION_MONTHS"],
+    latex_symbol=r"k_{FDA:RECOVERY}",  # LaTeX symbol for equations
 )
 
 PRE_1962_PHYSICIAN_COUNT = Parameter(
@@ -1198,7 +1259,8 @@ PRE_1962_PHYSICIAN_COUNT = Parameter(
     display_name="Pre-1962 Physician Count (Unverified)",
     unit="physicians",
     confidence="low",
-    keywords=["pre-1962", "physician", "doctor", "clinical", "trials", "real-world", "evidence"]
+    keywords=["pre-1962", "physician", "doctor", "clinical", "trials", "real-world", "evidence"],
+    latex_symbol=r"N_{physicians,pre62}",  # LaTeX symbol for equations
 )  # Note: Specific "144,000 physicians" figure not verified in sources; AMA opposed amendments but no count documented
 
 # CPI inflation adjustment from 1980 to 2024
@@ -1214,6 +1276,7 @@ CPI_MULTIPLIER_1980_TO_2024 = Parameter(
     keywords=["cpi", "inflation", "1980", "2024", "multiplier", "purchasing power", "bls"],
     distribution="normal",
     confidence_interval=(3.75, 3.85),  # Narrow CI for official government data
+    latex_symbol=r"CPI_{80-24}",  # LaTeX symbol for equations
 )  # BLS CPI data: CPI-U 82.4 (1980) → 313.5 (2024) = 3.80× multiplier; average 3.08% annual inflation
 
 PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD = Parameter(
@@ -1228,6 +1291,7 @@ PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD = Parameter(
     keywords=["pre-1962", "drug", "development", "cost", "1980", "dollars", "historical", "fda", "regulation", "1962", "baily"],
     distribution="lognormal",
     confidence_interval=(5_200_000, 7_800_000),  # ±20% for measurement uncertainty
+    latex_symbol=r"Cost_{pre62,80}",  # LaTeX symbol for equations
 )  # Baily (1972): $6.5M in 1980 dollars
 
 PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD = Parameter(
@@ -1242,6 +1306,7 @@ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD = Parameter(
     keywords=["pre-1962", "drug", "development", "cost", "2024", "dollars", "historical", "fda", "regulation", "1962", "baily", "inflation-adjusted"],
     distribution="lognormal",
     confidence_interval=(19_500_000, 30_000_000),  # Propagated uncertainty: ($5.2M-$7.8M) × (3.75-3.85) = $19.5M-$30.0M
+    latex_symbol=r"Cost_{pre62,24}",  # LaTeX symbol for equations
 )  # Baily (1972): $6.5M (1980 dollars) × 3.80× CPI multiplier = $24.7M (2024 dollars)
 
 CURRENT_ACTIVE_TRIALS = Parameter(
@@ -1251,7 +1316,8 @@ CURRENT_ACTIVE_TRIALS = Parameter(
     description="Current active trials at any given time (3-5 year duration)",
     display_name="Current Active Trials at Any Given Time",
     unit="trials",
-    keywords=["10k", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
+    keywords=["10k", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"],
+    latex_symbol=r"Trials_{active}",  # LaTeX symbol for equations
 )  # Active trials at any given time (3-5 year duration)
 
 CURRENT_TRIAL_DURATION_YEARS_RANGE = (3, 5)  # Years for large trials
@@ -1264,7 +1330,8 @@ CURRENT_TRIAL_ABANDONMENT_RATE = Parameter(
     description="Current trial abandonment rate (40% never complete)",
     display_name="Current Trial Abandonment Rate",
     unit="rate",
-    keywords=["40%", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
+    keywords=["40%", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"],
+    latex_symbol=r"Rate_{abandon}",  # LaTeX symbol for equations
 )  # 40% of trials never complete
 
 CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
@@ -1276,7 +1343,8 @@ CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
     unit="patients/year",
     confidence_interval=(1_500_000, 2_300_000),  # ±20% - trial capacity data variable
     distribution="lognormal",
-    keywords=["1.9m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research", "iqvia"]
+    keywords=["1.9m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research", "iqvia"],
+    latex_symbol=r"Slots_{curr}",  # LaTeX symbol for equations
 )  # 1.9M patients/year (IQVIA 2022, post-COVID normalization from 4M peak in 2021)
 
 # Calculated: Cost per participant
@@ -1289,7 +1357,8 @@ CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
     unit="USD",
     formula="TOTAL_SPENDING / PARTICIPANTS",    keywords=["cost", "participant", "per patient", "trial cost", "enrollment"],
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"]
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    latex_symbol=r"Cost_{trial,pt,ann}",  # LaTeX symbol for equations
 )
 
 # Calculated: Cost per approved drug (from trials only)
@@ -1302,7 +1371,8 @@ CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
     unit="USD",
     formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",    keywords=["cost", "drug", "approval", "fda", "trial cost", "1.2b"],
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_DRUG_APPROVALS_PER_YEAR"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"]
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"],
+    latex_symbol=r"Cost_{trial,drug}",  # LaTeX symbol for equations
 )
 
 # Calculated: Military vs ALL clinical trials ratio
@@ -1315,7 +1385,8 @@ MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     unit="ratio",
     formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "45x", "misallocation"],
     inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
-    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    latex_symbol=r"Ratio_{mil:trials}",  # LaTeX symbol for equations
 )
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
@@ -1328,6 +1399,7 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     keywords=["2.4b", "participant", "subject", "volunteer", "enrollee", "people", "worldwide"],
     distribution="lognormal",  # Population count with diagnostic/definitional uncertainty
     confidence_interval=(2_000_000_000, 2_800_000_000),  # ±15-17%: GBD methodology + definitional variance
+    latex_symbol=r"N_{patients}",  # LaTeX symbol for equations
 )  # GBD 2013 study
 
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
@@ -1341,6 +1413,7 @@ CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     keywords=["0%", "rct", "participant", "subject", "volunteer", "enrollee", "clinical study"],
     inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_DISEASE_PATIENTS_GLOBAL'],
     compute=lambda ctx: ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"] / ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"],
+    latex_symbol=r"Rate_{part}",  # LaTeX symbol for equations
 )  # 0.08% of disease patients participate in trials (1.9M / 2.4B, IQVIA 2022)
 
 # Traditional Trial Economics
@@ -1351,7 +1424,8 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
     description="Phase 3 trial total cost (minimum)",
     display_name="Phase 3 Trial Total Cost (Minimum)",
     unit="USD/trial",
-    keywords=["20.0m", "confirmatory trial", "third phase", "rct", "p3", "phase iii", "clinical study"]
+    keywords=["20.0m", "confirmatory trial", "third phase", "rct", "p3", "phase iii", "clinical study"],
+    latex_symbol=r"Cost_{P3,min}",  # LaTeX symbol for equations
 )  # $20M minimum for Phase 3 trials
 
 # (DFDA_ACTIVE_TRIALS moved to after DFDA_TRIAL_CAPACITY_MULTIPLIER definition)
@@ -1370,7 +1444,8 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
                                        # Economist rationale: RECOVERY may not be replicable at scale
                                        # Standard pragmatic trials cost $2k-$5k/patient
     distribution="lognormal",
-    keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"]
+    keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"],
+    latex_symbol=r"Cost_{RECOVERY,pt}",  # LaTeX symbol for equations
 )  # RECOVERY achieved $500, but scaling globally may cost more
 
 # ADAPTABLE Trial - PCORnet's First Large-Scale Pragmatic Trial
@@ -1387,6 +1462,7 @@ ADAPTABLE_TRIAL_TOTAL_COST = Parameter(
     confidence_interval=(14_000_000, 20_000_000),  # Grant to estimated true cost
     distribution="lognormal",
     keywords=["adaptable", "pcornet", "pragmatic", "trial", "cost"],
+    latex_symbol=r"Cost_{ADAPT}",  # LaTeX symbol for equations
 )
 
 ADAPTABLE_TRIAL_PATIENTS = Parameter(
@@ -1398,6 +1474,7 @@ ADAPTABLE_TRIAL_PATIENTS = Parameter(
     unit="patients",
     confidence="high",
     keywords=["adaptable", "pcornet", "enrollment", "patients"],
+    latex_symbol=r"N_{ADAPT}",  # LaTeX symbol for equations
 )
 
 ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
@@ -1411,6 +1488,7 @@ ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
     confidence_interval=(929, 1400),  # Grant cost to estimated true cost with in-kind
     distribution="lognormal",
     keywords=["adaptable", "pcornet", "cost per patient", "pragmatic"],
+    latex_symbol=r"Cost_{ADAPT,pt}",  # LaTeX symbol for equations
 )  # $929/patient from PCORI grant; up to ~$1,400 with in-kind
 
 # dFDA Pragmatic Trial Cost - Based on ADAPTABLE Trial (DELIBERATELY CONSERVATIVE)
@@ -1434,6 +1512,7 @@ DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
                                       # - Floor ($97): Meta-analysis median (n=108 trials)
                                       # - Central ($929): ADAPTABLE trial (conservative choice)
                                       # - Ceiling ($3,000): Complex chronic disease trials
+    latex_symbol=r"Cost_{pragmatic,pt}",  # LaTeX symbol for equations
 )  # Central = ADAPTABLE (conservative); meta-analysis suggests $97 median
 
 # Traditional Phase 3 Cost (baseline for comparison)
@@ -1446,7 +1525,8 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
     unit="USD/patient",
     distribution=DistributionType.LOGNORMAL,  # Right-skewed: simple trials ~$20K, complex ~$120K+
     confidence_interval=(20000, 120000),  # Range from Moore et al. 2020 FDA study
-    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer", "median"]
+    keywords=["41k", "confirmatory trial", "third phase", "rct", "participant", "subject", "volunteer", "median"],
+    latex_symbol=r"Cost_{P3,pt}",  # LaTeX symbol for equations
 )  # Median cost per patient from FDA/JAMA study (Moore et al. 2020)
 
 # Trial Cost Reduction Factors (calculated from cost per patient comparisons)
@@ -1463,6 +1543,7 @@ RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     formula="TRADITIONAL_PHASE3_COST / RECOVERY_COST",    keywords=["oxford", "recovery", "82x", "rct", "clinical trial", "cost reduction", "historical"],
     inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'RECOVERY_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["RECOVERY_TRIAL_COST_PER_PATIENT"],
+    latex_symbol=r"k_{RECOVERY}",  # LaTeX symbol for equations
 )  # 82x reduction proven by RECOVERY trial ($41K / $500)
 
 # dFDA Pragmatic Trial Cost Reduction (forward-looking projection)
@@ -1477,6 +1558,7 @@ DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     formula="TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",    keywords=["dfda", "pragmatic", "34x", "rct", "clinical trial", "cost reduction", "projected"],
     inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    latex_symbol=r"k_{reduce}",  # LaTeX symbol for equations
 )  # 34x reduction projected for dFDA ($41K / $1,200)
 
 # dFDA Trial Cost Reduction as Percentage (derived from factor)
@@ -1495,7 +1577,8 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     validation_max=0.99,   # Ceiling: 99% reduction (approaching theoretical maximum)
     inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     compute=lambda ctx: 1 - (ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"]),
-    keywords=["97%", "rct", "clinical study", "clinical trial", "cost reduction", "research trial", "randomized controlled trial"]
+    keywords=["97%", "rct", "clinical study", "clinical trial", "cost reduction", "research trial", "randomized controlled trial"],
+    latex_symbol=r"Reduce_{pct}",  # LaTeX symbol for equations
 )  # 97% reduction = 34× cost reduction factor
 
 ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
@@ -1505,7 +1588,8 @@ ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
     description="Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)",
     display_name="Antidepressant Trial Exclusion Rate",
     unit="percentage",
-    keywords=["exclusion", "trial", "antidepressant", "eligibility", "real-world", "pragmatic"]
+    keywords=["exclusion", "trial", "antidepressant", "eligibility", "real-world", "pragmatic"],
+    latex_symbol=r"Rate_{excl}",  # LaTeX symbol for equations
 )
 
 PRE_1962_VALIDATION_YEARS = Parameter(
@@ -1516,7 +1600,8 @@ PRE_1962_VALIDATION_YEARS = Parameter(
     display_name="Pre-1962 Validation Years",
     unit="years",
     formula="1960 - 1883",
-    keywords=["pre-1962", "historical", "validation", "physician", "trials", "life expectancy"]
+    keywords=["pre-1962", "historical", "validation", "physician", "trials", "life expectancy"],
+    latex_symbol=r"T_{validate,pre62}",  # LaTeX symbol for equations
 )
 
 # Life Expectancy Data Points - Historical Evidence for Regulatory Impact
@@ -1535,6 +1620,7 @@ US_LIFE_EXPECTANCY_1880 = Parameter(
     distribution="normal",
     peer_reviewed=True,
     keywords=["life expectancy", "1880", "historical", "baseline"],
+    latex_symbol=r"LE_{US,1880}",  # LaTeX symbol for equations
 )
 
 US_LIFE_EXPECTANCY_1962 = Parameter(
@@ -1549,6 +1635,7 @@ US_LIFE_EXPECTANCY_1962 = Parameter(
     distribution="normal",
     peer_reviewed=True,
     keywords=["life expectancy", "1962", "kefauver-harris", "baseline"],
+    latex_symbol=r"LE_{US,1962}",  # LaTeX symbol for equations
 )
 
 US_LIFE_EXPECTANCY_2019 = Parameter(
@@ -1563,6 +1650,7 @@ US_LIFE_EXPECTANCY_2019 = Parameter(
     distribution="normal",
     peer_reviewed=True,
     keywords=["life expectancy", "2019", "current", "baseline"],
+    latex_symbol=r"LE_{US,2019}",  # LaTeX symbol for equations
 )
 
 # Life Expectancy Gain Rates - Calculated from data points
@@ -1579,6 +1667,7 @@ LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
     keywords=["life expectancy", "pre-1962", "historical", "biomedical progress", "years per decade"],
     inputs=["US_LIFE_EXPECTANCY_1962", "US_LIFE_EXPECTANCY_1880"],
     compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_1962"] - ctx["US_LIFE_EXPECTANCY_1880"]) / 7.9, 2),
+    latex_symbol=r"\Delta LE_{pre62}",  # LaTeX symbol for equations
 )
 
 LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
@@ -1594,6 +1683,7 @@ LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
     keywords=["life expectancy", "post-1962", "slowdown", "biomedical progress", "years per decade", "kefauver-harris"],
     inputs=["US_LIFE_EXPECTANCY_2019", "US_LIFE_EXPECTANCY_1962"],
     compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_2019"] - ctx["US_LIFE_EXPECTANCY_1962"]) / 5.7, 2),
+    latex_symbol=r"\Delta LE_{post62}",  # LaTeX symbol for equations
 )
 
 # Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)
@@ -1618,7 +1708,8 @@ FDA_APPROVED_PRODUCTS_COUNT = Parameter(
     description="Total FDA-approved drug products in the U.S.",
     display_name="FDA-Approved Drug Products",
     unit="products",
-    keywords=["fda", "approved", "drugs", "products", "pharmaceuticals", "medicines"]
+    keywords=["fda", "approved", "drugs", "products", "pharmaceuticals", "medicines"],
+    latex_symbol=r"N_{FDA,products}",  # LaTeX symbol for equations
 )
 
 FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS = Parameter(
@@ -1630,7 +1721,8 @@ FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS = Parameter(
     unit="compounds",
     keywords=["fda", "active ingredients", "unique", "pharmaceutical", "compounds"],
     confidence_interval=(1_300, 2_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{FDA,ingredients}",  # LaTeX symbol for equations
 )
 
 PHASE_1_PASSED_COMPOUNDS_GLOBAL = Parameter(
@@ -1642,7 +1734,8 @@ PHASE_1_PASSED_COMPOUNDS_GLOBAL = Parameter(
     unit="compounds",
     keywords=["phase 1", "clinical trials", "investigational", "pipeline", "drug development"],
     confidence_interval=(5_000, 10_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{P1,passed}",  # LaTeX symbol for equations
 )
 
 FDA_GRAS_SUBSTANCES_COUNT = Parameter(
@@ -1654,7 +1747,8 @@ FDA_GRAS_SUBSTANCES_COUNT = Parameter(
     unit="substances",
     keywords=["gras", "fda", "safe", "food additives", "supplements"],
     confidence_interval=(570, 700),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{GRAS}",  # LaTeX symbol for equations
 )
 
 # Calculated: Total safe compounds available for repurposing
@@ -1668,7 +1762,8 @@ SAFE_COMPOUNDS_COUNT = Parameter(
     unit="compounds",
     keywords=["safe", "compounds", "repurposing", "drug discovery", "therapeutic frontier", "fda", "gras"],
     confidence_interval=(7_000, 12_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{safe}",  # LaTeX symbol for equations
 )
 
 # Input parameters: Disease targets
@@ -1680,7 +1775,8 @@ ICD_10_TOTAL_CODES = Parameter(
     description="Total ICD-10 diagnostic codes for human diseases and conditions",
     display_name="ICD-10 Total Codes",
     unit="codes",
-    keywords=["icd-10", "disease", "diagnosis", "medical codes", "classification"]
+    keywords=["icd-10", "disease", "diagnosis", "medical codes", "classification"],
+    latex_symbol=r"N_{ICD10}",  # LaTeX symbol for equations
 )
 
 TRIAL_RELEVANT_DISEASES_COUNT = Parameter(
@@ -1692,7 +1788,8 @@ TRIAL_RELEVANT_DISEASES_COUNT = Parameter(
     unit="diseases",
     keywords=["disease", "targets", "clinical trials", "therapeutic", "conditions"],
     confidence_interval=(800, 1_200),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{diseases,trial}",  # LaTeX symbol for equations
 )
 
 # Calculated: Combinatorial space
@@ -1707,7 +1804,8 @@ DRUG_DISEASE_COMBINATIONS_POSSIBLE = Parameter(
     formula="SAFE_COMPOUNDS × DISEASES",
     keywords=["combinatorial space", "drug-disease", "therapeutic frontier", "unexplored", "potential"],
     inputs=["SAFE_COMPOUNDS_COUNT", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: ctx["SAFE_COMPOUNDS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+    compute=lambda ctx: ctx["SAFE_COMPOUNDS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
+    latex_symbol=r"N_{combos}",  # LaTeX symbol for equations
 )
 
 # Input parameters: What's been tested
@@ -1721,7 +1819,8 @@ APPROVED_DRUG_DISEASE_PAIRINGS = Parameter(
     unit="pairings",
     keywords=["approved", "indications", "drug-disease", "fda", "uses"],
     confidence_interval=(1_500, 2_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{approved}",  # LaTeX symbol for equations
 )
 
 DRUG_REPURPOSING_SUCCESS_RATE = Parameter(
@@ -1731,7 +1830,8 @@ DRUG_REPURPOSING_SUCCESS_RATE = Parameter(
     description="Percentage of drugs that gain at least one new indication after initial approval",
     display_name="Drug Repurposing Success Rate",
     unit="percentage",
-    keywords=["repurposing", "new indications", "drug discovery", "success rate"]
+    keywords=["repurposing", "new indications", "drug discovery", "success rate"],
+    latex_symbol=r"Rate_{repurpose}",  # LaTeX symbol for equations
 )
 
 TESTED_RELATIONSHIPS_ESTIMATE = Parameter(
@@ -1743,7 +1843,8 @@ TESTED_RELATIONSHIPS_ESTIMATE = Parameter(
     unit="relationships",
     keywords=["tested", "clinical trials", "drug-disease", "explored", "research"],
     confidence_interval=(15_000, 50_000),
-    distribution=DistributionType.LOGNORMAL
+    distribution=DistributionType.LOGNORMAL,
+    latex_symbol=r"N_{tested}",  # LaTeX symbol for equations
 )
 
 # Calculated: Exploration ratio
@@ -1757,7 +1858,8 @@ EXPLORATION_RATIO = Parameter(
     unit="percentage",
     formula="TESTED / POSSIBLE",    keywords=["exploration", "untapped", "therapeutic frontier", "unexplored", "discovery"],
     inputs=["TESTED_RELATIONSHIPS_ESTIMATE", "DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
-    compute=lambda ctx: ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]
+    compute=lambda ctx: ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
+    latex_symbol=r"Ratio_{explore}",  # LaTeX symbol for equations
 )
 
 UNEXPLORED_RATIO = Parameter(
@@ -1770,7 +1872,8 @@ UNEXPLORED_RATIO = Parameter(
     formula="1 - EXPLORATION_RATIO",
     keywords=["unexplored", "untapped", "therapeutic frontier", "opportunity", "discovery"],
     inputs=["TESTED_RELATIONSHIPS_ESTIMATE", "DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
-    compute=lambda ctx: 1 - (ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"])
+    compute=lambda ctx: 1 - (ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]),
+    latex_symbol=r"Ratio_{unexplored}",  # LaTeX symbol for equations
 )
 
 # =============================================================================
@@ -1788,7 +1891,8 @@ HUMAN_PROTEIN_CODING_GENES = Parameter(
     unit="genes",
     keywords=["genes", "genome", "protein", "targets", "gene therapy", "mRNA"],
     confidence_interval=(19_000, 21_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{genes}",  # LaTeX symbol for equations
 )
 
 GENE_THERAPY_DISEASE_COMBINATIONS = Parameter(
@@ -1800,7 +1904,8 @@ GENE_THERAPY_DISEASE_COMBINATIONS = Parameter(
     formula="GENES × DISEASES",
     keywords=["gene therapy", "crispr", "base editing", "combinations", "therapeutic frontier"],
     inputs=["HUMAN_PROTEIN_CODING_GENES", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
+    latex_symbol=r"Combos_{gene}",  # LaTeX symbol for equations
 )
 
 MRNA_THERAPEUTIC_COMBINATIONS = Parameter(
@@ -1812,7 +1917,8 @@ MRNA_THERAPEUTIC_COMBINATIONS = Parameter(
     formula="PROTEINS × DISEASES",
     keywords=["mrna", "rna", "protein replacement", "combinations", "therapeutic frontier"],
     inputs=["HUMAN_PROTEIN_CODING_GENES", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+    compute=lambda ctx: ctx["HUMAN_PROTEIN_CODING_GENES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
+    latex_symbol=r"Combos_{mRNA}",  # LaTeX symbol for equations
 )
 
 EPIGENETIC_TARGETS_COUNT = Parameter(
@@ -1824,7 +1930,8 @@ EPIGENETIC_TARGETS_COUNT = Parameter(
     unit="targets",
     keywords=["epigenetic", "hdac", "dnmt", "histone", "chromatin", "reprogramming"],
     confidence_interval=(1_000, 2_000),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{epi}",  # LaTeX symbol for equations
 )
 
 EPIGENETIC_DISEASE_COMBINATIONS = Parameter(
@@ -1836,7 +1943,8 @@ EPIGENETIC_DISEASE_COMBINATIONS = Parameter(
     formula="EPIGENETIC_TARGETS × DISEASES",
     keywords=["epigenetic", "reprogramming", "combinations", "therapeutic frontier"],
     inputs=["EPIGENETIC_TARGETS_COUNT", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: ctx["EPIGENETIC_TARGETS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+    compute=lambda ctx: ctx["EPIGENETIC_TARGETS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
+    latex_symbol=r"Combos_{epi}",  # LaTeX symbol for equations
 )
 
 CELL_THERAPY_APPROACHES = Parameter(
@@ -1848,7 +1956,8 @@ CELL_THERAPY_APPROACHES = Parameter(
     unit="approaches",
     keywords=["cell therapy", "car-t", "ipsc", "stem cell", "msc", "organoid"],
     confidence_interval=(300, 800),
-    distribution=DistributionType.UNIFORM
+    distribution=DistributionType.UNIFORM,
+    latex_symbol=r"N_{cell}",  # LaTeX symbol for equations
 )
 
 CELL_THERAPY_DISEASE_COMBINATIONS = Parameter(
@@ -1860,7 +1969,8 @@ CELL_THERAPY_DISEASE_COMBINATIONS = Parameter(
     formula="CELL_APPROACHES × DISEASES",
     keywords=["cell therapy", "combinations", "therapeutic frontier"],
     inputs=["CELL_THERAPY_APPROACHES", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: ctx["CELL_THERAPY_APPROACHES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+    compute=lambda ctx: ctx["CELL_THERAPY_APPROACHES"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
+    latex_symbol=r"Combos_{cell}",  # LaTeX symbol for equations
 )
 
 # Total emerging modalities
@@ -1878,7 +1988,8 @@ EMERGING_MODALITY_COMBINATIONS = Parameter(
     compute=lambda ctx: (int(ctx["GENE_THERAPY_DISEASE_COMBINATIONS"]) +
                          int(ctx["MRNA_THERAPEUTIC_COMBINATIONS"]) +
                          int(ctx["EPIGENETIC_DISEASE_COMBINATIONS"]) +
-                         int(ctx["CELL_THERAPY_DISEASE_COMBINATIONS"]))
+                         int(ctx["CELL_THERAPY_DISEASE_COMBINATIONS"])),
+                         latex_symbol=r"N_{emerging}",  # LaTeX symbol for equations
 )
 
 # Total testable therapeutic space (Tier 1 + Tier 2)
@@ -1891,7 +2002,8 @@ TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
     formula="KNOWN_SAFE + EMERGING_MODALITIES",
     keywords=["total", "testable", "therapeutic", "combinations", "frontier", "all modalities"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "EMERGING_MODALITY_COMBINATIONS"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]) + int(ctx["EMERGING_MODALITY_COMBINATIONS"])
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]) + int(ctx["EMERGING_MODALITY_COMBINATIONS"]),
+    latex_symbol=r"N_{testable}",  # LaTeX symbol for equations
 )
 
 # =============================================================================
@@ -1909,7 +2021,8 @@ COMBINATION_THERAPY_PAIRS = Parameter(
     formula="SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
     keywords=["combination", "pairwise", "polypharmacy", "multi-drug", "synergy"],
     inputs=["SAFE_COMPOUNDS_COUNT"],
-    compute=lambda ctx: int(ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2)
+    compute=lambda ctx: int(ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2),
+    latex_symbol=r"N_{combo}",  # LaTeX symbol for equations
 )
 
 COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
@@ -1921,7 +2034,8 @@ COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
     formula="DRUG_PAIRS × DISEASES",
     keywords=["combination", "therapy", "space", "polypharmacy", "frontier"],
     inputs=["COMBINATION_THERAPY_PAIRS", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_PAIRS"]) * int(ctx["TRIAL_RELEVANT_DISEASES_COUNT"])
+    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_PAIRS"]) * int(ctx["TRIAL_RELEVANT_DISEASES_COUNT"]),
+    latex_symbol=r"Space_{combo}",  # LaTeX symbol for equations
 )
 
 # Additional context: Biological targets
@@ -1933,7 +2047,8 @@ HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
     description="Percentage of human interactome (protein-protein interactions) targeted by drugs",
     display_name="Human Interactome Targeted by Drugs",
     unit="percentage",
-    keywords=["interactome", "targets", "proteins", "biology", "drug discovery", "untapped"]
+    keywords=["interactome", "targets", "proteins", "biology", "drug discovery", "untapped"],
+    latex_symbol=r"Pct_{interactome}",  # LaTeX symbol for equations
 )
 
 # dFDA operational costs
@@ -1944,7 +2059,8 @@ DFDA_UPFRONT_BUILD = Parameter(
     description="Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost",
     unit="USD",
-    keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+    keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+    latex_symbol=r"Cost_{build}",  # LaTeX symbol for equations
 )  # $40M one-time build cost
 
 DFDA_UPFRONT_BUILD_MAX = Parameter(
@@ -1954,7 +2070,8 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
     description="Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
     unit="USD",
-    keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+    keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+    latex_symbol=r"Cost_{build,max}",  # LaTeX symbol for equations
 )  # $46M one-time build cost (high end)
 
 # DCT Platform Funding Comparables
@@ -1965,7 +2082,8 @@ DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
     description="Mid-range funding for commercial DCT platform",
     display_name="Mid-Range Funding for Commercial Dct Platform",
     unit="USD",
-    keywords=["500.0m", "pragmatic trials", "real world evidence", "capital", "finance", "money", "decentralized trials"]
+    keywords=["500.0m", "pragmatic trials", "real world evidence", "capital", "finance", "money", "decentralized trials"],
+    latex_symbol=r"Funding_{DCT}",  # LaTeX symbol for equations
 )  # $500M funding for commercial platforms
 
 # Per-patient cost in dollars (not billions)
@@ -1976,7 +2094,8 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
     display_name="Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
     unit="USD/patient",
-    keywords=["1k", "pragmatic trials", "real world evidence", "participant", "subject", "volunteer", "enrollee"]
+    keywords=["1k", "pragmatic trials", "real world evidence", "participant", "subject", "volunteer", "enrollee"],
+    latex_symbol=r"Cost_{target,pt}",  # LaTeX symbol for equations
 )  # $1,000 per patient
 
 # dFDA operational cost breakdown (in billions)
@@ -2098,7 +2217,8 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     validation_min=25_000_000_000,   # Floor: 30% cost reduction at $83B market
     validation_max=65_000_000_000,   # Ceiling: 70% cost reduction at $97B market
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "DFDA_TRIAL_COST_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"]
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"],
+    latex_symbol=r"Benefit_{RD,ann}",  # LaTeX symbol for equations
 )  # $41.5B from automating Phase 2/3/4 trials
 
 # Note: DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL defined later (after DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL)
@@ -2113,6 +2233,7 @@ DFDA_RD_SAVINGS_DAILY = Parameter(
     formula="ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR",    keywords=["137m", "daily", "per day", "each day", "opportunity cost", "delay cost"],
     inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL'],
     compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] / DAYS_PER_YEAR,
+    latex_symbol=r"Savings_{RD,daily}",  # LaTeX symbol for equations
 )  # $113.7M/day
 
 DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
@@ -2124,7 +2245,8 @@ DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     unit="USD/year",
     formula="GROSS_SAVINGS - ANNUAL_OPEX",    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly", "conservative"],
     inputs=["DFDA_BENEFIT_RD_ONLY_ANNUAL", "DFDA_ANNUAL_OPEX"],
-    compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"]
+    compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"],
+    latex_symbol=r"Savings_{RD,ann}",  # LaTeX symbol for equations
 )  # $41.46B (R&D savings only, most conservative financial estimate)
 
 
@@ -2148,7 +2270,8 @@ STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
                       # Widened to ±20% to capture discount rate debate (Stern 1.4% vs Nordhaus 4.5%)
                       # Full literature ($50k-$500k) too wide; using consensus ±2σ = $90k-$210k
     validation_min=100000,  # Floor: OECD lower bound, emerging economy valuations
-    validation_max=200000   # Ceiling: US EPA upper bound ($10M VSL / 50 years)
+    validation_max=200000,  # Ceiling: US EPA upper bound ($10M VSL / 50 years)
+    latex_symbol=r"Value_{QALY}",  # LaTeX symbol for equations
 )  # Standard economic value per QALY
 
 WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
@@ -2158,7 +2281,8 @@ WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
     description="Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)",
     display_name="Cost-Effectiveness Threshold ($50,000/QALY)",
     unit="USD/QALY",
-    keywords=["50k", "qaly", "cost effective", "threshold", "health economics", "dialysis", "benchmark"]
+    keywords=["50k", "qaly", "cost effective", "threshold", "health economics", "dialysis", "benchmark"],
+    latex_symbol=r"Threshold_{WHO}",  # LaTeX symbol for equations
 )  # Widely-used $50,000/QALY cost-effectiveness threshold
 
 STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
@@ -2171,6 +2295,7 @@ STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
     keywords=["quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life", "health status", "life satisfaction"],
     distribution="normal",  # Life expectancy tables well-established
     std_error=7,  # ±20%: reflects age-at-death variance and quality-weighting methodology
+    latex_symbol=r"QALY_{life}",  # LaTeX symbol for equations
 )  # Standard assumption (WHO life tables)
 
 # Efficacy Lag Duration
@@ -2193,7 +2318,8 @@ EFFICACY_LAG_YEARS = Parameter(
                     # - Geographic variation (FDA vs EMA vs other regulators)
                     # Economist rationale: 95% CI of ~4-12 years is more defensible
     validation_min=4.0,   # Floor: Breakthrough + priority (COVID vaccines proved <4y possible)
-    validation_max=15.0   # Ceiling: Rare disease with complex endpoints, multiple failures
+    validation_max=15.0,  # Ceiling: Rare disease with complex endpoints, multiple failures
+    latex_symbol=r"T_{lag}",  # LaTeX symbol for equations
 )  # 8.2 years efficacy lag (widened uncertainty)
 
 # ===================================================================
@@ -2217,6 +2343,7 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     keywords=["mortality", "global burden", "disease", "aging", "WHO", "daily deaths"],
     distribution="normal",  # Well-established WHO methodology with systematic data collection
     std_error=7500,  # ±5%: reflects reporting gaps + cause-of-death coding variance
+    latex_symbol=r"Deaths_{disease,daily}",  # LaTeX symbol for equations
 )  # 150,000 deaths/day from all disease/aging
 
 # ===================================================================
@@ -2291,6 +2418,7 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
     unit="percentage",
     formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
     confidence="medium",
+    latex_symbol=r"Pct_{unavoid}",  # LaTeX symbol for equations
 )  # ~7.9% unavoidable with aging_related at 0.99
 
 EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
@@ -2305,6 +2433,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     confidence_interval=(0.50, 0.98),  # Skeptical floor: 50% (aging+complex diseases intractable)
                                         # Optimistic ceiling: 98% (only true accidents unavoidable)
                                         # Economist rationale: Extraordinary claim requires wide CI
+    latex_symbol=r"Pct_{avoid,death}",  # LaTeX symbol for equations
 )  # ~92.1% central, but 50-98% plausible range
 
 # ============================================================================
@@ -2324,6 +2453,7 @@ GLOBAL_ANNUAL_DALY_BURDEN = Parameter(
     keywords=["DALY", "disability", "burden", "WHO", "GBD", "global", "annual", "YLL", "YLD"],
     distribution="normal",
     std_error=150_000_000,  # ~5% uncertainty in measurement methodology
+    latex_symbol=r"DALYs_{global,ann}",  # LaTeX symbol for equations
 )  # 2.88B DALYs/year (GBD 2021)
 
 # YLD as proportion of total DALYs (for suffering hours calculation)
@@ -2339,6 +2469,7 @@ GLOBAL_YLD_PROPORTION_OF_DALYS = Parameter(
     keywords=["YLD", "YLL", "DALY", "proportion", "disability", "mortality", "GBD"],
     distribution="normal",
     std_error=0.03,  # ~8% relative uncertainty (range 33-45% across regions/years)
+    latex_symbol=r"Pct_{YLD}",  # LaTeX symbol for equations
 )  # 39% YLD, 61% YLL
 
 # Eventually avoidable DALY percentage
@@ -2354,6 +2485,7 @@ EVENTUALLY_AVOIDABLE_DALY_PCT = Parameter(
     distribution=DistributionType.BETA,
     confidence_interval=(0.50, 0.98),  # Same range as death percentage
     keywords=["DALY", "avoidable", "curable", "disability", "chronic disease"],
+    latex_symbol=r"Pct_{avoid,DALY}",  # LaTeX symbol for equations
 )  # ~92% - assumes most disease burden is eventually addressable
 
 # Disease Eradication Delay (PRIMARY ESTIMATE)
@@ -2374,6 +2506,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
     validation_max=600_000_000,  # Ceiling: Optimistic avoidability (98%), higher lag (10y)
     inputs=['EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY'],
     compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    latex_symbol=r"Deaths_{lag}",  # LaTeX symbol for equations
 )  # 413.4M eventually avoidable deaths (down from 449M raw total)
 
 # DELETED: DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL, HISTORICAL_PROGRESS_DEATHS_ANNUAL,
@@ -2402,7 +2535,8 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     # Using 62 ± 3 is population-weighted average. Consider disease-specific sub-models.
     # Critique: Assumes regulatory delay affects all age groups equally—may overweight elderly
     validation_min=50,  # Floor: Infectious disease-dominated scenario (HIV, TB, malaria)
-    validation_max=75   # Ceiling: Chronic disease-dominated scenario (cancer, CVD, Alzheimer's)
+    validation_max=75,  # Ceiling: Chronic disease-dominated scenario (cancer, CVD, Alzheimer's)
+    latex_symbol=r"Age_{death,delay}",  # LaTeX symbol for equations
 )
 
 GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
@@ -2426,7 +2560,8 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     #           If global access, weight toward lower 73-75 range
     # Tight ±2 years appropriate: actuarial tables very stable, no sudden shifts expected
     validation_min=70,  # Floor: Pessimistic scenario (global conflicts, pandemics)
-    validation_max=85   # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
+    validation_max=85,  # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
+    latex_symbol=r"LE_{global}",  # LaTeX symbol for equations
 )
 
 # Expected life extension from 1% treaty research acceleration (25x trial capacity)
@@ -2453,7 +2588,8 @@ LIFE_EXTENSION_YEARS = Parameter(
     # Context: 25x trial capacity + CRISPR + AI drug discovery + epigenetic reprogramming
     # Key evidence: 109% lifespan extension demonstrated in aged mice (Yamanaka factors)
     validation_min=0,   # Floor: Complete failure
-    validation_max=150  # Ceiling: Accident-limited lifespan (~230 years - 80 baseline)
+    validation_max=150,  # Ceiling: Accident-limited lifespan (~230 years - 80 baseline)
+    latex_symbol=r"T_{extend}",  # LaTeX symbol for equations
 )
 
 REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
@@ -2479,7 +2615,8 @@ REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
     # Right skew critical: Long-tail (neurodegenerative) suffers 10-15y → lognormal shape matters
     # RECOMMENDATION: Disease-stratified sub-models essential for robustness (acute/chronic/terminal)
     validation_min=2,   # Floor: Acute-dominated scenario (infectious, trauma, fast-progressing cancer)
-    validation_max=15   # Ceiling: Chronic-dominated scenario (Alzheimer's, Parkinson's, long cancers)
+    validation_max=15,  # Ceiling: Chronic-dominated scenario (Alzheimer's, Parkinson's, long cancers)
+    latex_symbol=r"T_{suffering}",  # LaTeX symbol for equations
 )
 
 CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
@@ -2505,7 +2642,8 @@ CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
     # Widened to ±20% (from ±14%) to reflect stated-preference literature variance
     # Justification: Cross-cultural studies show ±25-30% variation; using ±20% as conservative
     validation_min=0.20,  # Floor: Optimistic (mild symptoms, good palliative care access)
-    validation_max=0.50   # Ceiling: Pessimistic (severe symptoms, poor healthcare access)
+    validation_max=0.50,  # Ceiling: Pessimistic (severe symptoms, poor healthcare access)
+    latex_symbol=r"DW_{chronic}",  # LaTeX symbol for equations
 )
 
 # Morbidity Analysis (DALYs) - Based on Disease Eradication Delay Model
@@ -2520,7 +2658,8 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
     confidence="medium",
     keywords=["disease eradication", "YLL", "years of life lost", "disease burden", "mortality burden"],
     inputs=["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED", "GLOBAL_LIFE_EXPECTANCY_2024", "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"],
-    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"])
+    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"]),
+    latex_symbol=r"YLL_{lag}",  # LaTeX symbol for equations
 )  # 7.63B years
 
 DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
@@ -2534,7 +2673,8 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
     confidence="medium",
     keywords=["disease eradication", "YLD", "years lived with disability", "disease burden", "morbidity"],
     inputs=["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED", "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS", "CHRONIC_DISEASE_DISABILITY_WEIGHT"],
-    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"] * ctx["REGULATORY_DELAY_SUFFERING_PERIOD_YEARS"] * ctx["CHRONIC_DISEASE_DISABILITY_WEIGHT"]
+    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"] * ctx["REGULATORY_DELAY_SUFFERING_PERIOD_YEARS"] * ctx["CHRONIC_DISEASE_DISABILITY_WEIGHT"],
+    latex_symbol=r"YLD_{lag}",  # LaTeX symbol for equations
 )  # 943M years
 
 DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
@@ -2558,7 +2698,8 @@ DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
     validation_min=4_000_000_000,  # Floor: Pessimistic (higher unavoidable %, lower disability)
     validation_max=12_000_000_000,  # Ceiling: Optimistic (aggressive eradication timeline)
     inputs=["DFDA_EFFICACY_LAG_ELIMINATION_YLL", "DFDA_EFFICACY_LAG_ELIMINATION_YLD"],
-    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLL"] + ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLD"]
+    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLL"] + ctx["DFDA_EFFICACY_LAG_ELIMINATION_YLD"],
+    latex_symbol=r"DALYs_{lag}",  # LaTeX symbol for equations
 )  # 7.90B DALYs
 
 # Economic Valuation (using standardized $150k VSLY)
@@ -2573,6 +2714,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
     keywords=["disease eradication", "economic loss", "deadweight loss", "primary estimate"],
     inputs=['DFDA_EFFICACY_LAG_ELIMINATION_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    latex_symbol=r"Value_{lag}",  # LaTeX symbol for equations
 )  # $1.191 Quadrillion total economic loss
 
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
@@ -2592,6 +2734,7 @@ EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
     keywords=["98.4m", "historical", "total", "one-time", "existing drugs"],
     inputs=['EFFICACY_LAG_YEARS'],
     compute=lambda ctx: 12_000_000 * ctx["EFFICACY_LAG_YEARS"],
+    latex_symbol=r"Deaths_{lag,total}",  # LaTeX symbol for equations
 )  # 98.4M total deaths
 
 EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
@@ -2606,6 +2749,7 @@ EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
     keywords=["$251t", "historical", "total", "one-time", "existing drugs"],
     inputs=['GLOBAL_LIFE_EXPECTANCY_2024', 'EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"]) * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    latex_symbol=r"Loss_{lag}",  # LaTeX symbol for equations
 )  # $251T total (existing drugs only)
 
 # DELETED: EFFICACY_LAG_WITH_INNOVATION_CASCADE_DEATHS_TOTAL and EFFICACY_LAG_WITH_INNOVATION_CASCADE_ECONOMIC_LOSS
@@ -2626,7 +2770,8 @@ THALIDOMIDE_CASES_WORLDWIDE = Parameter(
     confidence="medium",
     confidence_interval=(10_000, 20_000),  # Documented range 10,000-20,000 cases
     distribution="lognormal",
-    keywords=["thalidomide", "birth defects", "drug safety"]
+    keywords=["thalidomide", "birth defects", "drug safety"],
+    latex_symbol=r"N_{thal,global}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_MORTALITY_RATE = Parameter(
@@ -2639,7 +2784,8 @@ THALIDOMIDE_MORTALITY_RATE = Parameter(
     confidence="high",
     confidence_interval=(0.35, 0.45),  # ±15% on mortality rate
     distribution="lognormal",
-    keywords=["thalidomide", "mortality", "infant deaths"]
+    keywords=["thalidomide", "mortality", "infant deaths"],
+    latex_symbol=r"Rate_{thal,mort}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_US_POPULATION_SHARE_1960 = Parameter(
@@ -2652,7 +2798,8 @@ THALIDOMIDE_US_POPULATION_SHARE_1960 = Parameter(
     confidence="high",
     confidence_interval=(0.055, 0.065),  # ±10% on census data
     distribution="lognormal",
-    keywords=["population", "demographics"]
+    keywords=["population", "demographics"],
+    latex_symbol=r"Pct_{US,1960}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_US_CASES_PREVENTED = Parameter(
@@ -2665,6 +2812,7 @@ THALIDOMIDE_US_CASES_PREVENTED = Parameter(
     keywords=["thalidomide", "FDA", "prevention"],
     inputs=['THALIDOMIDE_CASES_WORLDWIDE', 'THALIDOMIDE_US_POPULATION_SHARE_1960'],
     compute=lambda ctx: int(ctx["THALIDOMIDE_CASES_WORLDWIDE"] * ctx["THALIDOMIDE_US_POPULATION_SHARE_1960"]),
+    latex_symbol=r"N_{thal,US,prevent}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_DISABILITY_WEIGHT = Parameter(
@@ -2677,7 +2825,8 @@ THALIDOMIDE_DISABILITY_WEIGHT = Parameter(
     confidence="medium",
     confidence_interval=(0.32, 0.48),  # ±20% on disability weight
     distribution="lognormal",
-    keywords=["thalidomide", "disability", "quality of life"]
+    keywords=["thalidomide", "disability", "quality of life"],
+    latex_symbol=r"DW_{thal}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
@@ -2690,7 +2839,8 @@ THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
     confidence="medium",
     confidence_interval=(50, 70),  # ±15% on lifespan estimate
     distribution="lognormal",
-    keywords=["thalidomide", "longevity", "life expectancy"]
+    keywords=["thalidomide", "longevity", "life expectancy"],
+    latex_symbol=r"LE_{thal}",  # LaTeX symbol for equations
 )
 
 # Calculate DALYs per "Thalidomide Event"
@@ -2704,6 +2854,7 @@ THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
     keywords=["thalidomide", "mortality"],
     inputs=['THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_CASES_PREVENTED'],
     compute=lambda ctx: int(ctx["THALIDOMIDE_US_CASES_PREVENTED"] * ctx["THALIDOMIDE_MORTALITY_RATE"]),
+    latex_symbol=r"Deaths_{thal}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_YLL_PER_EVENT = Parameter(
@@ -2716,6 +2867,7 @@ THALIDOMIDE_YLL_PER_EVENT = Parameter(
     keywords=["thalidomide", "YLL", "mortality"],
     inputs=['THALIDOMIDE_DEATHS_PER_EVENT'],
     compute=lambda ctx: ctx["THALIDOMIDE_DEATHS_PER_EVENT"] * 80,
+    latex_symbol=r"YLL_{thal}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
@@ -2729,6 +2881,7 @@ THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
     keywords=["thalidomide", "survivors"],
     inputs=['THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_CASES_PREVENTED'],
     compute=lambda ctx: int(ctx["THALIDOMIDE_US_CASES_PREVENTED"] * (1 - ctx["THALIDOMIDE_MORTALITY_RATE"])),
+    latex_symbol=r"N_{thal,survive}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_YLD_PER_EVENT = Parameter(
@@ -2742,6 +2895,7 @@ THALIDOMIDE_YLD_PER_EVENT = Parameter(
     keywords=["thalidomide", "YLD", "disability"],
     inputs=['THALIDOMIDE_DISABILITY_WEIGHT', 'THALIDOMIDE_SURVIVORS_PER_EVENT', 'THALIDOMIDE_SURVIVOR_LIFESPAN'],
     compute=lambda ctx: ctx["THALIDOMIDE_SURVIVORS_PER_EVENT"] * ctx["THALIDOMIDE_SURVIVOR_LIFESPAN"] * ctx["THALIDOMIDE_DISABILITY_WEIGHT"],
+    latex_symbol=r"YLD_{thal}",  # LaTeX symbol for equations
 )
 
 THALIDOMIDE_DALYS_PER_EVENT = Parameter(
@@ -2754,6 +2908,7 @@ THALIDOMIDE_DALYS_PER_EVENT = Parameter(
     keywords=["thalidomide", "DALYs", "disease burden"],
     inputs=['THALIDOMIDE_YLD_PER_EVENT', 'THALIDOMIDE_YLL_PER_EVENT'],
     compute=lambda ctx: ctx["THALIDOMIDE_YLL_PER_EVENT"] + ctx["THALIDOMIDE_YLD_PER_EVENT"],
+    latex_symbol=r"DALY_{thal}",  # LaTeX symbol for equations
 )
 
 # Type I Error: Assuming one Thalidomide-scale disaster EVERY YEAR for 62 years (extreme overestimate)
@@ -2769,6 +2924,7 @@ TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
     keywords=["Type I error", "FDA", "drug safety", "disease burden", "disability burden", "global burden of disease", "suffering", "approval", "1962-2024"],
     inputs=['THALIDOMIDE_DALYS_PER_EVENT'],
     compute=lambda ctx: ctx["THALIDOMIDE_DALYS_PER_EVENT"] * 62,
+    latex_symbol=r"DALY_{TypeI}",  # LaTeX symbol for equations
 )
 
 TYPE_II_ERROR_COST_RATIO = Parameter(
@@ -2783,6 +2939,7 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"],
     inputs=['DFDA_EFFICACY_LAG_ELIMINATION_DALYS', 'TYPE_I_ERROR_BENEFIT_DALYS'],
     compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DALYS"] / ctx["TYPE_I_ERROR_BENEFIT_DALYS"],
+    latex_symbol=r"Ratio_{TypeII}",  # LaTeX symbol for equations
 )
 
 # Peace dividend health benefits
@@ -2797,6 +2954,7 @@ TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
     keywords=["1%", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "one percent", "international agreement"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Lives_{treaty,ann}",  # LaTeX symbol for equations
 )  # 2,446 lives
 TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     TREATY_LIVES_SAVED_ANNUAL_GLOBAL * STANDARD_QALYS_PER_LIFE_SAVED,
@@ -2809,6 +2967,7 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     keywords=["1%", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "deaths prevented"],
     inputs=['STANDARD_QALYS_PER_LIFE_SAVED', 'TREATY_LIVES_SAVED_ANNUAL_GLOBAL'],
     compute=lambda ctx: ctx["TREATY_LIVES_SAVED_ANNUAL_GLOBAL"] * ctx["STANDARD_QALYS_PER_LIFE_SAVED"],
+    latex_symbol=r"QALY_{treaty,ann}",  # LaTeX symbol for equations
 )  # 85,610 QALYs
 
 
@@ -2833,6 +2992,7 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     keywords=["1%", "one percent", "international agreement", "peace treaty", "agreement", "pact", "duration"],
     distribution="triangular",  # Documented range with most likely midpoint
     confidence_interval=(3, 5),  # 3-5 year range as specified
+    latex_symbol=r"T_{campaign}",  # LaTeX symbol for equations
 )  # 3-5 year range, using midpoint
 
 # Campaign budget breakdown - Three main categories
@@ -2855,7 +3015,8 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
     unit="USD",
     formula="PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
     confidence="medium",
-    keywords=["150.0m", "250.0m", "410.0m", "1%", "viral referendum", "global survey", "one percent", "campaign budget", "referendum cost", "280m votes", "0.20 per vote", "0.50 per vote"]
+    keywords=["150.0m", "250.0m", "410.0m", "1%", "viral referendum", "global survey", "one percent", "campaign budget", "referendum cost", "280m votes", "0.20 per vote", "0.50 per vote"],
+    latex_symbol=r"Budget_{viral,base}",  # LaTeX symbol for equations
 )  # Base: $250M (realistic $0.50/vote avg), Range: $150M (optimistic $0.20/vote) to $410M (worst-case $1.05/vote)
 
 TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
@@ -2874,7 +3035,8 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     # could need $1B+. If unopposed, could be as low as $325M.
     # Planning fallacy + political unpredictability = wide right-skewed range
     validation_min=200_000_000,   # Floor: Minimal lobbying (weak opposition)
-    validation_max=2_000_000_000  # Ceiling: Full-scale opposition war chest
+    validation_max=2_000_000_000,  # Ceiling: Full-scale opposition war chest
+    latex_symbol=r"Budget_{lobby,treaty}",  # LaTeX symbol for equations
 )  # $650M total lobbying (outspends pharma + MIC combined)
 
 TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
@@ -2891,7 +3053,8 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
     # Rationale: Contingency by definition covers unknowns. Could be barely tapped ($20M)
     # or fully depleted + need more ($100M). Wide range reflects inherent unpredictability.
     validation_min=10_000_000,   # Floor: Minimal contingency
-    validation_max=150_000_000   # Ceiling: Major unforeseen costs
+    validation_max=150_000_000,  # Ceiling: Major unforeseen costs
+    latex_symbol=r"Budget_{reserve}",  # LaTeX symbol for equations
 )  # $50M reserve
 
 # Total campaign cost (calculated from components)
@@ -2913,7 +3076,8 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     validation_min=500_000_000,   # Floor: Bare minimum (digital-only, no paid media)
     validation_max=3_000_000_000,  # Ceiling: Full traditional + opposition response
     inputs=["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE", "TREATY_CAMPAIGN_BUDGET_LOBBYING", "TREATY_CAMPAIGN_BUDGET_RESERVE"],
-    compute=lambda ctx: ctx["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"]
+    compute=lambda ctx: ctx["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"],
+    latex_symbol=r"Cost_{campaign}",  # LaTeX symbol for equations
 )  # $1B total campaign cost (all VICTORY Incentive Alignment Bonds)
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
@@ -2926,6 +3090,7 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     formula="TOTAL_COST ÷ DURATION",    keywords=["1%", "one percent", "international agreement", "peace treaty", "yearly", "agreement", "costs"],
     inputs=['TREATY_CAMPAIGN_DURATION_YEARS', 'TREATY_CAMPAIGN_TOTAL_COST'],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["TREATY_CAMPAIGN_DURATION_YEARS"],
+    latex_symbol=r"Cost_{camp,amort}",  # LaTeX symbol for equations
 )  # $250M
 
 # Campaign phase budgets
@@ -2938,7 +3103,8 @@ CAMPAIGN_PHASE1_BUDGET = Parameter(
     unit="USD",
     keywords=["200.0m", "first phase", "safety trial", "p1", "phase i", "phase1", "campaign"],
     confidence_interval=(140_000_000, 260_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{phase1}",  # LaTeX symbol for equations
 )  # $200M for Phase 1
 
 CAMPAIGN_PHASE2_BUDGET = Parameter(
@@ -2950,7 +3116,8 @@ CAMPAIGN_PHASE2_BUDGET = Parameter(
     unit="USD",
     keywords=["500.0m", "efficacy trial", "second phase", "p2", "phase ii", "phase2", "campaign"],
     confidence_interval=(350_000_000, 650_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{phase2}",  # LaTeX symbol for equations
 )  # $500M for Phase 2
 
 CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
@@ -2962,7 +3129,8 @@ CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
     unit="USD",
     keywords=["campaign", "media", "budget", "min", "500.0m"],
     confidence_interval=(350_000_000, 650_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{media,min}",  # LaTeX symbol for equations
 )  # $500M minimum for mass media
 
 CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
@@ -2974,7 +3142,8 @@ CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
     unit="USD",
     keywords=["campaign", "media", "budget", "max", "1.0b"],
     confidence_interval=(700_000_000, 1_300_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{media,max}",  # LaTeX symbol for equations
 )  # $1B maximum for mass media
 
 CAMPAIGN_STAFF_BUDGET = Parameter(
@@ -2986,7 +3155,8 @@ CAMPAIGN_STAFF_BUDGET = Parameter(
     unit="USD",
     keywords=["campaign", "staff", "budget", "40.0m"],
     confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{staff}",  # LaTeX symbol for equations
 )  # $40M for core team
 
 # Detailed campaign budget line items (in millions USD)
@@ -2999,7 +3169,8 @@ CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
     unit="USD",
     keywords=["campaign", "legal", "budget", "50.0m"],
     confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{legal,AI}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
@@ -3011,7 +3182,8 @@ CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
     unit="USD",
     keywords=["campaign", "viral", "content", "budget", "40.0m"],
     confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{viral}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
@@ -3023,7 +3195,8 @@ CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
     unit="USD",
     keywords=["campaign", "community", "organizing", "30.0m"],
     confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{community}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_LOBBYING_US = Parameter(
@@ -3035,7 +3208,8 @@ CAMPAIGN_LOBBYING_US = Parameter(
     unit="USD",
     keywords=["campaign", "lobbying", "50.0m"],
     confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{lobby,US}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_LOBBYING_EU = Parameter(
@@ -3047,7 +3221,8 @@ CAMPAIGN_LOBBYING_EU = Parameter(
     unit="USD",
     keywords=["campaign", "lobbying", "40.0m"],
     confidence_interval=(28_000_000, 52_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{lobby,EU}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
@@ -3057,7 +3232,8 @@ CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
     description="G20 countries lobbying budget",
     display_name="G20 Countries Lobbying Budget",
     unit="USD",
-    keywords=["campaign", "lobbying", "g20", "millions", "35.0m"]
+    keywords=["campaign", "lobbying", "g20", "millions", "35.0m"],
+    latex_symbol=r"Budget_{lobby,G20}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
@@ -3069,7 +3245,8 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
     unit="USD",
     keywords=["50.0m", "armed forces", "conflict", "lobbyist", "armed conflict", "military action", "warfare"],
     confidence_interval=(35_000_000, 65_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{lobby,def}",  # LaTeX symbol for equations
 )
 
 DEFENSE_LOBBYING_ANNUAL = Parameter(
@@ -3082,7 +3259,8 @@ DEFENSE_LOBBYING_ANNUAL = Parameter(
     unit="USD/year",
     peer_reviewed=True,
     last_updated="2024",
-    keywords=["127.0m", "armed forces", "yearly", "conflict", "costs", "funding", "investment"]
+    keywords=["127.0m", "armed forces", "yearly", "conflict", "costs", "funding", "investment"],
+    latex_symbol=r"Lobby_{def,ann}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
@@ -3094,7 +3272,8 @@ CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
     unit="USD",
     keywords=["campaign", "super", "pac", "budget", "30.0m"],
     confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{PAC}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
@@ -3106,7 +3285,8 @@ CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
     unit="USD",
     keywords=["25.0m", "investigation", "r&d", "science", "study", "discovery", "innovation"],
     confidence_interval=(17_500_000, 32_500_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{oppo}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_PILOT_PROGRAMS = Parameter(
@@ -3118,7 +3298,8 @@ CAMPAIGN_PILOT_PROGRAMS = Parameter(
     unit="USD",
     keywords=["campaign", "pilot", "programs", "30.0m"],
     confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{pilot}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_LEGAL_WORK = Parameter(
@@ -3137,6 +3318,7 @@ CAMPAIGN_LEGAL_WORK = Parameter(
     # CRITICAL: Legal disputes (pharma, defense contractors) could escalate costs 2-3x.
     validation_min=40_000_000,   # Floor: Lean legal team, minimal dispute resolution
     validation_max=120_000_000,  # Ceiling: Protracted legal challenges from industry groups
+    latex_symbol=r"Budget_{legal}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
@@ -3148,7 +3330,8 @@ CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
     unit="USD",
     keywords=["20.0m", "approval", "authorization", "oversight", "regulation", "compliance", "regulatory"],
     confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{reg}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_LEGAL_DEFENSE = Parameter(
@@ -3160,7 +3343,8 @@ CAMPAIGN_LEGAL_DEFENSE = Parameter(
     unit="USD",
     keywords=["20.0m", "armed forces", "conflict", "legal", "armed conflict", "military action", "warfare"],
     confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{legal,def}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_DEFENSE_CONVERSION = Parameter(
@@ -3179,6 +3363,7 @@ CAMPAIGN_DEFENSE_CONVERSION = Parameter(
     # CRITICAL: Lockheed, Raytheon lobbying power—conversion could require 2-3x budget if contested.
     validation_min=30_000_000,   # Floor: Minimal outreach, focus on willing partners
     validation_max=100_000_000,  # Ceiling: Full industry engagement + job retraining programs
+    latex_symbol=r"Budget_{conversion}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
@@ -3190,7 +3375,8 @@ CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
     unit="USD",
     keywords=["campaign", "healthcare", "alignment", "35.0m"],
     confidence_interval=(24_500_000, 45_500_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{health}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
@@ -3202,7 +3388,8 @@ CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
     unit="USD",
     keywords=["campaign", "tech", "partnerships", "25.0m"],
     confidence_interval=(17_500_000, 32_500_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{tech}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
@@ -3214,7 +3401,8 @@ CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
     unit="USD",
     keywords=["campaign", "celebrity", "endorsement", "15.0m"],
     confidence_interval=(10_500_000, 19_500_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{celeb}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_INFRASTRUCTURE = Parameter(
@@ -3226,7 +3414,8 @@ CAMPAIGN_INFRASTRUCTURE = Parameter(
     unit="USD",
     keywords=["campaign", "infrastructure", "20.0m"],
     confidence_interval=(14_000_000, 26_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{infra}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_CONTINGENCY = Parameter(
@@ -3245,6 +3434,7 @@ CAMPAIGN_CONTINGENCY = Parameter(
     # CRITICAL: This is NOT lognormal—contingency spending is bounded and uniform by construction.
     validation_min=20_000_000,   # Floor: Minimal buffer (2% of $1B)
     validation_max=150_000_000,  # Ceiling: Full 15% contingency for mega-project risk
+    latex_symbol=r"Budget_{contingency}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
@@ -3263,6 +3453,7 @@ CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
     # Right-skewed: compliance failures (e.g., Syria violating Ottawa Treaty) require surge funding.
     validation_min=25_000_000,   # Floor: Lean monitoring team, voluntary compliance
     validation_max=80_000_000,   # Ceiling: Full enforcement mechanism + dispute resolution
+    latex_symbol=r"Budget_{impl}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_SCALING_PREP = Parameter(
@@ -3274,7 +3465,8 @@ CAMPAIGN_SCALING_PREP = Parameter(
     unit="USD",
     keywords=["campaign", "scaling", "prep", "30.0m"],
     confidence_interval=(21_000_000, 39_000_000),  # ±30% uncertainty on budget estimate
-    confidence="medium"
+    confidence="medium",
+    latex_symbol=r"Budget_{scale}",  # LaTeX symbol for equations
 )
 
 CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
@@ -3294,6 +3486,7 @@ CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
     # CRITICAL: Security audit failures or DDoS attacks could require emergency fixes (2-3x budget).
     validation_min=20_000_000,   # Floor: MVP with minimal security (not recommended)
     validation_max=80_000_000,   # Ceiling: Enterprise-grade with 24/7 security ops + pen testing
+    latex_symbol=r"Budget_{platform}",  # LaTeX symbol for equations
 )
 
 # Investment tier minimums (in millions USD or thousands USD)
@@ -3304,7 +3497,8 @@ INSTITUTIONAL_INVESTOR_MIN = Parameter(
     description="Minimum investment for institutional investors",
     display_name="Minimum Investment for Institutional Investors",
     unit="USD",
-    keywords=["10.0m", "impact investing", "pay for success", "debt instrument", "development finance", "fixed income", "impact bond"]
+    keywords=["10.0m", "impact investing", "pay for success", "debt instrument", "development finance", "fixed income", "impact bond"],
+    latex_symbol=r"Invest_{inst,min}",  # LaTeX symbol for equations
 )
 
 FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
@@ -3314,7 +3508,8 @@ FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
     description="Minimum investment for family offices",
     display_name="Minimum Investment for Family Offices",
     unit="USD",
-    keywords=["5.0m", "impact investing", "pay for success", "capital", "finance", "money", "debt instrument"]
+    keywords=["5.0m", "impact investing", "pay for success", "capital", "finance", "money", "debt instrument"],
+    latex_symbol=r"Invest_{family,min}",  # LaTeX symbol for equations
 )
 
 
@@ -3330,6 +3525,7 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "decentralized trials", "drug agency", "food and drug administration"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED'],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED"] + ctx["DFDA_ANNUAL_OPEX"],
+    latex_symbol=r"Cost_{treaty,ann}",  # LaTeX symbol for equations
 )  # $290M ($0.29B)
 
 # ---
@@ -3347,7 +3543,8 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_BENEFIT_RD_ONLY_ANNUAL"],
-    compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"]
+    compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
+    latex_symbol=r"Benefit_{peace+RD}",  # LaTeX symbol for equations
 )  # $155.05B (peace + R&D only)
 
 # ---
@@ -3376,7 +3573,8 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
     #   - Social welfare analysis (not shareholder returns)
     # 3% balances time preference with ethical weight of future lives.
     validation_min=0.01,  # Floor: Near-zero for very long-term analysis
-    validation_max=0.10   # Ceiling: High corporate rate (inappropriate for health)
+    validation_max=0.10,  # Ceiling: High corporate rate (inappropriate for health)
+    latex_symbol=r"r_{discount}",  # LaTeX symbol for equations
 )  # 3% annual social discount rate (r)
 
 NPV_TIME_HORIZON_YEARS = Parameter(
@@ -3384,6 +3582,7 @@ NPV_TIME_HORIZON_YEARS = Parameter(
     display_name="Standard Time Horizon for NPV Analysis",
     keywords=["npv", "time", "horizon", "years"],
     distribution="fixed",  # Methodological choice: standard 10-year NPV analysis window
+    latex_symbol=r"T_{horizon}",  # LaTeX symbol for equations
 )  # Standard 10-year analysis window (T)
 
 # ---
@@ -3402,6 +3601,7 @@ DFDA_NPV_UPFRONT_COST = Parameter(
     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(25_000_000, 65_000_000),  # $25M-$65M (±40% - IT projects have high variance)
+    latex_symbol=r"Cost_{upfront}",  # LaTeX symbol for equations
 )  # $40M Core framework build
 
 DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
@@ -3414,6 +3614,7 @@ DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     keywords=["229.8m", "pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials"],
     distribution="lognormal",
     confidence_interval=(150_000_000, 350_000_000),  # $150M-$350M (±40%)
+    latex_symbol=r"Cost_{DIH,init}",  # LaTeX symbol for equations
 )  # $228M medium case broader initiatives
 
 DFDA_NPV_ANNUAL_OPEX = Parameter(
@@ -3426,6 +3627,7 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
     keywords=["18.9m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(11_000_000, 26_500_000),  # $11M-$26.5M (actual range from source)
+    latex_symbol=r"OPEX_{ann}",  # LaTeX symbol for equations
 )  # $19M Core framework (midpoint of $11-26.5M)
 
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
@@ -3438,6 +3640,7 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     keywords=["21.1m", "pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials"],
     distribution="lognormal",
     confidence_interval=(14_000_000, 32_000_000),  # $14M-$32M (±30%)
+    latex_symbol=r"OPEX_{DIH,ann}",  # LaTeX symbol for equations
 )  # $21.1M medium case broader initiatives
 
 # NPV Model - Primary Parameters (dFDA-specific)
@@ -3455,6 +3658,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     validation_max=800_000_000,  # Ceiling: Full scope creep + regulatory capture (raised from $500M)
     inputs=['DFDA_NPV_UPFRONT_COST', 'DIH_NPV_UPFRONT_COST_INITIATIVES'],
     compute=lambda ctx: ctx["DFDA_NPV_UPFRONT_COST"] + ctx["DIH_NPV_UPFRONT_COST_INITIATIVES"],
+    latex_symbol=r"Cost_{upfront,total}",  # LaTeX symbol for equations
 )  # C0 = $0.26975B
 
 # Total annual operational costs (Cop): combines core dFDA framework + broader DIH initiative annual costs
@@ -3468,6 +3672,7 @@ DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     formula="DFDA_OPEX + DIH_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"],
     inputs=['DFDA_NPV_ANNUAL_OPEX', 'DIH_NPV_ANNUAL_OPEX_INITIATIVES'],
     compute=lambda ctx: ctx["DFDA_NPV_ANNUAL_OPEX"] + ctx["DIH_NPV_ANNUAL_OPEX_INITIATIVES"],
+    latex_symbol=r"OPEX_{total}",  # LaTeX symbol for equations
 )  # Cop = $0.04005B
 
 # dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
@@ -3478,7 +3683,8 @@ DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
     description="Years to reach full Decentralized Framework for Drug Assessment adoption",
     display_name="Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
     unit="years",
-    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"]
+    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"],
+    latex_symbol=r"T_{ramp}",  # LaTeX symbol for equations
 )  # Years to reach full adoption
 
 # Calculated NPV values for dFDA
@@ -3497,6 +3703,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     compute=lambda ctx: ctx["DFDA_NPV_ANNUAL_OPEX_TOTAL"]
     * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["NPV_TIME_HORIZON_YEARS"])
     / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+    latex_symbol=r"PV_{OPEX}",  # LaTeX symbol for equations
 )
 DFDA_NPV_TOTAL_COST = Parameter(
     DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX,
@@ -3508,6 +3715,7 @@ DFDA_NPV_TOTAL_COST = Parameter(
     formula="UPFRONT + PV_OPEX",    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "costs"],
     inputs=['DFDA_NPV_PV_ANNUAL_OPEX', 'DFDA_NPV_UPFRONT_COST_TOTAL'],
     compute=lambda ctx: ctx["DFDA_NPV_UPFRONT_COST_TOTAL"] + ctx["DFDA_NPV_PV_ANNUAL_OPEX"],
+    latex_symbol=r"Cost_{dFDA,total}",  # LaTeX symbol for equations
 )  # ~$0.54B
 
 # NPV of dFDA benefits with 5-year linear adoption ramp
@@ -3535,6 +3743,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
             for year in range(1, 11)
         ]
     ),
+    latex_symbol=r"NPV_{RD}",  # LaTeX symbol for equations
 )  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
@@ -3548,6 +3757,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
     keywords=["pragmatic trials", "real world evidence", "net benefit", "conservative"],
     inputs=['DFDA_NPV_BENEFIT_RD_ONLY', 'DFDA_NPV_TOTAL_COST'],
     compute=lambda ctx: ctx["DFDA_NPV_BENEFIT_RD_ONLY"] - ctx["DFDA_NPV_TOTAL_COST"],
+    latex_symbol=r"NPV_{net,RD}",  # LaTeX symbol for equations
 )  # ~$248.7B (benefits minus costs)
 
 # NPV of Regulatory Delay Avoidance (Disease Eradication Delay Elimination)
@@ -3581,6 +3791,7 @@ DFDA_ROI_RD_ONLY = Parameter(
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "low estimate"],
     inputs=["DFDA_NPV_BENEFIT_RD_ONLY", "DFDA_NPV_TOTAL_COST"],
     compute=lambda ctx: ctx["DFDA_NPV_BENEFIT_RD_ONLY"] / ctx["DFDA_NPV_TOTAL_COST"],
+    latex_symbol=r"ROI_{RD}",  # LaTeX symbol for equations
 )  # ~637:1 - Most conservative, R&D cost savings only (NPV-adjusted)
 
 
@@ -3618,6 +3829,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
     std_error=0.02,  # Tighter spread around 1% central
     keywords=["probability", "political", "treaty", "ratification", "implementation", "uncertainty",
               "adoption", "success", "campaign", "voting", "referendum"],
+              latex_symbol=r"P_{success}",  # LaTeX symbol for equations
 )
 
 # NOTE: TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG is defined later in the file (after TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
@@ -3638,6 +3850,7 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
     unit="rate",
     keywords=["10%", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"],
     distribution="fixed",  # Policy choice: bond allocation percentage is a design decision
+    latex_symbol=r"Pct_{bond}",  # LaTeX symbol for equations
 )  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
@@ -3650,6 +3863,7 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"],
     inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_FUNDING_PCT'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["VICTORY_BOND_FUNDING_PCT"],
+    latex_symbol=r"Payout_{bond,ann}",  # LaTeX symbol for equations
 )  # $2.718B
 VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
@@ -3662,6 +3876,7 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"],
     inputs=["VICTORY_BOND_ANNUAL_PAYOUT", "TREATY_CAMPAIGN_TOTAL_COST"],
     compute=lambda ctx: ctx["VICTORY_BOND_ANNUAL_PAYOUT"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"],
+    latex_symbol=r"r_{bond}",  # LaTeX symbol for equations
 )  # 271.8% (reported as 270%)
 
 # ---
@@ -3679,6 +3894,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
     unit="rate",
     keywords=["10%", "incentive alignment bond", "iab", "political incentives", "pac", "fellowship", "scoring", "public good score"],
     distribution="fixed",  # Policy choice: IAB allocation percentage is a design decision
+    latex_symbol=r"Pct_{political}",  # LaTeX symbol for equations
 )  # 10% of treaty funding for political incentive mechanisms
 
 IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
@@ -3691,6 +3907,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     formula="TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",    keywords=["incentive alignment bond", "iab", "political incentives", "pac", "fellowship", "scoring", "electoral", "public good score"],
     inputs=['TREATY_ANNUAL_FUNDING', 'IAB_POLITICAL_INCENTIVE_FUNDING_PCT'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["IAB_POLITICAL_INCENTIVE_FUNDING_PCT"],
+    latex_symbol=r"Funding_{political,ann}",  # LaTeX symbol for equations
 )  # $2.718B/year for political incentive mechanisms
 
 # ---
@@ -3707,6 +3924,7 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
     formula="TREATY_FUNDING ÷ DFDA_OPEX",    keywords=["pragmatic trials", "real world evidence", "multiple", "decentralized trials", "drug agency", "food and drug administration", "international agreement"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] / ctx["DFDA_ANNUAL_OPEX"],
+    latex_symbol=r"k_{coverage}",  # LaTeX symbol for equations
 )  # ~679x
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
@@ -3719,6 +3937,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
     inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT', 'IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"] - ctx["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"],
+    latex_symbol=r"Treasury_{RD,ann}",  # LaTeX symbol for equations
 )  # $21.744B/year (80% of treaty funding)
 DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
@@ -3730,6 +3949,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     formula="MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct", "patient subsidy"],
     inputs=['DFDA_ANNUAL_OPEX', 'DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL'],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"],
+    latex_symbol=r"Subsidies_{trial,ann}",  # LaTeX symbol for equations
 )  # $24.422B/year - ALL remaining funds go to subsidizing patient trial participation
 
 DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
@@ -3742,6 +3962,7 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     formula="TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT",    keywords=["trial", "participant", "enrollment", "capacity", "patient"],
     inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    latex_symbol=r"N_{fundable,ann}",  # LaTeX symbol for equations
 )  # ~20.4M patients/year at $1,200/patient
 
 # Funding allocation percentages (calculated from absolute values)
@@ -3757,6 +3978,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     keywords=["allocation", "percentage", "medical research", "funding"],
     inputs=["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL", "TREATY_ANNUAL_FUNDING"],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"] / ctx["TREATY_ANNUAL_FUNDING"],
+    latex_symbol=r"Pct_{treasury,RD}",  # LaTeX symbol for equations
 )  # 80%
 
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
@@ -3771,6 +3993,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     keywords=["allocation", "percentage", "patient", "trial", "subsidy"],
     inputs=["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL", "TREATY_ANNUAL_FUNDING"],
     compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["TREATY_ANNUAL_FUNDING"],
+    latex_symbol=r"Pct_{subsidies}",  # LaTeX symbol for equations
 )  # 79.85%
 
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
@@ -3785,6 +4008,7 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     keywords=["allocation", "percentage", "overhead", "platform", "opex"],
     inputs=["DFDA_ANNUAL_OPEX", "TREATY_ANNUAL_FUNDING"],
     compute=lambda ctx: ctx["DFDA_ANNUAL_OPEX"] / ctx["TREATY_ANNUAL_FUNDING"],
+    latex_symbol=r"OPEX_{pct}",  # LaTeX symbol for equations
 )  # 0.15%
 
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
@@ -3794,7 +4018,8 @@ SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     description="Annual cost of sugar subsidies per person",
     display_name="Annual Cost of Sugar Subsidies per Person",
     unit="USD/person/year",
-    keywords=["average person", "yearly", "costs", "funding", "investment", "household benefit", "typical individual"]
+    keywords=["average person", "yearly", "costs", "funding", "investment", "household benefit", "typical individual"],
+    latex_symbol=r"Cost_{sugar,pc}",  # LaTeX symbol for equations
 )  # $10 per person per year in sugar subsidies
 
 GLOBAL_MED_RESEARCH_SPENDING = Parameter(
@@ -3807,6 +4032,7 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     keywords=["67.5b", "worldwide", "investigation", "r&d", "science", "study", "costs"],
     distribution="lognormal",
     confidence_interval=(54_000_000_000, 81_000_000_000),  # ±20% - government spending estimates vary
+    latex_symbol=r"Spending_{RD}",  # LaTeX symbol for equations
 )
 
 TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
@@ -3820,6 +4046,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     keywords=["research", "funding", "total", "dih", "treaty"],
     inputs=['GLOBAL_MED_RESEARCH_SPENDING', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: ctx["GLOBAL_MED_RESEARCH_SPENDING"] + ctx["TREATY_ANNUAL_FUNDING"],
+    latex_symbol=r"Funding_{RD,total}",  # LaTeX symbol for equations
 )
 
 # Trial Capacity Multiplier (Simple Economic Calculation)
@@ -3836,6 +4063,7 @@ DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"],
     inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DIH_PATIENTS_FUNDABLE_ANNUALLY'],
     compute=lambda ctx: ctx["DIH_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    latex_symbol=r"k_{capacity}",  # LaTeX symbol for equations
 )  # Trial capacity multiplier from simple funding economics (DIH patients fundable / current trial slots)
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
@@ -3848,6 +4076,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     keywords=["trial", "capacity", "cumulative", "20 years"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20),
+    latex_symbol=r"Capacity_{20yr}",  # LaTeX symbol for equations
 )  # Auto-generated LaTeX from calculated value
 
 # ==============================================================================
@@ -3877,6 +4106,7 @@ PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
     keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
     distribution="normal",
     std_error=0.05,  # ±7% uncertainty in cost allocation estimates
+    latex_symbol=r"Pct_{P2+P3}",  # LaTeX symbol for equations
 )  # 69% of trial costs are Phase 2/3 efficacy testing
 
 # Cost barrier pharma faces for Phase 2/3 (per drug)
@@ -3892,6 +4122,7 @@ PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
     keywords=["phase 2", "phase 3", "cost", "barrier", "pharma", "drug development"],
     distribution="normal",
     std_error=200_000_000,  # ±$200M uncertainty in cost allocation
+    latex_symbol=r"Cost_{P2+P3}",  # LaTeX symbol for equations
 )  # $1.56B cost barrier per drug for Phase 2/3 testing
 
 # Valley of Death: Percentage of Phase 1-passed compounds abandoned due to Phase 2/3 costs
@@ -3908,6 +4139,7 @@ VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
     keywords=["valley of death", "attrition", "abandoned", "cost barrier", "phase 2", "phase 3"],
     distribution="uniform",
     confidence_interval=(0.25, 0.55),  # Wide range: 25-55% abandoned due to cost
+    latex_symbol=r"Attrition_{valley}",  # LaTeX symbol for equations
 )  # ~40% of Phase 1-passed compounds abandoned due to cost (not science)
 
 # ==============================================================================
@@ -3944,6 +4176,7 @@ ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
     keywords=["additional", "drugs", "cost", "elimination", "valley of death"],
     inputs=['CURRENT_DRUG_APPROVALS_PER_YEAR', 'VALLEY_OF_DEATH_ATTRITION_PCT'],
     compute=lambda ctx: int(ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"] * ctx["VALLEY_OF_DEATH_ATTRITION_PCT"]),
+    latex_symbol=r"Drugs_{new}",  # LaTeX symbol for equations
 )  # ~20 additional drugs/year from eliminating cost barrier
 
 # Valley of death rescue multiplier: eliminating Phase 2/3 costs rescues abandoned drugs
@@ -3958,6 +4191,7 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
     keywords=["dfda", "valley of death", "rescue", "multiplier", "cost barrier"],
     inputs=['VALLEY_OF_DEATH_ATTRITION_PCT'],
     compute=lambda ctx: 1 + ctx["VALLEY_OF_DEATH_ATTRITION_PCT"],
+    latex_symbol=r"k_{rescue}",  # LaTeX symbol for equations
 )  # 1.4× more drugs when dFDA eliminates cost barrier
 
 # Combined treatment discovery speedup from dFDA implementation
@@ -3973,6 +4207,7 @@ DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER = Parameter(
     keywords=["dfda", "treatment", "speedup", "combined", "multiplier"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
+    latex_symbol=r"k_{speedup}",  # LaTeX symbol for equations
 )  # Auto-generated LaTeX from calculated value
 
 # Rare diseases (moved here to enable calculated parameters below)
@@ -3986,6 +4221,7 @@ RARE_DISEASES_COUNT_GLOBAL = Parameter(
     keywords=["7k", "worldwide", "illness", "rare", "diseases", "count", "international"],
     distribution="normal",
     confidence_interval=(6000, 10000),  # Could be 6K-10K depending on definitions
+    latex_symbol=r"N_{rare}",  # LaTeX symbol for equations
 )  # ~7,000 rare diseases
 
 # Diseases without effective treatment (queue size for curing all diseases)
@@ -4001,6 +4237,7 @@ DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
     keywords=["diseases", "untreatable", "no treatment", "queue", "rare diseases"],
     inputs=['RARE_DISEASES_COUNT_GLOBAL'],
     compute=lambda ctx: int(ctx["RARE_DISEASES_COUNT_GLOBAL"] * 0.95),
+    latex_symbol=r"N_{untreated}",  # LaTeX symbol for equations
 )  # ~6,650 diseases (uncertainty propagated from RARE_DISEASES_COUNT_GLOBAL)
 
 # Diseases getting FIRST effective treatment per year under status quo
@@ -4019,6 +4256,7 @@ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
                                        # - Floor (8/yr): Strict definition → ~830yr queue max
                                        # - Ceiling (30/yr): Liberal definition → ~220yr queue min
                                        # Prevents extreme 1000+ year scenarios that strain credibility
+    latex_symbol=r"Treatments_{new,ann}",  # LaTeX symbol for equations
 )  # ~15 diseases/year get FIRST treatment
 
 # Time to clear entire disease queue under status quo
@@ -4034,6 +4272,7 @@ STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
     keywords=["status quo", "queue", "clearance", "total", "years"],
     inputs=['DISEASES_WITHOUT_EFFECTIVE_TREATMENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR'],
     compute=lambda ctx: ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"] / ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"],
+    latex_symbol=r"T_{queue,SQ}",  # LaTeX symbol for equations
 )  # ~443 years to cure ALL diseases
 
 # Average time to first treatment under current/status quo system (BASELINE)
@@ -4050,6 +4289,7 @@ STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
     keywords=["status quo", "current system", "average", "time", "first treatment", "years", "baseline"],
     inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / 2,
+    latex_symbol=r"T_{first,SQ}",  # LaTeX symbol for equations
 )  # ~222 years for average disease (half the queue)
 
 # Treatment timeline acceleration from dFDA implementation (trial capacity only)
@@ -4067,6 +4307,7 @@ DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
     keywords=["dfda", "acceleration", "first treatment", "timeline", "years"],
     inputs=['STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"] * (1 - 1 / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
+    latex_symbol=r"T_{accel}",  # LaTeX symbol for equations
 )
 
 # ============================================================================
@@ -4087,6 +4328,7 @@ DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     keywords=["trial capacity", "lives saved", "treatment acceleration"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    latex_symbol=r"Lives_{capacity}",  # LaTeX symbol for equations
 )
 
 # DALYs averted from trial capacity increase
@@ -4108,6 +4350,7 @@ DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     keywords=["trial capacity", "dalys", "treatment acceleration", "WHO", "GBD"],
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"]),
+    latex_symbol=r"DALYs_{capacity}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
@@ -4121,6 +4364,7 @@ DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     keywords=["trial capacity", "economic", "value", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_DALYS_AVERTED', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_DALYS_AVERTED"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
+    latex_symbol=r"Value_{capacity}",  # LaTeX symbol for equations
 )
 
 # ============================================================================
@@ -4140,6 +4384,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
     keywords=["dfda", "total", "timeline", "shift", "acceleration", "efficacy lag", "years", "average"],
     inputs=['DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS', 'EFFICACY_LAG_YEARS'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"] + ctx["EFFICACY_LAG_YEARS"],
+    latex_symbol=r"T_{accel,max}",  # LaTeX symbol for equations
 )  # ~207 years average total timeline shift from dFDA
 
 # dFDA treatment rate (diseases getting first treatment per year)
@@ -4154,6 +4399,7 @@ DFDA_FIRST_TREATMENTS_PER_YEAR = Parameter(
     keywords=["dfda", "cures", "diseases", "per year", "rate", "first treatment"],
     inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
+    latex_symbol=r"Treatments_{dFDA,ann}",  # LaTeX symbol for equations
 )
 
 # Time to cure ALL diseases with dFDA
@@ -4168,6 +4414,7 @@ DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     keywords=["dfda", "queue", "clearance", "all diseases", "cure all", "years"],
     inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
+    latex_symbol=r"T_{queue,dFDA}",  # LaTeX symbol for equations
 )
 
 # ============================================================================
@@ -4187,6 +4434,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "average"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    latex_symbol=r"Lives_{max}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
@@ -4200,6 +4448,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag", "WHO", "GBD"],
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
     compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"]),
+    latex_symbol=r"DALYs_{max}",  # LaTeX symbol for equations
 )  # ~549B DALYs averted (vs old 200B - now includes non-fatal chronic diseases)
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
@@ -4213,6 +4462,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     keywords=["total", "economic", "value", "timeline shift", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
+    latex_symbol=r"Value_{max}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
@@ -4227,6 +4477,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'GLOBAL_YLD_PROPORTION_OF_DALYS'],
     compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"] * HOURS_PER_YEAR),
+    latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
 # dFDA System Targets (using trial capacity multiplier)
@@ -4240,6 +4491,7 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
     inputs=['CURRENT_TRIALS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
+    latex_symbol=r"Capacity_{trials}",  # LaTeX symbol for equations
 )  # Maximum trials/year possible with trial capacity multiplier
 
 # =============================================================================
@@ -4256,7 +4508,8 @@ CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     formula="DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["exploration", "therapeutic frontier", "timeline", "current pace", "known safe", "years"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    latex_symbol=r"T_{explore,safe}",  # LaTeX symbol for equations
 )
 
 DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
@@ -4268,7 +4521,8 @@ DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     formula="DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
     keywords=["exploration", "therapeutic frontier", "timeline", "dfda", "accelerated", "known safe", "years"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"])
+    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"]),
+    latex_symbol=r"T_{safe,dFDA}",  # LaTeX symbol for equations
 )
 
 CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
@@ -4280,7 +4534,8 @@ CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
     formula="TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["exploration", "total", "all modalities", "timeline", "current pace", "years"],
     inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    latex_symbol=r"T_{explore,total}",  # LaTeX symbol for equations
 )
 
 DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
@@ -4292,7 +4547,8 @@ DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
     formula="TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
     keywords=["exploration", "total", "all modalities", "timeline", "dfda", "accelerated", "years"],
     inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"])
+    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"]),
+    latex_symbol=r"T_{explore,dFDA}",  # LaTeX symbol for equations
 )
 
 # Combination therapy exploration (pairwise drug combinations - standard in modern medicine)
@@ -4305,7 +4561,8 @@ CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
     formula="COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["combination", "exploration", "timeline", "years", "polypharmacy"],
     inputs=["COMBINATION_THERAPY_DISEASE_SPACE", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"])
+    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    latex_symbol=r"T_{explore,combo}",  # LaTeX symbol for equations
 )
 
 # PMC Systematic Review - Pragmatic Trial Costs
@@ -4323,6 +4580,7 @@ PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
     confidence_interval=(19, 478),  # IQR from the study (2015 USD)
     distribution="lognormal",
     keywords=["$97", "pmc", "pragmatic", "trial cost", "median", "embedded"],
+    latex_symbol=r"Cost_{pragmatic,median}",  # LaTeX symbol for equations
 )
 
 # Population
@@ -4335,7 +4593,8 @@ GLOBAL_POPULATION_2024 = Parameter(
     unit="of people",
     confidence_interval=(7_800_000_000, 8_200_000_000),  # ±2% census estimate uncertainty
     distribution="lognormal",
-    keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"]
+    keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"],
+    latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
 
 # NOTE: Daily deaths (150k/day) defined above as GLOBAL_DISEASE_DEATHS_DAILY (line ~1903)
@@ -4351,6 +4610,7 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     confidence="high",
     distribution="normal",
     std_error=5_000_000,  # ±5M (~10% uncertainty in WHO estimates)
+    latex_symbol=r"Deaths_{curable,ann}",  # LaTeX symbol for equations
 )  # 55 million deaths/year from WHO (all diseases + aging)
 
 # Disease economic burden
@@ -4364,6 +4624,7 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     keywords=["8.2t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"],
     distribution="lognormal",  # Economic estimates with methodological variance
     confidence_interval=(6_500_000_000_000, 10_000_000_000_000),  # ±20-22%: reflects definitional + accounting differences
+    latex_symbol=r"Spending_{symptom}",  # LaTeX symbol for equations
 )  # $8.2 trillion annually
 
 # Disease cost breakdown components
@@ -4377,6 +4638,7 @@ GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
     keywords=["9.9t", "medical", "healthcare", "treatment", "hospitalization"],
     distribution="lognormal",
     confidence_interval=(7_000_000_000_000, 14_000_000_000_000),  # ±30% - global healthcare cost estimates vary widely
+    latex_symbol=r"Cost_{medical,direct}",  # LaTeX symbol for equations
 )  # $9.9 trillion annually
 
 GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
@@ -4389,6 +4651,7 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     keywords=["5.0t", "productivity", "lost work", "economic loss", "absenteeism"],
     distribution="lognormal",
     confidence_interval=(3_500_000_000_000, 7_000_000_000_000),  # ±30%
+    latex_symbol=r"Loss_{productivity}",  # LaTeX symbol for equations
 )  # $5 trillion annually
 
 GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
@@ -4401,6 +4664,7 @@ GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
     keywords=["94.2t", "human life", "mortality", "deaths", "dalys", "life value"],
     distribution="lognormal",
     confidence_interval=(66_000_000_000_000, 132_000_000_000_000),  # ±30%
+    latex_symbol=r"Loss_{life,disease}",  # LaTeX symbol for equations
 )  # $94.2 trillion annually
 
 GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
@@ -4414,6 +4678,7 @@ GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
     keywords=["109.0t", "109.1t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"],
     inputs=['GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL'],
     compute=lambda ctx: ctx["GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL"] + ctx["GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"] + ctx["GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL"],
+    latex_symbol=r"Burden_{disease}",  # LaTeX symbol for equations
 )  # $109.1 trillion annually
 
 GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
@@ -4427,6 +4692,7 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     keywords=["deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly", "conflict"],
     inputs=['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL', 'GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] + ctx["GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL"] + ctx["GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL"],
+    latex_symbol=r"Cost_{health+war}",  # LaTeX symbol for equations
 )  # $128.6 trillion = $11.355T (war with externalities) + $8.2T + $109T
 
 # Defense and research participation rates
@@ -4437,7 +4703,8 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     description="Percentage of budget defense sector keeps under 1% treaty",
     display_name="Percentage of Budget Defense Sector Keeps Under 1% treaty",
     unit="rate",
-    keywords=["99%", "armed forces", "international agreement", "peace treaty", "conflict", "sector", "retention"]
+    keywords=["99%", "armed forces", "international agreement", "peace treaty", "conflict", "sector", "retention"],
+    latex_symbol=r"Retain_{def}",  # LaTeX symbol for equations
 )  # 99% retention
 
 CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
@@ -4447,7 +4714,8 @@ CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
     description="Current clinical trial participation rate (0.06% of population)",
     display_name="Current Clinical Trial Participation Rate",
     unit="rate",
-    keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"]
+    keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"],
+    latex_symbol=r"Rate_{part,curr}",  # LaTeX symbol for equations
 )  # 0.06% participation
 
 PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
@@ -4461,7 +4729,8 @@ PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     keywords=["willingness", "willing", "volunteer", "interest", "clinical trial", "participation", "survey"],
     distribution="normal",
     confidence_interval=(0.40, 0.50),  # ±11% variation from survey heterogeneity
-    std_error=0.025  # Survey response variance across populations
+    std_error=0.025,  # Survey response variance across populations
+    latex_symbol=r"Pct_{willing}",  # LaTeX symbol for equations
 )  # 44.8% willing for drug trials specifically
 
 WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
@@ -4474,7 +4743,8 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     formula="CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",    confidence="medium",
     keywords=["willing", "volunteer", "participants", "chronic disease", "trial capacity", "1.075b", "1.1b"],
     inputs=['CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT'],
-    compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"]
+    compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"],
+    latex_symbol=r"N_{willing}",  # LaTeX symbol for equations
 )  # 1.075 billion willing participants
 
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
@@ -4484,7 +4754,8 @@ US_MILITARY_SPENDING_PCT_GDP = Parameter(
     description="US military spending as percentage of GDP (2024)",
     display_name="US Military Spending as Percentage of GDP",
     unit="rate",
-    keywords=["4%", "dod", "pentagon", "national security", "army", "navy", "armed forces"]
+    keywords=["4%", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
+    latex_symbol=r"Pct_{mil,GDP}",  # LaTeX symbol for equations
 )  # 3.5% of GDP
 
 # Historical terrorism deaths
@@ -4498,6 +4769,7 @@ TERRORISM_DEATHS_911 = Parameter(
     keywords=["911", "3k", "fatalities", "casualties", "mortality", "terrorism", "loss of life"],
     confidence="high",
     distribution="fixed",  # Historical fact, no uncertainty
+    latex_symbol=r"Deaths_{9/11}",  # LaTeX symbol for equations
 )  # 2,996 deaths
 
 # Research acceleration multipliers
@@ -4513,6 +4785,7 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     keywords=["fatalities", "casualties", "illness", "mortality", "worldwide", "yearly", "disease"],
     inputs=["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "TERRORISM_DEATHS_911"],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"] / ctx["TERRORISM_DEATHS_911"],
+    latex_symbol=r"Ratio_{dis:terror}",  # LaTeX symbol for equations
 )  # ~18,274:1
 
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
@@ -4526,6 +4799,7 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     keywords=["armed forces", "conflict", "fatalities", "casualties", "illness", "mortality", "worldwide"],
     inputs=["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"],
+    latex_symbol=r"Ratio_{dis:war}",  # LaTeX symbol for equations
 )  # ~137:1
 
 # Medical research as percentage of disease burden
@@ -4540,6 +4814,7 @@ MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
     keywords=["deadweight loss", "economic damage", "productivity loss", "gdp loss", "investigation", "r&d", "science"],
     inputs=['GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL'],
     compute=lambda ctx: ctx["GLOBAL_MED_RESEARCH_SPENDING"] / ctx["GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL"],
+    latex_symbol=r"Pct_{RD:burden}",  # LaTeX symbol for equations
 )  # 0.052%
 
 # Per capita calculations
@@ -4554,6 +4829,7 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     keywords=["dod", "pentagon", "average person", "national security", "army", "individual", "navy"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'GLOBAL_POPULATION_2024'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_POPULATION_2024"],
+    latex_symbol=r"Spending_{mil,pc}",  # LaTeX symbol for equations
 )  # $340/person/year
 
 # GiveWell charity comparison
@@ -4565,7 +4841,8 @@ GIVEWELL_COST_PER_LIFE_MIN = Parameter(
     description="GiveWell cost per life saved (Helen Keller International)",
     display_name="Givewell Cost per Life Saved (Minimum)",
     unit="USD/life",
-    keywords=["4k", "costs", "funding", "investment", "givewell", "life", "min"]
+    keywords=["4k", "costs", "funding", "investment", "givewell", "life", "min"],
+    latex_symbol=r"Cost_{GW,min}",  # LaTeX symbol for equations
 )  # Helen Keller International Vitamin A
 
 GIVEWELL_COST_PER_LIFE_MAX = Parameter(
@@ -4575,7 +4852,8 @@ GIVEWELL_COST_PER_LIFE_MAX = Parameter(
     description="GiveWell cost per life saved (Against Malaria Foundation)",
     display_name="Givewell Cost per Life Saved (Maximum)",
     unit="USD/life",
-    keywords=["6k", "costs", "funding", "investment", "givewell", "life", "max"]
+    keywords=["6k", "costs", "funding", "investment", "givewell", "life", "max"],
+    latex_symbol=r"Cost_{GW,max}",  # LaTeX symbol for equations
 )  # Against Malaria Foundation
 
 GIVEWELL_COST_PER_LIFE_AVG = Parameter(
@@ -4585,7 +4863,8 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     description="GiveWell average cost per life saved across top charities",
     display_name="Givewell Average Cost per Life Saved Across Top Charities",
     unit="USD/life",
-    keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"]
+    keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"],
+    latex_symbol=r"Cost_{GW,avg}",  # LaTeX symbol for equations
 )  # Midpoint of top charities
 
 # Historical public health comparisons
@@ -4596,7 +4875,8 @@ SMALLPOX_ERADICATION_ROI = Parameter(
     description="Return on investment from smallpox eradication campaign",
     display_name="Return on Investment from Smallpox Eradication Campaign",
     unit="ratio",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
+    latex_symbol=r"ROI_{smallpox}",  # LaTeX symbol for equations
 )  # 159:1 to 280:1 estimated
 
 CHILDHOOD_VACCINATION_ROI = Parameter(
@@ -4606,7 +4886,8 @@ CHILDHOOD_VACCINATION_ROI = Parameter(
     description="Return on investment from childhood vaccination programs",
     display_name="Return on Investment from Childhood Vaccination Programs",
     unit="ratio",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
+    latex_symbol=r"ROI_{vax}",  # LaTeX symbol for equations
 )  # 13:1
 
 POLIO_VACCINATION_ROI = Parameter(
@@ -4616,7 +4897,8 @@ POLIO_VACCINATION_ROI = Parameter(
     description="Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs",
     display_name="Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs",
     unit="ratio",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
+    latex_symbol=r"ROI_{polio}",  # LaTeX symbol for equations
 )  # 39:1 (WHO 2019, 8 priority countries)
 
 MEASLES_VACCINATION_ROI = Parameter(
@@ -4626,7 +4908,8 @@ MEASLES_VACCINATION_ROI = Parameter(
     description="Return on investment from measles (MMR) vaccination programs",
     display_name="Return on Investment from Measles Vaccination Programs",
     unit="ratio",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
+    latex_symbol=r"ROI_{measles}",  # LaTeX symbol for equations
 )  # 14:1 (MMR), range: 10.3:1 to 167:1 depending on program type
 
 CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
@@ -4639,6 +4922,7 @@ CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
     keywords=["15.0b", "yearly", "profit", "return", "worldwide", "childhood", "vaccination"],
     distribution="lognormal",  # Economic benefit estimates with methodological variance
     std_error=4_500_000_000,  # ±30%: reflects program-specific and valuation methodology differences
+    latex_symbol=r"Benefit_{vax,ann}",  # LaTeX symbol for equations
 )  # ~$15B annual benefit from preventing measles, polio, etc.
 
 WATER_FLUORIDATION_ROI = Parameter(
@@ -4648,7 +4932,8 @@ WATER_FLUORIDATION_ROI = Parameter(
     description="Return on investment from water fluoridation programs",
     display_name="Return on Investment from Water Fluoridation Programs",
     unit="ratio",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
+    latex_symbol=r"ROI_{fluoride}",  # LaTeX symbol for equations
 )  # 23:1
 
 # Historical intervention total benefits (for comparison charts)
@@ -4660,7 +4945,8 @@ SMALLPOX_ERADICATION_TOTAL_BENEFIT = Parameter(
     description="Total economic benefit from smallpox eradication campaign",
     display_name="Total Economic Benefit from Smallpox Eradication Campaign",
     unit="USD",
-    keywords=["historical", "one-time", "total benefit", "eradication", "public health"]
+    keywords=["historical", "one-time", "total benefit", "eradication", "public health"],
+    latex_symbol=r"Benefit_{smallpox}",  # LaTeX symbol for equations
 )  # $1.42B total benefit ($350M + $1,070M benefits, $298M cost, ~159-280:1 ROI)
 
 HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT = Parameter(
@@ -4670,7 +4956,8 @@ HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT = Parameter(
     description="Estimated total economic impact of Human Genome Project",
     display_name="Estimated Total Economic Impact of Human Genome Project",
     unit="USD",
-    keywords=["historical", "one-time", "total benefit", "genomics", "research"]
+    keywords=["historical", "one-time", "total benefit", "genomics", "research"],
+    latex_symbol=r"Impact_{HGP}",  # LaTeX symbol for equations
 )  # ~$1T commonly cited economic impact estimate (cost ~$2.7B)
 
 # Annual benefit parameters (used for 100-year cumulative comparisons)
@@ -4682,7 +4969,8 @@ WATER_FLUORIDATION_ANNUAL_BENEFIT = Parameter(
     description="Estimated annual global economic benefit from water fluoridation programs",
     display_name="Estimated Annual Global Economic Benefit from Water Fluoridation Programs",
     unit="USD/year",
-    keywords=["yearly", "profit", "return", "worldwide", "fluoridation", "dental"]
+    keywords=["yearly", "profit", "return", "worldwide", "fluoridation", "dental"],
+    latex_symbol=r"Benefit_{fluoride}",  # LaTeX symbol for equations
 )  # ~$800M annual benefit
 
 SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
@@ -4692,7 +4980,8 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
     description="Estimated annual global economic benefit from smoking cessation programs",
     display_name="Estimated Annual Global Economic Benefit from Smoking Cessation Programs",
     unit="USD/year",
-    keywords=["yearly", "profit", "return", "worldwide", "tobacco", "smoking"]
+    keywords=["yearly", "profit", "return", "worldwide", "tobacco", "smoking"],
+    latex_symbol=r"Benefit_{smoking}",  # LaTeX symbol for equations
 )  # ~$12B annual benefit
 
 
@@ -4716,6 +5005,7 @@ TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
     keywords=["recurring", "annual", "treaty benefits", "peace dividend", "rd savings", "perpetual"],
     inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL', 'PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT'],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
+    latex_symbol=r"Benefit_{recur,ann}",  # LaTeX symbol for equations
 )  # $155.1B/year (truly recurring - peace dividend + R&D savings only)
 
 # Three-tier ROI analysis based on TOTAL one-time health benefits
@@ -4731,6 +5021,7 @@ TREATY_ROI_EXISTING_DRUGS_ONLY = Parameter(
     keywords=["250920", "historical", "existing drugs", "roi"],
     inputs=['EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS', 'TREATY_CAMPAIGN_TOTAL_COST'],
     compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"],
+    latex_symbol=r"ROI_{drugs}",  # LaTeX symbol for equations
 )  # 250,920:1 ROI (existing drugs only)
 
 TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
@@ -4744,7 +5035,8 @@ TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     confidence="medium",
     keywords=["trial capacity", "efficacy lag", "primary", "timeline shift", "roi"],
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "TREATY_CAMPAIGN_TOTAL_COST"],
-    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"]
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"],
+    latex_symbol=r"ROI_{max}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -4768,6 +5060,7 @@ TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
               "economic return", "uncertainty", "monte carlo"],
     inputs=["TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG", "POLITICAL_SUCCESS_PROBABILITY"],
     compute=lambda ctx: ctx["TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"] * ctx["POLITICAL_SUCCESS_PROBABILITY"],
+    latex_symbol=r"E[ROI_{max}]",  # LaTeX symbol for equations
 )
 
 # Scale Comparison Parameters (demonstrating intervention magnitude)
@@ -4793,6 +5086,7 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     keywords=["2024", "dod", "pentagon", "deployment rate", "market penetration", "participation rate", "national security"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * (1 - ctx["TREATY_REDUCTION_PCT"]),
+    latex_symbol=r"Spending_{mil,post}",  # LaTeX symbol for equations
 )  # $2,690.82B
 
 
@@ -4803,7 +5097,8 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
     description="Traditional FDA drug development timeline",
     display_name="Traditional FDA Drug Development Timeline",
     unit="years",
-    keywords=["drug agency", "faster development", "food and drug administration", "innovation speed", "medicines agency", "research velocity", "regulator"]
+    keywords=["drug agency", "faster development", "food and drug administration", "innovation speed", "medicines agency", "research velocity", "regulator"],
+    latex_symbol=r"T_{accel,curr}",  # LaTeX symbol for equations
 )  # 12-17 years typical
 
 # ============================================================================
@@ -4824,7 +5119,8 @@ PHASE_1_SAFETY_DURATION_YEARS = Parameter(
     confidence="high",
     last_updated="2021",
     peer_reviewed=True,
-    keywords=["rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "study", "discovery"]
+    keywords=["rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "study", "discovery"],
+    latex_symbol=r"T_{P1}",  # LaTeX symbol for equations
 )
 
 # Baseline Lives Saved by Modern Medicine
@@ -4839,7 +5135,8 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
     last_updated="2024",
     peer_reviewed=True,
     conservative=True,
-    keywords=["deaths prevented", "life saving", "mortality reduction", "deaths averted", "low estimate", "yearly", "cautious"]
+    keywords=["deaths prevented", "life saving", "mortality reduction", "deaths averted", "low estimate", "yearly", "cautious"],
+    latex_symbol=r"Lives_{base,ann}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -4891,6 +5188,7 @@ BED_NETS_COST_PER_DALY = Parameter(
     keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"],
     distribution="normal",  # Well-studied intervention with systematic cost tracking
     confidence_interval=(78, 100),  # Documented GiveWell range
+    latex_symbol=r"Cost_{nets}",  # LaTeX symbol for equations
 )
 
 DEWORMING_COST_PER_DALY = Parameter(
@@ -4901,7 +5199,8 @@ DEWORMING_COST_PER_DALY = Parameter(
     display_name="Deworming Cost per DALY",
     unit="USD/DALY",
     confidence="low",
-    keywords=["givewell", "deworming", "worms", "cost effectiveness", "benchmark", "comparison", "soil-transmitted helminths", "schistosomiasis"]
+    keywords=["givewell", "deworming", "worms", "cost effectiveness", "benchmark", "comparison", "soil-transmitted helminths", "schistosomiasis"],
+    latex_symbol=r"Cost_{deworm,DALY}",  # LaTeX symbol for equations
 )
 
 VITAMIN_A_COST_PER_DALY = Parameter(
@@ -4912,7 +5211,8 @@ VITAMIN_A_COST_PER_DALY = Parameter(
     display_name="Vitamin A Supplementation Cost per DALY",
     unit="USD/DALY",
     confidence="medium",
-    keywords=["givewell", "vitamin a", "helen keller", "cost effectiveness", "benchmark", "comparison", "supplementation", "micronutrient"]
+    keywords=["givewell", "vitamin a", "helen keller", "cost effectiveness", "benchmark", "comparison", "supplementation", "micronutrient"],
+    latex_symbol=r"Cost_{vitA,DALY}",  # LaTeX symbol for equations
 )
 
 CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
@@ -4923,7 +5223,8 @@ CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
     display_name="Childhood Vaccination Cost per DALY (Estimated)",
     unit="USD/DALY",
     confidence="low",
-    keywords=["vaccination", "immunization", "childhood", "cost effectiveness", "benchmark", "comparison", "vaccines for children", "VFC"]
+    keywords=["vaccination", "immunization", "childhood", "cost effectiveness", "benchmark", "comparison", "vaccines for children", "VFC"],
+    latex_symbol=r"Cost_{vax,DALY}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -4944,6 +5245,7 @@ RECOVERY_TRIAL_TOTAL_COST = Parameter(
     confidence_interval=(15_000_000, 25_000_000),  # Accounting for currency conversion uncertainty
     distribution=DistributionType.LOGNORMAL,
     keywords=["recovery", "trial", "cost", "total", "uk", "pragmatic"],
+    latex_symbol=r"Cost_{RECOVERY}",  # LaTeX symbol for equations
 )
 
 RECOVERY_TRIAL_GLOBAL_LIVES_SAVED = Parameter(
@@ -4960,6 +5262,7 @@ RECOVERY_TRIAL_GLOBAL_LIVES_SAVED = Parameter(
     confidence_interval=(500_000, 2_000_000),  # Águas et al. reported 240K-1.4M for 6 months; extrapolated
     distribution=DistributionType.LOGNORMAL,
     keywords=["recovery", "lives", "saved", "dexamethasone", "global", "impact", "nhs england"],
+    latex_symbol=r"Lives_{RECOVERY}",  # LaTeX symbol for equations
 )
 
 QALYS_PER_COVID_DEATH_AVERTED = Parameter(
@@ -4973,6 +5276,7 @@ QALYS_PER_COVID_DEATH_AVERTED = Parameter(
     confidence_interval=(3, 10),  # Lower for elderly, higher if including long COVID prevention
     distribution=DistributionType.LOGNORMAL,
     keywords=["qaly", "covid", "death", "averted", "life years"],
+    latex_symbol=r"QALY_{COVID}",  # LaTeX symbol for equations
 )
 
 RECOVERY_TRIAL_TOTAL_QALYS_GENERATED = Parameter(
@@ -4987,6 +5291,7 @@ RECOVERY_TRIAL_TOTAL_QALYS_GENERATED = Parameter(
     keywords=["recovery", "qalys", "total", "generated", "global"],
     inputs=["RECOVERY_TRIAL_GLOBAL_LIVES_SAVED", "QALYS_PER_COVID_DEATH_AVERTED"],
     compute=lambda ctx: ctx["RECOVERY_TRIAL_GLOBAL_LIVES_SAVED"] * ctx["QALYS_PER_COVID_DEATH_AVERTED"],
+    latex_symbol=r"QALY_{RECOVERY}",  # LaTeX symbol for equations
 )  # ~5 million QALYs
 
 NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
@@ -5002,6 +5307,7 @@ NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
     confidence_interval=(20_000, 100_000),
     distribution=DistributionType.LOGNORMAL,
     keywords=["nih", "research", "cost effectiveness", "qaly", "standard", "traditional", "rct"],
+    latex_symbol=r"Cost_{NIH,QALY}",  # LaTeX symbol for equations
 )
 
 PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
@@ -5018,6 +5324,7 @@ PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
     keywords=["pragmatic", "recovery", "trial", "cost effectiveness", "qaly", "efficient", "platform", "global impact"],
     inputs=["RECOVERY_TRIAL_TOTAL_COST", "RECOVERY_TRIAL_TOTAL_QALYS_GENERATED"],
     compute=lambda ctx: ctx["RECOVERY_TRIAL_TOTAL_COST"] / ctx["RECOVERY_TRIAL_TOTAL_QALYS_GENERATED"],
+    latex_symbol=r"Cost_{pragmatic,QALY}",  # LaTeX symbol for equations
 )  # ~$4/QALY (global impact methodology)
 
 PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
@@ -5033,6 +5340,7 @@ PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
     keywords=["efficiency", "multiplier", "pragmatic", "nih", "comparison", "cost effectiveness"],
     inputs=["NIH_STANDARD_RESEARCH_COST_PER_QALY", "PRAGMATIC_TRIAL_COST_PER_QALY"],
     compute=lambda ctx: ctx["NIH_STANDARD_RESEARCH_COST_PER_QALY"] / ctx["PRAGMATIC_TRIAL_COST_PER_QALY"],
+    latex_symbol=r"k_{pragmatic:NIH}",  # LaTeX symbol for equations
 )  # ~12,500x more efficient (global impact methodology)
 
 # Cost per DALY - Primary cost-effectiveness metric
@@ -5053,7 +5361,8 @@ TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     confidence="high",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"],
     inputs=["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-    compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"]
+    compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    latex_symbol=r"Cost_{treaty,DALY}",  # LaTeX symbol for equations
 )  # Cost per DALY using full timeline shift
 
 # Expected cost per DALY using the unified political success probability
@@ -5071,6 +5380,7 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     keywords=["expected value", "probability weighted", "cost effectiveness", "gates foundation", "givewell", "political risk", "uncertainty"],
     inputs=["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG", "POLITICAL_SUCCESS_PROBABILITY"],
     compute=lambda ctx: ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"] / ctx["POLITICAL_SUCCESS_PROBABILITY"],
+    latex_symbol=r"E[Cost_{DALY}]",  # LaTeX symbol for equations
 )  # Expected cost per DALY at 1% probability (still better than bed nets)
 
 # ---
@@ -5095,6 +5405,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
         / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+        latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
 )  # ~$541.9B NPV (vs $1B treaty campaign)
 
 # Cost per DALY for direct funding scenario
@@ -5109,6 +5420,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     keywords=["philanthropy", "direct funding", "cost effectiveness", "open philanthropy", "gates foundation"],
     inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    latex_symbol=r"Cost_{direct,DALY}",  # LaTeX symbol for equations
 )  # ~$0.98/DALY (still excellent, but 542× worse than treaty campaign)
 
 # Direct funding ROI (mirrors TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
@@ -5127,6 +5439,7 @@ DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     keywords=["direct funding", "philanthropy", "roi", "timeline shift", "trial capacity", "efficacy lag"],
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
+    latex_symbol=r"ROI_{direct,max}",  # LaTeX symbol for equations
 )  # ~152,000:1 ROI (still massive, but 542× less than treaty campaign's 82.7M:1)
 
 # Direct funding vs bed nets comparison
@@ -5142,6 +5455,7 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     keywords=["direct funding", "bed nets", "cost effectiveness", "comparison"],
     inputs=['BED_NETS_COST_PER_DALY', 'DFDA_DIRECT_FUNDING_COST_PER_DALY'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"],
+    latex_symbol=r"k_{direct,nets}",  # LaTeX symbol for equations
 )  # ~90× more cost-effective than bed nets
 
 # Treaty campaign leverage vs direct funding
@@ -5156,6 +5470,7 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     keywords=["leverage", "campaign effectiveness", "treaty advantage", "cost comparison", "queue clearance"],
     inputs=['DFDA_DIRECT_FUNDING_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
+    latex_symbol=r"Leverage_{treaty}",  # LaTeX symbol for equations
 )  # ~542× - treaty campaign achieves massive leverage
 
 # Cost-effectiveness multipliers vs. bed nets
@@ -5169,6 +5484,7 @@ TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
     confidence="high",
     inputs=['BED_NETS_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
+    latex_symbol=r"k_{treaty:nets}",  # LaTeX symbol for equations
 )
 
 TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
@@ -5181,6 +5497,7 @@ TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
     confidence="low",
     inputs=['BED_NETS_COST_PER_DALY', 'TREATY_EXPECTED_COST_PER_DALY'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_EXPECTED_COST_PER_DALY"],
+    latex_symbol=r"E[k_{nets}]",  # LaTeX symbol for equations
 )
 
 # ---
@@ -5222,6 +5539,7 @@ GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     keywords=["4.2m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "worldwide", "yearly"],
     distribution="lognormal",
     confidence_interval=(3_000_000, 6_000_000),  # ±30% - attribution difficult to measure
+    latex_symbol=r"Lives_{RD,ann}",  # LaTeX symbol for equations
 )
 GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH,
@@ -5233,6 +5551,7 @@ GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
     formula="(RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED",    keywords=["worldwide", "yearly", "investigation", "r&d", "science", "study", "conflict"],
     inputs=['GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH', 'GLOBAL_MED_RESEARCH_SPENDING'],
     compute=lambda ctx: ctx["GLOBAL_MED_RESEARCH_SPENDING"] / ctx["GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH"],
+    latex_symbol=r"Cost_{life,RD}",  # LaTeX symbol for equations
 )  # ~$16,071
 MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     (GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
@@ -5247,6 +5566,7 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL'],
     compute=lambda ctx: (ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"])
     / ctx["GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL"],
+    latex_symbol=r"k_{misalloc}",  # LaTeX symbol for equations
 )  # ~2,889x
 
 # Opportunity Cost Parameters
@@ -5257,7 +5577,8 @@ ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
     description="Economic multiplier for military spending (0.6x ROI)",
     display_name="Economic Multiplier for Military Spending",
     unit="ratio",
-    keywords=["60%", "dod", "pentagon", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"]
+    keywords=["60%", "dod", "pentagon", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
+    latex_symbol=r"k_{mil}",  # LaTeX symbol for equations
 )
 
 ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
@@ -5267,7 +5588,8 @@ ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
     description="Economic multiplier for infrastructure investment (1.6x ROI)",
     display_name="Economic Multiplier for Infrastructure Investment",
     unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"]
+    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"],
+    latex_symbol=r"k_{infra}",  # LaTeX symbol for equations
 )
 
 ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
@@ -5277,7 +5599,8 @@ ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
     description="Economic multiplier for education investment (2.1x ROI)",
     display_name="Economic Multiplier for Education Investment",
     unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"]
+    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"],
+    latex_symbol=r"k_{edu}",  # LaTeX symbol for equations
 )
 
 ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
@@ -5287,7 +5610,8 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
     description="Economic multiplier for healthcare investment (4.3x ROI)",
     display_name="Economic Multiplier for Healthcare Investment",
     unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"]
+    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"],
+    latex_symbol=r"k_{health}",  # LaTeX symbol for equations
 )
 
 TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
@@ -5297,7 +5621,8 @@ TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
     description="Campaign budget for Super PACs and political lobbying",
     display_name="Campaign Budget for Super Pacs and Political Lobbying",
     unit="USD",
-    keywords=["800.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
+    keywords=["800.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
+    latex_symbol=r"Budget_{PAC,treaty}",  # LaTeX symbol for equations
 )  # billions USD, for Super PACs/politician bribery
 
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
@@ -5309,7 +5634,8 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     unit="rate",
     confidence_interval=(0.025, 0.045),  # Range 2.5-4.5% based on different studies
     distribution="lognormal",
-    keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"]
+    keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"],
+    latex_symbol=r"Threshold_{activism}",  # LaTeX symbol for equations
 )  # 3.5% rule for social change, key tipping point
 
 TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
@@ -5323,6 +5649,7 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
+    latex_symbol=r"N_{voters,target}",  # LaTeX symbol for equations
 )  # 280M people = 3.5% of 8B (critical mass threshold)
 
 # Historical & Comparison Multipliers
@@ -5337,6 +5664,7 @@ MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict"],
     inputs=['GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_MED_RESEARCH_SPENDING"],
+    latex_symbol=r"Ratio_{mil:RD}",  # LaTeX symbol for equations
 )  # Calculated ratio of military to medical research spending
 
 POST_WW2_MILITARY_CUT_PCT = Parameter(
@@ -5346,7 +5674,8 @@ POST_WW2_MILITARY_CUT_PCT = Parameter(
     description="Percentage military spending cut after WW2 (historical precedent)",
     display_name="Percentage Military Spending Cut After WW2",
     unit="rate",
-    keywords=["30%", "dod", "pentagon", "national security", "army", "navy", "armed forces"]
+    keywords=["30%", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
+    latex_symbol=r"Cut_{WW2}",  # LaTeX symbol for equations
 )  # Percentage military spending cut after WW2, historical precedent
 
 SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
@@ -5356,7 +5685,8 @@ SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
     description="Switzerland's defense spending as percentage of GDP (0.7%)",
     display_name="Switzerland's Defense Spending as Percentage of GDP",
     unit="rate",
-    keywords=["1%", "armed forces", "international agreement", "peace treaty", "conflict", "costs", "funding"]
+    keywords=["1%", "armed forces", "international agreement", "peace treaty", "conflict", "costs", "funding"],
+    latex_symbol=r"Spending_{CH,def}",  # LaTeX symbol for equations
 )  # Switzerland's defense spending as percentage of GDP
 
 SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
@@ -5366,7 +5696,8 @@ SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
     description="Switzerland GDP per capita",
     display_name="Switzerland GDP per Capita",
     unit="USD",
-    keywords=["93k", "average person", "individual", "per person", "household benefit", "per individual", "typical individual"]
+    keywords=["93k", "average person", "individual", "per person", "household benefit", "per individual", "typical individual"],
+    latex_symbol=r"GDP_{CH,pc}",  # LaTeX symbol for equations
 )  # Thousands USD, Switzerland GDP per capita, for comparison
 
 AVERAGE_MARKET_RETURN_PCT = Parameter(
@@ -5376,7 +5707,8 @@ AVERAGE_MARKET_RETURN_PCT = Parameter(
     description="Average annual stock market return (10%)",
     display_name="Average Annual Stock Market Return",
     unit="rate",
-    keywords=["10%", "benefit", "profit", "yield", "yearly", "average", "market"]
+    keywords=["10%", "benefit", "profit", "yield", "yearly", "average", "market"],
+    latex_symbol=r"r_{market}",  # LaTeX symbol for equations
 )  # Average market return percentage for portfolio comparisons
 
 # Lobbyist compensation & incentives
@@ -5387,7 +5719,8 @@ LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
     description="Maximum bond investment for lobbyist incentives",
     display_name="Maximum Bond Investment for Lobbyist Incentives",
     unit="USD",
-    keywords=["20.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
+    keywords=["20.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"],
+    latex_symbol=r"Invest_{lobby,max}",  # LaTeX symbol for equations
 )  # Millions USD, bond investment for lobbyists (max incentive)
 
 LOBBYIST_SALARY_MIN_K = Parameter(
@@ -5397,7 +5730,8 @@ LOBBYIST_SALARY_MIN_K = Parameter(
     description="Minimum annual lobbyist salary range",
     display_name="Minimum Annual Lobbyist Salary Range",
     unit="USD",
-    keywords=["500k", "yearly", "lobbyist", "min", "pa", "per annum", "per year"]
+    keywords=["500k", "yearly", "lobbyist", "min", "pa", "per annum", "per year"],
+    latex_symbol=r"Salary_{lobby,min}",  # LaTeX symbol for equations
 )  # $500K minimum for lobbyist salaries
 
 LOBBYIST_SALARY_MAX = Parameter(
@@ -5407,7 +5741,8 @@ LOBBYIST_SALARY_MAX = Parameter(
     description="Maximum annual lobbyist salary range",
     display_name="Maximum Annual Lobbyist Salary Range",
     unit="USD",
-    keywords=["2.0m", "yearly", "lobbyist", "max", "pa", "per annum", "per year"]
+    keywords=["2.0m", "yearly", "lobbyist", "max", "pa", "per annum", "per year"],
+    latex_symbol=r"Salary_{lobby,max}",  # LaTeX symbol for equations
 )  # $2M maximum for top lobbyist salaries
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
@@ -5423,6 +5758,7 @@ COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_BENEFIT_RD_ONLY_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
+    latex_symbol=r"Dividend_{total,ann}",  # LaTeX symbol for equations
 )
 
 # Infinite ROI equation - redirected spending means $0 new cost
@@ -5439,6 +5775,7 @@ TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
     formula="COMBINED_DIVIDENDS ÷ 0 = ∞",
     keywords=["infinite", "roi", "redirected", "spending", "zero cost"],
     latex=f'''\\text{{ROI}} = \\frac{{\\text{{Annual Benefits}}}}{{\\text{{New Spending}}}} = \\frac{{\\${_infinite_roi_dividends}B}}{{0}} = \\infty''',
+    latex_symbol=r"ROI_{\infty}",  # LaTeX symbol for equations
 )
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
@@ -5452,6 +5789,7 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple"],
     inputs=['CHILDHOOD_VACCINATION_ANNUAL_BENEFIT', 'COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC'],
     compute=lambda ctx: ctx["COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC"] / ctx["CHILDHOOD_VACCINATION_ANNUAL_BENEFIT"],
+    latex_symbol=r"k_{treaty:vax}",  # LaTeX symbol for equations
 )  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 
 
@@ -5464,7 +5802,8 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
 TOTAL_BOOK_WORDS = Parameter(
     171121, source_ref="book-word-count", source_type="definition", description="Total words in the book", unit="words",
     display_name="Total Words in the Book",
-    keywords=["total", "book", "words", "171k"]
+    keywords=["total", "book", "words", "171k"],
+    latex_symbol=r"N_{words}",  # LaTeX symbol for equations
 )  # Total words in the book
 
 BOOK_READING_SPEED_WPM = Parameter(
@@ -5474,7 +5813,8 @@ BOOK_READING_SPEED_WPM = Parameter(
     description="Average reading speed (conservative for non-fiction)",
     display_name="Average Reading Speed",
     unit="words/minute",
-    keywords=["low estimate", "faster development", "innovation speed", "research velocity", "cautious", "pessimistic", "worst case"]
+    keywords=["low estimate", "faster development", "innovation speed", "research velocity", "cautious", "pessimistic", "worst case"],
+    latex_symbol=r"WPM",  # LaTeX symbol for equations
 )  # Words per minute (conservative for non-fiction)
 
 # Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% treaty)
@@ -5487,7 +5827,8 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     display_name="Lifetime Benefit for Age 30 Baseline Scenario",
     unit="USD",
     formula="Total lifetime health gains from 1% treaty",
-    keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"]
+    keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"],
+    latex_symbol=r"Rate_{benefit,hr}",  # LaTeX symbol for equations
 )
 
 # Comparison benchmarks
@@ -5498,13 +5839,15 @@ AVERAGE_US_HOURLY_WAGE = Parameter(
     description="Average US hourly wage",
     display_name="Average US Hourly Wage",
     unit="USD/hour",
-    keywords=["average", "hourly", "wage"]
+    keywords=["average", "hourly", "wage"],
+    latex_symbol=r"Wage_{US}",  # LaTeX symbol for equations
 )  # ~$30/hour average US wage
 
 TYPICAL_CEO_HOURLY_RATE = Parameter(
     10000, source_ref="ceo-compensation", source_type="external", description="Typical CEO hourly rate", unit="USD/hour",
     display_name="Typical CEO Hourly Rate",
-    keywords=["typical", "ceo", "hourly", "rate", "10k"]
+    keywords=["typical", "ceo", "hourly", "rate", "10k"],
+    latex_symbol=r"Rate_{CEO}",  # LaTeX symbol for equations
 )  # ~$10,000/hour typical CEO rate
 
 # ---
@@ -5608,6 +5951,7 @@ US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
     keywords=["4.1t", "yearly", "costs", "funding", "illness", "investment", "chronic"],
     distribution="lognormal",
     confidence_interval=(3.3e12, 5.0e12),  # ±20% - healthcare spending estimates vary
+    latex_symbol=r"Spending_{chronic,US}",  # LaTeX symbol for equations
 )  # $4.1T/year CDC estimate
 
 US_POPULATION_2024 = Parameter(
@@ -5616,6 +5960,7 @@ US_POPULATION_2024 = Parameter(
     keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"],
     distribution="lognormal",
     confidence_interval=(330e6, 340e6),  # ±1.5% - census estimates well-known
+    latex_symbol=r"Pop_{US}",  # LaTeX symbol for equations
 )
 
 PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
@@ -5628,6 +5973,7 @@ PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
     keywords=["chronic", "disease", "per capita", "us", "cost", "annual"],
     inputs=['US_CHRONIC_DISEASE_SPENDING_ANNUAL', 'US_POPULATION_2024'],
     compute=lambda ctx: ctx["US_CHRONIC_DISEASE_SPENDING_ANNUAL"] / ctx["US_POPULATION_2024"],
+    latex_symbol=r"Cost_{chronic,pc}",  # LaTeX symbol for equations
 )  # $12,239/year
 
 # Mental health constants
@@ -5641,6 +5987,7 @@ US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
     keywords=["350.0b", "yearly", "costs", "funding", "investment", "mental", "health"],
     distribution="lognormal",  # Economic cost estimates with methodological variance
     confidence_interval=(260e9, 450e9),  # ±25%: reflects treatment vs productivity cost allocation uncertainty
+    latex_symbol=r"Cost_{mental,US}",  # LaTeX symbol for equations
 )
 
 PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
@@ -5653,6 +6000,7 @@ PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
     keywords=["mental", "health", "per capita", "us", "cost", "annual"],
     inputs=['US_MENTAL_HEALTH_COST_ANNUAL', 'US_POPULATION_2024'],
     compute=lambda ctx: ctx["US_MENTAL_HEALTH_COST_ANNUAL"] / ctx["US_POPULATION_2024"],
+    latex_symbol=r"Cost_{mental,pc}",  # LaTeX symbol for equations
 )  # ~$1,045/year
 
 MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
@@ -5662,7 +6010,8 @@ MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
     description="Annual productivity loss per capita from mental health issues (beyond treatment costs)",
     display_name="Annual Productivity Loss per Capita from Mental Health Issues",
     unit="USD/year",
-    keywords=["2k", "average person", "individual", "per person", "yearly", "household benefit", "per individual"]
+    keywords=["2k", "average person", "individual", "per person", "yearly", "household benefit", "per individual"],
+    latex_symbol=r"Loss_{mental,pc}",  # LaTeX symbol for equations
 )  # Additional productivity loss beyond treatment
 
 # Caregiver time constants (simple model - deprecated, use detailed model below)
@@ -5673,7 +6022,8 @@ CAREGIVER_HOURS_PER_MONTH = Parameter(
     description="Average monthly hours of unpaid family caregiving in US",
     display_name="Average Monthly Hours of Unpaid Family Caregiving in US",
     unit="hours/month",
-    keywords=["caregiver", "hours", "month"]
+    keywords=["caregiver", "hours", "month"],
+    latex_symbol=r"Hours_{care}",  # LaTeX symbol for equations
 )  # Average US family provides 20 hrs/month unpaid care
 
 CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
@@ -5683,7 +6033,8 @@ CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
     description="Estimated replacement cost per hour of caregiving",
     display_name="Estimated Replacement Cost per Hour of Caregiving",
     unit="USD/hour",
-    keywords=["caregiver", "hour", "simple", "expenditure", "spending", "value", "budget"]
+    keywords=["caregiver", "hour", "simple", "expenditure", "spending", "value", "budget"],
+    latex_symbol=r"Value_{care,hr}",  # LaTeX symbol for equations
 )  # Replacement cost estimate
 CAREGIVER_COST_ANNUAL = Parameter(
     CAREGIVER_HOURS_PER_MONTH * MONTHS_PER_YEAR * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
@@ -5694,6 +6045,7 @@ CAREGIVER_COST_ANNUAL = Parameter(
     unit="USD/year",
     formula="HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
     keywords=["caregiver", "unpaid", "annual", "expenditure", "spending", "value", "budget"],
+    latex_symbol=r"Cost_{care,ann}",  # LaTeX symbol for equations
 )  # $6,000/year
 
 
@@ -5704,7 +6056,8 @@ WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     description="Percentage of workforce experiencing productivity loss from chronic illness (28%)",
     display_name="Percentage of Workforce Experiencing Productivity Loss from Chronic Illness",
     unit="rate",
-    keywords=["workforce", "with", "productivity", "loss", "28%"]
+    keywords=["workforce", "with", "productivity", "loss", "28%"],
+    latex_symbol=r"N_{productivity,loss}",  # LaTeX symbol for equations
 )  # 28% of all employees have productivity loss
 
 CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
@@ -5714,7 +6067,8 @@ CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
     description="Total annual value of unpaid caregiving in US",
     display_name="Total Annual Value of Unpaid Caregiving in US",
     unit="USD/year",
-    keywords=["600.0b", "yearly", "caregiver", "per year", "per annum", "pa", "annual"]
+    keywords=["600.0b", "yearly", "caregiver", "per year", "per annum", "pa", "annual"],
+    latex_symbol=r"Value_{care,ann}",  # LaTeX symbol for equations
 )  # $600B total
 
 CAREGIVER_COUNT_US = Parameter(
@@ -5724,7 +6078,8 @@ CAREGIVER_COUNT_US = Parameter(
     description="Number of unpaid caregivers in US",
     display_name="Number of Unpaid Caregivers in US",
     unit="people",
-    keywords=["caregiver", "count", "38.0m"]
+    keywords=["caregiver", "count", "38.0m"],
+    latex_symbol=r"N_{care,US}",  # LaTeX symbol for equations
 )  # 38 million caregivers
 # Per caregiver: $600B / 38M = $15,789/year average
 # But only portion is disease-related (vs aging, disability, children)
@@ -5736,7 +6091,8 @@ DISEASE_RELATED_CAREGIVER_PCT = Parameter(
     description="Percentage of caregiving for treatable disease conditions (vs aging, disability, children)",
     display_name="Percentage of Caregiving for Treatable Disease Conditions",
     unit="rate",
-    keywords=["40%", "illness", "disease", "related", "caregiver", "pct", "ailment"]
+    keywords=["40%", "illness", "disease", "related", "caregiver", "pct", "ailment"],
+    latex_symbol=r"Pct_{care,disease}",  # LaTeX symbol for equations
 )
 
 
@@ -6031,6 +6387,7 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
         discount_rate=0.03,  # Fixed 3% personal discount rate
         life_extension_override=float(ctx["LIFE_EXTENSION_YEARS"]),
     )["total_lifetime_benefit"],
+    latex_symbol=r"Wealth_{lifetime}",  # LaTeX symbol for equations
 )
 
 
@@ -6386,7 +6743,8 @@ PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
     distribution=DistributionType.LOGNORMAL,
     std_error=500_000_000,
     confidence_interval=(1_500_000_000, 4_000_000_000),
-    keywords=["pharma", "drug", "development", "cost", "r&d", "current"]
+    keywords=["pharma", "drug", "development", "cost", "r&d", "current"],
+    latex_symbol=r"Cost_{dev,curr}",  # LaTeX symbol for equations
 )
 
 DRUG_DEVELOPMENT_COST_1980S = Parameter(
@@ -6400,6 +6758,7 @@ DRUG_DEVELOPMENT_COST_1980S = Parameter(
     keywords=["pharma", "drug", "development", "cost", "1980s", "historical"],
     distribution="lognormal",  # Source indicates approximation (~$194M); lognormal appropriate for cost data
     confidence_interval=(145_500_000, 242_500_000),  # ±25% for measurement uncertainty (source uses "~" indicating approximation)
+    latex_symbol=r"Cost_{dev,80s}",  # LaTeX symbol for equations
 )
 
 DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
@@ -6414,6 +6773,7 @@ DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
     keywords=["cost", "increase", "multiplier", "drug", "development", "1980s", "current"],
     inputs=['DRUG_DEVELOPMENT_COST_1980S', 'PHARMA_DRUG_DEVELOPMENT_COST_CURRENT'],
     compute=lambda ctx: ctx["PHARMA_DRUG_DEVELOPMENT_COST_CURRENT"] / ctx["DRUG_DEVELOPMENT_COST_1980S"],
+    latex_symbol=r"k_{cost,80s}",  # LaTeX symbol for equations
 )
 
 DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
@@ -6428,6 +6788,7 @@ DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
     keywords=["cost", "increase", "multiplier", "drug", "development", "1962", "regulation", "fda", "pre-1962", "current", "baily"],
     inputs=['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD'],
     compute=lambda ctx: ctx["PHARMA_DRUG_DEVELOPMENT_COST_CURRENT"] / ctx["PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD"],
+    latex_symbol=r"k_{cost,pre62}",  # LaTeX symbol for equations
 )  # Baily (1972): $6.5M (1980 dollars) = $24.7M (2024 dollars, CPI-adjusted 3.80×) → $2.6B = 105× increase
 
 PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
@@ -6439,7 +6800,8 @@ PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
     unit="percentage",
     confidence="high",
     peer_reviewed=True,
-    keywords=["pharma", "drug", "success", "rate", "approval", "current"]
+    keywords=["pharma", "drug", "success", "rate", "approval", "current"],
+    latex_symbol=r"Rate_{success,curr}",  # LaTeX symbol for equations
 )
 
 PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
@@ -6451,7 +6813,8 @@ PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
     unit="USD",
     confidence="high",
     peer_reviewed=True,
-    keywords=["pharma", "drug", "revenue", "lifetime", "current"]
+    keywords=["pharma", "drug", "revenue", "lifetime", "current"],
+    latex_symbol=r"Revenue_{drug,avg}",  # LaTeX symbol for equations
 )
 
 PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
@@ -6463,7 +6826,8 @@ PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
     unit="percentage",
     confidence="high",
     peer_reviewed=True,
-    keywords=["pharma", "roi", "current", "system", "barely profitable", "low returns"]
+    keywords=["pharma", "roi", "current", "system", "barely profitable", "low returns"],
+    latex_symbol=r"ROI_{pharma,curr}",  # LaTeX symbol for equations
 )
 
 # NOTE: DIH system doesn't magically increase drug efficacy success rates
@@ -6488,7 +6852,8 @@ US_DIABETES_ANNUAL_COST = Parameter(
     confidence_interval=(278_000_000_000, 376_000_000_000),  # ±15% on disease cost estimates
     distribution="lognormal",
     peer_reviewed=True,
-    keywords=["insurance", "diabetes", "cost", "annual", "us", "disease", "burden"]
+    keywords=["insurance", "diabetes", "cost", "annual", "us", "disease", "burden"],
+    latex_symbol=r"Cost_{diabetes,US}",  # LaTeX symbol for equations
 )
 
 US_ALZHEIMERS_ANNUAL_COST = Parameter(
@@ -6502,7 +6867,8 @@ US_ALZHEIMERS_ANNUAL_COST = Parameter(
     confidence_interval=(302_000_000_000, 408_000_000_000),  # ±15% on disease cost estimates
     distribution="lognormal",
     peer_reviewed=True,
-    keywords=["insurance", "alzheimer", "dementia", "cost", "annual", "us", "disease", "burden"]
+    keywords=["insurance", "alzheimer", "dementia", "cost", "annual", "us", "disease", "burden"],
+    latex_symbol=r"Cost_{ALZ,US}",  # LaTeX symbol for equations
 )
 
 US_HEART_DISEASE_ANNUAL_COST = Parameter(
@@ -6516,7 +6882,8 @@ US_HEART_DISEASE_ANNUAL_COST = Parameter(
     confidence_interval=(309_000_000_000, 417_000_000_000),  # ±15% on disease cost estimates
     distribution="lognormal",
     peer_reviewed=True,
-    keywords=["insurance", "heart", "cardiovascular", "stroke", "cost", "annual", "us", "disease", "burden"]
+    keywords=["insurance", "heart", "cardiovascular", "stroke", "cost", "annual", "us", "disease", "burden"],
+    latex_symbol=r"Cost_{heart,US}",  # LaTeX symbol for equations
 )
 
 US_CANCER_ANNUAL_COST = Parameter(
@@ -6530,7 +6897,8 @@ US_CANCER_ANNUAL_COST = Parameter(
     confidence_interval=(177_000_000_000, 239_000_000_000),  # ±15% on disease cost estimates
     distribution="lognormal",
     peer_reviewed=True,
-    keywords=["insurance", "cancer", "oncology", "cost", "annual", "us", "disease", "burden"]
+    keywords=["insurance", "cancer", "oncology", "cost", "annual", "us", "disease", "burden"],
+    latex_symbol=r"Cost_{cancer,US}",  # LaTeX symbol for equations
 )
 
 US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
@@ -6545,6 +6913,7 @@ US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
     keywords=["insurance", "disease", "cost", "annual", "us", "total", "burden"],
     inputs=['US_ALZHEIMERS_ANNUAL_COST', 'US_CANCER_ANNUAL_COST', 'US_DIABETES_ANNUAL_COST', 'US_HEART_DISEASE_ANNUAL_COST'],
     compute=lambda ctx: ctx["US_DIABETES_ANNUAL_COST"] + ctx["US_ALZHEIMERS_ANNUAL_COST"] + ctx["US_HEART_DISEASE_ANNUAL_COST"] + ctx["US_CANCER_ANNUAL_COST"],
+    latex_symbol=r"Cost_{disease,US}",  # LaTeX symbol for equations
 )
 
 # ---
@@ -6559,6 +6928,7 @@ GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     display_name="Global Household Wealth",
     unit="USD",
     keywords=["wealth", "household", "global", "assets", "capital"],
+    latex_symbol=r"Wealth_{household}",  # LaTeX symbol for equations
 )  # $454T
 
 CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD = Parameter(
@@ -6569,6 +6939,7 @@ CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD = Parameter(
     display_name="Concentrated Interest Sector Market Cap",
     unit="USD",
     keywords=["wealth", "opposition", "lobbying", "defense", "fossil fuel", "market cap"],
+    latex_symbol=r"MarketCap_{defense}",  # LaTeX symbol for equations
 )  # $5T
 
 IAB_MECHANISM_ANNUAL_COST = Parameter(
@@ -6580,6 +6951,7 @@ IAB_MECHANISM_ANNUAL_COST = Parameter(
     unit="USD/year",
     confidence_interval=(160_000_000, 750_000_000),
     keywords=["iab", "cost", "overhead", "annual"],
+    latex_symbol=r"Cost_{IAB,ann}",  # LaTeX symbol for equations
 )  # $750M high end estimate
 
 IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
@@ -6592,7 +6964,8 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     formula="TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
     keywords=["bcr", "benefit cost ratio", "iab", "mechanism"],
     inputs=["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS", "IAB_MECHANISM_ANNUAL_COST"],
-    compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["IAB_MECHANISM_ANNUAL_COST"]
+    compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["IAB_MECHANISM_ANNUAL_COST"],
+    latex_symbol=r"BCR_{IAB}",  # LaTeX symbol for equations
 )  # 303:1
 
 IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD = Parameter(
@@ -6603,6 +6976,7 @@ IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD = Parameter(
     display_name="Bootstrap Campaign Cost (Conservative)",
     unit="USD",
     keywords=["campaign", "cost", "bootstrap", "conservative"],
+    latex_symbol=r"Cost_{IAB,cons}",  # LaTeX symbol for equations
 )  # $200M
 
 IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD = Parameter(
@@ -6613,6 +6987,7 @@ IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD = Parameter(
     display_name="Bootstrap Campaign Cost (Base Case)",
     unit="USD",
     keywords=["campaign", "cost", "bootstrap", "base case"],
+    latex_symbol=r"Cost_{IAB,base}",  # LaTeX symbol for equations
 )  # $100M
 
 IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD = Parameter(
@@ -6623,4 +6998,5 @@ IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD = Parameter(
     display_name="Bootstrap Campaign Cost (Optimistic)",
     unit="USD",
     keywords=["campaign", "cost", "bootstrap", "optimistic"],
+    latex_symbol=r"Cost_{IAB,opt}",  # LaTeX symbol for equations
 )  # $50M

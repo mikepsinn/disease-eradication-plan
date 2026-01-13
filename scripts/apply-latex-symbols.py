@@ -101,32 +101,73 @@ def apply_symbols(symbols: dict, dry_run: bool = False):
         # pos is now just after the closing )
         close_pos = pos - 1  # Position of the )
         
-        # Find the last non-whitespace before )
+        # Find the position just before closing ) (skipping whitespace)
         insert_pos = close_pos
         while insert_pos > start_pos and content[insert_pos-1] in ' \t\n':
             insert_pos -= 1
         
-        # Check if there's a trailing comma
-        has_comma = content[insert_pos-1] == ','
+        # Now we need to find the LAST LINE THAT CONTAINS CODE (not just comments)
+        # Work backwards from insert_pos to find a line with actual code
+        search_pos = insert_pos
+        code_line_start = None
+        code_line_end = None
         
-        # Build the insertion text
-        # Find the indentation level by looking at previous lines
-        line_start = content.rfind('\n', 0, insert_pos) + 1
-        line = content[line_start:insert_pos]
-        # Extract leading whitespace
+        while search_pos > start_pos:
+            # Find the start of the current line
+            line_start = content.rfind('\n', 0, search_pos) + 1
+            line_end = search_pos
+            line = content[line_start:line_end]
+            
+            # Check if this line has code (not just whitespace/comments)
+            stripped = line.lstrip()
+            if stripped and not stripped.startswith('#'):
+                # This line has code
+                code_line_start = line_start
+                code_line_end = line_end
+                break
+            
+            # Move to previous line
+            search_pos = line_start - 1
+            if search_pos <= start_pos:
+                break
+        
+        if code_line_start is None:
+            print(f"[WARN] No code line found for: {param_name}")
+            continue
+        
+        line = content[code_line_start:code_line_end]
+        
+        # Check if line has a comment
+        comment_pos = line.find('#')
+        if comment_pos >= 0:
+            code_part = line[:comment_pos].rstrip()
+            comment_part = line[comment_pos:]
+        else:
+            code_part = line.rstrip()
+            comment_part = ""
+        
+        has_comma = code_part.endswith(',')
+        
+        # Extract leading whitespace for indentation
         indent_match = re.match(r'^(\s*)', line)
         indent = indent_match.group(1) if indent_match else '    '
         
-        # Escape the latex_symbol for Python string
-        escaped_symbol = latex_symbol.replace('\\', '\\\\')
-        
+        # Build the new line content
         if has_comma:
-            insertion = f'\n{indent}latex_symbol=r"{latex_symbol}",  # LaTeX symbol for equations'
+            # Code already has comma, just add latex_symbol on new line after all content before )
+            new_content = f'\n{indent}latex_symbol=r"{latex_symbol}",  # LaTeX symbol for equations'
+            content = content[:insert_pos] + new_content + content[insert_pos:]
         else:
-            insertion = f',\n{indent}latex_symbol=r"{latex_symbol}",  # LaTeX symbol for equations'
+            # Need to add comma after code, before comment
+            # Replace the code line with: code + comma + comment
+            code_with_comma = code_part + ","
+            if comment_part:
+                new_line = code_with_comma + "  " + comment_part
+            else:
+                new_line = code_with_comma
+            # Then add latex_symbol line before closing )
+            content = content[:code_line_start] + new_line + content[code_line_end:insert_pos] + f'\n{indent}latex_symbol=r"{latex_symbol}",  # LaTeX symbol for equations' + content[insert_pos:]
         
-        # Insert before the closing )
-        content = content[:insert_pos] + insertion + content[insert_pos:]
         changes_made += 1
         
         if dry_run:
