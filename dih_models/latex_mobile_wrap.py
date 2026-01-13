@@ -201,17 +201,18 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
         break_on: Operator to break on ('+' or '\\times')
 
     Returns:
-        Expression with line breaks (using \\\\ and &)
+        Expression with line breaks (using \\\\ for newlines, \qquad for indent)
     """
     # Determine the split pattern - use brace-aware splitting
+    # Use \qquad (not &\quad) to avoid alignment column issues
     if break_on == '+':
         parts = _split_at_top_level_operator(expr, '+')
         joiner = ' + '
-        continuation = '&\\quad + '
+        continuation = '\\qquad + '
     elif break_on == '\\times':
         parts = _split_at_top_level_operator(expr, '\\times')
         joiner = ' \\times '
-        continuation = '&\\quad \\times '
+        continuation = '\\qquad \\times '
     else:
         return expr
 
@@ -230,7 +231,7 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
         else:
             # Start new line
             lines.append(current_line)
-            current_line = continuation.lstrip('&') + part
+            current_line = continuation + part
 
     # Don't forget last line
     lines.append(current_line)
@@ -238,11 +239,11 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
     if len(lines) == 1:
         return lines[0]
 
-    # Format for aligned environment
+    # Format with line breaks (no & alignment markers)
     result = lines[0] + " \\\\\n"
     for line in lines[1:-1]:
-        result += "&" + line.lstrip() + " \\\\\n"
-    result += "&" + lines[-1].lstrip()
+        result += line + " \\\\\n"
+    result += lines[-1]
 
     return result
 
@@ -369,9 +370,11 @@ def _wrap_single_aligned_line(line: str, max_width: int) -> str:
 
                 if len(grouped_parts) > 1:
                     # Join groups with line continuation
+                    # Use \qquad (not &\quad) to avoid alignment column issues
+                    # that push content to the right edge of the page
                     wrapped_part = grouped_parts[0]
                     for gp in grouped_parts[1:]:
-                        wrapped_part += " \\\\\n&\\quad + " + gp
+                        wrapped_part += " \\\\\n\\qquad + " + gp
                     wrapped_parts.append(wrapped_part)
                 else:
                     wrapped_parts.append(part)

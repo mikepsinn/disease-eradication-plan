@@ -425,18 +425,11 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of Decentralized\
   \ Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year\
   \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
-  \ High confidence | Formula: Sum of discounted annual net R&D savings with linear\
-  \ adoption ramp | Unit: USD | Click to view details, calculation & sources\">$389B\
-  \ (95% CI: $327B-$485B)</a>"
-"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{RD} = Sum of discounted\
-  \ annual net R&D savings with linear adoption ramp = \\$389B \\\\[0.5em]\n\\text{where\
-  \ } Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA} = \\$58.6B - \\$40M = \\$58.6B\
-  \ \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct}\
-  \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
-  \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
-  % \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra}\
-  \ \\\\\n&\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M\
-  \ + \\$5M + \\$2M = \\$40M\n\\end{aligned}\n$$"
+  \ High confidence | Formula: SUM[Savings × adoption(t) / (1+r)^t] for t=1..10 |\
+  \ Unit: USD | Click to view details, calculation & sources\">$389B (95% CI: $327B-$485B)</a>"
+"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{RD} \\\\\n&= \\sum_{t=1}^{10}\
+  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{aligned}\n\
+  $$"
 "dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\
@@ -445,8 +438,8 @@
   \ calculation & sources\">$389B (95% CI: $326B-$484B)</a>"
 "dfda_npv_net_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{net,RD} = NPV_{RD}\
   \ - Cost_{dFDA,total} = \\$389B - \\$611M = \\$389B \\\\[0.5em]\n\\text{where }\
-  \ NPV_{RD} = Sum of discounted annual net R&D savings with linear adoption ramp\
-  \ = \\$389B \\\\[0.5em]\n\\text{where } Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA}\
+  \ NPV_{RD} = SUM[Savings \\times adoption(t) / (1+r)^t] for t = 1..10 = \\$389B\
+  \ \\\\[0.5em]\n\\text{where } Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA}\
   \ = \\$58.6B - \\$40M = \\$58.6B \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} =\
   \ Spending_{trials} \\times Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\\
   [0.5em]\n\\text{where } Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
@@ -537,21 +530,20 @@
   \ ÷ NPV_TOTAL_COST | Unit: ratio | Click to view details, calculation & sources\"\
   >637:1 (95% CI: 569:1-790:1)</a>"
 "dfda_roi_rd_only_latex": "$$\n\\begin{aligned}\nROI_{RD} = \\frac{NPV_{RD}}{Cost_{dFDA,total}}\
-  \ = \\frac{\\$389B}{\\$611M} = 637 \\\\[0.5em]\n\\text{where } NPV_{RD} = Sum of\
-  \ discounted annual net R&D savings with linear adoption ramp = \\$389B \\\\[0.5em]\n\
-  \\text{where } Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA} = \\$58.6B - \\\
-  $40M = \\$58.6B \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials}\
-  \ \\times Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where\
-  \ } Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\\
-  $929}{\\$41K} = 97.7\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
-  \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
-  \ Cost_{dFDA,total} = PV_{OPEX} + Cost_{upfront,total} = \\$342M + \\$270M = \\\
-  $611M \\\\[0.5em]\n\\text{where } PV_{OPEX} = OPEX \\times [(1 - (1 + r)^-T) / r]\
-  \ = \\$342M \\\\[0.5em]\n\\text{where } OPEX_{total} = OPEX_{ann} + OPEX_{DIH,ann}\
-  \ = \\$18.9M + \\$21.1M = \\$40M \\\\[0.5em]\n\\text{where } Cost_{upfront,total}\
-  \ = Cost_{upfront} + Cost_{DIH,init} = \\$40M + \\$230M = \\$270M\n\\end{aligned}\n\
-  $$"
+  \ = \\frac{\\$389B}{\\$611M} = 637 \\\\[0.5em]\n\\text{where } NPV_{RD} = SUM[Savings\
+  \ \\times adoption(t) / (1+r)^t] for t = 1..10 = \\$389B \\\\[0.5em]\n\\text{where\
+  \ } Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA} = \\$58.6B - \\$40M = \\$58.6B\
+  \ \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct}\
+  \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
+  \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
+  % \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra}\
+  \ \\\\\n&\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M\
+  \ + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Cost_{dFDA,total} = PV_{OPEX}\
+  \ + Cost_{upfront,total} = \\$342M + \\$270M = \\$611M \\\\[0.5em]\n\\text{where\
+  \ } PV_{OPEX} = OPEX \\times [(1 - (1 + r)^-T) / r] = \\$342M \\\\[0.5em]\n\\text{where\
+  \ } OPEX_{total} = OPEX_{ann} + OPEX_{DIH,ann} = \\$18.9M + \\$21.1M = \\$40M \\\
+  \\[0.5em]\n\\text{where } Cost_{upfront,total} = Cost_{upfront} + Cost_{DIH,init}\
+  \ = \\$40M + \\$230M = \\$270M\n\\end{aligned}\n$$"
 "dfda_trial_capacity_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\

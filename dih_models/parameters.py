@@ -3734,7 +3734,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     description="NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
     display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
-    formula="Sum of discounted annual net R&D savings with linear adoption ramp",
+    formula="SUM[Savings × adoption(t) / (1+r)^t] for t=1..10",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"],
     inputs=['DFDA_NET_SAVINGS_RD_ONLY_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD'],
     compute=lambda ctx: sum(
@@ -3743,7 +3743,9 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
             for year in range(1, 11)
         ]
     ),
-    latex_symbol=r"NPV_{RD}",  # LaTeX symbol for equations
+    latex_symbol=r"NPV_{RD}",
+    # Hand-crafted LaTeX for complex NPV formula with adoption ramp
+    latex=r"NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}",
 )  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
