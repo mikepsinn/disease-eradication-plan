@@ -57,8 +57,8 @@
   $3.7T\n\\end{gathered}\n$$"
 "treaty_roi_existing_drugs_only_latex": "$$\n\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}}\
   \ = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} =\
-  \ DEATHS\\_TOTAL \\times YLL \\times VSLY = \\$251T \\\\[0.5em]\n\\text{where }\
-  \ Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000\
+  \ Deaths \\times (LifeExp - MeanAge) \\times VSLY = \\$251T \\\\[0.5em]\n\\text{where\
+  \ } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000\
   \ \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base}\
   \ + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\\
   $100M \\\\\n= \\$1B\n\\end{gathered}\n$$"

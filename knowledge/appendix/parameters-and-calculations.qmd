@@ -706,8 +706,8 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 = \$2.72T \times 1\% \\
 = \$27.2B \\[0.5em]
 \text{where } NPV_{direct} \\
-= ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T \\
-= queue clearance time \\
+= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
 = \$475B \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
@@ -813,8 +813,8 @@ $$
 k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} = 106 \\[0.5em]
 \text{where } Cost_{direct,DALY} = \frac{NPV_{direct}}{DALYs_{max}} = \frac{\$475B}{565B} = \$0.841 \\[0.5em]
 \text{where } NPV_{direct} \\
-= ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T \\
-= queue clearance time \\
+= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
 = \$475B \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
@@ -967,17 +967,20 @@ $$
 \begin{gathered}
 DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
 \text{where } YLL_{lag} \\
-= DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH) \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
 = 7.07B \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M \\[0.5em]
 \text{where } YLD_{lag} \\
 = Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
 = 416M \times 6 \times 0.35 \\
 = 873M \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
@@ -1016,7 +1019,8 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 $$
 \begin{gathered}
 Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
@@ -1060,17 +1064,20 @@ Value_{lag} \\
 = \$1190T \\[0.5em]
 \text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
 \text{where } YLL_{lag} \\
-= DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH) \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
 = 7.07B \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M \\[0.5em]
 \text{where } YLD_{lag} \\
 = Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
 = 416M \times 6 \times 0.35 \\
 = 873M \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
@@ -1114,7 +1121,8 @@ YLD_{lag} \\
 = 416M \times 6 \times 0.35 \\
 = 873M \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
@@ -1154,10 +1162,12 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 $$
 \begin{gathered}
 YLL_{lag} \\
-= DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH) \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
 = 7.07B \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
@@ -1487,10 +1497,7 @@ NPV_{net,RD} \\
 = NPV_{RD} - Cost_{dFDA,total} \\
 = \$389B - \$611M \\
 = \$389B \\[0.5em]
-\text{where } NPV_{RD} \\
-= SUM[Savings \times adoption(t) / (1+r)^t] for t \\
-= 1..10 \\
-= \$389B \\[0.5em]
+\text{where } NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t} \\[0.5em]
 \text{where } Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{dFDA} \\
 = \$58.6B - \$40M \\
@@ -1512,7 +1519,10 @@ NPV_{net,RD} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} = OPEX \times [(1 - (1 + r)^-T) / r] = \$342M \\[0.5em]
+\text{where } PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -1557,13 +1567,7 @@ Present value of annual opex over 10 years (NPV formula)
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
 $$
-\begin{gathered}
-PV_{OPEX} = OPEX \times [(1 - (1 + r)^-T) / r] = \$342M \\[0.5em]
-\text{where } OPEX_{total} \\
-= OPEX_{ann} + OPEX_{DIH,ann} \\
-= \$18.9M + \$21.1M \\
-= \$40M
-\end{gathered}
+PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-calculation](../appendix/dfda-cost-benefit-analysis#npv-calculation)
@@ -1603,7 +1607,10 @@ Cost_{dFDA,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} = OPEX \times [(1 - (1 + r)^-T) / r] = \$342M \\[0.5em]
+\text{where } PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -1811,10 +1818,7 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 $$
 \begin{gathered}
 ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0.5em]
-\text{where } NPV_{RD} \\
-= SUM[Savings \times adoption(t) / (1+r)^t] for t \\
-= 1..10 \\
-= \$389B \\[0.5em]
+\text{where } NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t} \\[0.5em]
 \text{where } Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{dFDA} \\
 = \$58.6B - \$40M \\
@@ -1836,7 +1840,10 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} = OPEX \times [(1 - (1 + r)^-T) / r] = \$342M \\[0.5em]
+\text{where } PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -2237,7 +2244,8 @@ Total eventually avoidable deaths from trial capacity increase alone. Represents
 $$
 \begin{gathered}
 Lives_{capacity} \\
-= ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_TREATMENT\_ACCELERATION\_YEARS \times AVOIDABLE\_PCT \\
+= Deaths_{disease,daily} \times T_{accel} \times 338 \\
+= 150{,}000 \times 204 \times 338 \\
 = 10.3B \\[0.5em]
 \text{where } T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
@@ -2564,7 +2572,8 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 $$
 \begin{gathered}
 Lives_{max} \\
-= ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_YEARS \times AVOIDABLE\_PCT \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
 = 10.7B \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
 \text{where } T_{accel} \\
@@ -2647,7 +2656,8 @@ Hours of suffering eliminated from the combined dFDA timeline shift. Calculated 
 $$
 \begin{gathered}
 Hours_{suffer,max} \\
-= DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_DALYS \times GLOBAL\_YLD\_PROPORTION \times HOURS\_PER\_YEAR \\
+= DALYs_{max} \times Pct_{YLD} \times 8760 \\
+= 565B \times 0.39 \times 8760 \\
 = 1930T \\[0.5em]
 \text{where } DALYs_{max} \\
 = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
@@ -3456,7 +3466,10 @@ Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One
 
 $$
 \begin{gathered}
-Loss_{lag} = DEATHS\_TOTAL \times YLL \times VSLY = \$251T \\[0.5em]
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 98.4M \times (79 - 62) \times \$150K \\
+= \$251T \\[0.5em]
 \text{where } Deaths_{lag,total} \\
 = T_{lag} \times 12000000 \\
 = 8.2 \times 12000000 \\
@@ -4488,7 +4501,8 @@ US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).
 $$
 \begin{gathered}
 \Delta LE_{pre62} \\
-= (life\_exp\_1962 - life\_exp\_1880) / 7.9 decades \\
+= \frac{LE_{US,1962} - LE_{US,1880}}{7.69} \\
+= \frac{70.1 - 39.4}{7.69} \\
 = 0
 \end{gathered}
 $$
@@ -4527,7 +4541,8 @@ US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).
 $$
 \begin{gathered}
 \Delta LE_{post62} \\
-= (life\_exp\_2019 - life\_exp\_1962) / 5.7 decades \\
+= \frac{LE_{US,2019} - LE_{US,1962}}{5.56} \\
+= \frac{78.9 - 70.1}{5.56} \\
 = 0
 \end{gathered}
 $$
@@ -4539,6 +4554,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
 :::
 
@@ -4765,7 +4788,8 @@ Misallocation factor: cost to kill vs cost to save
 $$
 \begin{gathered}
 k_{misalloc} \\
-= COST\_PER\_DEATH \div COST\_PER\_LIFE\_SAVED \\
+= \frac{Cost_{war,total}}{Deaths_{conflict} \times Cost_{life,RD}} \\
+= \frac{\$11.4T}{245{,}000 \times \$16.1K} \\
 = 2{,}890 \\[0.5em]
 \text{where } Deaths_{conflict} \\
 = Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
@@ -5561,48 +5585,8 @@ Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% tre
 $$
 \begin{gathered}
 Wealth_{lifetime} \\
-= NPV(peace\_dividend + healthcare\_savings \\
-+ productivity\_gains + caregiver\_savings \\
-+ gdp\_boost + extended\_earnings) \\
-= \$494K \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
+= \text{NPV}(\text{Peace} + \text{Health} \\
++ \text{Productivity} + \text{Earnings})
 \end{gathered}
 $$
 
@@ -7183,7 +7167,10 @@ Treaty ROI based on historical rate of drug development (existing drugs only). T
 $$
 \begin{gathered}
 ROI_{drugs} = \frac{Loss_{lag}}{Cost_{campaign}} = \frac{\$251T}{\$1B} = 251{,}000 \\[0.5em]
-\text{where } Loss_{lag} = DEATHS\_TOTAL \times YLL \times VSLY = \$251T \\[0.5em]
+\text{where } Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 98.4M \times (79 - 62) \times \$150K \\
+= \$251T \\[0.5em]
 \text{where } Deaths_{lag,total} \\
 = T_{lag} \times 12000000 \\
 = 8.2 \times 12000000 \\
@@ -7545,17 +7532,20 @@ $$
 Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}070 \\[0.5em]
 \text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
 \text{where } YLL_{lag} \\
-= DEATHS\_TOTAL \times (LIFE\_EXPECTANCY - MEAN\_AGE\_OF\_DEATH) \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
 = 7.07B \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M \\[0.5em]
 \text{where } YLD_{lag} \\
 = Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
 = 416M \times 6 \times 0.35 \\
 = 873M \\[0.5em]
 \text{where } Deaths_{lag} \\
-= ANNUAL\_DEATHS \times EFFICACY\_LAG\_YEARS \times EVENTUALLY\_AVOIDABLE\_DEATH\_PCT \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
 = 416M \\[0.5em]
 \text{where } DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
 \text{where } DALY_{thal} \\

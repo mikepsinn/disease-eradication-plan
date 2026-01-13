@@ -3704,6 +3704,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["NPV_TIME_HORIZON_YEARS"])
     / ctx["NPV_DISCOUNT_RATE_STANDARD"],
     latex_symbol=r"PV_{OPEX}",  # LaTeX symbol for equations
+    latex=r"PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}",
 )
 DFDA_NPV_TOTAL_COST = Parameter(
     DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX,
@@ -5407,7 +5408,8 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
         / ctx["NPV_DISCOUNT_RATE_STANDARD"],
-        latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
+    latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
+    latex=r"NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}",  # PV of annuity formula
 )  # ~$541.9B NPV (vs $1B treaty campaign)
 
 # Cost per DALY for direct funding scenario
@@ -6390,6 +6392,7 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
         life_extension_override=float(ctx["LIFE_EXTENSION_YEARS"]),
     )["total_lifetime_benefit"],
     latex_symbol=r"Wealth_{lifetime}",  # LaTeX symbol for equations
+    latex=r"Wealth_{lifetime} = \text{NPV}(\text{Peace} + \text{Health} + \text{Productivity} + \text{Earnings})",
 )
 
 

@@ -354,13 +354,14 @@
   \ DALYs)</a>"
 "dfda_efficacy_lag_elimination_dalys_latex": "$$\n\\begin{gathered}\nDALYs_{lag} =\
   \ YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\\\[0.5em]\n\\text{where } YLL_{lag}\
-  \ \\\\\n= DEATHS\\_TOTAL \\times (LIFE\\_EXPECTANCY - MEAN\\_AGE\\_OF\\_DEATH) \\\
-  \\\n= 7.07B \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\\
-  times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n\
-  = 416M \\\\[0.5em]\n\\text{where } YLD_{lag} \\\\\n= Deaths_{lag} \\times T_{suffering}\
-  \ \\times DW_{chronic} \\\\\n= 416M \\times 6 \\times 0.35 \\\\\n= 873M \\\\[0.5em]\n\
-  \\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS\
-  \ \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M\n\\end{gathered}\n$$"
+  \ \\\\\n= Deaths_{lag} \\times (LE_{global} - Age_{death,delay}) \\\\\n= 416M \\\
+  times (79 - 62) \\\\\n= 7.07B \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\\
+  _DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\\
+  _PCT \\\\\n= 416M \\\\[0.5em]\n\\text{where } YLD_{lag} \\\\\n= Deaths_{lag} \\\
+  times T_{suffering} \\times DW_{chronic} \\\\\n= 416M \\times 6 \\times 0.35 \\\\\
+  \n= 873M \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times\
+  \ EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M\n\
+  \\end{gathered}\n$$"
 "dfda_efficacy_lag_elimination_deaths_averted": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_deaths_averted\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
@@ -384,12 +385,12 @@
 "dfda_efficacy_lag_elimination_economic_value_latex": "$$\n\\begin{gathered}\nValue_{lag}\
   \ \\\\\n= DALYs_{lag} \\times Value_{QALY} \\\\\n= 7.94B \\times \\$150K \\\\\n\
   = \\$1190T \\\\[0.5em]\n\\text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B\
-  \ + 873M = 7.94B \\\\[0.5em]\n\\text{where } YLL_{lag} \\\\\n= DEATHS\\_TOTAL \\\
-  times (LIFE\\_EXPECTANCY - MEAN\\_AGE\\_OF\\_DEATH) \\\\\n= 7.07B \\\\[0.5em]\n\\\
-  text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS\
-  \ \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M \\\\[0.5em]\n\\text{where\
-  \ } YLD_{lag} \\\\\n= Deaths_{lag} \\times T_{suffering} \\times DW_{chronic} \\\
-  \\\n= 416M \\times 6 \\times 0.35 \\\\\n= 873M \\\\[0.5em]\n\\text{where } Deaths_{lag}\
+  \ + 873M = 7.94B \\\\[0.5em]\n\\text{where } YLL_{lag} \\\\\n= Deaths_{lag} \\times\
+  \ (LE_{global} - Age_{death,delay}) \\\\\n= 416M \\times (79 - 62) \\\\\n= 7.07B\
+  \ \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\\
+  _LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M \\\\[0.5em]\n\
+  \\text{where } YLD_{lag} \\\\\n= Deaths_{lag} \\times T_{suffering} \\times DW_{chronic}\
+  \ \\\\\n= 416M \\times 6 \\times 0.35 \\\\\n= 873M \\\\[0.5em]\n\\text{where } Deaths_{lag}\
   \ \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\\
   _DEATH\\_PCT \\\\\n= 416M\n\\end{gathered}\n$$"
 "dfda_efficacy_lag_elimination_yld_latex": "$$\n\\begin{gathered}\nYLD_{lag} \\\\\n\
@@ -398,10 +399,10 @@
   _DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\\
   _PCT \\\\\n= 416M\n\\end{gathered}\n$$"
 "dfda_efficacy_lag_elimination_yll_latex": "$$\n\\begin{gathered}\nYLL_{lag} \\\\\n\
-  = DEATHS\\_TOTAL \\times (LIFE\\_EXPECTANCY - MEAN\\_AGE\\_OF\\_DEATH) \\\\\n= 7.07B\
-  \ \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\\
-  _LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M\n\\end{gathered}\n\
-  $$"
+  = Deaths_{lag} \\times (LE_{global} - Age_{death,delay}) \\\\\n= 416M \\times (79\
+  \ - 62) \\\\\n= 7.07B \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\\
+  _DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\\
+  _PCT \\\\\n= 416M\n\\end{gathered}\n$$"
 "dfda_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Diseases per year receiving their first effective\
@@ -2266,25 +2267,26 @@
 "type_ii_error_cost_ratio_latex": "$$\n\\begin{gathered}\nRatio_{TypeII} = \\frac{DALYs_{lag}}{DALY_{TypeI}}\
   \ = \\frac{7.94B}{2.59M} = 3{,}070 \\\\[0.5em]\n\\text{where } DALYs_{lag} = YLL_{lag}\
   \ + YLD_{lag} = 7.07B + 873M = 7.94B \\\\[0.5em]\n\\text{where } YLL_{lag} \\\\\n\
-  = DEATHS\\_TOTAL \\times (LIFE\\_EXPECTANCY - MEAN\\_AGE\\_OF\\_DEATH) \\\\\n= 7.07B\
-  \ \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\\
-  _LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M \\\\[0.5em]\n\
-  \\text{where } YLD_{lag} \\\\\n= Deaths_{lag} \\times T_{suffering} \\times DW_{chronic}\
-  \ \\\\\n= 416M \\times 6 \\times 0.35 \\\\\n= 873M \\\\[0.5em]\n\\text{where } Deaths_{lag}\
-  \ \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\\
-  _DEATH\\_PCT \\\\\n= 416M \\\\[0.5em]\n\\text{where } DALY_{TypeI} = DALY_{thal}\
-  \ \\times 62 = 41{,}800 \\times 62 = 2.59M \\\\[0.5em]\n\\text{where } DALY_{thal}\
-  \ \\\\\n= YLD_{thal} + YLL_{thal} \\\\\n= 13{,}000 + 28{,}800 \\\\\n= 41{,}800 \\\
-  \\[0.5em]\n\\text{where } YLD_{thal} \\\\\n= DW_{thal} \\times N_{thal,survive}\
-  \ \\times LE_{thal} \\\\\n= 0.4 \\times 540 \\times 60 \\\\\n= 13{,}000 \\\\[0.5em]\n\
-  \\text{where } N_{thal,survive} \\\\\n= N_{thal,US,prevent} \\times (1 - Rate_{thal,mort})\
-  \ \\\\\n= 900 \\times (1 - 40\\%) \\\\\n= 540 \\\\[0.5em]\n\\text{where } N_{thal,US,prevent}\
+  = Deaths_{lag} \\times (LE_{global} - Age_{death,delay}) \\\\\n= 416M \\times (79\
+  \ - 62) \\\\\n= 7.07B \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\\
+  _DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\\
+  _PCT \\\\\n= 416M \\\\[0.5em]\n\\text{where } YLD_{lag} \\\\\n= Deaths_{lag} \\\
+  times T_{suffering} \\times DW_{chronic} \\\\\n= 416M \\times 6 \\times 0.35 \\\\\
+  \n= 873M \\\\[0.5em]\n\\text{where } Deaths_{lag} \\\\\n= ANNUAL\\_DEATHS \\times\
+  \ EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\_DEATH\\_PCT \\\\\n= 416M\
+  \ \\\\[0.5em]\n\\text{where } DALY_{TypeI} = DALY_{thal} \\times 62 = 41{,}800 \\\
+  times 62 = 2.59M \\\\[0.5em]\n\\text{where } DALY_{thal} \\\\\n= YLD_{thal} + YLL_{thal}\
+  \ \\\\\n= 13{,}000 + 28{,}800 \\\\\n= 41{,}800 \\\\[0.5em]\n\\text{where } YLD_{thal}\
+  \ \\\\\n= DW_{thal} \\times N_{thal,survive} \\times LE_{thal} \\\\\n= 0.4 \\times\
+  \ 540 \\times 60 \\\\\n= 13{,}000 \\\\[0.5em]\n\\text{where } N_{thal,survive} \\\
+  \\\n= N_{thal,US,prevent} \\times (1 - Rate_{thal,mort}) \\\\\n= 900 \\times (1\
+  \ - 40\\%) \\\\\n= 540 \\\\[0.5em]\n\\text{where } N_{thal,US,prevent} \\\\\n= N_{thal,global}\
+  \ \\times Pct_{US,1960} \\\\\n= 15{,}000 \\times 6\\% \\\\\n= 900 \\\\[0.5em]\n\\\
+  text{where } YLL_{thal} = Deaths_{thal} \\times 80 = 360 \\times 80 = 28{,}800 \\\
+  \\[0.5em]\n\\text{where } Deaths_{thal} \\\\\n= Rate_{thal,mort} \\times N_{thal,US,prevent}\
+  \ \\\\\n= 40\\% \\times 900 \\\\\n= 360 \\\\[0.5em]\n\\text{where } N_{thal,US,prevent}\
   \ \\\\\n= N_{thal,global} \\times Pct_{US,1960} \\\\\n= 15{,}000 \\times 6\\% \\\
-  \\\n= 900 \\\\[0.5em]\n\\text{where } YLL_{thal} = Deaths_{thal} \\times 80 = 360\
-  \ \\times 80 = 28{,}800 \\\\[0.5em]\n\\text{where } Deaths_{thal} \\\\\n= Rate_{thal,mort}\
-  \ \\times N_{thal,US,prevent} \\\\\n= 40\\% \\times 900 \\\\\n= 360 \\\\[0.5em]\n\
-  \\text{where } N_{thal,US,prevent} \\\\\n= N_{thal,global} \\times Pct_{US,1960}\
-  \ \\\\\n= 15{,}000 \\times 6\\% \\\\\n= 900\n\\end{gathered}\n$$"
+  \\\n= 900\n\\end{gathered}\n$$"
 "unexplored_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-unexplored_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\

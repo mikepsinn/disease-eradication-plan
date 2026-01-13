@@ -355,6 +355,46 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         elif a != 0 and abs(result - (b * (1 - 1/a))) < 0.01:  # 3 * (1 - 1/2) = 1.5
             return 'multiply_inverse_complement', 'second_times_one_minus_inv_first'
         else:
+            # Check for "A × B × constant" pattern
+            # Test with second set of values to verify constant multiplier
+            test_vals2 = [5.0, 7.0]
+            ctx2 = {name: val for name, val in zip(inputs, test_vals2)}
+            try:
+                result2 = param_value.compute(ctx2)
+                product1 = a * b  # 2 * 3 = 6
+                product2 = test_vals2[0] * test_vals2[1]  # 5 * 7 = 35
+                if abs(product1) > 0.01 and abs(product2) > 0.01:
+                    k1 = result / product1
+                    k2 = result2 / product2
+                    if abs(k1 - k2) < 0.01 and abs(k1) > 0.01:
+                        # Consistent multiplier found
+                        return 'multiply_constant_2input', k1
+            except Exception:
+                pass
+            
+            # Check for "(A - B) / constant" or "(A - B) × constant" patterns
+            try:
+                diff1_ab = a - b  # 2 - 3 = -1
+                diff2_ab = test_vals2[0] - test_vals2[1]  # 5 - 7 = -2
+                
+                if abs(diff1_ab) > 0.01 and abs(diff2_ab) > 0.01:
+                    # Check if result = (A - B) * constant
+                    k1 = result / diff1_ab
+                    k2 = result2 / diff2_ab
+                    if abs(k1 - k2) < 0.01 and abs(k1) > 0.01:
+                        return 'diff_first_second_times_constant', k1
+                
+                diff1_ba = b - a  # 3 - 2 = 1
+                diff2_ba = test_vals2[1] - test_vals2[0]  # 7 - 5 = 2
+                
+                if abs(diff1_ba) > 0.01 and abs(diff2_ba) > 0.01:
+                    k1 = result / diff1_ba
+                    k2 = result2 / diff2_ba
+                    if abs(k1 - k2) < 0.01 and abs(k1) > 0.01:
+                        return 'diff_second_first_times_constant', k1
+            except Exception:
+                pass
+            
             return 'complex', None
 
     else:
@@ -377,6 +417,110 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
             expected_subtract -= v
         if abs(result - expected_subtract) < 0.01:
             return 'subtract_chain', None
+
+        # For 3 inputs, check common compound patterns
+        if n == 3:
+            a, b, c = test_vals[0], test_vals[1], test_vals[2]  # 2, 3, 4
+            
+            # A × (B - C): e.g., Deaths × (LifeExp - MeanAge)
+            if abs(result - (a * (b - c))) < 0.01:  # 2 * (3-4) = -2
+                return 'first_times_diff_of_second_third', None
+            if abs(result - (a * (c - b))) < 0.01:  # 2 * (4-3) = 2
+                return 'first_times_diff_of_third_second', None
+            if abs(result - (b * (a - c))) < 0.01:  # 3 * (2-4) = -6
+                return 'second_times_diff_of_first_third', None
+            if abs(result - (b * (c - a))) < 0.01:  # 3 * (4-2) = 6
+                return 'second_times_diff_of_third_first', None
+            if abs(result - (c * (a - b))) < 0.01:  # 4 * (2-3) = -4
+                return 'third_times_diff_of_first_second', None
+            if abs(result - (c * (b - a))) < 0.01:  # 4 * (3-2) = 4
+                return 'third_times_diff_of_second_first', None
+            
+            # A × (B + C): e.g., Rate × (CostA + CostB)
+            if abs(result - (a * (b + c))) < 0.01:  # 2 * (3+4) = 14
+                return 'first_times_sum_of_others', None
+            if abs(result - (b * (a + c))) < 0.01:  # 3 * (2+4) = 18
+                return 'second_times_sum_of_others', None
+            if abs(result - (c * (a + b))) < 0.01:  # 4 * (2+3) = 20
+                return 'third_times_sum_of_others', None
+            
+            # (A - B) × C: Similar but different grouping
+            if abs(result - ((a - b) * c)) < 0.01:  # (2-3) * 4 = -4
+                return 'diff_of_first_second_times_third', None
+            if abs(result - ((a + b) * c)) < 0.01:  # (2+3) * 4 = 20
+                return 'sum_of_first_second_times_third', None
+            
+            # A × B × C (triple product) - already covered by 'multiply' above
+            
+            # A / (B - C) or A / (B + C)
+            if abs(b - c) > 0.01 and abs(result - (a / (b - c))) < 0.01:
+                return 'first_over_diff_of_second_third', None
+            if abs(result - (a / (b + c))) < 0.01:
+                return 'first_over_sum_of_second_third', None
+            
+            # (A / B) / C and (B / A) / C patterns - common for comparing ratios
+            if abs(a) > 0.01 and abs(b) > 0.01 and abs(c) > 0.01:
+                if abs(result - ((a / b) / c)) < 0.01:
+                    return 'first_over_second_over_third', None
+                if abs(result - ((b / a) / c)) < 0.01:
+                    return 'second_over_first_over_third', None
+                if abs(result - ((a / c) / b)) < 0.01:
+                    return 'first_over_third_over_second', None
+                if abs(result - ((b / c) / a)) < 0.01:
+                    return 'second_over_third_over_first', None
+                if abs(result - ((c / a) / b)) < 0.01:
+                    return 'third_over_first_over_second', None
+                if abs(result - ((c / b) / a)) < 0.01:
+                    return 'third_over_second_over_first', None
+
+        # For 4 inputs, check common compound patterns
+        if n == 4:
+            a, b, c, d = test_vals[0], test_vals[1], test_vals[2], test_vals[3]  # 2, 3, 4, 5
+            
+            # A × (B - C) × D: common economic calculation (e.g., Deaths × YLL × Value)
+            # Test all permutations of which input is multiplier vs diff operands vs final multiplier
+            if abs(result - (a * (b - c) * d)) < 0.01:  # 2 * (3-4) * 5 = -10
+                return 'first_times_diff_of_second_third_times_fourth', None
+            if abs(result - (a * (c - b) * d)) < 0.01:  # 2 * (4-3) * 5 = 10
+                return 'first_times_diff_of_third_second_times_fourth', None
+            if abs(result - (b * (a - c) * d)) < 0.01:  # 3 * (2-4) * 5 = -30
+                return 'second_times_diff_of_first_third_times_fourth', None
+            if abs(result - (b * (c - a) * d)) < 0.01:  # 3 * (4-2) * 5 = 30
+                return 'second_times_diff_of_third_first_times_fourth', None
+            if abs(result - (a * (b - d) * c)) < 0.01:  # 2 * (3-5) * 4 = -16
+                return 'first_times_diff_of_second_fourth_times_third', None
+            if abs(result - (a * (d - b) * c)) < 0.01:  # 2 * (5-3) * 4 = 16
+                return 'first_times_diff_of_fourth_second_times_third', None
+            
+            # A × (B + C) × D: similar but with sum
+            if abs(result - (a * (b + c) * d)) < 0.01:  # 2 * (3+4) * 5 = 70
+                return 'first_times_sum_of_second_third_times_fourth', None
+            if abs(result - (b * (a + c) * d)) < 0.01:  # 3 * (2+4) * 5 = 90
+                return 'second_times_sum_of_first_third_times_fourth', None
+
+        # Check for "multiply with constant" for 3+ inputs
+        # Test with different values to verify constant multiplier
+        product1 = 1.0
+        for v in test_vals:
+            product1 *= v  # e.g., 2 * 3 * 4 = 24
+
+        if abs(product1) > 0.01:
+            test_vals2 = [5.0, 7.0, 11.0][:n]  # Use first n values
+            ctx2 = {name: val for name, val in zip(inputs, test_vals2)}
+            try:
+                result2 = param_value.compute(ctx2)
+                product2 = 1.0
+                for v in test_vals2:
+                    product2 *= v
+
+                if abs(product2) > 0.01:
+                    k1 = result / product1
+                    k2 = result2 / product2
+                    if abs(k1 - k2) < 0.01 and abs(k1) > 0.01 and abs(k1 - 1.0) > 0.01:
+                        # Consistent multiplier found (not just 1.0)
+                        return 'multiply_constant_multi', k1
+            except Exception:
+                pass
 
         return 'complex', None
 
@@ -1178,6 +1322,35 @@ def generate_auto_latex(
             numeric_terms += f" - {d['formatted']}"
         latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
 
+    elif operation == 'diff_first_second_times_constant' and len(input_data) == 2:
+        # (A - B) × constant or (A - B) / divisor
+        a, b = input_data[0], input_data[1]
+        constant = float(order)
+        # If constant < 1, display as division (more readable)
+        if abs(constant) < 1.0 and abs(constant) > 0.001:
+            divisor = round_to_n_sigfigs(1.0 / constant, 3)
+            symbolic = f"\\frac{{{a['symbolic']} - {b['symbolic']}}}{{{divisor}}}"
+            numeric = f"\\frac{{{a['formatted']} - {b['formatted']}}}{{{divisor}}}"
+        else:
+            const_formatted = round_to_n_sigfigs(constant, 3)
+            symbolic = f"({a['symbolic']} - {b['symbolic']}) \\times {const_formatted}"
+            numeric = f"({a['formatted']} - {b['formatted']}) \\times {const_formatted}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'diff_second_first_times_constant' and len(input_data) == 2:
+        # (B - A) × constant or (B - A) / divisor
+        a, b = input_data[0], input_data[1]
+        constant = float(order)
+        if abs(constant) < 1.0 and abs(constant) > 0.001:
+            divisor = round_to_n_sigfigs(1.0 / constant, 3)
+            symbolic = f"\\frac{{{b['symbolic']} - {a['symbolic']}}}{{{divisor}}}"
+            numeric = f"\\frac{{{b['formatted']} - {a['formatted']}}}{{{divisor}}}"
+        else:
+            const_formatted = round_to_n_sigfigs(constant, 3)
+            symbolic = f"({b['symbolic']} - {a['symbolic']}) \\times {const_formatted}"
+            numeric = f"({b['formatted']} - {a['formatted']}) \\times {const_formatted}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
     elif operation == 'multiply_constant' and len(input_data) == 1:
         # Multiply by constant: X = A × c = val × const = result
         inp = input_data[0]
@@ -1185,6 +1358,25 @@ def generate_auto_latex(
         # Format constant as plain number (no units)
         const_formatted = round_to_n_sigfigs(constant, 3)
         latex = f"{lhs_short} = {inp['symbolic']} \\times {const_formatted} = {inp['formatted']} \\times {const_formatted} = {result_formatted}"
+
+    elif operation == 'multiply_constant_2input' and len(input_data) == 2:
+        # Multiply two inputs by a constant: X = A × B × c = val1 × val2 × const = result
+        a, b = input_data[0], input_data[1]
+        constant = float(order)  # The constant value is stored in order parameter
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        symbolic = f"{a['symbolic']} \\times {b['symbolic']} \\times {const_formatted}"
+        numeric = f"{a['formatted']} \\times {b['formatted']} \\times {const_formatted}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'multiply_constant_multi':
+        # Multiply multiple inputs by a constant: X = A × B × ... × c
+        constant = float(order)
+        const_formatted = round_to_n_sigfigs(constant, 3)
+        symbolic_terms = ' \\times '.join(d['symbolic'] for d in input_data)
+        numeric_terms = ' \\times '.join(d['formatted'] for d in input_data)
+        symbolic = f"{symbolic_terms} \\times {const_formatted}"
+        numeric = f"{numeric_terms} \\times {const_formatted}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
     elif operation == 'divide_constant' and len(input_data) == 1:
         # Divide by constant: X = A / c = val / const = result
@@ -1244,37 +1436,214 @@ def generate_auto_latex(
         inp = input_data[0]
         latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"
 
-    else:
-        # Complex or unrecognized operation
-        # Try to use the symbolic formula if available
-        formula = getattr(param_value, 'formula', '') or ''
-        if formula:
-            # LOG: Only log if no hardcoded latex exists (those don't need fixing)
-            hardcoded_latex = getattr(param_value, 'latex', None)
-            if not hardcoded_latex:
-                log_formula_fallback(
-                    param_name,
-                    formula,
-                    f"operation={operation}, inputs={len(input_data)}"
-                )
-            
-            # Convert formula symbols to LaTeX-compatible format
-            # Replace × with \times, ÷ with \div, etc.
-            # IMPORTANT: Escape underscores to prevent "double subscript" errors
-            formula_latex = (formula
-                .replace('_', r'\_')
-                .replace('×', r'\times')
-                .replace('÷', r'\div')
-                .replace('≤', r'\leq')
-                .replace('≥', r'\geq')
-                .replace('²', r'^2')
-                .replace('³', r'^3'))
+    # 3-input patterns: A × (B - C) and variations
+    elif operation == 'first_times_diff_of_second_third' and len(input_data) == 3:
+        # A × (B - C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{a['symbolic']} \\times ({b['symbolic']} - {c['symbolic']})"
+        numeric = f"{a['formatted']} \\times ({b['formatted']} - {c['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
-            # Create equation: LHS = formula = result
-            latex = f"{lhs_short} = {formula_latex} = {result_formatted}"
-        else:
-            # No formula available - skip auto-generation
-            # (hardcoded latex can still be used)
+    elif operation == 'first_times_diff_of_third_second' and len(input_data) == 3:
+        # A × (C - B)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{a['symbolic']} \\times ({c['symbolic']} - {b['symbolic']})"
+        numeric = f"{a['formatted']} \\times ({c['formatted']} - {b['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_diff_of_first_third' and len(input_data) == 3:
+        # B × (A - C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{b['symbolic']} \\times ({a['symbolic']} - {c['symbolic']})"
+        numeric = f"{b['formatted']} \\times ({a['formatted']} - {c['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_diff_of_third_first' and len(input_data) == 3:
+        # B × (C - A)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{b['symbolic']} \\times ({c['symbolic']} - {a['symbolic']})"
+        numeric = f"{b['formatted']} \\times ({c['formatted']} - {a['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'third_times_diff_of_first_second' and len(input_data) == 3:
+        # C × (A - B)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{c['symbolic']} \\times ({a['symbolic']} - {b['symbolic']})"
+        numeric = f"{c['formatted']} \\times ({a['formatted']} - {b['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'third_times_diff_of_second_first' and len(input_data) == 3:
+        # C × (B - A)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{c['symbolic']} \\times ({b['symbolic']} - {a['symbolic']})"
+        numeric = f"{c['formatted']} \\times ({b['formatted']} - {a['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_times_sum_of_others' and len(input_data) == 3:
+        # A × (B + C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{a['symbolic']} \\times ({b['symbolic']} + {c['symbolic']})"
+        numeric = f"{a['formatted']} \\times ({b['formatted']} + {c['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_sum_of_others' and len(input_data) == 3:
+        # B × (A + C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{b['symbolic']} \\times ({a['symbolic']} + {c['symbolic']})"
+        numeric = f"{b['formatted']} \\times ({a['formatted']} + {c['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'third_times_sum_of_others' and len(input_data) == 3:
+        # C × (A + B)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"{c['symbolic']} \\times ({a['symbolic']} + {b['symbolic']})"
+        numeric = f"{c['formatted']} \\times ({a['formatted']} + {b['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'diff_of_first_second_times_third' and len(input_data) == 3:
+        # (A - B) × C
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"({a['symbolic']} - {b['symbolic']}) \\times {c['symbolic']}"
+        numeric = f"({a['formatted']} - {b['formatted']}) \\times {c['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'sum_of_first_second_times_third' and len(input_data) == 3:
+        # (A + B) × C
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"({a['symbolic']} + {b['symbolic']}) \\times {c['symbolic']}"
+        numeric = f"({a['formatted']} + {b['formatted']}) \\times {c['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_over_diff_of_second_third' and len(input_data) == 3:
+        # A / (B - C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{a['symbolic']}}}{{{b['symbolic']} - {c['symbolic']}}}"
+        numeric = f"\\frac{{{a['formatted']}}}{{{b['formatted']} - {c['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_over_sum_of_second_third' and len(input_data) == 3:
+        # A / (B + C)
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{a['symbolic']}}}{{{b['symbolic']} + {c['symbolic']}}}"
+        numeric = f"\\frac{{{a['formatted']}}}{{{b['formatted']} + {c['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    # Division chain patterns: (A / B) / C = A / (B × C)
+    elif operation == 'first_over_second_over_third' and len(input_data) == 3:
+        # (A / B) / C - display as nested fraction
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{a['symbolic']}}}{{{b['symbolic']} \\times {c['symbolic']}}}"
+        numeric = f"\\frac{{{a['formatted']}}}{{{b['formatted']} \\times {c['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_over_first_over_third' and len(input_data) == 3:
+        # (B / A) / C
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{b['symbolic']}}}{{{a['symbolic']} \\times {c['symbolic']}}}"
+        numeric = f"\\frac{{{b['formatted']}}}{{{a['formatted']} \\times {c['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_over_third_over_second' and len(input_data) == 3:
+        # (A / C) / B
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{a['symbolic']}}}{{{c['symbolic']} \\times {b['symbolic']}}}"
+        numeric = f"\\frac{{{a['formatted']}}}{{{c['formatted']} \\times {b['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_over_third_over_first' and len(input_data) == 3:
+        # (B / C) / A
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{b['symbolic']}}}{{{c['symbolic']} \\times {a['symbolic']}}}"
+        numeric = f"\\frac{{{b['formatted']}}}{{{c['formatted']} \\times {a['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'third_over_first_over_second' and len(input_data) == 3:
+        # (C / A) / B
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{c['symbolic']}}}{{{a['symbolic']} \\times {b['symbolic']}}}"
+        numeric = f"\\frac{{{c['formatted']}}}{{{a['formatted']} \\times {b['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'third_over_second_over_first' and len(input_data) == 3:
+        # (C / B) / A
+        a, b, c = input_data[0], input_data[1], input_data[2]
+        symbolic = f"\\frac{{{c['symbolic']}}}{{{b['symbolic']} \\times {a['symbolic']}}}"
+        numeric = f"\\frac{{{c['formatted']}}}{{{b['formatted']} \\times {a['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    # 4-input patterns: A × (B - C) × D and variations
+    elif operation == 'first_times_diff_of_second_third_times_fourth' and len(input_data) == 4:
+        # A × (B - C) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{a['symbolic']} \\times ({b['symbolic']} - {c['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{a['formatted']} \\times ({b['formatted']} - {c['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_times_diff_of_third_second_times_fourth' and len(input_data) == 4:
+        # A × (C - B) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{a['symbolic']} \\times ({c['symbolic']} - {b['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{a['formatted']} \\times ({c['formatted']} - {b['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_diff_of_first_third_times_fourth' and len(input_data) == 4:
+        # B × (A - C) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{b['symbolic']} \\times ({a['symbolic']} - {c['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{b['formatted']} \\times ({a['formatted']} - {c['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_diff_of_third_first_times_fourth' and len(input_data) == 4:
+        # B × (C - A) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{b['symbolic']} \\times ({c['symbolic']} - {a['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{b['formatted']} \\times ({c['formatted']} - {a['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_times_diff_of_second_fourth_times_third' and len(input_data) == 4:
+        # A × (B - D) × C
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{a['symbolic']} \\times ({b['symbolic']} - {d['symbolic']}) \\times {c['symbolic']}"
+        numeric = f"{a['formatted']} \\times ({b['formatted']} - {d['formatted']}) \\times {c['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_times_diff_of_fourth_second_times_third' and len(input_data) == 4:
+        # A × (D - B) × C
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{a['symbolic']} \\times ({d['symbolic']} - {b['symbolic']}) \\times {c['symbolic']}"
+        numeric = f"{a['formatted']} \\times ({d['formatted']} - {b['formatted']}) \\times {c['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'first_times_sum_of_second_third_times_fourth' and len(input_data) == 4:
+        # A × (B + C) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{a['symbolic']} \\times ({b['symbolic']} + {c['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{a['formatted']} \\times ({b['formatted']} + {c['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'second_times_sum_of_first_third_times_fourth' and len(input_data) == 4:
+        # B × (A + C) × D
+        a, b, c, d = input_data[0], input_data[1], input_data[2], input_data[3]
+        symbolic = f"{b['symbolic']} \\times ({a['symbolic']} + {c['symbolic']}) \\times {d['symbolic']}"
+        numeric = f"{b['formatted']} \\times ({a['formatted']} + {c['formatted']}) \\times {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    else:
+        # Unrecognized operation - check if there's a hardcoded latex
+        hardcoded_latex = getattr(param_value, 'latex', None)
+        if hardcoded_latex:
+            # Has handcoded latex, will be used instead - skip auto-generation
             return None
+        
+        # No hardcoded latex and can't auto-generate - raise error so we know to add the pattern
+        formula = getattr(param_value, 'formula', '') or ''
+        inputs_str = ', '.join(inputs) if inputs else 'none'
+        raise ValueError(
+            f"Cannot auto-generate LaTeX for {param_name}:\n"
+            f"  Operation: {operation}\n"
+            f"  Inputs ({len(input_data)}): {inputs_str}\n"
+            f"  Formula: {formula}\n"
+            f"  Fix: Add 'latex' attribute to parameter OR add pattern to latex_generation.py"
+        )
 
     return latex
