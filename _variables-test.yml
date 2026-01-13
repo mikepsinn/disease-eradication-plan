@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (2 entries)
+# Contains only variables used in this paper (7 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -10,3 +10,55 @@
   \ $1.40K] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
   \ & sources\">$929 (95% CI: $929-$1.40K)</a>"
 "adaptable_trial_cost_per_patient_cite": "@pragmatic-trials-cost-advantage"
+"dfda_annual_opex_latex": "$$\n\\begin{aligned}\nOPEX_{dFDA} \\\\\n&= Cost_{platform}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\
+  \n&= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n&= \\$40M\n\\end{aligned}\n$$"
+"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{RD} \\\\\n&= \\sum_{t=1}^{10}\
+  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{aligned}\n\
+  $$"
+"dih_treasury_trial_subsidies_annual_latex": "$$\n\\begin{gathered}\nSubsidies_{trial,ann}\
+  \ \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B\
+  \ \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff}\
+  \ + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\\
+  $10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann}\
+  \ \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n\
+  = \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
+  \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
+  \\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty}\
+  \ \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\
+  \\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\
+  \\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann}\
+  \ \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\\
+  % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
+  $$"
+"peace_dividend_annual_societal_benefit_latex": "$$\n\\begin{gathered}\nBenefit_{peace,soc}\
+  \ \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\\
+  % \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct}\
+  \ + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\
+  \\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total}\
+  \ \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B\
+  \ + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\
+  \\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n\
+  = \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
+  \ \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\\
+  $2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\\
+  times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where\
+  \ } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times\
+  \ \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n\
+  = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport}\
+  \ \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B\
+  \ + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\
+  \n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} +\
+  \ Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\\
+  $616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil}\
+  \ \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet}\
+  \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
+  $3.7T\n\\end{gathered}\n$$"
+"treaty_roi_existing_drugs_only_latex": "$$\n\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}}\
+  \ = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} =\
+  \ DEATHS\\_TOTAL \\times YLL \\times VSLY = \\$251T \\\\[0.5em]\n\\text{where }\
+  \ Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000\
+  \ \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base}\
+  \ + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\\
+  $100M \\\\\n= \\$1B\n\\end{gathered}\n$$"

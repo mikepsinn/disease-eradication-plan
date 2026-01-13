@@ -38,6 +38,7 @@
     "render:economics:pdf": "python scripts/render-quarto.py economics --to pdf",
     "audit-hardcoded": "tsx scripts/audit-hardcoded-all.ts",
     "preview:economics": "python scripts/render-quarto.py economics --preview",
+    "preview:test": "python scripts/render-quarto.py test --preview",
     "render:website": "python scripts/render-quarto.py book --to html",
     "render:test": "python scripts/render-quarto.py test",
     "render:test:pdf": "python scripts/render-quarto.py test --to pdf --verify",

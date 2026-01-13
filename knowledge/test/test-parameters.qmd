@@ -15,6 +15,30 @@ Testing if using ANY variable from _variables.yml triggers citation warnings for
 - Test metric: 100%
 - Sample value: $1,000,000
 
+## LaTeX Alignment Tests
+
+Testing different complex LaTeX equations for mobile display:
+
+### Trial Subsidies (Complex with multiple "where" clauses)
+
+{{< var dih_treasury_trial_subsidies_annual_latex >}}
+
+### OPEX Breakdown (Sum with many terms)
+
+{{< var dfda_annual_opex_latex >}}
+
+### NPV Calculation (Summation formula)
+
+{{< var dfda_npv_benefit_rd_only_latex >}}
+
+### Peace Dividend (Multiple components)
+
+{{< var peace_dividend_annual_societal_benefit_latex >}}
+
+### Treaty ROI (Simple ratio)
+
+{{< var treaty_roi_existing_drugs_only_latex >}}
+
 ## Cross-Site References
 
 These should become absolute URLs since they're NOT in the test config:

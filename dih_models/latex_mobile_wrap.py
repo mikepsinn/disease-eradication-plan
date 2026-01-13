@@ -103,7 +103,7 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
     equals_parts = _split_at_top_level_equals(latex)
 
     if len(equals_parts) >= 2:
-        # Use aligned environment for multi-step equations
+        # Use gathered environment for centered multi-line equations (no column alignment)
         lines = []
         for i, part in enumerate(equals_parts):
             part = part.strip()
@@ -111,31 +111,30 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
                 # First part (LHS)
                 lines.append(part)
             else:
-                # Subsequent parts get & = alignment
-                # Check if this part is long and contains + or \\times
+                # Subsequent parts get = prefix (no & for alignment)
                 if len(part) > max_width:
                     # Try to break long sums/products within this part
                     wrapped_part = _break_long_expression(part, max_width)
-                    lines.append(f"&= {wrapped_part}")
+                    lines.append(f"= {wrapped_part}")
                 else:
-                    lines.append(f"&= {part}")
+                    lines.append(f"= {part}")
 
         # Join with line breaks
         wrapped = " \\\\\n".join(lines)
-        return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+        return f"\\begin{{gathered}}\n{wrapped}\n\\end{{gathered}}"
 
     # Strategy 2: Break long sums (no = signs)
     if '+' in latex and len(latex) > max_width:
         wrapped = _break_long_expression(latex, max_width)
         if '\n' in wrapped:
-            return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+            return f"\\begin{{gathered}}\n{wrapped}\n\\end{{gathered}}"
         return wrapped
 
     # Strategy 3: Break long products
     if '\\times' in latex and len(latex) > max_width:
         wrapped = _break_long_expression(latex, max_width, break_on='\\times')
         if '\n' in wrapped:
-            return f"\\begin{{aligned}}\n{wrapped}\n\\end{{aligned}}"
+            return f"\\begin{{gathered}}\n{wrapped}\n\\end{{gathered}}"
         return wrapped
 
     # Can't wrap effectively - return original
@@ -204,15 +203,15 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
         Expression with line breaks (using \\\\ for newlines, \qquad for indent)
     """
     # Determine the split pattern - use brace-aware splitting
-    # Use \qquad (not &\quad) to avoid alignment column issues
+    # No indentation - just simple line breaks
     if break_on == '+':
         parts = _split_at_top_level_operator(expr, '+')
         joiner = ' + '
-        continuation = '\\qquad + '
+        continuation = '+ '
     elif break_on == '\\times':
         parts = _split_at_top_level_operator(expr, '\\times')
         joiner = ' \\times '
-        continuation = '\\qquad \\times '
+        continuation = '\\times '
     else:
         return expr
 
@@ -285,115 +284,125 @@ def _wrap_within_aligned(latex: str, max_width: int) -> str:
         if not line:
             continue
 
+        # ALWAYS remove & markers for clean centered layout
+        # This prevents indentation issues regardless of line length
+        line = re.sub(r'^&\s*', '', line)  # Remove leading &
+        line = re.sub(r'\s*&\s*', ' ', line)  # Remove any other &
+
         # Check if this line is too long
-        # Strip LaTeX commands for length estimation
         plain_length = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', line))
 
         if plain_length <= max_width:
             wrapped_lines.append(line)
             continue
 
-        # Line is too long - try to break it
-        # Common pattern: "\\text{where } X = A + B + C + D = result"
-        # We want to break after A + B and continue with + C + D
+        # Line is too long - wrap it by breaking at = signs
+        wrapped_line = _wrap_single_aligned_line(line, max_width)
+        wrapped_lines.append(wrapped_line)
 
-        # Check if it's a "where" clause with a sum
-        if '+' in line and plain_length > max_width:
-            wrapped_line = _wrap_single_aligned_line(line, max_width)
-            wrapped_lines.append(wrapped_line)
-        else:
-            # Can't wrap effectively, keep as-is
-            wrapped_lines.append(line)
-
-    # Reconstruct the aligned environment
-    # Use \\[0.5em] for spacing between major lines
+    # Reconstruct using gathered environment (centers each line independently)
+    # Use \\[0.5em] for spacing between major "where" clauses
     result_content = " \\\\[0.5em]\n".join(wrapped_lines)
-    result = f"{prefix}{begin_tag}\n{result_content}\n{end_tag}{suffix}"
+    # Replace aligned with gathered for simple centered layout
+    result = f"{prefix}\\begin{{gathered}}\n{result_content}\n\\end{{gathered}}{suffix}"
 
     return result
 
 
 def _wrap_single_aligned_line(line: str, max_width: int) -> str:
     r"""
-    Wrap a single line from an aligned environment that contains sums.
+    Wrap a single line from an aligned environment into proper multi-line format.
 
-    Handles patterns like:
-    - "\\text{where } X = A + B + C = result"
-    - "X &= A + B + C = result"
+    Transforms patterns like:
+        "\\text{where } X = A + B + C = $1 + $2 + $3 = $6"
+
+    Into properly aligned multi-line format:
+        "\\text{where } X \\\\
+         &= A + B + C \\\\
+         &= $1 + $2 + $3 \\\\
+         &= $6"
+
+    This ensures:
+    - Each = sign gets its own line with &= for alignment
+    - Long sums within a section are broken with &\quad +
+    - All lines align at the = sign
 
     Args:
         line: Single line from aligned environment
         max_width: Target width
 
     Returns:
-        Wrapped line with continuation markers
+        Wrapped line with proper &= alignment
     """
-    # Preserve leading alignment markers and "where"
+    # Preserve leading "where" prefix
     prefix_match = re.match(r'^(&?\s*(?:\\text\{where\s*\}\s*)?)', line)
     prefix = prefix_match.group(1) if prefix_match else ""
     rest = line[len(prefix):]
 
-    # Find the equation structure: LHS = middle terms = RHS
     # Split on top-level = signs
     parts = _split_at_top_level_equals(rest)
 
     if len(parts) < 2:
         return line  # Not an equation, return as-is
 
-    # Check which part is long (usually the middle with many + terms)
-    wrapped_parts = []
-    for i, part in enumerate(parts):
+    # Check total line length - if short enough, don't wrap
+    total_plain_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', line))
+    if total_plain_len <= max_width:
+        return line
+
+    # Build simple multi-line output - just line breaks, no alignment/indentation
+    # Each line is independent and will be centered by the gathered environment
+    output_lines = []
+
+    # First line: the LHS (variable being defined)
+    lhs = parts[0].strip()
+    output_lines.append(prefix + lhs)
+
+    # Remaining parts each get = prefix, broken if too long
+    for part in parts[1:]:
         part = part.strip()
         part_plain_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', part))
 
+        # Check if this part needs to be broken up (long sum)
         if part_plain_len > max_width and '+' in part:
-            # This part needs wrapping
             sub_parts = _split_at_top_level_operator(part, '+')
-            if len(sub_parts) > 2:
-                # Break into groups of 2-3 terms
-                grouped_parts = []
-                current_group = []
-                current_len = 0
-
-                for sp in sub_parts:
-                    sp_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', sp))
-                    if current_len + sp_len + 3 > max_width and current_group:
-                        grouped_parts.append(' + '.join(current_group))
-                        current_group = [sp]
-                        current_len = sp_len
-                    else:
-                        current_group.append(sp)
-                        current_len += sp_len + 3  # +3 for " + "
-
-                if current_group:
-                    grouped_parts.append(' + '.join(current_group))
-
-                if len(grouped_parts) > 1:
-                    # Join groups with line continuation
-                    # Use \qquad (not &\quad) to avoid alignment column issues
-                    # that push content to the right edge of the page
-                    wrapped_part = grouped_parts[0]
-                    for gp in grouped_parts[1:]:
-                        wrapped_part += " \\\\\n\\qquad + " + gp
-                    wrapped_parts.append(wrapped_part)
-                else:
-                    wrapped_parts.append(part)
+            if len(sub_parts) > 1:
+                grouped = _group_terms_by_width(sub_parts, max_width - 10, ' + ')
+                # First group gets =
+                output_lines.append("= " + grouped[0])
+                # Subsequent groups just continue with +
+                for gp in grouped[1:]:
+                    output_lines.append("+ " + gp)
             else:
-                wrapped_parts.append(part)
+                output_lines.append("= " + part)
         else:
-            wrapped_parts.append(part)
+            output_lines.append("= " + part)
 
-    # Reconstruct the equation
-    # Handle first part specially (may have prefix)
-    result = prefix + wrapped_parts[0]
-    for wp in wrapped_parts[1:]:
-        # Check if this part contains line breaks
-        if '\n' in wp:
-            result += " = " + wp
+    return " \\\\\n".join(output_lines)
+
+
+def _group_terms_by_width(terms: list, max_width: int, joiner: str = ' + ') -> list:
+    """Group terms into lines that fit within max_width."""
+    groups = []
+    current_group = []
+    current_len = 0
+
+    for term in terms:
+        term_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', term))
+        joiner_len = len(joiner) if current_group else 0
+
+        if current_len + joiner_len + term_len > max_width and current_group:
+            groups.append(joiner.join(current_group))
+            current_group = [term]
+            current_len = term_len
         else:
-            result += " = " + wp
+            current_group.append(term)
+            current_len += joiner_len + term_len
 
-    return result
+    if current_group:
+        groups.append(joiner.join(current_group))
+
+    return groups
 
 
 def estimate_rendered_width(latex: str) -> int:
