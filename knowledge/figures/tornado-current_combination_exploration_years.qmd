@@ -20,13 +20,13 @@ display_name = "Combination Therapy Exploration Time (Current)"
 
 # Baseline and units
 
-baseline = 13672803.0
+baseline = 13672803.030303031
 
 # Tornado data from sensitivity analysis
 
 drivers = ['SAFE_COMPOUNDS_COUNT', 'CURRENT_TRIALS_PER_YEAR', 'TRIAL_RELEVANT_DISEASES_COUNT']
-impacts_low = [-6249622.0, 3418200.0, -2734561.0]
-impacts_high = [8143560.0, -2278801.0, 2734560.0]
+impacts_low = [-6249621.212121213, 3418200.757575758, -2734560.6060606074]
+impacts_high = [8143560.6060606055, -2278800.5050505064, 2734560.6060606055]
 
 # Convert deltas to absolute values (baseline + delta)
 

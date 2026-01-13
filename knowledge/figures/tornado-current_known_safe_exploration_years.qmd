@@ -20,13 +20,13 @@ display_name = "Known Safe Exploration Time (Current)"
 
 # Baseline and units
 
-baseline = 2878.0
+baseline = 2878.787878787879
 
 # Tornado data from sensitivity analysis
 
 drivers = ['SAFE_COMPOUNDS_COUNT', 'CURRENT_TRIALS_PER_YEAR', 'TRIAL_RELEVANT_DISEASES_COUNT']
-impacts_low = [-757.0, 720.0, -575.0]
-impacts_high = [758.0, -480.0, 576.0]
+impacts_low = [-757.575757575758, 719.6969696969695, -575.757575757576]
+impacts_high = [757.5757575757575, -479.79797979798013, 575.7575757575755]
 
 # Convert deltas to absolute values (baseline + delta)
 

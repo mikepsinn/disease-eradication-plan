@@ -25,8 +25,8 @@ baseline = 20.0
 # Tornado data from sensitivity analysis
 
 drivers = ['VALLEY_OF_DEATH_ATTRITION_PCT', 'CURRENT_DRUG_APPROVALS_PER_YEAR']
-impacts_low = [-8.0, -2.0]
-impacts_high = [7.0, 4.0]
+impacts_low = [-7.5, -2.0]
+impacts_high = [7.5000000000000036, 4.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

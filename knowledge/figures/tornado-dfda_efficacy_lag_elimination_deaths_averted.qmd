@@ -20,13 +20,13 @@ display_name = "Total Deaths from Disease Eradication Delay"
 
 # Baseline and units
 
-baseline = 415852543.0
+baseline = 415852543.5708753
 
 # Tornado data from sensitivity analysis
 
 drivers = ['EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY']
-impacts_low = [-101427450.0, -20792627.0]
-impacts_high = [101427450.0, 20792627.0]
+impacts_low = [-101427449.65143305, -20792627.178543746]
+impacts_high = [101427449.65143299, 20792627.178543806]
 
 # Convert deltas to absolute values (baseline + delta)
 

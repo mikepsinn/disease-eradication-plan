@@ -24,9 +24,9 @@ baseline = 540.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['THALIDOMIDE_CASES_WORLDWIDE', 'THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_POPULATION_SHARE_1960']
-impacts_low = [-180.0, 45.0, -45.0]
-impacts_high = [180.0, -45.0, 45.0]
+drivers = ['THALIDOMIDE_CASES_WORLDWIDE', 'THALIDOMIDE_US_POPULATION_SHARE_1960', 'THALIDOMIDE_MORTALITY_RATE']
+impacts_low = [-180.0, -45.0, 45.0]
+impacts_high = [180.0, 45.0, -44.99999999999994]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -20,13 +20,13 @@ display_name = "Total Exploration Time (Current)"
 
 # Baseline and units
 
-baseline = 15606.0
+baseline = 15606.060606060606
 
 # Tornado data from sensitivity analysis
 
 drivers = ['CURRENT_TRIALS_PER_YEAR', 'TRIAL_RELEVANT_DISEASES_COUNT', 'SAFE_COMPOUNDS_COUNT', 'HUMAN_PROTEIN_CODING_GENES', 'EPIGENETIC_TARGETS_COUNT', 'CELL_THERAPY_APPROACHES']
-impacts_low = [3901.0, -3122.0, -758.0, -606.0, -152.0, -61.0]
-impacts_high = [-2601.0, 3121.0, 757.0, 606.0, 151.0, 90.0]
+impacts_low = [3901.51515151515, -3121.212121212122, -757.575757575758, -606.060606060606, -151.51515151515196, -60.606060606060055]
+impacts_high = [-2601.0101010101007, 3121.212121212122, 757.575757575758, 606.060606060606, 151.51515151515196, 90.90909090909008]
 
 # Convert deltas to absolute values (baseline + delta)
 
