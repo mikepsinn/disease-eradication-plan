@@ -108,7 +108,7 @@
 "treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
   \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
   \ definition\">$27.2B</span>"
-"treaty_annual_funding_latex": "$$\n\\begin{aligned}\nFunding_{ann} \\\\\n&= Spending_{mil,ann}\
+"treaty_annual_funding_latex": "$$\n\\begin{aligned}\nFunding_{treaty} \\\\\n&= Spending_{mil,ann}\
   \ \\times Reduction_{treaty} \\\\\n&= \\$2.72T \\times 1\\% \\\\\n&= \\$27.2B\n\\\
   end{aligned}\n$$"
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_budget_reserve\"\
@@ -131,8 +131,8 @@
   \ definition\">272% (95% CI: 180%-430%)</span>"
 "victory_bond_annual_return_pct_latex": "$$\n\\begin{aligned}\nVictory_{annual} =\
   \ \\frac{Victory_{annual}}{Cost_{camp,total}} = \\frac{\\$2.72B}{\\$1B} = 272\\\
-  %\n\\\\[0.5em]\n\\text{where } Victory_{annual} = Funding_{ann} \\times Funding\
-  \ = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{ann}\
+  %\n\\\\[0.5em]\n\\text{where } Victory_{annual} = Funding_{treaty} \\times Funding\
+  \ = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{treaty}\
   \ = Spending_{mil,ann} \\times Reduction_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\
   \\\\[0.5em]\n\\text{where } Cost_{camp,total} = Campaign_{viral,treaty} + Campaign_{lobbying,treaty}\
   \ + Campaign_{reserve,treaty} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n\
