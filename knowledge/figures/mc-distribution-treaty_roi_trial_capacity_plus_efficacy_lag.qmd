@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Treaty ROI - Full Timeline Shift (PRIMARY) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 28150102.697058443
 p5 = 46623632.931513265
 p50 = 95976806.58529803
 p95 = 144187481.07802042
-display_name = "Treaty ROI - Full Timeline Shift (PRIMARY)"
+display_name = "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput"
 units = "ratio"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Treaty ROI - Full Timeline Shift (PRIMARY)**
+**Simulation Results Summary: Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 28.2M:1 |
 | 90% Confidence Interval | [46.6M:1, 144M:1] |
 
-*The histogram shows the distribution of Treaty ROI - Full Timeline Shift (PRIMARY) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

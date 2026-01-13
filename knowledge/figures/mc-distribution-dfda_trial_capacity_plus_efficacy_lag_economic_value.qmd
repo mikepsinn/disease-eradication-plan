@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Total Economic Value from Full Timeline Shift (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 1.1527357913154946e+16
 p5 = 6.2360737997569064e+16
 p50 = 9.28443364016604e+16
 p95 = 9.72734982003152e+16
-display_name = "Total Economic Value from Full Timeline Shift"
+display_name = "Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Total Economic Value from Full Timeline Shift**
+**Simulation Results Summary: Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $11.5 quadrillion |
 | 90% Confidence Interval | [$62.4 quadrillion, $97.3 quadrillion] |
 
-*The histogram shows the distribution of Total Economic Value from Full Timeline Shift across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Suffering Hours Eliminated from Full Timeline Shift (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 373850902878287.0
 p5 = 1361397290801850.0
 p50 = 2106672702277180.5
 p95 = 2615962251287321.5
-display_name = "Suffering Hours Eliminated from Full Timeline Shift"
+display_name = "Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput"
 units = "hours"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Suffering Hours Eliminated from Full Timeline Shift**
+**Simulation Results Summary: Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 374T |
 | 90% Confidence Interval | [1361T, 2616T] |
 
-*The histogram shows the distribution of Suffering Hours Eliminated from Full Timeline Shift across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
