@@ -92,26 +92,26 @@
   times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B \\\\[0.5em]\n\\text{where\
   \ } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T\
   \ = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict}\
-  \ + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\\
+  \ + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\\
   $2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict}\
-  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human}\
+  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human}\
   \ = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
   \ = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\
   \\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times\
   \ \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror}\
   \ \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times\
-  \ Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct}\
-  \ = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} =\
-  \ 97.7\\%\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct}\
+  \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
+  \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
+  %\n\\end{aligned}\n$$"
 "current_active_trials": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_active_trials\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -210,7 +210,7 @@
   \ | Unit: USD/year | Click to view details, calculation & sources\">$40M (95% CI:\
   \ $27.3M-$55.6M)</a>"
 "dfda_annual_opex_latex": "$$\n\\begin{aligned}\nOPEX_{dFDA} \\\\\n&= Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ \\\\\n&= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n&= \\$40M\n\\end{aligned}\n\
   $$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_benefit_rd_only_annual\"\
@@ -256,7 +256,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -280,7 +280,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -324,7 +324,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -404,7 +404,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -444,7 +444,7 @@
   \ Spending_{trials} \\times Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\\
   [0.5em]\n\\text{where } Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
   \ = 1 - \\frac{\\$929}{\\$41K} = 97.7\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
-  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory}\
+  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory}\
   \ + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\
   \\text{where } Cost_{dFDA,total} = PV_{OPEX} + Cost_{upfront,total} = \\$342M +\
   \ \\$270M = \\$611M \\\\[0.5em]\n\\text{where } PV_{OPEX} = OPEX \\times [(1 - (1\
@@ -481,7 +481,7 @@
   \ | Click to view details, calculation & sources\">0.147% (95% CI: 0.1%-0.204%)</a>"
 "dfda_opex_pct_of_treaty_funding_latex": "$$\n\\begin{aligned}\nOPEX_{pct} = \\frac{OPEX_{dFDA}}{Funding_{treaty}}\
   \ = \\frac{\\$40M}{\\$27.2B} = 0.147\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
-  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory}\
+  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory}\
   \ + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\
   \\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty} = \\$2.72T\
   \ \\times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
@@ -511,7 +511,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -537,7 +537,7 @@
   \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
   \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
   % \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra}\
-  \ \\\\\n&\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M\
+  \ \\\\\n\\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M\
   \ + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Cost_{dFDA,total} = PV_{OPEX}\
   \ + Cost_{upfront,total} = \\$342M + \\$270M = \\$611M \\\\[0.5em]\n\\text{where\
   \ } PV_{OPEX} = OPEX \\times [(1 - (1 + r)^-T) / r] = \\$342M \\\\[0.5em]\n\\text{where\
@@ -555,7 +555,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -589,7 +589,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -623,7 +623,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -657,7 +657,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -693,7 +693,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -725,7 +725,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -758,7 +758,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -803,7 +803,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -835,7 +835,7 @@
   \ \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929}\
   \ = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann}\
   \ - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
-  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory}\
+  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory}\
   \ + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\
   \\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -891,7 +891,7 @@
 "dih_treasury_trial_subsidies_annual_latex": "$$\n\\begin{aligned}\nSubsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -912,7 +912,7 @@
   \ \\frac{Subsidies_{trial,ann}}{Funding_{treaty}} = \\frac{\\$21.7B}{\\$27.2B} =\
   \ 79.9\\% \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann}\
   \ - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
-  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory}\
+  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory}\
   \ + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\
   \\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -1101,23 +1101,23 @@
 "global_annual_direct_indirect_war_cost_latex": "$$\n\\begin{aligned}\nCost_{war,total}\
   \ = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T \\\\\
   [0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total}\
-  \ \\\\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
+  \ \\\\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
   $616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human}\
-  \ + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B +\
+  \ + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B +\
   \ \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat}\
   \ \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where }\
   \ Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\\
   $27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL\
   \ = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T\n\\end{aligned}\n$$"
 "global_annual_environmental_damage_conflict": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_environmental_damage_conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
@@ -1141,7 +1141,7 @@
   \ | Unit: USD/year | Click to view details, calculation & sources\">$2.45T (95%\
   \ CI: $1.31T-$3.75T)</a>"
 "global_annual_human_life_losses_conflict_latex": "$$\n\\begin{aligned}\nLoss_{life,conflict}\
-  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human}\
+  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human}\
   \ = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
   \ = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\
   \\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times\
@@ -1156,7 +1156,7 @@
   \ Click to view details, calculation & sources\">$1.88T (95% CI: $1.37T-$2.47T)</a>"
 "global_annual_infrastructure_destruction_conflict_latex": "$$\n\\begin{aligned}\n\
   Damage_{infra,total} \\\\\n&= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\
-  \\\n&\\quad + Damage_{health} + Damage_{transport} \\\\\n&\\quad + Damage_{water}\
+  \\\n\\qquad + Damage_{health} + Damage_{transport} \\\\\n\\qquad + Damage_{water}\
   \ \\\\\n&= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n&= \\\
   $1.88T\n\\end{aligned}\n$$"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_lost_economic_growth_military_spending\"\
@@ -1192,7 +1192,7 @@
   \ + ENERGY_PRICE + CURRENCY | Unit: USD/year | Click to view details, calculation\
   \ & sources\">$616B (95% CI: $450B-$812B)</a>"
 "global_annual_trade_disruption_conflict_latex": "$$\n\\begin{aligned}\nDisruption_{trade}\
-  \ \\\\\n&= Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ \\\\\n&= Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} \\\\\n&= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n&=\
   \ \\$616B\n\\end{aligned}\n$$"
 "global_annual_veteran_healthcare_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_veteran_healthcare_costs\"\
@@ -1226,7 +1226,7 @@
   \ | Formula: MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year\
   \ | Click to view details, calculation & sources\">$109T (95% CI: $79.8T-$144T)</a>"
 "global_disease_economic_burden_annual_latex": "$$\n\\begin{aligned}\nBurden_{disease}\
-  \ \\\\\n&= Cost_{medical,direct} + Loss_{life,disease} \\\\\n&\\quad + Loss_{productivity}\
+  \ \\\\\n&= Cost_{medical,direct} + Loss_{life,disease} \\\\\n\\qquad + Loss_{productivity}\
   \ \\\\\n&= \\$9.9T + \\$94.2T + \\$5T \\\\\n&= \\$109T\n\\end{aligned}\n$$"
 "global_government_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_government_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"global-government-clinical-trial-spending-estimate\"\
@@ -1298,25 +1298,25 @@
   \ + Spending_{symptom} = \\$11.4T + \\$109T + \\$8.2T = \\$129T \\\\[0.5em]\n\\\
   text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T\
   \ + \\$3.7T = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict}\
-  \ + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\\
+  \ + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\\
   $2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict}\
-  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human}\
+  \ = Cost_{combat,human} + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human}\
   \ = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
   \ = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\
   \\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times\
   \ \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror}\
   \ \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T \\\\[0.5em]\n\\text{where } Burden_{disease} = Cost_{medical,direct} +\
-  \ Loss_{life,disease} \\\\\n&\\quad + Loss_{productivity} = \\$9.9T + \\$94.2T +\
-  \ \\$5T = \\$109T\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Burden_{disease} = Cost_{medical,direct} + Loss_{life,disease}\
+  \ \\\\\n\\qquad + Loss_{productivity} = \\$9.9T + \\$94.2T + \\$5T = \\$109T\n\\\
+  end{aligned}\n$$"
 "military_to_government_clinical_trials_spending_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-military_to_government_clinical_trials_spending_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Ratio of global military spending to government\
@@ -1363,22 +1363,22 @@
   \ = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B \\\
   \\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect}\
   \ = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct}\
-  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade}\
+  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade}\
   \ + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\
   \\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} \\\
-  \\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
+  \\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
   \\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\\
   times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state}\
   \ \\times VSL = 2{,}700 \\times \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human}\
   \ = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\\
   text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy}\
-  \ \\\\\n&\\quad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
+  \ \\\\\n\\qquad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
   \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where\
-  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad\
+  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad\
   \ + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B +\
   \ \\$187B = \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env}\
-  \ + Loss_{growth,mil} \\\\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
-  \ \\\\\n&\\quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
+  \ + Loss_{growth,mil} \\\\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
+  \ \\\\\n\\qquad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
   \ + \\$200B = \\$3.7T\n\\end{aligned}\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_conflict_reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
@@ -1393,24 +1393,24 @@
   \ = \\$11.4T \\times 1\\% = \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total}\
   \ = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T \\\\\
   [0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total}\
-  \ \\\\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
+  \ \\\\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
   $616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human}\
-  \ + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B +\
+  \ + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B +\
   \ \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat}\
   \ \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where }\
   \ Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\\
   $27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL\
   \ = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
-  \ Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty}\
+  \ = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{aligned}\n$$"
 "peace_dividend_direct_fiscal_savings": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_direct_fiscal_savings\"\
   \ class=\"parameter-link\" data-source-ref=\"sipri2024\" data-source-type=\"definition\"\
   \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
@@ -1649,22 +1649,22 @@
   \ = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B \\\
   \\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect}\
   \ = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct}\
-  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade}\
+  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade}\
   \ + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\
   \\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} \\\
-  \\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
+  \\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
   \\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\\
   times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state}\
   \ \\times VSL = 2{,}700 \\times \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human}\
   \ = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\\
   text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy}\
-  \ \\\\\n&\\quad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
+  \ \\\\\n\\qquad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
   \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where\
-  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad\
+  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad\
   \ + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B +\
   \ \\$187B = \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env}\
-  \ + Loss_{growth,mil} \\\\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
-  \ \\\\\n&\\quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
+  \ + Loss_{growth,mil} \\\\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
+  \ \\\\\n\\qquad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
   \ + \\$200B = \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials}\
   \ \\times Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where\
   \ } Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\\
@@ -1700,7 +1700,7 @@
   \ | ✓ High confidence | Formula: REFERENDUM + LOBBYING + RESERVE | Unit: USD | Click\
   \ to view details, calculation & sources\">$1B (95% CI: $632M-$1.51B)</a>"
 "treaty_campaign_total_cost_latex": "$$\n\\begin{aligned}\nCost_{campaign} \\\\\n\
-  &= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  &= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ \\\\\n&= \\$250M + \\$650M + \\$100M \\\\\n&= \\$1B\n\\end{aligned}\n$$"
 "treaty_campaign_viral_referendum_base_case": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_viral_referendum_base_case\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
@@ -1735,7 +1735,7 @@
 "treaty_cost_per_daly_trial_capacity_plus_efficacy_lag_latex": "$$\n\\begin{aligned}\n\
   Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B}\
   \ = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base}\
-  \ + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve} = \\$250M + \\$650M +\
+  \ + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve} = \\$250M + \\$650M +\
   \ \\$100M = \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\\
   times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212\
   \ = 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 +\
@@ -1750,7 +1750,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -1774,7 +1774,7 @@
   frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\$0.00177}{1\\%} = \\$0.177 \\\\\
   [0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}}\
   \ = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max}\
   \ = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\\
   times 92.6\\% \\times 212 = 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel}\
@@ -1789,7 +1789,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -1828,7 +1828,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -1837,7 +1837,7 @@
   \ = \\$27.2B \\times 10\\% = \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{political,ann}\
   \ = Funding_{treaty} \\times Pct_{political} = \\$27.2B \\times 10\\% = \\$2.72B\
   \ \\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty}\
-  \ \\\\\n&\\quad + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n\
+  \ \\\\\n\\qquad + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n\
   $$"
 "treaty_expected_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
@@ -1850,7 +1850,7 @@
   \\text{where } E[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\\
   $0.00177}{1\\%} = \\$0.177 \\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}}\
   \ = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max}\
   \ = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\\
   times 92.6\\% \\times 212 = 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel}\
@@ -1865,7 +1865,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -1888,26 +1888,26 @@
   \ \\$11.4T \\times 1\\% = \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} =\
   \ Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\
   \\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} \\\
-  \\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B\
+  \\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B\
   \ + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human}\
-  \ + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B +\
+  \ + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B +\
   \ \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat}\
   \ \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where }\
   \ Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\\
   $27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL\
   \ = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times\
-  \ Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct}\
-  \ = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} =\
-  \ 97.7\\%\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct}\
+  \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
+  \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
+  %\n\\end{aligned}\n$$"
 "treaty_recurring_benefits_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_recurring_benefits_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
@@ -1923,22 +1923,22 @@
   \ = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B \\\
   \\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect}\
   \ = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct}\
-  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade}\
+  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade}\
   \ + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\
   \\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} \\\
-  \\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
+  \\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
   \\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\\
   times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state}\
   \ \\times VSL = 2{,}700 \\times \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human}\
   \ = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\\
   text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy}\
-  \ \\\\\n&\\quad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
+  \ \\\\\n\\qquad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
   \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where\
-  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad\
+  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad\
   \ + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B +\
   \ \\$187B = \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env}\
-  \ + Loss_{growth,mil} \\\\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
-  \ \\\\\n&\\quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
+  \ + Loss_{growth,mil} \\\\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
+  \ \\\\\n\\qquad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
   \ + \\$200B = \\$3.7T\n\\end{aligned}\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
@@ -1968,7 +1968,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -1979,7 +1979,7 @@
   \ Funding_{political,ann} = Funding_{treaty} \\times Pct_{political} = \\$27.2B\
   \ \\times 10\\% = \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil}\
   \ \\times Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B \\\\[0.5em]\n\\text{where\
-  \ } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad\
+  \ } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad\
   \ + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs\"\
@@ -1990,11 +1990,11 @@
   \ $185M-$434M)</a>"
 "treaty_total_annual_costs_latex": "$$\n\\begin{aligned}\nCost_{treaty,ann} = OPEX_{dFDA}\
   \ + Cost_{camp,amort} = \\$40M + \\$250M = \\$290M \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
-  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory}\
+  \ = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory}\
   \ + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\
   \\text{where } Cost_{camp,amort} = \\frac{Cost_{campaign}}{T_{campaign}} = \\frac{\\\
   $1B}{4} = \\$250M \\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base}\
-  \ + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve} = \\$250M + \\$650M +\
+  \ + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve} = \\$250M + \\$650M +\
   \ \\$100M = \\$1B\n\\end{aligned}\n$$"
 "treaty_vs_bed_nets_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_bed_nets_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
@@ -2006,7 +2006,7 @@
   frac{Cost_{nets}}{Cost_{treaty,DALY}} = \\frac{\\$89}{\\$0.00177} = 50{,}300 \\\\\
   [0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}}\
   \ = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max}\
   \ = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\\
   times 92.6\\% \\times 212 = 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel}\
@@ -2021,7 +2021,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -2067,7 +2067,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -2091,7 +2091,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -2104,7 +2104,7 @@
   \ = Spending_{mil} \\times Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B \\\
   \\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}}\
   \ = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max}\
   \ = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\\
   times 92.6\\% \\times 212 = 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel}\
@@ -2119,7 +2119,7 @@
   frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.7B}{\\$929} = 23.4M\
   \ \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA}\
   \ = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform}\
-  \ + Cost_{staff} + Cost_{infra} \\\\\n&\\quad + Cost_{regulatory} + Cost_{community}\
+  \ + Cost_{staff} + Cost_{infra} \\\\\n\\qquad + Cost_{regulatory} + Cost_{community}\
   \ = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M \\\\[0.5em]\n\\text{where }\
   \ Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann}\
   \ = \\$27.2B - \\$2.72B - \\$2.72B = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -2144,7 +2144,7 @@
   \ = \\frac{\\$21.7B}{\\$929} = 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
   \ = Treasury_{RD,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.7B \\\\[0.5em]\n\
   \\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n\
-  &\\quad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
+  \\qquad + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M\
   \ + \\$2M = \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} = Funding_{treaty}\
   \ - Payout_{bond,ann} - Funding_{political,ann} = \\$27.2B - \\$2.72B - \\$2.72B\
   \ = \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times\
@@ -2240,7 +2240,7 @@
   \ = Funding_{treaty} \\times Pct_{bond} = \\$27.2B \\times 10\\% = \\$2.72B \\\\\
   [0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty}\
   \ = \\$2.72T \\times 1\\% = \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n$$"
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of captured dividend funding VICTORY Incentive Alignment Bonds (10%) | Unit: rate\

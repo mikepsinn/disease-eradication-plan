@@ -20,23 +20,23 @@
 "global_annual_direct_indirect_war_cost_latex": "$$\n\\begin{aligned}\nCost_{war,total}\
   \ = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T \\\\\
   [0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total}\
-  \ \\\\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
+  \ \\\\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\\
   $616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human}\
-  \ + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B +\
+  \ + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B +\
   \ \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat}\
   \ \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where }\
   \ Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\\
   $27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL\
   \ = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T\n\\end{aligned}\n$$"
 "global_household_wealth_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"cs-global-wealth-report-2023\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total global household wealth (2022/2023\
@@ -56,26 +56,26 @@
   \ \\$11.4T \\times 1\\% = \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} =\
   \ Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\
   \\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} \\\
-  \\\n&\\quad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B\
+  \\\n\\qquad + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B\
   \ + \\$2.72T = \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human}\
-  \ + Cost_{state,human} \\\\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B +\
+  \ + Cost_{state,human} \\\\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B +\
   \ \\$83B = \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat}\
   \ \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where }\
   \ Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\\
   $27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL\
   \ = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total}\
-  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n&\\quad + Damage_{health}\
+  \ = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n\\qquad + Damage_{health}\
   \ + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B\
   \ + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade}\
-  \ = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad + Disruption_{shipping}\
+  \ = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad + Disruption_{shipping}\
   \ + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B \\\\\
   [0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} \\\
-  \\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n&\\\
-  quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B =\
-  \ \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times\
-  \ Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct}\
-  \ = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} =\
-  \ 97.7\\%\n\\end{aligned}\n$$"
+  \\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} \\\\\n\\qquad\
+  \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct}\
+  \ = \\$60B \\times 97.7\\% = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} =\
+  \ 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\\
+  %\n\\end{aligned}\n$$"
 "iab_political_incentive_funding_pct": "<span class=\"parameter-definition\" title=\"\
   Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for\
   \ political incentives (independent expenditures/PACs, post-office fellowships,\
@@ -90,22 +90,22 @@
   \ = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B \\\
   \\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect}\
   \ = \\$7.66T + \\$3.7T = \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct}\
-  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n&\\quad + Disruption_{trade}\
+  \ = Loss_{life,conflict} + Damage_{infra,total} \\\\\n\\qquad + Disruption_{trade}\
   \ + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T \\\\[0.5em]\n\
   \\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} \\\
-  \\\n&\\quad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
+  \\\n\\qquad + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T \\\\[0.5em]\n\
   \\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\\
   times \\$10M = \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state}\
   \ \\times VSL = 2{,}700 \\times \\$10M = \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human}\
   \ = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B \\\\[0.5em]\n\\\
   text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy}\
-  \ \\\\\n&\\quad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
+  \ \\\\\n\\qquad + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B\
   \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T \\\\[0.5em]\n\\text{where\
-  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n&\\quad\
+  \ } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} \\\\\n\\qquad\
   \ + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B +\
   \ \\$187B = \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env}\
-  \ + Loss_{growth,mil} \\\\\n&\\quad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
-  \ \\\\\n&\\quad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
+  \ + Loss_{growth,mil} \\\\\n\\qquad + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee}\
+  \ \\\\\n\\qquad + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B\
   \ + \\$200B = \\$3.7T\n\\end{aligned}\n$$"
 "treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
   \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
@@ -136,7 +136,7 @@
   \ = Funding_{treaty} \\times Pct_{bond} = \\$27.2B \\times 10\\% = \\$2.72B \\\\\
   [0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty}\
   \ = \\$2.72T \\times 1\\% = \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{campaign}\
-  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n&\\quad + Budget_{reserve}\
+  \ = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n\\qquad + Budget_{reserve}\
   \ = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{aligned}\n$$"
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of captured dividend funding VICTORY Incentive Alignment Bonds (10%) | Unit: rate\
