@@ -86,7 +86,11 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
     """
     latex = latex.strip()
 
-    # Skip if already wrapped or using environments
+    # If already using aligned environment, wrap WITHIN it
+    if '\\begin{aligned}' in latex:
+        return _wrap_within_aligned(latex, max_width)
+    
+    # Skip other environments (array, matrix, etc.) - too complex
     if '\\begin{' in latex:
         return latex
 
@@ -239,6 +243,152 @@ def _break_long_expression(expr: str, max_width: int, break_on: str = '+') -> st
     for line in lines[1:-1]:
         result += "&" + line.lstrip() + " \\\\\n"
     result += "&" + lines[-1].lstrip()
+
+    return result
+
+
+def _wrap_within_aligned(latex: str, max_width: int) -> str:
+    r"""
+    Wrap long lines WITHIN an existing aligned environment.
+
+    The generate_expanded_latex function produces equations with \begin{aligned}
+    but individual lines (especially "where" clauses) can still be very long.
+    This function breaks those long lines at + signs.
+
+    Args:
+        latex: LaTeX string containing \begin{aligned}...\end{aligned}
+        max_width: Target maximum width per line
+
+    Returns:
+        LaTeX with long lines broken into multiple lines
+    """
+    # Extract content between \begin{aligned} and \end{aligned}
+    # Also capture any prefix (like $$\n) and suffix (like \n$$)
+    match = re.search(r'(.*?)(\\begin\{aligned\})(.*?)(\\end\{aligned\})(.*)', latex, re.DOTALL)
+    if not match:
+        return latex
+
+    prefix = match.group(1)      # e.g., "$$\n"
+    begin_tag = match.group(2)   # "\begin{aligned}"
+    content = match.group(3)      # content inside aligned
+    end_tag = match.group(4)     # "\end{aligned}"
+    suffix = match.group(5)      # e.g., "\n$$"
+
+    # Split into lines (aligned environment uses \\ for line breaks)
+    # Need to handle both \\ and \\[spacing] variants
+    lines = re.split(r'\\\\(?:\[[\d.]+em\])?', content)
+
+    wrapped_lines = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+
+        # Check if this line is too long
+        # Strip LaTeX commands for length estimation
+        plain_length = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', line))
+
+        if plain_length <= max_width:
+            wrapped_lines.append(line)
+            continue
+
+        # Line is too long - try to break it
+        # Common pattern: "\\text{where } X = A + B + C + D = result"
+        # We want to break after A + B and continue with + C + D
+
+        # Check if it's a "where" clause with a sum
+        if '+' in line and plain_length > max_width:
+            wrapped_line = _wrap_single_aligned_line(line, max_width)
+            wrapped_lines.append(wrapped_line)
+        else:
+            # Can't wrap effectively, keep as-is
+            wrapped_lines.append(line)
+
+    # Reconstruct the aligned environment
+    # Use \\[0.5em] for spacing between major lines
+    result_content = " \\\\[0.5em]\n".join(wrapped_lines)
+    result = f"{prefix}{begin_tag}\n{result_content}\n{end_tag}{suffix}"
+
+    return result
+
+
+def _wrap_single_aligned_line(line: str, max_width: int) -> str:
+    r"""
+    Wrap a single line from an aligned environment that contains sums.
+
+    Handles patterns like:
+    - "\\text{where } X = A + B + C = result"
+    - "X &= A + B + C = result"
+
+    Args:
+        line: Single line from aligned environment
+        max_width: Target width
+
+    Returns:
+        Wrapped line with continuation markers
+    """
+    # Preserve leading alignment markers and "where"
+    prefix_match = re.match(r'^(&?\s*(?:\\text\{where\s*\}\s*)?)', line)
+    prefix = prefix_match.group(1) if prefix_match else ""
+    rest = line[len(prefix):]
+
+    # Find the equation structure: LHS = middle terms = RHS
+    # Split on top-level = signs
+    parts = _split_at_top_level_equals(rest)
+
+    if len(parts) < 2:
+        return line  # Not an equation, return as-is
+
+    # Check which part is long (usually the middle with many + terms)
+    wrapped_parts = []
+    for i, part in enumerate(parts):
+        part = part.strip()
+        part_plain_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', part))
+
+        if part_plain_len > max_width and '+' in part:
+            # This part needs wrapping
+            sub_parts = _split_at_top_level_operator(part, '+')
+            if len(sub_parts) > 2:
+                # Break into groups of 2-3 terms
+                grouped_parts = []
+                current_group = []
+                current_len = 0
+
+                for sp in sub_parts:
+                    sp_len = len(re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', 'X', sp))
+                    if current_len + sp_len + 3 > max_width and current_group:
+                        grouped_parts.append(' + '.join(current_group))
+                        current_group = [sp]
+                        current_len = sp_len
+                    else:
+                        current_group.append(sp)
+                        current_len += sp_len + 3  # +3 for " + "
+
+                if current_group:
+                    grouped_parts.append(' + '.join(current_group))
+
+                if len(grouped_parts) > 1:
+                    # Join groups with line continuation
+                    wrapped_part = grouped_parts[0]
+                    for gp in grouped_parts[1:]:
+                        wrapped_part += " \\\\\n&\\quad + " + gp
+                    wrapped_parts.append(wrapped_part)
+                else:
+                    wrapped_parts.append(part)
+            else:
+                wrapped_parts.append(part)
+        else:
+            wrapped_parts.append(part)
+
+    # Reconstruct the equation
+    # Handle first part specially (may have prefix)
+    result = prefix + wrapped_parts[0]
+    for wp in wrapped_parts[1:]:
+        # Check if this part contains line breaks
+        if '\n' in wp:
+            result += " = " + wp
+        else:
+            result += " = " + wp
 
     return result
 
