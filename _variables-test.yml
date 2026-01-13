@@ -10,11 +10,11 @@
   \ $1.40K] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
   \ & sources\">$929 (95% CI: $929-$1.40K)</a>"
 "adaptable_trial_cost_per_patient_cite": "@pragmatic-trials-cost-advantage"
-"dfda_annual_opex_latex": "$$\n\\begin{aligned}\nOPEX_{dFDA} \\\\\n&= Cost_{platform}\
+"dfda_annual_opex_latex": "$$\n\\begin{gathered}\nOPEX_{dFDA} \\\\\n= Cost_{platform}\
   \ + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\
-  \n&= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n&= \\$40M\n\\end{aligned}\n$$"
-"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{RD} \\\\\n&= \\sum_{t=1}^{10}\
-  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{aligned}\n\
+  \n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M\n\\end{gathered}\n$$"
+"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{gathered}\nNPV_{RD} \\\\\n= \\sum_{t=1}^{10}\
+  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{gathered}\n\
   $$"
 "dih_treasury_trial_subsidies_annual_latex": "$$\n\\begin{gathered}\nSubsidies_{trial,ann}\
   \ \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B\

@@ -77,9 +77,9 @@
   \ combinations × diseases). Standard in oncology, HIV, cardiology. | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: DRUG_PAIRS × DISEASES | Unit: combinations\
   \ | Click to view details, calculation & sources\">45.1B combinations</a>"
-"combination_therapy_disease_space_latex": "$$\n\\begin{aligned}\nSpace_{combo} \\\
-  \\\n&= N_{combo} \\times N_{diseases,trial} \\\\\n&= 45.1M \\times 1{,}000 \\\\\n\
-  &= 45.1B\n\\end{aligned}\n$$"
+"combination_therapy_disease_space_latex": "$$\n\\begin{gathered}\nSpace_{combo} \\\
+  \\\n= N_{combo} \\times N_{diseases,trial} \\\\\n= 45.1M \\times 1{,}000 \\\\\n\
+  = 45.1B\n\\end{gathered}\n$$"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
@@ -163,9 +163,9 @@
   \ patients) | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS\
   \ | Unit: rate | Click to view details, calculation & sources\">0.0792% (95% CI:\
   \ 0.0761%-0.0819%)</a>"
-"current_patient_participation_rate_latex": "$$\n\\begin{aligned}\nRate_{part} \\\\\
-  \n&= \\frac{Slots_{curr}}{N_{patients}} \\\\\n&= \\frac{1.9M}{2.4B} \\\\\n&= 0.0792\\\
-  %\n\\end{aligned}\n$$"
+"current_patient_participation_rate_latex": "$$\n\\begin{gathered}\nRate_{part} \\\
+  \\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\\
+  %\n\\end{gathered}\n$$"
 "current_trial_abandonment_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_abandonment_rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-abandonment-rate\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Current trial abandonment rate (40%\
@@ -212,9 +212,9 @@
   \ | Formula: PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY\
   \ | Unit: USD/year | Click to view details, calculation & sources\">$40M (95% CI:\
   \ $27.3M-$55.6M)</a>"
-"dfda_annual_opex_latex": "$$\n\\begin{aligned}\nOPEX_{dFDA} \\\\\n&= Cost_{platform}\
+"dfda_annual_opex_latex": "$$\n\\begin{gathered}\nOPEX_{dFDA} \\\\\n= Cost_{platform}\
   \ + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\
-  \n&= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n&= \\$40M\n\\end{aligned}\n$$"
+  \n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M\n\\end{gathered}\n$$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_benefit_rd_only_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
@@ -369,9 +369,9 @@
   \ ~7.9%). | Calculated from 2 inputs | ~ Medium confidence | Formula: ANNUAL_DEATHS\
   \ × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to\
   \ view details, calculation & sources\">416M deaths (95% CI: 225M deaths-630M deaths)</a>"
-"dfda_efficacy_lag_elimination_deaths_averted_latex": "$$\n\\begin{aligned}\nDeaths_{lag}\
-  \ \\\\\n&= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\\
-  _DEATH\\_PCT \\\\\n&= 416M\n\\end{aligned}\n$$"
+"dfda_efficacy_lag_elimination_deaths_averted_latex": "$$\n\\begin{gathered}\nDeaths_{lag}\
+  \ \\\\\n= ANNUAL\\_DEATHS \\times EFFICACY\\_LAG\\_YEARS \\times EVENTUALLY\\_AVOIDABLE\\\
+  _DEATH\\_PCT \\\\\n= 416M\n\\end{gathered}\n$$"
 "dfda_efficacy_lag_elimination_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_economic_value\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
@@ -441,8 +441,8 @@
   \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: SUM[Savings × adoption(t) / (1+r)^t] for t=1..10 |\
   \ Unit: USD | Click to view details, calculation & sources\">$389B (95% CI: $327B-$485B)</a>"
-"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{aligned}\nNPV_{RD} \\\\\n&= \\sum_{t=1}^{10}\
-  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{aligned}\n\
+"dfda_npv_benefit_rd_only_latex": "$$\n\\begin{gathered}\nNPV_{RD} \\\\\n= \\sum_{t=1}^{10}\
+  \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{gathered}\n\
   $$"
 "dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
@@ -486,9 +486,9 @@
   \ costs (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit:\
   \ USD | Click to view details, calculation & sources\">$270M (95% CI: $181M-$380M)</a>"
-"dfda_npv_upfront_cost_total_latex": "$$\n\\begin{aligned}\nCost_{upfront,total} \\\
-  \\\n&= Cost_{upfront} + Cost_{DIH,init} \\\\\n&= \\$40M + \\$230M \\\\\n&= \\$270M\n\
-  \\end{aligned}\n$$"
+"dfda_npv_upfront_cost_total_latex": "$$\n\\begin{gathered}\nCost_{upfront,total}\
+  \ \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\
+  \\end{gathered}\n$$"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_pct_of_treaty_funding\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
@@ -808,9 +808,9 @@
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
   \ / DFDA_PRAGMATIC_COST | Unit: multiplier | Click to view details, calculation\
   \ & sources\">44.1x (95% CI: 39.4x-89.1x)</a>"
-"dfda_trial_cost_reduction_factor_latex": "$$\n\\begin{aligned}\nk_{reduce} \\\\\n\
-  &= \\frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\\\\n&= \\frac{\\$41K}{\\$929} \\\\\
-  \n&= 44.1\n\\end{aligned}\n$$"
+"dfda_trial_cost_reduction_factor_latex": "$$\n\\begin{gathered}\nk_{reduce} \\\\\n\
+  = \\frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$41K}{\\$929} \\\\\n\
+  = 44.1\n\\end{gathered}\n$$"
 "dfda_trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial cost reduction\
@@ -818,9 +818,9 @@
   \ Calculated from 2 inputs | ✓ High confidence | Formula: 1 - (DFDA_COST / TRADITIONAL_COST)\
   \ | Unit: percentage | Click to view details, calculation & sources\">97.7% (95%\
   \ CI: 97.5%-98.9%)</a>"
-"dfda_trial_cost_reduction_pct_latex": "$$\n\\begin{aligned}\nReduce_{pct} \\\\\n\
-  &= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n&= 1 - \\frac{\\$929}{\\\
-  $41K} \\\\\n&= 97.7\\%\n\\end{aligned}\n$$"
+"dfda_trial_cost_reduction_pct_latex": "$$\n\\begin{gathered}\nReduce_{pct} \\\\\n\
+  = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K}\
+  \ \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trials_per_year_capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Maximum trials per year possible with trial capacity\
@@ -972,9 +972,9 @@
   \ disease deaths to 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
   \ ÷ 911_DEATHS | Unit: ratio | Click to view details, calculation & sources\">18.4k:1\
   \ (95% CI: 15.6k:1-21.1k:1)</a>"
-"disease_vs_terrorism_deaths_ratio_latex": "$$\n\\begin{aligned}\nRatio_{dis:terror}\
-  \ \\\\\n&= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n&= \\frac{55M}{3{,}000}\
-  \ \\\\\n&= 18{,}400\n\\end{aligned}\n$$"
+"disease_vs_terrorism_deaths_ratio_latex": "$$\n\\begin{gathered}\nRatio_{dis:terror}\
+  \ \\\\\n= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n= \\frac{55M}{3{,}000}\
+  \ \\\\\n= 18{,}400\n\\end{gathered}\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_war_deaths_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
@@ -994,9 +994,9 @@
   \ from 1 input | ~ Medium confidence | Formula: RARE_DISEASES_COUNT_GLOBAL × 0.95\
   \ | Unit: diseases | Click to view details, calculation & sources\">6.65k diseases\
   \ (95% CI: 5.70k diseases-8.24k diseases)</a>"
-"diseases_without_effective_treatment_latex": "$$\n\\begin{aligned}\nN_{untreated}\
-  \ \\\\\n&= N_{rare} \\times 0.95 \\\\\n&= 7{,}000 \\times 0.95 \\\\\n&= 6{,}650\n\
-  \\end{aligned}\n$$"
+"diseases_without_effective_treatment_latex": "$$\n\\begin{gathered}\nN_{untreated}\
+  \ \\\\\n= N_{rare} \\times 0.95 \\\\\n= 7{,}000 \\times 0.95 \\\\\n= 6{,}650\n\\\
+  end{gathered}\n$$"
 "drug_cost_increase_1980s_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_1980s_to_current_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
@@ -1004,9 +1004,9 @@
   \ | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S\
   \ | Unit: ratio | Click to view details, calculation & sources\">13.4:1 (95% CI:\
   \ 11.9:1-14.7:1)</a>"
-"drug_cost_increase_1980s_to_current_multiplier_latex": "$$\n\\begin{aligned}\nk_{cost,80s}\
-  \ \\\\\n&= \\frac{Cost_{dev,curr}}{Cost_{dev,80s}} \\\\\n&= \\frac{\\$2.6B}{\\$194M}\
-  \ \\\\\n&= 13.4\n\\end{aligned}\n$$"
+"drug_cost_increase_1980s_to_current_multiplier_latex": "$$\n\\begin{gathered}\nk_{cost,80s}\
+  \ \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{dev,80s}} \\\\\n= \\frac{\\$2.6B}{\\$194M}\
+  \ \\\\\n= 13.4\n\\end{gathered}\n$$"
 "drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_pre1962_to_current_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-baily-1972\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
@@ -1014,9 +1014,9 @@
   \ confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD\
   \ | Unit: ratio | Click to view details, calculation & sources\">105:1 (95% CI:\
   \ 90.6:1-119:1)</a>"
-"drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\begin{aligned}\n\
-  k_{cost,pre62} \\\\\n&= \\frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\\\\n&= \\frac{\\\
-  $2.6B}{\\$24.7M} \\\\\n&= 105\n\\end{aligned}\n$$"
+"drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\begin{gathered}\n\
+  k_{cost,pre62} \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\\\\n= \\frac{\\\
+  $2.6B}{\\$24.7M} \\\\\n= 105\n\\end{gathered}\n$$"
 "drug_development_cost_1980s": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_development_cost_1980s\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
@@ -1030,9 +1030,9 @@
   \ drug-disease combinations using existing safe compounds | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: SAFE_COMPOUNDS × DISEASES | Unit: combinations\
   \ | Click to view details, calculation & sources\">9.50M combinations</a>"
-"drug_disease_combinations_possible_latex": "$$\n\\begin{aligned}\nN_{combos} \\\\\
-  \n&= N_{safe} \\times N_{diseases,trial} \\\\\n&= 9{,}500 \\times 1{,}000 \\\\\n\
-  &= 9.5M\n\\end{aligned}\n$$"
+"drug_disease_combinations_possible_latex": "$$\n\\begin{gathered}\nN_{combos} \\\\\
+  \n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n=\
+  \ 9.5M\n\\end{gathered}\n$$"
 "drug_repurposing_success_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_repurposing_success_rate\"\
   \ class=\"parameter-link\" data-source-ref=\"drug-repurposing-rate\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Percentage of drugs that gain at least\
@@ -1115,9 +1115,9 @@
   \ from 3 inputs | ✓ High confidence | Formula: COMBAT + TERROR + STATE_VIOLENCE\
   \ | Unit: deaths/year | Click to view details, calculation & sources\">245k deaths/year\
   \ (95% CI: 194k deaths/year-302k deaths/year)</a>"
-"global_annual_conflict_deaths_total_latex": "$$\n\\begin{aligned}\nDeaths_{conflict}\
-  \ \\\\\n&= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\\\\n&= 234{,}000\
-  \ + 2{,}700 + 8{,}300 \\\\\n&= 245{,}000\n\\end{aligned}\n$$"
+"global_annual_conflict_deaths_total_latex": "$$\n\\begin{gathered}\nDeaths_{conflict}\
+  \ \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\\\\n= 234{,}000 +\
+  \ 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}\n$$"
 "global_annual_daly_burden": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_daly_burden\"\
   \ class=\"parameter-link\" data-source-ref=\"ihme-gbd-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Global annual\
@@ -1173,9 +1173,9 @@
   \ state violence deaths (deaths × VSL) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: STATE_DEATHS × VSL  | Unit: USD/year | Click to view details, calculation\
   \ & sources\">$27B (95% CI: $12B-$48.4B)</a>"
-"global_annual_human_cost_state_violence_latex": "$$\n\\begin{aligned}\nCost_{state,human}\
-  \ \\\\\n&= Deaths_{state} \\times VSL \\\\\n&= 2{,}700 \\times \\$10M \\\\\n&= \\\
-  $27B\n\\end{aligned}\n$$"
+"global_annual_human_cost_state_violence_latex": "$$\n\\begin{gathered}\nCost_{state,human}\
+  \ \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B\n\
+  \\end{gathered}\n$$"
 "global_annual_human_life_losses_conflict": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_human_life_losses_conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1198,11 +1198,10 @@
   \ education, healthcare) | Calculated from 6 inputs | ✓ High confidence | Formula:\
   \ TRANSPORT + ENERGY + COMMS + WATER + EDUCATION + HEALTHCARE | Unit: USD/year |\
   \ Click to view details, calculation & sources\">$1.88T (95% CI: $1.37T-$2.47T)</a>"
-"global_annual_infrastructure_destruction_conflict_latex": "$$\n\\begin{aligned}\n\
-  Damage_{infra,total} \\\\\n&= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\
-  \\\n+ Damage_{health} + Damage_{transport} + Damage_{water} \\\\\n&= \\$298B + \\\
-  $234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n&= \\$1.88T\n\\end{aligned}\n\
-  $$"
+"global_annual_infrastructure_destruction_conflict_latex": "$$\n\\begin{gathered}\n\
+  Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\
+  \n+ Damage_{health} + Damage_{transport} + Damage_{water} \\\\\n= \\$298B + \\$234B\
+  \ + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T\n\\end{gathered}\n$$"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_lost_economic_growth_military_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"disparity-ratio-weapons-vs-cures\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lost economic\
@@ -1235,10 +1234,10 @@
   \ | Calculated from 4 inputs | ✓ High confidence | Formula: SHIPPING + SUPPLY_CHAIN\
   \ + ENERGY_PRICE + CURRENCY | Unit: USD/year | Click to view details, calculation\
   \ & sources\">$616B (95% CI: $450B-$812B)</a>"
-"global_annual_trade_disruption_conflict_latex": "$$\n\\begin{aligned}\nDisruption_{trade}\
-  \ \\\\\n&= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping}\
-  \ + Disruption_{supply} \\\\\n&= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n&=\
-  \ \\$616B\n\\end{aligned}\n$$"
+"global_annual_trade_disruption_conflict_latex": "$$\n\\begin{gathered}\nDisruption_{trade}\
+  \ \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping}\
+  \ + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\\
+  $616B\n\\end{gathered}\n$$"
 "global_annual_veteran_healthcare_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_veteran_healthcare_costs\"\
   \ class=\"parameter-link\" data-source-ref=\"veteran-healthcare-cost-projections\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual veteran\
@@ -1269,9 +1268,9 @@
   \ (medical + productivity + mortality) | Calculated from 3 inputs | ✓ High confidence\
   \ | Formula: MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year\
   \ | Click to view details, calculation & sources\">$109T (95% CI: $79.8T-$144T)</a>"
-"global_disease_economic_burden_annual_latex": "$$\n\\begin{aligned}\nBurden_{disease}\
-  \ \\\\\n&= Cost_{medical,direct} + Loss_{life,disease} \\\\\n+ Loss_{productivity}\
-  \ \\\\\n&= \\$9.9T + \\$94.2T + \\$5T \\\\\n&= \\$109T\n\\end{aligned}\n$$"
+"global_disease_economic_burden_annual_latex": "$$\n\\begin{gathered}\nBurden_{disease}\
+  \ \\\\\n= Cost_{medical,direct} + Loss_{life,disease} \\\\\n+ Loss_{productivity}\
+  \ \\\\\n= \\$9.9T + \\$94.2T + \\$5T \\\\\n= \\$109T\n\\end{gathered}\n$$"
 "global_government_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_government_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"global-government-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global government\
@@ -1370,12 +1369,12 @@
   \ clinical trials spending | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING | Unit: ratio | Click to view\
   \ details, calculation & sources\">604:1 (95% CI: 453:1-894:1)</a>"
-"military_to_government_clinical_trials_spending_ratio_latex": "$$\n\\begin{aligned}\n\
-  Ratio_{mil:gov} \\\\\n&= \\frac{Spending_{mil}}{Spending_{trials,gov}} \\\\\n&=\
-  \ \\frac{\\$2.72T}{\\$4.5B} \\\\\n&= 604\n\\end{aligned}\n$$"
-"military_vs_medical_research_ratio_latex": "$$\n\\begin{aligned}\nRatio_{mil:RD}\
-  \ \\\\\n&= \\frac{Spending_{mil}}{Spending_{RD}} \\\\\n&= \\frac{\\$2.72T}{\\$67.5B}\
-  \ \\\\\n&= 40.3\n\\end{aligned}\n$$"
+"military_to_government_clinical_trials_spending_ratio_latex": "$$\n\\begin{gathered}\n\
+  Ratio_{mil:gov} \\\\\n= \\frac{Spending_{mil}}{Spending_{trials,gov}} \\\\\n= \\\
+  frac{\\$2.72T}{\\$4.5B} \\\\\n= 604\n\\end{gathered}\n$$"
+"military_vs_medical_research_ratio_latex": "$$\n\\begin{gathered}\nRatio_{mil:RD}\
+  \ \\\\\n= \\frac{Spending_{mil}}{Spending_{RD}} \\\\\n= \\frac{\\$2.72T}{\\$67.5B}\
+  \ \\\\\n= 40.3\n\\end{gathered}\n$$"
 "new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
@@ -1579,9 +1578,9 @@
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
   \ / RECOVERY_COST | Unit: multiplier | Click to view details, calculation & sources\"\
   >82x (95% CI: 50x-94.1x)</a>"
-"recovery_trial_cost_reduction_factor_latex": "$$\n\\begin{aligned}\nk_{RECOVERY}\
-  \ \\\\\n&= \\frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\\\\n&= \\frac{\\$41K}{\\$500}\
-  \ \\\\\n&= 82\n\\end{aligned}\n$$"
+"recovery_trial_cost_reduction_factor_latex": "$$\n\\begin{gathered}\nk_{RECOVERY}\
+  \ \\\\\n= \\frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\\\\n= \\frac{\\$41K}{\\$500}\
+  \ \\\\\n= 82\n\\end{gathered}\n$$"
 "recovery_trial_global_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-1m-lives-saved\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Estimated lives saved globally by\
@@ -1684,8 +1683,8 @@
 "treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
   \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
   \ definition\">$27.2B</span>"
-"treaty_annual_funding_latex": "$$\n\\begin{aligned}\nFunding_{treaty} \\\\\n&= Spending_{mil}\
-  \ \\times Reduce_{treaty} \\\\\n&= \\$2.72T \\times 1\\% \\\\\n&= \\$27.2B\n\\end{aligned}\n\
+"treaty_annual_funding_latex": "$$\n\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_benefit_multiplier_vs_vaccines\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
@@ -1753,9 +1752,9 @@
   \ campaign cost (100% VICTORY Incentive Alignment Bonds) | Calculated from 3 inputs\
   \ | ✓ High confidence | Formula: REFERENDUM + LOBBYING + RESERVE | Unit: USD | Click\
   \ to view details, calculation & sources\">$1B (95% CI: $632M-$1.51B)</a>"
-"treaty_campaign_total_cost_latex": "$$\n\\begin{aligned}\nCost_{campaign} \\\\\n\
-  &= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n&=\
-  \ \\$250M + \\$650M + \\$100M \\\\\n&= \\$1B\n\\end{aligned}\n$$"
+"treaty_campaign_total_cost_latex": "$$\n\\begin{gathered}\nCost_{campaign} \\\\\n\
+  = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\\
+  $250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
 "treaty_campaign_viral_referendum_base_case": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_viral_referendum_base_case\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Viral referendum\
@@ -1775,9 +1774,9 @@
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: GLOBAL_POPULATION ×\
   \ 3.5% | Unit: of people | Click to view details, calculation & sources\">280M of\
   \ people (95% CI: 213M of people-359M of people)</a>"
-"treaty_campaign_voting_bloc_target_latex": "$$\n\\begin{aligned}\nN_{voters,target}\
-  \ \\\\\n&= Pop_{global} \\times Threshold_{activism} \\\\\n&= 8B \\times 3.5\\%\
-  \ \\\\\n&= 280M\n\\end{aligned}\n$$"
+"treaty_campaign_voting_bloc_target_latex": "$$\n\\begin{gathered}\nN_{voters,target}\
+  \ \\\\\n= Pop_{global} \\times Threshold_{activism} \\\\\n= 8B \\times 3.5\\% \\\
+  \\\n= 280M\n\\end{gathered}\n$$"
 "treaty_cost_per_daly_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
