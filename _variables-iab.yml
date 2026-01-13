@@ -72,8 +72,8 @@
   \ + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\\
   $3.7T\n\\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times\
   \ Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B\n\\\\[0.5em]\n\\text{where }\
-  \ Reduce_{pct} = 1 - (DFDA\\_COST / TRADITIONAL\\_COST) = 97.7\\%\n\\end{aligned}\n\
-  $$"
+  \ Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\\
+  $41K} = 97.7\\%\n\\end{aligned}\n$$"
 "iab_political_incentive_funding_pct": "<span class=\"parameter-definition\" title=\"\
   Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for\
   \ political incentives (independent expenditures/PACs, post-office fellowships,\

@@ -1985,16 +1985,16 @@ EMERGING_MODALITY_COMBINATIONS = Parameter(
     keywords=["emerging", "modalities", "gene therapy", "mrna", "epigenetic", "cell therapy", "total"],
     inputs=["GENE_THERAPY_DISEASE_COMBINATIONS", "MRNA_THERAPEUTIC_COMBINATIONS",
             "EPIGENETIC_DISEASE_COMBINATIONS", "CELL_THERAPY_DISEASE_COMBINATIONS"],
-    compute=lambda ctx: (int(ctx["GENE_THERAPY_DISEASE_COMBINATIONS"]) +
-                         int(ctx["MRNA_THERAPEUTIC_COMBINATIONS"]) +
-                         int(ctx["EPIGENETIC_DISEASE_COMBINATIONS"]) +
-                         int(ctx["CELL_THERAPY_DISEASE_COMBINATIONS"])),
-                         latex_symbol=r"N_{emerging}",  # LaTeX symbol for equations
+    compute=lambda ctx: (ctx["GENE_THERAPY_DISEASE_COMBINATIONS"] +
+                         ctx["MRNA_THERAPEUTIC_COMBINATIONS"] +
+                         ctx["EPIGENETIC_DISEASE_COMBINATIONS"] +
+                         ctx["CELL_THERAPY_DISEASE_COMBINATIONS"]),
+    latex_symbol=r"N_{emerging}",  # LaTeX symbol for equations
 )
 
 # Total testable therapeutic space (Tier 1 + Tier 2)
 TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
-    int(DRUG_DISEASE_COMBINATIONS_POSSIBLE) + int(EMERGING_MODALITY_COMBINATIONS),
+    float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) + float(EMERGING_MODALITY_COMBINATIONS),
     source_type="calculated",
     description="Total testable therapeutic combinations (known safe compounds + emerging modalities)",
     display_name="Total Testable Therapeutic Space",
@@ -2002,7 +2002,7 @@ TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
     formula="KNOWN_SAFE + EMERGING_MODALITIES",
     keywords=["total", "testable", "therapeutic", "combinations", "frontier", "all modalities"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "EMERGING_MODALITY_COMBINATIONS"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]) + int(ctx["EMERGING_MODALITY_COMBINATIONS"]),
+    compute=lambda ctx: ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] + ctx["EMERGING_MODALITY_COMBINATIONS"],
     latex_symbol=r"N_{testable}",  # LaTeX symbol for equations
 )
 
@@ -2021,12 +2021,12 @@ COMBINATION_THERAPY_PAIRS = Parameter(
     formula="SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
     keywords=["combination", "pairwise", "polypharmacy", "multi-drug", "synergy"],
     inputs=["SAFE_COMPOUNDS_COUNT"],
-    compute=lambda ctx: int(ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2),
+    compute=lambda ctx: ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2,
     latex_symbol=r"N_{combo}",  # LaTeX symbol for equations
 )
 
 COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
-    int(COMBINATION_THERAPY_PAIRS) * int(TRIAL_RELEVANT_DISEASES_COUNT),
+    float(COMBINATION_THERAPY_PAIRS) * float(TRIAL_RELEVANT_DISEASES_COUNT),
     source_type="calculated",
     description="Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.",
     display_name="Combination Therapy Space",
@@ -2034,7 +2034,7 @@ COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
     formula="DRUG_PAIRS × DISEASES",
     keywords=["combination", "therapy", "space", "polypharmacy", "frontier"],
     inputs=["COMBINATION_THERAPY_PAIRS", "TRIAL_RELEVANT_DISEASES_COUNT"],
-    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_PAIRS"]) * int(ctx["TRIAL_RELEVANT_DISEASES_COUNT"]),
+    compute=lambda ctx: ctx["COMBINATION_THERAPY_PAIRS"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"],
     latex_symbol=r"Space_{combo}",  # LaTeX symbol for equations
 )
 
@@ -2505,7 +2505,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
     validation_min=250_000_000,  # Floor: Pessimistic avoidability (70%), lower lag (6y)
     validation_max=600_000_000,  # Ceiling: Optimistic avoidability (98%), higher lag (10y)
     inputs=['EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY'],
-    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     latex_symbol=r"Deaths_{lag}",  # LaTeX symbol for equations
 )  # 413.4M eventually avoidable deaths (down from 449M raw total)
 
@@ -2811,7 +2811,7 @@ THALIDOMIDE_US_CASES_PREVENTED = Parameter(
     formula="WORLDWIDE_CASES × US_POPULATION_SHARE",    confidence="medium",
     keywords=["thalidomide", "FDA", "prevention"],
     inputs=['THALIDOMIDE_CASES_WORLDWIDE', 'THALIDOMIDE_US_POPULATION_SHARE_1960'],
-    compute=lambda ctx: int(ctx["THALIDOMIDE_CASES_WORLDWIDE"] * ctx["THALIDOMIDE_US_POPULATION_SHARE_1960"]),
+    compute=lambda ctx: ctx["THALIDOMIDE_CASES_WORLDWIDE"] * ctx["THALIDOMIDE_US_POPULATION_SHARE_1960"],
     latex_symbol=r"N_{thal,US,prevent}",  # LaTeX symbol for equations
 )
 
@@ -2845,7 +2845,7 @@ THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
 
 # Calculate DALYs per "Thalidomide Event"
 THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
-    int(THALIDOMIDE_US_CASES_PREVENTED * THALIDOMIDE_MORTALITY_RATE),
+    float(THALIDOMIDE_US_CASES_PREVENTED) * float(THALIDOMIDE_MORTALITY_RATE),
     source_type="calculated",
     description="Deaths per US-scale thalidomide event",
     display_name="Thalidomide Deaths Per Event",
@@ -2853,7 +2853,7 @@ THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
     formula="US_CASES × MORTALITY_RATE",    confidence="medium",
     keywords=["thalidomide", "mortality"],
     inputs=['THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_CASES_PREVENTED'],
-    compute=lambda ctx: int(ctx["THALIDOMIDE_US_CASES_PREVENTED"] * ctx["THALIDOMIDE_MORTALITY_RATE"]),
+    compute=lambda ctx: ctx["THALIDOMIDE_US_CASES_PREVENTED"] * ctx["THALIDOMIDE_MORTALITY_RATE"],
     latex_symbol=r"Deaths_{thal}",  # LaTeX symbol for equations
 )
 
@@ -2871,7 +2871,7 @@ THALIDOMIDE_YLL_PER_EVENT = Parameter(
 )
 
 THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
-    int(THALIDOMIDE_US_CASES_PREVENTED * (1 - THALIDOMIDE_MORTALITY_RATE)),
+    float(THALIDOMIDE_US_CASES_PREVENTED) * (1 - float(THALIDOMIDE_MORTALITY_RATE)),
     source_type="calculated",
     description="Survivors per US-scale thalidomide event",
     display_name="Thalidomide Survivors Per Event",
@@ -2880,7 +2880,7 @@ THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
     confidence="medium",
     keywords=["thalidomide", "survivors"],
     inputs=['THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_US_CASES_PREVENTED'],
-    compute=lambda ctx: int(ctx["THALIDOMIDE_US_CASES_PREVENTED"] * (1 - ctx["THALIDOMIDE_MORTALITY_RATE"])),
+    compute=lambda ctx: ctx["THALIDOMIDE_US_CASES_PREVENTED"] * (1 - ctx["THALIDOMIDE_MORTALITY_RATE"]),
     latex_symbol=r"N_{thal,survive}",  # LaTeX symbol for equations
 )
 
@@ -4067,7 +4067,7 @@ DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
 )  # Trial capacity multiplier from simple funding economics (DIH patients fundable / current trial slots)
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
-    int(DFDA_TRIAL_CAPACITY_MULTIPLIER * 20),
+    float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * 20,
     source_type="calculated",
     description="Cumulative trial-capacity-equivalent years over 20-year period",
     display_name="Cumulative Trial Capacity Years Over 20 Years",
@@ -4075,7 +4075,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
     keywords=["trial", "capacity", "cumulative", "20 years"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20),
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20,
     latex_symbol=r"Capacity_{20yr}",  # LaTeX symbol for equations
 )  # Auto-generated LaTeX from calculated value
 
@@ -4167,7 +4167,7 @@ VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
 # Conservative: 40% of abandoned compounds could succeed = 40% more drugs
 # 50 drugs/year × 40% valley-of-death compounds = 20 additional drugs/year
 ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
-    int(CURRENT_DRUG_APPROVALS_PER_YEAR * VALLEY_OF_DEATH_ATTRITION_PCT),
+    float(CURRENT_DRUG_APPROVALS_PER_YEAR) * float(VALLEY_OF_DEATH_ATTRITION_PCT),
     source_type="calculated",
     description="Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.",
     display_name="Additional Drug Approvals from Cost Elimination",
@@ -4175,7 +4175,7 @@ ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
     formula="CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT",    confidence="medium",
     keywords=["additional", "drugs", "cost", "elimination", "valley of death"],
     inputs=['CURRENT_DRUG_APPROVALS_PER_YEAR', 'VALLEY_OF_DEATH_ATTRITION_PCT'],
-    compute=lambda ctx: int(ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"] * ctx["VALLEY_OF_DEATH_ATTRITION_PCT"]),
+    compute=lambda ctx: ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"] * ctx["VALLEY_OF_DEATH_ATTRITION_PCT"],
     latex_symbol=r"Drugs_{new}",  # LaTeX symbol for equations
 )  # ~20 additional drugs/year from eliminating cost barrier
 
@@ -4227,7 +4227,7 @@ RARE_DISEASES_COUNT_GLOBAL = Parameter(
 # Diseases without effective treatment (queue size for curing all diseases)
 # 95% of ~7,000 rare diseases have no treatment
 DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
-    int(float(RARE_DISEASES_COUNT_GLOBAL) * 0.95),  # ~6,650 diseases
+    float(RARE_DISEASES_COUNT_GLOBAL) * 0.95,  # ~6,650 diseases
     source_ref=ReferenceID.RARE_DISEASE_ONLY_5PCT_HAVE_TREATMENT,
     source_type="calculated",
     description="Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.",
@@ -4236,7 +4236,7 @@ DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
     formula="RARE_DISEASES_COUNT_GLOBAL × 0.95",    confidence="medium",
     keywords=["diseases", "untreatable", "no treatment", "queue", "rare diseases"],
     inputs=['RARE_DISEASES_COUNT_GLOBAL'],
-    compute=lambda ctx: int(ctx["RARE_DISEASES_COUNT_GLOBAL"] * 0.95),
+    compute=lambda ctx: ctx["RARE_DISEASES_COUNT_GLOBAL"] * 0.95,
     latex_symbol=r"N_{untreated}",  # LaTeX symbol for equations
 )  # ~6,650 diseases (uncertainty propagated from RARE_DISEASES_COUNT_GLOBAL)
 
@@ -4318,7 +4318,7 @@ DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
 # more diseases to receive first treatments simultaneously, reducing the average wait time.
 
 DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
-    int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     source_type="calculated",
     description="Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster queue processing from increased trial capacity.",
     display_name="Lives Saved from Trial Capacity Increase",
@@ -4327,7 +4327,7 @@ DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     confidence="low",
     keywords=["trial capacity", "lives saved", "treatment acceleration"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS'],
-    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     latex_symbol=r"Lives_{capacity}",  # LaTeX symbol for equations
 )
 
@@ -4340,7 +4340,7 @@ _daly_multiplier_from_deaths = float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS) / floa
 _yld_ratio_of_dalys = float(DFDA_EFFICACY_LAG_ELIMINATION_YLD) / float(DFDA_EFFICACY_LAG_ELIMINATION_DALYS)
 
 DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
-    int(float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS)),
+    float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS),
     source_type="calculated",
     description="Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × treatment acceleration years. Includes both fatal and non-fatal diseases.",
     display_name="DALYs Averted from Trial Capacity Increase",
@@ -4349,12 +4349,12 @@ DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     confidence="low",
     keywords=["trial capacity", "dalys", "treatment acceleration", "WHO", "GBD"],
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS'],
-    compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"]),
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"],
     latex_symbol=r"DALYs_{capacity}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_DALYS_AVERTED) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
+    float(DFDA_TRIAL_CAPACITY_DALYS_AVERTED) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_type="calculated",
     description="Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
     display_name="Economic Value from Trial Capacity Increase",
@@ -4363,7 +4363,7 @@ DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     confidence="low",
     keywords=["trial capacity", "economic", "value", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_DALYS_AVERTED', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_DALYS_AVERTED"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_DALYS_AVERTED"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Value_{capacity}",  # LaTeX symbol for equations
 )
 
@@ -4424,7 +4424,7 @@ DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
 # and efficacy lag elimination.
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
-    int(GLOBAL_DISEASE_DEATHS_DAILY * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     source_type="calculated",
     description="Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
     display_name="Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -4433,12 +4433,12 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     confidence="low",
     keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "average"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
-    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     latex_symbol=r"Lives_{max}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
-    int(float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS)),
+    float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS),
     source_type="calculated",
     description="Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
     display_name="Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -4447,12 +4447,12 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     confidence="low",
     keywords=["total", "dalys", "timeline shift", "cure acceleration", "efficacy lag", "WHO", "GBD"],
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
-    compute=lambda ctx: int(ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"]),
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"],
     latex_symbol=r"DALYs_{max}",  # LaTeX symbol for equations
 )  # ~549B DALYs averted (vs old 200B - now includes non-fatal chronic diseases)
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD)),
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_type="calculated",
     description="Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
     display_name="Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -4461,12 +4461,12 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     confidence="low",
     keywords=["total", "economic", "value", "timeline shift", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"]),
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Value_{max}",  # LaTeX symbol for equations
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
-    int(float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR),
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
     description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
@@ -4476,13 +4476,13 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     confidence="low",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'GLOBAL_YLD_PROPORTION_OF_DALYS'],
-    compute=lambda ctx: int(ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"] * HOURS_PER_YEAR),
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"] * HOURS_PER_YEAR,
     latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
-    int(CURRENT_TRIALS_PER_YEAR * DFDA_TRIAL_CAPACITY_MULTIPLIER),
+    float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
     description="Maximum trials per year possible with trial capacity multiplier",
     display_name="Decentralized Framework for Drug Assessment Maximum Trials per Year",
@@ -4490,7 +4490,7 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     formula="CURRENT_TRIALS × DFDA_TRIAL_CAPACITY_MULTIPLIER",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
     inputs=['CURRENT_TRIALS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
-    compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
+    compute=lambda ctx: ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
     latex_symbol=r"Capacity_{trials}",  # LaTeX symbol for equations
 )  # Maximum trials/year possible with trial capacity multiplier
 
@@ -4500,7 +4500,7 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
 # How long to systematically test all therapeutic combinations at current vs dFDA capacity
 
 CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
-    int(float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(CURRENT_TRIALS_PER_YEAR)),
+    float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(CURRENT_TRIALS_PER_YEAR),
     source_type="calculated",
     description="Years to test all known safe drug-disease combinations at current global trial capacity",
     display_name="Known Safe Exploration Time (Current)",
@@ -4508,12 +4508,12 @@ CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     formula="DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["exploration", "therapeutic frontier", "timeline", "current pace", "known safe", "years"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    compute=lambda ctx: ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["CURRENT_TRIALS_PER_YEAR"],
     latex_symbol=r"T_{explore,safe}",  # LaTeX symbol for equations
 )
 
 DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
-    int(float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(DFDA_TRIALS_PER_YEAR_CAPACITY)),
+    float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
     source_type="calculated",
     description="Years to test all known safe drug-disease combinations with dFDA trial capacity",
     display_name="Known Safe Exploration Time (dFDA)",
@@ -4521,12 +4521,12 @@ DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     formula="DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
     keywords=["exploration", "therapeutic frontier", "timeline", "dfda", "accelerated", "known safe", "years"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    compute=lambda ctx: int(ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"]),
+    compute=lambda ctx: ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"],
     latex_symbol=r"T_{safe,dFDA}",  # LaTeX symbol for equations
 )
 
 CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
-    int(float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(CURRENT_TRIALS_PER_YEAR)),
+    float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(CURRENT_TRIALS_PER_YEAR),
     source_type="calculated",
     description="Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
     display_name="Total Exploration Time (Current)",
@@ -4534,12 +4534,12 @@ CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
     formula="TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["exploration", "total", "all modalities", "timeline", "current pace", "years"],
     inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    compute=lambda ctx: ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["CURRENT_TRIALS_PER_YEAR"],
     latex_symbol=r"T_{explore,total}",  # LaTeX symbol for equations
 )
 
 DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
-    int(float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(DFDA_TRIALS_PER_YEAR_CAPACITY)),
+    float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
     source_type="calculated",
     description="Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
     display_name="Total Exploration Time (dFDA)",
@@ -4547,13 +4547,13 @@ DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
     formula="TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
     keywords=["exploration", "total", "all modalities", "timeline", "dfda", "accelerated", "years"],
     inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    compute=lambda ctx: int(ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"]),
+    compute=lambda ctx: ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"],
     latex_symbol=r"T_{explore,dFDA}",  # LaTeX symbol for equations
 )
 
 # Combination therapy exploration (pairwise drug combinations - standard in modern medicine)
 CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
-    int(float(COMBINATION_THERAPY_DISEASE_SPACE) / float(CURRENT_TRIALS_PER_YEAR)),
+    float(COMBINATION_THERAPY_DISEASE_SPACE) / float(CURRENT_TRIALS_PER_YEAR),
     source_type="calculated",
     description="Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.",
     display_name="Combination Therapy Exploration Time (Current)",
@@ -4561,7 +4561,7 @@ CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
     formula="COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR",
     keywords=["combination", "exploration", "timeline", "years", "polypharmacy"],
     inputs=["COMBINATION_THERAPY_DISEASE_SPACE", "CURRENT_TRIALS_PER_YEAR"],
-    compute=lambda ctx: int(ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"]),
+    compute=lambda ctx: ctx["COMBINATION_THERAPY_DISEASE_SPACE"] / ctx["CURRENT_TRIALS_PER_YEAR"],
     latex_symbol=r"T_{explore,combo}",  # LaTeX symbol for equations
 )
 

@@ -86,6 +86,8 @@ from dih_models.latex_generation import (
     generate_auto_latex,
     format_latex_value,
     create_latex_variable_name,
+    get_formula_fallback_log,
+    clear_formula_fallback_log,
     create_short_label,
     infer_operation_from_compute,
     extract_lambda_body_from_file,
@@ -682,8 +684,27 @@ def main():
 
             # Generate _variables.yml with embedded confidence intervals
             print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
+            clear_formula_fallback_log()  # Clear before generation
             output_path = project_root / "_variables.yml"
             generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
+            
+            # Write formula fallback log if any parameters used it
+            formula_fallbacks = get_formula_fallback_log()
+            if formula_fallbacks:
+                fallback_log_path = analysis_dir / "formula-fallback-log.md"
+                with open(fallback_log_path, "w", encoding="utf-8") as f:
+                    f.write("# Formula Fallback Log\n\n")
+                    f.write("These parameters used the `formula` property for LaTeX generation\n")
+                    f.write("instead of auto-generating from `inputs` and `compute`.\n\n")
+                    f.write("Consider improving these to use proper `inputs`/`compute` metadata.\n\n")
+                    f.write(f"**Total: {len(formula_fallbacks)} parameters**\n\n")
+                    f.write("| Parameter | Formula | Reason |\n")
+                    f.write("|-----------|---------|--------|\n")
+                    for param_name, formula, reason in formula_fallbacks:
+                        # Escape pipe characters in formula
+                        safe_formula = formula.replace('|', '\\|')
+                        f.write(f"| `{param_name}` | `{safe_formula}` | {reason} |\n")
+                print(f"[INFO] {len(formula_fallbacks)} parameters used formula fallback - see {fallback_log_path}")
             print()
 
             # Generate input distribution charts for parameters with uncertainty metadata

@@ -24,9 +24,31 @@ Usage:
 
 import re
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from .formatting import format_parameter_value
+
+# Track parameters that fall back to formula-based LaTeX generation
+# Format: {param_name: (formula_used, reason)}
+_formula_fallback_log: Dict[str, Tuple[str, str]] = {}
+
+
+def get_formula_fallback_log() -> List[Tuple[str, str, str]]:
+    """Get the list of parameters that used formula fallback during LaTeX generation."""
+    return [(name, formula, reason) for name, (formula, reason) in sorted(_formula_fallback_log.items())]
+
+
+def clear_formula_fallback_log():
+    """Clear the formula fallback log (call at start of generation)."""
+    global _formula_fallback_log
+    _formula_fallback_log = {}
+
+
+def log_formula_fallback(param_name: str, formula: str, reason: str):
+    """Log a parameter that fell back to using formula for LaTeX generation."""
+    # Only log first occurrence (avoid duplicates from recursive expansion)
+    if param_name not in _formula_fallback_log:
+        _formula_fallback_log[param_name] = (formula, reason)
 
 
 def extract_distinguishing_suffix(param_name: str, all_input_names: list[str] | None = None) -> str | None:
@@ -312,6 +334,26 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
             return 'subtract', 'first_minus_second'
         elif abs(result - (b - a)) < 0.01:  # 3 - 2 = 1
             return 'subtract', 'second_minus_first'
+        # Check for "1 - (A/B)" pattern: result = 1 - (a/b)
+        elif abs(result - (1 - a / b)) < 0.01:  # 1 - 2/3 ≈ 0.333
+            return 'one_minus_quotient', 'first_over_second'
+        elif abs(result - (1 - b / a)) < 0.01:  # 1 - 3/2 = -0.5
+            return 'one_minus_quotient', 'second_over_first'
+        # Check for "A/B - 1" pattern: result = (a/b) - 1
+        elif abs(result - (a / b - 1)) < 0.01:  # 2/3 - 1 ≈ -0.333
+            return 'quotient_minus_one', 'first_over_second'
+        elif abs(result - (b / a - 1)) < 0.01:  # 3/2 - 1 = 0.5
+            return 'quotient_minus_one', 'second_over_first'
+        # Check for "A × (1 - B)" pattern: multiplication with complement
+        elif abs(result - (a * (1 - b))) < 0.01:  # 2 * (1-3) = -4
+            return 'multiply_complement', 'first_times_one_minus_second'
+        elif abs(result - (b * (1 - a))) < 0.01:  # 3 * (1-2) = -3
+            return 'multiply_complement', 'second_times_one_minus_first'
+        # Check for "A × (1 - 1/B)" pattern: acceleration by inverse multiplier
+        elif b != 0 and abs(result - (a * (1 - 1/b))) < 0.01:  # 2 * (1 - 1/3) ≈ 1.33
+            return 'multiply_inverse_complement', 'first_times_one_minus_inv_second'
+        elif a != 0 and abs(result - (b * (1 - 1/a))) < 0.01:  # 3 * (1 - 1/2) = 1.5
+            return 'multiply_inverse_complement', 'second_times_one_minus_inv_first'
         else:
             return 'complex', None
 
@@ -327,6 +369,14 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
             expected_product *= v
         if abs(result - expected_product) < 0.01:
             return 'multiply', None
+
+        # Check subtraction chain: A - B - C - ...
+        # First value minus all others
+        expected_subtract = test_vals[0]
+        for v in test_vals[1:]:
+            expected_subtract -= v
+        if abs(result - expected_subtract) < 0.01:
+            return 'subtract_chain', None
 
         return 'complex', None
 
@@ -1043,11 +1093,63 @@ def generate_auto_latex(
         numeric = f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
+    elif operation == 'one_minus_quotient' and len(input_data) == 2:
+        # 1 - (A/B): X = 1 - A/B = 1 - num/denom = result
+        if order == 'second_over_first':
+            numerator = input_data[1]
+            denominator = input_data[0]
+        else:
+            numerator = input_data[0]
+            denominator = input_data[1]
+
+        symbolic = f"1 - \\frac{{{numerator['symbolic']}}}{{{denominator['symbolic']}}}"
+        numeric = f"1 - \\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'quotient_minus_one' and len(input_data) == 2:
+        # (A/B) - 1: X = A/B - 1 = num/denom - 1 = result
+        if order == 'second_over_first':
+            numerator = input_data[1]
+            denominator = input_data[0]
+        else:
+            numerator = input_data[0]
+            denominator = input_data[1]
+
+        symbolic = f"\\frac{{{numerator['symbolic']}}}{{{denominator['symbolic']}}} - 1"
+        numeric = f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}} - 1"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
     elif operation == 'multiply':
         # Multiplication: X = A × B = val1 × val2 = result
         symbolic_terms = ' \\times '.join(d['symbolic'] for d in input_data)
         numeric_terms = ' \\times '.join(d['formatted'] for d in input_data)
         latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
+
+    elif operation == 'multiply_complement' and len(input_data) == 2:
+        # A × (1 - B): X = A × (1 - B) = val1 × (1 - val2) = result
+        if order == 'second_times_one_minus_first':
+            multiplier = input_data[1]
+            complement = input_data[0]
+        else:
+            multiplier = input_data[0]
+            complement = input_data[1]
+
+        symbolic = f"{multiplier['symbolic']} \\times (1 - {complement['symbolic']})"
+        numeric = f"{multiplier['formatted']} \\times (1 - {complement['formatted']})"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'multiply_inverse_complement' and len(input_data) == 2:
+        # A × (1 - 1/B): X = A × (1 - 1/B) = val1 × (1 - 1/val2) = result
+        if order == 'second_times_one_minus_inv_first':
+            multiplier = input_data[1]
+            divisor = input_data[0]
+        else:
+            multiplier = input_data[0]
+            divisor = input_data[1]
+
+        symbolic = f"{multiplier['symbolic']} \\times \\left(1 - \\frac{{1}}{{{divisor['symbolic']}}}\\right)"
+        numeric = f"{multiplier['formatted']} \\times \\left(1 - \\frac{{1}}{{{divisor['formatted']}}}\\right)"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
     elif operation == 'sum':
         # Addition: X = A + B + C = val1 + val2 + val3 = result
@@ -1066,6 +1168,15 @@ def generate_auto_latex(
         symbolic = f"{first['symbolic']} - {second['symbolic']}"
         numeric = f"{first['formatted']} - {second['formatted']}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'subtract_chain' and len(input_data) >= 3:
+        # Subtraction chain: X = A - B - C - ... = val1 - val2 - val3 - ... = result
+        symbolic_terms = input_data[0]['symbolic']
+        numeric_terms = input_data[0]['formatted']
+        for d in input_data[1:]:
+            symbolic_terms += f" - {d['symbolic']}"
+            numeric_terms += f" - {d['formatted']}"
+        latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
 
     elif operation == 'multiply_constant' and len(input_data) == 1:
         # Multiply by constant: X = A × c = val × const = result
@@ -1138,6 +1249,15 @@ def generate_auto_latex(
         # Try to use the symbolic formula if available
         formula = getattr(param_value, 'formula', '') or ''
         if formula:
+            # LOG: Only log if no hardcoded latex exists (those don't need fixing)
+            hardcoded_latex = getattr(param_value, 'latex', None)
+            if not hardcoded_latex:
+                log_formula_fallback(
+                    param_name,
+                    formula,
+                    f"operation={operation}, inputs={len(input_data)}"
+                )
+            
             # Convert formula symbols to LaTeX-compatible format
             # Replace × with \times, ÷ with \div, etc.
             # IMPORTANT: Escape underscores to prevent "double subscript" errors

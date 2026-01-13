@@ -267,7 +267,7 @@ Dividend_{total,ann} = Benefit_{peace,soc} + Benefit_{RD,ann} = \$114B + \$58.6B
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -304,7 +304,7 @@ Years to test all pairwise drug combinations at current trial capacity. Combinat
 
 $$
 \begin{aligned}
-T_{explore,combo} = COMBINATION\_SPACE \div CURRENT\_TRIALS\_PER\_YEAR = 13.7M
+T_{explore,combo} = \frac{Space_{combo}}{Trials_{ann,curr}} = \frac{45.1B}{3{,}300} = 13.7M
 \\[0.5em]
 \text{where } Space_{combo} = N_{combo} \times N_{diseases,trial} = 45.1M \times 1{,}000 = 45.1B
 \end{aligned}
@@ -341,7 +341,7 @@ Years to test all known safe drug-disease combinations at current global trial c
 
 $$
 \begin{aligned}
-T_{explore,safe} = DRUG\_DISEASE\_COMBINATIONS \div CURRENT\_TRIALS\_PER\_YEAR = 2{,}880
+T_{explore,safe} = \frac{N_{combos}}{Trials_{ann,curr}} = \frac{9.5M}{3{,}300} = 2{,}880
 \\[0.5em]
 \text{where } N_{combos} = N_{safe} \times N_{diseases,trial} = 9{,}500 \times 1{,}000 = 9.5M
 \end{aligned}
@@ -378,7 +378,7 @@ Years to test all therapeutic combinations (known safe + emerging modalities) at
 
 $$
 \begin{aligned}
-T_{explore,total} = TOTAL\_COMBINATIONS \div CURRENT\_TRIALS\_PER\_YEAR = 15{,}600
+T_{explore,total} = \frac{N_{testable}}{Trials_{ann,curr}} = \frac{51.5M}{3{,}300} = 15{,}600
 \\[0.5em]
 \text{where } N_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M
 \\[0.5em]
@@ -473,7 +473,7 @@ $$
 \begin{aligned}
 Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -520,7 +520,7 @@ k_{speedup} = k_{capacity} \times k_{rescue} = 12.3 \times 1.4 = 17.2
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -575,13 +575,13 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -591,7 +591,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -605,7 +605,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \\[0.5em]
 \text{where } NPV_{direct} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T = queue clearance time = \$475B
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -621,7 +621,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -631,7 +631,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -684,7 +684,7 @@ k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} 
 \\[0.5em]
 \text{where } NPV_{direct} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T = queue clearance time = \$475B
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -700,7 +700,7 @@ k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} 
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -710,7 +710,7 @@ k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -726,13 +726,13 @@ k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} 
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -742,7 +742,7 @@ k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1008,7 +1008,7 @@ Treatments_{dFDA,ann} = Treatments_{new,ann} \times k_{capacity} = 15 \times 12.
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1040,7 +1040,7 @@ $$
 
 :::
 
-### Known Safe Exploration Time (dFDA): 233 years {#sec-dfda_known_safe_exploration_years}
+### Known Safe Exploration Time (dFDA): 234 years {#sec-dfda_known_safe_exploration_years}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1053,7 +1053,7 @@ Years to test all known safe drug-disease combinations with dFDA trial capacity
 
 $$
 \begin{aligned}
-T_{safe,dFDA} = DRUG\_DISEASE\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 233
+T_{safe,dFDA} = \frac{N_{combos}}{Capacity_{trials}} = \frac{9.5M}{40{,}600} = 234
 \\[0.5em]
 \text{where } N_{combos} = N_{safe} \times N_{diseases,trial} = 9{,}500 \times 1{,}000 = 9.5M
 \\[0.5em]
@@ -1067,7 +1067,7 @@ T_{safe,dFDA} = DRUG\_DISEASE\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 233
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1116,7 +1116,7 @@ Savings_{RD,ann} = Benefit_{RD,ann} - OPEX_{dFDA} = \$58.6B - \$40M = \$58.6B
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \end{aligned}
@@ -1201,7 +1201,7 @@ NPV_{RD} = Sum of discounted annual net R&D savings with linear adoption ramp = 
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \end{aligned}
@@ -1248,7 +1248,7 @@ NPV_{net,RD} = NPV_{RD} - Cost_{dFDA,total} = \$389B - \$611M = \$389B
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
@@ -1422,7 +1422,7 @@ T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -1432,7 +1432,7 @@ T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1480,7 +1480,7 @@ Savings_{RD,daily} = Benefit_{RD,ann} \times 0.00274 = \$58.6B \times 0.00274 = 
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -1525,7 +1525,7 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
@@ -1572,7 +1572,7 @@ Years to test all therapeutic combinations (known safe + emerging modalities) wi
 
 $$
 \begin{aligned}
-T_{explore,dFDA} = TOTAL\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 1{,}270
+T_{explore,dFDA} = \frac{N_{testable}}{Capacity_{trials}} = \frac{51.5M}{40{,}600} = 1{,}270
 \\[0.5em]
 \text{where } N_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M
 \\[0.5em]
@@ -1598,7 +1598,7 @@ T_{explore,dFDA} = TOTAL\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 1{,}270
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1653,7 +1653,7 @@ Capacity_{trials} = Trials_{ann,curr} \times k_{capacity} = 3{,}300 \times 12.3 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1701,13 +1701,13 @@ $$
 \begin{aligned}
 DALYs_{capacity} = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel} = 2.88B \times 92.6\% \times 204 = 543B
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -1717,7 +1717,7 @@ DALYs_{capacity} = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel} =
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1766,13 +1766,13 @@ Value_{capacity} = DALYs_{capacity} \times Value_{QALY} = 543B \times \$150K = \
 \\[0.5em]
 \text{where } DALYs_{capacity} = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel} = 2.88B \times 92.6\% \times 204 = 543B
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -1782,7 +1782,7 @@ Value_{capacity} = DALYs_{capacity} \times Value_{QALY} = 543B \times \$150K = \
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1829,13 +1829,13 @@ $$
 \begin{aligned}
 Lives_{capacity} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_TREATMENT\_ACCELERATION\_YEARS \times AVOIDABLE\_PCT = 10.3B
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -1845,7 +1845,7 @@ Lives_{capacity} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_TREATMENT\_ACCEL
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1898,7 +1898,7 @@ k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -1948,13 +1948,13 @@ DALYs_{max} = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} = 
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -1964,7 +1964,7 @@ DALYs_{max} = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} = 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2015,13 +2015,13 @@ Value_{max} = DALYs_{max} \times Value_{QALY} = 565B \times \$150K = \$84800T
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -2031,7 +2031,7 @@ Value_{max} = DALYs_{max} \times Value_{QALY} = 565B \times \$150K = \$84800T
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2080,13 +2080,13 @@ Lives_{max} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -2096,7 +2096,7 @@ Lives_{max} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2147,13 +2147,13 @@ Hours_{suffer,max} = DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_DALYS \times GL
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -2163,7 +2163,7 @@ Hours_{suffer,max} = DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_DALYS \times GL
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2212,13 +2212,13 @@ $$
 \begin{aligned}
 T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -2228,7 +2228,7 @@ T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2273,13 +2273,13 @@ Years earlier the average first treatment arrives due to dFDA's trial capacity i
 
 $$
 \begin{aligned}
-T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -2289,7 +2289,7 @@ T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TR
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2373,7 +2373,12 @@ Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
-Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\begin{aligned}
+Reduce_{pct} \\
+&= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+&= 1 - \frac{\$929}{\$41K} \\
+&= 97.7\%
+\end{aligned}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -2445,7 +2450,7 @@ N_{fundable,ann} = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} = \frac{\$2
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2496,7 +2501,7 @@ Subsidies_{trial,ann} = Treasury_{RD,ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -2541,7 +2546,12 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 - [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
 
 $$
-N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\begin{aligned}
+N_{untreated} \\
+&= N_{rare} \times 0.95 \\
+&= 7{,}000 \times 0.95 \\
+&= 6{,}650
+\end{aligned}
 $$
 
 **Methodology**: [Orphanet Journal of Rare Diseases (2024) (2024) - Rare Disease Treatment Gap](../references.qmd#rare-disease-only-5pct-have-treatment)
@@ -3663,7 +3673,7 @@ BCR_{IAB} = \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} = \frac{\$172B}{\$750M} = 
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -3699,7 +3709,12 @@ Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
 $$
-Ratio_{ind:gov} = (TOTAL - GOVT) / GOVT = 12.3
+\begin{aligned}
+Ratio_{ind:gov} \\
+&= \frac{Spending_{trials}}{Spending_{trials,gov}} - 1 \\
+&= \frac{\$60B}{\$4.5B} - 1 \\
+&= 12.3
+\end{aligned}
 $$
 
 **Methodology**: [Applied Clinical Trials - Industry vs. Government Clinical Trial Spending Split (90/10)](../references.qmd#industry-vs-government-trial-spending-split)
@@ -4643,7 +4658,7 @@ Wealth_{lifetime} = NPV(peace\_dividend + healthcare\_savings + productivity\_ga
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -4925,7 +4940,7 @@ T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \end{aligned}
 $$
 
@@ -4964,7 +4979,7 @@ $$
 \begin{aligned}
 T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \end{aligned}
 $$
 
@@ -5005,7 +5020,7 @@ DALY_{thal} = YLD_{thal} + YLL_{thal} = 13{,}000 + 28{,}800 = 41{,}800
 \\[0.5em]
 \text{where } YLD_{thal} = DW_{thal} \times N_{thal,survive} \times LE_{thal} = 0.4 \times 540 \times 60 = 13{,}000
 \\[0.5em]
-\text{where } N_{thal,survive} = US\_CASES \times (1 - MORTALITY\_RATE) = 540
+\text{where } N_{thal,survive} = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) = 900 \times (1 - 40\%) = 540
 \\[0.5em]
 \text{where } N_{thal,US,prevent} = N_{thal,global} \times Pct_{US,1960} = 15{,}000 \times 6\% = 900
 \\[0.5em]
@@ -5085,7 +5100,7 @@ Survivors per US-scale thalidomide event
 
 $$
 \begin{aligned}
-N_{thal,survive} = US\_CASES \times (1 - MORTALITY\_RATE) = 540
+N_{thal,survive} = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) = 900 \times (1 - 40\%) = 540
 \\[0.5em]
 \text{where } N_{thal,US,prevent} = N_{thal,global} \times Pct_{US,1960} = 15{,}000 \times 6\% = 900
 \end{aligned}
@@ -5163,7 +5178,7 @@ $$
 \begin{aligned}
 YLD_{thal} = DW_{thal} \times N_{thal,survive} \times LE_{thal} = 0.4 \times 540 \times 60 = 13{,}000
 \\[0.5em]
-\text{where } N_{thal,survive} = US\_CASES \times (1 - MORTALITY\_RATE) = 540
+\text{where } N_{thal,survive} = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) = 900 \times (1 - 40\%) = 540
 \\[0.5em]
 \text{where } N_{thal,US,prevent} = N_{thal,global} \times Pct_{US,1960} = 15{,}000 \times 6\% = 900
 \end{aligned}
@@ -5340,7 +5355,7 @@ k_{treaty:vax} = \frac{Dividend_{total,ann}}{Benefit_{vax,ann}} = \frac{\$172B}{
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -5506,13 +5521,13 @@ Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -5522,7 +5537,7 @@ Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -5579,13 +5594,13 @@ E[Cost_{DALY}] = \frac{Cost_{treaty,DALY}}{P_{success}} = \frac{\$0.00177}{1\%} 
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -5595,7 +5610,7 @@ E[Cost_{DALY}] = \frac{Cost_{treaty,DALY}}{P_{success}} = \frac{\$0.00177}{1\%} 
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -5652,13 +5667,13 @@ E[ROI_{max}] = ROI_{max} \times P_{success} = 84.8M \times 1\% = 848{,}000
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -5668,7 +5683,7 @@ E[ROI_{max}] = ROI_{max} \times P_{success} = 84.8M \times 1\% = 848{,}000
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -5725,13 +5740,13 @@ E[k_{nets}] = \frac{Cost_{nets}}{E[Cost_{DALY}]} = \frac{\$89}{\$0.177} = 503
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -5741,7 +5756,7 @@ E[k_{nets}] = \frac{Cost_{nets}}{E[Cost_{DALY}]} = \frac{\$89}{\$0.177} = 503
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -5845,7 +5860,7 @@ Benefit_{peace+RD} = Benefit_{peace,soc} + Benefit_{RD,ann} = \$114B + \$58.6B =
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \end{aligned}
 $$
 
@@ -5927,7 +5942,7 @@ Benefit_{recur,ann} = Benefit_{RD,ann} + Benefit_{peace,soc} = \$58.6B + \$114B 
 \\[0.5em]
 \text{where } Benefit_{RD,ann} = Spending_{trials} \times Reduce_{pct} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
-\text{where } Reduce_{pct} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
+\text{where } Reduce_{pct} = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \frac{\$929}{\$41K} = 97.7\%
 \\[0.5em]
 \text{where } Benefit_{peace,soc} = Cost_{war,total} \times Reduce_{treaty} = \$11.4T \times 1\% = \$114B
 \\[0.5em]
@@ -6035,13 +6050,13 @@ ROI_{max} = \frac{Value_{max}}{Cost_{campaign}} = \frac{\$84800T}{\$1B} = 84.8M
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -6051,7 +6066,7 @@ ROI_{max} = \frac{Value_{max}}{Cost_{campaign}} = \frac{\$84800T}{\$1B} = 84.8M
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -6153,13 +6168,13 @@ k_{treaty:nets} = \frac{Cost_{nets}}{Cost_{treaty,DALY}} = \frac{\$89}{\$0.00177
 \\[0.5em]
 \text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
 \\[0.5em]
-\text{where } T_{accel} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\_TRIAL\_CAPACITY\_MULTIPLIER) = 204
+\text{where } T_{accel} = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) = 222 \times \left(1 - \frac{1}{12.3}\right) = 204
 \\[0.5em]
 \text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222
 \\[0.5em]
 \text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443
 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} - 1 = 7{,}000 - 1 = 6{,}650
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
 \\[0.5em]
 \text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \\[0.5em]
@@ -6169,7 +6184,7 @@ k_{treaty:nets} = \frac{Cost_{nets}}{Cost_{treaty,DALY}} = \frac{\$89}{\$0.00177
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -6223,7 +6238,7 @@ Capacity_{20yr} = k_{capacity} \times 20 = 12.3 \times 20 = 246
 \\[0.5em]
 \text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Treasury_{RD,ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
+\text{where } Treasury_{RD,ann} = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} = \$27.2B - \$2.72B - \$2.72B = \$21.8B
 \\[0.5em]
 \text{where } Funding_{treaty} = Spending_{mil} \times Reduce_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
@@ -6286,7 +6301,7 @@ Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}07
 \\[0.5em]
 \text{where } YLD_{thal} = DW_{thal} \times N_{thal,survive} \times LE_{thal} = 0.4 \times 540 \times 60 = 13{,}000
 \\[0.5em]
-\text{where } N_{thal,survive} = US\_CASES \times (1 - MORTALITY\_RATE) = 540
+\text{where } N_{thal,survive} = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) = 900 \times (1 - 40\%) = 540
 \\[0.5em]
 \text{where } N_{thal,US,prevent} = N_{thal,global} \times Pct_{US,1960} = 15{,}000 \times 6\% = 900
 \\[0.5em]
@@ -6336,7 +6351,7 @@ DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M
 \\[0.5em]
 \text{where } YLD_{thal} = DW_{thal} \times N_{thal,survive} \times LE_{thal} = 0.4 \times 540 \times 60 = 13{,}000
 \\[0.5em]
-\text{where } N_{thal,survive} = US\_CASES \times (1 - MORTALITY\_RATE) = 540
+\text{where } N_{thal,survive} = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) = 900 \times (1 - 40\%) = 540
 \\[0.5em]
 \text{where } N_{thal,US,prevent} = N_{thal,global} \times Pct_{US,1960} = 15{,}000 \times 6\% = 900
 \\[0.5em]
@@ -6381,7 +6396,7 @@ Fraction of possible drug-disease space that remains unexplored (>99%)
 
 $$
 \begin{aligned}
-Ratio_{unexplored} = 1 - EXPLORATION\_RATIO = 99.7\%
+Ratio_{unexplored} = 1 - \frac{N_{tested}}{N_{combos}} = 1 - \frac{32{,}500}{9.5M} = 99.7\%
 \\[0.5em]
 \text{where } N_{combos} = N_{safe} \times N_{diseases,trial} = 9{,}500 \times 1{,}000 = 9.5M
 \end{aligned}
