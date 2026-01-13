@@ -1,626 +1,605 @@
 #!/usr/bin/env python3
 """
-LATEX SYMBOL REVIEW FILE
-========================
+LATEX SYMBOL REVIEW FILE - REVIEWED BY CLAUDE
+==============================================
 
-This file contains suggested latex_symbol values for all parameters.
+Status markers:
+  # OK - approved as-is
+  # FIXED - improved from auto-generated
+  # SKIP - set to None, will use auto-generation at runtime
 
-HOW TO USE:
-1. Review the SYMBOLS dict below
-2. Edit any symbols that look wrong or could be improved
-3. Set symbols to None to skip (keep auto-generated)
-4. Run: python scripts/apply-latex-symbols.py
-
-SYMBOL GUIDELINES:
-- Use subscripts for context: Cost_{platform}, OPEX_{dFDA}
-- Keep it short but meaningful
-- Use \\text{} for multi-letter words: \\text{OPEX}_{total}
-- Common patterns:
-    Cost_{X}, Benefit_{X}, ROI_{X}
-    Deaths_{cause}, DALYs_{source}
-    Years_{context}, Rate_{what}
+Run: python scripts/apply-latex-symbols.py
 """
 
 # Parameters that already have latex_symbol (for reference)
 EXISTING_SYMBOLS = {
-    # Total annual Decentralized Framework for Drug Assessment operational costs (sum 
     "DFDA_ANNUAL_OPEX": r"OPEX_{dFDA}",
-    # Decentralized Framework for Drug Assessment community support costs
     "DFDA_OPEX_COMMUNITY": r"Cost_{community}",
-    # Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
     "DFDA_OPEX_INFRASTRUCTURE": r"Cost_{infra}",
-    # Decentralized Framework for Drug Assessment maintenance costs
     "DFDA_OPEX_PLATFORM_MAINTENANCE": r"Cost_{platform}",
-    # Decentralized Framework for Drug Assessment regulatory coordination costs
     "DFDA_OPEX_REGULATORY": r"Cost_{regulatory}",
-    # Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
     "DFDA_OPEX_STAFF": r"Cost_{staff}",
-    # Annual funding from 1% of global military spending redirected to DIH
     "TREATY_ANNUAL_FUNDING": r"Funding_{treaty}",
 }
 
-# Parameters needing latex_symbol - REVIEW AND EDIT THESE
-# Set to None to skip (use auto-generated symbol)
-# Format: "PARAM_NAME": r"Symbol_{subscript}",
 SYMBOLS = {
-
     # ADAPTABLE (3)
-    "ADAPTABLE_TRIAL_COST_PER_PATIENT": r"Cost",
-    "ADAPTABLE_TRIAL_PATIENTS": r"Patients",
-    "ADAPTABLE_TRIAL_TOTAL_COST": r"Cost_{total}",
+    "ADAPTABLE_TRIAL_COST_PER_PATIENT": r"Cost_{ADAPT,pt}",  # FIXED
+    "ADAPTABLE_TRIAL_PATIENTS": r"N_{ADAPT}",  # FIXED
+    "ADAPTABLE_TRIAL_TOTAL_COST": r"Cost_{ADAPT}",  # FIXED
 
     # ADDITIONAL (1)
-    "ADDITIONAL_DRUGS_FROM_COST_ELIMINATION": r"Cost",
+    "ADDITIONAL_DRUGS_FROM_COST_ELIMINATION": r"Drugs_{new}",  # FIXED
 
     # ANTIDEPRESSANT (1)
-    "ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE": r"Rate",
+    "ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE": r"Rate_{excl}",  # FIXED
 
     # APPROVED (1)
-    "APPROVED_DRUG_DISEASE_PAIRINGS": r"Approved",
+    "APPROVED_DRUG_DISEASE_PAIRINGS": r"N_{approved}",  # FIXED
 
     # AVERAGE (2)
-    "AVERAGE_MARKET_RETURN_PCT": r"Average",
-    "AVERAGE_US_HOURLY_WAGE": r"Hours",
+    "AVERAGE_MARKET_RETURN_PCT": r"r_{market}",  # FIXED
+    "AVERAGE_US_HOURLY_WAGE": r"Wage_{US}",  # FIXED
 
     # BASELINE (1)
-    "BASELINE_LIVES_SAVED_ANNUAL": r"Lives_{ann}",
+    "BASELINE_LIVES_SAVED_ANNUAL": r"Lives_{base,ann}",  # OK
 
     # BED (1)
-    "BED_NETS_COST_PER_DALY": r"Cost_{net}",
+    "BED_NETS_COST_PER_DALY": r"Cost_{nets}",  # FIXED
 
     # BOOK (1)
-    "BOOK_READING_SPEED_WPM": r"Book",
+    "BOOK_READING_SPEED_WPM": r"WPM",  # FIXED
 
-    # CAMPAIGN (27)
-    "CAMPAIGN_CELEBRITY_ENDORSEMENT": r"Campaign_{camp}",
-    "CAMPAIGN_COMMUNITY_ORGANIZING": r"Campaign_{community}",
-    "CAMPAIGN_CONTINGENCY": r"Cost_{camp}",
-    "CAMPAIGN_DEFENSE_CONVERSION": r"Campaign_{camp}",
-    "CAMPAIGN_DEFENSE_LOBBYIST_BUDGET": r"Campaign_{camp}",
-    "CAMPAIGN_HEALTHCARE_ALIGNMENT": r"Campaign_{camp,health}",
-    "CAMPAIGN_INFRASTRUCTURE": r"Ratio_{infra}",
-    "CAMPAIGN_LEGAL_AI_BUDGET": r"Campaign_{camp}",
-    "CAMPAIGN_LEGAL_DEFENSE": r"Campaign_{camp}",
-    "CAMPAIGN_LEGAL_WORK": r"Campaign_{camp}",
-    "CAMPAIGN_LOBBYING_EU": r"Campaign_{camp}",
-    "CAMPAIGN_LOBBYING_G20_MILLIONS": r"Campaign_{camp}",
-    "CAMPAIGN_LOBBYING_US": r"Campaign_{camp}",
-    "CAMPAIGN_MEDIA_BUDGET_MAX": r"Campaign_{camp}",
-    "CAMPAIGN_MEDIA_BUDGET_MIN": r"Campaign_{camp}",
-    "CAMPAIGN_OPPOSITION_RESEARCH": r"Campaign_{camp,RD}",
-    "CAMPAIGN_PHASE1_BUDGET": r"Campaign_{camp}",
-    "CAMPAIGN_PHASE2_BUDGET": r"Campaign_{camp}",
-    "CAMPAIGN_PILOT_PROGRAMS": r"Campaign_{camp}",
-    "CAMPAIGN_PLATFORM_DEVELOPMENT": r"Campaign_{platform}",
-    "CAMPAIGN_REGULATORY_NAVIGATION": r"Campaign_{reg}",
-    "CAMPAIGN_SCALING_PREP": r"Ratio_{camp}",
-    "CAMPAIGN_STAFF_BUDGET": r"Campaign_{staff}",
-    "CAMPAIGN_SUPER_PAC_BUDGET": r"Campaign_{camp}",
-    "CAMPAIGN_TECH_PARTNERSHIPS": r"Campaign_{camp}",
-    "CAMPAIGN_TREATY_IMPLEMENTATION": r"Campaign_{camp,treaty}",
-    "CAMPAIGN_VIRAL_CONTENT_BUDGET": r"Campaign_{camp}",
+    # CAMPAIGN (27) - all budget items
+    "CAMPAIGN_CELEBRITY_ENDORSEMENT": r"Budget_{celeb}",  # FIXED
+    "CAMPAIGN_COMMUNITY_ORGANIZING": r"Budget_{community}",  # FIXED
+    "CAMPAIGN_CONTINGENCY": r"Budget_{contingency}",  # FIXED
+    "CAMPAIGN_DEFENSE_CONVERSION": r"Budget_{conversion}",  # FIXED
+    "CAMPAIGN_DEFENSE_LOBBYIST_BUDGET": r"Budget_{lobby,def}",  # FIXED
+    "CAMPAIGN_HEALTHCARE_ALIGNMENT": r"Budget_{health}",  # FIXED
+    "CAMPAIGN_INFRASTRUCTURE": r"Budget_{infra}",  # FIXED
+    "CAMPAIGN_LEGAL_AI_BUDGET": r"Budget_{legal,AI}",  # FIXED
+    "CAMPAIGN_LEGAL_DEFENSE": r"Budget_{legal,def}",  # FIXED
+    "CAMPAIGN_LEGAL_WORK": r"Budget_{legal}",  # FIXED
+    "CAMPAIGN_LOBBYING_EU": r"Budget_{lobby,EU}",  # FIXED
+    "CAMPAIGN_LOBBYING_G20_MILLIONS": r"Budget_{lobby,G20}",  # FIXED
+    "CAMPAIGN_LOBBYING_US": r"Budget_{lobby,US}",  # FIXED
+    "CAMPAIGN_MEDIA_BUDGET_MAX": r"Budget_{media,max}",  # FIXED
+    "CAMPAIGN_MEDIA_BUDGET_MIN": r"Budget_{media,min}",  # FIXED
+    "CAMPAIGN_OPPOSITION_RESEARCH": r"Budget_{oppo}",  # FIXED
+    "CAMPAIGN_PHASE1_BUDGET": r"Budget_{phase1}",  # FIXED
+    "CAMPAIGN_PHASE2_BUDGET": r"Budget_{phase2}",  # FIXED
+    "CAMPAIGN_PILOT_PROGRAMS": r"Budget_{pilot}",  # FIXED
+    "CAMPAIGN_PLATFORM_DEVELOPMENT": r"Budget_{platform}",  # FIXED
+    "CAMPAIGN_REGULATORY_NAVIGATION": r"Budget_{reg}",  # FIXED
+    "CAMPAIGN_SCALING_PREP": r"Budget_{scale}",  # FIXED
+    "CAMPAIGN_STAFF_BUDGET": r"Budget_{staff}",  # FIXED
+    "CAMPAIGN_SUPER_PAC_BUDGET": r"Budget_{PAC}",  # FIXED
+    "CAMPAIGN_TECH_PARTNERSHIPS": r"Budget_{tech}",  # FIXED
+    "CAMPAIGN_TREATY_IMPLEMENTATION": r"Budget_{impl}",  # FIXED
+    "CAMPAIGN_VIRAL_CONTENT_BUDGET": r"Budget_{viral}",  # FIXED
 
     # CAREGIVER (5)
-    "CAREGIVER_ANNUAL_VALUE_TOTAL": r"Caregiver_{annual}",
-    "CAREGIVER_COST_ANNUAL": r"Cost_{ann}",
-    "CAREGIVER_COUNT_US": r"CaregiverUS",
-    "CAREGIVER_HOURS_PER_MONTH": r"Hours",
-    "CAREGIVER_VALUE_PER_HOUR_SIMPLE": r"Cost",
+    "CAREGIVER_ANNUAL_VALUE_TOTAL": r"Value_{care,ann}",  # FIXED
+    "CAREGIVER_COST_ANNUAL": r"Cost_{care,ann}",  # FIXED
+    "CAREGIVER_COUNT_US": r"N_{care,US}",  # FIXED
+    "CAREGIVER_HOURS_PER_MONTH": r"Hours_{care}",  # FIXED
+    "CAREGIVER_VALUE_PER_HOUR_SIMPLE": r"Value_{care,hr}",  # FIXED
 
     # CELL (2)
-    "CELL_THERAPY_APPROACHES": r"Cell",
-    "CELL_THERAPY_DISEASE_COMBINATIONS": r"Cell",
+    "CELL_THERAPY_APPROACHES": r"N_{cell}",  # FIXED
+    "CELL_THERAPY_DISEASE_COMBINATIONS": r"Combos_{cell}",  # FIXED
 
     # CHILDHOOD (3)
-    "CHILDHOOD_VACCINATION_ANNUAL_BENEFIT": r"Benefit_{ann}",
-    "CHILDHOOD_VACCINATION_COST_PER_DALY": r"Cost",
-    "CHILDHOOD_VACCINATION_ROI": r"ROI",
+    "CHILDHOOD_VACCINATION_ANNUAL_BENEFIT": r"Benefit_{vax,ann}",  # FIXED
+    "CHILDHOOD_VACCINATION_COST_PER_DALY": r"Cost_{vax,DALY}",  # FIXED
+    "CHILDHOOD_VACCINATION_ROI": r"ROI_{vax}",  # FIXED
 
     # CHRONIC (1)
-    "CHRONIC_DISEASE_DISABILITY_WEIGHT": r"Chronic",
+    "CHRONIC_DISEASE_DISABILITY_WEIGHT": r"DW_{chronic}",  # FIXED
 
     # CLINICAL (2)
-    "CLINICAL_TRIAL_COST_PER_APPROVED_DRUG": r"Cost",
-    "CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL": r"Cost_{ann}",
+    "CLINICAL_TRIAL_COST_PER_APPROVED_DRUG": r"Cost_{trial,drug}",  # FIXED
+    "CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL": r"Cost_{trial,pt,ann}",  # FIXED
 
     # COMBINATION (2)
-    "COMBINATION_THERAPY_DISEASE_SPACE": r"Combination",
-    "COMBINATION_THERAPY_PAIRS": r"Combination",
+    "COMBINATION_THERAPY_DISEASE_SPACE": r"Space_{combo}",  # FIXED
+    "COMBINATION_THERAPY_PAIRS": r"N_{combo}",  # FIXED
 
     # COMBINED (1)
-    "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC": r"Dividend_{ann}",
+    "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC": r"Dividend_{total,ann}",  # FIXED
 
     # CONCENTRATED (1)
-    "CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD": r"Rate",
+    "CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD": r"MarketCap_{defense}",  # FIXED
 
     # CPI (1)
-    "CPI_MULTIPLIER_1980_TO_2024": r"Multiplier_{80s}",
+    "CPI_MULTIPLIER_1980_TO_2024": r"CPI_{80-24}",  # FIXED
 
     # CURRENT (11)
-    "CURRENT_ACTIVE_TRIALS": r"Time_{curr}",
-    "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE": r"Rate_{curr}",
-    "CURRENT_COMBINATION_EXPLORATION_YEARS": r"Ratio_{curr}",
-    "CURRENT_DISEASE_PATIENTS_GLOBAL": r"Population_{curr,global}",
-    "CURRENT_DRUG_APPROVALS_PER_YEAR": r"Drug_{current}",
-    "CURRENT_KNOWN_SAFE_EXPLORATION_YEARS": r"Ratio_{curr}",
-    "CURRENT_PATIENT_PARTICIPATION_RATE": r"Rate_{curr}",
-    "CURRENT_TOTAL_EXPLORATION_YEARS": r"Ratio_{curr,total}",
-    "CURRENT_TRIALS_PER_YEAR": r"Trials_{curr}",
-    "CURRENT_TRIAL_ABANDONMENT_RATE": r"Rate_{curr}",
-    "CURRENT_TRIAL_SLOTS_AVAILABLE": r"Trials_{curr}",
+    "CURRENT_ACTIVE_TRIALS": r"Trials_{active}",  # FIXED
+    "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE": r"Rate_{part,curr}",  # FIXED
+    "CURRENT_COMBINATION_EXPLORATION_YEARS": r"T_{explore,combo}",  # FIXED
+    "CURRENT_DISEASE_PATIENTS_GLOBAL": r"N_{patients}",  # FIXED
+    "CURRENT_DRUG_APPROVALS_PER_YEAR": r"Drugs_{ann,curr}",  # FIXED
+    "CURRENT_KNOWN_SAFE_EXPLORATION_YEARS": r"T_{explore,safe}",  # FIXED
+    "CURRENT_PATIENT_PARTICIPATION_RATE": r"Rate_{part}",  # FIXED
+    "CURRENT_TOTAL_EXPLORATION_YEARS": r"T_{explore,total}",  # FIXED
+    "CURRENT_TRIALS_PER_YEAR": r"Trials_{ann,curr}",  # FIXED
+    "CURRENT_TRIAL_ABANDONMENT_RATE": r"Rate_{abandon}",  # FIXED
+    "CURRENT_TRIAL_SLOTS_AVAILABLE": r"Slots_{curr}",  # FIXED
 
     # DCT (1)
-    "DCT_PLATFORM_FUNDING_MEDIUM": r"Funding_{platform}",
+    "DCT_PLATFORM_FUNDING_MEDIUM": r"Funding_{DCT}",  # FIXED
 
     # DEFENSE (2)
-    "DEFENSE_LOBBYING_ANNUAL": r"Spending_{ann}",
-    "DEFENSE_SECTOR_RETENTION_PCT": r"Defense",
+    "DEFENSE_LOBBYING_ANNUAL": r"Lobby_{def,ann}",  # FIXED
+    "DEFENSE_SECTOR_RETENTION_PCT": r"Retain_{def}",  # FIXED
 
     # DEWORMING (1)
-    "DEWORMING_COST_PER_DALY": r"Cost",
+    "DEWORMING_COST_PER_DALY": r"Cost_{deworm,DALY}",  # FIXED
 
     # DFDA (46)
-    "DFDA_BENEFIT_RD_ONLY_ANNUAL": r"Benefit_{DFDA,ann}",
-    "DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER": r"Multiplier_{DFDA}",
-    "DFDA_DIRECT_FUNDING_COST_PER_DALY": r"Cost_{direct,DFDA}",
-    "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV": r"Funding_{direct,DFDA}",
-    "DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"Increase_{direct_funding,DFDA}",
-    "DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER": r"Multiplier_{direct,DFDA}",
-    "DFDA_EFFICACY_LAG_ELIMINATION_DALYS": r"DALYs_{DFDA}",
-    "DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED": r"Deaths_{DFDA}",
-    "DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE": r"Delay_{DFDA}",
-    "DFDA_EFFICACY_LAG_ELIMINATION_YLD": r"Delay_{DFDA}",
-    "DFDA_EFFICACY_LAG_ELIMINATION_YLL": r"Delay_{DFDA}",
-    "DFDA_FIRST_TREATMENTS_PER_YEAR": r"DFDA",
-    "DFDA_KNOWN_SAFE_EXPLORATION_YEARS": r"Ratio_{DFDA}",
-    "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL": r"Savings_{net,ann}",
-    "DFDA_NPV_ADOPTION_RAMP_YEARS": r"DFDANPV",
-    "DFDA_NPV_ANNUAL_OPEX": r"OPEX_{DFDA,ann}",
-    "DFDA_NPV_ANNUAL_OPEX_TOTAL": r"OPEX_{DFDA,total}",
-    "DFDA_NPV_BENEFIT_RD_ONLY": r"Benefit_{DFDA,RD}",
-    "DFDA_NPV_NET_BENEFIT_RD_ONLY": r"Benefit_{net,RD}",
-    "DFDA_NPV_PV_ANNUAL_OPEX": r"OPEX_{DFDA,ann}",
-    "DFDA_NPV_TOTAL_COST": r"Cost_{DFDA,total}",
-    "DFDA_NPV_UPFRONT_COST": r"Cost_{DFDA,NPV}",
-    "DFDA_NPV_UPFRONT_COST_TOTAL": r"Cost_{DFDA,total}",
-    "DFDA_OPEX_PCT_OF_TREATY_FUNDING": r"OPEX_{DFDA,treaty}",
-    "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT": r"Cost_{DFDA}",
-    "DFDA_QUEUE_CLEARANCE_YEARS": r"Time_{DFDA}",
-    "DFDA_RD_SAVINGS_DAILY": r"Cost_{DFDA,daily}",
-    "DFDA_ROI_RD_ONLY": r"Savings_{DFDA,RD}",
-    "DFDA_TARGET_COST_PER_PATIENT_USD": r"Cost_{DFDA}",
-    "DFDA_TOTAL_EXPLORATION_YEARS": r"Ratio_{DFDA,total}",
-    "DFDA_TRIALS_PER_YEAR_CAPACITY": r"Capacity_{DFDA}",
-    "DFDA_TRIAL_CAPACITY_DALYS_AVERTED": r"Increase_{DFDA}",
-    "DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE": r"Increase_{DFDA}",
-    "DFDA_TRIAL_CAPACITY_LIVES_SAVED": r"Increase_{DFDA}",
-    "DFDA_TRIAL_CAPACITY_MULTIPLIER": r"Multiplier_{DFDA}",
-    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS": r"DALYs_{max,DFDA}",
-    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE": r"Benefit_{max,DFDA}",
-    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED": r"Capacity_{max,DFDA}",
-    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS": r"Capacity_{max,DFDA}",
-    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS": r"Capacity_{max,DFDA}",
-    "DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS": r"Ratio_{DFDA}",
-    "DFDA_TRIAL_COST_REDUCTION_FACTOR": r"Cost_{DFDA}",
-    "DFDA_TRIAL_COST_REDUCTION_PCT": r"Reduction_{DFDA}",
-    "DFDA_UPFRONT_BUILD": r"Cost_{DFDA}",
-    "DFDA_UPFRONT_BUILD_MAX": r"Cost_{DFDA}",
-    "DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER": r"Multiplier_{DFDA}",
+    "DFDA_BENEFIT_RD_ONLY_ANNUAL": r"Benefit_{RD,ann}",  # OK
+    "DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER": r"k_{speedup}",  # FIXED
+    "DFDA_DIRECT_FUNDING_COST_PER_DALY": r"Cost_{direct,DALY}",  # FIXED
+    "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV": r"NPV_{direct}",  # FIXED
+    "DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"ROI_{direct,max}",  # FIXED
+    "DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER": r"k_{direct,nets}",  # FIXED
+    "DFDA_EFFICACY_LAG_ELIMINATION_DALYS": r"DALYs_{lag}",  # OK
+    "DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED": r"Deaths_{lag}",  # OK
+    "DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE": r"Value_{lag}",  # FIXED
+    "DFDA_EFFICACY_LAG_ELIMINATION_YLD": r"YLD_{lag}",  # FIXED
+    "DFDA_EFFICACY_LAG_ELIMINATION_YLL": r"YLL_{lag}",  # FIXED
+    "DFDA_FIRST_TREATMENTS_PER_YEAR": r"Treatments_{dFDA,ann}",  # FIXED
+    "DFDA_KNOWN_SAFE_EXPLORATION_YEARS": r"T_{safe,dFDA}",  # FIXED
+    "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL": r"Savings_{RD,ann}",  # OK
+    "DFDA_NPV_ADOPTION_RAMP_YEARS": r"T_{ramp}",  # FIXED
+    "DFDA_NPV_ANNUAL_OPEX": r"OPEX_{ann}",  # OK
+    "DFDA_NPV_ANNUAL_OPEX_TOTAL": r"OPEX_{total}",  # OK
+    "DFDA_NPV_BENEFIT_RD_ONLY": r"NPV_{RD}",  # FIXED
+    "DFDA_NPV_NET_BENEFIT_RD_ONLY": r"NPV_{net,RD}",  # FIXED
+    "DFDA_NPV_PV_ANNUAL_OPEX": r"PV_{OPEX}",  # FIXED
+    "DFDA_NPV_TOTAL_COST": r"Cost_{dFDA,total}",  # OK
+    "DFDA_NPV_UPFRONT_COST": r"Cost_{upfront}",  # FIXED
+    "DFDA_NPV_UPFRONT_COST_TOTAL": r"Cost_{upfront,total}",  # FIXED
+    "DFDA_OPEX_PCT_OF_TREATY_FUNDING": r"OPEX_{pct}",  # FIXED
+    "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT": r"Cost_{pragmatic,pt}",  # FIXED
+    "DFDA_QUEUE_CLEARANCE_YEARS": r"T_{queue,dFDA}",  # FIXED
+    "DFDA_RD_SAVINGS_DAILY": r"Savings_{RD,daily}",  # OK
+    "DFDA_ROI_RD_ONLY": r"ROI_{RD}",  # FIXED
+    "DFDA_TARGET_COST_PER_PATIENT_USD": r"Cost_{target,pt}",  # FIXED
+    "DFDA_TOTAL_EXPLORATION_YEARS": r"T_{explore,dFDA}",  # FIXED
+    "DFDA_TRIALS_PER_YEAR_CAPACITY": r"Capacity_{trials}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_DALYS_AVERTED": r"DALYs_{capacity}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE": r"Value_{capacity}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_LIVES_SAVED": r"Lives_{capacity}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_MULTIPLIER": r"k_{capacity}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS": r"DALYs_{max}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE": r"Value_{max}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED": r"Lives_{max}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS": r"Hours_{suffer,max}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS": r"T_{accel,max}",  # FIXED
+    "DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS": r"T_{accel}",  # FIXED
+    "DFDA_TRIAL_COST_REDUCTION_FACTOR": r"k_{reduce}",  # FIXED
+    "DFDA_TRIAL_COST_REDUCTION_PCT": r"Reduce_{pct}",  # FIXED
+    "DFDA_UPFRONT_BUILD": r"Cost_{build}",  # FIXED
+    "DFDA_UPFRONT_BUILD_MAX": r"Cost_{build,max}",  # FIXED
+    "DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER": r"k_{rescue}",  # FIXED
 
     # DIH (7)
-    "DIH_NPV_ANNUAL_OPEX_INITIATIVES": r"OPEX_{opex,ann}",
-    "DIH_NPV_UPFRONT_COST_INITIATIVES": r"Cost_{NPV}",
-    "DIH_PATIENTS_FUNDABLE_ANNUALLY": r"Fundable_{ann}",
-    "DIH_TREASURY_MEDICAL_RESEARCH_PCT": r"Treasury_{RD}",
-    "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL": r"Treasury_{ann}",
-    "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL": r"Treasury_{ann}",
-    "DIH_TREASURY_TRIAL_SUBSIDIES_PCT": r"Treasury",
+    "DIH_NPV_ANNUAL_OPEX_INITIATIVES": r"OPEX_{DIH,ann}",  # FIXED
+    "DIH_NPV_UPFRONT_COST_INITIATIVES": r"Cost_{DIH,init}",  # FIXED
+    "DIH_PATIENTS_FUNDABLE_ANNUALLY": r"N_{fundable,ann}",  # FIXED
+    "DIH_TREASURY_MEDICAL_RESEARCH_PCT": r"Pct_{treasury,RD}",  # FIXED
+    "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL": r"Treasury_{RD,ann}",  # FIXED
+    "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL": r"Subsidies_{trial,ann}",  # FIXED
+    "DIH_TREASURY_TRIAL_SUBSIDIES_PCT": r"Pct_{subsidies}",  # FIXED
 
     # DISEASE (3)
-    "DISEASE_RELATED_CAREGIVER_PCT": r"Disease",
-    "DISEASE_VS_TERRORISM_DEATHS_RATIO": r"Deaths_{terror,dis}",
-    "DISEASE_VS_WAR_DEATHS_RATIO": r"Deaths_{war}",
+    "DISEASE_RELATED_CAREGIVER_PCT": r"Pct_{care,disease}",  # FIXED
+    "DISEASE_VS_TERRORISM_DEATHS_RATIO": r"Ratio_{dis:terror}",  # FIXED
+    "DISEASE_VS_WAR_DEATHS_RATIO": r"Ratio_{dis:war}",  # FIXED
 
     # DISEASES (1)
-    "DISEASES_WITHOUT_EFFECTIVE_TREATMENT": r"Diseases",
+    "DISEASES_WITHOUT_EFFECTIVE_TREATMENT": r"N_{untreated}",  # FIXED
 
     # DIVIDEND (1)
-    "DIVIDEND_COVERAGE_FACTOR": r"OPEX",
+    "DIVIDEND_COVERAGE_FACTOR": r"k_{coverage}",  # FIXED
 
     # DRUG (5)
-    "DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER": r"Multiplier_{curr}",
-    "DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER": r"Multiplier_{curr}",
-    "DRUG_DEVELOPMENT_COST_1980S": r"Cost_{80s}",
-    "DRUG_DISEASE_COMBINATIONS_POSSIBLE": r"Drug",
-    "DRUG_REPURPOSING_SUCCESS_RATE": r"Rate",
+    "DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER": r"k_{cost,80s}",  # FIXED
+    "DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER": r"k_{cost,pre62}",  # FIXED
+    "DRUG_DEVELOPMENT_COST_1980S": r"Cost_{dev,80s}",  # FIXED
+    "DRUG_DISEASE_COMBINATIONS_POSSIBLE": r"N_{combos}",  # FIXED
+    "DRUG_REPURPOSING_SUCCESS_RATE": r"Rate_{repurpose}",  # FIXED
 
     # ECONOMIC (4)
-    "ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT": r"Multiplier_{edu}",
-    "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT": r"Multiplier_{health}",
-    "ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT": r"Multiplier_{infra}",
-    "ECONOMIC_MULTIPLIER_MILITARY_SPENDING": r"Multiplier_{mil}",
+    "ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT": r"k_{edu}",  # FIXED
+    "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT": r"k_{health}",  # FIXED
+    "ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT": r"k_{infra}",  # FIXED
+    "ECONOMIC_MULTIPLIER_MILITARY_SPENDING": r"k_{mil}",  # FIXED
 
     # EFFECTIVE (1)
-    "EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT": r"Benefit",
+    "EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT": r"Rate_{benefit,hr}",  # FIXED
 
     # EFFICACY (1)
-    "EFFICACY_LAG_YEARS": r"Delay",
+    "EFFICACY_LAG_YEARS": r"T_{lag}",  # FIXED
 
     # EMERGING (1)
-    "EMERGING_MODALITY_COMBINATIONS": r"Emerging",
+    "EMERGING_MODALITY_COMBINATIONS": r"N_{emerging}",  # FIXED
 
     # EPIGENETIC (2)
-    "EPIGENETIC_DISEASE_COMBINATIONS": r"Epigenetic",
-    "EPIGENETIC_TARGETS_COUNT": r"Epigenetic",
+    "EPIGENETIC_DISEASE_COMBINATIONS": r"Combos_{epi}",  # FIXED
+    "EPIGENETIC_TARGETS_COUNT": r"N_{epi}",  # FIXED
 
     # EVENTUALLY (2)
-    "EVENTUALLY_AVOIDABLE_DALY_PCT": r"DALYs",
-    "EVENTUALLY_AVOIDABLE_DEATH_PCT": r"Deaths",
+    "EVENTUALLY_AVOIDABLE_DALY_PCT": r"Pct_{avoid,DALY}",  # FIXED
+    "EVENTUALLY_AVOIDABLE_DEATH_PCT": r"Pct_{avoid,death}",  # FIXED
 
     # EXISTING (2)
-    "EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL": r"Deaths_{total}",
-    "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS": r"Delay",
+    "EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL": r"Deaths_{lag,total}",  # FIXED
+    "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS": r"Loss_{lag}",  # FIXED
 
     # EXPLORATION (1)
-    "EXPLORATION_RATIO": r"Ratio",
+    "EXPLORATION_RATIO": r"Ratio_{explore}",  # FIXED
 
     # FAMILY (1)
-    "FAMILY_OFFICE_INVESTMENT_MIN": r"Family",
+    "FAMILY_OFFICE_INVESTMENT_MIN": r"Invest_{family,min}",  # FIXED
 
     # FDA (5)
-    "FDA_APPROVED_PRODUCTS_COUNT": r"FDA",
-    "FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS": r"FDA",
-    "FDA_GRAS_SUBSTANCES_COUNT": r"FDA",
-    "FDA_PHASE_1_TO_APPROVAL_YEARS": r"Time",
-    "FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER": r"Multiplier_{RD}",
+    "FDA_APPROVED_PRODUCTS_COUNT": r"N_{FDA,products}",  # FIXED
+    "FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS": r"N_{FDA,ingredients}",  # FIXED
+    "FDA_GRAS_SUBSTANCES_COUNT": r"N_{GRAS}",  # FIXED
+    "FDA_PHASE_1_TO_APPROVAL_YEARS": r"T_{FDA}",  # FIXED
+    "FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER": r"k_{FDA:RECOVERY}",  # FIXED
 
     # FUNDAMENTALLY (1)
-    "FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT": r"Deaths",
+    "FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT": r"Pct_{unavoid}",  # FIXED
 
     # GENE (1)
-    "GENE_THERAPY_DISEASE_COMBINATIONS": r"Gene",
+    "GENE_THERAPY_DISEASE_COMBINATIONS": r"Combos_{gene}",  # FIXED
 
     # GIVEWELL (3)
-    "GIVEWELL_COST_PER_LIFE_AVG": r"Cost",
-    "GIVEWELL_COST_PER_LIFE_MAX": r"Cost",
-    "GIVEWELL_COST_PER_LIFE_MIN": r"Cost",
+    "GIVEWELL_COST_PER_LIFE_AVG": r"Cost_{GW,avg}",  # FIXED
+    "GIVEWELL_COST_PER_LIFE_MAX": r"Cost_{GW,max}",  # FIXED
+    "GIVEWELL_COST_PER_LIFE_MIN": r"Cost_{GW,min}",  # FIXED
 
     # GLOBAL (54)
-    "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT": r"Deaths_{combat,ann}",
-    "GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE": r"Deaths_{state,ann}",
-    "GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS": r"Deaths_{terror,ann}",
-    "GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL": r"Deaths_{total}",
-    "GLOBAL_ANNUAL_DALY_BURDEN": r"DALYs_{ann}",
-    "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES": r"Deaths_{ann}",
-    "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST": r"Cost_{indirect,ann}",
-    "GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT": r"Cost_{env,ann}",
-    "GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT": r"Cost_{combat,ann}",
-    "GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE": r"Cost_{state,ann}",
-    "GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS": r"Cost_{terror,ann}",
-    "GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT": r"Loss_{human,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT": r"Damage_{comms,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT": r"Damage_{edu,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT": r"Damage_{energy,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT": r"Damage_{health,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT": r"Damage_{transport,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT": r"Damage_{water,ann}",
-    "GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT": r"Infrastructure_{global}",
-    "GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH": r"Lives_{ann}",
-    "GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING": r"Cost_{econ_growth,ann}",
-    "GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT": r"Lost_{global}",
-    "GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT": r"Cost_{ann}",
-    "GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS": r"Cost_{ref,ann}",
-    "GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT": r"Disruption_{trade,ann}",
-    "GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT": r"Cost_{currency,ann}",
-    "GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT": r"Cost_{trade,ann}",
-    "GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT": r"Cost_{shipping,ann}",
-    "GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT": r"Cost_{trade,ann}",
-    "GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS": r"Cost_{vet,ann}",
-    "GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL": r"Cost_{direct,total}",
-    "GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL": r"Cost_{indirect,total}",
-    "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Trials_{ann}",
-    "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL": r"Cost_{ann}",
-    "GLOBAL_DISEASE_DEATHS_DAILY": r"Deaths_{daily}",
-    "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL": r"Cost_{direct,ann}",
-    "GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL": r"Burden_{ann}",
-    "GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL": r"Loss_{human,ann}",
-    "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL": r"Loss_{ann}",
-    "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Trials_{ann}",
-    "GLOBAL_HOUSEHOLD_WEALTH_USD": r"Household_{global}",
-    "GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Trials_{ann}",
-    "GLOBAL_LIFE_EXPECTANCY_2024": r"Life_{global}",
-    "GLOBAL_MED_RESEARCH_SPENDING": r"Spending_{global}",
-    "GLOBAL_MILITARY_SPENDING_ANNUAL_2024": r"Spending_{mil,ann}",
-    "GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL": r"Spending_{percap,ann}",
-    "GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024": r"Spending_{mil,ann}",
-    "GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Trials_{ann}",
-    "GLOBAL_PHARMA_RD_SPENDING_ANNUAL": r"Spending_{ann}",
-    "GLOBAL_POPULATION_2024": r"Population_{global}",
-    "GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT": r"Threshold_{global}",
-    "GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL": r"Spending_{sympt,ann}",
-    "GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL": r"Cost_{total}",
-    "GLOBAL_YLD_PROPORTION_OF_DALYS": r"DALYs_{global}",
+    "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT": r"Deaths_{combat}",  # OK
+    "GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE": r"Deaths_{state}",  # OK
+    "GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS": r"Deaths_{terror}",  # OK
+    "GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL": r"Deaths_{conflict}",  # FIXED
+    "GLOBAL_ANNUAL_DALY_BURDEN": r"DALYs_{global,ann}",  # OK
+    "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES": r"Deaths_{curable,ann}",  # FIXED
+    "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST": r"Cost_{war,total}",  # FIXED
+    "GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT": r"Damage_{env}",  # FIXED
+    "GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT": r"Cost_{combat,human}",  # FIXED
+    "GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE": r"Cost_{state,human}",  # FIXED
+    "GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS": r"Cost_{terror,human}",  # FIXED
+    "GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT": r"Loss_{life,conflict}",  # FIXED
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT": r"Damage_{comms}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT": r"Damage_{edu}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT": r"Damage_{energy}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT": r"Damage_{health}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT": r"Damage_{transport}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT": r"Damage_{water}",  # OK
+    "GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT": r"Damage_{infra,total}",  # FIXED
+    "GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH": r"Lives_{RD,ann}",  # FIXED
+    "GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING": r"Loss_{growth,mil}",  # FIXED
+    "GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT": r"Loss_{capital,conflict}",  # FIXED
+    "GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT": r"Cost_{psych}",  # FIXED
+    "GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS": r"Cost_{refugee}",  # FIXED
+    "GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT": r"Disruption_{trade}",  # OK
+    "GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT": r"Disruption_{currency}",  # FIXED
+    "GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT": r"Disruption_{energy}",  # FIXED
+    "GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT": r"Disruption_{shipping}",  # FIXED
+    "GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT": r"Disruption_{supply}",  # FIXED
+    "GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS": r"Cost_{vet}",  # FIXED
+    "GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL": r"Cost_{war,direct}",  # FIXED
+    "GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL": r"Cost_{war,indirect}",  # FIXED
+    "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Spending_{trials}",  # FIXED
+    "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL": r"Cost_{life,RD}",  # FIXED
+    "GLOBAL_DISEASE_DEATHS_DAILY": r"Deaths_{disease,daily}",  # FIXED
+    "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL": r"Cost_{medical,direct}",  # FIXED
+    "GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL": r"Burden_{disease}",  # FIXED
+    "GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL": r"Loss_{life,disease}",  # FIXED
+    "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL": r"Loss_{productivity}",  # FIXED
+    "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Spending_{trials,gov}",  # FIXED
+    "GLOBAL_HOUSEHOLD_WEALTH_USD": r"Wealth_{household}",  # FIXED
+    "GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Spending_{trials,industry}",  # FIXED
+    "GLOBAL_LIFE_EXPECTANCY_2024": r"LE_{global}",  # FIXED
+    "GLOBAL_MED_RESEARCH_SPENDING": r"Spending_{RD}",  # FIXED
+    "GLOBAL_MILITARY_SPENDING_ANNUAL_2024": r"Spending_{mil}",  # FIXED
+    "GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL": r"Spending_{mil,pc}",  # FIXED
+    "GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024": r"Spending_{mil,post}",  # FIXED
+    "GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL": r"Spending_{trials,nonprofit}",  # FIXED
+    "GLOBAL_PHARMA_RD_SPENDING_ANNUAL": r"Spending_{pharma,RD}",  # FIXED
+    "GLOBAL_POPULATION_2024": r"Pop_{global}",  # FIXED
+    "GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT": r"Threshold_{activism}",  # FIXED
+    "GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL": r"Spending_{symptom}",  # FIXED
+    "GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL": r"Cost_{health+war}",  # FIXED
+    "GLOBAL_YLD_PROPORTION_OF_DALYS": r"Pct_{YLD}",  # FIXED
 
     # HUMAN (3)
-    "HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT": r"Human_{total}",
-    "HUMAN_INTERACTOME_TARGETED_PCT": r"Human",
-    "HUMAN_PROTEIN_CODING_GENES": r"Human",
+    "HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT": r"Impact_{HGP}",  # FIXED
+    "HUMAN_INTERACTOME_TARGETED_PCT": r"Pct_{interactome}",  # FIXED
+    "HUMAN_PROTEIN_CODING_GENES": r"N_{genes}",  # FIXED
 
     # IAB (7)
-    "IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD": r"Cost_{camp}",
-    "IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD": r"Cost_{camp}",
-    "IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD": r"Cost_{camp}",
-    "IAB_MECHANISM_ANNUAL_COST": r"Cost_{ann}",
-    "IAB_MECHANISM_BENEFIT_COST_RATIO": r"Cost",
-    "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL": r"Funding_{ann}",
-    "IAB_POLITICAL_INCENTIVE_FUNDING_PCT": r"Funding",
+    "IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD": r"Cost_{IAB,base}",  # FIXED
+    "IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD": r"Cost_{IAB,cons}",  # FIXED
+    "IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD": r"Cost_{IAB,opt}",  # FIXED
+    "IAB_MECHANISM_ANNUAL_COST": r"Cost_{IAB,ann}",  # FIXED
+    "IAB_MECHANISM_BENEFIT_COST_RATIO": r"BCR_{IAB}",  # FIXED
+    "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL": r"Funding_{political,ann}",  # FIXED
+    "IAB_POLITICAL_INCENTIVE_FUNDING_PCT": r"Pct_{political}",  # FIXED
 
     # ICD (1)
-    "ICD_10_TOTAL_CODES": r"Icd_{total}",
+    "ICD_10_TOTAL_CODES": r"N_{ICD10}",  # FIXED
 
     # INDUSTRY (1)
-    "INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio",
+    "INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio_{ind:gov}",  # FIXED
 
     # INSTITUTIONAL (1)
-    "INSTITUTIONAL_INVESTOR_MIN": r"Institutional",
+    "INSTITUTIONAL_INVESTOR_MIN": r"Invest_{inst,min}",  # FIXED
 
     # LIFE (3)
-    "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE": r"Rate",
-    "LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE": r"Rate",
-    "LIFE_EXTENSION_YEARS": r"Ratio",
+    "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE": r"\Delta LE_{pre62}",  # FIXED
+    "LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE": r"\Delta LE_{post62}",  # FIXED
+    "LIFE_EXTENSION_YEARS": r"T_{extend}",  # FIXED
 
     # LOBBYIST (3)
-    "LOBBYIST_BOND_INVESTMENT_MAX": r"Lobbyist",
-    "LOBBYIST_SALARY_MAX": r"Lobbyist",
-    "LOBBYIST_SALARY_MIN_K": r"Lobbyist",
+    "LOBBYIST_BOND_INVESTMENT_MAX": r"Invest_{lobby,max}",  # FIXED
+    "LOBBYIST_SALARY_MAX": r"Salary_{lobby,max}",  # FIXED
+    "LOBBYIST_SALARY_MIN_K": r"Salary_{lobby,min}",  # FIXED
 
     # MEASLES (1)
-    "MEASLES_VACCINATION_ROI": r"ROI",
+    "MEASLES_VACCINATION_ROI": r"ROI_{measles}",  # FIXED
 
     # MEDICAL (1)
-    "MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN": r"Burden_{RD}",
+    "MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN": r"Pct_{RD:burden}",  # FIXED
 
     # MENTAL (1)
-    "MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA": r"Loss_{percap,health}",
+    "MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA": r"Loss_{mental,pc}",  # FIXED
 
     # MILITARY (3)
-    "MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio_{mil}",
-    "MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio_{mil}",
-    "MILITARY_VS_MEDICAL_RESEARCH_RATIO": r"Ratio_{mil,RD}",
+    "MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio_{mil:trials}",  # FIXED
+    "MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO": r"Ratio_{mil:gov}",  # FIXED
+    "MILITARY_VS_MEDICAL_RESEARCH_RATIO": r"Ratio_{mil:RD}",  # FIXED
 
     # MISALLOCATION (1)
-    "MISALLOCATION_FACTOR_DEATH_VS_SAVING": r"Cost",
+    "MISALLOCATION_FACTOR_DEATH_VS_SAVING": r"k_{misalloc}",  # FIXED
 
     # MRNA (1)
-    "MRNA_THERAPEUTIC_COMBINATIONS": r"Mrna",
+    "MRNA_THERAPEUTIC_COMBINATIONS": r"Combos_{mRNA}",  # FIXED
 
     # NEW (1)
-    "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR": r"New",
+    "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR": r"Treatments_{new,ann}",  # FIXED
 
     # NIH (3)
-    "NIH_ANNUAL_BUDGET": r"Nih_{annual}",
-    "NIH_CLINICAL_TRIALS_SPENDING_PCT": r"Trials",
-    "NIH_STANDARD_RESEARCH_COST_PER_QALY": r"Cost_{RD}",
+    "NIH_ANNUAL_BUDGET": r"Budget_{NIH}",  # FIXED
+    "NIH_CLINICAL_TRIALS_SPENDING_PCT": r"Pct_{NIH,trials}",  # FIXED
+    "NIH_STANDARD_RESEARCH_COST_PER_QALY": r"Cost_{NIH,QALY}",  # FIXED
 
     # NPV (2)
-    "NPV_DISCOUNT_RATE_STANDARD": r"Rate_{RD}",
-    "NPV_TIME_HORIZON_YEARS": r"Time_{NPV}",
+    "NPV_DISCOUNT_RATE_STANDARD": r"r_{discount}",  # FIXED
+    "NPV_TIME_HORIZON_YEARS": r"T_{horizon}",  # FIXED
 
     # OXFORD (1)
-    "OXFORD_RECOVERY_TRIAL_DURATION_MONTHS": r"Ratio_{RD}",
+    "OXFORD_RECOVERY_TRIAL_DURATION_MONTHS": r"T_{RECOVERY}",  # FIXED
 
     # PATIENT (1)
-    "PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT": r"Patients",
+    "PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT": r"Pct_{willing}",  # FIXED
 
     # PEACE (14)
-    "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT": r"Cost_{soc,ann}",
-    "PEACE_DIVIDEND_CONFLICT_REDUCTION": r"Benefit_{peace}",
-    "PEACE_DIVIDEND_DIRECT_COSTS": r"Cost_{direct,peace}",
-    "PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS": r"Savings_{direct,peace}",
-    "PEACE_DIVIDEND_ENVIRONMENTAL": r"Savings_{env,peace}",
-    "PEACE_DIVIDEND_HUMAN_CASUALTIES": r"Savings_{human,peace}",
-    "PEACE_DIVIDEND_INDIRECT_COSTS": r"Cost_{indirect,peace}",
-    "PEACE_DIVIDEND_INFRASTRUCTURE": r"Savings_{infra,peace}",
-    "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH": r"Savings_{econ_growth,peace}",
-    "PEACE_DIVIDEND_LOST_HUMAN_CAPITAL": r"Savings_{human_cap,peace}",
-    "PEACE_DIVIDEND_PTSD": r"Cost_{PTSD,peace}",
-    "PEACE_DIVIDEND_REFUGEE_SUPPORT": r"Cost_{ref,peace}",
-    "PEACE_DIVIDEND_TRADE_DISRUPTION": r"Savings_{trade,peace}",
-    "PEACE_DIVIDEND_VETERAN_HEALTHCARE": r"Cost_{vet,peace}",
+    "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT": r"Benefit_{peace,soc}",  # FIXED
+    "PEACE_DIVIDEND_CONFLICT_REDUCTION": r"Savings_{conflict}",  # FIXED
+    "PEACE_DIVIDEND_DIRECT_COSTS": r"Savings_{direct}",  # FIXED
+    "PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS": r"Savings_{fiscal}",  # FIXED
+    "PEACE_DIVIDEND_ENVIRONMENTAL": r"Savings_{env}",  # FIXED
+    "PEACE_DIVIDEND_HUMAN_CASUALTIES": r"Savings_{casualties}",  # FIXED
+    "PEACE_DIVIDEND_INDIRECT_COSTS": r"Savings_{indirect}",  # FIXED
+    "PEACE_DIVIDEND_INFRASTRUCTURE": r"Savings_{infra}",  # FIXED
+    "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH": r"Savings_{growth}",  # FIXED
+    "PEACE_DIVIDEND_LOST_HUMAN_CAPITAL": r"Savings_{capital}",  # FIXED
+    "PEACE_DIVIDEND_PTSD": r"Savings_{PTSD}",  # FIXED
+    "PEACE_DIVIDEND_REFUGEE_SUPPORT": r"Savings_{refugee}",  # FIXED
+    "PEACE_DIVIDEND_TRADE_DISRUPTION": r"Savings_{trade}",  # FIXED
+    "PEACE_DIVIDEND_VETERAN_HEALTHCARE": r"Savings_{vet}",  # FIXED
 
     # PER (2)
-    "PER_CAPITA_CHRONIC_DISEASE_COST": r"Cost_{percap,dis}",
-    "PER_CAPITA_MENTAL_HEALTH_COST": r"Cost_{percap,health}",
+    "PER_CAPITA_CHRONIC_DISEASE_COST": r"Cost_{chronic,pc}",  # FIXED
+    "PER_CAPITA_MENTAL_HEALTH_COST": r"Cost_{mental,pc}",  # FIXED
 
     # PERSONAL (1)
-    "PERSONAL_LIFETIME_WEALTH": r"Time",
+    "PERSONAL_LIFETIME_WEALTH": r"Wealth_{lifetime}",  # FIXED
 
     # PHARMA (5)
-    "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT": r"Cost_{curr}",
-    "PHARMA_DRUG_REVENUE_AVERAGE_CURRENT": r"Pharma_{current}",
-    "PHARMA_PHASE_2_3_COST_BARRIER": r"Cost",
-    "PHARMA_ROI_CURRENT_SYSTEM_PCT": r"ROI_{curr}",
-    "PHARMA_SUCCESS_RATE_CURRENT_PCT": r"Rate_{curr}",
+    "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT": r"Cost_{dev,curr}",  # FIXED
+    "PHARMA_DRUG_REVENUE_AVERAGE_CURRENT": r"Revenue_{drug,avg}",  # FIXED
+    "PHARMA_PHASE_2_3_COST_BARRIER": r"Cost_{P2+P3}",  # FIXED
+    "PHARMA_ROI_CURRENT_SYSTEM_PCT": r"ROI_{pharma,curr}",  # FIXED
+    "PHARMA_SUCCESS_RATE_CURRENT_PCT": r"Rate_{success,curr}",  # FIXED
 
     # PHASE (4)
-    "PHASE_1_PASSED_COMPOUNDS_GLOBAL": r"Phase_{global}",
-    "PHASE_1_SAFETY_DURATION_YEARS": r"Ratio",
-    "PHASE_2_3_CLINICAL_TRIAL_COST_PCT": r"Cost",
-    "PHASE_3_TRIAL_COST_MIN": r"Cost",
+    "PHASE_1_PASSED_COMPOUNDS_GLOBAL": r"N_{P1,passed}",  # FIXED
+    "PHASE_1_SAFETY_DURATION_YEARS": r"T_{P1}",  # FIXED
+    "PHASE_2_3_CLINICAL_TRIAL_COST_PCT": r"Pct_{P2+P3}",  # FIXED
+    "PHASE_3_TRIAL_COST_MIN": r"Cost_{P3,min}",  # FIXED
 
     # PMC (1)
-    "PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT": r"Cost",
+    "PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT": r"Cost_{pragmatic,median}",  # FIXED
 
     # POLIO (1)
-    "POLIO_VACCINATION_ROI": r"ROI",
+    "POLIO_VACCINATION_ROI": r"ROI_{polio}",  # FIXED
 
     # POLITICAL (1)
-    "POLITICAL_SUCCESS_PROBABILITY": r"Probability",
+    "POLITICAL_SUCCESS_PROBABILITY": r"P_{success}",  # FIXED
 
     # POST (2)
-    "POST_1962_DRUG_APPROVAL_REDUCTION_PCT": r"Reduction",
-    "POST_WW2_MILITARY_CUT_PCT": r"Spending_{mil}",
+    "POST_1962_DRUG_APPROVAL_REDUCTION_PCT": r"Reduce_{post62}",  # FIXED
+    "POST_WW2_MILITARY_CUT_PCT": r"Cut_{WW2}",  # FIXED
 
     # PRAGMATIC (2)
-    "PRAGMATIC_TRIAL_COST_PER_QALY": r"Cost",
-    "PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER": r"Multiplier",
+    "PRAGMATIC_TRIAL_COST_PER_QALY": r"Cost_{pragmatic,QALY}",  # FIXED
+    "PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER": r"k_{pragmatic:NIH}",  # FIXED
 
     # PRE (4)
-    "PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD": r"Cost_{pre62}",
-    "PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD": r"Cost_{pre62}",
-    "PRE_1962_PHYSICIAN_COUNT": r"Pre",
-    "PRE_1962_VALIDATION_YEARS": r"Pre",
+    "PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD": r"Cost_{pre62,80}",  # FIXED
+    "PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD": r"Cost_{pre62,24}",  # FIXED
+    "PRE_1962_PHYSICIAN_COUNT": r"N_{physicians,pre62}",  # FIXED
+    "PRE_1962_VALIDATION_YEARS": r"T_{validate,pre62}",  # FIXED
 
     # QALYS (1)
-    "QALYS_PER_COVID_DEATH_AVERTED": r"Deaths",
+    "QALYS_PER_COVID_DEATH_AVERTED": r"QALY_{COVID}",  # FIXED
 
     # RARE (1)
-    "RARE_DISEASES_COUNT_GLOBAL": r"Rare_{global}",
+    "RARE_DISEASES_COUNT_GLOBAL": r"N_{rare}",  # FIXED
 
     # RECOVERY (5)
-    "RECOVERY_TRIAL_COST_PER_PATIENT": r"Cost",
-    "RECOVERY_TRIAL_COST_REDUCTION_FACTOR": r"Cost",
-    "RECOVERY_TRIAL_GLOBAL_LIVES_SAVED": r"Trials_{global}",
-    "RECOVERY_TRIAL_TOTAL_COST": r"Cost_{total}",
-    "RECOVERY_TRIAL_TOTAL_QALYS_GENERATED": r"Rate_{total}",
+    "RECOVERY_TRIAL_COST_PER_PATIENT": r"Cost_{RECOVERY,pt}",  # FIXED
+    "RECOVERY_TRIAL_COST_REDUCTION_FACTOR": r"k_{RECOVERY}",  # FIXED
+    "RECOVERY_TRIAL_GLOBAL_LIVES_SAVED": r"Lives_{RECOVERY}",  # FIXED
+    "RECOVERY_TRIAL_TOTAL_COST": r"Cost_{RECOVERY}",  # FIXED
+    "RECOVERY_TRIAL_TOTAL_QALYS_GENERATED": r"QALY_{RECOVERY}",  # FIXED
 
     # REGULATORY (2)
-    "REGULATORY_DELAY_MEAN_AGE_OF_DEATH": r"Deaths_{reg}",
-    "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS": r"Deaths_{reg}",
+    "REGULATORY_DELAY_MEAN_AGE_OF_DEATH": r"Age_{death,delay}",  # FIXED
+    "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS": r"T_{suffering}",  # FIXED
 
     # SAFE (1)
-    "SAFE_COMPOUNDS_COUNT": r"Safe",
+    "SAFE_COMPOUNDS_COUNT": r"N_{safe}",  # FIXED
 
     # SMALLPOX (2)
-    "SMALLPOX_ERADICATION_ROI": r"ROI",
-    "SMALLPOX_ERADICATION_TOTAL_BENEFIT": r"Benefit_{total}",
+    "SMALLPOX_ERADICATION_ROI": r"ROI_{smallpox}",  # FIXED
+    "SMALLPOX_ERADICATION_TOTAL_BENEFIT": r"Benefit_{smallpox}",  # FIXED
 
     # SMOKING (1)
-    "SMOKING_CESSATION_ANNUAL_BENEFIT": r"Benefit_{ann}",
+    "SMOKING_CESSATION_ANNUAL_BENEFIT": r"Benefit_{smoking}",  # FIXED
 
     # STANDARD (2)
-    "STANDARD_ECONOMIC_QALY_VALUE_USD": r"QALYs_{RD}",
-    "STANDARD_QALYS_PER_LIFE_SAVED": r"QALYs_{RD}",
+    "STANDARD_ECONOMIC_QALY_VALUE_USD": r"Value_{QALY}",  # FIXED
+    "STANDARD_QALYS_PER_LIFE_SAVED": r"QALY_{life}",  # FIXED
 
     # STATUS (2)
-    "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT": r"Status",
-    "STATUS_QUO_QUEUE_CLEARANCE_YEARS": r"Time",
+    "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT": r"T_{first,SQ}",  # FIXED
+    "STATUS_QUO_QUEUE_CLEARANCE_YEARS": r"T_{queue,SQ}",  # FIXED
 
     # SUGAR (1)
-    "SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL": r"Subsidies_{ann}",
+    "SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL": r"Cost_{sugar,pc}",  # FIXED
 
     # SWITZERLAND (2)
-    "SWITZERLAND_DEFENSE_SPENDING_PCT": r"Spending",
-    "SWITZERLAND_GDP_PER_CAPITA_K": r"SwitzerlandGDP",
+    "SWITZERLAND_DEFENSE_SPENDING_PCT": r"Spending_{CH,def}",  # FIXED
+    "SWITZERLAND_GDP_PER_CAPITA_K": r"GDP_{CH,pc}",  # FIXED
 
     # TERRORISM (1)
-    "TERRORISM_DEATHS_911": r"Deaths_{terror}",
+    "TERRORISM_DEATHS_911": r"Deaths_{9/11}",  # FIXED
 
     # TESTED (1)
-    "TESTED_RELATIONSHIPS_ESTIMATE": r"Tested",
+    "TESTED_RELATIONSHIPS_ESTIMATE": r"N_{tested}",  # FIXED
 
     # THALIDOMIDE (11)
-    "THALIDOMIDE_CASES_WORLDWIDE": r"Thalidomide",
-    "THALIDOMIDE_DALYS_PER_EVENT": r"DALYs",
-    "THALIDOMIDE_DEATHS_PER_EVENT": r"Deaths",
-    "THALIDOMIDE_DISABILITY_WEIGHT": r"Thalidomide",
-    "THALIDOMIDE_MORTALITY_RATE": r"Rate",
-    "THALIDOMIDE_SURVIVORS_PER_EVENT": r"Thalidomide",
-    "THALIDOMIDE_SURVIVOR_LIFESPAN": r"Thalidomide",
-    "THALIDOMIDE_US_CASES_PREVENTED": r"ThalidomideUS",
-    "THALIDOMIDE_US_POPULATION_SHARE_1960": r"Population",
-    "THALIDOMIDE_YLD_PER_EVENT": r"YLD",
-    "THALIDOMIDE_YLL_PER_EVENT": r"YLL",
+    "THALIDOMIDE_CASES_WORLDWIDE": r"N_{thal,global}",  # FIXED
+    "THALIDOMIDE_DALYS_PER_EVENT": r"DALY_{thal}",  # FIXED
+    "THALIDOMIDE_DEATHS_PER_EVENT": r"Deaths_{thal}",  # FIXED
+    "THALIDOMIDE_DISABILITY_WEIGHT": r"DW_{thal}",  # FIXED
+    "THALIDOMIDE_MORTALITY_RATE": r"Rate_{thal,mort}",  # FIXED
+    "THALIDOMIDE_SURVIVORS_PER_EVENT": r"N_{thal,survive}",  # FIXED
+    "THALIDOMIDE_SURVIVOR_LIFESPAN": r"LE_{thal}",  # FIXED
+    "THALIDOMIDE_US_CASES_PREVENTED": r"N_{thal,US,prevent}",  # FIXED
+    "THALIDOMIDE_US_POPULATION_SHARE_1960": r"Pct_{US,1960}",  # FIXED
+    "THALIDOMIDE_YLD_PER_EVENT": r"YLD_{thal}",  # FIXED
+    "THALIDOMIDE_YLL_PER_EVENT": r"YLL_{thal}",  # FIXED
 
     # TOTAL (3)
-    "TOTAL_BOOK_WORDS": r"Book_{total}",
-    "TOTAL_RESEARCH_FUNDING_WITH_TREATY": r"Funding_{total}",
-    "TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS": r"Testable_{total}",
+    "TOTAL_BOOK_WORDS": r"N_{words}",  # FIXED
+    "TOTAL_RESEARCH_FUNDING_WITH_TREATY": r"Funding_{RD,total}",  # FIXED
+    "TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS": r"N_{testable}",  # FIXED
 
     # TRADITIONAL (1)
-    "TRADITIONAL_PHASE3_COST_PER_PATIENT": r"Cost",
+    "TRADITIONAL_PHASE3_COST_PER_PATIENT": r"Cost_{P3,pt}",  # FIXED
 
     # TREATMENT (1)
-    "TREATMENT_ACCELERATION_YEARS_CURRENT": r"Ratio_{curr}",
+    "TREATMENT_ACCELERATION_YEARS_CURRENT": r"T_{accel,curr}",  # FIXED
 
     # TREATY (24)
-    "TREATY_BENEFIT_MULTIPLIER_VS_VACCINES": r"Multiplier_{treaty}",
-    "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED": r"Cost_{camp,ann}",
-    "TREATY_CAMPAIGN_BUDGET_LOBBYING": r"Campaign_{camp,treaty}",
-    "TREATY_CAMPAIGN_BUDGET_RESERVE": r"Campaign_{camp,treaty}",
-    "TREATY_CAMPAIGN_BUDGET_SUPER_PACS": r"Campaign_{camp,treaty}",
-    "TREATY_CAMPAIGN_DURATION_YEARS": r"Ratio_{camp,treaty}",
-    "TREATY_CAMPAIGN_TOTAL_COST": r"Cost_{camp,total}",
-    "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE": r"Campaign_{camp,treaty}",
-    "TREATY_CAMPAIGN_VOTING_BLOC_TARGET": r"Campaign_{camp,treaty}",
-    "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"Increase_{max,treaty}",
-    "TREATY_EXPECTED_COST_PER_DALY": r"Cost_{treaty}",
-    "TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"ROI_{max,treaty}",
-    "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER": r"Multiplier_{net,treaty}",
-    "TREATY_LIVES_SAVED_ANNUAL_GLOBAL": r"Deaths_{ann}",
-    "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": r"Benefit_{ann}",
-    "TREATY_QALYS_GAINED_ANNUAL_GLOBAL": r"Dividend_{ann}",
-    "TREATY_RECURRING_BENEFITS_ANNUAL": r"Benefit_{ann}",
-    "TREATY_REDIRECTED_SPENDING_INFINITE_ROI": r"ROI_{direct,treaty}",
-    "TREATY_REDUCTION_PCT": r"Reduction_{treaty}",
-    "TREATY_ROI_EXISTING_DRUGS_ONLY": r"ROI_{treaty}",
-    "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"Increase_{max,treaty}",
-    "TREATY_TOTAL_ANNUAL_COSTS": r"Cost_{total}",
-    "TREATY_VS_BED_NETS_MULTIPLIER": r"Multiplier_{net,treaty}",
-    "TREATY_VS_DIRECT_FUNDING_LEVERAGE": r"Funding_{direct,treaty}",
+    "TREATY_BENEFIT_MULTIPLIER_VS_VACCINES": r"k_{treaty:vax}",  # FIXED
+    "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED": r"Cost_{camp,amort}",  # FIXED
+    "TREATY_CAMPAIGN_BUDGET_LOBBYING": r"Budget_{lobby,treaty}",  # FIXED
+    "TREATY_CAMPAIGN_BUDGET_RESERVE": r"Budget_{reserve}",  # FIXED
+    "TREATY_CAMPAIGN_BUDGET_SUPER_PACS": r"Budget_{PAC,treaty}",  # FIXED
+    "TREATY_CAMPAIGN_DURATION_YEARS": r"T_{campaign}",  # FIXED
+    "TREATY_CAMPAIGN_TOTAL_COST": r"Cost_{campaign}",  # FIXED
+    "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE": r"Budget_{viral,base}",  # FIXED
+    "TREATY_CAMPAIGN_VOTING_BLOC_TARGET": r"N_{voters,target}",  # FIXED
+    "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"Cost_{treaty,DALY}",  # FIXED
+    "TREATY_EXPECTED_COST_PER_DALY": r"E[Cost_{DALY}]",  # FIXED
+    "TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"E[ROI_{max}]",  # FIXED
+    "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER": r"E[k_{nets}]",  # FIXED
+    "TREATY_LIVES_SAVED_ANNUAL_GLOBAL": r"Lives_{treaty,ann}",  # FIXED
+    "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": r"Benefit_{peace+RD}",  # FIXED
+    "TREATY_QALYS_GAINED_ANNUAL_GLOBAL": r"QALY_{treaty,ann}",  # FIXED
+    "TREATY_RECURRING_BENEFITS_ANNUAL": r"Benefit_{recur,ann}",  # FIXED
+    "TREATY_REDIRECTED_SPENDING_INFINITE_ROI": r"ROI_{\infty}",  # FIXED
+    "TREATY_REDUCTION_PCT": r"Reduce_{treaty}",  # FIXED
+    "TREATY_ROI_EXISTING_DRUGS_ONLY": r"ROI_{drugs}",  # FIXED
+    "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG": r"ROI_{max}",  # FIXED
+    "TREATY_TOTAL_ANNUAL_COSTS": r"Cost_{treaty,ann}",  # FIXED
+    "TREATY_VS_BED_NETS_MULTIPLIER": r"k_{treaty:nets}",  # FIXED
+    "TREATY_VS_DIRECT_FUNDING_LEVERAGE": r"Leverage_{treaty}",  # FIXED
 
     # TRIAL (2)
-    "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR": r"Capacity",
-    "TRIAL_RELEVANT_DISEASES_COUNT": r"Trials_{dis}",
+    "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR": r"Capacity_{20yr}",  # FIXED
+    "TRIAL_RELEVANT_DISEASES_COUNT": r"N_{diseases,trial}",  # FIXED
 
     # TYPE (2)
-    "TYPE_II_ERROR_COST_RATIO": r"Cost",
-    "TYPE_I_ERROR_BENEFIT_DALYS": r"DALYs",
+    "TYPE_II_ERROR_COST_RATIO": r"Ratio_{TypeII}",  # FIXED
+    "TYPE_I_ERROR_BENEFIT_DALYS": r"DALY_{TypeI}",  # FIXED
 
     # TYPICAL (1)
-    "TYPICAL_CEO_HOURLY_RATE": r"Rate",
+    "TYPICAL_CEO_HOURLY_RATE": r"Rate_{CEO}",  # FIXED
 
     # UNEXPLORED (1)
-    "UNEXPLORED_RATIO": r"Ratio",
+    "UNEXPLORED_RATIO": r"Ratio_{unexplored}",  # FIXED
 
     # US (12)
-    "US_ALZHEIMERS_ANNUAL_COST": r"Cost_{alz,ann}",
-    "US_CANCER_ANNUAL_COST": r"Cost_{cancer,ann}",
-    "US_CHRONIC_DISEASE_SPENDING_ANNUAL": r"Spending_{chronic,ann}",
-    "US_DIABETES_ANNUAL_COST": r"Cost_{diab,ann}",
-    "US_HEART_DISEASE_ANNUAL_COST": r"Cost_{heart,ann}",
-    "US_LIFE_EXPECTANCY_1880": r"US",
-    "US_LIFE_EXPECTANCY_1962": r"US",
-    "US_LIFE_EXPECTANCY_2019": r"US",
-    "US_MAJOR_DISEASES_TOTAL_ANNUAL_COST": r"Cost_{total}",
-    "US_MENTAL_HEALTH_COST_ANNUAL": r"Cost_{mental,ann}",
-    "US_MILITARY_SPENDING_PCT_GDP": r"Spending_{mil}",
-    "US_POPULATION_2024": r"Population",
+    "US_ALZHEIMERS_ANNUAL_COST": r"Cost_{ALZ,US}",  # FIXED
+    "US_CANCER_ANNUAL_COST": r"Cost_{cancer,US}",  # FIXED
+    "US_CHRONIC_DISEASE_SPENDING_ANNUAL": r"Spending_{chronic,US}",  # FIXED
+    "US_DIABETES_ANNUAL_COST": r"Cost_{diabetes,US}",  # FIXED
+    "US_HEART_DISEASE_ANNUAL_COST": r"Cost_{heart,US}",  # FIXED
+    "US_LIFE_EXPECTANCY_1880": r"LE_{US,1880}",  # FIXED
+    "US_LIFE_EXPECTANCY_1962": r"LE_{US,1962}",  # FIXED
+    "US_LIFE_EXPECTANCY_2019": r"LE_{US,2019}",  # FIXED
+    "US_MAJOR_DISEASES_TOTAL_ANNUAL_COST": r"Cost_{disease,US}",  # FIXED
+    "US_MENTAL_HEALTH_COST_ANNUAL": r"Cost_{mental,US}",  # FIXED
+    "US_MILITARY_SPENDING_PCT_GDP": r"Pct_{mil,GDP}",  # FIXED
+    "US_POPULATION_2024": r"Pop_{US}",  # FIXED
 
     # VALLEY (1)
-    "VALLEY_OF_DEATH_ATTRITION_PCT": r"Deaths",
+    "VALLEY_OF_DEATH_ATTRITION_PCT": r"Attrition_{valley}",  # FIXED
 
     # VALUE (1)
-    "VALUE_OF_STATISTICAL_LIFE": r"Value",
+    "VALUE_OF_STATISTICAL_LIFE": r"VSL",  # FIXED
 
     # VICTORY (3)
-    "VICTORY_BOND_ANNUAL_PAYOUT": r"Victory_{annual}",
-    "VICTORY_BOND_ANNUAL_RETURN_PCT": r"Victory_{annual}",
-    "VICTORY_BOND_FUNDING_PCT": r"Funding",
+    "VICTORY_BOND_ANNUAL_PAYOUT": r"Payout_{bond,ann}",  # FIXED
+    "VICTORY_BOND_ANNUAL_RETURN_PCT": r"r_{bond}",  # FIXED
+    "VICTORY_BOND_FUNDING_PCT": r"Pct_{bond}",  # FIXED
 
     # VITAMIN (1)
-    "VITAMIN_A_COST_PER_DALY": r"Cost",
+    "VITAMIN_A_COST_PER_DALY": r"Cost_{vitA,DALY}",  # FIXED
 
     # WATER (2)
-    "WATER_FLUORIDATION_ANNUAL_BENEFIT": r"Benefit_{water,ann}",
-    "WATER_FLUORIDATION_ROI": r"ROI_{water}",
+    "WATER_FLUORIDATION_ANNUAL_BENEFIT": r"Benefit_{fluoride}",  # FIXED
+    "WATER_FLUORIDATION_ROI": r"ROI_{fluoride}",  # FIXED
 
     # WHO (1)
-    "WHO_QALY_THRESHOLD_COST_EFFECTIVE": r"Cost",
+    "WHO_QALY_THRESHOLD_COST_EFFECTIVE": r"Threshold_{WHO}",  # FIXED
 
     # WILLING (1)
-    "WILLING_TRIAL_PARTICIPANTS_GLOBAL": r"Patients_{global}",
+    "WILLING_TRIAL_PARTICIPANTS_GLOBAL": r"N_{willing}",  # FIXED
 
     # WORKFORCE (1)
-    "WORKFORCE_WITH_PRODUCTIVITY_LOSS": r"Loss",
+    "WORKFORCE_WITH_PRODUCTIVITY_LOSS": r"N_{productivity,loss}",  # FIXED
 }
