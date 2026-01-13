@@ -2909,9 +2909,8 @@ FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slow
 
 $$
 \begin{aligned}
-Multiplier_{RD} \\
-&= FDA\_PHASE\_1\_TO\_APPROVAL\_YEARS \times MONTHS\_PER\_YEAR \div OXFORD\_RECOVERY\_TRIAL\_DURATION\_MONTHS \\
-&= 36.4
+\text{Multiplier}_{RD} &= \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\
+&= \frac{9.1 \times 12}{3} = 36.4
 \end{aligned}
 $$
 
@@ -3781,6 +3780,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
 :::
 

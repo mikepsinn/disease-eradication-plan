@@ -184,12 +184,16 @@ def generate_filtered_variables_yml(
                 filtered[latex_name] = all_variables[latex_name]
 
     # Write filtered variables
+    # Use the same format as the source file to preserve LaTeX equation formatting
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
         f.write("# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT\n")
         f.write(f"# Contains only variables used in this paper ({len(filtered)} entries)\n")
         f.write("# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py\n\n")
-        yaml.dump(filtered, f, allow_unicode=True, default_flow_style=False, sort_keys=True)
+        # Use default_style='"' to preserve double-quoted strings with escaped newlines
+        # This matches the format of _variables.yml and prevents LaTeX equations
+        # from being reformatted with literal newlines (which can cause issues)
+        yaml.dump(filtered, f, allow_unicode=True, default_flow_style=False, sort_keys=True, default_style='"')
 
     return len(filtered)
 
