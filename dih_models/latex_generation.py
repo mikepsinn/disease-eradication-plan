@@ -986,8 +986,13 @@ def generate_auto_latex(
         short_label = create_short_label(inp_display, inp_name)
 
         # Create symbolic name for traceable equations
-        # Pass sibling names to find distinguishing suffixes for grouped inputs
-        inp_symbolic = create_latex_variable_name(inp_name, inp_display, sibling_names=inputs)
+        # Use latex_symbol if provided, otherwise auto-generate
+        inp_latex_symbol = getattr(inp_value, 'latex_symbol', None)
+        if inp_latex_symbol:
+            inp_symbolic = inp_latex_symbol
+        else:
+            # Pass sibling names to find distinguishing suffixes for grouped inputs
+            inp_symbolic = create_latex_variable_name(inp_name, inp_display, sibling_names=inputs)
 
         input_data.append({
             'name': inp_name,
@@ -1005,8 +1010,12 @@ def generate_auto_latex(
     # Get display name for creating meaningful LHS
     result_display = getattr(param_value, 'display_name', '') or smart_title_case(param_name)
 
-    # Create short name for LHS using both param_name and display_name
-    lhs_short = create_latex_variable_name(param_name, result_display)
+    # Create short name for LHS using latex_symbol if available, otherwise auto-generate
+    result_latex_symbol = getattr(param_value, 'latex_symbol', None)
+    if result_latex_symbol:
+        lhs_short = result_latex_symbol
+    else:
+        lhs_short = create_latex_variable_name(param_name, result_display)
 
     # For complex operations, try sympy-based conversion first
     if operation == 'complex' and params_file and params_file.exists():

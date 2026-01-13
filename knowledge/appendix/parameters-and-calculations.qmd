@@ -425,9 +425,9 @@ Total annual Decentralized Framework for Drug Assessment operational costs (sum 
 
 $$
 \begin{aligned}
-Cost_{DFDA,ann} \\
-&= Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} \\
-&\quad + Cost_{reg,DFDA} + Cost_{community,DFDA} \\
+OPEX_{dFDA} \\
+&= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
+&\quad + Cost_{regulatory} + Cost_{community} \\
 &= \$15M + \$10M + \$8M + \$5M + \$2M \\
 &= \$40M
 \end{aligned}
@@ -511,21 +511,21 @@ Multiplier_{DFDA} = Multiplier_{trial} \times Multiplier_{valley} = 12.3 \times 
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } Multiplier_{DFDA} = Deaths + 1 = 40\% + 1 = 1.4
 \end{aligned}
@@ -582,35 +582,35 @@ Increase_{direct_funding,DFDA} = \frac{Benefit_{trial,DFDA}}{Funding_{direct,DFD
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } Funding_{direct,DFDA} = ANNUAL\_FUNDING \times [(1 - (1 + r)^-T) / r] where T = queue clearance time = \$475B
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} = 36
 \\[0.5em]
@@ -622,21 +622,21 @@ Increase_{direct_funding,DFDA} = \frac{Benefit_{trial,DFDA}}{Funding_{direct,DFD
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -681,15 +681,15 @@ Multiplier_{direct,DFDA} = \frac{Cost_{net}}{Cost_{direct,DFDA}} = \frac{\$89}{\
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} = 36
 \\[0.5em]
@@ -701,21 +701,21 @@ Multiplier_{direct,DFDA} = \frac{Cost_{net}}{Cost_{direct,DFDA}} = \frac{\$89}{\
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } DALYs_{max,DFDA} = DALYs_{ann} \times DALYs \times Capacity_{max,DFDA} = 2.88B \times 92.6\% \times 212 = 565B
 \\[0.5em]
@@ -733,21 +733,21 @@ Multiplier_{direct,DFDA} = \frac{Cost_{net}}{Cost_{direct,DFDA}} = \frac{\$89}{\
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -999,21 +999,21 @@ DFDA = New \times Multiplier_{DFDA} = 15 \times 12.3 = 185
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1058,21 +1058,21 @@ Ratio_{DFDA} = DRUG\_DISEASE\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 233
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1107,13 +1107,13 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 $$
 \begin{aligned}
-Savings_{net,ann} = Benefit_{benefit,ann} - Cost_{opex,ann} = \$58.6B - \$40M = \$58.6B
+Savings_{net,ann} = Benefit_{benefit,ann} - OPEX_{dFDA} = \$58.6B - \$40M = \$58.6B
 \\[0.5em]
 \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
 \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \end{aligned}
 $$
 
@@ -1192,13 +1192,13 @@ $$
 \begin{aligned}
 Benefit_{DFDA,RD} = Sum of discounted annual net R&D savings with linear adoption ramp = \$389B
 \\[0.5em]
-\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - Cost_{opex,ann} = \$58.6B - \$40M = \$58.6B
+\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - OPEX_{dFDA} = \$58.6B - \$40M = \$58.6B
 \\[0.5em]
 \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
 \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \end{aligned}
 $$
 
@@ -1239,13 +1239,13 @@ Benefit_{net,RD} = Benefit_{benefit,RD} - Cost_{DFDA,total} = \$389B - \$611M = 
 \\[0.5em]
 \text{where } Benefit_{DFDA,RD} = Sum of discounted annual net R&D savings with linear adoption ramp = \$389B
 \\[0.5em]
-\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - Cost_{opex,ann} = \$58.6B - \$40M = \$58.6B
+\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - OPEX_{dFDA} = \$58.6B - \$40M = \$58.6B
 \\[0.5em]
 \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
 \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Cost_{DFDA,total} = OPEX_{pv,ann} + Cost_{upfront,total} = \$342M + \$270M = \$611M
 \\[0.5em]
@@ -1423,21 +1423,21 @@ Time_{DFDA} = \frac{Time}{Multiplier_{DFDA}} = \frac{443}{12.3} = 36
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1516,13 +1516,13 @@ Savings_{DFDA,RD} = \frac{Benefit_{benefit,RD}}{Cost_{DFDA,total}} = \frac{\$389
 \\[0.5em]
 \text{where } Benefit_{DFDA,RD} = Sum of discounted annual net R&D savings with linear adoption ramp = \$389B
 \\[0.5em]
-\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - Cost_{opex,ann} = \$58.6B - \$40M = \$58.6B
+\text{where } Savings_{net,ann} = Benefit_{benefit,ann} - OPEX_{dFDA} = \$58.6B - \$40M = \$58.6B
 \\[0.5em]
 \text{where } Benefit_{DFDA,ann} = Trials_{ann} \times Reduction_{DFDA} = \$60B \times 97.7\% = \$58.6B
 \\[0.5em]
 \text{where } Reduction_{DFDA} = 1 - (DFDA\_COST / TRADITIONAL\_COST) = 97.7\%
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Cost_{DFDA,total} = OPEX_{pv,ann} + Cost_{upfront,total} = \$342M + \$270M = \$611M
 \\[0.5em]
@@ -1589,21 +1589,21 @@ Ratio_{DFDA,total} = TOTAL\_COMBINATIONS \div DFDA\_TRIALS\_PER\_YEAR = 1{,}270
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1644,21 +1644,21 @@ Capacity_{DFDA} = Trials_{curr} \times Multiplier_{DFDA} = 3{,}300 \times 12.3 =
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1708,21 +1708,21 @@ Increase_{DFDA} = DALYs_{ann} \times DALYs \times Ratio_{DFDA} = 2.88B \times 92
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1773,21 +1773,21 @@ Increase_{DFDA} = Increase_{DFDA} \times QALYs_{RD} = 543B \times \$150K = \$815
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1836,21 +1836,21 @@ Increase_{DFDA} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_TREATMENT\_ACCELE
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1889,21 +1889,21 @@ Multiplier_{DFDA} = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{23.4M}{1.9M} = 
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -1955,21 +1955,21 @@ DALYs_{max,DFDA} = DALYs_{ann} \times DALYs \times Capacity_{max,DFDA} = 2.88B \
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2022,21 +2022,21 @@ Benefit_{max,DFDA} = DALYs_{max,DFDA} \times QALYs_{RD} = 565B \times \$150K = \
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2087,21 +2087,21 @@ Capacity_{max,DFDA} = ANNUAL\_DEATHS \times DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICAC
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2154,21 +2154,21 @@ Capacity_{max,DFDA} = DFDA\_TRIAL\_CAPACITY\_PLUS\_EFFICACY\_LAG\_DALYS \times G
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2219,21 +2219,21 @@ Capacity_{max,DFDA} = Ratio_{DFDA} + Delay = 204 + 8.2 = 212
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2280,21 +2280,21 @@ Ratio_{DFDA} = STATUS\_QUO\_AVG\_YEARS\_TO\_FIRST\_TREATMENT \times (1 - 1/DFDA\
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2440,21 +2440,21 @@ $$
 \begin{aligned}
 Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2491,21 +2491,21 @@ Annual clinical trial patient subsidies (all medical research funds after Decent
 
 $$
 \begin{aligned}
-Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -2576,11 +2576,11 @@ Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment
 
 $$
 \begin{aligned}
-OPEX = \frac{Funding_{ann}}{Cost_{DFDA,ann}} = \frac{\$27.2B}{\$40M} = 680
+OPEX = \frac{Funding_{treaty}}{OPEX_{dFDA}} = \frac{\$27.2B}{\$40M} = 680
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -4114,7 +4114,7 @@ Conflict reduction benefits from 1% less military spending (lower confidence - a
 
 $$
 \begin{aligned}
-Benefit_{peace} = Cost_{soc,ann} - Funding_{ann} = \$114B - \$27.2B = \$86.4B
+Benefit_{peace} = Cost_{soc,ann} - Funding_{treaty} = \$114B - \$27.2B = \$86.4B
 \\[0.5em]
 \text{where } Cost_{soc,ann} = Cost_{indirect,ann} \times Reduction_{treaty} = \$11.4T \times 1\% = \$114B
 \\[0.5em]
@@ -4136,7 +4136,7 @@ Benefit_{peace} = Cost_{soc,ann} - Funding_{ann} = \$114B - \$27.2B = \$86.4B
 \\[0.5em]
 \text{where } Cost_{indirect,total} = Cost_{env,ann} + Cost_{economic,ann} + Lost_{global} + Cost_{psychological,ann} + Cost_{refugee,ann} + Cost_{veteran,ann} = \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B = \$3.7T
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -4632,21 +4632,21 @@ Time = NPV(peace\_dividend + healthcare\_savings + productivity\_gains + caregiv
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -5226,9 +5226,9 @@ Total global research funding (baseline + 1% treaty funding)
 
 $$
 \begin{aligned}
-Funding_{total} = Spending_{global} + Funding_{ann} = \$67.5B + \$27.2B = \$94.7B
+Funding_{total} = Spending_{global} + Funding_{treaty} = \$67.5B + \$27.2B = \$94.7B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -5506,21 +5506,21 @@ Increase_{max,treaty} = \frac{Cost_{camp,total}}{DALYs_{max,DFDA}} = \frac{\$1B}
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -5579,21 +5579,21 @@ Cost_{treaty} = \frac{Increase_{max,treaty}}{Probability} = \frac{\$0.00177}{1\%
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -5652,17 +5652,17 @@ ROI_{max,treaty} = Increase_{max,treaty} \times Probability = 84.8M \times 1\% =
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
 \text{where } Cost_{camp,total} = Campaign_{viral,treaty} + Campaign_{lobbying,treaty} + Campaign_{reserve,treaty} = \$250M + \$650M + \$100M = \$1B
 \end{aligned}
@@ -5725,17 +5725,17 @@ Multiplier_{net,treaty} = \frac{Cost_{net}}{Cost_{treaty}} = \frac{\$89}{\$0.177
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \end{aligned}
 $$
 
@@ -6035,21 +6035,21 @@ Increase_{max,treaty} = \frac{Benefit_{max,DFDA}}{Cost_{camp,total}} = \frac{\$8
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
 \text{where } Cost_{camp,total} = Campaign_{viral,treaty} + Campaign_{lobbying,treaty} + Campaign_{reserve,treaty} = \$250M + \$650M + \$100M = \$1B
 \end{aligned}
@@ -6088,9 +6088,9 @@ Total annual system costs (campaign + Decentralized Framework for Drug Assessmen
 
 $$
 \begin{aligned}
-Cost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann} = \$40M + \$250M = \$290M
+Cost_{total} = OPEX_{dFDA} + Cost_{camp,ann} = \$40M + \$250M = \$290M
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Cost_{camp,ann} = \frac{Cost_{camp,total}}{Ratio_{duration,treaty}} = \frac{\$1B}{4} = \$250M
 \\[0.5em]
@@ -6153,21 +6153,21 @@ Multiplier_{net,treaty} = \frac{Cost_{net}}{Increase_{max,treaty}} = \frac{\$89}
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 
@@ -6207,21 +6207,21 @@ Capacity = Multiplier_{DFDA} \times 20 = 12.3 \times 20 = 246
 \\[0.5em]
 \text{where } Fundable_{ann} = \frac{Treasury_{ann}}{Cost_{DFDA}} = \frac{\$21.7B}{\$929} = 23.4M
 \\[0.5em]
-\text{where } Treasury_{ann} = Treasury_{ann} - Cost_{DFDA,ann} = \$21.8B - \$40M = \$21.7B
+\text{where } Treasury_{ann} = Treasury_{ann} - OPEX_{dFDA} = \$21.8B - \$40M = \$21.7B
 \\[0.5em]
-\text{where } Cost_{DFDA,ann} = Cost_{platform,DFDA} + Cost_{staff,DFDA} + Cost_{infra,DFDA} + Cost_{reg,DFDA} + Cost_{community,DFDA} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
+\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \$15M + \$10M + \$8M + \$5M + \$2M = \$40M
 \\[0.5em]
 \text{where } Treasury_{ann} = TREATY\_FUNDING - BOND\_PAYOUT - IAB\_POLITICAL\_INCENTIVE\_FUNDING = \$21.8B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Victory_{annual} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Victory_{annual} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \\[0.5em]
-\text{where } Funding_{ann} = Funding_{ann} \times Funding = \$27.2B \times 10\% = \$2.72B
+\text{where } Funding_{ann} = Funding_{treaty} \times Funding = \$27.2B \times 10\% = \$2.72B
 \\[0.5em]
-\text{where } Funding_{ann} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
+\text{where } Funding_{treaty} = Spending_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1\% = \$27.2B
 \end{aligned}
 $$
 

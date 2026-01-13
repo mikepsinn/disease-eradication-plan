@@ -170,7 +170,7 @@ class Parameter(float):
         'confidence', 'last_updated', 'peer_reviewed', 'conservative',
         'sensitivity', 'display_value', 'display_name', 'keywords',
         'validation_min', 'validation_max', 'confidence_interval', 'std_error',
-        'distribution', 'inputs', 'compute'
+        'distribution', 'inputs', 'compute', 'latex_symbol'
     )
 
     # Type annotations for Pylance/Pyright
@@ -195,6 +195,7 @@ class Parameter(float):
     distribution: "DistributionType | None"
     inputs: "list[str]"
     compute: "Callable[[ComputeContext], float] | None"
+    latex_symbol: "str | None"  # LaTeX symbol for this parameter in equations, e.g. "Cost_{DFDA}"
 
     def __new__(
         cls,
@@ -221,6 +222,7 @@ class Parameter(float):
         distribution: Union[DistributionType, str, None] = None,
         inputs: Optional[List[str]] = None,
         compute: Optional[Callable[[ComputeContext], float]] = None,
+        latex_symbol: Optional[str] = None,  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
     ):
         # Convert string source_type to enum (backwards compatibility)
         if not isinstance(source_type, SourceType):
@@ -283,6 +285,7 @@ class Parameter(float):
         instance.distribution = distribution
         instance.inputs = inputs or []
         instance.compute = compute
+        instance.latex_symbol = latex_symbol  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
 
         return instance
 
@@ -774,6 +777,7 @@ TREATY_ANNUAL_FUNDING = Parameter(
     keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"],
     inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * ctx["TREATY_REDUCTION_PCT"],
+    latex_symbol=r"Funding_{treaty}",  # LaTeX symbol for equations
 )  # $27.2B (clean display throughout book)
 
 # ==============================================================================
@@ -1986,6 +1990,7 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     keywords=["15.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(10_000_000, 22_000_000),  # $10M-$22M (±30%)
+    latex_symbol=r"Cost_{platform}",  # LaTeX symbol for equations
 )  # $15M
 
 DFDA_OPEX_STAFF = Parameter(
@@ -1998,6 +2003,7 @@ DFDA_OPEX_STAFF = Parameter(
     keywords=["10.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(7_000_000, 15_000_000),  # $7M-$15M (±30%)
+    latex_symbol=r"Cost_{staff}",  # LaTeX symbol for equations
 )  # $10M - minimal, AI-assisted
 
 DFDA_OPEX_INFRASTRUCTURE = Parameter(
@@ -2010,6 +2016,7 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
     keywords=["8.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(5_000_000, 12_000_000),  # $5M-$12M (±30%)
+    latex_symbol=r"Cost_{infra}",  # LaTeX symbol for equations
 )  # $8M - cloud, security
 
 DFDA_OPEX_REGULATORY = Parameter(
@@ -2022,6 +2029,7 @@ DFDA_OPEX_REGULATORY = Parameter(
     keywords=["5.0m", "pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation"],
     distribution="lognormal",
     confidence_interval=(3_000_000, 8_000_000),  # $3M-$8M (±30%)
+    latex_symbol=r"Cost_{regulatory}",  # LaTeX symbol for equations
 )  # $5M - regulatory coordination
 
 DFDA_OPEX_COMMUNITY = Parameter(
@@ -2034,6 +2042,7 @@ DFDA_OPEX_COMMUNITY = Parameter(
     keywords=["2.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
     confidence_interval=(1_000_000, 3_000_000),  # $1M-$3M (±30%)
+    latex_symbol=r"Cost_{community}",  # LaTeX symbol for equations
 )  # $2M - community support
 
 # Total annual operational costs (calculated from components)
@@ -2053,6 +2062,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     validation_min=25_000_000,   # Floor: Lean MVP with minimal regulatory team
     validation_max=80_000_000,   # Ceiling: Full global compliance + 24/7 support + security audit responses
     inputs=["DFDA_OPEX_PLATFORM_MAINTENANCE", "DFDA_OPEX_STAFF", "DFDA_OPEX_INFRASTRUCTURE", "DFDA_OPEX_REGULATORY", "DFDA_OPEX_COMMUNITY"],
+    latex_symbol=r"OPEX_{dFDA}",  # LaTeX symbol for equations
     compute=lambda ctx: sum([ctx["DFDA_OPEX_PLATFORM_MAINTENANCE"], ctx["DFDA_OPEX_STAFF"], ctx["DFDA_OPEX_INFRASTRUCTURE"], ctx["DFDA_OPEX_REGULATORY"], ctx["DFDA_OPEX_COMMUNITY"]])
 )  # $40M annually
 
