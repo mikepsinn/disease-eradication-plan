@@ -24,8 +24,9 @@
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
   \ / RECOVERY_COST | Unit: multiplier | Click to view details, calculation & sources\"\
   >82x (95% CI: 50x-94.1x)</a>"
-"recovery_trial_cost_reduction_factor_latex": "$$\nCost = \\frac{Cost}{Cost} = \\\
-  frac{\\$41K}{\\$500} = 82\n$$"
+"recovery_trial_cost_reduction_factor_latex": "$$\n\\begin{aligned}\nk_{RECOVERY}\
+  \ \\\\\n&= \\frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\\\\n&= \\frac{\\$41K}{\\$500}\
+  \ \\\\\n&= 82\n\\end{aligned}\n$$"
 "recovery_trial_global_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-1m-lives-saved\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Estimated lives saved globally by\
