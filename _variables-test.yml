@@ -56,9 +56,10 @@
   \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
   $3.7T\n\\end{gathered}\n$$"
 "treaty_roi_existing_drugs_only_latex": "$$\n\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}}\
-  \ = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} =\
-  \ Deaths \\times (LifeExp - MeanAge) \\times VSLY = \\$251T \\\\[0.5em]\n\\text{where\
-  \ } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000\
-  \ \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base}\
-  \ + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\\
-  $100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
+  \ = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} \\\
+  \\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY}\
+  \ \\\\\n= 98.4M \\times (79 - 62) \\times \\$150K \\\\\n= \\$251T \\\\[0.5em]\n\\\
+  text{where } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\\
+  times 12000000 \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n\
+  = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\\
+  $250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
