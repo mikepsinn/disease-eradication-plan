@@ -4,42 +4,18 @@
       {
         "matcher": "Edit|Write",
         "hooks": [
-          {
-            "type": "command",
-            "command": "python .claude/hooks/validate-qmd-changes.py",
-            "timeout": 30
-          },
-          {
-            "type": "command",
-            "command": "python .claude/hooks/auto-regenerate-variables.py",
-            "timeout": 120
-          },
-          {
-            "type": "command",
-            "command": "python .claude/hooks/check-python-errors.py",
-            "timeout": 30
-          }
         ]
       }
     ],
     "UserPromptSubmit": [
       {
         "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Check if the user's request involves: 1) parameter changes (need regeneration), 2) cross-file edits (need consistency check), 3) variable references. If yes, add context reminder about validation steps."
-          }
         ]
       }
     ],
     "SessionStart": [
       {
         "hooks": [
-          {
-            "type": "command",
-            "command": "python .claude/hooks/load-book-context.py",
-            "timeout": 10
-          }
         ]
       }
     ]
