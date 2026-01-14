@@ -162,7 +162,7 @@ def verify_link_rewrites(build_temp: Path) -> bool:
         },
         {
             "name": "DFDA link should NOT have .qmd extension",
-            "search": "dfda-cost-benefit-analysis.qmd",
+            "search": "dfda-impact-paper.qmd",
             "file": params_content,
             "should_exist": False
         },

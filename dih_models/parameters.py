@@ -123,7 +123,7 @@ class Parameter(float):
         # Calculated value with formula and validation
         TOTAL_OPEX = Parameter(
             PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY,
-            source_ref="knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex",
+            source_ref="knowledge/appendix/dfda-impact-paper.qmd#opex",
             source_type=SourceType.CALCULATED,
             description="Total annual operational costs",
             display_name="Total Annual Operational Costs",
@@ -1550,7 +1550,7 @@ RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # $41,000 traditional / $1,200 dFDA pragmatic = 34.17x
 DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
     source_type="calculated",
     description="Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)",
     display_name="dFDA Trial Cost Reduction Factor",
@@ -1564,7 +1564,7 @@ DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # dFDA Trial Cost Reduction as Percentage (derived from factor)
 DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
     source_type="calculated",
     description="Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%",
     display_name="dFDA Trial Cost Reduction Percentage",
@@ -2054,7 +2054,7 @@ HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
 # dFDA operational costs
 DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#build-costs",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost",
@@ -2065,7 +2065,7 @@ DFDA_UPFRONT_BUILD = Parameter(
 
 DFDA_UPFRONT_BUILD_MAX = Parameter(
     46_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#build-costs",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
@@ -2077,7 +2077,7 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
 # DCT Platform Funding Comparables
 DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
     500_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#analogous-rom",
     source_type="definition",
     description="Mid-range funding for commercial DCT platform",
     display_name="Mid-Range Funding for Commercial Dct Platform",
@@ -2089,7 +2089,7 @@ DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
 # Per-patient cost in dollars (not billions)
 DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
     1000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-per-patient",
     source_type="definition",
     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
     display_name="Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
@@ -2101,7 +2101,7 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
 # dFDA operational cost breakdown (in billions)
 DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     15_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment maintenance costs",
     display_name="Decentralized Framework for Drug Assessment Maintenance Costs",
@@ -2114,7 +2114,7 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
 
 DFDA_OPEX_STAFF = Parameter(
     10_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
     display_name="Decentralized Framework for Drug Assessment Staff Costs",
@@ -2127,7 +2127,7 @@ DFDA_OPEX_STAFF = Parameter(
 
 DFDA_OPEX_INFRASTRUCTURE = Parameter(
     8_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
     display_name="Decentralized Framework for Drug Assessment Infrastructure Costs",
@@ -2140,7 +2140,7 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
 
 DFDA_OPEX_REGULATORY = Parameter(
     5_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment regulatory coordination costs",
     display_name="Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
@@ -2153,7 +2153,7 @@ DFDA_OPEX_REGULATORY = Parameter(
 
 DFDA_OPEX_COMMUNITY = Parameter(
     2_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment community support costs",
     display_name="Decentralized Framework for Drug Assessment Community Support Costs",
@@ -2171,7 +2171,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     + DFDA_OPEX_INFRASTRUCTURE
     + DFDA_OPEX_REGULATORY
     + DFDA_OPEX_COMMUNITY,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
     source_type="calculated",
     description="Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
     display_name="Total Annual Decentralized Framework for Drug Assessment Operational Costs",
@@ -2206,7 +2206,7 @@ DFDA_ANNUAL_OPEX = Parameter(
 # R&D Savings from Trial Cost Reduction (~$50B/year recurring)
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
     source_type="calculated",
     description="Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
     display_name="Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
@@ -2225,7 +2225,7 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
 
 DFDA_RD_SAVINGS_DAILY = Parameter(
     DFDA_BENEFIT_RD_ONLY_ANNUAL / DAYS_PER_YEAR,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#daily-opportunity-cost-of-inaction",
     source_type="calculated",
     description="Daily R&D savings from trial cost reduction (opportunity cost of delay)",
     display_name="Daily R&D Savings from Trial Cost Reduction",
@@ -2238,7 +2238,7 @@ DFDA_RD_SAVINGS_DAILY = Parameter(
 
 DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     DFDA_BENEFIT_RD_ONLY_ANNUAL - DFDA_ANNUAL_OPEX,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#net-savings",
     source_type="calculated",
     description="Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
     display_name="Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
@@ -3593,7 +3593,7 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 # Core framework and broader initiative costs (for detailed breakdowns)
 DFDA_NPV_UPFRONT_COST = Parameter(
     40_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment Core framework build cost",
     display_name="Decentralized Framework for Drug Assessment Core framework Build Cost",
@@ -3606,7 +3606,7 @@ DFDA_NPV_UPFRONT_COST = Parameter(
 
 DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     229_750_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="definition",
     description="DIH broader initiatives upfront cost (medium case)",
     display_name="DIH Broader Initiatives Upfront Cost",
@@ -3619,7 +3619,7 @@ DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
 
 DFDA_NPV_ANNUAL_OPEX = Parameter(
     18_950_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
     display_name="Decentralized Framework for Drug Assessment Core framework Annual OPEX",
@@ -3632,7 +3632,7 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
 
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     21_100_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="definition",
     description="DIH broader initiatives annual opex (medium case)",
     display_name="DIH Broader Initiatives Annual OPEX",
@@ -3647,7 +3647,7 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
 # Total upfront costs (C0): combines core dFDA framework + broader DIH initiative setup
 DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="calculated",
     description="Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
@@ -3664,7 +3664,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
 # Total annual operational costs (Cop): combines core dFDA framework + broader DIH initiative annual costs
 DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-costs",
     source_type="calculated",
     description="Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Annual OPEX",
@@ -3678,7 +3678,7 @@ DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
 # dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
 DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
     5,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#adoption-curve",
     source_type="definition",
     description="Years to reach full Decentralized Framework for Drug Assessment adoption",
     display_name="Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
@@ -3692,7 +3692,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     DFDA_NPV_ANNUAL_OPEX_TOTAL
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -NPV_TIME_HORIZON_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-calculation",
     source_type="calculated",
     description="Present value of annual opex over 10 years (NPV formula)",
     display_name="Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
@@ -3708,7 +3708,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
 )
 DFDA_NPV_TOTAL_COST = Parameter(
     DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-total-cost",
     source_type="calculated",
     description="Total NPV cost (upfront + PV of annual opex)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Cost",
@@ -3730,7 +3730,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
             for year in range(1, 11)
         ]
     ),
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-benefit",
     source_type="calculated",
     description="NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
     display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
@@ -3751,7 +3751,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY - DFDA_NPV_TOTAL_COST,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#npv-net-benefit",
     source_type="calculated",
     description="NPV net benefit using R&D savings only (benefits minus costs)",
     display_name="NPV Net Benefit (R&D Only)",
@@ -3785,7 +3785,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # Source: knowledge/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#roi-simple",
     source_type="calculated",
     description="ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
     display_name="ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
@@ -5355,7 +5355,7 @@ PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
 
 TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
     display_name="Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)",
@@ -5372,7 +5372,7 @@ TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 # The "conservative" label is retained for compatibility, but uses the unified parameter
 TREATY_EXPECTED_COST_PER_DALY = Parameter(
     TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG / POLITICAL_SUCCESS_PROBABILITY,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description=f"Expected cost per DALY accounting for political success probability uncertainty. "
                 f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, "
@@ -5397,7 +5397,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",  # Policy-derived: calculated from fixed allocations and discount rate
     description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
     display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
@@ -5415,7 +5415,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
 # Cost per DALY for direct funding scenario
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",  # Policy-derived: comparison metric using fixed inputs
     description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="dFDA Direct Funding Cost per DALY",
@@ -5431,7 +5431,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
 # What if philanthropists/governments directly funded medical research instead of treaty campaign?
 DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="ROI from direct philanthropic/government funding of medical research (vs treaty campaign). "
                 "Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. "
@@ -5465,7 +5465,7 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",  # Policy-derived: comparison metric using fixed inputs
     description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",

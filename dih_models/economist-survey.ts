@@ -358,7 +358,7 @@ export const economistSurvey: EconomistSurvey = {
       description: "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
       formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
       latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.90B} = \\$0.127",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd",
       questions: [
         {
           id: "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_formula_sound",
@@ -459,7 +459,7 @@ export const economistSurvey: EconomistSurvey = {
       description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
       formula: "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
       latex: "E[\\text{Cost/DALY}] = \\frac{\\text{Cost}_{conditional}}{P_{success}}",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd",
       questions: [
         {
           id: "TREATY_EXPECTED_COST_PER_DALY_formula_sound",
@@ -650,7 +650,7 @@ export const economistSurvey: EconomistSurvey = {
       sourceType: "calculated",
       description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
       formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
       questions: [
         {
           id: "DFDA_RD_GROSS_SAVINGS_ANNUAL_formula_sound",
@@ -692,7 +692,7 @@ export const economistSurvey: EconomistSurvey = {
       formattedValue: "$15M",
       sourceType: "definition",
       description: "Decentralized Framework for Drug Assessment maintenance costs",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_OPEX_PLATFORM_MAINTENANCE_assumption_reasonable",
@@ -732,7 +732,7 @@ export const economistSurvey: EconomistSurvey = {
       formattedValue: "$10M",
       sourceType: "definition",
       description: "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_OPEX_STAFF_assumption_reasonable",
@@ -772,7 +772,7 @@ export const economistSurvey: EconomistSurvey = {
       formattedValue: "$8M",
       sourceType: "definition",
       description: "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_OPEX_INFRASTRUCTURE_assumption_reasonable",
@@ -812,7 +812,7 @@ export const economistSurvey: EconomistSurvey = {
       formattedValue: "$5M",
       sourceType: "definition",
       description: "Decentralized Framework for Drug Assessment regulatory coordination costs",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_OPEX_REGULATORY_assumption_reasonable",
@@ -852,7 +852,7 @@ export const economistSurvey: EconomistSurvey = {
       formattedValue: "$2M",
       sourceType: "definition",
       description: "Decentralized Framework for Drug Assessment community support costs",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_OPEX_COMMUNITY_assumption_reasonable",
@@ -894,7 +894,7 @@ export const economistSurvey: EconomistSurvey = {
       description: "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
       formula: "PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
       latex: "OPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)} = \\$40M",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown",
       questions: [
         {
           id: "DFDA_ANNUAL_OPEX_formula_sound",
@@ -969,7 +969,7 @@ export const economistSurvey: EconomistSurvey = {
       description: "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
       formula: "NPV_BENEFIT ÷ NPV_TOTAL_COST",
       latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
-      sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+      sourceRef: "/knowledge/appendix/dfda-impact-paper.qmd#roi-simple",
       questions: [
         {
           id: "DFDA_ROI_RD_ONLY_formula_sound",

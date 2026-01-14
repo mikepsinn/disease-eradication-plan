@@ -66,7 +66,7 @@ All data flows through the **decentralized framework for drug assessment (dFDA)*
   ```
   - [ ] Reviewed
 
-## _variables-dfda.yml
+## _variables-dfda-spec.yml
 
 - **Line 10** (matched '`RECOVERY_TRIAL_COST_PER_PATIENT`')
   ```
@@ -474,7 +474,7 @@ RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
   # $41,000 traditional / $1,200 dFDA pragmatic = 34.17x
 DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
     source_type="calculated",
   ```
   - [ ] Reviewed
@@ -503,7 +503,7 @@ DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
   # dFDA Trial Cost Reduction as Percentage (derived from factor)
 DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction",
     source_type="calculated",
   ```
   - [ ] Reviewed
@@ -540,7 +540,7 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
 
 - **Line 1960** (matched '`cost per patient`')
   ```
-  source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+  source_ref="/knowledge/appendix/dfda-impact-paper.qmd#cost-per-patient",
     source_type="definition",
     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
     display_name="Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
@@ -658,7 +658,7 @@ Using IQVIA's {{< var current_trial_slots_available >}} drug trial participants:
   ```
   - [ ] Reviewed
 
-## knowledge/appendix/dfda-cost-benefit-analysis.qmd
+## knowledge/appendix/dfda-impact-paper.qmd
 
 - **Line 34** (matched '`DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT`')
   ```
@@ -838,7 +838,7 @@ Using IQVIA's {{< var current_trial_slots_available >}} drug trial participants:
   ```
   - [ ] Reviewed
 
-## knowledge/appendix/dfda-paper.qmd
+## knowledge/appendix/dfda-spec-paper.qmd
 
 - **Line 51** (matched '`RECOVERY_TRIAL_COST_PER_PATIENT`')
   ```

@@ -1,0 +1,207 @@
+project:
+  type: website
+  output-dir: _site/dfda-impact
+  execute-dir: project
+  resources:
+    - assets/
+    - _redirects
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/appendix/dfda-impact-paper.qmd
+  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  pdf-output-file: dfda-impact-paper.pdf
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+website:
+  title: "dFDA Cost-Benefit Analysis & ROI"
+  description: "Analysis and Return on Investment - How to slash per-patient trial costs by up to 95%, generate billions in annual gross R&D savings, and deliver exceptional ROI through a decentralized framework for drug assessment."
+  site-url: https://impact.dfda.earth
+  favicon: assets/icons/dfda-favicon.png
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Paper"
+        href: /
+      - text: "dFDA Spec"
+        href: https://spec.dfda.earth
+      - text: "dFDA App"
+        href: https://dfda.earth
+    right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /dfda-impact-paper.pdf
+      - text: "References"
+        href: /#references
+      - text: "DIH"
+        href: https://dih.earth
+      - text: "War on Disease"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn, Decentralized FDA"
+  byline: "Mike P. Sinn, Decentralized FDA"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://impact.dfda.earth"
+  author-website: "https://impact.dfda.earth"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Health Economics, Cost-Benefit Analysis, ROI, Clinical Trials, Drug Development"
+  category: "Academic Paper, Health Economics, Policy Analysis"
+  keywords:
+    - dfda
+    - cost-benefit-analysis
+    - roi
+    - return-on-investment
+    - clinical-trials
+    - drug-development
+    - health-economics
+    - pragmatic-trials
+    - recovery-trial
+    - real-world-evidence
+    - regulatory-efficiency
+    - decentralized-fda
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Decentralized FDA"
+  publisher-url: "https://dfda.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Policy Makers, Health Economists, Regulatory Scientists, Investors, Healthcare Administrators"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Health Economics, Policy Analysis, Cost-Benefit Analysis"
+  medium: "Digital"
+  twitter-site: "@thinkbynumbers"
+  twitter-creator: "@thinkbynumbers"
+  og-site-name: "dFDA Cost-Benefit Analysis"
+
+  # Open Graph metadata (enables per-page custom OG images)
+  open-graph: true
+  image: "https://impact.dfda.earth/assets/dfda-og-1200x630.png"
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography configuration
+bibliography: references-dfda-impact.bib
+csl: nature.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - text: |
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+              document.body.appendChild(script);
+            })();
+          </script>
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[roi.dfda.earth](https://impact.dfda.earth)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
+              <a href="https://impact.dfda.earth" style="color: #8b7355;">roi.dfda.earth</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong>
+              <a href="/dfda-impact-paper.pdf" style="color: #8b7355;">📕 PDF</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/dfda-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/dfda-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/dfda-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/dfda-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/dfda-android-chrome-512x512.png">
+
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+
+          <!-- Hypothesis for inline comments -->
+          <script src="https://hypothes.is/embed.js" async></script>
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  pdf:
+    output-file: "dfda-impact-paper.pdf"
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    date: ""
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    variables:
+      author: "Mike P. Sinn"
+      affiliation: "Decentralized Institutes of Health"

@@ -205,7 +205,7 @@
   \ calculation & sources\">$55</a>"
 "deworming_cost_per_daly_cite": "@deworming-cost-per-daly"
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_annual_opex\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ Decentralized Framework for Drug Assessment operational costs (sum of all components:\
   \ $15M + $10M + $8M + $5M + $2M) | Calculated from 5 inputs | ✓ High confidence\
@@ -216,7 +216,7 @@
   \ + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\
   \n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M\n\\end{gathered}\n$$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_benefit_rd_only_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
   \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
   \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
@@ -227,7 +227,7 @@
   = \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
   \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Cost per DALY\
   \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue\
   \ clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves\
@@ -299,7 +299,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dfda_direct_funding_queue_clearance_npv": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_queue_clearance_npv\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"NPV of direct\
   \ funding ($21.76B/year for medical research after bond/IAB allocations) for the\
   \ ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty\
@@ -398,12 +398,12 @@
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_adoption_ramp_years\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#adoption-curve\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Years to reach\
   \ full Decentralized Framework for Drug Assessment adoption | ✓ High confidence\
   \ | Unit: years | Click to view details, calculation & sources\">5 years</a>"
 "dfda_npv_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_benefit_rd_only\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of Decentralized\
   \ Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year\
   \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
@@ -413,7 +413,7 @@
   \ \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t}\n\\end{gathered}\n\
   $$"
 "dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_net_benefit_rd_only\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-net-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\
   \ using R&D savings only (benefits minus costs) | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: NPV_BENEFIT - NPV_COST | Unit: USD | Click to view details,\
@@ -437,7 +437,7 @@
   \ \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\
   \\end{gathered}\n$$"
 "dfda_npv_total_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_total_cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV cost\
   \ (upfront + PV of annual opex) | Calculated from 2 inputs | ✓ High confidence |\
   \ Formula: UPFRONT + PV_OPEX | Unit: USD | Click to view details, calculation &\
@@ -451,7 +451,7 @@
   \ + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\\end{gathered}\n\
   $$"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_upfront_cost_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV upfront\
   \ costs (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit:\
@@ -512,7 +512,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_roi_rd_only\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#roi-simple\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from Decentralized\
   \ Framework for Drug Assessment R&D savings only (10-year NPV, most conservative\
   \ estimate) | Calculated from 2 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
@@ -773,7 +773,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dfda_trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_factor\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost reduction\
   \ factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
@@ -783,7 +783,7 @@
   = \\frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$41K}{\\$929} \\\\\n\
   = 44.1\n\\end{gathered}\n$$"
 "dfda_trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial cost reduction\
   \ percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97% |\
   \ Calculated from 2 inputs | ✓ High confidence | Formula: 1 - (DFDA_COST / TRADITIONAL_COST)\
@@ -1749,7 +1749,7 @@
   \ \\\\\n= Pop_{global} \\times Threshold_{activism} \\\\\n= 8B \\times 3.5\\% \\\
   \\\n= 280M\n\\end{gathered}\n$$"
 "treaty_cost_per_daly_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
   \ averted from elimination of efficacy lag plus earlier treatment discovery from\
   \ increased trial throughput. Only counts campaign cost; ignores economic benefits\
@@ -1788,7 +1788,7 @@
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "treaty_expected_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_expected_cost_per_daly\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected cost\
   \ per DALY accounting for political success probability uncertainty. Monte Carlo\
   \ samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this\
@@ -2072,7 +2072,7 @@
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "treaty_vs_direct_funding_leverage": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_direct_funding_leverage\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"How many times\
   \ more cost-effective the treaty campaign is vs direct funding. Treaty achieves\
   \ 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years\

@@ -499,7 +499,7 @@ OPEX_{dFDA} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
+**Methodology**: [../appendix/dfda-impact-paper#opex-breakdown](../appendix/dfda-impact-paper#opex-breakdown)
 
 *✓ High confidence*
 
@@ -543,7 +543,7 @@ Benefit_{RD,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 
@@ -777,7 +777,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
+**Methodology**: [../appendix/dfda-impact-paper](../appendix/dfda-impact-paper)
 
 *✓ High confidence*
 
@@ -1382,7 +1382,7 @@ Savings_{RD,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#net-savings](../appendix/dfda-cost-benefit-analysis#net-savings)
+**Methodology**: [../appendix/dfda-impact-paper#net-savings](../appendix/dfda-impact-paper#net-savings)
 
 *✓ High confidence*
 
@@ -1422,7 +1422,7 @@ OPEX_{total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
+**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
 
 *✓ High confidence*
 
@@ -1460,7 +1460,7 @@ NPV_{RD} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-benefit](../appendix/dfda-cost-benefit-analysis#npv-benefit)
+**Methodology**: [../appendix/dfda-impact-paper#npv-benefit](../appendix/dfda-impact-paper#npv-benefit)
 
 *✓ High confidence*
 
@@ -1534,7 +1534,7 @@ NPV_{net,RD} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-net-benefit](../appendix/dfda-cost-benefit-analysis#npv-net-benefit)
+**Methodology**: [../appendix/dfda-impact-paper#npv-net-benefit](../appendix/dfda-impact-paper#npv-net-benefit)
 
 *✓ High confidence*
 
@@ -1570,7 +1570,7 @@ $$
 PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-calculation](../appendix/dfda-cost-benefit-analysis#npv-calculation)
+**Methodology**: [../appendix/dfda-impact-paper#npv-calculation](../appendix/dfda-impact-paper#npv-calculation)
 
 *✓ High confidence*
 
@@ -1622,7 +1622,7 @@ Cost_{dFDA,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-total-cost](../appendix/dfda-cost-benefit-analysis#npv-total-cost)
+**Methodology**: [../appendix/dfda-impact-paper#npv-total-cost](../appendix/dfda-impact-paper#npv-total-cost)
 
 *✓ High confidence*
 
@@ -1662,7 +1662,7 @@ Cost_{upfront,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
+**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
 
 *✓ High confidence*
 
@@ -1784,7 +1784,7 @@ Savings_{RD,daily} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction)
+**Methodology**: [../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction](../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction)
 
 *✓ High confidence*
 
@@ -1855,7 +1855,7 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
+**Methodology**: [../appendix/dfda-impact-paper#roi-simple](../appendix/dfda-impact-paper#roi-simple)
 
 *✓ High confidence*
 
@@ -2911,7 +2911,7 @@ k_{reduce} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 
@@ -2951,7 +2951,7 @@ Reduce_{pct} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 
@@ -6574,7 +6574,7 @@ Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
+**Methodology**: [../appendix/dfda-impact-paper](../appendix/dfda-impact-paper)
 
 *✓ High confidence*
 
@@ -6667,7 +6667,7 @@ E[Cost_{DALY}] = \frac{Cost_{treaty,DALY}}{P_{success}} = \frac{\$0.00177}{1\%} 
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
+**Methodology**: [../appendix/dfda-impact-paper](../appendix/dfda-impact-paper)
 
 *? Low confidence*
 

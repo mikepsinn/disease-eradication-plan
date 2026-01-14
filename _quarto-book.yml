@@ -145,7 +145,7 @@ book:
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
-        - knowledge/appendix/dfda-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
+        - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis
     - part: "Economic Analysis"
@@ -164,7 +164,7 @@ book:
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
         - knowledge/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
         - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
-        - knowledge/appendix/dfda-cost-benefit-analysis.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
+        - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
         - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
         - knowledge/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
         - knowledge/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p

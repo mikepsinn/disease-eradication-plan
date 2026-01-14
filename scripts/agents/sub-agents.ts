@@ -106,7 +106,7 @@ CRITICAL RULES FOR NUMBER DETECTION:
 
 3. **Alternative format**: If not using {{< var >}}, must have manual markdown link:
    - External sources: [244,600](/knowledge/references.qmd#acled-2024)
-   - Calculated values: [$50B](/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+   - Calculated values: [$50B](/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction)
    - Must link to either references.qmd or calculation page
 
 DETECTION PATTERNS:
