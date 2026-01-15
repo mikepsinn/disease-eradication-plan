@@ -1,11 +1,12 @@
 ---
-title: dFDA Cost-Benefit & ROI
-description: Analysis and Return on Investment - How to slash per-patient trial costs by up to {{< var dfda_trial_cost_reduction_factor >}}, generate approximately {{< var dfda_benefit_rd_only_annual >}} in annual gross R&D savings, and deliver ROI of {{< var dfda_roi_rd_only >}}.
+title: "dFDA: Health & Economic Impact Analysis"
+description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} through accelerated treatment discovery while generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings."
 published: true
 tags:
   - dfda
   - roi
   - economics
+  - cost-effectiveness
 image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academic.jpg
 ---
 
@@ -41,11 +42,11 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 - **Cost-Utility:** A dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes, far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately **{{< var dfda_rd_savings_daily >}}** in wasted R&D spending.
 
-**Conclusion:** A decentralized framework for drug assessment slashes costs, speeds up medical innovation, and saves lives. The math supports building it, as shown by legislative frameworks like the "Right to Trial & FDA Upgrade Act."
+**Conclusion:** A decentralized framework for drug assessment slashes costs, speeds up medical innovation, and saves lives. The analysis demonstrates compelling returns across all scenarios examined.
 
 ---
 
-Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for transforming the U.S. Food and Drug Administration's (FDA) current regulatory framework into a "global decentralized, autonomous FDA." This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone, potentially over a billion people worldwide, to participate in large-scale, continuous, decentralized pragmatic clinical trials. This analysis supports the economic rationale for initiatives such as the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes a foundational "FDA v2 Platform" to begin actualizing this vision within the U.S. framework, potentially serving as a model for broader global collaboration.
+Below is a conceptual, high-level analysis of the costs, benefits, and return on investment (ROI) for a global decentralized framework for drug assessment. This future-state platform would continuously rank treatments using the entirety of clinical and real-world data (RWD), and would enable anyone, potentially over a billion people worldwide, to participate in large-scale, continuous, decentralized pragmatic clinical trials.
 
 Because this analysis deals with a massive transformation nobody's tried before, the numbers are estimates and ranges. But they give you a way to think about costs, savings, and what happens to medical progress.
 
@@ -94,6 +95,23 @@ Goals:
 - Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the framework.
 
 These assumptions set a stage where the framework can indeed function at scale, but this remains a forward-looking scenario.
+
+### Trial Funding Scenario
+
+This analysis models a scenario with {{< var dih_treasury_to_medical_research_annual >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dih_patients_fundable_annually >}} patient-years annually.
+
+**Trial Capacity Impact:**
+
+| Metric | Status Quo | With Framework |
+|--------|------------|----------------|
+| **First treatments/year** | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} |
+| **Trial capacity multiplier** | 1× | {{< var dfda_trial_capacity_multiplier >}}× |
+| **Queue clearance time** | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} |
+| **Treatment acceleration** | N/A | {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
+
+**The Therapeutic Queue Problem:**
+
+Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}}× capacity, queue clearance drops to ~{{< var dfda_queue_clearance_years >}}.
 
 ## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates-partnership-model}
 
@@ -463,19 +481,14 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
    - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
    - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-   - Crowdsourced funding mechanisms, like those established by [your decentralized institutes of health](../solution/dih.qmd), can further reduce patient costs and direct resources to high-value pragmatic clinical trials.
 
 3. **Regulatory Savings**
 
    - A single integrated platform with automated data audits cuts bureaucratic duplication across multiple countries, drastically lowering compliance costs.
 
-4. **Accelerated Adoption through Legislative Mandates**
+4. **Increased Competition Among Sponsors**
 
-   - Provisions such as a "Right to Trial," as outlined in the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), would significantly accelerate the adoption and utilization of an infrastructure for a decentralized framework. By guaranteeing patient access to trials via the framework, data generation, network effects, and the realization of cost savings would be expedited, further enhancing the overall benefits projected in this analysis.
-
-5. **Increased Competition Among Sponsors Leading to Lower Submitted Trial Costs**
-
-   - The transparent nature of such a framework's infrastructure, coupled with mechanisms like NIH discount allocations based on value (QALYs per dollar as described in the "Right to Trial & FDA Upgrade Act"), is expected to create a competitive environment. Sponsors will be incentivized to submit the most efficient trial designs and leanest operational costs to the framework to attract NIH support and patient participation, further driving down the overall R&D expenditure beyond just the technical efficiencies of decentralized trials themselves.
+   - The transparent nature of such a framework's infrastructure creates a competitive environment. Sponsors are incentivized to submit efficient trial designs and lean operational costs to attract patient participation, further driving down R&D expenditure beyond the technical efficiencies of decentralized trials.
 
 ### Drug Price Reductions from Global Competition and Importation
 
@@ -570,6 +583,12 @@ The elimination of the post-safety efficacy lag by such a framework achieves a o
 - **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys >}} (total one-time impact from {{< var efficacy_lag_years >}}-year timeline shift)
 - **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} (total one-time benefit from timeline shift)
 - **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (total over the {{< var efficacy_lag_years >}}-year period)
+
+{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
+
+{{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
+
+{{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
 
 This represents the **top-down comprehensive estimate** of the health benefits from a decentralized framework from eliminating the post-safety efficacy lag.
 
@@ -1171,6 +1190,18 @@ All values below are sourced from the centralized `dih_models/parameters.py` mod
 
 - **DALYs Averted (Full Timeline Shift)**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
 - **Monetized Value of DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}
+- **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
+- **Timeline Shift**: {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} (from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + {{< var efficacy_lag_years >}} efficacy lag elimination)
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_dalys_latex >}}
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value_latex >}}
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex >}}
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex >}}
 
 **ROI Estimate**: {{< var dfda_roi_rd_only >}} (10-year NPV, accounting for time value of money and 5-year adoption ramp).
 
@@ -1271,6 +1302,15 @@ Where:
 
 - **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from trial capacity increase + efficacy lag elimination):
 - **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
+- **Trial Capacity Multiplier**: {{< var dfda_trial_capacity_multiplier >}}× increase in completed trials per year
+- **Research Acceleration**: {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 calendar years
+- **Treatment Acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} average years earlier for treatments
+
+{{< var dfda_trial_capacity_multiplier_latex >}}
+
+{{< var trial_capacity_cumulative_years_20yr_latex >}}
+
+{{< var dfda_trial_capacity_treatment_acceleration_years_latex >}}
 
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Cost-Utility Framework](#dfda-icer-analysis---cost-utility-framework)**.
 
@@ -1354,6 +1394,21 @@ The following table provides the data and sources that support the chart. The li
 - QALY calculations use standard health state utility weights where available
 
 **Conclusion:** An initiative for a decentralized framework is not just a financially sound investment with a high ROI; it is one of the most impactful public health interventions conceivable. Its "dominant" cost-effectiveness profile is comparable to gold-standard programs like childhood vaccination and smoking cessation, but its scale of economic and health benefits is potentially orders of magnitude larger.
+
+### Cost-Effectiveness Summary
+
+This section summarizes the cost-effectiveness of funding a decentralized framework for drug assessment.
+
+**Key Metrics:**
+
+- **NPV of funding commitment**: {{< var dfda_direct_funding_queue_clearance_npv >}}
+- **Cost per DALY**: {{< var dfda_direct_funding_cost_per_daly >}}
+
+{{< var dfda_direct_funding_queue_clearance_npv_latex >}}
+
+{{< var dfda_direct_funding_cost_per_daly_latex >}}
+
+At **{{< var dfda_direct_funding_cost_per_daly >}}/DALY**, the framework is competitive with GiveWell's top-rated interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY), while operating at vastly greater scale.
 
 ## Comparison to Other Major Public Investments
 
