@@ -69,6 +69,8 @@ When a patient searches for their condition, they see:
 3. **Trial Access**: One-click enrollment in available trials, from home, via any device
 4. **Personalized Predictions**: Based on their health data, which treatments work best for people like them
 
+![Treatment Rankings Example - Patients see all treatments ranked by real-world effectiveness for their condition](../../assets/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
+
 ### What Companies See
 
 Any company - pharmaceutical, supplement, food, or intervention - can register a treatment in minutes at zero cost:
@@ -150,6 +152,12 @@ This is not a replacement for RCTs but a complement, providing continuous, popul
 - Detect signals missed by spontaneous reporting
 - Quantify effects that RCTs can only describe qualitatively
 - Enable personalized benefit-risk assessment
+
+Multiple meta-analyses demonstrate that well-designed observational studies produce effect sizes concordant with randomized controlled trials, supporting the validity of real-world evidence for hypothesis generation:
+
+![Effect sizes from observational studies vs. randomized trials show strong concordance for mortality outcomes](../../assets/observational-vs-randomized-effect-sizes.png){#fig-rwe-validation-mortality}
+
+![Across multiple clinical domains, observational and randomized effect sizes track closely](../../assets/observational-vs-randomized-trial-effect-sizes.png){#fig-rwe-validation-domains}
 
 ## Data Collection and Integration
 
@@ -1093,6 +1101,10 @@ Traditional FDA drug labels are **per-drug documents** that list qualitative adv
 
 ### Worked Example: Complete Outcome Label
 
+![Outcome Labels show quantitative effect sizes, sample sizes, and confidence intervals for each treatment - like "nutrition facts for drugs"](../../assets/dfda-outcome-labels.png){#fig-outcome-labels}
+
+The following shows a complete outcome label for depression, demonstrating how treatments are ranked by effect size with confidence intervals:
+
 **OUTCOME LABEL: Depression Severity**
 
 *Based on 47,832 participants tracking depression outcomes*
@@ -1358,6 +1370,8 @@ This design leverages the complementary strengths of each approach:
 
 - **Stage 1** scales to millions of treatment-outcome pairs at minimal cost, identifying the most promising candidates
 - **Stage 2** applies experimental rigor to confirm causation for high-priority signals
+
+![FDA vs dFDA: The two-stage pipeline dramatically reduces cost and time compared to traditional drug development](../../assets/infographics/FDA vs dFDA Infographic.png){#fig-fda-vs-dfda}
 
 ### Pragmatic Trial Methodology
 
