@@ -724,33 +724,15 @@ Rather than relying on discrete "best/worst case" scenarios, we use Monte Carlo 
 | **10-Year NPV Total Cost** | {{< var dfda_npv_total_cost >}} | Upfront + discounted annual costs |
 | **10-Year NPV Net Benefit** | {{< var dfda_npv_net_benefit_rd_only >}} | With 5-year adoption ramp |
 
-#### ROI Distribution
-
-The ROI calculation propagates uncertainty from all input parameters:
-
-{{< var dfda_roi_rd_only_latex >}}
-
-**Central ROI Estimate: {{< var dfda_roi_rd_only >}}**
+#### Monte Carlo Distributions
 
 {{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
 
-The Monte Carlo distribution shows that even at the 5th percentile (conservative end), the ROI remains strongly positive. This is because the annual R&D savings ({{< var dfda_benefit_rd_only_annual >}}) vastly exceed even the highest plausible cost estimates.
-
-#### NPV Benefit Distribution
-
 {{< include ../figures/mc-distribution-dfda_npv_net_benefit_rd_only.qmd >}}
-
-#### Cost Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
 
-#### ROI Exceedance Probability
-
-The exceedance chart below shows the probability of achieving at least a given ROI level. This is useful for decision-makers who want to know "what's the probability we achieve at least X return?"
-
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
-
-This Monte Carlo analysis replaces the need for discrete scenario analysis by capturing the full probability distribution of outcomes. The 95% confidence intervals provide a statistically rigorous range that accounts for uncertainty in all input parameters simultaneously.
 
 ## Broader Impacts on Medical Progress
 
@@ -1055,21 +1037,7 @@ This appendix provides the detailed models and data used in the cost-benefit ana
 
 ### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
 
-**Important Note on NPV Time Horizons**: This analysis primarily uses a **10-year NPV horizon** for standard business ROI analysis:
-
-**10-Year NPV (R&D Operational Savings)**: The dFDA platform reduces trial costs by {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}} cost reduction). We discount 10 years of future operational savings to present value (~{{< var dfda_npv_net_benefit_rd_only >}}) for ROI analysis. This is standard business practice for evaluating ongoing cost efficiencies.
-
-**Why 10 years?** Standard business analysis horizon. The benefits continue beyond 10 years, but we use this conservative timeframe to calculate NPV and ROI (~{{< var dfda_roi_rd_only >}}).
-
-**Core NPV Formula:**
-
-$$
-  \text{ROI} = \frac{\text{NPV}(\text{Savings})}{\text{NPV}(\text{Costs})} = \frac{\sum_{t=1}^{T} \frac{p(t) \cdot \alpha \cdot R_d}{(1 + r)^t}}{C_0 + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}}
-$$
-
-Where $p(t)$ is adoption rate, $\alpha$ is cost reduction fraction, $R_d$ is global R&D spend, and $r$ is discount rate.
-
-*For complete derivation chains with sourced parameter values, see [Verification: Complete Derivation Chains](#verification-complete-derivation-chains).*
+Uses 10-year NPV horizon (standard business practice). See [Verification: Complete Derivation Chains](#verification-complete-derivation-chains) for full methodology.
 
 ### Financial Analysis Summary {#financial-analysis-summary}
 
@@ -1085,23 +1053,13 @@ The Monte Carlo distributions below show the range of health impact estimates ac
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
-**ROI Estimate**: {{< var dfda_roi_rd_only >}} (10-year NPV, accounting for time value of money and 5-year adoption ramp).
-
-#### Investment Returns Visualization
-
-This chart shows the dramatic return on investment for an infrastructure supporting a decentralized framework, comparing the small operational cost to the massive benefits it generates.
+#### Financial Visualizations
 
 {{< include ../figures/dfda-investment-returns-bar-chart.qmd >}}
-
-#### Sensitivity Analysis
-
-This sensitivity analysis explores how the financial viability of such a framework, specifically its Return on Investment (ROI), changes under different parameter assumptions.
 
 {{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
 
 {{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
-
-#### NPV Analysis Over Time
 
 {{< include ../figures/dfda-npv-analysis-over-time-line-chart.qmd >}}
 
