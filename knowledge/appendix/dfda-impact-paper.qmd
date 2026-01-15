@@ -147,7 +147,7 @@ Approximately {{< var diseases_without_effective_treatment >}} diseases lack eff
 > **Build-Everything Model (Not Recommended)**:
 > - **Upfront full platform build:** \$37.5–{{< var dfda_upfront_build_max >}}
 > - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs)
-> - **Broader initiative (medium scenario):** [\$228 million upfront, \$21.3 million annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
+> - **Broader initiative (medium scenario):** {{< var dih_npv_upfront_cost_initiatives >}} upfront, {{< var dih_npv_annual_opex_initiatives >}} annual ([details](#scenario-based-rom-estimates-for-broader-initiative-costs))
 >
 > **Key Takeaway:** The **partnership approach costs 50-75% less** than building a competing platform. By establishing an open protocol and leveraging existing infrastructure (Epic, Cerner, Medable, Science 37), you avoid building consumer-facing apps, trial management systems, and global EHR integrations. The protocol layer costs $15-25M to build vs. $500M+ for a full-stack solution.
 >
@@ -453,25 +453,21 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **dFDA Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
+**Input: Pragmatic Trial Cost Distribution**
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
 - **Extrapolation to New System**:
   - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
   - Up to **~{{< var dfda_trial_cost_reduction_factor >}}× cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of {{< var traditional_phase3_cost_per_patient >}}.
 
-  The cost reduction factor can be formalized as:
+  The cost reduction factor:
 
-  $$
-  \text{Reduction Factor} = \frac{c_t}{c_d} = \frac{\$40,000 - \$120,000}{\$500 - \$1,000} \approx 40 - 240\times
-  $$
+  {{< var dfda_trial_cost_reduction_factor_latex >}}
 
-  Where:
-  - $c_t$ is the traditional cost per patient
-  - $c_d$ is the decentralized cost per patient
+  The percentage reduction:
 
-  The percentage reduction is:
-
-  $$
-  \alpha = 1 - \frac{c_d}{c_t} = 1 - \frac{\$500 - \$1,000}{\$40,000 - \$120,000} \approx 97.5\% - 99.2\%
-  $$
+  {{< var dfda_trial_cost_reduction_pct_latex >}}
 
 ### Overall Savings
 
@@ -529,6 +525,10 @@ A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of po
 
 The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
 
+**Input: Efficacy Lag Duration Distribution**
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
 #### How a Decentralized Framework Eliminates the Efficacy Lag
 
 Such a framework provides **provisional access post-Phase I** via trial participation:
@@ -552,6 +552,12 @@ The elimination of the post-safety efficacy lag by such a framework achieves a o
 {{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
 
 {{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
+
+#### Efficacy Lag Elimination - Uncertainty Analysis
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 This represents the **top-down comprehensive estimate** of the health benefits from a decentralized framework from eliminating the post-safety efficacy lag.
 
@@ -624,6 +630,12 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 {{< var dfda_benefit_rd_only_annual_latex >}}
 
+**Uncertainty Analysis - R&D Savings:**
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
 #### Key Sources
 
 - [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
@@ -643,9 +655,9 @@ The return on investment for an infrastructure supporting a decentralized framew
 
 2. **Model Inputs**
 
-   - **Upfront Cost (Core framework Build):** Based on the ROM estimate of **~\$37.5 - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-build-costs). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
-   - **Annual Operational Cost (Core framework):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs).
-   - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines Core framework operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
+   - **Upfront Cost (Core framework Build):** Based on the ROM estimate of **~{{< var dfda_upfront_build >}} - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-build-costs). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
+   - **Annual Operational Cost (Core framework):** Based on the ROM estimate of **~{{< var dfda_npv_annual_opex >}}** detailed in [Annual Operational Costs](#annual-operational-costs).
+   - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines Core framework operational costs with the **Medium Case annual broader initiative costs (~{{< var dih_npv_annual_opex_initiatives >}})** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global vision for a decentralized framework, which were significantly larger, are superseded by these more granular figures from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section for the purpose of this ROI calculation.)_
 
    - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50.0%–80% reduction in trial costs.
@@ -662,13 +674,11 @@ _The following ROI calculation primarily uses cost figures derived from the deta
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
   - **Upfront Cost (Core framework Build):** ~{{< var dfda_upfront_build >}} (representative figure from [Upfront (Capital) Expenditure](#upfront-build-costs)).
   - **Annual Operational Cost Scenarios:**
-    - **Scenario 1: Core framework Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs)).
-
-      Let's use a midpoint of ~$19 Million/year for calculation.
+    - **Scenario 1: Core framework Only:** ~{{< var dfda_npv_annual_opex >}} (from [Annual Operational Costs](#annual-operational-costs)).
     - **Scenario 2: Lean Ecosystem (Core framework + Medium Broader Initiatives):**
-      - Core framework Ops (midpoint from [Annual Operational Costs](#annual-operational-costs)): ~$19 Million/year
-      - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
-      - **Total Lean Ecosystem Annual Cost:** ~{{< var dfda_npv_annual_opex >}} + ~{{< var dih_npv_annual_opex_initiatives >}} = **~{{< var dfda_upfront_build >}}/year** (or $0.04 Billion/year).
+      - Core framework Ops (midpoint from [Annual Operational Costs](#annual-operational-costs)): ~{{< var dfda_npv_annual_opex >}}
+      - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~{{< var dih_npv_annual_opex_initiatives >}}
+      - **Total Lean Ecosystem Annual Cost:** ~{{< var dfda_npv_annual_opex_total >}}.
 
       This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
@@ -691,27 +701,19 @@ $$
 
 Where:
 
-- $C_0 = \$40$ million is the upfront cost (Core framework Build)
+- $C_0$ = {{< var dfda_upfront_build >}} is the upfront cost (Core framework Build)
 - $n = 5$ years is the amortization period
-- $C_{\text{op}} = \$40$ million/year is the annual operational cost (Lean Ecosystem)
+- $C_{\text{op}}$ = {{< var dfda_upfront_build >}}/year is the annual operational cost (Lean Ecosystem)
 
 For the Lean Ecosystem scenario:
 
 - **Upfront Cost** (Core framework Build from [Upfront (Capital) Expenditure](#upfront-build-costs)): {{< var dfda_upfront_build >}}
 
-  Amortized over 5 years:
-  $$
-  \frac{\$40\text{M}}{5} = \$8 \text{ Million/year}
-  $$
+  Amortized over 5 years = {{< var dfda_upfront_build >}} / 5 = ~$8 Million/year
 
 - **Annual Operational Cost** (Lean Ecosystem - Core framework Ops from [Annual Operational Costs](#annual-operational-costs) + Medium Broader Initiatives from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~{{< var dfda_upfront_build >}}/year
 
-- **Total Annualized Cost**:
-  $$
-  C_{\text{annualized}} = \$8\text{M} + \$40\text{M} = \$48 \text{ Million/year}
-  $$
-
-  (or $0.048$ Billion/year)
+- **Total Annualized Cost**: ~$8M + {{< var dfda_upfront_build >}} = ~$48 Million/year (or $0.048B/year)
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
 
@@ -750,6 +752,12 @@ The Monte Carlo distribution shows that even at the 5th percentile (conservative
 #### Cost Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
+
+#### ROI Exceedance Probability
+
+The exceedance chart below shows the probability of achieving at least a given ROI level. This is useful for decision-makers who want to know "what's the probability we achieve at least X return?"
+
+{{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
 
 This Monte Carlo analysis replaces the need for discrete scenario analysis by capturing the full probability distribution of outcomes. The 95% confidence intervals provide a statistically rigorous range that accounts for uncertainty in all input parameters simultaneously.
 
@@ -1310,8 +1318,8 @@ Where:
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Cost-Utility Framework](#dfda-icer-analysis---cost-utility-framework)**.
 
 - **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the framework's operational costs, derived from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section.
-- **Core framework Ops (Midpoint):** $0.01875B ($18.75M) / year
-- **Core framework + Medium Broader Initiative:** $0.04B ({{< var dfda_upfront_build >}}) / year
+- **Core framework Ops (Midpoint):** ~{{< var dfda_npv_annual_opex >}} / year
+- **Core framework + Medium Broader Initiative:** ~{{< var dfda_npv_annual_opex_total >}} / year
 - **Illustrative Total Ecosystem (Low-Medium):** $0.5B / year
 - **Illustrative Total Ecosystem (High):** $5B / year
 
@@ -1352,7 +1360,7 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
+| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
 | **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
@@ -1407,15 +1415,11 @@ At **{{< var dfda_direct_funding_cost_per_daly >}}/DALY**, the framework is comp
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the estimated costs of a decentralized framework, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for a decentralized framework for drug assessment of approximately **{{< var dfda_upfront_build >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the estimated costs of a decentralized framework, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for a decentralized framework for drug assessment of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
-| **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_upfront_build >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
-| **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
-| Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
-| :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
-| **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_upfront_build >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
+| **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
 | **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
