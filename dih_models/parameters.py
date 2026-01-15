@@ -6973,35 +6973,15 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     latex_symbol=r"BCR_{IAB}",  # LaTeX symbol for equations
 )  # 303:1
 
-IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD = Parameter(
-    200e6,
+IAB_BOOTSTRAP_CAMPAIGN_COST = Parameter(
+    100e6,  # Base case: $100M
     source_ref="",
     source_type="definition",
-    description="Conservative estimate for bootstrap campaign cost",
-    display_name="Bootstrap Campaign Cost (Conservative)",
+    description="Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.",
+    display_name="IAB Bootstrap Campaign Cost",
     unit="USD",
-    keywords=["campaign", "cost", "bootstrap", "conservative"],
-    latex_symbol=r"Cost_{IAB,cons}",  # LaTeX symbol for equations
-)  # $200M
-
-IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD = Parameter(
-    100e6,
-    source_ref="",
-    source_type="definition",
-    description="Base case estimate for bootstrap campaign cost",
-    display_name="Bootstrap Campaign Cost (Base Case)",
-    unit="USD",
-    keywords=["campaign", "cost", "bootstrap", "base case"],
-    latex_symbol=r"Cost_{IAB,base}",  # LaTeX symbol for equations
-)  # $100M
-
-IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD = Parameter(
-    50e6,
-    source_ref="",
-    source_type="definition",
-    description="Optimistic estimate for bootstrap campaign cost",
-    display_name="Bootstrap Campaign Cost (Optimistic)",
-    unit="USD",
-    keywords=["campaign", "cost", "bootstrap", "optimistic"],
-    latex_symbol=r"Cost_{IAB,opt}",  # LaTeX symbol for equations
-)  # $50M
+    confidence_interval=(50e6, 200e6),  # 95% CI: $50M (optimistic) to $200M (conservative)
+    distribution=DistributionType.LOGNORMAL,  # Right-skewed: costs can exceed estimates more easily than come in under
+    keywords=["campaign", "cost", "bootstrap", "iab", "lobbying"],
+    latex_symbol=r"Cost_{IAB,campaign}",
+)  # $100M base, CI: $50M-$200M

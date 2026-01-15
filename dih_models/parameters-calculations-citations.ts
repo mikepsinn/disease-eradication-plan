@@ -4024,31 +4024,14 @@ export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
   confidenceInterval: [19000.0, 21000.0],
 };
 
-export const IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD: Parameter = {
+export const IAB_BOOTSTRAP_CAMPAIGN_COST: Parameter = {
   value: 100000000.0,
   unit: "USD",
-  displayName: "Bootstrap Campaign Cost (Base Case)",
-  description: "Base case estimate for bootstrap campaign cost",
+  displayName: "IAB Bootstrap Campaign Cost",
+  description: "Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.",
   sourceType: "definition",
   confidence: "high",
-};
-
-export const IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD: Parameter = {
-  value: 200000000.0,
-  unit: "USD",
-  displayName: "Bootstrap Campaign Cost (Conservative)",
-  description: "Conservative estimate for bootstrap campaign cost",
-  sourceType: "definition",
-  confidence: "high",
-};
-
-export const IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD: Parameter = {
-  value: 50000000.0,
-  unit: "USD",
-  displayName: "Bootstrap Campaign Cost (Optimistic)",
-  description: "Optimistic estimate for bootstrap campaign cost",
-  sourceType: "definition",
-  confidence: "high",
+  confidenceInterval: [50000000.0, 200000000.0],
 };
 
 export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
@@ -4713,9 +4696,7 @@ export const parameters = {
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   HUMAN_PROTEIN_CODING_GENES,
-  IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD,
-  IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD,
-  IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD,
+  IAB_BOOTSTRAP_CAMPAIGN_COST,
   IAB_MECHANISM_ANNUAL_COST,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
@@ -6268,10 +6249,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 390,
+  total: 388,
   external: 149,
   calculated: 138,
-  definitions: 103,
+  definitions: 101,
   citations: 111,
 } as const;
 

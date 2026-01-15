@@ -25,15 +25,15 @@ format:
 
 This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself.
 
-**Total parameters**: 390
+**Total parameters**: 388
 
 - External sources (peer-reviewed): 149
 - Calculated values: 138
-- Core definitions: 103
+- Core definitions: 101
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
+[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (101 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -11594,31 +11594,19 @@ Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human
 
 :::
 
-### Bootstrap Campaign Cost (Base Case): $100M {#sec-iab_bootstrap_campaign_cost_base_usd}
+### IAB Bootstrap Campaign Cost: $100M {#sec-iab_bootstrap_campaign_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Base case estimate for bootstrap campaign cost
+Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.
 
-*Core definition*
+#### Uncertainty Range
 
-:::
+**Technical**: 95% CI: [$50M, $200M] • Distribution: Lognormal
 
-### Bootstrap Campaign Cost (Conservative): $200M {#sec-iab_bootstrap_campaign_cost_conservative_usd}
+**What this means**: This estimate is highly uncertain. The true value likely falls between $50M and $200M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Conservative estimate for bootstrap campaign cost
-
-*Core definition*
-
-:::
-
-### Bootstrap Campaign Cost (Optimistic): $50M {#sec-iab_bootstrap_campaign_cost_optimistic_usd}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Optimistic estimate for bootstrap campaign cost
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 

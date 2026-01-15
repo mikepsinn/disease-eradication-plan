@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (131 entries)
+# Contains only variables used in this paper (127 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -323,15 +323,6 @@
   \ \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Cost_{upfront,total} \\\\\n= Cost_{upfront}\
   \ + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\\end{gathered}\n\
   $$"
-"dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_upfront_cost_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV upfront\
-  \ costs (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated\
-  \ from 2 inputs | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit:\
-  \ USD | Click to view details, calculation & sources\">$270M (95% CI: $181M-$380M)</a>"
-"dfda_npv_upfront_cost_total_latex": "$$\n\\begin{gathered}\nCost_{upfront,total}\
-  \ \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\
-  \\end{gathered}\n$$"
 "dfda_pragmatic_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_pragmatic_trial_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"pragmatic-trials-cost-advantage\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"dFDA pragmatic trial cost per patient.\
@@ -926,12 +917,6 @@
   \ FDA study) | ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit:\
   \ USD/patient | Click to view details, calculation & sources\">$41K (95% CI: $20K-$120K)</a>"
 "traditional_phase3_cost_per_patient_cite": "@trial-costs-fda-study"
-"treatment_acceleration_years_current": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_acceleration_years_current\"\
-  \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
-  \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
-  >17 years</a>"
-"treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\

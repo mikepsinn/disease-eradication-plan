@@ -1,20 +1,20 @@
 ---
 title: 'Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable'
-description: 'Politicians are rewarded for funding things that hurt society and punished for funding things that help it. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for supporting policies that actually improve lives. The result: public good becomes private profit for both investors and elected officials.'
+description: 'Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.'
 abstract: |
-  Democratic systems exhibit systematic underinvestment in policies with diffuse benefits and concentrated costs,
-  even when net social welfare is strongly positive. We formalize this as an electoral principal-agent problem
-  where politicians face reelection incentives misaligned with long-term public good production. We propose
-  Incentive Alignment Bonds (IABs): financial instruments that securitize the measured welfare returns from
-  policy interventions, creating tradeable claims on verified public good outcomes. IABs transform general
-  welfare improvement from a political externality into a private asset class, enabling rational self-interest
-  to support welfare-maximizing policies. We demonstrate how existing political action committee (PAC)
-  infrastructure can deploy IABs without legislative change, using impact bonds, prediction markets, and
-  outcome-contingent securities. Analysis of the {{< var treaty_annual_funding >}} annual funding from a proposed 1% Treaty on military
-  spending reduction shows IABs could generate 100:1+ returns for early adopters while simultaneously advancing
-  treatments that would otherwise remain unfunded due to electoral cycle misalignment. This mechanism design
-  approach converts the tragedy of the commons in democratic resource allocation into an investable opportunity
-  with aligned incentives across politicians, donors, and the general public.
+  Government spending correlates with lobbying intensity, not marginal societal value. Programs with
+  benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs
+  with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions.
+  This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician
+  incentives with net societal value optimization. IABs create a capital pool that rewards politicians
+  (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV
+  alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and
+  prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting {{< var treaty_annual_funding >}}
+  annually from military spending to medical research shows expected returns exceeding 100:1 for early
+  investors. The 90:1 capital asymmetry ({{< var global_household_wealth_usd >}} in household wealth vs.
+  {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated interests) means diffuse
+  beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that
+  coordination problem by turning political change into an investable asset class.
 aliases:
   - /iab.html
 author:
@@ -81,15 +81,17 @@ image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-a
 
 ## Abstract
 
-This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net societal value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
+Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives.
 
-We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to {{< var victory_bond_annual_return_pct >}}+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control {{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds {{< var iab_mechanism_benefit_cost_ratio >}} (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
+The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting {{< var treaty_annual_funding >}} annually from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ({{< var global_household_wealth_usd >}} in household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class.
+
+For economists: We formalize political incentive alignment as a mechanism design problem, prove conditions for Nash equilibrium, and provide numerical calibration showing feasibility with realistic parameters. We analyze legal constraints under U.S. anti-bribery law, demonstrate extensions to climate and nuclear risk, and show the mechanism's benefit-cost ratio exceeds {{< var iab_mechanism_benefit_cost_ratio >}}.
 
 ![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
-**The Problem in One Sentence:** Politicians are currently rewarded for spending money on things that hurt society (weapons, fossil fuel subsidies) and punished for spending money on things that help society (cures, pandemic prevention), so government does the opposite of what would make our lives better.
+**The Problem in One Sentence:** Politicians are rewarded for funding low-NSV programs (military beyond deterrence: 0.7:1 BCR) and punished for funding high-NSV programs (medical research: 100:1+ BCR) because concentrated interests outlobby diffuse beneficiaries, so government spending is optimized for lobbying intensity rather than marginal societal value.
 
-**The Solution:** Incentive Alignment Bonds (IABs) flip the incentives by creating a huge pool of money that rewards politicians (with campaign support and cushy post-office jobs) for supporting the stuff that actually helps people.
+**The Solution:** Incentive Alignment Bonds (IABs) flip the incentives by creating a capital pool that rewards politicians (with campaign support and post-office career opportunities) for funding high-NSV programs, making marginal societal value optimization the career-maximizing choice.
 
 ## Introduction
 
@@ -101,7 +103,7 @@ A central puzzle in political economy is why policies with large positive net so
 
 Yet government spending patterns have not shifted. The U.S. spends $16 on military operations for every $1 on diplomacy and humanitarian aid. Programs with benefit-cost ratios exceeding 100:1 receive single-digit billions while programs with negative net societal value receive hundreds of billions.
 
-**Put another way:** If a private equity firm allocated capital like the U.S. government, it invests $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
+**Here's the reality:** If a private equity firm allocated capital like the U.S. government, it would invest $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
 **The marginal value of producing another ranking is zero.** We don't need more information. Politicians already know which programs produce net societal value. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
@@ -156,7 +158,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 **Finance & ROI:**
 
-- **ROI (Return on Investment):** Profit divided by cost ({{< var victory_bond_annual_return_pct >}} ROI means you get \$3.72 back for every \$1 invested)
+- **ROI (Return on Investment):** Profit divided by cost. A 200% ROI means you get $3 back for every $1 invested (your original $1 plus $2 profit)
 - **Capital asymmetry:** Unequal distribution of wealth ({{< var global_household_wealth_usd >}} households vs. {{< var concentrated_interest_sector_market_cap_usd >}} military contractors)
 - **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
 - **Expected value:** Average outcome accounting for probabilities (20% chance of $100 = $20 expected value)
@@ -244,7 +246,7 @@ $$
 E[R] = \frac{P(\text{success}) \times (\text{Redirected Flow} \times \text{Investor Share})}{\text{Campaign Cost}}
 $$
 
-**Illustrative calculation (base case):** If a campaign costs $100 million and has a 20% chance of passing a treaty that redirects $24 billion/year (with 10% to investors), the expected annual value is:
+**Illustrative calculation:** If a campaign costs {{< var iab_bootstrap_campaign_cost >}} and has a 20% chance of passing a treaty that redirects {{< var treaty_annual_funding >}}/year (with 10% to investors), the expected annual value is:
 
 $$
 E[V] = 0.20 \times \$2.4\text{ billion} = \$480\text{ million/year}
@@ -254,14 +256,14 @@ The expected first-year ROI is {{< var victory_bond_annual_return_pct >}}, with 
 
 **Sensitivity to parameter uncertainty:**
 
-| Parameter | Conservative | Base Case | Optimistic | Expected First-Year ROI |
-|:----------|:-------------|:----------|:-----------|:------------------------|
-| Success probability | 10% | 20% | 40% | 36% / 444% / 2,076% |
-| Campaign cost | \$200M | \$100M | \$50M | 36% / 444% / 2,076% |
-| Investor share | 10% | 10% | 15% | 36% / 444% / 2,076% |
-| Treaty size | {{< var treaty_annual_funding >}}/year | \$24B/year | \$48B/year | 36% / 444% / 2,076% |
+| Parameter | Base Case | 95% CI Range | ROI Impact |
+|:----------|:----------|:-------------|:-----------|
+| Success probability | 20% | 10%–40% | 36%–2,076% |
+| Campaign cost | {{< var iab_bootstrap_campaign_cost >}} | $50M–$200M (95% CI) | Scales inversely |
+| Investor share | 10% | 10%–15% | Scales linearly |
+| Treaty size | {{< var treaty_annual_funding >}}/year | 1×–2× base | Scales linearly |
 
-Even under conservative assumptions (10% success, \$200M cost, 10% investor share, {{< var treaty_annual_funding >}} treaty), expected first-year ROI is 36% positive. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
+Even under conservative assumptions (10% success probability, upper CI bound on campaign cost, 10% investor share, {{< var treaty_annual_funding >}} treaty), expected first-year ROI remains positive at 36%. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
 
 ### The Capital Asymmetry: Why IABs Can Outcompete Incumbent Lobbying
 
@@ -388,9 +390,11 @@ This paper makes four contributions:
 
 ### Roadmap
 
-Section 2 reviews the relevant literature on mechanism design, public choice, Social Impact Bonds, and campaign finance. Section 3 presents the formal model, defining the politician's utility function and proving incentive compatibility. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes potential failure modes and limitations. Section 6 discusses generalization beyond health policy to other global coordination problems. Section 7 concludes.
+"Why Previous Approaches Failed" reviews the relevant literature on mechanism design, public choice, Social Impact Bonds, and campaign finance. "The Math" presents the formal model, defining the politician's utility function and proving incentive compatibility. "How IABs Work in Practice" details the three-layer architecture and its legal basis. "What Could Go Wrong" analyzes potential failure modes and limitations. "Where IABs Fit" discusses the broader governance stack. "Beyond Health" extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
 
-## Literature Review
+## Why Previous Approaches Failed {#sec-literature}
+
+**The short version:** Economists have known about the collective action problem for 60 years. They've proposed solutions. None have worked at scale because they either (a) require politicians to be altruistic, (b) target the wrong actors, or (c) lack teeth. IABs are different because they make self-interest and public interest point the same direction.
 
 ### Mechanism Design Theory
 
@@ -448,7 +452,7 @@ Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable pro
 
 The IAB scoring system is structurally analogous to credit ratings: an independent body publishes scores based on objective criteria, and market actors (voters, donors, employers) respond to those scores. The difference is the metric: instead of fiscal sustainability, IABs measure support for measurable public goods.
 
-## Formal Model
+## The Math: Proving It Works {#sec-formal-model}
 
 **For Non-Technical Readers:** You can skip this section. The key insight in plain English: We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get (1) campaign support from independent political groups, (2) better post-office job opportunities, and (3) higher public status. When these benefits exceed the costs (losing military contractor donations), supporting public goods becomes the rational choice. Skip to Section 4 for practical implementation or Section 6 for governance architecture.
 
@@ -808,7 +812,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 The self-funding nature matters. The treaty's success generates the resources that sustain both investor returns and political incentives for its continuation and expansion. This creates multiple reinforcing feedback loops:
 
-1. **Investor pressure for expansion:** Investors receiving 10% of \$24B want 10% of \$48B (if the treaty expands to 2%), creating a constituency that lobbies for treaty growth
+1. **Investor pressure for expansion:** Investors receiving 10% of {{< var treaty_annual_funding >}} want 10% of double that (if the treaty expands to 2%), creating a constituency that lobbies for treaty growth
 2. **Political incentives for continuation:** Politicians who supported the treaty benefit from ongoing electoral and career support, incentivizing them to defend it against repeal
 3. **Escalation dynamics:** Each expansion (1% → 2% → 5%) increases both investor returns and political incentive funding, strengthening the coalition for further expansion
 
@@ -858,7 +862,9 @@ $$
 
 This calibration suggests that IAB funding levels in the billions can overcome concentrated opposition in the millions, consistent with the "lobbying alpha" asymmetry observed empirically.
 
-## The Three-Layer Architecture
+## How IABs Work in Practice {#sec-architecture}
+
+**The short version:** Three interlocking systems make it work. (1) A nonprofit publishes "Public Good Scores" for every politician based on their voting record on high-NSV policies. (2) PACs and Super PACs commit to supporting high-scorers with campaign spending. (3) A network of post-government employers preferentially hires high-scorers. All three are legal. Together, they make funding high-NSV programs the career-maximizing choice.
 
 To implement score-dependent payoffs, we need mechanisms. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
 
@@ -1018,7 +1024,9 @@ This constraint is less significant than it appears. In a unified bond offering,
 
 **Practical implication:** For IABs offering strong commercial returns, foundation PRIs are a supplementary funding source, not a necessity. The electoral layer, the one foundations cannot fund, can be capitalized by return-seeking investors.
 
-## Failure Modes and Limitations
+## What Could Go Wrong {#sec-failure-modes}
+
+**The short version:** Three main risks: (1) Politicians game the scoring system without improving NSV outcomes. (2) Wealthy funders capture the process and redirect it to low-NSV pet causes. (3) Concentrated interests kill the mechanism before it reaches scale. We address each with specific countermeasures, but none are foolproof. Pilot testing is essential.
 
 ### Gaming and Metric Corruption
 
@@ -1091,7 +1099,9 @@ Political systems are complex. Possible unintended consequences:
 
 Given these risks, start with a careful pilot. Measure what happens. Scale if it works.
 
-## IABs in the Broader Governance Architecture
+## Where IABs Fit in Democratic Reform {#sec-governance}
+
+**The short version:** IABs solve one problem: getting high-NSV policies adopted. They don't solve "how do we measure NSV?" or "how should funds be allocated within high-NSV domains?" This section shows how IABs fit into a larger governance stack that addresses the full pipeline from priority-setting to implementation.
 
 ### The Four-Layer Governance Stack
 
@@ -1150,7 +1160,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 
 - IABs get the treaty passed and resources redirected
 - Wishocracy prevents those resources from being captured by new concentrated interests
-- Example: IAB treaty redirects $24B to pragmatic clinical trials. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
+- Example: IAB treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
 
 **Division of labor:**
 
@@ -1193,7 +1203,7 @@ Wishocracy's random pairwise sampling makes advertising economically infeasible.
 **Example cascade:**
 
 1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: pragmatic clinical trials 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank pragmatic clinical trials above military spending
-2. **Layer 1 (IABs):** Politicians pass treaty redirecting $24B to pragmatic clinical trials based on Layer 0 democratic domain ranking
+2. **Layer 1 (IABs):** Politicians pass treaty redirecting {{< var treaty_annual_funding >}} to pragmatic clinical trials based on Layer 0 democratic domain ranking
 3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within pragmatic clinical trials: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
 4. **Layer 3 (a decentralized framework for drug assessment, or dFDA):** Researchers compete in prediction markets; trials funded based on predicted effectiveness
 
@@ -1263,7 +1273,9 @@ IABs solve the *adoption* problem (the binding constraint that prevents welfare-
 
 **What IABs do solve:** The adoption problem. They make it individually rational for politicians to support welfare-improving policies despite concentrated opposition. This is the *binding constraint* in the governance stack. Without solving adoption, better allocation mechanisms (Layers 2-3) cannot be implemented. IABs are needed but not enough for optimal resource allocation.
 
-## Generalization: IABs for Global Coordination Problems
+## Beyond Health: Climate, Nuclear Risk, and More {#sec-generalization}
+
+**The short version:** The same mechanism works for any problem where politicians control outcomes, outcomes can be measured, and diffuse benefits face concentrated opposition. Climate change, nuclear disarmament, and pandemic preparedness all fit. Once the architecture exists for health, extending it is straightforward.
 
 The IAB architecture is not specific to health policy. It applies to any global coordination problem satisfying three conditions:
 
@@ -1316,7 +1328,7 @@ The paper demonstrates that IABs redirect resources from low-NSV to high-NSV pro
 | Benefit Category | Estimated Annual Value | Source |
 |:-----------------|:----------------------|:-------|
 | Peace dividend (reduced conflict costs) | {{< var peace_dividend_annual_societal_benefit >}} | 1% × {{< var global_annual_direct_indirect_war_cost >}} global war costs |
-| Pragmatic clinical trials acceleration | \$24B reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
+| Pragmatic clinical trials acceleration | {{< var treaty_annual_funding >}} reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
 | **Total annual benefits** | **\$227.55B** | Conservative estimate |
 
 **Net welfare calculation:**
@@ -1356,6 +1368,20 @@ If the mechanism has only a 10% chance of achieving treaty passage, expected BCR
 
 Even accounting for these risks (expected cost: ~\$75M/year, down from ~\$100M/year due to reduced capture risk), the net welfare impact remains strongly positive (BCR > 200:1).
 
+#### Sensitivity Analysis of Mechanism BCR
+
+The benefit-cost ratio calculation above uses point estimates. The following Monte Carlo analysis propagates uncertainty through all input parameters to show the full distribution of possible outcomes.
+
+{{< include ../figures/tornado-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+{{< include ../figures/mc-distribution-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+{{< include ../figures/exceedance-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+The Monte Carlo results confirm that the mechanism's BCR remains strongly positive across the full range of parameter uncertainty. Even at the 5th percentile (worst-case), the BCR exceeds 186:1, indicating robust welfare gains regardless of which parameter values materialize.
+
 ## Conclusion
 
 Incentive Alignment Bonds represent a new application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
@@ -1380,7 +1406,7 @@ Important limitations remain. Gaming and metric corruption require ongoing insti
 
 The biggest challenge is political: **concentrated interests threatened by IABs will attempt to regulate them out of existence before they can demonstrate effectiveness.**
 
-If IABs successfully redirect even 1% of military spending (\$24B globally), military contractors will face real losses. They will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
+If IABs successfully redirect even 1% of military spending ({{< var treaty_annual_funding >}} globally), military contractors will face real losses. They will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
 
 - **Campaign finance regulation:** Classify IAB-funded independent expenditures as illegal coordination
 - **Securities regulation:** Prohibit retail investment in "political outcome bonds"
