@@ -1,5 +1,5 @@
 ---
-name: review
+name: review-qmd
 description: Comprehensive single-file review. Generates preview with variables replaced, finds and replaces hardcoded values, adds _latex equations, validates consistency.
 allowed-tools:
   - Read
@@ -11,14 +11,14 @@ allowed-tools:
   - TodoWrite
 ---
 
-# /review <file.qmd>
+# /review-qmd <file.qmd>
 
 Comprehensive single-file review covering: variable consistency, content quality, and reader engagement.
 
 ## Usage
 ```
-/review knowledge/appendix/incentive-alignment-bonds-paper.qmd
-/review economics.qmd
+/review-qmd knowledge/appendix/incentive-alignment-bonds-paper.qmd
+/review-qmd economics.qmd
 ```
 If no file specified, ask which file to review.
 
