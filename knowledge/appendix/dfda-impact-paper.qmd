@@ -17,12 +17,15 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 
 
-- **Saves ~{{< var dfda_benefit_rd_only_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **{{< var dfda_trial_cost_reduction_pct >}}**, with up to **95%** savings in optimal scenarios.
-- **Return on Investment**: {{< var dfda_roi_rd_only >}}. A 10-year NPV cost of {{< var dfda_npv_total_cost >}} generates {{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings [over 10 years](#final-roi-and-net-benefit).
-- **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, a decentralized framework for drug assessment (dFDA) eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var dfda_efficacy_lag_elimination_dalys >}} QALYs average per year during the shift** (valued at **{{< var dfda_efficacy_lag_elimination_economic_value >}} total economic value**).
-- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_efficacy_lag_elimination_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from efficacy lag elimination only (8.2-year timeline shift); comprehensive top-down estimate of **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination).
-- **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: Such a framework is a dominant intervention that both saves money and improves health.
-- **{{< var dfda_rd_savings_daily >}}+ Daily Cost of Inaction**: Each day without such a framework represents a societal opportunity cost of ~{{< var dfda_rd_savings_daily >}} in economic waste. [See details](#daily-opportunity-cost-of-inaction).
+- **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift
+- **Suffering Eliminated**: {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} hours of human suffering averted
+- **Cost-Effectiveness**: {{< var dfda_direct_funding_cost_per_daly >}}/DALY - competitive with GiveWell's top interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY), while operating at vastly greater scale
+- **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: This is a cost-saving intervention that both reduces costs AND improves health outcomes
+- **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: Eliminates the {{< var efficacy_lag_years >}}-year Phase II/III delay **while preserving Phase I safety testing**
+- **DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
+- **Total Economic Value**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} (lives saved × standard QALY valuation)
+- **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}/year from {{< var dfda_trial_cost_reduction_pct >}} cost reduction in clinical trials
+- **Return on Investment**: {{< var dfda_roi_rd_only >}} (10-year NPV basis)
 
 ## Executive Summary
 
@@ -43,6 +46,48 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 - **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs {{< var recovery_trial_cost_reduction_factor >}} without killing anyone extra. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/). Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
 - **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
+
+### Key Findings
+
+| Metric | Value | Context |
+|--------|-------|---------|
+| **Cost-Effectiveness** | {{< var dfda_direct_funding_cost_per_daly >}}/DALY | Competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale |
+| **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | One-time benefit from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift |
+| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Captures both mortality and morbidity |
+| **Suffering Eliminated** | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} hours | Human suffering averted from timeline shift |
+| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} × standard QALY valuation |
+| **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} | Post-Phase I access via trial participation |
+| **ROI (R&D Savings)** | {{< var dfda_roi_rd_only >}} | {{< var dfda_trial_cost_reduction_factor >}}× cheaper trials |
+| **Annual R&D Savings** | {{< var dfda_benefit_rd_only_annual >}} | From {{< var dfda_trial_cost_reduction_pct >}} cost reduction |
+| **Trial Capacity Increase** | {{< var dfda_trial_capacity_multiplier >}}× | Enabling parallel therapeutic space exploration |
+
+::: {.callout-note collapse="true" title="Key Metric Derivations"}
+
+**Lives Saved:**
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex >}}
+
+**Suffering Hours Eliminated:**
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex >}}
+
+**Cost per DALY:**
+
+{{< var dfda_direct_funding_cost_per_daly_latex >}}
+
+:::
+
+::: {.callout-note}
+## Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
+
+This is a **queue/throughput model result**, not "time travel" or a prediction about distant futures:
+
+- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to clear this "queue." Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces queue clearance to ~{{< var dfda_queue_clearance_years >}}.
+- **The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents**: The average time a treatment that *could* be discovered today would have waited under the old system versus the new system.
+- **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
+:::
+
+**How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 #### Exceptional Economic Value
 
@@ -793,6 +838,79 @@ This Monte Carlo analysis replaces the need for discrete scenario analysis by ca
    - Decentralized trials let anyone participate, anywhere. More diverse data, less bias.
    - Opens up access to experimental treatments for everyone, not just the rich.
 
+## Research Acceleration Mechanism
+
+The {{< var dfda_trial_capacity_multiplier >}}× research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
+
+### The Unexplored Therapeutic Frontier
+
+The fundamental problem isn't that cures are hard to discover. It's that we're barely looking:
+
+- **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}} diseases)
+- **<1%** of these combinations have been tested
+- **Only {{< var human_interactome_targeted_pct >}}** of the human interactome has ever been targeted by drugs
+- **{{< var drug_repurposing_success_rate >}}** of approved drugs gain new indications, proving undiscovered uses exist
+
+{{< var drug_disease_combinations_possible_latex >}}
+
+The cures likely already exist among tested-safe compounds. We just haven't looked.
+
+### Current Exploration Rate vs. Therapeutic Space
+
+**Under the status quo:**
+
+- **{{< var diseases_without_effective_treatment >}} diseases** currently lack effective treatment
+- **{{< var new_disease_first_treatments_per_year >}} diseases/year** receive their first effective treatment
+- At this exploration rate, systematically searching the remaining 99%+ of therapeutic space would take **~{{< var status_quo_queue_clearance_years >}}**
+
+{{< var status_quo_queue_clearance_years_latex >}}
+
+This calculation is empirically grounded: only ~5% of the {{< var rare_diseases_count_global >}} rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} diseases/year getting first treatments, most of the therapeutic space remains permanently unexplored.
+
+**With dFDA implementation:**
+
+- Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}×, enabling parallel exploration of the therapeutic space
+- Exploration rate: **{{< var dfda_first_treatments_per_year >}} diseases receiving first treatments/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
+- Time to systematically explore disease space: **{{< var dfda_queue_clearance_years >}}** (vs {{< var status_quo_queue_clearance_years >}})
+
+{{< var dfda_first_treatments_per_year_latex >}}
+
+{{< var dfda_queue_clearance_years_latex >}}
+
+Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means discovered treatments reach patients immediately. The **total timeline shift** is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} (discovery acceleration + efficacy lag elimination).
+
+### Addressing the Returns Question: Diminishing, Linear, or Compounding?
+
+A common objection is that "more trials won't produce proportionally more cures" - the diminishing returns hypothesis. This deserves serious consideration, but the evidence suggests the opposite may be true.
+
+#### Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
+
+The diminishing returns objection assumes we've exhausted low-hanging fruit. But we've barely begun:
+
+1. **Single compounds alone**: {{< var drug_disease_combinations_possible >}} possible combinations of known safe compounds × diseases. At current trial capacity, systematically testing these would take **{{< var current_known_safe_exploration_years >}}**. We won't finish until the year 5000+.
+
+{{< var current_known_safe_exploration_years_latex >}}
+
+2. **Combination therapies expand the space**: Modern medicine relies on multi-drug regimens (oncology, HIV, cardiology). Pairwise combinations of safe compounds create **{{< var combination_therapy_disease_space >}}** possibilities, requiring **{{< var current_combination_exploration_years >}}** at current pace - longer than *Homo sapiens* has existed.
+
+3. **Repurposing success proves cures exist**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating the unexplored space contains discoveries.
+
+4. **Most biology is untargeted**: Only {{< var human_interactome_targeted_pct >}} of the human interactome has been targeted. We're ignoring 88% of our own biology.
+
+5. **RECOVERY found treatments in months**: The Oxford trial discovered multiple effective COVID treatments rapidly *because it looked systematically*.
+
+**You cannot have diminishing returns when you've barely started.**
+
+#### The Conservative Default: Linear Assumption
+
+Our analysis uses a conservative **linear returns assumption** - each dollar of additional trial funding produces the same marginal benefit as the last. This is almost certainly pessimistic because:
+
+- Network effects in data aggregation improve predictions over time
+- Each discovery informs future research directions
+- Platform infrastructure becomes more efficient with scale
+
+If returns are actually compounding (plausible given platform effects), our estimates are substantially conservative.
+
 ## Data Sources and Methodological Notes
 
 1. **Cost of Current Drug Development**:
@@ -856,6 +974,88 @@ Beyond direct savings, the effects on medical progress are massive. Test more dr
 ### Disclaimer
 
 All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory ecosystem.
+
+## Verification: Complete Derivation Chains
+
+For economist verification, this section provides complete derivation chains for all headline figures. Each metric traces back to primary data sources.
+
+### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
+
+**Step 1: Current trial capacity**
+- Current trial participants: {{< var current_trial_slots_available >}}/year
+- Current first treatments: {{< var new_disease_first_treatments_per_year >}} diseases/year
+
+**Step 2: Funded capacity with dFDA**
+- Annual trial funding: {{< var dih_treasury_to_medical_research_annual >}}
+- Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
+- Fundable patients: {{< var dih_patients_fundable_annually >}}/year
+
+**Step 3: Calculate multiplier**
+
+{{< var dfda_trial_capacity_multiplier_latex >}}
+
+### 2. Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
+
+**Components:**
+| Component | Value | Source |
+|-----------|-------|--------|
+| Efficacy Lag Elimination | {{< var efficacy_lag_years >}} | FDA drug approval timeline data |
+| Discovery Acceleration | {{< var dfda_trial_capacity_treatment_acceleration_years >}} | Queue clearance model |
+| **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}** | Sum of components |
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
+
+### 3. Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
+
+**Step 1: Daily mortality from eventually avoidable causes**
+- Global disease deaths: {{< var global_disease_deaths_daily >}}/day
+- Eventually avoidable percentage: {{< var eventually_avoidable_death_pct >}}
+
+**Step 2: Timeline shift period**
+- Total shift: {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}
+
+**Step 3: Calculate lives saved**
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex >}}
+
+### 4. Cost per DALY Derivation ({{< var dfda_direct_funding_cost_per_daly >}})
+
+**Step 1: Total platform cost (10-year NPV)**
+- NPV total cost: {{< var dfda_npv_total_cost >}}
+
+**Step 2: DALYs averted**
+- Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
+
+**Step 3: Calculate cost per DALY**
+
+{{< var dfda_direct_funding_cost_per_daly_latex >}}
+
+**Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
+
+### 5. ROI Derivation ({{< var dfda_roi_rd_only >}})
+
+**Step 1: Calculate benefits**
+- Annual R&D savings: {{< var dfda_benefit_rd_only_annual >}}
+- 10-year NPV of savings: {{< var dfda_npv_benefit_rd_only >}}
+
+**Step 2: Calculate costs**
+- 10-year NPV total cost: {{< var dfda_npv_total_cost >}}
+
+**Step 3: Calculate ROI**
+
+{{< var dfda_roi_rd_only_latex >}}
+
+### Verification Summary
+
+| Metric | Value | Primary Inputs | Data Sources |
+|--------|-------|----------------|--------------|
+| Trial Capacity | {{< var dfda_trial_capacity_multiplier >}}× | Funding, trial costs | ADAPTABLE trial, ClinicalTrials.gov |
+| Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Efficacy lag, queue model | FDA approval data, disease registry |
+| Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | Mortality rates, timeline | WHO GBD, mortality statistics |
+| Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | NPV costs, DALYs | ROM estimates, DALY calculations |
+| ROI | {{< var dfda_roi_rd_only >}} | Costs, savings | NPV analysis with 5-year ramp |
+
+All parameters, confidence intervals, and Monte Carlo distributions are documented in [Parameters and Calculations](parameters-and-calculations.qmd).
 
 ## Appendix Calculation Frameworks and Detailed Analysis
 
@@ -1205,6 +1405,18 @@ All values below are sourced from the centralized `dih_models/parameters.py` mod
 {{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_latex >}}
+
+#### Health Impact Uncertainty Analysis
+
+The Monte Carlo distributions below show the range of health impact estimates across 10,000 simulations, accounting for uncertainty in timeline shift, mortality rates, and avoidable percentages:
+
+**Lives Saved Distribution:**
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+**Economic Value Distribution:**
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
 **ROI Estimate**: {{< var dfda_roi_rd_only >}} (10-year NPV, accounting for time value of money and 5-year adoption ramp).
 
