@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (139 entries)
+# Contains only variables used in this paper (136 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -274,11 +274,6 @@
   \ \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
-"dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_adoption_ramp_years\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#adoption-curve\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Years to reach\
-  \ full Decentralized Framework for Drug Assessment adoption | ✓ High confidence\
-  \ | Unit: years | Click to view details, calculation & sources\">5 years</a>"
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_npv_annual_opex\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -832,11 +827,6 @@
   \ [$20K, $100K] | Dist: Lognormal | Unit: USD/QALY | Click to view details, calculation\
   \ & sources\">$50K (95% CI: $20K-$100K)</a>"
 "nih_standard_research_cost_per_qaly_cite": "@standard-medical-research-roi"
-"npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
-  \ discount rate for NPV analysis (3% annual, social discount rate) | Unit: rate\
-  \ | Core definition\">3%</span>"
-"npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
-  \ horizon for NPV analysis | Unit: years | Core definition\">10 years</span>"
 "pharma_drug_development_cost_current": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_drug_development_cost_current\"\
   \ class=\"parameter-link\" data-source-ref=\"drug-development-cost\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Average\
@@ -901,16 +891,6 @@
   \ Lognormal | Unit: USD/patient | Click to view details, calculation & sources\"\
   >$500 (95% CI: $400-$2.50K)</a>"
 "recovery_trial_cost_per_patient_cite": "@recovery-cost-500"
-"recovery_trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_cost_reduction_factor\"\
-  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost reduction\
-  \ factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)\
-  \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
-  \ / RECOVERY_COST | Unit: multiplier | Click to view details, calculation & sources\"\
-  >82x (95% CI: 50x-94.1x)</a>"
-"recovery_trial_cost_reduction_factor_latex": "$$\n\\begin{gathered}\nk_{RECOVERY}\
-  \ \\\\\n= \\frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\\\\n= \\frac{\\$41K}{\\$500}\
-  \ \\\\\n= 82\n\\end{gathered}\n$$"
 "recovery_trial_global_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-recovery_trial_global_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-1m-lives-saved\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Estimated lives saved globally by\
@@ -966,6 +946,12 @@
   \ FDA study) | ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit:\
   \ USD/patient | Click to view details, calculation & sources\">$41K (95% CI: $20K-$120K)</a>"
 "traditional_phase3_cost_per_patient_cite": "@trial-costs-fda-study"
+"treatment_acceleration_years_current": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_acceleration_years_current\"\
+  \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
+  \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
+  >17 years</a>"
+"treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
 "trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\

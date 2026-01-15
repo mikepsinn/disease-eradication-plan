@@ -43,7 +43,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 ### What You Get
 
-- **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs {{< var recovery_trial_cost_reduction_factor >}} without killing anyone extra. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/). Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
+- **Cost Cuts:** Clinical trials cost {{< var dfda_trial_cost_reduction_pct >}} less ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) prove this works. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
 - **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
@@ -683,10 +683,12 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 #### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
+- **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
-  - [Decentralized Clinical Trials (DCTs) have demonstrated potential for significant cost reductions](../references.qmd#dct-cost-reductions-evidence) (20-50.0% or more) through reduced site management, travel, and streamlined data collection.
-  - The [UK RECOVERY trial achieved cost reductions of ~80-98% per patient](../references.qmd#recovery-trial-cost-reduction) compared to traditional trials. The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_cost_per_patient >}}/patient) demonstrates similar efficiencies are achievable outside NHS infrastructure and emergency conditions.
-  - _Note on R&D Savings Estimates_: While specific trials like RECOVERY showcase transformative cost-saving potential (>95%), these results benefited from NHS infrastructure and COVID-19 emergency conditions. ADAPTABLE provides a more typical benchmark (~98% savings vs. traditional trials). The average quantifiable cost reduction across the full spectrum of decentralized trials is an area of ongoing research and varies significantly based on trial complexity, therapeutic area, and the extent of decentralization. The scenarios below therefore present a range, with the "Transformative" scenario reflecting exceptional, RECOVERY-like outcomes.
+  - [Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions](../references.qmd#dct-cost-reductions-evidence) through reduced site management, travel, and streamlined data collection.
+  - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
+  - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
+  - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
 
 The annual gross R&D savings can be calculated as:
 
@@ -735,9 +737,9 @@ The return on investment for an infrastructure supporting a decentralized framew
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines Core framework operational costs with the **Medium Case annual broader initiative costs (~{{< var dih_npv_annual_opex_initiatives >}})** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global vision for a decentralized framework, which were significantly larger, are superseded by these more granular figures from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section for the purpose of this ROI calculation.)_
 
-   - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50.0%–80% reduction in trial costs.
-   - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.
-   - **Faster to Market**: Potentially 1–3 years shaved off a typical 7–10 year development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
+   - **Cost Reduction**: {{< var dfda_trial_cost_reduction_pct >}} reduction ({{< var dfda_trial_cost_reduction_factor >}}) based on pragmatic trial evidence. Confidence interval reflects uncertainty across trial types.
+   - **Increased Throughput**: {{< var dfda_trial_capacity_multiplier >}} more trials and potentially many more candidates tested in parallel.
+   - **Faster to Market**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} shaved off a typical {{< var treatment_acceleration_years_current >}} development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
 
 ### Financial Returns (Monte Carlo Analysis) {#simplified-roi-scenario}
 
@@ -934,7 +936,7 @@ The total one-time benefit from eliminating the efficacy lag depends on several 
 
 1. **Adoption Rate:** The calculations above implicitly assume full adoption. As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual, with benefits ramping up over time as the framework becomes standard.
 
-2. **Magnitude of R&D Savings:** The percentage reduction in R&D costs is a critical variable. While the 95% reduction seen in the RECOVERY trial demonstrates what is possible, the system-wide average may be lower. The sensitivity table addresses this by showing a range from 30% to 95%.
+2. **Magnitude of R&D Savings:** The percentage reduction in R&D costs is a critical variable. Our central estimate of {{< var dfda_trial_cost_reduction_pct >}} is based on systematic evidence from multiple pragmatic trials (ADAPTABLE, RECOVERY, PCORnet studies). The Monte Carlo sensitivity analysis captures this uncertainty by sampling from the confidence interval.
 
 3. **Realization of Health Gains:** The link between a more efficient research ecosystem and concrete health outcomes (DALYs) is complex. The estimates are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the impact of such a framework remains a projection.
 
@@ -1086,7 +1088,7 @@ This appendix provides the detailed models and data used in the cost-benefit ana
 
 **Important Note on NPV Time Horizons**: This analysis primarily uses a **10-year NPV horizon** for standard business ROI analysis:
 
-**10-Year NPV (R&D Operational Savings)**: The dFDA platform makes trials 50-95% cheaper every year, indefinitely. We discount 10 years of future operational savings to present value (~{{< var dfda_npv_net_benefit_rd_only >}}) for ROI analysis. This is standard business practice for evaluating ongoing cost efficiencies.
+**10-Year NPV (R&D Operational Savings)**: The dFDA platform reduces trial costs by {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}} cost reduction). We discount 10 years of future operational savings to present value (~{{< var dfda_npv_net_benefit_rd_only >}}) for ROI analysis. This is standard business practice for evaluating ongoing cost efficiencies.
 
 **Why 10 years?** Standard business analysis horizon. The benefits continue beyond 10 years, but we use this conservative timeframe to calculate NPV and ROI (~{{< var dfda_roi_rd_only >}}).
 
