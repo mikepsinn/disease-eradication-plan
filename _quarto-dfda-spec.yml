@@ -55,12 +55,12 @@ execute:
 metadata:
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
-  primary-author: "Mike P. Sinn, Decentralized FDA"
-  byline: "Mike P. Sinn, Decentralized FDA"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
   author-email: "mike@warondisease.org"
-  author-url: "https://spec.dfda.earth"
-  author-website: "https://spec.dfda.earth"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   language: "en-US"
   subject: "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods"
@@ -99,8 +99,8 @@ metadata:
   type: "Academic"
   genre: "Biostatistics, Pharmacoepidemiology, Methodology"
   medium: "Digital"
-  twitter-site: "@thinkbynumbers"
-  twitter-creator: "@thinkbynumbers"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
   og-site-name: "Decentralized FDA"
 
   # Open Graph metadata (enables per-page custom OG images)

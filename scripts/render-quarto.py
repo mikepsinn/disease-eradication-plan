@@ -38,6 +38,7 @@ from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
 
 import yaml
+from dotenv import load_dotenv
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -856,9 +857,27 @@ def main():
         help="Additional arguments to pass to quarto render/preview"
     )
 
+    # Zenodo publishing options
+    parser.add_argument(
+        "--publish",
+        action="store_true",
+        help="Upload PDF to Zenodo after rendering (as draft by default)"
+    )
+    parser.add_argument(
+        "--publish-live",
+        action="store_true",
+        help="Upload and publish to Zenodo (assigns DOI immediately)"
+    )
+    parser.add_argument(
+        "--sandbox",
+        action="store_true",
+        help="Use Zenodo sandbox for testing (with --publish)"
+    )
+
     args = parser.parse_args()
 
-    sys.exit(render_quarto(
+    # Run the render
+    exit_code = render_quarto(
         config_name=args.config,
         format_override=None if args.to == "all" else args.to,
         verify=args.verify,
@@ -871,7 +890,100 @@ def main():
         port=args.port,
         host=args.host,
         no_browser=args.no_browser
-    ))
+    )
+
+    # Publish to Zenodo if requested and render succeeded
+    if (args.publish or args.publish_live) and exit_code == 0 and not args.preview:
+        exit_code = _publish_to_zenodo(
+            config_name=args.config,
+            sandbox=args.sandbox,
+            draft=not args.publish_live
+        )
+
+    sys.exit(exit_code)
+
+
+def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = True) -> int:
+    """
+    Upload rendered PDF to Zenodo.
+
+    Returns exit code (0 for success, 1 for failure).
+    """
+    from lib.zenodo_client import (
+        ZenodoClient,
+        get_zenodo_token,
+        load_quarto_config,
+        upload_paper,
+    )
+
+    print()
+    print("=" * 80)
+    print("ZENODO UPLOAD")
+    print("=" * 80)
+
+    # Skip test and book configs
+    if config_name in ("test", "book"):
+        print(f"[--] Skipping Zenodo upload for '{config_name}' config")
+        return 0
+
+    # Load .env file if present
+    project_root = _find_project_root()
+    load_dotenv(project_root / ".env")
+
+    # Get token
+    token = get_zenodo_token(sandbox=sandbox)
+    if not token:
+        env_var = "ZENODO_SANDBOX_TOKEN" if sandbox else "ZENODO_TOKEN"
+        print(f"ERROR: {env_var} environment variable not set", file=sys.stderr)
+        print(f"  Get token at: https://{'sandbox.' if sandbox else ''}zenodo.org/account/settings/applications/")
+        return 1
+
+    # Find project root and config
+    project_root = _find_project_root()
+    config_file = project_root / f"_quarto-{config_name}.yml"
+
+    if not config_file.exists():
+        print(f"ERROR: Config file not found: {config_file}", file=sys.stderr)
+        return 1
+
+    # Load config and find PDF path
+    quarto_config = load_quarto_config(config_file)
+    dih_render = quarto_config.get("dih-render", {})
+
+    # Get PDF filename
+    pdf_filename = dih_render.get("pdf-output-file")
+    if not pdf_filename:
+        format_config = quarto_config.get("format", {})
+        pdf_config = format_config.get("pdf", {})
+        pdf_filename = pdf_config.get("output-file", f"{config_name}-paper.pdf")
+
+    # Build PDF path
+    pdf_path = project_root / f"_build_temp/{config_name}/_site/{config_name}/{pdf_filename}"
+
+    if not pdf_path.exists():
+        print(f"ERROR: PDF not found at {pdf_path}", file=sys.stderr)
+        print("  Build may have failed or PDF output is disabled", file=sys.stderr)
+        return 1
+
+    # Create client and upload
+    env_name = "SANDBOX" if sandbox else "PRODUCTION"
+    print(f"[*] Zenodo Environment: {env_name}")
+
+    client = ZenodoClient(token, sandbox=sandbox)
+    result = upload_paper(
+        client=client,
+        paper_key=config_name,
+        quarto_config=quarto_config,
+        pdf_path=pdf_path,
+        draft=draft,
+        verbose=True
+    )
+
+    if result:
+        print()
+        return 0
+    else:
+        return 1
 
 
 if __name__ == "__main__":

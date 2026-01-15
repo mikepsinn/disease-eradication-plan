@@ -206,14 +206,14 @@ metadata:
   # Author identification
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
-  primary-author: "Mike P. Sinn, Decentralized Institutes of Health"
-  byline: "Mike P. Sinn, Decentralized Institutes of Health"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
 
   # Author contact information
   author-email: "mike@warondisease.org"
-  author-url: "https://WarOnDisease.org"
-  author-website: "https://WarOnDisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   
   # Bibliographic metadata
@@ -268,8 +268,8 @@ metadata:
   medium: "Digital, Print"
   
   # Social media and web
-  twitter-site: "@thinkbynumbers"
-  twitter-creator: "@thinkbynumbers"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
   og-site-name: "WarOnDisease.org"
 
   # Open Graph metadata (enables per-page custom OG images)

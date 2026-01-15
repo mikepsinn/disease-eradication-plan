@@ -96,6 +96,7 @@ from dih_models.latex_generation import (
 from dih_models.parameters_and_calculations_qmd_generator import (
     generate_parameters_and_calculations_qmd,
 )
+from dih_models.paper_parameters_generator import generate_all_paper_parameters_qmd
 from dih_models.quarto_formatting import (
     generate_html_with_tooltip,
 )
@@ -1128,6 +1129,21 @@ def main():
     print("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
     generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path)
+    print()
+
+    # Generate per-paper filtered parameters-and-calculations files
+    # Each paper gets only the parameters it uses (plus their transitive dependencies)
+    print("[*] Generating per-paper parameters-and-calculations files...")
+    paper_params_results = generate_all_paper_parameters_qmd(
+        project_root=project_root,
+        parameters=parameters,
+        available_refs=available_refs,
+        params_file=parameters_path
+    )
+    if paper_params_results:
+        print(f"[OK] Generated {len(paper_params_results)} paper-specific parameter appendices")
+    else:
+        print("[*] No standalone papers found or no parameters to include")
     print()
 
     # Optionally inject citations

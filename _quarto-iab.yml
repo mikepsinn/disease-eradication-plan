@@ -56,8 +56,8 @@ metadata:
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
   author-email: "mike@warondisease.org"
-  author-url: "https://iab.warondisease.org"
-  author-website: "https://iab.warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   # title: Removed - each page defines its own title in frontmatter
   # description: Removed from metadata section to allow page-level descriptions to override for og:description
@@ -99,8 +99,8 @@ metadata:
   type: "Academic"
   genre: "Political Science, Economics, Mechanism Design, Public Policy"
   medium: "Digital"
-  twitter-site: "@thinkbynumbers"
-  twitter-creator: "@thinkbynumbers"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
   og-site-name: "Incentive Alignment Bonds"
 
   # Open Graph metadata (enables per-page custom OG images)
@@ -111,6 +111,10 @@ metadata:
 language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
+
+# Bibliography configuration
+bibliography: references-iab.bib
+csl: nature.csl
 
 jupyter: dih-project-kernel
 

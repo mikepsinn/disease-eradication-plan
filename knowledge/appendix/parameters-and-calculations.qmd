@@ -1,6 +1,6 @@
 ---
 title: "Methodology, Parameters, and Calculations"
-description: "Full methodological transparency for the 1% Treaty economic analysis. Every parameter sourced, every calculation shown, every assumption testable. Cost-benefit analysis of redirecting military spending to clinical trials and medical research."
+description: "Complete parameter definitions, formulas, uncertainty ranges, and data sources for the 1% Treaty economic analysis."
 keywords:
   - health economics methodology
   - clinical trial cost analysis
@@ -23,9 +23,7 @@ format:
 
 ## Overview
 
-This analysis claims we could save millions of lives by redirecting 1% of military spending to medical research. Extraordinary claims require extraordinary evidence. Here's how we calculated it. Every assumption exposed, every source cited, every formula shown. Verify it yourself.
-
-**Total parameters**: 388
+This appendix documents all 388 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 149
 - Calculated values: 138
@@ -4554,6 +4552,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
 :::
 

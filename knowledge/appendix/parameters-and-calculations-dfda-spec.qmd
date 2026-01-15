@@ -1,0 +1,166 @@
+---
+title: "Parameters and Calculations"
+description: "Parameter definitions, formulas, and data sources."
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+---
+
+::: {.content-visible when-format="html"}
+
+**6 parameters**: 5 from external sources, 1 calculated, 0 definitions
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient): $500 (95% CI: $400 - $2.50K)
+
+$$
+\begin{gathered}
+k_{RECOVERY} \\
+= \frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\
+= \frac{\$41K}{\$500} \\
+= 82
+\end{gathered}
+$$
+
+**Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+
+*High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications and authoritative reports.
+
+### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
+
+**Source**: [IQVIA Report - Global trial capacity](../references.qmd#global-trial-participant-capacity)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.50M patients/year, 2.30M patients/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M patients/year and 2.30M patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
+
+*High confidence*
+
+:::
+
+### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Phase 3 trial total cost (minimum)
+
+**Source**: [SofproMed - Phase 3 cost per trial range](../references.qmd#phase-3-cost-per-trial-range)
+
+*High confidence*
+
+:::
+
+### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
+
+**Source**: [Oren Cass, Manhattan Institute (2023) - RECOVERY Trial Cost per Patient](../references.qmd#recovery-cost-500)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
+*High confidence*
+
+:::
+
+### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
+
+**Source**: [NHS England; Águas et al. (2021) - RECOVERY trial global lives saved (~1 million)](../references.qmd#recovery-trial-1m-lives-saved)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [500k lives, 2.00M lives] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500k lives and 2.00M lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
+
+*Medium confidence*
+
+:::
+
+### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*High confidence*
+
+:::
+
+:::

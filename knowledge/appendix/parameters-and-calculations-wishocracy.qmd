@@ -1,0 +1,46 @@
+---
+title: "Parameters and Calculations"
+description: "Parameter definitions, formulas, and data sources."
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+---
+
+::: {.content-visible when-format="html"}
+
+**2 parameters**: 1 from external sources, 0 calculated, 1 definitions
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications and authoritative reports.
+
+### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Total global household wealth (2022/2023 estimate)
+
+**Source**: [Credit Suisse/UBS (2023) - Credit Suisse Global Wealth Report 2023](../references.qmd#cs-global-wealth-report-2023)
+
+*High confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
+
+*Core definition*
+
+:::
+
+:::

@@ -1,0 +1,401 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Zenodo Client Library
+=====================
+
+Shared Zenodo API client and metadata utilities for uploading papers.
+Used by both render-quarto.py (--publish option) and publish-zenodo.py.
+
+Example usage:
+    from lib.zenodo_client import ZenodoClient, extract_zenodo_metadata, upload_paper
+
+    client = ZenodoClient(token, sandbox=False)
+    result = upload_paper(client, paper_key, quarto_config, pdf_path, draft=True)
+"""
+
+from __future__ import annotations
+
+import os
+from datetime import datetime
+from pathlib import Path
+from typing import Optional
+
+import requests
+import yaml
+
+# Zenodo API endpoints
+ZENODO_API = "https://zenodo.org/api"
+ZENODO_SANDBOX_API = "https://sandbox.zenodo.org/api"
+
+# Zenodo community ID
+ZENODO_COMMUNITY = "dih"
+
+# Default ORCID for Mike P. Sinn
+DEFAULT_ORCID = "0009-0006-0212-1094"
+
+
+class ZenodoClient:
+    """Simple Zenodo API client."""
+
+    def __init__(self, token: str, sandbox: bool = False):
+        self.token = token
+        self.base_url = ZENODO_SANDBOX_API if sandbox else ZENODO_API
+        self.sandbox = sandbox
+        self.headers = {"Authorization": f"Bearer {token}"}
+
+    def create_deposit(self) -> dict:
+        """Create a new empty deposit."""
+        response = requests.post(
+            f"{self.base_url}/deposit/depositions",
+            headers=self.headers,
+            json={},
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def create_new_version(self, deposit_id: int) -> dict:
+        """Create a new version of an existing deposit."""
+        response = requests.post(
+            f"{self.base_url}/deposit/depositions/{deposit_id}/actions/newversion",
+            headers=self.headers,
+        )
+        response.raise_for_status()
+
+        # Get the new version draft
+        data = response.json()
+        new_version_url = data["links"]["latest_draft"]
+
+        response = requests.get(new_version_url, headers=self.headers)
+        response.raise_for_status()
+        return response.json()
+
+    def update_metadata(self, deposit_id: int, metadata: dict) -> dict:
+        """Update deposit metadata."""
+        response = requests.put(
+            f"{self.base_url}/deposit/depositions/{deposit_id}",
+            headers=self.headers,
+            json={"metadata": metadata},
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def delete_all_files(self, deposit_id: int) -> None:
+        """Delete all files from a deposit (for updating versions)."""
+        response = requests.get(
+            f"{self.base_url}/deposit/depositions/{deposit_id}/files",
+            headers=self.headers,
+        )
+        response.raise_for_status()
+
+        for file_info in response.json():
+            file_id = file_info["id"]
+            requests.delete(
+                f"{self.base_url}/deposit/depositions/{deposit_id}/files/{file_id}",
+                headers=self.headers,
+            )
+
+    def upload_file(self, deposit_id: int, file_path: Path, bucket_url: str) -> dict:
+        """Upload a file to a deposit."""
+        with open(file_path, "rb") as f:
+            response = requests.put(
+                f"{bucket_url}/{file_path.name}",
+                headers=self.headers,
+                data=f,
+            )
+        response.raise_for_status()
+        return response.json()
+
+    def publish(self, deposit_id: int) -> dict:
+        """Publish a deposit (makes it public and assigns DOI)."""
+        response = requests.post(
+            f"{self.base_url}/deposit/depositions/{deposit_id}/actions/publish",
+            headers=self.headers,
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def get_deposit(self, deposit_id: int) -> dict:
+        """Get deposit details."""
+        response = requests.get(
+            f"{self.base_url}/deposit/depositions/{deposit_id}",
+            headers=self.headers,
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def find_draft_by_title(self, title: str) -> Optional[dict]:
+        """Find an existing draft deposit by title."""
+        response = requests.get(
+            f"{self.base_url}/deposit/depositions",
+            headers=self.headers,
+            params={"status": "draft"},
+        )
+        response.raise_for_status()
+
+        for deposit in response.json():
+            deposit_title = deposit.get("metadata", {}).get("title", "")
+            if deposit_title == title:
+                return deposit
+        return None
+
+
+def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
+    """
+    Convert Quarto metadata to Zenodo metadata format.
+
+    See: https://developers.zenodo.org/#representation
+    """
+    # Get metadata from various sections
+    metadata = quarto_config.get("metadata", {})
+    website = quarto_config.get("website", {})
+    book = quarto_config.get("book", {})
+
+    # Title: prefer book/website title over metadata
+    title = book.get("title") or website.get("title") or metadata.get("title", f"Paper: {paper_key}")
+
+    # Description: prefer abstract (longer, more detailed) over description
+    abstract = book.get("abstract") or website.get("abstract") or metadata.get("abstract", "")
+    short_description = (
+        book.get("description") or
+        website.get("description") or
+        metadata.get("description", "")
+    )
+
+    # Clean up abstract (remove extra whitespace from YAML multiline)
+    if abstract:
+        abstract = " ".join(abstract.split())
+
+    # Use abstract as description if available, otherwise use short description
+    if abstract:
+        description = f"<p><strong>Abstract:</strong> {abstract}</p>"
+        if short_description:
+            description += f"<p><strong>Summary:</strong> {short_description}</p>"
+    else:
+        description = short_description
+
+    # Authors/Creators
+    author_name = metadata.get("human-author", metadata.get("creator", "Mike P. Sinn"))
+    creators = [{"name": author_name}]
+
+    # Add ORCID if available in metadata, otherwise use default for Mike P. Sinn
+    orcid = metadata.get("orcid")
+    if orcid:
+        creators[0]["orcid"] = orcid
+    elif "Mike" in author_name and "Sinn" in author_name:
+        creators[0]["orcid"] = DEFAULT_ORCID
+
+    # Add affiliation
+    creators[0]["affiliation"] = metadata.get("publisher", "Decentralized Institutes of Health")
+
+    # Keywords
+    keywords = metadata.get("keywords", [])
+    if isinstance(keywords, list):
+        keywords = keywords[:10]  # Zenodo limits keywords
+
+    # License mapping (Quarto to Zenodo)
+    license_map = {
+        "CC BY-NC 4.0": "cc-by-nc-4.0",
+        "CC BY 4.0": "cc-by-4.0",
+        "CC BY-SA 4.0": "cc-by-sa-4.0",
+        "MIT": "mit",
+    }
+    quarto_license = metadata.get("license", "CC BY-NC 4.0")
+    zenodo_license = license_map.get(quarto_license, "cc-by-nc-4.0")
+
+    # Related identifiers (link to live website)
+    related = []
+    site_url = book.get("site-url") or website.get("site-url")
+    if site_url:
+        related.append({
+            "identifier": site_url,
+            "relation": "isSupplementedBy",
+            "resource_type": "publication-softwaredocumentation",
+        })
+
+    # GitHub repo
+    repo_url = metadata.get("repo-url") or metadata.get("source-url")
+    if repo_url:
+        related.append({
+            "identifier": repo_url,
+            "relation": "isSupplementedBy",
+            "resource_type": "software",
+        })
+
+    # Language (ISO 639-3 code)
+    language_map = {"en-US": "eng", "en-GB": "eng", "en": "eng"}
+    quarto_language = metadata.get("language", "en-US")
+    zenodo_language = language_map.get(quarto_language, "eng")
+
+    # Version
+    version = metadata.get("version", "1.0")
+
+    # Subjects
+    subjects = []
+    subject_text = metadata.get("subject", "")
+    if subject_text:
+        for subj in subject_text.split(","):
+            subj = subj.strip()
+            if subj:
+                subjects.append({"term": subj, "scheme": "user-defined"})
+
+    # Contributors
+    contributors = []
+    contributor_list = metadata.get("contributors", [])
+    if isinstance(contributor_list, list):
+        for contrib in contributor_list:
+            if isinstance(contrib, dict):
+                contributors.append({
+                    "name": contrib.get("name", ""),
+                    "type": contrib.get("type", "Other"),
+                    "affiliation": contrib.get("affiliation", ""),
+                })
+            elif isinstance(contrib, str):
+                contributors.append({"name": contrib, "type": "Other"})
+
+    # Build Zenodo metadata
+    zenodo_metadata = {
+        "title": title,
+        "description": description,
+        "creators": creators,
+        "keywords": keywords,
+        "license": zenodo_license,
+        "access_right": "open",
+        "publication_date": datetime.now().strftime("%Y-%m-%d"),
+        "upload_type": "publication",
+        "publication_type": "workingpaper",
+        "publisher": metadata.get("publisher", "Decentralized Institutes of Health"),
+        "language": zenodo_language,
+        "version": version,
+    }
+
+    if related:
+        zenodo_metadata["related_identifiers"] = related
+    if subjects:
+        zenodo_metadata["subjects"] = subjects
+    if contributors:
+        zenodo_metadata["contributors"] = contributors
+
+    # Add community
+    zenodo_metadata["communities"] = [{"identifier": ZENODO_COMMUNITY}]
+
+    # Add notes with category/genre information
+    notes_parts = []
+    if metadata.get("category"):
+        notes_parts.append(f"Category: {metadata['category']}")
+    if metadata.get("genre"):
+        notes_parts.append(f"Genre: {metadata['genre']}")
+    if metadata.get("audience"):
+        notes_parts.append(f"Target Audience: {metadata['audience']}")
+    if notes_parts:
+        zenodo_metadata["notes"] = " | ".join(notes_parts)
+
+    return zenodo_metadata
+
+
+def upload_paper(
+    client: ZenodoClient,
+    paper_key: str,
+    quarto_config: dict,
+    pdf_path: Path,
+    draft: bool = True,
+    verbose: bool = True,
+) -> Optional[dict]:
+    """
+    Upload a paper to Zenodo.
+
+    Args:
+        client: ZenodoClient instance
+        paper_key: Short identifier for the paper (e.g., "iab")
+        quarto_config: Parsed Quarto YAML config
+        pdf_path: Path to the PDF file
+        draft: If True, create draft without publishing
+        verbose: Print progress messages
+
+    Returns:
+        Dict with deposit info if successful, None otherwise
+    """
+    import sys
+
+    def log(msg: str):
+        if verbose:
+            print(msg)
+
+    log(f"\n{'='*60}")
+    log(f"Uploading: {paper_key}")
+    log(f"{'='*60}")
+
+    # Check if PDF exists
+    if not pdf_path.exists():
+        log(f"WARNING: PDF not found at {pdf_path}")
+        log("  -> Skipping (build the paper first)")
+        return None
+
+    log(f"[OK] PDF found: {pdf_path.name} ({pdf_path.stat().st_size / 1024:.1f} KB)")
+
+    # Extract metadata
+    metadata = extract_zenodo_metadata(quarto_config, paper_key)
+
+    log(f"[OK] Title: {metadata['title']}")
+    log(f"[OK] Authors: {', '.join(c['name'] for c in metadata['creators'])}")
+    log(f"[OK] License: {metadata['license']}")
+
+    try:
+        # Check for existing draft with same title
+        log("[OK] Checking for existing draft...")
+        existing_draft = client.find_draft_by_title(metadata["title"])
+
+        if existing_draft:
+            deposit_id = existing_draft["id"]
+            log(f"[OK] Found existing draft: {deposit_id}")
+            log("  -> Updating existing draft...")
+            full_deposit = client.get_deposit(deposit_id)
+            bucket_url = full_deposit["links"]["bucket"]
+            client.delete_all_files(deposit_id)
+        else:
+            log("[OK] No existing draft found, creating new deposit...")
+            deposit = client.create_deposit()
+            deposit_id = deposit["id"]
+            bucket_url = deposit["links"]["bucket"]
+
+        log(f"[OK] Deposit ID: {deposit_id}")
+
+        # Update metadata
+        log("[OK] Updating metadata...")
+        client.update_metadata(deposit_id, metadata)
+
+        # Upload PDF
+        log(f"[OK] Uploading {pdf_path.name}...")
+        client.upload_file(deposit_id, pdf_path, bucket_url)
+
+        if draft:
+            log("[OK] Draft saved (not published)")
+            log(f"  -> Review at: {client.base_url.replace('/api', '')}/deposit/{deposit_id}")
+        else:
+            log("[OK] Publishing...")
+            result = client.publish(deposit_id)
+            doi = result.get("doi")
+            log(f"\n[SUCCESS] Published!")
+            log(f"  DOI: {doi}")
+            log(f"  URL: {result['links']['html']}")
+
+        return {"id": deposit_id, "bucket": bucket_url}
+
+    except requests.HTTPError as e:
+        print(f"ERROR: Zenodo API error: {e}", file=sys.stderr)
+        if hasattr(e, 'response'):
+            print(f"  Response: {e.response.text}", file=sys.stderr)
+        return None
+
+
+def get_zenodo_token(sandbox: bool = False) -> Optional[str]:
+    """Get Zenodo API token from environment."""
+    if sandbox:
+        return os.environ.get("ZENODO_SANDBOX_TOKEN")
+    return os.environ.get("ZENODO_TOKEN")
+
+
+def load_quarto_config(config_path: Path) -> dict:
+    """Load and parse a Quarto YAML config file."""
+    with open(config_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)

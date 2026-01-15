@@ -21,8 +21,8 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "dFDA Cost-Benefit Analysis & ROI"
-  description: "Analysis and Return on Investment - How to slash per-patient trial costs by up to 95%, generate billions in annual gross R&D savings, and deliver exceptional ROI through a decentralized framework for drug assessment."
+  title: "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials"
+  description: "A cost-benefit analysis of public infrastructure for pragmatic clinical trials. With dedicated funding, such a system could avert millions of deaths through accelerated treatment discovery while generating billions in annual R&D savings."
   site-url: https://impact.dfda.earth
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
@@ -57,12 +57,12 @@ execute:
 metadata:
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
-  primary-author: "Mike P. Sinn, Decentralized FDA"
-  byline: "Mike P. Sinn, Decentralized FDA"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
   author-email: "mike@warondisease.org"
-  author-url: "https://impact.dfda.earth"
-  author-website: "https://impact.dfda.earth"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   language: "en-US"
   subject: "Health Economics, Cost-Benefit Analysis, ROI, Clinical Trials, Drug Development"
@@ -100,9 +100,9 @@ metadata:
   type: "Academic"
   genre: "Health Economics, Policy Analysis, Cost-Benefit Analysis"
   medium: "Digital"
-  twitter-site: "@thinkbynumbers"
-  twitter-creator: "@thinkbynumbers"
-  og-site-name: "dFDA Cost-Benefit Analysis"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
+  og-site-name: "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
