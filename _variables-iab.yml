@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (20 entries)
+# Contains only variables used in this paper (21 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "average_market_return_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-average_market_return_pct\"\
@@ -44,6 +44,10 @@
   \ estimate) | ✓ High confidence | Unit: USD | Click to view details, calculation\
   \ & sources\">$454T</a>"
 "global_household_wealth_usd_cite": "@cs-global-wealth-report-2023"
+"iab_bootstrap_campaign_cost": "<span class=\"parameter-definition\" title=\"Bootstrap\
+  \ campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in\
+  \ required lobbying intensity, media spend, and organizational overhead. | Unit:\
+  \ USD | Core definition\">$100M (95% CI: $50M-$200M)</span>"
 "iab_mechanism_benefit_cost_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_benefit_cost_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
