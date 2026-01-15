@@ -342,7 +342,7 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     if orcid:
         creators[0]["orcid"] = orcid
     elif "Mike" in author_name and "Sinn" in author_name:
-        creators[0]["orcid"] = "0000-0002-4817-1912"
+        creators[0]["orcid"] = "0009-0006-0212-1094"
 
     # Add affiliation
     creators[0]["affiliation"] = metadata.get("publisher", "Decentralized Institutes of Health")
