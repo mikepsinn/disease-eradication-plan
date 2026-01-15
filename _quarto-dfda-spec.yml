@@ -103,6 +103,9 @@ metadata:
   twitter-creator: "@warondisease"
   og-site-name: "Decentralized FDA"
 
+  # Identifiers
+  doi: "10.5281/zenodo.18203376"
+
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
   image: "https://spec.dfda.earth/assets/dfda-og-1200x630.png"

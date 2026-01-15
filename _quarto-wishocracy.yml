@@ -104,6 +104,9 @@ metadata:
   twitter-creator: "@warondisease"
   og-site-name: "Wishocracy"
 
+  # Identifiers
+  doi: "10.5281/zenodo.18205882"
+
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
   image: "https://wishocracy.org/assets/wishocracy-og-1200x630.png"

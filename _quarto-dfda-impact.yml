@@ -104,6 +104,9 @@ metadata:
   twitter-creator: "@warondisease"
   og-site-name: "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials"
 
+  # Identifiers
+  doi: "10.5281/zenodo.18243915"
+
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
   image: "https://impact.dfda.earth/assets/dfda-og-1200x630.png"
