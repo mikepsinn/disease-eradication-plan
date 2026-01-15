@@ -12,9 +12,13 @@ This directory contains hooks, skills, and agents to enable autonomous editing a
 │   ├── check-python-errors.sh         # PostToolUse: Python linting
 │   └── load-book-context.sh           # SessionStart: Load project context
 ├── skills/                   # Reusable multi-step workflows
+│   ├── review/               # Single-file comprehensive review
+│   ├── pre-render-validate/  # All-file validation before render
 │   ├── validate-and-regenerate-parameters/
 │   ├── qmd-consistency-check/
-│   └── verify-and-add-sources/
+│   ├── verify-and-add-sources/
+│   ├── latex-equation-audit/
+│   └── replace-hardcoded-values/
 ├── agents/                   # Autonomous specialists
 │   ├── parameter-manager/
 │   └── book-reviewer/
@@ -136,7 +140,7 @@ After:  The dFDA enables {{< var dfda_cures_per_year >}} new cures annually.
         {{< var dfda_cures_per_year_latex >}}
 ```
 
-### 6. ralph-hardcoded-audit
+### 6. replace-hardcoded-values
 **When to use:** To systematically replace hardcoded numbers with variables
 
 **What it does:**
@@ -145,7 +149,30 @@ After:  The dFDA enables {{< var dfda_cures_per_year >}} new cures annually.
 - Uses Ralph Loop for iterative processing across all files
 - Tracks progress and generates report
 
-**Usage:** `/ralph-hardcoded-audit` or "Use ralph-hardcoded-audit skill"
+**Usage:** `/replace-hardcoded-values` or "Use replace-hardcoded-values skill"
+
+### 7. review
+**When to use:** Comprehensive single-file review and improvement
+
+**What it does:**
+- Generates preview with all variables replaced by actual values
+- Finds and replaces hardcoded numbers with Quarto variables
+- Adds `_latex` equations where appropriate
+- Validates consistency and fixes issues
+- Ensures all values are internally consistent
+
+**Usage:** `/review <file.qmd>`
+
+**Example:**
+```
+/review knowledge/appendix/incentive-alignment-bonds-paper.qmd
+/review economics.qmd
+```
+
+**Output:**
+- `_analysis/<filename>-preview.md` - Human-readable preview
+- Detailed report of all replacements made
+- Validation confirmation
 
 ## 🤖 Agents (Autonomous Specialists)
 

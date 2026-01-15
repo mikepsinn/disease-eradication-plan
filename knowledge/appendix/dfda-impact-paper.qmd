@@ -14,8 +14,13 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 
 ![](/assets/infographics/knowledge/appendix/dfda-cost-benefit-analysis-infographic-academic.jpg)
 
+::: {.callout-note}
+## Understanding These Figures: The Untested Treatment Backlog
 
+**The bottleneck:** {{< var diseases_without_effective_treatment >}} diseases currently lack effective treatments. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}} new treatments per year, systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
 
+The figures below represent **cumulative benefits over the entire acceleration period** - the total lives saved by addressing this backlog faster. This is the same methodology used to value smallpox eradication (program cost → total future lives saved) and climate infrastructure investments. These are not annual figures; they are the one-time benefit of permanently accelerating medical progress.
+:::
 
 - **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift
 - **Suffering Eliminated**: {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering averted
@@ -80,9 +85,9 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 ::: {.callout-note}
 ## Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
 
-This is a **queue/throughput model result**, not "time travel" or a prediction about distant futures:
+This is a **capacity vs. backlog model**, not "time travel" or a prediction about distant futures:
 
-- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to clear this "queue." Scaling capacity {{< var dfda_trial_capacity_multiplier >}} reduces queue clearance to ~{{< var dfda_queue_clearance_years >}}.
+- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to work through this backlog. Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces this to ~{{< var dfda_queue_clearance_years >}}.
 - **The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents**: The average time a treatment that *could* be discovered today would have waited under the old system versus the new system.
 - **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 :::
@@ -187,7 +192,7 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 - **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the platform build and initial years
 - **Sovereign wealth funds**: Norway's $1.4T fund or similar could view this as humanity-scale infrastructure
 - **WHO/multilateral coordination**: Comparable to GAVI or the Global Fund
-- **Industry consortium**: Pharma collectively spends $60B/year on trials; even 10% redirection exceeds this threshold
+- **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
 
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) are designed to solve.)
 :::
@@ -198,12 +203,12 @@ The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only
 |--------|------------|----------------|
 | **First treatments/year** | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} |
 | **Trial capacity multiplier** | 1× | {{< var dfda_trial_capacity_multiplier >}} |
-| **Queue clearance time** | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} |
+| **Time to test all combinations** | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} |
 | **Treatment acceleration** | N/A | {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
 
-**The Therapeutic Queue Problem:**
+**The Untested Treatment Backlog:**
 
-Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, queue clearance drops to ~{{< var dfda_queue_clearance_years >}}.
+Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}}× capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
 
 ## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates-partnership-model}
 
@@ -220,7 +225,7 @@ Approximately {{< var diseases_without_effective_treatment >}} diseases lack eff
 > - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs)
 > - **Broader initiative (medium scenario):** {{< var dih_npv_upfront_cost_initiatives >}} upfront, {{< var dih_npv_annual_opex_initiatives >}} annual ([details](#scenario-based-rom-estimates-for-broader-initiative-costs))
 >
-> **Key Takeaway:** The **partnership approach costs 50-75% less** than building a competing platform. By establishing an open protocol and leveraging existing infrastructure (Epic, Cerner, Medable, Science 37), you avoid building consumer-facing apps, trial management systems, and global EHR integrations. The protocol layer costs $15-25M to build vs. $500M+ for a full-stack solution.
+> **Key Takeaway:** The **partnership approach costs 50-75% less** than building a competing platform. By establishing an open protocol and leveraging existing infrastructure (Epic, Cerner, Medable, Science 37), you avoid building consumer-facing apps, trial management systems, and global EHR integrations. The protocol layer costs $15-25M to build vs. {{< var dct_platform_funding_medium >}}+ for a full-stack solution.
 >
 > **Existing Infrastructure Value**: Companies like Medable ($521M raised), Science 37 ($100M raised), Epic, and Cerner have already invested $1B+ in infrastructure that can be integrated rather than replicated.
 
@@ -296,7 +301,7 @@ To complement the bottom-up ROM, you can derive a top-down estimate by examining
 Based on these market comparables, the total investment required to fund a global initiative for a decentralized framework for drug assessment, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to {{< var dct_platform_funding_medium >}}**.
 
 - The lower end (~$50M) covers building a solid platform and achieving initial scale, similar to companies like Science 37 or Thread.
-- The upper end (~$500M+) reflects the multi-year investment for a market-leading, feature-rich global platform with extensive third-party tools, analogous to Medable's trajectory.
+- The upper end (~{{< var dct_platform_funding_medium >}}) reflects the multi-year investment for a market-leading, feature-rich global platform with extensive third-party tools, analogous to Medable's trajectory.
 
 This top-down estimate matches the bottom-up analysis. While a core, open-source framework can start for tens of millions (upfront build ROM), a fully-realized, globally adopted decentralized framework for drug assessment represents a **multi-hundred-million-dollar undertaking**, consistent with "Medium Case" and "Worst Case" scenarios.
 
@@ -700,7 +705,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 ::: {.callout-warning}
 **The 1962 Amendments Added EFFICACY Requirements, Not Safety**
 
-A common misconception: The 1962 Kefauver-Harris Amendment was passed in response to thalidomide, which caused ~10,000 birth defects globally. But thalidomide was never approved in the US - the existing 1938 Food, Drug, and Cosmetic Act already required safety proof.
+A common misconception: The 1962 Kefauver-Harris Amendment was passed in response to thalidomide, which caused {{< var thalidomide_cases_worldwide >}} birth defects globally. But thalidomide was never approved in the US - the existing 1938 Food, Drug, and Cosmetic Act already required safety proof.
 
 **What the 1962 amendments actually added was the EFFICACY requirement**: drugs must prove they *work*, not just that they're safe. This created the modern Phase II/III trial structure - years of efficacy testing *after* Phase I safety testing is complete.
 
@@ -954,7 +959,7 @@ For economist verification, this section provides complete derivation chains for
 | Component | Value | Source |
 |-----------|-------|--------|
 | Efficacy Lag Elimination | {{< var efficacy_lag_years >}} | FDA drug approval timeline data |
-| Discovery Acceleration | {{< var dfda_trial_capacity_treatment_acceleration_years >}} | Queue clearance model |
+| Discovery Acceleration | {{< var dfda_trial_capacity_treatment_acceleration_years >}} | Capacity vs. backlog model |
 | **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}** | Sum of components |
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
@@ -1004,7 +1009,7 @@ For economist verification, this section provides complete derivation chains for
 | Metric | Value | Primary Inputs | Data Sources |
 |--------|-------|----------------|--------------|
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Funding, trial costs | ADAPTABLE trial, ClinicalTrials.gov |
-| Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Efficacy lag, queue model | FDA approval data, disease registry |
+| Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Efficacy lag, backlog model | FDA approval data, disease registry |
 | Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | Mortality rates, timeline | WHO GBD, mortality statistics |
 | Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | NPV costs, DALYs | ROM estimates, DALY calculations |
 | ROI | {{< var dfda_roi_rd_only >}} | Costs, savings | NPV analysis with 5-year ramp |
