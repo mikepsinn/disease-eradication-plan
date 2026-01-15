@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (129 entries)
+# Contains only variables used in this paper (133 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -756,6 +756,16 @@
   \ aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases,\
   \ (3) multifactorial disease complexity. | Unit: percentage | Core definition\"\
   >92.6% (95% CI: 50%-98%)</span>"
+"exploration_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-exploration_ratio\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
+  \ drug-disease space actually tested (<1%) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TESTED / POSSIBLE | Unit: percentage | Click to view details, calculation\
+  \ & sources\">0.342% (95% CI: 0.21%-0.514%)</a>"
+"exploration_ratio_latex": "$$\n\\begin{gathered}\nRatio_{explore} = \\frac{N_{tested}}{N_{combos}}\
+  \ = \\frac{32{,}500}{9.5M} = 0.342\\% \\\\[0.5em]\n\\text{where } N_{combos} \\\\\
+  \n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n=\
+  \ 9.5M\n\\end{gathered}\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"industry-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
@@ -961,6 +971,16 @@
   \ \\\\\n= 40\\% \\times 900 \\\\\n= 360 \\\\[0.5em]\n\\text{where } N_{thal,US,prevent}\
   \ \\\\\n= N_{thal,global} \\times Pct_{US,1960} \\\\\n= 15{,}000 \\times 6\\% \\\
   \\\n= 900\n\\end{gathered}\n$$"
+"unexplored_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-unexplored_ratio\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
+  \ drug-disease space that remains unexplored (>99%) | Calculated from 2 inputs |\
+  \ ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click\
+  \ to view details, calculation & sources\">99.7% (95% CI: 99.5%-99.8%)</a>"
+"unexplored_ratio_latex": "$$\n\\begin{gathered}\nRatio_{unexplored} \\\\\n= 1 - \\\
+  frac{N_{tested}}{N_{combos}} \\\\\n= 1 - \\frac{32{,}500}{9.5M} \\\\\n= 99.7\\%\
+  \ \\\\[0.5em]\n\\text{where } N_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial}\
+  \ \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}\n$$"
 "value_of_statistical_life": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-value_of_statistical_life\"\
   \ class=\"parameter-link\" data-source-ref=\"dot-vsl-13-6m\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Value of Statistical Life (conservative\

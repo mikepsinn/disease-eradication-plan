@@ -11,216 +11,182 @@ allowed-tools:
   - TodoWrite
 ---
 
-# Comprehensive File Review
+# /review <file.qmd>
 
-## Purpose
-
-One command to thoroughly review and improve a QMD file:
-1. Generate human-readable preview with variables replaced
-2. Find and replace hardcoded numbers with Quarto variables
-3. Add `_latex` equations where appropriate
-4. Validate consistency and fix issues
+Comprehensive single-file review covering: variable consistency, content quality, and reader engagement.
 
 ## Usage
-
 ```
-/review <file.qmd>
 /review knowledge/appendix/incentive-alignment-bonds-paper.qmd
 /review economics.qmd
 ```
+If no file specified, ask which file to review.
 
-If no file is specified, ask the user which file to review.
+---
 
-## Process
+## Phase 1: Generate Preview
 
-### Phase 1: Setup and Preview Generation
-
-**1.1 Locate the file:**
-```bash
-# If relative path, search in knowledge/
-find knowledge -name "<filename>" -type f 2>/dev/null | head -5
-```
-
-**1.2 Generate preview with variables replaced:**
 ```bash
 cd E:/code/obsidian/websites/disease-eradication-plan
-.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> -o _analysis/<basename>-preview.md
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file> -o _analysis/<basename>-preview.md
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file> --numbers-only
 ```
 
-**1.3 Read preview to understand current state:**
-- Skim the preview to see actual rendered values
-- Note any obvious inconsistencies (e.g., "$2.4T" in one place, "$2.72T" in another)
+Read preview to understand rendered state. Note inconsistencies (e.g., "$2.4T" vs "$2.72T").
 
-### Phase 2: Find Hardcoded Numbers
+---
 
-**2.1 Run hardcoded number detection:**
+## Phase 2: Variable Audit
+
+**REPLACE with variables:**
+- Core metrics: military spending, treaty funding, DALYs, household wealth, war costs
+- Calculated values: BCR, mechanism costs/benefits, peace dividend
+- Any value appearing multiple times
+
+**KEEP hardcoded:**
+- Citation-specific data (Copenhagen Consensus BCRs, study figures)
+- Illustrative examples, calibration parameters
+- `1%` treaty concept, years in citations
+
+**Variable lookup:**
 ```bash
-.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --numbers-only
+grep -i "keyword" _analysis/parameter-summary.md
+grep "value_pattern" _variables.yml
 ```
 
-**2.2 Categorize findings:**
+**Key variables:**
+| Pattern | Variable | Value |
+|---------|----------|-------|
+| Military spending | `global_military_spending_annual_2024` | $2.72T |
+| Treaty funding | `treaty_annual_funding` | $27.2B |
+| War costs | `global_annual_direct_indirect_war_cost` | $11.4T |
+| DALYs | `global_annual_daly_burden` | 2.88B |
+| Household wealth | `global_household_wealth_usd` | $454T |
+| IAB BCR | `iab_mechanism_benefit_cost_ratio` | 230:1 |
 
-| Category | Action | Examples |
-|----------|--------|----------|
-| **REPLACE** | Use variable | Treaty funding, military spending, DALYs |
-| **REPLACE with _latex** | Use equation variable | `$$` blocks with calculations |
-| **KEEP hardcoded** | Leave as-is | Citation data, examples, `1%` treaty |
+**Replace with _latex versions** for `$$` blocks containing calculations.
 
-### Phase 3: Match Values to Variables
-
-**3.1 Search for matching variables:**
+**Check for useful auto-generated charts:**
 ```bash
-# Quick keyword search
-grep -i "military\|spending\|treaty" _analysis/parameter-summary.md | head -20
+# List variables used in file
+grep -o "{{< var [a-z_]* >}}" <file> | sed 's/{{< var //;s/ >}}//' | sort -u
 
-# Search by value pattern
-grep "\$27.2B\|27200000000" _variables.yml
+# For each variable, check if charts exist in knowledge/figures/
+ls knowledge/figures/*<variable_name>*.qmd
 ```
 
-**3.2 Key variable patterns:**
+Charts available per calculated variable:
+- `tornado-<var>.qmd` - Sensitivity analysis (which inputs matter most)
+- `mc-distribution-<var>.qmd` - Monte Carlo probability distribution
+- `exceedance-<var>.qmd` - Probability of exceeding thresholds
+- `sensitivity-table-<var>.qmd` - Regression coefficients
 
-| Value Pattern | Variable Name Pattern | Example |
-|--------------|----------------------|---------|
-| Military spending | `global_military_spending_*` | `$2.72T` |
-| Treaty funding | `treaty_annual_funding` | `$27.2B` |
-| War costs | `global_annual_*_conflict` | `$11.4T` |
-| DALY burden | `global_annual_daly_burden` | `2.88B` |
-| Household wealth | `global_household_wealth_usd` | `$454T` |
-| IAB metrics | `iab_mechanism_*` | BCR, costs |
-| Peace dividend | `peace_dividend_*` | Annual/NPV |
-
-### Phase 4: Replace Hardcoded Values
-
-**4.1 Use TodoWrite to track replacements:**
-Create a todo item for each replacement to ensure nothing is missed.
-
-**4.2 Make replacements systematically:**
-
+**Add charts where they enhance understanding** - especially for key metrics like ROI, BCR, costs. Include with:
 ```markdown
-# Simple value replacement
-Old: Global military expenditure exceeds \$2.4 trillion annually
-New: Global military expenditure exceeds {{< var global_military_spending_annual_2024 >}} annually
-
-# With citation (use _cite variable)
-Old: ...exceeds $2.72T annually [@sipri2024]
-New: ...exceeds {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}}
-
-# LaTeX block replacement
-Old: $$\text{BCR} = \frac{\$227B}{\$0.75B} \approx 303:1$$
-New: {{< var iab_mechanism_benefit_cost_ratio_latex >}}
+{{< include ../figures/tornado-<variable_name>.qmd >}}
 ```
 
-### Phase 5: Add LaTeX Equations
+---
 
-**5.1 Find calculated variables used in file:**
+## Phase 3: Content Quality Review
+
+Read through the preview and evaluate:
+
+### Clarity & Accessibility
+- [ ] **Plain English summaries** at section starts for non-technical readers
+- [ ] **Jargon explained** on first use (define mechanism design, Nash equilibrium, BCR, etc.)
+- [ ] **Concrete examples** before abstract formulas
+- [ ] **Visual aids** referenced where helpful (figures, tables, infographics)
+
+### Engagement & Persuasion
+- [ ] **Strong opening hook** - Does the intro grab attention? Lead with the problem/stakes
+- [ ] **Emotional resonance** - Connect to human impact (lives saved, suffering prevented)
+- [ ] **Vivid comparisons** - Make abstract numbers concrete ("enough to fund X hospitals")
+- [ ] **Call to action** - Clear next steps for different audiences (investors, policymakers, researchers)
+
+### Rigor & Credibility
+- [ ] **Claims have citations** - Every factual claim backed by source
+- [ ] **Uncertainty acknowledged** - Confidence intervals, limitations stated
+- [ ] **Counterarguments addressed** - Steel-man objections, then refute
+- [ ] **Math checks out** - Calculations internally consistent
+
+### Flow & Structure
+- [ ] **Logical progression** - Each section builds on previous
+- [ ] **Transitions** - Clear connections between ideas
+- [ ] **Scannable** - Headers, bullets, bold key points for skimmers
+
+### Cut the Garbage
+- [ ] **Redundancy** - Same point made multiple times? Consolidate
+- [ ] **Filler phrases** - "It is important to note that..." → delete
+- [ ] **Weak qualifiers** - "somewhat", "fairly", "quite" → remove or strengthen
+- [ ] **Orphaned content** - Sections that don't connect to main argument
+- [ ] **Over-explanation** - Reader got it the first time
+- [ ] **Defensive hedging** - Excessive caveats that undermine confidence
+
+### Tone
+- [ ] **Confident but not arrogant** - State conclusions clearly, acknowledge limits
+- [ ] **Urgent but not alarmist** - Convey stakes without hyperbole
+- [ ] **Technical but accessible** - Expert credibility with lay readability
+- [ ] **No "consultantly" language** - Avoid buzzwords, empty phrases
+
+---
+
+## Phase 4: Make Improvements
+
+Use Edit tool to fix identified issues. Track changes with TodoWrite.
+
+**Common fixes:**
+- Add "**The short version:**" summaries to dense sections
+- Replace jargon: "mechanism design" → "mechanism design (designing rules so selfish choices create good outcomes)"
+- Add concrete examples before formulas
+- Strengthen weak openings with stakes
+- **CUT**: redundant paragraphs, filler phrases, weak hedging, over-explanation
+- Add missing citations with `{{< var variable_cite >}}`
+- Replace `$$` blocks with `{{< var variable_latex >}}`
+
+---
+
+## Phase 5: Validate
+
 ```bash
-grep -o "{{< var [a-z_]* >}}" <file.qmd> | sort -u
+.venv/Scripts/python.exe scripts/pre-render-validation.py <file>
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file> --line-range "1-50"
 ```
 
-**5.2 Check which have _latex versions:**
-```bash
-# For each variable, check if _latex exists
-grep "peace_dividend_annual_societal_benefit_latex" _variables.yml
-```
+Ensure no `[MISSING: variable]` errors, all values consistent.
 
-**5.3 Add equations where appropriate:**
+---
 
-**GOOD contexts (add equation):**
-- After introducing/explaining a calculated value
-- In methodology sections
-- Where showing the math adds credibility
-
-**BAD contexts (skip):**
-- In bullet lists or tables
-- Passing mentions
-- Already has equation within 10 lines
-
-**Example addition:**
-```markdown
-The peace dividend would be {{< var peace_dividend_annual_societal_benefit >}} annually.
-
-{{< var peace_dividend_annual_societal_benefit_latex >}}
-```
-
-### Phase 6: Validate Changes
-
-**6.1 Run pre-render validation:**
-```bash
-.venv/Scripts/python.exe scripts/pre-render-validation.py <file.qmd>
-```
-
-**6.2 Regenerate preview to verify consistency:**
-```bash
-.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --line-range "1-50"
-```
-
-**6.3 Check for any remaining issues:**
-- All values consistent throughout file
-- No `[MISSING: variable_name]` in preview
-- No validation errors
-
-### Phase 7: Generate Report
-
-Summarize the review:
+## Phase 6: Report
 
 ```markdown
 ## Review Complete: <filename>
 
-### Preview
-Generated: `_analysis/<basename>-preview.md`
+### Preview: `_analysis/<basename>-preview.md`
 
-### Replacements Made
-| Line | Old Value | New Variable | Rendered |
-|------|-----------|--------------|----------|
-| 797 | `$2.4T` | `global_military_spending_annual_2024` | `$2.72T` |
+### Variable Replacements
+| Line | Old | New Variable |
+|------|-----|--------------|
 
-### LaTeX Equations Added
-- Line 1340: Added `iab_mechanism_benefit_cost_ratio_latex`
+### Content Improvements
+- [x] Added plain English summary to Section X
+- [x] Fixed weak opening in intro
+- [x] Added concrete example for BCR concept
 
 ### Kept Hardcoded (Intentional)
-- Copenhagen Consensus BCRs (citation-specific)
-- `1%` treaty concept
+- Copenhagen Consensus data, calibration params, 1% treaty
 
-### Validation
-- Pre-render: PASSED
-- All variables valid: YES
-- Internal consistency: YES
+### Validation: PASSED
 ```
 
-## Important Rules
+---
 
-1. **ALWAYS generate preview first** - Understand before editing
-2. **Use TodoWrite** - Track each replacement
-3. **Verify semantic match** - Same number can mean different things
-4. **Check `_latex` availability** - Don't leave outdated `$$` blocks
-5. **Preserve citations** - Use `_cite` variables
-6. **Run validation after** - Ensure no broken references
-7. **NEVER replace `1%`** - Treaty concept, not a variable
-8. **Skip citation-specific data** - Copenhagen BCRs, study figures stay hardcoded
+## Rules
 
-## Quick Reference: Common Variables
-
-```
-# Core metrics
-{{< var treaty_annual_funding >}}                    # $27.2B
-{{< var global_military_spending_annual_2024 >}}    # $2.72T
-{{< var global_annual_daly_burden >}}               # 2.88B DALYs
-{{< var global_annual_direct_indirect_war_cost >}}  # $11.4T
-{{< var global_household_wealth_usd >}}             # $454T
-
-# IAB mechanism
-{{< var iab_mechanism_benefit_cost_ratio >}}        # 230:1
-{{< var iab_mechanism_annual_cost >}}               # $750M
-{{< var iab_bootstrap_campaign_cost >}}             # $100M
-{{< var victory_bond_annual_payout >}}              # $2.72B
-{{< var iab_political_incentive_funding_annual >}}  # $2.72B
-
-# With _latex suffix for equations
-{{< var iab_mechanism_benefit_cost_ratio_latex >}}
-{{< var treaty_peace_plus_rd_annual_benefits_latex >}}
-```
-
-## Related Commands
-
-- `/pre-render-validate` - Validate all files before render
-- `/validate-and-regenerate-parameters` - After editing parameters.py
+1. Generate preview FIRST - understand before editing
+2. Track changes with TodoWrite
+3. Semantic match required - same number can mean different things
+4. NEVER replace `1%` treaty concept
+5. Skip citation-specific data
+6. Run validation AFTER changes
+7. Improve engagement, not just accuracy

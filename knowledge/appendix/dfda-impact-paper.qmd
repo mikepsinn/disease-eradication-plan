@@ -17,7 +17,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 ::: {.callout-note}
 ## Understanding These Figures: The Untested Treatment Backlog
 
-**The bottleneck:** {{< var diseases_without_effective_treatment >}} diseases currently lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of drug-disease combinations have ever been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}} new treatments per year, systematically testing all {{< var drug_disease_combinations_possible >}} plausible combinations would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
+**The bottleneck:** {{< var diseases_without_effective_treatment >}} currently lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of drug-disease combinations have ever been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
 
 The figures below represent **cumulative benefits over the entire acceleration period** - the total lives saved by addressing this backlog faster. This is the same methodology used to value smallpox eradication (program cost → total future lives saved) and climate infrastructure investments. These are not annual figures; they are the one-time benefit of permanently accelerating medical progress.
 :::
@@ -108,7 +108,7 @@ This analysis measures the **total lifetime value** of a permanent infrastructur
 **On the "quadrillion" economic value**: This exceeds current global GDP because it measures **welfare gains** (suffering averted, lives extended), not market transactions. Climate change damage estimates similarly exceed GDP. The methodology (Value of Statistical Life × lives saved) is identical to EPA, DOT, and GiveWell standards. If "$89/DALY for bed nets" is credible, so is "$0.84/DALY for dFDA" using the same methodology.
 :::
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ---
 
@@ -210,7 +210,7 @@ The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only
 
 **The Untested Treatment Backlog:**
 
-Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}}× capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
+Approximately {{< var diseases_without_effective_treatment >}} lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}}× capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
 
 ## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates-partnership-model}
 
@@ -807,7 +807,7 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms 
 
 The fundamental problem isn't that cures are hard to discover. It's that we're barely looking:
 
-- **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}} diseases)
+- **{{< var drug_disease_combinations_possible >}}** plausible drug-disease pairings exist ({{< var safe_compounds_count >}} safe × {{< var trial_relevant_diseases_count >}})
 - **Only {{< var exploration_ratio >}}** of these combinations have been tested - **{{< var unexplored_ratio >}} remains unexplored**
 - **Only {{< var human_interactome_targeted_pct >}}** of the human interactome has ever been targeted by drugs
 - **{{< var drug_repurposing_success_rate >}}** of approved drugs gain new indications, proving undiscovered uses exist
@@ -820,8 +820,8 @@ The cures likely already exist among tested-safe compounds. We just haven't look
 
 **Under the status quo:**
 
-- **{{< var diseases_without_effective_treatment >}} diseases** currently lack effective treatment
-- **{{< var new_disease_first_treatments_per_year >}} diseases/year** receive their first effective treatment
+- **{{< var diseases_without_effective_treatment >}}** currently lack effective treatment
+- **{{< var new_disease_first_treatments_per_year >}}** receive their first effective treatment
 - At this exploration rate, systematically searching the remaining 99%+ of therapeutic space would take **~{{< var status_quo_queue_clearance_years >}}**
 
 {{< var status_quo_queue_clearance_years_latex >}}
