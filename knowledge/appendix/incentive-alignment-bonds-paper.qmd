@@ -282,7 +282,7 @@ The 90:1 capital advantage cannot currently be deployed because diffuse benefici
 
 1. **Investment accessibility:** Structure IABs as securities available to retail investors (similar to green bonds or social impact bonds)
 2. **Returns exceed alternatives:** Expected returns of 100-1000%+ (from lobbying ROI) dramatically exceed stock market returns of {{< var average_market_return_pct >}}
-3. **Massive capital mobilization:** Even 0.1% of global household wealth (\$454 billion) exceeds total annual global lobbying spending by 100x
+3. **Massive capital mobilization:** Even 0.1% of global household wealth ({{< var global_household_wealth_usd >}} × 0.1%) exceeds total annual global lobbying spending by 100×
 4. **Self-interest alignment:** Investors profit directly from policy success, creating concentrated financial incentives on the welfare-improving side
 
 **This reverses the Olsonian asymmetry.** Defense contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits.
@@ -319,18 +319,18 @@ More comprehensive analysis includes:
 
 | Cost Category | Annual Value | Source |
 |:--------------|:-------------|:-------|
-| Direct military expenditure | \$2.4T | SIPRI 2024 |
-| Lost GDP from multiplier differential | \$2.4T | $(M_{alt} - M_{mil}) \times S$ |
-| Infrastructure destruction (active conflicts) | \$1.9T | World Bank |
-| Human casualties (VSL method) | \$2.4T | EPA VSL × conflict deaths |
-| Trade disruption | \$0.6T | World Bank trade flow analysis |
-| Veteran healthcare (ongoing) | \$0.2T | VA budget analysis |
-| Environmental damage | \$0.1T | UNEP conflict assessments |
-| **Total societal cost** | **\$10T+** | Sum of above |
+| Direct military expenditure | {{< var global_military_spending_annual_2024 >}} | {{< var global_military_spending_annual_2024_cite >}} |
+| Lost GDP from multiplier differential | {{< var global_annual_lost_economic_growth_military_spending >}} | {{< var global_annual_lost_economic_growth_military_spending_cite >}} |
+| Infrastructure destruction (active conflicts) | {{< var global_annual_infrastructure_destruction_conflict >}} | World Bank |
+| Human casualties (VSL method) | {{< var global_annual_human_life_losses_conflict >}} | EPA VSL × conflict deaths |
+| Trade disruption | {{< var global_annual_trade_disruption_conflict >}} | World Bank trade flow analysis |
+| Veteran healthcare (ongoing) | {{< var global_annual_veteran_healthcare_costs >}} | {{< var global_annual_veteran_healthcare_costs_cite >}} |
+| Environmental damage | {{< var global_annual_environmental_damage_conflict >}} | {{< var global_annual_environmental_damage_conflict_cite >}} |
+| **Total societal cost** | **{{< var global_annual_direct_indirect_war_cost >}}** | Sum of above |
 
 : Estimated Annual Societal Cost of Global Military Spending {#tbl-military-cost}
 
-A large literature suggests the net societal value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to pragmatic clinical trials, which has positive externalities and high multipliers, would be welfare-improving on net.
+A large literature suggests the net societal value of military spending beyond minimum deterrence is strongly negative: {{< var global_military_spending_annual_2024 >}} in direct expenditure produces {{< var global_annual_direct_indirect_war_cost >}} in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to pragmatic clinical trials, which has positive externalities and high multipliers, would be welfare-improving on net.
 
 Similar analysis applies to other Olsonian programs:
 
@@ -794,7 +794,7 @@ Consider a legislature of $N$ politicians. Let $n = \sum_{i=1}^N a_i$ be the num
 
 ### Illustrative Example: A Global Health Treaty
 
-To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds \$2.4 trillion annually [@sipri2024], while the global burden of disease exceeds 2.5 billion disability-adjusted life years (DALYs) annually [@who2024]. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system generates approximately \$24 billion per year for pragmatic clinical trials, roughly tripling current global clinical trial funding, while creating modest but meaningful pressure toward demilitarization.
+To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds {{< var global_military_spending_annual_2024 >}} annually {{< var global_military_spending_annual_2024_cite >}}, while the global burden of disease exceeds {{< var global_annual_daly_burden >}} annually {{< var global_annual_daly_burden_cite >}}. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system generates approximately {{< var treaty_annual_funding >}} per year for pragmatic clinical trials, roughly tripling current global clinical trial funding, while creating modest but meaningful pressure toward demilitarization.
 
 The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
@@ -802,11 +802,11 @@ The IAB mechanism for this treaty would allocate treaty inflows as follows:
 - **10%** to investor returns (perpetual payments to those who funded the campaign to pass the treaty)
 - **{{< var iab_political_incentive_funding_pct >}}** to political incentives (funding the three-layer architecture)
 
-This allocation structure creates aligned incentives across all participants. Investors who funded the initial campaign receive perpetual returns (\$2.4B annually) as long as the treaty continues, giving them strong incentives to support treaty expansion and defend against repeal. The political incentive allocation (\$2.4B annually) funds the three-layer architecture:
+This allocation structure creates aligned incentives across all participants. Investors who funded the initial campaign receive perpetual returns ({{< var victory_bond_annual_payout >}} annually) as long as the treaty continues, giving them strong incentives to support treaty expansion and defend against repeal. The political incentive allocation ({{< var iab_political_incentive_funding_annual >}} annually) funds the three-layer architecture:
 
 **Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
-**Electoral layer:** With \$2.4 billion annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
+**Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 
 **Post-office layer:** Foundations funded by the political incentive allocation establish eligibility criteria: "The Global Health Leadership Fellowship (\$300K/year, 5-year term) requires a career Health Research Score above 70."
 
@@ -846,7 +846,7 @@ To assess whether IABs can achieve incentive compatibility, we calibrate the mod
 
 : Calibration Parameters for IAB Model {#tbl-calibration}
 
-**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from military contractors. Under the IAB mechanism with political incentive funding of \$2.4B annually:
+**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from military contractors. Under the IAB mechanism with political incentive funding of {{< var iab_political_incentive_funding_annual >}} annually:
 
 *Electoral layer:* If \$50M is allocated to 25 competitive races, each high-scorer receives \$2M in independent expenditure support. At 1 pp per \$1M, this implies $\Delta P_i \approx 2\text{ pp}$. With $\alpha_i = \$1\text{M}$ per pp, the electoral benefit is $\alpha_i \cdot \Delta P_i = \$2\text{M}$.
 
@@ -1328,8 +1328,8 @@ The paper demonstrates that IABs redirect resources from low-NSV to high-NSV pro
 | Benefit Category | Estimated Annual Value | Source |
 |:-----------------|:----------------------|:-------|
 | Peace dividend (reduced conflict costs) | {{< var peace_dividend_annual_societal_benefit >}} | 1% × {{< var global_annual_direct_indirect_war_cost >}} global war costs |
-| Pragmatic clinical trials acceleration | {{< var treaty_annual_funding >}} reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
-| **Total annual benefits** | **\$227.55B** | Conservative estimate |
+| Pragmatic clinical trials acceleration | {{< var treaty_annual_funding >}} reallocated × 4.75 BCR | {{< var dfda_benefit_rd_only_annual >}} | NIH ROI analyses |
+| **Total annual benefits** | **{{< var treaty_peace_plus_rd_annual_benefits >}}** | Conservative estimate |
 
 **Net welfare calculation:**
 
@@ -1400,7 +1400,7 @@ The contribution is fivefold:
 
 5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is needed to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR exceeding 300:1, justifying overhead costs across a wide range of success probabilities.
 
-Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, is addressed structurally by Wishocracy (Layer 2), which democratizes allocation decisions via aggregated citizen preferences and prevents advertising-based capture through random pairwise sampling. The capital asymmetry (\$454T household wealth vs. \$5T concentrated interests) combined with retail-accessible securities ensures that funding itself becomes democratized. Unintended consequences on political culture (e.g., crowding out intrinsic motivation) remain empirical questions requiring pilot evaluation. These considerations counsel for careful pilot implementation with rigorous evaluation before scaling.
+Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, is addressed structurally by Wishocracy (Layer 2), which democratizes allocation decisions via aggregated citizen preferences and prevents advertising-based capture through random pairwise sampling. The capital asymmetry ({{< var global_household_wealth_usd >}} household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} concentrated interests) combined with retail-accessible securities ensures that funding itself becomes democratized. Unintended consequences on political culture (e.g., crowding out intrinsic motivation) remain empirical questions requiring pilot evaluation. These considerations counsel for careful pilot implementation with rigorous evaluation before scaling.
 
 ### The Bootstrap Problem and Regulatory Resistance
 
