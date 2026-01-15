@@ -89,14 +89,6 @@ This is a **queue/throughput model result**, not "time travel" or a prediction a
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
-#### Exceptional Economic Value
-
-- **Return on Investment (ROI):** A dFDA Infrastructure has an extremely high ROI. Based on total 10-year NPV costs of {{< var dfda_npv_total_cost >}} against **{{< var dfda_npv_net_benefit_rd_only >}} in NPV R&D savings** (**{{< var dfda_trial_cost_reduction_pct >}} cost reduction**, [see Market Size and Impact](#market-size-and-impact)), Monte Carlo analysis yields an ROI of **{{< var dfda_roi_rd_only >}}** ([see ROI Uncertainty Analysis](#roi-uncertainty-analysis-monte-carlo)). A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
-- **Cost-Utility:** A dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes, far exceeding standard government value thresholds.
-- **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately **{{< var dfda_rd_savings_daily >}}** in wasted R&D spending.
-
-**Conclusion:** A decentralized framework for drug assessment slashes costs, speeds up medical innovation, and saves lives. The analysis demonstrates compelling returns across all scenarios examined.
-
 ---
 
 Below is a health and economic analysis of a decentralized framework for drug assessment (dFDA). This framework would function as a **two-sided marketplace** connecting companies with treatments to patients who need them, while continuously aggregating outcomes to rank treatments by real-world effectiveness.
@@ -137,32 +129,9 @@ Below is a health and economic analysis of a decentralized framework for drug as
 - **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
 - **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
 
-## Analysis Assumptions
+## Addressing Key Concerns
 
-- At least 1 billion people worldwide opt in to share health data in anonymized form.
-- Medical records and wearable data are interoperable and standardized sufficiently to be aggregated globally.
-- Robust data security and privacy technologies are in place to comply with international regulations (HIPAA, GDPR, etc.).
-
-### Cost Reductions
-
-#### Cost Reduction Assumptions
-
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](#decentralized-trial-costs-modeled-on-oxford-recovery): from {{< var traditional_phase3_cost_per_patient >}} per patient to roughly **{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient**.
-- Regulatory oversight is streamlined through continuous data auditing, reducing administrative overhead.
-
-### Technical Feasibility
-
-- The necessary digital infrastructure (electronic health records, secure data exchange protocols, machine learning analytics, etc.) is assumed to be widely adopted.
-- Some advanced technologies (e.g., blockchain, federated learning) achieve maturity to ensure data integrity and patient privacy.
-
-### Funding and Governance
-
-- Start-up costs may be shared by governments, philanthropic organizations, and industry.
-- Ongoing operational costs are partially offset by reduced labor needs for conventional site-based trials and by subscription or service models from industry sponsors using the framework.
-
-These assumptions set a stage where the framework can indeed function at scale, but this remains a forward-looking scenario.
-
-### Addressing Skepticism: Why This Differs from Failed Megaprojects
+### Why This Differs from Failed Megaprojects
 
 Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
@@ -1160,47 +1129,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
   - [QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
   - [Health economic evaluation](../references.qmd#qaly-value): Standard health economic analysis considers cost-effectiveness across intervention types.
 
-#### Parameterization: Overall Impact of a Decentralized Framework
-
-A primary economic impact of an infrastructure for a decentralized framework comes from significantly reducing R&D costs. Its health impact, measured in Quality-Adjusted Life Years (QALYs), stems from three main pillars: accelerating drug development, enabling better prevention through real-world evidence, and enabling pragmatic trials for previously untreatable conditions.
-
-**A. Net Incremental Cost of the Infrastructure (Annual):**
-
-The net incremental cost is calculated as:
-
-$$
-\text{Net Incremental Cost} = C_{\text{platform}} - S_{\text{R\&D}}
-$$
-
-Where:
-
-- $C_{\text{platform}}$ is the annual framework operational costs
-- $S_{\text{R\&D}} = \alpha \cdot R_d$ is the gross R&D savings from implementation
-- **Baseline Assumptions for R&D Savings (same as before):**
-  - Global Clinical Trial Spending Addressable by the framework: **{{< var global_clinical_trials_spending_annual >}} / year**.
-  - R&D Trial Cost Reduction due to the framework (Baseline): **{{< var dfda_trial_cost_reduction_pct >}}**. (Leads to {{< var dfda_benefit_rd_only_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, framework-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
-
-- **Aggregate DALYs Averted (Total):** The number of DALYs averted by such an infrastructure from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from trial capacity increase + efficacy lag elimination):
-- **Total DALYs Averted:** {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (one-time timeline shift from {{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination)
-- **Trial Capacity Multiplier**: {{< var dfda_trial_capacity_multiplier >}}× increase in completed trials per year
-- **Research Acceleration**: {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 calendar years
-- **Treatment Acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} average years earlier for treatments
-
-{{< var dfda_trial_capacity_multiplier_latex >}}
-
-{{< var trial_capacity_cumulative_years_20yr_latex >}}
-
-{{< var dfda_trial_capacity_treatment_acceleration_years_latex >}}
-
-For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Cost-Utility Framework](#dfda-icer-analysis---cost-utility-framework)**.
-
-- **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the framework's operational costs, derived from the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model) section.
-- **Core framework Ops (Midpoint):** ~{{< var dfda_npv_annual_opex >}} / year
-- **Core framework + Medium Broader Initiative:** ~{{< var dfda_npv_annual_opex_total >}} / year
-- **Illustrative Total Ecosystem (Low-Medium):** $0.5B / year
-- **Illustrative Total Ecosystem (High):** $5B / year
-
-#### Sensitivity Analysis: Overall Cost-Effectiveness of the Framework
+#### DALY Sensitivity Analysis
 
 The following auto-generated sensitivity analyses show how cost-effectiveness varies based on uncertainty in input parameters. These use Monte Carlo simulation with uncertainty propagation from parameter distributions in `dih_models/parameters.py`.
 
@@ -1209,19 +1138,6 @@ The following auto-generated sensitivity analyses show how cost-effectiveness va
 {{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
-
-_Note: An infrastructure for a decentralized framework is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core framework Ops" is per the ['Annual Operational Costs'](#annual-operational-costs) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
-
-#### Discussion: Policy Implications
-
-The analysis robustly demonstrates that the **infrastructure for a decentralized framework is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the Core framework's technical operational costs.**
-
-- **Massive Cost Savings & Exceptional Value**: The core infrastructure for the framework (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). This combination creates exceptional value.
-- **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), such an initiative remains dominant and highly cost-saving across all scenarios.
-
-**Summary: An initiative to build a decentralized framework for drug assessment is projected to be a dominant healthcare transformation. The core technology framework itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [Costs for a Decentralized Framework - ROM Estimates (Partnership Model)](#dfda-framework-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} through the full timeline shift ({{< var dfda_trial_capacity_multiplier >}}× trial capacity + efficacy lag elimination). The combination of massive financial returns and significant health gains makes such a framework an exceptionally compelling investment.**
-
-*(Optional: A note could be added here that specific programs _built upon_ this infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying infrastructure.)*
 
 ### Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
 

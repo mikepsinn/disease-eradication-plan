@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (136 entries)
+# Contains only variables used in this paper (133 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -385,12 +385,6 @@
   % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_rd_savings_daily\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#daily-opportunity-cost-of-inaction\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
-  \ from trial cost reduction (opportunity cost of delay) | Calculated from 1 input\
-  \ | ✓ High confidence | Formula: ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR | Unit: USD/day\
-  \ | Click to view details, calculation & sources\">$161M (95% CI: $135M-$200M)</a>"
 "dfda_rd_savings_daily_latex": "$$\n\\begin{gathered}\nSavings_{RD,daily} \\\\\n=\
   \ Benefit_{RD,ann} \\times 0.00274 \\\\\n= \\$58.6B \\times 0.00274 \\\\\n= \\$161M\
   \ \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times\
@@ -952,32 +946,6 @@
   \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
   >17 years</a>"
 "treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
-"trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent years over\
-  \ 20-year period | Calculated from 1 input | ✓ High confidence | Formula: DFDA_TRIAL_CAPACITY_MULTIPLIER\
-  \ × 20 YEARS | Unit: years | Click to view details, calculation & sources\">246\
-  \ years (95% CI: 83.8 years-1.23k years)</a>"
-"trial_capacity_cumulative_years_20yr_latex": "$$\n\\begin{gathered}\nCapacity_{20yr}\
-  \ = k_{capacity} \\times 20 = 12.3 \\times 20 = 246 \\\\[0.5em]\n\\text{where }\
-  \ k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} =\
-  \ 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}}\
-  \ \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
-  \ \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B\
-  \ \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff}\
-  \ + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\\
-  $10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann}\
-  \ \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n\
-  = \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
-  \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
-  \\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty}\
-  \ \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\
-  \\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\
-  \\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann}\
-  \ \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\\
-  % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
-  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
-  $$"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
