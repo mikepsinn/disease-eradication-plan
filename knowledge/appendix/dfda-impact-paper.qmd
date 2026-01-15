@@ -826,12 +826,12 @@ The cures likely already exist among tested-safe compounds. We just haven't look
 
 {{< var status_quo_queue_clearance_years_latex >}}
 
-This calculation is empirically grounded: only ~5% of the {{< var rare_diseases_count_global >}} rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} diseases/year getting first treatments, most of the therapeutic space remains permanently unexplored.
+This calculation is empirically grounded: only ~5% of {{< var rare_diseases_count_global >}} have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} getting first treatments, most of the therapeutic space remains permanently unexplored.
 
 **With dFDA implementation:**
 
 - Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}, enabling parallel exploration of the therapeutic space
-- Exploration rate: **{{< var dfda_first_treatments_per_year >}} diseases receiving first treatments/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
+- Exploration rate: **{{< var dfda_first_treatments_per_year >}}** receiving first treatments (vs {{< var new_disease_first_treatments_per_year >}} status quo)
 - Time to systematically explore disease space: **{{< var dfda_queue_clearance_years >}}** (vs {{< var status_quo_queue_clearance_years >}})
 
 {{< var dfda_first_treatments_per_year_latex >}}
@@ -943,13 +943,13 @@ For economist verification, this section provides complete derivation chains for
 ### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
 **Step 1: Current trial capacity**
-- Current trial participants: {{< var current_trial_slots_available >}}/year
-- Current first treatments: {{< var new_disease_first_treatments_per_year >}} diseases/year
+- Current trial participants: {{< var current_trial_slots_available >}}
+- Current first treatments: {{< var new_disease_first_treatments_per_year >}}
 
 **Step 2: Funded capacity with dFDA**
 - Annual trial funding: {{< var dih_treasury_to_medical_research_annual >}}
 - Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
-- Fundable patients: {{< var dih_patients_fundable_annually >}}/year
+- Fundable patients: {{< var dih_patients_fundable_annually >}}
 
 **Step 3: Calculate multiplier**
 
