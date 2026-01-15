@@ -56,6 +56,39 @@ This two-stage design addresses the fundamental limitations of purely observatio
 
 **Keywords**: pharmacovigilance, real-world evidence, N-of-1 trials, pragmatic trials, causal inference, Bradford Hill criteria, treatment effects, validated outcome labels, comparative effectiveness, precision medicine
 
+## System Overview: From Methodology to Product {#system-overview}
+
+This paper describes the statistical methodology powering a patient-facing platform best understood as **"Consumer Reports for drugs"** - a searchable database where patients can look up any condition and see every treatment ranked by real-world effectiveness, with quantitative outcome labels showing exactly what happened to people who tried each option.
+
+### What Patients See
+
+When a patient searches for their condition, they see:
+
+1. **Treatment Rankings**: Every option (FDA-approved drugs, supplements, lifestyle interventions, experimental treatments) ranked by effect size from real patient data
+2. **Outcome Labels**: "Nutrition facts for drugs" showing percent improvement, side effect rates, and sample sizes - not marketing claims
+3. **Trial Access**: One-click enrollment in available trials, from home, via any device
+4. **Personalized Predictions**: Based on their health data, which treatments work best for people like them
+
+### What Companies See
+
+Any company - pharmaceutical, supplement, food, or intervention - can register a treatment in minutes at zero cost:
+
+1. **Instant Registration**: No approval bottleneck; treatment appears in search results immediately
+2. **Zero Trial Cost**: Patients pay for treatment (covering manufacturing); the platform handles data collection and analysis
+3. **Automatic Liability Coverage**: Built into the platform
+4. **Free Clinical Data**: Every patient who tries the treatment generates outcome data worth {{< var traditional_phase3_cost_per_patient >}}/patient in traditional trials
+
+### Where This Methodology Fits
+
+The **Predictor Impact Score (PIS)** described in this paper is the engine that powers treatment rankings. It transforms raw patient data into the ranked, quantified outcome labels that patients and clinicians use to make decisions. The two-stage pipeline ensures that:
+
+- **Stage 1** (this methodology) generates treatment rankings from millions of real-world observations at ~$0.10/patient
+- **Stage 2** (pragmatic trials) confirms causation for high-priority signals at ~{{< var recovery_trial_cost_per_patient >}}/patient
+
+The result is a self-improving system where every patient's experience helps the next patient make better decisions - transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a platform where anyone can contribute to medical knowledge.
+
+For the complete user-facing vision, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
+
 ## Introduction
 
 ### The Pharmacovigilance Gap

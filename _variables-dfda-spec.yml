@@ -1,7 +1,15 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (10 entries)
+# Contains only variables used in this paper (12 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
+"current_trial_slots_available": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_slots_available\"\
+  \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global clinical\
+  \ trial participants (IQVIA 2022: 1.9M post-COVID normalization) | ✓ High confidence\
+  \ | 95% CI: [1.50M patients/year, 2.30M patients/year] | Dist: Lognormal | Unit:\
+  \ patients/year | Click to view details, calculation & sources\">1.90M patients/year\
+  \ (95% CI: 1.50M patients/year-2.30M patients/year)</a>"
+"current_trial_slots_available_cite": "@global-trial-participant-capacity"
 "phase_3_trial_cost_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-phase_3_trial_cost_min\"\
   \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-trial-range\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 trial total cost (minimum) |\
