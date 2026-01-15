@@ -1110,48 +1110,37 @@ The following shows a complete outcome label for depression, demonstrating how t
 *Based on 47,832 participants tracking depression outcomes*
 *Last updated: 2026-01-04 | Data period: 2020-2026*
 
-```
-═══════════════════════════════════════════════════════════════════════════════
-TREATMENTS IMPROVING DEPRESSION (ranked by effect size)
-═══════════════════════════════════════════════════════════════════════════════
+**Treatments Improving Depression** (ranked by effect size $\Delta$)
 
-Rank  Treatment           Effect      95% CI          N       PIS    Optimal Dose
-─────────────────────────────────────────────────────────────────────────────────
-1     Exercise            ↓ 31.2%    [27.1, 35.3]    12,847  0.67   45 min/day
-2     Bupropion           ↓ 28.3%    [22.1, 34.5]    2,847   0.54   300mg
-3     Sertraline          ↓ 24.7%    [19.8, 29.6]    5,123   0.51   100mg
-4     Sleep (7-9 hrs)     ↓ 22.1%    [18.4, 25.8]    31,204  0.48   8.2 hrs
-5     Venlafaxine         ↓ 21.2%    [15.3, 27.1]    1,892   0.44   150mg
-6     Omega-3             ↓ 18.9%    [14.2, 23.6]    4,521   0.38   2000mg EPA+DHA
-7     Meditation          ↓ 16.4%    [12.1, 20.7]    8,932   0.35   20 min/day
-8     Fluoxetine          ↓ 15.8%    [11.2, 20.4]    3,456   0.33   40mg
-9     Vitamin D           ↓ 12.3%    [8.7, 15.9]     6,789   0.28   4000 IU
-10    Social interaction  ↓ 11.7%    [8.2, 15.2]     9,234   0.26   3+ hrs/day
+| Rank | Treatment | Effect | 95% CI | N | PIS | Optimal Dose |
+|------|-----------|--------|--------|---|-----|--------------|
+| 1 | Exercise | −31.2% | [27.1, 35.3] | 12,847 | 0.67 | 45 min/day |
+| 2 | Bupropion | −28.3% | [22.1, 34.5] | 2,847 | 0.54 | 300mg |
+| 3 | Sertraline | −24.7% | [19.8, 29.6] | 5,123 | 0.51 | 100mg |
+| 4 | Sleep (7-9 hrs) | −22.1% | [18.4, 25.8] | 31,204 | 0.48 | 8.2 hrs |
+| 5 | Venlafaxine | −21.2% | [15.3, 27.1] | 1,892 | 0.44 | 150mg |
+| 6 | Omega-3 | −18.9% | [14.2, 23.6] | 4,521 | 0.38 | 2000mg EPA+DHA |
+| 7 | Meditation | −16.4% | [12.1, 20.7] | 8,932 | 0.35 | 20 min/day |
+| 8 | Fluoxetine | −15.8% | [11.2, 20.4] | 3,456 | 0.33 | 40mg |
+| 9 | Vitamin D | −12.3% | [8.7, 15.9] | 6,789 | 0.28 | 4000 IU |
+| 10 | Social interaction | −11.7% | [8.2, 15.2] | 9,234 | 0.26 | 3+ hrs/day |
 
-═══════════════════════════════════════════════════════════════════════════════
-TREATMENTS WORSENING DEPRESSION (safety signals)
-═══════════════════════════════════════════════════════════════════════════════
+: Treatments associated with depression improvement. Negative effect indicates symptom reduction. {#tbl-depression-improving}
 
-Rank  Treatment           Effect      95% CI          N       PIS    Note
-─────────────────────────────────────────────────────────────────────────────────
-1     Alcohol (>2/day)    ↑ 23.4%    [18.9, 27.9]    7,234   0.52   Dose-dependent
-2     Sleep deprivation   ↑ 19.8%    [15.2, 24.4]    14,521  0.47   <6 hrs/night
-3     Social isolation    ↑ 15.2%    [11.3, 19.1]    5,892   0.38   <1 hr/day
-4     Refined sugar       ↑ 8.7%     [5.2, 12.2]     11,234  0.24   >50g/day
+**Treatments Worsening Depression** (safety signals)
 
-═══════════════════════════════════════════════════════════════════════════════
-NO SIGNIFICANT EFFECT (|Δ| < 5% or p > 0.05)
-═══════════════════════════════════════════════════════════════════════════════
+| Rank | Treatment | Effect | 95% CI | N | PIS | Note |
+|------|-----------|--------|--------|---|-----|------|
+| 1 | Alcohol (>2/day) | +23.4% | [18.9, 27.9] | 7,234 | 0.52 | Dose-dependent |
+| 2 | Sleep deprivation | +19.8% | [15.2, 24.4] | 14,521 | 0.47 | <6 hrs/night |
+| 3 | Social isolation | +15.2% | [11.3, 19.1] | 5,892 | 0.38 | <1 hr/day |
+| 4 | Refined sugar | +8.7% | [5.2, 12.2] | 11,234 | 0.24 | >50g/day |
 
-Multivitamin, Probiotics, B-complex, Magnesium (for depression specifically),
-Ashwagandha, 5-HTP, SAMe, St. John's Wort*
+: Treatments associated with depression worsening. Positive effect indicates symptom increase. {#tbl-depression-worsening}
 
-*Note: St. John's Wort shows high heterogeneity (some responders, some non-responders)
+**No Significant Effect** ($|\Delta| < 5\%$ or $p > 0.05$): Multivitamin, Probiotics, B-complex, Magnesium (for depression specifically), Ashwagandha, 5-HTP, SAMe, St. John's Wort^[St. John's Wort shows high heterogeneity (some responders, some non-responders)]
 
-Legend: ↓ = improvement (reduction), ↑ = worsening (increase)
-        PIS = Predictor Impact Score (0-1 scale, higher = stronger evidence)
-        Optimal Dose = V_high (predictor value associated with best outcomes)
-```
+*Legend*: PIS = Predictor Impact Score (0-1 scale, higher = stronger evidence); Optimal Dose = $V_{high}$ (predictor value associated with best outcomes)
 
 **Interpretation**: This outcome label shows that for depression, exercise and sleep optimization rival or exceed pharmaceutical interventions in effect size, with stronger evidence bases (higher N). Bupropion and Sertraline lead among medications. The safety signals section highlights modifiable risk factors that worsen depression.
 
@@ -1167,86 +1156,62 @@ For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
 
 ### Ranking Algorithm
 
-```
-For each treatment T in category:
-    effect_size = mean(Δ across all participants)
-    confidence = calculate_confidence(p_value, N, n_pairs)
-    PIS = calculate_predicted_impact_score(T)
+For each treatment $T$ in a therapeutic category, we compute a composite ranking score:
 
-    rank_score = effect_size × confidence_weight × PIS
+$$\text{RankScore}_T = \bar{\Delta}_T \times w_{\text{confidence}} \times \text{PIS}_T$$
 
-Sort treatments by rank_score descending
-```
+where $\bar{\Delta}_T$ is the mean effect size across participants, $w_{\text{confidence}}$ is the confidence weight (see @tbl-confidence-weights), and $\text{PIS}_T$ is the Predictor Impact Score. Treatments are sorted by descending rank score.
 
 ### Confidence Weighting
 
-| Confidence Level | Weight | Criteria |
+| Confidence Level | Weight ($w$) | Criteria |
 |-----------------|--------|----------|
-| **High** | 1.0 | p < 0.01 OR N > 100 OR pairs > 500 |
-| **Medium** | 0.7 | p < 0.05 OR N > 10 OR pairs > 100 |
-| **Low** | 0.4 | Meets minimum thresholds only |
+| High | 1.0 | $p < 0.01$ OR $N > 100$ OR pairs $> 500$ |
+| Medium | 0.7 | $p < 0.05$ OR $N > 10$ OR pairs $> 100$ |
+| Low | 0.4 | Meets minimum thresholds only |
+
+: Confidence weighting schema for treatment ranking. {#tbl-confidence-weights}
 
 ### Comparative Effectiveness Display
 
-```
-ANTIDEPRESSANTS RANKED BY EFFICACY FOR DEPRESSION
-=================================================
+@tbl-antidepressant-ranking illustrates how treatments within a therapeutic category are presented to users.
 
-Rank | Treatment | Effect on Depression | 95% CI | Participants | Confidence
------|-----------|---------------------|--------|--------------|------------
-1    | Bupropion 300mg | ↓ 28.3% | [22.1, 34.5] | 2,847 | High
-2    | Sertraline 100mg | ↓ 24.7% | [19.8, 29.6] | 5,123 | High
-3    | Venlafaxine 150mg | ↓ 21.2% | [15.3, 27.1] | 1,892 | High
-4    | Fluoxetine 40mg | ↓ 18.9% | [13.2, 24.6] | 3,456 | High
-...
+| Rank | Treatment | Effect ($\Delta$) | 95% CI | N | Confidence |
+|------|-----------|-------------------|--------|---|------------|
+| 1 | Bupropion 300mg | −28.3% | [22.1, 34.5] | 2,847 | High |
+| 2 | Sertraline 100mg | −24.7% | [19.8, 29.6] | 5,123 | High |
+| 3 | Venlafaxine 150mg | −21.2% | [15.3, 27.1] | 1,892 | High |
+| 4 | Fluoxetine 40mg | −18.9% | [13.2, 24.6] | 3,456 | High |
 
-Legend: ↓ = improvement (reduction in depression severity)
-        ↑ = worsening (increase in depression severity)
-```
+: Antidepressants ranked by efficacy for depression. Negative effect indicates symptom reduction. {#tbl-antidepressant-ranking}
 
 ## Safety and Efficacy Quantification
 
 ### Safety Signal Detection
 
-**Adverse Effect Identification**:
+**Adverse Effect Identification**: Safety signals are identified through (1) negative correlations between treatment and beneficial outcomes, and (2) positive correlations between treatment and harmful outcomes.
 
-- Negative correlations between treatment and beneficial outcomes
-- Positive correlations between treatment and harmful outcomes
+| Outcome | Effect ($\Delta$) | 95% CI | Plausibility | Action |
+|---------|-------------------|--------|--------------|--------|
+| Fatigue | +18.3% | [12.1, 24.5] | High (known sedation) | Monitor |
+| Nausea | +15.7% | [8.9, 22.5] | High (GI effects) | Monitor |
+| Weight Gain | +8.2% | [4.1, 12.3] | Medium | Long-term monitoring |
+| Anxiety | +6.5% | [2.1, 10.9] | Low (paradoxical) | Investigate |
 
-```
-SAFETY SIGNALS FOR [TREATMENT NAME]
-===================================
-
-POTENTIAL ADVERSE EFFECTS (statistically significant negative correlations)
-
-Outcome | Effect | 95% CI | Mechanism Plausibility | Action
---------|--------|--------|----------------------|--------
-Fatigue | +18.3% | [12.1, 24.5] | High (known sedation) | Monitor
-Nausea | +15.7% | [8.9, 22.5] | High (GI effects) | Monitor
-Weight Gain | +8.2% | [4.1, 12.3] | Medium | Long-term monitoring
-Anxiety | +6.5% | [2.1, 10.9] | Low (paradoxical) | Investigate
-```
+: Example safety signal report showing potential adverse effects with statistically significant positive correlations to harmful outcomes. {#tbl-safety-signals}
 
 ### Efficacy Signal Detection
 
-**Therapeutic Effect Identification**:
+**Therapeutic Effect Identification**: Efficacy signals are identified through (1) positive correlations between treatment and beneficial outcomes, and (2) negative correlations between treatment and harmful outcomes (symptom reduction).
 
-- Positive correlations between treatment and beneficial outcomes
-- Negative correlations between treatment and harmful outcomes (symptom reduction)
+| Outcome | Effect ($\Delta$) | 95% CI | Indication | Evidence |
+|---------|-------------------|--------|------------|----------|
+| Depression | −24.7% | [19.8, 29.6] | Primary | Strong |
+| Anxiety | −18.2% | [12.3, 24.1] | Secondary | Strong |
+| Sleep Quality | +15.3% | [10.1, 20.5] | Secondary | Moderate |
+| Energy | +12.1% | [7.2, 17.0] | Secondary | Moderate |
 
-```
-EFFICACY SIGNALS FOR [TREATMENT NAME]
-=====================================
-
-THERAPEUTIC EFFECTS (statistically significant positive correlations)
-
-Outcome | Effect | 95% CI | Primary/Secondary | Evidence Strength
---------|--------|--------|-------------------|------------------
-Depression | ↓ 24.7% | [19.8, 29.6] | Primary | Strong
-Anxiety | ↓ 18.2% | [12.3, 24.1] | Secondary | Strong
-Sleep Quality | ↑ 15.3% | [10.1, 20.5] | Secondary | Moderate
-Energy | ↑ 12.1% | [7.2, 17.0] | Secondary | Moderate
-```
+: Example efficacy signal report showing therapeutic effects with statistically significant correlations. {#tbl-efficacy-signals}
 
 ### Benefit-Risk Assessment
 
@@ -1254,25 +1219,19 @@ Energy | ↑ 12.1% | [7.2, 17.0] | Secondary | Moderate
 
 $$\text{NCB} = \sum_{i \in \text{benefits}} w_i \cdot |\Delta_i| - \sum_{j \in \text{risks}} w_j \cdot |\Delta_j|$$
 
-where $w$ are importance weights assigned by clinical relevance.
+where $w$ represents importance weights assigned by clinical relevance.
 
-**Example Output**:
-```
-BENEFIT-RISK PROFILE: Sertraline 100mg
-======================================
+**Example: Sertraline 100mg Benefit-Risk Profile**
 
-BENEFITS                          RISKS
---------                          -----
-Depression: ↓24.7% (w=1.0)       Nausea: ↑8.3% (w=0.3)
-Anxiety: ↓18.2% (w=0.8)          Insomnia: ↑5.1% (w=0.4)
-                                  Sexual dysfunction: ↑12.7% (w=0.5)
+| Benefits | Effect | Weight | Risks | Effect | Weight |
+|----------|--------|--------|-------|--------|--------|
+| Depression | −24.7% | 1.0 | Nausea | +8.3% | 0.3 |
+| Anxiety | −18.2% | 0.8 | Insomnia | +5.1% | 0.4 |
+| | | | Sexual dysfunction | +12.7% | 0.5 |
 
-Weighted Benefit: 39.26
-Weighted Risk: 8.93
-Net Clinical Benefit: +30.33
+: Benefit-risk components for Sertraline 100mg. {#tbl-benefit-risk}
 
-OVERALL ASSESSMENT: Favorable benefit-risk profile for depression/anxiety
-```
+**Weighted Summary**: Benefits = 39.26, Risks = 8.93, **Net Clinical Benefit = +30.33** (favorable profile for depression/anxiety)
 
 ## Addressing the Bradford Hill Criteria {#addressing-bradford-hill}
 
@@ -1415,16 +1374,17 @@ For treatments already in clinical use, we employ **comparative effectiveness** 
 
 Example protocol for a high-PIS signal (Treatment A vs. Treatment B for Outcome X):
 
-```
-Eligibility: Patients with Condition Y initiating treatment for Outcome X
-Randomization: 1:1 to Treatment A vs. Treatment B
-Primary endpoint: Change in Outcome X at 90 days
-Data collection: Baseline characteristics (EHR), outcome at 90 days (patient-reported or EHR)
-Sample size: 2,000 patients (1,000 per arm)
-Cost: ~$1M total ({{< var recovery_trial_cost_per_patient >}}/patient)
+| Parameter | Specification |
+|-----------|---------------|
+| Eligibility | Patients with Condition Y initiating treatment for Outcome X |
+| Randomization | 1:1 to Treatment A vs. Treatment B |
+| Primary endpoint | Change in Outcome X at 90 days |
+| Data collection | Baseline characteristics (EHR), outcome at 90 days (patient-reported or EHR) |
+| Sample size | 2,000 patients (1,000 per arm) |
+| Cost | ~$1M total ({{< var recovery_trial_cost_per_patient >}}/patient) |
+| Timeline | 6-12 months |
 
-Timeline: 6-12 months
-```
+: Example pragmatic trial protocol for comparative effectiveness. {#tbl-trial-protocol}
 
 ### Feedback Loop: Trial Results Improve Observational Models
 
@@ -1439,31 +1399,24 @@ This creates a **learning health system** where observational and experimental e
 
 ### Output: Validated Outcome Labels
 
-The two-stage pipeline produces **validated outcome labels** with the following structure:
+The two-stage pipeline produces **validated outcome labels** combining observational and experimental evidence. @tbl-validated-label-structure shows the data elements captured for each treatment-outcome pair.
 
-```
-ValidatedOutcomeLabel {
-    treatment: string              // e.g., "Vitamin D 2000 IU"
-    outcome: string               // e.g., "Depression Severity"
+| Component | Field | Description | Example |
+|-----------|-------|-------------|---------|
+| **Identification** | Treatment | Intervention name and dose | Vitamin D 2000 IU |
+| | Outcome | Health outcome measured | Depression Severity |
+| **Stage 1 (Observational)** | $\Delta_{obs}$ | Observational effect size | −12% |
+| | $\text{CI}_{obs}$ | 95% confidence interval | [−15%, −9%] |
+| | $N_{obs}$ | Number of participants | 45,000 |
+| | PIS | Predictor Impact Score | 0.72 |
+| **Stage 2 (Experimental)** | $\Delta_{exp}$ | Randomized trial effect | −8% |
+| | $\text{CI}_{exp}$ | Trial confidence interval | [−12%, −4%] |
+| | $N_{exp}$ | Trial participants | 3,000 |
+| | Trial ID | Registry identifier | DFDA-VIT-D-001 |
+| **Combined** | Evidence Grade | Validation status | Validated/Promising/Signal |
+| | Causal Confidence | Probability of true effect | 0-1 scale |
 
-    // Stage 1: Observational evidence
-    observational_effect: float   // e.g., -12% (symptom reduction)
-    observational_ci: [float, float]  // e.g., [-15%, -9%]
-    observational_n: int          // e.g., 45,000 participants
-    pis_score: float              // e.g., 0.72
-
-    // Stage 2: Experimental evidence (if available)
-    experimental_effect: float    // e.g., -8% (from pragmatic trial)
-    experimental_ci: [float, float]  // e.g., [-12%, -4%]
-    experimental_n: int           // e.g., 3,000 participants
-    trial_id: string              // e.g., "DFDA-VIT-D-001"
-
-    // Combined assessment
-    evidence_grade: enum          // "Validated", "Promising", "Signal"
-    causal_confidence: float      // 0-1 scale
-    last_updated: timestamp
-}
-```
+: Validated outcome label data structure. {#tbl-validated-label-structure}
 
 **Evidence grades**:
 
@@ -1526,139 +1479,37 @@ With pragmatic trial integration, the complete framework can:
 
 ### System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     DATA INGESTION LAYER                     │
-├──────────┬──────────┬──────────┬──────────┬────────────────┤
-│ Wearables│ Apps     │ EHR/FHIR │ Manual   │ Environmental  │
-└────┬─────┴────┬─────┴────┬─────┴────┬─────┴───────┬────────┘
-     │          │          │          │             │
-     v          v          v          v             v
-┌─────────────────────────────────────────────────────────────┐
-│                MEASUREMENT NORMALIZATION                     │
-│  • Unit conversion    • Timestamp standardization           │
-│  • Deduplication      • Source attribution                  │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              v
-┌─────────────────────────────────────────────────────────────┐
-│                   VARIABLE ONTOLOGY                          │
-│  • Category assignment  • Default parameters                │
-│  • Filling value logic  • Onset/duration defaults           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              v
-┌─────────────────────────────────────────────────────────────┐
-│              VARIABLE RELATIONSHIP ANALYSIS ENGINE           │
-│  • Pair generation      • Temporal alignment                │
-│  • Statistical tests    • Hyperparameter optimization       │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              v
-┌─────────────────────────────────────────────────────────────┐
-│                 POPULATION AGGREGATION                       │
-│  • Cross-user aggregation  • Confidence intervals           │
-│  • Heterogeneity analysis  • Subgroup detection             │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              v
-┌─────────────────────────────────────────────────────────────┐
-│                  REPORT GENERATION                           │
-│  • Outcome labels       • Treatment rankings                │
-│  • Safety signals       • Efficacy signals                  │
-└─────────────────────────────────────────────────────────────┘
-```
+The framework consists of five sequential processing layers:
+
+1. **Data Ingestion Layer**: Collects measurements from wearables, health apps, EHR/FHIR systems, manual entry, and environmental sensors
+2. **Measurement Normalization**: Standardizes units, timestamps, deduplicates records, and attributes data provenance
+3. **Variable Ontology**: Assigns semantic categories, default temporal parameters ($\delta$, $\tau$), and filling value logic
+4. **Relationship Analysis Engine**: Generates predictor-outcome pairs, performs temporal alignment, computes correlations, and optimizes hyperparameters
+5. **Population Aggregation**: Combines individual N-of-1 analyses, computes confidence intervals, detects heterogeneity and subgroups
+6. **Report Generation**: Produces outcome labels, treatment rankings, and safety/efficacy signals
+
+Complete implementation details, database schemas, and reference code are available in the supplementary materials repository.
 
 ### Core Algorithm: Pair Generation
 
-```python
-def generate_pairs(predictor_measurements, outcome_measurements,
-                   onset_delay, duration_of_action, filling_value=None):
-    """
-    Generate predictor-outcome pairs with temporal alignment.
+**Algorithm 1** (Temporal Pair Generation): Given predictor measurements $P = \{(t_j^P, p_j)\}$ and outcome measurements $O = \{(t_k^O, o_k)\}$, onset delay $\delta$, duration of action $\tau$, and optional filling value $f$:
 
-    Args:
-        predictor_measurements: List of (timestamp, value) tuples
-        outcome_measurements: List of (timestamp, value) tuples
-        onset_delay: Seconds before outcome observable
-        duration_of_action: Seconds outcome effect persists
-        filling_value: Value to use when no measurements (None = skip)
+**Case 1** (Predictor has filling value): For each outcome measurement $(t_k^O, o_k)$:
+$$p_k = \begin{cases} \frac{1}{|W_k|}\sum_{j \in W_k} p_j & \text{if } W_k \neq \emptyset \\ f & \text{otherwise} \end{cases}$$
+where $W_k = \{j : t_k^O - \delta - \tau < t_j^P \leq t_k^O - \delta\}$. Output pair $(p_k, o_k)$.
 
-    Returns:
-        List of (predictor_value, outcome_value) pairs
-    """
-    pairs = []
-
-    if filling_value is not None:
-        # Outcome-based pairing: one pair per outcome measurement
-        for t_outcome, outcome_value in outcome_measurements:
-            window_end = t_outcome - onset_delay
-            window_start = window_end - duration_of_action + 1
-
-            predictor_values = [p for t, p in predictor_measurements
-                               if window_start <= t <= window_end]
-
-            if predictor_values:
-                predictor_value = mean(predictor_values)
-            else:
-                predictor_value = filling_value
-
-            pairs.append((predictor_value, outcome_value))
-    else:
-        # Predictor-based pairing: one pair per predictor measurement
-        for t_predictor, predictor_value in predictor_measurements:
-            window_start = t_predictor + onset_delay
-            window_end = window_start + duration_of_action - 1
-
-            outcome_values = [o for t, o in outcome_measurements
-                             if window_start <= t <= window_end]
-
-            if outcome_values:
-                outcome_value = mean(outcome_values)
-                pairs.append((predictor_value, outcome_value))
-            # Skip if no outcome measurements in window
-
-    return pairs
-```
+**Case 2** (No filling value): For each predictor measurement $(t_j^P, p_j)$:
+$$o_j = \frac{1}{|W_j|}\sum_{k \in W_j} o_k$$
+where $W_j = \{k : t_j^P + \delta \leq t_k^O < t_j^P + \delta + \tau\}$. Output pair $(p_j, o_j)$ only if $W_j \neq \emptyset$.
 
 ### Core Algorithm: Baseline Separation
 
-```python
-def separate_baseline_followup(pairs):
-    """
-    Separate pairs into baseline and follow-up based on predictor mean.
+**Algorithm 2** (Baseline/Follow-up Partition): Given aligned pairs $\{(p_i, o_i)\}_{i=1}^n$:
 
-    Args:
-        pairs: List of (predictor_value, outcome_value) tuples
-
-    Returns:
-        baseline_pairs, followup_pairs
-    """
-    predictor_values = [p for p, o in pairs]
-    predictor_mean = mean(predictor_values)
-
-    baseline = [(p, o) for p, o in pairs if p < predictor_mean]
-    followup = [(p, o) for p, o in pairs if p >= predictor_mean]
-
-    return baseline, followup
-
-
-def calculate_percent_change(baseline_pairs, followup_pairs):
-    """
-    Calculate percent change from baseline.
-    """
-    baseline_outcomes = [o for p, o in baseline_pairs]
-    followup_outcomes = [o for p, o in followup_pairs]
-
-    mu_baseline = mean(baseline_outcomes)
-    mu_followup = mean(followup_outcomes)
-
-    if mu_baseline == 0:
-        return None  # Cannot compute percent change
-
-    percent_change = ((mu_followup - mu_baseline) / mu_baseline) * 100
-    return percent_change
-```
+1. Compute predictor mean: $\bar{p} = \frac{1}{n}\sum_{i=1}^n p_i$
+2. Partition into baseline $B = \{(p_i, o_i) : p_i < \bar{p}\}$ and follow-up $F = \{(p_i, o_i) : p_i \geq \bar{p}\}$
+3. Compute outcome means: $\mu_B = \mathbb{E}[o \mid (p,o) \in B]$ and $\mu_F = \mathbb{E}[o \mid (p,o) \in F]$
+4. Return percent change: $\Delta = \frac{\mu_F - \mu_B}{\mu_B} \times 100$
 
 ### Core Algorithm: Predictor Impact Score
 
