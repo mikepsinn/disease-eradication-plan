@@ -1,6 +1,6 @@
 ---
-title: "Parameters and Calculations"
-description: "Parameter definitions, formulas, and data sources."
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
 format:
   html:
     toc: true
@@ -11,7 +11,20 @@ format:
 
 ::: {.content-visible when-format="html"}
 
-**55 parameters**: 27 from external sources, 15 calculated, 13 definitions
+**55 parameters** used in this paper:
+
+This appendix documents the 55 parameters used in this paper. 
+
+**Total parameters**: 55
+
+- External sources (peer-reviewed): 27
+- Calculated values: 15
+- Core definitions: 13
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (15 parameters) | [External Data Sources](#sec-external) (27 parameters) | [Core Definitions](#sec-definitions) (13 parameters)
+
 
 ## Calculated Values {#sec-calculated}
 

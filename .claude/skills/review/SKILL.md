@@ -129,6 +129,12 @@ Read through the preview and evaluate:
 - [ ] **Technical but accessible** - Expert credibility with lay readability
 - [ ] **No "consultantly" language** - Avoid buzzwords, empty phrases
 
+### Publication Readiness
+- [ ] **No implementation code** - Python/SQL → pseudocode or math notation, link to repo
+- [ ] **Math notation** - `forward_pearson_correlation_coefficient` → $r_{forward}$
+- [ ] **Proper tables** - No ASCII art (`═══`, `───`) - use markdown tables
+- [ ] **Appendix placement** - Move detailed algorithms/schemas to appendix or supplementary
+
 ---
 
 ## Phase 4: Make Improvements

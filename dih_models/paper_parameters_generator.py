@@ -23,13 +23,13 @@ Usage:
 
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 import yaml
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
 
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case
@@ -79,8 +79,8 @@ def get_all_required_parameters(
         value = meta.get("value")
 
         # If it has inputs, recursively add them
-        if hasattr(value, "inputs") and value.inputs:
-            for inp in value.inputs:
+        if value is not None and hasattr(value, "inputs") and value.inputs:
+            for inp in value.inputs:  # type: ignore[union-attr]
                 add_with_dependencies(inp, visited)
 
     # Process each used variable
@@ -136,8 +136,8 @@ def generate_paper_parameters_qmd(
     required_params: Set[str],
     all_parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
-    available_refs: Set[str] = None,
-    params_file: Path = None
+    available_refs: Optional[Set[str]] = None,
+    params_file: Optional[Path] = None
 ) -> int:
     """
     Generate filtered parameters-and-calculations-{paper}.qmd containing
@@ -529,8 +529,8 @@ def generate_paper_parameters_qmd(
 def generate_all_paper_parameters_qmd(
     project_root: Path,
     parameters: Dict[str, Dict[str, Any]],
-    available_refs: Set[str] = None,
-    params_file: Path = None
+    available_refs: Optional[Set[str]] = None,
+    params_file: Optional[Path] = None
 ) -> Dict[str, int]:
     """
     Generate filtered parameters-and-calculations QMD files for all standalone papers.

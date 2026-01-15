@@ -1,6 +1,6 @@
 ---
-title: "Parameters and Calculations"
-description: "Parameter definitions, formulas, and data sources."
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
 format:
   html:
     toc: true
@@ -11,7 +11,20 @@ format:
 
 ::: {.content-visible when-format="html"}
 
-**2 parameters**: 1 from external sources, 0 calculated, 1 definitions
+**2 parameters** used in this paper:
+
+This appendix documents the 2 parameters used in this paper. 
+
+**Total parameters**: 2
+
+- External sources (peer-reviewed): 1
+- Calculated values: 0
+- Core definitions: 1
+
+### Quick Navigation
+
+[External Data Sources](#sec-external) (1 parameters) | [Core Definitions](#sec-definitions) (1 parameters)
+
 
 ## External Data Sources {#sec-external}
 
