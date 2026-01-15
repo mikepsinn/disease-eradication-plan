@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (127 entries)
+# Contains only variables used in this paper (129 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -911,6 +911,13 @@
   frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\
   \\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\
   \\end{gathered}\n$$"
+"thalidomide_cases_worldwide": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-thalidomide_cases_worldwide\"\
+  \ class=\"parameter-link\" data-source-ref=\"thalidomide-scandal\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Total thalidomide birth defect cases\
+  \ worldwide (1957-1962) | ~ Medium confidence | 95% CI: [10.0k cases, 20.0k cases]\
+  \ | Dist: Lognormal | Unit: cases | Click to view details, calculation & sources\"\
+  >15.0k cases (95% CI: 10.0k cases-20.0k cases)</a>"
+"thalidomide_cases_worldwide_cite": "@thalidomide-scandal"
 "traditional_phase3_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-traditional_phase3_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"trial-costs-fda-study\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median from\

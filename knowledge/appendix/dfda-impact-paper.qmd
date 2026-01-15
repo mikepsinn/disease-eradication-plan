@@ -17,7 +17,7 @@ image: /assets/og-images/knowledge/appendix/dfda-cost-benefit-analysis-og-academ
 ::: {.callout-note}
 ## Understanding These Figures: The Untested Treatment Backlog
 
-**The bottleneck:** {{< var diseases_without_effective_treatment >}} diseases currently lack effective treatments. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}} new treatments per year, systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
+**The bottleneck:** {{< var diseases_without_effective_treatment >}} diseases currently lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of drug-disease combinations have ever been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}} new treatments per year, systematically testing all {{< var drug_disease_combinations_possible >}} plausible combinations would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
 
 The figures below represent **cumulative benefits over the entire acceleration period** - the total lives saved by addressing this backlog faster. This is the same methodology used to value smallpox eradication (program cost → total future lives saved) and climate infrastructure investments. These are not annual figures; they are the one-time benefit of permanently accelerating medical progress.
 :::
@@ -165,6 +165,8 @@ This intervention differs in four critical ways:
 3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, a trial platform has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The platform generates its own performance metrics.
 
 4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}} ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
+
+5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (Epic/Cerner covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (TriNetX queries 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
 
 ### Why "Eventually Avoidable" Matters
 
@@ -806,13 +808,13 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms 
 The fundamental problem isn't that cures are hard to discover. It's that we're barely looking:
 
 - **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}} diseases)
-- **<1%** of these combinations have been tested
+- **Only {{< var exploration_ratio >}}** of these combinations have been tested - **{{< var unexplored_ratio >}} remains unexplored**
 - **Only {{< var human_interactome_targeted_pct >}}** of the human interactome has ever been targeted by drugs
 - **{{< var drug_repurposing_success_rate >}}** of approved drugs gain new indications, proving undiscovered uses exist
 
-{{< var drug_disease_combinations_possible_latex >}}
+{{< var exploration_ratio_latex >}}
 
-The cures likely already exist among tested-safe compounds. We just haven't looked.
+The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap.
 
 ### Current Exploration Rate vs. Therapeutic Space
 
