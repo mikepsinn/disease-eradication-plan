@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (137 entries)
+# Contains only variables used in this paper (139 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -936,6 +936,12 @@
   \ range) | ✓ High confidence | 95% CI: [7.00k compounds, 12.0k compounds] | Dist:\
   \ Uniform | Unit: compounds | Click to view details, calculation & sources\">9.50k\
   \ compounds (95% CI: 7.00k compounds-12.0k compounds)</a>"
+"smallpox_eradication_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-smallpox_eradication_roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
+  \ campaign | ✓ High confidence | Unit: ratio | Click to view details, calculation\
+  \ & sources\">280:1</a>"
+"smallpox_eradication_roi_cite": "@smallpox-eradication-roi"
 "standard_economic_qaly_value_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-standard_economic_qaly_value_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard economic value per QALY | ✓ High confidence\

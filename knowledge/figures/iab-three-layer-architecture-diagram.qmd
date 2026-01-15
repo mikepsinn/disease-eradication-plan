@@ -39,7 +39,7 @@ def node_label(text):
 
 # Top: Funding source - generic category with concrete example
 
-dot.node('Source', node_label('Low Net Social Value\n(NSV) Programs\n(e.g., $2.7T Weapons and Military Systems)'), shape='box')
+dot.node('Source', node_label('Low Net Societal Value\n(NSV) Programs\n(e.g., $2.7T Weapons and Military Systems)'), shape='box')
 
 # The treaty creates a fund - not the bond itself
 
@@ -54,7 +54,7 @@ dot.edge('TreatyFund', 'split', style='invis')
 
 # Three destinations with percentages AND dollar amounts for clarity
 
-dot.node('PublicGood', node_label('High Net Social Value\n(NSV) Programs\n(e.g., Pragmatic Clinical Trials)\n$21.6B (80%)'), shape='box')
+dot.node('PublicGood', node_label('High Net Societal Value\n(NSV) Programs\n(e.g., Pragmatic Clinical Trials)\n$21.6B (80%)'), shape='box')
 dot.node('Investors', node_label('Bond Investor Returns\n$2.7B (10%)'), shape='box')
 dot.node('PolFund', node_label(f'Political Incentive Fund\n{IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL} ({IAB_POLITICAL_INCENTIVE_FUNDING_PCT})'), shape='box')
 

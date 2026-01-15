@@ -118,7 +118,7 @@ add_quadrant_label(350, -7, 'QUADRANT IV\nOVERINVESTED',
 # Labels and title
 
 ax.set_xlabel('Annual Spending ($ Billions)', fontsize=13, fontweight='bold')
-ax.set_ylabel('Net Social Value per Dollar Spent ($)', fontsize=13, fontweight='bold')
+ax.set_ylabel('Net Societal Value per Dollar Spent ($)', fontsize=13, fontweight='bold')
 ax.set_title('The Olsonian Quadrant Chart:\nWhere Government Resources Flow vs. Where They Should Flow',
              fontsize=15, fontweight='bold', pad=20)
 

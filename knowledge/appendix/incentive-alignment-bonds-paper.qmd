@@ -1,6 +1,6 @@
 ---
-title: 'Incentive Alignment Bonds: Turning General Welfare into an Asset Class'
-description: 'This paper introduces Incentive Alignment Bonds (IABs), a mechanism design approach that makes supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use.'
+title: 'Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable'
+description: 'Politicians are rewarded for funding things that hurt society and punished for funding things that help it. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for supporting policies that actually improve lives. The result: public good becomes private profit for both investors and elected officials.'
 abstract: |
   Democratic systems exhibit systematic underinvestment in policies with diffuse benefits and concentrated costs,
   even when net social welfare is strongly positive. We formalize this as an electoral principal-agent problem
@@ -173,7 +173,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 - **Social Impact Bonds (SIBs):** Investors fund social programs, get repaid only if outcomes achieved
 - **BCR (Benefit-Cost Ratio):** For every $1 spent, how many $ of social benefit (100:1 BCR = $100 benefit per $1 spent)
-- **NSV (Net Social Value):** Total benefit minus total cost to society
+- **NSV (Net Societal Value):** Total benefit minus total cost to society
 - **DALYs:** Disability-Adjusted Life Years. This is a measure of disease burden combining mortality and quality of life
 - **VSL (Value of Statistical Life):** How much society values preventing one death (EPA uses ~{{< var value_of_statistical_life >}})
 
@@ -291,7 +291,7 @@ The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coo
 
 **The key insight:** We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
 
-### Quantifying Net Social Value of Funding Sources
+### Quantifying Net Societal Value of Funding Sources
 
 The third primitive property requires identifying government expenditures with lower marginal social value than the proposed alternative. This is an empirical question that can be addressed using standard welfare economics:
 
@@ -354,7 +354,7 @@ Similar analysis applies to other Olsonian programs:
 | Fossil Fuel Subsidies (Explicit) | <0 | \$20B (US) | **-\$1 to -\$5** | [@imf2023] |
 | Fossil Fuel (Implicit/Externalities) | -5:1 | \$568B (US) | **-\$5** | [@batini2021], PNAS 2021 externality analysis |
 
-: Ranking of Government Expenditures by Benefit-Cost Ratio and Net Social Value {#tbl-ranking}
+: Ranking of Government Expenditures by Benefit-Cost Ratio and Net Societal Value {#tbl-ranking}
 
 The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has much higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 

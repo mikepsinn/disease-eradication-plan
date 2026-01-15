@@ -162,6 +162,36 @@ Below is a health and economic analysis of a decentralized framework for drug as
 
 These assumptions set a stage where the framework can indeed function at scale, but this remains a forward-looking scenario.
 
+### Addressing Skepticism: Why This Differs from Failed Megaprojects
+
+Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
+
+This intervention differs in four critical ways:
+
+1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
+
+2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
+
+3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, a trial platform has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The platform generates its own performance metrics.
+
+4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}} ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
+
+### Why "Eventually Avoidable" Matters
+
+A critical assumption in this analysis is that {{< var eventually_avoidable_death_pct >}} of disease deaths are "eventually avoidable" - meaning they could be prevented with sufficient biomedical research over time.
+
+**Why this assumption is conservative:**
+
+1. **Historical trend**: In 1900, life expectancy was ~47 years. Today it's ~79. Most of that gain came from preventing deaths that were once considered inevitable (infectious disease, childhood mortality, cardiovascular disease).
+
+2. **Known mechanisms exist**: For most major disease categories, we understand enough biology to know that interventions are theoretically possible. Cancer is caused by specific mutations. Heart disease has identifiable risk factors. The question is finding the right treatments, not whether treatments can exist.
+
+3. **Already-discovered treatments prove the space**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating that effective treatments exist but haven't been found yet.
+
+**What if this assumption is wrong?**
+
+Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}} ROI from R&D savings alone, independent of health benefits. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
+
 ### Trial Funding Scenario
 
 This analysis models a scenario with {{< var dih_treasury_to_medical_research_annual >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dih_patients_fundable_annually >}} patient-years annually.
@@ -1056,6 +1086,52 @@ For economist verification, this section provides complete derivation chains for
 | ROI | {{< var dfda_roi_rd_only >}} | Costs, savings | NPV analysis with 5-year ramp |
 
 All parameters, confidence intervals, and Monte Carlo distributions are documented in [Parameters and Calculations](parameters-and-calculations.qmd).
+
+## Key Analytical Assumptions
+
+This analysis rests on several core assumptions that should be made explicit for academic transparency:
+
+### Linear Scaling Assumption
+
+**Assumption:** Each additional dollar of trial funding produces proportional additional discoveries.
+
+**Justification:** This is actually conservative - network effects in data aggregation and platform economics often produce increasing returns. We assume linear to avoid overstating benefits.
+
+**Sensitivity:** If returns are sublinear (diminishing), health impact estimates would be reduced. However, as documented in [Addressing the Returns Question](#addressing-the-returns-question-diminishing-linear-or-compounding), diminishing returns are unlikely when <1% of therapeutic space has been explored.
+
+### Adoption Rate Assumptions
+
+**Assumption:** Framework adoption follows a 5-year ramp (20%, 40%, 60%, 80%, 100%) before reaching full capacity.
+
+**Justification:** Based on historical technology adoption curves in healthcare (EHR adoption, telemedicine during COVID). The ramp is built into NPV calculations.
+
+**Sensitivity:** Slower adoption delays benefits but doesn't change eventual steady-state impact. NPV is reduced with slower adoption due to discounting.
+
+### Cost Reduction Assumptions
+
+**Assumption:** Pragmatic trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient versus {{< var traditional_phase3_cost_per_patient >}}/patient for traditional trials.
+
+**Justification:** Based on ADAPTABLE trial ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic review of 64 pragmatic trials (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient). RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions.
+
+**Sensitivity:** The tornado diagrams show ROI remains strongly positive even at 30% cost reduction (vs. baseline {{< var dfda_trial_cost_reduction_pct >}}).
+
+### Eventually Avoidable Mortality Assumption
+
+**Assumption:** {{< var eventually_avoidable_death_pct >}} of disease deaths are eventually avoidable with sufficient biomedical research.
+
+**Justification:** Historical trend shows ~70% reduction in age-adjusted mortality since 1900. Most major disease categories have known biological mechanisms amenable to intervention. See [Why "Eventually Avoidable" Matters](#why-eventually-avoidable-matters).
+
+**Sensitivity:** Health impact scales linearly with this assumption. At 25% avoidability (half the estimate), health benefits are halved. R&D savings are unaffected.
+
+### Counterfactual Baseline
+
+**Assumption:** The baseline comparison is the status quo - current clinical trial infrastructure continues operating at current efficiency and capacity.
+
+**Alternative counterfactuals:**
+- **Optimistic baseline**: Other efficiency improvements occur independently → our marginal impact is smaller
+- **Pessimistic baseline**: Trial costs continue increasing → our relative savings are larger
+
+The analysis uses the neutral status quo baseline to avoid biasing results in either direction.
 
 ## Appendix Calculation Frameworks and Detailed Analysis
 
