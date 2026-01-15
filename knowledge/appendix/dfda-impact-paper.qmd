@@ -595,7 +595,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
-**A primary health benefit of a decentralized framework for drug assessment comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing (2.3 years) is preserved.
+**A primary health benefit of a decentralized framework for drug assessment comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
 
 #### The Efficacy Lag Problem
 
