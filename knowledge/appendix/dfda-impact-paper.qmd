@@ -1189,23 +1189,6 @@ The following table provides the data and sources that support the chart. The li
 - All costs are in 2023 USD, adjusted using appropriate health inflation indices
 - QALY calculations use standard health state utility weights where available
 
-**Conclusion:** An initiative for a decentralized framework is not just a financially sound investment with a high ROI; it is one of the most impactful public health interventions conceivable. Its "dominant" cost-effectiveness profile is comparable to gold-standard programs like childhood vaccination and smoking cessation, but its scale of economic and health benefits is potentially orders of magnitude larger.
-
-### Cost-Effectiveness Summary
-
-This section summarizes the cost-effectiveness of funding a decentralized framework for drug assessment.
-
-**Key Metrics:**
-
-- **NPV of funding commitment**: {{< var dfda_direct_funding_queue_clearance_npv >}}
-- **Cost per DALY**: {{< var dfda_direct_funding_cost_per_daly >}}
-
-{{< var dfda_direct_funding_queue_clearance_npv_latex >}}
-
-{{< var dfda_direct_funding_cost_per_daly_latex >}}
-
-At **{{< var dfda_direct_funding_cost_per_daly >}}/DALY**, the framework is competitive with GiveWell's top-rated interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY), while operating at vastly greater scale.
-
 ## Comparison to Other Major Public Investments
 
 To provide context for the estimated costs of a decentralized framework, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for a decentralized framework for drug assessment of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.

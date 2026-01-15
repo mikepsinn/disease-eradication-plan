@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (133 entries)
+# Contains only variables used in this paper (131 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -185,20 +185,6 @@
   % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"dfda_direct_funding_queue_clearance_npv": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_queue_clearance_npv\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"NPV of direct\
-  \ funding ($21.76B/year for medical research after bond/IAB allocations) for the\
-  \ ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty\
-  \ campaign to unlock government funding, philanthropists/NIH directly fund clinical\
-  \ trials until disease queue is cleared. Funding period is queue clearance time\
-  \ (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years).\
-  \ After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.\
-  \ | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T\
-  \ = queue clearance time | Unit: USD | Click to view details, calculation & sources\"\
-  >$475B (95% CI: $211B-$651B)</a>"
-"dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = Funding_{ann}\
-  \ \\times \\frac{1 - (1+r)^{-T}}{r}\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
