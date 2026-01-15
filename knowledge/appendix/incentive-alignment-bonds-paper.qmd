@@ -1333,27 +1333,23 @@ The paper demonstrates that IABs redirect resources from low-NSV to high-NSV pro
 
 **Net welfare calculation:**
 
-$$
-\text{NSV}_{\text{mechanism}} = \text{Benefits} - \text{Costs} = \$227.55\text{B} - \$0.75\text{B} = \$226.8\text{B/year}
-$$
+Net Societal Value = Benefits - Costs = {{< var treaty_peace_plus_rd_annual_benefits >}} - {{< var iab_mechanism_annual_cost >}} ≈ **{{< var treaty_peace_plus_rd_annual_benefits >}}/year** (costs are <1% of benefits).
 
 **Benefit-cost ratio of the IAB mechanism itself:**
 
-$$
-\text{BCR}_{\text{IAB}} = \frac{\$227.55\text{B}}{\$0.75\text{B}} \approx 303:1
-$$
+{{< var iab_mechanism_benefit_cost_ratio_latex >}}
 
-Even using the high-end cost estimate (\$750M) and conservative benefits (ignoring climate, pandemic preparedness, other applications), **the mechanism's BCR exceeds 300:1**. The overhead cost is 0.3% of benefits, comparable to the expense ratio of efficient index funds (0.03-0.3%).
+Even using the high-end cost estimate ({{< var iab_mechanism_annual_cost >}}) and conservative benefits (ignoring climate, pandemic preparedness, other applications), **the mechanism's BCR exceeds {{< var iab_mechanism_benefit_cost_ratio >}}**. The overhead cost is <1% of benefits, comparable to the expense ratio of efficient index funds (0.03-0.3%).
 
 **Sensitivity to failure risk:**
 
-If the mechanism has only a 10% chance of achieving treaty passage, expected BCR falls to 30:1, still dramatically positive. If success probability is 50%, expected BCR is 150:1. The mechanism justifies its costs across a wide range of success probabilities.
+If the mechanism has only a 10% chance of achieving treaty passage, expected BCR falls to ~23:1, still dramatically positive. If success probability is 50%, expected BCR is ~115:1. The mechanism justifies its costs across a wide range of success probabilities.
 
 **Comparison to alternative governance reforms:**
 
 | Reform Mechanism | Estimated Annual Cost | Estimated Benefits | BCR |
 |:-----------------|:---------------------|:------------------|:----|
-| IABs (this paper) | \$160M-$750M | \$227B+ | 303:1 to 1,400:1 |
+| IABs (this paper) | {{< var iab_mechanism_annual_cost >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var iab_mechanism_benefit_cost_ratio >}} |
 | Layer 0 only (Wishocracy domain ranking without Layer 1) | \$10M-$50M | ~\$0 (ignored by politicians) | 0:1 |
 | Futarchy infrastructure | \$500M-$1B | Uncertain | Unknown |
 | Charter cities | \$1B+ | Limited scale | 1:1 to 5:1 |
@@ -1398,7 +1394,7 @@ The contribution is fivefold:
 
 4. **Practical:** We specify a three-layer architecture (scoring, electoral, post-office) that achieves alignment without violating anti-bribery law, and demonstrate that the bootstrap problem is solvable due to ROI economics and capital asymmetry.
 
-5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is needed to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR exceeding 300:1, justifying overhead costs across a wide range of success probabilities.
+5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is needed to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR of {{< var iab_mechanism_benefit_cost_ratio >}}, justifying overhead costs across a wide range of success probabilities.
 
 Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, is addressed structurally by Wishocracy (Layer 2), which democratizes allocation decisions via aggregated citizen preferences and prevents advertising-based capture through random pairwise sampling. The capital asymmetry ({{< var global_household_wealth_usd >}} household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} concentrated interests) combined with retail-accessible securities ensures that funding itself becomes democratized. Unintended consequences on political culture (e.g., crowding out intrinsic motivation) remain empirical questions requiring pilot evaluation. These considerations counsel for careful pilot implementation with rigorous evaluation before scaling.
 

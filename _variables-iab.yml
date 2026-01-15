@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (45 entries)
+# Contains only variables used in this paper (46 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "average_market_return_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-average_market_return_pct\"\
@@ -131,6 +131,12 @@
   \ campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in\
   \ required lobbying intensity, media spend, and organizational overhead. | Unit:\
   \ USD | Core definition\">$100M (95% CI: $50M-$200M)</span>"
+"iab_mechanism_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_annual_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Estimated annual\
+  \ cost of the IAB mechanism (high-end estimate including regulatory defense) | ✓\
+  \ High confidence | 95% CI: [$160M, $750M] | Unit: USD/year | Click to view details,\
+  \ calculation & sources\">$750M (95% CI: $160M-$750M)</a>"
 "iab_mechanism_benefit_cost_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_benefit_cost_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
