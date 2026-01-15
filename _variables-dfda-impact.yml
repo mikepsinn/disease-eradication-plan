@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (110 entries)
+# Contains only variables used in this paper (118 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -24,6 +24,13 @@
   \ | Dist: Lognormal | Unit: USD | Click to view details, calculation & sources\"\
   >$14M (95% CI: $14M-$20M)</a>"
 "adaptable_trial_total_cost_cite": "@pragmatic-trials-cost-advantage"
+"antidepressant_trial_exclusion_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-antidepressant_trial_exclusion_rate\"\
+  \ class=\"parameter-link\" data-source-ref=\"antidepressant-trial-exclusion-rates\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Mean exclusion\
+  \ rate in antidepressant trials (86.1% of real-world patients excluded) | ✓ High\
+  \ confidence | Unit: percentage | Click to view details, calculation & sources\"\
+  >86.1%</a>"
+"antidepressant_trial_exclusion_rate_cite": "@antidepressant-trial-exclusion-rates"
 "bed_nets_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bed_nets_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"GiveWell\
@@ -37,6 +44,27 @@
   \ | \U0001F4CA Peer-reviewed | 95% CI: [$78, $100] | Dist: Normal | Unit: USD/DALY\
   \ | Click to view details, calculation & sources\">$89 (95% CI: $78-$100)</a>"
 "bed_nets_cost_per_daly_cite": "@givewell-cost-per-life-saved"
+"current_clinical_trial_participation_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_clinical_trial_participation_rate\"\
+  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-patient-participation-rate\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current clinical\
+  \ trial participation rate (0.06% of population) | ✓ High confidence | Unit: rate\
+  \ | Click to view details, calculation & sources\">0.06%</a>"
+"current_clinical_trial_participation_rate_cite": "@clinical-trial-patient-participation-rate"
+"current_disease_patients_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_disease_patients_global\"\
+  \ class=\"parameter-link\" data-source-ref=\"disease-prevalence-2-billion\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Global population with chronic diseases\
+  \ | ✓ High confidence | 95% CI: [2.00B people, 2.80B people] | Dist: Lognormal |\
+  \ Unit: people | Click to view details, calculation & sources\">2.40B people (95%\
+  \ CI: 2.00B people-2.80B people)</a>"
+"current_disease_patients_global_cite": "@disease-prevalence-2-billion"
+"current_trial_slots_available": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_slots_available\"\
+  \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global clinical\
+  \ trial participants (IQVIA 2022: 1.9M post-COVID normalization) | ✓ High confidence\
+  \ | 95% CI: [1.50M patients/year, 2.30M patients/year] | Dist: Lognormal | Unit:\
+  \ patients/year | Click to view details, calculation & sources\">1.90M patients/year\
+  \ (95% CI: 1.50M patients/year-2.30M patients/year)</a>"
+"current_trial_slots_available_cite": "@global-trial-participant-capacity"
 "dct_platform_funding_medium": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dct_platform_funding_medium\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#analogous-rom\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Mid-range funding\
