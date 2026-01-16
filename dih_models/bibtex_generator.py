@@ -194,6 +194,33 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
                     note_escaped = note_escaped[:197] + "..."
                 content.append(f"  note = {{{note_escaped}}},")
 
+            # Quote/annotation (supplementary quotes from the source)
+            quote = ref_data.get('quote', '')
+            if quote:
+                # Clean up multi-line quotes: process each line
+                lines = quote.split('\n')
+                cleaned_lines = []
+                for line in lines:
+                    line = line.strip()
+                    # Strip surrounding quotes from each line
+                    if line.startswith('"') and line.endswith('"'):
+                        line = line[1:-1]
+                    elif line.startswith('"'):
+                        line = line[1:]
+                    elif line.endswith('"'):
+                        line = line[:-1]
+                    if line:
+                        cleaned_lines.append(line)
+
+                # Join with space, collapse to single line for BibTeX
+                quote_cleaned = ' '.join(cleaned_lines)
+                # Escape special LaTeX characters
+                quote_escaped = quote_cleaned.replace('&', '\\&').replace('%', '\\%').replace('$', '\\$')
+                # Truncate very long quotes (keep first 800 chars)
+                if len(quote_escaped) > 800:
+                    quote_escaped = quote_escaped[:797] + "..."
+                content.append(f"  annote = {{{quote_escaped}}},")
+
             content.append("}")
             content.append("")
             entries_with_data += 1

@@ -198,10 +198,11 @@ def parse_references_qmd_detailed(references_path: Path) -> Dict[str, Dict[str, 
                 # Store full attribution as note
                 current_ref['note'] = clean_attr
 
-            # Regular quote line
-            elif quote_line.startswith('"') or 'Alternative title:' in quote_line:
+            # Regular quote/content line (any blockquote that's not attribution)
+            # Capture ALL blockquote content, not just lines starting with "
+            else:
                 if current_ref['quote']:
-                    current_ref['quote'] += ' '
+                    current_ref['quote'] += '\n'  # Preserve line breaks between quotes
                 current_ref['quote'] += quote_line
 
             i += 1
