@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (20 entries)
+# Contains only variables used in this paper (19 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "current_trial_slots_available": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_slots_available\"\
@@ -12,17 +12,14 @@
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
 "dfda_observational_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_observational_cost_per_patient\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Marginal cost\
-  \ per patient for Stage 1 observational signal detection (PIS calculation) at 1M+\
-  \ patient scale. Order-of-magnitude estimate (~$0.10) consistent with FDA Sentinel's\
-  \ $1/patient/year for similar observational analysis. True cost varies with scale,\
-  \ data complexity, and analysis frequency. Uncertainty derived from compute cost\
-  \ input. | Calculated from 1 input | ✓ High confidence | Formula: COMPUTE_MONTHLY\
-  \ ÷ 2 | Unit: USD/patient | Click to view details, calculation & sources\">$0.100\
-  \ (95% CI: $0.050-$0.196)</a>"
-"dfda_observational_cost_per_patient_latex": "$$\n\\begin{gathered}\nCost_{obs,pt}\
-  \ \\\\\n= Cost_{compute} \\times 0.5 \\\\\n= \\$0.2 \\times 0.5 \\\\\n= \\$0.1\n\
-  \\end{gathered}\n$$"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Order-of-magnitude\
+  \ estimate for Stage 1 observational signal detection (PIS calculation). Validated\
+  \ by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at\
+  \ 100M+ scale). True cost varies with scale and complexity; exact value less important\
+  \ than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and\
+  \ traditional Phase 3 (~$41,000/patient). | ✓ High confidence | 95% CI: [$0.030,\
+  \ $1.00] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
+  \ & sources\">$0.100 (95% CI: $0.030-$1.00)</a>"
 "efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Regulatory\
