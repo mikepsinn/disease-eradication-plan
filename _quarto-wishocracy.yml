@@ -20,8 +20,8 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "Wishocracy: Scalable Preference Aggregation for Public Goods Allocation Using Collective Intelligence"
-  description: "A mechanism for solving the democratic principal-agent problem through collective intelligence and pairwise preference aggregation"
+  title: "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
+  description: "Representative democracy suffers from an inescapable principal-agent problem. Wishocracy introduces RAPPA, which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores."
   site-url: https://paper.wishocracy.org
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true

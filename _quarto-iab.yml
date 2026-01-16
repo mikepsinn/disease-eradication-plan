@@ -20,8 +20,8 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "Incentive Alignment Bonds: Turning General Welfare into an Asset Class"
-  description: "A mechanism design approach that makes supporting welfare-improving policies incentive-compatible for rational politicians through securitized returns on public good production."
+  title: "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable"
+  description: "Government spending correlates with lobbying intensity, not net societal value. IABs create a capital pool that rewards politicians for funding high-NSV programs over low-NSV alternatives, turning public good into private profit for both investors and elected officials."
   site-url: https://iab.warondisease.org
   favicon: assets/icons/iab-favicon.png
   page-navigation: true
@@ -68,17 +68,17 @@ metadata:
   category: "Academic Paper, Public Policy, Political Science, Economics"
   keywords:
     - mechanism-design
-    - political-economy
     - public-choice
-    - electoral-reform
+    - political-economy
+    - collective-action
+    - social-impact-bonds
+    - campaign-finance
+    - incentive-compatibility
     - incentive-alignment
     - public-goods
-    - political-incentives
-    - governance
-    - collective-action
-    - rent-seeking
+    - net-societal-value
     - PAC
-    - campaign-finance
+    - lobbying
   version: "0.9"
   edition: "Working Draft"
   copyright: "© 2025 Mike P. Sinn"
