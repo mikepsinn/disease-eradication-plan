@@ -199,6 +199,9 @@ book:
         - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
         - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
         - knowledge/appendix/acknowledgments.qmd # ✅ (WISHONIA voice) ~3p
+        # NOTE: Using knowledge/references.qmd (source data file) directly because many chapters link to it.
+        # Other books use knowledge/references-shortcode-page.qmd for CSL-rendered bibliography.
+        # Source data: knowledge/references.qmd -> bibtex_generator.py -> references.bib
         - knowledge/references.qmd # ✅ (reference material, appropriately formal) ~250p
 
 # Project-level metadata (applies to all documents)
@@ -280,9 +283,11 @@ metadata:
   encoding: "UTF-8"
   character-set: "UTF-8"
   
-  # Related resources
-  # bibliography: "references.bib"
-  # csl: "style.csl"
+  # Bibliography: .bib generated from knowledge/references.qmd (source data)
+  # Book uses references.qmd directly (not CSL rendering) because many chapters link to it
+  # Regenerate .bib: python scripts/generate-everything-parameters-variables-calculations-references.py
+  bibliography: references.bib
+  csl: nature-annotated.csl  # Renders 'abstract' field (quotes) for any @citations
 
 # Remove "Appendix" prefix from appendix chapters
 # THIS DOESN'T SEEM TO WORK SO I JUST COMMENTED THE APPENDIX LINE BELOW

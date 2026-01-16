@@ -51,7 +51,7 @@ book:
     - index.qmd
     - knowledge/appendix/parameters-and-calculations-economics.qmd
     - knowledge/appendix/regulatory-mortality-analysis.qmd
-    - knowledge/references.qmd
+    - knowledge/references-shortcode-page.qmd
   navbar:
     right:
       - icon: file-pdf
@@ -60,7 +60,7 @@ book:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-economics.qmd
       - text: "References"
-        href: knowledge/references.qmd
+        href: knowledge/references-shortcode-page.qmd
       - text: "VOTE"
         href: https://warondisease.org
   sidebar:
@@ -72,7 +72,7 @@ book:
         contents:
           - href: index.html
             text: "The 1% Treaty: Economic Analysis"
-          - href: knowledge/references.qmd
+          - href: knowledge/references-shortcode-page.qmd
             text: "References & Citations"
 
       - section: "Appendices"
@@ -169,9 +169,10 @@ language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
 
-# Bibliography configuration
+# Bibliography: .bib generated from knowledge/references.qmd (source data)
+# Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
 bibliography: references-economics.bib
-csl: nature.csl
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
 
 jupyter: dih-project-kernel
 
@@ -207,7 +208,7 @@ format:
               <a href="/" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations-economics.html" style="color: #8b7355;">Calculations</a> |
               <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
-              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references-shortcode-page.html" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
@@ -229,7 +230,7 @@ format:
               <a href="/" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations-economics.html" style="color: #8b7355;">Calculations</a> |
               <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
-              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references-shortcode-page.html" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>

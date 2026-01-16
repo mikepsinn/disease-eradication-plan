@@ -12,6 +12,13 @@ tags:
 - data
 - research
 ---
+
+<!--
+SOURCE DATA for citations. Parsed by bibtex_generator.py -> references-*.bib -> CSL rendering.
+Output page: references-shortcode-page.qmd (same folder)
+Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
+-->
+
 ```{python}
 #| echo: false
 import sys

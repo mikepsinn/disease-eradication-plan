@@ -186,16 +186,22 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
                 content.append(f"  url = {{{url_escaped}}},")
                 content.append("  urldate = {2025-01-20},")
 
-            # Note (additional context)
+            # Note (additional context) - no truncation, preserve full info
             if note:
                 note_escaped = note.replace('&', '\\&').replace('%', '\\%')
-                # Truncate if too long
-                if len(note_escaped) > 200:
-                    note_escaped = note_escaped[:197] + "..."
                 content.append(f"  note = {{{note_escaped}}},")
 
             # Quote/annotation (supplementary quotes from the source)
+            # Use 'abstract' field instead of 'annote' because:
+            # - CSL doesn't have an 'annote' variable
+            # - Annotated bibliography CSL styles use 'abstract' or 'note'
+            # - This allows quotes to render in bibliography with annotated CSL styles
             quote = ref_data.get('quote', '')
+            urls = ref_data.get('urls', [])
+
+            # Build abstract content: quotes + all URLs
+            abstract_parts = []
+
             if quote:
                 # Clean up multi-line quotes: process each line
                 lines = quote.split('\n')
@@ -211,15 +217,22 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
                         line = line[:-1]
                     if line:
                         cleaned_lines.append(line)
-
                 # Join with space, collapse to single line for BibTeX
                 quote_cleaned = ' '.join(cleaned_lines)
                 # Escape special LaTeX characters
                 quote_escaped = quote_cleaned.replace('&', '\\&').replace('%', '\\%').replace('$', '\\$')
-                # Truncate very long quotes (keep first 800 chars)
-                if len(quote_escaped) > 800:
-                    quote_escaped = quote_escaped[:797] + "..."
-                content.append(f"  annote = {{{quote_escaped}}},")
+                abstract_parts.append(quote_escaped)
+
+            # Add all URLs (beyond the primary one already in url field)
+            if urls and len(urls) > 1:
+                other_urls = [u for u in urls[1:] if u]  # Skip first (already in url field)
+                if other_urls:
+                    urls_escaped = [u.replace('&', '\\&').replace('%', '\\%') for u in other_urls]
+                    abstract_parts.append("Additional sources: " + " | ".join(urls_escaped))
+
+            if abstract_parts:
+                abstract_content = " ".join(abstract_parts)
+                content.append(f"  abstract = {{{abstract_content}}},")
 
             content.append("}")
             content.append("")

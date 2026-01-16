@@ -1,0 +1,12 @@
+---
+title: References
+description: Bibliography and citations.
+---
+
+<!--
+BIBLIOGRAPHY OUTPUT PAGE - The ::: {#refs} ::: shortcode tells Quarto to render citations here.
+Source data: references.qmd (this folder) -> bibtex_generator.py -> references-*.bib -> CSL
+-->
+
+::: {#refs}
+:::
