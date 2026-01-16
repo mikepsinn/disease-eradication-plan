@@ -23,15 +23,15 @@ format:
 
 ## Overview
 
-This appendix documents all 388 parameters used in the analysis, organized by type:
+This appendix documents all 395 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 149
-- Calculated values: 138
-- Core definitions: 101
+- Calculated values: 140
+- Core definitions: 106
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (138 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (101 parameters)
+[Calculated Values](#sec-calculated) (140 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1870,6 +1870,93 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
+
+:::
+
+### Total Infrastructure Cost per Patient (Annual): $8.64 {#sec-dfda_storage_cost_total_per_patient_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total infrastructure cost per patient per year. Monthly cost × 12.
+
+**Inputs**:
+
+- [Total Infrastructure Cost per Patient (Monthly)](#sec-dfda_storage_cost_total_per_patient_monthly) 🔢: $0.720
+
+$$
+\begin{gathered}
+Cost_{infra,annual} \\
+= Cost_{infra,monthly} \times 12 \\
+= \$0.72 \times 12 \\
+= \$8.64 \\[0.5em]
+\text{where } Cost_{infra,monthly} \\
+= Cost_{storage,raw} + Cost_{compute} \\
++ Cost_{database} + Cost_{backup} \\
+= \$0.02 + \$0.2 + \$0.3 + \$0.2 \\
+= \$0.72
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/data-storage-costs#cost-analysis](../appendix/data-storage-costs#cost-analysis)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_storage_cost_total_per_patient_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_storage_cost_total_per_patient_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_storage_cost_total_per_patient_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_storage_cost_total_per_patient_annual.qmd >}}
+
+:::
+
+### Total Infrastructure Cost per Patient (Monthly): $0.720 {#sec-dfda_storage_cost_total_per_patient_monthly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total infrastructure cost per patient per month. Sum of storage, compute, database, and backup costs.
+
+**Inputs**:
+
+- [Raw Storage Cost per Patient (Monthly)](#sec-dfda_storage_cost_raw_per_patient_monthly): $0.020 (95% CI: $0.010 - $0.050)
+- [Compute/API Cost per Patient (Monthly)](#sec-dfda_storage_cost_compute_per_patient_monthly): $0.200 (95% CI: $0.100 - $0.500)
+- [Database Cost per Patient (Monthly)](#sec-dfda_storage_cost_database_per_patient_monthly): $0.300 (95% CI: $0.150 - $0.600)
+- [Backup/Redundancy Cost per Patient (Monthly)](#sec-dfda_storage_cost_backup_per_patient_monthly): $0.200 (95% CI: $0.100 - $0.400)
+
+$$
+\begin{gathered}
+Cost_{infra,monthly} \\
+= Cost_{storage,raw} + Cost_{compute} + Cost_{database} \\
++ Cost_{backup} \\
+= \$0.02 + \$0.2 + \$0.3 + \$0.2 \\
+= \$0.72
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/data-storage-costs#cost-analysis](../appendix/data-storage-costs#cost-analysis)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_storage_cost_total_per_patient_monthly.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_storage_cost_total_per_patient_monthly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_storage_cost_total_per_patient_monthly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_storage_cost_total_per_patient_monthly.qmd >}}
 
 :::
 
@@ -11238,6 +11325,24 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 :::
 
+### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.030, $1.00] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.030 and $1.00 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
+
+:::
+
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -11331,6 +11436,78 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 **Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
+
+:::
+
+### Backup/Redundancy Cost per Patient (Monthly): $0.200 {#sec-dfda_storage_cost_backup_per_patient_monthly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Backup and redundancy cost per patient per month. For data safety and compliance.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.100, $0.400] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.100 and $0.400 (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
+
+:::
+
+### Compute/API Cost per Patient (Monthly): $0.200 {#sec-dfda_storage_cost_compute_per_patient_monthly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Compute and API cost per patient per month. For data processing, correlation analysis, and PIS calculation.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.100, $0.500] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.100 and $0.500 (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
+
+:::
+
+### Database Cost per Patient (Monthly): $0.300 {#sec-dfda_storage_cost_database_per_patient_monthly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Database cost per patient per month. For structured data storage and querying.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.150, $0.600] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.150 and $0.600 (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
+
+:::
+
+### Raw Storage Cost per Patient (Monthly): $0.020 {#sec-dfda_storage_cost_raw_per_patient_monthly}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Raw cloud storage cost per patient per month. Based on standard cloud storage rates for ~1GB patient data.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.010, $0.050] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.010 and $0.050 (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

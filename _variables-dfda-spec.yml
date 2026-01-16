@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (12 entries)
+# Contains only variables used in this paper (20 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "current_trial_slots_available": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_slots_available\"\
@@ -10,6 +10,49 @@
   \ patients/year | Click to view details, calculation & sources\">1.90M patients/year\
   \ (95% CI: 1.50M patients/year-2.30M patients/year)</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
+"dfda_observational_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_observational_cost_per_patient\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Marginal cost\
+  \ per patient for Stage 1 observational signal detection (PIS calculation) at 1M+\
+  \ patient scale. Order-of-magnitude estimate (~$0.10) consistent with FDA Sentinel's\
+  \ $1/patient/year for similar observational analysis. True cost varies with scale,\
+  \ data complexity, and analysis frequency. Uncertainty derived from compute cost\
+  \ input. | Calculated from 1 input | ✓ High confidence | Formula: COMPUTE_MONTHLY\
+  \ ÷ 2 | Unit: USD/patient | Click to view details, calculation & sources\">$0.100\
+  \ (95% CI: $0.050-$0.196)</a>"
+"dfda_observational_cost_per_patient_latex": "$$\n\\begin{gathered}\nCost_{obs,pt}\
+  \ \\\\\n= Cost_{compute} \\times 0.5 \\\\\n= \\$0.2 \\times 0.5 \\\\\n= \\$0.1\n\
+  \\end{gathered}\n$$"
+"efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
+  external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Regulatory\
+  \ delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO\
+  \ 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor\
+  \ bias means actual delay for any given disease may be longer if candidates fail\
+  \ and must restart. | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
+  \ (SE: 2 years) | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION\
+  \ | Unit: years | Click to view details, calculation & sources\">8.2 years (95%\
+  \ CI: 4.85 years-11.5 years)</a>"
+"efficacy_lag_years_cite": "@bio-clinical-development-2021"
+"existing_drugs_efficacy_lag_deaths_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-existing_drugs_efficacy_lag_deaths_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total deaths\
+  \ from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating\
+  \ Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year\
+  \ rate × 8.2 years. Excludes innovation acceleration effects. | Calculated from\
+  \ 1 input | ✓ High confidence | Formula: 12M × EFFICACY_LAG_YEARS | Unit: deaths\
+  \ | Click to view details, calculation & sources\">98.4M deaths (95% CI: 58.2M deaths-138M\
+  \ deaths)</a>"
+"existing_drugs_efficacy_lag_deaths_total_latex": "$$\n\\begin{gathered}\nDeaths_{lag,total}\
+  \ \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000 \\\\\n= 98.4M\n\\\
+  end{gathered}\n$$"
+"global_annual_deaths_curable_diseases": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_deaths_curable_diseases\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
+  \ all diseases and aging globally | ✓ High confidence | Dist: Normal (SE: 5.00M\
+  \ deaths/year) | Unit: deaths/year | Click to view details, calculation & sources\"\
+  >55.0M deaths/year (95% CI: 46.6M deaths/year-63.2M deaths/year)</a>"
+"global_annual_deaths_curable_diseases_cite": "@who-global-health-estimates-2024"
 "phase_3_trial_cost_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-phase_3_trial_cost_min\"\
   \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-trial-range\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 trial total cost (minimum) |\

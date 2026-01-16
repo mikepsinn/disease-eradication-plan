@@ -9,35 +9,63 @@ image: /assets/og-images/knowledge/appendix/data-storage-costs-og-academic.jpg
 
 ![](/assets/infographics/knowledge/appendix/data-storage-costs-infographic-academic.jpg)
 
-
-
 ## How Much Space One Patient Takes
 
-Storing clinical trial data costs $0.72/month per patient. That's less than a coffee.
+Storing clinical trial data costs {{< var dfda_storage_cost_total_per_patient_monthly >}}/month per patient. That's less than a coffee.
 
 ### What's Actually Stored
-
-### Basic Data Components
 
 - Patient demographics and basic information: < 1MB
 - Trial-specific forms and data entries: [1-5MB](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research)
 - Medical imaging (when applicable): [50-500MB](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5840832/)
 - Continuous monitoring data: 1-10MB/month
-- Total typical storage: ~1GB per patient
+- Tracked variables: Hundreds to thousands per patient (symptoms, vitals, medications, behaviors)
+- Total typical storage: ~1GB per patient (varies significantly with data complexity)
 
-## Cost Analysis
+## Cost Analysis {#cost-analysis}
 
 ### Infrastructure Costs (Per Patient/Month)
 
 | Component         | Estimated Cost | Notes                                 |
 | ----------------- | -------------- | ------------------------------------- |
-| Raw Storage       | $0.02          | Based on standard cloud storage rates |
-| Compute/API       | $0.20          | For data processing and access        |
-| Database          | $0.30          | For structured data storage           |
-| Backup/Redundancy | $0.20          | For data safety and compliance        |
-| **Total**         | **$0.72**      | Per patient/month                     |
+| Raw Storage       | {{< var dfda_storage_cost_raw_per_patient_monthly >}} | Based on standard cloud storage rates |
+| Compute/API       | {{< var dfda_storage_cost_compute_per_patient_monthly >}} | For data processing and access        |
+| Database          | {{< var dfda_storage_cost_database_per_patient_monthly >}} | For structured data storage           |
+| Backup/Redundancy | {{< var dfda_storage_cost_backup_per_patient_monthly >}} | For data safety and compliance        |
+| **Total**         | **{{< var dfda_storage_cost_total_per_patient_monthly >}}** | Per patient/month                     |
 
-### Cost Comparisons
+Annual cost per patient: {{< var dfda_storage_cost_total_per_patient_annual >}}/year.
+
+### Stage 1 Observational Analysis Cost
+
+For observational signal detection (running the Predictor Impact Score calculation on a patient's data), the cost is approximately {{< var dfda_observational_cost_per_patient >}} per patient.
+
+This estimate includes:
+
+| Component | Approximate Cost | Description |
+|-----------|------------------|-------------|
+| Data ingestion | ~$0.02 | Import from EHR, apps, wearables |
+| ETL processing | ~$0.02 | Transform raw data to analysis format |
+| PIS calculation | ~$0.03 | Statistical analysis across variables |
+| Quality validation | ~$0.02 | Outlier detection, completeness checks |
+| Result storage | ~$0.01 | Store scores and metadata |
+
+Note: This is not strictly "one-time" since patients continuously generate new data requiring periodic re-analysis. The cost represents a single analysis pass.
+
+### Comparable Real-World Systems
+
+The most relevant comparison is to existing large-scale health data platforms:
+
+| System | What They Do | Scale | Cost per Patient |
+|--------|--------------|-------|------------------|
+| **FDA Sentinel** | Drug safety signal detection from EHR data | 100M+ patients | ~$1/patient/year |
+| **UK Biobank** | Research data collection and analysis | 500K participants | ~$20/patient/year (lifetime) |
+| **All of Us (NIH)** | Health data collection including clinical visits | 1M+ participants | ~$140/patient/year |
+| **Strava/MyFitnessPal** | Consumer health tracking | 100M+ users | ~$0.50-1/user/month infrastructure |
+
+**FDA Sentinel is the closest comparison**. It performs exactly the type of observational safety signal detection proposed here, on 100M+ patients, for approximately $1/patient/year. This validates that large-scale observational analysis is economically viable at these price points.
+
+### Consumer Platform Comparisons
 
 - Electronic Health Records (EHRs): 1-2GB per patient
 - Google Workspace: $12/user/month (includes many additional services)
@@ -72,6 +100,46 @@ Storing clinical trial data costs $0.72/month per patient. That's less than a co
 - Bulk storage rates improve with volume
 - Automated systems become more cost-effective at scale
 
+## Methodology and Limitations
+
+These estimates are illustrative order-of-magnitude figures based on:
+
+- Cloud provider pricing (AWS, GCP, Azure) as of 2024
+- Typical patient data volumes (~1GB baseline, scaling with variable count)
+- Amortized platform overhead at scale (>1M patients)
+
+### True Cost by Scale
+
+Fixed costs (engineering, security, compliance, support) dominate at small scale but become negligible at large scale:
+
+| Scale | Fixed Cost/Patient | Marginal Cost | Total/Year | Monthly |
+|-------|-------------------|---------------|------------|---------|
+| 100K patients | $28 | $0.30 | ~$28 | ~$2.30 |
+| 1M patients | $2.80 | $0.30 | ~$3 | ~$0.25 |
+| 10M patients | $0.28 | $0.30 | ~$0.60 | ~$0.05 |
+| 100M patients | $0.03 | $0.30 | ~$0.35 | ~$0.03 |
+
+*Assumes ~$2.8M/year fixed costs (10 engineers, security, compliance, support, infrastructure). Marginal costs based on cloud pricing for storage, compute, and data transfer.*
+
+The component estimates in this document assume operation at 1M+ patient scale where fixed costs are substantially amortized.
+
+**Actual costs vary significantly based on:**
+
+- **Data complexity**: Patients tracking thousands of variables require more storage and compute than the baseline estimate
+- **Import frequency**: Real-time streaming vs. daily batch imports have different cost profiles
+- **Compliance requirements**: HIPAA, GDPR, and clinical trial regulations add infrastructure overhead
+- **Scale effects**: Fixed costs (security, development, compliance) amortize differently at 100K vs 100M patients
+- **Analysis depth**: Simple correlations cost less than sophisticated ML models
+
+**What's NOT included in per-patient estimates:**
+
+- Platform development and maintenance (amortized separately)
+- Regulatory submission and approval processes
+- Customer support and incident response
+- Marketing and user acquisition
+
+**The key insight is not the exact figure but the order of magnitude**: observational analysis costs cents per patient, not hundreds or thousands of dollars. Even if actual costs are 5-10x higher than these estimates, the economic case for decentralized trials remains compelling compared to traditional Phase 3 trials at {{< var traditional_phase3_cost_per_patient >}} per patient.
+
 ## Conclusion
 
-The actual per-patient storage cost ($0.72/month) is significantly lower than traditional systems due to focused use case, modern cloud infrastructure, and optimization for clinical trial data. This enables a cost-effective decentralized platform that can scale efficiently while maintaining high data quality and compliance standards.
+The per-patient infrastructure cost ({{< var dfda_storage_cost_total_per_patient_monthly >}}/month) is orders of magnitude lower than traditional clinical trial systems. This cost advantage, combined with the ability to leverage existing patient data, enables a decentralized platform that can scale to millions of participants while maintaining data quality and compliance standards.

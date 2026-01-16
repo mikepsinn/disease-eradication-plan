@@ -108,11 +108,15 @@ def ensure_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name:
     # Ensure ipykernel is installed in venv
     print(f"[*] Ensuring ipykernel is installed in virtual environment...")
     try:
+        # Show output so user can see download progress; timeout after 5 minutes
         subprocess.run(
-            [str(venv_python), "-m", "pip", "install", "-q", "ipykernel"],
+            [str(venv_python), "-m", "pip", "install", "--progress-bar", "on", "ipykernel"],
             check=True,
-            capture_output=True
+            timeout=300  # 5 minute timeout
         )
+    except subprocess.TimeoutExpired:
+        print(f"[ERROR] pip install timed out after 5 minutes", file=sys.stderr)
+        return False
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Failed to install ipykernel: {e}", file=sys.stderr)
         return False
@@ -127,10 +131,14 @@ def ensure_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name:
                 "--display-name", display_name
             ],
             check=True,
-            capture_output=True
+            capture_output=True,
+            timeout=60  # 1 minute timeout
         )
         print(f"[OK] Created Jupyter kernel '{kernel_name}'")
         return True
+    except subprocess.TimeoutExpired:
+        print(f"[ERROR] Kernel creation timed out", file=sys.stderr)
+        return False
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Failed to create kernel: {e}", file=sys.stderr)
         return False
@@ -269,10 +277,10 @@ class BuildMonitor:
         # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
         if any(marker in line for marker in ["WARN:", "Warning:", "[WARNING]"]):
             # Ignore warnings about thinkbynumbers (Twitter handle in YAML, not a citation)
-            if "thinkbynumbers" not in line:
+            if all(ignore_word not in line for ignore_word in ["thinkbynumbers", "warondisease"]):
                 self.warnings.append(line.strip())
                 return f"WARNING: {line.strip()}"
-            return None  # Silently ignore thinkbynumbers warnings
+            return None  # Silently ignore thinkbynumbers and warondisease warnings
 
         # Detect errors
         if line.startswith("ERROR:") or line.startswith("Error:") or "error:" in line.lower():

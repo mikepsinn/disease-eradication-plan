@@ -48,6 +48,7 @@ from zenodo_client import (
     upload_paper,
     get_zenodo_token,
     load_quarto_config,
+    get_record_id_from_doi,
 )
 
 # Project root

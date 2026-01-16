@@ -2047,6 +2047,30 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   latex: "\\begin{gathered}\nROI_{RD} = \\frac{NPV_{RD}}{Cost_{dFDA,total}} = \\frac{\\$389B}{\\$611M} = 637 \\\\[0.5em]\n\\text{where } NPV_{RD} = \\sum_{t=1}^{10} \\frac{Savings_{RD,ann} \\times \\frac{\\min(t,5)}{5}}{(1+r)^t} \\\\[0.5em]\n\\text{where } Savings_{RD,ann} \\\\\n= Benefit_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$58.6B - \\$40M \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Cost_{dFDA,total} \\\\\n= PV_{OPEX} + Cost_{upfront,total} \\\\\n= \\$342M + \\$270M \\\\\n= \\$611M \\\\[0.5em]\n\\text{where } PV_{OPEX} \\\\\n= \\frac{T_{horizon}}{OPEX_{total} \\times r_{discount}} \\\\\n= \\frac{10}{\\$40M \\times 3\\%} \\\\\n= \\$342M \\\\[0.5em]\n\\text{where } OPEX_{total} \\\\\n= OPEX_{ann} + OPEX_{DIH,ann} \\\\\n= \\$18.9M + \\$21.1M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Cost_{upfront,total} \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\\end{gathered}",
 };
 
+export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL: Parameter = {
+  value: 8.64,
+  unit: "USD/patient/year",
+  displayName: "Total Infrastructure Cost per Patient (Annual)",
+  description: "Total infrastructure cost per patient per year. Monthly cost × 12.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  formula: "MONTHLY_COST × 12",
+  latex: "\\begin{gathered}\nCost_{infra,annual} \\\\\n= Cost_{infra,monthly} \\times 12 \\\\\n= \\$0.72 \\times 12 \\\\\n= \\$8.64 \\\\[0.5em]\n\\text{where } Cost_{infra,monthly} \\\\\n= Cost_{storage,raw} + Cost_{compute} \\\\\n+ Cost_{database} + Cost_{backup} \\\\\n= \\$0.02 + \\$0.2 + \\$0.3 + \\$0.2 \\\\\n= \\$0.72\n\\end{gathered}",
+};
+
+export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY: Parameter = {
+  value: 0.72,
+  unit: "USD/patient/month",
+  displayName: "Total Infrastructure Cost per Patient (Monthly)",
+  description: "Total infrastructure cost per patient per month. Sum of storage, compute, database, and backup costs.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  formula: "RAW + COMPUTE + DATABASE + BACKUP",
+  latex: "\\begin{gathered}\nCost_{infra,monthly} \\\\\n= Cost_{storage,raw} + Cost_{compute} + Cost_{database} \\\\\n+ Cost_{backup} \\\\\n= \\$0.02 + \\$0.2 + \\$0.3 + \\$0.2 \\\\\n= \\$0.72\n\\end{gathered}",
+};
+
 export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
   value: 1268.2439031195938,
   unit: "years",
@@ -3741,6 +3765,17 @@ export const DFDA_NPV_UPFRONT_COST: Parameter = {
   confidenceInterval: [25000000.0, 65000000.0],
 };
 
+export const DFDA_OBSERVATIONAL_COST_PER_PATIENT: Parameter = {
+  value: 0.1,
+  unit: "USD/patient",
+  displayName: "Stage 1 Observational Analysis Cost per Patient",
+  description: "Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  confidenceInterval: [0.03, 1.0],
+};
+
 export const DFDA_OPEX_COMMUNITY: Parameter = {
   value: 2000000.0,
   unit: "USD/year",
@@ -3806,6 +3841,50 @@ export const DFDA_OPEX_STAFF: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper#opex-breakdown",
   confidence: "high",
   confidenceInterval: [7000000.0, 15000000.0],
+};
+
+export const DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY: Parameter = {
+  value: 0.2,
+  unit: "USD/patient/month",
+  displayName: "Backup/Redundancy Cost per Patient (Monthly)",
+  description: "Backup and redundancy cost per patient per month. For data safety and compliance.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  confidenceInterval: [0.1, 0.4],
+};
+
+export const DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY: Parameter = {
+  value: 0.2,
+  unit: "USD/patient/month",
+  displayName: "Compute/API Cost per Patient (Monthly)",
+  description: "Compute and API cost per patient per month. For data processing, correlation analysis, and PIS calculation.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  confidenceInterval: [0.1, 0.5],
+};
+
+export const DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY: Parameter = {
+  value: 0.3,
+  unit: "USD/patient/month",
+  displayName: "Database Cost per Patient (Monthly)",
+  description: "Database cost per patient per month. For structured data storage and querying.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  confidenceInterval: [0.15, 0.6],
+};
+
+export const DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY: Parameter = {
+  value: 0.02,
+  unit: "USD/patient/month",
+  displayName: "Raw Storage Cost per Patient (Monthly)",
+  description: "Raw cloud storage cost per patient per month. Based on standard cloud storage rates for ~1GB patient data.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/data-storage-costs#cost-analysis",
+  confidence: "high",
+  confidenceInterval: [0.01, 0.05],
 };
 
 export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
@@ -4521,6 +4600,8 @@ export const parameters = {
   DFDA_QUEUE_CLEARANCE_YEARS,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
+  DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL,
+  DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY,
   DFDA_TOTAL_EXPLORATION_YEARS,
   DFDA_TRIALS_PER_YEAR_CAPACITY,
   DFDA_TRIAL_CAPACITY_DALYS_AVERTED,
@@ -4669,12 +4750,17 @@ export const parameters = {
   DFDA_NPV_ADOPTION_RAMP_YEARS,
   DFDA_NPV_ANNUAL_OPEX,
   DFDA_NPV_UPFRONT_COST,
+  DFDA_OBSERVATIONAL_COST_PER_PATIENT,
   DFDA_OPEX_COMMUNITY,
   DFDA_OPEX_INFRASTRUCTURE,
   DFDA_OPEX_PCT_OF_TREATY_FUNDING,
   DFDA_OPEX_PLATFORM_MAINTENANCE,
   DFDA_OPEX_REGULATORY,
   DFDA_OPEX_STAFF,
+  DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY,
+  DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY,
+  DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY,
+  DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY,
   DFDA_TARGET_COST_PER_PATIENT_USD,
   DFDA_UPFRONT_BUILD,
   DFDA_UPFRONT_BUILD_MAX,
@@ -6249,10 +6335,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 388,
+  total: 395,
   external: 149,
-  calculated: 138,
-  definitions: 101,
+  calculated: 140,
+  definitions: 106,
   citations: 111,
 } as const;
 

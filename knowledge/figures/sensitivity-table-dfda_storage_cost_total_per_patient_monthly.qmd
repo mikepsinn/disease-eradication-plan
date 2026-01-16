@@ -1,12 +1,12 @@
-**Sensitivity Indices for US Major Diseases Total Annual Cost**
+**Sensitivity Indices for Total Infrastructure Cost per Patient (Monthly)**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| US Alzheimers Annual Cost | 0.6352 | Strong driver |
-| US Heart Disease Annual Cost | 0.2387 | Weak driver |
-| US Diabetes Annual Cost | 0.1329 | Weak driver |
-| US Cancer Annual Cost | -0.0067 | Minimal effect |
+| dFDA Storage Cost Database Per Patient Monthly | 0.4241 | Moderate driver |
+| dFDA Storage Cost Raw Per Patient Monthly | 0.2150 | Weak driver |
+| dFDA Storage Cost Backup Per Patient Monthly | 0.2135 | Weak driver |
+| dFDA Storage Cost Compute Per Patient Monthly | 0.1489 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

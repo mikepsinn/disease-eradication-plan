@@ -1023,6 +1023,16 @@
 "dfda_npv_upfront_cost_total_latex": "$$\n\\begin{gathered}\nCost_{upfront,total}\
   \ \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\
   \\end{gathered}\n$$"
+"dfda_observational_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_observational_cost_per_patient\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Order-of-magnitude\
+  \ estimate for Stage 1 observational signal detection (PIS calculation). Validated\
+  \ by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at\
+  \ 100M+ scale). True cost varies with scale and complexity; exact value less important\
+  \ than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and\
+  \ traditional Phase 3 (~$41,000/patient). | ✓ High confidence | 95% CI: [$0.030,\
+  \ $1.00] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
+  \ & sources\">$0.100 (95% CI: $0.030-$1.00)</a>"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_community\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
@@ -1141,6 +1151,54 @@
   \n= OPEX_{ann} + OPEX_{DIH,ann} \\\\\n= \\$18.9M + \\$21.1M \\\\\n= \\$40M \\\\\
   [0.5em]\n\\text{where } Cost_{upfront,total} \\\\\n= Cost_{upfront} + Cost_{DIH,init}\
   \ \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\\end{gathered}\n$$"
+"dfda_storage_cost_backup_per_patient_monthly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_backup_per_patient_monthly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Backup and redundancy\
+  \ cost per patient per month. For data safety and compliance. | ✓ High confidence\
+  \ | 95% CI: [$0.100, $0.400] | Dist: Lognormal | Unit: USD/patient/month | Click\
+  \ to view details, calculation & sources\">$0.200 (95% CI: $0.100-$0.400)</a>"
+"dfda_storage_cost_compute_per_patient_monthly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_compute_per_patient_monthly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Compute and API\
+  \ cost per patient per month. For data processing, correlation analysis, and PIS\
+  \ calculation. | ✓ High confidence | 95% CI: [$0.100, $0.500] | Dist: Lognormal\
+  \ | Unit: USD/patient/month | Click to view details, calculation & sources\">$0.200\
+  \ (95% CI: $0.100-$0.500)</a>"
+"dfda_storage_cost_database_per_patient_monthly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_database_per_patient_monthly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Database cost\
+  \ per patient per month. For structured data storage and querying. | ✓ High confidence\
+  \ | 95% CI: [$0.150, $0.600] | Dist: Lognormal | Unit: USD/patient/month | Click\
+  \ to view details, calculation & sources\">$0.300 (95% CI: $0.150-$0.600)</a>"
+"dfda_storage_cost_raw_per_patient_monthly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_raw_per_patient_monthly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Raw cloud storage\
+  \ cost per patient per month. Based on standard cloud storage rates for ~1GB patient\
+  \ data. | ✓ High confidence | 95% CI: [$0.010, $0.050] | Dist: Lognormal | Unit:\
+  \ USD/patient/month | Click to view details, calculation & sources\">$0.020 (95%\
+  \ CI: $0.010-$0.050)</a>"
+"dfda_storage_cost_total_per_patient_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_total_per_patient_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total infrastructure\
+  \ cost per patient per year. Monthly cost × 12. | Calculated from 1 input | ✓ High\
+  \ confidence | Formula: MONTHLY_COST × 12 | Unit: USD/patient/year | Click to view\
+  \ details, calculation & sources\">$8.64 (95% CI: $4.34-$15)</a>"
+"dfda_storage_cost_total_per_patient_annual_latex": "$$\n\\begin{gathered}\nCost_{infra,annual}\
+  \ \\\\\n= Cost_{infra,monthly} \\times 12 \\\\\n= \\$0.72 \\times 12 \\\\\n= \\\
+  $8.64 \\\\[0.5em]\n\\text{where } Cost_{infra,monthly} \\\\\n= Cost_{storage,raw}\
+  \ + Cost_{compute} \\\\\n+ Cost_{database} + Cost_{backup} \\\\\n= \\$0.02 + \\\
+  $0.2 + \\$0.3 + \\$0.2 \\\\\n= \\$0.72\n\\end{gathered}\n$$"
+"dfda_storage_cost_total_per_patient_monthly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_storage_cost_total_per_patient_monthly\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/data-storage-costs.qmd#cost-analysis\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total infrastructure\
+  \ cost per patient per month. Sum of storage, compute, database, and backup costs.\
+  \ | Calculated from 4 inputs | ✓ High confidence | Formula: RAW + COMPUTE + DATABASE\
+  \ + BACKUP | Unit: USD/patient/month | Click to view details, calculation & sources\"\
+  >$0.720 (95% CI: $0.361-$1.29)</a>"
+"dfda_storage_cost_total_per_patient_monthly_latex": "$$\n\\begin{gathered}\nCost_{infra,monthly}\
+  \ \\\\\n= Cost_{storage,raw} + Cost_{compute} + Cost_{database} \\\\\n+ Cost_{backup}\
+  \ \\\\\n= \\$0.02 + \\$0.2 + \\$0.3 + \\$0.2 \\\\\n= \\$0.72\n\\end{gathered}\n\
+  $$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_target_cost_per_patient_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-per-patient\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
@@ -4348,6 +4406,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "388"
-"total_latex_equation_count": "153"
+"total_parameter_count": "395"
+"total_latex_equation_count": "155"
 "total_citation_count": "149"

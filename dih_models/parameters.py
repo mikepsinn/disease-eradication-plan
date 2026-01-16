@@ -1430,7 +1430,130 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
 
 # (DFDA_ACTIVE_TRIALS moved to after DFDA_TRIAL_CAPACITY_MULTIPLIER definition)
 
-# dFDA Trial Economics
+# =============================================================================
+# dFDA DATA STORAGE AND PROCESSING COSTS
+# =============================================================================
+# Per-patient infrastructure costs for decentralized clinical trials
+# Source: knowledge/appendix/data-storage-costs.qmd
+# Total typical storage: ~1GB per patient
+
+# Component costs (per patient per month)
+DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY = Parameter(
+    0.02,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="definition",
+    description="Raw cloud storage cost per patient per month. Based on standard cloud storage rates for ~1GB patient data.",
+    display_name="Raw Storage Cost per Patient (Monthly)",
+    unit="USD/patient/month",
+    confidence_interval=(0.01, 0.05),  # Cloud storage prices vary by provider
+    distribution="lognormal",
+    keywords=["storage", "cloud", "s3", "azure", "gcp", "data"],
+    latex_symbol=r"Cost_{storage,raw}",
+)
+
+DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY = Parameter(
+    0.20,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="definition",
+    description="Compute and API cost per patient per month. For data processing, correlation analysis, and PIS calculation.",
+    display_name="Compute/API Cost per Patient (Monthly)",
+    unit="USD/patient/month",
+    confidence_interval=(0.10, 0.50),  # Depends on analysis frequency and complexity
+    distribution="lognormal",
+    keywords=["compute", "api", "processing", "analysis", "pis"],
+    latex_symbol=r"Cost_{compute}",
+)
+
+DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY = Parameter(
+    0.30,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="definition",
+    description="Database cost per patient per month. For structured data storage and querying.",
+    display_name="Database Cost per Patient (Monthly)",
+    unit="USD/patient/month",
+    confidence_interval=(0.15, 0.60),  # Database costs vary significantly
+    distribution="lognormal",
+    keywords=["database", "sql", "postgres", "structured"],
+    latex_symbol=r"Cost_{database}",
+)
+
+DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY = Parameter(
+    0.20,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="definition",
+    description="Backup and redundancy cost per patient per month. For data safety and compliance.",
+    display_name="Backup/Redundancy Cost per Patient (Monthly)",
+    unit="USD/patient/month",
+    confidence_interval=(0.10, 0.40),  # Depends on retention policy
+    distribution="lognormal",
+    keywords=["backup", "redundancy", "disaster recovery", "compliance"],
+    latex_symbol=r"Cost_{backup}",
+)
+
+# Total monthly cost (calculated from components)
+DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY = Parameter(
+    DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY
+    + DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY
+    + DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY
+    + DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="calculated",
+    description="Total infrastructure cost per patient per month. Sum of storage, compute, database, and backup costs.",
+    display_name="Total Infrastructure Cost per Patient (Monthly)",
+    unit="USD/patient/month",
+    formula="RAW + COMPUTE + DATABASE + BACKUP",
+    inputs=[
+        "DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY",
+        "DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY",
+        "DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY",
+        "DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY",
+    ],
+    compute=lambda ctx: (
+        ctx["DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY"]
+        + ctx["DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY"]
+        + ctx["DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY"]
+        + ctx["DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY"]
+    ),
+    keywords=["total", "infrastructure", "monthly", "per patient"],
+    latex_symbol=r"Cost_{infra,monthly}",
+)  # $0.72/patient/month
+
+# Annual cost (for long-term tracking)
+DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL = Parameter(
+    DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY * 12,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="calculated",
+    description="Total infrastructure cost per patient per year. Monthly cost × 12.",
+    display_name="Total Infrastructure Cost per Patient (Annual)",
+    unit="USD/patient/year",
+    formula="MONTHLY_COST × 12",
+    inputs=["DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY"],
+    compute=lambda ctx: ctx["DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY"] * 12,
+    keywords=["annual", "yearly", "infrastructure", "per patient"],
+    latex_symbol=r"Cost_{infra,annual}",
+)  # $8.64/patient/year
+
+# Stage 1 observational analysis cost
+# Order-of-magnitude estimate validated by FDA Sentinel (~$1/patient/year for similar analysis)
+# The exact value matters less than the order-of-magnitude difference vs trials ($500-41,000)
+DFDA_OBSERVATIONAL_COST_PER_PATIENT = Parameter(
+    0.10,
+    source_ref="/knowledge/appendix/data-storage-costs.qmd#cost-analysis",
+    source_type="definition",
+    description="Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).",
+    display_name="Stage 1 Observational Analysis Cost per Patient",
+    unit="USD/patient",
+    confidence_interval=(0.03, 1.00),  # Wide range: pure marginal compute to FDA Sentinel annual
+    distribution="lognormal",
+    keywords=["observational", "signal detection", "stage 1", "pis", "data analysis", "n-of-1", "fda sentinel"],
+    latex_symbol=r"Cost_{obs,pt}",
+)  # ~$0.10/patient; FDA Sentinel proves $1/patient/year viable at 100M scale
+
+# =============================================================================
+# dFDA TRIAL ECONOMICS (Stage 2)
+# =============================================================================
+
+# Stage 2: Pragmatic Trial Confirmation
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     500,
     source_ref=ReferenceID.RECOVERY_COST_500,

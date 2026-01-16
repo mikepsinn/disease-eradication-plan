@@ -7,11 +7,22 @@ Zenodo Client Library
 Shared Zenodo API client and metadata utilities for uploading papers.
 Used by both render-quarto.py (--publish option) and publish-zenodo.py.
 
+Features:
+- DOI-based lookup: If a DOI exists in the Quarto config metadata, the script
+  will look up the existing Zenodo record and update it (or create a new version
+  if already published).
+- Title-based fallback: Falls back to searching by title if no DOI is configured.
+
 Example usage:
-    from lib.zenodo_client import ZenodoClient, extract_zenodo_metadata, upload_paper
+    from lib.zenodo_client import (
+        ZenodoClient, extract_zenodo_metadata, upload_paper, get_record_id_from_doi
+    )
 
     client = ZenodoClient(token, sandbox=False)
     result = upload_paper(client, paper_key, quarto_config, pdf_path, draft=True)
+
+    # Extract record ID from DOI
+    record_id = get_record_id_from_doi("10.5281/zenodo.18243915")  # Returns 18243915
 """
 
 from __future__ import annotations
@@ -33,6 +44,27 @@ ZENODO_COMMUNITY = "dih"
 
 # Default ORCID for Mike P. Sinn
 DEFAULT_ORCID = "0009-0006-0212-1094"
+
+
+def get_record_id_from_doi(doi: str) -> Optional[int]:
+    """
+    Extract Zenodo record ID from a DOI.
+
+    Args:
+        doi: DOI string like "10.5281/zenodo.18243915"
+
+    Returns:
+        Record ID (e.g., 18243915) or None if not a valid Zenodo DOI
+    """
+    if not doi:
+        return None
+    # Handle both formats: "10.5281/zenodo.18243915" and "zenodo.18243915"
+    if "zenodo." in doi.lower():
+        try:
+            return int(doi.lower().split("zenodo.")[-1])
+        except ValueError:
+            return None
+    return None
 
 
 class ZenodoClient:
@@ -253,6 +285,9 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
             elif isinstance(contrib, str):
                 contributors.append({"name": contrib, "type": "Other"})
 
+    # Get existing DOI from config (for updating existing deposits)
+    existing_doi = metadata.get("doi")
+
     # Build Zenodo metadata
     zenodo_metadata = {
         "title": title,
@@ -268,6 +303,10 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
         "language": zenodo_language,
         "version": version,
     }
+
+    # Store existing DOI for lookup (not sent to Zenodo API, used internally)
+    if existing_doi:
+        zenodo_metadata["_existing_doi"] = existing_doi
 
     if related:
         zenodo_metadata["related_identifiers"] = related
@@ -341,22 +380,63 @@ def upload_paper(
     log(f"[OK] License: {metadata['license']}")
 
     try:
-        # Check for existing draft with same title
-        log("[OK] Checking for existing draft...")
-        existing_draft = client.find_draft_by_title(metadata["title"])
+        # Check for existing deposit by DOI first (most reliable)
+        existing_doi = metadata.pop("_existing_doi", None)
+        record_id = get_record_id_from_doi(existing_doi) if existing_doi else None
+        deposit = None
+        deposit_id = None
+        bucket_url = None
 
-        if existing_draft:
-            deposit_id = existing_draft["id"]
-            log(f"[OK] Found existing draft: {deposit_id}")
-            log("  -> Updating existing draft...")
-            full_deposit = client.get_deposit(deposit_id)
-            bucket_url = full_deposit["links"]["bucket"]
-            client.delete_all_files(deposit_id)
-        else:
-            log("[OK] No existing draft found, creating new deposit...")
-            deposit = client.create_deposit()
-            deposit_id = deposit["id"]
-            bucket_url = deposit["links"]["bucket"]
+        if record_id:
+            log(f"[OK] Found DOI in config: {existing_doi}")
+            log(f"[OK] Looking up Zenodo record ID: {record_id}")
+            try:
+                deposit = client.get_deposit(record_id)
+                deposit_id = deposit["id"]
+                state = deposit.get("state", "unknown")
+                log(f"[OK] Found existing deposit (state: {state})")
+
+                if state == "done":
+                    # Published record - create new version
+                    log("[OK] Creating new version of published record...")
+                    deposit = client.create_new_version(record_id)
+                    deposit_id = deposit["id"]
+                    bucket_url = deposit["links"]["bucket"]
+                    # Clear old files from new version
+                    client.delete_all_files(deposit_id)
+                    log(f"[OK] New version draft ID: {deposit_id}")
+                elif state == "unsubmitted":
+                    # Existing draft - update it
+                    log("[OK] Updating existing draft...")
+                    bucket_url = deposit["links"]["bucket"]
+                    client.delete_all_files(deposit_id)
+                else:
+                    log(f"WARNING: Unexpected deposit state '{state}', creating new deposit...")
+                    deposit = None
+            except requests.HTTPError as e:
+                if e.response.status_code == 404:
+                    log(f"WARNING: Record {record_id} not found (may be on different Zenodo instance)")
+                    log("  -> Will check for draft by title or create new deposit...")
+                else:
+                    raise
+
+        # Fall back to title-based search if no DOI or DOI lookup failed
+        if deposit is None:
+            log("[OK] Checking for existing draft by title...")
+            existing_draft = client.find_draft_by_title(metadata["title"])
+
+            if existing_draft:
+                deposit_id = existing_draft["id"]
+                log(f"[OK] Found existing draft by title: {deposit_id}")
+                log("  -> Updating existing draft...")
+                full_deposit = client.get_deposit(deposit_id)
+                bucket_url = full_deposit["links"]["bucket"]
+                client.delete_all_files(deposit_id)
+            else:
+                log("[OK] No existing deposit found, creating new...")
+                deposit = client.create_deposit()
+                deposit_id = deposit["id"]
+                bucket_url = deposit["links"]["bucket"]
 
         log(f"[OK] Deposit ID: {deposit_id}")
 

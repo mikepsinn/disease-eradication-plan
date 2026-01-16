@@ -11,24 +11,57 @@ format:
 
 ::: {.content-visible when-format="html"}
 
-**6 parameters** used in this paper:
+**10 parameters** used in this paper:
 
-This appendix documents the 6 parameters used in this paper. 
+This appendix documents the 10 parameters used in this paper. 
 
-**Total parameters**: 6
+**Total parameters**: 10
 
-- External sources (peer-reviewed): 5
-- Calculated values: 1
-- Core definitions: 0
+- External sources (peer-reviewed): 7
+- Calculated values: 2
+- Core definitions: 1
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (1 parameters) | [External Data Sources](#sec-external) (5 parameters)
+[Calculated Values](#sec-calculated) (2 parameters) | [External Data Sources](#sec-external) (7 parameters) | [Core Definitions](#sec-definitions) (1 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: +/-2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= T_{lag} \times 12000000 \\
+= 8.2 \times 12000000 \\
+= 98.4M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
+
+*High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
 
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
@@ -87,6 +120,46 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 #### Input Distribution
 
 {{< include ../figures/distribution-current_trial_slots_available.qmd >}}
+
+*High confidence*
+
+:::
+
+### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
+
+**Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
+*Medium confidence | Peer-reviewed | Updated 2021*
+
+:::
+
+### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5.00M deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
 
 *High confidence*
 
@@ -173,6 +246,28 @@ Phase 3 cost per patient (median from FDA study)
 {{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
 
 *High confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
+
+::: {.callout-note collapse="true" title="Show details"}
+
+Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.030, $1.00] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.030 and $1.00 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+*Core definition*
 
 :::
 

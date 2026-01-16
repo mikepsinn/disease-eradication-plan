@@ -46,7 +46,7 @@ Current pharmacovigilance systems rely primarily on spontaneous adverse event re
 
 We present a comprehensive **two-stage framework** for generating **validated outcome labels** with quantitative effect sizes:
 
-**Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~$0.10 per patient.
+**Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~{{< var dfda_observational_cost_per_patient >}} per patient.
 
 **Stage 2 (Causal Confirmation)**: High-priority signals (top 0.1-1% by PIS) proceed to pragmatic randomized trials following the RECOVERY/ADAPTABLE model [@recovery-trial-efficiency; @pragmatic-trials-cost-advantage]. Simple randomization embedded in routine care confirms causation at ~{{< var recovery_trial_cost_per_patient >}} per patient ({{< var recovery_trial_cost_reduction_factor >}} cheaper than traditional Phase III trials) while eliminating confounding concerns inherent in observational data.
 
@@ -84,7 +84,7 @@ Any company - pharmaceutical, supplement, food, or intervention - can register a
 
 The **Predictor Impact Score (PIS)** described in this paper is the engine that powers treatment rankings. It transforms raw patient data into the ranked, quantified outcome labels that patients and clinicians use to make decisions. The two-stage pipeline ensures that:
 
-- **Stage 1** (this methodology) generates treatment rankings from millions of real-world observations at ~$0.10/patient
+- **Stage 1** (this methodology) generates treatment rankings from millions of real-world observations at ~{{< var dfda_observational_cost_per_patient >}}/patient
 - **Stage 2** (pragmatic trials) confirms causation for high-priority signals at ~{{< var recovery_trial_cost_per_patient >}}/patient
 
 The result is a self-improving system where every patient's experience helps the next patient make better decisions - transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a platform where anyone can contribute to medical knowledge.
@@ -92,6 +92,16 @@ The result is a self-improving system where every patient's experience helps the
 For the complete user-facing vision, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
 
 ## Introduction
+
+### The Human Cost of the Current System
+
+Every year, {{< var global_annual_deaths_curable_diseases >}} people die from diseases for which treatments exist or could exist. The tragedy is not that we lack medical knowledge. It's that our system for generating and validating that knowledge operates at a fraction of its potential capacity.
+
+Consider: a treatment that could save lives today takes an average of {{< var efficacy_lag_years >}} to complete Phase 2-4 clinical trials after initial discovery. During this delay, people die waiting. Since 1962, regulatory testing delays for drugs that were eventually approved have contributed to an estimated {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths, more than all wars and conflicts of the 20th century combined.
+
+This is not an argument against safety testing. It is an argument for *better* safety testing: faster, cheaper, more comprehensive, and continuously updated with real-world evidence rather than static pre-market snapshots.
+
+The framework presented here could eliminate this efficacy lag for existing treatments while simultaneously enabling continuous discovery of new therapeutic relationships. The technology exists. The data exists. What remains is the institutional will to deploy it.
 
 ### The Pharmacovigilance Gap
 
@@ -221,6 +231,8 @@ All measurements are converted to standardized units for cross-source compatibil
 - Ratings → 1-5 scale (normalized)
 
 ## Mathematical Framework
+
+**The short version:** We track what people take (treatments, supplements, foods) and how they feel (symptoms, mood, energy) over time. Then we look for patterns: "When people take more of X, does Y get better or worse?" We account for the fact that treatments take time to work (onset delay) and their effects fade (duration of action). The math below makes this rigorous.
 
 ### Data Structure
 
@@ -482,6 +494,8 @@ $$\text{spread}_O = \max(O) - \min(O)$$
 Variable relationships with zero spread are undefined and excluded.
 
 ## Predictor Impact Score
+
+**The short version:** Not all correlations are created equal. If we observe that "people who take Drug X report less pain," how confident should we be? The Predictor Impact Score (PIS) answers this by combining: (1) how strong is the relationship, (2) how many people show it, (3) does the drug come *before* the improvement (not after), and (4) is there a dose-response pattern. High PIS = worth investigating in a clinical trial. Low PIS = probably noise.
 
 The **Predictor Impact Score (PIS)** is a composite metric that quantifies treatment-outcome relationship strength from patient health data, operationalizing Bradford Hill causality criteria to prioritize drug effects for clinical trial validation. It integrates correlation strength, statistical significance, effect magnitude, and multiple Bradford Hill criteria into a single interpretable score. Higher scores indicate predictors with greater, more reliable impact on the outcome.
 
@@ -1313,6 +1327,8 @@ Flagged studies are:
 - Can be un-flagged after data correction
 
 ## Stage 2: Pragmatic Trial Confirmation
+
+**The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. The Oxford RECOVERY trial proved that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var recovery_trial_cost_reduction_factor >}} lower cost and 10x faster. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
 
 The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
