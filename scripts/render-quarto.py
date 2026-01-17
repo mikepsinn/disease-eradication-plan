@@ -335,6 +335,16 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
             if verbose:
                 print(f"[*] Created empty _variables.yml (no filtered file found)", flush=True)
 
+    # Use per-paper filtered parameters-and-calculations.qmd if available
+    # This ensures the appendix only includes parameters used by this paper.
+    # Renamed to canonical name so links from _variables.yml work correctly.
+    filtered_params = project_root / "knowledge" / "appendix" / f"parameters-and-calculations-{config_name}.qmd"
+    if config_name != "book" and filtered_params.exists():
+        target_params = build_temp / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
+        shutil.copy2(filtered_params, target_params)
+        if verbose:
+            print(f"[*] Using filtered parameters: parameters-and-calculations-{config_name}.qmd", flush=True)
+
     # Prepare config and index in temp directory
     original_cwd = os.getcwd()
     os.chdir(build_temp)

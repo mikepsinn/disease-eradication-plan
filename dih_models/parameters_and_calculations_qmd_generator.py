@@ -131,7 +131,7 @@ def generate_parameters_and_calculations_qmd(
     content = []
     content.append("---")
     content.append('title: "Methodology, Parameters, and Calculations"')
-    content.append('description: "Complete parameter definitions, formulas, uncertainty ranges, and data sources for the 1% Treaty economic analysis."')
+    content.append('description: "Parameter definitions, formulas, uncertainty ranges, and data sources."')
     content.append("keywords:")
     content.append("  - health economics methodology")
     content.append("  - clinical trial cost analysis")
