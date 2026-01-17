@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+LOG_FILE="git-hook.log"
+# Delete existing log
+rm -f "$LOG_FILE"
+# Redirect stdout and stderr to log file while keeping console output
+exec > >(tee -a "$LOG_FILE") 2>&1
+
 # Kill any existing Quarto processes
 # echo "🔪 Killing existing Quarto processes..."
 # pkill -9 quarto 2>/dev/null || true
