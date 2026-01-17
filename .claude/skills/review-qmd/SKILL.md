@@ -116,7 +116,7 @@ Read through the preview and evaluate:
 - [ ] **Scannable** - Headers, bullets, bold key points for skimmers
 
 ### Cut the Garbage
-- [ ] **Redundancy** - Same point made multiple times? Consolidate
+- [ ] **Redundancy** - Same point made multiple times? Consolidate (pre-render validation detects duplicate `_latex` vars automatically)
 - [ ] **Filler phrases** - "It is important to note that..." → delete
 - [ ] **Weak qualifiers** - "somewhat", "fairly", "quite" → remove or strengthen
 - [ ] **Orphaned content** - Sections that don't connect to main argument
@@ -154,12 +154,25 @@ Use Edit tool to fix identified issues. Track changes with TodoWrite.
 
 ## Phase 5: Validate
 
+Run pre-render validation to catch automated issues:
+
 ```bash
-.venv/Scripts/python.exe scripts/pre-render-validation.py <file>
+.venv/Scripts/python.exe scripts/pre-render-validation.py 2>&1 | grep -A2 "<filename>"
 .venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file> --line-range "1-50"
 ```
 
-Ensure no `[MISSING: variable]` errors, all values consistent.
+**Automated checks include:**
+- `[MISSING: variable]` - undefined variables
+- Duplicate `_latex` variables (redundant equations)
+- Broken links and anchor IDs
+- Missing citations and imports
+- Unclosed code blocks
+- Em-dashes (should be commas/periods)
+
+**If duplicate _latex variables found:**
+1. Review both occurrences - are they truly redundant?
+2. If redundant, remove the duplicate (keep the one in better context)
+3. If both needed, consider if they're explaining different aspects
 
 ---
 

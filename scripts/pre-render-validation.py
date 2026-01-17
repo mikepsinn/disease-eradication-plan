@@ -17,6 +17,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - _quarto.yml configuration (validates all chapter paths exist)
 - Figure files with YAML frontmatter (knowledge/figures/*.qmd should not have frontmatter)
 - Unclosed code blocks (missing closing ```) which cause code to leak into output
+- Duplicate _latex variables (same equation appearing multiple times indicates redundancy)
 
 Runs automatically via _quarto.yml pre-render hook
 """
@@ -795,6 +796,45 @@ def check_figure_file_frontmatter(content: str, filepath: str):
         )
 
 
+def check_duplicate_latex_variables(content: str, filepath: str):
+    """
+    Check for duplicate _latex variables within the same file.
+    Having the same _latex variable appear multiple times in a file indicates
+    redundant LaTeX equations that should be consolidated.
+    """
+    lines = content.split("\n")
+
+    # Pattern to match _latex variable references: {{< var something_latex >}}
+    latex_var_pattern = re.compile(r"\{\{<\s*var\s+([a-z_]+_latex)\s*>\}\}")
+
+    # Track all _latex variable occurrences with line numbers
+    latex_var_occurrences: Dict[str, List[int]] = {}
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments
+        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+            continue
+
+        matches = latex_var_pattern.finditer(line)
+        for match in matches:
+            var_name = match.group(1)
+            if var_name not in latex_var_occurrences:
+                latex_var_occurrences[var_name] = []
+            latex_var_occurrences[var_name].append(line_index + 1)
+
+    # Report duplicates
+    for var_name, line_numbers in latex_var_occurrences.items():
+        if len(line_numbers) > 2:
+            errors.append(
+                ValidationError(
+                    file=filepath,
+                    line=line_numbers[0],
+                    message=f"Redundant _latex variable: {{{{< var {var_name} >}}}} appears {len(line_numbers)} times (lines {', '.join(map(str, line_numbers))}). Allow maximum 2 instances (verification + summary).",
+                    context=f"First occurrence on line {line_numbers[0]}, also on: {', '.join(map(str, line_numbers[1:]))}",
+                )
+            )
+
+
 def check_unclosed_code_blocks(content: str, filepath: str):
     """
     Check for unclosed code blocks (``` without matching closing ```).
@@ -1431,6 +1471,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     # Check for unclosed code blocks
     check_unclosed_code_blocks(content, filepath)
+
+    # Check for duplicate _latex variables (indicates redundant equations)
+    check_duplicate_latex_variables(content, filepath)
 
 
 def main():

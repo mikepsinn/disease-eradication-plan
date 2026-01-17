@@ -51,6 +51,9 @@ The pre-render-validation.py script checks for:
    - Unclosed code blocks (``` without closing ```)
    - Figure files with YAML frontmatter
 
+5. **Redundancy Detection**
+   - Duplicate `_latex` variables (same equation used multiple times indicates redundancy)
+
 ## Process
 
 ### 1. Run validation script
@@ -125,6 +128,13 @@ Find the code block opening and add closing ```:
 ```  <-- Add this
 ```
 
+#### Duplicate _latex variables
+Having the same `_latex` variable multiple times indicates redundant LaTeX equations:
+1. Read both occurrences in context
+2. If truly redundant (same calculation shown twice), remove the duplicate
+3. Keep the instance with better surrounding explanation
+4. If both serve different purposes, they're likely not redundant (validation is a hint, not a rule)
+
 #### Quarto variable inside link text
 Variables have built-in links to their source, so wrapping them in additional links breaks rendering.
 
@@ -168,7 +178,8 @@ Fix in this order (highest impact first):
 4. **Unknown variables** - Shows raw {{< var >}} in output
 5. **Missing citations** - Shows [?] in output
 6. **GIF wrapping** - Breaks PDF build only
-7. **Em-dashes** - Style issue, lowest priority
+7. **Duplicate _latex vars** - Redundancy hint, review needed
+8. **Em-dashes** - Style issue, lowest priority
 
 ## Expected Outcome
 
