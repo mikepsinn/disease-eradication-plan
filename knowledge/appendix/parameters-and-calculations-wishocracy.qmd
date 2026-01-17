@@ -1,6 +1,18 @@
 ---
 title: "Methodology, Parameters, and Calculations"
-description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+description: "Complete parameter definitions, formulas, uncertainty ranges, and data sources for the 1% Treaty economic analysis."
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
 format:
   html:
     toc: true
@@ -9,13 +21,9 @@ format:
     code-fold: true
 ---
 
-::: {.content-visible when-format="html"}
+## Overview
 
-**2 parameters** used in this paper:
-
-This appendix documents the 2 parameters used in this paper. 
-
-**Total parameters**: 2
+This appendix documents all 2 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 1
 - Calculated values: 0
@@ -23,22 +31,22 @@ This appendix documents the 2 parameters used in this paper.
 
 ### Quick Navigation
 
-[External Data Sources](#sec-external) (1 parameters) | [Core Definitions](#sec-definitions) (1 parameters)
+[External Data Sources](#sec-external) (1 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
 
 
 ## External Data Sources {#sec-external}
 
-Parameters sourced from peer-reviewed publications and authoritative reports.
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
 ### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total global household wealth (2022/2023 estimate)
 
 **Source**: [Credit Suisse/UBS (2023) - Credit Suisse Global Wealth Report 2023](../references.qmd#cs-global-wealth-report-2023)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
@@ -48,7 +56,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
 
@@ -56,4 +64,73 @@ Estimated combined market capitalization of concentrated interest opposition (de
 
 :::
 
-:::
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```

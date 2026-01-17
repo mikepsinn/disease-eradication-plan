@@ -78,7 +78,7 @@ def generate_parameters_and_calculations_qmd(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
     available_refs: set = None,
-    params_file: Path = None
+    params_file: Path = None,
 ):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -96,6 +96,9 @@ def generate_parameters_and_calculations_qmd(
         output_path: Path to write the QMD file
         available_refs: Set of valid reference IDs from references.qmd (optional, for detecting reference links)
         params_file: Path to parameters.py (for auto-generating latex equations)
+
+    Returns:
+        Number of parameters included in the generated file
     """
     # Parse references.qmd for professional citation formatting
     references_path = output_path.parent.parent / "references.qmd"  # knowledge/references.qmd
@@ -623,3 +626,5 @@ def generate_parameters_and_calculations_qmd(
     print(f"     {len(external_params)} external parameters")
     print(f"     {len(calculated_params)} calculated parameters")
     print(f"     {len(definition_params)} core definitions")
+
+    return len(parameters)

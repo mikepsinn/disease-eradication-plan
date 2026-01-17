@@ -96,7 +96,7 @@ from dih_models.latex_generation import (
 from dih_models.parameters_and_calculations_qmd_generator import (
     generate_parameters_and_calculations_qmd,
 )
-from dih_models.paper_parameters_generator import generate_all_paper_parameters_qmd
+from dih_models.paper_parameters_and_calculations_qmd_generator import generate_all_paper_parameters_qmd
 from dih_models.quarto_formatting import (
     generate_html_with_tooltip,
 )

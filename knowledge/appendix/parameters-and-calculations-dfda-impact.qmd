@@ -1,6 +1,18 @@
 ---
 title: "Methodology, Parameters, and Calculations"
-description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+description: "Complete parameter definitions, formulas, uncertainty ranges, and data sources for the 1% Treaty economic analysis."
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
 format:
   html:
     toc: true
@@ -9,13 +21,9 @@ format:
     code-fold: true
 ---
 
-::: {.content-visible when-format="html"}
+## Overview
 
-**119 parameters** used in this paper:
-
-This appendix documents the 119 parameters used in this paper. 
-
-**Total parameters**: 119
+This appendix documents all 119 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 39
 - Calculated values: 50
@@ -23,7 +31,7 @@ This appendix documents the 119 parameters used in this paper.
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (50 parameters) | [External Data Sources](#sec-external) (39 parameters) | [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (50 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -32,13 +40,13 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Combination Therapy Space: 45.1B combinations {#sec-combination_therapy_disease_space}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.
 
 **Inputs**:
 
-- [Pairwise Drug Combinations](#sec-combination_therapy_pairs): 45.1M combinations
+- [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1M combinations
 - [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
 
 $$
@@ -50,7 +58,7 @@ Space_{combo} \\
 \end{gathered}
 $$
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
@@ -60,7 +68,7 @@ $$
 
 ### Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Unique pairwise drug combinations from known safe compounds (n choose 2)
 
@@ -70,7 +78,7 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 *Formula*: `SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2`
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
@@ -80,14 +88,14 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 ### Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.
 
 **Inputs**:
 
-- [Combination Therapy Space](#sec-combination_therapy_disease_space): 45.1B combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year): 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1B combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
 
 $$
 \begin{gathered}
@@ -102,28 +110,34 @@ T_{explore,combo} \\
 \end{gathered}
 $$
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-current_combination_exploration_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-current_combination_exploration_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-current_combination_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_combination_exploration_years.qmd >}}
 
 :::
 
 ### Known Safe Exploration Time (Current): 2.88k years {#sec-current_known_safe_exploration_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years to test all known safe drug-disease combinations at current global trial capacity
 
 **Inputs**:
 
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50M combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year): 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
 
 $$
 \begin{gathered}
@@ -138,21 +152,27 @@ T_{explore,safe} \\
 \end{gathered}
 $$
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-current_known_safe_exploration_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-current_known_safe_exploration_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-current_known_safe_exploration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_known_safe_exploration_years.qmd >}}
 
 :::
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
@@ -176,28 +196,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#opex-breakdown](../appendix/dfda-impact-paper#opex-breakdown)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_annual_opex.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual): $60B (95% CI: $50B - $75B)
-- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct): 97.7%
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
@@ -214,28 +240,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
 
 :::
 
 ### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll): 7.07B years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld): 873M years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07B years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
 
 $$
 \begin{gathered}
@@ -261,28 +293,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
 :::
 
 ### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: +/-2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150k deaths/day (SE: +/-7.50k deaths/day)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
 
 $$
 \begin{gathered}
@@ -295,28 +333,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
 
 :::
 
 ### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: +/-$30K)
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -346,29 +390,35 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_economic_value.qmd >}}
 
 :::
 
 ### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416M deaths
-- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years): 6 years (95% CI: 4 years - 9 years)
-- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight): 0.35 weight (SE: +/-0.07 weight)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
 $$
 \begin{gathered}
@@ -385,29 +435,35 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_yld.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yld.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yld.qmd >}}
 
 :::
 
 ### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416M deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024): 79 years (SE: +/-2 years)
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death): 62 years (SE: +/-3 years)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
 $$
 \begin{gathered}
@@ -424,28 +480,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_yll.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yll.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
 
 :::
 
 ### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
 
 **Inputs**:
 
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year): 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3:1
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 \begin{gathered}
@@ -494,28 +556,34 @@ Treatments_{dFDA,ann} \\
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 \begin{gathered}
@@ -541,21 +609,27 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#net-savings](../appendix/dfda-impact-paper#net-savings)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -575,27 +649,33 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_annual_opex_total.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_annual_opex_total.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_annual_opex_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
 
 :::
 
 ### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -607,28 +687,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-benefit](../appendix/dfda-impact-paper#npv-benefit)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_benefit_rd_only.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_benefit_rd_only.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_benefit_rd_only.qmd >}}
 
 :::
 
 ### NPV Net Benefit (R&D Only): $389B {#sec-dfda_npv_net_benefit_rd_only}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only): $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost): $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
 \begin{gathered}
@@ -675,27 +761,33 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-net-benefit](../appendix/dfda-impact-paper#npv-net-benefit)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_net_benefit_rd_only.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_net_benefit_rd_only.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_net_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_net_benefit_rd_only.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total): $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -705,28 +797,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-calculation](../appendix/dfda-impact-paper#npv-calculation)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_pv_annual_opex.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_pv_annual_opex.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex): $342M
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total): $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 \begin{gathered}
@@ -751,21 +849,27 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-total-cost](../appendix/dfda-impact-paper#npv-total-cost)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
 
 :::
 
 ### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -785,28 +889,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_upfront_cost_total.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_upfront_cost_total.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
 
 :::
 
 ### dFDA Queue Clearance Time: 36 years {#sec-dfda_queue_clearance_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years to treat all currently untreatable diseases with dFDA implementation. Queue clearance time divided by trial capacity multiplier.
 
 **Inputs**:
 
-- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years): 443 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3:1
+- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 \begin{gathered}
@@ -854,27 +964,33 @@ T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36 \\[0.
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_queue_clearance_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_queue_clearance_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_clearance_years.qmd >}}
 
 :::
 
 ### Daily R&D Savings from Trial Cost Reduction: $161M {#sec-dfda_rd_savings_daily}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
 
 $$
 \begin{gathered}
@@ -895,28 +1011,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction](../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_rd_savings_daily.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_rd_savings_daily.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_rd_savings_daily.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_rd_savings_daily.qmd >}}
 
 :::
 
 ### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only): $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost): $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
 \begin{gathered}
@@ -960,28 +1082,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#roi-simple](../appendix/dfda-impact-paper#roi-simple)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
 
 :::
 
 ### Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available): 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually): 23.4M patients/year
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4M patients/year
 
 $$
 \begin{gathered}
@@ -1026,29 +1154,35 @@ k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3
 \end{gathered}
 $$
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_multiplier.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_multiplier.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
 
 :::
 
 ### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
 
 **Inputs**:
 
-- [Global Annual DALY Burden](#sec-global_annual_daly_burden): 2.88B DALYs/year (SE: +/-150M DALYs/year)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88B DALYs/year (SE: ±150M DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -1105,28 +1239,34 @@ DALYs_{max} \\
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
 :::
 
 ### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565B DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: +/-$30K)
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -1187,28 +1327,34 @@ Value_{max} \\
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
 :::
 
 ### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150k deaths/day (SE: +/-7.50k deaths/day)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -1265,28 +1411,34 @@ Lives_{max} \\
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
 :::
 
 ### Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1931T hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565B DALYs
-- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys): 0.39 proportion (SE: +/-0.03 proportion)
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
 
 $$
 \begin{gathered}
@@ -1349,28 +1501,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
 
 :::
 
 ### dFDA Average Total Timeline Shift: 212 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
 
 **Inputs**:
 
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years): 204 years
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: +/-2 years)
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -1423,28 +1581,34 @@ T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_years.qmd >}}
 
 :::
 
 ### dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_treatment_acceleration_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
 
 **Inputs**:
 
-- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment): 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3:1
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
 
 $$
 \begin{gathered}
@@ -1496,28 +1660,34 @@ T_{accel} \\
 \end{gathered}
 $$
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
 
 :::
 
 ### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -1530,28 +1700,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_cost_reduction_factor.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_factor.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_factor.qmd >}}
 
 :::
 
 ### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
 \begin{gathered}
@@ -1564,28 +1740,34 @@ $$
 
 **Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
 
 :::
 
 ### Patients Fundable Annually: 23.4M patients/year {#sec-dih_patients_fundable_annually}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
-- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual): $21.7B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -1631,27 +1813,33 @@ $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dih_patients_fundable_annually.qmd >}}
 
+{{< include ../figures/sensitivity-table-dih_patients_fundable_annually.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dih_patients_fundable_annually.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_patients_fundable_annually.qmd >}}
 
 :::
 
 ### Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)
 
 **Inputs**:
 
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual): $21.8B
 
 $$
@@ -1694,27 +1882,33 @@ $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dih_treasury_trial_subsidies_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-dih_treasury_trial_subsidies_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dih_treasury_trial_subsidies_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_trial_subsidies_annual.qmd >}}
 
 :::
 
 ### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global): 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
 
 $$
 \begin{gathered}
@@ -1727,21 +1921,27 @@ $$
 
 **Methodology**: [Orphanet Journal of Rare Diseases (2024) (2024) - Rare Disease Treatment Gap](../references.qmd#rare-disease-only-5pct-have-treatment)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
 
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
 
 :::
 
 ### Possible Drug-Disease Combinations: 9.50M combinations {#sec-drug_disease_combinations_possible}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total possible drug-disease combinations using existing safe compounds
 
@@ -1761,7 +1961,7 @@ $$
 
 **Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
@@ -1771,14 +1971,14 @@ $$
 
 ### Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Fraction of possible drug-disease space actually tested (<1%)
 
 **Inputs**:
 
 - [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50M combinations
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
 
 $$
 \begin{gathered}
@@ -1792,28 +1992,34 @@ $$
 
 **Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-exploration_ratio.qmd >}}
 
+{{< include ../figures/sensitivity-table-exploration_ratio.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-exploration_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-exploration_ratio.qmd >}}
 
 :::
 
 ### Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. Uses global impact methodology: trial cost divided by total QALYs from downstream adoption. This measures research efficiency (discovery value), not clinical intervention ICER.
 
 **Inputs**:
 
-- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost): $20M (95% CI: $15M - $25M)
-- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated): 5.00M QALYs
+- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
+- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5.00M QALYs
 
 $$
 \begin{gathered}
@@ -1827,28 +2033,34 @@ $$
 
 **Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-pragmatic_trial_cost_per_qaly.qmd >}}
 
+{{< include ../figures/sensitivity-table-pragmatic_trial_cost_per_qaly.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-pragmatic_trial_cost_per_qaly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pragmatic_trial_cost_per_qaly.qmd >}}
 
 :::
 
 ### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.
 
 **Inputs**:
 
-- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly): $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly): $4.00
+- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
+- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4.00
 
 $$
 \begin{gathered}
@@ -1864,27 +2076,33 @@ k_{pragmatic:NIH} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
 
+{{< include ../figures/sensitivity-table-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
 
 :::
 
 ### RECOVERY Trial Total QALYs Generated: 5.00M QALYs {#sec-recovery_trial_total_qalys_generated}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). Uses global impact methodology: counts all downstream health gains from the discovery.
 
 **Inputs**:
 
-- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved): 1.00M lives (95% CI: 500k lives - 2.00M lives)
+- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1.00M lives (95% CI: 500k lives - 2.00M lives)
 - [QALYs per COVID Death Averted](#sec-qalys_per_covid_death_averted): 5 QALYs/death (95% CI: 3 QALYs/death - 10 QALYs/death)
 
 $$
@@ -1896,27 +2114,33 @@ QALY_{RECOVERY} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-recovery_trial_total_qalys_generated.qmd >}}
 
+{{< include ../figures/sensitivity-table-recovery_trial_total_qalys_generated.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-recovery_trial_total_qalys_generated.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-recovery_trial_total_qalys_generated.qmd >}}
 
 :::
 
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Average years until first treatment discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
 
 **Inputs**:
 
-- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years): 443 years
+- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
@@ -1928,28 +2152,34 @@ $$
 
 **Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-status_quo_avg_years_to_first_treatment.qmd >}}
 
+{{< include ../figures/sensitivity-table-status_quo_avg_years_to_first_treatment.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-status_quo_avg_years_to_first_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_avg_years_to_first_treatment.qmd >}}
 
 :::
 
 ### Status Quo Queue Clearance Time: 443 years {#sec-status_quo_queue_clearance_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment): 6.65k diseases
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year): 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65k diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
 \begin{gathered}
@@ -1960,28 +2190,34 @@ $$
 
 **Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-status_quo_queue_clearance_years.qmd >}}
 
+{{< include ../figures/sensitivity-table-status_quo_queue_clearance_years.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-status_quo_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_clearance_years.qmd >}}
 
 :::
 
 ### Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event): 13.0k years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event): 28.8k years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0k years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8k years
 
 $$
 \begin{gathered}
@@ -2013,28 +2249,34 @@ DALY_{thal} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_dalys_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_dalys_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_dalys_per_event.qmd >}}
 
 :::
 
 ### Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Deaths per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
 
 $$
 \begin{gathered}
@@ -2049,28 +2291,34 @@ Deaths_{thal} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_deaths_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_deaths_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_deaths_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_deaths_per_event.qmd >}}
 
 :::
 
 ### Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Survivors per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
 
 $$
 \begin{gathered}
@@ -2085,28 +2333,34 @@ N_{thal,survive} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_survivors_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_survivors_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_survivors_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_survivors_per_event.qmd >}}
 
 :::
 
 ### Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide): 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
-- [US Population Share 1960](#sec-thalidomide_us_population_share_1960): 6% (95% CI: 5.5% - 6.5%)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
+- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
 \begin{gathered}
@@ -2117,29 +2371,35 @@ N_{thal,US,prevent} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_us_cases_prevented.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_us_cases_prevented.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_us_cases_prevented.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_us_cases_prevented.qmd >}}
 
 :::
 
 ### Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years Lived with Disability per thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight): 0.4:1 (95% CI: 0.32:1 - 0.48:1)
-- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event): 540 cases
-- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan): 60 years (95% CI: 50 years - 70 years)
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
+- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
+- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
 
 $$
 \begin{gathered}
@@ -2158,27 +2418,33 @@ YLD_{thal} \\
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_yld_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_yld_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_yld_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yld_per_event.qmd >}}
 
 :::
 
 ### Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Years of Life Lost per thalidomide event (infant deaths)
 
 **Inputs**:
 
-- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event): 360 deaths
+- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
 
 $$
 \begin{gathered}
@@ -2194,28 +2460,34 @@ YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
 \end{gathered}
 $$
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_yll_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_yll_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yll_per_event.qmd >}}
 
 :::
 
 ### Ratio of Type Ii Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94B DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys): 2.59M DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
 
 $$
 \begin{gathered}
@@ -2268,27 +2540,33 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
 
-*Medium confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
 
+{{< include ../figures/sensitivity-table-type_ii_error_cost_ratio.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_ii_error_cost_ratio.qmd >}}
 
 :::
 
 ### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event): 41.8k DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8k DALYs
 
 $$
 \begin{gathered}
@@ -2323,28 +2601,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
 
-*Low confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
 
+{{< include ../figures/sensitivity-table-type_i_error_benefit_dalys.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-type_i_error_benefit_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
 
 :::
 
 ### Unexplored Therapeutic Frontier: 99.7% {#sec-unexplored_ratio}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Fraction of possible drug-disease space that remains unexplored (>99%)
 
 **Inputs**:
 
 - [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50M combinations
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
 
 $$
 \begin{gathered}
@@ -2361,25 +2645,31 @@ $$
 
 **Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-unexplored_ratio.qmd >}}
 
+{{< include ../figures/sensitivity-table-unexplored_ratio.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-unexplored_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-unexplored_ratio.qmd >}}
 
 :::
 
 ## External Data Sources {#sec-external}
 
-Parameters sourced from peer-reviewed publications and authoritative reports.
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
 ### ADAPTABLE Trial Cost per Patient: $929 {#sec-adaptable_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
 
@@ -2397,13 +2687,13 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 {{< include ../figures/distribution-adaptable_trial_cost_per_patient.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.
 
@@ -2421,25 +2711,25 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 {{< include ../figures/distribution-adaptable_trial_total_cost.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
 
 **Source**: [NIH (2015) - Antidepressant clinical trial exclusion rates](../references.qmd#antidepressant-trial-exclusion-rates)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
 
@@ -2457,13 +2747,13 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
-*High confidence | Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
@@ -2477,25 +2767,25 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
-*Medium confidence | Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Current clinical trial participation rate (0.06% of population)
 
 **Source**: [ACS CAN - Clinical trial patient participation rate](../references.qmd#clinical-trial-patient-participation-rate)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Global Population with Chronic Diseases: 2.40B people {#sec-current_disease_patients_global}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Global population with chronic diseases
 
@@ -2513,13 +2803,13 @@ Global population with chronic diseases
 
 {{< include ../figures/distribution-current_disease_patients_global.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Current Global Clinical Trials per Year: 3.30k trials/year {#sec-current_trials_per_year}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Current global clinical trials per year
 
@@ -2537,13 +2827,13 @@ Current global clinical trials per year
 
 {{< include ../figures/distribution-current_trials_per_year.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -2561,13 +2851,13 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 {{< include ../figures/distribution-current_trial_slots_available.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -2585,25 +2875,25 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of drugs that gain at least one new indication after initial approval
 
 **Source**: [Nature Medicine (2024) - Drug Repurposing Rate (~30%)](../references.qmd#drug-repurposing-rate)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -2617,13 +2907,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*Medium confidence | Peer-reviewed | Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
@@ -2637,13 +2927,13 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
-*High confidence | Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
@@ -2661,13 +2951,13 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 {{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -2681,13 +2971,13 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 {{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
 
-*High confidence | Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Global life expectancy (2024)
 
@@ -2701,13 +2991,13 @@ Global life expectancy (2024)
 
 {{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
-*High confidence | Peer-reviewed | Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
 
 ### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Global military spending in 2024
 
@@ -2721,13 +3011,13 @@ Global military spending in 2024
 
 {{< include ../figures/distribution-global_military_spending_annual_2024.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### YLD Proportion of Total DALYs: 0.39 proportion {#sec-global_yld_proportion_of_dalys}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.
 
@@ -2741,25 +3031,25 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 
 {{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
 
-*High confidence | Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Human Interactome Targeted by Drugs: 12% {#sec-human_interactome_targeted_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 **Source**: [PMC (2023) - Only ~12% of human interactome targeted](../references.qmd#clinical-trials-puzzle-interactome)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
 
@@ -2777,13 +3067,13 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 {{< include ../figures/distribution-new_disease_first_treatments_per_year.qmd >}}
 
-*Low confidence*
+*? Low confidence*
 
 :::
 
 ### NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.
 
@@ -2801,13 +3091,13 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 {{< include ../figures/distribution-nih_standard_research_cost_per_qaly.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Average cost to develop one drug in current system
 
@@ -2825,25 +3115,25 @@ Average cost to develop one drug in current system
 
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
-*High confidence | Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Phase I Safety Trial Duration: 2.3 years {#sec-phase_1_safety_duration_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Phase I safety trial duration
 
 **Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
 
-*High confidence | Peer-reviewed | Updated 2021*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Pragmatic Trial Median Cost per Patient (PMC Review): $97 {#sec-pmc_pragmatic_trial_median_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
 
@@ -2861,13 +3151,13 @@ Median cost per patient in embedded pragmatic clinical trials (systematic review
 
 {{< include ../figures/distribution-pmc_pragmatic_trial_median_cost_per_patient.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total number of rare diseases globally
 
@@ -2885,13 +3175,13 @@ Total number of rare diseases globally
 
 {{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
@@ -2909,13 +3199,13 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 {{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
@@ -2933,13 +3223,13 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 {{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### RECOVERY Trial Total Cost: $20M {#sec-recovery_trial_total_cost}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.
 
@@ -2957,13 +3247,13 @@ Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across m
 
 {{< include ../figures/distribution-recovery_trial_total_cost.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
@@ -2977,13 +3267,13 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 {{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
 
-*Medium confidence | Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years {#sec-regulatory_delay_suffering_period_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
@@ -3001,25 +3291,25 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
-*Medium confidence | Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Return on investment from smallpox eradication campaign
 
 **Source**: [CSIS - Smallpox Eradication ROI](../references.qmd#smallpox-eradication-roi)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Standard economic value per QALY
 
@@ -3033,13 +3323,13 @@ Standard economic value per QALY
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
@@ -3057,13 +3347,13 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 {{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
@@ -3081,13 +3371,13 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 {{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Mortality rate for thalidomide-affected infants (died within first year)
 
@@ -3105,13 +3395,13 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 {{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Average lifespan for thalidomide survivors
 
@@ -3129,13 +3419,13 @@ Average lifespan for thalidomide survivors
 
 {{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 US share of world population in 1960
 
@@ -3153,13 +3443,13 @@ US share of world population in 1960
 
 {{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -3177,13 +3467,13 @@ Phase 3 cost per patient (median from FDA study)
 
 {{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Value of Statistical Life (conservative estimate)
 
@@ -3201,7 +3491,7 @@ Value of Statistical Life (conservative estimate)
 
 {{< include ../figures/distribution-value_of_statistical_life.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
@@ -3211,7 +3501,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### ADAPTABLE Trial Patients Enrolled: 15.1k patients {#sec-adaptable_trial_patients}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.
 
@@ -3221,7 +3511,7 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 ### Mid-Range Funding for Commercial Dct Platform: $500M {#sec-dct_platform_funding_medium}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Mid-range funding for commercial DCT platform
 
@@ -3231,7 +3521,7 @@ Mid-range funding for commercial DCT platform
 
 ### dFDA Direct Funding Cost per DALY: $0.841 {#sec-dfda_direct_funding_cost_per_daly}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).
 
@@ -3241,7 +3531,7 @@ Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~4
 
 ### dFDA Direct Funding NPV (Queue Clearance Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.
 
@@ -3251,7 +3541,7 @@ NPV of direct funding ($21.76B/year for medical research after bond/IAB allocati
 
 ### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
 
@@ -3269,7 +3559,7 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 ### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment Core framework build cost
 
@@ -3287,7 +3577,7 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment community support costs
 
@@ -3305,7 +3595,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 ### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
@@ -3323,7 +3613,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment maintenance costs
 
@@ -3341,7 +3631,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 ### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment regulatory coordination costs
 
@@ -3359,7 +3649,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 ### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
@@ -3377,7 +3667,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 ### Decentralized Framework for Drug Assessment One-Time Build Cost: $40M {#sec-dfda_upfront_build}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment one-time build cost (central estimate)
 
@@ -3387,7 +3677,7 @@ Decentralized Framework for Drug Assessment one-time build cost (central estimat
 
 ### Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum): $46M {#sec-dfda_upfront_build_max}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Decentralized Framework for Drug Assessment one-time build cost (high estimate)
 
@@ -3397,7 +3687,7 @@ Decentralized Framework for Drug Assessment one-time build cost (high estimate)
 
 ### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 DIH broader initiatives annual opex (medium case)
 
@@ -3415,7 +3705,7 @@ DIH broader initiatives annual opex (medium case)
 
 ### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 DIH broader initiatives upfront cost (medium case)
 
@@ -3433,7 +3723,7 @@ DIH broader initiatives upfront cost (medium case)
 
 ### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
 
@@ -3443,7 +3733,7 @@ Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incen
 
 ### Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.
 
@@ -3461,7 +3751,7 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 ### Eventually Avoidable Death Percentage: 92.6% {#sec-eventually_avoidable_death_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.
 
@@ -3479,7 +3769,7 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 ### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
 
@@ -3489,7 +3779,7 @@ Annual funding for IAB political incentive mechanism (independent expenditures s
 
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
 
@@ -3503,7 +3793,7 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
 
@@ -3517,7 +3807,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Standard time horizon for NPV analysis
 
@@ -3531,7 +3821,7 @@ Standard time horizon for NPV analysis
 
 ### QALYs per COVID Death Averted: 5 QALYs/death {#sec-qalys_per_covid_death_averted}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Average QALYs gained per COVID death averted. Conservative estimate reflecting older age distribution of COVID mortality. See confidence_interval for range.
 
@@ -3549,7 +3839,7 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 ### Safe Compounds Available for Testing: 9.50k compounds {#sec-safe_compounds_count}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)
 
@@ -3567,7 +3857,7 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 ### Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)
 
@@ -3585,7 +3875,7 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual funding from 1% of global military spending redirected to DIH
 
@@ -3595,7 +3885,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 1% reduction in military spending/war costs from treaty
 
@@ -3609,7 +3899,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 ### Trial-Relevant Diseases: 1.00k diseases {#sec-trial_relevant_diseases_count}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)
 
@@ -3627,7 +3917,7 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
 
@@ -3637,7 +3927,7 @@ Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentag
 
 ### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
@@ -3649,4 +3939,73 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
 :::
 
-:::
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```

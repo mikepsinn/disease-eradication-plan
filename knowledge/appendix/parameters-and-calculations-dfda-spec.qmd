@@ -1,6 +1,18 @@
 ---
 title: "Methodology, Parameters, and Calculations"
-description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+description: "Complete parameter definitions, formulas, uncertainty ranges, and data sources for the 1% Treaty economic analysis."
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
 format:
   html:
     toc: true
@@ -9,13 +21,9 @@ format:
     code-fold: true
 ---
 
-::: {.content-visible when-format="html"}
+## Overview
 
-**10 parameters** used in this paper:
-
-This appendix documents the 10 parameters used in this paper. 
-
-**Total parameters**: 10
+This appendix documents all 10 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 7
 - Calculated values: 2
@@ -23,7 +31,7 @@ This appendix documents the 10 parameters used in this paper.
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (2 parameters) | [External Data Sources](#sec-external) (7 parameters) | [Core Definitions](#sec-definitions) (1 parameters)
+[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (7 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -32,13 +40,13 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: +/-2 years)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -51,28 +59,34 @@ $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
 :::
 
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient): $500 (95% CI: $400 - $2.50K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
 
 $$
 \begin{gathered}
@@ -85,25 +99,31 @@ $$
 
 **Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
 
-*High confidence*
+*✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
 
+{{< include ../figures/sensitivity-table-recovery_trial_cost_reduction_factor.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
 
 :::
 
 ## External Data Sources {#sec-external}
 
-Parameters sourced from peer-reviewed publications and authoritative reports.
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
 ### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -121,13 +141,13 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 {{< include ../figures/distribution-current_trial_slots_available.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -141,13 +161,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*Medium confidence | Peer-reviewed | Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Annual deaths from all diseases and aging globally
 
@@ -161,25 +181,25 @@ Annual deaths from all diseases and aging globally
 
 {{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Phase 3 trial total cost (minimum)
 
 **Source**: [SofproMed - Phase 3 cost per trial range](../references.qmd#phase-3-cost-per-trial-range)
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
@@ -197,13 +217,13 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 {{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
 ### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
@@ -221,13 +241,13 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 {{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
 
-*Medium confidence*
+*~ Medium confidence*
 
 :::
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -245,7 +265,7 @@ Phase 3 cost per patient (median from FDA study)
 
 {{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
 
-*High confidence*
+*✓ High confidence*
 
 :::
 
@@ -255,7 +275,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Show details"}
+::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
 
@@ -271,4 +291,73 @@ Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calc
 
 :::
 
-:::
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```
