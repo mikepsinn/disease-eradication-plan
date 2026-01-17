@@ -399,7 +399,13 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
     print(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
 
 
+from dih_models.environment_logger import log_environment_info, log_mc_fingerprint
+
+
 def main():
+    # Log environment info first for debugging MC reproducibility
+    log_environment_info()
+
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
 
@@ -626,7 +632,21 @@ def main():
             from dih_models.uncertainty import simulate_with_propagation as _sim, one_at_a_time_sensitivity as _sens
             # Use fixed seed for reproducibility (avoids git churn from random variation)
             RANDOM_SEED = 42
+
+            # Count parameters with uncertainty metadata for logging
+            params_with_uncertainty = 0
+            for pname, pmeta in parameters.items():
+                pval = pmeta.get("value")
+                has_dist = hasattr(pval, "distribution") and pval.distribution
+                has_std = hasattr(pval, "std_error") and pval.std_error
+                has_ci = hasattr(pval, "confidence_interval") and pval.confidence_interval
+                if has_dist or has_std or has_ci:
+                    params_with_uncertainty += 1
+
             sims = _sim(parameters, n=10000, seed=RANDOM_SEED)
+
+            # Log MC fingerprint for reproducibility debugging
+            log_mc_fingerprint(sims, seed=RANDOM_SEED, n_samples=10000, n_params_with_uncertainty=params_with_uncertainty)
             import json
             try:
                 import numpy as np

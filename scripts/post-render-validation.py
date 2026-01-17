@@ -357,6 +357,71 @@ def check_broken_internal_links(content, file_path, output_dir):
     return errors
 
 
+def check_bibliography_annotations(content, file_path):
+    """Check that bibliography note/abstract fields are being rendered (not stripped by CSL)"""
+    errors = []
+
+    # Look for references section
+    # Quarto generates: <section id="references" ...> or <div id="refs" ...>
+    refs_pattern = r'<(?:section|div)[^>]*(?:id=["\'](?:references|refs)["\']|class=["\'][^"\']*references[^"\']*["\'])[^>]*>'
+    refs_match = re.search(refs_pattern, content, re.IGNORECASE)
+
+    if not refs_match:
+        # No references section found - that's OK for pages without citations
+        return errors
+
+    # Find the references section content
+    refs_start = refs_match.end()
+    # Find closing tag (simplified - look for next major section or end)
+    refs_section_pattern = r'<(?:section|div)[^>]*(?:id=["\'](?:references|refs)["\'])[^>]*>(.*?)</(?:section|div)>'
+    refs_section_match = re.search(refs_section_pattern, content, re.IGNORECASE | re.DOTALL)
+
+    if not refs_section_match:
+        # Can't find complete references section
+        return errors
+
+    refs_content = refs_section_match.group(1)
+
+    # Count citation entries (csl-entry class)
+    citation_entries = re.findall(r'<div[^>]*class=["\'][^"\']*csl-entry[^"\']*["\']', refs_content)
+    num_citations = len(citation_entries)
+
+    if num_citations == 0:
+        # No citations found in references section
+        return errors
+
+    # Check for rendered abstracts/notes
+    # nature-annotated.csl renders abstracts in quotes or with specific formatting
+    # Look for patterns indicating abstract content is present:
+    # 1. Quoted text (abstracts often rendered in quotes)
+    # 2. Long text blocks within citation entries
+    # 3. Specific CSL annotation classes
+
+    # Pattern for quoted abstracts (nature-annotated style)
+    quoted_abstracts = re.findall(r'["\u201c][^"\u201d]{100,}["\u201d]', refs_content)
+
+    # Pattern for annotation divs (some CSL styles use these)
+    annotation_divs = re.findall(r'<div[^>]*class=["\'][^"\']*(?:csl-block|annotation|abstract|note)[^"\']*["\']', refs_content, re.IGNORECASE)
+
+    # Check if we have any indication of rendered annotations
+    has_annotations = len(quoted_abstracts) > 0 or len(annotation_divs) > 0
+
+    # If we have many citations but no visible annotations, that's suspicious
+    # (assuming the bib file has abstracts - we can't check that here)
+    if num_citations >= 3 and not has_annotations:
+        # This is a warning, not an error - the bib might not have abstracts
+        # Only flag if the refs section is suspiciously short for the citation count
+        avg_chars_per_citation = len(refs_content) / num_citations
+
+        # A citation with abstract should be at least 500+ chars typically
+        # Basic citation (author, title, journal, year) is ~200-300 chars
+        if avg_chars_per_citation < 400:
+            context = f"References section has {num_citations} citations but may be missing abstracts/notes (avg {int(avg_chars_per_citation)} chars/citation). Check that nature-annotated.csl is being used and .bib has abstract fields."
+            errors.append(ValidationError(file_path, 0, "BIBLIOGRAPHY_MISSING_ANNOTATIONS", context))
+
+    return errors
+
+
 def check_meta_description_match(content, file_path):
     """Check that og:description and name="description" meta tags have matching values"""
     errors = []
@@ -469,6 +534,7 @@ def validate_file(file_path, output_dir):
     errors.extend(check_qmd_file_links(content, file_path))
     errors.extend(check_broken_internal_links(content, file_path, output_dir))
     errors.extend(check_meta_description_match(content, file_path))
+    errors.extend(check_bibliography_annotations(content, file_path))
 
     return errors
 
@@ -582,6 +648,11 @@ def main():
     if "MISSING_META_DESCRIPTION" in errors_by_type:
         print("   - Missing meta description: Page has <meta property=\"og:description\"> but no <meta name=\"description\">")
         print("     This is unusual - both should be present. Check Quarto configuration.")
+    if "BIBLIOGRAPHY_MISSING_ANNOTATIONS" in errors_by_type:
+        print("   - Bibliography missing annotations: References section appears to lack abstract/note content")
+        print("     Ensure nature-annotated.csl (or similar annotated CSL) is specified in _quarto*.yml")
+        print("     Verify .bib files have 'abstract' and 'note' fields populated")
+        print("     Check that bibliography: and csl: are correctly configured")
 
     return 1
 
