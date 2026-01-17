@@ -1215,6 +1215,8 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplie
 
 These improvements compound multiplicatively to produce the {{< var dfda_trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
+**Generalizability of Cost Savings**: Critics regarding RECOVERY and ADAPTABLE as outliers should note that a [systematic review of 64 embedded pragmatic clinical trials](../references.qmd#pmc-pragmatic-trial-cost) found a median cost per participant of just **$97** (IQR $19–$478). High-cost traditional trials are necessary only for first-in-human safety testing. For the **{{< var drug_disease_combinations_possible >}}** unexplored combinations of *already-safe* compounds (repurposing), pragmatic protocols are sufficient, covering the vast majority (>90%) of the therapeutic search space.
+
 **Sensitivity of research acceleration estimate:** The tornado chart below shows which input parameters have the largest impact on the trial capacity multiplier. The width of each bar shows how much the multiplier changes when that parameter varies across its uncertainty range:
 
 {{< include ../figures/tornado-dfda_trial_capacity_multiplier.qmd >}}
@@ -1960,7 +1962,7 @@ This represents the funding capacity from the 1% Treaty Fund alone, without assu
 
 - {{< var dfda_trial_capacity_multiplier >}}× more completed trials/year
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → proportionally more approvals
-- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var dfda_pragmatic_trial_cost_per_patient >}} cost per patient (using conservative ADAPTABLE-based estimate; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}} under exceptional conditions)
+- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var dfda_pragmatic_trial_cost_per_patient >}} cost per patient (supported by [meta-analysis of 64 trials](../references.qmd#pmc-pragmatic-trial-cost) showing $97 median cost; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}).
 
 
 

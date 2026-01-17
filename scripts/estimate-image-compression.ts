@@ -38,8 +38,12 @@ async function estimateCompression() {
     // Sort by size initially for processing order (biggest first is usually most interesting)
     allImages.sort((a, b) => b.size - a.size);
 
-    console.log(`Found ${allImages.length} images to analyze.`);
-    console.log('Starting analysis (this may take a moment)...');
+    // OPTIMIZATION: Only analyze the top 50 largest files as they contain majority of savings
+    // Analyzing 700+ small files takes excessive time for minimal gain.
+    const imagesToAnalyze = allImages.slice(0, 50);
+
+    console.log(`Found ${allImages.length} images > ${await formatBytes(MIN_SIZE_BYTES)}. Analysis limited to top ${imagesToAnalyze.length} largest files for speed.`);
+    console.log('Starting analysis...');
 
     let report = `# Image Compression Analysis Report (Same Format Only)\n\n`;
     report += `Generated at: ${new Date().toISOString()}\n`;
@@ -48,54 +52,57 @@ async function estimateCompression() {
     let totalOriginal = 0;
     let totalOptimized = 0;
     let processedCount = 0;
-
     const opportunities: Array<{ file: string, original: number, optimized: number, savings: number, percent: number }> = [];
 
-    for (const img of allImages) {
-        totalOriginal += img.size;
-        processedCount++;
+    // Process in batches to control concurrency
+    const BATCH_SIZE = 8;
 
-        if (processedCount % 10 === 0) {
-            process.stdout.write(`\rProcessed ${processedCount}/${allImages.length} images...`);
-        }
+    // Parallel processing with batching
 
+    const processImage = async (img: typeof allImages[0]) => {
         const input = sharp(img.path, { animated: true });
-
         let optimizedBuffer: Buffer | null = null;
         try {
             if (img.ext === '.png') {
-                // PNG: moderate compression, keep palette if possible, quality 80 is usually safe visual fidelity
-                // effort 10 is max compression effort for png
                 optimizedBuffer = await input.clone().png({ quality: 80, compressionLevel: 6, palette: true }).toBuffer();
             } else if (img.ext === '.jpg' || img.ext === '.jpeg') {
-                // JPEG: mozjpeg is great, quality 80 is very high standard
                 optimizedBuffer = await input.clone().jpeg({ quality: 80, mozjpeg: true }).toBuffer();
             } else if (img.ext === '.gif') {
-                // GIF: difficult to compress without changing format, but we'll try basic optimization
                 optimizedBuffer = await input.clone().gif({ effort: 1 }).toBuffer();
             } else if (img.ext === '.webp') {
                 optimizedBuffer = await input.clone().webp({ quality: 80 }).toBuffer();
             }
-        } catch (e) {
-            // console.warn(`Error optimizing ${img.file}: ${e}`);
-        }
+        } catch (e) { return null; }
+        return optimizedBuffer;
+    };
 
-        let optSize = img.size;
-        if (optimizedBuffer && optimizedBuffer.length < img.size) {
-            optSize = optimizedBuffer.length;
-        }
+    // Parallel processing with batching
+    for (let i = 0; i < imagesToAnalyze.length; i += BATCH_SIZE) {
+        const batch = imagesToAnalyze.slice(i, i + BATCH_SIZE);
+        const results = await Promise.all(batch.map(async img => ({ img, buffer: await processImage(img) })));
 
-        totalOptimized += optSize;
+        for (const res of results) {
+            const { img, buffer } = res;
+            totalOriginal += img.size;
+            processedCount++;
 
-        if (optSize < img.size) {
-            opportunities.push({
-                file: img.file,
-                original: img.size,
-                optimized: optSize,
-                savings: img.size - optSize,
-                percent: ((img.size - optSize) / img.size) * 100
-            });
+            let optSize = img.size;
+            if (buffer && buffer.length < img.size) {
+                optSize = buffer.length;
+            }
+            totalOptimized += optSize;
+
+            if (optSize < img.size) {
+                opportunities.push({
+                    file: img.file,
+                    original: img.size,
+                    optimized: optSize,
+                    savings: img.size - optSize,
+                    percent: ((img.size - optSize) / img.size) * 100
+                });
+            }
         }
+        process.stdout.write(`\rProcessed ${processedCount}/${imagesToAnalyze.length} images...`);
     }
 
     process.stdout.write('\n'); // Newline after progress
