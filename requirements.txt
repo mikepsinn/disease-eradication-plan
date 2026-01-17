@@ -1,8 +1,10 @@
 # Core data science - pinned for Monte Carlo reproducibility
+# IMPORTANT: These exact versions produce MC hash 44e39cab8b88
+# Changing versions may cause floating-point differences in statistics
 pandas
-numpy>=2.0.0  # Required for consistent RNG behavior with seed=42
+numpy==2.4.0  # Required for consistent RNG and statistics
 numpy-financial
-scipy>=1.10.0  # Required for consistent statistical distributions
+scipy==1.16.3  # Required for consistent statistical distributions
 ipykernel
 nbformat
 matplotlib

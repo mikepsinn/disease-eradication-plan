@@ -34,7 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
-    "generate:everything": "python scripts/generate-everything-parameters-variables-calculations-references.py",
+    "generate:everything": ".venv\\Scripts\\python.exe scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:economics:pdf": "python scripts/render-quarto.py economics --to pdf",
     "render:wishocracy:publish": "python scripts/render-quarto.py wishocracy --publish",
     "audit-hardcoded": "tsx scripts/audit-hardcoded-all.ts",

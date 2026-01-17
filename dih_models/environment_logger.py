@@ -180,37 +180,104 @@ def log_mc_fingerprint(
     return sim_hash
 
 
-def check_reproducibility_requirements() -> bool:
+def check_reproducibility_requirements(strict: bool = False) -> bool:
     """
     Check if the environment meets reproducibility requirements.
+
+    Args:
+        strict: If True, require exact version match for MC reproducibility
 
     Returns:
         True if requirements are met, False otherwise
     """
     issues = []
+    warnings = []
+
+    # Expected versions for reproducible MC results
+    # These are the versions in .venv that produce hash 44e39cab8b88
+    EXPECTED_NUMPY = (2, 4)  # 2.4.x
+    EXPECTED_SCIPY = (1, 16)  # 1.16.x
 
     # Check NumPy version
     try:
         import numpy as np
-        numpy_version = tuple(map(int, np.__version__.split(".")[:2]))
-        if numpy_version < (2, 2):
-            issues.append(f"NumPy version {np.__version__} < 2.2.0 (may have RNG differences)")
+        numpy_parts = np.__version__.split(".")
+        numpy_version = (int(numpy_parts[0]), int(numpy_parts[1]))
+
+        if strict and numpy_version != EXPECTED_NUMPY:
+            issues.append(
+                f"NumPy {np.__version__} != expected {EXPECTED_NUMPY[0]}.{EXPECTED_NUMPY[1]}.x "
+                f"(use .venv Python for reproducible MC results)"
+            )
+        elif numpy_version < (2, 0):
+            warnings.append(f"NumPy {np.__version__} < 2.0.0 (may have RNG differences)")
     except ImportError:
         issues.append("NumPy not installed")
 
     # Check SciPy version
     try:
         import scipy
-        scipy_version = tuple(map(int, scipy.__version__.split(".")[:2]))
-        if scipy_version < (1, 10):
-            issues.append(f"SciPy version {scipy.__version__} < 1.10.0")
+        scipy_parts = scipy.__version__.split(".")
+        scipy_version = (int(scipy_parts[0]), int(scipy_parts[1]))
+
+        if strict and scipy_version != EXPECTED_SCIPY:
+            issues.append(
+                f"SciPy {scipy.__version__} != expected {EXPECTED_SCIPY[0]}.{EXPECTED_SCIPY[1]}.x "
+                f"(use .venv Python for reproducible MC results)"
+            )
+        elif scipy_version < (1, 10):
+            warnings.append(f"SciPy {scipy.__version__} < 1.10.0")
     except ImportError:
         issues.append("SciPy not installed")
 
-    if issues:
+    # Check if using venv Python
+    venv_indicator = os.path.join(".venv", "")
+    if venv_indicator not in sys.executable:
+        warnings.append(
+            f"Not using .venv Python (using {sys.executable}). "
+            f"MC results may differ from git hook."
+        )
+
+    if warnings:
         print("[WARN] Reproducibility concerns:")
+        for warning in warnings:
+            print(f"  - {warning}")
+
+    if issues:
+        print("[ERROR] Reproducibility requirements not met:")
         for issue in issues:
             print(f"  - {issue}")
         return False
 
     return True
+
+
+def enforce_venv_python():
+    """
+    Check that we're running with the project's venv Python.
+
+    Raises SystemExit if not using venv Python, to ensure reproducible results.
+    """
+    venv_paths = [
+        os.path.join(".venv", "Scripts", "python.exe"),  # Windows
+        os.path.join(".venv", "bin", "python"),  # Unix
+    ]
+
+    is_venv = any(
+        os.path.normpath(venv_path) in os.path.normpath(sys.executable)
+        for venv_path in venv_paths
+    )
+
+    if not is_venv:
+        print("=" * 70)
+        print("[ERROR] NOT USING VENV PYTHON")
+        print("=" * 70)
+        print(f"Current Python: {sys.executable}")
+        print()
+        print("For reproducible Monte Carlo results, use the project's venv:")
+        print("  Windows: .venv\\Scripts\\python.exe scripts/generate-everything-...")
+        print("  Unix:    .venv/bin/python scripts/generate-everything-...")
+        print()
+        print("Or use: pnpm run generate:everything")
+        print("=" * 70)
+        sys.exit(1)
