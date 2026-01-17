@@ -116,7 +116,7 @@
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:pre-render": "python scripts/pre-render-validation.py",
     "validate:post-render": "python scripts/post-render-validation.py",
-    "render:economics": "python scripts/render-quarto.py economics --to html",
+    "render:economics": "python scripts/render-quarto.py economics",
     "render:wishocracy": "python scripts/render-quarto.py wishocracy",
     "render:wishocracy:pdf": "python scripts/render-quarto.py wishocracy --to pdf",
     "render:iab": "python scripts/render-quarto.py iab",

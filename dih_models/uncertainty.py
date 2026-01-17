@@ -48,14 +48,14 @@ except Exception:  # pragma: no cover
     DistributionType = None  # type: ignore
 
 
-def _rng(seed: int | None):
+def _rng(seed: Optional[int]):
     if np is not None:
         return np.random.default_rng(seed)
     random.seed(seed or 0)
     return None
 
 
-def _bounded(value: float, bounds: Tuple[float | None, float | None]):
+def _bounded(value: float, bounds: Tuple[Optional[float], Optional[float]]):
     lo, hi = bounds
     if lo is not None:
         value = max(value, lo)
@@ -206,7 +206,7 @@ def sample_parameter(param: Any, n: int = 10000, seed: Optional[int] = None) -> 
     return [_bounded(mean, bounds) for _ in range(n)]
 
 
-def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | None = None):
+def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: Optional[int] = None):
     """Sample all Parameter values.
 
     `parameters` is the dict produced by parse_parameters_file(), where each
@@ -238,7 +238,7 @@ def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | 
     return results
 
 
-def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | None = None):
+def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: Optional[int] = None):
     """Sample all Parameter values with proper uncertainty propagation.
 
     Unlike simulate(), this function properly handles calculated parameters by:

@@ -10,7 +10,7 @@ authors = [
     {name = "Mike P. Sinn", email = "mike@dih.earth"}
 ]
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 
 dependencies = [
     "pandas",
@@ -51,7 +51,7 @@ packages = ["dih_models", "dih_models.plotting"]
 # Ruff configuration (replaces flake8, black, isort)
 [tool.ruff]
 line-length = 120
-target-version = "py38"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = [
@@ -90,7 +90,7 @@ ignore = [
 
 # MyPy configuration
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
@@ -107,7 +107,7 @@ extend-ignore = [
 
 # Pyright/Pylance configuration
 [tool.pyright]
-pythonVersion = "3.8"
+pythonVersion = "3.12"
 typeCheckingMode = "basic"  # Less strict than "strict"
 reportUnknownParameterType = false  # Suppress "type of parameter is unknown" (for Any fallbacks)
 reportUnknownArgumentType = false  # Suppress "argument type is unknown"
