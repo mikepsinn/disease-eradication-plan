@@ -252,32 +252,66 @@ def check_reproducibility_requirements(strict: bool = False) -> bool:
     return True
 
 
-def enforce_venv_python():
+# Expected versions for reproducible MC results (hash: 44e39cab8b88)
+# These must match requirements.txt
+REQUIRED_NUMPY = "2.4"  # Major.minor
+REQUIRED_SCIPY = "1.16"  # Major.minor
+
+
+def enforce_reproducible_environment():
     """
-    Check that we're running with the project's venv Python.
+    Verify numpy/scipy versions match requirements for reproducible MC results.
 
-    Raises SystemExit if not using venv Python, to ensure reproducible results.
+    This checks actual versions, not whether we're in a venv, because:
+    - CI installs pinned versions via requirements.txt
+    - Local venv has the same pinned versions
+    - What matters is version consistency, not the Python path
+
+    Raises SystemExit if versions don't match.
     """
-    venv_paths = [
-        os.path.join(".venv", "Scripts", "python.exe"),  # Windows
-        os.path.join(".venv", "bin", "python"),  # Unix
-    ]
+    try:
+        import numpy as np
+        numpy_version = ".".join(np.__version__.split(".")[:2])
+    except ImportError:
+        numpy_version = None
 
-    is_venv = any(
-        os.path.normpath(venv_path) in os.path.normpath(sys.executable)
-        for venv_path in venv_paths
-    )
+    try:
+        import scipy
+        scipy_version = ".".join(scipy.__version__.split(".")[:2])
+    except ImportError:
+        scipy_version = None
 
-    if not is_venv:
+    errors = []
+    if numpy_version is None:
+        errors.append("NumPy not installed")
+    elif numpy_version != REQUIRED_NUMPY:
+        errors.append(f"NumPy {np.__version__} != required {REQUIRED_NUMPY}.x")
+
+    if scipy_version is None:
+        errors.append("SciPy not installed")
+    elif scipy_version != REQUIRED_SCIPY:
+        errors.append(f"SciPy {scipy.__version__} != required {REQUIRED_SCIPY}.x")
+
+    if errors:
         print("=" * 70)
-        print("[ERROR] NOT USING VENV PYTHON")
+        print("[ERROR] VERSION MISMATCH - MC results may not be reproducible")
         print("=" * 70)
-        print(f"Current Python: {sys.executable}")
+        for e in errors:
+            print(f"  - {e}")
         print()
-        print("For reproducible Monte Carlo results, use the project's venv:")
-        print("  Windows: .venv\\Scripts\\python.exe scripts/generate-everything-...")
-        print("  Unix:    .venv/bin/python scripts/generate-everything-...")
+        print("Required versions (from requirements.txt):")
+        print(f"  numpy=={REQUIRED_NUMPY}.0")
+        print(f"  scipy=={REQUIRED_SCIPY}.3")
         print()
-        print("Or use: pnpm run generate:everything")
+        print("Fix: pip install -r requirements.txt")
+        print("  or: .venv/Scripts/activate && pip install -r requirements.txt")
         print("=" * 70)
         sys.exit(1)
+
+    print(f"[OK] Environment verified: NumPy {numpy_version}, SciPy {scipy_version}")
+
+
+# Keep old function name as alias for backwards compatibility
+def enforce_venv_python():
+    """Deprecated: Use enforce_reproducible_environment() instead."""
+    enforce_reproducible_environment()

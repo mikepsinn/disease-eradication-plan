@@ -8,7 +8,7 @@
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 3.2.0
+ * Version: 3.2.1
  */
 
 (function() {
@@ -157,7 +157,12 @@
   var STORAGE_KEY = 'dih-hide-uncertainty';
 
   function createUncertaintyToggle() {
-    var hasUncertaintyData = document.querySelector('a[title*="95% CI"]') ||
+    // Check for parameter links with CI text in content (not title attribute)
+    var paramLinks = document.querySelectorAll('a.parameter-link');
+    var hasParameterWithCI = Array.from(paramLinks).some(function(link) {
+      return link.textContent.includes('95% CI');
+    });
+    var hasUncertaintyData = hasParameterWithCI ||
                              document.querySelector('.tippy-content') ||
                              document.body.textContent.includes('95% CI');
 
@@ -200,12 +205,18 @@
   }
 
   function processUncertaintyText(hide) {
-    var links = document.querySelectorAll('a[title*="95% CI"]');
+    // Select parameter-link elements (CI text is in text content, not title attribute)
+    var links = document.querySelectorAll('a.parameter-link');
 
     links.forEach(function(link) {
       var originalText = link.getAttribute('data-original-text');
 
+      // Store original text on first encounter
       if (!originalText) {
+        // Only process links that actually contain CI text
+        if (!link.textContent.includes('95% CI')) {
+          return;
+        }
         link.setAttribute('data-original-text', link.textContent);
         link.setAttribute('data-original-title', link.getAttribute('title') || '');
         originalText = link.textContent;

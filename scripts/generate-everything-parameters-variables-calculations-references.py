@@ -399,14 +399,14 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
     print(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
 
 
-from dih_models.environment_logger import log_environment_info, log_mc_fingerprint, enforce_venv_python
+from dih_models.environment_logger import log_environment_info, log_mc_fingerprint, enforce_reproducible_environment
 
 
 def main():
-    # Enforce venv Python for reproducible MC results
-    # Skip enforcement if --no-venv-check flag is passed (for CI/testing)
-    if "--no-venv-check" not in sys.argv:
-        enforce_venv_python()
+    # Verify numpy/scipy versions for reproducible MC results
+    # Skip check if --no-version-check flag is passed (for testing)
+    if "--no-version-check" not in sys.argv:
+        enforce_reproducible_environment()
 
     # Log environment info for debugging MC reproducibility
     log_environment_info()
