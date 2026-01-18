@@ -286,7 +286,8 @@ metadata:
   # Bibliography: .bib generated from knowledge/references.qmd (source data)
   # Book uses references.qmd directly (not CSL rendering) because many chapters link to it
   # Regenerate .bib: python scripts/generate-everything-parameters-variables-calculations-references.py
-  bibliography: references.bib
+  bibliography:
+    - references.bib
   csl: nature-annotated.csl  # Renders 'abstract' field (quotes) for any @citations
 
 # Remove "Appendix" prefix from appendix chapters
