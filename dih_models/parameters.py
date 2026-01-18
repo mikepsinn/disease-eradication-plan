@@ -3962,6 +3962,686 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # because it depends on that parameter which is calculated from other treaty parameters.
 
 # ---
+# POLITICAL DYSFUNCTION TAX
+# ---
+# Source: knowledge/appendix/optimocracy-paper.qmd
+# The "Political Dysfunction Tax" measures total welfare loss from governance failures.
+# The "Crony Tax" (regulatory capture) is the largest component.
+#
+# Components:
+#   τ_political_dysfunction = τ_crony + τ_time + τ_information + τ_coordination
+#
+# Key academic sources:
+# - Del Rosal (2011): Survey finds rent-seeking costs range 0.2% to 23.7% of GDP
+# - Laband & Sophocleus (1988): First empirical estimate - 45% of US income (high estimate)
+# - Krueger (1974): 7-15% of GDP in India/Turkey from trade restrictions
+# - Tullock (1967): Foundational rent-seeking theory
+
+# Component 1: CRONY TAX (Regulatory Capture / Rent-Seeking)
+# The welfare loss from special interests capturing policy for their benefit.
+# Central estimate 10% based on midpoint of Del Rosal (2011) survey range (0.2%-23.7%)
+CRONY_TAX_PCT = Parameter(
+    0.10,  # 10% of GDP - midpoint of empirical estimates
+    source_ref="delrosal2011",
+    source_type="external",
+    confidence="medium",
+    description="Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. "
+                "Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. "
+                "Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.",
+    display_name="Crony Tax (Capture)",
+    unit="percent",
+    distribution=DistributionType.LOGNORMAL,  # Right-skewed - some estimates much higher
+    confidence_interval=(0.05, 0.20),  # 5% to 20% - within Del Rosal survey range
+    std_error=0.05,  # Wide uncertainty given range of estimates
+    keywords=["crony", "capture", "rent-seeking", "dysfunction", "welfare loss", "GDP", "corruption"],
+    latex_symbol=r"\tau_{crony}",
+)
+
+# Component 2: TIME-INCONSISTENCY TAX (Electoral Short-Termism)
+# Welfare loss from politicians' short time horizons due to electoral cycles.
+# Politicians underinvest in long-term goods and overweight immediate benefits.
+# Kydland-Prescott (1977) established the theoretical foundation.
+POLITICAL_DYSFUNCTION_TAX_TIME_PCT = Parameter(
+    0.03,  # 3% of GDP - estimated from time-inconsistency literature
+    source_ref="kydland1977",
+    source_type="external",
+    confidence="low",
+    description="Welfare loss from political time-inconsistency (electoral short-termism). "
+                "Politicians facing re-election underinvest in long-term public goods and infrastructure. "
+                "Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.",
+    display_name="Time-Inconsistency Tax",
+    unit="percent",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(0.01, 0.06),  # 1% to 6%
+    std_error=0.02,
+    keywords=["time-inconsistency", "electoral", "short-term", "commitment", "kydland", "prescott"],
+    latex_symbol=r"\tau_{time}",
+)
+
+# Component 3: INFORMATION TAX (Hayek Knowledge Problem)
+# Welfare loss from central planners lacking dispersed local knowledge.
+# Hayek (1945) argued markets aggregate information that no central authority can possess.
+POLITICAL_DYSFUNCTION_TAX_INFO_PCT = Parameter(
+    0.02,  # 2% of GDP - knowledge aggregation inefficiency
+    source_ref="hayek1945",
+    source_type="external",
+    confidence="low",
+    description="Welfare loss from information aggregation failures - the Hayek knowledge problem. "
+                "Central authorities lack the dispersed local knowledge that markets aggregate. "
+                "Hayek (1945) argued this is a fundamental limit on central planning effectiveness.",
+    display_name="Information Tax (Hayek)",
+    unit="percent",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(0.01, 0.04),  # 1% to 4%
+    std_error=0.01,
+    keywords=["information", "knowledge", "hayek", "aggregation", "local knowledge", "planning"],
+    latex_symbol=r"\tau_{info}",
+)
+
+# Component 4: COORDINATION TAX (Collective Action Failures)
+# Welfare loss from diffuse beneficiaries being unable to organize against concentrated interests.
+# Olson (1965) logic of collective action - rational ignorance + free-rider problem.
+POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT = Parameter(
+    0.05,  # 5% of GDP - collective action failures
+    source_ref="olson1996",  # Using existing Olson reference
+    source_type="external",
+    confidence="low",
+    description="Welfare loss from collective action failures. "
+                "Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. "
+                "Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.",
+    display_name="Coordination Tax (Olson)",
+    unit="percent",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(0.02, 0.10),  # 2% to 10%
+    std_error=0.03,
+    keywords=["coordination", "collective action", "olson", "free rider", "rational ignorance", "diffuse"],
+    latex_symbol=r"\tau_{coord}",
+)
+
+# TOTAL: POLITICAL DYSFUNCTION TAX
+# Sum of all components - this is the headline figure
+POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT = Parameter(
+    CRONY_TAX_PCT + POLITICAL_DYSFUNCTION_TAX_TIME_PCT + POLITICAL_DYSFUNCTION_TAX_INFO_PCT + POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT,
+    source_ref="/knowledge/appendix/optimocracy-paper.qmd",
+    source_type="calculated",
+    confidence="low",
+    description="Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. "
+                "Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. "
+                "Represents the 'tax' citizens implicitly pay for dysfunctional political systems.",
+    display_name="Political Dysfunction Tax (Total)",
+    unit="percent",
+    formula="CRONY_TAX + TIME + INFO + COORDINATION",
+    inputs=["CRONY_TAX_PCT", "POLITICAL_DYSFUNCTION_TAX_TIME_PCT", "POLITICAL_DYSFUNCTION_TAX_INFO_PCT", "POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT"],
+    compute=lambda ctx: ctx["CRONY_TAX_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_TIME_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_INFO_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT"],
+    keywords=["dysfunction", "total", "welfare loss", "GDP", "governance", "political", "crony", "capture"],
+    latex_symbol=r"\tau_{dysfunction}",
+)
+
+# ---
+# BAD POLICY COSTS: BOTTOM-UP EMPIRICAL ESTIMATES
+# ---
+# Source: knowledge/appendix/optimocracy-paper.qmd
+# Rather than theoretical decomposition, this section calculates dysfunction costs
+# bottom-up from specific, measurable policy failures with peer-reviewed estimates.
+# This is more defensible to economists because each line item can be verified.
+#
+# Structure:
+#   Tier 1: Well-documented direct costs (strong empirical backing)
+#   Tier 2: Externalities and opportunity costs (defensible but contested)
+#   Total: Sum with overlap discount (avoid double-counting)
+
+# US GDP for percentage calculations
+US_GDP_2024 = Parameter(
+    28_780_000_000_000,  # $28.78 trillion (2024 estimate)
+    source_ref="worldbank-gdp",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",  # Official statistic
+    description="US GDP in 2024 dollars for calculating policy costs as percentage of GDP.",
+    display_name="US GDP (2024)",
+    unit="USD",
+    keywords=["GDP", "US", "economy", "2024"],
+)
+
+# TIER 1: WELL-DOCUMENTED DIRECT COSTS
+# These have strong empirical backing from peer-reviewed or official sources
+
+BAD_POLICY_COST_US_TAX_COMPLIANCE = Parameter(
+    546_000_000_000,  # $546B annually
+    source_ref="taxfoundation2024-compliance",
+    source_type="external",
+    confidence="high",
+    description="Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) "
+                "plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. "
+                "Could be largely eliminated with simplified tax code or return-free filing.",
+    display_name="Tax Compliance Cost",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(450_000_000_000, 650_000_000_000),  # $450-650B
+    std_error=50_000_000_000,
+    keywords=["tax", "compliance", "IRS", "bureaucracy", "waste"],
+    latex_symbol=r"C_{tax}",
+)
+
+BAD_POLICY_COST_US_FAILED_WARS = Parameter(
+    400_000_000_000,  # ~$400B/yr amortized ($8T over 20 years)
+    source_ref="costsofwar2023",
+    source_type="external",
+    confidence="medium",
+    description="Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). "
+                "Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, "
+                "$6.5T interest on war debt. These wars failed to achieve stated objectives.",
+    display_name="Failed Wars (Amortized)",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(300_000_000_000, 600_000_000_000),  # $300-600B/yr
+    std_error=100_000_000_000,
+    keywords=["war", "Iraq", "Afghanistan", "military", "waste", "failed"],
+    latex_symbol=r"C_{wars}",
+)
+
+BAD_POLICY_COST_US_DRUG_WAR = Parameter(
+    90_000_000_000,  # ~$90B/yr (enforcement + incarceration + lost productivity)
+    source_ref="drugpolicyalliance2021",
+    source_type="external",
+    confidence="medium",
+    description="Annual cost of drug war: ~$41B federal drug control budget, "
+                "~$10B state/local enforcement, ~$40B incarceration and lost productivity. "
+                "After 50+ years and $1T+ spent, drug use is higher than ever.",
+    display_name="Drug War Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(60_000_000_000, 150_000_000_000),  # $60-150B
+    std_error=30_000_000_000,
+    keywords=["drug war", "incarceration", "enforcement", "prohibition", "failed"],
+    latex_symbol=r"C_{drugs}",
+)
+
+BAD_POLICY_COST_US_TARIFFS = Parameter(
+    160_000_000_000,  # ~$160B/yr GDP reduction
+    source_ref="yalebudgetlab2025",
+    source_type="external",
+    confidence="medium",
+    description="Annual GDP reduction from US tariffs and retaliation. "
+                "Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. "
+                "Trade barriers reduce efficiency and raise consumer prices.",
+    display_name="Tariff Cost (GDP Loss)",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(90_000_000_000, 250_000_000_000),  # $90-250B
+    std_error=50_000_000_000,
+    keywords=["tariffs", "trade", "protectionism", "GDP loss"],
+    latex_symbol=r"C_{tariffs}",
+)
+
+BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT = Parameter(
+    50_000_000_000,  # ~$50B/yr explicit subsidies (US share)
+    source_ref="imf-fossilfuel2023",
+    source_type="external",
+    confidence="medium",
+    description="US explicit fossil fuel subsidies (direct payments, tax breaks). "
+                "IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). "
+                "Explicit subsidies are roughly $50B annually.",
+    display_name="Fossil Fuel Explicit Subsidies",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(30_000_000_000, 80_000_000_000),  # $30-80B
+    std_error=15_000_000_000,
+    keywords=["fossil fuel", "subsidy", "oil", "gas", "coal"],
+    latex_symbol=r"C_{ff,explicit}",
+)
+
+BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY = Parameter(
+    1_200_000_000_000,  # ~$1.2T/yr excess spending
+    source_ref="papanicolas2018",
+    source_type="external",
+    confidence="high",
+    description="US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable "
+                "OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple "
+                "studies document $1-1.5T in excess spending from administrative complexity, high prices, "
+                "and poor care coordination. Very high economist consensus.",
+    display_name="Healthcare System Inefficiency",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),  # $1.0-1.5T
+    std_error=150_000_000_000,
+    keywords=["healthcare", "inefficiency", "administrative", "waste", "OECD"],
+    latex_symbol=r"C_{healthcare}",
+)
+
+BAD_POLICY_COST_US_HOUSING_ZONING = Parameter(
+    1_400_000_000_000,  # ~$1.4T/yr (36% GDP reduction from Hsieh & Moretti)
+    source_ref="hsieh-moretti2019",
+    source_type="external",
+    confidence="high",
+    description="GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate "
+                "restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP "
+                "by 36% from 1964-2009 by preventing workers from moving to productive locations. "
+                "Annual cost ~$1.4T. Very high economist consensus across political spectrum.",
+    display_name="Housing/Zoning Restrictions Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),  # $1.0-2.0T
+    std_error=300_000_000_000,
+    keywords=["housing", "zoning", "NIMBY", "land use", "productivity", "misallocation"],
+    latex_symbol=r"C_{housing}",
+)
+
+BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES = Parameter(
+    75_000_000_000,  # ~$75B/yr deadweight loss
+    source_ref="ewg-farm-subsidies",
+    source_type="external",
+    confidence="high",
+    description="Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create "
+                "larger distortions: overproduction, environmental damage, benefits concentrated in large "
+                "farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. "
+                "Textbook example of capture - very high economist consensus.",
+    display_name="Agricultural Subsidies Deadweight Loss",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(50_000_000_000, 120_000_000_000),  # $50-120B
+    std_error=25_000_000_000,
+    keywords=["agriculture", "farm", "subsidy", "deadweight", "capture"],
+    latex_symbol=r"C_{ag}",
+)
+
+# TIER 2: EXTERNALITIES AND OPPORTUNITY COSTS
+# Defensible but more contested - relies on externality valuations
+
+BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES = Parameter(
+    600_000_000_000,  # ~$600B/yr (US share of externalities)
+    source_ref="imf-fossilfuel2023",
+    source_type="external",
+    confidence="low",
+    description="US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, "
+                "climate damages, congestion, accidents. IMF estimates ~$600B for US. "
+                "Highly contested - depends on social cost of carbon assumptions.",
+    display_name="Fossil Fuel Externalities",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(300_000_000_000, 1_000_000_000_000),  # $300B-1T wide range
+    std_error=250_000_000_000,
+    keywords=["externality", "pollution", "climate", "fossil fuel", "implicit subsidy"],
+    latex_symbol=r"C_{ff,external}",
+)
+
+BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING = Parameter(
+    200_000_000_000,  # ~$200B/yr (2-3% of GDP)
+    source_ref="kleiner2013",
+    source_type="external",
+    confidence="medium",
+    description="Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. "
+                "29% of US workers now require licenses vs 5% in 1950s. "
+                "Raises prices, restricts entry, with minimal quality improvement.",
+    display_name="Occupational Licensing Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(100_000_000_000, 400_000_000_000),  # $100-400B
+    std_error=100_000_000_000,
+    keywords=["licensing", "regulation", "labor market", "barriers to entry"],
+    latex_symbol=r"C_{licensing}",
+)
+
+BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS = Parameter(
+    500_000_000_000,  # Very rough US-attributable estimate
+    source_ref="clemens2011",
+    source_type="external",
+    confidence="low",
+    description="US share of global welfare loss from migration restrictions. "
+                "Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. "
+                "US-attributable share is highly speculative - using conservative $500B estimate.",
+    display_name="Migration Restrictions Cost (US Share)",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(200_000_000_000, 2_000_000_000_000),  # Very wide: $200B-2T
+    std_error=500_000_000_000,
+    keywords=["migration", "immigration", "labor mobility", "border"],
+    latex_symbol=r"C_{migration}",
+)
+
+BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE = Parameter(
+    400_000_000_000,  # ~$400B/yr above deterrence level
+    source_ref="posen2014",
+    source_type="external",
+    confidence="medium",
+    description="US defense spending above deterrence requirements. US spends ~$900B/yr on defense; "
+                "many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent "
+                "deterrence given geography, nuclear arsenal, and alliance structure. "
+                "Excess ~$400B/yr funds force projection, not homeland defense.",
+    display_name="Defense Above Deterrence",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(250_000_000_000, 600_000_000_000),  # $250-600B
+    std_error=120_000_000_000,
+    keywords=["defense", "military", "deterrence", "spending", "pentagon"],
+    latex_symbol=r"C_{defense}",
+)
+
+BAD_POLICY_COST_US_INCARCERATION_EXCESS = Parameter(
+    150_000_000_000,  # ~$150B/yr excess costs
+    source_ref="vera-incarceration2024",
+    source_type="external",
+    confidence="medium",
+    description="Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. "
+                "Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, "
+                "community supervision) cost less and reduce recidivism. Total excess ~$150B "
+                "including lost productivity and family impacts. Growing economist consensus.",
+    display_name="Incarceration Excess Costs",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(100_000_000_000, 250_000_000_000),  # $100-250B
+    std_error=50_000_000_000,
+    keywords=["incarceration", "prison", "criminal justice", "recidivism"],
+    latex_symbol=r"C_{prison}",
+)
+
+BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE = Parameter(
+    150_000_000_000,  # ~$150B/yr in cost overruns
+    source_ref="transit-costs-project",
+    source_type="external",
+    confidence="medium",
+    description="US infrastructure cost disease. US builds infrastructure at 2-5x the cost of "
+                "comparable countries (subway costs, highway construction, transit projects). "
+                "NYU Transit Costs Project and Brookings document systematic overruns. "
+                "If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.",
+    display_name="Infrastructure Cost Disease",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(100_000_000_000, 250_000_000_000),  # $100-250B
+    std_error=50_000_000_000,
+    keywords=["infrastructure", "construction", "cost overrun", "transit"],
+    latex_symbol=r"C_{infra}",
+)
+
+# TOTAL: BAD POLICY COSTS (BOTTOM-UP)
+# Use multiplicative model to avoid double-counting: 1 - Π(1 - cost_i/GDP)
+# For small percentages, this approximates sum but handles overlap correctly
+
+BAD_POLICY_COST_US_TIER1_TOTAL = Parameter(
+    (BAD_POLICY_COST_US_TAX_COMPLIANCE + BAD_POLICY_COST_US_FAILED_WARS + BAD_POLICY_COST_US_DRUG_WAR +
+     BAD_POLICY_COST_US_TARIFFS + BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT + BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY +
+     BAD_POLICY_COST_US_HOUSING_ZONING + BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES),
+    source_ref="/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs",
+    source_type="calculated",
+    confidence="medium",
+    description="Sum of Tier 1 (well-documented) bad policy costs: "
+                "tax compliance + failed wars + drug war + tariffs + fossil fuel explicit + "
+                "healthcare inefficiency + housing/zoning + agricultural subsidies. "
+                "These have strong empirical backing and high economist consensus.",
+    display_name="Bad Policy Costs (Tier 1)",
+    unit="USD",
+    formula="TAX + WARS + DRUGS + TARIFFS + FF_EXPLICIT + HEALTHCARE + HOUSING + AG",
+    inputs=["BAD_POLICY_COST_US_TAX_COMPLIANCE", "BAD_POLICY_COST_US_FAILED_WARS", "BAD_POLICY_COST_US_DRUG_WAR",
+            "BAD_POLICY_COST_US_TARIFFS", "BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT", "BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY",
+            "BAD_POLICY_COST_US_HOUSING_ZONING", "BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES"],
+    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_TAX_COMPLIANCE"] + ctx["BAD_POLICY_COST_US_FAILED_WARS"] +
+                         ctx["BAD_POLICY_COST_US_DRUG_WAR"] + ctx["BAD_POLICY_COST_US_TARIFFS"] +
+                         ctx["BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT"] + ctx["BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY"] +
+                         ctx["BAD_POLICY_COST_US_HOUSING_ZONING"] + ctx["BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES"]),
+    keywords=["bad policy", "tier 1", "documented", "waste"],
+    latex_symbol=r"C_{tier1}",
+)
+
+BAD_POLICY_COST_US_TIER2_TOTAL = Parameter(
+    (BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES + BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING + BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS +
+     BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE + BAD_POLICY_COST_US_INCARCERATION_EXCESS + BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE),
+    source_ref="/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs",
+    source_type="calculated",
+    confidence="low",
+    description="Sum of Tier 2 (contested but defensible) bad policy costs: "
+                "fossil fuel externalities + occupational licensing + migration restrictions + "
+                "defense above deterrence + incarceration excess + infrastructure cost disease. "
+                "Wider uncertainty due to counterfactual assumptions.",
+    display_name="Bad Policy Costs (Tier 2)",
+    unit="USD",
+    formula="FF_EXT + LICENSING + MIGRATION + DEFENSE + PRISON + INFRA",
+    inputs=["BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES", "BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING", "BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS",
+            "BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE", "BAD_POLICY_COST_US_INCARCERATION_EXCESS", "BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE"],
+    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES"] + ctx["BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING"] +
+                         ctx["BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS"] + ctx["BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE"] +
+                         ctx["BAD_POLICY_COST_US_INCARCERATION_EXCESS"] + ctx["BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE"]),
+    keywords=["bad policy", "tier 2", "externalities", "contested"],
+    latex_symbol=r"C_{tier2}",
+)
+
+# Apply 15% overlap discount to combined total (categories are not fully independent)
+BAD_POLICY_US_OVERLAP_DISCOUNT = Parameter(
+    0.85,  # 15% overlap assumed
+    source_type="definition",
+    confidence="low",
+    distribution="fixed",
+    description="Discount factor to account for overlap between bad policy cost categories. "
+                "Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. "
+                "Migration restrictions partially captured in labor market inefficiencies.",
+    display_name="Overlap Discount Factor",
+    unit="ratio",
+    keywords=["overlap", "discount", "double counting"],
+)
+
+BAD_POLICY_COST_TOTAL_US = Parameter(
+    (BAD_POLICY_COST_US_TIER1_TOTAL + BAD_POLICY_COST_US_TIER2_TOTAL) * BAD_POLICY_US_OVERLAP_DISCOUNT,
+    source_ref="/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs",
+    source_type="calculated",
+    confidence="low",
+    description="Total annual US bad policy costs (Tier 1 + Tier 2 with overlap discount). "
+                "Bottom-up empirical estimate based on specific, measurable policy failures. "
+                "More defensible than theoretical decomposition because each component is verifiable.",
+    display_name="Bad Policy Costs Total (US)",
+    unit="USD",
+    formula="(TIER1 + TIER2) × OVERLAP_DISCOUNT",
+    inputs=["BAD_POLICY_COST_US_TIER1_TOTAL", "BAD_POLICY_COST_US_TIER2_TOTAL", "BAD_POLICY_US_OVERLAP_DISCOUNT"],
+    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_TIER1_TOTAL"] + ctx["BAD_POLICY_COST_US_TIER2_TOTAL"]) * ctx["BAD_POLICY_US_OVERLAP_DISCOUNT"],
+    keywords=["bad policy", "total", "US", "dysfunction", "waste"],
+    latex_symbol=r"C_{bad,total}",
+)
+
+BAD_POLICY_COST_TOTAL_US_PCT_GDP = Parameter(
+    BAD_POLICY_COST_TOTAL_US / US_GDP_2024,
+    source_ref="/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs",
+    source_type="calculated",
+    confidence="low",
+    description="Total US bad policy costs as percentage of GDP. "
+                "Bottom-up empirical estimate for comparison with theoretical Political Dysfunction Tax.",
+    display_name="Bad Policy Costs (% GDP)",
+    unit="percent",
+    formula="BAD_POLICY_COST_TOTAL / US_GDP",
+    inputs=["BAD_POLICY_COST_TOTAL_US", "US_GDP_2024"],
+    compute=lambda ctx: ctx["BAD_POLICY_COST_TOTAL_US"] / ctx["US_GDP_2024"],
+    keywords=["bad policy", "GDP", "percentage", "dysfunction"],
+    latex_symbol=r"\tau_{bad,empirical}",
+)
+
+# ---
+# INTERNATIONAL GOVERNANCE EFFICIENCY COMPARISON
+# ---
+# Compare US outcomes to well-governed peer countries to estimate "dysfunction premium"
+# Key insight: Countries spending LESS as % of GDP achieve BETTER outcomes
+# This provides independent evidence for the Political Dysfunction Tax
+
+# US baseline for comparison
+US_GOVT_SPENDING_PCT_GDP = Parameter(
+    38.0,  # ~38% of GDP (federal + state + local)
+    source_ref="oecd-govt-spending",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="US total government spending as percentage of GDP (federal + state + local). "
+                "OECD average is ~40%, but US gets worse outcomes for similar spending.",
+    display_name="US Govt Spending (% GDP)",
+    unit="percent",
+    keywords=["government", "spending", "GDP", "US"],
+)
+
+US_LIFE_EXPECTANCY_2023 = Parameter(
+    77.5,
+    source_ref="cdc-life-expectancy",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="US life expectancy at birth (2023). Lowest among high-income OECD countries "
+                "despite highest healthcare spending.",
+    display_name="US Life Expectancy",
+    unit="years",
+    keywords=["life expectancy", "US", "health", "outcomes"],
+)
+
+US_MEDIAN_HOUSEHOLD_INCOME_2023 = Parameter(
+    80_610,  # $80,610 median household income 2023
+    source_ref="census-income-2023",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="US median household income (2023). High in absolute terms but adjusted for "
+                "healthcare costs and inequality, purchasing power is lower than peers.",
+    display_name="US Median Household Income",
+    unit="USD",
+    keywords=["income", "median", "household", "US"],
+)
+
+# SWITZERLAND - Lower spending, better outcomes
+SWITZERLAND_GOVT_SPENDING_PCT_GDP = Parameter(
+    35.0,  # ~35% of GDP
+    source_ref="oecd-govt-spending",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Switzerland government spending as percentage of GDP. 3 percentage points LOWER "
+                "than US (35% vs 38%) yet achieves dramatically better outcomes.",
+    display_name="Switzerland Govt Spending (% GDP)",
+    unit="percent",
+    keywords=["government", "spending", "GDP", "Switzerland"],
+)
+
+SWITZERLAND_LIFE_EXPECTANCY = Parameter(
+    84.0,
+    source_ref="who-life-expectancy",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) "
+                "despite lower government spending as % of GDP.",
+    display_name="Switzerland Life Expectancy",
+    unit="years",
+    keywords=["life expectancy", "Switzerland", "health", "outcomes"],
+)
+
+SWITZERLAND_MEDIAN_INCOME_PPP = Parameter(
+    65_000,  # ~$65K median income PPP
+    source_ref="oecd-median-income",
+    source_type="external",
+    confidence="medium",
+    distribution="fixed",
+    description="Switzerland median household income (PPP-adjusted). Higher than US when "
+                "adjusted for cost of healthcare and other expenses.",
+    display_name="Switzerland Median Income (PPP)",
+    unit="USD",
+    keywords=["income", "median", "Switzerland"],
+)
+
+# SINGAPORE - Much lower spending, excellent outcomes
+SINGAPORE_GOVT_SPENDING_PCT_GDP = Parameter(
+    15.0,  # ~15% of GDP - very lean government
+    source_ref="imf-singapore-spending",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Singapore government spending as percentage of GDP. Less than HALF the US rate "
+                "(15% vs 38%) yet achieves excellent outcomes through efficiency.",
+    display_name="Singapore Govt Spending (% GDP)",
+    unit="percent",
+    keywords=["government", "spending", "GDP", "Singapore"],
+)
+
+SINGAPORE_LIFE_EXPECTANCY = Parameter(
+    84.1,
+    source_ref="who-life-expectancy",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) "
+                "despite government spending at less than half the rate.",
+    display_name="Singapore Life Expectancy",
+    unit="years",
+    keywords=["life expectancy", "Singapore", "health", "outcomes"],
+)
+
+SINGAPORE_GDP_PER_CAPITA_PPP = Parameter(
+    105_000,  # ~$105K GDP per capita PPP
+    source_ref="worldbank-singapore-gdp",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Singapore GDP per capita (PPP-adjusted). Among highest in world, "
+                "demonstrating that lean government can coexist with prosperity.",
+    display_name="Singapore GDP per Capita (PPP)",
+    unit="USD",
+    keywords=["GDP", "per capita", "Singapore"],
+)
+
+# Comparison metrics: US vs international benchmarks
+# These are definitions based on fixed government statistics (no uncertainty propagation needed)
+US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
+    6.5,  # 84.0 - 77.5 = 6.5 years
+    source_ref="who-life-expectancy",
+    source_type="definition",
+    confidence="high",
+    distribution="fixed",
+    description="Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years "
+                "of life while spending 3% LESS of GDP on government.",
+    display_name="Switzerland-US Life Expectancy Gap",
+    unit="years",
+    formula="SWITZERLAND_LE - US_LE = 84.0 - 77.5",
+    keywords=["life expectancy", "gap", "comparison"],
+)
+
+US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
+    3.0,  # 38.0 - 35.0 = 3.0%
+    source_ref="oecd-govt-spending",
+    source_type="definition",
+    confidence="high",
+    distribution="fixed",
+    description="Government spending gap: US spends 3 percentage points MORE of GDP than "
+                "Switzerland yet achieves worse outcomes.",
+    display_name="US-Switzerland Spending Gap",
+    unit="percent",
+    formula="US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
+    keywords=["spending", "gap", "comparison"],
+)
+
+US_VS_SINGAPORE_SPENDING_GAP = Parameter(
+    23.0,  # 38.0 - 15.0 = 23.0%
+    source_ref="oecd-govt-spending",
+    source_type="definition",
+    confidence="high",
+    distribution="fixed",
+    description="Government spending gap: US spends 23 percentage points MORE of GDP than "
+                "Singapore yet achieves 6.6 fewer years of life expectancy.",
+    display_name="US-Singapore Spending Gap",
+    unit="percent",
+    formula="US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
+    keywords=["spending", "gap", "comparison", "Singapore"],
+)
+
+# Implied dysfunction premium: US spends more but gets worse outcomes
+# If US achieved Swiss efficiency, same spending would yield better outcomes
+# If US achieved Singapore efficiency, same outcomes could be achieved with 60% less spending
+US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND = Parameter(
+    3.0,  # 3% of GDP more spending for worse outcomes (38% - 35%)
+    source_ref="oecd-govt-spending",
+    source_type="definition",
+    confidence="high",
+    distribution="fixed",
+    description="US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet "
+                "achieves 6.5 fewer years of life expectancy. This premium represents "
+                "pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).",
+    display_name="US Dysfunction Premium vs Switzerland",
+    unit="percent",
+    formula="US_GOVT_SPENDING_PCT_GDP - SWITZERLAND_GOVT_SPENDING_PCT_GDP",
+    keywords=["dysfunction", "premium", "waste", "comparison"],
+    latex_symbol=r"\tau_{US-CH}",
+)
+
+# ---
 # POLITICAL CAPTURE COST ANALYSIS
 # ---
 # Source: knowledge/appendix/political-capture-cost-analysis.qmd

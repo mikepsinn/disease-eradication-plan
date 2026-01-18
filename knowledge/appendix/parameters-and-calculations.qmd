@@ -23,15 +23,15 @@ format:
 
 ## Overview
 
-This appendix documents all 407 parameters used in the analysis, organized by type:
+This appendix documents all 445 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 154
-- Calculated values: 142
-- Core definitions: 111
+- External sources (peer-reviewed): 182
+- Calculated values: 147
+- Core definitions: 116
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (142 parameters) • [External Data Sources](#sec-external) (154 parameters) • [Core Definitions](#sec-definitions) (111 parameters)
+[Calculated Values](#sec-calculated) (147 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (116 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -73,6 +73,205 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
+
+### Bad Policy Costs Total (US): $5.03T {#sec-bad_policy_cost_total_us}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total annual US bad policy costs (Tier 1 + Tier 2 with overlap discount). Bottom-up empirical estimate based on specific, measurable policy failures. More defensible than theoretical decomposition because each component is verifiable.
+
+**Inputs**:
+
+- [Bad Policy Costs (Tier 1)](#sec-bad_policy_cost_us_tier1_total) 🔢: $3.92T
+- [Bad Policy Costs (Tier 2)](#sec-bad_policy_cost_us_tier2_total) 🔢: $2T
+- [Overlap Discount Factor](#sec-bad_policy_us_overlap_discount): 0.85:1
+
+$$
+\begin{gathered}
+C_{bad,total} \\
+= BadUS \times (C_{tier1} + C_{tier2}) \\
+= 0.85 \times (\$3.92T + \$2T) \\
+= \$5.03T \\[0.5em]
+\text{where } C_{tier1} \\
+= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\
++ C_{ff,explicit} + C_{healthcare} + C_{housing} \\
++ C_{ag} \\
+= \$546B + \$400B + \$90B + \$160B + \$50B + \$1.2T \\
++ \$1.4T + \$75B \\
+= \$3.92T \\[0.5em]
+\text{where } C_{tier2} \\
+= C_{ff,external} + C_{licensing} + C_{migration} \\
++ C_{defense} + C_{prison} + C_{infra} \\
+= \$600B + \$200B + \$500B + \$400B + \$150B + \$150B \\
+= \$2T
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/optimocracy-paper#bad-policy-costs](../appendix/optimocracy-paper#bad-policy-costs)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bad_policy_cost_total_us.qmd >}}
+
+{{< include ../figures/sensitivity-table-bad_policy_cost_total_us.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bad_policy_cost_total_us.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bad_policy_cost_total_us.qmd >}}
+
+:::
+
+### Bad Policy Costs (% GDP): 17.5% {#sec-bad_policy_cost_total_us_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total US bad policy costs as percentage of GDP. Bottom-up empirical estimate for comparison with theoretical Political Dysfunction Tax.
+
+**Inputs**:
+
+- [Bad Policy Costs Total (US)](#sec-bad_policy_cost_total_us) 🔢: $5.03T
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+
+$$
+\begin{gathered}
+\tau_{bad,empirical} = \frac{C_{bad,total}}{USGDP} = \frac{\$5.03T}{\$28.8T} = 17.5\% \\[0.5em]
+\text{where } C_{bad,total} \\
+= BadUS \times (C_{tier1} + C_{tier2}) \\
+= 0.85 \times (\$3.92T + \$2T) \\
+= \$5.03T \\[0.5em]
+\text{where } C_{tier1} \\
+= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\
++ C_{ff,explicit} + C_{healthcare} + C_{housing} \\
++ C_{ag} \\
+= \$546B + \$400B + \$90B + \$160B + \$50B + \$1.2T \\
++ \$1.4T + \$75B \\
+= \$3.92T \\[0.5em]
+\text{where } C_{tier2} \\
+= C_{ff,external} + C_{licensing} + C_{migration} \\
++ C_{defense} + C_{prison} + C_{infra} \\
+= \$600B + \$200B + \$500B + \$400B + \$150B + \$150B \\
+= \$2T
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/optimocracy-paper#bad-policy-costs](../appendix/optimocracy-paper#bad-policy-costs)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bad_policy_cost_total_us_pct_gdp.qmd >}}
+
+{{< include ../figures/sensitivity-table-bad_policy_cost_total_us_pct_gdp.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bad_policy_cost_total_us_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bad_policy_cost_total_us_pct_gdp.qmd >}}
+
+:::
+
+### Bad Policy Costs (Tier 1): $3.92T {#sec-bad_policy_cost_us_tier1_total}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Sum of Tier 1 (well-documented) bad policy costs: tax compliance + failed wars + drug war + tariffs + fossil fuel explicit + healthcare inefficiency + housing/zoning + agricultural subsidies. These have strong empirical backing and high economist consensus.
+
+**Inputs**:
+
+- [Tax Compliance Cost](#sec-bad_policy_cost_us_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
+- [Failed Wars (Amortized)](#sec-bad_policy_cost_us_failed_wars) 📊: $400B (95% CI: $300B - $600B)
+- [Drug War Cost](#sec-bad_policy_cost_us_drug_war) 📊: $90B (95% CI: $60B - $150B)
+- [Tariff Cost (GDP Loss)](#sec-bad_policy_cost_us_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Fossil Fuel Explicit Subsidies](#sec-bad_policy_cost_us_fossil_fuel_explicit) 📊: $50B (95% CI: $30B - $80B)
+- [Healthcare System Inefficiency](#sec-bad_policy_cost_us_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
+- [Housing/Zoning Restrictions Cost](#sec-bad_policy_cost_us_housing_zoning) 📊: $1.40T (95% CI: $1T - $2T)
+- [Agricultural Subsidies Deadweight Loss](#sec-bad_policy_cost_us_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+
+$$
+\begin{gathered}
+C_{tier1} \\
+= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\
++ C_{ff,explicit} + C_{healthcare} + C_{housing} + C_{ag} \\
+= \$546B + \$400B + \$90B + \$160B + \$50B + \$1.2T + \$1.4T \\
++ \$75B \\
+= \$3.92T
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/optimocracy-paper#bad-policy-costs](../appendix/optimocracy-paper#bad-policy-costs)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bad_policy_cost_us_tier1_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-bad_policy_cost_us_tier1_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bad_policy_cost_us_tier1_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bad_policy_cost_us_tier1_total.qmd >}}
+
+:::
+
+### Bad Policy Costs (Tier 2): $2T {#sec-bad_policy_cost_us_tier2_total}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Sum of Tier 2 (contested but defensible) bad policy costs: fossil fuel externalities + occupational licensing + migration restrictions + defense above deterrence + incarceration excess + infrastructure cost disease. Wider uncertainty due to counterfactual assumptions.
+
+**Inputs**:
+
+- [Fossil Fuel Externalities](#sec-bad_policy_cost_us_fossil_fuel_externalities) 📊: $600B (95% CI: $300B - $1T)
+- [Occupational Licensing Cost](#sec-bad_policy_cost_us_occupational_licensing) 📊: $200B (95% CI: $100B - $400B)
+- [Migration Restrictions Cost (US Share)](#sec-bad_policy_cost_us_migration_restrictions) 📊: $500B (95% CI: $200B - $2T)
+- [Defense Above Deterrence](#sec-bad_policy_cost_us_defense_above_deterrence) 📊: $400B (95% CI: $250B - $600B)
+- [Incarceration Excess Costs](#sec-bad_policy_cost_us_incarceration_excess) 📊: $150B (95% CI: $100B - $250B)
+- [Infrastructure Cost Disease](#sec-bad_policy_cost_us_infrastructure_disease) 📊: $150B (95% CI: $100B - $250B)
+
+$$
+\begin{gathered}
+C_{tier2} \\
+= C_{ff,external} + C_{licensing} + C_{migration} \\
++ C_{defense} + C_{prison} + C_{infra} \\
+= \$600B + \$200B + \$500B + \$400B + \$150B + \$150B \\
+= \$2T
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/optimocracy-paper#bad-policy-costs](../appendix/optimocracy-paper#bad-policy-costs)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bad_policy_cost_us_tier2_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-bad_policy_cost_us_tier2_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bad_policy_cost_us_tier2_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bad_policy_cost_us_tier2_total.qmd >}}
 
 :::
 
@@ -5763,6 +5962,48 @@ $$
 
 :::
 
+### Political Dysfunction Tax (Total): 20% {#sec-political_dysfunction_tax_total_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. Represents the 'tax' citizens implicitly pay for dysfunctional political systems.
+
+**Inputs**:
+
+- [Crony Tax (Capture)](#sec-crony_tax_pct) 📊: 10% (95% CI: 5% - 20%)
+- [Time-Inconsistency Tax](#sec-political_dysfunction_tax_time_pct) 📊: 3% (95% CI: 1% - 6%)
+- [Information Tax (Hayek)](#sec-political_dysfunction_tax_info_pct) 📊: 2% (95% CI: 1% - 4%)
+- [Coordination Tax (Olson)](#sec-political_dysfunction_tax_coordination_pct) 📊: 5% (95% CI: 2% - 10%)
+
+$$
+\begin{gathered}
+\tau_{dysfunction} \\
+= \tau_{crony} + \tau_{time} + \tau_{info} + \tau_{coord} \\
+= 10\% + 3\% + 2\% + 5\% \\
+= 20\%
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/optimocracy-paper](../appendix/optimocracy-paper)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_tax_total_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_tax_total_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_tax_total_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_tax_total_pct.qmd >}}
+
+:::
+
 ### Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -8009,6 +8250,342 @@ Average US hourly wage
 
 :::
 
+### Agricultural Subsidies Deadweight Loss: $75B {#sec-bad_policy_cost_us_agricultural_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high economist consensus.
+
+**Source**: [Environmental Working Group (2024) - US Farm Subsidy Database and Analysis](../references.qmd#ewg-farm-subsidies)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50B, $120B] • Distribution: Lognormal (SE: $25B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $50B and $120B (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_agricultural_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Defense Above Deterrence: $400B {#sec-bad_policy_cost_us_defense_above_deterrence}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US defense spending above deterrence requirements. US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal, and alliance structure. Excess ~$400B/yr funds force projection, not homeland defense.
+
+**Source**: [Posen, Barry R. (2014) - Restraint: A New Foundation for U.S. Grand Strategy](../references.qmd#posen2014)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$250B, $600B] • Distribution: Lognormal (SE: $120B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $250B and $600B (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_defense_above_deterrence.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Drug War Cost: $90B {#sec-bad_policy_cost_us_drug_war}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever.
+
+**Source**: [Drug Policy Alliance (2021) - The Drug War by the Numbers](../references.qmd#drugpolicyalliance2021)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_drug_war.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Failed Wars (Amortized): $400B {#sec-bad_policy_cost_us_failed_wars}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars failed to achieve stated objectives.
+
+**Source**: [Crawford, Neta C. and Lutz, Catherine (2023) - Blood and Treasure: United States Budgetary Costs and Human Costs of 20 Years of War](../references.qmd#costsofwar2023)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$300B, $600B] • Distribution: Lognormal (SE: $100B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $300B and $600B (±38%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_failed_wars.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Fossil Fuel Explicit Subsidies: $50B {#sec-bad_policy_cost_us_fossil_fuel_explicit}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). Explicit subsidies are roughly $50B annually.
+
+**Source**: [International Monetary Fund (2023) - IMF Fossil Fuel Subsidies Data: 2023 Update](../references.qmd#imf-fossilfuel2023)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30B, $80B] • Distribution: Lognormal (SE: $15B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30B and $80B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_fossil_fuel_explicit.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Fossil Fuel Externalities: $600B {#sec-bad_policy_cost_us_fossil_fuel_externalities}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, climate damages, congestion, accidents. IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon assumptions.
+
+**Source**: [International Monetary Fund (2023) - IMF Fossil Fuel Subsidies Data: 2023 Update](../references.qmd#imf-fossilfuel2023)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$300B, $1T] • Distribution: Lognormal (SE: $250B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $300B and $1T (±58%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_fossil_fuel_externalities.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Healthcare System Inefficiency: $1.20T {#sec-bad_policy_cost_us_healthcare_inefficiency}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus.
+
+**Source**: [Papanicolas, Irene et al. (2018) - Health Care Spending in the United States and Other High-Income Countries](../references.qmd#papanicolas2018)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1T, $1.50T] • Distribution: Normal (SE: $150B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1T and $1.50T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_healthcare_inefficiency.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Housing/Zoning Restrictions Cost: $1.40T {#sec-bad_policy_cost_us_housing_zoning}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum.
+
+**Source**: [Hsieh, Chang-Tai and Enrico Moretti (2019) - Housing Constraints and Spatial Misallocation](../references.qmd#hsieh-moretti2019)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1T, $2T] • Distribution: Lognormal (SE: $300B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1T and $2T (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_housing_zoning.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Incarceration Excess Costs: $150B {#sec-bad_policy_cost_us_incarceration_excess}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, community supervision) cost less and reduce recidivism. Total excess ~$150B including lost productivity and family impacts. Growing economist consensus.
+
+**Source**: [Vera Institute of Justice (2024) - The Economic Burden of Incarceration in the United States](../references.qmd#vera-incarceration2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100B, $250B] • Distribution: Lognormal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $100B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_incarceration_excess.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Infrastructure Cost Disease: $150B {#sec-bad_policy_cost_us_infrastructure_disease}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US infrastructure cost disease. US builds infrastructure at 2-5x the cost of comparable countries (subway costs, highway construction, transit projects). NYU Transit Costs Project and Brookings document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.
+
+**Source**: [Marron Institute, NYU (2024) - Transit Costs Project - Why US Infrastructure Costs So Much](../references.qmd#transit-costs-project)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100B, $250B] • Distribution: Lognormal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $100B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_infrastructure_disease.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Migration Restrictions Cost (US Share): $500B {#sec-bad_policy_cost_us_migration_restrictions}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US share of global welfare loss from migration restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. US-attributable share is highly speculative - using conservative $500B estimate.
+
+**Source**: [Clemens, Michael A. (2011) - Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?](../references.qmd#clemens2011)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$200B, $2T] • Distribution: Lognormal (SE: $500B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $200B and $2T (±180%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_migration_restrictions.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Occupational Licensing Cost: $200B {#sec-bad_policy_cost_us_occupational_licensing}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.
+
+**Source**: [Kleiner, Morris M. and Krueger, Alan B. (2013) - Analyzing the Extent and Influence of Occupational Licensing on the Labor Market](../references.qmd#kleiner2013)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100B, $400B] • Distribution: Lognormal (SE: $100B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100B and $400B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_occupational_licensing.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tariff Cost (GDP Loss): $160B {#sec-bad_policy_cost_us_tariffs}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices.
+
+**Source**: [Yale Budget Lab (2025) - The Fiscal, Economic, and Distributional Effects of All U.S. Tariffs](../references.qmd#yalebudgetlab2025)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$90B, $250B] • Distribution: Normal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $90B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_tariffs.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tax Compliance Cost: $546B {#sec-bad_policy_cost_us_tax_compliance}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing.
+
+**Source**: [Tax Foundation (2024) - Tax Compliance Costs the US Economy $546 Billion Annually](../references.qmd#taxfoundation2024-compliance)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$450B, $650B] • Distribution: Normal (SE: $50B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450B and $650B (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bad_policy_cost_us_tax_compliance.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Baseline Annual Lives Saved by Pharmaceuticals: 12 deaths/year {#sec-baseline_lives_saved_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -8178,6 +8755,30 @@ CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
 {{< include ../figures/distribution-cpi_multiplier_1980_to_2024.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Crony Tax (Capture): 10% {#sec-crony_tax_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.
+
+**Source**: [Del Rosal, Ignacio (2011) - The Empirical Measurement of Rent-Seeking Costs](../references.qmd#delrosal2011)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 20%] • Distribution: Lognormal (SE: 5%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 20% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-crony_tax_pct.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -9861,6 +10462,78 @@ Return on investment from sustaining polio vaccination assets and integrating in
 
 :::
 
+### Coordination Tax (Olson): 5% {#sec-political_dysfunction_tax_coordination_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Welfare loss from collective action failures. Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.
+
+**Source**: [Olson, Mancur (1996) - Big Bills Left on the Sidewalk: Why Some Nations are Rich, and Others Poor](../references.qmd#olson1996)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2%, 10%] • Distribution: Lognormal (SE: 3%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 2% and 10% (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_tax_coordination_pct.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Information Tax (Hayek): 2% {#sec-political_dysfunction_tax_info_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Welfare loss from information aggregation failures - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge that markets aggregate. Hayek (1945) argued this is a fundamental limit on central planning effectiveness.
+
+**Source**: [Hayek, Friedrich A. (1945) - The Use of Knowledge in Society](../references.qmd#hayek1945)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 4%] • Distribution: Lognormal (SE: 1%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 4% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_tax_info_pct.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Time-Inconsistency Tax: 3% {#sec-political_dysfunction_tax_time_pct}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Welfare loss from political time-inconsistency (electoral short-termism). Politicians facing re-election underinvest in long-term public goods and infrastructure. Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.
+
+**Source**: [Kydland, Finn E. and Prescott, Edward C. (1977) - Rules Rather than Discretion: The Inconsistency of Optimal Plans](../references.qmd#kydland1977)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 6%] • Distribution: Lognormal (SE: 2%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 6% (±83%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_tax_time_pct.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Political Success Probability: 1% {#sec-political_success_probability}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -10131,6 +10804,54 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
+### Singapore GDP per Capita (PPP): $105K {#sec-singapore_gdp_per_capita_ppp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Singapore GDP per capita (PPP-adjusted). Among highest in world, demonstrating that lean government can coexist with prosperity.
+
+**Source**: [World Bank (2024) - World Bank Singapore Economic Data](../references.qmd#worldbank-singapore-gdp)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Singapore Govt Spending (% GDP): 1500% {#sec-singapore_govt_spending_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.
+
+**Source**: [International Monetary Fund (2024) - IMF Singapore Government Spending Data](../references.qmd#imf-singapore-spending)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Singapore Life Expectancy: 84.1 years {#sec-singapore_life_expectancy}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
+
+**Source**: [World Health Organization (2024) - WHO Life Expectancy Data by Country](../references.qmd#who-life-expectancy)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -10240,6 +10961,54 @@ Switzerland GDP per capita
 **Source**: [World Bank - Switzerland vs. US GDP per capita comparison](../references.qmd#swiss-vs-us-gdp-per-capita)
 
 *✓ High confidence*
+
+:::
+
+### Switzerland Govt Spending (% GDP): 3500% {#sec-switzerland_govt_spending_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.
+
+**Source**: [Organisation for Economic Co-operation and Development (2024) - OECD Government Spending as Percentage of GDP](../references.qmd#oecd-govt-spending)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
+
+**Source**: [World Health Organization (2024) - WHO Life Expectancy Data by Country](../references.qmd#who-life-expectancy)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Switzerland Median Income (PPP): $65K {#sec-switzerland_median_income_ppp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Switzerland median household income (PPP-adjusted). Higher than US when adjusted for cost of healthcare and other expenses.
+
+**Source**: [Organisation for Economic Co-operation and Development (2024) - OECD Median Household Income Comparison](../references.qmd#oecd-median-income)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
 
 :::
 
@@ -10523,6 +11292,38 @@ Annual US cost of diabetes (direct and indirect)
 
 :::
 
+### US GDP (2024): $28.8T {#sec-us_gdp_2024}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
+
+**Source**: [World Bank, Bureau of Economic Analysis (2024) - US GDP 2024 ($28.78 trillion)](../references.qmd#worldbank-gdp)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Govt Spending (% GDP): 3800% {#sec-us_govt_spending_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.
+
+**Source**: [Organisation for Economic Co-operation and Development (2024) - OECD Government Spending as Percentage of GDP](../references.qmd#oecd-govt-spending)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### US Heart Disease Annual Cost: $363B {#sec-us_heart_disease_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -10616,6 +11417,38 @@ US life expectancy in 2019 (latest available data).
 {{< include ../figures/distribution-us_life_expectancy_2019.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Life Expectancy: 77.5 years {#sec-us_life_expectancy_2023}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.
+
+**Source**: [Centers for Disease Control and Prevention (2024) - US Life Expectancy 2023](../references.qmd#cdc-life-expectancy)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Median Household Income: $80.6K {#sec-us_median_household_income_2023}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US median household income (2023). High in absolute terms but adjusted for healthcare costs and inequality, purchasing power is lower than peers.
+
+**Source**: [US Census Bureau (2024) - US Median Household Income 2023](../references.qmd#census-income-2023)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -10854,6 +11687,20 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50k pairings and 2.00k pairings (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
+:::
+
+### Overlap Discount Factor: 0.85:1 {#sec-bad_policy_us_overlap_discount}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
@@ -12319,11 +13166,67 @@ Total members of US Congress (100 senators + 435 representatives)
 
 :::
 
+### US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.
+
+*Core definition*
+
+:::
+
+### US-Singapore Spending Gap: 2300% {#sec-us_vs_singapore_spending_gap}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Government spending gap: US spends 23 percentage points MORE of GDP than Singapore yet achieves 6.6 fewer years of life expectancy.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

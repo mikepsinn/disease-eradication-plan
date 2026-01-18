@@ -69,6 +69,198 @@
   external\" data-confidence=\"high\" title=\"Average US hourly wage | ✓ High confidence\
   \ | Unit: USD/hour | Click to view details, calculation & sources\">$30</a>"
 "average_us_hourly_wage_cite": "@average-us-hourly-wage"
+"bad_policy_cost_total_us": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_total_us\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total annual US\
+  \ bad policy costs (Tier 1 + Tier 2 with overlap discount). Bottom-up empirical\
+  \ estimate based on specific, measurable policy failures. More defensible than theoretical\
+  \ decomposition because each component is verifiable. | Calculated from 3 inputs\
+  \ | ? Low confidence | Formula: (TIER1 + TIER2) × OVERLAP_DISCOUNT | Unit: USD |\
+  \ Click to view details, calculation & sources\">$5.03T (95% CI: $3.44T-$7.69T)</a>"
+"bad_policy_cost_total_us_latex": "$$\n\\begin{gathered}\nC_{bad,total} \\\\\n= BadUS\
+  \ \\times (C_{tier1} + C_{tier2}) \\\\\n= 0.85 \\times (\\$3.92T + \\$2T) \\\\\n\
+  = \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1} \\\\\n= C_{tax} + C_{wars} + C_{drugs}\
+  \ + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare} + C_{housing} \\\\\n+ C_{ag}\
+  \ \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T\
+  \ + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\\text{where } C_{tier2} \\\\\n= C_{ff,external}\
+  \ + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\
+  \\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\\
+  end{gathered}\n$$"
+"bad_policy_cost_total_us_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_total_us_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total US bad policy\
+  \ costs as percentage of GDP. Bottom-up empirical estimate for comparison with theoretical\
+  \ Political Dysfunction Tax. | Calculated from 2 inputs | ? Low confidence | Formula:\
+  \ BAD_POLICY_COST_TOTAL / US_GDP | Unit: percent | Click to view details, calculation\
+  \ & sources\">17.5% (95% CI: 11.9%-26.7%)</a>"
+"bad_policy_cost_total_us_pct_gdp_latex": "$$\n\\begin{gathered}\n\\tau_{bad,empirical}\
+  \ = \\frac{C_{bad,total}}{USGDP} = \\frac{\\$5.03T}{\\$28.8T} = 17.5\\% \\\\[0.5em]\n\
+  \\text{where } C_{bad,total} \\\\\n= BadUS \\times (C_{tier1} + C_{tier2}) \\\\\n\
+  = 0.85 \\times (\\$3.92T + \\$2T) \\\\\n= \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1}\
+  \ \\\\\n= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} +\
+  \ C_{healthcare} + C_{housing} \\\\\n+ C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B\
+  \ + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\
+  \\text{where } C_{tier2} \\\\\n= C_{ff,external} + C_{licensing} + C_{migration}\
+  \ \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B\
+  \ + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\end{gathered}\n$$"
+"bad_policy_cost_us_agricultural_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_agricultural_subsidies\"\
+  \ class=\"parameter-link\" data-source-ref=\"ewg-farm-subsidies\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Deadweight loss from US agricultural\
+  \ subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction,\
+  \ environmental damage, benefits concentrated in large farms (top 10% receive 78%\
+  \ of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high\
+  \ economist consensus. | ✓ High confidence | 95% CI: [$50B, $120B] | Dist: Lognormal\
+  \ (SE: $25B) | Unit: USD | Click to view details, calculation & sources\">$75B (95%\
+  \ CI: $50B-$120B)</a>"
+"bad_policy_cost_us_agricultural_subsidies_cite": "@ewg-farm-subsidies"
+"bad_policy_cost_us_defense_above_deterrence": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_defense_above_deterrence\"\
+  \ class=\"parameter-link\" data-source-ref=\"posen2014\" data-source-type=\"external\"\
+  \ data-confidence=\"medium\" title=\"US defense spending above deterrence requirements.\
+  \ US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.)\
+  \ argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal,\
+  \ and alliance structure. Excess ~$400B/yr funds force projection, not homeland\
+  \ defense. | ~ Medium confidence | 95% CI: [$250B, $600B] | Dist: Lognormal (SE:\
+  \ $120B) | Unit: USD | Click to view details, calculation & sources\">$400B (95%\
+  \ CI: $250B-$600B)</a>"
+"bad_policy_cost_us_defense_above_deterrence_cite": "@posen2014"
+"bad_policy_cost_us_drug_war": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_drug_war\"\
+  \ class=\"parameter-link\" data-source-ref=\"drugpolicyalliance2021\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Annual cost of drug war: ~$41B federal\
+  \ drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost\
+  \ productivity. After 50+ years and $1T+ spent, drug use is higher than ever. |\
+  \ ~ Medium confidence | 95% CI: [$60B, $150B] | Dist: Lognormal (SE: $30B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$90B (95% CI: $60B-$150B)</a>"
+"bad_policy_cost_us_drug_war_cite": "@drugpolicyalliance2021"
+"bad_policy_cost_us_failed_wars": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_failed_wars\"\
+  \ class=\"parameter-link\" data-source-ref=\"costsofwar2023\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Amortized annual cost of post-9/11\
+  \ wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct\
+  \ spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars\
+  \ failed to achieve stated objectives. | ~ Medium confidence | 95% CI: [$300B, $600B]\
+  \ | Dist: Lognormal (SE: $100B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$400B (95% CI: $300B-$600B)</a>"
+"bad_policy_cost_us_failed_wars_cite": "@costsofwar2023"
+"bad_policy_cost_us_fossil_fuel_explicit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_fossil_fuel_explicit\"\
+  \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"US explicit fossil fuel subsidies\
+  \ (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92%\
+  \ is implicit (externalities). Explicit subsidies are roughly $50B annually. | ~\
+  \ Medium confidence | 95% CI: [$30B, $80B] | Dist: Lognormal (SE: $15B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$50B (95% CI: $30B-$80B)</a>"
+"bad_policy_cost_us_fossil_fuel_explicit_cite": "@imf-fossilfuel2023"
+"bad_policy_cost_us_fossil_fuel_externalities": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_fossil_fuel_externalities\"\
+  \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
+  external\" data-confidence=\"low\" title=\"US fossil fuel implicit subsidies (unpriced\
+  \ externalities): air pollution deaths, climate damages, congestion, accidents.\
+  \ IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon\
+  \ assumptions. | ? Low confidence | 95% CI: [$300B, $1T] | Dist: Lognormal (SE:\
+  \ $250B) | Unit: USD | Click to view details, calculation & sources\">$600B (95%\
+  \ CI: $300B-$1T)</a>"
+"bad_policy_cost_us_fossil_fuel_externalities_cite": "@imf-fossilfuel2023"
+"bad_policy_cost_us_healthcare_inefficiency": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_healthcare_inefficiency\"\
+  \ class=\"parameter-link\" data-source-ref=\"papanicolas2018\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US healthcare spending inefficiency.\
+  \ US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better\
+  \ outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T\
+  \ in excess spending from administrative complexity, high prices, and poor care\
+  \ coordination. Very high economist consensus. | ✓ High confidence | 95% CI: [$1T,\
+  \ $1.50T] | Dist: Normal (SE: $150B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$1.20T (95% CI: $1T-$1.50T)</a>"
+"bad_policy_cost_us_healthcare_inefficiency_cite": "@papanicolas2018"
+"bad_policy_cost_us_housing_zoning": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_housing_zoning\"\
+  \ class=\"parameter-link\" data-source-ref=\"hsieh-moretti2019\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"GDP loss from housing/zoning restrictions.\
+  \ Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity\
+  \ cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing\
+  \ workers from moving to productive locations. Annual cost ~$1.4T. Very high economist\
+  \ consensus across political spectrum. | ✓ High confidence | 95% CI: [$1T, $2T]\
+  \ | Dist: Lognormal (SE: $300B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$1.40T (95% CI: $1T-$2T)</a>"
+"bad_policy_cost_us_housing_zoning_cite": "@hsieh-moretti2019"
+"bad_policy_cost_us_incarceration_excess": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_incarceration_excess\"\
+  \ class=\"parameter-link\" data-source-ref=\"vera-incarceration2024\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Excess costs from US over-incarceration.\
+  \ US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative\
+  \ approaches (drug courts, rehabilitation, community supervision) cost less and\
+  \ reduce recidivism. Total excess ~$150B including lost productivity and family\
+  \ impacts. Growing economist consensus. | ~ Medium confidence | 95% CI: [$100B,\
+  \ $250B] | Dist: Lognormal (SE: $50B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$150B (95% CI: $100B-$250B)</a>"
+"bad_policy_cost_us_incarceration_excess_cite": "@vera-incarceration2024"
+"bad_policy_cost_us_infrastructure_disease": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_infrastructure_disease\"\
+  \ class=\"parameter-link\" data-source-ref=\"transit-costs-project\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"US infrastructure cost disease. US\
+  \ builds infrastructure at 2-5x the cost of comparable countries (subway costs,\
+  \ highway construction, transit projects). NYU Transit Costs Project and Brookings\
+  \ document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is\
+  \ wasted vs best practices. | ~ Medium confidence | 95% CI: [$100B, $250B] | Dist:\
+  \ Lognormal (SE: $50B) | Unit: USD | Click to view details, calculation & sources\"\
+  >$150B (95% CI: $100B-$250B)</a>"
+"bad_policy_cost_us_infrastructure_disease_cite": "@transit-costs-project"
+"bad_policy_cost_us_migration_restrictions": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_migration_restrictions\"\
+  \ class=\"parameter-link\" data-source-ref=\"clemens2011\" data-source-type=\"external\"\
+  \ data-confidence=\"low\" title=\"US share of global welfare loss from migration\
+  \ restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization.\
+  \ US-attributable share is highly speculative - using conservative $500B estimate.\
+  \ | ? Low confidence | 95% CI: [$200B, $2T] | Dist: Lognormal (SE: $500B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$500B (95% CI: $200B-$2T)</a>"
+"bad_policy_cost_us_migration_restrictions_cite": "@clemens2011"
+"bad_policy_cost_us_occupational_licensing": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_occupational_licensing\"\
+  \ class=\"parameter-link\" data-source-ref=\"kleiner2013\" data-source-type=\"external\"\
+  \ data-confidence=\"medium\" title=\"Cost of occupational licensing restrictions.\
+  \ Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses\
+  \ vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.\
+  \ | ~ Medium confidence | 95% CI: [$100B, $400B] | Dist: Lognormal (SE: $100B) |\
+  \ Unit: USD | Click to view details, calculation & sources\">$200B (95% CI: $100B-$400B)</a>"
+"bad_policy_cost_us_occupational_licensing_cite": "@kleiner2013"
+"bad_policy_cost_us_tariffs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tariffs\"\
+  \ class=\"parameter-link\" data-source-ref=\"yalebudgetlab2025\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Annual GDP reduction from US tariffs\
+  \ and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent\
+  \ to $160B annually. Trade barriers reduce efficiency and raise consumer prices.\
+  \ | ~ Medium confidence | 95% CI: [$90B, $250B] | Dist: Normal (SE: $50B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$160B (95% CI: $90B-$250B)</a>"
+"bad_policy_cost_us_tariffs_cite": "@yalebudgetlab2025"
+"bad_policy_cost_us_tax_compliance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tax_compliance\"\
+  \ class=\"parameter-link\" data-source-ref=\"taxfoundation2024-compliance\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Annual cost of US tax code compliance:\
+  \ 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs.\
+  \ Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code\
+  \ or return-free filing. | ✓ High confidence | 95% CI: [$450B, $650B] | Dist: Normal\
+  \ (SE: $50B) | Unit: USD | Click to view details, calculation & sources\">$546B\
+  \ (95% CI: $450B-$650B)</a>"
+"bad_policy_cost_us_tax_compliance_cite": "@taxfoundation2024-compliance"
+"bad_policy_cost_us_tier1_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tier1_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Sum of Tier\
+  \ 1 (well-documented) bad policy costs: tax compliance + failed wars + drug war\
+  \ + tariffs + fossil fuel explicit + healthcare inefficiency + housing/zoning +\
+  \ agricultural subsidies. These have strong empirical backing and high economist\
+  \ consensus. | Calculated from 8 inputs | ~ Medium confidence | Formula: TAX + WARS\
+  \ + DRUGS + TARIFFS + FF_EXPLICIT + HEALTHCARE + HOUSING + AG | Unit: USD | Click\
+  \ to view details, calculation & sources\">$3.92T (95% CI: $2.99T-$5.18T)</a>"
+"bad_policy_cost_us_tier1_total_latex": "$$\n\\begin{gathered}\nC_{tier1} \\\\\n=\
+  \ C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare}\
+  \ + C_{housing} + C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B +\
+  \ \\$1.2T + \\$1.4T \\\\\n+ \\$75B \\\\\n= \\$3.92T\n\\end{gathered}\n$$"
+"bad_policy_cost_us_tier2_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tier2_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Sum of Tier 2\
+  \ (contested but defensible) bad policy costs: fossil fuel externalities + occupational\
+  \ licensing + migration restrictions + defense above deterrence + incarceration\
+  \ excess + infrastructure cost disease. Wider uncertainty due to counterfactual\
+  \ assumptions. | Calculated from 6 inputs | ? Low confidence | Formula: FF_EXT +\
+  \ LICENSING + MIGRATION + DEFENSE + PRISON + INFRA | Unit: USD | Click to view details,\
+  \ calculation & sources\">$2T (95% CI: $1.05T-$3.86T)</a>"
+"bad_policy_cost_us_tier2_total_latex": "$$\n\\begin{gathered}\nC_{tier2} \\\\\n=\
+  \ C_{ff,external} + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison}\
+  \ + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B\
+  \ \\\\\n= \\$2T\n\\end{gathered}\n$$"
+"bad_policy_us_overlap_discount": "<span class=\"parameter-definition\" title=\"Discount\
+  \ factor to account for overlap between bad policy cost categories. Fossil fuel\
+  \ externalities partially overlap with climate/health costs counted elsewhere. Migration\
+  \ restrictions partially captured in labor market inefficiencies. | Unit: ratio\
+  \ | Core definition\">0.85:1</span>"
 "baseline_lives_saved_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-baseline_lives_saved_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
@@ -383,6 +575,15 @@
   \ | Dist: Normal | Unit: ratio | Click to view details, calculation & sources\"\
   >3.8:1 (95% CI: 3.75:1-3.85:1)</a>"
 "cpi_multiplier_1980_to_2024_cite": "@bls-cpi-inflation-calculator"
+"crony_tax_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-crony_tax_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"delrosal2011\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Welfare loss from regulatory capture\
+  \ and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011)\
+  \ survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10%\
+  \ is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%. | ~\
+  \ Medium confidence | 95% CI: [5%, 20%] | Dist: Lognormal (SE: 5%) | Unit: percent\
+  \ | Click to view details, calculation & sources\">10% (95% CI: 5%-20%)</a>"
+"crony_tax_pct_cite": "@delrosal2011"
 "current_active_trials": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_active_trials\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -3178,6 +3379,45 @@
   \ ✓ High confidence | Unit: ratio | Click to view details, calculation & sources\"\
   >39:1</a>"
 "polio_vaccination_roi_cite": "@polio-vaccination-roi"
+"political_dysfunction_tax_coordination_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_coordination_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"olson1996\" data-source-type=\"external\"\
+  \ data-confidence=\"low\" title=\"Welfare loss from collective action failures.\
+  \ Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated\
+  \ interests. Olson's logic of collective action: rational ignorance + free-rider\
+  \ problem prevents reform. | ? Low confidence | 95% CI: [2%, 10%] | Dist: Lognormal\
+  \ (SE: 3%) | Unit: percent | Click to view details, calculation & sources\">5% (95%\
+  \ CI: 2%-10%)</a>"
+"political_dysfunction_tax_coordination_pct_cite": "@olson1996"
+"political_dysfunction_tax_info_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_info_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"hayek1945\" data-source-type=\"external\"\
+  \ data-confidence=\"low\" title=\"Welfare loss from information aggregation failures\
+  \ - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge\
+  \ that markets aggregate. Hayek (1945) argued this is a fundamental limit on central\
+  \ planning effectiveness. | ? Low confidence | 95% CI: [1%, 4%] | Dist: Lognormal\
+  \ (SE: 1%) | Unit: percent | Click to view details, calculation & sources\">2% (95%\
+  \ CI: 1%-4%)</a>"
+"political_dysfunction_tax_info_pct_cite": "@hayek1945"
+"political_dysfunction_tax_time_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_time_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"kydland1977\" data-source-type=\"external\"\
+  \ data-confidence=\"low\" title=\"Welfare loss from political time-inconsistency\
+  \ (electoral short-termism). Politicians facing re-election underinvest in long-term\
+  \ public goods and infrastructure. Kydland-Prescott (1977) established the theoretical\
+  \ foundation for commitment vs discretion costs. | ? Low confidence | 95% CI: [1%,\
+  \ 6%] | Dist: Lognormal (SE: 2%) | Unit: percent | Click to view details, calculation\
+  \ & sources\">3% (95% CI: 1%-6%)</a>"
+"political_dysfunction_tax_time_pct_cite": "@kydland1977"
+"political_dysfunction_tax_total_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_total_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total Political\
+  \ Dysfunction Tax: the welfare loss from governance failures as percentage of potential\
+  \ GDP. Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination\
+  \ failures. Represents the 'tax' citizens implicitly pay for dysfunctional political\
+  \ systems. | Calculated from 4 inputs | ? Low confidence | Formula: CRONY_TAX +\
+  \ TIME + INFO + COORDINATION | Unit: percent | Click to view details, calculation\
+  \ & sources\">20% (95% CI: 9%-39.3%)</a>"
+"political_dysfunction_tax_total_pct_latex": "$$\n\\begin{gathered}\n\\tau_{dysfunction}\
+  \ \\\\\n= \\tau_{crony} + \\tau_{time} + \\tau_{info} + \\tau_{coord} \\\\\n= 10\\\
+  % + 3\\% + 2\\% + 5\\% \\\\\n= 20\\%\n\\end{gathered}\n$$"
 "political_success_probability": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_success_probability\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Estimated probability of treaty ratification\
@@ -3348,6 +3588,27 @@
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"Parameter: SECONDS_PER_MINUTE\"\
   >60</span>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"31,536,000\">31.5M</span>"
+"singapore_gdp_per_capita_ppp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-singapore_gdp_per_capita_ppp\"\
+  \ class=\"parameter-link\" data-source-ref=\"worldbank-singapore-gdp\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Singapore GDP per capita (PPP-adjusted).\
+  \ Among highest in world, demonstrating that lean government can coexist with prosperity.\
+  \ | ✓ High confidence | Dist: Fixed | Unit: USD | Click to view details, calculation\
+  \ & sources\">$105K</a>"
+"singapore_gdp_per_capita_ppp_cite": "@worldbank-singapore-gdp"
+"singapore_govt_spending_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-singapore_govt_spending_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"imf-singapore-spending\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Singapore government spending as percentage\
+  \ of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes\
+  \ through efficiency. | ✓ High confidence | Dist: Fixed | Unit: percent | Click\
+  \ to view details, calculation & sources\">1500%</a>"
+"singapore_govt_spending_pct_gdp_cite": "@imf-singapore-spending"
+"singapore_life_expectancy": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-singapore_life_expectancy\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-life-expectancy\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Singapore life expectancy at birth.\
+  \ 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than\
+  \ half the rate. | ✓ High confidence | Dist: Fixed | Unit: years | Click to view\
+  \ details, calculation & sources\">84.1 years</a>"
+"singapore_life_expectancy_cite": "@who-life-expectancy"
 "smallpox_eradication_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-smallpox_eradication_roi\"\
   \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
@@ -3421,6 +3682,27 @@
   external\" data-confidence=\"high\" title=\"Switzerland GDP per capita | ✓ High\
   \ confidence | Unit: USD | Click to view details, calculation & sources\">$93K</a>"
 "switzerland_gdp_per_capita_k_cite": "@swiss-vs-us-gdp-per-capita"
+"switzerland_govt_spending_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-switzerland_govt_spending_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Switzerland government spending as percentage\
+  \ of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically\
+  \ better outcomes. | ✓ High confidence | Dist: Fixed | Unit: percent | Click to\
+  \ view details, calculation & sources\">3500%</a>"
+"switzerland_govt_spending_pct_gdp_cite": "@oecd-govt-spending"
+"switzerland_life_expectancy": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-switzerland_life_expectancy\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-life-expectancy\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Switzerland life expectancy at birth.\
+  \ 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as %\
+  \ of GDP. | ✓ High confidence | Dist: Fixed | Unit: years | Click to view details,\
+  \ calculation & sources\">84 years</a>"
+"switzerland_life_expectancy_cite": "@who-life-expectancy"
+"switzerland_median_income_ppp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-switzerland_median_income_ppp\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-median-income\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Switzerland median household income\
+  \ (PPP-adjusted). Higher than US when adjusted for cost of healthcare and other\
+  \ expenses. | ~ Medium confidence | Dist: Fixed | Unit: USD | Click to view details,\
+  \ calculation & sources\">$65K</a>"
+"switzerland_median_income_ppp_cite": "@oecd-median-income"
 "terrorism_deaths_911": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-terrorism_deaths_911\"\
   \ class=\"parameter-link\" data-source-ref=\"chance-of-dying-from-terrorism-1-in-30m\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Deaths from 9/11\
@@ -4315,6 +4597,27 @@
   \ | 95% CI: [$278B, $376B] | Dist: Lognormal | Unit: USD | Click to view details,\
   \ calculation & sources\">$327B (95% CI: $278B-$376B)</a>"
 "us_diabetes_annual_cost_cite": "@disease-cost-diabetes-1500b"
+"us_dysfunction_premium_vs_switzerland": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_dysfunction_premium_vs_switzerland\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"US 'dysfunction premium' vs Switzerland:\
+  \ US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This\
+  \ premium represents pure waste from governance inefficiency. Calculated as: 38%\
+  \ (US) - 35% (CH). | ✓ High confidence | Dist: Fixed | Formula: US_GOVT_SPENDING_PCT_GDP\
+  \ - SWITZERLAND_GOVT_SPENDING_PCT_GDP | Unit: percent | Click to view details, calculation\
+  \ & sources\">300%</a>"
+"us_gdp_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gdp_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"worldbank-gdp\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US GDP in 2024 dollars for calculating\
+  \ policy costs as percentage of GDP. | ✓ High confidence | Dist: Fixed | Unit: USD\
+  \ | Click to view details, calculation & sources\">$28.8T</a>"
+"us_gdp_2024_cite": "@worldbank-gdp"
+"us_govt_spending_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_govt_spending_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US total government spending as percentage\
+  \ of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes\
+  \ for similar spending. | ✓ High confidence | Dist: Fixed | Unit: percent | Click\
+  \ to view details, calculation & sources\">3800%</a>"
+"us_govt_spending_pct_gdp_cite": "@oecd-govt-spending"
 "us_heart_disease_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_heart_disease_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-cost-heart-disease-2100b\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -4346,6 +4649,13 @@
   \ Unit: years | Click to view details, calculation & sources\">78.9 years (95% CI:\
   \ 78.6 years-79.1 years)</a>"
 "us_life_expectancy_2019_cite": "@post-1962-life-expectancy-slowdown"
+"us_life_expectancy_2023": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_2023\"\
+  \ class=\"parameter-link\" data-source-ref=\"cdc-life-expectancy\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US life expectancy at birth (2023).\
+  \ Lowest among high-income OECD countries despite highest healthcare spending. |\
+  \ ✓ High confidence | Dist: Fixed | Unit: years | Click to view details, calculation\
+  \ & sources\">77.5 years</a>"
+"us_life_expectancy_2023_cite": "@cdc-life-expectancy"
 "us_major_diseases_total_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_major_diseases_total_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/aligning-incentives.qmd#insurance-companies\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -4356,6 +4666,13 @@
   \ \\\\\n= Cost_{ALZ,US} + Cost_{cancer,US} + Cost_{diabetes,US} \\\\\n+ Cost_{heart,US}\
   \ \\\\\n= \\$355B + \\$208B + \\$327B + \\$363B \\\\\n= \\$1.25T\n\\end{gathered}\n\
   $$"
+"us_median_household_income_2023": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_median_household_income_2023\"\
+  \ class=\"parameter-link\" data-source-ref=\"census-income-2023\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US median household income (2023). High\
+  \ in absolute terms but adjusted for healthcare costs and inequality, purchasing\
+  \ power is lower than peers. | ✓ High confidence | Dist: Fixed | Unit: USD | Click\
+  \ to view details, calculation & sources\">$80.6K</a>"
+"us_median_household_income_2023_cite": "@census-income-2023"
 "us_mental_health_cost_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_mental_health_cost_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"mental-health-burden\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US mental health costs (treatment +\
@@ -4413,6 +4730,25 @@
   \ in 2024 (record year). Source: OpenSecrets. | ✓ High confidence | Unit: USD |\
   \ Click to view details, calculation & sources\">$4.40B</a>"
 "us_total_lobbying_annual_cite": "@opensecrets-lobbying-2024"
+"us_vs_singapore_spending_gap": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_vs_singapore_spending_gap\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Government spending gap: US spends\
+  \ 23 percentage points MORE of GDP than Singapore yet achieves 6.6 fewer years of\
+  \ life expectancy. | ✓ High confidence | Dist: Fixed | Formula: US_SPENDING - SINGAPORE_SPENDING\
+  \ = 38% - 15% | Unit: percent | Click to view details, calculation & sources\">2300%</a>"
+"us_vs_switzerland_life_expectancy_gap": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_vs_switzerland_life_expectancy_gap\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-life-expectancy\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Life expectancy gap: Switzerland vs\
+  \ US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP\
+  \ on government. | ✓ High confidence | Dist: Fixed | Formula: SWITZERLAND_LE - US_LE\
+  \ = 84.0 - 77.5 | Unit: years | Click to view details, calculation & sources\">6.5\
+  \ years</a>"
+"us_vs_switzerland_spending_gap": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_vs_switzerland_spending_gap\"\
+  \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Government spending gap: US spends\
+  \ 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.\
+  \ | ✓ High confidence | Dist: Fixed | Formula: US_SPENDING - SWITZERLAND_SPENDING\
+  \ = 38% - 35% | Unit: percent | Click to view details, calculation & sources\">300%</a>"
 "valley_of_death_attrition_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-valley_of_death_attrition_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"valley-of-death-attrition\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Percentage of promising Phase 1-passed\
@@ -4491,6 +4827,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "407"
-"total_latex_equation_count": "157"
-"total_citation_count": "154"
+"total_parameter_count": "445"
+"total_latex_equation_count": "162"
+"total_citation_count": "182"

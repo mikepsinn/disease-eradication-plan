@@ -112,6 +112,174 @@ export const AVERAGE_US_HOURLY_WAGE: Parameter = {
   confidence: "high",
 };
 
+export const BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES: Parameter = {
+  value: 75000000000.0,
+  unit: "USD",
+  displayName: "Agricultural Subsidies Deadweight Loss",
+  description: "Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high economist consensus.",
+  sourceType: "external",
+  sourceRef: "ewg-farm-subsidies",
+  confidence: "high",
+  confidenceInterval: [50000000000.0, 120000000000.0],
+  stdError: 25000000000.0,
+};
+
+export const BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE: Parameter = {
+  value: 400000000000.0,
+  unit: "USD",
+  displayName: "Defense Above Deterrence",
+  description: "US defense spending above deterrence requirements. US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal, and alliance structure. Excess ~$400B/yr funds force projection, not homeland defense.",
+  sourceType: "external",
+  sourceRef: "posen2014",
+  confidence: "medium",
+  confidenceInterval: [250000000000.0, 600000000000.0],
+  stdError: 120000000000.0,
+};
+
+export const BAD_POLICY_COST_US_DRUG_WAR: Parameter = {
+  value: 90000000000.0,
+  unit: "USD",
+  displayName: "Drug War Cost",
+  description: "Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever.",
+  sourceType: "external",
+  sourceRef: "drugpolicyalliance2021",
+  confidence: "medium",
+  confidenceInterval: [60000000000.0, 150000000000.0],
+  stdError: 30000000000.0,
+};
+
+export const BAD_POLICY_COST_US_FAILED_WARS: Parameter = {
+  value: 400000000000.0,
+  unit: "USD",
+  displayName: "Failed Wars (Amortized)",
+  description: "Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars failed to achieve stated objectives.",
+  sourceType: "external",
+  sourceRef: "costsofwar2023",
+  confidence: "medium",
+  confidenceInterval: [300000000000.0, 600000000000.0],
+  stdError: 100000000000.0,
+};
+
+export const BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT: Parameter = {
+  value: 50000000000.0,
+  unit: "USD",
+  displayName: "Fossil Fuel Explicit Subsidies",
+  description: "US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). Explicit subsidies are roughly $50B annually.",
+  sourceType: "external",
+  sourceRef: "imf-fossilfuel2023",
+  confidence: "medium",
+  confidenceInterval: [30000000000.0, 80000000000.0],
+  stdError: 15000000000.0,
+};
+
+export const BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES: Parameter = {
+  value: 600000000000.0,
+  unit: "USD",
+  displayName: "Fossil Fuel Externalities",
+  description: "US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, climate damages, congestion, accidents. IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon assumptions.",
+  sourceType: "external",
+  sourceRef: "imf-fossilfuel2023",
+  confidence: "low",
+  confidenceInterval: [300000000000.0, 1000000000000.0],
+  stdError: 250000000000.0,
+};
+
+export const BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY: Parameter = {
+  value: 1200000000000.0,
+  unit: "USD",
+  displayName: "Healthcare System Inefficiency",
+  description: "US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus.",
+  sourceType: "external",
+  sourceRef: "papanicolas2018",
+  confidence: "high",
+  confidenceInterval: [1000000000000.0, 1500000000000.0],
+  stdError: 150000000000.0,
+};
+
+export const BAD_POLICY_COST_US_HOUSING_ZONING: Parameter = {
+  value: 1400000000000.0,
+  unit: "USD",
+  displayName: "Housing/Zoning Restrictions Cost",
+  description: "GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum.",
+  sourceType: "external",
+  sourceRef: "hsieh-moretti2019",
+  confidence: "high",
+  confidenceInterval: [1000000000000.0, 2000000000000.0],
+  stdError: 300000000000.0,
+};
+
+export const BAD_POLICY_COST_US_INCARCERATION_EXCESS: Parameter = {
+  value: 150000000000.0,
+  unit: "USD",
+  displayName: "Incarceration Excess Costs",
+  description: "Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, community supervision) cost less and reduce recidivism. Total excess ~$150B including lost productivity and family impacts. Growing economist consensus.",
+  sourceType: "external",
+  sourceRef: "vera-incarceration2024",
+  confidence: "medium",
+  confidenceInterval: [100000000000.0, 250000000000.0],
+  stdError: 50000000000.0,
+};
+
+export const BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE: Parameter = {
+  value: 150000000000.0,
+  unit: "USD",
+  displayName: "Infrastructure Cost Disease",
+  description: "US infrastructure cost disease. US builds infrastructure at 2-5x the cost of comparable countries (subway costs, highway construction, transit projects). NYU Transit Costs Project and Brookings document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.",
+  sourceType: "external",
+  sourceRef: "transit-costs-project",
+  confidence: "medium",
+  confidenceInterval: [100000000000.0, 250000000000.0],
+  stdError: 50000000000.0,
+};
+
+export const BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS: Parameter = {
+  value: 500000000000.0,
+  unit: "USD",
+  displayName: "Migration Restrictions Cost (US Share)",
+  description: "US share of global welfare loss from migration restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. US-attributable share is highly speculative - using conservative $500B estimate.",
+  sourceType: "external",
+  sourceRef: "clemens2011",
+  confidence: "low",
+  confidenceInterval: [200000000000.0, 2000000000000.0],
+  stdError: 500000000000.0,
+};
+
+export const BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING: Parameter = {
+  value: 200000000000.0,
+  unit: "USD",
+  displayName: "Occupational Licensing Cost",
+  description: "Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.",
+  sourceType: "external",
+  sourceRef: "kleiner2013",
+  confidence: "medium",
+  confidenceInterval: [100000000000.0, 400000000000.0],
+  stdError: 100000000000.0,
+};
+
+export const BAD_POLICY_COST_US_TARIFFS: Parameter = {
+  value: 160000000000.0,
+  unit: "USD",
+  displayName: "Tariff Cost (GDP Loss)",
+  description: "Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices.",
+  sourceType: "external",
+  sourceRef: "yalebudgetlab2025",
+  confidence: "medium",
+  confidenceInterval: [90000000000.0, 250000000000.0],
+  stdError: 50000000000.0,
+};
+
+export const BAD_POLICY_COST_US_TAX_COMPLIANCE: Parameter = {
+  value: 546000000000.0,
+  unit: "USD",
+  displayName: "Tax Compliance Cost",
+  description: "Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing.",
+  sourceType: "external",
+  sourceRef: "taxfoundation2024-compliance",
+  confidence: "high",
+  confidenceInterval: [450000000000.0, 650000000000.0],
+  stdError: 50000000000.0,
+};
+
 export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   value: 12.0,
   unit: "deaths/year",
@@ -228,6 +396,18 @@ export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
   sourceRef: "bls-cpi-inflation-calculator",
   confidence: "high",
   confidenceInterval: [3.75, 3.85],
+};
+
+export const CRONY_TAX_PCT: Parameter = {
+  value: 0.1,
+  unit: "percent",
+  displayName: "Crony Tax (Capture)",
+  description: "Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.",
+  sourceType: "external",
+  sourceRef: "delrosal2011",
+  confidence: "medium",
+  confidenceInterval: [0.05, 0.2],
+  stdError: 0.05,
 };
 
 export const CURRENT_ACTIVE_TRIALS: Parameter = {
@@ -1172,6 +1352,42 @@ export const POLIO_VACCINATION_ROI: Parameter = {
   confidence: "high",
 };
 
+export const POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT: Parameter = {
+  value: 0.05,
+  unit: "percent",
+  displayName: "Coordination Tax (Olson)",
+  description: "Welfare loss from collective action failures. Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.",
+  sourceType: "external",
+  sourceRef: "olson1996",
+  confidence: "low",
+  confidenceInterval: [0.02, 0.1],
+  stdError: 0.03,
+};
+
+export const POLITICAL_DYSFUNCTION_TAX_INFO_PCT: Parameter = {
+  value: 0.02,
+  unit: "percent",
+  displayName: "Information Tax (Hayek)",
+  description: "Welfare loss from information aggregation failures - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge that markets aggregate. Hayek (1945) argued this is a fundamental limit on central planning effectiveness.",
+  sourceType: "external",
+  sourceRef: "hayek1945",
+  confidence: "low",
+  confidenceInterval: [0.01, 0.04],
+  stdError: 0.01,
+};
+
+export const POLITICAL_DYSFUNCTION_TAX_TIME_PCT: Parameter = {
+  value: 0.03,
+  unit: "percent",
+  displayName: "Time-Inconsistency Tax",
+  description: "Welfare loss from political time-inconsistency (electoral short-termism). Politicians facing re-election underinvest in long-term public goods and infrastructure. Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.",
+  sourceType: "external",
+  sourceRef: "kydland1977",
+  confidence: "low",
+  confidenceInterval: [0.01, 0.06],
+  stdError: 0.02,
+};
+
 export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
   value: 0.01,
   unit: "rate",
@@ -1317,6 +1533,36 @@ export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
   peerReviewed: true,
 };
 
+export const SINGAPORE_GDP_PER_CAPITA_PPP: Parameter = {
+  value: 105000.0,
+  unit: "USD",
+  displayName: "Singapore GDP per Capita (PPP)",
+  description: "Singapore GDP per capita (PPP-adjusted). Among highest in world, demonstrating that lean government can coexist with prosperity.",
+  sourceType: "external",
+  sourceRef: "worldbank-singapore-gdp",
+  confidence: "high",
+};
+
+export const SINGAPORE_GOVT_SPENDING_PCT_GDP: Parameter = {
+  value: 15.0,
+  unit: "percent",
+  displayName: "Singapore Govt Spending (% GDP)",
+  description: "Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.",
+  sourceType: "external",
+  sourceRef: "imf-singapore-spending",
+  confidence: "high",
+};
+
+export const SINGAPORE_LIFE_EXPECTANCY: Parameter = {
+  value: 84.1,
+  unit: "years",
+  displayName: "Singapore Life Expectancy",
+  description: "Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.",
+  sourceType: "external",
+  sourceRef: "who-life-expectancy",
+  confidence: "high",
+};
+
 export const SMALLPOX_ERADICATION_ROI: Parameter = {
   value: 280.0,
   unit: "ratio",
@@ -1397,6 +1643,36 @@ export const SWITZERLAND_GDP_PER_CAPITA_K: Parameter = {
   sourceType: "external",
   sourceRef: "swiss-vs-us-gdp-per-capita",
   confidence: "high",
+};
+
+export const SWITZERLAND_GOVT_SPENDING_PCT_GDP: Parameter = {
+  value: 35.0,
+  unit: "percent",
+  displayName: "Switzerland Govt Spending (% GDP)",
+  description: "Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.",
+  sourceType: "external",
+  sourceRef: "oecd-govt-spending",
+  confidence: "high",
+};
+
+export const SWITZERLAND_LIFE_EXPECTANCY: Parameter = {
+  value: 84.0,
+  unit: "years",
+  displayName: "Switzerland Life Expectancy",
+  description: "Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.",
+  sourceType: "external",
+  sourceRef: "who-life-expectancy",
+  confidence: "high",
+};
+
+export const SWITZERLAND_MEDIAN_INCOME_PPP: Parameter = {
+  value: 65000.0,
+  unit: "USD",
+  displayName: "Switzerland Median Income (PPP)",
+  description: "Switzerland median household income (PPP-adjusted). Higher than US when adjusted for cost of healthcare and other expenses.",
+  sourceType: "external",
+  sourceRef: "oecd-median-income",
+  confidence: "medium",
 };
 
 export const TERRORISM_DEATHS_911: Parameter = {
@@ -1542,6 +1818,26 @@ export const US_DIABETES_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
+export const US_GDP_2024: Parameter = {
+  value: 28780000000000.0,
+  unit: "USD",
+  displayName: "US GDP (2024)",
+  description: "US GDP in 2024 dollars for calculating policy costs as percentage of GDP.",
+  sourceType: "external",
+  sourceRef: "worldbank-gdp",
+  confidence: "high",
+};
+
+export const US_GOVT_SPENDING_PCT_GDP: Parameter = {
+  value: 38.0,
+  unit: "percent",
+  displayName: "US Govt Spending (% GDP)",
+  description: "US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.",
+  sourceType: "external",
+  sourceRef: "oecd-govt-spending",
+  confidence: "high",
+};
+
 export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
   value: 363000000000.0,
   unit: "USD",
@@ -1588,6 +1884,26 @@ export const US_LIFE_EXPECTANCY_2019: Parameter = {
   confidence: "high",
   confidenceInterval: [78.6, 79.1],
   peerReviewed: true,
+};
+
+export const US_LIFE_EXPECTANCY_2023: Parameter = {
+  value: 77.5,
+  unit: "years",
+  displayName: "US Life Expectancy",
+  description: "US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.",
+  sourceType: "external",
+  sourceRef: "cdc-life-expectancy",
+  confidence: "high",
+};
+
+export const US_MEDIAN_HOUSEHOLD_INCOME_2023: Parameter = {
+  value: 80610.0,
+  unit: "USD",
+  displayName: "US Median Household Income",
+  description: "US median household income (2023). High in absolute terms but adjusted for healthcare costs and inequality, purchasing power is lower than peers.",
+  sourceType: "external",
+  sourceRef: "census-income-2023",
+  confidence: "high",
 };
 
 export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
@@ -1738,6 +2054,54 @@ export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
   confidence: "medium",
   formula: "CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT",
   latex: "\\begin{gathered}\nDrugs_{new} \\\\\n= Drugs_{ann,curr} \\times Attrition_{valley} \\\\\n= 50 \\times 40\\% \\\\\n= 20\n\\end{gathered}",
+};
+
+export const BAD_POLICY_COST_TOTAL_US: Parameter = {
+  value: 5032850000000.0,
+  unit: "USD",
+  displayName: "Bad Policy Costs Total (US)",
+  description: "Total annual US bad policy costs (Tier 1 + Tier 2 with overlap discount). Bottom-up empirical estimate based on specific, measurable policy failures. More defensible than theoretical decomposition because each component is verifiable.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/optimocracy-paper#bad-policy-costs",
+  confidence: "low",
+  formula: "(TIER1 + TIER2) × OVERLAP_DISCOUNT",
+  latex: "\\begin{gathered}\nC_{bad,total} \\\\\n= BadUS \\times (C_{tier1} + C_{tier2}) \\\\\n= 0.85 \\times (\\$3.92T + \\$2T) \\\\\n= \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1} \\\\\n= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare} + C_{housing} \\\\\n+ C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\\text{where } C_{tier2} \\\\\n= C_{ff,external} + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\end{gathered}",
+};
+
+export const BAD_POLICY_COST_TOTAL_US_PCT_GDP: Parameter = {
+  value: 0.17487317581653927,
+  unit: "percent",
+  displayName: "Bad Policy Costs (% GDP)",
+  description: "Total US bad policy costs as percentage of GDP. Bottom-up empirical estimate for comparison with theoretical Political Dysfunction Tax.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/optimocracy-paper#bad-policy-costs",
+  confidence: "low",
+  formula: "BAD_POLICY_COST_TOTAL / US_GDP",
+  latex: "\\begin{gathered}\n\\tau_{bad,empirical} = \\frac{C_{bad,total}}{USGDP} = \\frac{\\$5.03T}{\\$28.8T} = 17.5\\% \\\\[0.5em]\n\\text{where } C_{bad,total} \\\\\n= BadUS \\times (C_{tier1} + C_{tier2}) \\\\\n= 0.85 \\times (\\$3.92T + \\$2T) \\\\\n= \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1} \\\\\n= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare} + C_{housing} \\\\\n+ C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\\text{where } C_{tier2} \\\\\n= C_{ff,external} + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\end{gathered}",
+};
+
+export const BAD_POLICY_COST_US_TIER1_TOTAL: Parameter = {
+  value: 3921000000000.0,
+  unit: "USD",
+  displayName: "Bad Policy Costs (Tier 1)",
+  description: "Sum of Tier 1 (well-documented) bad policy costs: tax compliance + failed wars + drug war + tariffs + fossil fuel explicit + healthcare inefficiency + housing/zoning + agricultural subsidies. These have strong empirical backing and high economist consensus.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/optimocracy-paper#bad-policy-costs",
+  confidence: "medium",
+  formula: "TAX + WARS + DRUGS + TARIFFS + FF_EXPLICIT + HEALTHCARE + HOUSING + AG",
+  latex: "\\begin{gathered}\nC_{tier1} \\\\\n= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare} + C_{housing} + C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B + \\$1.2T + \\$1.4T \\\\\n+ \\$75B \\\\\n= \\$3.92T\n\\end{gathered}",
+};
+
+export const BAD_POLICY_COST_US_TIER2_TOTAL: Parameter = {
+  value: 2000000000000.0,
+  unit: "USD",
+  displayName: "Bad Policy Costs (Tier 2)",
+  description: "Sum of Tier 2 (contested but defensible) bad policy costs: fossil fuel externalities + occupational licensing + migration restrictions + defense above deterrence + incarceration excess + infrastructure cost disease. Wider uncertainty due to counterfactual assumptions.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/optimocracy-paper#bad-policy-costs",
+  confidence: "low",
+  formula: "FF_EXT + LICENSING + MIGRATION + DEFENSE + PRISON + INFRA",
+  latex: "\\begin{gathered}\nC_{tier2} \\\\\n= C_{ff,external} + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\end{gathered}",
 };
 
 export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -2943,6 +3307,18 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   latex: "\\begin{gathered}\nCost_{mental,pc} \\\\\n= \\frac{Cost_{mental,US}}{Pop_{US}} \\\\\n= \\frac{\\$350B}{335M} \\\\\n= \\$1.04K\n\\end{gathered}",
 };
 
+export const POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT: Parameter = {
+  value: 0.2,
+  unit: "percent",
+  displayName: "Political Dysfunction Tax (Total)",
+  description: "Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. Represents the 'tax' citizens implicitly pay for dysfunctional political systems.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/optimocracy-paper",
+  confidence: "low",
+  formula: "CRONY_TAX + TIME + INFO + COORDINATION",
+  latex: "\\begin{gathered}\n\\tau_{dysfunction} \\\\\n= \\tau_{crony} + \\tau_{time} + \\tau_{info} + \\tau_{coord} \\\\\n= 10\\% + 3\\% + 2\\% + 5\\% \\\\\n= 20\\%\n\\end{gathered}",
+};
+
 export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   value: 4.0,
   unit: "USD/QALY",
@@ -3410,6 +3786,15 @@ export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
   confidence: "high",
   confidenceInterval: [1500.0, 2000.0],
+};
+
+export const BAD_POLICY_US_OVERLAP_DISCOUNT: Parameter = {
+  value: 0.85,
+  unit: "ratio",
+  displayName: "Overlap Discount Factor",
+  description: "Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.",
+  sourceType: "definition",
+  confidence: "low",
 };
 
 export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
@@ -4500,6 +4885,17 @@ export const US_CONGRESS_MEMBER_COUNT: Parameter = {
   confidence: "high",
 };
 
+export const US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND: Parameter = {
+  value: 3.0,
+  unit: "percent",
+  displayName: "US Dysfunction Premium vs Switzerland",
+  description: "US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).",
+  sourceType: "definition",
+  sourceRef: "oecd-govt-spending",
+  confidence: "high",
+  formula: "US_GOVT_SPENDING_PCT_GDP - SWITZERLAND_GOVT_SPENDING_PCT_GDP",
+};
+
 export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   value: 25000000000.0,
   unit: "USD",
@@ -4509,6 +4905,39 @@ export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
   confidence: "low",
   formula: "Congress advocacy + lobbying parity + campaign matching",
+};
+
+export const US_VS_SINGAPORE_SPENDING_GAP: Parameter = {
+  value: 23.0,
+  unit: "percent",
+  displayName: "US-Singapore Spending Gap",
+  description: "Government spending gap: US spends 23 percentage points MORE of GDP than Singapore yet achieves 6.6 fewer years of life expectancy.",
+  sourceType: "definition",
+  sourceRef: "oecd-govt-spending",
+  confidence: "high",
+  formula: "US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
+};
+
+export const US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP: Parameter = {
+  value: 6.5,
+  unit: "years",
+  displayName: "Switzerland-US Life Expectancy Gap",
+  description: "Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.",
+  sourceType: "definition",
+  sourceRef: "who-life-expectancy",
+  confidence: "high",
+  formula: "SWITZERLAND_LE - US_LE = 84.0 - 77.5",
+};
+
+export const US_VS_SWITZERLAND_SPENDING_GAP: Parameter = {
+  value: 3.0,
+  unit: "percent",
+  displayName: "US-Switzerland Spending Gap",
+  description: "Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.",
+  sourceType: "definition",
+  sourceRef: "oecd-govt-spending",
+  confidence: "high",
+  formula: "US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
 };
 
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
@@ -4552,6 +4981,20 @@ export const parameters = {
   ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE,
   AVERAGE_MARKET_RETURN_PCT,
   AVERAGE_US_HOURLY_WAGE,
+  BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES,
+  BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE,
+  BAD_POLICY_COST_US_DRUG_WAR,
+  BAD_POLICY_COST_US_FAILED_WARS,
+  BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT,
+  BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES,
+  BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY,
+  BAD_POLICY_COST_US_HOUSING_ZONING,
+  BAD_POLICY_COST_US_INCARCERATION_EXCESS,
+  BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE,
+  BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS,
+  BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING,
+  BAD_POLICY_COST_US_TARIFFS,
+  BAD_POLICY_COST_US_TAX_COMPLIANCE,
   BASELINE_LIVES_SAVED_ANNUAL,
   BED_NETS_COST_PER_DALY,
   BOOK_READING_SPEED_WPM,
@@ -4563,6 +5006,7 @@ export const parameters = {
   CHILDHOOD_VACCINATION_ROI,
   CHRONIC_DISEASE_DISABILITY_WEIGHT,
   CPI_MULTIPLIER_1980_TO_2024,
+  CRONY_TAX_PCT,
   CURRENT_ACTIVE_TRIALS,
   CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE,
   CURRENT_DISEASE_PATIENTS_GLOBAL,
@@ -4650,6 +5094,9 @@ export const parameters = {
   PHASE_3_TRIAL_COST_MIN,
   PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT,
   POLIO_VACCINATION_ROI,
+  POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT,
+  POLITICAL_DYSFUNCTION_TAX_INFO_PCT,
+  POLITICAL_DYSFUNCTION_TAX_TIME_PCT,
   POLITICAL_SUCCESS_PROBABILITY,
   POLITICIAN_POST_OFFICE_CAREER_VALUE,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
@@ -4663,6 +5110,9 @@ export const parameters = {
   RECOVERY_TRIAL_TOTAL_COST,
   REGULATORY_DELAY_MEAN_AGE_OF_DEATH,
   REGULATORY_DELAY_SUFFERING_PERIOD_YEARS,
+  SINGAPORE_GDP_PER_CAPITA_PPP,
+  SINGAPORE_GOVT_SPENDING_PCT_GDP,
+  SINGAPORE_LIFE_EXPECTANCY,
   SMALLPOX_ERADICATION_ROI,
   SMALLPOX_ERADICATION_TOTAL_BENEFIT,
   SMOKING_CESSATION_ANNUAL_BENEFIT,
@@ -4671,6 +5121,9 @@ export const parameters = {
   SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL,
   SWITZERLAND_DEFENSE_SPENDING_PCT,
   SWITZERLAND_GDP_PER_CAPITA_K,
+  SWITZERLAND_GOVT_SPENDING_PCT_GDP,
+  SWITZERLAND_LIFE_EXPECTANCY,
+  SWITZERLAND_MEDIAN_INCOME_PPP,
   TERRORISM_DEATHS_911,
   THALIDOMIDE_CASES_WORLDWIDE,
   THALIDOMIDE_DISABILITY_WEIGHT,
@@ -4684,10 +5137,14 @@ export const parameters = {
   US_CANCER_ANNUAL_COST,
   US_CHRONIC_DISEASE_SPENDING_ANNUAL,
   US_DIABETES_ANNUAL_COST,
+  US_GDP_2024,
+  US_GOVT_SPENDING_PCT_GDP,
   US_HEART_DISEASE_ANNUAL_COST,
   US_LIFE_EXPECTANCY_1880,
   US_LIFE_EXPECTANCY_1962,
   US_LIFE_EXPECTANCY_2019,
+  US_LIFE_EXPECTANCY_2023,
+  US_MEDIAN_HOUSEHOLD_INCOME_2023,
   US_MENTAL_HEALTH_COST_ANNUAL,
   US_MILITARY_SPENDING_PCT_GDP,
   US_POPULATION_2024,
@@ -4702,6 +5159,10 @@ export const parameters = {
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
   ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
+  BAD_POLICY_COST_TOTAL_US,
+  BAD_POLICY_COST_TOTAL_US_PCT_GDP,
+  BAD_POLICY_COST_US_TIER1_TOTAL,
+  BAD_POLICY_COST_US_TIER2_TOTAL,
   CELL_THERAPY_DISEASE_COMBINATIONS,
   CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
@@ -4805,6 +5266,7 @@ export const parameters = {
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
+  POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
   PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
@@ -4845,6 +5307,7 @@ export const parameters = {
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
+  BAD_POLICY_US_OVERLAP_DISCOUNT,
   CAMPAIGN_CELEBRITY_ENDORSEMENT,
   CAMPAIGN_COMMUNITY_ORGANIZING,
   CAMPAIGN_CONTINGENCY,
@@ -4950,7 +5413,11 @@ export const parameters = {
   TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
   US_CONGRESS_MEMBER_COUNT,
+  US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND,
   US_POLITICAL_REFORM_INVESTMENT_TOTAL,
+  US_VS_SINGAPORE_SPENDING_GAP,
+  US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
+  US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VICTORY_BOND_FUNDING_PCT
@@ -5079,6 +5546,34 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.bls.gov/data/inflation_calculator.htm",
         note: "U.S. Bureau of Labor Statistics, 2024, CPI Inflation Calculator",
   },
+  "cdc-life-expectancy": {
+        id: "cdc-life-expectancy",
+        type: "report",
+        title: "US Life Expectancy 2023",
+        author: [
+          {
+            literal: "Centers for Disease Control and Prevention"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "CDC",
+        URL: "https://www.cdc.gov/nchs/fastats/life-expectancy.htm",
+        note: "CDC, 2024, Life Expectancy",
+  },
+  "census-income-2023": {
+        id: "census-income-2023",
+        type: "report",
+        title: "US Median Household Income 2023",
+        author: [
+          {
+            literal: "US Census Bureau"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "US Census Bureau",
+        URL: "https://www.census.gov/library/publications/2024/demo/p60-282.html",
+        note: "US Census Bureau, 2024, Income in the United States: 2023",
+  },
   "ceo-compensation": {
         id: "ceo-compensation",
         type: "article-journal",
@@ -5162,6 +5657,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://news.un.org/en/story/2014/11/484032",
         note: "UN News, Link | WaterAid, Link",
   },
+  "clemens2011": {
+        id: "clemens2011",
+        type: "article-journal",
+        title: "Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?",
+        author: [
+          {
+            family: "Clemens",
+            given: "Michael A."
+          },
+        ],
+        issued: { 'date-parts': [[2011]] },
+        'container-title': "Journal of Economic Perspectives",
+        URL: "https://www.aeaweb.org/articles?id=10.1257%2Fjep.25.3.83",
+  },
   "clinical-trial-abandonment-rate": {
         id: "clinical-trial-abandonment-rate",
         type: "webpage",
@@ -5214,6 +5723,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://clinicaltrials.gov/data-api/api",
         note: "Direct analysis via ClinicalTrials.gov API v2",
   },
+  "costsofwar2023": {
+        id: "costsofwar2023",
+        type: "report",
+        title: "Blood and Treasure: United States Budgetary Costs and Human Costs of 20 Years of War",
+        author: [
+          {
+            family: "Crawford",
+            given: "Neta C. and Lutz, Catherine"
+          },
+        ],
+        issued: { 'date-parts': [[2023]] },
+        URL: "https://costsofwar.watson.brown.edu/",
+  },
   "cs-global-wealth-report-2023": {
         id: "cs-global-wealth-report-2023",
         type: "article-journal",
@@ -5227,6 +5749,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Credit Suisse/UBS",
         URL: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
         note: "Credit Suisse/UBS, 2023, Global Wealth Report 2023",
+  },
+  "delrosal2011": {
+        id: "delrosal2011",
+        type: "article-journal",
+        title: "The Empirical Measurement of Rent-Seeking Costs",
+        author: [
+          {
+            family: "Del Rosal",
+            given: "Ignacio"
+          },
+        ],
+        issued: { 'date-parts': [[2011]] },
+        'container-title': "Journal of Economic Surveys",
+        URL: "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-6419.2009.00621.x",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
@@ -5404,6 +5940,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.nature.com/articles/nrd.2016.136",
         note: "Nature Reviews Drug Discovery: Clinical Success Rates | PMC: Estimating Success Rates | Oxford Academic: Clinical Trial Success",
   },
+  "drugpolicyalliance2021": {
+        id: "drugpolicyalliance2021",
+        type: "report",
+        title: "The Drug War by the Numbers",
+        author: [
+          {
+            literal: "Drug Policy Alliance"
+          },
+        ],
+        issued: { 'date-parts': [[2021]] },
+        URL: "https://drugpolicy.org/drug-war-stats/",
+  },
   "education-investment-economic-multiplier": {
         id: "education-investment-economic-multiplier",
         type: "article-journal",
@@ -5429,6 +5977,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Brown Watson Costs of War: Environmental Cost",
         URL: "https://watson.brown.edu/costsofwar/costs/social/environment",
         note: "Brown Watson Costs of War: Environmental Cost | Earth.Org: Environmental Impact of Wars | Transform Defence: Military Spending & Climate",
+  },
+  "ewg-farm-subsidies": {
+        id: "ewg-farm-subsidies",
+        type: "article-journal",
+        title: "US Farm Subsidy Database and Analysis",
+        author: [
+          {
+            literal: "Environmental Working Group"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Environmental Working Group",
+        URL: "https://farm.ewg.org/",
+        note: "Environmental Working Group, Farm Subsidy Database | USDA Economic Research Service, Agricultural Subsidies",
   },
   "fda-approval-timeline-10-years": {
         id: "fda-approval-timeline-10-years",
@@ -5617,6 +6179,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://ourworldindata.org/terrorism",
         note: "Our World in Data: Terrorism | Global Terrorism Index 2024 | START Global Terrorism Database | Our World in Data: Terrorism Deaths",
   },
+  "hayek1945": {
+        id: "hayek1945",
+        type: "article-journal",
+        title: "The Use of Knowledge in Society",
+        author: [
+          {
+            family: "Hayek",
+            given: "Friedrich A."
+          },
+        ],
+        issued: { 'date-parts': [[1945]] },
+        'container-title': "American Economic Review",
+        URL: "https://www.econlib.org/library/Essays/hykKnw.html",
+  },
   "healthcare-investment-economic-multiplier": {
         id: "healthcare-investment-economic-multiplier",
         type: "article-journal",
@@ -5630,6 +6206,21 @@ export const citations: Record<string, Citation> = {
         'container-title': "PMC: California Universal Health Care",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5954824/",
         note: "PMC: California Universal Health Care | CEPR: Government Investment | PMC: Health Sector Investment & Growth | ODI: Fiscal Multipliers Review",
+  },
+  "hsieh-moretti2019": {
+        id: "hsieh-moretti2019",
+        type: "article-journal",
+        title: "Housing Constraints and Spatial Misallocation",
+        author: [
+          {
+            family: "Hsieh",
+            given: "Chang-Tai and Enrico Moretti"
+          },
+        ],
+        issued: { 'date-parts': [[2019]] },
+        'container-title': "Hsieh & Moretti",
+        URL: "https://www.aeaweb.org/articles?id=10.1257/mac.20170388",
+        note: "Hsieh & Moretti, 2019, AEJ:Macro | Highly cited - one of most influential papers in urban economics",
   },
   "human-genome-and-genetic-editing": {
         id: "human-genome-and-genetic-editing",
@@ -5687,6 +6278,32 @@ export const citations: Record<string, Citation> = {
         URL: "https://vizhub.healthdata.org/gbd-results/",
         note: "Institute for Health Metrics and Evaluation (IHME), GBD Results Tool | The Lancet, 2024, Global burden of 371 diseases and injuries, and 87 risk factors, in 204 countries, 2000-202100757-8/fulltext) | IHME, Global Burden of Disease Study 2021",
   },
+  "imf-fossilfuel2023": {
+        id: "imf-fossilfuel2023",
+        type: "report",
+        title: "IMF Fossil Fuel Subsidies Data: 2023 Update",
+        author: [
+          {
+            literal: "International Monetary Fund"
+          },
+        ],
+        issued: { 'date-parts': [[2023]] },
+        URL: "https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion",
+  },
+  "imf-singapore-spending": {
+        id: "imf-singapore-spending",
+        type: "report",
+        title: "IMF Singapore Government Spending Data",
+        author: [
+          {
+            literal: "International Monetary Fund"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "IMF",
+        URL: "https://www.imf.org/en/Countries/SGP",
+        note: "IMF, 2024, Singapore Country Data",
+  },
   "industry-clinical-trial-spending-estimate": {
         id: "industry-clinical-trial-spending-estimate",
         type: "webpage",
@@ -5725,6 +6342,34 @@ export const citations: Record<string, Citation> = {
         'container-title': "World Bank: Infrastructure Investment as Stimulus",
         URL: "https://blogs.worldbank.org/en/ppps/effectiveness-infrastructure-investment-fiscal-stimulus-what-weve-learned",
         note: "World Bank: Infrastructure Investment as Stimulus | Global Infrastructure Hub: Fiscal Multiplier | CEPR: Government Investment | Richmond Fed: Infrastructure Spending",
+  },
+  "kleiner2013": {
+        id: "kleiner2013",
+        type: "article-journal",
+        title: "Analyzing the Extent and Influence of Occupational Licensing on the Labor Market",
+        author: [
+          {
+            family: "Kleiner",
+            given: "Morris M. and Krueger, Alan B."
+          },
+        ],
+        issued: { 'date-parts': [[2013]] },
+        'container-title': "Journal of Labor Economics",
+        URL: "https://www.journals.uchicago.edu/doi/abs/10.1086/669060",
+  },
+  "kydland1977": {
+        id: "kydland1977",
+        type: "article-journal",
+        title: "Rules Rather than Discretion: The Inconsistency of Optimal Plans",
+        author: [
+          {
+            family: "Kydland",
+            given: "Finn E. and Prescott, Edward C."
+          },
+        ],
+        issued: { 'date-parts': [[1977]] },
+        'container-title': "Journal of Political Economy",
+        URL: "https://www.nobelprize.org/uploads/2018/06/advanced-economicsciences2004.pdf",
   },
   "life-expectancy-gains-smoking-reduction": {
         id: "life-expectancy-gains-smoking-reduction",
@@ -5903,6 +6548,48 @@ export const citations: Record<string, Citation> = {
         publisher: "Estimated from major foundation budgets and activities",
         note: "Estimated from major foundation budgets and activities",
   },
+  "oecd-govt-spending": {
+        id: "oecd-govt-spending",
+        type: "report",
+        title: "OECD Government Spending as Percentage of GDP",
+        author: [
+          {
+            literal: "Organisation for Economic Co-operation and Development"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "OECD",
+        URL: "https://data.oecd.org/gga/general-government-spending.htm",
+        note: "OECD, 2024, General Government Spending",
+  },
+  "oecd-median-income": {
+        id: "oecd-median-income",
+        type: "report",
+        title: "OECD Median Household Income Comparison",
+        author: [
+          {
+            literal: "Organisation for Economic Co-operation and Development"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "OECD",
+        URL: "https://data.oecd.org/hha/household-disposable-income.htm",
+        note: "OECD, 2024, Household Disposable Income",
+  },
+  "olson1996": {
+        id: "olson1996",
+        type: "article-journal",
+        title: "Big Bills Left on the Sidewalk: Why Some Nations are Rich, and Others Poor",
+        author: [
+          {
+            family: "Olson",
+            given: "Mancur"
+          },
+        ],
+        issued: { 'date-parts': [[1996]] },
+        'container-title': "Journal of Economic Perspectives",
+        URL: "https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.10.2.3",
+  },
   "opensecrets-lobbying-2024": {
         id: "opensecrets-lobbying-2024",
         type: "report",
@@ -5930,6 +6617,21 @@ export const citations: Record<string, Citation> = {
         publisher: "OpenSecrets",
         URL: "https://www.opensecrets.org/revolving-door",
         note: "OpenSecrets, Revolving Door",
+  },
+  "papanicolas2018": {
+        id: "papanicolas2018",
+        type: "article-journal",
+        title: "Health Care Spending in the United States and Other High-Income Countries",
+        author: [
+          {
+            family: "Papanicolas",
+            given: "Irene et al."
+          },
+        ],
+        issued: { 'date-parts': [[2018]] },
+        'container-title': "Papanicolas et al.",
+        URL: "https://jamanetwork.com/journals/jama/article-abstract/2674671",
+        note: "Papanicolas et al., 2018, JAMA | Highly cited comparison of healthcare spending across OECD countries",
   },
   "patient-willingness-clinical-trials": {
         id: "patient-willingness-clinical-trials",
@@ -6010,6 +6712,21 @@ export const citations: Record<string, Citation> = {
         'container-title': "WHO",
         URL: "https://www.who.int/news-room/feature-stories/detail/sustaining-polio-investments-offers-a-high-return",
         note: "WHO, 2019, Sustaining Polio Investments Offers a High Return",
+  },
+  "posen2014": {
+        id: "posen2014",
+        type: "book",
+        title: "Restraint: A New Foundation for U.S. Grand Strategy",
+        author: [
+          {
+            family: "Posen",
+            given: "Barry R."
+          },
+        ],
+        issued: { 'date-parts': [[2014]] },
+        publisher: "Posen",
+        URL: "https://www.cornellpress.cornell.edu/book/9780801452581/restraint/",
+        note: "Posen, Barry R., 2014, Restraint | See also: Preble, Christopher (Cato), \"The Power Problem\" | Defense economics literature on deterrence sufficiency",
   },
   "post-1962-drug-approval-drop": {
         id: "post-1962-drug-approval-drop",
@@ -6268,6 +6985,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=CH",
         note: "World Bank: Switzerland GDP Per Capita | Trading Economics: Switzerland GDP Per Capita PPP | TheGlobalEconomy: USA GDP Per Capita PPP",
   },
+  "taxfoundation2024-compliance": {
+        id: "taxfoundation2024-compliance",
+        type: "article-journal",
+        title: "Tax Compliance Costs the US Economy $546 Billion Annually",
+        author: [
+          {
+            literal: "Tax Foundation"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/",
+  },
   "thalidomide-scandal": {
         id: "thalidomide-scandal",
         type: "article-journal",
@@ -6294,6 +7023,21 @@ export const citations: Record<string, Citation> = {
         'container-title': "PLOS One",
         URL: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210222",
         note: "PLOS One, 2019, The health and quality of life of Thalidomide survivors as they age",
+  },
+  "transit-costs-project": {
+        id: "transit-costs-project",
+        type: "article-journal",
+        title: "Transit Costs Project - Why US Infrastructure Costs So Much",
+        author: [
+          {
+            family: "Marron Institute",
+            given: "NYU"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "NYU Transit Costs Project",
+        URL: "https://transitcosts.com/",
+        note: "NYU Transit Costs Project, TransitCosts.com | Brookings Institution, Why Does Infrastructure Cost So Much?",
   },
   "trial-costs-fda-study": {
         id: "trial-costs-fda-study",
@@ -6444,6 +7188,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3324971/",
         note: "Hutchinson & Kirk (2011), Drug Discov Today; conservative estimate 40% abandoned due to cost",
   },
+  "vera-incarceration2024": {
+        id: "vera-incarceration2024",
+        type: "article-journal",
+        title: "The Economic Burden of Incarceration in the United States",
+        author: [
+          {
+            literal: "Vera Institute of Justice"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Vera Institute",
+        URL: "https://www.vera.org/publications/the-economic-burden-of-incarceration-in-the-u-s",
+        note: "Vera Institute, Economic Burden of Incarceration | Prison Policy Initiative, Mass Incarceration: The Whole Pie | RAND Corporation, Evidence on Drug Courts",
+  },
   "veteran-healthcare-cost-projections": {
         id: "veteran-healthcare-cost-projections",
         type: "article-journal",
@@ -6513,6 +7271,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
         note: "World Health Organization, 2024, Global Health Estimates: Life expectancy and leading causes of death and disability",
   },
+  "who-life-expectancy": {
+        id: "who-life-expectancy",
+        type: "report",
+        title: "WHO Life Expectancy Data by Country",
+        author: [
+          {
+            literal: "World Health Organization"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "WHO",
+        URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
+        note: "WHO, 2024, Life Expectancy",
+  },
   "world-bank-trade-disruption-conflict": {
         id: "world-bank-trade-disruption-conflict",
         type: "article-journal",
@@ -6525,16 +7297,57 @@ export const citations: Record<string, Citation> = {
         'container-title': "World Bank",
         URL: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
         note: "World Bank, Trading Away from Conflict | NBER/World Bank, Collateral Damage: Trade Disruption | World Bank, Impacts on Global Trade of Current Trade Disputes",
+  },
+  "worldbank-gdp": {
+        id: "worldbank-gdp",
+        type: "article-journal",
+        title: "US GDP 2024 ($28.78 trillion)",
+        author: [
+          {
+            family: "World Bank",
+            given: "Bureau of Economic Analysis"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "World Bank",
+        URL: "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=US",
+        note: "World Bank, GDP (current US$) - United States | Bureau of Economic Analysis, GDP and the Economy",
+  },
+  "worldbank-singapore-gdp": {
+        id: "worldbank-singapore-gdp",
+        type: "article-journal",
+        title: "World Bank Singapore Economic Data",
+        author: [
+          {
+            literal: "World Bank"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "World Bank",
+        URL: "https://data.worldbank.org/country/singapore",
+        note: "World Bank, Singapore Data",
+  },
+  "yalebudgetlab2025": {
+        id: "yalebudgetlab2025",
+        type: "report",
+        title: "The Fiscal, Economic, and Distributional Effects of All U.S. Tariffs",
+        author: [
+          {
+            literal: "Yale Budget Lab"
+          },
+        ],
+        issued: { 'date-parts': [[2025]] },
+        URL: "https://budgetlab.yale.edu/research/where-we-stand-fiscal-economic-and-distributional-effects-all-us-tariffs-enacted-2025-through-april",
   }
 };
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 407,
-  external: 154,
-  calculated: 142,
-  definitions: 111,
-  citations: 115,
+  total: 445,
+  external: 182,
+  calculated: 147,
+  definitions: 116,
+  citations: 140,
 } as const;
 
 // ============================================================================

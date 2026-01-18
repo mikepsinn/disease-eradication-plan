@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: 'Discretionary governance suffers from capture, time-inconsistency, and misalignment between political incentives and citizen welfare. Optimocracy proposes algorithmic allocation systems that optimize for pre-agreed metrics (median income growth, QALYs, composite welfare indices), using smart contracts and decentralized oracles to minimize human discretion and maximize verifiability.'
+description: 'Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen welfare) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes algorithmic allocation systems that optimize for pre-agreed metrics (median income growth, QALYs, composite welfare indices), using smart contracts and decentralized oracles to minimize human discretion and maximize verifiability.'
 aliases:
   - /optimocracy.html
 author:
@@ -58,7 +58,7 @@ This paper explores algorithmic governance as a complement to democratic prefere
 
 Democratic governance faces a fundamental tension: the humans who make allocation decisions face incentives that systematically diverge from citizen welfare. This paper documents the scale of this problem and proposes a mechanism to address it.
 
-**The empirical foundation:** Peer-reviewed research documents massive welfare losses from suboptimal policy. Migration restrictions alone cost 67-147% of global GDP [@clemens2011]. US regulatory accumulation since 1980 has made the economy 25% smaller than its counterfactual trajectory [@coffey2020]. Global corruption costs 5% of GDP annually. FDA drug approval delays caused an estimated 140 million life-years lost between 1960-2001. Aggregating across documented inefficiencies, conservative estimates suggest optimal policy could increase global welfare by 50-150%.
+**The empirical foundation:** Peer-reviewed research documents massive welfare losses from suboptimal policy. A comprehensive survey of rent-seeking cost estimates finds they range from 0.2% to 23.7% of GDP [@delrosal2011]. Migration restrictions alone cost 67-147% of global GDP [@clemens2011]. US regulatory accumulation since 1980 has made the economy 25% smaller than its counterfactual trajectory [@coffey2020]. Global corruption costs 5% of GDP annually. Aggregating across capture, time-inconsistency, information costs, and coordination failures, the **Political Dysfunction Tax** is estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
 
 **The mechanism:** Optimocracy addresses these failures by removing human discretion from routine resource allocation. Under Optimocracy, a governing coalition commits (via constitutional constraints) to optimize allocation based on pre-agreed welfare metrics. Measurement systems provide verifiable data feeds, and algorithmic execution replaces human judgment for decisions within specified bounds.
 
@@ -68,7 +68,7 @@ Democratic governance faces a fundamental tension: the humans who make allocatio
 
 **The political economy:** Reform requires converting opponents into supporters. We propose Coasean buyouts via Incentive Alignment Bonds: compensating rent-seekers for transitioning away from dysfunction, making reform a Pareto improvement rather than a redistributive conflict.
 
-## Introduction: The Discretion Problem
+## Introduction: The Political Dysfunction Problem
 
 ### Why Information Alone Fails
 
@@ -78,17 +78,11 @@ Yet government spending patterns remain largely unresponsive to this information
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because acting on it doesn't maximize their utility function (reelection probability, campaign contributions, post-office career prospects).
 
-### The Discretion Tax
+### The Political Dysfunction Tax
 
-Every point of human discretion in resource allocation creates an opportunity for capture. Consider a simplified model:
+Every point of human discretion in resource allocation creates an opportunity for cronyism and capture. The largest component of this welfare loss is the **Crony Tax**, the cost of concentrated interests capturing policy for their benefit.
 
-Let $A^*$ be the welfare-optimal allocation and $A$ be the actual allocation. The **discretion tax** is:
-
-$$
-\tau_d = \frac{W(A^*) - W(A)}{W(A^*)}
-$$
-
-Where $W(\cdot)$ is the social welfare function. Empirical estimates suggest $\tau_d$ ranges from 20-60% for government spending, meaning 20-60% of potential welfare is lost to misallocation driven by political rather than welfare considerations.
+Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delrosal2011], with some studies finding effects as large as 45% [@laband1988]. Combined with time-inconsistency, information costs, and coordination failures, the total **Political Dysfunction Tax** is estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare (see formal model below).
 
 ### The Optimocracy Thesis
 
@@ -98,34 +92,40 @@ Optimocracy proposes a radical simplification: **remove human discretion from ro
 2. **What is the current value of that metric?** (Oracle measurement, continuous)
 3. **Which allocation maximizes the metric?** (Algorithmic optimization, automatic)
 
-This architecture eliminates the discretion tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (choosing the metric) and for genuinely novel situations.
+This architecture eliminates the Political Dysfunction Tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (choosing the metric) and for genuinely novel situations.
 
 ## The Scale of Welfare Loss: Empirical Foundations
 
 Before proposing solutions, we must establish the magnitude of the problem. This section synthesizes peer-reviewed research documenting welfare losses from suboptimal policy. The metaphor "trillion dollar bills on the sidewalk" comes from @olson1996, who showed that differences between rich and poor countries are primarily due to institutions and policies, not factors of production.
 
-### A Formal Model of the Discretion Tax
+### A Formal Model of the Political Dysfunction Tax
 
-Let $W^*$ represent maximum achievable welfare under optimal policy, and $W$ represent actual welfare under current policy. We define the **discretion tax** as:
+Let $W^*$ represent maximum achievable welfare under optimal policy, and $W$ represent actual welfare under current policy. We define the **Political Dysfunction Tax** as:
 
 $$
-\tau_d = \frac{W^* - W}{W^*} = 1 - \frac{W}{W^*}
+\tau_{dysfunction} = \frac{W^* - W}{W^*} = 1 - \frac{W}{W^*}
 $$
 
 This can be decomposed into sources:
 
 $$
-\tau_d = \tau_{capture} + \tau_{time} + \tau_{information} + \tau_{coordination}
+\tau_{dysfunction} = \tau_{crony} + \tau_{time} + \tau_{information} + \tau_{coordination}
 $$
+
+Substituting empirical estimates:
+
+{{< var political_dysfunction_tax_total_pct_latex >}}
 
 Where:
 
-- $\tau_{capture}$: Welfare loss from policies serving concentrated interests rather than citizens
-- $\tau_{time}$: Welfare loss from short electoral horizons causing underinvestment in long-term goods
-- $\tau_{information}$: Welfare loss from decision-makers lacking relevant knowledge
-- $\tau_{coordination}$: Welfare loss from inability to commit to welfare-improving policies
+- $\tau_{crony}$: **The Crony Tax**, welfare loss from policies serving concentrated interests rather than citizens ({{< var crony_tax_pct >}})
+- $\tau_{time}$: Welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}})
+- $\tau_{information}$: Welfare loss from decision-makers lacking relevant knowledge ({{< var political_dysfunction_tax_info_pct >}})
+- $\tau_{coordination}$: Welfare loss from inability to commit to welfare-improving policies ({{< var political_dysfunction_tax_coordination_pct >}})
 
-Optimocracy primarily addresses $\tau_{capture}$ and $\tau_{time}$ by removing discretionary decisions where these losses are largest.
+**Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
+
+Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by removing discretionary decisions where these losses are largest.
 
 ### Documented Welfare Losses by Policy Domain
 
@@ -141,7 +141,7 @@ The following table synthesizes estimates from peer-reviewed research:
 | **Trade barriers** | @costinot2015 | Gravity models | 5-10% of GDP |
 | **Occupational licensing** | @kleiner2013 | Labor market distortion | 2-3% of GDP |
 
-**Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the discretion tax exceeds 20% of potential welfare.
+**Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the Political Dysfunction Tax exceeds {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
 
 ### The Clemens Finding: Migration as Paradigm Case
 
@@ -211,7 +211,7 @@ Information about optimal policy is freely available. The Copenhagen Consensus, 
 
 The empirical evidence suggests:
 
-1. **The welfare loss is massive**: Conservative estimates suggest 20-50% of potential welfare is foregone.
+1. **The welfare loss is massive**: Conservative estimates suggest {{< var political_dysfunction_tax_total_pct >}} of potential welfare is foregone.
 2. **Information alone is insufficient**: Better data does not change political incentives.
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
@@ -243,48 +243,15 @@ Inflation in advanced economies fell from double digits to stable low single dig
 
 #### Did the Fed Choose the Wrong Metric?
 
-The central bank critique raises a critical question: Was the problem algorithmic governance per se, or was it optimization of the **wrong metric**?
+The central bank critique reveals a crucial insight: the problem was **metric selection**, not algorithmic governance.
 
-**The inflation-only target optimized a narrow technical measure while ignoring broader welfare:**
+The 2% CPI inflation target optimized a narrow technical measure while ignoring asset prices, wealth inequality, and real income growth. Had the Fed instead optimized for **median after-tax inflation-adjusted income growth**, the pathologies of QE, asset bubbles, and wage stagnation would have registered as metric failures demanding policy response.
 
-| Metric | What It Measures | What It Ignores |
-|--------|-----------------|----------------|
-| **CPI inflation (actual)** | Price changes for consumer goods | Asset price inflation, inequality, real income growth |
-| **Median real income growth (alternative)** | Inflation-adjusted income for median household | Some aspects of price stability |
+**Key implications:**
 
-**What if the Fed had optimized for median after-tax inflation-adjusted income growth instead of CPI inflation?**
-
-| Scenario | Metric | Predicted Outcomes |
-|----------|--------|-------------------|
-| **Actual (2% CPI target)** | Inflation = 2% | • Low CPI inflation ✓<br>• Asset price bubbles (housing, stocks) ✗<br>• Real wage stagnation (1973-2023) ✗<br>• QE benefiting asset holders ✗<br>• Wealth inequality (Gini 0.49) ✗ |
-| **Alternative (median income target)** | Median income growth > 0% | • Might tolerate 3-4% CPI if real wages rising<br>• Would oppose asset bubbles (hurt median household)<br>• Would oppose QE enriching top 10%<br>• Would favor policies increasing labor share of GDP |
-
-**Why the alternative metric might have produced better welfare outcomes:**
-
-1. **Alignment with citizen welfare**: Median income directly measures wellbeing; inflation is a proxy
-2. **Distributional sensitivity**: Median (not mean) captures middle-class outcomes, not top 1%
-3. **Real vs. nominal**: Inflation-adjusted income matters more than nominal price stability
-4. **Asset bubble resistance**: Rising housing costs hurt median household even if CPI is stable
-5. **QE reversal**: Under income target, transferring wealth to asset holders would fail metric
-
-**The counterfactual:**
-
-Had the Fed optimized for median real income growth (1980-2020):
-- **Inflation might have been 3-4%** instead of 2% (if wage growth justified it)
-- **QE likely would not have happened** (transfers to asset holders reduce median income)
-- **Housing bubbles harder to form** (rising prices reduce real median income)
-- **Wage stagnation = metric failure** (forcing policy response)
-
-**This suggests the central bank's problems stemmed from metric selection, not algorithmic optimization itself.** The 2% inflation target was chosen by economists optimizing for technical elegance, not citizen welfare. A welfare-relevant metric (median income growth) might have avoided financial sector capture and inequality.
-
-**Implications for Optimocracy:**
-
-- **Metric selection is crucial**: Getting the objective function right matters more than optimization algorithm
-- **Democratic metric choice**: Citizens should choose "maximize median income" not "minimize inflation variance"
-- **Beware narrow technical metrics**: Economists prefer clean, measurable targets; citizens care about messy, real welfare
-- **Test counterfactuals**: Would Optimocracy with welfare-relevant metrics outperform discretion? Likely yes
-
-The Fed case strengthens rather than undermines Optimocracy: it shows that even a **poorly chosen metric** (inflation-only) outperformed the prior regime (political business cycles). A **well-chosen metric** (median income growth) might have avoided both political cycles AND financial sector capture.
+1. **Metric selection matters more than algorithm design**: A welfare-relevant metric (median income) would have aligned policy with citizen outcomes
+2. **Democratic metric choice**: Citizens should select objectives like "maximize median income," not technocratic proxies like "minimize inflation variance"
+3. **The Fed case strengthens Optimocracy**: Even a poorly chosen metric (inflation-only) outperformed the prior political business cycle regime. A well-chosen metric might avoid both political capture AND financial sector capture
 
 ### Lessons from Technocratic Governance Failures
 
@@ -777,7 +744,7 @@ Let $M$ be the measured metric and $W$ be true welfare. Under normal conditions,
 
 5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
 
-**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. We estimate that gaming under Optimocracy reduces welfare gains by 10-30%, while capture under discretionary governance reduces welfare by 40-60%. Even with gaming, Optimocracy outperforms.
+**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. We estimate that gaming under Optimocracy reduces welfare gains by 10-30%, while the Crony Tax alone ({{< var crony_tax_pct >}}) exceeds gaming losses, and the full Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) is larger still. Even with gaming, Optimocracy outperforms.
 
 ### Oracle Capture
 
@@ -914,7 +881,7 @@ A publishable theory must generate falsifiable predictions. This section present
 **Prediction 6: Private Optimocracy DAOs will outperform traditional philanthropic allocation on chosen metrics.**
 
 - *Test*: Compare QALY/$, lives saved/$, or similar metrics across Optimocracy DAOs vs. traditional foundations
-- *Expected finding*: Optimocracy allocation achieves 20-50% better metric performance
+- *Expected finding*: Optimocracy allocation achieves significantly better metric performance (commensurate with eliminating the Crony Tax)
 - *Timeline*: Testable within 3-5 years of deployment
 
 **Prediction 7: Shadow Optimocracy budgets will outperform actual government budgets in retrospective analysis.**
@@ -1000,7 +967,7 @@ This creates a closed loop: politicians are paid for improving outcomes, not for
 
 ## Political Economy: Making Reform Happen
 
-The empirical case for Optimocracy is strong (Section 2 documented 20-50% welfare loss from discretionary governance). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
+The empirical case for Optimocracy is strong (Section 2 documented the Political Dysfunction Tax at {{< var political_dysfunction_tax_total_pct >}} of potential welfare). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
 
 This section develops the political economy of reform, distinguishing actors who benefit from optimal policy from those who lose, and proposing mechanisms to convert opponents into supporters.
 
@@ -1057,19 +1024,9 @@ Not all actors have the same relationship to reform:
 
 **Definition:** Those whose income derives from capturing value from dysfunction.
 
-**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by FDA barriers, protected industries behind trade barriers, lobbyists, regulatory consultants.
+**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. Aggregate rents from dysfunction are estimated at $2-5T annually across these categories (consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP).
 
-| Category | Current Rent Extraction | Loss from Optimal Policy |
-|----------|------------------------|--------------------------|
-| Defense contractors (excess) | ~$200B/year | Most of it |
-| Pharma incumbents (protection rents) | ~$100B/year | Significant share |
-| Protected industries | ~$300B/year | Varies by sector |
-| Lobbying industry | ~$4B/year | Most of it |
-| Regulatory consulting | ~$50B/year | Significant share |
-
-**Relationship to optimal policy:** Losers unless compensated.
-
-**IAB role:** Essential. These actors must be bought out or they will block reform.
+**Relationship to optimal policy:** Losers unless compensated. IABs must buy out these actors or they will block reform.
 
 #### Politicians and Bureaucrats
 
@@ -1118,146 +1075,39 @@ For perspective: A senator currently receives ~$174K salary plus ~$5-20M in care
 
 ### The Natural Reform Coalition
 
-Reform requires three groups:
+Reform requires three groups working together:
 
-**1. Reform advocates** (motivation: welfare improvement)
-- Philanthropists, effective altruists, public health advocates
-- Role: Provide initial capital, legitimacy, and coordination
+1. **Reform advocates** (philanthropists, effective altruists): Provide initial capital and legitimacy
+2. **Productive elites** (tech founders, innovative entrepreneurs): Provide anchor capital for IABs
+3. **Converted rent-seekers** (politicians accepting outcome-based compensation): Provide political support
 
-**2. Productive elites** (motivation: larger economy, longer life)
-- Tech founders, innovative entrepreneurs, forward-thinking wealthy
-- Role: Provide anchor capital for IABs, political access
-
-**3. Bought-out rent-seekers** (motivation: IAB payments > current rents)
-- Politicians accepting outcome-based compensation
-- Industries accepting transition payments
-- Role: Provide political support for reform
-
-**Coalition dynamics:**
-
-- Initial capital comes from groups 1 and 2
-- Success depends on converting sufficient members of group 3
-- Demonstration effects (early IAB payments) accelerate conversion
-- Network effects make opposition increasingly costly
-
-### Why This Coalition Can Win
-
-**The arithmetic is favorable:**
-
-- Beneficiaries vastly outnumber current rent-extractors
-- Welfare gains vastly exceed compensation costs
-- Forward-looking rent-seekers can see the opportunity
-
-**The political economy is shifting:**
-
-- Declining trust in institutions creates openness to alternatives
-- Cryptocurrency infrastructure enables credible commitment
-- Remote work enables policy competition across jurisdictions
-- AI acceleration increases importance of optimal resource allocation
-
-**The opposition is fragmented:**
-
-- Rent-seekers in different sectors don't coordinate
-- Politicians can be converted individually
-- First-movers among rent-seekers gain competitive advantage
-
-The question is not whether reform is possible but whether reformers can coordinate faster than opposition can mobilize.
+The arithmetic favors reform: welfare gains vastly exceed compensation costs, and rent-seekers in different sectors don't coordinate effectively. The question is whether reformers can coordinate faster than opposition can mobilize.
 
 ## Implementation Pathway
 
-**Optimocracy does not require government permission for private fund allocation.** The technology for smart contract-based, metric-optimizing allocation exists today. Government adoption is a longer-term goal, but private Optimocracy can launch immediately.
+**Optimocracy does not require government permission for private fund allocation.** The technology exists today. The strategy: **start private → demonstrate → scale**.
 
-### Phase 0: Private Optimocracy DAO (0-12 months)
+### Implementation Phases
 
-**Objective:** Deploy Optimocracy for private philanthropic or investment capital, demonstrating the mechanism works before seeking government adoption.
+| Phase | Objective | Success Metric |
+|-------|-----------|----------------|
+| **Private DAO** | Deploy for philanthropic capital, prove mechanism works | DAO allocating $10M+ with verifiable metric improvement |
+| **Shadow Tracking** | Generate counterfactual "what would Optimocracy allocate?" | Shadow budget demonstrably outperforms actual allocation |
+| **Government Pilots** | Partner with reform-minded jurisdictions for limited-scope pilots | 3+ jurisdictions running pilots with measurable welfare improvement |
+| **Broader Adoption** | Scale through demonstrated success and competitive pressure | Major jurisdiction adopts for significant budget share |
 
-**Mechanism:**
-1. Deploy smart contracts on established blockchain (Ethereum, Arbitrum, etc.)
-2. Integrate existing decentralized oracles (Chainlink, UMA) for metric feeds
-3. Raise initial capital from aligned philanthropists/investors
-4. Allocate funds algorithmically based on QALY maximization or similar metric
-5. Publish transparent allocation decisions and outcome tracking
+The bottleneck is not technology. Smart contracts, decentralized oracles (Chainlink, UMA), and DAO governance frameworks are production-ready. The bottleneck is coordination: assembling capital, stakeholders, and governance.
 
-**Success criteria:** Deployed DAO allocating $10M+ with verifiable metric improvement.
+### Realistic Adoption Path
 
-**Timeline:** 6-12 months. The technology exists; this is primarily an organizational and capital-raising challenge.
+Mass participation follows demonstrated results, not precedes them. Central bank independence started with economists and policymakers, not referendums. Index funds started with institutional adoption, not retail investors. Optimocracy will likely follow the same pattern:
 
-### Phase 1: Shadow Tracking + Foundation Adoption (6-24 months)
-
-**Objective:** Demonstrate that Optimocracy allocation outperforms government allocation, while scaling private adoption.
-
-**Mechanism:**
-1. Generate "shadow budget" showing what government would allocate under Optimocracy
-2. Track counterfactual outcomes: What would have happened?
-3. Expand private Optimocracy to foundations, DAOs, and impact investors
-4. Build coalition of organizations using Optimocracy for allocation
-
-**Success criteria:** Shadow budget demonstrably outperforms actual budget; $100M+ allocated via private Optimocracy.
-
-### Phase 2: Government Pilots (2-5 years)
-
-**Objective:** Partner with reform-minded jurisdictions for official government pilots.
-
-**Mechanism:**
-1. Identify sympathetic municipalities, states, or special districts
-2. Propose limited-scope pilots (specific budget categories, not entire budgets)
-3. Provide open-source toolkit and technical support
-4. Document outcomes rigorously for replication
-
-**Success criteria:** 3+ government jurisdictions running Optimocracy pilots with measurable welfare improvement.
-
-### Phase 3: Broader Adoption (5-15 years)
-
-**Objective:** Scale government adoption through demonstrated success and competitive pressure.
-
-**Mechanism:**
-1. Publish comparative outcome data across jurisdictions
-2. Support citizen initiatives for Optimocracy adoption
-3. Integrate with Incentive Alignment Bonds for federal-level influence
-4. Develop model legislation and constitutional provisions
-
-**Success criteria:** Major jurisdiction (state, country) adopts Optimocracy for significant budget share.
-
-### Why This Timeline is Realistic
-
-| Component | Current State | Time to Deploy |
-|-----------|---------------|----------------|
-| Smart contracts | Battle-tested (Ethereum, etc.) | Weeks |
-| Decentralized oracles | Production-ready (Chainlink, UMA) | Days |
-| DAO governance frameworks | Widely used (Compound, Uniswap) | Weeks |
-| Metric data feeds | Government statistics available | Immediate |
-| Legal structures for DAOs | Established (Wyoming, Marshall Islands) | Months |
-
-The bottleneck is not technology but coordination: assembling capital, stakeholders, and governance. Central bank independence took decades to adopt, but a private Optimocracy DAO faces no such barriers.
-
-### Realistic Adoption Expectations
-
-Private Optimocracy will not launch with mass participation. The intersection of crypto-literate, governance-reform-minded, and capital-available individuals is small, likely 50,000-200,000 people globally. Of these, perhaps 1-5% would contribute to an unproven mechanism.
-
-| Adoption Tier | Estimated Population | Likely Contribution |
-|---------------|---------------------|---------------------|
-| "Sounds interesting" | 30-50% of population | $0 (attention only) |
-| "I support this idea" | 10-20% | $0-$100 |
-| "I'd consider contributing" | 1-3% | $100-$1,000 |
-| "I'd actually contribute to a DAO" | 0.1-0.5% | $1,000-$10,000 |
-| "I'd contribute significantly" | 0.01-0.05% | $10,000+ |
-
-**Initial funding will likely come from:**
-
-- 10-30 aligned foundations and high-net-worth individuals providing anchor capital
-- 100-500 committed early community members providing legitimacy and governance participation
-- Integration with existing crypto public goods infrastructure (Gitcoin, Protocol Guild, etc.)
-
-**Mass participation follows demonstrated results, not precedes them.** Central bank independence didn't start with a referendum; it started with economists and policymakers. Index funds didn't start with retail investors; they started with institutional adoption. Optimocracy will likely follow the same pattern:
-
-1. **Elite adoption**: Aligned foundations and whales fund proof-of-concept
+1. **Elite adoption**: 20-50 aligned foundations and high-net-worth individuals fund proof-of-concept
 2. **Demonstrated results**: Transparent outcome tracking shows the mechanism works
 3. **Broader legitimacy**: Success attracts mainstream foundations and impact investors
 4. **Mass participation**: Eventually, retail participation becomes viable
 
-This is not a weakness but a feature. Starting small allows rapid iteration and course-correction before scaling. A $10M DAO with 50 committed participants can experiment, fail fast, and improve. A $1B DAO with 1M passive participants cannot.
-
-**The honest pitch:** We're not asking for mass movement. We're asking for 20-50 believers with capital to fund a proof-of-concept. If it works, scale follows. If it doesn't, we've lost millions, not billions, and learned something valuable.
+Starting small is a feature, not a bug: a $10M DAO with 50 committed participants can experiment, fail fast, and improve before scaling.
 
 ## Conclusion
 

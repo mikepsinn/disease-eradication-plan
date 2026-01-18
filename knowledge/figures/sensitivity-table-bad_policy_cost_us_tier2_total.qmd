@@ -1,0 +1,14 @@
+**Sensitivity Indices for Bad Policy Costs (Tier 2)**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Bad Policy Cost US Migration Restrictions | 0.4645 | Moderate driver |
+| Bad Policy Cost US Fossil Fuel Externalities | 0.2400 | Weak driver |
+| Bad Policy Cost US Defense Above Deterrence | 0.1195 | Weak driver |
+| Bad Policy Cost US Occupational Licensing | 0.0977 | Minimal effect |
+| Bad Policy Cost US Incarceration Excess | 0.0498 | Minimal effect |
+| Bad Policy Cost US Infrastructure Disease | 0.0498 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
