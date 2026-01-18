@@ -236,6 +236,7 @@ jobs:
           #retention-days: 1
 
       - name: Deploy Wishocracy Paper to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/wishocracy/_site/wishocracy'
@@ -251,6 +252,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload Wishocracy PDF to Zenodo (draft)
+        if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/publish-zenodo.py --draft --paper wishocracy
@@ -314,6 +316,7 @@ jobs:
           #retention-days: 1
 
       - name: Deploy IAB Paper to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/iab/_site/iab'
@@ -329,6 +332,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload IAB PDF to Zenodo (draft)
+        if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/publish-zenodo.py --draft --paper iab
@@ -385,6 +389,7 @@ jobs:
         timeout-minutes: 10
 
       - name: Deploy dFDA Spec Paper to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/dfda-spec/_site/dfda-spec'
@@ -400,6 +405,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload dFDA Spec PDF to Zenodo (draft)
+        if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/publish-zenodo.py --draft --paper dfda-spec
@@ -456,6 +462,7 @@ jobs:
         timeout-minutes: 10
 
       - name: Deploy dFDA Impact Paper to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/dfda-impact/_site/dfda-impact'
@@ -471,6 +478,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload dFDA Impact PDF to Zenodo (draft)
+        if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/publish-zenodo.py --draft --paper dfda-impact
