@@ -291,7 +291,7 @@ But the IAB mechanism allows millions of diffuse beneficiaries to collectively d
 
 The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coordinated diffuse support ($10B-$100B+ available capital).
 
-**The key insight:** We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
+We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
 
 ### Quantifying Net Societal Value of Funding Sources
 
@@ -454,7 +454,7 @@ The IAB scoring system is structurally analogous to credit ratings: an independe
 
 ## The Math: Proving It Works {#sec-formal-model}
 
-**For Non-Technical Readers:** You can skip this section. The key insight in plain English: We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get (1) campaign support from independent political groups, (2) better post-office job opportunities, and (3) higher public status. When these benefits exceed the costs (losing military contractor donations), supporting public goods becomes the rational choice. Skip to Section 4 for practical implementation or Section 6 for governance architecture.
+**For Non-Technical Readers:** You can skip this section. In plain English: We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get (1) campaign support from independent political groups, (2) better post-office job opportunities, and (3) higher public status. When these benefits exceed the costs (losing military contractor donations), supporting public goods becomes the rational choice. Skip to Section 4 for practical implementation or Section 6 for governance architecture.
 
 This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility (when doing the right thing is also the profitable thing), and characterize equilibria (stable outcomes). Appendix A provides detailed proofs.
 
@@ -1229,7 +1229,7 @@ The four layers must be implemented in order:
 | Wishocracy (post-IAB) | Moderate (conditional on IABs)* | Medium-term (5-10 years) | $50M-$200M | Requires treaty first | Post-adoption allocation |
 | Futarchy (prediction markets) | Very challenging | Long-term (15-25 years) | $100M-$500M | Manipulation, adoption | Policy → outcome mapping |
 | Quadratic Voting/Funding | Very challenging | Long-term (10-20 years) | $50M-$200M | Constitutional barriers | Preference intensity |
-| [Optimocracy](optimocracy-paper.qmd) (algorithmic governance) | Challenging | Long-term (15-25 years) | $500M-$2B | Goodhart's Law, oracle capture | Removes discretion for routine allocation |
+| [Optimocracy](optimocracy-paper.qmd) (algorithmic governance) | **Moderate (private); Challenging (gov't)** | **Near-term (1-2 years private); Medium-term (5-15 years gov't)** | $10M-$100M (private DAO); $500M+ (gov't adoption) | Goodhart's Law, oracle capture | Removes discretion for routine allocation |
 | Charter Cities | Very challenging | Very long-term (20-40 years) | $1B+ | Sovereignty, scale | Competitive governance |
 | NSV Ranking Alone | Infeasible | N/A | $10M-$50M | No incentive linkage | Information (ignored) |
 
@@ -1247,10 +1247,14 @@ The four layers must be implemented in order:
 
 4. **NSV rankings alone** are infeasible because they lack incentive linkage. The empirical fact motivating this entire paper.
 
-**A sequenced implementation strategy** works better:
-1. **Near-term (0-10 years):** IABs for high-value domains (health, climate, pandemic preparedness)
-2. **Medium-term (10-20 years):** Use IAB political capital to pass Wishocracy for preference aggregation and Optimocracy pilots for routine allocation
-3. **Long-term (20+ years):** Successful pilots create demand for broader adoption; hybrid Wishocracy-Optimocracy architecture for capture-resistant governance
+**A parallel + sequenced implementation strategy:**
+
+1. **Immediate (0-2 years):** Deploy private Optimocracy DAO for philanthropic/investment capital allocation; no government permission required. Simultaneously begin IAB development.
+2. **Near-term (2-10 years):** IABs for high-value domains (health, climate, pandemic preparedness). Private Optimocracy scales and demonstrates superior outcomes.
+3. **Medium-term (10-20 years):** Use IAB political capital + Optimocracy track record to pass government pilots for Wishocracy and Optimocracy.
+4. **Long-term (20+ years):** Hybrid Wishocracy-Optimocracy architecture becomes standard for capture-resistant governance.
+
+**Key insight:** Optimocracy and IABs can develop in parallel. Private Optimocracy doesn't require government adoption, so it can demonstrate proof-of-concept while IABs work on the political adoption problem.
 
 ### What IABs Do Not Solve
 

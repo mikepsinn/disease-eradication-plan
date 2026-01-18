@@ -248,7 +248,7 @@ where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes
 
 #### 3.2.1 Onset Delay and Duration of Action
 
-A key insight is that treatments do not produce immediate effects. We define:
+Treatments do not produce immediate effects. We define:
 
 - **Onset delay** $\delta$: Time lag before treatment produces observable effect
 - **Duration of action** $\tau$: Time window over which effect persists

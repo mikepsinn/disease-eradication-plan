@@ -700,6 +700,7 @@ class ReferenceID(str, Enum):
     SOVIET_FAMINE_DEATHS_30M = "soviet-famine-deaths-30m"
     SOVIET_UNION_100_MILLION_DEATHS = "soviet-union-100-million-deaths"
     SPENKUCH2018 = "spenkuch2018"
+    SPIVA2023 = "spiva2023"
     STANDARD_MEDICAL_RESEARCH_ROI = "standard-medical-research-roi"
     STATINS_QALY = "statins-qaly"
     STATNEWS_NIH_TERMINATES = "statnews-nih-terminates"

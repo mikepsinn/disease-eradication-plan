@@ -4455,7 +4455,7 @@ VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
 # Combined speedup = Trial capacity × Cost barrier rescue
 # Acceleration = Baseline × (1 - 1/Speedup)
 #
-# The key insight: With higher speedup, cures that would take T years now take T/speedup.
+# With higher speedup, cures that would take T years now take T/speedup.
 # Acceleration ≈ T × (1 - 1/speedup) (you get most of the baseline time back).
 #
 # Uncertainty is primarily in the BASELINE estimate:

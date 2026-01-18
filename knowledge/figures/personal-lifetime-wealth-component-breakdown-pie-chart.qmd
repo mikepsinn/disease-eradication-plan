@@ -132,7 +132,7 @@ for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
             bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE,
                      edgecolor=COLOR_BLACK, linewidth=1))
 
-# --- Add subtitle with key insight ---
+# --- Add subtitle  ---
 
 fig.text(0.5, 0.02, 
          f"With {life_ext:.0f} years of life extension, extended earnings from living longer dominate the benefit calculation.",

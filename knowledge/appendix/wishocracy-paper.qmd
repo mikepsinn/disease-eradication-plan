@@ -228,7 +228,7 @@ Wishocracy implies a separation of concerns: RAPPA determines *what* society val
 
 We now analyze the computational requirements of RAPPA and establish scalability bounds for real-world deployment.
 
-**Comparison Collection Complexity:** For $m$ policy priorities, the complete pairwise comparison space contains $\binom{m}{2} = \frac{m(m-1)}{2} = O(m^2)$ unique pairs. However, RAPPA employs *random sampling* rather than exhaustive coverage. Each of $n$ participants completes $k$ comparisons, yielding total comparison count $T = n \cdot k = O(nk)$. The key insight: $k$ can be held constant (e.g., $k=20$ comparisons per participant) regardless of $m$, making per-participant complexity $O(1)$ rather than $O(m^2)$.
+**Comparison Collection Complexity:** For $m$ policy priorities, the complete pairwise comparison space contains $\binom{m}{2} = \frac{m(m-1)}{2} = O(m^2)$ unique pairs. However, RAPPA employs *random sampling* rather than exhaustive coverage. Each of $n$ participants completes $k$ comparisons, yielding total comparison count $T = n \cdot k = O(nk)$.  $k$ can be held constant (e.g., $k=20$ comparisons per participant) regardless of $m$, making per-participant complexity $O(1)$ rather than $O(m^2)$.
 
 **Aggregation Complexity:** Given $T$ collected comparisons distributed across $O(m^2)$ possible pairs, aggregation proceeds in three steps:
 
