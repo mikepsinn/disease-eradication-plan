@@ -40,6 +40,8 @@ book:
         href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
       - text: "Wishocracy Paper"
         href: knowledge/appendix/wishocracy-paper.qmd
+      - text: "Optimocracy Paper"
+        href: knowledge/appendix/optimocracy-paper.qmd
       - text: "References"
         href: knowledge/references.qmd
       - icon: file-pdf
@@ -64,6 +66,8 @@ book:
             text: "Incentive Alignment Bonds"
           - href: knowledge/appendix/wishocracy-paper.qmd
             text: "Wishocracy Paper"
+          - href: knowledge/appendix/optimocracy-paper.qmd
+            text: "Optimocracy Paper"
           - href: knowledge/references.qmd
             text: "References & Citations"
   chapters:
@@ -146,6 +150,7 @@ book:
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
         - knowledge/appendix/political-capture-cost-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
+        - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
         - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis

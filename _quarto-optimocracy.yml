@@ -1,0 +1,214 @@
+project:
+  type: website
+  output-dir: _site/optimocracy
+  execute-dir: project
+  resources:
+    - assets/
+    - _redirects
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/appendix/optimocracy-paper.qmd
+  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+website:
+  title: "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation"
+  description: "Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen welfare) costs society an estimated 20% of potential GDP. Optimocracy proposes algorithmic allocation systems that optimize for pre-agreed metrics, using smart contracts and decentralized oracles to minimize human discretion."
+  site-url: https://paper.optimocracy.org
+  favicon: assets/icons/optimocracy-favicon.png
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Paper"
+        href: /
+      - text: "Calculations"
+        href: /knowledge/appendix/parameters-and-calculations.html
+    right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /optimocracy-paper.pdf
+      - text: "References"
+        href: /#references
+      - text: "DIH"
+        href: https://dih.earth
+      - text: "War on Disease"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Mechanism Design, Algorithmic Governance, Public Policy, Political Economy"
+  category: "Academic Paper, Public Policy, Political Science, Economics"
+  keywords:
+    - mechanism-design
+    - algorithmic-governance
+    - smart-contracts
+    - metric-optimization
+    - capture-resistance
+    - central-bank-independence
+    - goodharts-law
+    - decentralized-oracles
+    - political-dysfunction
+    - rent-seeking
+    - public-choice
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://dih.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/optimocracy"
+  issue-url: "https://github.com/mikepsinn/optimocracy/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Researchers, Policy Makers, Economists, Political Scientists"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Political Science, Mechanism Design, Public Policy, Economics"
+  medium: "Digital"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
+  og-site-name: "Optimocracy"
+
+  # Identifiers
+  doi: "10.5281/zenodo.optimocracy"
+
+  # Open Graph metadata (enables per-page custom OG images)
+  open-graph: true
+  image: "https://paper.optimocracy.org/assets/optimocracy-og-1200x630.png"
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: .bib generated from knowledge/references.qmd (source data)
+# Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
+bibliography: references-economics.bib
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    # Grid layout for proper sidebar positioning
+    grid:
+      body-width: 800px
+      sidebar-width: 0px
+      margin-width: 250px
+      gutter-width: 1.5rem
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - text: |
+          <script>
+            (function() {
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+              document.body.appendChild(script);
+            })();
+          </script>
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[Optimocracy.org](https://paper.optimocracy.org)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
+              <a href="https://paper.optimocracy.org" style="color: #8b7355;">Optimocracy.org</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong>
+              <a href="/optimocracy-paper.pdf" style="color: #8b7355;">PDF</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/optimocracy-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/optimocracy-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/optimocracy-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/optimocracy-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/optimocracy-android-chrome-512x512.png">
+
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+
+          <!-- Hypothesis for inline comments -->
+          <script src="https://hypothes.is/embed.js" async></script>
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  pdf:
+    output-file: "optimocracy-paper.pdf"
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
+    variables:
+      author: "Mike P. Sinn"
+      affiliation: "Decentralized Institutes of Health"
