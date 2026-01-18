@@ -308,6 +308,12 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
     has_dist = hasattr(value, "distribution") and value.distribution
     has_se = hasattr(value, "std_error") and value.std_error
 
+    # Skip fixed distributions - they have zero variance (constitutional constants, etc.)
+    if has_dist:
+        dist_str = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+        if dist_str.lower() == "fixed":
+            raise ValueError(f"Parameter {param_name} has distribution='fixed' (no uncertainty)")
+
     if not (has_ci or has_dist or has_se):
         raise ValueError(f"Parameter {param_name} has no uncertainty metadata")
 

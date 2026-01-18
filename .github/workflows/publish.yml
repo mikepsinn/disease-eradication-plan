@@ -2,6 +2,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
 
 name: Build, Deploy to Netlify, and Upload to Zenodo
 
@@ -80,6 +82,7 @@ jobs:
           #retention-days: 1
 
       - name: Deploy Main Site to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/book/_book/warondisease'
@@ -153,6 +156,7 @@ jobs:
           #retention-days: 1
 
       - name: Deploy Economics Site to Netlify (immediate)
+        if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/economics/_site/economics'
@@ -168,6 +172,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Upload Economics PDF to Zenodo (draft)
+        if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/publish-zenodo.py --draft --paper economics

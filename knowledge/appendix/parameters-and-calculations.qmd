@@ -23,15 +23,15 @@ format:
 
 ## Overview
 
-This appendix documents all 395 parameters used in the analysis, organized by type:
+This appendix documents all 407 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 149
-- Calculated values: 140
-- Core definitions: 106
+- External sources (peer-reviewed): 154
+- Calculated values: 142
+- Core definitions: 111
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (140 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
+[Calculated Values](#sec-calculated) (142 parameters) • [External Data Sources](#sec-external) (154 parameters) • [Core Definitions](#sec-definitions) (111 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -7778,6 +7778,66 @@ $$
 
 :::
 
+### US Senate Treaty Capture Cost: $670M {#sec-us_hostile_takeover_67_senators}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)
+
+**Inputs**:
+
+- [Senators for Treaty Ratification](#sec-us_senators_for_treaty) 📊: 67 senators
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+
+$$
+\begin{gathered}
+Cost_{US,senate} \\
+= N_{senators,treaty} \times V_{post-office} \\
+= 67 \times \$10M \\
+= \$670M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios](../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_hostile_takeover_67_senators.qmd >}}
+
+:::
+
+### US Congress Full Capture Cost: $5.35B {#sec-us_hostile_takeover_full_congress}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost to 'buy out' post-office career value for all 535 members of Congress
+
+**Inputs**:
+
+- [US Congress Members](#sec-us_congress_member_count): 535 members
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+
+$$
+\begin{gathered}
+Cost_{US,congress} \\
+= N_{congress} \times V_{post-office} \\
+= 535 \times \$10M \\
+= \$5.35B
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios](../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_hostile_takeover_full_congress.qmd >}}
+
+:::
+
 ### US Major Diseases Total Annual Cost: $1.25T {#sec-us_major_diseases_total_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -9253,10 +9313,6 @@ Global military spending in 2024
 
 **Technical**: Distribution: Fixed
 
-#### Input Distribution
-
-{{< include ../figures/distribution-global_military_spending_annual_2024.qmd >}}
-
 *✓ High confidence*
 
 :::
@@ -9495,6 +9551,18 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 
 :::
 
+### NATO Defense Spending (2024): $1.51T {#sec-nato_defense_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total NATO member defense spending in 2024. Source: SIPRI.
+
+**Source**: [Stockholm International Peace Research Institute (2024) - Trends in World Military Expenditure, 2023](../references.qmd#sipri2024)
+
+*✓ High confidence*
+
+:::
+
 ### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -9600,10 +9668,6 @@ Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-#### Input Distribution
-
-{{< include ../figures/distribution-oxford_recovery_trial_duration_months.qmd >}}
 
 *✓ High confidence*
 
@@ -9818,6 +9882,28 @@ Estimated probability of treaty ratification and sustained implementation. Centr
 {{< include ../figures/distribution-political_success_probability.qmd >}}
 
 *? Low confidence*
+
+:::
+
+### Post-Office Career Value (per politician): $10M {#sec-politician_post_office_career_value}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.
+
+**Source**: [OpenSecrets (2024) - Revolving Door: Former Members of Congress](../references.qmd#opensecrets-revolving-door)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $20M]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5M and $20M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-politician_post_office_career_value.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -10168,10 +10254,6 @@ Deaths from 9/11 terrorist attacks
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-#### Input Distribution
-
-{{< include ../figures/distribution-terrorism_deaths_911.qmd >}}
 
 *✓ High confidence*
 
@@ -10592,6 +10674,46 @@ US population in 2024
 #### Input Distribution
 
 {{< include ../figures/distribution-us_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Senators for Treaty Ratification: 67 senators {#sec-us_senators_for_treaty}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
+
+**Source**: [U.S. Senate - Treaties](../references.qmd#us-senate-treaties)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.
+
+**Source**: [Federal Election Commission (2023) - Statistical Summary of 24-Month Campaign Activity of the 2023-2024 Election Cycle](../references.qmd#fec-2024-summary)
+
+*✓ High confidence*
+
+:::
+
+### US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
+
+**Source**: [OpenSecrets (2024) - Federal Lobbying Hit Record $4.4 Billion in 2024](../references.qmd#opensecrets-lobbying-2024)
 
 *✓ High confidence*
 
@@ -11725,6 +11847,32 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 :::
 
+### Global Political Capture Cost: $125B {#sec-global_hostile_takeover_cost}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$75B, $200B]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $75B and $200B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*Core definition*
+
+:::
+
+### Global Political Capture (Maximum): $200B {#sec-global_hostile_takeover_maximum}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles
+
+*Core definition*
+
+:::
+
 ### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
@@ -11858,6 +12006,16 @@ Maximum bond investment for lobbyist incentives
 ### Months Per Year: 12 {#sec-months_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
+
+*Core definition*
+
+:::
+
+### NATO Political Capture Cost: $65B {#sec-nato_hostile_takeover_cost}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.
 
 *Core definition*
 
@@ -12142,6 +12300,30 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20k diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
+:::
+
+### US Congress Members: 535 members {#sec-us_congress_member_count}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total members of US Congress (100 senators + 435 representatives)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### US Total Political Capture Cost: $25B {#sec-us_hostile_takeover_total}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.
 
 *Core definition*
 

@@ -1,0 +1,117 @@
+# AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
+# Contains only variables used in this paper (8 entries)
+# Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+"dfda_trial_capacity_plus_efficacy_lag_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_dalys\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total DALYs averted from the combined dFDA timeline\
+  \ shift. Calculated as annual global DALY burden × eventually avoidable percentage\
+  \ × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).\
+  \ | Calculated from 3 inputs | ? Low confidence | Formula: GLOBAL_ANNUAL_DALY_BURDEN\
+  \ × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT | Unit: DALYs | Click to view\
+  \ details, calculation & sources\">565B DALYs (95% CI: 361B DALYs-877B DALYs)</a>"
+"dfda_trial_capacity_plus_efficacy_lag_dalys_latex": "$$\n\\begin{gathered}\nDALYs_{max}\
+  \ \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\
+  \n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max}\
+  \ = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel}\
+  \ \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n\
+  = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where\
+  \ } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\
+  \\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15}\
+  \ = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000\
+  \ \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}}\
+  \ = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\
+  \n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\\
+  $929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann}\
+  \ - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where\
+  \ } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory}\
+  \ + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\\
+  $40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann}\
+  \ - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B\
+  \ \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty}\
+  \ \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann}\
+  \ \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\
+  \n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\
+  \\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political}\
+  \ \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
+  \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
+  \\\n= \\$27.2B\n\\end{gathered}\n$$"
+"dfda_trial_capacity_plus_efficacy_lag_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total economic value from the combined dFDA timeline\
+  \ shift. DALYs valued at standard economic rate. | Calculated from 2 inputs | ?\
+  \ Low confidence | Formula: DALYS × STANDARD_QALY_VALUE | Unit: USD | Click to view\
+  \ details, calculation & sources\">$84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3\
+  \ quadrillion)</a>"
+"dfda_trial_capacity_plus_efficacy_lag_economic_value_latex": "$$\n\\begin{gathered}\n\
+  Value_{max} \\\\\n= DALYs_{max} \\times Value_{QALY} \\\\\n= 565B \\times \\$150K\
+  \ \\\\\n= \\$84800T \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann}\
+  \ \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\\
+  times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag}\
+  \ = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\\
+  times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 -\
+  \ \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} =\
+  \ T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ}\
+  \ = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\\
+  [0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times\
+  \ 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}}\
+  \ = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\
+  \n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\\
+  $929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann}\
+  \ - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where\
+  \ } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory}\
+  \ + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\\
+  $40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann}\
+  \ - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B\
+  \ \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty}\
+  \ \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann}\
+  \ \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\
+  \n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\
+  \\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political}\
+  \ \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
+  \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
+  \\\n= \\$27.2B\n\\end{gathered}\n$$"
+"dfda_trial_capacity_plus_efficacy_lag_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from the combined\
+  \ dFDA timeline shift. Represents deaths prevented when cures arrive earlier due\
+  \ to both increased trial capacity and eliminated efficacy lag. | Calculated from\
+  \ 2 inputs | ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS\
+  \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
+  >10.7B deaths (95% CI: 7.39B deaths-16.2B deaths)</a>"
+"dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex": "$$\n\\begin{gathered}\n\
+  Lives_{max} \\\\\n= Deaths_{disease,daily} \\times T_{accel,max} \\times 338 \\\\\
+  \n= 150{,}000 \\times 212 \\times 338 \\\\\n= 10.7B \\\\[0.5em]\n\\text{where }\
+  \ T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where\
+  \ } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\\
+  right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\
+  \\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\
+  \\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}}\
+  \ = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare}\
+  \ \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity}\
+  \ = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\
+  \\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}}\
+  \ \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann}\
+  \ \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B\
+  \ \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff}\
+  \ + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\\
+  $10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann}\
+  \ \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n\
+  = \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
+  \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
+  \\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty}\
+  \ \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\
+  \\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\
+  \\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann}\
+  \ \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\\
+  % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
+  $$"
+"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
+  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
+  \ definition\">$27.2B</span>"
+"treaty_annual_funding_latex": "$$\n\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
+  $$"
