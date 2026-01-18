@@ -681,6 +681,28 @@ Together, they form a complete system: RAPPA provides the objective function (wh
 
 For detailed treatment of the IAB mechanism, including formal models, legal analysis, and bootstrap strategy, see the companion paper: [Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy](incentive-alignment-bonds-paper.qmd).
 
+## **Connection to Optimocracy**
+
+Wishocracy and Optimocracy represent two distinct approaches to governance reform that can function independently or in combination:
+
+- **Wishocracy** is *democratic*: citizens express preferences, and the mechanism aggregates them. The output is a preference signal that politicians can choose to follow or ignore (absent incentive mechanisms).
+
+- **Optimocracy** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal human discretion. The output is an allocation that executes regardless of political preferences.
+
+These approaches address different failure modes:
+
+| Failure Mode | Wishocracy Solution | Optimocracy Solution |
+|--------------|--------------------|--------------------|
+| Preference aggregation | RAPPA pairwise comparison | N/A (metric pre-selected) |
+| Capture by interests | Accountability scores | Remove human discretion |
+| Time-inconsistency | Continuous measurement | Algorithmic commitment |
+| Metric gaming (Goodhart) | Adapts to changing preferences | Vulnerable |
+| Democratic legitimacy | High (citizen input) | Lower (algorithm decides) |
+
+A hybrid architecture might use Wishocracy for *metric selection* (citizens choose what to optimize) and Optimocracy for *metric optimization* (algorithms allocate to maximize the chosen metric). This combines democratic legitimacy at the constitutional level with capture resistance at the execution level.
+
+For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](optimocracy-paper.qmd).
+
 # **Conclusion**
 
 Representative democracy's principal-agent problem is not a bug but a structural feature: elected officials inevitably face incentives that diverge from citizen welfare. No amount of campaign finance reform, term limits, or transparency requirements can eliminate the fundamental misalignment between representatives who must satisfy donors and constituents simultaneously. Meanwhile, direct democracy mechanisms remain cognitively infeasible for the complex, multidimensional trade-offs that characterize modern governance.

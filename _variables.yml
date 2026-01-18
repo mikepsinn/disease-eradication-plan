@@ -2405,19 +2405,6 @@
   \ | 95% CI: [$3B, $6B] | Dist: Lognormal (SE: $1B) | Unit: USD | Click to view details,\
   \ calculation & sources\">$4.50B (95% CI: $3B-$6B)</a>"
 "global_government_clinical_trials_spending_annual_cite": "@global-government-clinical-trial-spending-estimate"
-"global_hostile_takeover_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_hostile_takeover_cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated cost\
-  \ for complete global political capture (NATO $65B + China $20B + Russia $10B +\
-  \ India $8B + others $22B). This is an estimate. | ? Low confidence | 95% CI: [$75B,\
-  \ $200B] | Formula: NATO + China + Russia + India + other major spenders | Unit:\
-  \ USD | Click to view details, calculation & sources\">$125B (95% CI: $75B-$200B)</a>"
-"global_hostile_takeover_maximum": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_hostile_takeover_maximum\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Maximum plausible\
-  \ global political capture cost with substantial contingency for hidden channels,\
-  \ opposition counter-spending, and multiple election cycles | ? Low confidence |\
-  \ Unit: USD | Click to view details, calculation & sources\">$200B</a>"
 "global_household_wealth_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"cs-global-wealth-report-2023\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total global household wealth (2022/2023\
@@ -2483,6 +2470,21 @@
   \ ($300B annually, clinical trials represent 15-20% of this total) | ✓ High confidence\
   \ | Unit: USD | Click to view details, calculation & sources\">$300B</a>"
 "global_pharma_rd_spending_annual_cite": "@global-pharma-rd-spending-300b"
+"global_political_reform_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_political_reform_investment\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated global\
+  \ advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B +\
+  \ India $8B + others $22B). Upper bound representing full democratic engagement\
+  \ at scale. | ? Low confidence | 95% CI: [$75B, $200B] | Formula: NATO + China +\
+  \ Russia + India + other major spenders | Unit: USD | Click to view details, calculation\
+  \ & sources\">$125B (95% CI: $75B-$200B)</a>"
+"global_political_reform_investment_maximum": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_political_reform_investment_maximum\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Maximum plausible\
+  \ global political reform investment with substantial contingency for hidden channels,\
+  \ opposition counter-spending, and multiple election cycles. Stress-test upper bound.\
+  \ | ? Low confidence | Unit: USD | Click to view details, calculation & sources\"\
+  >$200B</a>"
 "global_population_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_population_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-population-8-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population in 2024 | ✓ High confidence\
@@ -2816,13 +2818,13 @@
   \ SIPRI. | ✓ High confidence | Unit: USD | Click to view details, calculation &\
   \ sources\">$1.51T</a>"
 "nato_defense_spending_annual_cite": "@sipri2024"
-"nato_hostile_takeover_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nato_hostile_takeover_cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated cost\
-  \ to achieve political capture across all NATO member states (US $25B + EU $25B\
-  \ + other NATO $15B). This is an estimate. | ? Low confidence | Formula: US capture\
-  \ + EU capture + other NATO capture | Unit: USD | Click to view details, calculation\
-  \ & sources\">$65B</a>"
+"nato_political_reform_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nato_political_reform_investment\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated advocacy\
+  \ investment to achieve policy reform across all NATO member states (US $25B + EU\
+  \ $25B + other NATO $15B). Represents cost of democratic parity with defense industry\
+  \ interests. | ? Low confidence | Formula: US advocacy + EU advocacy + other NATO\
+  \ advocacy | Unit: USD | Click to view details, calculation & sources\">$65B</a>"
 "new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
@@ -4294,6 +4296,15 @@
   \ ✓ High confidence | 95% CI: [$3.30T, $5T] | Dist: Lognormal | Unit: USD/year |\
   \ Click to view details, calculation & sources\">$4.10T (95% CI: $3.30T-$5T)</a>"
 "us_chronic_disease_spending_annual_cite": "@us-chronic-disease-spending"
+"us_congress_full_advocacy_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_congress_full_advocacy_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Upper-bound\
+  \ advocacy cost to match career incentives for all 535 members of Congress | Calculated\
+  \ from 2 inputs | ~ Medium confidence | Formula: CONGRESS_MEMBERS x POST_OFFICE_VALUE\
+  \ | Unit: USD | Click to view details, calculation & sources\">$5.35B</a>"
+"us_congress_full_advocacy_cost_latex": "$$\n\\begin{gathered}\nCost_{US,congress}\
+  \ \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n\
+  = \\$5.35B\n\\end{gathered}\n$$"
 "us_congress_member_count": "<span class=\"parameter-definition\" title=\"Total members\
   \ of US Congress (100 senators + 435 representatives) | Unit: members | Core definition\"\
   >535 members</span>"
@@ -4311,32 +4322,6 @@
   \ confidence | \U0001F4CA Peer-reviewed | 95% CI: [$309B, $417B] | Dist: Lognormal\
   \ | Unit: USD | Click to view details, calculation & sources\">$363B (95% CI: $309B-$417B)</a>"
 "us_heart_disease_annual_cost_cite": "@disease-cost-heart-disease-2100b"
-"us_hostile_takeover_67_senators": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_67_senators\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost to 'buy\
-  \ out' post-office career value for 67 senators (treaty ratification threshold)\
-  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: SENATORS_FOR_TREATY\
-  \ x POST_OFFICE_VALUE | Unit: USD | Click to view details, calculation & sources\"\
-  >$670M</a>"
-"us_hostile_takeover_67_senators_latex": "$$\n\\begin{gathered}\nCost_{US,senate}\
-  \ \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M\
-  \ \\\\\n= \\$670M\n\\end{gathered}\n$$"
-"us_hostile_takeover_full_congress": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_full_congress\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost to 'buy\
-  \ out' post-office career value for all 535 members of Congress | Calculated from\
-  \ 2 inputs | ~ Medium confidence | Formula: CONGRESS_MEMBERS x POST_OFFICE_VALUE\
-  \ | Unit: USD | Click to view details, calculation & sources\">$5.35B</a>"
-"us_hostile_takeover_full_congress_latex": "$$\n\\begin{gathered}\nCost_{US,congress}\
-  \ \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n\
-  = \\$5.35B\n\\end{gathered}\n$$"
-"us_hostile_takeover_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Total cost for\
-  \ complete US political 'hostile takeover': Congress career values ($5.35B) + outspend\
-  \ all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate. |\
-  \ ? Low confidence | Formula: Congress careers + lobbying dominance + campaign buffer\
-  \ | Unit: USD | Click to view details, calculation & sources\">$25B</a>"
 "us_life_expectancy_1880": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_1880\"\
   \ class=\"parameter-link\" data-source-ref=\"life-expectancy-increase-pre-1962\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -4384,6 +4369,14 @@
   \ GDP (2024) | ✓ High confidence | Unit: rate | Click to view details, calculation\
   \ & sources\">3.5%</a>"
 "us_military_spending_pct_gdp_cite": "@us-military-budget-3-5-pct-gdp"
+"us_political_reform_investment_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_political_reform_investment_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Total upper-bound\
+  \ investment for US political reform: Congress advocacy costs ($5.35B) + lobbying\
+  \ parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic\
+  \ parity with incumbent interests. | ? Low confidence | Formula: Congress advocacy\
+  \ + lobbying parity + campaign matching | Unit: USD | Click to view details, calculation\
+  \ & sources\">$25B</a>"
 "us_population_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_population_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"us-voter-population\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US population in 2024 | ✓ High confidence\
@@ -4391,6 +4384,16 @@
   \ to view details, calculation & sources\">335M people (95% CI: 330M people-340M\
   \ people)</a>"
 "us_population_2024_cite": "@us-voter-population"
+"us_senate_treaty_advocacy_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_senate_treaty_advocacy_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Upper-bound\
+  \ advocacy cost to match career incentives for 67 senators (treaty ratification\
+  \ threshold) | Calculated from 2 inputs | ~ Medium confidence | Formula: SENATORS_FOR_TREATY\
+  \ x POST_OFFICE_VALUE | Unit: USD | Click to view details, calculation & sources\"\
+  >$670M</a>"
+"us_senate_treaty_advocacy_cost_latex": "$$\n\\begin{gathered}\nCost_{US,senate} \\\
+  \\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\
+  \n= \\$670M\n\\end{gathered}\n$$"
 "us_senators_for_treaty": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_senators_for_treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"us-senate-treaties\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Senators needed for treaty ratification\

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Global Political Capture Cost"
+#| fig-cap: "Probability Distribution: Global Political Reform Investment"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 125000000000.0
 low = 75000000000.0
 high = 200000000000.0
 dist_type = "normal"
-display_name = "Global Political Capture Cost"
+display_name = "Global Political Reform Investment"
 unit = "USD"
 
 # Calculate distribution parameters
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-global_hostile_takeover_cost.png')
+output_path = get_figure_output_path('distribution-global_political_reform_investment.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

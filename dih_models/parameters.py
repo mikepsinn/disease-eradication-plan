@@ -4035,47 +4035,49 @@ POLITICIAN_POST_OFFICE_CAREER_VALUE = Parameter(
     latex_symbol=r"V_{post-office}",
 )
 
-# US Hostile Takeover Costs (calculated from components)
-US_HOSTILE_TAKEOVER_67_SENATORS = Parameter(
+# US Political Reform Investment Costs (calculated from components)
+# These represent the cost of matching concentrated interests' political spending
+# to enable diffuse beneficiaries to participate in the democratic process at scale
+US_SENATE_TREATY_ADVOCACY_COST = Parameter(
     US_SENATORS_FOR_TREATY * POLITICIAN_POST_OFFICE_CAREER_VALUE,
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
     source_type="calculated",
-    description="Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)",
-    display_name="US Senate Treaty Capture Cost",
+    description="Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
+    display_name="US Senate Treaty Advocacy Cost",
     unit="USD",
     formula="SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
     confidence="medium",
-    keywords=["hostile takeover", "political capture", "senate", "treaty"],
+    keywords=["political reform", "advocacy", "senate", "treaty", "democratic participation"],
     inputs=["US_SENATORS_FOR_TREATY", "POLITICIAN_POST_OFFICE_CAREER_VALUE"],
     compute=lambda ctx: ctx["US_SENATORS_FOR_TREATY"] * ctx["POLITICIAN_POST_OFFICE_CAREER_VALUE"],
     latex_symbol=r"Cost_{US,senate}",
 )
 
-US_HOSTILE_TAKEOVER_FULL_CONGRESS = Parameter(
+US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
     US_CONGRESS_MEMBER_COUNT * POLITICIAN_POST_OFFICE_CAREER_VALUE,
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
     source_type="calculated",
-    description="Cost to 'buy out' post-office career value for all 535 members of Congress",
-    display_name="US Congress Full Capture Cost",
+    description="Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
+    display_name="US Congress Full Advocacy Cost",
     unit="USD",
     formula="CONGRESS_MEMBERS x POST_OFFICE_VALUE",
     confidence="medium",
-    keywords=["hostile takeover", "political capture", "congress"],
+    keywords=["political reform", "advocacy", "congress", "democratic participation"],
     inputs=["US_CONGRESS_MEMBER_COUNT", "POLITICIAN_POST_OFFICE_CAREER_VALUE"],
     compute=lambda ctx: ctx["US_CONGRESS_MEMBER_COUNT"] * ctx["POLITICIAN_POST_OFFICE_CAREER_VALUE"],
     latex_symbol=r"Cost_{US,congress}",
 )
 
-US_HOSTILE_TAKEOVER_TOTAL = Parameter(
-    25_000_000_000,  # ~$25B total (Congress + outspend lobbying buffer)
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
+    25_000_000_000,  # ~$25B total (Congress + match lobbying + campaign parity)
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
     source_type="definition",
-    description="Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.",
-    display_name="US Total Political Capture Cost",
+    description="Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
+    display_name="US Political Reform Investment (Total)",
     unit="USD",
-    formula="Congress careers + lobbying dominance + campaign buffer",
+    formula="Congress advocacy + lobbying parity + campaign matching",
     confidence="low",
-    keywords=["hostile takeover", "political capture", "us", "total"],
+    keywords=["political reform", "advocacy", "investment", "democratic parity", "us"],
     latex_symbol=r"Cost_{US,total}",
 )
 
@@ -4092,42 +4094,42 @@ NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
     latex_symbol=r"Cost_{NATO,defense}",
 )
 
-NATO_HOSTILE_TAKEOVER_COST = Parameter(
+NATO_POLITICAL_REFORM_INVESTMENT = Parameter(
     65_000_000_000,  # ~$65B for all NATO legislators
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis",
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates",
     source_type="definition",
-    description="Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.",
-    display_name="NATO Political Capture Cost",
+    description="Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
+    display_name="NATO Political Reform Investment",
     unit="USD",
-    formula="US capture + EU capture + other NATO capture",
+    formula="US advocacy + EU advocacy + other NATO advocacy",
     confidence="low",
-    keywords=["hostile takeover", "political capture", "nato", "global"],
-    latex_symbol=r"Cost_{NATO,capture}",
+    keywords=["political reform", "advocacy", "nato", "global", "democratic parity"],
+    latex_symbol=r"Cost_{NATO,reform}",
 )
 
-GLOBAL_HOSTILE_TAKEOVER_COST = Parameter(
+GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
     125_000_000_000,  # ~$125B for major military spenders globally
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis",
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates",
     source_type="definition",
-    description="Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.",
-    display_name="Global Political Capture Cost",
+    description="Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
+    display_name="Global Political Reform Investment",
     unit="USD",
     formula="NATO + China + Russia + India + other major spenders",
     confidence="low",
     confidence_interval=(75e9, 200e9),  # Wide range due to uncertainty
-    keywords=["hostile takeover", "political capture", "global", "world"],
-    latex_symbol=r"Cost_{global,capture}",
+    keywords=["political reform", "advocacy", "global", "world", "democratic engagement"],
+    latex_symbol=r"Cost_{global,reform}",
 )
 
-GLOBAL_HOSTILE_TAKEOVER_MAXIMUM = Parameter(
+GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM = Parameter(
     200_000_000_000,  # $200B absolute upper bound
     source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd",
     source_type="definition",
-    description="Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles",
-    display_name="Global Political Capture (Maximum)",
+    description="Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
+    display_name="Global Political Reform Investment (Maximum)",
     unit="USD",
     confidence="low",
-    keywords=["hostile takeover", "political capture", "global", "maximum", "worst case"],
+    keywords=["political reform", "advocacy", "global", "maximum", "stress test"],
     latex_symbol=r"Cost_{global,max}",
 )
 

@@ -7778,41 +7778,11 @@ $$
 
 :::
 
-### US Senate Treaty Capture Cost: $670M {#sec-us_hostile_takeover_67_senators}
+### US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)
-
-**Inputs**:
-
-- [Senators for Treaty Ratification](#sec-us_senators_for_treaty) 📊: 67 senators
-- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
-
-$$
-\begin{gathered}
-Cost_{US,senate} \\
-= N_{senators,treaty} \times V_{post-office} \\
-= 67 \times \$10M \\
-= \$670M
-\end{gathered}
-$$
-
-**Methodology**: [../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios](../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-us_hostile_takeover_67_senators.qmd >}}
-
-:::
-
-### US Congress Full Capture Cost: $5.35B {#sec-us_hostile_takeover_full_congress}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Cost to 'buy out' post-office career value for all 535 members of Congress
+Upper-bound advocacy cost to match career incentives for all 535 members of Congress
 
 **Inputs**:
 
@@ -7828,13 +7798,13 @@ Cost_{US,congress} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios](../appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios)
+**Methodology**: [../appendix/political-capture-cost-analysis#us-political-reform-scenarios](../appendix/political-capture-cost-analysis#us-political-reform-scenarios)
 
 *~ Medium confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-us_hostile_takeover_full_congress.qmd >}}
+{{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
 
 :::
 
@@ -7878,6 +7848,36 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_major_diseases_total_annual_cost.qmd >}}
+
+:::
+
+### US Senate Treaty Advocacy Cost: $670M {#sec-us_senate_treaty_advocacy_cost}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)
+
+**Inputs**:
+
+- [Senators for Treaty Ratification](#sec-us_senators_for_treaty) 📊: 67 senators
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+
+$$
+\begin{gathered}
+Cost_{US,senate} \\
+= N_{senators,treaty} \times V_{post-office} \\
+= 67 \times \$10M \\
+= \$670M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/political-capture-cost-analysis#us-political-reform-scenarios](../appendix/political-capture-cost-analysis#us-political-reform-scenarios)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_senate_treaty_advocacy_cost.qmd >}}
 
 :::
 
@@ -11847,11 +11847,21 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 :::
 
-### Global Political Capture Cost: $125B {#sec-global_hostile_takeover_cost}
+### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.
+Global military spending after 1% treaty reduction
+
+*Core definition*
+
+:::
+
+### Global Political Reform Investment: $125B {#sec-global_political_reform_investment}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.
 
 #### Uncertainty Range
 
@@ -11863,21 +11873,11 @@ Estimated cost for complete global political capture (NATO $65B + China $20B + R
 
 :::
 
-### Global Political Capture (Maximum): $200B {#sec-global_hostile_takeover_maximum}
+### Global Political Reform Investment (Maximum): $200B {#sec-global_political_reform_investment_maximum}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles
-
-*Core definition*
-
-:::
-
-### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Global military spending after 1% treaty reduction
+Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.
 
 *Core definition*
 
@@ -12011,11 +12011,11 @@ Maximum bond investment for lobbyist incentives
 
 :::
 
-### NATO Political Capture Cost: $65B {#sec-nato_hostile_takeover_cost}
+### NATO Political Reform Investment: $65B {#sec-nato_political_reform_investment}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.
+Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.
 
 *Core definition*
 
@@ -12319,11 +12319,11 @@ Total members of US Congress (100 senators + 435 representatives)
 
 :::
 
-### US Total Political Capture Cost: $25B {#sec-us_hostile_takeover_total}
+### US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.
+Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.
 
 *Core definition*
 

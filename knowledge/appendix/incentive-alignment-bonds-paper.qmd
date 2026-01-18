@@ -1229,7 +1229,7 @@ The four layers must be implemented in order:
 | Wishocracy (post-IAB) | Moderate (conditional on IABs)* | Medium-term (5-10 years) | $50M-$200M | Requires treaty first | Post-adoption allocation |
 | Futarchy (prediction markets) | Very challenging | Long-term (15-25 years) | $100M-$500M | Manipulation, adoption | Policy → outcome mapping |
 | Quadratic Voting/Funding | Very challenging | Long-term (10-20 years) | $50M-$200M | Constitutional barriers | Preference intensity |
-| Algorithmic Government | Extremely challenging | Very long-term (30+ years) | $10B+ | Legitimacy, capture risk | Removes human discretion |
+| [Optimocracy](optimocracy-paper.qmd) (algorithmic governance) | Challenging | Long-term (15-25 years) | $500M-$2B | Goodhart's Law, oracle capture | Removes discretion for routine allocation |
 | Charter Cities | Very challenging | Very long-term (20-40 years) | $1B+ | Sovereignty, scale | Competitive governance |
 | NSV Ranking Alone | Infeasible | N/A | $10M-$50M | No incentive linkage | Information (ignored) |
 
@@ -1239,7 +1239,7 @@ The four layers must be implemented in order:
 
 **Key insights:**
 
-1. **Algorithmic government fails** because the capture problem recurses: whoever controls the algorithm specification controls outcomes. Defense contractors wouldn't disappear; they'd pivot to capturing the algorithm design process.
+1. **Algorithmic governance (Optimocracy) faces capture at the design level:** whoever controls the algorithm specification controls outcomes. However, this can be mitigated through constitutional-level metric selection (via Wishocracy), decentralized oracles, and smart contract enforcement. See the [Optimocracy paper](optimocracy-paper.qmd) for detailed mechanism design addressing these challenges.
 
 2. **Futarchy (prediction markets for policy)** is intellectually elegant but faces adoption barriers. Who decides the outcome metrics? How do you prevent market manipulation? IABs could bootstrap futarchy by making politicians willing to adopt prediction-market-based governance.
 
@@ -1249,8 +1249,8 @@ The four layers must be implemented in order:
 
 **A sequenced implementation strategy** works better:
 1. **Near-term (0-10 years):** IABs for high-value domains (health, climate, pandemic preparedness)
-2. **Medium-term (10-20 years):** Use IAB political capital to pass Wishocracy and futarchy pilots
-3. **Long-term (20+ years):** Successful pilots create demand for broader adoption
+2. **Medium-term (10-20 years):** Use IAB political capital to pass Wishocracy for preference aggregation and Optimocracy pilots for routine allocation
+3. **Long-term (20+ years):** Successful pilots create demand for broader adoption; hybrid Wishocracy-Optimocracy architecture for capture-resistant governance
 
 ### What IABs Do Not Solve
 

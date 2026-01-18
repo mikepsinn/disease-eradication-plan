@@ -1,0 +1,553 @@
+---
+title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
+description: 'Discretionary governance suffers from capture, time-inconsistency, and misalignment between political incentives and citizen welfare. Optimocracy proposes algorithmic allocation systems that optimize for pre-agreed metrics (median income growth, QALYs, composite welfare indices), using smart contracts and decentralized oracles to minimize human discretion and maximize verifiability.'
+aliases:
+  - /optimocracy.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Decentralized Institutes of Health
+      url: https://dih.earth
+    roles:
+      - conceptualization
+      - methodology
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - mechanism design
+  - algorithmic governance
+  - smart contracts
+  - metric optimization
+  - capture resistance
+  - central bank independence
+  - Goodhart's Law
+  - decentralized oracles
+jel:
+  - D72
+  - D73
+  - E58
+  - H11
+  - P16
+bibliography:
+  - ../../references.bib
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+::: {.callout-note}
+## Working Paper
+
+This paper explores algorithmic governance as a complement to democratic preference aggregation. Cost estimates and mechanism designs represent theoretical frameworks intended to stimulate discussion rather than implementation-ready specifications.
+:::
+
+**The Problem in One Sentence:** Discretionary governance (where humans decide resource allocation) inevitably suffers from capture, time-inconsistency, and divergence between political incentives and citizen welfare, regardless of the quality of information or intentions of decision-makers.
+
+**The Solution:** Optimocracy removes human discretion from routine allocation decisions by committing to algorithmic optimization of pre-agreed metrics (e.g., median real income growth, quality-adjusted life years), enforced through smart contracts and validated by decentralized oracles.
+
+## Abstract
+
+Democratic governance faces a fundamental tension: the humans who make allocation decisions face incentives that systematically diverge from citizen welfare. Campaign contributions, revolving-door career incentives, and concentrated interest lobbying corrupt the mapping between citizen preferences and policy outcomes. Even well-intentioned officials suffer from time-inconsistency, short electoral horizons, and information asymmetries. This paper proposes Optimocracy, a governance architecture that addresses these failures by removing human discretion from routine resource allocation. Under Optimocracy, a governing coalition commits (via constitutional constraints encoded in smart contracts) to optimize allocation based on pre-agreed welfare metrics. Decentralized oracles provide verifiable data feeds, and algorithmic execution replaces human judgment for decisions within specified bounds. We examine precedents from central bank independence, algorithmic stablecoins, and index fund management. We analyze candidate metrics (median real income growth, QALYs per dollar, composite welfare indices), failure modes (Goodhart's Law, oracle capture, metric gaming), and hybrid architectures that combine algorithmic optimization with democratic oversight for edge cases. Optimocracy does not replace democracy but constrains it: citizens choose the objective function, algorithms optimize within those constraints, and democratic processes handle genuinely novel situations that fall outside algorithmic bounds.
+
+## Introduction: The Discretion Problem
+
+### Why Information Alone Fails
+
+Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
+
+Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
+
+The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because acting on it doesn't maximize their utility function (reelection probability, campaign contributions, post-office career prospects).
+
+### The Discretion Tax
+
+Every point of human discretion in resource allocation creates an opportunity for capture. Consider a simplified model:
+
+Let $A^*$ be the welfare-optimal allocation and $A$ be the actual allocation. The **discretion tax** is:
+
+$$
+\tau_d = \frac{W(A^*) - W(A)}{W(A^*)}
+$$
+
+Where $W(\cdot)$ is the social welfare function. Empirical estimates suggest $\tau_d$ ranges from 20-60% for government spending, meaning 20-60% of potential welfare is lost to misallocation driven by political rather than welfare considerations.
+
+### The Optimocracy Thesis
+
+Optimocracy proposes a radical simplification: **remove human discretion from routine allocation decisions entirely**. Instead of asking "what should we fund?" and trusting humans to answer correctly, Optimocracy asks:
+
+1. **What metric should we optimize?** (Democratic choice, made once)
+2. **What is the current value of that metric?** (Oracle measurement, continuous)
+3. **Which allocation maximizes the metric?** (Algorithmic optimization, automatic)
+
+This architecture eliminates the discretion tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (choosing the metric) and for genuinely novel situations.
+
+## Theoretical Foundations
+
+### Central Bank Independence as Precedent
+
+The most successful implementation of metric-bound governance is central bank independence. Prior to the Volcker era, monetary policy was subject to political discretion: politicians pressured central banks to stimulate the economy before elections, creating boom-bust cycles and chronic inflation.
+
+The solution was to:
+
+1. **Define a clear metric**: Price stability (2% inflation target)
+2. **Grant independence**: Remove political control over interest rate decisions
+3. **Create accountability**: Transparent reporting, but not democratic override
+
+The results were dramatic. Inflation in advanced economies fell from double digits to stable low single digits. The "time-inconsistency problem" identified by @kydland1977 was solved not by better politicians but by removing political discretion.
+
+Optimocracy generalizes this insight: if removing discretion from monetary policy improved outcomes, removing discretion from fiscal allocation might yield similar benefits.
+
+### Index Funds and Passive Allocation
+
+A parallel precedent exists in financial markets. Active fund managers exercise discretion over stock selection, charging fees for their judgment. Index funds remove this discretion, mechanically allocating based on market capitalization or other pre-defined rules.
+
+The results are well-documented: over 15-year periods, 90%+ of active managers underperform their benchmark indices after fees [@spiva2023]. Discretion, on average, destroys rather than creates value.
+
+Index funds demonstrate that:
+
+1. Algorithmic allocation can outperform discretionary allocation
+2. Removing human judgment eliminates both errors and fees
+3. Scale and consistency beat sporadic brilliance
+
+### Smart Contracts and Credible Commitment
+
+The missing technology for Optimocracy was credible commitment: the ability to bind future decision-makers to current rules. Traditional constitutions attempt this but are subject to reinterpretation, amendment, and outright violation.
+
+Smart contracts provide cryptographically enforced commitment. Once deployed, a smart contract executes exactly as written. No human can override it without controlling a majority of network validators (which, for major blockchains, would require billions of dollars and coordination among thousands of independent parties).
+
+This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and stakeholders can verify this promise by auditing the contract code.
+
+## Mechanism Design
+
+### Architecture Overview
+
+Optimocracy operates through three layers:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                 CONSTITUTIONAL LAYER                     │
+│  - Citizens choose optimization metric                   │
+│  - Democratic process, changed rarely                    │
+│  - Encoded as immutable smart contract parameters        │
+└─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│                    ORACLE LAYER                          │
+│  - Decentralized data feeds                             │
+│  - Measures metric values                               │
+│  - Validates allocation outcomes                        │
+└─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│                  EXECUTION LAYER                         │
+│  - Algorithmic optimization                             │
+│  - Smart contract enforcement                           │
+│  - Automatic fund disbursement                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+### The Constitutional Layer
+
+Citizens, through democratic processes, select the optimization objective. This is the *only* point of human discretion in the core mechanism. Options include:
+
+**Single metrics:**
+- Median real income growth (economic focus)
+- Quality-adjusted life years (health focus)
+- Life satisfaction scores (subjective wellbeing)
+
+**Composite indices:**
+- Weighted combination of income, health, education, environment
+- Social Progress Index components
+- OECD Better Life Index dimensions
+
+**Constrained optimization:**
+- Maximize metric X subject to metric Y ≥ threshold
+- Example: Maximize median income growth subject to Gini coefficient ≤ 0.35
+
+The constitutional choice is difficult to change by design. Super-majority requirements, time delays, and deliberative processes ensure stability while allowing adaptation to genuinely changed circumstances.
+
+### The Oracle Layer
+
+Oracles translate real-world outcomes into on-chain data that smart contracts can act upon. The critical design challenge is oracle capture: if a single entity controls the data feed, they effectively control the allocation.
+
+**Decentralized oracle solutions:**
+
+| Approach | Mechanism | Capture Resistance |
+|----------|-----------|-------------------|
+| **Multi-source aggregation** | Median of multiple independent data providers | Requires capturing majority of sources |
+| **Staking-based validation** | Validators stake collateral, slashed for false reports | Economic penalty for manipulation |
+| **Schelling point games** | Validators rewarded for matching consensus | Game-theoretic truth-telling incentive |
+| **Government statistics** | Use official GDP, health statistics | Trusted but potentially politicized |
+
+For metrics like median income or life expectancy, robust government statistical agencies provide reliable baseline data. For more novel metrics, decentralized oracle networks like Chainlink or UMA provide manipulation-resistant data feeds.
+
+### The Execution Layer
+
+Given the objective function and data feeds, the execution layer performs constrained optimization:
+
+$$
+\max_{\mathbf{x}} M(\mathbf{x}) \quad \text{subject to} \quad \sum_i x_i = B, \quad x_i \geq 0
+$$
+
+Where $M(\cdot)$ is the chosen metric, $\mathbf{x}$ is the allocation vector, and $B$ is the total budget.
+
+For simple metrics with known production functions, this optimization is straightforward. For complex metrics requiring causal inference, the execution layer may incorporate:
+
+1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects
+2. **Prediction markets**: Aggregate distributed information about allocation effectiveness
+3. **Machine learning**: Learn allocation-outcome mappings from historical data
+
+Smart contracts enforce the resulting allocation, automatically disbursing funds to designated recipients based on the optimization output.
+
+## Candidate Metrics
+
+### Median Real Income Growth
+
+**Definition:** Year-over-year percentage change in inflation-adjusted median household income.
+
+**Advantages:**
+- Widely measured and understood
+- Resistant to inequality distortions (median vs. mean)
+- Captures broad economic welfare
+
+**Disadvantages:**
+- Ignores non-market welfare (leisure, health, environment)
+- Can be gamed through statistical manipulation
+- Delayed measurement (annual data)
+
+**Gaming vectors:**
+- Redefine "household" to change median
+- Manipulate inflation measurement
+- Shift income timing around measurement dates
+
+### Quality-Adjusted Life Years (QALYs)
+
+**Definition:** Life years gained weighted by health-related quality of life (0 = death, 1 = perfect health).
+
+**Advantages:**
+- Captures both mortality and morbidity
+- Standard metric in health economics
+- Enables comparison across health interventions
+
+**Disadvantages:**
+- Difficult to measure population-wide
+- Quality weights are contested
+- Ignores non-health welfare
+
+**Gaming vectors:**
+- Manipulate quality weight surveys
+- Focus on measured conditions, neglect unmeasured ones
+- Shift resources to easily-measured interventions
+
+### Composite Welfare Index
+
+**Definition:** Weighted average of multiple welfare dimensions (income, health, education, environment, social connection, etc.).
+
+**Advantages:**
+- Captures multidimensional welfare
+- Resistant to single-metric gaming
+- Aligns with holistic welfare concepts
+
+**Disadvantages:**
+- Weight selection is contested
+- Complexity reduces transparency
+- Each component has measurement challenges
+
+**Implementation:** The Social Progress Index, OECD Better Life Index, and similar frameworks provide tested composite structures that could be adapted for Optimocracy.
+
+### Metric Selection Process
+
+The choice of metric is itself a constitutional question that could be resolved through democratic preference aggregation (see companion paper on Wishocracy). Citizens could express preferences over candidate metrics through pairwise comparison, with the winning metric encoded in the Optimocracy constitution.
+
+This creates a two-layer democracy:
+1. **Wishocracy layer**: Democratic selection of optimization objective
+2. **Optimocracy layer**: Algorithmic optimization of selected objective
+
+## Advantages Over Discretionary Governance
+
+### Capture Resistance
+
+Under discretionary governance, every allocation decision is a lobbying opportunity. With thousands of budget line items and hundreds of legislators, the attack surface for capture is enormous.
+
+Optimocracy collapses this attack surface to two points:
+1. **Metric selection** (rare, high-visibility, constitutional process)
+2. **Oracle manipulation** (mitigated by decentralization and staking)
+
+Capturing metric selection requires winning a constitutional-level debate, far harder than lobbying a committee chair. Capturing oracles requires coordinating manipulation across multiple independent data providers.
+
+### Time Consistency
+
+Politicians face short electoral horizons (2-6 years) while many welfare-improving investments have long payoff periods (10-30 years). This creates systematic underinvestment in research, infrastructure, and prevention.
+
+Optimocracy's algorithmic commitment solves time-inconsistency: the optimization function doesn't change with electoral cycles. If medical research improves long-run health outcomes, the algorithm allocates to medical research regardless of the next election.
+
+### Transparency and Verifiability
+
+Discretionary allocation is opaque: citizens cannot easily verify whether budget decisions serve their interests. Lobbying happens in private; legislative language is deliberately obscure.
+
+Optimocracy allocation is fully transparent:
+- The objective function is public (encoded in smart contract)
+- The data inputs are public (oracle feeds)
+- The optimization algorithm is public (open-source code)
+- The resulting allocation is public (on-chain transactions)
+
+Any citizen can verify that allocation follows the rules. Deviation is not just detectable but impossible; the smart contract enforces the algorithm.
+
+### Reduced Coordination Costs
+
+Under discretionary governance, achieving good policy requires coordinating millions of citizens to monitor thousands of decisions by hundreds of legislators. The information costs are prohibitive; rational ignorance prevails.
+
+Optimocracy requires citizens to monitor only one thing: Is the chosen metric improving? If median income is growing and health outcomes are improving, the system is working. If not, the constitutional metric may need revision.
+
+## Challenges and Failure Modes
+
+### Goodhart's Law
+
+"When a measure becomes a target, it ceases to be a good measure." This is the central challenge for any metric-bound governance system.
+
+**Mitigation strategies:**
+
+1. **Composite metrics**: Gaming one dimension doesn't help if other dimensions suffer
+2. **Rotating metrics**: Periodically adjust metric definitions to prevent adaptation
+3. **Robustness requirements**: Require improvement across multiple measurement approaches
+4. **Red team audits**: Continuously probe for gaming opportunities
+
+No mitigation is perfect. Goodhart's Law is inherent to optimization. The question is whether Optimocracy's gaming vulnerabilities are worse than discretionary governance's capture vulnerabilities. The evidence from central banking and index funds suggests metric-bound systems outperform despite gaming risks.
+
+### Oracle Capture
+
+If adversaries control the data feed, they control the allocation. This is the Achilles' heel of algorithmic governance.
+
+**Mitigation strategies:**
+
+1. **Decentralization**: Require consensus among multiple independent oracles
+2. **Staking**: Require validators to post collateral, slashed for false reports
+3. **Reputation**: Weight oracle inputs by historical accuracy
+4. **Redundancy**: Use multiple measurement methodologies for the same metric
+
+For metrics based on government statistics (GDP, life expectancy), the existing statistical infrastructure provides reasonable reliability. Novel metrics require building new oracle infrastructure with appropriate decentralization.
+
+### Edge Cases and Novelty
+
+Algorithms optimize within their training distribution. Novel situations (pandemics, wars, technological discontinuities) may fall outside algorithmic bounds.
+
+**Mitigation strategies:**
+
+1. **Exception handling**: Define conditions under which human override is permitted
+2. **Bounded discretion**: Allow human adjustment within specified ranges
+3. **Sunset provisions**: Require periodic democratic reauthorization
+4. **Circuit breakers**: Pause algorithmic allocation during defined crisis conditions
+
+The hybrid architecture (Section 8) addresses this challenge by combining algorithmic optimization for routine decisions with democratic governance for genuine novelty.
+
+### Democratic Legitimacy
+
+Citizens may reject governance by algorithm regardless of outcomes. "The algorithm decided" lacks the legitimacy of "the people decided."
+
+**Mitigation strategies:**
+
+1. **Constitutional framing**: Emphasize that citizens choose the objective; algorithms implement
+2. **Transparency**: Open-source all code, publish all inputs and outputs
+3. **Outcome focus**: Demonstrate superior welfare outcomes compared to discretionary alternatives
+4. **Opt-in adoption**: Begin with voluntary participation before mandatory implementation
+
+Legitimacy ultimately derives from outcomes. If Optimocracy demonstrably improves welfare, legitimacy follows. If it fails to improve outcomes, it should be abandoned regardless of theoretical elegance.
+
+## Hybrid Architectures
+
+Pure Optimocracy (complete removal of human discretion) is neither feasible nor desirable for all governance functions. A more realistic architecture combines algorithmic and democratic elements:
+
+### The Constrained Discretion Model
+
+```
+┌─────────────────────────────────────────────────────────┐
+│              ALGORITHMIC CORE (80% of decisions)        │
+│  - Routine allocation within established categories     │
+│  - Metric optimization with verified outcomes           │
+│  - Smart contract enforcement                           │
+└─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│           BOUNDED DISCRETION (15% of decisions)         │
+│  - Novel situations outside algorithmic bounds          │
+│  - Democratic deliberation with transparency            │
+│  - Decisions logged and evaluated against metrics       │
+└─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│         CONSTITUTIONAL REVISION (5% of decisions)       │
+│  - Metric selection and modification                    │
+│  - Fundamental institutional changes                    │
+│  - Super-majority requirements, deliberative process    │
+└─────────────────────────────────────────────────────────┘
+```
+
+This architecture reserves human judgment for decisions that genuinely require it while removing discretion from routine allocation where capture is most damaging.
+
+### Integration with Wishocracy
+
+Optimocracy and Wishocracy address complementary problems:
+
+| Dimension | Wishocracy | Optimocracy |
+|-----------|------------|-------------|
+| **Problem solved** | Preference aggregation | Incentive alignment |
+| **Core mechanism** | Pairwise comparison | Metric optimization |
+| **Human role** | Express preferences | Choose metric |
+| **Algorithm role** | Aggregate preferences | Optimize allocation |
+| **Failure mode** | Preference manipulation | Metric gaming |
+
+A combined system might use Wishocracy for metric selection (citizens express preferences over welfare dimensions) and Optimocracy for metric optimization (algorithms allocate to maximize the selected metric).
+
+### Integration with Incentive Alignment Bonds
+
+Optimocracy can function as the objective layer for Incentive Alignment Bonds (see companion paper). IABs align politician incentives with outcomes; Optimocracy provides the outcome metric:
+
+1. **Optimocracy defines** the objective function (e.g., median income growth)
+2. **Oracles measure** politician impact on the metric
+3. **IABs reward** politicians whose votes correlate with metric improvement
+4. **Smart contracts enforce** the reward distribution
+
+This creates a closed loop: politicians are paid for improving outcomes, not for satisfying donors or winning elections.
+
+## Implementation Pathway
+
+### Phase 1: Parallel Tracking (12-24 months)
+
+**Objective:** Demonstrate that Optimocracy allocation would outperform actual allocation without changing any real spending.
+
+**Mechanism:**
+1. Select candidate metric (e.g., median income growth)
+2. Build optimization model using historical data
+3. Generate "shadow budget" showing Optimocracy allocation
+4. Track counterfactual outcomes: What would have happened under Optimocracy?
+
+**Success criteria:** Shadow budget demonstrably outperforms actual budget on chosen metric.
+
+### Phase 2: Voluntary Adoption (24-48 months)
+
+**Objective:** Implement Optimocracy for voluntary participants (states, municipalities, private organizations).
+
+**Mechanism:**
+1. Develop open-source Optimocracy toolkit
+2. Partner with reform-minded jurisdictions for pilot implementation
+3. Document outcomes and refine algorithms
+4. Build oracle infrastructure for key metrics
+
+**Success criteria:** Pilot jurisdictions show measurable welfare improvement vs. control group.
+
+### Phase 3: Competitive Pressure (48-96 months)
+
+**Objective:** Create competitive pressure on discretionary systems by demonstrating superior outcomes.
+
+**Mechanism:**
+1. Publish comparative outcome data
+2. Support citizen initiatives for Optimocracy adoption
+3. Integrate with Incentive Alignment Bonds for federal-level influence
+4. Develop constitutional amendment proposals where appropriate
+
+**Success criteria:** Multiple jurisdictions adopt Optimocracy; measurable shift in policy discourse.
+
+## Conclusion
+
+Discretionary governance is not failing because politicians are evil or voters are ignorant. It is failing because the incentive structure makes capture inevitable. No amount of transparency, campaign finance reform, or civic education can eliminate the fundamental misalignment between political incentives and citizen welfare.
+
+Optimocracy offers a different approach: rather than trying to fix human decision-makers, remove human discretion from decisions where it creates more harm than value. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via smart contracts.
+
+The precedents are encouraging. Central bank independence solved the time-inconsistency problem for monetary policy. Index funds outperform active management by removing human judgment. Smart contracts enable credible commitment that was previously impossible.
+
+Optimocracy is not utopian. It faces real challenges: Goodhart's Law, oracle capture, edge cases, and democratic legitimacy. But these challenges are addressable through careful mechanism design, hybrid architectures, and iterative implementation.
+
+The question is not whether Optimocracy is perfect; no governance system is. The question is whether metric-bound algorithmic allocation produces better outcomes than discretionary allocation subject to capture. The evidence suggests it does.
+
+We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
+
+## Appendix A: Technical Specification Sketch
+
+### Smart Contract Architecture
+
+```solidity
+// Simplified Optimocracy allocation contract
+contract OptimocracyAllocation {
+
+    // Constitutional parameters (set once, hard to change)
+    address public oracleRegistry;
+    bytes32 public metricId;
+    uint256 public constitutionalThreshold; // Super-majority for changes
+
+    // Allocation state
+    mapping(bytes32 => uint256) public categoryWeights;
+    uint256 public totalBudget;
+
+    // Oracle integration
+    function updateMetricValue() external {
+        uint256 newValue = IOracle(oracleRegistry).getMetric(metricId);
+        emit MetricUpdated(metricId, newValue);
+    }
+
+    // Optimization execution
+    function executeAllocation(bytes32[] calldata categories) external {
+        // Verify oracle data freshness
+        require(oracleDataFresh(), "Stale oracle data");
+
+        // Run optimization algorithm
+        uint256[] memory allocations = optimize(categories, totalBudget);
+
+        // Disburse funds
+        for (uint i = 0; i < categories.length; i++) {
+            disburse(categories[i], allocations[i]);
+        }
+    }
+
+    // Constitutional amendment (high threshold)
+    function amendMetric(bytes32 newMetricId) external {
+        require(msg.sender == governanceContract, "Unauthorized");
+        require(supermajorityAchieved(), "Insufficient support");
+        metricId = newMetricId;
+    }
+}
+```
+
+### Oracle Specification
+
+Oracles must provide:
+
+1. **Metric value**: Current measured value of optimization target
+2. **Confidence interval**: Uncertainty bounds on measurement
+3. **Timestamp**: When measurement was taken
+4. **Methodology hash**: Cryptographic commitment to measurement methodology
+
+Multiple oracles are aggregated using median or stake-weighted average to resist manipulation.
+
+### Optimization Algorithm
+
+For linear production functions, allocation follows:
+
+$$
+x_i^* = \frac{\partial M / \partial x_i}{\sum_j \partial M / \partial x_j} \cdot B
+$$
+
+Where $\partial M / \partial x_i$ is the marginal metric improvement from allocating to category $i$.
+
+For nonlinear or uncertain production functions, the algorithm incorporates:
+
+1. **Exploration budget**: Allocate small amounts to test uncertain interventions
+2. **Bayesian updating**: Update production function estimates as outcomes are observed
+3. **Thompson sampling**: Balance exploitation of known-good interventions with exploration of uncertain ones
+
+## References
+
+::: {#refs}
+:::

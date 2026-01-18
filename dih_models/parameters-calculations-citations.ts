@@ -3339,25 +3339,13 @@ export const UNEXPLORED_RATIO: Parameter = {
   latex: "\\begin{gathered}\nRatio_{unexplored} \\\\\n= 1 - \\frac{N_{tested}}{N_{combos}} \\\\\n= 1 - \\frac{32{,}500}{9.5M} \\\\\n= 99.7\\% \\\\[0.5em]\n\\text{where } N_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
 };
 
-export const US_HOSTILE_TAKEOVER_67_SENATORS: Parameter = {
-  value: 670000000.0,
-  unit: "USD",
-  displayName: "US Senate Treaty Capture Cost",
-  description: "Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
-  confidence: "medium",
-  formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
-  latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
-};
-
-export const US_HOSTILE_TAKEOVER_FULL_CONGRESS: Parameter = {
+export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   value: 5350000000.0,
   unit: "USD",
-  displayName: "US Congress Full Capture Cost",
-  description: "Cost to 'buy out' post-office career value for all 535 members of Congress",
+  displayName: "US Congress Full Advocacy Cost",
+  description: "Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
   sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
   confidence: "medium",
   formula: "CONGRESS_MEMBERS x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
@@ -3373,6 +3361,18 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   confidence: "high",
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
   latex: "\\begin{gathered}\nCost_{disease,US} \\\\\n= Cost_{ALZ,US} + Cost_{cancer,US} + Cost_{diabetes,US} \\\\\n+ Cost_{heart,US} \\\\\n= \\$355B + \\$208B + \\$327B + \\$363B \\\\\n= \\$1.25T\n\\end{gathered}",
+};
+
+export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
+  value: 670000000.0,
+  unit: "USD",
+  displayName: "US Senate Treaty Advocacy Cost",
+  description: "Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
+  confidence: "medium",
+  formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
+  latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
 };
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
@@ -4147,28 +4147,6 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
 };
 
-export const GLOBAL_HOSTILE_TAKEOVER_COST: Parameter = {
-  value: 125000000000.0,
-  unit: "USD",
-  displayName: "Global Political Capture Cost",
-  description: "Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-analysis",
-  confidence: "low",
-  formula: "NATO + China + Russia + India + other major spenders",
-  confidenceInterval: [75000000000.0, 200000000000.0],
-};
-
-export const GLOBAL_HOSTILE_TAKEOVER_MAXIMUM: Parameter = {
-  value: 200000000000.0,
-  unit: "USD",
-  displayName: "Global Political Capture (Maximum)",
-  description: "Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis",
-  confidence: "low",
-};
-
 export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   value: 2692800000000.0,
   unit: "USD/year",
@@ -4179,6 +4157,28 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   confidence: "high",
   formula: "MILITARY_SPENDING × (1 - REDUCTION)",
   latex: "\\begin{gathered}\nSpending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n= \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}",
+};
+
+export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
+  value: 125000000000.0,
+  unit: "USD",
+  displayName: "Global Political Reform Investment",
+  description: "Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-estimates",
+  confidence: "low",
+  formula: "NATO + China + Russia + India + other major spenders",
+  confidenceInterval: [75000000000.0, 200000000000.0],
+};
+
+export const GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM: Parameter = {
+  value: 200000000000.0,
+  unit: "USD",
+  displayName: "Global Political Reform Investment (Maximum)",
+  description: "Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis",
+  confidence: "low",
 };
 
 export const HOURS_PER_DAY: Parameter = {
@@ -4269,15 +4269,15 @@ export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
 };
 
-export const NATO_HOSTILE_TAKEOVER_COST: Parameter = {
+export const NATO_POLITICAL_REFORM_INVESTMENT: Parameter = {
   value: 65000000000.0,
   unit: "USD",
-  displayName: "NATO Political Capture Cost",
-  description: "Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.",
+  displayName: "NATO Political Reform Investment",
+  description: "Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-analysis",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-estimates",
   confidence: "low",
-  formula: "US capture + EU capture + other NATO capture",
+  formula: "US advocacy + EU advocacy + other NATO advocacy",
 };
 
 export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
@@ -4500,15 +4500,15 @@ export const US_CONGRESS_MEMBER_COUNT: Parameter = {
   confidence: "high",
 };
 
-export const US_HOSTILE_TAKEOVER_TOTAL: Parameter = {
+export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   value: 25000000000.0,
   unit: "USD",
-  displayName: "US Total Political Capture Cost",
-  description: "Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.",
+  displayName: "US Political Reform Investment (Total)",
+  description: "Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
   confidence: "low",
-  formula: "Congress careers + lobbying dominance + campaign buffer",
+  formula: "Congress advocacy + lobbying parity + campaign matching",
 };
 
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
@@ -4839,9 +4839,9 @@ export const parameters = {
   TYPE_II_ERROR_COST_RATIO,
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
-  US_HOSTILE_TAKEOVER_67_SENATORS,
-  US_HOSTILE_TAKEOVER_FULL_CONGRESS,
+  US_CONGRESS_FULL_ADVOCACY_COST,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
+  US_SENATE_TREATY_ADVOCACY_COST,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
@@ -4913,9 +4913,9 @@ export const parameters = {
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
-  GLOBAL_HOSTILE_TAKEOVER_COST,
-  GLOBAL_HOSTILE_TAKEOVER_MAXIMUM,
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
+  GLOBAL_POLITICAL_REFORM_INVESTMENT,
+  GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   HUMAN_PROTEIN_CODING_GENES,
@@ -4927,7 +4927,7 @@ export const parameters = {
   LOBBYIST_BOND_INVESTMENT_MAX,
   MINUTES_PER_HOUR,
   MONTHS_PER_YEAR,
-  NATO_HOSTILE_TAKEOVER_COST,
+  NATO_POLITICAL_REFORM_INVESTMENT,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
@@ -4950,7 +4950,7 @@ export const parameters = {
   TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
   US_CONGRESS_MEMBER_COUNT,
-  US_HOSTILE_TAKEOVER_TOTAL,
+  US_POLITICAL_REFORM_INVESTMENT_TOTAL,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VICTORY_BOND_FUNDING_PCT
