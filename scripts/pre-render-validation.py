@@ -1299,7 +1299,7 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
                         ValidationError(
                             file=filepath,
                             line=line_index + 1,
-                            message=f"Missing citation: [@{citation_id}] - not found in references.bib",
+                            message=f"Missing citation: [@{citation_id}] - not found in references.bib. Search knowledge/references.qmd for correct ID, or add citation and run generate-everything script to regenerate .bib",
                             context=line.strip()[:80],
                         )
                     )
@@ -1596,13 +1596,25 @@ def main():
             errors_by_file[error.file].append(error)
 
         # Print errors grouped by file
+        has_citation_errors = False
         for file, file_errors in errors_by_file.items():
             print(f"\n{file}:", file=sys.stderr)
             for error in file_errors:
                 print(f"   Line {error.line}: {error.message}", file=sys.stderr)
                 print(f"   Context: {error.context}", file=sys.stderr)
+                if "Missing citation" in error.message:
+                    has_citation_errors = True
 
         print("\nPlease fix the above errors before rendering.\n", file=sys.stderr)
+
+        # Provide additional guidance for citation errors
+        if has_citation_errors:
+            print("TIP: To fix missing citations:", file=sys.stderr)
+            print("  1. Search knowledge/references.qmd for the correct citation ID", file=sys.stderr)
+            print("  2. If not found, add the citation to knowledge/references.qmd", file=sys.stderr)
+            print("  3. Run: .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py", file=sys.stderr)
+            print("  4. Re-run this validation script\n", file=sys.stderr)
+
         sys.exit(1)
 
 

@@ -470,8 +470,20 @@ def main():
         print(f"[ERROR] Found {len(missing_refs)} missing references:", file=sys.stderr)
         for param_name, source_ref in missing_refs:
             print(f"  - Parameter '{param_name}' references missing citation: '{source_ref}'", file=sys.stderr)
-        print(f"\n[ERROR] Please add missing references to {references_path}", file=sys.stderr)
-        print(f"[ERROR] Format: <a id=\"{missing_refs[0][1]}\"></a>", file=sys.stderr)
+        print(f"\n[ERROR] To fix missing references, follow these steps:", file=sys.stderr)
+        print(f"[ERROR] ", file=sys.stderr)
+        print(f"[ERROR] 1. Search {references_path} for the correct citation ID:", file=sys.stderr)
+        print(f"[ERROR]    grep -i '{missing_refs[0][1].split('-')[0]}' {references_path}", file=sys.stderr)
+        print(f"[ERROR] ", file=sys.stderr)
+        print(f"[ERROR] 2. If found with different ID, update the parameter's source_ref in dih_models/parameters.py", file=sys.stderr)
+        print(f"[ERROR]    Then re-run this script to regenerate references.bib", file=sys.stderr)
+        print(f"[ERROR] ", file=sys.stderr)
+        print(f"[ERROR] 3. If NOT found, search the web for the citation and add to {references_path}:", file=sys.stderr)
+        print(f"[ERROR]    Format: <a id=\"{missing_refs[0][1]}\"></a>", file=sys.stderr)
+        print(f"[ERROR]    [Full citation text here]", file=sys.stderr)
+        print(f"[ERROR] ", file=sys.stderr)
+        print(f"[ERROR] 4. Re-run this script until all references validate:", file=sys.stderr)
+        print(f"[ERROR]    .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py", file=sys.stderr)
         print()
         # Mark as fatal error so we exit with code 1 at the end
         has_fatal_error = True
