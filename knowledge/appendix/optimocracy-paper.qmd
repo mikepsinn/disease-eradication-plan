@@ -131,15 +131,17 @@ Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by removing dis
 
 The following table synthesizes estimates from peer-reviewed research:
 
-| Policy Domain | Source | Methodology | Estimated Welfare Loss |
-|--------------|--------|-------------|------------------------|
-| **Migration restrictions** | @clemens2011 | General equilibrium, wage gaps | 67-147% of global GDP |
-| **US regulatory accumulation (1980-2012)** | @coffey2020 | Counterfactual growth trajectory | 25% of GDP ($4T annually) |
-| **US regulation (1949-2005)** | @dawson2013 | Panel regression, regulatory index | GDP would be 3.5x higher |
-| **Global corruption** | @un2018 | Multiple estimation approaches | 5% of GDP (~$5T/year) |
-| **FDA drug delays (1960-2001)** | @philipson2008 | Consumer/producer surplus | 140M life-years lost |
-| **Trade barriers** | @costinot2015 | Gravity models | 5-10% of GDP |
-| **Occupational licensing** | @kleiner2013 | Labor market distortion | 2-3% of GDP |
+| Policy Domain | Source | Methodology | Estimated Welfare Loss | Confidence |
+|--------------|--------|-------------|------------------------|------------|
+| **Migration restrictions** | @clemens2011 | General equilibrium, wage gaps | 67-147% of global GDP | Low^†^ |
+| **US regulatory accumulation (1980-2012)** | @coffey2020 | Counterfactual growth trajectory | 25% of GDP ($4T annually) | Low^‡^ |
+| **US regulation (1949-2005)** | @dawson2013 | Panel regression, regulatory index | GDP would be 3.5x higher | Low^‡^ |
+| **Global corruption** | @un2018 | Multiple estimation approaches | 5% of GDP (~$5T/year) | Medium |
+| **FDA drug delays (1960-2001)** | @philipson2008 | Consumer/producer surplus | 140M life-years lost | Medium |
+| **Trade barriers** | @costinot2015 | Gravity models | 5-10% of GDP | High |
+| **Occupational licensing** | @kleiner2013 | Labor market distortion | 2-3% of GDP | High |
+
+^†^Theoretical maximum under heroic assumptions; achievable gains likely 5-10x smaller. ^‡^Think tank source with weak causal identification.
 
 **Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the Political Dysfunction Tax exceeds {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
 
@@ -230,7 +232,7 @@ The US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE 
 
 ### Why Information Doesn't Solve the Problem
 
-If the welfare losses are documented, why don't governments act? @gilens2014 provide the answer: analyzing 1,779 policy decisions, they found that economic elites and organized business interests have substantial independent influence on policy, while average citizens have little or no independent influence.
+If the welfare losses are documented, why don't governments act? As noted above, @gilens2014 found that economic elites and organized interests—not average citizens—drive policy outcomes.
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because doing so doesn't maximize their utility function (reelection probability, campaign contributions, post-office career prospects).
 
@@ -256,6 +258,44 @@ The empirical evidence suggests:
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
 
 This motivates the Optimocracy thesis: if current systems systematically fail to optimize for welfare, metric-bound systems may improve outcomes. The following sections examine precedents, mechanisms, and limitations.
+
+### A Formal Model: When Does Optimocracy Dominate?
+
+We can formalize the conditions under which Optimocracy improves welfare relative to discretionary allocation.
+
+**Setup:** Let $N$ denote the number of discretionary allocation decisions under the status quo. Each decision $i$ has capture probability $p_i$ and capture cost $c_i$ (welfare loss when captured). Under Optimocracy, capture opportunities collapse to:
+
+- **Metric selection**: A single constitutional choice with capture probability $p_M$ and capture cost $c_M$
+- **Oracle manipulation**: $K$ independent oracles, each with capture probability $p_O$ and requiring majority collusion
+
+**Proposition 1 (Optimocracy Dominance Condition):**
+
+*Optimocracy welfare-dominates discretionary governance when:*
+
+$$
+\underbrace{p_M \cdot c_M + \binom{K}{\lceil K/2 \rceil} p_O^{\lceil K/2 \rceil} \cdot c_O}_{\text{Expected capture cost under Optimocracy}} < \underbrace{\sum_{i=1}^{N} p_i \cdot c_i}_{\text{Expected capture cost under status quo}}
+$$
+
+*Proof sketch:* The left side represents Optimocracy's two attack surfaces (metric selection and oracle collusion). The right side aggregates capture across all discretionary decisions. Optimocracy dominates when:
+
+1. **N is large**: More discretionary decisions means more capture opportunities
+2. **$p_M < \sum p_i$**: Constitutional-level debates are harder to capture than committee earmarks
+3. **K is large**: More independent oracles require exponentially harder collusion
+4. **$c_M \approx c_i$**: Capture at metric selection is not catastrophically worse than capture at allocation
+
+**Numerical illustration:** Suppose $N = 1000$ budget decisions, each with $p_i = 0.1$ capture probability and $c_i = \$1B$ welfare loss. Total expected capture cost: $\$100B$. Under Optimocracy with $p_M = 0.05$, $c_M = \$50B$, $K = 5$ oracles, and $p_O = 0.1$:
+
+- Metric capture cost: $0.05 \times \$50B = \$2.5B$
+- Oracle collusion cost: $\binom{5}{3}(0.1)^3 \times \$20B = 10 \times 0.001 \times \$20B = \$0.2B$
+- **Total: \$2.7B vs. \$100B** — a 97% reduction
+
+**Limitations:** This model assumes:
+
+1. Capture probabilities are independent (may underestimate correlated attacks)
+2. Oracle collusion requires simple majority (stronger thresholds reduce risk further)
+3. Metric capture cost is bounded (catastrophic metric selection could dominate)
+
+The model does not prove Optimocracy always dominates—it identifies the structural conditions under which it does. Empirical calibration of $p_M$, $p_O$, and $c_M$ is essential for policy application.
 
 ## Theoretical Foundations
 
@@ -408,6 +448,50 @@ The historical record suggests algorithmic governance works under specific condi
 
 Optimocracy should operate in domains where conditions are favorable and defer to democratic deliberation where they are not. The next section develops this distinction systematically.
 
+### Engagement with Mechanism Design and Social Choice Theory
+
+Optimocracy must engage with foundational results in mechanism design and social choice that constrain any governance system.
+
+#### Arrow's Impossibility Theorem and Metric Aggregation
+
+@arrow1951 proved that no preference aggregation rule can simultaneously satisfy transitivity, unanimity, independence of irrelevant alternatives, and non-dictatorship. This applies to metric selection: if citizens have diverse preferences over welfare dimensions (income vs. health vs. environment), no aggregation procedure can perfectly reflect all preferences.
+
+**Implications for Optimocracy:**
+
+1. **Metric selection is irreducibly political**: There is no "correct" welfare metric derivable from individual preferences alone
+2. **Composite indices face aggregation problems**: Weighting income, health, and environment involves value judgments that cannot be algorithmically determined
+3. **Democratic legitimacy is essential**: Because no neutral aggregation exists, the political process that selects metrics matters for legitimacy
+
+**Design response:** Optimocracy does not claim to solve preference aggregation—it accepts that metric selection is a democratic choice and focuses on ensuring that *once chosen*, metrics are optimized rather than captured. Wishocracy (companion paper) addresses the aggregation problem through randomized pairwise preference elicitation.
+
+#### Mechanism Design and Incentive Compatibility
+
+The Revelation Principle [@myerson1981; @maskin1999] states that any outcome achievable by a mechanism can be achieved by an incentive-compatible direct mechanism where agents truthfully report their types. This has implications for oracle design:
+
+**Implications for Optimocracy:**
+
+1. **Oracles must be incentive-compatible**: Data reporters must find truth-telling optimal
+2. **Staking mechanisms approximate incentive compatibility**: Economic penalties for detected manipulation create truth-telling incentives
+3. **Perfect incentive compatibility may be impossible**: For complex social metrics, verification is costly and manipulation hard to detect
+
+**Design response:** Optimocracy uses multi-oracle aggregation (median of independent sources), staking-based penalties, and delayed verification to approximate incentive compatibility. We do not claim perfect manipulation resistance—only that manipulation costs exceed discretionary capture costs.
+
+#### Gibbard-Satterthwaite and Strategic Voting
+
+The Gibbard-Satterthwaite theorem shows that any non-dictatorial voting rule with three or more outcomes is susceptible to strategic voting [@gibbard1973; @satterthwaite1975]. This applies to metric selection votes.
+
+**Implications for Optimocracy:**
+
+1. **Strategic metric selection is possible**: Actors may vote for metrics that favor their interests, not their true preferences
+2. **Supermajority requirements reduce but don't eliminate manipulation**
+
+**Design response:** Optimocracy mitigates strategic metric selection through:
+- Infrequent metric changes (reducing strategic investment ROI)
+- High visibility (making manipulation reputationally costly)
+- Constitutional thresholds (requiring broad coalitions)
+
+This literature review acknowledges that Optimocracy operates within fundamental theoretical constraints. The claim is not that Optimocracy solves these impossibility results—no system can—but that it produces better outcomes than discretionary alternatives despite these constraints.
+
 ### Index Funds and Passive Allocation
 
 A parallel precedent exists in financial markets. Active fund managers exercise discretion over stock selection, charging fees for their judgment. Index funds remove this discretion, mechanically allocating based on market capitalization or other pre-defined rules.
@@ -426,7 +510,7 @@ The missing technology for Optimocracy was credible commitment: the ability to b
 
 Smart contracts provide cryptographically enforced commitment. Once deployed, a smart contract executes exactly as written. No human can override it without controlling a majority of network validators (which, for major blockchains, would require billions of dollars and coordination among thousands of independent parties).
 
-This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and stakeholders can verify this promise by auditing the contract code.
+This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and any observer can verify this promise by auditing the contract code.
 
 ## Mechanism Design
 
@@ -686,23 +770,25 @@ Optimocracy should NOT govern decisions that:
 
 ### The 80/20 Architecture
 
-We propose that roughly 80% of routine government spending allocation could be governed algorithmically, while 20% requires democratic deliberation:
+We propose a heuristic split where the majority of routine government spending allocation could be governed algorithmically, while a minority requires democratic deliberation. The specific percentages below are illustrative, not empirically derived; rigorous calibration would require detailed analysis of budget categories by measurability, value consensus, and capture vulnerability.
 
-**Algorithmic layer (80%):**
+**Candidate algorithmic domains:**
 - Medical research funding allocation
 - Infrastructure maintenance prioritization
 - Education funding formulas
 - Pandemic preparedness investment
 - Environmental protection spending
 
-**Deliberative layer (20%):**
+**Domains requiring deliberation:**
 - New program creation
 - Fundamental policy direction
 - Rights and liberties
 - International relations
 - Constitutional revision
 
-This hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while removing capture from routine allocation.
+**Note:** The appropriate boundary depends on institutional context and metric quality. Some jurisdictions may find 60% algorithmic allocation feasible; others may achieve 90%. The key insight is not the specific percentage but the principle: routine allocation with measurable outcomes is a candidate for algorithmic governance, while novel decisions and value conflicts require democratic deliberation.
+
+This hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while using metric-bound systems for routine allocation.
 
 ## Advantages Over Discretionary Governance
 
@@ -783,7 +869,13 @@ Let $M$ be the measured metric and $W$ be true welfare. Under normal conditions,
 
 5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
 
-**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. We estimate that gaming under Optimocracy reduces welfare gains by 10-30%, while the Crony Tax alone ({{< var crony_tax_pct >}}) exceeds gaming losses, and the full Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) is larger still. Even with gaming, Optimocracy outperforms.
+**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. Evidence from existing metric-bound systems suggests gaming costs are substantial but bounded:
+
+- **Hospital quality metrics**: Medicare's Hospital Readmissions Reduction Program reduced readmissions but increased observation stays and mortality risk for some conditions, with estimates suggesting 20-40% of measured improvement reflects gaming rather than genuine quality gains [@ody2019; @gupta2018].
+- **School testing**: No Child Left Behind-era testing showed significant teaching-to-test and score manipulation, with studies suggesting 10-25% of score gains were attributable to gaming behaviors rather than learning [@jacob2003; @neal2010].
+- **Index funds**: Gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011].
+
+Extrapolating from these precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%—a wide range reflecting genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
 
 ### Oracle Capture
 
@@ -966,7 +1058,7 @@ Pure Optimocracy (fully metric-bound allocation) is neither feasible nor desirab
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              ALGORITHMIC CORE (80% of decisions)        │
+│                    ALGORITHMIC CORE                      │
 │  - Routine allocation within established categories     │
 │  - Metric optimization with verified outcomes           │
 │  - Smart contract enforcement                           │
@@ -974,7 +1066,7 @@ Pure Optimocracy (fully metric-bound allocation) is neither feasible nor desirab
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│           BOUNDED DISCRETION (15% of decisions)         │
+│                  BOUNDED DISCRETION                      │
 │  - Novel situations outside algorithmic bounds          │
 │  - Democratic deliberation with transparency            │
 │  - Decisions logged and evaluated against metrics       │
@@ -982,12 +1074,14 @@ Pure Optimocracy (fully metric-bound allocation) is neither feasible nor desirab
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│         CONSTITUTIONAL REVISION (5% of decisions)       │
+│                CONSTITUTIONAL REVISION                   │
 │  - Metric selection and modification                    │
 │  - Fundamental institutional changes                    │
 │  - Super-majority requirements, deliberative process    │
 └─────────────────────────────────────────────────────────┘
 ```
+
+The relative size of each layer depends on institutional context and metric quality. The key principle: routine decisions with measurable outcomes belong in the algorithmic core; novel situations and value conflicts flow to deliberative layers.
 
 This architecture reserves democratic deliberation for decisions that genuinely require it while using metric-bound allocation for routine decisions where optimization is straightforward.
 
@@ -1050,7 +1144,7 @@ Then a transfer $T$ exists where $R < T < (W^* - W)$ such that:
 
 This arithmetic suggests reform is feasible as a Pareto improvement, not a redistributive conflict.
 
-### A Taxonomy of Stakeholders
+### A Taxonomy of Affected Parties
 
 Not all actors have the same relationship to reform:
 
@@ -1114,13 +1208,25 @@ Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create
 
 **The math:**
 
-| Component | Estimate |
-|-----------|----------|
-| Annual welfare gain from optimal policy | $20-50T |
-| Share available for buyouts (20%) | $4-10T |
-| Total rents to buy out | $2-5T |
-| Surplus after buyouts | $2-5T |
-| Per-politician average (535 Congress) | $4-9M/year |
+| Component | Estimate | Derivation |
+|-----------|----------|------------|
+| Annual welfare gain from optimal policy | $20-50T | Conservative aggregate from Section 2 (20-40% of ~$100T global GDP) |
+| Share available for buyouts (20%) | $4-10T | Assumed political economy constraint; untested |
+| Total rents to buy out | $2-5T | Sum of lobbying ($3.5B/yr), regulatory capture value, career incentives; order-of-magnitude estimate |
+| Surplus after buyouts | $2-5T | Residual = welfare gain × buyout share − rents |
+| Per-politician average (535 Congress) | $4-9M/year | ($2-5T) / 535 members; assumes equal distribution |
+
+**Methodological caveats:**
+
+1. **Welfare gain estimate**: The $20-50T figure derives from the 20-40% Political Dysfunction Tax applied to global GDP. This represents *potential* gains under optimal policy, not guaranteed achievable gains. Realistic implementation would capture a fraction.
+
+2. **Buyout share (20%)**: This is an assumption, not an estimate. The actual share politically feasible for redistribution to reform opponents is unknown and would vary by jurisdiction and reform type.
+
+3. **Rent valuation**: Estimating the value of current rents (lobbying revenue, regulatory capture, career incentives) is notoriously difficult. The $2-5T figure is an order-of-magnitude estimate based on documented lobbying expenditures ($3.5B/year in the US), multiplied by assumed leverage ratios and career value. Different methodologies could yield estimates differing by 5-10x.
+
+4. **Distribution assumption**: The per-politician calculation assumes equal distribution across all 535 members of Congress. In practice, committee chairs and key veto players would require larger payments, while backbenchers might require less.
+
+**The core claim**: Welfare gains from optimal policy *vastly exceed* the rents currently extracted, making Coasean buyouts *arithmetically feasible*. The specific numbers are illustrative, not precise.
 
 For perspective: A senator currently receives ~$174K salary plus ~$5-20M in career post-office value. An IAB payment of $5-10M/year for supporting optimal policy would dominate current incentives.
 
@@ -1147,7 +1253,7 @@ The arithmetic favors reform: welfare gains vastly exceed compensation costs, an
 | **Government Pilots** | Partner with reform-minded jurisdictions for limited-scope pilots | 3+ jurisdictions running pilots with measurable welfare improvement |
 | **Broader Adoption** | Scale through demonstrated success and competitive pressure | Major jurisdiction adopts for significant budget share |
 
-The bottleneck is not technology. Smart contracts, decentralized oracles (Chainlink, UMA), and DAO governance frameworks are production-ready. The bottleneck is coordination: assembling capital, stakeholders, and governance.
+The bottleneck is not technology. Smart contracts, decentralized oracles (Chainlink, UMA), and DAO governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
 
 ### Realistic Adoption Path
 
@@ -1246,6 +1352,51 @@ For nonlinear or uncertain production functions, the algorithm incorporates:
 1. **Exploration budget**: Allocate small amounts to test uncertain interventions
 2. **Bayesian updating**: Update production function estimates as outcomes are observed
 3. **Thompson sampling**: Balance exploitation of known-good interventions with exploration of uncertain ones
+
+### Smart Contract Threat Model
+
+Any honest assessment of smart contract governance must acknowledge historical failures and ongoing attack surfaces:
+
+#### Known Failure Modes
+
+| Attack Vector | Historical Example | Mitigation | Residual Risk |
+|--------------|-------------------|------------|---------------|
+| **Reentrancy** | The DAO (2016): $60M stolen | Checks-effects-interactions pattern, reentrancy guards | Medium: novel variants emerge |
+| **Flash loan governance** | Beanstalk (2022): $182M stolen | Time-locks, snapshot voting | Medium: timing attacks possible |
+| **Oracle manipulation** | Mango Markets (2022): $114M | Multi-oracle aggregation, TWAP, circuit breakers | High: fundamental challenge |
+| **Upgrade key compromise** | Ronin bridge (2022): $620M | Multi-sig, time-locks, social layer verification | Medium: key management remains hard |
+| **Economic attacks** | Various DEX exploits | Formal verification, economic audits | High: novel attack surfaces |
+
+#### Why "Code is Law" is Insufficient
+
+The naive view that immutable smart contracts eliminate discretion ignores:
+
+1. **Deployment discretion**: Someone chooses the initial parameters, metric definitions, and oracle set
+2. **Upgrade mechanisms**: Production systems require bug fixes; upgrade authority creates capture risk
+3. **Off-chain dependencies**: Real-world execution (disbursing funds to researchers) requires trusted intermediaries
+4. **Legal layer**: States can mandate forks, freeze assets, or prosecute operators regardless of code
+
+#### Realistic Security Properties
+
+Optimocracy does not claim to eliminate all governance risk. It claims to:
+
+1. **Raise attack costs**: Capturing a decentralized oracle network costs more than lobbying a committee
+2. **Increase transparency**: All allocation rules are public and auditable
+3. **Reduce discretionary surface**: Fewer decision points where capture can occur
+4. **Enable credible commitment**: Harder (not impossible) to deviate from stated rules
+
+The honest comparison is not "smart contracts vs. perfect security" but "smart contracts vs. committee discretion." Both have failure modes; the question is which failure modes are more damaging and which are more likely to improve over time.
+
+#### Defense-in-Depth Architecture
+
+Production Optimocracy systems should implement:
+
+1. **Formal verification** of core contract logic
+2. **Economic audits** modeling incentive-compatible attacks
+3. **Gradual deployment** with value caps that increase as the system proves reliable
+4. **Circuit breakers** that pause allocation if metrics move anomalously
+5. **Social layer governance** for handling edge cases and emergencies
+6. **Insurance pools** funded by a percentage of allocations
 
 ## References
 
