@@ -3962,6 +3962,179 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # because it depends on that parameter which is calculated from other treaty parameters.
 
 # ---
+# POLITICAL CAPTURE COST ANALYSIS
+# ---
+# Source: knowledge/appendix/political-capture-cost-analysis.qmd
+# These parameters calculate the "worst case" cost to achieve political change through incentivization
+# Used to answer the question: "If you think this is politically impossible, how much would it cost to MAKE it possible?"
+
+# US Political System Costs
+# Source: FEC 2024 Summary, OpenSecrets Lobbying Data, US Senate Treaties Guide
+# These are estimates based on publicly available data
+
+US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024 = Parameter(
+    20_000_000_000,  # $20B total federal campaign spending 2024 cycle
+    source_ref=ReferenceID.FEC_2024_SUMMARY,
+    source_type="external",
+    description="Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.",
+    display_name="US Federal Campaign Spending (2024)",
+    unit="USD",
+    confidence="high",
+    keywords=["campaign", "election", "political", "spending", "federal", "2024"],
+    latex_symbol=r"Cost_{US,campaign}",
+)
+
+US_TOTAL_LOBBYING_ANNUAL = Parameter(
+    4_400_000_000,  # $4.4B record lobbying in 2024
+    source_ref=ReferenceID.OPENSECRETS_LOBBYING_2024,
+    source_type="external",
+    description="Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.",
+    display_name="US Total Lobbying (2024)",
+    unit="USD",
+    confidence="high",
+    keywords=["lobbying", "political", "spending", "k street", "influence"],
+    latex_symbol=r"Cost_{US,lobby}",
+)
+
+US_CONGRESS_MEMBER_COUNT = Parameter(
+    535,  # 100 senators + 435 representatives
+    source_ref="",
+    source_type="definition",
+    description="Total members of US Congress (100 senators + 435 representatives)",
+    display_name="US Congress Members",
+    unit="members",  # Reads naturally: "535 members" (not "535 count")
+    confidence="high",
+    distribution="fixed",  # Constitutional constant - no uncertainty
+    keywords=["congress", "senator", "representative", "legislator"],
+    latex_symbol=r"N_{congress}",
+)
+
+US_SENATORS_FOR_TREATY = Parameter(
+    67,  # 2/3 majority required for treaty ratification
+    source_ref=ReferenceID.US_SENATE_TREATIES,
+    source_type="external",
+    description="Senators needed for treaty ratification (2/3 majority per Article II, Section 2)",
+    display_name="Senators for Treaty Ratification",
+    unit="senators",  # Reads naturally: "67 senators" (not "67 count")
+    confidence="high",
+    distribution="fixed",  # Constitutional constant - no uncertainty
+    keywords=["senate", "treaty", "ratification", "two-thirds", "majority"],
+    latex_symbol=r"N_{senators,treaty}",
+)
+
+POLITICIAN_POST_OFFICE_CAREER_VALUE = Parameter(
+    10_000_000,  # ~$10M NPV of post-office career premium
+    source_ref=ReferenceID.OPENSECRETS_REVOLVING_DOOR,
+    source_type="external",
+    description="Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.",
+    display_name="Post-Office Career Value (per politician)",
+    unit="USD",
+    confidence="medium",
+    confidence_interval=(5e6, 20e6),  # Wide range based on seniority/connections
+    keywords=["revolving door", "lobbying", "post-office", "career", "salary"],
+    latex_symbol=r"V_{post-office}",
+)
+
+# US Hostile Takeover Costs (calculated from components)
+US_HOSTILE_TAKEOVER_67_SENATORS = Parameter(
+    US_SENATORS_FOR_TREATY * POLITICIAN_POST_OFFICE_CAREER_VALUE,
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+    source_type="calculated",
+    description="Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)",
+    display_name="US Senate Treaty Capture Cost",
+    unit="USD",
+    formula="SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
+    confidence="medium",
+    keywords=["hostile takeover", "political capture", "senate", "treaty"],
+    inputs=["US_SENATORS_FOR_TREATY", "POLITICIAN_POST_OFFICE_CAREER_VALUE"],
+    compute=lambda ctx: ctx["US_SENATORS_FOR_TREATY"] * ctx["POLITICIAN_POST_OFFICE_CAREER_VALUE"],
+    latex_symbol=r"Cost_{US,senate}",
+)
+
+US_HOSTILE_TAKEOVER_FULL_CONGRESS = Parameter(
+    US_CONGRESS_MEMBER_COUNT * POLITICIAN_POST_OFFICE_CAREER_VALUE,
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+    source_type="calculated",
+    description="Cost to 'buy out' post-office career value for all 535 members of Congress",
+    display_name="US Congress Full Capture Cost",
+    unit="USD",
+    formula="CONGRESS_MEMBERS x POST_OFFICE_VALUE",
+    confidence="medium",
+    keywords=["hostile takeover", "political capture", "congress"],
+    inputs=["US_CONGRESS_MEMBER_COUNT", "POLITICIAN_POST_OFFICE_CAREER_VALUE"],
+    compute=lambda ctx: ctx["US_CONGRESS_MEMBER_COUNT"] * ctx["POLITICIAN_POST_OFFICE_CAREER_VALUE"],
+    latex_symbol=r"Cost_{US,congress}",
+)
+
+US_HOSTILE_TAKEOVER_TOTAL = Parameter(
+    25_000_000_000,  # ~$25B total (Congress + outspend lobbying buffer)
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios",
+    source_type="definition",
+    description="Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.",
+    display_name="US Total Political Capture Cost",
+    unit="USD",
+    formula="Congress careers + lobbying dominance + campaign buffer",
+    confidence="low",
+    keywords=["hostile takeover", "political capture", "us", "total"],
+    latex_symbol=r"Cost_{US,total}",
+)
+
+# Global Political Costs
+NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
+    1_506_000_000_000,  # $1.506T NATO defense spending 2024
+    source_ref=ReferenceID.SIPRI2024,
+    source_type="external",
+    description="Total NATO member defense spending in 2024. Source: SIPRI.",
+    display_name="NATO Defense Spending (2024)",
+    unit="USD",
+    confidence="high",
+    keywords=["nato", "defense", "military", "spending", "alliance"],
+    latex_symbol=r"Cost_{NATO,defense}",
+)
+
+NATO_HOSTILE_TAKEOVER_COST = Parameter(
+    65_000_000_000,  # ~$65B for all NATO legislators
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis",
+    source_type="definition",
+    description="Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.",
+    display_name="NATO Political Capture Cost",
+    unit="USD",
+    formula="US capture + EU capture + other NATO capture",
+    confidence="low",
+    keywords=["hostile takeover", "political capture", "nato", "global"],
+    latex_symbol=r"Cost_{NATO,capture}",
+)
+
+GLOBAL_HOSTILE_TAKEOVER_COST = Parameter(
+    125_000_000_000,  # ~$125B for major military spenders globally
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis",
+    source_type="definition",
+    description="Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.",
+    display_name="Global Political Capture Cost",
+    unit="USD",
+    formula="NATO + China + Russia + India + other major spenders",
+    confidence="low",
+    confidence_interval=(75e9, 200e9),  # Wide range due to uncertainty
+    keywords=["hostile takeover", "political capture", "global", "world"],
+    latex_symbol=r"Cost_{global,capture}",
+)
+
+GLOBAL_HOSTILE_TAKEOVER_MAXIMUM = Parameter(
+    200_000_000_000,  # $200B absolute upper bound
+    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd",
+    source_type="definition",
+    description="Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles",
+    display_name="Global Political Capture (Maximum)",
+    unit="USD",
+    confidence="low",
+    keywords=["hostile takeover", "political capture", "global", "maximum", "worst case"],
+    latex_symbol=r"Cost_{global,max}",
+)
+
+# Breakeven and ROI calculations at various political costs
+# These show the intervention remains cost-effective even at extreme political costs
+
+# ---
 # VICTORY SOCIAL IMPACT BONDS
 # ---
 

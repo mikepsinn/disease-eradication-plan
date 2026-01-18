@@ -858,8 +858,17 @@ def main():
                         return {param_name}
 
                 def has_uncertainty(val) -> bool:
-                    """Check if a parameter has uncertainty metadata."""
+                    """Check if a parameter has uncertainty metadata.
+
+                    Note: distribution='fixed' means zero uncertainty (constitutional constants, etc.)
+                    so it does NOT count as having uncertainty for Monte Carlo purposes.
+                    """
                     has_dist = hasattr(val, "distribution") and val.distribution
+                    # Fixed distributions have zero variance - not real uncertainty
+                    if has_dist:
+                        dist_str = val.distribution.value if hasattr(val.distribution, "value") else str(val.distribution)
+                        if dist_str.lower() == "fixed":
+                            return True  # Explicitly marked as fixed = valid (no uncertainty needed)
                     has_std = hasattr(val, "std_error") and val.std_error
                     has_ci = hasattr(val, "confidence_interval") and val.confidence_interval
                     return bool(has_dist or has_std or has_ci)
@@ -898,6 +907,7 @@ def main():
                     print("[ERROR]   - distribution='normal' + std_error=<value>", file=sys.stderr)
                     print("[ERROR]   - distribution='lognormal' + std_error=<value>", file=sys.stderr)
                     print("[ERROR]   - confidence_interval=(low, high)", file=sys.stderr)
+                    print("[ERROR]   - distribution='fixed' (for constants with zero uncertainty, e.g., constitutional values)", file=sys.stderr)
                     print("[ERROR] Monte Carlo analysis requires uncertainty on ALL input parameters.", file=sys.stderr)
                     sys.exit(1)
 

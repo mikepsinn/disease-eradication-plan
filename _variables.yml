@@ -2405,6 +2405,19 @@
   \ | 95% CI: [$3B, $6B] | Dist: Lognormal (SE: $1B) | Unit: USD | Click to view details,\
   \ calculation & sources\">$4.50B (95% CI: $3B-$6B)</a>"
 "global_government_clinical_trials_spending_annual_cite": "@global-government-clinical-trial-spending-estimate"
+"global_hostile_takeover_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_hostile_takeover_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated cost\
+  \ for complete global political capture (NATO $65B + China $20B + Russia $10B +\
+  \ India $8B + others $22B). This is an estimate. | ? Low confidence | 95% CI: [$75B,\
+  \ $200B] | Formula: NATO + China + Russia + India + other major spenders | Unit:\
+  \ USD | Click to view details, calculation & sources\">$125B (95% CI: $75B-$200B)</a>"
+"global_hostile_takeover_maximum": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_hostile_takeover_maximum\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Maximum plausible\
+  \ global political capture cost with substantial contingency for hidden channels,\
+  \ opposition counter-spending, and multiple election cycles | ? Low confidence |\
+  \ Unit: USD | Click to view details, calculation & sources\">$200B</a>"
 "global_household_wealth_usd": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_household_wealth_usd\"\
   \ class=\"parameter-link\" data-source-ref=\"cs-global-wealth-report-2023\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total global household wealth (2022/2023\
@@ -2797,6 +2810,19 @@
 "mrna_therapeutic_combinations_latex": "$$\n\\begin{gathered}\nCombos_{mRNA} \\\\\n\
   = N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n=\
   \ 20M\n\\end{gathered}\n$$"
+"nato_defense_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nato_defense_spending_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"sipri2024\" data-source-type=\"external\"\
+  \ data-confidence=\"high\" title=\"Total NATO member defense spending in 2024. Source:\
+  \ SIPRI. | ✓ High confidence | Unit: USD | Click to view details, calculation &\
+  \ sources\">$1.51T</a>"
+"nato_defense_spending_annual_cite": "@sipri2024"
+"nato_hostile_takeover_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nato_hostile_takeover_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#global-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated cost\
+  \ to achieve political capture across all NATO member states (US $25B + EU $25B\
+  \ + other NATO $15B). This is an estimate. | ? Low confidence | Formula: US capture\
+  \ + EU capture + other NATO capture | Unit: USD | Click to view details, calculation\
+  \ & sources\">$65B</a>"
 "new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
@@ -3158,6 +3184,14 @@
   \ (SE: 2%) | Unit: rate | Click to view details, calculation & sources\">1% (95%\
   \ CI: 0.1%-10%)</a>"
 "political_success_probability_cite": "@icbl-ottawa-treaty"
+"politician_post_office_career_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-politician_post_office_career_value\"\
+  \ class=\"parameter-link\" data-source-ref=\"opensecrets-revolving-door\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Net present value of post-office career\
+  \ premium for average congressperson (10 years x $1M/year premium). Based on documented\
+  \ cases: Gephardt $7M/year, Daschle $2M+/year. | ~ Medium confidence | 95% CI: [$5M,\
+  \ $20M] | Unit: USD | Click to view details, calculation & sources\">$10M (95% CI:\
+  \ $5M-$20M)</a>"
+"politician_post_office_career_value_cite": "@opensecrets-revolving-door"
 "post_1962_drug_approval_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-post_1962_drug_approval_reduction_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"post-1962-drug-approval-drop\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Reduction in new drug approvals after\
@@ -4260,6 +4294,9 @@
   \ ✓ High confidence | 95% CI: [$3.30T, $5T] | Dist: Lognormal | Unit: USD/year |\
   \ Click to view details, calculation & sources\">$4.10T (95% CI: $3.30T-$5T)</a>"
 "us_chronic_disease_spending_annual_cite": "@us-chronic-disease-spending"
+"us_congress_member_count": "<span class=\"parameter-definition\" title=\"Total members\
+  \ of US Congress (100 senators + 435 representatives) | Unit: members | Core definition\"\
+  >535 members</span>"
 "us_diabetes_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_diabetes_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-cost-diabetes-1500b\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Annual US\
@@ -4274,6 +4311,32 @@
   \ confidence | \U0001F4CA Peer-reviewed | 95% CI: [$309B, $417B] | Dist: Lognormal\
   \ | Unit: USD | Click to view details, calculation & sources\">$363B (95% CI: $309B-$417B)</a>"
 "us_heart_disease_annual_cost_cite": "@disease-cost-heart-disease-2100b"
+"us_hostile_takeover_67_senators": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_67_senators\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost to 'buy\
+  \ out' post-office career value for 67 senators (treaty ratification threshold)\
+  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: SENATORS_FOR_TREATY\
+  \ x POST_OFFICE_VALUE | Unit: USD | Click to view details, calculation & sources\"\
+  >$670M</a>"
+"us_hostile_takeover_67_senators_latex": "$$\n\\begin{gathered}\nCost_{US,senate}\
+  \ \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M\
+  \ \\\\\n= \\$670M\n\\end{gathered}\n$$"
+"us_hostile_takeover_full_congress": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_full_congress\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost to 'buy\
+  \ out' post-office career value for all 535 members of Congress | Calculated from\
+  \ 2 inputs | ~ Medium confidence | Formula: CONGRESS_MEMBERS x POST_OFFICE_VALUE\
+  \ | Unit: USD | Click to view details, calculation & sources\">$5.35B</a>"
+"us_hostile_takeover_full_congress_latex": "$$\n\\begin{gathered}\nCost_{US,congress}\
+  \ \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n\
+  = \\$5.35B\n\\end{gathered}\n$$"
+"us_hostile_takeover_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_hostile_takeover_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/political-capture-cost-analysis.qmd#us-hostile-takeover-scenarios\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Total cost for\
+  \ complete US political 'hostile takeover': Congress career values ($5.35B) + outspend\
+  \ all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate. |\
+  \ ? Low confidence | Formula: Congress careers + lobbying dominance + campaign buffer\
+  \ | Unit: USD | Click to view details, calculation & sources\">$25B</a>"
 "us_life_expectancy_1880": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_life_expectancy_1880\"\
   \ class=\"parameter-link\" data-source-ref=\"life-expectancy-increase-pre-1962\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -4328,6 +4391,25 @@
   \ to view details, calculation & sources\">335M people (95% CI: 330M people-340M\
   \ people)</a>"
 "us_population_2024_cite": "@us-voter-population"
+"us_senators_for_treaty": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_senators_for_treaty\"\
+  \ class=\"parameter-link\" data-source-ref=\"us-senate-treaties\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Senators needed for treaty ratification\
+  \ (2/3 majority per Article II, Section 2) | ✓ High confidence | Dist: Fixed | Unit:\
+  \ senators | Click to view details, calculation & sources\">67 senators</a>"
+"us_senators_for_treaty_cite": "@us-senate-treaties"
+"us_total_federal_campaign_spending_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_total_federal_campaign_spending_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"fec-2024-summary\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total US federal election spending in\
+  \ 2024 cycle including presidential, congressional, party committees, and PACs.\
+  \ Source: FEC Statistical Summary 2024. | ✓ High confidence | Unit: USD | Click\
+  \ to view details, calculation & sources\">$20B</a>"
+"us_total_federal_campaign_spending_2024_cite": "@fec-2024-summary"
+"us_total_lobbying_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_total_lobbying_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"opensecrets-lobbying-2024\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total US federal lobbying expenditure\
+  \ in 2024 (record year). Source: OpenSecrets. | ✓ High confidence | Unit: USD |\
+  \ Click to view details, calculation & sources\">$4.40B</a>"
+"us_total_lobbying_annual_cite": "@opensecrets-lobbying-2024"
 "valley_of_death_attrition_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-valley_of_death_attrition_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"valley-of-death-attrition\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Percentage of promising Phase 1-passed\
@@ -4406,6 +4488,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "395"
-"total_latex_equation_count": "155"
-"total_citation_count": "149"
+"total_parameter_count": "407"
+"total_latex_equation_count": "157"
+"total_citation_count": "154"

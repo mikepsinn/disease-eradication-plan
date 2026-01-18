@@ -986,6 +986,16 @@ export const MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA: Parameter = {
   confidence: "high",
 };
 
+export const NATO_DEFENSE_SPENDING_ANNUAL: Parameter = {
+  value: 1506000000000.0,
+  unit: "USD",
+  displayName: "NATO Defense Spending (2024)",
+  description: "Total NATO member defense spending in 2024. Source: SIPRI.",
+  sourceType: "external",
+  sourceRef: "sipri2024",
+  confidence: "high",
+};
+
 export const NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR: Parameter = {
   value: 15.0,
   unit: "diseases/year",
@@ -1172,6 +1182,17 @@ export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
   confidence: "low",
   confidenceInterval: [0.001, 0.1],
   stdError: 0.02,
+};
+
+export const POLITICIAN_POST_OFFICE_CAREER_VALUE: Parameter = {
+  value: 10000000.0,
+  unit: "USD",
+  displayName: "Post-Office Career Value (per politician)",
+  description: "Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.",
+  sourceType: "external",
+  sourceRef: "opensecrets-revolving-door",
+  confidence: "medium",
+  confidenceInterval: [5000000.0, 20000000.0],
 };
 
 export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
@@ -1599,6 +1620,36 @@ export const US_POPULATION_2024: Parameter = {
   sourceRef: "us-voter-population",
   confidence: "high",
   confidenceInterval: [330000000.0, 340000000.0],
+};
+
+export const US_SENATORS_FOR_TREATY: Parameter = {
+  value: 67.0,
+  unit: "senators",
+  displayName: "Senators for Treaty Ratification",
+  description: "Senators needed for treaty ratification (2/3 majority per Article II, Section 2)",
+  sourceType: "external",
+  sourceRef: "us-senate-treaties",
+  confidence: "high",
+};
+
+export const US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024: Parameter = {
+  value: 20000000000.0,
+  unit: "USD",
+  displayName: "US Federal Campaign Spending (2024)",
+  description: "Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.",
+  sourceType: "external",
+  sourceRef: "fec-2024-summary",
+  confidence: "high",
+};
+
+export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
+  value: 4400000000.0,
+  unit: "USD",
+  displayName: "US Total Lobbying (2024)",
+  description: "Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.",
+  sourceType: "external",
+  sourceRef: "opensecrets-lobbying-2024",
+  confidence: "high",
 };
 
 export const VALLEY_OF_DEATH_ATTRITION_PCT: Parameter = {
@@ -3288,6 +3339,30 @@ export const UNEXPLORED_RATIO: Parameter = {
   latex: "\\begin{gathered}\nRatio_{unexplored} \\\\\n= 1 - \\frac{N_{tested}}{N_{combos}} \\\\\n= 1 - \\frac{32{,}500}{9.5M} \\\\\n= 99.7\\% \\\\[0.5em]\n\\text{where } N_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
 };
 
+export const US_HOSTILE_TAKEOVER_67_SENATORS: Parameter = {
+  value: 670000000.0,
+  unit: "USD",
+  displayName: "US Senate Treaty Capture Cost",
+  description: "Cost to 'buy out' post-office career value for 67 senators (treaty ratification threshold)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
+  confidence: "medium",
+  formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
+  latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
+};
+
+export const US_HOSTILE_TAKEOVER_FULL_CONGRESS: Parameter = {
+  value: 5350000000.0,
+  unit: "USD",
+  displayName: "US Congress Full Capture Cost",
+  description: "Cost to 'buy out' post-office career value for all 535 members of Congress",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
+  confidence: "medium",
+  formula: "CONGRESS_MEMBERS x POST_OFFICE_VALUE",
+  latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
+};
+
 export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   value: 1253000000000.0,
   unit: "USD",
@@ -4072,6 +4147,28 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
 };
 
+export const GLOBAL_HOSTILE_TAKEOVER_COST: Parameter = {
+  value: 125000000000.0,
+  unit: "USD",
+  displayName: "Global Political Capture Cost",
+  description: "Estimated cost for complete global political capture (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). This is an estimate.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-analysis",
+  confidence: "low",
+  formula: "NATO + China + Russia + India + other major spenders",
+  confidenceInterval: [75000000000.0, 200000000000.0],
+};
+
+export const GLOBAL_HOSTILE_TAKEOVER_MAXIMUM: Parameter = {
+  value: 200000000000.0,
+  unit: "USD",
+  displayName: "Global Political Capture (Maximum)",
+  description: "Maximum plausible global political capture cost with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis",
+  confidence: "low",
+};
+
 export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   value: 2692800000000.0,
   unit: "USD/year",
@@ -4170,6 +4267,17 @@ export const MINUTES_PER_HOUR: Parameter = {
 
 export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
+};
+
+export const NATO_HOSTILE_TAKEOVER_COST: Parameter = {
+  value: 65000000000.0,
+  unit: "USD",
+  displayName: "NATO Political Capture Cost",
+  description: "Estimated cost to achieve political capture across all NATO member states (US $25B + EU $25B + other NATO $15B). This is an estimate.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-analysis",
+  confidence: "low",
+  formula: "US capture + EU capture + other NATO capture",
 };
 
 export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
@@ -4383,6 +4491,26 @@ export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   confidenceInterval: [800.0, 1200.0],
 };
 
+export const US_CONGRESS_MEMBER_COUNT: Parameter = {
+  value: 535.0,
+  unit: "members",
+  displayName: "US Congress Members",
+  description: "Total members of US Congress (100 senators + 435 representatives)",
+  sourceType: "definition",
+  confidence: "high",
+};
+
+export const US_HOSTILE_TAKEOVER_TOTAL: Parameter = {
+  value: 25000000000.0,
+  unit: "USD",
+  displayName: "US Total Political Capture Cost",
+  description: "Total cost for complete US political 'hostile takeover': Congress career values ($5.35B) + outspend all lobbying ($5B/year x 4 years) + campaign matching. This is an estimate.",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-hostile-takeover-scenarios",
+  confidence: "low",
+  formula: "Congress careers + lobbying dominance + campaign buffer",
+};
+
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   value: 2720000000.0,
   unit: "USD/year",
@@ -4505,6 +4633,7 @@ export const parameters = {
   LOBBYIST_SALARY_MIN_K,
   MEASLES_VACCINATION_ROI,
   MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA,
+  NATO_DEFENSE_SPENDING_ANNUAL,
   NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR,
   NIH_ANNUAL_BUDGET,
   NIH_CLINICAL_TRIALS_SPENDING_PCT,
@@ -4522,6 +4651,7 @@ export const parameters = {
   PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT,
   POLIO_VACCINATION_ROI,
   POLITICAL_SUCCESS_PROBABILITY,
+  POLITICIAN_POST_OFFICE_CAREER_VALUE,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
   POST_WW2_MILITARY_CUT_PCT,
   PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD,
@@ -4561,6 +4691,9 @@ export const parameters = {
   US_MENTAL_HEALTH_COST_ANNUAL,
   US_MILITARY_SPENDING_PCT_GDP,
   US_POPULATION_2024,
+  US_SENATORS_FOR_TREATY,
+  US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024,
+  US_TOTAL_LOBBYING_ANNUAL,
   VALLEY_OF_DEATH_ATTRITION_PCT,
   VALUE_OF_STATISTICAL_LIFE,
   VITAMIN_A_COST_PER_DALY,
@@ -4706,6 +4839,8 @@ export const parameters = {
   TYPE_II_ERROR_COST_RATIO,
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
+  US_HOSTILE_TAKEOVER_67_SENATORS,
+  US_HOSTILE_TAKEOVER_FULL_CONGRESS,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   ADAPTABLE_TRIAL_PATIENTS,
@@ -4778,6 +4913,8 @@ export const parameters = {
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
+  GLOBAL_HOSTILE_TAKEOVER_COST,
+  GLOBAL_HOSTILE_TAKEOVER_MAXIMUM,
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
@@ -4790,6 +4927,7 @@ export const parameters = {
   LOBBYIST_BOND_INVESTMENT_MAX,
   MINUTES_PER_HOUR,
   MONTHS_PER_YEAR,
+  NATO_HOSTILE_TAKEOVER_COST,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
@@ -4811,6 +4949,8 @@ export const parameters = {
   TREATY_REDUCTION_PCT,
   TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
+  US_CONGRESS_MEMBER_COUNT,
+  US_HOSTILE_TAKEOVER_TOTAL,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VICTORY_BOND_FUNDING_PCT
@@ -5329,6 +5469,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
         note: "FDA, GRAS Notice Inventory",
   },
+  "fec-2024-summary": {
+        id: "fec-2024-summary",
+        type: "report",
+        title: "Statistical Summary of 24-Month Campaign Activity of the 2023-2024 Election Cycle",
+        author: [
+          {
+            literal: "Federal Election Commission"
+          },
+        ],
+        issued: { 'date-parts': [[2023]] },
+        publisher: "Federal Election Commission",
+        URL: "https://www.fec.gov/updates/statistical-summary-of-24-month-campaign-activity-of-the-2023-2024-election-cycle/",
+        note: "Federal Election Commission, Statistical Summary of 24-Month Campaign Activity",
+  },
   "givewell-cost-per-life-saved": {
         id: "givewell-cost-per-life-saved",
         type: "article-journal",
@@ -5748,6 +5902,34 @@ export const citations: Record<string, Citation> = {
         ],
         publisher: "Estimated from major foundation budgets and activities",
         note: "Estimated from major foundation budgets and activities",
+  },
+  "opensecrets-lobbying-2024": {
+        id: "opensecrets-lobbying-2024",
+        type: "report",
+        title: "Federal Lobbying Hit Record $4.4 Billion in 2024",
+        author: [
+          {
+            literal: "OpenSecrets"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "OpenSecrets",
+        URL: "https://www.opensecrets.org/news/2025/02/federal-lobbying-set-new-record-in-2024/",
+        note: "OpenSecrets, Federal Lobbying Set New Record in 2024",
+  },
+  "opensecrets-revolving-door": {
+        id: "opensecrets-revolving-door",
+        type: "report",
+        title: "Revolving Door: Former Members of Congress",
+        author: [
+          {
+            literal: "OpenSecrets"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        publisher: "OpenSecrets",
+        URL: "https://www.opensecrets.org/revolving-door",
+        note: "OpenSecrets, Revolving Door",
   },
   "patient-willingness-clinical-trials": {
         id: "patient-willingness-clinical-trials",
@@ -6221,6 +6403,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://en.wikipedia.org/wiki/Demobilization_of_United_States_Armed_Forces_after_World_War_II",
         note: "Wikipedia, Demobilization After WWII | American Progress, Historical Perspective on Defense Budgets | St. Louis Fed, Which War Saw the Highest Defense Spending? | US Government Spending, Defense Spending History",
   },
+  "us-senate-treaties": {
+        id: "us-senate-treaties",
+        type: "article-journal",
+        title: "Treaties",
+        author: [
+          {
+            literal: "U.S. Senate"
+          },
+        ],
+        'container-title': "U.S. Senate",
+        URL: "https://www.senate.gov/about/powers-procedures/treaties.htm",
+        note: "U.S. Senate, Treaties",
+  },
   "us-voter-population": {
         id: "us-voter-population",
         type: "article-journal",
@@ -6335,11 +6530,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 395,
-  external: 149,
-  calculated: 140,
-  definitions: 106,
-  citations: 111,
+  total: 407,
+  external: 154,
+  calculated: 142,
+  definitions: 111,
+  citations: 115,
 } as const;
 
 // ============================================================================

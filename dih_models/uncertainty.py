@@ -105,6 +105,12 @@ def sample_parameter(param: Any, n: int = 10000, seed: Optional[int] = None) -> 
     if std is None:
         std = infer_std_from_ci(ci)
 
+    # Fixed distribution = zero variance (constitutional constants, etc.)
+    if dist == getattr(DistributionType, "FIXED", "FIXED"):
+        if np is not None:
+            return np.full(n, _bounded(mean, bounds))
+        return [_bounded(mean, bounds) for _ in range(n)]
+
     # Fallback constant if no variability
     if dist is None or std is None or std == 0:
         if np is not None:

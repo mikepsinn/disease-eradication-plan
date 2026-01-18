@@ -1,3 +1,6 @@
+<!-- AI INSTRUCTIONS: Keep all additions to this file concise, information-dense, and general.
+     Avoid verbose explanations. Use tables for rules. One example per concept max. -->
+
 ## Project Overview
 
 This is a Quarto-based book project: "How to End War and Disease" - a guide to getting nations to sign a 1% treaty, redirecting military spending to the Decentralized Institutes of Health and decentralized framework for drug assessment to automate ubiquitous clinical trials.
@@ -91,6 +94,36 @@ Bad: `PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND` (ROI of what?), `TOTAL_COST` (of w
 | Include scope prefix | `TREATY_ROI_CONSERVATIVE` | `CONSERVATIVE_ROI` |
 
 The formatter auto-scales: `unit="USD"` -> $519M, $1.02B; large numbers -> M/B/K; percentages -> "51%".
+
+### Unit Guidelines
+
+**Units must read naturally in prose.** The unit is appended as a suffix to the formatted value.
+
+| Type | Unit | Renders as | Notes |
+|------|------|------------|-------|
+| Currency | `unit="USD"` | "$519M" | Auto-scales with $ prefix |
+| Percentages | `unit="percent"` | "51%" | Auto-adds % suffix |
+| Ratios | `unit="ratio"` | "1.5x" | Dimensionless multipliers |
+| Time | `unit="years"` | "10 years" | Use plural form |
+| People (general) | `unit="people"` | "335M people" | For populations |
+| People (specific) | `unit="members"`, `unit="senators"` | "535 members", "67 senators" | Use descriptive nouns |
+| Dimensionless | `unit=""` | "42" | Empty string = no suffix |
+
+**Never use `unit="count"`** - it renders awkwardly ("535 count"). Instead:
+- Use a descriptive noun: `unit="members"`, `unit="senators"`, `unit="trials"`, `unit="drugs"`
+- Or use empty string if context is clear: `unit=""`
+
+### Constitutional Constants
+
+For values with zero uncertainty (constitutional requirements, mathematical constants):
+```python
+US_SENATORS_FOR_TREATY = Parameter(
+    67,
+    unit="senators",  # Reads naturally: "67 senators"
+    distribution="fixed",  # No Monte Carlo sampling - this is a constitutional constant
+    confidence="high",
+)
+```
 
 ### Calculated Parameters
 
