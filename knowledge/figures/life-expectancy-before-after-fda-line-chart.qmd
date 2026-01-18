@@ -127,11 +127,4 @@ plt.show()
 
 This chart shows life expectancy trends from 1901-2000, split at the critical 1962 efficacy amendment. The data is divided into two periods: before the efficacy requirement (1901-1961, dashed line) and after (1962-2000, solid line). Subtle gray trendlines show the linear regression for each period, making the slope difference clear.
 
-## Key Insights
-
-- **Trendlines reveal the slowdown:** The before-1962 trendline has a steeper slope, showing faster annual gains
-- **1962 marks the turning point:** Life expectancy gains slowed dramatically after the efficacy requirement was added
-- **Before 1962:** Strong upward trajectory with gains averaging 3.6 years per decade
-- **After 1962:** Flattening curve with gains dropping to only 1.5 years per decade (58% reduction)
-- **Visual proof:** The flatter post-1962 trendline provides clear evidence of diminishing returns
-- **Context:** The lighter 1938 line shows FDA creation, but the real impact came with the 1962 efficacy mandate
+The trendlines tell the story: before 1962, life expectancy gains averaged 3.6 years per decade. After the efficacy requirement was added, gains dropped to 1.5 years per decade - a 58% reduction. The lighter 1938 line shows FDA creation, but the real impact came with the 1962 efficacy mandate. The flatter post-1962 trendline provides clear evidence of diminishing returns.

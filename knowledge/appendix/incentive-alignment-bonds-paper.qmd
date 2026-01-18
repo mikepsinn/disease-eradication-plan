@@ -652,14 +652,14 @@ $$
 \Delta U_i = \$2.13\text{M} - \$2\text{M} = \$0.13\text{M} > 0 \quad \checkmark
 $$
 
-**Key insights from calibration:**
+The calibration shows:
 
-1. **Mechanism works better in lower-opposition domains:** Pandemic preparedness ($c_i = \$1\text{M-}\$3\text{M}$) more tractable than defense reallocation ($c_i = \$10\text{M-}\$20\text{M}$)
-2. **Safe-seat politicians harder to move:** Need larger $\beta_i$ (career) and $\gamma_i$ (legacy) incentives since $\alpha_i$ (electoral) is small
-3. **Termed-out politicians are most cost-effective:** $\alpha_i = 0$ but $\beta_i = 0.7$ means post-office incentives dominate; cheaper to influence
-4. **Funding requirements scale with opposition:** High-opposition domains require \$20M+ per pivotal vote; low-opposition domains require \$5M-$10M
+1. Pandemic preparedness ($c_i = \$1\text{M-}\$3\text{M}$) is more tractable than defense reallocation ($c_i = \$10\text{M-}\$20\text{M}$)
+2. Safe-seat politicians need larger $\beta_i$ (career) and $\gamma_i$ (legacy) incentives since $\alpha_i$ (electoral) is small
+3. Termed-out politicians are most cost-effective: $\alpha_i = 0$ but $\beta_i = 0.7$ means post-office incentives dominate
+4. High-opposition domains require \$20M+ per pivotal vote; low-opposition domains require \$5M-$10M
 
-This calibration demonstrates that @eq-ic is achievable with realistic parameter values in carefully-selected domains, validating the theoretical mechanism.
+@eq-ic is achievable with realistic parameter values in carefully-selected domains.
 
 ### The Policy Choice
 

@@ -1063,7 +1063,7 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
 
 You want to end war and disease. You need $1 billion. You have $0. Here's the 36-month roadmap.
 
-**Key Insight:** You're not building trial infrastructure. You're building the FUNDING and GOVERNANCE mechanism. Science37, TrialSpark, and others already run decentralized trials. Your job is to redirect $27 billion into a system that subsidizes patients, creating a massive new market that these platforms will compete to serve.
+You're not building trial infrastructure. You're building the FUNDING and GOVERNANCE mechanism. Science37, TrialSpark, and others already run decentralized trials. Your job is to redirect $27 billion into a system that subsidizes patients, creating a massive new market that these platforms will compete to serve.
 
 **Phase 1: Proof of Concept (Months 1-3)**
 

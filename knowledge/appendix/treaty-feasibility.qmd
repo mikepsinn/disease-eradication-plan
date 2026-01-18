@@ -94,7 +94,7 @@ We aren't trying to buy the treaty. We are buying the **machinery** that makes t
 
 For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
 
-**Key insight**: Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.
+Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.
 
 ### Historical Precedents for International Financial Commitments
 

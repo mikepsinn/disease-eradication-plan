@@ -124,9 +124,4 @@ plt.show()
 
 This chart shows both life expectancy trends (left axis) and FDA budget spending in millions of 2020 USD (right axis) from 1901-2000. Two vertical lines mark major regulatory milestones: FDA creation in 1938 and the 1962 efficacy amendment.
 
-## Key Insights
-
-- Life expectancy increased steadily throughout the century
-- FDA budget spending exploded exponentially, especially after 1962
-- Life expectancy growth rate slowed after 1962 while spending accelerated
-- Massive spending increases did not correlate with improved health outcomes
+Life expectancy increased steadily throughout the century while FDA budget spending exploded exponentially, especially after 1962. Life expectancy growth rate slowed after 1962 while spending accelerated. Massive spending increases did not correlate with improved health outcomes.

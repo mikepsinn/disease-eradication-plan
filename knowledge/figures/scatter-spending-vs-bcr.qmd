@@ -107,6 +107,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Key Insight:** Under rational resource allocation, we would expect high-BCR programs to receive high spending (upper-right quadrant) and low-BCR programs to receive low spending (lower-left quadrant). Instead, we observe the opposite: programs with BCRs exceeding 100:1 are clustered in the "UNDERINVESTED" region, while programs with BCRs below 1:1 (or negative) are in the "OVERINVESTED" region.
+Under rational resource allocation, we would expect high-BCR programs to receive high spending (upper-right quadrant) and low-BCR programs to receive low spending (lower-left quadrant). Instead, we observe the opposite: programs with BCRs exceeding 100:1 are clustered in the "UNDERINVESTED" region, while programs with BCRs below 1:1 (or negative) are in the "OVERINVESTED" region.
 
 This systematic misallocation is the empirical foundation for Incentive Alignment Bonds: **spending correlates with lobbying intensity, not social value.**
