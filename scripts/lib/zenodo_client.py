@@ -2,27 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 Zenodo Client Library
-=====================
 
-Shared Zenodo API client and metadata utilities for uploading papers.
-Used by both render-quarto.py (--publish option) and publish-zenodo.py.
+Upload papers to Zenodo with DOI tracking.
 
-Features:
-- DOI-based lookup: If a DOI exists in the Quarto config metadata, the script
-  will look up the existing Zenodo record and update it (or create a new version
-  if already published).
-- Title-based fallback: Falls back to searching by title if no DOI is configured.
+Example:
+    from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
 
-Example usage:
-    from lib.zenodo_client import (
-        ZenodoClient, extract_zenodo_metadata, upload_paper, get_record_id_from_doi
-    )
-
-    client = ZenodoClient(token, sandbox=False)
-    result = upload_paper(client, paper_key, quarto_config, pdf_path, draft=True)
-
-    # Extract record ID from DOI
-    record_id = get_record_id_from_doi("10.5281/zenodo.18243915")  # Returns 18243915
+    client = ZenodoClient(get_zenodo_token())
+    result = upload_paper(client, "economics", config, pdf_path, draft=True)
 """
 
 from __future__ import annotations
@@ -35,14 +22,8 @@ from typing import Optional
 import requests
 import yaml
 
-# Zenodo API endpoints
 ZENODO_API = "https://zenodo.org/api"
-ZENODO_SANDBOX_API = "https://sandbox.zenodo.org/api"
-
-# Zenodo community ID
 ZENODO_COMMUNITY = "dih"
-
-# Default ORCID for Mike P. Sinn
 DEFAULT_ORCID = "0009-0006-0212-1094"
 
 
@@ -68,12 +49,11 @@ def get_record_id_from_doi(doi: str) -> Optional[int]:
 
 
 class ZenodoClient:
-    """Simple Zenodo API client."""
+    """Zenodo API client."""
 
-    def __init__(self, token: str, sandbox: bool = False):
+    def __init__(self, token: str):
         self.token = token
-        self.base_url = ZENODO_SANDBOX_API if sandbox else ZENODO_API
-        self.sandbox = sandbox
+        self.base_url = ZENODO_API
         self.headers = {"Authorization": f"Bearer {token}"}
 
     def create_deposit(self) -> dict:
@@ -561,10 +541,8 @@ def upload_paper(
         return None
 
 
-def get_zenodo_token(sandbox: bool = False) -> Optional[str]:
+def get_zenodo_token() -> Optional[str]:
     """Get Zenodo API token from environment."""
-    if sandbox:
-        return os.environ.get("ZENODO_SANDBOX_TOKEN")
     return os.environ.get("ZENODO_TOKEN")
 
 
