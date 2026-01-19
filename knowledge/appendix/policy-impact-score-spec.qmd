@@ -1,0 +1,894 @@
+---
+title: "Policy Impact Score: A Specification for Evidence-Based Governance"
+subtitle: "Systematic Evaluation of Policy-Outcome Relationships Using Quasi-Experimental Methods and Bradford Hill Criteria"
+description: "The Policy Impact Score (PIS) extends Optimocracy beyond budget allocation to systematic evaluation of all policies using quasi-experimental methods, Bradford Hill criteria, and centuries of policy variation data."
+aliases:
+  - /policy-impact-score.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Decentralized Institutes of Health
+      url: https://dih.earth
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - policy evaluation
+  - causal inference
+  - quasi-experimental methods
+  - synthetic control
+  - difference-in-differences
+  - Bradford Hill criteria
+  - evidence-based policy
+bibliography:
+  - ../../references.bib
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-fold: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+::: {.callout-note}
+## Working Paper
+
+This specification describes a framework for systematic policy evaluation. It complements the Optimocracy paper's Budget Impact Score (BIS) by extending evidence-based governance from spending allocation to policy adoption and reform.
+:::
+
+## Abstract {.unnumbered}
+
+This specification describes the **Policy Impact Score (PIS)**, a two-stage framework for systematically evaluating policy-outcome relationships across jurisdictions and time periods. Stage 1 applies quasi-experimental methods (synthetic control, difference-in-differences, regression discontinuity) to historical policy data, generating causal effect estimates with uncertainty bounds. Stage 2 aggregates jurisdiction-level estimates via meta-analysis and maps them to Bradford Hill criteria for causality assessment. The result is a ranked database of policies by their demonstrated welfare impact, enabling evidence-based governance that outperforms current methods (lobbying intensity, ideological priors, anecdote-driven policy) by orders of magnitude. This specification complements the Optimocracy framework's Budget Impact Score (BIS) by extending systematic evaluation from spending allocation to all policy domains.
+
+## System Overview
+
+### What Policymakers See
+
+A searchable database where policymakers can look up any policy domain and see reforms ranked by demonstrated welfare impact:
+
+::: {.callout-note}
+## Example: Traffic Safety Policy Rankings
+
+| Policy | Effect on Traffic Deaths (per 100K) | Evidence Grade | Jurisdictions |
+|--------|-------------------------------------|----------------|---------------|
+| Seat belt laws (primary enforcement) | -1.8 (95% CI: -2.2 to -1.4) | A | 47 US states |
+| Motorcycle helmet requirements | -1.2 (95% CI: -1.6 to -0.8) | A | 31 US states |
+| Raised speed limits (65→75 mph) | +0.5 (95% CI: +0.2 to +0.8) | B | 23 US states |
+| Red light cameras | -0.3 (95% CI: -0.6 to +0.1) | C | 14 cities |
+
+*Higher grades indicate stronger causal evidence. Traffic safety chosen as example because policies are largely non-partisan and effects are well-documented.*
+:::
+
+### What Policy Analysts See
+
+- **Effect estimates** with standard errors, confidence intervals, and heterogeneity statistics
+- **Bradford Hill criteria scores** for each policy-outcome relationship
+- **Analysis method** used (synthetic control, DiD, RDD) with quality diagnostics
+- **Confounders controlled** and potential threats to validity
+- **Natural experiments identified** for validation opportunities
+- **Similar policies** via embedding-based similarity for evidence transfer
+
+### Where This Fits
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    OPTIMOCRACY FRAMEWORK                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌─────────────────────┐    ┌─────────────────────────────┐ │
+│  │  Budget Impact      │    │  Policy Impact              │ │
+│  │  Score (BIS)        │    │  Score (PIS)                │ │
+│  │                     │    │                             │ │
+│  │  Optimizes:         │    │  Optimizes:                 │ │
+│  │  SPENDING allocation│    │  POLICY adoption/repeal     │ │
+│  │                     │    │                             │ │
+│  │  Unit: $ per        │    │  Unit: Laws, regulations,   │ │
+│  │  program category   │    │  tax rules, ordinances      │ │
+│  │                     │    │                             │ │
+│  │  Method: Meta-      │    │  Method: Quasi-experimental │ │
+│  │  analysis of RCTs   │    │  + Bradford Hill criteria   │ │
+│  └─────────────────────┘    └─────────────────────────────┘ │
+│                                                              │
+│  Both feed into: Constitutional Layer (metric-bound rules)  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+The BIS (described in the Optimocracy paper) answers: "Given a fixed budget, how should we allocate spending across program categories?"
+
+The PIS answers: "Given the full space of possible policies, which reforms would most improve welfare outcomes?"
+
+## Introduction
+
+### Why Policy Ranking Fails Today
+
+Current policy adoption follows a process dominated by:
+
+1. **Lobbying intensity**: Policies that benefit concentrated interests (with resources to lobby) are adopted over policies that benefit diffuse majorities
+2. **Ideological priors**: Policymakers filter evidence through pre-existing beliefs, accepting studies that confirm priors and rejecting those that don't
+3. **Anecdote-driven reasoning**: Vivid individual cases drive policy more than systematic evidence ("If it saves one child...")
+4. **Status quo bias**: Existing policies persist regardless of evidence because change requires political capital
+5. **Salience heuristics**: Policies addressing visible problems (terrorism, rare diseases) receive disproportionate resources relative to invisible problems (air pollution, chronic disease)
+
+The result: trillions of dollars in welfare losses from documented policy failures (see Optimocracy paper, Section 2).
+
+### Scale of Available Evidence
+
+We have access to:
+
+- **202 countries** with political and economic data spanning **1789 to present** (V-Dem)
+- **167 countries** with regime and stability data from **1800 to present** (Polity V)
+- **36 OECD countries** with detailed policy data from **1960 to present** (CPDS)
+- **Thousands of subnational jurisdictions** (US states, EU regions, Indian states) with policy variation
+- **Millions of policy changes** documented in legislative databases
+
+Even with imperfect causal inference, systematically analyzing this data will produce outcomes orders of magnitude better than the current system.
+
+### Current Limitations of Policy Causal Inference
+
+Policy evaluation faces harder identification challenges than drug trials:
+
+| Challenge | Drug Trials | Policy Analysis |
+|-----------|-------------|-----------------|
+| **Randomization** | Gold standard (RCTs) | Rare; quasi-experiments required |
+| **Time horizon** | Weeks to months | Years to decades |
+| **Confounders** | Controlled via randomization | Many; economic cycles, demographics, neighboring policies |
+| **Spillovers** | Minimal (patients isolated) | Common (policies affect neighbors) |
+| **Measurement** | Biomarkers, symptoms | Survey data, administrative records |
+| **Sample size** | Thousands of patients | Dozens of jurisdictions |
+
+Despite these challenges, the econometrics literature has developed rigorous methods for causal inference from observational policy data. The "credibility revolution" in economics [@angrist2010] has produced replicable findings that outperform expert intuition.
+
+## Core Methodology
+
+### Policy-Outcome Data Structure
+
+The PIS system uses a relational database schema (full specification in `dih_models/optimocracy_schema.sql`):
+
+#### Core Tables
+
+```sql
+-- Jurisdictions (countries, states, cities)
+jurisdictions (
+    id, name, jurisdiction_type, parent_jurisdiction_id,
+    population, gdp_per_capita, latitude, longitude, ...
+)
+
+-- Policies (laws, regulations, taxes)
+policies (
+    id, name, policy_category_id, policy_type,
+    is_continuous, typical_onset_delay_days,
+    typical_duration_of_effect_years, canonical_text, ...
+)
+
+-- Outcome variables (welfare metrics)
+outcome_variables (
+    id, name, category, valence,
+    data_source, data_frequency, ...
+)
+
+-- Policy implementations (when/where policies were in effect)
+policy_implementations (
+    jurisdiction_id, policy_id, start_date, end_date,
+    value, confidence, source_url, ...
+)
+
+-- Outcome measurements (time series of welfare metrics)
+outcome_measurements (
+    jurisdiction_id, outcome_variable_id, measurement_date,
+    value, confidence_interval_low, confidence_interval_high, ...
+)
+```
+
+#### Policy Types
+
+| Type | Description | Example | Measurement |
+|------|-------------|---------|-------------|
+| `law` | Statutory law passed by legislature | Environmental regulation law | Binary (exists/not) |
+| `regulation` | Administrative rule by agency | Agency emission standards | Continuous (stringency) |
+| `tax_policy` | Tax rate, bracket, credit, deduction | Investment income tax rate | Continuous (rate) |
+| `budget_allocation` | Spending decision | Education spending per pupil | Continuous ($/capita) |
+| `executive_order` | Executive action | Enforcement priority directive | Binary |
+| `court_ruling` | Judicial precedent | Constitutional interpretation | Binary |
+| `treaty` | International agreement | Multilateral cooperation treaty | Binary |
+| `local_ordinance` | Municipal rule | Land use restrictions | Categorical |
+
+### Analysis Methods
+
+The PIS system supports multiple quasi-experimental designs, each appropriate for different data structures:
+
+#### Synthetic Control Method
+
+**Use case**: Single treated jurisdiction, good donor pool of similar untreated jurisdictions.
+
+**Method**: Construct a "synthetic" control as a weighted average of untreated jurisdictions that matches the treated jurisdiction's pre-treatment outcome trajectory. Post-treatment divergence estimates the causal effect.
+
+**Quality metrics**:
+- `pre_treatment_rmse`: How well does synthetic control match pre-treatment? (Lower is better)
+- `placebo_p_value`: Permutation test comparing treated effect to placebo effects (Lower is better)
+
+**Example**: Effect of a state tobacco tax increase on smoking rates, using similar states without tax changes as donors [@abadie2010].
+
+#### Difference-in-Differences (DiD)
+
+**Use case**: Multiple treated jurisdictions, staggered adoption timing, parallel trends assumption plausible.
+
+**Method**: Compare pre-post change in treated jurisdictions to pre-post change in control jurisdictions. Difference of differences estimates treatment effect.
+
+**Quality metrics**:
+- `parallel_trends_test_stat`: Test statistic for pre-treatment trend equality
+- `parallel_trends_p_value`: P-value for parallel trends test (Higher is better, want to fail to reject)
+
+**Example**: Effect of occupational licensing reforms across states with different adoption timing.
+
+#### Regression Discontinuity Design (RDD)
+
+**Use case**: Sharp eligibility threshold determines treatment assignment.
+
+**Method**: Compare outcomes just above vs. just below the threshold. If other characteristics are smooth across the threshold, the discontinuity in outcomes estimates the causal effect.
+
+**Quality metrics**:
+- Bandwidth selection diagnostics
+- McCrary density test for manipulation
+- Covariate balance at threshold
+
+**Example**: Effect of program eligibility on outcomes at an income or age threshold (e.g., retirement benefits at age 65).
+
+#### Event Study / Interrupted Time Series
+
+**Use case**: Need to visualize pre-trends and dynamic treatment effects.
+
+**Method**: Estimate treatment effects at each time period relative to treatment, including leads (pre-treatment) and lags (post-treatment).
+
+**Quality metrics**:
+- Pre-treatment coefficients should be near zero (no anticipation)
+- Post-treatment coefficients show effect dynamics
+
+**Example**: Effect of unemployment insurance extensions on job search behavior, showing both anticipation effects (before benefits expire) and persistence of impact (after return to baseline).
+
+#### Confidence Weighting by Method
+
+| Method | Base Confidence Weight | Rationale |
+|--------|----------------------|-----------|
+| Randomized experiment | 1.00 | Gold standard; rare for policies |
+| Regression discontinuity | 0.90 | Local randomization at threshold |
+| Synthetic control | 0.85 | Good pre-treatment fit implies validity |
+| Difference-in-differences | 0.80 | Requires untestable parallel trends |
+| Event study | 0.75 | Descriptive of dynamics; less rigorous |
+| Interrupted time series | 0.65 | Single-unit; history threats |
+| Simple before-after | 0.40 | No control group; confounding likely |
+| Cross-sectional | 0.25 | Snapshot; severe confounding |
+
+### Bradford Hill Criteria Mapping for Policy
+
+Bradford Hill's criteria for causality [@hill1965], originally developed for epidemiology, map to policy evaluation:
+
+| Criterion | Definition | DFDA (Drug) Implementation | PIS (Policy) Implementation |
+|-----------|------------|---------------------------|----------------------------|
+| **Strength** | Magnitude of association | Correlation coefficient | Effect estimate magnitude (standardized) |
+| **Consistency** | Replicated across studies | Across users (N-of-1) | Across jurisdictions (I² heterogeneity) |
+| **Specificity** | Specific exposure → specific outcome | Specific drug-symptom pair | Policy domain → outcome category |
+| **Temporality** | Exposure precedes outcome | Onset delay optimization | Policy adoption precedes outcome change |
+| **Gradient** | Dose-response relationship | Dose-outcome curve | For continuous policies (tax rates, spending levels) |
+| **Plausibility** | Mechanistic explanation | Biological mechanism | Economic mechanism (theory) |
+| **Coherence** | Consistent with broader knowledge | Medical literature | Economic literature |
+| **Experiment** | Experimental/quasi-experimental evidence | N-of-1 trial design quality | Quasi-experimental design quality |
+| **Analogy** | Similar exposures have similar effects | Similar drugs | Similar policies (embedding similarity) |
+
+Each criterion is scored 0-1 based on the evidence:
+
+$$
+\text{Hill}_{\text{criterion}} = f(\text{evidence for criterion})
+$$
+
+The aggregate causal confidence score combines criteria:
+
+$$
+\text{CCS} = \frac{\sum_{i=1}^{9} w_i \cdot \text{Hill}_i}{\sum_{i=1}^{9} w_i}
+$$
+
+Where $w_i$ are criterion weights. Default weights emphasize temporality (must be satisfied), experiment (quasi-experimental design quality), and consistency (replication across jurisdictions).
+
+## Jurisdiction-Level PIS Calculation
+
+For each jurisdiction $j$, policy $p$, and outcome $o$, the jurisdiction-level PIS is:
+
+$$
+\text{PIS}_{jpo} = \hat{\beta}_{jpo} \cdot \text{CCS}_{jpo} \cdot Q_{jpo}
+$$
+
+Where:
+
+- $\hat{\beta}_{jpo}$ = Effect estimate (standardized effect size)
+- $\text{CCS}_{jpo}$ = Causal Confidence Score (aggregate Hill criteria)
+- $Q_{jpo}$ = Quality adjustment factor based on analysis method and diagnostics
+
+### Effect Estimate Standardization
+
+Raw effect estimates vary in scale (years of life, dollars of income, crime rates). We standardize to enable comparison:
+
+$$
+\hat{\beta}_{\text{std}} = \frac{\hat{\beta}_{\text{raw}}}{\sigma_{\text{outcome}}}
+$$
+
+Where $\sigma_{\text{outcome}}$ is the cross-jurisdictional standard deviation of the outcome variable.
+
+### Quality Adjustment Factor
+
+$$
+Q = w_{\text{method}} \cdot (1 - \text{violations})
+$$
+
+Where:
+- $w_{\text{method}}$ = Method confidence weight (see table above)
+- $\text{violations}$ = Proportion of validity checks failed (parallel trends, pre-treatment fit, etc.)
+
+### Confounder Adjustment
+
+For each analysis, we track which confounders were controlled:
+
+```json
+{
+    "confounders_controlled": ["gdp_growth", "unemployment", "population_age_structure"],
+    "confounders_not_controlled": ["neighboring_policy_spillovers", "measurement_error"],
+    "confounder_sensitivity": 0.85
+}
+```
+
+The `confounder_sensitivity` field estimates how much the effect estimate might change if uncontrolled confounders were addressed (Oster's delta, @oster2019).
+
+## Global (Aggregate) PIS Calculation
+
+Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis:
+
+$$
+\hat{\beta}_{\text{pooled}} = \frac{\sum_j w_j \hat{\beta}_j}{\sum_j w_j}
+$$
+
+Where weights $w_j = \frac{1}{\text{SE}_j^2 + \tau^2}$ incorporate both within-study variance and between-study heterogeneity ($\tau^2$).
+
+### Heterogeneity Statistics
+
+- **I²**: Percentage of variance due to heterogeneity (vs. sampling error)
+  - $I^2 < 25\%$: Low heterogeneity
+  - $25\% \leq I^2 < 75\%$: Moderate heterogeneity
+  - $I^2 \geq 75\%$: High heterogeneity (effects vary substantially across jurisdictions)
+
+- **τ²**: Estimated between-study variance
+
+- **Q statistic**: Cochran's test for heterogeneity
+
+High heterogeneity suggests moderators (policy effects vary by context) rather than a single true effect.
+
+### Evidence Grading
+
+| Grade | Criteria | Interpretation |
+|-------|----------|----------------|
+| **A** | Multiple high-quality quasi-experiments (synthetic control, RDD) OR RCT; I² < 50%; consistent direction | Strong evidence; ready for implementation |
+| **B** | Single RCT OR multiple well-designed DiD/event studies; I² < 75%; mostly consistent | Good evidence; consider piloting |
+| **C** | Well-designed observational studies with confounding control; moderate consistency | Suggestive evidence; needs validation |
+| **D** | Case studies, weak observational evidence, or high heterogeneity | Weak evidence; exploratory only |
+| **F** | Expert opinion only OR conflicting high-quality evidence | Insufficient or contradictory evidence |
+
+### Context-Specific Confidence
+
+Effects may vary by jurisdiction characteristics. We report confidence separately for:
+
+| Context | Description | Example Modifier |
+|---------|-------------|------------------|
+| High-income countries | OECD members, GDP/capita > $30K | Tax policy effects |
+| Low-income countries | GDP/capita < $5K | Different institutional capacity |
+| Federal systems | Policy set at national level | vs. subnational variation |
+| Subnational | States, provinces, cities | Local policy autonomy |
+
+## Quality Requirements & Validation
+
+### Minimum Thresholds for Inclusion
+
+| Criterion | Minimum | Rationale |
+|-----------|---------|-----------|
+| Pre-treatment periods | 4 | Need to assess pre-trends |
+| Post-treatment periods | 2 | Need to observe effect |
+| Outcome observations | 20 | Statistical power |
+| Control jurisdictions (for DiD) | 5 | Donor pool size |
+| Pre-treatment RMSE (synthetic control) | < 2 SD | Acceptable pre-treatment fit |
+
+### Parallel Trends Testing (DiD)
+
+For difference-in-differences analyses, we test whether treated and control jurisdictions had parallel outcome trends before treatment:
+
+1. Estimate event study with pre-treatment leads
+2. Test joint significance of pre-treatment coefficients
+3. If p < 0.10, flag as potential parallel trends violation
+4. Report sensitivity: how different would trends need to be to explain away the effect?
+
+### Pre-Treatment Fit (Synthetic Control)
+
+For synthetic control analyses:
+
+1. Calculate RMSE of synthetic vs. actual treated unit pre-treatment
+2. Compare to distribution of placebo RMSEs (treating each donor as "treated")
+3. If treated RMSE is in top 10% of placebo RMSEs, flag as poor fit
+4. Report ratio of post-treatment effect to pre-treatment RMSE
+
+### Placebo and Robustness Tests
+
+| Test | Purpose | Implementation |
+|------|---------|----------------|
+| **In-time placebo** | Does "treatment" show effect before it happened? | Assign fake treatment date before actual |
+| **In-space placebo** | Do untreated units show similar effects? | Apply analysis to control jurisdictions |
+| **Leave-one-out** | Is result driven by single jurisdiction? | Re-estimate dropping each jurisdiction |
+| **Bandwidth sensitivity** | (For RDD) Is result robust to bandwidth choice? | Estimate with multiple bandwidths |
+| **Covariate adjustment** | Does controlling for confounders change result? | Add covariates, compare estimates |
+
+## Interpreting Policy Impact Scores
+
+### PIS Ranges and Interpretation
+
+| PIS Range | Interpretation | Action |
+|-----------|----------------|--------|
+| > 0.50 | Strong positive impact with high confidence | Adopt; prioritize for scaling |
+| 0.25 - 0.50 | Moderate positive impact | Consider adoption; monitor |
+| 0.10 - 0.25 | Weak positive impact | Pilot in limited jurisdictions |
+| -0.10 - 0.10 | Negligible or uncertain impact | No action recommended |
+| -0.25 - -0.10 | Weak negative impact | Review; consider reform |
+| -0.50 - -0.25 | Moderate negative impact | Reform or repeal |
+| < -0.50 | Strong negative impact | Urgent repeal recommended |
+
+### Evidence vs. Implementation Readiness
+
+A high PIS does not guarantee implementation success:
+
+| Factor | PIS Captures | PIS Does Not Capture |
+|--------|-------------|---------------------|
+| Causal effect | ✓ | |
+| Statistical uncertainty | ✓ | |
+| Cross-jurisdiction consistency | ✓ | |
+| Mechanism plausibility | ✓ | |
+| Political feasibility | | ✗ |
+| Implementation capacity | | ✗ |
+| Distributional effects | | ✗ |
+| Interaction with existing policies | | Partially |
+
+Policies with high PIS but low political feasibility may require gradual implementation or complementary reforms.
+
+### Caveats on Causality
+
+PIS provides *evidence-weighted rankings*, not certainty:
+
+1. **Residual confounding**: Even well-designed quasi-experiments may have unmeasured confounders
+2. **External validity**: Effects in one context may not transfer to another
+3. **General equilibrium**: Large-scale adoption may change effects (e.g., education expansion reducing wage premium)
+4. **Dynamic effects**: Short-run effects may differ from long-run effects
+5. **Measurement error**: Policy implementation dates and outcome measurements have noise
+
+The PIS framework makes uncertainty explicit rather than hiding it behind false precision.
+
+## Trial Prioritization
+
+### Value of Information Calculation
+
+The expected value of running a randomized trial on policy $p$ is:
+
+$$
+\text{VOI}_p = P(\text{adopt}|\text{trial}) \cdot E[\text{benefit}|\text{trial}] - P(\text{adopt}|\text{no trial}) \cdot E[\text{benefit}|\text{no trial}] - \text{Cost}_{\text{trial}}
+$$
+
+Policies with high VOI have:
+- **High prior uncertainty**: Current evidence is inconclusive
+- **High potential impact**: If the policy works, benefits are large
+- **Low trial cost**: Policy can be randomized in small jurisdictions cheaply
+- **Decision relevance**: Trial result would change adoption decision
+
+### Natural Experiment Identification
+
+The system automatically identifies potential natural experiments:
+
+| Type | Identification Method | Example |
+|------|----------------------|---------|
+| Border discontinuity | Adjacent jurisdictions with different policies | Minimum wage differences at state borders |
+| Temporal discontinuity | Abrupt policy change | Court ruling invalidating previous policy |
+| Eligibility threshold | Sharp cutoff for policy application | Income threshold for benefit eligibility |
+| Staggered adoption | Different jurisdictions adopting at different times | ACA Medicaid expansion by state |
+| Lottery | Random assignment (rare) | Charter school lotteries |
+| Court mandate | Externally imposed change | Desegregation orders |
+
+Identified natural experiments are stored in `natural_experiments` table for validation.
+
+### Recommended Pilot Jurisdictions
+
+For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictions based on:
+
+1. **Variation feasibility**: Jurisdiction has autonomy to adopt the policy
+2. **Data quality**: Good administrative data for outcome measurement
+3. **Donor pool**: Similar jurisdictions available as controls
+4. **Political openness**: Leadership interested in evidence-based pilots
+5. **Scalability**: Results can inform larger-scale adoption
+
+## LLM Integration
+
+### Policy Text Parsing
+
+Large language models can accelerate policy database construction:
+
+**Input**: Full text of laws and regulations from legislative databases
+
+**Output**:
+- Effective date
+- Key provisions (structured extraction)
+- Policy category classification
+- Predicted affected outcomes
+- Similar policies in database
+
+**Quality control**:
+- Human review of LLM extractions for random sample
+- Confidence scores for each extraction
+- Flagging of ambiguous or complex provisions
+
+### Provision Extraction
+
+Example prompt structure:
+
+```
+Given the following legislative text, extract:
+1. Effective date (YYYY-MM-DD)
+2. Key provisions as a bulleted list
+3. Primary policy category (from: healthcare, education, criminal_justice, ...)
+4. Populations affected
+5. Expected mechanism of effect
+
+Legislative text:
+[FULL TEXT]
+```
+
+### Effect Prediction
+
+LLMs can generate hypotheses about policy effects based on:
+- Policy text and provisions
+- Economic theory and mechanisms
+- Similar policies and their observed effects
+
+These predictions are stored as priors, updated with empirical evidence via Bayesian updating.
+
+### Policy Similarity Computation
+
+Embedding-based similarity enables evidence transfer:
+
+1. Generate embeddings for policy text using large language models
+2. Compute cosine similarity between policy embeddings
+3. Store in `policy_similarity` table
+4. Use similarity for: (a) finding related evidence, (b) predicting effects of new policies, (c) identifying policy bundles
+
+## Data Sources
+
+### Primary Policy Databases
+
+| Database | Coverage | URL | Use Case |
+|----------|----------|-----|----------|
+| **V-Dem** | 202 countries, 1789-present | [v-dem.net](https://www.v-dem.net) | Democracy indices, political institutions |
+| **Polity V** | 167 countries, 1800-present | [systemicpeace.org](https://www.systemicpeace.org/polityproject.html) | Regime type, political stability |
+| **CPDS** | 36 OECD, 1960-present | [cpds-data.org](https://www.cpds-data.org) | Economic policy, welfare state |
+| **OECD iLibrary** | OECD members | [oecd-ilibrary.org](https://www.oecd-ilibrary.org) | Tax, labor, education policy |
+| **Congress.gov** | US federal, 1973-present | [congress.gov](https://www.congress.gov) | US federal legislation |
+| **EUR-Lex** | EU, 1951-present | [eur-lex.europa.eu](https://eur-lex.europa.eu) | EU legislation and regulations |
+
+### Primary Outcome Databases
+
+| Database | Coverage | URL | Use Case |
+|----------|----------|-----|----------|
+| **World Bank WDI** | 217 countries, 1960-present | [data.worldbank.org](https://data.worldbank.org) | GDP, poverty, education, health |
+| **Our World in Data** | Global, varies | [ourworldindata.org](https://ourworldindata.org) | Curated outcome metrics |
+| **WHO GHO** | Global | [who.int/data/gho](https://www.who.int/data/gho) | Health outcomes |
+| **Penn World Tables** | 183 countries, 1950-present | [ggdc.net/pwt](https://www.ggdc.net/pwt) | GDP, productivity, prices |
+| **SIPRI** | Global, 1949-present | [sipri.org](https://www.sipri.org) | Military spending |
+| **IMF** | 190 countries | [imf.org/data](https://www.imf.org/en/Data) | Fiscal, monetary indicators |
+
+### Subnational Data
+
+| Country | Source | Coverage |
+|---------|--------|----------|
+| United States | Census Bureau, BLS, state agencies | 50 states + territories |
+| European Union | Eurostat regional database | ~300 NUTS-2 regions |
+| India | CMIE, NSS, state data portals | 28 states + territories |
+| China | National Bureau of Statistics | 31 provinces |
+| Brazil | IBGE | 27 states |
+
+## Limitations
+
+### Oracle Capture Risk
+
+As with BIS, the measurement process itself can be captured:
+
+1. **Outcome measurement**: Agencies reporting outcomes have incentives to manipulate
+2. **Policy implementation dates**: Recording when policies "really" took effect is subjective
+3. **Confounder selection**: Which confounders to control affects estimates
+
+Mitigation: Multiple independent data sources, pre-registered analysis protocols, adversarial audits.
+
+### Confounding Severity
+
+Policy effects face more confounding than drug trials:
+
+| Confounder Type | Example | Mitigation |
+|----------------|---------|------------|
+| Economic cycles | Recession coincides with policy | Control for GDP growth, unemployment |
+| Secular trends | Improving health over time | Include time trends, compare to controls |
+| Selection | Jurisdictions adopting policies differ | Matching, synthetic control |
+| Spillovers | Neighboring policies affect outcomes | Spatial controls, SUTVA violations noted |
+| Reverse causality | Outcomes drive policy adoption | Instruments, timing-based identification |
+
+### Heterogeneous Effects
+
+Policy effects vary by:
+- Jurisdiction characteristics (income, institutions, culture)
+- Implementation fidelity
+- Complementary policies
+- Time period
+
+High heterogeneity (I² > 75%) suggests context-dependence rather than universal effects.
+
+### Time-Varying Effects
+
+- **Short-run vs. long-run**: Immediate effects may differ from sustained effects
+- **Policy drift**: Implementation changes over time (amendment_notes tracking)
+- **Adaptation**: Jurisdictions and individuals adapt to policies
+
+The event study design explicitly models dynamic effects; we report both immediate and sustained impact estimates.
+
+### Publication Bias
+
+The policy evaluation literature suffers from systematic publication bias:
+
+1. **Null effects underreported**: Studies finding "no significant effect" are less likely to be published
+2. **Positive framing**: Researchers may frame results to emphasize statistically significant findings
+3. **File drawer problem**: Failed replications rarely published
+4. **Jurisdiction selection**: Jurisdictions with cleaner natural experiments are overrepresented
+
+**Mitigation strategies**:
+
+- Weight by inverse probability of publication (using funnel plot asymmetry tests)
+- Require pre-registration of analysis protocols before data access
+- Include unpublished working papers and government reports
+- Apply trim-and-fill or PET-PEESE corrections for funnel plot asymmetry
+- Report null findings prominently in the database
+
+### Epistemic Limitations
+
+PIS provides *evidence-weighted rankings*, not causal proof:
+
+| What PIS Can Do | What PIS Cannot Do |
+|-----------------|-------------------|
+| Rank policies by strength of quasi-experimental evidence | Prove any policy causes an outcome |
+| Identify promising candidates for randomized pilots | Replace randomized policy experiments |
+| Quantify uncertainty and heterogeneity | Eliminate unmeasured confounding |
+| Flag potential harms with moderate confidence | Guarantee a policy is safe |
+| Transfer evidence across similar jurisdictions | Guarantee effects transfer to new contexts |
+
+**Important**: The quasi-experimental methods used in Stage 1 provide evidence *consistent with* causation under assumptions that are often untestable. Synthetic control assumes the donor pool adequately represents the counterfactual; difference-in-differences assumes parallel trends would have continued; regression discontinuity assumes no manipulation around the threshold. These assumptions cannot be verified from data alone.
+
+## Validation Framework
+
+### The Critical Question
+
+The ultimate test of PIS validity: **Do policies with high PIS produce better outcomes when subsequently adopted than policies with low PIS?**
+
+Until this validation is performed, PIS should be treated as a theoretically-motivated heuristic for prioritization, not a validated predictive tool.
+
+### Proposed Validation Study
+
+**Design**: Retrospective comparison of PIS predictions against subsequent policy outcomes.
+
+**Method**:
+
+1. Compute PIS for all policy-outcome pairs using only data available before a cutoff date (e.g., 2015)
+2. Identify jurisdictions that adopted high-PIS policies vs. low-PIS policies after the cutoff
+3. Compare actual outcome changes 2015-2025 in adopting vs. non-adopting jurisdictions
+4. Assess whether high-PIS policies produced larger improvements than low-PIS policies
+
+**Success Metrics**:
+
+| Metric | Definition | Target |
+|--------|------------|--------|
+| **Discrimination (AUC)** | Does high PIS predict "policy improved welfare"? | AUC > 0.65 |
+| **Calibration** | Correlation between PIS and actual effect size | r > 0.4 |
+| **Prioritization value** | High-PIS validation rate vs. low-PIS rate | Ratio > 2:1 |
+| **False positive rate** | High-PIS policies that harmed welfare | < 15% |
+
+**Expected Outcomes**:
+
+- If PIS ≥ 0.3 policies show validation rate of 50%+ and PIS < 0.1 policies show rate < 25%, the metric has practical utility
+- If no discrimination observed, the weighting scheme needs recalibration or the approach needs fundamental revision
+
+### Known Limitations Requiring Validation
+
+1. **Confidence weight sensitivity**: How robust are rankings to ±50% changes in method confidence weights?
+2. **Evidence grade thresholds**: Are the A-F grade cutoffs appropriately calibrated?
+3. **Heterogeneity interpretation**: Does high I² actually indicate context-dependence vs. measurement noise?
+4. **Cross-domain generalization**: Do PIS values from one policy domain (e.g., traffic safety) transfer to another (e.g., education)?
+
+## Stage 2: Experimental Validation
+
+### Why Quasi-Experiments Are Not Enough
+
+Stage 1 (quasi-experimental analysis) generates *hypotheses* about policy effects. It cannot:
+
+- Rule out unmeasured confounding
+- Establish definitive causation
+- Guarantee effects will replicate in new contexts
+
+For high-stakes policy decisions, **Stage 2 experimental validation** is necessary.
+
+### Randomized Policy Pilots
+
+Several models exist for randomized policy experiments:
+
+| Model | Description | Example |
+|-------|-------------|---------|
+| **Lottery assignment** | Random selection determines who receives policy | Oregon Medicaid lottery (2008) |
+| **Phased rollout** | Random order of implementation across jurisdictions | Moving to Opportunity housing vouchers |
+| **Encouragement design** | Random assignment of information/incentives | RAND Health Insurance Experiment |
+| **Regression discontinuity + randomization** | Randomize near eligibility threshold | Threshold-based benefit eligibility |
+
+### Trial Priority Score for Policies
+
+Policies with high value of information (VOI) for experimental validation have:
+
+$$\text{VOI}_p = \underbrace{P(\text{adopt}|\text{trial})}_{\text{decision relevance}} \times \underbrace{E[\text{benefit}|\text{trial}]}_{\text{potential impact}} \times \underbrace{\sigma^2_{\text{PIS}}}_{\text{current uncertainty}} - \underbrace{C_{\text{trial}}}_{\text{trial cost}}$$
+
+**High-priority policies for randomized pilots**:
+
+1. High potential impact (large population affected, significant welfare change)
+2. High current uncertainty (moderate PIS with wide confidence intervals)
+3. Feasible randomization (can be implemented at individual or small-jurisdiction level)
+4. Decision-relevant (policymakers would change behavior based on trial result)
+
+### Learning Health Policy System
+
+The complete two-stage design creates a learning loop:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    LEARNING POLICY SYSTEM                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌──────────────┐         ┌──────────────┐         ┌──────────┐ │
+│  │ Stage 1:     │ Top 1%  │ Stage 2:     │ Results │ Validated│ │
+│  │ Quasi-       │ by PIS  │ Randomized   │ confirm │ Policy   │ │
+│  │ Experimental │ ──────► │ Policy       │ ──────► │ Rankings │ │
+│  │ Analysis     │         │ Pilots       │         │          │ │
+│  └──────────────┘         └──────────────┘         └──────────┘ │
+│         ▲                                                │      │
+│         │                                                │      │
+│         └────────────────────────────────────────────────┘      │
+│                    Feedback: calibrate PIS weights              │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+Trial results from Stage 2:
+- Validate (or invalidate) Stage 1 predictions
+- Calibrate PIS component weights based on what actually predicts experimental effects
+- Identify moderators that explain heterogeneity across jurisdictions
+
+## Sensitivity Analysis
+
+### Parameter Sensitivity
+
+The PIS calculation depends on several researcher-specified parameters. Rankings should be robust to reasonable variation in these choices:
+
+| Parameter | Default | Test Range | Sensitivity Check |
+|-----------|---------|------------|-------------------|
+| Method confidence weights | See table | ±30% | Do top-10 rankings change? |
+| Evidence grade thresholds | I² < 50% for A | ±20 percentage points | Do grades shift more than one level? |
+| Minimum pre-treatment periods | 4 | 3-6 | Do any policies lose eligibility? |
+| Pre-treatment RMSE threshold | < 2 SD | 1.5-3 SD | Do synthetic control results change? |
+
+### Robustness Checks
+
+For each policy-outcome relationship, we report:
+
+1. **Leave-one-jurisdiction-out**: Does excluding any single jurisdiction change the sign or halve the effect?
+2. **Different method comparison**: Do DiD and synthetic control agree when both are applicable?
+3. **Placebo outcomes**: Does the policy "affect" outcomes it shouldn't (falsification test)?
+4. **Pre-treatment coefficient test**: Are event study pre-treatment coefficients jointly insignificant?
+
+### Confounder Sensitivity (E-values)
+
+For each estimate, we report the **E-value**: the minimum strength of association an unmeasured confounder would need with both the policy and outcome to explain away the observed effect.
+
+$$E = RR + \sqrt{RR \times (RR - 1)}$$
+
+Where RR is the risk ratio equivalent of the observed effect. Higher E-values indicate more robust findings.
+
+## Multi-Outcome Aggregation
+
+### The Challenge
+
+Policies affect multiple outcomes simultaneously. A policy might:
+
+- Increase GDP (+0.4 PIS for economic growth)
+- Worsen inequality (-0.2 PIS for Gini coefficient)
+- Reduce unemployment (+0.3 PIS for employment)
+
+How should these be combined?
+
+### Outcome Weighting Approaches
+
+| Approach | Method | Pros | Cons |
+|----------|--------|------|------|
+| **Equal weighting** | Simple average of PIS across outcomes | Simple, transparent | Ignores outcome importance |
+| **DALY-weighted** | Weight by disability-adjusted life years | Health outcomes prioritized | Hard to apply to non-health outcomes |
+| **Revealed preference** | Weight by policy attention in debates | Reflects actual priorities | Biased toward salient issues |
+| **Expert elicitation** | Structured expert judgment | Incorporates domain knowledge | Subjective, potential capture |
+| **Democratic aggregation** | Citizen deliberation on weights | Legitimate | Expensive, slow |
+
+### Recommended Approach: Transparent Decomposition
+
+Rather than producing a single aggregate PIS, we recommend:
+
+1. **Report PIS separately for each outcome category** (health, economic, social, environmental)
+2. **Flag tradeoffs explicitly**: "This policy improves X but worsens Y"
+3. **Allow user-specified weights**: Policymakers can apply their own value judgments
+4. **Provide dominance analysis**: Identify policies that improve all outcomes (Pareto improvements)
+
+### Outcome Categories
+
+| Category | Example Outcomes | Primary Data Sources |
+|----------|------------------|---------------------|
+| **Health** | Life expectancy, mortality rates, disease prevalence | WHO GHO, national vital statistics |
+| **Economic** | GDP per capita, employment, income | World Bank WDI, Penn World Tables |
+| **Social** | Education attainment, crime rates, inequality | UNESCO, national surveys |
+| **Environmental** | Emissions, air quality, resource depletion | EPA, OECD environmental data |
+| **Governance** | Corruption, rule of law, democratic quality | V-Dem, World Governance Indicators |
+
+## Future Directions
+
+### Methodological Improvements
+
+1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for policy interaction structure learning
+2. **Propensity score integration**: Covariate adjustment for measured jurisdiction characteristics
+3. **Bayesian hierarchical models**: More principled cross-jurisdiction pooling with uncertainty quantification
+4. **Machine learning for heterogeneity**: Use BART, causal forests to identify which jurisdiction characteristics moderate effects
+5. **Text-as-data**: Extract policy features from legislative text for similarity-based evidence transfer
+6. **Dynamic treatment regimes**: Model optimal policy sequences, not just single policies
+
+### Validation Priorities
+
+1. **Retrospective validation study** (highest priority): Test PIS predictions against subsequent outcomes
+2. **Prospective prediction pre-registration**: Publicly commit to PIS rankings before policy adoption decisions
+3. **Domain expert review**: Have policy experts assess face validity of rankings
+4. **Cross-validation**: Hold out jurisdictions, predict their outcomes from others
+
+### Data Infrastructure
+
+1. **Automated policy tracking**: NLP pipeline to detect policy changes from legislative databases
+2. **Outcome harmonization**: Standardized outcome definitions across jurisdictions
+3. **API access**: Enable researchers to query PIS data programmatically
+4. **Version control**: Track how PIS estimates change as new data arrives
+
+### Integration with Decision-Making
+
+1. **Policy dashboard**: Real-time PIS rankings for policymakers
+2. **Uncertainty communication**: Visualizations that convey confidence appropriately
+3. **Scenario modeling**: "What if" analysis for proposed policies based on similar historical policies
+4. **Feedback mechanisms**: Track whether high-PIS policies were actually adopted and outcomes realized
+
+## Conclusion
+
+The Policy Impact Score provides a systematic framework for evaluating policy-outcome relationships using the best available quasi-experimental methods. Even with imperfect causal inference, systematically analyzing centuries of policy variation across hundreds of jurisdictions will produce governance outcomes orders of magnitude better than the current system of lobbying, ideology, and anecdote.
+
+The PIS complements the Budget Impact Score (BIS) in the Optimocracy framework:
+
+- **BIS** answers: "How should we allocate spending across programs?"
+- **PIS** answers: "Which policy reforms would most improve welfare?"
+
+Together, they enable evidence-based governance that optimizes both resource allocation and regulatory design.
+
+## References
+
+::: {#refs}
+:::

@@ -43,19 +43,32 @@ QUALITY_WEIGHTS = {
 
 # Spending categories with descriptions
 CATEGORIES = {
+    # High-return investments
     "early_childhood": "Early childhood education and care (ages 0-5)",
     "k12_education": "K-12 public education spending",
     "basic_research": "Basic scientific research (NIH, NSF, etc.)",
     "infrastructure": "Physical infrastructure (roads, bridges, utilities)",
     "preventive_health": "Preventive healthcare and public health",
-    "military_discretionary": "Military spending (opportunity cost of alternatives)",
-    "agricultural_subsidies": "Farm subsidies and agricultural support",
-    "incarceration_nonviolent": "Incarceration for non-violent offenses",
-    "drug_enforcement": "Drug prohibition enforcement and prosecution",
     "pragmatic_trials": "Pragmatic clinical trials for treatment effectiveness",
     "vaccinations": "Childhood and adult vaccination programs",
     "maternal_health": "Maternal and neonatal health interventions",
     "nutrition": "Nutrition interventions and food security programs",
+
+    # Low/neutral return (opportunity cost)
+    "military_discretionary": "Military spending (opportunity cost of alternatives)",
+
+    # Negative return (documented waste or harm)
+    "agricultural_subsidies": "Farm subsidies and agricultural support",
+    "incarceration_nonviolent": "Incarceration for non-violent offenses",
+    "drug_enforcement": "Drug prohibition enforcement and prosecution",
+
+    # Healthcare system inefficiencies (structural waste)
+    # NOTE: These are system-level inefficiencies, not program-level spending choices.
+    # BIS can identify them but correcting them requires regulatory reform, not just
+    # budget reallocation. The US spends $7,500/person MORE on health than peers
+    # but achieves WORSE outcomes - the problem is structural, not budgetary.
+    "healthcare_admin_overhead": "Healthcare administrative costs above peer-country benchmarks",
+    "drug_pricing_above_reference": "Pharmaceutical spending above international reference pricing",
 }
 
 # =============================================================================
@@ -352,6 +365,65 @@ EFFECT_ESTIMATES: list[EffectEstimate] = [
         n=100,
         notes="Drug Policy Alliance analysis of enforcement costs vs. harm reduction. "
               "Portugal decriminalization natural experiment shows welfare improvements.",
+    ),
+
+    # =========================================================================
+    # HEALTHCARE SYSTEM INEFFICIENCIES
+    # These represent structural waste that requires regulatory reform, not just
+    # budget reallocation. The negative betas indicate that spending MORE in these
+    # areas produces WORSE outcomes (or no improvement) compared to alternatives.
+    # =========================================================================
+    EffectEstimate(
+        category="healthcare_admin_overhead",
+        beta=-0.35,
+        se=0.10,
+        method="panel",
+        year=2018,
+        source="papanicolas2018",
+        n=11,  # 11 high-income countries compared
+        notes="US healthcare admin costs are $937/person vs $277 average in peer countries. "
+              "This $660/person overhead produces no health benefit - pure deadweight loss. "
+              "Beta represents opportunity cost: redirecting admin waste to care would improve "
+              "outcomes. Fixing this requires regulatory reform (single-payer, standardized "
+              "billing), not budget changes.",
+    ),
+    EffectEstimate(
+        category="healthcare_admin_overhead",
+        beta=-0.40,
+        se=0.12,
+        method="panel",
+        year=2020,
+        source="woolhandler2020",
+        n=11,
+        notes="Billing and Insurance-Related (BIR) costs: 34.2% of US health spending vs "
+              "~17% in Canada. $812B/year in US admin overhead. Savings from single-payer "
+              "estimated at $600B/year - more than enough to cover all uninsured.",
+    ),
+    EffectEstimate(
+        category="drug_pricing_above_reference",
+        beta=-0.28,
+        se=0.08,
+        method="panel",
+        year=2021,
+        source="mulcahy2021",
+        n=32,  # 32 OECD countries
+        notes="US drug prices 256% of OECD average for same medications. For brand-name "
+              "drugs, US pays 3.4x international reference prices. This premium produces "
+              "no additional health benefit - same molecules, higher rent extraction. "
+              "RAND analysis shows potential $100B+ annual savings from reference pricing.",
+    ),
+    EffectEstimate(
+        category="drug_pricing_above_reference",
+        beta=-0.25,
+        se=0.10,
+        method="cross_sectional",
+        year=2019,
+        source="kesselheim2016",
+        n=20,
+        notes="High drug prices reduce adherence and crowd out other care. Patents and "
+              "regulatory capture create artificial scarcity. International reference "
+              "pricing would save ~$150B/year with no reduction in innovation (since "
+              "other countries already fund R&D at these prices).",
     ),
 
     # =========================================================================

@@ -42,6 +42,8 @@ book:
         href: knowledge/appendix/wishocracy-paper.qmd
       - text: "Optimocracy Paper"
         href: knowledge/appendix/optimocracy-paper.qmd
+      - text: "Policy Impact Score Spec"
+        href: knowledge/appendix/policy-impact-score-spec.qmd
       - text: "References"
         href: knowledge/references.qmd
       - icon: file-pdf
@@ -68,6 +70,8 @@ book:
             text: "Wishocracy Paper"
           - href: knowledge/appendix/optimocracy-paper.qmd
             text: "Optimocracy Paper"
+          - href: knowledge/appendix/policy-impact-score-spec.qmd
+            text: "Policy Impact Score Spec"
           - href: knowledge/references.qmd
             text: "References & Citations"
   chapters:
@@ -151,6 +155,7 @@ book:
         - knowledge/appendix/political-capture-cost-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
         - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
+        - knowledge/appendix/policy-impact-score-spec.qmd # ✅ Working paper: systematic policy-outcome evaluation using quasi-experimental methods
         - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis

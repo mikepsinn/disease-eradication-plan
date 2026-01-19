@@ -1704,6 +1704,57 @@ The BIS algorithm requires only:
 
 No AI required. No novel statistics. This is standard meta-analysis applied to budget allocation. The hard part isn't the algorithm. It's the political will to use it.
 
+#### Limitation: Budget Allocation vs. Regulatory Reform
+
+The BIS algorithm optimizes *program-level spending* but cannot directly address *system-level structural inefficiencies*. This distinction matters for categories like healthcare:
+
+| Type | Example | BIS Can Fix? | Actual Solution |
+|------|---------|--------------|-----------------|
+| **Program allocation** | Too little preventive care, too much acute care | Yes | Reallocate budget toward high-return preventive programs |
+| **Administrative overhead** | $812B/year in US billing costs vs $185B in Canada (@woolhandler2020) | Identify, not fix | Regulatory reform (standardized billing, single-payer) |
+| **Drug pricing** | US pays 256% of OECD average for identical medications (@mulcahy2021) | Identify, not fix | Policy change (reference pricing, importation, negotiation) |
+
+The US spends $7,500/person *more* on healthcare than peer countries yet achieves *worse* outcomes. Simply reallocating this budget won't help. Spending more on preventive care while still paying 3x for drugs and 5x for administration produces marginal improvement at best.
+
+**What BIS can do:**
+
+1. **Identify structural waste**: Categories like `healthcare_admin_overhead` (beta = -0.35) and `drug_pricing_above_reference` (beta = -0.28) flag spending that produces negative or zero welfare returns
+2. **Quantify opportunity cost**: Every dollar spent on admin overhead is a dollar not spent on vaccinations (101:1 BCR) or maternal health (87:1 BCR)
+3. **Build political case**: Evidence that 30% of health spending is administrative waste supports reform efforts
+
+**What BIS cannot do:**
+
+1. Force price negotiations with pharmaceutical companies
+2. Standardize insurance billing codes
+3. Change the structure of the healthcare market
+
+This is not a limitation unique to Optimocracy. No budget algorithm can fix regulatory capture. But it's important to state clearly: the US healthcare inefficiency problem requires both budget reallocation (which BIS handles) AND regulatory reform (which requires political action outside the algorithm).
+
+#### Extension to Policy Reforms: The Policy Impact Score
+
+The BIS limitation above motivates a complementary system: the **Policy Impact Score (PIS)**. While BIS optimizes *resource allocation* across spending categories, PIS ranks *policy reforms* (laws, regulations, tax policies) by their demonstrated welfare impact.
+
+The methodology mirrors BIS but with different units of analysis:
+
+| Dimension | Budget Impact Score (BIS) | Policy Impact Score (PIS) |
+|-----------|--------------------------|---------------------------|
+| **Optimizes** | Spending allocation | Policy adoption/repeal |
+| **Unit** | Dollars per program category | Laws, regulations, tax rules |
+| **Method** | Meta-analysis of RCTs and quasi-experiments | Quasi-experimental analysis (synthetic control, DiD, RDD) |
+| **Data** | Econometric literature | Centuries of policy variation across hundreds of jurisdictions |
+| **Bradford Hill** | Applied to treatment-outcome relationships | Applied to policy-outcome relationships |
+
+Even with imperfect causal inference, systematically analyzing policy-outcome relationships across available historical data will produce outcomes orders of magnitude better than current methods (lobbying intensity, ideological priors, anecdote-driven policy).
+
+The PIS system uses a relational database to track:
+
+1. **Policies**: Laws, regulations, and tax rules with temporal extent and jurisdiction
+2. **Outcomes**: Welfare metrics (life expectancy, income, crime rates) with time series
+3. **Relationships**: Quasi-experimental effect estimates with Bradford Hill criteria scores
+4. **Natural experiments**: Identified opportunities for causal validation
+
+For detailed methodology including database schema, analysis methods, and evidence grading, see [Policy Impact Score Specification](policy-impact-score-spec.qmd).
+
 ### Smart Contract Threat Model
 
 Any honest assessment of smart contract governance must acknowledge historical failures and ongoing attack surfaces:

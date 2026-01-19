@@ -50,6 +50,29 @@ CURRENT_YEAR = datetime.now().year
 
 
 # =============================================================================
+# CATEGORY FLOOR PRESETS
+# =============================================================================
+# Minimum allocations based on international norms or expert consensus
+
+# NATO standard: 2% of GDP for defense (~$560B for US with $28T GDP)
+# Using 3% as more realistic US floor given alliance commitments
+FLOORS_NATO_STANDARD = {
+    "military_discretionary": 200_000_000_000,  # $200B (scaled to $1T budget = 20%)
+}
+
+# OECD average allocation pattern (% of total government spending)
+# Source: Government at a Glance 2025
+FLOORS_OECD_AVERAGE = {
+    "military_discretionary": 30_000_000_000,  # ~3% (OECD average defense)
+}
+
+# US historical minimum (post-Cold War low ~3% of GDP)
+FLOORS_US_HISTORICAL = {
+    "military_discretionary": 300_000_000_000,  # $300B (~3% of GDP scaled)
+}
+
+
+# =============================================================================
 # DATA STRUCTURES
 # =============================================================================
 
@@ -217,6 +240,7 @@ def calculate_allocations(
     total_budget: float = 1_000_000_000_000,  # $1T default
     exploration_fraction: float = EXPLORATION_RESERVE_FRACTION,
     min_confidence: float = MIN_CONFIDENCE_THRESHOLD,
+    category_floors: dict[str, float] | None = None,  # Min allocation per category
 ) -> AllocationResult:
     """
     Main BIS algorithm: compute budget allocations from literature estimates.
@@ -263,14 +287,31 @@ def calculate_allocations(
     exploration_budget = total_budget * exploration_fraction
     main_budget = total_budget - exploration_budget
 
-    # Step 8: Allocate main budget in proportion to BIS
-    # Only categories with confidence >= min_confidence
-    eligible_categories = [c for c in category_scores if c.confidence >= min_confidence]
+    # Apply category floors (e.g., minimum defense spending)
+    floor_total = 0.0
+    if category_floors:
+        for cat in category_scores:
+            if cat.category in category_floors:
+                floor = category_floors[cat.category]
+                cat.allocation = floor
+                cat.allocation_pct = floor / total_budget
+                floor_total += floor
+
+    # Budget available after floors
+    available_budget = main_budget - floor_total
+
+    # Step 8: Allocate remaining budget in proportion to BIS
+    # Only categories with confidence >= min_confidence and not already floored
+    floored_cats = set(category_floors.keys()) if category_floors else set()
+    eligible_categories = [
+        c for c in category_scores
+        if c.confidence >= min_confidence and c.category not in floored_cats
+    ]
     total_bis = sum(c.bis for c in eligible_categories)
 
-    if total_bis > 0:
+    if total_bis > 0 and available_budget > 0:
         for cat in eligible_categories:
-            cat.allocation = (cat.bis / total_bis) * main_budget
+            cat.allocation = (cat.bis / total_bis) * available_budget
             cat.allocation_pct = cat.allocation / total_budget
 
     # Step 9: Allocate exploration budget to low-confidence categories
