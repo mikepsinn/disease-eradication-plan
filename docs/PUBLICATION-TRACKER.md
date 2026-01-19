@@ -2,6 +2,17 @@
 
 This document tracks all papers and publications from this project and their publication destinations.
 
+## Publication Status Tracking
+
+**Status is tracked directly in each paper's Quarto config file** under `metadata.publishing`:
+- Each `_quarto-*.yml` file contains its own publishing section
+- Tracks own site deployment status
+- Lists preprint servers (Zenodo, SSRN, arXiv/medRxiv) with URL placeholders
+- Tracks top journal targets with submission status
+- Update URLs and status directly in the YAML as you publish
+
+**Schema reference:** See `publication-tracking-schema.yml` for all available fields and examples.
+
 ---
 
 ## Publications Summary

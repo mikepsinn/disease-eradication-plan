@@ -1451,7 +1451,7 @@ PIS uses quasi-experimental methods (synthetic control, difference-in-difference
 | Seat belt laws (primary) | -1.8 traffic deaths/100K | A (DiD, 47 states) |
 | Occupational licensing | +2-3% consumer prices | B (cross-state variation) |
 
-For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Policy Impact Score Specification](policy-impact-score-spec.qmd).
+For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Optimal Policy Generator Specification](optimal-policy-generator-spec.qmd).
 
 #### How They Work Together
 
