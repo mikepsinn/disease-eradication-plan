@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: 'Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using smart contracts and decentralized oracles to align spending with citizen welfare.'
+description: 'Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.'
 aliases:
   - /optimocracy.html
 date: "2025-01-19"
@@ -19,12 +19,11 @@ author:
 keywords:
   - mechanism design
   - algorithmic governance
-  - smart contracts
   - metric optimization
   - capture resistance
   - index funds
   - Goodhart's Law
-  - decentralized oracles
+  - independent verification
 jel:
   - D72
   - D73
@@ -62,7 +61,7 @@ This paper explores algorithmic governance as a complement to democratic prefere
 - **NOT replacing human judgment.** Hybrid architecture preserves discretion for genuinely novel situations. Optimocracy handles routine allocation; humans handle edge cases and value conflicts.
 - **NOT assuming perfect metrics.** Metrics will be gamed. But gaming costs (10-30% efficiency loss) are far lower than capture costs (20-40% of GDP). Index funds prove metric-bound systems outperform discretionary management despite imperfect tracking.
 - **NOT requiring government adoption.** The wrapper architecture works as a permanent advisory layer. Fund enough Incentive Alignment Bonds to reward politicians who follow good recommendations, and ignoring those recommendations becomes politically costly.
-- **NOT utopian.** Start with private DAOs and prediction markets, demonstrate results, scale through proven performance. No revolution required, just better incentives.
+- **NOT utopian.** Start with private outcome funds and prediction markets, demonstrate results, scale through proven performance. No revolution required, just better incentives.
 
 ## Abstract
 
@@ -72,7 +71,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 **The mechanism:** Optimocracy proposes rules-based spending tied to outcomes citizens actually want (median income growth, health outcomes). Citizens vote on the goal; algorithms optimize spending to achieve it; independent data sources verify results. No politician decides which contractor gets the earmark. The metric does.
 
-**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. The algorithm proposes allocations; legislators vote yes or no. Their votes are recorded. When outcomes are measured years later, those whose voting records correlate with metric improvement receive financial rewards via Incentive Alignment Bonds. This is performance pay for politicians: make citizens better off, get paid. Citizens choose what to optimize (democratic choice, made rarely). Algorithms propose how (consistent analysis, no discretion). Politicians decide whether to adopt (accountability, recorded votes). Human judgment handles genuinely novel situations and value conflicts.
+**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. Optimocracy publishes recommendations for each major vote; legislators vote however they choose; their alignment with recommendations is tracked publicly. When outcomes are measured years later, those whose voting records aligned with evidence-based recommendations receive larger payouts via Incentive Alignment Bonds. This is performance pay for politicians: follow the evidence-based "index," get paid when it works. Citizens choose what to optimize (democratic choice, made rarely). Algorithms recommend how (consistent analysis, transparent methodology). Politicians decide whether to follow (accountability, recorded alignment). Human judgment handles genuinely novel situations and value conflicts.
 
 **The depolarization effect:** Current politics rewards tribal opposition. Support your party's policies, oppose theirs, regardless of evidence. Research shows public support for the *same* policy flips dramatically based on which party controls the White House. Optimocracy shifts the question from "whose policy?" to "what works?" When outcomes are measured and politicians are rewarded for results, the incentive to reflexively oppose good policy disappears. The metric improves or it doesn't. The algorithm doesn't know which party proposed the budget.
 
@@ -139,9 +138,9 @@ Through a constitutional process, citizens select what the government should opt
 
 An optimization system (which could range from simple regression models ("historically, $1B in early childhood education correlates with $3B in future income gains") to prediction markets to machine learning) calculates the budget allocation most likely to maximize the chosen metric. The output is not a single number but a complete allocation: "$X to healthcare, $Y to infrastructure, $Z to education, etc."
 
-**Step 3: Politicians vote yes or no**
+**Step 3: Politicians vote on the proposed budget**
 
-Legislators face a binary choice: accept or reject the algorithm's proposed budget. They cannot line-item edit it. That's where capture happens. The entire point is removing discretion over specific allocations.
+The algorithm proposes a complete budget; legislators vote to accept, reject, or modify it. However, any deviation from the optimized allocation is publicly visible and creates accountability. Politicians remain free to override recommendations, but they must do so transparently, with their deviations recorded and their outcomes tracked.
 
 **Step 4: Independent oracles measure outcomes**
 
@@ -149,9 +148,9 @@ Multiple independent data sources (Census Bureau, Federal Reserve, academic inst
 
 **Step 5: Incentive Alignment Bonds create consequences**
 
-Politicians' votes are recorded on-chain. Those who voted YES on a budget that improved the metric receive IAB payouts. Those who voted NO (blocking good policy) or YES on budgets that failed lose money. Citizens can see: "Senator X bet against median income going up."
+Optimocracy publishes recommendations for every major budget and policy vote. Politicians' votes are compared to these recommendations and recorded immutably. Those whose voting records align with evidence-based recommendations receive larger IAB payouts when the metric improves. This creates a "political index fund": follow systematic recommendations, get rewarded for results. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to outcomes.
 
-You don't need superintelligent AI. You need a clear, measurable goal; historical data on what worked; independent verification; and financial consequences for politicians. Index funds already do this for investing. They have a target (match the index), transparent methodology, independent measurement (daily prices), and accountability if they underperform. Optimocracy extends this logic to governance.
+You don't need superintelligent AI. You need a clear, measurable goal; historical data on what worked; independent verification; and financial consequences for politicians. Index funds already do this for investing. They have a target (match the index), transparent methodology, independent measurement (daily prices), and accountability if they underperform. Optimocracy extends this logic to governance: politicians who follow the evidence-based "index" get paid when it works.
 
 ### Contributions
 
@@ -161,7 +160,7 @@ This paper makes three contributions to the political economy literature:
 
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when metric-bound allocation outperforms discretionary governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 
-3. **Applied**: We propose a concrete implementation architecture combining algorithmic optimization, decentralized oracles, and smart contract enforcement, with testable predictions and falsification criteria.
+3. **Applied**: We propose a concrete implementation architecture combining algorithmic optimization, independent verification systems, and rule-based enforcement, with testable predictions and falsification criteria.
 
 ## The Scale of Welfare Loss: Empirical Foundations
 
@@ -548,13 +547,13 @@ Index funds demonstrate that:
 2. Systematic approaches eliminate both inconsistency and fees
 3. Scale and consistency beat sporadic brilliance
 
-### Smart Contracts and Credible Commitment
+### Credible Commitment Mechanisms
 
 The missing technology for Optimocracy was credible commitment: the ability to bind future decision-makers to current rules. Traditional constitutions attempt this but are subject to reinterpretation, amendment, and outright violation.
 
-Smart contracts provide cryptographically enforced commitment. Once deployed, a smart contract executes exactly as written. No human can override it without controlling a majority of network validators (which, for major blockchains, would require billions of dollars and coordination among thousands of independent parties).
+Modern self-executing agreements provide cryptographically enforced commitment. Once deployed, these immutable rules execute exactly as written. The rules are publicly auditable, and any deviation is immediately detectable.
 
-This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and any observer can verify this promise by auditing the contract code.
+This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and any observer can verify this promise by auditing the published code and parameters.
 
 ## Mechanism Design
 
@@ -567,13 +566,13 @@ Optimocracy operates through three layers:
 │                 CONSTITUTIONAL LAYER                     │
 │  - Citizens choose optimization metric                   │
 │  - Democratic process, changed rarely                    │
-│  - Encoded as immutable smart contract parameters        │
+│  - Encoded as immutable published rules                  │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│                    ORACLE LAYER                          │
-│  - Decentralized data feeds                             │
+│                 VERIFICATION LAYER                       │
+│  - Independent data feeds                               │
 │  - Measures metric values                               │
 │  - Validates allocation outcomes                        │
 └─────────────────────────────────────────────────────────┘
@@ -582,7 +581,7 @@ Optimocracy operates through three layers:
 ┌─────────────────────────────────────────────────────────┐
 │                  EXECUTION LAYER                         │
 │  - Algorithmic optimization                             │
-│  - Smart contract enforcement                           │
+│  - Rule-based enforcement                               │
 │  - Automatic fund disbursement                          │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -607,9 +606,9 @@ Citizens, through democratic processes, select the optimization objective. This 
 
 The constitutional choice is difficult to change by design. Super-majority requirements, time delays, and deliberative processes ensure stability while allowing adaptation to genuinely changed circumstances.
 
-### The Oracle Layer
+### The Verification Layer
 
-Oracles translate real-world outcomes into on-chain data that smart contracts can act upon. The critical design challenge is oracle capture: if a single entity controls the data feed, they effectively control the allocation.
+Verification systems translate real-world outcomes into data that allocation algorithms can act upon. The critical design challenge is verification capture: if a single entity controls the data feed, they effectively control the allocation.
 
 **Decentralized oracle solutions:**
 
@@ -620,7 +619,7 @@ Oracles translate real-world outcomes into on-chain data that smart contracts ca
 | **Schelling point games** | Validators rewarded for matching consensus | Game-theoretic truth-telling incentive |
 | **Government statistics** | Use official GDP, health statistics | Trusted but potentially politicized |
 
-For metrics like median income or life expectancy, robust government statistical agencies provide reliable baseline data. For more novel metrics, decentralized oracle networks like Chainlink or UMA provide manipulation-resistant data feeds.
+For metrics like median income or life expectancy, robust government statistical agencies provide reliable baseline data. For more novel metrics, independent verification networks using multi-source aggregation provide manipulation-resistant data feeds.
 
 **Concrete example** (measuring median income growth):
 
@@ -646,9 +645,9 @@ This is a real concern. The solution is **genuinely independent data collection 
 
 | Component | Implementation | Why It Works |
 |-----------|----------------|--------------|
-| **Identity verification** | Proof of personhood protocols (national digital ID, bank KYC, Worldcoin, BrightID) | Prevents Sybil attacks (one person = one response) |
-| **Data collection** | Normal web/mobile interface (blockchain is invisible backend) | No crypto expertise required |
-| **Storage** | Responses stored on blockchain | Immutable, auditable, can't be retroactively altered by captured agencies |
+| **Identity verification** | Proof of personhood protocols (national digital ID, bank KYC, or similar) | Prevents Sybil attacks (one person = one response) |
+| **Data collection** | Normal web/mobile interface (distributed ledger is invisible backend) | No technical expertise required |
+| **Storage** | Responses stored in tamper-proof distributed system | Immutable, auditable, can't be retroactively altered by captured agencies |
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
 | **Privacy** | Zero-knowledge proofs | Prove you're a unique person without revealing identity |
 
@@ -690,7 +689,7 @@ For simple metrics with known production functions, this optimization is straigh
 2. **Prediction markets**: Aggregate distributed information about allocation effectiveness
 3. **Machine learning**: Learn allocation-outcome mappings from historical data
 
-Smart contracts enforce the resulting allocation, automatically disbursing funds to designated recipients based on the optimization output.
+The execution system enforces the resulting allocation, automatically disbursing funds to designated recipients based on the optimization output.
 
 For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Optimization Algorithm.
 
@@ -762,7 +761,7 @@ This framing has significant legitimacy advantages. We're not proposing technocr
 |--------|----------------------|---------|--------|-------------|
 | **Life** | Declaration: "Life" | Median life expectancy, preventable mortality rate | 25% | Vital statistics (deaths are binary, hard to fake) |
 | **Liberty** | Declaration: "Liberty" | Incarceration rate, regulatory burden index, perceived freedom | 25% | Government data + decentralized surveys |
-| **Happiness** | Declaration: "Pursuit of Happiness" | Life satisfaction, sense of purpose/meaning | 25% | Decentralized citizen surveys (blockchain-stored) |
+| **Happiness** | Declaration: "Pursuit of Happiness" | Life satisfaction, sense of purpose/meaning | 25% | Decentralized citizen surveys (tamper-proof storage) |
 | **General Welfare** | Constitution Preamble | Median real income, healthcare affordability, poverty rate | 25% | Tax records + surveys |
 
 **Why this composite resists gaming:**
@@ -962,13 +961,13 @@ Optimocracy allocation is fully transparent:
 
 | Component | Discretionary Governance | Optimocracy |
 |-----------|-------------------------|-------------|
-| Objective | Unstated, inferred from outcomes | Explicit, encoded in smart contract |
-| Data inputs | Cherry-picked by advocates | Public oracle feeds, auditable |
+| Objective | Unstated, inferred from outcomes | Explicit, encoded in published rules |
+| Data inputs | Cherry-picked by advocates | Public data feeds, auditable |
 | Decision process | Closed-door negotiations | Open-source algorithm |
-| Allocation results | Buried in budget documents | On-chain transactions, real-time |
-| Deviation detection | Requires investigative journalism | Automatic, cryptographically verified |
+| Allocation results | Buried in budget documents | Published recommendations, real-time |
+| Deviation detection | Requires investigative journalism | Automatic, publicly verifiable |
 
-**Any citizen can verify that allocation follows the rules.** More importantly, deviation is not just detectable but *impossible*. The smart contract enforces the algorithm. You can't bribe a smart contract. You can't threaten a smart contract with a primary challenge. The code executes as written.
+**Any citizen can verify that allocation follows the rules.** More importantly, deviation is immediately visible. The algorithm's recommendations are public; any politician who overrides them must do so on the record. You can't secretly redirect funds when the optimal allocation is published and deviations are tracked. Transparency creates accountability that closed-door negotiations cannot.
 
 **The audit trail advantage:** When outcomes disappoint, discretionary governance provides plausible deniability ("the situation was complex," "we had to compromise"). Optimocracy provides an audit trail: here was the metric, here was the data, here was the algorithm, here was the allocation. If outcomes disappoint, we can identify exactly where the model was wrong and improve it. Accountability becomes tractable.
 
@@ -995,7 +994,7 @@ Current politics rewards tribal opposition. Politicians gain by making the other
 
 Optimocracy shifts the debate from "whose policy?" to "what works?" The algorithm doesn't know which party proposed the budget. It only knows whether the metric improved. Politicians are rewarded for outcomes, not for tribal loyalty.
 
-**This creates strange bedfellows for good policy:** Under Optimocracy, a Republican who votes YES on a budget that improves outcomes gets IAB payouts alongside Democrats who voted the same way. The incentive to reflexively oppose good policy because the other party proposed it disappears. You're betting against your own wallet.
+**This creates strange bedfellows for good policy:** Under Optimocracy, a Republican who aligns with evidence-based recommendations gets IAB payouts alongside Democrats who did the same, regardless of which party originally proposed the policy. The incentive to reflexively oppose good policy because the other party proposed it disappears. You're betting against your own wallet when you vote against recommendations that work.
 
 **The depolarization mechanism:** When debate centers on "whose team wins?", every issue becomes tribal. When debate centers on "did median income go up?", tribalism has nothing to grab onto. You can't spin the Census Bureau as a Democratic or Republican institution. The number either went up or it didn't.
 
@@ -1074,6 +1073,8 @@ Extrapolating from these precedents, we assume gaming reduces Optimocracy's welf
 
 If adversaries control the data feed, they control the allocation. This is the Achilles' heel of algorithmic governance. The credit rating agency failures demonstrate the severity: when measurement entities have incentives to misreport, algorithmic systems fail catastrophically.
 
+This is precisely why Optimocracy's verification layer uses decentralized citizen surveys as a primary data source (see Section 8). Unlike credit ratings (which relied on the rated entities paying for ratings from three capturable agencies), Optimocracy's surveys aggregate millions of independent responses with no individual able to move the needle. The credit rating failure was a monopoly capture problem; decentralized surveys eliminate the monopoly.
+
 **The fundamental problem:**
 
 Optimocracy creates enormous concentrated value from controlling metrics. If $50 trillion in allocation depends on median income growth, the entity that measures median income has power equivalent to Congress. Rational actors will invest heavily in capturing this measurement authority.
@@ -1100,6 +1101,8 @@ The paper claims "government statistics provide reasonable reliability" (line 72
 
 Government statistical agencies are not neutral. They face political pressure, budget constraints, and revolving-door incentives. The Bureau of Labor Statistics has ~2,000 employees and a $750M budget - trivial to influence compared to trillions in allocation.
 
+The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (Section 8). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
+
 **Concrete example: Healthcare inefficiency measurement**
 
 Consider the bottom-up policy cost estimates from Section 2. @papanicolas2018 document {{< var bad_policy_cost_us_healthcare_inefficiency >}} in annual excess US healthcare spending compared to peer nations. But this figure depends critically on methodology:
@@ -1121,9 +1124,9 @@ Similarly, housing/zoning costs ({{< var bad_policy_cost_us_housing_zoning >}} p
 | **Schelling point games** | Game-theoretic truth-telling | Multiple equilibria; coordination on false consensus possible |
 | **Reputation weighting** | Punishes historical inaccuracy | Newcomers can't gain weight; incumbents entrenched |
 
-**The hard truth about decentralized oracles:**
+**The hard truth about independent verification:**
 
-Decentralized oracle networks (Chainlink, UMA, etc.) work for price feeds where truth is verifiable and immediate (ETH/USD has a market price anyone can check). They are unproven for complex social metrics where:
+Distributed verification networks work for data where truth is verifiable and immediate (market prices have observable values anyone can check). They are unproven for complex social metrics where:
 
 1. **Truth is contested**: What is "median income"? Which methodology?
 2. **Verification is delayed**: Health outcomes take years to observe
@@ -1132,7 +1135,7 @@ Decentralized oracle networks (Chainlink, UMA, etc.) work for price feeds where 
 
 **Mitigation strategies (realistic assessment):**
 
-1. **Multiple measurement methodologies**: Require improvement across surveys, administrative data, and direct measurement. Gaming all three is harder but not impossible - see credit rating agencies using multiple models that all failed.
+1. **Multiple measurement methodologies**: Require improvement across surveys, administrative data, and direct measurement. Gaming all three is harder but not impossible. Credit rating agencies used multiple models that all failed. The key difference: credit rating models were all controlled by three capturable agencies. Optimocracy's decentralized surveys have millions of independent respondents with no concentrated control point. Coordinating manipulation across millions of citizens is categorically harder than capturing three agency directors.
 
 2. **Adversarial auditing with real teeth**: Fund well-resourced independent teams to find gaming opportunities and challenge measurements. But who funds the auditors? If Optimocracy funds them, it controls them.
 
@@ -1147,6 +1150,8 @@ Decentralized oracle networks (Chainlink, UMA, etc.) work for price feeds where 
 Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. "Decentralized oracles" sound like a solution, but they're unproven at the scale and stakes Optimocracy requires. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?"
 
 The answer may still be yes - oracle capture affects measurement, while allocation capture affects outcomes directly. But this is a bet, not a certainty. Optimocracy reduces attack surface but increases stakes at each remaining attack point.
+
+That said, the political economy of capturing decentralized surveys is fundamentally different from capturing centralized agencies. You cannot lobby, threaten, or bribe millions of anonymous citizens. The capture cost scales with the number of respondents, not the number of agency directors. A BLS with 2,000 employees has 2,000 potential pressure points; a survey with 10 million respondents has no concentrated pressure points. This doesn't make capture impossible, but it changes the cost-benefit calculation dramatically.
 
 **How the Wrapper Architecture Changes This Calculus:**
 
@@ -1286,9 +1291,9 @@ A publishable theory must generate falsifiable predictions. This section present
 
 ### Optimocracy-Specific Predictions
 
-**Prediction 5: Private Optimocracy DAOs will outperform traditional philanthropic allocation on chosen metrics.**
+**Prediction 5: Private Optimocracy funds will outperform traditional philanthropic allocation on chosen metrics.**
 
-- *Test*: Compare QALY/$, lives saved/$, or similar metrics across Optimocracy DAOs vs. traditional foundations
+- *Test*: Compare QALY/$, lives saved/$, or similar metrics across Optimocracy outcome funds vs. traditional foundations
 - *Expected finding*: Optimocracy allocation achieves significantly better metric performance (commensurate with eliminating the Crony Tax)
 - *Timeline*: Testable within 3-5 years of deployment
 
@@ -1326,7 +1331,7 @@ Pure Optimocracy (fully metric-bound allocation) is neither feasible nor desirab
 │                    ALGORITHMIC CORE                      │
 │  - Routine allocation within established categories     │
 │  - Metric optimization with verified outcomes           │
-│  - Smart contract enforcement                           │
+│  - Rule-based enforcement                               │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
@@ -1382,24 +1387,27 @@ No layer directly pays politicians. Instead, universal, pre-announced rules syst
 
 **How Optimocracy integrates with IABs:**
 
-1. **Optimocracy defines** the objective function (e.g., median income growth)
-2. **Oracles measure** politician impact on the metric
-3. **IABs reward** politicians whose votes correlate with metric improvement
-4. **Smart contracts enforce** the reward distribution
+1. **Optimocracy defines** the objective function (e.g., median income growth) and publishes recommendations for each major vote
+2. **Politicians vote** however they choose; their alignment with recommendations is tracked publicly
+3. **Verification systems measure** whether the metric improved
+4. **IABs reward** politicians proportionally to their alignment score, gated on metric improvement
 
 **Concrete example:**
 
 | Event | What Happens |
 |-------|--------------|
-| **Year 1:** Algorithm proposes budget | Optimocracy outputs: "Shift $200B from defense to early childhood education" |
-| **Vote recorded on-chain** | Senator Smith votes YES. Senator Jones votes NO (protecting defense contractors). Votes are immutable public record. |
-| **Year 3:** Oracles measure outcome | Census Bureau, Fed, and two academic institutions report median income grew 2.1% (vs. 0.8% baseline trend) |
-| **IAB settlement** | Senator Smith's IAB pays out $2M (she bet on citizens). Senator Jones's IAB pays $0 (he bet against them). |
-| **Public transparency** | Citizens see: "Smith supported the budget that raised your income. Jones blocked it." |
+| **Optimocracy publishes recommendations** | "Support HR-1234 (early childhood funding increase)." "Oppose HR-5678 (regulatory capture provision)." |
+| **Votes recorded** | Senator Smith votes aligned on both (2/2 = 100%). Senator Jones votes misaligned on both (0/2 = 0%). |
+| **Year 3: Metric measured** | Census Bureau, Fed, and academic institutions report median income grew 2.1% (improvement detected) |
+| **Alignment scores calculated** | End-of-term totals: Smith 78% aligned with recommendations. Jones 34% aligned. |
+| **IAB payouts** | Smith receives $2M (high alignment + metric improvement). Jones receives $400K (low alignment, still gets baseline for improvement). |
+| **Public transparency** | Citizens see: "Smith followed evidence-based recommendations 78% of the time. Your income grew 2.1%." |
 
-The politician's choice becomes simple: vote YES on evidence-based budgets and get paid when they work, or vote NO and face both financial loss and public accountability. IABs convert abstract "doing the right thing" into concrete "this is how you make money."
+The politician's choice becomes simple: follow evidence-based recommendations and get paid when they work, or follow donor preferences and face both financial loss and public accountability. IABs convert abstract "doing the right thing" into concrete "this is how you make money."
 
 This creates a closed loop: politicians are paid for improving outcomes, not for satisfying donors or winning elections.
+
+**The political index fund:** Index funds outperform active management by following systematic rules rather than stock-picking. IABs apply the same logic to politics: politicians who follow evidence-based recommendations (the "index") get rewarded when outcomes improve. No need for perfect information or superhuman judgment. Just follow the recommendation, get paid for results. This reverses the current incentive structure where following donor preferences pays better than following citizen welfare. The recommendation is public; the outcome is measurable; the payout is automatic. Politicians become portfolio managers whose performance is tracked against the benchmark.
 
 ## Political Economy: Making Reform Happen
 
@@ -1488,7 +1496,7 @@ Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create
 2. **IABs are issued** promising payments to politicians/interests conditional on reform outcomes
 3. **Politicians support reform** because expected IAB payments exceed expected lobbying revenue
 4. **Outcomes are measured** via Optimocracy's oracle layer
-5. **Payments are made** via smart contracts based on outcome metrics
+5. **Payments are made** via automated rules based on outcome metrics
 
 **Why this isn't corruption:**
 
@@ -1574,12 +1582,12 @@ The arithmetic favors reform: welfare gains vastly exceed compensation costs, an
 
 | Phase | Objective | Success Metric |
 |-------|-----------|----------------|
-| **Private DAO** | Deploy for philanthropic capital, prove mechanism works | DAO allocating $10M+ with verifiable metric improvement |
+| **Private Outcome Fund** | Deploy for philanthropic capital, prove mechanism works | Fund allocating $10M+ with verifiable metric improvement |
 | **Shadow Tracking** | Generate counterfactual "what would Optimocracy allocate?" | Shadow budget demonstrably outperforms actual allocation |
 | **Government Pilots** | Partner with reform-minded jurisdictions for limited-scope pilots | 3+ jurisdictions running pilots with measurable welfare improvement |
 | **Broader Adoption** | Scale through demonstrated success and competitive pressure | Major jurisdiction adopts for significant budget share |
 
-The bottleneck is not technology. Smart contracts, decentralized oracles (Chainlink, UMA), and DAO governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
+The bottleneck is not technology. Immutable rule execution, independent verification networks, and algorithmic governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
 
 ### Realistic Adoption Path
 
@@ -1590,9 +1598,9 @@ Mass participation follows demonstrated results, not precedes them. Index funds 
 3. **Broader legitimacy**: Success attracts mainstream foundations and impact investors
 4. **Mass participation**: Eventually, retail participation becomes viable
 
-Starting small is a feature, not a bug: a $10M DAO with 50 committed participants can experiment, fail fast, and improve before scaling.
+Starting small is a feature, not a bug: a $10M outcome fund with 50 committed participants can experiment, fail fast, and improve before scaling.
 
-### Concrete First Deployment: The GiveWell DAO
+### Concrete First Deployment: The GiveWell Outcome Fund
 
 We propose a specific first deployment to make Optimocracy actionable rather than theoretical.
 
@@ -1609,12 +1617,12 @@ We propose a specific first deployment to make Optimocracy actionable rather tha
 
 | Component | Specification |
 |-----------|---------------|
-| **Legal entity** | DAO structured as nonprofit foundation (Wyoming DAO LLC or similar) |
+| **Legal entity** | Nonprofit foundation with algorithmic allocation rules |
 | **Initial capital** | $10-50M from aligned foundations and major EA donors |
 | **Metric** | QALYs per dollar, verified by independent health economists |
-| **Oracle** | GiveWell evaluations + academic verification + randomized outcome audits |
+| **Verification** | GiveWell evaluations + academic verification + randomized outcome audits |
 | **Allocation algorithm** | Maximize expected QALYs subject to diversification constraints |
-| **Governance** | Token-weighted voting on metric selection; algorithm execution is automatic |
+| **Governance** | Stakeholder voting on metric selection; algorithm execution is automatic |
 
 **Success criteria (Year 1-3):**
 1. Achieve measurably higher QALY/$ than comparable discretionary foundations
@@ -1624,7 +1632,7 @@ We propose a specific first deployment to make Optimocracy actionable rather tha
 
 **Why start here:**
 
-GiveWell already functions as an oracle for global health interventions. The EA community already optimizes for measurable outcomes. This deployment is Optimocracy with minimal new infrastructure, primarily adding algorithmic allocation and on-chain transparency to existing evaluation frameworks.
+GiveWell already functions as a verification system for global health interventions. The EA community already optimizes for measurable outcomes. This deployment is Optimocracy with minimal new infrastructure, primarily adding algorithmic allocation and transparent tracking to existing evaluation frameworks.
 
 Success here provides proof-of-concept for progressively harder domains: US healthcare allocation, infrastructure spending, research funding, and eventually general government budgets.
 
@@ -1636,20 +1644,20 @@ The implementation phases above present government adoption as the goal. But the
 
 | Component | Role | Funding Source |
 |-----------|------|----------------|
-| **Optimocracy DAO** | Computes optimal allocations and policy recommendations | Donations, grants, impact investments |
-| **Shadow Publications** | Publishes "what should be allocated" for every budget cycle | Included in DAO operations |
+| **Optimocracy Foundation** | Computes optimal allocations and policy recommendations | Donations, grants, impact investments |
+| **Shadow Publications** | Publishes "what should be allocated" for every budget cycle | Included in foundation operations |
 | **IAB Campaigns** | Reward politicians for voting in line with recommendations AND achieving outcomes | Bond purchases from beneficiaries |
 | **Government** | Unchanged. Still votes, still implements, still democratically accountable | Taxpayers (as always) |
 
 **Funding flow:**
 
 ```
-Citizens/Foundations → DAO (operational funding)
+Citizens/Foundations → Optimocracy Foundation (operational funding)
                     → IAB purchases (politician incentive funding)
                            ↓
                     Politicians vote for recommended policies
                            ↓
-                    Outcomes measured by oracles
+                    Outcomes measured by verification systems
                            ↓
                     IAB payouts to politicians who voted correctly AND outcomes improved
 ```
@@ -1682,13 +1690,17 @@ This reframing converts the implementation problem from a political revolution (
 
 Discretionary governance is not failing because politicians are evil or voters are ignorant. It is failing because the incentive structure makes capture inevitable. No amount of transparency, campaign finance reform, or civic education can eliminate the fundamental misalignment between political incentives and citizen welfare.
 
-Optimocracy offers a different approach: rather than relying on systems that don't optimize for outcomes, introduce metric-bound allocation for decisions where optimization is feasible. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via smart contracts.
+Optimocracy offers a different approach: rather than relying on systems that don't optimize for outcomes, introduce metric-bound allocation for decisions where optimization is feasible. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via transparent rules.
 
-The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Smart contracts enable credible commitment that was previously impossible.
+The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Immutable algorithmic rules enable credible commitment that was previously impossible.
 
 Optimocracy is not utopian. It faces real challenges: Goodhart's Law, oracle capture, edge cases, and democratic legitimacy. But these challenges are addressable through careful mechanism design, hybrid architectures, and iterative implementation.
 
 The question is not whether Optimocracy is perfect; no governance system is. The question is whether metric-bound algorithmic allocation produces better outcomes than discretionary allocation subject to capture. The evidence suggests it does.
+
+### What About AI?
+
+Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. That's metric selection, a fundamentally democratic choice, not a technical problem. Even a superintelligent AI should operate within an Optimocracy-like structure: humans specify objectives democratically, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving democratic legitimacy and human oversight.
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
@@ -1696,60 +1708,27 @@ The urgency grows with each passing year. Deepfakes are eroding the shared factu
 
 ## Appendix A: Technical Specification Sketch
 
-### Smart Contract Architecture
+### Execution Architecture
 
-```solidity
-// Simplified Optimocracy allocation contract
-contract OptimocracyAllocation {
+The allocation mechanism can be implemented as self-executing agreements that ensure, once parameters are set, allocation follows the algorithm without requiring ongoing human intervention. The key components are:
 
-    // Constitutional parameters (set once, hard to change)
-    address public oracleRegistry;
-    bytes32 public metricId;
-    uint256 public constitutionalThreshold; // Super-majority for changes
+1. **Constitutional parameters**: The optimization metric, weighting scheme, and amendment thresholds
+2. **Verification integration**: Interface with independent data sources for metric values
+3. **Allocation execution**: Algorithm that computes optimal allocations based on current metric data
+4. **Disbursement**: Automatic fund distribution to designated recipients
 
-    // Allocation state
-    mapping(bytes32 => uint256) public categoryWeights;
-    uint256 public totalBudget;
+The system requires supermajority agreement to modify constitutional parameters, ensuring stability while allowing adaptation to changed circumstances.
 
-    // Oracle integration
-    function updateMetricValue() external {
-        uint256 newValue = IOracle(oracleRegistry).getMetric(metricId);
-        emit MetricUpdated(metricId, newValue);
-    }
+### Verification System Specification
 
-    // Optimization execution
-    function executeAllocation(bytes32[] calldata categories) external {
-        // Verify oracle data freshness
-        require(oracleDataFresh(), "Stale oracle data");
-
-        // Run optimization algorithm
-        uint256[] memory allocations = optimize(categories, totalBudget);
-
-        // Disburse funds
-        for (uint i = 0; i < categories.length; i++) {
-            disburse(categories[i], allocations[i]);
-        }
-    }
-
-    // Constitutional amendment (high threshold)
-    function amendMetric(bytes32 newMetricId) external {
-        require(msg.sender == governanceContract, "Unauthorized");
-        require(supermajorityAchieved(), "Insufficient support");
-        metricId = newMetricId;
-    }
-}
-```
-
-### Oracle Specification
-
-Oracles must provide:
+Verification systems must provide:
 
 1. **Metric value**: Current measured value of optimization target
 2. **Confidence interval**: Uncertainty bounds on measurement
 3. **Timestamp**: When measurement was taken
-4. **Methodology hash**: Cryptographic commitment to measurement methodology
+4. **Methodology documentation**: Published commitment to measurement methodology
 
-Multiple oracles are aggregated using median or stake-weighted average to resist manipulation.
+Multiple verification sources are aggregated using median or stake-weighted average to resist manipulation.
 
 ### Budget and Policy Optimization: Two Complementary Frameworks
 
@@ -1849,49 +1828,48 @@ Both frameworks feed into the Constitutional Layer, which binds governance to ev
 
 The Political Dysfunction Tax (estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
 
-### Smart Contract Threat Model
+### Algorithmic Governance Threat Model
 
-Any honest assessment of smart contract governance must acknowledge historical failures and ongoing attack surfaces:
+Any honest assessment of algorithmic governance must acknowledge potential failure modes and attack surfaces:
 
 #### Known Failure Modes
 
-| Attack Vector | Historical Example | Mitigation | Residual Risk |
-|--------------|-------------------|------------|---------------|
-| **Reentrancy** | The DAO (2016): $60M stolen | Checks-effects-interactions pattern, reentrancy guards | Medium: novel variants emerge |
-| **Flash loan governance** | Beanstalk (2022): $182M stolen | Time-locks, snapshot voting | Medium: timing attacks possible |
-| **Oracle manipulation** | Mango Markets (2022): $114M | Multi-oracle aggregation, TWAP, circuit breakers | High: fundamental challenge |
-| **Upgrade key compromise** | Ronin bridge (2022): $620M | Multi-sig, time-locks, social layer verification | Medium: key management remains hard |
-| **Economic attacks** | Various DEX exploits | Formal verification, economic audits | High: novel attack surfaces |
+| Attack Vector | Risk | Mitigation | Residual Risk |
+|--------------|------|------------|---------------|
+| **Verification manipulation** | Corrupting data feeds to trigger favorable allocations | Multi-source aggregation, time-weighted averages, circuit breakers | High: fundamental challenge |
+| **Parameter exploitation** | Gaming system rules through edge cases | Formal verification, economic audits | Medium: novel attacks possible |
+| **Administrative compromise** | Capturing upgrade or amendment authority | Multi-party approval, time-locks, transparency requirements | Medium: key management remains hard |
+| **Implementation errors** | Software bugs leading to unintended behavior | Code audits, gradual deployment, bug bounties | Medium: novel variants emerge |
 
-#### Why "Code is Law" is Insufficient
+#### Why "Immutable Rules" Are Insufficient
 
-The naive view that immutable smart contracts eliminate discretion ignores:
+The naive view that immutable algorithmic rules eliminate discretion ignores:
 
-1. **Deployment discretion**: Someone chooses the initial parameters, metric definitions, and oracle set
+1. **Deployment discretion**: Someone chooses the initial parameters, metric definitions, and verification sources
 2. **Upgrade mechanisms**: Production systems require bug fixes; upgrade authority creates capture risk
-3. **Off-chain dependencies**: Real-world execution (disbursing funds to researchers) requires trusted intermediaries
-4. **Legal layer**: States can mandate forks, freeze assets, or prosecute operators regardless of code
+3. **Real-world dependencies**: Execution (disbursing funds to researchers) requires trusted intermediaries
+4. **Legal layer**: States can mandate changes, freeze assets, or prosecute operators regardless of rules
 
 #### Realistic Security Properties
 
 Optimocracy does not claim to eliminate all governance risk. It claims to:
 
-1. **Raise attack costs**: Capturing a decentralized oracle network costs more than lobbying a committee
+1. **Raise attack costs**: Capturing multiple independent verification sources costs more than lobbying a committee
 2. **Increase transparency**: All allocation rules are public and auditable
 3. **Reduce discretionary surface**: Fewer decision points where capture can occur
 4. **Enable credible commitment**: Harder (not impossible) to deviate from stated rules
 
-**The honest comparison** isn't "smart contracts vs. perfect security." It's "smart contracts vs. Congress." The entire history of crypto hacks (~$3B total) is a rounding error on what special interests extract from the federal budget annually. Smart contract hacks are visible, embarrassing, and spawn better security practices. Congressional capture is invisible, legal, and permanent. The Farm Bill has been getting worse since 1933. Neither is perfect, but one system learns from failures.
+**The honest comparison** isn't "algorithmic governance vs. perfect security." It's "algorithmic governance vs. Congress." Algorithmic system failures are visible, embarrassing, and spawn better security practices. Congressional capture is invisible, legal, and permanent. The Farm Bill has been getting worse since 1933. Neither is perfect, but one system learns from failures.
 
 #### Defense-in-Depth Architecture
 
 Production Optimocracy systems should implement:
 
-1. **Formal verification** of core contract logic
+1. **Formal verification** of core allocation logic
 2. **Economic audits** modeling incentive-compatible attacks
 3. **Gradual deployment** with value caps that increase as the system proves reliable
 4. **Circuit breakers** that pause allocation if metrics move anomalously
-5. **Social layer governance** for handling edge cases and emergencies
+5. **Human oversight layer** for handling edge cases and emergencies
 6. **Insurance pools** funded by a percentage of allocations
 
 ## Acknowledgments {.unnumbered}
