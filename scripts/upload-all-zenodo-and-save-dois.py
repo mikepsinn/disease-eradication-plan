@@ -72,29 +72,25 @@ def discover_papers() -> dict:
 
 def rebuild_paper(paper_key: str) -> bool:
     """Rebuild a paper using render-quarto.py."""
-    print(f"\n[*] Building {paper_key}...")
+    print(f"\n[*] Building {paper_key}...", flush=True)
     render_script = PROJECT_ROOT / "scripts" / "render-quarto.py"
 
     try:
         result = subprocess.run(
-            [sys.executable, str(render_script), paper_key],
+            [sys.executable, "-u", str(render_script), paper_key],
             cwd=str(PROJECT_ROOT),
-            capture_output=True,
-            text=True,
-            encoding='utf-8',
             timeout=600
         )
         if result.returncode == 0:
-            print(f"[OK] Built {paper_key}")
+            print(f"[OK] Built {paper_key}", flush=True)
             return True
-        print(f"ERROR: Build failed for {paper_key}")
-        print(result.stderr)
+        print(f"ERROR: Build failed for {paper_key}", flush=True)
         return False
     except subprocess.TimeoutExpired:
-        print(f"ERROR: Build timeout for {paper_key}")
+        print(f"ERROR: Build timeout for {paper_key}", flush=True)
         return False
     except Exception as e:
-        print(f"ERROR: {e}")
+        print(f"ERROR: {e}", flush=True)
         return False
 
 
