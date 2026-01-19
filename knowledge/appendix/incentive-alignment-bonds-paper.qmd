@@ -1237,7 +1237,7 @@ The four layers must be implemented in order:
 
 *Wishocracy becomes feasible only after IABs create political conditions for resource reallocation; otherwise faces same adoption barriers as IABs.
 
-**Key insights:**
+**Other governance mechanisms:**
 
 1. **Algorithmic governance (Optimocracy) faces capture at the design level:** whoever controls the algorithm specification controls outcomes. However, this can be mitigated through constitutional-level metric selection (via Wishocracy), decentralized oracles, and smart contract enforcement. See the [Optimocracy paper](optimocracy-paper.qmd) for detailed mechanism design addressing these challenges.
 
@@ -1254,7 +1254,7 @@ The four layers must be implemented in order:
 3. **Medium-term (10-20 years):** Use IAB political capital + Optimocracy track record to pass government pilots for Wishocracy and Optimocracy.
 4. **Long-term (20+ years):** Hybrid Wishocracy-Optimocracy architecture becomes standard for capture-resistant governance.
 
-**Key insight:** Optimocracy and IABs can develop in parallel. Private Optimocracy doesn't require government adoption, so it can demonstrate proof-of-concept while IABs work on the political adoption problem.
+Optimocracy and IABs can develop in parallel. Private Optimocracy doesn't require government adoption, so it can demonstrate proof-of-concept while IABs work on the political adoption problem.
 
 ### What IABs Do Not Solve
 
@@ -1358,7 +1358,7 @@ If the mechanism has only a 10% chance of achieving treaty passage, expected BCR
 | Futarchy infrastructure | \$500M-$1B | Uncertain | Unknown |
 | Charter cities | \$1B+ | Limited scale | 1:1 to 5:1 |
 
-**Key insight:** IABs' welfare accounting is favorable precisely because they solve the *adoption* problem. Better domain prioritization (Layer 0 Wishocracy) costs little but achieves nothing if politicians ignore the rankings. Better allocation mechanisms (futarchy, Layer 2 Wishocracy) are valuable only if adopted, which requires Layer 1 (IABs) first. The mechanism's overhead is justified by making all other governance improvements politically feasible.
+IABs' welfare accounting is favorable precisely because they solve the *adoption* problem. Better domain prioritization (Layer 0 Wishocracy) costs little but achieves nothing if politicians ignore the rankings. Better allocation mechanisms (futarchy, Layer 2 Wishocracy) are valuable only if adopted, which requires Layer 1 (IABs) first. The mechanism's overhead is justified by making all other governance improvements politically feasible.
 
 **Risks to welfare accounting:**
 

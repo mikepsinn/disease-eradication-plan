@@ -13,7 +13,7 @@ allowed-tools:
 
 # QMD Redundancy Check
 
-## Key Insight for _latex Variables
+##  _latex Variables
 
 All `{{< var X >}}` variables are hyperlinks to their derivations. When removing `{{< var X_latex >}}`, just delete it - no need to add links.
 

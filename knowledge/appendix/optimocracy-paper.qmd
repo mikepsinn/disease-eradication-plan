@@ -151,7 +151,7 @@ Multiple independent data sources (Census Bureau, Federal Reserve, academic inst
 
 Politicians' votes are recorded on-chain. Those who voted YES on a budget that improved the metric receive IAB payouts. Those who voted NO (blocking good policy) or YES on budgets that failed lose money. Citizens can see: "Senator X bet against median income going up."
 
-**The key insight.** You don't need superintelligent AI. You need a clear, measurable goal; historical data on what worked; independent verification; and financial consequences for politicians. Index funds already do this for investing. They have a target (match the index), transparent methodology, independent measurement (daily prices), and accountability if they underperform. Optimocracy extends this logic to governance.
+You don't need superintelligent AI. You need a clear, measurable goal; historical data on what worked; independent verification; and financial consequences for politicians. Index funds already do this for investing. They have a target (match the index), transparent methodology, independent measurement (daily prices), and accountability if they underperform. Optimocracy extends this logic to governance.
 
 ### Contributions
 
@@ -913,7 +913,7 @@ We propose a heuristic split where the majority of routine government spending a
 - International relations
 - Constitutional revision
 
-**Note:** The appropriate boundary depends on institutional context and metric quality. Some jurisdictions may find 60% algorithmic allocation feasible; others may achieve 90%. The key insight is not the specific percentage but the principle: routine allocation with measurable outcomes is a candidate for algorithmic governance, while novel decisions and value conflicts require democratic deliberation.
+**Note:** The appropriate boundary depends on institutional context and metric quality. Some jurisdictions may find 60% algorithmic allocation feasible; others may achieve 90%. Routine allocation with measurable outcomes is a candidate for algorithmic governance, while novel decisions and value conflicts require democratic deliberation.
 
 This hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while using metric-bound systems for routine allocation.
 
@@ -1666,7 +1666,7 @@ Citizens/Foundations → DAO (operational funding)
 
 5. **Market-revealed demand.** The amount people are willing to invest in IABs for different policies reveals which recommendations have genuine support.
 
-**The key insight:** Government "adoption" of Optimocracy would be nice, but it's not necessary. The wrapper architecture achieves most of the benefits without requiring politicians to voluntarily surrender discretion. Instead, it makes exercising discretion *against* optimal policy increasingly costly.
+Government "adoption" of Optimocracy would be nice, but it's not necessary. The wrapper architecture achieves most of the benefits without requiring politicians to voluntarily surrender discretion. Instead, it makes exercising discretion *against* optimal policy increasingly costly.
 
 **The question changes from:**
 
@@ -1759,7 +1759,7 @@ Optimocracy optimizes governance through two complementary mechanisms, each addr
 
 The **Optimal Budget Generator (OBG)** framework answers: "How should we allocate the budget to maximize welfare?"
 
-**Key insight**: Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
 
 | Spending Level | Health Analogy | Budget Interpretation |
 |----------------|----------------|----------------------|
@@ -1789,7 +1789,7 @@ For the complete methodology including estimation procedures, validation framewo
 
 The **Policy Impact Score (PIS)** framework answers: "Which policy reforms would most improve welfare outcomes?"
 
-This extends beyond budget allocation to evaluate *all policies*: laws, regulations, taxes, and administrative rules. The key insight is that budget reallocation alone cannot fix structural inefficiencies:
+This extends beyond budget allocation to evaluate *all policies*: laws, regulations, taxes, and administrative rules. Budget reallocation alone cannot fix structural inefficiencies:
 
 | Problem Type | Example | Budget Optimization Handles? |
 |--------------|---------|------------------------------|

@@ -4455,7 +4455,7 @@ BAD_POLICY_COST_TOTAL_US_PCT_GDP = Parameter(
 # INTERNATIONAL GOVERNANCE EFFICIENCY COMPARISON
 # ---
 # Compare US outcomes to well-governed peer countries to estimate "dysfunction premium"
-# Key insight: Countries spending LESS as % of GDP achieve BETTER outcomes
+# Countries spending LESS as % of GDP achieve BETTER outcomes
 # This provides independent evidence for the Political Dysfunction Tax
 
 # US baseline for comparison

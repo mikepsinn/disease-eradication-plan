@@ -15,7 +15,7 @@ Sources:
 - GDP per capita: World Bank 2023
 - Median income: OECD/LIS 2022-2023
 
-Key insight: Countries achieving 6-7 more years of life expectancy than the US
+Countries achieving 6-7 more years of life expectancy than the US
 spend significantly less on defense ($300-1500 vs $2800 per capita) and achieve
 better outcomes. If their defense spending were inadequate, their welfare metrics
 would reflect security failures (war deaths, economic disruption). They don't.
@@ -384,7 +384,7 @@ def print_comparison():
           f"{gap['rd_gap_pct_gdp']:>+9.1f}%")
     print()
 
-    print("KEY INSIGHTS:")
+    print("INSIGHTS:")
     print(f"  1. US spends ${USA.defense_per_capita - ref['_defense_per_capita']:,.0f} MORE "
           f"per person on defense than high-performers.")
     print(f"  2. US spends ${USA.health_per_capita - ref['_health_per_capita']:,.0f} MORE "

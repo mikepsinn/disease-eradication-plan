@@ -412,7 +412,7 @@ def compare_to_actual(result: AllocationResult) -> str:
         )
 
     lines.append("")
-    lines.append(f"**Key insight:** BIS reallocates ${sum(US_ACTUAL_ALLOCATION.values()) - total_actual:.0f}B "
+    lines.append(f"BIS reallocates ${sum(US_ACTUAL_ALLOCATION.values()) - total_actual:.0f}B "
                  f"from low-return to high-return categories.")
 
     return "\n".join(lines)
