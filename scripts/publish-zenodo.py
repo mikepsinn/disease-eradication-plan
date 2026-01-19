@@ -154,14 +154,16 @@ def publish_paper_with_config(
         print(json.dumps(metadata, indent=2))
         return None
 
-    # Use shared upload function
+    # Use shared upload function (with verification but no DOI saving)
     return upload_paper(
         client=client,
         paper_key=paper_key,
         quarto_config=quarto_config,
         pdf_path=pdf_path,
         draft=skip_publish,
-        verbose=True
+        verbose=True,
+        save_doi=False,  # Don't save DOI in CI - use local script instead
+        config_path=None
     )
 
 

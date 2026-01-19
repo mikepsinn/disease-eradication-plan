@@ -332,6 +332,59 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     return zenodo_metadata
 
 
+def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
+    """
+    Save DOI and Zenodo URL back to Quarto config file.
+    Uses text-based replacement to preserve YAML formatting.
+
+    Args:
+        config_path: Path to _quarto-*.yml file
+        doi: DOI string (e.g., "10.5281/zenodo.12345678")
+        zenodo_url: Zenodo record URL
+
+    Returns:
+        True if successful, False otherwise
+    """
+    import re
+
+    try:
+        content = config_path.read_text(encoding='utf-8')
+
+        # Update metadata.doi field
+        if re.search(r'^\s+doi:\s*["\']?.*["\']?\s*$', content, re.MULTILINE):
+            # DOI field exists, update it
+            content = re.sub(
+                r'(^\s+doi:\s*["\']?).*?(["\']?\s*$)',
+                rf'\g<1>{doi}\g<2>',
+                content,
+                flags=re.MULTILINE
+            )
+        else:
+            # Add DOI field after metadata section starts
+            content = re.sub(
+                r'(^metadata:\s*$)',
+                rf'\g<1>\n  doi: "{doi}"',
+                content,
+                flags=re.MULTILINE
+            )
+
+        # Update publishing.preprints[zenodo] section if it exists
+        zenodo_section_pattern = r'(- platform: zenodo\s+status: )[^\n]+(.*?url: ")[^"]*(")'
+        if re.search(zenodo_section_pattern, content, re.DOTALL):
+            content = re.sub(
+                zenodo_section_pattern,
+                rf'\g<1>auto-uploaded\g<2>{zenodo_url}\g<3>',
+                content,
+                flags=re.DOTALL
+            )
+
+        config_path.write_text(content, encoding='utf-8')
+        return True
+    except Exception as e:
+        print(f"WARNING: Could not save DOI to {config_path}: {e}")
+        return False
+
+
 def upload_paper(
     client: ZenodoClient,
     paper_key: str,
@@ -339,6 +392,8 @@ def upload_paper(
     pdf_path: Path,
     draft: bool = True,
     verbose: bool = True,
+    save_doi: bool = False,
+    config_path: Optional[Path] = None,
 ) -> Optional[dict]:
     """
     Upload a paper to Zenodo.
@@ -350,9 +405,11 @@ def upload_paper(
         pdf_path: Path to the PDF file
         draft: If True, create draft without publishing
         verbose: Print progress messages
+        save_doi: If True, save DOI back to config file after upload
+        config_path: Path to config file (required if save_doi=True)
 
     Returns:
-        Dict with deposit info if successful, None otherwise
+        Dict with deposit info, DOI, and URL if successful, None otherwise
     """
     import sys
 
@@ -448,18 +505,54 @@ def upload_paper(
         log(f"[OK] Uploading {pdf_path.name}...")
         client.upload_file(deposit_id, pdf_path, bucket_url)
 
+        # Verify upload with GET request
+        log("[OK] Verifying upload...")
+        verified_deposit = client.get_deposit(deposit_id)
+        files = verified_deposit.get("files", [])
+        if not files:
+            log("ERROR: Upload verification failed - no files found in deposit")
+            return None
+
+        uploaded_file = next((f for f in files if f["filename"] == pdf_path.name), None)
+        if not uploaded_file:
+            log(f"ERROR: Upload verification failed - {pdf_path.name} not found in deposit")
+            return None
+
+        log(f"[OK] Verified: {uploaded_file['filename']} ({uploaded_file['filesize'] / 1024:.1f} KB)")
+
+        # Get DOI and URL
+        doi = verified_deposit.get("doi") or verified_deposit.get("metadata", {}).get("prereserve_doi", {}).get("doi")
+        zenodo_url = f"{client.base_url.replace('/api', '')}/record/{deposit_id}"
+
         if draft:
             log("[OK] Draft saved (not published)")
             log(f"  -> Review at: {client.base_url.replace('/api', '')}/deposit/{deposit_id}")
+            if doi:
+                log(f"  -> Pre-reserved DOI: {doi}")
         else:
             log("[OK] Publishing...")
             result = client.publish(deposit_id)
             doi = result.get("doi")
+            zenodo_url = result['links']['html']
             log(f"\n[SUCCESS] Published!")
             log(f"  DOI: {doi}")
-            log(f"  URL: {result['links']['html']}")
+            log(f"  URL: {zenodo_url}")
 
-        return {"id": deposit_id, "bucket": bucket_url}
+        # Save DOI to config if requested
+        if save_doi and config_path and doi:
+            log(f"[OK] Saving DOI to {config_path.name}...")
+            if save_doi_to_config(config_path, doi, zenodo_url):
+                log(f"[OK] Updated config with DOI: {doi}")
+            else:
+                log("WARNING: Could not update config file")
+
+        return {
+            "id": deposit_id,
+            "bucket": bucket_url,
+            "doi": doi,
+            "url": zenodo_url,
+            "verified": True
+        }
 
     except requests.HTTPError as e:
         print(f"ERROR: Zenodo API error: {e}", file=sys.stderr)
