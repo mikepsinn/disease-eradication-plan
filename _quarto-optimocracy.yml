@@ -21,7 +21,7 @@ profiles:
 
 website:
   title: "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation"
-  description: "Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen welfare) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite welfare indices), using smart contracts and decentralized oracles to align spending with citizen welfare."
+  description: "Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using smart contracts and decentralized oracles to align spending with citizen welfare."
   site-url: https://paper.optimocracy.org
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true

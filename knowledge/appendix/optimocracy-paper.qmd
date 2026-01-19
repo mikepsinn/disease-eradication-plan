@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: 'Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen welfare) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite welfare indices), using smart contracts and decentralized oracles to align spending with citizen welfare.'
+description: 'Political dysfunction (cronyism, time-inconsistency, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using smart contracts and decentralized oracles to align spending with citizen welfare.'
 aliases:
   - /optimocracy.html
 date: "2025-01-19"
@@ -52,15 +52,15 @@ format:
 This paper explores algorithmic governance as a complement to democratic preference aggregation. Cost estimates and mechanism designs represent theoretical frameworks intended to stimulate discussion rather than implementation-ready specifications.
 :::
 
-**The Problem in One Sentence:** Politicians get rewarded for things other than making citizens better off, so they do those other things instead, regardless of how much information exists about what would actually help.
+**The Problem in One Sentence:** Current incentive structures reward political actors for things other than improving measured outcomes, so resources flow to those other things regardless of available evidence about what would actually work.
 
-**The Solution:** Lock spending to outcomes. Citizens vote on the goal (e.g., "maximize median income"). Algorithms optimize spending to hit the goal. Independent data sources verify results. No human decides who gets the money. The metric does.
+**The Solution:** Lock spending to outcomes. Citizens vote on the goal (e.g., "maximize median income"). Algorithms optimize spending to hit the goal. Independent data sources verify results. Allocation follows the metric, not discretionary judgment.
 
 ## Abstract
 
-Politicians benefit from different things than voters do. Campaign donors, post-office jobs, and reelection incentives pull in different directions than citizen welfare. This isn't a bug. It's how the system works. The result: massive waste.
+Political actors optimize for what gets them reelected: campaign contributions, constituent services, ideological positioning. These differ systematically from what improves measured outcomes like median income or life expectancy. This isn't a character flaw; it's how incentive structures work. The result: systematic resource misallocation.
 
-**The cost:** Peer-reviewed estimates suggest bad policy costs 20-40% of potential welfare. Rent-seeking alone costs 0.2-23.7% of GDP [@delrosal2011]. Migration restrictions cost 67-147% of global GDP [@clemens2011]. US regulations since 1980 have made the economy 25% smaller than it would have been [@coffey2020]. Global corruption: 5% of GDP. We call this the **Political Dysfunction Tax**: {{< var political_dysfunction_tax_total_pct >}} of what the economy could produce, lost to policies that benefit insiders rather than citizens.
+**The cost:** Peer-reviewed estimates suggest suboptimal policy costs 20-40% of potential output. Rent-seeking alone costs 0.2-23.7% of GDP [@delrosal2011]. Migration restrictions cost 67-147% of global GDP [@clemens2011]. US regulations since 1980 have made the economy 25% smaller than it would have been [@coffey2020]. Global corruption: 5% of GDP. We call this the **Political Dysfunction Tax**: {{< var political_dysfunction_tax_total_pct >}} of what the economy could produce, lost to allocations that diverge from outcome-maximizing alternatives.
 
 **The mechanism:** Optimocracy proposes rules-based spending tied to outcomes citizens actually want (median income growth, health outcomes). Citizens vote on the goal; algorithms optimize spending to achieve it; independent data sources verify results. No politician decides which contractor gets the earmark. The metric does.
 
@@ -68,7 +68,7 @@ Politicians benefit from different things than voters do. Campaign donors, post-
 
 **The precedents:** Central banks stopped politicians from printing money before elections. Inflation dropped. Index funds stopped fund managers from picking stocks. Returns improved. Both have flaws (central banks got captured by financial interests; index funds can be gamed). We also examine failures: Soviet planning, COVID policy, credit rating agencies, algorithmic trading. The question is comparative: which failure modes are more damaging?
 
-**The politics:** You can't just take money from defense contractors and expect them to stay quiet. Reform requires buying out the beneficiaries of dysfunction: paying them to support change rather than block it. We propose Incentive Alignment Bonds: compensation for rent-seekers who support reform, making it a deal where everyone wins rather than a fight where someone loses.
+**The politics:** You can't reallocate resources away from current recipients and expect them to stay quiet. Reform requires compensating those who lose from optimization: paying them to support change rather than block it. We propose Incentive Alignment Bonds: compensation for those currently benefiting from suboptimal allocation, making reform a positive-sum deal rather than a zero-sum fight.
 
 ## Introduction: The Political Dysfunction Problem
 
@@ -82,7 +82,7 @@ The problem is not information but incentives. Politicians know which programs p
 
 ### The Political Dysfunction Tax
 
-Current allocation systems show near-zero correlation with citizen welfare, creating systematic opportunities for cronyism and capture. The largest component of this welfare loss is the **Crony Tax**, the cost of concentrated interests capturing policy for their benefit.
+Current allocation systems show near-zero correlation with measured welfare outcomes, creating systematic divergence from optimal resource distribution. The largest component of this welfare loss is the **Crony Tax** (resources directed toward concentrated interests rather than outcome-maximizing alternatives).
 
 Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delrosal2011], with some studies finding effects as large as 45% [@laband1988]. Combined with time-inconsistency, information costs, and coordination failures, the total **Political Dysfunction Tax** is estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare (see formal model below).
 
@@ -124,7 +124,7 @@ Politicians' votes are recorded on-chain. Those who voted YES on a budget that i
 
 This paper makes three contributions to the political economy literature:
 
-1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at 20-40% of potential GDP, decomposed into crony capture, time-inconsistency, information costs, and coordination failures.
+1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at 20-40% of potential GDP, decomposed into capture costs, time-inconsistency, information costs, and coordination failures.
 
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when metric-bound allocation outperforms discretionary governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 
@@ -154,10 +154,10 @@ Substituting empirical estimates:
 
 Where:
 
-- $\tau_{crony}$: **The Crony Tax**, welfare loss from policies serving concentrated interests rather than citizens ({{< var crony_tax_pct >}})
-- $\tau_{time}$: Welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}})
-- $\tau_{information}$: Welfare loss from decision-makers lacking relevant knowledge ({{< var political_dysfunction_tax_info_pct >}})
-- $\tau_{coordination}$: Welfare loss from inability to commit to welfare-improving policies ({{< var political_dysfunction_tax_coordination_pct >}})
+- $\tau_{crony}$: **Crony Tax**, welfare loss from resources flowing to concentrated interests rather than outcome-maximizing alternatives ({{< var crony_tax_pct >}})
+- $\tau_{time}$: **Time-Horizon Cost**, welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}})
+- $\tau_{information}$: **Information Cost**, welfare loss from decision-makers lacking relevant knowledge ({{< var political_dysfunction_tax_info_pct >}})
+- $\tau_{coordination}$: **Coordination Cost**, welfare loss from inability to commit to welfare-improving policies ({{< var political_dysfunction_tax_coordination_pct >}})
 
 **Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
 
@@ -254,7 +254,7 @@ The conservative Tier 1 estimate (13.6% of GDP) represents costs with high metho
 
 #### Triangulation Through International Comparison
 
-If political dysfunction costs {{< var political_dysfunction_tax_total_pct >}} of welfare, we should observe systematic welfare underperformance in high-discretion governance systems. A natural comparison exists in government spending efficiency:
+If the Political Dysfunction Tax costs {{< var political_dysfunction_tax_total_pct >}} of welfare, we should observe systematic welfare underperformance in high-discretion governance systems. A natural comparison exists in government spending efficiency:
 
 | Country | Govt Spending (% GDP) | Life Expectancy | Dysfunction Premium |
 |---------|----------------------|-----------------|---------------------|
@@ -288,7 +288,7 @@ Information about optimal policy is freely available. The Copenhagen Consensus, 
 
 The empirical evidence suggests:
 
-1. **The welfare loss is massive**: Conservative estimates suggest {{< var political_dysfunction_tax_total_pct >}} of potential welfare is foregone.
+1. **The welfare loss is massive**: Conservative estimates suggest {{< var political_dysfunction_tax_total_pct >}} of potential welfare is foregone due to the Political Dysfunction Tax.
 2. **Information alone is insufficient**: Better data does not change political incentives.
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
@@ -1244,7 +1244,7 @@ This section develops the political economy of reform, distinguishing actors who
 
 @coase1960 showed that in the absence of transaction costs, parties will bargain to efficient outcomes regardless of initial property rights. The theorem suggests a strategy for governance reform:
 
-**The insight:** If optimal policy generates $X in new value and current beneficiaries of dysfunction would lose $Y where $X >> $Y, there exists a compensation scheme that makes everyone better off.
+**The insight:** If optimal policy generates $X in new value and those currently benefiting from suboptimal allocation would lose $Y where $X >> $Y, there exists a compensation scheme that makes everyone better off.
 
 **Formal statement:**
 
@@ -1263,10 +1263,10 @@ Then a transfer $T$ exists where $R < T < (W^* - W)$ such that:
 **Application to Optimocracy:**
 
 - Estimated welfare gain from optimal policy: $20-50T annually (Section 2)
-- Estimated rents from dysfunction: $2-5T annually (lobbying, regulatory capture, defense spending)
+- Estimated rents from suboptimal allocation: $2-5T annually (lobbying, regulatory capture, defense spending)
 - Available compensation budget: $5-15T (half the welfare gain)
 
-This arithmetic suggests reform can be structured so everyone wins. Even the people currently benefiting from dysfunction can be paid off and still leave money on the table.
+This arithmetic suggests reform can be structured so everyone wins. Even those currently benefiting from suboptimal allocation can be compensated and still leave money on the table.
 
 ### A Taxonomy of Affected Parties
 
@@ -1291,11 +1291,11 @@ Not all actors have the same relationship to reform:
 
 #### Rent-Seekers and Extractors
 
-**Definition:** Those whose income derives from capturing value from dysfunction.
+**Definition:** Those whose income derives from current allocation patterns that would change under optimization.
 
-**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. Aggregate rents from dysfunction are estimated at $2-5T annually across these categories (consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP).
+**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. Aggregate rents from suboptimal allocation are estimated at $2-5T annually across these categories (consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP).
 
-**Relationship to optimal policy:** Losers unless compensated. IABs must buy out these actors or they will block reform.
+**Relationship to optimal policy:** Losers unless compensated. IABs must compensate these actors or they will block reform.
 
 #### Politicians and Bureaucrats
 
