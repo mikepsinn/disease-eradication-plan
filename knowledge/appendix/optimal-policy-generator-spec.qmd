@@ -46,13 +46,13 @@ This specification describes a framework for generating jurisdiction-specific po
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers the question: "Given the evidence, what policies should jurisdiction X adopt, repeal, or modify?" The framework operates at any jurisdiction level (country, state, county, city) and produces three outputs: (1) **Enact List** - high-impact policies the jurisdiction lacks, (2) **Repeal List** - harmful policies the jurisdiction has, and (3) **Modify List** - policies to strengthen or weaken. Each recommendation includes expected effect estimates, confidence grades, monetized impact, and blocking factors (constitutional, federal preemption, political). This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, expected effect: -1.8 deaths/100K").
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers the question: "Given the evidence, what policies should jurisdiction X adopt or repeal?" The framework operates at any jurisdiction level (country, state, county, city) and produces three outputs: (1) **Enact List** - high-impact policies the jurisdiction lacks or should set at optimal levels, (2) **Repeal List** - harmful policies the jurisdiction has, and (3) **Maintain List** - policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement. This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, expected effect: -1.8 deaths/100K").
 
 ## System Overview
 
 ### What Policymakers See
 
-A jurisdiction-specific dashboard showing which policies to enact, repeal, or modify, ranked by expected welfare impact:
+A jurisdiction-specific dashboard showing which policies to enact or repeal, ranked by expected welfare impact:
 
 ::: {.callout-note}
 ## Example: Policy Recommendations for Texas
@@ -233,14 +233,22 @@ outcome_measurements (
 -- Policy recommendations (generated output)
 policy_recommendations (
     jurisdiction_id, policy_type_id,
-    recommendation_type, -- 'enact', 'repeal', 'maintain', 'strengthen', 'weaken'
+    recommendation_type, -- 'enact', 'repeal', 'maintain'
     current_status, -- what they have now
-    recommended_target, -- what evidence suggests
+    recommended_target, -- what evidence suggests (for continuous policies, the target level)
     expected_effect, expected_effect_unit,
     monetized_benefit_annual,
     evidence_grade, priority_score,
     blocking_factors, -- 'constitutional', 'federal_preemption', 'political', etc.
     similar_jurisdictions, -- jurisdictions that adopted this successfully
+    -- Jurisdictional level guidance
+    minimum_effective_level, -- 'city', 'county', 'state', 'federal'
+    recommended_level, -- lowest effective level for max data collection
+    -- Tracking for feedback loop
+    tracking_metric, -- primary outcome to measure
+    tracking_data_source, -- where to get data
+    tracking_frequency, -- 'annual', 'quarterly', etc.
+    tracking_baseline_method, -- 'pre_implementation_3yr_avg', etc.
     last_generated
 )
 ```
@@ -450,11 +458,11 @@ $$
 
 | Type | Trigger | Output |
 |------|---------|--------|
-| **Enact** | Jurisdiction lacks policy with PIS > 0.3, Grade A/B | "Adopt [policy]" |
-| **Repeal** | Jurisdiction has policy with PIS < -0.3, Grade A/B | "Remove [policy]" |
-| **Strengthen** | Continuous policy below evidence-optimal by > 20% | "Increase [policy] from X to Y" |
-| **Weaken** | Continuous policy above evidence-optimal by > 20% | "Decrease [policy] from X to Y" |
+| **Enact** | Jurisdiction lacks policy OR has suboptimal level | "Adopt [policy]" or "Set [policy] at [level]" |
+| **Repeal** | Jurisdiction has policy with negative evidence | "Remove [policy]" |
 | **Maintain** | Jurisdiction has policy aligned with evidence | "Continue [policy]" |
+
+For continuous policies (taxes, spending levels), "Enact" specifies the target level. Example: "Enact tobacco tax at $2.50/pack" covers both new adoption AND replacing an existing lower rate.
 
 ### Blocking Factors
 
@@ -478,6 +486,51 @@ For each recommendation, OPG identifies jurisdictions that:
 3. Experienced the predicted effects
 
 This provides concrete examples for policymakers: "Vermont (similar demographics, adopted this in 2015, saw -7.1 pp smoking reduction)."
+
+### Recommended Tracking (for OPG Feedback)
+
+Each recommendation includes minimal tracking guidance to enable continuous OPG improvement:
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Primary metric** | The outcome variable to track | Traffic deaths per 100K |
+| **Data source** | Where to get it | State vital statistics |
+| **Measurement frequency** | How often | Annual |
+| **Comparison baseline** | What to compare against | Pre-implementation 3-year average |
+
+This creates a learning loop: OPG recommends → jurisdiction implements → reports outcomes → OPG improves future recommendations.
+
+## Optimal Jurisdictional Level for Policy Implementation
+
+### The Subsidiarity Principle for Evidence Generation
+
+OPG recommends policies be implemented at the **lowest jurisdictional level where the policy can be effective**, for two reasons:
+
+1. **Maximize experimental data**: 50 states experimenting > 1 federal policy. 3,000+ counties > 50 states. More jurisdictions = more natural experiments = faster evidence accumulation.
+
+2. **Minimize harm from policy failures**: A failed city ordinance affects thousands; a failed federal policy affects hundreds of millions. Lower-level experimentation bounds downside risk.
+
+### When Higher Levels Are Necessary
+
+Some policies require higher jurisdictional levels:
+
+| Reason | Example | Recommendation |
+|--------|---------|----------------|
+| **Externalities** | Pollution crosses borders | State or federal |
+| **Race-to-bottom risk** | Labor standards, tax competition | Federal floor, state variation above |
+| **Network effects** | Infrastructure standards | Federal coordination |
+| **Economies of scale** | Defense, diplomacy | National |
+
+### Jurisdictional Level in Recommendations
+
+For each policy recommendation, OPG specifies:
+
+| Field | Example |
+|-------|---------|
+| **Minimum effective level** | "City or higher" |
+| **Recommended level** | "City (maximize data collection)" |
+| **Current adoption** | "12 states, 47 cities have this" |
+| **Level constraints** | "Federal preemption prevents city-level" |
 
 ## Policy Impact Score (Intermediate Metric) {#sec-pis}
 
@@ -921,6 +974,19 @@ Until this validation is performed, OPG should be treated as a theoretically-mot
 3. **Evidence grade thresholds**: Are the A-F grade cutoffs appropriately calibrated?
 4. **Heterogeneity interpretation**: Does high I² actually indicate context-dependence vs. measurement noise?
 
+### Continuous Improvement via Adoption Feedback
+
+OPG improves through a learning loop:
+
+1. **OPG generates recommendation** with expected effect ± uncertainty
+2. **Jurisdiction adopts** policy at recommended level
+3. **Jurisdiction tracks** primary metric per tracking guidance
+4. **Jurisdiction reports** outcomes to OPG feedback system
+5. **OPG incorporates** new data point into meta-analysis
+6. **Future recommendations** reflect updated evidence
+
+This transforms OPG from a static evidence aggregator into a self-improving system where every adoption strengthens the evidence base. The tracking guidance included with each recommendation standardizes what data jurisdictions should collect and report.
+
 ## Future Directions
 
 ### Methodological Improvements
@@ -960,7 +1026,7 @@ The Optimal Policy Generator provides a systematic framework for translating pol
 The OPG complements the Optimal Spending Level (OSL/BIS) in the Optimocracy framework:
 
 - **OSL/BIS** answers: "How much should jurisdiction X spend on each program?"
-- **OPG** answers: "What policies should jurisdiction X adopt, repeal, or modify?"
+- **OPG** answers: "What policies should jurisdiction X adopt or repeal?"
 
 Together, they enable evidence-based governance that optimizes both resource allocation and regulatory design, tailored to each jurisdiction's specific context.
 
@@ -1036,8 +1102,10 @@ From meta-analysis of 47 US states (2000-2020):
 - **Monetized impact**: +$1.2B/year (at $10M VSL × 120 lives saved)
 - **Evidence grade**: A
 - **Priority**: High
+- **Recommended level**: State (maximize data; federal preemption prevents city-level)
 - **Blocking factors**: None identified
 - **Similar jurisdictions**: Florida adopted 2009, saw -1.7 deaths/100K
+- **Tracking**: Traffic deaths/100K (FARS), annual, vs. 2020-2024 baseline
 
 **2. Universal Motorcycle Helmet Requirement** (Current: Under 21 only)
 
@@ -1045,15 +1113,17 @@ From meta-analysis of 47 US states (2000-2020):
 - **Monetized impact**: +$680M/year
 - **Evidence grade**: A
 - **Priority**: Medium
+- **Recommended level**: State (maximize data)
 - **Blocking factors**: Political (strong rider opposition)
 - **Similar jurisdictions**: California (all ages since 1992)
+- **Tracking**: Motorcycle fatalities/100K (FARS), annual, vs. 2020-2024 baseline
 
 :::
 
 ::: {.callout-warning}
-## Policies to MODIFY
+## Policies to ENACT (Continuous - Set at Optimal Level)
 
-**3. Tobacco Tax** (Current: $1.41/pack → Recommended: $2.50/pack)
+**3. Tobacco Tax at $2.50/pack** (Current: $1.41/pack)
 
 - **Current level**: $1.41/pack (below national median of $1.91)
 - **Recommended level**: $2.50/pack (evidence-optimal range)
@@ -1061,7 +1131,9 @@ From meta-analysis of 47 US states (2000-2020):
 - **Monetized impact**: +$4.8B/year health savings
 - **Evidence grade**: A
 - **Priority**: High
+- **Recommended level**: State (maximize data; city-level preempted)
 - **Blocking factors**: Political (anti-tax sentiment)
+- **Tracking**: Smoking rate (BRFSS), annual, vs. 2020-2024 baseline
 
 :::
 
@@ -1202,16 +1274,16 @@ Phase 4: RECOMMENDATION GENERATION
 14. Priority scoring
     ├── Rank by |Gap| × Evidence Grade × Impact
     ├── Assign to priority tiers (Quick Win, Major Reform, etc.)
-    ├── Generate enact/repeal/modify lists
+    ├── Generate enact/repeal/maintain lists
     └── Calculate total expected welfare gain
 
 Phase 5: OUTPUT GENERATION
 ──────────────────────────
 15. Recommendation dashboard
-    ├── Enact list with expected effects
+    ├── Enact list with expected effects (includes continuous policy levels)
     ├── Repeal list with expected savings
-    ├── Modify list with direction and magnitude
-    └── Maintain list (policies to keep)
+    ├── Maintain list (policies to keep)
+    └── Jurisdictional level and tracking guidance for each
 
 16. Multi-unit reporting
     ├── Natural units (domain-specific)
@@ -1243,7 +1315,7 @@ Before generating recommendations, verify:
 
 ### Core Concepts
 
-- **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs enact/repeal/modify lists ranked by expected welfare impact.
+- **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs enact/repeal/maintain lists ranked by expected welfare impact, with recommended jurisdictional level (subsidiarity) and tracking guidance for continuous improvement.
 
 - **Policy Impact Score (PIS)**: Intermediate metric quantifying the strength of evidence that a policy affects an outcome. Integrates effect size, causal confidence (Bradford Hill criteria), and analysis quality. Ranges from 0 to 1; higher indicates stronger evidence.
 
@@ -1295,13 +1367,17 @@ Before generating recommendations, verify:
 
 ### Output Concepts
 
-- **Enact List**: Policies the jurisdiction should adopt (has strong evidence of benefit, jurisdiction lacks them).
+- **Enact List**: Policies the jurisdiction should adopt (has strong evidence of benefit, jurisdiction lacks them or has suboptimal level). For continuous policies, specifies target level.
 
 - **Repeal List**: Policies the jurisdiction should remove (has evidence of harm, jurisdiction currently has them).
 
-- **Modify List**: Policies to strengthen or weaken (continuous policies set at suboptimal levels).
+- **Maintain List**: Policies the jurisdiction should keep unchanged (aligned with evidence).
 
 - **Priority Tier**: Classification of recommendations by urgency and feasibility: Quick Win (high impact, low barriers), Major Reform (high impact, significant barriers), Long-Term (requires structural change), Monitor (needs more evidence).
+
+- **Subsidiarity Principle**: Recommendation to implement policies at the lowest effective jurisdictional level to maximize experimental data collection and minimize harm from policy failures.
+
+- **Tracking Guidance**: Recommended KPIs and data sources for each recommendation, enabling jurisdictions to report outcomes back to OPG for continuous improvement.
 
 - **Similar Jurisdictions**: Jurisdictions with comparable characteristics that have adopted the recommended policy, used as concrete examples for policymakers.
 
