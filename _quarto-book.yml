@@ -44,8 +44,8 @@ book:
         href: knowledge/appendix/optimocracy-paper.qmd
       - text: "Optimal Policy Generator"
         href: knowledge/appendix/optimal-policy-generator-spec.qmd
-      - text: "Budget Optimization Spec"
-        href: knowledge/appendix/budget-optimization-algorithm-spec.qmd
+      - text: "Optimal Budget Generator"
+        href: knowledge/appendix/optimal-budget-generator-spec.qmd
       - text: "References"
         href: knowledge/references.qmd
       - icon: file-pdf
@@ -74,8 +74,8 @@ book:
             text: "Optimocracy Paper"
           - href: knowledge/appendix/optimal-policy-generator-spec.qmd
             text: "Optimal Policy Generator"
-          - href: knowledge/appendix/budget-optimization-algorithm-spec.qmd
-            text: "Budget Optimization Spec"
+          - href: knowledge/appendix/optimal-budget-generator-spec.qmd
+            text: "Optimal Budget Generator"
           - href: knowledge/references.qmd
             text: "References & Citations"
   chapters:
@@ -160,7 +160,7 @@ book:
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
         - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
         - knowledge/appendix/optimal-policy-generator-spec.qmd # ✅ Working paper: jurisdiction-specific policy recommendations using quasi-experimental methods
-        - knowledge/appendix/budget-optimization-algorithm-spec.qmd # ✅ Working paper: OSL/BIS framework for evidence-based budget allocation
+        - knowledge/appendix/optimal-budget-generator-spec.qmd # ✅ Working paper: OBG/BIS framework for evidence-based budget allocation
         - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis

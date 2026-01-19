@@ -93,7 +93,7 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 
 | Framework | Question Answered | Primary Output | Example |
 |-----------|------------------|----------------|---------|
-| **Optimal Spending Level (OSL/BIS)** | How much should we spend? | Spending gap analysis | "Texas underspends on education by $X" |
+| **Optimal Budget Generator (OBG/BIS)** | How much should we spend? | Integrated budget recommendations | "Texas underspends on education by $X" |
 | **Optimal Policy Generator (OPG)** | What policies should we adopt? | Policy gap analysis | "Texas should enact X, repeal Y" |
 
 Both frameworks apply the same principle: compare current jurisdiction practice to evidence-optimal practice, quantify the gap, and produce actionable recommendations.
@@ -117,8 +117,8 @@ Both frameworks apply the same principle: compare current jurisdiction practice 
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  ┌─────────────────────────────┐    ┌─────────────────────────┐ │
-│  │  Optimal Spending Level     │    │  Optimal Policy         │ │
-│  │  (OSL / BIS)                │    │  Generator (OPG)        │ │
+│  │  Optimal Budget Generator   │    │  Optimal Policy         │ │
+│  │  (OBG / BIS)                │    │  Generator (OPG)        │ │
 │  │                             │    │                         │ │
 │  │  Question:                  │    │  Question:              │ │
 │  │  "How much should we        │    │  "What policies should  │ │
@@ -1035,9 +1035,9 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact.
 
-The OPG complements the Optimal Spending Level (OSL/BIS) in the Optimocracy framework:
+The OPG complements the Optimal Budget Generator (OBG/BIS) in the Optimocracy framework:
 
-- **OSL/BIS** answers: "How much should jurisdiction X spend on each program?"
+- **OBG/BIS** answers: "How much should jurisdiction X spend on each program?"
 - **OPG** answers: "What policies should jurisdiction X adopt or repeal?"
 
 Together, they enable evidence-based governance that optimizes both resource allocation and regulatory design, tailored to each jurisdiction's specific context.

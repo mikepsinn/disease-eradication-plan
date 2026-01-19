@@ -1399,11 +1399,11 @@ Multiple oracles are aggregated using median or stake-weighted average to resist
 
 Optimocracy optimizes governance through two complementary mechanisms, each addressing a different aspect of the welfare-maximization problem.
 
-#### Budget Optimization: The Optimal Spending Level (OSL) Framework
+#### Budget Optimization: The Optimal Budget Generator (OBG) Framework
 
-The **Optimal Spending Level (OSL)** framework answers: "How much should we spend on each category to maximize welfare?"
+The **Optimal Budget Generator (OBG)** framework answers: "How should we allocate the budget to maximize welfare?"
 
-**Key insight**: Like the Recommended Daily Allowance (RDA) for nutrients, each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns or outright waste.
+**Key insight**: Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
 
 | Spending Level | Health Analogy | Budget Interpretation |
 |----------------|----------------|----------------------|
@@ -1411,23 +1411,23 @@ The **Optimal Spending Level (OSL)** framework answers: "How much should we spen
 | At optimal | Recommended daily allowance | Maximum return per dollar |
 | Above optimal | Diminishing returns / toxicity | Waste, opportunity cost |
 
-The OSL framework combines three evidence sources:
+The OBG framework combines three evidence sources:
 
 1. **Reference country benchmarking**: What do high-performing peer countries spend?
 2. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
 3. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
 
-The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
+The **Budget Impact Score (BIS)** measures our *confidence* in each category's target estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
 
 **Example output**:
 
-| Category | Current | OSL | Gap | Evidence |
+| Category | Current | Target | Gap | Evidence |
 |----------|---------|-----|-----|----------|
 | Vaccinations | $8B | $35B | +$27B | A (RCTs) |
 | Basic research | $45B | $90B | +$45B | B (spillovers) |
 | Military | $850B | $459B | -$391B | C (benchmarks) |
 
-For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Spending Level Framework Specification](budget-optimization-algorithm-spec.qmd).
+For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](optimal-budget-generator-spec.qmd).
 
 #### Policy Optimization: The Policy Impact Score (PIS) Framework
 
@@ -1457,7 +1457,7 @@ For the complete methodology including database schema, Bradford Hill criteria m
 
 | Framework | Unit of Analysis | Primary Output | Key Question |
 |-----------|------------------|----------------|--------------|
-| OSL/BIS | Spending category | Optimal allocation + gaps | How much to spend? |
+| OBG/BIS | Spending category | Integrated budget recommendations | How much to spend? |
 | PIS | Policy/regulation | Ranked reforms by impact | Which policies to adopt? |
 
 Both frameworks feed into the Constitutional Layer, which binds governance to evidence-based decision rules rather than discretionary judgment:
@@ -1471,7 +1471,7 @@ Both frameworks feed into the Constitutional Layer, which binds governance to ev
            v                              v
 +------------------------+    +------------------------+
 |   Budget Optimization  |    |   Policy Optimization  |
-|   (OSL/BIS Framework)  |    |   (PIS Framework)      |
+|   (OBG/BIS Framework)  |    |   (PIS Framework)      |
 |                        |    |                        |
 |   Determines:          |    |   Determines:          |
 |   - Optimal spending   |    |   - Which reforms      |
