@@ -298,12 +298,12 @@ Where $w_i$ are criterion weights. Default weights emphasize temporality (must b
 For each jurisdiction $j$, policy $p$, and outcome $o$, the jurisdiction-level PIS is:
 
 $$
-\text{PIS}_{jpo} = \hat{\beta}_{jpo} \cdot \text{CCS}_{jpo} \cdot Q_{jpo}
+\text{PIS}_{jpo} = |\hat{\beta}_{jpo}| \cdot \text{CCS}_{jpo} \cdot Q_{jpo}
 $$
 
 Where:
 
-- $\hat{\beta}_{jpo}$ = Effect estimate (standardized effect size)
+- $|\hat{\beta}_{jpo}|$ = Absolute value of effect estimate (standardized effect size). We take absolute value because PIS measures *strength of evidence*, not direction. Direction is reported separately; negative effects on desirable outcomes are flagged as potential harms.
 - $\text{CCS}_{jpo}$ = Causal Confidence Score (aggregate Hill criteria)
 - $Q_{jpo}$ = Quality adjustment factor based on analysis method and diagnostics
 
@@ -354,7 +354,7 @@ For each analysis, we track which confounders were controlled:
 }
 ```
 
-The `confounder_sensitivity` field estimates how much the effect estimate might change if uncontrolled confounders were addressed (Oster's delta, @oster2019).
+The `confounder_sensitivity` field estimates how much the effect estimate might change if uncontrolled confounders were addressed (Oster's delta, [@oster2019]).
 
 ## Global (Aggregate) PIS Calculation
 
