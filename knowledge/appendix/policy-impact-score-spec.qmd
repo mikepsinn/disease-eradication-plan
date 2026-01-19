@@ -483,6 +483,58 @@ PIS provides *evidence-weighted rankings*, not certainty:
 
 The PIS framework makes uncertainty explicit rather than hiding it behind false precision.
 
+## Multi-Unit Reporting
+
+### The Problem with Abstract Scores
+
+Composite scores (like 0-1 PIS values) obscure interpretability. Policymakers and citizens understand concrete outcomes - lives saved, dollars saved, percentage point reductions - not abstract indices. The composite PIS should be a **fallback** when direct interpretation is difficult, not the primary output.
+
+### Reporting at Multiple Levels
+
+| Level | Units | Use Case | Example |
+|-------|-------|----------|---------|
+| **1. Natural** | Domain-specific | Interpretation within domain | "-8.2 pp smoking rate" |
+| **2. Monetized** | $ equivalent | Cross-domain comparison | "+$2.4B/year health savings" |
+| **3. Health** | QALYs/DALYs | Health-weighted comparison | "+180K QALYs/year" |
+| **4. Composite** | 0-1 score | Ranking when monetization uncertain | "PIS = 0.85" |
+
+**Principle**: Always report natural units first, then provide monetized equivalents for cross-domain comparison. The composite score is the last resort when monetization is highly uncertain.
+
+### Conversion Factors
+
+| Conversion | Value | Source | Notes |
+|------------|-------|--------|-------|
+| Value of Statistical Life (VSL) | ~$10M | EPA, DOT | US regulatory standard |
+| Value per QALY | $50K-$150K | ICER, WHO | Context-dependent |
+| QALY → $ | $100K/QALY | Mid-range estimate | For cross-domain |
+| Life-year → QALY | ~0.8-1.0 | Age/health adjusted | Quality weighting |
+| Disability weight | 0-1 scale | GBD study | DALY calculation |
+
+### Worked Example: Multi-Unit Output for Tobacco Tax
+
+**Policy**: State tobacco tax increase (+$1/pack)
+
+| Unit Level | Value | Interpretation |
+|------------|-------|----------------|
+| **Natural** | -8.2 pp smoking rate | Direct health behavior change |
+| **Health impact** | +180K QALYs/year | At 23 adopting states scale |
+| **Monetized (health)** | +$18B/year | At $100K/QALY |
+| **Monetized (productivity)** | +$4.2B/year | Reduced absenteeism, presenteeism |
+| **Total monetized** | +$22.2B/year | Health + productivity |
+| **Composite (PIS)** | 1.0 | Maximum score (strong evidence) |
+
+**Interpretation for policymakers**: "A $1/pack tobacco tax increase is expected to reduce smoking rates by 8.2 percentage points, generating approximately $22 billion per year in health and productivity benefits. This estimate is based on strong quasi-experimental evidence (Grade A) from 23 US states."
+
+### When to Use Each Level
+
+| Situation | Recommended Reporting Level |
+|-----------|---------------------------|
+| Single-domain policy (health only) | Natural + Health (QALYs) |
+| Cross-domain comparison | Monetized equivalents |
+| Communication to public | Natural units (most interpretable) |
+| Technical policy analysis | All levels with uncertainty |
+| Highly uncertain effects | Composite score + confidence interval |
+
 ## Trial Prioritization
 
 ### Value of Information Calculation

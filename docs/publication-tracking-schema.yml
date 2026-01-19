@@ -1,0 +1,229 @@
+# Publication Tracking Schema for Quarto Configs
+# Add this 'publishing' section to metadata in each _quarto-*.yml file
+
+# Example usage in _quarto-economics.yml:
+# metadata:
+#   ... existing metadata ...
+#   publishing:
+#     own-site:
+#       url: https://impact.warondisease.org
+#       status: deployed
+#     preprints:
+#       - platform: zenodo
+#         status: auto-uploaded
+#         url: ""  # Populated after publish
+#         doi: ""  # Populated after publish
+#       - platform: ssrn
+#         status: pending
+#         url: ""
+#     journals:
+#       - name: Health Affairs
+#         status: target
+#         submitted-date: ""
+#         decision-date: ""
+#         url: ""
+
+# Schema Definition
+publishing:
+  # Self-hosted website (always first)
+  own-site:
+    url: ""                    # Example: https://impact.warondisease.org
+    status: ""                 # deployed | building | pending
+    deploy-trigger: ""         # push-to-main | manual | scheduled
+
+  # Preprint servers and archives
+  preprints:
+    # Automated via CI
+    - platform: zenodo
+      category: archive
+      status: auto-uploaded    # auto-uploaded | draft | published | pending | skipped
+      url: ""                  # Populated by CI or manually
+      doi: ""                  # Concept DOI (always points to latest)
+      version-doi: ""          # Version-specific DOI
+      upload-date: ""          # YYYY-MM-DD
+      publish-date: ""         # YYYY-MM-DD
+      notes: "Automatically uploaded as draft via GitHub Actions"
+
+    # Manual upload platforms
+    - platform: ssrn
+      category: preprint
+      status: pending          # pending | uploaded | published | rejected | skipped
+      url: ""
+      submission-date: ""
+      publish-date: ""
+      notes: "Social Science Research Network - manual upload required"
+
+    - platform: arxiv
+      category: preprint
+      status: pending
+      url: ""
+      submission-date: ""
+      category-code: ""        # Example: econ.GN, stat.ME, cs.GT
+      endorsement: ""          # required | obtained | not-needed
+      notes: ""
+
+    - platform: medrxiv
+      category: preprint
+      status: pending
+      url: ""
+      notes: "Health sciences preprints - for dFDA papers"
+
+    - platform: osf-preprints
+      category: preprint
+      status: pending
+      url: ""
+      doi: ""
+      notes: "Open Science Framework - good API for automation"
+
+  # Academic social networks
+  academic-networks:
+    - platform: researchgate
+      status: pending
+      url: ""
+      upload-date: ""
+
+    - platform: academia-edu
+      status: pending
+      url: ""
+      upload-date: ""
+
+    - platform: google-scholar
+      status: pending          # auto-indexed once published elsewhere
+      url: ""
+      notes: "Auto-indexed from preprints and journal publications"
+
+  # Peer-reviewed journals
+  journals:
+    # Tier 1 targets (high-impact)
+    - name: Health Affairs
+      tier: 1
+      category: health-policy
+      impact-factor: 7.5
+      status: target           # target | submitted | under-review | revision-requested | accepted | rejected | published
+      submission-date: ""      # YYYY-MM-DD
+      decision-date: ""
+      revision-deadline: ""
+      publication-date: ""
+      url: ""
+      doi: ""
+      notes: ""
+
+    - name: The Lancet
+      tier: 1
+      category: medical-journal
+      impact-factor: 202.7
+      article-type: commentary  # commentary | viewpoint | correspondence | article
+      status: target
+      notes: "Target for commentary or viewpoint piece"
+
+    - name: Nature Medicine
+      tier: 1
+      category: medical-journal
+      impact-factor: 82.9
+      status: target
+      notes: "High-impact medical research"
+
+    # Tier 2 targets (specialized/field-specific)
+    - name: Value in Health
+      tier: 2
+      category: health-economics
+      impact-factor: 5.9
+      status: target
+      notes: "ISPOR journal - health economics and outcomes research"
+
+    - name: PLOS Medicine
+      tier: 2
+      category: medical-journal
+      impact-factor: 10.5
+      open-access: true
+      status: target
+      notes: "Open access medical journal"
+
+    - name: BMJ Open
+      tier: 2
+      category: medical-journal
+      impact-factor: 3.0
+      open-access: true
+      status: target
+
+  # Book distribution platforms (for main book only)
+  book-platforms:
+    - platform: amazon-kdp
+      formats: [kindle, paperback]
+      status: pending
+      kindle-url: ""
+      paperback-url: ""
+      asin-kindle: ""
+      asin-paperback: ""
+      isbn-paperback: ""
+
+    - platform: apple-books
+      format: epub
+      status: pending
+      url: ""
+
+    - platform: google-play-books
+      formats: [epub, pdf]
+      status: pending
+      url: ""
+
+    - platform: barnes-noble-press
+      formats: [nook, print]
+      status: pending
+      url: ""
+
+    - platform: kobo
+      format: epub
+      status: pending
+      url: ""
+
+    - platform: ingramspark
+      format: print-on-demand
+      status: pending
+      isbn: ""
+      notes: "For bookstore distribution"
+
+  # Social media announcements
+  social-media:
+    - platform: twitter
+      account: "@warondisease"
+      status: pending
+      post-url: ""
+      post-date: ""
+
+    - platform: linkedin
+      status: pending
+      post-url: ""
+
+  # Publicity and outreach
+  outreach:
+    - type: press-release
+      status: pending
+      url: ""
+      date: ""
+
+    - type: blog-post
+      title: ""
+      status: pending
+      url: ""
+
+    - type: podcast
+      show: ""
+      status: pending
+      url: ""
+      date: ""
+
+# Status values:
+#   pending         - Not yet started
+#   in-progress     - Work underway
+#   submitted       - Submitted for review
+#   under-review    - Peer review in progress
+#   revision-requested - Revisions requested
+#   accepted        - Accepted for publication
+#   published       - Live and accessible
+#   rejected        - Rejected by platform/journal
+#   withdrawn       - Withdrawn by author
+#   auto-uploaded   - Automatically uploaded via CI
+#   deployed        - Live on own website
+#   target          - Identified as publication target
+#   skipped         - Intentionally not pursuing

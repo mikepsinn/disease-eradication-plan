@@ -44,6 +44,8 @@ book:
         href: knowledge/appendix/optimocracy-paper.qmd
       - text: "Policy Impact Score Spec"
         href: knowledge/appendix/policy-impact-score-spec.qmd
+      - text: "Budget Optimization Spec"
+        href: knowledge/appendix/budget-optimization-algorithm-spec.qmd
       - text: "References"
         href: knowledge/references.qmd
       - icon: file-pdf
@@ -72,6 +74,8 @@ book:
             text: "Optimocracy Paper"
           - href: knowledge/appendix/policy-impact-score-spec.qmd
             text: "Policy Impact Score Spec"
+          - href: knowledge/appendix/budget-optimization-algorithm-spec.qmd
+            text: "Budget Optimization Spec"
           - href: knowledge/references.qmd
             text: "References & Citations"
   chapters:
@@ -156,6 +160,7 @@ book:
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
         - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
         - knowledge/appendix/policy-impact-score-spec.qmd # ✅ Working paper: systematic policy-outcome evaluation using quasi-experimental methods
+        - knowledge/appendix/budget-optimization-algorithm-spec.qmd # ✅ Working paper: OSL/BIS framework for evidence-based budget allocation
         - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis

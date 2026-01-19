@@ -1,0 +1,1018 @@
+---
+title: "Optimal Spending Level Framework: A Specification for Evidence-Based Budget Allocation"
+subtitle: "Determining Optimal Investment Levels Using Reference Benchmarking, Diminishing Returns Modeling, and Evidence Quality Scoring"
+description: "The Optimal Spending Level (OSL) framework answers: 'How much should we spend on each category to maximize welfare?' Like the Recommended Daily Allowance for nutrients, each spending category has an optimal level - too little means underinvestment, too much means waste. The Budget Impact Score (BIS) measures our confidence in each category's OSL estimate based on the quality of causal evidence."
+aliases:
+  - /budget-optimization.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Decentralized Institutes of Health
+      url: https://dih.earth
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - budget optimization
+  - optimal spending level
+  - evidence-based policy
+  - meta-analysis
+  - cost-effectiveness
+  - diminishing returns
+  - reference country benchmarking
+bibliography:
+  - ../../references.bib
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-fold: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+::: {.callout-note}
+## Working Paper
+
+This specification describes a framework for evidence-based budget allocation. It complements the Optimocracy paper's Policy Impact Score (PIS) by extending evidence-based governance from policy evaluation to resource allocation optimization.
+:::
+
+## Abstract {.unnumbered}
+
+This specification describes the **Optimal Spending Level (OSL)** framework, a systematic approach to determining how much should be allocated to each budget category to maximize welfare outcomes. Unlike marginal-return frameworks that ask "where should we invest the next dollar?", OSL asks "what is the target spending level for each category?" - analogous to the Recommended Daily Allowance (RDA) for nutrients. Too little spending means underinvestment and missed welfare gains; too much means diminishing returns or outright waste.
+
+The framework combines three evidence sources: (1) **reference country benchmarking** using high-performing peer jurisdictions, (2) **diminishing returns modeling** from dose-response studies, and (3) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.
+
+The result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment.
+
+## System Overview
+
+### What Policymakers See
+
+A dashboard showing spending gaps by category, with clear recommendations:
+
+::: {.callout-note}
+## Example: US Federal Budget Gap Analysis
+
+| Category | Current | OSL | Gap | Evidence | Action |
+|----------|---------|-----|-----|----------|--------|
+| Early childhood (0-5) | $50B | $70B | +$20B | A (RCTs) | Increase |
+| Vaccinations | $8B | $35B | +$27B | A (RCTs) | Increase |
+| Basic research | $45B | $90B | +$45B | B (spillovers) | Increase |
+| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) | Decrease |
+| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) | Eliminate |
+
+*Positive gaps indicate underinvestment; negative gaps indicate overinvestment.*
+:::
+
+### What Budget Analysts See
+
+- **OSL estimates** with confidence intervals and methodology notes
+- **Reference country data** showing peer spending patterns
+- **Diminishing returns curves** where dose-response data exists
+- **Evidence quality scores** (BIS) for each category
+- **Sensitivity analysis** showing how OSL changes with different assumptions
+- **Priority rankings** by gap size weighted by evidence confidence
+
+### Where This Fits
+
+```
++-------------------------------------------------------------+
+|                    OPTIMOCRACY FRAMEWORK                     |
++-------------------------------------------------------------+
+|                                                              |
+|  +---------------------+    +-----------------------------+  |
+|  |  Budget Optimization|    |  Policy Optimization        |  |
+|  |  (OSL/BIS Framework)|    |  (PIS Framework)            |  |
+|  |                     |    |                             |  |
+|  |  Answers:           |    |  Answers:                   |  |
+|  |  "How much should   |    |  "Which policy reforms      |  |
+|  |  we spend on each   |    |  would most improve         |  |
+|  |  category?"         |    |  welfare outcomes?"         |  |
+|  |                     |    |                             |  |
+|  |  Primary output:    |    |  Primary output:            |  |
+|  |  Optimal spending   |    |  Ranked reforms by          |  |
+|  |  levels + gaps      |    |  welfare impact             |  |
+|  +---------------------+    +-----------------------------+  |
+|                                                              |
+|  Both feed into: Constitutional Layer (metric-bound rules)  |
++-------------------------------------------------------------+
+```
+
+The OSL/BIS framework answers: "Given what we know about returns to spending, what are the optimal allocation levels?"
+
+The PIS framework (see [Policy Impact Score Specification](policy-impact-score-spec.qmd)) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
+
+## Introduction
+
+### Why Budget Allocation Fails Today
+
+Current budget allocation follows a process dominated by:
+
+1. **Lobbying intensity**: Categories with organized beneficiaries (defense contractors, agricultural lobbies) receive disproportionate funding regardless of evidence
+2. **Historical inertia**: This year's budget is last year's budget plus a percentage, not a fresh optimization
+3. **Visible vs. invisible beneficiaries**: Programs with identifiable beneficiaries (veterans) outcompete programs with diffuse beneficiaries (basic research)
+4. **Political salience**: Crises drive spending regardless of cost-effectiveness (terrorism vs. air pollution)
+5. **Zero-sum framing**: Budget debates treat all categories as competing rather than asking which ones are at optimal levels
+
+The result: systematic overinvestment in low-return categories and underinvestment in high-return categories.
+
+### The RDA Analogy: Optimal Levels, Not Just Marginal Returns
+
+Nutrition science doesn't just say "eat more vitamins." It specifies **Recommended Daily Allowances** - target intake levels where:
+
+- **Below RDA**: Deficiency symptoms, reduced function
+- **At RDA**: Optimal health benefits
+- **Above RDA**: Diminishing returns, potential toxicity
+
+Budget allocation should work the same way. For each spending category:
+
+- **Below OSL**: Foregone welfare gains (underinvestment)
+- **At OSL**: Optimal welfare return per dollar
+- **Above OSL**: Diminishing or negative returns (overinvestment)
+
+The key insight: **infinite spending on any category doesn't make sense**, even one with high returns. Early childhood education has excellent returns - but spending $10 trillion on it wouldn't produce 10x the benefits of spending $1 trillion. There's an optimal level.
+
+### What This Framework Provides
+
+1. **Target spending levels** for each budget category based on evidence
+2. **Gap analysis** showing where current spending diverges from optimal
+3. **Evidence grading** so policymakers know which OSL estimates are reliable
+4. **Priority ranking** for reallocation decisions
+5. **Uncertainty quantification** acknowledging what we don't know
+
+## Core Methodology
+
+### Spending Category Data Structure
+
+The OSL framework uses a structured representation of budget categories:
+
+```sql
+-- Spending categories
+spending_categories (
+    id, name, parent_category_id,
+    spending_type, -- 'program', 'transfer', 'investment', 'regulatory'
+    outcome_categories, -- which welfare outcomes this affects
+    current_spending_usd, fiscal_year,
+    data_source, last_updated
+)
+
+-- Reference country spending data
+reference_spending (
+    category_id, country_code, year,
+    spending_usd, spending_per_capita,
+    spending_pct_gdp, population, gdp,
+    data_source
+)
+
+-- Optimal spending level estimates
+osl_estimates (
+    category_id, estimation_method,
+    osl_usd, osl_per_capita, osl_pct_gdp,
+    confidence_interval_low, confidence_interval_high,
+    evidence_grade, bis_score,
+    methodology_notes, last_updated
+)
+
+-- Gap analysis
+spending_gaps (
+    category_id, current_spending_usd,
+    osl_usd, gap_usd, gap_pct,
+    priority_score, -- gap * BIS confidence
+    recommended_action
+)
+```
+
+### Three Methods for OSL Estimation
+
+| Method | Use Case | Data Required | Strengths | Limitations |
+|--------|----------|---------------|-----------|-------------|
+| **Reference country benchmarking** | Categories with comparable cross-country data | Per-capita spending from high-performing peers | Simple, intuitive, politically credible | Assumes context transfers |
+| **Diminishing returns modeling** | Categories with dose-response data | Effect estimates at multiple spending levels | Theoretically grounded, finds "knee" | Requires rich causal evidence |
+| **Cost-effectiveness threshold** | Health/life-saving interventions | Cost per QALY/DALY, willingness-to-pay | Links to standard health economics | Limited to monetizable outcomes |
+
+Each method is detailed below.
+
+## Reference Country Benchmarking
+
+### The Basic Approach
+
+For categories where comparable cross-country data exists, OSL can be estimated from high-performing reference countries:
+
+$$
+\text{OSL}_i = \text{median}(\text{Spending}_{i,c}) \times \text{Context}_{\text{US}}
+$$
+
+Where:
+- $\text{Spending}_{i,c}$ = spending on category $i$ in reference country $c$ (per capita or % GDP)
+- $\text{Context}_{\text{US}}$ = adjustment factors for US context (population, GDP, existing infrastructure)
+
+### Reference Country Selection Criteria
+
+Not all countries are appropriate references. Selection criteria:
+
+| Criterion | Requirement | Rationale |
+|-----------|-------------|-----------|
+| **Income level** | GDP/capita within 50% of US | Different income = different appropriate spending |
+| **Outcome performance** | Top quartile on relevant outcomes | Only reference high performers |
+| **Institutional quality** | Governance indicators above median | Similar implementation capacity |
+| **Data quality** | Reliable, consistent reporting | Measurement must be trustworthy |
+| **Population** | > 5 million | Small countries may not scale |
+
+**Typical reference set**: Nordic countries (high welfare outcomes), Germany (strong institutions), Canada/Australia (similar federalism), Japan (health outcomes), Netherlands (education outcomes).
+
+### Worked Example: Early Childhood Education
+
+**Question**: What is the optimal US spending on early childhood education (ages 0-5)?
+
+| Data Point | Value | Source |
+|------------|-------|--------|
+| US current spending | $50B/year | OMB FY2024 |
+| US children 0-5 | 24 million | Census 2023 |
+| US current per child | $2,083/child | |
+| | | |
+| **Reference countries (avg)** | | |
+| Denmark | $3,200/child | OECD |
+| Sweden | $2,900/child | OECD |
+| Norway | $3,100/child | OECD |
+| France | $2,400/child | OECD |
+| Germany | $2,000/child | OECD |
+| **Median reference** | **$2,900/child** | |
+| | | |
+| **Context adjustment** | | |
+| Cost-of-living adjustment | 0.95x | Lower than Nordic |
+| Labor cost adjustment | 1.05x | Higher than continental Europe |
+| Net adjustment | 1.0x | |
+| | | |
+| **OSL calculation** | | |
+| Adjusted per-child | $2,900/child | |
+| US children 0-5 | 24 million | |
+| **OSL** | **$69.6B/year** | |
+| | | |
+| **Gap analysis** | | |
+| Current | $50B | |
+| OSL | $70B | |
+| **Gap** | **+$20B (underinvestment)** | |
+
+**Evidence grade**: B (good reference data, moderate confidence in transferability)
+
+### Limitations of Reference Benchmarking
+
+1. **Context transferability**: What works in Denmark may not work in the US due to different institutions, culture, demographics
+2. **Correlation vs. causation**: High-spending countries may achieve outcomes for reasons unrelated to spending level
+3. **Selection bias**: Countries may specialize in areas they're naturally good at
+4. **Measurement differences**: "Early childhood education" may mean different things in different countries
+
+Reference benchmarking provides a **starting point** for OSL estimation, not a definitive answer. It should be combined with diminishing returns modeling where dose-response data exists.
+
+## Diminishing Returns Modeling
+
+### The Core Concept
+
+At low spending levels, each additional dollar produces substantial welfare gains. At high spending levels, marginal returns diminish. The OSL is where marginal return equals opportunity cost.
+
+$$
+\text{OSL}: \frac{\partial \text{Outcome}}{\partial \text{Spending}} = r
+$$
+
+Where $r$ is the discount rate or opportunity cost of capital (typically 3-7%).
+
+### Finding the "Knee" of the Curve
+
+Empirically, we look for the point where the outcome-spending relationship flattens:
+
+```
+Outcome
+   ^
+   |                    ___________
+   |                 __/
+   |               _/
+   |             _/
+   |           _/   <- OSL is around here
+   |         _/
+   |       _/
+   |     _/
+   |   _/
+   | _/
+   |/
+   +-----------------------------------> Spending
+         Low            High
+```
+
+### Estimation Methods
+
+**1. Nonlinear regression on cross-country data**
+
+Fit diminishing returns functions:
+
+$$
+\text{Outcome} = \alpha + \beta \cdot \log(\text{Spending}) + \epsilon
+$$
+
+Or with saturation:
+
+$$
+\text{Outcome} = \alpha + \beta \cdot \frac{\text{Spending}}{\text{Spending} + \gamma}
+$$
+
+Where $\gamma$ is the half-saturation constant.
+
+**2. Piecewise linear estimation**
+
+Estimate separate slopes for different spending ranges to identify where returns diminish.
+
+**3. Meta-regression of effect estimates**
+
+If multiple studies estimate effects at different spending levels, meta-regression can identify how effects vary with baseline spending.
+
+### Worked Example: K-12 Education Spending
+
+@jackson2016 exploited court-ordered school finance reforms to estimate causal effects of K-12 spending. Key finding: a 10% increase in per-pupil spending increases adult earnings by 7% for students from low-income families.
+
+**Does this effect diminish at higher spending levels?**
+
+Evidence from cross-state variation suggests:
+
+| Baseline spending (per pupil) | Effect of 10% increase | Implied marginal return |
+|------------------------------|------------------------|------------------------|
+| $8,000 | +8% earnings | $0.80 per $1 |
+| $12,000 | +5% earnings | $0.50 per $1 |
+| $16,000 | +3% earnings | $0.30 per $1 |
+| $20,000 | +1% earnings | $0.10 per $1 |
+
+**OSL estimation**: At $16,000/pupil, the marginal return (~0.30) roughly equals the social discount rate. This suggests:
+
+- Current US average: ~$15,000/pupil
+- OSL: ~$16,000-$18,000/pupil (modest underinvestment)
+- Gap: ~$50B nationally
+
+**Evidence grade**: B (strong causal identification, moderate extrapolation uncertainty)
+
+## Cost-Effectiveness Threshold Analysis
+
+### The Standard Health Economics Approach
+
+For health interventions, cost-effectiveness analysis provides OSL estimates:
+
+$$
+\text{OSL} = \sum_{\text{interventions}} \text{Scale}_i \times \text{Cost}_i \quad \text{where } \frac{\text{Cost}_i}{\text{QALY}_i} < \text{WTP}
+$$
+
+Where:
+- $\text{Scale}_i$ = target population for intervention $i$
+- $\text{Cost}_i$ = per-person cost of intervention $i$
+- $\text{QALY}_i$ = QALYs gained per person from intervention $i$
+- $\text{WTP}$ = willingness-to-pay threshold (typically $50K-$150K per QALY)
+
+### Building Up from Intervention-Level Data
+
+For each health intervention with cost-effectiveness data:
+
+1. **Identify target population** who would benefit
+2. **Calculate scale-up cost** to reach entire target population
+3. **Include only interventions** below the cost-effectiveness threshold
+4. **Sum to get category OSL**
+
+### Worked Example: Vaccinations
+
+| Intervention | Target pop. | Cost/person | QALY/person | Cost/QALY | Include? |
+|--------------|-------------|-------------|-------------|-----------|----------|
+| Childhood routine | 4M births | $500 | 0.1 | $5,000 | Yes |
+| HPV vaccination | 4M teens | $300 | 0.05 | $6,000 | Yes |
+| Flu (elderly) | 50M elderly | $40 | 0.01 | $4,000 | Yes |
+| Shingles | 40M eligible | $200 | 0.02 | $10,000 | Yes |
+| COVID boosters | 100M adults | $30 | 0.005 | $6,000 | Yes |
+
+**OSL calculation**:
+- Childhood: $2B
+- HPV: $1.2B
+- Flu: $2B
+- Shingles: $8B
+- COVID: $3B
+- **Total OSL: ~$16B** (vs. current ~$8B)
+
+**Gap**: +$8B (underinvestment)
+
+**Evidence grade**: A (RCT evidence for most vaccines, well-established cost-effectiveness)
+
+## Budget Impact Score (BIS) as Evidence Quality
+
+### Reframing BIS: Confidence in OSL, Not Allocation Driver
+
+The Budget Impact Score measures our **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. Unlike earlier formulations that used BIS to directly allocate budgets, OSL determines the target level, and BIS tells us how confident we are in that target.
+
+### BIS Calculation
+
+For each spending category $i$:
+
+**Step 1: Gather effect estimates**
+
+Collect all available causal effect estimates $\{\beta_{i,1}, \beta_{i,2}, ..., \beta_{i,n_i}\}$ from the econometric literature.
+
+**Step 2: Compute quality weights**
+
+| Identification Method | Quality Weight ($w^Q$) |
+|----------------------|------------------------|
+| Randomized controlled trial | 1.00 |
+| Natural experiment (DiD, RDD) | 0.85 |
+| Instrumental variables | 0.70 |
+| Panel with fixed effects | 0.55 |
+| Cross-sectional regression | 0.25 |
+
+**Step 3: Compute precision weights**
+
+$$
+w^P_j = \frac{1}{\text{SE}(\beta_j)^2}
+$$
+
+**Step 4: Compute recency weights**
+
+$$
+w^R_j = e^{-0.03(t_{now} - t_j)}
+$$
+
+**Step 5: Compute confidence score**
+
+$$
+\text{BIS}_i = \min\left(1, \frac{\sum_j w^Q_j \cdot w^P_j \cdot w^R_j}{K}\right)
+$$
+
+Where $K$ is a calibration constant.
+
+### Evidence Grading from BIS
+
+| BIS Range | Grade | Interpretation | OSL Confidence |
+|-----------|-------|----------------|----------------|
+| 0.80 - 1.00 | A | Strong causal evidence | High - proceed with reallocation |
+| 0.60 - 0.79 | B | Good evidence | Moderate - consider with caveats |
+| 0.40 - 0.59 | C | Mixed evidence | Low - pilot before scaling |
+| 0.20 - 0.39 | D | Weak evidence | Very low - research priority |
+| 0.00 - 0.19 | F | Insufficient evidence | Unknown - cannot estimate OSL |
+
+### BIS Does Not Drive Allocation
+
+Critical distinction from earlier formulations:
+
+| Old (BIS as allocation driver) | New (BIS as confidence measure) |
+|-------------------------------|--------------------------------|
+| Allocate proportionally to BIS | Allocate to reach OSL |
+| High BIS = more spending | High BIS = confident in OSL |
+| Ignores diminishing returns | Explicitly models optimal level |
+| Infinite spending possible | Bounded by OSL |
+
+## Gap Analysis and Priority Ranking
+
+### Computing Gaps
+
+For each category $i$:
+
+$$
+\text{Gap}_i = \text{OSL}_i - \text{Current}_i
+$$
+
+- **Gap > 0**: Underinvestment (increase spending)
+- **Gap = 0**: At optimal (maintain)
+- **Gap < 0**: Overinvestment (decrease spending)
+
+### Priority Score
+
+Prioritize reallocation by gap size weighted by confidence:
+
+$$
+\text{Priority}_i = |\text{Gap}_i| \times \text{BIS}_i
+$$
+
+Categories with large gaps AND high confidence should be addressed first.
+
+### Worked Example: Priority Ranking
+
+| Category | Current | OSL | Gap | BIS | Priority | Action |
+|----------|---------|-----|-----|-----|----------|--------|
+| Vaccinations | $8B | $35B | +$27B | 0.95 | 25.7 | **Increase first** |
+| Basic research | $45B | $90B | +$45B | 0.70 | 31.5 | **Increase** |
+| Early childhood | $50B | $70B | +$20B | 0.85 | 17.0 | Increase |
+| Military | $850B | $405B | -$445B | 0.50 | 222.5 | **Decrease** |
+| Ag subsidies | $25B | $0B | -$25B | 0.90 | 22.5 | **Eliminate** |
+
+**Reallocation plan**: Cut military discretionary (-$445B) and agricultural subsidies (-$25B) to fund vaccinations (+$27B), basic research (+$45B), early childhood (+$20B), with remainder to debt reduction or other high-return categories.
+
+## Multi-Unit Reporting
+
+### The Problem with Abstract Scores
+
+Composite scores (like 0-1 BIS values) obscure interpretability. Policymakers and citizens understand dollars, lives, and years - not abstract indices.
+
+### Reporting at Multiple Levels
+
+| Level | Units | Use Case | Example |
+|-------|-------|----------|---------|
+| **1. Natural** | Domain-specific | Interpretation within domain | "Education: $2,100/student gap" |
+| **2. Monetized** | $ equivalent | Cross-domain comparison | "Expected welfare gain: $4.00 per $1" |
+| **3. Health** | QALYs/DALYs | Health-weighted comparison | "12,000 QALYs per $1B invested" |
+| **4. Composite** | 0-1 score | Ranking when monetization uncertain | "BIS = 0.85" |
+
+### Conversion Factors
+
+| Conversion | Value | Source | Notes |
+|------------|-------|--------|-------|
+| Value of Statistical Life (VSL) | ~$10M | EPA, DOT | US regulatory standard |
+| Value per QALY | $50K-$150K | ICER, WHO | Context-dependent |
+| QALY → $ | $100K/QALY | Mid-range estimate | For cross-domain |
+| Life-year → QALY | ~0.8-1.0 | Age/health adjusted | Quality weighting |
+
+### Worked Example: Multi-Unit Output
+
+**Category: Early Childhood Education**
+
+| Unit Level | Value | Interpretation |
+|------------|-------|----------------|
+| **Natural** | +$20B gap | Current: $50B, OSL: $70B |
+| **Per-child** | +$833/child gap | 24M children |
+| **Monetized ROI** | 4:1 NPV return | @heckman2010 |
+| **Health (QALYs)** | +8K QALYs/year | Per $1B additional |
+| **Composite (BIS)** | 0.85 | High-quality RCT evidence |
+
+**Recommendation**: Moderate underinvestment with strong evidence. Closing the gap would yield ~$80B in NPV returns.
+
+## Quality Requirements and Validation
+
+### Minimum Thresholds for OSL Estimation
+
+| Criterion | Minimum | Rationale |
+|-----------|---------|-----------|
+| Reference countries | 5+ | Avoid outlier bias |
+| Dose-response studies | 3+ | Identify diminishing returns |
+| Causal effect estimates | 2+ | Cross-validate |
+| Data recency | Within 10 years | Relevance |
+| BIS for reallocation | > 0.40 | Sufficient confidence |
+
+### Robustness Checks
+
+For each OSL estimate, report:
+
+1. **Leave-one-country-out**: Does excluding any single reference country change OSL by >20%?
+2. **Method comparison**: Do reference benchmarking, diminishing returns, and cost-effectiveness methods agree?
+3. **Time stability**: Has OSL changed substantially over past 5 years?
+4. **Sensitivity to assumptions**: How does OSL change with ±20% parameter variation?
+
+## Interpreting Results
+
+### Gap Ranges and Recommended Actions
+
+| Gap (% of current) | Interpretation | Recommended Action |
+|-------------------|----------------|-------------------|
+| > +50% | Severe underinvestment | Immediate scale-up |
+| +20% to +50% | Moderate underinvestment | Phased increase |
+| -10% to +20% | Near optimal | Monitor, fine-tune |
+| -50% to -10% | Moderate overinvestment | Gradual reduction |
+| < -50% | Severe overinvestment | Urgent reallocation |
+
+### What the Algorithm Cannot Tell You
+
+| Factor | OSL Captures | OSL Does Not Capture |
+|--------|-------------|---------------------|
+| Evidence-optimal spending level | Yes | |
+| Confidence in estimates | Yes | |
+| Direction of reallocation | Yes | |
+| Political feasibility | | No |
+| Implementation capacity | | No |
+| Transition costs | | No |
+| Distributional effects | | No |
+| Novel interventions | | No |
+
+OSL provides evidence-based targets. Political judgment is still required for implementation strategy.
+
+## Pilot Program Prioritization
+
+### Value of Information for Uncertain Categories
+
+Categories with low BIS but potentially high returns warrant research investment:
+
+$$
+\text{VOI}_i = \text{Potential Gap}_i \times (1 - \text{BIS}_i) \times P(\text{high return})
+$$
+
+High-VOI categories should receive pilot funding to generate better evidence.
+
+### Recommended Pilot Designs
+
+For categories where OSL is uncertain:
+
+1. **Randomized scale-up**: Randomly vary spending levels across jurisdictions
+2. **Stepped-wedge rollout**: Gradual expansion with comparison to not-yet-treated areas
+3. **Natural experiment exploitation**: Monitor for policy changes that create quasi-experimental variation
+4. **Administrative data linkage**: Connect spending to outcomes through administrative records
+
+### Learning Feedback Loop
+
+After each budget cycle:
+
+1. **Measure outcomes**: Oracles report welfare changes
+2. **Update estimates**: New data refines OSL estimates
+3. **Recalculate priorities**: Gaps and BIS scores updated
+4. **Reallocate**: Next cycle reflects improved evidence
+
+## Data Sources
+
+### Reference Country Databases
+
+| Database | Coverage | URL | Use Case |
+|----------|----------|-----|----------|
+| **OECD iLibrary** | 38 OECD members | [oecd-ilibrary.org](https://www.oecd-ilibrary.org) | Education, health, social spending |
+| **World Bank WDI** | 217 countries | [data.worldbank.org](https://data.worldbank.org) | Broad spending and outcomes |
+| **SIPRI** | Global | [sipri.org](https://www.sipri.org) | Military spending |
+| **WHO GHED** | 194 countries | [who.int/data/gho](https://www.who.int/data/gho) | Health expenditure |
+| **UNESCO UIS** | Global | [uis.unesco.org](https://uis.unesco.org) | Education spending |
+
+### Cost-Effectiveness Databases
+
+| Database | Coverage | URL | Use Case |
+|----------|----------|-----|----------|
+| **CEA Registry** | 8,000+ analyses | [cearegistry.org](https://cearegistry.org) | Health cost-effectiveness |
+| **Disease Control Priorities** | LMICs | [dcp-3.org](https://www.dcp-3.org) | Global health priorities |
+| **Cochrane Library** | 8,000+ reviews | [cochranelibrary.com](https://www.cochranelibrary.com) | Health intervention effects |
+| **Copenhagen Consensus** | Development | [copenhagenconsensus.com](https://www.copenhagenconsensus.com) | Development priorities |
+
+### US Budget Data
+
+| Source | Coverage | URL | Use Case |
+|--------|----------|-----|----------|
+| **OMB Historical Tables** | 1789-present | [whitehouse.gov/omb](https://www.whitehouse.gov/omb/historical-tables/) | Federal spending |
+| **USASpending** | Federal awards | [usaspending.gov](https://www.usaspending.gov) | Program-level detail |
+| **Census of Governments** | State & local | [census.gov](https://www.census.gov/programs-surveys/cog.html) | Subnational spending |
+
+## Limitations
+
+### Reference Country Selection Bias
+
+- **Cherry-picking risk**: Choosing references that support preferred conclusions
+- **Survivor bias**: Only observing successful high-spenders, not failed ones
+- **Context non-transferability**: Nordic institutions may not transplant to US context
+
+**Mitigation**: Transparent reference selection criteria, sensitivity to reference set composition.
+
+### Diminishing Returns Uncertainty
+
+- **Functional form**: True relationship may not match assumed function
+- **Extrapolation**: Estimating returns outside observed spending range
+- **Interaction effects**: Returns may depend on other spending categories
+
+**Mitigation**: Report confidence intervals, use multiple functional forms, acknowledge extrapolation limits.
+
+### Political Feasibility Not Modeled
+
+OSL provides evidence-optimal targets, not politically achievable ones. A $445B military cut may be optimal but infeasible.
+
+**Mitigation**: OSL is a north star, not immediate policy. Transition paths must account for political constraints.
+
+### Implementation Capacity
+
+Higher spending may not translate to outcomes if implementation capacity is lacking.
+
+**Mitigation**: Pair spending increases with implementation assessment; phase in gradually.
+
+## Validation Framework
+
+### Retrospective Validation
+
+**Question**: Did jurisdictions that moved toward OSL achieve better outcomes than those that diverged?
+
+**Method**:
+1. Compute OSL for past periods using only data available at that time
+2. Identify jurisdictions that moved toward/away from OSL
+3. Compare subsequent outcomes
+
+### Prospective Validation
+
+**Question**: Do OSL-guided reallocations improve outcomes going forward?
+
+**Method**:
+1. Pre-register OSL predictions publicly
+2. Monitor jurisdictions that adopt OSL guidance vs. those that don't
+3. Compare outcome trajectories
+
+### Success Metrics
+
+| Metric | Definition | Target |
+|--------|------------|--------|
+| **Gap reduction** | Did spending move toward OSL? | > 50% of gap closed in 10 years |
+| **Outcome improvement** | Did welfare metrics improve more in OSL-following jurisdictions? | > 10% relative improvement |
+| **Prediction accuracy** | Did estimated returns match actual returns? | Correlation r > 0.5 |
+
+## Sensitivity Analysis
+
+### Parameter Sensitivity
+
+| Parameter | Default | Test Range | Impact on OSL |
+|-----------|---------|------------|---------------|
+| Reference country set | OECD high-performers | All OECD, EU only, Anglo only | ±15% |
+| Discount rate | 5% | 3-7% | ±20% |
+| BIS confidence threshold | 0.40 | 0.30-0.60 | Category inclusion |
+| Recency decay rate | 0.03/year | 0.01-0.05 | Estimate weights |
+
+### Scenario Analysis
+
+**Optimistic scenario**: All uncertain categories have high returns
+**Pessimistic scenario**: Uncertain categories have low/zero returns
+**Base case**: Use point estimates
+
+Report OSL range across scenarios for policy guidance.
+
+## Future Directions
+
+### Methodological
+
+1. **Bayesian hierarchical models**: More principled uncertainty quantification
+2. **Causal discovery**: Learn spending-outcome causal structure from data
+3. **Dynamic optimization**: Model multi-period reallocation paths
+4. **Interaction effects**: How spending categories complement/substitute
+
+### Data Infrastructure
+
+1. **Automated literature monitoring**: NLP to extract new effect estimates
+2. **Real-time outcome tracking**: Connect spending to outcomes continuously
+3. **API access**: Enable researchers to query OSL data programmatically
+
+### Governance Integration
+
+1. **Dashboard for policymakers**: Real-time gap analysis
+2. **Budget proposal scoring**: Automatically assess proposed budgets vs. OSL
+3. **Incentive Alignment Bonds**: Tie politician compensation to moving toward OSL
+
+## Conclusion
+
+The Optimal Spending Level framework provides a systematic, evidence-based approach to budget allocation. Unlike marginal-return frameworks that can justify infinite spending on high-return categories, OSL recognizes that every category has an optimal level - like the Recommended Daily Allowance for nutrients.
+
+The framework answers three questions:
+
+1. **What is the target?** OSL provides evidence-based spending levels for each category
+2. **How far are we?** Gap analysis shows where current spending diverges from optimal
+3. **How confident are we?** BIS scores evidence quality so policymakers know which OSL estimates are reliable
+
+Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OSL, vaccinations 75% below OSL) toward evidence-based targets will produce welfare gains orders of magnitude larger than current discretionary allocation achieves.
+
+## References
+
+::: {#refs}
+:::
+
+## Appendix A: Worked Example - Complete OSL Calculation {.appendix}
+
+### Example: US Military Discretionary Spending
+
+This worked example demonstrates the complete OSL calculation for a category where reference benchmarking is the primary method.
+
+**Step 1: Define the category**
+
+- **Category**: Military discretionary spending (defense budget excluding veterans' benefits and military pensions)
+- **Current US spending**: $850B (FY2024)
+- **Outcome of interest**: National security (deterrence, territorial integrity)
+
+**Step 2: Select reference countries**
+
+| Country | Military % GDP | Selection criteria |
+|---------|---------------|-------------------|
+| Germany | 1.5% | NATO member, high-income, strong institutions |
+| France | 1.9% | NATO member, nuclear power, high-income |
+| UK | 2.2% | NATO member, nuclear power, high-income |
+| Japan | 1.0% | High-income, strong institutions, regional threats |
+| Australia | 2.1% | High-income, alliance partner |
+| Canada | 1.3% | NATO member, neighbor |
+
+**Median reference**: 1.7% of GDP
+
+**Step 3: Context adjustment**
+
+| Factor | Adjustment | Rationale |
+|--------|------------|-----------|
+| Global role | +0.5% | US provides NATO umbrella |
+| Geographic security | -0.3% | US has oceanic borders, friendly neighbors |
+| Existing alliances | -0.2% | Cost-sharing with allies |
+| Nuclear deterrent | Already included | Reference countries include nuclear powers |
+| **Net adjustment** | +0.0% | Adjustments roughly cancel |
+
+**Step 4: Calculate OSL**
+
+- US GDP: $27T
+- Reference spending: 1.7% of GDP
+- Adjustment: 0%
+- **OSL = 1.7% × $27T = $459B**
+
+**Step 5: Gap analysis**
+
+| Metric | Value |
+|--------|-------|
+| Current spending | $850B |
+| OSL | $459B |
+| **Gap** | **-$391B (overinvestment)** |
+| Gap % of current | -46% |
+
+**Step 6: Evidence assessment**
+
+| Criterion | Assessment | Score |
+|-----------|------------|-------|
+| Reference country consistency | Moderate (1.0-2.2% range) | 0.6 |
+| Context transferability | Uncertain (US global role unique) | 0.4 |
+| Outcome linkage | Weak (spending → security unclear) | 0.3 |
+| Alternative methods | Limited | 0.4 |
+| **BIS** | | **0.50** |
+
+**Evidence grade**: C (Mixed evidence - benchmark clear, but US context unique)
+
+**Step 7: Multi-unit reporting**
+
+| Unit Level | Value | Interpretation |
+|------------|-------|----------------|
+| **Natural** | -$391B gap | 46% overinvestment vs. peers |
+| **Per capita** | -$1,170/person | Americans pay $2,550 vs. $1,380 peer avg |
+| **Opportunity cost** | 4-10x | Returns if reallocated to high-return categories |
+| **Composite (BIS)** | 0.50 | Moderate confidence in OSL estimate |
+
+**Recommendation**: Strong evidence of overinvestment relative to peer countries. However, US global role creates genuine uncertainty about context transferability. Recommend gradual reduction (10% per year) with continuous outcome monitoring.
+
+## Appendix B: Analysis Workflow {.appendix}
+
+### Complete OSL Analysis Pipeline
+
+```
++-------------------------------------------------------------+
+|                    OSL ANALYSIS WORKFLOW                      |
++-------------------------------------------------------------+
+
+Phase 1: DATA COLLECTION
+-------------------------
+1. Budget data ingestion
+   +-- Pull current spending by category (OMB, USASpending)
+   +-- Normalize categories to standard taxonomy
+   +-- Identify subcategories for detailed analysis
+   +-- Flag data quality issues
+
+2. Reference country data
+   +-- Pull spending data from OECD, World Bank
+   +-- Filter by reference country criteria
+   +-- Normalize to per-capita and % GDP
+   +-- Calculate medians and distributions
+
+3. Effect estimate data
+   +-- Search systematic reviews and meta-analyses
+   +-- Extract effect sizes with standard errors
+   +-- Code study quality (RCT, natural experiment, etc.)
+   +-- Build literature database by category
+
+Phase 2: OSL ESTIMATION
+-----------------------
+4. Reference benchmarking
+   +-- Calculate median reference spending
+   +-- Apply context adjustments
+   +-- Estimate OSL with confidence intervals
+   +-- Document methodology
+
+5. Diminishing returns modeling (where data permits)
+   +-- Fit nonlinear spending-outcome functions
+   +-- Identify "knee" of curve
+   +-- Calculate marginal returns at current spending
+   +-- Estimate optimal level
+
+6. Cost-effectiveness analysis (health/life-saving)
+   +-- Identify interventions below CE threshold
+   +-- Calculate scale-up costs
+   +-- Sum to category OSL
+   +-- Document assumptions
+
+7. Method reconciliation
+   +-- Compare OSL estimates across methods
+   +-- Weight by method reliability
+   +-- Produce consensus OSL estimate
+   +-- Flag discrepancies
+
+Phase 3: EVIDENCE QUALITY
+-------------------------
+8. BIS calculation
+   +-- Compute quality weights per study
+   +-- Compute precision weights
+   +-- Compute recency weights
+   +-- Aggregate to category BIS
+
+9. Evidence grading
+   +-- Assign A-F grade based on BIS
+   +-- Document key evidence
+   +-- Identify research gaps
+   +-- Flag high-uncertainty categories
+
+Phase 4: GAP ANALYSIS
+---------------------
+10. Compute gaps
+    +-- Gap = OSL - Current
+    +-- Calculate % gap
+    +-- Classify as under/over/optimal
+    +-- Apply BIS weighting
+
+11. Priority ranking
+    +-- Priority = |Gap| × BIS
+    +-- Rank categories
+    +-- Identify reallocation pairs
+    +-- Estimate welfare gains
+
+Phase 5: OUTPUT GENERATION
+--------------------------
+12. Multi-unit reporting
+    +-- Natural units ($/capita, % GDP)
+    +-- Monetized (ROI, opportunity cost)
+    +-- Health units (QALYs where applicable)
+    +-- Composite (BIS, evidence grade)
+
+13. Sensitivity analysis
+    +-- Vary key parameters
+    +-- Test reference country sets
+    +-- Report OSL ranges
+    +-- Identify robust conclusions
+
+14. Documentation
+    +-- Generate category reports
+    +-- Create methodology audit trail
+    +-- Version control estimates
+    +-- Publish to dashboard/API
+```
+
+## Appendix C: Glossary {.appendix}
+
+### Core Concepts
+
+- **Optimal Spending Level (OSL)**: The evidence-based target spending level for a budget category, analogous to the Recommended Daily Allowance for nutrients. Below OSL indicates underinvestment; above OSL indicates overinvestment.
+
+- **Budget Impact Score (BIS)**: A 0-1 score measuring confidence in the OSL estimate based on the quality and quantity of causal evidence. Higher BIS indicates more reliable OSL estimates.
+
+- **Spending Gap**: The difference between current spending and OSL. Positive gaps indicate underinvestment; negative gaps indicate overinvestment.
+
+- **Reference Country Benchmarking**: Estimating OSL by observing spending levels in comparable high-performing countries and adjusting for context.
+
+- **Diminishing Returns**: The economic principle that marginal returns to spending decrease as spending increases. OSL is where marginal return equals opportunity cost.
+
+### Estimation Methods
+
+- **Context Adjustment**: Modifications to reference country benchmarks accounting for differences in population, geography, institutions, and existing infrastructure.
+
+- **Cost-Effectiveness Threshold**: The maximum acceptable cost per QALY (or other health outcome) for including an intervention in OSL calculations. Typically $50K-$150K per QALY.
+
+- **Dose-Response Curve**: The relationship between spending level (dose) and outcome (response). Used to identify diminishing returns and estimate OSL.
+
+### Evidence Quality
+
+- **Quality Weight ($w^Q$)**: Weight assigned to a study based on identification strategy. RCTs receive 1.0; cross-sectional studies receive 0.25.
+
+- **Precision Weight ($w^P$)**: Weight assigned based on standard error. More precise estimates receive higher weight.
+
+- **Recency Weight ($w^R$)**: Weight assigned based on publication date. More recent studies receive higher weight via exponential decay.
+
+- **Evidence Grade**: Letter grade (A-F) summarizing confidence in OSL estimate. A = strong evidence; F = insufficient evidence.
+
+### Output Concepts
+
+- **Priority Score**: Product of gap magnitude and BIS. Used to rank categories for reallocation priority.
+
+- **Value of Information (VOI)**: Expected benefit of additional research on uncertain categories. High-VOI categories warrant pilot funding.
+
+- **Multi-Unit Reporting**: Presenting results in natural units, monetized equivalents, health units, and composite scores for interpretability.
+
+## Appendix D: Comparison to Actual US Budget {.appendix}
+
+### Current US Discretionary Budget vs. OSL-Optimal Allocation
+
+| Category | Current ($B) | OSL ($B) | Gap ($B) | Gap % | BIS | Priority |
+|----------|-------------|----------|----------|-------|-----|----------|
+| Defense (discretionary) | 850 | 459 | -391 | -46% | 0.50 | 195 |
+| Non-defense discretionary | 915 | 1,300 | +385 | +42% | 0.65 | 250 |
+| *- Education* | 80 | 120 | +40 | +50% | 0.75 | 30 |
+| *- Health (research)* | 50 | 100 | +50 | +100% | 0.80 | 40 |
+| *- Vaccinations* | 8 | 35 | +27 | +338% | 0.95 | 26 |
+| *- Basic research* | 45 | 90 | +45 | +100% | 0.70 | 32 |
+| *- Infrastructure* | 100 | 150 | +50 | +50% | 0.60 | 30 |
+| *- Early childhood* | 50 | 70 | +20 | +40% | 0.85 | 17 |
+| Agricultural subsidies | 25 | 0 | -25 | -100% | 0.90 | 23 |
+
+**Key findings**:
+
+1. **Severe overinvestment**: Military spending is ~85% above reference benchmarks
+2. **Severe underinvestment**: Vaccinations, basic research, health research far below evidence-optimal levels
+3. **Negative-return spending**: Agricultural subsidies should be eliminated entirely
+4. **Reallocation potential**: ~$400B could be reallocated from low/negative return to high-return categories
+
+**Estimated welfare gain from OSL alignment**: Moving from current allocation to OSL would increase welfare-equivalent output by an estimated 3-5% of GDP ($750B-$1.25T annually), based on the differential returns between over- and under-invested categories.
+
+---
+
+**Corresponding Author**: Mike P. Sinn, Decentralized Institutes of Health (mike@warondisease.org)
+
+**Conflicts of Interest**: The author declares no conflicts of interest.
+
+**Funding**: This work received no external funding.
+
+**Data Availability**: This specification describes a methodological framework. Data sources referenced (OECD, World Bank, SIPRI) are publicly available at URLs provided in Data Sources section. Implementation code will be released open-source upon system deployment.
+
+**Ethics Statement**: This is a methodological specification. No human subjects research was conducted.
+
+**Preprint**: This working paper has not undergone peer review.

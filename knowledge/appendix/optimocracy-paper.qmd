@@ -1395,365 +1395,103 @@ Oracles must provide:
 
 Multiple oracles are aggregated using median or stake-weighted average to resist manipulation.
 
-### Optimization Algorithm
-
-#### The Core Challenge: Where Do the Coefficients Come From?
-
-The optimization is only as good as the coefficients. If we claim "early childhood education returns $0.80 per dollar spent," where does that number come from? This is the hardest part of Optimocracy, and we shouldn't hand-wave it.
-
-**Why simple correlations fail:**
-
-- **Reverse causality**: Rich jurisdictions spend more on education AND have higher incomes. Which causes which?
-- **Confounders**: Culture, geography, institutions, and history all affect both spending and outcomes
-- **Diminishing returns**: The marginal effect of the 100th dollar differs from the 1st
-- **Time lags**: Education spending today affects income in 20 years
-- **Interaction effects**: Education + healthcare together may differ from either alone
-
-#### Rigorous Coefficient Estimation
-
-The algorithm requires *causal* effect estimates, not correlations. Methods that provide these:
-
-**1. Panel data with fixed effects (the workhorse)**
-
-Look at changes *within* the same jurisdiction over time:
-
-$$
-\Delta Y_{it} = \beta \Delta X_{it-k} + \gamma_i + \epsilon_{it}
-$$
-
-"When jurisdiction $i$ increased education spending by 10% in year $t-k$, how did median income change $k$ years later, compared to its own baseline?" This controls for time-invariant jurisdiction characteristics.
-
-**2. Natural experiments / Difference-in-differences**
-
-Exploit policy shocks that affect some jurisdictions but not others:
-
-- Court-ordered school funding equalization (some states got it, others didn't)
-- Oil boom windfalls (Alaska, North Dakota got money; neighbors didn't)
-- Federal formula changes that created arbitrary winners/losers
-
-Compare treated vs. control jurisdictions, before vs. after.
-
-**3. Regression discontinuity**
-
-Exploit arbitrary cutoffs in funding formulas. Counties just below a population threshold get different funding than those just above, but are otherwise similar.
-
-**4. Meta-analysis of randomized trials**
-
-Aggregate findings from actual RCTs: Moving to Opportunity, Perry Preschool, Oregon Medicaid expansion, RAND Health Insurance Experiment.
-
-**5. Synthetic control**
-
-For unique policy changes, construct a weighted "synthetic counterfactual" from other jurisdictions that matches pre-treatment trends.
-
-#### The Aggregated N-of-1 Approach
-
-The most robust method treats each jurisdiction-year as a natural experiment and aggregates across thousands of them:
-
-1. **Collect panel data**: 50 US states × 50 years × 10 spending categories = 25,000 observations. Add OECD countries: 38 × 30 years = 11,400 more.
-2. **Estimate lagged effects**: $\Delta \text{Outcome}_{it+k} = f(\Delta \text{Spending}_{it})$ with jurisdiction and year fixed effects
-3. **Allow for nonlinearity**: Diminishing returns, interaction terms
-4. **Bootstrap confidence intervals**: Quantify uncertainty
-5. **Weight by identification quality**: RCTs > natural experiments > correlations
-
-This is essentially a meta-analysis of thousands of implicit natural experiments.
-
-#### What the Literature Actually Shows
-
-Decades of applied econometrics have estimated these effects with credible causal identification:
-
-| Category | Causal Effect Estimate | Method | Key Source |
-|----------|----------------------|--------|------------|
-| Early childhood (0-5) | $7-12 return per $1 (lifetime NPV) | RCT follow-up | @heckman2010 |
-| K-12 spending (+10%) | +7% adult earnings | Court-ordered equalization | @jackson2016 |
-| Infrastructure | $0.35-0.55 per $1 (GDP) | Instrumental variables | @leduc2013 |
-| Basic research | 20-60% social return | Patent spillovers | @bloom2013 |
-| Preventive health | 3-5x return (selected) | RCT meta-analysis | Cochrane reviews |
-| Agricultural subsidies | Negative (deadweight loss) | Welfare analysis | @sumner2007 |
-
-These aren't made-up numbers. They're from peer-reviewed studies using credible identification strategies.
-
-#### Worked Example (With Literature-Based Coefficients)
-
-| Category | Effect Estimate | Source Quality | Allocation Weight |
-|----------|----------------|----------------|-------------------|
-| Early childhood (0-5) | $4.00 per $1 (NPV) | High (RCTs) | 0.35 |
-| K-12 education | $0.70 per $1 | High (natural experiments) | 0.20 |
-| Basic research | $0.40 per $1 | Medium (spillover estimation) | 0.15 |
-| Infrastructure | $0.35 per $1 | Medium (IV) | 0.12 |
-| Preventive health | $0.30 per $1 | High (varies by intervention) | 0.10 |
-| Military (discretionary) | ~$0.03 per $1 | Low (multiplier studies) | 0.03 |
-| Agricultural subsidies | -$0.20 per $1 | High (welfare analysis) | 0.00 |
-| Uncertainty reserve | N/A | N/A | 0.05 |
-
-The algorithm allocates in proportion to effect estimates, weighted by identification quality. The "uncertainty reserve" funds exploration of interventions with high-variance potential.
-
-**Key caveat:** These coefficients have wide confidence intervals. The algorithm must incorporate uncertainty: allocating more to well-identified interventions and reserving budget for experimentation on uncertain ones.
-
-#### The Budget Impact Score (BIS): A Fully Specified Algorithm
-
-To make Optimocracy implementable rather than aspirational, we specify a concrete algorithm for computing budget allocations from the econometric literature. The **Budget Impact Score (BIS)** operationalizes the meta-analytic approach described above.
-
-**Step 1: Gather Effect Estimates**
-
-For each spending category $i$, collect all available causal effect estimates $\{\beta_{i,1}, \beta_{i,2}, ..., \beta_{i,n_i}\}$ from the econometric literature, where $\beta_{i,j}$ represents the estimated effect of a 1% increase in category $i$ spending on the target metric (e.g., median income growth) from study $j$.
-
-**Step 2: Compute Quality Weights**
-
-Each study receives a quality weight $w^Q_j$ based on identification strategy:
-
-| Identification Method | Quality Weight ($w^Q$) | Rationale |
-|----------------------|------------------------|-----------|
-| Randomized controlled trial | 1.00 | Gold standard for causal inference |
-| Natural experiment (DiD, RDD) | 0.85 | Strong identification, some assumptions |
-| Instrumental variables | 0.70 | Valid if exclusion restriction holds |
-| Panel with fixed effects | 0.55 | Controls for time-invariant confounds only |
-| Cross-sectional regression | 0.25 | High confounding risk |
-
-**Step 3: Compute Precision Weights**
-
-Studies with larger samples provide more precise estimates. Weight by inverse variance:
-
-$$
-w^P_j = \frac{1}{\text{SE}(\beta_j)^2}
-$$
-
-If standard errors are unavailable, approximate using sample size: $w^P_j = \sqrt{n_j}$
-
-**Step 4: Compute Recency Weights**
-
-More recent studies reflect current conditions. Apply exponential decay:
-
-$$
-w^R_j = e^{-\lambda(t_{now} - t_j)}
-$$
-
-Where $\lambda = 0.03$ per year (half-life ≈ 23 years). This down-weights a 1990 study to ~35% of a 2024 study.
-
-**Step 5: Compute Weighted Effect Estimate**
-
-For each category $i$, compute the meta-analytic effect estimate:
-
-$$
-\hat{\beta}_i = \frac{\sum_{j=1}^{n_i} w^Q_j \cdot w^P_j \cdot w^R_j \cdot \beta_{i,j}}{\sum_{j=1}^{n_i} w^Q_j \cdot w^P_j \cdot w^R_j}
-$$
-
-**Step 6: Compute Confidence Score**
-
-The confidence in $\hat{\beta}_i$ depends on the quantity and quality of evidence:
-
-$$
-C_i = \min\left(1, \frac{\sum_j w^Q_j \cdot w^P_j}{K}\right)
-$$
-
-Where $K$ is a calibration constant (e.g., $K = 100$). Categories with sparse or low-quality evidence have $C_i < 1$.
-
-**Step 7: Compute Budget Impact Score**
-
-The final BIS combines effect estimate and confidence:
-
-$$
-\text{BIS}_i = \max(\hat{\beta}_i, 0) \cdot C_i
-$$
-
-Negative effect estimates (categories that harm the metric) receive $\text{BIS} = 0$. Low-confidence estimates are discounted.
-
-**Step 8: Allocate Budget**
-
-Allocate the total budget $B$ in proportion to BIS, with an exploration reserve:
-
-$$
-x_i = \begin{cases}
-\frac{\text{BIS}_i}{\sum_k \text{BIS}_k} \cdot (1 - \alpha) \cdot B & \text{if } C_i \geq C_{min} \\
-0 & \text{otherwise}
-\end{cases}
-$$
-
-Where $\alpha = 0.10$ (10% exploration reserve) and $C_{min} = 0.3$ (minimum confidence threshold).
-
-**Step 9: Allocate Exploration Budget**
-
-The exploration reserve $\alpha \cdot B$ funds randomized trials for high-uncertainty interventions:
-
-$$
-x^{explore}_i = \frac{\text{Var}(\hat{\beta}_i) \cdot \mathbb{1}[C_i < C_{min}]}{\sum_k \text{Var}(\hat{\beta}_k) \cdot \mathbb{1}[C_k < C_{min}]} \cdot \alpha \cdot B
-$$
-
-Categories with high variance and low confidence receive exploration funding to reduce uncertainty.
-
-#### Worked Example
-
-**Target metric:** Median income growth. **Budget:** $1 trillion.
-
-The following allocation is computed dynamically from curated literature estimates using the BIS algorithm implementation (`dih_models/bis_algorithm.py`):
-
-```{python}
-#| echo: false
-#| output: asis
-import sys
-sys.path.insert(0, '../..')
-
-from dih_models.bis_algorithm import calculate_allocations
-from dih_models.bis_literature_data import EFFECT_ESTIMATES
-
-result = calculate_allocations(EFFECT_ESTIMATES, total_budget=1_000_000_000_000)
-print(result.to_markdown())
+### Budget and Policy Optimization: Two Complementary Frameworks
+
+Optimocracy optimizes governance through two complementary mechanisms, each addressing a different aspect of the welfare-maximization problem.
+
+#### Budget Optimization: The Optimal Spending Level (OSL) Framework
+
+The **Optimal Spending Level (OSL)** framework answers: "How much should we spend on each category to maximize welfare?"
+
+**Key insight**: Like the Recommended Daily Allowance (RDA) for nutrients, each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns or outright waste.
+
+| Spending Level | Health Analogy | Budget Interpretation |
+|----------------|----------------|----------------------|
+| Below optimal | Vitamin deficiency | Foregone welfare gains |
+| At optimal | Recommended daily allowance | Maximum return per dollar |
+| Above optimal | Diminishing returns / toxicity | Waste, opportunity cost |
+
+The OSL framework combines three evidence sources:
+
+1. **Reference country benchmarking**: What do high-performing peer countries spend?
+2. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
+3. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
+
+The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
+
+**Example output**:
+
+| Category | Current | OSL | Gap | Evidence |
+|----------|---------|-----|-----|----------|
+| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
+| Basic research | $45B | $90B | +$45B | B (spillovers) |
+| Military | $850B | $459B | -$391B | C (benchmarks) |
+
+For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Spending Level Framework Specification](budget-optimization-algorithm-spec.qmd).
+
+#### Policy Optimization: The Policy Impact Score (PIS) Framework
+
+The **Policy Impact Score (PIS)** framework answers: "Which policy reforms would most improve welfare outcomes?"
+
+This extends beyond budget allocation to evaluate *all policies*: laws, regulations, taxes, and administrative rules. The key insight is that budget reallocation alone cannot fix structural inefficiencies:
+
+| Problem Type | Example | Budget Optimization Handles? |
+|--------------|---------|------------------------------|
+| Program allocation | Too little preventive care | Yes (reallocate budget) |
+| Administrative overhead | $812B/year US billing costs | No (requires regulatory reform) |
+| Drug pricing | US pays 256% of OECD average | No (requires policy change) |
+
+PIS uses quasi-experimental methods (synthetic control, difference-in-differences, regression discontinuity) to estimate causal effects of policy changes across centuries of variation in hundreds of jurisdictions.
+
+**Example output**:
+
+| Policy Reform | Effect on Outcome | Evidence Grade |
+|---------------|-------------------|----------------|
+| Tobacco tax (+$1/pack) | -8.2 pp smoking rate | A (synthetic control) |
+| Seat belt laws (primary) | -1.8 traffic deaths/100K | A (DiD, 47 states) |
+| Occupational licensing | +2-3% consumer prices | B (cross-state variation) |
+
+For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Policy Impact Score Specification](policy-impact-score-spec.qmd).
+
+#### How They Work Together
+
+| Framework | Unit of Analysis | Primary Output | Key Question |
+|-----------|------------------|----------------|--------------|
+| OSL/BIS | Spending category | Optimal allocation + gaps | How much to spend? |
+| PIS | Policy/regulation | Ranked reforms by impact | Which policies to adopt? |
+
+Both frameworks feed into the Constitutional Layer, which binds governance to evidence-based decision rules rather than discretionary judgment:
+
+```
++----------------------------------------------------------+
+|                 CONSTITUTIONAL LAYER                       |
+|  Citizens vote on metrics (median income, QALYs, etc.)    |
++----------------------------------------------------------+
+           |                              |
+           v                              v
++------------------------+    +------------------------+
+|   Budget Optimization  |    |   Policy Optimization  |
+|   (OSL/BIS Framework)  |    |   (PIS Framework)      |
+|                        |    |                        |
+|   Determines:          |    |   Determines:          |
+|   - Optimal spending   |    |   - Which reforms      |
+|     levels per category|    |     improve welfare    |
+|   - Investment gaps    |    |   - Priority ranking   |
+|   - Reallocation       |    |   - Pilot candidates   |
+|     priorities         |    |                        |
++------------------------+    +------------------------+
+           |                              |
+           +------------+  +--------------+
+                        |  |
+                        v  v
+         +---------------------------+
+         |   ORACLE VERIFICATION     |
+         |   Independent measurement |
+         |   of actual outcomes      |
+         +---------------------------+
 ```
 
-The exploration reserve funds RCTs on uncertain interventions (e.g., job training programs, higher education subsidies) to generate better estimates for future allocation cycles.
-
-::: {.callout-note collapse="true" title="View Literature Data Sources"}
-The effect estimates above are drawn from peer-reviewed econometric studies with credible causal identification. Full citations and methodology notes are in `dih_models/bis_literature_data.py`. Key sources include:
-
-- **Early childhood**: @heckman2010 (Perry Preschool RCT), Abecedarian Project
-- **K-12 education**: @jackson2016 (court-ordered finance reforms)
-- **Basic research**: @bloom2013 (R&D spillovers), NIH grant discontinuities
-- **Infrastructure**: @leduc2013 (highway grants IV)
-- **Preventive health**: Oregon Medicaid RCT, state Medicaid expansions
-- **Agricultural subsidies**: @sumner2007 (deadweight loss analysis)
-- **Pragmatic trials**: @ford2016 (ALLHAT), @califf2016 (PCORnet)
-- **Vaccinations**: @copenhagenconsensus2023, @ozawa2016
-- **Maternal health**: @bhutta2014 (Lancet meta-analysis)
-- **Nutrition**: @hoddinott2013 (Guatemala longitudinal)
-- **Incarceration (non-violent)**: @mueller-smith2015 (judge randomization IV), @vera2024
-- **Drug enforcement**: @miron2010 (Cato budgetary analysis)
-:::
-
-#### Comparison to Actual US Budget
-
-How different would BIS allocations be from current US discretionary spending? The following table compares evidence-optimal allocation to actual FY2024 appropriations:
-
-```{python}
-#| echo: false
-#| output: asis
-import sys
-sys.path.insert(0, '../..')
-
-from dih_models.bis_algorithm import calculate_allocations, compare_to_actual
-from dih_models.bis_literature_data import EFFECT_ESTIMATES
-
-result = calculate_allocations(EFFECT_ESTIMATES, total_budget=1_000_000_000_000)
-print(compare_to_actual(result))
-```
-
-The stark contrast illustrates the core thesis: current allocation reflects lobbying intensity (military contractors spend $100M+/year), not evidence of welfare improvement. BIS would redirect ~$450B from military-above-deterrence (where evidence shows ~0 marginal welfare impact) to high-return categories like vaccinations (101:1 BCR) and maternal health (87:1 BCR).
-
-#### Sensitivity Analysis
-
-Do the allocations depend heavily on specific parameter choices? The following table varies the exploration reserve fraction and confidence threshold:
-
-```{python}
-#| echo: false
-#| output: asis
-import sys
-sys.path.insert(0, '../..')
-
-from dih_models.bis_algorithm import sensitivity_analysis
-from dih_models.bis_literature_data import EFFECT_ESTIMATES
-
-print(sensitivity_analysis(EFFECT_ESTIMATES))
-```
-
-**Result:** Allocations are robust to parameter variation. The ranking of categories (vaccinations > maternal health > pragmatic trials > early childhood) remains stable across scenarios. This is because the underlying effect estimates, not the algorithm parameters, drive most of the variation.
-
-#### Robustness Check: Dropping RCT Evidence
-
-How much do allocations depend on gold-standard RCT evidence? The following comparison drops all RCT studies and recalculates:
-
-```{python}
-#| echo: false
-#| output: asis
-import sys
-sys.path.insert(0, '../..')
-
-from dih_models.bis_algorithm import robustness_check_drop_rcts
-from dih_models.bis_literature_data import EFFECT_ESTIMATES
-
-print(robustness_check_drop_rcts(EFFECT_ESTIMATES))
-```
-
-**Result:** Categories with strong RCT evidence (vaccinations, pragmatic trials, maternal health) see modest allocation decreases when RCTs are dropped, while categories relying more on natural experiments (basic research, K-12) see increases. This confirms the algorithm appropriately weights evidence quality, but also shows that results are not driven entirely by a handful of RCTs.
-
-#### Code Availability
-
-The complete BIS algorithm implementation is available in the project repository:
-
-- **Algorithm**: `dih_models/bis_algorithm.py` (~500 lines Python)
-- **Literature data**: `dih_models/bis_literature_data.py` (curated effect estimates)
-- **Dependencies**: Standard library only (no ML frameworks required)
-
-The code is designed for reproducibility: running `python -m dih_models.bis_algorithm` reproduces all tables in this paper. Researchers can extend the literature database by adding new `EffectEstimate` entries and re-running the algorithm.
-
-#### Continuous Learning
-
-After each budget cycle (e.g., 3-5 years):
-
-1. **Measure outcomes**: Oracles report metric changes
-2. **Update estimates**: New data points enter the meta-analysis with $w^R = 1.0$
-3. **Recalculate BIS**: Weights shift based on observed performance
-4. **Reallocate**: Next cycle's budget reflects updated evidence
-
-This creates a learning system: categories that outperform expectations gain allocation; categories that underperform lose allocation. The algorithm improves over time.
-
-#### Why This Is Implementable Today
-
-The BIS algorithm requires only:
-
-1. **A literature database**: Systematic reviews, Cochrane, NBER working papers, published economics journals
-2. **Standard meta-analytic software**: R (`metafor`), Stata, Python (`statsmodels`)
-3. **Annual updates**: New studies enter the database; weights recalculate automatically
-
-No AI required. No novel statistics. This is standard meta-analysis applied to budget allocation. The hard part isn't the algorithm. It's the political will to use it.
-
-#### Limitation: Budget Allocation vs. Regulatory Reform
-
-The BIS algorithm optimizes *program-level spending* but cannot directly address *system-level structural inefficiencies*. This distinction matters for categories like healthcare:
-
-| Type | Example | BIS Can Fix? | Actual Solution |
-|------|---------|--------------|-----------------|
-| **Program allocation** | Too little preventive care, too much acute care | Yes | Reallocate budget toward high-return preventive programs |
-| **Administrative overhead** | $812B/year in US billing costs vs $185B in Canada (@woolhandler2020) | Identify, not fix | Regulatory reform (standardized billing, single-payer) |
-| **Drug pricing** | US pays 256% of OECD average for identical medications (@mulcahy2021) | Identify, not fix | Policy change (reference pricing, importation, negotiation) |
-
-The US spends $7,500/person *more* on healthcare than peer countries yet achieves *worse* outcomes. Simply reallocating this budget won't help. Spending more on preventive care while still paying 3x for drugs and 5x for administration produces marginal improvement at best.
-
-**What BIS can do:**
-
-1. **Identify structural waste**: Categories like `healthcare_admin_overhead` (beta = -0.35) and `drug_pricing_above_reference` (beta = -0.28) flag spending that produces negative or zero welfare returns
-2. **Quantify opportunity cost**: Every dollar spent on admin overhead is a dollar not spent on vaccinations (101:1 BCR) or maternal health (87:1 BCR)
-3. **Build political case**: Evidence that 30% of health spending is administrative waste supports reform efforts
-
-**What BIS cannot do:**
-
-1. Force price negotiations with pharmaceutical companies
-2. Standardize insurance billing codes
-3. Change the structure of the healthcare market
-
-This is not a limitation unique to Optimocracy. No budget algorithm can fix regulatory capture. But it's important to state clearly: the US healthcare inefficiency problem requires both budget reallocation (which BIS handles) AND regulatory reform (which requires political action outside the algorithm).
-
-#### Extension to Policy Reforms: The Policy Impact Score
-
-The BIS limitation above motivates a complementary system: the **Policy Impact Score (PIS)**. While BIS optimizes *resource allocation* across spending categories, PIS ranks *policy reforms* (laws, regulations, tax policies) by their demonstrated welfare impact.
-
-The methodology mirrors BIS but with different units of analysis:
-
-| Dimension | Budget Impact Score (BIS) | Policy Impact Score (PIS) |
-|-----------|--------------------------|---------------------------|
-| **Optimizes** | Spending allocation | Policy adoption/repeal |
-| **Unit** | Dollars per program category | Laws, regulations, tax rules |
-| **Method** | Meta-analysis of RCTs and quasi-experiments | Quasi-experimental analysis (synthetic control, DiD, RDD) |
-| **Data** | Econometric literature | Centuries of policy variation across hundreds of jurisdictions |
-| **Bradford Hill** | Applied to treatment-outcome relationships | Applied to policy-outcome relationships |
-
-Even with imperfect causal inference, systematically analyzing policy-outcome relationships across available historical data will produce outcomes orders of magnitude better than current methods (lobbying intensity, ideological priors, anecdote-driven policy).
-
-The PIS system uses a relational database to track:
-
-1. **Policies**: Laws, regulations, and tax rules with temporal extent and jurisdiction
-2. **Outcomes**: Welfare metrics (life expectancy, income, crime rates) with time series
-3. **Relationships**: Quasi-experimental effect estimates with Bradford Hill criteria scores
-4. **Natural experiments**: Identified opportunities for causal validation
-
-For detailed methodology including database schema, analysis methods, and evidence grading, see [Policy Impact Score Specification](policy-impact-score-spec.qmd).
+The Political Dysfunction Tax (estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
 
 ### Smart Contract Threat Model
 
