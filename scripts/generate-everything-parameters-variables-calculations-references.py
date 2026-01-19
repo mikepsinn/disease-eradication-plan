@@ -72,6 +72,7 @@ if str(_project_root) not in sys.path:
 
 from generate_references_json import generate_references_json  # noqa: E402
 from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
+from lib.workflow_generator import regenerate_workflow  # noqa: E402
 
 # Import all generator modules
 from dih_models.bibtex_generator import generate_bibtex
@@ -1235,6 +1236,13 @@ def main():
         sync_descriptions_to_yaml_configs(project_root, output_path)
     except Exception as e:
         print(f"[WARN] Description sync skipped: {e}")
+        print()
+
+    # Regenerate GitHub Actions workflow from Quarto configs
+    try:
+        regenerate_workflow(project_root)
+    except Exception as e:
+        print(f"[WARN] Workflow regeneration skipped: {e}")
         print()
 
     print("[OK] All academic outputs generated successfully!")

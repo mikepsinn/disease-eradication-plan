@@ -15,15 +15,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build strategy:
-  # 1. All sites build in parallel (main HTML+PDF+EPUB, economics, wishocracy, iab)
-  # 2. Main job builds HTML, then PDF, then EPUB sequentially before deploying
-  # 3. All formats (HTML, PDF, EPUB) deployed together to Netlify
-  # This approach:
-  # - Ensures all download links (PDF, EPUB) work immediately on deployment
-  # - Reuses computations via freeze cache within the same job
-  # - Costs $0 in artifact storage
-  build-main-html:
+
+  build-book:
     name: Build Main Book (HTML + PDF + EPUB)
     runs-on: ubuntu-latest
     steps:
@@ -34,9 +27,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-book-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
           restore-keys: |
-            quarto-freeze-main-
+            quarto-freeze-book-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -68,350 +62,39 @@ jobs:
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
       - name: Install LaTeX for PDF/EPUB
+
         run: quarto install tinytex
 
-      - name: Render all formats (HTML + PDF + EPUB)
+      - name: Render Build Main Book (HTML + PDF + EPUB)
         run: python scripts/render-quarto.py book
         timeout-minutes: 75
 
-     # - name: Upload Main Site artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: main-site
-          #path: _book/warondisease
-          #retention-days: 1
 
-      - name: Deploy Main Site to Netlify (immediate)
+      - name: Deploy Build Main Book (HTML + PDF + EPUB) to Netlify (immediate)
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/book/_book/warondisease'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy main site from GitHub Actions"
+
+          deploy-message: "Deploy book site from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
+
         timeout-minutes: 1
 
-  build-economics:
-    name: Build Economics Site
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
 
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-economics-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-economics-
-            quarto-freeze-
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX for PDF
-        run: quarto install tinytex
-
-      - name: Render Economics Website
-        run: python scripts/render-quarto.py economics
-        timeout-minutes: 25
-
-     # - name: Upload Economics artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: economics-site
-          #path: _site/economics
-          #retention-days: 1
-
-      - name: Deploy Economics Site to Netlify (immediate)
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/economics/_site/economics'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy economics site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
-        timeout-minutes: 1
-
-      - name: Upload Economics PDF to Zenodo (draft)
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/publish-zenodo.py --draft --paper economics
-
-  build-wishocracy:
-    name: Build Wishocracy Paper
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-wishocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-wishocracy-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render Wishocracy Paper
-        run: python scripts/render-quarto.py wishocracy
-        timeout-minutes: 10
-
-     # - name: Upload Wishocracy artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: wishocracy-site
-          #path: _site/wishocracy
-          #retention-days: 1
-
-      - name: Deploy Wishocracy Paper to Netlify (immediate)
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/wishocracy/_site/wishocracy'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy wishocracy paper from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
-        timeout-minutes: 1
-
-      - name: Upload Wishocracy PDF to Zenodo (draft)
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/publish-zenodo.py --draft --paper wishocracy
-
-  build-iab:
-    name: Build IAB Paper
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-iab-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-iab-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render IAB Paper
-        run: python scripts/render-quarto.py iab
-        timeout-minutes: 10
-
-     # - name: Upload IAB artifact
-        #uses: actions/upload-artifact@v4
-        #with:
-          #name: iab-site
-          #path: _site/iab
-          #retention-days: 1
-
-      - name: Deploy IAB Paper to Netlify (immediate)
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/iab/_site/iab'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy IAB paper from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
-        timeout-minutes: 1
-
-      - name: Upload IAB PDF to Zenodo (draft)
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/publish-zenodo.py --draft --paper iab
-
-  build-dfda-spec:
-    name: Build dFDA Spec Paper
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-dfda-spec-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-dfda-spec-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render dFDA Spec Paper
-        run: python scripts/render-quarto.py dfda-spec
-        timeout-minutes: 10
-
-      - name: Deploy dFDA Spec Paper to Netlify (immediate)
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/dfda-spec/_site/dfda-spec'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy dFDA paper from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_SPEC_SITE_ID }}
-        timeout-minutes: 1
-
-      - name: Upload dFDA Spec PDF to Zenodo (draft)
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/publish-zenodo.py --draft --paper dfda-spec
 
   build-dfda-impact:
-    name: Build dFDA Impact Paper
+    name: Build The Health and Economic Impact of a Global System 
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -422,6 +105,7 @@ jobs:
         with:
           path: _freeze
           key: quarto-freeze-dfda-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
           restore-keys: |
             quarto-freeze-dfda-impact-
             quarto-freeze-
@@ -455,30 +139,789 @@ jobs:
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
       - name: Install LaTeX
+
         run: quarto install tinytex
 
-      - name: Render dFDA Impact Paper
+      - name: Render Build The Health and Economic Impact of a Global System 
         run: python scripts/render-quarto.py dfda-impact
         timeout-minutes: 10
 
-      - name: Deploy dFDA Impact Paper to Netlify (immediate)
+
+      - name: Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/dfda-impact/_site/dfda-impact'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy dFDA Impact paper from GitHub Actions"
+
+          deploy-message: "Deploy dfda-impact site from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_IMPACT_SITE_ID }}
+
         timeout-minutes: 1
 
-      - name: Upload dFDA Impact PDF to Zenodo (draft)
+
+
+      - name: Upload Build The Health and Economic Impact of a Global System  PDF to Zenodo (draft)
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
         run: python scripts/publish-zenodo.py --draft --paper dfda-impact
+
+
+
+  build-dfda-spec:
+    name: Build dFDA: A Decentralized Framework for Drug Assessmen
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-dfda-spec-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-dfda-spec-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build dFDA: A Decentralized Framework for Drug Assessmen
+        run: python scripts/render-quarto.py dfda-spec
+        timeout-minutes: 10
+
+
+      - name: Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/dfda-spec/_site/dfda-spec'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy dfda-spec site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_SPEC_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper dfda-spec
+
+
+
+  build-economics:
+    name: Build The 1% Treaty: Health and Economic Impact of Redir
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-economics-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-economics-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX for PDF/EPUB
+
+        run: quarto install tinytex
+
+      - name: Render Build The 1% Treaty: Health and Economic Impact of Redir
+        run: python scripts/render-quarto.py economics
+        timeout-minutes: 25
+
+
+      - name: Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/economics/_book/economics'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy economics site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build The 1% Treaty: Health and Economic Impact of Redir PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper economics
+
+
+
+  build-iab:
+    name: Build Incentive Alignment Bonds: Making Public Goods Fin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-iab-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-iab-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build Incentive Alignment Bonds: Making Public Goods Fin
+        run: python scripts/render-quarto.py iab
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/iab/_site/iab'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy iab site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper iab
+
+
+
+  build-obg:
+    name: Build Optimal Budget Generator: Evidence-Based Budget Al
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-obg-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-obg-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build Optimal Budget Generator: Evidence-Based Budget Al
+        run: python scripts/render-quarto.py obg
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/obg/_site/obg'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy obg site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OBG_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper obg
+
+
+
+  build-opg:
+    name: Build Optimal Policy Generator: Evidence-Based Policy Re
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-opg-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-opg-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build Optimal Policy Generator: Evidence-Based Policy Re
+        run: python scripts/render-quarto.py opg
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/opg/_site/opg'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy opg site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OPG_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build Optimal Policy Generator: Evidence-Based Policy Re PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper opg
+
+
+
+  build-optimocracy:
+    name: Build Optimocracy: Algorithmic Governance Through Metric
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-optimocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-optimocracy-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build Optimocracy: Algorithmic Governance Through Metric
+        run: python scripts/render-quarto.py optimocracy
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Optimocracy: Algorithmic Governance Through Metric to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/optimocracy/_site/optimocracy'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy optimocracy site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OPTIMOCRACY_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build Optimocracy: Algorithmic Governance Through Metric PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper optimocracy
+
+
+
+  build-political-capture:
+    name: Build The Price of Political Change: A Cost-Benefit Fram
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-political-capture-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-political-capture-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build The Price of Political Change: A Cost-Benefit Fram
+        run: python scripts/render-quarto.py political-capture
+        timeout-minutes: 10
+
+
+      - name: Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/political-capture/_site/political-capture'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy political-capture site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_POLITICAL_CAPTURE_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper political-capture
+
+
+
+  build-test:
+    name: Build Test Economics Document
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-test-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-test-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX for PDF/EPUB
+
+        run: quarto install tinytex
+
+      - name: Render Build Test Economics Document
+        run: python scripts/render-quarto.py test
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Test Economics Document to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/test/_book/test'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy test site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_TEST_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+
+
+  build-wishocracy:
+    name: Build Wishocracy: Solving the Democratic Principal-Agent
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-wishocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-wishocracy-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: Render Build Wishocracy: Solving the Democratic Principal-Agent
+        run: python scripts/render-quarto.py wishocracy
+        timeout-minutes: 10
+
+
+      - name: Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/wishocracy/_site/wishocracy'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy wishocracy site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
+
+        timeout-minutes: 1
+
+
+
+      - name: Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper wishocracy
+
+

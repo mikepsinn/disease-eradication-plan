@@ -1,0 +1,102 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: Build, Deploy to Netlify, and Upload to Zenodo
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "netlify-deploy"
+  cancel-in-progress: true
+
+jobs:
+{% for job in jobs %}
+  build-{{ job.config_name }}:
+    name: {{ job.display_name }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-{{ job.config_name }}-{% raw %}${{ hashFiles('**/*.qmd', '**/*.ipynb') }}{% endraw %}
+
+          restore-keys: |
+            quarto-freeze-{{ job.config_name }}-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX{% if job.project_type == "book" %} for PDF/EPUB{% endif %}
+
+        run: quarto install tinytex
+
+      - name: Render {{ job.display_name }}
+        run: python scripts/render-quarto.py {{ job.config_name }}
+        timeout-minutes: {{ job.timeout_minutes }}
+
+{% if job.deploy_to_netlify %}
+      - name: Deploy {{ job.display_name }} to Netlify (immediate)
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '{{ job.build_dir }}'
+          production-branch: master
+          github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+
+          deploy-message: "Deploy {{ job.config_name }} site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
+
+          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
+
+        timeout-minutes: 1
+{% endif %}
+
+{% if job.upload_to_zenodo %}
+      - name: Upload {{ job.display_name }} PDF to Zenodo (draft)
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
+
+        run: python scripts/publish-zenodo.py --draft --paper {{ job.config_name }}
+{% endif %}
+
+{% endfor %}

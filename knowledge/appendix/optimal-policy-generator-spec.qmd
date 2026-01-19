@@ -5,8 +5,10 @@ description: "The Optimal Policy Generator (OPG) extends Optimocracy beyond budg
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
+date: "2025-01-19"
 author:
   - name: Mike P. Sinn
+    orcid: "0009-0006-0212-1094"
     affiliation:
       name: Decentralized Institutes of Health
       url: https://dih.earth
@@ -47,6 +49,10 @@ This specification describes a framework for generating jurisdiction-specific po
 ## Abstract {.unnumbered}
 
 This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify (change level or approach), (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement. This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, replace tobacco tax: $1.41 → $2.50").
+
+**JEL Classification**: H10, D72, C54, I18, D61
+
+H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
 
 ## System Overview
 
@@ -167,15 +173,15 @@ The Optimal Policy Generator transforms generic evidence into jurisdiction-speci
 
 ### Why Policy Ranking Fails Today
 
-Current policy adoption follows a process dominated by:
+Current policy adoption follows a process dominated by political economy dynamics well-documented in the public choice literature [@buchanan1962; @olson1965]:
 
-1. **Lobbying intensity**: Policies that benefit concentrated interests (with resources to lobby) are adopted over policies that benefit diffuse majorities
+1. **Lobbying intensity**: Policies that benefit concentrated interests (with resources to lobby) are adopted over policies that benefit diffuse majorities [@stigler1971; @becker1983]
 2. **Ideological priors**: Policymakers filter evidence through pre-existing beliefs, accepting studies that confirm priors and rejecting those that don't
 3. **Anecdote-driven reasoning**: Vivid individual cases drive policy more than systematic evidence ("If it saves one child...")
 4. **Status quo bias**: Existing policies persist regardless of evidence because change requires political capital
 5. **Salience heuristics**: Policies addressing visible problems (terrorism, rare diseases) receive disproportionate resources relative to invisible problems (air pollution, chronic disease)
 
-The result: trillions of dollars in welfare losses from documented policy failures (see Optimocracy paper, Section 2).
+The result: trillions of dollars in welfare losses from documented policy failures (see Optimocracy paper, Section 2). Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack the systematic, jurisdiction-specific recommendation generation that OPG provides.
 
 ### Scale of Available Evidence
 
@@ -188,6 +194,108 @@ We have access to:
 - **Millions of policy changes** documented in legislative databases
 
 Even with imperfect causal inference, systematically analyzing this data and translating it to jurisdiction-specific recommendations will produce outcomes orders of magnitude better than the current system.
+
+### Contributions
+
+This paper makes three primary contributions to the policy evaluation literature:
+
+1. **Methodological**: We develop a systematic framework for translating quasi-experimental evidence into jurisdiction-specific policy recommendations, extending beyond generic evidence ratings to actionable output in four categories (enact/replace/repeal/maintain).
+
+2. **Taxonomic**: We formalize the four recommendation types and introduce the Policy Impact Score (PIS) as an intermediate metric combining effect magnitude, causal confidence (Bradford Hill criteria), and methodological quality. This provides a standardized approach to evidence aggregation.
+
+3. **Applied**: We demonstrate the complete framework with a worked example for Texas traffic safety policy, showing how generic effect estimates are translated into context-adjusted, prioritized recommendations with blocking factors and tracking guidance.
+
+## Related Work
+
+### Existing Policy Evaluation Frameworks
+
+**Regulatory Impact Analysis (RIA)**: Required by executive order for US federal regulations since 1981 [@hahn2000]. RIA estimates costs and benefits of proposed rules but: (1) applies only to new regulations, not the existing policy stock; (2) lacks systematic cross-jurisdiction evidence aggregation; (3) does not produce jurisdiction-specific recommendations for subnational governments.
+
+**What Works Clearinghouse (WWC)**: The Institute of Education Sciences operates WWC to review education interventions against methodological standards [@greenwald2017]. WWC demonstrates that systematic evidence synthesis is feasible, but: (1) covers only education; (2) provides generic intervention ratings, not jurisdiction-specific recommendations; (3) does not quantify expected welfare gains.
+
+**Cochrane and Campbell Collaborations**: These systematic review organizations cover healthcare [@higgins2011] and social policy [@petticrew2001] respectively. They represent the gold standard for evidence synthesis but: (1) produce narrative reviews rather than quantitative recommendations; (2) provide no jurisdiction-specific output; (3) operate on slow update cycles (years between reviews).
+
+**Congressional Budget Office (CBO)**: CBO provides nonpartisan fiscal scoring of proposed legislation. While valuable for budget discipline, CBO: (1) estimates budgetary effects rather than welfare; (2) evaluates what is proposed rather than what should be proposed; (3) is reactive rather than proactive.
+
+**Benefit-Cost Analysis Tradition**: The broader benefit-cost literature [@sunstein2002; @viscusi2018] provides theoretical foundations for policy evaluation but typically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation.
+
+### This Framework's Contribution
+
+OPG differs from existing approaches by:
+
+1. **Producing jurisdiction-specific recommendations** rather than generic evidence ratings
+2. **Covering the full policy stock** (enact/replace/repeal/maintain) not just new proposals
+3. **Aggregating quasi-experimental evidence** via meta-analysis with heterogeneity quantification
+4. **Applying Bradford Hill criteria** systematically to assess causality confidence
+5. **Including subsidiarity guidance** (optimal jurisdictional level) and tracking for continuous improvement
+
+## Theoretical Framework
+
+### The Policy Optimization Problem
+
+Let $\mathcal{P}$ denote the set of available policies. For jurisdiction $j$, let $P_j \subseteq \mathcal{P}$ denote the current policy bundle and $W_j(P)$ denote welfare under policy bundle $P$.
+
+The social planner's problem:
+$$
+P_j^* = \arg\max_{P \subseteq \mathcal{P}} W_j(P) \quad \text{subject to feasibility constraints}
+$$
+
+**Assumption 1 (Additive Separability)**: For tractability, assume welfare is approximately additively separable across policy domains:
+$$
+W_j(P) \approx \sum_{p \in P} w_j(p) + \varepsilon_{\text{interactions}}
+$$
+
+where $w_j(p)$ is the marginal welfare contribution of policy $p$ in jurisdiction $j$, and interaction terms are second-order.
+
+**Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
+$$
+P_j^* = \{p \in \mathcal{P} : w_j(p) > 0\}
+$$
+
+and the policy gap for jurisdiction $j$ is:
+$$
+\Delta_j = (P_j^* \setminus P_j) \cup (P_j \setminus P_j^*)
+$$
+
+where $(P_j^* \setminus P_j)$ represents beneficial policies the jurisdiction lacks (enact candidates) and $(P_j \setminus P_j^*)$ represents harmful policies the jurisdiction has (repeal candidates).
+
+*Proof*: Direct consequence of additive separability. Include policy $p$ if and only if $w_j(p) > 0$. ∎
+
+### Evidence Aggregation Properties
+
+**Proposition 2 (PIS as Precision-Weighted Evidence)**: Under random-effects meta-analysis with between-jurisdiction variance $\tau^2$, the pooled effect estimate $\hat{\beta}_{\text{pooled}}$ is:
+$$
+\hat{\beta}_{\text{pooled}} = \frac{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2} \hat{\beta}_j}{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2}}
+$$
+
+with variance:
+$$
+\text{Var}(\hat{\beta}_{\text{pooled}}) = \frac{1}{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2}}
+$$
+
+*Proof*: Standard random-effects meta-analysis derivation (DerSimonian-Laird). ∎
+
+**Proposition 3 (Heterogeneity Bounds Transferability)**: When $I^2 > 75\%$ (high heterogeneity):
+$$
+\text{Var}[\hat{\beta}_j | \hat{\beta}_{\text{pooled}}] > 0.75 \cdot \text{Var}[\hat{\beta}_j]
+$$
+
+meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect.
+
+*Proof*: By definition, $I^2 = \frac{\tau^2}{\tau^2 + \bar{\sigma}^2}$ where $\bar{\sigma}^2$ is typical within-study variance. When $I^2 > 0.75$, between-study variance dominates, and the pooled estimate provides limited information about any individual jurisdiction's true effect. ∎
+
+### Information Value
+
+**Proposition 4 (Value of Additional Evidence)**: The expected value of information from an additional jurisdiction study is:
+$$
+\text{VOI} = E[\max_{a \in \{adopt, reject\}} U(a | \text{new data})] - \max_{a} E[U(a | \text{current data})]
+$$
+
+which is maximized when prior uncertainty is high and decision stakes are large.
+
+*Proof*: Standard Bayesian decision theory [@cartwright2012]. ∎
+
+**Corollary 1 (Trial Prioritization)**: Policies with (1) high prior variance in effect estimates, (2) large potential welfare impact, and (3) low trial cost should be prioritized for experimental validation.
 
 ## Core Methodology
 
@@ -279,7 +387,7 @@ policy_recommendations (
 
 ### Analysis Methods
 
-The OPG system supports multiple quasi-experimental designs, each appropriate for different data structures:
+The OPG system supports multiple quasi-experimental designs, reflecting the "credibility revolution" in applied economics [@angrist2010]. Each method is appropriate for different data structures [@imbens2015]:
 
 #### Synthetic Control Method
 
@@ -291,13 +399,13 @@ The OPG system supports multiple quasi-experimental designs, each appropriate fo
 - `pre_treatment_rmse`: How well does synthetic control match pre-treatment? (Lower is better)
 - `placebo_p_value`: Permutation test comparing treated effect to placebo effects (Lower is better)
 
-**Example**: Effect of a state tobacco tax increase on smoking rates, using similar states without tax changes as donors [@abadie2010].
+**Example**: Effect of a state tobacco tax increase on smoking rates, using similar states without tax changes as donors [@abadie2010; @abadie2015]. For comprehensive reviews of the synthetic control method, see @abadie2021.
 
 #### Difference-in-Differences (DiD)
 
 **Use case**: Multiple treated jurisdictions, staggered adoption timing, parallel trends assumption plausible.
 
-**Method**: Compare pre-post change in treated jurisdictions to pre-post change in control jurisdictions. Difference of differences estimates treatment effect.
+**Method**: Compare pre-post change in treated jurisdictions to pre-post change in control jurisdictions. Difference of differences estimates treatment effect. For settings with staggered adoption, modern estimators account for heterogeneous treatment effects across cohorts [@callaway2021].
 
 **Quality metrics**:
 - `parallel_trends_test_stat`: Test statistic for pre-treatment trend equality
@@ -624,6 +732,8 @@ $$
 Where weights $w_j = \frac{1}{\text{SE}_j^2 + \tau^2}$ incorporate both within-study variance and between-study heterogeneity ($\tau^2$).
 
 ### Heterogeneity Statistics
+
+Following standard meta-analysis conventions [@higgins2011]:
 
 - **I²**: Percentage of variance due to heterogeneity (vs. sampling error)
   - $I^2 < 25\%$: Low heterogeneity
@@ -1006,7 +1116,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for policy interaction structure learning
 2. **Propensity score integration**: Covariate adjustment for measured jurisdiction characteristics
 3. **Bayesian hierarchical models**: More principled cross-jurisdiction pooling with uncertainty quantification
-4. **Machine learning for heterogeneity**: Use BART, causal forests to identify which jurisdiction characteristics moderate effects
+4. **Machine learning for heterogeneity**: Use BART, causal forests to identify which jurisdiction characteristics moderate effects [@athey2017]
 5. **Text-as-data**: Extract policy features from legislative text for similarity-based evidence transfer
 6. **Dynamic treatment regimes**: Model optimal policy sequences, not just single policies
 
@@ -1041,6 +1151,10 @@ The OPG complements the Optimal Budget Generator (OBG/BIS) in the Optimocracy fr
 - **OPG** answers: "What policies should jurisdiction X adopt or repeal?"
 
 Together, they enable evidence-based governance that optimizes both resource allocation and regulatory design, tailored to each jurisdiction's specific context.
+
+## Acknowledgments {.unnumbered}
+
+[To be added: acknowledgments for seminar participants, reviewers, and colleagues who provided feedback.]
 
 ## References
 
@@ -1469,7 +1583,7 @@ Raw effect estimates should be reported alongside standardized scores:
 
 **Funding**: This work received no external funding.
 
-**Data Availability**: This specification describes a methodological framework. Policy databases referenced (V-Dem, Polity V, CPDS, World Bank WDI) are publicly available at URLs provided in Data Sources section. Implementation code will be released open-source upon system deployment.
+**Data Availability**: This specification describes a methodological framework. Policy databases referenced (V-Dem, Polity V, CPDS, World Bank WDI) are publicly available at URLs provided in Data Sources section. A complete replication package including data extraction scripts, analysis code, and recommendation generation algorithms will be deposited in a public repository upon system deployment.
 
 **Ethics Statement**: This is a methodological specification. No human subjects research was conducted. Policy outcome data used in examples are drawn from published academic studies and government statistical agencies.
 
