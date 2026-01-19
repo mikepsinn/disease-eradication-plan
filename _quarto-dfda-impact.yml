@@ -23,7 +23,7 @@ profiles:
 
 website:
   title: 'The Health and Economic Impact of a Global System for Pragmatic Clinical Trials'
-  description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) through accelerated treatment discovery while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings."
+  description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings."
   site-url: https://impact.dfda.earth
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
