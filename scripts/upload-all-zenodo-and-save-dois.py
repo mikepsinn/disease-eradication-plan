@@ -128,10 +128,17 @@ def main():
 
     print(f"Papers to upload: {', '.join(sorted(papers.keys()))}\n")
 
-    # Build all PDFs first
+    # Build all PDFs first (fail fast if any build fails)
     print("Building PDFs...")
-    for paper_key in papers:
-        rebuild_paper(paper_key)
+    for paper_key, info in papers.items():
+        if not rebuild_paper(paper_key):
+            print(f"\nFATAL: Build failed for {paper_key}")
+            return 1
+
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        if not pdf_path.exists():
+            print(f"\nFATAL: PDF not found after build: {pdf_path}")
+            return 1
 
     # Upload each paper
     results = {}
@@ -153,13 +160,9 @@ def main():
     print("Summary")
     print("=" * 60)
 
-    success, failed, skipped = [], [], []
+    success, failed = [], []
     for key, result in results.items():
-        pdf_path = PROJECT_ROOT / papers[key]["pdf_path"]
-        if not pdf_path.exists():
-            skipped.append(key)
-            print(f"  {key}: SKIPPED (no PDF)")
-        elif result and result.get("verified"):
+        if result and result.get("verified"):
             success.append(key)
             print(f"  {key}: OK - DOI: {result.get('doi', 'N/A')}")
         else:
