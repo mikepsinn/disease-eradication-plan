@@ -23,7 +23,7 @@ from pathlib import Path
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-sys.path.insert(0, str(Path(__file__).parent / "lib"))
+sys.path.insert(0, str(Path(__file__).parent))
 
 try:
     import yaml
@@ -32,7 +32,7 @@ except ImportError:
     print("ERROR: Missing dependency. Run: pip install pyyaml python-dotenv")
     sys.exit(1)
 
-from zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
+from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
 
 PROJECT_ROOT = Path(__file__).parent.parent
 SKIP_CONFIGS = {"book", "test", "main", "base"}
