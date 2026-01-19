@@ -114,6 +114,36 @@ metadata:
   open-graph: true
   image: "https://impact.dfda.earth/assets/dfda-og-1200x630.png"
 
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://impact.dfda.earth"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: auto-uploaded
+        url: ""
+        doi: "10.5281/zenodo.18243915"
+      - platform: medrxiv
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+    journals:
+      - name: "Value in Health"
+        tier: 2
+        status: target
+        url: ""
+      - name: "Health Affairs"
+        tier: 1
+        status: target
+        url: ""
+      - name: "PharmacoEconomics"
+        tier: 2
+        status: target
+        url: ""
+
 # Remove "Appendix" prefix
 language:
   crossref-apx-prefix: ""

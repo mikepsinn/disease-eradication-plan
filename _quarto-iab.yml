@@ -113,6 +113,36 @@ metadata:
   open-graph: true
   image: "https://iab.warondisease.org/assets/iab-og-1200x630.png"
 
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://iab.warondisease.org"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: auto-uploaded
+        url: ""
+        doi: "10.5281/zenodo.18203222"
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: arxiv
+        status: pending
+        category: econ.GN
+    journals:
+      - name: "Public Choice"
+        tier: 2
+        status: target
+        url: ""
+      - name: "American Economic Review"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Journal of Political Economy"
+        tier: 1
+        status: target
+        url: ""
+
 # Remove "Appendix" prefix
 language:
   crossref-apx-prefix: ""

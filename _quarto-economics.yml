@@ -164,6 +164,36 @@ metadata:
   open-graph: true
   image: "https://impact.warondisease.org/assets/icons/war-on-disease-og-1200x630.png"
 
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://impact.warondisease.org"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: auto-uploaded
+        url: ""
+        doi: "10.5281/zenodo.18161561"
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: arxiv
+        status: pending
+        category: econ.GN
+    journals:
+      - name: "Health Affairs"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Value in Health"
+        tier: 2
+        status: target
+        url: ""
+      - name: "The Lancet"
+        tier: 1
+        status: target
+        type: commentary
+
 # Remove "Appendix" prefix from appendix chapters
 language:
   crossref-apx-prefix: ""
