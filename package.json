@@ -149,7 +149,8 @@
     "voltagent": "volt",
     "volt": "volt",
     "download:notebooklm": "tsx scripts/download-notebooklm-files.ts",
-    "analyze:sizes": "tsx scripts/analyze-file-sizes.ts"
+    "analyze:sizes": "tsx scripts/analyze-file-sizes.ts",
+    "zenodo:upload": "python scripts/upload-all-zenodo-and-save-dois.py"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

@@ -121,7 +121,7 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: ""
+        url: "https://zenodo.org/record/18203222"
         doi: "10.5281/zenodo.18203222"
       - platform: ssrn
         status: pending
