@@ -22,7 +22,7 @@ profiles:
 
 website:
   title: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization"
-  description: "When critics dismiss policy proposals as 'politically impossible,' they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political capture costs and comparing them to policy benefits."
+  description: "When critics dismiss policy proposals as \"politically impossible,\" they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value."
   site-url: https://political-capture.warondisease.org
   favicon: assets/icons/favicon.png  # TODO: Create political-capture-favicon.png
   page-navigation: true

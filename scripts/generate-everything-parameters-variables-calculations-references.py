@@ -71,6 +71,7 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from generate_references_json import generate_references_json  # noqa: E402
+from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
 
 # Import all generator modules
 from dih_models.bibtex_generator import generate_bibtex
@@ -1228,6 +1229,13 @@ def main():
     else:
         print(f"[WARN] Outline script not found: {generate_outline_script}", file=sys.stderr)
     print()
+
+    # Sync descriptions from QMD frontmatter to YAML configs
+    try:
+        sync_descriptions_to_yaml_configs(project_root, output_path)
+    except Exception as e:
+        print(f"[WARN] Description sync skipped: {e}")
+        print()
 
     print("[OK] All academic outputs generated successfully!")
     print()

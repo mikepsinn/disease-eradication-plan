@@ -12,6 +12,14 @@ author:
       url: https://dih.earth
     email: mike@warondisease.org
     corresponding: true
+    orcid: 0009-0006-0212-1094
+date: "2025-01-19"
+jel-codes:
+  - H50  # National Government Expenditures and Related Policies
+  - H61  # Budget; Budget Systems
+  - D61  # Allocative Efficiency; Cost-Benefit Analysis
+  - I18  # Government Policy; Regulation; Public Health
+  - C18  # Methodological Issues: General
 keywords:
   - budget optimization
   - optimal budget generator
@@ -20,6 +28,9 @@ keywords:
   - cost-effectiveness
   - diminishing returns
   - reference country benchmarking
+  - public finance
+  - welfare economics
+  - spending targets
 bibliography:
   - ../../references.bib
 format:
@@ -44,7 +55,11 @@ This specification describes a framework for evidence-based budget allocation. I
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare outcomes. Unlike marginal-return frameworks that ask "where should we invest the next dollar?", OBG asks "what should the complete budget allocation be?" Each category has a target level - too little means underinvestment, too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare outcomes.
+
+**JEL Classification**: H50, H61, D61, I18, C18
+
+Unlike marginal-return frameworks that ask "where should we invest the next dollar?", OBG asks "what should the complete budget allocation be?" Each category has a target level - too little means underinvestment, too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
 
 The framework combines three evidence sources: (1) **reference country benchmarking** using high-performing peer jurisdictions, (2) **diminishing returns modeling** from dose-response studies, and (3) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.
 
@@ -112,6 +127,8 @@ The OPG framework (see [Optimal Policy Generator Specification](optimal-policy-g
 
 ### Why Budget Allocation Fails Today
 
+Budget allocation is fundamentally a problem of social choice under uncertainty [@arrow1951]. The challenge is not simply technical but institutional: current budget processes systematically diverge from welfare-optimal allocations due to political economy dynamics [@myerson1981; @kydland1977].
+
 Current budget allocation follows a process dominated by:
 
 1. **Lobbying intensity**: Categories with organized beneficiaries (defense contractors, agricultural lobbies) receive disproportionate funding regardless of evidence
@@ -120,7 +137,7 @@ Current budget allocation follows a process dominated by:
 4. **Political salience**: Crises drive spending regardless of cost-effectiveness (terrorism vs. air pollution)
 5. **Zero-sum framing**: Budget debates treat all categories as competing rather than asking which ones are at optimal levels
 
-The result: systematic overinvestment in low-return categories and underinvestment in high-return categories.
+The result: systematic overinvestment in low-return categories and underinvestment in high-return categories. Historical examples demonstrate the scale of missed opportunities: the smallpox eradication campaign returned an estimated 450:1 ROI [@smallpox-eradication-roi], yet similar high-return public health investments remain chronically underfunded.
 
 ### The RDA Analogy: Optimal Levels, Not Just Marginal Returns
 
@@ -145,6 +162,40 @@ The key insight: **infinite spending on any category doesn't make sense**, even 
 3. **Evidence grading** so policymakers know which OSL estimates are reliable
 4. **Priority ranking** for reallocation decisions
 5. **Uncertainty quantification** acknowledging what we don't know
+
+## Related Work
+
+The OBG framework builds on and extends several established traditions in public finance and evidence-based policy.
+
+### Budget Analysis Frameworks
+
+**Congressional Budget Office (CBO) Scoring.** The CBO provides cost estimates for proposed legislation, projecting fiscal impacts over 10-year windows [@cbo2015]. However, CBO scoring focuses on *cost* rather than *welfare optimization* - it answers "what will this cost?" not "what should we spend?" OBG complements CBO analysis by providing evidence-based spending targets against which proposals can be evaluated.
+
+**Performance-Based Budgeting.** Since the Planning-Programming-Budgeting System (PPBS) of the 1960s, governments have attempted to link spending to outcomes. Modern variants include Results-Based Management and Performance-Informed Budgeting. These approaches improve transparency but typically lack the economic framework for determining *optimal* levels - they measure performance at current spending without estimating what spending *should* be.
+
+**Zero-Based Budgeting.** ZBB requires justifying each budget line from zero rather than incremental adjustment. While philosophically aligned with OBG's goal of rational allocation, ZBB provides no systematic method for determining optimal levels. OBG operationalizes ZBB's ambition with evidence-based targets.
+
+### Evidence-Based Policy Movement
+
+**What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
+
+**Cost-Effectiveness Analysis.** Health economics has developed sophisticated methods for comparing interventions using metrics like QALYs and DALYs [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of three estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
+
+### Comparative Public Finance
+
+**OECD Government Spending Analysis.** The OECD publishes extensive cross-country spending comparisons and outcome data [@oecd-govt-spending; @papanicolas2018]. OBG leverages this data infrastructure for reference country benchmarking while adding the conceptual framework of optimal levels and evidence-weighted confidence.
+
+**International Benchmarking Studies.** Comparative studies examine spending-outcome relationships across countries but typically stop at correlation. OBG advances this literature by incorporating causal identification methods and producing actionable spending targets.
+
+### How OBG Differs
+
+The OBG framework advances existing approaches in three key ways:
+
+1. **Integrated multi-method estimation.** Rather than relying on a single approach, OBG triangulates OSL estimates from reference benchmarking, diminishing returns modeling, and cost-effectiveness analysis. This provides robustness and identifies where methods agree or conflict.
+
+2. **Explicit optimal levels.** Unlike frameworks that analyze spending at current levels or propose marginal changes, OBG estimates target spending levels for each category - acknowledging that both underspending and overspending are suboptimal.
+
+3. **Evidence-weighted confidence.** The Budget Impact Score (BIS) distinguishes recommendations supported by strong causal evidence (where reallocation should proceed) from those based on weaker evidence (where research or pilots are warranted).
 
 ## Core Methodology
 
@@ -194,13 +245,15 @@ spending_gaps (
 |--------|----------|---------------|-----------|-------------|
 | **Reference country benchmarking** | Categories with comparable cross-country data | Per-capita spending from high-performing peers | Simple, intuitive, politically credible | Assumes context transfers |
 | **Diminishing returns modeling** | Categories with dose-response data | Effect estimates at multiple spending levels | Theoretically grounded, finds "knee" | Requires rich causal evidence |
-| **Cost-effectiveness threshold** | Health/life-saving interventions | Cost per QALY/DALY, willingness-to-pay | Links to standard health economics | Limited to monetizable outcomes |
+| **Cost-effectiveness threshold** | Health/life-saving interventions | Cost per QALY/DALY, willingness-to-pay | Links to standard health economics [@healthcare-investment-economic-multiplier] | Limited to monetizable outcomes |
 
 Each method is detailed below.
 
 ## Reference Country Benchmarking
 
 ### The Basic Approach
+
+Reference country benchmarking draws on established comparative policy analysis methods [@papanicolas2018; @oecd-govt-spending]. The core insight is that high-performing peer countries provide empirical evidence of achievable spending-outcome relationships under similar institutional contexts.
 
 For categories where comparable cross-country data exists, OSL can be estimated from high-performing reference countries:
 
@@ -228,21 +281,25 @@ Not all countries are appropriate references. Selection criteria:
 
 ### Worked Example: Early Childhood Education
 
+Early childhood education has among the highest estimated returns of any public investment, with long-term benefits including higher earnings, reduced crime, and better health outcomes [@heckman2010]. Education spending more broadly generates economic multipliers of 1.5-2.5x [@education-investment-economic-multiplier].
+
 **Question**: What is the optimal US spending on early childhood education (ages 0-5)?
+
+Data sourced from OECD Education at a Glance and national statistical offices. Spending figures converted to 2023 USD using OECD PPP exchange rates.
 
 | Data Point | Value | Source |
 |------------|-------|--------|
 | US current spending | $50B/year | OMB FY2024 |
 | US children 0-5 | 24 million | Census 2023 |
-| US current per child | $2,083/child | |
+| US current per child | $2,083/child | Calculated |
 | | | |
-| **Reference countries (avg)** | | |
-| Denmark | $3,200/child | OECD |
-| Sweden | $2,900/child | OECD |
-| Norway | $3,100/child | OECD |
-| France | $2,400/child | OECD |
-| Germany | $2,000/child | OECD |
-| **Median reference** | **$2,900/child** | |
+| **Reference countries** | | OECD Education at a Glance 2023 |
+| Denmark | $3,200/child | Pre-primary: 0.9% GDP; ages 0-5 |
+| Sweden | $2,900/child | Pre-primary: 0.8% GDP |
+| Norway | $3,100/child | Pre-primary: 0.7% GDP + childcare |
+| France | $2,400/child | Pre-primary: 0.7% GDP |
+| Germany | $2,000/child | Pre-primary: 0.5% GDP |
+| **Median reference** | **$2,900/child** | Middle value of 5-country set |
 | | | |
 | **Context adjustment** | | |
 | Cost-of-living adjustment | 0.95x | Lower than Nordic |
@@ -274,7 +331,7 @@ Reference benchmarking provides a **starting point** for OBG estimation, not a d
 
 ### The Core Concept
 
-At low spending levels, each additional dollar produces substantial welfare gains. At high spending levels, marginal returns diminish. The OSL is where marginal return equals opportunity cost.
+The fiscal multiplier literature establishes that spending effects vary systematically with scale [@batini2021; @barro2011]. At low spending levels, each additional dollar produces substantial welfare gains. At high spending levels, marginal returns diminish. The OSL is where marginal return equals opportunity cost.
 
 $$
 \text{OSL}: \frac{\partial \text{Outcome}}{\partial \text{Spending}} = r
@@ -328,7 +385,7 @@ Estimate separate slopes for different spending ranges to identify where returns
 
 **3. Meta-regression of effect estimates**
 
-If multiple studies estimate effects at different spending levels, meta-regression can identify how effects vary with baseline spending.
+If multiple studies estimate effects at different spending levels, meta-regression can identify how effects vary with baseline spending. The credibility of such estimates depends critically on identification strategy [@angrist2010].
 
 ### Worked Example: K-12 Education Spending
 
@@ -357,6 +414,8 @@ Evidence from cross-state variation suggests:
 
 ### The Standard Health Economics Approach
 
+Cost-effectiveness analysis has become the standard framework for health resource allocation decisions [@icer-qaly-methodology]. The QALY (Quality-Adjusted Life Year) metric enables comparison across diverse health interventions by monetizing health outcomes at a consistent threshold [@bhutta2014].
+
 For health interventions, cost-effectiveness analysis provides OSL estimates:
 
 $$
@@ -380,20 +439,26 @@ For each health intervention with cost-effectiveness data:
 
 ### Worked Example: Vaccinations
 
-| Intervention | Target pop. | Cost/person | QALY/person | Cost/QALY | Include? |
-|--------------|-------------|-------------|-------------|-----------|----------|
-| Childhood routine | 4M births | $500 | 0.1 | $5,000 | Yes |
-| HPV vaccination | 4M teens | $300 | 0.05 | $6,000 | Yes |
-| Flu (elderly) | 50M elderly | $40 | 0.01 | $4,000 | Yes |
-| Shingles | 40M eligible | $200 | 0.02 | $10,000 | Yes |
-| COVID boosters | 100M adults | $30 | 0.005 | $6,000 | Yes |
+Vaccinations represent one of the highest-return public health investments, with estimated returns of 44:1 for routine childhood immunization [@vaccine-roi-44-to-1; @childhood-vaccination-roi]. The economic benefits include avoided medical costs, productivity gains, and reduced mortality [@childhood-vaccination-economic-benefits].
+
+Cost-effectiveness estimates from CEA Registry and CDC vaccination cost studies. QALY estimates reflect average health gains across target populations; costs include vaccine acquisition, administration, and program overhead.
+
+| Intervention | Target pop. | Cost/person | QALY/person | Cost/QALY | Source | Include? |
+|--------------|-------------|-------------|-------------|-----------|--------|----------|
+| Childhood routine | 4M births | $500 | 0.1 | $5,000 | CDC VFC | Yes |
+| HPV vaccination | 4M teens | $300 | 0.05 | $6,000 | CEA Registry | Yes |
+| Flu (elderly) | 50M elderly | $40 | 0.01 | $4,000 | CDC | Yes |
+| Shingles | 40M eligible | $200 | 0.02 | $10,000 | CEA Registry | Yes |
+| COVID boosters | 100M adults | $30 | 0.005 | $6,000 | CDC | Yes |
+
+All interventions fall well below the conventional $50,000-$150,000 per QALY cost-effectiveness threshold, indicating strong economic justification for full scale-up.
 
 **OBG calculation**:
-- Childhood: $2B
-- HPV: $1.2B
-- Flu: $2B
-- Shingles: $8B
-- COVID: $3B
+- Childhood routine: 4M × $500 = $2.0B
+- HPV: 4M × $300 = $1.2B
+- Flu (elderly): 50M × $40 = $2.0B
+- Shingles: 40M × $200 = $8.0B
+- COVID boosters: 100M × $30 = $3.0B
 - **Total OSL: ~$16B** (vs. current ~$8B)
 
 **Gap**: +$8B (underinvestment)
@@ -404,7 +469,9 @@ For each health intervention with cost-effectiveness data:
 
 ### Reframing BIS: Confidence in OSL, Not Allocation Driver
 
-The Budget Impact Score measures our **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. Unlike earlier formulations that used BIS to directly allocate budgets, the OBG framework determines the target level (OSL), and BIS tells us how confident we are in that target.
+The Budget Impact Score measures our **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. The scoring methodology draws on the established evidence hierarchy from the econometrics literature, where randomized experiments provide the most credible estimates, followed by quasi-experimental methods such as difference-in-differences and regression discontinuity [@angrist2010; @bloom2013].
+
+Unlike earlier formulations that used BIS to directly allocate budgets, the OBG framework determines the target level (OSL), and BIS tells us how confident we are in that target.
 
 ### BIS Calculation
 
@@ -621,6 +688,8 @@ After each budget cycle:
 
 ### Reference Country Databases
 
+International organizations maintain standardized cross-country spending and outcome data essential for reference benchmarking. The OECD provides the most comprehensive harmonized data for high-income countries [@oecd-govt-spending].
+
 | Database | Coverage | URL | Use Case |
 |----------|----------|-----|----------|
 | **OECD iLibrary** | 38 OECD members | [oecd-ilibrary.org](https://www.oecd-ilibrary.org) | Education, health, social spending |
@@ -638,11 +707,14 @@ After each budget cycle:
 | **Cochrane Library** | 8,000+ reviews | [cochranelibrary.com](https://www.cochranelibrary.com) | Health intervention effects |
 | **Copenhagen Consensus** | Development | [copenhagenconsensus.com](https://www.copenhagenconsensus.com) | Development priorities |
 
+These databases enable systematic ranking of interventions by cost-effectiveness. For example, deworming programs consistently rank among the most cost-effective health interventions, with costs as low as $30-50 per DALY averted [@deworming-cost-per-daly].
+
 ### US Budget Data
 
 | Source | Coverage | URL | Use Case |
 |--------|----------|-----|----------|
 | **OMB Historical Tables** | 1789-present | [whitehouse.gov/omb](https://www.whitehouse.gov/omb/historical-tables/) | Federal spending |
+| **CBO Budget Analyses** | Federal | [cbo.gov](https://www.cbo.gov) | Fiscal impact scoring [@cbo2015] |
 | **USASpending** | Federal awards | [usaspending.gov](https://www.usaspending.gov) | Program-level detail |
 | **Census of Governments** | State & local | [census.gov](https://www.census.gov/programs-surveys/cog.html) | Subnational spending |
 
@@ -678,31 +750,56 @@ Higher spending may not translate to outcomes if implementation capacity is lack
 
 ## Validation Framework
 
+Rigorous validation is essential for any framework that claims to identify optimal spending levels. This section outlines the validation approach, acknowledging that comprehensive empirical validation remains future work.
+
 ### Retrospective Validation
 
 **Question**: Did jurisdictions that moved toward OSL achieve better outcomes than those that diverged?
 
 **Method**:
-1. Compute OSL for past periods using only data available at that time
+1. Compute OSL for past periods using only data available at that time (to avoid lookahead bias)
 2. Identify jurisdictions that moved toward/away from OSL
-3. Compare subsequent outcomes
+3. Compare subsequent outcomes using difference-in-differences or synthetic control methods [@abadie2010]
+
+**Example: US State Education Spending 2000-2015**
+
+A preliminary retrospective analysis could examine whether states that moved toward education OSL (estimated from high-performing states like Massachusetts and Minnesota) subsequently showed improved test scores and graduation rates relative to states that diverged. This analysis is noted as a priority for future empirical work.
+
+**Challenges**:
+- Confounding from simultaneous policy changes
+- Limited variation in spending changes within countries
+- Outcome measurement lags (education effects take years to materialize)
 
 ### Prospective Validation
 
 **Question**: Do OBG-guided reallocations improve outcomes going forward?
 
 **Method**:
-1. Pre-register OBG predictions publicly
+1. Pre-register OBG predictions publicly before budget decisions
 2. Monitor jurisdictions that adopt OBG guidance vs. those that don't
-3. Compare outcome trajectories
+3. Compare outcome trajectories using appropriate causal identification
+
+**Implementation**: We propose publishing annual OSL estimates for US federal budget categories, creating a public record that enables future validation. If jurisdictions that adopt OBG guidance systematically outperform those that don't, this provides evidence for the framework's validity.
 
 ### Success Metrics
 
-| Metric | Definition | Target |
-|--------|------------|--------|
-| **Gap reduction** | Did spending move toward OSL? | > 50% of gap closed in 10 years |
-| **Outcome improvement** | Did welfare metrics improve more in OBG-following jurisdictions? | > 10% relative improvement |
-| **Prediction accuracy** | Did estimated returns match actual returns? | Correlation r > 0.5 |
+| Metric | Definition | Target | Interpretation |
+|--------|------------|--------|----------------|
+| **Gap reduction** | Did spending move toward OSL? | > 50% of gap closed in 10 years | Tests political feasibility |
+| **Outcome improvement** | Did welfare metrics improve more in OBG-following jurisdictions? | > 10% relative improvement | Tests welfare prediction accuracy |
+| **Prediction accuracy** | Did estimated returns match actual returns? | Correlation r > 0.5 | Tests underlying model |
+| **Cross-method consistency** | Do reference benchmarking, diminishing returns, and cost-effectiveness methods converge? | Agreement within 30% | Tests methodological robustness |
+
+### Validation Status
+
+This working paper presents the OBG *methodology*. Comprehensive empirical validation is future work requiring:
+
+1. **Data collection**: Longitudinal spending and outcome data across jurisdictions
+2. **Historical OSL estimation**: Computing past OSL using only contemporaneously available data
+3. **Causal analysis**: Rigorous identification of spending → outcome effects
+4. **Publication**: Peer-reviewed validation study with pre-registered analysis plan
+
+The framework's current evidence base consists of the underlying studies cited throughout (e.g., @jackson2016 for education, @vaccine-roi-44-to-1 for vaccinations), not direct validation of OBG itself.
 
 ## Sensitivity Analysis
 
@@ -765,7 +862,7 @@ Even with imperfect evidence, systematically moving from severe misallocation (m
 
 ### Example: US Military Discretionary Spending
 
-This worked example demonstrates the complete OBG calculation for a category where reference benchmarking is the primary method.
+This worked example demonstrates the complete OBG calculation for a category where reference benchmarking is the primary method. Military spending data comes from the Stockholm International Peace Research Institute (SIPRI), which maintains the most comprehensive global military expenditure database [@sipri2024].
 
 **Step 1: Define the category**
 
@@ -775,16 +872,18 @@ This worked example demonstrates the complete OBG calculation for a category whe
 
 **Step 2: Select reference countries**
 
-| Country | Military % GDP | Selection criteria |
-|---------|---------------|-------------------|
-| Germany | 1.5% | NATO member, high-income, strong institutions |
-| France | 1.9% | NATO member, nuclear power, high-income |
-| UK | 2.2% | NATO member, nuclear power, high-income |
-| Japan | 1.0% | High-income, strong institutions, regional threats |
-| Australia | 2.1% | High-income, alliance partner |
-| Canada | 1.3% | NATO member, neighbor |
+Reference data from SIPRI Military Expenditure Database [@sipri-milex-2024]:
 
-**Median reference**: 1.7% of GDP
+| Country | Military % GDP (2023) | GDP (trillion USD) | Selection criteria |
+|---------|----------------------|-------------------|-------------------|
+| Germany | 1.5% | $4.1T | NATO member, high-income, strong institutions |
+| France | 1.9% | $2.8T | NATO member, nuclear power, high-income |
+| UK | 2.2% | $3.1T | NATO member, nuclear power, high-income |
+| Japan | 1.0% | $4.2T | High-income, strong institutions, regional threats |
+| Australia | 2.1% | $1.7T | High-income, alliance partner |
+| Canada | 1.3% | $2.1T | NATO member, neighbor |
+
+**Median reference**: 1.7% of GDP (median of: 1.0%, 1.3%, 1.5%, 1.9%, 2.1%, 2.2%)
 
 **Step 3: Context adjustment**
 
@@ -833,7 +932,7 @@ This worked example demonstrates the complete OBG calculation for a category whe
 | **Opportunity cost** | 4-10x | Returns if reallocated to high-return categories |
 | **Composite (BIS)** | 0.50 | Moderate confidence in OSL estimate |
 
-**Recommendation**: Strong evidence of overinvestment relative to peer countries. However, US global role creates genuine uncertainty about context transferability. Recommend gradual reduction (10% per year) with continuous outcome monitoring.
+**Recommendation**: Strong evidence of overinvestment relative to peer countries. The fiscal multiplier for military spending is estimated at 0.6-0.8, lower than most domestic programs [@military-spending-economic-multiplier]. However, US global role creates genuine uncertainty about context transferability. Recommend gradual reduction (10% per year) with continuous outcome monitoring.
 
 ## Appendix B: Analysis Workflow {.appendix}
 

@@ -22,8 +22,8 @@ profiles:
       allowEmptyValues: true
 
 website:
-  title: "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials"
-  description: "A cost-benefit analysis of public infrastructure for pragmatic clinical trials. With dedicated funding, such a system could avert millions of deaths through accelerated treatment discovery while generating billions in annual R&D savings."
+  title: 'The Health and Economic Impact of a Global System for Pragmatic Clinical Trials'
+  description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) through accelerated treatment discovery while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings."
   site-url: https://impact.dfda.earth
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
