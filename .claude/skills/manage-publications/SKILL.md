@@ -135,56 +135,180 @@ Summary: 15 pending preprints, 18 journal targets
    - **Medium**: Journal submissions
 4. Include relevant metadata (categories, tier levels)
 
-### 3. Generate PDFs
+### 3. Generate PDFs with Review
 
-**When requested**, generate PDFs for all papers using existing render script:
+**IMPORTANT: PDFs for publication should include quality review!**
+
+#### Review Levels
+
+Users can choose thoroughness:
+
+**A. Basic Review** (~2-5 min/paper - fast):
+```
+User: Generate PDFs (basic review)
+→ 1. Pre-render validation + auto-fixes
+→ 2. PDF generation
+→ 3. Post-render validation
+→ 4. Brief report
+```
+
+**B. Standard Review** (~5-10 min/paper - recommended):
+```
+User: Generate PDFs for publication
+→ 1. Pre-render validation + auto-fixes
+→ 2. Citation verification
+→ 3. PDF generation
+→ 4. Post-render validation
+→ 5. Review report
+```
+
+**C. Comprehensive Review** (~15-30 min/paper - pre-submission):
+```
+User: Generate PDFs with full review
+→ 1. Pre-render validation + auto-fixes
+→ 2. AI content quality review
+→ 3. Parameter methodology critique
+→ 4. Citation verification
+→ 5. PDF generation
+→ 6. Post-render validation
+→ 7. Detailed review report
+```
+
+#### Standard Review Workflow (Default)
+
+When user requests PDF generation, run **Standard Review**:
+
+**Step 1: Pre-Render Validation + Auto-Fixes**
+```bash
+python scripts/pre-render-validation.py
+```
+- Detects: LaTeX errors, broken links, missing citations, unknown variables
+- If errors found: Use `/pre-render-validate` skill to auto-fix
+- Auto-fixable issues:
+  ✅ LaTeX syntax errors
+  ✅ Missing image references
+  ✅ Broken cross-reference links
+  ✅ Unknown variables
+  ✅ Hardcoded numbers
+  ✅ Missing citations
+  ✅ GIF file wrapping
+  ✅ Python syntax errors
+
+**Step 2: Citation Verification**
+- Use `/verify-and-add-sources` skill
+- Ensures all claims properly cited
+- Searches for missing sources
+- Adds references to bibliography
+
+**Step 3: PDF Generation**
+```bash
+python scripts/render-quarto.py <project> --to pdf
+```
+- Includes built-in Python code leakage validation
+
+**Step 4: Post-Render Validation**
+```bash
+python scripts/post-render-validation.py
+```
+- Checks rendered HTML for issues
+- Validates: broken links, unrendered expressions, formatting
+
+**Step 5: Review Report**
+Display publication readiness report with findings from all stages.
+
+#### Comprehensive Review (Optional Steps)
+
+For comprehensive review, add between Step 1 and Step 2:
+
+**Content Quality Review:**
+- Use `/review-qmd` skill on main paper file
+- Checks: clarity, engagement, rigor, structure, tone
+- Generates improvement suggestions
+- Optional: apply improvements
+
+**Parameter Methodology Critique:**
+- Use `/critique-calculation` skill for key parameters
+- Validates formulas, empirical backing, uncertainty
+- Identifies weaknesses and improvements
+
+#### Example Output
 
 ```
-Generating PDFs for all publications...
+Generating PDFs with Standard Review...
 
-[1/6] Book: How to End War and Disease
-  Command: python scripts/render-quarto.py book --to pdf
-  Status: Generating... (this may take a few minutes)
-  ✓ Generated: _site/book/How-to-End-War-and-Disease.pdf (15.2 MB)
+[1/6] Economics Paper (1% Treaty)
+═══════════════════════════════════════════
 
-[2/6] Economics Paper (1% Treaty)
-  Command: python scripts/render-quarto.py economics --to pdf
+[Step 1/5] Pre-Render Validation
+  Running: python scripts/pre-render-validation.py
+  ✓ No LaTeX errors
+  ✓ All images found
+  ✓ All cross-references valid
+  ⚠ 3 citations missing - Running auto-fix...
+  ✓ Auto-fixed 3 missing citations
+
+[Step 2/5] Citation Verification
+  Running: /verify-and-add-sources skill
+  ✓ All 47 claims properly cited
+  ✓ Bibliography complete
+
+[Step 3/5] PDF Generation
+  Running: python scripts/render-quarto.py economics --to pdf
   ✓ Generated: _site/economics/economics-paper.pdf (1.3 MB)
+  ✓ No Python code leakage detected
 
-[3/6] IAB Paper
-  Command: python scripts/render-quarto.py iab --to pdf
-  ✓ Generated: _site/iab/incentive-alignment-bonds-paper.pdf (920 KB)
+[Step 4/5] Post-Render Validation
+  Running: python scripts/post-render-validation.py
+  ✓ All internal links functional
+  ✓ No unrendered expressions
+  ✓ PDF navbar links valid
 
-[4/6] Wishocracy Paper
-  Command: python scripts/render-quarto.py wishocracy --to pdf
-  ✓ Generated: _site/wishocracy/wishocracy-rappa-paper.pdf (850 KB)
+[Step 5/5] Review Report
+─────────────────────────────────────────
+PUBLICATION READINESS: ✓ READY
+Minor warnings: None
+Critical errors: None
+PDF ready for upload to SSRN, arXiv, journals
+─────────────────────────────────────────
 
-[5/6] dFDA Spec Paper
-  Command: python scripts/render-quarto.py dfda-spec --to pdf
-  ✓ Generated: _site/dfda-spec/dfda-paper.pdf (1.1 MB)
-
-[6/6] dFDA Impact Paper
-  Command: python scripts/render-quarto.py dfda-impact --to pdf
-  ✓ Generated: _site/dfda-impact/dfda-impact-paper.pdf (980 KB)
-
-All PDFs generated successfully!
-Output directory: E:\code\obsidian\websites\disease-eradication-plan\_site\
+[2/6] IAB Paper
+═══════════════════════════════════════════
+[... continues for all papers]
 ```
 
-**How to do it:**
-1. For each publication, determine the project name:
-   - book → `book`
-   - _quarto-economics.yml → `economics`
-   - _quarto-iab.yml → `iab`
-   - _quarto-wishocracy.yml → `wishocracy`
-   - _quarto-dfda-spec.yml → `dfda-spec`
-   - _quarto-dfda-impact.yml → `dfda-impact`
+#### How to Implement
 
-2. Run: `python scripts/render-quarto.py <project> --to pdf`
+1. **Detect review level** from user request:
+   - "basic review" → Basic
+   - "full review" / "comprehensive" → Comprehensive
+   - Default → Standard
 
-3. Check for PDF in `_site/<project>/` directory
+2. **Run validation pipeline:**
+   ```python
+   # Step 1: Pre-render validation
+   subprocess.run(['python', 'scripts/pre-render-validation.py'])
+   # If errors: use /pre-render-validate skill
 
-4. Report file size and location
+   # Step 2 (Standard+): Citation verification
+   # Use /verify-and-add-sources skill
+
+   # Steps for Comprehensive only:
+   # Use /review-qmd skill
+   # Use /critique-calculation skill
+
+   # Step 3: Generate PDF
+   subprocess.run(['python', 'scripts/render-quarto.py', project, '--to', 'pdf'])
+
+   # Step 4: Post-render validation
+   subprocess.run(['python', 'scripts/post-render-validation.py'])
+   ```
+
+3. **Compile review report** with findings from all stages
+
+4. **Show review report** and ask user if they want to:
+   - Proceed with upload (if clean)
+   - Fix warnings manually (if warnings)
+   - Fix critical errors (if errors found)
 
 ### 4. Update Publication Metadata (Interactive)
 

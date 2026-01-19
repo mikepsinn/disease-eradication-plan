@@ -76,7 +76,7 @@ A dashboard showing spending gaps by category, with clear recommendations:
 - **Reference country data** showing peer spending patterns
 - **Diminishing returns curves** where dose-response data exists
 - **Evidence quality scores** (BIS) for each category
-- **Sensitivity analysis** showing how OBG changes with different assumptions
+- **Sensitivity analysis** showing how OSL changes with different assumptions
 - **Priority rankings** by gap size weighted by evidence confidence
 
 ### Where This Fits
@@ -202,7 +202,7 @@ Each method is detailed below.
 
 ### The Basic Approach
 
-For categories where comparable cross-country data exists, OBG can be estimated from high-performing reference countries:
+For categories where comparable cross-country data exists, OSL can be estimated from high-performing reference countries:
 
 $$
 \text{OSL}_i = \text{median}(\text{Spending}_{i,c}) \times \text{Context}_{\text{US}}
@@ -293,7 +293,7 @@ Outcome
    |                 __/
    |               _/
    |             _/
-   |           _/   <- OBG is around here
+   |           _/   <- OSL is around here
    |         _/
    |       _/
    |     _/
@@ -376,7 +376,7 @@ For each health intervention with cost-effectiveness data:
 1. **Identify target population** who would benefit
 2. **Calculate scale-up cost** to reach entire target population
 3. **Include only interventions** below the cost-effectiveness threshold
-4. **Sum to get category OBG**
+4. **Sum to get category OSL**
 
 ### Worked Example: Vaccinations
 
@@ -402,9 +402,9 @@ For each health intervention with cost-effectiveness data:
 
 ## Budget Impact Score (BIS) as Evidence Quality
 
-### Reframing BIS: Confidence in OBG, Not Allocation Driver
+### Reframing BIS: Confidence in OSL, Not Allocation Driver
 
-The Budget Impact Score measures our **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. Unlike earlier formulations that used BIS to directly allocate budgets, OBG determines the target level, and BIS tells us how confident we are in that target.
+The Budget Impact Score measures our **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. Unlike earlier formulations that used BIS to directly allocate budgets, the OBG framework determines the target level (OSL), and BIS tells us how confident we are in that target.
 
 ### BIS Calculation
 
@@ -446,13 +446,13 @@ Where $K$ is a calibration constant.
 
 ### Evidence Grading from BIS
 
-| BIS Range | Grade | Interpretation | OBG Confidence |
+| BIS Range | Grade | Interpretation | OSL Confidence |
 |-----------|-------|----------------|----------------|
 | 0.80 - 1.00 | A | Strong causal evidence | High - proceed with reallocation |
 | 0.60 - 0.79 | B | Good evidence | Moderate - consider with caveats |
 | 0.40 - 0.59 | C | Mixed evidence | Low - pilot before scaling |
 | 0.20 - 0.39 | D | Weak evidence | Very low - research priority |
-| 0.00 - 0.19 | F | Insufficient evidence | Unknown - cannot estimate OBG |
+| 0.00 - 0.19 | F | Insufficient evidence | Unknown - cannot estimate OSL |
 
 ### BIS Does Not Drive Allocation
 
@@ -460,10 +460,10 @@ Critical distinction from earlier formulations:
 
 | Old (BIS as allocation driver) | New (BIS as confidence measure) |
 |-------------------------------|--------------------------------|
-| Allocate proportionally to BIS | Allocate to reach OBG |
-| High BIS = more spending | High BIS = confident in OBG |
+| Allocate proportionally to BIS | Allocate to reach OSL |
+| High BIS = more spending | High BIS = confident in OSL |
 | Ignores diminishing returns | Explicitly models optimal level |
-| Infinite spending possible | Bounded by OBG |
+| Infinite spending possible | Bounded by OSL |
 
 ## Gap Analysis and Priority Ranking
 
@@ -555,10 +555,10 @@ Composite scores (like 0-1 BIS values) obscure interpretability. Policymakers an
 
 For each OSL estimate, report:
 
-1. **Leave-one-country-out**: Does excluding any single reference country change OBG by >20%?
+1. **Leave-one-country-out**: Does excluding any single reference country change OSL by >20%?
 2. **Method comparison**: Do reference benchmarking, diminishing returns, and cost-effectiveness methods agree?
-3. **Time stability**: Has OBG changed substantially over past 5 years?
-4. **Sensitivity to assumptions**: How does OBG change with ±20% parameter variation?
+3. **Time stability**: Has OSL changed substantially over past 5 years?
+4. **Sensitivity to assumptions**: How does OSL change with ±20% parameter variation?
 
 ## Interpreting Results
 
@@ -601,7 +601,7 @@ High-VOI categories should receive pilot funding to generate better evidence.
 
 ### Recommended Pilot Designs
 
-For categories where OBG is uncertain:
+For categories where OSL is uncertain:
 
 1. **Randomized scale-up**: Randomly vary spending levels across jurisdictions
 2. **Stepped-wedge rollout**: Gradual expansion with comparison to not-yet-treated areas
@@ -708,7 +708,7 @@ Higher spending may not translate to outcomes if implementation capacity is lack
 
 ### Parameter Sensitivity
 
-| Parameter | Default | Test Range | Impact on OBG |
+| Parameter | Default | Test Range | Impact on OSL |
 |-----------|---------|------------|---------------|
 | Reference country set | OECD high-performers | All OECD, EU only, Anglo only | ±15% |
 | Discount rate | 5% | 3-7% | ±20% |
@@ -721,7 +721,7 @@ Higher spending may not translate to outcomes if implementation capacity is lack
 **Pessimistic scenario**: Uncertain categories have low/zero returns
 **Base case**: Use point estimates
 
-Report OBG range across scenarios for policy guidance.
+Report OSL range across scenarios for policy guidance.
 
 ## Future Directions
 
@@ -754,7 +754,7 @@ The framework answers three questions:
 2. **How far are we?** Gap analysis shows where current spending diverges from optimal
 3. **How confident are we?** BIS scores evidence quality so policymakers know which OSL estimates are reliable
 
-Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OBG, vaccinations 75% below OBG) toward evidence-based targets will produce welfare gains orders of magnitude larger than current discretionary allocation achieves.
+Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OSL, vaccinations 75% below OSL) toward evidence-based targets will produce welfare gains orders of magnitude larger than current discretionary allocation achieves.
 
 ## References
 
@@ -796,7 +796,7 @@ This worked example demonstrates the complete OBG calculation for a category whe
 | Nuclear deterrent | Already included | Reference countries include nuclear powers |
 | **Net adjustment** | +0.0% | Adjustments roughly cancel |
 
-**Step 4: Calculate OBG**
+**Step 4: Calculate OSL**
 
 - US GDP: $27T
 - Reference spending: 1.7% of GDP
@@ -869,7 +869,7 @@ Phase 2: OBG ESTIMATION
 4. Reference benchmarking
    +-- Calculate median reference spending
    +-- Apply context adjustments
-   +-- Estimate OBG with confidence intervals
+   +-- Estimate OSL with confidence intervals
    +-- Document methodology
 
 5. Diminishing returns modeling (where data permits)
@@ -881,7 +881,7 @@ Phase 2: OBG ESTIMATION
 6. Cost-effectiveness analysis (health/life-saving)
    +-- Identify interventions below CE threshold
    +-- Calculate scale-up costs
-   +-- Sum to category OBG
+   +-- Sum to category OSL
    +-- Document assumptions
 
 7. Method reconciliation
@@ -929,7 +929,7 @@ Phase 5: OUTPUT GENERATION
 13. Sensitivity analysis
     +-- Vary key parameters
     +-- Test reference country sets
-    +-- Report OBG ranges
+    +-- Report OSL ranges
     +-- Identify robust conclusions
 
 14. Documentation
