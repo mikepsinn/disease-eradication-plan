@@ -28,11 +28,13 @@ Usage:
 """
 
 import argparse
+import gc
 import os
 import re
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
@@ -66,6 +68,56 @@ from render_utils import (  # type: ignore[import-not-found]
 # =============================================================================
 # Pre-Build Functions (formerly in quarto_pre_build.py)
 # =============================================================================
+
+def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verbose: bool = True) -> bool:
+    """
+    Remove a directory tree with retries for Windows file locking issues.
+
+    Tries multiple strategies:
+    1. Simple rmtree with retries and delays
+    2. Force garbage collection to release file handles
+    3. Kill any Python/Quarto processes that might be locking files
+    """
+    if not path.exists():
+        return True
+
+    for attempt in range(max_retries):
+        try:
+            # Force garbage collection to release any file handles
+            gc.collect()
+            shutil.rmtree(path)
+            return True
+        except PermissionError as e:
+            if attempt < max_retries - 1:
+                if verbose:
+                    print(f"[WARN] Directory locked (attempt {attempt + 1}/{max_retries}), retrying in {delay}s...", flush=True)
+
+                # On Windows, try to kill processes that might be locking the directory
+                if sys.platform == 'win32' and attempt >= 2:
+                    if verbose:
+                        print("[*] Attempting to kill locking processes...", flush=True)
+                    try:
+                        # Kill any stale Python processes (except ourselves)
+                        our_pid = os.getpid()
+                        result = subprocess.run(
+                            ['powershell', '-Command',
+                             f'Get-Process python*, quarto* -ErrorAction SilentlyContinue | '
+                             f'Where-Object {{ $_.Id -ne {our_pid} }} | '
+                             f'Stop-Process -Force -ErrorAction SilentlyContinue'],
+                            capture_output=True,
+                            timeout=10
+                        )
+                    except Exception:
+                        pass  # Ignore errors from process killing
+
+                time.sleep(delay)
+                delay *= 1.5  # Exponential backoff
+            else:
+                if verbose:
+                    print(f"[ERROR] Failed to remove {path} after {max_retries} attempts: {e}", flush=True)
+                raise
+    return False
+
 
 def _find_project_root(start_path: Optional[Path] = None) -> Path:
     """Find the project root by looking for package.json or _quarto-book.yml."""
@@ -280,11 +332,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     build_temp_root = project_root / "_build_temp"
     build_temp = build_temp_root / config_name
 
-    # Clean up existing config-specific directory only
+    # Clean up existing config-specific directory only (with retry for Windows locking)
     if build_temp.exists():
         if verbose:
             print(f"[*] Cleaning up existing _build_temp/{config_name}/", flush=True)
-        shutil.rmtree(build_temp)
+        rmtree_with_retry(build_temp, verbose=verbose)
 
     build_temp.mkdir(parents=True)
     if verbose:
