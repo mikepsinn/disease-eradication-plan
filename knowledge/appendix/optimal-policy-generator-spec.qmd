@@ -1,7 +1,7 @@
 ---
 title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions"
-subtitle: "Systematic Generation of Enact/Repeal Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria"
-description: "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/repeal lists based on quasi-experimental evidence from centuries of policy variation data."
+subtitle: "Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria"
+description: "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data."
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -46,38 +46,45 @@ This specification describes a framework for generating jurisdiction-specific po
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers the question: "Given the evidence, what policies should jurisdiction X adopt or repeal?" The framework operates at any jurisdiction level (country, state, county, city) and produces three outputs: (1) **Enact List** - high-impact policies the jurisdiction lacks or should set at optimal levels, (2) **Repeal List** - harmful policies the jurisdiction has, and (3) **Maintain List** - policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement. This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, expected effect: -1.8 deaths/100K").
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify (change level or approach), (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement. This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, replace tobacco tax: $1.41 → $2.50").
 
 ## System Overview
 
 ### What Policymakers See
 
-A jurisdiction-specific dashboard showing which policies to enact or repeal, ranked by expected welfare impact:
+A jurisdiction-specific dashboard showing which policies to enact, replace, repeal, or maintain, ranked by expected welfare impact:
 
 ::: {.callout-note}
 ## Example: Policy Recommendations for Texas
 
-**Policies to ENACT** (Texas does not have these)
+**ENACT** (New policies Texas should adopt)
 
 | Policy | Expected Effect | Evidence Grade | Monetized Impact | Priority |
 |--------|-----------------|----------------|------------------|----------|
 | Primary seat belt law | -1.8 deaths/100K | A | +$1.2B/year | High |
-| Tobacco tax +$1/pack | -8.2 pp smoking | A | +$22B/year | High |
 | Motorcycle helmet req. | -1.2 deaths/100K | A | +$680M/year | Medium |
 
-**Policies to REPEAL** (Texas has these, evidence suggests harm)
+**REPLACE** (Existing policies to modify)
 
-| Policy | Current Effect | Evidence Grade | Removing Would Save | Priority |
-|--------|----------------|----------------|---------------------|----------|
-| [Example based on TX law] | ... | ... | ... | ... |
+| Policy | Current → Optimal | Expected Effect | Evidence Grade | Monetized Impact |
+|--------|-------------------|-----------------|----------------|------------------|
+| Tobacco tax | $1.41 → $2.50/pack | -8.2 pp smoking | A | +$4.8B/year |
+| Speed limit | 85 → 70 mph | -0.8 deaths/100K | B | +$350M/year |
 
-**Policies to MAINTAIN** (Texas has these, evidence supports)
+**REPEAL** (Harmful policies to remove)
 
-| Policy | Effect | Evidence Grade | Notes |
-|--------|--------|----------------|-------|
-| [Example] | ... | ... | Continue current policy |
+| Policy | Current Effect | Evidence Grade | Removing Would Save |
+|--------|----------------|----------------|---------------------|
+| *None identified* | - | - | - |
 
-**Expected Total Welfare Gain**: Adopting all high-priority recommendations would generate an estimated +$X billion/year in monetized welfare improvements.
+**MAINTAIN** (Current policies aligned with evidence)
+
+| Policy | Current Level | Evidence Grade | Status |
+|--------|---------------|----------------|--------|
+| DUI threshold | 0.08 BAC | A | ✓ Continue |
+| Graduated licensing | 3-stage system | A | ✓ Continue |
+
+**Expected Total Welfare Gain**: +$7.0B/year from adopting all recommendations.
 
 *Blocking factors flagged where applicable (constitutional constraints, federal preemption, etc.)*
 :::
@@ -115,10 +122,10 @@ Both frameworks apply the same principle: compare current jurisdiction practice 
 │  │                             │    │                         │ │
 │  │  Question:                  │    │  Question:              │ │
 │  │  "How much should we        │    │  "What policies should  │ │
-│  │   spend on X?"              │    │   we adopt/repeal?"     │ │
+│  │   spend on X?"              │    │   we change?"           │ │
 │  │                             │    │                         │ │
 │  │  Output:                    │    │  Output:                │ │
-│  │  Spending gap analysis      │    │  Enact/Repeal lists     │ │
+│  │  Spending gap analysis      │    │  4-type recommendations │ │
 │  │  by category                │    │  by policy type         │ │
 │  │                             │    │                         │ │
 │  │  Unit: $ per program        │    │  Unit: Laws, regs,      │ │
@@ -233,9 +240,13 @@ outcome_measurements (
 -- Policy recommendations (generated output)
 policy_recommendations (
     jurisdiction_id, policy_type_id,
-    recommendation_type, -- 'enact', 'repeal', 'maintain'
-    current_status, -- what they have now
-    recommended_target, -- what evidence suggests (for continuous policies, the target level)
+    recommendation_type, -- 'enact', 'replace', 'repeal', 'maintain'
+    -- 'enact': new policy (jurisdiction doesn't have)
+    -- 'replace': modify existing policy (change level or approach)
+    -- 'repeal': remove policy entirely
+    -- 'maintain': keep current policy (evidence-optimal)
+    current_status, -- what they have now (NULL if nothing)
+    recommended_target, -- what evidence suggests (for replace/enact with level)
     expected_effect, expected_effect_unit,
     monetized_benefit_annual,
     evidence_grade, priority_score,
@@ -422,7 +433,7 @@ Where:
 | **Missing policy** | Jurisdiction lacks a policy with strong positive evidence | Texas lacks primary seat belt enforcement |
 | **Harmful policy** | Jurisdiction has a policy with strong negative evidence | Jurisdiction has policy X shown to increase mortality |
 | **Suboptimal strength** | Continuous policy set below evidence-optimal level | Tobacco tax at $1.41 vs. optimal ~$2.50 |
-| **Excessive strength** | Continuous policy set above evidence-optimal level | [Example where evidence suggests lower level] |
+| **Excessive strength** | Continuous policy set above evidence-optimal level | Speed limit at 85 mph vs. optimal ~70 mph |
 
 ### Priority Scoring
 
@@ -456,13 +467,14 @@ $$
 
 ### Recommendation Types
 
-| Type | Trigger | Output |
-|------|---------|--------|
-| **Enact** | Jurisdiction lacks policy OR has suboptimal level | "Adopt [policy]" or "Set [policy] at [level]" |
-| **Repeal** | Jurisdiction has policy with negative evidence | "Remove [policy]" |
-| **Maintain** | Jurisdiction has policy aligned with evidence | "Continue [policy]" |
+| Type | Question | When to Use | Example |
+|------|----------|-------------|---------|
+| **Enact** | "Add this?" | New policy the jurisdiction doesn't have | "ENACT primary seat belt law" |
+| **Replace** | "Change this?" | Modify existing policy level or approach | "REPLACE tobacco tax: $1.41 → $2.50" |
+| **Repeal** | "Remove this?" | Remove policy with negative evidence | "REPEAL [harmful policy]" |
+| **Maintain** | "Keep this?" | Current policy is evidence-optimal | "MAINTAIN DUI threshold at 0.08 BAC" |
 
-For continuous policies (taxes, spending levels), "Enact" specifies the target level. Example: "Enact tobacco tax at $2.50/pack" covers both new adoption AND replacing an existing lower rate.
+For continuous policies (taxes, spending levels), **Replace** specifies the change from current to optimal level. **Enact** is reserved for truly new policies that don't exist in the jurisdiction.
 
 ### Blocking Factors
 
@@ -1021,7 +1033,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ## Conclusion
 
-The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable enact/repeal lists ranked by expected welfare impact.
+The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact.
 
 The OPG complements the Optimal Spending Level (OSL/BIS) in the Optimocracy framework:
 
@@ -1043,12 +1055,14 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 
 ### Texas Policy Inventory (Sample)
 
-| Policy Type | Has Policy? | Current Level | Evidence-Optimal | Gap |
-|-------------|-------------|---------------|------------------|-----|
-| Primary seat belt enforcement | No | N/A | Yes | Missing |
-| Motorcycle helmet requirement | No (partial) | Only under 21 | All ages | Suboptimal |
-| Tobacco tax | Yes | $1.41/pack | ~$2.50/pack | Suboptimal |
-| Speed limit (rural interstate) | Yes | 85 mph (max in US) | 70 mph | Excessive |
+| Policy Type | Has Policy? | Current Level | Evidence-Optimal | Recommendation |
+|-------------|-------------|---------------|------------------|----------------|
+| Primary seat belt enforcement | No | N/A | Yes | **ENACT** |
+| Motorcycle helmet requirement | No (partial) | Only under 21 | All ages | **ENACT** |
+| Tobacco tax | Yes | $1.41/pack | ~$2.50/pack | **REPLACE** |
+| Speed limit (rural interstate) | Yes | 85 mph | 70 mph | **REPLACE** |
+| DUI threshold | Yes | 0.08 BAC | 0.08 BAC | **MAINTAIN** |
+| Graduated driver licensing | Yes | 3-stage system | 3-stage system | **MAINTAIN** |
 
 ### Step 1: Calculate Policy Impact Scores
 
@@ -1094,9 +1108,9 @@ From meta-analysis of 47 US states (2000-2020):
 **OPG Recommendations for Texas**
 
 ::: {.callout-tip}
-## Policies to ENACT
+## ENACT (New Policies to Adopt)
 
-**1. Primary Seat Belt Enforcement Law** (Current: Secondary enforcement only)
+**1. Primary Seat Belt Enforcement Law** (Current: None - secondary enforcement only)
 
 - **Expected effect**: -1.5 traffic deaths per 100K population
 - **Monetized impact**: +$1.2B/year (at $10M VSL × 120 lives saved)
@@ -1107,7 +1121,7 @@ From meta-analysis of 47 US states (2000-2020):
 - **Similar jurisdictions**: Florida adopted 2009, saw -1.7 deaths/100K
 - **Tracking**: Traffic deaths/100K (FARS), annual, vs. 2020-2024 baseline
 
-**2. Universal Motorcycle Helmet Requirement** (Current: Under 21 only)
+**2. Universal Motorcycle Helmet Requirement** (Current: None for adults - partial coverage under 21 only)
 
 - **Expected effect**: -1.0 traffic deaths per 100K
 - **Monetized impact**: +$680M/year
@@ -1121,9 +1135,9 @@ From meta-analysis of 47 US states (2000-2020):
 :::
 
 ::: {.callout-warning}
-## Policies to ENACT (Continuous - Set at Optimal Level)
+## REPLACE (Policies to Modify)
 
-**3. Tobacco Tax at $2.50/pack** (Current: $1.41/pack)
+**3. Tobacco Tax: $1.41 → $2.50/pack**
 
 - **Current level**: $1.41/pack (below national median of $1.91)
 - **Recommended level**: $2.50/pack (evidence-optimal range)
@@ -1135,39 +1149,70 @@ From meta-analysis of 47 US states (2000-2020):
 - **Blocking factors**: Political (anti-tax sentiment)
 - **Tracking**: Smoking rate (BRFSS), annual, vs. 2020-2024 baseline
 
+**4. Maximum Speed Limit: 85 mph → 70 mph**
+
+- **Current level**: 85 mph (highest in US)
+- **Recommended level**: 70 mph (evidence-optimal)
+- **Expected effect**: -0.8 deaths/100K
+- **Monetized impact**: +$350M/year
+- **Evidence grade**: B
+- **Priority**: Low (political feasibility concern)
+- **Blocking factors**: Political (driver opposition)
+- **Tracking**: Highway fatalities/100K (FARS), annual, vs. 2020-2024 baseline
+
 :::
 
 ::: {.callout-caution}
-## Policies to REVIEW
+## REPEAL (Policies to Remove)
 
-**4. Maximum Speed Limit** (Current: 85 mph on some highways)
+*No high-priority repeal recommendations for Texas at this time.*
 
-- **Current level**: 85 mph (highest in US)
-- **Evidence suggests**: Each 5 mph increase → +0.4 deaths/100K
-- **Expected effect of reduction to 75 mph**: -0.8 deaths/100K
-- **Evidence grade**: B
-- **Priority**: Low (political feasibility concern)
-- **Note**: Texas-specific infrastructure may modify effect; local validation recommended
+*(Example format: If Texas had a policy shown to cause net harm, it would appear here with expected welfare gain from removal.)*
+
+:::
+
+::: {.callout-note}
+## MAINTAIN (No Change Needed)
+
+**5. DUI Threshold at 0.08 BAC** ✓
+
+- **Current level**: 0.08 BAC (national standard)
+- **Evidence**: Aligned with evidence-optimal level
+- **Status**: Continue current policy
+
+**6. Graduated Driver Licensing Program** ✓
+
+- **Current level**: Three-stage system with night/passenger restrictions
+- **Evidence**: Consistent with best practices
+- **Status**: Continue current policy
 
 :::
 
 ### Step 4: Summary Dashboard
 
-**Total Expected Welfare Gain from All Recommendations**
+**Total Expected Welfare Gain by Recommendation Type**
 
-| Recommendation | Monetized Annual Impact | Feasibility |
-|----------------|------------------------|-------------|
-| Primary seat belt law | +$1.2B | High |
-| Universal helmet law | +$680M | Medium |
-| Tobacco tax increase | +$4.8B | Medium |
-| Speed limit reduction | +$350M | Low |
-| **Total** | **+$7.0B/year** | |
+| Type | Recommendation | Monetized Annual Impact | Feasibility |
+|------|----------------|------------------------|-------------|
+| **ENACT** | Primary seat belt law | +$1.2B | High |
+| **ENACT** | Universal helmet law | +$680M | Medium |
+| **REPLACE** | Tobacco tax: $1.41 → $2.50 | +$4.8B | Medium |
+| **REPLACE** | Speed limit: 85 → 70 mph | +$350M | Low |
+| **MAINTAIN** | DUI threshold, GDL | - | N/A |
+| | **Total from changes** | **+$7.0B/year** | |
 
-**Note**: These estimates assume independent effects. Actual benefits may differ due to policy interactions and implementation variation.
+**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas - no harmful policies identified with strong evidence.
 
 ### Interpretation
 
-This example demonstrates how OPG transforms generic evidence ("seat belt laws reduce deaths by 1.8/100K on average") into actionable, jurisdiction-specific recommendations ("Texas should enact primary seat belt enforcement; expected effect -1.5 deaths/100K, +$1.2B/year").
+This example demonstrates how OPG transforms generic evidence ("seat belt laws reduce deaths by 1.8/100K on average") into actionable, jurisdiction-specific recommendations ("Texas should ENACT primary seat belt enforcement; expected effect -1.5 deaths/100K, +$1.2B/year").
+
+The four recommendation types provide clarity:
+
+- **ENACT**: Policies Texas doesn't have (seat belt, helmet)
+- **REPLACE**: Policies Texas has but at wrong levels (tobacco tax, speed limit)
+- **REPEAL**: Harmful policies to remove (none identified)
+- **MAINTAIN**: Policies already evidence-optimal (DUI threshold, GDL)
 
 The recommendations:
 1. Account for Texas's current policy inventory
@@ -1274,15 +1319,16 @@ Phase 4: RECOMMENDATION GENERATION
 14. Priority scoring
     ├── Rank by |Gap| × Evidence Grade × Impact
     ├── Assign to priority tiers (Quick Win, Major Reform, etc.)
-    ├── Generate enact/repeal/maintain lists
+    ├── Generate enact/replace/repeal/maintain lists
     └── Calculate total expected welfare gain
 
 Phase 5: OUTPUT GENERATION
 ──────────────────────────
 15. Recommendation dashboard
-    ├── Enact list with expected effects (includes continuous policy levels)
-    ├── Repeal list with expected savings
-    ├── Maintain list (policies to keep)
+    ├── Enact list (new policies to adopt)
+    ├── Replace list (existing policies to modify: current → optimal)
+    ├── Repeal list (harmful policies to remove)
+    ├── Maintain list (policies aligned with evidence)
     └── Jurisdictional level and tracking guidance for each
 
 16. Multi-unit reporting
@@ -1315,7 +1361,7 @@ Before generating recommendations, verify:
 
 ### Core Concepts
 
-- **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs enact/repeal/maintain lists ranked by expected welfare impact, with recommended jurisdictional level (subsidiarity) and tracking guidance for continuous improvement.
+- **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs four recommendation types (enact/replace/repeal/maintain) ranked by expected welfare impact, with recommended jurisdictional level (subsidiarity) and tracking guidance for continuous improvement.
 
 - **Policy Impact Score (PIS)**: Intermediate metric quantifying the strength of evidence that a policy affects an outcome. Integrates effect size, causal confidence (Bradford Hill criteria), and analysis quality. Ranges from 0 to 1; higher indicates stronger evidence.
 
@@ -1367,11 +1413,13 @@ Before generating recommendations, verify:
 
 ### Output Concepts
 
-- **Enact List**: Policies the jurisdiction should adopt (has strong evidence of benefit, jurisdiction lacks them or has suboptimal level). For continuous policies, specifies target level.
+- **Enact List**: New policies the jurisdiction should adopt (policies that don't exist in the jurisdiction but have strong evidence of benefit).
+
+- **Replace List**: Existing policies the jurisdiction should modify (current policy level or approach differs from evidence-optimal; specifies current → recommended change).
 
 - **Repeal List**: Policies the jurisdiction should remove (has evidence of harm, jurisdiction currently has them).
 
-- **Maintain List**: Policies the jurisdiction should keep unchanged (aligned with evidence).
+- **Maintain List**: Policies the jurisdiction should keep unchanged (current policy is aligned with evidence).
 
 - **Priority Tier**: Classification of recommendations by urgency and feasibility: Quick Win (high impact, low barriers), Major Reform (high impact, significant barriers), Long-Term (requires structural change), Monitor (needs more evidence).
 
