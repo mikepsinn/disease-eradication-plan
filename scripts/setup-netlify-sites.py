@@ -29,6 +29,7 @@ import os
 import sys
 import io
 import re
+import time
 import argparse
 from pathlib import Path
 
@@ -324,7 +325,8 @@ def main():
 
     # Create sites
     created = 0
-    for config_name, info in configs.items():
+    config_items = list(configs.items())
+    for i, (config_name, info) in enumerate(config_items):
         print(f"\n[*] {config_name}: {info['title'][:50]}")
 
         site = create_netlify_site(token, config_name, info["title"])
@@ -334,6 +336,10 @@ def main():
                 created += 1
             else:
                 print(f"  [WARN] Site created but config not updated")
+
+        # Rate limit protection: wait between API calls
+        if i < len(config_items) - 1:
+            time.sleep(2)
 
     # Summary
     print(f"\n{'=' * 60}")

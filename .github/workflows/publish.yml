@@ -735,6 +735,25 @@ jobs:
         timeout-minutes: 10
 
 
+      - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/political-capture/_site/political-capture'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy political-capture site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 7daf95c9-506f-4cb9-99e3-2f0f9477f816
+
+        timeout-minutes: 1
+
 
 
       - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"

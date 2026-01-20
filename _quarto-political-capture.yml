@@ -12,6 +12,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
   index-source: knowledge/appendix/political-capture-cost-analysis.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
 
