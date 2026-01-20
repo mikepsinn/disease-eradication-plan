@@ -494,7 +494,7 @@ jobs:
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_build_temp/manual/_manual/warondisease'
+          publish-dir: '_build_temp/manual/_book/warondisease'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
 

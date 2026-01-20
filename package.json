@@ -34,6 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:1-pct-treaty-impact:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py 1-pct-treaty-impact --to pdf",
     "render:wishocracy:publish": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --publish",
@@ -116,7 +117,6 @@
     "sort-references": "tsx scripts/sort-references.ts",
     "generate:references-json": "tsx scripts/generate-references-json.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
-    "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
     "validate:post-render": ".venv\\Scripts\\python.exe -u scripts/post-render-validation.py",
     "render:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py 1-pct-treaty-impact",
     "render:wishocracy": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy",
