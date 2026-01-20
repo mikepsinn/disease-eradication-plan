@@ -15,6 +15,9 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8b9558d9-6a2b-4581-bde7-11d79933d105"
   netlify-cname: "opg-warondisease.netlify.app"  # DNS: opg.warondisease.org -> this
+  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  favicon-prompt: "Letters 'OPG' or a policy document with a checkmark. Represents Optimal Policy Generator - evidence-based policy recommendations."
+  og-image-prompt: "Visualization of evidence-based policy optimization - showing policy documents being analyzed through quasi-experimental evidence from jurisdictions. Include maps, policy comparisons, and enact/repeal/maintain decision flows."
 
 profiles:
   default:

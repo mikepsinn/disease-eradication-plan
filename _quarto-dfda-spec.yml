@@ -17,6 +17,9 @@ dih-render:
   pdf-output-file: dfda-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
   netlify-cname: "dfda-paper.netlify.app"  # DNS: spec.dfda.earth -> this
+  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  favicon-prompt: "A pill or capsule inside a magnifying glass. Represents decentralized drug assessment and analysis."
+  og-image-prompt: "Scientific visualization of decentralized drug assessment - showing pills, molecular structures, data flowing through a distributed network, and real-world evidence validation. Academic and clinical aesthetic."
 
 profiles:
   default:

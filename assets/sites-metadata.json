@@ -1,0 +1,815 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "generatedAt": "2026-01-20T10:11:27.248679Z",
+  "projectRoot": ".",
+  "totalSites": 10,
+  "sites": [
+    {
+      "id": "book",
+      "type": "book",
+      "title": "How to End War and Disease",
+      "description": "",
+      "siteUrl": "https://manual.WarOnDisease.org",
+      "favicon": "https://manual.WarOnDisease.org/assets/icons/book-favicon.png",
+      "ogImage": "https://manual.WarOnDisease.org/assets/cover/book-cover-wide.png",
+      "pdfUrl": "https://manual.WarOnDisease.org/How-to-End-War-and-Disease.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "version": "1.0.0",
+      "edition": "First Edition",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "WarOnDisease.org",
+      "publisherUrl": "https://manual.WarOnDisease.org",
+      "subject": "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform",
+      "category": "Non-fiction, Public Policy, Health Economics, Peace Studies",
+      "keywords": [
+        "war-on-disease",
+        "1-percent-treaty",
+        "medical-research",
+        "public-health",
+        "peace-dividend",
+        "decentralized-trials",
+        "dfda",
+        "dih",
+        "victory-bonds",
+        "health-economics",
+        "cost-benefit-analysis",
+        "clinical-trials",
+        "drug-development",
+        "regulatory-reform",
+        "military-spending",
+        "peace-economics",
+        "decentralized-governance",
+        "wishocracy",
+        "blockchain-governance",
+        "impact-investing"
+      ],
+      "audience": "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers",
+      "format": "Book",
+      "genre": "Public Policy, Health Economics, Peace Studies",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062",
+        "cname": "warondisease-org.netlify.app"
+      },
+      "indexSource": "index-book.qmd",
+      "outputDir": "_book/warondisease"
+    },
+    {
+      "id": "cost-of-change",
+      "type": "website",
+      "title": "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+      "description": "When critics dismiss policy proposals as \"politically impossible,\" they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value.",
+      "siteUrl": "https://cost-of-change.warondisease.org",
+      "favicon": "https://cost-of-change.warondisease.org/assets/icons/favicon.png",
+      "ogImage": "https://warondisease.org/assets/og-images/default-og.png",
+      "pdfUrl": "https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis",
+      "category": "Academic Paper, Political Economy, Mechanism Design, Public Policy",
+      "keywords": [
+        "political-economy",
+        "campaign-finance",
+        "lobbying",
+        "mechanism-design",
+        "public-choice",
+        "cost-benefit-analysis",
+        "political-feasibility",
+        "political-reform",
+        "democracy"
+      ],
+      "audience": "Researchers, Policy Makers, Political Scientists, Economists, Political Reform Advocates",
+      "format": "Working Paper",
+      "genre": "Political Science, Economics, Public Choice, Public Policy",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "7daf95c9-506f-4cb9-99e3-2f0f9477f816",
+        "cname": "cost-of-change-warondisease.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/cost-of-change-analysis.qmd",
+      "outputDir": "_site/cost-of-change"
+    },
+    {
+      "id": "dfda-impact",
+      "type": "website",
+      "title": "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials",
+      "description": "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings.",
+      "siteUrl": "https://impact.dfda.earth",
+      "favicon": "https://impact.dfda.earth/assets/icons/dfda-favicon.png",
+      "ogImage": "https://impact.dfda.earth/assets/dfda-og-1200x630.png",
+      "pdfUrl": "https://impact.dfda.earth/dfda-impact-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18243915",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized FDA",
+      "publisherUrl": "https://dfda.earth",
+      "subject": "Health Economics, Cost-Benefit Analysis, ROI, Clinical Trials, Drug Development",
+      "category": "Academic Paper, Health Economics, Policy Analysis",
+      "keywords": [
+        "dfda",
+        "cost-benefit-analysis",
+        "roi",
+        "return-on-investment",
+        "clinical-trials",
+        "drug-development",
+        "health-economics",
+        "pragmatic-trials",
+        "recovery-trial",
+        "real-world-evidence",
+        "regulatory-efficiency",
+        "decentralized-fda"
+      ],
+      "audience": "Policy Makers, Health Economists, Regulatory Scientists, Investors, Healthcare Administrators",
+      "format": "Working Paper",
+      "genre": "Health Economics, Policy Analysis, Cost-Benefit Analysis",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "a314a33e-3155-4067-8624-706266899419",
+        "cname": "impact-dfda-earth.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/dfda-impact-paper.qmd",
+      "outputDir": "_site/dfda-impact",
+      "publishing": {
+        "ownSite": {
+          "url": "https://impact.dfda.earth",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "",
+            "doi": "10.5281/zenodo.18243915"
+          },
+          {
+            "platform": "medrxiv",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          }
+        ],
+        "journals": [
+          {
+            "name": "Value in Health",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Health Affairs",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "PharmacoEconomics",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "dfda-spec",
+      "type": "website",
+      "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
+      "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at ~80x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
+      "siteUrl": "https://spec.dfda.earth",
+      "favicon": "https://spec.dfda.earth/assets/icons/dfda-favicon.png",
+      "ogImage": "https://spec.dfda.earth/assets/dfda-og-1200x630.png",
+      "pdfUrl": "https://spec.dfda.earth/dfda-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18203376",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized FDA",
+      "publisherUrl": "https://spec.dfda.earth",
+      "subject": "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods",
+      "category": "Academic Paper, Medical Research, Methodology",
+      "keywords": [
+        "dfda",
+        "predictor-impact-score",
+        "pharmacovigilance",
+        "real-world-evidence",
+        "n-of-1-trials",
+        "causal-inference",
+        "bradford-hill-criteria",
+        "treatment-effects",
+        "adverse-events",
+        "outcome-labels",
+        "statistical-methods",
+        "dfda",
+        "decentralized-fda"
+      ],
+      "audience": "Researchers, Regulatory Scientists, Biostatisticians, Pharmacoepidemiologists, Health Data Scientists",
+      "format": "Working Paper",
+      "genre": "Biostatistics, Pharmacoepidemiology, Methodology",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "01e9af64-b6d0-48ee-8c3d-43994745ac3f",
+        "cname": "dfda-paper.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/dfda-spec-paper.qmd",
+      "outputDir": "_site/dfda-spec",
+      "publishing": {
+        "ownSite": {
+          "url": "https://spec.dfda.earth",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "https://zenodo.org/record/18203376",
+            "doi": "10.5281/zenodo.18203376"
+          },
+          {
+            "platform": "medrxiv",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "stat.ME"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Clinical Pharmacology & Therapeutics",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Pharmacoepidemiology and Drug Safety",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Drug Safety",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "economics",
+      "type": "book",
+      "title": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
+      "description": "Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D\nproductivity continues to decline—costing $2.3 billion per approved drug with 15-year development timelines.\nWe analyze the health and economic impact of an international treaty redirecting 1% of military spending\n($27.2 billion annually) to pragmatic clinical trials modeled on the RECOVERY trial framework, which\ndemonstrated treatment validation at $929 per patient versus traditional trial costs exceeding $40,000.\nUsing Monte Carlo simulation with empirically-derived parameters, we estimate this reallocation could:\n(1) advance global treatment access by 207 years relative to current trajectories, (2) prevent 10.5 billion\ncumulative disability-adjusted life years (DALYs) lost to untreated disease, and (3) generate $30 quadrillion\nin present-value economic benefits through reduced mortality, morbidity, and healthcare costs. The intervention\nachieves a cost-effectiveness ratio of $0.0050 per DALY averted—approximately 10,000 times more cost-effective\nthan the WHO threshold for highly cost-effective interventions. We present sensitivity analyses across\nconservative, expected, and optimistic scenarios, demonstrating robust positive returns under all examined\nparameter combinations. The analysis provides quantitative support for international coordination on\nmedical research funding as a complement to existing health security frameworks.\n",
+      "abstract": "Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D\nproductivity continues to decline—costing $2.3 billion per approved drug with 15-year development timelines.\nWe analyze the health and economic impact of an international treaty redirecting 1% of military spending\n($27.2 billion annually) to pragmatic clinical trials modeled on the RECOVERY trial framework, which\ndemonstrated treatment validation at $929 per patient versus traditional trial costs exceeding $40,000.\nUsing Monte Carlo simulation with empirically-derived parameters, we estimate this reallocation could:\n(1) advance global treatment access by 207 years relative to current trajectories, (2) prevent 10.5 billion\ncumulative disability-adjusted life years (DALYs) lost to untreated disease, and (3) generate $30 quadrillion\nin present-value economic benefits through reduced mortality, morbidity, and healthcare costs. The intervention\nachieves a cost-effectiveness ratio of $0.0050 per DALY averted—approximately 10,000 times more cost-effective\nthan the WHO threshold for highly cost-effective interventions. We present sensitivity analyses across\nconservative, expected, and optimistic scenarios, demonstrating robust positive returns under all examined\nparameter combinations. The analysis provides quantitative support for international coordination on\nmedical research funding as a complement to existing health security frameworks.\n",
+      "siteUrl": "https://impact.warondisease.org",
+      "favicon": "https://impact.warondisease.org/assets/icons/economics-favicon.png",
+      "ogImage": "https://impact.warondisease.org/assets/icons/war-on-disease-og-1200x630.png",
+      "pdfUrl": "https://impact.warondisease.org/1-percent-treaty-impact.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18161561",
+      "version": "1.0.0",
+      "edition": "First Edition",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "WarOnDisease.org",
+      "publisherUrl": "https://WarOnDisease.org",
+      "subject": "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform",
+      "category": "Non-fiction, Public Policy, Health Economics, Peace Studies",
+      "keywords": [
+        "war-on-disease",
+        "1-percent-treaty",
+        "medical-research",
+        "public-health",
+        "peace-dividend",
+        "decentralized-trials",
+        "dfda",
+        "dih",
+        "victory-bonds",
+        "health-economics",
+        "cost-benefit-analysis",
+        "clinical-trials",
+        "drug-development",
+        "regulatory-reform",
+        "military-spending",
+        "peace-economics",
+        "decentralized-governance",
+        "wishocracy",
+        "blockchain-governance",
+        "impact-investing"
+      ],
+      "audience": "Policy Makers, Investors, Healthcare Professionals, Researchers",
+      "format": "Website",
+      "genre": "Public Policy, Health Economics, Peace Studies",
+      "language": "en-US",
+      "netlify": {
+        "siteId": "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094",
+        "cname": "dih-models.netlify.app"
+      },
+      "indexSource": "knowledge/economics/economics.qmd",
+      "outputDir": "_site/economics",
+      "publishing": {
+        "ownSite": {
+          "url": "https://impact.warondisease.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "",
+            "doi": "10.5281/zenodo.18161561"
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Health Affairs",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Value in Health",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "The Lancet",
+            "tier": 1,
+            "status": "target",
+            "type": "commentary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "iab",
+      "type": "website",
+      "title": "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
+      "description": "Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.",
+      "siteUrl": "https://iab.warondisease.org",
+      "favicon": "https://iab.warondisease.org/assets/icons/iab-favicon.png",
+      "ogImage": "https://iab.warondisease.org/assets/iab-og-1200x630.png",
+      "pdfUrl": "https://iab.warondisease.org/incentive-alignment-bonds-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18203222",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Mechanism Design, Public Choice, Political Economy, Collective Action, Campaign Finance",
+      "category": "Academic Paper, Political Economy, Mechanism Design, Public Policy",
+      "keywords": [
+        "mechanism-design",
+        "public-choice",
+        "political-economy",
+        "collective-action",
+        "social-impact-bonds",
+        "campaign-finance",
+        "incentive-compatibility",
+        "incentive-alignment",
+        "public-goods",
+        "net-societal-value",
+        "PAC",
+        "lobbying"
+      ],
+      "audience": "Researchers, Policy Makers, Political Scientists, Economists, Political Reform Advocates",
+      "format": "Working Paper",
+      "genre": "Political Science, Economics, Mechanism Design, Public Policy",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "8f7611db-1075-48a2-abd8-7f77f55538f9",
+        "cname": "incentive-alignment-bonds-iab.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/incentive-alignment-bonds-paper.qmd",
+      "outputDir": "_site/iab",
+      "publishing": {
+        "ownSite": {
+          "url": "https://iab.warondisease.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "https://zenodo.org/record/18203222",
+            "doi": "10.5281/zenodo.18203222"
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "American Economic Review",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Political Economy",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "obg",
+      "type": "website",
+      "title": "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
+      "description": "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.",
+      "siteUrl": "https://paper.obg.dih.earth",
+      "favicon": "https://paper.obg.dih.earth/assets/icons/dih-favicon.png",
+      "ogImage": "https://dih.earth/assets/dih-og-1200x630.png",
+      "pdfUrl": "https://paper.obg.dih.earth/obg-framework-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Budget Optimization, Evidence-Based Policy, Cost-Effectiveness, Public Finance, Welfare Economics",
+      "category": "Academic Paper, Public Policy, Economics",
+      "keywords": [
+        "budget-optimization",
+        "optimal-budget-generator",
+        "evidence-based-policy",
+        "meta-analysis",
+        "cost-effectiveness",
+        "diminishing-returns",
+        "reference-country-benchmarking",
+        "budget-impact-score",
+        "welfare-economics",
+        "public-finance"
+      ],
+      "audience": "Researchers, Policy Makers, Economists, Public Finance Specialists",
+      "format": "Working Paper",
+      "genre": "Economics, Public Policy, Evidence-Based Governance",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "123f44a0-d5b6-4ff3-9375-1f7e47fca053",
+        "cname": "obg-warondisease.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/optimal-budget-generator-spec.qmd",
+      "outputDir": "_site/obg",
+      "publishing": {
+        "ownSite": {
+          "url": "https://paper.obg.dih.earth",
+          "status": "pending"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          }
+        ],
+        "journals": [
+          {
+            "name": "Journal of Public Economics",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Policy Analysis and Management",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "opg",
+      "type": "website",
+      "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
+      "description": "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
+      "siteUrl": "https://paper.opg.dih.earth",
+      "favicon": "https://paper.opg.dih.earth/assets/icons/dih-favicon.png",
+      "ogImage": "https://dih.earth/assets/dih-og-1200x630.png",
+      "pdfUrl": "https://paper.opg.dih.earth/opg-framework-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Policy Evaluation, Causal Inference, Quasi-Experimental Methods, Evidence-Based Policy, Jurisdiction Analysis",
+      "category": "Academic Paper, Public Policy, Political Science",
+      "keywords": [
+        "policy-evaluation",
+        "causal-inference",
+        "quasi-experimental-methods",
+        "synthetic-control",
+        "difference-in-differences",
+        "bradford-hill-criteria",
+        "evidence-based-policy",
+        "policy-recommendations",
+        "jurisdiction-analysis",
+        "policy-impact-score"
+      ],
+      "audience": "Researchers, Policy Makers, Political Scientists, Econometricians",
+      "format": "Working Paper",
+      "genre": "Political Science, Policy Analysis, Causal Inference",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "8b9558d9-6a2b-4581-bde7-11d79933d105",
+        "cname": "opg-warondisease.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/optimal-policy-generator-spec.qmd",
+      "outputDir": "_site/opg",
+      "publishing": {
+        "ownSite": {
+          "url": "https://paper.opg.dih.earth",
+          "status": "pending"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          }
+        ],
+        "journals": [
+          {
+            "name": "Journal of Policy Analysis and Management",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "American Political Science Review",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Politics",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "optimocracy",
+      "type": "website",
+      "title": "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation",
+      "description": "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.",
+      "siteUrl": "https://paper.optimocracy.org",
+      "favicon": "https://paper.optimocracy.org/assets/icons/optimocracy-favicon.png",
+      "ogImage": "https://paper.optimocracy.org/assets/optimocracy-og-1200x630.png",
+      "pdfUrl": "https://paper.optimocracy.org/optimocracy-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.optimocracy",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Mechanism Design, Algorithmic Governance, Public Policy, Political Economy",
+      "category": "Academic Paper, Public Policy, Political Science, Economics",
+      "keywords": [
+        "mechanism-design",
+        "algorithmic-governance",
+        "smart-contracts",
+        "metric-optimization",
+        "capture-resistance",
+        "central-bank-independence",
+        "goodharts-law",
+        "decentralized-oracles",
+        "political-dysfunction",
+        "rent-seeking",
+        "public-choice"
+      ],
+      "audience": "Researchers, Policy Makers, Economists, Political Scientists",
+      "format": "Working Paper",
+      "genre": "Political Science, Mechanism Design, Public Policy, Economics",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "c6e535bc-4503-4db8-833a-c1b93f5e0f10",
+        "cname": "optimocracy-warondisease.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/optimocracy-paper.qmd",
+      "outputDir": "_site/optimocracy"
+    },
+    {
+      "id": "wishocracy",
+      "type": "website",
+      "title": "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
+      "description": "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.",
+      "siteUrl": "https://paper.wishocracy.org",
+      "favicon": "https://paper.wishocracy.org/assets/icons/wishocracy-favicon.png",
+      "ogImage": "https://wishocracy.org/assets/wishocracy-og-1200x630.png",
+      "pdfUrl": "https://paper.wishocracy.org/wishocracy-rappa-paper.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18205882",
+      "version": "0.9",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Mechanism Design, Collective Intelligence, Direct Democracy, Principal-Agent Problem, Public Resource Allocation",
+      "category": "Academic Paper, Public Policy, Political Science",
+      "keywords": [
+        "mechanism-design",
+        "collective-intelligence",
+        "direct-democracy",
+        "principal-agent-problem",
+        "preference-aggregation",
+        "participatory-budgeting",
+        "analytic-hierarchy-process",
+        "democratic-resource-allocation",
+        "wishocracy",
+        "RAPPA",
+        "democratic-innovation"
+      ],
+      "audience": "Researchers, Policy Makers, Democracy Innovators, Political Scientists",
+      "format": "Working Paper",
+      "genre": "Political Science, Mechanism Design, Public Policy",
+      "language": "en-US",
+      "twitterSite": "@warondisease",
+      "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "6d3175fc-5866-4d09-985d-aebe008a4966",
+        "cname": "wishocracy-paper.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/wishocracy-paper.qmd",
+      "outputDir": "_site/wishocracy",
+      "publishing": {
+        "ownSite": {
+          "url": "https://paper.wishocracy.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "https://zenodo.org/record/18205882",
+            "doi": "10.5281/zenodo.18205882"
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "cs.GT"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Social Choice and Welfare",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "American Political Science Review",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      }
+    }
+  ]
+}

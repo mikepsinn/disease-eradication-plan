@@ -15,6 +15,9 @@ dih-render:
   # No target-url - this IS the main book site
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
   netlify-cname: "warondisease-org.netlify.app"  # DNS: manual.warondisease.org -> this
+  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  favicon-prompt: "A skull with a bold X crossed through it, or a virus/germ shape with a prohibition sign. Communicates 'death to disease' or 'no more disease'. Think: warning sign or prohibition symbol for disease/death."
+  og-image-prompt: "A dramatic visualization of humanity's war against disease - showing the transition from suffering to health through medical research and international cooperation. Include imagery of clinical trials, global unity, and scientific progress conquering illness."
 
 website:
   site-url: https://manual.WarOnDisease.org

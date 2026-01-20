@@ -15,6 +15,9 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
   netlify-cname: "wishocracy-paper.netlify.app"  # DNS: paper.wishocracy.org -> this
+  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  favicon-prompt: "Letter 'W' with a star above it. Represents Wishocracy - wish + star symbolizing democratic wish fulfillment."
+  og-image-prompt: "A visualization of democratic preference aggregation - showing people's wishes/preferences being collected, compared pairwise, and transformed into aligned governance outcomes. Include ballot imagery, connecting lines, and collective decision-making symbols."
 
 profiles:
   default:

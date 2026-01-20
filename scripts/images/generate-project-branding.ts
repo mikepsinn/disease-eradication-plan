@@ -2,7 +2,11 @@
  * Generate OG images and favicons for all Quarto configurations
  *
  * Dynamically discovers _quarto-*.yml configs and generates missing branding assets.
- * All content comes from the configs themselves - no hardcoded site-specific info.
+ * Reads image prompts from dih-render.favicon-prompt and dih-render.og-image-prompt.
+ *
+ * Output locations:
+ *   - OG images: assets/og/{config-name}-og-1200x630.jpg (JPG for compression)
+ *   - Favicons: assets/icons/{config-name}-favicon*.png (PNG for transparency)
  *
  * Usage:
  *   npx tsx scripts/images/generate-project-branding.ts [options]
@@ -23,12 +27,12 @@ import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import sharp from 'sharp';
 import { generateAndSaveImages } from '../lib/gemini-images.js';
-import { VisualStyles, ACADEMIC_STYLE } from '../lib/image-prompts.js';
+import { VisualStyles } from '../lib/image-prompts.js';
 
 // Load environment variables
 dotenv.config();
 
-// Favicon sizes to generate
+// Favicon sizes to generate (PNG for transparency support)
 const FAVICON_SIZES: Record<string, number> = {
   'favicon-16x16.png': 16,
   'favicon-32x32.png': 32,
@@ -46,19 +50,20 @@ interface QuartoConfig {
   description: string;
   keywords: string[];
   siteUrl: string;
-  faviconPath: string;
-  ogImagePath: string;
+  // Custom prompts from dih-render section
+  faviconPrompt: string | null;
+  ogImagePrompt: string | null;
 }
 
 /**
- * Discover all Quarto config files in the project root
+ * Discover all Quarto config files in the project root (excluding test)
  */
 async function discoverQuartoConfigs(): Promise<string[]> {
   const projectRoot = process.cwd();
   const files = await fs.readdir(projectRoot);
 
   return files
-    .filter(f => f.startsWith('_quarto-') && f.endsWith('.yml'))
+    .filter(f => f.startsWith('_quarto-') && f.endsWith('.yml') && !f.includes('test'))
     .map(f => path.join(projectRoot, f))
     .sort();
 }
@@ -79,33 +84,24 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
     let title = bookOrWebsite.title || '';
     let description = bookOrWebsite.description || '';
     let siteUrl = bookOrWebsite['site-url'] || '';
-    let faviconPath = bookOrWebsite.favicon || '';
 
     // Fallback to metadata section
     const metadata = config.metadata || {};
     if (!title) title = metadata.title || configName;
     if (!description) description = metadata.description || '';
 
-    // Get keywords from metadata
-    const keywords: string[] = metadata.keywords || [];
-
-    // Get OG image from metadata
-    let ogImagePath = '';
-    if (metadata.image) {
-      // Extract local path from URL if possible
-      const urlMatch = metadata.image.match(/\/assets\/[^"'\s]+/);
-      if (urlMatch) {
-        ogImagePath = urlMatch[0].substring(1);
-      }
+    // Get keywords from metadata (handle both array and string formats)
+    let keywords: string[] = [];
+    if (Array.isArray(metadata.keywords)) {
+      keywords = metadata.keywords;
+    } else if (typeof metadata.keywords === 'string') {
+      keywords = metadata.keywords.split(',').map((k: string) => k.trim());
     }
 
-    // Default paths if not specified
-    if (!faviconPath) {
-      faviconPath = `assets/icons/${configName}-favicon.png`;
-    }
-    if (!ogImagePath) {
-      ogImagePath = `assets/${configName}-og-1200x630.png`;
-    }
+    // Get custom prompts from dih-render section
+    const dihRender = config['dih-render'] || {};
+    const faviconPrompt = dihRender['favicon-prompt'] || null;
+    const ogImagePrompt = dihRender['og-image-prompt'] || null;
 
     return {
       configFile: fileName,
@@ -114,8 +110,8 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
       description,
       keywords,
       siteUrl,
-      faviconPath,
-      ogImagePath,
+      faviconPrompt,
+      ogImagePrompt,
     };
   } catch (error) {
     console.error(`[ERROR] Failed to parse ${configPath}:`, error);
@@ -124,45 +120,85 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
 }
 
 /**
- * Build content string for OG image generation from config
+ * Build OG image prompt from config
+ * Uses custom prompt from dih-render.og-image-prompt if available
  */
-function buildOgContent(config: QuartoConfig): string {
-  const parts: string[] = [];
+function buildOgImagePrompt(config: QuartoConfig): string {
+  const style = VisualStyles.academic;
 
-  if (config.title) {
-    parts.push(`TITLE: ${config.title}`);
-  }
-  if (config.description) {
-    parts.push(`DESCRIPTION: ${config.description.substring(0, 500)}`);
-  }
-  if (config.keywords.length > 0) {
-    parts.push(`KEYWORDS: ${config.keywords.slice(0, 5).join(', ')}`);
+  // Use custom prompt if provided
+  if (config.ogImagePrompt) {
+    return `Create a professional social media OG image (1200x630 pixels).
+
+${style.style}
+
+CONCEPT: ${config.ogImagePrompt}
+
+TITLE: ${config.title}
+
+Requirements:
+- Clean, professional academic aesthetic
+- Title text must be large, bold, readable
+- Centered composition for social media preview
+- High contrast, minimalist design
+- DO NOT include any URL or website address
+- Black and white or muted colors only`;
   }
 
-  return parts.join('\n\n');
+  // Fallback to generic prompt
+  return `Create a professional social media OG image (1200x630 pixels).
+
+${style.style}
+
+TITLE: ${config.title}
+${config.description ? `DESCRIPTION: ${config.description.substring(0, 300)}` : ''}
+${config.keywords.length > 0 ? `KEYWORDS: ${config.keywords.slice(0, 5).join(', ')}` : ''}
+
+Requirements:
+- Clean, professional academic aesthetic
+- Title text must be large, bold, readable
+- Centered composition for social media preview
+- High contrast, minimalist design
+- DO NOT include any URL or website address`;
 }
 
 /**
  * Build favicon prompt from config
+ * Uses custom prompt from dih-render.favicon-prompt if available
  */
 function buildFaviconPrompt(config: QuartoConfig): string {
-  return `Create an ultra-minimalist favicon icon for: "${config.title}"
+  const basePrompt = `Create an ultra-minimalist favicon icon.
 
-STRICT RULES:
-- Background: BRIGHT MAGENTA (#FF00FF) - will be removed for transparency
-- Icon: BLACK and WHITE only
+STRICT COLOR RULES:
+- Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
+- Icon: BLACK and WHITE only - maximum 2 colors in the final icon
+
+DESIGN REQUIREMENTS:
 - EXTREMELY SIMPLE - must be recognizable at 16x16 pixels
-- Thick bold lines, high contrast
+- Thick bold lines (minimum 8px at 512px resolution)
 - Think: app icon, not illustration
+- High contrast, clean shapes
 
-${config.description ? `Context: ${config.description.substring(0, 200)}` : ''}
+ICON CONCEPT:`;
 
-Generate with aspect ratio 1:1 (square).
-Background MUST be pure magenta (#FF00FF).`;
+  // Use custom prompt if provided
+  if (config.faviconPrompt) {
+    return `${basePrompt}
+${config.faviconPrompt}
+
+Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
+  }
+
+  // Fallback to generic prompt based on title
+  return `${basePrompt}
+Create a simple icon representing: "${config.title}"
+${config.description ? `Context: ${config.description.substring(0, 150)}` : ''}
+
+Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
 }
 
 /**
- * Remove magenta background from favicon image
+ * Remove magenta background from favicon image to create transparency
  */
 async function removeMagentaBackground(inputPath: string, outputPath: string): Promise<void> {
   const image = sharp(inputPath);
@@ -178,12 +214,13 @@ async function removeMagentaBackground(inputPath: string, outputPath: string): P
     const g = data[srcIdx + 1];
     const b = data[srcIdx + 2];
 
+    // Check if pixel is magenta (high red, low green, high blue)
     const isMagenta = r > 200 && g < 80 && b > 200;
 
     outputData[dstIdx] = r;
     outputData[dstIdx + 1] = g;
     outputData[dstIdx + 2] = b;
-    outputData[dstIdx + 3] = isMagenta ? 0 : 255;
+    outputData[dstIdx + 3] = isMagenta ? 0 : 255; // Transparent for magenta
   }
 
   await sharp(outputData, {
@@ -195,41 +232,34 @@ async function removeMagentaBackground(inputPath: string, outputPath: string): P
 
 /**
  * Generate OG image for a config
+ * Saves to: assets/og/{config-name}-og-1200x630.jpg
  */
 async function generateOgImage(config: QuartoConfig, force: boolean = false): Promise<string | null> {
-  const outputPath = path.join(process.cwd(), config.ogImagePath);
-  const outputDir = path.dirname(outputPath);
-  const fileName = path.basename(outputPath, '.png');
+  const outputDir = path.join(process.cwd(), 'assets', 'og');
+  const outputFileName = `${config.configName}-og-1200x630`;
+  const outputPath = path.join(outputDir, `${outputFileName}.jpg`);
 
-  if (!force && existsSync(outputPath)) {
-    console.log(`  [SKIP] OG image exists: ${config.ogImagePath}`);
+  // Also check for PNG version (for backwards compatibility)
+  const pngPath = path.join(outputDir, `${outputFileName}.png`);
+
+  if (!force && (existsSync(outputPath) || existsSync(pngPath))) {
+    console.log(`  [SKIP] OG image exists: assets/og/${outputFileName}.*`);
     return outputPath;
   }
 
+  // Ensure output directory exists
+  await fs.mkdir(outputDir, { recursive: true });
+
   console.log(`  Generating OG image...`);
-
-  const content = buildOgContent(config);
-  const style = VisualStyles.academic;
-
-  // Build prompt using academic style
-  const prompt = `Create a professional social media OG image (1200x630).
-${style.style}
-
-${content}
-
-Requirements:
-- Clean, professional academic aesthetic
-- Title text must be large, bold, readable
-- Centered composition for social media preview
-- High contrast, minimalist design
-- DO NOT include any URL or website address`;
+  const prompt = buildOgImagePrompt(config);
 
   try {
     const files = await generateAndSaveImages({
       prompt,
       aspectRatio: '16:9',
       outputDir,
-      filePrefix: fileName,
+      filePrefix: outputFileName,
+      format: 'jpg', // Use JPG for better compression
       metadata: {
         title: config.title,
         description: config.description,
@@ -239,28 +269,32 @@ Requirements:
     });
 
     if (files && files.length > 0) {
-      console.log(`  [OK] Generated: ${config.ogImagePath}`);
+      console.log(`  [OK] Generated: assets/og/${outputFileName}.jpg`);
       return files[0];
     }
     return null;
   } catch (error) {
-    console.error(`  [ERROR] Failed:`, error);
+    console.error(`  [ERROR] Failed to generate OG image:`, error);
     return null;
   }
 }
 
 /**
  * Generate favicon for a config
+ * Saves to: assets/icons/{config-name}-favicon*.png
  */
 async function generateFavicon(config: QuartoConfig, force: boolean = false): Promise<string | null> {
   const outputDir = path.join(process.cwd(), 'assets', 'icons');
   const masterPath = path.join(outputDir, `${config.configName}-favicon-master.png`);
-  const faviconPath = path.join(process.cwd(), config.faviconPath);
+  const mainFaviconPath = path.join(outputDir, `${config.configName}-favicon.png`);
 
-  if (!force && existsSync(masterPath) && existsSync(faviconPath)) {
-    console.log(`  [SKIP] Favicon exists: ${config.faviconPath}`);
-    return faviconPath;
+  if (!force && existsSync(masterPath) && existsSync(mainFaviconPath)) {
+    console.log(`  [SKIP] Favicon exists: assets/icons/${config.configName}-favicon.png`);
+    return mainFaviconPath;
   }
+
+  // Ensure output directory exists
+  await fs.mkdir(outputDir, { recursive: true });
 
   console.log(`  Generating favicon...`);
   const prompt = buildFaviconPrompt(config);
@@ -271,6 +305,10 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       aspectRatio: '1:1',
       outputDir,
       filePrefix: `${config.configName}-favicon-raw`,
+      metadata: {
+        title: `${config.title} - Favicon`,
+        description: `Favicon icon for ${config.title}`,
+      },
     });
 
     if (!result || result.length === 0) {
@@ -280,7 +318,7 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
 
     const rawPath = result[0];
 
-    // Remove magenta background
+    // Remove magenta background to create transparency
     console.log(`  [*] Removing magenta background...`);
     await removeMagentaBackground(rawPath, masterPath);
 
@@ -299,9 +337,16 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       console.log(`  [OK] ${size}x${size}: ${config.configName}-${filename}`);
     }
 
-    return faviconPath;
+    // Clean up raw file
+    try {
+      await fs.unlink(rawPath);
+    } catch {
+      // Ignore cleanup errors
+    }
+
+    return mainFaviconPath;
   } catch (error) {
-    console.error(`  [ERROR] Failed:`, error);
+    console.error(`  [ERROR] Failed to generate favicon:`, error);
     return null;
   }
 }
@@ -313,6 +358,11 @@ async function main(): Promise<void> {
   console.log('='.repeat(60));
   console.log('Project Branding Image Generator');
   console.log('='.repeat(60));
+  console.log('');
+  console.log('Output locations:');
+  console.log('  OG images: assets/og/{config}-og-1200x630.jpg');
+  console.log('  Favicons:  assets/icons/{config}-favicon*.png');
+  console.log('');
 
   if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
     console.error('ERROR: GOOGLE_GENERATIVE_AI_API_KEY not set');
@@ -329,7 +379,7 @@ async function main(): Promise<void> {
     filter = args[filterIndex + 1];
   }
 
-  if (force) console.log('[INFO] Force mode\n');
+  if (force) console.log('[INFO] Force mode - regenerating all images\n');
   if (filter) console.log(`[INFO] Filter: ${filter}\n`);
 
   // Discover and process configs
@@ -349,6 +399,8 @@ async function main(): Promise<void> {
 
     console.log('─'.repeat(60));
     console.log(`${config.configName}: ${config.title}`);
+    if (config.faviconPrompt) console.log(`  [*] Custom favicon prompt found`);
+    if (config.ogImagePrompt) console.log(`  [*] Custom OG image prompt found`);
     console.log('─'.repeat(60));
 
     const og = await generateOgImage(config, force);
