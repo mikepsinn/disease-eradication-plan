@@ -59,7 +59,7 @@ This paper explores algorithmic governance as a complement to democratic prefere
 
 - **NOT central planning.** Citizens choose goals democratically; politicians still vote yes/no on budgets. The algorithm proposes; humans decide. This is closer to a financial advisor than a dictator.
 - **NOT replacing human judgment.** Hybrid architecture preserves discretion for genuinely novel situations. Optimocracy handles routine allocation; humans handle edge cases and value conflicts.
-- **NOT assuming perfect metrics.** Metrics will be gamed. But gaming costs (10-30% efficiency loss) are far lower than capture costs (20-40% of GDP). Index funds prove metric-bound systems outperform discretionary management despite imperfect tracking.
+- **NOT assuming perfect metrics.** Metrics will be gamed. But gaming costs are far lower than capture costs (see objections table below). Index funds provide strong precedent that metric-bound systems outperform discretionary management despite imperfect tracking.
 - **NOT requiring government adoption.** The wrapper architecture works as a permanent advisory layer. Fund enough Incentive Alignment Bonds to reward politicians who follow good recommendations, and ignoring those recommendations becomes politically costly.
 - **NOT utopian.** Start with private outcome funds and prediction markets, demonstrate results, scale through proven performance. No revolution required, just better incentives.
 
@@ -91,7 +91,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 | Objection | Response |
 |-----------|----------|
-| "Goodhart's Law: metrics get gamed" | Yes, but gaming losses (10-30%) < capture losses (20-40%). Index funds prove metric-bound systems win despite gaming. |
+| "Goodhart's Law: metrics get gamed" | Yes, but estimated gaming losses (10-30%) < estimated capture losses (20-40%). Index funds demonstrate metric-bound systems win despite gaming. |
 | "Who controls the oracles?" | Multiple independent sources (Census, Fed, academics), median aggregation. No single entity controls measurement. |
 | "This is undemocratic" | More democratic: citizens actually get what they voted for. Current system: vote for outcomes, get captured allocation. |
 | "What about edge cases and novel situations?" | Hybrid architecture preserves human discretion. Algorithms handle routine allocation; humans handle genuine novelty. |
@@ -150,7 +150,7 @@ Multiple independent data sources (Census Bureau, Federal Reserve, academic inst
 
 Optimocracy publishes recommendations for every major budget and policy vote. Politicians' votes are compared to these recommendations and recorded immutably. Those whose voting records align with evidence-based recommendations receive larger IAB payouts when the metric improves. This creates a "political index fund": follow systematic recommendations, get rewarded for results. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to outcomes.
 
-You don't need superintelligent AI. You need a clear, measurable goal; historical data on what worked; independent verification; and financial consequences for politicians. Index funds already do this for investing. They have a target (match the index), transparent methodology, independent measurement (daily prices), and accountability if they underperform. Optimocracy extends this logic to governance: politicians who follow the evidence-based "index" get paid when it works.
+You don't need superintelligent AI. You need a clear, measurable goal, historical data on what worked, independent verification, and financial consequences for politicians. As detailed in Section 3, index funds already demonstrate this logic for investing. Systematic rules outperform discretionary management. Optimocracy extends this to governance.
 
 ### Contributions
 
@@ -651,7 +651,7 @@ This is a real concern. The solution is **genuinely independent data collection 
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
 | **Privacy** | Zero-knowledge proofs | Prove you're a unique person without revealing identity |
 
-**Precedent: Estonia has proven this works at national scale.**
+**Precedent: Estonia demonstrates this can work at national scale.**
 
 - Online voting since 2005
 - 99% of government services available digitally
@@ -924,14 +924,14 @@ Under discretionary governance, every allocation decision is a lobbying opportun
 
 Optimocracy collapses this attack surface from thousands of decision points to two:
 
-1. **Metric selection** (rare, high-visibility, constitutional process requiring supermajority)
+1. **Metric selection** (rare, high-visibility, constitutional process requiring supermajority; see detailed analysis in Section 5's "Metric Selection Problem")
 2. **Oracle manipulation** (mitigated by decentralization, staking, and multiple independent sources)
 
-**Why this matters:** Capturing metric selection requires winning a constitutional-level debate. This means mobilizing supermajorities, enduring extended public deliberation, and overcoming status quo bias. This is orders of magnitude harder than lobbying a committee chair or inserting a rider into an omnibus bill. The asymmetry favors defense: changing the metric requires extraordinary effort; maintaining it requires only ordinary vigilance.
+As analyzed above, capturing metric selection requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair. The asymmetry favors defense: changing the metric requires extraordinary effort; maintaining it requires only ordinary vigilance.
 
 **Quantitative comparison:** Under discretionary governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by 1-2 orders of magnitude.
 
-**The index fund precedent:** Before index funds, active fund managers had discretion over stock selection. They used that discretion to extract fees averaging 1-2% annually while underperforming the market. Index funds removed discretion: the fund must track the index. Result: fees dropped to 0.03-0.10%, and investors kept more of their returns. The same logic applies to governance: remove discretion, reduce capture.
+**The index fund precedent:** As detailed in Section 3, removing discretion from fund management (index funds) reduced fees from 1-2% to 0.03-0.10% while improving returns. The same logic applies to governance: remove discretion, reduce capture.
 
 ### Time Consistency
 
@@ -1006,9 +1006,7 @@ Optimocracy shifts the debate from "whose policy?" to "what works?" The algorith
 
 **Formal statement:** Let $M$ be the measured metric and $W$ be true welfare. Under normal conditions, $\text{Corr}(M, W) > 0$. Metrics correlate with what we actually care about. But when $M$ becomes an optimization target, actors adjust behavior to improve $M$, potentially breaking that correlation: $\text{Corr}(M, W | \text{targeting } M) < \text{Corr}(M, W)$.
 
-**The key question:** Is gaming under Optimocracy worse than capture under discretionary governance?
-
-**Historical evidence suggests gaming is less damaging:**
+As established in the objections table above, the key question is whether gaming losses exceed capture losses. Historical evidence:
 
 | Domain | Metric-Bound System | Gaming Observed | Outcome vs. Discretion |
 |--------|--------------------|-----------------|-----------------------|
@@ -1133,18 +1131,6 @@ Distributed verification networks work for data where truth is verifiable and im
 3. **Stakes are enormous**: Trillions in allocation vs. millions in collateral
 4. **Attackers are sophisticated**: Nation-states, not individual cheaters
 
-**Mitigation strategies (realistic assessment):**
-
-1. **Multiple measurement methodologies**: Require improvement across surveys, administrative data, and direct measurement. Gaming all three is harder but not impossible. Credit rating agencies used multiple models that all failed. The key difference: credit rating models were all controlled by three capturable agencies. Optimocracy's decentralized surveys have millions of independent respondents with no concentrated control point. Coordinating manipulation across millions of citizens is categorically harder than capturing three agency directors.
-
-2. **Adversarial auditing with real teeth**: Fund well-resourced independent teams to find gaming opportunities and challenge measurements. But who funds the auditors? If Optimocracy funds them, it controls them.
-
-3. **Transparency and delay**: Publish data collection methodology and raw data with 6-month delay. Prevents real-time manipulation but creates lag in allocation responsiveness.
-
-4. **Constitutional diversity**: Use multiple metrics with different measurement authorities. Harder to capture all simultaneously. But increases complexity and dilutes optimization.
-
-5. **Regular metric rotation**: Change metrics every 5-10 years to prevent long-term capture investments. But destroys long-term optimization and creates transition chaos.
-
 **The honest assessment:**
 
 Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. "Decentralized oracles" sound like a solution, but they're unproven at the scale and stakes Optimocracy requires. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?"
@@ -1155,13 +1141,7 @@ That said, the political economy of capturing decentralized surveys is fundament
 
 **How the Wrapper Architecture Changes This Calculus:**
 
-The wrapper architecture (Section 12) significantly reduces oracle capture risk. Under the wrapper model:
-
-- Optimocracy provides *recommendations*, not *allocations*
-- Politicians can ignore recommendations they believe are based on manipulated data
-- Manipulated oracles lead to wrong recommendations, which get ignored, not wrong allocations that get implemented
-
-This converts oracle capture from a catastrophic failure mode to a degraded-performance mode. The system fails safe.
+The wrapper architecture (detailed in Section 12) converts oracle capture from a catastrophic failure mode to a degraded-performance mode. Because Optimocracy provides *recommendations* rather than direct *allocations*, politicians can ignore manipulated data. The system fails safe rather than failing catastrophically.
 
 **Defense-in-Depth: Making Oracle Capture Structurally Unprofitable**
 
@@ -1704,7 +1684,7 @@ Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
-The urgency grows with each passing year. Deepfakes are eroding the shared factual basis democracy requires. Policy complexity increasingly exceeds human cognitive capacity. AI-accelerated influence operations will make capture orders of magnitude cheaper and more effective. The tribal epistemology that already interprets identical videos along partisan lines will have no ground truth whatsoever once synthetic media becomes indistinguishable from authentic footage. Optimocracy offers an exit from this epistemic collapse: outcomes you can measure, not narratives you must trust. You cannot deepfake the Census Bureau. You cannot tribally interpret median income going up or down. The metric either improves or it doesn't. That fact provides a foundation for governance when all other foundations have eroded.
+The urgency grows with each passing year. Deepfakes are eroding the shared factual basis democracy requires. Policy complexity increasingly exceeds human cognitive capacity. AI-accelerated influence operations will make capture orders of magnitude cheaper and more effective. The tribal epistemology that already interprets identical videos along partisan lines will have no ground truth whatsoever once synthetic media becomes indistinguishable from authentic footage. Optimocracy offers an exit from this epistemic collapse: outcomes you can measure, not narratives you must trust. Aggregate statistics from multiple independent sources provide unfalsifiable ground truth. Median income either rose or it didn't. The metric either improves or it doesn't. That fact provides a foundation for governance when all other foundations have eroded.
 
 ## Appendix A: Technical Specification Sketch
 
