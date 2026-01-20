@@ -139,22 +139,23 @@ function buildFaviconPrompt(config: QuartoConfig): string {
     throw new Error(`Missing favicon-prompt in dih-render section of ${config.configFile}.yml`);
   }
 
-  return `Create an ultra-minimalist favicon icon using ONLY 2 COLORS: BLACK and WHITE.
+  return `Create an ultra-minimalist favicon icon.
 
 STRICT COLOR RULES:
 - Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
-- Maximum 2 colors in the final icon
+- Icon fill: WHITE and/or RED only
+- All shapes must have BLACK OUTLINE/STROKE around them
 
 DESIGN REQUIREMENTS:
 - EXTREMELY SIMPLE
-- Thick bold lines (minimum 8px at 512px resolution)
+- Thick black outlines (minimum 8px stroke at 512px resolution)
 - Must be recognizable at 16x16 pixels
 - Think: app icon, not illustration
 
 ICON CONCEPT:
 ${config.faviconPrompt}
 
-Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
+Background MUST be pure bright magenta (#FF00FF). Icon shapes are WHITE and/or RED with BLACK OUTLINES.`;
 }
 
 /**
