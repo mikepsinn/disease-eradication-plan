@@ -319,7 +319,7 @@ def main():
     """CLI entry point."""
     import sys
     if sys.platform == 'win32':
-        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[union-attr]
 
     project_root = Path(__file__).parent.parent.absolute()
 
