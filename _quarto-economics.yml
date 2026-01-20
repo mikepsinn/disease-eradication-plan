@@ -13,9 +13,8 @@ dih-render:
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
   netlify-cname: "dih-models.netlify.app"  # DNS: impact.warondisease.org -> this
-  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "'1%' text on a scroll or treaty document shape."
-  og-image-prompt: "Economic analysis visualization showing the transformation of military spending (1%) into medical research benefits. Include data charts, dollar signs morphing into medical symbols, and global health improvement metrics."
 
 profiles:
   default:

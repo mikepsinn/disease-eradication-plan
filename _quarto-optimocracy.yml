@@ -15,9 +15,8 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "c6e535bc-4503-4db8-833a-c1b93f5e0f10"
   netlify-cname: "optimocracy-warondisease.netlify.app"  # DNS: optimocracy.warondisease.org -> this
-  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letter 'O' with an upward optimization arrow or checkmark inside."
-  og-image-prompt: "A visualization of algorithmic governance optimization - showing metrics, data flows, and algorithms connecting citizen welfare outcomes to resource allocation. Include charts trending upward, balanced budgets, and welfare indicators being maximized."
 
 profiles:
   default:

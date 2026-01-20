@@ -50,9 +50,8 @@ interface QuartoConfig {
   description: string;
   keywords: string[];
   siteUrl: string;
-  // Custom prompts from dih-render section
+  // Custom prompt from dih-render section (favicon only - OG uses title/description)
   faviconPrompt: string | null;
-  ogImagePrompt: string | null;
 }
 
 /**
@@ -98,10 +97,9 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
       keywords = metadata.keywords.split(',').map((k: string) => k.trim());
     }
 
-    // Get custom prompts from dih-render section
+    // Get custom prompt from dih-render section (favicon only)
     const dihRender = config['dih-render'] || {};
     const faviconPrompt = dihRender['favicon-prompt'] || null;
-    const ogImagePrompt = dihRender['og-image-prompt'] || null;
 
     return {
       configFile: fileName,
@@ -111,7 +109,6 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
       keywords,
       siteUrl,
       faviconPrompt,
-      ogImagePrompt,
     };
   } catch (error) {
     console.error(`[ERROR] Failed to parse ${configPath}:`, error);
@@ -121,30 +118,16 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
 
 /**
  * Build OG image prompt from config
- * Requires dih-render.og-image-prompt in Quarto config
+ * Uses title and description from config - no custom prompt needed
  */
 function buildOgImagePrompt(config: QuartoConfig): string {
-  if (!config.ogImagePrompt) {
-    throw new Error(`Missing og-image-prompt in dih-render section of ${config.configFile}.yml`);
-  }
-
   const style = VisualStyles.academic;
 
-  return `Create a professional social media OG image (1200x630 pixels).
+  return `${style.style}
 
-${style.style}
+${config.title}
 
-CONCEPT: ${config.ogImagePrompt}
-
-TITLE: ${config.title}
-
-Requirements:
-- Clean, professional academic aesthetic
-- Title text must be large, bold, readable
-- Centered composition for social media preview
-- High contrast, minimalist design
-- DO NOT include any URL or website address
-- Black and white or muted colors only`;
+${config.description}`;
 }
 
 /**
@@ -282,7 +265,7 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       aspectRatio: '1:1',
       outputDir,
       filePrefix: `${config.configName}-favicon-raw`,
-      format: 'jpg', // API returns JPG natively, avoid conversion
+      format: 'png', // PNG preserves sharp edges needed for 16x16 scaling
       skipWatermark: true, // Favicons should not have watermarks
       metadata: {
         title: `${config.title} - Favicon`,
@@ -379,7 +362,6 @@ async function main(): Promise<void> {
     console.log('─'.repeat(60));
     console.log(`${config.configName}: ${config.title}`);
     if (config.faviconPrompt) console.log(`  [*] Custom favicon prompt found`);
-    if (config.ogImagePrompt) console.log(`  [*] Custom OG image prompt found`);
     console.log('─'.repeat(60));
 
     const og = await generateOgImage(config, force);

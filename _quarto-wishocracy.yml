@@ -15,9 +15,8 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
   netlify-cname: "wishocracy-warondisease.netlify.app"  # DNS: wishocracy.warondisease.org -> this
-  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letter 'W' with a star above it (wish + star)."
-  og-image-prompt: "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want."
 
 profiles:
   default:

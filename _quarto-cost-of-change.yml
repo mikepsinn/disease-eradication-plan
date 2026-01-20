@@ -16,9 +16,8 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
   netlify-cname: "cost-of-change-warondisease.netlify.app"  # DNS: cost-of-change.warondisease.org -> this
-  # Image generation prompts (used by scripts/images/generate-project-branding.ts)
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A dollar sign with a change/transformation arrow."
-  og-image-prompt: "Visualization of political reform cost-benefit analysis - showing investment costs vs policy benefits on scales. Include political change pathways, cost curves, and positive expected value outcomes demonstrating that reform investment pays off."
 
 profiles:
   default:
