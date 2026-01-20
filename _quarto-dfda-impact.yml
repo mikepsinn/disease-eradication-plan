@@ -18,8 +18,8 @@ dih-render:
   netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
   netlify-cname: "dfda-impact-warondisease.netlify.app"  # DNS: dfda-impact.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
-  favicon-prompt: "Pill with upward arrow"
-  og-image-prompt: "Drug assessment impact: lives saved, DALYs averted, cost savings. Medical symbols transforming into positive metrics."
+  favicon-prompt: "A pill or capsule with an upward impact arrow."
+  og-image-prompt: "Economic impact visualization of decentralized drug assessment - showing billions of lives saved, DALYs averted, and cost savings. Include medical symbols transforming into positive metrics, global health improvement, and statistical confidence intervals."
 
 profiles:
   default:

@@ -129,7 +129,22 @@ function buildOgImagePrompt(config: QuartoConfig): string {
   }
 
   const style = VisualStyles.academic;
-  return `${style.style}\n\nCONCEPT: ${config.ogImagePrompt}`;
+
+  return `Create a professional social media OG image (1200x630 pixels).
+
+${style.style}
+
+CONCEPT: ${config.ogImagePrompt}
+
+TITLE: ${config.title}
+
+Requirements:
+- Clean, professional academic aesthetic
+- Title text must be large, bold, readable
+- Centered composition for social media preview
+- High contrast, minimalist design
+- DO NOT include any URL or website address
+- Black and white or muted colors only`;
 }
 
 /**
@@ -141,7 +156,22 @@ function buildFaviconPrompt(config: QuartoConfig): string {
     throw new Error(`Missing favicon-prompt in dih-render section of ${config.configFile}.yml`);
   }
 
-  return `Simple flat icon on solid magenta (#FF00FF) background: ${config.faviconPrompt}. High contrast, no gradients, no shadows, visible at 16px.`;
+  return `Create an ultra-minimalist favicon icon using ONLY 2 COLORS: BLACK and WHITE.
+
+STRICT COLOR RULES:
+- Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
+- Maximum 2 colors in the final icon
+
+DESIGN REQUIREMENTS:
+- EXTREMELY SIMPLE
+- Thick bold lines (minimum 8px at 512px resolution)
+- Must be recognizable at 16x16 pixels
+- Think: app icon, not illustration
+
+ICON CONCEPT:
+${config.faviconPrompt}
+
+Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
 }
 
 /**
