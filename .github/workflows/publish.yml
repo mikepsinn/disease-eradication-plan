@@ -100,83 +100,6 @@ jobs:
 
 
 
-  build-book:
-    name: "Build Main Book (HTML + PDF + EPUB)"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-book-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-
-          restore-keys: |
-            quarto-freeze-book-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX for PDF/EPUB
-
-        run: quarto install tinytex
-
-      - name: "Render Build Main Book (HTML + PDF + EPUB)"
-        run: python scripts/render-quarto.py book
-        timeout-minutes: 75
-
-
-      - name: "Deploy Build Main Book (HTML + PDF + EPUB) to Netlify (immediate)"
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/book/_book/warondisease'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          deploy-message: "Deploy book site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-          NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
-
-        timeout-minutes: 1
-
-
-
-
-
   build-cost-of-change:
     name: "Build The Price of Political Change: A Cost-Benefit Fram"
     runs-on: ubuntu-latest
@@ -510,6 +433,90 @@ jobs:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
 
         run: python scripts/publish-zenodo.py --draft --paper iab
+
+
+
+  build-manual:
+    name: "Build How to End War and Disease"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-manual-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-manual-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX for PDF/EPUB
+
+        run: quarto install tinytex
+
+      - name: "Render Build How to End War and Disease"
+        run: python scripts/render-quarto.py manual
+        timeout-minutes: 10
+
+
+      - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/manual/_manual/warondisease'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy manual site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
+
+        timeout-minutes: 1
+
+
+
+      - name: "Upload Build How to End War and Disease PDF to Zenodo (draft)"
+        if: github.event_name == 'push'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/publish-zenodo.py --draft --paper manual
 
 
 

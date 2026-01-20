@@ -6,7 +6,7 @@ This repository uses GitHub Actions to automatically build and deploy multiple s
 
 | Site | URL | Netlify Secret | Output Directory |
 |------|-----|----------------|------------------|
-| **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_book/warondisease` |
+| **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_manual/warondisease` |
 | **Economics** | https://impact.warondisease.org | `NETLIFY_ECONOMICS_SITE_ID` | `_site/economics` |
 | **Wishocracy Paper** | https://paper.wishocracy.org | `NETLIFY_WISHOCRACY_SITE_ID` | `_site/wishocracy` |
 | **IAB Paper** | https://iab.warondisease.org | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
@@ -59,7 +59,7 @@ The GitHub Actions workflow (`.github/workflows/publish.yml`) performs these ste
 
 ### Build Phase (Job: `build-html`)
 1. **Setup environment** - Install Quarto, Python, Graphviz, dependencies
-2. **Render main book** - Full book to `_book/warondisease/`
+2. **Render main book** - Full book to `_manual/warondisease/`
 3. **Deploy main site** - Upload to Netlify (WarOnDisease.org)
 4. **Render economics** - Economics site to `_site/economics/`
 5. **Deploy economics** - Upload to Netlify (impact.warondisease.org)

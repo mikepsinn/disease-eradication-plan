@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _book/warondisease
+  output-dir: _manual/warondisease
   execute-dir: project
   resources:
     - assets/

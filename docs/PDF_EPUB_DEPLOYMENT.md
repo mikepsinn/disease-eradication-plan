@@ -32,14 +32,14 @@ After HTML completes:
 Both formats build **in parallel**, not sequentially, saving ~20 minutes.
 
 **Phase 3: Deployment**
-- **Netlify** deploys entire `_book/warondisease/` directory
+- **Netlify** deploys entire `_manual/warondisease/` directory
 - Includes: HTML site + PDF + EPUB
 
 **Total time: ~65 minutes** (vs 75 min if EPUB waited for PDF)
 
 ### Deployment
 
-All files in `_book/warondisease/` are deployed to Netlify at:
+All files in `_manual/warondisease/` are deployed to Netlify at:
 - **Website**: https://manual.WarOnDisease.org/
 - **PDF**: https://manual.WarOnDisease.org/How-to-End-War-and-Disease.pdf
 - **EPUB**: https://manual.WarOnDisease.org/How-to-End-War-and-Disease.epub
@@ -120,8 +120,8 @@ Similar setup for the Incentive Alignment Bonds paper.
 1. **Check build logs**: Ensure PDF/EPUB generation succeeded
    ```bash
    # Look for these files in build output
-   _book/warondisease/How-to-End-War-and-Disease.pdf
-   _book/warondisease/How-to-End-War-and-Disease.epub
+   _manual/warondisease/How-to-End-War-and-Disease.pdf
+   _manual/warondisease/How-to-End-War-and-Disease.epub
    ```
 
 2. **Check Netlify deployment**: Verify files are included

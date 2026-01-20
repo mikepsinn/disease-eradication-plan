@@ -44,7 +44,7 @@ Output:
     knowledge/appendix/parameters-and-calculations.qmd
     references.bib in project root
     _analysis/parameter-summary.md
-    _book/warondisease/search-index.json
+    _manual/warondisease/search-index.json
     _site/economics/search-index.json
     _site/iab/search-index.json
     _site/wishocracy/search-index.json

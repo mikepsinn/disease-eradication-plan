@@ -6,7 +6,7 @@ This project supports multiple rendering configurations to publish different vie
 
 ### 1. Full Book (Default)
 **Config**: `_quarto-manual.yml`
-**Output**: `_book/warondisease/`
+**Output**: `_manual/warondisease/`
 **Site**: https://manual.WarOnDisease.org
 
 Renders the complete book with all chapters, appendices, and references.
@@ -100,7 +100,7 @@ python scripts/render-iab.py
 
 | What to Render | Command | Output Location |
 |---------------|---------|-----------------|
-| Full book | `python scripts/render-book-website.py` | `_book/warondisease/` |
+| Full book | `python scripts/render-book-website.py` | `_manual/warondisease/` |
 | Economics | `cp _quarto-1-pct-treaty-impact.yml _quarto.yml && quarto render` | `_site/economics/` |
 | Wishocracy paper | `python scripts/render-wishocracy.py` | `_site/wishocracy/` + `../wishocracy/public/paper/` |
 | IAB paper | `python scripts/render-iab.py` | `_site/iab/` |
@@ -117,7 +117,7 @@ python scripts/render-iab.py
 
 After rendering:
 
-1. **Full Book**: Deploy `_book/warondisease/` to WarOnDisease.org via GitHub Pages
+1. **Full Book**: Deploy `_manual/warondisease/` to WarOnDisease.org via GitHub Pages
 2. **Economics**: Deploy `_site/economics/` to impact.warondisease.org
 3. **Wishocracy**:
    - Automatically copied to `../wishocracy/public/paper/`

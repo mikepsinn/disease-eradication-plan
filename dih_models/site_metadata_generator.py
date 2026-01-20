@@ -269,9 +269,13 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
         except Exception as e:
             print(f"[WARN] Failed to parse {config_path.name}: {e}")
 
+    # Calculate total pages across all sites
+    total_pages = sum(site.get("pageCount", 0) for site in sites)
+
     # Create output structure
     output_data = {
         "totalSites": len(sites),
+        "totalPages": total_pages,
         "sites": sites,
     }
 
@@ -284,7 +288,7 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"[OK] Generated {output_path.relative_to(project_root)} with {len(sites)} sites")
+    print(f"[OK] Generated {output_path.relative_to(project_root)} with {len(sites)} sites, {total_pages} total pages")
 
     return output_path
 

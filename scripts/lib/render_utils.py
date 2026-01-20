@@ -802,7 +802,7 @@ def validate_pdf_for_python_code(pdf_path: str, search_string: str = "print(f") 
         return False, [f"Error validating PDF: {e}"]
 
 
-def run_post_validation(output_dir: str = "_book/warondisease") -> int:
+def run_post_validation(output_dir: str = "_manual/warondisease") -> int:
     """
     Run post-validation script after building HTML
 

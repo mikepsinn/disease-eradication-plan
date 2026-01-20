@@ -10,7 +10,7 @@ This script checks rendered HTML files for common issues:
 5. Other rendering failures
 
 Usage:
-    python scripts/post-render-validation.py [--output-dir _book/warondisease]
+    python scripts/post-render-validation.py [--output-dir _manual/warondisease]
 
 Exit codes:
     0 - All checks passed
@@ -541,7 +541,7 @@ def validate_file(file_path, output_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Validate Quarto render output for common issues")
-    parser.add_argument("--output-dir", default="_book/warondisease", help="Directory containing rendered HTML files")
+    parser.add_argument("--output-dir", default="_manual/warondisease", help="Directory containing rendered HTML files")
     parser.add_argument("--fail-on-warnings", action="store_true", help="Treat warnings as errors")
     args = parser.parse_args()
 

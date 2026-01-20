@@ -63,8 +63,8 @@ COPY references.bib ./
 # Use || true to continue even if there are minor cleanup errors
 RUN python3.11 scripts/render-book-pdf.py || \
     (echo "Build completed with exit code $?" && \
-     test -f _book/warondisease/*.pdf && echo "PDF file exists" || echo "No PDF found")
+     test -f _manual/warondisease/*.pdf && echo "PDF file exists" || echo "No PDF found")
 
-# Output will be in _book/warondisease/*.pdf
+# Output will be in _manual/warondisease/*.pdf
 # Use docker cp to extract it after build
 
