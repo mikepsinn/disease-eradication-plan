@@ -67,7 +67,7 @@ jobs:
 
       - name: "Render Build The 1% Treaty: Health and Economic Impact of Redir"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)"
@@ -151,7 +151,7 @@ jobs:
 
       - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
         run: python scripts/render-quarto.py cost-of-change
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
@@ -235,7 +235,7 @@ jobs:
 
       - name: "Render Build The Health and Economic Impact of a Global System "
         run: python scripts/render-quarto.py dfda-impact
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)"
@@ -319,7 +319,7 @@ jobs:
 
       - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
         run: python scripts/render-quarto.py dfda-spec
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)"
@@ -403,7 +403,7 @@ jobs:
 
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)"
@@ -487,7 +487,7 @@ jobs:
 
       - name: "Render Build How to End War and Disease"
         run: python scripts/render-quarto.py manual
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
@@ -571,7 +571,7 @@ jobs:
 
       - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
         run: python scripts/render-quarto.py obg
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)"
@@ -655,7 +655,7 @@ jobs:
 
       - name: "Render Build Optimal Policy Generator: Evidence-Based Policy Re"
         run: python scripts/render-quarto.py opg
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)"
@@ -739,7 +739,7 @@ jobs:
 
       - name: "Render Build Optimocracy: Algorithmic Governance Through Metric"
         run: python scripts/render-quarto.py optimocracy
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build Optimocracy: Algorithmic Governance Through Metric to Netlify (immediate)"
@@ -823,7 +823,7 @@ jobs:
 
       - name: "Render Build Test Economics Document"
         run: python scripts/render-quarto.py test
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
 
@@ -881,7 +881,7 @@ jobs:
 
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy
-        timeout-minutes: 10
+        timeout-minutes: 30
 
 
       - name: "Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)"

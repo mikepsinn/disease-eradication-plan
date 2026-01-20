@@ -184,11 +184,6 @@ def main():
         help="Upload specific paper (default: all)",
     )
     parser.add_argument(
-        "--sandbox",
-        action="store_true",
-        help="Use Zenodo sandbox for testing",
-    )
-    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Show what would be uploaded without uploading",
@@ -220,16 +215,14 @@ def main():
     # Get API token (not required for dry-run)
     client = None
     if not args.dry_run:
-        token = get_zenodo_token(sandbox=args.sandbox)
+        token = get_zenodo_token()
         if not token:
-            env_var = "ZENODO_SANDBOX_TOKEN" if args.sandbox else "ZENODO_TOKEN"
-            print(f"ERROR: {env_var} environment variable not set")
-            print(f"  Get token at: https://{'sandbox.' if args.sandbox else ''}zenodo.org/account/settings/applications/")
+            print("ERROR: ZENODO_TOKEN environment variable not set")
+            print("  Get token at: https://zenodo.org/account/settings/applications/")
             return 1
-        client = ZenodoClient(token, sandbox=args.sandbox)
+        client = ZenodoClient(token)
 
-    env_name = "SANDBOX" if args.sandbox else "PRODUCTION"
-    print(f"Zenodo Environment: {env_name}")
+    print("Zenodo Environment: PRODUCTION")
     if client:
         print(f"API: {client.base_url}")
     else:
