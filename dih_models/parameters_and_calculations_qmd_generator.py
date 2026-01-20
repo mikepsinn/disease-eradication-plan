@@ -148,7 +148,7 @@ def generate_parameters_and_calculations_qmd(
     content.append("  html:")
     content.append("    toc: true")
     content.append("    toc-depth: 3")
-    content.append("    number-sections: true")
+    content.append("    number-sections: false")
     content.append("    code-fold: true")
     content.append("---")
     content.append("")
