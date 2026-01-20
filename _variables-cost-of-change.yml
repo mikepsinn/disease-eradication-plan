@@ -109,9 +109,11 @@
   % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
-  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
-  \ definition\">$27.2B</span>"
+"treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
+  \ redirected to DIH | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING\
+  \ × 1% | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
 "treaty_annual_funding_latex": "$$\n\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"

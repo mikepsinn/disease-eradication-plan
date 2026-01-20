@@ -115,14 +115,15 @@
   \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Cost per DALY\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost per DALY\
   \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue\
   \ clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves\
   \ 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B),\
   \ avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline\
-  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | ~ Medium confidence\
-  \ | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click\
-  \ to view details, calculation & sources\">$0.841 (95% CI: $0.242-$1.75)</a>"
+  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | Calculated from\
+  \ 2 inputs | ~ Medium confidence | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT\
+  \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.841 (95%\
+  \ CI: $0.242-$1.75)</a>"
 "dfda_direct_funding_cost_per_daly_latex": "$$\n\\begin{gathered}\nCost_{direct,DALY}\
   \ = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\
   \\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\\
@@ -696,10 +697,13 @@
   \ \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
-"dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
-  Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive\
-  \ Alignment Bond payouts and IAB political incentive mechanism) | Unit: USD/year\
-  \ | Core definition\">$21.8B</span>"
+"dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_to_medical_research_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding for pragmatic clinical trials\
+  \ (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political\
+  \ incentive mechanism) | Calculated from 3 inputs | ✓ High confidence | Formula:\
+  \ TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING | Unit: USD/year\
+  \ | Click to view details, calculation & sources\">$21.8B</a>"
 "dih_treasury_to_medical_research_annual_latex": "$$\n\\begin{gathered}\nTreasury_{RD,ann}\
   \ \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n\
   = \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\

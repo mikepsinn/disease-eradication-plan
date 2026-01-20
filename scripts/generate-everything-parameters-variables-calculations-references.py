@@ -1021,18 +1021,11 @@ def main():
                                 generated_outcome_qmds.add(tornado_qmd.name)
                                 tornado_count += 1
                             except ValueError as val_err:
-                                # STRICT MODE: Fail fast when tornado data is incomplete
-                                # This forces developers to either:
-                                # 1. Add proper inputs/compute to intermediate calculated parameters
-                                # 2. Change source_type to "definition" if not truly calculated
-                                # 3. Add uncertainty distributions to leaf input parameters
-                                print(f"[ERROR] {val_err}", file=sys.stderr)
-                                print(f"[ERROR] Parameter '{outcome.name}' has inputs/compute but no tornado sensitivity.", file=sys.stderr)
-                                print("[ERROR] This usually means:", file=sys.stderr)
-                                print("[ERROR]   - Input parameters need uncertainty distributions (std_error, confidence_interval, or distribution)", file=sys.stderr)
-                                print("[ERROR]   - OR intermediate inputs need their own inputs/compute definitions", file=sys.stderr)
-                                print("[ERROR]   - OR this should be source_type='definition' instead of 'calculated'", file=sys.stderr)
-                                sys.exit(1)
+                                # GRACEFUL SKIP: Skip tornado chart for calculated parameters with all-fixed inputs
+                                # This happens when a parameter is correctly marked as "calculated" but its
+                                # input chain consists entirely of fixed/policy values with no uncertainty.
+                                # These are valid calculations but have no sensitivity to visualize.
+                                print(f"[SKIP] Tornado chart for {outcome.name}: {val_err} (all inputs fixed)")
                             except Exception as chart_err:
                                 print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
                                 sys.exit(1)

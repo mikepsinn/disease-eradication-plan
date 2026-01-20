@@ -515,11 +515,11 @@
   \ \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}\n$$"
 "current_patient_participation_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_patient_participation_rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-patient-participation-rate\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Current patient\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Current patient\
   \ participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease\
-  \ patients) | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS\
-  \ | Unit: rate | Click to view details, calculation & sources\">0.0792% (95% CI:\
-  \ 0.0761%-0.0819%)</a>"
+  \ patients) | Calculated from 2 inputs | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS\
+  \ / DISEASE_PATIENTS | Unit: rate | Click to view details, calculation & sources\"\
+  >0.0792% (95% CI: 0.0761%-0.0819%)</a>"
 "current_patient_participation_rate_latex": "$$\n\\begin{gathered}\nRate_{part} \\\
   \\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\\
   %\n\\end{gathered}\n$$"
@@ -590,14 +590,15 @@
   \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Cost per DALY\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost per DALY\
   \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue\
   \ clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves\
   \ 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B),\
   \ avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline\
-  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | ~ Medium confidence\
-  \ | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click\
-  \ to view details, calculation & sources\">$0.841 (95% CI: $0.242-$1.75)</a>"
+  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | Calculated from\
+  \ 2 inputs | ~ Medium confidence | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT\
+  \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.841 (95%\
+  \ CI: $0.242-$1.75)</a>"
 "dfda_direct_funding_cost_per_daly_latex": "$$\n\\begin{gathered}\nCost_{direct,DALY}\
   \ = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\
   \\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\\
@@ -662,16 +663,16 @@
   $$"
 "dfda_direct_funding_queue_clearance_npv": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_queue_clearance_npv\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"NPV of direct\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of direct\
   \ funding ($21.76B/year for medical research after bond/IAB allocations) for the\
   \ ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty\
   \ campaign to unlock government funding, philanthropists/NIH directly fund clinical\
   \ trials until disease queue is cleared. Funding period is queue clearance time\
   \ (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years).\
   \ After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.\
-  \ | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T\
-  \ = queue clearance time | Unit: USD | Click to view details, calculation & sources\"\
-  >$475B (95% CI: $211B-$651B)</a>"
+  \ | Calculated from 3 inputs | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1\
+  \ - (1 + r)^-T) / r] where T = queue clearance time | Unit: USD | Click to view\
+  \ details, calculation & sources\">$475B (95% CI: $211B-$651B)</a>"
 "dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = Funding_{ann}\
   \ \\times \\frac{1 - (1+r)^{-T}}{r}\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
@@ -877,10 +878,11 @@
   \ & sources\">$0.100 (95% CI: $0.030-$1.00)</a>"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_pct_of_treaty_funding\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to Decentralized Framework for Drug Assessment framework\
-  \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
-  \ | Click to view details, calculation & sources\">0.147% (95% CI: 0.1%-0.204%)</a>"
+  \ overhead | Calculated from 2 inputs | ✓ High confidence | Formula: DFDA_OPEX /\
+  \ TREATY_FUNDING | Unit: rate | Click to view details, calculation & sources\">0.147%\
+  \ (95% CI: 0.1%-0.204%)</a>"
 "dfda_opex_pct_of_treaty_funding_latex": "$$\n\\begin{gathered}\nOPEX_{pct} = \\frac{OPEX_{dFDA}}{Funding_{treaty}}\
   \ = \\frac{\\$40M}{\\$27.2B} = 0.147\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA}\
   \ \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory}\
@@ -1358,10 +1360,11 @@
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_medical_research_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to medical research (after bond payouts and IAB incentives)\
-  \ | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit:\
-  \ rate | Click to view details, calculation & sources\">80%</a>"
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING\
+  \ / TREATY_FUNDING | Unit: rate | Click to view details, calculation & sources\"\
+  >80%</a>"
 "dih_treasury_medical_research_pct_latex": "$$\n\\begin{gathered}\nPct_{treasury,RD}\
   \ = \\frac{Treasury_{RD,ann}}{Funding_{treaty}} = \\frac{\\$21.8B}{\\$27.2B} = 80\\\
   % \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann}\
@@ -1377,10 +1380,13 @@
   \\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
-  Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive\
-  \ Alignment Bond payouts and IAB political incentive mechanism) | Unit: USD/year\
-  \ | Core definition\">$21.8B</span>"
+"dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_to_medical_research_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding for pragmatic clinical trials\
+  \ (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political\
+  \ incentive mechanism) | Calculated from 3 inputs | ✓ High confidence | Formula:\
+  \ TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING | Unit: USD/year\
+  \ | Click to view details, calculation & sources\">$21.8B</a>"
 "dih_treasury_to_medical_research_annual_latex": "$$\n\\begin{gathered}\nTreasury_{RD,ann}\
   \ \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n\
   = \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty}\
@@ -1418,10 +1424,10 @@
   $$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_pct\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
-  \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
-  \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view details,\
-  \ calculation & sources\">79.9% (95% CI: 79.8%-79.9%)</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ treaty funding going directly to patient trial subsidies | Calculated from 2 inputs\
+  \ | ✓ High confidence | Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate |\
+  \ Click to view details, calculation & sources\">79.9% (95% CI: 79.8%-79.9%)</a>"
 "dih_treasury_trial_subsidies_pct_latex": "$$\n\\begin{gathered}\nPct_{subsidies}\
   \ = \\frac{Subsidies_{trial,ann}}{Funding_{treaty}} = \\frac{\\$21.7B}{\\$27.2B}\
   \ = 79.9\\% \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann}\
@@ -1443,19 +1449,19 @@
   $$"
 "disease_vs_terrorism_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_terrorism_deaths_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
-  \ disease deaths to 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
-  \ ÷ 911_DEATHS | Unit: ratio | Click to view details, calculation & sources\">18.4k:1\
-  \ (95% CI: 15.6k:1-21.1k:1)</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of annual\
+  \ disease deaths to 9/11 terrorism deaths | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS | Unit: ratio | Click to view details,\
+  \ calculation & sources\">18.4k:1 (95% CI: 15.6k:1-21.1k:1)</a>"
 "disease_vs_terrorism_deaths_ratio_latex": "$$\n\\begin{gathered}\nRatio_{dis:terror}\
   \ \\\\\n= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n= \\frac{55M}{3{,}000}\
   \ \\\\\n= 18{,}400\n\\end{gathered}\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_war_deaths_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
-  \ disease deaths to war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
-  \ ÷ WAR_DEATHS | Unit: ratio | Click to view details, calculation & sources\">225:1\
-  \ (95% CI: 210:1-239:1)</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of annual\
+  \ disease deaths to war deaths | Calculated from 2 inputs | ✓ High confidence |\
+  \ Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS | Unit: ratio | Click to view details,\
+  \ calculation & sources\">225:1 (95% CI: 210:1-239:1)</a>"
 "disease_vs_war_deaths_ratio_latex": "$$\n\\begin{gathered}\nRatio_{dis:war} = \\\
   frac{Deaths_{curable,ann}}{Deaths_{conflict}} = \\frac{55M}{245{,}000} = 225 \\\\\
   [0.5em]\n\\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state}\
@@ -1936,10 +1942,10 @@
   \n= \\$340\n\\end{gathered}\n$$"
 "global_military_spending_post_treaty_annual_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_post_treaty_annual_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Global military\
-  \ spending after 1% treaty reduction | ✓ High confidence | Formula: MILITARY_SPENDING\
-  \ × (1 - REDUCTION) | Unit: USD/year | Click to view details, calculation & sources\"\
-  >$2.69T</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global military\
+  \ spending after 1% treaty reduction | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: MILITARY_SPENDING × (1 - REDUCTION) | Unit: USD/year | Click to view\
+  \ details, calculation & sources\">$2.69T</a>"
 "global_military_spending_post_treaty_annual_2024_latex": "$$\n\\begin{gathered}\n\
   Spending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n\
   = \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}\n$$"
@@ -2052,10 +2058,13 @@
   \ \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\
   \n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\\
   $41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
-"iab_political_incentive_funding_annual": "<span class=\"parameter-definition\" title=\"\
-  Annual funding for IAB political incentive mechanism (independent expenditures supporting\
-  \ high-scoring politicians, post-office fellowship endowments, Public Good Score\
-  \ infrastructure) | Unit: USD/year | Core definition\">$2.72B</span>"
+"iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding for IAB political incentive mechanism\
+  \ (independent expenditures supporting high-scoring politicians, post-office fellowship\
+  \ endowments, Public Good Score infrastructure) | Calculated from 2 inputs | ✓ High\
+  \ confidence | Formula: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT | Unit: USD/year\
+  \ | Click to view details, calculation & sources\">$2.72B</a>"
 "iab_political_incentive_funding_annual_latex": "$$\n\\begin{gathered}\nFunding_{political,ann}\
   \ \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\\
   % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
@@ -2747,9 +2756,11 @@
   \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
   >17 years</a>"
 "treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
-"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
-  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
-  \ definition\">$27.2B</span>"
+"treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
+  \ redirected to DIH | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING\
+  \ × 1% | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
 "treaty_annual_funding_latex": "$$\n\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
@@ -3184,15 +3195,16 @@
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "treaty_vs_direct_funding_leverage": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_vs_direct_funding_leverage\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"How many times\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"How many times\
   \ more cost-effective the treaty campaign is vs direct funding. Treaty achieves\
   \ 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years\
   \ (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly\
   \ commit this amount. Both approaches achieve same 200B DALY timeline shift benefit\
   \ by clearing disease queue 9.5× faster. Treaty spreads cost across governments\
-  \ while building sustainable public funding infrastructure. | ✓ High confidence\
-  \ | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio\
-  \ | Click to view details, calculation & sources\">475:1 (95% CI: 329:1-462:1)</a>"
+  \ while building sustainable public funding infrastructure. | Calculated from 2\
+  \ inputs | ✓ High confidence | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY\
+  \ | Unit: ratio | Click to view details, calculation & sources\">475:1 (95% CI:\
+  \ 329:1-462:1)</a>"
 "treaty_vs_direct_funding_leverage_latex": "$$\n\\begin{gathered}\nLeverage_{treaty}\
   \ \\\\\n= \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$0.841}{\\\
   $0.00177} \\\\\n= 475 \\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}}\
@@ -3469,17 +3481,23 @@
   \ estimate) | ✓ High confidence | 95% CI: [$5M, $15M] | Dist: Gamma (SE: $3M) |\
   \ Unit: USD | Click to view details, calculation & sources\">$10M (95% CI: $5M-$15M)</a>"
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
-"victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
-  \ VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage) | Unit:\
-  \ USD/year | Core definition\">$2.72B</span>"
+"victory_bond_annual_payout": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-victory_bond_annual_payout\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual VICTORY Incentive Alignment Bond payout\
+  \ (treaty funding × bond percentage) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TREATY_FUNDING × BOND_PCT | Unit: USD/year | Click to view details,\
+  \ calculation & sources\">$2.72B</a>"
 "victory_bond_annual_payout_latex": "$$\n\\begin{gathered}\nPayout_{bond,ann} \\\\\
   \n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\\
   $2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times\
   \ Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
-  \ return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core\
-  \ definition\">272% (95% CI: 180%-430%)</span>"
+"victory_bond_annual_return_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-victory_bond_annual_return_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual return percentage for VICTORY Incentive\
+  \ Alignment Bondholders | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view details, calculation & sources\"\
+  >272% (95% CI: 180%-430%)</a>"
 "victory_bond_annual_return_pct_latex": "$$\n\\begin{gathered}\nr_{bond} = \\frac{Payout_{bond,ann}}{Cost_{campaign}}\
   \ = \\frac{\\$2.72B}{\\$1B} = 272\\% \\\\[0.5em]\n\\text{where } Payout_{bond,ann}\
   \ \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\

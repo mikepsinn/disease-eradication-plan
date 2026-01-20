@@ -801,7 +801,7 @@ TREATY_REDUCTION_PCT = Parameter(
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
     source_ref="",
-    source_type="definition",  # Policy-derived: calculated from fixed military spending ($2.72T) and fixed 1% treaty proposal
+    source_type="calculated",  # Derived from military spending and treaty percentage
     description="Annual funding from 1% of global military spending redirected to DIH",
     display_name="Annual Funding from 1% of Global Military Spending Redirected to DIH",
     unit="USD/year",
@@ -1405,7 +1405,7 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
     source_ref="clinical-trial-patient-participation-rate",
-    source_type="definition",
+    source_type="calculated",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
     display_name="Current Patient Participation Rate in Clinical Trials",
     unit="rate",
@@ -4836,7 +4836,7 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
     source_ref="",
-    source_type="definition",
+    source_type="calculated",
     description="Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
     display_name="Annual VICTORY Incentive Alignment Bond Payout",
     unit="USD/year",
@@ -4849,7 +4849,7 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
 VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
     source_ref="",
-    source_type="definition",
+    source_type="calculated",
     description="Annual return percentage for VICTORY Incentive Alignment Bondholders",
     display_name="Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
     unit="rate",
@@ -4881,7 +4881,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
 IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING * IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
     source_ref="",
-    source_type="definition",  # Policy-derived: calculated from fixed treaty funding and fixed 10% allocation
+    source_type="calculated",  # Derived from treaty funding and IAB allocation percentage
     description="Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
     display_name="Annual IAB Political Incentive Funding",
     unit="USD/year",
@@ -4910,7 +4910,7 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
     source_ref="",
-    source_type="definition",  # Policy-derived: calculated from fixed allocations (treaty funding, bond %, IAB %)
+    source_type="calculated",  # Derived from treaty funding minus bond and IAB allocations
     description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
     display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
@@ -4949,7 +4949,7 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 # Funding allocation percentages (calculated from absolute values)
 DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL / TREATY_ANNUAL_FUNDING,
-    source_type="definition",
+    source_type="calculated",
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
     display_name="Medical Research Percentage of Treaty Funding",
@@ -4964,7 +4964,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
 
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / TREATY_ANNUAL_FUNDING,
-    source_type="definition",
+    source_type="calculated",
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding going directly to patient trial subsidies",
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
@@ -4979,7 +4979,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
 
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
-    source_type="definition",
+    source_type="calculated",
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
@@ -5758,7 +5758,7 @@ TERRORISM_DEATHS_911 = Parameter(
 DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / TERRORISM_DEATHS_911,
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
-    source_type="definition",
+    source_type="calculated",
     description="Ratio of annual disease deaths to 9/11 terrorism deaths",
     display_name="Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
     unit="ratio",
@@ -5772,7 +5772,7 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
-    source_type="definition",
+    source_type="calculated",
     description="Ratio of annual disease deaths to war deaths",
     display_name="Ratio of Annual Disease Deaths to War Deaths",
     unit="ratio",
@@ -6059,7 +6059,7 @@ TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (1 - TREATY_REDUCTION_PCT),
     source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty",
-    source_type="definition",  # Policy-derived: calculated from fixed military spending and fixed 1% reduction
+    source_type="calculated",  # Derived from military spending and treaty reduction percentage
     description="Global military spending after 1% treaty reduction",
     display_name="Global Military Spending After 1% Treaty Reduction",
     unit="USD/year",
@@ -6376,7 +6376,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
-    source_type="definition",  # Policy-derived: calculated from fixed allocations and discount rate
+    source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
     description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
     display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
     unit="USD",
@@ -6394,7 +6394,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
-    source_type="definition",  # Policy-derived: comparison metric using fixed inputs
+    source_type="calculated",  # Derived from NPV and DALYs
     description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="dFDA Direct Funding Cost per DALY",
     unit="USD/DALY",
@@ -6444,7 +6444,7 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
-    source_type="definition",  # Policy-derived: comparison metric using fixed inputs
+    source_type="calculated",  # Ratio of cost per DALY metrics
     description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",
     unit="ratio",

@@ -172,10 +172,13 @@
   \ \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\
   \n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\\
   $41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
-"iab_political_incentive_funding_annual": "<span class=\"parameter-definition\" title=\"\
-  Annual funding for IAB political incentive mechanism (independent expenditures supporting\
-  \ high-scoring politicians, post-office fellowship endowments, Public Good Score\
-  \ infrastructure) | Unit: USD/year | Core definition\">$2.72B</span>"
+"iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding for IAB political incentive mechanism\
+  \ (independent expenditures supporting high-scoring politicians, post-office fellowship\
+  \ endowments, Public Good Score infrastructure) | Calculated from 2 inputs | ✓ High\
+  \ confidence | Formula: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT | Unit: USD/year\
+  \ | Click to view details, calculation & sources\">$2.72B</a>"
 "iab_political_incentive_funding_annual_latex": "$$\n\\begin{gathered}\nFunding_{political,ann}\
   \ \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\\
   % \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
@@ -214,9 +217,11 @@
   \ \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet}\
   \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
   $3.7T\n\\end{gathered}\n$$"
-"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
-  \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
-  \ definition\">$27.2B</span>"
+"treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
+  \ redirected to DIH | Calculated from 2 inputs | ✓ High confidence | Formula: MILITARY_SPENDING\
+  \ × 1% | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
 "treaty_annual_funding_latex": "$$\n\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil}\
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
@@ -271,17 +276,23 @@
   \ estimate) | ✓ High confidence | 95% CI: [$5M, $15M] | Dist: Gamma (SE: $3M) |\
   \ Unit: USD | Click to view details, calculation & sources\">$10M (95% CI: $5M-$15M)</a>"
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
-"victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
-  \ VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage) | Unit:\
-  \ USD/year | Core definition\">$2.72B</span>"
+"victory_bond_annual_payout": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-victory_bond_annual_payout\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual VICTORY Incentive Alignment Bond payout\
+  \ (treaty funding × bond percentage) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TREATY_FUNDING × BOND_PCT | Unit: USD/year | Click to view details,\
+  \ calculation & sources\">$2.72B</a>"
 "victory_bond_annual_payout_latex": "$$\n\\begin{gathered}\nPayout_{bond,ann} \\\\\
   \n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\\
   $2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times\
   \ Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
-"victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
-  \ return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core\
-  \ definition\">272% (95% CI: 180%-430%)</span>"
+"victory_bond_annual_return_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-victory_bond_annual_return_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual return percentage for VICTORY Incentive\
+  \ Alignment Bondholders | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view details, calculation & sources\"\
+  >272% (95% CI: 180%-430%)</a>"
 "victory_bond_annual_return_pct_latex": "$$\n\\begin{gathered}\nr_{bond} = \\frac{Payout_{bond,ann}}{Cost_{campaign}}\
   \ = \\frac{\\$2.72B}{\\$1B} = 272\\% \\\\[0.5em]\n\\text{where } Payout_{bond,ann}\
   \ \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\

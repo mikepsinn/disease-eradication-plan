@@ -2192,6 +2192,18 @@ export const CURRENT_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   latex: "\\begin{gathered}\nT_{explore,safe} \\\\\n= \\frac{N_{combos}}{Trials_{ann,curr}} \\\\\n= \\frac{9.5M}{3{,}300} \\\\\n= 2{,}880 \\\\[0.5em]\n\\text{where } N_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
 };
 
+export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
+  value: 0.0007916666666666666,
+  unit: "rate",
+  displayName: "Current Patient Participation Rate in Clinical Trials",
+  description: "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
+  sourceType: "calculated",
+  sourceRef: "clinical-trial-patient-participation-rate",
+  confidence: "high",
+  formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
+  latex: "\\begin{gathered}\nRate_{part} \\\\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\%\n\\end{gathered}",
+};
+
 export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
   value: 15606.060606060606,
   unit: "years",
@@ -2236,6 +2248,30 @@ export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
   latex: "\\begin{gathered}\nk_{speedup} = k_{capacity} \\times k_{rescue} = 12.3 \\times 1.4 = 17.2 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } k_{rescue} = Attrition_{valley} + 1 = 40\\% + 1 = 1.4\n\\end{gathered}",
+};
+
+export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
+  value: 0.8409664747187287,
+  unit: "USD/DALY",
+  displayName: "dFDA Direct Funding Cost per DALY",
+  description: "Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
+  confidence: "medium",
+  formula: "NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
+  latex: "\\begin{gathered}\nCost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\times r_{discount}} \\\\\n= \\frac{36}{\\$21.8B \\times 3\\%} \\\\\n= \\$475B \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } T_{queue,dFDA} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
+export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
+  value: 475276690501.0616,
+  unit: "USD",
+  displayName: "dFDA Direct Funding NPV (Queue Clearance Period)",
+  description: "NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
+  confidence: "high",
+  formula: "ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
+  latex: "NPV_{direct} = Funding_{ann} \\times \\frac{1 - (1+r)^{-T}}{r}",
 };
 
 export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
@@ -2425,6 +2461,18 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   confidence: "high",
   formula: "DFDA_BUILD + DIH_INITIATIVES",
   latex: "\\begin{gathered}\nCost_{upfront,total} \\\\\n= Cost_{upfront} + Cost_{DIH,init} \\\\\n= \\$40M + \\$230M \\\\\n= \\$270M\n\\end{gathered}",
+};
+
+export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
+  value: 0.0014705882352941176,
+  unit: "rate",
+  displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
+  description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
+  confidence: "high",
+  formula: "DFDA_OPEX / TREATY_FUNDING",
+  latex: "\\begin{gathered}\nOPEX_{pct} = \\frac{OPEX_{dFDA}}{Funding_{treaty}} = \\frac{\\$40M}{\\$27.2B} = 0.147\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
@@ -2666,6 +2714,29 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   latex: "\\begin{gathered}\nN_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
+export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
+  value: 0.8,
+  unit: "rate",
+  displayName: "Medical Research Percentage of Treaty Funding",
+  description: "Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
+  confidence: "high",
+  formula: "MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
+  latex: "\\begin{gathered}\nPct_{treasury,RD} = \\frac{Treasury_{RD,ann}}{Funding_{treaty}} = \\frac{\\$21.8B}{\\$27.2B} = 80\\% \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
+export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
+  value: 21760000000.0,
+  unit: "USD/year",
+  displayName: "Annual Funding for Pragmatic Clinical Trials",
+  description: "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
+  latex: "\\begin{gathered}\nTreasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   value: 21720000000.0,
   unit: "USD/year",
@@ -2678,6 +2749,18 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   latex: "\\begin{gathered}\nSubsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
+export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
+  value: 0.7985294117647059,
+  unit: "rate",
+  displayName: "Patient Trial Subsidies Percentage of Treaty Funding",
+  description: "Percentage of treaty funding going directly to patient trial subsidies",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
+  confidence: "high",
+  formula: "TRIAL_SUBSIDIES / TREATY_FUNDING",
+  latex: "\\begin{gathered}\nPct_{subsidies} = \\frac{Subsidies_{trial,ann}}{Funding_{treaty}} = \\frac{\\$21.7B}{\\$27.2B} = 79.9\\% \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
 export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
   value: 6650.0,
   unit: "diseases",
@@ -2688,6 +2771,30 @@ export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
   confidence: "medium",
   formula: "RARE_DISEASES_COUNT_GLOBAL × 0.95",
   latex: "\\begin{gathered}\nN_{untreated} \\\\\n= N_{rare} \\times 0.95 \\\\\n= 7{,}000 \\times 0.95 \\\\\n= 6{,}650\n\\end{gathered}",
+};
+
+export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
+  value: 18357.81041388518,
+  unit: "ratio",
+  displayName: "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
+  description: "Ratio of annual disease deaths to 9/11 terrorism deaths",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact",
+  confidence: "high",
+  formula: "ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
+  latex: "\\begin{gathered}\nRatio_{dis:terror} \\\\\n= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n= \\frac{55M}{3{,}000} \\\\\n= 18{,}400\n\\end{gathered}",
+};
+
+export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
+  value: 224.8569092395748,
+  unit: "ratio",
+  displayName: "Ratio of Annual Disease Deaths to War Deaths",
+  description: "Ratio of annual disease deaths to war deaths",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact",
+  confidence: "high",
+  formula: "ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
+  latex: "\\begin{gathered}\nRatio_{dis:war} = \\frac{Deaths_{curable,ann}}{Deaths_{conflict}} = \\frac{55M}{245{,}000} = 225 \\\\[0.5em]\n\\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}",
 };
 
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
@@ -2986,6 +3093,18 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   latex: "\\begin{gathered}\nSpending_{mil,pc} \\\\\n= \\frac{Spending_{mil}}{Pop_{global}} \\\\\n= \\frac{\\$2.72T}{8B} \\\\\n= \\$340\n\\end{gathered}",
 };
 
+export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
+  value: 2692800000000.0,
+  unit: "USD/year",
+  displayName: "Global Military Spending After 1% Treaty Reduction",
+  description: "Global military spending after 1% treaty reduction",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/strategy/treaty-adoption-strategy#post-treaty",
+  confidence: "high",
+  formula: "MILITARY_SPENDING × (1 - REDUCTION)",
+  latex: "\\begin{gathered}\nSpending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n= \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}",
+};
+
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   value: 128657100000000.0,
   unit: "USD/year",
@@ -3008,6 +3127,17 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
   latex: "\\begin{gathered}\nBCR_{IAB} = \\frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} = \\frac{\\$172B}{\\$750M} = 230 \\\\[0.5em]\n\\text{where } Benefit_{peace+RD} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}",
+};
+
+export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
+  value: 2720000000.0,
+  unit: "USD/year",
+  displayName: "Annual IAB Political Incentive Funding",
+  description: "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
+  latex: "\\begin{gathered}\nFunding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -3478,6 +3608,17 @@ export const TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS: Parameter = {
   latex: "\\begin{gathered}\nN_{testable} \\\\\n= N_{combos} + N_{emerging} \\\\\n= 9.5M + 42M \\\\\n= 51.5M \\\\[0.5em]\n\\text{where } N_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M \\\\[0.5em]\n\\text{where } N_{emerging} \\\\\n= Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} \\\\\n= 20M + 20M + 1.5M + 500{,}000 \\\\\n= 42M \\\\[0.5em]\n\\text{where } Combos_{gene} \\\\\n= N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n= 20M \\\\[0.5em]\n\\text{where } Combos_{mRNA} \\\\\n= N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n= 20M \\\\[0.5em]\n\\text{where } Combos_{epi} \\\\\n= N_{epi} \\times N_{diseases,trial} \\\\\n= 1{,}500 \\times 1{,}000 \\\\\n= 1.5M \\\\[0.5em]\n\\text{where } Combos_{cell} \\\\\n= N_{cell} \\times N_{diseases,trial} \\\\\n= 500 \\times 1{,}000 \\\\\n= 500{,}000\n\\end{gathered}",
 };
 
+export const TREATY_ANNUAL_FUNDING: Parameter = {
+  value: 27200000000.0,
+  unit: "USD/year",
+  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
+  description: "Annual funding from 1% of global military spending redirected to DIH",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "MILITARY_SPENDING × 1%",
+  latex: "\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   value: 11.480765853658538,
   unit: "ratio",
@@ -3668,6 +3809,18 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   latex: "\\begin{gathered}\nk_{treaty:nets} \\\\\n= \\frac{Cost_{nets}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$89}{\\$0.00177} \\\\\n= 50{,}300 \\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
+export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
+  value: 475.2766905010616,
+  unit: "ratio",
+  displayName: "Treaty Campaign Leverage vs Direct Funding",
+  description: "How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
+  confidence: "high",
+  formula: "DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
+  latex: "\\begin{gathered}\nLeverage_{treaty} \\\\\n= \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$0.841}{\\$0.00177} \\\\\n= 475 \\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\times r_{discount}} \\\\\n= \\frac{36}{\\$21.8B \\times 3\\%} \\\\\n= \\$475B \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } T_{queue,dFDA} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   value: 246.10503654183898,
   unit: "years",
@@ -3749,6 +3902,28 @@ export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
   confidence: "medium",
   formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
+};
+
+export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
+  value: 2720000000.0,
+  unit: "USD/year",
+  displayName: "Annual VICTORY Incentive Alignment Bond Payout",
+  description: "Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_FUNDING × BOND_PCT",
+  latex: "\\begin{gathered}\nPayout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
+};
+
+export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
+  value: 2.72,
+  unit: "rate",
+  displayName: "Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
+  description: "Annual return percentage for VICTORY Incentive Alignment Bondholders",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PAYOUT ÷ CAMPAIGN_COST",
+  latex: "\\begin{gathered}\nr_{bond} = \\frac{Payout_{bond,ann}}{Cost_{campaign}} = \\frac{\\$2.72B}{\\$1B} = 272\\% \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}",
 };
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
@@ -4134,18 +4309,6 @@ export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   confidence: "high",
 };
 
-export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
-  value: 0.0007916666666666666,
-  unit: "rate",
-  displayName: "Current Patient Participation Rate in Clinical Trials",
-  description: "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
-  sourceType: "definition",
-  sourceRef: "clinical-trial-patient-participation-rate",
-  confidence: "high",
-  formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
-  latex: "\\begin{gathered}\nRate_{part} \\\\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\%\n\\end{gathered}",
-};
-
 export const DAYS_PER_YEAR: Parameter = {
   value: 365.0,
 };
@@ -4167,30 +4330,6 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   description: "Percentage of budget defense sector keeps under 1% treaty",
   sourceType: "definition",
   confidence: "high",
-};
-
-export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
-  value: 0.8409664747187287,
-  unit: "USD/DALY",
-  displayName: "dFDA Direct Funding Cost per DALY",
-  description: "Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
-  confidence: "medium",
-  formula: "NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
-  latex: "\\begin{gathered}\nCost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\times r_{discount}} \\\\\n= \\frac{36}{\\$21.8B \\times 3\\%} \\\\\n= \\$475B \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } T_{queue,dFDA} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
-export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
-  value: 475276690501.0616,
-  unit: "USD",
-  displayName: "dFDA Direct Funding NPV (Queue Clearance Period)",
-  description: "NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
-  confidence: "high",
-  formula: "ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
-  latex: "NPV_{direct} = Funding_{ann} \\times \\frac{1 - (1+r)^{-T}}{r}",
 };
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
@@ -4256,18 +4395,6 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper#opex-breakdown",
   confidence: "high",
   confidenceInterval: [5000000.0, 12000000.0],
-};
-
-export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
-  value: 0.0014705882352941176,
-  unit: "rate",
-  displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
-  description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
-  confidence: "high",
-  formula: "DFDA_OPEX / TREATY_FUNDING",
-  latex: "\\begin{gathered}\nOPEX_{pct} = \\frac{OPEX_{dFDA}}{Funding_{treaty}} = \\frac{\\$40M}{\\$27.2B} = 0.147\\% \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
@@ -4399,41 +4526,6 @@ export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
   confidenceInterval: [150000000.0, 350000000.0],
 };
 
-export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
-  value: 0.8,
-  unit: "rate",
-  displayName: "Medical Research Percentage of Treaty Funding",
-  description: "Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
-  confidence: "high",
-  formula: "MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-  latex: "\\begin{gathered}\nPct_{treasury,RD} = \\frac{Treasury_{RD,ann}}{Funding_{treaty}} = \\frac{\\$21.8B}{\\$27.2B} = 80\\% \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
-export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
-  value: 21760000000.0,
-  unit: "USD/year",
-  displayName: "Annual Funding for Pragmatic Clinical Trials",
-  description: "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
-  latex: "\\begin{gathered}\nTreasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
-export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
-  value: 0.7985294117647059,
-  unit: "rate",
-  displayName: "Patient Trial Subsidies Percentage of Treaty Funding",
-  description: "Percentage of treaty funding going directly to patient trial subsidies",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#funding-allocation",
-  confidence: "high",
-  formula: "TRIAL_SUBSIDIES / TREATY_FUNDING",
-  latex: "\\begin{gathered}\nPct_{subsidies} = \\frac{Subsidies_{trial,ann}}{Funding_{treaty}} = \\frac{\\$21.7B}{\\$27.2B} = 79.9\\% \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
 export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   value: 0.4,
   unit: "rate",
@@ -4442,30 +4534,6 @@ export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   sourceType: "definition",
   sourceRef: "disease-related-caregiving-estimate",
   confidence: "high",
-};
-
-export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
-  value: 18357.81041388518,
-  unit: "ratio",
-  displayName: "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
-  description: "Ratio of annual disease deaths to 9/11 terrorism deaths",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact",
-  confidence: "high",
-  formula: "ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
-  latex: "\\begin{gathered}\nRatio_{dis:terror} \\\\\n= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n= \\frac{55M}{3{,}000} \\\\\n= 18{,}400\n\\end{gathered}",
-};
-
-export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
-  value: 224.8569092395748,
-  unit: "ratio",
-  displayName: "Ratio of Annual Disease Deaths to War Deaths",
-  description: "Ratio of annual disease deaths to war deaths",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact",
-  confidence: "high",
-  formula: "ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
-  latex: "\\begin{gathered}\nRatio_{dis:war} = \\frac{Deaths_{curable,ann}}{Deaths_{conflict}} = \\frac{55M}{245{,}000} = 225 \\\\[0.5em]\n\\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}",
 };
 
 export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
@@ -4532,18 +4600,6 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
 };
 
-export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
-  value: 2692800000000.0,
-  unit: "USD/year",
-  displayName: "Global Military Spending After 1% Treaty Reduction",
-  description: "Global military spending after 1% treaty reduction",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/strategy/treaty-adoption-strategy#post-treaty",
-  confidence: "high",
-  formula: "MILITARY_SPENDING × (1 - REDUCTION)",
-  latex: "\\begin{gathered}\nSpending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n= \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}",
-};
-
 export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
   value: 125000000000.0,
   unit: "USD",
@@ -4604,17 +4660,6 @@ export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   confidenceInterval: [160000000.0, 750000000.0],
-};
-
-export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
-  value: 2720000000.0,
-  unit: "USD/year",
-  displayName: "Annual IAB Political Incentive Funding",
-  description: "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
-  latex: "\\begin{gathered}\nFunding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
 export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
@@ -4766,17 +4811,6 @@ export const TOTAL_BOOK_WORDS: Parameter = {
   confidence: "high",
 };
 
-export const TREATY_ANNUAL_FUNDING: Parameter = {
-  value: 27200000000.0,
-  unit: "USD/year",
-  displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
-  description: "Annual funding from 1% of global military spending redirected to DIH",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "MILITARY_SPENDING × 1%",
-  latex: "\\begin{gathered}\nFunding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   value: 650000000.0,
   unit: "USD",
@@ -4853,18 +4887,6 @@ export const TREATY_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
-export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
-  value: 475.2766905010616,
-  unit: "ratio",
-  displayName: "Treaty Campaign Leverage vs Direct Funding",
-  description: "How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/dfda-impact-paper",
-  confidence: "high",
-  formula: "DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "\\begin{gathered}\nLeverage_{treaty} \\\\\n= \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$0.841}{\\$0.00177} \\\\\n= 475 \\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\times r_{discount}} \\\\\n= \\frac{36}{\\$21.8B \\times 3\\%} \\\\\n= \\$475B \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } T_{queue,dFDA} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177 \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B \\\\[0.5em]\n\\text{where } DALYs_{max} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} \\\\\n= 2.88B \\times 92.6\\% \\times 212 \\\\\n= 565B \\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\\\[0.5em]\n\\text{where } T_{accel} \\\\\n= T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) \\\\\n= 222 \\times \\left(1 - \\frac{1}{12.3}\\right) \\\\\n= 204 \\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650 \\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$21.7B}{\\$929} \\\\\n= 23.4M \\\\[0.5em]\n\\text{where } Subsidies_{trial,ann} \\\\\n= Treasury_{RD,ann} - OPEX_{dFDA} \\\\\n= \\$21.8B - \\$40M \\\\\n= \\$21.7B \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Treasury_{RD,ann} \\\\\n= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\\\\n= \\$27.2B - \\$2.72B - \\$2.72B \\\\\n= \\$21.8B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Funding_{political,ann} \\\\\n= Funding_{treaty} \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   value: 1000.0,
   unit: "diseases",
@@ -4938,28 +4960,6 @@ export const US_VS_SWITZERLAND_SPENDING_GAP: Parameter = {
   sourceRef: "oecd-govt-spending",
   confidence: "high",
   formula: "US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
-};
-
-export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
-  value: 2720000000.0,
-  unit: "USD/year",
-  displayName: "Annual VICTORY Incentive Alignment Bond Payout",
-  description: "Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "TREATY_FUNDING × BOND_PCT",
-  latex: "\\begin{gathered}\nPayout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
-};
-
-export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
-  value: 2.72,
-  unit: "rate",
-  displayName: "Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
-  description: "Annual return percentage for VICTORY Incentive Alignment Bondholders",
-  sourceType: "definition",
-  confidence: "high",
-  formula: "PAYOUT ÷ CAMPAIGN_COST",
-  latex: "\\begin{gathered}\nr_{bond} = \\frac{Payout_{bond,ann}}{Cost_{campaign}} = \\frac{\\$2.72B}{\\$1B} = 272\\% \\\\[0.5em]\n\\text{where } Payout_{bond,ann} \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}",
 };
 
 export const VICTORY_BOND_FUNDING_PCT: Parameter = {
@@ -5171,10 +5171,13 @@ export const parameters = {
   COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
+  CURRENT_PATIENT_PARTICIPATION_RATE,
   CURRENT_TOTAL_EXPLORATION_YEARS,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER,
+  DFDA_DIRECT_FUNDING_COST_PER_DALY,
+  DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
   DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER,
   DFDA_EFFICACY_LAG_ELIMINATION_DALYS,
@@ -5191,6 +5194,7 @@ export const parameters = {
   DFDA_NPV_PV_ANNUAL_OPEX,
   DFDA_NPV_TOTAL_COST,
   DFDA_NPV_UPFRONT_COST_TOTAL,
+  DFDA_OPEX_PCT_OF_TREATY_FUNDING,
   DFDA_QUEUE_CLEARANCE_YEARS,
   DFDA_RD_SAVINGS_DAILY,
   DFDA_ROI_RD_ONLY,
@@ -5212,8 +5216,13 @@ export const parameters = {
   DFDA_TRIAL_COST_REDUCTION_PCT,
   DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER,
   DIH_PATIENTS_FUNDABLE_ANNUALLY,
+  DIH_TREASURY_MEDICAL_RESEARCH_PCT,
+  DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL,
   DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL,
+  DIH_TREASURY_TRIAL_SUBSIDIES_PCT,
   DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+  DISEASE_VS_TERRORISM_DEATHS_RATIO,
+  DISEASE_VS_WAR_DEATHS_RATIO,
   DIVIDEND_COVERAGE_FACTOR,
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
@@ -5239,8 +5248,10 @@ export const parameters = {
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
+  GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
+  IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE,
   LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE,
@@ -5281,6 +5292,7 @@ export const parameters = {
   THALIDOMIDE_YLL_PER_EVENT,
   TOTAL_RESEARCH_FUNDING_WITH_TREATY,
   TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS,
+  TREATY_ANNUAL_FUNDING,
   TREATY_BENEFIT_MULTIPLIER_VS_VACCINES,
   TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED,
   TREATY_CAMPAIGN_TOTAL_COST,
@@ -5297,6 +5309,7 @@ export const parameters = {
   TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_TOTAL_ANNUAL_COSTS,
   TREATY_VS_BED_NETS_MULTIPLIER,
+  TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR,
   TYPE_II_ERROR_COST_RATIO,
   TYPE_I_ERROR_BENEFIT_DALYS,
@@ -5304,6 +5317,8 @@ export const parameters = {
   US_CONGRESS_FULL_ADVOCACY_COST,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
   US_SENATE_TREATY_ADVOCACY_COST,
+  VICTORY_BOND_ANNUAL_PAYOUT,
+  VICTORY_BOND_ANNUAL_RETURN_PCT,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
@@ -5339,19 +5354,15 @@ export const parameters = {
   CELL_THERAPY_APPROACHES,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
   CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD,
-  CURRENT_PATIENT_PARTICIPATION_RATE,
   DAYS_PER_YEAR,
   DCT_PLATFORM_FUNDING_MEDIUM,
   DEFENSE_SECTOR_RETENTION_PCT,
-  DFDA_DIRECT_FUNDING_COST_PER_DALY,
-  DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
   DFDA_NPV_ADOPTION_RAMP_YEARS,
   DFDA_NPV_ANNUAL_OPEX,
   DFDA_NPV_UPFRONT_COST,
   DFDA_OBSERVATIONAL_COST_PER_PATIENT,
   DFDA_OPEX_COMMUNITY,
   DFDA_OPEX_INFRASTRUCTURE,
-  DFDA_OPEX_PCT_OF_TREATY_FUNDING,
   DFDA_OPEX_PLATFORM_MAINTENANCE,
   DFDA_OPEX_REGULATORY,
   DFDA_OPEX_STAFF,
@@ -5364,19 +5375,13 @@ export const parameters = {
   DFDA_UPFRONT_BUILD_MAX,
   DIH_NPV_ANNUAL_OPEX_INITIATIVES,
   DIH_NPV_UPFRONT_COST_INITIATIVES,
-  DIH_TREASURY_MEDICAL_RESEARCH_PCT,
-  DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL,
-  DIH_TREASURY_TRIAL_SUBSIDIES_PCT,
   DISEASE_RELATED_CAREGIVER_PCT,
-  DISEASE_VS_TERRORISM_DEATHS_RATIO,
-  DISEASE_VS_WAR_DEATHS_RATIO,
   EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT,
   EPIGENETIC_TARGETS_COUNT,
   EVENTUALLY_AVOIDABLE_DALY_PCT,
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
-  GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM,
   HOURS_PER_DAY,
@@ -5384,7 +5389,6 @@ export const parameters = {
   HUMAN_PROTEIN_CODING_GENES,
   IAB_BOOTSTRAP_CAMPAIGN_COST,
   IAB_MECHANISM_ANNUAL_COST,
-  IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
   INSTITUTIONAL_INVESTOR_MIN,
   LOBBYIST_BOND_INVESTMENT_MAX,
@@ -5402,7 +5406,6 @@ export const parameters = {
   SECONDS_PER_YEAR,
   TESTED_RELATIONSHIPS_ESTIMATE,
   TOTAL_BOOK_WORDS,
-  TREATY_ANNUAL_FUNDING,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
   TREATY_CAMPAIGN_BUDGET_SUPER_PACS,
@@ -5410,7 +5413,6 @@ export const parameters = {
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE,
   TREATY_REDIRECTED_SPENDING_INFINITE_ROI,
   TREATY_REDUCTION_PCT,
-  TREATY_VS_DIRECT_FUNDING_LEVERAGE,
   TRIAL_RELEVANT_DISEASES_COUNT,
   US_CONGRESS_MEMBER_COUNT,
   US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND,
@@ -5418,8 +5420,6 @@ export const parameters = {
   US_VS_SINGAPORE_SPENDING_GAP,
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
-  VICTORY_BOND_ANNUAL_PAYOUT,
-  VICTORY_BOND_ANNUAL_RETURN_PCT,
   VICTORY_BOND_FUNDING_PCT
 } as const;
 
@@ -7345,8 +7345,8 @@ export const citations: Record<string, Citation> = {
 export const PARAMETER_STATS = {
   total: 445,
   external: 182,
-  calculated: 147,
-  definitions: 116,
+  calculated: 162,
+  definitions: 101,
   citations: 140,
 } as const;
 
