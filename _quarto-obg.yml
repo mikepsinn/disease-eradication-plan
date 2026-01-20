@@ -16,8 +16,8 @@ dih-render:
   netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
   netlify-cname: "obg-warondisease.netlify.app"  # DNS: obg.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
-  favicon-prompt: "Letters 'OBG' or a pie chart with optimization arrows. Represents Optimal Budget Generator - evidence-based budget allocation."
-  og-image-prompt: "Visualization of optimal budget allocation - showing budget categories being optimized through evidence-based methods. Include pie charts, allocation flows, and welfare maximization indicators across spending categories."
+  favicon-prompt: "Pie chart with upward arrow"
+  og-image-prompt: "Optimal budget allocation: pie charts showing spending categories optimized through evidence. Allocation flows, welfare indicators."
 
 profiles:
   default:

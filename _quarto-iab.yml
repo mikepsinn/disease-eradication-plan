@@ -17,8 +17,8 @@ dih-render:
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
   netlify-cname: "incentive-alignment-bonds-iab.netlify.app"  # DNS: iab.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
-  favicon-prompt: "Letters 'IAB' inside a certificate or ribbon badge shape. Represents Incentive Alignment Bonds - a financial mechanism for public good."
-  og-image-prompt: "A visualization of incentive alignment - showing bonds/financial instruments connecting politicians, citizens, and public goods outcomes. Include upward arrows, balanced scales, and flow of value from investments to societal benefits."
+  favicon-prompt: "Dollar sign inside ribbon badge"
+  og-image-prompt: "Incentive alignment: bonds connecting politicians, citizens, outcomes. Scales balancing investment and societal benefits."
 
 profiles:
   default:

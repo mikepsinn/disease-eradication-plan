@@ -121,46 +121,27 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
 
 /**
  * Build OG image prompt from config
- * Uses custom prompt from dih-render.og-image-prompt if available
+ * Requires dih-render.og-image-prompt in Quarto config
  */
 function buildOgImagePrompt(config: QuartoConfig): string {
+  if (!config.ogImagePrompt) {
+    throw new Error(`Missing og-image-prompt in dih-render section of ${config.configFile}.yml`);
+  }
+
   const style = VisualStyles.academic;
-
-  return `
-  ${style.style}
-  
-  CONCEPT: ${config.ogImagePrompt}
-  `;
-
+  return `${style.style}\n\nCONCEPT: ${config.ogImagePrompt}`;
 }
 
 /**
  * Build favicon prompt from config
- * Uses custom prompt from dih-render.favicon-prompt if available
+ * Requires dih-render.favicon-prompt in Quarto config
  */
 function buildFaviconPrompt(config: QuartoConfig): string {
-  const basePrompt = `Create an ultra-minimalist favicon icon.
-
-STRICT COLOR RULES:
-- Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
-- Maximum 3 colors in the icon (red, white, black)
-
-ICON CONCEPT:`;
-
-  // Use custom prompt if provided
-  if (config.faviconPrompt) {
-    return `${basePrompt}
-${config.faviconPrompt}
-
-`;
+  if (!config.faviconPrompt) {
+    throw new Error(`Missing favicon-prompt in dih-render section of ${config.configFile}.yml`);
   }
 
-  // Fallback to generic prompt based on title
-  return `${basePrompt}
-Create a simple icon representing: "${config.title}"
-${config.description ? `Context: ${config.description.substring(0, 150)}` : ''}
-
-Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY red, white, and black.`;
+  return `Simple flat icon on solid magenta (#FF00FF) background: ${config.faviconPrompt}. High contrast, no gradients, no shadows, visible at 16px.`;
 }
 
 /**
