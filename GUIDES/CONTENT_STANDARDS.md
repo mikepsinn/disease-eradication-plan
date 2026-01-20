@@ -41,7 +41,6 @@ Every markdown file needs this header. These fields are essential for our automa
 title: "A Clear and Descriptive Title"
 description: "One sentence summary (max 140 chars)"
 published: true # false for drafts
-date: "YYYY-MM-DDTHH:MM:SS.sssZ" # Last modified date, managed by script
 tags: [keyword1, keyword2]
 lastFormatted: "YYYY-MM-DD"
 lastStyleCheck: "YYYY-MM-DD"

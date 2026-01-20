@@ -44,7 +44,7 @@ _manual
 # eBook build output
 *.epub
 *.mobi
-*.pdf
+#*.pdf
 /.idea
 /venv/
 __pycache__

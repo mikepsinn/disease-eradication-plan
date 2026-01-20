@@ -14,7 +14,7 @@ project:
 dih-render:
   index-source: knowledge/appendix/dfda-spec-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  pdf-output-file: dfda-paper.pdf
+  pdf-output-file: dfda-spec-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
   netlify-cname: "dfda-spec-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
@@ -40,7 +40,7 @@ website:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /dfda-paper.pdf
+        href: /dfda-spec-paper.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "References"
@@ -193,7 +193,7 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/dfda-paper.pdf" style="color: #8b7355;">📕 PDF</a>
+              <a href="/dfda-spec-paper.pdf" style="color: #8b7355;">📕 PDF</a>
             </p>
           </div>
     include-in-header:
@@ -208,7 +208,7 @@ format:
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
   pdf:
-    output-file: "dfda-paper.pdf"
+    output-file: "dfda-spec-paper.pdf"
     documentclass: article
     echo: false
     toc: true

@@ -414,7 +414,7 @@ Each project has its PDF specified in the config under `dih-render.pdf-output-fi
 - Economics: `economics-paper.pdf`
 - IAB: `incentive-alignment-bonds-paper.pdf`
 - Wishocracy: `wishocracy-rappa-paper.pdf`
-- dFDA Spec: `dfda-paper.pdf`
+- dFDA Spec: `dfda-spec-paper.pdf`
 - dFDA Impact: `dfda-impact-paper.pdf`
 
 All PDFs are output to `_site/<project-name>/` directory.

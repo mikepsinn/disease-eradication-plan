@@ -23,7 +23,7 @@ This document tracks all papers and publications from this project and their pub
 | 2 | The 1% Treaty (Economics) | Paper | [impact.warondisease.org](https://impact.warondisease.org) | 1-percent-treaty-impact.pdf | Draft |
 | 3 | Incentive Alignment Bonds | Paper | [iab.warondisease.org](https://iab.warondisease.org) | incentive-alignment-bonds-paper.pdf | Draft |
 | 4 | Wishocracy (RAPPA) | Paper | [paper.wishocracy.org](https://paper.wishocracy.org) | wishocracy-rappa-paper.pdf | Draft |
-| 5 | dFDA Spec (Methodology) | Paper | [spec.dfda.earth](https://spec.dfda.earth) | dfda-paper.pdf | Draft |
+| 5 | dFDA Spec (Methodology) | Paper | [spec.dfda.earth](https://spec.dfda.earth) | dfda-spec-paper.pdf | Draft |
 | 6 | dFDA Impact (ROI Analysis) | Paper | [impact.dfda.earth](https://impact.dfda.earth) | dfda-impact-paper.pdf | Draft |
 
 ---
