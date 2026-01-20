@@ -6340,7 +6340,7 @@ TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     unit="USD/DALY",
     formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
     confidence="high",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"],
+    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "givewell"],
     inputs=["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     latex_symbol=r"Cost_{treaty,DALY}",  # LaTeX symbol for equations
@@ -6358,7 +6358,7 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     display_name="Expected Cost per DALY (Risk-Adjusted)",
     unit="USD/DALY",
     formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",    confidence="low",
-    keywords=["expected value", "probability weighted", "cost effectiveness", "gates foundation", "givewell", "political risk", "uncertainty"],
+    keywords=["expected value", "probability weighted", "cost effectiveness", "givewell", "political risk", "uncertainty"],
     inputs=["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG", "POLITICAL_SUCCESS_PROBABILITY"],
     compute=lambda ctx: ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"] / ctx["POLITICAL_SUCCESS_PROBABILITY"],
     latex_symbol=r"E[Cost_{DALY}]",  # LaTeX symbol for equations
@@ -6381,7 +6381,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
-    keywords=["philanthropy", "direct funding", "alternative", "open philanthropy", "gates foundation", "npv", "queue clearance"],
+    keywords=["philanthropy", "direct funding", "alternative", "npv", "queue clearance"],
     inputs=['DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
@@ -6399,7 +6399,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     display_name="dFDA Direct Funding Cost per DALY",
     unit="USD/DALY",
     formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
-    keywords=["philanthropy", "direct funding", "cost effectiveness", "open philanthropy", "gates foundation"],
+    keywords=["philanthropy", "direct funding", "cost effectiveness"],
     inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     latex_symbol=r"Cost_{direct,DALY}",  # LaTeX symbol for equations
