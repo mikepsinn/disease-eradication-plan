@@ -24,7 +24,7 @@ class JobConfig:
     display_name: str             # "Build Economics Site"
     project_type: str             # "book" or "website"
     timeout_minutes: int          # 10, 25, or 75
-    build_dir: str                # "_build_temp/economics/_site/economics"
+    build_dir: str                # "_build_temp/economics/_site/1-pct-treaty-impact"
     netlify_site_id: str | None   # Direct site ID from config (preferred)
     netlify_secret: str           # Fallback: "NETLIFY_ECONOMICS_SITE_ID"
     upload_to_zenodo: bool        # True for papers

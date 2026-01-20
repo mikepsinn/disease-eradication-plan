@@ -125,9 +125,28 @@ def escape_yaml_string(text: str) -> str:
         return f"'{text}'"
 
 
+def normalize_abstract(abstract_text: str) -> str:
+    """
+    Normalize a multi-line abstract to a single line for YAML metadata.
+
+    Strips leading/trailing whitespace, collapses multiple spaces, and joins lines.
+
+    Args:
+        abstract_text: Raw abstract text (possibly multi-line from YAML block scalar)
+
+    Returns:
+        Single-line abstract text
+    """
+    if not abstract_text:
+        return ""
+    # Replace newlines with spaces, collapse multiple spaces
+    normalized = re.sub(r'\s+', ' ', abstract_text.strip())
+    return normalized
+
+
 def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
     """
-    Sync descriptions and titles from QMD frontmatter to Quarto YAML configs.
+    Sync descriptions, titles, and abstracts from QMD frontmatter to Quarto YAML configs.
 
     This ensures SEO metadata in YAML configs stays in sync with QMD frontmatter,
     with Quarto variables replaced by their plain text values.
@@ -138,7 +157,7 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
         project_root: Path to project root directory
         variables_path: Path to _variables.yml file
     """
-    print("[*] Syncing descriptions from QMD frontmatter to YAML configs...")
+    print("[*] Syncing descriptions and abstracts from QMD frontmatter to YAML configs...")
 
     # Load variables for substitution
     if not variables_path.exists():
@@ -178,11 +197,12 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                 skipped_count += 1
                 continue
 
-            # Extract title and description with variable substitution
+            # Extract title, description, and abstract with variable substitution
             title = frontmatter.get('title', '')
             description = frontmatter.get('description', '')
+            abstract = frontmatter.get('abstract', '')
 
-            if not title and not description:
+            if not title and not description and not abstract:
                 skipped_count += 1
                 continue
 
@@ -191,18 +211,29 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                 title = substitute_quarto_variables(title, variables)
             if description:
                 description = substitute_quarto_variables(description, variables)
+            if abstract:
+                # Normalize multi-line abstract to single line and substitute variables
+                abstract = normalize_abstract(abstract)
+                abstract = substitute_quarto_variables(abstract, variables)
 
             # Check if updates are needed
-            current_title = config.get('metadata', {}).get('title', '')
-            current_desc = config.get('metadata', {}).get('description', '')
+            # Note: title/description/abstract can be in 'website' section (website projects)
+            # or 'book' section (book projects), not always in 'metadata'
+            website_section = config.get('website', {})
+            book_section = config.get('book', {})
 
-            if title == current_title and description == current_desc:
+            # Get current values from the appropriate section
+            current_title = website_section.get('title', '') or book_section.get('title', '')
+            current_desc = website_section.get('description', '') or book_section.get('description', '')
+            current_abstract = website_section.get('abstract', '') or book_section.get('abstract', '')
+
+            if title == current_title and description == current_desc and abstract == current_abstract:
                 continue
 
             # Update using text replacement to preserve formatting
             updated = False
             if title and title != current_title:
-                # Find and replace title line in metadata section
+                # Find and replace title line (in website or book section)
                 title_pattern = r'(^  title:\s*)["\']?.*?["\']?\s*$'
                 title_replacement = f'  title: {escape_yaml_string(title)}'
                 new_content = re.sub(title_pattern, title_replacement, content, count=1, flags=re.MULTILINE)
@@ -211,13 +242,32 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                     updated = True
 
             if description and description != current_desc:
-                # Find and replace description line in metadata section
+                # Find and replace description line (in website or book section)
                 desc_pattern = r'(^  description:\s*)["\']?.*?["\']?\s*$'
                 desc_replacement = f'  description: {escape_yaml_string(description)}'
                 new_content = re.sub(desc_pattern, desc_replacement, content, count=1, flags=re.MULTILINE)
                 if new_content != content:
                     content = new_content
                     updated = True
+
+            if abstract and abstract != current_abstract:
+                # Find and replace abstract line (in website or book section)
+                abstract_pattern = r'(^  abstract:\s*)["\']?.*?["\']?\s*$'
+                abstract_replacement = f'  abstract: {escape_yaml_string(abstract)}'
+                new_content = re.sub(abstract_pattern, abstract_replacement, content, count=1, flags=re.MULTILINE)
+                if new_content != content:
+                    content = new_content
+                    updated = True
+                else:
+                    # Abstract line doesn't exist yet - add it after description in website/book section
+                    # Look for the first description line in the file (which will be in website or book section)
+                    desc_line_pattern = r'(^  description:\s*["\']?.*?["\']?\s*$)'
+                    desc_match = re.search(desc_line_pattern, content, flags=re.MULTILINE)
+                    if desc_match:
+                        insert_pos = desc_match.end()
+                        abstract_line = f'\n  abstract: {escape_yaml_string(abstract)}'
+                        content = content[:insert_pos] + abstract_line + content[insert_pos:]
+                        updated = True
 
             if updated:
                 # Write back with original line endings
@@ -227,6 +277,8 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                     print(f"     Title: {title[:80]}...")
                 if description and description != current_desc:
                     print(f"     Description: {description[:80]}...")
+                if abstract and abstract != current_abstract:
+                    print(f"     Abstract: {abstract[:80]}...")
                 updated_count += 1
 
         except Exception as e:

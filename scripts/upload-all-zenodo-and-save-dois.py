@@ -19,6 +19,7 @@ from __future__ import annotations
 import sys
 import subprocess
 import io
+import shutil
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -262,6 +263,9 @@ def main():
 
     # Build all PDFs first (fail fast if any build fails)
     print("Building PDFs (smallest first)...")
+    assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
+    assets_pdf_dir.mkdir(parents=True, exist_ok=True)
+
     for paper_key in sorted_keys:
         info = papers[paper_key]
         if not rebuild_paper(paper_key, verbose=verbose):
@@ -272,6 +276,11 @@ def main():
         if not pdf_path.exists():
             print(f"\nFATAL: PDF not found after build: {pdf_path}")
             return 1
+
+        # Copy PDF to assets/pdfs/
+        dest_path = assets_pdf_dir / pdf_path.name
+        shutil.copy2(pdf_path, dest_path)
+        print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
 
     # Upload each paper (same order as build, fail-fast on errors)
     results = {}

@@ -254,7 +254,7 @@ Generating PDFs with Standard Review...
 
 [Step 3/5] PDF Generation
   Running: python scripts/render-quarto.py economics --to pdf
-  ✓ Generated: _site/economics/economics-paper.pdf (1.3 MB)
+  ✓ Generated: _site/1-pct-treaty-impact/economics-paper.pdf (1.3 MB)
   ✓ No Python code leakage detected
 
 [Step 4/5] Post-Render Validation

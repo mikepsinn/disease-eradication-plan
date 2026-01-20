@@ -47,7 +47,7 @@ act workflow_dispatch \
 1. ✅ Sets up Python 3.10, Quarto, and dependencies
 2. ✅ Installs LaTeX (TinyTeX) for PDF generation
 3. ✅ Runs `python scripts/render-economics-website.py`
-4. ✅ Validates PDF exists at `_site/economics/dih-economic-models.pdf`
+4. ✅ Validates PDF exists at `_site/1-pct-treaty-impact/dih-economic-models.pdf`
 5. ✅ Uploads artifacts to `./act-artifacts/`
 6. ⏭️ Skips Netlify deployment (requires secrets)
 
@@ -55,8 +55,8 @@ act workflow_dispatch \
 
 If successful, you'll see:
 ```
-✅ PDF found in correct location: _site/economics/dih-economic-models.pdf
--rw-r--r-- 1 user user 32M Jan 15 10:30 _site/economics/dih-economic-models.pdf
+✅ PDF found in correct location: _site/1-pct-treaty-impact/dih-economic-models.pdf
+-rw-r--r-- 1 user user 32M Jan 15 10:30 _site/1-pct-treaty-impact/dih-economic-models.pdf
 ```
 
 The PDF will be available in: `act-artifacts/economics-site-test/dih-economic-models.pdf`
@@ -81,7 +81,7 @@ If the build succeeds but PDF is missing:
    ```
    POST-PROCESSING ECONOMICS PDF
    [*] Found PDF in wrong location: The-1%-Treaty-...pdf
-   [*] Moving to: _site/economics/dih-economic-models.pdf
+   [*] Moving to: _site/1-pct-treaty-impact/dih-economic-models.pdf
    [OK] PDF moved successfully
    ```
 

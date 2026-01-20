@@ -6,8 +6,8 @@
       "id": "1-pct-treaty-impact",
       "type": "book",
       "title": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
-      "description": "Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D\nproductivity continues to decline—costing $2.3 billion per approved drug with 15-year development timelines.\nWe analyze the health and economic impact of an international treaty redirecting 1% of military spending\n($27.2 billion annually) to pragmatic clinical trials modeled on the RECOVERY trial framework, which\ndemonstrated treatment validation at $929 per patient versus traditional trial costs exceeding $40,000.\nUsing Monte Carlo simulation with empirically-derived parameters, we estimate this reallocation could:\n(1) advance global treatment access by 207 years relative to current trajectories, (2) prevent 10.5 billion\ncumulative disability-adjusted life years (DALYs) lost to untreated disease, and (3) generate $30 quadrillion\nin present-value economic benefits through reduced mortality, morbidity, and healthcare costs. The intervention\nachieves a cost-effectiveness ratio of $0.0050 per DALY averted—approximately 10,000 times more cost-effective\nthan the WHO threshold for highly cost-effective interventions. We present sensitivity analyses across\nconservative, expected, and optimistic scenarios, demonstrating robust positive returns under all examined\nparameter combinations. The analysis provides quantitative support for international coordination on\nmedical research funding as a complement to existing health security frameworks.\n",
-      "abstract": "Global military expenditure reached $2.72 trillion in 2024, while the pharmaceutical industry's R&D\nproductivity continues to decline—costing $2.3 billion per approved drug with 15-year development timelines.\nWe analyze the health and economic impact of an international treaty redirecting 1% of military spending\n($27.2 billion annually) to pragmatic clinical trials modeled on the RECOVERY trial framework, which\ndemonstrated treatment validation at $929 per patient versus traditional trial costs exceeding $40,000.\nUsing Monte Carlo simulation with empirically-derived parameters, we estimate this reallocation could:\n(1) advance global treatment access by 207 years relative to current trajectories, (2) prevent 10.5 billion\ncumulative disability-adjusted life years (DALYs) lost to untreated disease, and (3) generate $30 quadrillion\nin present-value economic benefits through reduced mortality, morbidity, and healthcare costs. The intervention\nachieves a cost-effectiveness ratio of $0.0050 per DALY averted—approximately 10,000 times more cost-effective\nthan the WHO threshold for highly cost-effective interventions. We present sensitivity analyses across\nconservative, expected, and optimistic scenarios, demonstrating robust positive returns under all examined\nparameter combinations. The analysis provides quantitative support for international coordination on\nmedical research funding as a complement to existing health security frameworks.\n",
+      "description": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have no effective treatment. At current trial capacity, finding cures for all of them takes ~443 years (95% CI: 324 years-712 years). Effectively forever. Every person alive today, and their children, and their grandchildren, will die of diseases we could cure if we tried. We are not trying. We spend {{< var global_military_spending >}}/year preparing to destroy each other, and a fraction of that finding ways to heal each other. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1)×. The queue clears in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. The average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. This timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY—50.3k:1 (95% CI: 23.7k:1-112k:1)× better than the most effective global health interventions. Military spending creates depreciating assets: weapons become obsolete, enemies become allies, threats dissolve. Medical research creates appreciating assets: every cure compounds in value forever, benefiting every future generation. This is not charity. It is the highest-return reallocation in human history. The choice between a world of war and a world of health is not a matter of resources. It is a matter of will.",
+      "abstract": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have no effective treatment. At current trial capacity, finding cures for all of them takes ~443 years (95% CI: 324 years-712 years). Effectively forever. Every person alive today, and their children, and their grandchildren, will die of diseases we could cure if we tried. We are not trying. We spend {{< var global_military_spending >}}/year preparing to destroy each other, and a fraction of that finding ways to heal each other. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1)×. The queue clears in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. The average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. This timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY—50.3k:1 (95% CI: 23.7k:1-112k:1)× better than the most effective global health interventions. Military spending creates depreciating assets: weapons become obsolete, enemies become allies, threats dissolve. Medical research creates appreciating assets: every cure compounds in value forever, benefiting every future generation. This is not charity. It is the highest-return reallocation in human history. The choice between a world of war and a world of health is not a matter of resources. It is a matter of will.",
       "siteUrl": "https://impact.warondisease.org",
       "favicon": "https://impact.warondisease.org/assets/icons/economics-favicon.png",
       "ogImage": "https://impact.warondisease.org/assets/og/economics-og-1200x630.jpg",
@@ -58,7 +58,7 @@
         "cname": "impact-warondisease.netlify.app"
       },
       "indexSource": "knowledge/economics/1-pct-treaty-impact.qmd",
-      "outputDir": "_site/economics",
+      "outputDir": "_site/1-pct-treaty-impact",
       "publishing": {
         "ownSite": {
           "url": "https://impact.warondisease.org",
@@ -5482,7 +5482,7 @@
             "Confidence Interval Interpretation"
           ],
           "published": true,
-          "lastmod": "2026-01-19"
+          "lastmod": "2026-01-20"
         },
         {
           "path": "knowledge/appendix/optimal-budget-generator-spec.qmd",
@@ -5594,7 +5594,7 @@
             "Current US Discretionary Budget vs. OSL Targets"
           ],
           "published": true,
-          "lastmod": "2026-01-19"
+          "lastmod": "2026-01-20"
         },
         {
           "path": "knowledge/appendix/dfda-spec-paper.qmd",

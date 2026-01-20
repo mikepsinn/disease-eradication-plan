@@ -1,6 +1,23 @@
 ---
 title: 'dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation'
 description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at ~80x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+abstract: |
+  Imagine knowing, for any condition you have, which treatments actually work, ranked by real-world
+  effectiveness from millions of patients, with quantified confidence intervals and side effect rates.
+  Not marketing claims. Not small trials on unrepresentative populations. The actual outcomes of actual
+  people. We could have this now. Billions of people wear devices that track heart rate, sleep, activity,
+  and symptoms daily. They start and stop treatments and observe what happens. This is the largest
+  clinical trial in history, running continuously, and we are throwing away the data. This paper presents
+  the statistical engine to harvest it: a two-stage system where Stage 1
+  ({{< var dfda_observational_cost_per_patient >}}/patient) aggregates millions of natural experiments and
+  scores causal confidence using Bradford Hill criteria, and Stage 2
+  ({{< var recovery_trial_cost_per_patient >}}/patient) confirms top signals through pragmatic trials
+  {{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional Phase III. The output: every
+  treatment ranked by effectiveness. Search any condition and see what works, how well it works, and for
+  whom. Companies register treatments in minutes at zero cost. Patients generate outcome data worth
+  {{< var traditional_phase3_cost_per_patient >}}/patient. The world that results is one where no one
+  suffers from a treatable condition because they did not know the treatment existed, and no one takes a
+  harmful treatment because the harm was hidden in underreported adverse events.
 author:
   - name: Mike P. Sinn
     affiliations:

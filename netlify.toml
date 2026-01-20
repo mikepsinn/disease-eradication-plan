@@ -70,9 +70,9 @@
     
     echo "=== Step 8: Verifying output ==="
     # Check multiple possible output locations
-    if [ -d "_site/economics" ]; then
-      echo "Output directory found: _site/economics"
-      ls -la _site/economics/ | head -10
+    if [ -d "_site/1-pct-treaty-impact" ]; then
+      echo "Output directory found: _site/1-pct-treaty-impact"
+      ls -la _site/1-pct-treaty-impact/ | head -10
       echo "Build completed successfully!"
     elif [ -d "_site" ]; then
       echo "Output directory found: _site (checking contents...)"
@@ -81,12 +81,12 @@
     else
       echo "Checking for any output directories..."
       find . -maxdepth 2 -type d -name "_site*" -o -name "*site*" 2>/dev/null | head -10
-      error_exit "Output directory _site/economics not found"
+      error_exit "Output directory _site/1-pct-treaty-impact not found"
     fi
   """
 
   # Directory to publish - matches output-dir in _quarto-1-pct-treaty-impact.yml
-  publish = "_site/economics"
+  publish = "_site/1-pct-treaty-impact"
 
   # Ignore builds if there are no relevant changes
   # Temporarily disabled to test Python fix

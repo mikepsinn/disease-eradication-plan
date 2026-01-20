@@ -23,20 +23,60 @@ format:
 
 ## Overview
 
-This appendix documents all 10 parameters used in the analysis, organized by type:
+This appendix documents all 12 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 7
-- Calculated values: 2
+- External sources (peer-reviewed): 8
+- Calculated values: 3
 - Core definitions: 1
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (7 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
+[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+
+$$
+\begin{gathered}
+k_{reduce} \\
+= \frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\
+= \frac{\$41K}{\$929} \\
+= 44.1
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_factor.qmd >}}
+
+:::
 
 ### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
@@ -142,6 +182,30 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 {{< include ../figures/distribution-current_trial_slots_available.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Show full details"}
+
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
 
 :::
 

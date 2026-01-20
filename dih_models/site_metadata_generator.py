@@ -24,19 +24,23 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 from dih_models.search_index_generator import SearchIndexGenerator, SearchIndexEntry
+from scripts.lib.yaml_sync_utils import substitute_quarto_variables
 
 
-def extract_site_metadata(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
+def extract_site_metadata(config_path: Path, config_name: str, variables: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
     """
     Extract relevant metadata from a single Quarto config file.
 
     Args:
         config_path: Path to the _quarto-*.yml file
         config_name: Name of the config (e.g., "book", "economics", "iab")
+        variables: Dictionary from _variables.yml for substituting Quarto variables
 
     Returns:
         Dict with site metadata, or None if not a publishable site
     """
+    if variables is None:
+        variables = {}
     with open(config_path, encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
@@ -80,6 +84,14 @@ def extract_site_metadata(config_path: Path, config_name: str) -> Optional[Dict[
     # Skip if no title (not a real site config)
     if not title:
         return None
+
+    # Substitute Quarto variables with plain text values
+    if title:
+        title = substitute_quarto_variables(title, variables)
+    if description:
+        description = substitute_quarto_variables(description, variables)
+    if abstract:
+        abstract = substitute_quarto_variables(abstract, variables)
 
     # Get metadata section
     metadata = config.get("metadata", {})
@@ -241,6 +253,16 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
     # Sort alphabetically for consistent output
     quarto_configs.sort(key=lambda p: p.name)
 
+    # Load variables for Quarto variable substitution
+    variables_path = project_root / "_variables.yml"
+    variables = {}
+    if variables_path.exists():
+        with open(variables_path, encoding="utf-8") as f:
+            variables = yaml.safe_load(f) or {}
+        print(f"[OK] Loaded {len(variables)} variables from _variables.yml")
+    else:
+        print("[WARN] _variables.yml not found - Quarto variables will not be substituted")
+
     # Initialize search index generator for page-level metadata
     search_generator = SearchIndexGenerator(project_root)
 
@@ -255,7 +277,7 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
         config_name = match.group(1)
 
         try:
-            site_meta = extract_site_metadata(config_path, config_name)
+            site_meta = extract_site_metadata(config_path, config_name, variables)
             if site_meta:
                 # Add pages array if this config is known to search generator
                 if config_name in search_generator.quarto_configs:

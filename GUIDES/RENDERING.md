@@ -22,7 +22,7 @@ python scripts/render-book-website.py
 
 ### 2. Economics Analysis
 **Config**: `_quarto-1-pct-treaty-impact.yml`
-**Output**: `_site/economics/`
+**Output**: `_site/1-pct-treaty-impact/`
 **Site**: https://impact.warondisease.org
 
 Renders just the economic analysis and cost-benefit calculations.
@@ -101,7 +101,7 @@ python scripts/render-iab.py
 | What to Render | Command | Output Location |
 |---------------|---------|-----------------|
 | Full book | `python scripts/render-book-website.py` | `_manual/warondisease/` |
-| Economics | `cp _quarto-1-pct-treaty-impact.yml _quarto.yml && quarto render` | `_site/economics/` |
+| Economics | `cp _quarto-1-pct-treaty-impact.yml _quarto.yml && quarto render` | `_site/1-pct-treaty-impact/` |
 | Wishocracy paper | `python scripts/render-wishocracy.py` | `_site/wishocracy/` + `../wishocracy/public/paper/` |
 | IAB paper | `python scripts/render-iab.py` | `_site/iab/` |
 
@@ -118,7 +118,7 @@ python scripts/render-iab.py
 After rendering:
 
 1. **Full Book**: Deploy `_manual/warondisease/` to WarOnDisease.org via GitHub Pages
-2. **Economics**: Deploy `_site/economics/` to impact.warondisease.org
+2. **Economics**: Deploy `_site/1-pct-treaty-impact/` to impact.warondisease.org
 3. **Wishocracy**:
    - Automatically copied to `../wishocracy/public/paper/`
    - Commit and push the wishocracy submodule

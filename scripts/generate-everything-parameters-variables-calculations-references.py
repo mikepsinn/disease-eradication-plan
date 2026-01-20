@@ -45,7 +45,7 @@ Output:
     references.bib in project root
     _analysis/parameter-summary.md
     _manual/warondisease/search-index.json
-    _site/economics/search-index.json
+    _site/1-pct-treaty-impact/search-index.json
     _site/iab/search-index.json
     _site/wishocracy/search-index.json
 
