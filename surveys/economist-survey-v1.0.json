@@ -2933,7 +2933,7 @@
       "formatted_value": "$21.7B",
       "formula": "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
       "latex": "TrialSubsidies = \\$24.462B - \\$0.04B = \\$24.422B",
-      "source_ref": "/knowledge/economics/economics.qmd#funding-allocation",
+      "source_ref": "/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
       "importance_score": 23.9,
       "importance_breakdown": {
         "sensitivity": 0,
@@ -2953,7 +2953,7 @@
           "DFDA_ANNUAL_OPEX",
           "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
         ],
-        "data_source": "/knowledge/economics/economics.qmd#funding-allocation",
+        "data_source": "/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
         "formula_readable": "Medical Research Funding - Dfda Opex",
         "inputs_count": 2
       },

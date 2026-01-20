@@ -20,7 +20,7 @@ Activate this skill when the user:
 
 This project contains 6 Quarto publications:
 1. **Book**: "How to End War and Disease" (`_quarto-book.yml`)
-2. **Economics Paper**: "The 1% Treaty" (`_quarto-economics.yml`)
+2. **Economics Paper**: "The 1% Treaty" (`_quarto-1-pct-treaty-impact.yml`)
 3. **IAB Paper**: "Incentive Alignment Bonds" (`_quarto-iab.yml`)
 4. **Wishocracy Paper**: "RAPPA for Democratic Resource Allocation" (`_quarto-wishocracy.yml`)
 5. **dFDA Spec Paper**: "Two-Stage Real-World Evidence Validation" (`_quarto-dfda-spec.yml`)
@@ -48,7 +48,7 @@ Publication Status (6 papers)
 ─────────────────────────────────────────
 
 Economics Paper (1% Treaty)
-  Config: _quarto-economics.yml
+  Config: _quarto-1-pct-treaty-impact.yml
   ✓ Own Site: deployed (https://impact.warondisease.org)
   ✓ Zenodo: auto-uploaded (DOI: 10.5281/zenodo.18161561)
   ⏳ SSRN: pending
@@ -323,7 +323,7 @@ Claude: Should I change the status from "pending" to "submitted"?
 User: Yes
 Claude: [Shows preview of changes]
 
-Preview of changes to _quarto-economics.yml:
+Preview of changes to _quarto-1-pct-treaty-impact.yml:
 ───────────────────────────────────────────
   preprints:
     - platform: ssrn
@@ -334,7 +334,7 @@ Preview of changes to _quarto-economics.yml:
 
 Apply these changes? (y/n)
 User: y
-Claude: ✓ Updated _quarto-economics.yml
+Claude: ✓ Updated _quarto-1-pct-treaty-impact.yml
 ```
 
 **How to update YAML:**

@@ -37,7 +37,7 @@ book:
   navbar:
     right:
       - text: "Economics"
-        href: knowledge/economics/economics.qmd
+        href: knowledge/economics/1-pct-treaty-impact.qmd
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "IAB Paper"
@@ -66,7 +66,7 @@ book:
     contents:
       - section: "Key Resources"
         contents:
-          - href: knowledge/economics/economics.qmd
+          - href: knowledge/economics/1-pct-treaty-impact.qmd
             text: "Economic Analysis"
           - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
@@ -116,7 +116,7 @@ book:
         - knowledge/proof.qmd # ✅ Part III Intro ~6p
         - knowledge/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
-        - knowledge/economics/economics.qmd # ✅ Rigorous economic analysis
+        - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         - knowledge/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
         - knowledge/futures.qmd # ✅ Intro to Paths ~1p
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
@@ -366,7 +366,7 @@ format:
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
+              <a href="/knowledge/economics/1-pct-treaty-impact.qmd" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
@@ -390,7 +390,7 @@ format:
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
+              <a href="/knowledge/economics/1-pct-treaty-impact.qmd" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |

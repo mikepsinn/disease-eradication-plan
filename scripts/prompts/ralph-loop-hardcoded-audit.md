@@ -94,7 +94,7 @@ REGULATORY_DELAY_DEATHS_GLOBAL_HISTORICAL_30YR: 184.6M
 For processing a single file interactively:
 
 ```bash
-/ralph-loop --max-iterations 5 Replace all hardcoded numbers in knowledge/economics/economics.qmd with variables from _variables.yml. Read _analysis/parameter-summary.md first to find matching variables. Skip 1% (treaty concept) and years in citations.
+/ralph-loop --max-iterations 5 Replace all hardcoded numbers in knowledge/economics/1-pct-treaty-impact.qmd with variables from _variables.yml. Read _analysis/parameter-summary.md first to find matching variables. Skip 1% (treaty concept) and years in citations.
 ```
 
 ---
@@ -103,7 +103,7 @@ For processing a single file interactively:
 
 These files likely have the most hardcoded values:
 
-1. `knowledge/economics/economics.qmd` - Budget and cost figures
+1. `knowledge/economics/1-pct-treaty-impact.qmd` - Budget and cost figures
 2. `knowledge/problem/clinical-trials-crisis.qmd` - Trial statistics
 3. `knowledge/problem/fda-drug-lag.qmd` - Regulatory delay numbers
 4. `knowledge/solution/dfda.qmd` - dFDA cost comparisons

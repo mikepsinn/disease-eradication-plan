@@ -16,10 +16,10 @@
  *   --force               Delete existing section images and regenerate all
  *
  * Examples:
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --retro-futuristic
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --dry-run
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/economics.qmd --force
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --retro-futuristic
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --dry-run
+ *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --force
  */
 
 import dotenv from 'dotenv';

@@ -9,7 +9,7 @@ Produces a detailed analysis including:
 3. Categorized variable reference including context
 
 Usage:
-    python scripts/list-qmd-variables.py knowledge/economics/economics.qmd
+    python scripts/list-qmd-variables.py knowledge/economics/1-pct-treaty-impact.qmd
 """
 
 import sys

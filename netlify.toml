@@ -53,7 +53,7 @@
     
     # Build the site using the render_html.py script (same as GitHub Actions)
     echo "=== Step 7: Building site with Quarto ==="
-    cp _quarto-economics.yml _quarto.yml || error_exit "Failed to copy Quarto config"
+    cp _quarto-1-pct-treaty-impact.yml _quarto.yml || error_exit "Failed to copy Quarto config"
     
     
     # Set environment variables for Quarto
@@ -85,7 +85,7 @@
     fi
   """
 
-  # Directory to publish - matches output-dir in _quarto-economics.yml
+  # Directory to publish - matches output-dir in _quarto-1-pct-treaty-impact.yml
   publish = "_site/economics"
 
   # Ignore builds if there are no relevant changes

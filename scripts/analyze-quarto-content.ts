@@ -10,7 +10,7 @@
  *   npx tsx scripts/analyze-quarto-content.ts <quarto-config> <reference-document>
  *
  * Examples:
- *   npx tsx scripts/analyze-quarto-content.ts _quarto-economics.yml knowledge/economics/economics.qmd
+ *   npx tsx scripts/analyze-quarto-content.ts _quarto-1-pct-treaty-impact.yml knowledge/economics/1-pct-treaty-impact.qmd
  *   npx tsx scripts/analyze-quarto-content.ts _quarto-iab.yml knowledge/appendix/incentive-alignment-bonds-paper.qmd
  */
 
@@ -199,7 +199,7 @@ async function main() {
     console.error(`Usage: npx tsx scripts/analyze-quarto-content.ts <quarto-config> <reference-document>
 
 Examples:
-  npx tsx scripts/analyze-quarto-content.ts _quarto-economics.yml knowledge/economics/economics.qmd
+  npx tsx scripts/analyze-quarto-content.ts _quarto-1-pct-treaty-impact.yml knowledge/economics/1-pct-treaty-impact.qmd
   npx tsx scripts/analyze-quarto-content.ts _quarto-iab.yml knowledge/appendix/incentive-alignment-bonds-paper.qmd
 `);
     process.exit(1);

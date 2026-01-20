@@ -1364,7 +1364,7 @@ export const economistSurvey: EconomistSurvey = {
       description: "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
       formula: "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
       latex: "TrialSubsidies = \\$24.462B - \\$0.04B = \\$24.422B",
-      sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+      sourceRef: "/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
       questions: [
         {
           id: "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_formula_sound",

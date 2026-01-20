@@ -14,7 +14,7 @@ dih-render:
   index-source: knowledge/appendix/wishocracy-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
-  netlify-cname: "wishocracy-warondisease.netlify.app"  # DNS: wishocracy.warondisease.org -> this
+  netlify-cname: "wishocracy-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letter 'W' with a star above it (wish + star)."
 

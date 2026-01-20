@@ -7,7 +7,7 @@
  *   npx tsx scripts/extract-qmd-variables.ts <qmd-file> [output-file]
  *
  * Example:
- *   npx tsx scripts/extract-qmd-variables.ts knowledge/economics/economics.qmd
+ *   npx tsx scripts/extract-qmd-variables.ts knowledge/economics/1-pct-treaty-impact.qmd
  */
 
 import * as fs from "fs";
@@ -221,7 +221,7 @@ async function main() {
     console.log("");
     console.log("Example:");
     console.log(
-      "  npx tsx scripts/extract-qmd-variables.ts knowledge/economics/economics.qmd"
+      "  npx tsx scripts/extract-qmd-variables.ts knowledge/economics/1-pct-treaty-impact.qmd"
     );
     process.exit(1);
   }

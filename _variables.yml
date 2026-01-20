@@ -1247,7 +1247,7 @@
   \ confidence | 95% CI: [$5M, $12M] | Dist: Lognormal | Unit: USD/year | Click to\
   \ view details, calculation & sources\">$8M (95% CI: $5M-$12M)</a>"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_opex_pct_of_treaty_funding\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to Decentralized Framework for Drug Assessment framework\
   \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
@@ -1865,7 +1865,7 @@
   \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$230M (95%\
   \ CI: $150M-$350M)</a>"
 "dih_patients_fundable_annually": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_patients_fundable_annually\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
   \ fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical\
   \ pragmatic trial costs (RECOVERY to PCORnet range). | Calculated from 2 inputs\
@@ -1890,7 +1890,7 @@
   \ \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\
   \\\n= \\$27.2B\n\\end{gathered}\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_medical_research_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to medical research (after bond payouts and IAB incentives)\
   \ | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit:\
@@ -1927,7 +1927,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
   \ trial patient subsidies (all medical research funds after Decentralized Framework\
   \ for Drug Assessment operations) | Calculated from 2 inputs | ✓ High confidence\
@@ -1950,7 +1950,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view details,\
@@ -1992,7 +1992,7 @@
   \ ✓ High confidence | Unit: rate | Click to view details, calculation & sources\"\
   >40%</a>"
 "disease_vs_terrorism_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_terrorism_deaths_ratio\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
   \ disease deaths to 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
   \ ÷ 911_DEATHS | Unit: ratio | Click to view details, calculation & sources\">18.4k:1\
@@ -2001,7 +2001,7 @@
   \ \\\\\n= \\frac{Deaths_{curable,ann}}{Deaths_{9/11}} \\\\\n= \\frac{55M}{3{,}000}\
   \ \\\\\n= 18{,}400\n\\end{gathered}\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-disease_vs_war_deaths_ratio\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Ratio of annual\
   \ disease deaths to war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS\
   \ ÷ WAR_DEATHS | Unit: ratio | Click to view details, calculation & sources\">225:1\
@@ -2901,7 +2901,7 @@
   \ calculation & sources\">14:1</a>"
 "measles_vaccination_roi_cite": "@measles-vaccination-roi"
 "medical_research_pct_of_disease_burden": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-medical_research_pct_of_disease_burden\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Medical research\
   \ spending as percentage of total disease burden | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: MED_RESEARCH ÷ TOTAL_BURDEN | Unit: rate | Click to\
@@ -3829,7 +3829,7 @@
   definition\" data-confidence=\"high\" title=\"Total words in the book | ✓ High confidence\
   \ | Unit: words | Click to view details, calculation & sources\">171k words</a>"
 "total_research_funding_with_treaty": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-total_research_funding_with_treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total global\
   \ research funding (baseline + 1% treaty funding) | Calculated from 2 inputs | ✓\
   \ High confidence | Formula: GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING\
@@ -3876,7 +3876,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_benefit_multiplier_vs_vaccines\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#better-than-the-best-charities\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT\
@@ -4200,7 +4200,7 @@
   \\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror}\
   \ \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}\n$$"
 "treaty_recurring_benefits_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_recurring_benefits_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
   \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
@@ -4235,7 +4235,7 @@
   \ \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\\
   $232B + \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}\n$$"
 "treaty_redirected_spending_infinite_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_redirected_spending_infinite_roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#infinite-roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#infinite-roi\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"ROI when redirecting\
   \ existing spending (no new costs = infinite return) | ✓ High confidence | Formula:\
   \ COMBINED_DIVIDENDS ÷ 0 = ∞ | Unit: ratio | Click to view details, calculation\

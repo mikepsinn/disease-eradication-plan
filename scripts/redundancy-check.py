@@ -10,8 +10,8 @@ Analyzes QMD files for duplicated content at multiple levels:
 
 Usage:
     python scripts/redundancy-check.py <file.qmd>
-    python scripts/redundancy-check.py knowledge/economics/economics.qmd --verbose
-    python scripts/redundancy-check.py knowledge/economics/economics.qmd --output redundancy-report.md
+    python scripts/redundancy-check.py knowledge/economics/1-pct-treaty-impact.qmd --verbose
+    python scripts/redundancy-check.py knowledge/economics/1-pct-treaty-impact.qmd --output redundancy-report.md
 
 Features:
 - Detects duplicate _latex variables and calculates their "redundancy cost"

@@ -144,79 +144,136 @@ class QMDParser:
 class SearchIndexGenerator:
     """Generates search indexes for Quarto projects."""
 
-    # Quarto configuration mapping
-    QUARTO_CONFIGS = {
-        'warondisease': {
-            'config_file': '_quarto-book.yml',
-            'output_dir': '_book/warondisease',
-            'base_url': 'https://manual.WarOnDisease.org',
-            'chapters_key': 'book.chapters'
-        },
-        'economics': {
-            'config_file': '_quarto-economics.yml',
-            'output_dir': '_site/economics',
-            'base_url': 'https://impact.warondisease.org',
-            'chapters_key': 'book.chapters'
-        },
-        'iab': {
-            'config_file': '_quarto-iab.yml',
-            'output_dir': '_site/iab',
-            'base_url': 'https://iab.warondisease.org',
-            'chapters_key': 'book.chapters'
-        },
-        'wishocracy': {
-            'config_file': '_quarto-wishocracy.yml',
-            'output_dir': '_site/wishocracy',
-            'base_url': 'https://paper.wishocracy.org',
-            'chapters_key': 'book.chapters'
-        }
-    }
+    # Configs to skip (test configs, base config that gets overwritten)
+    SKIP_CONFIGS = {'_quarto.yml', '_quarto-test.yml'}
 
     def __init__(self, project_root: Path):
         self.project_root = project_root
         self.parser = QMDParser()
+        self.quarto_configs = self._discover_quarto_configs()
+
+    def _discover_quarto_configs(self) -> Dict[str, Dict[str, Any]]:
+        """Dynamically discover and load all Quarto config files.
+
+        Handles both project types:
+        - 'book' type: uses book.site-url and book.chapters
+        - 'website' type: uses website.site-url and project.render
+        """
+        configs = {}
+
+        # Find all _quarto*.yml files in project root
+        for config_path in self.project_root.glob('_quarto*.yml'):
+            if config_path.name in self.SKIP_CONFIGS:
+                continue
+
+            try:
+                with open(config_path, 'r', encoding='utf-8') as f:
+                    quarto_yaml = yaml.safe_load(f)
+
+                if not quarto_yaml:
+                    continue
+
+                # Extract config name from filename
+                # _quarto-book.yml -> book
+                # _quarto-1-pct-treaty-impact.yml -> 1-pct-treaty-impact
+                config_name = config_path.stem.replace('_quarto-', '').replace('_quarto', 'default')
+
+                # Extract required fields from YAML
+                project = quarto_yaml.get('project', {})
+                book = quarto_yaml.get('book', {})
+                website = quarto_yaml.get('website', {})
+                project_type = project.get('type', 'book')
+
+                # Get output directory (always in project section)
+                output_dir = project.get('output-dir')
+
+                # Determine project type and get files/base_url accordingly
+                # Priority: book.chapters > project.render
+                has_book_chapters = bool(book.get('chapters'))
+                has_render_list = bool(project.get('render'))
+
+                if has_book_chapters:
+                    # Book type: uses book.site-url (or website.site-url) and book.chapters
+                    base_url = book.get('site-url') or website.get('site-url')
+                    files = book.get('chapters', [])
+                    project_type = 'book'
+                elif has_render_list:
+                    # Website type: uses website.site-url and project.render
+                    base_url = website.get('site-url') or book.get('site-url')
+                    files = project.get('render', [])
+                    project_type = 'website'
+                else:
+                    # No files defined
+                    files = []
+                    base_url = book.get('site-url') or website.get('site-url')
+
+                # Skip configs without required fields
+                if not output_dir:
+                    print(f"[WARN] Skipping {config_path.name}: missing output-dir")
+                    continue
+
+                if not base_url:
+                    print(f"[WARN] Skipping {config_path.name}: missing site-url")
+                    continue
+
+                if not files:
+                    print(f"[WARN] Skipping {config_path.name}: no files/chapters defined")
+                    continue
+
+                configs[config_name] = {
+                    'config_file': config_path.name,
+                    'output_dir': output_dir,
+                    'base_url': base_url,
+                    'chapters': files,  # Store files list (works for both types)
+                    'project_type': project_type,
+                }
+
+                print(f"[OK] Loaded config: {config_name} ({config_path.name}) [{project_type}]")
+
+            except yaml.YAMLError as e:
+                print(f"[WARN] Failed to parse {config_path.name}: {e}")
+            except Exception as e:
+                print(f"[WARN] Error loading {config_path.name}: {e}")
+
+        return configs
 
     def get_qmd_files_for_config(self, config_name: str) -> List[Path]:
         """Get list of QMD files to index for a specific config."""
-        config = self.QUARTO_CONFIGS.get(config_name)
+        config = self.quarto_configs.get(config_name)
         if not config:
             return []
 
-        config_path = self.project_root / config['config_file']
-        if not config_path.exists():
-            return []
+        chapters = config.get('chapters', [])
+        qmd_files = []
 
-        try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                quarto_config = yaml.safe_load(f)
-
-            # Get chapters from config
-            chapters = quarto_config.get('book', {}).get('chapters', [])
-            qmd_files = []
-
-            for chapter in chapters:
+        def extract_files(chapter_list: List) -> None:
+            """Recursively extract QMD files from chapter list."""
+            for chapter in chapter_list:
                 if isinstance(chapter, str):
                     qmd_path = self.project_root / chapter
                     if qmd_path.exists() and qmd_path.suffix == '.qmd':
                         qmd_files.append(qmd_path)
                 elif isinstance(chapter, dict):
-                    # Handle chapter groups (e.g., "part: Title")
-                    for key, value in chapter.items():
-                        if key == 'chapters':
-                            for subchapter in value:
-                                if isinstance(subchapter, str):
-                                    qmd_path = self.project_root / subchapter
-                                    if qmd_path.exists() and qmd_path.suffix == '.qmd':
-                                        qmd_files.append(qmd_path)
+                    # Handle various nested structures:
+                    # - part: "Title" with chapters: [...]
+                    # - href: "file.qmd"
+                    if 'href' in chapter:
+                        href = chapter['href']
+                        if href.endswith('.qmd'):
+                            qmd_path = self.project_root / href
+                            if qmd_path.exists():
+                                qmd_files.append(qmd_path)
+                    if 'chapters' in chapter:
+                        extract_files(chapter['chapters'])
+                    if 'contents' in chapter:
+                        extract_files(chapter['contents'])
 
-            return qmd_files
-        except Exception as e:
-            print(f"[WARN] Failed to parse {config['config_file']}: {e}")
-            return []
+        extract_files(chapters)
+        return qmd_files
 
     def qmd_to_url(self, qmd_path: Path, config_name: str) -> str:
         """Convert QMD file path to URL based on config."""
-        config = self.QUARTO_CONFIGS[config_name]
+        config = self.quarto_configs[config_name]
 
         # Convert path to relative from project root
         try:
@@ -322,7 +379,7 @@ class SearchIndexGenerator:
 
     def write_index_json(self, config_name: str, entries: List[SearchIndexEntry]) -> Path:
         """Write search index to JSON file."""
-        config = self.QUARTO_CONFIGS[config_name]
+        config = self.quarto_configs[config_name]
         output_dir = self.project_root / config['output_dir']
         output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -346,7 +403,7 @@ class SearchIndexGenerator:
 
         output_files = {}
 
-        for config_name in self.QUARTO_CONFIGS.keys():
+        for config_name in self.quarto_configs.keys():
             entries = self.generate_index_for_config(config_name)
             if entries:
                 output_file = self.write_index_json(config_name, entries)

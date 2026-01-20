@@ -229,7 +229,7 @@ searches for source, adds to references.qmd, adds citation
 
 ```bash
 # Analyze a specific file for hardcoded values
-npm run review-hardcoded knowledge/economics/economics.qmd
+npm run review-hardcoded knowledge/economics/1-pct-treaty-impact.qmd
 
 # Generates: hardcoded-review-economics.md with:
 # - Exact variable matches for each hardcoded value
@@ -255,7 +255,7 @@ npx tsx scripts/images/generate-image.ts "Flow chart showing treaty adoption"
 
 # Generate and auto-insert into file
 npx tsx scripts/images/generate-image.ts "Cost comparison bar chart" \
-  --file knowledge/economics/economics.qmd \
+  --file knowledge/economics/1-pct-treaty-impact.qmd \
   --alt "Bar chart comparing intervention costs"
 
 # Generate diagram in specific style

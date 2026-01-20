@@ -15,7 +15,7 @@ dih-render:
   index-source: knowledge/appendix/cost-of-change-analysis.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
-  netlify-cname: "cost-of-change-warondisease.netlify.app"  # DNS: cost-of-change.warondisease.org -> this
+  netlify-cname: "cost-of-change-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A dollar sign with a change/transformation arrow."
 

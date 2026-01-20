@@ -132,7 +132,7 @@ For each source file (e.g., `cost-of-war.qmd`):
 
 Point different Quarto books at different audience versions:
 
-### `_quarto-economics.yml` (for foundations)
+### `_quarto-1-pct-treaty-impact.yml` (for foundations)
 ```yaml
 chapters:
   - text: "The Cost of War"

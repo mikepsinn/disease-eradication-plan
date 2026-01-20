@@ -11,7 +11,7 @@ Analyze how parameters are used in economics.qmd to compute usage scores:
 
 Usage:
     from dih_models.usage_analyzer import analyze_document_usage
-    usage_data = analyze_document_usage("knowledge/economics/economics.qmd")
+    usage_data = analyze_document_usage("knowledge/economics/1-pct-treaty-impact.qmd")
 """
 
 import sys
@@ -149,7 +149,7 @@ def print_usage_report(usage_data: Dict[str, Dict[str, Any]], top_n: int = 20):
 
 if __name__ == "__main__":
     # Analyze economics.qmd
-    qmd_path = Path("knowledge/economics/economics.qmd")
+    qmd_path = Path("knowledge/economics/1-pct-treaty-impact.qmd")
 
     if not qmd_path.exists():
         print(f"[ERROR] File not found: {qmd_path}")

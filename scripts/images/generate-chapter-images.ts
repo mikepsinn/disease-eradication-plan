@@ -620,7 +620,7 @@ async function main() {
         console.error('\nIf you want to search by keyword, use a simple keyword without path separators.');
         console.error('Example: npx tsx scripts/generate-project-images.ts economics');
         console.error('\nIf you want to specify a file, use the full path:');
-        console.error('Example: npx tsx scripts/generate-project-images.ts knowledge/economics/economics.qmd');
+        console.error('Example: npx tsx scripts/generate-project-images.ts knowledge/economics/1-pct-treaty-impact.qmd');
         await releaseLock();
         process.exit(1);
       }

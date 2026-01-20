@@ -82,7 +82,7 @@ def main():
 
     # Step 2: Analyze document usage
     print("\n[2/5] Analyzing parameter usage in economics.qmd...")
-    qmd_path = Path("knowledge/economics/economics.qmd")
+    qmd_path = Path("knowledge/economics/1-pct-treaty-impact.qmd")
     usage_data = analyze_document_usage(qmd_path)
     print(f"      Found {len(usage_data)} parameters used in document")
 

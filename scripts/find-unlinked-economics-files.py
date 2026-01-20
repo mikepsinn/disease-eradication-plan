@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Find files in _quarto-economics.yml that are not linked from economics.qmd.
+Find files in _quarto-1-pct-treaty-impact.yml that are not linked from economics.qmd.
 
 This helps identify orphaned content that might need to be removed or
 content that should be added to the main economics page.
@@ -71,7 +71,7 @@ def extract_links_from_markdown(md_path: Path, repo_root: Path) -> set[str]:
 
 def main():
     repo_root = Path(__file__).parent.parent
-    config_path = repo_root / '_quarto-economics.yml'
+    config_path = repo_root / '_quarto-1-pct-treaty-impact.yml'
     economics_path = repo_root / 'knowledge' / 'economics' / 'economics.qmd'
 
     if not config_path.exists():
@@ -89,7 +89,7 @@ def main():
 
     # Get files from config
     config_files = extract_qmd_files_from_config(config_path)
-    print(f"Files in _quarto-economics.yml: {len(config_files)}")
+    print(f"Files in _quarto-1-pct-treaty-impact.yml: {len(config_files)}")
 
     # Get links from economics.qmd
     linked_files = extract_links_from_markdown(economics_path, repo_root)
@@ -128,7 +128,7 @@ def main():
     print("These files are in the economics config but not linked from economics.qmd.")
     print("You may want to:")
     print("  1. Add links to these files in economics.qmd if they're important")
-    print("  2. Remove them from _quarto-economics.yml if they're not needed")
+    print("  2. Remove them from _quarto-1-pct-treaty-impact.yml if they're not needed")
     print("  3. Keep them if they're accessed via sidebar/navbar only")
     print()
 

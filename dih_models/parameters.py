@@ -4922,7 +4922,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
 )  # $21.744B/year (80% of treaty funding)
 DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     source_type="calculated",
     description="Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
     display_name="Annual Clinical Trial Patient Subsidies",
@@ -4935,7 +4935,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
 
 DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     source_type="calculated",
     description="Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
     display_name="Patients Fundable Annually",
@@ -4950,7 +4950,7 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL / TREATY_ANNUAL_FUNDING,
     source_type="definition",
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
     display_name="Medical Research Percentage of Treaty Funding",
     unit="rate",
@@ -4965,7 +4965,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / TREATY_ANNUAL_FUNDING,
     source_type="definition",
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding going directly to patient trial subsidies",
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
     unit="rate",
@@ -4980,7 +4980,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
     source_type="definition",
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
     unit="rate",
@@ -5018,7 +5018,7 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
 
 TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING,
-    source_ref="/knowledge/economics/economics.qmd",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total global research funding (baseline + 1% treaty funding)",
     display_name="Total Global Research Funding (Baseline + 1% treaty Funding)",
@@ -5757,7 +5757,7 @@ TERRORISM_DEATHS_911 = Parameter(
 # Calculated ratios and comparisons
 DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / TERRORISM_DEATHS_911,
-    source_ref="/knowledge/economics/economics.qmd",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Ratio of annual disease deaths to 9/11 terrorism deaths",
     display_name="Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
@@ -5771,7 +5771,7 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
 
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
-    source_ref="/knowledge/economics/economics.qmd",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Ratio of annual disease deaths to war deaths",
     display_name="Ratio of Annual Disease Deaths to War Deaths",
@@ -5786,7 +5786,7 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
 # Medical research as percentage of disease burden
 MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
-    source_ref="/knowledge/economics/economics.qmd",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Medical research spending as percentage of total disease burden",
     display_name="Medical Research Spending as Percentage of Total Disease Burden",
@@ -5976,7 +5976,7 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
 
 TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_ref="/knowledge/economics/economics.qmd",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
     display_name="1% treaty Recurring Annual Benefits",
@@ -6749,7 +6749,7 @@ COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
 _infinite_roi_dividends = round(float(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC) / 1e9)
 TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
     0,  # Placeholder - conceptual parameter for the latex equation only
-    source_ref="/knowledge/economics/economics.qmd#infinite-roi",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#infinite-roi",
     source_type="definition",
     description="ROI when redirecting existing spending (no new costs = infinite return)",
     display_name="Infinite ROI from Redirected Spending",
@@ -6762,7 +6762,7 @@ TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
-    source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#better-than-the-best-charities",
     source_type="calculated",
     description="Treaty system benefit multiplier vs childhood vaccination programs",
     display_name="Treaty System Benefit Multiplier vs Childhood Vaccination Programs",

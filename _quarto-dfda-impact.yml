@@ -16,7 +16,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-impact-paper.pdf
   netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
-  netlify-cname: "dfda-impact-warondisease.netlify.app"  # DNS: dfda-impact.warondisease.org -> this
+  netlify-cname: "dfda-impact-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A pill or capsule with an upward impact arrow."
 

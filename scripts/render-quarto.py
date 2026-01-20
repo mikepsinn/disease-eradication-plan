@@ -125,7 +125,7 @@ def _find_project_root(start_path: Optional[Path] = None) -> Path:
         start_path = Path.cwd()
 
     current = Path(start_path).resolve()
-    markers = ["package.json", "_quarto-book.yml", "_quarto-economics.yml"]
+    markers = ["package.json", "_quarto-book.yml", "_quarto-1-pct-treaty-impact.yml"]
 
     for path in [current] + list(current.parents):
         for marker in markers:

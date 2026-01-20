@@ -55,8 +55,8 @@ This document tracks all papers and publications from this project and their pub
 
 ## 2. The 1% Treaty: Health and Economic Impact (Economics Paper)
 
-**Source:** `_quarto-economics.yml`
-**QMD:** `knowledge/economics/economics.qmd`
+**Source:** `_quarto-1-pct-treaty-impact.yml`
+**QMD:** `knowledge/economics/1-pct-treaty-impact.qmd`
 **Website:** https://impact.warondisease.org
 **Formats:** HTML, PDF
 

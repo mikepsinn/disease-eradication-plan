@@ -567,7 +567,7 @@ Match 43 of 48 (Line 3330)
 Match 44 of 48 (Line 3355)
 ================================================================================
    3352 |     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
-   3353 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+   3353 |     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
    3354 |     source_type="calculated",
 >  3355 |     description="Annual clinical trial patient subsidies (all medical research funds after dFDA operations)",
          |                                                                                            ^^^^               
@@ -581,7 +581,7 @@ Match 45 of 48 (Line 3409)
 ================================================================================
    3406 |     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
    3407 |     source_type="definition",
-   3408 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+   3408 |     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
 >  3409 |     description="Percentage of treaty funding allocated to dFDA platform overhead",
          |                                                            ^^^^                     
    3410 |     display_name="dFDA Overhead Percentage of Treaty Funding",
@@ -593,7 +593,7 @@ Match 45 of 48 (Line 3409)
 Match 46 of 48 (Line 3410)
 ================================================================================
    3407 |     source_type="definition",
-   3408 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+   3408 |     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
    3409 |     description="Percentage of treaty funding allocated to dFDA platform overhead",
 >  3410 |     display_name="dFDA Overhead Percentage of Treaty Funding",
          |                   ^^^^                                         

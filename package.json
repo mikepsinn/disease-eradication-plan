@@ -100,6 +100,8 @@
     "archive:all": "tsx scripts/review/archive-process-all.ts",
     "apply-instruction:all": "tsx scripts/review/apply-instruction-all-files.ts",
     "refactor:parameter": "tsx scripts/rename-parameter.ts",
+    "rename:qmd": "tsx scripts/rename-qmd.ts",
+    "rename:quarto-config": "tsx scripts/rename-quarto-config.ts",
     "tone-down:all": "tsx scripts/review/tone-down-overclaims.ts",
     "economics:find-appendix-content": "tsx scripts/review/find-economics-appendix-content.ts",
     "generate:audience:baseline": "tsx scripts/review/copy-baseline-audience-versions.ts",
@@ -150,7 +152,9 @@
     "volt": "volt",
     "download:notebooklm": "tsx scripts/download-notebooklm-files.ts",
     "analyze:sizes": "tsx scripts/analyze-file-sizes.ts",
-    "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py"
+    "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
+    "netlify:setup": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py",
+    "netlify:list": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py --list"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

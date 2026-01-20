@@ -16,7 +16,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
-  netlify-cname: "dfda-spec-warondisease.netlify.app"  # DNS: dfda-spec.warondisease.org -> this
+  netlify-cname: "dfda-spec-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Pill/capsule inside a magnifying glass."
 

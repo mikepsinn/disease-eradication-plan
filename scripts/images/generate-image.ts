@@ -19,7 +19,7 @@
  *
  *   # Generate and auto-insert into file
  *   npx tsx scripts/images/generate-image.ts "Cost comparison bar chart" \
- *     --file knowledge/economics/economics.qmd \
+ *     --file knowledge/economics/1-pct-treaty-impact.qmd \
  *     --alt "Bar chart comparing intervention costs"
  *
  *   # Generate diagram in specific style

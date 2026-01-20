@@ -21,7 +21,7 @@ python scripts/render-book-website.py
 ```
 
 ### 2. Economics Analysis
-**Config**: `_quarto-economics.yml`
+**Config**: `_quarto-1-pct-treaty-impact.yml`
 **Output**: `_site/economics/`
 **Site**: https://impact.warondisease.org
 
@@ -29,7 +29,7 @@ Renders just the economic analysis and cost-benefit calculations.
 
 ```bash
 # Copy config and render
-cp _quarto-economics.yml _quarto.yml
+cp _quarto-1-pct-treaty-impact.yml _quarto.yml
 quarto render
 ```
 
@@ -101,14 +101,14 @@ python scripts/render-iab.py
 | What to Render | Command | Output Location |
 |---------------|---------|-----------------|
 | Full book | `python scripts/render-book-website.py` | `_book/warondisease/` |
-| Economics | `cp _quarto-economics.yml _quarto.yml && quarto render` | `_site/economics/` |
+| Economics | `cp _quarto-1-pct-treaty-impact.yml _quarto.yml && quarto render` | `_site/economics/` |
 | Wishocracy paper | `python scripts/render-wishocracy.py` | `_site/wishocracy/` + `../wishocracy/public/paper/` |
 | IAB paper | `python scripts/render-iab.py` | `_site/iab/` |
 
 ## Configuration Files
 
 - `_quarto-book.yml` - Full book configuration (85 files)
-- `_quarto-economics.yml` - Economics website (71 files)
+- `_quarto-1-pct-treaty-impact.yml` - Economics website (71 files)
 - `_quarto-wishocracy.yml` - Wishocracy paper only (1 file)
 - `_quarto-iab.yml` - IAB paper only (1 file)
 - `_quarto.yml` - **Active config** (copy one of the above here before rendering)

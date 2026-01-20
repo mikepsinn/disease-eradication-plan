@@ -562,7 +562,7 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
   ```
   DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
-    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation",
     source_type="calculated",
   ```
   - [ ] Reviewed
@@ -1188,7 +1188,7 @@ The U.S. equivalent often costs {{< var traditional_phase3_cost_per_patient >}} 
   ```
   - [ ] Reviewed
 
-## knowledge/economics/economics.qmd
+## knowledge/economics/1-pct-treaty-impact.qmd
 
 - **Line 85** (matched '`RECOVERY_TRIAL_COST_PER_PATIENT`')
   ```

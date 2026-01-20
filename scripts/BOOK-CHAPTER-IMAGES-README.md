@@ -96,7 +96,7 @@ Mood: Authoritative, informative, professional, engaging
 - **API**: Google Gemini Imagen
 
 Example:
-- QMD file: `knowledge/economics/economics.qmd`
+- QMD file: `knowledge/economics/1-pct-treaty-impact.qmd`
 - Image saved: `assets/og-images/knowledge/economics/economics.png`
 
 ### 5. Frontmatter Update
@@ -134,8 +134,8 @@ Generating OG images for book chapters
   [OK] Generated image: assets/og-images/knowledge/problem.png
   [OK] Updated frontmatter in knowledge/problem.qmd
 
-[2/84] Processing: knowledge/economics/economics.qmd
-  [SKIP] knowledge/economics/economics.qmd - already has image: /assets/economics/economics-og.jpg
+[2/84] Processing: knowledge/economics/1-pct-treaty-impact.qmd
+  [SKIP] knowledge/economics/1-pct-treaty-impact.qmd - already has image: /assets/economics/economics-og.jpg
 
 ...
 

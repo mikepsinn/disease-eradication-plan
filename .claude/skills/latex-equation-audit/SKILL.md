@@ -117,7 +117,7 @@ Key benefits include:
 For a quick single-file audit:
 
 ```
-/ralph-loop --max-iterations 5 --completion-promise "FILE_COMPLETE" Check for _latex equation opportunities in knowledge/economics/economics.qmd. For each calculated variable used, check if _latex version exists nearby. If not and context is appropriate, add it. Output FILE_COMPLETE when done.
+/ralph-loop --max-iterations 5 --completion-promise "FILE_COMPLETE" Check for _latex equation opportunities in knowledge/economics/1-pct-treaty-impact.qmd. For each calculated variable used, check if _latex version exists nearby. If not and context is appropriate, add it. Output FILE_COMPLETE when done.
 ```
 
 ## Files to Skip

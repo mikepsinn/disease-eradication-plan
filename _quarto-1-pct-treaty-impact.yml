@@ -8,11 +8,11 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  index-source: knowledge/economics/economics.qmd
+  index-source: knowledge/economics/1-pct-treaty-impact.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
-  netlify-cname: "dih-models.netlify.app"  # DNS: impact.warondisease.org -> this
+  netlify-cname: "economics-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "'1%' text on a scroll or treaty document shape."
 
@@ -205,7 +205,7 @@ language:
 
 # Bibliography: .bib generated from knowledge/references.qmd (source data)
 # Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
-bibliography: references-economics.bib
+bibliography: references-1-pct-treaty-impact.bib
 csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
 
 jupyter: dih-project-kernel
