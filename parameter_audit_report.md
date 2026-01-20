@@ -595,7 +595,7 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
   ```
   - [ ] Reviewed
 
-## index-book.qmd
+## index-manual.qmd
 
 - **Line 394** (matched '`RECOVERY_TRIAL_COST_PER_PATIENT`')
   ```

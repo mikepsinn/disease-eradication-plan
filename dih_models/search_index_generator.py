@@ -174,7 +174,7 @@ class SearchIndexGenerator:
                     continue
 
                 # Extract config name from filename
-                # _quarto-book.yml -> book
+                # _quarto-manual.yml -> book
                 # _quarto-1-pct-treaty-impact.yml -> 1-pct-treaty-impact
                 config_name = config_path.stem.replace('_quarto-', '').replace('_quarto', 'default')
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Generate outline from all headings in .qmd files listed in _quarto-book.yml
+Generate outline from all headings in .qmd files listed in _quarto-manual.yml
 
 Extracts headings (h1-h6) from each chapter file and generates a hierarchical
 outline showing the complete document structure.
@@ -311,7 +311,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Generate outline from headings in _quarto-book.yml chapter files"
+        description="Generate outline from headings in _quarto-manual.yml chapter files"
     )
     parser.add_argument(
         '--output', '-o',
@@ -322,13 +322,13 @@ def main():
     parser.add_argument(
         '--book-config',
         type=str,
-        default='_quarto-book.yml',
-        help='Path to book configuration file (default: _quarto-book.yml)'
+        default='_quarto-manual.yml',
+        help='Path to book configuration file (default: _quarto-manual.yml)'
     )
 
     args = parser.parse_args()
 
-    # Get project root (directory containing _quarto-book.yml)
+    # Get project root (directory containing _quarto-manual.yml)
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     book_config_path = project_root / args.book_config

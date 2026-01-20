@@ -52,7 +52,7 @@ Download links are in the navbar under "Download Book" dropdown:
 
 ## Configuration
 
-### Quarto Config (`_quarto-book.yml`)
+### Quarto Config (`_quarto-manual.yml`)
 
 ```yaml
 format:

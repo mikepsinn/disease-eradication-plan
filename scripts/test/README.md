@@ -97,7 +97,7 @@ VERIFICATION SUMMARY: 16 passed, 0 failed
 - Check that all test files exist in `knowledge/test/`
 
 ### Links not rewritten
-- Verify that `_quarto-book.yml` exists and contains the target files
+- Verify that `_quarto-manual.yml` exists and contains the target files
 - Check that the target files are NOT in `_quarto-test.yml`
 
 ### Verification fails

@@ -46,7 +46,7 @@ except ImportError:
 
 PROJECT_ROOT = Path(__file__).parent.parent
 BASE_DOMAIN = "warondisease.org"
-SKIP_CONFIGS = {"book", "test"}  # book uses main site, test doesn't need deployment
+SKIP_CONFIGS = {"test"}  # test doesn't need deployment; book uses manual.warondisease.org
 
 # Netlify API
 NETLIFY_API = "https://api.netlify.com/api/v1"
@@ -166,8 +166,8 @@ def setup_dns_records(cf_token: str, configs: dict) -> tuple[int, int]:
         if not cname:
             continue
 
-        # Extract subdomain from config name
-        subdomain = config_name.replace("_", "-")
+        # Use subdomain from config's site-url (or fallback to config name)
+        subdomain = info.get("subdomain", config_name.replace("_", "-"))
 
         # Check if record already exists
         if subdomain in existing:
@@ -226,19 +226,21 @@ def get_netlify_team_slug(token: str) -> str | None:
     return None
 
 
-def create_netlify_site(token: str, config_name: str, title: str) -> dict | None:
+def create_netlify_site(token: str, config_name: str, title: str, subdomain: str | None = None) -> dict | None:
     """
     Create a new Netlify site.
 
     Args:
         token: Netlify auth token
-        config_name: Config name (used as subdomain)
+        config_name: Config name (for logging)
         title: Site title from Quarto config
+        subdomain: Subdomain to use (from site-url). If None, derives from config_name.
 
     Returns:
         Site data dict with 'id' and 'url', or None on failure
     """
-    subdomain = config_name.replace("_", "-")
+    if not subdomain:
+        subdomain = config_name.replace("_", "-")
     site_name = f"{subdomain}-warondisease"  # Netlify site name (globally unique)
     custom_domain = f"{subdomain}.{BASE_DOMAIN}"
 
@@ -465,6 +467,21 @@ def find_existing_site(token: str, site_name: str) -> dict | None:
     return None
 
 
+def extract_subdomain_from_url(url: str) -> str | None:
+    """Extract subdomain from a site URL like https://impact.warondisease.org -> impact"""
+    if not url:
+        return None
+    # Remove protocol
+    url = url.replace("https://", "").replace("http://", "")
+    # Get the hostname part (before any path)
+    hostname = url.split("/")[0].lower()
+    # Check if it's a subdomain of warondisease.org
+    if hostname.endswith(f".{BASE_DOMAIN.lower()}"):
+        subdomain = hostname.replace(f".{BASE_DOMAIN.lower()}", "")
+        return subdomain
+    return None
+
+
 def discover_configs() -> dict:
     """
     Discover all Quarto configs and their Netlify status.
@@ -492,12 +509,26 @@ def discover_configs() -> dict:
             print(f"[WARN] Could not read {config_path}: {e}")
             continue
 
-        # Get title
+        # Get title and site-url based on project type
         project_type = config.get("project", {}).get("type", "website")
+        site_url = None
         if project_type == "book":
-            title = config.get("book", {}).get("title", config_name)
+            book = config.get("book", {})
+            title = book.get("title", config_name)
+            site_url = book.get("site-url")
         else:
-            title = config.get("website", {}).get("title", config_name)
+            website = config.get("website", {})
+            title = website.get("title", config_name)
+            site_url = website.get("site-url")
+
+        # Also check website section for books (some have both)
+        if not site_url and "website" in config:
+            site_url = config["website"].get("site-url")
+
+        # Extract subdomain from site-url, or fall back to config name
+        subdomain = extract_subdomain_from_url(site_url)
+        if not subdomain:
+            subdomain = config_name.replace("_", "-")
 
         # Check for existing site ID and CNAME
         dih_render = config.get("dih-render", {})
@@ -512,6 +543,8 @@ def discover_configs() -> dict:
             "site_id": site_id,
             "netlify_cname": netlify_cname,
             "has_site": bool(site_id),
+            "site_url": site_url,
+            "subdomain": subdomain,  # The actual subdomain to use (from site-url or config name)
         }
 
     return configs
@@ -624,14 +657,16 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
     invalid_sites = []
 
     for name, info in sorted(configs.items()):
-        subdomain = name.replace("_", "-")
+        # Use subdomain from config's site-url (or fallback to config name)
+        subdomain = info.get("subdomain", name.replace("_", "-"))
         expected_domain = f"{subdomain}.{BASE_DOMAIN}"
         expected_cname = f"{subdomain}-warondisease.netlify.app"
 
         print(f"\n{'─' * 90}")
         print(f"CONFIG: {name}")
         print(f"  Title: {info['title'][:70]}")
-        print(f"  Expected URL: https://{expected_domain}")
+        print(f"  Site URL: {info.get('site_url', '(not set)')}")
+        print(f"  Expected Domain: https://{expected_domain}")
 
         # Netlify info
         site_id = info.get("site_id")
@@ -709,8 +744,8 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
         print(f"      To fix: Remove 'netlify-site-id' from these configs, then run 'npm run netlify:setup'")
 
     if cf_token:
-        # Check for orphaned DNS records
-        config_subdomains = {n.replace("_", "-") for n in configs.keys()}
+        # Check for orphaned DNS records - use actual subdomains from site-url, not config names
+        config_subdomains = {info.get("subdomain", n.replace("_", "-")) for n, info in configs.items()}
         orphaned = [r for r in dns_records.keys() if r not in config_subdomains and r != "www" and r != "@"]
         if orphaned:
             print(f"\n  Orphaned DNS records (no matching config): {', '.join(orphaned[:10])}")
@@ -764,8 +799,8 @@ def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
         if not site_id:
             continue
 
-        # Calculate expected values
-        subdomain = config_name.replace("_", "-")
+        # Use subdomain from config's site-url (or fallback to config name)
+        subdomain = info.get("subdomain", config_name.replace("_", "-"))
         expected_domain = f"{subdomain}.{BASE_DOMAIN}"
         expected_site_name = f"{subdomain}-warondisease"
 
@@ -854,7 +889,8 @@ def main():
         print(f"\n[1/4] Creating {len(configs_needing_sites)} missing Netlify site(s)...")
         for config_name, info in configs_needing_sites.items():
             print(f"\n  [*] {config_name}: {info['title'][:50]}")
-            site = create_netlify_site(token, config_name, info["title"])
+            subdomain = info.get("subdomain", config_name.replace("_", "-"))
+            site = create_netlify_site(token, config_name, info["title"], subdomain)
             if site and site.get("id"):
                 netlify_cname = site.get("netlify_subdomain", "")
                 if update_config_with_netlify_info(info["path"], site["id"], netlify_cname):
@@ -875,7 +911,8 @@ def main():
     if configs_with_sites:
         for config_name, info in configs_with_sites.items():
             site_id = info.get("site_id")
-            subdomain = config_name.replace("_", "-")
+            # Use subdomain from config's site-url (or fallback to config name)
+            subdomain = info.get("subdomain", config_name.replace("_", "-"))
             expected_domain = f"{subdomain}.{BASE_DOMAIN}"
             expected_site_name = f"{subdomain}-warondisease"
 

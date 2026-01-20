@@ -472,7 +472,7 @@ def get_project_root():
         FileNotFoundError: If project root cannot be found
     """
     # Marker files that indicate the project root
-    markers = ["package.json", "pyproject.toml", "_quarto.yml", "_quarto-book.yml"]
+    markers = ["package.json", "pyproject.toml", "_quarto.yml", "_quarto-manual.yml"]
 
     # Start from current working directory
     current = Path.cwd().resolve()

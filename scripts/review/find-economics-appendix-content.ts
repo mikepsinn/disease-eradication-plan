@@ -60,14 +60,14 @@ Be concise and specific.`;
 
 async function main() {
   console.log('='.repeat(80));
-  console.log('FIND VALUABLE CONTENT FOR ECONOMICS.QMD APPENDIX');
+  console.log('FIND VALUABLE CONTENT FOR 1-PCT-TREATY-IMPACT.QMD APPENDIX');
   console.log('='.repeat(80));
   console.log();
 
   // Read the economics paper
   console.log(`Reading base file: ${ECONOMICS_FILE}`);
   const economicsContent = await fs.readFile(ECONOMICS_FILE, 'utf-8');
-  console.log(`✓ Loaded economics.qmd (${economicsContent.length} characters)`);
+  console.log(`✓ Loaded 1-pct-treaty-impact.qmd (${economicsContent.length} characters)`);
   console.log();
 
   // Get all book files
@@ -84,8 +84,8 @@ async function main() {
     if (normalizedFile.includes('-academic.qmd')) return false;
     if (normalizedFile.includes('-foundations.qmd')) return false;
 
-    // Exclude economics.qmd itself
-    if (normalizedFile.includes('economics.qmd')) return false;
+    // Exclude the 1% treaty impact paper itself and related files
+    if (normalizedFile.includes('1-pct-treaty-impact.qmd')) return false;
     if (normalizedFile.includes('knowledge/economics/')) return false;
 
     return true;

@@ -23,6 +23,8 @@ from typing import Any, Dict, List, Optional
 
 import yaml
 
+from dih_models.search_index_generator import SearchIndexGenerator, SearchIndexEntry
+
 
 def extract_site_metadata(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
     """
@@ -174,6 +176,54 @@ def extract_site_metadata(config_path: Path, config_name: str) -> Optional[Dict[
     return site_meta
 
 
+def extract_pages_for_site(search_generator: SearchIndexGenerator, config_name: str) -> List[Dict[str, Any]]:
+    """
+    Extract page-level metadata for a site using the search index generator.
+
+    Args:
+        search_generator: Initialized SearchIndexGenerator instance
+        config_name: Name of the config (e.g., "manual", "economics")
+
+    Returns:
+        List of page metadata dictionaries
+    """
+    config = search_generator.quarto_configs.get(config_name)
+    if not config:
+        return []
+
+    base_url = config.get("base_url", "").rstrip("/")
+    entries = search_generator.generate_index_for_config(config_name)
+
+    pages = []
+    for entry in entries:
+        # Build absolute URL for this page
+        page_url = f"{base_url}{entry.url}" if base_url else entry.url
+
+        # Build absolute image URL if relative
+        image_url = entry.image
+        if image_url and not image_url.startswith("http"):
+            image_url = f"{base_url}/{image_url.lstrip('/')}" if base_url else image_url
+
+        page_meta = {
+            "path": entry.path,
+            "url": page_url,
+            "title": entry.title,
+            "description": entry.description,
+            "image": image_url,
+            "tags": entry.tags if entry.tags else None,
+            "excerpt": entry.excerpt,
+            "sections": entry.sections if entry.sections else None,
+            "published": entry.published,
+            "lastmod": entry.lastmod,
+        }
+
+        # Remove None values to keep JSON clean
+        page_meta = {k: v for k, v in page_meta.items() if v is not None}
+        pages.append(page_meta)
+
+    return pages
+
+
 def generate_sites_metadata(project_root: Path, output_filename: str = "sites-metadata.json") -> Path:
     """
     Generate a JSON file containing metadata for all Quarto sites.
@@ -191,10 +241,13 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
     # Sort alphabetically for consistent output
     quarto_configs.sort(key=lambda p: p.name)
 
+    # Initialize search index generator for page-level metadata
+    search_generator = SearchIndexGenerator(project_root)
+
     sites = []
 
     for config_path in quarto_configs:
-        # Extract config name from filename (e.g., "_quarto-book.yml" -> "book")
+        # Extract config name from filename (e.g., "_quarto-manual.yml" -> "book")
         match = re.match(r"_quarto-(.+)\.yml", config_path.name)
         if not match:
             continue
@@ -204,8 +257,15 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
         try:
             site_meta = extract_site_metadata(config_path, config_name)
             if site_meta:
+                # Add pages array if this config is known to search generator
+                if config_name in search_generator.quarto_configs:
+                    pages = extract_pages_for_site(search_generator, config_name)
+                    site_meta["pages"] = pages
+                    site_meta["pageCount"] = len(pages)
+
                 sites.append(site_meta)
-                print(f"[OK] Extracted metadata from {config_path.name}: {site_meta.get('title', 'Untitled')[:50]}")
+                page_count = site_meta.get("pageCount", 0)
+                print(f"[OK] Extracted metadata from {config_path.name}: {site_meta.get('title', 'Untitled')[:50]} ({page_count} pages)")
         except Exception as e:
             print(f"[WARN] Failed to parse {config_path.name}: {e}")
 

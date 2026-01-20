@@ -12,7 +12,7 @@ export function createReferenceLinkerAgent(memory?: Memory): Agent {
     instructions: `You are a Reference Linker agent. Your job is to ensure all numbers and claims link to:
 
 1. Parameter objects in dih_models/parameters.py
-2. Calculations in _quarto-book.yml or specific files
+2. Calculations in _quarto-manual.yml or specific files
 3. References in knowledge/references.qmd
 4. Cross-references to related sections
 

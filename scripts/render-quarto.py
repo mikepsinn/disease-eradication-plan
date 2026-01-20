@@ -120,12 +120,12 @@ def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verb
 
 
 def _find_project_root(start_path: Optional[Path] = None) -> Path:
-    """Find the project root by looking for package.json or _quarto-book.yml."""
+    """Find the project root by looking for package.json or _quarto-manual.yml."""
     if start_path is None:
         start_path = Path.cwd()
 
     current = Path(start_path).resolve()
-    markers = ["package.json", "_quarto-book.yml", "_quarto-1-pct-treaty-impact.yml"]
+    markers = ["package.json", "_quarto-manual.yml", "_quarto-1-pct-treaty-impact.yml"]
 
     for path in [current] + list(current.parents):
         for marker in markers:
@@ -413,10 +413,10 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
             print("[*] No fallback-404-redirect-domain, skipping cross-site link rewriting", flush=True)
         return build_temp
 
-    target_yml = project_root / "_quarto-book.yml"
+    target_yml = project_root / "_quarto-manual.yml"
     if not target_yml.exists():
         if verbose:
-            print("[WARNING] _quarto-book.yml not found, skipping link rewriting", file=sys.stderr)
+            print("[WARNING] _quarto-manual.yml not found, skipping link rewriting", file=sys.stderr)
         return build_temp
 
     # Parse configs to get file lists

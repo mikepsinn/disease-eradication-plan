@@ -11,10 +11,10 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  index-source: index-book.qmd  # Simple copy, no path transformation needed
+  index-source: index-manual.qmd  # Simple copy, no path transformation needed
   # No target-url - this IS the main book site
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
-  netlify-cname: "warondisease-org.netlify.app"  # DNS: manual.warondisease.org -> this
+  netlify-cname: "manual-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A SKULL with a bold X crossed through it, or a VIRUS/GERM shape with a prohibition sign (circle with diagonal line) through it. The symbol should clearly communicate 'death to disease' or 'no more disease'. Think: a warning sign or prohibition symbol, but for disease/death."
 

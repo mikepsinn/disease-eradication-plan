@@ -1552,7 +1552,7 @@ def main():
     # Exclude references.qmd from validation
     qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
     # Exclude index.qmd (use index-book.qmd instead - index.qmd is for website, index-book.qmd is for book)
-    qmd_files = [f for f in qmd_files if not f.endswith("index.qmd") or f.endswith("index-book.qmd")]
+    qmd_files = [f for f in qmd_files if not f.endswith("index.qmd") or f.endswith("index-manual.qmd")]
 
     # Find all .md files
     md_files = glob("**/*.md", recursive=True)

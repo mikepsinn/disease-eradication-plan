@@ -3,7 +3,7 @@
 """
 Audiobook Generator
 
-Generates an audiobook from all chapters in _quarto-book.yml using Gemini TTS.
+Generates an audiobook from all chapters in _quarto-manual.yml using Gemini TTS.
 Extracts prose content from QMD files, converts to speech, and outputs individual
 chapter audio files plus a combined full audiobook.
 
@@ -32,7 +32,7 @@ from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, DEFAULT_SP
 
 # Configuration
 PROJECT_ROOT = Path(__file__).parent.parent
-QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-book.yml"
+QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-manual.yml"
 OUTPUT_DIR = PROJECT_ROOT / "audiobook"
 CHAPTER_AUDIO_DIR = OUTPUT_DIR / "chapters"
 
@@ -41,7 +41,7 @@ NARRATOR_VOICE = DEFAULT_VOICE
 
 
 def load_book_config() -> dict:
-    """Load and parse _quarto-book.yml."""
+    """Load and parse _quarto-manual.yml."""
     with open(QUARTO_BOOK_YML, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
 

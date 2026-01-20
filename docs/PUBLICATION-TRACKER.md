@@ -30,8 +30,8 @@ This document tracks all papers and publications from this project and their pub
 
 ## 1. How to End War and Disease (Book)
 
-**Source:** `_quarto-book.yml`
-**QMD:** `index-book.qmd` + 81 chapters
+**Source:** `_quarto-manual.yml`
+**QMD:** `index-manual.qmd` + 81 chapters
 **Website:** https://manual.WarOnDisease.org
 **Formats:** HTML, PDF, EPUB
 

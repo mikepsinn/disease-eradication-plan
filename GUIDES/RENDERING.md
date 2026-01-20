@@ -5,7 +5,7 @@ This project supports multiple rendering configurations to publish different vie
 ## Available Render Configurations
 
 ### 1. Full Book (Default)
-**Config**: `_quarto-book.yml`
+**Config**: `_quarto-manual.yml`
 **Output**: `_book/warondisease/`
 **Site**: https://manual.WarOnDisease.org
 
@@ -13,7 +13,7 @@ Renders the complete book with all chapters, appendices, and references.
 
 ```bash
 # Copy config and render
-cp _quarto-book.yml _quarto.yml
+cp _quarto-manual.yml _quarto.yml
 quarto render
 
 # Or use the script
@@ -107,7 +107,7 @@ python scripts/render-iab.py
 
 ## Configuration Files
 
-- `_quarto-book.yml` - Full book configuration (85 files)
+- `_quarto-manual.yml` - Full book configuration (85 files)
 - `_quarto-1-pct-treaty-impact.yml` - Economics website (71 files)
 - `_quarto-wishocracy.yml` - Wishocracy paper only (1 file)
 - `_quarto-iab.yml` - IAB paper only (1 file)

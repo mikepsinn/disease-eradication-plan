@@ -568,7 +568,7 @@ export async function parseQuartoYml(): Promise<BookStructure> {
 }
 
 /**
- * Gets all book chapter and appendix files from _quarto-book.yml, excluding variant files
+ * Gets all book chapter and appendix files from _quarto-manual.yml, excluding variant files
  * This is the standard list of files to process for most review/edit operations
  * Only includes files explicitly listed in the book configuration
  * Excluded files:
@@ -577,8 +577,8 @@ export async function parseQuartoYml(): Promise<BookStructure> {
  * - knowledge/appendix/parameters-and-calculations.qmd (auto-generated)
  */
 export async function getBookFilesForProcessing(): Promise<string[]> {
-  console.log('  → Reading _quarto-book.yml...');
-  const quartoYmlPath = path.join(getProjectRoot(), '_quarto-book.yml');
+  console.log('  → Reading _quarto-manual.yml...');
+  const quartoYmlPath = path.join(getProjectRoot(), '_quarto-manual.yml');
   const quartoYmlContent = await fs.readFile(quartoYmlPath, 'utf-8');
   const doc: any = yaml.load(quartoYmlContent);
 
@@ -613,10 +613,10 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
     allFiles = allFiles.concat(extractFiles(doc.book.chapters));
   }
 
-  // Note: appendices are now included in chapters (see line 108 comment in _quarto-book.yml)
+  // Note: appendices are now included in chapters (see line 108 comment in _quarto-manual.yml)
   // They're organized as parts within the chapters array
 
-  console.log(`  → Found ${allFiles.length} files in _quarto-book.yml`);
+  console.log(`  → Found ${allFiles.length} files in _quarto-manual.yml`);
 
   // Filter out variant files, references, and auto-generated files
   console.log('  → Filtering out -academic/-foundations variants, references.qmd, and auto-generated files...');

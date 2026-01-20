@@ -19,7 +19,7 @@ Activate this skill when the user:
 ## Publications in This Project
 
 This project contains 6 Quarto publications:
-1. **Book**: "How to End War and Disease" (`_quarto-book.yml`)
+1. **Book**: "How to End War and Disease" (`_quarto-manual.yml`)
 2. **Economics Paper**: "The 1% Treaty" (`_quarto-1-pct-treaty-impact.yml`)
 3. **IAB Paper**: "Incentive Alignment Bonds" (`_quarto-iab.yml`)
 4. **Wishocracy Paper**: "RAPPA for Democratic Resource Allocation" (`_quarto-wishocracy.yml`)

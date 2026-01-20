@@ -170,7 +170,7 @@ Quarto converts `.qmd` -> `.html` (web) or internal references (PDF/EPUB).
 Correct: `[Link](../path/to/file.qmd#section-id)`
 Wrong: `[Link](../path/to/file.html)` (breaks PDF/EPUB)
 
-Links only work if target is in `_quarto-book.yml`. External URLs use full paths.
+Links only work if target is in `_quarto-manual.yml`. External URLs use full paths.
 
 ## Content Standards
 
