@@ -34,7 +34,7 @@ Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 
 10,000 years. Zero progress.
 
-![historical life expectancy](../../assets/life-expectancy-historical.jpg)
+![historical life expectancy](../../assets/images/life-expectancy-historical.jpg)
 
 ### 1883 – The Year You Figured It Out
 
@@ -66,7 +66,7 @@ These requirements evolved into the [Phase 1 Safety Trial](https://en.wikipedia.
 
 The consistent [3.82 years per decade increase](../references.qmd#life-expectancy-increase-pre-1962) in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
 
-![Fda safety trials life expectancy](../../assets/fda-safety-trials-life-expectancy.png)
+![Fda safety trials life expectancy](../../assets/images/fda-safety-trials-life-expectancy.png)
 
 The regulations had no measurable positive or negative impact on developing life-saving interventions.
 
@@ -78,7 +78,7 @@ Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki
 
 Despite this success story for safety regulations, newspaper stories like the one below created public outcry for *more* regulation - targeting efficacy testing instead.
 
-![Thalidomide](../../assets/thalidomide.jpg)
+![Thalidomide](../../assets/images/thalidomide.jpg)
 
 ### 1962 – The Year You Decided to Make Everything Worse
 
@@ -122,7 +122,7 @@ The new regulations immediately **reduced new drug approvals by {{< var post_196
 
 Not gradually. Immediately.
 
-![Graph showing new treatments per year decline after 1962](../../assets/new-treatments-per-year-2.png)
+![Graph showing new treatments per year decline after 1962](../../assets/images/new-treatments-per-year-2.png)
 
 #### What Happened to Costs
 
@@ -156,7 +156,7 @@ Here's what happened in 1962:
 
 It strangely quickly dropped by [60%](../references.qmd#post-1962-life-expectancy-slowdown). To 1.54 years per decade.
 
-![Average Life Expectancy Over Time](../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
+![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
 From 1880 to 1960: [3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962).
 
@@ -170,7 +170,7 @@ Some claim "diminishing returns explain the slowdown."
 
 Diminishing returns produce exponential decay. A smooth curve that gradually flattens over time.
 
-![What diminishing returns would look like](../../assets/diminishing-returns.png)
+![What diminishing returns would look like](../../assets/images/diminishing-returns.png)
 
 This isn't what happened.
 
@@ -200,7 +200,7 @@ A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) o
 
 More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between developing new cancer treatments and cancer survival over 30 years.
 
-![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../../assets/more-surviving-more-therapies.png)
+![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../../assets/images/more-surviving-more-therapies.png)
 
 ## The Summary
 

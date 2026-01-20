@@ -69,7 +69,7 @@ When a patient searches for their condition, they see:
 3. **Trial Access**: One-click enrollment in available trials, from home, via any device
 4. **Personalized Predictions**: Based on their health data, which treatments work best for people like them
 
-![Treatment Rankings Example - Patients see all treatments ranked by real-world effectiveness for their condition](../../assets/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
+![Treatment Rankings Example - Patients see all treatments ranked by real-world effectiveness for their condition](../../assets/images/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
 
 ### What Companies See
 
@@ -165,9 +165,9 @@ This is not a replacement for RCTs but a complement, providing continuous, popul
 
 Multiple meta-analyses demonstrate that well-designed observational studies produce effect sizes concordant with randomized controlled trials, supporting the validity of real-world evidence for hypothesis generation:
 
-![Effect sizes from observational studies vs. randomized trials show strong concordance for mortality outcomes](../../assets/observational-vs-randomized-effect-sizes.png){#fig-rwe-validation-mortality}
+![Effect sizes from observational studies vs. randomized trials show strong concordance for mortality outcomes](../../assets/images/observational-vs-randomized-effect-sizes.png){#fig-rwe-validation-mortality}
 
-![Across multiple clinical domains, observational and randomized effect sizes track closely](../../assets/observational-vs-randomized-trial-effect-sizes.png){#fig-rwe-validation-domains}
+![Across multiple clinical domains, observational and randomized effect sizes track closely](../../assets/images/observational-vs-randomized-trial-effect-sizes.png){#fig-rwe-validation-domains}
 
 ## Data Collection and Integration
 
@@ -1115,7 +1115,7 @@ Traditional FDA drug labels are **per-drug documents** that list qualitative adv
 
 ### Worked Example: Complete Outcome Label
 
-![Outcome Labels show quantitative effect sizes, sample sizes, and confidence intervals for each treatment - like "nutrition facts for drugs"](../../assets/dfda-outcome-labels.png){#fig-outcome-labels}
+![Outcome Labels show quantitative effect sizes, sample sizes, and confidence intervals for each treatment - like "nutrition facts for drugs"](../../assets/images/dfda-outcome-labels.png){#fig-outcome-labels}
 
 The following shows a complete outcome label for depression, demonstrating how treatments are ranked by effect size with confidence intervals:
 

@@ -283,7 +283,7 @@ That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden 
 
 The World Health Organization reports {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}} daily deaths from disease and aging. Many of these are eventually avoidable with accelerated biomedical progress ({{< var global_annual_deaths_curable_diseases >}} annually).
 
-<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
+<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/images/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
 
 This mortality burden exceeds:
 
@@ -356,7 +356,7 @@ This infrastructure is not hypothetical. The [FDA Sentinel Initiative](../refere
 
 **Evidence-based alternative**: Doctor searches "rheumatoid arthritis treatment" in the integrated evidence system, sees treatments ranked by measured effectiveness in real-world patients:
 
-![Treatment Rankings Example](/assets/dfda-comparative-effectiveness-ranking-search.png)
+![Treatment Rankings Example](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
 Rankings show frequency and magnitude of outcome changes across actual patient populations. Filters allow stratification: "Show me effectiveness in women over 50 with my patient's genetic markers and comorbidities." This precision medicine approach shows what works for patients like yours, not what works on average across everyone.
 
@@ -370,7 +370,7 @@ Like Amazon rankings based on verified purchase reviews, except based on measure
 
 **Standardized outcome labels**: Quantified summaries of what actually happens to patients taking each treatment, displayed like nutrition labels:
 
-![Outcome Labels Example](/assets/dfda-outcome-labels.png)
+![Outcome Labels Example](/assets/images/dfda-outcome-labels.png)
 
 Based on systematic outcome collection across thousands of patients, labels show:
 
@@ -1548,7 +1548,7 @@ This analysis rests on several core assumptions that should be made explicit for
 - **Post-1962 system**: {{< var pharma_drug_development_cost_current >}} per drug average, a **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 
-![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)
+![Drug development costs exploded after 1962 regulations](../../assets/images/cost-to-develop-a-new-drug.png)
 
 The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development or increasing drug complexity. It was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
 
@@ -2386,9 +2386,9 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 
 **Empirical evidence, observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
 
-![Comparison of effect sizes from observational studies versus randomized trials for mortality outcomes, showing strong concordance between methodologies.](../../assets/observational-vs-randomized-effect-sizes.png)
+![Comparison of effect sizes from observational studies versus randomized trials for mortality outcomes, showing strong concordance between methodologies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
-![Comparison of effect sizes from observational studies versus randomized trials across diverse outcomes, demonstrating that observational methods yield similar conclusions when properly designed.](../../assets/observational-vs-randomized-trial-effect-sizes.png)
+![Comparison of effect sizes from observational studies versus randomized trials across diverse outcomes, demonstrating that observational methods yield similar conclusions when properly designed.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png)
 
 These meta-analytic findings support the validity of pragmatic trial designs used in a dFDA model. Modern statistical methods, large sample sizes, and proper covariate adjustment enable observational and quasi-experimental designs to achieve causal inference comparable to traditional RCTs at a fraction of the cost.
 

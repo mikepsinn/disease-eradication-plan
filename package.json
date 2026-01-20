@@ -103,6 +103,7 @@
     "refactor:parameter": "tsx scripts/rename-parameter.ts",
     "rename:qmd": "tsx scripts/rename-qmd.ts",
     "rename:quarto-config": "tsx scripts/rename-quarto-config.ts",
+    "move:assets-to-images": "tsx scripts/move-assets-to-images.ts",
     "tone-down:all": "tsx scripts/review/tone-down-overclaims.ts",
     "1-pct-treaty-impact:find-appendix-content": "tsx scripts/review/find-economics-appendix-content.ts",
     "generate:audience:baseline": "tsx scripts/review/copy-baseline-audience-versions.ts",
