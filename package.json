@@ -143,8 +143,6 @@
     "review-hardcoded": "tsx scripts/review-hardcoded-values.ts",
     "find-replace": "tsx scripts/find-and-replace.ts",
     "search": "rg -i -n --glob '*.qmd'",
-    "search:bribe": "rg -i -n --glob '*.qmd' '\\bbribe\\b'",
-    "search:bribe:review": "rg -i -n -C 2 --glob '*.qmd' '\\bbribe\\b' > bribe-usage-review.txt && echo 'Exported to bribe-usage-review.txt'",
     "prepare": "husky",
     "voltagent:dev": "tsx watch --env-file=.env ./src/index.ts",
     "voltagent:build": "tsdown",
