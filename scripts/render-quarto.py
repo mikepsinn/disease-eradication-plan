@@ -191,7 +191,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     return {
         "config_file": config_file,
         "index_source": dih_render.get("index-source"),
-        "target_url": dih_render.get("target-url"),
+        "target_url": dih_render.get("fallback-404-redirect-domain"),
         "description": (
             config.get("book", {}).get("title") or
             config.get("website", {}).get("title") or
@@ -410,7 +410,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     target_url = metadata.get("target_url")
     if not target_url:
         if verbose:
-            print("[*] No target-url, skipping cross-site link rewriting", flush=True)
+            print("[*] No fallback-404-redirect-domain, skipping cross-site link rewriting", flush=True)
         return build_temp
 
     target_yml = project_root / "_quarto-book.yml"

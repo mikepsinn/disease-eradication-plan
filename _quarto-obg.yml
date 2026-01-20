@@ -11,9 +11,10 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
   index-source: knowledge/appendix/optimal-budget-generator-spec.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
+  netlify-cname: "obg-warondisease.netlify.app"  # DNS: obg.warondisease.org -> this
 
 profiles:
   default:

@@ -13,9 +13,10 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   index-source: knowledge/appendix/dfda-spec-paper.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
+  netlify-cname: "dfda-paper.netlify.app"  # DNS: spec.dfda.earth -> this
 
 profiles:
   default:

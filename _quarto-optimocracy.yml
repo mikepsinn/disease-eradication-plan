@@ -11,9 +11,10 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  netlify-site-id: "c6e535bc-4503-4db8-833a-c1b93f5e0f10"
   index-source: knowledge/appendix/optimocracy-paper.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  netlify-site-id: "c6e535bc-4503-4db8-833a-c1b93f5e0f10"
+  netlify-cname: "optimocracy-warondisease.netlify.app"  # DNS: optimocracy.warondisease.org -> this
 
 profiles:
   default:

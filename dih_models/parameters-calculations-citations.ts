@@ -3721,7 +3721,7 @@ export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   displayName: "US Congress Full Advocacy Cost",
   description: "Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
   sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#us-political-reform-scenarios",
   confidence: "medium",
   formula: "CONGRESS_MEMBERS x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
@@ -3745,7 +3745,7 @@ export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
   displayName: "US Senate Treaty Advocacy Cost",
   description: "Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
   sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#us-political-reform-scenarios",
   confidence: "medium",
   formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
@@ -4550,7 +4550,7 @@ export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
   displayName: "Global Political Reform Investment",
   description: "Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-estimates",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#global-estimates",
   confidence: "low",
   formula: "NATO + China + Russia + India + other major spenders",
   confidenceInterval: [75000000000.0, 200000000000.0],
@@ -4562,7 +4562,7 @@ export const GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM: Parameter = {
   displayName: "Global Political Reform Investment (Maximum)",
   description: "Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis",
   confidence: "low",
 };
 
@@ -4660,7 +4660,7 @@ export const NATO_POLITICAL_REFORM_INVESTMENT: Parameter = {
   displayName: "NATO Political Reform Investment",
   description: "Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#global-estimates",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#global-estimates",
   confidence: "low",
   formula: "US advocacy + EU advocacy + other NATO advocacy",
 };
@@ -4902,7 +4902,7 @@ export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   displayName: "US Political Reform Investment (Total)",
   description: "Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/political-capture-cost-analysis#us-political-reform-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#us-political-reform-scenarios",
   confidence: "low",
   formula: "Congress advocacy + lobbying parity + campaign matching",
 };

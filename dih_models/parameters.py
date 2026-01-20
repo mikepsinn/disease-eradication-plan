@@ -4644,7 +4644,7 @@ US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND = Parameter(
 # ---
 # POLITICAL CAPTURE COST ANALYSIS
 # ---
-# Source: knowledge/appendix/political-capture-cost-analysis.qmd
+# Source: knowledge/appendix/cost-of-change-analysis.qmd
 # These parameters calculate the "worst case" cost to achieve political change through incentivization
 # Used to answer the question: "If you think this is politically impossible, how much would it cost to MAKE it possible?"
 
@@ -4720,7 +4720,7 @@ POLITICIAN_POST_OFFICE_CAREER_VALUE = Parameter(
 # to enable diffuse beneficiaries to participate in the democratic process at scale
 US_SENATE_TREATY_ADVOCACY_COST = Parameter(
     US_SENATORS_FOR_TREATY * POLITICIAN_POST_OFFICE_CAREER_VALUE,
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios",
     source_type="calculated",
     description="Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
     display_name="US Senate Treaty Advocacy Cost",
@@ -4735,7 +4735,7 @@ US_SENATE_TREATY_ADVOCACY_COST = Parameter(
 
 US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
     US_CONGRESS_MEMBER_COUNT * POLITICIAN_POST_OFFICE_CAREER_VALUE,
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios",
     source_type="calculated",
     description="Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
     display_name="US Congress Full Advocacy Cost",
@@ -4750,7 +4750,7 @@ US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
 
 US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
     25_000_000_000,  # ~$25B total (Congress + match lobbying + campaign parity)
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#us-political-reform-scenarios",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios",
     source_type="definition",
     description="Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
     display_name="US Political Reform Investment (Total)",
@@ -4776,7 +4776,7 @@ NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
 
 NATO_POLITICAL_REFORM_INVESTMENT = Parameter(
     65_000_000_000,  # ~$65B for all NATO legislators
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates",
     source_type="definition",
     description="Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
     display_name="NATO Political Reform Investment",
@@ -4789,7 +4789,7 @@ NATO_POLITICAL_REFORM_INVESTMENT = Parameter(
 
 GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
     125_000_000_000,  # ~$125B for major military spenders globally
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd#global-estimates",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates",
     source_type="definition",
     description="Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
     display_name="Global Political Reform Investment",
@@ -4803,7 +4803,7 @@ GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
 
 GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM = Parameter(
     200_000_000_000,  # $200B absolute upper bound
-    source_ref="/knowledge/appendix/political-capture-cost-analysis.qmd",
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="definition",
     description="Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
     display_name="Global Political Reform Investment (Maximum)",

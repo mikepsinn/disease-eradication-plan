@@ -14,6 +14,7 @@ dih-render:
   index-source: index-book.qmd  # Simple copy, no path transformation needed
   # No target-url - this IS the main book site
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
+  netlify-cname: "warondisease-org.netlify.app"  # DNS: manual.warondisease.org -> this
 
 website:
   site-url: https://manual.WarOnDisease.org
@@ -157,7 +158,7 @@ book:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
-        - knowledge/appendix/political-capture-cost-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
+        - knowledge/appendix/cost-of-change-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
         - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
         - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
         - knowledge/appendix/optimal-policy-generator-spec.qmd # ✅ Working paper: jurisdiction-specific policy recommendations using quasi-experimental methods

@@ -51,11 +51,116 @@ SKIP_CONFIGS = {"book", "test"}  # book uses main site, test doesn't need deploy
 # Netlify API
 NETLIFY_API = "https://api.netlify.com/api/v1"
 
+# Cloudflare API
+CLOUDFLARE_API = "https://api.cloudflare.com/client/v4"
+CLOUDFLARE_ZONE_ID = "ee19b9351a3502167898f08136b11c09"  # warondisease.org zone
+
 
 def get_netlify_token() -> str | None:
     """Get Netlify auth token from environment."""
     load_dotenv(PROJECT_ROOT / ".env")
     return os.environ.get("NETLIFY_AUTH_TOKEN")
+
+
+def get_cloudflare_token() -> str | None:
+    """Get Cloudflare API token from environment."""
+    load_dotenv(PROJECT_ROOT / ".env")
+    return os.environ.get("CLOUDFLARE_TOKEN")
+
+
+def get_existing_dns_records(cf_token: str) -> dict[str, dict]:
+    """Fetch existing DNS records from Cloudflare."""
+    records = {}
+    page = 1
+    while True:
+        resp = requests.get(
+            f"{CLOUDFLARE_API}/zones/{CLOUDFLARE_ZONE_ID}/dns_records",
+            headers={"Authorization": f"Bearer {cf_token}"},
+            params={"type": "CNAME", "per_page": 100, "page": page},
+        )
+        if resp.status_code != 200:
+            print(f"  [WARN] Could not fetch DNS records: {resp.status_code}")
+            break
+
+        data = resp.json()
+        for record in data.get("result", []):
+            # Store by subdomain name (e.g., "iab" from "iab.warondisease.org")
+            name = record.get("name", "").replace(f".{BASE_DOMAIN}", "")
+            records[name] = {
+                "id": record.get("id"),
+                "name": record.get("name"),
+                "content": record.get("content"),
+                "proxied": record.get("proxied"),
+            }
+
+        # Check if more pages
+        result_info = data.get("result_info", {})
+        if page >= result_info.get("total_pages", 1):
+            break
+        page += 1
+
+    return records
+
+
+def create_dns_record(cf_token: str, subdomain: str, cname_target: str) -> bool:
+    """Create a CNAME record in Cloudflare."""
+    resp = requests.post(
+        f"{CLOUDFLARE_API}/zones/{CLOUDFLARE_ZONE_ID}/dns_records",
+        headers={
+            "Authorization": f"Bearer {cf_token}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "type": "CNAME",
+            "name": subdomain,  # Cloudflare auto-appends the zone domain
+            "content": cname_target,
+            "proxied": True,  # Orange cloud ON
+            "ttl": 1,  # Auto TTL when proxied
+        },
+    )
+
+    if resp.status_code in (200, 201):
+        print(f"  [OK] Created DNS: {subdomain}.{BASE_DOMAIN} -> {cname_target}")
+        return True
+    else:
+        error = resp.json().get("errors", [{}])[0].get("message", resp.text)
+        print(f"  [ERROR] DNS creation failed: {error}")
+        return False
+
+
+def setup_dns_records(cf_token: str, configs: dict) -> int:
+    """Create missing DNS records for all configs."""
+    print("\n[*] Checking Cloudflare DNS records...")
+
+    existing = get_existing_dns_records(cf_token)
+    print(f"    Found {len(existing)} existing CNAME records")
+
+    created = 0
+    for config_name, info in configs.items():
+        # Skip configs without CNAME info
+        cname = info.get("netlify_cname")
+        if not cname:
+            continue
+
+        # Extract subdomain from config name
+        subdomain = config_name.replace("_", "-")
+
+        # Skip if record already exists
+        if subdomain in existing:
+            current = existing[subdomain].get("content", "")
+            if current == cname:
+                print(f"  [OK] {subdomain}.{BASE_DOMAIN} already configured")
+            else:
+                print(f"  [WARN] {subdomain}.{BASE_DOMAIN} points to {current}, expected {cname}")
+            continue
+
+        # Create the record
+        if create_dns_record(cf_token, subdomain, cname):
+            created += 1
+
+        time.sleep(0.5)  # Rate limit protection
+
+    return created
 
 
 def get_netlify_team_slug(token: str) -> str | None:
@@ -111,13 +216,19 @@ def create_netlify_site(token: str, config_name: str, title: str) -> dict | None
 
     if resp.status_code in (200, 201):
         site = resp.json()
+        # Extract netlify subdomain for CNAME (e.g., "sitename.netlify.app")
+        ssl_url = site.get("ssl_url") or site.get("url") or ""
+        netlify_subdomain = ssl_url.replace("https://", "").replace("http://", "")
+
         print(f"  [OK] Created site: {site.get('url')}")
         print(f"       Site ID: {site.get('id')}")
         print(f"       Custom domain: {custom_domain}")
+        print(f"       CNAME target: {netlify_subdomain}")
         return {
             "id": site.get("id"),
             "url": site.get("url"),
             "custom_domain": custom_domain,
+            "netlify_subdomain": netlify_subdomain,
         }
     else:
         print(f"  [ERROR] Failed to create site: {resp.status_code}")
@@ -128,6 +239,27 @@ def create_netlify_site(token: str, config_name: str, title: str) -> dict | None
             print(f"  [INFO] Site name '{site_name}' already exists. Trying to find it...")
             return find_existing_site(token, site_name)
         return None
+
+
+def get_site_by_id(token: str, site_id: str) -> dict | None:
+    """Fetch site info by ID to get the CNAME target."""
+    resp = requests.get(
+        f"{NETLIFY_API}/sites/{site_id}",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+
+    if resp.status_code == 200:
+        site = resp.json()
+        # Use site name to construct netlify subdomain (the actual CNAME target)
+        site_name = site.get("name", "")
+        netlify_subdomain = f"{site_name}.netlify.app" if site_name else ""
+        return {
+            "id": site.get("id"),
+            "url": site.get("url"),
+            "custom_domain": site.get("custom_domain"),
+            "netlify_subdomain": netlify_subdomain,
+        }
+    return None
 
 
 def find_existing_site(token: str, site_name: str) -> dict | None:
@@ -142,12 +274,17 @@ def find_existing_site(token: str, site_name: str) -> dict | None:
         sites = resp.json()
         for site in sites:
             if site.get("name") == site_name:
+                ssl_url = site.get("ssl_url") or site.get("url") or ""
+                netlify_subdomain = ssl_url.replace("https://", "").replace("http://", "")
+
                 print(f"  [OK] Found existing site: {site.get('url')}")
                 print(f"       Site ID: {site.get('id')}")
+                print(f"       CNAME target: {netlify_subdomain}")
                 return {
                     "id": site.get("id"),
                     "url": site.get("url"),
                     "custom_domain": site.get("custom_domain"),
+                    "netlify_subdomain": netlify_subdomain,
                 }
     return None
 
@@ -186,9 +323,10 @@ def discover_configs() -> dict:
         else:
             title = config.get("website", {}).get("title", config_name)
 
-        # Check for existing site ID
+        # Check for existing site ID and CNAME
         dih_render = config.get("dih-render", {})
         site_id = dih_render.get("netlify-site-id")
+        netlify_cname = dih_render.get("netlify-cname")
 
         configs[config_name] = {
             "path": config_path,
@@ -196,47 +334,54 @@ def discover_configs() -> dict:
             "title": title,
             "project_type": project_type,
             "site_id": site_id,
+            "netlify_cname": netlify_cname,
             "has_site": bool(site_id),
         }
 
     return configs
 
 
-def update_config_with_site_id(config_path: Path, site_id: str) -> bool:
+def update_config_with_netlify_info(config_path: Path, site_id: str, netlify_cname: str) -> bool:
     """
-    Update a Quarto config file with the Netlify site ID.
+    Update a Quarto config file with Netlify site ID and CNAME.
 
-    Preserves existing content and adds/updates dih-render.netlify-site-id.
+    Adds/updates in dih-render section:
+      - netlify-site-id: The Netlify site ID for deployments
+      - netlify-cname: The CNAME target for DNS (e.g., "sitename.netlify.app")
     """
     try:
         content = config_path.read_text(encoding="utf-8")
 
-        # Check if dih-render section exists
-        if "dih-render:" in content:
-            # Check if netlify-site-id already exists in dih-render
-            if "netlify-site-id:" in content:
+        # Helper to add or update a property in dih-render
+        def add_or_update_property(content: str, prop_name: str, prop_value: str) -> str:
+            if f"{prop_name}:" in content:
                 # Replace existing
                 content = re.sub(
-                    r'(dih-render:.*?)netlify-site-id:.*?(\n|$)',
-                    rf'\1netlify-site-id: "{site_id}"\2',
+                    rf'{prop_name}:.*?(\n|$)',
+                    rf'{prop_name}: "{prop_value}"\1',
                     content,
-                    flags=re.DOTALL,
                 )
-            else:
-                # Add to existing dih-render section
+            elif "dih-render:" in content:
+                # Add to existing dih-render section (after the header)
                 content = re.sub(
                     r'(dih-render:\n)',
-                    rf'\1  netlify-site-id: "{site_id}"\n',
+                    rf'\1  {prop_name}: "{prop_value}"\n',
                     content,
                 )
-        else:
-            # Add new dih-render section after project section
+            return content
+
+        # Ensure dih-render section exists
+        if "dih-render:" not in content:
             content = re.sub(
                 r'(project:\n.*?(?=\n\w|\nprofiles:|\nwebsite:|\nbook:|\nformat:|\nexecute:|\nmetadata:|\nbibliography:))',
-                rf'\1\ndih-render:\n  netlify-site-id: "{site_id}"\n',
+                rf'\1\ndih-render:\n',
                 content,
                 flags=re.DOTALL,
             )
+
+        # Add both properties
+        content = add_or_update_property(content, "netlify-site-id", site_id)
+        content = add_or_update_property(content, "netlify-cname", netlify_cname)
 
         config_path.write_text(content, encoding="utf-8")
         return True
@@ -253,6 +398,24 @@ def regenerate_workflow():
     except Exception as e:
         print(f"[WARN] Could not regenerate workflow: {e}")
         print("       Run manually: python scripts/lib/workflow_generator.py")
+
+
+CLOUDFLARE_DNS_URL = "https://dash.cloudflare.com/52e6cea8444378116bd4a9c8834e1b27/warondisease.org/dns/records"
+
+
+def print_dns_instructions():
+    """Print DNS setup instructions."""
+    print(f"""
+DNS Setup (Cloudflare):
+  1. Go to: {CLOUDFLARE_DNS_URL}
+  2. Add CNAME record:
+     - Type: CNAME
+     - Name: [subdomain]  (e.g., "iab" for iab.warondisease.org)
+     - Target: [netlify-cname from config]  (e.g., "iab-warondisease.netlify.app")
+     - Proxy: ON (orange cloud)
+  3. Save
+
+The netlify-cname values are in each _quarto-*.yml under dih-render.""")
 
 
 def list_configs(configs: dict):
@@ -275,11 +438,36 @@ def list_configs(configs: dict):
         print("\nAll configs have Netlify site IDs.")
 
 
+def update_existing_cnames(token: str, configs: dict) -> int:
+    """Fetch and update CNAME info for configs that have site IDs."""
+    updated = 0
+    for config_name, info in configs.items():
+        site_id = info.get("site_id")
+        if not site_id:
+            continue
+
+        print(f"\n[*] {config_name}: Fetching site info...")
+        site = get_site_by_id(token, site_id)
+        if site and site.get("netlify_subdomain"):
+            if update_config_with_netlify_info(info["path"], site_id, site["netlify_subdomain"]):
+                print(f"  [OK] Updated {info['path'].name}")
+                print(f"       CNAME: {site['netlify_subdomain']}")
+                updated += 1
+        else:
+            print(f"  [WARN] Could not fetch site info for {site_id}")
+
+        time.sleep(1)  # Rate limit protection
+
+    return updated
+
+
 def main():
     parser = argparse.ArgumentParser(description="Setup Netlify sites for Quarto configs")
     parser.add_argument("configs", nargs="*", help="Specific configs to process (default: all missing)")
     parser.add_argument("--list", "-l", action="store_true", help="List configs and exit")
     parser.add_argument("--force", "-f", action="store_true", help="Recreate sites even if ID exists")
+    parser.add_argument("--update-cnames", "-u", action="store_true", help="Fetch CNAMEs for existing sites")
+    parser.add_argument("--setup-dns", "-d", action="store_true", help="Create missing Cloudflare DNS records")
     args = parser.parse_args()
 
     print("=" * 60)
@@ -304,6 +492,37 @@ def main():
         print("  Get token at: https://app.netlify.com/user/applications#personal-access-tokens")
         print("  Add to .env: NETLIFY_AUTH_TOKEN=your_token")
         return 1
+
+    # Update CNAMEs mode
+    if args.update_cnames:
+        print("\nFetching CNAMEs for existing sites...")
+        configs_with_sites = {k: v for k, v in configs.items() if v["has_site"]}
+        if not configs_with_sites:
+            print("[OK] No configs with site IDs to update")
+            return 0
+        updated = update_existing_cnames(token, configs_with_sites)
+        print(f"\n{'=' * 60}")
+        print(f"Updated {updated} config(s) with CNAME info")
+        if updated > 0:
+            regenerate_workflow()
+            print_dns_instructions()
+        return 0
+
+    # Setup DNS mode
+    if args.setup_dns:
+        cf_token = get_cloudflare_token()
+        if not cf_token:
+            print("[ERROR] CLOUDFLARE_TOKEN not set")
+            print("  Get token at: https://dash.cloudflare.com/profile/api-tokens")
+            print("  Add to .env: CLOUDFLARE_TOKEN=your_token")
+            return 1
+
+        # Re-discover to get latest CNAME values
+        configs = discover_configs()
+        created = setup_dns_records(cf_token, configs)
+        print(f"\n{'=' * 60}")
+        print(f"Created {created} DNS record(s)")
+        return 0
 
     # Filter to requested configs
     if args.configs:
@@ -331,8 +550,9 @@ def main():
 
         site = create_netlify_site(token, config_name, info["title"])
         if site and site.get("id"):
-            if update_config_with_site_id(info["path"], site["id"]):
-                print(f"  [OK] Updated {info['path'].name} with site ID")
+            netlify_cname = site.get("netlify_subdomain", "")
+            if update_config_with_netlify_info(info["path"], site["id"], netlify_cname):
+                print(f"  [OK] Updated {info['path'].name} with site ID and CNAME")
                 created += 1
             else:
                 print(f"  [WARN] Site created but config not updated")
@@ -346,12 +566,11 @@ def main():
     print(f"Created {created} Netlify site(s)")
 
     if created > 0:
+        print_dns_instructions()
         print("\nNext steps:")
-        print("  1. Configure DNS: Add CNAME records for subdomains")
-        print(f"     Example: iab.{BASE_DOMAIN} -> [netlify-site].netlify.app")
+        print("  1. Add CNAME records (see above)")
         print("  2. Review changes: git diff _quarto-*.yml")
-        print("  3. Regenerate workflow (auto-attempted below)")
-        print("  4. Commit: git add _quarto-*.yml .github/workflows/publish.yml")
+        print("  3. Commit: git add _quarto-*.yml .github/workflows/publish.yml")
 
         # Regenerate workflow
         print("\n[*] Regenerating GitHub Actions workflow...")

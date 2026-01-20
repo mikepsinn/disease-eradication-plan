@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/political-capture
+  output-dir: _site/cost-of-change
   execute-dir: project
   resources:
     - assets/
@@ -12,9 +12,10 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  index-source: knowledge/appendix/cost-of-change-analysis.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
-  index-source: knowledge/appendix/political-capture-cost-analysis.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  netlify-cname: "cost-of-change-warondisease.netlify.app"  # DNS: cost-of-change.warondisease.org -> this
 
 profiles:
   default:
@@ -24,8 +25,8 @@ profiles:
 website:
   title: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization"
   description: "When critics dismiss policy proposals as \"politically impossible,\" they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value."
-  site-url: https://political-capture.warondisease.org
-  favicon: assets/icons/favicon.png  # TODO: Create political-capture-favicon.png
+  site-url: https://cost-of-change.warondisease.org
+  favicon: assets/icons/favicon.png  # TODO: Create cost-of-change-favicon.png
   page-navigation: true
   navbar:
     left:
@@ -34,7 +35,7 @@ website:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /political-capture-cost-analysis.pdf
+        href: /cost-of-change-analysis.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "References"
@@ -98,14 +99,14 @@ metadata:
   medium: "Digital"
   twitter-site: "@warondisease"
   twitter-creator: "@warondisease"
-  og-site-name: "The Cost of Political Capture"
+  og-site-name: "The Cost of Change"
 
   # Identifiers (update when paper is published)
   # doi: "10.5281/zenodo.XXXXXXXX"
 
   # Open Graph metadata
   open-graph: true
-  # TODO: Create political-capture-og-1200x630.png
+  # TODO: Create cost-of-change-og-1200x630.png
   image: "https://warondisease.org/assets/og-images/default-og.png"
 
 # Remove "Appendix" prefix
@@ -115,7 +116,7 @@ language:
 
 # Bibliography: .bib generated from knowledge/references.qmd (source data)
 # Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
-bibliography: references-political-capture.bib
+bibliography: references-cost-of-change.bib
 csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
 
 jupyter: dih-project-kernel
@@ -162,12 +163,12 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
-              <a href="/political-capture-cost-analysis.pdf" style="color: #8b7355;">PDF</a>
+              <a href="/cost-of-change-analysis.pdf" style="color: #8b7355;">PDF</a>
             </p>
           </div>
     include-in-header:
       - text: |
-          <!-- Icons - TODO: Create political-capture-specific icons -->
+          <!-- Icons - TODO: Create cost-of-change-specific icons -->
           <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
           <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
@@ -190,7 +191,7 @@ format:
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   pdf:
-    output-file: "political-capture-cost-analysis.pdf"
+    output-file: "cost-of-change-analysis.pdf"
     documentclass: article
     echo: false
     toc: true

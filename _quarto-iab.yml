@@ -13,8 +13,9 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   index-source: knowledge/appendix/incentive-alignment-bonds-paper.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
+  netlify-cname: "incentive-alignment-bonds-iab.netlify.app"  # DNS: iab.warondisease.org -> this
 
 profiles:
   default:

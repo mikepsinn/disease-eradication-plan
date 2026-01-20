@@ -9,9 +9,10 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   index-source: knowledge/economics/economics.qmd
-  target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
+  netlify-cname: "dih-models.netlify.app"  # DNS: impact.warondisease.org -> this
 
 profiles:
   default:
