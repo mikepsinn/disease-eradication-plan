@@ -402,58 +402,18 @@ format:
               <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">📱 EPUB</a>
             </p>
           </footer>
-      - text: |
-          <!-- Site Enhancements: Page Loader & Auto-Expand Hash Targets -->
-          <script>
-            (function() {
-              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
-              var script = document.createElement('script');
-              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
-              document.body.appendChild(script);
-            })();
-          </script>
-          <!-- Quarto Sidebar Horizontal Overlap Fix -->
-          <script>
-            (function() {
-              // Get the Quarto offset to build correct path
-              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
-              var script = document.createElement('script');
-              script.src = (offset ? offset : '') + 'assets/js/quarto-sidebar-fix.js';
-              document.body.appendChild(script);
-            })();
-          </script>
+      - file: assets/html/site-enhancements-loader.html
     include-in-header:
       - text: |
-          <!-- Icons -->
+          <!-- Icons (project-specific) -->
           <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/book-favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/book-favicon-16x16.png">
           <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/book-apple-touch-icon.png">
           <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/book-android-chrome-192x192.png">
           <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/book-android-chrome-512x512.png">
-
-          <!-- Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-8PZYCKQBTY');
-          </script>
-          <!-- Hypothesis for inline comments and annotations (load on all pages except index) -->
-          <script>
-            // Only load Hypothesis if we're not on the landing page
-            // Matches: /, /index.html, /warondisease/, /warondisease/index.html
-            var isIndexPage = window.location.pathname.match(/\/(warondisease\/)?(index\.html)?$/);
-            if (!isIndexPage) {
-              var script = document.createElement('script');
-              script.src = 'https://hypothes.is/embed.js';
-              script.async = true;
-              document.head.appendChild(script);
-            }
-          </script>
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis-conditional-book.html
+      - file: assets/html/fonts-preload.html
     include-before-body:
       - file: assets/html/page-loader.html
   epub:

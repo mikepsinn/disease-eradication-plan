@@ -145,15 +145,7 @@ format:
     include-before-body:
       - file: assets/html/page-loader.html
     include-after-body:
-      - text: |
-          <script>
-            (function() {
-              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
-              var script = document.createElement('script');
-              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
-              document.body.appendChild(script);
-            })();
-          </script>
+      - file: assets/html/site-enhancements-loader.html
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
@@ -176,28 +168,15 @@ format:
           </div>
     include-in-header:
       - text: |
-          <!-- Icons -->
+          <!-- Icons (project-specific) -->
           <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/optimocracy-favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/optimocracy-favicon-16x16.png">
           <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/optimocracy-apple-touch-icon.png">
           <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/optimocracy-android-chrome-192x192.png">
           <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/optimocracy-android-chrome-512x512.png">
-
-          <!-- Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-8PZYCKQBTY');
-          </script>
-
-          <!-- Hypothesis for inline comments -->
-          <script src="https://hypothes.is/embed.js" async></script>
-
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
   pdf:
     output-file: "optimocracy-paper.pdf"
     documentclass: article

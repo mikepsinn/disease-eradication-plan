@@ -491,14 +491,26 @@ def upload_paper(
         files = verified_deposit.get("files", [])
         if not files:
             log("ERROR: Upload verification failed - no files found in deposit")
+            log("  -> This usually means the upload silently failed")
             return None
 
         uploaded_file = next((f for f in files if f["filename"] == pdf_path.name), None)
         if not uploaded_file:
             log(f"ERROR: Upload verification failed - {pdf_path.name} not found in deposit")
+            log(f"  -> Files in deposit: {[f['filename'] for f in files]}")
             return None
 
-        log(f"[OK] Verified: {uploaded_file['filename']} ({uploaded_file['filesize'] / 1024:.1f} KB)")
+        # Verify file size matches (catch truncated uploads)
+        local_size = pdf_path.stat().st_size
+        remote_size = uploaded_file.get("filesize", 0)
+        if remote_size != local_size:
+            log(f"ERROR: File size mismatch!")
+            log(f"  -> Local:  {local_size:,} bytes")
+            log(f"  -> Remote: {remote_size:,} bytes")
+            log("  -> Upload may have been corrupted or truncated")
+            return None
+
+        log(f"[OK] Verified: {uploaded_file['filename']} ({remote_size / 1024:.1f} KB, size matches)")
 
         # Get DOI and URL
         doi = verified_deposit.get("doi") or verified_deposit.get("metadata", {}).get("prereserve_doi", {}).get("doi")

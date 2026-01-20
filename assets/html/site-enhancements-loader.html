@@ -1,0 +1,10 @@
+<!-- Site Enhancements Loader -->
+<!-- Loads site-enhancements.js with correct path offset for nested pages -->
+<script>
+  (function() {
+    var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+    var script = document.createElement('script');
+    script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js';
+    document.body.appendChild(script);
+  })();
+</script>

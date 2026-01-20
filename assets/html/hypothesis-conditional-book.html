@@ -1,0 +1,12 @@
+<!-- Hypothesis for inline comments and annotations (load on all pages except index) -->
+<script>
+  // Only load Hypothesis if we're not on the landing page
+  // Matches: /, /index.html, /warondisease/, /warondisease/index.html
+  var isIndexPage = window.location.pathname.match(/\/(warondisease\/)?(index\.html)?$/);
+  if (!isIndexPage) {
+    var script = document.createElement('script');
+    script.src = 'https://hypothes.is/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+</script>

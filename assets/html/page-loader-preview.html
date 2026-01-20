@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Loader - War on Disease</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    /* Page Loader */
+    #page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease-out;
+    }
+
+    #page-loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      text-align: center;
+      max-width: 800px;
+      padding: 40px 20px;
+    }
+
+    /* Impact Message */
+    .impact-header {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .death-counter {
+      font-size: 72px;
+      font-weight: 700;
+      color: #ef4444;
+      margin: 20px 0;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { text-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+      50% { text-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+    }
+
+    .impact-message {
+      font-size: 24px;
+      color: #e2e8f0;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    .impact-subtext {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    /* Gravestone Grid */
+    .gravestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+      gap: 8px;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      min-height: 150px;
+    }
+
+    .gravestone {
+      font-size: 28px;
+      opacity: 0;
+      animation: fadeIn 0.3s ease-out forwards;
+      filter: grayscale(1);
+      transform: scale(0);
+    }
+
+    .gravestone.show {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0) translateY(-10px);
+      }
+      to {
+        opacity: 0.7;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Loading Spinner */
+    .loader-spinner {
+      width: 40px;
+      height: 40px;
+      margin: 30px auto;
+      border: 3px solid rgba(148, 163, 184, 0.2);
+      border-top-color: #94a3b8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .loader-content {
+        padding: 20px 15px;
+      }
+
+      .impact-header {
+        font-size: 14px;
+      }
+
+      .death-counter {
+        font-size: 48px;
+      }
+
+      .impact-message {
+        font-size: 18px;
+      }
+
+      .impact-subtext {
+        font-size: 12px;
+      }
+
+      .gravestone-grid {
+        gap: 6px;
+        padding: 15px;
+        min-height: 120px;
+      }
+
+      .gravestone {
+        font-size: 24px;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .death-counter {
+        font-size: 36px;
+      }
+
+      .impact-message {
+        font-size: 16px;
+      }
+
+      .gravestone {
+        font-size: 20px;
+      }
+
+      .loader-spinner {
+        width: 30px;
+        height: 30px;
+        margin: 20px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-content">
+      <div class="impact-header">While this page is loading...</div>
+
+      <div class="death-counter" id="deathCounter">1</div>
+
+      <div class="impact-message">
+        people have died from <strong>curable diseases</strong>
+      </div>
+
+      <div class="impact-subtext">
+        Based on 150,000 deaths per day globally
+      </div>
+
+      <!-- Gravestone Grid -->
+      <div class="gravestone-grid" id="gravestoneGrid">
+        <div class="gravestone show">💀</div>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
+  <script>
+    // Constants
+    const DEATHS_PER_DAY = 150000;
+    const DEATHS_PER_SECOND = DEATHS_PER_DAY / 86400; // 1.736 deaths/second
+    const GRAVESTONE_ICONS = ['💀']; // Skulls only
+
+    // State
+    let startTime = Date.now();
+    let deathCount = 0;
+    let isLoading = true;
+    let updateInterval;
+    let gravestoneInterval;
+
+    // Elements
+    const loader = document.getElementById('page-loader');
+    const deathCounter = document.getElementById('deathCounter');
+    const gravestoneGrid = document.getElementById('gravestoneGrid');
+
+    // Update death counter (starts at 1)
+    function updateStats() {
+      if (!isLoading) return;
+
+      const elapsedSeconds = (Date.now() - startTime) / 1000;
+      deathCount = 1 + Math.floor(elapsedSeconds * DEATHS_PER_SECOND);
+
+      deathCounter.textContent = deathCount.toLocaleString();
+    }
+
+    // Add a gravestone
+    function addGravestone() {
+      if (!isLoading) return;
+
+      const gravestone = document.createElement('div');
+      gravestone.className = 'gravestone';
+      gravestone.textContent = GRAVESTONE_ICONS[0];
+      gravestoneGrid.appendChild(gravestone);
+
+      // Trigger animation
+      setTimeout(() => gravestone.classList.add('show'), 10);
+
+      // Limit total gravestones to prevent performance issues
+      const gravestones = gravestoneGrid.querySelectorAll('.gravestone');
+      if (gravestones.length > 100) {
+        gravestones[0].remove();
+      }
+    }
+
+    // Start the loader
+    function startLoader() {
+      isLoading = true;
+      startTime = Date.now();
+      deathCount = 0;
+      gravestoneGrid.innerHTML = '';
+      loader.classList.remove('hidden');
+
+      // Update stats frequently for smooth counter
+      updateInterval = setInterval(updateStats, 50);
+
+      // Add gravestones periodically (one per death, but max every 200ms to not overwhelm)
+      gravestoneInterval = setInterval(() => {
+        const currentDeaths = Math.floor(((Date.now() - startTime) / 1000) * DEATHS_PER_SECOND);
+        const gravestoneCount = gravestoneGrid.querySelectorAll('.gravestone').length;
+
+        if (currentDeaths > gravestoneCount) {
+          addGravestone();
+        }
+      }, 200);
+    }
+
+    // Stop the loader
+    function stopLoader() {
+      isLoading = false;
+      clearInterval(updateInterval);
+      clearInterval(gravestoneInterval);
+    }
+
+    // Start on page load
+    startLoader();
+
+    // Auto-hide after 10 seconds (simulating page load)
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      stopLoader();
+    }, 10000);
+  </script>
+</body>
+</html>
