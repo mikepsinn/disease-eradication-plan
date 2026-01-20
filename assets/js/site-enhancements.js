@@ -5,10 +5,13 @@
  * 1. Auto-expand collapsed callouts when navigating to hash anchors
  * 2. Smooth scroll to hash targets with visual highlight
  * 3. Toggle to show/hide uncertainty parameters (95% CI ranges)
+ * 4. Dark mode toggle with localStorage persistence
+ * 5. Copy citation button (BibTeX format)
+ * 6. Back to top button
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 3.2.1
+ * Version: 4.0.0
  */
 
 (function() {
@@ -241,6 +244,151 @@
   }
 
   // ========================================
+  // DARK MODE TOGGLE
+  // ========================================
+
+  var DARK_MODE_KEY = 'dih-dark-mode';
+
+  function createDarkModeToggle() {
+    if (document.getElementById('dark-mode-toggle')) {
+      return;
+    }
+
+    var toggle = document.createElement('button');
+    toggle.id = 'dark-mode-toggle';
+    toggle.type = 'button';
+    toggle.innerHTML = '<span class="toggle-icon">🌙</span>';
+    toggle.title = 'Toggle dark mode';
+
+    var isDark = localStorage.getItem(DARK_MODE_KEY) === 'true';
+    if (isDark) {
+      document.documentElement.classList.add('dark-mode');
+      toggle.innerHTML = '<span class="toggle-icon">☀️</span>';
+    }
+
+    toggle.addEventListener('click', function() {
+      var nowDark = document.documentElement.classList.toggle('dark-mode');
+      toggle.innerHTML = nowDark ? '<span class="toggle-icon">☀️</span>' : '<span class="toggle-icon">🌙</span>';
+      localStorage.setItem(DARK_MODE_KEY, nowDark);
+    });
+
+    document.body.appendChild(toggle);
+  }
+
+  // ========================================
+  // COPY CITATION BUTTON
+  // ========================================
+
+  function createCopyCitationButton() {
+    // Only create on pages with DOI metadata
+    var doiMeta = document.querySelector('meta[name="citation_doi"]') ||
+                  document.querySelector('meta[name="DC.identifier"]');
+    var titleMeta = document.querySelector('meta[name="citation_title"]') ||
+                    document.querySelector('meta[property="og:title"]') ||
+                    document.querySelector('title');
+    var authorMeta = document.querySelector('meta[name="citation_author"]') ||
+                     document.querySelector('meta[name="author"]');
+
+    // Skip if no meaningful citation data
+    if (!titleMeta) {
+      return;
+    }
+
+    if (document.getElementById('copy-citation-btn')) {
+      return;
+    }
+
+    var btn = document.createElement('button');
+    btn.id = 'copy-citation-btn';
+    btn.type = 'button';
+    btn.innerHTML = '<span class="btn-icon">📋</span><span class="btn-text">Cite</span>';
+    btn.title = 'Copy citation (BibTeX)';
+
+    btn.addEventListener('click', function() {
+      var title = titleMeta.content || titleMeta.textContent || 'Untitled';
+      var author = authorMeta ? (authorMeta.content || 'Unknown') : 'Sinn, Mike P.';
+      var doi = doiMeta ? doiMeta.content : '';
+      var url = window.location.href;
+      var year = new Date().getFullYear();
+
+      // Generate citation key from title
+      var key = title.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+        .substring(0, 30);
+
+      var bibtex = '@article{' + key + '-' + year + ',\n' +
+        '  title     = {' + title + '},\n' +
+        '  author    = {' + author + '},\n' +
+        '  year      = {' + year + '},\n' +
+        (doi ? '  doi       = {' + doi + '},\n' : '') +
+        '  url       = {' + url + '}\n' +
+        '}';
+
+      navigator.clipboard.writeText(bibtex).then(function() {
+        var originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="btn-icon">✓</span><span class="btn-text">Copied!</span>';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(function() {
+        // Fallback for older browsers
+        var textarea = document.createElement('textarea');
+        textarea.value = bibtex;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        btn.innerHTML = '<span class="btn-icon">✓</span><span class="btn-text">Copied!</span>';
+        setTimeout(function() {
+          btn.innerHTML = '<span class="btn-icon">📋</span><span class="btn-text">Cite</span>';
+        }, 2000);
+      });
+    });
+
+    document.body.appendChild(btn);
+  }
+
+  // ========================================
+  // BACK TO TOP BUTTON
+  // ========================================
+
+  function createBackToTopButton() {
+    if (document.getElementById('back-to-top')) {
+      return;
+    }
+
+    var btn = document.createElement('button');
+    btn.id = 'back-to-top';
+    btn.type = 'button';
+    btn.innerHTML = '↑';
+    btn.title = 'Back to top';
+
+    btn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    function toggleVisibility() {
+      if (window.pageYOffset > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    document.body.appendChild(btn);
+    toggleVisibility();
+  }
+
+  // ========================================
   // INITIALIZATION
   // ========================================
 
@@ -249,6 +397,9 @@
     setTimeout(function() {
       expandHashTarget();
       createUncertaintyToggle();
+      createDarkModeToggle();
+      createCopyCitationButton();
+      createBackToTopButton();
     }, 800);
   }
 

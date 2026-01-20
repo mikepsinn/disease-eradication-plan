@@ -969,3 +969,214 @@ body.hide-uncertainty [data-ci-hidden] {
     padding: 0.1em 0.3em;
     margin: -0.1em -0.3em;
 }
+
+/* ==========================================
+   DARK MODE
+   ========================================== */
+
+html.dark-mode {
+    --book-bg: #1a1a1a;
+    --book-text: #e0e0e0;
+    --book-accent: #c9a96e;
+    --book-border: #3a3a3a;
+    --book-heading: #f0f0f0;
+    --book-light: #252525;
+}
+
+html.dark-mode body {
+    background-color: var(--book-bg);
+    color: var(--book-text);
+}
+
+html.dark-mode .card,
+html.dark-mode pre,
+html.dark-mode .mermaid {
+    background-color: var(--book-light);
+    border-color: var(--book-border);
+}
+
+html.dark-mode code {
+    background-color: var(--book-light);
+}
+
+html.dark-mode table tbody tr:hover {
+    background-color: var(--book-light);
+}
+
+html.dark-mode .hero-banner {
+    background: linear-gradient(to bottom, var(--book-bg) 0%, var(--book-light) 100%);
+}
+
+html.dark-mode img {
+    opacity: 0.9;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--book-light, #f9f8f3);
+    border-color: var(--book-accent, #8b7355);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+
+#dark-mode-toggle:focus {
+    outline: none;
+    border-color: var(--book-accent, #8b7355);
+}
+
+/* ==========================================
+   COPY CITATION BUTTON
+   ========================================== */
+
+#copy-citation-btn {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--book-text, #2a2a2a);
+    transition: all 0.2s ease;
+}
+
+#copy-citation-btn:hover {
+    background-color: var(--book-light, #f9f8f3);
+    border-color: var(--book-accent, #8b7355);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+#copy-citation-btn:focus {
+    outline: none;
+    border-color: var(--book-accent, #8b7355);
+}
+
+#copy-citation-btn.copied {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+#copy-citation-btn .btn-icon {
+    font-size: 1rem;
+}
+
+/* ==========================================
+   BACK TO TOP BUTTON
+   ========================================== */
+
+#back-to-top {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--book-text, #2a2a2a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--book-light, #f9f8f3);
+    border-color: var(--book-accent, #8b7355);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+#back-to-top:focus {
+    outline: none;
+    border-color: var(--book-accent, #8b7355);
+}
+
+/* ==========================================
+   FLOATING BUTTONS - MOBILE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 767px) {
+    #dark-mode-toggle {
+        bottom: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #copy-citation-btn {
+        bottom: 60px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    #back-to-top {
+        bottom: 105px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #uncertainty-toggle {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* ==========================================
+   PRINT STYLES - HIDE UI ELEMENTS
+   ========================================== */
+
+@media print {
+    #dark-mode-toggle,
+    #copy-citation-btn,
+    #back-to-top {
+        display: none !important;
+    }
+}

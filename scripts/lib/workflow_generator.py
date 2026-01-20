@@ -88,10 +88,8 @@ def infer_timeout(config_name: str, project_type: str) -> int:
     """Infer build timeout based on config and project type."""
     if config_name == "book":
         return 75  # HTML + PDF + EPUB
-    elif config_name == "economics":
-        return 25  # Larger paper
     else:
-        return 10  # Standard papers
+        return 30  # Standard papers and larger papers
 
 
 def infer_build_dir(config_name: str, output_dir: str, project_type: str) -> str:

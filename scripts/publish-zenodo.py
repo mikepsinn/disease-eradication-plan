@@ -10,12 +10,10 @@ You publish manually on Zenodo when ready (https://zenodo.org/me/uploads).
 Usage:
     python scripts/publish-zenodo.py --draft            # Upload all papers as drafts
     python scripts/publish-zenodo.py --draft --paper iab  # Upload specific paper
-    python scripts/publish-zenodo.py --sandbox --draft  # Use Zenodo sandbox for testing
     python scripts/publish-zenodo.py --dry-run          # Show what would be uploaded
 
 Environment variables:
     ZENODO_TOKEN: API token for Zenodo (required)
-    ZENODO_SANDBOX_TOKEN: API token for Zenodo sandbox (optional, for testing)
 """
 
 from __future__ import annotations
