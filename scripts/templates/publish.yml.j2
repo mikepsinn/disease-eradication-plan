@@ -17,7 +17,7 @@ concurrency:
 jobs:
 {% for job in jobs %}
   build-{{ job.config_name }}:
-    name: {{ job.display_name }}
+    name: "{{ job.display_name }}"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -65,12 +65,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render {{ job.display_name }}
+      - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}
         timeout-minutes: {{ job.timeout_minutes }}
 
 {% if job.deploy_to_netlify %}
-      - name: Deploy {{ job.display_name }} to Netlify (immediate)
+      - name: "Deploy {{ job.display_name }} to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -91,7 +91,7 @@ jobs:
 {% endif %}
 
 {% if job.upload_to_zenodo %}
-      - name: Upload {{ job.display_name }} PDF to Zenodo (draft)
+      - name: "Upload {{ job.display_name }} PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}

@@ -17,7 +17,7 @@ concurrency:
 jobs:
 
   build-book:
-    name: Build Main Book (HTML + PDF + EPUB)
+    name: "Build Main Book (HTML + PDF + EPUB)"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -65,12 +65,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Main Book (HTML + PDF + EPUB)
+      - name: "Render Build Main Book (HTML + PDF + EPUB)"
         run: python scripts/render-quarto.py book
         timeout-minutes: 75
 
 
-      - name: Deploy Build Main Book (HTML + PDF + EPUB) to Netlify (immediate)
+      - name: "Deploy Build Main Book (HTML + PDF + EPUB) to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -94,7 +94,7 @@ jobs:
 
 
   build-dfda-impact:
-    name: Build The Health and Economic Impact of a Global System 
+    name: "Build The Health and Economic Impact of a Global System "
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -142,12 +142,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build The Health and Economic Impact of a Global System 
+      - name: "Render Build The Health and Economic Impact of a Global System "
         run: python scripts/render-quarto.py dfda-impact
         timeout-minutes: 10
 
 
-      - name: Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)
+      - name: "Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -168,7 +168,7 @@ jobs:
 
 
 
-      - name: Upload Build The Health and Economic Impact of a Global System  PDF to Zenodo (draft)
+      - name: "Upload Build The Health and Economic Impact of a Global System  PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -178,7 +178,7 @@ jobs:
 
 
   build-dfda-spec:
-    name: Build dFDA: A Decentralized Framework for Drug Assessmen
+    name: "Build dFDA: A Decentralized Framework for Drug Assessmen"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -226,12 +226,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build dFDA: A Decentralized Framework for Drug Assessmen
+      - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
         run: python scripts/render-quarto.py dfda-spec
         timeout-minutes: 10
 
 
-      - name: Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)
+      - name: "Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -252,7 +252,7 @@ jobs:
 
 
 
-      - name: Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)
+      - name: "Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -262,7 +262,7 @@ jobs:
 
 
   build-economics:
-    name: Build The 1% Treaty: Health and Economic Impact of Redir
+    name: "Build The 1% Treaty: Health and Economic Impact of Redir"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -310,12 +310,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build The 1% Treaty: Health and Economic Impact of Redir
+      - name: "Render Build The 1% Treaty: Health and Economic Impact of Redir"
         run: python scripts/render-quarto.py economics
         timeout-minutes: 25
 
 
-      - name: Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)
+      - name: "Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -336,7 +336,7 @@ jobs:
 
 
 
-      - name: Upload Build The 1% Treaty: Health and Economic Impact of Redir PDF to Zenodo (draft)
+      - name: "Upload Build The 1% Treaty: Health and Economic Impact of Redir PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -346,7 +346,7 @@ jobs:
 
 
   build-iab:
-    name: Build Incentive Alignment Bonds: Making Public Goods Fin
+    name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -394,12 +394,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Incentive Alignment Bonds: Making Public Goods Fin
+      - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab
         timeout-minutes: 10
 
 
-      - name: Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)
+      - name: "Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -420,7 +420,7 @@ jobs:
 
 
 
-      - name: Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)
+      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -430,7 +430,7 @@ jobs:
 
 
   build-obg:
-    name: Build Optimal Budget Generator: Evidence-Based Budget Al
+    name: "Build Optimal Budget Generator: Evidence-Based Budget Al"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -478,12 +478,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Optimal Budget Generator: Evidence-Based Budget Al
+      - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
         run: python scripts/render-quarto.py obg
         timeout-minutes: 10
 
 
-      - name: Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)
+      - name: "Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -504,7 +504,7 @@ jobs:
 
 
 
-      - name: Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)
+      - name: "Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -514,7 +514,7 @@ jobs:
 
 
   build-opg:
-    name: Build Optimal Policy Generator: Evidence-Based Policy Re
+    name: "Build Optimal Policy Generator: Evidence-Based Policy Re"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -562,12 +562,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Optimal Policy Generator: Evidence-Based Policy Re
+      - name: "Render Build Optimal Policy Generator: Evidence-Based Policy Re"
         run: python scripts/render-quarto.py opg
         timeout-minutes: 10
 
 
-      - name: Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)
+      - name: "Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -588,7 +588,7 @@ jobs:
 
 
 
-      - name: Upload Build Optimal Policy Generator: Evidence-Based Policy Re PDF to Zenodo (draft)
+      - name: "Upload Build Optimal Policy Generator: Evidence-Based Policy Re PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -598,7 +598,7 @@ jobs:
 
 
   build-optimocracy:
-    name: Build Optimocracy: Algorithmic Governance Through Metric
+    name: "Build Optimocracy: Algorithmic Governance Through Metric"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -646,12 +646,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Optimocracy: Algorithmic Governance Through Metric
+      - name: "Render Build Optimocracy: Algorithmic Governance Through Metric"
         run: python scripts/render-quarto.py optimocracy
         timeout-minutes: 10
 
 
-      - name: Deploy Build Optimocracy: Algorithmic Governance Through Metric to Netlify (immediate)
+      - name: "Deploy Build Optimocracy: Algorithmic Governance Through Metric to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -672,7 +672,7 @@ jobs:
 
 
 
-      - name: Upload Build Optimocracy: Algorithmic Governance Through Metric PDF to Zenodo (draft)
+      - name: "Upload Build Optimocracy: Algorithmic Governance Through Metric PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -682,7 +682,7 @@ jobs:
 
 
   build-political-capture:
-    name: Build The Price of Political Change: A Cost-Benefit Fram
+    name: "Build The Price of Political Change: A Cost-Benefit Fram"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -730,12 +730,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build The Price of Political Change: A Cost-Benefit Fram
+      - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
         run: python scripts/render-quarto.py political-capture
         timeout-minutes: 10
 
 
-      - name: Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)
+      - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -756,7 +756,7 @@ jobs:
 
 
 
-      - name: Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)
+      - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -766,7 +766,7 @@ jobs:
 
 
   build-test:
-    name: Build Test Economics Document
+    name: "Build Test Economics Document"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -814,12 +814,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Test Economics Document
+      - name: "Render Build Test Economics Document"
         run: python scripts/render-quarto.py test
         timeout-minutes: 10
 
 
-      - name: Deploy Build Test Economics Document to Netlify (immediate)
+      - name: "Deploy Build Test Economics Document to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -843,7 +843,7 @@ jobs:
 
 
   build-wishocracy:
-    name: Build Wishocracy: Solving the Democratic Principal-Agent
+    name: "Build Wishocracy: Solving the Democratic Principal-Agent"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -891,12 +891,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: Render Build Wishocracy: Solving the Democratic Principal-Agent
+      - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy
         timeout-minutes: 10
 
 
-      - name: Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)
+      - name: "Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -917,7 +917,7 @@ jobs:
 
 
 
-      - name: Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)
+      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)"
         if: github.event_name == 'push'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
