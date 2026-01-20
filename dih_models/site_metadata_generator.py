@@ -211,9 +211,6 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
 
     # Create output structure
     output_data = {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "generatedAt": __import__("datetime").datetime.utcnow().isoformat() + "Z",
-        "projectRoot": str(project_root),
         "totalSites": len(sites),
         "sites": sites,
     }

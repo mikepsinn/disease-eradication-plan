@@ -272,6 +272,7 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       outputDir,
       filePrefix: `${config.configName}-favicon-raw`,
       format: 'jpg', // API returns JPG natively, avoid conversion
+      skipWatermark: true, // Favicons should not have watermarks
       metadata: {
         title: `${config.title} - Favicon`,
         description: `Favicon icon for ${config.title}`,

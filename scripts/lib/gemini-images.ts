@@ -326,7 +326,7 @@ function calculateImageCost(imageCount: number, modelId: string): number {
 /**
  * Log image generation request details
  */
-function logImageRequest(modelId: string, imageCount: number, aspectRatio: string, promptPreview: string, referenceImageCount: number = 0): void {
+function logImageRequest(modelId: string, imageCount: number, aspectRatio: string, prompt: string, referenceImageCount: number = 0): void {
   const config = IMAGE_MODEL_CONFIGS[modelId]
   const estimatedCost = calculateImageCost(imageCount, modelId)
 
@@ -337,7 +337,7 @@ function logImageRequest(modelId: string, imageCount: number, aspectRatio: strin
   if (referenceImageCount > 0) {
     console.log(`🎨 Reference images: ${referenceImageCount}`)
   }
-  console.log(`📝 Prompt preview: ${promptPreview.substring(0, 100)}${promptPreview.length > 100 ? '...' : ''}`)
+  console.log(`📝 Prompt:\n${prompt}`)
   if (config) {
     console.log(`💵 Cost per image: $${config.costPerImage.toFixed(4)} USD`)
   }
@@ -557,7 +557,8 @@ export async function generateImages(
 export async function saveImage(
   image: GeneratedImage,
   filePath: string,
-  metadata?: ImageMetadata
+  metadata?: ImageMetadata,
+  options?: { skipWatermark?: boolean }
 ): Promise<void> {
   const fs = await import('fs/promises')
   const path = await import('path')
@@ -618,10 +619,12 @@ export async function saveImage(
   // Add rich metadata (EXIF, IPTC, XMP for SEO/discoverability)
   await addImageMetadata(filePath, metadata)
 
-  // Add watermark to all generated images
-  await addWatermark(filePath)
+  // Add watermark unless skipped (e.g., for favicons)
+  if (!options?.skipWatermark) {
+    await addWatermark(filePath)
+  }
 
-  log.info('Image saved with metadata and watermark', {
+  log.info('Image saved with metadata', {
     filePath,
     size: buffer.length,
     format: sharpMeta.format,
@@ -660,6 +663,8 @@ export async function generateAndSaveImages(options: {
   referenceImages?: ReferenceImage[]
   /** Rich metadata for SEO/discoverability (EXIF, IPTC, XMP) */
   metadata?: ImageMetadata
+  /** Skip adding watermark (e.g., for favicons) */
+  skipWatermark?: boolean
 }): Promise<string[]> {
   const {
     prompt,
@@ -670,6 +675,7 @@ export async function generateAndSaveImages(options: {
     format = 'png',
     referenceImages,
     metadata,
+    skipWatermark = false,
   } = options
 
   const result = await generateImages({
@@ -709,7 +715,7 @@ export async function generateAndSaveImages(options: {
       : `${filePrefix}-${i + 1}.${format}`
 
     const filePath = `${outputDir}/${fileName}`
-    await saveImage(result.images[i], filePath, fullMetadata)
+    await saveImage(result.images[i], filePath, fullMetadata, { skipWatermark })
     filePaths.push(filePath)
   }
 
