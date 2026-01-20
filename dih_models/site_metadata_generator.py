@@ -279,9 +279,9 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
         "sites": sites,
     }
 
-    # Write to assets folder
-    assets_dir = project_root / "assets"
-    assets_dir.mkdir(exist_ok=True)
+    # Write to assets/json folder
+    assets_dir = project_root / "assets" / "json"
+    assets_dir.mkdir(parents=True, exist_ok=True)
 
     output_path = assets_dir / output_filename
 
