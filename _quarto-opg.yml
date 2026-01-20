@@ -27,7 +27,7 @@ profiles:
 website:
   title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions"
   description: 'The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.'
-  site-url: https://paper.opg.dih.earth
+  site-url: https://opg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   navbar:
@@ -43,7 +43,7 @@ website:
       - text: "References"
         href: /#references
       - text: "Optimocracy"
-        href: https://paper.optimocracy.org
+        href: https://optimocracy.warondisease.org
       - text: "War on Disease"
         href: https://WarOnDisease.org
 
@@ -109,12 +109,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://paper.opg.dih.earth/assets/og/opg-og-1200x630.jpg"
+  image: "https://opg.warondisease.org/assets/og/opg-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://paper.opg.dih.earth"
+      url: "https://opg.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo

@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Netlify Site Setup Script
+Netlify Site Setup & Sync Script
 
-Scans _quarto-*.yml configs, creates Netlify sites for any missing site IDs,
-and saves the site IDs back to the configs.
+Automatically sets up and syncs all Netlify sites for Quarto configs.
+Does everything in one run - just execute with no arguments.
 
 Usage:
-    python scripts/setup-netlify-sites.py           # Create missing sites
-    python scripts/setup-netlify-sites.py --list    # List all configs and their site status
-    python scripts/setup-netlify-sites.py iab       # Create site for specific config only
+    python scripts/setup-netlify-sites.py           # Do everything automatically
+    python scripts/setup-netlify-sites.py --list    # Just show status (no changes)
 
 Environment:
-    NETLIFY_AUTH_TOKEN: Personal access token from https://app.netlify.com/user/applications#personal-access-tokens
+    NETLIFY_AUTH_TOKEN: Required - from https://app.netlify.com/user/applications#personal-access-tokens
+    CLOUDFLARE_TOKEN:   Optional - enables automatic DNS setup
 
-The script will:
-1. Scan all _quarto-*.yml files in project root
-2. Check for existing netlify-site-id in dih-render section
-3. Create new Netlify sites for configs without site IDs
-4. Use config name as subdomain (e.g., iab -> iab.warondisease.org)
-5. Save site ID back to the config file
-6. Regenerate GitHub Actions workflow
+The script automatically:
+1. Creates Netlify sites for any configs missing site IDs
+2. Updates all sites to use {config-name}.warondisease.org custom domains
+3. Renames sites to {config-name}-warondisease.netlify.app
+4. Syncs CNAME info back to config files
+5. Creates Cloudflare DNS records (if CLOUDFLARE_TOKEN set)
+6. Regenerates GitHub Actions workflow
 """
 
 from __future__ import annotations
@@ -255,11 +255,76 @@ def get_site_by_id(token: str, site_id: str) -> dict | None:
         netlify_subdomain = f"{site_name}.netlify.app" if site_name else ""
         return {
             "id": site.get("id"),
+            "name": site_name,
             "url": site.get("url"),
             "custom_domain": site.get("custom_domain"),
             "netlify_subdomain": netlify_subdomain,
         }
     return None
+
+
+def update_site_custom_domain(token: str, site_id: str, custom_domain: str) -> bool:
+    """
+    Update a Netlify site's custom domain.
+
+    Args:
+        token: Netlify auth token
+        site_id: The Netlify site ID
+        custom_domain: The custom domain to set (e.g., "iab.warondisease.org")
+
+    Returns:
+        True if successful, False otherwise
+    """
+    resp = requests.patch(
+        f"{NETLIFY_API}/sites/{site_id}",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        json={"custom_domain": custom_domain},
+    )
+
+    if resp.status_code == 200:
+        print(f"  [OK] Updated custom domain to: {custom_domain}")
+        return True
+    else:
+        print(f"  [ERROR] Failed to update custom domain: {resp.status_code}")
+        print(f"          {resp.text}")
+        return False
+
+
+def rename_netlify_site(token: str, site_id: str, new_name: str) -> bool:
+    """
+    Rename a Netlify site (changes the *.netlify.app subdomain).
+
+    Args:
+        token: Netlify auth token
+        site_id: The Netlify site ID
+        new_name: The new site name (will become new_name.netlify.app)
+
+    Returns:
+        True if successful, False otherwise
+    """
+    resp = requests.patch(
+        f"{NETLIFY_API}/sites/{site_id}",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        json={"name": new_name},
+    )
+
+    if resp.status_code == 200:
+        print(f"  [OK] Renamed site to: {new_name}.netlify.app")
+        return True
+    else:
+        error_msg = resp.text
+        if "already been taken" in error_msg.lower():
+            print(f"  [WARN] Site name '{new_name}' already taken - keeping current name")
+            return False
+        print(f"  [ERROR] Failed to rename site: {resp.status_code}")
+        print(f"          {error_msg}")
+        return False
 
 
 def find_existing_site(token: str, site_name: str) -> dict | None:
@@ -461,17 +526,77 @@ def update_existing_cnames(token: str, configs: dict) -> int:
     return updated
 
 
+def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
+    """
+    Update Netlify sites to use warondisease.org custom domains.
+
+    For each config with a site ID:
+    1. Fetch current site info from Netlify
+    2. Calculate expected custom domain (config_name.warondisease.org)
+    3. Update if different
+    4. Also rename the site to match the expected name pattern
+
+    Returns:
+        Tuple of (domains_updated, sites_renamed)
+    """
+    domains_updated = 0
+    sites_renamed = 0
+
+    for config_name, info in configs.items():
+        site_id = info.get("site_id")
+        if not site_id:
+            continue
+
+        # Calculate expected values
+        subdomain = config_name.replace("_", "-")
+        expected_domain = f"{subdomain}.{BASE_DOMAIN}"
+        expected_site_name = f"{subdomain}-warondisease"
+
+        print(f"\n[*] {config_name}:")
+        print(f"    Site ID: {site_id}")
+        print(f"    Expected domain: {expected_domain}")
+
+        # Fetch current site info
+        site = get_site_by_id(token, site_id)
+        if not site:
+            print(f"  [ERROR] Could not fetch site info")
+            continue
+
+        current_domain = site.get("custom_domain", "")
+        current_name = site.get("name", "")
+
+        print(f"    Current domain: {current_domain or '(none)'}")
+        print(f"    Current name: {current_name}")
+
+        # Update custom domain if needed
+        if current_domain != expected_domain:
+            print(f"  [*] Updating custom domain: {current_domain} -> {expected_domain}")
+            if update_site_custom_domain(token, site_id, expected_domain):
+                domains_updated += 1
+        else:
+            print(f"  [OK] Custom domain already correct")
+
+        # Rename site if needed (changes the *.netlify.app subdomain)
+        if current_name != expected_site_name:
+            print(f"  [*] Renaming site: {current_name} -> {expected_site_name}")
+            if rename_netlify_site(token, site_id, expected_site_name):
+                sites_renamed += 1
+                # Update config with new CNAME
+                new_cname = f"{expected_site_name}.netlify.app"
+                update_config_with_netlify_info(info["path"], site_id, new_cname)
+
+        time.sleep(1)  # Rate limit protection
+
+    return domains_updated, sites_renamed
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Setup Netlify sites for Quarto configs")
-    parser.add_argument("configs", nargs="*", help="Specific configs to process (default: all missing)")
-    parser.add_argument("--list", "-l", action="store_true", help="List configs and exit")
-    parser.add_argument("--force", "-f", action="store_true", help="Recreate sites even if ID exists")
-    parser.add_argument("--update-cnames", "-u", action="store_true", help="Fetch CNAMEs for existing sites")
-    parser.add_argument("--setup-dns", "-d", action="store_true", help="Create missing Cloudflare DNS records")
+    parser = argparse.ArgumentParser(description="Setup and sync Netlify sites for all Quarto configs")
+    parser.add_argument("--list", "-l", action="store_true", help="List configs and their status (no changes)")
     args = parser.parse_args()
 
     print("=" * 60)
-    print("Netlify Site Setup")
+    print("Netlify Site Setup & Sync")
     print("=" * 60)
 
     # Discover configs
@@ -480,12 +605,12 @@ def main():
         print("[ERROR] No Quarto configs found")
         return 1
 
-    # List mode
+    # List mode - just show status and exit
     if args.list:
         list_configs(configs)
         return 0
 
-    # Get token
+    # Get Netlify token (required)
     token = get_netlify_token()
     if not token:
         print("[ERROR] NETLIFY_AUTH_TOKEN not set")
@@ -493,88 +618,127 @@ def main():
         print("  Add to .env: NETLIFY_AUTH_TOKEN=your_token")
         return 1
 
-    # Update CNAMEs mode
-    if args.update_cnames:
-        print("\nFetching CNAMEs for existing sites...")
-        configs_with_sites = {k: v for k, v in configs.items() if v["has_site"]}
-        if not configs_with_sites:
-            print("[OK] No configs with site IDs to update")
-            return 0
-        updated = update_existing_cnames(token, configs_with_sites)
-        print(f"\n{'=' * 60}")
-        print(f"Updated {updated} config(s) with CNAME info")
-        if updated > 0:
-            regenerate_workflow()
-            print_dns_instructions()
-        return 0
+    # Get Cloudflare token (optional - for DNS)
+    cf_token = get_cloudflare_token()
 
-    # Setup DNS mode
-    if args.setup_dns:
-        cf_token = get_cloudflare_token()
-        if not cf_token:
-            print("[ERROR] CLOUDFLARE_TOKEN not set")
-            print("  Get token at: https://dash.cloudflare.com/profile/api-tokens")
-            print("  Add to .env: CLOUDFLARE_TOKEN=your_token")
-            return 1
+    # Track totals
+    sites_created = 0
+    domains_updated = 0
+    sites_renamed = 0
+    dns_created = 0
 
+    # ===========================================
+    # STEP 1: Create missing Netlify sites
+    # ===========================================
+    configs_needing_sites = {k: v for k, v in configs.items() if not v["has_site"]}
+    if configs_needing_sites:
+        print(f"\n[1/4] Creating {len(configs_needing_sites)} missing Netlify site(s)...")
+        for config_name, info in configs_needing_sites.items():
+            print(f"\n  [*] {config_name}: {info['title'][:50]}")
+            site = create_netlify_site(token, config_name, info["title"])
+            if site and site.get("id"):
+                netlify_cname = site.get("netlify_subdomain", "")
+                if update_config_with_netlify_info(info["path"], site["id"], netlify_cname):
+                    print(f"    [OK] Created and saved to {info['path'].name}")
+                    sites_created += 1
+                    # Update the config dict so later steps see the new site ID
+                    configs[config_name]["site_id"] = site["id"]
+                    configs[config_name]["has_site"] = True
+            time.sleep(1)
+    else:
+        print("\n[1/4] All configs already have Netlify site IDs")
+
+    # ===========================================
+    # STEP 2: Update custom domains to warondisease.org
+    # ===========================================
+    print(f"\n[2/4] Syncing custom domains to {BASE_DOMAIN}...")
+    configs_with_sites = {k: v for k, v in configs.items() if v.get("site_id")}
+    if configs_with_sites:
+        for config_name, info in configs_with_sites.items():
+            site_id = info.get("site_id")
+            subdomain = config_name.replace("_", "-")
+            expected_domain = f"{subdomain}.{BASE_DOMAIN}"
+            expected_site_name = f"{subdomain}-warondisease"
+
+            site = get_site_by_id(token, site_id)
+            if not site:
+                print(f"  [WARN] Could not fetch {config_name}")
+                continue
+
+            current_domain = site.get("custom_domain", "")
+            current_name = site.get("name", "")
+
+            # Update custom domain if needed
+            if current_domain != expected_domain:
+                print(f"  [*] {config_name}: {current_domain or '(none)'} -> {expected_domain}")
+                if update_site_custom_domain(token, site_id, expected_domain):
+                    domains_updated += 1
+
+            # Rename site if needed
+            if current_name != expected_site_name:
+                if rename_netlify_site(token, site_id, expected_site_name):
+                    sites_renamed += 1
+                    new_cname = f"{expected_site_name}.netlify.app"
+                    update_config_with_netlify_info(info["path"], site_id, new_cname)
+
+            time.sleep(0.5)
+
+    if domains_updated == 0 and sites_renamed == 0:
+        print("  [OK] All domains already correct")
+
+    # ===========================================
+    # STEP 3: Update CNAME info in config files
+    # ===========================================
+    print("\n[3/4] Syncing CNAME info to config files...")
+    cnames_updated = 0
+    for config_name, info in configs_with_sites.items():
+        site_id = info.get("site_id")
+        site = get_site_by_id(token, site_id)
+        if site and site.get("netlify_subdomain"):
+            # Check if CNAME in config matches
+            current_cname = info.get("netlify_cname", "")
+            if current_cname != site["netlify_subdomain"]:
+                if update_config_with_netlify_info(info["path"], site_id, site["netlify_subdomain"]):
+                    cnames_updated += 1
+        time.sleep(0.3)
+
+    if cnames_updated > 0:
+        print(f"  [OK] Updated {cnames_updated} config file(s)")
+    else:
+        print("  [OK] All CNAMEs already correct")
+
+    # ===========================================
+    # STEP 4: Setup DNS records (if Cloudflare token available)
+    # ===========================================
+    if cf_token:
+        print("\n[4/4] Setting up Cloudflare DNS records...")
         # Re-discover to get latest CNAME values
         configs = discover_configs()
-        created = setup_dns_records(cf_token, configs)
-        print(f"\n{'=' * 60}")
-        print(f"Created {created} DNS record(s)")
-        return 0
+        dns_created = setup_dns_records(cf_token, configs)
+    else:
+        print("\n[4/4] Skipping DNS setup (CLOUDFLARE_TOKEN not set)")
+        print("  To enable: add CLOUDFLARE_TOKEN to .env")
 
-    # Filter to requested configs
-    if args.configs:
-        configs = {k: v for k, v in configs.items() if k in args.configs}
-        if not configs:
-            print(f"[ERROR] No matching configs: {', '.join(args.configs)}")
-            return 1
-
-    # Filter to configs needing sites (unless --force)
-    if not args.force:
-        configs = {k: v for k, v in configs.items() if not v["has_site"]}
-
-    if not configs:
-        print("[OK] All configs already have Netlify site IDs")
-        print("     Use --list to see status, --force to recreate")
-        return 0
-
-    print(f"\nCreating Netlify sites for: {', '.join(configs.keys())}\n")
-
-    # Create sites
-    created = 0
-    config_items = list(configs.items())
-    for i, (config_name, info) in enumerate(config_items):
-        print(f"\n[*] {config_name}: {info['title'][:50]}")
-
-        site = create_netlify_site(token, config_name, info["title"])
-        if site and site.get("id"):
-            netlify_cname = site.get("netlify_subdomain", "")
-            if update_config_with_netlify_info(info["path"], site["id"], netlify_cname):
-                print(f"  [OK] Updated {info['path'].name} with site ID and CNAME")
-                created += 1
-            else:
-                print(f"  [WARN] Site created but config not updated")
-
-        # Rate limit protection: wait between API calls
-        if i < len(config_items) - 1:
-            time.sleep(2)
-
-    # Summary
-    print(f"\n{'=' * 60}")
-    print(f"Created {created} Netlify site(s)")
-
-    if created > 0:
-        print_dns_instructions()
-        print("\nNext steps:")
-        print("  1. Add CNAME records (see above)")
-        print("  2. Review changes: git diff _quarto-*.yml")
-        print("  3. Commit: git add _quarto-*.yml .github/workflows/publish.yml")
-
-        # Regenerate workflow
+    # ===========================================
+    # Regenerate workflow if anything changed
+    # ===========================================
+    if sites_created > 0 or domains_updated > 0 or sites_renamed > 0:
         print("\n[*] Regenerating GitHub Actions workflow...")
         regenerate_workflow()
+
+    # ===========================================
+    # Summary
+    # ===========================================
+    print(f"\n{'=' * 60}")
+    print("Summary:")
+    print(f"  Sites created:    {sites_created}")
+    print(f"  Domains updated:  {domains_updated}")
+    print(f"  Sites renamed:    {sites_renamed}")
+    print(f"  DNS records:      {dns_created}")
+    print("=" * 60)
+
+    if not cf_token and (sites_created > 0 or domains_updated > 0):
+        print_dns_instructions()
 
     return 0
 

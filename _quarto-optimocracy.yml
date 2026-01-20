@@ -27,7 +27,7 @@ profiles:
 website:
   title: "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation"
   description: "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare."
-  site-url: https://paper.optimocracy.org
+  site-url: https://optimocracy.warondisease.org
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true
   navbar:
@@ -110,7 +110,7 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://paper.optimocracy.org/assets/og/optimocracy-og-1200x630.jpg"
+  image: "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg"
 
 # Remove "Appendix" prefix
 language:
@@ -158,14 +158,14 @@ format:
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
-      right: "[Optimocracy.org](https://paper.optimocracy.org)"
+      right: "[Optimocracy.org](https://optimocracy.warondisease.org)"
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
             <p style="margin: 0.5rem 0;">
               © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
               <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
-              <a href="https://paper.optimocracy.org" style="color: #8b7355;">Optimocracy.org</a>
+              <a href="https://optimocracy.warondisease.org" style="color: #8b7355;">Optimocracy.org</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>

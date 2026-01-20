@@ -16,7 +16,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-impact-paper.pdf
   netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
-  netlify-cname: "impact-dfda-earth.netlify.app"  # DNS: impact.dfda.earth -> this
+  netlify-cname: "dfda-impact-warondisease.netlify.app"  # DNS: dfda-impact.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
   favicon-prompt: "A pill or capsule with an upward impact arrow. Represents the positive health and economic impact of decentralized drug assessment."
   og-image-prompt: "Economic impact visualization of decentralized drug assessment - showing billions of lives saved, DALYs averted, and cost savings. Include medical symbols transforming into positive metrics, global health improvement, and statistical confidence intervals."
@@ -29,7 +29,7 @@ profiles:
 website:
   title: 'The Health and Economic Impact of a Global System for Pragmatic Clinical Trials'
   description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings."
-  site-url: https://impact.dfda.earth
+  site-url: https://dfda-impact.warondisease.org
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   navbar:
@@ -37,7 +37,7 @@ website:
       - text: "Paper"
         href: /
       - text: "dFDA Spec"
-        href: https://spec.dfda.earth
+        href: https://dfda-spec.warondisease.org
       - text: "dFDA App"
         href: https://dfda.earth
     right:
@@ -117,12 +117,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://impact.dfda.earth/assets/og/dfda-impact-og-1200x630.jpg"
+  image: "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://impact.dfda.earth"
+      url: "https://dfda-impact.warondisease.org"
       status: deployed
     preprints:
       - platform: zenodo
@@ -189,14 +189,14 @@ format:
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
-      right: "[roi.dfda.earth](https://impact.dfda.earth)"
+      right: "[roi.dfda.earth](https://dfda-impact.warondisease.org)"
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
             <p style="margin: 0.5rem 0;">
               © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
               <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
-              <a href="https://impact.dfda.earth" style="color: #8b7355;">roi.dfda.earth</a>
+              <a href="https://dfda-impact.warondisease.org" style="color: #8b7355;">roi.dfda.earth</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>

@@ -27,7 +27,7 @@ profiles:
 website:
   title: "Optimal Budget Generator: Evidence-Based Budget Allocation Framework"
   description: "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target."
-  site-url: https://paper.obg.dih.earth
+  site-url: https://obg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   navbar:
@@ -43,7 +43,7 @@ website:
       - text: "References"
         href: /#references
       - text: "Optimocracy"
-        href: https://paper.optimocracy.org
+        href: https://optimocracy.warondisease.org
       - text: "War on Disease"
         href: https://WarOnDisease.org
 
@@ -109,12 +109,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://paper.obg.dih.earth/assets/og/obg-og-1200x630.jpg"
+  image: "https://obg.warondisease.org/assets/og/obg-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://paper.obg.dih.earth"
+      url: "https://obg.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo

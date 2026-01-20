@@ -126,40 +126,12 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
 function buildOgImagePrompt(config: QuartoConfig): string {
   const style = VisualStyles.academic;
 
-  // Use custom prompt if provided
-  if (config.ogImagePrompt) {
-    return `Create a professional social media OG image (1200x630 pixels).
+  return `
+  ${style.style}
+  
+  CONCEPT: ${config.ogImagePrompt}
+  `;
 
-${style.style}
-
-CONCEPT: ${config.ogImagePrompt}
-
-TITLE: ${config.title}
-
-Requirements:
-- Clean, professional academic aesthetic
-- Title text must be large, bold, readable
-- Centered composition for social media preview
-- High contrast, minimalist design
-- DO NOT include any URL or website address
-- Black and white or muted colors only`;
-  }
-
-  // Fallback to generic prompt
-  return `Create a professional social media OG image (1200x630 pixels).
-
-${style.style}
-
-TITLE: ${config.title}
-${config.description ? `DESCRIPTION: ${config.description.substring(0, 300)}` : ''}
-${config.keywords.length > 0 ? `KEYWORDS: ${config.keywords.slice(0, 5).join(', ')}` : ''}
-
-Requirements:
-- Clean, professional academic aesthetic
-- Title text must be large, bold, readable
-- Centered composition for social media preview
-- High contrast, minimalist design
-- DO NOT include any URL or website address`;
 }
 
 /**
@@ -171,13 +143,7 @@ function buildFaviconPrompt(config: QuartoConfig): string {
 
 STRICT COLOR RULES:
 - Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent
-- Icon: BLACK and WHITE only - maximum 2 colors in the final icon
-
-DESIGN REQUIREMENTS:
-- EXTREMELY SIMPLE - must be recognizable at 16x16 pixels
-- Thick bold lines (minimum 8px at 512px resolution)
-- Think: app icon, not illustration
-- High contrast, clean shapes
+- Maximum 3 colors in the icon (red, white, black)
 
 ICON CONCEPT:`;
 
@@ -186,7 +152,7 @@ ICON CONCEPT:`;
     return `${basePrompt}
 ${config.faviconPrompt}
 
-Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
+`;
   }
 
   // Fallback to generic prompt based on title
@@ -194,7 +160,7 @@ Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white
 Create a simple icon representing: "${config.title}"
 ${config.description ? `Context: ${config.description.substring(0, 150)}` : ''}
 
-Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY black and white.`;
+Background MUST be pure bright magenta (#FF00FF). Icon uses ONLY red, white, and black.`;
 }
 
 /**
@@ -305,6 +271,7 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       aspectRatio: '1:1',
       outputDir,
       filePrefix: `${config.configName}-favicon-raw`,
+      format: 'jpg', // API returns JPG natively, avoid conversion
       metadata: {
         title: `${config.title} - Favicon`,
         description: `Favicon icon for ${config.title}`,

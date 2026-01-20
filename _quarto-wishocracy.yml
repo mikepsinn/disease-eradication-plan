@@ -14,7 +14,7 @@ dih-render:
   index-source: knowledge/appendix/wishocracy-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
-  netlify-cname: "wishocracy-paper.netlify.app"  # DNS: paper.wishocracy.org -> this
+  netlify-cname: "wishocracy-warondisease.netlify.app"  # DNS: wishocracy.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
   favicon-prompt: "Letter 'W' with a star above it. Represents Wishocracy - wish + star symbolizing democratic wish fulfillment."
   og-image-prompt: "A visualization of democratic preference aggregation - showing people's wishes/preferences being collected, compared pairwise, and transformed into aligned governance outcomes. Include ballot imagery, connecting lines, and collective decision-making symbols."
@@ -27,7 +27,7 @@ profiles:
 website:
   title: "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
   description: "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want."
-  site-url: https://paper.wishocracy.org
+  site-url: https://wishocracy.warondisease.org
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
   navbar:
@@ -114,12 +114,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://paper.wishocracy.org/assets/og/wishocracy-og-1200x630.jpg"
+  image: "https://wishocracy.warondisease.org/assets/og/wishocracy-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://paper.wishocracy.org"
+      url: "https://wishocracy.warondisease.org"
       status: deployed
     preprints:
       - platform: zenodo

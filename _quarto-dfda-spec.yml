@@ -16,7 +16,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
-  netlify-cname: "dfda-paper.netlify.app"  # DNS: spec.dfda.earth -> this
+  netlify-cname: "dfda-spec-warondisease.netlify.app"  # DNS: dfda-spec.warondisease.org -> this
   # Image generation prompts (used by scripts/images/generate-project-branding.ts)
   favicon-prompt: "A pill or capsule inside a magnifying glass. Represents decentralized drug assessment and analysis."
   og-image-prompt: "Scientific visualization of decentralized drug assessment - showing pills, molecular structures, data flowing through a distributed network, and real-world evidence validation. Academic and clinical aesthetic."
@@ -29,7 +29,7 @@ profiles:
 website:
   title: "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
   description: 'We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at ~80x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.'
-  site-url: https://spec.dfda.earth
+  site-url: https://dfda-spec.warondisease.org
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   navbar:
@@ -95,7 +95,7 @@ metadata:
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
   publisher: "Decentralized FDA"
-  publisher-url: "https://spec.dfda.earth"
+  publisher-url: "https://dfda-spec.warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
@@ -116,12 +116,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://spec.dfda.earth/assets/og/dfda-spec-og-1200x630.jpg"
+  image: "https://dfda-spec.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://spec.dfda.earth"
+      url: "https://dfda-spec.warondisease.org"
       status: deployed
     preprints:
       - platform: zenodo
@@ -188,14 +188,14 @@ format:
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
-      right: "[dFDA.earth](https://spec.dfda.earth)"
+      right: "[dFDA.earth](https://dfda-spec.warondisease.org)"
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
             <p style="margin: 0.5rem 0;">
               © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
               <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
-              <a href="https://spec.dfda.earth" style="color: #8b7355;">dFDA.earth</a>
+              <a href="https://dfda-spec.warondisease.org" style="color: #8b7355;">dFDA.earth</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "generatedAt": "2026-01-20T10:22:35.502027Z",
-  "projectRoot": "E:\\code\\obsidian\\websites\\disease-eradication-plan",
+  "generatedAt": "2026-01-20T10:38:59.433741Z",
+  "projectRoot": ".",
   "totalSites": 10,
   "sites": [
     {
@@ -114,10 +114,10 @@
       "type": "website",
       "title": "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials",
       "description": "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings.",
-      "siteUrl": "https://impact.dfda.earth",
-      "favicon": "https://impact.dfda.earth/assets/icons/dfda-favicon.png",
-      "ogImage": "https://impact.dfda.earth/assets/og/dfda-impact-og-1200x630.jpg",
-      "pdfUrl": "https://impact.dfda.earth/dfda-impact-paper.pdf",
+      "siteUrl": "https://dfda-impact.warondisease.org",
+      "favicon": "https://dfda-impact.warondisease.org/assets/icons/dfda-favicon.png",
+      "ogImage": "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg",
+      "pdfUrl": "https://dfda-impact.warondisease.org/dfda-impact-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -155,13 +155,13 @@
       "twitterCreator": "@warondisease",
       "netlify": {
         "siteId": "a314a33e-3155-4067-8624-706266899419",
-        "cname": "impact-dfda-earth.netlify.app"
+        "cname": "dfda-impact-warondisease.netlify.app"
       },
       "indexSource": "knowledge/appendix/dfda-impact-paper.qmd",
       "outputDir": "_site/dfda-impact",
       "publishing": {
         "ownSite": {
-          "url": "https://impact.dfda.earth",
+          "url": "https://dfda-impact.warondisease.org",
           "status": "deployed"
         },
         "preprints": [
@@ -209,10 +209,10 @@
       "type": "website",
       "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
       "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at ~80x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
-      "siteUrl": "https://spec.dfda.earth",
-      "favicon": "https://spec.dfda.earth/assets/icons/dfda-favicon.png",
-      "ogImage": "https://spec.dfda.earth/assets/og/dfda-spec-og-1200x630.jpg",
-      "pdfUrl": "https://spec.dfda.earth/dfda-paper.pdf",
+      "siteUrl": "https://dfda-spec.warondisease.org",
+      "favicon": "https://dfda-spec.warondisease.org/assets/icons/dfda-favicon.png",
+      "ogImage": "https://dfda-spec.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg",
+      "pdfUrl": "https://dfda-spec.warondisease.org/dfda-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -225,7 +225,7 @@
       "license": "CC BY-NC 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
       "publisher": "Decentralized FDA",
-      "publisherUrl": "https://spec.dfda.earth",
+      "publisherUrl": "https://dfda-spec.warondisease.org",
       "subject": "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods",
       "category": "Academic Paper, Medical Research, Methodology",
       "keywords": [
@@ -251,13 +251,13 @@
       "twitterCreator": "@warondisease",
       "netlify": {
         "siteId": "01e9af64-b6d0-48ee-8c3d-43994745ac3f",
-        "cname": "dfda-paper.netlify.app"
+        "cname": "dfda-spec-warondisease.netlify.app"
       },
       "indexSource": "knowledge/appendix/dfda-spec-paper.qmd",
       "outputDir": "_site/dfda-spec",
       "publishing": {
         "ownSite": {
-          "url": "https://spec.dfda.earth",
+          "url": "https://dfda-spec.warondisease.org",
           "status": "deployed"
         },
         "preprints": [
@@ -502,10 +502,10 @@
       "type": "website",
       "title": "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
       "description": "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.",
-      "siteUrl": "https://paper.obg.dih.earth",
-      "favicon": "https://paper.obg.dih.earth/assets/icons/dih-favicon.png",
-      "ogImage": "https://paper.obg.dih.earth/assets/og/obg-og-1200x630.jpg",
-      "pdfUrl": "https://paper.obg.dih.earth/obg-framework-paper.pdf",
+      "siteUrl": "https://obg.warondisease.org",
+      "favicon": "https://obg.warondisease.org/assets/icons/dih-favicon.png",
+      "ogImage": "https://obg.warondisease.org/assets/og/obg-og-1200x630.jpg",
+      "pdfUrl": "https://obg.warondisease.org/obg-framework-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -547,7 +547,7 @@
       "outputDir": "_site/obg",
       "publishing": {
         "ownSite": {
-          "url": "https://paper.obg.dih.earth",
+          "url": "https://obg.warondisease.org",
           "status": "pending"
         },
         "preprints": [
@@ -584,10 +584,10 @@
       "type": "website",
       "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
       "description": "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
-      "siteUrl": "https://paper.opg.dih.earth",
-      "favicon": "https://paper.opg.dih.earth/assets/icons/dih-favicon.png",
-      "ogImage": "https://paper.opg.dih.earth/assets/og/opg-og-1200x630.jpg",
-      "pdfUrl": "https://paper.opg.dih.earth/opg-framework-paper.pdf",
+      "siteUrl": "https://opg.warondisease.org",
+      "favicon": "https://opg.warondisease.org/assets/icons/dih-favicon.png",
+      "ogImage": "https://opg.warondisease.org/assets/og/opg-og-1200x630.jpg",
+      "pdfUrl": "https://opg.warondisease.org/opg-framework-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -629,7 +629,7 @@
       "outputDir": "_site/opg",
       "publishing": {
         "ownSite": {
-          "url": "https://paper.opg.dih.earth",
+          "url": "https://opg.warondisease.org",
           "status": "pending"
         },
         "preprints": [
@@ -672,10 +672,10 @@
       "type": "website",
       "title": "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation",
       "description": "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.",
-      "siteUrl": "https://paper.optimocracy.org",
-      "favicon": "https://paper.optimocracy.org/assets/icons/optimocracy-favicon.png",
-      "ogImage": "https://paper.optimocracy.org/assets/og/optimocracy-og-1200x630.jpg",
-      "pdfUrl": "https://paper.optimocracy.org/optimocracy-paper.pdf",
+      "siteUrl": "https://optimocracy.warondisease.org",
+      "favicon": "https://optimocracy.warondisease.org/assets/icons/optimocracy-favicon.png",
+      "ogImage": "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg",
+      "pdfUrl": "https://optimocracy.warondisease.org/optimocracy-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -722,10 +722,10 @@
       "type": "website",
       "title": "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
       "description": "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.",
-      "siteUrl": "https://paper.wishocracy.org",
-      "favicon": "https://paper.wishocracy.org/assets/icons/wishocracy-favicon.png",
-      "ogImage": "https://paper.wishocracy.org/assets/og/wishocracy-og-1200x630.jpg",
-      "pdfUrl": "https://paper.wishocracy.org/wishocracy-rappa-paper.pdf",
+      "siteUrl": "https://wishocracy.warondisease.org",
+      "favicon": "https://wishocracy.warondisease.org/assets/icons/wishocracy-favicon.png",
+      "ogImage": "https://wishocracy.warondisease.org/assets/og/wishocracy-og-1200x630.jpg",
+      "pdfUrl": "https://wishocracy.warondisease.org/wishocracy-rappa-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -762,13 +762,13 @@
       "twitterCreator": "@warondisease",
       "netlify": {
         "siteId": "6d3175fc-5866-4d09-985d-aebe008a4966",
-        "cname": "wishocracy-paper.netlify.app"
+        "cname": "wishocracy-warondisease.netlify.app"
       },
       "indexSource": "knowledge/appendix/wishocracy-paper.qmd",
       "outputDir": "_site/wishocracy",
       "publishing": {
         "ownSite": {
-          "url": "https://paper.wishocracy.org",
+          "url": "https://wishocracy.warondisease.org",
           "status": "deployed"
         },
         "preprints": [
