@@ -13,6 +13,7 @@ project:
 dih-render:
   index-source: knowledge/appendix/wishocracy-paper.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
 
 profiles:
   default:

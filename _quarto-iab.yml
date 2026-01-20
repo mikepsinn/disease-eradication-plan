@@ -14,6 +14,7 @@ project:
 dih-render:
   index-source: knowledge/appendix/incentive-alignment-bonds-paper.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
+  netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
 
 profiles:
   default:

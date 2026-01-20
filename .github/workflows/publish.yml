@@ -85,7 +85,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
+          NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
 
         timeout-minutes: 1
 
@@ -162,7 +162,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_IMPACT_SITE_ID }}
+          NETLIFY_SITE_ID: a314a33e-3155-4067-8624-706266899419
 
         timeout-minutes: 1
 
@@ -246,7 +246,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_DFDA_SPEC_SITE_ID }}
+          NETLIFY_SITE_ID: 01e9af64-b6d0-48ee-8c3d-43994745ac3f
 
         timeout-minutes: 1
 
@@ -330,7 +330,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
+          NETLIFY_SITE_ID: 8cb62a4c-0a10-4a92-a9ab-088c5b2cf094
 
         timeout-minutes: 1
 
@@ -414,7 +414,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
+          NETLIFY_SITE_ID: 8f7611db-1075-48a2-abd8-7f77f55538f9
 
         timeout-minutes: 1
 
@@ -498,7 +498,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OBG_SITE_ID }}
+          NETLIFY_SITE_ID: 123f44a0-d5b6-4ff3-9375-1f7e47fca053
 
         timeout-minutes: 1
 
@@ -582,7 +582,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OPG_SITE_ID }}
+          NETLIFY_SITE_ID: 8b9558d9-6a2b-4581-bde7-11d79933d105
 
         timeout-minutes: 1
 
@@ -666,7 +666,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OPTIMOCRACY_SITE_ID }}
+          NETLIFY_SITE_ID: c6e535bc-4503-4db8-833a-c1b93f5e0f10
 
         timeout-minutes: 1
 
@@ -735,25 +735,6 @@ jobs:
         timeout-minutes: 10
 
 
-      - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/political-capture/_site/political-capture'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          deploy-message: "Deploy political-capture site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_POLITICAL_CAPTURE_SITE_ID }}
-
-        timeout-minutes: 1
-
 
 
       - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
@@ -818,25 +799,6 @@ jobs:
         run: python scripts/render-quarto.py test
         timeout-minutes: 10
 
-
-      - name: "Deploy Build Test Economics Document to Netlify (immediate)"
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/test/_book/test'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          deploy-message: "Deploy test site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_TEST_SITE_ID }}
-
-        timeout-minutes: 1
 
 
 
@@ -911,7 +873,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
+          NETLIFY_SITE_ID: 6d3175fc-5866-4d09-985d-aebe008a4966
 
         timeout-minutes: 1
 

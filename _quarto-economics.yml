@@ -11,6 +11,7 @@ dih-render:
   index-source: knowledge/economics/economics.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
   pdf-output-file: 1-percent-treaty-impact.pdf
+  netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
 
 profiles:
   default:

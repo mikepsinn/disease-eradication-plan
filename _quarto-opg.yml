@@ -11,6 +11,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  netlify-site-id: "8b9558d9-6a2b-4581-bde7-11d79933d105"
   index-source: knowledge/appendix/optimal-policy-generator-spec.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
 

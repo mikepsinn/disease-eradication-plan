@@ -15,6 +15,7 @@ dih-render:
   index-source: knowledge/appendix/dfda-impact-paper.qmd
   target-url: https://manual.WarOnDisease.org  # For cross-site link rewriting
   pdf-output-file: dfda-impact-paper.pdf
+  netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
 
 profiles:
   default:

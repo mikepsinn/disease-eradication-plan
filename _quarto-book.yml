@@ -13,6 +13,7 @@ project:
 dih-render:
   index-source: index-book.qmd  # Simple copy, no path transformation needed
   # No target-url - this IS the main book site
+  netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
 
 website:
   site-url: https://manual.WarOnDisease.org

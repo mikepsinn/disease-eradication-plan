@@ -25,7 +25,8 @@ class JobConfig:
     project_type: str             # "book" or "website"
     timeout_minutes: int          # 10, 25, or 75
     build_dir: str                # "_build_temp/economics/_site/economics"
-    netlify_secret: str           # "NETLIFY_ECONOMICS_SITE_ID"
+    netlify_site_id: str | None   # Direct site ID from config (preferred)
+    netlify_secret: str           # Fallback: "NETLIFY_ECONOMICS_SITE_ID"
     upload_to_zenodo: bool        # True for papers
     deploy_to_netlify: bool       # True for all
 
@@ -47,12 +48,16 @@ class JobConfig:
         else:
             title = config.get('website', {}).get('title', '')
 
+        # Get Netlify site ID from dih-render section (preferred over secrets)
+        dih_render = config.get('dih-render', {})
+        netlify_site_id = dih_render.get('netlify-site-id')
+
         # Derive values
         display_name = derive_display_name(config_name, title)
         timeout = infer_timeout(config_name, project_type)
         build_dir = infer_build_dir(config_name, output_dir, project_type)
         netlify_secret = derive_netlify_secret(config_name)
-        upload_zenodo = should_upload_to_zenodo(config_name, project_type)
+        upload_zenodo = should_upload_to_zenodo(config_name, config)
 
         return cls(
             config_name=config_name,
@@ -60,9 +65,10 @@ class JobConfig:
             project_type=project_type,
             timeout_minutes=timeout,
             build_dir=build_dir,
+            netlify_site_id=netlify_site_id,
             netlify_secret=netlify_secret,
             upload_to_zenodo=upload_zenodo,
-            deploy_to_netlify=True
+            deploy_to_netlify=bool(netlify_site_id)  # Only deploy if site ID configured
         )
 
 
@@ -106,10 +112,16 @@ def derive_netlify_secret(config_name: str) -> str:
     return f"NETLIFY_{config_name.upper().replace('-', '_')}_SITE_ID"
 
 
-def should_upload_to_zenodo(config_name: str, project_type: str) -> bool:
+def should_upload_to_zenodo(config_name: str, config: dict) -> bool:
     """Determine if this config should upload to Zenodo."""
     # Skip for main book and test
-    return config_name not in ("book", "test")
+    if config_name in ("book", "test"):
+        return False
+    # Check explicit zenodo flag in dih-render
+    dih_render = config.get('dih-render', {})
+    if dih_render.get('zenodo') is False:
+        return False
+    return True
 
 
 def extract_job_configs(project_root: Path) -> List[JobConfig]:

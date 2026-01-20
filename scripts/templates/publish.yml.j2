@@ -85,7 +85,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
 
-          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
+          NETLIFY_SITE_ID: {{ job.netlify_site_id }}
 
         timeout-minutes: 1
 {% endif %}
