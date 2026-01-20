@@ -3,20 +3,21 @@ title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Juri
 subtitle: "Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria"
 description: "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data."
 abstract: |
-  Humanity has been running policy experiments for centuries. Fifty states, two hundred countries, thousands
-  of cities, each with different laws, tax rates, regulations, and programs. The data exists to know what
-  works. Which policies save lives. Which ones cost lives. Which ones we keep out of inertia, long after
-  the evidence turned against them. We have not used this knowledge. Policies that kill people remain on
-  the books because no system exists to update them. Policies that would save lives remain unadopted
-  because no system exists to spread them. The Optimal Policy Generator harvests this evidence
-  systematically. For any jurisdiction, it produces four outputs: ENACT (policies proven elsewhere that
-  you lack), REPLACE (policies you have at the wrong level), REPEAL (policies that harm more than they
-  help), MAINTAIN (policies aligned with evidence). Each recommendation includes the effect size, the
-  confidence interval, the monetized welfare impact, and the evidence grade. The framework does not know
-  which party enacted a policy. It only knows whether people lived or died, prospered or suffered. A world
-  that adopted evidence-optimal policies everywhere would not merely be marginally better. It would be a
-  world where preventable deaths are prevented, where suffering that exists only through institutional
-  inertia is eliminated.
+  Fifty US states with different laws. Two hundred countries with different policies. Centuries of
+  variation in tax rates, regulations, programs. The data to know what works exists but isn't
+  systematically harvested.
+
+  The Optimal Policy Generator: For any jurisdiction, four outputs. ENACT (policies proven elsewhere
+  that you lack). REPLACE (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN
+  (policies aligned with evidence). Each recommendation includes effect size, confidence interval,
+  monetized impact, evidence grade.
+
+  Bradford Hill criteria (the gold standard for establishing causality in epidemiology) are operationalized
+  into nine quantitative scoring functions: strength of association, consistency across contexts,
+  specificity, temporality, dose-response, plausibility, coherence, experimental evidence, and analogy.
+  Synthetic control constructs counterfactual outcomes; difference-in-differences isolates policy effects
+  from confounders. Agnostic to which party enacted each policy, only whether it worked. Estimated
+  welfare gains: 5-15% of GDP for typical US states.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html

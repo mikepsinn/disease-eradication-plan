@@ -5453,7 +5453,7 @@ export const citations: Record<string, Citation> = {
   "95-pct-diseases-no-treatment": {
         id: "95-pct-diseases-no-treatment",
         type: "article-journal",
-        title: "95% of diseases have no effective treatment",
+        title: "95% of diseases have 0 FDA-approved treatments",
         author: [
           {
             literal: "GAO"

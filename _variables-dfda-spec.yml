@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (19 entries)
+# Contains only variables used in this paper (21 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "current_trial_slots_available": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trial_slots_available\"\
@@ -20,6 +20,16 @@
   \ traditional Phase 3 (~$41,000/patient). | ✓ High confidence | 95% CI: [$0.030,\
   \ $1.00] | Dist: Lognormal | Unit: USD/patient | Click to view details, calculation\
   \ & sources\">$0.100 (95% CI: $0.030-$1.00)</a>"
+"dfda_trial_cost_reduction_factor": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_cost_reduction_factor\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost reduction\
+  \ factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: TRADITIONAL_PHASE3_COST\
+  \ / DFDA_PRAGMATIC_COST | Unit: multiplier | Click to view details, calculation\
+  \ & sources\">44.1x (95% CI: 39.4x-89.1x)</a>"
+"dfda_trial_cost_reduction_factor_latex": "$$\n\\begin{gathered}\nk_{reduce} \\\\\n\
+  = \\frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\\\\n= \\frac{\\$41K}{\\$929} \\\\\n\
+  = 44.1\n\\end{gathered}\n$$"
 "efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Regulatory\

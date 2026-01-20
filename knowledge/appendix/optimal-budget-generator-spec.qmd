@@ -3,18 +3,18 @@ title: "Optimal Budget Generator: Evidence-Based Budget Allocation Framework"
 subtitle: "Generating Integrated Budget Recommendations Using Reference Benchmarking, Diminishing Returns, and Cost-Effectiveness Analysis"
 description: "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target."
 abstract: |
-  Imagine a world where every public dollar flows toward what actually improves human lives. Not toward
-  historical inertia. Not toward whoever organized first. Toward what the evidence says will reduce
-  suffering and expand flourishing. We are not living in that world. The gap between what we spend and
-  what the evidence says we should spend represents 20-40% of everything humanity produces (tens of
-  trillions of dollars annually), decade after decade. That gap is not an abstraction. It is children who
-  die of diseases we know how to prevent. It is cures delayed by decades because our systems were designed
-  before we had the data to know better. It is the difference between the world we have inherited and the
-  world we could build. The Optimal Budget Generator makes this gap visible. For any jurisdiction, it asks:
-  What do the healthiest, wealthiest societies spend? Where does evidence show diminishing returns? What
-  is the marginal life saved, the marginal year of suffering prevented, per dollar? The output is a map
-  of misallocation, where outdated systems are starving what works and feeding what doesn't. The potential
-  is not incremental improvement. It is the unlocking of human flourishing on a scale we have never seen.
+  20-40% of public spending is misallocated relative to outcome-maximizing benchmarks. This represents $8-16 trillion
+  annually in potential welfare gains. Budget processes respond to lobbying intensity and historical
+  precedent rather than comparative effectiveness evidence.
+
+  The Optimal Budget Generator triangulates three evidence sources for each spending category.
+  Reference country benchmarking: what do high-performing peers spend? Diminishing returns modeling:
+  where does spending hit saturation? Cost-effectiveness analysis: what's the marginal impact per
+  dollar? Where methods agree, confidence is high. Where they diverge, uncertainty is quantified.
+
+  Each category gets an optimal spending level with a Budget Impact Score (study quality × statistical
+  precision × temporal recency) measuring confidence. Output: gap analysis showing which categories
+  are over- or underfunded relative to evidence-based benchmarks.
 aliases:
   - /budget-optimization.html
   - /optimal-budget-generator.html
@@ -182,7 +182,7 @@ This paper makes three primary contributions to the public finance literature:
 
 1. **Methodological**: We develop a unified framework integrating reference benchmarking, diminishing returns modeling, and cost-effectiveness analysis to estimate optimal spending levels, extending beyond marginal analysis to target-based allocation.
 
-2. **Theoretical**: We formalize the Budget Impact Score (BIS) as a precision-weighted confidence measure, establishing conditions under which evidence-based allocation is incentive-compatible and resistant to lobbying distortions (Proposition 6).
+2. **Theoretical**: We formalize the Budget Impact Score (BIS) as a precision-weighted confidence measure that prioritizes allocation decisions by evidence quality rather than lobbying intensity.
 
 3. **Applied**: We demonstrate the framework with worked examples across education, health, and defense spending, identifying systematic patterns of over- and under-investment in US federal allocations.
 
@@ -332,14 +332,6 @@ $$
 
 *The OBG framework reports both point estimates and these bounds via sensitivity analysis.*
 
-### Connection to Mechanism Design
-
-The OBG framework relates to the mechanism design literature on optimal public good provision [@myerson1981]. In a setting where spending categories are public goods with heterogeneous returns:
-
-**Proposition 6 (Incentive Compatibility).** *A budget allocation mechanism that (i) estimates OSL using revealed preference data and (ii) allocates proportionally to gap-weighted BIS scores is incentive-compatible in the sense that no coalition of stakeholders can improve their welfare by misreporting preferences, provided BIS weights are determined by independent evidence.*
-
-This proposition establishes that evidence-based OSL estimation, combined with BIS weighting, creates a mechanism resistant to the lobbying distortions identified in the introduction.
-
 ### Summary of Theoretical Results
 
 | Result | Implication for OBG |
@@ -350,7 +342,6 @@ This proposition establishes that evidence-based OSL estimation, combined with B
 | Proposition 4 | Gap closure yields quantifiable welfare gains |
 | Corollary 1 | Priority ranking optimizes reallocation sequence |
 | Proposition 5 | Welfare bounds enable robust recommendations |
-| Proposition 6 | Evidence-based estimation resists manipulation |
 
 ## Core Methodology
 

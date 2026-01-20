@@ -2,21 +2,20 @@
 title: 'Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation'
 description: Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
 abstract: |
-  What if democracy actually worked? What if the resources of a society flowed toward what its citizens
-  wanted? When Gilens and Page analyzed 1,779 policy decisions, they found that average citizen preferences
-  had zero correlation with policy outcomes. This is not a conspiracy. It is a system design problem:
-  current feedback mechanisms do not connect citizen preferences to resource allocation. Representatives
-  face incentive structures (fundraising requirements, information asymmetries, short election cycles) that
-  were never designed to optimize for preference transmission. Wishocracy redesigns those feedback loops.
-  RAPPA asks simple questions: "Given $100 to split between cancer research and defense, how would you
-  divide it?" Aggregate millions of such comparisons and you reveal what voters actually want, not just
-  their binary preferences, but the intensity of those preferences. Compare this to how legislatures
-  actually vote. Publish "Citizen Alignment Scores" for every representative. Channel electoral resources
-  toward high-alignment candidates through Incentive Alignment Bonds. Suddenly, representing citizens
-  becomes the winning strategy. The world that results, where public resources flow toward what people
-  actually want, is not utopian fantasy. Porto Alegre's participatory budgeting quadrupled schools and
-  achieved 98% water coverage. Taiwan's vTaiwan resolved deadlocks that had festered for years. These are
-  glimpses of what governance could be when the system is designed to listen.
+  Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite
+  preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences
+  for representatives.
+
+  RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these
+  two budget categories?"). Geometric mean aggregation produces population-level preference weights from
+  sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference
+  *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each
+  legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to
+  high-alignment candidates through Incentive Alignment Bonds.
+
+  The mechanism achieves three properties no prior system combines: minimal cognitive load (~20
+  comparisons per participant yields statistical convergence), preference intensity capture, and
+  approximate strategy-proofness.
 aliases:
   - /wishocracy.html
 author:

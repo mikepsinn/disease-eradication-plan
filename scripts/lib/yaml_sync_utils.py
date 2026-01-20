@@ -217,15 +217,21 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                 abstract = substitute_quarto_variables(abstract, variables)
 
             # Check if updates are needed
-            # Note: title/description/abstract can be in 'website' section (website projects)
-            # or 'book' section (book projects), not always in 'metadata'
+            # Note: title/description can be in 'website' or 'book' section
+            # But 'abstract' is ONLY valid in 'book' section (not website)
             website_section = config.get('website', {})
             book_section = config.get('book', {})
+            is_book_project = bool(book_section)
 
             # Get current values from the appropriate section
             current_title = website_section.get('title', '') or book_section.get('title', '')
             current_desc = website_section.get('description', '') or book_section.get('description', '')
-            current_abstract = website_section.get('abstract', '') or book_section.get('abstract', '')
+            # Abstract only valid for book projects
+            current_abstract = book_section.get('abstract', '') if is_book_project else ''
+
+            # For website projects, don't compare/sync abstract (not a valid property)
+            if not is_book_project:
+                abstract = ''
 
             if title == current_title and description == current_desc and abstract == current_abstract:
                 continue
@@ -250,8 +256,8 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                     content = new_content
                     updated = True
 
-            if abstract and abstract != current_abstract:
-                # Find and replace abstract line (in website or book section)
+            if abstract and abstract != current_abstract and is_book_project:
+                # Find and replace abstract line (only valid in book section, not website)
                 abstract_pattern = r'(^  abstract:\s*)["\']?.*?["\']?\s*$'
                 abstract_replacement = f'  abstract: {escape_yaml_string(abstract)}'
                 new_content = re.sub(abstract_pattern, abstract_replacement, content, count=1, flags=re.MULTILINE)
@@ -259,8 +265,8 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                     content = new_content
                     updated = True
                 else:
-                    # Abstract line doesn't exist yet - add it after description in website/book section
-                    # Look for the first description line in the file (which will be in website or book section)
+                    # Abstract line doesn't exist yet - add it after description in book section
+                    # Look for description line in the book section
                     desc_line_pattern = r'(^  description:\s*["\']?.*?["\']?\s*$)'
                     desc_match = re.search(desc_line_pattern, content, flags=re.MULTILINE)
                     if desc_match:

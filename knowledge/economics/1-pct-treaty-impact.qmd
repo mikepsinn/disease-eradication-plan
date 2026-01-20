@@ -2,23 +2,21 @@
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
 description: At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending to pragmatic trials increases capacity {{< var dfda_trial_capacity_multiplier >}}×, reducing this to ~{{< var dfda_queue_clearance_years >}} and delivering treatments decades earlier. Cost-effectiveness {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY (treaty) or {{< var dfda_direct_funding_cost_per_daly >}}/DALY (direct funding) both more cost-effective than bed nets.
 abstract: |
-  {{< var diseases_without_effective_treatment >}} diseases have no effective treatment. At current trial
-  capacity, finding cures for all of them takes ~{{< var status_quo_queue_clearance_years >}}. Effectively
-  forever. Every person alive today, and their children, and their grandchildren, will die of diseases we
-  could cure if we tried. We are not trying. We spend {{< var global_military_spending_annual_2024 >}}/year preparing
-  to destroy each other, and a fraction of that finding ways to heal each other. Redirect
-  {{< var treaty_reduction_pct >}} of military spending ({{< var treaty_annual_funding >}}/year) to
-  pragmatic clinical trials. Trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}×. The queue
-  clears in ~{{< var dfda_queue_clearance_years >}} instead of centuries. The average treatment reaches
-  patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. This timeline shift saves
+  {{< var diseases_without_effective_treatment >}} diseases have 0 FDA-approved treatments. At current trial
+  capacity ({{< var new_disease_first_treatments_per_year >}} new first treatments/year), clearing the
+  queue takes ~{{< var status_quo_queue_clearance_years >}}.
+
+  Redirect {{< var treaty_reduction_pct >}} of military spending ({{< var treaty_annual_funding >}}/year)
+  to pragmatic clinical trials. Trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}×. Queue
+  clears in ~{{< var dfda_queue_clearance_years >}} instead of centuries. Average treatment reaches
+  patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. Timeline shift saves
   {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, valued at
-  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Cost-effectiveness:
-  {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}×
-  better than the most effective global health interventions). Military spending creates depreciating assets:
-  weapons become obsolete, enemies become allies, threats dissolve. Medical research creates appreciating
-  assets: every cure compounds in value forever, benefiting every future generation. This is not charity.
-  It is the highest-return reallocation in human history. The choice between a world of war and a world of
-  health is not a matter of resources. It is a matter of will.
+  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
+
+  Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY,
+  {{< var treaty_vs_bed_nets_multiplier >}}× better than bed nets. Even at {{< var political_success_probability >}}
+  probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
+  global health interventions.
 author:
   - name: Mike P. Sinn
     roles:
