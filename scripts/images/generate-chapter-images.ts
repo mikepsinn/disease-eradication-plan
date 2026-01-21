@@ -83,21 +83,12 @@ FILTERED:`;
  * Prioritizes entertaining, surprising, and informative content
  */
 async function extractSlideContent(content: string, title?: string, description?: string): Promise<string> {
-  const prompt = `Extract the FUNNIEST and most SHOCKING sentences for a PowerPoint slide.
-
-Find 2-3 sentences that will make the audience laugh nervously or gasp.
-
-REQUIREMENTS:
-- Copy sentences EXACTLY as written (verbatim)
-- Prioritize dark humor, absurd comparisons, or jaw-dropping statistics
-- Maximum 350 characters total
-- NO rephrasing, NO summarizing
+  const prompt = `Extract 2-3 sentences for a slide. Each must contain a statistic or concrete fact. Prefer sentences with dark humor or vivid analogies. Verbatim only.
 
 ${title ? `Topic: ${title}\n` : ''}
-TEXT:
 ${content.substring(0, 6000)}
 
-BEST QUOTES (copy exactly):`;
+SENTENCES:`;
 
   try {
     const responseText = await generateGeminiFlashContent(prompt);
