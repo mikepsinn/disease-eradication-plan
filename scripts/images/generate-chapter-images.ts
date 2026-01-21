@@ -32,7 +32,7 @@ import fs from 'fs/promises';
 import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
 import { generateAndSaveImages, ImageMetadata } from '../lib/gemini-images.js';
-import { generateGeminiFlashContent } from '../lib/llm.js';
+import { generateGeminiFlashContent, generateGeminiProContent } from '../lib/llm.js';
 import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
@@ -91,7 +91,7 @@ ${content.substring(0, 6000)}
 SLIDE TEXT:`;
 
   try {
-    const responseText = await generateGeminiFlashContent(prompt);
+    const responseText = await generateGeminiProContent(prompt);
     const extractedContent = responseText.trim();
 
     // Combine title, description, and extracted content without labels
