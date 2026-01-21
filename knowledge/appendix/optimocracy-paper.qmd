@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: 'Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.'
+description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.
 abstract: |
   Politicians allocate trillions of dollars annually. They vote on budgets. The problem: what gets you
   reelected, funded, and hired after office is often not what benefits voters. This misalignment costs
@@ -21,7 +21,7 @@ aliases:
   - /optimocracy.html
 author:
   - name: Mike P. Sinn
-    orcid: "0009-0006-0212-1094"
+    orcid: 0009-0006-0212-1094
     affiliation:
       name: Decentralized Institutes of Health
       url: https://dih.earth
@@ -56,7 +56,10 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
+image: /assets/og-images/knowledge/appendix/optimocracy-paper-og-academic.jpg
 ---
+![Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.](/assets/infographics/knowledge/appendix/optimocracy-paper-infographic-academic.jpg)
+
 
 {{< include ../includes/setup-parameters.qmd >}}
 

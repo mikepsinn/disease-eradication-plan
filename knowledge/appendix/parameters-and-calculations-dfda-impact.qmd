@@ -23,15 +23,15 @@ format:
 
 ## Overview
 
-This appendix documents all 119 parameters used in the analysis, organized by type:
+This appendix documents all 118 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 39
 - Calculated values: 56
-- Core definitions: 24
+- Core definitions: 23
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (56 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
+[Calculated Values](#sec-calculated) (56 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3817,16 +3817,6 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
 Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.
-
-*Core definition*
-
-:::
-
-### Mid-Range Funding for Commercial Dct Platform: $500M {#sec-dct_platform_funding_medium}
-
-::: {.callout-note collapse="true" title="📊 Show full details"}
-
-Mid-range funding for commercial DCT platform
 
 *Core definition*
 

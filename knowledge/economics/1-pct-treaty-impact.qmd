@@ -49,6 +49,9 @@ aliases:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+![](/assets/infographics/knowledge/economics/1-pct-treaty-impact-infographic-academic.jpg){fig-alt="At current trial capacity, finding first treatments for all untreated diseases would take centuries. Redirecting 1% of military spending to pragmatic trials increases capacity significantly, reducing this to years and delivering treatments decades earlier."}
+
+
 ::: {.callout-warning}
 ## Preprint
 
@@ -1766,11 +1769,11 @@ The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built 
 
 Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
-For detailed cost breakdown: [Platform Costs](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates-partnership-model).
+For detailed cost breakdown: [Platform Costs](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates).
 
 **Where the money goes**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates-partnership-model).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates).
 
 ### Returns
 

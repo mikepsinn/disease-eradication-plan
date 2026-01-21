@@ -260,9 +260,15 @@ async function generateImageForFile(
   analyzeFirst = false,
   useAcademicStyle = false
 ): Promise<void> {
-  console.log(`\n[*] Processing: ${filePath}`);
-
   const fileName = path.basename(filePath, '.qmd');
+
+  // Skip index.qmd files - they're landing pages, not content chapters
+  if (fileName === 'index') {
+    console.log(`\n[SKIP] ${filePath} (index files don't need chapter images)`);
+    return;
+  }
+
+  console.log(`\n[*] Processing: ${filePath}`);
 
   // Read file frontmatter for metadata
   const fileContent = await fs.readFile(filePath, 'utf-8');
@@ -307,9 +313,9 @@ async function generateImageForFile(
 
   for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
     const suffix = styleConfig.suffix;
-    const ogImageFile = path.join(ogOutputDir, `${fileName}-og${suffix}.png`);
-    const infographicImageFile = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.png`);
-    const slideImageFile = path.join(slideOutputDir, `${fileName}-slide${suffix}.png`);
+    const ogImageFile = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
+    const infographicImageFile = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
+    const slideImageFile = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
 
     styleExistence[styleName] = {
       og: await fs.access(ogImageFile).then(() => true).catch(() => false),
@@ -357,6 +363,7 @@ async function generateImageForFile(
         aspectRatio: ImagePrompts.og.aspectRatio,
         outputDir: ogOutputDir,
         filePrefix: `${fileName}-og${suffix}`,
+        format: 'jpg',
         referenceImages,
       });
 
@@ -385,6 +392,7 @@ async function generateImageForFile(
         aspectRatio: ImagePrompts.infographic.aspectRatio,
         outputDir: infographicOutputDir,
         filePrefix: `${fileName}-infographic${suffix}`,
+        format: 'jpg',
         referenceImages,
       });
 
@@ -413,6 +421,7 @@ async function generateImageForFile(
         aspectRatio: ImagePrompts.slide.aspectRatio,
         outputDir: slideOutputDir,
         filePrefix: `${fileName}-slide${suffix}`,
+        format: 'jpg',
         referenceImages,
       });
 

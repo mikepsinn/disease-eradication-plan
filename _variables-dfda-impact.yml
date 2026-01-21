@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILTERED VARIABLES - DO NOT EDIT
-# Contains only variables used in this paper (133 entries)
+# Contains only variables used in this paper (130 entries)
 # Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py
 
 "adaptable_trial_cost_per_patient": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-adaptable_trial_cost_per_patient\"\
@@ -97,11 +97,6 @@
   \ patients/year | Click to view details, calculation & sources\">1.90M patients/year\
   \ (95% CI: 1.50M patients/year-2.30M patients/year)</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
-"dct_platform_funding_medium": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dct_platform_funding_medium\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#analogous-rom\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Mid-range funding\
-  \ for commercial DCT platform | ✓ High confidence | Unit: USD | Click to view details,\
-  \ calculation & sources\">$500M</a>"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_benefit_rd_only_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
@@ -660,18 +655,6 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
   \ Framework for Drug Assessment one-time build cost (high estimate) | ✓ High confidence\
   \ | Unit: USD | Click to view details, calculation & sources\">$46M</a>"
-"dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_npv_annual_opex_initiatives\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
-  \ annual opex (medium case) | ✓ High confidence | 95% CI: [$14M, $32M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view details, calculation & sources\">$21.1M (95%\
-  \ CI: $14M-$32M)</a>"
-"dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_npv_upfront_cost_initiatives\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd#npv-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
-  \ upfront cost (medium case) | ✓ High confidence | 95% CI: [$150M, $350M] | Dist:\
-  \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$230M (95%\
-  \ CI: $150M-$350M)</a>"
 "dih_patients_fundable_annually": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_patients_fundable_annually\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\

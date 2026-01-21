@@ -1,7 +1,7 @@
 ---
-title: "Optimal Budget Generator: Evidence-Based Budget Allocation Framework"
-subtitle: "Generating Integrated Budget Recommendations Using Reference Benchmarking, Diminishing Returns, and Cost-Effectiveness Analysis"
-description: "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target."
+title: 'Optimal Budget Generator: Evidence-Based Budget Allocation Framework'
+subtitle: Generating Integrated Budget Recommendations Using Reference Benchmarking, Diminishing Returns, and Cost-Effectiveness Analysis
+description: 'The Optimal Budget Generator (OBG) answers: ''How should we allocate the budget to maximize welfare?'' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category''s target.'
 abstract: |
   20-40% of public spending is misallocated relative to outcome-maximizing benchmarks. This represents $8-16 trillion
   annually in potential welfare gains. Budget processes respond to lobbying intensity and historical
@@ -27,11 +27,11 @@ author:
     corresponding: true
     orcid: 0009-0006-0212-1094
 jel-codes:
-  - H50  # National Government Expenditures and Related Policies
-  - H61  # Budget; Budget Systems
-  - D61  # Allocative Efficiency; Cost-Benefit Analysis
-  - I18  # Government Policy; Regulation; Public Health
-  - C18  # Methodological Issues: General
+  - H50
+  - H61
+  - D61
+  - I18
+  - C18
 keywords:
   - budget optimization
   - optimal budget generator
@@ -56,6 +56,8 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 ---
+![The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.](/assets/infographics/knowledge/appendix/optimal-budget-generator-spec-infographic-academic.jpg)
+
 
 {{< include ../includes/setup-parameters.qmd >}}
 
