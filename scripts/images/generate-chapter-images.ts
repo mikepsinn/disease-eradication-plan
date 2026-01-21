@@ -10,6 +10,7 @@
  *   --analyze-first           Use Gemini Flash to analyze if image would be helpful before generating
  *   --academic-style          Generate in academic style (black & white) instead of retro
  *   --with-reference-images   Extract existing images from QMD and use as reference for generation
+ *   --outdated                Only regenerate images that are outdated (QMD newer than images based on git date)
  *
  * Examples:
  *   # Force regenerate all images in academic style
@@ -20,6 +21,9 @@
  *
  *   # Generate all missing images with analysis
  *   npx tsx scripts/images/generate-chapters.ts --analyze-first --academic-style
+ *
+ *   # Regenerate only outdated images (QMD modified after image was generated)
+ *   npx tsx scripts/images/generate-chapters.ts --outdated
  */
 
 import dotenv from 'dotenv';
@@ -183,6 +187,71 @@ process.on('uncaughtException', async (error) => {
 });
 
 /**
+ * Get the git modified date of a file
+ * Returns null if file is not tracked by git or git command fails
+ */
+async function getGitModifiedDate(filePath: string): Promise<Date | null> {
+  try {
+    const { exec } = await import('child_process');
+    return new Promise((resolve) => {
+      // Get the last commit date that modified this file
+      exec(
+        `git log -1 --format=%cI -- "${filePath}"`,
+        { cwd: process.cwd() },
+        (error, stdout) => {
+          if (error || !stdout.trim()) {
+            resolve(null);
+            return;
+          }
+          const date = new Date(stdout.trim());
+          resolve(isNaN(date.getTime()) ? null : date);
+        }
+      );
+    });
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Check if QMD file is newer than any of its associated images
+ * Returns true if QMD should be regenerated (newer or images missing)
+ */
+async function isQmdNewerThanImages(
+  qmdPath: string,
+  imagePaths: string[]
+): Promise<{ needsRegeneration: boolean; reason: string }> {
+  const qmdDate = await getGitModifiedDate(qmdPath);
+
+  if (!qmdDate) {
+    return { needsRegeneration: true, reason: 'QMD file not tracked by git or no commit history' };
+  }
+
+  // Check each image path
+  for (const imagePath of imagePaths) {
+    if (!existsSync(imagePath)) {
+      return { needsRegeneration: true, reason: `Image missing: ${path.basename(imagePath)}` };
+    }
+
+    const imageDate = await getGitModifiedDate(imagePath);
+
+    if (!imageDate) {
+      // Image exists but not tracked by git - consider it stale
+      return { needsRegeneration: true, reason: `Image not tracked by git: ${path.basename(imagePath)}` };
+    }
+
+    if (qmdDate > imageDate) {
+      return {
+        needsRegeneration: true,
+        reason: `QMD updated (${qmdDate.toISOString().split('T')[0]}) after image (${imageDate.toISOString().split('T')[0]})`
+      };
+    }
+  }
+
+  return { needsRegeneration: false, reason: 'All images are up to date' };
+}
+
+/**
  * Analyze if a file would benefit from an image using Gemini Flash
  */
 async function analyzeIfImageNeeded(
@@ -252,13 +321,15 @@ Consider: Does this content have complex relationships, data, processes, or conc
  * @param includeReferenceImages If true, extract images from QMD and pass as reference images to Gemini
  * @param analyzeFirst If true, use Gemini Flash to analyze if image would be helpful before generating
  * @param useAcademicStyle If true, generate in academic style instead of retro
+ * @param onlyOutdated If true, only regenerate if QMD is newer than existing images (git dates)
  */
 async function generateImageForFile(
   filePath: string,
   forceRegenerate = false,
   includeReferenceImages = false,
   analyzeFirst = false,
-  useAcademicStyle = false
+  useAcademicStyle = false,
+  onlyOutdated = false
 ): Promise<void> {
   const fileName = path.basename(filePath, '.qmd');
 
@@ -330,8 +401,59 @@ async function generateImageForFile(
   );
 
   if (!forceRegenerate && allStylesComplete) {
-    console.log(`[SKIP] Already has all images in all ${Object.keys(VisualStyles).length} styles`);
-    return;
+    // If --outdated flag is set, check git dates before skipping
+    if (onlyOutdated) {
+      // Build list of all existing image paths to check
+      const existingImagePaths: string[] = [];
+      for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
+        const suffix = styleConfig.suffix;
+        existingImagePaths.push(
+          path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`),
+          path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`),
+          path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`)
+        );
+      }
+
+      const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, existingImagePaths);
+
+      if (!needsRegeneration) {
+        console.log(`[SKIP] ${reason}`);
+        return;
+      }
+
+      console.log(`[OUTDATED] ${reason} - regenerating images`);
+      // Continue to regeneration (don't return)
+    } else {
+      console.log(`[SKIP] Already has all images in all ${Object.keys(VisualStyles).length} styles`);
+      return;
+    }
+  }
+
+  // If --outdated is set but some images are missing, also check if existing ones are outdated
+  if (onlyOutdated && !allStylesComplete) {
+    // Check only the existing images
+    const existingImagePaths: string[] = [];
+    for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
+      const suffix = styleConfig.suffix;
+      const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
+      const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
+      const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
+
+      if (existsSync(ogPath)) existingImagePaths.push(ogPath);
+      if (existsSync(infographicPath)) existingImagePaths.push(infographicPath);
+      if (existsSync(slidePath)) existingImagePaths.push(slidePath);
+    }
+
+    if (existingImagePaths.length > 0) {
+      const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, existingImagePaths);
+      if (needsRegeneration) {
+        console.log(`[OUTDATED] ${reason} - regenerating images`);
+      } else {
+        console.log(`[MISSING] Some images missing, generating only missing ones`);
+      }
+    } else {
+      console.log(`[NEW] No existing images found, generating all`);
+    }
   }
 
   let ogImagePath: string | null = null;
@@ -497,7 +619,8 @@ async function generateBookChapterImages(
   includeReferenceImages = false,
   analyzeFirst = false,
   useAcademicStyle = false,
-  forceRegenerate = false
+  forceRegenerate = false,
+  onlyOutdated = false
 ): Promise<void> {
   console.log('\n' + '='.repeat(60));
   console.log('Generating OG images for book chapters');
@@ -506,6 +629,9 @@ async function generateBookChapterImages(
   }
   if (useAcademicStyle) {
     console.log('Style: ACADEMIC (black and white scientific)');
+  }
+  if (onlyOutdated) {
+    console.log('Mode: OUTDATED ONLY (regenerate only if QMD is newer than images)');
   }
   console.log('='.repeat(60) + '\n');
 
@@ -550,7 +676,7 @@ async function generateBookChapterImages(
   for (const filePath of bookFiles) {
     try {
       filesProcessed++;
-      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle);
+      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle, onlyOutdated);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
@@ -608,6 +734,7 @@ async function main() {
   const analyzeFirst = args.includes('--analyze-first');
   const useAcademicStyle = args.includes('--academic-style');
   const forceRegenerate = args.includes('--force');
+  const onlyOutdated = args.includes('--outdated');
 
   if (analyzeFirst) {
     console.log('[INFO] Using Gemini Flash to analyze if images would be helpful before generating\n');
@@ -617,6 +744,9 @@ async function main() {
   }
   if (forceRegenerate) {
     console.log('[INFO] FORCE MODE - Regenerating all images even if they already exist\n');
+  }
+  if (onlyOutdated) {
+    console.log('[INFO] OUTDATED MODE - Only regenerating images where QMD is newer (git dates)\n');
   }
 
   if (fileFilter) {
@@ -641,7 +771,7 @@ async function main() {
     console.log(`[INFO] Reference images from QMD files will be included in generation context\n`);
   }
 
-  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle, forceRegenerate);
+  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle, forceRegenerate, onlyOutdated);
 }
 
 // Run the script
