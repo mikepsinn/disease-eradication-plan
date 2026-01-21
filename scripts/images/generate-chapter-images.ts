@@ -37,7 +37,8 @@ import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
   getCleanedContentForLLM,
-  extractReferenceImages
+  extractReferenceImages,
+  getSiteUrl
 } from '../lib/file-utils.js';
 import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts.js';
 
@@ -81,33 +82,46 @@ FILTERED:`;
  * Extracts exact sentences - does NOT rephrase or editorialize
  * Prioritizes entertaining, surprising, and informative content
  */
-async function extractSlideContent(content: string, title?: string): Promise<string> {
-  const prompt = `You are extracting content for a single PowerPoint slide. Your job is to EXTRACT exact sentences from the text below - do NOT rephrase, summarize, or editorialize.
+async function extractSlideContent(content: string, title?: string, description?: string): Promise<string> {
+  const prompt = `Extract the FUNNIEST and most SHOCKING sentences for a PowerPoint slide.
 
-RULES:
-1. Extract 3-5 of the most impactful sentences VERBATIM from the source text
-2. Prioritize sentences that are:
-   - Surprising or counterintuitive statistics/facts
-   - Entertaining or funny observations
-   - Emotionally compelling statements
-   - Clear, memorable takeaways
-3. DO NOT change any wording - copy sentences exactly as written
-4. DO NOT add commentary, transitions, or your own words
-5. Keep total length under 400 characters (must fit on one slide)
+Find 2-3 sentences that will make the audience laugh nervously or gasp.
 
-${title ? `Title: ${title}\n` : ''}
-SOURCE TEXT:
-${content.substring(0, 8000)}
+REQUIREMENTS:
+- Copy sentences EXACTLY as written (verbatim)
+- Prioritize dark humor, absurd comparisons, or jaw-dropping statistics
+- Maximum 350 characters total
+- NO rephrasing, NO summarizing
 
-EXTRACTED KEY SENTENCES (verbatim from source):`;
+${title ? `Topic: ${title}\n` : ''}
+TEXT:
+${content.substring(0, 6000)}
+
+BEST QUOTES (copy exactly):`;
 
   try {
     const responseText = await generateGeminiFlashContent(prompt);
-    return responseText.trim();
+    const extractedContent = responseText.trim();
+
+    // Prepend title and description for the image generator
+    let slideText = '';
+    if (title) {
+      slideText += `TITLE: ${title}\n\n`;
+    }
+    if (description) {
+      slideText += `SUBTITLE: ${description}\n\n`;
+    }
+    slideText += `KEY POINTS:\n${extractedContent}`;
+
+    return slideText;
   } catch (error) {
     console.error('[WARN] Error extracting slide content, using truncated original:', error);
-    // Fallback to first 400 chars of content
-    return content.substring(0, 400);
+    // Fallback with title/description
+    let fallback = '';
+    if (title) fallback += `TITLE: ${title}\n\n`;
+    if (description) fallback += `SUBTITLE: ${description}\n\n`;
+    fallback += content.substring(0, 300);
+    return fallback;
   }
 }
 
@@ -630,13 +644,14 @@ async function generateImageForFile(
   }
 
   // Build base image metadata from QMD frontmatter
+  const siteUrl = await getSiteUrl();
   const baseMetadata: Omit<ImageMetadata, 'category'> = {
     title: frontmatter.title,
     description: frontmatter.description,
     keywords: Array.isArray(frontmatter.tags) ? frontmatter.tags :
               Array.isArray(frontmatter.keywords) ? frontmatter.keywords :
               Array.isArray(frontmatter.categories) ? frontmatter.categories : undefined,
-    sourceUrl: `https://wardondisease.org/${relativePath.replace(/\\/g, '/').replace('.qmd', '.html')}`,
+    sourceUrl: `${siteUrl}/${relativePath.replace(/\\/g, '/').replace('.qmd', '.html')}`,
   };
 
   // Helper to create metadata with image type category
@@ -779,7 +794,7 @@ async function generateImageForFile(
     if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
       console.log(`  Generating slide...`);
       console.log(`    Extracting key content for slide...`);
-      const slideContent = await extractSlideContent(cleanedBody, frontmatter.title);
+      const slideContent = await extractSlideContent(cleanedBody, frontmatter.title, frontmatter.description);
       const slidePrompt = ImagePrompts.slide.buildPrompt(slideContent, styleConfig.style);
 
       const slideFiles = await generateAndSaveImages({

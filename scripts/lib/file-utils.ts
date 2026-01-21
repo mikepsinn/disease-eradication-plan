@@ -1224,6 +1224,64 @@ export async function loadImageAsBase64(
 }
 
 /**
+ * Get a property value from a Quarto YAML config file
+ * Supports nested property paths like 'website.site-url' or 'book.title'
+ * @param configFile Config file name (e.g., '_quarto-manual.yml', '_quarto.yml')
+ * @param propertyPath Dot-separated path to property (e.g., 'website.site-url', 'book.title')
+ * @param defaultValue Optional default value if property not found
+ * @returns Property value or default value
+ */
+export async function getQuartoConfigProperty(
+  configFile: string,
+  propertyPath: string,
+  defaultValue?: string
+): Promise<string | undefined> {
+  const configPath = path.join(getProjectRoot(), configFile);
+  try {
+    const configContent = await fs.readFile(configPath, 'utf-8');
+    const doc = yaml.load(configContent) as Record<string, any>;
+
+    // Navigate the property path
+    const parts = propertyPath.split('.');
+    let value: any = doc;
+
+    for (const part of parts) {
+      if (value && typeof value === 'object' && part in value) {
+        value = value[part];
+      } else {
+        return defaultValue;
+      }
+    }
+
+    // Return string value or default
+    return typeof value === 'string' ? value : defaultValue;
+  } catch {
+    return defaultValue;
+  }
+}
+
+/**
+ * Get site URL from Quarto config file
+ * Checks website.site-url and book.site-url properties
+ * @param configFile Config file name (default: '_quarto-manual.yml')
+ * @param defaultUrl Default URL if not found
+ * @returns Site URL
+ */
+export async function getSiteUrl(
+  configFile: string = '_quarto-manual.yml',
+  defaultUrl: string = 'https://manual.wardondisease.org'
+): Promise<string> {
+  // Try website.site-url first, then book.site-url
+  const websiteUrl = await getQuartoConfigProperty(configFile, 'website.site-url');
+  if (websiteUrl) return websiteUrl.toLowerCase();
+
+  const bookUrl = await getQuartoConfigProperty(configFile, 'book.site-url');
+  if (bookUrl) return bookUrl.toLowerCase();
+
+  return defaultUrl;
+}
+
+/**
  * Extract and load reference images from QMD file
  * @param filePath Path to QMD file
  * @param maxImages Maximum number of images to load (default: 14, Gemini's limit)

@@ -99,15 +99,15 @@ async function addWatermark(imagePath: string): Promise<void> {
   const text = 'WarOnDisease.org';
   const fontSize = 16;
 
-  // Create SVG watermark with white background, black border, and black text
-  // Tight bounds around text (width ~160px for 16 chars, height ~24px for 16px font)
-  const svgWidth = 165;
+  // Create SVG watermark with white background, black border, and bold black text
+  // Tight bounds around text (width ~175px for bold 16 chars, height ~24px for 16px font)
+  const svgWidth = 175;
   const svgHeight = 24;
   const svgWatermark = `
     <svg width="${svgWidth}" height="${svgHeight}">
       <rect x="0" y="0" width="${svgWidth}" height="${svgHeight}" fill="white" stroke="black" stroke-width="1"/>
       <text x="${svgWidth / 2}" y="17" font-family="'Courier New', Courier, monospace"
-            font-size="${fontSize}" fill="black" text-anchor="middle">
+            font-size="${fontSize}" font-weight="bold" fill="black" text-anchor="middle">
         ${text}
       </text>
     </svg>
