@@ -31,7 +31,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
-import { generateAndSaveImages } from '../lib/gemini-images.js';
+import { generateAndSaveImages, ImageMetadata } from '../lib/gemini-images.js';
 import { generateGeminiFlashContent } from '../lib/llm.js';
 import {
   getBookFilesForProcessing,
@@ -73,6 +73,41 @@ FILTERED:`;
     console.error('[WARN] Error cleaning content with LLM, using original:', error);
     // Fallback to original content if LLM cleaning fails
     return content;
+  }
+}
+
+/**
+ * Extract key content for a PowerPoint slide from QMD content
+ * Extracts exact sentences - does NOT rephrase or editorialize
+ * Prioritizes entertaining, surprising, and informative content
+ */
+async function extractSlideContent(content: string, title?: string): Promise<string> {
+  const prompt = `You are extracting content for a single PowerPoint slide. Your job is to EXTRACT exact sentences from the text below - do NOT rephrase, summarize, or editorialize.
+
+RULES:
+1. Extract 3-5 of the most impactful sentences VERBATIM from the source text
+2. Prioritize sentences that are:
+   - Surprising or counterintuitive statistics/facts
+   - Entertaining or funny observations
+   - Emotionally compelling statements
+   - Clear, memorable takeaways
+3. DO NOT change any wording - copy sentences exactly as written
+4. DO NOT add commentary, transitions, or your own words
+5. Keep total length under 400 characters (must fit on one slide)
+
+${title ? `Title: ${title}\n` : ''}
+SOURCE TEXT:
+${content.substring(0, 8000)}
+
+EXTRACTED KEY SENTENCES (verbatim from source):`;
+
+  try {
+    const responseText = await generateGeminiFlashContent(prompt);
+    return responseText.trim();
+  } catch (error) {
+    console.error('[WARN] Error extracting slide content, using truncated original:', error);
+    // Fallback to first 400 chars of content
+    return content.substring(0, 400);
   }
 }
 
@@ -594,6 +629,22 @@ async function generateImageForFile(
     referenceImages = await extractReferenceImages(filePath);
   }
 
+  // Build base image metadata from QMD frontmatter
+  const baseMetadata: Omit<ImageMetadata, 'category'> = {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    keywords: Array.isArray(frontmatter.tags) ? frontmatter.tags :
+              Array.isArray(frontmatter.keywords) ? frontmatter.keywords :
+              Array.isArray(frontmatter.categories) ? frontmatter.categories : undefined,
+    sourceUrl: `https://wardondisease.org/${relativePath.replace(/\\/g, '/').replace('.qmd', '.html')}`,
+  };
+
+  // Helper to create metadata with image type category
+  const getMetadataForType = (imageType: 'og-image' | 'infographic' | 'slide'): ImageMetadata => ({
+    ...baseMetadata,
+    category: imageType,
+  });
+
   const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
@@ -680,6 +731,7 @@ async function generateImageForFile(
         filePrefix: `${fileName}-og${suffix}`,
         format: 'jpg',
         referenceImages,
+        metadata: getMetadataForType('og-image'),
       });
 
       if (ogFiles && ogFiles.length > 0) {
@@ -707,6 +759,7 @@ async function generateImageForFile(
         filePrefix: `${fileName}-infographic${suffix}`,
         format: 'jpg',
         referenceImages,
+        metadata: getMetadataForType('infographic'),
       });
 
       if (infographicFiles && infographicFiles.length > 0) {
@@ -725,7 +778,9 @@ async function generateImageForFile(
     // Generate slide (PowerPoint-optimized presentation)
     if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
       console.log(`  Generating slide...`);
-      const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody, styleConfig.style);
+      console.log(`    Extracting key content for slide...`);
+      const slideContent = await extractSlideContent(cleanedBody, frontmatter.title);
+      const slidePrompt = ImagePrompts.slide.buildPrompt(slideContent, styleConfig.style);
 
       const slideFiles = await generateAndSaveImages({
         prompt: slidePrompt,
@@ -734,6 +789,7 @@ async function generateImageForFile(
         filePrefix: `${fileName}-slide${suffix}`,
         format: 'jpg',
         referenceImages,
+        metadata: getMetadataForType('slide'),
       });
 
       if (slideFiles && slideFiles.length > 0) {
