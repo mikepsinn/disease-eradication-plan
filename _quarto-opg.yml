@@ -25,7 +25,7 @@ profiles:
 
 website:
   title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions"
-  description: 'The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.'
+  description: 'The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.'
   site-url: https://opg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true

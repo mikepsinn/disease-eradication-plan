@@ -10,7 +10,7 @@
  *   --analyze-first           Use Gemini Flash to analyze if image would be helpful before generating
  *   --academic-style          Generate in academic style (black & white) instead of retro
  *   --with-reference-images   Extract existing images from QMD and use as reference for generation
- *   --outdated                Only regenerate images that are outdated (QMD newer than images based on git date)
+ *   --outdated                Only regenerate images that are outdated (outputs detailed report of all files)
  *
  * Examples:
  *   # Force regenerate all images in academic style
@@ -22,7 +22,7 @@
  *   # Generate all missing images with analysis
  *   npx tsx scripts/images/generate-chapters.ts --analyze-first --academic-style
  *
- *   # Regenerate only outdated images (QMD modified after image was generated)
+ *   # Regenerate only outdated images (shows detailed report first)
  *   npx tsx scripts/images/generate-chapters.ts --outdated
  */
 
@@ -249,6 +249,163 @@ async function isQmdNewerThanImages(
   }
 
   return { needsRegeneration: false, reason: 'All images are up to date' };
+}
+
+/**
+ * File status information for the detailed report
+ */
+interface FileImageStatus {
+  qmdPath: string;
+  qmdDate: Date | null;
+  images: {
+    type: 'OG' | 'Infographic' | 'Slide';
+    path: string;
+    exists: boolean;
+    date: Date | null;
+  }[];
+  needsRegeneration: boolean;
+  reason: string;
+}
+
+/**
+ * Get detailed status for a QMD file and its images
+ */
+async function getFileImageStatus(filePath: string): Promise<FileImageStatus | null> {
+  const fileName = path.basename(filePath, '.qmd');
+
+  // Skip index.qmd files
+  if (fileName === 'index') {
+    return null;
+  }
+
+  // Read frontmatter
+  const fileContent = await fs.readFile(filePath, 'utf-8');
+  const { data: frontmatter } = matter(fileContent);
+
+  if (!frontmatter.title && !frontmatter.description) {
+    return null;
+  }
+
+  const relativePath = path.relative(process.cwd(), filePath);
+  const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
+  const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
+  const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
+
+  // Only check academic style (that's what we generate)
+  const suffix = VisualStyles.academic.suffix;
+  const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
+  const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
+  const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
+
+  const qmdDate = await getGitModifiedDate(filePath);
+
+  const images: FileImageStatus['images'] = [];
+
+  // Get OG image status
+  const ogExists = existsSync(ogPath);
+  const ogDate = ogExists ? await getGitModifiedDate(ogPath) : null;
+  images.push({
+    type: 'OG',
+    path: path.relative(process.cwd(), ogPath),
+    exists: ogExists,
+    date: ogDate,
+  });
+
+  // Get Infographic image status
+  const infographicExists = existsSync(infographicPath);
+  const infographicDate = infographicExists ? await getGitModifiedDate(infographicPath) : null;
+  images.push({
+    type: 'Infographic',
+    path: path.relative(process.cwd(), infographicPath),
+    exists: infographicExists,
+    date: infographicDate,
+  });
+
+  // Get Slide image status
+  const slideExists = existsSync(slidePath);
+  const slideDate = slideExists ? await getGitModifiedDate(slidePath) : null;
+  images.push({
+    type: 'Slide',
+    path: path.relative(process.cwd(), slidePath),
+    exists: slideExists,
+    date: slideDate,
+  });
+
+  // Determine if regeneration is needed
+  const allImagePaths = [ogPath, infographicPath, slidePath];
+  const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, allImagePaths);
+
+  return {
+    qmdPath: relativePath,
+    qmdDate,
+    images,
+    needsRegeneration,
+    reason,
+  };
+}
+
+/**
+ * Format date for display (YYYY-MM-DD or 'N/A')
+ */
+function formatDate(date: Date | null): string {
+  if (!date) return 'N/A';
+  return date.toISOString().split('T')[0];
+}
+
+/**
+ * Print detailed report of all QMD files and their image statuses
+ */
+async function printDetailedImageReport(bookFiles: string[]): Promise<void> {
+  console.log('\n' + '='.repeat(100));
+  console.log('DETAILED IMAGE STATUS REPORT');
+  console.log('='.repeat(100) + '\n');
+
+  const statuses: FileImageStatus[] = [];
+
+  for (const filePath of bookFiles) {
+    const status = await getFileImageStatus(filePath);
+    if (status) {
+      statuses.push(status);
+    }
+  }
+
+  // Sort: files needing regeneration first, then alphabetically
+  statuses.sort((a, b) => {
+    if (a.needsRegeneration !== b.needsRegeneration) {
+      return a.needsRegeneration ? -1 : 1;
+    }
+    return a.qmdPath.localeCompare(b.qmdPath);
+  });
+
+  // Count statistics
+  const needsRegen = statuses.filter(s => s.needsRegeneration).length;
+  const upToDate = statuses.filter(s => !s.needsRegeneration).length;
+
+  console.log(`Total QMD files: ${statuses.length}`);
+  console.log(`  Needs regeneration: ${needsRegen}`);
+  console.log(`  Up to date: ${upToDate}`);
+  console.log('\n' + '-'.repeat(100) + '\n');
+
+  // Print each file status
+  for (const status of statuses) {
+    const regenFlag = status.needsRegeneration ? '[OUTDATED]' : '[OK]';
+    console.log(`${regenFlag} ${status.qmdPath}`);
+    console.log(`  QMD Modified: ${formatDate(status.qmdDate)}`);
+    console.log(`  Status: ${status.reason}`);
+    console.log('  Images:');
+
+    for (const img of status.images) {
+      const existsFlag = img.exists ? 'EXISTS' : 'MISSING';
+      const dateStr = formatDate(img.date);
+      const needsUpdate = status.qmdDate && img.date && status.qmdDate > img.date ? ' <- STALE' : '';
+      console.log(`    ${img.type.padEnd(12)} | ${existsFlag.padEnd(7)} | ${dateStr} | ${img.path}${needsUpdate}`);
+    }
+    console.log('');
+  }
+
+  console.log('='.repeat(100));
+  console.log('END OF REPORT');
+  console.log('='.repeat(100) + '\n');
 }
 
 /**
@@ -512,7 +669,7 @@ async function generateImageForFile(
     const hasThisStyleSlide = styleExistence[styleName].slide;
 
     // Generate OG image (optimized for social media thumbnails)
-    if (!hasThisStyleOg || forceRegenerate) {
+    if (!hasThisStyleOg || forceRegenerate || onlyOutdated) {
       console.log(`  Generating OG image...`);
       const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
 
@@ -539,7 +696,7 @@ async function generateImageForFile(
     }
 
     // Generate infographic (detailed, full-size)
-    if (!hasThisStyleInfographic || forceRegenerate) {
+    if (!hasThisStyleInfographic || forceRegenerate || onlyOutdated) {
       console.log(`  Generating infographic...`);
       const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
 
@@ -566,7 +723,7 @@ async function generateImageForFile(
     }
 
     // Generate slide (PowerPoint-optimized presentation)
-    if (!hasThisStyleSlide || forceRegenerate) {
+    if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
       console.log(`  Generating slide...`);
       const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody, styleConfig.style);
 
@@ -694,6 +851,11 @@ async function generateBookChapterImages(
   } else {
     bookFiles = allBookFiles;
     console.log(`[OK] Found ${bookFiles.length} book files\n`);
+  }
+
+  // If --outdated flag, always show detailed report first
+  if (onlyOutdated) {
+    await printDetailedImageReport(bookFiles);
   }
 
   // Pre-scan to determine which files need regeneration

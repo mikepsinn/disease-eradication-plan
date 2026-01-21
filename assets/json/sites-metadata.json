@@ -3505,7 +3505,7 @@
             "Your decentralized institutes of health"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-21"
         },
         {
           "path": "knowledge/solution/1-percent-treaty.qmd",
@@ -3593,7 +3593,7 @@
             "How the Efficiency Gains Could Compound"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-21"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
@@ -3729,7 +3729,7 @@
             "On Why Every Previous War Failed"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-21"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
@@ -5355,17 +5355,18 @@
           "path": "knowledge/appendix/optimal-policy-generator-spec.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/optimal-policy-generator-spec.html",
           "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-          "description": "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
-          "excerpt": "This specification describes a framework for generating jurisdiction-specific policy recommendations. It complements the Optimocracy paper's Budget Impact Score (BIS) by extending evidence-based...",
+          "description": "The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
+          "excerpt": "This specification describes the Optimal Policy Generator (OPG), a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four...",
           "sections": [
-            "Working Paper",
             "Abstract {.unnumbered}",
+            "The Evidence Base: Centuries of Natural Policy Experiments",
+            "Scale of Available Natural Experiments",
+            "The OPG Pipeline",
+            "Why This Hasn't Been Done Before",
             "System Overview",
             "What Policymakers See",
             "Example: Policy Recommendations for Texas",
-            "The Analogy: Spending Gaps vs. Policy Gaps",
             "What Policy Analysts See",
-            "Where This Fits",
             "Introduction",
             "Why Generic Policy Scores Are Not Enough",
             "Why Policy Ranking Fails Today",
@@ -5381,7 +5382,8 @@
             "Core Methodology",
             "Policy-Outcome Data Structure",
             "Analysis Methods",
-            "Bradford Hill Criteria Mapping for Policy",
+            "Bradford Hill Criteria Scoring Functions",
+            "Causal Confidence Score (CCS) Calculation",
             "Jurisdiction Policy Inventory",
             "Tracking Current Policies by Jurisdiction",
             "Data Sources for Policy Status",
@@ -5408,6 +5410,8 @@
             "Quality Adjustment Factor",
             "Confounder Adjustment",
             "Global (Aggregate) PIS Calculation",
+            "Pooled Effect Estimate",
+            "Pooled PIS Across Jurisdictions",
             "Heterogeneity Statistics",
             "Evidence Grading",
             "Context-Specific Confidence",
@@ -5483,7 +5487,7 @@
             "Confidence Interval Interpretation"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-21"
         },
         {
           "path": "knowledge/appendix/optimal-budget-generator-spec.qmd",
@@ -6851,7 +6855,7 @@
             "Beyond Medical Research: A Template for Uncorruptible Governance"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-21"
         },
         {
           "path": "knowledge/appendix/organizational-precedents.qmd",
@@ -7386,7 +7390,7 @@
       "id": "opg",
       "type": "website",
       "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-      "description": "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
+      "description": "The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
       "siteUrl": "https://opg.warondisease.org",
       "favicon": "https://opg.warondisease.org/assets/icons/dih-favicon.png",
       "ogImage": "https://opg.warondisease.org/assets/og/opg-og-1200x630.jpg",
