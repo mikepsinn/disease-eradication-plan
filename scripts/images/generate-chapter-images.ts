@@ -315,6 +315,69 @@ Consider: Does this content have complex relationships, data, processes, or conc
 }
 
 /**
+ * Check if a file needs image regeneration (pre-scan without generating)
+ * Returns info about whether regeneration is needed and why
+ * NOTE: Only checks academic style since that's what we generate
+ */
+async function checkIfNeedsRegeneration(
+  filePath: string,
+  forceRegenerate: boolean,
+  onlyOutdated: boolean
+): Promise<{ needsRegeneration: boolean; reason: string }> {
+  const fileName = path.basename(filePath, '.qmd');
+
+  // Skip index.qmd files
+  if (fileName === 'index') {
+    return { needsRegeneration: false, reason: 'index file' };
+  }
+
+  // Read frontmatter
+  const fileContent = await fs.readFile(filePath, 'utf-8');
+  const { data: frontmatter } = matter(fileContent);
+
+  if (!frontmatter.title && !frontmatter.description) {
+    return { needsRegeneration: false, reason: 'no title/description' };
+  }
+
+  const relativePath = path.relative(process.cwd(), filePath);
+  const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
+  const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
+  const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
+
+  // Only check academic style (that's what we generate)
+  const suffix = VisualStyles.academic.suffix;
+  const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
+  const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
+  const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
+
+  const allImagePaths = [ogPath, infographicPath, slidePath];
+  const allImagesExist = existsSync(ogPath) && existsSync(infographicPath) && existsSync(slidePath);
+
+  // Force regenerate always needs regeneration
+  if (forceRegenerate) {
+    return { needsRegeneration: true, reason: 'force' };
+  }
+
+  // If images are missing, needs regeneration
+  if (!allImagesExist) {
+    const missing: string[] = [];
+    if (!existsSync(ogPath)) missing.push('OG');
+    if (!existsSync(infographicPath)) missing.push('infographic');
+    if (!existsSync(slidePath)) missing.push('slide');
+    return { needsRegeneration: true, reason: `missing: ${missing.join(', ')}` };
+  }
+
+  // If --outdated flag, check git dates
+  if (onlyOutdated) {
+    const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, allImagePaths);
+    return { needsRegeneration, reason: needsRegeneration ? reason : 'up to date' };
+  }
+
+  // All images exist and not forcing/checking outdated
+  return { needsRegeneration: false, reason: 'all images exist' };
+}
+
+/**
  * Generate OG image, infographic, and slide for a single file
  * @param filePath Path to the QMD file
  * @param forceRegenerate If true, regenerate images even if they already exist
@@ -322,6 +385,7 @@ Consider: Does this content have complex relationships, data, processes, or conc
  * @param analyzeFirst If true, use Gemini Flash to analyze if image would be helpful before generating
  * @param useAcademicStyle If true, generate in academic style instead of retro
  * @param onlyOutdated If true, only regenerate if QMD is newer than existing images (git dates)
+ * @param quietSkips If true, don't log skip messages (used when pre-scan already showed what will be processed)
  */
 async function generateImageForFile(
   filePath: string,
@@ -329,17 +393,19 @@ async function generateImageForFile(
   includeReferenceImages = false,
   analyzeFirst = false,
   useAcademicStyle = false,
-  onlyOutdated = false
+  onlyOutdated = false,
+  quietSkips = false
 ): Promise<void> {
   const fileName = path.basename(filePath, '.qmd');
 
   // Skip index.qmd files - they're landing pages, not content chapters
   if (fileName === 'index') {
-    console.log(`\n[SKIP] ${filePath} (index files don't need chapter images)`);
+    if (!quietSkips) console.log(`\n[SKIP] ${filePath} (index files don't need chapter images)`);
     return;
   }
 
-  console.log(`\n[*] Processing: ${filePath}`);
+  const relativePath = path.relative(process.cwd(), filePath);
+  console.log(`\n[*] ${relativePath}`);
 
   // Read file frontmatter for metadata
   const fileContent = await fs.readFile(filePath, 'utf-8');
@@ -350,7 +416,7 @@ async function generateImageForFile(
 
   // Skip if no title or description
   if (!frontmatter.title && !frontmatter.description) {
-    console.log(`[SKIP] No title or description for prompt generation`);
+    if (!quietSkips) console.log(`  [SKIP] No title/description`);
     return;
   }
 
@@ -358,23 +424,19 @@ async function generateImageForFile(
   if (analyzeFirst) {
     const analysis = await analyzeIfImageNeeded(filePath, cleanedBody);
     if (!analysis.recommend) {
-      console.log(`[SKIP] ${analysis.reasoning}`);
+      if (!quietSkips) console.log(`  [SKIP] ${analysis.reasoning}`);
       return;
     }
-    console.log(`[PROCEED] Generating image based on analysis recommendation`);
+    if (!quietSkips) console.log(`  [PROCEED] Analysis recommends image`);
   }
 
   // Extract reference images if requested
   let referenceImages: Array<{ data: string; mimeType: string }> = [];
   if (includeReferenceImages) {
-    console.log(`  Extracting reference images from QMD file...`);
+    console.log(`  Extracting reference images...`);
     referenceImages = await extractReferenceImages(filePath);
   }
 
-  console.log(`  Title: ${frontmatter.title || '(no title)'}`);
-  console.log(`  Description: ${frontmatter.description || '(no description)'}`);
-
-  const relativePath = path.relative(process.cwd(), filePath);
   const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
@@ -417,44 +479,19 @@ async function generateImageForFile(
       const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, existingImagePaths);
 
       if (!needsRegeneration) {
-        console.log(`[SKIP] ${reason}`);
+        if (!quietSkips) console.log(`[SKIP] ${reason}`);
         return;
       }
 
-      console.log(`[OUTDATED] ${reason} - regenerating images`);
+      if (!quietSkips) console.log(`[OUTDATED] ${reason} - regenerating images`);
       // Continue to regeneration (don't return)
     } else {
-      console.log(`[SKIP] Already has all images in all ${Object.keys(VisualStyles).length} styles`);
+      if (!quietSkips) console.log(`[SKIP] Already has all images in all ${Object.keys(VisualStyles).length} styles`);
       return;
     }
   }
 
-  // If --outdated is set but some images are missing, also check if existing ones are outdated
-  if (onlyOutdated && !allStylesComplete) {
-    // Check only the existing images
-    const existingImagePaths: string[] = [];
-    for (const [styleName, styleConfig] of Object.entries(VisualStyles)) {
-      const suffix = styleConfig.suffix;
-      const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
-      const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
-      const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
-
-      if (existsSync(ogPath)) existingImagePaths.push(ogPath);
-      if (existsSync(infographicPath)) existingImagePaths.push(infographicPath);
-      if (existsSync(slidePath)) existingImagePaths.push(slidePath);
-    }
-
-    if (existingImagePaths.length > 0) {
-      const { needsRegeneration, reason } = await isQmdNewerThanImages(filePath, existingImagePaths);
-      if (needsRegeneration) {
-        console.log(`[OUTDATED] ${reason} - regenerating images`);
-      } else {
-        console.log(`[MISSING] Some images missing, generating only missing ones`);
-      }
-    } else {
-      console.log(`[NEW] No existing images found, generating all`);
-    }
-  }
+  // Note: Pre-scan already determined this file needs processing, so no need for verbose logging here
 
   let ogImagePath: string | null = null;
   let infographicImagePath: string | null = null;
@@ -468,7 +505,6 @@ async function generateImageForFile(
   // Generate images in selected styles
   for (const [styleName, styleConfig] of Object.entries(stylesToGenerate)) {
     const suffix = styleConfig.suffix;
-    console.log(`\n  --- ${styleConfig.description.toUpperCase()} STYLE ---`);
 
     // Check if this specific style version exists
     const hasThisStyleOg = styleExistence[styleName].og;
@@ -477,7 +513,7 @@ async function generateImageForFile(
 
     // Generate OG image (optimized for social media thumbnails)
     if (!hasThisStyleOg || forceRegenerate) {
-      console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
+      console.log(`  Generating OG image...`);
       const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
 
       const ogFiles = await generateAndSaveImages({
@@ -491,22 +527,20 @@ async function generateImageForFile(
 
       if (ogFiles && ogFiles.length > 0) {
         const imagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Generated OG image (${styleName}): ${imagePath}`);
+        console.log(`  [OK] OG: ${path.basename(imagePath)}`);
 
         // Default to academic style for frontmatter
         if (styleName === 'academic') {
           ogImagePath = imagePath;
         }
       } else {
-        console.log(`  [WARN] No OG image generated (${styleName})`);
+        console.log(`  [WARN] OG image generation failed`);
       }
-    } else {
-      console.log(`  [SKIP] OG image (${styleName}) already exists`);
     }
 
     // Generate infographic (detailed, full-size)
     if (!hasThisStyleInfographic || forceRegenerate) {
-      console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
+      console.log(`  Generating infographic...`);
       const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
 
       const infographicFiles = await generateAndSaveImages({
@@ -520,22 +554,20 @@ async function generateImageForFile(
 
       if (infographicFiles && infographicFiles.length > 0) {
         const imagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Generated infographic (${styleName}): ${imagePath}`);
+        console.log(`  [OK] Infographic: ${path.basename(imagePath)}`);
 
         // Use academic style (default)
         if (styleName === 'academic') {
           infographicImagePath = imagePath;
         }
       } else {
-        console.log(`  [WARN] No infographic generated (${styleName})`);
+        console.log(`  [WARN] Infographic generation failed`);
       }
-    } else {
-      console.log(`  [SKIP] Infographic (${styleName}) already exists`);
     }
 
     // Generate slide (PowerPoint-optimized presentation)
     if (!hasThisStyleSlide || forceRegenerate) {
-      console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
+      console.log(`  Generating slide...`);
       const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody, styleConfig.style);
 
       const slideFiles = await generateAndSaveImages({
@@ -549,17 +581,15 @@ async function generateImageForFile(
 
       if (slideFiles && slideFiles.length > 0) {
         const imagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Generated slide (${styleName}): ${imagePath}`);
+        console.log(`  [OK] Slide: ${path.basename(imagePath)}`);
 
         // Default to academic style (slides are not typically embedded in QMD)
         if (styleName === 'academic') {
           slideImagePath = imagePath;
         }
       } else {
-        console.log(`  [WARN] No slide generated (${styleName})`);
+        console.log(`  [WARN] Slide generation failed`);
       }
-    } else {
-      console.log(`  [SKIP] Slide (${styleName}) already exists`);
     }
   }
 
@@ -605,9 +635,7 @@ async function generateImageForFile(
     const updatedContent = stringifyWithFrontmatter(updatedBody, updatedFrontmatter);
     await fs.writeFile(filePath, updatedContent, 'utf-8');
 
-    console.log(`  [OK] Updated ${filePath}`);
-  } else {
-    console.log(`  [SKIP] No new images to add`);
+    console.log(`  [OK] Updated QMD`);
   }
 }
 
@@ -668,15 +696,62 @@ async function generateBookChapterImages(
     console.log(`[OK] Found ${bookFiles.length} book files\n`);
   }
 
-  let filesProcessed = 0;
-  const filesSkipped = 0;
+  // Pre-scan to determine which files need regeneration
+  console.log('[*] Scanning files to determine which need regeneration...\n');
+
+  const filesToProcess: Array<{ path: string; reason: string }> = [];
+  const skippedFiles: Array<{ path: string; reason: string }> = [];
+
+  for (const filePath of bookFiles) {
+    const { needsRegeneration, reason } = await checkIfNeedsRegeneration(
+      filePath,
+      forceRegenerate,
+      onlyOutdated
+    );
+
+    if (needsRegeneration) {
+      filesToProcess.push({ path: filePath, reason });
+    } else {
+      skippedFiles.push({ path: filePath, reason });
+    }
+  }
+
+  // Show summary of what will be processed
+  if (filesToProcess.length === 0) {
+    console.log('[OK] All images are up to date. Nothing to regenerate.\n');
+    if (skippedFiles.length > 0 && skippedFiles.length <= 10) {
+      console.log('Skipped files:');
+      for (const { path: fp, reason } of skippedFiles) {
+        console.log(`  - ${path.basename(fp, '.qmd')}: ${reason}`);
+      }
+    } else if (skippedFiles.length > 10) {
+      console.log(`Skipped ${skippedFiles.length} files (all up to date)`);
+    }
+    return;
+  }
+
+  console.log(`[*] Files to regenerate (${filesToProcess.length}):\n`);
+  for (const { path: fp, reason } of filesToProcess) {
+    const relativePath = path.relative(process.cwd(), fp);
+    console.log(`  - ${relativePath} (${reason})`);
+  }
+  console.log('');
+
+  if (skippedFiles.length > 0) {
+    console.log(`[*] Skipping ${skippedFiles.length} files (up to date)\n`);
+  }
+
+  console.log('='.repeat(60));
+  console.log(`Starting generation of ${filesToProcess.length} files...`);
+  console.log('='.repeat(60) + '\n');
+
   let filesGenerated = 0;
   let filesFailed = 0;
 
-  for (const filePath of bookFiles) {
+  for (const { path: filePath } of filesToProcess) {
     try {
-      filesProcessed++;
-      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle, onlyOutdated);
+      // Use quietSkips=true since we already showed the pre-scan summary
+      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle, onlyOutdated, true);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
@@ -691,10 +766,10 @@ async function generateBookChapterImages(
 
   console.log('\n' + '='.repeat(60));
   console.log('Summary:');
-  console.log(`  Files processed: ${filesProcessed}`);
-  console.log(`  Images generated: ${filesGenerated}`);
-  console.log(`  Files skipped: ${filesSkipped}`);
-  console.log(`  Files failed: ${filesFailed}`);
+  console.log(`  Files to process: ${filesToProcess.length}`);
+  console.log(`  Successfully generated: ${filesGenerated}`);
+  console.log(`  Failed: ${filesFailed}`);
+  console.log(`  Skipped (up to date): ${skippedFiles.length}`);
   console.log('='.repeat(60) + '\n');
 }
 

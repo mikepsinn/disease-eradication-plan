@@ -38,13 +38,13 @@ with dot.subgraph(name='cluster_dih') as dih:
 # Your decentralized framework for drug assessment (dFDA) cluster (Technical Platform)
 
 with dot.subgraph(name='cluster_dfda') as dfda:
-    dfda.attr(label='Your decentralized framework for drug assessment (dFDA):\nTechnical Platform', style='solid', penwidth='3')
+    dfda.attr(label='Your decentralized framework for drug assessment (dFDA):\nTechnical Protocol', style='solid', penwidth='3')
     dfda.node('Protocol', 'Open Protocol\n(Like HTTP)', shape='box')
-    dfda.node('Marketplace', 'Pragmatic Trial\nMarketplace', shape='box')
+    dfda.node('Marketplace', 'Pragmatic Trial\nEcosystem', shape='box')
     dfda.node('Data', 'Data Commons\n& Rankings', shape='box')
 
     # What a dFDA-style framework provides
-    dfda.node('dFDADoes', 'A dFDA provides:\n• Framework infrastructure\n• Pragmatic trial marketplace\n• Outcome rankings\n• Data protocol\n• NO budget authority',
+    dfda.node('dFDADoes', 'A dFDA provides:\n• Framework infrastructure\n• Pragmatic trial ecosystem\n• Outcome rankings\n• Data protocol\n• NO budget authority',
               shape='note', style='filled', fillcolor='white')
 
 # Connections: Fund -> Governance -> Platform

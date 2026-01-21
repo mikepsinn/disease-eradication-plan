@@ -35,6 +35,7 @@
   },
   "scripts": {
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
+    "images:generate:outdated": "tsx scripts/images/generate-chapter-images.ts --outdated",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:1-pct-treaty-impact:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py 1-pct-treaty-impact --to pdf",
     "render:wishocracy:publish": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --publish",

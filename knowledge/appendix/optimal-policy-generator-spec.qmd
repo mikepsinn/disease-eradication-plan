@@ -1,7 +1,7 @@
 ---
-title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions"
-subtitle: "Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria"
-description: "The Optimal Policy Generator (OPG) extends Optimocracy beyond budget allocation to systematic policy recommendations for jurisdictions at any level (country, state, city), producing prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data."
+title: 'Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions'
+subtitle: Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria
+description: The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
 abstract: |
   Fifty US states with different laws. Two hundred countries with different policies. Centuries of
   variation in tax rates, regulations, programs. The data to know what works exists but isn't
@@ -23,7 +23,7 @@ aliases:
   - /policy-impact-score.html
 author:
   - name: Mike P. Sinn
-    orcid: "0009-0006-0212-1094"
+    orcid: 0009-0006-0212-1094
     affiliation:
       name: Decentralized Institutes of Health
       url: https://dih.earth
@@ -55,19 +55,63 @@ format:
 
 {{< include ../includes/setup-parameters.qmd >}}
 
-::: {.callout-note}
-## Working Paper
-
-This specification describes a framework for generating jurisdiction-specific policy recommendations. It complements the Optimocracy paper's Budget Impact Score (BIS) by extending evidence-based governance from spending allocation to policy adoption and reform.
-:::
-
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify (change level or approach), (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement. This specification complements the Optimocracy framework's Budget Impact Score (BIS): where BIS produces jurisdiction-specific spending recommendations ("Texas underspends on education by $X"), OPG produces jurisdiction-specific policy recommendations ("Texas should enact primary seat belt laws, replace tobacco tax: $1.41 → $2.50").
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify (change level or approach), (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement.
 
 **JEL Classification**: H10, D72, C54, I18, D61
 
 H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
+
+## The Evidence Base: Centuries of Natural Policy Experiments
+
+**Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists---scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
+
+### Scale of Available Natural Experiments
+
+| Level | Jurisdictions | Years | Policy-Years |
+|-------|--------------|-------|--------------|
+| US States | 50 | 70+ | 3,500+ |
+| Countries | 200+ | 230+ | 46,000+ |
+| EU Regions | 300+ | 50+ | 15,000+ |
+| US Counties | 3,000+ | 50+ | 150,000+ |
+| Cities worldwide | 10,000+ | varies | millions |
+
+Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. Combined, this represents the largest-ever dataset of policy experiments.
+
+### The OPG Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    OPG EVIDENCE PIPELINE                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  1. INGEST                                                       │
+│     └── All policy changes with dates, jurisdictions, details   │
+│                                                                  │
+│  2. ALIGN                                                        │
+│     └── Match policies to outcome time series by jurisdiction   │
+│                                                                  │
+│  3. ANALYZE                                                      │
+│     └── Apply quasi-experimental methods (synth control, DiD)   │
+│                                                                  │
+│  4. SCORE                                                        │
+│     └── Compute Policy Impact Scores using Bradford Hill        │
+│                                                                  │
+│  5. RANK                                                         │
+│     └── Generate jurisdiction-specific recommendations          │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Why This Hasn't Been Done Before
+
+1. **Data fragmentation**: Policy records scattered across legislative databases, government archives, academic papers
+2. **Computational limits**: Meta-analysis at this scale requires modern infrastructure
+3. **Methodological advances**: Synthetic control (2003), modern DiD (2021) are recent
+4. **Incentive structures**: No existing institution has mandate + capability + incentive
+
+OPG aggregates fragmented evidence, applies modern causal inference at scale, and produces actionable output.
 
 ## System Overview
 
@@ -110,15 +154,6 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 *Blocking factors flagged where applicable (constitutional constraints, federal preemption, etc.)*
 :::
 
-### The Analogy: Spending Gaps vs. Policy Gaps
-
-| Framework | Question Answered | Primary Output | Example |
-|-----------|------------------|----------------|---------|
-| **Optimal Budget Generator (OBG/BIS)** | How much should we spend? | Integrated budget recommendations | "Texas underspends on education by $X" |
-| **Optimal Policy Generator (OPG)** | What policies should we adopt? | Policy gap analysis | "Texas should enact X, repeal Y" |
-
-Both frameworks apply the same principle: compare current jurisdiction practice to evidence-optimal practice, quantify the gap, and produce actionable recommendations.
-
 ### What Policy Analysts See
 
 - **Effect estimates** with standard errors, confidence intervals, and heterogeneity statistics
@@ -129,34 +164,6 @@ Both frameworks apply the same principle: compare current jurisdiction practice 
 - **Natural experiments identified** for validation opportunities
 - **Similar policies** via embedding-based similarity for evidence transfer
 - **Jurisdiction-specific adjustments** based on demographics, existing policies, and context
-
-### Where This Fits
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    OPTIMOCRACY FRAMEWORK                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌─────────────────────────────┐    ┌─────────────────────────┐ │
-│  │  Optimal Budget Generator   │    │  Optimal Policy         │ │
-│  │  (OBG / BIS)                │    │  Generator (OPG)        │ │
-│  │                             │    │                         │ │
-│  │  Question:                  │    │  Question:              │ │
-│  │  "How much should we        │    │  "What policies should  │ │
-│  │   spend on X?"              │    │   we change?"           │ │
-│  │                             │    │                         │ │
-│  │  Output:                    │    │  Output:                │ │
-│  │  Spending gap analysis      │    │  4-type recommendations │ │
-│  │  by category                │    │  by policy type         │ │
-│  │                             │    │                         │ │
-│  │  Unit: $ per program        │    │  Unit: Laws, regs,      │ │
-│  │                             │    │  taxes, ordinances      │ │
-│  └─────────────────────────────┘    └─────────────────────────┘ │
-│                                                                  │
-│  Both produce: Jurisdiction-specific recommendations             │
-│  Both feed into: Constitutional Layer (metric-bound rules)      │
-└─────────────────────────────────────────────────────────────────┘
-```
 
 ## Introduction
 
@@ -466,35 +473,127 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 | Simple before-after | 0.40 | No control group; confounding likely |
 | Cross-sectional | 0.25 | Snapshot; severe confounding |
 
-### Bradford Hill Criteria Mapping for Policy
+### Bradford Hill Criteria Scoring Functions {#sec-bradford-hill}
 
-Bradford Hill's criteria for causality [@hill1965], originally developed for epidemiology, map to policy evaluation:
+Bradford Hill's criteria for causality [@hill1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
-| Criterion | Definition | DFDA (Drug) Implementation | OPG (Policy) Implementation |
-|-----------|------------|---------------------------|----------------------------|
-| **Strength** | Magnitude of association | Correlation coefficient | Effect estimate magnitude (standardized) |
-| **Consistency** | Replicated across studies | Across users (N-of-1) | Across jurisdictions (I² heterogeneity) |
-| **Specificity** | Specific exposure → specific outcome | Specific drug-symptom pair | Policy domain → outcome category |
-| **Temporality** | Exposure precedes outcome | Onset delay optimization | Policy adoption precedes outcome change |
-| **Gradient** | Dose-response relationship | Dose-outcome curve | For continuous policies (tax rates, spending levels) |
-| **Plausibility** | Mechanistic explanation | Biological mechanism | Economic mechanism (theory) |
-| **Coherence** | Consistent with broader knowledge | Medical literature | Economic literature |
-| **Experiment** | Experimental/quasi-experimental evidence | N-of-1 trial design quality | Quasi-experimental design quality |
-| **Analogy** | Similar exposures have similar effects | Similar drugs | Similar policies (embedding similarity) |
+#### 1. Strength of Association
 
-Each criterion is scored 0-1 based on the evidence:
+Larger effect estimates provide stronger evidence. We use an exponential saturation function:
 
 $$
-\text{Hill}_{\text{criterion}} = f(\text{evidence for criterion})
+S_{\text{strength}} = 1 - e^{-|\hat{\beta}_{\text{std}}| / \beta_{\text{sig}}}
 $$
 
-The aggregate causal confidence score combines criteria:
+Where $|\hat{\beta}_{\text{std}}|$ is the absolute standardized effect size and $\beta_{\text{sig}} = 0.3$ is a significance threshold (typical medium effect). A standardized effect of 0.3 yields $S_{\text{strength}} \approx 0.63$; effects of 0.6+ yield scores $>0.86$.
+
+#### 2. Consistency Across Jurisdictions
+
+Replication across contexts provides stronger evidence. Scored by number of independent jurisdiction studies:
 
 $$
-\text{CCS} = \frac{\sum_{i=1}^{9} w_i \cdot \text{Hill}_i}{\sum_{i=1}^{9} w_i}
+S_{\text{consistency}} = 1 - e^{-N_j / N_{\text{sig}}}
 $$
 
-Where $w_i$ are criterion weights. Default weights emphasize temporality (must be satisfied), experiment (quasi-experimental design quality), and consistency (replication across jurisdictions).
+Where $N_j$ is the number of jurisdictions with concordant effect direction and $N_{\text{sig}} = 10$. Five concordant jurisdictions yield $S_{\text{consistency}} \approx 0.39$; ten yield $\approx 0.63$.
+
+#### 3. Temporality (Required)
+
+Policy adoption must precede outcome change. This is binary---either satisfied or not:
+
+$$
+S_{\text{temporality}} = \begin{cases} 1.0 & \text{if } \delta > 0 \\ 0.0 & \text{otherwise} \end{cases}
+$$
+
+Where $\delta$ is the lag between policy implementation and outcome measurement. **If temporality is violated, the overall CCS is zeroed regardless of other criteria.**
+
+#### 4. Dose-Response Gradient
+
+For continuous policies (tax rates, spending levels), dose-response strengthens causal inference:
+
+$$
+S_{\text{gradient}} = \frac{r_{\text{dose}}^2}{r_{\text{dose}}^2 + r_{\text{sig}}^2}
+$$
+
+Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome magnitude, and $r_{\text{sig}} = 0.5$. A dose-response correlation of 0.5 yields $S_{\text{gradient}} = 0.5$; correlation of 0.7 yields $\approx 0.66$.
+
+For binary policies, $S_{\text{gradient}} = 0.5$ (neutral---neither supporting nor refuting).
+
+#### 5. Experiment Quality
+
+Quality of the quasi-experimental design, weighted by validity diagnostic violations:
+
+$$
+S_{\text{experiment}} = w_{\text{method}} \times (1 - v_{\text{violations}})
+$$
+
+Where $w_{\text{method}}$ is the base method weight (see @tbl-method-weights) and $v_{\text{violations}} \in [0, 1]$ is the proportion of validity checks failed (parallel trends, pre-treatment fit, placebo tests).
+
+#### 6. Plausibility (Mechanistic)
+
+Economic or behavioral mechanism linking policy to outcome. Scored by expert-validated mechanism database:
+
+$$
+S_{\text{plausibility}} = \frac{\sum_i w_i \cdot m_i}{\sum_i w_i}
+$$
+
+Where $m_i \in \{0, 1\}$ indicates whether mechanism component $i$ is satisfied (e.g., behavioral response documented, economic theory predicts direction, no implausible side effects) and $w_i$ are component weights.
+
+#### 7. Coherence with Literature
+
+Consistency with broader economic and social science evidence:
+
+$$
+S_{\text{coherence}} = 1 - e^{-N_{\text{studies}} / N_{\text{sig}}}
+$$
+
+Where $N_{\text{studies}}$ is the count of supporting studies in the literature and $N_{\text{sig}} = 5$. Three supporting studies yield $S_{\text{coherence}} \approx 0.45$; ten yield $\approx 0.86$.
+
+#### 8. Analogy to Similar Policies
+
+Evidence transfer from similar policies via embedding similarity:
+
+$$
+S_{\text{analogy}} = \max_{p' \neq p} \left[ \text{sim}(\mathbf{e}_p, \mathbf{e}_{p'}) \times \text{PIS}_{p'} \right]
+$$
+
+Where $\mathbf{e}_p$ is the policy embedding vector, $\text{sim}(\cdot)$ is cosine similarity, and $\text{PIS}_{p'}$ is the Policy Impact Score of similar policy $p'$. Strong evidence for a similar policy provides partial evidence for the focal policy.
+
+#### 9. Specificity
+
+Whether the policy affects specific outcomes rather than everything:
+
+$$
+S_{\text{specificity}} = \frac{1}{1 + \log(1 + N_{\text{outcomes}})}
+$$
+
+Where $N_{\text{outcomes}}$ is the number of outcome categories with significant effects. A policy affecting 1-2 outcomes has $S_{\text{specificity}} > 0.7$; a policy affecting 10+ outcomes has $S_{\text{specificity}} < 0.3$. Lower specificity suggests confounding or measurement artifact.
+
+### Causal Confidence Score (CCS) Calculation
+
+The aggregate CCS combines all nine criteria with explicit weights:
+
+$$
+\text{CCS} = S_{\text{temporality}} \times \frac{\sum_{k=1}^{9} w_k \cdot S_k}{\sum_{k=1}^{9} w_k}
+$$
+
+Note: $S_{\text{temporality}}$ acts as a gate---if temporality fails, the entire CCS is zero.
+
+**Default criterion weights:**
+
+| Criterion | Weight | Rationale |
+|-----------|--------|-----------|
+| Temporality | 0.20 | Must be satisfied; gates all other criteria |
+| Experiment | 0.18 | Method quality is primary for causal inference |
+| Consistency | 0.15 | Replication across jurisdictions crucial |
+| Strength | 0.12 | Effect magnitude matters for welfare |
+| Gradient | 0.10 | Dose-response is strong causal evidence |
+| Coherence | 0.08 | Literature support adds confidence |
+| Plausibility | 0.07 | Mechanism existence supports causation |
+| Specificity | 0.05 | Targeted effects more credible |
+| Analogy | 0.05 | Transfer learning from similar policies |
+
+These weights sum to 1.0 and can be adjusted based on domain-specific considerations.
 
 ## Jurisdiction Policy Inventory
 
@@ -560,16 +659,31 @@ Where:
 
 ### Priority Scoring
 
-Recommendations are ranked by priority score:
+Recommendations are ranked by priority score, which combines gap magnitude, evidence quality, and expected welfare impact:
 
 $$
-\text{Priority}_{jp} = |\text{Gap}_{jp}| \times \text{Evidence Grade}_{p} \times \text{Monetized Impact}_{jp}
+\text{Priority}_{jp} = |\text{Gap}_{jp}| \times \text{PIS}_p \times M_{jp}
 $$
+
+Where:
+
+- $|\text{Gap}_{jp}|$ = Absolute difference between evidence-optimal and current policy level (normalized to $[0, 1]$)
+- $\text{PIS}_p$ = Policy Impact Score (see @sec-pis), capturing effect magnitude and causal confidence
+- $M_{jp}$ = Monetized annual welfare impact, adjusted for jurisdiction $j$'s population and context
+
+**Priority tiers:**
+
+| Tier | Priority Score | Interpretation |
+|------|---------------|----------------|
+| **Critical** | $\geq 0.80$ | Immediate action recommended |
+| **High** | $[0.50, 0.80)$ | Strong candidate for adoption |
+| **Medium** | $[0.25, 0.50)$ | Consider if political capital available |
+| **Low** | $< 0.25$ | Monitor for better evidence |
 
 High-priority recommendations have:
 1. Large gap between current and optimal
-2. Strong evidence (Grade A or B)
-3. Large expected welfare impact
+2. Strong evidence (Grade A or B; high PIS)
+3. Large expected welfare impact (high M)
 
 ### Context Adjustment
 
@@ -671,20 +785,25 @@ For each policy recommendation, OPG specifies:
 
 ### Overview
 
-The Policy Impact Score (PIS) is the intermediate metric used to generate recommendations. It quantifies the strength of evidence that a policy affects an outcome.
+The Policy Impact Score (PIS) is the intermediate metric used to generate recommendations. It quantifies the strength of evidence that a policy affects an outcome, combining effect magnitude, causal confidence, and analysis quality into a single score.
 
 ### Jurisdiction-Level PIS Calculation
 
 For each jurisdiction $j$, policy $p$, and outcome $o$, the jurisdiction-level PIS is:
 
 $$
-\text{PIS}_{jpo} = |\hat{\beta}_{jpo}| \cdot \text{CCS}_{jpo} \cdot Q_{jpo}
+\text{PIS}_{jpo} = |\hat{\beta}_{jpo}| \times \text{CCS}_{jpo} \times Q_{jpo}
 $$
 
 Where:
 
-- $|\hat{\beta}_{jpo}|$ = Absolute value of effect estimate (standardized effect size). We take absolute value because PIS measures *strength of evidence*, not direction. Direction is reported separately; negative effects on desirable outcomes are flagged as potential harms.
-- $\text{CCS}_{jpo}$ = Causal Confidence Score (aggregate Hill criteria)
+- $|\hat{\beta}_{jpo}|$ = Absolute value of **standardized** effect estimate. We take absolute value because PIS measures *strength of evidence*, not direction. Direction is reported separately; negative effects on desirable outcomes are flagged as potential harms.
+- $\text{CCS}_{jpo}$ = Causal Confidence Score computed from Bradford Hill criteria (see @sec-bradford-hill):
+
+$$
+\text{CCS} = S_{\text{temporality}} \times \sum_{k=1}^{9} w_k \cdot S_k
+$$
+
 - $Q_{jpo}$ = Quality adjustment factor based on analysis method and diagnostics
 
 ::: {.callout-important}
@@ -738,13 +857,29 @@ The `confounder_sensitivity` field estimates how much the effect estimate might 
 
 ## Global (Aggregate) PIS Calculation
 
-Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis:
+Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis.
+
+### Pooled Effect Estimate
 
 $$
 \hat{\beta}_{\text{pooled}} = \frac{\sum_j w_j \hat{\beta}_j}{\sum_j w_j}
 $$
 
-Where weights $w_j = \frac{1}{\text{SE}_j^2 + \tau^2}$ incorporate both within-study variance and between-study heterogeneity ($\tau^2$).
+Where weights incorporate both within-study variance and between-study heterogeneity:
+
+$$
+w_j = \frac{1}{\text{SE}_j^2 + \tau^2}
+$$
+
+### Pooled PIS Across Jurisdictions
+
+The aggregate PIS for policy $p$ and outcome $o$ is:
+
+$$
+\text{PIS}_{\text{pooled}} = \frac{\sum_j w_j \cdot \text{PIS}_j}{\sum_j w_j}
+$$
+
+This precision-weighted average gives more influence to high-precision estimates (low SE) while accounting for true heterogeneity ($\tau^2$).
 
 ### Heterogeneity Statistics
 
@@ -763,13 +898,33 @@ High heterogeneity suggests moderators (policy effects vary by context) rather t
 
 ### Evidence Grading
 
-| Grade | Criteria | Interpretation |
-|-------|----------|----------------|
-| **A** | Multiple high-quality quasi-experiments (synthetic control, RDD) OR RCT; I² < 50%; consistent direction | Strong evidence; ready for implementation |
-| **B** | Single RCT OR multiple well-designed DiD/event studies; I² < 75%; mostly consistent | Good evidence; consider piloting |
-| **C** | Well-designed observational studies with confounding control; moderate consistency | Suggestive evidence; needs validation |
-| **D** | Case studies, weak observational evidence, or high heterogeneity | Weak evidence; exploratory only |
-| **F** | Expert opinion only OR conflicting high-quality evidence | Insufficient or contradictory evidence |
+Evidence grades are assigned using explicit thresholds on PIS, heterogeneity ($I^2$), and jurisdiction count ($N_j$):
+
+$$
+\text{Grade} = \begin{cases}
+A & \text{if } \text{PIS} \geq 0.80 \text{ AND } I^2 < 0.50 \text{ AND } N_j \geq 5 \\
+B & \text{if } \text{PIS} \geq 0.60 \text{ AND } I^2 < 0.75 \text{ AND } N_j \geq 3 \\
+C & \text{if } \text{PIS} \geq 0.40 \text{ AND } N_j \geq 2 \\
+D & \text{if } \text{PIS} \geq 0.20 \\
+F & \text{otherwise}
+\end{cases}
+$$
+
+**Grade interpretation:**
+
+| Grade | PIS Threshold | Heterogeneity | Jurisdictions | Interpretation |
+|-------|--------------|---------------|---------------|----------------|
+| **A** | $\geq 0.80$ | $I^2 < 50\%$ | $\geq 5$ | Strong evidence; ready for implementation |
+| **B** | $\geq 0.60$ | $I^2 < 75\%$ | $\geq 3$ | Good evidence; consider piloting |
+| **C** | $\geq 0.40$ | Any | $\geq 2$ | Suggestive evidence; needs validation |
+| **D** | $\geq 0.20$ | Any | Any | Weak evidence; exploratory only |
+| **F** | $< 0.20$ | Any | Any | Insufficient evidence |
+
+**Additional grade modifiers:**
+
+- **Conflicting evidence**: Downgrade by 1 letter if direction of effect differs across high-quality studies
+- **High-quality RCT**: Automatic Grade A if RCT with low risk of bias, regardless of other criteria
+- **Single jurisdiction**: Maximum Grade C unless effect is extraordinarily large ($|\hat{\beta}| > 1.0$ SD)
 
 ### Context-Specific Confidence
 
@@ -992,7 +1147,7 @@ For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictio
 
 ### Oracle Capture Risk
 
-As with BIS, the measurement process itself can be captured:
+The measurement process itself can be captured:
 
 1. **Outcome measurement**: Agencies reporting outcomes have incentives to manipulate
 2. **Policy implementation dates**: Recording when policies "really" took effect is subjective
@@ -1160,12 +1315,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact.
 
-The OPG complements the Optimal Budget Generator (OBG/BIS) in the Optimocracy framework:
-
-- **OBG/BIS** answers: "How much should jurisdiction X spend on each program?"
-- **OPG** answers: "What policies should jurisdiction X adopt or repeal?"
-
-Together, they enable evidence-based governance that optimizes both resource allocation and regulatory design, tailored to each jurisdiction's specific context.
+The key insight is that centuries of natural policy experiments have already been conducted---we simply need to harvest the evidence systematically. With 50 US states varying policies over 70 years, 200 countries over two centuries, and thousands of cities and counties making independent policy choices, the data to know what works already exists. OPG transforms this scattered evidence into actionable, jurisdiction-specific guidance.
 
 ## Acknowledgments {.unnumbered}
 
@@ -1594,12 +1744,7 @@ Raw effect estimates should be reported alongside standardized scores:
 
 **Corresponding Author**: Mike P. Sinn, Decentralized Institutes of Health (mike@warondisease.org)
 
-**Conflicts of Interest**: The author declares no conflicts of interest.
-
-**Funding**: This work received no external funding.
 
 **Data Availability**: This specification describes a methodological framework. Policy databases referenced (V-Dem, Polity V, CPDS, World Bank WDI) are publicly available at URLs provided in Data Sources section. A complete replication package including data extraction scripts, analysis code, and recommendation generation algorithms will be deposited in a public repository upon system deployment.
 
-**Ethics Statement**: This is a methodological specification. No human subjects research was conducted. Policy outcome data used in examples are drawn from published academic studies and government statistical agencies.
 
-**Preprint**: This working paper has not undergone peer review.
