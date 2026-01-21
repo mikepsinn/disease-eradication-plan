@@ -223,7 +223,6 @@ def extract_pages_for_site(search_generator: SearchIndexGenerator, config_name: 
             "description": entry.description,
             "image": image_url,
             "tags": entry.tags if entry.tags else None,
-            "excerpt": entry.excerpt,
             "sections": entry.sections if entry.sections else None,
             "published": entry.published,
             "lastmod": entry.lastmod,

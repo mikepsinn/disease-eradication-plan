@@ -4,7 +4,7 @@
 Search Index Generator for Quarto Projects
 
 Generates JSON search indexes with rich metadata for each Quarto configuration.
-Extracts frontmatter, excerpts, section headings, and builds comprehensive search data.
+Extracts frontmatter, section headings, and builds comprehensive search data.
 """
 
 import sys
@@ -31,7 +31,6 @@ class SearchIndexEntry:
         description: Optional[str] = None,
         tags: Optional[List[str]] = None,
         image: Optional[str] = None,
-        excerpt: Optional[str] = None,
         sections: Optional[List[str]] = None,
         published: bool = True,
         lastmod: Optional[str] = None
@@ -42,7 +41,6 @@ class SearchIndexEntry:
         self.description = description
         self.tags = tags or []
         self.image = image
-        self.excerpt = excerpt
         self.sections = sections or []
         self.published = published
         self.lastmod = lastmod
@@ -56,7 +54,6 @@ class SearchIndexEntry:
             "description": self.description,
             "tags": self.tags,
             "image": self.image,
-            "excerpt": self.excerpt,
             "sections": self.sections,
             "published": self.published,
             "lastmod": self.lastmod
@@ -80,47 +77,6 @@ class QMDParser:
             return None
 
     @staticmethod
-    def extract_excerpt(content: str, max_length: int = 200) -> Optional[str]:
-        """Extract first non-heading paragraph as excerpt."""
-        # Remove frontmatter
-        content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
-
-        # Remove comments
-        content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
-
-        # Find first paragraph (non-heading, non-empty line)
-        lines = content.split('\n')
-        paragraph_lines = []
-
-        for line in lines:
-            line = line.strip()
-            # Skip headings, empty lines, code blocks, Quarto directives
-            if (not line or
-                line.startswith('#') or
-                line.startswith('```') or
-                line.startswith('{{<') or  # Quarto shortcodes
-                line.startswith('::')):    # Quarto divs
-                if paragraph_lines:  # Found end of first paragraph
-                    break
-                continue
-            paragraph_lines.append(line)
-
-        if not paragraph_lines:
-            return None
-
-        excerpt = ' '.join(paragraph_lines)
-        # Remove markdown formatting
-        excerpt = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', excerpt)  # Links
-        excerpt = re.sub(r'[*_`]', '', excerpt)  # Bold, italic, code
-        excerpt = re.sub(r'\{\{<.*?>\}\}', '', excerpt)  # Remaining shortcodes
-
-        # Truncate to max_length
-        if len(excerpt) > max_length:
-            excerpt = excerpt[:max_length].rsplit(' ', 1)[0] + '...'
-
-        return excerpt
-
-    @staticmethod
     def extract_sections(content: str) -> List[str]:
         """Extract section headings (h2, h3)."""
         # Remove frontmatter
@@ -132,11 +88,13 @@ class QMDParser:
             match = re.match(r'^#{2,3}\s+(.+)', line)
             if match:
                 heading = match.group(1).strip()
-                # Remove markdown formatting and anchors
-                heading = re.sub(r'\{#[^}]+\}', '', heading)  # {#anchor}
+                # Remove markdown formatting and anchors/attributes
+                heading = re.sub(r'\{[^}]+\}', '', heading)  # {#anchor}, {.unnumbered}, {.class}
                 heading = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', heading)  # Links
                 heading = re.sub(r'[*_`]', '', heading)  # Bold, italic, code
-                sections.append(heading.strip())
+                heading = heading.strip()
+                if heading:  # Only add non-empty headings
+                    sections.append(heading)
 
         return sections
 
@@ -318,9 +276,6 @@ class SearchIndexGenerator:
             # Get image
             image = frontmatter.get('image')
 
-            # Extract excerpt
-            excerpt = self.parser.extract_excerpt(content)
-
             # Extract sections
             sections = self.parser.extract_sections(content)
 
@@ -349,7 +304,6 @@ class SearchIndexGenerator:
                 description=description,
                 tags=tags,
                 image=image,
-                excerpt=excerpt,
                 sections=sections,
                 published=published,
                 lastmod=lastmod
