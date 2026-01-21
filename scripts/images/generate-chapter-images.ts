@@ -83,36 +83,31 @@ FILTERED:`;
  * Prioritizes entertaining, surprising, and informative content
  */
 async function extractSlideContent(content: string, title?: string, description?: string): Promise<string> {
-  const prompt = `Extract 2-3 sentences for a slide. Each must contain a statistic or concrete fact. Prefer sentences with dark humor or vivid analogies. Verbatim only.
+  const prompt = `Extract key content for a single slide. Maximum 400 characters. Include the most important statistic and one vivid analogy. Verbatim only.
 
 ${title ? `Topic: ${title}\n` : ''}
 ${content.substring(0, 6000)}
 
-SENTENCES:`;
+SLIDE TEXT:`;
 
   try {
     const responseText = await generateGeminiFlashContent(prompt);
     const extractedContent = responseText.trim();
 
-    // Prepend title and description for the image generator
-    let slideText = '';
-    if (title) {
-      slideText += `TITLE: ${title}\n\n`;
-    }
-    if (description) {
-      slideText += `SUBTITLE: ${description}\n\n`;
-    }
-    slideText += `KEY POINTS:\n${extractedContent}`;
+    // Combine title, description, and extracted content without labels
+    const parts: string[] = [];
+    if (title) parts.push(title);
+    if (description) parts.push(description);
+    parts.push(extractedContent);
 
-    return slideText;
+    return parts.join('\n\n');
   } catch (error) {
     console.error('[WARN] Error extracting slide content, using truncated original:', error);
-    // Fallback with title/description
-    let fallback = '';
-    if (title) fallback += `TITLE: ${title}\n\n`;
-    if (description) fallback += `SUBTITLE: ${description}\n\n`;
-    fallback += content.substring(0, 300);
-    return fallback;
+    const parts: string[] = [];
+    if (title) parts.push(title);
+    if (description) parts.push(description);
+    parts.push(content.substring(0, 300));
+    return parts.join('\n\n');
   }
 }
 
