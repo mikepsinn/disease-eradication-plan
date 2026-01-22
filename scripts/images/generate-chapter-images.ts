@@ -806,7 +806,8 @@ async function generateImageForFile(
     if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
       console.log(`  Generating slide...`);
       console.log(`    Extracting key content for slide...`);
-      const slideContent = await extractSlideContent(cleanedBody, frontmatter.title, frontmatter.description);
+      // Use baseMetadata which has variables already replaced
+      const slideContent = await extractSlideContent(cleanedBody, baseMetadata.title, baseMetadata.description);
       const slidePrompt = ImagePrompts.slide.buildPrompt(slideContent, styleConfig.style);
 
       const slideFiles = await generateAndSaveImages({
@@ -854,8 +855,8 @@ async function generateImageForFile(
       if (!hasExistingInfographic) {
         const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
 
-        // Generate meaningful alt text from frontmatter
-        const altText = frontmatter.description || frontmatter.title || 'Chapter infographic';
+        // Generate meaningful alt text from frontmatter (use baseMetadata with variables replaced)
+        const altText = baseMetadata.description || baseMetadata.title || 'Chapter infographic';
         const infographicMarkdown = `![${altText}](/${infographicImagePath})`;
 
         // Find the include directive and insert infographic after it
