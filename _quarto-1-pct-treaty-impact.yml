@@ -41,7 +41,7 @@ book:
     - index.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
     - knowledge/appendix/regulatory-mortality-analysis.qmd
-    - knowledge/references-shortcode-page.qmd
+    - knowledge/references.qmd
   navbar:
     right:
       - icon: file-pdf
@@ -50,7 +50,7 @@ book:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "References"
-        href: knowledge/references-shortcode-page.qmd
+        href: knowledge/references.qmd
       - text: "VOTE"
         href: https://warondisease.org
   sidebar:
@@ -62,7 +62,7 @@ book:
         contents:
           - href: index.html
             text: "The 1% Treaty: Economic Analysis"
-          - href: knowledge/references-shortcode-page.qmd
+          - href: knowledge/references.qmd
             text: "References & Citations"
 
       - section: "Appendices"
@@ -227,7 +227,7 @@ format:
               <a href="/" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.html" style="color: #8b7355;">Calculations</a> |
               <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
-              <a href="/knowledge/references-shortcode-page.html" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>
@@ -249,7 +249,7 @@ format:
               <a href="/" style="color: #8b7355;">Economics</a> |
               <a href="/knowledge/appendix/parameters-and-calculations.html" style="color: #8b7355;">Calculations</a> |
               <a href="https://manual.warondisease.org" style="color: #8b7355;">Complete Manual</a> |
-              <a href="/knowledge/references-shortcode-page.html" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references.html" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong>

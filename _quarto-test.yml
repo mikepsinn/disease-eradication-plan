@@ -25,7 +25,7 @@ book:
     - index.qmd
     - knowledge/test/test-parameters.qmd
     - knowledge/appendix/parameters-and-calculations-test.qmd
-    - knowledge/references-shortcode-page.qmd
+    - knowledge/references.qmd
 
 # Bibliography: Single source of truth for all citations
 bibliography: references.bib

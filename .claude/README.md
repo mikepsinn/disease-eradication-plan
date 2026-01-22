@@ -85,9 +85,9 @@ Run automatically after every file edit:
 
 **What it does:**
 - Checks if claim has citation
-- Searches `knowledge/references.qmd` for existing source
+- Searches `references.bib` for existing source
 - If not found, searches web for authoritative source
-- Adds new source to `references.qmd`
+- Adds new source to `references.bib`
 - Adds citation to text `[@reference-id]`
 
 **Usage:** Called by book-reviewer agent automatically
@@ -100,7 +100,7 @@ Run automatically after every file edit:
 - Systematically fixes each error type:
   - Em-dashes → appropriate punctuation
   - Unknown variables → add to parameters.py or fix typo
-  - Missing citations → add to references.qmd or fix key
+  - Missing citations → add to references.bib or fix key
   - Broken links → fix paths
   - Missing imports → add import statements
   - GIF wrapping → wrap in HTML-only blocks
@@ -219,7 +219,7 @@ Agent: Adds GLOBAL_BILLIONAIRE_COUNT = Parameter(3000, ...) and regenerates
 ```
 User edits economics.qmd
 Agent: Reviews changes, finds unsourced claim "Costa Rica abolished military in 1948",
-searches for source, adds to references.qmd, adds citation
+searches for source, adds to references.bib, adds citation
 ```
 
 ## 🎨 CLI Tools
