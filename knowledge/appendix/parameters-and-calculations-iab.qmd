@@ -1667,6 +1667,10 @@ Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncerta
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-iab_bootstrap_campaign_cost.qmd >}}
+
 *Core definition*
 
 :::
@@ -1682,6 +1686,10 @@ Estimated annual cost of the IAB mechanism (high-end estimate including regulato
 **Technical**: 95% CI: [$160M, $750M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $160M and $750M (±39%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-iab_mechanism_annual_cost.qmd >}}
 
 *Core definition*
 
@@ -1715,6 +1723,10 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_lobbying.qmd >}}
+
 *Core definition*
 
 :::
@@ -1733,6 +1745,10 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
+
 *Core definition*
 
 :::
@@ -1748,6 +1764,10 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 **Technical**: 95% CI: [$150M, $410M]
 
 **What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
 
 *Core definition*
 

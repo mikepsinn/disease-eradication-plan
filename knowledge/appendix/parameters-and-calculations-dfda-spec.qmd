@@ -351,6 +351,10 @@ Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calc
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_observational_cost_per_patient.qmd >}}
+
 *Core definition*
 
 :::

@@ -537,6 +537,15 @@ def generate_parameters_and_calculations_qmd(
             uncertainty_content = generate_uncertainty_section(value, unit)
             content.extend(uncertainty_content)
 
+            # Add input distribution chart if exists (for definitions with uncertainty)
+            project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
+            dist_qmd = project_root / "knowledge" / "figures" / f"distribution-{param_name.lower()}.qmd"
+            if dist_qmd.exists():
+                content.append("#### Input Distribution")
+                content.append("")
+                content.append(f"{{{{< include ../figures/distribution-{param_name.lower()}.qmd >}}}}")
+                content.append("")
+
             content.append("*Core definition*")
             content.append("")
 

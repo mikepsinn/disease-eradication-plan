@@ -93,8 +93,8 @@ metadata:
     - efficacy-requirements
     - peltzman
     - regulatory-economics
-  version: "0.9"
-  edition: "Working Draft"
+  version: "1.0"
+  edition: "Working Paper"
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
@@ -183,7 +183,7 @@ format:
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     page-footer:
-      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Paper v1.0"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[DIH.earth](https://dih.earth)"
     include-in-footer:

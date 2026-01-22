@@ -89,7 +89,7 @@ Propranolol, the first beta-blocker for treating angina and hypertension, was ap
 
 **2. HIV/AIDS (1987-1996): Regulatory Reform Under Crisis**
 
-The AIDS epidemic demonstrated that regulatory speed is a policy choice. AZT was approved in March 1987 in a record 20 months, without a Phase 3 trial, after Phase 2 showed 19 placebo deaths vs. 1 treatment death. This proves expedited approval is technically feasible. However, from 1987-1993, no other AIDS drugs were approved, despite 257,000 diagnoses in 1993-1995 alone. ACT UP activism forced regulatory reforms (Parallel Track, Accelerated Approval), proving that the FDA's pace reflects institutional priorities, not immutable scientific requirements.
+The AIDS epidemic demonstrated that regulatory speed is a policy choice. AZT was approved in March 1987 in a record 20 months, without a Phase 3 trial, after Phase 2 showed 19 placebo deaths vs. 1 treatment death [@azt-phase-2-trial]. This proves expedited approval is technically feasible. However, from 1987-1993, no other AIDS drugs were approved, despite 257,000 diagnoses in 1993-1995 alone. ACT UP activism forced regulatory reforms (Parallel Track, Accelerated Approval), proving that the FDA's pace reflects institutional priorities, not immutable scientific requirements.
 
 **3. Hepatitis C (2013-2014): Breakthrough Designation Success**
 
@@ -98,7 +98,7 @@ Sovaldi (sofosbuvir) received FDA Breakthrough Therapy designation and was appro
 **Implications for Causal Inference:**
 
 These cases establish that:
-- Regulatory delays have measurable mortality costs (beta-blockers: ~30,000 deaths over 3 years)
+- Regulatory delays have measurable mortality costs (beta-blockers: if Wardell's 10,000/year estimate holds, the 3-year US delay implies ~30,000 excess deaths)
 - Fast approval is technically feasible when institutional will exists (AZT: 20 months; Sovaldi: Breakthrough pathway)
 - Fast approval does not inevitably produce catastrophe (Sovaldi: excellent safety profile)
 
@@ -143,8 +143,8 @@ Using WHO Global Burden of Disease [@ihme-gbd-2019] data, we categorize annual d
 | Cancer | 18.9% | 69% | 95% | 90-95% environmental/lifestyle roots [@cancer-30-50-percent-preventable] |
 | Aging-related | 23.2% | 5% | 99% | Mammalian aging reversal demonstrated [@aging-reversal-mammals-yamanaka] |
 | Accidents | 8.0% | 30% | 60% | WHO: largely preventable [@injuries-largely-preventable] |
-| Metabolic | 6.3% | 70% | 98% | Diabetes reversal via gene therapy demonstrated^[Based on preclinical gene therapy studies reversing Type 1 diabetes in animal models. Max potential extrapolates from root cause addressability.] |
-| Respiratory | 4.3% | 60% | 90% | WHO: 80% of COPD preventable; regenerative potential^[WHO estimates 80% of COPD cases preventable through tobacco control and air quality. Max potential assumes regenerative medicine addresses remaining cases.] |
+| Metabolic | 6.3% | 70% | 98% | Diabetes reversal via gene therapy [@diabetes-gene-therapy-reversal]^[Furuyama et al. (2019) used AAV gene therapy to reprogram alpha cells into insulin-producing beta cells, reversing autoimmune diabetes in mice. Max potential extrapolates from root cause addressability.] |
+| Respiratory | 4.3% | 60% | 90% | WHO: 80% of COPD preventable^[WHO estimates 80% of COPD cases preventable through tobacco control and air quality improvements (see WHO COPD Fact Sheet). The 90% max potential conservatively assumes emerging regenerative medicine may address some remaining cases.] |
 | Neurodegenerative | 3.6% | 10% | 80% | Stem cell therapy potential [@neurodegenerative-stem-cell-potential] |
 | Infectious | 1.9% | 95% | 99% | Vaccines + antimicrobials [@vaccine-roi-44-to-1] |
 | Other | 7.7% | 50% | 95% | Weighted average of above categories^[Calculated as weighted average of "Max Potential" estimates for categories with similar biological mechanisms.] |
@@ -222,6 +222,14 @@ See [Parameters & Calculations Appendix](parameters-and-calculations-invisible-g
 ### Primary Estimate
 
 **Important Clarification:** Throughout this analysis, "regulatory delay" refers specifically to the **post-safety efficacy testing delay** - the period AFTER safety has been established but BEFORE efficacy approval is granted under current FDA/EMA requirements. This is distinct from safety testing (Phase I), which we consider necessary and effective (as demonstrated by the thalidomide case where safety testing prevented thousands of U.S. deaths).
+
+::: {.callout-warning}
+## Methodological Caveat: Cascade Assumption
+
+The primary estimate assumes that the {{< var efficacy_lag_years >}} regulatory delay cascades fully through the biomedical research timeline - i.e., that delaying Drug A by {{< var efficacy_lag_years >}} also delays all downstream research that builds on Drug A's findings by approximately the same amount. This "full cascade" assumption represents a **theoretical upper bound**. In practice, parallel research tracks, international approvals, and adaptive innovation may partially mitigate cascade effects.
+
+The assumption is not empirically validated at the aggregate level, though individual case studies (beta-blockers, HIV/AIDS, Hepatitis C) demonstrate the mechanism operates in specific instances. The Type II/Type I ratio remains robust even under substantially reduced cascade assumptions (see [sensitivity analysis](#confounding-factors---other-changes-in-1962) showing the conclusion holds at 10% regulatory attribution).
+:::
 
 | Metric | Estimate | Methodology |
 |:-------|:---------|:------------|
@@ -584,7 +592,7 @@ The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis
 The pre-1962 system (1938-1962) included:
 
 - Phase I safety testing (mandated by 1938 Food, Drug, and Cosmetic Act)
-- Decentralized efficacy assessment by practicing physicians (>200,000 in US by 1960)^[CDC historical data shows ~127-137 physicians per 100,000 population in 1950-1970, with US population of ~180M in 1960.]
+- Decentralized efficacy assessment by practicing physicians (~229,000 in US by 1960) [@physician-workforce-historical]^[Institute of Medicine data shows 127.4 active physicians per 100,000 population in 1960. At US population of ~180M, this equals approximately 229,000 active physicians.]
 - Third-party review via AMA Council on Pharmacy provided independent evaluation
 - **Result:** Higher approval rates with safety maintained by mandatory Phase I testing
 

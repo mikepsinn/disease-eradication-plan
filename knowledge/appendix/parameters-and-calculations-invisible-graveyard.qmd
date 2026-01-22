@@ -1325,6 +1325,10 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 *The beta distribution means values are bounded and can skew toward one end.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_death_pct.qmd >}}
+
 *Core definition*
 
 :::

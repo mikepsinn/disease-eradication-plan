@@ -1166,6 +1166,10 @@ Decentralized Framework for Drug Assessment community support costs
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_community.qmd >}}
+
 *Core definition*
 
 :::
@@ -1183,6 +1187,10 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 **What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_infrastructure.qmd >}}
 
 *Core definition*
 
@@ -1202,6 +1210,10 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_platform_maintenance.qmd >}}
+
 *Core definition*
 
 :::
@@ -1219,6 +1231,10 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 **What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_regulatory.qmd >}}
 
 *Core definition*
 
@@ -1238,6 +1254,10 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_staff.qmd >}}
+
 *Core definition*
 
 :::
@@ -1255,6 +1275,10 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 **What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_daly_pct.qmd >}}
 
 *Core definition*
 

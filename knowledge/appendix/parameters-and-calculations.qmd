@@ -12595,6 +12595,10 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 
 *The uniform distribution means any value in the range is equally likely.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-approved_drug_disease_pairings.qmd >}}
+
 *Core definition*
 
 :::
@@ -12625,6 +12629,10 @@ Celebrity and influencer endorsements
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $10.5M and $19.5M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_celebrity_endorsement.qmd >}}
+
 *Core definition*
 
 :::
@@ -12640,6 +12648,10 @@ Community organizing and ambassador program budget
 **Technical**: 95% CI: [$21M, $39M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $21M and $39M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_community_organizing.qmd >}}
 
 *Core definition*
 
@@ -12659,6 +12671,10 @@ Contingency fund for unexpected costs
 
 *The uniform distribution means any value in the range is equally likely.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_contingency.qmd >}}
+
 *Core definition*
 
 :::
@@ -12677,6 +12693,10 @@ Defense industry conversion program
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_defense_conversion.qmd >}}
+
 *Core definition*
 
 :::
@@ -12692,6 +12712,10 @@ Budget for co-opting defense industry lobbyists
 **Technical**: 95% CI: [$35M, $65M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $35M and $65M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_defense_lobbyist_budget.qmd >}}
 
 *Core definition*
 
@@ -12709,6 +12733,10 @@ Healthcare industry alignment and partnerships
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $24.5M and $45.5M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_healthcare_alignment.qmd >}}
+
 *Core definition*
 
 :::
@@ -12724,6 +12752,10 @@ Campaign operational infrastructure
 **Technical**: 95% CI: [$14M, $26M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $14M and $26M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_infrastructure.qmd >}}
 
 *Core definition*
 
@@ -12741,6 +12773,10 @@ AI-assisted legal work budget
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $35M and $65M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_legal_ai_budget.qmd >}}
+
 *Core definition*
 
 :::
@@ -12756,6 +12792,10 @@ Legal defense fund
 **Technical**: 95% CI: [$14M, $26M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $14M and $26M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_legal_defense.qmd >}}
 
 *Core definition*
 
@@ -12775,6 +12815,10 @@ Legal drafting and compliance work
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_legal_work.qmd >}}
+
 *Core definition*
 
 :::
@@ -12790,6 +12834,10 @@ EU lobbying campaign budget
 **Technical**: 95% CI: [$28M, $52M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $28M and $52M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_lobbying_eu.qmd >}}
 
 *Core definition*
 
@@ -12817,6 +12865,10 @@ US lobbying campaign budget
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $35M and $65M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_lobbying_us.qmd >}}
+
 *Core definition*
 
 :::
@@ -12832,6 +12884,10 @@ Maximum mass media campaign budget
 **Technical**: 95% CI: [$700M, $1.30B]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $700M and $1.30B (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_media_budget_max.qmd >}}
 
 *Core definition*
 
@@ -12849,6 +12905,10 @@ Minimum mass media campaign budget
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $350M and $650M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_media_budget_min.qmd >}}
+
 *Core definition*
 
 :::
@@ -12864,6 +12924,10 @@ Opposition research and rapid response
 **Technical**: 95% CI: [$17.5M, $32.5M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $17.5M and $32.5M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_opposition_research.qmd >}}
 
 *Core definition*
 
@@ -12881,6 +12945,10 @@ Phase 1 campaign budget (Foundation, Year 1)
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $140M and $260M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_phase1_budget.qmd >}}
+
 *Core definition*
 
 :::
@@ -12897,6 +12965,10 @@ Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $350M and $650M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_phase2_budget.qmd >}}
+
 *Core definition*
 
 :::
@@ -12912,6 +12984,10 @@ Pilot program testing in small countries
 **Technical**: 95% CI: [$21M, $39M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $21M and $39M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_pilot_programs.qmd >}}
 
 *Core definition*
 
@@ -12931,6 +13007,10 @@ Voting platform and technology development
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_platform_development.qmd >}}
+
 *Core definition*
 
 :::
@@ -12946,6 +13026,10 @@ Regulatory compliance and navigation
 **Technical**: 95% CI: [$14M, $26M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $14M and $26M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_regulatory_navigation.qmd >}}
 
 *Core definition*
 
@@ -12963,6 +13047,10 @@ Scaling preparation and blueprints
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $21M and $39M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_scaling_prep.qmd >}}
+
 *Core definition*
 
 :::
@@ -12978,6 +13066,10 @@ Campaign core team staff budget
 **Technical**: 95% CI: [$28M, $52M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $28M and $52M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_staff_budget.qmd >}}
 
 *Core definition*
 
@@ -12995,6 +13087,10 @@ Super PAC campaign expenditures
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $21M and $39M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_super_pac_budget.qmd >}}
+
 *Core definition*
 
 :::
@@ -13010,6 +13106,10 @@ Tech industry partnerships and infrastructure
 **Technical**: 95% CI: [$17.5M, $32.5M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $17.5M and $32.5M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_tech_partnerships.qmd >}}
 
 *Core definition*
 
@@ -13029,6 +13129,10 @@ Post-victory treaty implementation support
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_treaty_implementation.qmd >}}
+
 *Core definition*
 
 :::
@@ -13044,6 +13148,10 @@ Viral marketing content creation budget
 **Technical**: 95% CI: [$28M, $52M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $28M and $52M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-campaign_viral_content_budget.qmd >}}
 
 *Core definition*
 
@@ -13072,6 +13180,10 @@ Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)
 **What this means**: There's significant uncertainty here. The true value likely falls between 300 approaches and 800 approaches (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-cell_therapy_approaches.qmd >}}
 
 *Core definition*
 
@@ -13149,6 +13261,10 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_annual_opex.qmd >}}
+
 *Core definition*
 
 :::
@@ -13166,6 +13282,10 @@ Decentralized Framework for Drug Assessment Core framework build cost
 **What this means**: There's significant uncertainty here. The true value likely falls between $25M and $65M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_upfront_cost.qmd >}}
 
 *Core definition*
 
@@ -13185,6 +13305,10 @@ Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calc
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_observational_cost_per_patient.qmd >}}
+
 *Core definition*
 
 :::
@@ -13202,6 +13326,10 @@ Decentralized Framework for Drug Assessment community support costs
 **What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_community.qmd >}}
 
 *Core definition*
 
@@ -13221,6 +13349,10 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_infrastructure.qmd >}}
+
 *Core definition*
 
 :::
@@ -13238,6 +13370,10 @@ Decentralized Framework for Drug Assessment maintenance costs
 **What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_platform_maintenance.qmd >}}
 
 *Core definition*
 
@@ -13257,6 +13393,10 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_regulatory.qmd >}}
+
 *Core definition*
 
 :::
@@ -13274,6 +13414,10 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 **What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_staff.qmd >}}
 
 *Core definition*
 
@@ -13293,6 +13437,10 @@ Backup and redundancy cost per patient per month. For data safety and compliance
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_storage_cost_backup_per_patient_monthly.qmd >}}
+
 *Core definition*
 
 :::
@@ -13310,6 +13458,10 @@ Compute and API cost per patient per month. For data processing, correlation ana
 **What this means**: This estimate is highly uncertain. The true value likely falls between $0.100 and $0.500 (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_storage_cost_compute_per_patient_monthly.qmd >}}
 
 *Core definition*
 
@@ -13329,6 +13481,10 @@ Database cost per patient per month. For structured data storage and querying.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_storage_cost_database_per_patient_monthly.qmd >}}
+
 *Core definition*
 
 :::
@@ -13346,6 +13502,10 @@ Raw cloud storage cost per patient per month. Based on standard cloud storage ra
 **What this means**: This estimate is highly uncertain. The true value likely falls between $0.010 and $0.050 (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_storage_cost_raw_per_patient_monthly.qmd >}}
 
 *Core definition*
 
@@ -13395,6 +13555,10 @@ DIH broader initiatives annual opex (medium case)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_annual_opex_initiatives.qmd >}}
+
 *Core definition*
 
 :::
@@ -13412,6 +13576,10 @@ DIH broader initiatives upfront cost (medium case)
 **What this means**: There's significant uncertainty here. The true value likely falls between $150M and $350M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_upfront_cost_initiatives.qmd >}}
 
 *Core definition*
 
@@ -13451,6 +13619,10 @@ Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)
 
 *The uniform distribution means any value in the range is equally likely.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-epigenetic_targets_count.qmd >}}
+
 *Core definition*
 
 :::
@@ -13469,6 +13641,10 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 *The beta distribution means values are bounded and can skew toward one end.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_daly_pct.qmd >}}
+
 *Core definition*
 
 :::
@@ -13486,6 +13662,10 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 **What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_death_pct.qmd >}}
 
 *Core definition*
 
@@ -13522,6 +13702,10 @@ Estimated global advocacy investment for policy reform (NATO $65B + China $20B +
 **Technical**: 95% CI: [$75B, $200B]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $75B and $200B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_political_reform_investment.qmd >}}
 
 *Core definition*
 
@@ -13567,6 +13751,10 @@ Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human
 
 *The uniform distribution means any value in the range is equally likely.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-human_protein_coding_genes.qmd >}}
+
 *Core definition*
 
 :::
@@ -13585,6 +13773,10 @@ Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncerta
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-iab_bootstrap_campaign_cost.qmd >}}
+
 *Core definition*
 
 :::
@@ -13600,6 +13792,10 @@ Estimated annual cost of the IAB mechanism (high-end estimate including regulato
 **Technical**: 95% CI: [$160M, $750M]
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $160M and $750M (±39%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-iab_mechanism_annual_cost.qmd >}}
 
 *Core definition*
 
@@ -13713,6 +13909,10 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 
 **Technical**: Distribution: Normal (SE: $200M)
 
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_phase_2_3_cost_barrier.qmd >}}
+
 *Core definition*
 
 :::
@@ -13741,6 +13941,10 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-qalys_per_covid_death_averted.qmd >}}
+
 *Core definition*
 
 :::
@@ -13758,6 +13962,10 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 **What this means**: There's significant uncertainty here. The true value likely falls between 7.00k compounds and 12.0k compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-safe_compounds_count.qmd >}}
 
 *Core definition*
 
@@ -13793,6 +14001,10 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-tested_relationships_estimate.qmd >}}
+
 *Core definition*
 
 :::
@@ -13821,6 +14033,10 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_lobbying.qmd >}}
+
 *Core definition*
 
 :::
@@ -13838,6 +14054,10 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 **What this means**: This estimate is highly uncertain. The true value likely falls between $20M and $150M (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
 
 *Core definition*
 
@@ -13867,6 +14087,10 @@ Treaty campaign duration (3-5 year range, using midpoint)
 
 *The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_duration_years.qmd >}}
+
 *Core definition*
 
 :::
@@ -13882,6 +14106,10 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 **Technical**: 95% CI: [$150M, $410M]
 
 **What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
 
 *Core definition*
 
@@ -13924,6 +14152,10 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20k diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-trial_relevant_diseases_count.qmd >}}
 
 *Core definition*
 
