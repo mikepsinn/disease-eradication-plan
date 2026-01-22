@@ -52,13 +52,13 @@ lastFigureCheck: "YYYY-MM-DD"
 
 ## 4. Sourcing and Citation Standard (CRITICAL)
 
-**Every claim needs a source.** All source quotes go in `knowledge/references.qmd`.
+**Every claim needs a source.** All citations are stored in `references.bib` (project root) using standard BibTeX format.
 
-1. Check if your source is already there
-2. If yes, link to it with the appropriate anchor
-3. If no, add it using the format you see in that file
+1. Check if your source already exists: `grep -i "keyword" references.bib`
+2. If yes, cite it with `[@citation-key]`
+3. If no, add a BibTeX entry to `references.bib`
 
-Example in-text: Link to sources with appropriate anchors.
+Example in-text: `This costs $1B on average [@dimasi-2016-clinical-trial-costs].`
 
 ## 5. Naming and Linking
 
@@ -151,8 +151,8 @@ Use these five checks to audit every chapter file.
 
 **3. Sourcing & Credibility:**
 
-- **Universal Citation:** Is every claim, number, and statistic backed by an inline citation to `knowledge/references.qmd`?
-- **Source Verification:** Have you personally checked that the source exists, is valid, and actually supports the claim being made?
+- **Universal Citation:** Is every claim, number, and statistic backed by an inline citation using `[@citation-key]` syntax?
+- **Source Verification:** Have you personally checked that the source exists in `references.bib`, is valid, and actually supports the claim being made?
 
 **4. Visuals & Data (per `DESIGN_GUIDE.md`):**
 

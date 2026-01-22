@@ -1152,7 +1152,12 @@ def main():
     # so the file existence checks work correctly
     print("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
-    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path)
+
+    # Pre-parse citation data once for reuse (major performance optimization)
+    from dih_models.reference_parser import parse_references_bib
+    citation_data = parse_references_bib(bib_path)
+
+    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data)
     print()
 
     # Generate per-paper filtered parameters-and-calculations files
@@ -1162,7 +1167,8 @@ def main():
         project_root=project_root,
         parameters=parameters,
         available_refs=available_refs,
-        params_file=parameters_path
+        params_file=parameters_path,
+        citation_data=citation_data
     )
     if paper_params_results:
         print(f"[OK] Generated {len(paper_params_results)} paper-specific parameter appendices")

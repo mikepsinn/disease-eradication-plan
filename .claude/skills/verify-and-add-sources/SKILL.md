@@ -1,6 +1,6 @@
 ---
 name: verify-and-add-sources
-description: Verifies claims have proper citations, searches for sources if needed, and adds them to references.qmd. Use when making factual claims or adding statistics.
+description: Verifies claims have proper citations, searches for sources if needed, and adds them to references.bib. Use when making factual claims or adding statistics.
 allowed-tools:
   - Read
   - Edit
@@ -33,11 +33,10 @@ Common claims requiring citations:
 ### 2. Search Existing References
 
 ```bash
-cd knowledge
-grep -i "keyword" references.qmd
+grep -i "keyword" references.bib
 ```
 
-Check if the source already exists in `knowledge/references.qmd`.
+Check if the source already exists in `references.bib` (project root).
 
 ### 3. Use Existing Source
 
@@ -53,19 +52,18 @@ If NOT found, use WebSearch:
 - Prefer primary sources over secondary
 - Check publication date for currency
 
-### 5. Add to references.qmd
+### 5. Add to references.bib
 
-Add new source to `knowledge/references.qmd`:
+Add new BibTeX entry to `references.bib` (project root):
 
-```markdown
-## Military Spending and Economics
-
-### sipri-2024-military-spending
-- **Title**: World Military Expenditure 2024
-- **Author**: SIPRI (Stockholm International Peace Research Institute)
-- **Date**: 2024
-- **URL**: https://www.sipri.org/...
-- **Summary**: Global military spending reached $2.2 trillion in 2024...
+```bibtex
+@misc{sipri-2024-military-spending,
+  author = {{SIPRI}},
+  title = {World Military Expenditure 2024},
+  year = {2024},
+  url = {https://www.sipri.org/...},
+  note = {Global military spending reached \$2.2 trillion in 2024}
+}
 ```
 
 ### 6. Cite in Text
@@ -75,19 +73,53 @@ Add citation to the claim:
 Global military spending is $2.2T [@sipri-2024-military-spending].
 ```
 
-## Reference Format
+## BibTeX Entry Types
 
-Use this structure for `references.qmd`:
+Use appropriate entry types:
 
-```markdown
-### reference-id-kebab-case
-- **Title**: Full title of source
-- **Author**: Author(s) or organization
-- **Date**: Publication date
-- **URL**: Direct link to source
-- **DOI**: (if available)
-- **Summary**: Brief 1-2 sentence summary of key finding
-- **Confidence**: high/medium/low (based on source quality)
+| Type | Use For |
+|------|---------|
+| `@article` | Journal papers with DOI |
+| `@book` | Books |
+| `@misc` | Websites, reports, data sources |
+| `@techreport` | Government/org reports |
+| `@inproceedings` | Conference papers |
+
+## BibTeX Format Examples
+
+**Journal Article:**
+```bibtex
+@article{dimasi-2016-clinical-trial-costs,
+  author = {DiMasi, Joseph A. and Grabowski, Henry G. and Hansen, Ronald W.},
+  title = {Innovation in the pharmaceutical industry: New estimates of R\&D costs},
+  journal = {Journal of Health Economics},
+  volume = {47},
+  pages = {20--33},
+  year = {2016},
+  doi = {10.1016/j.jhealeco.2016.01.012}
+}
+```
+
+**Website/Report:**
+```bibtex
+@misc{who-2024-disease-burden,
+  author = {{World Health Organization}},
+  title = {Global Health Estimates 2024},
+  year = {2024},
+  url = {https://www.who.int/...},
+  note = {Accessed January 2026}
+}
+```
+
+**Government Report:**
+```bibtex
+@techreport{cbo-2024-defense-budget,
+  author = {{Congressional Budget Office}},
+  title = {The Outlook for Major Federal Trust Funds: 2024 to 2034},
+  institution = {Congressional Budget Office},
+  year = {2024},
+  url = {https://www.cbo.gov/...}
+}
 ```
 
 ## Source Quality Criteria
@@ -113,20 +145,22 @@ Use this structure for `references.qmd`:
 **User adds claim**: "Clinical trials cost $1B on average"
 
 You:
-1. Search references.qmd: `grep -i "clinical trial cost" knowledge/references.qmd`
+1. Search references.bib: `grep -i "clinical trial cost" references.bib`
 2. Not found
 3. WebSearch: "clinical trial cost average 2024 academic study"
 4. Find: DiMasi et al. (2016) study on drug development costs
-5. Add to references.qmd:
-   ```markdown
-   ### dimasi-2016-clinical-trial-costs
-   - **Title**: Innovation in the pharmaceutical industry: New estimates of R&D costs
-   - **Author**: DiMasi JA, Grabowski HG, Hansen RW
-   - **Date**: 2016
-   - **Journal**: Journal of Health Economics, 47:20-33
-   - **DOI**: 10.1016/j.jhealeco.2016.01.012
-   - **Summary**: Estimated average cost of bringing a new drug to market at $2.6B (2013 dollars), including clinical trial costs
-   - **Confidence**: high
+5. Add to references.bib:
+   ```bibtex
+   @article{dimasi-2016-clinical-trial-costs,
+     author = {DiMasi, Joseph A. and Grabowski, Henry G. and Hansen, Ronald W.},
+     title = {Innovation in the pharmaceutical industry: New estimates of R\&D costs},
+     journal = {Journal of Health Economics},
+     volume = {47},
+     pages = {20--33},
+     year = {2016},
+     doi = {10.1016/j.jhealeco.2016.01.012},
+     note = {Estimated average cost of bringing a new drug to market at \$2.6B (2013 dollars)}
+   }
    ```
 6. Update text: `Clinical trials cost approximately $1B on average [@dimasi-2016-clinical-trial-costs].`
 
@@ -135,5 +169,6 @@ You:
 - Always verify facts before adding them
 - When in doubt, search for a source
 - Prefer citing parameters (which have sources) over making new claims
-- Keep references.qmd organized by topic
-- Use consistent reference ID format: `author-year-topic-kebab-case`
+- Use consistent citation key format: `author-year-topic-kebab-case`
+- Escape special characters in BibTeX: `\$`, `\&`, `\%`
+- The `note` field is good for storing key quotes/findings

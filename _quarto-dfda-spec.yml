@@ -25,6 +25,14 @@ profiles:
     dotenv:
       allowEmptyValues: true
 
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
 website:
   title: "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
   description: 'We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation following the RECOVERY model, this two-stage framework generates validated outcome labels at ~80x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.'
@@ -222,6 +230,3 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
-    variables:
-      author: "Mike P. Sinn"
-      affiliation: "Decentralized Institutes of Health"

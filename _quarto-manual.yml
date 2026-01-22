@@ -25,8 +25,11 @@ book:
   title: 'How to End War and Disease'
   author:
     - name: Mike P. Sinn
+      email: feedback@dih.earth
+      orcid: 0009-0006-0212-1094
       affiliations:
-        - name: Decentralized Institutes of Health
+        - name: "Decentralized Institutes of Health (DIH)"
+          url: https://dih.earth
   # description: Removed to allow page-level descriptions to override for og:description
   # Original: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg

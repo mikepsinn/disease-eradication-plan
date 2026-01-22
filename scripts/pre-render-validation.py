@@ -1221,13 +1221,13 @@ def load_citations_from_bib() -> Set[str]:
     Load citation IDs from references.bib and knowledge/appendix/iab-references.bib.
     Returns set of citation keys (e.g., 'recovery-trial-82x-cost-reduction')
 
-    Note: references.bib is auto-generated from knowledge/references.qmd
+    Note: references.bib is the single source of truth for all citations
     """
     citation_ids = set()
 
-    # Main bibliography file (auto-generated from knowledge/references.qmd)
+    # Main bibliography file (single source of truth)
     bib_files = [
-        ("references.bib", "Auto-generated from knowledge/references.qmd"),
+        ("references.bib", "Single source of truth for all citations"),
         ("knowledge/appendix/iab-references.bib", "IAB paper references"),
     ]
 
@@ -1299,7 +1299,7 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
                         ValidationError(
                             file=filepath,
                             line=line_index + 1,
-                            message=f"Missing citation: [@{citation_id}] - not found in references.bib. Search knowledge/references.qmd for correct ID, or add citation and run generate-everything script to regenerate .bib",
+                            message=f"Missing citation: [@{citation_id}] - not found in references.bib. Search references.bib for correct ID, or add new BibTeX entry to references.bib",
                             context=line.strip()[:80],
                         )
                     )
@@ -1385,7 +1385,7 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     lines = content.split("\n")
 
-    # For .md files, only check broken links
+    # For .md files, only check broken links (skip citation validation - .md files often contain examples)
     if filepath.lower().endswith(".md"):
         # Check cross-reference links
         check_cross_reference_links(content, filepath)
@@ -1393,8 +1393,7 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
         check_markdown_links(content, filepath)
         # Check anchor IDs
         check_anchor_ids(content, filepath, anchor_map)
-        # Check citations
-        check_citations(content, filepath, defined_citations)
+        # Skip citation validation for .md files - they contain documentation examples
         return
 
     # For .qmd files, run all validation checks
@@ -1610,10 +1609,9 @@ def main():
         # Provide additional guidance for citation errors
         if has_citation_errors:
             print("TIP: To fix missing citations:", file=sys.stderr)
-            print("  1. Search knowledge/references.qmd for the correct citation ID", file=sys.stderr)
-            print("  2. If not found, add the citation to knowledge/references.qmd", file=sys.stderr)
-            print("  3. Run: .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py", file=sys.stderr)
-            print("  4. Re-run this validation script\n", file=sys.stderr)
+            print("  1. Search references.bib for the correct citation ID: grep -i 'keyword' references.bib", file=sys.stderr)
+            print("  2. If not found, add a BibTeX entry to references.bib", file=sys.stderr)
+            print("  3. Re-run this validation script\n", file=sys.stderr)
 
         sys.exit(1)
 

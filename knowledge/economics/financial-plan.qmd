@@ -177,13 +177,13 @@ Key protections:
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
 - **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
 - **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise {{< var treaty_campaign_total_cost >}}
-- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](../appendix/dfda-impact-paper.qmd)** - Complete ROI analysis
+- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](https://impact.dfda.earth)** - Complete ROI analysis
 
 ## Summary
 
 | Component | Target | Mechanism |
 |-----------|--------|-----------|
-| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) |
+| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) |
 | **Spend** | Campaign budget | Referendum + lobbying + platform |
 | **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |

@@ -25,6 +25,14 @@ profiles:
     dotenv:
       allowEmptyValues: true
 
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
 website:
   title: 'The Health and Economic Impact of a Global System for Pragmatic Clinical Trials'
   description: "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings."
@@ -223,6 +231,3 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
-    variables:
-      author: "Mike P. Sinn"
-      affiliation: "Decentralized Institutes of Health"

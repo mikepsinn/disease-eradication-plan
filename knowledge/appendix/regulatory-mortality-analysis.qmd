@@ -268,7 +268,7 @@ If implemented today, the bifurcated model would:
 - **Reduce trial costs by {{< var dfda_trial_cost_reduction_pct >}}** (from {{< var pharma_drug_development_cost_current >}} per drug)
 - **Accelerate treatments for {{< var diseases_without_effective_treatment >}} diseases** currently without effective therapy
 
-See [1% treaty impact analysis](../economics/1-pct-treaty-impact.qmd) for full quantified cost-benefit analysis.
+See [1% treaty impact analysis](https://impact.warondisease.org) for full quantified cost-benefit analysis.
 
 ## Addressing Common Critiques
 

@@ -650,15 +650,19 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
-          "path": "knowledge/references-shortcode-page.qmd",
-          "url": "https://impact.warondisease.org/references-shortcode-page.html",
-          "title": "References",
-          "description": "Bibliography and citations.",
-          "published": true,
-          "lastmod": "2026-01-16"
+          "path": "knowledge/references.qmd",
+          "url": "https://impact.warondisease.org/references.html",
+          "title": "Source Quotes and References",
+          "description": "Bibliography and citations for all sources cited",
+          "tags": [
+            "references",
+            "deprecated"
+          ],
+          "published": false,
+          "lastmod": "2026-01-22"
         }
       ],
       "pageCount": 4
@@ -3206,7 +3210,7 @@
             "The Math Of Death"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/cost-of-war.qmd",
@@ -3243,7 +3247,7 @@
             "Hidden Costs of War"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/cost-of-disease.qmd",
@@ -3270,7 +3274,7 @@
             "The Future You're Paying For"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd",
@@ -3306,7 +3310,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
@@ -3340,7 +3344,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -3389,7 +3393,7 @@
             "Technical Analysis"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/unrepresentative-democracy.qmd",
@@ -3446,7 +3450,7 @@
             "Your Democracy: An Auction House"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -3489,7 +3493,7 @@
             "Your Money, Your Choice"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/problem/genetic-slavery.qmd",
@@ -3529,7 +3533,7 @@
             "The Problem With Your Brain"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution.qmd",
@@ -3605,7 +3609,7 @@
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution/dih.qmd",
@@ -3637,7 +3641,7 @@
             "How the Efficiency Gains Could Compound"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
@@ -3666,7 +3670,7 @@
             "Democracy's Operating System Upgrade"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution/ai-coordination-army.qmd",
@@ -3695,7 +3699,7 @@
             "Rule 1 - Share to Play"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
@@ -3752,7 +3756,7 @@
             "How Your Framework Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/solution/war-on-disease.qmd",
@@ -3886,7 +3890,7 @@
             "Additional Evidence"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/proof/historical-precedents.qmd",
@@ -3923,7 +3927,7 @@
             "Why?"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/proof/body-as-repairable-machine.qmd",
@@ -3959,7 +3963,7 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/economics/1-pct-treaty-impact.qmd",
@@ -3977,7 +3981,6 @@
             "health-economics"
           ],
           "sections": [
-            "Preprint",
             "Abstract",
             "Interpreting the }-Year Timeline Figure",
             "Key Findings",
@@ -4148,7 +4151,7 @@
             "What You're Actually Making Per Hour"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/futures.qmd",
@@ -4216,7 +4219,7 @@
             "My Warning to You"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
@@ -4298,7 +4301,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/roadmap.qmd",
@@ -4362,7 +4365,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/legal/legal-framework.qmd",
@@ -4410,7 +4413,7 @@
             "The Escape Routes (If Everything Goes Wrong)"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/legal/securities-law.qmd",
@@ -4583,7 +4586,7 @@
             "For detailed execution plans"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/legislation-package.qmd",
@@ -4672,7 +4675,7 @@
             "On Why } Is The Magic Number"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/viral-marketing.qmd",
@@ -4727,7 +4730,7 @@
             "The Strategy"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/co-opting-defense-contractors.qmd",
@@ -4768,7 +4771,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/call-to-action/three-actions.qmd",
@@ -4807,7 +4810,7 @@
             "The Math"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/real-world-evidence-historical-success.qmd",
@@ -4839,7 +4842,7 @@
             "The Summary"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/strategy-execution-overview.qmd",
@@ -4871,7 +4874,7 @@
             "Phase 1 (Months 0-3): The Setup"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/strategy/treaty-adoption-strategy.qmd",
@@ -4910,7 +4913,7 @@
             "The Assessment (How Long This Actually Takes)"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -4947,7 +4950,7 @@
             "Sources"
           ],
           "published": true,
-          "lastmod": "2026-01-17"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/co-opt-dont-compete.qmd",
@@ -4970,7 +4973,7 @@
             "2. The Ultimate Incentive for Nonprofits: Stop Begging, Start Owning"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/global-referendum-implementation.qmd",
@@ -4988,7 +4991,7 @@
             "Cross-References"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/nonprofit-partnership-incentives.qmd",
@@ -5081,7 +5084,7 @@
             "Commentary: Relation to dFDA/DIH and VICTORY Incentive Alignment Bonds"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/incentive-alignment-bonds-paper.qmd",
@@ -5158,7 +5161,7 @@
             "B.4 Comparative Analysis"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/cost-of-change-analysis.qmd",
@@ -5167,7 +5170,6 @@
           "description": "When critics dismiss policy proposals as \"politically impossible,\" they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/cost-of-change-analysis-og-academic.jpg",
           "sections": [
-            "Working Paper",
             "Introduction",
             "The Political Impossibility Objection",
             "Political Change as an Investment",
@@ -5210,7 +5212,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/wishocracy-paper.qmd",
@@ -5262,7 +5264,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/optimocracy-paper.qmd",
@@ -5271,7 +5273,6 @@
           "description": "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/optimocracy-paper-og-academic.jpg",
           "sections": [
-            "Working Paper",
             "Abstract",
             "Introduction: The Political Dysfunction Problem",
             "Why Information Alone Fails",
@@ -5352,7 +5353,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/optimal-policy-generator-spec.qmd",
@@ -5489,7 +5490,7 @@
             "Confidence Interval Interpretation"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/optimal-budget-generator-spec.qmd",
@@ -5497,7 +5498,6 @@
           "title": "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
           "description": "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.",
           "sections": [
-            "Working Paper",
             "Abstract",
             "System Overview",
             "What Policymakers See",
@@ -5599,7 +5599,7 @@
             "Current US Discretionary Budget vs. OSL Targets"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/dfda-spec-paper.qmd",
@@ -5783,7 +5783,7 @@
             "Detailed Analysis"
           ],
           "published": true,
-          "lastmod": "2026-01-14"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/humanity-budget-overview.qmd",
@@ -5828,7 +5828,7 @@
             "Conclusion: A Species-Wide Failure"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/global-clinical-trial-spending-by-phase.qmd",
@@ -5871,7 +5871,7 @@
             "The Path Forward"
           ],
           "published": true,
-          "lastmod": "2026-01-17"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/clinical-trial-participants.qmd",
@@ -5903,7 +5903,7 @@
             "The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research) among disease patients."
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations.qmd",
@@ -6415,7 +6415,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/drug-development-cost-analysis.qmd",
@@ -6462,7 +6462,7 @@
             "Technical Parameters"
           ],
           "published": true,
-          "lastmod": "2026-01-17"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/peace-dividend-calculations.qmd",
@@ -6632,7 +6632,7 @@
             "Comparison to Other Major Public Investments"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/economic-value-of-accelerated-treatments.qmd",
@@ -6670,7 +6670,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-20"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/data-storage-costs.qmd",
@@ -6770,7 +6770,7 @@
             "Conclusion: Is It Less Risky Than a VC Investment?"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/fundraising-strategy.qmd",
@@ -6806,7 +6806,7 @@
             "The Economic Reality"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/governance.qmd",
@@ -6835,7 +6835,7 @@
             "Beyond Medical Research: A Template for Uncorruptible Governance"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/organizational-precedents.qmd",
@@ -6915,7 +6915,7 @@
             "Integration Strategy"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/open-ecosystem-and-bounty-model.qmd",
@@ -6950,7 +6950,7 @@
             "The Result"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/command-and-control-systems.qmd",
@@ -7036,7 +7036,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -7102,7 +7102,7 @@
             "The \"Punishment\": Targeted, Personal, and Financial"
           ],
           "published": true,
-          "lastmod": "2026-01-09"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd",
@@ -7197,7 +7197,7 @@
             "Advantages of Pragmatic Trials"
           ],
           "published": true,
-          "lastmod": "2026-01-11"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/appendix/acknowledgments.qmd",
@@ -7215,17 +7215,13 @@
           "path": "knowledge/references.qmd",
           "url": "https://manual.WarOnDisease.org/references.html",
           "title": "Source Quotes and References",
-          "description": "Comprehensive collection of source quotes, citations, and references supporting all claims made throughout the War on Disease documentation.",
+          "description": "Bibliography and citations for all sources cited",
           "tags": [
             "references",
-            "sources",
-            "citations",
-            "quotes",
-            "data",
-            "research"
+            "deprecated"
           ],
-          "published": true,
-          "lastmod": "2026-01-20"
+          "published": false,
+          "lastmod": "2026-01-22"
         }
       ],
       "pageCount": 92

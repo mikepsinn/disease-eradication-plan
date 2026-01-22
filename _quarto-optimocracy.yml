@@ -23,6 +23,14 @@ profiles:
     dotenv:
       allowEmptyValues: true
 
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
 website:
   title: "Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation"
   description: "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare."
@@ -222,6 +230,3 @@ format:
       - right=1in
     fontsize: 11pt
     date: ""
-    variables:
-      author: "Mike P. Sinn"
-      affiliation: "Decentralized Institutes of Health"

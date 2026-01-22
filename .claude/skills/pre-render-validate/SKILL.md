@@ -69,7 +69,7 @@ Errors are grouped by file and type. Common error patterns:
 
 - `Em-dash (—) found` - Replace with appropriate punctuation
 - `Unknown Quarto variable` - Add to parameters.py or fix typo
-- `Missing citation` - Add to references.qmd or fix citation key
+- `Missing citation` - Add to references.bib or fix citation key
 - `Broken cross-reference link` - Fix path or create target file
 - `Broken anchor link` - Fix anchor ID or add anchor to target
 - `GIF file not wrapped` - Wrap in HTML-only block
@@ -93,9 +93,9 @@ Read the context and replace with appropriate punctuation:
 4. Regenerate variables: `.venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py`
 
 #### Missing citations
-1. Search references.qmd for similar citation keys
+1. Search references.bib for similar citation keys
 2. If typo, fix the citation key
-3. If new source needed, add to knowledge/references.qmd with proper format
+3. If new source needed, add BibTeX entry to references.bib
 
 #### Broken links
 1. Check if target file exists with different path

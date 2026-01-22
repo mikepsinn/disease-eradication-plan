@@ -157,7 +157,7 @@ This intervention differs in four critical ways:
 
 3. **Cost-saving intervention status**: Cost-saving interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
-4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
+4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
 
 ### Contribution to Literature
 
@@ -537,7 +537,7 @@ This gradual approach steers nations toward a safer equilibrium, one percentage 
 
 ### Why The Ratchet Works: The IAB Scaling Engine
 
-The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
+The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](https://iab.warondisease.org).
 
 The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds VICTORY Incentive Alignment Bond investor returns.
 
@@ -555,11 +555,11 @@ This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical
 
 Ideas don't win on merit alone. They win by aligning incentives.
 
-This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) restructure the political economy of global health funding.
+This section describes how [Incentive Alignment Bonds (IABs)](https://iab.warondisease.org) restructure the political economy of global health funding.
 
 ### Incentive Alignment Bonds
 
-[Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
+[Incentive Alignment Bonds](https://iab.warondisease.org) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
 
 The mechanism applies public choice theory systematically. Rather than requiring altruism, it makes self-interest align with social welfare. Politicians pursuing their own career advancement simultaneously advance global health outcomes.
 
@@ -602,7 +602,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). The treaty creates new revenue streams without threatening core business.
+**Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org). The treaty creates new revenue streams without threatening core business.
 
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
@@ -612,7 +612,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< var treaty_campaign_voting_bloc_target_latex >}}
 
-**Investors**: VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) offer {{< var victory_bond_annual_return_pct >}} annual returns, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
+**Investors**: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) offer {{< var victory_bond_annual_return_pct >}} annual returns, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
@@ -624,7 +624,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 #### VICTORY Incentive Alignment Bonds
 
-[VICTORY Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) implement this architecture specifically for the 1% treaty, aligning multiple stakeholder groups:
+[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) implement this architecture specifically for the 1% treaty, aligning multiple stakeholder groups:
 
 | Stakeholder | Return Mechanism | Funding Source |
 |:------------|:-----------------|:---------------|
@@ -776,7 +776,7 @@ This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_e
 
 But here's the key: this intervention is **cost-saving**. The upfront campaign cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). For detailed analysis: [full NPV methodology here](../appendix/dfda-impact-paper.qmd#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). For detailed analysis: [full NPV methodology here](https://impact.dfda.earth#calculation-framework---npv-methodology).
 
 ### Expected Value Under Political Uncertainty
 
@@ -1658,7 +1658,7 @@ Total return: {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_hor
 
 That's ${{< var dfda_roi_rd_only >}} appearing for every $1 invested. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}}, not the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](../appendix/dfda-impact-paper.qmd#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}}, not the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](https://impact.dfda.earth#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
@@ -1737,16 +1737,16 @@ The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built 
 
 Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
-For detailed cost breakdown: [Platform Costs](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates).
+For detailed cost breakdown: [Platform Costs](https://impact.dfda.earth#dfda-framework-costs-rom-estimates).
 
 **Where the money goes**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-impact-paper.qmd#dfda-framework-costs-rom-estimates).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](https://impact.dfda.earth#dfda-framework-costs-rom-estimates).
 
 ### Returns
 
 - **Money**: {{< var dfda_npv_net_benefit_rd_only >}} in R&D savings ({{< var npv_time_horizon_years >}})
-- **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}** ([full analysis](../appendix/dfda-impact-paper.qmd))
+- **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}** ([full analysis](https://impact.dfda.earth))
 - **Not dying**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} quality-adjusted life years (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
 
 **Two money fountains from one budget shift**:
@@ -1790,7 +1790,7 @@ Normally, money is *spent* to save lives. Good interventions cost {{< var who_qa
 
 This intervention delivers {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year in recurring economic benefits ({{< var peace_dividend_annual_societal_benefit >}}/year peace dividend + {{< var dfda_benefit_rd_only_annual >}}/year R&D savings) while unlocking a one-time {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
 
-**For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](../appendix/dfda-impact-paper.qmd#dfda-icer-analysis---cost-utility-framework).
+**For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](https://impact.dfda.earth#dfda-icer-analysis---cost-utility-framework).
 
 #### Comparative Cost-Effectiveness vs. GiveWell Top Charities
 
@@ -1845,7 +1845,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 |------------|------------|---------------|---------|
 | **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
 | **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
-| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) for legislators |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](https://iab.warondisease.org) for legislators |
 
 
 
@@ -2072,14 +2072,14 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 **Funding**: This educational and scientific polling initiative is the primary entry point for **philanthropic partners**, validating global demand before the main campaign begins.
 
-### Step 2: Sell $1B in VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
+### Step 2: Sell $1B in VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org)
 
-VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) investors fund the campaign because the returns exceed comparable investment opportunities.
+VICTORY [Incentive Alignment Bond](https://iab.warondisease.org) investors fund the campaign because the returns exceed comparable investment opportunities.
 They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
 
 ### Step 3: Implment the Legislative Strategy
 
-Deploy VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) funds to translate public support into legislative action.
+Deploy VICTORY [Incentive Alignment Bond](https://iab.warondisease.org) funds to translate public support into legislative action.
 
 ### Step 4: Build the Infrastructure
 
@@ -2106,7 +2106,7 @@ Nobody needs to be convinced. They just need to count.
 **For comprehensive implementation details**, see:
 
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
-- **[VICTORY Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)** - Financing mechanism for ratification efforts
+- **[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org)** - Financing mechanism for ratification efforts
 - **[Financial Plan Overview](financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
 
 ### Campaign Budget Breakdown
@@ -2148,7 +2148,7 @@ This economic analysis focuses on the return on investment once the system is op
 
 For the rigorous analysis:
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-impact-paper.qmd)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
+- **[dFDA Cost-Benefit Analysis](https://impact.dfda.earth)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
 - **[Health Dividend](health-dividend.qmd)** - Accessible overview of the {{< var dfda_roi_rd_only >}} ROI
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations available for independent verification
@@ -2164,7 +2164,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Counterargument**:
 
-Military lobbyists currently get $1,813 back for every $1 spent [@lobbying-roi-calc] on political influence. The system offers VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Military lobbyists currently get $1,813 back for every $1 spent [@lobbying-roi-calc] on political influence. The system offers VICTORY [Incentive Alignment Bond](https://iab.warondisease.org) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
@@ -2573,7 +2573,7 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Why this works**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Why this works**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund allocates:
 
@@ -2611,7 +2611,7 @@ This intervention is **cost-saving**, making it one of the rarest findings in he
 
 It requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
-The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty more profitable for politicians than opposing it.
+The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](https://iab.warondisease.org) that make supporting the treaty more profitable for politicians than opposing it.
 
 
 ## Treaty Adoption: Political Will and Diplomatic Strategy
@@ -2664,7 +2664,7 @@ Treaty adoption depends on:
 
 Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials delivers {{< var dfda_roi_rd_only >}} to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI using standard health economics methodology (NPV, QALYs, ICER). The intervention qualifies as cost-saving and requires no new taxes, only reallocation of existing budgets to higher-ROI activities.
 
-See [complete analysis](../appendix/dfda-impact-paper.qmd) and [detailed comparisons](../appendix/intervention-comparison-table.qmd).
+See [complete analysis](https://impact.dfda.earth) and [detailed comparisons](../appendix/intervention-comparison-table.qmd).
 
 ## Notes
 

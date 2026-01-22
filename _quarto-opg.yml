@@ -23,6 +23,14 @@ profiles:
     dotenv:
       allowEmptyValues: true
 
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
 website:
   title: "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions"
   description: 'The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.'
@@ -219,6 +227,3 @@ format:
       - right=1in
     fontsize: 11pt
     date: ""
-    variables:
-      author: "Mike P. Sinn"
-      affiliation: "Decentralized Institutes of Health"

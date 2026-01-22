@@ -50,6 +50,6 @@ If these work in PDF, we could potentially make variable values themselves link 
 
 These should become absolute URLs since they're NOT in the test config:
 
-- Economics chapter: [Economics Analysis](/knowledge/economics/1-pct-treaty-impact.qmd)
-- Full analysis: [DFDA Cost Benefit Analysis](/knowledge/appendix/dfda-impact-paper.qmd)
+- Economics chapter: [Economics Analysis](https://impact.warondisease.org)
+- Full analysis: [DFDA Cost Benefit Analysis](https://impact.dfda.earth)
 - Drug development: [Drug Development Cost Analysis](/knowledge/appendix/drug-development-cost-analysis.qmd)

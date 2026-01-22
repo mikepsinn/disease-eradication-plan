@@ -120,7 +120,7 @@ quarto render
 
 ### Key Principles
 
-- **Every number must have a source** (defined in [dih_models/parameters.py](dih_models/parameters.py) and [knowledge/references.qmd](knowledge/references.qmd))
+- **Every number must have a source** (defined in [dih_models/parameters.py](dih_models/parameters.py) and [references.bib](references.bib))
 - **Be funny**
 - **Math must be correct** (we're fighting human stupidity with arithmetic)
 - **Citations required** (credibility depends on it)

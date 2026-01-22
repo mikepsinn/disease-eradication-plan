@@ -23,6 +23,14 @@ profiles:
     dotenv:
       allowEmptyValues: true
 
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
 website:
   title: "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
   description: "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want."
@@ -227,6 +235,3 @@ format:
       - right=1in
     fontsize: 11pt
     date: ""
-    variables:
-      author: "Mike P. Sinn"
-      affiliation: "Decentralized Institutes of Health"

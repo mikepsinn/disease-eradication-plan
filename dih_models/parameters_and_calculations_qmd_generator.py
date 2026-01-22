@@ -77,8 +77,9 @@ def format_citation(ref_data: Dict[str, Any]) -> str:
 def generate_parameters_and_calculations_qmd(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
-    available_refs: set = None,
-    params_file: Path = None,
+    available_refs: set | None = None,
+    params_file: Path | None = None,
+    citation_data: Dict[str, Dict[str, Any]] | None = None,
 ):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -96,13 +97,16 @@ def generate_parameters_and_calculations_qmd(
         output_path: Path to write the QMD file
         available_refs: Set of valid reference IDs from references.bib (optional, for detecting reference links)
         params_file: Path to parameters.py (for auto-generating latex equations)
+        citation_data: Pre-parsed citation data from parse_references_bib() (optional, for performance).
+                       If not provided, will parse references.bib automatically.
 
     Returns:
         Number of parameters included in the generated file
     """
-    # Parse references.bib for professional citation formatting
-    bib_path = output_path.parent.parent.parent / "references.bib"  # project root/references.bib
-    citation_data = parse_references_bib(bib_path)
+    # Use pre-parsed citation data if provided, otherwise parse references.bib
+    if citation_data is None:
+        bib_path = output_path.parent.parent.parent / "references.bib"  # project root/references.bib
+        citation_data = parse_references_bib(bib_path)
 
     # Categorize parameters by source type
     external_params = []

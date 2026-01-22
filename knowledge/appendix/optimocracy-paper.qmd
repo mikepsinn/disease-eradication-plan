@@ -1361,7 +1361,7 @@ A combined system might use Wishocracy for metric selection (citizens express pr
 
 ### Integration with Incentive Alignment Bonds
 
-Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. IABs (detailed in companion paper: [Incentive Alignment Bonds: A Novel Mechanism for Aligning Political Incentives with Public Goods](../solution/incentive-alignment-bonds.qmd)) create a legal framework for rewarding politicians based on outcome metrics. Optimocracy supplies those metrics.
+Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. IABs (detailed in companion paper: [Incentive Alignment Bonds: A Novel Mechanism for Aligning Political Incentives with Public Goods](https://iab.warondisease.org)) create a legal framework for rewarding politicians based on outcome metrics. Optimocracy supplies those metrics.
 
 **The IAB Three-Layer Architecture:**
 
@@ -1521,7 +1521,7 @@ For perspective: A senator currently receives ~$174K salary plus ~$5-20M in care
 
 ### The Cost of Political Reform: Quantifying "Political Impossibility"
 
-Critics often dismiss governance reforms as "politically impossible." This objection treats political feasibility as binary rather than as a cost that can be quantified and compared to benefits. In a companion analysis (see [The Price of Political Change](cost-of-change-analysis.qmd)), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
+Critics often dismiss governance reforms as "politically impossible." This objection treats political feasibility as binary rather than as a cost that can be quantified and compared to benefits. In a companion analysis (see [The Price of Political Change](https://cost-of-change.warondisease.org)), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
 
 **US Political System Reform Investment (Maximum Scenarios):**
 
@@ -1752,7 +1752,7 @@ The **Budget Impact Score (BIS)** measures our *confidence* in each category's t
 | Basic research | $45B | $90B | +$45B | B (spillovers) |
 | Military | $850B | $459B | -$391B | C (benchmarks) |
 
-For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](optimal-budget-generator-spec.qmd).
+For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](https://obg.warondisease.org).
 
 #### Policy Optimization: The Policy Impact Score (PIS) Framework
 
@@ -1776,7 +1776,7 @@ PIS uses quasi-experimental methods (synthetic control, difference-in-difference
 | Seat belt laws (primary) | -1.8 traffic deaths/100K | A (DiD, 47 states) |
 | Occupational licensing | +2-3% consumer prices | B (cross-state variation) |
 
-For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Optimal Policy Generator Specification](optimal-policy-generator-spec.qmd).
+For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Optimal Policy Generator Specification](https://opg.warondisease.org).
 
 #### How They Work Together
 

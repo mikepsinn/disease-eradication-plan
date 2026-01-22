@@ -37,6 +37,7 @@ from dih_models.paper_bibliography_generator import (
     extract_variables_from_qmd,
     _extract_chapters_from_config,
 )
+from dih_models.reference_parser import parse_references_bib
 
 
 def get_all_required_parameters(
@@ -102,7 +103,8 @@ def generate_all_paper_parameters_qmd(
     project_root: Path,
     parameters: Dict[str, Dict[str, Any]],
     available_refs: Optional[Set[str]] = None,
-    params_file: Optional[Path] = None
+    params_file: Optional[Path] = None,
+    citation_data: Optional[Dict[str, Dict[str, Any]]] = None
 ) -> Dict[str, int]:
     """
     Generate filtered parameters-and-calculations QMD files for all standalone papers.
@@ -117,11 +119,19 @@ def generate_all_paper_parameters_qmd(
         parameters: Full parameters dictionary
         available_refs: Set of valid reference IDs from references.qmd
         params_file: Path to parameters.py for LaTeX generation
+        citation_data: Pre-parsed citation data from parse_references_bib() (optional, for performance).
+                       If not provided, will parse references.bib once and reuse for all papers.
 
     Returns:
         Dict mapping paper names to number of parameters in their appendix
     """
     results: Dict[str, int] = {}
+
+    # Pre-parse citation data once for all papers (major performance optimization)
+    if citation_data is None:
+        bib_path = project_root / "references.bib"
+        if bib_path.exists():
+            citation_data = parse_references_bib(bib_path)
 
     # Find all standalone paper configs
     for config_file in project_root.glob("_quarto-*.yml"):
@@ -186,7 +196,8 @@ def generate_all_paper_parameters_qmd(
             parameters=filtered_parameters,
             output_path=output_path,
             available_refs=available_refs,
-            params_file=params_file
+            params_file=params_file,
+            citation_data=citation_data
         )
 
         if count > 0:

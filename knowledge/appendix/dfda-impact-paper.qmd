@@ -226,7 +226,7 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 - **WHO/multilateral coordination**: Comparable to GAVI or the Global Fund
 - **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
 
-The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) are designed to solve.)
+The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](https://iab.warondisease.org) are designed to solve.)
 :::
 
 **Trial Capacity Impact:**

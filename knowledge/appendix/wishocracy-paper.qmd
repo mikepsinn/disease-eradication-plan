@@ -593,7 +593,7 @@ where votes are coded as +1 (increases funding for category), -1 (decreases fund
 
 **Mechanism:**
 
-Wishocracy's preference aggregation integrates with [Incentive Alignment Bonds (IABs)](incentive-alignment-bonds-paper.qmd), a mechanism design approach to political economy. IABs create three layers of incentive alignment:
+Wishocracy's preference aggregation integrates with [Incentive Alignment Bonds (IABs)](https://iab.warondisease.org), a mechanism design approach to political economy. IABs create three layers of incentive alignment:
 
 1. **Electoral Layer:** Campaign contributions, endorsements, and volunteer mobilization flow to high-alignment politicians. A PAC or 501(c)(4) aggregates small-dollar donations from citizens and allocates them proportionally to Citizen Alignment Scores.
 
@@ -669,7 +669,7 @@ Wishocracy and Incentive Alignment Bonds are complementary mechanisms addressing
 
 Together, they form a complete system: RAPPA provides the objective function (what to optimize for), and IABs provide the optimization pressure (why politicians should care). Neither mechanism alone is sufficient: information without incentives produces ignored reports; incentives without information produces captured allocation.
 
-For detailed treatment of the IAB mechanism, including formal models, legal analysis, and bootstrap strategy, see the companion paper: [Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy](incentive-alignment-bonds-paper.qmd).
+For detailed treatment of the IAB mechanism, including formal models, legal analysis, and bootstrap strategy, see the companion paper: [Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy](https://iab.warondisease.org).
 
 ## **Connection to Optimocracy**
 
@@ -691,7 +691,7 @@ These approaches address different failure modes:
 
 A hybrid architecture might use Wishocracy for *metric selection* (citizens choose what to optimize) and Optimocracy for *metric optimization* (algorithms allocate to maximize the chosen metric). This combines democratic legitimacy at the constitutional level with capture resistance at the execution level.
 
-For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](optimocracy-paper.qmd).
+For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](https://optimocracy.warondisease.org).
 
 # **Conclusion**
 
