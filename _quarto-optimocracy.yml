@@ -105,11 +105,41 @@ metadata:
   og-site-name: "Optimocracy"
 
   # Identifiers
-  doi: "10.5281/zenodo.optimocracy"
+  doi: ""
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
   image: "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg"
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://optimocracy.warondisease.org"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: arxiv
+        status: pending
+        category: econ.GN
+    journals:
+      - name: "Public Choice"
+        tier: 2
+        status: target
+        url: ""
+      - name: "Games and Economic Behavior"
+        tier: 2
+        status: target
+        url: ""
+      - name: "Journal of Political Economy"
+        tier: 1
+        status: target
+        url: ""
 
 # Remove "Appendix" prefix
 language:

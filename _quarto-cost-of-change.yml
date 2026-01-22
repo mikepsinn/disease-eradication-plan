@@ -110,6 +110,36 @@ metadata:
   open-graph: true
   image: "https://cost-of-change.warondisease.org/assets/og/cost-of-change-og-1200x630.jpg"
 
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://cost-of-change.warondisease.org"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: arxiv
+        status: pending
+        category: econ.GN
+    journals:
+      - name: "Public Choice"
+        tier: 2
+        status: target
+        url: ""
+      - name: "Journal of Political Economy"
+        tier: 1
+        status: target
+        url: ""
+      - name: "American Economic Review"
+        tier: 1
+        status: target
+        url: ""
+
 # Remove "Appendix" prefix
 language:
   crossref-apx-prefix: ""

@@ -309,6 +309,31 @@ metadata:
   bibliography: references.bib
   csl: nature-annotated.csl  # Renders 'abstract' field (quotes) for any @citations
 
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://manual.WarOnDisease.org"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+      - platform: amazon-kindle
+        status: pending
+        url: ""
+      - platform: apple-books
+        status: pending
+        url: ""
+    publishers:
+      - name: "Self-Published (Digital)"
+        status: deployed
+        url: "https://manual.WarOnDisease.org"
+      - name: "Academic Press"
+        tier: 1
+        status: target
+        url: ""
+
 # Remove "Appendix" prefix from appendix chapters
 # THIS DOESN'T SEEM TO WORK SO I JUST COMMENTED THE APPENDIX LINE BELOW
 language:

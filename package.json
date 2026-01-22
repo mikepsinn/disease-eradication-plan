@@ -34,6 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
     "images:generate:outdated": "tsx scripts/images/generate-chapter-images.ts --outdated",
     "images:generate": "tsx scripts/images/generate-chapter-images.ts",
@@ -152,7 +153,6 @@
     "volt": "volt",
     "download:notebooklm": "tsx scripts/download-notebooklm-files.ts",
     "analyze:sizes": "tsx scripts/analyze-file-sizes.ts",
-    "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
     "netlify:setup": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py",
     "netlify:list": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py --list"
   },

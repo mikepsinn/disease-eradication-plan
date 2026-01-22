@@ -33,7 +33,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
   pdf:
     documentclass: article
     geometry: margin=1in
@@ -64,8 +64,9 @@ We categorize expenditures into three thermodynamic classes:
 
 Our calculation of the Aggregate Efficiency Gap (AEG) sums Technical Inefficiency and Allocative Inefficiency.
 
-![][image1]  
-Where ![][image2] represents essential functions performed inefficiently, and ![][image3] represents non-essential or harmful functions. We apply the **Value of a Statistical Life (VSL)** standard, currently estimated by the US Department of Transportation at **$13.7 million** 1, to quantify the human cost of delayed infrastructure and denied healthcare access. We also utilize the **Quality-Adjusted Life Year (QALY)** benchmark, valued between **$50,000 and $100,000** 2, to measure the lost potential of human capital destroyed by policy failures like mass incarceration and the drug war.
+$$\text{AEG} = \sum_{i} \text{TI}_i + \sum_{j} \text{AI}_j$$
+
+Where $\text{TI}_i$ represents essential functions performed inefficiently, and $\text{AI}_j$ represents non-essential or harmful functions. We apply the **Value of a Statistical Life (VSL)** standard, currently estimated by the US Department of Transportation at **$13.7 million** 1, to quantify the human cost of delayed infrastructure and denied healthcare access. We also utilize the **Quality-Adjusted Life Year (QALY)** benchmark, valued between **$50,000 and $100,000** 2, to measure the lost potential of human capital destroyed by policy failures like mass incarceration and the drug war.
 
 ## **3\. The Kinetic Sink: Entropy in the Department of Defense**
 
@@ -233,7 +234,9 @@ Additionally, tariffs act as taxes on domestic consumers. The Trump/Biden tariff
 
 ## **8\. Monte Carlo Simulation: The Aggregate Waste Tally**
 
-We cannot simply sum the means because the uncertainties are correlated (e.g., a government incompetent at auditing the Pentagon is likely incompetent at auditing Medicaid). We model the Total Waste (![][image4]) as the sum of independent sector wastes (![][image5]), utilizing Monte Carlo simulation to account for the probabilistic nature of the estimates.
+We cannot simply sum the means because the uncertainties are correlated (e.g., a government incompetent at auditing the Pentagon is likely incompetent at auditing Medicaid). We model the Total Waste ($W$) as the sum of independent sector wastes ($W_i$), utilizing Monte Carlo simulation to account for the probabilistic nature of the estimates.
+
+$$W = \sum_{i=1}^{n} W_i$$
 
 ### **8.1 Simulation Parameters (Billions USD)**
 
@@ -250,7 +253,6 @@ We cannot simply sum the means because the uncertainties are correlated (e.g., a
 
 ### **8.2 The Results**
 
-![][image6]  
 The simulation yields the following Aggregate Efficiency Gap estimates for Fiscal Year 2024-2025:
 
 * **Conservative Estimate (5th Percentile):** **$1.85 Trillion**  
@@ -261,7 +263,8 @@ The simulation yields the following Aggregate Efficiency Gap estimates for Fisca
 
 To contextualize **$2.27 trillion** in annual waste, we apply the **Value of a Statistical Life (VSL)** of $13.7 million.1
 
-![][image7]  
+$$\text{Statistical Lives Lost} = \frac{\$2.27 \text{ Trillion}}{\$13.7 \text{ Million/life}} \approx 165,700 \text{ statistical lives}$$
+
 Alternatively, using the **Quality Adjusted Life Year (QALY)** cost-effectiveness threshold of **$100,000** often used in medical literature 2:
 
 * **$2.27 Trillion / $100,000 \= 22.7 Million QALYs.**
