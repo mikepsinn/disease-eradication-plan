@@ -49,38 +49,6 @@ aliases:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![](/assets/infographics/knowledge/economics/1-pct-treaty-impact-infographic-academic.jpg){fig-alt="At current trial capacity, finding first treatments for all untreated diseases would take centuries. Redirecting 1% of military spending to pragmatic trials increases capacity significantly, reducing this to years and delivering treatments decades earlier."}
-
-
-::: {.callout-warning}
-## Preprint
-
-All quantitative estimates are derived from economic modeling with explicit assumptions. Large figures (e.g., billions of lives, quadrillions of dollars) represent **cumulative long-run counterfactual projections** that depend on assumptions documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd). 
-:::
-
-::: {.content-visible when-format="pdf"}
-
-*Version 0.9 - Working Draft*
-
-**Comments welcome.** If you have expertise in health economics, cost-effectiveness analysis, clinical trial design, or peace economics, your feedback would be greatly valued. Please contact [mike@warondisease.org](mailto:mike@warondisease.org).
-
----
-
-:::
-
-::: {.content-visible when-format="html"}
-
-
-*Version 0.9 - Working Draft*
-
----
-
-**Seeking peer review and contributions.** If you have expertise in health economics, cost-effectiveness analysis, clinical trial design, or peace economics, your feedback and potential co-authorship would be greatly valued. Please annotate via the sidebar or contact [mike@warondisease.org](mailto:mike@warondisease.org).
-
----
-
-:::
-
 ## Abstract
 
 **The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.

@@ -52,8 +52,6 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 ---
-![The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.](/assets/infographics/knowledge/appendix/optimal-policy-generator-spec-infographic-academic.jpg)
-
 
 {{< include ../includes/setup-parameters.qmd >}}
 

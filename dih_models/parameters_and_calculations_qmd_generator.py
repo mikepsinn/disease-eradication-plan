@@ -152,7 +152,8 @@ def generate_parameters_and_calculations_qmd(
     content.append("    code-fold: true")
     content.append("---")
     content.append("")
-    content.append("## Overview")
+    # Section ID for cross-references - on Overview to avoid duplicating title from frontmatter
+    content.append("## Overview {#sec-parameters-and-calculations}")
     content.append("")
     content.append(f"This appendix documents all {len(parameters)} parameters used in the analysis, organized by type:")
     content.append("")
@@ -199,7 +200,8 @@ def generate_parameters_and_calculations_qmd(
             content.append("")
 
             # Start collapsible section for all details
-            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
+            # Title is neutral (not "Show...") because PDF renders expanded
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description
@@ -421,7 +423,8 @@ def generate_parameters_and_calculations_qmd(
             content.append("")
 
             # Start collapsible section for all details
-            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
+            # Title is neutral (not "Show...") because PDF renders expanded
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description
@@ -526,7 +529,8 @@ def generate_parameters_and_calculations_qmd(
             content.append("")
 
             # Start collapsible section for all details
-            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
+            # Title is neutral (not "Show...") because PDF renders expanded
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description

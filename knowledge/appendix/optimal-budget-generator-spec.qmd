@@ -56,16 +56,8 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 ---
-![The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.](/assets/infographics/knowledge/appendix/optimal-budget-generator-spec-infographic-academic.jpg)
-
 
 {{< include ../includes/setup-parameters.qmd >}}
-
-::: {.callout-note}
-## Working Paper
-
-This specification describes a framework for evidence-based budget allocation. It complements the Optimocracy paper's Policy Impact Score (PIS) by extending evidence-based governance from policy evaluation to resource allocation optimization.
-:::
 
 ## Abstract {.unnumbered}
 
