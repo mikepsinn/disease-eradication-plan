@@ -1,0 +1,1413 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+---
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 41 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 21
+- Calculated values: 17
+- Core definitions: 3
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (17 parameters) • [External Data Sources](#sec-external) (21 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
+
+**Inputs**:
+
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07B years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
+
+$$
+\begin{gathered}
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
+\text{where } YLL_{lag} \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
+= 7.07B \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M \\[0.5em]
+\text{where } YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
+:::
+
+### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+
+$$
+\begin{gathered}
+Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#disease-eradication-delay](../appendix/invisible-graveyard#disease-eradication-delay)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
+
+:::
+
+### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
+
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Value_{lag} \\
+= DALYs_{lag} \times Value_{QALY} \\
+= 7.94B \times \$150K \\
+= \$1190T \\[0.5em]
+\text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
+\text{where } YLL_{lag} \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
+= 7.07B \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M \\[0.5em]
+\text{where } YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#economic-valuation](../appendix/invisible-graveyard#economic-valuation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
+:::
+
+### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years Lived with Disability during disease eradication delay (PRIMARY estimate)
+
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
+
+$$
+\begin{gathered}
+YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yld.qmd >}}
+
+:::
+
+### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
+
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+
+$$
+\begin{gathered}
+YLL_{lag} \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
+= 7.07B \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+:::
+
+### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+
+**Inputs**:
+
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
+
+:::
+
+### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.
+
+**Inputs**:
+
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
+
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
+
+:::
+
+### Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
+
+**Inputs**:
+
+- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M (95% CI: $146M - $242M)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+
+$$
+\begin{gathered}
+k_{cost,80s} \\
+= \frac{Cost_{dev,curr}}{Cost_{dev,80s}} \\
+= \frac{\$2.6B}{\$194M} \\
+= 13.4
+\end{gathered}
+$$
+
+**Methodology**: [@pre-1962-drug-costs-timeline]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+:::
+
+### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= T_{lag} \times 12000000 \\
+= 8.2 \times 12000000 \\
+= 98.4M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#historical-progress](../appendix/invisible-graveyard#historical-progress)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
+
+### Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total DALYs per US-scale thalidomide event (YLL + YLD)
+
+**Inputs**:
+
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0k years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8k years
+
+$$
+\begin{gathered}
+DALY_{thal} \\
+= YLD_{thal} + YLL_{thal} \\
+= 13{,}000 + 28{,}800 \\
+= 41{,}800 \\[0.5em]
+\text{where } YLD_{thal} \\
+= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
+= 0.4 \times 540 \times 60 \\
+= 13{,}000 \\[0.5em]
+\text{where } N_{thal,survive} \\
+= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
+= 900 \times (1 - 40\%) \\
+= 540 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900 \\[0.5em]
+\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
+\text{where } Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_dalys_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_dalys_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_dalys_per_event.qmd >}}
+
+:::
+
+### Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deaths per US-scale thalidomide event
+
+**Inputs**:
+
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
+
+$$
+\begin{gathered}
+Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_deaths_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_deaths_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_deaths_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_deaths_per_event.qmd >}}
+
+:::
+
+### Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Survivors per US-scale thalidomide event
+
+**Inputs**:
+
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
+
+$$
+\begin{gathered}
+N_{thal,survive} \\
+= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
+= 900 \times (1 - 40\%) \\
+= 540 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_survivors_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_survivors_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_survivors_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_survivors_per_event.qmd >}}
+
+:::
+
+### Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated US thalidomide cases prevented by FDA rejection
+
+**Inputs**:
+
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
+- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
+
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_us_cases_prevented.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_us_cases_prevented.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_us_cases_prevented.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_us_cases_prevented.qmd >}}
+
+:::
+
+### Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years Lived with Disability per thalidomide event
+
+**Inputs**:
+
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
+- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
+- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
+
+$$
+\begin{gathered}
+YLD_{thal} \\
+= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
+= 0.4 \times 540 \times 60 \\
+= 13{,}000 \\[0.5em]
+\text{where } N_{thal,survive} \\
+= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
+= 900 \times (1 - 40\%) \\
+= 540 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_yld_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_yld_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_yld_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yld_per_event.qmd >}}
+
+:::
+
+### Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years of Life Lost per thalidomide event (infant deaths)
+
+**Inputs**:
+
+- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
+
+$$
+\begin{gathered}
+YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
+\text{where } Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_yll_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_yll_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yll_per_event.qmd >}}
+
+:::
+
+### Ratio of Type Ii Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
+
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
+
+$$
+\begin{gathered}
+Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}070 \\[0.5em]
+\text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
+\text{where } YLL_{lag} \\
+= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
+= 416M \times (79 - 62) \\
+= 7.07B \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M \\[0.5em]
+\text{where } YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M \\[0.5em]
+\text{where } Deaths_{lag} \\
+= T_{lag} \times Deaths_{disease,daily} \times 338 \\
+= 8.2 \times 150{,}000 \times 338 \\
+= 416M \\[0.5em]
+\text{where } DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
+\text{where } DALY_{thal} \\
+= YLD_{thal} + YLL_{thal} \\
+= 13{,}000 + 28{,}800 \\
+= 41{,}800 \\[0.5em]
+\text{where } YLD_{thal} \\
+= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
+= 0.4 \times 540 \times 60 \\
+= 13{,}000 \\[0.5em]
+\text{where } N_{thal,survive} \\
+= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
+= 900 \times (1 - 40\%) \\
+= 540 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900 \\[0.5em]
+\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
+\text{where } Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-type_ii_error_cost_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_ii_error_cost_ratio.qmd >}}
+
+:::
+
+### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
+
+**Inputs**:
+
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8k DALYs
+
+$$
+\begin{gathered}
+DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
+\text{where } DALY_{thal} \\
+= YLD_{thal} + YLL_{thal} \\
+= 13{,}000 + 28{,}800 \\
+= 41{,}800 \\[0.5em]
+\text{where } YLD_{thal} \\
+= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
+= 0.4 \times 540 \times 60 \\
+= 13{,}000 \\[0.5em]
+\text{where } N_{thal,survive} \\
+= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
+= 900 \times (1 - 40\%) \\
+= 540 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900 \\[0.5em]
+\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
+\text{where } Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360 \\[0.5em]
+\text{where } N_{thal,US,prevent} \\
+= N_{thal,global} \times Pct_{US,1960} \\
+= 15{,}000 \times 6\% \\
+= 900
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-type_i_error_benefit_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-type_i_error_benefit_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Baseline Annual Lives Saved by Pharmaceuticals: 12 deaths/year {#sec-baseline_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Baseline annual lives saved by pharmaceuticals (conservative aggregate)
+
+**Source**: [@who-global-health-estimates-2024]
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 0.07 weight)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Drug development cost in 1980s (compounded to approval, 1990 dollars)
+
+**Source**: [@pre-1962-drug-costs-timeline]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$146M, $242M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $146M and $242M (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-drug_development_cost_1980s.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
+
+**Source**: [@bio-clinical-development-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### FDA Phase 1 to Approval Timeline: 9.1 years {#sec-fda_phase_1_to_approval_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
+
+**Source**: [@fda-approval-timeline-10-years]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6 years, 12 years] • Distribution: Gamma (SE: 2 years)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 years and 12 years (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7.50k deaths/day)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global life expectancy (2024)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average cost to develop one drug in current system
+
+**Source**: [@drug-development-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.50B, $4B] • Distribution: Lognormal (SE: $500M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Phase I Safety Trial Duration: 2.3 years {#sec-phase_1_safety_duration_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase I safety trial duration
+
+**Source**: [@bio-clinical-development-2021]
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Post-1962 Drug Approval Reduction: 70% {#sec-post_1962_drug_approval_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
+
+**Source**: [@post-1962-drug-approval-drop]
+
+*✓ High confidence • Updated 1962-1970*
+
+:::
+
+### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total number of rare diseases globally
+
+**Source**: [@95-pct-diseases-no-treatment]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6.00k diseases, 10.0k diseases] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k diseases and 10.0k diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 3 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years {#sec-regulatory_delay_suffering_period_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4 years, 9 years] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 4 years and 9 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard economic value per QALY
+
+**Source**: [@qaly-value]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total thalidomide birth defect cases worldwide (1957-1962)
+
+**Source**: [@thalidomide-scandal]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10.0k cases, 20.0k cases] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 10.0k cases and 20.0k cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Disability weight for thalidomide survivors (limb deformities, organ damage)
+
+**Source**: [@thalidomide-survivors-health]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.32:1, 0.48:1] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32:1 and 0.48:1 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mortality rate for thalidomide-affected infants (died within first year)
+
+**Source**: [@thalidomide-scandal]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [35%, 45%] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 35% and 45% (±13%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average lifespan for thalidomide survivors
+
+**Source**: [@thalidomide-survivors-health]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50 years, 70 years] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 years and 70 years (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US share of world population in 1960
+
+**Source**: [@us-census-world-population-1960]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5.5%, 6.5%] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### Eventually Avoidable Death Percentage: 92.6% {#sec-eventually_avoidable_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50%, 98%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+*Core definition*
+
+:::
+
+### Fundamentally Unavoidable Death Percentage: 7.37% {#sec-fundamentally_unavoidable_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```

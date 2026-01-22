@@ -14,7 +14,7 @@ Usage:
     python scripts/test-pdf-render.py knowledge/appendix/parameters-and-calculations.qmd
 
     # Test a specific file
-    python scripts/test-pdf-render.py knowledge/appendix/regulatory-mortality-analysis.qmd
+    python scripts/test-pdf-render.py knowledge/appendix/invisible-graveyard.qmd
 
     # With venv:
     .venv/Scripts/python.exe scripts/test-pdf-render.py knowledge/appendix/parameters-and-calculations.qmd

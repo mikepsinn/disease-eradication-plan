@@ -623,7 +623,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 #### The Efficacy Lag Problem
 
-A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of post-safety efficacy lag costs (1962-2024) found:
+A [comprehensive quantitative analysis](invisible-graveyard.qmd) of post-safety efficacy lag costs (1962-2024) found:
 
 - **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
 - **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years lost
@@ -667,7 +667,7 @@ The elimination of the post-safety efficacy lag by such a framework achieves a o
 
 This represents the **top-down comprehensive estimate** of the health benefits from a decentralized framework from eliminating the post-safety efficacy lag.
 
-For detailed methodology and assumptions, see [The Human Cost of Regulatory Latency](regulatory-mortality-analysis.qmd).
+For detailed methodology and assumptions, see [The Human Cost of Regulatory Latency](invisible-graveyard.qmd).
 
 ### Safety and Risk Management
 
@@ -928,7 +928,7 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
 - **Total DALYs at Stake:**
-  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag. This represents the one-time health benefit from accelerating the cure timeline.
+  - The analysis ([Regulatory Mortality Analysis](invisible-graveyard.qmd)) projects **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag. This represents the one-time health benefit from accelerating the cure timeline.
 
 - **Daily R&D Waste:**
   - The analysis ([Gross R&D Savings](#gross-r-and-d-savings-from-implementing-a-decentralized-framework)) projects gross R&D savings of **{{< var dfda_benefit_rd_only_annual >}} per year** by reducing the costs of the **{{< var global_clinical_trials_spending_annual >}} global clinical trial market** by **{{< var dfda_trial_cost_reduction_pct >}}**. This represents value that is currently being spent inefficiently.

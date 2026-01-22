@@ -38,12 +38,37 @@ import {
   stringifyWithFrontmatter,
   getCleanedContentForLLM,
   extractReferenceImages,
-  getSiteUrl
+  getSiteUrl,
+  loadQuartoVariables,
+  replaceQuartoVariables
 } from '../lib/file-utils.js';
 import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts.js';
 
 // Load environment variables
 dotenv.config();
+
+// Cache for Quarto variables (loaded once at startup)
+let cachedVariables: Map<string, string> | null = null;
+
+/**
+ * Get cached Quarto variables (loads on first call)
+ */
+async function getVariables(): Promise<Map<string, string>> {
+  if (!cachedVariables) {
+    cachedVariables = await loadQuartoVariables();
+  }
+  return cachedVariables;
+}
+
+/**
+ * Replace Quarto variables in a string (e.g., title or description)
+ * Returns the original string if it's undefined
+ */
+async function replaceVariablesInString(str: string | undefined): Promise<string | undefined> {
+  if (!str) return str;
+  const variables = await getVariables();
+  return replaceQuartoVariables(str, variables);
+}
 
 // Lock file configuration
 const LOCK_FILE = path.join(process.cwd(), '.generate-images.lock');
@@ -630,10 +655,11 @@ async function generateImageForFile(
   }
 
   // Build base image metadata from QMD frontmatter
+  // Replace Quarto variables in title and description (e.g., {{< var some_variable >}} -> actual value)
   const siteUrl = await getSiteUrl();
   const baseMetadata: Omit<ImageMetadata, 'category'> = {
-    title: frontmatter.title,
-    description: frontmatter.description,
+    title: await replaceVariablesInString(frontmatter.title),
+    description: await replaceVariablesInString(frontmatter.description),
     keywords: Array.isArray(frontmatter.tags) ? frontmatter.tags :
               Array.isArray(frontmatter.keywords) ? frontmatter.keywords :
               Array.isArray(frontmatter.categories) ? frontmatter.categories : undefined,

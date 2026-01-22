@@ -1,0 +1,231 @@
+project:
+  type: website
+  output-dir: _site/invisible-graveyard
+  execute-dir: project
+  resources:
+    - assets/
+    - _redirects
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: knowledge/appendix/invisible-graveyard.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  pdf-output-file: invisible-graveyard.pdf
+  netlify-site-id: "ef37ca63-13e5-4403-bf47-173763af79ab"
+  netlify-cname: "invisible-graveyard-warondisease.netlify.app"
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
+  favicon-prompt: "A gravestone with a pill/capsule, representing mortality from regulatory delay."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
+website:
+  title: "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024"
+  description: "The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 98.4M deaths (95% CI: 58.2M deaths-138M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1)."
+  site-url: https://invisible-graveyard.warondisease.org
+  favicon: assets/icons/invisible-graveyard-favicon.png
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Paper"
+        href: /
+      - text: "dFDA Framework"
+        href: https://dfda-spec.warondisease.org
+    right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /invisible-graveyard.pdf
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "References"
+        href: /#references
+      - text: "DIH"
+        href: https://dih.earth
+      - text: "War on Disease"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Regulatory Economics, FDA Policy, Drug Lag, Mortality Analysis, Cost-Benefit Analysis"
+  category: "Academic Paper, Health Economics, Regulatory Policy, Public Health"
+  keywords:
+    - fda-regulation
+    - drug-lag
+    - kefauver-harris-amendments
+    - regulatory-delay
+    - type-ii-errors
+    - mortality-analysis
+    - cost-benefit-analysis
+    - pharmaceutical-regulation
+    - dalys
+    - efficacy-requirements
+    - peltzman
+    - regulatory-economics
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://dih.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Regulatory Economists, Health Policy Researchers, FDA Reform Advocates, Public Health Officials, Pharmaceutical Industry Analysts"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Health Economics, Regulatory Policy, Cost-Benefit Analysis"
+  medium: "Digital"
+  twitter-site: "@warondisease"
+  twitter-creator: "@warondisease"
+  og-site-name: "The Invisible Graveyard"
+
+  # Identifiers (update when paper is published)
+  # doi: "10.5281/zenodo.XXXXXXXX"
+
+  # Open Graph metadata
+  open-graph: true
+  image: "https://invisible-graveyard.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg"
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://invisible-graveyard.warondisease.org"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: medrxiv
+        status: pending
+        url: ""
+    journals:
+      - name: "Journal of Law and Economics"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Regulation (Cato Institute)"
+        tier: 2
+        status: target
+        url: ""
+      - name: "Health Economics"
+        tier: 2
+        status: target
+        url: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[DIH.earth](https://dih.earth)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
+              <a href="https://dih.earth" style="color: #8b7355;">DIH.earth</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <strong>Download:</strong>
+              <a href="/invisible-graveyard.pdf" style="color: #8b7355;">PDF</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) - TODO: Generate invisible-graveyard-specific icons -->
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+  pdf:
+    output-file: "invisible-graveyard.pdf"
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""

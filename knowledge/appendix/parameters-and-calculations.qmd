@@ -1414,7 +1414,7 @@ DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -1454,7 +1454,7 @@ Deaths_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
+**Methodology**: [../appendix/invisible-graveyard#disease-eradication-delay](../appendix/invisible-graveyard#disease-eradication-delay)
 
 *~ Medium confidence*
 
@@ -1511,7 +1511,7 @@ Value_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
+**Methodology**: [../appendix/invisible-graveyard#economic-valuation](../appendix/invisible-graveyard#economic-valuation)
 
 *~ Medium confidence*
 
@@ -1556,7 +1556,7 @@ YLD_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -1601,7 +1601,7 @@ YLL_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -3274,7 +3274,7 @@ Hours_{suffer,max} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *? Low confidence*
 
@@ -4252,7 +4252,7 @@ Deaths_{lag,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
+**Methodology**: [../appendix/invisible-graveyard#historical-progress](../appendix/invisible-graveyard#historical-progress)
 
 *✓ High confidence*
 
@@ -4298,7 +4298,7 @@ Loss_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
+**Methodology**: [../appendix/invisible-graveyard#historical-progress](../appendix/invisible-graveyard#historical-progress)
 
 *✓ High confidence*
 
@@ -8725,7 +8725,7 @@ Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}07
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
 
 *~ Medium confidence*
 
@@ -8786,7 +8786,7 @@ DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
 
 *? Low confidence*
 

@@ -401,6 +401,83 @@ jobs:
 
 
 
+  build-invisible-graveyard:
+    name: "Build The Invisible Graveyard: Quantifying the Mortality"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-invisible-graveyard-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-invisible-graveyard-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
+        run: python scripts/render-quarto.py invisible-graveyard
+        timeout-minutes: 30
+
+
+      - name: "Deploy Build The Invisible Graveyard: Quantifying the Mortality to Netlify (immediate)"
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/invisible-graveyard/_site/invisible-graveyard'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy invisible-graveyard site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: ef37ca63-13e5-4403-bf47-173763af79ab
+
+        timeout-minutes: 1
+
+
+
+
+
   build-manual:
     name: "Build How to End War and Disease"
     runs-on: ubuntu-latest

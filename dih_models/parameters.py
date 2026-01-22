@@ -2616,7 +2616,7 @@ EVENTUALLY_AVOIDABLE_DALY_PCT = Parameter(
 # Adjusted to exclude fundamentally unavoidable deaths (primarily accidents)
 DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
     int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#disease-eradication-delay",
     source_type="calculated",
     description="Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
     display_name="Total Deaths from Disease Eradication Delay",
@@ -2772,7 +2772,7 @@ CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
 # Morbidity Analysis (DALYs) - Based on Disease Eradication Delay Model
 DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH),
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#daly-calculation",
     source_type="calculated",
     description="Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
     display_name="Years of Life Lost from Disease Eradication Delay",
@@ -2787,7 +2787,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
 
 DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * REGULATORY_DELAY_SUFFERING_PERIOD_YEARS * CHRONIC_DISEASE_DISABILITY_WEIGHT,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#daly-calculation",
     source_type="calculated",
     description="Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
     display_name="Years Lived with Disability During Disease Eradication Delay",
@@ -2802,7 +2802,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
 
 DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_YLL + DFDA_EFFICACY_LAG_ELIMINATION_YLD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#daly-calculation",
     source_type="calculated",
     description="Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
     display_name="Total DALYs Lost from Disease Eradication Delay",
@@ -2828,7 +2828,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
 # Economic Valuation (using standardized $150k VSLY)
 DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#economic-valuation",
     source_type="calculated",
     description="Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
     display_name="Total Economic Loss from Disease Eradication Delay",
@@ -2847,7 +2847,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
 # Historical Progress - TOTAL (existing drugs only, excludes future innovation effects)
 EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
     12_000_000 * EFFICACY_LAG_YEARS,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#historical-progress",
     source_type="calculated",
     description="Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.",
     display_name="Total Deaths from Historical Progress Delays",
@@ -2862,7 +2862,7 @@ EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
 
 EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH) * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#historical-progress",
     source_type="calculated",
     description="Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
     display_name="Total Economic Loss from Historical Progress Delays",
@@ -3037,7 +3037,7 @@ THALIDOMIDE_DALYS_PER_EVENT = Parameter(
 # Type I Error: Assuming one Thalidomide-scale disaster EVERY YEAR for 62 years (extreme overestimate)
 TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
     THALIDOMIDE_DALYS_PER_EVENT * 62,  # 1962-2024 period
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#risk-analysis",
     source_type="calculated",
     description="Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)",
     display_name="Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)",
@@ -3052,7 +3052,7 @@ TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
 
 TYPE_II_ERROR_COST_RATIO = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#risk-analysis",
     source_type="calculated",
     description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
     display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
@@ -5448,7 +5448,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#daly-calculation",
     source_type="calculated",
     description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
     display_name="Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -6087,7 +6087,7 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
 # ============================================================================
 # Quantitative analysis of Type II regulatory errors (delayed access)
 # Based on: "The Human Cost of Regulatory Latency" (2025)
-# See: knowledge/appendix/regulatory-mortality-analysis.qmd
+# See: knowledge/appendix/invisible-graveyard.qmd
 
 # Drug Development Phase Durations
 PHASE_1_SAFETY_DURATION_YEARS = Parameter(

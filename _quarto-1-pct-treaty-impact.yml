@@ -43,7 +43,6 @@ book:
   chapters:
     - index.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
-    - knowledge/appendix/regulatory-mortality-analysis.qmd
     - knowledge/references.qmd
   navbar:
     right:
@@ -72,11 +71,11 @@ book:
         contents:
           - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
-          - href: knowledge/appendix/regulatory-mortality-analysis.qmd
-            text: "Regulatory Mortality Analysis"
 
       - section: "Related Materials"
         contents:
+          - href: https://invisible-graveyard.warondisease.org
+            text: "Invisible Graveyard Paper →"
           - href: https://iab.warondisease.org
             text: "IAB Working Paper →"
           - href: https://paper.wishocracy.org

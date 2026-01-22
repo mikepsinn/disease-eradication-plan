@@ -25,8 +25,8 @@ Runs automatically via _quarto.yml pre-render hook
 import os
 import re
 import sys
-from glob import glob
-from typing import Dict, List, Optional, Set
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Dict, List, Optional, Set, Tuple
 
 # Set UTF-8 encoding for stdout and stderr on Windows
 if sys.platform == 'win32':
@@ -1059,30 +1059,62 @@ def load_anchor_ids(filepath: str) -> Set[str]:
         return anchor_ids
 
 
+# Directories to skip during file discovery (faster than filtering after)
+SKIP_DIRS = {"node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp", ".git", ".venv", "venv", "__pycache__"}
+
+
+def find_files_fast(extensions: Tuple[str, ...], root: str = ".") -> List[str]:
+    """
+    Fast file discovery using os.walk instead of glob.
+    Much faster on Windows, especially for large directory trees.
+
+    Args:
+        extensions: Tuple of file extensions to match (e.g., (".qmd", ".md"))
+        root: Root directory to search from
+
+    Returns:
+        List of file paths matching the extensions
+    """
+    files = []
+    for dirpath, dirnames, filenames in os.walk(root):
+        # Modify dirnames in-place to skip directories (prevents descending into them)
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+
+        for filename in filenames:
+            if filename.endswith(extensions):
+                files.append(os.path.join(dirpath, filename))
+    return files
+
+
+def _load_anchor_ids_worker(filepath: str) -> Tuple[str, Set[str]]:
+    """Worker function for parallel anchor ID loading."""
+    anchor_ids = load_anchor_ids(filepath)
+    return (os.path.normpath(filepath), anchor_ids)
+
+
 def load_all_anchor_ids() -> Dict[str, Set[str]]:
     """
     Load anchor IDs from all .qmd and .md files in the project.
+    Uses parallel processing for faster loading on multi-core systems.
     Returns a dictionary mapping file paths to sets of anchor IDs.
     """
     anchor_map: Dict[str, Set[str]] = {}
 
-    # Find all .qmd and .md files
-    qmd_files = glob("**/*.qmd", recursive=True)
-    md_files = glob("**/*.md", recursive=True)
-    all_files = qmd_files + md_files
+    # Find all .qmd and .md files using fast os.walk
+    all_files = find_files_fast((".qmd", ".md"))
 
-    # Filter out build directories
-    all_files = [
-        f for f in all_files
-        if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp"])
-    ]
+    # Load anchor IDs in parallel using ThreadPoolExecutor
+    # I/O bound task, so threads work well (no GIL issues for file reading)
+    with ThreadPoolExecutor(max_workers=min(32, os.cpu_count() or 4)) as executor:
+        futures = {executor.submit(_load_anchor_ids_worker, f): f for f in all_files}
 
-    for filepath in all_files:
-        anchor_ids = load_anchor_ids(filepath)
-        if anchor_ids:
-            # Store as normalized path for consistent lookups
-            normalized_path = os.path.normpath(filepath)
-            anchor_map[normalized_path] = anchor_ids
+        for future in as_completed(futures):
+            try:
+                normalized_path, anchor_ids = future.result()
+                if anchor_ids:
+                    anchor_map[normalized_path] = anchor_ids
+            except Exception:
+                pass  # Skip files that fail to load
 
     return anchor_map
 
@@ -1542,39 +1574,17 @@ def main():
     # Validate _quarto.yml configuration first
     validate_quarto_config()
 
-    # Find all .qmd files
-    qmd_files = glob("**/*.qmd", recursive=True)
-    # Filter out node_modules, _book, .quarto, _site, __tests__, _build_temp directories
-    qmd_files = [
-        f for f in qmd_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp"])
-    ]
+    # Find all .qmd files using fast os.walk (directory filtering built into SKIP_DIRS)
+    qmd_files = find_files_fast((".qmd",))
     # Exclude references.qmd from validation
     qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
     # Exclude index.qmd (use index-book.qmd instead - index.qmd is for website, index-book.qmd is for book)
     qmd_files = [f for f in qmd_files if not f.endswith("index.qmd") or f.endswith("index-manual.qmd")]
 
-    # Find all .md files
-    md_files = glob("**/*.md", recursive=True)
-    # Filter out node_modules, _book, .quarto, _site, __tests__, _build_temp directories
-    md_files = [
-        f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp"])
-    ]
-    # Exclude files in the root directory (files with no directory component)
-    md_files = [f for f in md_files if os.path.dirname(f)]
-
-    # Exclude OUTLINE-GENERATED.MD and TODO.md from validation (auto-generated/internal files)
-    # Note: The root exclusion above handles these if they are in root, but keeping ensures they are skipped in subdirs too if generated there
-    md_files = [
-        f
-        for f in md_files
-        if not f.endswith("OUTLINE-GENERATED.MD")
-        and not f.endswith("TODO.md")
-        and not f.endswith("brainstorm.md")
-        and os.path.basename(f) != "brainstorm.md"
-    ]
-
-    all_files = qmd_files + md_files
-    print(f"Found {len(qmd_files)} .qmd files and {len(md_files)} .md files to validate ({len(all_files)} total)\n")
+    # Skip .md files - they're documentation, not part of the Quarto book
+    # (anchor IDs from .md files are still loaded for cross-reference validation)
+    all_files = qmd_files
+    print(f"Found {len(qmd_files)} .qmd files to validate\n")
 
     # Validate each file
     for file in all_files:

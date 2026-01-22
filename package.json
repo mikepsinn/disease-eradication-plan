@@ -126,6 +126,8 @@
     "render:wishocracy:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --to pdf",
     "render:iab": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py iab",
     "render:iab:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py iab --to pdf",
+    "render:invisible-graveyard": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py invisible-graveyard",
+    "render:invisible-graveyard:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py invisible-graveyard --to pdf",
     "render:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to pdf",
     "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to epub",
     "render:docx": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to docx",

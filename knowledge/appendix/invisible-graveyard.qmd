@@ -1,6 +1,6 @@
 ---
-title: The Human Cost of Regulatory Latency
-description: Top-down analysis estimating avoidable deaths, DALYs, and economic loss from 8.2-year efficacy lag.
+title: 'The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024'
+description: 'The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical deaths during actual drug approval delays (1962-2024), and (2) {{< var dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by {{< var type_ii_error_cost_ratio >}}.'
 published: true
 tags:
   - appendix
@@ -9,7 +9,9 @@ tags:
   - regulatory-economics
   - mortality
   - cost-benefit
-image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-academic.jpg
+image: /assets/og-images/knowledge/appendix/invisible-graveyard-og-academic.jpg
+aliases:
+  - /knowledge/appendix/regulatory-mortality-analysis.html
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -17,9 +19,12 @@ image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-aca
 ::: {.callout-note}
 ## The Short Version
 
-The 1962 Kefauver-Harris Amendments require a multi-year efficacy delay after drugs are proven safe. During those {{< var efficacy_lag_years >}}, people die. 
+The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
 
-**The number:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag.
+1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total >}} people died waiting for drugs during their approval process
+2. **Future timeline shift:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
+
+**The ratio:** Type II errors (blocking effective drugs) cost {{< var type_ii_error_cost_ratio >}} more lives than Type I errors (approving dangerous drugs) prevent.
 
 :::
 
@@ -27,11 +32,13 @@ The 1962 Kefauver-Harris Amendments require a multi-year efficacy delay after dr
 
 This study quantifies the cumulative mortality and morbidity costs associated with the **Unitary Pre-Market Approval (UPMA)** model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of **{{< var efficacy_lag_years >}}** post-safety verification.
 
-Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate the mortality cost of this {{< var efficacy_lag_years >}}-year delay:
+Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs:
 
-**{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths** from the efficacy lag, with **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity.
+1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total >}}** died waiting for drugs during their {{< var efficacy_lag_years >}} approval delays. This represents the one-time cost of delays already incurred.
 
-All estimates include Monte Carlo confidence intervals. See the sensitivity analysis sections for parameter uncertainty.
+2. **Future timeline shift:** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
+
+Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
 

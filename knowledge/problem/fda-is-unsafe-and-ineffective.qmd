@@ -199,11 +199,11 @@ But that was just the US. And just the visible delays.
 
 ### The Global Body Count
 
-A [comprehensive quantitative analysis](../appendix/regulatory-mortality-analysis.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of blocking patient access during the {{< var efficacy_lag_years >}}-year post-safety efficacy delay:
+A [comprehensive quantitative analysis](../appendix/invisible-graveyard.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of blocking patient access during the {{< var efficacy_lag_years >}}-year post-safety efficacy delay:
 
 **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths** from the efficacy lag alone.
 
-This represents a humanitarian catastrophe larger than any war in modern history. See the [full sensitivity analysis](../appendix/regulatory-mortality-analysis.qmd) for confidence intervals and parameter uncertainty. 
+This represents a humanitarian catastrophe larger than any war in modern history. See the [full sensitivity analysis](../appendix/invisible-graveyard.qmd) for confidence intervals and parameter uncertainty. 
 
 But deaths alone don't capture the suffering. People don't just die, they live for years with untreated diseases while waiting for approval.
 
@@ -483,7 +483,7 @@ What's missing is the political will to admit that the 1962 "reforms" were a cat
 ## Technical Analysis
 
 For the full quantitative analysis including methodology, sensitivity analysis, and source data, see:
-[The Human Cost of Regulatory Latency](../appendix/regulatory-mortality-analysis.qmd)
+[The Human Cost of Regulatory Latency](../appendix/invisible-graveyard.qmd)
 :::
 
 ---

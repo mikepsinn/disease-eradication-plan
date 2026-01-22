@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 222 parameters used in the analysis, organized by type:
+This appendix documents all 219 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 91
+- External sources (peer-reviewed): 88
 - Calculated values: 100
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (100 parameters) • [External Data Sources](#sec-external) (91 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (100 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -618,7 +618,7 @@ DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -658,7 +658,7 @@ Deaths_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
+**Methodology**: [../appendix/invisible-graveyard#disease-eradication-delay](../appendix/invisible-graveyard#disease-eradication-delay)
 
 *~ Medium confidence*
 
@@ -715,7 +715,7 @@ Value_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
+**Methodology**: [../appendix/invisible-graveyard#economic-valuation](../appendix/invisible-graveyard#economic-valuation)
 
 *~ Medium confidence*
 
@@ -760,7 +760,7 @@ YLD_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -805,7 +805,7 @@ YLL_{lag} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *~ Medium confidence*
 
@@ -1901,7 +1901,7 @@ Hours_{suffer,max} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+**Methodology**: [../appendix/invisible-graveyard#daly-calculation](../appendix/invisible-graveyard#daly-calculation)
 
 *? Low confidence*
 
@@ -5674,7 +5674,7 @@ Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}07
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
 
 *~ Medium confidence*
 
@@ -5735,7 +5735,7 @@ DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
+**Methodology**: [../appendix/invisible-graveyard#risk-analysis](../appendix/invisible-graveyard#risk-analysis)
 
 *? Low confidence*
 
@@ -5936,18 +5936,6 @@ Average annual stock market return (10%)
 **Source**: [@warren-buffett-career-average-return-20-pct]
 
 *✓ High confidence*
-
-:::
-
-### Baseline Annual Lives Saved by Pharmaceuticals: 12 deaths/year {#sec-baseline_lives_saved_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Baseline annual lives saved by pharmaceuticals (conservative aggregate)
-
-**Source**: [@who-global-health-estimates-2024]
-
-*~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
 
@@ -6260,30 +6248,6 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-### FDA Phase 1 to Approval Timeline: 9.1 years {#sec-fda_phase_1_to_approval_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
-
-**Source**: [@fda-approval-timeline-10-years]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [6 years, 12 years] • Distribution: Gamma (SE: 2 years)
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 years and 12 years (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The gamma distribution means values follow a specific statistical pattern.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
-
-*✓ High confidence*
 
 :::
 
@@ -7240,18 +7204,6 @@ Estimated probability of treaty ratification and sustained implementation. Centr
 {{< include ../figures/distribution-political_success_probability.qmd >}}
 
 *? Low confidence*
-
-:::
-
-### Post-1962 Drug Approval Reduction: 70% {#sec-post_1962_drug_approval_reduction_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
-
-**Source**: [@post-1962-drug-approval-drop]
-
-*✓ High confidence • Updated 1962-1970*
 
 :::
 

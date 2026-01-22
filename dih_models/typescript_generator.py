@@ -33,6 +33,41 @@ def _escape_typescript_string(s: str) -> str:
     return s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n')
 
 
+def _convert_source_ref_to_url(source_ref: str, base_url: str = 'https://manual.WarOnDisease.org') -> str:
+    """
+    Convert internal QMD paths to full URLs.
+
+    Examples:
+        /knowledge/appendix/invisible-graveyard.qmd#section -> https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html#section
+        knowledge/economics/1-pct-treaty-impact.qmd -> https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html
+    """
+    if not source_ref:
+        return source_ref
+
+    # Already a full URL
+    if source_ref.startswith('http://') or source_ref.startswith('https://'):
+        return source_ref
+
+    # Reference ID (no path separators) - keep as-is
+    if '/' not in source_ref and '.qmd' not in source_ref:
+        return source_ref
+
+    # Internal path - convert to URL
+    path = source_ref.replace('//', '/').lstrip('/')  # Normalize slashes
+
+    # Handle anchor separately
+    anchor = ''
+    if '#' in path:
+        path, anchor = path.split('#', 1)
+        anchor = '#' + anchor
+
+    # Convert .qmd to .html
+    if path.endswith('.qmd'):
+        path = path[:-4] + '.html'
+
+    return f"{base_url}/{path}{anchor}"
+
+
 def _format_typescript_value(value: Any) -> str:
     """Format a Python value as TypeScript literal."""
     if isinstance(value, str):
@@ -722,7 +757,9 @@ def generate_typescript_survey(
             content.append(f"      latex: {_format_typescript_value(param['latex'])},")
 
         if param.get('source_ref'):
-            content.append(f"      sourceRef: {_format_typescript_value(param['source_ref'])},")
+            # Convert internal QMD paths to full URLs
+            source_ref_url = _convert_source_ref_to_url(param['source_ref'])
+            content.append(f"      sourceRef: {_format_typescript_value(source_ref_url)},")
 
         # Citation
         citation = context.get('citation')

@@ -56,7 +56,7 @@ CREATING TEMPORARY BUILD DIRECTORY
 [*] Preprocessing QMD links in _build_temp/
 [*] Source files: 3, Target files: 45
 [*] knowledge/test/test-economics.qmd: ../appendix/drug-development-cost-analysis.qmd -> https://manual.WarOnDisease.org/knowledge/appendix/drug-development-cost-analysis.html
-[*] knowledge/test/test-economics.qmd: ../appendix/regulatory-mortality-analysis.qmd -> https://manual.WarOnDisease.org/knowledge/appendix/regulatory-mortality-analysis.html
+[*] knowledge/test/test-economics.qmd: ../appendix/invisible-graveyard.qmd -> https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html
 ...
 [OK] Preprocessed 2 QMD files, rewrote 5 links
 

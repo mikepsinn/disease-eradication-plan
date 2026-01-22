@@ -313,7 +313,7 @@
 "dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = Funding_{ann}\
   \ \\times \\frac{1 - (1+r)^{-T}}{r}\n$$"
 "dfda_efficacy_lag_elimination_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_dalys\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
   \ Life Years lost from disease eradication delay (PRIMARY estimate) | Calculated\
   \ from 2 inputs | ~ Medium confidence | Formula: YLL + YLD | Unit: DALYs | Click\
@@ -330,7 +330,7 @@
   \ \\times 338 \\\\\n= 8.2 \\times 150{,}000 \\times 338 \\\\\n= 416M\n\\end{gathered}\n\
   $$"
 "dfda_efficacy_lag_elimination_deaths_averted": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_deaths_averted\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#disease-eradication-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
   \ avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate,\
   \ conservative). Excludes fundamentally unavoidable deaths (primarily accidents\
@@ -341,7 +341,7 @@
   \ \\\\\n= T_{lag} \\times Deaths_{disease,daily} \\times 338 \\\\\n= 8.2 \\times\
   \ 150{,}000 \\times 338 \\\\\n= 416M\n\\end{gathered}\n$$"
 "dfda_efficacy_lag_elimination_economic_value": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_efficacy_lag_elimination_economic_value\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
   \ loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD).\
   \ Values global DALYs at standardized US/International normative rate ($150k) rather\
@@ -668,7 +668,7 @@
   \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
   $$"
 "dfda_trial_capacity_plus_efficacy_lag_suffering_hours": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Hours of suffering\
   \ eliminated from the combined dFDA timeline shift. Calculated from YLD component\
   \ of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.\
@@ -2209,7 +2209,7 @@
   \ Unit: diseases | Click to view details, calculation & sources\">1.00k diseases\
   \ (95% CI: 800 diseases-1.20k diseases)</a>"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-type_i_error_benefit_dalys\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
   \ saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate:\
   \ one Thalidomide-scale event per year) | Calculated from 1 input | ? Low confidence\
@@ -2229,7 +2229,7 @@
   \\text{where } N_{thal,US,prevent} \\\\\n= N_{thal,global} \\times Pct_{US,1960}\
   \ \\\\\n= 15{,}000 \\times 6\\% \\\\\n= 900\n\\end{gathered}\n$$"
 "type_ii_error_cost_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-type_ii_error_cost_ratio\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Ratio of Type\
   \ II error cost to Type I error benefit (harm from delay vs. harm prevented) | Calculated\
   \ from 2 inputs | ~ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT |\

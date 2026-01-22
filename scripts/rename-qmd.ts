@@ -37,6 +37,7 @@ interface RenameOptions {
   oldPath: string;
   newPath: string;
   dryRun: boolean;
+  updateRefsOnly: boolean;  // Skip file rename, only update references
 }
 
 interface RenameStats {
@@ -45,6 +46,8 @@ interface RenameStats {
   tsJsUpdates: number;
   pythonUpdates: number;
   docUpdates: number;
+  yamlUpdates: number;
+  jsonUpdates: number;
   filesModified: string[];
   aliasAdded: boolean;
 }
@@ -57,19 +60,21 @@ function parseArgs(): RenameOptions {
 
   if (args.length < 2 || args[0] === '--help' || args[0] === '-h') {
     console.log(`
-Usage: npx tsx scripts/rename-qmd.ts <old_path> <new_path> [--dry-run]
+Usage: npx tsx scripts/rename-qmd.ts <old_path> <new_path> [--dry-run] [--update-refs-only]
 
 Arguments:
   old_path     Current path to the QMD file (relative to project root)
   new_path     New path for the QMD file (relative to project root)
 
 Options:
-  --dry-run    Show what would be changed without making changes
-  --help, -h   Show this help message
+  --dry-run           Show what would be changed without making changes
+  --update-refs-only  Skip file rename, only update references (use if file was already renamed)
+  --help, -h          Show this help message
 
 Examples:
   npx tsx scripts/rename-qmd.ts knowledge/problem/old-name.qmd knowledge/problem/new-name.qmd --dry-run
   npx tsx scripts/rename-qmd.ts knowledge/problem/cost-of-war.qmd knowledge/problem/price-of-war.qmd
+  npx tsx scripts/rename-qmd.ts old.qmd new.qmd --update-refs-only  # If file was already renamed
 
 Notes:
   - Paths should NOT have leading slashes
@@ -87,6 +92,7 @@ Notes:
     oldPath,
     newPath,
     dryRun: args.includes('--dry-run'),
+    updateRefsOnly: args.includes('--update-refs-only'),
   };
 }
 
@@ -272,6 +278,23 @@ async function updateQmdLinks(
     totalChanges += plainMatches.length;
   }
 
+  // Pattern 4: Match any path ending with the old filename (catches non-canonical paths)
+  // This handles cases like `](../appendix/file.qmd)` when file is in same directory
+  const oldBasename = path.basename(oldPath);
+  const newBasename = path.basename(newPath);
+  // Only apply if basename is different from full path (to avoid double-matching)
+  if (oldBasename !== oldPath) {
+    const basenameRegex = new RegExp(
+      `(\\]\\()([^)]*/)${escapeRegExp(oldBasename)}((?:#[^)]*)?\\))`,
+      'g'
+    );
+    const basenameMatches = newContent.match(basenameRegex);
+    if (basenameMatches) {
+      newContent = newContent.replace(basenameRegex, `$1$2${newBasename}$3`);
+      totalChanges += basenameMatches.length;
+    }
+  }
+
   if (totalChanges > 0 && !dryRun) {
     await fs.writeFile(qmdFile, newContent, 'utf-8');
   }
@@ -288,7 +311,7 @@ function escapeRegExp(string: string): string {
 
 /**
  * Update path references in a generic file (TS, JS, Python, etc.)
- * Matches string literals containing the path
+ * Matches string literals containing the path, including paths with anchors
  */
 async function updatePathReferencesInFile(
   filePath: string,
@@ -301,28 +324,34 @@ async function updatePathReferencesInFile(
   let newContent = content;
   let totalChanges = 0;
 
-  // Pattern 1: Match exact path in quotes (single or double)
-  // e.g., "knowledge/economics/1-pct-treaty-impact.qmd" or 'knowledge/economics/1-pct-treaty-impact.qmd'
-  const quotedRegex = new RegExp(
-    `(['"])${escapeRegExp(oldPath)}\\1`,
+  // Pattern 1: Match path with optional anchor inside double quotes
+  // e.g., "/knowledge/appendix/file.qmd#section" or "knowledge/appendix/file.qmd"
+  const doubleQuoteRegex = new RegExp(
+    `"(/?${escapeRegExp(oldPath)})(#[^"]*)?"|"([^"]*/)${escapeRegExp(oldPath)}(#[^"]*)?"`,
     'g'
   );
-  const quotedMatches = newContent.match(quotedRegex);
-  if (quotedMatches) {
-    newContent = newContent.replace(quotedRegex, `$1${newPath}$1`);
-    totalChanges += quotedMatches.length;
+  const doubleQuoteMatches = newContent.match(doubleQuoteRegex);
+  if (doubleQuoteMatches) {
+    // Replace while preserving leading slash and anchor
+    newContent = newContent.replace(
+      new RegExp(`"(/?)(${escapeRegExp(oldPath)})(#[^"]*)?"`, 'g'),
+      `"$1${newPath}$3"`
+    );
+    totalChanges += doubleQuoteMatches.length;
   }
 
-  // Pattern 2: Match path with leading slash in quotes
-  // e.g., "/knowledge/economics/1-pct-treaty-impact.qmd"
-  const slashQuotedRegex = new RegExp(
-    `(['"])/${escapeRegExp(oldPath)}\\1`,
+  // Pattern 2: Match path with optional anchor inside single quotes
+  const singleQuoteRegex = new RegExp(
+    `'(/?${escapeRegExp(oldPath)})(#[^']*)?'`,
     'g'
   );
-  const slashQuotedMatches = newContent.match(slashQuotedRegex);
-  if (slashQuotedMatches) {
-    newContent = newContent.replace(slashQuotedRegex, `$1/${newPath}$1`);
-    totalChanges += slashQuotedMatches.length;
+  const singleQuoteMatches = newContent.match(singleQuoteRegex);
+  if (singleQuoteMatches) {
+    newContent = newContent.replace(
+      new RegExp(`'(/?)(${escapeRegExp(oldPath)})(#[^']*)?'`, 'g'),
+      `'$1${newPath}$3'`
+    );
+    totalChanges += singleQuoteMatches.length;
   }
 
   // Pattern 3: Match path in backticks (template literals)
@@ -444,6 +473,93 @@ async function updateDocFiles(
 }
 
 /**
+ * Find and update references in YAML files (including _variables*.yml)
+ */
+async function updateYamlFiles(
+  oldPath: string,
+  newPath: string,
+  dryRun: boolean
+): Promise<{ count: number; files: string[] }> {
+  // Find all YAML files except _quarto*.yml (handled separately)
+  const yamlFiles = await glob('**/*.{yml,yaml}', {
+    cwd: PROJECT_ROOT,
+    absolute: true,
+    ignore: ['**/node_modules/**', '**/.venv/**', '**/_site/**', '**/_book/**', '_quarto*.yml'],
+  });
+
+  let totalCount = 0;
+  const modifiedFiles: string[] = [];
+
+  for (const file of yamlFiles) {
+    const content = await fs.readFile(file, 'utf-8');
+
+    let newContent = content;
+    let changes = 0;
+
+    // Match the path anywhere in the file (YAML often has paths in various formats)
+    const pathRegex = new RegExp(escapeRegExp(oldPath), 'g');
+    const pathMatches = newContent.match(pathRegex);
+    if (pathMatches) {
+      newContent = newContent.replace(pathRegex, newPath);
+      changes += pathMatches.length;
+    }
+
+    if (changes > 0) {
+      if (!dryRun) {
+        await fs.writeFile(file, newContent, 'utf-8');
+      }
+      totalCount += changes;
+      modifiedFiles.push(path.relative(PROJECT_ROOT, file));
+    }
+  }
+
+  return { count: totalCount, files: modifiedFiles };
+}
+
+/**
+ * Find and update references in JSON files
+ */
+async function updateJsonFiles(
+  oldPath: string,
+  newPath: string,
+  dryRun: boolean
+): Promise<{ count: number; files: string[] }> {
+  const jsonFiles = await glob('**/*.json', {
+    cwd: PROJECT_ROOT,
+    absolute: true,
+    ignore: ['**/node_modules/**', '**/.venv/**', '**/_site/**', '**/_book/**', 'package.json', 'package-lock.json', 'tsconfig.json'],
+  });
+
+  let totalCount = 0;
+  const modifiedFiles: string[] = [];
+
+  for (const file of jsonFiles) {
+    const content = await fs.readFile(file, 'utf-8');
+
+    let newContent = content;
+    let changes = 0;
+
+    // Match the path in JSON string values
+    const pathRegex = new RegExp(escapeRegExp(oldPath), 'g');
+    const pathMatches = newContent.match(pathRegex);
+    if (pathMatches) {
+      newContent = newContent.replace(pathRegex, newPath);
+      changes += pathMatches.length;
+    }
+
+    if (changes > 0) {
+      if (!dryRun) {
+        await fs.writeFile(file, newContent, 'utf-8');
+      }
+      totalCount += changes;
+      modifiedFiles.push(path.relative(PROJECT_ROOT, file));
+    }
+  }
+
+  return { count: totalCount, files: modifiedFiles };
+}
+
+/**
  * Rename the file on disk
  */
 async function renameFile(oldPath: string, newPath: string, dryRun: boolean): Promise<void> {
@@ -469,18 +585,20 @@ async function renameFile(oldPath: string, newPath: string, dryRun: boolean): Pr
  * Main rename function
  */
 async function renameQmdFile(options: RenameOptions): Promise<void> {
-  const { oldPath, newPath, dryRun } = options;
+  const { oldPath, newPath, dryRun, updateRefsOnly } = options;
   const stats: RenameStats = {
     quartoConfigUpdates: 0,
     qmdLinkUpdates: 0,
     tsJsUpdates: 0,
     pythonUpdates: 0,
     docUpdates: 0,
+    yamlUpdates: 0,
+    jsonUpdates: 0,
     filesModified: [],
     aliasAdded: false,
   };
 
-  const modeLabel = dryRun ? ' [DRY RUN]' : '';
+  const modeLabel = dryRun ? ' [DRY RUN]' : (updateRefsOnly ? ' [UPDATE REFS ONLY]' : '');
 
   console.log('━'.repeat(80));
   console.log(`📁 QMD File Rename Tool${modeLabel}`);
@@ -489,18 +607,22 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
   console.log(`New path: ${newPath}`);
   console.log('');
 
-  // Validate paths
-  console.log('📋 Step 1: Validating paths...');
-  await validatePaths(oldPath, newPath);
-  console.log('   ✅ Paths validated');
+  if (!updateRefsOnly) {
+    // Validate paths
+    console.log('📋 Step 1: Validating paths...');
+    await validatePaths(oldPath, newPath);
+    console.log('   ✅ Paths validated');
 
-  // Step 2: Rename the file
-  console.log('\n📋 Step 2: Renaming file...');
-  await renameFile(oldPath, newPath, dryRun);
+    // Step 2: Rename the file
+    console.log('\n📋 Step 2: Renaming file...');
+    await renameFile(oldPath, newPath, dryRun);
 
-  // Step 3: Add Quarto alias to the renamed file
-  console.log('\n📋 Step 3: Adding Quarto alias...');
-  stats.aliasAdded = await addQuartoAlias(newPath, oldPath, dryRun);
+    // Step 3: Add Quarto alias to the renamed file
+    console.log('\n📋 Step 3: Adding Quarto alias...');
+    stats.aliasAdded = await addQuartoAlias(newPath, oldPath, dryRun);
+  } else {
+    console.log('📋 Skipping steps 1-3 (file operations) - update refs only mode');
+  }
 
   // Step 4: Update Quarto config files
   console.log('\n📋 Step 4: Updating Quarto config files...');
@@ -591,6 +713,38 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
     console.log('   No references found in documentation files');
   }
 
+  // Step 9: Update YAML files (including _variables*.yml)
+  console.log('\n📋 Step 9: Updating YAML files...');
+  const yamlResult = await updateYamlFiles(oldPath, newPath, dryRun);
+  if (yamlResult.count > 0) {
+    stats.yamlUpdates = yamlResult.count;
+    stats.filesModified.push(...yamlResult.files);
+    for (const file of yamlResult.files.slice(0, 5)) {
+      console.log(`   Updated ${file}`);
+    }
+    if (yamlResult.files.length > 5) {
+      console.log(`   ... and ${yamlResult.files.length - 5} more YAML files`);
+    }
+  } else {
+    console.log('   No references found in YAML files');
+  }
+
+  // Step 10: Update JSON files
+  console.log('\n📋 Step 10: Updating JSON files...');
+  const jsonResult = await updateJsonFiles(oldPath, newPath, dryRun);
+  if (jsonResult.count > 0) {
+    stats.jsonUpdates = jsonResult.count;
+    stats.filesModified.push(...jsonResult.files);
+    for (const file of jsonResult.files.slice(0, 5)) {
+      console.log(`   Updated ${file}`);
+    }
+    if (jsonResult.files.length > 5) {
+      console.log(`   ... and ${jsonResult.files.length - 5} more JSON files`);
+    }
+  } else {
+    console.log('   No references found in JSON files');
+  }
+
   // Deduplicate files modified list
   stats.filesModified = [...new Set(stats.filesModified)];
 
@@ -605,6 +759,8 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
   console.log(`TypeScript/JS updates: ${stats.tsJsUpdates}`);
   console.log(`Python updates:        ${stats.pythonUpdates}`);
   console.log(`Documentation updates: ${stats.docUpdates}`);
+  console.log(`YAML updates:          ${stats.yamlUpdates}`);
+  console.log(`JSON updates:          ${stats.jsonUpdates}`);
   console.log(`Total files modified:  ${stats.filesModified.length}`);
 
   if (dryRun) {

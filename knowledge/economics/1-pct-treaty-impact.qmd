@@ -879,7 +879,7 @@ where $C_{0}$ is upfront costs (platform development, legal structure, data inte
 
 #### NPV of Benefits
 
-**Note:** The NPV calculation includes **only annual recurring R&D savings**, not the timeline shift benefits. The full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} on average, combining treatment acceleration and efficacy lag elimination) is a separate benefit analyzed below. This section focuses on the efficacy lag component ({{< var efficacy_lag_years >}}) for NPV purposes. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
+**Note:** The NPV calculation includes **only annual recurring R&D savings**, not the timeline shift benefits. The full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} on average, combining treatment acceleration and efficacy lag elimination) is a separate benefit analyzed below. This section focuses on the efficacy lag component ({{< var efficacy_lag_years >}}) for NPV purposes. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org).
 
 Annual benefits $S(t)$ are calculated as:
 
@@ -898,7 +898,7 @@ The NPV of benefits (R&D savings only):
 
 This yields the conservative estimate of {{< var dfda_roi_rd_only >}} ROI over {{< var npv_time_horizon_years >}}.
 
-**Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (treatment acceleration + efficacy lag elimination), as this represents the primary health benefit. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
+**Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (treatment acceleration + efficacy lag elimination), as this represents the primary health benefit. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org).
 
 For a dFDA's cost per health benefit averted (using the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
@@ -964,7 +964,7 @@ The distribution below shows the uncertainty range in DALYs averted from the eff
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
-For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
+For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org).
 
 ## Economist Verification: Complete Derivation Chains
 
@@ -1888,7 +1888,7 @@ Core recurring benefit streams:
 
 That's **{{< var treaty_recurring_benefits_annual >}} per year** (recurring perpetually).
 
-**Important Note:** The dFDA provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (cure acceleration + efficacy lag elimination) in when diseases are cured, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when cures become available, not an annual stream. The recurring annual benefits above ({{< var treaty_recurring_benefits_annual >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for timeline shift methodology.
+**Important Note:** The dFDA provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (cure acceleration + efficacy lag elimination) in when diseases are cured, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when cures become available, not an annual stream. The recurring annual benefits above ({{< var treaty_recurring_benefits_annual >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for timeline shift methodology.
 
 #### Complete Case ROI
 
@@ -2215,7 +2215,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Adverse event detection | Voluntary physician reporting (1-10% capture rate) | Automated statistical surveillance (100% capture of recorded events) |
 | Mass notification | Manual, slow, incomplete | Automated, immediate, comprehensive |
 
-**Type II error dominance**: [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) quantifies the harm ratio at {{< var type_ii_error_cost_ratio >}}. For every person protected from an unsafe drug approval (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current regulatory framework successfully prevents toxic compounds from reaching patients through Phase I safety testing - as demonstrated by thalidomide's prevention in the United States - but the barriers placed between patients and beneficial treatments after safety verification cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent.
+**Type II error dominance**: [Regulatory mortality analysis](../appendix/invisible-graveyard.qmd) quantifies the harm ratio at {{< var type_ii_error_cost_ratio >}}. For every person protected from an unsafe drug approval (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current regulatory framework successfully prevents toxic compounds from reaching patients through Phase I safety testing - as demonstrated by thalidomide's prevention in the United States - but the barriers placed between patients and beneficial treatments after safety verification cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent.
 
 {{< var type_ii_error_cost_ratio_latex >}}
 
@@ -2225,7 +2225,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 **Cost reduction does not imply quality reduction**: The {{< var recovery_trial_cost_reduction_factor >}}× cost reduction achieved by the RECOVERY trial came from eliminating duplicative infrastructure (using existing hospitals instead of building dedicated trial sites, using existing EHR data instead of parallel data collection systems), not from reducing sample sizes, shortening observation periods, or relaxing safety standards. Lower cost reflects infrastructure efficiency, not reduced scientific rigor.
 
-For detailed mortality analysis, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
+For detailed mortality analysis, see [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org).
 
 
 ### Patient Agency and Autonomy
