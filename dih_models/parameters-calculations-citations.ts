@@ -3978,7 +3978,6 @@ export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   displayName: "Celebrity and Influencer Endorsements",
   description: "Celebrity and influencer endorsements",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [10500000.0, 19500000.0],
 };
@@ -3989,7 +3988,6 @@ export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   displayName: "Community Organizing and Ambassador Program Budget",
   description: "Community organizing and ambassador program budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [21000000.0, 39000000.0],
 };
@@ -4000,7 +3998,6 @@ export const CAMPAIGN_CONTINGENCY: Parameter = {
   displayName: "Contingency Fund for Unexpected Costs",
   description: "Contingency fund for unexpected costs",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [30000000.0, 80000000.0],
 };
@@ -4011,7 +4008,6 @@ export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
   displayName: "Defense Industry Conversion Program",
   description: "Defense industry conversion program",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [40000000.0, 70000000.0],
 };
@@ -4022,7 +4018,6 @@ export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   displayName: "Budget for Co-Opting Defense Industry Lobbyists",
   description: "Budget for co-opting defense industry lobbyists",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [35000000.0, 65000000.0],
 };
@@ -4033,7 +4028,6 @@ export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   displayName: "Healthcare Industry Alignment and Partnerships",
   description: "Healthcare industry alignment and partnerships",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [24500000.0, 45500000.0],
 };
@@ -4044,7 +4038,6 @@ export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   displayName: "Campaign Operational Infrastructure",
   description: "Campaign operational infrastructure",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [14000000.0, 26000000.0],
 };
@@ -4055,7 +4048,6 @@ export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   displayName: "AI-Assisted Legal Work Budget",
   description: "AI-assisted legal work budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [35000000.0, 65000000.0],
 };
@@ -4066,7 +4058,6 @@ export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   displayName: "Legal Defense Fund",
   description: "Legal defense fund",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [14000000.0, 26000000.0],
 };
@@ -4077,7 +4068,6 @@ export const CAMPAIGN_LEGAL_WORK: Parameter = {
   displayName: "Legal Drafting and Compliance Work",
   description: "Legal drafting and compliance work",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [50000000.0, 80000000.0],
 };
@@ -4088,7 +4078,6 @@ export const CAMPAIGN_LOBBYING_EU: Parameter = {
   displayName: "EU Lobbying Campaign Budget",
   description: "EU lobbying campaign budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [28000000.0, 52000000.0],
 };
@@ -4099,7 +4088,6 @@ export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
   displayName: "G20 Countries Lobbying Budget",
   description: "G20 countries lobbying budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -4109,7 +4097,6 @@ export const CAMPAIGN_LOBBYING_US: Parameter = {
   displayName: "US Lobbying Campaign Budget",
   description: "US lobbying campaign budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [35000000.0, 65000000.0],
 };
@@ -4120,7 +4107,6 @@ export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   displayName: "Maximum Mass Media Campaign Budget",
   description: "Maximum mass media campaign budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [700000000.0, 1300000000.0],
 };
@@ -4131,7 +4117,6 @@ export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   displayName: "Minimum Mass Media Campaign Budget",
   description: "Minimum mass media campaign budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [350000000.0, 650000000.0],
 };
@@ -4142,7 +4127,6 @@ export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   displayName: "Opposition Research and Rapid Response",
   description: "Opposition research and rapid response",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [17500000.0, 32500000.0],
 };
@@ -4153,7 +4137,6 @@ export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   displayName: "Phase 1 Campaign Budget",
   description: "Phase 1 campaign budget (Foundation, Year 1)",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [140000000.0, 260000000.0],
 };
@@ -4164,7 +4147,6 @@ export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   displayName: "Phase 2 Campaign Budget",
   description: "Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [350000000.0, 650000000.0],
 };
@@ -4175,7 +4157,6 @@ export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   displayName: "Pilot Program Testing in Small Countries",
   description: "Pilot program testing in small countries",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [21000000.0, 39000000.0],
 };
@@ -4186,7 +4167,6 @@ export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
   displayName: "Voting Platform and Technology Development",
   description: "Voting platform and technology development",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [25000000.0, 50000000.0],
 };
@@ -4197,7 +4177,6 @@ export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   displayName: "Regulatory Compliance and Navigation",
   description: "Regulatory compliance and navigation",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [14000000.0, 26000000.0],
 };
@@ -4208,7 +4187,6 @@ export const CAMPAIGN_SCALING_PREP: Parameter = {
   displayName: "Scaling Preparation and Blueprints",
   description: "Scaling preparation and blueprints",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [21000000.0, 39000000.0],
 };
@@ -4219,7 +4197,6 @@ export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   displayName: "Campaign Core Team Staff Budget",
   description: "Campaign core team staff budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [28000000.0, 52000000.0],
 };
@@ -4230,7 +4207,6 @@ export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   displayName: "Super PAC Campaign Expenditures",
   description: "Super PAC campaign expenditures",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [21000000.0, 39000000.0],
 };
@@ -4241,7 +4217,6 @@ export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   displayName: "Tech Industry Partnerships and Infrastructure",
   description: "Tech industry partnerships and infrastructure",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [17500000.0, 32500000.0],
 };
@@ -4252,7 +4227,6 @@ export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
   displayName: "Post-Victory Treaty Implementation Support",
   description: "Post-victory treaty implementation support",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [30000000.0, 55000000.0],
 };
@@ -4263,7 +4237,6 @@ export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   displayName: "Viral Marketing Content Creation Budget",
   description: "Viral marketing content creation budget",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   confidenceInterval: [28000000.0, 52000000.0],
 };
@@ -4860,7 +4833,6 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   displayName: "Viral Referendum Budget",
   description: "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/campaign-budget",
   confidence: "medium",
   formula: "PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
   confidenceInterval: [150000000.0, 410000000.0],
@@ -6714,15 +6686,17 @@ export const citations: Record<string, Citation> = {
   "post-1962-drug-approval-drop": {
         id: "post-1962-drug-approval-drop",
         type: "article-journal",
-        title: "Post-1962 drop in new drug approvals",
+        title: "Lost medicines: a longer view of the pharmaceutical industry with the potential to reinvigorate discovery",
         author: [
           {
-            literal: "Think by Numbers"
+            family: "Kinch",
+            given: "Michael S. and Griesenauer, Robert H."
           },
         ],
-        'container-title': "Think by Numbers: How Many Lives Does FDA Save?",
-        URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
-        note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Kefauver-Harris Amendment | PMC: Lost Medicines",
+        issued: { 'date-parts': [[2019]] },
+        'container-title': "Drug Discovery Today",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7245331/",
+        note: "Peer-reviewed analysis of drug availability 1962-present. Finds: 1,600+ medicines available in 1962; >50% lost post-Kefauver-Harris Amendment; 1950s peak of >30 new products/year not replicated until late 1990s.",
   },
   "post-1962-life-expectancy-slowdown": {
         id: "post-1962-life-expectancy-slowdown",
