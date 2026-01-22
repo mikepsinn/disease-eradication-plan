@@ -35,6 +35,7 @@
   },
   "scripts": {
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
+    "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
     "images:generate:outdated": "tsx scripts/images/generate-chapter-images.ts --outdated",
     "images:generate": "tsx scripts/images/generate-chapter-images.ts",
@@ -46,7 +47,6 @@
     "preview:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --preview",
     "render:website": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to html",
     "render:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test",
-    "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "images:generate:force": "tsx scripts/images/generate-chapter-images.ts --force",
     "images:branding": "tsx scripts/images/generate-project-branding-images.ts",
     "images:branding:force": "tsx scripts/images/generate-project-branding-images.ts --force",

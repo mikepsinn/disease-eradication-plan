@@ -77,7 +77,7 @@ def verify_link_rewrites(build_temp: Path) -> bool:
         # Test 2: Cross-site links should become absolute URLs
         {
             "name": "Cross-site economics link becomes absolute URL",
-            "search": "[Economics Analysis](https://manual.WarOnDisease.org/knowledge/economics/economics.html)",
+            "search": "[Economics Analysis](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html)",
             "file": index_content,
             "should_exist": True
         },
@@ -138,7 +138,7 @@ def verify_link_rewrites(build_temp: Path) -> bool:
     params_tests = [
         {
             "name": "Cross-site economics link becomes absolute URL",
-            "search": "[Economics Analysis](https://manual.WarOnDisease.org/knowledge/economics/economics.html)",
+            "search": "[Economics Analysis](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html)",
             "file": params_content,
             "should_exist": True
         },
@@ -178,7 +178,7 @@ def verify_link_rewrites(build_temp: Path) -> bool:
                 passed += 1
             else:
                 print(f"[FAIL] {test['name']}")
-                print(f"       Expected to find: {test['search'][:80]}...")
+                print(f"       Expected to find: {test['search']}")
                 failed += 1
         else:
             if test["search"] not in test["file"]:
@@ -186,7 +186,7 @@ def verify_link_rewrites(build_temp: Path) -> bool:
                 passed += 1
             else:
                 print(f"[FAIL] {test['name']}")
-                print(f"       Should NOT contain: {test['search'][:80]}...")
+                print(f"       Should NOT contain: {test['search']}")
                 failed += 1
 
     # Summary

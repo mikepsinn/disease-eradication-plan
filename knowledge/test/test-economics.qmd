@@ -14,7 +14,7 @@ This is a minimal test document to verify PDF link preprocessing works correctly
 These use Quarto's `@sec-` cross-reference system. In PDF, clicking these navigates within the document:
 
 - Link to test parameters intro: @sec-test-parameters-intro
-- **Link to calculations appendix**: @sec-parameters
+- **Link to calculations appendix**: @sec-parameters-and-calculations
 
 ::: {.callout-tip}
 **Key insight**: Standard markdown hyperlinks only work in HTML. For PDF output, use `@sec-` cross-references instead.
