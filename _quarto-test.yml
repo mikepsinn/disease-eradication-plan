@@ -27,8 +27,8 @@ book:
     - knowledge/appendix/parameters-and-calculations-test.qmd
     - knowledge/references-shortcode-page.qmd
 
-bibliography:
-  - references-test.bib
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
 
 execute:
   cache: false
