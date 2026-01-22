@@ -14,7 +14,7 @@ tags:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about two-thirds of patients](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown [response rates of 60–80%](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
+Depression is the leading global cause of disability [@depression-leading-cause-disability] and the strongest behavioral predictor of suicide. Existing antidepressant drugs fail to achieve remission in about two-thirds of patients [@antidepressant-failure-rate-stard], and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown response rates of 60–80% [@neuromodulation-trd-response-rates] in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
 
 Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. <!-- TODO: NEEDS_HUMAN_INPUT - Verify this 2035 estimate with current regulatory timelines -->A cost-benefit model indicates this delay could cost millions of lives and hundreds of millions of quality-adjusted life-years (QALYs) globally.
 
@@ -24,8 +24,8 @@ This case study demonstrates the ongoing human cost of post-safety efficacy dela
 
 | Metric                                                              | Value               | Source                        |
 | ------------------------------------------------------------------- | ------------------- | ----------------------------- |
-| Global major-depressive-disorder prevalence                         | ~280 million people | [WHO 2023](../references.qmd#depression-prevalence-280m)                      |
-| Annual suicides                                                     | ~700,000            | [WHO 2023](../references.qmd#suicide-deaths-vs-war-deaths)                      |
+| Global major-depressive-disorder prevalence                         | ~280 million people | WHO 2023 [@depression-prevalence-280m]                      |
+| Annual suicides                                                     | ~700,000            | WHO 2023 [@suicide-deaths-vs-war-deaths]                      |
 | Suicide attributable to untreated or treatment-resistant depression | 70%                | CDC, WHO meta-analyses        |
 | Mean age of death                                                   | 40 y                | Global Burden of Disease      |
 | Average lost QALYs per suicide                                      | 35                  | conservative midlife estimate |

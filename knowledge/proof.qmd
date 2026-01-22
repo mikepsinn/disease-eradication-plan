@@ -35,10 +35,10 @@ Switzerland made chocolate.
 
 ### Result
 
-- [25% richer than Americans](references.qmd#swiss-vs-us-gdp-per-capita) ({{< var switzerland_gdp_per_capita_k >}} vs $76K GDP per capita)
-- Live [5 years longer (84 vs 79 years)](references.qmd#swiss-vs-us-life-expectancy)
-- Haven't had a [war death since 1847](references.qmd#switzerland-last-war-death-1847)
-- Military budget: {{< var switzerland_defense_spending_pct >}} GDP ([source](references.qmd#swiss-military-budget-0-7-pct-gdp)) (US: {{< var us_military_spending_pct_gdp >}})
+- 25% richer than Americans [@swiss-vs-us-gdp-per-capita] ({{< var switzerland_gdp_per_capita_k >}} vs $76K GDP per capita)
+- Live 5 years longer (84 vs 79 years) [@swiss-vs-us-life-expectancy]
+- Haven't had a war death since 1847 [@switzerland-last-war-death-1847]
+- Military budget: {{< var switzerland_defense_spending_pct >}} GDP (source [@swiss-military-budget-0-7-pct-gdp]) (US: {{< var us_military_spending_pct_gdp >}})
 
 The difference went to education, healthcare, and trains that actually work.
 Peace dividends compound over centuries.
@@ -46,13 +46,13 @@ War debts compound faster.
 
 ## War Bonds: How Capitalism Beat Fascism
 
-WWII cost [$4 trillion (today's dollars)](references.qmd#wwii-cost-4-trillion-today).
+WWII cost $4 trillion (today's dollars) [@wwii-cost-4-trillion-today].
 America was broke.
 
 **Solution:** Sell bonds to regular people.
 Promise them profit + dead Nazis.
 
-**Result:** [Funded the entire war](references.qmd#wwii-war-bonds), defeated fascism, everyone made money.
+**Result:** Funded the entire war [@wwii-war-bonds], defeated fascism, everyone made money.
 
 **The lesson:** When saving the world is profitable, people fund it.
 
@@ -62,7 +62,7 @@ Except instead of dead Nazis, you offer dead cancer cells.
 ## The Landmine Treaty: Citizens Beat Armies
 
 1992: Random people decided landmines were stupid.
-1997: [160 countries banned them](references.qmd#icbl-ottawa-treaty).
+1997: 160 countries banned them [@icbl-ottawa-treaty].
 
 No government started it.
 No UN committee.
@@ -85,18 +85,18 @@ Harvard analyzed every major movement in history.
 - Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
 
 The strategy needs {{< var treaty_campaign_voting_bloc_target >}} million people.
-The internet reaches [5 billion](references.qmd#internet-users-5-billion).
+The internet reaches 5 billion [@internet-users-5-billion].
 Math says it wins.
 
 ## The Post-WW2 Economic Miracle: History's Greatest Peace Dividend
 
-1945: US military spending [37% of GDP](references.qmd#us-post-wwii-military-spending-cut) (highest in history).
-1948: Cut to [7% of GDP](references.qmd#us-post-wwii-military-spending-cut) (30 percentage points redirected).
+1945: US military spending 37% of GDP [@us-post-wwii-military-spending-cut] (highest in history).
+1948: Cut to 7% of GDP [@us-post-wwii-military-spending-cut] (30 percentage points redirected).
 
 **Result:** The greatest economic boom in human history.
 
-- GDP growth: **[8% average](references.qmd#us-post-wwii-gdp-growth-8-pct)** for a decade (vs 2-3% normal)
-- Middle class explosion: [Home ownership doubled](references.qmd#us-post-wwii-home-ownership-doubled)
+- GDP growth: **8% average [@us-post-wwii-gdp-growth-8-pct]** for a decade (vs 2-3% normal)
+- Middle class explosion: Home ownership doubled [@us-post-wwii-home-ownership-doubled]
 - Education boom: GI Bill created modern knowledge economy
 - Infrastructure: Interstate highway system built
 
@@ -107,7 +107,7 @@ Math says it wins.
 - **Internet:** Instant global coordination
 - **Money:** Subsidized healthcare creates participation incentive
 - **Data:** We can prove what works in real-time
-- **Urgency:** [150,000 people die daily](references.qmd#who-daily-deaths) (motivation is high)
+- **Urgency:** 150,000 people die daily [@who-daily-deaths] (motivation is high)
 
 ## The Political Precedents: How to Win
 
@@ -157,7 +157,7 @@ Americans funded beating Hitler by buying bonds. Made money while saving democra
 
 The idea of creating a new, multi-billion-dollar global health institution from scratch has been done before.
 
-- The Global Fund was created in 2002 as a public-private partnership to pool and distribute billions of dollars to fight these three diseases, operating outside of traditional institutional channels. It has since saved an estimated [70 million lives](references.qmd#global-fund-50-million-lives-saved) (as of 2025).
+- The Global Fund was created in 2002 as a public-private partnership to pool and distribute billions of dollars to fight these three diseases, operating outside of traditional institutional channels. It has since saved an estimated 70 million lives [@global-fund-50-million-lives-saved] (as of 2025).
 
 **The Lesson:** This provides the precedent for **[your decentralized institutes of health (DIH)](solution/dih.qmd).**
 It proves that the world is capable of creating new, large-scale, and more efficient financial institutions for global health when the existing systems are insufficient.

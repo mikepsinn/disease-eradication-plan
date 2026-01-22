@@ -87,7 +87,7 @@ Here's the precise order in which to distribute papers to specific categories of
 
 **Who you're (legally) bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The (legal) bribe you offer:** Give us {{< var treaty_campaign_viral_referendum_base_case >}} in papers now, get {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
+**The (legal) bribe you offer:** Give us {{< var treaty_campaign_viral_referendum_base_case >}} in papers now, get {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on WW2 War Bonds [@wwii-war-bonds] except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
 
 **Why they accept:** Because even billionaires can count to {{< var victory_bond_annual_return_pct >}}, and {{< var victory_bond_annual_return_pct >}} beats everything else including insider trading, which is illegal but also less profitable.
 

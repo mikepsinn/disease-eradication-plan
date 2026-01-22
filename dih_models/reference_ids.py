@@ -3,7 +3,7 @@
 AUTO-GENERATED FILE - DO NOT EDIT
 ======================================================================
 
-Valid reference IDs extracted from knowledge/references.qmd
+Valid reference IDs extracted from knowledge/references.bib
 
 Usage in parameters.py:
     from .reference_ids import ReferenceID
@@ -25,7 +25,7 @@ from enum import Enum
 
 
 class ReferenceID(str, Enum):
-    """Valid reference IDs from knowledge/references.qmd"""
+    """Valid reference IDs from knowledge/references.bib"""
 
     N166_BILLION_COMPOUNDS = "166-billion-compounds"
     N21ST_CENTURY_CURES_ACT_2016 = "21st-century-cures-act-2016"

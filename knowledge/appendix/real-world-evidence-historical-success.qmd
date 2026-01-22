@@ -24,7 +24,7 @@ Large-scale efficacy trials based on real-world evidence produce better health o
 
 ### 10,000 Years of Dying at 30
 
-For over 99% of recorded human history, [average life expectancy was 30 years](../references.qmd#historical-life-expectancy-30-years).
+For over 99% of recorded human history, average life expectancy was 30 years [@historical-life-expectancy-30-years].
 
 Ancient Rome: 30 years.
 Medieval Europe: 30 years.
@@ -40,9 +40,9 @@ Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 
 Then something changed.
 
-In 1883, [doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
+In 1883, doctors founded the Journal of the American Medical Association (JAMA) [@jama-founded-1893] and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
 
-**{{< var pre_1962_physician_count >}} physicians** across America (see [reference](../references.qmd#pre-1962-physician-trials)) tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but made them smell funny."
+**{{< var pre_1962_physician_count >}} physicians** across America (see reference [@pre-1962-physician-trials]) tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but made them smell funny."
 
 Leading experts reviewed these case reports, compiled them into studies, and published results. If a medicine worked and didn't kill people, JAMA gave it a seal of approval.
 
@@ -50,7 +50,7 @@ Crowdsourced, observational, objective, peer-reviewed clinical research. And it 
 
 ### The Result
 
-After 10,000 years of zero progress, human life expectancy suddenly increased by [3.82 years every decade](../references.qmd#life-expectancy-increase-pre-1962) (calculated from 1880-1960 data). For 80 years.
+After 10,000 years of zero progress, human life expectancy suddenly increased by 3.82 years every decade [@life-expectancy-increase-pre-1962] (calculated from 1880-1960 data). For 80 years.
 
 The most linear relationship in medical history. Suspiciously perfect. It lasted from 1883 to 1960.
 
@@ -64,7 +64,7 @@ Congress [reacted](https://en.wikipedia.org/wiki/Elixir_sulfanilamide) by requir
 
 These requirements evolved into the [Phase 1 Safety Trial](https://en.wikipedia.org/wiki/Phase_1_safety_trial). This was reasonable - testing if a compound kills people before giving it to patients makes sense.
 
-The consistent [3.82 years per decade increase](../references.qmd#life-expectancy-increase-pre-1962) in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
+The consistent 3.82 years per decade increase [@life-expectancy-increase-pre-1962] in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
 
 ![Fda safety trials life expectancy](../../assets/images/fda-safety-trials-life-expectancy.png)
 
@@ -72,9 +72,9 @@ The regulations had no measurable positive or negative impact on developing life
 
 ### 1950s – Thalidomide: When Safety Regulations Actually Worked
 
-Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, [it resulted in thousands of horrific congenital disabilities](../references.qmd#thalidomide-birth-defects).
+Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, it resulted in thousands of horrific congenital disabilities [@thalidomide-birth-defects].
 
-[Existing FDA safety regulations prevented any birth defects in the US](../references.qmd#thalidomide-no-us-birth-defects). The 1938 safety testing framework worked exactly as intended. Zero American babies harmed.
+Existing FDA safety regulations prevented any birth defects in the US [@thalidomide-no-us-birth-defects]. The 1938 safety testing framework worked exactly as intended. Zero American babies harmed.
 
 Despite this success story for safety regulations, newspaper stories like the one below created public outcry for *more* regulation - targeting efficacy testing instead.
 
@@ -84,7 +84,7 @@ Despite this success story for safety regulations, newspaper stories like the on
 
 Effective **safety** regulations were already in place. They worked. America had zero Thalidomide deaths while Europe had thousands. Safety testing succeeded.
 
-So naturally, the government responded to this success by adding massive **efficacy** regulations via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962).
+So naturally, the government responded to this success by adding massive **efficacy** regulations via the 1962 Kefauver Harris Amendment [@kefauver-harris-amendment-1962].
 
 The problem wasn't safety testing - that was fine. The problem was taking over efficacy testing from {{< var pre_1962_physician_count >}} independent doctors and giving it to the drug companies themselves, while making it {{< var recovery_trial_cost_reduction_factor >}} times more expensive and {{< var fda_to_oxford_recovery_trial_time_multiplier >}} times slower.
 
@@ -92,14 +92,14 @@ The problem wasn't safety testing - that was fine. The problem was taking over e
 
 Before 1962:
 
-- Drug companies spent **{{< var pre_1962_drug_development_cost_2024_usd >}}** (inflation-adjusted) to prove safety (see [reference](../references.qmd#pre-1962-drug-costs-timeline))
-- Once approved as safe, **{{< var pre_1962_physician_count >}} independent doctors tested efficacy** on real patients (see [reference](../references.qmd#pre-1962-physician-trials))
+- Drug companies spent **{{< var pre_1962_drug_development_cost_2024_usd >}}** (inflation-adjusted) to prove safety (see reference [@pre-1962-drug-costs-timeline])
+- Once approved as safe, **{{< var pre_1962_physician_count >}} independent doctors tested efficacy** on real patients (see reference [@pre-1962-physician-trials])
 - The third-party AMA compiled results and published findings
 
 After 1962:
 
 - FDA took over efficacy testing
-- [Made the old system illegal](../references.qmd#kefauver-harris-amendment-1962)
+- Made the old system illegal [@kefauver-harris-amendment-1962]
 - Required small, controlled trials run by... the drug companies themselves
 
 The irony: Regulations meant to ensure drugs work did this by:
@@ -118,7 +118,7 @@ The 1962 regulations, explicitly about ensuring efficacy, massively reduced the 
 
 #### What Happened to New Treatments
 
-The new regulations immediately **reduced new drug approvals by {{< var post_1962_drug_approval_reduction_pct >}}** (see [reference](../references.qmd#post-1962-drug-approval-drop)).
+The new regulations immediately **reduced new drug approvals by {{< var post_1962_drug_approval_reduction_pct >}}** (see reference [@post-1962-drug-approval-drop]).
 
 Not gradually. Immediately.
 
@@ -136,7 +136,7 @@ A {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. For wor
 
 The new regulations created such massive delay that the pharmaceutical industry complained about a "drug lag."
 
-Congress "fixed" this by [extending drug patent monopolies](../references.qmd#drug-price-competition-act-1984) in 1984.
+Congress "fixed" this by extending drug patent monopolies [@drug-price-competition-act-1984] in 1984.
 
 Kefauver's amendments, meant to make drugs safer and cheaper, instead made them:
 
@@ -150,17 +150,17 @@ The placebo-controlled, randomized controlled trial helped gauge individual drug
 
 ### What Happened to Life Expectancy (The Part That Matters)
 
-Remember that suspiciously linear [3.82-year increase](../references.qmd#life-expectancy-increase-pre-1962) in life expectancy every decade from 1883 to 1960?
+Remember that suspiciously linear 3.82-year increase [@life-expectancy-increase-pre-1962] in life expectancy every decade from 1883 to 1960?
 
 Here's what happened in 1962:
 
-It strangely quickly dropped by [60%](../references.qmd#post-1962-life-expectancy-slowdown). To 1.54 years per decade.
+It strangely quickly dropped by 60% [@post-1962-life-expectancy-slowdown]. To 1.54 years per decade.
 
 ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
-From 1880 to 1960: [3.82 years per decade](../references.qmd#life-expectancy-increase-pre-1962).
+From 1880 to 1960: 3.82 years per decade [@life-expectancy-increase-pre-1962].
 
-From 1962 onward: [1.54 years per decade](../references.qmd#post-1962-life-expectancy-slowdown).
+From 1962 onward: 1.54 years per decade [@post-1962-life-expectancy-slowdown].
 
 The break is so clean you can see exactly when Congress decided to "help."
 
@@ -205,8 +205,8 @@ More people survive as more treatments are developed. There's a [strong correlat
 ## The Summary
 
 - 10,000 years: Zero progress
-- 1880-1960: Decentralized real-world trials, [3.82 years/decade progress](../references.qmd#life-expectancy-increase-pre-1962)
-- 1962: Kefauver-Harris passes, progress [drops 60%](../references.qmd#post-1962-life-expectancy-slowdown) to 1.54 years/decade
+- 1880-1960: Decentralized real-world trials, 3.82 years/decade progress [@life-expectancy-increase-pre-1962]
+- 1962: Kefauver-Harris passes, progress drops 60% [@post-1962-life-expectancy-slowdown] to 1.54 years/decade
 - Today: Still stuck with the broken system
 
 Humanity solved medical progress in 1883. Congress broke it in 1962.

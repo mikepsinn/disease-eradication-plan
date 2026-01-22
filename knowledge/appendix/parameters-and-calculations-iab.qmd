@@ -1033,7 +1033,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Average annual stock market return (10%)
 
-**Source**: [CNBC (2025) - Warren Buffett's career average investment return](../references.qmd#warren-buffett-career-average-return-20-pct)
+**Source**: [@warren-buffett-career-average-return-20-pct]
 
 *✓ High confidence*
 
@@ -1045,7 +1045,7 @@ Average annual stock market return (10%)
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -1069,7 +1069,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 Annual deaths from active combat worldwide
 
-**Source**: [ACLED (2024) - Active combat deaths annually](../references.qmd#acled-active-combat-deaths)
+**Source**: [@acled-active-combat-deaths]
 
 #### Uncertainty Range
 
@@ -1093,7 +1093,7 @@ Annual deaths from active combat worldwide
 
 Annual deaths from state violence
 
-**Source**: [UCDP - State violence deaths annually](../references.qmd#ucdp-state-violence-deaths)
+**Source**: [@ucdp-state-violence-deaths]
 
 #### Uncertainty Range
 
@@ -1117,7 +1117,7 @@ Annual deaths from state violence
 
 Annual deaths from terror attacks globally
 
-**Source**: [Our World in Data (2024) - Terror attack deaths (8,300 annually)](../references.qmd#gtd-terror-attack-deaths)
+**Source**: [@gtd-terror-attack-deaths]
 
 #### Uncertainty Range
 
@@ -1141,7 +1141,7 @@ Annual deaths from terror attacks globally
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
-**Source**: [Institute for Health Metrics and Evaluation (IHME) (2024) - IHME Global Burden of Disease 2021 (2.88B DALYs, 1.13B YLD)](../references.qmd#ihme-gbd-2021)
+**Source**: [@ihme-gbd-2021]
 
 #### Uncertainty Range
 
@@ -1161,7 +1161,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 Annual environmental damage and restoration costs from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1185,7 +1185,7 @@ Annual environmental damage and restoration costs from conflict
 
 Annual infrastructure damage to communications from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1209,7 +1209,7 @@ Annual infrastructure damage to communications from conflict
 
 Annual infrastructure damage to education facilities from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1233,7 +1233,7 @@ Annual infrastructure damage to education facilities from conflict
 
 Annual infrastructure damage to energy systems from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1257,7 +1257,7 @@ Annual infrastructure damage to energy systems from conflict
 
 Annual infrastructure damage to healthcare facilities from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1281,7 +1281,7 @@ Annual infrastructure damage to healthcare facilities from conflict
 
 Annual infrastructure damage to transportation from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1305,7 +1305,7 @@ Annual infrastructure damage to transportation from conflict
 
 Annual infrastructure damage to water systems from conflict
 
-**Source**: [Brown Watson Costs of War - Environmental cost of war (\$100B annually)](../references.qmd#environmental-cost-of-war)
+**Source**: [@environmental-cost-of-war]
 
 #### Uncertainty Range
 
@@ -1329,7 +1329,7 @@ Annual infrastructure damage to water systems from conflict
 
 Annual lost economic growth from military spending opportunity cost
 
-**Source**: [SIPRI (2016) - 36:1 disparity ratio of spending on weapons over cures](../references.qmd#disparity-ratio-weapons-vs-cures)
+**Source**: [@disparity-ratio-weapons-vs-cures]
 
 #### Uncertainty Range
 
@@ -1353,7 +1353,7 @@ Annual lost economic growth from military spending opportunity cost
 
 Annual lost productivity from conflict casualties
 
-**Source**: [Think by Numbers (2021) - Lost human capital due to war (\$270B annually)](../references.qmd#lost-human-capital-war-cost)
+**Source**: [@lost-human-capital-war-cost]
 
 #### Uncertainty Range
 
@@ -1377,7 +1377,7 @@ Annual lost productivity from conflict casualties
 
 Annual PTSD and mental health costs from conflict
 
-**Source**: [PubMed - Psychological impact of war cost (\$100B annually)](../references.qmd#psychological-impact-war-cost)
+**Source**: [@psychological-impact-war-cost]
 
 #### Uncertainty Range
 
@@ -1401,7 +1401,7 @@ Annual PTSD and mental health costs from conflict
 
 Annual refugee support costs (108.4M refugees × $1,384/year)
 
-**Source**: [CGDev (2024) - UNHCR average refugee support cost](../references.qmd#unhcr-refugee-support-cost)
+**Source**: [@unhcr-refugee-support-cost]
 
 #### Uncertainty Range
 
@@ -1425,7 +1425,7 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 Annual trade disruption costs from currency instability
 
-**Source**: [World Bank - World Bank trade disruption cost from conflict](../references.qmd#world-bank-trade-disruption-conflict)
+**Source**: [@world-bank-trade-disruption-conflict]
 
 #### Uncertainty Range
 
@@ -1449,7 +1449,7 @@ Annual trade disruption costs from currency instability
 
 Annual trade disruption costs from energy price volatility
 
-**Source**: [World Bank - World Bank trade disruption cost from conflict](../references.qmd#world-bank-trade-disruption-conflict)
+**Source**: [@world-bank-trade-disruption-conflict]
 
 #### Uncertainty Range
 
@@ -1473,7 +1473,7 @@ Annual trade disruption costs from energy price volatility
 
 Annual trade disruption costs from shipping disruptions
 
-**Source**: [World Bank - World Bank trade disruption cost from conflict](../references.qmd#world-bank-trade-disruption-conflict)
+**Source**: [@world-bank-trade-disruption-conflict]
 
 #### Uncertainty Range
 
@@ -1497,7 +1497,7 @@ Annual trade disruption costs from shipping disruptions
 
 Annual trade disruption costs from supply chain disruptions
 
-**Source**: [World Bank - World Bank trade disruption cost from conflict](../references.qmd#world-bank-trade-disruption-conflict)
+**Source**: [@world-bank-trade-disruption-conflict]
 
 #### Uncertainty Range
 
@@ -1521,7 +1521,7 @@ Annual trade disruption costs from supply chain disruptions
 
 Annual veteran healthcare costs (20-year projected)
 
-**Source**: [VA (2026) - Veteran healthcare cost projections](../references.qmd#veteran-healthcare-cost-projections)
+**Source**: [@veteran-healthcare-cost-projections]
 
 #### Uncertainty Range
 
@@ -1545,7 +1545,7 @@ Annual veteran healthcare costs (20-year projected)
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
-**Source**: [Derived from global market size and public/private funding ratios - Private industry clinical trial spending](../references.qmd#industry-clinical-trial-spending-estimate)
+**Source**: [@industry-clinical-trial-spending-estimate]
 
 #### Uncertainty Range
 
@@ -1569,7 +1569,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 Total global household wealth (2022/2023 estimate)
 
-**Source**: [Credit Suisse/UBS (2023) - Credit Suisse Global Wealth Report 2023](../references.qmd#cs-global-wealth-report-2023)
+**Source**: [@cs-global-wealth-report-2023]
 
 *✓ High confidence*
 
@@ -1581,7 +1581,7 @@ Total global household wealth (2022/2023 estimate)
 
 Global military spending in 2024
 
-**Source**: [SIPRI (2025) - Global military spending (\$2.72T, 2024)](../references.qmd#global-military-spending)
+**Source**: [@global-military-spending]
 
 #### Uncertainty Range
 
@@ -1597,7 +1597,7 @@ Global military spending in 2024
 
 Phase 3 cost per patient (median from FDA study)
 
-**Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
+**Source**: [@trial-costs-fda-study]
 
 #### Uncertainty Range
 
@@ -1621,7 +1621,7 @@ Phase 3 cost per patient (median from FDA study)
 
 Value of Statistical Life (conservative estimate)
 
-**Source**: [DOT (2024) - DOT Value of Statistical Life (\$13.6M)](../references.qmd#dot-vsl-13-6m)
+**Source**: [@dot-vsl-13-6m]
 
 #### Uncertainty Range
 

@@ -200,13 +200,13 @@ if __name__ == "__main__":
     import sys
     sys.path.insert(0, str(Path(__file__).parent.parent))
 
-    from dih_models.reference_parser import parse_references_qmd
+    from dih_models.reference_parser import parse_references_bib_keys
 
     project_root = Path(__file__).parent.parent
 
-    # Parse references
-    references_path = project_root / "knowledge" / "references.qmd"
-    available_refs = parse_references_qmd(references_path)
+    # Parse references from BibTeX
+    bib_path = project_root / "references.bib"
+    available_refs = parse_references_bib_keys(bib_path)
 
     # Parse parameters (simplified - normally done by main script)
     params_file = project_root / "dih_models" / "parameters.py"

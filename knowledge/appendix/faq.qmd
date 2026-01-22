@@ -415,10 +415,10 @@ You're not declaring war. You're declaring peace with biology and letting market
 
 **Response**: Addressable problem. The system combines proven methods:
 
-- Government IDs: National e-ID systems ([Estonia](../references.qmd#estonia-eresidency-stats), [India](../references.qmd#indian-aadhaar-system), [EU](../references.qmd#eu-eidas-network))
+- Government IDs: National e-ID systems (Estonia [@estonia-eresidency-stats], India [@indian-aadhaar-system], EU [@eu-eidas-network])
 - Biometrics: Fingerprints and face scans help ensure unique individuals
 - AI fraud detection: Algorithms spot suspicious patterns
-- Mathematical verification: [End-to-end verifiable voting](../references.qmd#helios-voting) with zero-knowledge proofs
+- Mathematical verification: End-to-end verifiable voting [@helios-voting] with zero-knowledge proofs
 
 These technologies already verify hundreds of millions globally for banking and government services.
 
@@ -426,7 +426,7 @@ These technologies already verify hundreds of millions globally for banking and 
 
 **Objection**: "You can't save humanity while boiling the oceans with crypto mining."
 
-**Response**: That's old technology. This uses modern, energy-efficient [Proof-of-Stake systems, which consume 99.9% less energy](../references.qmd#pos-energy-efficiency) than early Proof-of-Work blockchains. Saving global health includes planetary health.
+**Response**: That's old technology. This uses modern, energy-efficient Proof-of-Stake systems, which consume 99.9% less energy [@pos-energy-efficiency] than early Proof-of-Work blockchains. Saving global health includes planetary health.
 
 ## "Billionaires Will Seize Control"
 
@@ -444,7 +444,7 @@ These technologies already verify hundreds of millions globally for banking and 
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"
 
-**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves [80× lower cost per patient](../references.qmd#recovery-trial-82x-cost-reduction). Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} [per patient](../references.qmd#recovery-cost-500) versus {{< var traditional_phase3_cost_per_patient >}} in [traditional trials](../references.qmd#trial-cost-41k).
+**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80× lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} per patient [@recovery-cost-500] versus {{< var traditional_phase3_cost_per_patient >}} in traditional trials [@trial-cost-41k].
 
 The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that budget, this model could run 2,800 trials for 2.8 million patients. Evidence is strong.
 
@@ -458,7 +458,7 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 
 **Objection**: "This will destroy millions of military industry jobs."
 
-**Response**: This redirects resources into a new job creation engine. The US contribution is less than 0.5% of [trillions the Pentagon can't account for](../references.qmd#pentagon-unaccounted-2-5t). That wasted money creates medical jobs instead. Engineers building guidance systems can build next-generation medical imaging devices. This could be a net job creator.
+**Response**: This redirects resources into a new job creation engine. The US contribution is less than 0.5% of trillions the Pentagon can't account for [@pentagon-unaccounted-2-5t]. That wasted money creates medical jobs instead. Engineers building guidance systems can build next-generation medical imaging devices. This could be a net job creator.
 
 ## "This Disrespects Soldiers"
 
@@ -473,7 +473,7 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 **Response**: Hire good lawyers. Keep everything separate.
 
 - Separate legal entities in each country with zero coordination on political spending
-- Utility token structures with proper exemptions ([Reg S](../references.qmd#sec-reg-s), [Reg A+](../references.qmd#sec-reg-a))
+- Utility token structures with proper exemptions (Reg S [@sec-reg-s], Reg A+ [@sec-reg-a])
 - No shared systems, staff, or communication between entities involved in political action
 
 Addressable legal challenge.
@@ -482,7 +482,7 @@ Addressable legal challenge.
 
 **Objection**: "What stops Russia or China from sabotaging the system?"
 
-**Response**: Start with friendly nations ([US/EU cover 55% of spending](../references.qmd#us-eu-military-spending-share)). Holdouts like [Russia (<10% share)](../references.qmd#russia-military-spending-share) struggle to derail the math. The alternative is unchecked geopolitics, risking [nuclear winter killing 5+ billion people](../references.qmd#nuke-winter-150tg). Even partial adoption is better.
+**Response**: Start with friendly nations (US/EU cover 55% of spending [@us-eu-military-spending-share]). Holdouts like Russia (<10% share) [@russia-military-spending-share] struggle to derail the math. The alternative is unchecked geopolitics, risking nuclear winter killing 5+ billion people [@nuke-winter-150tg]. Even partial adoption is better.
 
 ## Conclusion
 

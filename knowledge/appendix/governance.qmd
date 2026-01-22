@@ -88,7 +88,7 @@ Since the ecosystem enabled by a [decentralized framework for drug assessment (d
 
 **The Challenge:** A {{< var treaty_annual_funding >}} treasury is a massive target for hackers, fraudsters, and corrupt actors.
 
-[Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](../references.qmd#dao-multisig-vulnerabilities).
+Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks [@dao-multisig-vulnerabilities].
 
 ### The Multi-Layered Defense
 
@@ -101,7 +101,7 @@ Since the ecosystem enabled by a [decentralized framework for drug assessment (d
     - Every VICTORY Incentive Alignment Bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
     - No human signers = no kidnapping, corruption, or coercion targets
     - Smart contracts automatically execute community decisions after 24-72h timelocks
-    - [Battle-tested approach managing billions in existing DAOs](../references.qmd#makerdao-scale)
+    - Battle-tested approach managing billions in existing DAOs [@makerdao-scale]
 
 2.  **AI-Powered Fraud Detection**
 

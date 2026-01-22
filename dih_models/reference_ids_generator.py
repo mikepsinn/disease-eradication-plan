@@ -4,7 +4,7 @@
 Reference IDs enum generation utilities for dih_models
 =======================================================
 
-Generate dih_models/reference_ids.py enum from references.qmd.
+Generate dih_models/reference_ids.py enum from references.bib.
 
 Functions:
 - generate_reference_ids_enum() - Generate ReferenceID enum for IDE autocomplete
@@ -29,7 +29,7 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     Developers can use ReferenceID.CDC_LEADING_CAUSES_DEATH instead of strings.
 
     Args:
-        available_refs: Set of reference IDs from references.qmd
+        available_refs: Set of reference IDs from references.bib
         output_path: Path to write reference_ids.py
     """
     content = []
@@ -38,7 +38,7 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     content.append("AUTO-GENERATED FILE - DO NOT EDIT")
     content.append("=" * 70)
     content.append("")
-    content.append("Valid reference IDs extracted from knowledge/references.qmd")
+    content.append("Valid reference IDs extracted from knowledge/references.bib")
     content.append("")
     content.append("Usage in parameters.py:")
     content.append("    from .reference_ids import ReferenceID")
@@ -60,7 +60,7 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     content.append("")
     content.append("")
     content.append("class ReferenceID(str, Enum):")
-    content.append('    """Valid reference IDs from knowledge/references.qmd"""')
+    content.append('    """Valid reference IDs from knowledge/references.bib"""')
     content.append("")
 
     # Sort reference IDs for consistent output

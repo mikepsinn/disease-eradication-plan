@@ -20,20 +20,20 @@ Here's where every dollar goes in the global clinical trials industry, broken do
 
 ## The Bottom Line: {{< var global_clinical_trials_spending_annual >}} Annually (2024)
 
-Source: [Industry clinical trial spending estimate](../references.qmd#industry-clinical-trial-spending-estimate)
+Source: [@industry-clinical-trial-spending-estimate]
 
 Global clinical trial spending totals approximately **{{< var global_clinical_trials_spending_annual >}}** (95% CI: $50-75B), using conservative pharma R&D estimates rather than inflated market reports:
 
-- **Industry**: [$45-60 billion](../references.qmd#industry-clinical-trial-spending-estimate) (15-20% of {{< var global_pharma_rd_spending_annual >}} total pharma R&D)
-- **Government**: [$3-6 billion](../references.qmd#global-government-clinical-trial-spending-estimate) (interventional trials only)
-- **Nonprofits**: [$2-5 billion](../references.qmd#nonprofit-clinical-trial-spending-estimate) (foundations, disease advocacy groups)
+- **Industry**: $45-60 billion [@industry-clinical-trial-spending-estimate] (15-20% of {{< var global_pharma_rd_spending_annual >}} total pharma R&D)
+- **Government**: $3-6 billion [@global-government-clinical-trial-spending-estimate] (interventional trials only)
+- **Nonprofits**: $2-5 billion [@nonprofit-clinical-trial-spending-estimate] (foundations, disease advocacy groups)
 
 **Note**: Earlier market reports cited {{< var global_clinical_trials_spending_annual >}}, but this conflated market size projections with actual spending and included CRO revenue double-counting.
 
 ### Growth trajectory
 
 - 2024: {{< var global_clinical_trials_spending_annual >}} (actual spending)
-- Market projections: [$83-132 billion by 2030](../references.qmd#clinical-trials-market-projection-2030) (includes CRO revenue)
+- Market projections: $83-132 billion by 2030 [@clinical-trials-market-projection-2030] (includes CRO revenue)
 
 ## How Many People Participate? The Missing Data
 
@@ -47,8 +47,8 @@ Global clinical trial spending totals approximately **{{< var global_clinical_tr
 
 #### Regional snapshots
 
-- England: [1.05 million participants in 2023/24](../references.qmd#england-trial-participants-2023-24)
-- US active trials (2009): [Seeking 2.8 million participants](../references.qmd#us-trial-enrollment-targets-2009)
+- England: 1.05 million participants in 2023/24 [@england-trial-participants-2023-24]
+- US active trials (2009): Seeking 2.8 million participants [@us-trial-enrollment-targets-2009]
 
 **Median participants per trial** (from ClinicalTrials.gov data):
 
@@ -69,86 +69,86 @@ See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
 
 ### Phase 3: The Money Pit
 
-**Global Spending: [$29-45 billion annually](../references.qmd#phase-3-market-share-2024)** (~53-55% of total market)
+**Global Spending: $29-45 billion annually [@phase-3-market-share-2024]** (~53-55% of total market)
 
 Why Phase 3 dominates:
 
-- [Largest market share at 53.3%](../references.qmd#phase-3-market-share-2024) of all clinical trial spending (2024)
-- Requires [300-3,000 participants](../references.qmd#phase-3-participant-numbers)
-- Longest treatment periods ([38 months average](../references.qmd#phase-3-duration-average))
+- Largest market share at 53.3% [@phase-3-market-share-2024] of all clinical trial spending (2024)
+- Requires 300-3,000 participants [@phase-3-participant-numbers]
+- Longest treatment periods (38 months average [@phase-3-duration-average])
 - Most expensive phase per trial
 
 #### Cost per trial
 
-- Average: [$20-282 million](../references.qmd#phase-3-cost-per-trial-range) per trial
-- Median: [Over $19 million](../references.qmd#phase-3-median-cost) per trial
-- Range by therapeutic area: [$11.5M (dermatology) to $52.9M (pain/anesthesia)](../references.qmd#phase-3-therapeutic-area-costs)
+- Average: $20-282 million [@phase-3-cost-per-trial-range] per trial
+- Median: Over $19 million [@phase-3-median-cost] per trial
+- Range by therapeutic area: $11.5M (dermatology) to $52.9M (pain/anesthesia) [@phase-3-therapeutic-area-costs]
 
 #### Cost per patient
 
 - Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
-- Average: [$113,000 per patient](../references.qmd#phase-3-cost-per-patient-113k)
+- Average: $113,000 per patient [@phase-3-cost-per-patient-113k]
 
 #### As percentage of total drug development
 
-- [39.8% of total R&D expenditure](../references.qmd#phase-3-rd-percentage) goes to Phase 3 trials
+- 39.8% of total R&D expenditure [@phase-3-rd-percentage] goes to Phase 3 trials
 
 ### Phase 2: The Middle Child
 
-**Global Spending: [$15-25 billion annually](../references.qmd#phase-2-global-spending-estimate)** (estimated ~20-30% of market)
+**Global Spending: $15-25 billion annually [@phase-2-global-spending-estimate]** (estimated ~20-30% of market)
 
 #### Cost per trial
 
-- Average: [$13-65 million](../references.qmd#phase-2-cost-per-trial-range) per trial
-- Range by therapeutic area: [$7.0M (cardiovascular) to $19.6M (hematology)](../references.qmd#phase-2-therapeutic-area-costs)
+- Average: $13-65 million [@phase-2-cost-per-trial-range] per trial
+- Range by therapeutic area: $7.0M (cardiovascular) to $19.6M (hematology) [@phase-2-therapeutic-area-costs]
 
 #### Cost per patient
 
-- Average: [$130,000 per patient](../references.qmd#phase-2-cost-per-patient-130k)
+- Average: $130,000 per patient [@phase-2-cost-per-patient-130k]
 
 #### As percentage of total drug development
 
-- [17.4% of total R&D expenditure](../references.qmd#phase-2-rd-percentage) goes to Phase 2 trials
+- 17.4% of total R&D expenditure [@phase-2-rd-percentage] goes to Phase 2 trials
 
 #### Trial characteristics
 
-- Average participants: [~100-300 patients](../references.qmd#phase-2-participant-numbers)
-- Average duration: [2-3 years](../references.qmd#phase-2-duration-average)
+- Average participants: ~100-300 patients [@phase-2-participant-numbers]
+- Average duration: 2-3 years [@phase-2-duration-average]
 
 ### Phase 1: The Safety Gauntlet
 
-**Global Spending: [$8-15 billion annually](../references.qmd#phase-1-global-spending-estimate)** (estimated ~10-18% of market)
+**Global Spending: $8-15 billion annually [@phase-1-global-spending-estimate]** (estimated ~10-18% of market)
 
 #### Cost per trial
 
-- Average: [$4-28 million](../references.qmd#phase-1-cost-per-trial-range) per trial
-- Typical: [$25 million](../references.qmd#phase-1-cost-typical) per trial
+- Average: $4-28 million [@phase-1-cost-per-trial-range] per trial
+- Typical: $25 million [@phase-1-cost-typical] per trial
 
 #### Cost per patient
 
-- Average: [$137,000 per patient](../references.qmd#phase-1-cost-per-patient-137k) (highest per-patient cost!)
+- Average: $137,000 per patient [@phase-1-cost-per-patient-137k] (highest per-patient cost!)
 
 #### As percentage of total drug development
 
-- [9.2% of total R&D expenditure](../references.qmd#phase-1-rd-percentage) goes to Phase 1 trials (combined with proof of mechanism)
+- 9.2% of total R&D expenditure [@phase-1-rd-percentage] goes to Phase 1 trials (combined with proof of mechanism)
 
 #### Trial characteristics
 
-- Average participants: [~51 patients](../references.qmd#phase-1-participant-numbers)
-- Average duration: [27.8 months](../references.qmd#phase-1-duration-average)
-- [17% of all NIH-funded trials](../references.qmd#nih-phase-1-percentage) are Phase 1
+- Average participants: ~51 patients [@phase-1-participant-numbers]
+- Average duration: 27.8 months [@phase-1-duration-average]
+- 17% of all NIH-funded trials [@nih-phase-1-percentage] are Phase 1
 
 ### Phase 4: The Forgotten Phase
 
-**Global Spending: [$12+ billion annually](../references.qmd#phase-4-spending-2007)** (2007 estimate; likely [~$15-20 billion in 2024](../references.qmd#phase-4-spending-2024-estimate))
+**Global Spending: $12+ billion annually [@phase-4-spending-2007]** (2007 estimate; likely ~$15-20 billion in 2024 [@phase-4-spending-2024-estimate])
 
 #### Key facts
 
-- [11% of pharmaceutical R&D budgets](../references.qmd#phase-4-budget-percentage) allocated to Phase 4
-- [Growing at 23% annually](../references.qmd#phase-4-growth-rate) (as of 2007)
+- 11% of pharmaceutical R&D budgets [@phase-4-budget-percentage] allocated to Phase 4
+- Growing at 23% annually [@phase-4-growth-rate] (as of 2007)
 - Also called "post-marketing surveillance" or "pharmacovigilance studies"
-- Often [mandated by FDA](../references.qmd#fda-phase-4-requirements) after approval
-- [5% of NIH-funded trials](../references.qmd#nih-phase-4-percentage) are Phase 4
+- Often mandated by FDA [@fda-phase-4-requirements] after approval
+- 5% of NIH-funded trials [@nih-phase-4-percentage] are Phase 4
 
 #### Why it matters
 
@@ -162,113 +162,113 @@ Why Phase 3 dominates:
 
 ### Private Industry: The Heavy Hitter
 
-**Total Annual Spending: [$75-90 billion](../references.qmd#industry-clinical-trial-spending-estimate)** (~90% of global total)
+**Total Annual Spending: $75-90 billion [@industry-clinical-trial-spending-estimate]** (~90% of global total)
 
 #### Global pharmaceutical R&D
 
-- Total industry R&D: [$300+ billion annually](../references.qmd#pharma-novel-cure-rd-spending-20b)
+- Total industry R&D: $300+ billion annually [@pharma-novel-cure-rd-spending-20b]
 - Clinical trials portion: ~25-30% of total R&D
-- [Industry R&D grew 44% (inflation-adjusted) from 2012-2022](../references.qmd#industry-rd-growth-2012-2022): $170B → $247B
+- Industry R&D grew 44% (inflation-adjusted) from 2012-2022 [@industry-rd-growth-2012-2022]: $170B → $247B
 
 #### Top spenders (2024 R&D budgets)
 
 - Pharmaceutical companies dominate funding
 - Biotech firms increasingly important (especially in early phases)
-- [Venture capital: $146 billion invested over 3 years](../references.qmd#life-sciences-venture-capital-2024)
+- Venture capital: $146 billion invested over 3 years [@life-sciences-venture-capital-2024]
 
 #### Regional breakdown
 
 - **United States**: Largest market for clinical trials
-  - [US clinical trials market: $45 billion in 2024](../references.qmd#us-clinical-trials-market-2024)
+  - US clinical trials market: $45 billion in 2024 [@us-clinical-trials-market-2024]
   - ~54% of global market
 
 - **China**: Rising rapidly
-  - [39% of all global trials have at least one site in China](../references.qmd#china-trial-share-2024) (2024)
+  - 39% of all global trials have at least one site in China [@china-trial-share-2024] (2024)
   - Up from 25% in 2019
-  - [R&D spending: $15 billion annually](../references.qmd#china-medical-research-spending-15b)
-  - [China is now the world's leading trial location by volume](../references.qmd#china-leading-trial-location-2024)
+  - R&D spending: $15 billion annually [@china-medical-research-spending-15b]
+  - China is now the world's leading trial location by volume [@china-leading-trial-location-2024]
 
 - **Europe**: Steady player
-  - [Innovative Health Initiative (IHI)](../references.qmd#ihi-horizon-europe) under Horizon Europe funds public-private partnerships
+  - Innovative Health Initiative (IHI) [@ihi-horizon-europe] under Horizon Europe funds public-private partnerships
 
 ### Government: The Seed Investor
 
-**Total Annual Spending: [$3-6 billion on interventional clinical trials](../references.qmd#global-government-clinical-trial-spending-estimate)** (~5% of global total)
+**Total Annual Spending: $3-6 billion on interventional clinical trials [@global-government-clinical-trial-spending-estimate]** (~5% of global total)
 
 **Important distinction**: The NIH's $18.9B "clinical research" budget includes observational studies, epidemiology, cohort studies, and health services research, NOT just interventional drug trials. Actual government spending on Phase 1-4 interventional trials globally is only $3-6B/year.
 
 #### United States (NIH)
 
-- [Total NIH budget: $47.1 billion (FY2024)](../references.qmd#nih-budget-fy2025)
-  - [~80% goes to research](../references.qmd#nih-research-percentage), including clinical trials
+- Total NIH budget: $47.1 billion (FY2024) [@nih-budget-fy2025]
+  - ~80% goes to research [@nih-research-percentage], including clinical trials
 
-- [NIH clinical research funding: $18.9 billion (FY2023)](../references.qmd#nih-clinical-research-funding-2023)
-- [NIH spent $8.1 billion on phased clinical trials (2010-2019)](../references.qmd#nih-phased-trial-spending-2010-2019) for drugs ultimately approved
-  - [Only ~10% of industry spending](../references.qmd#nih-vs-industry-spending-ratio) over same period
+- NIH clinical research funding: $18.9 billion (FY2023) [@nih-clinical-research-funding-2023]
+- NIH spent $8.1 billion on phased clinical trials (2010-2019) [@nih-phased-trial-spending-2010-2019] for drugs ultimately approved
+  - Only ~10% of industry spending [@nih-vs-industry-spending-ratio] over same period
 
 **NIH spending by phase (per approved drug, 2010-2019 data):**
 
-- Phase 1: [$13.9 million average](../references.qmd#nih-phase-1-spending-per-drug)
-  - Represents [24.6-25.3% of industry Phase 1 costs](../references.qmd#nih-phase-1-industry-percentage)
+- Phase 1: $13.9 million average [@nih-phase-1-spending-per-drug]
+  - Represents 24.6-25.3% of industry Phase 1 costs [@nih-phase-1-industry-percentage]
 
-- Phase 2: [$22.2 million average](../references.qmd#nih-phase-2-spending-per-drug)
-  - Represents [21.4-23.2% of industry Phase 2 costs](../references.qmd#nih-phase-2-industry-percentage)
+- Phase 2: $22.2 million average [@nih-phase-2-spending-per-drug]
+  - Represents 21.4-23.2% of industry Phase 2 costs [@nih-phase-2-industry-percentage]
 
-- Phase 3: [$12.9 million average](../references.qmd#nih-phase-3-spending-per-drug)
-  - Represents only [3.7-4.3% of industry Phase 3 costs](../references.qmd#nih-phase-3-industry-percentage)
+- Phase 3: $12.9 million average [@nih-phase-3-spending-per-drug]
+  - Represents only 3.7-4.3% of industry Phase 3 costs [@nih-phase-3-industry-percentage]
 
 - **Total NIH per drug: $33.8 million** (when ultimately approved)
 
 #### NIH trial distribution
 
-- [17% Phase 1](../references.qmd#nih-phase-1-percentage)
-- [35% Phase 2](../references.qmd#nih-phase-2-percentage) (largest share)
-- [11% Phase 3](../references.qmd#nih-phase-3-percentage)
-- [5% Phase 4](../references.qmd#nih-phase-4-percentage)
-- [33% "Other" or unspecified phase](../references.qmd#nih-phase-other-percentage)
+- 17% Phase 1 [@nih-phase-1-percentage]
+- 35% Phase 2 [@nih-phase-2-percentage] (largest share)
+- 11% Phase 3 [@nih-phase-3-percentage]
+- 5% Phase 4 [@nih-phase-4-percentage]
+- 33% "Other" or unspecified phase [@nih-phase-other-percentage]
 
 NIH pays for the risky stuff, then hands it to industry once profit becomes likely:
 
-- NIH covers [~25% of Phase 1 costs](../references.qmd#nih-phase-1-coverage)
-- NIH covers [~22% of Phase 2 costs](../references.qmd#nih-phase-2-coverage)
-- NIH covers [only ~4% of Phase 3 costs](../references.qmd#nih-phase-3-coverage)
+- NIH covers ~25% of Phase 1 costs [@nih-phase-1-coverage]
+- NIH covers ~22% of Phase 2 costs [@nih-phase-2-coverage]
+- NIH covers only ~4% of Phase 3 costs [@nih-phase-3-coverage]
 - Industry takes over once commercial potential is clearer
 
 #### European Union
 
-- [Horizon Europe total: €95.5 billion (2021-2027)](../references.qmd#horizon-europe-budget)
+- Horizon Europe total: €95.5 billion (2021-2027) [@horizon-europe-budget]
   - Health research portion: Billions allocated
 
-- [Horizon Europe Health Budget: €8.2 billion (2021-2027)](../references.qmd#eu-horizon-health-budget-8-2b)
-  - [~€1.17 billion per year](../references.qmd#eu-annual-health-research-budget) (~$1.3 billion)
+- Horizon Europe Health Budget: €8.2 billion (2021-2027) [@eu-horizon-health-budget-8-2b]
+  - ~€1.17 billion per year [@eu-annual-health-research-budget] (~$1.3 billion)
 
-- [EU4Health Programme: €5.3 billion (2021-2027)](../references.qmd#eu4health-budget)
-  - [€726 million budget for 2024](../references.qmd#eu4health-2024-budget)
+- EU4Health Programme: €5.3 billion (2021-2027) [@eu4health-budget]
+  - €726 million budget for 2024 [@eu4health-2024-budget]
 
 #### China
 
-- Government R&D investment: Part of [$15 billion total biopharma R&D](../references.qmd#china-biopharma-rd-2023)
-- [Rapid growth: $35 million (2015) → $15 billion (2023)](../references.qmd#china-rd-growth-2015-2023)
+- Government R&D investment: Part of $15 billion total biopharma R&D [@china-biopharma-rd-2023]
+- Rapid growth: $35 million (2015) → $15 billion (2023) [@china-rd-growth-2015-2023]
 
 #### Other major government funders
 
-- UK: [~$3 billion annually on medical research](../references.qmd#uk-medical-research-spending-3b)
-- Germany: [~$6 billion annually](../references.qmd#germany-medical-research-spending-6b)
-- Japan: [~$5 billion annually](../references.qmd#japan-medical-research-spending-5b)
-- Canada: [~$1.5 billion annually](../references.qmd#canada-medical-research-spending-1-5b)
+- UK: ~$3 billion annually on medical research [@uk-medical-research-spending-3b]
+- Germany: ~$6 billion annually [@germany-medical-research-spending-6b]
+- Japan: ~$5 billion annually [@japan-medical-research-spending-5b]
+- Canada: ~$1.5 billion annually [@canada-medical-research-spending-1-5b]
 
 ### Nonprofit Foundations: The Niche Players
 
-**Total Annual Spending: [$2-5 billion globally](../references.qmd#nonprofit-clinical-trial-spending-estimate)** (~2-5% of global total)
+**Total Annual Spending: $2-5 billion globally [@nonprofit-clinical-trial-spending-estimate]** (~2-5% of global total)
 
 #### Major players (2024)
 
 **Gates Foundation + Wellcome Trust + Novo Nordisk:**
 
-- [New 3-year initiative: $300 million total ($100M each)](../references.qmd#gates-wellcome-novo-partnership-2024)
+- New 3-year initiative: $300 million total ($100M each) [@gates-wellcome-novo-partnership-2024]
   - Focus: Climate-health, infectious disease, AMR, nutrition-immunity
 
-- [TB vaccine funding: $550 million](../references.qmd#gates-wellcome-tb-vaccine-550m)
+- TB vaccine funding: $550 million [@gates-wellcome-tb-vaccine-550m]
   - Up to $150M from Wellcome, ~$400M from Gates
 
 #### Gates Foundation
@@ -290,8 +290,8 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### Special initiatives
 
-- [COVID-19 Therapeutics Accelerator](../references.qmd#covid-therapeutics-accelerator): Gates + Wellcome + Mastercard
-  - [$20 million in initial grants (2020)](../references.qmd#covid-therapeutics-initial-grants)
+- COVID-19 Therapeutics Accelerator [@covid-therapeutics-accelerator]: Gates + Wellcome + Mastercard
+  - $20 million in initial grants (2020) [@covid-therapeutics-initial-grants]
 
 ## The Brutal Economics: Cost Per Approved Drug
 
@@ -299,20 +299,20 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 **Industry average spending on clinical trials per approved drug:**
 
-- [Total clinical trial costs: $1,065 million per approved drug](../references.qmd#clinical-trials-cost-per-approved-drug)
+- Total clinical trial costs: $1,065 million per approved drug [@clinical-trials-cost-per-approved-drug]
   - Includes spending on failed drugs (most drugs fail)
 
 ### Breakdown by phase (industry average)
 
-- Phase 1: [$28 million per approved drug](../references.qmd#industry-phase-1-per-approved-drug)
-- Phase 2: [$65 million per approved drug](../references.qmd#industry-phase-2-per-approved-drug)
-- Phase 3: [$282 million per approved drug](../references.qmd#industry-phase-3-per-approved-drug)
+- Phase 1: $28 million per approved drug [@industry-phase-1-per-approved-drug]
+- Phase 2: $65 million per approved drug [@industry-phase-2-per-approved-drug]
+- Phase 3: $282 million per approved drug [@industry-phase-3-per-approved-drug]
 - **Subtotal for completed drugs: $375 million**
 - **Additional $690 million**: Spent on contemporaneous drugs that failed
 
 #### Success rates (the depressing math)
 
-- [Only ~12% of drugs entering Phase 1 gain FDA approval](../references.qmd#phase-1-to-approval-success-rate)
+- Only ~12% of drugs entering Phase 1 gain FDA approval [@phase-1-to-approval-success-rate]
   - 100 drugs start Phase 1
   - ~60 advance to Phase 2
   - ~20 enter Phase 3
@@ -334,22 +334,22 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### United States
 
-- [Clinical trials market size: $45 billion (2024)](../references.qmd#us-clinical-trials-market-2024)
-- NIH: [$18.9 billion in clinical research (2023)](../references.qmd#nih-clinical-research-funding-2023)
+- Clinical trials market size: $45 billion (2024) [@us-clinical-trials-market-2024]
+- NIH: $18.9 billion in clinical research (2023) [@nih-clinical-research-funding-2023]
 - Industry: Remainder (~$25-30 billion)
 
 ### Asia-Pacific: The Rising Giant
 
 #### China
 
-- [39% of global trials have sites in China (2024)](../references.qmd#china-trial-share-2024)
-- [Leading trial location globally by volume](../references.qmd#china-leading-trial-location-2024)
-- [R&D growth: $9.5B (2019) → $12.1B (2020) → $14.5B (2021)](../references.qmd#china-rd-annual-growth)
-- [Licensing deals: $41.5-46 billion in 2024](../references.qmd#china-licensing-deals-2024) (66% increase from 2023)
+- 39% of global trials have sites in China (2024) [@china-trial-share-2024]
+- Leading trial location globally by volume [@china-leading-trial-location-2024]
+- R&D growth: $9.5B (2019) → $12.1B (2020) → $14.5B (2021) [@china-rd-annual-growth]
+- Licensing deals: $41.5-46 billion in 2024 [@china-licensing-deals-2024] (66% increase from 2023)
 
 #### Why China is winning
 
-- [Faster and more affordable clinical trials](../references.qmd#china-trial-advantages)
+- Faster and more affordable clinical trials [@china-trial-advantages]
 - Larger patient populations
 - Government support for biopharma innovation
 - Improved regulatory framework
@@ -364,30 +364,30 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 #### Market share: ~25-30% of global market
 
 - Strong in Phase 2/3 trials
-- [EU4Health + Horizon Europe funding](../references.qmd#eu4health-budget)
+- EU4Health + Horizon Europe funding [@eu4health-budget]
 - Emphasis on collaborative, multinational trials
 
 ## What This Actually Means
 
 ### The Good News
 
-- [Industry spending grew 44% (2012-2022)](../references.qmd#industry-rd-growth-2012-2022)
+- Industry spending grew 44% (2012-2022) [@industry-rd-growth-2012-2022]
 - More trials running globally than ever
 - Technology enabling cheaper trials (see: RECOVERY trial at {{< var recovery_trial_cost_per_patient >}}/patient)
 
 #### The Bad News
 
-- {{< var global_clinical_trials_spending_annual >}} annually, yet [most diseases still have no treatment](../references.qmd#95-pct-diseases-no-treatment)
-- [95% of spending goes to Phase 2-3 trials](../references.qmd#phase-2-3-spending-percentage) for molecules that can be patented
-- [Success rate: 12%](../references.qmd#phase-1-to-approval-success-rate)
-- [Average time to develop one drug: 10+ years](../references.qmd#drug-development-timeline-17-years)
+- {{< var global_clinical_trials_spending_annual >}} annually, yet most diseases still have no treatment [@95-pct-diseases-no-treatment]
+- 95% of spending goes to Phase 2-3 trials [@phase-2-3-spending-percentage] for molecules that can be patented
+- Success rate: 12% [@phase-1-to-approval-success-rate]
+- Average time to develop one drug: 10+ years [@drug-development-timeline-17-years]
 - Cost per approved drug: Rising 8.5% annually
 
 #### The Context
 
 - Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}}**
 - Global military spending: **{{< var global_military_spending_annual_2024 >}}**
-- [Global pharmaceutical marketing: **$180 billion**](../references.qmd#pharma-marketing-spending-60b)
+- Global pharmaceutical marketing: **$180 billion** [@pharma-marketing-spending-60b]
 - **Humans spend {{< var military_to_clinical_trials_spending_ratio >}} more on weapons and 2× more on drug ads than on testing new treatments**
 
 ## The Efficiency Paradox
@@ -395,9 +395,9 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 ### Current system
 
 - {{< var global_clinical_trials_spending_annual >}} spent annually
-- [~50 new drugs approved per year globally](../references.qmd#global-new-drug-approvals-50-annually)
+- ~50 new drugs approved per year globally [@global-new-drug-approvals-50-annually]
 - **Cost per approved drug: {{< var clinical_trial_cost_per_approved_drug >}}** (using clinical trial spending alone)
-- Most are ["me-too" drugs](../references.qmd#me-too-drug-market-40b) (minor variations of existing treatments)
+- Most are "me-too" drugs [@me-too-drug-market-40b] (minor variations of existing treatments)
 
 **What the same money could buy (with a decentralized framework for drug assessment):**
 

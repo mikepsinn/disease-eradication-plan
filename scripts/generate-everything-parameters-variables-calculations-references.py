@@ -70,13 +70,11 @@ _project_root = _scripts_dir.parent
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
-from generate_references_json import generate_references_json  # noqa: E402
 from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
 
 # Import all generator modules
-from dih_models.bibtex_generator import generate_bibtex
-from dih_models.paper_bibliography_generator import generate_all_paper_bibliographies
+# NOTE: bibtex_generator and paper_bibliography_generator removed - references.bib is now source of truth
 from dih_models.chart_generators import (
     generate_tornado_chart_qmd,
     generate_sensitivity_table_qmd,
@@ -104,8 +102,8 @@ from dih_models.quarto_formatting import (
 )
 from dih_models.reference_ids_generator import generate_reference_ids_enum
 from dih_models.reference_parser import (
-    parse_references_qmd_detailed,
-    parse_references_qmd,
+    parse_references_bib,
+    parse_references_bib_keys,
     sanitize_bibtex_key,
 )
 from dih_models.search_index_generator import generate_search_indexes
@@ -430,17 +428,13 @@ def main():
     # Get project root
     project_root = Path(__file__).parent.parent.absolute()
 
-    # Parse references.qmd FIRST (before parameters.py, to avoid circular dependency)
-    print("[*] Parsing knowledge/references.qmd...")
-    references_path = project_root / "knowledge" / "references.qmd"
-    available_refs = parse_references_qmd(references_path)
+    # Parse references.bib FIRST (before parameters.py, to avoid circular dependency)
+    # references.bib is the single source of truth for all citations
+    print("[*] Parsing references.bib...")
+    bib_path = project_root / "references.bib"
+    from dih_models.reference_parser import parse_references_bib_keys
+    available_refs = parse_references_bib_keys(bib_path)
     print(f"[OK] Found {len(available_refs)} reference entries")
-    print()
-
-    # Generate references.json from references.qmd
-    print("[*] Generating knowledge/references.json...")
-    references_json_path = project_root / "knowledge" / "references.json"
-    generate_references_json(references_path, references_json_path)
     print()
 
     # Generate reference_ids.py enum SECOND (before loading parameters.py which imports it)
@@ -475,15 +469,12 @@ def main():
             print(f"  - Parameter '{param_name}' references missing citation: '{source_ref}'", file=sys.stderr)
         print(f"\n[ERROR] To fix missing references, follow these steps:", file=sys.stderr)
         print(f"[ERROR] ", file=sys.stderr)
-        print(f"[ERROR] 1. Search {references_path} for the correct citation ID:", file=sys.stderr)
-        print(f"[ERROR]    grep -i '{missing_refs[0][1].split('-')[0]}' {references_path}", file=sys.stderr)
+        print(f"[ERROR] 1. Search {bib_path} for the correct citation key:", file=sys.stderr)
+        print(f"[ERROR]    grep -i '{missing_refs[0][1].split('-')[0]}' {bib_path}", file=sys.stderr)
         print(f"[ERROR] ", file=sys.stderr)
-        print(f"[ERROR] 2. If found with different ID, update the parameter's source_ref in dih_models/parameters.py", file=sys.stderr)
-        print(f"[ERROR]    Then re-run this script to regenerate references.bib", file=sys.stderr)
+        print(f"[ERROR] 2. If found with different key, update the parameter's source_ref in dih_models/parameters.py", file=sys.stderr)
         print(f"[ERROR] ", file=sys.stderr)
-        print(f"[ERROR] 3. If NOT found, search the web for the citation and add to {references_path}:", file=sys.stderr)
-        print(f"[ERROR]    Format: <a id=\"{missing_refs[0][1]}\"></a>", file=sys.stderr)
-        print(f"[ERROR]    [Full citation text here]", file=sys.stderr)
+        print(f"[ERROR] 3. If NOT found, add the citation to {bib_path} in BibTeX format", file=sys.stderr)
         print(f"[ERROR] ", file=sys.stderr)
         print(f"[ERROR] 4. Re-run this script until all references validate:", file=sys.stderr)
         print(f"[ERROR]    .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py", file=sys.stderr)
@@ -600,25 +591,15 @@ def main():
     # NOTE: _variables.yml generation moved to AFTER Monte Carlo simulation
     # so we can embed confidence intervals from samples.json
 
-    # Generate references.bib (with full citation data from references.qmd)
-    print("[*] Generating references.bib...")
-    bib_output = project_root / "references.bib"
-    generate_bibtex(parameters, bib_output, available_refs=available_refs, references_path=references_path)
-    print()
-
-    # Generate per-paper filtered bibliographies (only cited refs in standalone PDFs)
-    print("[*] Generating per-paper filtered bibliographies...")
-    paper_bib_results = generate_all_paper_bibliographies(project_root)
-    if paper_bib_results:
-        print(f"[OK] Generated {len(paper_bib_results)} paper bibliographies")
-    else:
-        print("[*] No standalone papers found or no citations to filter")
+    # NOTE: references.bib is now the single source of truth (manually maintained)
+    # Per-paper filtered bibliographies are no longer generated - all papers use references.bib
+    print("[OK] Using references.bib as single source of truth for citations")
     print()
 
     # Generate TypeScript parameters file for Next.js/React apps
     print("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=references_path, params_file=parameters_path)
+    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path)
     print()
 
     # Generate TypeScript survey file (if survey exists)
@@ -1254,8 +1235,7 @@ def main():
     print("    1. Review generated files:")
     print(f"       - {output_path.relative_to(project_root)}")
     print(f"       - {qmd_output.relative_to(project_root)}")
-    print(f"       - {references_json_path.relative_to(project_root)}")
-    print(f"       - {bib_output.relative_to(project_root)}")
+    print(f"       - references.bib (source of truth)")
     print(f"       - {reference_ids_path.relative_to(project_root)}")
     print(f"       - {ts_output.relative_to(project_root)}")
     print(f"       - _analysis/parameter-summary.md")

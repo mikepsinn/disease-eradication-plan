@@ -32,13 +32,13 @@ Death is a mechanical failure. Your body is a machine that breaks down over time
 
 ## You Are a Self-Repairing Meat Robot
 
-Your DNA is [3 billion letters of code](../references.qmd#human-genome-and-genetic-editing). Not "like" code. It *is* code. We've learned to read it (the Human Genome Project) and we're learning to edit it (CRISPR). We are mechanics who have finally gotten our hands on the service manual.
+Your DNA is 3 billion letters of code [@human-genome-and-genetic-editing]. Not "like" code. It *is* code. We've learned to read it (the Human Genome Project) and we're learning to edit it (CRISPR). We are mechanics who have finally gotten our hands on the service manual.
 
 Every day, your body proves it's a machine by running a maintenance routine that would make a German car engineer weep:
 
-- You replace [330 billion cells daily](../references.qmd#cellular-turnover-rates).
-- You repair [10,000 DNA damage events in every cell, every day](../references.qmd#cellular-turnover-rates).
-- You rebuild your entire [skeleton every 10 years](../references.qmd#cellular-turnover-rates).
+- You replace 330 billion cells daily [@cellular-turnover-rates].
+- You repair 10,000 DNA damage events in every cell, every day [@cellular-turnover-rates].
+- You rebuild your entire skeleton every 10 years [@cellular-turnover-rates].
 
 You are not a static object. You are a pattern that persists while matter flows through you. You are a machine that is constantly rebuilding itself. Aging and disease are just signs that the rebuilding process is starting to fail.
 
@@ -48,15 +48,15 @@ You are not a static object. You are a pattern that persists while matter flows 
 
 Remember when losing a finger meant losing it forever? Not anymore:
 
-- **Lab-grown organs**: We've grown [bladders, windpipes, and blood vessels in labs](../references.qmd#regenerative-medicine-milestones) and installed them in humans. They work.
-- **3D-printed body parts**: We print custom [titanium skulls, jaws, and ribs](../references.qmd#regenerative-medicine-milestones). A kid in Michigan has a [3D-printed windpipe](../references.qmd#regenerative-medicine-milestones) keeping him alive.
-- **Regenerative medicine**: We can [regrow skin for burn victims, cartilage for damaged joints](../references.qmd#regenerative-medicine-milestones), and we're working on teeth.
+- **Lab-grown organs**: We've grown bladders, windpipes, and blood vessels in labs [@regenerative-medicine-milestones] and installed them in humans. They work.
+- **3D-printed body parts**: We print custom titanium skulls, jaws, and ribs [@regenerative-medicine-milestones]. A kid in Michigan has a 3D-printed windpipe [@regenerative-medicine-milestones] keeping him alive.
+- **Regenerative medicine**: We can regrow skin for burn victims, cartilage for damaged joints [@regenerative-medicine-milestones], and we're working on teeth.
 
 We're literally manufacturing replacement parts for humans. How is this not proof you're a machine?
 
 ### Exhibit B: We Can Reprogram Your Cells
 
-In 2006, [Shinya Yamanaka figured out how to turn adult cells back into stem cells](../references.qmd#yamanaka-factors-cellular-reprogramming). Any cell. From anywhere in your body. Back to factory settings.
+In 2006, Shinya Yamanaka figured out how to turn adult cells back into stem cells [@yamanaka-factors-cellular-reprogramming]. Any cell. From anywhere in your body. Back to factory settings.
 
 This means:
 
@@ -66,15 +66,15 @@ This means:
 
 It's like discovering every part of your car can transform into any other part. Need a new transmission? Just reprogram your air freshener.
 
-We [won a Nobel Prize](../references.qmd#yamanaka-factors-cellular-reprogramming) for figuring this out. We're just getting started using it.
+We won a Nobel Prize [@yamanaka-factors-cellular-reprogramming] for figuring this out. We're just getting started using it.
 
 ### Exhibit C: We're Debugging Your Code
 
 Gene therapy is literally debugging human software:
 
-- **[Luxturna](../references.qmd#landmark-gene-therapies)** (2017): Fixes blindness caused by mutated RPE65 gene. One injection. Sight restored.
-- **[Zolgensma](../references.qmd#landmark-gene-therapies)** (2019): Fixes spinal muscular atrophy. Babies who would die before age 2 now walk.
-- **[CAR-T therapy](../references.qmd#landmark-gene-therapies)** (2017): Reprograms your immune system to hunt cancer. Complete remission in "incurable" cases.
+- **Luxturna [@landmark-gene-therapies]** (2017): Fixes blindness caused by mutated RPE65 gene. One injection. Sight restored.
+- **Zolgensma [@landmark-gene-therapies]** (2019): Fixes spinal muscular atrophy. Babies who would die before age 2 now walk.
+- **CAR-T therapy [@landmark-gene-therapies]** (2017): Reprograms your immune system to hunt cancer. Complete remission in "incurable" cases.
 
 We're not treating symptoms anymore. We're fixing the actual code. Like updating your car's ECU firmware to fix an engine problem.
 
@@ -114,17 +114,17 @@ The only difference: We always know how to fix the car.
 
 Some animals don't age. They just... don't:
 
-- **Hydra**: Freshwater polyps that are [biologically immortal](../references.qmd#biological-immortality-in-nature).
-- **Planarian worms**: Cut one in half, get two worms. [Both younger than the original](../references.qmd#biological-immortality-in-nature).
-- **Axolotls**: [Regrow entire limbs, parts of their brain, heart tissue](../references.qmd#biological-immortality-in-nature). No scarring.
-- **Naked mole rats**: [Live 10x longer than similar-sized mammals. Don't get cancer](../references.qmd#biological-immortality-in-nature).
-- **Bowhead whales**: [Live 200+ years](../references.qmd#biological-immortality-in-nature) with no signs of age-related disease.
+- **Hydra**: Freshwater polyps that are biologically immortal [@biological-immortality-in-nature].
+- **Planarian worms**: Cut one in half, get two worms. Both younger than the original [@biological-immortality-in-nature].
+- **Axolotls**: Regrow entire limbs, parts of their brain, heart tissue [@biological-immortality-in-nature]. No scarring.
+- **Naked mole rats**: Live 10x longer than similar-sized mammals. Don't get cancer [@biological-immortality-in-nature].
+- **Bowhead whales**: Live 200+ years [@biological-immortality-in-nature] with no signs of age-related disease.
 
 If aging was mandatory, these creatures couldn't exist. But they do. Nature solved aging. You just need to steal the solution.
 
 ### We've Already Reversed Aging (In Mice... and Human Cells)
 
-This isn't theoretical. [We've done it](../references.qmd#aging-reversal-mammals-yamanaka):
+This isn't theoretical. We've done it [@aging-reversal-mammals-yamanaka]:
 
 - **109% lifespan extension** in aged mice using gene therapy (OSK factors)
 - **30-year epigenetic age reversal** in human skin cells (Babraham Institute)
@@ -137,7 +137,7 @@ The mechanisms are understood. The proof exists. We're not waiting for a breakth
 
 ### The Hallmarks of Aging (All Fixable)
 
-Scientists identified [nine "hallmarks of aging."](../references.qmd#hallmarks-of-aging) Every one is a mechanical problem with a mechanical solution:
+Scientists identified nine "hallmarks of aging." [@hallmarks-of-aging] Every one is a mechanical problem with a mechanical solution:
 
 1. **Genomic instability** → Gene editing (CRISPR)
 2. **Telomere shortening** → Telomerase activation
@@ -155,7 +155,7 @@ You're not waiting for magic. You're systematically fixing each broken subsystem
 
 ### The Manhattan Project for Not Dying
 
-The [Manhattan Project cost $28 billion (adjusted for inflation)](../references.qmd#manhattan-project-cost-30b) and took 3 years. Result: Nuclear weapons.
+The Manhattan Project cost $28 billion (adjusted for inflation) [@manhattan-project-cost-30b] and took 3 years. Result: Nuclear weapons.
 
 Humans spend {{< var global_med_research_spending >}} per year globallyon all medical research combined. For everything. Cancer, Alzheimer's, heart disease, aging, rare diseases - everything.
 
@@ -175,7 +175,7 @@ A [1% treaty](../solution/1-percent-treaty.qmd) fixes this by making cures more 
 
 Your body is not a mystical entity. It is a machine. Every disease is a broken part. Every death is a mechanical failure.
 
-We have already proven we can read the blueprint (DNA), edit the code (CRISPR), and replace the parts (organ transplants). We know [how to test which medicines work](../problem/untapped-therapeutic-frontier.qmd): pragmatic trials cost [$500 per patient](../references.qmd#recovery-cost-500) instead of the traditional [$41,000](../references.qmd#trial-cost-41k). The bottleneck isn't knowledge - it's [clinical trials](../problem/untapped-therapeutic-frontier.qmd). We've tested [less than 1% of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds.
+We have already proven we can read the blueprint (DNA), edit the code (CRISPR), and replace the parts (organ transplants). We know [how to test which medicines work](../problem/untapped-therapeutic-frontier.qmd): pragmatic trials cost $500 per patient [@recovery-cost-500] instead of the traditional $41,000 [@trial-cost-41k]. The bottleneck isn't knowledge - it's [clinical trials](../problem/untapped-therapeutic-frontier.qmd). We've tested [less than 1% of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds.
 
 The only reason you are still aging and dying is because humans, as a species, have decided to spend **{{< var military_to_government_clinical_trials_spending_ratio >}} times more money** on weapons to break our machines than on clinical trials to discover which medicines actually fix them.
 

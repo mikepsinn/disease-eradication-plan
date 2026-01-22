@@ -137,7 +137,7 @@ k_{RECOVERY} \\
 \end{gathered}
 $$
 
-**Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+**Methodology**: [@recovery-trial-82x-cost-reduction]
 
 *✓ High confidence*
 
@@ -167,7 +167,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
-**Source**: [IQVIA Report - Global trial capacity](../references.qmd#global-trial-participant-capacity)
+**Source**: [@global-trial-participant-capacity]
 
 #### Uncertainty Range
 
@@ -191,7 +191,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -215,7 +215,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
-**Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
+**Source**: [@bio-clinical-development-2021]
 
 #### Uncertainty Range
 
@@ -235,7 +235,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 Annual deaths from all diseases and aging globally
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -255,7 +255,7 @@ Annual deaths from all diseases and aging globally
 
 Phase 3 trial total cost (minimum)
 
-**Source**: [SofproMed - Phase 3 cost per trial range](../references.qmd#phase-3-cost-per-trial-range)
+**Source**: [@phase-3-cost-per-trial-range]
 
 *✓ High confidence*
 
@@ -267,7 +267,7 @@ Phase 3 trial total cost (minimum)
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
-**Source**: [Oren Cass, Manhattan Institute (2023) - RECOVERY Trial Cost per Patient](../references.qmd#recovery-cost-500)
+**Source**: [@recovery-cost-500]
 
 #### Uncertainty Range
 
@@ -291,7 +291,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
-**Source**: [NHS England; Águas et al. (2021) - RECOVERY trial global lives saved (~1 million)](../references.qmd#recovery-trial-1m-lives-saved)
+**Source**: [@recovery-trial-1m-lives-saved]
 
 #### Uncertainty Range
 
@@ -315,7 +315,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 Phase 3 cost per patient (median from FDA study)
 
-**Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
+**Source**: [@trial-costs-fda-study]
 
 #### Uncertainty Range
 

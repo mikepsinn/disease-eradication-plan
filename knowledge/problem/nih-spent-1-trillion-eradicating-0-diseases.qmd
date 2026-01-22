@@ -23,21 +23,21 @@ image: /assets/og-images/knowledge/problem/nih-spent-1-trillion-eradicating-0-di
 
 ## The Allocation Scandal
 
-The National Institutes of Health has an annual budget of approximately **$51 billion**. [55 million people die annually](../references.qmd#who-daily-deaths) while this money gets allocated as follows:
+The National Institutes of Health has an annual budget of approximately **$51 billion**. 55 million people die annually [@who-daily-deaths] while this money gets allocated as follows:
 
 A [2023 JAMA study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/) analyzed $247 billion in NIH spending (2010-2019) and found:
 
 - **84.9% - Basic research** ($209.9B): Mice, molecules, mechanisms - "experimental work...without any particular application in view"
 - **11.8% - Applied research (non-trial)** ($29.3B): Research with practical aims, but not actually testing treatments in humans
   - **CTSA infrastructure program:** ~$1B/year in buildings, overhead, salaries ([~1.5% of total budget](https://ncats.nih.gov/research/research-activities/ctsa))
-  - **Observational studies:** Watching patients get sicker without testing treatments ([All of Us](../references.qmd#nih-all-of-us-inefficiency): $2.16B, zero treatments tested)
+  - **Observational studies:** Watching patients get sicker without testing treatments (All of Us [@nih-all-of-us-inefficiency]: $2.16B, zero treatments tested)
   - **Other applied research:** Drug characterization, health services research, epidemiology
 
 - **3.3% - Phased clinical trials** ($8.1B): [Actually testing if drugs work in humans](https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/) (Phases 1-3)
   - Phase 1: $1.5B (18.5% of clinical trial budget)
   - Phase 2: $3.5B (43.2%)
   - Phase 3: $2.6B (32.1%) - **NIH covers only 3.7-4.3% of Phase 3 costs**, then abandons funding
-  - [Pragmatic trials](../references.qmd#pragmatic-trials-cost-advantage) (30x cheaper): Severely underfunded despite proven efficiency
+  - Pragmatic trials [@pragmatic-trials-cost-advantage] (30x cheaper): Severely underfunded despite proven efficiency
 
 {{< include ../figures/nih-budget-allocation-pie-chart.qmd >}}
 
@@ -51,18 +51,18 @@ The difference between efficient and inefficient trial design isn't theoretical.
 
 ### RECOVER Initiative (NIH Approach)
 
-**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../references.qmd#recover-budget-update-2-3b))
-**Timeline:** [4 years and counting](../references.qmd#nih-recover-inefficiency)
-**Patients enrolled:** [~30,000](../references.qmd#recover-initiative-patient-enrollment)
-**Trials completed:** [Zero](../references.qmd#nih-recover-inefficiency)
+**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) (source [@recover-budget-update-2-3b])
+**Timeline:** 4 years and counting [@nih-recover-inefficiency]
+**Patients enrolled:** ~30,000 [@recover-initiative-patient-enrollment]
+**Trials completed:** Zero [@nih-recover-inefficiency]
 **Cost per patient:** \$55,500
 
 ### RECOVERY Trial (UK Approach)
 
 **Budget:** {{< var recovery_trial_total_cost >}}
-**Timeline:** [6 months](../references.qmd#landray-recovery-trial-quote)
-**Patients enrolled:** [48,000](../references.qmd#recovery-trial-82x-cost-reduction)
-**Treatments found:** [Multiple, including dexamethasone](../references.qmd#recovery-trial-summary-quote) (saved over 1 million lives)
+**Timeline:** 6 months [@landray-recovery-trial-quote]
+**Patients enrolled:** 48,000 [@recovery-trial-82x-cost-reduction]
+**Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over 1 million lives)
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This massive efficiency gap is not unique to RECOVERY; a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
@@ -77,13 +77,13 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (generous estimate)
 - **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY 
-- **NIH pragmatic trials funding:** [Capped at $500K planning + $1M/year implementation](../references.qmd#pragmatic-trials-cost-advantage). This is a tiny fraction of the $47B budget
+- **NIH pragmatic trials funding:** Capped at $500K planning + $1M/year implementation [@pragmatic-trials-cost-advantage]. This is a tiny fraction of the $47B budget
 
 **The Multiplier:**
 
 Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH mix.
 
-Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ({{< var adaptable_trial_total_cost >}} vs $420M).
+Yet pragmatic trials remain severely underfunded [@pragmatic-trials-cost-advantage] despite the ADAPTABLE trial proving they cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
 
 ### The "Death Equivalent" of Budget Misallocation
 
@@ -116,7 +116,7 @@ We are operating at ~2% of our potential theoretical capacity to save lives.
 Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypotheses; we are short of trial slots.**
 
 - **FDA-approved drugs:** >20,000 known safe in humans
-- **Repurposable compounds:** [~4,700-6,800 clinically-tested candidates](../references.qmd#drug-repurposing-hub-collection) (including 3,422 marketed drugs) sitting on shelves
+- **Repurposable compounds:** ~4,700-6,800 clinically-tested candidates [@drug-repurposing-hub-collection] (including 3,422 marketed drugs) sitting on shelves
 - **Plausible dementia interventions:** Hundreds
 - **Clinical trials available for your grandma in St. Louis:** Zero
 
@@ -125,18 +125,18 @@ But the **flow** of trials is a trickle.
 
 The result is a system that produces papers, not cures:
 
-- **Papers published:** [2.5 million annually](../references.qmd#nih-annual-papers-published)
-- **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
+- **Papers published:** 2.5 million annually [@nih-annual-papers-published]
+- **New treatments approved:** ~50 annually [@global-new-drug-approvals-50-annually]
 - **Conversion rate from paper to patient:** 0.002%
 
 ### Knowledge Production: Saturated. Translation Capacity: Starved.
 
 The bottleneck isn't ideas. It's execution:
 
-- **Biomedical papers produced:** [2.5 million per year](../references.qmd#nih-annual-papers-published)
-- **Adults who've participated in trials:** [~5%](../references.qmd#clinical-trial-patient-participation-rate)
-- **Adults willing to participate if invited:** [~50-75%](../references.qmd#patient-willingness-clinical-trials)
-- **Adults actually invited:** [~9-11%](../references.qmd#patient-willingness-clinical-trials)
+- **Biomedical papers produced:** 2.5 million per year [@nih-annual-papers-published]
+- **Adults who've participated in trials:** ~5% [@clinical-trial-patient-participation-rate]
+- **Adults willing to participate if invited:** ~50-75% [@patient-willingness-clinical-trials]
+- **Adults actually invited:** ~9-11% [@patient-willingness-clinical-trials]
 
 We're drowning in hypotheses while patients are starving for trial slots.
 
@@ -158,9 +158,9 @@ In reality, it spends taxpayers' money to produce "Club Goods" for private indus
 **The Scam in Numbers:**
 
 - **Direct commercialization support:** ~3-5% of budget
-- **Indirect subsidy to profitable firms:** [~40-60% of NIH spending](../references.qmd#nih-clinical-trials-small-fraction) functions as a de facto subsidy to industry. This includes funding basic research, training scientists, and generating patents that private companies exploit
-- **NIH contribution to approved drugs:** [Funded research for 99% of new drugs](../references.qmd#nih-funded-approved-drugs) (356 drugs, 2010-2019), but covers only ~10% of clinical trial costs
-- **Who pays for translation:** [NIH covers only ~10% of what industry spends](../references.qmd#nih-clinical-trials-small-fraction) on clinical trials for approved drugs
+- **Indirect subsidy to profitable firms:** ~40-60% of NIH spending [@nih-clinical-trials-small-fraction] functions as a de facto subsidy to industry. This includes funding basic research, training scientists, and generating patents that private companies exploit
+- **NIH contribution to approved drugs:** Funded research for 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019), but covers only ~10% of clinical trial costs
+- **Who pays for translation:** NIH covers only ~10% of what industry spends [@nih-clinical-trials-small-fraction] on clinical trials for approved drugs
 
 The pattern is clear: taxpayers fund 40-60% of the knowledge pipeline (~$20-30B/year), industry patents the winners, and the public pays again through high drug prices.
 
@@ -171,8 +171,8 @@ When the research leads to a dead end, the public eats the loss.
 
 True public goods would be **unpatentable** but high-value assets like:
 
-- **Open pragmatic trial platforms:** [30x cheaper than traditional trials](../references.qmd#pragmatic-trials-cost-advantage), yet receive minimal NIH funding
-- **Re-purposing generic drugs:** [4,700+ clinically-tested compounds](../references.qmd#drug-repurposing-hub-collection) where no patent exists
+- **Open pragmatic trial platforms:** 30x cheaper than traditional trials [@pragmatic-trials-cost-advantage], yet receive minimal NIH funding
+- **Re-purposing generic drugs:** 4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent exists
 - **Comparative effectiveness data:** Head-to-Head trials that would reveal which drugs actually work best
 
 Private companies *cannot* profitably fund these, so they are the **only** thing the NIH should be funding.
@@ -183,7 +183,7 @@ Translation: We won't run the trials that would lower drug prices or fix problem
 
 Here's the most damning statistic of all:
 
-**Correlation between NIH funding priorities and actual disease burden: [0.07](../references.qmd#nih-funding-vs-disease-burden-correlation)**
+**Correlation between NIH funding priorities and actual disease burden: 0.07 [@nih-funding-vs-disease-burden-correlation]**
 
 That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
 
@@ -209,13 +209,13 @@ Committees do.
 
 Since 1970, the NIH has spent over **$1.1 trillion** (inflation-adjusted).
 
-Number of diseases eradicated: [**Zero**](../references.qmd#nih-eradicated-zero-diseases).
+Number of diseases eradicated: **Zero** [@nih-eradicated-zero-diseases].
 
 This isn't because eradicating disease is impossible:
 
-- The WHO [eradicated smallpox for \$300 million](../references.qmd#smallpox-eradication-roi)
+- The WHO eradicated smallpox for \$300 million [@smallpox-eradication-roi]
 - Jonas Salk developed the polio vaccine in a university lab
-- Veterinarians have [eradicated multiple animal diseases](../references.qmd#animal-diseases-eradicated-by-vets) while the NIH was forming subcommittees
+- Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] while the NIH was forming subcommittees
 
 The problem isn't capability. It's allocation.
 
@@ -232,7 +232,7 @@ What it requires:
 
 For how to scale this globally and make it permanent, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
 
-The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)).
+The legal framework already exists for cost recovery in trials (21 CFR 312.8 [@cfr-21-312-8-charging-for-investigational-drugs]).
 
 You could implement efficient trials tomorrow. But that would upset the grant-writing industrial complex.
 

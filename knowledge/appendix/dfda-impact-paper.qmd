@@ -745,7 +745,7 @@ The {{< var type_ii_error_cost_ratio >}} ratio is not a claim that safety testin
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
 - **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
-  - [Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions](../references.qmd#dct-cost-reductions-evidence) through reduced site management, travel, and streamlined data collection.
+  - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
   - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
   - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
   - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
@@ -775,9 +775,9 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 #### Key Sources
 
-- [DCT Cost Reductions Evidence](../references.qmd#dct-cost-reductions-evidence)
-- [Clinical Trial Market Size](../references.qmd#clinical-trial-market-size)
-- [RECOVERY Trial Cost Reduction](../references.qmd#recovery-trial-cost-reduction)
+- [@dct-cost-reductions-evidence]
+- [@clinical-trial-market-size]
+- [@recovery-trial-cost-reduction]
 
 ## ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
 
@@ -1146,7 +1146,7 @@ The Monte Carlo distributions below show the range of health impact estimates ac
 
 ### Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
 
-We present a cost-utility analysis using the **quality-adjusted life years (QALYs)** and **disability-adjusted life years (DALYs)** metrics. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
+We present a cost-utility analysis using the **quality-adjusted life years (QALYs)** and **disability-adjusted life years (DALYs)** metrics. This approach is the US and global standard for evaluating the value of health interventions [@icer-qaly-methodology].
 
 - **QALY**: One year of life in perfect health. Gains are calculated as:
 
@@ -1165,8 +1165,8 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 - **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that _add_ costs. Dominant interventions that both save money and improve health are favorable regardless of this threshold.
 
 - **Sources for Context:**
-  - [QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
-  - [Health economic evaluation](../references.qmd#qaly-value): Standard health economic analysis considers cost-effectiveness across intervention types.
+  - QALY methodology and standards [@icer-qaly-methodology]: "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
+  - Health economic evaluation [@qaly-value]: Standard health economic analysis considers cost-effectiveness across intervention types.
 
 #### DALY Sensitivity Analysis
 
@@ -1193,12 +1193,12 @@ The following table provides the data and sources that support the chart. The li
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
-| **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
-| **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
-| **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
-| **Hypertension Screening**             |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
-| **Generic Drug Substitution**          |       **+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. ([WHO, 2015](../references.qmd#who-generic-drug-policy))                                                        |
-| **Statins / Polypill**                 |         **67+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. ([eClinicalMedicine, 2022](../references.qmd#eclinicalmedicine-statins-polypill))                                               |
+| **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. (WHO, 2010 [@who-smallpox-eradication-commemoration]) |
+| **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. (CDC, 2023 [@childhood-vaccinations-prevent-deaths])                                 |
+| **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. (WHO, 2004 [@who-clean-water-daly-costs])                                              |
+| **Hypertension Screening**             |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. (JAMA Netw Open, 2023 [@jama-hypertension-pharmacist-led])            |
+| **Generic Drug Substitution**          |       **+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. (WHO, 2015 [@who-generic-drug-policy])                                                        |
+| **Statins / Polypill**                 |         **67+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. (eClinicalMedicine, 2022 [@eclinicalmedicine-statins-polypill])                                               |
 | **Pragmatic Trials (RECOVERY model)** | **~250,000** | **{{< var pragmatic_trial_cost_per_qaly >}}/QALY** | Highly Cost-Effective | UK RECOVERY trial: {{< var recovery_trial_total_cost >}} spent, saving {{< var recovery_trial_global_lives_saved >}} globally via dexamethasone discovery. {{< var pragmatic_vs_nih_efficiency_multiplier >}} more efficient than standard research. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure; ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in US settings.) |
 | **NIH Standard Research Portfolio** | **~20** | **{{< var nih_standard_research_cost_per_qaly >}}/QALY** | Inefficient Baseline | Standard NIH-funded research. Represents current status quo efficiency. {{< var nih_standard_research_cost_per_qaly_cite >}} |
 
@@ -1235,13 +1235,13 @@ To provide context for the estimated costs of a decentralized framework, it is u
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
 | **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
-| **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
+| **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | 21st Century Cures Act [@21st-century-cures-act-2016]          |
 | **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
-| **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
-| **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                             | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
+| **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion [@gao-healthcare-gov-costs]** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | GAO Reports / Public Reporting [@gao-healthcare-gov-costs] |
+| **National Cancer Institute (NCI)**  | **~\$7.2 Billion / year [@nih-institute-budgets-fy24]** (FY25 Budget)                 | **~180x**                             | NCI Budget Data [@nih-institute-budgets-fy24]                 |
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
-**Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the framework's [annual cost](#simplified-roi-scenario) and [NCI budget](../references.qmd#nih-institute-budgets-fy24)). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+**Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the framework's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 
 ---

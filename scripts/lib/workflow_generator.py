@@ -112,14 +112,16 @@ def derive_netlify_secret(config_name: str) -> str:
 
 def should_upload_to_zenodo(config_name: str, config: dict) -> bool:
     """Determine if this config should upload to Zenodo."""
+    # DISABLED: Zenodo uploads temporarily disabled
+    return False
     # Skip for main book and test
-    if config_name in ("book", "test"):
-        return False
-    # Check explicit zenodo flag in dih-render
-    dih_render = config.get('dih-render', {})
-    if dih_render.get('zenodo') is False:
-        return False
-    return True
+    # if config_name in ("book", "test"):
+    #     return False
+    # # Check explicit zenodo flag in dih-render
+    # dih_render = config.get('dih-render', {})
+    # if dih_render.get('zenodo') is False:
+    #     return False
+    # return True
 
 
 def extract_job_configs(project_root: Path) -> List[JobConfig]:

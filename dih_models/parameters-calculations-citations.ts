@@ -5501,7 +5501,6 @@ export const citations: Record<string, Citation> = {
             literal: "Educational psychology literature"
           },
         ],
-        publisher: "Educational psychology literature",
         note: "Educational psychology literature",
   },
   "average-us-hourly-wage": {
@@ -5542,13 +5541,12 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "U.S. Bureau of Labor Statistics",
         URL: "https://www.bls.gov/data/inflation_calculator.htm",
         note: "U.S. Bureau of Labor Statistics, 2024, CPI Inflation Calculator",
   },
   "cdc-life-expectancy": {
         id: "cdc-life-expectancy",
-        type: "report",
+        type: "webpage",
         title: "US Life Expectancy 2023",
         author: [
           {
@@ -5556,13 +5554,12 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "CDC",
         URL: "https://www.cdc.gov/nchs/fastats/life-expectancy.htm",
         note: "CDC, 2024, Life Expectancy",
   },
   "census-income-2023": {
         id: "census-income-2023",
-        type: "report",
+        type: "webpage",
         title: "US Median Household Income 2023",
         author: [
           {
@@ -5570,7 +5567,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "US Census Bureau",
         URL: "https://www.census.gov/library/publications/2024/demo/p60-282.html",
         note: "US Census Bureau, 2024, Income in the United States: 2023",
   },
@@ -5680,7 +5676,6 @@ export const citations: Record<string, Citation> = {
             literal: "Industry estimates"
           },
         ],
-        publisher: "Industry estimates",
         note: "Industry estimates",
   },
   "clinical-trial-patient-participation-rate": {
@@ -5725,7 +5720,7 @@ export const citations: Record<string, Citation> = {
   },
   "costsofwar2023": {
         id: "costsofwar2023",
-        type: "report",
+        type: "webpage",
         title: "Blood and Treasure: United States Budgetary Costs and Human Costs of 20 Years of War",
         author: [
           {
@@ -5841,7 +5836,6 @@ export const citations: Record<string, Citation> = {
             literal: "Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation"
           },
         ],
-        publisher: "Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation",
         note: "Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation",
   },
   "disease-prevalence-2-billion": {
@@ -5909,7 +5903,6 @@ export const citations: Record<string, Citation> = {
             literal: "Tufts CSDD"
           },
         ],
-        publisher: "Tufts CSDD",
         note: "Tufts CSDD | IQVIA | Deloitte",
   },
   "drug-repurposing-rate": {
@@ -5942,7 +5935,7 @@ export const citations: Record<string, Citation> = {
   },
   "drugpolicyalliance2021": {
         id: "drugpolicyalliance2021",
-        type: "report",
+        type: "webpage",
         title: "The Drug War by the Numbers",
         author: [
           {
@@ -6033,7 +6026,7 @@ export const citations: Record<string, Citation> = {
   },
   "fec-2024-summary": {
         id: "fec-2024-summary",
-        type: "report",
+        type: "webpage",
         title: "Statistical Summary of 24-Month Campaign Activity of the 2023-2024 Election Cycle",
         author: [
           {
@@ -6041,7 +6034,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "Federal Election Commission",
         URL: "https://www.fec.gov/updates/statistical-summary-of-24-month-campaign-activity-of-the-2023-2024-election-cycle/",
         note: "Federal Election Commission, Statistical Summary of 24-Month Campaign Activity",
   },
@@ -6128,14 +6120,13 @@ export const citations: Record<string, Citation> = {
   },
   "global-pharma-rd-spending-300b": {
         id: "global-pharma-rd-spending-300b",
-        type: "report",
+        type: "webpage",
         title: "Global pharmaceutical R&D spending",
         author: [
           {
             literal: "Industry reports: IQVIA"
           },
         ],
-        publisher: "Industry reports: IQVIA",
         note: "Industry reports: IQVIA, EvaluatePharma, PhRMA",
   },
   "global-population-8-billion": {
@@ -6280,7 +6271,7 @@ export const citations: Record<string, Citation> = {
   },
   "imf-fossilfuel2023": {
         id: "imf-fossilfuel2023",
-        type: "report",
+        type: "webpage",
         title: "IMF Fossil Fuel Subsidies Data: 2023 Update",
         author: [
           {
@@ -6292,7 +6283,7 @@ export const citations: Record<string, Citation> = {
   },
   "imf-singapore-spending": {
         id: "imf-singapore-spending",
-        type: "report",
+        type: "webpage",
         title: "IMF Singapore Government Spending Data",
         author: [
           {
@@ -6300,7 +6291,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "IMF",
         URL: "https://www.imf.org/en/Countries/SGP",
         note: "IMF, 2024, Singapore Country Data",
   },
@@ -6313,7 +6303,6 @@ export const citations: Record<string, Citation> = {
             literal: "Derived from global market size and public/private funding ratios"
           },
         ],
-        publisher: "Derived from global market size and public/private funding ratios",
         note: "Derived from global market size and public/private funding ratios",
   },
   "industry-vs-government-trial-spending-split": {
@@ -6395,7 +6384,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "Source: US Life Expectancy FDA Budget 1543-2019 CSV",
         URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
@@ -6538,19 +6526,18 @@ export const citations: Record<string, Citation> = {
   },
   "nonprofit-clinical-trial-spending-estimate": {
         id: "nonprofit-clinical-trial-spending-estimate",
-        type: "legislation",
+        type: "webpage",
         title: "Nonprofit clinical trial funding estimate",
         author: [
           {
             literal: "Estimated from major foundation budgets and activities"
           },
         ],
-        publisher: "Estimated from major foundation budgets and activities",
         note: "Estimated from major foundation budgets and activities",
   },
   "oecd-govt-spending": {
         id: "oecd-govt-spending",
-        type: "report",
+        type: "webpage",
         title: "OECD Government Spending as Percentage of GDP",
         author: [
           {
@@ -6558,13 +6545,12 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "OECD",
         URL: "https://data.oecd.org/gga/general-government-spending.htm",
         note: "OECD, 2024, General Government Spending",
   },
   "oecd-median-income": {
         id: "oecd-median-income",
-        type: "report",
+        type: "webpage",
         title: "OECD Median Household Income Comparison",
         author: [
           {
@@ -6572,7 +6558,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "OECD",
         URL: "https://data.oecd.org/hha/household-disposable-income.htm",
         note: "OECD, 2024, Household Disposable Income",
   },
@@ -6592,7 +6577,7 @@ export const citations: Record<string, Citation> = {
   },
   "opensecrets-lobbying-2024": {
         id: "opensecrets-lobbying-2024",
-        type: "report",
+        type: "webpage",
         title: "Federal Lobbying Hit Record $4.4 Billion in 2024",
         author: [
           {
@@ -6600,13 +6585,12 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "OpenSecrets",
         URL: "https://www.opensecrets.org/news/2025/02/federal-lobbying-set-new-record-in-2024/",
         note: "OpenSecrets, Federal Lobbying Set New Record in 2024",
   },
   "opensecrets-revolving-door": {
         id: "opensecrets-revolving-door",
-        type: "report",
+        type: "webpage",
         title: "Revolving Door: Former Members of Congress",
         author: [
           {
@@ -6614,7 +6598,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "OpenSecrets",
         URL: "https://www.opensecrets.org/revolving-door",
         note: "OpenSecrets, Revolving Door",
   },
@@ -6751,7 +6734,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "Source: US Life Expectancy FDA Budget 1543-2019 CSV",
         URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
@@ -6897,7 +6879,7 @@ export const citations: Record<string, Citation> = {
   },
   "sipri2024": {
         id: "sipri2024",
-        type: "report",
+        type: "webpage",
         title: "Trends in World Military Expenditure, 2023",
         author: [
           {
@@ -6943,7 +6925,6 @@ export const citations: Record<string, Citation> = {
             literal: "Composite estimate based on Orphanet"
           },
         ],
-        publisher: "Composite estimate based on Orphanet",
         note: "Composite estimate based on Orphanet, FDA approval data, and queue theory",
   },
   "sugar-subsidies-cost": {
@@ -7184,7 +7165,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2011]] },
-        publisher: "Hutchinson & Kirk (2011)",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3324971/",
         note: "Hutchinson & Kirk (2011), Drug Discov Today; conservative estimate 40% abandoned due to cost",
   },
@@ -7273,7 +7253,7 @@ export const citations: Record<string, Citation> = {
   },
   "who-life-expectancy": {
         id: "who-life-expectancy",
-        type: "report",
+        type: "webpage",
         title: "WHO Life Expectancy Data by Country",
         author: [
           {
@@ -7281,7 +7261,6 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "WHO",
         URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
         note: "WHO, 2024, Life Expectancy",
   },
@@ -7329,7 +7308,7 @@ export const citations: Record<string, Citation> = {
   },
   "yalebudgetlab2025": {
         id: "yalebudgetlab2025",
-        type: "report",
+        type: "webpage",
         title: "The Fiscal, Economic, and Distributional Effects of All U.S. Tariffs",
         author: [
           {

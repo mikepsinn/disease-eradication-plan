@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 from dih_models.formatting import format_parameter_value
-from dih_models.reference_parser import parse_references_qmd_detailed
+from dih_models.reference_parser import parse_references_bib
 
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
@@ -671,11 +671,11 @@ def generate_survey(
 
     generator = QuestionGenerator(sensitivity_data, usage_data, parameters)
 
-    # Load reference metadata from references.qmd
-    references_path = Path("knowledge/references.qmd")
+    # Load reference metadata from references.bib
+    bib_path = Path("references.bib")
     citation_data = {}
-    if references_path.exists():
-        citation_data = parse_references_qmd_detailed(references_path)
+    if bib_path.exists():
+        citation_data = parse_references_bib(bib_path)
 
     # Rank parameters by importance with dependency-aware ordering
     # (inputs come before outputs that use them)

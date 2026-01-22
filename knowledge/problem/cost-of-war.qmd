@@ -30,11 +30,11 @@ The immediate costs of war are like a grocery receipt from Hell. Everything is i
 
 | Cost Category | Amount (USD Billions) | Per Capita | Daily Cost | Mathematical Basis |
 |---------------|----------------------|------------|------------|-------------------|
-| Military Personnel Salaries | $681.5 | $87.37 | $1.87B | [Global armed forces: 28.4M × avg. salary $24,000 (adjusted for inflation)](../references.qmd#global-armed-forces-size-and-salary) |
-| Weapons Procurement | $654.3 | $83.88 | $1.79B | [SIPRI Arms Transfer Database](../references.qmd#sipri2024) aggregation |
-| Operations & Maintenance | $579.8 | $74.33 | $1.59B | [NATO standardized O&M ratios × global spending](../references.qmd#nato-om-ratios-global-spending) |
-| Military Infrastructure | $520.4 | $66.72 | $1.43B | Base construction/maintenance × [4,435 major facilities](../references.qmd#global-major-military-facilities) |
-| Intelligence Operations | $282.0 | $36.15 | $0.77B | [Estimated 10.4% of total military budgets](../references.qmd#intelligence-spending-military-budgets) |
+| Military Personnel Salaries | $681.5 | $87.37 | $1.87B | Global armed forces: 28.4M × avg. salary $24,000 (adjusted for inflation) [@global-armed-forces-size-and-salary] |
+| Weapons Procurement | $654.3 | $83.88 | $1.79B | SIPRI Arms Transfer Database [@sipri2024] aggregation |
+| Operations & Maintenance | $579.8 | $74.33 | $1.59B | NATO standardized O&M ratios × global spending [@nato-om-ratios-global-spending] |
+| Military Infrastructure | $520.4 | $66.72 | $1.43B | Base construction/maintenance × 4,435 major facilities [@global-major-military-facilities] |
+| Intelligence Operations | $282.0 | $36.15 | $0.77B | Estimated 10.4% of total military budgets [@intelligence-spending-military-budgets] |
 
 #### Total Direct Military Spending: \$2,718.0 billion
 
@@ -57,7 +57,7 @@ Here's the breakdown of what goes into the direct cost of war:
 
 #### Current Annual Calculation
 
-- M<sub>spending</sub> = {{< var global_military_spending_annual_2024 >}} (verified via [SIPRI database](../references.qmd#sipri2024))
+- M<sub>spending</sub> = {{< var global_military_spending_annual_2024 >}} (verified via SIPRI database [@sipri2024])
 - I<sub>damage</sub> = {{< var global_annual_infrastructure_destruction_conflict >}} (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = {{< var global_annual_human_life_losses_conflict >}} ({{< var global_annual_conflict_deaths_total >}} total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = {{< var global_annual_trade_disruption_conflict >}} ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
@@ -144,8 +144,8 @@ If weapons were a stock, short-sellers would be rich.
 
 ### The Price of a Ghost: Valuing Human Life
 
-The [U.S. Department of Transportation](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis) values a statistical life at [\$13.6 million](../references.qmd#dot-vsl-13-6m).
-The [EPA uses \$9.6 million](../references.qmd#epa-vsl-9-6m).
+The [U.S. Department of Transportation](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis) values a statistical life at \$13.6 million [@dot-vsl-13-6m].
+The EPA uses \$9.6 million [@epa-vsl-9-6m].
 Let's be conservative and use \$10 million.
 
 #### Annual Mortality Cost Calculation
@@ -173,12 +173,12 @@ Expensive things.
 
 | Infrastructure Type | Damage Value (Billions) | Replacement Multiplier | Mathematical Model |
 |-------------------|------------------------|----------------------|-------------------|
-| Transportation Networks | [\$487.3](../references.qmd#reconstruction-costs-active-conflicts) | 1.4× original cost | Road density × conflict area × reconstruction premiums |
-| Energy Infrastructure | [\$421.7](../references.qmd#reconstruction-costs-active-conflicts) | 2.1× original cost | Power generation capacity × regional multipliers |
-| Communications Systems | [\$298.1](../references.qmd#reconstruction-costs-active-conflicts) | 1.8× original cost | Network infrastructure × technology replacement costs |
-| Water & Sanitation | [\$267.8](../references.qmd#reconstruction-costs-active-conflicts) | 1.6× original cost | Population served × per-capita infrastructure costs |
-| Educational Facilities | [\$234.5](../references.qmd#reconstruction-costs-active-conflicts) | 1.3× original cost | Student capacity × modern construction standards |
-| Healthcare Systems | [\$165.6](../references.qmd#reconstruction-costs-active-conflicts) | 1.9× original cost | Bed capacity × medical equipment replacement |
+| Transportation Networks | \$487.3 [@reconstruction-costs-active-conflicts] | 1.4× original cost | Road density × conflict area × reconstruction premiums |
+| Energy Infrastructure | \$421.7 [@reconstruction-costs-active-conflicts] | 2.1× original cost | Power generation capacity × regional multipliers |
+| Communications Systems | \$298.1 [@reconstruction-costs-active-conflicts] | 1.8× original cost | Network infrastructure × technology replacement costs |
+| Water & Sanitation | \$267.8 [@reconstruction-costs-active-conflicts] | 1.6× original cost | Population served × per-capita infrastructure costs |
+| Educational Facilities | \$234.5 [@reconstruction-costs-active-conflicts] | 1.3× original cost | Student capacity × modern construction standards |
+| Healthcare Systems | \$165.6 [@reconstruction-costs-active-conflicts] | 1.9× original cost | Bed capacity × medical equipment replacement |
 
 #### Total Infrastructure Damage: {{< var global_annual_infrastructure_destruction_conflict >}}
 
@@ -205,10 +205,10 @@ They interrupt the delicate dance of global commerce like a drunk person stumbli
 
 | Disruption Category | Annual Loss (Billions) | Calculation Method | Duration Factor |
 |-------------------|----------------------|-------------------|----------------|
-| Shipping Route Blockages | [\$247.1](../references.qmd#world-bank-trade-disruption-conflict) | Maritime traffic × route closure days × cargo value | 3.2 years avg |
-| Supply Chain Interruptions | [\$186.8](../references.qmd#world-bank-trade-disruption-conflict) | Manufacturing output × input delays × multiplier effects | 2.8 years avg |
-| Energy Price Volatility | [\$124.7](../references.qmd#world-bank-trade-disruption-conflict) | Consumption × price differential × demand elasticity | 1.9 years avg |
-| Currency Instability | [\$57.4](../references.qmd#world-bank-trade-disruption-conflict) | Trade volume × exchange rate volatility × hedging costs | 4.1 years avg |
+| Shipping Route Blockages | \$247.1 [@world-bank-trade-disruption-conflict] | Maritime traffic × route closure days × cargo value | 3.2 years avg |
+| Supply Chain Interruptions | \$186.8 [@world-bank-trade-disruption-conflict] | Manufacturing output × input delays × multiplier effects | 2.8 years avg |
+| Energy Price Volatility | \$124.7 [@world-bank-trade-disruption-conflict] | Consumption × price differential × demand elasticity | 1.9 years avg |
+| Currency Instability | \$57.4 [@world-bank-trade-disruption-conflict] | Trade volume × exchange rate volatility × hedging costs | 4.1 years avg |
 
 #### Total Trade Disruption: {{< var global_annual_trade_disruption_conflict >}} annually
 
@@ -233,8 +233,8 @@ Here's a thought experiment: What if we spent our war money on something else?
 | Alternative Investment | Global War Spending Could Fund | Mathematical Conversion | Annual Benefit |
 |----------------------|-------------------------------|------------------------|----------------|
 | Medical Research | 40.3 years of current spending | {{< var global_military_spending_annual_2024 >}} ÷ {{< var global_med_research_spending >}} = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
-| Global Education Access | 90.6 years of universal coverage | {{< var global_military_spending_annual_2024 >}} ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
-| Poverty Eradication | 2.7 complete eliminations | {{< var global_military_spending_annual_2024 >}} ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
+| Global Education Access | 90.6 years of universal coverage | {{< var global_military_spending_annual_2024 >}} ÷ \$30B [@unesco-education-for-all-cost] = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
+| Poverty Eradication | 2.7 complete eliminations | {{< var global_military_spending_annual_2024 >}} ÷ \$1,000B [@world-bank-poverty-eradication-cost] = 2.7 | World Bank extreme poverty estimates |
 
 ![The stark disparity: money spent on war, neuroscience, and cancer research](../../assets/images/Priorities-Money-Spent-on-War-Neuroscience-Cancer-Research-Graph.png)
 
@@ -273,10 +273,10 @@ They echo through generations like a malicious song stuck in humanity's head.
 
 | Cost Category | 2023 Spending | 20-Year Projection | Mathematical Model |
 |--------------|---------------|-------------------|-------------------|
-| PTSD Treatment | [\$47.2B](../references.qmd#veteran-healthcare-cost-projections) | [\$944B](../references.qmd#veteran-healthcare-cost-projections) | Current cases × treatment duration × cost inflation |
-| Physical Rehabilitation | [\$63.8B](../references.qmd#veteran-healthcare-cost-projections) | [\$1,276B](../references.qmd#veteran-healthcare-cost-projections) | Injury complexity index × technology advancement costs |
-| Disability Compensation | [\$89.1B](../references.qmd#veteran-healthcare-cost-projections) | [\$1,782B](../references.qmd#veteran-healthcare-cost-projections) | Disability ratings × benefit schedules × actuarial projections |
-| Total Veteran Care | [\$200.1B](../references.qmd#veteran-healthcare-cost-projections) | [\$4,002B](../references.qmd#veteran-healthcare-cost-projections) | Composite of above factors |
+| PTSD Treatment | \$47.2B [@veteran-healthcare-cost-projections] | \$944B [@veteran-healthcare-cost-projections] | Current cases × treatment duration × cost inflation |
+| Physical Rehabilitation | \$63.8B [@veteran-healthcare-cost-projections] | \$1,276B [@veteran-healthcare-cost-projections] | Injury complexity index × technology advancement costs |
+| Disability Compensation | \$89.1B [@veteran-healthcare-cost-projections] | \$1,782B [@veteran-healthcare-cost-projections] | Disability ratings × benefit schedules × actuarial projections |
+| Total Veteran Care | \$200.1B [@veteran-healthcare-cost-projections] | \$4,002B [@veteran-healthcare-cost-projections] | Composite of above factors |
 
 The formula for lifetime veteran costs is a depressing mix of the number of veterans, how much it costs to keep them alive each year, how long they're expected to live, their disability payments, and the fact that healthcare costs always go up.
 
@@ -287,12 +287,12 @@ V_{\text{lifetime}} = {} & (N_{\text{veterans}} \times C_{\text{annual}} \times 
 \end{aligned}
 $$
 
-Where N is number of veterans, C is annual care cost, L is remaining lifespan, D is disability payments, and I is healthcare inflation (historically [3.5-4.6% annually](../references.qmd#historical-healthcare-inflation-rate)).
+Where N is number of veterans, C is annual care cost, L is remaining lifespan, D is disability payments, and I is healthcare inflation (historically 3.5-4.6% annually [@historical-healthcare-inflation-rate]).
 
 #### Refugee Support: The Mathematics of Displacement
 
-As of 2023, there are [108.4 million forcibly displaced people](../references.qmd#unhcr-forcibly-displaced-2023) globally.
-The average cost of supporting a refugee is [\$1,384 per year](../references.qmd#unhcr-refugee-support-cost).
+As of 2023, there are 108.4 million forcibly displaced people [@unhcr-forcibly-displaced-2023] globally.
+The average cost of supporting a refugee is \$1,384 per year [@unhcr-refugee-support-cost].
 
 ##### Annual Refugee Support Cost
 
@@ -303,7 +303,7 @@ $$
 That comes out to **\$150.0 billion** just to keep them in camps.
 
 But refugees aren't just costs, they're lost economic potential.
-The average refugee has [\$23,400 in lost annual earning potential](../references.qmd#refugee-lost-earning-potential).
+The average refugee has \$23,400 in lost annual earning potential [@refugee-lost-earning-potential].
 
 ##### Lost Economic Productivity
 
@@ -322,10 +322,10 @@ This should not be surprising, but humans often act surprised by obvious things.
 
 | Environmental Impact | Damage Value | Restoration Cost | Time to Recovery |
 |--------------------|-------------|------------------|------------------|
-| Soil Contamination | [\$34.7B](../references.qmd#environmental-cost-of-war) | [\$69.4B](../references.qmd#environmental-cost-of-war) | 15-30 years |
-| Water Source Pollution | [\$28.3B](../references.qmd#environmental-cost-of-war) | [\$56.6B](../references.qmd#environmental-cost-of-war) | 8-25 years |
-| Air Quality Degradation | [\$21.9B](../references.qmd#environmental-cost-of-war) | [\$43.8B](../references.qmd#environmental-cost-of-war) | 2-8 years |
-| Biodiversity Loss | [\$15.1B](../references.qmd#environmental-cost-of-war) | Irreplaceable | Forever |
+| Soil Contamination | \$34.7B [@environmental-cost-of-war] | \$69.4B [@environmental-cost-of-war] | 15-30 years |
+| Water Source Pollution | \$28.3B [@environmental-cost-of-war] | \$56.6B [@environmental-cost-of-war] | 8-25 years |
+| Air Quality Degradation | \$21.9B [@environmental-cost-of-war] | \$43.8B [@environmental-cost-of-war] | 2-8 years |
+| Biodiversity Loss | \$15.1B [@environmental-cost-of-war] | Irreplaceable | Forever |
 
 **Total Environmental Damage: {{< var global_annual_environmental_damage_conflict >}} annually**
 
@@ -365,11 +365,11 @@ Here's the grand total of your magnificent obsession with organized violence:
 | Category | Amount (Billions) | Percentage | Daily Rate |
 |----------|------------------|------------|------------|
 | Lost Economic Growth | \$2,718.0 | 76.4% | \$7.45B |
-| Veteran Healthcare | [\$200.1](../references.qmd#veteran-healthcare-cost-projections) | 5.6% | \$0.55B |
-| Refugee Support | [\$150.0](../references.qmd#unhcr-forcibly-displaced-2023) | 4.2% | \$0.41B |
-| Environmental Damage | [\$100.0](../references.qmd#environmental-cost-of-war) | 2.8% | \$0.27B |
-| Psychological Impact | [\$232.0](../references.qmd#psychological-impact-war-cost) | 6.3% | \$0.64B |
-| Lost Human Capital | [\$300.0](../references.qmd#lost-human-capital-war-cost) | 8.1% | \$0.82B |
+| Veteran Healthcare | \$200.1 [@veteran-healthcare-cost-projections] | 5.6% | \$0.55B |
+| Refugee Support | \$150.0 [@unhcr-forcibly-displaced-2023] | 4.2% | \$0.41B |
+| Environmental Damage | \$100.0 [@environmental-cost-of-war] | 2.8% | \$0.27B |
+| Psychological Impact | \$232.0 [@psychological-impact-war-cost] | 6.3% | \$0.64B |
+| Lost Human Capital | \$300.0 [@lost-human-capital-war-cost] | 8.1% | \$0.82B |
 | **Indirect Subtotal** | **\$3,700.1** | **100%** | **\$10.14B** |
 
 #### Ultimate Total
@@ -415,12 +415,12 @@ Instead, humans spend it on getting very good at killing each other.
 To understand the scale of \$11.4 trillion annually:
 
 - It is more than the entire GDP of Japan and Germany combined
-- It's 12.7% of global GDP ([\$89.5 trillion in 2023](../references.qmd#global-gdp-2023))
-- It's [168 times](../references.qmd#who-budget-comparison) the budget of the [World Health Organization](https://www.who.int/about/funding)
-- It could [eliminate extreme poverty globally 11.4 times over](../references.qmd#world-bank-poverty-eradication-cost)
+- It's 12.7% of global GDP (\$89.5 trillion in 2023 [@global-gdp-2023])
+- It's 168 times [@who-budget-comparison] the budget of the [World Health Organization](https://www.who.int/about/funding)
+- It could eliminate extreme poverty globally 11.4 times over [@world-bank-poverty-eradication-cost]
 - It's enough to give every person on Earth \$1,419 per year
 
-If we stacked \$11.4 trillion in \$100 bills, the stack would be [larger than the diameter of the Earth](../references.qmd#us-currency-thickness).
+If we stacked \$11.4 trillion in \$100 bills, the stack would be larger than the diameter of the Earth [@us-currency-thickness].
 
 ### The Grotesque Mathematics of Misallocation
 

@@ -21,9 +21,9 @@ A [1% treaty](../solution/1-percent-treaty.qmd) initiative faces three critical 
 
 ### **The Legal Problem**
 
-- **US Federal Election Campaign Act (FECA):** Prohibits foreign nationals from making expenditures in connection with US elections ([FEC Foreign National Restrictions](../references.qmd#fec-foreign-national-restrictions))
-- **FEC Definition:** ["Foreign national" includes foreign governments, foreign political parties, foreign corporations, and foreign individuals](../references.qmd#fec-foreign-nationals)
-- **Penalties:** Criminal prosecution and [civil penalties up to \$100,000+ per violation](../references.qmd#feca-violation-penalties)
+- **US Federal Election Campaign Act (FECA):** Prohibits foreign nationals from making expenditures in connection with US elections ([@fec-foreign-national-restrictions])
+- **FEC Definition:** "Foreign national" includes foreign governments, foreign political parties, foreign corporations, and foreign individuals [@fec-foreign-nationals]
+- **Penalties:** Criminal prosecution and civil penalties up to \$100,000+ per violation [@feca-violation-penalties]
 
 ### **Compliance Solution: Domestic-Only Structure**
 
@@ -69,13 +69,13 @@ A [1% treaty](../solution/1-percent-treaty.qmd) initiative faces three critical 
 
 ### **The Legal Problem**
 
-- **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security ([Howey Test Securities Definition](../references.qmd#howey-test-securities))
+- **Howey Test:** Investment of money + common enterprise + expectation of profits + from efforts of others = security (Howey Test Securities Definition [@howey-test-securities])
 - **VICTORY Tokens:** Risk of being classified as unregistered securities if they promise returns
 - **SEC Enforcement:** Heavy penalties for unregistered securities offerings
 
 ### **Compliance Solution: A Two-Phase "Points-then-Conversion" Model**
 
-The compliance strategy is designed to achieve the goal of mass participation while navigating global securities laws, leveraging [the SEC's more innovation-friendly guidance as of August 2025](../references.qmd#sec-innovation-guidance-2025). It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
+The compliance strategy is designed to achieve the goal of mass participation while navigating global securities laws, leveraging the SEC's more innovation-friendly guidance as of August 2025 [@sec-innovation-guidance-2025]. It separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens.
 
 #### Phase 1: VOTE Points Airdrop (Pre-Treaty)
 
@@ -92,11 +92,11 @@ This phase focuses on mass distribution of a non-security utility token.
 This phase occurs only _after_ a 1% treaty is successfully ratified and the [1% Treaty Fund](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
 - **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
-- **Legal Rationale & Safe Harbor:** This conversion event will be structured to [fall within the SEC's "safe harbor" provisions](../references.qmd#peirce-token-safe-harbor) for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY Incentive Alignment Bond's function is now primarily for utility, governing the active, funded 1% Treaty Fund, which strengthens the case for a more favorable regulatory treatment.
+- **Legal Rationale & Safe Harbor:** This conversion event will be structured to fall within the SEC's "safe harbor" provisions [@peirce-token-safe-harbor] for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY Incentive Alignment Bond's function is now primarily for utility, governing the active, funded 1% Treaty Fund, which strengthens the case for a more favorable regulatory treatment.
 
 **Fundraising from Accredited Investors (Reg D / Reg S)**
 
-The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) and tokens, conducted in full compliance with [Regulation D](../references.qmd#sec-reg-d) (for U.S. accredited investors) and [Regulation S](../references.qmd#sec-reg-s) (for non-U.S. investors). This ensures the core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
+The initial "activation energy" from sophisticated investors (VCs, funds, etc.) will still be raised via a traditional private placement for VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) and tokens, conducted in full compliance with Regulation D [@sec-reg-d] (for U.S. accredited investors) and Regulation S [@sec-reg-s] (for non-U.S. investors). This ensures the core financing is secure while the mass distribution is handled via the safer "Points-then-Conversion" model.
 
 #### Legal Structure
 
@@ -148,7 +148,7 @@ Swiss Foundation (Treaty Coordination)
 #### United Kingdom
 
 - **Electoral Commission Registration:** Register as non-party campaigner
-- **Spending Limits:** Comply with controlled expenditure limits ([UK Electoral Commission Spending Limits](../references.qmd#uk-electoral-spending-limits)) [(\$500K+ requires registration)](../references.qmd#uk-electoral-registration-threshold-500k)
+- **Spending Limits:** Comply with controlled expenditure limits (UK Electoral Commission Spending Limits [@uk-electoral-spending-limits]) (\$500K+ requires registration) [@uk-electoral-registration-threshold-500k]
 - **Foreign Funding:** Permissible donations from overseas electors and UK entities
 - **Transparency:** Quarterly donation and spending reports
 
@@ -162,9 +162,9 @@ Swiss Foundation (Treaty Coordination)
 #### Canada
 
 - **Elections Canada:** Registration as third-party advertiser
-- **Foreign Interference:** Comply with [Bill C-76 foreign influence restrictions](../references.qmd#canada-bill-c-76)
+- **Foreign Interference:** Comply with Bill C-76 foreign influence restrictions [@canada-bill-c-76]
 - **Spending Limits:** Pre-election and election period spending caps
-- **Disclosure Requirements:** [Real-time reporting of expenditures over \$500](../references.qmd#canada-expenditure-reporting-500)
+- **Disclosure Requirements:** Real-time reporting of expenditures over \$500 [@canada-expenditure-reporting-500]
 
 ### **Coordination Without Violation**
 
@@ -336,7 +336,7 @@ To maximize the effectiveness of the [decentralized framework for drug assessmen
 #### Key Policy Objectives
 
 1.  **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
-2.  **Clarify Pricing Mechanisms:** [Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)
+2.  **Clarify Pricing Mechanisms:** Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8) [@cfr-21-312-8-charging-for-investigational-drugs]
 3.  **Redirect NIH Funding:** Transition research toward projects leveraging the decentralized framework for drug assessment
 4.  **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
 5.  **Incentivize Innovation:** Launch \$500M X Prize for platform development

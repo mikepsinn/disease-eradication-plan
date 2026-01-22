@@ -776,7 +776,7 @@ N_{untreated} \\
 \end{gathered}
 $$
 
-**Methodology**: [Orphanet Journal of Rare Diseases (2024) (2024) - Rare Disease Treatment Gap](../references.qmd#rare-disease-only-5pct-have-treatment)
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
 
 *~ Medium confidence*
 
@@ -842,7 +842,7 @@ T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+**Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
 
@@ -880,7 +880,7 @@ T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} =
 \end{gathered}
 $$
 
-**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+**Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
 
@@ -962,7 +962,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
-**Source**: [IQVIA Report - Global trial capacity](../references.qmd#global-trial-participant-capacity)
+**Source**: [@global-trial-participant-capacity]
 
 #### Uncertainty Range
 
@@ -986,7 +986,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -1010,7 +1010,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
-**Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
+**Source**: [@bio-clinical-development-2021]
 
 #### Uncertainty Range
 
@@ -1030,7 +1030,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
-**Source**: [Institute for Health Metrics and Evaluation (IHME) (2024) - IHME Global Burden of Disease 2021 (2.88B DALYs, 1.13B YLD)](../references.qmd#ihme-gbd-2021)
+**Source**: [@ihme-gbd-2021]
 
 #### Uncertainty Range
 
@@ -1050,7 +1050,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -1070,7 +1070,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 Global military spending in 2024
 
-**Source**: [SIPRI (2025) - Global military spending (\$2.72T, 2024)](../references.qmd#global-military-spending)
+**Source**: [@global-military-spending]
 
 #### Uncertainty Range
 
@@ -1086,7 +1086,7 @@ Global military spending in 2024
 
 Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
 
-**Source**: [Calculated from Orphanet Journal of Rare Diseases (2024) (2024) - Diseases Getting First Effective Treatment Each Year](../references.qmd#diseases-getting-first-treatment-annually)
+**Source**: [@diseases-getting-first-treatment-annually]
 
 #### Uncertainty Range
 
@@ -1110,7 +1110,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 Total number of rare diseases globally
 
-**Source**: [GAO (2025) - 95% of diseases have 0 FDA-approved treatments](../references.qmd#95-pct-diseases-no-treatment)
+**Source**: [@95-pct-diseases-no-treatment]
 
 #### Uncertainty Range
 
@@ -1134,7 +1134,7 @@ Total number of rare diseases globally
 
 Standard economic value per QALY
 
-**Source**: [ICER (2024) - Value per QALY (standard economic value)](../references.qmd#qaly-value)
+**Source**: [@qaly-value]
 
 #### Uncertainty Range
 

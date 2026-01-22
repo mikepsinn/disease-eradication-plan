@@ -31,7 +31,7 @@ from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
-from dih_models.reference_parser import parse_references_qmd_detailed
+from dih_models.reference_parser import parse_references_bib
 
 
 def format_citation(ref_data: Dict[str, Any]) -> str:
@@ -94,15 +94,15 @@ def generate_parameters_and_calculations_qmd(
     Args:
         parameters: Dict of parameter metadata from parse_parameters_file()
         output_path: Path to write the QMD file
-        available_refs: Set of valid reference IDs from references.qmd (optional, for detecting reference links)
+        available_refs: Set of valid reference IDs from references.bib (optional, for detecting reference links)
         params_file: Path to parameters.py (for auto-generating latex equations)
 
     Returns:
         Number of parameters included in the generated file
     """
-    # Parse references.qmd for professional citation formatting
-    references_path = output_path.parent.parent / "references.qmd"  # knowledge/references.qmd
-    citation_data = parse_references_qmd_detailed(references_path)
+    # Parse references.bib for professional citation formatting
+    bib_path = output_path.parent.parent.parent / "references.bib"  # project root/references.bib
+    citation_data = parse_references_bib(bib_path)
 
     # Categorize parameters by source type
     external_params = []
@@ -294,7 +294,7 @@ def generate_parameters_and_calculations_qmd(
                 # Detect if this is an intra-document anchor (no path separators, no file extension)
                 is_anchor = "/" not in source_ref and ".qmd" not in source_ref and ".md" not in source_ref
 
-                # Check if this anchor-like value is actually a reference ID from references.qmd
+                # Check if this anchor-like value is actually a reference ID from references.bib
                 is_reference_id = False
                 if is_anchor and available_refs is not None:
                     is_reference_id = source_ref in available_refs
@@ -309,18 +309,15 @@ def generate_parameters_and_calculations_qmd(
                 }
 
                 if is_reference_id:
-                    # This is a reference ID - format as professional citation
-                    link_target = f"../references.qmd#{source_ref}"
-                    # Try to use formatted citation from references.qmd
-                    if source_ref in citation_data:
-                        link_text = format_citation(citation_data[source_ref])
-                    else:
-                        # Fallback to friendly label or reference ID
-                        link_text = methodology_labels.get(source_ref, source_ref)
+                    # This is a reference ID - use Quarto citation syntax
+                    content.append(f"**Methodology**: [@{source_ref}]")
+                    content.append("")
                 elif is_anchor:
                     # Intra-document anchor - add # prefix
                     link_target = f"#{source_ref}"
                     link_text = methodology_labels.get(source_ref, source_ref)
+                    content.append(f"**Methodology**: [{link_text}]({link_target})")
+                    content.append("")
                 else:
                     # File path - convert to relative path
                     if source_ref.startswith("/"):
@@ -334,9 +331,8 @@ def generate_parameters_and_calculations_qmd(
                     link_target = convert_qmd_to_html(source_ref)
                     # Use the converted path for link text too (shows .html instead of .qmd)
                     link_text = link_target
-
-                content.append(f"**Methodology**: [{link_text}]({link_target})")
-                content.append("")
+                    content.append(f"**Methodology**: [{link_text}]({link_target})")
+                    content.append("")
 
             # Uncertainty section with human-friendly explanations (for calculated values too)
             uncertainty_content = generate_uncertainty_section(value, unit)
@@ -438,7 +434,7 @@ def generate_parameters_and_calculations_qmd(
                 # Convert ReferenceID enum to string value for URL
                 source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
 
-                # Check if source_ref is a .qmd file path or a references.qmd anchor
+                # Check if source_ref is a .qmd file path or a reference citation key
                 if source_ref_str.endswith('.qmd'):
                     # It's a path to another .qmd document
                     # Convert absolute path to relative from knowledge/appendix/
@@ -456,13 +452,8 @@ def generate_parameters_and_calculations_qmd(
                     rel_path = convert_qmd_to_html(rel_path)
                     content.append(f"**Source**: [{source_ref_str}]({rel_path})")
                 else:
-                    # It's a reference anchor ID - format as professional citation
-                    if source_ref_str in citation_data:
-                        formatted_citation = format_citation(citation_data[source_ref_str])
-                        content.append(f"**Source**: [{formatted_citation}](../references.qmd#{source_ref_str})")
-                    else:
-                        # Fallback to reference ID if not found in citations
-                        content.append(f"**Source**: [{source_ref_str}](../references.qmd#{source_ref_str})")
+                    # It's a reference citation key - use Quarto citation syntax
+                    content.append(f"**Source**: [@{source_ref_str}]")
                 content.append("")
 
             # Uncertainty section with human-friendly explanations

@@ -19,7 +19,7 @@ image: /assets/og-images/knowledge/solution/dih-og-academic.jpg
 
 ![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
 
-The NIH spends {{< var nih_annual_budget >}} a year. Scientists spend [50-67% of their time writing grant applications](../references.qmd#grant-writing-time-50pct) instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
+The NIH spends {{< var nih_annual_budget >}} a year. Scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
 
 Here's what an alternative might look like.
 
@@ -179,8 +179,8 @@ If the mechanism design works as intended, a decentralized institute of health c
 |--------|---------------|-----------------|-------------|
 | **Payment trigger** | Grant approved | Results achieved | Incentive alignment |
 | **Cost per QALY** | {{< var standard_economic_qaly_value_usd >}} | $5,000-$15,000 | ~10x reduction (theoretical) |
-| **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | ~6x reduction in overhead |
-| **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline-17-years) | 2-4 years | ~4x faster (theoretical) |
+| **Overhead percentage** | 50-67% [@grant-writing-time-50pct] | <10% | ~6x reduction in overhead |
+| **Time to treatment** | 10-17 years [@drug-development-timeline-17-years] | 2-4 years | ~4x faster (theoretical) |
 | **Publication rate** | ~50% (positive results only) | 100% (all results) | 2x knowledge base |
 | **Trials run annually** | ~5,000 major trials | 50,000-500,000 trials | 10-100x scale (theoretical) |
 | **Researcher time on research** | 33-50% | >90% | ~2x productivity |

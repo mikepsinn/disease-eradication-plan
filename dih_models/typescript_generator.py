@@ -15,7 +15,7 @@ Usage:
 
     # Generate TypeScript file
     output_path = Path("dih_models/parameters-calculations-citations.ts")
-    generate_typescript_parameters(parameters, output_path, references_path=Path("knowledge/references.qmd"))
+    generate_typescript_parameters(parameters, output_path, references_path=Path("references.bib"))
 """
 
 from pathlib import Path
@@ -23,7 +23,7 @@ from typing import Any, Dict, Optional
 import re
 import shutil
 
-from dih_models.reference_parser import parse_references_qmd_detailed
+from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 
@@ -216,13 +216,13 @@ def generate_typescript_parameters(
         parameters: Dict of parameter metadata from parse_parameters_file()
         output_path: Path to write the .ts file
         include_metadata: Include full metadata (default: True)
-        references_path: Path to references.qmd for citation data (optional)
+        references_path: Path to references.bib for citation data (optional)
         params_file: Path to parameters.py for auto-generating LaTeX (optional)
     """
-    # Parse citation data from references.qmd
+    # Parse citation data from references.bib
     citation_data = {}
     if references_path and references_path.exists():
-        citation_data = parse_references_qmd_detailed(references_path)
+        citation_data = parse_references_bib(references_path)
     content = []
 
     # Header
@@ -543,21 +543,13 @@ def generate_typescript_parameters(
         print(f"[OK] Copied to {dest_path}")
 
     print()
-    print("Usage in Next.js/React:")
-    if all_params:
-        first_param = all_params[0][0]
-        print(f"  import {{ {first_param}, parameters, citations }} from './parameters-calculations-citations';")
-        print(f"  console.log({first_param}.value);")
-        if all_citations:
-            first_cite = sorted(all_citations.keys())[0]
-            print(f"  console.log(citations[{_format_typescript_value(first_cite)}]);")
-    print()
+
 
 
 def generate_typescript_survey(
-    survey_data: dict = None,
-    survey_json_path: Path = None,
-    output_path: Path = None
+    survey_data: Optional[dict] = None,
+    survey_json_path: Optional[Path] = None,
+    output_path: Optional[Path] = None
 ):
     """
     Generate TypeScript file with economist survey data for Next.js applications.
@@ -575,6 +567,11 @@ def generate_typescript_survey(
     """
     import json
 
+    # Validate required parameters
+    if output_path is None:
+        print("[ERROR] output_path is required")
+        return
+
     # Load survey data from dict or JSON file
     if survey_data is None:
         if survey_json_path is None or not survey_json_path.exists():
@@ -584,6 +581,11 @@ def generate_typescript_survey(
 
         with open(survey_json_path, encoding='utf-8') as f:
             survey_data = json.load(f)
+
+    # Type assertion: survey_data is guaranteed to be non-None at this point
+    if survey_data is None:
+        print("[ERROR] Failed to load survey data")
+        return
 
     content = []
 
@@ -834,7 +836,6 @@ def generate_typescript_survey(
     print(f"[OK] Generated {output_path}")
     print(f"     {survey_data['metadata']['parameter_count']} parameters")
     print(f"     {total_questions} questions")
-    print(f"     {survey_data['metadata']['estimated_time_minutes']} minutes estimated")
 
     # Copy to Next.js project if it exists
     nextjs_lib = Path("E:/code/dih-neobrutalist/lib")
@@ -843,11 +844,6 @@ def generate_typescript_survey(
         shutil.copy2(output_path, dest_path)
         print(f"[OK] Copied to {dest_path}")
 
-    print()
-    print("Usage in Next.js/React:")
-    print("  import { economistSurvey, getParameterByRank } from './economist-survey';")
-    print("  const param = getParameterByRank(1);")
-    print("  console.log(param.displayName, param.formattedValue);")
     print()
 
 
@@ -929,7 +925,7 @@ def _generate_parameter_constant(
             # Collect citation for the citations lookup (don't embed)
             # Only for citation IDs (no slashes, no .qmd in original)
             original_ref = getattr(value_obj, "source_ref", None)
-            if hasattr(original_ref, 'value'):
+            if original_ref is not None and hasattr(original_ref, 'value'):
                 original_ref = original_ref.value
             else:
                 original_ref = str(original_ref) if original_ref else None

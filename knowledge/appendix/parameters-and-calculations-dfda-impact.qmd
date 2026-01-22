@@ -2156,7 +2156,7 @@ N_{untreated} \\
 \end{gathered}
 $$
 
-**Methodology**: [Orphanet Journal of Rare Diseases (2024) (2024) - Rare Disease Treatment Gap](../references.qmd#rare-disease-only-5pct-have-treatment)
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
 
 *~ Medium confidence*
 
@@ -2296,7 +2296,7 @@ Cost_{pragmatic,QALY} = \frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \frac{\$20M}{5
 \end{gathered}
 $$
 
-**Methodology**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+**Methodology**: [@recovery-trial-82x-cost-reduction]
 
 *~ Medium confidence*
 
@@ -2415,7 +2415,7 @@ T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
 \end{gathered}
 $$
 
-**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+**Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
 
@@ -2453,7 +2453,7 @@ T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} =
 \end{gathered}
 $$
 
-**Methodology**: [Composite estimate based on Orphanet - Average Time to Cure Under Current System](../references.qmd#status-quo-cure-timeline-estimate)
+**Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
 
@@ -2990,7 +2990,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -3014,7 +3014,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -3038,7 +3038,7 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
 
-**Source**: [NIH (2015) - Antidepressant clinical trial exclusion rates](../references.qmd#antidepressant-trial-exclusion-rates)
+**Source**: [@antidepressant-trial-exclusion-rates]
 
 *✓ High confidence*
 
@@ -3050,7 +3050,7 @@ Mean exclusion rate in antidepressant trials (86.1% of real-world patients exclu
 
 GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
 
-**Source**: [GiveWell - GiveWell Cost per Life Saved for Top Charities (2024)](../references.qmd#givewell-cost-per-life-saved)
+**Source**: [@givewell-cost-per-life-saved]
 
 #### Uncertainty Range
 
@@ -3074,7 +3074,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -3094,7 +3094,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 Current clinical trial participation rate (0.06% of population)
 
-**Source**: [ACS CAN - Clinical trial patient participation rate](../references.qmd#clinical-trial-patient-participation-rate)
+**Source**: [@clinical-trial-patient-participation-rate]
 
 *✓ High confidence*
 
@@ -3106,7 +3106,7 @@ Current clinical trial participation rate (0.06% of population)
 
 Global population with chronic diseases
 
-**Source**: [ScienceDaily (2015) - Global prevalence of chronic disease](../references.qmd#disease-prevalence-2-billion)
+**Source**: [@disease-prevalence-2-billion]
 
 #### Uncertainty Range
 
@@ -3130,7 +3130,7 @@ Global population with chronic diseases
 
 Current global clinical trials per year
 
-**Source**: [Research and Markets (2024) - Global clinical trials market 2024](../references.qmd#global-clinical-trials-market-2024)
+**Source**: [@global-clinical-trials-market-2024]
 
 #### Uncertainty Range
 
@@ -3154,7 +3154,7 @@ Current global clinical trials per year
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
-**Source**: [IQVIA Report - Global trial capacity](../references.qmd#global-trial-participant-capacity)
+**Source**: [@global-trial-participant-capacity]
 
 #### Uncertainty Range
 
@@ -3178,7 +3178,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
-**Source**: [NIH Common Fund (2025) - NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage](../references.qmd#pragmatic-trials-cost-advantage)
+**Source**: [@pragmatic-trials-cost-advantage]
 
 #### Uncertainty Range
 
@@ -3202,7 +3202,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 Percentage of drugs that gain at least one new indication after initial approval
 
-**Source**: [Nature Medicine (2024) - Drug Repurposing Rate (~30%)](../references.qmd#drug-repurposing-rate)
+**Source**: [@drug-repurposing-rate]
 
 *✓ High confidence*
 
@@ -3214,7 +3214,7 @@ Percentage of drugs that gain at least one new indication after initial approval
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
-**Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
+**Source**: [@bio-clinical-development-2021]
 
 #### Uncertainty Range
 
@@ -3234,7 +3234,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
-**Source**: [Institute for Health Metrics and Evaluation (IHME) (2024) - IHME Global Burden of Disease 2021 (2.88B DALYs, 1.13B YLD)](../references.qmd#ihme-gbd-2021)
+**Source**: [@ihme-gbd-2021]
 
 #### Uncertainty Range
 
@@ -3254,7 +3254,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
-**Source**: [Derived from global market size and public/private funding ratios - Private industry clinical trial spending](../references.qmd#industry-clinical-trial-spending-estimate)
+**Source**: [@industry-clinical-trial-spending-estimate]
 
 #### Uncertainty Range
 
@@ -3278,7 +3278,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -3298,7 +3298,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 Global life expectancy (2024)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -3318,7 +3318,7 @@ Global life expectancy (2024)
 
 Global military spending in 2024
 
-**Source**: [SIPRI (2025) - Global military spending (\$2.72T, 2024)](../references.qmd#global-military-spending)
+**Source**: [@global-military-spending]
 
 #### Uncertainty Range
 
@@ -3334,7 +3334,7 @@ Global military spending in 2024
 
 Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.
 
-**Source**: [Institute for Health Metrics and Evaluation (IHME) (2024) - IHME Global Burden of Disease 2021 (2.88B DALYs, 1.13B YLD)](../references.qmd#ihme-gbd-2021)
+**Source**: [@ihme-gbd-2021]
 
 #### Uncertainty Range
 
@@ -3354,7 +3354,7 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 
 Percentage of human interactome (protein-protein interactions) targeted by drugs
 
-**Source**: [PMC (2023) - Only ~12% of human interactome targeted](../references.qmd#clinical-trials-puzzle-interactome)
+**Source**: [@clinical-trials-puzzle-interactome]
 
 *✓ High confidence*
 
@@ -3366,7 +3366,7 @@ Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
 
-**Source**: [Calculated from Orphanet Journal of Rare Diseases (2024) (2024) - Diseases Getting First Effective Treatment Each Year](../references.qmd#diseases-getting-first-treatment-annually)
+**Source**: [@diseases-getting-first-treatment-annually]
 
 #### Uncertainty Range
 
@@ -3390,7 +3390,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.
 
-**Source**: [PMC (1990) - Standard Medical Research ROI ($20k-$100k/QALY)](../references.qmd#standard-medical-research-roi)
+**Source**: [@standard-medical-research-roi]
 
 #### Uncertainty Range
 
@@ -3414,7 +3414,7 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 Average cost to develop one drug in current system
 
-**Source**: [Tufts CSDD - Cost of drug development](../references.qmd#drug-development-cost)
+**Source**: [@drug-development-cost]
 
 #### Uncertainty Range
 
@@ -3438,7 +3438,7 @@ Average cost to develop one drug in current system
 
 Phase I safety trial duration
 
-**Source**: [Biotechnology Innovation Organization (BIO) (2021) - BIO Clinical Development Success Rates 2011-2020](../references.qmd#bio-clinical-development-2021)
+**Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
@@ -3450,7 +3450,7 @@ Phase I safety trial duration
 
 Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
 
-**Source**: [PMC - Pragmatic Trial Cost per Patient (Median $97)](../references.qmd#pmc-pragmatic-trial-cost)
+**Source**: [@pmc-pragmatic-trial-cost]
 
 #### Uncertainty Range
 
@@ -3474,7 +3474,7 @@ Median cost per patient in embedded pragmatic clinical trials (systematic review
 
 Total number of rare diseases globally
 
-**Source**: [GAO (2025) - 95% of diseases have 0 FDA-approved treatments](../references.qmd#95-pct-diseases-no-treatment)
+**Source**: [@95-pct-diseases-no-treatment]
 
 #### Uncertainty Range
 
@@ -3498,7 +3498,7 @@ Total number of rare diseases globally
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
-**Source**: [Oren Cass, Manhattan Institute (2023) - RECOVERY Trial Cost per Patient](../references.qmd#recovery-cost-500)
+**Source**: [@recovery-cost-500]
 
 #### Uncertainty Range
 
@@ -3522,7 +3522,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
-**Source**: [NHS England; Águas et al. (2021) - RECOVERY trial global lives saved (~1 million)](../references.qmd#recovery-trial-1m-lives-saved)
+**Source**: [@recovery-trial-1m-lives-saved]
 
 #### Uncertainty Range
 
@@ -3546,7 +3546,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.
 
-**Source**: [Manhattan Institute - RECOVERY trial 82× cost reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+**Source**: [@recovery-trial-82x-cost-reduction]
 
 #### Uncertainty Range
 
@@ -3570,7 +3570,7 @@ Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across m
 
 Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -3590,7 +3590,7 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
-**Source**: [World Health Organization (2024) - WHO Global Health Estimates 2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [@who-global-health-estimates-2024]
 
 #### Uncertainty Range
 
@@ -3614,7 +3614,7 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 Return on investment from smallpox eradication campaign
 
-**Source**: [CSIS - Smallpox Eradication ROI](../references.qmd#smallpox-eradication-roi)
+**Source**: [@smallpox-eradication-roi]
 
 *✓ High confidence*
 
@@ -3626,7 +3626,7 @@ Return on investment from smallpox eradication campaign
 
 Standard economic value per QALY
 
-**Source**: [ICER (2024) - Value per QALY (standard economic value)](../references.qmd#qaly-value)
+**Source**: [@qaly-value]
 
 #### Uncertainty Range
 
@@ -3646,7 +3646,7 @@ Standard economic value per QALY
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
-**Source**: [Wikipedia - Thalidomide scandal: worldwide cases and mortality](../references.qmd#thalidomide-scandal)
+**Source**: [@thalidomide-scandal]
 
 #### Uncertainty Range
 
@@ -3670,7 +3670,7 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
-**Source**: [PLOS One (2019) - Health and quality of life of Thalidomide survivors as they age](../references.qmd#thalidomide-survivors-health)
+**Source**: [@thalidomide-survivors-health]
 
 #### Uncertainty Range
 
@@ -3694,7 +3694,7 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 Mortality rate for thalidomide-affected infants (died within first year)
 
-**Source**: [Wikipedia - Thalidomide scandal: worldwide cases and mortality](../references.qmd#thalidomide-scandal)
+**Source**: [@thalidomide-scandal]
 
 #### Uncertainty Range
 
@@ -3718,7 +3718,7 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 Average lifespan for thalidomide survivors
 
-**Source**: [PLOS One (2019) - Health and quality of life of Thalidomide survivors as they age](../references.qmd#thalidomide-survivors-health)
+**Source**: [@thalidomide-survivors-health]
 
 #### Uncertainty Range
 
@@ -3742,7 +3742,7 @@ Average lifespan for thalidomide survivors
 
 US share of world population in 1960
 
-**Source**: [US Census Bureau - Historical world population estimates](../references.qmd#us-census-world-population-1960)
+**Source**: [@us-census-world-population-1960]
 
 #### Uncertainty Range
 
@@ -3766,7 +3766,7 @@ US share of world population in 1960
 
 Phase 3 cost per patient (median from FDA study)
 
-**Source**: [FDA Study via NCBI - Trial Costs, FDA Study](../references.qmd#trial-costs-fda-study)
+**Source**: [@trial-costs-fda-study]
 
 #### Uncertainty Range
 
@@ -3790,7 +3790,7 @@ Phase 3 cost per patient (median from FDA study)
 
 Value of Statistical Life (conservative estimate)
 
-**Source**: [DOT (2024) - DOT Value of Statistical Life (\$13.6M)](../references.qmd#dot-vsl-13-6m)
+**Source**: [@dot-vsl-13-6m]
 
 #### Uncertainty Range
 

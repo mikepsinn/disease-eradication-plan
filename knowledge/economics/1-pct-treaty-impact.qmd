@@ -274,11 +274,11 @@ The World Health Organization reports {{< var global_disease_deaths_daily >}} {{
 
 This mortality burden exceeds:
 
-- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
+- Annual terrorism deaths [@chance-of-dying-from-terrorism-1-in-30m] by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
 
 {{< var disease_vs_terrorism_deaths_ratio_latex >}}
 
-- [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of {{< var disease_vs_war_deaths_ratio >}} (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
+- Annual war deaths [@acled-active-combat-deaths] by a factor of {{< var disease_vs_war_deaths_ratio >}} (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
 
 {{< var disease_vs_war_deaths_ratio_latex >}}
 
@@ -297,7 +297,7 @@ The mechanism makes trial participation financially attractive for both patients
 
 ## A Decentralized Framework for Drug Assessment
 
-The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works ([published trials show 94% positive results while FDA data shows only 51%](../references.qmd#publication-bias-clinical-trials)), but what measurably happens to real humans taking real treatments.
+The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works (published trials show 94% positive results while FDA data shows only 51% [@publication-bias-clinical-trials]), but what measurably happens to real humans taking real treatments.
 
 This architectural shift from centralized regulatory gatekeeping to distributed, real-world evidence generation achieves a **{{< var dfda_trial_cost_reduction_factor >}} cost reduction** while providing superior safety monitoring and treatment selection capabilities.
 
@@ -317,9 +317,9 @@ The cost reduction stems from eliminating unnecessary overhead, not reducing evi
 
 ### Enhanced Safety Monitoring
 
-**Current system limitations**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until 100,000+ prescriptions have been written, because adverse event reporting is voluntary. Doctors must notice the problem, remember to file a report, and complete the paperwork. [Average reporting rate approximately 6%](../references.qmd#adverse-event-underreporting), meaning ~94% of adverse events go unreported.
+**Current system limitations**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until 100,000+ prescriptions have been written, because adverse event reporting is voluntary. Doctors must notice the problem, remember to file a report, and complete the paperwork. Average reporting rate approximately 6% [@adverse-event-underreporting], meaning ~94% of adverse events go unreported.
 
-**Concrete failure case**: [Rofecoxib (Vioxx)](../references.qmd#vioxx-deaths), approved in 1999 for arthritis pain, increased cardiovascular event risk (heart attacks and strokes) through COX-2 enzyme inhibition. The cardiovascular signal went undetected for 5 years despite [92.8 million U.S. prescriptions (1999-2003)](../references.qmd#vioxx-deaths). Voluntary adverse event reporting failed to identify the pattern until dedicated post-market studies confirmed the association in 2004, leading to withdrawal. Estimates of deaths from the delay range from [38,000 (Lancet) to 55,000 (FDA testimony)](../references.qmd#vioxx-deaths). Continuous EHR monitoring of cardiovascular events (heart attacks, strokes, ER visits) across millions of patients would have detected the elevated rate within months, not years, as these outcomes are objectively captured in hospital records.
+**Concrete failure case**: Rofecoxib (Vioxx) [@vioxx-deaths], approved in 1999 for arthritis pain, increased cardiovascular event risk (heart attacks and strokes) through COX-2 enzyme inhibition. The cardiovascular signal went undetected for 5 years despite 92.8 million U.S. prescriptions (1999-2003) [@vioxx-deaths]. Voluntary adverse event reporting failed to identify the pattern until dedicated post-market studies confirmed the association in 2004, leading to withdrawal. Estimates of deaths from the delay range from 38,000 (Lancet) to 55,000 (FDA testimony) [@vioxx-deaths]. Continuous EHR monitoring of cardiovascular events (heart attacks, strokes, ER visits) across millions of patients would have detected the elevated rate within months, not years, as these outcomes are objectively captured in hospital records.
 
 **Integrated surveillance alternative**: Every prescription automatically becomes a tracked data point. When patients experience cardiovascular events, get lab tests, or visit emergency rooms, the system captures these outcomes via existing EHR infrastructure. No extra paperwork required. Like credit card fraud detection systems that identify suspicious patterns across millions of transactions in real-time, integrated health systems can detect treatment-associated adverse events across millions of patients automatically.
 
@@ -330,12 +330,12 @@ The system automatically aggregates outcomes:
 - **Pattern detected after 5,000 prescriptions** → Public alert issued to all prescribing physicians and patients, rather than waiting for years and dedicated post-market studies
 - **Mass notification system** → All patients currently taking the drug receive automated alerts through patient portals, enabling immediate clinical review and alternative treatment consideration
 
-**Detection timeline comparison ([Vioxx cardiovascular risk](../references.qmd#vioxx-deaths)):**
+**Detection timeline comparison (Vioxx cardiovascular risk [@vioxx-deaths]):**
 
-- **Actual detection with voluntary reporting**: 5 years from approval (1999) to withdrawal (2004), [38,000-55,000 estimated deaths](../references.qmd#vioxx-deaths)
+- **Actual detection with voluntary reporting**: 5 years from approval (1999) to withdrawal (2004), 38,000-55,000 estimated deaths [@vioxx-deaths]
 - **Projected with ubiquitous EHR monitoring**: 6-12 months from widespread use to pattern detection (automated cardiovascular event surveillance comparing treated patients to matched controls)
 
-This infrastructure is not hypothetical. The [FDA Sentinel Initiative](../references.qmd#fda-sentinel-initiative) currently monitors 128.7 million patients across US health systems for drug safety signals using similar distributed data methodology. The proposed system makes this the default infrastructure for all treatments from day one, rather than a separate monitoring program activated only after problems are suspected. This represents a fundamental safety improvement: continuous, automated, population-scale adverse event detection with immediate mass notification capability, rather than relying on [voluntary physician reporting (which captures only ~6% of actual adverse events)](../references.qmd#adverse-event-underreporting) and slow manual review processes.
+This infrastructure is not hypothetical. The [@fda-sentinel-initiative] currently monitors 128.7 million patients across US health systems for drug safety signals using similar distributed data methodology. The proposed system makes this the default infrastructure for all treatments from day one, rather than a separate monitoring program activated only after problems are suspected. This represents a fundamental safety improvement: continuous, automated, population-scale adverse event detection with immediate mass notification capability, rather than relying on voluntary physician reporting (which captures only ~6% of actual adverse events) [@adverse-event-underreporting] and slow manual review processes.
 
 ### Comparative Effectiveness Rankings
 
@@ -770,7 +770,7 @@ Health economists invented a metric called ICER (Incremental Cost-Effectiveness 
 
 Translation: "How much does it cost per year of healthy life created?"
 
-WHO says interventions under {{< var who_qaly_threshold_cost_effective >}} {{< var who_qaly_threshold_cost_effective_cite >}} per QALY are "cost-effective." Most successful health programs cost [$3,000-10,000](../references.qmd#who-cost-effectiveness-threshold) per QALY.
+WHO says interventions under {{< var who_qaly_threshold_cost_effective >}} {{< var who_qaly_threshold_cost_effective_cite >}} per QALY are "cost-effective." Most successful health programs cost $3,000-10,000 [@who-cost-effectiveness-threshold] per QALY.
 
 This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY**
 
@@ -810,7 +810,7 @@ Monte Carlo analysis confirms the 95% confidence interval for cost per DALY rema
 
 Accounting for political uncertainty ({{< var political_success_probability >}}), this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
 
-For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban) was called a "bold gamble" that succeeded with [122 states signing](../references.qmd#icbl-ottawa-treaty) in just 14 months.
+For context: Ottawa Treaty [@icbl-ottawa-treaty] (landmine ban) was called a "bold gamble" that succeeded with 122 states signing [@icbl-ottawa-treaty] in just 14 months.
 
 ### Treaty Campaign Leverage vs Direct Funding
 
@@ -1194,7 +1194,7 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
 
-**Faster Recruitment**: The Oxford RECOVERY trial recruited [47,000+ patients across nearly 200 hospitals](../references.qmd#recovery-trial-summary-quote), while [80% of traditional trials fail to meet enrollment timelines](../references.qmd#clinical-trial-enrollment-timelines). This speed comes from pragmatic eligibility ([minimal exclusions](../references.qmd#fda-trial-patient-exclusion-criteria) vs. [86% excluded](../references.qmd#antidepressant-trial-exclusion-rates) traditionally) and embedded recruitment in routine care.
+**Faster Recruitment**: The Oxford RECOVERY trial recruited 47,000+ patients across nearly 200 hospitals [@recovery-trial-summary-quote], while 80% of traditional trials fail to meet enrollment timelines [@clinical-trial-enrollment-timelines]. This speed comes from pragmatic eligibility (minimal exclusions [@fda-trial-patient-exclusion-criteria] vs. 86% excluded [@antidepressant-trial-exclusion-rates] traditionally) and embedded recruitment in routine care.
 
 **Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
@@ -1204,7 +1204,7 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplie
 
 These improvements compound multiplicatively to produce the {{< var dfda_trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
-**Generalizability of Cost Savings**: Critics regarding RECOVERY and ADAPTABLE as outliers should note that a [systematic review of 64 embedded pragmatic clinical trials](../references.qmd#pmc-pragmatic-trial-cost) found a median cost per participant of just **$97** (IQR $19–$478). High-cost traditional trials are necessary only for first-in-human safety testing. For the **{{< var drug_disease_combinations_possible >}}** unexplored combinations of *already-safe* compounds (repurposing), pragmatic protocols are sufficient, covering the vast majority (>90%) of the therapeutic search space.
+**Generalizability of Cost Savings**: Critics regarding RECOVERY and ADAPTABLE as outliers should note that a systematic review of 64 embedded pragmatic clinical trials [@pmc-pragmatic-trial-cost] found a median cost per participant of just **$97** (IQR $19–$478). High-cost traditional trials are necessary only for first-in-human safety testing. For the **{{< var drug_disease_combinations_possible >}}** unexplored combinations of *already-safe* compounds (repurposing), pragmatic protocols are sufficient, covering the vast majority (>90%) of the therapeutic search space.
 
 **Sensitivity of research acceleration estimate:** The tornado chart below shows which input parameters have the largest impact on the trial capacity multiplier. The width of each bar shows how much the multiplier changes when that parameter varies across its uncertainty range:
 
@@ -1214,7 +1214,7 @@ These improvements compound multiplicatively to produce the {{< var dfda_trial_c
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
-Currently, researchers spend [up to 50% of their time](../references.qmd#grant-writing-time-50pct) on grants and administrative tasks. A decentralized framework for drug assessment automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
+Currently, researchers spend up to 50% of their time [@grant-writing-time-50pct] on grants and administrative tasks. A decentralized framework for drug assessment automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
 
 **The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (users answer questions, it generates compliant filings), a decentralized framework for drug assessment wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified framework. Researchers define their hypothesis and patient population; the framework automatically:
 
@@ -1417,21 +1417,21 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 ### Military and Conflict Data
 
-- Global military spending: [SIPRI Military Expenditure Database](../references.qmd#global-military-spending) ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually)
-- Conflict deaths: [Armed Conflict Location & Event Data Project (ACLED)](../references.qmd#acled-active-combat-deaths), [Global Terrorism Database (GTD)](../references.qmd#gtd-terror-attack-deaths), [Uppsala Conflict Data Program (UCDP)](../references.qmd#ucdp-state-violence-deaths)
+- Global military spending: SIPRI Military Expenditure Database [@global-military-spending] ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually)
+- Conflict deaths: Armed Conflict Location & Event Data Project (ACLED) [@acled-active-combat-deaths], Global Terrorism Database (GTD) [@gtd-terror-attack-deaths], Uppsala Conflict Data Program (UCDP) [@ucdp-state-violence-deaths]
 
 #### Clinical Trial Economics
 
-- Global trial market: [Global Clinical Trials Market Report 2024](../references.qmd#global-clinical-trials-market-2024) ({{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}} annually)
+- Global trial market: Global Clinical Trials Market Report 2024 [@global-clinical-trials-market-2024] ({{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}} annually)
 - Cost reduction benchmarks: [Oxford RECOVERY Trial](../appendix/recovery-trial.qmd) ({{< var recovery_trial_cost_reduction_factor >}}× cost reduction demonstrated)
-- Trial completion rates: [ClinicalTrials.gov database](../references.qmd#clinicaltrials-gov-enrollment-data-2025) ({{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} trials initiated annually, {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} completion rate)
+- Trial completion rates: ClinicalTrials.gov database [@clinicaltrials-gov-enrollment-data-2025] ({{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} trials initiated annually, {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} completion rate)
 
 
 #### Health Economics
 
-- QALY valuations: [ICER QALY Methodology](../references.qmd#icer-qaly-methodology), NBER working papers (Glied & Lleras-Muney, Philipson et al.)
-- Disease burden: [WHO Global Health Observatory](../references.qmd#who-global-health-estimates-2024)
-- Rare diseases: [National Organization for Rare Disorders (NORD)](../references.qmd#rare-disease-patients-300m-globally)
+- QALY valuations: [@icer-qaly-methodology], NBER working papers (Glied & Lleras-Muney, Philipson et al.)
+- Disease burden: WHO Global Health Observatory [@who-global-health-estimates-2024]
+- Rare diseases: National Organization for Rare Disorders (NORD) [@rare-disease-patients-300m-globally]
 
 #### Economic Parameters
 
@@ -1543,9 +1543,9 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 
 #### Historical operational model
 
-From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
+From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) [@jama-founded-1893] compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
 
-**Safety record, the thalidomide success story:** The pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed** - the safety testing framework worked exactly as intended.
+**Safety record, the thalidomide success story:** The pre-1962 safety testing framework successfully prevented the thalidomide disaster [@thalidomide-no-us-birth-defects] that devastated Europe with thousands of horrific birth defects [@thalidomide-birth-defects]. When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed** - the safety testing framework worked exactly as intended.
 
 The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation; safety testing had succeeded. The response was to take efficacy testing away from {{< var pre_1962_physician_count >}} independent physicians and centralize it within pharmaceutical companies, increasing costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing approvals substantially.
 
@@ -1553,7 +1553,7 @@ The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in res
 
 The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. (Our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960), not merely one case study.
 
-The cost reduction estimates are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} [(compounded, 1990 dollars)](../references.qmd#pre-1962-drug-costs-timeline) compared to modern {{< var pharma_drug_development_cost_current >}} [costs](../references.qmd#pre-1962-drug-costs-timeline), representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
+The cost reduction estimates are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} (compounded, 1990 dollars) [@pre-1962-drug-costs-timeline] compared to modern {{< var pharma_drug_development_cost_current >}} costs [@pre-1962-drug-costs-timeline], representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
 ### Political Feasibility Assumption
 
@@ -1606,7 +1606,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike defense contractors who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, cures for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or cures that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
 
-**Historical precedent: Why past peace dividends failed**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam (1970s) and post-Cold War (1990s): initial reductions followed by reversals within 5-10 years. The critical failure: **savings weren't bound to a substitute industry**. Money reverted to general budgets, making re-militarization politically costless. The 1% Treaty solves this by **contractually binding savings to health research infrastructure**, creating a new constituency (patients, researchers, pharmaceutical companies) with incentives to defend the reallocation.
+**Historical precedent: Why past peace dividends failed**: The post-World War II "peace dividend" saw military spending fall from 41% of GDP (1945) to 7.2% (1948) [@us-post-wwii-military-spending-cut], with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam (1970s) and post-Cold War (1990s): initial reductions followed by reversals within 5-10 years. The critical failure: **savings weren't bound to a substitute industry**. Money reverted to general budgets, making re-militarization politically costless. The 1% Treaty solves this by **contractually binding savings to health research infrastructure**, creating a new constituency (patients, researchers, pharmaceutical companies) with incentives to defend the reallocation.
 
 **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties ratified, but many failed to meet funding commitments. As of 2024, developed countries have not met the $100B annual climate finance pledge despite treaty obligations. Treaty ratification creates moral commitment but weak enforcement mechanisms for sustained budgetary allocations.
 
@@ -1677,13 +1677,13 @@ The peace dividend math is simple: wars cost {{< var global_annual_direct_indire
 
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
-| **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} | SIPRI 2024 global military budgets [(source)](../references.qmd#sipri2024) |
+| **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} | SIPRI 2024 global military budgets (source) [@sipri2024] |
 | **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_infrastructure_destruction_conflict >}} | Transportation, energy, communications, water, education, healthcare facilities |
 | **Human Life Losses** | {{< var global_annual_human_life_losses_conflict >}} | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} {{< var value_of_statistical_life_cite >}} value of statistical life (conservative estimate) |
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
 | **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_economic_growth_military_spending >}} {{< var global_annual_lost_economic_growth_military_spending_cite >}} | Opportunity cost of military spending vs. productive investment |
 | **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_veteran_healthcare_costs >}} {{< var global_annual_veteran_healthcare_costs_cite >}} | Long-term medical care for conflict-related injuries |
-| **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × [$1,384/year](../references.qmd#unhcr-refugee-support-cost) |
+| **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | 108.4M displaced persons [@unhcr-forcibly-displaced-2023] × $1,384/year [@unhcr-refugee-support-cost] |
 | **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} {{< var global_annual_lost_human_capital_conflict_cite >}} | Productive capacity lost from casualties and displacement |
@@ -1809,9 +1809,9 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 
 **GiveWell Top Charities (Gold Standard for Cost-Effectiveness):**
 
-- **[Bed Nets](../references.qmd#givewell-cost-per-life-saved)**: {{< var bed_nets_cost_per_daly >}}/DALY (Against Malaria Foundation)
-- **[Deworming](../references.qmd#deworming-cost-per-daly)**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
-- **[Vitamin A Supplementation](../references.qmd#vitamin-a-cost-per-daly)**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
+- **Bed Nets [@givewell-cost-per-life-saved]**: {{< var bed_nets_cost_per_daly >}}/DALY (Against Malaria Foundation)
+- **Deworming [@deworming-cost-per-daly]**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
+- **Vitamin A Supplementation [@vitamin-a-cost-per-daly]**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
 
 **A 1% Treaty/decentralized framework for drug assessment:**
 
@@ -1930,18 +1930,18 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplie
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
 - {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials at any time (3-5 year duration)
-- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} [people with chronic disease](../references.qmd#disease-prevalence-2-billion))
+- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} people with chronic disease [@disease-prevalence-2-billion])
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
 
 **Pragmatic Trial System Performance** (RECOVERY model scaled globally):
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
-- Minimal exclusion criteria ([vs. 86% excluded](../references.qmd#antidepressant-trial-exclusion-rates) in traditional trials)
-- [47,000 patients across nearly 200 sites](../references.qmd#recovery-trial-summary-quote) in 3 months (RECOVERY)
+- Minimal exclusion criteria (vs. 86% excluded [@antidepressant-trial-exclusion-rates] in traditional trials)
+- 47,000 patients across nearly 200 sites [@recovery-trial-summary-quote] in 3 months (RECOVERY)
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× Multiplier Works**:
 
-The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [pragmatic trial cost](../references.qmd#pragmatic-trials-cost-advantage) ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE trial), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
+The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at pragmatic trial cost [@pragmatic-trials-cost-advantage] ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE trial), compared to current global trial participation [@global-trial-participant-capacity] of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
 {{< var dfda_trial_capacity_multiplier_latex >}}
 
@@ -1950,8 +1950,8 @@ This represents the funding capacity from the 1% Treaty Fund alone, without assu
 **Net Effect**:
 
 - {{< var dfda_trial_capacity_multiplier >}}× more completed trials/year
-- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → proportionally more approvals
-- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var dfda_pragmatic_trial_cost_per_patient >}} cost per patient (supported by [meta-analysis of 64 trials](../references.qmd#pmc-pragmatic-trial-cost) showing $97 median cost; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}).
+- From 50 drug approvals/year [@global-new-drug-approvals-50-annually] → proportionally more approvals
+- From {{< var traditional_phase3_cost_per_patient >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var dfda_pragmatic_trial_cost_per_patient >}} cost per patient (supported by meta-analysis of 64 trials [@pmc-pragmatic-trial-cost] showing $97 median cost; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}).
 
 
 
@@ -2042,7 +2042,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 - **Military sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases {{< var dfda_trial_capacity_multiplier >}}×
-- **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ({{< var global_disease_economic_burden_annual >}} current economic cost)
+- **Insurance companies**: Net savings from reduced disease burden [@disease-economic-burden-109t] ({{< var global_disease_economic_burden_annual >}} current economic cost)
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
 - **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
@@ -2164,7 +2164,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Counterargument**:
 
-Military lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. The system offers VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Military lobbyists currently get $1,813 back for every $1 spent [@lobbying-roi-calc] on political influence. The system offers VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
@@ -2198,7 +2198,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 3. **Preserved Phase I safety testing**: The proposal retains rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}}), which successfully prevented the thalidomide disaster in the United States. What changes is eliminating the {{< var efficacy_lag_years >}}-year efficacy delay after safety is verified. Phase I safety assessment remains mandatory.
 
-4. **Ubiquitous adverse event detection**: The [Vioxx cardiovascular risk](../references.qmd#vioxx-deaths) took 5 years to detect through voluntary reporting and dedicated post-market studies (1999-2004), resulting in [38,000-55,000 estimated deaths](../references.qmd#vioxx-deaths). Automated EHR monitoring comparing cardiovascular event rates in treated patients versus matched controls would have detected the elevated risk within 6-12 months. The proposed system implements ubiquitous automated monitoring from day one, not years later.
+4. **Ubiquitous adverse event detection**: The Vioxx cardiovascular risk [@vioxx-deaths] took 5 years to detect through voluntary reporting and dedicated post-market studies (1999-2004), resulting in 38,000-55,000 estimated deaths [@vioxx-deaths]. Automated EHR monitoring comparing cardiovascular event rates in treated patients versus matched controls would have detected the elevated risk within 6-12 months. The proposed system implements ubiquitous automated monitoring from day one, not years later.
 
 5. **Immediate mass notification**: When safety signals are detected, all patients currently taking the drug receive automated alerts through patient portals, enabling immediate clinical review and discontinuation if warranted. Current voluntary reporting systems lack this capability.
 
@@ -2207,9 +2207,9 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Safety Dimension | Traditional Phase III Trials | Pragmatic Trials + EHR Monitoring |
 |:---|:---|:---|
 | Sample size | 100-300 patients | 10,000-100,000+ patients |
-| Patient selection | 86% [excluded](../references.qmd#antidepressant-trial-exclusion-rates) (comorbidities, age, medications) | All volunteers included (real-world populations) |
+| Patient selection | 86% excluded [@antidepressant-trial-exclusion-rates] (comorbidities, age, medications) | All volunteers included (real-world populations) |
 | Monitoring duration | 3-12 months (then stops) | Continuous through EHR integration (indefinite) |
-| Publication rate | ~50% [unpublished](../references.qmd#publication-bias-clinical-trials); positive results 3× more likely published | 100% automatically published (automated data aggregation) |
+| Publication rate | ~50% unpublished [@publication-bias-clinical-trials]; positive results 3× more likely published | 100% automatically published (automated data aggregation) |
 | Subpopulation safety | Excludes elderly, children, pregnant patients | Tests all populations, detects subpopulation-specific risks |
 | Long-term effects | Rarely captured (<1 year observation) | Continuous multi-year tracking via EHR linkage |
 | Adverse event detection | Voluntary physician reporting (1-10% capture rate) | Automated statistical surveillance (100% capture of recorded events) |
@@ -2232,7 +2232,7 @@ For detailed mortality analysis, see [Regulatory Mortality Analysis](../appendix
 
 A decentralized institutes of health put patients in control through trial participation, not committee votes.
 
-**Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what {{< var global_population_2024 >}} humans can try when dying
+**Current system**: 200 NIH bureaucrats [@nih-decision-makers-200-people] decide what {{< var global_population_2024 >}} humans can try when dying
 
 **New system**: Patients choose which trials to join. Trials that attract patients get funded. Trials that don't, die.
 
@@ -2298,13 +2298,13 @@ Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only the
 
 - Conservative estimate uses 50-70% cost reduction (not the 95%+ demonstrated by RECOVERY)
 - Pre-1962 system achieved similar efficiencies across diverse therapeutic areas (not limited to repurposed drugs)
-- [Pragmatic trial literature](../references.qmd#pragmatic-trials-patsopoulos-2011) consistently shows 50-95% cost reductions across multiple contexts
+- Pragmatic trial literature [@pragmatic-trials-patsopoulos-2011] consistently shows 50-95% cost reductions across multiple contexts
 
 **Conclusion:** While RECOVERY provides modern validation, the fundamental approach (decentralized physician-led efficacy testing) has extensive historical precedent suggesting generalizability beyond single case studies. More importantly, the base estimate uses only RECOVERY's demonstrated cost structure, not its acceleration potential, making it robust to concerns about extrapolating success rates across disease areas.
 
 ### Diminishing Returns in Research Productivity
 
-Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-ideas-getting-harder-2020) show research productivity falling ~5% annually across industries, with Moore's Law requiring 18× more researchers than in the 1970s to achieve constant improvement rates.
+Economic literature documents declining research productivity over time. Bloom et al. (2020) [@bloom-ideas-getting-harder-2020] show research productivity falling ~5% annually across industries, with Moore's Law requiring 18× more researchers than in the 1970s to achieve constant improvement rates.
 
 #### Why this critique may not apply
 
@@ -2350,7 +2350,7 @@ Monte Carlo analysis confirms the median exploration ratio remains well below 1%
 
 **2. The Ultimate Frontier (New Molecules)**
 
-If we look beyond existing drugs to the broader [chemical space](../references.qmd#chemical-space-size) (10^23 to 10^60 molecules), humanity has explored roughly one-quintillionth of what is possible.
+If we look beyond existing drugs to the broader chemical space [@chemical-space-size] (10^23 to 10^60 molecules), humanity has explored roughly one-quintillionth of what is possible.
 
 We haven't hit the limits of biology; we've hit a **cost wall**. Reducing trial costs by {{< var dfda_trial_cost_reduction_factor >}} makes it economically viable to systematically explore this "dark matter" of medicine.
 
@@ -2362,7 +2362,7 @@ We haven't hit the limits of biology; we've hit a **cost wall**. Reducing trial 
 
 Decentralized trials with broad eligibility criteria face potential selection bias concerns. Traditional randomized controlled trials use restrictive eligibility *precisely* to control confounding and establish internal validity.
 
-**Trade-off between internal and external validity:** [Patsopoulos (2011)](../references.qmd#pragmatic-trials-patsopoulos-2011) documents that pragmatic trials often find 15-25% smaller effect sizes than explanatory trials but offer superior external validity (generalizability to real-world populations).
+**Trade-off between internal and external validity:** Patsopoulos (2011) [@pragmatic-trials-patsopoulos-2011] documents that pragmatic trials often find 15-25% smaller effect sizes than explanatory trials but offer superior external validity (generalizability to real-world populations).
 
 #### Mitigation strategies
 
@@ -2381,7 +2381,7 @@ These meta-analytic findings support the validity of pragmatic trial designs use
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
-**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). A decentralized framework for drug assessment system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, a decentralized framework for drug assessment's mandatory publication of all registered trials eliminates publication bias as a concern.
+**Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A decentralized framework for drug assessment system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, a decentralized framework for drug assessment's mandatory publication of all registered trials eliminates publication bias as a concern.
 
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 
@@ -2479,7 +2479,7 @@ The following table summarizes key risk factors and their mitigation strategies:
 | **Execution Risk** | HIGH | Complex global legal/technical coordination required | Phased implementation; leverage existing regulatory expertise |
 | **Regulatory Risk** | MEDIUM-HIGH | Harmonization across jurisdictions varies | Pilot programs in willing jurisdictions first |
 | **Market Risk** | VERY LOW | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} military spending already allocated | Redirection rather than new appropriation |
-| **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms ([Medable $521M raised, $2.1B valuation](../references.qmd#dct-platform-funding-medable)) |
+| **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms (Medable $521M raised, $2.1B valuation [@dct-platform-funding-medable]) |
 
 ### Scenario Analysis Robustness
 

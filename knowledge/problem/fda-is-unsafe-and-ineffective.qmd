@@ -48,8 +48,8 @@ This chapter relies on three tiers of evidence:
 **Irrefutable Facts** (direct empirical data):
 
 - {{< var recovery_trial_cost_reduction_factor >}}× cost differential: Oxford trial ({{< var recovery_trial_cost_per_patient >}}) vs. standard Phase III ({{< var traditional_phase3_cost_per_patient >}})
-- {{< var post_1962_drug_approval_reduction_pct >}} drug approval reduction: Immediate drop from [46/year (1960) to 13/year (1963)](../references.qmd#post-1962-drug-approval-drop)
-- Beta-blocker deaths: [100,000 Americans died](../references.qmd#beta-blocker-drug-lag-deaths) during decade-long delay
+- {{< var post_1962_drug_approval_reduction_pct >}} drug approval reduction: Immediate drop from 46/year (1960) to 13/year (1963) [@post-1962-drug-approval-drop]
+- Beta-blocker deaths: 100,000 Americans died [@beta-blocker-drug-lag-deaths] during decade-long delay
 - COVID test fiasco: FDA blocked WHO tests while CDC tests were contaminated
 
 **Strong Evidence** (peer-reviewed research):
@@ -73,7 +73,7 @@ Even if you reject all model-dependent estimates, the empirical facts alone demo
 Compare two real-world systems for testing drugs:
 
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
-2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
+2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **9.1 years [@drug-development-timeline-17-years]** to approve a new drug.
 
 The current system costs **{{< var dfda_trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. Not a small difference - the difference between functional and designed-to-fail.
 
@@ -94,16 +94,16 @@ You're two lifetimes from applying the scientific method to medicine. That's 0.0
 
 The 1962 Kefauver-Harris Amendments fundamentally restructured how drugs reach patients. To understand what changed, consider the system they replaced.
 
-For 10,000 years, life expectancy remained at 30 years. Then in 1883, doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}} physicians** tested treatments on real patients and published results. Life expectancy increased by [3.82 years every decade](../references.qmd#life-expectancy-increase-pre-1962) (calculated from 1880-1960 data) for 80 years.
+For 10,000 years, life expectancy remained at 30 years. Then in 1883, doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}} physicians** tested treatments on real patients and published results. Life expectancy increased by 3.82 years every decade [@life-expectancy-increase-pre-1962] (calculated from 1880-1960 data) for 80 years.
 
 In 1938, Phase I safety testing was added after the Elixir sulfanilamide disaster. This was reasonable and didn't slow progress. Safety regulations worked perfectly. They prevented all US deaths from thalidomide while Europe had thousands.
 
-Then in 1962, Congress responded to this success by adding massive **pre-approval efficacy requirements** via the [Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962), blocking patient access for years during testing. The new system:
+Then in 1962, Congress responded to this success by adding massive **pre-approval efficacy requirements** via the Kefauver Harris Amendment [@kefauver-harris-amendment-1962], blocking patient access for years during testing. The new system:
 
 - Replaced {{< var pre_1962_physician_count >}} independent doctors with drug company-run trials
 - Made trials {{< var dfda_trial_cost_reduction_factor >}}× more expensive
 - Reduced drug approvals by {{< var post_1962_drug_approval_reduction_pct >}} immediately
-- Cut life expectancy growth [by 60%](../references.qmd#post-1962-life-expectancy-slowdown): from 3.82 years/decade to 1.54 years/decade
+- Cut life expectancy growth by 60% [@post-1962-life-expectancy-slowdown]: from 3.82 years/decade to 1.54 years/decade
 
 The temporal break is exact. Life expectancy growth cut in half the moment regulations changed in 1962.
 
@@ -122,8 +122,8 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 |--------|---------------------|-------------------------|--------|
 | **Efficacy Testing** | {{< var pre_1962_physician_count >}} independent physicians | Drug company-run trials | -99.8% independence |
 | **Cost per Drug** | {{< var pre_1962_drug_development_cost_2024_usd >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× increase |
-| **New Approvals** | [46/year (1960)](../references.qmd#post-1962-drug-approval-drop) | [13/year (1963)](../references.qmd#post-1962-drug-approval-drop) | {{< var post_1962_drug_approval_reduction_pct >}} decline |
-| **Life Expectancy Growth** | [3.82 years/decade](../references.qmd#life-expectancy-increase-pre-1962) | [1.54 years/decade](../references.qmd#post-1962-life-expectancy-slowdown) | [60% reduction](../references.qmd#post-1962-life-expectancy-slowdown) |
+| **New Approvals** | 46/year (1960) [@post-1962-drug-approval-drop] | 13/year (1963) [@post-1962-drug-approval-drop] | {{< var post_1962_drug_approval_reduction_pct >}} decline |
+| **Life Expectancy Growth** | 3.82 years/decade [@life-expectancy-increase-pre-1962] | 1.54 years/decade [@post-1962-life-expectancy-slowdown] | 60% reduction [@post-1962-life-expectancy-slowdown] |
 | **Trial Cost** | {{< var dfda_pragmatic_trial_cost_per_patient >}} (pragmatic) | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_trial_cost_reduction_factor >}}× increase |
 | **Time to Approval** | 2-3 years | {{< var fda_phase_1_to_approval_years >}} | 5-8× slower |
 
@@ -183,17 +183,17 @@ The profit incentive doesn't just fail to reward better treatments. It actively 
 
 The 1962 law creates a death spiral for unprofitable treatments:
 
-- **[95% of diseases are rare](../references.qmd#95-pct-diseases-no-treatment):** Development cost ({{< var pharma_drug_development_cost_current >}}) ÷ patient population (~10,000 patients) = $260,000/patient
+- **95% of diseases are rare [@95-pct-diseases-no-treatment]:** Development cost ({{< var pharma_drug_development_cost_current >}}) ÷ patient population (~10,000 patients) = $260,000/patient
 - **No patent = no funding:** Off-patent drugs can't attract billion-dollar investments
 - **Pre-specification kills serendipity:** Must predict what drug cures before testing
 
-When something costs more, you get less of it. For [95% of diseases](../references.qmd#95-pct-diseases-no-treatment) with zero treatments, this isn't philosophy. It's math.
+When something costs more, you get less of it. For 95% of diseases [@95-pct-diseases-no-treatment] with zero treatments, this isn't philosophy. It's math.
 
 
 
 ## The Actual Death Toll of "Drug Lag"
 
-Economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer-drug-lag-estimate)**.
+Economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **21,000 to 120,000 American lives per decade [@gieringer-drug-lag-estimate]**.
 
 But that was just the US. And just the visible delays.
 
@@ -236,7 +236,7 @@ This means it's logical for regulators to reject drug applications by default. T
 | FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah. |
 | FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
 
-The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the US regulatory process delayed. And delayed. The decade-long lag in approving them for their most common use killed an estimated **[100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the US regulatory process delayed. And delayed. The decade-long lag in approving them for their most common use killed an estimated **100,000 Americans [@beta-blocker-drug-lag-deaths]**.
 
 More Americans than died in Vietnam and Korea combined. From one drug delay. Here's a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 
@@ -268,7 +268,7 @@ Perhaps it's coincidence, but you can see an increase in drug approvals in the '
 - Nothing happens
 - Dead people don't complain
 - Promotion on schedule
-- [Retire to pharma job](../references.qmd#fda-regulatory-capture-evidence)
+- Retire to pharma job [@fda-regulatory-capture-evidence]
 
 This isn't conspiracy. It's economics. The system literally cannot punish mistakes of commission (approving bad drugs) but imposes zero consequences for mistakes of omission (delaying good drugs).
 
@@ -311,7 +311,7 @@ The personal risk of approving a drug vastly exceeds the risk of rejecting it. D
 
 The FDA requires rigorous trials to ensure safety. Then it systematically excludes the populations most at risk of adverse events.
 
-Trials under the current system [exclude](../references.qmd#antidepressant-trial-exclusion-rates):
+Trials under the current system exclude [@antidepressant-trial-exclusion-rates]:
 
 - **Patients over 65:** Most people who actually take medications (excluded due to "comorbidities")
 - **Patients under 18:** All children (metabolism differs from adults)
@@ -355,9 +355,9 @@ Due to these additional costs, Dendreon ultimately [filed for chapter 11 bankrup
 
 Here's a fun fact that should be criminal:
 
-- **Negative trial results published:** [37%](../references.qmd#publication-bias-clinical-trials)
-- **Positive trial results published:** [94%](../references.qmd#publication-bias-clinical-trials)
-- **Money wasted repeating failed experiments:** [~\$100 billion annually](../references.qmd#wasted-spending-on-failed-experiments)
+- **Negative trial results published:** 37% [@publication-bias-clinical-trials]
+- **Positive trial results published:** 94% [@publication-bias-clinical-trials]
+- **Money wasted repeating failed experiments:** ~\$100 billion annually [@wasted-spending-on-failed-experiments]
 
 Companies are literally allowed to hide when drugs don't work.
 
@@ -377,25 +377,25 @@ It's like casinos only having to report when people win.
 
 ## Countries That Don't Have Our "Safety"
 
-**[Japan's Regenerative Medicine Act](../references.qmd#japans-regenerative-medicine-act):**
+**Japan's Regenerative Medicine Act [@japans-regenerative-medicine-act]:**
 
 - Conditional approval after Phase II
 - Real-world data collection required
 - Time to patient: 2-3 years
 - Americans fly there for treatment
 
-**[EU Compassionate Use](../references.qmd#eu-compassionate-use-program):**
+**EU Compassionate Use [@eu-compassionate-use-program]:**
 
 - Terminal patients can access experimental drugs
 - Doctor's discretion, not bureaucrat's
 - Thousands of lives extended
 - FDA: "But what if they die?" (They're already dying)
 
-**[Right to Try (US)](../references.qmd#right-to-try-act-2018):**
+**Right to Try (US) [@right-to-try-act-2018]:**
 
 - Passed despite FDA opposition
 - FDA response: Made it effectively impossible to use
-- [Patients helped: <200 total](../references.qmd#right-to-try-act-outcomes)
+- Patients helped: <200 total [@right-to-try-act-outcomes]
 - Patients who wanted help: Tens of thousands
 
 ## The COVID Test Fiasco
@@ -403,11 +403,11 @@ It's like casinos only having to report when people win.
 The 1962 framework requires the FDA to approve all diagnostic tests before use. During COVID, this mandate played out as follows:
 
 - **January 2020:** WHO develops COVID test, rest of world starts using it
-- **February 2020:** [FDA blocks all non-CDC tests](../references.qmd#fda-covid-test-delay) to "ensure quality"
-- **Late February:** [CDC tests contaminated, completely useless](../references.qmd#cdc-covid-test-contamination-2020)
+- **February 2020:** FDA blocks all non-CDC tests [@fda-covid-test-delay] to "ensure quality"
+- **Late February:** CDC tests contaminated, completely useless [@cdc-covid-test-contamination-2020]
 - **March:** Private labs beg to help, regulatory framework says "no, approved tests only"
 - **Late March:** FDA finally allows other tests after thousands die
-- **Cost:** [Thousands of preventable deaths](../references.qmd#excess-deaths-fda-covid-response), exact number unknown
+- **Cost:** Thousands of preventable deaths [@excess-deaths-fda-covid-response], exact number unknown
 
 The defense: "We were ensuring quality control."
 
@@ -436,14 +436,14 @@ Post-approval, the FDA relies on the **FDA Adverse Event Reporting System (FAERS
 
 **Reality:**
 
-- **Estimated capture rate:** [Less than 10% of actual adverse events](../references.qmd#adverse-event-underreporting) (empirical studies show ~6% reporting rate, meaning 94% underreported)
+- **Estimated capture rate:** Less than 10% of actual adverse events [@adverse-event-underreporting] (empirical studies show ~6% reporting rate, meaning 94% underreported)
 - **Reporting burden:** Voluntary, time-consuming paperwork doctors often skip
 - **Attribution difficulty:** Hard to prove causation in individual cases
 - **No systematic follow-up:** Most patients disappear after prescription
 
 **Examples of failures:**
 
-- **Vioxx:** Killed an estimated [38,000-55,000 Americans](../references.qmd#vioxx-deaths) before voluntary reporting caught the cardiovascular risks
+- **Vioxx:** Killed an estimated 38,000-55,000 Americans [@vioxx-deaths] before voluntary reporting caught the cardiovascular risks
 - **Benadryl:** Took decades to discover the [dementia risk](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) from long-term use
 - **Thalidomide in Europe:** Thousands of birth defects before passive reporting identified the pattern
 

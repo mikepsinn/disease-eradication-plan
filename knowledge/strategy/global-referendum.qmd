@@ -59,7 +59,7 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 #### End-to-End Verifiable System
 
-- Use an end-to-end verifiable scheme ([Helios](../references.qmd#helios-voting) or similar) with individual ballot verification and public bulletin board
+- Use an end-to-end verifiable scheme (Helios [@helios-voting] or similar) with individual ballot verification and public bulletin board
 - **Individual Ballot Verification**: Each voter receives cryptographic receipt
 - **Public Bulletin Board**: All ballots published (anonymized) for public audit
 - **Zero-Knowledge Proofs**: Prove vote validity without revealing vote content
@@ -118,17 +118,17 @@ This stops maybe 90% of fraud. The other 10% requires getting creative.
 For people who want higher verification (and higher rewards):
 
 - **Government ID Integration**: Connect with existing national e-ID systems:
-  - [Estonia e-Residency](../references.qmd#estonia-eresidency-stats) (they have digital citizenship, it's actually cool)
-  - [Indian Aadhaar system](../references.qmd#indian-aadhaar-system) (1.3 billion people already enrolled)
-  - [EU eIDAS network](../references.qmd#eu-eidas-network) (European digital ID)
-  - US State ID verification via [ID.me](../references.qmd#id-me-verification) (same system military uses)
+  - Estonia e-Residency [@estonia-eresidency-stats] (they have digital citizenship, it's actually cool)
+  - [@indian-aadhaar-system] (1.3 billion people already enrolled)
+  - [@eu-eidas-network] (European digital ID)
+  - US State ID verification via ID.me [@id-me-verification] (same system military uses)
 
 - **Biometric Liveness Detection**: Wave at your camera. Blink. Prove you're not a video. Deepfakes hate this one weird trick.
 
 - **Proof-of-Uniqueness Partners**: Work with existing identity services:
-  - [Worldcoin iris scanning](../references.qmd#worldcoin-scale) (yes, the eyeball scanner)
-  - [BrightID social verification](../references.qmd#brightid-social-verification-network) (your friends vouch for you)
-  - [Gitcoin Passport](../references.qmd#gitcoin-passport) (reputation scoring for crypto people)
+  - Worldcoin iris scanning [@worldcoin-scale] (yes, the eyeball scanner)
+  - BrightID social verification [@brightid-social-verification-network] (your friends vouch for you)
+  - [@gitcoin-passport] (reputation scoring for crypto people)
 
 **Layer 3: Social "Your Community Says You're Real" Verification**
 
@@ -173,10 +173,10 @@ This is where AI comes in. Not the "I'm going to become sentient and kill you" k
 
 Different regions have different privacy laws, all of which carry massive fines if you screw up. You don't screw up.
 
-- **[GDPR Compliance](../references.qmd#gdpr-biometric-data)**: Full EU data protection compliance (the strictest privacy law on Earth)
-- **[CCPA/CPRA Compliance](../references.qmd#ccpa-cpra-compliance)**: California privacy rights (because California regulates everything)
-- **Biometric Privacy Laws**: [Illinois BIPA](../references.qmd#illinois-bipa) compliance (they take biometric privacy seriously)
-- **Children's Privacy**: [COPPA compliance](../references.qmd#coppa-compliance) for under-13s (don't collect kids' data, this should be obvious)
+- **GDPR Compliance [@gdpr-biometric-data]**: Full EU data protection compliance (the strictest privacy law on Earth)
+- **CCPA/CPRA Compliance [@ccpa-cpra-compliance]**: California privacy rights (because California regulates everything)
+- **Biometric Privacy Laws**: [@illinois-bipa] compliance (they take biometric privacy seriously)
+- **Children's Privacy**: [@coppa-compliance] for under-13s (don't collect kids' data, this should be obvious)
 
 ## Viral Marketing & Growth Strategy
 

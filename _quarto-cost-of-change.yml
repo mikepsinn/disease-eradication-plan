@@ -145,9 +145,8 @@ language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
 
-# Bibliography: .bib generated from knowledge/references.qmd (source data)
-# Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
-bibliography: references-cost-of-change.bib
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
 csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
 
 jupyter: dih-project-kernel

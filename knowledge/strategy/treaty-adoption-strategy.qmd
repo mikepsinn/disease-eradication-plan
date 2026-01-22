@@ -34,24 +34,24 @@ This is like good cop / bad cop except both cops are you.
 
 ### The Magic Number: {{< var global_population_activism_threshold_pct >}}
 
-[Scientists analyzed 323 political campaigns from 1900-2006](../references.qmd#3-5-rule). Finding: When {{< var global_population_activism_threshold_pct >}} of any population actively demands something, they almost always get it.
+Scientists analyzed 323 political campaigns from 1900-2006 [@3-5-rule]. Finding: When {{< var global_population_activism_threshold_pct >}} of any population actively demands something, they almost always get it.
 
-- [8 billion humans](../references.qmd#global-population-8-billion) × {{< var global_population_activism_threshold_pct >}} = **280 million**
+- 8 billion humans [@global-population-8-billion] × {{< var global_population_activism_threshold_pct >}} = **280 million**
 - You need 280 million to click YES
-- You have [560 million natural allies](../references.qmd#rare-disease-patients-300m-globally)
+- You have 560 million natural allies [@rare-disease-patients-300m-globally]
 - Math says this works
 
 ### Who Joins First (The People Who Actually Care)
 
-**Rare disease patients ([300M globally](../references.qmd#rare-disease-patients-300m-globally)):** Their diseases get zero funding. They have everything to gain. Very motivated.
+**Rare disease patients (300M globally [@rare-disease-patients-300m-globally]):** Their diseases get zero funding. They have everything to gain. Very motivated.
 
-**Parents with sick kids ([50M+](../references.qmd#parents-of-sick-children-50m)):** Will do literally anything to save their children. Emotional intensity creates action.
+**Parents with sick kids (50M+ [@parents-of-sick-children-50m]):** Will do literally anything to save their children. Emotional intensity creates action.
 
-**Healthcare workers ([60M globally](../references.qmd#healthcare-workers-60m-globally)):** Watch people die from bureaucracy daily. Frustrated. Want to actually cure things.
+**Healthcare workers (60M globally [@healthcare-workers-60m-globally]):** Watch people die from bureaucracy daily. Frustrated. Want to actually cure things.
 
-**Tech people ([100M+](../references.qmd#science-tech-community-100m)):** Understand decentralization. Hate inefficiency. See solution clearly.
+**Tech people (100M+ [@science-tech-community-100m]):** Understand decentralization. Hate inefficiency. See solution clearly.
 
-**Investors ([50M potential](../references.qmd#investment-community-50m)):** {{< var victory_bond_annual_return_pct >}} returns is compelling mathematics.
+**Investors (50M potential [@investment-community-50m]):** {{< var victory_bond_annual_return_pct >}} returns is compelling mathematics.
 
 Combined: 560M potential early adopters. You only need 280M. This is called "margin of error."
 
@@ -124,7 +124,7 @@ Conversion rates: 50% from awareness to interest, 56% from interest to commitmen
 
 Target 5-10 small countries first:
 
-- **Costa Rica:** [No military](../references.qmd#costa-rica-no-military) (easiest sell ever)
+- **Costa Rica:** No military [@costa-rica-no-military] (easiest sell ever)
 - **Nordic countries:** Already healthcare-focused
 - **Singapore:** Tech-forward, pragmatic
 - **New Zealand:** Progressive, willing to lead

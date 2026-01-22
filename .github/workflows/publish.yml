@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: Build, Deploy to Netlify, and Upload to Zenodo
+name: Build and Deploy to Netlify
 
 permissions:
   contents: read
@@ -91,13 +91,6 @@ jobs:
 
 
 
-      - name: "Upload Build The 1% Treaty: Health and Economic Impact of Redir PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper 1-pct-treaty-impact
-
 
 
   build-cost-of-change:
@@ -174,13 +167,6 @@ jobs:
         timeout-minutes: 1
 
 
-
-      - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper cost-of-change
 
 
 
@@ -259,13 +245,6 @@ jobs:
 
 
 
-      - name: "Upload Build The Health and Economic Impact of a Global System  PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper dfda-impact
-
 
 
   build-dfda-spec:
@@ -342,13 +321,6 @@ jobs:
         timeout-minutes: 1
 
 
-
-      - name: "Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper dfda-spec
 
 
 
@@ -427,13 +399,6 @@ jobs:
 
 
 
-      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper iab
-
 
 
   build-manual:
@@ -510,13 +475,6 @@ jobs:
         timeout-minutes: 1
 
 
-
-      - name: "Upload Build How to End War and Disease PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper manual
 
 
 
@@ -595,13 +553,6 @@ jobs:
 
 
 
-      - name: "Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper obg
-
 
 
   build-opg:
@@ -679,13 +630,6 @@ jobs:
 
 
 
-      - name: "Upload Build Optimal Policy Generator: Evidence-Based Policy Re PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper opg
-
 
 
   build-optimocracy:
@@ -762,13 +706,6 @@ jobs:
         timeout-minutes: 1
 
 
-
-      - name: "Upload Build Optimocracy: Algorithmic Governance Through Metric PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper optimocracy
 
 
 
@@ -904,12 +841,5 @@ jobs:
         timeout-minutes: 1
 
 
-
-      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/publish-zenodo.py --draft --paper wishocracy
 
 

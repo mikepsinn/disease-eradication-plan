@@ -289,7 +289,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high economist consensus.
 
-**Source**: [Environmental Working Group (2024) - US Farm Subsidy Database and Analysis](../references.qmd#ewg-farm-subsidies)
+**Source**: [@ewg-farm-subsidies]
 
 #### Uncertainty Range
 
@@ -313,7 +313,7 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 US defense spending above deterrence requirements. US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal, and alliance structure. Excess ~$400B/yr funds force projection, not homeland defense.
 
-**Source**: [Posen, Barry R. (2014) - Restraint: A New Foundation for U.S. Grand Strategy](../references.qmd#posen2014)
+**Source**: [@posen2014]
 
 #### Uncertainty Range
 
@@ -337,7 +337,7 @@ US defense spending above deterrence requirements. US spends ~$900B/yr on defens
 
 Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever.
 
-**Source**: [Drug Policy Alliance (2021) - The Drug War by the Numbers](../references.qmd#drugpolicyalliance2021)
+**Source**: [@drugpolicyalliance2021]
 
 #### Uncertainty Range
 
@@ -361,7 +361,7 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars failed to achieve stated objectives.
 
-**Source**: [Crawford, Neta C. and Lutz, Catherine (2023) - Blood and Treasure: United States Budgetary Costs and Human Costs of 20 Years of War](../references.qmd#costsofwar2023)
+**Source**: [@costsofwar2023]
 
 #### Uncertainty Range
 
@@ -385,7 +385,7 @@ Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $
 
 US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). Explicit subsidies are roughly $50B annually.
 
-**Source**: [International Monetary Fund (2023) - IMF Fossil Fuel Subsidies Data: 2023 Update](../references.qmd#imf-fossilfuel2023)
+**Source**: [@imf-fossilfuel2023]
 
 #### Uncertainty Range
 
@@ -409,7 +409,7 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, climate damages, congestion, accidents. IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon assumptions.
 
-**Source**: [International Monetary Fund (2023) - IMF Fossil Fuel Subsidies Data: 2023 Update](../references.qmd#imf-fossilfuel2023)
+**Source**: [@imf-fossilfuel2023]
 
 #### Uncertainty Range
 
@@ -433,7 +433,7 @@ US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths
 
 US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus.
 
-**Source**: [Papanicolas, Irene et al. (2018) - Health Care Spending in the United States and Other High-Income Countries](../references.qmd#papanicolas2018)
+**Source**: [@papanicolas2018]
 
 #### Uncertainty Range
 
@@ -457,7 +457,7 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum.
 
-**Source**: [Hsieh, Chang-Tai and Enrico Moretti (2019) - Housing Constraints and Spatial Misallocation](../references.qmd#hsieh-moretti2019)
+**Source**: [@hsieh-moretti2019]
 
 #### Uncertainty Range
 
@@ -481,7 +481,7 @@ GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) esti
 
 Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, community supervision) cost less and reduce recidivism. Total excess ~$150B including lost productivity and family impacts. Growing economist consensus.
 
-**Source**: [Vera Institute of Justice (2024) - The Economic Burden of Incarceration in the United States](../references.qmd#vera-incarceration2024)
+**Source**: [@vera-incarceration2024]
 
 #### Uncertainty Range
 
@@ -505,7 +505,7 @@ Excess costs from US over-incarceration. US incarceration rate is 5x OECD averag
 
 US infrastructure cost disease. US builds infrastructure at 2-5x the cost of comparable countries (subway costs, highway construction, transit projects). NYU Transit Costs Project and Brookings document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.
 
-**Source**: [Marron Institute, NYU (2024) - Transit Costs Project - Why US Infrastructure Costs So Much](../references.qmd#transit-costs-project)
+**Source**: [@transit-costs-project]
 
 #### Uncertainty Range
 
@@ -529,7 +529,7 @@ US infrastructure cost disease. US builds infrastructure at 2-5x the cost of com
 
 US share of global welfare loss from migration restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. US-attributable share is highly speculative - using conservative $500B estimate.
 
-**Source**: [Clemens, Michael A. (2011) - Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?](../references.qmd#clemens2011)
+**Source**: [@clemens2011]
 
 #### Uncertainty Range
 
@@ -553,7 +553,7 @@ US share of global welfare loss from migration restrictions. Clemens (2011) esti
 
 Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.
 
-**Source**: [Kleiner, Morris M. and Krueger, Alan B. (2013) - Analyzing the Extent and Influence of Occupational Licensing on the Labor Market](../references.qmd#kleiner2013)
+**Source**: [@kleiner2013]
 
 #### Uncertainty Range
 
@@ -577,7 +577,7 @@ Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in we
 
 Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices.
 
-**Source**: [Yale Budget Lab (2025) - The Fiscal, Economic, and Distributional Effects of All U.S. Tariffs](../references.qmd#yalebudgetlab2025)
+**Source**: [@yalebudgetlab2025]
 
 #### Uncertainty Range
 
@@ -601,7 +601,7 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing.
 
-**Source**: [Tax Foundation (2024) - Tax Compliance Costs the US Economy $546 Billion Annually](../references.qmd#taxfoundation2024-compliance)
+**Source**: [@taxfoundation2024-compliance]
 
 #### Uncertainty Range
 
@@ -625,7 +625,7 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.
 
-**Source**: [Del Rosal, Ignacio (2011) - The Empirical Measurement of Rent-Seeking Costs](../references.qmd#delrosal2011)
+**Source**: [@delrosal2011]
 
 #### Uncertainty Range
 
@@ -649,7 +649,7 @@ Welfare loss from regulatory capture and crony rent-seeking as percentage of pot
 
 Welfare loss from collective action failures. Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.
 
-**Source**: [Olson, Mancur (1996) - Big Bills Left on the Sidewalk: Why Some Nations are Rich, and Others Poor](../references.qmd#olson1996)
+**Source**: [@olson1996]
 
 #### Uncertainty Range
 
@@ -673,7 +673,7 @@ Welfare loss from collective action failures. Diffuse beneficiaries (consumers, 
 
 Welfare loss from information aggregation failures - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge that markets aggregate. Hayek (1945) argued this is a fundamental limit on central planning effectiveness.
 
-**Source**: [Hayek, Friedrich A. (1945) - The Use of Knowledge in Society](../references.qmd#hayek1945)
+**Source**: [@hayek1945]
 
 #### Uncertainty Range
 
@@ -697,7 +697,7 @@ Welfare loss from information aggregation failures - the Hayek knowledge problem
 
 Welfare loss from political time-inconsistency (electoral short-termism). Politicians facing re-election underinvest in long-term public goods and infrastructure. Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.
 
-**Source**: [Kydland, Finn E. and Prescott, Edward C. (1977) - Rules Rather than Discretion: The Inconsistency of Optimal Plans](../references.qmd#kydland1977)
+**Source**: [@kydland1977]
 
 #### Uncertainty Range
 
@@ -721,7 +721,7 @@ Welfare loss from political time-inconsistency (electoral short-termism). Politi
 
 Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.
 
-**Source**: [International Monetary Fund (2024) - IMF Singapore Government Spending Data](../references.qmd#imf-singapore-spending)
+**Source**: [@imf-singapore-spending]
 
 #### Uncertainty Range
 
@@ -737,7 +737,7 @@ Singapore government spending as percentage of GDP. Less than HALF the US rate (
 
 Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
 
-**Source**: [World Health Organization (2024) - WHO Life Expectancy Data by Country](../references.qmd#who-life-expectancy)
+**Source**: [@who-life-expectancy]
 
 #### Uncertainty Range
 
@@ -753,7 +753,7 @@ Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) desp
 
 Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.
 
-**Source**: [Organisation for Economic Co-operation and Development (2024) - OECD Government Spending as Percentage of GDP](../references.qmd#oecd-govt-spending)
+**Source**: [@oecd-govt-spending]
 
 #### Uncertainty Range
 
@@ -769,7 +769,7 @@ Switzerland government spending as percentage of GDP. 3 percentage points LOWER 
 
 Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
 
-**Source**: [World Health Organization (2024) - WHO Life Expectancy Data by Country](../references.qmd#who-life-expectancy)
+**Source**: [@who-life-expectancy]
 
 #### Uncertainty Range
 
@@ -785,7 +785,7 @@ Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) de
 
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
-**Source**: [World Bank, Bureau of Economic Analysis (2024) - US GDP 2024 ($28.78 trillion)](../references.qmd#worldbank-gdp)
+**Source**: [@worldbank-gdp]
 
 #### Uncertainty Range
 
@@ -801,7 +801,7 @@ US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.
 
-**Source**: [Organisation for Economic Co-operation and Development (2024) - OECD Government Spending as Percentage of GDP](../references.qmd#oecd-govt-spending)
+**Source**: [@oecd-govt-spending]
 
 #### Uncertainty Range
 
@@ -817,7 +817,7 @@ US total government spending as percentage of GDP (federal + state + local). OEC
 
 US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.
 
-**Source**: [Centers for Disease Control and Prevention (2024) - US Life Expectancy 2023](../references.qmd#cdc-life-expectancy)
+**Source**: [@cdc-life-expectancy]
 
 #### Uncertainty Range
 

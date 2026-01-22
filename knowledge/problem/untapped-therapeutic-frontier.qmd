@@ -79,14 +79,14 @@ Biology disagrees.
 
 * **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and only ever entering the bathroom.
 * **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are often "cures for something else" that you haven't noticed yet. Every headache pill might cure Alzheimer's. You won't know until you check.
-* **Network Overlap:** [Diseases cluster on shared biological networks](../references.qmd#disease-network-overlap). A drug for arthritis might cure Alzheimer's. You won't know until you check. But you're not checking.
+* **Network Overlap:** Diseases cluster on shared biological networks [@disease-network-overlap]. A drug for arthritis might cure Alzheimer's. You won't know until you check. But you're not checking.
 
 ## The Universe is Big. You Are Small.
 
 So far we only counted molecules humanity *already has*. If you look at what's chemically possible, it gets embarrassing.
 
-* **Chemical Space:** Estimated [10^23 to 10^60](../references.qmd#chemical-space-size) drug-like molecules.
-* **Virtual Libraries:** [ZINC-22 contains tens of billions](../references.qmd#zinc-22-database) of purchasable virtual molecules.
+* **Chemical Space:** Estimated 10^23 to 10^60 [@chemical-space-size] drug-like molecules.
+* **Virtual Libraries:** ZINC-22 contains tens of billions [@zinc-22-database] of purchasable virtual molecules.
 * **Synthesized:** You have made **<10^(-40)** of possible molecules.
 
 **Tested / Possible = ~10^-20 to 10^-50.**
@@ -101,7 +101,7 @@ It's not because science is hard. It's because:
 
 1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test "sure things." You test the equivalent of betting your house that the sun will rise. Safe bets. Boring bets. Bets that don't cure cancer.
 
-2. **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to [preferential attachment dynamics](../references.qmd#preferential-target-attachment). Everyone studies what everyone else is studying because that's how you get grants. It's like if every explorer only went to France because France already had good reviews on TripAdvisor.
+2. **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to preferential attachment dynamics [@preferential-target-attachment]. Everyone studies what everyone else is studying because that's how you get grants. It's like if every explorer only went to France because France already had good reviews on TripAdvisor.
 
 3. **No Profit:** Most molecules have no patent. No patent = no $100M trial = no approval. Your potential cure for cancer might be aspirin plus vitamin D, but nobody will ever test it because you can't patent aspirin plus vitamin D. This is a system designed by people who hate you.
 
@@ -147,7 +147,7 @@ You cannot have diminishing returns when you've barely started looking. See [the
 
 ## The Fix
 
-The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in [<100 days](../references.qmd#recovery-trial-100-days-to-cure).
+The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in <100 days [@recovery-trial-100-days-to-cure].
 
 {{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}.
 

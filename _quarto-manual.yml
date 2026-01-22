@@ -301,9 +301,8 @@ metadata:
   encoding: "UTF-8"
   character-set: "UTF-8"
   
-  # Bibliography: .bib generated from knowledge/references.qmd (source data)
-  # Book uses references.qmd directly (not CSL rendering) because many chapters link to it
-  # Regenerate .bib: python scripts/generate-everything-parameters-variables-calculations-references.py
+  # Bibliography: Single source of truth for all citations
+  # Use [@citation-key] syntax in QMD files for proper Quarto citation rendering
   bibliography: references.bib
   csl: nature-annotated.csl  # Renders 'abstract' field (quotes) for any @citations
 

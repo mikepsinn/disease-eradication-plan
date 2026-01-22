@@ -7,7 +7,7 @@ Parameter validation utilities for dih_models
 Validation functions for ensuring parameter quality and consistency.
 
 Functions:
-- validate_references() - Check external source_refs exist in references.qmd
+- validate_references() - Check external source_refs exist in references.bib
 - validate_calculated_parameters() - Ensure calculated params use formulas
 - validate_calculated_params_no_uncertainty() - Prevent double-counting uncertainty
 - validate_formula_uses_full_param_names() - Validate formula strings
@@ -35,11 +35,11 @@ from typing import Any, Dict
 
 def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: set) -> tuple[list, list]:
     """
-    Validate that all external source_refs exist in references.qmd.
+    Validate that all external source_refs exist in references.bib.
 
     Args:
         parameters: Dict of parameter metadata
-        available_refs: Set of reference IDs from references.qmd
+        available_refs: Set of reference IDs from references.bib
 
     Returns:
         Tuple of (missing_refs, used_refs) where:
@@ -63,7 +63,7 @@ def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: s
                     else:
                         source_ref_str = str(source_ref)
 
-                    # Skip validation for .qmd file paths - they're internal document links, not references.qmd anchors
+                    # Skip validation for .qmd file paths - they're internal document links, not references.bib anchors
                     if source_ref_str.endswith('.qmd'):
                         continue
 

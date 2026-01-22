@@ -1,22 +1,29 @@
 ---
-title: Source Quotes and References
-description: Comprehensive collection of source quotes, citations, and references supporting all claims made throughout the War on Disease documentation.
+title: Source Quotes and References (DEPRECATED)
+description: "DEPRECATED: Use references.bib for citations. This file is kept for historical reference only."
 aliases:
 - /references.html
-published: true
+published: false
 tags:
 - references
-- sources
-- citations
-- quotes
-- data
-- research
+- deprecated
 ---
 
 <!--
-SOURCE DATA for citations. Parsed by bibtex_generator.py -> references-*.bib -> CSL rendering.
-Output page: references-shortcode-page.qmd (same folder)
-Regenerate: python scripts/generate-everything-parameters-variables-calculations-references.py
+================================================================================
+DEPRECATED FILE - DO NOT EDIT
+================================================================================
+
+This file has been superseded by references.bib (BibTeX format).
+
+For citations in QMD files, use Quarto citation syntax:
+  [@citation-key]  - Standard citation
+  @citation-key    - Inline citation (author-date style)
+
+The source of truth for all citations is now: references.bib
+
+Migration completed: 2025-01-22
+================================================================================
 -->
 
 ```{python}
