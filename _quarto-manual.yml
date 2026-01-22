@@ -545,6 +545,7 @@ format:
     toc-depth: 3
     number-sections: false
     colorlinks: true
+    link-citations: true
     date: ""
     geometry:
       - top=1in

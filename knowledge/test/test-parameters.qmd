@@ -3,7 +3,7 @@ title: Test Parameters Document
 description: Minimal parameters document for testing
 ---
 
-# Introduction
+# Introduction {#sec-test-parameters-intro}
 
 This is a minimal parameters document for testing cross-references.
 
@@ -15,29 +15,24 @@ Testing if using ANY variable from _variables.yml triggers citation warnings for
 - Test metric: 100%
 - Sample value: $1,000,000
 
-## LaTeX Alignment Tests
+## Simple Variable Test
 
-Testing different complex LaTeX equations for mobile display:
+One simple variable to verify the system works without heavy Monte Carlo charts:
 
-### Trial Subsidies (Complex with multiple "where" clauses)
+- Test value (external): {{< var adaptable_trial_cost_per_patient >}}
 
-{{< var dih_treasury_trial_subsidies_annual_latex >}}
+## Calculated Variable Test
 
-### OPEX Breakdown (Sum with many terms)
+Testing if calculated variables link to their calculations in the parameters appendix:
 
-{{< var dfda_annual_opex_latex >}}
+- Treaty annual funding (calculated): {{< var treaty_annual_funding >}}
 
-### NPV Calculation (Summation formula)
+## Citation Test
 
-{{< var dfda_npv_benefit_rd_only_latex >}}
+Testing if citations link to references section:
 
-### Peace Dividend (Multiple components)
-
-{{< var peace_dividend_annual_societal_benefit_latex >}}
-
-### Treaty ROI (Simple ratio)
-
-{{< var treaty_roi_existing_drugs_only_latex >}}
+- The ADAPTABLE trial achieved a cost of {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage].
+- This represents a 30x cost advantage over traditional RCTs.
 
 ## Cross-Site References
 

@@ -25,9 +25,10 @@ book:
     - index.qmd
     - knowledge/test/test-parameters.qmd
     - knowledge/appendix/parameters-and-calculations-test.qmd
+    - knowledge/references-shortcode-page.qmd
 
 bibliography:
-  - references.bib
+  - references-test.bib
 
 execute:
   cache: false
@@ -96,6 +97,7 @@ format:
     toc-depth: 2
     number-sections: false
     colorlinks: true
+    link-citations: true
     geometry:
       - top=1in
       - bottom=1in

@@ -761,6 +761,13 @@ def render_quarto(
                 if pdf_path.exists():
                     size_mb = pdf_path.stat().st_size / (1024 * 1024)
                     print(f"[OK] PDF exists: {pdf_path} ({size_mb:.2f} MB)")
+
+                    # Copy PDF to assets/pdfs for distribution
+                    assets_pdfs_dir = project_root / "assets" / "pdfs"
+                    assets_pdfs_dir.mkdir(parents=True, exist_ok=True)
+                    dest_pdf_path = assets_pdfs_dir / expected_pdf
+                    shutil.copy2(pdf_path, dest_pdf_path)
+                    print(f"[OK] Copied PDF to: {dest_pdf_path.relative_to(project_root)}")
                 else:
                     print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
                     print(f"        Expected at: {pdf_path}", file=sys.stderr)

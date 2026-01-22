@@ -9,14 +9,16 @@ This is a minimal test document to verify PDF link preprocessing works correctly
 
 ## Link Test Cases
 
-### 1. Internal Links (Should Work in PDF)
+### 1. Internal Cross-References (Work in PDF)
 
-These links point to files that ARE in the test config chapters. In PDF, clicking these should navigate within the document:
+These use Quarto's `@sec-` cross-reference system. In PDF, clicking these navigates within the document:
 
-- Link to test parameters: [Test Parameters](/knowledge/test/test-parameters.qmd)
-- Link with anchor: [Parameters intro](/knowledge/test/test-parameters.qmd#introduction)
-- **Link to calculations appendix**: [Parameters and Calculations](/knowledge/appendix/parameters-and-calculations-test.qmd)
-- **Link to specific section**: [Parameters and Calculations - Overview](/knowledge/appendix/parameters-and-calculations-test.qmd#overview)
+- Link to test parameters intro: @sec-test-parameters-intro
+- **Link to calculations appendix**: @sec-parameters
+
+::: {.callout-tip}
+**Key insight**: Standard markdown hyperlinks only work in HTML. For PDF output, use `@sec-` cross-references instead.
+:::
 
 ### 2. External Cross-Site Links (Should Become Absolute URLs)
 
@@ -39,14 +41,13 @@ These are already absolute URLs and should not be touched:
 - Jump to section: [Link Test Cases](#link-test-cases)
 - Another anchor: [Introduction](#introduction)
 
-### 5. PDF Link Path Format Tests
+### 5. Cross-Reference Format Comparison
 
-Testing different path formats for the same internal file (parameters appendix):
-
-| Path Format | Link | Expected PDF Behavior |
-|-------------|------|----------------------|
-| Absolute from root | [/knowledge/appendix/...](/knowledge/appendix/parameters-and-calculations-test.qmd) | Navigate within PDF |
-| Relative | [../appendix/...](../appendix/parameters-and-calculations-test.qmd) | Navigate within PDF |
+| Syntax | Works in HTML | Works in PDF |
+|--------|---------------|--------------|
+| `@sec-label` cross-reference | ✅ Yes | ✅ Yes |
+| Standard markdown link | ✅ Yes | ❌ No (becomes file://) |
+| `[text](https://...)` absolute URL | ✅ Yes | ✅ Yes (opens browser) |
 
 ## Conclusion
 
@@ -59,7 +60,7 @@ Testing different path formats for the same internal file (parameters appendix):
 
 | Link Type | Expected Result |
 |-----------|-----------------|
-| Internal (to chapters in this PDF) | Navigate within PDF to that page |
-| Cross-site (to book chapters) | Open browser to manual.WarOnDisease.org |
+| `@sec-` cross-references | Navigate within PDF |
 | External URLs | Open browser to that site |
-| Anchor links | Jump to section in current page |
+| Anchor links (`#section`) | Jump to section in current page |
+| Markdown links to .qmd files | **BROKEN** - opens file URL |
