@@ -131,8 +131,8 @@ def generate_all_paper_parameters_qmd(
         if config_name == "book":
             continue
 
-        # Skip test config
-        if config_name == "test":
+        # Skip manual config (it's the main book, uses full parameters file)
+        if config_name == "manual":
             continue
 
         with open(config_file, encoding='utf-8') as f:

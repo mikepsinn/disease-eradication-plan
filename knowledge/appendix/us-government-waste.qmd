@@ -1,10 +1,11 @@
 ---
-title: 'The Political Dysfunction Tax*'
-description: 'A Forensic Audit of Global Governance Efficiency and the Political Dysfunction Tax'
+title: 'The Entropic State'
+subtitle: 'A Thermodynamic Audit of United States Federal Resource Misallocation'
+description: 'A forensic accounting of US federal government waste, estimating $2.27-3.47 trillion in annual allocative inefficiency across defense, healthcare, incarceration, and regulatory friction.'
 abstract: |
-  A Forensic Audit of Global Governance Efficiency and the Political Dysfunction Tax
+  The US federal government generates an annual Aggregate Efficiency Gap of $2.27-3.47 trillion through allocative inefficiency. This report quantifies waste across the Department of Defense (audit failures, F-35 cost overruns, overseas basing), healthcare administration ($500B excess), mass incarceration ($280B), and regulatory/tax compliance friction ($900B). Using Monte Carlo simulation and Value of Statistical Life analysis, we find this waste destroys the equivalent of 22.7 million Quality-Adjusted Life Years annually.
 aliases:
-  - /iab.html
+  - /us-government-waste.html
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -15,18 +16,20 @@ author:
     email: mike@warondisease.org
     corresponding: true
 keywords:
-  - mechanism design
-  - public choice
-  - political economy
-  - collective action
-  - social impact bonds
-  - campaign finance
-  - incentive compatibility
+  - government waste
+  - allocative inefficiency
+  - defense spending
+  - healthcare administration
+  - mass incarceration
+  - regulatory burden
+  - tax compliance
+  - Monte Carlo simulation
 jel:
-  - D72
-  - D82
-  - H41
-  - P16
+  - H50
+  - H51
+  - H56
+  - H61
+  - D61
 bibliography:
   - ../../references.bib
 format:
@@ -38,7 +41,7 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
-image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-academic.jpg
+image: /assets/og-images/knowledge/appendix/us-government-waste-og-academic.jpg
 
 # **The Entropic State: A Thermodynamic Audit of United States Federal Resource Misallocation**
 

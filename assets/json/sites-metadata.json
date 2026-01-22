@@ -709,6 +709,50 @@
       },
       "indexSource": "knowledge/appendix/cost-of-change-analysis.qmd",
       "outputDir": "_site/cost-of-change",
+      "publishing": {
+        "ownSite": {
+          "url": "https://cost-of-change.warondisease.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Political Economy",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "American Economic Review",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      },
       "pages": [
         {
           "path": "index.qmd",
@@ -3049,6 +3093,31 @@
       },
       "indexSource": "index-manual.qmd",
       "outputDir": "_manual/warondisease",
+      "publishing": {
+        "ownSite": {
+          "url": "https://manual.WarOnDisease.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "amazon-kindle",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "apple-books",
+            "status": "pending",
+            "url": ""
+          }
+        ],
+        "journals": []
+      },
       "pages": [
         {
           "path": "index.qmd",
@@ -4060,7 +4129,7 @@
             "Supplementary Materials"
           ],
           "published": true,
-          "lastmod": "2026-01-21"
+          "lastmod": "2026-01-22"
         },
         {
           "path": "knowledge/call-to-action/your-personal-benefits.qmd",
@@ -7422,7 +7491,7 @@
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
       "orcid": "0009-0006-0212-1094",
-      "doi": "10.5281/zenodo.optimocracy",
+      "doi": "",
       "version": "0.9",
       "edition": "Working Draft",
       "copyright": "© 2025 Mike P. Sinn",
@@ -7458,6 +7527,50 @@
       },
       "indexSource": "knowledge/appendix/optimocracy-paper.qmd",
       "outputDir": "_site/optimocracy",
+      "publishing": {
+        "ownSite": {
+          "url": "https://optimocracy.warondisease.org",
+          "status": "deployed"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Games and Economic Behavior",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Political Economy",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      },
       "pages": [
         {
           "path": "index.qmd",

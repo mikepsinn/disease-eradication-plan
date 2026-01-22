@@ -24,6 +24,7 @@ book:
   chapters:
     - index.qmd
     - knowledge/test/test-parameters.qmd
+    - knowledge/appendix/parameters-and-calculations-test.qmd
 
 bibliography:
   - references.bib

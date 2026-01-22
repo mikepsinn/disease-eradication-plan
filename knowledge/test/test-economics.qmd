@@ -9,12 +9,14 @@ This is a minimal test document to verify PDF link preprocessing works correctly
 
 ## Link Test Cases
 
-### 1. Internal Links (Should Remain as .qmd)
+### 1. Internal Links (Should Work in PDF)
 
-These links point to files that ARE in the test config, so they should remain unchanged:
+These links point to files that ARE in the test config chapters. In PDF, clicking these should navigate within the document:
 
-- Link to parameters: [Test Parameters](/knowledge/test/test-parameters.qmd)
+- Link to test parameters: [Test Parameters](/knowledge/test/test-parameters.qmd)
 - Link with anchor: [Parameters intro](/knowledge/test/test-parameters.qmd#introduction)
+- **Link to calculations appendix**: [Parameters and Calculations](/knowledge/appendix/parameters-and-calculations-test.qmd)
+- **Link to specific section**: [Parameters and Calculations - Overview](/knowledge/appendix/parameters-and-calculations-test.qmd#overview)
 
 ### 2. External Cross-Site Links (Should Become Absolute URLs)
 
@@ -37,11 +39,27 @@ These are already absolute URLs and should not be touched:
 - Jump to section: [Link Test Cases](#link-test-cases)
 - Another anchor: [Introduction](#introduction)
 
+### 5. PDF Link Path Format Tests
+
+Testing different path formats for the same internal file (parameters appendix):
+
+| Path Format | Link | Expected PDF Behavior |
+|-------------|------|----------------------|
+| Absolute from root | [/knowledge/appendix/...](/knowledge/appendix/parameters-and-calculations-test.qmd) | Navigate within PDF |
+| Relative | [../appendix/...](../appendix/parameters-and-calculations-test.qmd) | Navigate within PDF |
+
 ## Conclusion
 
-If all links are processed correctly:
+**To test PDF links:**
 
-1. Internal links (to files in test config) will remain as `.qmd` paths
-2. Cross-site links (to files in book config but not test config) will become `https://manual.WarOnDisease.org/...`
-3. Absolute URLs will remain unchanged
-4. Anchor-only links will remain unchanged
+1. Run: `.venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py`
+2. Run: `python scripts/render-quarto.py test --to pdf`
+3. Open the generated PDF at `_site/test/test-links.pdf`
+4. Click each link and verify behavior:
+
+| Link Type | Expected Result |
+|-----------|-----------------|
+| Internal (to chapters in this PDF) | Navigate within PDF to that page |
+| Cross-site (to book chapters) | Open browser to manual.WarOnDisease.org |
+| External URLs | Open browser to that site |
+| Anchor links | Jump to section in current page |

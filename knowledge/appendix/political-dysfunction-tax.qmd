@@ -1,10 +1,11 @@
 ---
-title: 'The Political Dysfunction Tax*'
-description: 'A Forensic Audit of Global Governance Efficiency and the Political Dysfunction Tax'
+title: 'The Political Dysfunction Tax'
+subtitle: 'A Forensic Audit of Global Governance Efficiency'
+description: 'Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.'
 abstract: |
-  A Forensic Audit of Global Governance Efficiency and the Political Dysfunction Tax
+  This report introduces the Political Dysfunction Tax ($T_{pd}$): the implicit levy paid to entropy through governance inefficiency. By constructing a Waste Ledger (military overspend, administrative friction, incarceration costs) and an Opportunity Ledger (suppressed health innovation, migration restrictions, lead poisoning), we calculate a Global Governance Efficiency Score of 30-52%. Current governance destroys $101 trillion annually in unrealized potential, including $34T from delayed cures, $57T from migration restrictions, and $6T from lead exposure, suggesting civilization operates far below its technological possibilities.
 aliases:
-  - /iab.html
+  - /political-dysfunction-tax.html
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -15,18 +16,20 @@ author:
     email: mike@warondisease.org
     corresponding: true
 keywords:
+  - governance efficiency
   - mechanism design
   - public choice
-  - political economy
-  - collective action
-  - social impact bonds
-  - campaign finance
-  - incentive compatibility
+  - opportunity cost
+  - welfare economics
+  - clinical trials
+  - migration economics
+  - regulatory burden
 jel:
+  - D61
   - D72
-  - D82
   - H41
-  - P16
+  - H50
+  - O38
 bibliography:
   - ../../references.bib
 format:
@@ -38,7 +41,7 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
-image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-academic.jpg
+image: /assets/og-images/knowledge/appendix/political-dysfunction-tax-og-academic.jpg
 ---
 
 
