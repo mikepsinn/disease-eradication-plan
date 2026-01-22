@@ -103,7 +103,6 @@ from dih_models.quarto_formatting import (
 from dih_models.reference_ids_generator import generate_reference_ids_enum
 from dih_models.reference_parser import (
     parse_references_bib,
-    parse_references_bib_keys,
     sanitize_bibtex_key,
 )
 from dih_models.search_index_generator import generate_search_indexes
@@ -430,10 +429,12 @@ def main():
 
     # Parse references.bib FIRST (before parameters.py, to avoid circular dependency)
     # references.bib is the single source of truth for all citations
+    # Parse ONCE and reuse for all generators (major performance optimization)
     print("[*] Parsing references.bib...")
     bib_path = project_root / "references.bib"
-    from dih_models.reference_parser import parse_references_bib_keys
-    available_refs = parse_references_bib_keys(bib_path)
+    from dih_models.reference_parser import parse_references_bib
+    citation_data = parse_references_bib(bib_path)
+    available_refs = set(citation_data.keys())  # Derive keys from full parse
     print(f"[OK] Found {len(available_refs)} reference entries")
     print()
 
@@ -599,7 +600,7 @@ def main():
     # Generate TypeScript parameters file for Next.js/React apps
     print("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path)
+    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data)
     print()
 
     # Generate TypeScript survey file (if survey exists)
@@ -1152,11 +1153,7 @@ def main():
     # so the file existence checks work correctly
     print("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
-
-    # Pre-parse citation data once for reuse (major performance optimization)
-    from dih_models.reference_parser import parse_references_bib
-    citation_data = parse_references_bib(bib_path)
-
+    # citation_data already parsed at script start - reuse it here
     generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data)
     print()
 

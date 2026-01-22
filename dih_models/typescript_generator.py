@@ -199,7 +199,8 @@ def generate_typescript_parameters(
     output_path: Path,
     include_metadata: bool = True,
     references_path: Optional[Path] = None,
-    params_file: Optional[Path] = None
+    params_file: Optional[Path] = None,
+    citation_data: Optional[Dict[str, Dict[str, Any]]] = None
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -216,13 +217,15 @@ def generate_typescript_parameters(
         parameters: Dict of parameter metadata from parse_parameters_file()
         output_path: Path to write the .ts file
         include_metadata: Include full metadata (default: True)
-        references_path: Path to references.bib for citation data (optional)
+        references_path: Path to references.bib for citation data (optional, ignored if citation_data provided)
         params_file: Path to parameters.py for auto-generating LaTeX (optional)
+        citation_data: Pre-parsed citation data from parse_references_bib() (optional, for performance)
     """
-    # Parse citation data from references.bib
-    citation_data = {}
-    if references_path and references_path.exists():
-        citation_data = parse_references_bib(references_path)
+    # Use pre-parsed citation data if provided, otherwise parse from file
+    if citation_data is None:
+        citation_data = {}
+        if references_path and references_path.exists():
+            citation_data = parse_references_bib(references_path)
     content = []
 
     # Header
