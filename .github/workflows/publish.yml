@@ -452,7 +452,7 @@ jobs:
 
       - name: "Render Build How to End War and Disease"
         run: python scripts/render-quarto.py manual
-        timeout-minutes: 30
+        timeout-minutes: 75
 
 
       - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
