@@ -21,7 +21,7 @@ format:
     code-fold: true
 ---
 
-## Overview
+## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 34 parameters used in the analysis, organized by type:
 
@@ -40,7 +40,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Bad Policy Costs Total (US): $5.03T {#sec-bad_policy_cost_total_us}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual US bad policy costs (Tier 1 + Tier 2 with overlap discount). Bottom-up empirical estimate based on specific, measurable policy failures. More defensible than theoretical decomposition because each component is verifiable.
 
@@ -93,7 +93,7 @@ $$
 
 ### Bad Policy Costs (% GDP): 17.5% {#sec-bad_policy_cost_total_us_pct_gdp}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total US bad policy costs as percentage of GDP. Bottom-up empirical estimate for comparison with theoretical Political Dysfunction Tax.
 
@@ -146,7 +146,7 @@ $$
 
 ### Bad Policy Costs (Tier 1): $3.92T {#sec-bad_policy_cost_us_tier1_total}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Sum of Tier 1 (well-documented) bad policy costs: tax compliance + failed wars + drug war + tariffs + fossil fuel explicit + healthcare inefficiency + housing/zoning + agricultural subsidies. These have strong empirical backing and high economist consensus.
 
@@ -194,7 +194,7 @@ $$
 
 ### Bad Policy Costs (Tier 2): $2T {#sec-bad_policy_cost_us_tier2_total}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Sum of Tier 2 (contested but defensible) bad policy costs: fossil fuel externalities + occupational licensing + migration restrictions + defense above deterrence + incarceration excess + infrastructure cost disease. Wider uncertainty due to counterfactual assumptions.
 
@@ -239,7 +239,7 @@ $$
 
 ### Political Dysfunction Tax (Total): 20% {#sec-political_dysfunction_tax_total_pct}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. Represents the 'tax' citizens implicitly pay for dysfunctional political systems.
 
@@ -285,7 +285,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### Agricultural Subsidies Deadweight Loss: $75B {#sec-bad_policy_cost_us_agricultural_subsidies}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high economist consensus.
 
@@ -309,7 +309,7 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 ### Defense Above Deterrence: $400B {#sec-bad_policy_cost_us_defense_above_deterrence}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US defense spending above deterrence requirements. US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal, and alliance structure. Excess ~$400B/yr funds force projection, not homeland defense.
 
@@ -333,7 +333,7 @@ US defense spending above deterrence requirements. US spends ~$900B/yr on defens
 
 ### Drug War Cost: $90B {#sec-bad_policy_cost_us_drug_war}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever.
 
@@ -357,7 +357,7 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 ### Failed Wars (Amortized): $400B {#sec-bad_policy_cost_us_failed_wars}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars failed to achieve stated objectives.
 
@@ -381,7 +381,7 @@ Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). Total cost $
 
 ### Fossil Fuel Explicit Subsidies: $50B {#sec-bad_policy_cost_us_fossil_fuel_explicit}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). Explicit subsidies are roughly $50B annually.
 
@@ -405,7 +405,7 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 ### Fossil Fuel Externalities: $600B {#sec-bad_policy_cost_us_fossil_fuel_externalities}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, climate damages, congestion, accidents. IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon assumptions.
 
@@ -429,7 +429,7 @@ US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths
 
 ### Healthcare System Inefficiency: $1.20T {#sec-bad_policy_cost_us_healthcare_inefficiency}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus.
 
@@ -453,7 +453,7 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 ### Housing/Zoning Restrictions Cost: $1.40T {#sec-bad_policy_cost_us_housing_zoning}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum.
 
@@ -477,7 +477,7 @@ GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) esti
 
 ### Incarceration Excess Costs: $150B {#sec-bad_policy_cost_us_incarceration_excess}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, community supervision) cost less and reduce recidivism. Total excess ~$150B including lost productivity and family impacts. Growing economist consensus.
 
@@ -501,7 +501,7 @@ Excess costs from US over-incarceration. US incarceration rate is 5x OECD averag
 
 ### Infrastructure Cost Disease: $150B {#sec-bad_policy_cost_us_infrastructure_disease}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US infrastructure cost disease. US builds infrastructure at 2-5x the cost of comparable countries (subway costs, highway construction, transit projects). NYU Transit Costs Project and Brookings document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.
 
@@ -525,7 +525,7 @@ US infrastructure cost disease. US builds infrastructure at 2-5x the cost of com
 
 ### Migration Restrictions Cost (US Share): $500B {#sec-bad_policy_cost_us_migration_restrictions}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US share of global welfare loss from migration restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. US-attributable share is highly speculative - using conservative $500B estimate.
 
@@ -549,7 +549,7 @@ US share of global welfare loss from migration restrictions. Clemens (2011) esti
 
 ### Occupational Licensing Cost: $200B {#sec-bad_policy_cost_us_occupational_licensing}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.
 
@@ -573,7 +573,7 @@ Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in we
 
 ### Tariff Cost (GDP Loss): $160B {#sec-bad_policy_cost_us_tariffs}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices.
 
@@ -597,7 +597,7 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 ### Tax Compliance Cost: $546B {#sec-bad_policy_cost_us_tax_compliance}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing.
 
@@ -621,7 +621,7 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 ### Crony Tax (Capture): 10% {#sec-crony_tax_pct}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.
 
@@ -645,7 +645,7 @@ Welfare loss from regulatory capture and crony rent-seeking as percentage of pot
 
 ### Coordination Tax (Olson): 5% {#sec-political_dysfunction_tax_coordination_pct}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Welfare loss from collective action failures. Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.
 
@@ -669,7 +669,7 @@ Welfare loss from collective action failures. Diffuse beneficiaries (consumers, 
 
 ### Information Tax (Hayek): 2% {#sec-political_dysfunction_tax_info_pct}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Welfare loss from information aggregation failures - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge that markets aggregate. Hayek (1945) argued this is a fundamental limit on central planning effectiveness.
 
@@ -693,7 +693,7 @@ Welfare loss from information aggregation failures - the Hayek knowledge problem
 
 ### Time-Inconsistency Tax: 3% {#sec-political_dysfunction_tax_time_pct}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Welfare loss from political time-inconsistency (electoral short-termism). Politicians facing re-election underinvest in long-term public goods and infrastructure. Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.
 
@@ -717,7 +717,7 @@ Welfare loss from political time-inconsistency (electoral short-termism). Politi
 
 ### Singapore Govt Spending (% GDP): 1500% {#sec-singapore_govt_spending_pct_gdp}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.
 
@@ -733,7 +733,7 @@ Singapore government spending as percentage of GDP. Less than HALF the US rate (
 
 ### Singapore Life Expectancy: 84.1 years {#sec-singapore_life_expectancy}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
 
@@ -749,7 +749,7 @@ Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) desp
 
 ### Switzerland Govt Spending (% GDP): 3500% {#sec-switzerland_govt_spending_pct_gdp}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.
 
@@ -765,7 +765,7 @@ Switzerland government spending as percentage of GDP. 3 percentage points LOWER 
 
 ### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
 
@@ -781,7 +781,7 @@ Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) de
 
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
@@ -797,7 +797,7 @@ US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 ### US Govt Spending (% GDP): 3800% {#sec-us_govt_spending_pct_gdp}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.
 
@@ -813,7 +813,7 @@ US total government spending as percentage of GDP (federal + state + local). OEC
 
 ### US Life Expectancy: 77.5 years {#sec-us_life_expectancy_2023}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.
 
@@ -833,7 +833,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Overlap Discount Factor: 0.85:1 {#sec-bad_policy_us_overlap_discount}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.
 
@@ -847,7 +847,7 @@ Discount factor to account for overlap between bad policy cost categories. Fossi
 
 ### US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).
 
@@ -861,7 +861,7 @@ US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6
 
 ### Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.
 
@@ -875,7 +875,7 @@ Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of 
 
 ### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.
 

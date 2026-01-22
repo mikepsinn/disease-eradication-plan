@@ -21,7 +21,7 @@ format:
     code-fold: true
 ---
 
-## Overview
+## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 2 parameters used in the analysis, organized by type:
 
@@ -40,7 +40,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global household wealth (2022/2023 estimate)
 
@@ -56,7 +56,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
 

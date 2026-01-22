@@ -21,7 +21,7 @@ format:
     code-fold: true
 ---
 
-## Overview
+## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 12 parameters used in the analysis, organized by type:
 
@@ -40,7 +40,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
 
@@ -80,7 +80,7 @@ $$
 
 ### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
 
@@ -119,7 +119,7 @@ $$
 
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
 
@@ -163,7 +163,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -187,7 +187,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -211,7 +211,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -231,7 +231,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 ### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from all diseases and aging globally
 
@@ -251,7 +251,7 @@ Annual deaths from all diseases and aging globally
 
 ### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 trial total cost (minimum)
 
@@ -263,7 +263,7 @@ Phase 3 trial total cost (minimum)
 
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
@@ -287,7 +287,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 ### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
@@ -311,7 +311,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -339,7 +339,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Show full details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
 
