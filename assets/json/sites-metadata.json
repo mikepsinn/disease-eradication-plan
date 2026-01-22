@@ -3031,6 +3031,10 @@
       "language": "en-US",
       "twitterSite": "@warondisease",
       "twitterCreator": "@warondisease",
+      "netlify": {
+        "siteId": "ef37ca63-13e5-4403-bf47-173763af79ab",
+        "cname": "invisible-graveyard-warondisease.netlify.app"
+      },
       "indexSource": "knowledge/appendix/invisible-graveyard.qmd",
       "outputDir": "_site/invisible-graveyard",
       "publishing": {

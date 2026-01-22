@@ -140,6 +140,7 @@
     "clean": "npx rimraf .quarto _book _freeze",
     "validate:all": "npm run validate:frontmatter && npm run validate:latex && npm run validate:render && npm run lint:md && npm run lint:qmd",
     "fix:all": "npm run fix:frontmatter && npm run lint:md:fix && npm run lint:qmd:fix && npm run format:spacing",
+    "fix:cross-site-links": "tsx scripts/fix-cross-site-links.ts",
     "images:analyze": "tsx scripts/images/analyze-and-tag.ts",
     "images:analyze:all": "tsx scripts/images/analyze-and-tag.ts --all",
     "images:guide": "tsx scripts/images/analyze-and-tag.ts --guide-only",
