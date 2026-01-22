@@ -287,143 +287,67 @@
   \ for non-fiction) | ✓ High confidence | Unit: words/minute | Click to view details,\
   \ calculation & sources\">200 words/minute</a>"
 "book_reading_speed_wpm_cite": "@average-reading-speed"
-"campaign_celebrity_endorsement": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_celebrity_endorsement\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Celebrity and\
-  \ influencer endorsements | ~ Medium confidence | 95% CI: [$10.5M, $19.5M] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$15M (95% CI: $10.5M-$19.5M)</a>"
-"campaign_community_organizing": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_community_organizing\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Community organizing\
-  \ and ambassador program budget | ~ Medium confidence | 95% CI: [$21M, $39M] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$30M (95% CI: $21M-$39M)</a>"
-"campaign_contingency": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_contingency\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Contingency fund\
-  \ for unexpected costs | ✓ High confidence | 95% CI: [$30M, $80M] | Dist: Uniform\
-  \ | Unit: USD | Click to view details, calculation & sources\">$50M (95% CI: $30M-$80M)</a>"
-"campaign_defense_conversion": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_defense_conversion\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Defense industry\
-  \ conversion program | ✓ High confidence | 95% CI: [$40M, $70M] | Dist: Lognormal\
-  \ | Unit: USD | Click to view details, calculation & sources\">$50M (95% CI: $40M-$70M)</a>"
-"campaign_defense_lobbyist_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_defense_lobbyist_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Budget for\
-  \ co-opting defense industry lobbyists | ~ Medium confidence | 95% CI: [$35M, $65M]\
-  \ | Unit: USD | Click to view details, calculation & sources\">$50M (95% CI: $35M-$65M)</a>"
-"campaign_healthcare_alignment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_healthcare_alignment\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Healthcare\
-  \ industry alignment and partnerships | ~ Medium confidence | 95% CI: [$24.5M, $45.5M]\
-  \ | Unit: USD | Click to view details, calculation & sources\">$35M (95% CI: $24.5M-$45.5M)</a>"
-"campaign_infrastructure": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_infrastructure\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Campaign operational\
-  \ infrastructure | ~ Medium confidence | 95% CI: [$14M, $26M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$20M (95% CI: $14M-$26M)</a>"
-"campaign_legal_ai_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_legal_ai_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"AI-assisted\
-  \ legal work budget | ~ Medium confidence | 95% CI: [$35M, $65M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$50M (95% CI: $35M-$65M)</a>"
-"campaign_legal_defense": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_legal_defense\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Legal defense\
-  \ fund | ~ Medium confidence | 95% CI: [$14M, $26M] | Unit: USD | Click to view\
-  \ details, calculation & sources\">$20M (95% CI: $14M-$26M)</a>"
-"campaign_legal_work": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_legal_work\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Legal drafting\
-  \ and compliance work | ✓ High confidence | 95% CI: [$50M, $80M] | Dist: Lognormal\
-  \ | Unit: USD | Click to view details, calculation & sources\">$60M (95% CI: $50M-$80M)</a>"
-"campaign_lobbying_eu": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_lobbying_eu\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"EU lobbying\
-  \ campaign budget | ~ Medium confidence | 95% CI: [$28M, $52M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$40M (95% CI: $28M-$52M)</a>"
-"campaign_lobbying_g20_millions": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_lobbying_g20_millions\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"G20 countries\
-  \ lobbying budget | ✓ High confidence | Unit: USD | Click to view details, calculation\
-  \ & sources\">$35M</a>"
-"campaign_lobbying_us": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_lobbying_us\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"US lobbying\
-  \ campaign budget | ~ Medium confidence | 95% CI: [$35M, $65M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$50M (95% CI: $35M-$65M)</a>"
-"campaign_media_budget_max": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_media_budget_max\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Maximum mass\
-  \ media campaign budget | ~ Medium confidence | 95% CI: [$700M, $1.30B] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$1B (95% CI: $700M-$1.30B)</a>"
-"campaign_media_budget_min": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_media_budget_min\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Minimum mass\
-  \ media campaign budget | ~ Medium confidence | 95% CI: [$350M, $650M] | Unit: USD\
-  \ | Click to view details, calculation & sources\">$500M (95% CI: $350M-$650M)</a>"
-"campaign_opposition_research": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_opposition_research\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Opposition\
-  \ research and rapid response | ~ Medium confidence | 95% CI: [$17.5M, $32.5M] |\
-  \ Unit: USD | Click to view details, calculation & sources\">$25M (95% CI: $17.5M-$32.5M)</a>"
-"campaign_phase1_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_phase1_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Phase 1 campaign\
-  \ budget (Foundation, Year 1) | ~ Medium confidence | 95% CI: [$140M, $260M] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$200M (95% CI: $140M-$260M)</a>"
-"campaign_phase2_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_phase2_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Phase 2 campaign\
-  \ budget (Scale & Momentum, Years 2-3) | ~ Medium confidence | 95% CI: [$350M, $650M]\
-  \ | Unit: USD | Click to view details, calculation & sources\">$500M (95% CI: $350M-$650M)</a>"
-"campaign_pilot_programs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_pilot_programs\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Pilot program\
-  \ testing in small countries | ~ Medium confidence | 95% CI: [$21M, $39M] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$30M (95% CI: $21M-$39M)</a>"
-"campaign_platform_development": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_platform_development\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Voting platform\
-  \ and technology development | ✓ High confidence | 95% CI: [$25M, $50M] | Dist:\
-  \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$35M (95%\
-  \ CI: $25M-$50M)</a>"
-"campaign_regulatory_navigation": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_regulatory_navigation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Regulatory\
-  \ compliance and navigation | ~ Medium confidence | 95% CI: [$14M, $26M] | Unit:\
-  \ USD | Click to view details, calculation & sources\">$20M (95% CI: $14M-$26M)</a>"
-"campaign_scaling_prep": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_scaling_prep\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Scaling preparation\
-  \ and blueprints | ~ Medium confidence | 95% CI: [$21M, $39M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$30M (95% CI: $21M-$39M)</a>"
-"campaign_staff_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_staff_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Campaign core\
-  \ team staff budget | ~ Medium confidence | 95% CI: [$28M, $52M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$40M (95% CI: $28M-$52M)</a>"
-"campaign_super_pac_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_super_pac_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Super PAC campaign\
-  \ expenditures | ~ Medium confidence | 95% CI: [$21M, $39M] | Unit: USD | Click\
-  \ to view details, calculation & sources\">$30M (95% CI: $21M-$39M)</a>"
-"campaign_tech_partnerships": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_tech_partnerships\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Tech industry\
-  \ partnerships and infrastructure | ~ Medium confidence | 95% CI: [$17.5M, $32.5M]\
-  \ | Unit: USD | Click to view details, calculation & sources\">$25M (95% CI: $17.5M-$32.5M)</a>"
-"campaign_treaty_implementation": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_treaty_implementation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Post-victory\
-  \ treaty implementation support | ✓ High confidence | 95% CI: [$30M, $55M] | Dist:\
-  \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$40M (95%\
-  \ CI: $30M-$55M)</a>"
-"campaign_viral_content_budget": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-campaign_viral_content_budget\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Viral marketing\
-  \ content creation budget | ~ Medium confidence | 95% CI: [$28M, $52M] | Unit: USD\
-  \ | Click to view details, calculation & sources\">$40M (95% CI: $28M-$52M)</a>"
+"campaign_celebrity_endorsement": "<span class=\"parameter-definition\" title=\"Celebrity\
+  \ and influencer endorsements | Unit: USD | Core definition\">$15M (95% CI: $10.5M-$19.5M)</span>"
+"campaign_community_organizing": "<span class=\"parameter-definition\" title=\"Community\
+  \ organizing and ambassador program budget | Unit: USD | Core definition\">$30M\
+  \ (95% CI: $21M-$39M)</span>"
+"campaign_contingency": "<span class=\"parameter-definition\" title=\"Contingency\
+  \ fund for unexpected costs | Unit: USD | Core definition\">$50M (95% CI: $30M-$80M)</span>"
+"campaign_defense_conversion": "<span class=\"parameter-definition\" title=\"Defense\
+  \ industry conversion program | Unit: USD | Core definition\">$50M (95% CI: $40M-$70M)</span>"
+"campaign_defense_lobbyist_budget": "<span class=\"parameter-definition\" title=\"\
+  Budget for co-opting defense industry lobbyists | Unit: USD | Core definition\"\
+  >$50M (95% CI: $35M-$65M)</span>"
+"campaign_healthcare_alignment": "<span class=\"parameter-definition\" title=\"Healthcare\
+  \ industry alignment and partnerships | Unit: USD | Core definition\">$35M (95%\
+  \ CI: $24.5M-$45.5M)</span>"
+"campaign_infrastructure": "<span class=\"parameter-definition\" title=\"Campaign\
+  \ operational infrastructure | Unit: USD | Core definition\">$20M (95% CI: $14M-$26M)</span>"
+"campaign_legal_ai_budget": "<span class=\"parameter-definition\" title=\"AI-assisted\
+  \ legal work budget | Unit: USD | Core definition\">$50M (95% CI: $35M-$65M)</span>"
+"campaign_legal_defense": "<span class=\"parameter-definition\" title=\"Legal defense\
+  \ fund | Unit: USD | Core definition\">$20M (95% CI: $14M-$26M)</span>"
+"campaign_legal_work": "<span class=\"parameter-definition\" title=\"Legal drafting\
+  \ and compliance work | Unit: USD | Core definition\">$60M (95% CI: $50M-$80M)</span>"
+"campaign_lobbying_eu": "<span class=\"parameter-definition\" title=\"EU lobbying\
+  \ campaign budget | Unit: USD | Core definition\">$40M (95% CI: $28M-$52M)</span>"
+"campaign_lobbying_g20_millions": "<span class=\"parameter-definition\" title=\"G20\
+  \ countries lobbying budget | Unit: USD | Core definition\">$35M</span>"
+"campaign_lobbying_us": "<span class=\"parameter-definition\" title=\"US lobbying\
+  \ campaign budget | Unit: USD | Core definition\">$50M (95% CI: $35M-$65M)</span>"
+"campaign_media_budget_max": "<span class=\"parameter-definition\" title=\"Maximum\
+  \ mass media campaign budget | Unit: USD | Core definition\">$1B (95% CI: $700M-$1.30B)</span>"
+"campaign_media_budget_min": "<span class=\"parameter-definition\" title=\"Minimum\
+  \ mass media campaign budget | Unit: USD | Core definition\">$500M (95% CI: $350M-$650M)</span>"
+"campaign_opposition_research": "<span class=\"parameter-definition\" title=\"Opposition\
+  \ research and rapid response | Unit: USD | Core definition\">$25M (95% CI: $17.5M-$32.5M)</span>"
+"campaign_phase1_budget": "<span class=\"parameter-definition\" title=\"Phase 1 campaign\
+  \ budget (Foundation, Year 1) | Unit: USD | Core definition\">$200M (95% CI: $140M-$260M)</span>"
+"campaign_phase2_budget": "<span class=\"parameter-definition\" title=\"Phase 2 campaign\
+  \ budget (Scale & Momentum, Years 2-3) | Unit: USD | Core definition\">$500M (95%\
+  \ CI: $350M-$650M)</span>"
+"campaign_pilot_programs": "<span class=\"parameter-definition\" title=\"Pilot program\
+  \ testing in small countries | Unit: USD | Core definition\">$30M (95% CI: $21M-$39M)</span>"
+"campaign_platform_development": "<span class=\"parameter-definition\" title=\"Voting\
+  \ platform and technology development | Unit: USD | Core definition\">$35M (95%\
+  \ CI: $25M-$50M)</span>"
+"campaign_regulatory_navigation": "<span class=\"parameter-definition\" title=\"Regulatory\
+  \ compliance and navigation | Unit: USD | Core definition\">$20M (95% CI: $14M-$26M)</span>"
+"campaign_scaling_prep": "<span class=\"parameter-definition\" title=\"Scaling preparation\
+  \ and blueprints | Unit: USD | Core definition\">$30M (95% CI: $21M-$39M)</span>"
+"campaign_staff_budget": "<span class=\"parameter-definition\" title=\"Campaign core\
+  \ team staff budget | Unit: USD | Core definition\">$40M (95% CI: $28M-$52M)</span>"
+"campaign_super_pac_budget": "<span class=\"parameter-definition\" title=\"Super PAC\
+  \ campaign expenditures | Unit: USD | Core definition\">$30M (95% CI: $21M-$39M)</span>"
+"campaign_tech_partnerships": "<span class=\"parameter-definition\" title=\"Tech industry\
+  \ partnerships and infrastructure | Unit: USD | Core definition\">$25M (95% CI:\
+  \ $17.5M-$32.5M)</span>"
+"campaign_treaty_implementation": "<span class=\"parameter-definition\" title=\"Post-victory\
+  \ treaty implementation support | Unit: USD | Core definition\">$40M (95% CI: $30M-$55M)</span>"
+"campaign_viral_content_budget": "<span class=\"parameter-definition\" title=\"Viral\
+  \ marketing content creation budget | Unit: USD | Core definition\">$40M (95% CI:\
+  \ $28M-$52M)</span>"
 "caregiver_annual_value_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-caregiver_annual_value_total\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total annual value\
@@ -3972,18 +3896,14 @@
 "treaty_campaign_total_cost_latex": "$$\n\\begin{gathered}\nCost_{campaign} \\\\\n\
   = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\\
   $250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
-"treaty_campaign_viral_referendum_base_case": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_viral_referendum_base_case\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Viral referendum\
-  \ budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range:\
-  \ $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform\
-  \ ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral\
-  \ payments (varies by virality and marginal cost curve per diffusion theory), marketing\
-  \ seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted)\
-  \ and biometric verification pricing ($0.15-0.25 at 300M+ scale). | ~ Medium confidence\
-  \ | 95% CI: [$150M, $410M] | Formula: PLATFORM + VERIFICATION + PAYMENTS (tiered\
-  \ by adopter segment) + MARKETING | Unit: USD | Click to view details, calculation\
-  \ & sources\">$250M (95% CI: $150M-$410M)</a>"
+"treaty_campaign_viral_referendum_base_case": "<span class=\"parameter-definition\"\
+  \ title=\"Viral referendum budget for 280M verified votes (base: $250M realistic\
+  \ with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote).\
+  \ Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20),\
+  \ tiered referral payments (varies by virality and marginal cost curve per diffusion\
+  \ theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted)\
+  \ and biometric verification pricing ($0.15-0.25 at 300M+ scale). | Unit: USD |\
+  \ Core definition\">$250M (95% CI: $150M-$410M)</span>"
 "treaty_campaign_voting_bloc_target": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_voting_bloc_target\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target voting\

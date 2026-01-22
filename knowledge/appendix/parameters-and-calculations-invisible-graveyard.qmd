@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 41 parameters used in the analysis, organized by type:
+This appendix documents all 42 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 21
+- External sources (peer-reviewed): 22
 - Calculated values: 17
 - Core definitions: 3
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (17 parameters) • [External Data Sources](#sec-external) (21 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
+[Calculated Values](#sec-calculated) (17 parameters) • [External Data Sources](#sec-external) (22 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1034,6 +1034,18 @@ Average cost to develop one drug in current system
 #### Input Distribution
 
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Pharma Drug Success Rate (Current System): 10% {#sec-pharma_success_rate_current_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of drugs that reach market in current system
+
+**Source**: [@drug-trial-success-rate-12-pct]
 
 *✓ High confidence • 📊 Peer-reviewed*
 

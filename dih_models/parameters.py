@@ -3131,7 +3131,6 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
     250_000_000,  # Realistic scenario with $0.50/vote average
     confidence_interval=(150_000_000, 410_000_000),  # Optimistic ($0.20/vote) to worst-case ($1.05/vote)
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
     display_name="Viral Referendum Budget",
@@ -3219,7 +3218,6 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
 # Campaign phase budgets
 CAMPAIGN_PHASE1_BUDGET = Parameter(
     200_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Phase 1 campaign budget (Foundation, Year 1)",
     display_name="Phase 1 Campaign Budget",
@@ -3232,7 +3230,6 @@ CAMPAIGN_PHASE1_BUDGET = Parameter(
 
 CAMPAIGN_PHASE2_BUDGET = Parameter(
     500_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
     display_name="Phase 2 Campaign Budget",
@@ -3245,7 +3242,6 @@ CAMPAIGN_PHASE2_BUDGET = Parameter(
 
 CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
     500_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Minimum mass media campaign budget",
     display_name="Minimum Mass Media Campaign Budget",
@@ -3258,7 +3254,6 @@ CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
 
 CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
     1_000_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Maximum mass media campaign budget",
     display_name="Maximum Mass Media Campaign Budget",
@@ -3271,7 +3266,6 @@ CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
 
 CAMPAIGN_STAFF_BUDGET = Parameter(
     40_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Campaign core team staff budget",
     display_name="Campaign Core Team Staff Budget",
@@ -3285,7 +3279,6 @@ CAMPAIGN_STAFF_BUDGET = Parameter(
 # Detailed campaign budget line items (in millions USD)
 CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
     50_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="AI-assisted legal work budget",
     display_name="AI-Assisted Legal Work Budget",
@@ -3298,7 +3291,6 @@ CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
 
 CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
     40_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Viral marketing content creation budget",
     display_name="Viral Marketing Content Creation Budget",
@@ -3311,7 +3303,6 @@ CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
 
 CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
     30_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Community organizing and ambassador program budget",
     display_name="Community Organizing and Ambassador Program Budget",
@@ -3324,7 +3315,6 @@ CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
 
 CAMPAIGN_LOBBYING_US = Parameter(
     50_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="US lobbying campaign budget",
     display_name="US Lobbying Campaign Budget",
@@ -3337,7 +3327,6 @@ CAMPAIGN_LOBBYING_US = Parameter(
 
 CAMPAIGN_LOBBYING_EU = Parameter(
     40_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="EU lobbying campaign budget",
     display_name="EU Lobbying Campaign Budget",
@@ -3350,7 +3339,6 @@ CAMPAIGN_LOBBYING_EU = Parameter(
 
 CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
     35_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="G20 countries lobbying budget",
     display_name="G20 Countries Lobbying Budget",
@@ -3361,7 +3349,6 @@ CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
 
 CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
     50_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Budget for co-opting defense industry lobbyists",
     display_name="Budget for Co-Opting Defense Industry Lobbyists",
@@ -3388,7 +3375,6 @@ DEFENSE_LOBBYING_ANNUAL = Parameter(
 
 CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
     30_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Super PAC campaign expenditures",
     display_name="Super PAC Campaign Expenditures",
@@ -3401,7 +3387,6 @@ CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
 
 CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
     25_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Opposition research and rapid response",
     display_name="Opposition Research and Rapid Response",
@@ -3414,7 +3399,6 @@ CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
 
 CAMPAIGN_PILOT_PROGRAMS = Parameter(
     30_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Pilot program testing in small countries",
     display_name="Pilot Program Testing in Small Countries",
@@ -3427,7 +3411,6 @@ CAMPAIGN_PILOT_PROGRAMS = Parameter(
 
 CAMPAIGN_LEGAL_WORK = Parameter(
     60_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Legal drafting and compliance work",
     display_name="Legal Drafting and Compliance Work",
@@ -3446,7 +3429,6 @@ CAMPAIGN_LEGAL_WORK = Parameter(
 
 CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
     20_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Regulatory compliance and navigation",
     display_name="Regulatory Compliance and Navigation",
@@ -3459,7 +3441,6 @@ CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
 
 CAMPAIGN_LEGAL_DEFENSE = Parameter(
     20_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Legal defense fund",
     display_name="Legal Defense Fund",
@@ -3472,7 +3453,6 @@ CAMPAIGN_LEGAL_DEFENSE = Parameter(
 
 CAMPAIGN_DEFENSE_CONVERSION = Parameter(
     50_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Defense industry conversion program",
     display_name="Defense Industry Conversion Program",
@@ -3491,7 +3471,6 @@ CAMPAIGN_DEFENSE_CONVERSION = Parameter(
 
 CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
     35_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Healthcare industry alignment and partnerships",
     display_name="Healthcare Industry Alignment and Partnerships",
@@ -3504,7 +3483,6 @@ CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
 
 CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
     25_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Tech industry partnerships and infrastructure",
     display_name="Tech Industry Partnerships and Infrastructure",
@@ -3517,7 +3495,6 @@ CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
 
 CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
     15_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Celebrity and influencer endorsements",
     display_name="Celebrity and Influencer Endorsements",
@@ -3530,7 +3507,6 @@ CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
 
 CAMPAIGN_INFRASTRUCTURE = Parameter(
     20_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Campaign operational infrastructure",
     display_name="Campaign Operational Infrastructure",
@@ -3543,7 +3519,6 @@ CAMPAIGN_INFRASTRUCTURE = Parameter(
 
 CAMPAIGN_CONTINGENCY = Parameter(
     50_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Contingency fund for unexpected costs",
     display_name="Contingency Fund for Unexpected Costs",
@@ -3562,7 +3537,6 @@ CAMPAIGN_CONTINGENCY = Parameter(
 
 CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
     40_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Post-victory treaty implementation support",
     display_name="Post-Victory Treaty Implementation Support",
@@ -3581,7 +3555,6 @@ CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
 
 CAMPAIGN_SCALING_PREP = Parameter(
     30_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Scaling preparation and blueprints",
     display_name="Scaling Preparation and Blueprints",
@@ -3594,7 +3567,6 @@ CAMPAIGN_SCALING_PREP = Parameter(
 
 CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
     35_000_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Voting platform and technology development",
     display_name="Voting Platform and Technology Development",
