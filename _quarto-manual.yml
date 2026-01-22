@@ -51,7 +51,7 @@ book:
       - text: "Optimal Budget Generator"
         href: knowledge/appendix/optimal-budget-generator-spec.qmd
       - text: "References"
-        href: knowledge/references.qmd
+        href: knowledge/references-shortcode-page.qmd
       - icon: file-pdf
         text: "Download Book"
         menu:
@@ -80,7 +80,7 @@ book:
             text: "Optimal Policy Generator"
           - href: knowledge/appendix/optimal-budget-generator-spec.qmd
             text: "Optimal Budget Generator"
-          - href: knowledge/references.qmd
+          - href: knowledge/references-shortcode-page.qmd
             text: "References & Citations"
   chapters:
     - text: "Start Here"
@@ -219,10 +219,8 @@ book:
         - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
         - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
         - knowledge/appendix/acknowledgments.qmd # ✅ (WISHONIA voice) ~3p
-        # NOTE: Using knowledge/references.qmd (source data file) directly because many chapters link to it.
-        # Other books use knowledge/references-shortcode-page.qmd for CSL-rendered bibliography.
         # Source data: knowledge/references.qmd -> bibtex_generator.py -> references.bib
-        - knowledge/references.qmd # ✅ (reference material, appropriately formal) ~250p
+        - knowledge/references-shortcode-page.qmd # CSL-rendered bibliography
 
 # Project-level metadata (applies to all documents)
 metadata:
@@ -395,7 +393,7 @@ format:
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
-              <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references-shortcode-page.qmd" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong> 
@@ -419,7 +417,7 @@ format:
               <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
               <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
               <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
-              <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
+              <a href="/knowledge/references-shortcode-page.qmd" style="color: #8b7355;">References</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <strong>Download:</strong> 

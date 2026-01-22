@@ -80,16 +80,6 @@ format:
               document.body.appendChild(script);
             })();
           </script>
-          <!-- Quarto Sidebar Horizontal Overlap Fix -->
-          <script>
-            (function() {
-              // Get the Quarto offset to build correct path
-              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
-              var script = document.createElement('script');
-              script.src = (offset ? offset : '') + 'assets/js/quarto-sidebar-fix.js';
-              document.body.appendChild(script);
-            })();
-          </script>
   pdf:
     documentclass: report
     echo: false
