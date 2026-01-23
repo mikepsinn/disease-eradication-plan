@@ -10,6 +10,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  emoji: "📜"
   index-source: knowledge/economics/1-pct-treaty-impact.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: 1-percent-treaty-impact.pdf

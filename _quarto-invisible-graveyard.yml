@@ -14,6 +14,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  emoji: "⚰️"
   index-source: knowledge/appendix/invisible-graveyard.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: invisible-graveyard.pdf

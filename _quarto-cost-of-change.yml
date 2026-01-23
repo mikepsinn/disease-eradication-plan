@@ -14,6 +14,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  emoji: "💵"
   index-source: knowledge/appendix/cost-of-change-analysis.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"

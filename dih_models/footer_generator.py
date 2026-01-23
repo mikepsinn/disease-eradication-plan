@@ -65,6 +65,10 @@ def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[st
     if not title or not site_url:
         return None
 
+    # Get emoji from dih-render section
+    dih_render = config.get("dih-render", {})
+    emoji = dih_render.get("emoji", "")
+
     # Clean up description for tooltip (escape quotes, limit length)
     if description:
         # Escape double quotes for HTML attribute
@@ -77,6 +81,7 @@ def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[st
         "id": config_name,
         "title": title,
         "description": description,
+        "emoji": emoji,
         "site_url": site_url,
         "is_book": is_book,
     }
@@ -132,12 +137,16 @@ def generate_footer_html(project_root: Path) -> Path:
             title = paper["title"]
             url = paper["site_url"]
             desc = paper.get("description", "")
+            emoji = paper.get("emoji", "")
+
+            # Build display text with optional emoji prefix
+            display_text = f"{emoji} {title}" if emoji else title
 
             # Build link with optional tooltip
             if desc:
-                link = f'<a href="{url}" title="{desc}" style="color: #8b7355;">{title}</a>'
+                link = f'<a href="{url}" title="{desc}" style="color: #8b7355;">{display_text}</a>'
             else:
-                link = f'<a href="{url}" style="color: #8b7355;">{title}</a>'
+                link = f'<a href="{url}" style="color: #8b7355;">{display_text}</a>'
             links.append(link)
 
         # Use line breaks between links since titles are longer
