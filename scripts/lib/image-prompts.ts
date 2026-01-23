@@ -8,9 +8,9 @@
  */
 export const RETRO_FUTURISTIC_STYLE = `Use a fun retro futuristic style and LARGE text.`;
 
-export const ACADEMIC_STYLE = `Use a retro black and white scientific illustration style.`;
+export const RETRO_ACADEMIC_STYLE = `Use a retro black and white scientific illustration style.`;
 
-//export const ACADEMIC_STYLE = `Use a retro scientific black and white academic style.`;
+export const BW_ACADEMIC_STYLE = `Use a black and white scientific illustration style.`;
 
 /**
  * Text legibility requirements based on Gemini 3 Pro Image best practices
@@ -103,11 +103,17 @@ export const VisualStyles = {
     suffix: '-retro-futuristic',
     description: 'fun retro futuristic',
   },
-  academic: {
-    name: 'academic',
-    style: ACADEMIC_STYLE,
-    suffix: '-academic',
-    description: 'professional black and white',
+  'retro-academic': {
+    name: 'retro-academic',
+    style: RETRO_ACADEMIC_STYLE,
+    suffix: '-retro-academic',
+    description: 'retro black and white scientific illustration',
+  },
+  'bw-academic': {
+    name: 'bw-academic',
+    style: BW_ACADEMIC_STYLE,
+    suffix: '-bw-academic',
+    description: 'black and white scientific illustration (no retro styling)',
   },
 } as const;
 

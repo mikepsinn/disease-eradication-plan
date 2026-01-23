@@ -6,10 +6,9 @@
  *   npx tsx scripts/images/generate-image.ts "your prompt here" [options]
  *
  * Options:
- *   --file <path>         Auto-insert image into specified QMD file
  *   --type <type>         Image type: figure (default), diagram, chart, illustration
  *   --aspect <ratio>      Aspect ratio: 16:9 (default), 1:1, 4:3, 9:16
- *   --style <style>       Visual style: academic (default), retro, modern
+ *   --style <style>       Visual style: retro-academic (default), retro-futuristic, bw-academic
  *   --output <dir>        Output directory (default: assets/images/generated)
  *   --alt <text>          Alt text for accessibility
  *
@@ -17,21 +16,21 @@
  *   # Generate figure and get path
  *   npx tsx scripts/images/generate-image.ts "Flow chart showing treaty adoption process"
  *
- *   # Generate and auto-insert into file
- *   npx tsx scripts/images/generate-image.ts "Cost comparison bar chart" \
- *     --file knowledge/economics/1-pct-treaty-impact.qmd \
- *     --alt "Bar chart comparing intervention costs"
- *
  *   # Generate diagram in specific style
  *   npx tsx scripts/images/generate-image.ts "Venn diagram of stakeholder interests" \
- *     --type diagram --style academic --aspect 1:1
+ *     --type diagram --style bw-academic --aspect 1:1
+ *
+ *   # Generate chart with alt text
+ *   npx tsx scripts/images/generate-image.ts "Cost comparison bar chart" \
+ *     --type chart --alt "Bar chart comparing intervention costs"
+ *
+ * Note: Image insertion into QMD files is handled by Claude Code's /generate-image skill,
+ * which places images at the optimal location based on content context.
  */
 
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
-import matter from 'gray-matter';
 import { generateAndSaveImages } from '../lib/gemini-images.js';
 import { VisualStyles } from '../lib/image-prompts.js';
 
@@ -73,7 +72,6 @@ const AspectRatios: Record<string, string> = {
 
 interface GenerateImageOptions {
   prompt: string;
-  file?: string;
   type: ImageType;
   aspect: string;
   style: string;
@@ -102,10 +100,9 @@ function parseArgs(): GenerateImageOptions {
 
   return {
     prompt,
-    file: getArg('--file') || undefined,
     type: (getArg('--type', 'figure') as ImageType),
     aspect: AspectRatios[getArg('--aspect', '16:9')] || '16:9',
-    style: getArg('--style', 'academic'),
+    style: getArg('--style', 'retro-academic'),
     output: getArg('--output', 'assets/images/generated'),
     alt: getArg('--alt') || undefined,
   };

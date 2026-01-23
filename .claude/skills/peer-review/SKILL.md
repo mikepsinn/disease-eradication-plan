@@ -1,6 +1,6 @@
 ---
 name: peer-review
-description: Comprehensive peer review from skeptical economist and "lazy AI" perspectives. Identifies missing LaTeX equations, charts, weak arguments, and context-loss vulnerabilities.
+description: Comprehensive peer review from skeptical economist and "lazy AI" perspectives. Identifies missing LaTeX equations, charts, weak arguments, and context-loss vulnerabilities. Reviews calculation chains for all parameters.
 allowed-tools:
   - Read
   - Edit
@@ -13,10 +13,11 @@ allowed-tools:
 
 # /peer-review <file.qmd>
 
-Comprehensive peer review that evaluates a paper from three perspectives:
+Comprehensive peer review that evaluates a paper from four perspectives:
 1. **Skeptical economist** - What would a critical reviewer challenge?
 2. **Lazy AI** - What gets lost with limited context windows?
-3. **Enhancement opportunities** - Missing LaTeX, charts, and rigor
+3. **Calculation chain audit** - Are formulas, distributions, and uncertainty propagation optimal?
+4. **Enhancement opportunities** - Missing LaTeX, charts, and rigor
 
 ## Usage
 ```
@@ -259,13 +260,160 @@ See [Parameters and Calculations](parameters-and-calculations.qmd#sec-param_name
 
 ---
 
-## Phase 6: Expected Criticisms
+## Phase 6: Calculation Chain Audit
+
+For every **calculated parameter** used in the paper, verify the entire calculation chain is academically defensible.
+
+### Step 1: Extract Calculated Parameters
+
+```bash
+# Find all variables used in the file
+grep -o "{{< var [a-z_0-9]* >}}" <file> | sed 's/{{< var //;s/ >}}//' | sort -u > /tmp/vars_used.txt
+
+# For each variable, check if it's calculated (has compute function)
+while read var; do
+  PARAM=$(echo "$var" | tr '[:lower:]' '[:upper:]')
+  if grep -q "source_type=\"calculated\"" dih_models/parameters.py | grep -B20 "^$PARAM = Parameter" 2>/dev/null; then
+    echo "CALCULATED: $var"
+  fi
+done < /tmp/vars_used.txt
+```
+
+Or search directly:
+```bash
+# Find parameter definition
+grep -B5 -A50 "^PARAMETER_NAME = Parameter" dih_models/parameters.py
+```
+
+### Step 2: Build Dependency Trees
+
+For each calculated parameter, trace inputs recursively:
+
+```
+TARGET_PARAM (calculated)
+├── INPUT_1 (source: external, ref: study2023, dist: lognormal)
+├── INPUT_2 (source: calculated)
+│   ├── INPUT_2a (source: external, ref: who2024, dist: normal)
+│   └── INPUT_2b (source: definition, dist: fixed)
+└── INPUT_3 (source: definition, dist: triangular)
+```
+
+**Classify each leaf input:**
+- **Empirically grounded**: Has peer-reviewed source with specific estimate
+- **Theoretically grounded**: Based on theory but no empirical estimate
+- **Definition/assumption**: Policy parameter or modeling choice
+
+### Step 3: Distribution Appropriateness Check
+
+For each input parameter with uncertainty:
+
+| Distribution | When to Use | Red Flags |
+|--------------|-------------|-----------|
+| **Normal** | Symmetric uncertainty, can be negative | Used for strictly positive values |
+| **Lognormal** | Right-skewed, strictly positive (costs, durations) | Used for bounded percentages |
+| **Beta** | Bounded probabilities [0,1] | Used for unbounded values |
+| **Triangular** | Only min/mode/max known | Used when more data available |
+| **Uniform** | Equal probability across range | Used when distribution shape known |
+| **Fixed** | Constitutional constants, mathematical facts | Used when uncertainty exists |
+
+**Checklist:**
+- [ ] Costs use lognormal (strictly positive, right-skewed)
+- [ ] Percentages/rates use beta (bounded 0-1)
+- [ ] Durations use lognormal or normal (depending on symmetry)
+- [ ] Counts use appropriate discrete or continuous approximation
+- [ ] Constitutional/legal constants use fixed (no Monte Carlo sampling)
+
+### Step 4: Formula Verification
+
+For each calculated parameter:
+
+**A. Additivity Check**
+If formula uses addition (A + B + C):
+- Do components overlap? (Double-counting risk)
+- Would multiplicative model be more appropriate?
+  - Additive: τ_total = τ_1 + τ_2 + τ_3
+  - Multiplicative: τ_total = 1 - (1-τ_1)(1-τ_2)(1-τ_3)
+
+**B. Independence Check**
+If formula uses multiplication (A × B × C):
+- Are factors truly independent?
+- Could there be interaction effects?
+
+**C. Unit Consistency**
+- Do input units combine correctly to produce output units?
+- Example: `deaths = deaths/year × years` ✓
+- Example: `deaths = deaths/year × dollars` ✗
+
+### Step 5: Confidence Interval Assessment
+
+For each calculated parameter's CI:
+
+| CI Width | Assessment | Action |
+|----------|------------|--------|
+| **Too narrow** (< ±20% for complex estimates) | Overconfident | Widen input CIs or add uncertainty sources |
+| **Reasonable** (±30-100% for policy estimates) | Appropriate | Document assumptions |
+| **Too wide** (> ±200%) | Uninformative | Consider if estimate is useful |
+
+**Check:**
+```bash
+# View CI for a parameter
+grep "PARAM_NAME" _analysis/parameter-summary.md
+```
+
+### Step 6: Source Quality Assessment
+
+For each external source:
+
+| Source Type | Strength | Notes |
+|-------------|----------|-------|
+| Meta-analysis | **Strong** | Multiple studies aggregated |
+| Peer-reviewed study | Medium-Strong | Single study, peer-reviewed |
+| Government statistics | Medium | Official but may have biases |
+| Industry reports | Medium-Low | May have conflicts of interest |
+| Single expert estimate | Low | No external validation |
+| Made-up assumption | **None** | Must be flagged prominently |
+
+**Red flags:**
+- Key inputs with no empirical backing
+- Large uncertainty on dominant inputs (check tornado charts)
+- Sources from advocacy organizations
+- Old data (>10 years) for fast-changing metrics
+- Single-source anchors for critical estimates
+
+### Step 7: Generate Calculation Chain Report
+
+```markdown
+### Calculation Chain Audit
+
+| Parameter | Formula | Key Inputs | Distribution Issues | Source Quality | Recommendation |
+|-----------|---------|------------|---------------------|----------------|----------------|
+| PARAM_1 | A × B | A (ext), B (calc) | A uses normal, should be lognormal | A: single study | Widen CI |
+| PARAM_2 | C + D | C (def), D (ext) | OK | D: meta-analysis | None |
+
+**Critical Issues:**
+1. [Parameter X] uses additive model but components overlap → Switch to multiplicative
+2. [Parameter Y] has no uncertainty on key input → Add distribution
+
+**Suggested Improvements:**
+- [ ] Change PARAM_A distribution from normal to lognormal
+- [ ] Add confidence interval to PARAM_B (currently fixed)
+- [ ] Find corroborating source for PARAM_C (single-study anchor)
+```
+
+---
+
+## Phase 7: Expected Criticisms
 
 Generate a list of likely critiques and ensure each is addressed:
 
 ### Common Critique Categories
 
-**1. "The numbers are made up"**
+**1. "The calculation is wrong"**
+- Is the formula mathematically correct?
+- Are units consistent?
+- Does the calculation chain make sense?
+
+**2. "The numbers are made up"**
 - Is every estimate sourced?
 - Are confidence intervals shown?
 - Is methodology transparent?

@@ -6,6 +6,7 @@ allowed-tools:
   - Bash
   - Read
   - Glob
+  - Edit
 ---
 
 # /generate-image [prompt]
@@ -20,14 +21,50 @@ Generate AI images using Gemini with interactive option selection.
 
 ---
 
-## Step 1: Gather Context
+## Step 1: Read Available Options from Source Files
+
+**REQUIRED: Read these files to get current options before asking user questions:**
+
+1. **Read `scripts/images/generate-image.ts`** to extract:
+   - Available `--type` values (from `ImageTypes` object)
+   - Available `--aspect` values (from `AspectRatios` object)
+   - Default values for each option
+
+2. **Read `scripts/lib/image-prompts.ts`** to extract:
+   - Available `--style` values (from `VisualStyles` object)
+   - Style descriptions for each option
+
+Present these dynamically extracted options to the user. Do NOT use hardcoded option lists.
+
+---
+
+## Step 2: Get Actual Numbers from QMD File
+
+**CRITICAL for charts and data visualizations:**
+
+If the image relates to a QMD file (especially for `chart` type), run the preview script to get actual variable values:
+
+```bash
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --numbers-only
+```
+
+Or to see specific sections with resolved values:
+
+```bash
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --line-range "1-100"
+```
+
+**Extract the actual numbers** (e.g., deaths, costs, ratios) and include them in the image prompt. The AI image generator needs concrete values to create accurate visualizations.
+
+**Example:** If the file references `{{< var efficacy_lag_deaths_911_equivalents >}}`, run the preview to get the actual number (e.g., "5,000") and include it in the prompt.
+
+---
+
+## Step 3: Gather Context for Inference
 
 Before asking questions, gather context to infer likely choices:
 
-### 1. Check Git Status (REQUIRED)
-
-Run this first to see what the user has been working on:
-
+### Check Git Status
 ```bash
 git status --short
 git diff --name-only HEAD~3
@@ -35,172 +72,75 @@ git diff --name-only HEAD~3
 
 This reveals:
 - Recently modified files → topic/domain
-- Staged changes → current focus
 - File paths → `knowledge/economics/` suggests charts, `knowledge/appendix/` suggests diagrams
 
-### 2. Read Recent Files for Keywords
+### Check Recent Conversation
+What topic is being discussed? What file was just edited?
 
-If git shows modified QMD files, read their titles/frontmatter:
+### Inference Heuristics
 
-```bash
-# Get titles of recently modified QMD files
-git diff --name-only HEAD~3 | grep "\.qmd$" | head -3
-```
+| Signal | Suggested Type | Suggested Style |
+|--------|----------------|-----------------|
+| Economics files | `chart` | (default) |
+| Process/implementation files | `diagram` | (default) |
+| Workflows, pipelines | `diagram` | (default) |
+| Data, costs, comparisons | `chart` | (default) |
+| Concepts, vision | `illustration` | (default) |
+| Marketing/propaganda | `figure` | retro-futuristic |
+| General/unclear | `figure` | (default) |
 
-Then read those files to extract:
-- `title:` from frontmatter
-- Section headings
-- Key terms that suggest image types
-
-### 3. Check Recent Conversation
-
-What topic is being discussed? What was just asked about?
-
-### 4. Infer Image Type from Context
-
-| Signal | Suggested Type |
-|--------|----------------|
-| Working on economics files | `chart` |
-| Working on process/implementation files | `diagram` |
-| Working on overview/intro files | `illustration` |
-| Discussing workflows, pipelines | `diagram` |
-| Discussing data, costs, comparisons | `chart` |
-| Discussing concepts, vision | `illustration` |
-| General/unclear | `figure` |
-
-### 5. Infer Style from Project
-
-| Signal | Suggested Style |
-|--------|-----------------|
-| `knowledge/` files | `academic` |
-| Marketing/campaign content | `retro` |
-| Website landing pages | `modern` |
-| Default for this book | `academic` |
+| Prompt Keywords | Suggest Type |
+|-----------------|--------------|
+| flow, process, pipeline, stages | diagram |
+| chart, graph, compare, data, cost | chart |
+| concept, metaphor, vision, idea | illustration |
 
 ---
 
-## Step 2: Get Prompt
+## Step 4: Get Prompt
 
-If no prompt provided, ask with context-inferred suggestions first:
-
-```
-AskUserQuestion:
-  question: "What image do you want to generate?"
-  header: "Prompt"
-  options:
-    # Order by likelihood based on context!
-    # If discussing a process → put diagram first
-    # If discussing data → put chart first
-    - label: "<inferred best match>"
-      description: "Based on current context: [reason]"
-    - label: "Diagram/flowchart"
-      description: "Process flows, system architecture, decision trees"
-    - label: "Data visualization"
-      description: "Charts, graphs, comparisons"
-    - label: "Conceptual illustration"
-      description: "Abstract concepts, metaphors, themes"
-    # "Other" is automatically available
-```
-
-**Context inference examples:**
-- User just edited `knowledge/economics/*.qmd` → suggest "chart" showing economic data
-- Discussing "treaty adoption process" → suggest "diagram" of adoption steps
-- Working on landing page → suggest "illustration" for hero image
+If no prompt provided as argument, ask user what they want to generate.
 
 ---
 
-## Step 3: Ask Options (Context-Ordered)
+## Step 5: Ask Options (Context-Ordered)
 
-Use AskUserQuestion with options ordered by inferred likelihood.
+Use AskUserQuestion for each option. **Order options by inferred likelihood** based on context, putting the recommended choice first with "(Recommended)" suffix.
 
 ### Image Type
-Reorder based on prompt content:
-- Contains "flow", "process", "steps" → `diagram` first
-- Contains "data", "comparison", "cost" → `chart` first
-- Contains "concept", "idea", "metaphor" → `illustration` first
-
-```
-question: "What type of image?"
-header: "Type"
-options:
-  # Put inferred best match first with "(Recommended)" suffix
-  - label: "<inferred> (Recommended)"
-    description: "<why this matches context>"
-  - label: "figure"
-    description: "General figure illustration"
-  - label: "diagram"
-    description: "Diagram with labeled components"
-  - label: "chart"
-    description: "Data visualization or chart"
-  # Other always available via AskUserQuestion
-```
+Present types extracted from `scripts/images/generate-image.ts` → `ImageTypes`
 
 ### Aspect Ratio
-Infer from intended use:
-- QMD chapter content → `16:9` (standard figures)
-- Social media mentioned → `1:1`
-- Slides/presentations → `16:9`
-- Document/PDF → `4:3`
+Present ratios extracted from `scripts/images/generate-image.ts` → `AspectRatios`
 
-```
-question: "What aspect ratio?"
-header: "Aspect"
-options:
-  - label: "16:9 (Recommended)"
-    description: "Widescreen - inferred from [context]"
-  - label: "1:1"
-    description: "Square, good for social media"
-  - label: "4:3"
-    description: "Standard, good for documents"
-```
+Inference hints:
+- QMD chapter content → `16:9`
+- Social media → `1:1`
+- Slides/presentations → `16:9`
 
 ### Visual Style
-Infer from file location or topic:
-- `knowledge/` files → `academic`
-- Marketing content → `retro`
-- Website assets → `modern`
-
-```
-question: "What visual style?"
-header: "Style"
-options:
-  - label: "academic (Recommended)"
-    description: "Clean, professional - matches book style"
-  - label: "retro"
-    description: "Vintage propaganda poster aesthetic"
-  - label: "modern"
-    description: "Contemporary minimalist design"
-```
+Present styles extracted from `scripts/lib/image-prompts.ts` → `VisualStyles`
 
 ### Target File
-Use git to find the most recently modified QMD file:
 
-```bash
-# Find most recently modified QMD file
-git diff --name-only | grep "\.qmd$" | head -1
-# Or from recent commits
-git diff --name-only HEAD~3 | grep "\.qmd$" | head -1
-```
+Determine the target QMD file using these sources (in priority order):
 
-Offer that file as the default:
+1. **Explicit file reference** - If user mentions a file like `@knowledge/appendix/invisible-graveyard.qmd`
+2. **Current conversation context** - What file was just being discussed or edited?
+3. **Git status** - Recently modified QMD files:
+   ```bash
+   git diff --name-only | grep "\.qmd$" | head -1
+   git diff --name-only HEAD~3 | grep "\.qmd$" | head -1
+   ```
+4. **Book structure** - Read `_quarto-manual.yml` to understand chapter organization and find the most relevant chapter for the image topic
 
-```
-question: "Insert into a file?"
-header: "Insert"
-options:
-  - label: "Insert into <git_recent_file.qmd> (Recommended)"
-    description: "Most recently modified QMD file"
-  - label: "No, just generate"
-    description: "I'll copy the markdown myself"
-  - label: "Different file..."
-    description: "Specify another QMD file"
-```
+**Always verify the target file exists in `_quarto-manual.yml`** - images should only be inserted into files that are part of the book.
 
 ---
 
-## Step 4: Build and Run Command
+## Step 6: Build and Run Command
 
-Construct the command from collected options:
+**DO NOT use the `--file` flag** - it appends to the end of the file, which is wrong.
 
 ```bash
 cd E:/code/obsidian/websites/disease-eradication-plan
@@ -208,80 +148,95 @@ npx tsx scripts/images/generate-image.ts "<prompt>" \
   --type <type> \
   --aspect <aspect> \
   --style <style> \
-  [--file <qmd_path>] \
-  [--alt "<alt_text>"]
+  --alt "<alt_text>"
 ```
 
-**Examples:**
-
-Basic generation:
-```bash
-npx tsx scripts/images/generate-image.ts "Treaty adoption flowchart showing nation-by-nation process" --type diagram --aspect 16:9 --style academic
-```
-
-With auto-insert:
-```bash
-npx tsx scripts/images/generate-image.ts "Cost comparison bar chart" --type chart --aspect 16:9 --style academic --file knowledge/economics/1-pct-treaty-impact.qmd --alt "Bar chart comparing intervention costs"
-```
+The script outputs the generated image path. Note it for the next step.
 
 ---
 
-## Step 5: Report Result
+## Step 7: Insert Image at Optimal Location
 
-After successful generation, report:
+**CRITICAL: Insert the image where the content is discussed, NOT at the end of the file.**
 
-```markdown
-## Image Generated
+### Finding the Optimal Location
 
-**File:** `assets/images/generated/<filename>.png`
+1. **Read the target QMD file** to understand its structure
+2. **Search for the section** that discusses the image's subject matter:
+   - Look for headings (`##`, `###`) related to the image topic
+   - Find paragraphs that mention the key concepts in the image
+   - Identify where the data/numbers shown in the image are discussed
+3. **Insert the image immediately AFTER** the relevant paragraph or section heading
 
-**Markdown to insert:**
+### Insertion Rules
+
+| Image Subject | Insert Location |
+|---------------|-----------------|
+| Data/statistics | After the paragraph that presents those numbers |
+| Process/workflow | After the section heading that introduces the process |
+| Comparison | After the paragraph that sets up the comparison |
+| Concept illustration | After the paragraph explaining the concept |
+
+### Example
+
+If generating a chart about "9/11 equivalents of FDA delay deaths":
+1. Search the QMD file for text mentioning "9/11" or "equivalents"
+2. Find the paragraph: "The FDA's delays cause deaths equivalent to X 9/11 attacks..."
+3. Insert the image markdown **immediately after** that paragraph
+
+### Using Edit Tool
+
+Use the Edit tool to insert the image at the correct location:
+
 ```
-![<alt_text>](/<path>)
+old_string: [the paragraph discussing the image subject]
+
+new_string: [same paragraph]
+
+![Alt text describing the image](../../assets/images/generated/filename.png)
 ```
 
-**Preview the image** to verify it matches expectations.
-```
-
-If `--file` was used, confirm insertion location.
+**Compute the correct relative path** from the QMD file to the image in `assets/images/generated/`.
 
 ---
 
-## Context Inference Heuristics
+## Step 8: Report Result
 
-| Context Signal | Inferred Type | Inferred Style |
-|----------------|---------------|----------------|
-| Editing `knowledge/*.qmd` | figure | academic |
-| Editing economics content | chart | academic |
-| Discussing "process", "workflow", "steps" | diagram | academic |
-| Discussing "comparison", "data", "statistics" | chart | academic |
-| Discussing "concept", "idea", "vision" | illustration | academic |
-| Marketing/advocacy topic | figure | retro |
-| Website landing page | illustration | modern |
+After successful generation and insertion, report:
+- Image file path
+- Where it was inserted (section/paragraph)
+- Remind user to preview the rendered output
 
-| Prompt Keywords | Suggest Type |
-|-----------------|--------------|
-| flow, process, pipeline, stages | diagram |
-| chart, graph, compare, data, cost, spending | chart |
-| concept, metaphor, vision, idea | illustration |
-| (none of above) | figure |
+---
+
+## CRITICAL RULES FOR CHARTS
+
+**NEVER use logarithmic scaling.** Always use linear scales for all axes.
+
+When generating charts or data visualizations:
+
+1. **Use LINEAR scaling only** - logarithmic scales obscure the dramatic differences we want to show
+2. **Include actual numbers** - extract real values from the QMD file using the preview script
+3. **Show scale dramatically** - if one bar is 5,000x larger than another, make that visually obvious
+4. **Label clearly** - include numbers on bars/elements so the scale is unambiguous
+5. **No artistic interpretation of scale** - if deaths are 15 million vs 3,000, show that exact ratio
+
+**Bad:** Log scale that makes 15M and 3K look similar
+**Good:** Linear scale where 15M tower dwarfs the 3K bar
 
 ---
 
 ## Environment Requirements
 
 Requires `GOOGLE_GENERATIVE_AI_API_KEY` environment variable.
-Get key from: https://aistudio.google.com/app/apikey
 
 ---
 
-## Quick Reference
+## Source Files Reference
 
-| Option | Flag | Values |
-|--------|------|--------|
-| Type | `--type` | `figure`, `diagram`, `chart`, `illustration` |
-| Aspect | `--aspect` | `16:9`, `1:1`, `4:3`, `9:16` |
-| Style | `--style` | `academic`, `retro`, `modern` |
-| Output | `--output` | directory path (default: `assets/images/generated`) |
-| File | `--file` | QMD path to auto-insert |
-| Alt | `--alt` | accessibility text |
+| File | Contains |
+|------|----------|
+| `scripts/images/generate-image.ts` | `ImageTypes`, `AspectRatios`, CLI flags |
+| `scripts/lib/image-prompts.ts` | `VisualStyles`, style prompts |
+| `scripts/preview-qmd-with-variables.py` | Resolves `{{< var >}}` to actual values |
+| `_quarto-manual.yml` | Book structure, chapter list, valid QMD files |

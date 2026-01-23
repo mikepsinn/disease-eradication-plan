@@ -1,6 +1,15 @@
 ---
-title: 'The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024'
-description: 'The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical deaths during actual drug approval delays (1962-2024), and (2) {{< var dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by {{< var type_ii_error_cost_ratio >}}.'
+title: >-
+  The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag,
+  1962-2024
+description: >-
+  The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug
+  approval after safety is proven. This study quantifies two distinct mortality
+  costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical
+  deaths during actual drug approval delays (1962-2024), and (2) {{< var
+  dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing
+  the disease eradication timeline back. Type II errors exceed Type I benefits
+  by {{< var type_ii_error_cost_ratio >}}.
 published: true
 tags:
   - appendix
@@ -9,7 +18,7 @@ tags:
   - regulatory-economics
   - mortality
   - cost-benefit
-image: /assets/og-images/knowledge/appendix/invisible-graveyard-og-academic.jpg
+image: /assets/og-images/knowledge/appendix/invisible-graveyard-og-retro-academic.jpg
 aliases:
   - /knowledge/appendix/regulatory-mortality-analysis.html
 ---
@@ -21,8 +30,8 @@ aliases:
 
 The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
 
-1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total >}} people died waiting for drugs during their approval process
-2. **Future timeline shift:** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
+1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total >}} people died waiting for approved drugs during their approval process - a **lower bound** excluding drugs never developed due to cost barriers
+2. **Future timeline shift (under cascade assumption):** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
 
 **The ratio:** Type II errors (blocking effective drugs) cost {{< var type_ii_error_cost_ratio >}} more lives than Type I errors (approving dangerous drugs) prevent.
 
@@ -34,13 +43,17 @@ This study quantifies the cumulative mortality and morbidity costs associated wi
 
 Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs:
 
-1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total >}}** died waiting for drugs during their {{< var efficacy_lag_years >}} approval delays. This represents the one-time cost of delays already incurred.
+1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total >}}** died waiting for approved drugs during their {{< var efficacy_lag_years >}} approval delays. This is a **lower bound** - it excludes drugs never developed due to cost barriers.
 
-2. **Future timeline shift:** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
+2. **Future timeline shift (under cascade assumption):** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
 
 **Historical Deaths Calculation:**
 
 {{< var existing_drugs_efficacy_lag_deaths_total_latex >}}
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
 Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
 
@@ -301,6 +314,8 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 {{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
+{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
+
 **Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life**.
 
 ### Years Lived with Disability - Treatment Beneficiaries {#treatment-morbidity}
@@ -345,6 +360,8 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 {{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
 
+{{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
+
 ### Contextualizing the Loss
 
 - **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
@@ -381,6 +398,10 @@ Specifically, we assume a **Thalidomide-scale catastrophe every single year** in
 {{< var type_ii_error_cost_ratio_latex >}}
 
 **Conclusion:** For every 1 unit of harm the FDA prevents (Type I errors: approving dangerous/ineffective drugs), it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay (Type II errors: blocking effective drugs).
+
+{{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
+
+{{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
 
 ### Acknowledging the Efficacy-as-Safety Argument
 
@@ -683,4 +704,6 @@ The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy re
 
 The {{< var type_ii_error_cost_ratio >}} ratio demonstrates that these costs dwarf the benefits. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).
 
-The path forward is clear: maintain safety testing, eliminate efficacy delay, and deploy distributed real-world evidence systems. 
+The path forward is clear: maintain safety testing, eliminate efficacy delay, and deploy distributed real-world evidence systems.
+
+
