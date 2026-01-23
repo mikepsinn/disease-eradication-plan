@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 54 parameters used in the analysis, organized by type:
+This appendix documents all 55 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 26
+- External sources (peer-reviewed): 27
 - Calculated values: 23
 - Core definitions: 5
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (23 parameters) • [External Data Sources](#sec-external) (26 parameters) • [Core Definitions](#sec-definitions) (5 parameters)
+[Calculated Values](#sec-calculated) (23 parameters) • [External Data Sources](#sec-external) (27 parameters) • [Core Definitions](#sec-definitions) (5 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1380,6 +1380,18 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 **Source**: [@post-1962-drug-approval-drop]
 
 *✓ High confidence • Updated 1962-1970*
+
+:::
+
+### Pre-1962 Physician Count (Unverified): 144k physicians {#sec-pre_1962_physician_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
+
+**Source**: [@pre-1962-physician-trials]
+
+*? Low confidence*
 
 :::
 

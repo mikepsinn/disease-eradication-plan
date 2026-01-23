@@ -85,9 +85,11 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 
 **Robustness**: Even at {{< var political_success_probability >}} probability of adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets. Monte Carlo simulation across 10,000 trials indicates the intervention remains cost-saving across the sensitivity ranges explored here.
 
-**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
+**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis], and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 **Implications**: This intervention corrects a fundamental capital misallocation: military spending creates depreciating assets (weapons become obsolete), while medical research creates appreciating assets (treatments compound in value). Comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI), it represents the highest-ROI reallocation available to policymakers.
+
+**Important limitations**: (1) Economic value estimates are cumulative over the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, not annual values. (2) All estimates are conditional on successful treaty implementation. (3) Phase I safety testing remains mandatory. What changes is eliminating post-safety efficacy delays. (4) The "quadrillion dollar" figures represent monetized value of lives saved over centuries of accelerated medical progress, using standard QALY methodology.
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, pragmatic clinical trials, regulatory delay, cost-effectiveness analysis, DALY, peace dividend
 
@@ -116,6 +118,20 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
 
+::: {.callout-important}
+## How Pragmatic Trials Increase Safety
+
+**Phase I safety testing remains mandatory.** This is the testing that prevented thalidomide in the United States. What changes is eliminating the {{< var efficacy_lag_years >}}-year *efficacy* delay (Phase II/III) after safety is verified.
+
+**The current system is demonstrably unsafe:**
+
+- **Vioxx** killed 38,000-55,000 people over 5 years (1999-2004) under the "safe" current system because voluntary adverse event reporting captures only 1-10% of events
+- **Proposed system** uses automated EHR monitoring of all patients, detecting safety signals in months instead of years
+- Traditional trials test 100-300 patients; pragmatic trials test 10,000-100,000+ patients with continuous monitoring
+
+For every person protected from an unsafe drug (Type I error prevention), the current system kills {{< var type_ii_error_cost_ratio >}} people by delaying access to beneficial treatments (Type II errors). See [Safety Concerns](#safety-concerns) for full analysis.
+:::
+
 ## Introduction
 
 ### Historical Context: When Grand Challenges Succeed
@@ -140,9 +156,9 @@ Current medical research faces fundamental capacity constraints that limit our a
 | **Trial participation rate** | {{< var current_clinical_trial_participation_rate >}} of willing patients | Massive unmet research capacity [@clinical-trial-patient-participation-rate] |
 | **Untested safe compounds** | {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS) | {{< var exploration_ratio >}} of drug-disease space explored [@drug-repurposing-rate] |
 | **Traditional trial cost** | {{< var traditional_phase3_cost_per_patient >}}/patient | Makes comprehensive testing economically infeasible {{< var traditional_phase3_cost_per_patient_cite >}} |
-| **Pragmatic trial cost** | {{< var recovery_trial_cost_per_patient >}}/patient (RECOVERY) | {{< var recovery_trial_cost_reduction_factor >}}× cost reduction enables systematic exploration {{< var recovery_trial_cost_per_patient_cite >}} |
+| **Pragmatic trial cost** | {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient | {{< var dfda_trial_cost_reduction_factor >}}× cost reduction enables systematic exploration (meta-analysis of 108+ trials [@embedded-pragmatic-trials-meta-analysis]) |
 
-The Oxford RECOVERY trial demonstrated that pragmatic trial design can maintain scientific rigor while delivering results in <100 days [@recovery-trial-82x-cost-reduction]. (Note: RECOVERY's {{< var recovery_trial_cost_per_patient >}}/patient benefited from NHS infrastructure and COVID emergency conditions; our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) This {{< var recovery_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
+Multiple large-scale pragmatic trials and systematic reviews demonstrate that pragmatic trial design maintains scientific rigor while dramatically reducing costs. A Harvard meta-analysis of 108 embedded pragmatic trials found median costs of $97/patient [@embedded-pragmatic-trials-meta-analysis]. The Oxford RECOVERY trial achieved {{< var recovery_trial_cost_per_patient >}}/patient (under exceptional NHS/COVID conditions), while the PCORnet ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient under normal conditions [@pragmatic-trials-cost-advantage]. Our dFDA projections use the conservative ADAPTABLE estimate ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). This {{< var dfda_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
 ### Addressing Skepticism: Why This Differs from Failed Megaprojects
 
@@ -227,7 +243,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
 
 
-**Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions, improving generalizability and dramatically reducing costs (e.g., Oxford RECOVERY trial).
+**Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions, improving generalizability and dramatically reducing costs. Examples: Oxford RECOVERY (COVID, 47,000 patients), PCORnet ADAPTABLE (cardiovascular, 15,076 patients), and 108+ trials documented in Harvard meta-analysis [@embedded-pragmatic-trials-meta-analysis].
 
 ## Problem Statement
 
@@ -351,6 +367,19 @@ Like Amazon rankings based on verified purchase reviews, except based on measure
 
 **Implementation**: The system already has prescription records and outcome data from routine care. Ranking is just aggregation and sorting. No new data collection needed, just making existing data actually useful for treatment decisions.
 
+#### How Comparative Effectiveness Data Is Collected
+
+**Traditional RCT limitation**: Standard trials compare one treatment vs. placebo (or occasionally one active comparator). To rank 10 treatments for a condition, you would need ~45 separate head-to-head RCTs, each costing $50-100M and taking 3-5 years. This is economically impossible for most conditions.
+
+**Pragmatic trial approach**: When a patient volunteers for treatment of their condition, physicians access a ranked list of all safe treatments with demonstrated or theoretical efficacy based on existing evidence. The patient is then randomly assigned to one of these treatment options. This randomization serves dual purposes:
+
+1. **For the patient**: Equal chance of receiving any potentially effective treatment
+2. **For medical knowledge**: Generates comparative effectiveness data across all treatments simultaneously
+
+Because thousands of patients are randomly assigned across dozens of treatments in parallel, the system collects head-to-head comparative data that would be impossible to generate through sequential RCTs. Within months rather than decades, every treatment can be ranked by measured effectiveness.
+
+**Population-specific stratification**: RCTs typically exclude 86% of patients due to comorbidities, age, or concurrent medications [@antidepressant-trial-exclusion-rates]. The narrow populations that qualify cannot support subgroup analysis. Pragmatic trials include all volunteers, generating data on "women over 50 with diabetes" or "patients with genetic marker X." The filter capability shown above ("Show me effectiveness in women over 50 with my patient's genetic markers") is only possible because the underlying data includes those populations.
+
 ### Outcome Labels
 
 **Current drug information**: 40-page package inserts written by lawyers, listing every possible side effect without quantifying frequencies. Patients have no idea whether "may cause headaches" means 0.1% or 50% of users.
@@ -384,21 +413,19 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 ### Total Economic Value
 
-**{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
+**{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value (cumulative over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, conditional on implementation).
 
-
-
-This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained. On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
+This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
 
 ##### Uncertainty Analysis: Total Economic Value
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
-The tornado diagram shows that timeline shift duration and QALY valuation dominate the uncertainty in total economic value. Even under conservative parameter assumptions, the intervention generates quadrillions in economic value.
+The tornado diagram shows that timeline shift duration and QALY valuation dominate the uncertainty in total economic value. Even under conservative parameter assumptions, the intervention generates quadrillions in cumulative economic value over the timeline shift period (not annually).
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
-Monte Carlo analysis confirms the 95% confidence interval for total economic value remains in the quadrillions across all plausible scenarios.
+Monte Carlo analysis confirms the 95% confidence interval for total economic value remains in the quadrillions across all plausible scenarios. These are cumulative values representing accelerated access to treatments over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, not annual benefits.
 
 **Investment required**: {{< var treaty_campaign_total_cost >}}
 
@@ -489,14 +516,16 @@ This represents approximately the GDP of Austria, reallocated from military spen
 
 Traditional trials require:
 
-* Dedicated trial sites with custom infrastructure (RECOVERY used existing hospitals)
-* Extensive source data verification and monitoring visits (RECOVERY used routine medical records)
-* Complex eligibility criteria excluding most patients (RECOVERY enrolled any hospitalized COVID patient)
-* Detailed case report forms capturing hundreds of data points (RECOVERY collected <10 core outcomes)
-* Years of site activation and regulatory approval per country (RECOVERY activated 185 sites in weeks)
+* Dedicated trial sites with custom infrastructure (pragmatic trials use existing hospitals)
+* Extensive source data verification and monitoring visits (pragmatic trials use routine medical records)
+* Complex eligibility criteria excluding most patients (pragmatic trials enroll broadly)
+* Detailed case report forms capturing hundreds of data points (pragmatic trials collect <10 core outcomes)
+* Years of site activation and regulatory approval per country (pragmatic trials activate sites in weeks)
 
-Pragmatic trials eliminate these duplicative overhead costs by leveraging existing infrastructure.
-This structural difference explains why costs drop **{{< var recovery_trial_cost_reduction_factor >}}×** instead of 2× or 5×.
+Pragmatic trials eliminate these duplicative overhead costs by leveraging existing infrastructure. The Harvard meta-analysis of 108 embedded trials [@embedded-pragmatic-trials-meta-analysis] confirms this efficiency is reproducible: median cost $97/patient across diverse therapeutic areas.
+This structural difference explains why costs drop **{{< var dfda_trial_cost_reduction_factor >}}×** instead of 2× or 5×.
+
+
 
 ### 3. 15–40 "NIH equivalents" of new research capacity
 
@@ -509,6 +538,9 @@ This would change that.
 All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 ### What doesn't change
+
+![The Victory Bond ecosystem: A self-reinforcing cycle where treaty funds incentivize all key veto-players (politicians, investors, industry) to support rather than block the transition.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-bond-flow-bw-academic.png)
+
 
 * Power balances (everyone cuts equally)
 * Deterrence (still plenty of weapons)
@@ -736,11 +768,11 @@ Military spending generates economic multiplier effects of {{< var economic_mult
 
 **2. Trial cost reduction through infrastructure efficiency**
 
-Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. The Oxford RECOVERY trial cost {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by using existing hospital infrastructure, minimal additional data collection beyond standard care, and simplified consent processes. (Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions; our dFDA projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.)
+Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. Pragmatic trials leverage existing infrastructure: the Harvard meta-analysis of 108 embedded pragmatic trials found median costs of $97/patient [@embedded-pragmatic-trials-meta-analysis], RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient (NHS/COVID conditions), and ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient under normal conditions. Our dFDA projections use the conservative ADAPTABLE estimate ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
-This represents an {{< var recovery_trial_cost_reduction_factor >}}× cost reduction achieved by eliminating duplicative overhead and leveraging existing healthcare infrastructure.
+This represents a {{< var dfda_trial_cost_reduction_factor >}}× cost reduction achieved by eliminating duplicative overhead and leveraging existing healthcare infrastructure.
 
-The distribution below shows the uncertainty range for the cost reduction factor based on empirical data from RECOVERY and similar pragmatic trials:
+The distribution below shows the uncertainty range for the cost reduction factor based on empirical data from 108+ pragmatic trials:
 
 {{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
 
@@ -910,19 +942,19 @@ This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}
 
 The conservative NPV above excludes the benefit from eliminating the regulatory delay. This section calculates the NPV of just the **efficacy lag component** ({{< var efficacy_lag_years >}}) - a subset of the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
 
-**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them {{< var efficacy_lag_years >}} earlier. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
+**Assumption**: We assume diseases receive first effective treatments 100 years in the future on average. If first effective treatments arrive at year 100, eliminating the regulatory delay brings them {{< var efficacy_lag_years >}} earlier. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
 
-The NPV of regulatory delay avoidance (assuming average cure time of 100 years):
+The NPV of regulatory delay avoidance (assuming average time to first effective treatment of 100 years):
 
 Using the efficacy lag elimination benefit of {{< var dfda_efficacy_lag_elimination_economic_value >}}, applied across {{< var efficacy_lag_years >}} with future discounting at {{< var npv_discount_rate_standard >}}.
 
-This yields an NPV assuming cures occur 100 years in the future on average. The discount factor at year ~92 (when benefits begin) makes far-future benefits much smaller than if they occurred immediately.
+This yields an NPV assuming first effective treatments are discovered 100 years in the future on average. The discount factor at year ~92 (when benefits begin) makes far-future benefits much smaller than if they occurred immediately.
 
 **Note**: This NPV calculation covers only the efficacy lag component ({{< var efficacy_lag_years >}}). The treatment acceleration component (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average) would add substantially more value, but is harder to model with NPV due to uncertainty in when each disease receives its first treatment.
 
 **Comparison**: The regulatory delay avoidance benefit ({{< var dfda_efficacy_lag_elimination_economic_value >}} annually) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
 
-**Why this matters**: Eliminating the regulatory delay still provides value even if cures are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases are actually cured, which varies by disease category. Some may be cured in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to cure.
+**Why this matters**: Eliminating the regulatory delay still provides value even if first effective treatments are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases actually receive first effective treatments, which varies by disease category. Some may receive treatments in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to treat effectively.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -1038,7 +1070,7 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 - Eventually avoidable with biomedical research: {{< var eventually_avoidable_daly_pct >}}
 - Fundamentally unavoidable (accidents): {{< var fundamentally_unavoidable_death_pct >}}
 
-**Assumption justification ({{< var eventually_avoidable_daly_pct >}} avoidable)**: This represents the theoretical ceiling of what is biologically addressable, not what is currently preventable. It excludes only fundamentally unavoidable causes (primarily accidents, which cannot be "cured" by medical research). Conservative estimates of current preventability (20-30%) are much lower because they measure what we can do today, not what is scientifically possible with sufficient research over decades.
+**Assumption justification ({{< var eventually_avoidable_daly_pct >}} avoidable)**: This represents the theoretical ceiling of what is biologically addressable, not what is currently preventable. It excludes only fundamentally unavoidable causes (primarily accidents, which cannot be addressed by medical research). Conservative estimates of current preventability (20-30%) are much lower because they measure what we can do today, not what is scientifically possible with sufficient research over decades.
 
 **Step 3: Calculate DALYs averted**
 
@@ -1229,11 +1261,11 @@ The framework uses federated queries (data stays in Epic/Cerner/Apple Health sys
 
 ### Treatment Discovery Through Therapeutic Space Exploration
 
-The {{< var dfda_trial_capacity_multiplier >}}× research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
+The {{< var dfda_trial_capacity_multiplier >}}× research acceleration transforms our ability to explore the vast therapeutic space where undiscovered treatments already exist.
 
 #### The Unexplored Therapeutic Frontier
 
-The fundamental problem isn't that cures are hard to discover. It's that we're barely looking. [As documented in The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd):
+The fundamental problem isn't that effective treatments are hard to discover. It's that we're barely looking. [As documented in The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd):
 
 - **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}} diseases)
 - **<1%** of these combinations have been tested
@@ -1242,7 +1274,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 {{< var drug_disease_combinations_possible_latex >}}
 
-The cures likely already exist among tested-safe compounds. We just haven't looked.
+Effective treatments likely already exist among tested-safe compounds. We just haven't looked.
 
 #### Current Exploration Rate vs. Therapeutic Space
 
@@ -1280,7 +1312,7 @@ This acceleration applies across *all* diseases, not just well-funded ones. The 
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
-A common objection is that "more trials won't produce proportionally more cures," the diminishing returns hypothesis. This deserves serious consideration, but the evidence suggests the opposite may be true.
+A common objection is that "more trials won't produce proportionally more treatments," the diminishing returns hypothesis. This deserves serious consideration, but the evidence suggests the opposite may be true.
 
 #### Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
 
@@ -1294,7 +1326,7 @@ The diminishing returns objection assumes we've exhausted low-hanging fruit. But
 
 {{< var combination_therapy_disease_space_latex >}}
 
-3. **Repurposing success proves cures exist**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating the unexplored space contains discoveries.
+3. **Repurposing success proves effective treatments exist**: {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating the unexplored space contains discoveries.
 
 4. **Most biology is untargeted**: Only {{< var human_interactome_targeted_pct >}} of the human interactome has been targeted. We're ignoring 88% of our own biology.
 
@@ -1527,7 +1559,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
-**Context:** The decentralized framework for drug assessment approach is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
+**Context:** The decentralized framework for drug assessment approach is not an untested innovation extrapolated from a single case study. The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] demonstrates that cost reductions are reproducible across therapeutic areas, not unique to RECOVERY's COVID emergency conditions. Moreover, this approach represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
@@ -1604,7 +1636,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **The Iron Triangle problem**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually), creating tight coordination between defense industry, congressional committees, and Pentagon bureaucracy. Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries who lack equivalent lobbying infrastructure. This asymmetry (concentrated producer benefits vs. diffuse consumer benefits) creates political economy barriers to reallocation even when aggregate welfare gains are enormous.
 
-**The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike defense contractors who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, cures for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or cures that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
+**The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike defense contractors who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, treatments for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or treatments that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
 
 **Historical precedent: Why past peace dividends failed**: The post-World War II "peace dividend" saw military spending fall from 41% of GDP (1945) to 7.2% (1948) [@us-post-wwii-military-spending-cut], with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam (1970s) and post-Cold War (1990s): initial reductions followed by reversals within 5-10 years. The critical failure: **savings weren't bound to a substitute industry**. Money reverted to general budgets, making re-militarization politically costless. The 1% Treaty solves this by **contractually binding savings to health research infrastructure**, creating a new constituency (patients, researchers, pharmaceutical companies) with incentives to defend the reallocation.
 
@@ -1888,7 +1920,7 @@ Core recurring benefit streams:
 
 That's **{{< var treaty_recurring_benefits_annual >}} per year** (recurring perpetually).
 
-**Important Note:** The dFDA provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (cure acceleration + efficacy lag elimination) in when diseases are cured, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when cures become available, not an annual stream. The recurring annual benefits above ({{< var treaty_recurring_benefits_annual >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for timeline shift methodology.
+**Important Note:** The dFDA provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (treatment discovery acceleration + efficacy lag elimination) in when diseases receive first effective treatments, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when treatments become available, not an annual stream. The recurring annual benefits above ({{< var treaty_recurring_benefits_annual >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for timeline shift methodology.
 
 #### Complete Case ROI
 
@@ -1910,7 +1942,7 @@ These estimates derive from:
 
 | Benefit Category | Type | Value | Frequency | Description |
 |:---|:---:|---:|:---|:---|
-| **Timeline Shift** | Average | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | Per disease | Average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline acceleration: cure acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} yrs from {{< var dfda_trial_capacity_multiplier >}}× trial capacity) + efficacy lag elimination (~{{< var efficacy_lag_years >}} yrs). Saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. |
+| **Timeline Shift** | Average | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | Per disease | Average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline acceleration: treatment discovery acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} yrs from {{< var dfda_trial_capacity_multiplier >}}× trial capacity) + efficacy lag elimination (~{{< var efficacy_lag_years >}} yrs). Saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. |
 | **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to pragmatic clinical trials |
 | **R&D Savings** | Recurring | {{< var dfda_benefit_rd_only_annual >}}/year | Perpetual | {{< var recovery_trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
 | **Total Recurring** | Recurring | {{< var treaty_recurring_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
@@ -1924,7 +1956,7 @@ These estimates derive from:
 
 ### Trial Capacity Scaling
 
-The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplier comes from scaling the Oxford RECOVERY trial approach globally:
+The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplier comes from scaling the pragmatic trial approach (validated across 108+ trials [@embedded-pragmatic-trials-meta-analysis]) globally:
 
 **Current System Baseline**:
 
@@ -1933,11 +1965,11 @@ The {{< var dfda_trial_capacity_multiplier >}}× research acceleration multiplie
 - {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} people with chronic disease [@disease-prevalence-2-billion])
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
 
-**Pragmatic Trial System Performance** (RECOVERY model scaled globally):
+**Pragmatic Trial System Performance** (based on 108+ embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis]):
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
 - Minimal exclusion criteria (vs. 86% excluded [@antidepressant-trial-exclusion-rates] in traditional trials)
-- 47,000 patients across nearly 200 sites [@recovery-trial-summary-quote] in 3 months (RECOVERY)
+- Demonstrated recruitment rates: RECOVERY enrolled 47,000 patients across 200 sites in 3 months [@recovery-trial-summary-quote]; ADAPTABLE enrolled 15,076 patients across 40 sites [@pragmatic-trials-cost-advantage]
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× Multiplier Works**:
 
@@ -1956,7 +1988,7 @@ This represents the funding capacity from the 1% Treaty Fund alone, without assu
 
 
 
-**Why More Trials = More Cures (No Diminishing Returns)**:
+**Why More Trials = More Treatments (No Diminishing Returns)**:
 Crucially, this {{< var dfda_trial_capacity_multiplier >}} increase in capacity translates directly into medical progress because humanity has empirically tested only **0.417%** of the known therapeutic landscape. We are not facing diminishing returns; we are facing a cost barrier that has prevented us from testing 99.6% of plausible treatments. See **[The Myth of Diminishing Returns](#the-myth-of-diminishing-returns)** for the mathematical proof that the search space is effectively infinite relative to our current efforts.
 
 ## Individual-Level Economic Impact
@@ -2214,6 +2246,8 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Long-term effects | Rarely captured (<1 year observation) | Continuous multi-year tracking via EHR linkage |
 | Adverse event detection | Voluntary physician reporting (1-10% capture rate) | Automated statistical surveillance (100% capture of recorded events) |
 | Mass notification | Manual, slow, incomplete | Automated, immediate, comprehensive |
+| Comparative effectiveness | Single treatment vs. placebo (or one comparator) | Multiple treatments randomized simultaneously; enables ranking |
+| Population stratification | Not possible (86% excluded; narrow population) | Full subgroup analysis by demographics, genetics, comorbidities |
 
 **Type II error dominance**: [Regulatory mortality analysis](https://invisible-graveyard.warondisease.org) quantifies the harm ratio at {{< var type_ii_error_cost_ratio >}}. For every person protected from an unsafe drug approval (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current regulatory framework successfully prevents toxic compounds from reaching patients through Phase I safety testing - as demonstrated by thalidomide's prevention in the United States - but the barriers placed between patients and beneficial treatments after safety verification cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent.
 
@@ -2282,25 +2316,25 @@ The {{< var dfda_trial_cost_reduction_pct >}} baseline R&D cost reduction derive
 
 **Conservative approach:** Analysis uses {{< var dfda_trial_cost_reduction_pct >}} reduction (midpoint) rather than the demonstrated 95%+ efficiency gains, providing substantial margin of safety.
 
-### Generalizability from RECOVERY Trial and Historical Precedent
+### Generalizability: Meta-Analysis of 108+ Trials, Not a Single Case Study
 
-The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var recovery_trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
+A potential criticism is that cost estimates depend on a single trial (RECOVERY). This concern is directly addressed by systematic evidence:
 
-**What RECOVERY demonstrates vs. what the base estimate assumes:**
+**Meta-analysis evidence:** The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of $97/patient across diverse therapeutic areas, not just COVID or emergency conditions. This demonstrates cost efficiency is **reproducible across contexts**, not unique to RECOVERY's exceptional circumstances.
 
-The RECOVERY trial proves two things: (1) pragmatic trials can cost {{< var recovery_trial_cost_per_patient >}}/patient instead of {{< var traditional_phase3_cost_per_patient >}}, and (2) this approach can accelerate research dramatically (47,000 patients in 3 months).
+**Multiple large-scale validations:**
 
-Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only the cost reduction**, not the acceleration effect. It assumes we run the same number of trials at lower cost, not 22× more trials. The 22× acceleration multiplier is excluded from conservative estimates precisely because it requires extrapolating RECOVERY's recruitment success across all disease areas. This provides substantial margin of safety against overgeneralization.
+- Oxford RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient (NHS/COVID conditions, 47,000 patients)
+- PCORnet ADAPTABLE: {{< var adaptable_trial_cost_per_patient >}}/patient (routine conditions, 15,076 patients)
+- Meta-analysis median: $97/patient (108 trials across therapeutic areas)
 
-**Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960), not merely one modern case study. {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift.
+**What our estimates assume:**
 
-**Trial complexity variation:** RECOVERY studied repurposed drugs (dexamethasone, hydroxychloroquine) for acute COVID-19 treatment. Novel therapeutics for chronic diseases may face different challenges. However:
+The dFDA projections use the **conservative ADAPTABLE estimate** ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), not RECOVERY's exceptional results. Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only cost reduction**, not acceleration effects. It assumes we run the same number of trials at lower cost, not 22× more trials. This provides substantial margin of safety.
 
-- Conservative estimate uses 50-70% cost reduction (not the 95%+ demonstrated by RECOVERY)
-- Pre-1962 system achieved similar efficiencies across diverse therapeutic areas (not limited to repurposed drugs)
-- Pragmatic trial literature [@pragmatic-trials-patsopoulos-2011] consistently shows 50-95% cost reductions across multiple contexts
+**Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960). {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift, achieving similar efficiencies across diverse therapeutic areas.
 
-**Conclusion:** While RECOVERY provides modern validation, the fundamental approach (decentralized physician-led efficacy testing) has extensive historical precedent suggesting generalizability beyond single case studies. More importantly, the base estimate uses only RECOVERY's demonstrated cost structure, not its acceleration potential, making it robust to concerns about extrapolating success rates across disease areas.
+**Conclusion:** The evidence base is not a single case study. It includes (1) a meta-analysis of 108 trials across therapeutic areas, (2) multiple large-scale implementations (RECOVERY, ADAPTABLE), and (3) 77 years of historical precedent. Our conservative estimates use ADAPTABLE's routine-conditions cost, not RECOVERY's exceptional efficiency.
 
 ### Diminishing Returns in Research Productivity
 
@@ -2354,7 +2388,7 @@ If we look beyond existing drugs to the broader chemical space [@chemical-space-
 
 We haven't hit the limits of biology; we've hit a **cost wall**. Reducing trial costs by {{< var dfda_trial_cost_reduction_factor >}} makes it economically viable to systematically explore this "dark matter" of medicine.
 
-**Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost reductions by eliminating overhead (redundant monitoring, bespoke infrastructure, excessive documentation), not by making scientific discoveries easier.
+**Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost reductions by eliminating overhead (redundant monitoring, bespoke infrastructure, excessive documentation), not by making scientific discoveries easier. (Note: This comparison refers to efficacy testing efficiency, not safety testing. Phase I safety testing (which prevented thalidomide in the US) remains mandatory under the proposed system. See [Safety Concerns](#safety-concerns) for detailed analysis.)
 
 **Sensitivity:** Even applying 50% diminishing returns adjustment to research acceleration estimates, ROI remains 230:1 (conservative) to 620:1 (complete). The intervention remains cost-effective under pessimistic productivity assumptions.
 
@@ -2379,6 +2413,14 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 
 These meta-analytic findings support the validity of pragmatic trial designs used in a dFDA model. Modern statistical methods, large sample sizes, and proper covariate adjustment enable observational and quasi-experimental designs to achieve causal inference comparable to traditional RCTs at a fraction of the cost.
 
+**Why pragmatic trial data is more valuable than RCT data for clinical decisions:**
+
+Traditional RCTs answer: "Is treatment A better than placebo?" Pragmatic trials answer: "How do ALL available treatments rank for patients like mine?"
+
+This distinction is crucial for clinical decision-making. A physician facing a patient with rheumatoid arthritis has 15+ approved treatment options. Traditional evidence provides isolated A-vs-placebo studies; the physician cannot determine whether methotrexate or adalimumab is superior for their specific patient. Pragmatic trials, by randomly assigning patients across all options simultaneously and including diverse populations, generate the comparative rankings clinicians actually need.
+
+Furthermore, RCTs' restrictive eligibility criteria (excluding patients with comorbidities, elderly patients, patients on multiple medications) mean their results don't generalize to real patients. A 73-year-old with diabetes and hypertension was excluded from the original trials; the physician is guessing how results might apply. Pragmatic trials include these patients, enabling stratified effectiveness rankings by actual patient characteristics.
+
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
 **Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A decentralized framework for drug assessment system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, a decentralized framework for drug assessment's mandatory publication of all registered trials eliminates publication bias as a concern.
@@ -2400,7 +2442,7 @@ The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates 
 **Why this estimate is still conservative:**
 
 1.  **It assumes a fixed far-future timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} on average saves that many years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
-2.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields enormous value. The ROI is positive even at 1/100th of the projected success rate.
+2.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating treatments for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields enormous value. The ROI is positive even at 1/100th of the projected success rate.
 3.  **It uses average acceleration**: Some diseases with existing-but-untested treatments would be discovered much sooner (approaching 0 years wait); diseases requiring novel mechanisms would take longer. The {{< var dfda_trial_capacity_treatment_acceleration_years >}}-year figure is the average across the distribution.
 
 **Stream A (Accelerated Drug Access):** High confidence, based on well-documented costs of delayed access (84,000 life-years lost per year delay in cancer therapies alone).
@@ -2524,7 +2566,7 @@ The ROI estimates ({{< var dfda_roi_rd_only >}} conservative, {{< var treaty_roi
 Despite these limitations, several factors support the analysis's robustness:
 
 1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var dfda_roi_rd_only >}})
-2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
+2. **Empirical grounding:** Cost reductions based on meta-analysis of 108 pragmatic trials [@embedded-pragmatic-trials-meta-analysis] plus large-scale implementations (RECOVERY, ADAPTABLE), not theoretical models
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
 4. **Dominant intervention status:** Cost-saving intervention ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY) means it saves money even if health benefits are substantially overstated
 
@@ -2549,12 +2591,12 @@ Traditional health budgets face impossible trade-offs: every dollar spent on can
 
 Development agencies face a fundamental problem: the most cost-effective interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY, vaccines) can only scale linearly. Doubling impact requires doubling spending.
 
-**The difference**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates cure discovery for all diseases affecting developing nations.
+**The difference**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates treatment discovery for all diseases affecting developing nations.
 
 **Practical application**:
 
 - **Current approach**: USAID spends billions on malaria bed nets (excellent intervention, {{< var bed_nets_cost_per_daly >}}/DALY)
-- **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to cure malaria entirely
+- **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× better) *while also* funding research to eradicate malaria
 - **Result**: Keep funding bed nets (they work!) AND accelerate development of malaria vaccines and treatments through massively expanded trial capacity
 
 The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund. The Gates Foundation's historical pattern (spending billions on individual disease programs when the same capital could lobby for treaty passage and unlock {{< var treaty_annual_funding >}}/year in government funding) exemplifies the "lottery tickets vs casino" problem described earlier. Advocacy for structural change offers superior ROI to direct program spending.

@@ -107,6 +107,7 @@ from dih_models.reference_parser import (
 )
 from dih_models.search_index_generator import generate_search_indexes
 from dih_models.site_metadata_generator import generate_sites_metadata
+from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
 from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
@@ -612,531 +613,514 @@ def main():
     print()
 
     # Always generate uncertainty outputs when module is available
-    try:
-        if simulate is not None:
-            print("[*] Generating uncertainty summaries...")
-            # Choose a target calculated parameter if any
-            target = next((name for name, meta in parameters.items()
-                           if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
-            # Summaries directory
-            analysis_dir = project_root / "_analysis"
+    if simulate is not None:
+        print("[*] Generating uncertainty summaries...")
+        # Choose a target calculated parameter if any
+        target = next((name for name, meta in parameters.items()
+                       if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
+        # Summaries directory
+        analysis_dir = project_root / "_analysis"
 
-            # Clean up stale analysis files before regenerating
-            # This handles deleted/renamed parameters that would leave orphan files
-            if analysis_dir.exists():
-                import shutil
-                stale_count = len(list(analysis_dir.glob("*.json")))
-                if stale_count > 0:
-                    print(f"[*] Cleaning {stale_count} stale analysis files...")
-                    shutil.rmtree(analysis_dir)
+        # Clean up stale analysis files before regenerating
+        # This handles deleted/renamed parameters that would leave orphan files
+        if analysis_dir.exists():
+            import shutil
+            stale_count = len(list(analysis_dir.glob("*.json")))
+            if stale_count > 0:
+                print(f"[*] Cleaning {stale_count} stale analysis files...")
+                shutil.rmtree(analysis_dir)
 
-            analysis_dir.mkdir(exist_ok=True)
-            # Minimal inline summary generation to avoid duplicating logic
-            from dih_models.uncertainty import simulate_with_propagation as _sim, one_at_a_time_sensitivity as _sens
-            # Use fixed seed for reproducibility (avoids git churn from random variation)
-            RANDOM_SEED = 42
+        analysis_dir.mkdir(exist_ok=True)
+        # Minimal inline summary generation to avoid duplicating logic
+        from dih_models.uncertainty import simulate_with_propagation as _sim, one_at_a_time_sensitivity as _sens
+        # Use fixed seed for reproducibility (avoids git churn from random variation)
+        RANDOM_SEED = 42
 
-            # Count parameters with uncertainty metadata for logging
-            params_with_uncertainty = 0
-            for pname, pmeta in parameters.items():
-                pval = pmeta.get("value")
-                has_dist = hasattr(pval, "distribution") and pval.distribution
-                has_std = hasattr(pval, "std_error") and pval.std_error
-                has_ci = hasattr(pval, "confidence_interval") and pval.confidence_interval
-                if has_dist or has_std or has_ci:
-                    params_with_uncertainty += 1
+        # Count parameters with uncertainty metadata for logging
+        params_with_uncertainty = 0
+        for pname, pmeta in parameters.items():
+            pval = pmeta.get("value")
+            has_dist = hasattr(pval, "distribution") and pval.distribution
+            has_std = hasattr(pval, "std_error") and pval.std_error
+            has_ci = hasattr(pval, "confidence_interval") and pval.confidence_interval
+            if has_dist or has_std or has_ci:
+                params_with_uncertainty += 1
 
-            sims = _sim(parameters, n=10000, seed=RANDOM_SEED)
+        sims = _sim(parameters, n=10000, seed=RANDOM_SEED)
 
-            # Log MC fingerprint for reproducibility debugging
-            log_mc_fingerprint(sims, seed=RANDOM_SEED, n_samples=10000, n_params_with_uncertainty=params_with_uncertainty)
-            import json
-            try:
-                import numpy as np
-            except Exception:
-                np = None  # type: ignore
-            summaries = {}
-            for name, arr in sims.items():
-                if np is not None:
-                    a = np.asarray(arr)
-                    summaries[name] = {
-                        "mean": float(np.mean(a)),
-                        "std": float(np.std(a)),
-                        "p5": float(np.percentile(a, 5)),
-                        "p50": float(np.percentile(a, 50)),
-                        "p95": float(np.percentile(a, 95)),
-                    }
-                else:
-                    vals = list(arr)
-                    m = sum(vals) / len(vals)
-                    var = sum((v - m) ** 2 for v in vals) / len(vals)
-                    std = var ** 0.5
-                    vals_sorted = sorted(vals)
-
-                    def pct(p: float):
-                        i = int(p / 100 * (len(vals_sorted) - 1))
-                        return vals_sorted[i]
-                    summaries[name] = {
-                        "mean": m,
-                        "std": std,
-                        "p5": pct(5),
-                        "p50": pct(50),
-                        "p95": pct(95),
-                    }
-            with open(analysis_dir / "samples.json", "w", encoding="utf-8", newline='\n') as f:
-                json.dump(summaries, f, indent=2)
-            print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
-            print()
-
-            # Generate parameter summary (compact reference file)
-            print("[*] Generating parameter summary...")
-            summary_path = analysis_dir / "parameter-summary.md"
-            samples_json_path = analysis_dir / "samples.json"
-
-            # CRITICAL: Validate samples.json exists before proceeding
-            # Without this file, confidence intervals cannot be embedded in _variables.yml
-            if not samples_json_path.exists():
-                raise FileNotFoundError(
-                    f"CRITICAL: {samples_json_path.relative_to(project_root)} not found!\n"
-                    f"This file is required for embedding confidence intervals in _variables.yml.\n"
-                    f"The uncertainty simulation should have created this file but failed.\n"
-                    f"Check the Monte Carlo simulation output above for errors."
-                )
-
-            generate_parameter_summary(parameters, summary_path, samples_json_path)
-            print()
-
-            # Generate _variables.yml with embedded confidence intervals
-            print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
-            clear_formula_fallback_log()  # Clear before generation
-            output_path = project_root / "_variables.yml"
-            generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
-            
-            # Write formula fallback log if any parameters used it
-            formula_fallbacks = get_formula_fallback_log()
-            if formula_fallbacks:
-                fallback_log_path = analysis_dir / "formula-fallback-log.md"
-                with open(fallback_log_path, "w", encoding="utf-8") as f:
-                    f.write("# Formula Fallback Log\n\n")
-                    f.write("These parameters used the `formula` property for LaTeX generation\n")
-                    f.write("instead of auto-generating from `inputs` and `compute`.\n\n")
-                    f.write("Consider improving these to use proper `inputs`/`compute` metadata.\n\n")
-                    f.write(f"**Total: {len(formula_fallbacks)} parameters**\n\n")
-                    f.write("| Parameter | Formula | Reason |\n")
-                    f.write("|-----------|---------|--------|\n")
-                    for param_name, formula, reason in formula_fallbacks:
-                        # Escape pipe characters in formula
-                        safe_formula = formula.replace('|', '\\|')
-                        f.write(f"| `{param_name}` | `{safe_formula}` | {reason} |\n")
-                print(f"[INFO] {len(formula_fallbacks)} parameters used formula fallback - see {fallback_log_path}")
-            print()
-
-            # Generate input distribution charts for parameters with uncertainty metadata
-            print("[*] Generating input distribution charts...")
-            input_dist_figures_dir = project_root / "knowledge" / "figures"
-            input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
-
-            # First, delete stale QMD files (we regenerate all)
-            stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
-            if stale_dist_qmd:
-                print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
-                for f in stale_dist_qmd:
-                    f.unlink()
-
-            input_dist_count = 0
-            input_dist_errors = []
-            generated_dist_qmds = set()  # Track what we generate
-            for param_name, param_data in parameters.items():
-                try:
-                    # Only generate for parameters with uncertainty metadata
-                    dist_file = generate_input_distribution_chart_qmd(
-                        param_name, param_data, input_dist_figures_dir
-                    )
-                    generated_dist_qmds.add(dist_file.name)
-                    input_dist_count += 1
-                except ValueError:
-                    # Parameter doesn't have uncertainty metadata - skip silently
-                    pass
-                except Exception as e:
-                    input_dist_errors.append(f"{param_name}: {e}")
-
-            # Clean up orphaned PNG files (PNGs without matching QMD)
-            orphaned_dist_pngs = []
-            for png_file in input_dist_figures_dir.glob("distribution-*.png"):
-                expected_qmd = png_file.stem + ".qmd"
-                if expected_qmd not in generated_dist_qmds:
-                    orphaned_dist_pngs.append(png_file)
-            if orphaned_dist_pngs:
-                print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
-                for f in orphaned_dist_pngs:
-                    f.unlink()
-
-            print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
-            for err in input_dist_errors:
-                print(f"[WARN] {err}")
-
-            if target and _sens is not None:
-                sens = _sens(parameters, target_name=target, n=2000)
-                with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8", newline='\n') as f:
-                    json.dump(sens, f, indent=2)
-                print(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
+        # Log MC fingerprint for reproducibility debugging
+        log_mc_fingerprint(sims, seed=RANDOM_SEED, n_samples=10000, n_params_with_uncertainty=params_with_uncertainty)
+        import json
+        try:
+            import numpy as np
+        except Exception:
+            np = None  # type: ignore
+        summaries = {}
+        for name, arr in sims.items():
+            if np is not None:
+                a = np.asarray(arr)
+                summaries[name] = {
+                    "mean": float(np.mean(a)),
+                    "std": float(np.std(a)),
+                    "p5": float(np.percentile(a, 5)),
+                    "p50": float(np.percentile(a, 50)),
+                    "p95": float(np.percentile(a, 95)),
+                }
             else:
-                print("[WARN] No calculated target found for sensitivity analysis.")
+                vals = list(arr)
+                m = sum(vals) / len(vals)
+                var = sum((v - m) ** 2 for v in vals) / len(vals)
+                std = var ** 0.5
+                vals_sorted = sorted(vals)
 
-            # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
-            if tornado_deltas and regression_sensitivity and Outcome:
-                print("[*] Generating outcome distributions and sensitivity analysis...")
-
-                figures_dir = project_root / "knowledge" / "figures"
-
-                # Delete stale QMD files first (we regenerate all)
-                # PNGs will be cleaned up after generation (only orphans)
-                stale_tornado_qmd = list(figures_dir.glob("tornado-*.qmd"))
-                stale_sensitivity_qmd = list(figures_dir.glob("sensitivity-table-*.qmd"))
-                stale_mc_dist_qmd = list(figures_dir.glob("mc-distribution-*.qmd"))
-                stale_exceedance_qmd = list(figures_dir.glob("exceedance-*.qmd"))
-                stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
-
-                if stale_qmd_files:
-                    print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
-                    for f in stale_qmd_files:
-                        f.unlink()
-
-                # Track generated QMD files for orphan PNG cleanup later
-                generated_outcome_qmds = set()
-
-                # Validate: Find calculated parameters missing inputs/compute
-                validation_warnings = []
-                for param_name, meta in parameters.items():
-                    val = meta.get("value")
-                    source_type = getattr(val, "source_type", None)
-                    has_inputs = hasattr(val, "inputs") and val.inputs
-                    has_compute = hasattr(val, "compute") and val.compute
-
-                    if source_type == "calculated":
-                        if not has_inputs:
-                            validation_warnings.append(f"{param_name}: missing 'inputs' (calculated parameter)")
-                        if not has_compute:
-                            validation_warnings.append(f"{param_name}: missing 'compute' (calculated parameter)")
-
-                if validation_warnings:
-                    print(f"\n[ERROR] {len(validation_warnings)} calculated parameters missing inputs/compute:", file=sys.stderr)
-                    # Show ALL warnings - do not truncate
-                    for warning in validation_warnings:
-                        print(f"  - {warning}", file=sys.stderr)
-                    print("\n[ERROR] Calculated parameters MUST have 'inputs' and 'compute' defined.", file=sys.stderr)
-                    print("[ERROR] Options to fix:", file=sys.stderr)
-                    print("[ERROR]   1. Add inputs=[] and compute=lambda ctx: ... to the Parameter", file=sys.stderr)
-                    print("[ERROR]   2. Change source_type='definition' if it's an estimate/assumption", file=sys.stderr)
-                    print("[ERROR]   3. Change source_type='external' if it comes from a source", file=sys.stderr)
-                    sys.exit(1)
-
-                # Validate: Check for leaf input parameters missing uncertainty metadata
-                # These cause zero-variance Monte Carlo outputs, making distribution charts meaningless
-
-                def get_all_leaf_inputs(param_name: str, visited: set = None) -> set:
-                    """Recursively find all leaf (non-calculated) inputs for a parameter."""
-                    if visited is None:
-                        visited = set()
-                    if param_name in visited:
-                        return set()
-                    visited.add(param_name)
-
-                    meta = parameters.get(param_name, {})
-                    val = meta.get("value")
-
-                    # If has inputs, recurse
-                    if hasattr(val, "inputs") and val.inputs:
-                        leaves = set()
-                        for inp in val.inputs:
-                            leaves.update(get_all_leaf_inputs(inp, visited))
-                        return leaves
-                    else:
-                        # This is a leaf parameter
-                        return {param_name}
-
-                def has_uncertainty(val) -> bool:
-                    """Check if a parameter has uncertainty metadata.
-
-                    Note: distribution='fixed' means zero uncertainty (constitutional constants, etc.)
-                    so it does NOT count as having uncertainty for Monte Carlo purposes.
-                    """
-                    has_dist = hasattr(val, "distribution") and val.distribution
-                    # Fixed distributions have zero variance - not real uncertainty
-                    if has_dist:
-                        dist_str = val.distribution.value if hasattr(val.distribution, "value") else str(val.distribution)
-                        if dist_str.lower() == "fixed":
-                            return True  # Explicitly marked as fixed = valid (no uncertainty needed)
-                    has_std = hasattr(val, "std_error") and val.std_error
-                    has_ci = hasattr(val, "confidence_interval") and val.confidence_interval
-                    return bool(has_dist or has_std or has_ci)
-
-                # Collect ALL leaf parameters that are used in calculations but lack uncertainty
-                all_deterministic_leaves = set()
-                all_uncertain_leaves = set()
-
-                for param_name, meta in parameters.items():
-                    val = meta.get("value")
-                    if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
-                        # Find all leaf inputs for this calculated param
-                        leaf_inputs = get_all_leaf_inputs(param_name)
-                        for leaf in leaf_inputs:
-                            leaf_meta = parameters.get(leaf, {})
-                            leaf_val = leaf_meta.get("value")
-                            if has_uncertainty(leaf_val):
-                                all_uncertain_leaves.add(leaf)
-                            else:
-                                all_deterministic_leaves.add(leaf)
-
-                # Only flag deterministic leaves that aren't also uncertain (some params may be checked multiple times)
-                truly_deterministic = all_deterministic_leaves - all_uncertain_leaves
-
-                if truly_deterministic:
-                    print(f"\n[ERROR] {len(truly_deterministic)} leaf input parameters lack uncertainty metadata:", file=sys.stderr)
-                    print("[ERROR] These cause zero-variance Monte Carlo outputs for calculated parameters.", file=sys.stderr)
-                    for leaf in sorted(truly_deterministic)[:20]:  # Show first 20
-                        leaf_meta = parameters.get(leaf, {})
-                        leaf_val = leaf_meta.get("value")
-                        val_str = f"{float(leaf_val):,.4g}" if leaf_val is not None else "?"
-                        print(f"  - {leaf} = {val_str}", file=sys.stderr)
-                    if len(truly_deterministic) > 20:
-                        print(f"  ... and {len(truly_deterministic) - 20} more", file=sys.stderr)
-                    print("\n[ERROR] To fix: Add one of these to each leaf parameter:", file=sys.stderr)
-                    print("[ERROR]   - distribution='normal' + std_error=<value>", file=sys.stderr)
-                    print("[ERROR]   - distribution='lognormal' + std_error=<value>", file=sys.stderr)
-                    print("[ERROR]   - confidence_interval=(low, high)", file=sys.stderr)
-                    print("[ERROR]   - distribution='fixed' (for constants with zero uncertainty, e.g., constitutional values)", file=sys.stderr)
-                    print("[ERROR] Monte Carlo analysis requires uncertainty on ALL input parameters.", file=sys.stderr)
-                    sys.exit(1)
-
-                # Auto-discover parameters with compute functions
-                # Exclude source_type="definition" - these are policy-derived fixed values
-                analyzable_params = []
-                for param_name, meta in parameters.items():
-                    val = meta.get("value")
-                    if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
-                        # Skip parameters marked as "definition" - they're policy-derived, not truly calculated
-                        if hasattr(val, "source_type") and val.source_type == "definition":
-                            continue
-                        # Wrap as Outcome for tornado/sensitivity
-                        outcome = Outcome(
-                            name=param_name,
-                            inputs=val.inputs,
-                            compute=val.compute,
-                            units=getattr(val, "unit", "")
-                        )
-                        analyzable_params.append(outcome)
-
-                if not analyzable_params:
-                    print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
-
-                # Counters for summary output
-                tornado_count = 0
-                sensitivity_count = 0
-                mc_dist_count = 0
-                exceedance_count = 0
-                analysis_json_count = 0
-
-                outcomes_data = {}
-                for outcome in analyzable_params:
-                    try:
-                        # Build baseline context
-                        ctx = {}
-                        for inp in outcome.inputs:
-                            meta = parameters.get(inp, {})
-                            val = meta.get("value")
-                            ctx[inp] = float(val) if val is not None else 0.0
-                        baseline = outcome.compute(ctx)
-
-                        # MC samples for outcome
-                        input_sims = {name: sims[name] for name in outcome.inputs if name in sims}
-                        if input_sims:
-                            n_samples = len(list(input_sims.values())[0])
-                            outcome_samples = []
-                            for i in range(n_samples):
-                                ctx_i = {name: float(arr[i]) for name, arr in input_sims.items()}
-                                outcome_samples.append(outcome.compute(ctx_i))
-
-                            if np is not None:
-                                oa = np.asarray(outcome_samples)
-                                outcomes_data[outcome.name] = {
-                                    "baseline": float(baseline),
-                                    "mean": float(np.mean(oa)),
-                                    "std": float(np.std(oa)),
-                                    "p5": float(np.percentile(oa, 5)),
-                                    "p50": float(np.percentile(oa, 50)),
-                                    "p95": float(np.percentile(oa, 95)),
-                                    "units": outcome.units,
-                                }
-                            else:
-                                m = sum(outcome_samples) / len(outcome_samples)
-                                var = sum((v - m) ** 2 for v in outcome_samples) / len(outcome_samples)
-                                std = var ** 0.5
-                                sorted_o = sorted(outcome_samples)
-
-                                def pct_o(p: float):
-                                    return sorted_o[int(p / 100 * (len(sorted_o) - 1))]
-                                outcomes_data[outcome.name] = {
-                                    "baseline": float(baseline),
-                                    "mean": m,
-                                    "std": std,
-                                    "p5": pct_o(5),
-                                    "p50": pct_o(50),
-                                    "p95": pct_o(95),
-                                    "units": outcome.units,
-                                }
-
-                            # Tornado deltas for this outcome
-                            tornado = tornado_deltas(parameters, outcome)
-                            with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
-                                json.dump(tornado, f, indent=2)
-                            analysis_json_count += 1
-
-                            # Generate tornado chart QMD
-                            try:
-                                figures_dir = project_root / "knowledge" / "figures"
-                                param_meta = parameters.get(outcome.name, {})
-                                tornado_qmd = generate_tornado_chart_qmd(
-                                    outcome.name, tornado, figures_dir, param_meta,
-                                    baseline=float(baseline),
-                                    units=outcome.units
-                                )
-                                generated_outcome_qmds.add(tornado_qmd.name)
-                                tornado_count += 1
-                            except ValueError as val_err:
-                                # GRACEFUL SKIP: Skip tornado chart for calculated parameters with all-fixed inputs
-                                # This happens when a parameter is correctly marked as "calculated" but its
-                                # input chain consists entirely of fixed/policy values with no uncertainty.
-                                # These are valid calculations but have no sensitivity to visualize.
-                                print(f"[SKIP] Tornado chart for {outcome.name}: {val_err} (all inputs fixed)")
-                            except Exception as chart_err:
-                                print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
-                                sys.exit(1)
-
-                            # Regression sensitivity indices (filter out zero-variance inputs)
-                            filtered_input_sims = {}
-                            for inp_name, inp_vals in input_sims.items():
-                                if np is not None:
-                                    std = float(np.std(np.asarray(inp_vals)))
-                                else:
-                                    vals = list(inp_vals)
-                                    mean = sum(vals) / len(vals)
-                                    variance = sum((v - mean) ** 2 for v in vals) / len(vals)
-                                    std = variance ** 0.5
-
-                                # Only include inputs that actually vary
-                                if std > 1e-10:
-                                    filtered_input_sims[inp_name] = inp_vals
-
-                            if filtered_input_sims:
-                                sens_indices = regression_sensitivity(filtered_input_sims, outcome_samples)
-                            else:
-                                sens_indices = {inp: 0.0 for inp in input_sims.keys()}
-
-                            with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
-                                json.dump(sens_indices, f, indent=2)
-                            analysis_json_count += 1
-
-                            # Generate sensitivity table QMD only if there's meaningful variance
-                            # Skip tables where all coefficients are effectively zero (< 0.001)
-                            max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
-                            if max_coef >= 0.001:
-                                try:
-                                    sens_qmd = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
-                                    generated_outcome_qmds.add(sens_qmd.name)
-                                    sensitivity_count += 1
-                                except Exception as table_err:
-                                    print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
-
-                            # Generate Monte Carlo distribution chart
-                            # Skip if zero variance (all samples identical) - these are meaningless
-                            try:
-                                outcome_info = outcomes_data.get(outcome.name, {})
-                                outcome_std = outcome_info.get("std", 0)
-                                if outcome_samples and len(outcome_samples) > 100 and outcome_std > 0:
-                                    mc_qmd = generate_monte_carlo_distribution_chart_qmd(
-                                        outcome.name,
-                                        outcome_info,
-                                        outcome_samples,
-                                        figures_dir,
-                                        param_meta
-                                    )
-                                    generated_outcome_qmds.add(mc_qmd.name)
-                                    mc_dist_count += 1
-
-                                    # Generate standalone CDF/exceedance chart
-                                    cdf_qmd = generate_cdf_chart_qmd(
-                                        outcome.name,
-                                        outcome_samples,
-                                        figures_dir,
-                                        param_meta
-                                    )
-                                    generated_outcome_qmds.add(cdf_qmd.name)
-                                    exceedance_count += 1
-                                elif outcome_samples and outcome_std == 0:
-                                    print(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
-                            except Exception as mc_err:
-                                print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
-                    except Exception as e:
-                        print(f"[WARN] Skipped outcome {outcome.name}: {e}")
-
-                with open(analysis_dir / "outcomes.json", "w", encoding="utf-8", newline='\n') as f:
-                    json.dump(outcomes_data, f, indent=2)
-
-                # Clean up orphaned PNG files (PNGs without matching QMD)
-                orphaned_pngs = []
-                for png_file in figures_dir.glob("tornado-*.png"):
-                    expected_qmd = png_file.stem + ".qmd"
-                    if expected_qmd not in generated_outcome_qmds:
-                        orphaned_pngs.append(png_file)
-                for png_file in figures_dir.glob("sensitivity-table-*.png"):
-                    expected_qmd = png_file.stem + ".qmd"
-                    if expected_qmd not in generated_outcome_qmds:
-                        orphaned_pngs.append(png_file)
-                for png_file in figures_dir.glob("mc-distribution-*.png"):
-                    expected_qmd = png_file.stem + ".qmd"
-                    if expected_qmd not in generated_outcome_qmds:
-                        orphaned_pngs.append(png_file)
-                for png_file in figures_dir.glob("exceedance-*.png"):
-                    expected_qmd = png_file.stem + ".qmd"
-                    if expected_qmd not in generated_outcome_qmds:
-                        orphaned_pngs.append(png_file)
-
-                if orphaned_pngs:
-                    print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
-                    for f in orphaned_pngs:
-                        f.unlink()
-
-                # Print summary of generated files
-                print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")
-                print(f"[OK] Generated {sensitivity_count} sensitivity tables in knowledge/figures/")
-                print(f"[OK] Generated {mc_dist_count} MC distribution charts in knowledge/figures/")
-                print(f"[OK] Generated {exceedance_count} exceedance charts in knowledge/figures/")
-                print(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
-
-            print()
-        else:
-            print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
-            print()
-
-            # Generate parameter summary without uncertainty
-            print("[*] Generating parameter summary...")
-            analysis_dir = project_root / "_analysis"
-            analysis_dir.mkdir(exist_ok=True)
-            summary_path = analysis_dir / "parameter-summary.md"
-            generate_parameter_summary(parameters, summary_path)
-            print()
-
-            # Generate _variables.yml without confidence intervals
-            print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
-            output_path = project_root / "_variables.yml"
-            generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
-            print()
-    except Exception as e:
-        print(f"[WARN] Uncertainty generation skipped: {e}")
+                def pct(p: float):
+                    i = int(p / 100 * (len(vals_sorted) - 1))
+                    return vals_sorted[i]
+                summaries[name] = {
+                    "mean": m,
+                    "std": std,
+                    "p5": pct(5),
+                    "p50": pct(50),
+                    "p95": pct(95),
+                }
+        with open(analysis_dir / "samples.json", "w", encoding="utf-8", newline='\n') as f:
+            json.dump(summaries, f, indent=2)
+        print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
         print()
 
-        # Generate parameter summary without uncertainty (fallback)
+        # Generate parameter summary (compact reference file)
+        print("[*] Generating parameter summary...")
+        summary_path = analysis_dir / "parameter-summary.md"
+        samples_json_path = analysis_dir / "samples.json"
+
+        # CRITICAL: Validate samples.json exists before proceeding
+        # Without this file, confidence intervals cannot be embedded in _variables.yml
+        if not samples_json_path.exists():
+            raise FileNotFoundError(
+                f"CRITICAL: {samples_json_path.relative_to(project_root)} not found!\n"
+                f"This file is required for embedding confidence intervals in _variables.yml.\n"
+                f"The uncertainty simulation should have created this file but failed.\n"
+                f"Check the Monte Carlo simulation output above for errors."
+            )
+
+        generate_parameter_summary(parameters, summary_path, samples_json_path)
+        print()
+
+        # Generate _variables.yml with embedded confidence intervals
+        print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
+        clear_formula_fallback_log()  # Clear before generation
+        output_path = project_root / "_variables.yml"
+        generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
+        
+        # Write formula fallback log if any parameters used it
+        formula_fallbacks = get_formula_fallback_log()
+        if formula_fallbacks:
+            fallback_log_path = analysis_dir / "formula-fallback-log.md"
+            with open(fallback_log_path, "w", encoding="utf-8") as f:
+                f.write("# Formula Fallback Log\n\n")
+                f.write("These parameters used the `formula` property for LaTeX generation\n")
+                f.write("instead of auto-generating from `inputs` and `compute`.\n\n")
+                f.write("Consider improving these to use proper `inputs`/`compute` metadata.\n\n")
+                f.write(f"**Total: {len(formula_fallbacks)} parameters**\n\n")
+                f.write("| Parameter | Formula | Reason |\n")
+                f.write("|-----------|---------|--------|\n")
+                for param_name, formula, reason in formula_fallbacks:
+                    # Escape pipe characters in formula
+                    safe_formula = formula.replace('|', '\\|')
+                    f.write(f"| `{param_name}` | `{safe_formula}` | {reason} |\n")
+            print(f"[INFO] {len(formula_fallbacks)} parameters used formula fallback - see {fallback_log_path}")
+        print()
+
+        # Generate input distribution charts for parameters with uncertainty metadata
+        print("[*] Generating input distribution charts...")
+        input_dist_figures_dir = project_root / "knowledge" / "figures"
+        input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
+
+        # First, delete stale QMD files (we regenerate all)
+        stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
+        if stale_dist_qmd:
+            print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
+            for f in stale_dist_qmd:
+                f.unlink()
+
+        input_dist_count = 0
+        input_dist_errors = []
+        generated_dist_qmds = set()  # Track what we generate
+        for param_name, param_data in parameters.items():
+            try:
+                # Only generate for parameters with uncertainty metadata
+                dist_file = generate_input_distribution_chart_qmd(
+                    param_name, param_data, input_dist_figures_dir
+                )
+                generated_dist_qmds.add(dist_file.name)
+                input_dist_count += 1
+            except ValueError:
+                # Parameter doesn't have uncertainty metadata - skip silently
+                pass
+            except Exception as e:
+                input_dist_errors.append(f"{param_name}: {e}")
+
+        # Clean up orphaned PNG files (PNGs without matching QMD)
+        orphaned_dist_pngs = []
+        for png_file in input_dist_figures_dir.glob("distribution-*.png"):
+            expected_qmd = png_file.stem + ".qmd"
+            if expected_qmd not in generated_dist_qmds:
+                orphaned_dist_pngs.append(png_file)
+        if orphaned_dist_pngs:
+            print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
+            for f in orphaned_dist_pngs:
+                f.unlink()
+
+        print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
+        for err in input_dist_errors:
+            print(f"[WARN] {err}")
+
+        if target and _sens is not None:
+            sens = _sens(parameters, target_name=target, n=2000)
+            with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8", newline='\n') as f:
+                json.dump(sens, f, indent=2)
+            print(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
+        else:
+            print("[WARN] No calculated target found for sensitivity analysis.")
+
+        # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
+        if tornado_deltas and regression_sensitivity and Outcome:
+            print("[*] Generating outcome distributions and sensitivity analysis...")
+
+            figures_dir = project_root / "knowledge" / "figures"
+
+            # Delete stale QMD files first (we regenerate all)
+            # PNGs will be cleaned up after generation (only orphans)
+            stale_tornado_qmd = list(figures_dir.glob("tornado-*.qmd"))
+            stale_sensitivity_qmd = list(figures_dir.glob("sensitivity-table-*.qmd"))
+            stale_mc_dist_qmd = list(figures_dir.glob("mc-distribution-*.qmd"))
+            stale_exceedance_qmd = list(figures_dir.glob("exceedance-*.qmd"))
+            stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
+
+            if stale_qmd_files:
+                print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
+                for f in stale_qmd_files:
+                    f.unlink()
+
+            # Track generated QMD files for orphan PNG cleanup later
+            generated_outcome_qmds = set()
+
+            # Validate: Find calculated parameters missing inputs/compute
+            validation_warnings = []
+            for param_name, meta in parameters.items():
+                val = meta.get("value")
+                source_type = getattr(val, "source_type", None)
+                has_inputs = hasattr(val, "inputs") and val.inputs
+                has_compute = hasattr(val, "compute") and val.compute
+
+                if source_type == "calculated":
+                    if not has_inputs:
+                        validation_warnings.append(f"{param_name}: missing 'inputs' (calculated parameter)")
+                    if not has_compute:
+                        validation_warnings.append(f"{param_name}: missing 'compute' (calculated parameter)")
+
+            if validation_warnings:
+                print(f"\n[ERROR] {len(validation_warnings)} calculated parameters missing inputs/compute:", file=sys.stderr)
+                # Show ALL warnings - do not truncate
+                for warning in validation_warnings:
+                    print(f"  - {warning}", file=sys.stderr)
+                print("\n[ERROR] Calculated parameters MUST have 'inputs' and 'compute' defined.", file=sys.stderr)
+                print("[ERROR] Options to fix:", file=sys.stderr)
+                print("[ERROR]   1. Add inputs=[] and compute=lambda ctx: ... to the Parameter", file=sys.stderr)
+                print("[ERROR]   2. Change source_type='definition' if it's an estimate/assumption", file=sys.stderr)
+                print("[ERROR]   3. Change source_type='external' if it comes from a source", file=sys.stderr)
+                sys.exit(1)
+
+            # Validate: Check for leaf input parameters missing uncertainty metadata
+            # These cause zero-variance Monte Carlo outputs, making distribution charts meaningless
+
+            def get_all_leaf_inputs(param_name: str, visited: set = None) -> set:
+                """Recursively find all leaf (non-calculated) inputs for a parameter."""
+                if visited is None:
+                    visited = set()
+                if param_name in visited:
+                    return set()
+                visited.add(param_name)
+
+                meta = parameters.get(param_name, {})
+                val = meta.get("value")
+
+                # If has inputs, recurse
+                if hasattr(val, "inputs") and val.inputs:
+                    leaves = set()
+                    for inp in val.inputs:
+                        leaves.update(get_all_leaf_inputs(inp, visited))
+                    return leaves
+                else:
+                    # This is a leaf parameter
+                    return {param_name}
+
+            def has_uncertainty(val) -> bool:
+                """Check if a parameter has uncertainty metadata.
+
+                Note: distribution='fixed' means zero uncertainty (constitutional constants, etc.)
+                so it does NOT count as having uncertainty for Monte Carlo purposes.
+                """
+                has_dist = hasattr(val, "distribution") and val.distribution
+                # Fixed distributions have zero variance - not real uncertainty
+                if has_dist:
+                    dist_str = val.distribution.value if hasattr(val.distribution, "value") else str(val.distribution)
+                    if dist_str.lower() == "fixed":
+                        return True  # Explicitly marked as fixed = valid (no uncertainty needed)
+                has_std = hasattr(val, "std_error") and val.std_error
+                has_ci = hasattr(val, "confidence_interval") and val.confidence_interval
+                return bool(has_dist or has_std or has_ci)
+
+            # Collect ALL leaf parameters that are used in calculations but lack uncertainty
+            all_deterministic_leaves = set()
+            all_uncertain_leaves = set()
+
+            for param_name, meta in parameters.items():
+                val = meta.get("value")
+                if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+                    # Find all leaf inputs for this calculated param
+                    leaf_inputs = get_all_leaf_inputs(param_name)
+                    for leaf in leaf_inputs:
+                        leaf_meta = parameters.get(leaf, {})
+                        leaf_val = leaf_meta.get("value")
+                        if has_uncertainty(leaf_val):
+                            all_uncertain_leaves.add(leaf)
+                        else:
+                            all_deterministic_leaves.add(leaf)
+
+            # Only flag deterministic leaves that aren't also uncertain (some params may be checked multiple times)
+            truly_deterministic = all_deterministic_leaves - all_uncertain_leaves
+
+            if truly_deterministic:
+                print(f"\n[ERROR] {len(truly_deterministic)} leaf input parameters lack uncertainty metadata:", file=sys.stderr)
+                print("[ERROR] These cause zero-variance Monte Carlo outputs for calculated parameters.", file=sys.stderr)
+                for leaf in sorted(truly_deterministic)[:20]:  # Show first 20
+                    leaf_meta = parameters.get(leaf, {})
+                    leaf_val = leaf_meta.get("value")
+                    val_str = f"{float(leaf_val):,.4g}" if leaf_val is not None else "?"
+                    print(f"  - {leaf} = {val_str}", file=sys.stderr)
+                if len(truly_deterministic) > 20:
+                    print(f"  ... and {len(truly_deterministic) - 20} more", file=sys.stderr)
+                print("\n[ERROR] To fix: Add one of these to each leaf parameter:", file=sys.stderr)
+                print("[ERROR]   - distribution='normal' + std_error=<value>", file=sys.stderr)
+                print("[ERROR]   - distribution='lognormal' + std_error=<value>", file=sys.stderr)
+                print("[ERROR]   - confidence_interval=(low, high)", file=sys.stderr)
+                print("[ERROR]   - distribution='fixed' (for constants with zero uncertainty, e.g., constitutional values)", file=sys.stderr)
+                print("[ERROR] Monte Carlo analysis requires uncertainty on ALL input parameters.", file=sys.stderr)
+                sys.exit(1)
+
+            # Auto-discover parameters with compute functions
+            # Exclude source_type="definition" - these are policy-derived fixed values
+            analyzable_params = []
+            for param_name, meta in parameters.items():
+                val = meta.get("value")
+                if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+                    # Skip parameters marked as "definition" - they're policy-derived, not truly calculated
+                    if hasattr(val, "source_type") and val.source_type == "definition":
+                        continue
+                    # Wrap as Outcome for tornado/sensitivity
+                    outcome = Outcome(
+                        name=param_name,
+                        inputs=val.inputs,
+                        compute=val.compute,
+                        units=getattr(val, "unit", "")
+                    )
+                    analyzable_params.append(outcome)
+
+            if not analyzable_params:
+                print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
+
+            # Counters for summary output
+            tornado_count = 0
+            sensitivity_count = 0
+            mc_dist_count = 0
+            exceedance_count = 0
+            analysis_json_count = 0
+
+            outcomes_data = {}
+            for outcome in analyzable_params:
+                try:
+                    # Build baseline context
+                    ctx = {}
+                    for inp in outcome.inputs:
+                        meta = parameters.get(inp, {})
+                        val = meta.get("value")
+                        ctx[inp] = float(val) if val is not None else 0.0
+                    baseline = outcome.compute(ctx)
+
+                    # MC samples for outcome
+                    input_sims = {name: sims[name] for name in outcome.inputs if name in sims}
+                    if input_sims:
+                        n_samples = len(list(input_sims.values())[0])
+                        outcome_samples = []
+                        for i in range(n_samples):
+                            ctx_i = {name: float(arr[i]) for name, arr in input_sims.items()}
+                            outcome_samples.append(outcome.compute(ctx_i))
+
+                        if np is not None:
+                            oa = np.asarray(outcome_samples)
+                            outcomes_data[outcome.name] = {
+                                "baseline": float(baseline),
+                                "mean": float(np.mean(oa)),
+                                "std": float(np.std(oa)),
+                                "p5": float(np.percentile(oa, 5)),
+                                "p50": float(np.percentile(oa, 50)),
+                                "p95": float(np.percentile(oa, 95)),
+                                "units": outcome.units,
+                            }
+                        else:
+                            m = sum(outcome_samples) / len(outcome_samples)
+                            var = sum((v - m) ** 2 for v in outcome_samples) / len(outcome_samples)
+                            std = var ** 0.5
+                            sorted_o = sorted(outcome_samples)
+
+                            def pct_o(p: float):
+                                return sorted_o[int(p / 100 * (len(sorted_o) - 1))]
+                            outcomes_data[outcome.name] = {
+                                "baseline": float(baseline),
+                                "mean": m,
+                                "std": std,
+                                "p5": pct_o(5),
+                                "p50": pct_o(50),
+                                "p95": pct_o(95),
+                                "units": outcome.units,
+                            }
+
+                        # Tornado deltas for this outcome
+                        tornado = tornado_deltas(parameters, outcome)
+                        with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
+                            json.dump(tornado, f, indent=2)
+                        analysis_json_count += 1
+
+                        # Generate tornado chart QMD
+                        try:
+                            figures_dir = project_root / "knowledge" / "figures"
+                            param_meta = parameters.get(outcome.name, {})
+                            tornado_qmd = generate_tornado_chart_qmd(
+                                outcome.name, tornado, figures_dir, param_meta,
+                                baseline=float(baseline),
+                                units=outcome.units
+                            )
+                            generated_outcome_qmds.add(tornado_qmd.name)
+                            tornado_count += 1
+                        except ValueError as val_err:
+                            # GRACEFUL SKIP: Skip tornado chart for calculated parameters with all-fixed inputs
+                            # This happens when a parameter is correctly marked as "calculated" but its
+                            # input chain consists entirely of fixed/policy values with no uncertainty.
+                            # These are valid calculations but have no sensitivity to visualize.
+                            print(f"[SKIP] Tornado chart for {outcome.name}: {val_err} (all inputs fixed)")
+                        except Exception as chart_err:
+                            print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
+                            sys.exit(1)
+
+                        # Regression sensitivity indices (filter out zero-variance inputs)
+                        filtered_input_sims = {}
+                        for inp_name, inp_vals in input_sims.items():
+                            if np is not None:
+                                std = float(np.std(np.asarray(inp_vals)))
+                            else:
+                                vals = list(inp_vals)
+                                mean = sum(vals) / len(vals)
+                                variance = sum((v - mean) ** 2 for v in vals) / len(vals)
+                                std = variance ** 0.5
+
+                            # Only include inputs that actually vary
+                            if std > 1e-10:
+                                filtered_input_sims[inp_name] = inp_vals
+
+                        if filtered_input_sims:
+                            sens_indices = regression_sensitivity(filtered_input_sims, outcome_samples)
+                        else:
+                            sens_indices = {inp: 0.0 for inp in input_sims.keys()}
+
+                        with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8", newline='\n') as f:
+                            json.dump(sens_indices, f, indent=2)
+                        analysis_json_count += 1
+
+                        # Generate sensitivity table QMD only if there's meaningful variance
+                        # Skip tables where all coefficients are effectively zero (< 0.001)
+                        max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
+                        if max_coef >= 0.001:
+                            try:
+                                sens_qmd = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                generated_outcome_qmds.add(sens_qmd.name)
+                                sensitivity_count += 1
+                            except Exception as table_err:
+                                print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
+
+                        # Generate Monte Carlo distribution chart
+                        # Skip if zero variance (all samples identical) - these are meaningless
+                        try:
+                            outcome_info = outcomes_data.get(outcome.name, {})
+                            outcome_std = outcome_info.get("std", 0)
+                            if outcome_samples and len(outcome_samples) > 100 and outcome_std > 0:
+                                mc_qmd = generate_monte_carlo_distribution_chart_qmd(
+                                    outcome.name,
+                                    outcome_info,
+                                    outcome_samples,
+                                    figures_dir,
+                                    param_meta
+                                )
+                                generated_outcome_qmds.add(mc_qmd.name)
+                                mc_dist_count += 1
+
+                                # Generate standalone CDF/exceedance chart
+                                cdf_qmd = generate_cdf_chart_qmd(
+                                    outcome.name,
+                                    outcome_samples,
+                                    figures_dir,
+                                    param_meta
+                                )
+                                generated_outcome_qmds.add(cdf_qmd.name)
+                                exceedance_count += 1
+                            elif outcome_samples and outcome_std == 0:
+                                print(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
+                        except Exception as mc_err:
+                            print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
+                except Exception as e:
+                    print(f"[WARN] Skipped outcome {outcome.name}: {e}")
+
+            with open(analysis_dir / "outcomes.json", "w", encoding="utf-8", newline='\n') as f:
+                json.dump(outcomes_data, f, indent=2)
+
+            # Clean up orphaned PNG files (PNGs without matching QMD)
+            orphaned_pngs = []
+            for png_file in figures_dir.glob("tornado-*.png"):
+                expected_qmd = png_file.stem + ".qmd"
+                if expected_qmd not in generated_outcome_qmds:
+                    orphaned_pngs.append(png_file)
+            for png_file in figures_dir.glob("sensitivity-table-*.png"):
+                expected_qmd = png_file.stem + ".qmd"
+                if expected_qmd not in generated_outcome_qmds:
+                    orphaned_pngs.append(png_file)
+            for png_file in figures_dir.glob("mc-distribution-*.png"):
+                expected_qmd = png_file.stem + ".qmd"
+                if expected_qmd not in generated_outcome_qmds:
+                    orphaned_pngs.append(png_file)
+            for png_file in figures_dir.glob("exceedance-*.png"):
+                expected_qmd = png_file.stem + ".qmd"
+                if expected_qmd not in generated_outcome_qmds:
+                    orphaned_pngs.append(png_file)
+
+            if orphaned_pngs:
+                print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
+                for f in orphaned_pngs:
+                    f.unlink()
+
+            # Print summary of generated files
+            print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")
+            print(f"[OK] Generated {sensitivity_count} sensitivity tables in knowledge/figures/")
+            print(f"[OK] Generated {mc_dist_count} MC distribution charts in knowledge/figures/")
+            print(f"[OK] Generated {exceedance_count} exceedance charts in knowledge/figures/")
+            print(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
+
+        print()
+    else:
+        # No uncertainty module (numpy/scipy not installed) - generate basic outputs
+        print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
+        print()
+
+        # Generate parameter summary without uncertainty
         print("[*] Generating parameter summary...")
         analysis_dir = project_root / "_analysis"
         analysis_dir.mkdir(exist_ok=True)
@@ -1144,7 +1128,7 @@ def main():
         generate_parameter_summary(parameters, summary_path)
         print()
 
-        # Generate _variables.yml without confidence intervals as fallback
+        # Generate _variables.yml without confidence intervals
         print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
         output_path = project_root / "_variables.yml"
         generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
@@ -1182,13 +1166,9 @@ def main():
         print()
 
     # Generate search indexes for all Quarto configs
-    try:
-        generate_search_indexes(project_root)
-    except Exception as e:
-        print(f"[WARN] Search index generation skipped: {e}")
-        print()
+    generate_search_indexes(project_root)
 
-    # Generate outline from updated headings
+    # Generate outline from updated headings (optional - OK to fail)
     print("[*] Regenerating outline from chapter headings...")
     generate_outline_script = project_root / "scripts" / "generate-outline.py"
     if generate_outline_script.exists():
@@ -1210,14 +1190,14 @@ def main():
         print(f"[WARN] Outline script not found: {generate_outline_script}", file=sys.stderr)
     print()
 
-    # Sync descriptions from QMD frontmatter to YAML configs
+    # Sync descriptions from QMD frontmatter to YAML configs (optional - OK to fail)
     try:
         sync_descriptions_to_yaml_configs(project_root, output_path)
     except Exception as e:
         print(f"[WARN] Description sync skipped: {e}")
         print()
 
-    # Regenerate GitHub Actions workflow from Quarto configs
+    # Regenerate GitHub Actions workflow from Quarto configs (optional - CI catches issues)
     try:
         regenerate_workflow(project_root)
     except Exception as e:
@@ -1226,21 +1206,19 @@ def main():
 
     # Generate site metadata JSON for external use (displaying papers on other sites)
     print("[*] Generating site metadata JSON...")
-    try:
-        sites_metadata_path = generate_sites_metadata(project_root)
-        print()
-    except Exception as e:
-        print(f"[WARN] Site metadata generation skipped: {e}")
-        print()
+    sites_metadata_path = generate_sites_metadata(project_root)
+    print()
+
+    # Generate llms.txt and robots.txt for AI crawler access
+    print("[*] Generating llms.txt and robots.txt...")
+    generate_robots_txt(project_root)
+    generate_llms_txt(project_root)
+    print()
 
     # Generate papers.qmd listing all papers from Quarto configs
     print("[*] Generating papers.qmd index...")
-    try:
-        papers_qmd_path = generate_papers_qmd(project_root)
-        print()
-    except Exception as e:
-        print(f"[WARN] Papers QMD generation skipped: {e}")
-        print()
+    papers_qmd_path = generate_papers_qmd(project_root)
+    print()
 
     print("[OK] All academic outputs generated successfully!")
     print()
@@ -1254,6 +1232,8 @@ def main():
     print(f"       - _analysis/parameter-summary.md")
     print("       - assets/json/sites-metadata.json")
     print("       - knowledge/papers.qmd")
+    print("       - llms.txt (AI crawler content)")
+    print("       - robots.txt (crawler permissions)")
     print("       - OUTLINE-GENERATED.MD")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")

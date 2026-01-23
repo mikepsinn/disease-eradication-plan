@@ -121,7 +121,7 @@ async function parseQuartoConfig(configPath: string): Promise<QuartoConfig | nul
  * Uses title and description from config - no custom prompt needed
  */
 function buildOgImagePrompt(config: QuartoConfig): string {
-  const style = VisualStyles.academic;
+  const style = VisualStyles['bw-academic'];
 
   return `${style.style}
 

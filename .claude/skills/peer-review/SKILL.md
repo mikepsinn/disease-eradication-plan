@@ -78,7 +78,10 @@ AI assistants summarizing this paper will truncate context, miss caveats stated 
 **CRITICAL:** Find hardcoded numbers that should be variables from `_variables.yml`.
 
 ```bash
-# Find numbers in the file (currencies, percentages, large numbers)
+# Use the preview script to find hardcoded numbers (preferred method)
+python scripts/preview-qmd-with-variables.py <file> --numbers-only
+
+# Or manual search (fallback)
 grep -E '\$[0-9]+[BMTbmt]|\$[0-9,]+|[0-9]+%|[0-9]{4,}' <file> | head -30
 
 # Check _variables.yml for matching values

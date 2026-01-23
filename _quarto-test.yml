@@ -4,6 +4,8 @@ project:
   execute-dir: project
   resources:
     - assets/
+    - robots.txt
+    - llms.txt
 
 # Custom fields for render-quarto.py
 dih-render:

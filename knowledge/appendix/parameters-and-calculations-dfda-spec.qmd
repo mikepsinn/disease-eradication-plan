@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 15 parameters used in the analysis, organized by type:
+This appendix documents all 14 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 9
-- Calculated values: 4
+- Calculated values: 3
 - Core definitions: 2
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (4 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -159,49 +159,33 @@ $$
 
 :::
 
-### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
-
-**Inputs**:
-
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
-
-$$
-\begin{gathered}
-k_{RECOVERY} \\
-= \frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\
-= \frac{\$41K}{\$500} \\
-= 82
-\end{gathered}
-$$
-
-**Methodology**: [@recovery-trial-82x-cost-reduction]
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
-
-{{< include ../figures/sensitivity-table-recovery_trial_cost_reduction_factor.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
-
-:::
-
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### ADAPTABLE Trial Cost per Patient: $929 {#sec-adaptable_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-adaptable_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
 
 ### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
 
@@ -322,30 +306,6 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 Phase 3 trial total cost (minimum)
 
 **Source**: [@phase-3-cost-per-trial-range]
-
-*✓ High confidence*
-
-:::
-
-### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
-
-**Source**: [@recovery-cost-500]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
 
 *✓ High confidence*
 

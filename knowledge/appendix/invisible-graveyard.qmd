@@ -75,7 +75,7 @@ We paid {{< var efficacy_lag_cumulative_excess_cost >}} (lower bound - Phase 2/3
 
 ![Bar chart with ghostly imagery comparing 9/11 deaths (2,977), Holocaust deaths (6 million), and FDA efficacy lag deaths (102 million, 95% CI: 36.9M-214M) with error bars](/assets/images/invisible-graveyard/a-dramatic-bar-chart-comparing-the-scale-of-three-tragedies--chart.png)
 
-That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's 144,000 doctors tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
+That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's {{< var pre_1962_physician_count >}} tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
 
 Without mandatory pre-market trials, the market wouldn't be blind. Knowing whether drugs work is one of the highest consumer demands imaginable. Organizations like Consumer Reports, JAMA, and independent research institutes would compete to provide rigorous, large-scale efficacy data - with no pharma conflicts of interest, across real-world populations, with ongoing monitoring instead of a pre-approval snapshot.
 
@@ -491,7 +491,7 @@ This is a false dichotomy. The evidence suggests:
 
 A superior framework would:
 
-1. **Maintain rigorous Phase I safety testing** (~2.3 years)
+1. **Maintain rigorous Phase I safety testing** ({{< var phase_1_safety_duration_years >}})
 2. **Allow provisional approval post-safety** with real-world evidence collection
 3. **Continuous monitoring** via distributed systems (see: [decentralized framework for drug assessment](../solution/dfda.qmd))
 4. **Outcome-based validation** rather than pre-market prediction

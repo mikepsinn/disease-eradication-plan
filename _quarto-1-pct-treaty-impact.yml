@@ -5,6 +5,8 @@ project:
   resources:
     - assets/
     - _redirects
+    - robots.txt
+    - llms.txt
 
 # Custom fields for render-quarto.py
 dih-render:

@@ -4,6 +4,8 @@ project:
   execute-dir: project
   resources:
     - assets/
+    - robots.txt
+    - llms.txt
   # pre-render:
   #   - python scripts/pre-render-validation.py
   # post-render:

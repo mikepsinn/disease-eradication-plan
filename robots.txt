@@ -1,0 +1,5 @@
+# robots.txt - Allow all crawlers (including AI)
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /

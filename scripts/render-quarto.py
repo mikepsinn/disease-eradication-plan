@@ -381,11 +381,17 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
             if verbose:
                 print(f"[*] Using filtered variables: _variables-{config_name}.yml", flush=True)
         else:
-            # Fallback: create empty _variables.yml
-            empty_vars = build_temp / "_variables.yml"
-            empty_vars.write_text("# Empty variables for standalone paper build\n", encoding="utf-8")
-            if verbose:
-                print(f"[*] Created empty _variables.yml (no filtered file found)", flush=True)
+            # Fallback: use the main _variables.yml (all variables available)
+            main_vars = project_root / "_variables.yml"
+            target_vars = build_temp / "_variables.yml"
+            if main_vars.exists():
+                shutil.copy2(main_vars, target_vars)
+                if verbose:
+                    print(f"[*] Using main _variables.yml (no filtered file found)", flush=True)
+            else:
+                raise FileNotFoundError(
+                    f"No _variables.yml found. Run: python scripts/generate-everything-parameters-variables-calculations-references.py"
+                )
 
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.

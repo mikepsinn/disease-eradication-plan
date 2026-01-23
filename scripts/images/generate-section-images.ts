@@ -4,22 +4,24 @@
  * Gives Gemini the entire file and asks it to identify sections that would
  * benefit from visual aids (diagrams, charts, infographics, flowcharts).
  *
- * Defaults to academic style (black & white scientific) for professional publications.
- * All images use 9:16 portrait aspect ratio for mobile-first design.
+ * Defaults to bw-academic style (black & white scientific) for professional publications.
+ * Default aspect ratio is 1:1 (square) for consistency with manual generations.
  *
  * Usage:
- *   npx tsx scripts/images/generate-sections.ts <file.qmd> [options]
+ *   npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]
  *
  * Options:
- *   --retro-futuristic    Generate in retro-futuristic style (default: academic)
+ *   --retro-futuristic    Generate in retro-futuristic style (default: bw-academic)
+ *   --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)
  *   --dry-run             Show recommendations without generating images
  *   --force               Delete existing section images and regenerate all
  *
  * Examples:
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --retro-futuristic
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --dry-run
- *   npx tsx scripts/images/generate-sections.ts knowledge/economics/1-pct-treaty-impact.qmd --force
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --retro-futuristic
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --aspect 3:4
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --dry-run
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --force
  */
 
 import dotenv from 'dotenv';
@@ -242,7 +244,8 @@ async function generateSectionImages(
   filePath: string,
   recommendations: ImageRecommendation[],
   useAcademicStyle: boolean,
-  cleanedContent: string
+  cleanedContent: string,
+  aspectRatio: '1:1' | '3:4' | '9:16' | '16:9' = '1:1'
 ): Promise<void> {
   if (recommendations.length === 0) {
     console.log(`\n[SKIP] No images to generate`);
@@ -252,8 +255,8 @@ async function generateSectionImages(
   console.log(`\n[*] Generating ${recommendations.length} section images...`);
 
   const fileName = path.basename(filePath, '.qmd');
-  const relativePath = path.relative(process.cwd(), filePath);
-  const outputDir = path.join(process.cwd(), 'assets', 'section-images', path.dirname(relativePath));
+  // Output to assets/images/<qmd-basename>/ for consistency with SKILL.md convention
+  const outputDir = path.join(process.cwd(), 'assets', 'images', fileName);
 
   // Read file content (raw, for insertion)
   const fileContent = await fs.readFile(filePath, 'utf-8');
@@ -279,24 +282,51 @@ async function generateSectionImages(
 
     console.log(`  [INFO] Placement found at line ${placementLine}: ${rec.placementHint}`);
 
-    const style = useAcademicStyle ? VisualStyles.academic : VisualStyles['retro-futuristic'];
-    const suffix = useAcademicStyle ? '-academic' : '-retro-futuristic';
+    const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
+    const suffix = style.suffix;
 
-    // Use Gemini's curated excerpt (200-500 words specifically chosen for visualization)
-    // Since we analyze cleaned content, the excerpt already has variables replaced
-    // Simple prompt: just style + content, no meta-instructions that might leak into images
+    // Use visualizationGoal (detailed composition instructions) + content excerpt for context
+    // The visualizationGoal tells Gemini WHAT to draw, the excerpt provides the DATA
     const imagePrompt = `${style.style}
 
+IMAGE TYPE: ${rec.imageType}
+
+COMPOSITION:
+${rec.visualizationGoal}
+
+KEY DATA TO INCLUDE:
 ${rec.contentExcerpt}`;
 
     try {
-      // Book-friendly: use portrait 3:4 (closest to standard book format)
-      // Balances mobile readability with print compatibility (1:1.33 aspect ratio)
-      // Fits printed pages better than 9:16 (1:1.78) without excessive scaling
-      const aspectRatio = '3:4' as const;
+      // Use the aspect ratio passed from CLI (default: 1:1 for consistency with manual generations)
 
       // Generate descriptive filename from section title
       const sectionSlug = toKebabCase(rec.sectionTitle);
+
+      // Log prompts to file for debugging
+      const logFile = path.join(process.cwd(), 'image-prompts.log');
+      const logEntry = `
+${'='.repeat(80)}
+[${new Date().toISOString()}] Image ${i + 1}/${recommendations.length}: ${rec.sectionTitle}
+${'='.repeat(80)}
+Section Heading: ${rec.sectionHeading}
+Image Type: ${rec.imageType}
+Placement: ${rec.placementHint}
+Anchor Text: ${rec.anchorText}
+
+--- VISUALIZATION GOAL (from analysis) ---
+${rec.visualizationGoal}
+
+--- CONTENT EXCERPT ---
+${rec.contentExcerpt}
+
+--- FINAL PROMPT SENT TO GEMINI ---
+${imagePrompt}
+${'='.repeat(80)}
+
+`;
+      await fs.appendFile(logFile, logEntry, 'utf-8');
+      console.log(`  [LOG] Prompt logged to image-prompts.log`);
 
       const imageFiles = await generateAndSaveImages({
         prompt: imagePrompt,
@@ -347,20 +377,39 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args.length === 0 || args[0].startsWith('--')) {
-    console.error('Usage: npx tsx scripts/generate-section-images.ts <file.qmd> [--retro-futuristic] [--dry-run] [--force]');
+    console.error('Usage: npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]');
     console.error('');
     console.error('Options:');
-    console.error('  --retro-futuristic    Use retro-futuristic style (default: academic black & white)');
+    console.error('  --retro-futuristic    Use retro-futuristic style (default: bw-academic)');
+    console.error('  --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)');
     console.error('  --dry-run             Show recommendations without generating images');
     console.error('  --force               Delete existing section images and regenerate all');
+    console.error('');
+    console.error('Available styles:');
+    console.error('  bw-academic (default)  Black and white scientific illustration');
+    console.error('  retro-futuristic       Fun retro futuristic style with large text');
     process.exit(1);
   }
 
   const filePath = args[0];
   const dryRun = args.includes('--dry-run');
   const force = args.includes('--force');
-  // Default to academic style (black & white), use --retro-futuristic for fun retro futuristic style
+  // Default to bw-academic style (black & white), use --retro-futuristic for fun retro futuristic style
   const useAcademicStyle = !args.includes('--retro-futuristic');
+
+  // Parse --aspect argument (default: 1:1 for consistency with manual generations)
+  let aspectRatio: '1:1' | '3:4' | '9:16' | '16:9' = '1:1';
+  const aspectIndex = args.indexOf('--aspect');
+  if (aspectIndex !== -1 && args[aspectIndex + 1]) {
+    const ratioArg = args[aspectIndex + 1];
+    if (['1:1', '3:4', '9:16', '16:9'].includes(ratioArg)) {
+      aspectRatio = ratioArg as typeof aspectRatio;
+    } else {
+      console.error(`[ERROR] Invalid aspect ratio: ${ratioArg}`);
+      console.error('Valid options: 1:1, 3:4, 9:16, 16:9');
+      process.exit(1);
+    }
+  }
 
   console.log('📊 Section-Specific Image Generator');
   console.log('='.repeat(80));
@@ -370,7 +419,8 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`[INFO] Style: ${useAcademicStyle ? 'Academic (black and white scientific)' : 'Retro-futuristic'}`);
+  console.log(`[INFO] Style: ${useAcademicStyle ? 'bw-academic (black and white scientific)' : 'retro-futuristic'}`);
+  console.log(`[INFO] Aspect ratio: ${aspectRatio}`);
   if (dryRun) {
     console.log('[INFO] DRY RUN - will show recommendations without generating');
   }
@@ -381,8 +431,8 @@ async function main() {
   // Force mode: clean up existing section images and references
   if (force && !dryRun) {
     const fileName = path.basename(filePath, '.qmd');
-    const relativePath = path.relative(process.cwd(), filePath);
-    const outputDir = path.join(process.cwd(), 'assets', 'section-images', path.dirname(relativePath));
+    // Use new output directory: assets/images/<qmd-basename>/
+    const outputDir = path.join(process.cwd(), 'assets', 'images', fileName);
 
     // Delete existing section images
     if (existsSync(outputDir)) {
@@ -403,7 +453,8 @@ async function main() {
     const fileContent = await fs.readFile(filePath, 'utf-8');
     // Match section images with any surrounding newlines (1+ before and after)
     // Replace with exactly 2 newlines to maintain paragraph spacing
-    const sectionImagePattern = /\n+!\[.*?\]\(\/assets\/section-images\/.*?\)\n+/g;
+    // Match both old (assets/section-images/) and new (assets/images/) paths
+    const sectionImagePattern = /\n+!\[.*?\]\(\/assets\/(?:section-images|images)\/.*?\)\n+/g;
     let fileWithoutImages = fileContent.replace(sectionImagePattern, '\n\n');
     // Consolidate any remaining multiple consecutive newlines (3+ → 2)
     fileWithoutImages = fileWithoutImages.replace(/\n{3,}/g, '\n\n');
@@ -427,7 +478,7 @@ async function main() {
   }
 
   // Generate and insert images
-  await generateSectionImages(filePath, analysis.recommendations, useAcademicStyle, cleanedContent);
+  await generateSectionImages(filePath, analysis.recommendations, useAcademicStyle, cleanedContent, aspectRatio);
 
   console.log('\n='.repeat(80));
   console.log('✓ Complete');

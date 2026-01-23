@@ -5,6 +5,8 @@ project:
   resources:
     - assets/
     - _redirects
+    - robots.txt
+    - llms.txt
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd

@@ -352,7 +352,7 @@ async function getFileImageStatus(filePath: string): Promise<FileImageStatus | n
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
   // Only check academic style (that's what we generate)
-  const suffix = VisualStyles.academic.suffix;
+  const suffix = VisualStyles['bw-academic'].suffix;
   const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
   const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
   const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
@@ -562,7 +562,7 @@ async function checkIfNeedsRegeneration(
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
   // Only check academic style (that's what we generate)
-  const suffix = VisualStyles.academic.suffix;
+  const suffix = VisualStyles['bw-academic'].suffix;
   const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
   const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
   const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
@@ -732,10 +732,10 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Determine which style to use (default to academic only)
+  // Determine which style to use (default to bw-academic only)
   const stylesToGenerate = useAcademicStyle
-    ? { academic: VisualStyles.academic }
-    : { academic: VisualStyles.academic };
+    ? { 'bw-academic': VisualStyles['bw-academic'] }
+    : { 'retro-futuristic': VisualStyles['retro-futuristic'] };
 
   // Generate images in selected styles
   for (const [styleName, styleConfig] of Object.entries(stylesToGenerate)) {
