@@ -10,7 +10,7 @@ project:
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations.qmd
+    - knowledge/appendix/parameters-and-calculations-dfda-impact.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
@@ -54,7 +54,7 @@ website:
         text: "Download PDF"
         href: /dfda-impact-paper.pdf
       - text: "Calculations"
-        href: knowledge/appendix/parameters-and-calculations.qmd
+        href: knowledge/appendix/parameters-and-calculations-dfda-impact.qmd
       - text: "References"
         href: /#references
       - text: "DIH"

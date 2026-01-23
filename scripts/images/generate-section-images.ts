@@ -65,44 +65,62 @@ function toKebabCase(text: string): string {
 
 /**
  * Find intelligent placement location based on section heading and anchor text
- * Avoids placing before lists, after colons, or before headers
+ * Uses cleaned content for anchor matching (LLM analyzed cleaned content with resolved variables)
+ * but returns line number for raw content insertion.
+ * Avoids placing before lists, after colons, or before headers.
  */
 function findSmartPlacement(
-  lines: string[],
+  rawLines: string[],
+  cleanedLines: string[],
   sectionHeading: string,
   anchorText: string,
   placementHint: string
 ): number | null {
-  // Find section heading
-  const headingLine = lines.findIndex(line => line.trim() === sectionHeading.trim());
+  // Find section heading in BOTH files (headings don't contain variables)
+  const rawHeadingLine = rawLines.findIndex(line => line.trim() === sectionHeading.trim());
+  const cleanedHeadingLine = cleanedLines.findIndex(line => line.trim() === sectionHeading.trim());
 
-  if (headingLine === -1) {
-    console.log(`  [WARN] Could not find section heading: "${sectionHeading}"`);
+  if (rawHeadingLine === -1) {
+    console.log(`  [WARN] Could not find section heading in raw file: "${sectionHeading}"`);
     return null;
   }
 
-  // Search for anchor text after the heading
-  let anchorLine = -1;
+  if (cleanedHeadingLine === -1) {
+    console.log(`  [WARN] Could not find section heading in cleaned content: "${sectionHeading}"`);
+    return null;
+  }
+
+  // Search for anchor text in CLEANED content (where variables are resolved)
+  let cleanedAnchorLine = -1;
   const normalizedAnchor = anchorText.toLowerCase().trim();
 
-  for (let i = headingLine + 1; i < lines.length; i++) {
-    const normalizedLine = lines[i].toLowerCase().trim();
+  for (let i = cleanedHeadingLine + 1; i < cleanedLines.length; i++) {
+    const normalizedLine = cleanedLines[i].toLowerCase().trim();
     if (normalizedLine.includes(normalizedAnchor)) {
-      anchorLine = i;
+      cleanedAnchorLine = i;
       break;
     }
   }
 
-  if (anchorLine === -1) {
+  if (cleanedAnchorLine === -1) {
     console.log(`  [WARN] Could not find anchor text: "${anchorText}" in section "${sectionHeading}"`);
     console.log(`  [INFO] Placement hint: ${placementHint}`);
     return null;
   }
 
-  // Find next safe insertion point after anchor
-  for (let i = anchorLine + 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
+  // Calculate offset from heading to anchor in cleaned content
+  const offsetFromHeading = cleanedAnchorLine - cleanedHeadingLine;
+
+  // Apply offset to raw content to get approximate anchor position
+  const rawAnchorLine = rawHeadingLine + offsetFromHeading;
+
+  console.log(`  [DEBUG] Heading: raw=${rawHeadingLine}, cleaned=${cleanedHeadingLine}`);
+  console.log(`  [DEBUG] Anchor offset: ${offsetFromHeading}, raw anchor line: ${rawAnchorLine}`);
+
+  // Find next safe insertion point after the calculated anchor position in RAW content
+  for (let i = rawAnchorLine + 1; i < rawLines.length; i++) {
+    const line = rawLines[i].trim();
+    const nextLine = i + 1 < rawLines.length ? rawLines[i + 1].trim() : '';
 
     // Stop at next section heading
     if (line.startsWith('#')) {
@@ -135,9 +153,9 @@ function findSmartPlacement(
     }
   }
 
-  // Fallback: place right after anchor line
-  console.log(`  [INFO] Using fallback placement after anchor line ${anchorLine}`);
-  return anchorLine + 1;
+  // Fallback: place right after calculated anchor line
+  console.log(`  [INFO] Using fallback placement after anchor line ${rawAnchorLine}`);
+  return rawAnchorLine + 1;
 }
 
 /**
@@ -260,9 +278,9 @@ async function generateSectionImages(
 
   // Read file content (raw, for insertion)
   const fileContent = await fs.readFile(filePath, 'utf-8');
-  const lines = fileContent.split('\n');
+  const rawLines = fileContent.split('\n');
 
-  // Also split cleaned content (for anchor text matching, since LLM analyzed cleaned content)
+  // Split cleaned content for anchor text matching (LLM analyzed this version with resolved variables)
   const cleanedLines = cleanedContent.split('\n');
 
   // Generate images for each recommendation
@@ -272,8 +290,8 @@ async function generateSectionImages(
     const rec = recommendations[i];
     console.log(`\n  [${i + 1}/${recommendations.length}] Generating: ${rec.sectionTitle}`);
 
-    // Find smart placement using section heading and anchor text (search in cleaned content since that's what LLM analyzed)
-    const placementLine = findSmartPlacement(cleanedLines, rec.sectionHeading, rec.anchorText, rec.placementHint);
+    // Find smart placement: search in cleaned content (for anchor matching), return raw line number
+    const placementLine = findSmartPlacement(rawLines, cleanedLines, rec.sectionHeading, rec.anchorText, rec.placementHint);
 
     if (placementLine === null) {
       console.log(`  [SKIP] Could not find safe placement location`);
@@ -363,12 +381,12 @@ ${'='.repeat(80)}
 
     for (const { lineNumber, imagePath, caption } of generatedImages) {
       const imageMarkdown = `\n![${caption}](${imagePath})\n`;
-      lines.splice(lineNumber, 0, imageMarkdown);
+      rawLines.splice(lineNumber, 0, imageMarkdown);
       console.log(`  Inserted image at line ${lineNumber}`);
     }
 
     // Write updated file
-    await fs.writeFile(filePath, lines.join('\n'), 'utf-8');
+    await fs.writeFile(filePath, rawLines.join('\n'), 'utf-8');
     console.log(`\n[OK] Updated ${filePath} with ${generatedImages.length} images`);
   }
 }

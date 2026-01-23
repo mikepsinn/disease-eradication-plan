@@ -674,6 +674,12 @@ The PIS operationalizes six of the nine Bradford Hill criteria for causality [@b
 
 ### Interpreting Predictor Impact Scores
 
+::: {.callout-warning}
+## Provisional Thresholds - Not Yet Validated
+
+The PIS thresholds below are **theoretically motivated heuristics**, not empirically validated cutoffs. Until retrospective validation against RCT outcomes is performed (see @sec-validation-framework), these thresholds should be treated as provisional guidelines for prioritization, not evidence standards.
+:::
+
 PIS scores range from 0 to approximately 1 (though values slightly above 1 are possible with very strong evidence). Guidelines for interpretation:
 
 | PIS Range | Interpretation | Recommended Action |
@@ -1350,7 +1356,7 @@ Flagged studies are:
 
 ## Stage 2: Pragmatic Trial Confirmation
 
-**The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. A meta-analysis of 108 embedded pragmatic trials shows that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var dfda_trial_cost_reduction_factor >}} lower cost and 10x faster. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
+**The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. A meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] shows that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var dfda_trial_cost_reduction_factor >}} lower cost. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
 
 The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
@@ -1500,6 +1506,8 @@ Even with the two-stage design, certain limitations remain:
 4. **Behavioral interventions**: Some treatments (diet, exercise) difficult to blind
 5. **Long-term effects**: Pragmatic trials typically 6-12 months; decades-long effects require observational follow-up
 6. **Interaction effects**: Two-way drug interactions testable; higher-order interactions remain observational
+7. **Multiple testing burden**: Stage 1 analyzes millions of treatment-outcome pairs without formal multiple testing correction (e.g., Benjamini-Hochberg FDR control). The TPS filter reduces false positives proceeding to Stage 2, but users should expect a high proportion of Stage 1 signals to be false discoveries. This is by design (cheap observational analysis tolerates false positives because Stage 2 trials filter them out), but consumers of Stage 1 rankings alone should interpret with appropriate skepticism
+8. **Self-selection bias**: Participants who track health data differ systematically from the general population (likely healthier, more educated, more health-conscious). Effect sizes may not generalize to non-trackers
 
 ### What This Framework CAN Now Do
 
@@ -1549,293 +1557,59 @@ where $W_j = \{k : t_j^P + \delta \leq t_k^O < t_j^P + \delta + \tau\}$. Output 
 3. Compute outcome means: $\mu_B = \mathbb{E}[o \mid (p,o) \in B]$ and $\mu_F = \mathbb{E}[o \mid (p,o) \in F]$
 4. Return percent change: $\Delta = \frac{\mu_F - \mu_B}{\mu_B} \times 100$
 
-### Core Algorithm: Predictor Impact Score
+### Algorithm 3: Predictor Impact Score Calculation
 
-```python
-def calculate_user_pis(correlation, statistical_significance, z_score,
-                        interest_factor, aggregate_pis):
-    """
-    Calculate user-level PIS for individual N-of-1 analysis.
+**Algorithm 3** (User-Level PIS): Given correlation coefficients, statistical significance, z-score, interest factor, and aggregate PIS:
 
-    PIS_user = |r| × S × φ_z × φ_temporal × f_interest + PIS_agg
-    """
-    Z_REF = 2  # Reference z-score (significance threshold)
+$$\text{PIS}_{\text{user}} = |r| \times S \times \phi_z \times \phi_{\text{temporal}} \times f_{\text{interest}} + \text{PIS}_{\text{agg}}$$
 
-    # Strength: absolute correlation
-    r = abs(correlation.forward_pearson)
+**Procedure:**
 
-    # Effect magnitude: normalized z-score factor
-    phi_z = abs(z_score) / (abs(z_score) + Z_REF) if z_score else 0.5
+1. Set $Z_{\text{ref}} = 2$ (reference z-score threshold)
+2. Compute strength: $r = |r_{\text{forward}}|$
+3. Compute effect magnitude factor: $\phi_z = \frac{|z|}{|z| + Z_{\text{ref}}}$ (or 0.5 if z undefined)
+4. Compute temporality factor: $\phi_{\text{temporal}} = \frac{|r_{\text{forward}}|}{|r_{\text{forward}}| + |r_{\text{reverse}}|}$ (or 0.5 if both zero)
+5. Return: $r \times S \times \phi_z \times \phi_{\text{temporal}} \times f_{\text{interest}} + \text{PIS}_{\text{agg}}$
 
-    # Temporality: forward vs reverse correlation ratio
-    r_fwd = abs(correlation.forward_pearson)
-    r_rev = abs(correlation.reverse_pearson)
-    phi_temporal = r_fwd / (r_fwd + r_rev) if (r_fwd + r_rev) > 0 else 0.5
+**Algorithm 4** (Aggregate PIS): Given forward correlation, number of users $N$, number of pairs $n$, outcome changes, plausibility votes, and gradient coefficient:
 
-    # Composite user-level score
-    radar = r * statistical_significance * phi_z * phi_temporal * interest_factor
-    radar += aggregate_pis
+$$\text{PIS}_{\text{agg}} = |r_{\text{forward}}| \times w \times \phi_{\text{users}} \times \phi_{\text{pairs}} \times \phi_{\text{change}} \times \phi_{\text{gradient}}$$
 
-    return round(radar, 4)
+**Procedure:**
 
+1. Set saturation constants: $N_{\text{sig}} = 10$, $n_{\text{sig}} = 100$, $\Delta_{\text{sig}} = 10\%$
+2. Compute user saturation: $\phi_{\text{users}} = 1 - e^{-N/N_{\text{sig}}}$
+3. Compute pair saturation: $\phi_{\text{pairs}} = 1 - e^{-n/n_{\text{sig}}}$
+4. Compute change spread: $\Delta_{\text{spread}} = |\Delta_{\text{high}} - \Delta_{\text{low}}|$ (minimum 1)
+5. Compute change saturation: $\phi_{\text{change}} = 1 - e^{-\Delta_{\text{spread}}/\Delta_{\text{sig}}}$
+6. Compute gradient factor: $\phi_{\text{gradient}} = \min(\text{gradient\_coefficient}, 1.0)$
+7. Return: $|r_{\text{forward}}| \times w \times \phi_{\text{users}} \times \phi_{\text{pairs}} \times \phi_{\text{change}} \times \phi_{\text{gradient}}$
 
-def calculate_aggregate_pis(correlation, n_users, n_pairs,
-                             high_outcome_change, low_outcome_change,
-                             weighted_avg_vote, gradient_coefficient):
-    """
-    Calculate population-level aggregate PIS.
+**Algorithm 5** (Interest Factor): Penalize spurious variable pairs:
 
-    PIS_agg = |r_forward| × w × φ_users × φ_pairs × φ_change × φ_gradient
-    """
-    SIGNIFICANT_USERS = 10
-    SIGNIFICANT_PAIRS = 100
-    SIGNIFICANT_CHANGE_SPREAD = 10
+$$f_{\text{interest}} = f_P \times f_O \times f_{\text{pair}}$$
 
-    # Strength: absolute forward correlation
-    r_forward = abs(correlation.forward_pearson)
+**Procedure:**
 
-    # Consistency: user saturation
-    user_saturation = 1 - exp(-n_users / SIGNIFICANT_USERS)
+1. Initialize $f = 1.0$
+2. **Predictor penalties**: Divide $f$ by 2 for each: test variable, app/website, address
+3. **Outcome penalties**: Divide $f$ by 2 for each: test variable, non-outcome category
+4. **Pair penalties**: Divide $f$ by 2 if predictor is non-predictor category; divide by 10 if illogical category pair
+5. Return $f$
 
-    # Consistency: pair saturation
-    pair_saturation = 1 - exp(-n_pairs / SIGNIFICANT_PAIRS)
+### Reference Implementation
 
-    # Clinical significance: change spread saturation
-    change_spread = abs(high_outcome_change - low_outcome_change)
-    if change_spread == 0:
-        change_spread = 1  # Prevent zero PIS
-    change_saturation = 1 - exp(-change_spread / SIGNIFICANT_CHANGE_SPREAD)
+A complete reference implementation is available at:
 
-    # Biological gradient: dose-response
-    gradient_factor = min(gradient_coefficient, 1.0)  # Cap at 1.0
+- **Code Repository**: <https://github.com/decentralized-fda>
+- **Documentation**: <https://docs.dfda.earth>
 
-    # Composite aggregate score
-    radar = (r_forward * weighted_avg_vote * user_saturation *
-            pair_saturation * change_saturation * gradient_factor)
+The repository includes:
 
-    return round(radar, 4)
-
-
-def calculate_z_score(outcome_percent_change, baseline_rsd):
-    """
-    Calculate z-score: effect magnitude normalized by baseline variability.
-
-    z = |Δ%| / RSD_baseline
-
-    z > 2 indicates p < 0.05 (statistically significant)
-    """
-    if baseline_rsd and baseline_rsd > 0:
-        return round(abs(outcome_percent_change) / baseline_rsd, 2)
-    return None
-
-
-def calculate_temporality_factor(forward_correlation, reverse_correlation):
-    """
-    Calculate temporality factor: evidence for forward causation.
-
-    φ_temporal = |r_forward| / (|r_forward| + |r_reverse|)
-
-    Returns 0.5 if ambiguous, approaches 1 if forward dominates.
-    """
-    r_fwd = abs(forward_correlation)
-    r_rev = abs(reverse_correlation)
-    if r_fwd + r_rev == 0:
-        return 0.5  # No evidence either way
-    return round(r_fwd / (r_fwd + r_rev), 4)
-
-
-def calculate_percent_change_from_baseline(baseline_mean, followup_mean,
-                                            is_percent_unit=False):
-    """
-    Calculate percent change from baseline.
-
-    Δ% = ((followup - baseline) / baseline) × 100
-    """
-    if baseline_mean == 0 or is_percent_unit:
-        return round(followup_mean - baseline_mean, 1)
-    return round((followup_mean - baseline_mean) / baseline_mean * 100, 1)
-
-
-def calculate_interest_factor(predictor_var, outcome_var):
-    """
-    Calculate interest factor penalizing spurious variable pairs.
-
-    f_interest = f_predictor × f_outcome × f_pair
-    """
-    factor = 1.0
-
-    # Predictor-specific penalties
-    if predictor_var.is_test_variable():
-        factor /= 2
-    if predictor_var.is_app_or_website():
-        factor /= 2
-    if predictor_var.is_address():
-        factor /= 2
-
-    # Outcome-specific penalties
-    if outcome_var.is_test_variable():
-        factor /= 2
-    if not outcome_var.is_outcome():
-        factor /= 2
-
-    # Pair appropriateness
-    if not predictor_var.is_predictor():
-        factor /= 2
-    if is_illogical_category_pair(predictor_var, outcome_var):
-        factor /= 10
-
-    return factor
-```
-
-### Database Schema (Key Tables)
-
-```sql
--- Variables (predictors, outcomes, etc.)
-CREATE TABLE variables (
-    id INT PRIMARY KEY,
-    name VARCHAR(255),
-    variable_category_id INT,
-    default_unit_id INT,
-    filling_value FLOAT,
-    filling_type ENUM('zero', 'value', 'none', 'interpolation'),
-    onset_delay INT,  -- seconds, default delay before effect
-    duration_of_action INT,  -- seconds, how long effect persists
-    outcome BOOLEAN,  -- is this an outcome variable?
-    predictor_only BOOLEAN,  -- can only be a predictor (e.g., weather)
-    valence ENUM('positive', 'negative', 'neutral'),  -- interpretation of higher values
-    is_goal BOOLEAN,  -- something users want to optimize
-    controllable BOOLEAN,  -- user can directly modify
-    boring BOOLEAN,  -- filter flag for uninteresting variables
-    predictor BOOLEAN,  -- can influence outcomes
-    optimal_value_message VARCHAR(500),  -- pre-computed recommendation text
-    best_predictor_variable_id INT,  -- strongest predictor for this outcome
-    best_outcome_variable_id INT  -- most affected outcome by this predictor
-);
-
--- Measurements
-CREATE TABLE measurements (
-    id BIGINT PRIMARY KEY,
-    user_id BIGINT,
-    variable_id INT,
-    value FLOAT,
-    unit_id INT,
-    start_time TIMESTAMP,
-    source_id INT
-);
-
--- Individual variable relationships (per-user N-of-1 analyses)
--- Contains correlation coefficients, effect sizes, PIS scores, and Bradford Hill metrics
-CREATE TABLE user_variable_relationships (
-    id BIGINT PRIMARY KEY,
-    user_id BIGINT,
-    predictor_variable_id INT,
-    outcome_variable_id INT,
-
-    -- Correlation coefficients
-    forward_pearson_correlation_coefficient FLOAT,  -- Pearson r
-    reverse_pearson_correlation_coefficient FLOAT,  -- reverse r (for temporality)
-    forward_spearman_correlation_coefficient FLOAT,  -- Spearman r (robust)
-    predictive_pearson_correlation_coefficient FLOAT,  -- with optimized params
-
-    -- Temporal parameters
-    onset_delay INT,  -- optimized delay (seconds)
-    duration_of_action INT,  -- optimized duration (seconds)
-    onset_delay_with_strongest_pearson_correlation INT,  -- best delay found
-    correlations_over_delays TEXT,  -- JSON: r values for each tested delay
-    correlations_over_durations TEXT,  -- JSON: r values for each tested duration
-
-    -- Effect size metrics
-    outcome_follow_up_percent_change_from_baseline FLOAT,  -- Δ%
-    average_outcome FLOAT,  -- mean outcome
-    average_outcome_following_high_predictor FLOAT,  -- outcome when predictor > mean
-    average_outcome_following_low_predictor FLOAT,  -- outcome when predictor < mean
-    average_daily_high_predictor FLOAT,  -- high predictor value
-    average_daily_low_predictor FLOAT,  -- low predictor value
-    predicts_high_outcome_change INT,  -- % change at high predictor
-    predicts_low_outcome_change INT,  -- % change at low predictor
-
-    -- Baseline/treatment metrics
-    outcome_baseline_average FLOAT,
-    outcome_baseline_standard_deviation FLOAT,
-    outcome_baseline_relative_standard_deviation FLOAT,  -- RSD
-    outcome_follow_up_average FLOAT,
-    predictor_baseline_average_per_day FLOAT,  -- non-treatment daily avg
-    predictor_treatment_average_per_day FLOAT,  -- treatment daily avg
-    predictor_baseline_average_per_duration_of_action FLOAT,
-    predictor_treatment_average_per_duration_of_action FLOAT,
-
-    -- Statistical significance
-    z_score FLOAT,  -- effect magnitude / baseline RSD
-    p_value FLOAT,
-    t_value FLOAT,
-    critical_t_value FLOAT,
-    confidence_interval FLOAT,
-    statistical_significance FLOAT,
-
-    -- Optimal values for precision dosing
-    value_predicting_high_outcome FLOAT,  -- V_high
-    value_predicting_low_outcome FLOAT,  -- V_low
-    grouped_predictor_value_closest_to_value_predicting_high_outcome FLOAT,
-    grouped_predictor_value_closest_to_value_predicting_low_outcome FLOAT,
-
-    -- Quality metrics
-    predicted_impact_score FLOAT,  -- PIS_user
-    number_of_pairs INT,
-    predictor_changes INT,  -- variance in predictor
-    outcome_changes INT,  -- variance in outcome
-
-    -- Relationship classification
-    strength_level ENUM('VERY STRONG', 'STRONG', 'MODERATE', 'WEAK', 'VERY WEAK'),
-    confidence_level ENUM('HIGH', 'MEDIUM', 'LOW'),
-    relationship ENUM('POSITIVE', 'NEGATIVE', 'NONE'),
-
-    -- Quality filters
-    boring BOOLEAN,
-    outcome_is_goal BOOLEAN,
-    predictor_is_controllable BOOLEAN,
-    plausibly_causal BOOLEAN,
-    obvious BOOLEAN,
-    interesting_variable_category_pair BOOLEAN,
-
-    -- User feedback
-    usefulness_vote INT,  -- -1, 0, 1
-    causality_vote INT,  -- -1, 0, 1
-    number_of_up_votes INT,
-    number_of_down_votes INT
-);
-
--- Population-level variable relationships (aggregated N-of-1 analyses)
--- Combines individual analyses across participants for population-level estimates
-CREATE TABLE global_variable_relationships (
-    id BIGINT PRIMARY KEY,
-    predictor_variable_id INT,
-    outcome_variable_id INT,
-
-    -- Aggregated correlation coefficients
-    forward_pearson_correlation_coefficient FLOAT,
-    reverse_pearson_correlation_coefficient FLOAT,
-    predictive_pearson_correlation_coefficient FLOAT,
-    population_trait_pearson_correlation_coefficient FLOAT,  -- user-level avg correlation
-
-    -- Sample size metrics
-    number_of_users INT,  -- N participants
-    number_of_correlations INT,  -- individual analyses aggregated
-    number_of_pairs INT,  -- total pairs across all users
-
-    -- Aggregated effect sizes
-    outcome_follow_up_percent_change_from_baseline FLOAT,
-    aggregate_predicted_impact_score FLOAT,  -- PIS_agg
-    gradient_coefficient FLOAT,  -- φ_gradient: dose-response
-    confidence_level ENUM('high', 'medium', 'low'),
-    up_votes INT,
-    down_votes INT,
-    -- Population-level optimal values for precision dosing
-    average_daily_high_predictor FLOAT,       -- Avg predictor in upper 51% of spread
-    average_daily_low_predictor FLOAT,        -- Avg predictor in lower 49% of spread
-    value_predicting_high_outcome FLOAT,  -- Population avg V_high
-    value_predicting_low_outcome FLOAT    -- Population avg V_low
-);
-```
+- Analysis engine (Python) with full PIS calculation pipeline
+- Database schemas (PostgreSQL, SQLite) for variable relationships
+- API specifications (OpenAPI 3.0) for data ingestion and querying
+- Test vectors matching Appendix D worked example
 
 ## Regulatory Considerations
 
@@ -1873,7 +1647,7 @@ The 21st Century Cures Act mandates FDA evaluation of RWE. This framework suppor
 - **Label updates**: Quantitative basis for efficacy/safety updates
 - **Comparative effectiveness**: Treatment rankings within classes
 
-## Validation Framework
+## Validation Framework {#sec-validation-framework}
 
 ### The Critical Question
 
@@ -1941,7 +1715,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 We have presented a comprehensive **two-stage framework** for generating **validated outcome labels** from real-world health data. Key contributions include:
 
 1. **Stage 1: Scalable signal detection**: Aggregated N-of-1 observational analysis processes millions of treatment-outcome pairs at ~{{< var dfda_observational_cost_per_patient >}}/patient, generating ranked hypotheses through the Predictor Impact Score
-2. **Stage 2: Causal confirmation**: Pragmatic randomized trials following the embedded trial model (validated across 108+ studies) confirm top signals at ~{{< var dfda_pragmatic_trial_cost_per_patient >}}/patient ({{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional trials) while eliminating confounding
+2. **Stage 2: Causal confirmation**: Pragmatic randomized trials following the embedded trial model (validated across 108+ studies [@embedded-pragmatic-trials-meta-analysis]) confirm top signals at ~{{< var dfda_pragmatic_trial_cost_per_patient >}}/patient ({{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional trials) while eliminating confounding
 3. **Bradford Hill operationalization**: Six of nine causality criteria quantified in composite scoring system
 4. **Trial Priority Score**: Principled prioritization of which signals warrant experimental confirmation
 5. **Validated outcome labels**: Three-tier evidence grading (Validated, Promising, Signal) with both observational and experimental effect sizes
