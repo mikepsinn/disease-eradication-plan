@@ -160,9 +160,14 @@ Style: ${visualStyle.style}`;
   // Generate image
   const generatedFiles = await generateAndSaveImages({
     prompt: fullPrompt,
-    aspectRatio: options.aspect,
+    aspectRatio: options.aspect as '1:1' | '3:4' | '4:3' | '9:16' | '16:9',
     outputDir: options.output,
     filePrefix,
+    metadata: {
+      title: options.alt || options.prompt,
+      description: fullPrompt,
+      keywords: [options.type, options.style],
+    },
   });
 
   if (!generatedFiles || generatedFiles.length === 0) {

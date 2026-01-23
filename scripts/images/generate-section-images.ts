@@ -312,7 +312,6 @@ IMAGE TYPE: ${rec.imageType}
 COMPOSITION:
 ${rec.visualizationGoal}
 
-KEY DATA TO INCLUDE:
 ${rec.contentExcerpt}`;
 
     try {
@@ -352,6 +351,11 @@ ${'='.repeat(80)}
         outputDir,
         filePrefix: `${fileName}-section-${sectionSlug}${suffix}`,
         referenceImages: [],
+        metadata: {
+          title: rec.caption,
+          description: rec.visualizationGoal,
+          keywords: [rec.imageType, rec.sectionTitle, fileName, 'section-image'],
+        },
       });
 
       if (imageFiles && imageFiles.length > 0) {

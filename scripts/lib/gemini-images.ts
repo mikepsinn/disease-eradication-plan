@@ -27,14 +27,14 @@ const log = {
  * Embeds EXIF, IPTC, and XMP metadata for search engines
  */
 export interface ImageMetadata {
-  /** Image title/headline (IPTC:Headline, XMP:Title) */
-  title?: string
+  /** Image title/headline (IPTC:Headline, XMP:Title) - REQUIRED for SEO */
+  title: string
 
-  /** Image description/caption (EXIF:ImageDescription, IPTC:Caption-Abstract, XMP:Description) */
-  description?: string
+  /** Image description/caption (EXIF:ImageDescription, IPTC:Caption-Abstract, XMP:Description) - REQUIRED for SEO */
+  description: string
 
-  /** Searchable keywords/tags (IPTC:Keywords, XMP:Subject) */
-  keywords?: string[]
+  /** Searchable keywords/tags (IPTC:Keywords, XMP:Subject) - REQUIRED for SEO */
+  keywords: string[]
 
   /** Creator/author name (EXIF:Artist, IPTC:By-line, XMP:Creator) */
   author?: string
@@ -177,7 +177,7 @@ function escapeForShell(str: string): string {
  * @param imagePath - Path to the image file
  * @param metadata - Rich metadata to embed
  */
-export async function addImageMetadata(imagePath: string, metadata: ImageMetadata = {}): Promise<void> {
+export async function addImageMetadata(imagePath: string, metadata: ImageMetadata): Promise<void> {
   const fs = await import('fs/promises')
 
   // Merge with defaults
@@ -252,8 +252,7 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
     await execAsync(command)
     log.info('Rich metadata embedded via exiftool', {
       title: meta.title,
-      keywords: meta.keywords?.length || 0,
-      aiDisclosure: meta.aiGenerated,
+      keywords: meta.keywords.length,
     })
   } catch (error: any) {
     log.error('Failed to add metadata with exiftool', { error: error.message })
@@ -558,7 +557,7 @@ export async function generateImages(
 export async function saveImage(
   image: GeneratedImage,
   filePath: string,
-  metadata?: ImageMetadata,
+  metadata: ImageMetadata,
   options?: { skipWatermark?: boolean }
 ): Promise<void> {
   const fs = await import('fs/promises')
@@ -629,8 +628,8 @@ export async function saveImage(
     filePath,
     size: buffer.length,
     format: sharpMeta.format,
-    title: metadata?.title,
-    keywords: metadata?.keywords?.length || 0,
+    title: metadata.title,
+    keywords: metadata.keywords.length,
   })
 }
 
@@ -662,8 +661,8 @@ export async function generateAndSaveImages(options: {
   filePrefix: string
   format?: 'png' | 'jpg'
   referenceImages?: ReferenceImage[]
-  /** Rich metadata for SEO/discoverability (EXIF, IPTC, XMP) */
-  metadata?: ImageMetadata
+  /** Rich metadata for SEO/discoverability (EXIF, IPTC, XMP) - REQUIRED for all images */
+  metadata: ImageMetadata
   /** Skip adding watermark (e.g., for favicons) */
   skipWatermark?: boolean
 }): Promise<string[]> {
@@ -688,26 +687,11 @@ export async function generateAndSaveImages(options: {
 
   const filePaths: string[] = []
 
-  // Build full metadata for SEO
+  // Merge user-provided metadata with defaults (author, copyright, etc.)
+  // User metadata takes precedence for all fields
   const fullMetadata: ImageMetadata = {
+    ...DEFAULT_METADATA,
     ...metadata,
-  }
-
-  // Auto-generate title from prompt if not provided
-  if (!fullMetadata.title && prompt) {
-    // Extract first sentence or first 100 chars as title
-    const firstSentence = prompt.split(/[.!?]/)[0].trim()
-    fullMetadata.title = firstSentence.substring(0, 100)
-  }
-
-  // Auto-generate description if not provided
-  if (!fullMetadata.description) {
-    fullMetadata.description = prompt.substring(0, 500)
-  }
-
-  // Auto-generate keywords from prompt if not provided
-  if (!fullMetadata.keywords || fullMetadata.keywords.length === 0) {
-    fullMetadata.keywords = extractKeywordsFromText(prompt)
   }
 
   for (let i = 0; i < result.images.length; i++) {
@@ -724,7 +708,7 @@ export async function generateAndSaveImages(options: {
     count: filePaths.length,
     outputDir,
     title: fullMetadata.title,
-    keywords: fullMetadata.keywords?.length || 0,
+    keywords: fullMetadata.keywords.length,
   })
 
   return filePaths

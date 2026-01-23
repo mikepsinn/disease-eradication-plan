@@ -657,12 +657,15 @@ async function generateImageForFile(
   // Build base image metadata from QMD frontmatter
   // Replace Quarto variables in title and description (e.g., {{< var some_variable >}} -> actual value)
   const siteUrl = await getSiteUrl();
+  const resolvedTitle = await replaceVariablesInString(frontmatter.title) || fileName;
+  const resolvedDescription = await replaceVariablesInString(frontmatter.description) || resolvedTitle;
+  const resolvedKeywords = Array.isArray(frontmatter.tags) ? frontmatter.tags :
+                           Array.isArray(frontmatter.keywords) ? frontmatter.keywords :
+                           Array.isArray(frontmatter.categories) ? frontmatter.categories : [fileName];
   const baseMetadata: Omit<ImageMetadata, 'category'> = {
-    title: await replaceVariablesInString(frontmatter.title),
-    description: await replaceVariablesInString(frontmatter.description),
-    keywords: Array.isArray(frontmatter.tags) ? frontmatter.tags :
-              Array.isArray(frontmatter.keywords) ? frontmatter.keywords :
-              Array.isArray(frontmatter.categories) ? frontmatter.categories : undefined,
+    title: resolvedTitle,
+    description: resolvedDescription,
+    keywords: resolvedKeywords,
     sourceUrl: `${siteUrl}/${relativePath.replace(/\\/g, '/').replace('.qmd', '.html')}`,
   };
 

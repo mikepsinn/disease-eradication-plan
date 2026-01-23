@@ -271,6 +271,7 @@ async function generateFavicon(config: QuartoConfig, force: boolean = false): Pr
       metadata: {
         title: `${config.title} - Favicon`,
         description: `Favicon icon for ${config.title}`,
+        keywords: ['favicon', 'icon', config.configName, ...config.keywords.slice(0, 5)],
       },
     });
 
