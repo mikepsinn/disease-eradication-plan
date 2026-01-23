@@ -419,9 +419,6 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value (cumulative over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, conditional on implementation).
 
-![Economic multiplier analysis: Redirecting capital from low-multiplier military spending to high-multiplier health research generates net economic growth even before accounting for health benefits.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-economic-multiplier-flow-bw-academic.png)
-
-
 This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
 
 ##### Uncertainty Analysis: Total Economic Value
