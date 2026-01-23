@@ -107,6 +107,7 @@ from dih_models.reference_parser import (
 )
 from dih_models.search_index_generator import generate_search_indexes
 from dih_models.site_metadata_generator import generate_sites_metadata
+from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
     validate_references,
@@ -1232,6 +1233,15 @@ def main():
         print(f"[WARN] Site metadata generation skipped: {e}")
         print()
 
+    # Generate papers.qmd listing all papers from Quarto configs
+    print("[*] Generating papers.qmd index...")
+    try:
+        papers_qmd_path = generate_papers_qmd(project_root)
+        print()
+    except Exception as e:
+        print(f"[WARN] Papers QMD generation skipped: {e}")
+        print()
+
     print("[OK] All academic outputs generated successfully!")
     print()
     print("[*] Next steps:")
@@ -1242,7 +1252,8 @@ def main():
     print(f"       - {reference_ids_path.relative_to(project_root)}")
     print(f"       - {ts_output.relative_to(project_root)}")
     print(f"       - _analysis/parameter-summary.md")
-    print("       - assets/sites-metadata.json")
+    print("       - assets/json/sites-metadata.json")
+    print("       - knowledge/papers.qmd")
     print("       - OUTLINE-GENERATED.MD")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")

@@ -20,13 +20,13 @@ display_name = "Total Deaths from Historical Progress Delays"
 
 # Baseline and units
 
-baseline = 98399999.99999999
+baseline = 101611666.66666666
 
 # Tornado data from sensitivity analysis
 
-drivers = ['EFFICACY_LAG_YEARS']
-impacts_low = [-24000000.0]
-impacts_high = [24000000.0]
+drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS']
+impacts_low = [-47354999.99999999, 50805833.33333334, -24783333.333333343]
+impacts_high = [62251666.66666666, -33870555.55555555, 24783333.33333333]
 
 # Convert deltas to absolute values (baseline + delta)
 

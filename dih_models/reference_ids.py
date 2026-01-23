@@ -477,6 +477,7 @@ class ReferenceID(str, Enum):
     LCV2024 = "lcv2024"
     LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP = "leading-causes-of-death-by-age-group"
     LEDUC2013 = "leduc2013"
+    LICHTENBERG_LIFE_YEARS_SAVED_2019 = "lichtenberg-life-years-saved-2019"
     LIEBMAN2011 = "liebman2011"
     LIFE_EXPECTANCY_GAINS_MEDICAL_ADVANCES = "life-expectancy-gains-medical-advances"
     LIFE_EXPECTANCY_GAINS_SMOKING_REDUCTION = "life-expectancy-gains-smoking-reduction"

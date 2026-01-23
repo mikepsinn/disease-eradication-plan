@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Treaty ROI - Historical Rate (Existing Drugs)"
+display_name = "Annual Lives Saved by Pharmaceuticals"
 
 # Baseline and units
 
-baseline = 259109.75
+baseline = 12391666.666666666
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'GLOBAL_LIFE_EXPECTANCY_2024', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
-impacts_low = [-120755.25000000003, 124756.54629629629, 129554.875, -63197.50000000006, -51821.95000000001, 45725.24999999994, 28789.972222222248, -30483.50000000003, 22531.282608695677]
-impacts_high = [158741.75, -102073.53787878787, -86369.91666666669, 63197.49999999994, 51821.95000000001, -45725.25, -35739.27586206896, 30483.5, -12338.559523809527]
+drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY']
+impacts_low = [-5774999.999999999, 6195833.333333334]
+impacts_high = [7591666.666666666, -4130555.555555555]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -70,7 +70,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "ratio"
+units_label = "deaths"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-treaty_roi_existing_drugs_only.png')
+output_path = get_figure_output_path('tornado-pharma_lives_saved_annual.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

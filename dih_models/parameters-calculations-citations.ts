@@ -1266,6 +1266,17 @@ export const PHARMA_DRUG_REVENUE_AVERAGE_CURRENT: Parameter = {
   peerReviewed: true,
 };
 
+export const PHARMA_LIFE_YEARS_SAVED_ANNUAL: Parameter = {
+  value: 148700000.0,
+  unit: "life-years",
+  displayName: "Annual Life-Years Saved by Pharmaceuticals",
+  description: "Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).",
+  sourceType: "external",
+  sourceRef: "lichtenberg-life-years-saved-2019",
+  confidence: "medium",
+  confidenceInterval: [79400000.0, 239800000.0],
+};
+
 export const PHARMA_ROI_CURRENT_SYSTEM_PCT: Parameter = {
   value: 0.012,
   unit: "percentage",
@@ -2868,27 +2879,27 @@ export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
 };
 
 export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
-  value: 98399999.99999999,
+  value: 101611666.66666666,
   unit: "deaths",
   displayName: "Total Deaths from Historical Progress Delays",
-  description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.",
+  description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/invisible-graveyard#historical-progress",
-  confidence: "high",
-  formula: "12M × EFFICACY_LAG_YEARS",
-  latex: "\\begin{gathered}\nDeaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000 \\\\\n= 98.4M\n\\end{gathered}",
+  confidence: "medium",
+  formula: "PHARMA_LIVES_SAVED_ANNUAL × EFFICACY_LAG_YEARS",
+  latex: "\\begin{gathered}\nDeaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}",
 };
 
 export const EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS: Parameter = {
-  value: 250919999999999.97,
+  value: 259109750000000.0,
   unit: "USD",
   displayName: "Total Economic Loss from Historical Progress Delays",
   description: "Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/invisible-graveyard#historical-progress",
-  confidence: "high",
+  confidence: "medium",
   formula: "DEATHS_TOTAL × YLL × VSLY",
-  latex: "\\begin{gathered}\nLoss_{lag} \\\\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY} \\\\\n= 98.4M \\times (79 - 62) \\times \\$150K \\\\\n= \\$251T \\\\[0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000 \\\\\n= 98.4M\n\\end{gathered}",
+  latex: "\\begin{gathered}\nLoss_{lag} \\\\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY} \\\\\n= 102M \\times (79 - 62) \\times \\$150K \\\\\n= \\$259T \\\\[0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}",
 };
 
 export const EXPLORATION_RATIO: Parameter = {
@@ -3437,6 +3448,18 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   latex: "\\begin{gathered}\nCost_{mental,pc} \\\\\n= \\frac{Cost_{mental,US}}{Pop_{US}} \\\\\n= \\frac{\\$350B}{335M} \\\\\n= \\$1.04K\n\\end{gathered}",
 };
 
+export const PHARMA_LIVES_SAVED_ANNUAL: Parameter = {
+  value: 12391666.666666666,
+  unit: "deaths",
+  displayName: "Annual Lives Saved by Pharmaceuticals",
+  description: "Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.",
+  sourceType: "calculated",
+  sourceRef: "lichtenberg-life-years-saved-2019",
+  confidence: "low",
+  formula: "PHARMA_LIFE_YEARS_SAVED_ANNUAL ÷ AVG_LIFE_EXTENSION_PER_BENEFICIARY",
+  latex: "\\begin{gathered}\nLives_{saved,annual} \\\\\n= \\frac{LY_{saved,annual}}{T_{ext}} \\\\\n= \\frac{149M}{12} \\\\\n= 12.4M\n\\end{gathered}",
+};
+
 export const POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT: Parameter = {
   value: 0.2,
   unit: "percent",
@@ -3763,7 +3786,7 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
 };
 
 export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
-  value: 250919.99999999997,
+  value: 259109.75,
   unit: "ratio",
   displayName: "Treaty ROI - Historical Rate (Existing Drugs)",
   description: "Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost. Excludes future innovation effects.",
@@ -3771,7 +3794,7 @@ export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "high",
   formula: "HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
-  latex: "\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}} = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} \\\\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY} \\\\\n= 98.4M \\times (79 - 62) \\times \\$150K \\\\\n= \\$251T \\\\[0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000 \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}",
+  latex: "\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}} = \\frac{\\$259T}{\\$1B} = 259{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} \\\\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY} \\\\\n= 102M \\times (79 - 62) \\times \\$150K \\\\\n= \\$259T \\\\[0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}",
 };
 
 export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
@@ -3961,6 +3984,17 @@ export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
   confidence: "high",
   confidenceInterval: [1500.0, 2000.0],
+};
+
+export const AVG_LIFE_EXTENSION_PER_BENEFICIARY: Parameter = {
+  value: 12.0,
+  unit: "years",
+  displayName: "Average Life Extension per Beneficiary",
+  description: "Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.",
+  sourceType: "definition",
+  sourceRef: "lichtenberg-life-years-saved-2019",
+  confidence: "low",
+  confidenceInterval: [8.0, 18.0],
 };
 
 export const BAD_POLICY_US_OVERLAP_DISCOUNT: Parameter = {
@@ -5058,6 +5092,7 @@ export const parameters = {
   PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
   PHARMA_DRUG_DEVELOPMENT_COST_CURRENT,
   PHARMA_DRUG_REVENUE_AVERAGE_CURRENT,
+  PHARMA_LIFE_YEARS_SAVED_ANNUAL,
   PHARMA_ROI_CURRENT_SYSTEM_PCT,
   PHARMA_SUCCESS_RATE_CURRENT_PCT,
   PHASE_1_PASSED_COMPOUNDS_GLOBAL,
@@ -5249,6 +5284,7 @@ export const parameters = {
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
+  PHARMA_LIVES_SAVED_ANNUAL,
   POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
   PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER,
@@ -5294,6 +5330,7 @@ export const parameters = {
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
+  AVG_LIFE_EXTENSION_PER_BENEFICIARY,
   BAD_POLICY_US_OVERLAP_DISCOUNT,
   CAMPAIGN_CELEBRITY_ENDORSEMENT,
   CAMPAIGN_COMMUNITY_ORGANIZING,
@@ -6332,6 +6369,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Journal of Political Economy",
         URL: "https://www.nobelprize.org/uploads/2018/06/advanced-economicsciences2004.pdf",
   },
+  "lichtenberg-life-years-saved-2019": {
+        id: "lichtenberg-life-years-saved-2019",
+        type: "article-journal",
+        title: "How Many Life-Years Have New Drugs Saved? A Three-Way Fixed-Effects Analysis of 66 Diseases in 27 Countries, 2000-2013",
+        author: [
+          {
+            family: "Lichtenberg",
+            given: "Frank R."
+          },
+        ],
+        issued: { 'date-parts': [[2019]] },
+        'container-title': "International Health",
+        URL: "https://www.nber.org/papers/w25483",
+  },
   "life-expectancy-gains-smoking-reduction": {
         id: "life-expectancy-gains-smoking-reduction",
         type: "article-journal",
@@ -7296,11 +7347,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 445,
-  external: 182,
-  calculated: 162,
-  definitions: 101,
-  citations: 140,
+  total: 448,
+  external: 183,
+  calculated: 163,
+  definitions: 102,
+  citations: 141,
 } as const;
 
 // ============================================================================

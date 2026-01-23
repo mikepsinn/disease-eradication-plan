@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 445 parameters used in the analysis, organized by type:
+This appendix documents all 448 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 182
-- Calculated values: 162
-- Core definitions: 101
+- External sources (peer-reviewed): 183
+- Calculated values: 163
+- Core definitions: 102
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (162 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (101 parameters)
+[Calculated Values](#sec-calculated) (163 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4233,28 +4233,30 @@ $$
 
 :::
 
-### Total Deaths from Historical Progress Delays: 98.4M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+### Total Deaths from Historical Progress Delays: 102M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years. Excludes innovation acceleration effects.
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
 
 **Inputs**:
 
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4M deaths
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
 Deaths_{lag,total} \\
-= T_{lag} \times 12000000 \\
-= 8.2 \times 12000000 \\
-= 98.4M
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M \\[0.5em]
+\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
 \end{gathered}
 $$
 
 **Methodology**: [../appendix/invisible-graveyard#historical-progress](../appendix/invisible-graveyard#historical-progress)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
@@ -4272,7 +4274,7 @@ $$
 
 :::
 
-### Total Economic Loss from Historical Progress Delays: $251T {#sec-existing_drugs_efficacy_lag_economic_loss}
+### Total Economic Loss from Historical Progress Delays: $259T {#sec-existing_drugs_efficacy_lag_economic_loss}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4281,7 +4283,7 @@ Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One
 **Inputs**:
 
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 98.4M deaths
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102M deaths
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
@@ -4289,18 +4291,19 @@ $$
 \begin{gathered}
 Loss_{lag} \\
 = Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 98.4M \times (79 - 62) \times \$150K \\
-= \$251T \\[0.5em]
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T \\[0.5em]
 \text{where } Deaths_{lag,total} \\
-= T_{lag} \times 12000000 \\
-= 8.2 \times 12000000 \\
-= 98.4M
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M \\[0.5em]
+\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
 \end{gathered}
 $$
 
 **Methodology**: [../appendix/invisible-graveyard#historical-progress](../appendix/invisible-graveyard#historical-progress)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 #### Sensitivity Analysis
 
@@ -6553,6 +6556,46 @@ $$
 
 :::
 
+### Annual Lives Saved by Pharmaceuticals: 12.4M deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149M life-years (95% CI: 79.4M life-years - 240M life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
+
+:::
+
 ### Political Dysfunction Tax (Total): 20% {#sec-political_dysfunction_tax_total_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8086,7 +8129,7 @@ $$
 
 :::
 
-### Treaty ROI - Historical Rate (Existing Drugs): 251k:1 {#sec-treaty_roi_existing_drugs_only}
+### Treaty ROI - Historical Rate (Existing Drugs): 259k:1 {#sec-treaty_roi_existing_drugs_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8094,20 +8137,21 @@ Treaty ROI based on historical rate of drug development (existing drugs only). T
 
 **Inputs**:
 
-- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $251T
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
 \begin{gathered}
-ROI_{drugs} = \frac{Loss_{lag}}{Cost_{campaign}} = \frac{\$251T}{\$1B} = 251{,}000 \\[0.5em]
+ROI_{drugs} = \frac{Loss_{lag}}{Cost_{campaign}} = \frac{\$259T}{\$1B} = 259{,}000 \\[0.5em]
 \text{where } Loss_{lag} \\
 = Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 98.4M \times (79 - 62) \times \$150K \\
-= \$251T \\[0.5em]
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T \\[0.5em]
 \text{where } Deaths_{lag,total} \\
-= T_{lag} \times 12000000 \\
-= 8.2 \times 12000000 \\
-= 98.4M \\[0.5em]
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M \\[0.5em]
+\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M \\[0.5em]
 \text{where } Cost_{campaign} \\
 = Budget_{viral,base} + Budget_{lobby,treaty} \\
 + Budget_{reserve} \\
@@ -11241,6 +11285,30 @@ Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 199
 
 :::
 
+### Annual Life-Years Saved by Pharmaceuticals: 149M life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4M life-years, 240M life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4M life-years and 240M life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Pharma ROI (Current System): 1.2% {#sec-pharma_roi_current_system_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12598,6 +12666,28 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 #### Input Distribution
 
 {{< include ../figures/distribution-approved_drug_disease_pairings.qmd >}}
+
+*Core definition*
+
+:::
+
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
 
 *Core definition*
 

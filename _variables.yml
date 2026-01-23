@@ -69,6 +69,15 @@
   external\" data-confidence=\"high\" title=\"Average US hourly wage | ✓ High confidence\
   \ | Unit: USD/hour | Click to view details, calculation & sources\">$30</a>"
 "average_us_hourly_wage_cite": "@average-us-hourly-wage"
+"avg_life_extension_per_beneficiary": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-avg_life_extension_per_beneficiary\"\
+  \ class=\"parameter-link\" data-source-ref=\"lichtenberg-life-years-saved-2019\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Average years\
+  \ of life extension per person saved by pharmaceutical interventions. Assumption\
+  \ used to convert life-years saved to approximate lives saved. Based on Lichtenberg's\
+  \ methodology where life-years are calculated from Years of Life Lost (YLL) reductions.\
+  \ | ? Low confidence | 95% CI: [8 years, 18 years] | Dist: Triangular | Unit: years\
+  \ | Click to view details, calculation & sources\">12 years (95% CI: 8 years-18\
+  \ years)</a>"
 "bad_policy_cost_total_us": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_total_us\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/optimocracy-paper.qmd#bad-policy-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total annual US\
@@ -2083,28 +2092,32 @@
   >92.6% (95% CI: 50%-98%)</span>"
 "existing_drugs_efficacy_lag_deaths_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-existing_drugs_efficacy_lag_deaths_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#historical-progress\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total deaths\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total deaths\
   \ from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating\
-  \ Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year\
-  \ rate × 8.2 years. Excludes innovation acceleration effects. | Calculated from\
-  \ 1 input | ✓ High confidence | Formula: 12M × EFFICACY_LAG_YEARS | Unit: deaths\
-  \ | Click to view details, calculation & sources\">98.4M deaths (95% CI: 58.2M deaths-138M\
+  \ Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg\
+  \ (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes\
+  \ innovation acceleration effects. | Calculated from 2 inputs | ~ Medium confidence\
+  \ | Formula: PHARMA_LIVES_SAVED_ANNUAL × EFFICACY_LAG_YEARS | Unit: deaths | Click\
+  \ to view details, calculation & sources\">102M deaths (95% CI: 36.9M deaths-214M\
   \ deaths)</a>"
 "existing_drugs_efficacy_lag_deaths_total_latex": "$$\n\\begin{gathered}\nDeaths_{lag,total}\
-  \ \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\times 12000000 \\\\\n= 98.4M\n\\\
-  end{gathered}\n$$"
+  \ \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n\
+  = 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}}\
+  \ = \\frac{149M}{12} = 12.4M\n\\end{gathered}\n$$"
 "existing_drugs_efficacy_lag_economic_loss": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-existing_drugs_efficacy_lag_economic_loss\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#historical-progress\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total economic\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
   \ loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit\
   \ of eliminating Phase 2-4 delay. Excludes innovation acceleration effects. | Calculated\
-  \ from 4 inputs | ✓ High confidence | Formula: DEATHS_TOTAL × YLL × VSLY | Unit:\
-  \ USD | Click to view details, calculation & sources\">$251T (95% CI: $109T-$422T)</a>"
+  \ from 4 inputs | ~ Medium confidence | Formula: DEATHS_TOTAL × YLL × VSLY | Unit:\
+  \ USD | Click to view details, calculation & sources\">$259T (95% CI: $68.9T-$655T)</a>"
 "existing_drugs_efficacy_lag_economic_loss_latex": "$$\n\\begin{gathered}\nLoss_{lag}\
   \ \\\\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY}\
-  \ \\\\\n= 98.4M \\times (79 - 62) \\times \\$150K \\\\\n= \\$251T \\\\[0.5em]\n\\\
-  text{where } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\\
-  times 12000000 \\\\\n= 98.4M\n\\end{gathered}\n$$"
+  \ \\\\\n= 102M \\times (79 - 62) \\times \\$150K \\\\\n= \\$259T \\\\[0.5em]\n\\\
+  text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\
+  \n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual}\
+  \ = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}\n\
+  $$"
 "exploration_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-exploration_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
@@ -3250,6 +3263,30 @@
   \ follow-up 13.2 years) | ✓ High confidence | \U0001F4CA Peer-reviewed | Unit: USD\
   \ | Click to view details, calculation & sources\">$6.70B</a>"
 "pharma_drug_revenue_average_current_cite": "@pharma-drug-revenue-average"
+"pharma_life_years_saved_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_life_years_saved_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"lichtenberg-life-years-saved-2019\"\
+  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Annual life-years\
+  \ saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483)\
+  \ found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22\
+  \ countries using 3-way fixed-effects regression (disease-country-year). 95% CI\
+  \ [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008,\
+  \ β₁₂₊=-0.057±0.013). | ~ Medium confidence | 95% CI: [79.4M life-years, 240M life-years]\
+  \ | Dist: Lognormal | Unit: life-years | Click to view details, calculation & sources\"\
+  >149M life-years (95% CI: 79.4M life-years-240M life-years)</a>"
+"pharma_life_years_saved_annual_cite": "@lichtenberg-life-years-saved-2019"
+"pharma_lives_saved_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_lives_saved_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"lichtenberg-life-years-saved-2019\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Annual lives saved\
+  \ by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding\
+  \ of 148.7M life-years saved, divided by assumed 12-year average life extension\
+  \ per beneficiary. Note: Life-years is the primary metric; lives is an approximation\
+  \ for intuitive communication. | Calculated from 2 inputs | ? Low confidence | Formula:\
+  \ PHARMA_LIFE_YEARS_SAVED_ANNUAL ÷ AVG_LIFE_EXTENSION_PER_BENEFICIARY | Unit: deaths\
+  \ | Click to view details, calculation & sources\">12.4M deaths (95% CI: 7.60M deaths-18.6M\
+  \ deaths)</a>"
+"pharma_lives_saved_annual_latex": "$$\n\\begin{gathered}\nLives_{saved,annual} \\\
+  \\\n= \\frac{LY_{saved,annual}}{T_{ext}} \\\\\n= \\frac{149M}{12} \\\\\n= 12.4M\n\
+  \\end{gathered}\n$$"
 "pharma_phase_2_3_cost_barrier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-pharma_phase_2_3_cost_barrier\"\
   \ class=\"parameter-link\" data-source-ref=\"drug-development-cost\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Average Phase 2/3 efficacy testing\
@@ -4183,15 +4220,17 @@
   \ from avoiding regulatory delay for drugs already in development divided by $1B\
   \ campaign cost. Excludes future innovation effects. | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST | Unit:\
-  \ ratio | Click to view details, calculation & sources\">251k:1 (95% CI: 177k:1-280k:1)</a>"
+  \ ratio | Click to view details, calculation & sources\">259k:1 (95% CI: 110k:1-419k:1)</a>"
 "treaty_roi_existing_drugs_only_latex": "$$\n\\begin{gathered}\nROI_{drugs} = \\frac{Loss_{lag}}{Cost_{campaign}}\
-  \ = \\frac{\\$251T}{\\$1B} = 251{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} \\\
+  \ = \\frac{\\$259T}{\\$1B} = 259{,}000 \\\\[0.5em]\n\\text{where } Loss_{lag} \\\
   \\\n= Deaths_{lag,total} \\times (LE_{global} - Age_{death,delay}) \\times Value_{QALY}\
-  \ \\\\\n= 98.4M \\times (79 - 62) \\times \\$150K \\\\\n= \\$251T \\\\[0.5em]\n\\\
-  text{where } Deaths_{lag,total} \\\\\n= T_{lag} \\times 12000000 \\\\\n= 8.2 \\\
-  times 12000000 \\\\\n= 98.4M \\\\[0.5em]\n\\text{where } Cost_{campaign} \\\\\n\
-  = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\\
-  $250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
+  \ \\\\\n= 102M \\times (79 - 62) \\times \\$150K \\\\\n= \\$259T \\\\[0.5em]\n\\\
+  text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\
+  \n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual}\
+  \ = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M \\\\[0.5em]\n\\\
+  text{where } Cost_{campaign} \\\\\n= Budget_{viral,base} + Budget_{lobby,treaty}\
+  \ \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\\
+  end{gathered}\n$$"
 "treaty_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_roi_trial_capacity_plus_efficacy_lag\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Treaty ROI\
@@ -4765,6 +4804,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "445"
-"total_latex_equation_count": "162"
-"total_citation_count": "182"
+"total_parameter_count": "448"
+"total_latex_equation_count": "163"
+"total_citation_count": "183"

@@ -38,6 +38,10 @@ Using data from the Tufts Center for the Study of Drug Development (CSDD) and th
 
 2. **Future timeline shift:** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
 
+**Historical Deaths Calculation:**
+
+{{< var existing_drugs_efficacy_lag_deaths_total_latex >}}
+
 Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
@@ -182,14 +186,20 @@ These represent the hard physical limits of medicine. Everything else, including
    - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}}.**
    - *Source:* [BIO.org Clinical Development Report](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf)
 
-2. **Mortality Aversion Rates ($M_{saved}$):** Aggregated from *WHO Global Health Estimates* and *The Lancet*.
-   - **Vaccines:** 4.5M lives/year (WHO estimates 154M lives saved over 50 years).
-     - *Source:* [WHO Immunization Analysis 2024](https://www.who.int/news/item/24-04-2024-global-immunization-efforts-have-saved-at-least-154-million-lives-over-the-past-50-years)
-   - **Cardiovascular:** 3.3M lives/year (Resolve to Save Lives / GBD Data).
-     - *Source:* [CDC / Resolve to Save Lives Impact Report](https://resolvetosavelives.org/cardiovascular-health)
-   - **Oncology/Immunotherapy:** 1.5M lives/year (Extrapolated from NBER longevity data).
-     - *Source:* [NBER Working Paper 9754 (Lichtenberg)](https://www.nber.org/papers/w9754)
-   - **Baseline Annual Lives Saved:** ~{{< var baseline_lives_saved_annual >}} (Conservative Aggregate).
+2. **Pharmaceutical Impact (Life-Years Saved):** Primary source: Lichtenberg (2019) [@lichtenberg-life-years-saved-2019].
+   - **Primary metric:** {{< var pharma_life_years_saved_annual >}} saved annually by post-1981 drugs (22 countries, 66 diseases)
+   - **Methodology:** 3-way fixed-effects regression (disease-country-year) controlling for confounders
+   - **Derived lives saved:** {{< var pharma_lives_saved_annual >}} (assuming {{< var avg_life_extension_per_beneficiary >}} average life extension per beneficiary)
+
+   ::: {.callout-note}
+   ## Life-Years vs. Lives
+   Lichtenberg measured **life-years saved**, not lives. Converting to "lives" requires assuming average life extension per beneficiary ({{< var avg_life_extension_per_beneficiary >}}). Life-years is the more rigorous metric; lives is used for intuitive communication. The uncertainty in the conversion is reflected in the confidence intervals.
+   :::
+
+   **Supporting evidence (approximate, for context):**
+   - **Vaccines:** ~4.5M lives/year (WHO estimates 154M lives saved over 50 years) [@vaccine-roi-44-to-1]
+   - **Cardiovascular:** ~3.3M lives/year (Resolve to Save Lives / GBD Data)
+   - **Oncology:** ~1.5M lives/year (NBER longevity studies)
 
 3. **Economic Valuation:** *Standard QALY Valuation*.
    - **VSLY (Value of a Statistical Life Year):** Standardized at **{{< var standard_economic_qaly_value_usd >}}** (consistent with project-wide QALY valuations).
@@ -236,6 +246,8 @@ The assumption is not empirically validated at the aggregate level, though indiv
 | **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}}. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). |
 
 **Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
+
+{{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
 
 #### Sensitivity Analysis
 
@@ -307,6 +319,10 @@ Specifically, we assume a **Thalidomide-scale catastrophe every single year** in
 - **The Cost of Protection (Type II):** {{< var dfda_efficacy_lag_elimination_dalys >}} lost.
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (a deliberate extreme overestimate to steelman the FDA's position), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}.
   - *Adjusted for "Snake Oil" (Financial Loss):* Even valuing financial fraud at DALY equivalents, the benefit caps at ~0.6 Billion DALYs.
+
+**Type I Benefit Calculation (Steelman):**
+
+{{< var type_i_error_benefit_dalys_latex >}}
 
 ### The Risk Trade-off Ratio
 
