@@ -380,59 +380,15 @@ format:
     css:
       - styles.css
       - book-overrides.css
-    # Footer with copyright and license information
-    page-footer:
-      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
-      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
-      right: "[WarOnDisease.org](https://WarOnDisease.org)"
     include-in-footer:
+      - file: assets/html/generated-footer.html
       - text: |
-          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
-            <p style="margin: 0.5rem 0;">
-              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> | 
-              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> | 
-              <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/1-pct-treaty-impact.qmd" style="color: #8b7355;">Economics</a> |
-              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
-              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
-              <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-              <strong>Download:</strong> 
-              <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">📕 PDF</a> |
-              <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">📱 EPUB</a>
-            </p>
-          </div>
+          <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
+            <strong>Download:</strong>
+            <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">PDF</a> |
+            <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">EPUB</a>
+          </p>
     include-after-body:
-      - text: |
-          <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid #d4c5b9; margin-top: 4rem; color: #8b7355; font-size: 0.9rem; background-color: #fdfdf8;">
-            <p style="margin: 0.5rem 0;">
-              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> | 
-              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> | 
-              <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/1-pct-treaty-impact.qmd" style="color: #8b7355;">Economics</a> |
-              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
-              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
-              <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
-            </p>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-              <strong>Download:</strong> 
-              <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">📕 PDF</a> |
-              <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">📱 EPUB</a>
-            </p>
-          </footer>
       - file: assets/html/site-enhancements-loader.html
     include-in-header:
       - text: |

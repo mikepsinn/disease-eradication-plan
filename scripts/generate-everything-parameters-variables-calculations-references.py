@@ -109,6 +109,7 @@ from dih_models.search_index_generator import generate_search_indexes
 from dih_models.site_metadata_generator import generate_sites_metadata
 from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
 from dih_models.papers_qmd_generator import generate_papers_qmd
+from dih_models.footer_generator import generate_footer_html
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
     validate_references,
@@ -1220,6 +1221,11 @@ def main():
     papers_qmd_path = generate_papers_qmd(project_root)
     print()
 
+    # Generate shared footer HTML with links to all papers
+    print("[*] Generating footer HTML...")
+    footer_html_path = generate_footer_html(project_root)
+    print()
+
     print("[OK] All academic outputs generated successfully!")
     print()
     print("[*] Next steps:")
@@ -1232,6 +1238,7 @@ def main():
     print(f"       - _analysis/parameter-summary.md")
     print("       - assets/json/sites-metadata.json")
     print("       - knowledge/papers.qmd")
+    print("       - assets/html/generated-footer.html")
     print("       - llms.txt (AI crawler content)")
     print("       - robots.txt (crawler permissions)")
     print("       - OUTLINE-GENERATED.MD")
