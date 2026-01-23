@@ -146,14 +146,7 @@ async function generateImage(options: GenerateImageOptions): Promise<void> {
 
   const fullPrompt = `${imageTypeConfig.promptPrefix} ${options.prompt}
 
-Style: ${visualStyle.style}
-
-Requirements:
-- Clear, professional academic visualization
-- High contrast for readability
-- Suitable for research publication
-- No unnecessary decoration
-- Focus on clarity and information density`;
+Style: ${visualStyle.style}`;
 
   // Generate filename
   const filename = generateFilename(options.prompt);

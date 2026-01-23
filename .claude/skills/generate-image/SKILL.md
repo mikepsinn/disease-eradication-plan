@@ -68,22 +68,33 @@ Use AskUserQuestion. Order options by inferred likelihood, putting recommended c
 
 **Extract comprehensive context from the QMD file** (with variables resolved). Include enough surrounding text for the image generator to understand the full concept.
 
-**Do NOT prescribe specific layouts** (e.g., "left bar should be X, right bar should be Y"). Provide the content and let the generator be creative.
-
-**Minimum context to include:**
-1. **Title/topic** of the section or chapter
-2. **The specific data/comparison** being illustrated (with actual numbers)
-3. **The key insight or takeaway** (why this matters)
-4. **Surrounding context** that helps explain the significance
-
 **Run preview script with broad line range** (e.g., 30-50 lines) to capture full context:
 ```bash
 .venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --line-range "X-Y"
 ```
 
+### Prompt Writing Rules
+
+**CRITICAL: Gemini renders most text literally.** Avoid meta-labels and editorial commentary.
+
+| DON'T (appears in image) | DO (clean prompt) |
+|--------------------------|-------------------|
+| `Title: Cost Comparison` | `A cost comparison chart showing...` |
+| `Context: The 1% Treaty...` | `The 1% Treaty redirects...` |
+| `Key insight: Lower is better` | `Lower cost per DALY = better` |
+| `Data to visualize:` | Just state the data directly |
+
+**Write prompts as plain descriptive prose:**
+- Describe what you want to see, not metadata about it
+- State facts and numbers directly without labeling them
+- Avoid bullet points, numbered lists, or structured formatting in prompts
+- Don't editorialize ("Key insight", "Important", "Note that")
+
+**Do NOT prescribe specific layouts** (e.g., "left bar should be X, right bar should be Y"). Provide the content and let the generator be creative.
+
 For charts:
 - Append "Linear scale." to the prompt
-- **Include error bars** if confidence intervals are available (e.g., "Show error bars for 95% confidence intervals: X ranges from Y to Z")
+- Include error bars if confidence intervals are available (e.g., "Show error bars: X ranges from Y to Z")
 
 ### Confirmation (MANDATORY)
 

@@ -112,7 +112,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 | **Therapeutic Space Explored** | {{< var dfda_queue_clearance_years >}} | Time to test first treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}}, effectively never) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}) exceed costs |
 
-
+![Cost-effectiveness comparison showing 1% Treaty at $0.0018/DALY vs bed nets at $89/DALY - the treaty is 50,300 times more cost-effective](/assets/images/1-pct-treaty-impact/cost-effectiveness-comparison-of-global-health-interventions-chart.png)
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
 
@@ -2664,30 +2664,5 @@ Treaty adoption depends on:
 
 Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials delivers {{< var dfda_roi_rd_only >}} to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI using standard health economics methodology (NPV, QALYs, ICER). The intervention qualifies as cost-saving and requires no new taxes, only reallocation of existing budgets to higher-ROI activities.
 
-See [complete analysis](https://impact.dfda.earth) and [detailed comparisons](../appendix/intervention-comparison-table.qmd).
-
-## Notes
-
-For complete bibliography, data sources, and citations, see:
-
-- **[References](../references.qmd)** - Comprehensive bibliography of all cited sources
-- **[Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd)** - Complete documentation of all 422 parameters with LaTeX equations, confidence indicators, and source attribution
-- **[Data Sources](../appendix/parameters-and-calculations.qmd#sec-external)** - 130 external parameters from peer-reviewed sources
-
-## Supplementary Materials
-
-Detailed appendices and supporting documentation are available online at [manual.warondisease.org](https://manual.warondisease.org), including:
-
-- **Related Working Papers**: Incentive Alignment Bonds mechanism design paper, Wishocracy governance mechanism design paper
-- **Cost-Benefit Analysis**: Complete DFDA cost-benefit framework with NPV methodology and ICER analysis
-- **Data Sources**: Global government medical research spending, clinical trial spending by phase, trial participation data
-- **Historical Evidence**: Real-world evidence from 1883-1962 period, Oxford RECOVERY trial benchmarks
-- **Economic Calculations**: Peace dividend methodology, drug development cost analysis, economic value of accelerated treatments
-- **Feasibility Analysis**: Treaty campaign cost analysis, fundraising strategy, investor risk analysis
-- **Personal Impact**: Disease eradication personal lifetime wealth calculations
-- **Context**: NIH budget allocation analysis, unexplored therapeutic space, regulatory challenges
-- **Solution Architecture**: Decentralized Institutes of Health, treaty framework
-
-**Citation:** For citing supplementary materials, use: Sinn, M. P. et al. (2025). *How to End War and Disease: Supplementary Materials*. Retrieved from https://manual.warondisease.org
 
 
