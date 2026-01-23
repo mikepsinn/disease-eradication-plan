@@ -268,7 +268,7 @@ where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes
 
 ### Temporal Alignment
 
-#### 3.2.1 Onset Delay and Duration of Action
+#### Onset Delay and Duration of Action
 
 Treatments do not produce immediate effects. We define:
 
@@ -279,7 +279,7 @@ Constraints:
 $$0 \leq \delta \leq 8{,}640{,}000 \text{ seconds (100 days)}$$
 $$600 \leq \tau \leq 7{,}776{,}000 \text{ seconds (90 days)}$$
 
-#### 3.2.2 Outcome Window Calculation
+#### Outcome Window Calculation
 
 For a predictor measurement at time $t$, we associate it with outcome measurements in the window:
 
@@ -293,7 +293,7 @@ $$\bar{o}(t) = \frac{1}{|W(t)|} \sum_{t_j \in W(t)} o_j$$
 
 We employ two complementary strategies depending on variable characteristics:
 
-#### 3.3.1 Outcome-Based Pairing (Predictor has Filling Value)
+#### Outcome-Based Pairing (Predictor has Filling Value)
 
 When the predictor has a filling value (e.g., zero for "not taken"), we create one pair per outcome measurement:
 
@@ -312,7 +312,7 @@ For each outcome measurement (t_o, o):
     create_pair(predictor_value, o)
 ```
 
-#### 3.3.2 Predictor-Based Pairing (No Filling Value)
+#### Predictor-Based Pairing (No Filling Value)
 
 When the predictor has no filling value, we create one pair per predictor measurement:
 
@@ -332,7 +332,7 @@ For each predictor measurement (t_p, p):
 
 ### Filling Value Logic
 
-#### 3.4.1 Filling Types
+#### Filling Types
 
 | Type | Description | Use Case |
 |------|-------------|----------|
@@ -341,7 +341,7 @@ For each predictor measurement (t_p, p):
 | **None** | No imputation | Continuous outcomes |
 | **Interpolation** | Linear interpolation | Slowly-changing variables |
 
-#### 3.4.2 Temporal Boundaries
+#### Temporal Boundaries
 
 To prevent spurious correlations from extended filling periods:
 
@@ -350,7 +350,7 @@ To prevent spurious correlations from extended filling periods:
 
 Pairs outside these boundaries are excluded. This prevents filling zeros for a treatment before the participant started tracking it.
 
-#### 3.4.3 Conservative Bias
+#### Conservative Bias
 
 Our filling strategy is deliberately conservative:
 
@@ -360,7 +360,7 @@ Our filling strategy is deliberately conservative:
 
 ### Baseline Definition and Outcome Estimation
 
-#### 3.5.1 Within-Subject Comparison
+#### Within-Subject Comparison
 
 For each participant $i$, we compute the mean predictor value:
 
@@ -376,7 +376,7 @@ This creates a natural within-subject comparison:
 - **Baseline**: Periods of below-average predictor exposure
 - **Follow-up**: Periods of above-average predictor exposure
 
-#### 3.5.2 Outcome Means
+#### Outcome Means
 
 $$\mu_{\text{baseline},i} = \mathbb{E}[o \mid p < \bar{p}_i]$$
 $$\mu_{\text{follow-up},i} = \mathbb{E}[o \mid p \geq \bar{p}_i]$$
@@ -398,17 +398,17 @@ $$\Delta_i = \frac{\mu_{\text{follow-up},i} - \mu_{\text{baseline},i}}{\mu_{\tex
 
 We compute both parametric and non-parametric measures:
 
-#### 3.7.1 Pearson Correlation (Linear Relationships)
+#### Pearson Correlation (Linear Relationships)
 
 $$r_{\text{Pearson}} = \frac{\sum_{j=1}^{n}(p_j - \bar{p})(o_j - \bar{o})}{\sqrt{\sum_{j=1}^{n}(p_j - \bar{p})^2} \cdot \sqrt{\sum_{j=1}^{n}(o_j - \bar{o})^2}}$$
 
-#### 3.7.2 Spearman Rank Correlation (Monotonic Relationships)
+#### Spearman Rank Correlation (Monotonic Relationships)
 
 $$r_{\text{Spearman}} = 1 - \frac{6 \sum_{j=1}^{n} d_j^2}{n(n^2 - 1)}$$
 
 where $d_j = \text{rank}(p_j) - \text{rank}(o_j)$.
 
-#### 3.7.3 Forward and Reverse Correlations
+#### Forward and Reverse Correlations
 
 We compute both:
 
@@ -700,7 +700,7 @@ PIS scores range from 0 to approximately 1 (though values slightly above 1 are p
 
 A key output of our analysis is the **optimal daily value**, the predictor value that historically precedes the best outcomes. This enables personalized, precision dosing recommendations.
 
-#### 6.11.1 Value Predicting High Outcome
+#### Value Predicting High Outcome
 
 The **Value Predicting High Outcome** ($V_{\text{high}}$) is the average predictor value observed when the outcome exceeds its mean:
 
@@ -717,7 +717,7 @@ Where:
 2. Filter pairs to include only those where outcome > $\bar{O}$ (the "high effect" pairs)
 3. Calculate the mean predictor value across these high-effect pairs
 
-#### 6.11.2 Value Predicting Low Outcome
+#### Value Predicting Low Outcome
 
 The **Value Predicting Low Outcome** ($V_{\text{low}}$) is the average predictor value observed when the outcome is below its mean:
 
@@ -727,7 +727,7 @@ Where:
 
 - $L = \{(p, o) : o < \bar{O}\}$ is the set of predictor-outcome pairs where outcome is below its average
 
-#### 6.11.3 Grouped Optimal Values
+#### Grouped Optimal Values
 
 For interpretability, we also calculate **grouped optimal values** that map to common dosing intervals:
 
@@ -736,7 +736,7 @@ For interpretability, we also calculate **grouped optimal values** that map to c
 
 This allows recommendations like "400mg of Magnesium" rather than "412.7mg of Magnesium."
 
-#### 6.11.4 Precision Dosing Recommendations
+#### Precision Dosing Recommendations
 
 These optimal values enable personalized recommendations:
 
@@ -750,7 +750,7 @@ These optimal values enable personalized recommendations:
 >
 > Example: "Your Anxiety Severity was lowest after 100mg of Sertraline over the previous 24 hours."
 
-#### 6.11.5 Mathematical Relationship to Biological Gradient
+#### Mathematical Relationship to Biological Gradient
 
 The optimal values are closely related to the **biological gradient coefficient** ($\phi_{\text{gradient}}$):
 
@@ -762,7 +762,7 @@ A larger separation between $V_{\text{high}}$ and $V_{\text{low}}$ indicates:
 - More reliable precision dosing recommendations
 - Higher biological gradient coefficient
 
-#### 6.11.6 Clinical Applications
+#### Clinical Applications
 
 | Metric | Definition | Clinical Use |
 |--------|------------|--------------|
@@ -777,7 +777,7 @@ For a participant tracking Magnesium supplementation and Sleep Quality:
 - $V_{\text{low}}$ = 127mg → Grouped = 125mg (sleep quality lowest after this dose)
 - Recommendation: "Take approximately 400mg of Magnesium for optimal sleep quality"
 
-#### 6.11.7 Limitations
+#### Limitations
 
 1. **Correlation ≠ Causation**: Optimal values reflect associations, not guaranteed causal effects
 2. **Individual Variation**: Population optimal values may not be optimal for all individuals
@@ -786,7 +786,7 @@ For a participant tracking Magnesium supplementation and Sleep Quality:
 
 **Best Practice**: Use optimal values as starting points for personal experimentation, not as definitive prescriptions.
 
-#### 6.11.8 Confidence Intervals for Optimal Values
+#### Confidence Intervals for Optimal Values
 
 Optimal values should be reported with uncertainty bounds to convey reliability:
 
@@ -809,7 +809,7 @@ Where:
 
 **Example**: If $V_{\text{high}} = 400\text{mg}$ with 95% CI [380, 420], report: "Optimal dose: 400mg (95% CI: 380-420mg)"
 
-#### 6.11.9 Individual vs Population Optimal Values
+#### Individual vs Population Optimal Values
 
 Both individual and population optimal values are computed and stored. Guidelines for use:
 
@@ -826,7 +826,7 @@ $$V_{\text{recommended}} = w \cdot V_{\text{user}} + (1-w) \cdot V_{\text{pop}}$
 
 Where $w = \min(1, n_{\text{user}} / n_{\text{threshold}})$ with $n_{\text{threshold}} = 50$ pairs.
 
-#### 6.11.10 Temporal Stability and Recalculation
+#### Temporal Stability and Recalculation
 
 Optimal values may drift over time due to:
 
@@ -851,7 +851,7 @@ $$\text{Stability} = 1 - \frac{|V_{\text{high}}^{\text{current}} - V_{\text{high
 
 Stability < 0.8 (>20% change) triggers a notification to the user.
 
-#### 6.11.11 Edge Cases: Minimal Dose-Response
+#### Edge Cases: Minimal Dose-Response
 
 When $V_{\text{high}} \approx V_{\text{low}}$, the predictor shows no clear dose-response relationship:
 
@@ -872,7 +872,7 @@ $$\frac{|V_{\text{high}} - V_{\text{low}}|}{\sigma_P} < 0.5$$
 - Instead report: "No clear dose-response relationship detected for [Predictor] → [Outcome]"
 - Flag for potential non-linear analysis in future versions
 
-#### 6.11.12 Validation of Optimal Values
+#### Validation of Optimal Values
 
 **The Critical Question**: Do users who follow optimal value recommendations actually experience better outcomes than those who don't?
 
@@ -915,7 +915,7 @@ The saturation constants (N_sig, n_sig, etc.) reflect pragmatic thresholds based
 
 Beyond optimal values, we calculate the **average outcome following different predictor levels** to quantify dose-response relationships:
 
-#### 6.13.1 Average Outcome Metrics
+#### Average Outcome Metrics
 
 | Metric | Definition | Clinical Interpretation |
 |--------|------------|------------------------|
@@ -925,7 +925,7 @@ Beyond optimal values, we calculate the **average outcome following different pr
 | Average Daily High Predictor | Mean predictor in upper 51% of spread | "High dose" value |
 | Average Daily Low Predictor | Mean predictor in lower 49% of spread | "Low dose" value |
 
-#### 6.13.2 Calculation
+#### Calculation
 
 $$\bar{O}_{\text{high}} = \mathbb{E}[O \mid P > \bar{P}]$$
 $$\bar{O}_{\text{low}} = \mathbb{E}[O \mid P \leq \bar{P}]$$
@@ -958,7 +958,7 @@ For treatment-response analysis, we distinguish between **baseline** (non-treatm
 
 Not all statistically significant relationships are useful. We apply **quality filters** to prioritize actionable findings:
 
-#### 6.15.1 Filter Flags
+#### Filter Flags
 
 | Flag | Description | Impact on Ranking |
 |------|-------------|-------------------|
@@ -969,7 +969,7 @@ Not all statistically significant relationships are useful. We apply **quality f
 | Boring | Relationship unlikely to interest users | Filters from default views |
 | Interesting Variable Category Pair | Category combination is typically meaningful (e.g., Treatment → Symptom) | Prioritizes for analysis |
 
-#### 6.15.2 Boring Relationship Definition
+#### Boring Relationship Definition
 
 A relationship is marked `boring = TRUE` if ANY of:
 
@@ -979,7 +979,7 @@ A relationship is marked `boring = TRUE` if ANY of:
 - Effect size is negligible (|Δ| < 1%)
 - Relationship is trivially obvious
 
-#### 6.15.3 Usefulness and Causality Voting
+#### Usefulness and Causality Voting
 
 Users can vote on individual relationships:
 
@@ -1000,7 +1000,7 @@ Aggregate votes contribute to the PIS plausibility weight ($w$).
 | Negative | Lower is better | Pain, Anxiety, Fatigue |
 | Neutral | Direction depends on context | Heart Rate, Weight |
 
-#### 6.16.1 Impact on Interpretation
+#### Impact on Interpretation
 
 Valence affects how we interpret correlation direction:
 
@@ -1016,7 +1016,7 @@ Valence affects how we interpret correlation direction:
 
 We optimize `onset_delay` (δ) and `duration_of_action` (τ) to find the temporal parameters that maximize correlation strength:
 
-#### 6.17.1 Stored Optimization Data
+#### Stored Optimization Data
 
 | Field | Description |
 |-------|-------------|
@@ -1027,7 +1027,7 @@ We optimize `onset_delay` (δ) and `duration_of_action` (τ) to find the tempora
 | Average Forward Pearson Correlation Over Onset Delays | Mean r across all tested delays |
 | Average Reverse Pearson Correlation Over Onset Delays | Mean reverse r across delays |
 
-#### 6.17.2 Optimization Grid
+#### Optimization Grid
 
 For each predictor-outcome pair, we test:
 
@@ -1036,7 +1036,7 @@ For each predictor-outcome pair, we test:
 
 The parameters yielding the strongest |r| are selected, subject to category-specific physiological constraints.
 
-#### 6.17.3 Overfitting Protection
+#### Overfitting Protection
 
 To prevent spurious optimization:
 1. **Minimum pairs required**: Only optimize if n > 50 pairs
