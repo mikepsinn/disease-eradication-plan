@@ -430,6 +430,17 @@
   \ 0.07 weight) | Unit: weight | Click to view details, calculation & sources\">0.35\
   \ weight (95% CI: 0.233 weight-0.465 weight)</a>"
 "chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
+"chronic_disease_treated_patients_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-chronic_disease_treated_patients_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"iqvia-global-medicines-2024\" data-source-type=\"\
+  calculated\" data-confidence=\"low\" title=\"Estimated unique patients receiving\
+  \ chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T)\
+  \ divided by 365 days divided by 2.5 average medications per patient times 70% post-1962\
+  \ drugs. | Calculated from 1 input | ? Low confidence | Formula: GLOBAL_CHRONIC_THERAPY_DAYS\
+  \ ÷ 365 ÷ 2.5 × 0.70 | Unit: people | Click to view details, calculation & sources\"\
+  >982M people (95% CI: 827M people-1.15B people)</a>"
+"chronic_disease_treated_patients_annual_latex": "$$\n\\begin{gathered}\nN_{treated}\
+  \ \\\\\n= DOT_{chronic} \\times 0.000767 \\\\\n= 1.28T \\times 0.000767 \\\\\n=\
+  \ 982M\n\\end{gathered}\n$$"
 "clinical_trial_cost_per_approved_drug": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-clinical_trial_cost_per_approved_drug\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Annual clinical trial spending per approved drug\
@@ -1963,6 +1974,16 @@
   \ \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\\
   text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\
   \n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n$$"
+"drugs_approved_since_1962": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drugs_approved_since_1962\"\
+  \ class=\"parameter-link\" data-source-ref=\"global-new-drug-approvals-50-annually\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Estimated total\
+  \ drugs approved globally since 1962 (62 years × average approval rate). Conservative:\
+  \ uses current rate, actual historical rate was lower in 1960s-80s. | Calculated\
+  \ from 1 input | ~ Medium confidence | Formula: APPROVALS_PER_YEAR × 62 | Unit:\
+  \ drugs | Click to view details, calculation & sources\">3.10k drugs (95% CI: 2.79k\
+  \ drugs-3.50k drugs)</a>"
+"drugs_approved_since_1962_latex": "$$\n\\begin{gathered}\nN_{drugs,62} \\\\\n= Drugs_{ann,curr}\
+  \ \\times 62 \\\\\n= 50 \\times 62 \\\\\n= 3{,}100\n\\end{gathered}\n$$"
 "drug_cost_increase_1980s_to_current_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_cost_increase_1980s_to_current_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
@@ -2035,6 +2056,48 @@
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
   \ health gains from 1% treaty | Unit: USD | Click to view details, calculation &\
   \ sources\">$4.30M</a>"
+"efficacy_lag_cumulative_excess_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_cumulative_excess_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#scale\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cumulative\
+  \ Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B\
+  \ per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year\
+  \ delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable\
+  \ to the $8 trillion spent on post-9/11 wars. | Calculated from 2 inputs | ~ Medium\
+  \ confidence | Formula: PHASE_2_3_COST × DRUGS_APPROVED | Unit: USD | Click to view\
+  \ details, calculation & sources\">$4.84T (95% CI: $3.42T-$6.62T)</a>"
+"efficacy_lag_cumulative_excess_cost_latex": "$$\n\\begin{gathered}\nCost_{eff,cumul}\
+  \ \\\\\n= Cost_{P2+P3} \\times N_{drugs,62} \\\\\n= \\$1.56B \\times 3{,}100 \\\\\
+  \n= \\$4.84T \\\\[0.5em]\n\\text{where } N_{drugs,62} = Drugs_{ann,curr} \\times\
+  \ 62 = 50 \\times 62 = 3{,}100\n\\end{gathered}\n$$"
+"efficacy_lag_deaths_911_equivalents": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_deaths_911_equivalents\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#scale\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total deaths\
+  \ from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally\
+  \ understandable: how many September 11ths worth of deaths did the 1962 efficacy\
+  \ requirements cause? | Calculated from 2 inputs | ~ Medium confidence | Formula:\
+  \ EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL ÷ SEPT_11_DEATHS | Unit: 9/11s | Click\
+  \ to view details, calculation & sources\">34.1k 9/11s (95% CI: 12.4k 9/11s-71.8k\
+  \ 9/11s)</a>"
+"efficacy_lag_deaths_911_equivalents_latex": "$$\n\\begin{gathered}\nN_{9/11,equiv}\
+  \ = \\frac{Deaths_{lag,total}}{N_{9/11}} = \\frac{102M}{2{,}980} = 34{,}100 \\\\\
+  [0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times\
+  \ T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual}\
+  \ = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}\n\
+  $$"
+"efficacy_lag_treatment_delay_yld_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_treatment_delay_yld_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#treatment-morbidity\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Annual YLD from\
+  \ treatment delay: patients receiving chronic disease treatment would have collectively\
+  \ avoided this disability if treatments were available 8.2 years earlier. Represents\
+  \ morbidity burden for treatment beneficiaries (distinct from mortality burden).\
+  \ | Calculated from 3 inputs | ? Low confidence | Formula: PATIENTS × EFFICACY_LAG\
+  \ × DISABILITY_REDUCTION | Unit: DALYs | Click to view details, calculation & sources\"\
+  >2.01B DALYs (95% CI: 661M DALYs-4.41B DALYs)</a>"
+"efficacy_lag_treatment_delay_yld_annual_latex": "$$\n\\begin{gathered}\nYLD_{treat\\\
+  _delay} \\\\\n= N_{treated} \\times T_{lag} \\times \\Delta DW_{treat} \\\\\n= 982M\
+  \ \\times 8.2 \\times 0.25 \\\\\n= 2.01B \\\\[0.5em]\n\\text{where } N_{treated}\
+  \ \\\\\n= DOT_{chronic} \\times 0.000767 \\\\\n= 1.28T \\times 0.000767 \\\\\n=\
+  \ 982M\n\\end{gathered}\n$$"
 "efficacy_lag_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_years\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Regulatory\
@@ -2486,6 +2549,14 @@
   \ \\\\\n= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\\\\n+ Cost_{psych}\
   \ + Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B +\
   \ \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}\n$$"
+"global_chronic_therapy_days_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_chronic_therapy_days_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"iqvia-global-medicines-2024\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Annual days of therapy for chronic\
+  \ conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion\
+  \ total days of therapy in 2019, with 71% for chronic conditions. | ~ Medium confidence\
+  \ | 95% CI: [1.00T days, 1.50T days] | Dist: Lognormal | Unit: days | Click to view\
+  \ details, calculation & sources\">1.28T days (95% CI: 1.00T days-1.50T days)</a>"
+"global_chronic_therapy_days_annual_cite": "@iqvia-global-medicines-2024"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"industry-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
@@ -3558,6 +3629,13 @@
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"Parameter: SECONDS_PER_MINUTE\"\
   >60</span>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"31,536,000\">31.5M</span>"
+"sept_11_deaths": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-sept_11_deaths\"\
+  \ class=\"parameter-link\" data-source-ref=\"september-11-memorial\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total deaths in the September 11, 2001\
+  \ attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for\
+  \ scale comparisons. | ✓ High confidence | Dist: Fixed | Unit: people | Click to\
+  \ view details, calculation & sources\">2.98k people</a>"
+"sept_11_deaths_cite": "@september-11-memorial"
 "singapore_gdp_per_capita_ppp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-singapore_gdp_per_capita_ppp\"\
   \ class=\"parameter-link\" data-source-ref=\"worldbank-singapore-gdp\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Singapore GDP per capita (PPP-adjusted).\
@@ -3839,6 +3917,15 @@
   \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
   >17 years</a>"
 "treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
+"treatment_disability_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_disability_reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"gbd-disability-weights\" data-source-type=\"\
+  external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Average\
+  \ disability weight reduction from pharmaceutical treatment. Untreated chronic disease\
+  \ averages 0.35 disability weight, treated disease averages 0.10, difference is\
+  \ 0.25. | ~ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [0.15 weight,\
+  \ 0.35 weight] | Dist: Normal | Unit: weight | Click to view details, calculation\
+  \ & sources\">0.25 weight (95% CI: 0.15 weight-0.35 weight)</a>"
+"treatment_disability_reduction_cite": "@gbd-disability-weights"
 "treaty_annual_funding": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_annual_funding\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Annual funding from 1% of global military spending\
@@ -4804,6 +4891,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "448"
-"total_latex_equation_count": "163"
-"total_citation_count": "183"
+"total_parameter_count": "456"
+"total_latex_equation_count": "168"
+"total_citation_count": "186"

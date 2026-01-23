@@ -46,6 +46,32 @@ Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disa
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
 
+::: {.callout-warning}
+## Scale
+
+9/11: {{< var sept_11_deaths >}} dead. We spent $8 trillion in response.
+
+Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}.
+
+We paid {{< var efficacy_lag_cumulative_excess_cost >}} to cause {{< var efficacy_lag_deaths_911_equivalents >}}.
+
+That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's 144,000 doctors tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
+
+Without mandatory pre-market trials, the market wouldn't be blind. Knowing whether drugs work is one of the highest consumer demands imaginable. Organizations like Consumer Reports, JAMA, and independent research institutes would compete to provide rigorous, large-scale efficacy data - with no pharma conflicts of interest, across real-world populations, with ongoing monitoring instead of a pre-approval snapshot.
+
+**These are underestimates.** They only count delays to drugs that got developed. The {{< var pharma_drug_development_cost_current >}} approval cost killed other drugs before they started. We can't count deaths prevented by cures that don't exist.
+:::
+
+**Scale Calculation:**
+
+{{< var efficacy_lag_deaths_911_equivalents_latex >}}
+
+{{< include ../figures/mc-distribution-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+{{< include ../figures/tornado-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+{{< include ../figures/sensitivity-table-efficacy_lag_deaths_911_equivalents.qmd >}}
+
 ## Introduction
 
 The modern pharmaceutical regulatory paradigm relies on a binary licensure model: a drug is either "safe and effective" (approved) or "unsafe/ineffective" (prohibited). While Phase I trials typically establish safety within {{< var phase_1_safety_duration_years >}}, the requirement to prove statistical efficacy (Phase II/III) extends the pre-market timeline by an additional **{{< var efficacy_lag_years >}}** on average.
@@ -280,6 +306,36 @@ Mortality counts fail to capture the suffering of patients living with untreated
 {{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
 **Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life**.
+
+### Years Lived with Disability - Treatment Beneficiaries {#treatment-morbidity}
+
+The YLD calculation above captures suffering *before death* for those who ultimately died from delayed treatments. However, a much larger population - the **{{< var chronic_disease_treated_patients_annual >}} people annually who receive chronic disease treatment** - also suffered during the {{< var efficacy_lag_years >}} delay before their treatments became available.
+
+::: {.callout-note}
+## Distinction: Mortality vs. Morbidity Burden
+
+The "{{< var pharma_lives_saved_annual >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
+
+**Treatment beneficiaries vastly exceed mortality beneficiaries.**
+:::
+
+**Data source**: IQVIA reports that global pharmaceutical use reached 1.8 trillion days of therapy in 2019, with 71% for chronic conditions (diabetes, CVD, respiratory, cancer) [@iqvia-global-medicines-2024]. From this, we estimate approximately {{< var chronic_disease_treated_patients_annual >}} unique patients receive chronic disease treatment annually.
+
+**Treatment beneficiary YLD calculation:**
+
+{{< var efficacy_lag_treatment_delay_yld_annual_latex >}}
+
+**Interpretation:** Each year, patients receiving treatment for chronic conditions would have collectively avoided **{{< var efficacy_lag_treatment_delay_yld_annual >}} of disability** if those treatments had been available {{< var efficacy_lag_years >}} earlier.
+
+| Metric | Annual Burden | Source |
+|--------|---------------|--------|
+| Lives saved (mortality) | {{< var pharma_lives_saved_annual >}} | Lichtenberg 2019 |
+| Treatment beneficiaries (morbidity) | {{< var chronic_disease_treated_patients_annual >}} | IQVIA 2024 |
+| **Ratio** | **~80:1** | Morbidity >> mortality |
+
+: Comparison of mortality vs. morbidity burden from regulatory delay {#tbl-morbidity-vs-mortality}
+
+The treatment beneficiary population is approximately 80 times larger than the mortality-focused "lives saved" figure, demonstrating that the **morbidity cost of regulatory delay vastly exceeds the mortality cost**.
 
 ## Economic Valuation {#economic-valuation}
 

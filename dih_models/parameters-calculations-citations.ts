@@ -907,6 +907,17 @@ export const GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS: Parameter = {
   confidenceInterval: [140000000000.0, 280000000000.0],
 };
 
+export const GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL: Parameter = {
+  value: 1280000000000.0,
+  unit: "days",
+  displayName: "Annual Days of Chronic Disease Therapy",
+  description: "Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.",
+  sourceType: "external",
+  sourceRef: "iqvia-global-medicines-2024",
+  confidence: "medium",
+  confidenceInterval: [1000000000000.0, 1500000000000.0],
+};
+
 export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 60000000000.0,
   unit: "USD",
@@ -1544,6 +1555,16 @@ export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
   peerReviewed: true,
 };
 
+export const SEPT_11_DEATHS: Parameter = {
+  value: 2977.0,
+  unit: "people",
+  displayName: "September 11 Deaths",
+  description: "Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.",
+  sourceType: "external",
+  sourceRef: "september-11-memorial",
+  confidence: "high",
+};
+
 export const SINGAPORE_GDP_PER_CAPITA_PPP: Parameter = {
   value: 105000.0,
   unit: "USD",
@@ -1770,6 +1791,18 @@ export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
   sourceType: "external",
   sourceRef: "fda-approval-timeline-10-years",
   confidence: "high",
+};
+
+export const TREATMENT_DISABILITY_REDUCTION: Parameter = {
+  value: 0.25,
+  unit: "weight",
+  displayName: "Treatment Disability Reduction",
+  description: "Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.",
+  sourceType: "external",
+  sourceRef: "gbd-disability-weights",
+  confidence: "medium",
+  confidenceInterval: [0.15, 0.35],
+  peerReviewed: true,
 };
 
 export const TYPICAL_CEO_HOURLY_RATE: Parameter = {
@@ -2124,6 +2157,18 @@ export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "CELL_APPROACHES × DISEASES",
   latex: "\\begin{gathered}\nCombos_{cell} \\\\\n= N_{cell} \\times N_{diseases,trial} \\\\\n= 500 \\times 1{,}000 \\\\\n= 500{,}000\n\\end{gathered}",
+};
+
+export const CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL: Parameter = {
+  value: 981917808.2191781,
+  unit: "people",
+  displayName: "Annual Chronic Disease Patients Treated",
+  description: "Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.",
+  sourceType: "calculated",
+  sourceRef: "iqvia-global-medicines-2024",
+  confidence: "low",
+  formula: "GLOBAL_CHRONIC_THERAPY_DAYS ÷ 365 ÷ 2.5 × 0.70",
+  latex: "\\begin{gathered}\nN_{treated} \\\\\n= DOT_{chronic} \\times 0.000767 \\\\\n= 1.28T \\times 0.000767 \\\\\n= 982M\n\\end{gathered}",
 };
 
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
@@ -2820,6 +2865,18 @@ export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   latex: "\\begin{gathered}\nk_{coverage} = \\frac{Funding_{treaty}}{OPEX_{dFDA}} = \\frac{\\$27.2B}{\\$40M} = 680 \\\\[0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra} \\\\\n+ Cost_{regulatory} + Cost_{community} \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}",
 };
 
+export const DRUGS_APPROVED_SINCE_1962: Parameter = {
+  value: 3100.0,
+  unit: "drugs",
+  displayName: "Total Drugs Approved Since 1962",
+  description: "Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.",
+  sourceType: "calculated",
+  sourceRef: "global-new-drug-approvals-50-annually",
+  confidence: "medium",
+  formula: "APPROVALS_PER_YEAR × 62",
+  latex: "\\begin{gathered}\nN_{drugs,62} \\\\\n= Drugs_{ann,curr} \\times 62 \\\\\n= 50 \\times 62 \\\\\n= 3{,}100\n\\end{gathered}",
+};
+
 export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 13.402061855670103,
   unit: "ratio",
@@ -2854,6 +2911,42 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   confidence: "high",
   formula: "SAFE_COMPOUNDS × DISEASES",
   latex: "\\begin{gathered}\nN_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
+};
+
+export const EFFICACY_LAG_CUMULATIVE_EXCESS_COST: Parameter = {
+  value: 4836000000000.0,
+  unit: "USD",
+  displayName: "Cumulative Efficacy Testing Cost (1962-2024)",
+  description: "Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/invisible-graveyard#scale",
+  confidence: "medium",
+  formula: "PHASE_2_3_COST × DRUGS_APPROVED",
+  latex: "\\begin{gathered}\nCost_{eff,cumul} \\\\\n= Cost_{P2+P3} \\times N_{drugs,62} \\\\\n= \\$1.56B \\times 3{,}100 \\\\\n= \\$4.84T \\\\[0.5em]\n\\text{where } N_{drugs,62} = Drugs_{ann,curr} \\times 62 = 50 \\times 62 = 3{,}100\n\\end{gathered}",
+};
+
+export const EFFICACY_LAG_DEATHS_911_EQUIVALENTS: Parameter = {
+  value: 34132.236031799344,
+  unit: "9/11s",
+  displayName: "Efficacy Lag Deaths (9/11 Equivalents)",
+  description: "Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/invisible-graveyard#scale",
+  confidence: "medium",
+  formula: "EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL ÷ SEPT_11_DEATHS",
+  latex: "\\begin{gathered}\nN_{9/11,equiv} = \\frac{Deaths_{lag,total}}{N_{9/11}} = \\frac{102M}{2{,}980} = 34{,}100 \\\\[0.5em]\n\\text{where } Deaths_{lag,total} \\\\\n= Lives_{saved,annual} \\times T_{lag} \\\\\n= 12.4M \\times 8.2 \\\\\n= 102M \\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}",
+};
+
+export const EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL: Parameter = {
+  value: 2012931506.849315,
+  unit: "DALYs",
+  displayName: "Treatment Delay YLD - Annual",
+  description: "Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/invisible-graveyard#treatment-morbidity",
+  confidence: "low",
+  formula: "PATIENTS × EFFICACY_LAG × DISABILITY_REDUCTION",
+  latex: "\\begin{gathered}\nYLD_{treat\\_delay} \\\\\n= N_{treated} \\times T_{lag} \\times \\Delta DW_{treat} \\\\\n= 982M \\times 8.2 \\times 0.25 \\\\\n= 2.01B \\\\[0.5em]\n\\text{where } N_{treated} \\\\\n= DOT_{chronic} \\times 0.000767 \\\\\n= 1.28T \\times 0.000767 \\\\\n= 982M\n\\end{gathered}",
 };
 
 export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
@@ -5059,6 +5152,7 @@ export const parameters = {
   GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT,
   GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT,
   GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS,
+  GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL,
   GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_DISEASE_DEATHS_DAILY,
   GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL,
@@ -5117,6 +5211,7 @@ export const parameters = {
   RECOVERY_TRIAL_TOTAL_COST,
   REGULATORY_DELAY_MEAN_AGE_OF_DEATH,
   REGULATORY_DELAY_SUFFERING_PERIOD_YEARS,
+  SEPT_11_DEATHS,
   SINGAPORE_GDP_PER_CAPITA_PPP,
   SINGAPORE_GOVT_SPENDING_PCT_GDP,
   SINGAPORE_LIFE_EXPECTANCY,
@@ -5139,6 +5234,7 @@ export const parameters = {
   THALIDOMIDE_US_POPULATION_SHARE_1960,
   TRADITIONAL_PHASE3_COST_PER_PATIENT,
   TREATMENT_ACCELERATION_YEARS_CURRENT,
+  TREATMENT_DISABILITY_REDUCTION,
   TYPICAL_CEO_HOURLY_RATE,
   US_ALZHEIMERS_ANNUAL_COST,
   US_CANCER_ANNUAL_COST,
@@ -5171,6 +5267,7 @@ export const parameters = {
   BAD_POLICY_COST_US_TIER1_TOTAL,
   BAD_POLICY_COST_US_TIER2_TOTAL,
   CELL_THERAPY_DISEASE_COMBINATIONS,
+  CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL,
   CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
   COMBINATION_THERAPY_DISEASE_SPACE,
@@ -5231,9 +5328,13 @@ export const parameters = {
   DISEASE_VS_TERRORISM_DEATHS_RATIO,
   DISEASE_VS_WAR_DEATHS_RATIO,
   DIVIDEND_COVERAGE_FACTOR,
+  DRUGS_APPROVED_SINCE_1962,
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+  EFFICACY_LAG_CUMULATIVE_EXCESS_COST,
+  EFFICACY_LAG_DEATHS_911_EQUIVALENTS,
+  EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL,
   EMERGING_MODALITY_COMBINATIONS,
   EPIGENETIC_DISEASE_COMBINATIONS,
   EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
@@ -6046,6 +6147,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.fec.gov/updates/statistical-summary-of-24-month-campaign-activity-of-the-2023-2024-election-cycle/",
         note: "Federal Election Commission, Statistical Summary of 24-Month Campaign Activity",
   },
+  "gbd-disability-weights": {
+        id: "gbd-disability-weights",
+        type: "article-journal",
+        title: "Global Burden of Disease Study 2019: Disability Weights",
+        author: [
+          {
+            literal: "GBD 2019 Diseases and Injuries Collaborators"
+          },
+        ],
+        issued: { 'date-parts': [[2020]] },
+        'container-title': "The Lancet",
+        URL: "https://ghdx.healthdata.org/record/ihme-data/gbd-2019-disability-weights",
+  },
   "givewell-cost-per-life-saved": {
         id: "givewell-cost-per-life-saved",
         type: "article-journal",
@@ -6340,6 +6454,19 @@ export const citations: Record<string, Citation> = {
         'container-title': "World Bank: Infrastructure Investment as Stimulus",
         URL: "https://blogs.worldbank.org/en/ppps/effectiveness-infrastructure-investment-fiscal-stimulus-what-weve-learned",
         note: "World Bank: Infrastructure Investment as Stimulus | Global Infrastructure Hub: Fiscal Multiplier | CEPR: Government Investment | Richmond Fed: Infrastructure Spending",
+  },
+  "iqvia-global-medicines-2024": {
+        id: "iqvia-global-medicines-2024",
+        type: "article-journal",
+        title: "The Global Use of Medicines 2024: Outlook to 2028",
+        author: [
+          {
+            literal: "IQVIA Institute for Human Data Science"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "IQVIA Institute Report",
+        URL: "https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024-outlook-to-2028",
   },
   "kleiner2013": {
         id: "kleiner2013",
@@ -6902,6 +7029,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Manhattan Institute: Slow Costly Trials | PMC: Establishing RECOVERY at Scale",
   },
+  "september-11-memorial": {
+        id: "september-11-memorial",
+        type: "webpage",
+        title: "September 11 Attack Facts",
+        author: [
+          {
+            literal: "National September 11 Memorial & Museum"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.911memorial.org/911-faqs",
+  },
   "sipri2024": {
         id: "sipri2024",
         type: "webpage",
@@ -7347,11 +7486,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 448,
-  external: 183,
-  calculated: 163,
+  total: 456,
+  external: 186,
+  calculated: 168,
   definitions: 102,
-  citations: 141,
+  citations: 144,
 } as const;
 
 // ============================================================================

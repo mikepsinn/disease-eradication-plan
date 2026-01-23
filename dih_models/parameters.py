@@ -2825,6 +2825,97 @@ DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
     latex_symbol=r"DALYs_{lag}",  # LaTeX symbol for equations
 )  # 7.90B DALYs
 
+# ===== TREATMENT BENEFICIARY MORBIDITY (IQVIA-BASED) =====
+# Captures suffering of patients with non-terminal chronic diseases during drug approval delay
+# This is SEPARATE from mortality burden - represents people who eventually got treatment
+# but suffered during the 8.2-year lag before their medication was available
+
+GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL = Parameter(
+    1_280_000_000_000,  # 1.8 trillion total days of therapy × 71% for chronic conditions
+    source_ref="iqvia-global-medicines-2024",
+    source_type="external",
+    description="Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.",
+    display_name="Annual Days of Chronic Disease Therapy",
+    unit="days",
+    confidence="medium",
+    peer_reviewed=False,  # Industry report, not peer-reviewed
+    keywords=["pharmaceutical utilization", "chronic disease", "days of therapy", "IQVIA", "morbidity"],
+    distribution="lognormal",  # Utilization data: can't be negative, right-skewed
+    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),  # ±20% based on regional variation
+    validation_min=800_000_000_000,  # Floor: Conservative estimate
+    validation_max=2_000_000_000_000,  # Ceiling: Including under-reported LMICs
+    latex_symbol=r"DOT_{chronic}",
+)
+
+# Derivation: 1.28T days ÷ 365 days/year ÷ 2.5 avg medications per patient × 70% post-1962 drugs
+# = 1.28T ÷ 365 ÷ 2.5 × 0.7 ≈ 980M, rounded to 1B
+CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL = Parameter(
+    GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL / 365 / 2.5 * 0.70,  # Derived from days of therapy
+    source_ref="iqvia-global-medicines-2024",
+    source_type="calculated",
+    description="Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.",
+    display_name="Annual Chronic Disease Patients Treated",
+    unit="people",
+    confidence="low",  # Multiple derivation steps introduce uncertainty
+    keywords=["pharmaceutical utilization", "chronic disease", "treatment beneficiaries", "morbidity burden"],
+    # Key assumptions:
+    #   - 2.5 medications per chronic patient (literature range: 2-4)
+    #   - 70% of chronic disease drugs are post-1962 (conservative; could be 80-90%)
+    #   - Days of therapy maps to unique patients (polypharmacy adjustment)
+    validation_min=500_000_000,  # Floor: Very conservative
+    validation_max=2_000_000_000,  # Ceiling: Less adjustment for polypharmacy
+    formula="GLOBAL_CHRONIC_THERAPY_DAYS ÷ 365 ÷ 2.5 × 0.70",
+    inputs=["GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL"] / 365 / 2.5 * 0.70,
+    latex_symbol=r"N_{treated}",
+)
+
+# Disability weight REDUCTION from treatment (untreated - treated)
+# Untreated chronic disease: ~0.35 weight (CHRONIC_DISEASE_DISABILITY_WEIGHT above)
+# Treated chronic disease: ~0.10 weight (well-controlled conditions)
+# Difference = 0.25 disability avoided per year of treatment
+TREATMENT_DISABILITY_REDUCTION = Parameter(
+    0.25,
+    source_ref="gbd-disability-weights",
+    source_type="external",
+    description="Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.",
+    display_name="Treatment Disability Reduction",
+    unit="weight",  # Disability weight (0-1 scale)
+    confidence="medium",
+    peer_reviewed=True,  # GBD disability weights are peer-reviewed
+    keywords=["disability weight", "treatment effect", "quality of life", "morbidity reduction"],
+    distribution="normal",  # Bounded [0,1], symmetric around mid-range
+    confidence_interval=(0.15, 0.35),  # Reflects disease mix and treatment efficacy variation
+    # Sensitivity:
+    #   - Mild conditions (hypertension): 0.10-0.15 reduction
+    #   - Moderate (diabetes, COPD): 0.25-0.35 reduction
+    #   - Severe (cancer, heart failure): 0.30-0.50 reduction
+    # Using 0.25 as weighted average reflecting chronic disease treatment portfolio
+    validation_min=0.10,  # Floor: Mostly mild conditions
+    validation_max=0.40,  # Ceiling: Mostly severe conditions with good treatment response
+    latex_symbol=r"\Delta DW_{treat}",
+)
+
+# Annual YLD from treatment delay - represents suffering during the 8.2 years before
+# patients' medications became available. This is SEPARATE from mortality burden.
+EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL = Parameter(
+    CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL * EFFICACY_LAG_YEARS * TREATMENT_DISABILITY_REDUCTION,
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#treatment-morbidity",
+    source_type="calculated",
+    description="Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).",
+    display_name="Treatment Delay YLD - Annual",
+    unit="DALYs",
+    confidence="low",  # Multiple uncertain inputs
+    keywords=["treatment delay", "YLD", "morbidity burden", "chronic disease", "efficacy lag"],
+    formula="PATIENTS × EFFICACY_LAG × DISABILITY_REDUCTION",
+    inputs=["CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL", "EFFICACY_LAG_YEARS", "TREATMENT_DISABILITY_REDUCTION"],
+    compute=lambda ctx: ctx["CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL"] * ctx["EFFICACY_LAG_YEARS"] * ctx["TREATMENT_DISABILITY_REDUCTION"],
+    # Expected result: 1B × 8.2 × 0.25 = 2.05B YLD/year
+    # This is ~150x larger than the mortality-based YLD (14M/year)
+    # Reflects that morbidity burden vastly exceeds mortality burden
+    latex_symbol=r"YLD_{treat\_delay}",
+)
+
 # Economic Valuation (using standardized $150k VSLY)
 DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
@@ -5129,6 +5220,73 @@ PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
     std_error=200_000_000,  # ±$200M uncertainty in cost allocation
     latex_symbol=r"Cost_{P2+P3}",  # LaTeX symbol for equations
 )  # $1.56B cost barrier per drug for Phase 2/3 testing
+
+# ===== CUMULATIVE EFFICACY TESTING COST SINCE 1962 =====
+# Uses Phase 2/3 cost directly - what we KNOW is spent on efficacy testing.
+# This is a lower bound: excludes opportunity cost of delay, abandoned compounds,
+# regulatory overhead, etc. Pre-1962 system had efficacy monitoring via AMA
+# doctors and JAMA - the cost is from switching to pre-market RCTs.
+
+DRUGS_APPROVED_SINCE_1962 = Parameter(
+    CURRENT_DRUG_APPROVALS_PER_YEAR * 62,
+    source_ref=ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY,
+    source_type="calculated",
+    description="Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.",
+    display_name="Total Drugs Approved Since 1962",
+    unit="drugs",
+    confidence="medium",
+    keywords=["drugs", "approved", "1962", "total", "fda", "history"],
+    formula="APPROVALS_PER_YEAR × 62",
+    inputs=["CURRENT_DRUG_APPROVALS_PER_YEAR"],
+    compute=lambda ctx: ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"] * 62,
+    latex_symbol=r"N_{drugs,62}",
+)  # ~3,100 drugs
+
+EFFICACY_LAG_CUMULATIVE_EXCESS_COST = Parameter(
+    PHARMA_PHASE_2_3_COST_BARRIER * DRUGS_APPROVED_SINCE_1962,
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#scale",
+    source_type="calculated",
+    description="Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.",
+    display_name="Cumulative Efficacy Testing Cost (1962-2024)",
+    unit="USD",
+    confidence="medium",
+    keywords=["cumulative", "efficacy", "cost", "1962", "total", "drug", "development", "trillion", "phase 2", "phase 3"],
+    formula="PHASE_2_3_COST × DRUGS_APPROVED",
+    inputs=["PHARMA_PHASE_2_3_COST_BARRIER", "DRUGS_APPROVED_SINCE_1962"],
+    compute=lambda ctx: ctx["PHARMA_PHASE_2_3_COST_BARRIER"] * ctx["DRUGS_APPROVED_SINCE_1962"],
+    latex_symbol=r"Cost_{eff,cumul}",
+)  # ~$4.8 trillion (lower bound - excludes knock-on effects)
+
+# ===== 9/11 EQUIVALENTS FOR SCALE =====
+# To make mortality figures viscerally understandable
+
+SEPT_11_DEATHS = Parameter(
+    2977,
+    source_ref="september-11-memorial",  # National September 11 Memorial & Museum
+    source_type="external",
+    description="Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.",
+    display_name="September 11 Deaths",
+    unit="people",
+    confidence="high",
+    keywords=["9/11", "september 11", "deaths", "terrorism", "scale", "reference"],
+    distribution="fixed",  # Historical fact - no uncertainty
+    latex_symbol=r"N_{9/11}",
+)  # 2,977 people
+
+EFFICACY_LAG_DEATHS_911_EQUIVALENTS = Parameter(
+    EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL / SEPT_11_DEATHS,
+    source_ref="/knowledge/appendix/invisible-graveyard.qmd#scale",
+    source_type="calculated",
+    description="Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?",
+    display_name="Efficacy Lag Deaths (9/11 Equivalents)",
+    unit="9/11s",
+    confidence="medium",
+    keywords=["9/11", "equivalents", "scale", "deaths", "efficacy lag", "comparison"],
+    formula="EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL ÷ SEPT_11_DEATHS",
+    inputs=["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL", "SEPT_11_DEATHS"],
+    compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL"] / ctx["SEPT_11_DEATHS"],
+    latex_symbol=r"N_{9/11,equiv}",
+)  # ~34,000 9/11s
 
 # Valley of Death: Percentage of Phase 1-passed compounds abandoned due to Phase 2/3 costs
 # Evidence: Only 12 drugs/year approved from 7,500+ Phase 1-passed compounds

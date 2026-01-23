@@ -155,6 +155,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -215,9 +216,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -390,6 +395,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -448,6 +454,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -470,6 +477,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -601,7 +609,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         },
         {
           "path": "knowledge/references.qmd",
@@ -760,6 +768,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -820,9 +829,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -995,6 +1008,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -1053,6 +1067,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -1075,6 +1090,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -1206,7 +1222,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         }
       ],
       "pageCount": 2
@@ -1357,6 +1373,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -1417,9 +1434,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -1592,6 +1613,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -1650,6 +1672,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -1672,6 +1695,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -1803,7 +1827,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         }
       ],
       "pageCount": 2
@@ -1955,6 +1979,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -2015,9 +2040,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -2190,6 +2219,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -2248,6 +2278,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -2270,6 +2301,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -2401,7 +2433,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         }
       ],
       "pageCount": 2
@@ -2552,6 +2584,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -2612,9 +2645,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -2787,6 +2824,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -2845,6 +2883,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -2867,6 +2906,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -2998,7 +3038,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         }
       ],
       "pageCount": 2
@@ -3148,6 +3188,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -3208,9 +3249,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -3383,6 +3428,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -3441,6 +3487,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -3463,6 +3510,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -3594,7 +3642,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         }
       ],
       "pageCount": 2
@@ -6479,6 +6527,7 @@
             "Bad Policy Costs (Tier 1): $3.92T",
             "Bad Policy Costs (Tier 2): $2T",
             "Cell Therapy Combinations: 500k combinations",
+            "Annual Chronic Disease Patients Treated: 982M people",
             "Clinical Trial Cost Per Approved Drug: $1.20B",
             "Annual Cost Per Clinical Trial Participant: $31.6K",
             "Combination Therapy Space: 45.1B combinations",
@@ -6539,9 +6588,13 @@
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
+            "Total Drugs Approved Since 1962: 3.10k drugs",
             "Drug Cost Increase: 1980s to Current: 13.4:1",
             "Drug Cost Increase: Pre-1962 to Current: 105:1",
             "Possible Drug-Disease Combinations: 9.50M combinations",
+            "Cumulative Efficacy Testing Cost (1962-2024): $4.84T",
+            "Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s",
+            "Treatment Delay YLD - Annual: 2.01B DALYs",
             "Emerging Modality Combinations: 42.0M combinations",
             "Epigenetic Therapy Combinations: 1.50M combinations",
             "Total Deaths from Historical Progress Delays: 102M deaths",
@@ -6714,6 +6767,7 @@
             "Annual Trade Disruption Costs from Shipping Disruptions: $247B",
             "Annual Trade Disruption Costs from Supply Chain Disruptions: $187B",
             "Annual Veteran Healthcare Costs: $200B",
+            "Annual Days of Chronic Disease Therapy: 1.28T days",
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150k deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.90T",
@@ -6772,6 +6826,7 @@
             "RECOVERY Trial Total Cost: $20M",
             "Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
             "Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years",
+            "September 11 Deaths: 2.98k people",
             "Singapore GDP per Capita (PPP): $105K",
             "Singapore Govt Spending (% GDP): 1500%",
             "Singapore Life Expectancy: 84.1 years",
@@ -6794,6 +6849,7 @@
             "US Population Share 1960: 6%",
             "Phase 3 Cost per Patient: $41K",
             "Traditional FDA Drug Development Timeline: 17 years",
+            "Treatment Disability Reduction: 0.25 weight",
             "Typical CEO Hourly Rate: $10K",
             "US Alzheimer's Annual Cost: $355B",
             "US Cancer Annual Cost: $208B",
@@ -6925,7 +6981,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         },
         {
           "path": "knowledge/appendix/invisible-graveyard.qmd",
@@ -6944,6 +7000,7 @@
           "sections": [
             "The Short Version",
             "Abstract",
+            "Scale",
             "Introduction",
             "Literature Review: The Drug Lag Debate",
             "Foundational Economic Analysis",
@@ -6962,6 +7019,8 @@
             "Years of Life Lost (YLL)",
             "Years Lived with Disability (YLD)",
             "Cumulative DALY Burden",
+            "Years Lived with Disability - Treatment Beneficiaries",
+            "Distinction: Mortality vs. Morbidity Burden",
             "Economic Valuation",
             "Contextualizing the Loss",
             "Risk Analysis: The Type I vs. Type II Ratio",
@@ -6988,7 +7047,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         },
         {
           "path": "knowledge/appendix/drug-development-cost-analysis.qmd",
@@ -7697,7 +7756,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-01-22"
+          "lastmod": "2026-01-23"
         },
         {
           "path": "knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd",

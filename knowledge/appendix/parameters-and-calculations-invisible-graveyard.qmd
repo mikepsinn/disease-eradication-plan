@@ -23,20 +23,59 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 44 parameters used in the analysis, organized by type:
+This appendix documents all 54 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 22
-- Calculated values: 18
-- Core definitions: 4
+- External sources (peer-reviewed): 26
+- Calculated values: 23
+- Core definitions: 5
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (18 parameters) • [External Data Sources](#sec-external) (22 parameters) • [Core Definitions](#sec-definitions) (4 parameters)
+[Calculated Values](#sec-calculated) (23 parameters) • [External Data Sources](#sec-external) (26 parameters) • [Core Definitions](#sec-definitions) (5 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Annual Chronic Disease Patients Treated: 982M people {#sec-chronic_disease_treated_patients_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.
+
+**Inputs**:
+
+- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28T days (95% CI: 1.00T days - 1.50T days)
+
+$$
+\begin{gathered}
+N_{treated} \\
+= DOT_{chronic} \times 0.000767 \\
+= 1.28T \times 0.000767 \\
+= 982M
+\end{gathered}
+$$
+
+**Methodology**: [@iqvia-global-medicines-2024]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chronic_disease_treated_patients_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-chronic_disease_treated_patients_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chronic_disease_treated_patients_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chronic_disease_treated_patients_annual.qmd >}}
+
+:::
 
 ### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
@@ -357,6 +396,45 @@ $$
 
 :::
 
+### Total Drugs Approved Since 1962: 3.10k drugs {#sec-drugs_approved_since_1962}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.
+
+**Inputs**:
+
+- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year) 📊: 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
+
+$$
+\begin{gathered}
+N_{drugs,62} \\
+= Drugs_{ann,curr} \times 62 \\
+= 50 \times 62 \\
+= 3{,}100
+\end{gathered}
+$$
+
+**Methodology**: [@global-new-drug-approvals-50-annually]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drugs_approved_since_1962.qmd >}}
+
+{{< include ../figures/sensitivity-table-drugs_approved_since_1962.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drugs_approved_since_1962.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drugs_approved_since_1962.qmd >}}
+
+:::
+
 ### Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -394,6 +472,134 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+:::
+
+### Cumulative Efficacy Testing Cost (1962-2024): $4.84T {#sec-efficacy_lag_cumulative_excess_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.
+
+**Inputs**:
+
+- [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56B (SE: ±$200M)
+- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.10k drugs
+
+$$
+\begin{gathered}
+Cost_{eff,cumul} \\
+= Cost_{P2+P3} \times N_{drugs,62} \\
+= \$1.56B \times 3{,}100 \\
+= \$4.84T \\[0.5em]
+\text{where } N_{drugs,62} = Drugs_{ann,curr} \times 62 = 50 \times 62 = 3{,}100
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#scale](../appendix/invisible-graveyard#scale)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+:::
+
+### Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?
+
+**Inputs**:
+
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102M deaths
+- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2.98k people
+
+$$
+\begin{gathered}
+N_{9/11,equiv} = \frac{Deaths_{lag,total}}{N_{9/11}} = \frac{102M}{2{,}980} = 34{,}100 \\[0.5em]
+\text{where } Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M \\[0.5em]
+\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#scale](../appendix/invisible-graveyard#scale)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+{{< include ../figures/sensitivity-table-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-efficacy_lag_deaths_911_equivalents.qmd >}}
+
+:::
+
+### Treatment Delay YLD - Annual: 2.01B DALYs {#sec-efficacy_lag_treatment_delay_yld_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).
+
+**Inputs**:
+
+- [Annual Chronic Disease Patients Treated](#sec-chronic_disease_treated_patients_annual) 🔢: 982M people
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Treatment Disability Reduction](#sec-treatment_disability_reduction) 📊: 0.25 weight (95% CI: 0.15 weight - 0.35 weight)
+
+$$
+\begin{gathered}
+YLD_{treat\_delay} \\
+= N_{treated} \times T_{lag} \times \Delta DW_{treat} \\
+= 982M \times 8.2 \times 0.25 \\
+= 2.01B \\[0.5em]
+\text{where } N_{treated} \\
+= DOT_{chronic} \times 0.000767 \\
+= 1.28T \times 0.000767 \\
+= 982M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/invisible-graveyard#treatment-morbidity](../appendix/invisible-graveyard#treatment-morbidity)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-efficacy_lag_treatment_delay_yld_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-efficacy_lag_treatment_delay_yld_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-efficacy_lag_treatment_delay_yld_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-efficacy_lag_treatment_delay_yld_annual.qmd >}}
 
 :::
 
@@ -913,6 +1119,30 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 :::
 
+### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average annual new drug approvals globally
+
+**Source**: [@global-new-drug-approvals-50-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45 drugs/year, 60 drugs/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 45 drugs/year and 60 drugs/year (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_drug_approvals_per_year.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1002,6 +1232,30 @@ FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
 {{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Annual Days of Chronic Disease Therapy: 1.28T days {#sec-global_chronic_therapy_days_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.
+
+**Source**: [@iqvia-global-medicines-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.00T days, 1.50T days] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.00T days and 1.50T days (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_chronic_therapy_days_annual.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -1197,6 +1451,22 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
+### September 11 Deaths: 2.98k people {#sec-sept_11_deaths}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.
+
+**Source**: [@september-11-memorial]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1361,6 +1631,30 @@ Phase 3 cost per patient (median from FDA study)
 
 :::
 
+### Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.
+
+**Source**: [@gbd-disability-weights]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.15 weight, 0.35 weight] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.15 weight and 0.35 weight (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treatment_disability_reduction.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
@@ -1428,6 +1722,24 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B {#sec-pharma_phase_2_3_cost_barrier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $200M)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_phase_2_3_cost_barrier.qmd >}}
 
 *Core definition*
 
