@@ -122,40 +122,6 @@ function generateFilename(prompt: string): string {
 }
 
 /**
- * Insert image into QMD file
- */
-async function insertImageIntoFile(
-  filePath: string,
-  imagePath: string,
-  altText: string
-): Promise<void> {
-  if (!existsSync(filePath)) {
-    console.error(`ERROR: File not found: ${filePath}`);
-    return;
-  }
-
-  const content = await fs.readFile(filePath, 'utf-8');
-  const { data: frontmatter, content: body } = matter(content);
-
-  // Create relative path from file to image
-  const fileDir = path.dirname(filePath);
-  const projectRoot = process.cwd();
-  const relativeImagePath = path.relative(fileDir, path.join(projectRoot, imagePath)).replace(/\\/g, '/');
-
-  // Create markdown image reference
-  const imageMarkdown = `![${altText}](${relativeImagePath})`;
-
-  // Append to end of file (before any final newlines)
-  const updatedBody = body.trimEnd() + '\n\n' + imageMarkdown + '\n';
-
-  // Reconstruct file with frontmatter
-  const updatedContent = matter.stringify(updatedBody, frontmatter);
-
-  await fs.writeFile(filePath, updatedContent, 'utf-8');
-  console.log(`✓ Image inserted into ${filePath}`);
-}
-
-/**
  * Main image generation function
  */
 async function generateImage(options: GenerateImageOptions): Promise<void> {
@@ -176,7 +142,7 @@ async function generateImage(options: GenerateImageOptions): Promise<void> {
 
   // Build full prompt with style and type
   const imageTypeConfig = ImageTypes[options.type];
-  const visualStyle = VisualStyles[options.style as keyof typeof VisualStyles] || VisualStyles.academic;
+  const visualStyle = VisualStyles[options.style as keyof typeof VisualStyles] || VisualStyles['retro-academic'];
 
   const fullPrompt = `${imageTypeConfig.promptPrefix} ${options.prompt}
 
@@ -217,16 +183,10 @@ Requirements:
   console.log(`\n✅ Image generated successfully!`);
   console.log(`📁 Path: ${relativeImagePath}`);
 
-  // Auto-insert if file specified
-  if (options.file) {
-    const altText = options.alt || options.prompt;
-    await insertImageIntoFile(options.file, relativeImagePath, altText);
-  } else {
-    // Print markdown for manual insertion
-    const altText = options.alt || options.prompt;
-    console.log(`\n📋 Markdown (copy to insert):`);
-    console.log(`![${altText}](/${relativeImagePath})`);
-  }
+  // Print markdown for manual insertion
+  const altText = options.alt || options.prompt;
+  console.log(`\n📋 Markdown (copy to insert):`);
+  console.log(`![${altText}](/${relativeImagePath})`);
 
   console.log('\n' + '='.repeat(60));
 }

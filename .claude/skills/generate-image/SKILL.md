@@ -140,8 +140,6 @@ Determine the target QMD file using these sources (in priority order):
 
 ## Step 6: Build and Run Command
 
-**DO NOT use the `--file` flag** - it appends to the end of the file, which is wrong.
-
 ```bash
 cd E:/code/obsidian/websites/disease-eradication-plan
 npx tsx scripts/images/generate-image.ts "<prompt>" \
@@ -151,7 +149,7 @@ npx tsx scripts/images/generate-image.ts "<prompt>" \
   --alt "<alt_text>"
 ```
 
-The script outputs the generated image path. Note it for the next step.
+The script outputs the generated image path. Note it for the next step (inserting at optimal location).
 
 ---
 

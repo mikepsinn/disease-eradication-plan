@@ -448,7 +448,7 @@ For each major claim:
 
 ---
 
-## Phase 7: Generate Report
+## Phase 8: Generate Report
 
 ```markdown
 ## Peer Review: <filename>
@@ -465,6 +465,14 @@ For each major claim:
 | Claim | Risk | Missing Context | Fix Strategy |
 |-------|------|-----------------|--------------|
 | [Claim 1] | High | [What AI misses] | [How to fix] |
+
+### Calculation Chain Audit
+| Parameter | Formula | Distribution Issues | Source Quality | Recommendation |
+|-----------|---------|---------------------|----------------|----------------|
+| [PARAM_1] | A × B | [Issues or OK] | [Quality rating] | [Action] |
+
+**Critical Issues:**
+- [List any formula errors, inappropriate distributions, or weak sources]
 
 ### Enhancement Opportunities
 **LaTeX equations to add:**
@@ -489,7 +497,7 @@ For each major claim:
 
 ---
 
-## Phase 8: Implement Fixes
+## Phase 9: Implement Fixes
 
 Use Edit tool to implement high-priority fixes. Track with TodoWrite.
 
@@ -500,6 +508,13 @@ Use Edit tool to implement high-priority fixes. Track with TodoWrite.
 - Include missing LaTeX equations
 - Include missing charts
 - Add counterargument paragraphs
+
+**Calculation chain fixes (in parameters.py):**
+- Change distribution: `distribution="normal"` → `distribution="lognormal"` for costs
+- Widen CI: `confidence_interval=(0.8, 1.2)` → `confidence_interval=(0.5, 1.5)`
+- Add uncertainty to fixed inputs: add `distribution` and `confidence_interval`
+- Fix formula: correct mathematical errors in `compute` lambda
+- Add corroborating source: find second reference for single-study anchors
 
 ---
 
