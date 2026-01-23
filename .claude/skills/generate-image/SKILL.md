@@ -21,220 +21,133 @@ Generate AI images using Gemini with interactive option selection.
 
 ---
 
-## Step 1: Read Available Options from Source Files
+## Step 1: Gather Context
 
-**REQUIRED: Read these files to get current options before asking user questions:**
+**Read source files for available options:**
+- `scripts/images/generate-image.ts` → `ImageTypes`, `AspectRatios`
+- `scripts/lib/image-prompts.ts` → `VisualStyles`
 
-1. **Read `scripts/images/generate-image.ts`** to extract:
-   - Available `--type` values (from `ImageTypes` object)
-   - Available `--aspect` values (from `AspectRatios` object)
-   - Default values for each option
+**Determine target QMD file** (priority order):
+1. Explicit file reference (e.g., `@knowledge/appendix/file.qmd`)
+2. Current conversation context
+3. Git status: `git diff --name-only HEAD~3 | grep "\.qmd$" | head -1`
 
-2. **Read `scripts/lib/image-prompts.ts`** to extract:
-   - Available `--style` values (from `VisualStyles` object)
-   - Style descriptions for each option
+**Derive output folder from QMD filename:**
+- `knowledge/problem/regulatory-capture.qmd` → `assets/images/regulatory-capture/`
+- `knowledge/appendix/invisible-graveyard.qmd` → `assets/images/invisible-graveyard/`
+- No target file → `assets/images/generated/` (fallback)
 
-Present these dynamically extracted options to the user. Do NOT use hardcoded option lists.
-
----
-
-## Step 2: Get Actual Numbers from QMD File
-
-**CRITICAL for charts and data visualizations:**
-
-If the image relates to a QMD file (especially for `chart` type), run the preview script to get actual variable values:
-
+**For charts**, get actual numbers:
 ```bash
 .venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --numbers-only
 ```
 
-Or to see specific sections with resolved values:
+**IMPORTANT: Include confidence intervals when available.** The preview output shows values with 95% CIs in format `X (95% CI: Y-Z)`. Always include these uncertainty ranges in chart prompts - request error bars or uncertainty visualization.
 
+---
+
+## Step 2: Ask User for Options
+
+Use AskUserQuestion. Order options by inferred likelihood, putting recommended choice first with "(Recommended)" suffix.
+
+**Inference heuristics:**
+
+| Context Signal | Suggested Type |
+|----------------|----------------|
+| Economics files, data, costs, comparisons | `chart` |
+| Process, workflow, pipeline, stages | `diagram` |
+| Concepts, vision, metaphor | `illustration` |
+| Marketing, propaganda | `figure` + retro-futuristic style |
+| General/unclear | `figure` |
+
+**Aspect ratio hints:** QMD chapters → `16:9`, Social media → `1:1`
+
+---
+
+## Step 3: Build Prompt and Confirm
+
+**Extract comprehensive context from the QMD file** (with variables resolved). Include enough surrounding text for the image generator to understand the full concept.
+
+**Do NOT prescribe specific layouts** (e.g., "left bar should be X, right bar should be Y"). Provide the content and let the generator be creative.
+
+**Minimum context to include:**
+1. **Title/topic** of the section or chapter
+2. **The specific data/comparison** being illustrated (with actual numbers)
+3. **The key insight or takeaway** (why this matters)
+4. **Surrounding context** that helps explain the significance
+
+**Run preview script with broad line range** (e.g., 30-50 lines) to capture full context:
 ```bash
-.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --line-range "1-100"
+.venv/Scripts/python.exe scripts/preview-qmd-with-variables.py <file.qmd> --line-range "X-Y"
 ```
 
-**Extract the actual numbers** (e.g., deaths, costs, ratios) and include them in the image prompt. The AI image generator needs concrete values to create accurate visualizations.
+For charts:
+- Append "Linear scale." to the prompt
+- **Include error bars** if confidence intervals are available (e.g., "Show error bars for 95% confidence intervals: X ranges from Y to Z")
 
-**Example:** If the file references `{{< var efficacy_lag_deaths_911_equivalents >}}`, run the preview to get the actual number (e.g., "5,000") and include it in the prompt.
+### Confirmation (MANDATORY)
+
+**NEVER generate without showing the prompt and getting explicit user confirmation.** This applies to initial generation AND regeneration/edits.
+
+Present the full prompt in a code block:
+```
+Prompt: [full prompt text]
+Type: [type]
+Aspect: [aspect]
+Style: [style]
+Alt text: [alt]
+```
+
+Use AskUserQuestion to confirm: "Generate with this prompt?" with options:
+- "Yes, generate"
+- "Edit prompt"
+- "Cancel"
+
+**Do NOT proceed to Step 4 until user confirms.**
 
 ---
 
-## Step 3: Gather Context for Inference
+## Step 4: Run Generation
 
-Before asking questions, gather context to infer likely choices:
-
-### Check Git Status
+After user confirms:
 ```bash
-git status --short
-git diff --name-only HEAD~3
+npx tsx scripts/images/generate-image.ts '<prompt>' \
+  --type <type> --aspect <aspect> --style <style> --alt '<alt_text>' \
+  --output 'assets/images/<qmd-basename>/'
 ```
 
-This reveals:
-- Recently modified files → topic/domain
-- File paths → `knowledge/economics/` suggests charts, `knowledge/appendix/` suggests diagrams
+**Examples:**
+- Target: `regulatory-capture.qmd` → `--output 'assets/images/regulatory-capture/'`
+- Target: `invisible-graveyard.qmd` → `--output 'assets/images/invisible-graveyard/'`
+- No target → `--output 'assets/images/generated/'`
 
-### Check Recent Conversation
-What topic is being discussed? What file was just edited?
-
-### Inference Heuristics
-
-| Signal | Suggested Type | Suggested Style |
-|--------|----------------|-----------------|
-| Economics files | `chart` | (default) |
-| Process/implementation files | `diagram` | (default) |
-| Workflows, pipelines | `diagram` | (default) |
-| Data, costs, comparisons | `chart` | (default) |
-| Concepts, vision | `illustration` | (default) |
-| Marketing/propaganda | `figure` | retro-futuristic |
-| General/unclear | `figure` | (default) |
-
-| Prompt Keywords | Suggest Type |
-|-----------------|--------------|
-| flow, process, pipeline, stages | diagram |
-| chart, graph, compare, data, cost | chart |
-| concept, metaphor, vision, idea | illustration |
+**IMPORTANT: Use single quotes** around prompt and alt text to prevent bash from interpreting `$` as variable expansion (e.g., `$8 trillion` would break with double quotes).
 
 ---
 
-## Step 4: Get Prompt
+## Step 5: Insert at Optimal Location
 
-If no prompt provided as argument, ask user what they want to generate.
+**Insert where the content is discussed, NOT at the end.**
 
----
+1. Search QMD file for the section discussing the image's subject
+2. Insert image markdown immediately AFTER the relevant paragraph
 
-## Step 5: Ask Options (Context-Ordered)
+| Image Subject | Insert After |
+|---------------|--------------|
+| Data/statistics | Paragraph presenting those numbers |
+| Process/workflow | Section heading introducing the process |
+| Comparison | Paragraph setting up the comparison |
 
-Use AskUserQuestion for each option. **Order options by inferred likelihood** based on context, putting the recommended choice first with "(Recommended)" suffix.
-
-### Image Type
-Present types extracted from `scripts/images/generate-image.ts` → `ImageTypes`
-
-### Aspect Ratio
-Present ratios extracted from `scripts/images/generate-image.ts` → `AspectRatios`
-
-Inference hints:
-- QMD chapter content → `16:9`
-- Social media → `1:1`
-- Slides/presentations → `16:9`
-
-### Visual Style
-Present styles extracted from `scripts/lib/image-prompts.ts` → `VisualStyles`
-
-### Target File
-
-Determine the target QMD file using these sources (in priority order):
-
-1. **Explicit file reference** - If user mentions a file like `@knowledge/appendix/invisible-graveyard.qmd`
-2. **Current conversation context** - What file was just being discussed or edited?
-3. **Git status** - Recently modified QMD files:
-   ```bash
-   git diff --name-only | grep "\.qmd$" | head -1
-   git diff --name-only HEAD~3 | grep "\.qmd$" | head -1
-   ```
-4. **Book structure** - Read `_quarto-manual.yml` to understand chapter organization and find the most relevant chapter for the image topic
-
-**Always verify the target file exists in `_quarto-manual.yml`** - images should only be inserted into files that are part of the book.
+**Use Edit tool** with correct relative path from QMD to `assets/images/<qmd-basename>/`.
 
 ---
 
-## Step 6: Build and Run Command
+## Step 6: Report Result
 
-```bash
-cd E:/code/obsidian/websites/disease-eradication-plan
-npx tsx scripts/images/generate-image.ts "<prompt>" \
-  --type <type> \
-  --aspect <aspect> \
-  --style <style> \
-  --alt "<alt_text>"
-```
-
-The script outputs the generated image path. Note it for the next step (inserting at optimal location).
+Report: image file path, where inserted, remind user to preview.
 
 ---
 
-## Step 7: Insert Image at Optimal Location
-
-**CRITICAL: Insert the image where the content is discussed, NOT at the end of the file.**
-
-### Finding the Optimal Location
-
-1. **Read the target QMD file** to understand its structure
-2. **Search for the section** that discusses the image's subject matter:
-   - Look for headings (`##`, `###`) related to the image topic
-   - Find paragraphs that mention the key concepts in the image
-   - Identify where the data/numbers shown in the image are discussed
-3. **Insert the image immediately AFTER** the relevant paragraph or section heading
-
-### Insertion Rules
-
-| Image Subject | Insert Location |
-|---------------|-----------------|
-| Data/statistics | After the paragraph that presents those numbers |
-| Process/workflow | After the section heading that introduces the process |
-| Comparison | After the paragraph that sets up the comparison |
-| Concept illustration | After the paragraph explaining the concept |
-
-### Example
-
-If generating a chart about "9/11 equivalents of FDA delay deaths":
-1. Search the QMD file for text mentioning "9/11" or "equivalents"
-2. Find the paragraph: "The FDA's delays cause deaths equivalent to X 9/11 attacks..."
-3. Insert the image markdown **immediately after** that paragraph
-
-### Using Edit Tool
-
-Use the Edit tool to insert the image at the correct location:
-
-```
-old_string: [the paragraph discussing the image subject]
-
-new_string: [same paragraph]
-
-![Alt text describing the image](../../assets/images/generated/filename.png)
-```
-
-**Compute the correct relative path** from the QMD file to the image in `assets/images/generated/`.
-
----
-
-## Step 8: Report Result
-
-After successful generation and insertion, report:
-- Image file path
-- Where it was inserted (section/paragraph)
-- Remind user to preview the rendered output
-
----
-
-## CRITICAL RULES FOR CHARTS
-
-**NEVER use logarithmic scaling.** Always use linear scales for all axes.
-
-When generating charts or data visualizations:
-
-1. **Use LINEAR scaling only** - logarithmic scales obscure the dramatic differences we want to show
-2. **Include actual numbers** - extract real values from the QMD file using the preview script
-3. **Show scale dramatically** - if one bar is 5,000x larger than another, make that visually obvious
-4. **Label clearly** - include numbers on bars/elements so the scale is unambiguous
-5. **No artistic interpretation of scale** - if deaths are 15 million vs 3,000, show that exact ratio
-
-**Bad:** Log scale that makes 15M and 3K look similar
-**Good:** Linear scale where 15M tower dwarfs the 3K bar
-
----
-
-## Environment Requirements
+## Environment
 
 Requires `GOOGLE_GENERATIVE_AI_API_KEY` environment variable.
-
----
-
-## Source Files Reference
-
-| File | Contains |
-|------|----------|
-| `scripts/images/generate-image.ts` | `ImageTypes`, `AspectRatios`, CLI flags |
-| `scripts/lib/image-prompts.ts` | `VisualStyles`, style prompts |
-| `scripts/preview-qmd-with-variables.py` | Resolves `{{< var >}}` to actual values |
-| `_quarto-manual.yml` | Book structure, chapter list, valid QMD files |

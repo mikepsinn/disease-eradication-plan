@@ -63,9 +63,17 @@ Valuing these lost years at a conservative global Value of a Statistical Life Ye
 
 9/11: {{< var sept_11_deaths >}} dead. We spent $8 trillion in response.
 
-Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}.
+Holocaust: 6 million dead.
 
-We paid {{< var efficacy_lag_cumulative_excess_cost >}} to cause {{< var efficacy_lag_deaths_911_equivalents >}}.
+Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}, or 17 Holocausts.
+
+We paid {{< var efficacy_lag_cumulative_excess_cost >}} (lower bound - Phase 2/3 costs only) to cause {{< var efficacy_lag_deaths_911_equivalents >}}.
+
+{{< include ../figures/mc-distribution-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+{{< include ../figures/tornado-efficacy_lag_cumulative_excess_cost.qmd >}}
+
+![Bar chart with ghostly imagery comparing 9/11 deaths (2,977), Holocaust deaths (6 million), and FDA efficacy lag deaths (102 million, 95% CI: 36.9M-214M) with error bars](/assets/images/invisible-graveyard/a-dramatic-bar-chart-comparing-the-scale-of-three-tragedies--chart.png)
 
 That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's 144,000 doctors tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
 
@@ -218,7 +226,7 @@ These represent the hard physical limits of medicine. Everything else, including
 ### Data Sources & Parameterization
 
 1. **Development Timelines:** *Biotechnology Innovation Organization (BIO) Clinical Development Success Rates 2011–2020*.
-   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}}.**
+   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}} (95% CI: 4.3-12.1 years)** - wide variance by therapeutic area (oncology ~9y, vaccines ~7y, rare disease ~12+y).
    - *Source:* [BIO.org Clinical Development Report](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf)
 
 2. **Pharmaceutical Impact (Life-Years Saved):** Primary source: Lichtenberg (2019) [@lichtenberg-life-years-saved-2019].
@@ -397,7 +405,9 @@ Specifically, we assume a **Thalidomide-scale catastrophe every single year** in
 
 {{< var type_ii_error_cost_ratio_latex >}}
 
-**Conclusion:** For every 1 unit of harm the FDA prevents (Type I errors: approving dangerous/ineffective drugs), it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay (Type II errors: blocking effective drugs).
+**Conclusion:** For every 1 unit of harm the FDA prevents (Type I errors: approving dangerous/ineffective drugs), it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay (Type II errors: blocking effective drugs). **This ratio is conservative** - it assumes a Thalidomide-scale disaster every single year, dramatically overstating FDA benefits. With realistic Type I estimates, the ratio would be far higher.
+
+![Chart showing Type II errors (7.94B DALYs from regulatory delay) vs Type I errors (2.59M DALYs from approving bad drugs) - a 3,070:1 ratio with error bars](/assets/images/invisible-graveyard/a-dramatic-chart-visualizing-the-type-i-vs-type-ii-regulator-chart.png)
 
 {{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
 
