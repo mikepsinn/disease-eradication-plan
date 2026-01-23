@@ -170,6 +170,7 @@ jupyter: dih-project-kernel
 
 format:
   html:
+    lightbox: auto
     theme:
       - cosmo
     mermaid:

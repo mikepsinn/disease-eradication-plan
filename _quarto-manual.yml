@@ -367,6 +367,7 @@ jupyter: dih-project-kernel
 
 format:
   html:
+    lightbox: auto
     theme:
       - lux
       #- neobrutalist.scss

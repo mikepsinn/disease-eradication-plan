@@ -47,6 +47,7 @@ metadata:
 
 format:
   html:
+    lightbox: auto
     theme:
       - cosmo
     mermaid:
