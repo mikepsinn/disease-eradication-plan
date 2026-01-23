@@ -2035,8 +2035,9 @@
 "economic_multiplier_healthcare_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_healthcare_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"healthcare-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
-  \ for healthcare investment (4.3x ROI) | ✓ High confidence | Unit: ratio | Click\
-  \ to view details, calculation & sources\">4.3:1</a>"
+  \ for healthcare investment (4.3x ROI). Literature range 3.0-6.0×. | ✓ High confidence\
+  \ | 95% CI: [3:1, 6:1] | Dist: Lognormal | Unit: ratio | Click to view details,\
+  \ calculation & sources\">4.3:1 (95% CI: 3:1-6:1)</a>"
 "economic_multiplier_healthcare_investment_cite": "@healthcare-investment-economic-multiplier"
 "economic_multiplier_infrastructure_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_infrastructure_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"infrastructure-investment-economic-multiplier\"\
@@ -2047,8 +2048,9 @@
 "economic_multiplier_military_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_military_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"military-spending-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
-  \ for military spending (0.6x ROI) | ✓ High confidence | Unit: ratio | Click to\
-  \ view details, calculation & sources\">0.6:1</a>"
+  \ for military spending (0.6x ROI). Literature range 0.4-1.0×. | ✓ High confidence\
+  \ | 95% CI: [0.4:1, 0.9:1] | Dist: Lognormal | Unit: ratio | Click to view details,\
+  \ calculation & sources\">0.6:1 (95% CI: 0.4:1-0.9:1)</a>"
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-effective_hourly_rate_lifetime_benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
@@ -2761,6 +2763,17 @@
   \ | Click to view details, calculation & sources\">0.39 proportion (95% CI: 0.34\
   \ proportion-0.439 proportion)</a>"
 "global_yld_proportion_of_dalys_cite": "@ihme-gbd-2021"
+"healthcare_vs_military_multiplier_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-healthcare_vs_military_multiplier_ratio\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-healthcare_vs_military_multiplier_ratio\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of healthcare\
+  \ to military fiscal multipliers. Healthcare investment generates 7× more economic\
+  \ activity per dollar than military spending. | Calculated from 2 inputs | ✓ High\
+  \ confidence | Formula: ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING\
+  \ | Unit: ratio | Click to view details, calculation & sources\">7.17:1 (95% CI:\
+  \ 6.83:1-7.57:1)</a>"
+"healthcare_vs_military_multiplier_ratio_latex": "$$\n\\begin{gathered}\nr_{health/mil}\
+  \ \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\\
+  end{gathered}\n$$"
 "hours_per_day": "<span class=\"parameter-link\" title=\"Parameter: HOURS_PER_DAY\"\
   >24</span>"
 "hours_per_year": "<span class=\"parameter-link\" title=\"8760\">8.76k</span>"
@@ -4891,6 +4904,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "456"
-"total_latex_equation_count": "168"
+"total_parameter_count": "457"
+"total_latex_equation_count": "169"
 "total_citation_count": "186"

@@ -551,10 +551,11 @@ export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
   value: 4.3,
   unit: "ratio",
   displayName: "Economic Multiplier for Healthcare Investment",
-  description: "Economic multiplier for healthcare investment (4.3x ROI)",
+  description: "Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.",
   sourceType: "external",
   sourceRef: "healthcare-investment-economic-multiplier",
   confidence: "high",
+  confidenceInterval: [3.0, 6.0],
 };
 
 export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
@@ -571,10 +572,11 @@ export const ECONOMIC_MULTIPLIER_MILITARY_SPENDING: Parameter = {
   value: 0.6,
   unit: "ratio",
   displayName: "Economic Multiplier for Military Spending",
-  description: "Economic multiplier for military spending (0.6x ROI)",
+  description: "Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.",
   sourceType: "external",
   sourceRef: "military-spending-economic-multiplier",
   confidence: "high",
+  confidenceInterval: [0.4, 0.9],
 };
 
 export const EFFICACY_LAG_YEARS: Parameter = {
@@ -3221,6 +3223,18 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   latex: "\\begin{gathered}\nCost_{health+war} \\\\\n= Cost_{war,total} + Burden_{disease} + Spending_{symptom} \\\\\n= \\$11.4T + \\$109T + \\$8.2T \\\\\n= \\$129T \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Burden_{disease} \\\\\n= Cost_{medical,direct} + Loss_{life,disease} \\\\\n+ Loss_{productivity} \\\\\n= \\$9.9T + \\$94.2T + \\$5T \\\\\n= \\$109T\n\\end{gathered}",
 };
 
+export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
+  value: 7.166666666666667,
+  unit: "ratio",
+  displayName: "Healthcare vs Military Multiplier Ratio",
+  description: "Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more economic activity per dollar than military spending.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations#sec-healthcare_vs_military_multiplier_ratio",
+  confidence: "high",
+  formula: "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING",
+  latex: "\\begin{gathered}\nr_{health/mil} \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\end{gathered}",
+};
+
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   value: 229.61531707317073,
   unit: "ratio",
@@ -5358,6 +5372,7 @@ export const parameters = {
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
+  HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
@@ -7486,9 +7501,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 456,
+  total: 457,
   external: 186,
-  calculated: 168,
+  calculated: 169,
   definitions: 102,
   citations: 144,
 } as const;

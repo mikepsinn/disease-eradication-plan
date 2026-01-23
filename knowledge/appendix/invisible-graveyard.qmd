@@ -270,7 +270,7 @@ This analysis employs **Probabilistic Sensitivity Analysis (PSA)** via Monte Car
 
 Tornado charts identify which input parameters drive outcome uncertainty by varying each parameter ±1 standard deviation while holding others at baseline. Standardized regression coefficients (β*) enable comparison across parameters with different units.
 
-See [Parameters & Calculations Appendix](parameters-and-calculations-invisible-graveyard.qmd) for complete parameter distributions, formulas, and sensitivity analyses for each calculated value.
+See [Parameters & Calculations Appendix](/knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd) for complete parameter distributions, formulas, and sensitivity analyses for each calculated value.
 
 ## Results: The Mortality Burden {#mortality-scenarios}
 

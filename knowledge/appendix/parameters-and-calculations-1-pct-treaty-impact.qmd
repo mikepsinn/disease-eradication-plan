@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 219 parameters used in the analysis, organized by type:
+This appendix documents all 220 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 88
-- Calculated values: 100
+- Calculated values: 101
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (100 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (101 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3410,6 +3410,46 @@ $$
 
 :::
 
+### Healthcare vs Military Multiplier Ratio: 7.17:1 {#sec-healthcare_vs_military_multiplier_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more economic activity per dollar than military spending.
+
+**Inputs**:
+
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3:1 (95% CI: 3:1 - 6:1)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6:1 (95% CI: 0.4:1 - 0.9:1)
+
+$$
+\begin{gathered}
+r_{health/mil} \\
+= \frac{k_{health}}{k_{mil}} \\
+= \frac{4.3}{0.6} \\
+= 7.17
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/parameters-and-calculations#sec-healthcare_vs_military_multiplier_ratio](../appendix/parameters-and-calculations#sec-healthcare_vs_military_multiplier_ratio)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-healthcare_vs_military_multiplier_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-healthcare_vs_military_multiplier_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-healthcare_vs_military_multiplier_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-healthcare_vs_military_multiplier_ratio.qmd >}}
+
+:::
+
 ### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6211,9 +6251,21 @@ Percentage of drugs that gain at least one new indication after initial approval
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Economic multiplier for healthcare investment (4.3x ROI)
+Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.
 
 **Source**: [@healthcare-investment-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3:1, 6:1] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3:1 and 6:1 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_healthcare_investment.qmd >}}
 
 *✓ High confidence*
 
@@ -6223,9 +6275,21 @@ Economic multiplier for healthcare investment (4.3x ROI)
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Economic multiplier for military spending (0.6x ROI)
+Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.
 
 **Source**: [@military-spending-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4:1, 0.9:1] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4:1 and 0.9:1 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_military_spending.qmd >}}
 
 *✓ High confidence*
 

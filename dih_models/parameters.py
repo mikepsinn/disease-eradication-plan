@@ -6738,9 +6738,11 @@ ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
     0.6,
     source_ref=ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER,
     source_type="external",
-    description="Economic multiplier for military spending (0.6x ROI)",
+    description="Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.",
     display_name="Economic Multiplier for Military Spending",
     unit="ratio",
+    distribution="lognormal",
+    confidence_interval=(0.4, 0.9),
     keywords=["60%", "dod", "pentagon", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
     latex_symbol=r"k_{mil}",  # LaTeX symbol for equations
 )
@@ -6771,11 +6773,29 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
     4.3,
     source_ref=ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
-    description="Economic multiplier for healthcare investment (4.3x ROI)",
+    description="Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.",
     display_name="Economic Multiplier for Healthcare Investment",
     unit="ratio",
+    distribution="lognormal",
+    confidence_interval=(3.0, 6.0),
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"],
     latex_symbol=r"k_{health}",  # LaTeX symbol for equations
+)
+
+# Healthcare vs Military Spending Multiplier Ratio
+HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
+    float(ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT) / float(ECONOMIC_MULTIPLIER_MILITARY_SPENDING),
+    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-healthcare_vs_military_multiplier_ratio",
+    source_type="calculated",
+    description="Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more "
+                "economic activity per dollar than military spending.",
+    display_name="Healthcare vs Military Multiplier Ratio",
+    unit="ratio",
+    formula="ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING",
+    inputs=["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT", "ECONOMIC_MULTIPLIER_MILITARY_SPENDING"],
+    compute=lambda ctx: ctx["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT"] / ctx["ECONOMIC_MULTIPLIER_MILITARY_SPENDING"],
+    keywords=["healthcare", "military", "multiplier", "ratio", "comparison"],
+    latex_symbol=r"r_{health/mil}",
 )
 
 TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
