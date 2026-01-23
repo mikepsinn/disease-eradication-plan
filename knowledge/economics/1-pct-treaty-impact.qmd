@@ -1633,7 +1633,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
-**Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+**Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The campaign strategy allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Time Inconsistency and Commitment Credibility
 
@@ -2140,21 +2140,17 @@ Nobody needs to be convinced. They just need to count.
 
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
-**For comprehensive implementation details**, see:
-
-- **[Campaign Budget](campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
-- **[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org)** - Financing mechanism for ratification efforts
-- **[Financial Plan Overview](financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
+**For comprehensive implementation details**, see **[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org)** - the financing mechanism for ratification efforts.
 
 ### Campaign Budget Breakdown
 
-The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI) allocates funds across three strategic categories:
+The {{< var treaty_campaign_total_cost >}} campaign cost (used as denominator in complete case {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI) allocates funds across three strategic categories:
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
-| **[Legislative Advocacy](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
-| **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
+| **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
+| **Legislative Advocacy** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
+| **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
 
 {{< var treaty_campaign_total_cost_latex >}}
@@ -2186,7 +2182,6 @@ This economic analysis focuses on the return on investment once the system is op
 For the rigorous analysis:
 
 - **[dFDA Cost-Benefit Analysis](https://impact.dfda.earth)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
-- **[Health Dividend](health-dividend.qmd)** - Accessible overview of the {{< var dfda_roi_rd_only >}} ROI
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations available for independent verification
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
