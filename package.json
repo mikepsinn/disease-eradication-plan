@@ -51,6 +51,8 @@
     "images:branding": "tsx scripts/images/generate-project-branding-images.ts",
     "images:branding:force": "tsx scripts/images/generate-project-branding-images.ts --force",
     "images:sections": "tsx scripts/images/generate-section-images.ts",
+    "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
+    "images:sections:all:force": "tsx scripts/images/generate-section-images.ts --all --force",
     "images:sections:retro-futuristic": "tsx scripts/images/generate-section-images.ts --retro-futuristic",
     "images:sections:force": "tsx scripts/images/generate-section-images.ts --force",
     "preview:manual": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --preview",

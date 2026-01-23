@@ -9,8 +9,10 @@
  *
  * Usage:
  *   npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]
+ *   npx tsx scripts/images/generate-section-images.ts --all [options]
  *
  * Options:
+ *   --all                 Process all book QMD files (skips files with existing section images)
  *   --retro-futuristic    Generate in retro-futuristic style (default: bw-academic)
  *   --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)
  *   --dry-run             Show recommendations without generating images
@@ -18,10 +20,11 @@
  *
  * Examples:
  *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd
+ *   npx tsx scripts/images/generate-section-images.ts --all
+ *   npx tsx scripts/images/generate-section-images.ts --all --dry-run
+ *   npx tsx scripts/images/generate-section-images.ts --all --force
  *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --retro-futuristic
  *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --aspect 3:4
- *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --dry-run
- *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --force
  */
 
 import dotenv from 'dotenv';
@@ -30,7 +33,7 @@ import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import { generateGeminiProContent } from '../lib/llm.js';
 import { generateAndSaveImages } from '../lib/gemini-images.js';
-import { getCleanedContentForLLM } from '../lib/file-utils.js';
+import { getCleanedContentForLLM, getBookFilesForProcessing } from '../lib/file-utils.js';
 import { VisualStyles } from '../lib/image-prompts.js';
 
 dotenv.config();
@@ -40,9 +43,9 @@ interface ImageRecommendation {
   anchorText: string;      // Last few words of paragraph before image (for finding position)
   placementHint: string;   // Description like "after the 4-point list"
   sectionTitle: string;
-  contentExcerpt: string;
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart';
-  visualizationGoal: string;  // Detailed prompt for image generation
+  visualizationGoal: string;  // Detailed composition instructions
+  contentExcerpt: string;     // Key data, numbers, and context from the section
   caption: string;            // Natural, human-readable caption for alt text
   reasoning: string;
 }
@@ -183,9 +186,9 @@ Respond with JSON:
       "anchorText": "<last 5-10 words before image placement>",
       "placementHint": "<e.g., 'after the 4-point list'>",
       "sectionTitle": "<section name for filename>",
-      "contentExcerpt": "<200-500 word excerpt to visualize>",
       "imageType": "diagram" | "chart" | "infographic" | "flowchart",
-      "visualizationGoal": "<detailed technical prompt for image generation>",
+      "visualizationGoal": "<detailed composition instructions - what to show and how>",
+      "contentExcerpt": "<key data, numbers, labels, and context from the section>",
       "caption": "<1-2 sentence description, NO figure numbers like 'Figure 1:'>",
       "reasoning": "<why this image is necessary>"
     }
@@ -203,6 +206,10 @@ PLACEMENT:
 - Provide sectionHeading (exact markdown), anchorText (last words before placement), placementHint
 - Script finds location by: locating heading → finding anchor → skipping lists/headers/code → placing after complete paragraphs
 - Examples: "after the 4-point explanation", "after ROI calculation", "after defining key terms"
+
+VISUALIZATION GOAL vs CONTENT EXCERPT:
+- visualizationGoal: HOW to compose the image (layout, arrangement, visual relationships)
+- contentExcerpt: WHAT data/numbers/labels to include (extracted verbatim from the section)
 
 CAPTION FORMAT:
 - Natural descriptions: "Comparison of traditional trial costs ($41K/patient) vs. pragmatic trials ($500/patient)."
@@ -321,7 +328,9 @@ ${rec.contentExcerpt}`;
       const sectionSlug = toKebabCase(rec.sectionTitle);
 
       // Log prompts to file for debugging
-      const logFile = path.join(process.cwd(), 'image-prompts.log');
+      const logsDir = path.join(process.cwd(), 'logs');
+      await fs.mkdir(logsDir, { recursive: true });
+      const logFile = path.join(logsDir, 'image-prompts.log');
       const logEntry = `
 ${'='.repeat(80)}
 [${new Date().toISOString()}] Image ${i + 1}/${recommendations.length}: ${rec.sectionTitle}
@@ -343,7 +352,7 @@ ${'='.repeat(80)}
 
 `;
       await fs.appendFile(logFile, logEntry, 'utf-8');
-      console.log(`  [LOG] Prompt logged to image-prompts.log`);
+      console.log(`  [LOG] Prompt logged to logs/image-prompts.log`);
 
       const imageFiles = await generateAndSaveImages({
         prompt: imagePrompt,
@@ -395,72 +404,51 @@ ${'='.repeat(80)}
   }
 }
 
-async function main() {
-  const args = process.argv.slice(2);
+/**
+ * Check if a file already has section images
+ * Returns the count of existing section images
+ */
+function countExistingSectionImages(filePath: string): number {
+  const fileName = path.basename(filePath, '.qmd');
+  const outputDir = path.join(process.cwd(), 'assets', 'images', fileName);
 
-  if (args.length === 0 || args[0].startsWith('--')) {
-    console.error('Usage: npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]');
-    console.error('');
-    console.error('Options:');
-    console.error('  --retro-futuristic    Use retro-futuristic style (default: bw-academic)');
-    console.error('  --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)');
-    console.error('  --dry-run             Show recommendations without generating images');
-    console.error('  --force               Delete existing section images and regenerate all');
-    console.error('');
-    console.error('Available styles:');
-    console.error('  bw-academic (default)  Black and white scientific illustration');
-    console.error('  retro-futuristic       Fun retro futuristic style with large text');
-    process.exit(1);
+  if (!existsSync(outputDir)) {
+    return 0;
   }
 
-  const filePath = args[0];
-  const dryRun = args.includes('--dry-run');
-  const force = args.includes('--force');
-  // Default to bw-academic style (black & white), use --retro-futuristic for fun retro futuristic style
-  const useAcademicStyle = !args.includes('--retro-futuristic');
-
-  // Parse --aspect argument (default: 1:1 for consistency with manual generations)
-  let aspectRatio: '1:1' | '3:4' | '9:16' | '16:9' = '1:1';
-  const aspectIndex = args.indexOf('--aspect');
-  if (aspectIndex !== -1 && args[aspectIndex + 1]) {
-    const ratioArg = args[aspectIndex + 1];
-    if (['1:1', '3:4', '9:16', '16:9'].includes(ratioArg)) {
-      aspectRatio = ratioArg as typeof aspectRatio;
-    } else {
-      console.error(`[ERROR] Invalid aspect ratio: ${ratioArg}`);
-      console.error('Valid options: 1:1, 3:4, 9:16, 16:9');
-      process.exit(1);
-    }
+  try {
+    const { readdirSync } = require('fs');
+    const files = readdirSync(outputDir);
+    return files.filter((f: string) => f.startsWith(`${fileName}-section-`) && f.endsWith('.png')).length;
+  } catch {
+    return 0;
   }
+}
 
-  console.log('📊 Section-Specific Image Generator');
-  console.log('='.repeat(80));
-
-  if (!existsSync(filePath)) {
-    console.error(`[ERROR] File not found: ${filePath}`);
-    process.exit(1);
+/**
+ * Process a single file for section image generation
+ */
+async function processFile(
+  filePath: string,
+  options: {
+    dryRun: boolean;
+    force: boolean;
+    useAcademicStyle: boolean;
+    aspectRatio: '1:1' | '3:4' | '9:16' | '16:9';
   }
-
-  console.log(`[INFO] Style: ${useAcademicStyle ? 'bw-academic (black and white scientific)' : 'retro-futuristic'}`);
-  console.log(`[INFO] Aspect ratio: ${aspectRatio}`);
-  if (dryRun) {
-    console.log('[INFO] DRY RUN - will show recommendations without generating');
-  }
-  if (force) {
-    console.log('[INFO] FORCE MODE - will delete existing images and regenerate all');
-  }
+): Promise<{ generated: number; skipped: boolean; error?: string }> {
+  const { dryRun, force, useAcademicStyle, aspectRatio } = options;
+  const fileName = path.basename(filePath, '.qmd');
 
   // Force mode: clean up existing section images and references
   if (force && !dryRun) {
-    const fileName = path.basename(filePath, '.qmd');
-    // Use new output directory: assets/images/<qmd-basename>/
     const outputDir = path.join(process.cwd(), 'assets', 'images', fileName);
 
     // Delete existing section images
     if (existsSync(outputDir)) {
-      const { readdirSync, unlinkSync } = await import('fs');
+      const { readdirSync, unlinkSync } = require('fs');
       const files = readdirSync(outputDir);
-      const sectionImages = files.filter(f => f.startsWith(`${fileName}-section-`) && f.endsWith('.png'));
+      const sectionImages = files.filter((f: string) => f.startsWith(`${fileName}-section-`) && f.endsWith('.png'));
 
       if (sectionImages.length > 0) {
         console.log(`\n[FORCE] Deleting ${sectionImages.length} existing section images...`);
@@ -473,12 +461,8 @@ async function main() {
 
     // Remove existing section image references from file
     const fileContent = await fs.readFile(filePath, 'utf-8');
-    // Match section images with any surrounding newlines (1+ before and after)
-    // Replace with exactly 2 newlines to maintain paragraph spacing
-    // Match both old (assets/section-images/) and new (assets/images/) paths
     const sectionImagePattern = /\n+!\[.*?\]\(\/assets\/(?:section-images|images)\/.*?\)\n+/g;
     let fileWithoutImages = fileContent.replace(sectionImagePattern, '\n\n');
-    // Consolidate any remaining multiple consecutive newlines (3+ → 2)
     fileWithoutImages = fileWithoutImages.replace(/\n{3,}/g, '\n\n');
 
     if (fileWithoutImages !== fileContent) {
@@ -495,16 +479,176 @@ async function main() {
   const analysis = await analyzeFileForSectionImages(filePath, cleanedContent);
 
   if (dryRun) {
-    console.log('\n[DRY RUN COMPLETE] Run without --dry-run to generate images');
-    process.exit(0);
+    return { generated: analysis.recommendations.length, skipped: false };
   }
 
   // Generate and insert images
   await generateSectionImages(filePath, analysis.recommendations, useAcademicStyle, cleanedContent, aspectRatio);
 
-  console.log('\n='.repeat(80));
-  console.log('✓ Complete');
+  return { generated: analysis.recommendations.length, skipped: false };
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const processAll = args.includes('--all');
+
+  // Show help if no arguments and not --all mode
+  if (args.length === 0 || (args[0].startsWith('--') && !processAll)) {
+    console.error('Usage: npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]');
+    console.error('       npx tsx scripts/images/generate-section-images.ts --all [options]');
+    console.error('');
+    console.error('Options:');
+    console.error('  --all                 Process all book QMD files (skips files with existing section images)');
+    console.error('  --retro-futuristic    Use retro-futuristic style (default: bw-academic)');
+    console.error('  --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)');
+    console.error('  --dry-run             Show recommendations without generating images');
+    console.error('  --force               Delete existing section images and regenerate all');
+    console.error('');
+    console.error('Available styles:');
+    console.error('  bw-academic (default)  Black and white scientific illustration');
+    console.error('  retro-futuristic       Fun retro futuristic style with large text');
+    process.exit(1);
+  }
+
+  const dryRun = args.includes('--dry-run');
+  const force = args.includes('--force');
+  const useAcademicStyle = !args.includes('--retro-futuristic');
+
+  // Parse --aspect argument
+  let aspectRatio: '1:1' | '3:4' | '9:16' | '16:9' = '1:1';
+  const aspectIndex = args.indexOf('--aspect');
+  if (aspectIndex !== -1 && args[aspectIndex + 1]) {
+    const ratioArg = args[aspectIndex + 1];
+    if (['1:1', '3:4', '9:16', '16:9'].includes(ratioArg)) {
+      aspectRatio = ratioArg as typeof aspectRatio;
+    } else {
+      console.error(`[ERROR] Invalid aspect ratio: ${ratioArg}`);
+      console.error('Valid options: 1:1, 3:4, 9:16, 16:9');
+      process.exit(1);
+    }
+  }
+
+  console.log('📊 Section-Specific Image Generator');
   console.log('='.repeat(80));
+  console.log(`[INFO] Style: ${useAcademicStyle ? 'bw-academic (black and white scientific)' : 'retro-futuristic'}`);
+  console.log(`[INFO] Aspect ratio: ${aspectRatio}`);
+  if (dryRun) console.log('[INFO] DRY RUN - will show recommendations without generating');
+  if (force) console.log('[INFO] FORCE MODE - will delete existing images and regenerate all');
+
+  const options = { dryRun, force, useAcademicStyle, aspectRatio };
+
+  // Batch mode: process all book files
+  if (processAll) {
+    console.log('\n[*] Scanning all book files...');
+    const allFiles = await getBookFilesForProcessing();
+
+    // Filter out index files and files without meaningful content
+    const qmdFiles = allFiles.filter(f => !f.endsWith('index.qmd'));
+    console.log(`[OK] Found ${qmdFiles.length} QMD files\n`);
+
+    // Pre-scan to determine which files need processing
+    const filesToProcess: Array<{ path: string; existingCount: number }> = [];
+    const skippedFiles: Array<{ path: string; existingCount: number }> = [];
+
+    for (const filePath of qmdFiles) {
+      const existingCount = countExistingSectionImages(filePath);
+
+      if (force || existingCount === 0) {
+        filesToProcess.push({ path: filePath, existingCount });
+      } else {
+        skippedFiles.push({ path: filePath, existingCount });
+      }
+    }
+
+    // Show summary
+    console.log(`[*] Files to process: ${filesToProcess.length}`);
+    console.log(`[*] Files skipped (have section images): ${skippedFiles.length}\n`);
+
+    if (skippedFiles.length > 0 && skippedFiles.length <= 20) {
+      console.log('Skipped files:');
+      for (const { path: fp, existingCount } of skippedFiles) {
+        const relativePath = path.relative(process.cwd(), fp);
+        console.log(`  - ${relativePath} (${existingCount} section images)`);
+      }
+      console.log('');
+    }
+
+    if (filesToProcess.length === 0) {
+      console.log('[OK] All files already have section images. Use --force to regenerate.\n');
+      process.exit(0);
+    }
+
+    console.log('Files to process:');
+    for (const { path: fp, existingCount } of filesToProcess) {
+      const relativePath = path.relative(process.cwd(), fp);
+      const status = existingCount > 0 ? `(${existingCount} existing, will regenerate)` : '(no section images)';
+      console.log(`  - ${relativePath} ${status}`);
+    }
+    console.log('\n' + '='.repeat(80));
+
+    // Process each file
+    let totalGenerated = 0;
+    let filesProcessed = 0;
+    let filesFailed = 0;
+
+    for (let i = 0; i < filesToProcess.length; i++) {
+      const { path: filePath } = filesToProcess[i];
+      const relativePath = path.relative(process.cwd(), filePath);
+
+      console.log(`\n[${ i + 1}/${filesToProcess.length}] Processing: ${relativePath}`);
+      console.log('-'.repeat(80));
+
+      try {
+        const result = await processFile(filePath, options);
+        totalGenerated += result.generated;
+        filesProcessed++;
+
+        if (dryRun) {
+          console.log(`[DRY RUN] Would generate ${result.generated} images`);
+        }
+      } catch (error) {
+        console.error(`[ERROR] Failed to process ${relativePath}:`, error);
+        filesFailed++;
+      }
+    }
+
+    // Final summary
+    console.log('\n' + '='.repeat(80));
+    console.log('BATCH PROCESSING COMPLETE');
+    console.log('='.repeat(80));
+    console.log(`  Files processed: ${filesProcessed}`);
+    console.log(`  Files failed: ${filesFailed}`);
+    console.log(`  Files skipped: ${skippedFiles.length}`);
+    console.log(`  Total images ${dryRun ? 'recommended' : 'generated'}: ${totalGenerated}`);
+    console.log('='.repeat(80));
+
+    if (dryRun) {
+      console.log('\n[DRY RUN COMPLETE] Run without --dry-run to generate images');
+    }
+  } else {
+    // Single file mode
+    const filePath = args.find(arg => !arg.startsWith('--') && arg !== aspectRatio);
+
+    if (!filePath) {
+      console.error('[ERROR] No file specified');
+      process.exit(1);
+    }
+
+    if (!existsSync(filePath)) {
+      console.error(`[ERROR] File not found: ${filePath}`);
+      process.exit(1);
+    }
+
+    await processFile(filePath, options);
+
+    if (dryRun) {
+      console.log('\n[DRY RUN COMPLETE] Run without --dry-run to generate images');
+    } else {
+      console.log('\n' + '='.repeat(80));
+      console.log('✓ Complete');
+      console.log('='.repeat(80));
+    }
+  }
 }
 
 main().catch(error => {

@@ -134,9 +134,9 @@ metadata:
       status: pending
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
-        doi: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/18356232"
+        doi: "10.5281/zenodo.18356232"
       - platform: ssrn
         status: pending
         url: ""
