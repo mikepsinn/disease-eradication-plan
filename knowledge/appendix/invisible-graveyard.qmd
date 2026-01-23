@@ -46,7 +46,6 @@ Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disa
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
 
-::: {.callout-warning}
 ## Scale
 
 9/11: {{< var sept_11_deaths >}} dead. We spent $8 trillion in response.
@@ -60,9 +59,6 @@ That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy
 Without mandatory pre-market trials, the market wouldn't be blind. Knowing whether drugs work is one of the highest consumer demands imaginable. Organizations like Consumer Reports, JAMA, and independent research institutes would compete to provide rigorous, large-scale efficacy data - with no pharma conflicts of interest, across real-world populations, with ongoing monitoring instead of a pre-approval snapshot.
 
 **These are underestimates.** They only count delays to drugs that got developed. The {{< var pharma_drug_development_cost_current >}} approval cost killed other drugs before they started. We can't count deaths prevented by cures that don't exist.
-:::
-
-**Scale Calculation:**
 
 {{< var efficacy_lag_deaths_911_equivalents_latex >}}
 
