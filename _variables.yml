@@ -2447,10 +2447,12 @@
 "global_annual_lives_saved_by_med_research_cite": "@medical-research-lives-saved-annually"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_lost_economic_growth_military_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"disparity-ratio-weapons-vs-cures\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lost economic\
-  \ growth from military spending opportunity cost | ✓ High confidence | 95% CI: [$1.90T,\
-  \ $3.80T] | Dist: Lognormal | Unit: USD | Click to view details, calculation & sources\"\
-  >$2.72T (95% CI: $1.90T-$3.80T)</a>"
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual foregone\
+  \ economic output from military spending vs productive alternatives. This estimate\
+  \ implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare\
+  \ ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid\
+  \ double-counting. | ✓ High confidence | 95% CI: [$1.90T, $3.80T] | Dist: Lognormal\
+  \ | Unit: USD | Click to view details, calculation & sources\">$2.72T (95% CI: $1.90T-$3.80T)</a>"
 "global_annual_lost_economic_growth_military_spending_cite": "@disparity-ratio-weapons-vs-cures"
 "global_annual_lost_human_capital_conflict": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_annual_lost_human_capital_conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"lost-human-capital-war-cost\" data-source-type=\"\

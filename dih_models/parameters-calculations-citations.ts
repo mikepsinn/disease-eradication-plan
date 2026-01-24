@@ -814,7 +814,7 @@ export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
   value: 2718000000000.0,
   unit: "USD",
   displayName: "Annual Lost Economic Growth from Military Spending Opportunity Cost",
-  description: "Annual lost economic growth from military spending opportunity cost",
+  description: "Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.",
   sourceType: "external",
   sourceRef: "disparity-ratio-weapons-vs-cures",
   confidence: "high",
