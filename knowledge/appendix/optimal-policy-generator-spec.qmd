@@ -475,7 +475,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 ### Bradford Hill Criteria Scoring Functions {#sec-bradford-hill}
 
-Bradford Hill's criteria for causality [@hill1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
+Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
 #### Strength of Association
 

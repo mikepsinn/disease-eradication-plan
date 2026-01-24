@@ -110,6 +110,8 @@ from dih_models.site_metadata_generator import generate_sites_metadata
 from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
 from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.footer_generator import generate_footer_html
+from dih_models.quarto_references_generator import update_references_from_quarto
+from dih_models.references_bib_utils import sort_bib_file, validate_bib_file
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
     validate_references,
@@ -439,6 +441,19 @@ def main():
     citation_data = parse_references_bib(bib_path)
     available_refs = set(citation_data.keys())  # Derive keys from full parse
     print(f"[OK] Found {len(available_refs)} reference entries")
+    print()
+
+    # Add any Quarto papers with DOIs that aren't in references.bib yet
+    print("[*] Checking Quarto configs for new paper references...")
+    added_papers = update_references_from_quarto(project_root)
+    if added_papers:
+        # Re-parse references.bib to include newly added entries
+        print("[*] Re-parsing references.bib with new entries...")
+        citation_data = parse_references_bib(bib_path)
+        available_refs = set(citation_data.keys())
+        print(f"[OK] Now have {len(available_refs)} reference entries")
+    else:
+        print("[OK] All Quarto papers already in references.bib")
     print()
 
     # Generate reference_ids.py enum SECOND (before loading parameters.py which imports it)
@@ -1224,6 +1239,29 @@ def main():
     # Generate shared footer HTML with links to all papers
     print("[*] Generating footer HTML...")
     footer_html_path = generate_footer_html(project_root)
+    print()
+
+    # Final validation and sort of references.bib
+    print("[*] Validating and sorting references.bib...")
+    is_valid, issues = validate_bib_file(bib_path)
+    if issues:
+        # Check if only alphabetization issues (can auto-fix)
+        dup_issues = [i for i in issues if "Duplicate" in i]
+        if dup_issues:
+            print(f"[ERROR] Found {len(dup_issues)} duplicate(s) in references.bib:", file=sys.stderr)
+            for issue in dup_issues:
+                print(f"    - {issue}", file=sys.stderr)
+            print("[ERROR] Please resolve duplicates manually before committing.", file=sys.stderr)
+            sys.exit(1)
+        else:
+            # Only alphabetization issues - auto-fix
+            reordered = sort_bib_file(bib_path, strict=False)
+            if reordered:
+                print(f"[OK] Sorted references.bib ({reordered} entries reordered)")
+            else:
+                print("[OK] references.bib already sorted")
+    else:
+        print("[OK] references.bib is valid and sorted")
     print()
 
     print("[OK] All academic outputs generated successfully!")

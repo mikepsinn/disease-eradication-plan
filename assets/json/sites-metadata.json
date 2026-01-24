@@ -1236,7 +1236,7 @@
       "description": "Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings.",
       "siteUrl": "https://impact.dfda.earth",
       "favicon": "https://impact.dfda.earth/assets/icons/dfda-favicon.png",
-      "ogImage": "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg",
+      "ogImage": "https://impact.dfda.earth/assets/og/dfda-impact-og-1200x630.jpg",
       "pdfUrl": "https://impact.dfda.earth/dfda-impact-paper.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
@@ -1281,7 +1281,7 @@
       "outputDir": "_site/dfda-impact",
       "publishing": {
         "ownSite": {
-          "url": "https://dfda-impact.warondisease.org",
+          "url": "https://impact.dfda.earth",
           "status": "deployed"
         },
         "preprints": [

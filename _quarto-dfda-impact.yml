@@ -127,12 +127,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg"
+  image: "https://impact.dfda.earth/assets/og/dfda-impact-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://dfda-impact.warondisease.org"
+      url: "https://impact.dfda.earth"
       status: deployed
     preprints:
       - platform: zenodo
