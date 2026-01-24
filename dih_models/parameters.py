@@ -170,7 +170,7 @@ class Parameter(float):
         'confidence', 'last_updated', 'peer_reviewed', 'conservative',
         'sensitivity', 'display_value', 'display_name', 'keywords',
         'validation_min', 'validation_max', 'confidence_interval', 'std_error',
-        'distribution', 'inputs', 'compute', 'latex_symbol'
+        'distribution', 'inputs', 'compute', 'latex_symbol', 'hide_ci'
     )
 
     # Type annotations for Pylance/Pyright
@@ -196,6 +196,7 @@ class Parameter(float):
     inputs: "list[str]"
     compute: "Callable[[ComputeContext], float] | None"
     latex_symbol: "str | None"  # LaTeX symbol for this parameter in equations, e.g. "Cost_{DFDA}"
+    hide_ci: bool  # Suppress confidence interval display in _variables.yml
 
     def __new__(
         cls,
@@ -223,6 +224,7 @@ class Parameter(float):
         inputs: Optional[List[str]] = None,
         compute: Optional[Callable[[ComputeContext], float]] = None,
         latex_symbol: Optional[str] = None,  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
+        hide_ci: bool = False,  # Suppress confidence interval display in _variables.yml
     ):
         # Convert string source_type to enum (backwards compatibility)
         if not isinstance(source_type, SourceType):
@@ -286,6 +288,7 @@ class Parameter(float):
         instance.inputs = inputs or []
         instance.compute = compute
         instance.latex_symbol = latex_symbol  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
+        instance.hide_ci = hide_ci  # Suppress confidence interval display
 
         return instance
 
@@ -4972,6 +4975,7 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"],
     inputs=["VICTORY_BOND_ANNUAL_PAYOUT", "TREATY_CAMPAIGN_TOTAL_COST"],
     compute=lambda ctx: ctx["VICTORY_BOND_ANNUAL_PAYOUT"] / ctx["TREATY_CAMPAIGN_TOTAL_COST"],
+    hide_ci=True,  # Suppress CI display - uncertainty is in campaign costs, not the ratio itself
     latex_symbol=r"r_{bond}",  # LaTeX symbol for equations
 )  # 271.8% (reported as 270%)
 

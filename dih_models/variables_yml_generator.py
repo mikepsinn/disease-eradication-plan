@@ -223,11 +223,15 @@ def generate_variables_yml(
         unit = getattr(value, "unit", None)
         central_value = float(value)
 
+        # Check if CI display is suppressed for this parameter
+        # Use hide_ci=True on parameters where the CI is misleading or clutters the display
+        hide_ci = getattr(value, "hide_ci", False)
+
         # First, check if parameter has an explicitly specified confidence_interval
         # This is preferred as it represents the author's judgment about plausible ranges
         specified_ci = getattr(value, "confidence_interval", None)
 
-        if specified_ci and len(specified_ci) == 2:
+        if not hide_ci and specified_ci and len(specified_ci) == 2:
             ci_low, ci_high = specified_ci
             # Check if there's meaningful uncertainty in the specified CI
             has_meaningful_uncertainty = abs(ci_high - ci_low) > 0.001
@@ -249,8 +253,8 @@ def generate_variables_yml(
                 display_value_with_ci = f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
                 value_with_ci = ValueWithCI(value, display_value_with_ci)
 
-        # Fall back to Monte Carlo derived CI if no specified CI
-        elif param_name in uncertainty_data:
+        # Fall back to Monte Carlo derived CI if no specified CI and not hidden
+        elif not hide_ci and param_name in uncertainty_data:
             unc = uncertainty_data[param_name]
             p5 = unc.get("p5")
             p50 = unc.get("p50")
