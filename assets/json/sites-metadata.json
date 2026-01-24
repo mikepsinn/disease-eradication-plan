@@ -1,6 +1,6 @@
 {
   "totalSites": 11,
-  "totalPages": 109,
+  "totalPages": 106,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -584,6 +584,7 @@
             "NATO Political Reform Investment: $65B",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
+            "Peace Dividend Conflict Elasticity: 1:1",
             "Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B",
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
@@ -1198,6 +1199,7 @@
             "NATO Political Reform Investment: $65B",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
+            "Peace Dividend Conflict Elasticity: 1:1",
             "Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B",
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
@@ -2072,6 +2074,7 @@
             "NATO Political Reform Investment: $65B",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
+            "Peace Dividend Conflict Elasticity: 1:1",
             "Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B",
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
@@ -2678,6 +2681,7 @@
             "NATO Political Reform Investment: $65B",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
+            "Peace Dividend Conflict Elasticity: 1:1",
             "Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B",
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
@@ -3762,7 +3766,7 @@
             "Additional Evidence"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-24"
         },
         {
           "path": "knowledge/proof/historical-precedents.qmd",
@@ -4187,9 +4191,23 @@
             "execution-plan",
             "finance",
             "operations",
-            "nonprofit"
+            "nonprofit",
+            "victory-bonds",
+            "referendum",
+            "lobbying"
           ],
           "sections": [
+            "High-Level Strategy: The Three-Step Recipe for Not Dying",
+            "Step 1: Collect Papers from Rich People",
+            "Step 2: Pay Humans to Click YES",
+            "Step 3: Apply Papers to Politicians Until Treaty Happens",
+            "Detailed Execution: The Five-Step Cascade",
+            "Step 2: The Great Internet Clicking",
+            "Tactical Implementation: The Sacred (Legal) Bribery Sequence",
+            "(Legal) Bribe Category #1: Rich People (The Paper Collectors)",
+            "(Legal) Bribe Category #2: The True Believers (Early Adopters Who Want Control)",
+            "(Legal) Bribe Category #3: Regular People (Everyone Else)",
+            "(Legal) Bribe Category #4: Politicians (The Elected Paper Recipients)",
             "The Paper Collection Timeline: From $0 to Ending Death",
             "The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously",
             "The Political Strategy: Co-Opt, Don't Compete",
@@ -4200,7 +4218,7 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-24"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
@@ -4270,6 +4288,7 @@
             "Nonprofit Foundation Governance",
             "Securities Law (How to Sell Hope Without Prison)",
             "VICTORY Incentive Alignment Bonds: Definitely a Security",
+            "The Two-Phase \"Points-then-Conversion\" Model",
             "How to Structure It",
             "Required Disclosures (The Truth)",
             "KYC/AML (Know Your Criminal)",
@@ -4281,10 +4300,13 @@
             "Risk Mitigation (When They Come For You)",
             "The Legal Attack Vectors",
             "The Lawyer Budget",
-            "The Escape Routes (If Everything Goes Wrong)"
+            "The Escape Routes (If Everything Goes Wrong)",
+            "Regulatory Reform Agenda",
+            "HHS Policy Recommendations",
+            "Priority Regulations for Modification"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-24"
         },
         {
           "path": "knowledge/legal/securities-law.qmd",
@@ -4716,38 +4738,6 @@
           "lastmod": "2026-01-24"
         },
         {
-          "path": "knowledge/strategy/strategy-execution-overview.qmd",
-          "url": "https://manual.WarOnDisease.org/strategy/strategy-execution-overview.html",
-          "title": "Strategy Execution Overview",
-          "description": "The Complete Plan: From VICTORY Incentive Alignment Bonds to treaty ratification. High-level strategy, detailed execution, and tactical implementation.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/strategy-execution-overview-og-retro-academic.jpg",
-          "tags": [
-            "strategy",
-            "execution",
-            "victory-bonds",
-            "referendum",
-            "lobbying",
-            "implementation"
-          ],
-          "sections": [
-            "High-Level Strategy: The Three-Step Recipe for Not Dying",
-            "Step 1: Collect Papers from Rich People",
-            "Step 2: Pay Humans to Click YES",
-            "Step 3: Apply Papers to Politicians Until Treaty Happens",
-            "Detailed Execution: The Five-Step Cascade",
-            "Step 2: The Great Internet Clicking",
-            "Tactical Implementation: The Sacred (Legal) Bribery Sequence",
-            "(Legal) Bribe Category #1: Rich People (The Paper Collectors)",
-            "(Legal) Bribe Category #2: The True Believers (Early Adopters Who Want Control)",
-            "(Legal) Bribe Category #3: Regular People (Everyone Else)",
-            "(Legal) Bribe Category #4: Politicians (The Elected Paper Recipients)",
-            "The Timeline: How Long This Takes",
-            "Phase 1 (Months 0-3): The Setup"
-          ],
-          "published": true,
-          "lastmod": "2026-01-24"
-        },
-        {
           "path": "knowledge/strategy/treaty-adoption-strategy.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/treaty-adoption-strategy.html",
           "title": "Treaty Adoption Strategy",
@@ -4842,24 +4832,6 @@
             "Long-Term Strategy Advantages",
             "Caveats and Mitigations",
             "2. The Ultimate Incentive for Nonprofits: Stop Begging, Start Owning"
-          ],
-          "published": true,
-          "lastmod": "2026-01-23"
-        },
-        {
-          "path": "knowledge/appendix/global-referendum-implementation.qmd",
-          "url": "https://manual.WarOnDisease.org/appendix/global-referendum-implementation.html",
-          "title": "Global Referendum Implementation",
-          "description": "Practical design for a secure, globally verifiable referendum to measure consent for a 1% treaty and DIH funding.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/global-referendum-implementation-og-retro-academic.jpg",
-          "sections": [
-            "Principles",
-            "System Architecture",
-            "Integrity and Auditing",
-            "Incentives and Referrals",
-            "Legal Positioning",
-            "Success Metrics",
-            "Cross-References"
           ],
           "published": true,
           "lastmod": "2026-01-23"
@@ -5083,7 +5055,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-24"
         },
         {
           "path": "knowledge/appendix/wishocracy-paper.qmd",
@@ -6221,6 +6193,7 @@
             "NATO Political Reform Investment: $65B",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
+            "Peace Dividend Conflict Elasticity: 1:1",
             "Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B",
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
@@ -6374,10 +6347,13 @@
             "Peace Dividend Composition",
             "Captured vs. Societal Dividend",
             "Sensitivity Analysis",
-            "Sensitivity to Cost Estimates",
-            "Sensitivity to Causal Elasticity",
+            "Tornado Chart: Key Drivers of Uncertainty",
+            "Monte Carlo Distribution",
+            "Probability of Exceeding Thresholds",
+            "Conflict Elasticity Parameter",
             "Key Findings",
             "Assumptions and Limitations",
+            "GDP Multiplier Note",
             "Causal Elasticity Assumption",
             "Source Quality Notes",
             "What This Analysis Does NOT Claim",
@@ -6898,52 +6874,6 @@
           "lastmod": "2026-01-23"
         },
         {
-          "path": "knowledge/appendix/legal-compliance-framework.qmd",
-          "url": "https://manual.WarOnDisease.org/appendix/legal-compliance-framework.html",
-          "title": "Legal Compliance Framework",
-          "description": "How to navigate election law, securities regulations, and international coordination without going to prison.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/legal-compliance-framework-og-retro-academic.jpg",
-          "tags": [
-            "legal-compliance",
-            "election-law",
-            "securities-law",
-            "international-law",
-            "regulatory"
-          ],
-          "sections": [
-            "Challenge 1: Foreign National Election Funding",
-            "The Legal Problem",
-            "Compliance Solution: Domestic-Only Structure",
-            "Enforcement of Non-Coordination",
-            "Challenge 2: Securities Law Compliance",
-            "The Legal Problem",
-            "Compliance Solution: A Two-Phase \"Points-then-Conversion\" Model",
-            "Token Economics Compliance",
-            "Challenge 3: International Legal Coordination",
-            "Multi-Jurisdiction Strategy",
-            "International Election Law Compliance",
-            "Coordination Without Violation",
-            "Implementation Timeline",
-            "Phase 1: Legal Foundation (Months 1-6)",
-            "Phase 2: Regulatory Approval (Months 6-12)",
-            "Phase 3: Operational Launch (Months 12-18)",
-            "Risk Management",
-            "Legal Risk Mitigation",
-            "Regulatory Change Adaptation",
-            "Success Metrics",
-            "Compliance Indicators",
-            "Operational Effectiveness",
-            "Multi-Entity Legal Structure",
-            "Recommended Three-Entity Framework",
-            "Regulatory Reform Agenda",
-            "HHS Policy Recommendations",
-            "Priority Regulations for Modification",
-            "Summary"
-          ],
-          "published": true,
-          "lastmod": "2026-01-24"
-        },
-        {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/recruitment-and-propaganda-plan.html",
           "title": "Recruitment & Propaganda Plan",
@@ -7126,7 +7056,7 @@
           "lastmod": "2026-01-22"
         }
       ],
-      "pageCount": 92
+      "pageCount": 89
     },
     {
       "id": "obg",

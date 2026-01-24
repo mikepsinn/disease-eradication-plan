@@ -23,15 +23,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 457 parameters used in the analysis, organized by type:
+This appendix documents all 458 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 186
 - Calculated values: 169
-- Core definitions: 102
+- Core definitions: 103
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (186 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
+[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (186 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6010,7 +6010,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual peace dividend from 1% reduction in total war costs
+Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)
 
 **Inputs**:
 
@@ -14308,6 +14308,28 @@ Standard time horizon for NPV analysis
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.25:1, 1.5:1] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.25:1 and 1.5:1 (±62%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
 
 *Core definition*
 

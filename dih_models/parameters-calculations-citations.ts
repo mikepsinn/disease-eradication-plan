@@ -3369,11 +3369,11 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   value: 113571000000.0,
   unit: "USD/year",
   displayName: "Annual Peace Dividend from 1% Reduction in Total War Costs",
-  description: "Annual peace dividend from 1% reduction in total war costs",
+  description: "Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations",
   confidence: "high",
-  formula: "TOTAL_WAR_COST × 1%",
+  formula: "TOTAL_WAR_COST × 1% × ε (baseline ε=1.0)",
   latex: "\\begin{gathered}\nBenefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}",
 };
 
@@ -4842,6 +4842,18 @@ export const NPV_TIME_HORIZON_YEARS: Parameter = {
   confidence: "high",
 };
 
+export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
+  value: 1.0,
+  unit: "ratio",
+  displayName: "Peace Dividend Conflict Elasticity",
+  description: "Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).",
+  sourceType: "definition",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/peace-dividend-calculations#assumptions-and-limitations",
+  confidence: "high",
+  formula: "1% spending cut → ε% conflict cost reduction",
+  confidenceInterval: [0.25, 1.5],
+};
+
 export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   value: 27200000000.0,
   unit: "USD/year",
@@ -5522,6 +5534,7 @@ export const parameters = {
   NATO_POLITICAL_REFORM_INVESTMENT,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
+  PEACE_DIVIDEND_CONFLICT_ELASTICITY,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
@@ -7501,10 +7514,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 457,
+  total: 458,
   external: 186,
   calculated: 169,
-  definitions: 102,
+  definitions: 103,
   citations: 144,
 } as const;
 

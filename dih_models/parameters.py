@@ -674,13 +674,13 @@ GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
     2_718_000_000_000,
     source_ref=ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES,
     source_type="external",
-    description="Annual lost economic growth from military spending opportunity cost",
+    description="Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.",
     display_name="Annual Lost Economic Growth from Military Spending Opportunity Cost",
     unit="USD",
     keywords=["2.7t", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
     distribution="lognormal",
-    confidence_interval=(1_900_000_000_000, 3_800_000_000_000),  # ±30% - opportunity cost estimates vary
-    latex_symbol=r"Loss_{growth,mil}",  # LaTeX symbol for equations
+    confidence_interval=(1_900_000_000_000, 3_800_000_000_000),
+    latex_symbol=r"Loss_{growth,mil}",
 )
 
 GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
@@ -831,18 +831,33 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * TREATY_REDUCTION_PCT,
     source_ref="/knowledge/appendix/peace-dividend-calculations.qmd",
     source_type="calculated",
-    description="Annual peace dividend from 1% reduction in total war costs",
+    description="Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
     display_name="Annual Peace Dividend from 1% Reduction in Total War Costs",
     unit="USD/year",
-    formula="TOTAL_WAR_COST × 1%",
+    formula="TOTAL_WAR_COST × 1% × ε (baseline ε=1.0)",
     keywords=["conflict resolution", "international agreement", "peace treaty", "yearly", "armistice", "ceasefire", "conflict"],
-    # Uncertainty derived from inputs (WAR_COST × REDUCTION_PCT)
+    # Note: CI ($70B-$180B) derived from input parameter uncertainties via Monte Carlo
     validation_min=70_000_000_000,   # Floor: Conservative war cost estimates, 50% realization
     validation_max=180_000_000_000,  # Ceiling: Including all indirect costs, full compliance
     inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "TREATY_REDUCTION_PCT"],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * ctx["TREATY_REDUCTION_PCT"],
     latex_symbol=r"Benefit_{peace,soc}",  # LaTeX symbol for equations
 )  # $113.55B, rounded to $114B
+
+PEACE_DIVIDEND_CONFLICT_ELASTICITY = Parameter(
+    1.0,
+    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd#assumptions-and-limitations",
+    source_type="definition",
+    description="Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).",
+    display_name="Peace Dividend Conflict Elasticity",
+    unit="ratio",
+    distribution="beta",
+    confidence_interval=(0.25, 1.5),
+    validation_min=0.0,
+    validation_max=2.0,
+    formula="1% spending cut → ε% conflict cost reduction",
+    latex_symbol=r"\varepsilon_{conflict}",
+)
 
 # Individual peace dividend components (1% savings breakdown)
 PEACE_DIVIDEND_DIRECT_COSTS = Parameter(

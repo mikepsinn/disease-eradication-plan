@@ -266,6 +266,26 @@ The SEC thinks everything is a security. Your grandmother's cookies? Probably a 
 
 Conclusion: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are super definitely a security. Time to comply!
 
+### The Two-Phase "Points-then-Conversion" Model
+
+The compliance strategy separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens, leveraging the SEC's more innovation-friendly guidance as of August 2025 [@sec-innovation-guidance-2025].
+
+#### Phase 1: VOTE Points Airdrop (Pre-Treaty)
+
+This phase focuses on mass distribution of a non-security utility token.
+
+- **No Financial Value:** VOTE points are explicitly defined as having no financial value and are non-transferable
+- **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation
+- **No "Investment of Money":** Points are earned through an action (voting), not purchased
+- **Legal Rationale:** This structure fails the Howey Test. As a non-tradable token with no promised expectation of profit, it has a strong argument for not being a security
+
+#### Phase 2: VICTORY Token Conversion (Post-Treaty)
+
+This phase occurs only _after_ a 1% treaty is successfully ratified and the [1% Treaty Fund](../solution/dih.qmd) is funded.
+
+- **Mechanism:** Holders of VOTE points have the option to convert their points into real VICTORY governance tokens through a compliant portal
+- **Legal Rationale:** This conversion will be structured to fall within the SEC's "safe harbor" provisions [@peirce-token-safe-harbor] for sufficiently decentralized networks. By conversion time, the primary "work of the promoters" (getting the treaty passed) is complete
+
 ### How to Structure It
 
 **Phase 1: Rich People Only (Reg D)**
@@ -458,6 +478,48 @@ Make prosecuting you more annoying than allowing you:
 **Plan D:** Public revolution (280 million supporters wanting healthcare)
 
 **Plan E:** Actual revolution (just kidding, violence is inefficient, this is done legally)
+
+## Regulatory Reform Agenda
+
+### HHS Policy Recommendations
+
+To maximize the effectiveness of the [decentralized framework for drug assessment infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** ($500 million) to incentivize creation of an open-source decentralized framework for drug assessment protocol enabling perpetual, patient-driven clinical trials.
+
+#### Key Policy Objectives
+
+1.  **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
+2.  **Clarify Pricing Mechanisms:** Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8) [@cfr-21-312-8-charging-for-investigational-drugs]
+3.  **Redirect NIH Funding:** Transition research toward projects leveraging the decentralized framework for drug assessment
+4.  **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
+5.  **Incentivize Innovation:** Launch $500M X Prize for platform development
+
+#### Projected Impact
+
+- Support 61+ million participants annually ($30.6B ÷ {{< var recovery_trial_cost_per_patient >}} per participant)
+- Potential for 160+ million participants with Medicare/Medicaid integration
+- Trillions in global healthcare savings
+- Months instead of years from discovery to deployment
+
+### Priority Regulations for Modification
+
+#### High-Priority Streamlining Targets
+
+1.  **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
+
+2.  **21 CFR Parts 56 & 45 CFR Part 46 (IRBs):** Enforce single IRB mandate, standardize requirements, enable AI-assisted review
+
+3.  **ICH E6(R2) GCP Guidelines:** Risk-based quality management, reduced documentation for automated platforms, remote monitoring standards
+
+4.  **21 CFR 312.32 (IND Safety Reporting):** Automated safety reporting from platforms, AI-based signal detection, aggregate reporting for known events
+
+5.  **21 CFR Parts 50 & 45 CFR Part 46 (Informed Consent):** Electronic consent validation, dynamic consent for adaptive trials, simplified waivers
+
+#### Revolutionary Exemptions for Certified Platforms
+
+- **Radical Device Simplification:** Class I/II devices require only registration if evaluated via a certified decentralized framework for drug assessment
+- **Post-Market Surveillance:** Replace traditional REMS programs with real-time platform monitoring
+- **Dynamic Digital Labeling:** FDA-approved systems for rapid label updates based on platform data
+- **Integrated Combination Product Review:** Single coordinated assessment using unified platform data
 
 ---
 
