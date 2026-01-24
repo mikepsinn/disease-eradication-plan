@@ -156,6 +156,9 @@ Why Phase 3 dominates:
 - Detects rare adverse events not seen in smaller trials
 - Evaluates effectiveness beyond controlled trial conditions
 
+
+![Comparative overview of spending, market share, and per-patient costs across the four clinical trial phases.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-clinical-trial-phases-comparison-bw-academic.jpg)
+
 ## Who's Paying: Funding Source Breakdown
 
 {{< include ../figures/clinical-trial-funding-sources-pie-chart.qmd >}}
@@ -233,6 +236,9 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - NIH covers ~22% of Phase 2 costs [@nih-phase-2-coverage]
 - NIH covers only ~4% of Phase 3 costs [@nih-phase-3-coverage]
 - Industry takes over once commercial potential is clearer
+
+
+![The decline in government funding share as drug development moves from early-stage safety trials (Phase 1) to late-stage commercialization (Phase 3).](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-nih-vs-industry-funding-share-bw-academic.jpg)
 
 #### European Union
 
@@ -324,6 +330,9 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Tufts Center 2021 estimate: {{< var pharma_drug_development_cost_current >}}
   - Nearly 3× increase from $802M in 2003 (inflation-adjusted)
 
+
+![The attrition funnel of drug development, showing the sharp decline in candidate survival alongside the accumulating costs per approved drug.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-drug-development-attrition-funnel-bw-academic.jpg)
+
 ## Regional Market Distribution
 
 {{< include ../figures/clinical-trial-regional-spending-column-chart.qmd >}}
@@ -390,6 +399,9 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Global pharmaceutical marketing: **$180 billion** [@pharma-marketing-spending-60b]
 - **Humans spend {{< var military_to_clinical_trials_spending_ratio >}} more on weapons and 2× more on drug ads than on testing new treatments**
 
+
+![Global spending scale comparison: Clinical trials vs. Pharmaceutical Marketing vs. Military Expenditure.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-global-spending-context-comparison-bw-academic.jpg)
+
 ## The Efficiency Paradox
 
 ### Current system
@@ -411,6 +423,9 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
 - RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
 - **That's an 80-240× markup for bureaucracy**
+
+
+![Cost efficiency comparison between traditional Phase 3 trials and the decentralized RECOVERY trial model.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-markup-comparison-bw-academic.jpg)
 
 ## Summary Table
 

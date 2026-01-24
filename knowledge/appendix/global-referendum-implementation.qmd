@@ -27,6 +27,9 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 - **Fraud controls**: Risk scoring, velocity limits, manual review queues; bounty program for reporting abuse.
 - **Internationalization**: 40+ locale support; accessibility-first UI.
 
+
+![Layered technical architecture integrating the voting protocol, identity verification methods, and fraud detection systems.](/assets/images/global-referendum-implementation/global-referendum-implementation-section-system-architecture-bw-academic.jpg)
+
 ## Integrity and Auditing
 
 - **Crypto receipts**: Each voter receives a tracking code to verify inclusion.

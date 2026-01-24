@@ -19,39 +19,31 @@
  *   --pattern GLOB     Process only images matching pattern (e.g., "*.png")
  */
 
-import { GoogleGenAI } from '@google/genai';
+import { generateGeminiVisionContent, GEMINI_FLASH_MODEL_ID } from '../lib/llm';
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import dotenv from 'dotenv';
-import { exiftool } from 'exiftool-vendored';
 import { saveFile } from '../lib/file-utils';
 
-dotenv.config();
+// Shared utilities
+import { findImages, getMimeType, SUPPORTED_IMAGE_EXTENSIONS } from '../lib/image-file-utils';
+import { readImageMetadata as readExifMetadata, writeImageMetadata as writeExifMetadata } from '../lib/exiftool-utils';
+import { parseCommonArgs, getArgValue, hasFlag, printHeader, printSummary } from '../lib/cli-utils';
 
 // Configuration
-const GEMINI_MODEL_ID = 'gemini-2.5-flash';
 const ASSETS_DIR = path.join(process.cwd(), 'assets');
 const OUTPUT_GUIDE = path.join(ASSETS_DIR, 'IMAGE-GUIDE.md');
 const METADATA_MARKER = 'ai-analyzed';
 
-// Check for API key
-const API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
-if (!API_KEY) {
-  throw new Error('GOOGLE_GENERATIVE_AI_API_KEY is not set in .env file');
-}
-
-// Initialize Gemini client
-const genAI = new GoogleGenAI({ apiKey: API_KEY });
-
 // Parse command line arguments
 const args = process.argv.slice(2);
+const commonOptions = parseCommonArgs(args);
 const options = {
-  all: args.includes('--all'),
-  skipMetadata: args.includes('--skip-metadata'),
-  guideOnly: args.includes('--guide-only'),
-  limit: args.find(a => a.startsWith('--limit'))?.split('=')[1] || null,
-  pattern: args.find(a => a.startsWith('--pattern'))?.split('=')[1] || '**/*.{png,jpg,jpeg,gif,svg,webp}'
+  all: commonOptions.all,
+  skipMetadata: hasFlag(args, 'skip-metadata'),
+  guideOnly: hasFlag(args, 'guide-only'),
+  limit: commonOptions.limit,
+  pattern: getArgValue(args, 'pattern') || '**/*.{png,jpg,jpeg,gif,svg,webp}'
 };
 
 interface ImageMetadata {
@@ -71,19 +63,11 @@ interface ImageMetadata {
  * Get list of all image files in assets directory
  */
 async function getImageFiles(): Promise<string[]> {
-  // Get all files from assets directory
-  const extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
-  const allFiles = fs.readdirSync(ASSETS_DIR);
-
-  const imageFiles = allFiles
-    .filter(file => {
-      const ext = path.extname(file).toLowerCase();
-      return extensions.includes(ext);
-    })
-    .map(file => path.join(ASSETS_DIR, file));
+  // Use shared findImages utility
+  let imageFiles = await findImages(ASSETS_DIR, { recursive: false });
 
   if (options.limit) {
-    return imageFiles.slice(0, parseInt(options.limit));
+    imageFiles = imageFiles.slice(0, options.limit);
   }
 
   return imageFiles;
@@ -94,9 +78,9 @@ async function getImageFiles(): Promise<string[]> {
  */
 async function isAnalyzed(filepath: string): Promise<boolean> {
   try {
-    const tags = await exiftool.read(filepath);
-    const comment = tags.Comment || tags.UserComment || '';
-    return comment.toString().includes(METADATA_MARKER);
+    const metadata = await readExifMetadata(filepath);
+    // Check if the metadata contains our marker
+    return metadata !== null && metadata.description?.includes(METADATA_MARKER) === true;
   } catch (error) {
     // File doesn't have metadata or exiftool can't read it
     return false;
@@ -104,10 +88,10 @@ async function isAnalyzed(filepath: string): Promise<boolean> {
 }
 
 /**
- * Analyze image using Gemini Vision API
+ * Analyze image using Gemini Vision API via lib/llm.ts
  */
 async function analyzeImage(filepath: string): Promise<Partial<ImageMetadata>> {
-  console.log(`  Analyzing with Gemini Vision API...`);
+  console.log(`  Analyzing with Gemini Vision API (${GEMINI_FLASH_MODEL_ID})...`);
 
   try {
     // Read image as base64
@@ -133,24 +117,7 @@ KEYWORDS: [keyword1, keyword2, keyword3, ...]
 CHAPTERS: [chapter1.qmd, chapter2.qmd, ...]
 PRIMARY_USE: [chapter1.qmd]`;
 
-    const result = await genAI.models.generateContent({
-      model: GEMINI_MODEL_ID,
-      contents: [
-        {
-          parts: [
-            { text: prompt },
-            {
-              inlineData: {
-                mimeType: mimeType,
-                data: base64Image
-              }
-            }
-          ]
-        }
-      ]
-    });
-
-    const responseText = result.text || '';
+    const responseText = await generateGeminiVisionContent(prompt, base64Image, mimeType);
 
     // Parse response
     const descMatch = responseText.match(/DESCRIPTION:\s*(.+?)(?=\n[A-Z]+:|$)/s);
@@ -202,75 +169,45 @@ PRIMARY_USE: [chapter1.qmd]`;
 }
 
 /**
- * Get MIME type from file extension
- */
-function getMimeType(filepath: string): string {
-  const ext = path.extname(filepath).toLowerCase();
-  const mimeTypes: Record<string, string> = {
-    '.png': 'image/png',
-    '.jpg': 'image/jpeg',
-    '.jpeg': 'image/jpeg',
-    '.gif': 'image/gif',
-    '.webp': 'image/webp',
-    '.svg': 'image/svg+xml'
-  };
-  return mimeTypes[ext] || 'image/png';
-}
-
-/**
  * Update image metadata with analysis results
  */
 async function updateImageMetadata(filepath: string, metadata: ImageMetadata): Promise<void> {
   if (options.skipMetadata) return;
 
   try {
-    const metadataString = JSON.stringify({
-      description: metadata.description,
+    // Use shared writeImageMetadata utility
+    await writeExifMetadata(filepath, {
+      description: `${metadata.description} [${METADATA_MARKER}]`,
       keywords: metadata.keywords,
+      // Store additional data in the JSON blob
       chapters: metadata.suggestedChapters,
-      source: metadata.source || '',
-      [METADATA_MARKER]: true
+      source: metadata.source,
     });
 
-    // Use exiftool-vendored to write metadata
-    await exiftool.write(filepath, {
-      Comment: metadataString,
-      UserComment: metadataString,
-      Description: metadata.description,
-      Keywords: metadata.keywords
-    });
-
-    console.log(`  ✓ Metadata updated`);
+    console.log(`  [OK] Metadata updated`);
   } catch (error) {
-    console.log(`  ⚠ Could not update metadata:`, error);
+    console.log(`  [WARN] Could not update metadata:`, error);
   }
 }
 
 /**
  * Read existing metadata from image
  */
-async function readImageMetadata(filepath: string): Promise<Partial<ImageMetadata>> {
+async function readLocalImageMetadata(filepath: string): Promise<Partial<ImageMetadata>> {
   try {
-    const tags = await exiftool.read(filepath);
-    const comment = tags.Comment || tags.UserComment || '';
-    const commentStr = comment.toString();
+    const exifData = await readExifMetadata(filepath);
 
-    if (commentStr.includes(METADATA_MARKER)) {
-      try {
-        const parsed = JSON.parse(commentStr);
-        return {
-          description: parsed.description,
-          keywords: parsed.keywords || [],
-          suggestedChapters: parsed.chapters || [],
-          source: parsed.source,
-          analyzed: true
-        };
-      } catch (error) {
-        console.warn(`Could not parse existing metadata for ${imagePath}:`, error);
-      }
+    if (exifData && exifData.description?.includes(METADATA_MARKER)) {
+      return {
+        description: exifData.description?.replace(` [${METADATA_MARKER}]`, ''),
+        keywords: exifData.keywords || [],
+        suggestedChapters: (exifData as any).chapters || [],
+        source: (exifData as any).source,
+        analyzed: true
+      };
     }
   } catch (error) {
-    console.warn(`Could not read metadata from ${imagePath}:`, error);
+    console.warn(`Could not read metadata from ${filepath}:`, error);
   }
 
   return { analyzed: false };
@@ -311,7 +248,7 @@ async function processImage(filepath: string): Promise<ImageMetadata> {
   const fileInfo = await getImageInfo(filepath);
 
   // Check if already analyzed
-  const existingMetadata = await readImageMetadata(filepath);
+  const existingMetadata = await readLocalImageMetadata(filepath);
 
   if (!options.all && existingMetadata.analyzed) {
     console.log(`  ✓ Already analyzed, skipping`);
@@ -471,7 +408,7 @@ async function main() {
       if (options.guideOnly) {
         // Just read existing metadata
         const fileInfo = await getImageInfo(filepath);
-        const existing = await readImageMetadata(filepath);
+        const existing = await readLocalImageMetadata(filepath);
         allMetadata.push({ ...fileInfo, ...existing } as ImageMetadata);
       } else {
         // Full processing
@@ -491,16 +428,12 @@ async function main() {
   // Generate markdown guide
   await generateGuide(allMetadata);
 
-  console.log(`\n✓ Complete! Processed ${allMetadata.length} images`);
-  console.log(`\n📖 View the guide at: ${OUTPUT_GUIDE}`);
-
-  // Clean up exiftool
-  await exiftool.end();
+  console.log(`\n[OK] Complete! Processed ${allMetadata.length} images`);
+  console.log(`\nView the guide at: ${OUTPUT_GUIDE}`);
 }
 
 // Run
-main().catch(async error => {
+main().catch(error => {
   console.error('Fatal error:', error);
-  await exiftool.end();
   process.exit(1);
 });

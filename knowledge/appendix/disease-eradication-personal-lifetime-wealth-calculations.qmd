@@ -35,7 +35,7 @@ The **Disease Eradication Model** properly accounts for {{< var dfda_trial_capac
 
 ## The Model Components
 
-### 1. Disease-by-Disease Eradication (CDC Burden Data)
+### Disease-by-Disease Eradication (CDC Burden Data)
 
 Real data from CDC 2023/2024:
 
@@ -58,7 +58,7 @@ Real data from CDC 2023/2024:
 - **Stem cells** regenerate damaged organs
 - **Epigenetics** reverses cellular aging markers
 
-### 2. Aging Reversal Bonus
+### Aging Reversal Bonus
 
 Separate from curing specific diseases, **epigenetic reprogramming extends maximum lifespan**:
 
@@ -71,7 +71,7 @@ Separate from curing specific diseases, **epigenetic reprogramming extends maxim
 
 Formula: Logarithmic scaling toward accident-limited lifespan (~150 years extension max)
 
-### 3. Healthcare Savings
+### Healthcare Savings
 
 As diseases are eradicated, healthcare costs drop:
 
@@ -79,7 +79,7 @@ As diseases are eradicated, healthcare costs drop:
 - Per capita: $11,045 × 15% = $1,656/year savings
 - NPV over extended lifetime: Substantial component of total benefit
 
-### 4. Productivity Gains
+### Productivity Gains
 
 Based on IBI 2024 workforce data:
 
@@ -87,7 +87,7 @@ Based on IBI 2024 workforce data:
 - Average loss: $4,798/year per affected employee
 - Disease eradication recovers this lost productivity
 
-### 5. GDP Boost
+### GDP Boost
 
 {{< var dfda_trial_capacity_multiplier >}}× research acceleration creates innovation spillovers:
 
@@ -95,7 +95,7 @@ Based on IBI 2024 workforce data:
 - Compounds over extended lifetime
 - Major component of total benefit
 
-### 6. Extended Earnings
+### Extended Earnings
 
 With 72 extra years of life:
 
@@ -293,7 +293,7 @@ Where:
 
 ### Component Formulas
 
-#### 1. Peace Dividend
+#### Peace Dividend
 
 Direct per-capita savings from reduced war costs:
 
@@ -305,7 +305,7 @@ $$
 \text{Peace Dividend}_{\text{NPV}} = \sum_{t=1}^{T} \frac{\$14.19 \times (1 + g_{gdp})^t}{(1+r)^t}
 $$
 
-#### 2. Economic Multiplier (Military→Research)
+#### Economic Multiplier (Military→Research)
 
 Productivity gain from redirecting military spending to research:
 
@@ -327,7 +327,7 @@ Where:
 - $g_{\text{boost}} = 0.0025$ (0.25% additional growth from 1% treaty)
 - $I$ = Annual income
 
-#### 3. Healthcare Savings
+#### Healthcare Savings
 
 As diseases are eradicated, healthcare costs decline:
 
@@ -339,7 +339,7 @@ $$
 \text{Healthcare NPV} = \sum_{t=1}^{T} \frac{\text{Healthcare Savings}_t \times (1 + g_{gdp})^t}{(1+r)^t}
 $$
 
-#### 4. Extended Earnings
+#### Extended Earnings
 
 With life extension from age $LE_{\text{baseline}}$ to $LE_{\text{treaty}}$:
 
@@ -352,7 +352,7 @@ Where:
 - Working years (age 80→120): $I_t = I_0 \times (1 + g_{gdp})^t$
 - Retirement years (age 120→152): $I_t = 0.6 \times I_{\text{final}}$ (60% replacement rate)
 
-#### 5. Life Extension Formula
+#### Life Extension Formula
 
 Disease-specific eradication:
 
@@ -384,6 +384,8 @@ The tornado chart shows which parameters have the largest impact on your persona
 - **Right bars (white):** Lifetime wealth when parameter is at HIGH end of range
 - **Width of total bar:** Indicates parameter's sensitivity (wider = more important)
 - **Black vertical line:** Base case (Age 30, $50K income, 1% treaty, 3% discount)
+
+
 
 ### What the Numbers Mean
 

@@ -30,7 +30,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
+import { existsSync, readdirSync, unlinkSync } from 'fs';
 import { generateGeminiProContent } from '../lib/llm.js';
 import { generateAndSaveImages } from '../lib/gemini-images.js';
 import { getCleanedContentForLLM, getBookFilesForProcessing } from '../lib/file-utils.js';
@@ -44,9 +44,8 @@ interface ImageRecommendation {
   placementHint: string;   // Description like "after the 4-point list"
   sectionTitle: string;
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart';
-  visualizationGoal: string;  // Detailed composition instructions
-  contentExcerpt: string;     // Key data, numbers, and context from the section
-  caption: string;            // Natural, human-readable caption for alt text
+  verbatimContent: string; // Exact text, numbers, and quotes copied directly from the section
+  caption: string;         // Natural, human-readable caption for alt text
   reasoning: string;
 }
 
@@ -187,8 +186,7 @@ Respond with JSON:
       "placementHint": "<e.g., 'after the 4-point list'>",
       "sectionTitle": "<section name for filename>",
       "imageType": "diagram" | "chart" | "infographic" | "flowchart",
-      "visualizationGoal": "<detailed composition instructions - what to show and how>",
-      "contentExcerpt": "<key data, numbers, labels, and context from the section>",
+      "verbatimContent": "<COPY EXACT TEXT from the section - see VERBATIM CONTENT FORMAT below>",
       "caption": "<1-2 sentence description, NO figure numbers like 'Figure 1:'>",
       "reasoning": "<why this image is necessary>"
     }
@@ -207,9 +205,21 @@ PLACEMENT:
 - Script finds location by: locating heading → finding anchor → skipping lists/headers/code → placing after complete paragraphs
 - Examples: "after the 4-point explanation", "after ROI calculation", "after defining key terms"
 
-VISUALIZATION GOAL vs CONTENT EXCERPT:
-- visualizationGoal: HOW to compose the image (layout, arrangement, visual relationships)
-- contentExcerpt: WHAT data/numbers/labels to include (extracted verbatim from the section)
+VERBATIM CONTENT FORMAT:
+Extract and copy the EXACT text from the section that should appear in the figure. Do NOT paraphrase, summarize, or rewrite. Copy-paste directly:
+- Key statistics and numbers exactly as written
+- Labels, titles, and category names exactly as they appear
+- Quoted phrases that should appear in the image
+- List items or steps exactly as written
+
+GOOD verbatimContent examples:
+- "Global Military Spending: $2.72 Trillion | Disease Cure Funding: $67.5 Billion | Government Clinical Trials: $4.5 Billion | 604:1 ratio"
+- "Step 1: Pharma Industry Job | Step 2: FDA Regulator | Step 3: Return to Industry | 400% Salary Raise"
+- "NIH RECOVER: $1.665 billion, 4 years, 0 trials completed | UK RECOVERY: $20 million, 6 months, 1 million lives saved"
+
+BAD verbatimContent (paraphrased):
+- "A comparison showing military spending vastly exceeds healthcare" (this is a summary, not the actual text)
+- "The revolving door between industry and government" (this is a description, not the content)
 
 CAPTION FORMAT:
 - Natural descriptions: "Comparison of traditional trial costs ($41K/patient) vs. pragmatic trials ($500/patient)."
@@ -244,8 +254,10 @@ Be selective. Quality over quantity.`;
         console.log(`     Placement: ${rec.placementHint}`);
         console.log(`     Anchor: "${rec.anchorText}"`);
         console.log(`     Caption: ${rec.caption}`);
-        console.log(`     Goal: ${rec.visualizationGoal}`);
         console.log(`     Why: ${rec.reasoning}`);
+        console.log(`     --- Verbatim Content ---`);
+        console.log(`     ${rec.verbatimContent.replace(/\n/g, '\n     ')}`);
+        console.log(`     ${'─'.repeat(50)}`);
       });
     } else {
       console.log(`\n  No images recommended - document is clear without visual aids`);
@@ -310,16 +322,12 @@ async function generateSectionImages(
     const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
     const suffix = style.suffix;
 
-    // Use visualizationGoal (detailed composition instructions) + content excerpt for context
-    // The visualizationGoal tells Gemini WHAT to draw, the excerpt provides the DATA
+    // Pass the verbatim content directly - let the image model figure out the best visualization
     const imagePrompt = `${style.style}
 
-IMAGE TYPE: ${rec.imageType}
+Create a ${rec.imageType} visualizing this information:
 
-COMPOSITION:
-${rec.visualizationGoal}
-
-${rec.contentExcerpt}`;
+${rec.verbatimContent}`;
 
     try {
       // Use the aspect ratio passed from CLI (default: 1:1 for consistency with manual generations)
@@ -327,7 +335,13 @@ ${rec.contentExcerpt}`;
       // Generate descriptive filename from section title
       const sectionSlug = toKebabCase(rec.sectionTitle);
 
-      // Log prompts to file for debugging
+      // Log prompts to console and file for debugging
+      console.log(`\n  --- VERBATIM CONTENT (from analysis) ---`);
+      console.log(`  ${rec.verbatimContent}`);
+      console.log(`\n  --- FINAL PROMPT SENT TO GEMINI ---`);
+      console.log(`  ${imagePrompt.replace(/\n/g, '\n  ')}`);
+      console.log(`  ${'─'.repeat(60)}`);
+
       const logsDir = path.join(process.cwd(), 'logs');
       await fs.mkdir(logsDir, { recursive: true });
       const logFile = path.join(logsDir, 'image-prompts.log');
@@ -340,11 +354,8 @@ Image Type: ${rec.imageType}
 Placement: ${rec.placementHint}
 Anchor Text: ${rec.anchorText}
 
---- VISUALIZATION GOAL (from analysis) ---
-${rec.visualizationGoal}
-
---- CONTENT EXCERPT ---
-${rec.contentExcerpt}
+--- VERBATIM CONTENT (from analysis) ---
+${rec.verbatimContent}
 
 --- FINAL PROMPT SENT TO GEMINI ---
 ${imagePrompt}
@@ -352,7 +363,6 @@ ${'='.repeat(80)}
 
 `;
       await fs.appendFile(logFile, logEntry, 'utf-8');
-      console.log(`  [LOG] Prompt logged to logs/image-prompts.log`);
 
       const imageFiles = await generateAndSaveImages({
         prompt: imagePrompt,
@@ -362,7 +372,7 @@ ${'='.repeat(80)}
         referenceImages: [],
         metadata: {
           title: rec.caption,
-          description: rec.visualizationGoal,
+          description: rec.verbatimContent,
           keywords: [rec.imageType, rec.sectionTitle, fileName, 'section-image'],
         },
       });
@@ -419,7 +429,7 @@ function countExistingSectionImages(filePath: string): number {
   try {
     const { readdirSync } = require('fs');
     const files = readdirSync(outputDir);
-    return files.filter((f: string) => f.startsWith(`${fileName}-section-`) && f.endsWith('.png')).length;
+    return files.filter((f: string) => f.startsWith(`${fileName}-section-`) && (f.endsWith('.png') || f.endsWith('.jpg'))).length;
   } catch {
     return 0;
   }
@@ -446,9 +456,8 @@ async function processFile(
 
     // Delete existing section images
     if (existsSync(outputDir)) {
-      const { readdirSync, unlinkSync } = require('fs');
       const files = readdirSync(outputDir);
-      const sectionImages = files.filter((f: string) => f.startsWith(`${fileName}-section-`) && f.endsWith('.png'));
+      const sectionImages = files.filter((f: string) => f.startsWith(`${fileName}-section-`) && (f.endsWith('.png') || f.endsWith('.jpg')));
 
       if (sectionImages.length > 0) {
         console.log(`\n[FORCE] Deleting ${sectionImages.length} existing section images...`);

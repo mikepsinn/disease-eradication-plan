@@ -10,6 +10,7 @@ import { GoogleGenAI } from '@google/genai'
 import sharp from 'sharp'
 import { exec } from 'child_process'
 import { promisify } from 'util'
+import { GEMINI_IMAGE_MODEL_ID } from './llm'
 
 const execAsync = promisify(exec)
 
@@ -62,6 +63,21 @@ export interface ImageMetadata {
 
   /** Software used to create image (EXIF:Software, XMP:CreatorTool) */
   generator?: string
+
+  /** AI generation prompt used to create this image (stored in EXIF:UserComment as JSON) */
+  generationPrompt?: string
+
+  /** OCR transcript of visible text in the image (stored in EXIF:UserComment as JSON) */
+  transcript?: string
+
+  /** AI-inferred prompt that could have generated this image (for comparison with actual prompt) */
+  inferredPrompt?: string
+
+  /** List of issues/problems identified in the image */
+  imageIssues?: string[]
+
+  /** Suggestions for improving the generation prompt */
+  promptImprovements?: string[]
 }
 
 // Default metadata values (exported for reuse)
@@ -85,8 +101,9 @@ interface ImageModelConfig {
 const IMAGE_MODEL_CONFIGS: Record<string, ImageModelConfig> = {
   // Gemini Imagen models
   // Pricing from: https://ai.google.dev/pricing
-  'gemini-3-pro-image-preview': {
-    id: 'gemini-3-pro-image-preview',
+  // Model ID imported from llm.ts for single source of truth
+  [GEMINI_IMAGE_MODEL_ID]: {
+    id: GEMINI_IMAGE_MODEL_ID,
     costPerImage: 0.04, // $0.04 per image (standard quality)
     maxImagesPerRequest: 8,
   },
@@ -199,6 +216,8 @@ export async function addImageMetadata(imagePath: string, metadata: ImageMetadat
  * Embeds EXIF, IPTC Core, and XMP metadata for maximum discoverability
  */
 async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): Promise<void> {
+  const fs = await import('fs/promises')
+  const path = await import('path')
   const args: string[] = ['-overwrite_original']
 
   // EXIF metadata
@@ -245,6 +264,23 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
   args.push(`-EXIF:DateTimeOriginal=${now}`)
   args.push(`-XMP:CreateDate=${now}`)
 
+  // Store AI-related metadata as JSON in UserComment
+  // Use temp file to avoid Windows shell escaping issues with newlines
+  let tempFile: string | null = null
+  if (meta.generationPrompt || meta.transcript || meta.inferredPrompt || meta.imageIssues || meta.promptImprovements) {
+    const userCommentData: Record<string, unknown> = {}
+    if (meta.generationPrompt) userCommentData.generationPrompt = meta.generationPrompt
+    if (meta.transcript) userCommentData.transcript = meta.transcript
+    if (meta.inferredPrompt) userCommentData.inferredPrompt = meta.inferredPrompt
+    if (meta.imageIssues) userCommentData.imageIssues = meta.imageIssues
+    if (meta.promptImprovements) userCommentData.promptImprovements = meta.promptImprovements
+    userCommentData.metadataCreatedAt = new Date().toISOString()
+
+    tempFile = path.join(path.dirname(imagePath), `.metadata-temp-${Date.now()}.json`)
+    await fs.writeFile(tempFile, JSON.stringify(userCommentData))
+    args.push(`-UserComment<="${tempFile}"`)
+  }
+
   // Execute exiftool
   const command = `exiftool ${args.join(' ')} "${imagePath}"`
 
@@ -253,11 +289,22 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
     log.info('Rich metadata embedded via exiftool', {
       title: meta.title,
       keywords: meta.keywords.length,
+      hasPrompt: !!meta.generationPrompt,
+      hasTranscript: !!meta.transcript,
     })
   } catch (error: any) {
     log.error('Failed to add metadata with exiftool', { error: error.message })
     // Fall back to sharp
     await addMetadataWithSharp(imagePath, meta)
+  } finally {
+    // Clean up temp file
+    if (tempFile) {
+      try {
+        await fs.unlink(tempFile)
+      } catch {
+        // Ignore cleanup errors
+      }
+    }
   }
 }
 
@@ -384,7 +431,7 @@ export interface ImageGenerationOptions {
   /** Image aspect ratio (default: '1:1') */
   aspectRatio?: '1:1' | '3:4' | '4:3' | '9:16' | '16:9'
 
-  /** Model to use (default: 'gemini-3-pro-image-preview' - Nano Banana Pro) */
+  /** Model to use (default: GEMINI_IMAGE_MODEL_ID from llm.ts) */
   model?: string
 
   /** Negative prompt - what to avoid in the image */
@@ -461,7 +508,7 @@ export async function generateImages(
     prompt,
     count = 1,
     aspectRatio = '1:1',
-    model = 'gemini-3-pro-image-preview',
+    model = GEMINI_IMAGE_MODEL_ID,
     negativePrompt,
     referenceImages = [],
   } = options
@@ -543,6 +590,7 @@ export async function generateImages(
 
 /**
  * Save a generated image to a file with rich metadata
+ * Automatically extracts OCR transcript and saves the generation prompt
  *
  * @example
  * ```typescript
@@ -551,14 +599,18 @@ export async function generateImages(
  *   title: 'A Beautiful Cat',
  *   description: 'AI-generated image of a cat',
  *   keywords: ['cat', 'animal', 'AI art'],
- * })
+ * }, 'A cat')
  * ```
  */
 export async function saveImage(
   image: GeneratedImage,
   filePath: string,
   metadata: ImageMetadata,
-  options?: { skipWatermark?: boolean }
+  /** The prompt used to generate this image (saved to metadata) - REQUIRED */
+  generationPrompt: string,
+  options?: {
+    skipWatermark?: boolean
+  }
 ): Promise<void> {
   const fs = await import('fs/promises')
   const path = await import('path')
@@ -616,8 +668,41 @@ export async function saveImage(
     await fs.rename(tmpPath, filePath)
   }
 
+  // Build final metadata with prompt and transcript
+  const finalMetadata: ImageMetadata = {
+    ...metadata,
+    generationPrompt, // Always save the generation prompt
+  }
+
+  // Always extract transcript and image analysis using shared module
+  try {
+    const { analyzeImage } = await import('./image-analysis')
+    const analysis = await analyzeImage(filePath)
+
+    if (analysis.transcript) {
+      finalMetadata.transcript = analysis.transcript
+    }
+    if (analysis.inferredPrompt) {
+      finalMetadata.inferredPrompt = analysis.inferredPrompt
+    }
+    if (analysis.imageIssues && analysis.imageIssues.length > 0) {
+      finalMetadata.imageIssues = analysis.imageIssues
+    }
+    if (analysis.promptImprovements && analysis.promptImprovements.length > 0) {
+      finalMetadata.promptImprovements = analysis.promptImprovements
+    }
+
+    log.info('Image analysis complete', {
+      hasTranscript: !!finalMetadata.transcript,
+      issueCount: finalMetadata.imageIssues?.length || 0,
+      improvementCount: finalMetadata.promptImprovements?.length || 0,
+    })
+  } catch (err: any) {
+    log.warn('Failed to analyze image', { error: err.message })
+  }
+
   // Add rich metadata (EXIF, IPTC, XMP for SEO/discoverability)
-  await addImageMetadata(filePath, metadata)
+  await addImageMetadata(filePath, finalMetadata)
 
   // Add watermark unless skipped (e.g., for favicons)
   if (!options?.skipWatermark) {
@@ -628,8 +713,10 @@ export async function saveImage(
     filePath,
     size: buffer.length,
     format: sharpMeta.format,
-    title: metadata.title,
-    keywords: metadata.keywords.length,
+    title: finalMetadata.title,
+    keywords: finalMetadata.keywords.length,
+    hasPrompt: !!finalMetadata.generationPrompt,
+    hasTranscript: !!finalMetadata.transcript,
   })
 }
 
@@ -650,7 +737,7 @@ export async function saveImage(
  *     category: 'Health/Medical',
  *   }
  * })
- * // Creates: poster-1.png, poster-2.png, poster-3.png with full EXIF/IPTC/XMP metadata
+ * // Creates: poster-1.jpg, poster-2.jpg, poster-3.jpg with full EXIF/IPTC/XMP metadata
  * ```
  */
 export async function generateAndSaveImages(options: {
@@ -672,7 +759,7 @@ export async function generateAndSaveImages(options: {
     aspectRatio,
     outputDir,
     filePrefix,
-    format = 'png',
+    format = 'jpg',
     referenceImages,
     metadata,
     skipWatermark = false,
@@ -700,7 +787,7 @@ export async function generateAndSaveImages(options: {
       : `${filePrefix}-${i + 1}.${format}`
 
     const filePath = `${outputDir}/${fileName}`
-    await saveImage(result.images[i], filePath, fullMetadata, { skipWatermark })
+    await saveImage(result.images[i], filePath, fullMetadata, prompt, { skipWatermark })
     filePaths.push(filePath)
   }
 

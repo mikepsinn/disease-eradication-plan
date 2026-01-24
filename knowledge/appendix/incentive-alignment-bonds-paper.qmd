@@ -252,6 +252,9 @@ Consider the global capital distribution:
 
 [^capital-estimate]: Conservative estimate based on: Top 100 military contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
 
+![Visualizing the 90:1 capital advantage: Global household wealth ($454T) vastly overshadows the combined market cap of concentrated opposition ($5T).](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
+
+
 The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
 **IABs solve the coordination problem by securitizing political change** (turning policy outcomes into tradable financial instruments, like turning mortgages into mortgage-backed securities). If IABs can be structured as tradable securities that any individual can purchase, they transform diffuse beneficiaries into the largest special interest group in history. The mechanism:
@@ -782,6 +785,9 @@ This allocation structure creates aligned incentives across all participants. In
 
 **Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
+![Flow of funds from a 1% military redirect ($27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
+
+
 **Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 
 **Post-office layer:** Foundations funded by the political incentive allocation establish eligibility criteria: "The Global Health Leadership Fellowship (\$300K/year, 5-year term) requires a career Health Research Score above 70."
@@ -843,6 +849,9 @@ This calibration suggests that IAB funding levels in the billions can overcome c
 **The short version:** Three interlocking systems make it work. (1) A nonprofit publishes "Public Good Scores" for every politician based on their voting record on high-NSV policies. (2) PACs and Super PACs commit to supporting high-scorers with campaign spending. (3) A network of post-government employers preferentially hires high-scorers. All three are legal. Together, they make funding high-NSV programs the career-maximizing choice.
 
 To implement score-dependent payoffs, we need mechanisms. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
+
+![The Three-Layer Architecture: A cyclical system where Voting Records drive Scores, which automatically trigger Electoral Support and Post-Office Career Opportunities.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-architecture-bw-academic.jpg)
+
 
 {{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 

@@ -1,8 +1,13 @@
 /**
  * Generate a JSON index of all images in the project with metadata
  *
+ * Also generates missing metadata (transcript, inferredPrompt, etc.) using Gemini
+ *
  * Usage:
- *   npx tsx scripts/images/generate-image-index.ts
+ *   npx tsx scripts/images/generate-image-index.ts           # Index only, skip missing metadata
+ *   npx tsx scripts/images/generate-image-index.ts --fill    # Generate missing metadata with Gemini
+ *   npx tsx scripts/images/generate-image-index.ts --force   # Regenerate ALL metadata (overwrite existing)
+ *   npx tsx scripts/images/generate-image-index.ts --limit N # Limit to N images for testing
  *
  * Output: assets/image-search-index.json
  */
@@ -11,10 +16,10 @@ import fs from 'fs/promises';
 import path from 'path';
 import { glob } from 'glob';
 import sharp from 'sharp';
-import { exec } from 'child_process';
-import { promisify } from 'util';
 
-const execAsync = promisify(exec);
+// Shared utilities
+import { formatBytes } from '../lib/image-file-utils';
+import { isExiftoolAvailable, readImageMetadata } from '../lib/exiftool-utils';
 
 const OUTPUT_FILE = 'assets/image-search-index.json';
 
@@ -59,6 +64,16 @@ interface ImageMetadata {
   copyright?: string;
   /** Creation date from EXIF */
   dateCreated?: string;
+  /** Extracted text/transcript from image (OCR) */
+  transcript?: string;
+  /** Original prompt used to generate the image */
+  generationPrompt?: string;
+  /** AI-inferred prompt that could have generated this image */
+  inferredPrompt?: string;
+  /** List of issues/problems identified in the image */
+  imageIssues?: string[];
+  /** Suggestions for improving the generation prompt */
+  promptImprovements?: string[];
 }
 
 interface ImageIndex {
@@ -69,14 +84,7 @@ interface ImageIndex {
   images: ImageMetadata[];
 }
 
-/**
- * Format bytes to human-readable string
- */
-function formatBytes(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
-}
+// formatBytes imported from ../lib/image-file-utils
 
 /**
  * Calculate aspect ratio string
@@ -149,45 +157,27 @@ function getChapter(filePath: string): string | undefined {
   return undefined;
 }
 
-/**
- * Check if exiftool is available
- */
-async function isExiftoolAvailable(): Promise<boolean> {
-  try {
-    await execAsync('exiftool -ver');
-    return true;
-  } catch {
-    return false;
-  }
-}
+// isExiftoolAvailable imported from ../lib/exiftool-utils
 
 /**
  * Extract metadata using exiftool (if available)
+ * Uses shared readImageMetadata from exiftool-utils
  */
 async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetadata>> {
   try {
-    const { stdout } = await execAsync(
-      `exiftool -json -Title -Description -Keywords -Author -Artist -Creator -Copyright -DateTimeOriginal -CreateDate "${filePath}"`,
-      { maxBuffer: 1024 * 1024 }
-    );
-
-    const data = JSON.parse(stdout)[0];
-    if (!data) return {};
+    const exifData = await readImageMetadata(filePath);
+    if (!exifData) return {};
 
     const metadata: Partial<ImageMetadata> = {};
 
-    if (data.Title) metadata.title = data.Title;
-    if (data.Description) metadata.description = data.Description;
-    if (data.Keywords) {
-      metadata.keywords = Array.isArray(data.Keywords) ? data.Keywords : [data.Keywords];
-    }
-    if (data.Author || data.Artist || data.Creator) {
-      metadata.author = data.Author || data.Artist || data.Creator;
-    }
-    if (data.Copyright) metadata.copyright = data.Copyright;
-    if (data.DateTimeOriginal || data.CreateDate) {
-      metadata.dateCreated = data.DateTimeOriginal || data.CreateDate;
-    }
+    if (exifData.title) metadata.title = exifData.title;
+    if (exifData.description) metadata.description = exifData.description;
+    if (exifData.keywords) metadata.keywords = exifData.keywords;
+    if (exifData.transcript) metadata.transcript = exifData.transcript;
+    if (exifData.generationPrompt) metadata.generationPrompt = exifData.generationPrompt;
+    if (exifData.inferredPrompt) metadata.inferredPrompt = exifData.inferredPrompt;
+    if (exifData.imageIssues) metadata.imageIssues = exifData.imageIssues;
+    if (exifData.promptImprovements) metadata.promptImprovements = exifData.promptImprovements;
 
     return metadata;
   } catch {
@@ -324,6 +314,18 @@ async function main() {
   for (const [type, count] of Object.entries(byType).sort((a, b) => b[1] - a[1])) {
     console.log(`  ${type}: ${count}`);
   }
+
+  // Print metadata coverage stats
+  const withTranscript = images.filter(img => img.transcript).length;
+  const withTitle = images.filter(img => img.title).length;
+  const withDescription = images.filter(img => img.description).length;
+  const withKeywords = images.filter(img => img.keywords && img.keywords.length > 0).length;
+
+  console.log('\nMetadata coverage:');
+  console.log(`  With transcript (OCR): ${withTranscript} (${((withTranscript / images.length) * 100).toFixed(0)}%)`);
+  console.log(`  With title: ${withTitle} (${((withTitle / images.length) * 100).toFixed(0)}%)`);
+  console.log(`  With description: ${withDescription} (${((withDescription / images.length) * 100).toFixed(0)}%)`);
+  console.log(`  With keywords: ${withKeywords} (${((withKeywords / images.length) * 100).toFixed(0)}%)`);
 }
 
 main().catch(console.error);

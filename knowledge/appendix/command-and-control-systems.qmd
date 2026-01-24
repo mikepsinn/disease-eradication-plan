@@ -30,6 +30,9 @@ You steal the military's organizational structure, the G-Staff model, because th
 
 The entire system revolves around people, not processes. The `Personnel Roster` is your hub, every other table connects back to actual humans doing actual things. No abstract "stakeholders" or "human resources." Just people trying not to die.
 
+
+![Conceptual diagram of the G-Staff database architecture, illustrating the 'Personnel Roster' as the central hub connecting all functional areas (G-1 through Mission Command).](/assets/images/command-and-control-systems/command-and-control-systems-section-the-architecture-hub-spoke-model-bw-academic.jpg)
+
 ## SECTION 1: G-1 (Personnel Command)
 
 *How to Track Every Human Without Being the NSA*
@@ -341,6 +344,9 @@ Tracking which countries have signed on to stop being idiots.
 5. **Test with dummy data first** (break it before it matters)
 6. **Train your team** (good luck with that)
 7. **Launch and pray** (the universal project management methodology)
+
+
+![Step-by-step implementation flowchart emphasizing the critical dependency of building the 'Personnel Roster' before other tables.](/assets/images/command-and-control-systems/command-and-control-systems-section-database-construction-roadmap-bw-academic.jpg)
 
 ## The Privacy Paradox
 

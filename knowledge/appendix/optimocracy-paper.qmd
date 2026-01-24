@@ -939,6 +939,9 @@ Optimocracy collapses this attack surface from thousands of decision points to t
 
 As analyzed above, capturing metric selection requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair. The asymmetry favors defense: changing the metric requires extraordinary effort; maintaining it requires only ordinary vigilance.
 
+![Comparison of the lobbying attack surface under current discretionary governance versus the consolidated attack surface under Optimocracy.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
+
+
 **Quantitative comparison:** Under discretionary governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by 1-2 orders of magnitude.
 
 **The index fund precedent:** As detailed in Section 3, removing discretion from fund management (index funds) reduced fees from 1-2% to 0.03-0.10% while improving returns. The same logic applies to governance: remove discretion, reduce capture.
@@ -1643,6 +1646,9 @@ The implementation phases above present government adoption as the goal. But the
 
 ```
 Citizens/Foundations → Optimocracy Foundation (operational funding)
+
+![The Wrapper Architecture creates an incentive loop for politicians to follow optimal policy without requiring formal changes to government structure.](/assets/images/optimocracy-paper/optimocracy-paper-section-wrapper-architecture-flow-bw-academic.jpg)
+
                     → IAB purchases (politician incentive funding)
                            ↓
                     Politicians vote for recommended policies
@@ -1817,6 +1823,9 @@ Both frameworks feed into the Constitutional Layer, which binds governance to ev
 ```
 
 The Political Dysfunction Tax (estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
+
+![Integration of the Optimal Budget Generator (OBG) and Policy Impact Score (PIS) frameworks into the Constitutional Layer.](/assets/images/optimocracy-paper/optimocracy-paper-section-integrated-optimization-framework-bw-academic.jpg)
+
 
 ### Algorithmic Governance Threat Model
 

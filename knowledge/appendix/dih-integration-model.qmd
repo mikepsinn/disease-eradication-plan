@@ -98,6 +98,9 @@ display(IPImage(str(png_path)))
 8. Reports blood sugar via app
 9. Data helps next patient
 
+
+![Step-by-step workflow of the patient journey within the DIH integration, demonstrating the streamlined enrollment and treatment process compared to traditional friction points.](/assets/images/dih-integration-model/dih-integration-model-section-real-world-example-workflow-bw-academic.jpg)
+
 ## Implementation Requirements
 
 ### Technical Infrastructure

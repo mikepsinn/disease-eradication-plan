@@ -9,7 +9,7 @@ This is a minimal test document to verify PDF link preprocessing works correctly
 
 ## Link Test Cases
 
-### 1. Internal Cross-References (Work in PDF)
+### Internal Cross-References (Work in PDF)
 
 These use Quarto's `@sec-` cross-reference system. In PDF, clicking these navigates within the document:
 
@@ -20,7 +20,7 @@ These use Quarto's `@sec-` cross-reference system. In PDF, clicking these naviga
 **Key insight**: Standard markdown hyperlinks only work in HTML. For PDF output, use `@sec-` cross-references instead.
 :::
 
-### 2. External Cross-Site Links (Should Become Absolute URLs)
+### External Cross-Site Links (Should Become Absolute URLs)
 
 These links point to files that are NOT in test config but ARE in book config, so they should be rewritten to https://manual.WarOnDisease.org:
 
@@ -28,7 +28,7 @@ These links point to files that are NOT in test config but ARE in book config, s
 - Link to drug development analysis: [Drug Development Cost Analysis](/knowledge/appendix/drug-development-cost-analysis.qmd)
 - Link to DFDA analysis: [DFDA Cost Benefit Analysis](https://impact.dfda.earth)
 
-### 3. Absolute URLs (Should Remain Unchanged)
+### Absolute URLs (Should Remain Unchanged)
 
 These are already absolute URLs and should not be touched:
 
@@ -36,12 +36,12 @@ These are already absolute URLs and should not be touched:
 - DIH site: [Decentralized Institutes of Health](https://dih.earth)
 - GitHub: [GitHub Repository](https://github.com/mikepsinn)
 
-### 4. Anchor Links (Should Remain Unchanged)
+### Anchor Links (Should Remain Unchanged)
 
 - Jump to section: [Link Test Cases](#link-test-cases)
 - Another anchor: [Introduction](#introduction)
 
-### 5. Cross-Reference Format Comparison
+### Cross-Reference Format Comparison
 
 | Syntax | Works in HTML | Works in PDF |
 |--------|---------------|--------------|

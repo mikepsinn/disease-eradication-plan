@@ -29,8 +29,10 @@ interface GeminiResult {
 
 // Gemini 3 models (current - released Dec 2025)
 // https://blog.google/products/gemini/gemini-3-flash/
-const GEMINI_FLASH_MODEL_ID = 'gemini-3-flash-preview';
-const GEMINI_PRO_MODEL_ID = 'gemini-3-pro-preview'; // Not yet released, use Flash for now
+// Note: Gemini 2.0 Flash-Lite deprecated March 31, 2026
+export const GEMINI_FLASH_MODEL_ID = 'gemini-3-flash-preview';
+export const GEMINI_PRO_MODEL_ID = 'gemini-3-pro-preview';
+export const GEMINI_IMAGE_MODEL_ID = 'gemini-3-pro-image-preview';
 
 // Claude models
 const CLAUDE_OPUS_4_1_MODEL_ID = 'claude-opus-4-1-20250805';
@@ -38,17 +40,18 @@ const CLAUDE_SONNET_4_5_MODEL_ID = 'claude-sonnet-4-5-20250929';
 
 // Model configurations with pricing and limits
 // Pricing from: https://ai.google.dev/pricing and https://anthropic.com/pricing
+// Updated Jan 2026 for Gemini 3 models
 const MODEL_CONFIGS: Record<string, ModelConfig> = {
   // Gemini 3 models
   'gemini-3-flash-preview': {
     id: 'gemini-3-flash-preview',
     contextLength: 1000000, // 1M tokens
-    costPer1MInputTokens: 0.075,
-    costPer1MOutputTokens: 0.30,
+    costPer1MInputTokens: 0.50,
+    costPer1MOutputTokens: 3.00,
   },
   'gemini-3-pro-preview': {
     id: 'gemini-3-pro-preview',
-    contextLength: 2000000, // 2M tokens (estimated)
+    contextLength: 2000000, // 2M tokens
     costPer1MInputTokens: 1.25,
     costPer1MOutputTokens: 5.00,
   },
@@ -292,3 +295,62 @@ export async function loadPromptTemplate(templatePath: string, replacements: Rec
   }
   return prompt;
 }
+
+// --- Vision API Functions ---
+
+/**
+ * Generate content from an image using Gemini Vision API
+ * Useful for OCR, image analysis, and visual Q&A
+ *
+ * @param prompt - The text prompt describing what to extract/analyze
+ * @param imageBase64 - Base64-encoded image data
+ * @param mimeType - MIME type of the image (e.g., 'image/png', 'image/jpeg')
+ * @returns The model's text response
+ */
+export async function generateGeminiVisionContent(
+  prompt: string,
+  imageBase64: string,
+  mimeType: string
+): Promise<string> {
+  // Estimate tokens (rough: prompt + ~1000 tokens for image)
+  const promptTokens = estimateTokenCount(prompt);
+  const imageTokenEstimate = 1000; // Rough estimate for image encoding
+  const inputTokens = promptTokens + imageTokenEstimate;
+
+  checkContextLength(inputTokens, GEMINI_FLASH_MODEL_ID);
+  logRequest(GEMINI_FLASH_MODEL_ID, inputTokens);
+
+  const result = await genAI.models.generateContent({
+    model: GEMINI_FLASH_MODEL_ID,
+    contents: [
+      {
+        parts: [
+          { text: prompt },
+          {
+            inlineData: {
+              mimeType,
+              data: imageBase64,
+            },
+          },
+        ],
+      },
+    ],
+  });
+
+  const responseText = result.text || '';
+  const outputTokens = estimateTokenCount(responseText);
+
+  // Try to get actual usage from API if available
+  const geminiResult = result as GeminiResult;
+  const actualUsage = geminiResult.usageMetadata ? {
+    inputTokens: geminiResult.usageMetadata.promptTokenCount || inputTokens,
+    outputTokens: geminiResult.usageMetadata.candidatesTokenCount || outputTokens,
+  } : undefined;
+
+  logResponse(GEMINI_FLASH_MODEL_ID, inputTokens, outputTokens, actualUsage);
+  return responseText;
+}
+
+// --- Export genAI client for advanced use cases ---
+// (e.g., image generation in gemini-images.ts)
+export { genAI };

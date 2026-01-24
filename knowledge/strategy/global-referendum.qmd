@@ -88,6 +88,9 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 - **Retention Policies**: Automatic deletion of unnecessary personal data
 - **Backup Systems**: Secure, encrypted backups with geographic distribution
 
+
+![Architectural flow diagram illustrating the secure data lifecycle from the user frontend through backend processing to encrypted storage and the public bulletin board.](/assets/images/global-referendum/global-referendum-section-system-architecture-bw-academic.jpg)
+
 ## On Stopping People from Cheating (The Hard Part)
 
 ### On Why You Need Multiple Layers of "Prove You're Human"
@@ -139,6 +142,9 @@ Sometimes the best verification is humans verifying humans:
 - **Community Attestation**: Local leaders vouch for people without digital IDs
 
 The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted.
+
+
+![A tiered security model showing the cumulative verification layers, ranging from basic technical checks to biometric and social validation.](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
 ### On Using AI to Catch the Smart Cheaters
 

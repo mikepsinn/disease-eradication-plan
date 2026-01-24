@@ -272,6 +272,9 @@ Perhaps it's coincidence, but you can see an increase in drug approvals in the '
 
 This isn't conspiracy. It's economics. The system literally cannot punish mistakes of commission (approving bad drugs) but imposes zero consequences for mistakes of omission (delaying good drugs).
 
+
+![Decision tree illustrating the asymmetric incentives for regulators, where approving a harmful drug carries personal risk while delaying a beneficial drug carries no penalty.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
+
 ### The Math: Why Current Regulations Increase Total Harm
 
 The regulatory system claims to prevent harm by screening out unsafe drugs (Type I errors: approving bad drugs). But this framing ignores two critical facts:
@@ -296,6 +299,9 @@ Let's quantify both types of harm:
 **For every 1 unit of harm prevented by the current regulatory framework, it creates {{< var type_ii_error_cost_ratio >}} units of harm through delay and inadequate safety monitoring.**
 
 This isn't a trade-off. The system doesn't reduce total harm. It massively increases it while appearing to prioritize safety.
+
+
+![Comparison of harm prevented (Type I) versus harm caused by delay (Type II), demonstrating the 3,070:1 imbalance.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-harm-ratio-balance-bw-academic.jpg)
 
 ### Why Bureaucrats Are Rewarded for Letting You Die
 
@@ -338,8 +344,6 @@ Testing drugs only on healthy volunteers to ensure safety is like testing parach
 ### No Long-Term Outcome Data
 
 Even if there's financial incentive to research a new drug, there's no data on long-term outcomes. Data collection for participants can be as short as several months. Under the current system, it's not financially feasible to collect data on a participant for years or decades. So you have no idea if long-term effects of a drug are worse than initial benefits.
-
-For instance, even after controlling for co-morbidities, the Journal of American Medicine recently found that long-term use of Benadryl and other anticholinergic medications is associated with [increased](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) risk for dementia and Alzheimer's disease.
 
 ### Pre-Specification Requirements Kill Innovation
 
@@ -444,8 +448,10 @@ Post-approval, the FDA relies on the **FDA Adverse Event Reporting System (FAERS
 **Examples of failures:**
 
 - **Vioxx:** Killed an estimated 38,000-55,000 Americans [@vioxx-deaths] before voluntary reporting caught the cardiovascular risks
-- **Benadryl:** Took decades to discover the [dementia risk](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) from long-term use
 - **Thalidomide in Europe:** Thousands of birth defects before passive reporting identified the pattern
+
+
+![Visualization of the "Iceberg Effect" in adverse event reporting, where less than 10% of safety issues are captured by the current passive system.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
 
 ### What Real-World Evidence Would Catch
 

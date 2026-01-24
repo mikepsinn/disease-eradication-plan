@@ -140,6 +140,11 @@ The component estimates in this document assume operation at 1M+ patient scale w
 
 Observational analysis costs cents per patient, not hundreds or thousands of dollars. Even if actual costs are 5-10x higher than these estimates, the economic case for decentralized trials remains compelling compared to traditional Phase 3 trials at {{< var traditional_phase3_cost_per_patient >}} per patient.
 
+![Economies of scale visualization showing how fixed costs per patient drop dramatically ($28 to $0.03) as the patient population grows, while marginal costs remain constant.](/assets/images/data-storage-costs/data-storage-costs-section-economies-of-scale-chart-bw-academic.jpg)
+
+
+
+
 ## Conclusion
 
 The per-patient infrastructure cost ({{< var dfda_storage_cost_total_per_patient_monthly >}}/month) is orders of magnitude lower than traditional clinical trial systems. This cost advantage, combined with the ability to leverage existing patient data, enables a decentralized platform that can scale to millions of participants while maintaining data quality and compliance standards.

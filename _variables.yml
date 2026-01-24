@@ -4850,7 +4850,7 @@
   \ data-confidence=\"high\" title=\"Annual return percentage for VICTORY Incentive\
   \ Alignment Bondholders | Calculated from 2 inputs | ✓ High confidence | Formula:\
   \ PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view details, calculation & sources\"\
-  >272% (95% CI: 180%-430%)</a>"
+  >272%</a>"
 "victory_bond_annual_return_pct_latex": "$$\n\\begin{gathered}\nr_{bond} = \\frac{Payout_{bond,ann}}{Cost_{campaign}}\
   \ = \\frac{\\$2.72B}{\\$1B} = 272\\% \\\\[0.5em]\n\\text{where } Payout_{bond,ann}\
   \ \\\\\n= Funding_{treaty} \\times Pct_{bond} \\\\\n= \\$27.2B \\times 10\\% \\\\\

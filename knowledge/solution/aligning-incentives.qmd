@@ -198,6 +198,9 @@ Result: 50,000-participant trial costs pharma ~$0 instead of $2.4 billion.
 
 A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics: you profit from TRYING, not just from SUCCEEDING.
 
+![Side-by-side comparison of the current high-cost pharmaceutical model versus the proposed decentralized low-cost model.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg)
+
+
 ### Pharma's New Business Model: Volume Over Blockbusters
 
 The trade-off: **Lower revenue per drug, but massively more attempts.**
@@ -335,24 +338,33 @@ Once you align a few key players, the rest fall automatically:
 7. **Public demands participation** (everyone wants in)
 8. **System flips permanently** (new equilibrium reached)
 
-### Why It Can't Be Stopped
 
-#### Network effects
 
-- Each conversion makes the next easier
-- Opposition becomes more expensive over time
-- Resistance becomes financial suicide
-- The system locks into the new configuration
+### Why This Can Work: Solving the Collective Action Problem
 
-#### Why It's Inevitable
+Public choice theory predicts that concentrated interests (defense contractors, pharma incumbents) beat diffuse interests (patients, taxpayers) because small groups with high per-person stakes outorganize large groups with low per-person stakes. This is why the current system persists despite its inefficiency.
 
-Current system: Concentrated benefits (few win), diffuse costs (everyone pays). New system: Concentrated benefits (many win), diffuse costs (spread globally).
+**But here's what Olson missed:** The capital asymmetry is 90:1 in favor of diffuse beneficiaries.
 
-$$
-\text{More winners than losers} = \text{political inevitability}
-$$
+| Side | Available Capital | Current Political Spending |
+|:-----|:------------------|:---------------------------|
+| Concentrated interests (defense, fossil fuels) | ~{{< var concentrated_interest_sector_market_cap_usd >}} market cap | $100M-$1B annually |
+| Diffuse beneficiaries (everyone who'd benefit from cures) | {{< var global_household_wealth_usd >}} household wealth | ~$0 (coordination failure) |
 
-Math determines outcome, not ideology.
+The problem isn't resources. It's coordination. Diffuse beneficiaries can't deploy their 90:1 capital advantage because each individual's stake is small and coordination costs are prohibitive.
+
+**[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the coordination problem by securitizing political change.** When political outcomes become an investable asset class with 100-1000x expected returns, coordination happens through financial markets instead of grassroots organizing. Investors don't need to care about curing disease - they need to care about returns. The mechanism converts self-interest into collective action.
+
+#### Why the cascade can happen (not "must" happen)
+
+Once IABs concentrate financial benefits on the pro-health side:
+
+- Politicians face a new calculation: IAB benefits > concentrated opposition costs
+- Each policy success increases IAB funding, strengthening the coalition
+- Investors lobby for treaty expansion to increase their returns
+- The dynamic reverses: supporting health spending becomes the concentrated-benefit option
+
+This isn't inevitable. It requires sufficient IAB funding to overcome opposition. But it's achievable because the capital is there - it just needs a coordination mechanism.
 
 ## The Master Key: Greed
 
@@ -419,6 +431,9 @@ Even if it the treaty does pass. It stalls at 1-2%. Politicians move on, militar
 | **Patients & Researchers** | Subsidized pragmatic clinical trials, cures | {{< var dih_treasury_medical_research_pct >}} of the 1% Treaty Fund's revenue |
 
 The 80/10/10 split is baked into the instrument. Investors fund the campaign. Politicians get career benefits for supporting it (scored on voting records, not health outcomes - because health benefits are global and can't be attributed to any country). Patients get access to cures funded through the 1% Treaty Fund and delivered by a network of decentralized institutes of health. Everyone's self-interest points at the same outcome: expand treaty funding.
+
+
+![Distribution of the 1% Treaty Fund revenue, illustrating the 80/10/10 split between research, investors, and political incentives.](/assets/images/aligning-incentives/aligning-incentives-section-victory-impact-alignment-bonds-bw-academic.jpg)
 
 ### The Endgame
 

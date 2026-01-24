@@ -37,7 +37,7 @@ This chapter describes a mechanism to legally bribe politicians into doing the r
 
 > **Incentive Alignment Bonds (IABs)** – a way to pay for better governance without technically paying politicians, giving money to governments, or going to prison.
 
-### 1. The Core Problem: Good Ideas Die in Committee
+### The Core Problem: Good Ideas Die in Committee
 
 You've seen the numbers by now:
 
@@ -57,7 +57,7 @@ The system does exactly what it's incentivized to do. It's not broken. It's work
 
 If you want different outcomes, you need different incentives. Wishing very hard doesn't count.
 
-### 2. What You Need: Legal Bribery That Isn't Technically Bribery
+### What You Need: Legal Bribery That Isn't Technically Bribery
 
 Imagine you could say to every politician on Earth:
 
@@ -77,7 +77,7 @@ Just a standing, public, announced-in-advance rule:
 
 This is the job of **Incentive Alignment Bonds**. It's bribery, except legal, transparent, and pointed at saving lives instead of ruining them.
 
-### 3. Definition: What Are Incentive Alignment Bonds?
+### Definition: What Are Incentive Alignment Bonds?
 
 Incentive Alignment Bonds (IABs) are a new class of financial instruments designed to:
 
@@ -113,7 +113,7 @@ Think of IABs as:
 * **Advance Market Commitments**, but aimed at policies instead of vaccines.
 * **Bribery**, but legal, transparent, and aimed at reducing human suffering instead of increasing it.
 
-### 4. How Incentive Alignment Bonds Work – The Simple Version
+### How Incentive Alignment Bonds Work – The Simple Version
 
 Let's walk through the basic structure in four steps.
 
@@ -521,7 +521,7 @@ Everyone's self-interest aligned. No one was bribed. The system just made "vote 
 
 This is not cynical. This is public choice theory. It's only cynical if you think politicians should be motivated by pure altruism, in which case I have some bad news about the last 5,000 years of recorded history.
 
-### 5. Why This Is Not Bribery (Legally Speaking)
+### Why This Is Not Bribery (Legally Speaking)
 
 At first glance, this sounds like fancy bribery. "Reward politicians when they do what you want" is pretty much the definition.
 
@@ -550,7 +550,7 @@ Except it's not, for four reasons that matter to lawyers:
 Bribery **corrupts** alignment. ("Here's money to screw the public.")
 IABs **create** alignment. ("Support policies that save lives and your career benefits.")
 
-### 6. How IABs Differ from Social Impact Bonds
+### How IABs Differ from Social Impact Bonds
 
 People sometimes hear this and say, "We already have Social Impact Bonds." This is like saying "we already have bicycles" when someone proposes building a railroad.
 
@@ -567,7 +567,7 @@ Social Impact Bonds are pilot projects. Important! Valuable! Also: small.
 
 Incentive Alignment Bonds are an attempt to **change the rules of the game** at the level where games actually get changed, which is to say, the level where politicians decide what gets funded and what dies in committee.
 
-### 7. How This Plugs Into the 1% Treaty (The Part Where It All Comes Together)
+### How This Plugs Into the 1% Treaty (The Part Where It All Comes Together)
 
 So how does this connect to the bigger project of ending war and disease? (You're still reading this far. Impressive.)
 
@@ -626,7 +626,7 @@ The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't
 | **Engine 2** (Politicians) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
 | **The Mission** (Research) | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
 
-### 8. Objections and Failure Modes
+### Objections and Failure Modes
 
 No mechanism is magic. It is worth being explicit about what can go wrong.
 
@@ -692,7 +692,7 @@ Credit ratings didn't start as a global system. They started as one guy in the 1
 
 IABs can scale the same way: proof of concept → adoption by early movers → FOMO among laggards → new normal.
 
-### 9. Why This Matters for Ending War and Disease
+### Why This Matters for Ending War and Disease
 
 Ending war and disease is not primarily a **scientific** problem; it is a **governance** problem.
 
@@ -722,7 +722,7 @@ If ending war and disease is about anything, it is about that:
 
 Incentive Alignment Bonds are one of the simplest, most scalable tools we have to do that.
 
-### 10. Summary: The Mechanism in One Sentence
+### Summary: The Mechanism in One Sentence
 
 Create an **independent, outcome-indexed scoring system** where hitting big public-good targets automatically:
 
@@ -736,7 +736,7 @@ It's bribery, except no money changes hands. Just reputation, electoral support,
 
 You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
 
-### 11. Why 10%: The Scaling Engine {#sec-why-ten-pct-scaling-engine}
+### Why 10%: The Scaling Engine {#sec-why-ten-pct-scaling-engine}
 
 You might wonder: Why dedicate {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) to political incentives? Isn't that money that could go to pragmatic clinical trials?
 
@@ -770,6 +770,8 @@ The {{< var iab_political_incentive_funding_pct >}} IAB allocation creates somet
 | 100% | $2.7T | $270B/year | $2.16T/year | Full redirection achieved |
 
 At 100% redirection, the IAB mechanism would fund **$270 billion per year** in political incentives. That's more than all current global lobbying combined. It would make "support health spending" the single most rewarded political position on Earth.
+
+
 
 #### The Math Changes Everything
 
@@ -829,7 +831,7 @@ The question is: "Is 10% enough to sustain political momentum through the inevit
 
 Probably. But if anything, 10% might be conservative for what we're trying to accomplish.
 
-### 12. Beyond the 1% Treaty: IABs as a General Governance Tool
+### Beyond the 1% Treaty: IABs as a General Governance Tool
 
 The 1% Treaty is the first application of Incentive Alignment Bonds. It doesn't have to be the last.
 
@@ -918,7 +920,7 @@ We're not just building a mechanism to fund pragmatic clinical trials. We're bui
 
 That's worth getting right.
 
-### 13. Summary: What IABs Actually Are
+### Summary: What IABs Actually Are
 
 Incentive Alignment Bonds are a new class of financial instrument designed to solve a problem as old as governance: **politicians optimize for reelection and post-office careers, not for humanity's long-term welfare.**
 

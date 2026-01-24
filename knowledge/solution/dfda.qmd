@@ -68,6 +68,9 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 - Gets back: $50 deposit
 - **Net: +$25 profit + potentially cures migraines**
 
+
+![Flowchart illustrating the economic loop where patient subsidies and deposits incentivize participation while ensuring zero net cost to the patient and profit for the manufacturer.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
+
 #### Company receives
 
 - $100/month from patient
@@ -98,6 +101,9 @@ Research ideas → Register instantly → Patients decide by joining → $0 per 
 **Decentralized trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
 
 A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.**
+
+
+![Comparison of the linear, bottlenecked traditional research model versus the parallel, unlimited capacity of the decentralized protocol.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
@@ -325,6 +331,9 @@ Before writing code, form partnerships with:
 - Faster enrollment
 - Better, more diverse data
 
+
+![Ecosystem map showing how the decentralized framework acts as a protocol layer connecting existing EHRs, tech giants, and DCT platforms without creating a competing walled garden.](/assets/images/dfda/dfda-section-federated-network-architecture-bw-academic.jpg)
+
 ### Federated, Not Centralized
 
 Data doesn't move to a central database. It stays where it is:
@@ -352,6 +361,9 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | Cost per trial | **$57 million** [@clinical-trial-cost-breakdown] | **$2 million** | $55 million | Infinite ROI |
 | Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
 | Rare diseases with treatments | **5% [@95-pct-diseases-no-treatment]** | **Eventually 100%** | Priceless | Millions |
+
+
+![Side-by-side comparison of current clinical trial inefficiencies versus the projected outcomes of the decentralized framework.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
 
 ### The Itemized Receipt of Eliminated Stupidity
 
@@ -401,6 +413,9 @@ print(f"Years for decentralized system: {market_years:.2f}")
 ```
 
 **The committee needs 1.3 million years. The decentralized system needs 100 days.**
+
+
+![Time required to evaluate all potential treatment variations: Centralized Committee (1.3 million years) vs. Decentralized Market (100 days).](/assets/images/dfda/dfda-section-centralized-vs-decentralized-processing-time-bw-academic.jpg)
 
 ### Why 200 People Can't Replace 8 Billion
 

@@ -81,7 +81,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 - **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 :::
 
-![Comparison of treatment discovery throughput: The status quo acts as a bottleneck taking centuries to clear the disease queue, while the expanded capacity clears the backlog in decades.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-queue-model-bw-academic.png)
+![Comparison of treatment discovery throughput: The status quo acts as a bottleneck taking centuries to clear the disease queue, while the expanded capacity clears the backlog in decades.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-queue-model-bw-academic.jpg)
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
@@ -116,7 +116,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 | **Therapeutic Space Explored** | {{< var dfda_queue_clearance_years >}} | Time to test first treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}}, effectively never) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}) exceed costs |
 
-![Cost-effectiveness comparison showing 1% Treaty at $0.0018/DALY vs bed nets at $89/DALY - the treaty is 50,300 times more cost-effective](/assets/images/1-pct-treaty-impact/cost-effectiveness-comparison-of-global-health-interventions-chart.png)
+![Cost-effectiveness comparison showing 1% Treaty at $0.0018/DALY vs bed nets at $89/DALY - the treaty is 50,300 times more cost-effective](/assets/images/1-pct-treaty-impact/cost-effectiveness-comparison-of-global-health-interventions-chart.jpg)
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
 
@@ -131,7 +131,7 @@ This is a **queue/throughput model result**, not "time travel" or a prediction t
 - **Proposed system** uses automated EHR monitoring of all patients, detecting safety signals in months instead of years
 - Traditional trials test 100-300 patients; pragmatic trials test 10,000-100,000+ patients with continuous monitoring
 
-![Safety timeline comparison: Traditional voluntary reporting delays adverse event detection by years (e.g., Vioxx), whereas automated EHR surveillance identifies safety signals in months.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-safety-timeline-comparison-bw-academic.png)
+![Safety timeline comparison: Traditional voluntary reporting delays adverse event detection by years (e.g., Vioxx), whereas automated EHR surveillance identifies safety signals in months.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-safety-timeline-comparison-bw-academic.jpg)
 
 For every person protected from an unsafe drug (Type I error prevention), the current system kills {{< var type_ii_error_cost_ratio >}} people by delaying access to beneficial treatments (Type II errors). See [Safety Concerns](#safety-concerns) for full analysis.
 :::
@@ -431,6 +431,9 @@ The tornado diagram shows that timeline shift duration and QALY valuation domina
 
 Monte Carlo analysis confirms the 95% confidence interval for total economic value remains in the quadrillions across all plausible scenarios. These are cumulative values representing accelerated access to treatments over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, not annual benefits.
 
+![Tornado diagram illustrating which parameters most significantly impact the total economic value estimate.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-uncertainty-analysis-total-economic-value-bw-academic.jpg)
+
+
 **Investment required**: {{< var treaty_campaign_total_cost >}}
 
 ### Research Acceleration
@@ -637,6 +640,9 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 **Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org). The treaty creates new revenue streams without threatening core business.
 
+![System map showing how the Incentive Alignment Bond mechanism distributes benefits to opposing stakeholders, converting zero-sum conflicts into positive-sum outcomes.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
+
+
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
 **Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
@@ -653,7 +659,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
-![Stakeholder incentive ecosystem: The VICTORY Bond structure ensures every key political and economic actor receives a direct benefit from treaty ratification, creating a self-reinforcing stability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-ecosystem-bw-academic.png)
+![Stakeholder incentive ecosystem: The VICTORY Bond structure ensures every key political and economic actor receives a direct benefit from treaty ratification, creating a self-reinforcing stability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-ecosystem-bw-academic.jpg)
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
@@ -717,7 +723,9 @@ With {{< var treaty_campaign_total_cost >}} allocated toward saving lives, here'
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-![Comparative cost-effectiveness: The systemic nature of the treaty intervention results in a cost-per-DALY orders of magnitude lower than traditional linear interventions like bed nets or screenings.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.png)
+![Comparative cost-effectiveness: The systemic nature of the treaty intervention results in a cost-per-DALY orders of magnitude lower than traditional linear interventions like bed nets or screenings.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.jpg)
+
+
 
 ### Why This Dominates
 
@@ -1280,6 +1288,9 @@ The fundamental problem isn't that effective treatments are hard to discover. It
 {{< var drug_disease_combinations_possible_latex >}}
 
 Effective treatments likely already exist among tested-safe compounds. We just haven't looked.
+
+![Visualization of the 'dark matter' of medicine, showing the vast majority of plausible drug-disease combinations remain untested due to cost barriers.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-discovery-through-therapeutic-space-exploration-bw-academic.jpg)
+
 
 #### Current Exploration Rate vs. Therapeutic Space
 

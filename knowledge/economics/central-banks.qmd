@@ -123,6 +123,9 @@ Here's how the scam works:
 
 It's called the Cantillon Effect after Richard Cantillon, who figured this out in the 1700s. Humans have known about this scam for 300 years. You keep falling for it anyway, like finding out fire burns and immediately touching it again to make sure.
 
+
+![Visualizing the flow of new money: value extracts upwards to banks and contractors while costs cascade downwards to the public.](/assets/images/central-banks/central-banks-section-cantillon-effect-mechanism-bw-academic.jpg)
+
 ## The Federal Reserve: A Private Corporation That Owns You
 
 Fun fact: The Federal Reserve isn't federal and has no reserves.
@@ -273,13 +276,16 @@ When a brilliant engineer designs missiles, they're NOT designing medical device
 
 You can print infinite dollars. You can't print more geniuses.
 
+![Comparison of human capital allocation showing the massive disparity between talent assigned to weapons versus cures.](/assets/images/central-banks/central-banks-section-resource-reality-chart-bw-academic.jpg)
+
+
 ### The Inflation Shell Game (How They Steal Medical Progress)
 
 Watch this magic trick:
 
 #### Year 1
 
-- NIH budget: $40 billion
+- NIH budget: {{< var nih_annual_budget >}}
 - Military budget: $800 billion
 - Ratio: 20:1 for death
 
@@ -292,6 +298,9 @@ Watch this magic trick:
 - Ratio: Still 20:1 for death
 
 You got a 50.0% raise! Too bad everything costs 50.0% more. The pie didn't grow. They just cut it with more decimal places.
+
+
+![A side-by-side comparison showing that while nominal budgets increase by 50%, the purchasing power and ratio of spending remain stagnant due to inflation.](/assets/images/central-banks/central-banks-section-inflation-shell-game-comparison-bw-academic.jpg)
 
 ### The Proof: 50 Years of Going Nowhere
 
@@ -356,7 +365,7 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
 
 - Fed still prints money (they can't help themselves)
 - 1% is directed to a 1% Treaty Fund
-- The fund supports pragmatic clinical trials for 54 million patients
+- The fund supports pragmatic clinical trials for {{< var dih_patients_fundable_annually >}}
 - People live
 - Your savings still devalued (but at least people get cured)
 - Civilization advances
@@ -387,6 +396,9 @@ Here's the jujitsu move: They're already printing trillions for war. The treaty 
    - Not competing with Fed, just redirecting its output
    - Like a dam redirecting a river
 
+
+![Diagram illustrating the proposed intervention: diverting a small fraction of the existing money supply flow from military output to medical trials.](/assets/images/central-banks/central-banks-section-treaty-flow-redirect-bw-academic.jpg)
+
 ## The Historical Precedent: When Markets Funded Victory
 
 ### World War II War Bonds
@@ -412,14 +424,14 @@ Both use markets instead of money printing. Both align incentives with outcomes.
 
 - Fed prints $8 trillion for war
 - Your money becomes worthless
-- 55 million die from disease annually
+- {{< var global_annual_deaths_curable_diseases >}} die from disease annually
 - Defense contractors get richer
 - Repeat until extinction
 
 #### Option B: The 1% Redirect
 
 - Fed still prints $8 trillion (they're addicted)
-- 1% ($80 billion) goes to curing disease through pragmatic clinical trials
+- 1% ({{< var treaty_annual_funding >}}) goes to curing disease through pragmatic clinical trials
 - Your money still becomes worthless (sorry)
 - But millions fewer people die
 - Maybe your cancer gets cured before you need it

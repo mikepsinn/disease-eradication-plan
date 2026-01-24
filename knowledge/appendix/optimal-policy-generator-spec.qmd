@@ -477,7 +477,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 Bradford Hill's criteria for causality [@hill1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
-#### 1. Strength of Association
+#### Strength of Association
 
 Larger effect estimates provide stronger evidence. We use an exponential saturation function:
 
@@ -487,7 +487,7 @@ $$
 
 Where $|\hat{\beta}_{\text{std}}|$ is the absolute standardized effect size and $\beta_{\text{sig}} = 0.3$ is a significance threshold (typical medium effect). A standardized effect of 0.3 yields $S_{\text{strength}} \approx 0.63$; effects of 0.6+ yield scores $>0.86$.
 
-#### 2. Consistency Across Jurisdictions
+#### Consistency Across Jurisdictions
 
 Replication across contexts provides stronger evidence. Scored by number of independent jurisdiction studies:
 
@@ -497,7 +497,7 @@ $$
 
 Where $N_j$ is the number of jurisdictions with concordant effect direction and $N_{\text{sig}} = 10$. Five concordant jurisdictions yield $S_{\text{consistency}} \approx 0.39$; ten yield $\approx 0.63$.
 
-#### 3. Temporality (Required)
+#### Temporality (Required)
 
 Policy adoption must precede outcome change. This is binary---either satisfied or not:
 
@@ -507,7 +507,7 @@ $$
 
 Where $\delta$ is the lag between policy implementation and outcome measurement. **If temporality is violated, the overall CCS is zeroed regardless of other criteria.**
 
-#### 4. Dose-Response Gradient
+#### Dose-Response Gradient
 
 For continuous policies (tax rates, spending levels), dose-response strengthens causal inference:
 
@@ -519,7 +519,7 @@ Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome 
 
 For binary policies, $S_{\text{gradient}} = 0.5$ (neutral---neither supporting nor refuting).
 
-#### 5. Experiment Quality
+#### Experiment Quality
 
 Quality of the quasi-experimental design, weighted by validity diagnostic violations:
 
@@ -529,7 +529,7 @@ $$
 
 Where $w_{\text{method}}$ is the base method weight (see @tbl-method-weights) and $v_{\text{violations}} \in [0, 1]$ is the proportion of validity checks failed (parallel trends, pre-treatment fit, placebo tests).
 
-#### 6. Plausibility (Mechanistic)
+#### Plausibility (Mechanistic)
 
 Economic or behavioral mechanism linking policy to outcome. Scored by expert-validated mechanism database:
 
@@ -539,7 +539,7 @@ $$
 
 Where $m_i \in \{0, 1\}$ indicates whether mechanism component $i$ is satisfied (e.g., behavioral response documented, economic theory predicts direction, no implausible side effects) and $w_i$ are component weights.
 
-#### 7. Coherence with Literature
+#### Coherence with Literature
 
 Consistency with broader economic and social science evidence:
 
@@ -549,7 +549,7 @@ $$
 
 Where $N_{\text{studies}}$ is the count of supporting studies in the literature and $N_{\text{sig}} = 5$. Three supporting studies yield $S_{\text{coherence}} \approx 0.45$; ten yield $\approx 0.86$.
 
-#### 8. Analogy to Similar Policies
+#### Analogy to Similar Policies
 
 Evidence transfer from similar policies via embedding similarity:
 
@@ -559,7 +559,7 @@ $$
 
 Where $\mathbf{e}_p$ is the policy embedding vector, $\text{sim}(\cdot)$ is cosine similarity, and $\text{PIS}_{p'}$ is the Policy Impact Score of similar policy $p'$. Strong evidence for a similar policy provides partial evidence for the focal policy.
 
-#### 9. Specificity
+#### Specificity
 
 Whether the policy affects specific outcomes rather than everything:
 

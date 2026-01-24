@@ -37,7 +37,7 @@ RECOVERY_TRIAL_COST_PER_PATIENT = 500  # $500
 DFDA_TARGET_COST_PER_PATIENT = 1_000  # $1K
 ```
 
-## 1. Treaty Peace Dividend Calculations
+## Treaty Peace Dividend Calculations
 
 ```{python}
 #| echo: true
@@ -80,7 +80,7 @@ print(f"1% Peace Dividend: ${peace_dividend['total_peace_dividend']/1e9:.1f}B an
 print(f"Military budget available for a 1% Treaty Fund: ${peace_dividend['military_budget_redirect']/1e9:.1f}B")
 ```
 
-## 2. ROI for a Global Pragmatic Trial Framework
+## ROI for a Global Pragmatic Trial Framework
 
 ```{python}
 #| echo: true
@@ -129,7 +129,7 @@ print(f"Annual savings: ${dfda_roi['annual_savings']/1e9:.1f}B")
 print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```
 
-## 3. QALY Value Calculations
+## QALY Value Calculations
 
 ```{python}
 #| echo: true
@@ -160,7 +160,7 @@ print(f"Economic value: ${qaly_value['total_value']/1e9:.1f}B")
 print(f"ICER: ${qaly_value['icer']:,} (dominant intervention)")
 ```
 
-## 4. Market Allocation Efficiency
+## Market Allocation Efficiency
 
 ```{python}
 #| echo: true
@@ -206,7 +206,7 @@ print(f"Additional value from markets: ${market_efficiency['additional_value_cre
 print(f"Information processing advantage: {market_efficiency['information_advantage']:.0f}x")
 ```
 
-## 5. Combined Economic Impact
+## Combined Economic Impact
 
 ```{python}
 #| echo: true
@@ -262,7 +262,7 @@ print(f"Combined ROI: {total['combined_roi_ratio']:,.0f}:1")
 print(f"Value created per hour: ${total['hourly_value_created']/1e9:.1f}B")
 ```
 
-## 6. Accelerated Innovation Impact
+## Accelerated Innovation Impact
 
 ```{python}
 #| echo: true

@@ -52,7 +52,7 @@ See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd) for
 
 ## Where the Papers Go
 
-### 1. Viral Referendum (part of {{< var treaty_campaign_viral_referendum_base_case >}} Referendum Budget)
+### Viral Referendum (part of {{< var treaty_campaign_viral_referendum_base_case >}} Referendum Budget)
 
 #### Paying Humans to Click
 
@@ -144,7 +144,7 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Live Transparency**: Dashboard at WarOnDisease.org shows real-time cost-per-vote by cohort, conversion rates, and funds allocation
 
-### 2. Professional (Legal) Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
+### Professional (Legal) Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Lobbying (AI-Targeted)**: $150M
 
@@ -176,7 +176,7 @@ Defense lobbyists currently work for whoever pays them. So you pay them more:
 - Instant fact-checking (faster than humans can lie)
 - Protect treaty supporters (politics is mean, apparently)
 
-### 3. Technology (part of {{< var treaty_campaign_viral_referendum_base_case >}} Referendum Budget)
+### Technology (part of {{< var treaty_campaign_viral_referendum_base_case >}} Referendum Budget)
 
 **Decentralized framework for drug assessment (dFDA)**: $120M
 
@@ -211,7 +211,7 @@ Computers that store everything:
 - 100K beta users (find problems before 8 billion users do)
 - Security audits (pay hackers to break it before bad hackers do)
 
-### 4. Lawyers (AI-Assisted) (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
+### Lawyers (AI-Assisted) (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Legal Work**: {{< var campaign_legal_work >}}
 
@@ -232,7 +232,7 @@ Computers that store everything:
 - Insurance (in case fund isn't enough)
 - Whistleblower protection (pay people to report your own violations before others do)
 
-### 5. Co-opting the Opposition (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
+### Co-opting the Opposition (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Defense Industry Conversion**: {{< var campaign_defense_conversion >}}
 
@@ -261,7 +261,7 @@ Turn enemies into allies through superior returns:
 - Scientists with credentials (humans trust credentials)
 - Cultural influencers (humans who influence culture, apparently)
 
-### 6. Operations (overhead across all categories)
+### Operations (overhead across all categories)
 
 **Core Team**: {{< var campaign_staff_budget >}}
 
@@ -279,7 +279,7 @@ Turn enemies into allies through superior returns:
 
 Papers for when plans fail (plans always fail somewhere)
 
-### 7. Post-Victory Transition: {{< var treaty_campaign_budget_reserve >}}
+### Post-Victory Transition: {{< var treaty_campaign_budget_reserve >}}
 
 **Treaty Implementation**: {{< var campaign_treaty_implementation >}}
 

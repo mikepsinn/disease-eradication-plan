@@ -266,6 +266,9 @@ $$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_
 
 where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. Our framework handles asynchronous, irregular sampling.
 
+
+![Temporal alignment diagram illustrating how a single predictor measurement at time t creates an outcome window W(t) defined by onset delay (δ) and duration of action (τ).](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
+
 ### Temporal Alignment
 
 #### Onset Delay and Duration of Action
@@ -1535,6 +1538,9 @@ The framework consists of five sequential processing layers:
 6. **Report Generation**: Produces outcome labels, treatment rankings, and safety/efficacy signals
 
 Complete implementation details, database schemas, and reference code are available in the supplementary materials repository.
+
+![Data processing pipeline from raw ingestion to aggregated population reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-implementation-guide-bw-academic.jpg)
+
 
 ### Core Algorithm: Pair Generation
 

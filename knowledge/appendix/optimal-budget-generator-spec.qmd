@@ -127,6 +127,9 @@ A dashboard showing spending gaps by category, with clear recommendations:
 
 The OBG/BIS framework answers: "Given what we know about returns to spending, what are the optimal allocation levels?"
 
+![Architecture of the Optimocracy Framework showing the parallel inputs of budget (OBG) and policy (OPG) generators feeding into the Constitutional Layer.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-system-overview-bw-academic.jpg)
+
+
 The OPG framework (see [Optimal Policy Generator Specification](https://opg.warondisease.org)) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
 
 ## Introduction
@@ -160,6 +163,9 @@ Budget allocation should work the same way. For each spending category:
 - **Above OSL**: Diminishing or negative returns (overinvestment)
 
 **infinite spending on any category doesn't make sense**, even one with high returns. Early childhood education has excellent returns - but spending $10 trillion on it wouldn't produce 10x the benefits of spending $1 trillion. There's an optimal level.
+
+
+![Conceptual comparison between Recommended Daily Allowances (RDA) in nutrition and Optimal Spending Levels (OSL) in public finance.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-introduction-bw-academic.jpg)
 
 ### What This Framework Provides
 
@@ -286,6 +292,9 @@ $$
 $$
 
 *where $\hat{\beta}_i^{pooled}$ is the quality-weighted pooled estimate of spending effects.*
+
+
+![Breakdown of the Budget Impact Score (BIS) components, showing how quality, precision, and recency weights combine to quantify confidence.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
 
 ### Gap Analysis and Welfare Gains
 
@@ -499,6 +508,9 @@ Outcome
    +-----------------------------------> Spending
          Low            High
 ```
+
+
+![Theoretical diminishing returns curve illustrating the 'knee' point where marginal welfare gains begin to flatten relative to spending increases.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-modeling-bw-academic.jpg)
 
 ### Estimation Methods
 
@@ -1090,6 +1102,9 @@ Phase 1: DATA COLLECTION
 -------------------------
 1. Budget data ingestion
    +-- Pull current spending by category (OMB, USASpending)
+
+![The five-phase Optimal Budget Generator (OBG) analysis pipeline, detailing the process from data ingestion to gap analysis reporting.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg)
+
    +-- Normalize categories to standard taxonomy
    +-- Identify subcategories for detailed analysis
    +-- Flag data quality issues

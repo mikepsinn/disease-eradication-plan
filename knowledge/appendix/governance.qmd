@@ -53,6 +53,9 @@ Your decentralized institutes of health (DIH) handles ALL budgeting decisions:
 
 This prevents the "new FDA" problem: a decentralized framework for drug assessment can't become a bureaucratic bottleneck because it has no independent funding - it's just one campaign competing with others for 1% Treaty Fund funds.
 
+
+![Structural diagram illustrating the separation of powers: the DIH handles governance and funding, while the dFDA acts solely as technical infrastructure without independent budget authority.](/assets/images/governance/governance-section-governance-vs-platform-bw-academic.jpg)
+
 ## How Budget Allocation Works
 
 Your decentralized institutes of health (DIH) network uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting system - to allocate funds across competing campaign proposals.
@@ -123,6 +126,9 @@ Traditional DAOs with simple multisig controls have proven vulnerable to both te
     - Emergency pause capabilities triggered by incident signals
     - Progressive unpause policies tied to remediation completion
     - Guardian modules for pausing non-critical functions under defined conditions
+
+
+![Visualizing the 'Defense in Depth' strategy protecting the treasury, showing how decentralized control, AI monitoring, transparency, and recovery mechanisms interact to prevent theft.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
 
 ### Beyond Medical Research: A Template for Uncorruptible Governance
 

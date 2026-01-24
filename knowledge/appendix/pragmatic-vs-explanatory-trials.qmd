@@ -37,6 +37,10 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 | Setting              | Routine clinical practice            | Specialized research centers                                                                        |
 | Generalizability     | High                                 | Limited                                                                                             |
 
+
+![Side-by-side comparison illustrating the structural differences in cost, speed, and scale between pragmatic and traditional explanatory trials.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-key-differences-comparison-bw-academic.jpg)
+
+
 ## Cost Analysis
 
 ### Traditional Explanatory Trials
@@ -48,12 +52,12 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 - Per-patient costs vary by therapeutic area:
   - Blood disorders: $200,000-422,000
-  - Average across areas: $41,117 [@trial-costs-fda-study]
+  - Average across areas: {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}}
 
 ### Pragmatic Trials (RECOVERY & Broader Evidence)
 
-- **Systematic Review**: Median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient across 64 trials [@pmc-pragmatic-trial-cost]
-- **RECOVERY Trial Example**: Cost savings of ~80X compared to traditional trials
+- **Systematic Review**: Median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient across 64 trials {{< var pmc_pragmatic_trial_median_cost_per_patient_cite >}}
+- **RECOVERY Trial**: {{< var recovery_trial_cost_per_patient >}}/patient - a {{< var recovery_trial_cost_reduction_factor >}} cost reduction vs traditional trials {{< var recovery_trial_cost_per_patient_cite >}}
 - Utilized existing healthcare infrastructure
 - Minimal additional staff costs
 - Reduced monitoring costs
