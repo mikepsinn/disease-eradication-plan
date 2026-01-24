@@ -829,7 +829,6 @@ TREATY_ANNUAL_FUNDING = Parameter(
 
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd",
     source_type="calculated",
     description="Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
     display_name="Annual Peace Dividend from 1% Reduction in Total War Costs",
@@ -846,7 +845,6 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
 
 PEACE_DIVIDEND_CONFLICT_ELASTICITY = Parameter(
     1.0,
-    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd#assumptions-and-limitations",
     source_type="definition",
     description="Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).",
     display_name="Peace Dividend Conflict Elasticity",
@@ -6952,7 +6950,6 @@ LOBBYIST_SALARY_MAX = Parameter(
 # This sum is distinct from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS which uses different categories for broader calculation.
 COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition",
     source_type="calculated",
     description="Combined peace and health dividends for ROI calculation",
     display_name="Combined Peace and Health Dividends for ROI Calculation",

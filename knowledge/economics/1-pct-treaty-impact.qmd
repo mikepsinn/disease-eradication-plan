@@ -1223,8 +1223,6 @@ The peace dividend represents economic benefits from reduced military spending. 
 
 **Conservative estimate:** Analysis uses {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend. Even if conflict intensity doesn't drop linearly, the {{< var treaty_annual_funding >}} annual cash reallocation is real. The ROI works on the cash alone; peace is a massive bonus.
 
-For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd).
-
 **Confidence level separation**: The peace dividend calculation separates into two components:
 
 1. **Direct fiscal savings (high confidence)**: {{< var peace_dividend_direct_fiscal_savings >}} - The {{< var treaty_reduction_pct >}} reduction in military budgets ({{< var treaty_annual_funding >}}) represents direct fiscal savings with high certainty. These funds are immediately available for reallocation.
@@ -1726,19 +1724,19 @@ The peace dividend math is simple: wars cost {{< var global_annual_direct_indire
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
 | **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} | SIPRI 2024 global military budgets (source) [@sipri2024] |
-| **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_infrastructure_destruction_conflict >}} | Transportation, energy, communications, water, education, healthcare facilities |
+| **Infrastructure Destruction** | {{< var global_annual_infrastructure_destruction_conflict >}} | Transportation, energy, communications, water, education, healthcare facilities |
 | **Human Life Losses** | {{< var global_annual_human_life_losses_conflict >}} | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} {{< var value_of_statistical_life_cite >}} value of statistical life (conservative estimate) |
-| **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
-| **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_economic_growth_military_spending >}} {{< var global_annual_lost_economic_growth_military_spending_cite >}} | Opportunity cost of military spending vs. productive investment |
-| **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_veteran_healthcare_costs >}} {{< var global_annual_veteran_healthcare_costs_cite >}} | Long-term medical care for conflict-related injuries |
+| **Trade Disruption** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
+| **Lost Economic Growth** | {{< var global_annual_lost_economic_growth_military_spending >}} {{< var global_annual_lost_economic_growth_military_spending_cite >}} | Opportunity cost of military spending vs. productive investment |
+| **Veteran Healthcare** | {{< var global_annual_veteran_healthcare_costs >}} {{< var global_annual_veteran_healthcare_costs_cite >}} | Long-term medical care for conflict-related injuries |
 | **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | 108.4M displaced persons [@unhcr-forcibly-displaced-2023] × $1,384/year [@unhcr-refugee-support-cost] |
-| **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
-| **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
-| **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} {{< var global_annual_lost_human_capital_conflict_cite >}} | Productive capacity lost from casualties and displacement |
+| **Environmental Damage** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
+| **Psychological Impact** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
+| **Lost Human Capital** | {{< var global_annual_lost_human_capital_conflict >}} {{< var global_annual_lost_human_capital_conflict_cite >}} | Productive capacity lost from casualties and displacement |
 | **Total War Costs** | **{{< var global_annual_direct_indirect_war_cost >}}** | Combined direct and indirect annual costs |
 | **{{< var treaty_reduction_pct >}} Reduction** | **{{< var peace_dividend_annual_societal_benefit >}}** | Peace dividend from {{< var treaty_reduction_pct >}} treaty implementation |
 
-This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
+This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research.
 
 **Note on confidence levels**: The direct military spending reduction ({{< var treaty_annual_funding >}}) has high confidence. The remaining conflict cost reductions assume proportional scaling (1% military spending → 1% conflict reduction) which lacks empirical validation. Conservative scenarios should use only direct fiscal savings; optimistic scenarios can include full peace dividend effects.
 
@@ -1885,7 +1883,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 **Economic Structure**:
 
-- **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
+- **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} redirection of existing military budgets (money already allocated in national budgets)
 
 **Funding Allocation**:
 

@@ -83,3 +83,116 @@ You save {{< var peace_dividend_annual_societal_benefit >}} on not breaking stuf
 That's \$5.18 saved for every \$1 redirected.
 
 Plus cancer gets cured as a bonus.
+
+## The Formulas
+
+The Captured Dividend (direct fiscal transfer):
+
+{{< var treaty_annual_funding_latex >}}
+
+The Societal Dividend (theoretical maximum benefit):
+
+{{< var peace_dividend_annual_societal_benefit_latex >}}
+
+## Military vs Disease Research: The Opportunity
+
+This chart shows the stark contrast between military spending and disease-specific research funding:
+
+{{< include ../figures/military-vs-disease-research-funding-bar-chart.qmd >}}
+
+## Peace Dividend Breakdown by Category
+
+Where the economic benefits come from when we reduce conflict by just 1%:
+
+{{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
+
+## Peace Dividend Composition
+
+Relative contribution of different cost categories to the total peace dividend:
+
+{{< include ../figures/peace-dividend-composition-donut-chart.qmd >}}
+
+## Captured vs. Societal Dividend
+
+{{< include ../figures/captured-vs-societal-dividend-bar-chart.qmd >}}
+
+## Sensitivity Analysis
+
+A key principle of rigorous economic modeling is to test the assumptions. The Monte Carlo simulation varies all input parameters simultaneously according to their uncertainty distributions.
+
+### Tornado Chart: Key Drivers of Uncertainty
+
+Which input parameters have the largest impact on the peace dividend estimate:
+
+{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
+
+### Monte Carlo Distribution
+
+The Monte Carlo simulation (10,000 iterations) propagates uncertainty through all input parameters:
+
+{{< include ../figures/mc-distribution-peace_dividend_annual_societal_benefit.qmd >}}
+
+### Probability of Exceeding Thresholds
+
+The probability that the peace dividend will exceed any given value:
+
+{{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
+
+### Conflict Elasticity Parameter
+
+The elasticity parameter (ε = {{< var peace_dividend_conflict_elasticity >}}) captures how much conflict costs decrease per 1% spending cut:
+
+{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
+
+- **ε = 0.25**: Weak linkage (only 25% of spending cuts translate to cost reductions)
+- **ε = 0.5**: Moderate linkage (conservative estimate)
+- **ε = 1.0**: Full proportionality (baseline assumption)
+- **ε > 1.0**: Shared enemy amplification (redirecting to disease creates unity)
+
+**Key insight**: Even under pessimistic elasticity assumptions (ε = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed.
+
+## Key Findings
+
+1.  **Guaranteed Fiscal Transfer**: {{< var treaty_annual_funding >}} annually is direct budget reallocation. Guaranteed if treaty enacted.
+
+2.  **Theoretical Maximum**: Under unit elasticity (ε = 1.0), total Societal Dividend reaches {{< var peace_dividend_annual_societal_benefit >}} annually (95% CI: $70B-$180B).
+
+3.  **Robust Floor**: Even under pessimistic assumptions (ε = 0.25), total benefits remain above $48B annually.
+
+4.  **Clear Opportunity**: The Captured Dividend alone would increase global medical research funding by ~40% over the current {{< var global_med_research_spending >}} baseline.
+
+## Assumptions and Limitations
+
+### GDP Multiplier Note
+
+The Lost Economic Growth component ($2.7T annually) already captures the opportunity cost of military spending versus more productive alternatives. This implicitly includes fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x). No additional multiplier adjustment is applied to avoid double-counting.
+
+### Causal Elasticity Assumption
+
+The Societal Dividend assumes **unit elasticity**: 1% spending reduction produces proportional 1% reduction in all conflict costs. This is the theoretical maximum. In practice:
+
+- Military spending may have deterrence value
+- The relationship between spending and conflict outcomes is complex
+- Some indirect costs (e.g., PTSD treatment) have long time lags
+
+### Source Quality
+
+| Cost Category | Source | Confidence |
+|--------------|--------|------------|
+| Military Spending | SIPRI (peer-reviewed) | High |
+| Infrastructure Damage | Brown/Watson Costs of War | Medium |
+| Trade Disruption | World Bank | Medium |
+| Lost Economic Growth | SIPRI estimates | Medium-Low |
+| Psychological Impact | PubMed meta-analysis | Medium |
+| Lost Human Capital | Author estimates | Low |
+
+### What This Does NOT Claim
+
+1. **Not a prediction**: Societal Dividend is theoretical maximum, not forecast
+2. **Not accounting for deterrence**: Deterrence value not modeled
+3. **Not claiming immediate realization**: Indirect costs reduce over years
+4. **Not claiming precision**: Monte Carlo CIs reflect genuine uncertainty
+
+### Conservative Interpretation
+
+For policy purposes, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable baseline. This is funding directly allocable to medical research regardless of conflict dynamics. The Societal Dividend represents upside potential under favorable assumptions.

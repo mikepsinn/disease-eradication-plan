@@ -249,170 +249,19 @@ png_path = render_graphviz_with_watermark(dot, 'foundation-spv-relationship')
 display(IPImage(str(png_path)))
 ```
 
-## Securities Law (How to Sell Hope Without Prison)
+## Securities Law
 
-For complete breakdown of financial mechanics and returns, see [Investment Vehicle](../economics/victory-bonds.qmd) chapter. This section covers legal compliance.
+VICTORY Incentive Alignment Bonds are securities under the Howey Test. The compliance strategy uses Regulation D for accredited investors, then Regulation CF/A+ for public offerings, with full KYC/AML compliance.
 
-The SEC thinks everything is a security. Your grandmother's cookies? Probably a security. That feeling after a good sneeze? Definitely a security.
+For complete details on the Howey Test, the two-phase "points-then-conversion" model, Reg D/CF/A+ structuring, required disclosures, and KYC/AML requirements, see [Securities Law](securities-law.qmd).
 
-### VICTORY Incentive Alignment Bonds: Definitely a Security
-
-#### The Howey Test
-
-1. Investment of money ✓
-2. In common enterprise ✓ (saving humanity)
-3. With expectation of profits ✓ ({{< var victory_bond_annual_return_pct >}} annually)
-4. From efforts of others ✓
-
-Conclusion: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are super definitely a security. Time to comply!
-
-### The Two-Phase "Points-then-Conversion" Model
-
-The compliance strategy separates the initial, non-financial airdrop from the subsequent distribution of valuable governance tokens, leveraging the SEC's more innovation-friendly guidance as of August 2025 [@sec-innovation-guidance-2025].
-
-#### Phase 1: VOTE Points Airdrop (Pre-Treaty)
-
-This phase focuses on mass distribution of a non-security utility token.
-
-- **No Financial Value:** VOTE points are explicitly defined as having no financial value and are non-transferable
-- **Pure Utility:** Their sole purpose is to serve as a cryptographically verifiable receipt of participation
-- **No "Investment of Money":** Points are earned through an action (voting), not purchased
-- **Legal Rationale:** This structure fails the Howey Test. As a non-tradable token with no promised expectation of profit, it has a strong argument for not being a security
-
-#### Phase 2: VICTORY Token Conversion (Post-Treaty)
-
-This phase occurs only _after_ a 1% treaty is successfully ratified and the [1% Treaty Fund](../solution/dih.qmd) is funded.
-
-- **Mechanism:** Holders of VOTE points have the option to convert their points into real VICTORY governance tokens through a compliant portal
-- **Legal Rationale:** This conversion will be structured to fall within the SEC's "safe harbor" provisions [@peirce-token-safe-harbor] for sufficiently decentralized networks. By conversion time, the primary "work of the promoters" (getting the treaty passed) is complete
-
-### How to Structure It
-
-**Phase 1: Rich People Only (Reg D)**
-
-- Unlimited accredited investors ($1M net worth or $200K income) [@sec-accredited-investor-definition]
-- Plus up to 35 sophisticated non-accredited [@sec-investor-limit-private-offering]
-- No public advertising under 506(b) (except this book, which is "education")
-- File Form D [@sec-form-d-filing] within 15 days
-- No capital limit: Raise as much as you want
-
-#### Phase 2: Crowd Sale (Reg CF/A+)
-
-- After proving model works
-- Regular people can invest
-- Maximum raise limits ($5M Reg CF [@sec-reg-cf-raise-limit], $75M Reg A+ [@sec-reg-a])
-- Full disclosures (here's how you might lose everything)
-
-##### Phase 3: Secondary Markets
-
-- Tokens trade on registered exchanges
-- Or DEXs (can't regulate math)
-- Liquidity for early investors
-
-
-![Phased capital raising timeline showing the progression from accredited investors (Reg D) to public crowd sales (Reg CF/A+) and secondary market liquidity.](/assets/images/legal-framework/legal-framework-section-securities-compliance-phases-bw-academic.jpg)
-
-### Required Disclosures (The Truth)
-
-Securities law demands brutal honesty about risk:
-
-- "You might lose everything" (in bold)
-- "Defense contractors might sue you" (in italics)
-- "Government might make this illegal" (in red)
-- "Your spouse might leave you for investing" (in Comic Sans)
-
-### KYC/AML (Know Your Criminal)
-
-Government requires proof you're not laundering cartel money to fund healthcare. The irony that governments themselves launder tax money into military contractor pockets is apparently lost on regulators.
-
-- Government ID required
-- Source of funds verification
-- Ongoing monitoring
-- Suspicious activity reports
-
-The entire system assumes everyone is guilty until proven wealthy enough to hire lawyers who make guilt disappear.
-
-**The Key:** The structure is more compliant than a Fortune 500 IPO. When they investigate, the paperwork will be perfect.
-
-## Election Law (Bribing Politicians, Legally)
+## Election Law
 
 Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contributions." Then it's protected speech.
 
-### The Foreign National Problem (And Solution)
+The key compliance challenge: foreign nationals can't spend money on US elections. The solution is complete segregation with a firewall between US political operations and international funds.
 
-**The Law:** Foreign nationals can't spend money on US elections [@fec-foreign-nationals]
-
-**The Penalty:** Federal prison (not the nice kind)
-
-**The Solution:** Complete segregation
-
-#### US Operations (Americans Only)
-
-- Separate 501(c)(4) + Super PAC
-- 100% US citizen funded
-- 100% US citizen controlled
-- Zero coordination with international entities
-
-#### International Operations (Everyone Else)
-
-- Focus on non-US countries
-- Public advocacy only in US
-- No US election spending
-
-#### The Firewall
-
-- Separate bank accounts
-- Separate staff
-- Separate offices
-- Separate lawyers
-- Same goal (but you don't talk about it)
-
-
-![The legal firewall separating US political operations from international funds to prevent violations of federal election law.](/assets/images/legal-framework/legal-framework-section-election-law-firewall-bw-academic.jpg)
-
-### The Super PAC Playbook
-
-#### What You Can Do
-
-- Unlimited spending on "issue advocacy"
-- Attack ads against treaty opponents
-- "Smith hates children with cancer" (legal)
-
-#### What You Can't Do
-
-- "Vote for Smith" (illegal)
-- Coordinate with candidates (wink wink)
-- Foreign money (that's what prison is for)
-- Quid pro quo (has to be implicit)
-
-#### The Workaround
-
-- Public positions on website
-- Candidates read website
-- Candidates "independently" support treaty
-- You "independently" support them
-- Everyone "independently" gets rich
-
-### International Compliance (Every Country Has Weird Laws)
-
-#### United Kingdom
-
-- Register with Electoral Commission
-- Spending limits (£20,000 nationally) [@uk-electoral-spending-limits]
-- Quarterly reports
-
-#### European Union
-
-- 27 different election laws (fun!)
-- GDPR for voter data
-- Anti-money laundering
-
-#### Canada
-
-- Register as third-party advertiser
-- Foreign funding restrictions [@canada-bill-c-76]
-- Real-time expense reporting [@canada-expenditure-reporting-500]
-- Sorry for trying to influence your democracy
+For complete details on Super PACs, 501(c)(4) structures, the foreign national firewall, and international compliance (UK, EU, Canada), see [Election Law](election-law.qmd).
 
 ## Treaty Framework
 

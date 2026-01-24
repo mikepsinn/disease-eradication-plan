@@ -1,6 +1,6 @@
 {
   "totalSites": 11,
-  "totalPages": 106,
+  "totalPages": 104,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -4286,16 +4286,8 @@
             "Organizational Structure: The For-Profit Management Company",
             "The General Staff (G-Staff)",
             "Nonprofit Foundation Governance",
-            "Securities Law (How to Sell Hope Without Prison)",
-            "VICTORY Incentive Alignment Bonds: Definitely a Security",
-            "The Two-Phase \"Points-then-Conversion\" Model",
-            "How to Structure It",
-            "Required Disclosures (The Truth)",
-            "KYC/AML (Know Your Criminal)",
-            "Election Law (Bribing Politicians, Legally)",
-            "The Foreign National Problem (And Solution)",
-            "The Super PAC Playbook",
-            "International Compliance (Every Country Has Weird Laws)",
+            "Securities Law",
+            "Election Law",
             "Treaty Framework",
             "Risk Mitigation (When They Come For You)",
             "The Legal Attack Vectors",
@@ -4809,29 +4801,6 @@
             "The Ratchet Effect",
             "Long-Term Feasibility",
             "Sources"
-          ],
-          "published": true,
-          "lastmod": "2026-01-23"
-        },
-        {
-          "path": "knowledge/appendix/co-opt-dont-compete.qmd",
-          "url": "https://manual.WarOnDisease.org/appendix/co-opt-dont-compete.html",
-          "title": "Co-Opt, Don't Compete",
-          "description": "We Don't Fight Them, We Buy Them - How to turn war profiteers into health profiteers because money is the only language they understand.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/co-opt-dont-compete-og-retro-academic.jpg",
-          "tags": [
-            "strategy",
-            "lobbying",
-            "incentives",
-            "victory-bonds"
-          ],
-          "sections": [
-            "1. Co-Opting Defense Contractors: Why It's Superior to Adversarial Strategies",
-            "Overall Confidence",
-            "Initial Strategy Advantages",
-            "Long-Term Strategy Advantages",
-            "Caveats and Mitigations",
-            "2. The Ultimate Incentive for Nonprofits: Stop Begging, Start Owning"
           ],
           "published": true,
           "lastmod": "2026-01-23"
@@ -5596,7 +5565,24 @@
             "How 1% Less Violence Pays For Everything",
             "The Captured Money: }/Year",
             "The Bonus Savings: }/Year",
-            "Where the } Comes From"
+            "Where the } Comes From",
+            "The Formulas",
+            "Military vs Disease Research: The Opportunity",
+            "Peace Dividend Breakdown by Category",
+            "Peace Dividend Composition",
+            "Captured vs. Societal Dividend",
+            "Sensitivity Analysis",
+            "Tornado Chart: Key Drivers of Uncertainty",
+            "Monte Carlo Distribution",
+            "Probability of Exceeding Thresholds",
+            "Conflict Elasticity Parameter",
+            "Key Findings",
+            "Assumptions and Limitations",
+            "GDP Multiplier Note",
+            "Causal Elasticity Assumption",
+            "Source Quality",
+            "What This Does NOT Claim",
+            "Conservative Interpretation"
           ],
           "published": true,
           "lastmod": "2026-01-24"
@@ -6336,33 +6322,6 @@
           "lastmod": "2026-01-24"
         },
         {
-          "path": "knowledge/appendix/peace-dividend-calculations.qmd",
-          "url": "https://manual.WarOnDisease.org/appendix/peace-dividend-calculations.html",
-          "title": "Peace Dividend Analysis",
-          "description": "The Economic Benefits of Reduced Conflict",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/peace-dividend-calculations-og-retro-academic.jpg",
-          "sections": [
-            "Cost of War Data and Calculations",
-            "Peace Dividend Breakdown by Category",
-            "Peace Dividend Composition",
-            "Captured vs. Societal Dividend",
-            "Sensitivity Analysis",
-            "Tornado Chart: Key Drivers of Uncertainty",
-            "Monte Carlo Distribution",
-            "Probability of Exceeding Thresholds",
-            "Conflict Elasticity Parameter",
-            "Key Findings",
-            "Assumptions and Limitations",
-            "GDP Multiplier Note",
-            "Causal Elasticity Assumption",
-            "Source Quality Notes",
-            "What This Analysis Does NOT Claim",
-            "Conservative Interpretation"
-          ],
-          "published": true,
-          "lastmod": "2026-01-24"
-        },
-        {
           "path": "knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/disease-eradication-personal-lifetime-wealth-calculations.html",
           "title": "Disease Eradication Model - Personal Lifetime Wealth Analysis",
@@ -7056,7 +7015,7 @@
           "lastmod": "2026-01-22"
         }
       ],
-      "pageCount": 89
+      "pageCount": 87
     },
     {
       "id": "obg",
