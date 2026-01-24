@@ -476,11 +476,11 @@
   \ SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2 | Unit: combinations | Click to view\
   \ details, calculation & sources\">45.1M combinations</a>"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
-  \ and health dividends for ROI calculation | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: USD/year | Click to view details,\
-  \ calculation & sources\">$172B (95% CI: $140B-$213B)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Combined peace and health dividends for ROI calculation\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + R&D_SAVINGS\
+  \ | Unit: USD/year | Click to view details, calculation & sources\">$172B (95% CI:\
+  \ $140B-$213B)</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\n\\begin{gathered}\n\
   Dividend_{total,ann} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B\
   \ + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\
@@ -3110,12 +3110,11 @@
   \ | Click to view details, calculation & sources\">44.8% (95% CI: 40%-50%)</a>"
 "patient_willingness_trial_participation_pct_cite": "@patient-willingness-clinical-trials"
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_annual_societal_benefit\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
-  \ dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0) |\
-  \ Calculated from 2 inputs | ✓ High confidence | Formula: TOTAL_WAR_COST × 1% ×\
-  \ ε (baseline ε=1.0) | Unit: USD/year | Click to view details, calculation & sources\"\
-  >$114B (95% CI: $90.1B-$141B)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual peace dividend from 1% reduction in total\
+  \ war costs (theoretical maximum at ε=1.0) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TOTAL_WAR_COST × 1% × ε (baseline ε=1.0) | Unit: USD/year | Click to\
+  \ view details, calculation & sources\">$114B (95% CI: $90.1B-$141B)</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\n\\begin{gathered}\nBenefit_{peace,soc}\
   \ \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\\
   % \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct}\
@@ -3139,15 +3138,12 @@
   \ \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet}\
   \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
   $3.7T\n\\end{gathered}\n$$"
-"peace_dividend_conflict_elasticity": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_conflict_elasticity\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#assumptions-and-limitations\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Conflict reduction\
-  \ elasticity: how much conflict costs decrease per 1% military spending cut. ε=0:\
-  \ no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative).\
-  \ ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting\
-  \ to disease creates unity). | ✓ High confidence | 95% CI: [0.25:1, 1.5:1] | Dist:\
-  \ Beta | Formula: 1% spending cut → ε% conflict cost reduction | Unit: ratio | Click\
-  \ to view details, calculation & sources\">1:1 (95% CI: 0.25:1-1.5:1)</a>"
+"peace_dividend_conflict_elasticity": "<span class=\"parameter-definition\" title=\"\
+  Conflict reduction elasticity: how much conflict costs decrease per 1% military\
+  \ spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate\
+  \ linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared\
+  \ enemy amplification (redirecting to disease creates unity). | Unit: ratio | Core\
+  \ definition\">1:1 (95% CI: 0.25:1-1.5:1)</span>"
 "peace_dividend_conflict_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_conflict_reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"calculated\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Conflict reduction benefits from 1% less military\
