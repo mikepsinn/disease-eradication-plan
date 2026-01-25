@@ -186,7 +186,7 @@ publishing:
   # Social media announcements
   social-media:
     - platform: twitter
-      account: "@warondisease"
+      account: "https://x.com/warondisease"
       status: pending
       post-url: ""
       post-date: ""

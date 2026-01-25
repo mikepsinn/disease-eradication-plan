@@ -166,7 +166,14 @@ def setup_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name: 
 
 
 class BuildMonitor:
-    def __init__(self, timeout_seconds: int = 180, fail_on_warnings: bool = True, log_file: str = "build.log"):
+    def __init__(
+        self,
+        timeout_seconds: int = 180,
+        fail_on_warnings: bool = True,
+        log_file: str = "build.log",
+        max_warnings_display: int = 0,  # 0 = show all
+        max_errors_display: int = 0,  # 0 = show all
+    ):
         """
         Initialize the build monitor
 
@@ -174,10 +181,14 @@ class BuildMonitor:
             timeout_seconds: Max seconds with no output before killing build (default 180)
             fail_on_warnings: Whether to fail build on warnings (default True)
             log_file: Path to log file (default "build.log")
+            max_warnings_display: Max warnings to show in summary (0 = all, default 0)
+            max_errors_display: Max errors to show in summary (0 = all, default 0)
         """
         self.timeout_seconds = timeout_seconds
         self.fail_on_warnings = fail_on_warnings
         self.log_file = log_file
+        self.max_warnings_display = max_warnings_display
+        self.max_errors_display = max_errors_display
         self.warnings = []
         self.errors = []
         self.current_file = None
@@ -278,8 +289,19 @@ class BuildMonitor:
         if any(marker in line for marker in ["WARN:", "Warning:", "[WARNING]"]):
             # Ignore warnings about thinkbynumbers (Twitter handle in YAML, not a citation)
             if all(ignore_word not in line for ignore_word in ["thinkbynumbers", "warondisease"]):
-                self.warnings.append(line.strip())
-                return f"WARNING: {line.strip()}"
+                # Treat certain critical warnings as errors (content rendering failures)
+                critical_warning_patterns = [
+                    "Could not convert TeX math",  # LaTeX math failed to render
+                    "Duplicate identifier",  # Anchor link collision
+                ]
+                is_critical = any(pattern in line for pattern in critical_warning_patterns)
+
+                if is_critical:
+                    self.errors.append(f"[CRITICAL WARNING] {line.strip()}")
+                    return f"ERROR (critical warning): {line.strip()}"
+                else:
+                    self.warnings.append(line.strip())
+                    return f"WARNING: {line.strip()}"
             return None  # Silently ignore thinkbynumbers and warondisease warnings
 
         # Detect errors
@@ -503,17 +525,19 @@ class BuildMonitor:
 
             if self.warnings:
                 self.log("\nWarnings detected:")
-                for warning in self.warnings[:10]:  # Show first 10
+                display_limit = self.max_warnings_display if self.max_warnings_display > 0 else len(self.warnings)
+                for warning in self.warnings[:display_limit]:
                     self.log(f"  - {warning}")
-                if len(self.warnings) > 10:
-                    self.log(f"  ... and {len(self.warnings) - 10} more")
+                if len(self.warnings) > display_limit:
+                    self.log(f"  ... and {len(self.warnings) - display_limit} more")
 
             if self.errors:
                 self.log("\nErrors detected:")
-                for error in self.errors[:10]:  # Show first 10
+                display_limit = self.max_errors_display if self.max_errors_display > 0 else len(self.errors)
+                for error in self.errors[:display_limit]:
                     self.log(f"  - {error}")
-                if len(self.errors) > 10:
-                    self.log(f"  ... and {len(self.errors) - 10} more")
+                if len(self.errors) > display_limit:
+                    self.log(f"  ... and {len(self.errors) - display_limit} more")
 
             # Decide final exit code
             if return_code != 0:
