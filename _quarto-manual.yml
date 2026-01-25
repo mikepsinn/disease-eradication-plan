@@ -216,7 +216,6 @@ book:
     - part: "Additional References"
       chapters:
         - knowledge/papers.qmd # ✅ AUTO-GENERATED index of all papers with OG images, PDFs, DOIs
-        - knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate) ~1p
         - knowledge/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
         - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
         - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
