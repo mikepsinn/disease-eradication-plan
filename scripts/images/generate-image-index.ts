@@ -79,25 +79,21 @@ function getStyle(filename: string): string | undefined {
  * Uses shared readImageMetadata from exiftool-utils
  */
 async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetadata>> {
-  try {
-    const exifData = await readImageMetadata(filePath);
-    if (!exifData) return {};
+  const exifData = await readImageMetadata(filePath);
+  if (!exifData) return {};
 
-    const metadata: Partial<ImageMetadata> = {};
+  const metadata: Partial<ImageMetadata> = {};
 
-    if (exifData.title) metadata.title = exifData.title;
-    if (exifData.description) metadata.description = exifData.description;
-    if (exifData.keywords) metadata.keywords = exifData.keywords;
-    if (exifData.transcript) metadata.transcript = exifData.transcript;
-    if (exifData.generationPrompt) metadata.generationPrompt = exifData.generationPrompt;
-    if (exifData.inferredPrompt) metadata.inferredPrompt = exifData.inferredPrompt;
-    if (exifData.imageIssues) metadata.imageIssues = exifData.imageIssues;
-    if (exifData.promptImprovements) metadata.promptImprovements = exifData.promptImprovements;
+  if (exifData.title) metadata.title = exifData.title;
+  if (exifData.description) metadata.description = exifData.description;
+  if (exifData.keywords) metadata.keywords = exifData.keywords;
+  if (exifData.transcript) metadata.transcript = exifData.transcript;
+  if (exifData.generationPrompt) metadata.generationPrompt = exifData.generationPrompt;
+  if (exifData.inferredPrompt) metadata.inferredPrompt = exifData.inferredPrompt;
+  if (exifData.imageIssues) metadata.imageIssues = exifData.imageIssues;
+  if (exifData.promptImprovements) metadata.promptImprovements = exifData.promptImprovements;
 
-    return metadata;
-  } catch {
-    return {};
-  }
+  return metadata;
 }
 
 /**
@@ -106,58 +102,45 @@ async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetad
 async function processImage(
   filePath: string,
   useExiftool: boolean
-): Promise<ImageMetadata | null> {
-  try {
-    const stats = await fs.stat(filePath);
-    const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
-    const filename = path.basename(filePath);
-    const extension = path.extname(filePath).toLowerCase().slice(1);
+): Promise<ImageMetadata> {
+  const stats = await fs.stat(filePath);
+  const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+  const filename = path.basename(filePath);
+  const extension = path.extname(filePath).toLowerCase().slice(1);
 
-    // Get image dimensions using sharp
-    let width: number | undefined;
-    let height: number | undefined;
-    let format: string | undefined;
+  // Get image dimensions using sharp
+  const sharpMeta = await sharp(filePath).metadata();
+  const width = sharpMeta.width;
+  const height = sharpMeta.height;
+  const format = sharpMeta.format;
 
-    try {
-      const sharpMeta = await sharp(filePath).metadata();
-      width = sharpMeta.width;
-      height = sharpMeta.height;
-      format = sharpMeta.format;
-    } catch {
-      // Not a valid image or unsupported format
-    }
+  const metadata: ImageMetadata = {
+    path: relativePath,
+    filename,
+    extension,
+    sizeBytes: stats.size,
+    size: formatBytes(stats.size),
+    width,
+    height,
+    format,
+    aspectRatio: width && height ? getAspectRatio(width, height) : undefined,
+    modified: stats.mtime.toISOString(),
+    imageType: getImageType(relativePath),
+    style: getStyle(filename),
+    chapter: getChapterFromPath(relativePath),
+  };
 
-    const metadata: ImageMetadata = {
-      path: relativePath,
-      filename,
-      extension,
-      sizeBytes: stats.size,
-      size: formatBytes(stats.size),
-      width,
-      height,
-      format,
-      aspectRatio: width && height ? getAspectRatio(width, height) : undefined,
-      modified: stats.mtime.toISOString(),
-      imageType: getImageType(relativePath),
-      style: getStyle(filename),
-      chapter: getChapterFromPath(relativePath),
-    };
-
-    // Get EXIF/IPTC metadata if exiftool is available
-    if (useExiftool) {
-      const exifMeta = await getExiftoolMetadata(filePath);
-      Object.assign(metadata, exifMeta);
-    }
-
-    // Clean style words from title and description
-    metadata.title = cleanStyleFromText(metadata.title);
-    metadata.description = cleanStyleFromText(metadata.description);
-
-    return metadata;
-  } catch (error) {
-    console.error(`[ERROR] Failed to process ${filePath}:`, error);
-    return null;
+  // Get EXIF/IPTC metadata if exiftool is available
+  if (useExiftool) {
+    const exifMeta = await getExiftoolMetadata(filePath);
+    Object.assign(metadata, exifMeta);
   }
+
+  // Clean style words from title and description
+  metadata.title = cleanStyleFromText(metadata.title);
+  metadata.description = cleanStyleFromText(metadata.description);
+
+  return metadata;
 }
 
 async function main() {
@@ -185,10 +168,8 @@ async function main() {
 
   for (const filePath of imageFiles) {
     const metadata = await processImage(filePath, useExiftool);
-    if (metadata) {
-      images.push(metadata);
-      totalSize += metadata.sizeBytes;
-    }
+    images.push(metadata);
+    totalSize += metadata.sizeBytes;
 
     processed++;
     if (processed % 100 === 0) {

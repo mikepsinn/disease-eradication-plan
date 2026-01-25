@@ -67,7 +67,8 @@ export async function isExiftoolAvailable(): Promise<boolean> {
   try {
     await execAsync('exiftool -ver')
     return true
-  } catch {
+  } catch (error) {
+    console.error('exiftool not available:', error)
     return false
   }
 }
@@ -149,8 +150,9 @@ export async function readImageMetadata(
     }
 
     return Object.keys(result).length > 0 ? result : null
-  } catch {
-    return null
+  } catch (error) {
+    console.error(`Failed to read metadata from ${filepath}:`, error)
+    throw error
   }
 }
 
@@ -199,25 +201,41 @@ export async function writeImageMetadata(
     newMetadata.metadataCreatedAt = new Date().toISOString()
   }
 
-  // Write to temp file to avoid Windows command line escaping issues
+  // Write to temp file and use exiftool's -@ argfile to avoid shell escaping issues
   const tempFile = path.join(
     path.dirname(filepath),
     `.metadata-temp-${Date.now()}.json`
   )
+  const argFile = path.join(
+    path.dirname(filepath),
+    `.exiftool-args-${Date.now()}.txt`
+  )
+
   await fs.writeFile(tempFile, JSON.stringify(newMetadata))
 
+  // Create argfile with the command arguments
+  const args = [
+    '-overwrite_original',
+    `-UserComment<=${tempFile}`,
+    filepath,
+  ]
+  await fs.writeFile(argFile, args.join('\n'))
+
   try {
-    await execAsync(
-      `exiftool -overwrite_original -UserComment<="${tempFile}" "${filepath}"`,
+    const { stdout, stderr } = await execAsync(
+      `exiftool -@ "${argFile}"`,
       { maxBuffer: 1024 * 1024 }
     )
-  } finally {
-    // Clean up temp file
-    try {
-      await fs.unlink(tempFile)
-    } catch {
-      // Ignore cleanup errors
+    if (stderr) {
+      console.error(`exiftool stderr for ${filepath}:`, stderr)
     }
+    if (!stdout.includes('1 image files updated')) {
+      throw new Error(`exiftool did not update file. stdout: ${stdout}`)
+    }
+  } finally {
+    // Clean up temp files
+    await fs.unlink(tempFile)
+    await fs.unlink(argFile)
   }
 }
 
@@ -243,13 +261,9 @@ export async function getRawExiftoolOutput(
 ): Promise<RawExifData | null> {
   const fieldArgs = fields ? fields.map(f => `-${f}`).join(' ') : '-all'
 
-  try {
-    const { stdout } = await execAsync(
-      `exiftool -json ${fieldArgs} "${filepath}"`,
-      { maxBuffer: 1024 * 1024 }
-    )
-    return JSON.parse(stdout)[0] || null
-  } catch {
-    return null
-  }
+  const { stdout } = await execAsync(
+    `exiftool -json ${fieldArgs} "${filepath}"`,
+    { maxBuffer: 1024 * 1024 }
+  )
+  return JSON.parse(stdout)[0] || null
 }

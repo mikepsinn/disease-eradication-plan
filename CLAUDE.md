@@ -47,6 +47,10 @@ Avoid Unicode characters in print statements. Use ASCII: `->`, `WARNING:`, `[OK]
 3. All parameter names match `_variables.yml` (lowercase format)
 4. Validation checks pass with no regressions
 
+### Error Handling
+
+**NEVER add try/catch blocks** unless absolutely necessary. Let errors propagate and crash loudly.
+
 ## Parameter and Variable System
 
 **CRITICAL: Use the automated parameter/variable system for all numeric values.**

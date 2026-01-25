@@ -58,25 +58,21 @@ interface EnrichmentResult {
 async function getMissingFields(imagePath: string): Promise<string[]> {
   const missing: string[] = []
 
-  try {
-    const metadata = await readImageMetadata(imagePath)
-    if (!metadata) {
-      return [...ALL_FIELDS]
-    }
-
-    for (const field of ALL_FIELDS) {
-      const value = metadata[field]
-      if (value === undefined || value === null) {
-        missing.push(field)
-      } else if (Array.isArray(value) && value.length === 0) {
-        missing.push(field)
-      }
-    }
-
-    return missing
-  } catch {
+  const metadata = await readImageMetadata(imagePath)
+  if (!metadata) {
     return [...ALL_FIELDS]
   }
+
+  for (const field of ALL_FIELDS) {
+    const value = metadata[field]
+    if (value === undefined || value === null) {
+      missing.push(field)
+    } else if (Array.isArray(value) && value.length === 0) {
+      missing.push(field)
+    }
+  }
+
+  return missing
 }
 
 /**
