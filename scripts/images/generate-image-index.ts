@@ -1,13 +1,11 @@
 /**
  * Generate a JSON index of all images in the project with metadata
  *
- * Also generates missing metadata (transcript, inferredPrompt, etc.) using Gemini
+ * Supports incremental updates - only reprocesses files that have changed.
  *
  * Usage:
- *   npx tsx scripts/images/generate-image-index.ts           # Index only, skip missing metadata
- *   npx tsx scripts/images/generate-image-index.ts --fill    # Generate missing metadata with Gemini
- *   npx tsx scripts/images/generate-image-index.ts --force   # Regenerate ALL metadata (overwrite existing)
- *   npx tsx scripts/images/generate-image-index.ts --limit N # Limit to N images for testing
+ *   npx tsx scripts/images/generate-image-index.ts           # Incremental update (fast)
+ *   npx tsx scripts/images/generate-image-index.ts --force   # Full rebuild (slow)
  *
  * Output: assets/image-index.json
  */
@@ -27,7 +25,10 @@ import {
   getChapterFromPath,
 } from '../lib/image-metadata';
 
-const OUTPUT_FILE = 'assets/image-index.json';
+export const OUTPUT_FILE = 'assets/image-index.json';
+
+// Formats sharp can process (excludes ico)
+const SHARP_SUPPORTED = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg'];
 
 /**
  * Calculate aspect ratio string
@@ -71,27 +72,19 @@ function getStyle(filename: string): string | undefined {
   return undefined;
 }
 
-
-// isExiftoolAvailable imported from ../lib/exiftool-utils
-
 /**
  * Extract metadata using exiftool (if available)
- * Uses shared readImageMetadata from exiftool-utils
  */
 async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetadata>> {
   const exifData = await readImageMetadata(filePath);
   if (!exifData) return {};
-  // Return all fields from exifData (includes enrichment fields like twitterText, promptLeakage, etc.)
   return exifData as Partial<ImageMetadata>;
 }
 
 /**
- * Process a single image file
+ * Process a single image file and return its metadata
  */
-// Formats sharp can process (excludes ico)
-const SHARP_SUPPORTED = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg'];
-
-async function processImage(
+export async function processImage(
   filePath: string,
   useExiftool: boolean
 ): Promise<ImageMetadata> {
@@ -141,8 +134,71 @@ async function processImage(
   return metadata;
 }
 
+/**
+ * Load existing index from disk
+ */
+export async function loadIndex(): Promise<ImageIndex | null> {
+  const outputPath = path.join(process.cwd(), OUTPUT_FILE);
+  try {
+    const content = await fs.readFile(outputPath, 'utf-8');
+    return JSON.parse(content) as ImageIndex;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Save index to disk
+ */
+export async function saveIndex(index: ImageIndex): Promise<void> {
+  const outputPath = path.join(process.cwd(), OUTPUT_FILE);
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  await fs.writeFile(outputPath, JSON.stringify(index, null, 2));
+}
+
+/**
+ * Update a single image entry in the index (for incremental updates)
+ * This is exported for use by other scripts like enrich-image-metadata.ts
+ */
+export async function updateImageInIndex(
+  imagePath: string,
+  newMetadata: Partial<ImageMetadata>
+): Promise<void> {
+  const index = await loadIndex();
+  if (!index) {
+    console.error('No existing index found. Run generate-image-index.ts first.');
+    return;
+  }
+
+  const relativePath = path.relative(process.cwd(), imagePath).replace(/\\/g, '/');
+  const existingIndex = index.images.findIndex(img => img.path === relativePath);
+
+  if (existingIndex >= 0) {
+    // Merge new metadata with existing
+    index.images[existingIndex] = {
+      ...index.images[existingIndex],
+      ...newMetadata,
+    };
+  } else {
+    // Image not in index - need to process it fully
+    const useExiftool = await isExiftoolAvailable();
+    const fullMetadata = await processImage(imagePath, useExiftool);
+    index.images.push({ ...fullMetadata, ...newMetadata });
+    index.images.sort((a, b) => a.path.localeCompare(b.path));
+    index.totalImages = index.images.length;
+    index.totalSizeBytes = index.images.reduce((sum, img) => sum + img.sizeBytes, 0);
+    index.totalSize = formatBytes(index.totalSizeBytes);
+  }
+
+  await saveIndex(index);
+}
+
 async function main() {
-  console.log('Generating image search index...\n');
+  const args = process.argv.slice(2);
+  const forceRebuild = args.includes('--force');
+
+  console.log('Generating image index...\n');
+  console.log(`Mode: ${forceRebuild ? 'FULL REBUILD' : 'INCREMENTAL UPDATE'}\n`);
 
   const useExiftool = await isExiftoolAvailable();
   if (useExiftool) {
@@ -160,14 +216,40 @@ async function main() {
 
   console.log(`Found ${imageFiles.length} image files\n`);
 
+  // Load existing index for incremental mode
+  const existingIndex = forceRebuild ? null : await loadIndex();
+  const existingByPath = new Map<string, ImageMetadata>();
+  if (existingIndex) {
+    for (const img of existingIndex.images) {
+      existingByPath.set(img.path, img);
+    }
+  }
+
   const images: ImageMetadata[] = [];
   let totalSize = 0;
   let processed = 0;
+  let skipped = 0;
+  let updated = 0;
 
   for (const filePath of imageFiles) {
-    const metadata = await processImage(filePath, useExiftool);
-    images.push(metadata);
-    totalSize += metadata.sizeBytes;
+    const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+    const stats = await fs.stat(filePath);
+    const fileModified = stats.mtime.toISOString();
+
+    // Check if we can skip this file (incremental mode)
+    const existing = existingByPath.get(relativePath);
+    if (existing && existing.modified === fileModified) {
+      // File hasn't changed - reuse existing metadata
+      images.push(existing);
+      totalSize += existing.sizeBytes;
+      skipped++;
+    } else {
+      // File is new or changed - process it
+      const metadata = await processImage(filePath, useExiftool);
+      images.push(metadata);
+      totalSize += metadata.sizeBytes;
+      updated++;
+    }
 
     processed++;
     if (processed % 100 === 0) {
@@ -185,15 +267,14 @@ async function main() {
     images,
   };
 
-  // Write output
-  const outputPath = path.join(process.cwd(), OUTPUT_FILE);
-  await fs.mkdir(path.dirname(outputPath), { recursive: true });
-  await fs.writeFile(outputPath, JSON.stringify(index, null, 2));
+  await saveIndex(index);
 
   console.log('\n' + '='.repeat(60));
   console.log('Summary:');
   console.log(`  Total images: ${images.length}`);
   console.log(`  Total size: ${formatBytes(totalSize)}`);
+  console.log(`  Skipped (unchanged): ${skipped}`);
+  console.log(`  Updated/added: ${updated}`);
   console.log(`  Output: ${OUTPUT_FILE}`);
   console.log('='.repeat(60));
 

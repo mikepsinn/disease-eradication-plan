@@ -87,11 +87,18 @@ Return a JSON object with ALL these fields:
 - "qualityIssues": Array of specific problems (e.g., "text too small", "low contrast", "cluttered layout", "spelling errors")
 - "standaloneScore": 1-5 rating - can it communicate its message WITHOUT chapter context? (5=fully standalone)
 
-## Social Media
+## Social Media (IMPORTANT: Use a distinctive voice)
+Write with darkly humorous, absurdist wit - like Philomena Cunk's deadpan observations, Jack Handy's "Deep Thoughts", or Kurt Vonnegut's resigned "so it goes" wisdom. Point out absurdities with deceptively simple language. Use dry understatement rather than outrage. Make people laugh, then think. Never earnest corporate-speak.
+
+Examples of the tone we want:
+- "We spend $2 trillion on ways to end lives, but curing diseases is somehow 'too expensive.' Interesting priorities."
+- "Good news: we've perfected the art of blowing things up. Bad news: still working on not dying from preventable diseases."
+- "The FDA takes 12 years to approve a drug. The disease, unfortunately, did not get the memo about waiting."
+
 - "canShareStandalone": boolean - does it make sense shared independently?
-- "socialCaption": Ready-to-post caption (1-2 sentences) with 2-3 relevant hashtags
-- "twitterText": Tweet-ready version (under 280 chars including hashtags)
-- "linkedInText": Professional version for LinkedIn (2-3 sentences)
+- "socialCaption": Caption (1-2 sentences) + 2-3 hashtags. Be wry, deadpan, darkly funny. Punchlines > platitudes.
+- "twitterText": Under 280 chars. Punchy one-liner that makes people go "wait, what?" then share.
+- "linkedInText": Professional but still wry - even LinkedIn can handle gallows humor about preventable death.
 - "targetPlatforms": Array from ["twitter", "linkedin", "instagram", "facebook", "presentation"]
 
 ## Presentations
@@ -114,10 +121,11 @@ Check if any AI generation prompt text accidentally appears in the image. Common
 - Style words: "retro", "academic", "scientific illustration", "visualization", "infographic"
 - Technical terms: "high contrast", "minimalist", "detailed", "professional"
 - Instructions: "diagram showing", "chart of", "illustration of"
+- Figure numbers: "Figure 1", "Figure 2", "Fig. 1" etc. (these should be added by the document system, not embedded in images)
 
-- "promptLeakageDetected": boolean - does visible text contain likely prompt artifacts?
-- "promptLeakageText": Array of specific leaked text found (e.g., ["scientific illustration", "retro style"])
-- "promptLeakageRepairPrompt": If leakage detected, a specific prompt to fix it (e.g., "Remove the text 'scientific illustration' from the bottom right corner of the image")
+- "promptLeakageDetected": boolean - does visible text contain likely prompt artifacts OR embedded figure numbers?
+- "promptLeakageText": Array of specific leaked text found (e.g., ["scientific illustration", "Figure 1"])
+- "promptLeakageRepairPrompt": If leakage detected, a specific prompt to fix it (e.g., "Remove the text 'Figure 1' from the top of the image")
 
 Return ONLY valid JSON, no markdown code blocks.`,
 }
@@ -435,62 +443,57 @@ export async function generateCompleteMetadata(
     mimeType
   )
 
-  try {
-    const metadata = extractJsonFromResponse(response, 'complete metadata') as CompleteMetadataResult
+  const metadata = extractJsonFromResponse(response, 'complete metadata') as CompleteMetadataResult
 
-    const result: CompleteMetadataResult = {}
+  const result: CompleteMetadataResult = {}
 
-    // Core metadata
-    if (metadata.title) result.title = metadata.title
-    if (metadata.description) result.description = metadata.description
-    if (metadata.keywords?.length) result.keywords = metadata.keywords
-    if (metadata.transcript && metadata.transcript !== '[NO TEXT]') {
-      result.transcript = metadata.transcript
-    }
-
-    // Quality assessment
-    if (metadata.qualityScore) result.qualityScore = metadata.qualityScore
-    if (metadata.qualityIssues?.length) result.qualityIssues = metadata.qualityIssues
-    if (metadata.standaloneScore) result.standaloneScore = metadata.standaloneScore
-
-    // Social media
-    if (typeof metadata.canShareStandalone === 'boolean') {
-      result.canShareStandalone = metadata.canShareStandalone
-    }
-    if (metadata.socialCaption) result.socialCaption = metadata.socialCaption
-    if (metadata.twitterText) result.twitterText = metadata.twitterText
-    if (metadata.linkedInText) result.linkedInText = metadata.linkedInText
-    if (metadata.targetPlatforms?.length) result.targetPlatforms = metadata.targetPlatforms
-
-    // Presentations
-    if (metadata.speakerNotes) result.speakerNotes = metadata.speakerNotes
-    if (metadata.talkingPoints?.length) result.talkingPoints = metadata.talkingPoints
-    if (metadata.audienceLevel) result.audienceLevel = metadata.audienceLevel
-
-    // Accessibility & Tone
-    if (metadata.altText) result.altText = metadata.altText
-    if (metadata.emotionalTone) result.emotionalTone = metadata.emotionalTone
-    if (metadata.callToAction) result.callToAction = metadata.callToAction
-
-    // Data Integrity
-    if (metadata.dataFreshness) result.dataFreshness = metadata.dataFreshness
-    if (metadata.dataSources?.length) result.dataSources = metadata.dataSources
-    if (metadata.factCheckNotes) result.factCheckNotes = metadata.factCheckNotes
-
-    // Prompt Leakage Detection
-    if (typeof metadata.promptLeakageDetected === 'boolean') {
-      result.promptLeakageDetected = metadata.promptLeakageDetected
-    }
-    if (metadata.promptLeakageText?.length) {
-      result.promptLeakageText = metadata.promptLeakageText
-    }
-    if (metadata.promptLeakageRepairPrompt) {
-      result.promptLeakageRepairPrompt = metadata.promptLeakageRepairPrompt
-    }
-
-    return result
-  } catch {
-    // Fallback: couldn't parse JSON
-    return {}
+  // Core metadata
+  if (metadata.title) result.title = metadata.title
+  if (metadata.description) result.description = metadata.description
+  if (metadata.keywords?.length) result.keywords = metadata.keywords
+  if (metadata.transcript && metadata.transcript !== '[NO TEXT]') {
+    result.transcript = metadata.transcript
   }
+
+  // Quality assessment
+  if (metadata.qualityScore) result.qualityScore = metadata.qualityScore
+  if (metadata.qualityIssues?.length) result.qualityIssues = metadata.qualityIssues
+  if (metadata.standaloneScore) result.standaloneScore = metadata.standaloneScore
+
+  // Social media
+  if (typeof metadata.canShareStandalone === 'boolean') {
+    result.canShareStandalone = metadata.canShareStandalone
+  }
+  if (metadata.socialCaption) result.socialCaption = metadata.socialCaption
+  if (metadata.twitterText) result.twitterText = metadata.twitterText
+  if (metadata.linkedInText) result.linkedInText = metadata.linkedInText
+  if (metadata.targetPlatforms?.length) result.targetPlatforms = metadata.targetPlatforms
+
+  // Presentations
+  if (metadata.speakerNotes) result.speakerNotes = metadata.speakerNotes
+  if (metadata.talkingPoints?.length) result.talkingPoints = metadata.talkingPoints
+  if (metadata.audienceLevel) result.audienceLevel = metadata.audienceLevel
+
+  // Accessibility & Tone
+  if (metadata.altText) result.altText = metadata.altText
+  if (metadata.emotionalTone) result.emotionalTone = metadata.emotionalTone
+  if (metadata.callToAction) result.callToAction = metadata.callToAction
+
+  // Data Integrity
+  if (metadata.dataFreshness) result.dataFreshness = metadata.dataFreshness
+  if (metadata.dataSources?.length) result.dataSources = metadata.dataSources
+  if (metadata.factCheckNotes) result.factCheckNotes = metadata.factCheckNotes
+
+  // Prompt Leakage Detection
+  if (typeof metadata.promptLeakageDetected === 'boolean') {
+    result.promptLeakageDetected = metadata.promptLeakageDetected
+  }
+  if (metadata.promptLeakageText?.length) {
+    result.promptLeakageText = metadata.promptLeakageText
+  }
+  if (metadata.promptLeakageRepairPrompt) {
+    result.promptLeakageRepairPrompt = metadata.promptLeakageRepairPrompt
+  }
+
+  return result
 }

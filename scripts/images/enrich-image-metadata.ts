@@ -26,6 +26,7 @@ import { findImages } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { generateCompleteMetadata, CompleteMetadataResult } from '../lib/image-analysis'
 import { parseCommonArgs, printHeader, printSummary } from '../lib/cli-utils'
+import { updateImageInIndex } from './generate-image-index'
 
 const ASSETS_DIR = path.join(process.cwd(), 'assets', 'images')
 
@@ -49,7 +50,6 @@ interface EnrichmentResult {
   path: string
   generated: CompleteMetadataResult
   fieldsAdded: string[]
-  error?: string
 }
 
 /**
@@ -236,7 +236,6 @@ async function main() {
   const results: EnrichmentResult[] = []
   let processed = 0
   let enriched = 0
-  let errors = 0
 
   for (const imagePath of images) {
     const relativePath = path.relative(process.cwd(), imagePath)
@@ -244,64 +243,56 @@ async function main() {
 
     console.log(`\n[${processed}/${images.length}] ${relativePath}`)
 
-    try {
-      // Generate all metadata in one API call
-      const generated = await generateCompleteMetadata(imagePath)
+    // Generate all metadata in one API call
+    const generated = await generateCompleteMetadata(imagePath)
 
-      // Count fields that were generated
-      const fieldsAdded = Object.keys(generated).filter(k => {
-        const val = generated[k as keyof CompleteMetadataResult]
-        return val !== undefined && val !== null && (Array.isArray(val) ? val.length > 0 : true)
-      })
+    // Count fields that were generated
+    const fieldsAdded = Object.keys(generated).filter(k => {
+      const val = generated[k as keyof CompleteMetadataResult]
+      return val !== undefined && val !== null && (Array.isArray(val) ? val.length > 0 : true)
+    })
 
-      // Display preview
-      const preview = formatMetadataPreview(generated)
-      for (const line of preview) {
-        console.log(line)
-      }
-
-      results.push({
-        path: relativePath,
-        generated,
-        fieldsAdded,
-      })
-
-      // Save to metadata
-      if (!options.dryRun && fieldsAdded.length > 0) {
-        // Add timestamp
-        const metadataToSave = {
-          ...generated,
-          metadataEnrichedAt: new Date().toISOString(),
-        }
-
-        await writeImageMetadata(imagePath, metadataToSave)
-        console.log(`  [OK] Saved ${fieldsAdded.length} fields`)
-        enriched++
-      } else if (options.dryRun) {
-        console.log(`  [DRY RUN] Would save ${fieldsAdded.length} fields`)
-      } else {
-        console.log(`  [SKIP] No fields generated`)
-      }
-
-      // Rate limiting - slightly longer for comprehensive analysis
-      await new Promise(resolve => setTimeout(resolve, 800))
-    } catch (error) {
-      console.error(`  [ERROR] ${error}`)
-      results.push({
-        path: relativePath,
-        generated: {},
-        fieldsAdded: [],
-        error: String(error),
-      })
-      errors++
+    // Display preview
+    const preview = formatMetadataPreview(generated)
+    for (const line of preview) {
+      console.log(line)
     }
+
+    results.push({
+      path: relativePath,
+      generated,
+      fieldsAdded,
+    })
+
+    // Save to metadata
+    if (!options.dryRun && fieldsAdded.length > 0) {
+      // Add timestamp
+      const metadataToSave = {
+        ...generated,
+        metadataEnrichedAt: new Date().toISOString(),
+      }
+
+      await writeImageMetadata(imagePath, metadataToSave)
+
+      // Update image-index.json incrementally (fast, no full rebuild)
+      await updateImageInIndex(imagePath, metadataToSave)
+
+      console.log(`  [OK] Saved ${fieldsAdded.length} fields + updated index`)
+      enriched++
+    } else if (options.dryRun) {
+      console.log(`  [DRY RUN] Would save ${fieldsAdded.length} fields`)
+    } else {
+      console.log(`  [SKIP] No fields generated`)
+    }
+
+    // Rate limiting - slightly longer for comprehensive analysis
+    await new Promise(resolve => setTimeout(resolve, 800))
   }
 
   // Summary
   printSummary({
     'Images processed': processed,
     'Successfully enriched': enriched,
-    Errors: errors,
   })
 
   // Quality summary
@@ -330,14 +321,6 @@ async function main() {
 
   if (options.dryRun) {
     console.log('\n[DRY RUN] No metadata was saved. Run without --dry-run to save.')
-  } else if (enriched > 0) {
-    // Regenerate image search index to include new metadata
-    console.log('\n[4/4] Regenerating image search index...')
-    const { execSync } = await import('child_process')
-    execSync('npx tsx scripts/images/generate-image-index.ts', {
-      cwd: process.cwd(),
-      stdio: 'inherit',
-    })
   }
 }
 

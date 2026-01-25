@@ -37,6 +37,8 @@
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
     "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
+    "images:enrich": "tsx scripts/images/enrich-image-metadata.ts",
+    "images:enrich:all": "tsx scripts/images/enrich-image-metadata.ts --all",
     "images:index": "tsx scripts/images/generate-image-index.ts",
     "images:chapter:outdated": "tsx scripts/images/generate-chapter-images.ts --outdated",
     "images:chapter": "tsx scripts/images/generate-chapter-images.ts",

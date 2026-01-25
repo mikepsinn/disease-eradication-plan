@@ -136,3 +136,5 @@ logs/
 .auto-claude-status
 !assets/html/page-loader.html
 README.html
+.metadata-temp-*
+.exiftool-args-*
