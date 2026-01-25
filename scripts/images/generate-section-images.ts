@@ -54,7 +54,6 @@ interface Section {
 interface ImageRecommendation {
   shouldGenerate: boolean;
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart' | null;
-  verbatimContent: string;  // Exact text to visualize
   caption: string;          // Natural caption for alt text
   reasoning: string;        // Why this image is/isn't needed
 }
@@ -148,40 +147,37 @@ function parseIntoSections(rawContent: string, cleanedContent: string): Section[
 /**
  * Ask Gemini Flash if a section would benefit from an image
  */
-async function evaluateSection(section: Section): Promise<ImageRecommendation> {
+async function evaluateSection(section: Section, variables: Map<string, string>): Promise<ImageRecommendation> {
+  // Resolve Quarto variables in the section content so LLM sees actual values
+  const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
+
   const prompt = `Analyze this section and determine if it would significantly benefit from a visual aid.
 
 SECTION:
 ---
-${section.content}
+${resolvedContent}
 ---
 
 Respond with JSON only:
 {
   "shouldGenerate": true/false,
   "imageType": "diagram" | "chart" | "infographic" | "flowchart" | null,
-  "verbatimContent": "<EXACT text/numbers from section to visualize - copy verbatim, do not paraphrase>",
-  "caption": "<1-2 sentence description, NO 'Figure X:' prefix>",
+  "caption": "<1-2 sentence description for alt text, NO 'Figure X:' prefix>",
   "reasoning": "<brief explanation>"
 }
 
 ONLY recommend an image if:
-- Complex quantitative comparisons hard to grasp as text (3+ numbers to compare)
-- Multi-step processes (4+ steps) needing visualization
-- Interconnected relationships (5+ entities) that benefit from a diagram
-- The section has substantial content (200+ words) with real data
+- Quantitative comparisons (2+ numbers to compare, especially with ratios like "604:1" or "50x")
+- Multi-step processes (3+ steps) needing visualization
+- Interconnected relationships (4+ entities) that benefit from a diagram
+- Data-dense content with specific statistics, even if brief
 
 Do NOT recommend images for:
-- Simple explanatory text without data
-- Sections with fewer than 3 comparable numbers
-- Narrative content without process/relationship structure
-- Short sections (under 150 words)
+- Pure narrative/rhetorical content without specific numbers
+- Sections with only 1 number and no comparison
+- Already-visual content (lists that are self-explanatory)
 
-If shouldGenerate is false, set imageType to null and verbatimContent to "".
-
-VERBATIM CONTENT: Copy EXACT text from the section. Examples:
-GOOD: "Global Military Spending: $2.72 Trillion | Disease Cure Funding: $67.5 Billion"
-BAD: "A comparison of military vs healthcare spending" (paraphrased - wrong!)`;
+If shouldGenerate is false, set imageType to null.`;
 
   try {
     const response = await generateGeminiFlashContent(prompt);
@@ -192,7 +188,6 @@ BAD: "A comparison of military vs healthcare spending" (paraphrased - wrong!)`;
       return {
         shouldGenerate: false,
         imageType: null,
-        verbatimContent: '',
         caption: '',
         reasoning: 'Failed to parse LLM response',
       };
@@ -204,7 +199,6 @@ BAD: "A comparison of military vs healthcare spending" (paraphrased - wrong!)`;
     return {
       shouldGenerate: false,
       imageType: null,
-      verbatimContent: '',
       caption: '',
       reasoning: 'Evaluation error',
     };
@@ -218,6 +212,7 @@ async function generateAndInsertImage(
   filePath: string,
   section: Section,
   recommendation: ImageRecommendation,
+  resolvedContent: string,
   useAcademicStyle: boolean,
   aspectRatio: '1:1' | '3:4' | '9:16' | '16:9'
 ): Promise<boolean> {
@@ -227,16 +222,14 @@ async function generateAndInsertImage(
   const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
   const sectionSlug = toKebabCase(section.title);
 
+  // Simple prompt: just style + full section content. Let the image model figure out the visualization.
   const imagePrompt = `${style.style}
 
-Create a ${recommendation.imageType} visualizing this information:
-
-${recommendation.verbatimContent}`;
+${resolvedContent}`;
 
   console.log(`\n  --- GENERATING IMAGE ---`);
   console.log(`  Section: ${section.title}`);
   console.log(`  Type: ${recommendation.imageType}`);
-  console.log(`  Verbatim content: ${recommendation.verbatimContent.substring(0, 100)}...`);
 
   try {
     const imageFiles = await generateAndSaveImages({
@@ -247,7 +240,7 @@ ${recommendation.verbatimContent}`;
       referenceImages: [],
       metadata: {
         title: recommendation.caption,
-        description: recommendation.verbatimContent,
+        description: `Visual for section: ${section.title}`,
         keywords: [recommendation.imageType || 'image', section.title, fileName, 'section-image'],
       },
     });
@@ -396,11 +389,11 @@ async function processFile(
   // Read raw file content
   const rawContent = await fs.readFile(filePath, 'utf-8');
 
-  // Get cleaned content (variables replaced, markup cleaned)
-  const cleanedContent = await getCleanedContentForLLM(filePath);
+  // Load Quarto variables for resolving in sections
+  const variables = await loadQuartoVariables();
 
-  // Parse into sections
-  const sections = parseIntoSections(rawContent, cleanedContent);
+  // Parse into sections (we'll resolve variables per-section now)
+  const sections = parseIntoSections(rawContent, rawContent);
 
   console.log(`\n[*] Found ${sections.length} sections in ${path.basename(filePath)}`);
 
@@ -419,8 +412,8 @@ async function processFile(
       continue;
     }
 
-    // Skip very short sections
-    if (section.content.length < 200) {
+    // Skip very short sections (only skip if truly minimal - under 100 chars)
+    if (section.content.length < 100) {
       console.log(`  [SKIP] "${section.title}" - too short (${section.content.length} chars)`);
       skipped++;
       continue;
@@ -433,10 +426,10 @@ async function processFile(
       break;
     }
 
-    console.log(`\n  [${evaluated + 1}] Evaluating: "${section.title}" (${section.content.length} chars)`);
+    console.log(`\n  [${evaluated + 1}] Evaluating: "${section.title}" (${section.rawContent.length} chars)`);
 
-    // Ask Gemini if this section needs an image
-    const recommendation = await evaluateSection(section);
+    // Ask Gemini if this section needs an image (pass variables for resolution)
+    const recommendation = await evaluateSection(section, variables);
     evaluated++;
 
     if (!recommendation.shouldGenerate) {
@@ -446,9 +439,11 @@ async function processFile(
 
     console.log(`  [YES] ${recommendation.imageType}: ${recommendation.reasoning}`);
 
+    // Resolve variables for image generation
+    const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
+
     if (dryRun) {
       console.log(`  [DRY RUN] Would generate: ${recommendation.caption}`);
-      console.log(`  [DRY RUN] Verbatim: ${recommendation.verbatimContent.substring(0, 100)}...`);
       generated++;
       continue;
     }
@@ -458,6 +453,7 @@ async function processFile(
       filePath,
       section,
       recommendation,
+      resolvedContent,
       useAcademicStyle,
       aspectRatio
     );
@@ -467,10 +463,9 @@ async function processFile(
 
       // Re-read file after insertion (line numbers have changed)
       const updatedContent = await fs.readFile(filePath, 'utf-8');
-      const updatedCleanedContent = await getCleanedContentForLLM(filePath);
 
       // Re-parse sections with updated content for remaining iterations
-      const updatedSections = parseIntoSections(updatedContent, updatedCleanedContent);
+      const updatedSections = parseIntoSections(updatedContent, updatedContent);
 
       // Find current section index and update remaining sections
       const currentIdx = sections.findIndex(s => s.title === section.title);

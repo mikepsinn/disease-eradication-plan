@@ -27,6 +27,9 @@ They say knowledge is power. But in this case, knowledge is mostly just depressi
 
 Every day, {{< var global_disease_deaths_daily >}} humans die from disease and aging. Many of those deaths are likely eventually avoidable with sufficient investment, but we are moving far too slowly.
 
+![A scale comparison visualizing 150,000 daily deaths from aging and disease represented as fifty individual blocks of 3,000 deaths each to illustrate the '50 9/11s' ratio.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
+
+
 I tried to imagine what {{< var global_disease_deaths_daily >}} people looks like. It's like if you took everyone in a decent-sized stadium and deleted them. Then did it again tomorrow. And the day after that. Forever. You'd run out of stadiums before you'd run out of corpses, which seems like poor urban planning.
 
 That's fifty 9/11s. Per day. Every day. Including weekends and holidays.
@@ -46,11 +49,17 @@ Here's how humanity allocates its resources:
 
 But the real bottleneck isn't research funding. It's testing which treatments actually work. Clinical trials determine whether medicines save lives or sit on shelves. On that front, governments worldwide spend {{< var global_government_clinical_trials_spending_annual >}} annually on clinical trials versus {{< var global_military_spending_annual_2024 >}} on weapons. That's a {{< var military_to_government_clinical_trials_spending_ratio >}} ratio, which in technical terms is called "having your priorities backwards."
 
+![A comparison of global annual spending showing the massive disparity between military expenditures ($2.72 trillion) and funding for disease research ($67.5 billion) and clinical trials ($4.5 billion).](/assets/images/problem/problem-section-where-the-money-goes-bw-academic.jpg)
+
+
 For comparison, imagine if you spent $2,700 on guns and $68 on food. Your neighbors would stage an intervention (or call the police, or possibly just move). But when humanity does it, you call it "military spending" and give everyone medals.
 
 ## On the Pentagon's Accounting
 
 The Pentagon has lost $2.5 trillion. Not spent. Lost. Like car keys, except the car keys could cure cancer several hundred times.
+
+![A comparison showing the scale of the Pentagon's $2.5 trillion loss against the cost of 37 years of medical research and 17 aircraft carrier strike groups.](/assets/images/problem/problem-section-on-the-pentagon-s-accounting-bw-academic.jpg)
+
 
 When normal people lose $20, they search the couch cushions. When the Pentagon loses $2,500,000,000,000, they ask for more money and Congress says yes.
 
@@ -61,6 +70,9 @@ They say a trillion is just a number. But it's the number of dollars you lost th
 ## On Medical Research
 
 Since 1970, the National Institutes of Health has spent over $1 trillion studying diseases.
+
+![A comparison of US NIH RECOVER and UK RECOVERY trials highlighting the disparity in cost per patient ($55,500 vs. $500) and patient enrollment counts, alongside a breakdown of NIH budget allocation.](/assets/images/problem/problem-section-on-medical-research-bw-academic.jpg)
+
 
 Diseases cured: Zero.
 
@@ -89,6 +101,9 @@ Also, NIH funding priorities have a 0.07 correlation with actual disease burden.
 
 The FDA is America's way of making sure drugs are safe. They do this by making the approval process so expensive and slow that most drugs never get approved at all.
 
+![A comparison showing the massive disparity between the Oxford RECOVERY trial cost per patient ($500) and the standard FDA process cost per patient ($41,000), illustrating an 82x cost difference.](/assets/images/problem/problem-section-on-the-fda-bw-academic.jpg)
+
+
 It takes {{< var treatment_acceleration_years_current >}} and {{< var pharma_drug_development_cost_current >}} to get a drug through FDA approval. {{< var treatment_acceleration_years_current >}}. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
 
 During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for {{< var recovery_trial_cost_per_patient >}} per person. The FDA's process costs {{< var traditional_phase3_cost_per_patient >}} per patient. That's {{< var recovery_trial_cost_reduction_factor >}} times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes {{< var treatment_acceleration_years_current >}} and you might be bald by then anyway.
@@ -100,6 +115,9 @@ They say the road to hell is paved with good intentions. The FDA's road is paved
 ## On What War Costs
 
 Humanity spends {{< var global_military_spending_annual_2024 >}} every year on war. That works out to {{< var global_military_spending_per_capita_annual >}} per human on Earth for death tools.
+
+![An infographic illustrating global military spending trade-offs, showing the scale of $2.72 trillion and the ratio of one submarine costing as much as 1,000 cancer research labs.](/assets/images/problem/problem-section-on-what-war-costs-bw-academic.jpg)
+
 
 This budget includes:
 
