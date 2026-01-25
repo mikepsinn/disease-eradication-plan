@@ -386,14 +386,14 @@ class PDFValidator:
                         self._add_error(
                             None,
                             "BROKEN_EXTERNAL_LINK",
-                            PDFValidationError.SEVERITY_WARNING,
+                            PDFValidationError.SEVERITY_CRITICAL,
                             f"HTTP {e.code} for URL: {url}",
                         )
                 except URLError:
                     self._add_error(
                         None,
                         "BROKEN_EXTERNAL_LINK",
-                        PDFValidationError.SEVERITY_WARNING,
+                        PDFValidationError.SEVERITY_CRITICAL,
                         f"Cannot reach URL: {url}",
                     )
                 except Exception:
