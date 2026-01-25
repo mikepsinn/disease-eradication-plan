@@ -18,6 +18,7 @@ Exit codes:
 """
 
 import argparse
+import os
 import re
 import sys
 import yaml
@@ -32,6 +33,10 @@ if sys.platform == "win32":
     sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer, "strict")
     sys.stderr = codecs.getwriter("utf-8")(sys.stderr.buffer, "strict")
 
+# Detect GitHub Actions environment
+IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
+GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
+
 
 class ValidationError:
     def __init__(self, file_path, line_num, error_type, context):
@@ -42,6 +47,38 @@ class ValidationError:
 
     def __str__(self):
         return f"{self.file_path}:{self.line_num} [{self.error_type}] {self.context}"
+
+    def get_source_file(self, output_dir: Path) -> str:
+        """
+        Convert HTML file path back to source QMD file path for annotations.
+        Example: _manual/warondisease/knowledge/appendix/invisible-graveyard.html
+              -> knowledge/appendix/invisible-graveyard.qmd
+        """
+        try:
+            # Get path relative to output directory
+            rel_path = Path(self.file_path).relative_to(output_dir)
+            # Convert .html to .qmd
+            qmd_path = rel_path.with_suffix('.qmd')
+            return str(qmd_path)
+        except ValueError:
+            # If not relative to output_dir, just convert extension
+            return str(Path(self.file_path).with_suffix('.qmd'))
+
+    def emit_annotation(self, output_dir: Path):
+        """Emit GitHub Actions annotation for this error."""
+        if not IN_GITHUB_ACTIONS:
+            return
+
+        source_file = self.get_source_file(output_dir)
+        # Escape special characters in message for GitHub Actions
+        message = self.context.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+        # Truncate message if too long (GitHub has limits)
+        if len(message) > 500:
+            message = message[:497] + "..."
+
+        # Format: ::error file={name},line={line},title={title}::{message}
+        annotation = f"::error file={source_file},line={self.line_num},title={self.error_type}::{message}"
+        print(annotation, flush=True)
 
 
 BLACKLISTED_PATTERNS = [
@@ -539,6 +576,63 @@ def validate_file(file_path, output_dir):
     return errors
 
 
+def write_job_summary(errors_by_type: dict, output_dir: Path):
+    """Write a Job Summary to $GITHUB_STEP_SUMMARY for prominent display in GitHub Actions UI."""
+    if not IN_GITHUB_ACTIONS or not GITHUB_STEP_SUMMARY:
+        return
+
+    total_errors = sum(len(errors) for errors in errors_by_type.values())
+
+    try:
+        with open(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
+            f.write("\n## :x: Post-Render Validation Failed\n\n")
+            f.write(f"**{total_errors} validation error(s) found**\n\n")
+
+            # Error summary table
+            f.write("| Error Type | Count | Description |\n")
+            f.write("|------------|-------|-------------|\n")
+
+            error_descriptions = {
+                "QMD_FILE_LINK": "Links to .qmd files in rendered HTML (should be .html)",
+                "BROKEN_LINK": "Internal links to non-existent files",
+                "BROKEN_IMAGE": "Image references to non-existent files",
+                "UNRENDERED_PYTHON": "Inline Python expressions that didn't evaluate",
+                "UNRENDERED_PYTHON_INLINE": "Raw {python} patterns in output",
+                "PYTHON_ERROR": "Python exceptions in rendered output",
+                "ECHO_FALSE_LEAK": "Cell options leaked into output",
+                "FRONTMATTER_LEAK": "YAML frontmatter leaked into output",
+                "FINDFONT_WARNING": "Matplotlib font warnings in output",
+                "LATEX_IN_CODE_BLOCK": "LaTeX math rendered as code instead of math",
+                "POSIXPATH_IN_OUTPUT": "Python path objects not converted to strings",
+                "MISSING_PDF": "Expected PDF file not found",
+                "MISSING_PDF_LINK": "PDF linked in config not found",
+                "DESCRIPTION_MISMATCH": "Meta description tags have different values",
+                "BIBLIOGRAPHY_MISSING_ANNOTATIONS": "References may be missing abstracts",
+            }
+
+            for error_type, errors in sorted(errors_by_type.items()):
+                desc = error_descriptions.get(error_type, "Validation error")
+                f.write(f"| `{error_type}` | {len(errors)} | {desc} |\n")
+
+            # Detailed errors (first 10 per type)
+            f.write("\n### Error Details\n\n")
+            for error_type, errors in sorted(errors_by_type.items()):
+                f.write(f"\n<details>\n<summary><b>{error_type}</b> ({len(errors)} errors)</summary>\n\n")
+                for error in errors[:10]:
+                    source_file = error.get_source_file(output_dir)
+                    # Escape backticks in context for markdown
+                    context = error.context.replace('`', '\\`')[:200]
+                    f.write(f"- **{source_file}:{error.line_num}** - {context}\n")
+                if len(errors) > 10:
+                    f.write(f"\n*...and {len(errors) - 10} more*\n")
+                f.write("\n</details>\n")
+
+            f.write("\n---\n")
+            f.write("*Run `python scripts/post-render-validation.py` locally to see full details*\n")
+    except Exception as e:
+        print(f"[WARNING] Failed to write job summary: {e}", file=sys.stderr)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Validate Quarto render output for common issues")
     parser.add_argument("--output-dir", default="_manual/warondisease", help="Directory containing rendered HTML files")
@@ -576,9 +670,22 @@ def main():
     # Print results
     if not all_errors:
         print("[OK] All validation checks passed!")
+        # Write success to job summary
+        if IN_GITHUB_ACTIONS and GITHUB_STEP_SUMMARY:
+            try:
+                with open(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
+                    f.write("\n## :white_check_mark: Post-Render Validation Passed\n\n")
+                    f.write(f"Validated {len(html_files)} HTML files with no errors.\n")
+            except Exception:
+                pass
         return 0
 
     print(f"\n[ERROR] Found {len(all_errors)} validation error(s):\n")
+
+    # Emit GitHub Actions annotations (before printing, so they appear at top)
+    if IN_GITHUB_ACTIONS:
+        for error in all_errors:
+            error.emit_annotation(output_dir)
 
     # Group errors by type for better readability
     for error_type, errors in sorted(errors_by_type.items()):
@@ -586,6 +693,9 @@ def main():
         for error in errors:  # Show all errors
             print(f"    {error}")
         print()
+
+    # Write Job Summary for GitHub Actions UI
+    write_job_summary(errors_by_type, output_dir)
 
     # Provide suggestions
     print("[SUGGESTIONS]")

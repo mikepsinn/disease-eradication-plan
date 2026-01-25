@@ -344,7 +344,7 @@ async function addMetadataWithSharp(imagePath: string, meta: ImageMetadata): Pro
  */
 const COMPRESSION_SETTINGS = {
   /** Minimum file size (bytes) to trigger compression - skip files smaller than this */
-  minSizeBytes: 50 * 1024, // 50KB
+  minSizeBytes: 250 * 1024, // 250KB - reasonable max for web infographics at 1024-2048px
   /** JPEG quality (1-100). 85 is visually indistinguishable from 100, ~40% smaller */
   jpegQuality: 85,
   /** PNG compression level (0-9). 9 = max compression */

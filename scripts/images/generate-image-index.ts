@@ -99,6 +99,9 @@ async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetad
 /**
  * Process a single image file
  */
+// Formats sharp can process (excludes ico, svg, etc.)
+const SHARP_SUPPORTED = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'tiff', 'avif'];
+
 async function processImage(
   filePath: string,
   useExiftool: boolean
@@ -108,11 +111,17 @@ async function processImage(
   const filename = path.basename(filePath);
   const extension = path.extname(filePath).toLowerCase().slice(1);
 
-  // Get image dimensions using sharp
-  const sharpMeta = await sharp(filePath).metadata();
-  const width = sharpMeta.width;
-  const height = sharpMeta.height;
-  const format = sharpMeta.format;
+  // Get image dimensions using sharp (skip unsupported formats)
+  let width: number | undefined;
+  let height: number | undefined;
+  let format: string | undefined;
+
+  if (SHARP_SUPPORTED.includes(extension)) {
+    const sharpMeta = await sharp(filePath).metadata();
+    width = sharpMeta.width;
+    height = sharpMeta.height;
+    format = sharpMeta.format;
+  }
 
   const metadata: ImageMetadata = {
     path: relativePath,
