@@ -83,8 +83,18 @@ def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str
     doi = metadata.get("doi")
     doi_url = f"https://doi.org/{doi}" if doi else None
 
-    # Get OG image
+    # Get OG image - convert to relative path from knowledge/
     og_image = metadata.get("image", "")
+    if og_image:
+        # Strip site URL prefix if present
+        if site_url and og_image.startswith(site_url):
+            og_image = og_image[len(site_url.rstrip("/")):]
+        # Strip leading slash and prepend ../ to make relative from knowledge/
+        if og_image.startswith("/"):
+            og_image = ".." + og_image
+        elif not og_image.startswith((".", "http://", "https://")):
+            # Relative path without leading slash - prepend ../
+            og_image = "../" + og_image
 
     # Get keywords
     keywords = metadata.get("keywords", [])
