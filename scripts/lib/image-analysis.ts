@@ -119,9 +119,9 @@ BAD examples (never write like this):
 - "We must take action to..." (too earnest)
 
 - "canShareStandalone": boolean - does it make sense shared independently?
-- "socialCaption": 1-2 sentences + hashtags. Deadpan punchline, not TED talk energy. End with https://WarOnDisease.org
-- "twitterText": Under 280 chars. One dark joke + https://WarOnDisease.org (count the URL as 23 chars for Twitter's link shortening)
-- "linkedInText": Wry gallows humor that makes executives nervous-laugh. End with https://WarOnDisease.org
+- "socialCaption": 1-2 sentences + 2-3 hashtags (e.g., #WarOnDisease #MedicalResearch). Deadpan punchline. End with https://WarOnDisease.org
+- "twitterText": STRICT 280 char limit (URL counts as 23). Keep it SHORT - one punchy line + URL. If over 280, cut words ruthlessly.
+- "linkedInText": 2-3 sentences of wry gallows humor. End with https://WarOnDisease.org
 - "targetPlatforms": Array from ["twitter", "linkedin", "instagram", "facebook", "presentation"]
 
 ## Presentations
@@ -132,7 +132,7 @@ BAD examples (never write like this):
 ## Accessibility & Tone
 - "altText": Screen reader description (focus on meaning, not appearance)
 - "emotionalTone": One of "alarming", "hopeful", "informative", "urgent", "inspiring", "neutral"
-- "callToAction": What should viewer do after seeing this? (e.g., "Share to raise awareness", "Contact representatives", "Learn more")
+- "callToAction": Pick ONE randomly from: "Share this", "Retweet", "Take the 2-question survey (~38 lives saved per vote)", "4 shares = ~153 lives saved". Vary your choice across images.
 
 ## Data Integrity
 - "dataFreshness": One of "current", "needs-update", "timeless" (is the data/statistic current?)

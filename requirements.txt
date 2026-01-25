@@ -29,6 +29,7 @@ tabulate
 PyYAML
 psutil
 PyPDF2
+PyMuPDF  # Better text/image extraction for PDF validation
 moviepy
 google-genai
 anthropic

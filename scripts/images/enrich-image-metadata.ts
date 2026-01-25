@@ -114,6 +114,9 @@ function formatMetadataPreview(metadata: CompleteMetadataResult): string[] {
   if (metadata.twitterText) {
     lines.push(`  Twitter: ${metadata.twitterText}`)
   }
+  if (metadata.socialCaption) {
+    lines.push(`  Caption: ${metadata.socialCaption}`)
+  }
   if (metadata.targetPlatforms?.length) {
     lines.push(`  Platforms: ${metadata.targetPlatforms.join(', ')}`)
   }
