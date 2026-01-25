@@ -82,7 +82,7 @@ Return a JSON object with ALL these fields:
 - "keywords": Array of 5-10 relevant tags for search
 - "transcript": ALL visible text extracted (titles, labels, numbers). Use "[NO TEXT]" if none
 
-## Quality Assessment (use these rubrics strictly - be critical, not generous)
+## Quality Assessment (informational only - NOT used for auto-fixing)
 
 qualityScore rubric (most images should be 3-4, reserve 5 for truly exceptional):
 - 5: Publication-ready. Sharp text, clear hierarchy, professional polish, no issues.
@@ -99,7 +99,7 @@ standaloneScore rubric (can someone understand this WITHOUT reading the chapter?
 - 1: Incomprehensible alone. Pure illustration that means nothing without text.
 
 - "qualityScore": 1-5 per rubric above
-- "qualityIssues": Array of specific problems (e.g., "text too small", "low contrast", "cluttered layout", "spelling errors")
+- "qualityIssues": Array of specific problems (e.g., "text too small", "low contrast", "cluttered layout")
 - "standaloneScore": 1-5 per rubric above
 
 ## Social Media (CRITICAL: Match this exact voice)
@@ -167,7 +167,7 @@ export interface CompleteMetadataResult {
   /** Extracted text (OCR) */
   transcript?: string
 
-  // Quality
+  // Quality (informational - not used for auto-fixing)
   /** Quality rating 1-5 */
   qualityScore?: number
   /** Specific quality issues */
@@ -478,7 +478,7 @@ export async function generateCompleteMetadata(
     result.transcript = metadata.transcript
   }
 
-  // Quality assessment
+  // Quality assessment (informational only)
   if (metadata.qualityScore) result.qualityScore = metadata.qualityScore
   if (metadata.qualityIssues?.length) result.qualityIssues = metadata.qualityIssues
   if (metadata.standaloneScore) result.standaloneScore = metadata.standaloneScore

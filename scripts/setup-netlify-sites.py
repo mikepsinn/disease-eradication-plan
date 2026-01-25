@@ -46,7 +46,10 @@ except ImportError:
 
 PROJECT_ROOT = Path(__file__).parent.parent
 BASE_DOMAIN = "warondisease.org"
-SKIP_CONFIGS = {"test"}  # test doesn't need deployment; book uses manual.warondisease.org
+
+# Import shared config discovery utilities
+sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "lib"))
+from quarto_config_utils import NON_DEPLOYABLE_CONFIGS
 
 # Netlify API
 NETLIFY_API = "https://api.netlify.com/api/v1"
@@ -498,8 +501,8 @@ def discover_configs() -> dict:
 
         config_name = config_path.stem.replace("_quarto-", "")
 
-        # Skip special configs
-        if config_name in SKIP_CONFIGS:
+        # Skip non-deployable configs (test, shared-defaults, etc.)
+        if config_name in NON_DEPLOYABLE_CONFIGS or not config_name or config_name == "quarto":
             continue
 
         try:

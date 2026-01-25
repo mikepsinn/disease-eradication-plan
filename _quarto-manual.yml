@@ -41,22 +41,6 @@ book:
   #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   navbar:
     right:
-      - text: "Economics"
-        href: knowledge/economics/1-pct-treaty-impact.qmd
-      - text: "Calculations"
-        href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "IAB Paper"
-        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
-      - text: "Wishocracy Paper"
-        href: knowledge/appendix/wishocracy-paper.qmd
-      - text: "Optimocracy Paper"
-        href: knowledge/appendix/optimocracy-paper.qmd
-      - text: "Optimal Policy Generator"
-        href: knowledge/appendix/optimal-policy-generator-spec.qmd
-      - text: "Optimal Budget Generator"
-        href: knowledge/appendix/optimal-budget-generator-spec.qmd
-      - text: "References"
-        href: knowledge/references.qmd
       - icon: file-pdf
         text: "Download Book"
         menu:
@@ -377,14 +361,10 @@ format:
     css:
       - styles.css
       - book-overrides.css
-    include-in-footer:
-      - file: assets/html/generated-footer.html
-      - text: |
-          <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
-            <strong>Download:</strong>
-            <a href="/How-to-End-War-and-Disease.pdf" style="color: #8b7355;">PDF</a> |
-            <a href="/How-to-End-War-and-Disease.epub" style="color: #8b7355;">EPUB</a>
-          </p>
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+      center: "[PDF](/How-to-End-War-and-Disease.pdf) | [EPUB](/How-to-End-War-and-Disease.epub) | [All Papers](knowledge/papers.qmd)"
+      right: "[DIH.earth](https://dih.earth) | [Vote](https://dih.earth)"
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:

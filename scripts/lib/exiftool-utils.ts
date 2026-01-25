@@ -37,6 +37,12 @@ export interface ImageExifMetadata {
   imageIssues?: string[]
   /** Suggestions for improving the generation prompt */
   promptImprovements?: string[]
+  /** Whether fixable problems (leakage, figure numbers) were detected */
+  imageProblemsDetected?: boolean
+  /** Specific fixable problems found */
+  imageProblems?: string[]
+  /** Combined repair prompt to fix all problems */
+  imageProblemsRepairPrompt?: string
   /** Timestamp when metadata was created */
   metadataCreatedAt?: string
   /** Any additional custom fields */

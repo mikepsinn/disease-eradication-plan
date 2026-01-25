@@ -35,75 +35,23 @@ except ImportError:
     sys.exit(1)
 
 from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
+from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
 
 PROJECT_ROOT = Path(__file__).parent.parent
-SKIP_CONFIGS = {"manual", "test", "main", "base"}
-
-
-def count_qmd_files(config: dict) -> int:
-    """Count QMD files referenced in a Quarto config."""
-    count = 0
-
-    def count_items(items):
-        """Recursively count QMD files in chapter/render list."""
-        nonlocal count
-        if not items:
-            return
-        for item in items:
-            if isinstance(item, str):
-                if item.endswith('.qmd'):
-                    count += 1
-            elif isinstance(item, dict):
-                if 'href' in item and item['href'].endswith('.qmd'):
-                    count += 1
-                # Recurse into nested structures
-                for key in ('chapters', 'contents', 'parts'):
-                    if key in item:
-                        count_items(item[key])
-
-    # Check book.chapters (book type)
-    book = config.get('book', {})
-    if book.get('chapters'):
-        count_items(book['chapters'])
-
-    # Check project.render (website type)
-    project = config.get('project', {})
-    if project.get('render'):
-        count_items(project['render'])
-
-    return count
 
 
 def discover_papers() -> dict:
-    """Find all Quarto paper configs."""
+    """Find all Quarto paper configs using shared discovery utility."""
+    raw_papers = discover_paper_configs(PROJECT_ROOT)
+
+    # Add qmd_count for sorting by size
     papers = {}
-    for config_path in PROJECT_ROOT.glob("_quarto-*.yml"):
-        key = config_path.stem.replace("_quarto-", "")
-        if not key or key == "quarto" or key in SKIP_CONFIGS:
-            continue
-
-        try:
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = yaml.safe_load(f)
-        except Exception as e:
-            print(f"WARNING: Could not read {config_path}: {e}")
-            continue
-
-        dih_render = config.get("dih-render", {})
-        if dih_render.get("zenodo") is False:
-            continue
-
-        pdf_filename = dih_render.get("pdf-output-file")
-        if not pdf_filename:
-            pdf_config = config.get("format", {}).get("pdf", {})
-            pdf_filename = pdf_config.get("output-file", f"{key}-paper.pdf")
-
-        qmd_count = count_qmd_files(config)
+    for key, info in raw_papers.items():
         papers[key] = {
-            "config_path": config_path,
-            "config": config,
-            "pdf_path": f"_build_temp/{key}/_site/{key}/{pdf_filename}",
-            "qmd_count": qmd_count,
+            "config_path": info["config_path"],
+            "config": info["config"],
+            "pdf_path": info["pdf_path"],
+            "qmd_count": count_qmd_files(info["config"]),
         }
     return papers
 

@@ -57,7 +57,7 @@ export interface ImageContentMetadata {
  * Enrichment metadata from AI analysis
  */
 export interface ImageEnrichmentMetadata {
-  // Quality
+  // Quality (informational - not used for auto-fixing)
   qualityScore?: number
   qualityIssues?: string[]
   standaloneScore?: number

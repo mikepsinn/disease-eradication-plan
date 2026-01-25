@@ -16,6 +16,16 @@ from pathlib import Path
 from typing import List
 import yaml
 
+# Handle import from different contexts (direct run vs imported from scripts/)
+try:
+    from quarto_config_utils import NON_DEPLOYABLE_CONFIGS
+except ModuleNotFoundError:
+    import sys
+    _lib_dir = Path(__file__).parent
+    if str(_lib_dir) not in sys.path:
+        sys.path.insert(0, str(_lib_dir))
+    from quarto_config_utils import NON_DEPLOYABLE_CONFIGS
+
 
 @dataclass
 class JobConfig:
@@ -134,6 +144,11 @@ def extract_job_configs(project_root: Path) -> List[JobConfig]:
     for yml_path in project_root.glob("_quarto-*.yml"):
         # Skip build temp files
         if "_build_temp" in str(yml_path):
+            continue
+
+        # Skip non-deployable configs (test, shared-defaults, etc.)
+        config_name = yml_path.stem.replace("_quarto-", "")
+        if config_name in NON_DEPLOYABLE_CONFIGS or not config_name or config_name == "quarto":
             continue
 
         try:

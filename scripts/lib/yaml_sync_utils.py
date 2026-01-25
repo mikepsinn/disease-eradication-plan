@@ -18,6 +18,16 @@ from typing import Any, Dict
 
 import yaml
 
+# Handle import from different contexts (direct run vs imported from scripts/)
+try:
+    from quarto_config_utils import SKIP_CONFIG_FILES
+except ModuleNotFoundError:
+    # Add scripts/lib to path if not already there
+    _lib_dir = Path(__file__).parent
+    if str(_lib_dir) not in sys.path:
+        sys.path.insert(0, str(_lib_dir))
+    from quarto_config_utils import SKIP_CONFIG_FILES
+
 
 def parse_qmd_frontmatter(qmd_path: Path) -> Dict[str, Any]:
     """
@@ -167,8 +177,11 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
     with open(variables_path, 'r', encoding='utf-8') as f:
         variables = yaml.safe_load(f) or {}
 
-    # Find all Quarto config files (exclude _build_temp/)
-    yaml_configs = [f for f in project_root.glob('_quarto-*.yml') if '_build_temp' not in str(f)]
+    # Find all Quarto config files (exclude _build_temp/ and non-syncable configs)
+    yaml_configs = [
+        f for f in project_root.glob('_quarto-*.yml')
+        if '_build_temp' not in str(f) and f.name not in SKIP_CONFIG_FILES
+    ]
 
     updated_count = 0
     skipped_count = 0

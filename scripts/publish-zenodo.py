@@ -48,6 +48,7 @@ from zenodo_client import (
     load_quarto_config,
     get_record_id_from_doi,
 )
+from quarto_config_utils import discover_paper_configs
 
 # Project root
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -55,39 +56,14 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 def discover_papers() -> dict:
     """
-    Auto-discover Quarto paper configs from _quarto-*.yml files.
+    Auto-discover Quarto paper configs using shared discovery utility.
 
     Returns dict mapping paper key to config info.
     """
+    raw_papers = discover_paper_configs(PROJECT_ROOT)
+
     papers = {}
-    SKIP_CONFIGS = {"book", "test", "main", "base"}
-
-    for config_path in PROJECT_ROOT.glob("_quarto-*.yml"):
-        key = config_path.stem.replace("_quarto-", "")
-
-        if not key or key == "quarto" or key in SKIP_CONFIGS:
-            continue
-
-        try:
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = yaml.safe_load(f)
-        except Exception as e:
-            print(f"WARNING: Could not read {config_path}: {e}")
-            continue
-
-        dih_render = config.get("dih-render", {})
-        if dih_render.get("zenodo") is False:
-            continue
-
-        # Get PDF filename
-        pdf_filename = dih_render.get("pdf-output-file")
-        if not pdf_filename:
-            format_config = config.get("format", {})
-            pdf_config = format_config.get("pdf", {})
-            pdf_filename = pdf_config.get("output-file", f"{key}-paper.pdf")
-
-        pdf_path = f"_build_temp/{key}/_site/{key}/{pdf_filename}"
-
+    for key, info in raw_papers.items():
         # Look for bibliography file
         bib_file = f"references-{key}.bib"
         if not (PROJECT_ROOT / bib_file).exists():
@@ -96,8 +72,8 @@ def discover_papers() -> dict:
                 bib_file = None
 
         papers[key] = {
-            "quarto_config": config_path.name,
-            "pdf_path": pdf_path,
+            "quarto_config": info["config_path"].name,
+            "pdf_path": info["pdf_path"],
             "bib_file": bib_file,
             "resource_type": "publication-workingpaper",
         }

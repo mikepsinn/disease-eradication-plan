@@ -15,7 +15,12 @@ Usage:
 from pathlib import Path
 from typing import Any, Dict, List, Set
 import re
+import sys
 import yaml
+
+# Import shared config skip list from scripts/lib
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
+from quarto_config_utils import SKIP_CONFIG_FILES
 
 
 # Metadata keys that should be synced (nested under "metadata")
@@ -94,13 +99,8 @@ SYNC_FORMAT_HTML_KEYS = {
     "code-tools",         # Code copy button and source view
 }
 
-# Configs to skip (not papers - have different structures)
-SKIP_CONFIGS = {
-    "_quarto.yml",  # Base Quarto config
-    "_quarto-manual.yml",  # Book config (different structure)
-    "_quarto-test.yml",  # Test config
-    "_quarto-shared-defaults.yml",  # The defaults file itself
-}
+# Note: SKIP_CONFIG_FILES is imported from quarto_config_utils
+# Contains: _quarto.yml, _quarto-manual.yml, _quarto-test.yml, _quarto-shared-defaults.yml
 
 
 def load_yaml_for_check(path: Path) -> Dict[str, Any]:
@@ -370,7 +370,7 @@ def sync_shared_config_settings(project_root: Path, dry_run: bool = False) -> Di
 
     # Find all _quarto-*.yml files in root
     for config_path in sorted(project_root.glob("_quarto-*.yml")):
-        if config_path.name in SKIP_CONFIGS:
+        if config_path.name in SKIP_CONFIG_FILES:
             continue
 
         changes = sync_config_file(config_path, defaults, dry_run)
@@ -394,7 +394,7 @@ def report_config_drift(project_root: Path) -> Dict[str, List[str]]:
     drift = {}
 
     for config_path in sorted(project_root.glob("_quarto-*.yml")):
-        if config_path.name in SKIP_CONFIGS:
+        if config_path.name in SKIP_CONFIG_FILES:
             continue
 
         config = load_yaml_for_check(config_path)
