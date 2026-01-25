@@ -96,13 +96,9 @@ def infer_timeout(config_name: str, project_type: str) -> int:
 
 def infer_build_dir(config_name: str, output_dir: str, project_type: str) -> str:
     """Infer build directory path from config metadata."""
-    if project_type == "book":
-        # Pattern: _build_temp/{config}/_book/{output_dir_name}
-        dir_name = Path(output_dir).name
-        return f"_build_temp/{config_name}/_book/{dir_name}"
-    else:
-        # Pattern: _build_temp/{config}/_site/{config}
-        return f"_build_temp/{config_name}/_site/{config_name}"
+    # Use output-dir directly from Quarto config - it's the source of truth
+    # Pattern: _build_temp/{config}/{output_dir}
+    return f"_build_temp/{config_name}/{output_dir}"
 
 
 def derive_netlify_secret(config_name: str) -> str:

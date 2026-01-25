@@ -74,7 +74,7 @@ jobs:
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_build_temp/1-pct-treaty-impact/_book/1-pct-treaty-impact'
+          publish-dir: '_build_temp/1-pct-treaty-impact/_site/1-pct-treaty-impact'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -536,7 +536,7 @@ jobs:
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: '_build_temp/manual/_book/warondisease'
+          publish-dir: '_build_temp/manual/_manual/warondisease'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
 

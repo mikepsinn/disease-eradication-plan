@@ -1,6 +1,6 @@
 {
   "totalSites": 11,
-  "totalPages": 104,
+  "totalPages": 103,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -5610,10 +5610,11 @@
             "Why This Isn't Happening Already",
             "The ROI",
             "Further Reading",
-            "Detailed Analysis"
+            "Detailed Analysis",
+            "Impact of Innovative Medicines on Life Expectancy"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-24"
         },
         {
           "path": "knowledge/appendix/humanity-budget-overview.qmd",
@@ -6896,22 +6897,6 @@
           "lastmod": "2026-01-24"
         },
         {
-          "path": "knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd",
-          "url": "https://manual.WarOnDisease.org/appendix/impact-of-innovative-medicines-on-life-expectancy.html",
-          "title": "Impact of Innovative Medicines on Life Expectancy",
-          "description": "If no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy-og-retro-academic.jpg",
-          "tags": [
-            "pharmaceuticals",
-            "innovation",
-            "mortality",
-            "cancer",
-            "healthcare"
-          ],
-          "published": true,
-          "lastmod": "2026-01-24"
-        },
-        {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/lives-saved-by-drug-accessibility.html",
           "title": "Estimated Lives Saved by Increased Drug Accessibility",
@@ -7015,7 +7000,7 @@
           "lastmod": "2026-01-22"
         }
       ],
-      "pageCount": 87
+      "pageCount": 86
     },
     {
       "id": "obg",
