@@ -78,27 +78,50 @@ Return a JSON object with ALL these fields:
 
 ## Core Metadata
 - "title": Concise descriptive title (5-10 words), title case
-- "description": Detailed description (2-3 sentences) of what the image shows
+- "description": Detailed description (2-3 sentences) of the CONTENT and data shown. Never mention visual style (e.g., don't say "vintage-style", "retro illustration", "academic diagram"). Focus only on what information the image conveys.
 - "keywords": Array of 5-10 relevant tags for search
 - "transcript": ALL visible text extracted (titles, labels, numbers). Use "[NO TEXT]" if none
 
-## Quality Assessment
-- "qualityScore": 1-5 rating (5=excellent clarity/professionalism/readability)
+## Quality Assessment (use these rubrics strictly - be critical, not generous)
+
+qualityScore rubric (most images should be 3-4, reserve 5 for truly exceptional):
+- 5: Publication-ready. Sharp text, clear hierarchy, professional polish, no issues.
+- 4: Minor issues. Small text in one area, slightly busy, or one element could be clearer.
+- 3: Usable but flawed. Multiple readability issues, inconsistent styling, or amateur feel.
+- 2: Needs significant work. Hard to read, cluttered, poor contrast, or multiple errors.
+- 1: Unusable. Illegible text, broken layout, or fundamentally fails to communicate.
+
+standaloneScore rubric (can someone understand this WITHOUT reading the chapter?):
+- 5: Fully self-explanatory. Clear title, labeled axes, context provided, anyone gets it.
+- 4: Mostly clear. Minor context helps but main message is obvious.
+- 3: Needs some context. Key terms or references require chapter knowledge.
+- 2: Context-dependent. Only makes sense if you've read surrounding material.
+- 1: Incomprehensible alone. Pure illustration that means nothing without text.
+
+- "qualityScore": 1-5 per rubric above
 - "qualityIssues": Array of specific problems (e.g., "text too small", "low contrast", "cluttered layout", "spelling errors")
-- "standaloneScore": 1-5 rating - can it communicate its message WITHOUT chapter context? (5=fully standalone)
+- "standaloneScore": 1-5 per rubric above
 
-## Social Media (IMPORTANT: Use a distinctive voice)
-Write with darkly humorous, absurdist wit - like Philomena Cunk's deadpan observations, Jack Handy's "Deep Thoughts", or Kurt Vonnegut's resigned "so it goes" wisdom. Point out absurdities with deceptively simple language. Use dry understatement rather than outrage. Make people laugh, then think. Never earnest corporate-speak.
+## Social Media (CRITICAL: Match this exact voice)
+Channel the deadpan absurdism of Philomena Cunk, Jack Handy's "Deep Thoughts", and Kurt Vonnegut. The tone is: darkly funny, resigned-but-not-defeated, pointing out obvious absurdities that everyone ignores.
 
-Examples of the tone we want:
-- "We spend $2 trillion on ways to end lives, but curing diseases is somehow 'too expensive.' Interesting priorities."
-- "Good news: we've perfected the art of blowing things up. Bad news: still working on not dying from preventable diseases."
-- "The FDA takes 12 years to approve a drug. The disease, unfortunately, did not get the memo about waiting."
+GOOD examples (match this tone):
+- "The FDA takes 12 years to approve a drug. The disease didn't get the memo."
+- "We've solved the problem of killing people efficiently. Now if only we could figure out keeping them alive."
+- "Fun fact: dying from a preventable disease costs nothing. Preventing it is apparently too expensive."
+- "24,000 people died today from causes we know how to fix. Anyway, here's a graph about it."
+- "Scientists discovered a cure. Then they discovered paperwork."
+
+BAD examples (never write like this):
+- "This powerful visualization shows the importance of..." (too corporate)
+- "Check out this amazing infographic about..." (too enthusiastic)
+- "Did you know that research shows..." (too educational)
+- "We must take action to..." (too earnest)
 
 - "canShareStandalone": boolean - does it make sense shared independently?
-- "socialCaption": Caption (1-2 sentences) + 2-3 hashtags. Be wry, deadpan, darkly funny. Punchlines > platitudes.
-- "twitterText": Under 280 chars. Punchy one-liner that makes people go "wait, what?" then share.
-- "linkedInText": Professional but still wry - even LinkedIn can handle gallows humor about preventable death.
+- "socialCaption": 1-2 sentences + hashtags. Deadpan punchline, not TED talk energy. End with https://WarOnDisease.org
+- "twitterText": Under 280 chars. One dark joke + https://WarOnDisease.org (count the URL as 23 chars for Twitter's link shortening)
+- "linkedInText": Wry gallows humor that makes executives nervous-laugh. End with https://WarOnDisease.org
 - "targetPlatforms": Array from ["twitter", "linkedin", "instagram", "facebook", "presentation"]
 
 ## Presentations
