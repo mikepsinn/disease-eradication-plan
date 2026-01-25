@@ -18,7 +18,6 @@
  *   --path <dir>       Process only images in specific directory
  */
 
-import fs from 'fs/promises'
 import { existsSync } from 'fs'
 import path from 'path'
 
@@ -198,12 +197,15 @@ async function main() {
 
   if (options.dryRun) {
     console.log('\n[DRY RUN] No metadata was saved. Run without --dry-run to save.')
+  } else {
+    // Regenerate image search index to include new transcripts
+    console.log('\n[4/4] Regenerating image search index...')
+    const { execSync } = await import('child_process')
+    execSync('npx tsx scripts/images/generate-image-index.ts', {
+      cwd: process.cwd(),
+      stdio: 'inherit',
+    })
   }
-
-  // Write results to JSON for reference
-  const outputPath = path.join(process.cwd(), 'assets', 'image-transcripts.json')
-  await fs.writeFile(outputPath, JSON.stringify(results, null, 2))
-  console.log(`\nResults saved to: ${outputPath}`)
 }
 
 main().catch(error => {

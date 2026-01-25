@@ -15,64 +15,20 @@ from __future__ import annotations
 import sys
 import re
 import argparse
-import yaml
 from pathlib import Path
-from html import unescape
-from typing import Dict, List, Tuple
+from typing import List, Tuple
 
 # Handle Windows encoding
 if sys.platform == 'win32':
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
+# Add project root to path for imports
+_project_root = Path(__file__).parent.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
 
-def strip_html_tags(text: str) -> str:
-    """Remove HTML tags and extract just the display text."""
-    # Remove HTML tags
-    clean = re.sub(r'<[^>]+>', '', text)
-    # Unescape HTML entities
-    clean = unescape(clean)
-    return clean.strip()
-
-
-def load_variables(variables_yml_path: Path) -> Dict[str, str]:
-    """Load variables from YAML and strip HTML for plain text values."""
-    variables = {}
-
-    if not variables_yml_path.exists():
-        print(f"WARNING: Variables file not found: {variables_yml_path}", file=sys.stderr)
-        return variables
-
-    with open(variables_yml_path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
-
-    if data:
-        for key, value in data.items():
-            if isinstance(value, str):
-                # Strip HTML to get plain text value
-                plain_value = strip_html_tags(value)
-                variables[key] = plain_value
-            else:
-                variables[key] = str(value)
-
-    return variables
-
-
-def replace_variables(content: str, variables: Dict[str, str], highlight_missing: bool = True) -> str:
-    """Replace {{< var name >}} with actual values."""
-
-    def replacer(match):
-        var_name = match.group(1)
-        if var_name in variables:
-            return variables[var_name]
-        elif highlight_missing:
-            return f"[MISSING: {var_name}]"
-        else:
-            return match.group(0)  # Keep original
-
-    # Pattern to match {{< var variable_name >}}
-    pattern = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
-    return pattern.sub(replacer, content)
+from dih_models.variable_replacement import load_variables, replace_variables
 
 
 def find_hardcoded_numbers(content: str) -> List[Tuple[int, str, str, str]]:

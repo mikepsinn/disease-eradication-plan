@@ -241,28 +241,6 @@ def _format_paper_entry(paper: Dict[str, Any]) -> List[str]:
         lines.append(f"> {desc}")
         lines.append("")
 
-    # Metadata badges/links
-    meta_items = []
-
-    if paper["pdf_url"]:
-        meta_items.append(f"[PDF]({paper['pdf_url']})")
-
-    if paper["doi_url"]:
-        meta_items.append(f"[DOI: {paper['doi']}]({paper['doi_url']})")
-
-    if paper["edition"]:
-        meta_items.append(f"*{paper['edition']}*")
-
-    if meta_items:
-        lines.append(" | ".join(meta_items))
-        lines.append("")
-
-    # Keywords as tags
-    if paper["keywords"]:
-        keyword_tags = ", ".join(f"`{kw}`" for kw in paper["keywords"])
-        lines.append(f"**Keywords:** {keyword_tags}")
-        lines.append("")
-
     lines.append("")  # Extra spacing between entries
 
     return lines

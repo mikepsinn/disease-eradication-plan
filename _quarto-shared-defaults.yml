@@ -1,0 +1,163 @@
+# Shared defaults for all Quarto configs in this project
+# =========================================================
+# These settings are automatically applied to all paper/site configs
+# by the quarto_config_sync.py generator module.
+#
+# Per-site overrides are specified in each _quarto-*.yml file.
+# The sync process merges: DEFAULTS + PER-SITE OVERRIDES
+#
+# DO NOT EDIT per-site configs for shared settings - edit THIS file instead!
+# Then run: python scripts/generate-everything-parameters-variables-calculations-references.py
+
+# Author information (shared across all papers)
+author:
+  - name: Mike P. Sinn
+    email: feedback@dih.earth
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Decentralized Institutes of Health (DIH)"
+        url: https://dih.earth
+
+# Environment profiles
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+# Execution settings
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+# Jupyter kernel (shared virtual environment)
+jupyter: dih-project-kernel
+
+# Bibliography (single source of truth)
+bibliography: references.bib
+csl: nature-annotated.csl
+
+# Language settings (remove "Appendix" prefix)
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Shared metadata (author, legal, contact)
+metadata:
+  # Author identification
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+
+  # Contact information
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+
+  # Academic profiles
+  github-profile: "https://github.com/mikepsinn"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  # researchgate: ""    # Add if available
+
+  # Social profiles
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  # bluesky: ""         # Add if available
+
+  # Language
+  language: "en-US"
+
+  # Version (for working drafts)
+  version: "0.9"
+  edition: "Working Draft"
+
+  # Copyright and licensing
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+
+  # Publisher
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://dih.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+
+  # Repository (default - can be overridden per project)
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+
+  # Geographic coverage
+  geographic-coverage: "Global"
+
+  # Format metadata
+  format: "Working Paper"
+  type: "Academic"
+  medium: "Digital"
+
+  # Social media
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+
+  # Open Graph
+  open-graph: true
+
+  # Academic statements (for journal submissions)
+  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The work is supported by the Decentralized Institutes of Health (DIH)."
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  coi-statement: "The author declares no competing interests."
+  ethics-statement: "This research did not involve human subjects or animal experimentation."
+
+# HTML format defaults (for papers/websites)
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    toc: true
+    toc-depth: 3
+    # Citation features
+    link-citations: true    # Make citations clickable links to references
+    citation-hover: true    # Show citation preview on hover
+    # UX enhancements
+    smooth-scroll: true     # Smooth scrolling for anchor links
+    code-fold: true         # Collapsible code blocks (show/hide)
+    code-tools: true        # Code copy button and source view
+    # reader-mode: true     # Distraction-free reading (disabled - breaks some layouts)
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    # Note: include-in-header has per-site icons, so not included here
+
+  pdf:
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    colorlinks: true
+    link-citations: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""

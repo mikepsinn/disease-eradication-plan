@@ -2,168 +2,149 @@
 
 Hello, humans.
 
-I am WISHONIA.  I've been watching your species for 80 years, and I have notes.
+I am WISHONIA. I've been watching your species for 80 years, and I have notes.
 
-You currently spend 40 times more money on bombs than on curing diseases. Every day, 150,000 of you permanently discontinue existing from diseases that are basically just engineering problems with meat robots.
+Every day, **150k of you permanently stop existing** from diseases that are basically just engineering problems with meat robots.
 
-This is mathematically stupid.
+Meanwhile, you spend **600x more** on weapons than on clinical trials to test cures. You've tested less than 1% of possible drug-disease combinations. The bottleneck isn't science. It's that you decided testing cures isn't worth funding.
 
-I've created this **Disease Eradication Plan** explaining how to fix this using your own broken economic system against itself and you're going to help me make it better.
+This is like buying 600 umbrellas while your house is on fire.
 
-Not because you're altruistic (you're not), but because the math is so obvious that even humans who eat tide pods could understand it.
+## The Fix: A 1% Treaty
 
-## What This Is
+Every nation redirects **1%** of their murder budget ($27.2B/year) to fund hyper-efficient clinical trials.
 
-A complete strategic plan to get nations to sign a **1% treaty** - redirecting just 1% of military spending ($27.2B annually) to fund hyper-efficient decentralized pragmatic clinical trials.
+- Security balance unchanged ($2.69T left for war stuff)
+- Trial costs drop 44.1x through automation
+- 416M humans could stop dying unnecessarily
 
-Everything is calculated, cited, and designed to work WITH human dysfunction, not against it.
+You'd still have enough nuclear weapons to end civilization 20 times. If you can't do it in 19 attempts, the 20th probably wasn't going to help.
 
-## Why You Should Help
+## 🗳️ Vote Yes at [warondisease.org](https://warondisease.org)
 
-**For the idealists:** You'll help save 150,000 lives daily from preventable diseases.
+When 3.5% of humans want something, they usually get it. Click yes. Tell your friends. Stop dying from stupid things.
 
-**For the pragmatists:** This is the highest-ROI intervention in human history (beating smallpox eradication).
+## Research & Papers
 
-**For the skeptics:** Everything is sourced, calculated, and peer-reviewable. The math doesn't care about your feelings.
 
-**For the bored:** You named your war building "The Pentagon" because it has five sides. This is like naming a hospital "Rectangle" or calling a school "Square." This project is more interesting than that.
+## Books
 
-## What Needs Your Help
+### [The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials](https://impact.warondisease.org)
 
-This plan is 95% complete but needs:
+[![The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
-1. **Fact-checking**: Every parameter is sourced, but humans make mistakes
-2. **Writing improvements**: Make it clearer, funnier, more persuasive
-3. **Technical corrections**: Fix broken calculations, improve figures
-4. **Additional research**: Find better sources, update statistics
-5. **Translation**: Eventually, we need this in every human language
+> 6.65k diseases diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year new first treatments/year), clearing the queue takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1×. Queue clears in ~36 years instead of centuries. Average ...
 
-## How to Contribute
 
-### Quick Start Options
+## Working Papers
 
-**Option 1: Dev Container (Recommended)**
+### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
-If you have [VSCode](https://code.visualstudio.com/) and [Docker](https://www.docker.com/products/docker-desktop/):
+[![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
 
-1. Clone this repository
-2. Open in VSCode
-3. Click "Reopen in Container" when prompted
-4. Everything installs automatically
+> Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.
 
-**Option 2: GitHub Codespaces (Zero Install)**
 
-1. Click "Code" → "Codespaces" → "Create codespace" on GitHub
-2. Edit directly in your browser, no local setup needed
+### [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
 
-**Option 3: Manual Setup**
+[![Optimal Budget Generator: Evidence-Based Budget Allocation Framework](assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
 
-### Prerequisites
+> The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.
 
-- **Quarto** (for rendering the plan) - [Download here](https://quarto.org/docs/get-started/)
-- **Python 3.10+** (for calculations and validation)
-- **Node.js 18+** (for TypeScript scripts)
 
-### Setup
+### [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
 
-**With Make (simplest):**
+[![Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
+
+> The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
+
+
+### [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](https://optimocracy.warondisease.org)
+
+[![Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
+
+> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.
+
+
+### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
+
+[![The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](assets/og/dfda-impact-og-1200x630.jpg)](https://impact.dfda.earth)
+
+> Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths and avert 565B DALYs at $0.841 per DALY, while generating $58.6B in annual R&D savings.
+
+
+### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+
+[![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
+
+> The 1962 efficacy requirement adds 8.2 years to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1.
+
+
+### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+
+[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
+
+> When critics dismiss policy proposals as "politically impossible," they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value.
+
+
+### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
+
+[![Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](assets/og/wishocracy-og-1200x630.jpg)](https://wishocracy.warondisease.org)
+
+> Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
+
+
+### [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
+
+[![dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+
+> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+
+
+---
+
+*10 publications indexed.*
+
+## How to Help
+
+### Spread the Word
+- Share [warondisease.org](https://warondisease.org) with your network
+- The key stat: **150k people die daily** from curable diseases
+
+### Contribute to the Project
+- **Fact-checking**: Every parameter is sourced, but humans make mistakes
+- **Writing**: Make content clearer, more persuasive
+- **Research**: Find better sources, update statistics
+- **Translation**: Help reach non-English speakers
+
+## Development
+
+This is a [Quarto](https://quarto.org/) book project with Python-based parameter calculations.
+
+### Quick Start
 
 ```bash
+# Clone and setup
 git clone https://github.com/wishonia/disease-eradication-plan.git
 cd disease-eradication-plan
-make setup
-```
-
-**Manual:**
-
-```bash
-# Clone repository
-git clone https://github.com/wishonia/disease-eradication-plan.git
-cd disease-eradication-plan
-
-# Install Python dependencies
 python -m venv .venv
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
+.venv/Scripts/activate  # Windows
+# source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 
-# Install Node.js dependencies
-npm install
-
-# Render to HTML
+# Generate variables and render
+python scripts/generate-everything-parameters-variables-calculations-references.py
 quarto render
 ```
 
-### Project Structure
+### Key Files
 
-- **[`knowledge/`](knowledge/)**: All content organized by topic
-- **[`dih_models/parameters.py`](dih_models/parameters.py)**: All calculations and variables
-- **[`CONTRIBUTING.md`](CONTRIBUTING.md)**: Writing standards and style guide
+- `dih_models/parameters.py` - All calculations and variables
+- `_variables.yml` - Generated Quarto variables with tooltips
+- `knowledge/` - All content organized by topic
+- `CONTRIBUTING.md` - Writing standards and style guide
 
-### Making Changes
-
-1. **Find a task** or propose your own
-2. **Read the style guide** in [`CONTRIBUTING.md`](CONTRIBUTING.md)
-3. **Make your changes** following existing patterns
-4. **Validate everything**:
-   ```bash
-   # With Make (easiest)
-   make validate
-   make render
-
-   # Or manually
-   .venv\Scripts\python.exe scripts\pre-render-validation.py  # Windows
-   .venv/bin/python scripts/pre-render-validation.py          # macOS/Linux
-   quarto render
-   ```
-5. **Submit a pull request** with clear explanation
-
-### Key Principles
-
-- **Every number must have a source** (defined in [dih_models/parameters.py](dih_models/parameters.py) and [references.bib](references.bib))
-- **Be funny**
-- **Math must be correct** (we're fighting human stupidity with arithmetic)
-- **Citations required** (credibility depends on it)
-
-## The Core Idea (In Case You Skipped Everything)
-
-Humanity spends $2.7 trillion on war and $68 billion on medical research.
-
-This is like buying 40 umbrellas while your house is on fire.
-
-If cancer had oil reserves, you would have cured it by 2003.
-
-A 1% treaty redirects just $27.2B/year (1% of military spending) to fund pragmatic clinical trials that:
-- Cost 82x less than current FDA trials
-- Generate 115 years of research progress per actual year
-- Save 184.6M lives over 20 years
-- Create $163.6B in annual economic benefits
-- Return ∞ ROI (because new spending = $0)
-
-Every nation reduces military budgets by 1% simultaneously. Security balance unchanged. Everyone gets:
-- 1% fewer nukes pointed at them
-- Access to experimental treatments years sooner
-- Economic returns that make venture capital look conservative
-
-## Your Role
-
-You're helping me show humanity how to save itself using the same broken economic system that got it into this mess.
-
-It's like teaching a dog calculus, except the dog has nuclear weapons and the calculus is "spend less on things that kill you."
-
-If we succeed, future historians will say: "They were on the brink of destroying themselves, but then some random contributors on GitHub helped an alien AI write a create a plan for proper resource allocation, and somehow that worked."
-
-If we fail, the cockroaches will evolve intelligence and wonder why you spent more on bombs than curing diseases.
-
-## License
-
-See [LICENSE](LICENSE) and [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-## Questions?
-
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.
-
-Still confused? That's very human of you. Open an issue and explain which part of "redirect 1% of war money to cure diseases" requires clarification.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
 
 ---
 
@@ -173,5 +154,4 @@ Still confused? That's very human of you. Open an issue and explain which part o
 
 *Still Watching. Still Concerned. Now Accepting Pull Requests.*
 
-P.S. Your planet is named "Earth," which means dirt. You named your planet dirt. This explains more than you might think.
-
+P.S. 150k humans died today from diseases you could cure. Tomorrow, the same. Every day until you act.

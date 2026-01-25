@@ -72,6 +72,7 @@ if str(_project_root) not in sys.path:
 
 from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
+from dih_models.quarto_config_sync import sync_shared_config_settings  # noqa: E402
 
 # Import all generator modules
 # NOTE: bibtex_generator and paper_bibliography_generator removed - references.bib is now source of truth
@@ -110,6 +111,7 @@ from dih_models.site_metadata_generator import generate_sites_metadata
 from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
 from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.footer_generator import generate_footer_html
+from dih_models.readme_generator import generate_readme
 from dih_models.quarto_references_generator import update_references_from_quarto
 from dih_models.references_bib_utils import sort_bib_file, validate_bib_file
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
@@ -1220,6 +1222,21 @@ def main():
         print(f"[WARN] Workflow regeneration skipped: {e}")
         print()
 
+    # Sync shared config settings to all paper/site Quarto configs
+    print("[*] Syncing shared settings to Quarto configs...")
+    try:
+        sync_results = sync_shared_config_settings(project_root)
+        if sync_results:
+            print(f"[OK] Updated {len(sync_results)} Quarto configs with shared settings:")
+            for config_name, changes in sync_results.items():
+                print(f"     {config_name}: {', '.join(changes[:3])}" +
+                      (f" (+{len(changes)-3} more)" if len(changes) > 3 else ""))
+        else:
+            print("[OK] All Quarto configs are in sync with shared defaults")
+    except Exception as e:
+        print(f"[WARN] Config sync skipped: {e}")
+    print()
+
     # Generate site metadata JSON for external use (displaying papers on other sites)
     print("[*] Generating site metadata JSON...")
     sites_metadata_path = generate_sites_metadata(project_root)
@@ -1239,6 +1256,11 @@ def main():
     # Generate shared footer HTML with links to all papers
     print("[*] Generating footer HTML...")
     footer_html_path = generate_footer_html(project_root)
+    print()
+
+    # Generate README.md from QMD sources with variables replaced
+    print("[*] Generating README.md from QMD sources...")
+    readme_path = generate_readme(project_root)
     print()
 
     # Final validation and sort of references.bib
@@ -1277,6 +1299,7 @@ def main():
     print("       - assets/json/sites-metadata.json")
     print("       - knowledge/papers.qmd")
     print("       - assets/html/generated-footer.html")
+    print("       - README.md (auto-generated from QMD sources)")
     print("       - llms.txt (AI crawler content)")
     print("       - robots.txt (crawler permissions)")
     print("       - OUTLINE-GENERATED.MD")

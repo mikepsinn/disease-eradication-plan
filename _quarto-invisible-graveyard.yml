@@ -83,6 +83,14 @@ metadata:
   language: "en-US"
   subject: "Regulatory Economics, FDA Policy, Drug Lag, Mortality Analysis, Cost-Benefit Analysis"
   category: "Academic Paper, Health Economics, Regulatory Policy, Public Health"
+  coi-statement: The author declares no competing interests.
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: This research did not involve human subjects or animal experimentation.
+  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The work is supported by the Decentralized Institutes of Health (DIH)."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
   keywords:
     - fda-regulation
     - drug-lag
@@ -204,6 +212,11 @@ format:
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    code-tools: true
+    link-citations: true
+    smooth-scroll: true
   pdf:
     output-file: "invisible-graveyard.pdf"
     documentclass: article

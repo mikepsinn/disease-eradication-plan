@@ -18,10 +18,6 @@ produced as part of the Disease Eradication Plan project.
 
 > 6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), clearing the queue takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1)×. Queue clears in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average ...
 
-[PDF](https://impact.warondisease.org/1-percent-treaty-impact.pdf) | [DOI: 10.5281/zenodo.18161561](https://doi.org/10.5281/zenodo.18161561) | *First Edition*
-
-**Keywords:** `war-on-disease`, `1-percent-treaty`, `medical-research`, `public-health`, `peace-dividend`
-
 
 ## Working Papers
 
@@ -31,20 +27,12 @@ produced as part of the Disease Eradication Plan project.
 
 > Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.
 
-[PDF](https://iab.warondisease.org/incentive-alignment-bonds-paper.pdf) | [DOI: 10.5281/zenodo.18203222](https://doi.org/10.5281/zenodo.18203222) | *Working Draft*
-
-**Keywords:** `mechanism-design`, `public-choice`, `political-economy`, `collective-action`, `social-impact-bonds`
-
 
 ### [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
 
 [![Optimal Budget Generator: Evidence-Based Budget Allocation Framework](../assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
 
 > The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.
-
-[PDF](https://obg.warondisease.org/obg-framework-paper.pdf) | [DOI: 10.5281/zenodo.18356210](https://doi.org/10.5281/zenodo.18356210) | *Working Draft*
-
-**Keywords:** `budget-optimization`, `optimal-budget-generator`, `evidence-based-policy`, `meta-analysis`, `cost-effectiveness`
 
 
 ### [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
@@ -53,20 +41,12 @@ produced as part of the Disease Eradication Plan project.
 
 > The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
 
-[PDF](https://opg.warondisease.org/opg-framework-paper.pdf) | [DOI: 10.5281/zenodo.18356212](https://doi.org/10.5281/zenodo.18356212) | *Working Draft*
-
-**Keywords:** `policy-evaluation`, `causal-inference`, `quasi-experimental-methods`, `synthetic-control`, `difference-in-differences`
-
 
 ### [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](https://optimocracy.warondisease.org)
 
 [![Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](../assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
 > Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.
-
-[PDF](https://optimocracy.warondisease.org/optimocracy-paper.pdf) | [DOI: 10.5281/zenodo.18356214](https://doi.org/10.5281/zenodo.18356214) | *Working Draft*
-
-**Keywords:** `mechanism-design`, `algorithmic-governance`, `smart-contracts`, `metric-optimization`, `capture-resistance`
 
 
 ### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
@@ -75,20 +55,12 @@ produced as part of the Disease Eradication Plan project.
 
 > Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths) and avert 565B DALYs (95% CI: 361B DALYs-877B DALYs) at $0.841 (95% CI: $0.242-$1.75) per DALY, while generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings.
 
-[PDF](https://impact.dfda.earth/dfda-impact-paper.pdf) | [DOI: 10.5281/zenodo.18243915](https://doi.org/10.5281/zenodo.18243915) | *Working Draft*
-
-**Keywords:** `dfda`, `cost-benefit-analysis`, `roi`, `return-on-investment`, `clinical-trials`
-
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](../assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
 
 > The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).
-
-[PDF](https://invisible-graveyard.warondisease.org/invisible-graveyard.pdf) | *Working Paper*
-
-**Keywords:** `fda-regulation`, `drug-lag`, `kefauver-harris-amendments`, `regulatory-delay`, `type-ii-errors`
 
 
 ### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
@@ -97,10 +69,6 @@ produced as part of the Disease Eradication Plan project.
 
 > When critics dismiss policy proposals as "politically impossible," they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value.
 
-[PDF](https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf) | *Working Draft*
-
-**Keywords:** `political-economy`, `campaign-finance`, `lobbying`, `mechanism-design`, `public-choice`
-
 
 ### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
 
@@ -108,20 +76,12 @@ produced as part of the Disease Eradication Plan project.
 
 > Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
 
-[PDF](https://wishocracy.warondisease.org/wishocracy-rappa-paper.pdf) | [DOI: 10.5281/zenodo.18205882](https://doi.org/10.5281/zenodo.18205882) | *Working Draft*
-
-**Keywords:** `mechanism-design`, `collective-intelligence`, `direct-democracy`, `principal-agent-problem`, `preference-aggregation`
-
 
 ### [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
 
 [![dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
 
 > We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
-
-[PDF](https://dfda-spec.warondisease.org/dfda-spec-paper.pdf) | [DOI: 10.5281/zenodo.18203376](https://doi.org/10.5281/zenodo.18203376) | *Working Draft*
-
-**Keywords:** `dfda`, `predictor-impact-score`, `pharmacovigilance`, `real-world-evidence`, `n-of-1-trials`
 
 
 

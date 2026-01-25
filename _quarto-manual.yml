@@ -363,7 +363,7 @@ format:
   html:
     lightbox: auto
     theme:
-      - lux
+      - cosmo
       #- neobrutalist.scss
     # Alternative themes: lux, flatly, sandstone, minty
     mermaid:
@@ -372,6 +372,8 @@ format:
     number-sections: false
     toc: true
     toc-depth: 3
+    link-citations: true
+    citation-hover: true
     css:
       - styles.css
       - book-overrides.css
