@@ -8,11 +8,12 @@
 
 import { GoogleGenAI } from '@google/genai'
 import sharp from 'sharp'
-import { exec } from 'child_process'
+import { exec, execFile } from 'child_process'
 import { promisify } from 'util'
 import { GEMINI_IMAGE_MODEL_ID } from './llm'
 
 const execAsync = promisify(exec)
+const execFileAsync = promisify(execFile)
 
 // Simple logger to avoid env validation issues in standalone scripts
 const log = {
@@ -180,14 +181,6 @@ async function isExiftoolAvailable(): Promise<boolean> {
 }
 
 /**
- * Escape string for shell command (Windows-compatible)
- */
-function escapeForShell(str: string): string {
-  // Replace double quotes with escaped quotes and wrap in double quotes
-  return `"${str.replace(/"/g, '\\"').replace(/\n/g, ' ')}"`
-}
-
-/**
  * Add rich metadata to image using exiftool (EXIF, IPTC, XMP)
  * Falls back to basic sharp metadata if exiftool is not available
  *
@@ -220,42 +213,42 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
   const path = await import('path')
   const args: string[] = ['-overwrite_original']
 
-  // EXIF metadata
-  if (meta.description) args.push(`-EXIF:ImageDescription=${escapeForShell(meta.description)}`)
-  if (meta.author) args.push(`-EXIF:Artist=${escapeForShell(meta.author)}`)
-  if (meta.copyright) args.push(`-EXIF:Copyright=${escapeForShell(meta.copyright)}`)
-  if (meta.generator) args.push(`-EXIF:Software=${escapeForShell(meta.generator)}`)
+  // EXIF metadata (no escaping needed with execFile)
+  if (meta.description) args.push(`-EXIF:ImageDescription=${meta.description}`)
+  if (meta.author) args.push(`-EXIF:Artist=${meta.author}`)
+  if (meta.copyright) args.push(`-EXIF:Copyright=${meta.copyright}`)
+  if (meta.generator) args.push(`-EXIF:Software=${meta.generator}`)
 
   // IPTC Core metadata (widely used by stock photo sites, Google Images)
-  if (meta.title) args.push(`-IPTC:Headline=${escapeForShell(meta.title)}`)
-  if (meta.description) args.push(`-IPTC:Caption-Abstract=${escapeForShell(meta.description)}`)
-  if (meta.author) args.push(`-IPTC:By-line=${escapeForShell(meta.author)}`)
-  if (meta.copyright) args.push(`-IPTC:CopyrightNotice=${escapeForShell(meta.copyright)}`)
-  if (meta.credit) args.push(`-IPTC:Credit=${escapeForShell(meta.credit)}`)
-  if (meta.website) args.push(`-IPTC:Source=${escapeForShell(meta.website)}`)
-  if (meta.category) args.push(`-IPTC:Category=${escapeForShell(meta.category)}`)
+  if (meta.title) args.push(`-IPTC:Headline=${meta.title}`)
+  if (meta.description) args.push(`-IPTC:Caption-Abstract=${meta.description}`)
+  if (meta.author) args.push(`-IPTC:By-line=${meta.author}`)
+  if (meta.copyright) args.push(`-IPTC:CopyrightNotice=${meta.copyright}`)
+  if (meta.credit) args.push(`-IPTC:Credit=${meta.credit}`)
+  if (meta.website) args.push(`-IPTC:Source=${meta.website}`)
+  if (meta.category) args.push(`-IPTC:Category=${meta.category}`)
 
   // IPTC Keywords (each keyword as separate tag)
   if (meta.keywords && meta.keywords.length > 0) {
     for (const keyword of meta.keywords) {
-      args.push(`-IPTC:Keywords=${escapeForShell(keyword)}`)
+      args.push(`-IPTC:Keywords=${keyword}`)
     }
   }
 
   // XMP metadata (modern standard, used by Adobe, Google, etc.)
-  if (meta.title) args.push(`-XMP:Title=${escapeForShell(meta.title)}`)
-  if (meta.description) args.push(`-XMP:Description=${escapeForShell(meta.description)}`)
-  if (meta.author) args.push(`-XMP:Creator=${escapeForShell(meta.author)}`)
-  if (meta.copyright) args.push(`-XMP:Rights=${escapeForShell(meta.copyright)}`)
-  if (meta.licenseUrl) args.push(`-XMP:WebStatement=${escapeForShell(meta.licenseUrl)}`)
-  if (meta.license) args.push(`-XMP:UsageTerms=${escapeForShell(meta.license)}`)
-  if (meta.generator) args.push(`-XMP:CreatorTool=${escapeForShell(meta.generator)}`)
-  if (meta.sourceUrl) args.push(`-XMP:Source=${escapeForShell(meta.sourceUrl)}`)
+  if (meta.title) args.push(`-XMP:Title=${meta.title}`)
+  if (meta.description) args.push(`-XMP:Description=${meta.description}`)
+  if (meta.author) args.push(`-XMP:Creator=${meta.author}`)
+  if (meta.copyright) args.push(`-XMP:Rights=${meta.copyright}`)
+  if (meta.licenseUrl) args.push(`-XMP:WebStatement=${meta.licenseUrl}`)
+  if (meta.license) args.push(`-XMP:UsageTerms=${meta.license}`)
+  if (meta.generator) args.push(`-XMP:CreatorTool=${meta.generator}`)
+  if (meta.sourceUrl) args.push(`-XMP:Source=${meta.sourceUrl}`)
 
   // XMP Subject (keywords)
   if (meta.keywords && meta.keywords.length > 0) {
     for (const keyword of meta.keywords) {
-      args.push(`-XMP:Subject=${escapeForShell(keyword)}`)
+      args.push(`-XMP:Subject=${keyword}`)
     }
   }
 
@@ -265,8 +258,6 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
   args.push(`-XMP:CreateDate=${now}`)
 
   // Store AI-related metadata as JSON in UserComment
-  // Use temp file to avoid Windows shell escaping issues with newlines
-  let tempFile: string | null = null
   if (meta.generationPrompt || meta.transcript || meta.inferredPrompt || meta.imageIssues || meta.promptImprovements) {
     const userCommentData: Record<string, unknown> = {}
     if (meta.generationPrompt) userCommentData.generationPrompt = meta.generationPrompt
@@ -276,16 +267,16 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
     if (meta.promptImprovements) userCommentData.promptImprovements = meta.promptImprovements
     userCommentData.metadataCreatedAt = new Date().toISOString()
 
-    tempFile = path.join(path.dirname(imagePath), `.metadata-temp-${Date.now()}.json`)
-    await fs.writeFile(tempFile, JSON.stringify(userCommentData))
-    args.push(`-UserComment<="${tempFile}"`)
+    // No shell escaping needed with execFile - just pass the raw JSON
+    args.push(`-UserComment=${JSON.stringify(userCommentData)}`)
   }
 
-  // Execute exiftool
-  const command = `exiftool ${args.join(' ')} "${imagePath}"`
+  // Add the image path as the last argument
+  args.push(imagePath)
 
   try {
-    await execAsync(command)
+    // Use execFile to bypass shell escaping issues entirely
+    await execFileAsync('exiftool', args)
     log.info('Rich metadata embedded via exiftool', {
       title: meta.title,
       keywords: meta.keywords.length,
@@ -296,15 +287,6 @@ async function addMetadataWithExiftool(imagePath: string, meta: ImageMetadata): 
     log.error('Failed to add metadata with exiftool', { error: error.message })
     // Fall back to sharp
     await addMetadataWithSharp(imagePath, meta)
-  } finally {
-    // Clean up temp file
-    if (tempFile) {
-      try {
-        await fs.unlink(tempFile)
-      } catch {
-        // Ignore cleanup errors
-      }
-    }
   }
 }
 
@@ -701,13 +683,13 @@ export async function saveImage(
     log.warn('Failed to analyze image', { error: err.message })
   }
 
-  // Add rich metadata (EXIF, IPTC, XMP for SEO/discoverability)
-  await addImageMetadata(filePath, finalMetadata)
-
-  // Add watermark unless skipped (e.g., for favicons)
+  // Add watermark FIRST (sharp overwrites the file, losing metadata)
   if (!options?.skipWatermark) {
     await addWatermark(filePath)
   }
+
+  // Add rich metadata AFTER watermark (EXIF, IPTC, XMP for SEO/discoverability)
+  await addImageMetadata(filePath, finalMetadata)
 
   log.info('Image saved with metadata', {
     filePath,
