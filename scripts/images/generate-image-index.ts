@@ -9,7 +9,7 @@
  *   npx tsx scripts/images/generate-image-index.ts --force   # Regenerate ALL metadata (overwrite existing)
  *   npx tsx scripts/images/generate-image-index.ts --limit N # Limit to N images for testing
  *
- * Output: assets/image-search-index.json
+ * Output: assets/image-index.json
  */
 
 import fs from 'fs/promises';
@@ -20,71 +20,14 @@ import sharp from 'sharp';
 // Shared utilities
 import { formatBytes } from '../lib/image-file-utils';
 import { isExiftoolAvailable, readImageMetadata } from '../lib/exiftool-utils';
+import {
+  ImageMetadata,
+  ImageIndex,
+  cleanStyleFromText,
+  getChapterFromPath,
+} from '../lib/image-metadata';
 
-const OUTPUT_FILE = 'assets/image-search-index.json';
-
-interface ImageMetadata {
-  /** Relative path from project root */
-  path: string;
-  /** File name */
-  filename: string;
-  /** File extension */
-  extension: string;
-  /** File size in bytes */
-  sizeBytes: number;
-  /** Human-readable file size */
-  size: string;
-  /** Image width */
-  width?: number;
-  /** Image height */
-  height?: number;
-  /** Image format (jpeg, png, etc.) */
-  format?: string;
-  /** Aspect ratio as string (e.g., "16:9") */
-  aspectRatio?: string;
-  /** Last modified date */
-  modified: string;
-  /** Image type based on path/naming */
-  imageType?: 'og' | 'infographic' | 'slide' | 'icon' | 'cover' | 'chart' | 'other';
-  /** Style (academic, retro, etc.) */
-  style?: string;
-  /** Related chapter/section if applicable */
-  chapter?: string;
-
-  // EXIF/IPTC metadata (if available)
-  /** Title/headline */
-  title?: string;
-  /** Description/caption */
-  description?: string;
-  /** Keywords/tags */
-  keywords?: string[];
-  /** Author/creator */
-  author?: string;
-  /** Copyright notice */
-  copyright?: string;
-  /** Creation date from EXIF */
-  dateCreated?: string;
-  /** Extracted text/transcript from image (OCR) */
-  transcript?: string;
-  /** Original prompt used to generate the image */
-  generationPrompt?: string;
-  /** AI-inferred prompt that could have generated this image */
-  inferredPrompt?: string;
-  /** List of issues/problems identified in the image */
-  imageIssues?: string[];
-  /** Suggestions for improving the generation prompt */
-  promptImprovements?: string[];
-}
-
-interface ImageIndex {
-  generated: string;
-  totalImages: number;
-  totalSizeBytes: number;
-  totalSize: string;
-  images: ImageMetadata[];
-}
-
-// formatBytes imported from ../lib/image-file-utils
+const OUTPUT_FILE = 'assets/image-index.json';
 
 /**
  * Calculate aspect ratio string
@@ -128,34 +71,6 @@ function getStyle(filename: string): string | undefined {
   return undefined;
 }
 
-/**
- * Clean title/description by removing style words
- */
-function cleanStyleFromText(text: string | undefined): string | undefined {
-  if (!text) return text;
-  return text
-    .replace(/\s*[-–]\s*(Retro|Academic)\s*/gi, ' ')
-    .replace(/\b(Retro|Academic)\b\s*/gi, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-/**
- * Extract chapter/section from path
- */
-function getChapter(filePath: string): string | undefined {
-  // Look for knowledge/{section}/{chapter} pattern
-  const match = filePath.match(/knowledge\/([^/]+)(?:\/([^/]+))?/);
-  if (match) {
-    if (match[2]) {
-      // Remove file extension and suffixes
-      const chapter = match[2].replace(/-(?:og|infographic|slide)-.*$/, '');
-      return `${match[1]}/${chapter}`;
-    }
-    return match[1];
-  }
-  return undefined;
-}
 
 // isExiftoolAvailable imported from ../lib/exiftool-utils
 
@@ -225,7 +140,7 @@ async function processImage(
       modified: stats.mtime.toISOString(),
       imageType: getImageType(relativePath),
       style: getStyle(filename),
-      chapter: getChapter(relativePath),
+      chapter: getChapterFromPath(relativePath),
     };
 
     // Get EXIF/IPTC metadata if exiftool is available
@@ -285,7 +200,6 @@ async function main() {
   images.sort((a, b) => a.path.localeCompare(b.path));
 
   const index: ImageIndex = {
-    generated: new Date().toISOString(),
     totalImages: images.length,
     totalSizeBytes: totalSize,
     totalSize: formatBytes(totalSize),

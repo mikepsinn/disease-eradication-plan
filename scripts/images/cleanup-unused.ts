@@ -1,106 +1,125 @@
-import * as fs from 'fs-extra';
-import * as path from 'path';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+#!/usr/bin/env tsx
+/**
+ * Cleanup Unused Images - Find and delete unreferenced images
+ *
+ * Scans assets directory for images not referenced in any markdown files.
+ *
+ * Usage:
+ *   npx tsx scripts/images/cleanup-unused.ts           # Dry run (preview)
+ *   npx tsx scripts/images/cleanup-unused.ts --delete  # Actually delete files
+ */
 
-const ROOT_DIR = path.resolve(__dirname, '..');
+import fs from 'fs/promises';
+import { existsSync, statSync } from 'fs';
+import path from 'path';
+
+// Shared utilities
+import { findImages } from '../lib/image-file-utils';
+import { hasFlag, printHeader, printSummary } from '../lib/cli-utils';
+
+const ROOT_DIR = process.cwd();
 const ASSETS_DIR = path.join(ROOT_DIR, 'assets');
-const IGNORED_DIRS = ['node_modules', '.git', '.cursor-cache', 'assets'];
+const IGNORED_DIRS = ['node_modules', '.git', '.cursor-cache', 'assets', '.quarto', '_book'];
 
-// --- Utility Functions ---
+/**
+ * Recursively find files with given extensions
+ */
+async function findFiles(dir: string, extensions: string[]): Promise<string[]> {
+  const results: string[] = [];
 
-async function findFiles(dir: string, ext: string[] | string): Promise<string[]> {
-    const extensions = Array.isArray(ext) ? ext.map(e => e.startsWith('.') ? e : `.${e}`) : [ext.startsWith('.') ? ext : `.${ext}`];
-    let results: string[] = [];
-    const list = await fs.readdir(dir);
+  try {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
 
-    for (const file of list) {
-        const filePath = path.join(dir, file);
-        const stat = await fs.stat(filePath);
-        if (stat && stat.isDirectory()) {
-            if (!IGNORED_DIRS.includes(path.basename(filePath))) {
-                results = results.concat(await findFiles(filePath, extensions));
-            }
-        } else {
-            if (extensions.includes(path.extname(filePath))) {
-                results.push(filePath);
-            }
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (!IGNORED_DIRS.includes(entry.name)) {
+          results.push(...await findFiles(fullPath, extensions));
         }
+      } else if (extensions.some(ext => entry.name.endsWith(ext))) {
+        results.push(fullPath);
+      }
     }
-    return results;
-}
+  } catch (error) {
+    // Directory doesn't exist or not readable
+  }
 
-// --- Main Logic ---
+  return results;
+}
 
 async function main() {
-    const argv = await yargs(hideBin(process.argv))
-        .option('delete', {
-            type: 'boolean',
-            description: 'Actually delete the unreferenced files. Defaults to a dry run.',
-            default: false,
-        })
-        .help()
-        .argv;
-        
-    const isDryRun = !argv.delete;
+  const args = process.argv.slice(2);
+  const shouldDelete = hasFlag(args, 'delete');
+  const isDryRun = !shouldDelete;
 
-    if (isDryRun) {
-        console.log('--- DRY RUN ---');
-        console.log('No files will be deleted. Use --delete to apply changes.');
-    } else {
-        console.log('--- EXECUTION RUN ---');
-        console.log('Deleting unreferenced images.');
+  printHeader('Cleanup Unused Images');
+  console.log(`Mode: ${isDryRun ? 'DRY RUN (preview only)' : 'DELETE MODE'}`)
+  console.log('')
+
+  // 1. Find all image files
+  const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
+  const allImageFiles = await findFiles(ASSETS_DIR, imageExtensions);
+  console.log(`[1/3] Found ${allImageFiles.length} image files in assets/`);
+
+  // 2. Find all markdown/qmd files and read their content
+  const contentFiles = await findFiles(ROOT_DIR, ['.md', '.qmd']);
+  let allContent = '';
+  for (const file of contentFiles) {
+    allContent += await fs.readFile(file, 'utf-8');
+  }
+  console.log(`[2/3] Scanning ${contentFiles.length} content files for references...`);
+
+  // 3. Check for references
+  const unreferencedImages: string[] = [];
+  for (const imagePath of allImageFiles) {
+    const imageName = path.basename(imagePath);
+    // Simple string search for efficiency
+    if (!allContent.includes(imageName)) {
+      unreferencedImages.push(imagePath);
+    }
+  }
+
+  console.log(`[3/3] Analysis complete\n`);
+
+  if (unreferencedImages.length === 0) {
+    console.log('No unreferenced images found. Everything is clean!');
+    return;
+  }
+
+  console.log(`Found ${unreferencedImages.length} unreferenced images:`);
+  for (const img of unreferencedImages) {
+    console.log(`  - ${path.relative(ROOT_DIR, img)}`);
+  }
+
+  if (!isDryRun) {
+    let deleteCount = 0;
+    console.log('\nDeleting...');
+    for (const imagePath of unreferencedImages) {
+      try {
+        await fs.unlink(imagePath);
+        deleteCount++;
+      } catch (error) {
+        console.error(`  [ERROR] ${path.relative(ROOT_DIR, imagePath)}: ${error}`);
+      }
     }
 
-    // 1. Find all image files
-    const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
-    const allImageFiles = await findFiles(ASSETS_DIR, imageExtensions);
-    console.log(`Found ${allImageFiles.length} total image files in assets.`);
-
-    // 2. Find all markdown files and read their content
-    const markdownFiles = await findFiles(ROOT_DIR, '.md');
-    let allMarkdownContent = '';
-    for (const file of markdownFiles) {
-        allMarkdownContent += await fs.readFile(file, 'utf-8');
-    }
-    console.log(`Scanning ${markdownFiles.length} markdown files for references...`);
-    
-    // 3. Check for references and delete if necessary
-    const unreferencedImages: string[] = [];
-    for (const imagePath of allImageFiles) {
-        const imageName = path.basename(imagePath);
-        // Use a simple string search for efficiency. A regex could be more precise but is slower.
-        if (!allMarkdownContent.includes(imageName)) {
-            unreferencedImages.push(imagePath);
-        }
-    }
-
-    if (unreferencedImages.length === 0) {
-        console.log('\n✅ No unreferenced images found. Everything is clean!');
-        return;
-    }
-
-    console.log(`\nFound ${unreferencedImages.length} unreferenced images:`);
-    unreferencedImages.forEach(img => console.log(`  - ${path.relative(ROOT_DIR, img)}`));
-    
-    if (!isDryRun) {
-        let deleteCount = 0;
-        for(const imagePath of unreferencedImages) {
-            try {
-                await fs.remove(imagePath);
-                deleteCount++;
-            } catch (error) {
-                console.error(`  -> ERROR deleting ${path.relative(ROOT_DIR, imagePath)}:`, error);
-            }
-        }
-        console.log(`\n✅ Successfully deleted ${deleteCount} files.`);
-    } else {
-        console.log('\n--- End of DRY RUN ---');
-    }
+    printSummary({
+      'Images found': allImageFiles.length,
+      'Unreferenced': unreferencedImages.length,
+      'Deleted': deleteCount,
+    });
+  } else {
+    printSummary({
+      'Images found': allImageFiles.length,
+      'Unreferenced': unreferencedImages.length,
+      'Would delete': unreferencedImages.length,
+    });
+    console.log('\n[DRY RUN] No files deleted. Run with --delete to remove.');
+  }
 }
 
-
 main().catch(error => {
-    console.error('A fatal error occurred:', error);
-    process.exit(1);
+  console.error('Fatal error:', error);
+  process.exit(1);
 });

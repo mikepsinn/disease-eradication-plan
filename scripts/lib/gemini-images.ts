@@ -340,6 +340,189 @@ async function addMetadataWithSharp(imagePath: string, meta: ImageMetadata): Pro
 }
 
 /**
+ * Compression settings
+ */
+const COMPRESSION_SETTINGS = {
+  /** Minimum file size (bytes) to trigger compression - skip files smaller than this */
+  minSizeBytes: 50 * 1024, // 50KB
+  /** JPEG quality (1-100). 85 is visually indistinguishable from 100, ~40% smaller */
+  jpegQuality: 85,
+  /** PNG compression level (0-9). 9 = max compression */
+  pngCompressionLevel: 9,
+  /** PNG quality for palette mode (1-100) */
+  pngQuality: 80,
+  /** WebP quality (1-100) */
+  webpQuality: 85,
+  /** WebP effort (0-6). Higher = slower but better compression */
+  webpEffort: 6,
+}
+
+/**
+ * Compression result info
+ */
+export interface CompressionResult {
+  /** Whether compression was performed */
+  compressed: boolean
+  /** Original file size in bytes */
+  originalSize: number
+  /** Final file size in bytes (same as original if not compressed) */
+  finalSize: number
+  /** Bytes saved */
+  savings: number
+  /** Percentage saved */
+  savingsPercent: number
+  /** Reason if skipped */
+  skipReason?: string
+}
+
+/**
+ * Compress an image file if it's above the size threshold
+ * Works on existing files - compresses in place
+ *
+ * @param filePath - Path to the image file
+ * @param options - Optional settings override
+ * @returns Compression result with savings info
+ *
+ * @example
+ * ```typescript
+ * const result = await compressImageIfNeeded('assets/images/large-photo.jpg')
+ * if (result.compressed) {
+ *   console.log(`Saved ${result.savingsPercent.toFixed(1)}%`)
+ * }
+ * ```
+ */
+export async function compressImageIfNeeded(
+  filePath: string,
+  options?: {
+    /** Minimum size in bytes to trigger compression (default: 50KB) */
+    minSizeBytes?: number
+    /** Force compression even if below threshold */
+    force?: boolean
+    /** Preview compression without modifying file */
+    dryRun?: boolean
+  }
+): Promise<CompressionResult> {
+  const fs = await import('fs/promises')
+  const path = await import('path')
+
+  const minSize = options?.minSizeBytes ?? COMPRESSION_SETTINGS.minSizeBytes
+  const force = options?.force ?? false
+  const dryRun = options?.dryRun ?? false
+
+  // Get current file size
+  const stats = await fs.stat(filePath)
+  const originalSize = stats.size
+
+  // Skip if below threshold (unless forced)
+  if (!force && originalSize < minSize) {
+    return {
+      compressed: false,
+      originalSize,
+      finalSize: originalSize,
+      savings: 0,
+      savingsPercent: 0,
+      skipReason: `Below ${(minSize / 1024).toFixed(0)}KB threshold`,
+    }
+  }
+
+  const ext = path.extname(filePath).toLowerCase()
+
+  // Skip unsupported formats
+  if (!['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
+    return {
+      compressed: false,
+      originalSize,
+      finalSize: originalSize,
+      savings: 0,
+      savingsPercent: 0,
+      skipReason: `Unsupported format: ${ext}`,
+    }
+  }
+
+  const tmpPath = filePath + '.compress.tmp'
+  const sharpImage = sharp(filePath)
+
+  try {
+    if (ext === '.png') {
+      await sharpImage
+        .png({
+          compressionLevel: COMPRESSION_SETTINGS.pngCompressionLevel,
+          palette: true,
+          quality: COMPRESSION_SETTINGS.pngQuality,
+        })
+        .toFile(tmpPath)
+    } else if (ext === '.jpg' || ext === '.jpeg') {
+      await sharpImage
+        .jpeg({
+          quality: COMPRESSION_SETTINGS.jpegQuality,
+          mozjpeg: true,
+        })
+        .toFile(tmpPath)
+    } else if (ext === '.webp') {
+      await sharpImage
+        .webp({
+          quality: COMPRESSION_SETTINGS.webpQuality,
+          effort: COMPRESSION_SETTINGS.webpEffort,
+        })
+        .toFile(tmpPath)
+    }
+
+    // Check if we actually saved space
+    const newStats = await fs.stat(tmpPath)
+    const savings = originalSize - newStats.size
+    const savingsPercent = (savings / originalSize) * 100
+
+    // Only keep compressed version if we saved at least 1%
+    if (savings > 0 && savingsPercent >= 1) {
+      if (dryRun) {
+        // Dry run - report savings but don't modify original
+        await fs.unlink(tmpPath)
+        return {
+          compressed: true, // Would be compressed
+          originalSize,
+          finalSize: newStats.size,
+          savings,
+          savingsPercent,
+        }
+      }
+      await fs.rename(tmpPath, filePath)
+      return {
+        compressed: true,
+        originalSize,
+        finalSize: newStats.size,
+        savings,
+        savingsPercent,
+      }
+    } else {
+      // Discard temp file, keep original
+      await fs.unlink(tmpPath)
+      return {
+        compressed: false,
+        originalSize,
+        finalSize: originalSize,
+        savings: 0,
+        savingsPercent: 0,
+        skipReason: 'Already optimally compressed',
+      }
+    }
+  } catch (error: any) {
+    // Clean up temp file if it exists
+    try {
+      await fs.unlink(tmpPath)
+    } catch {}
+
+    return {
+      compressed: false,
+      originalSize,
+      finalSize: originalSize,
+      savings: 0,
+      savingsPercent: 0,
+      skipReason: `Error: ${error.message}`,
+    }
+  }
+}
+
+/**
  * Calculate cost for image generation
  */
 function calculateImageCost(imageCount: number, modelId: string): number {
@@ -614,40 +797,10 @@ export async function saveImage(
   const buffer = Buffer.from(image.imageBytes, 'base64')
   await fs.writeFile(filePath, buffer)
 
-  // Detect actual format and convert if necessary
-  const requestedExt = path.extname(filePath).toLowerCase()
-  const sharpImage = sharp(filePath)
-  const sharpMeta = await sharpImage.metadata()
-
-  // Map sharp format to expected extension
-  const formatToExt: Record<string, string> = {
-    'jpeg': '.jpg',
-    'png': '.png',
-    'webp': '.webp',
-    'gif': '.gif',
-    'tiff': '.tiff',
-  }
-
-  const actualExt = sharpMeta.format ? formatToExt[sharpMeta.format] : null
-
-  if (actualExt && actualExt !== requestedExt) {
-    log.warn(`Image format mismatch: requested ${requestedExt} but got ${actualExt}. Converting...`, { filePath })
-
-    // Convert to requested format
-    const tmpPath = filePath + '.converting.tmp'
-    if (requestedExt === '.png') {
-      await sharpImage.png().toFile(tmpPath)
-    } else if (requestedExt === '.jpg' || requestedExt === '.jpeg') {
-      await sharpImage.jpeg({ quality: 95 }).toFile(tmpPath)
-    } else if (requestedExt === '.webp') {
-      await sharpImage.webp({ quality: 95 }).toFile(tmpPath)
-    } else {
-      // For other formats, just use default sharp conversion
-      await sharpImage.toFile(tmpPath)
-    }
-
-    // Replace original with converted version
-    await fs.rename(tmpPath, filePath)
+  // Compress the image (force=true since we just generated it, always worth optimizing)
+  const compressionResult = await compressImageIfNeeded(filePath, { force: true })
+  if (compressionResult.compressed && compressionResult.savingsPercent > 5) {
+    log.info(`Compressed: ${(compressionResult.originalSize / 1024).toFixed(0)}KB -> ${(compressionResult.finalSize / 1024).toFixed(0)}KB (${compressionResult.savingsPercent.toFixed(1)}% smaller)`)
   }
 
   // Build final metadata with prompt and transcript
@@ -693,8 +846,7 @@ export async function saveImage(
 
   log.info('Image saved with metadata', {
     filePath,
-    size: buffer.length,
-    format: sharpMeta.format,
+    size: compressionResult.finalSize,
     title: finalMetadata.title,
     keywords: finalMetadata.keywords.length,
     hasPrompt: !!finalMetadata.generationPrompt,

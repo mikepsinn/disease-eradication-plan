@@ -141,8 +141,6 @@ export interface ImageGenerationMetadata {
  * Image index structure for search/discovery
  */
 export interface ImageIndex {
-  /** Timestamp when index was generated */
-  generated: string
   /** Total number of images */
   totalImages: number
   /** Total size in bytes */

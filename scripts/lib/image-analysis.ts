@@ -66,6 +66,127 @@ DESCRIPTION: [your description]
 KEYWORDS: [keyword1, keyword2, keyword3, ...]
 CHAPTERS: [chapter1.qmd, chapter2.qmd, ...]
 PRIMARY_USE: [chapter1.qmd]`,
+
+  /**
+   * Complete metadata generation - comprehensive metadata for SEO, social media, presentations, and accessibility
+   */
+  COMPLETE_METADATA: `Analyze this image comprehensively and generate metadata for SEO, social media, presentations, and accessibility.
+
+This image is from a book about redirecting 1% of military spending to medical research (the "1% Treaty" / "War on Disease" initiative).
+
+Return a JSON object with ALL these fields:
+
+## Core Metadata
+- "title": Concise descriptive title (5-10 words), title case
+- "description": Detailed description (2-3 sentences) of what the image shows
+- "keywords": Array of 5-10 relevant tags for search
+- "transcript": ALL visible text extracted (titles, labels, numbers). Use "[NO TEXT]" if none
+
+## Quality Assessment
+- "qualityScore": 1-5 rating (5=excellent clarity/professionalism/readability)
+- "qualityIssues": Array of specific problems (e.g., "text too small", "low contrast", "cluttered layout", "spelling errors")
+- "standaloneScore": 1-5 rating - can it communicate its message WITHOUT chapter context? (5=fully standalone)
+
+## Social Media
+- "canShareStandalone": boolean - does it make sense shared independently?
+- "socialCaption": Ready-to-post caption (1-2 sentences) with 2-3 relevant hashtags
+- "twitterText": Tweet-ready version (under 280 chars including hashtags)
+- "linkedInText": Professional version for LinkedIn (2-3 sentences)
+- "targetPlatforms": Array from ["twitter", "linkedin", "instagram", "facebook", "presentation"]
+
+## Presentations
+- "speakerNotes": What a presenter should SAY when showing this (2-3 sentences, conversational)
+- "talkingPoints": Array of 2-4 bullet points for presenter
+- "audienceLevel": One of "general", "policymaker", "researcher", "investor", "healthcare"
+
+## Accessibility & Tone
+- "altText": Screen reader description (focus on meaning, not appearance)
+- "emotionalTone": One of "alarming", "hopeful", "informative", "urgent", "inspiring", "neutral"
+- "callToAction": What should viewer do after seeing this? (e.g., "Share to raise awareness", "Contact representatives", "Learn more")
+
+## Data Integrity
+- "dataFreshness": One of "current", "needs-update", "timeless" (is the data/statistic current?)
+- "dataSources": Array of data sources if identifiable from the image
+- "factCheckNotes": Any caveats, verification needs, or context required
+
+## Prompt Leakage Detection
+Check if any AI generation prompt text accidentally appears in the image. Common leaks include:
+- Style words: "retro", "academic", "scientific illustration", "visualization", "infographic"
+- Technical terms: "high contrast", "minimalist", "detailed", "professional"
+- Instructions: "diagram showing", "chart of", "illustration of"
+
+- "promptLeakageDetected": boolean - does visible text contain likely prompt artifacts?
+- "promptLeakageText": Array of specific leaked text found (e.g., ["scientific illustration", "retro style"])
+- "promptLeakageRepairPrompt": If leakage detected, a specific prompt to fix it (e.g., "Remove the text 'scientific illustration' from the bottom right corner of the image")
+
+Return ONLY valid JSON, no markdown code blocks.`,
+}
+
+/**
+ * Result from complete metadata generation
+ */
+export interface CompleteMetadataResult {
+  // Core
+  /** SEO-friendly title (5-10 words) */
+  title?: string
+  /** Detailed description (2-3 sentences) */
+  description?: string
+  /** Search keywords/tags */
+  keywords?: string[]
+  /** Extracted text (OCR) */
+  transcript?: string
+
+  // Quality
+  /** Quality rating 1-5 */
+  qualityScore?: number
+  /** Specific quality issues */
+  qualityIssues?: string[]
+  /** Standalone comprehension score 1-5 */
+  standaloneScore?: number
+
+  // Social Media
+  /** Can be shared without chapter context */
+  canShareStandalone?: boolean
+  /** Ready-to-post social caption with hashtags */
+  socialCaption?: string
+  /** Tweet-ready text (under 280 chars) */
+  twitterText?: string
+  /** LinkedIn-ready text */
+  linkedInText?: string
+  /** Recommended platforms */
+  targetPlatforms?: string[]
+
+  // Presentations
+  /** What presenter should say */
+  speakerNotes?: string
+  /** Bullet points for presenter */
+  talkingPoints?: string[]
+  /** Target audience level */
+  audienceLevel?: string
+
+  // Accessibility
+  /** Screen reader description */
+  altText?: string
+  /** Emotional tone */
+  emotionalTone?: string
+  /** Suggested call to action */
+  callToAction?: string
+
+  // Data Integrity
+  /** Data freshness status */
+  dataFreshness?: string
+  /** Original data sources */
+  dataSources?: string[]
+  /** Fact-check notes or caveats */
+  factCheckNotes?: string
+
+  // Prompt Leakage Detection
+  /** Was prompt leakage detected in image text? */
+  promptLeakageDetected?: boolean
+  /** Specific leaked text found */
+  promptLeakageText?: string[]
+  /** Repair prompt to fix the leakage */
+  promptLeakageRepairPrompt?: string
 }
 
 /**
@@ -280,6 +401,96 @@ export async function analyzeImageFromBase64(
     if (response && response.trim() !== '[NO TEXT]') {
       return { transcript: response.trim() }
     }
+    return {}
+  }
+}
+
+/**
+ * Generate complete metadata for an image
+ *
+ * Generates comprehensive metadata including SEO, social media, presentation,
+ * accessibility, and data integrity fields in a single API call.
+ *
+ * @param filepath - Path to the image file
+ * @returns Complete metadata result with all fields
+ *
+ * @example
+ * ```ts
+ * const metadata = await generateCompleteMetadata('chart.png')
+ * console.log(metadata.title) // "Global Health Spending Comparison"
+ * console.log(metadata.twitterText) // "Did you know? Military spending..."
+ * console.log(metadata.qualityScore) // 4
+ * ```
+ */
+export async function generateCompleteMetadata(
+  filepath: string
+): Promise<CompleteMetadataResult> {
+  const imageBuffer = await fs.readFile(filepath)
+  const base64Image = imageBuffer.toString('base64')
+  const mimeType = getMimeType(filepath)
+
+  const response = await generateGeminiVisionContent(
+    ANALYSIS_PROMPTS.COMPLETE_METADATA,
+    base64Image,
+    mimeType
+  )
+
+  try {
+    const metadata = extractJsonFromResponse(response, 'complete metadata') as CompleteMetadataResult
+
+    const result: CompleteMetadataResult = {}
+
+    // Core metadata
+    if (metadata.title) result.title = metadata.title
+    if (metadata.description) result.description = metadata.description
+    if (metadata.keywords?.length) result.keywords = metadata.keywords
+    if (metadata.transcript && metadata.transcript !== '[NO TEXT]') {
+      result.transcript = metadata.transcript
+    }
+
+    // Quality assessment
+    if (metadata.qualityScore) result.qualityScore = metadata.qualityScore
+    if (metadata.qualityIssues?.length) result.qualityIssues = metadata.qualityIssues
+    if (metadata.standaloneScore) result.standaloneScore = metadata.standaloneScore
+
+    // Social media
+    if (typeof metadata.canShareStandalone === 'boolean') {
+      result.canShareStandalone = metadata.canShareStandalone
+    }
+    if (metadata.socialCaption) result.socialCaption = metadata.socialCaption
+    if (metadata.twitterText) result.twitterText = metadata.twitterText
+    if (metadata.linkedInText) result.linkedInText = metadata.linkedInText
+    if (metadata.targetPlatforms?.length) result.targetPlatforms = metadata.targetPlatforms
+
+    // Presentations
+    if (metadata.speakerNotes) result.speakerNotes = metadata.speakerNotes
+    if (metadata.talkingPoints?.length) result.talkingPoints = metadata.talkingPoints
+    if (metadata.audienceLevel) result.audienceLevel = metadata.audienceLevel
+
+    // Accessibility & Tone
+    if (metadata.altText) result.altText = metadata.altText
+    if (metadata.emotionalTone) result.emotionalTone = metadata.emotionalTone
+    if (metadata.callToAction) result.callToAction = metadata.callToAction
+
+    // Data Integrity
+    if (metadata.dataFreshness) result.dataFreshness = metadata.dataFreshness
+    if (metadata.dataSources?.length) result.dataSources = metadata.dataSources
+    if (metadata.factCheckNotes) result.factCheckNotes = metadata.factCheckNotes
+
+    // Prompt Leakage Detection
+    if (typeof metadata.promptLeakageDetected === 'boolean') {
+      result.promptLeakageDetected = metadata.promptLeakageDetected
+    }
+    if (metadata.promptLeakageText?.length) {
+      result.promptLeakageText = metadata.promptLeakageText
+    }
+    if (metadata.promptLeakageRepairPrompt) {
+      result.promptLeakageRepairPrompt = metadata.promptLeakageRepairPrompt
+    }
+
+    return result
+  } catch {
+    // Fallback: couldn't parse JSON
     return {}
   }
 }

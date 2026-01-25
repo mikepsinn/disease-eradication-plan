@@ -15,7 +15,7 @@ import * as fs from 'fs/promises';
 import * as fsSync from 'fs';
 import * as path from 'path';
 import { glob } from 'glob';
-import { bulkReplaceInFiles, getProjectRoot } from './lib/file-utils';
+import { bulkReplaceInFiles, getProjectRoot } from '../lib/file-utils';
 
 interface MismatchedImage {
   path: string;
