@@ -527,7 +527,7 @@ $$
 S_{\text{experiment}} = w_{\text{method}} \times (1 - v_{\text{violations}})
 $$
 
-Where $w_{\text{method}}$ is the base method weight (see @tbl-method-weights) and $v_{\text{violations}} \in [0, 1]$ is the proportion of validity checks failed (parallel trends, pre-treatment fit, placebo tests).
+Where $w_{\text{method}}$ is the base method weight and $v_{\text{violations}} \in [0, 1]$ is the proportion of validity checks failed (parallel trends, pre-treatment fit, placebo tests).
 
 #### Plausibility (Mechanistic)
 
