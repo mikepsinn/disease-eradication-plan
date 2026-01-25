@@ -54,6 +54,47 @@ export interface ImageContentMetadata {
 }
 
 /**
+ * Enrichment metadata from AI analysis
+ */
+export interface ImageEnrichmentMetadata {
+  // Quality
+  qualityScore?: number
+  qualityIssues?: string[]
+  standaloneScore?: number
+
+  // Social Media
+  canShareStandalone?: boolean
+  socialCaption?: string
+  twitterText?: string
+  linkedInText?: string
+  targetPlatforms?: string[]
+
+  // Presentations
+  speakerNotes?: string
+  talkingPoints?: string[]
+  audienceLevel?: string
+
+  // Accessibility
+  altText?: string
+  emotionalTone?: string
+  callToAction?: string
+
+  // Data Integrity
+  dataFreshness?: string
+  dataSources?: string[]
+  factCheckNotes?: string
+
+  // Prompt Leakage
+  promptLeakageDetected?: boolean
+  promptLeakageText?: string[]
+  promptLeakageRepairPrompt?: string
+
+  // Timestamps
+  metadataEnrichedAt?: string
+  metadataCreatedAt?: string
+}
+
+/**
  * Author and copyright information
  */
 export interface ImageAuthorMetadata {
@@ -100,6 +141,7 @@ export interface ImageClassificationMetadata {
 export interface ImageMetadata
   extends ImageFileInfo,
     ImageContentMetadata,
+    ImageEnrichmentMetadata,
     ImageAuthorMetadata,
     ImageClassificationMetadata {
   /** Flag indicating if image has been analyzed */

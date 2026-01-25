@@ -1,6 +1,6 @@
 {
   "totalImages": 1087,
-  "totalSizeBytes": 713622479,
+  "totalSizeBytes": 713626055,
   "totalSize": "680.6 MB",
   "images": [
     {
@@ -3671,15 +3671,62 @@
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 222055,
-      "size": "216.9 KB",
+      "sizeBytes": 225631,
+      "size": "220.3 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-24T15:06:21.660Z",
+      "modified": "2026-01-25T18:43:03.655Z",
       "imageType": "other",
-      "style": "black and white academic"
+      "style": "black and white academic",
+      "title": "Comparison Of Targeted Medical Treatments For Precision Medicine",
+      "description": "A vintage-style infographic comparing two medical treatments for a specific demographic: women over 50 with 'Genetic Marker X'. Treatment A is presented as the superior, targeted option with 92% effectiveness, while Treatment B is a generic secondary option with lower effectiveness and more side effects.",
+      "keywords": [
+        "personalized medicine",
+        "precision medicine",
+        "genetic targeting",
+        "medical research",
+        "War on Disease",
+        "healthcare innovation",
+        "clinical outcomes",
+        "biotechnology"
+      ],
+      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X. RANK 1 TREATMENT A. GENETIC MARKER X TARGETED. EFFECTIVENESS 92%. SIDE EFFECTS: LOW. OPTIMAL OUTCOME. RANK 2 TREATMENT B. EFFECTIVENESS 65%. SIDE EFFECTS: MODERATE. SECONDARY OPTION. SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV. WarOnDisease.org",
+      "qualityScore": 5,
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "Imagine a world where medical research receives the same priority as defense. Precision medicine can identify the optimal treatment for your unique genetic profile, leading to better outcomes and fewer side effects. #WarOnDisease #PrecisionMedicine #MedicalInnovation",
+      "twitterText": "Targeted treatments = higher effectiveness + fewer side effects. This is the future of medicine we could fund by redirecting just 1% of military spending. #WarOnDisease #HealthTech #1PercentTreaty",
+      "linkedInText": "Precision medicine is transforming how we approach patient care. By analyzing genetic markers, we can move from 'one-size-fits-all' to 'optimal outcomes' for specific demographics. This visualization shows the power of targeted research. #HealthcareInnovation #PrecisionMedicine #PublicHealth",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "presentation"
+      ],
+      "speakerNotes": "This slide illustrates the tangible benefits of precision medicine. By filtering for specific genetic markers in women over 50, we can see a clear distinction between a targeted 'Optimal Outcome' and a standard 'Secondary Option'. Note the significant 27% gap in effectiveness and the reduction in side effects when the treatment is genetically aligned.",
+      "talkingPoints": [
+        "Difference between targeted Treatment A (92% effective) and generic Treatment B (65% effective)",
+        "The role of genetic markers in reducing adverse side effects",
+        "How increased funding for medical research can make these 'Optimal Outcomes' the standard of care"
+      ],
+      "audienceLevel": "general",
+      "altText": "A split-screen vintage-style medical illustration comparing two treatments for women over 50 with Genetic Marker X. Treatment A (Rank 1) is 92% effective with low side effects and is labeled 'Optimal Outcome'. Treatment B (Rank 2) is 65% effective with moderate side effects and labeled 'Secondary Option'.",
+      "emotionalTone": "hopeful",
+      "callToAction": "Learn more at WarOnDisease.org",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "WarOnDisease.org"
+      ],
+      "factCheckNotes": "The data presented is an illustrative comparison used to explain the concepts of the 1% Treaty initiative and precision medicine, rather than a report of a specific real-world clinical trial.",
+      "promptLeakageDetected": true,
+      "promptLeakageText": [
+        "SCIENTIFIC ILLUSTRATION"
+      ],
+      "promptLeakageRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' from the bottom center decorative border.",
+      "metadataEnrichedAt": "2026-01-25T18:43:02.953Z",
+      "metadataCreatedAt": "2026-01-25T18:43:03.255Z"
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.jpg",
@@ -3691,7 +3738,7 @@
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-24T02:05:39.456Z",
+      "modified": "2026-01-25T18:38:42.711Z",
       "imageType": "other",
       "style": "black and white academic"
     },
@@ -3937,10 +3984,6 @@
       "extension": "svg",
       "sizeBytes": 533443,
       "size": "520.9 KB",
-      "width": 1010,
-      "height": 787,
-      "format": "svg",
-      "aspectRatio": "4:3",
       "modified": "2025-12-18T18:42:07.591Z",
       "imageType": "other"
     },
@@ -3982,7 +4025,6 @@
       "aspectRatio": "20:17",
       "modified": "2026-01-24T18:53:59.304Z",
       "imageType": "other",
-      "title": "Bill Public Support Vs Chance Of Adoption True Democracy",
       "description": "This image is a graph illustrating the concept of ideal democratic representation. The x-axis measures \"Public Support for Legislation\" from 0% to 100%, while the y-axis represents the \"Chance of Passing Into Law\" from 0% to 100% Likelihood. A diagonal line labeled \"IDEAL REPRESENTATION\" depicts a direct, proportional relationship, reinforced by a text box stating, \"In a real democracy, the more support a bill has, the more likely it is to become law.\"",
       "keywords": [
         "democracy",
@@ -3995,7 +4037,20 @@
         "policy",
         "civic engagement",
         "political will"
-      ]
+      ],
+      "chapters": [
+        "unrepresentative-democracy.qmd",
+        "wishocracy.qmd",
+        "global-referendum.qmd",
+        "1-percent-treaty.qmd",
+        "roadmap.qmd",
+        "legislation-package.qmd",
+        "futures.qmd\nPRIMARY_USE: unrepresentative-democracy.qmd",
+        "wishocracy.qmd"
+      ],
+      "source": "",
+      "ai-analyzed": true,
+      "title": "Bill Public Support Vs Chance Of Adoption True Democracy"
     },
     {
       "path": "assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png",
@@ -4038,7 +4093,10 @@
       "modified": "2025-12-18T18:42:07.630Z",
       "imageType": "other",
       "description": "Error during analysis",
-      "keywords": []
+      "keywords": [],
+      "chapters": [],
+      "source": "",
+      "ai-analyzed": true
     },
     {
       "path": "assets/images/black-box-model-animation2.gif",
@@ -4136,7 +4194,6 @@
       "aspectRatio": "572:343",
       "modified": "2026-01-24T18:53:59.307Z",
       "imageType": "other",
-      "title": "Chaplin Great Dictator Thumbnail",
       "description": "The image is a black and white still from Charlie Chaplin's \"The Great Dictator,\" featuring Chaplin in character as Adenoid Hynkel, a parody of Adolf Hitler. He is shown from the chest up, wearing a military-style uniform and a small mustache, looking intently at the viewer with a serious, commanding expression. A blurred architectural dome in the background suggests a setting of power or government, and a YouTube play button partially covers his face.",
       "keywords": [
         "Charlie Chaplin",
@@ -4151,7 +4208,20 @@
         "conflict",
         "global spending",
         "political will"
-      ]
+      ],
+      "chapters": [
+        "cost-of-war.qmd",
+        "unrepresentative-democracy.qmd",
+        "the-119-trillion-death-toilet.qmd",
+        "1-percent-treaty.qmd",
+        "war-on-disease.qmd",
+        "historical-precedents.qmd",
+        "global-referendum.qmd\nPRIMARY_USE: cost-of-war.qmd",
+        "the-119-trillion-death-toilet.qmd"
+      ],
+      "source": "",
+      "ai-analyzed": true,
+      "title": "Chaplin Great Dictator Thumbnail"
     },
     {
       "path": "assets/images/chemicals-in-our-diet.png",
@@ -7350,10 +7420,6 @@
       "extension": "svg",
       "sizeBytes": 30422,
       "size": "29.7 KB",
-      "width": 1200,
-      "height": 630,
-      "format": "svg",
-      "aspectRatio": "40:21",
       "modified": "2025-12-18T18:42:08.153Z",
       "imageType": "other"
     },
@@ -8218,10 +8284,6 @@
       "extension": "svg",
       "sizeBytes": 1229,
       "size": "1.2 KB",
-      "width": 160,
-      "height": 196,
-      "format": "svg",
-      "aspectRatio": "40:49",
       "modified": "2025-12-18T18:42:08.258Z",
       "imageType": "other"
     },
@@ -8617,10 +8679,6 @@
       "extension": "svg",
       "sizeBytes": 269918,
       "size": "263.6 KB",
-      "width": 1280,
-      "height": 720,
-      "format": "svg",
-      "aspectRatio": "16:9",
       "modified": "2025-12-18T18:42:08.274Z",
       "imageType": "other"
     },
@@ -8747,10 +8805,6 @@
       "extension": "svg",
       "sizeBytes": 511192,
       "size": "499.2 KB",
-      "width": 1493,
-      "height": 19200,
-      "format": "svg",
-      "aspectRatio": "1493:19200",
       "modified": "2025-12-18T18:42:08.281Z",
       "imageType": "chart"
     },
@@ -20624,6 +20678,24 @@
       "aspectRatio": "16:9",
       "modified": "2026-01-25T04:45:04.623Z",
       "imageType": "og",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials\n\n",
+      "transcript": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials, GLOBAL MILITARY SPENDING, TOTAL BUDGET, MILITARY: 99%, 1% REDIRECTION, REDIRECTED FUNDS, PRAGMATIC CLINICAL TRIALS, CLINICAL RESEARCH & DEVELOPMENT, HEALTH IMPACT, BETTER TREATMENTS, IMPROVED PATIENT OUTCOMES, FASTER CURES, DISEASE PREVENTION, INCREASED LIFE EXPECTANCY, GLOBAL HEALTH SECURITY, ECONOMIC IMPACT, COST SAVINGS, LOWER HEALTHCARE EXPENDITURE, JOB CREATION IN SCIENCE, INCREASED PRODUCTIVITY, STIMULATED INNOVATION, SUSTAINABLE GROWTH, SOCIETAL WELL-BEING & GLOBAL STABILITY, SCIENTIA POTENTIA EST, SALUS POPULI",
+      "inferredPrompt": "A vintage woodcut-style infographic on aged parchment paper titled 'The 1% Treaty'. The left side features a pile of military equipment (tank, fighter jet, missiles, naval ship) and a large pie chart labeled 'GLOBAL MILITARY SPENDING' showing 'MILITARY: 99%'. A hand holding a scalpel carves out a small slice labeled '1% REDIRECTION'. Flowing lines representing 'REDIRECTED FUNDS' lead to the right side labeled 'PRAGMATIC CLINICAL TRIALS', showing lab equipment and gears. The flow branches into 'HEALTH IMPACT' and 'ECONOMIC IMPACT'. Under Health Impact are icons and labels for 'Better Treatments', 'Faster Cures', and 'Increased Life Expectancy'. Under Economic Impact are icons for 'Cost Savings', 'Job Creation', and 'Stimulated Innovation'. At the bottom center, a globe is surrounded by a laurel wreath and a ribbon labeled 'SOCIETAL WELL-BEING & GLOBAL STABILITY'. Decorative borders include banners with the Latin phrases 'SCIENTIA POTENTIA EST' and 'SALUS POPULI'. The style is highly detailed black ink engraving.",
+      "imageIssues": [
+        "small text in the center sections is slightly blurry",
+        "repetitive use of decorative Latin phrases in all four corners",
+        "the 'REDIRECTED FUNDS' text is slightly warped along the curved flow line",
+        "layout is somewhat cluttered with many small icons and labels",
+        "some line work on the military assets is overly dense, reducing clarity"
+      ],
+      "promptImprovements": [
+        "specify 'clean vector-like typography' to improve readability of small labels",
+        "request 'increased whitespace' between the health and economic impact sections for a cleaner look",
+        "add 'avoid repetitive text in decorative elements' to ensure variety in banners",
+        "specify 'high contrast between ink and parchment' to make the flow lines more distinct",
+        "request 'orthogonal layout' for the flow chart sections to prevent text warping"
+      ],
+      "metadataCreatedAt": "2026-01-25T04:45:04.151Z",
       "title": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
       "keywords": [
         "war-on-disease",
@@ -20646,23 +20718,6 @@
         "wishocracy",
         "blockchain-governance",
         "impact-investing"
-      ],
-      "transcript": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials, GLOBAL MILITARY SPENDING, TOTAL BUDGET, MILITARY: 99%, 1% REDIRECTION, REDIRECTED FUNDS, PRAGMATIC CLINICAL TRIALS, CLINICAL RESEARCH & DEVELOPMENT, HEALTH IMPACT, BETTER TREATMENTS, IMPROVED PATIENT OUTCOMES, FASTER CURES, DISEASE PREVENTION, INCREASED LIFE EXPECTANCY, GLOBAL HEALTH SECURITY, ECONOMIC IMPACT, COST SAVINGS, LOWER HEALTHCARE EXPENDITURE, JOB CREATION IN SCIENCE, INCREASED PRODUCTIVITY, STIMULATED INNOVATION, SUSTAINABLE GROWTH, SOCIETAL WELL-BEING & GLOBAL STABILITY, SCIENTIA POTENTIA EST, SALUS POPULI",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials\n\n",
-      "inferredPrompt": "A vintage woodcut-style infographic on aged parchment paper titled 'The 1% Treaty'. The left side features a pile of military equipment (tank, fighter jet, missiles, naval ship) and a large pie chart labeled 'GLOBAL MILITARY SPENDING' showing 'MILITARY: 99%'. A hand holding a scalpel carves out a small slice labeled '1% REDIRECTION'. Flowing lines representing 'REDIRECTED FUNDS' lead to the right side labeled 'PRAGMATIC CLINICAL TRIALS', showing lab equipment and gears. The flow branches into 'HEALTH IMPACT' and 'ECONOMIC IMPACT'. Under Health Impact are icons and labels for 'Better Treatments', 'Faster Cures', and 'Increased Life Expectancy'. Under Economic Impact are icons for 'Cost Savings', 'Job Creation', and 'Stimulated Innovation'. At the bottom center, a globe is surrounded by a laurel wreath and a ribbon labeled 'SOCIETAL WELL-BEING & GLOBAL STABILITY'. Decorative borders include banners with the Latin phrases 'SCIENTIA POTENTIA EST' and 'SALUS POPULI'. The style is highly detailed black ink engraving.",
-      "imageIssues": [
-        "small text in the center sections is slightly blurry",
-        "repetitive use of decorative Latin phrases in all four corners",
-        "the 'REDIRECTED FUNDS' text is slightly warped along the curved flow line",
-        "layout is somewhat cluttered with many small icons and labels",
-        "some line work on the military assets is overly dense, reducing clarity"
-      ],
-      "promptImprovements": [
-        "specify 'clean vector-like typography' to improve readability of small labels",
-        "request 'increased whitespace' between the health and economic impact sections for a cleaner look",
-        "add 'avoid repetitive text in decorative elements' to ensure variety in banners",
-        "specify 'high contrast between ink and parchment' to make the flow lines more distinct",
-        "request 'orthogonal layout' for the flow chart sections to prevent text warping"
       ]
     },
     {
@@ -20755,6 +20810,24 @@
       "aspectRatio": "16:9",
       "modified": "2026-01-25T04:46:01.532Z",
       "imageType": "og",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024\n\nThe 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).",
+      "transcript": "THE INVISIBLE GRAVEYARD: QUANTIFYING THE MORTALITY COST OF FDA EFFICACY LAG, 1962-2024; A Scientific Illustration of Regulatory Impact and Lost Lives; 1962 EFFICACY REQUIREMENT; 1962; 1980; 2000; 2010; 2024; 8.2 YEARS EFFICACY LAG AFTER SAFETY IS PROVEN.; (95% CI: 4.85 YEARS-11.5 YEARS); EARLY DRUG ACCESS; SAFETY PROVEN; EFFICACY PROVEN; DELAYED APPROVAL; HISTORICAL DEATHS DURING ACTUAL DRUG APPROVAL DELAYS (1962-2024); 102M DEATHS; (R5% CI: 36.RM DEATHS-214M DEATHS); CUMULATIVE MORTALITY; YEARS OF DELAY; FUTURE DEATHS FROM PUSHING DISEASE ERADICATION TIMELINE BACK; ORIGINAL ERADICATION TIMELINE; ERADICATION; DELAYED ERADICATION TIMELINE; 416M DEATHS; (95% CI: 225M DEATHS-630M DEATHS); TYPE II ERRORS vs. TYPE I BENEFITS RATIO; LIVES LOST; SUFFERING; DISEASE BURDEN; 3.07k; TYPE II ERRORS (MISSED BENEFITS); 3.07k:1 (95% CI: 2.88k:1-3.12k:1); ADVERSE EVENTS; SIDE EFFECTS; TYPE I BENEFITS (AVOIDED RISKS); 1; SI 203A",
+      "inferredPrompt": "A highly detailed vintage scientific infographic in a woodcut engraving style on aged parchment paper. The main title at the top is 'THE INVISIBLE GRAVEYARD: QUANTIFYING THE MORTALITY COST OF FDA EFFICACY LAG, 1962-2024'. The composition features an ornate border with caduceus and hourglass motifs. The top section shows a timeline from 1962 to 2024 with a large caliper measuring an '8.2 year' gap. The middle section contains icons for 'SAFETY PROVEN' (a heart in a shield) and 'EFFICACY PROVEN' (a molecule and document) next to a waiting room of elderly patients. The bottom is divided into three panels: Left shows a graveyard and a mortality graph with the text '102M DEATHS'; Center shows a hand holding a globe and virus particles transitioning to a tree vs a graveyard with the text '416M DEATHS'; Right shows a balance scale heavily weighted on one side with the label '3.07k' against '1' on the other, titled 'TYPE II ERRORS vs. TYPE I BENEFITS RATIO'. Monochromatic black ink on cream background with professional typography.",
+      "imageIssues": [
+        "text contains spelling/formatting errors like '(R5% CI' instead of '95% CI'",
+        "data point '36.RM' is a hallucinated character",
+        "some small text inside the document icons is illegible gibberish",
+        "the timeline spacing between 1980, 2000, 2010, and 2024 is not mathematically proportional",
+        "text in the bottom right box '3.07k:1' is slightly crowded"
+      ],
+      "promptImprovements": [
+        "specify 'correct spelling for all statistical notation, specifically 95% CI'",
+        "add 'mathematically accurate timeline spacing' to the composition requirements",
+        "request 'high-resolution vector-style typography' to ensure small labels are sharp",
+        "use 'consistent cross-hatching shading' to unify the three different bottom panels",
+        "explicitly list '102M' and '416M' as key text elements to ensure they aren't misspelled"
+      ],
+      "metadataCreatedAt": "2026-01-25T04:46:01.054Z",
       "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
       "description": "The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).",
       "keywords": [
@@ -20770,23 +20843,6 @@
         "efficacy-requirements",
         "peltzman",
         "regulatory-economics"
-      ],
-      "transcript": "THE INVISIBLE GRAVEYARD: QUANTIFYING THE MORTALITY COST OF FDA EFFICACY LAG, 1962-2024; A Scientific Illustration of Regulatory Impact and Lost Lives; 1962 EFFICACY REQUIREMENT; 1962; 1980; 2000; 2010; 2024; 8.2 YEARS EFFICACY LAG AFTER SAFETY IS PROVEN.; (95% CI: 4.85 YEARS-11.5 YEARS); EARLY DRUG ACCESS; SAFETY PROVEN; EFFICACY PROVEN; DELAYED APPROVAL; HISTORICAL DEATHS DURING ACTUAL DRUG APPROVAL DELAYS (1962-2024); 102M DEATHS; (R5% CI: 36.RM DEATHS-214M DEATHS); CUMULATIVE MORTALITY; YEARS OF DELAY; FUTURE DEATHS FROM PUSHING DISEASE ERADICATION TIMELINE BACK; ORIGINAL ERADICATION TIMELINE; ERADICATION; DELAYED ERADICATION TIMELINE; 416M DEATHS; (95% CI: 225M DEATHS-630M DEATHS); TYPE II ERRORS vs. TYPE I BENEFITS RATIO; LIVES LOST; SUFFERING; DISEASE BURDEN; 3.07k; TYPE II ERRORS (MISSED BENEFITS); 3.07k:1 (95% CI: 2.88k:1-3.12k:1); ADVERSE EVENTS; SIDE EFFECTS; TYPE I BENEFITS (AVOIDED RISKS); 1; SI 203A",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024\n\nThe 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).",
-      "inferredPrompt": "A highly detailed vintage scientific infographic in a woodcut engraving style on aged parchment paper. The main title at the top is 'THE INVISIBLE GRAVEYARD: QUANTIFYING THE MORTALITY COST OF FDA EFFICACY LAG, 1962-2024'. The composition features an ornate border with caduceus and hourglass motifs. The top section shows a timeline from 1962 to 2024 with a large caliper measuring an '8.2 year' gap. The middle section contains icons for 'SAFETY PROVEN' (a heart in a shield) and 'EFFICACY PROVEN' (a molecule and document) next to a waiting room of elderly patients. The bottom is divided into three panels: Left shows a graveyard and a mortality graph with the text '102M DEATHS'; Center shows a hand holding a globe and virus particles transitioning to a tree vs a graveyard with the text '416M DEATHS'; Right shows a balance scale heavily weighted on one side with the label '3.07k' against '1' on the other, titled 'TYPE II ERRORS vs. TYPE I BENEFITS RATIO'. Monochromatic black ink on cream background with professional typography.",
-      "imageIssues": [
-        "text contains spelling/formatting errors like '(R5% CI' instead of '95% CI'",
-        "data point '36.RM' is a hallucinated character",
-        "some small text inside the document icons is illegible gibberish",
-        "the timeline spacing between 1980, 2000, 2010, and 2024 is not mathematically proportional",
-        "text in the bottom right box '3.07k:1' is slightly crowded"
-      ],
-      "promptImprovements": [
-        "specify 'correct spelling for all statistical notation, specifically 95% CI'",
-        "add 'mathematically accurate timeline spacing' to the composition requirements",
-        "request 'high-resolution vector-style typography' to ensure small labels are sharp",
-        "use 'consistent cross-hatching shading' to unify the three different bottom panels",
-        "explicitly list '102M' and '416M' as key text elements to ensure they aren't misspelled"
       ]
     },
     {
@@ -20801,6 +20857,24 @@
       "aspectRatio": "16:9",
       "modified": "2026-01-25T04:46:49.702Z",
       "imageType": "og",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nHow to End War and Disease\n\n",
+      "transcript": "PATHWAYS TO A GLOBAL FUTURE: ENDING WAR & DISEASE, WAR TERMINATION, DIPLOMACY, DIPLOMACY, COOPERATION, RESOURCE SHARING, CONFLICT RESOLUTION, GLOBAL COLLABORATION, DISEASE ERADICATION, VACCINES, PUBLIC HEALTH, RESEARCH, MEDICAL ADVANCEMENT, Fig. 1: INTEGRATED STRATEGIES FOR HUMAN FLOURISHING",
+      "inferredPrompt": "A vintage-style black and white infographic on an off-white, textured parchment background. The main title at the top is 'PATHWAYS TO A GLOBAL FUTURE: ENDING WAR & DISEASE' in a bold sans-serif font. The layout is symmetrical, divided into two halves by a central archway. The left half is titled 'WAR TERMINATION' and features a broken sword, a series of interlocking gears labeled 'DIPLOMACY', 'COOPERATION', and 'RESOURCE SHARING', a military tank, and a dove with an olive branch over a globe; a banner at the bottom reads 'CONFLICT RESOLUTION'. The central arch contains a handshake icon and the text 'GLOBAL COLLABORATION'. The right half is titled 'DISEASE ERADICATION' and shows circles containing illustrations of a virus and bacteria, with arrows pointing to a syringe labeled 'VACCINES', a beaker labeled 'PUBLIC HEALTH', and a microscope labeled 'RESEARCH'; it ends with a human silhouette standing behind a shield, with a banner at the bottom reading 'MEDICAL ADVANCEMENT'. At the very bottom, a caption reads 'Fig. 1: INTEGRATED STRATEGIES FOR HUMAN FLOURISHING'. The style is a clean, hand-drawn woodcut or etching with fine hatching for shading.",
+      "imageIssues": [
+        "The label 'DIPLOMACY' is repeated unnecessarily within the gears section",
+        "The text 'COOPERATION' is slightly overlapping the gear outline",
+        "The line work on the tank is a bit cluttered and messy compared to other elements",
+        "The human figure's muscular anatomy appears slightly distorted/unnatural",
+        "Minor alignment issues with the banners at the bottom"
+      ],
+      "promptImprovements": [
+        "Specify unique names for every gear label to avoid text repetition",
+        "Request 'perfectly centered typography' for the banners to ensure symmetry",
+        "Add 'clean vector-style line art' to prevent clutter in dense mechanical drawings like the tank",
+        "Specify a specific font style like 'bold grotesque sans-serif' for headers to ensure consistency",
+        "Request 'anatomically correct human proportions' for the figure on the right"
+      ],
+      "metadataCreatedAt": "2026-01-25T04:46:49.219Z",
       "title": "How to End War and Disease",
       "keywords": [
         "war-on-disease",
@@ -20823,23 +20897,6 @@
         "wishocracy",
         "blockchain-governance",
         "impact-investing"
-      ],
-      "transcript": "PATHWAYS TO A GLOBAL FUTURE: ENDING WAR & DISEASE, WAR TERMINATION, DIPLOMACY, DIPLOMACY, COOPERATION, RESOURCE SHARING, CONFLICT RESOLUTION, GLOBAL COLLABORATION, DISEASE ERADICATION, VACCINES, PUBLIC HEALTH, RESEARCH, MEDICAL ADVANCEMENT, Fig. 1: INTEGRATED STRATEGIES FOR HUMAN FLOURISHING",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nHow to End War and Disease\n\n",
-      "inferredPrompt": "A vintage-style black and white infographic on an off-white, textured parchment background. The main title at the top is 'PATHWAYS TO A GLOBAL FUTURE: ENDING WAR & DISEASE' in a bold sans-serif font. The layout is symmetrical, divided into two halves by a central archway. The left half is titled 'WAR TERMINATION' and features a broken sword, a series of interlocking gears labeled 'DIPLOMACY', 'COOPERATION', and 'RESOURCE SHARING', a military tank, and a dove with an olive branch over a globe; a banner at the bottom reads 'CONFLICT RESOLUTION'. The central arch contains a handshake icon and the text 'GLOBAL COLLABORATION'. The right half is titled 'DISEASE ERADICATION' and shows circles containing illustrations of a virus and bacteria, with arrows pointing to a syringe labeled 'VACCINES', a beaker labeled 'PUBLIC HEALTH', and a microscope labeled 'RESEARCH'; it ends with a human silhouette standing behind a shield, with a banner at the bottom reading 'MEDICAL ADVANCEMENT'. At the very bottom, a caption reads 'Fig. 1: INTEGRATED STRATEGIES FOR HUMAN FLOURISHING'. The style is a clean, hand-drawn woodcut or etching with fine hatching for shading.",
-      "imageIssues": [
-        "The label 'DIPLOMACY' is repeated unnecessarily within the gears section",
-        "The text 'COOPERATION' is slightly overlapping the gear outline",
-        "The line work on the tank is a bit cluttered and messy compared to other elements",
-        "The human figure's muscular anatomy appears slightly distorted/unnatural",
-        "Minor alignment issues with the banners at the bottom"
-      ],
-      "promptImprovements": [
-        "Specify unique names for every gear label to avoid text repetition",
-        "Request 'perfectly centered typography' for the banners to ensure symmetry",
-        "Add 'clean vector-style line art' to prevent clutter in dense mechanical drawings like the tank",
-        "Specify a specific font style like 'bold grotesque sans-serif' for headers to ensure consistency",
-        "Request 'anatomically correct human proportions' for the figure on the right"
       ]
     },
     {

@@ -525,6 +525,39 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         else:
             print("[*] No links needed rewriting", flush=True)
 
+    # For manual config: rewrite paper-specific parameter links to main parameters file
+    # This fixes validation errors where paper-specific param files aren't in manual's chapter list
+    if config_name == "manual":
+        param_links_rewritten = 0
+        param_pattern = re.compile(
+            r'\[([^\]]+)\]\(/knowledge/appendix/parameters-and-calculations-[^)]+\.qmd\)'
+        )
+
+        for file_path_str in files_to_process:
+            qmd_file = build_temp / file_path_str
+            if not qmd_file.exists():
+                continue
+
+            with open(qmd_file, encoding="utf-8") as f:
+                content = f.read()
+
+            original = content
+
+            def rewrite_param_link(match: re.Match[str]) -> str:
+                nonlocal param_links_rewritten
+                text = match.group(1)
+                param_links_rewritten += 1
+                return f'[{text}](/knowledge/appendix/parameters-and-calculations.qmd)'
+
+            content = param_pattern.sub(rewrite_param_link, content)
+
+            if content != original:
+                with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
+                    f.write(content)
+
+        if param_links_rewritten > 0 and verbose:
+            print(f"[OK] Rewrote {param_links_rewritten} paper-specific parameter links for manual build", flush=True)
+
     return build_temp
 
 

@@ -81,26 +81,15 @@ function getStyle(filename: string): string | undefined {
 async function getExiftoolMetadata(filePath: string): Promise<Partial<ImageMetadata>> {
   const exifData = await readImageMetadata(filePath);
   if (!exifData) return {};
-
-  const metadata: Partial<ImageMetadata> = {};
-
-  if (exifData.title) metadata.title = exifData.title;
-  if (exifData.description) metadata.description = exifData.description;
-  if (exifData.keywords) metadata.keywords = exifData.keywords;
-  if (exifData.transcript) metadata.transcript = exifData.transcript;
-  if (exifData.generationPrompt) metadata.generationPrompt = exifData.generationPrompt;
-  if (exifData.inferredPrompt) metadata.inferredPrompt = exifData.inferredPrompt;
-  if (exifData.imageIssues) metadata.imageIssues = exifData.imageIssues;
-  if (exifData.promptImprovements) metadata.promptImprovements = exifData.promptImprovements;
-
-  return metadata;
+  // Return all fields from exifData (includes enrichment fields like twitterText, promptLeakage, etc.)
+  return exifData as Partial<ImageMetadata>;
 }
 
 /**
  * Process a single image file
  */
-// Formats sharp can process (excludes ico, svg, etc.)
-const SHARP_SUPPORTED = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'tiff', 'avif'];
+// Formats sharp can process (excludes ico)
+const SHARP_SUPPORTED = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg'];
 
 async function processImage(
   filePath: string,
