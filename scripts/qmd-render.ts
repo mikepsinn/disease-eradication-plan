@@ -10,7 +10,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
-import { getCleanedContentForLLM } from './lib/file-utils.js';
+import { getCleanedContentForLLM } from './lib/file-utils';
 
 // Load environment variables
 dotenv.config();

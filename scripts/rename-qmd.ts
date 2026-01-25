@@ -29,7 +29,7 @@ import * as fsSync from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { glob } from 'glob';
-import { getProjectRoot, stringifyWithFrontmatter, getAllSourceFiles } from './lib/file-utils.js';
+import { getProjectRoot, stringifyWithFrontmatter, getAllSourceFiles } from './lib/file-utils';
 
 const PROJECT_ROOT = getProjectRoot();
 

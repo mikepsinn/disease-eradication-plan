@@ -26,8 +26,8 @@ import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import sharp from 'sharp';
-import { generateAndSaveImages } from '../lib/gemini-images.js';
-import { VisualStyles } from '../lib/image-prompts.js';
+import { generateAndSaveImages } from '../lib/gemini-images';
+import { VisualStyles } from '../lib/image-prompts';
 
 // Load environment variables
 dotenv.config();

@@ -5933,7 +5933,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2020]] },
         'container-title': "JAMA Oncology: Global Cost 2020-2050",
         URL: "https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798",
-        note: "JAMA Oncology: Global Cost 2020-2050 | Nature: $25T Over 30 Years",
+        note: "JAMA Oncology: Global Cost 2020-2050 | Nature: \\$25T Over 30 Years",
   },
   "disease-cost-diabetes-1500b": {
         id: "disease-cost-diabetes-1500b",
@@ -6228,7 +6228,7 @@ export const citations: Record<string, Citation> = {
   "global-government-clinical-trial-spending-estimate": {
         id: "global-government-clinical-trial-spending-estimate",
         type: "article-journal",
-        title: "Global government spending on interventional clinical trials: ~$3-6 billion/year",
+        title: "Global government spending on interventional clinical trials: ~\\$3-6 billion/year",
         author: [
           {
             literal: "Applied Clinical Trials"
@@ -6373,7 +6373,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2003]] },
         'container-title': "NHGRI",
         URL: "https://www.genome.gov/11006929/2003-release-international-consortium-completes-hgp",
-        note: "NHGRI, International Consortium Completes Human Genome Project | Nobel Prize, The Nobel Prize in Chemistry 2020 | Note: HGP cost ~$2.7B; CRISPR discovered by Doudna & Charpentier in 2012",
+        note: "NHGRI, International Consortium Completes Human Genome Project | Nobel Prize, The Nobel Prize in Chemistry 2020 | Note: HGP cost ~\\$2.7B; CRISPR discovered by Doudna & Charpentier in 2012",
   },
   "icbl-ottawa-treaty": {
         id: "icbl-ottawa-treaty",
@@ -6612,9 +6612,9 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2021]] },
-        'container-title': "Think by Numbers: War Costs $74",
+        'container-title': "Think by Numbers: War Costs \\$74",
         URL: "<https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/>",
-        note: "Think by Numbers: War Costs $74,259/Lifetime | WEF: War Violence Costs $5/Day | PubMed: Economic Value DALYs Violence",
+        note: "Think by Numbers: War Costs \\$74,259/Lifetime | WEF: War Violence Costs \\$5/Day | PubMed: Economic Value DALYs Violence",
   },
   "measles-vaccination-roi": {
         id: "measles-vaccination-roi",
@@ -6683,7 +6683,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2024]] },
         'container-title': "NIH",
         URL: "https://www.nih.gov/about-nih/organization/budget",
-        note: "NIH, 2024, Budget Overview | NIH, Office of Budget | Note: FY2024 budget was $47.1B",
+        note: "NIH, 2024, Budget Overview | NIH, Office of Budget | Note: FY2024 budget was \\$47.1B",
   },
   "nih-clinical-trials-spending-pct-3-3": {
         id: "nih-clinical-trials-spending-pct-3-3",
@@ -6753,7 +6753,7 @@ export const citations: Record<string, Citation> = {
   "opensecrets-lobbying-2024": {
         id: "opensecrets-lobbying-2024",
         type: "webpage",
-        title: "Federal Lobbying Hit Record $4.4 Billion in 2024",
+        title: "Federal Lobbying Hit Record \\$4.4 Billion in 2024",
         author: [
           {
             literal: "OpenSecrets"
@@ -6847,7 +6847,7 @@ export const citations: Record<string, Citation> = {
   "pmc-pragmatic-trial-cost": {
         id: "pmc-pragmatic-trial-cost",
         type: "article-journal",
-        title: "Pragmatic Trial Cost per Patient (Median $97)",
+        title: "Pragmatic Trial Cost per Patient (Median \\$97)",
         author: [
           {
             literal: "PMC"
@@ -7094,7 +7094,7 @@ export const citations: Record<string, Citation> = {
   "standard-medical-research-roi": {
         id: "standard-medical-research-roi",
         type: "article-journal",
-        title: "Standard Medical Research ROI ($20k-$100k/QALY)",
+        title: "Standard Medical Research ROI (\\$20k-\\$100k/QALY)",
         author: [
           {
             literal: "PMC"
@@ -7127,7 +7127,7 @@ export const citations: Record<string, Citation> = {
         ],
         'container-title': "GAO: Sugar Program",
         URL: "https://www.gao.gov/products/gao-24-106144",
-        note: "GAO: Sugar Program | Heritage: US Sugar Program | AEI: $4B Sugar Subsidies",
+        note: "GAO: Sugar Program | Heritage: US Sugar Program | AEI: \\$4B Sugar Subsidies",
   },
   "swiss-military-budget-0-7-pct-gdp": {
         id: "swiss-military-budget-0-7-pct-gdp",
@@ -7158,7 +7158,7 @@ export const citations: Record<string, Citation> = {
   "taxfoundation2024-compliance": {
         id: "taxfoundation2024-compliance",
         type: "article-journal",
-        title: "Tax Compliance Costs the US Economy $546 Billion Annually",
+        title: "Tax Compliance Costs the US Economy \\$546 Billion Annually",
         author: [
           {
             literal: "Tax Foundation"
@@ -7383,7 +7383,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2026]] },
         'container-title': "VA",
         URL: "https://department.va.gov/wp-content/uploads/2025/06/2026-Budget-in-Brief.pdf",
-        note: "VA, FY 2026 Budget Submission | CBO, Veterans' Disability Compensation | American Legion, VA budget tops $400B for 2025",
+        note: "VA, FY 2026 Budget Submission | CBO, Veterans' Disability Compensation | American Legion, VA budget tops \\$400B for 2025",
   },
   "vitamin-a-cost-per-daly": {
         id: "vitamin-a-cost-per-daly",
@@ -7416,7 +7416,7 @@ export const citations: Record<string, Citation> = {
   "who-cost-effectiveness-threshold": {
         id: "who-cost-effectiveness-threshold",
         type: "article-journal",
-        title: "Cost-effectiveness threshold ($50,000/QALY)",
+        title: "Cost-effectiveness threshold (\\$50,000/QALY)",
         author: [
           {
             literal: "PMC"
@@ -7469,7 +7469,7 @@ export const citations: Record<string, Citation> = {
   "worldbank-gdp": {
         id: "worldbank-gdp",
         type: "article-journal",
-        title: "US GDP 2024 ($28.78 trillion)",
+        title: "US GDP 2024 (\\$28.78 trillion)",
         author: [
           {
             family: "World Bank",

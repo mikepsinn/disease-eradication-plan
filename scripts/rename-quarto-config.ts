@@ -25,7 +25,7 @@ import fs from 'fs/promises';
 import * as fsSync from 'fs';
 import path from 'path';
 import { glob } from 'glob';
-import { getProjectRoot } from './lib/file-utils.js';
+import { getProjectRoot } from './lib/file-utils';
 
 const PROJECT_ROOT = getProjectRoot();
 

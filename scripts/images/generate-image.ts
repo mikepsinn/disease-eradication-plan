@@ -31,8 +31,8 @@
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
-import { generateAndSaveImages } from '../lib/gemini-images.js';
-import { VisualStyles } from '../lib/image-prompts.js';
+import { generateAndSaveImages } from '../lib/gemini-images';
+import { VisualStyles } from '../lib/image-prompts';
 
 // Load environment variables
 dotenv.config();

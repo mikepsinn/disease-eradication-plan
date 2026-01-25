@@ -31,8 +31,8 @@ import path from 'path';
 import fs from 'fs/promises';
 import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
-import { generateAndSaveImages, ImageMetadata } from '../lib/gemini-images.js';
-import { generateGeminiFlashContent, generateGeminiProContent } from '../lib/llm.js';
+import { generateAndSaveImages, ImageMetadata } from '../lib/gemini-images';
+import { generateGeminiFlashContent, generateGeminiProContent } from '../lib/llm';
 import {
   getBookFilesForProcessing,
   stringifyWithFrontmatter,
@@ -41,8 +41,8 @@ import {
   getSiteUrl,
   loadQuartoVariables,
   replaceQuartoVariables
-} from '../lib/file-utils.js';
-import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts.js';
+} from '../lib/file-utils';
+import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts';
 
 // Load environment variables
 dotenv.config();

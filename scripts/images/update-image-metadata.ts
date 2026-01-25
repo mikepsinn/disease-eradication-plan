@@ -19,7 +19,7 @@ import {
   extractKeywordsFromText,
   ImageMetadata,
   DEFAULT_METADATA,
-} from '../lib/gemini-images.js'
+} from '../lib/gemini-images'
 
 // Configuration
 const ASSETS_DIR = 'assets'

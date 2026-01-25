@@ -17,8 +17,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 import yaml from 'js-yaml';
-import { getCleanedContentForLLM } from './lib/file-utils.js';
-import { generateGeminiFlashContent } from './lib/llm.js';
+import { getCleanedContentForLLM } from './lib/file-utils';
+import { generateGeminiFlashContent } from './lib/llm';
 
 interface AnalysisResult {
   filePath: string;
