@@ -84,10 +84,10 @@ export interface ImageEnrichmentMetadata {
   dataSources?: string[]
   factCheckNotes?: string
 
-  // Prompt Leakage
-  promptLeakageDetected?: boolean
-  promptLeakageText?: string[]
-  promptLeakageRepairPrompt?: string
+  // Image Problems (leakage, figure numbers, text issues)
+  imageProblemsDetected?: boolean
+  imageProblems?: string[]
+  imageProblemsRepairPrompt?: string
 
   // Timestamps
   metadataEnrichedAt?: string

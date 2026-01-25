@@ -142,11 +142,11 @@ function formatMetadataPreview(metadata: CompleteMetadataResult): string[] {
     lines.push(`  Data: ${metadata.dataFreshness}`)
   }
 
-  // Prompt Leakage (highlight if found!)
-  if (metadata.promptLeakageDetected) {
-    lines.push(`  [WARNING] PROMPT LEAKAGE: ${metadata.promptLeakageText?.join(', ')}`)
-    if (metadata.promptLeakageRepairPrompt) {
-      lines.push(`  Repair: ${metadata.promptLeakageRepairPrompt}`)
+  // Image Problems (highlight if found!)
+  if (metadata.imageProblemsDetected) {
+    lines.push(`  [WARNING] PROBLEMS: ${metadata.imageProblems?.join(', ')}`)
+    if (metadata.imageProblemsRepairPrompt) {
+      lines.push(`  Repair: ${metadata.imageProblemsRepairPrompt}`)
     }
   }
 
@@ -312,14 +312,14 @@ async function main() {
     console.log(`  Shareable standalone: ${shareable}/${results.length} images`)
   }
 
-  // Prompt leakage summary
-  const leakageImages = results.filter(r => r.generated.promptLeakageDetected)
-  if (leakageImages.length > 0) {
-    console.log(`\n[!] PROMPT LEAKAGE DETECTED in ${leakageImages.length} images:`)
-    for (const img of leakageImages) {
-      console.log(`  - ${img.path}: ${img.generated.promptLeakageText?.join(', ')}`)
+  // Image problems summary
+  const problemImages = results.filter(r => r.generated.imageProblemsDetected)
+  if (problemImages.length > 0) {
+    console.log(`\n[!] PROBLEMS DETECTED in ${problemImages.length} images:`)
+    for (const img of problemImages) {
+      console.log(`  - ${img.path}: ${img.generated.imageProblems?.join(', ')}`)
     }
-    console.log(`\nRun fix-image-text.ts with the repair prompts to fix these.`)
+    console.log(`\nRun "npm run images:fix" to automatically fix these.`)
   }
 
   if (options.dryRun) {

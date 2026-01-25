@@ -139,16 +139,16 @@ BAD examples (never write like this):
 - "dataSources": Array of data sources if identifiable from the image
 - "factCheckNotes": Any caveats, verification needs, or context required
 
-## Prompt Leakage Detection
-Check if any AI generation prompt text accidentally appears in the image. Common leaks include:
-- Style words: "retro", "academic", "scientific illustration", "visualization", "infographic"
-- Technical terms: "high contrast", "minimalist", "detailed", "professional"
-- Instructions: "diagram showing", "chart of", "illustration of"
-- Figure numbers: "Figure 1", "Figure 2", "Fig. 1" etc. (these should be added by the document system, not embedded in images)
+## Image Problems Detection
+Check for text that shouldn't be in the image:
+- Prompt leakage: "retro", "academic", "scientific illustration", "visualization", "infographic", "high contrast", "minimalist"
+- Figure numbers: "Figure 1", "Figure 2", "Fig. 1" etc. (these should be added by the document system, not embedded)
+- Watermarks or artifacts: "DRAFT", "SAMPLE", database names, volume numbers
+- Blurry or unreadable text that needs fixing
 
-- "promptLeakageDetected": boolean - does visible text contain likely prompt artifacts OR embedded figure numbers?
-- "promptLeakageText": Array of specific leaked text found (e.g., ["scientific illustration", "Figure 1"])
-- "promptLeakageRepairPrompt": If leakage detected, a specific prompt to fix it (e.g., "Remove the text 'Figure 1' from the top of the image")
+- "imageProblemsDetected": boolean - are there any text problems that need fixing?
+- "imageProblems": Array of specific problems found (e.g., ["Figure 1 embedded in image", "text 'SCIENTIFIC DATABASE' visible"])
+- "imageProblemsRepairPrompt": If problems detected, a combined prompt to fix ALL of them (e.g., "Remove 'Figure 1' from top and 'SCIENTIFIC DATABASE' from bottom")
 
 Return ONLY valid JSON, no markdown code blocks.`,
 }
@@ -211,13 +211,13 @@ export interface CompleteMetadataResult {
   /** Fact-check notes or caveats */
   factCheckNotes?: string
 
-  // Prompt Leakage Detection
-  /** Was prompt leakage detected in image text? */
-  promptLeakageDetected?: boolean
-  /** Specific leaked text found */
-  promptLeakageText?: string[]
-  /** Repair prompt to fix the leakage */
-  promptLeakageRepairPrompt?: string
+  // Image Problems Detection
+  /** Were any fixable problems detected? */
+  imageProblemsDetected?: boolean
+  /** Specific problems found */
+  imageProblems?: string[]
+  /** Combined repair prompt to fix all problems */
+  imageProblemsRepairPrompt?: string
 }
 
 /**
@@ -507,15 +507,15 @@ export async function generateCompleteMetadata(
   if (metadata.dataSources?.length) result.dataSources = metadata.dataSources
   if (metadata.factCheckNotes) result.factCheckNotes = metadata.factCheckNotes
 
-  // Prompt Leakage Detection
-  if (typeof metadata.promptLeakageDetected === 'boolean') {
-    result.promptLeakageDetected = metadata.promptLeakageDetected
+  // Image Problems Detection
+  if (typeof metadata.imageProblemsDetected === 'boolean') {
+    result.imageProblemsDetected = metadata.imageProblemsDetected
   }
-  if (metadata.promptLeakageText?.length) {
-    result.promptLeakageText = metadata.promptLeakageText
+  if (metadata.imageProblems?.length) {
+    result.imageProblems = metadata.imageProblems
   }
-  if (metadata.promptLeakageRepairPrompt) {
-    result.promptLeakageRepairPrompt = metadata.promptLeakageRepairPrompt
+  if (metadata.imageProblemsRepairPrompt) {
+    result.imageProblemsRepairPrompt = metadata.imageProblemsRepairPrompt
   }
 
   return result

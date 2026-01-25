@@ -24,7 +24,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urlparse
+
+# Add lib to path for imports
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32":
@@ -347,9 +349,6 @@ class PDFValidator:
         if not self.doc:
             return self.errors
 
-        import urllib.request
-        from urllib.error import HTTPError, URLError
-
         page_count = len(self.doc)
         external_urls = set()
 
@@ -374,30 +373,38 @@ class PDFValidator:
                     external_urls.add(uri)
 
         # Validate external URLs (if not skipped)
-        if not self.skip_url_check:
-            for url in list(external_urls)[:50]:  # Limit to 50 URLs
-                try:
-                    req = urllib.request.Request(
-                        url, method="HEAD", headers={"User-Agent": "PDF-Validator/1.0"}
-                    )
-                    urllib.request.urlopen(req, timeout=5)
-                except HTTPError as e:
-                    if e.code >= 400:
-                        self._add_error(
-                            None,
-                            "BROKEN_EXTERNAL_LINK",
-                            PDFValidationError.SEVERITY_CRITICAL,
-                            f"HTTP {e.code} for URL: {url}",
-                        )
-                except URLError:
-                    self._add_error(
-                        None,
-                        "BROKEN_EXTERNAL_LINK",
-                        PDFValidationError.SEVERITY_CRITICAL,
-                        f"Cannot reach URL: {url}",
-                    )
-                except Exception:
-                    pass  # Timeout or other issues - don't flag
+        if not self.skip_url_check and external_urls:
+            try:
+                from url_checker import URLChecker
+
+                checker = URLChecker(cache_ttl_hours=24, timeout_seconds=10)
+                urls_to_check = list(external_urls)[:100]  # Limit to 100 URLs
+
+                print(f"      Checking {len(urls_to_check)} external URLs...")
+                results = checker.check_urls(urls_to_check)
+
+                for result in results:
+                    if not result.is_valid:
+                        cache_note = " (cached)" if result.from_cache else ""
+                        # HTTP errors (404, 500, etc.) are CRITICAL
+                        # Timeouts and network errors are just warnings
+                        if result.is_http_error:
+                            self._add_error(
+                                None,
+                                "BROKEN_EXTERNAL_LINK",
+                                PDFValidationError.SEVERITY_CRITICAL,
+                                f"{result.error_message}: {result.url}{cache_note}",
+                            )
+                        else:
+                            self._add_error(
+                                None,
+                                "URL_UNREACHABLE",
+                                PDFValidationError.SEVERITY_WARNING,
+                                f"{result.error_message}: {result.url}{cache_note}",
+                            )
+
+            except ImportError as e:
+                print(f"[WARNING] URL checker not available: {e}", file=sys.stderr)
 
         return self.errors
 
@@ -464,7 +471,7 @@ class PDFValidator:
                 sys.stderr = sys.__stderr__
 
             try:
-                from llm import generate_gemini_flash_content, extract_json_from_response
+                from llm import generate_gemini_pro_content, extract_json_from_response
             finally:
                 sys.stdout = original_stdout
                 sys.stderr = original_stderr
@@ -498,32 +505,38 @@ class PDFValidator:
             if len(text) > 8000:
                 text = text[:8000] + "\n[...truncated...]"
 
-            prompt = f"""Analyze this PDF page content for quality issues. Check for:
-1. Rendering artifacts or garbled text
-2. Sentences cut off mid-word
-3. Malformed tables (misaligned columns)
-4. Figure/table captions without corresponding content
-5. Placeholder text (TODO, FIXME, Lorem ipsum, TBD)
-6. Obviously wrong values ($undefined, NaN, None, [object Object])
-7. Code or error messages that shouldn't be visible
+            prompt = f"""Analyze this PDF page text for REAL quality issues that would embarrass the author in a published book.
 
-Page {page_idx + 1} content:
+ONLY flag issues that are clearly broken - be conservative. Do NOT flag:
+- Page number mismatches (these are PDF extraction artifacts)
+- Minor formatting inconsistencies
+- Content you're uncertain about
+- Things that MIGHT be problems but you can't be sure
+
+DO flag with HIGH CONFIDENCE only:
+1. Unrendered code/variables: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python tracebacks
+2. Placeholder text: "TODO", "FIXME", "Lorem ipsum", "TBD", "[INSERT X HERE]"
+3. Clearly garbled/corrupted text (not just unusual formatting)
+4. Obvious sentence fragments cut off mid-word at page boundaries
+5. Python/JavaScript code that shouldn't be in a book (print statements, function definitions)
+
+Page content:
 ---
 {text}
 ---
 
-Respond with JSON only:
+Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ confident are real problems:
 {{
     "issues": [
-        {{"type": "string", "description": "string", "severity": "CRITICAL|WARNING|INFO"}}
+        {{"type": "string", "description": "string", "severity": "CRITICAL|WARNING"}}
     ],
     "page_quality": "good|acceptable|poor"
 }}
 
-If no issues found, return {{"issues": [], "page_quality": "good"}}"""
+If no clear issues, return {{"issues": [], "page_quality": "good"}}"""
 
             try:
-                response = generate_gemini_flash_content(prompt)
+                response = generate_gemini_pro_content(prompt)
                 result = extract_json_from_response(response, f"LLM page {page_idx + 1}")
 
                 for issue in result.get("issues", []):

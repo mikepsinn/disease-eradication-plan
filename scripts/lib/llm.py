@@ -11,7 +11,7 @@ import re
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
 
 from google import genai
 from anthropic import Anthropic
@@ -20,9 +20,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- Model IDs ---
-# DO NOT CHANGE THESE MODEL NUMBERS
-GEMINI_PRO_MODEL_ID = "gemini-2.5-pro"
-GEMINI_FLASH_MODEL_ID = "gemini-2.5-flash"
+# Updated January 2026 - Gemini 3 models (preview)
+GEMINI_PRO_MODEL_ID = "gemini-3-pro-preview"
+GEMINI_FLASH_MODEL_ID = "gemini-3-flash-preview"
 CLAUDE_OPUS_4_1_MODEL_ID = "claude-opus-4-1-20250805"
 CLAUDE_SONNET_4_5_MODEL_ID = "claude-sonnet-4-5-20250929"
 
