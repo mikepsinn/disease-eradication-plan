@@ -66,6 +66,30 @@ from render_utils import (  # type: ignore[import-not-found]
 
 
 # =============================================================================
+# GitHub Actions Log Grouping
+# =============================================================================
+
+# Detect if running in GitHub Actions
+IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
+
+
+def gh_group_start(title: str) -> None:
+    """Start a collapsible group in GitHub Actions logs."""
+    if IN_GITHUB_ACTIONS:
+        print(f"::group::{title}", flush=True)
+    print("=" * 80, flush=True)
+    print(title, flush=True)
+    print("=" * 80, flush=True)
+
+
+def gh_group_end() -> None:
+    """End a collapsible group in GitHub Actions logs."""
+    if IN_GITHUB_ACTIONS:
+        print("::endgroup::", flush=True)
+    print(flush=True)
+
+
+# =============================================================================
 # Pre-Build Functions (formerly in quarto_pre_build.py)
 # =============================================================================
 
@@ -591,51 +615,41 @@ def render_quarto(
 
         # 0. Kill existing processes if requested
         if kill_existing:
-            print("=" * 80)
-            print("KILLING EXISTING QUARTO/LaTeX PROCESSES")
-            print("=" * 80)
+            gh_group_start("KILLING EXISTING QUARTO/LaTeX PROCESSES")
             killed = kill_existing_quarto_processes(include_latex=rendering_pdf)
             print(f"[OK] Killed {killed} process(es)" if killed else "[*] No processes found")
-            print()
+            gh_group_end()
 
         # 1. Ensure Jupyter kernel exists
-        print("=" * 80)
-        print("SETUP: JUPYTER KERNEL")
-        print("=" * 80)
+        gh_group_start("SETUP: JUPYTER KERNEL")
         if not ensure_jupyter_kernel("dih-project-kernel", "DIH Project"):
             print("[WARNING] Jupyter kernel setup failed, continuing anyway...")
-        print()
+        gh_group_end()
 
         # 2. Run pre-validation
-        print("=" * 80)
-        print("VALIDATION: PRE-RENDER")
-        print("=" * 80)
+        gh_group_start("VALIDATION: PRE-RENDER")
         validation_exit = run_pre_validation()
         if validation_exit != 0:
             print("[ERROR] Pre-validation failed, aborting render", file=sys.stderr)
+            gh_group_end()
             return validation_exit
-        print()
+        gh_group_end()
 
         # 3. Prepare build directory (always use temp directory for clean builds)
-        print("=" * 80)
-        print(f"SETUP: PREPARING {description.upper()}")
-        print("=" * 80)
+        gh_group_start(f"SETUP: PREPARING {description.upper()}")
 
         build_temp = prepare_build_temp(config_name, verbose=True)
         if build_temp is None:
             print("[ERROR] Failed to create temp build directory", file=sys.stderr)
+            gh_group_end()
             return 1
         os.chdir(build_temp)
         print(f"[*] Changed to temp directory: {build_temp}")
-        print()
+        gh_group_end()
 
         # 4. Run Quarto render or preview
-        print("=" * 80)
-        if preview:
-            print(f"PREVIEWING {description.upper()}")
-        else:
-            print(f"RENDERING {description.upper()}")
-        print("=" * 80)
+        render_title = f"PREVIEWING {description.upper()}" if preview else f"RENDERING {description.upper()} ({format_override or 'all formats'})"
+        gh_group_start(render_title)
 
         if preview:
             # Preview mode - run quarto preview directly
@@ -660,6 +674,7 @@ def render_quarto(
                 exit_code = 0
             except subprocess.CalledProcessError as e:
                 exit_code = e.returncode
+            gh_group_end()
         else:
             # Render mode - use build monitor
             cmd = ["quarto", "render"]
@@ -690,25 +705,22 @@ def render_quarto(
                 print(f"[ERROR] {description} render failed with exit code {exit_code}", file=sys.stderr)
             else:
                 print(f"[OK] {description} render complete!")
+            gh_group_end()
 
         # 5. Post-validation for HTML builds (skip in preview mode)
         # Runs when HTML is rendered (either all formats or html-only)
         if not preview and (format_override is None or format_override == "html") and exit_code == 0:
-            print("=" * 80)
-            print("VALIDATION: POST-RENDER (HTML)")
-            print("=" * 80)
+            gh_group_start("VALIDATION: POST-RENDER (HTML)")
             output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)
             if validation_exit != 0:
                 print("[ERROR] Post-validation failed", file=sys.stderr)
                 exit_code = validation_exit
-            print()
+            gh_group_end()
 
         # 6. Validate and verify outputs in temp directory (skip in preview mode)
         if not preview and build_temp:
-            print("=" * 80)
-            print("VALIDATING BUILD OUTPUTS")
-            print("=" * 80)
+            gh_group_start("VALIDATING BUILD OUTPUTS")
 
             # Determine output directory in temp build folder
             temp_output_dir = build_temp / metadata["output_dir"]
@@ -730,15 +742,14 @@ def render_quarto(
                         new_path = epub_file.parent / expected_epub
                         print(f"[*] Renaming {epub_file.name} -> {expected_epub}")
                         epub_file.rename(new_path)
+            gh_group_end()  # End VALIDATING BUILD OUTPUTS
 
             # Validate PDFs for Python code leakage
             for pdf_file in temp_output_dir.glob("*.pdf"):
                 size_mb = pdf_file.stat().st_size / (1024 * 1024)
                 print(f"[*] PDF: {pdf_file} ({size_mb:.2f} MB)")
 
-                print("=" * 80)
-                print("VALIDATION: PDF PYTHON CODE CHECK")
-                print("=" * 80)
+                gh_group_start("VALIDATION: PDF PYTHON CODE CHECK")
                 found_issues, issues = validate_pdf_for_python_code(str(pdf_file))
                 if found_issues:
                     print("[ERROR] PDF validation failed: Python code detected!", file=sys.stderr)
@@ -750,6 +761,7 @@ def render_quarto(
                     exit_code = 1
                 else:
                     print("[OK] PDF validation passed")
+                gh_group_end()
 
             # Log EPUB files
             for epub_file in temp_output_dir.glob("*.epub"):
@@ -757,9 +769,7 @@ def render_quarto(
                 print(f"[*] EPUB: {epub_file} ({size_mb:.2f} MB)")
 
             # Verify expected outputs exist
-            print("=" * 80)
-            print("VERIFICATION: EXPECTED OUTPUTS")
-            print("=" * 80)
+            gh_group_start("VERIFICATION: EXPECTED OUTPUTS")
 
             # Check PDF if expected
             if expected_pdf and (format_override is None or format_override == "pdf"):
@@ -799,20 +809,17 @@ def render_quarto(
                     print(f"[ERROR] Expected HTML not found: index.html", file=sys.stderr)
                     print(f"        Expected at: {html_index}", file=sys.stderr)
                     exit_code = 1
+            gh_group_end()  # End VERIFICATION: EXPECTED OUTPUTS
 
             # Print deployment path for GitHub Actions
-            print("=" * 80)
-            print("DEPLOYMENT INFO")
-            print("=" * 80)
+            gh_group_start("DEPLOYMENT INFO")
             print(f"[*] Deploy from: {temp_output_dir}")
             print(f"[*] Example: publish-dir: '{temp_output_dir.relative_to(project_root)}'")
-            print()
+            gh_group_end()
 
         # 7. Run verification tests (test config only, skip in preview mode)
         if not preview and verify and config_name == "test" and exit_code == 0:
-            print("=" * 80)
-            print("VERIFICATION: PDF LINK TESTS")
-            print("=" * 80)
+            gh_group_start("VERIFICATION: PDF LINK TESTS")
             verify_script = project_root / "scripts" / "test" / "verify-pdf-links.py"
             if verify_script.exists() and build_temp:
                 os.chdir(project_root)
@@ -822,7 +829,7 @@ def render_quarto(
                     exit_code = result.returncode
             else:
                 print("[WARNING] Verification script not found", file=sys.stderr)
-            print()
+            gh_group_end()
 
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Subprocess failed: {e.returncode}", file=sys.stderr)
@@ -992,13 +999,12 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
     )
 
     print()
-    print("=" * 80)
-    print("ZENODO UPLOAD")
-    print("=" * 80)
+    gh_group_start("ZENODO UPLOAD")
 
     # Skip test and book configs
     if config_name in ("test", "book"):
         print(f"[--] Skipping Zenodo upload for '{config_name}' config")
+        gh_group_end()
         return 0
 
     # Load .env file if present
@@ -1011,6 +1017,7 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
         env_var = "ZENODO_SANDBOX_TOKEN" if sandbox else "ZENODO_TOKEN"
         print(f"ERROR: {env_var} environment variable not set", file=sys.stderr)
         print(f"  Get token at: https://{'sandbox.' if sandbox else ''}zenodo.org/account/settings/applications/")
+        gh_group_end()
         return 1
 
     # Find project root and config
@@ -1019,6 +1026,7 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
 
     if not config_file.exists():
         print(f"ERROR: Config file not found: {config_file}", file=sys.stderr)
+        gh_group_end()
         return 1
 
     # Load config and find PDF path
@@ -1038,6 +1046,7 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
     if not pdf_path.exists():
         print(f"ERROR: PDF not found at {pdf_path}", file=sys.stderr)
         print("  Build may have failed or PDF output is disabled", file=sys.stderr)
+        gh_group_end()
         return 1
 
     # Create client and upload
@@ -1054,6 +1063,7 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
         verbose=True
     )
 
+    gh_group_end()
     if result:
         print()
         return 0
