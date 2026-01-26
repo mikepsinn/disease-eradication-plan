@@ -30,8 +30,14 @@ from typing import Dict, List, Optional, Set, Tuple
 
 # Set UTF-8 encoding for stdout and stderr on Windows
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
-    sys.stderr.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
+    sys.stderr.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
+
+# Import shared validation library for common functions
+try:
+    from lib.validation_core import EM_DASH_MESSAGE
+except ImportError:
+    EM_DASH_MESSAGE = 'Em-dash found. Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.'
 
 
 class ValidationError:
@@ -284,7 +290,7 @@ def check_em_dashes(content: str, filepath: str):
                         file=filepath,
                         line=line_index + 1,
                         column=column,
-                        message='Em-dash (—) found. Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.',
+                        message=EM_DASH_MESSAGE,
                         context=line.strip()[:80],
                     )
                 )

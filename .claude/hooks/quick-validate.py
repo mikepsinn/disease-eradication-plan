@@ -4,9 +4,17 @@ Quick Validation Hook for Claude Code PostToolUse
 =================================================
 
 Runs after Edit|Write operations on *.qmd files.
-Performs fast validation checks and returns issues as JSON for Claude context injection.
+Performs fast validation checks and auto-fixes, returning results as JSON.
 
-Checks performed:
+Auto-fixes (deterministic, 100% safe):
+- Curly quotes -> straight quotes
+- .html extensions -> .qmd in internal links
+
+Suggestions (require human judgment):
+- Em-dashes -> various punctuation options
+- Variable typos with fuzzy match corrections
+
+Detection (reported but not auto-fixed):
 - Broken variable references ({{< var unknown_var >}})
 - Broken internal links (paths that don't exist)
 - Obvious hardcoded values that match known parameters
@@ -16,12 +24,11 @@ Usage:
 
 Exit codes:
   0 - No issues found (or file is not a QMD)
-  1 - Issues found (printed to stdout as JSON)
+  1 - Issues found or fixes applied (printed to stdout as JSON)
 """
 
 import sys
 import os
-import re
 import json
 from pathlib import Path
 
@@ -29,9 +36,8 @@ from pathlib import Path
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
 
-
-def get_project_root():
-    """Find project root by looking for _quarto.yml or _variables.yml"""
+# Add project root to path for imports
+def _get_project_root():
     current = Path(os.getcwd())
     while current != current.parent:
         if (current / '_quarto.yml').exists() or (current / '_variables.yml').exists():
@@ -39,155 +45,112 @@ def get_project_root():
         current = current.parent
     return Path(os.getcwd())
 
+PROJECT_ROOT = _get_project_root()
+sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
-def load_variables():
-    """Load variable names from _variables.yml"""
-    root = get_project_root()
-    variables_file = root / '_variables.yml'
+# Import shared validation library
+try:
+    from lib.validation_core import (
+        get_project_root,
+        load_variables_from_yml,
+        check_undefined_variables,
+        check_broken_qmd_links,
+        check_hardcoded_values,
+        suggest_variable_typos,
+        check_em_dashes,
+        ValidationIssue
+    )
+    VALIDATION_CORE_AVAILABLE = True
+except ImportError:
+    VALIDATION_CORE_AVAILABLE = False
 
-    if not variables_file.exists():
-        return set()
+# Import autofix core (same directory) for auto-fix functionality
+try:
+    from autofix_core import apply_safe_fixes, load_autofix_config
+except ImportError:
+    # Fallback if module not found
+    def apply_safe_fixes(content, file_path, config=None):
+        class FixResult:
+            fixed = []
+            suggested = []
+        return content, FixResult()
 
-    variables = set()
-    try:
-        with open(variables_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-            # Simple regex to extract variable names (keys before colons)
-            for match in re.finditer(r'^  ([a-z][a-z0-9_]+):', content, re.MULTILINE):
-                variables.add(match.group(1))
-    except Exception:
-        pass
-
-    return variables
-
-
-def check_broken_variables(content, valid_variables):
-    """Check for variable references that don't exist in _variables.yml"""
-    issues = []
-
-    # Find all {{< var name >}} references
-    var_pattern = r'\{\{<\s*var\s+([a-z][a-z0-9_]+)\s*>\}\}'
-
-    for match in re.finditer(var_pattern, content):
-        var_name = match.group(1)
-        if var_name not in valid_variables:
-            # Get line number
-            line_num = content[:match.start()].count('\n') + 1
-            issues.append({
-                'type': 'broken_variable',
-                'line': line_num,
-                'variable': var_name,
-                'message': f'Undefined variable: {var_name}'
-            })
-
-    return issues
-
-
-def check_broken_links(content, file_path):
-    """Check for internal links to files that don't exist"""
-    issues = []
-    root = get_project_root()
-    file_dir = Path(file_path).parent
-
-    # Find internal links: [text](path.qmd) or [text](../path.qmd)
-    link_pattern = r'\[([^\]]*)\]\(([^)]+\.qmd(?:#[^)]*)?)\)'
-
-    for match in re.finditer(link_pattern, content):
-        link_text = match.group(1)
-        link_path = match.group(2)
-
-        # Remove anchor
-        path_only = link_path.split('#')[0]
-
-        # Skip external URLs
-        if path_only.startswith('http'):
-            continue
-
-        # Resolve relative path
-        if path_only.startswith('/'):
-            full_path = root / path_only[1:]
-        else:
-            full_path = file_dir / path_only
-
-        full_path = full_path.resolve()
-
-        if not full_path.exists():
-            line_num = content[:match.start()].count('\n') + 1
-            issues.append({
-                'type': 'broken_link',
-                'line': line_num,
-                'path': path_only,
-                'message': f'Broken link: {path_only}'
-            })
-
-    return issues
-
-
-def check_hardcoded_values(content):
-    """Check for obvious hardcoded values that should be variables"""
-    issues = []
-
-    # Common patterns that should probably be parameters
-    hardcoded_patterns = [
-        # Large dollar amounts
-        (r'\$(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(?:trillion|billion|million)',
-         'Consider using a variable for this dollar amount'),
-        # Specific percentages in text (not in LaTeX)
-        (r'(?<!\$)\b(\d{1,2}(?:\.\d+)?)\s*%(?![\s}]*>)',
-         'Consider using a variable for this percentage'),
-    ]
-
-    for pattern, message in hardcoded_patterns:
-        for match in re.finditer(pattern, content, re.IGNORECASE):
-            # Skip if inside a {{< var >}} block
-            start = match.start()
-            context_before = content[max(0, start-50):start]
-            if '{{< var' in context_before and '>}}' not in context_before:
-                continue
-
-            # Skip if inside LaTeX blocks
-            if '$' in content[max(0, start-5):start]:
-                continue
-
-            line_num = content[:start].count('\n') + 1
-            issues.append({
-                'type': 'hardcoded_value',
-                'line': line_num,
-                'value': match.group(0),
-                'message': message
-            })
-
-    return issues
+    def load_autofix_config():
+        return {"enabled": False}
 
 
 def validate_qmd_file(file_path):
-    """Run all validations on a QMD file"""
-    issues = []
+    """Run all validations on a QMD file, applying safe fixes first.
+
+    Returns dict with:
+    - fixed: list of auto-applied fixes
+    - suggested: list of suggested fixes (em-dashes, variable typos)
+    - issues: list of detected issues
+    """
+    result = {
+        'fixed': [],
+        'suggested': [],
+        'issues': []
+    }
 
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
     except Exception as e:
-        return [{'type': 'error', 'message': f'Could not read file: {e}'}]
+        result['issues'] = [{'type': 'error', 'message': f'Could not read file: {e}'}]
+        return result
 
-    # Load valid variables
-    valid_variables = load_variables()
+    # Load autofix config and apply safe fixes
+    config = load_autofix_config()
 
-    # Run checks
-    issues.extend(check_broken_variables(content, valid_variables))
-    issues.extend(check_broken_links(content, file_path))
+    if config.get('enabled', True):
+        modified_content, fix_result = apply_safe_fixes(content, file_path, config)
 
-    # Hardcoded value check - only return first few to avoid noise
-    hardcoded = check_hardcoded_values(content)
-    if hardcoded:
-        issues.extend(hardcoded[:3])  # Limit to 3 to avoid overwhelming
-        if len(hardcoded) > 3:
-            issues.append({
+        # Write back if fixes were applied
+        if fix_result.fixed:
+            try:
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(modified_content)
+                content = modified_content
+                result['fixed'] = fix_result.fixed
+            except Exception as e:
+                result['issues'].append({
+                    'type': 'error',
+                    'message': f'Could not write fixes: {e}'
+                })
+
+        # Add suggestions from autofix (em-dashes, variable typos)
+        result['suggested'] = fix_result.suggested
+
+    # Use shared validation library if available
+    if VALIDATION_CORE_AVAILABLE:
+        project_root = get_project_root()
+        valid_variables = load_variables_from_yml()
+
+        # Run detection checks using shared library
+        for issue in check_undefined_variables(content, file_path, valid_variables):
+            result['issues'].append(issue.to_dict())
+
+        for issue in check_broken_qmd_links(content, file_path, project_root):
+            result['issues'].append(issue.to_dict())
+
+        # Hardcoded value check - limit to avoid noise
+        hardcoded_issues = check_hardcoded_values(content, file_path)
+        for issue in hardcoded_issues[:3]:
+            result['issues'].append(issue.to_dict())
+        if len(hardcoded_issues) > 3:
+            result['issues'].append({
                 'type': 'info',
-                'message': f'... and {len(hardcoded) - 3} more potential hardcoded values'
+                'message': f'... and {len(hardcoded_issues) - 3} more potential hardcoded values'
             })
+    else:
+        # Fallback to basic checks if shared library not available
+        result['issues'].append({
+            'type': 'warning',
+            'message': 'Shared validation library not available - running limited checks'
+        })
 
-    return issues
+    return result
 
 
 def main():
@@ -205,20 +168,29 @@ def main():
     if not os.path.exists(file_path):
         sys.exit(0)
 
-    issues = validate_qmd_file(file_path)
+    validation_result = validate_qmd_file(file_path)
 
-    if not issues:
+    # Check if there's anything to report
+    has_fixes = len(validation_result.get('fixed', [])) > 0
+    has_suggestions = len(validation_result.get('suggested', [])) > 0
+    has_issues = len(validation_result.get('issues', [])) > 0
+
+    if not (has_fixes or has_suggestions or has_issues):
         sys.exit(0)
 
-    # Output issues as JSON for Claude to process
-    result = {
+    # Output result as JSON for Claude to process
+    output = {
         'file': file_path,
-        'issueCount': len(issues),
-        'issues': issues
+        'fixedCount': len(validation_result.get('fixed', [])),
+        'fixed': validation_result.get('fixed', []),
+        'suggestCount': len(validation_result.get('suggested', [])),
+        'suggested': validation_result.get('suggested', []),
+        'issueCount': len(validation_result.get('issues', [])),
+        'issues': validation_result.get('issues', [])
     }
 
-    print(json.dumps(result, indent=2))
-    sys.exit(1)
+    print(json.dumps(output, indent=2))
+    sys.exit(1 if has_issues else 0)
 
 
 if __name__ == '__main__':

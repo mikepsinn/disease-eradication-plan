@@ -18,8 +18,6 @@ image: /assets/og-images/knowledge/appendix/disease-eradication-personal-lifetim
 
 ![](/assets/infographics/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations-infographic-retro-academic.jpg)
 
-
-
 The **Disease Eradication Model** properly accounts for {{< var dfda_trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 
 **This is the default model to use.** Conservative baselines (Evidence-Based models using antibiotic precedent) are available for skeptical audiences.
@@ -36,6 +34,8 @@ The **Disease Eradication Model** properly accounts for {{< var dfda_trial_capac
 ## The Model Components
 
 ### Disease-by-Disease Eradication (CDC Burden Data)
+
+![A comparative bar chart showing current cure rates versus projected 20-year and maximum potential eradication levels across eight major disease categories.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-disease-by-disease-eradication-cdc-burden-data-bw-academic.jpg)
 
 Real data from CDC 2023/2024:
 
@@ -60,6 +60,8 @@ Real data from CDC 2023/2024:
 
 ### Aging Reversal Bonus
 
+![A line chart visualizing the logarithmic progression of aging reversal and total life extension relative to the investment of research-years.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-aging-reversal-bonus-bw-academic.jpg)
+
 Separate from curing specific diseases, **epigenetic reprogramming extends maximum lifespan**:
 
 | Research-Years | Aging Reversal | Total Life Extension |
@@ -73,6 +75,8 @@ Formula: Logarithmic scaling toward accident-limited lifespan (~150 years extens
 
 ### Healthcare Savings
 
+![A comparison bar chart showing current per capita healthcare spending versus projected spending after a 15% reduction, highlighting the $1,656 in annual savings.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-healthcare-savings-bw-academic.jpg)
+
 As diseases are eradicated, healthcare costs drop:
 
 - 20-year scenario: ~15% reduction in chronic disease spending
@@ -81,6 +85,8 @@ As diseases are eradicated, healthcare costs drop:
 
 ### Productivity Gains
 
+![A visual breakdown showing that 28% of employees experience productivity loss due to chronic illness, resulting in an average annual cost of $4,798 per affected individual.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-productivity-gains-bw-academic.jpg)
+
 Based on IBI 2024 workforce data:
 
 - {{< var workforce_with_productivity_loss >}} of employees have productivity loss from chronic illness
@@ -88,6 +94,8 @@ Based on IBI 2024 workforce data:
 - Disease eradication recovers this lost productivity
 
 ### GDP Boost
+
+![A visualization showing the 12.3:1 return on investment ratio for research acceleration alongside the compounding effect of 0.25% annual GDP growth.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-gdp-boost-bw-academic.jpg)
 
 {{< var dfda_trial_capacity_multiplier >}}× research acceleration creates innovation spillovers:
 
@@ -107,6 +115,8 @@ With 72 extra years of life:
 
 ### 5-Year Scenario
 
+![A visual summary of the 5-year scenario highlighting 575 years of research progress, a 34-year increase in life expectancy, and a $2.4M total benefit.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-5-year-scenario-bw-academic.jpg)
+
 - **Cumulative Research**: 575 years (4.6x entire 1900-2024 progress)
 - **Life Extension**: 34 years (80→114)
 - **Total Benefit**: **$2.4M**
@@ -114,12 +124,16 @@ With 72 extra years of life:
 
 ### 10-Year Scenario
 
+![A visual breakdown of a 10-year scenario showing a 9.3x increase in research output compared to the last century and a life expectancy increase from 80 to 130 years.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-10-year-scenario-bw-academic.jpg)
+
 - **Cumulative Research**: 1,150 years (9.3x entire 1900-2024 progress)
 - **Life Extension**: 50 years (80→130)
 - **Total Benefit**: **$3.2M**
 - **Interpretation**: Major disease categories tackled
 
 ### 20-Year Scenario (RECOMMENDED DEFAULT)
+
+![A visualization of the 20-year scenario showing the $4.3M total benefit breakdown and the 72-year life extension relative to historical research progress.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-20-year-scenario-recommended-default-bw-academic.jpg)
 
 - **Cumulative Research**: 2,300 years (18.5x entire 1900-2024 progress)
 - **Life Extension**: 72 years (80→152)
@@ -136,6 +150,8 @@ With 72 extra years of life:
 - Extended earnings: $1.3M NPV
 
 ### 40-Year Scenario
+
+![A comparison of current versus projected metrics in a 40-year scenario, highlighting a 37x increase in research output and the extension of life expectancy from 80 to 186 years.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-40-year-scenario-bw-academic.jpg)
 
 - **Cumulative Research**: 4,600 years (37.1x entire 1900-2024 progress)
 - **Life Extension**: 106 years (80→186)
@@ -184,6 +200,8 @@ Use these conservative numbers to establish credibility with skeptics, then buil
 ## When to Use Each Model
 
 ### Default Recommendation
+
+![A visualization of the 72-year eradication timeline and $4.3M funding requirement, highlighting the impact of research acceleration on disease burden.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-default-recommendation-bw-academic.jpg)
 
 **Disease Eradication 20-year**: $4.3M, 72 years
 
@@ -307,6 +325,8 @@ $$
 
 #### Economic Multiplier (Military→Research)
 
+![A line chart comparing cumulative GDP growth over time, illustrating the widening gap between a 2.5% baseline growth and a 2.75% treaty-boosted growth rate.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-economic-multiplier-military-research-bw-academic.jpg)
+
 Productivity gain from redirecting military spending to research:
 
 $$
@@ -385,11 +405,11 @@ The tornado chart shows which parameters have the largest impact on your persona
 - **Width of total bar:** Indicates parameter's sensitivity (wider = more important)
 - **Black vertical line:** Base case (Age 30, $50K income, 1% treaty, 3% discount)
 
-
-
 ### What the Numbers Mean
 
 1. **Treaty Percentage has ENORMOUS impact** - Range from $3.6M (0.5% treaty) to $16M (5% treaty). The treaty percentage negotiated determines whether you get "just" millions or generational wealth.
+
+![A comparison bar chart showing the impact of treaty percentages, discount rates, annual income, and current age on total projected financial benefits.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-what-the-numbers-mean-bw-academic.jpg)
 
 2. **Discount Rate** - Range from $1M (5% discount) to $7.6M (2% discount). How you value future benefits matters enormously over a 122-year lifespan.
 
@@ -419,6 +439,8 @@ The demographic variation chart has been replaced with probabilistic analysis vi
 3. **Near-retirement individuals** gain significantly (~$2.1M) - even with less time, 72 years is transformative
 4. **Age multiplier effect**: Young (25) vs older (60) = **2.6x difference** (vs 1.9x in conservative model)
 5. **Income scaling**: High earners (~$10M) vs low earners (~$2.8M) = **3.6x** but low earners get **9,300%** of annual income!
+
+![A comparison of lifetime financial gains across different career stages and income levels, highlighting the 2.6x age multiplier and 9,300% income-to-benefit ratio for low earners.](/assets/images/disease-eradication-personal-lifetime-wealth-calculations/disease-eradication-personal-lifetime-wealth-calculations-section-what-the-numbers-show-bw-academic.jpg)
 
 ### Key Differences vs Conservative Baseline
 

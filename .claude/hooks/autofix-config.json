@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "rules": {
+    "em_dashes": "suggest",
+    "curly_quotes": "auto",
+    "html_extensions": "auto",
+    "variable_typos": "suggest"
+  },
+  "confidence_threshold": 0.85
+}
