@@ -199,13 +199,9 @@ P.P.S. Your planet is named "Earth," which means dirt. You named your planet dir
 
 Every single day, {{< var global_disease_deaths_daily >}} of you permanently discontinue existing from diseases that are basically just engineering problems with meat robots. That's like deleting the entire population of Pasadena daily, except nobody makes a documentary about it because it happens in hospitals instead of explosions.
 
-Meanwhile, your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials that test which medicines actually save lives. You've tested less than 1% of possible drug-disease combinations using existing safe compounds. The bottleneck isn't basic research. It's testing. And you've decided testing isn't worth funding.
+Meanwhile, your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials that test which medicines actually save lives. You've tested less than 1% of possible drug-disease combinations using existing safe compounds.
 
 Bed nets are humanity's greatest achievement in not-dying-from-malaria. Redirecting 1% of murder money beats bed nets by {{< var treaty_vs_bed_nets_multiplier >}}. That's like discovering your umbrella also cures cancer.
-
-::: {.callout-note}
-**Note on terminology**: This ratio compares military spending ({{< var global_military_spending_annual_2024 >}}) to government spending on interventional clinical trials ({{< var global_government_clinical_trials_spending_annual >}}), not total medical research ({{< var global_med_research_spending >}}). Total medical research includes basic research, translational research, and clinical trials. The 1% treaty specifically redirects military spending to pragmatic clinical trials. These are automated, real-world studies far more efficient than traditional research methods.
-:::
 
 ### How You Fix This
 
@@ -243,23 +239,25 @@ The {{< var dih_treasury_to_medical_research_annual >}} flowing to pragmatic cli
 
 The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
 
-### Why This Works
+### Personalized Bribery Packages
+
+*For Every Species of Human*
 
 The entire system operates on the revolutionary principle that humans will do the right thing if you pay them enough to do it accidentally.
 
 ![A relational diagram showing how six distinct entities, ranging from defense contractors to regular humans, reorient their financial incentives toward a central 'Victory Incentive' system.](/assets/images/index-manual/index-manual-section-why-this-works-bw-academic.jpg)
 
-- **Defense contractors:** Keep 99% of their murder budget PLUS get 270% returns on VICTORY Incentive Alignment Bonds. They're literally profiting from peace. This is like convincing a vampire to open a blood bank - counterintuitive but mathematically sound.
+**Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on the 1%. They're literally profiting from peace. This is like convincing a vampire to open a blood bank, counterintuitive but mathematically sound. It's like finding papers in the pocket of pants you're currently wearing. Except the papers multiply. While you're wearing the pants. It's financially inexplicable but legally binding.
 
-- **Pharmaceutical companies:** Instead of paying $48,000 per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving.
+**Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving. We call it "reverse expenses" or "profit."
 
-- **Insurance companies:** Insurance companies realize healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
+**Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem). Sick people file all the claims. We'll let you do the math since you love math.
 
-- **Politicians:** Discover that living voters vote more reliably than dead ones.
+**Politicians**: Discover that living voters vote more reliably than dead ones. {{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice.
 
-- **Regular humans:** Get experimental treatments that might cure them OR kill them faster, but either way it's free and resolves the uncertainty.
+**Billionaires**: Make {{< var victory_bond_annual_return_pct >}} returns, which is better than insider trading but somehow legal, like a loophole that's actually a wormhole to infinite money. It's like compound interest discovered steroids then did cocaine.
 
-- **Rich humans:** Make 270% returns, which is better than insider trading but somehow legal, like a loophole that's actually a wormhole to infinite money.
+**Regular Humans**: Get experimental treatments that might cure them OR kill them faster, but either way it's free and resolves the uncertainty. Also, [**$4.3M in lifetime wealth and 72 extra years of life**](knowledge/call-to-action/your-personal-benefits.qmd) from the economic multiplier effect of redirecting military spending. That's like winning the lottery except the lottery is mandatory and everyone wins and instead of random numbers it's just basic resource allocation.
 
 Nobody has to evolve morally. Nobody has to become "better people." You just point everyone's greed at diseases instead of each other. It's like if you trained a pack of wolves to herd sheep by convincing them the sheep were made of money. Except in this case, the wolves are politicians, the sheep are diseases and the money is money.
 
@@ -383,10 +381,6 @@ It gets dumber.
 <!-- {{< include knowledge/figures/three-ingredients-system-diagram.qmd >}} -->
 
 ### A 1% treaty
-
-**Redirect {{< var treaty_annual_funding >}}/year from the War on Humanity to the War on Disease**
-
-Every nation redirects just **1.0%** of their current murder budget to fund hyper-efficient decentralized clinical trials that subsidize patient participation.
 
 ![A comparison showing the scale of the $2.72 trillion global military budget relative to the proposed $27.2 billion (1%) redirection for medical research.](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
 
@@ -586,25 +580,7 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts, showering every
 - Politicians: Getting reelected by living voters (a revolutionary strategy)
 - Regular humans: Not dying from stupid things (priceless, but also free)
 
-The entire system runs on greed, like capitalism, except instead of destroying the planet it accidentally saves everyone. 
-
-### Personalized Bribery Packages
-
-*For Every Species of Human*
-
-**Defense Contractors**: "You keep 99% of your murder budget AND get {{< var victory_bond_annual_return_pct >}} returns on the 1%. It's like finding papers in the pocket of pants you're currently wearing. Except the papers multiply. While you're wearing the pants. It's financially inexplicable but legally binding."
-
-![A comparative overview of the financial and social incentives for different stakeholders, highlighting the 272% return on investment and significant lifetime wealth gains for individuals.](/assets/images/index-manual/index-manual-section-personalized-bribery-packages-bw-academic.jpg)
-
-**Insurance Companies**: "Healthy people file zero claims. Sick people file all the claims. We'll let you do the math since you love math.
-
-**Big Pharma**: "Instead of paying {{< var traditional_phase3_cost_per_patient >}} per trial patient, they pay YOU. It's like if your costs became revenue. We call it 'reverse expenses' or 'profit.'"
-
-**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice."
-
-**Billionaires**: "Your index fund makes 10% more papers. This makes {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
-
-**Regular Humans**: "Free experimental treatments, you choose what gets funded by participating, and if it works you live. If it doesn't work, you were dying anyway so at least you got free healthcare while dying, which is more than your current system offers. It's win-win-lose where the lose was already happening. Also, [**$4.3M in lifetime wealth and 72 extra years of life**](knowledge/call-to-action/your-personal-benefits.qmd) from the economic multiplier effect of redirecting military spending. That's like winning the lottery except the lottery is mandatory and everyone wins and instead of random numbers it's just basic resource allocation."
+The entire system runs on greed, like capitalism, except instead of destroying the planet it accidentally saves everyone.
 
 ## The Math
 
