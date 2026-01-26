@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 34 parameters used in the analysis, organized by type:
+This appendix documents all 20 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 25
-- Calculated values: 5
-- Core definitions: 4
+- External sources (peer-reviewed): 15
+- Calculated values: 4
+- Core definitions: 1
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (5 parameters) • [External Data Sources](#sec-external) (25 parameters) • [Core Definitions](#sec-definitions) (4 parameters)
+[Calculated Values](#sec-calculated) (4 parameters) • [External Data Sources](#sec-external) (15 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -235,48 +235,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bad_policy_cost_us_tier2_total.qmd >}}
-
-:::
-
-### Political Dysfunction Tax (Total): 20% {#sec-political_dysfunction_tax_total_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. Represents the 'tax' citizens implicitly pay for dysfunctional political systems.
-
-**Inputs**:
-
-- [Crony Tax (Capture)](#sec-crony_tax_pct) 📊: 10% (95% CI: 5% - 20%)
-- [Time-Inconsistency Tax](#sec-political_dysfunction_tax_time_pct) 📊: 3% (95% CI: 1% - 6%)
-- [Information Tax (Hayek)](#sec-political_dysfunction_tax_info_pct) 📊: 2% (95% CI: 1% - 4%)
-- [Coordination Tax (Olson)](#sec-political_dysfunction_tax_coordination_pct) 📊: 5% (95% CI: 2% - 10%)
-
-$$
-\begin{gathered}
-\tau_{dysfunction} \\
-= \tau_{crony} + \tau_{time} + \tau_{info} + \tau_{coord} \\
-= 10\% + 3\% + 2\% + 5\% \\
-= 20\%
-\end{gathered}
-$$
-
-**Methodology**: [../appendix/optimocracy-paper](../appendix/optimocracy-paper)
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-political_dysfunction_tax_total_pct.qmd >}}
-
-{{< include ../figures/sensitivity-table-political_dysfunction_tax_total_pct.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-political_dysfunction_tax_total_pct.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-political_dysfunction_tax_total_pct.qmd >}}
 
 :::
 
@@ -620,166 +578,6 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 :::
 
-### Crony Tax (Capture): 10% {#sec-crony_tax_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.
-
-**Source**: [@delrosal2011]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5%, 20%] • Distribution: Lognormal (SE: 5%)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 20% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-crony_tax_pct.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-### Coordination Tax (Olson): 5% {#sec-political_dysfunction_tax_coordination_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Welfare loss from collective action failures. Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.
-
-**Source**: [@olson1996]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [2%, 10%] • Distribution: Lognormal (SE: 3%)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 2% and 10% (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-political_dysfunction_tax_coordination_pct.qmd >}}
-
-*? Low confidence*
-
-:::
-
-### Information Tax (Hayek): 2% {#sec-political_dysfunction_tax_info_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Welfare loss from information aggregation failures - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge that markets aggregate. Hayek (1945) argued this is a fundamental limit on central planning effectiveness.
-
-**Source**: [@hayek1945]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1%, 4%] • Distribution: Lognormal (SE: 1%)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 4% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-political_dysfunction_tax_info_pct.qmd >}}
-
-*? Low confidence*
-
-:::
-
-### Time-Inconsistency Tax: 3% {#sec-political_dysfunction_tax_time_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Welfare loss from political time-inconsistency (electoral short-termism). Politicians facing re-election underinvest in long-term public goods and infrastructure. Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.
-
-**Source**: [@kydland1977]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1%, 6%] • Distribution: Lognormal (SE: 2%)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 6% (±83%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-political_dysfunction_tax_time_pct.qmd >}}
-
-*? Low confidence*
-
-:::
-
-### Singapore Govt Spending (% GDP): 1500% {#sec-singapore_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.
-
-**Source**: [@imf-singapore-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Singapore Life Expectancy: 84.1 years {#sec-singapore_life_expectancy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
-
-**Source**: [@who-life-expectancy]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Switzerland Govt Spending (% GDP): 3500% {#sec-switzerland_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.
-
-**Source**: [@oecd-govt-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
-
-**Source**: [@who-life-expectancy]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -787,38 +585,6 @@ Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) de
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 **Source**: [@worldbank-gdp]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### US Govt Spending (% GDP): 3800% {#sec-us_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.
-
-**Source**: [@oecd-govt-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### US Life Expectancy: 77.5 years {#sec-us_life_expectancy_2023}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.
-
-**Source**: [@cdc-life-expectancy]
 
 #### Uncertainty Range
 
@@ -837,48 +603,6 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.
 
 #### Uncertainty Range
 

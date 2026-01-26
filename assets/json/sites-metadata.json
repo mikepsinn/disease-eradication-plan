@@ -1,6 +1,6 @@
 {
-  "totalSites": 11,
-  "totalPages": 103,
+  "totalSites": 12,
+  "totalPages": 104,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -2107,6 +2107,127 @@
         }
       ],
       "pageCount": 2
+    },
+    {
+      "id": "federal-efficiency-audit",
+      "type": "website",
+      "title": "Federal Resource Allocation Efficiency Audit",
+      "description": "Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.",
+      "siteUrl": "https://federal-efficiency-audit.warondisease.org",
+      "favicon": "https://federal-efficiency-audit.warondisease.org/assets/icons/federal-efficiency-audit-favicon.png",
+      "ogImage": "https://federal-efficiency-audit.warondisease.org/assets/og/federal-efficiency-audit-og-1200x630.jpg",
+      "pdfUrl": "https://federal-efficiency-audit.warondisease.org/federal-efficiency-audit.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "version": "1.0",
+      "edition": "Working Draft",
+      "copyright": "2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis",
+      "category": "Academic Paper, Public Policy, Economics, Systems Engineering",
+      "keywords": [
+        "government-efficiency",
+        "public-finance",
+        "resource-allocation",
+        "systems-analysis",
+        "federal-spending",
+        "policy-analysis",
+        "monte-carlo-simulation",
+        "efficiency-metrics",
+        "OECD-benchmarks",
+        "allocation-inefficiency"
+      ],
+      "audience": "Researchers, Policy Makers, Economists, Public Finance Analysts",
+      "format": "Working Paper",
+      "genre": "Public Finance, Systems Analysis, Policy Analysis, Economics",
+      "language": "en-US",
+      "twitterSite": "https://x.com/warondisease",
+      "twitterCreator": "https://x.com/warondisease",
+      "indexSource": "knowledge/appendix/federal-efficiency-audit.qmd",
+      "outputDir": "_site/federal-efficiency-audit",
+      "publishing": {
+        "ownSite": {
+          "url": "https://federal-efficiency-audit.warondisease.org",
+          "status": "pending"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Journal of Public Economics",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      },
+      "pages": [
+        {
+          "path": "index.qmd",
+          "url": "https://federal-efficiency-audit.warondisease.org/",
+          "title": "Wishocracy",
+          "description": "This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.",
+          "image": "https://federal-efficiency-audit.warondisease.org/assets/og-images/knowledge/appendix/wishocracy-paper-og-retro-academic.jpg",
+          "sections": [
+            "The Analytic Hierarchy Process",
+            "Quadratic Voting and Preference Intensity",
+            "Collective Intelligence and the Wisdom of Crowds",
+            "Related Work and Positioning in the Literature",
+            "Core Mechanism",
+            "Scenario: The Town Budget",
+            "Formal Properties",
+            "Formal Model",
+            "Computational Complexity and Scalability",
+            "Comparative Information & Welfare Analysis",
+            "Information-Theoretic Superiority",
+            "Welfare Maximization: The \"Median vs. Mean\" Proof",
+            "Principal-Agent Cost Elimination",
+            "Porto Alegre Participatory Budgeting",
+            "Taiwan's Digital Democracy Experiments",
+            "Stanford Participatory Budgeting Platform Research",
+            "Colorado Quadratic Voting Experiment",
+            "Reference Implementation: Wishocracy.org",
+            "Participation and Digital Divide",
+            "Manipulation and Sybil Attacks",
+            "Preference Laundering and Manufactured Consent",
+            "Complexity of Real Policy Trade-offs",
+            "Legitimacy and Accountability",
+            "Failure Modes and Robustness",
+            "References"
+          ],
+          "published": true,
+          "lastmod": "2026-01-24"
+        }
+      ],
+      "pageCount": 1
     },
     {
       "id": "iab",
@@ -4673,7 +4794,7 @@
             "That's It."
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-25"
         },
         {
           "path": "knowledge/appendix/recovery-trial.qmd",
@@ -5051,7 +5172,6 @@
             "Porto Alegre Participatory Budgeting",
             "Taiwan's Digital Democracy Experiments",
             "Stanford Participatory Budgeting Platform Research",
-            "Colorado Quadratic Voting Experiment",
             "Reference Implementation: Wishocracy.org",
             "Category Selection and Validation Methodology",
             "Zero-Funding Filter Optimization",
@@ -5068,7 +5188,7 @@
             "Phase 1: Informational (Preference Gap Documentation)",
             "Phase 2: Accountability Scoring (Politician Alignment Ratings)",
             "Phase 3: Incentive Alignment (Integration with Incentive Alignment Bonds)",
-            "Why Federal-First Beats Municipal Pilots",
+            "Why Federal-Scale Priorities",
             "Evaluation Framework",
             "Preference Aggregation Quality",
             "Accountability System Effectiveness",
@@ -5587,7 +5707,7 @@
             "Conservative Interpretation"
           ],
           "published": true,
-          "lastmod": "2026-01-24"
+          "lastmod": "2026-01-25"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -6275,7 +6395,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-24"
+          "lastmod": "2026-01-25"
         },
         {
           "path": "knowledge/appendix/drug-development-cost-analysis.qmd",
@@ -6885,6 +7005,7 @@
             "Books",
             "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
             "Working Papers",
+            "Federal Resource Allocation Efficiency Audit",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
             "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",

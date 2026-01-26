@@ -40,7 +40,7 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
-image: /assets/og-images/knowledge/appendix/us-government-waste-og-retro-academic.jpg
+image: /assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg
 ---
 
 ## Executive Summary
@@ -91,9 +91,9 @@ These are not omissions. They are *upstream variables* that manifest in terminal
 
 **Total System Input:** ~$6.75 trillion annually
 
-- Federal revenue: $4.9T^47^
-- State/local revenue attributable to federal mandates: ~$1.3T^48^
-- Compliance burden (tax, regulatory): ~$550B^32,33^
+- Federal revenue: $4.9T [@cbo-budget-outlook-2025]
+- State/local revenue attributable to federal mandates: ~$1.3T [@census-state-local-finances]
+- Compliance burden (tax, regulatory): ~$550B [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
 **Efficiency Metric:** Output per dollar of input, benchmarked against OECD peer nations with comparable development levels.
 
@@ -128,18 +128,18 @@ While subsystem losses are estimated independently, some interdependence exists.
 
 ### Valuation Standards
 
-- **Value of Statistical Life (VSL):** $13.7 million (US Department of Transportation)^1^
-- **Quality-Adjusted Life Year (QALY):** $50,000-$100,000 (medical cost-effectiveness standard)^2^
+- **Value of Statistical Life (VSL):** $13.7 million (US Department of Transportation) [@dot-vsl-2024]
+- **Quality-Adjusted Life Year (QALY):** $50,000-$100,000 (medical cost-effectiveness standard) [@qaly-threshold-history]
 
 ## Subsystem Audit: Defense
 
-The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion.^14^ Current spending exceeds the next nine nations combined.^49^
+The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
 
 ### Loss Category: Leakage (Audit Failure)
 
-In November 2024, the Pentagon failed its seventh consecutive audit.^4^ The DoD was unable to account for 61-63% of its $3.8 trillion in assets^6^, approximately $2.5 trillion in property, equipment, and inventory with unknown status.
+In November 2024, the Pentagon failed its seventh consecutive audit [@pentagon-audit-2024]. The DoD was unable to account for 61-63% of its $3.8 trillion in assets [@audit-pentagon-act-2023], approximately $2.5 trillion in property, equipment, and inventory with unknown status.
 
-The mechanism: fragmented logistics systems where contractors record inventory data, creating principal-agent misalignment.^7^ Without verified asset ledgers, the DoD regularly purchases parts it already owns but cannot locate.
+The mechanism: fragmented logistics systems where contractors record inventory data, creating principal-agent misalignment [@pentagon-assets-unaccounted]. Without verified asset ledgers, the DoD regularly purchases parts it already owns but cannot locate.
 
 **Estimated leakage:** Assuming 5% inventory shrinkage on unaccounted assets = $125 billion stock, plus ongoing logistics inefficiency.
 
@@ -147,30 +147,30 @@ The mechanism: fragmented logistics systems where contractors record inventory d
 
 The F-35 program exemplifies "concurrency": producing aircraft before design completion. Results:
 
-- Lifetime sustainment cost: increased from $1.1T (2018) to $1.58T (2023)^8^
-- Availability rates: declining despite 44% cost increase^8^
-- 2024 delivery delays: average 238 days late^9^
+- Lifetime sustainment cost: increased from $1.1T (2018) to $1.58T (2023) [@f35-program-lifetime-cost-1-7t]
+- Availability rates: declining despite 44% cost increase [@f35-program-lifetime-cost-1-7t]
+- 2024 delivery delays: average 238 days late [@gao-f35-delays-2025]
 
 **Estimated conversion inefficiency:** $15-20 billion annually in defect remediation and unflown flight hours.
 
 ### Loss Category: Idle/Standby (Overseas Basing)
 
-The U.S. maintains approximately 750 military bases in over 80 countries^10^, architecture designed for 1945 geopolitics.
+The U.S. maintains approximately 750 military bases in over 80 countries [@npp-military-bases-2025], architecture designed for 1945 geopolitics.
 
-- Direct base maintenance: $55-80 billion annually^10^
-- Personnel premium: $10,000-$40,000 per person above domestic stationing^12^
+- Direct base maintenance: $55-80 billion annually [@npp-military-bases-2025]
+- Personnel premium: $10,000-$40,000 per person above domestic stationing [@overseas-bases-facts]
 
-The Quincy Institute estimates that shifting to "Active Denial" strategy (asymmetric defense via drones, missiles, mines rather than power projection platforms) could achieve equivalent deterrence at $75 billion annual savings by 2035.^13^
+The Quincy Institute estimates that shifting to "Active Denial" strategy (asymmetric defense via drones, missiles, mines rather than power projection platforms) could achieve equivalent deterrence at $75 billion annual savings by 2035 [@quincy-active-denial-2024].
 
 ### Loss Category: Parasitic (Strategic Misalignment)
 
-The "Overmatch" doctrine requires dominance in every theater simultaneously, creating unlimited spending requirements. The Congressional Budget Office projects defense costs will rise to $965 billion by 2039,^15^ driven by this refusal to rationalize legacy commitments. A rational optimization would focus on:
+The "Overmatch" doctrine requires dominance in every theater simultaneously, creating unlimited spending requirements. The Congressional Budget Office projects defense costs will rise to $965 billion by 2039 [@cbo-defense-2025], driven by this refusal to rationalize legacy commitments. A rational optimization would focus on:
 
 - Robust nuclear deterrent (submarine-based leg sufficient)
 - Naval denial capabilities
 - Asymmetric defense posture
 
-Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20 billion annually.^16^
+Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20 billion annually [@quincy-defense-efficiency-2024].
 
 ### Defense Subsystem Summary
 
@@ -184,27 +184,27 @@ Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20
 
 ## Subsystem Audit: Healthcare Administration
 
-U.S. healthcare consumes ~18% of GDP ($5.3 trillion)^24^ yet delivers health outcomes inferior to peer nations spending 10-11% of GDP.^25^ The delta is not care quality. It is administrative friction.
+U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
 
 ### Loss Category: Friction (Administrative Overhead)
 
-The U.S. spends approximately $1,000 more per person on administrative costs than the average wealthy OECD country.^25^ With 335 million population:
+The U.S. spends approximately $1,000 more per person on administrative costs than the average wealthy OECD country [@pgpf-healthcare-comparison]. With 335 million population:
 
 **Administrative excess:** ~$335 billion annually
 
-A 2020 study found U.S. administrative spending at 34.2% of health expenditures versus 17% in Canada.^26^ This overhead does not improve outcomes. It diverts resources from care to paperwork.
+A 2020 study found U.S. administrative spending at 34.2% of health expenditures versus 17% in Canada [@healthcare-admin-costs-2020]. This overhead does not improve outcomes. It diverts resources from care to paperwork.
 
 ### Loss Category: Leakage (Medicare Advantage Upcoding)
 
 Medicare Advantage functions as a subsidy mechanism via "upcoding": making patients appear sicker than they are to increase capitated payments.
 
-- MedPAC estimate: $83 billion overpayment in 2024^27^
-- 10-year projection: $1.2 trillion cumulative overpayment^28^
-- Health Risk Assessment fraud: $7.5 billion from chart reviews generating diagnoses with no corresponding treatment^29^
+- MedPAC estimate: $83 billion overpayment in 2024 [@usc-medpac-ma-2024]
+- 10-year projection: $1.2 trillion cumulative overpayment [@crfb-ma-overpayment]
+- Health Risk Assessment fraud: $7.5 billion from chart reviews generating diagnoses with no corresponding treatment [@oig-ma-hra-2024]
 
 ### Loss Category: Leakage (Improper Payments)
 
-GAO estimates $162 billion in improper payments government-wide in 2024, with 75% concentrated in Medicare and Medicaid.^30^
+GAO estimates $162 billion in improper payments government-wide in 2024, with 75% concentrated in Medicare and Medicaid [@gao-improper-payments-2024].
 
 - Medicare Fee-for-Service: ~7.4% improper payment rate
 - Medicaid: often higher
@@ -226,28 +226,28 @@ The drug prohibition regime and resulting incarceration system represent sustain
 
 ### Loss Category: Conversion Inefficiency (Drug Prohibition)
 
-The federal drug control budget for 2024: nearly $45 billion.^17^ Total expenditure since 1971: over $1 trillion.^18^
+The federal drug control budget for 2024: nearly $45 billion [@ncdas-drug-statistics-2025]. Total expenditure since 1971: over $1 trillion [@cap-drug-war-numbers].
 
-**Outcome:** Drug use rates unchanged or increased.^50^ The market has innovated toward more potent compounds (fentanyl). This is a direct consequence of the "Iron Law of Prohibition," where interdiction shifts production to higher-value-per-weight products.
+**Outcome:** Drug use rates unchanged or increased [@nida-drug-trends]. The market has innovated toward more potent compounds (fentanyl). This is a direct consequence of the "Iron Law of Prohibition," where interdiction shifts production to higher-value-per-weight products.
 
-Despite state legalization, federal marijuana enforcement continues at approximately $3.6 billion annually^19^, pure deadweight loss on activity that is economically productive in legal jurisdictions.
+Despite state legalization, federal marijuana enforcement continues at approximately $3.6 billion annually [@marijuana-legalization-economics], pure deadweight loss on activity that is economically productive in legal jurisdictions.
 
 ### Loss Category: Negative Work (Mass Incarceration)
 
 The U.S. incarcerates at rates unmatched in the developed world, removing prime-age workers from the labor force and degrading human capital.
 
-**Direct system costs:** $80.7 billion in public corrections expenditure^20^
+**Direct system costs:** $80.7 billion in public corrections expenditure [@prison-policy-economics]
 
 **Economic burden estimates:**
 
-- FWD.us: $348 billion annually (lost wages, family costs)^21^
-- Comprehensive burden (including health effects, child welfare): $1 trillion annually^22^
+- FWD.us: $348 billion annually (lost wages, family costs) [@fwdus-incarceration-cost]
+- Comprehensive burden (including health effects, child welfare): $1 trillion annually [@nic-incarceration-burden-2016]
 
-Lost lifetime earnings per incarcerated person: approximately $500,000.^20^ The system fails at rehabilitation. High recidivism rates mean the "correctional" investment yields defective output.
+Lost lifetime earnings per incarcerated person: approximately $500,000 [@prison-policy-economics]. The system fails at rehabilitation. High recidivism rates mean the "correctional" investment yields defective output.
 
 ### Loss Category: Leakage (Civil Asset Forfeiture)
 
-Civil asset forfeiture allows property seizure without criminal conviction. FY 2024 Treasury Forfeiture Fund: $2.26 billion processed.^23^
+Civil asset forfeiture allows property seizure without criminal conviction. FY 2024 Treasury Forfeiture Fund: $2.26 billion processed [@treasury-forfeiture-2024].
 
 This mechanism incentivizes revenue-generating enforcement over public safety, introduces property rights uncertainty, and constitutes wealth transfer from productive activity to bureaucracy.
 
@@ -268,19 +268,19 @@ The compliance burden (time and resources consumed meeting federal requirements)
 
 ### Loss Category: Friction (Tax Compliance)
 
-Americans spend 7.1-7.9 billion hours annually complying with the tax code.^32^
+Americans spend 7.1-7.9 billion hours annually complying with the tax code [@ntu-tax-compliance-2025].
 
-**Total compliance cost:** {{< var bad_policy_cost_us_tax_compliance >}} annually (Tax Foundation estimate)^32,33^
+**Total compliance cost:** {{< var bad_policy_cost_us_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
 This is approximately 1.9% of GDP, exceeding total corporate income tax revenue. The labor produces nothing but compliance documentation.
 
-**Benchmark comparison:** Thirty-six countries use "Return-Free Filing" where governments pre-fill returns with data already in their possession.^51^ The U.S. tax preparation lobby (Intuit, H&R Block) has successfully lobbied to prevent this simplification,^52^ effectively taxing Americans an additional $500+ billion in lost time and fees to protect a rent-seeking industry.
+**Benchmark comparison:** Thirty-six countries use "Return-Free Filing" where governments pre-fill returns with data already in their possession [@propublica-tax-filing-2019]. The U.S. tax preparation lobby (Intuit, H&R Block) has successfully lobbied to prevent this simplification [@opensecrets-intuit-lobbying], effectively taxing Americans an additional $500+ billion in lost time and fees to protect a rent-seeking industry.
 
 ### Loss Category: Friction (Housing/Zoning Misallocation)
 
 Local zoning regulations artificially restrict housing supply in high-productivity cities, preventing labor mobility to productive clusters.
 
-**Spatial misallocation cost:** Even conservative estimates point to 2% GDP loss = {{< var bad_policy_cost_us_housing_zoning >}} annually.^34,35^
+**Spatial misallocation cost:** Even conservative estimates point to 2% GDP loss = {{< var bad_policy_cost_us_housing_zoning >}} annually [@housing-misallocation-comment; @hsieh-moretti-correction].
 
 *Note: The original Hsieh-Moretti (2019) estimate of 36% GDP loss was subsequently revised downward by the authors. The 2% figure used here represents a conservative lower bound; even critics of the original methodology acknowledge significant misallocation costs from zoning restrictions.*
 
@@ -290,7 +290,7 @@ Federal policy subsidizes this dysfunction via mortgage interest deductions and 
 
 The National Environmental Policy Act forces infrastructure projects into multi-year review. Average Environmental Impact Statement: 4.5 years.
 
-**Delay costs:** $100-140 billion annually in lost returns and capital efficiency.^37^
+**Delay costs:** $100-140 billion annually in lost returns and capital efficiency [@clearpath-nepa-2024].
 
 NEPA creates a "Green Paradox": delaying clean energy projects (transmission, wind, geothermal) more than fossil fuel projects, undermining stated policy goals.
 
@@ -298,9 +298,9 @@ NEPA creates a "Green Paradox": delaying clean energy projects (transmission, wi
 
 The Jones Act requires domestic shipping on U.S.-built, U.S.-crewed vessels. Results:
 
-- Hawaii annual cost: $1.2 billion^38^
+- Hawaii annual cost: $1.2 billion [@case-jones-act-2024]
 - Forces oil imports from foreign sources rather than domestic shipping
-- Total economic cost: $656 million to $19 billion annually^39^
+- Total economic cost: $656 million to $19 billion annually [@mit-jones-act-2025]
 
 ### Regulatory Subsystem Summary
 
@@ -318,21 +318,21 @@ Direct transfers to profitable industries distort market signals and insulate in
 
 ### Loss Category: Parasitic (Fossil Fuel Subsidies)
 
-Direct annual subsidies to fossil fuel companies: $10-52 billion.^40^
+Direct annual subsidies to fossil fuel companies: $10-52 billion [@fractracker-fossil-subsidies-2025].
 
 This represents capital transfer to a mature, profitable industry, artificially lowering carbon-intensive energy costs relative to alternatives and slowing energy transition.
 
 ### Loss Category: Parasitic (Agricultural Subsidies)
 
-Agricultural subsidies in 2024: $9.3-30 billion.^41^ Distribution is regressive. Top 10% of recipients received 65% of payments in 2024.^43^
+Agricultural subsidies in 2024: $9.3-30 billion [@usafacts-farm-subsidies-2024]. Distribution is regressive. Top 10% of recipients received 65% of payments in 2024 [@ewg-triple-dipping-2024].
 
 The subsidy structure incentivizes overproduction of corn and soy, which form the backbone of the processed food diet driving the obesity epidemic. This creates a **Waste Feedback Loop**: taxpayer funds subsidize production of cheap calories that make the population sick, requiring additional taxpayer funds to treat the resulting chronic disease (see Healthcare subsystem). Agricultural policy thus amplifies healthcare inefficiency.
 
 ### Loss Category: Negative Work (Tariffs and Corporate Welfare)
 
-**Corporate welfare:** Cato Institute tallies $181 billion annually in grants, loans, and credits to specific businesses.^44^
+**Corporate welfare:** Cato Institute tallies $181 billion annually in grants, loans, and credits to specific businesses [@cato-corporate-welfare].
 
-**Tariff deadweight loss:** Trump/Biden tariff regimes estimated to reduce long-run GDP by 0.4-0.7%.^45^ On a $28 trillion economy, 0.4% reduction = {{< var bad_policy_cost_us_tariffs >}} in lost output.
+**Tariff deadweight loss:** Trump/Biden tariff regimes estimated to reduce long-run GDP by 0.4-0.7% [@taxfoundation-tariffs-2025]. On a $28 trillion economy, 0.4% reduction = {{< var bad_policy_cost_us_tariffs >}} in lost output.
 
 ### Subsidies Subsystem Summary
 
@@ -359,7 +359,7 @@ We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo 
 | Subsidies | Normal | $200B | $280B | $350B | Direct line items easier to bound |
 | Debt Interest | Constant | $150B | $150B | $150B | Interest on accumulated inefficiency |
 
-*Note: Debt interest calculated as portion of net interest ($888B in 2024)^53^ attributable to cumulative efficiency gap.*
+*Note: Debt interest calculated as portion of net interest ($888B in 2024) [@cbo-long-term-budget-2024] attributable to cumulative efficiency gap.*
 
 ### Simulation Results
 
@@ -428,10 +428,10 @@ If U.S. efficiency improved to OECD median (80%), approximately **$1.5 trillion 
 | Initiative | Annual Cost | Efficiency Gap Coverage |
 |------------|-------------|-------------------------|
 | 1% Treaty funding | $113B | 13x covered |
-| Global disease R&D (current) | $150B^54^ | Would 10x |
-| U.S. infrastructure backlog | $2.6T total^55^ | Covered in <2 years |
-| Global poverty elimination | ~$175B^56^ | 8x covered |
-| Complete grid decarbonization | $100B/year^57^ | 15x covered |
+| Global disease R&D (current) | $150B [@gfinder-2024] | Would 10x |
+| U.S. infrastructure backlog | $2.6T total [@asce-infrastructure-2025] | Covered in <2 years |
+| Global poverty elimination | ~$175B [@worldbank-poverty-2024] | 8x covered |
+| Complete grid decarbonization | $100B/year [@doe-liftoff-2024] | 15x covered |
 
 The efficiency gap is not abstract accounting. It represents real capacity currently unavailable for health, infrastructure, and security improvements.
 
@@ -495,125 +495,3 @@ Including these factors would increase the efficiency gap estimate substantially
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
 :::
 
----
-
-## Reference Index
-
-| ID | Description |
-|----|-------------|
-| 1 | DOT Value of Statistical Life ($13.7M) |
-| 2 | QALY Thresholds |
-| 3 | ICER Value Framework |
-| 4 | Pentagon Audit Cost and Failure |
-| 5 | Pentagon Audit Context |
-| 6 | Pentagon Audit Failure 61% Assets |
-| 7 | Pentagon Inventory Visibility |
-| 8 | F-35 Sustainment Cost Growth ($1.58T) |
-| 9 | F-35 Delivery Delays |
-| 10 | Cost of Overseas Bases |
-| 11 | IISS Overseas Basing Analysis |
-| 12 | Overseas Basing Costs Detail |
-| 13 | Quincy Institute Active Denial Savings |
-| 14 | US Defense Spending vs G7 |
-| 15 | CBO Defense Projections |
-| 16 | Nuclear Modernization Savings |
-| 17 | Drug Control Budget ($45B) |
-| 18 | War on Drugs Cost History |
-| 19 | Marijuana Enforcement Costs |
-| 20 | Mass Incarceration Direct Costs |
-| 21 | FWD.us Incarceration Cost ($348B) |
-| 22 | Aggregate Burden of Incarceration ($1T) |
-| 23 | Treasury Forfeiture Fund |
-| 24 | CMS Healthcare Spending 2024 |
-| 25 | Admin Costs US vs OECD |
-| 26 | Healthcare Admin Spend Study |
-| 27 | MedPAC Medicare Advantage Overpayments |
-| 28 | MA Overpayment 10-Year Estimate |
-| 29 | MA Improper Payments (Chart Reviews) |
-| 30 | GAO Improper Payments 2024 ($162B) |
-| 32 | Tax Compliance Burden (NTU) |
-| 33 | Tax Compliance Costs ($546B) |
-| 34 | Housing Constraints and Spatial Misallocation |
-| 35 | Housing Misallocation Updates |
-| 36 | Hsieh Moretti GDP Impact |
-| 37 | NEPA Delay Costs |
-| 38 | Jones Act Hawaii Cost |
-| 39 | Jones Act Economic Cost |
-| 40 | Fossil Fuel Subsidies |
-| 41 | Farm Subsidies 2024 |
-| 42 | Cato Farm Subsidy Analysis |
-| 43 | Farm Subsidy Distribution (Wealthy) |
-| 44 | Corporate Welfare ($181B) |
-| 45 | Tariff GDP Impact |
-| 46 | Tariff Economic Impact |
-| 47 | Federal Revenue (CBO) |
-| 48 | State/Local Revenue (Census) |
-| 49 | SIPRI Military Expenditure Database |
-| 50 | NIDA Drug Use Trends |
-| 51 | Return-Free Filing Countries (ProPublica) |
-| 52 | Tax Prep Lobby Spending (OpenSecrets) |
-| 53 | Federal Net Interest (CBO) |
-| 54 | Global Health R&D Spending (Policy Cures) |
-| 55 | Infrastructure Investment Gap (ASCE) |
-| 56 | Global Poverty Elimination Cost (World Bank) |
-| 57 | Grid Decarbonization Cost (DOE) |
-
-## Works Cited
-
-1. Departmental Guidance on Valuation of a Statistical Life in Economic Analysis | US Department of Transportation, accessed January 22, 2026, [https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis](https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis)
-2. Assessing cost-effectiveness in healthcare: history of the $50,000 per QALY threshold - Sustainability Impact Metrics, accessed January 22, 2026, [https://ecocostsvalue.com/EVR/img/references%20others/Gosse%202008%20QALY%20threshold%20financial.pdf](https://ecocostsvalue.com/EVR/img/references%20others/Gosse%202008%20QALY%20threshold%20financial.pdf)
-3. 2020-2023 Value Assessment Framework | ICER, accessed January 22, 2026, [https://icer.org/wp-content/uploads/2020/10/ICER\_2020\_2023\_VAF\_102220.pdf](https://icer.org/wp-content/uploads/2020/10/ICER_2020_2023_VAF_102220.pdf)
-4. Take 7: The Pentagon Fails Another Audit - National Priorities Project, accessed January 22, 2026, [https://www.nationalpriorities.org/blog/2024/11/25/take-7-pentagon-fails-another-audit/](https://www.nationalpriorities.org/blog/2024/11/25/take-7-pentagon-fails-another-audit/)
-5. Fact Check: Has the Pentagon failed its 7th audit in a row? - Econofact, accessed January 22, 2026, [https://econofact.org/factbrief/has-the-pentagon-failed-its-7th-audit-in-a-row](https://econofact.org/factbrief/has-the-pentagon-failed-its-7th-audit-in-a-row)
-6. Text - H.R.2961 - 118th Congress (2023-2024): Audit the Pentagon Act of 2023, accessed January 22, 2026, [https://www.congress.gov/bill/118th-congress/house-bill/2961/text](https://www.congress.gov/bill/118th-congress/house-bill/2961/text)
-7. Pentagon can't account for 63% of nearly $4 trillion in assets | Responsible Statecraft, accessed January 22, 2026, [https://responsiblestatecraft.org/pentagon-audit-2666415734/](https://responsiblestatecraft.org/pentagon-audit-2666415734/)
-8. F-35 Sustainment: Costs Continue to Rise While Planned Use and Availability Have Decreased - GAO, accessed January 22, 2026, [https://www.gao.gov/products/gao-24-106703](https://www.gao.gov/products/gao-24-106703)
-9. F-35 Joint Strike Fighter: Actions Needed to Address Late Deliveries and Improve Future Development - GAO, accessed January 22, 2026, [https://www.gao.gov/products/gao-25-107632](https://www.gao.gov/products/gao-25-107632)
-10. Shut Them Down! Closing Military Bases is Long Overdue - National Priorities Project, accessed January 22, 2026, [https://www.nationalpriorities.org/blog/2025/02/27/shut-them-down-closing-military-bases-long-overdue/](https://www.nationalpriorities.org/blog/2025/02/27/shut-them-down-closing-military-bases-long-overdue/)
-11. Chapter One: Overseas bases and US strategic posture, accessed January 22, 2026, [https://www.iiss.org/online-analysis/online-analysis/2022/09/overseas-bases-and-us-strategic-posture/](https://www.iiss.org/online-analysis/online-analysis/2022/09/overseas-bases-and-us-strategic-posture/)
-12. The Facts about US Military Bases Overseas, accessed January 22, 2026, [https://www.overseasbases.net/facts.html](https://www.overseasbases.net/facts.html)
-13. Active Denial: A Roadmap to a More Effective, Stabilizing, and Sustainable U.S. Defense Strategy in Asia - Quincy Institute, accessed January 22, 2026, [https://quincyinst.org/research/active-denial-a-roadmap-to-a-more-effective-stabilizing-and-sustainable-u-s-defense-strategy-in-asia/](https://quincyinst.org/research/active-denial-a-roadmap-to-a-more-effective-stabilizing-and-sustainable-u-s-defense-strategy-in-asia/)
-14. Budget Basics: National Defense - Peterson Foundation, accessed January 22, 2026, [https://www.pgpf.org/article/budget-explainer-national-defense/](https://www.pgpf.org/article/budget-explainer-national-defense/)
-15. Long-Term Implications of the 2025 Future Years Defense Program, accessed January 22, 2026, [https://www.cbo.gov/publication/61017](https://www.cbo.gov/publication/61017)
-16. Keys to Developing a More Efficient, Effective Defense at Lower Cost - Quincy Institute, accessed January 22, 2026, [https://quincyinst.org/research/keys-to-developing-a-more-efficient-effective-defense-at-lower-cost/](https://quincyinst.org/research/keys-to-developing-a-more-efficient-effective-defense-at-lower-cost/)
-17. NCDAS: Substance Abuse and Addiction Statistics [2025], accessed January 22, 2026, [https://drugabusestatistics.org/](https://drugabusestatistics.org/)
-18. Ending the War on Drugs: By the Numbers - Center for American Progress, accessed January 22, 2026, [https://www.americanprogress.org/article/ending-war-drugs-numbers/](https://www.americanprogress.org/article/ending-war-drugs-numbers/)
-19. Economic Benefit of Legalizing Weed: A Compliance Perspective - Qredible.com, accessed January 22, 2026, [https://qredible.com/the-economic-benefits-of-legalizing-weed-a-compliance-perspective/](https://qredible.com/the-economic-benefits-of-legalizing-weed-a-compliance-perspective/)
-20. Economics of incarceration - Prison Policy Initiative, accessed January 22, 2026, [https://www.prisonpolicy.org/research/economics\_of\_incarceration/](https://www.prisonpolicy.org/research/economics_of_incarceration/)
-21. NEW REPORT: Groundbreaking Analysis From FWD.us Finds Incarceration Costs American Families Nearly $350 Billion Each Year, accessed January 22, 2026, [https://www.fwd.us/news/new-report-groundbreaking-analysis-from-fwd-us-finds-incarceration-costs-american-families-nearly-350-billion-each-year/](https://www.fwd.us/news/new-report-groundbreaking-analysis-from-fwd-us-finds-incarceration-costs-american-families-nearly-350-billion-each-year/)
-22. The Economic Burden of Incarceration in the U.S (2016) | National Institute of Corrections, accessed January 22, 2026, [https://nicic.gov/weblink/economic-burden-incarceration-in-us-2016](https://nicic.gov/weblink/economic-burden-incarceration-in-us-2016)
-23. ACCOUNTABILITY REPORT Fiscal Year 2024 | Treasury Forfeiture Fund, accessed January 22, 2026, [https://home.treasury.gov/system/files/246/TFF-FY-2024-Accountability-Report.pdf](https://home.treasury.gov/system/files/246/TFF-FY-2024-Accountability-Report.pdf)
-24. NHE Fact Sheet - CMS, accessed January 22, 2026, [https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet](https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet)
-25. How Does the U.S. Healthcare System Compare to Other Countries? - Peterson Foundation, accessed January 22, 2026, [https://www.pgpf.org/article/how-does-the-us-healthcare-system-compare-to-other-countries/](https://www.pgpf.org/article/how-does-the-us-healthcare-system-compare-to-other-countries/)
-26. Health Care Administrative Costs in the United States and Canada, 2017 - PubMed, accessed January 22, 2026, [https://pubmed.ncbi.nlm.nih.gov/31905376/](https://pubmed.ncbi.nlm.nih.gov/31905376/)
-27. Estimating Overpayments to MA Plans: MedPAC Critics Get It Wrong - July 1, 2024, accessed January 22, 2026, [https://schaeffer.usc.edu/research/estimating-overpayments-to-ma-plans-medpac-critics-get-it-wrong/](https://schaeffer.usc.edu/research/estimating-overpayments-to-ma-plans-medpac-critics-get-it-wrong/)
-28. Medicare Advantage Will Be Overpaid by $1.2 Trillion, accessed January 22, 2026, [https://www.crfb.org/blogs/medicare-advantage-will-be-overpaid-12-trillion](https://www.crfb.org/blogs/medicare-advantage-will-be-overpaid-12-trillion)
-29. Medicare Advantage: Questionable Use of Health Risk Assessments Continues To Drive Up Payments to Plans by Billions - OIG, accessed January 22, 2026, [https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions/](https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions/)
-30. GAO Reports an Estimated $162 billion in Improper Payments Across the Federal Government in Fiscal Year 2024, accessed January 22, 2026, [https://www.gao.gov/press-release/gao-reports-estimated-162-billion-improper-payments-across-federal-government-fiscal-year-2024](https://www.gao.gov/press-release/gao-reports-estimated-162-billion-improper-payments-across-federal-government-fiscal-year-2024)
-31. Fraud & Improper Payments | U.S. GAO, accessed January 22, 2026, [https://www.gao.gov/fraud-improper-payments](https://www.gao.gov/fraud-improper-payments)
-32. Average American Spends 13 Hours and $290 to File Taxes - National Taxpayers Union, accessed January 22, 2026, [https://www.ntu.org/foundation/detail/taxpayers-will-spend-71-billion-hours-464-billion-on-tax-compliance-in-2025](https://www.ntu.org/foundation/detail/taxpayers-will-spend-71-billion-hours-464-billion-on-tax-compliance-in-2025)
-33. IRS Tax Compliance Costs the US Economy $546B Annually, accessed January 22, 2026, [https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/](https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/)
-34. Housing Constraints and Spatial Misallocation: Comment - American Economic Association, accessed January 22, 2026, [https://www.aeaweb.org/articles?id=10.1257/mac.20230141&from=f](https://www.aeaweb.org/articles?id=10.1257/mac.20230141&from=f)
-35. Hsieh-Moretti on Housing Regulation: A Gracious Admission of Error - Econlib, accessed January 22, 2026, [https://www.econlib.org/a-correction-on-housing-regulation/](https://www.econlib.org/a-correction-on-housing-regulation/)
-36. Housing Constraints and Spatial Misallocation - IDEAS/RePEc, accessed January 22, 2026, [https://ideas.repec.org/a/aea/aejmac/v11y2019i2p1-39.html](https://ideas.repec.org/a/aea/aejmac/v11y2019i2p1-39.html)
-37. Time to Fix America's Permitting Problems and Let America Build - ClearPath, accessed January 22, 2026, [https://clearpath.org/our-take/time-to-fix-americas-permitting-problems-and-let-america-build/](https://clearpath.org/our-take/time-to-fix-americas-permitting-problems-and-let-america-build/)
-38. Case, Moylan Lead Measures To Relieve Crushing Burden Of Jones Act On Cost Of Living For Island And Other Non-Contiguous Parts Of U.S | U.S. House of Representatives, accessed January 22, 2026, [https://case.house.gov/news/documentsingle.aspx?DocumentID=3520](https://case.house.gov/news/documentsingle.aspx?DocumentID=3520)
-39. Impacts of the Jones Act on U.S. Petroleum Markets - MIT CEEPR, accessed January 22, 2026, [https://ceepr.mit.edu/wp-content/uploads/2025/02/MIT-CEEPR-WP-2025-03.pdf](https://ceepr.mit.edu/wp-content/uploads/2025/02/MIT-CEEPR-WP-2025-03.pdf)
-40. Fossil Fuel Subsidies: The $760 Billion Lie About 'Free Market' Energy, accessed January 22, 2026, [https://www.fractracker.org/2025/03/fossil-fuel-subsidies-free-market-myth/](https://www.fractracker.org/2025/03/fossil-fuel-subsidies-free-market-myth/)
-41. US Federal Agricultural Farm Subsidies: How Much Farmers Get By Year - USAFacts, accessed January 22, 2026, [https://usafacts.org/articles/federal-farm-subsidies-what-data-says/](https://usafacts.org/articles/federal-farm-subsidies-what-data-says/)
-42. Cutting Federal Farm Subsidies | Cato Institute, accessed January 22, 2026, [https://www.cato.org/briefing-paper/cutting-federal-farm-subsidies](https://www.cato.org/briefing-paper/cutting-federal-farm-subsidies)
-43. Triple dipping: Budget bill raises farm subsidies for wealthy farmers by billions of dollars | Environmental Working Group, accessed January 22, 2026, [https://www.ewg.org/research/triple-dipping-budget-bill-raises-farm-subsidies-wealthy-farmers-billions-dollars](https://www.ewg.org/research/triple-dipping-budget-bill-raises-farm-subsidies-wealthy-farmers-billions-dollars)
-44. Corporate Welfare in the Federal Budget | Cato Institute, accessed January 22, 2026, [https://www.cato.org/policy-analysis/corporate-welfare-federal-budget-0](https://www.cato.org/policy-analysis/corporate-welfare-federal-budget-0)
-45. Trump Tariffs: Tracking the Economic Impact of the Trump Trade War - Tax Foundation, accessed January 22, 2026, [https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/](https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/)
-46. State of U.S. Tariffs: August 7, 2025 | The Budget Lab at Yale, accessed January 22, 2026, [https://budgetlab.yale.edu/research/state-us-tariffs-august-7-2025](https://budgetlab.yale.edu/research/state-us-tariffs-august-7-2025)
-47. The Budget and Economic Outlook: 2025 to 2035 | Congressional Budget Office, accessed January 25, 2026, [https://www.cbo.gov/publication/60870](https://www.cbo.gov/publication/60870)
-48. State and Local Government Finances Summary: 2022 | U.S. Census Bureau, accessed January 25, 2026, [https://www.census.gov/programs-surveys/gov-finances.html](https://www.census.gov/programs-surveys/gov-finances.html)
-49. SIPRI Military Expenditure Database | Stockholm International Peace Research Institute, accessed January 25, 2026, [https://www.sipri.org/databases/milex](https://www.sipri.org/databases/milex)
-50. Trends & Statistics: Drug Use Trends | National Institute on Drug Abuse, accessed January 25, 2026, [https://nida.nih.gov/research-topics/trends-statistics](https://nida.nih.gov/research-topics/trends-statistics)
-51. Filing Taxes Could Be Free and Simple. But H&R Block and Intuit Are Lobbying Against It | ProPublica, accessed January 25, 2026, [https://www.propublica.org/article/filing-taxes-could-be-free-simple-hr-block-intuit-lobbying-against-it](https://www.propublica.org/article/filing-taxes-could-be-free-simple-hr-block-intuit-lobbying-against-it)
-52. Intuit Inc Lobbying Profile | OpenSecrets, accessed January 25, 2026, [https://www.opensecrets.org/federal-lobbying/clients/summary?id=D000026667](https://www.opensecrets.org/federal-lobbying/clients/summary?id=D000026667)
-53. The 2024 Long-Term Budget Outlook | Congressional Budget Office, accessed January 25, 2026, [https://www.cbo.gov/publication/60039](https://www.cbo.gov/publication/60039)
-54. G-FINDER 2024: Neglected Disease Research and Development | Policy Cures Research, accessed January 25, 2026, [https://www.policycuresresearch.org/g-finder](https://www.policycuresresearch.org/g-finder)
-55. 2025 Report Card for America's Infrastructure | American Society of Civil Engineers, accessed January 25, 2026, [https://infrastructurereportcard.org/](https://infrastructurereportcard.org/)
-56. Poverty and Shared Prosperity 2024 | World Bank, accessed January 25, 2026, [https://www.worldbank.org/en/publication/poverty-and-shared-prosperity](https://www.worldbank.org/en/publication/poverty-and-shared-prosperity)
-57. Pathways to Commercial Liftoff: Clean Energy | U.S. Department of Energy, accessed January 25, 2026, [https://liftoff.energy.gov/](https://liftoff.energy.gov/)

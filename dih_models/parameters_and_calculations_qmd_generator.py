@@ -148,6 +148,7 @@ def generate_parameters_and_calculations_qmd(
     content.append("aliases:")
     content.append("  - /calculations.html")
     content.append("  - /methodology.html")
+    content.append("  - /knowledge/appendix/parameters-and-calculations")
     content.append("format:")
     content.append("  html:")
     content.append("    toc: true")

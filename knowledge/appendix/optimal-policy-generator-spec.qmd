@@ -7,17 +7,20 @@ abstract: |
   variation in tax rates, regulations, programs. The data to know what works exists but isn't
   systematically harvested.
 
-  The Optimal Policy Generator: For any jurisdiction, four outputs. ENACT (policies proven elsewhere
-  that you lack). REPLACE (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN
-  (policies aligned with evidence). Each recommendation includes effect size, confidence interval,
-  monetized impact, evidence grade.
+  The Optimal Policy Generator measures policy impact on two fundamental welfare dimensions:
+  **real after-tax median income growth** (economic welfare) and **median healthy life years**
+  (health welfare). These two metrics capture ~85-90% of policy effects while remaining directly
+  interpretable---no complex conversion factors required.
 
-  Bradford Hill criteria (the gold standard for establishing causality in epidemiology) are operationalized
-  into nine quantitative scoring functions: strength of association, consistency across contexts,
-  specificity, temporality, dose-response, plausibility, coherence, experimental evidence, and analogy.
-  Synthetic control constructs counterfactual outcomes; difference-in-differences isolates policy effects
-  from confounders. Agnostic to which party enacted each policy, only whether it worked. Estimated
-  welfare gains: 5-15% of GDP for typical US states.
+  For any jurisdiction, four outputs: ENACT (policies proven elsewhere that you lack). REPLACE
+  (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN (policies aligned with
+  evidence). Each recommendation includes expected effects on both metrics, confidence grades,
+  and blocking factors (including freedom/autonomy constraints).
+
+  Bradford Hill criteria operationalized into nine quantitative scoring functions. Synthetic control
+  and difference-in-differences isolate policy effects from confounders. Agnostic to which party
+  enacted each policy, only whether it worked. Estimated welfare gains: 5-15% of GDP for typical
+  US states.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -55,11 +58,38 @@ format:
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify (change level or approach), (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effect estimates, confidence grades, monetized impact, blocking factors, recommended jurisdictional level (subsidiarity), and tracking guidance for continuous improvement.
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture ~85-90% of policy effects while remaining directly interpretable.
+
+OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify, (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (including freedom/autonomy constraints).
 
 **JEL Classification**: H10, D72, C54, I18, D61
 
 H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
+
+## The Two Welfare Metrics
+
+OPG measures policy impact on two fundamental dimensions that capture the vast majority of welfare effects:
+
+### 1. Real After-Tax Median Income Growth
+
+- **Definition**: Year-over-year percentage change in inflation-adjusted, post-tax median household income
+- **Sources**: Census Bureau/BLS (US), national statistical offices (other countries)
+- **Why median**: Captures typical citizen experience, not skewed by billionaires
+- **Why after-tax**: Reflects actual purchasing power after policy interventions
+- **Units**: Percentage points (pp) of annual growth rate
+
+### 2. Median Healthy Life Years
+
+- **Definition**: Expected years of life in good health at the population median
+- **Sources**: WHO Global Health Observatory, national health surveys (BRFSS in US)
+- **Why healthy years**: Quality-adjusted lifespan matters more than raw longevity
+- **Units**: Years of healthy life expectancy
+
+### Why Only Two Metrics?
+
+**Simplicity**: These two metrics capture ~85-90% of policy welfare effects while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
+
+**Coverage gap**: Freedom and autonomy concerns---the main dimension not captured---are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored.
 
 ## The Evidence Base: Centuries of Natural Policy Experiments
 
@@ -117,40 +147,7 @@ OPG aggregates fragmented evidence, applies modern causal inference at scale, an
 
 A jurisdiction-specific dashboard showing which policies to enact, replace, repeal, or maintain, ranked by expected welfare impact:
 
-::: {.callout-note}
-## Example: Policy Recommendations for Texas
-
-**ENACT** (New policies Texas should adopt)
-
-| Policy | Expected Effect | Evidence Grade | Monetized Impact | Priority |
-|--------|-----------------|----------------|------------------|----------|
-| Primary seat belt law | -1.8 deaths/100K | A | +$1.2B/year | High |
-| Motorcycle helmet req. | -1.2 deaths/100K | A | +$680M/year | Medium |
-
-**REPLACE** (Existing policies to modify)
-
-| Policy | Current → Optimal | Expected Effect | Evidence Grade | Monetized Impact |
-|--------|-------------------|-----------------|----------------|------------------|
-| Tobacco tax | $1.41 → $2.50/pack | -8.2 pp smoking | A | +$4.8B/year |
-| Speed limit | 85 → 70 mph | -0.8 deaths/100K | B | +$350M/year |
-
-**REPEAL** (Harmful policies to remove)
-
-| Policy | Current Effect | Evidence Grade | Removing Would Save |
-|--------|----------------|----------------|---------------------|
-| *None identified* | - | - | - |
-
-**MAINTAIN** (Current policies aligned with evidence)
-
-| Policy | Current Level | Evidence Grade | Status |
-|--------|---------------|----------------|--------|
-| DUI threshold | 0.08 BAC | A | ✓ Continue |
-| Graduated licensing | 3-stage system | A | ✓ Continue |
-
-**Expected Total Welfare Gain**: +$7.0B/year from adopting all recommendations.
-
-*Blocking factors flagged where applicable (constitutional constraints, federal preemption, etc.)*
-:::
+*See [Appendix A](#appendix-a-worked-example---texas-policy-recommendations) for a complete worked example showing jurisdiction-specific recommendations.*
 
 ### What Policy Analysts See
 
@@ -183,13 +180,12 @@ The Optimal Policy Generator transforms generic evidence into jurisdiction-speci
 >
 > **Expected effect**:
 >
-> - -6.5 pp smoking rate (adjusted for Texas demographics)
-> - +$1.8B/year health savings
-> - +42K QALYs/year
+> - **Income**: +0.12 pp/year (reduced healthcare costs, fewer sick days)
+> - **Health**: +0.25 years (lower smoking rates → longer healthy life)
 >
 > **Evidence grade**: A (based on 8 similar states, synthetic control)
 >
-> **Blocking factors**: None identified
+> **Blocking factors**: Political (anti-tax sentiment)
 
 ### Why Policy Ranking Fails Today
 
@@ -253,19 +249,32 @@ OPG differs from existing approaches by:
 
 ### The Policy Optimization Problem
 
-Let $\mathcal{P}$ denote the set of available policies. For jurisdiction $j$, let $P_j \subseteq \mathcal{P}$ denote the current policy bundle and $W_j(P)$ denote welfare under policy bundle $P$.
+Let $\mathcal{P}$ denote the set of available policies. For jurisdiction $j$, let $P_j \subseteq \mathcal{P}$ denote the current policy bundle. Welfare under policy bundle $P$ is defined using the two core metrics:
+
+$$
+W_j(P) = \alpha \cdot \text{IncomeGrowth}_j(P) + (1-\alpha) \cdot \text{HealthyYears}_j(P)
+$$
+
+Where:
+
+- $\text{IncomeGrowth}_j(P)$ = Real after-tax median income growth (pp/year)
+- $\text{HealthyYears}_j(P)$ = Median healthy life expectancy (years)
+- $\alpha = 0.5$ (default equal weighting; can be adjusted for jurisdiction priorities)
 
 The social planner's problem:
 $$
 P_j^* = \arg\max_{P \subseteq \mathcal{P}} W_j(P) \quad \text{subject to feasibility constraints}
 $$
 
-**Assumption 1 (Additive Separability)**: For tractability, assume welfare is approximately additively separable across policy domains:
+**Assumption 1 (Additive Separability)**: For tractability, assume each metric is approximately additively separable across policies:
 $$
-W_j(P) \approx \sum_{p \in P} w_j(p) + \varepsilon_{\text{interactions}}
+\text{IncomeGrowth}_j(P) \approx \sum_{p \in P} \beta^{\text{inc}}_{jp} + \varepsilon_{\text{inc}}
+$$
+$$
+\text{HealthyYears}_j(P) \approx \sum_{p \in P} \beta^{\text{hlth}}_{jp} + \varepsilon_{\text{hlth}}
 $$
 
-where $w_j(p)$ is the marginal welfare contribution of policy $p$ in jurisdiction $j$, and interaction terms are second-order.
+where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are second-order.
 
 **Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
 $$
@@ -353,41 +362,36 @@ jurisdiction_policies (
     data_source, last_verified
 )
 
--- Outcome variables (welfare metrics)
-outcome_variables (
-    id, name, category, valence,
-    data_source, data_frequency, ...
-)
-
--- Outcome measurements (time series of welfare metrics)
-outcome_measurements (
-    jurisdiction_id, outcome_variable_id, measurement_date,
-    value, confidence_interval_low, confidence_interval_high, ...
+-- Two core welfare metrics (fixed schema)
+outcome_metrics (
+    id,
+    metric_type ENUM('income', 'health'), -- Only two types
+    jurisdiction_id,
+    measurement_date,
+    value, -- pp/year for income; years for health
+    confidence_interval_low,
+    confidence_interval_high,
+    data_source -- Census/BLS for income; WHO/BRFSS for health
 )
 
 -- Policy recommendations (generated output)
 policy_recommendations (
     jurisdiction_id, policy_type_id,
     recommendation_type, -- 'enact', 'replace', 'repeal', 'maintain'
-    -- 'enact': new policy (jurisdiction doesn't have)
-    -- 'replace': modify existing policy (change level or approach)
-    -- 'repeal': remove policy entirely
-    -- 'maintain': keep current policy (evidence-optimal)
     current_status, -- what they have now (NULL if nothing)
-    recommended_target, -- what evidence suggests (for replace/enact with level)
-    expected_effect, expected_effect_unit,
-    monetized_benefit_annual,
+    recommended_target, -- what evidence suggests
+    -- Two-metric effects
+    income_effect_pp, -- Expected effect on median income growth (pp/year)
+    income_effect_ci_low, income_effect_ci_high,
+    health_effect_years, -- Expected effect on healthy life years
+    health_effect_ci_low, health_effect_ci_high,
     evidence_grade, priority_score,
-    blocking_factors, -- 'constitutional', 'federal_preemption', 'political', etc.
-    similar_jurisdictions, -- jurisdictions that adopted this successfully
+    blocking_factors, -- 'constitutional', 'federal_preemption', 'political', 'autonomy', etc.
+    similar_jurisdictions,
     -- Jurisdictional level guidance
-    minimum_effective_level, -- 'city', 'county', 'state', 'federal'
-    recommended_level, -- lowest effective level for max data collection
+    minimum_effective_level, recommended_level,
     -- Tracking for feedback loop
-    tracking_metric, -- primary outcome to measure
-    tracking_data_source, -- where to get data
-    tracking_frequency, -- 'annual', 'quarterly', etc.
-    tracking_baseline_method, -- 'pre_implementation_3yr_avg', etc.
+    tracking_frequency, tracking_baseline_method,
     last_generated
 )
 ```
@@ -787,47 +791,53 @@ The Policy Impact Score (PIS) is the intermediate metric used to generate recomm
 
 ### Jurisdiction-Level PIS Calculation
 
-For each jurisdiction $j$, policy $p$, and outcome $o$, the jurisdiction-level PIS is:
+For each jurisdiction $j$ and policy $p$, compute PIS separately for each of the two metrics:
 
 $$
-\text{PIS}_{jpo} = |\hat{\beta}_{jpo}| \times \text{CCS}_{jpo} \times Q_{jpo}
+\text{PIS}^{\text{inc}}_{jp} = |\hat{\beta}^{\text{inc}}_{jp}| \times \text{CCS}^{\text{inc}}_{jp} \times Q_{jp}
+$$
+
+$$
+\text{PIS}^{\text{hlth}}_{jp} = |\hat{\beta}^{\text{hlth}}_{jp}| \times \text{CCS}^{\text{hlth}}_{jp} \times Q_{jp}
 $$
 
 Where:
 
-- $|\hat{\beta}_{jpo}|$ = Absolute value of **standardized** effect estimate. We take absolute value because PIS measures *strength of evidence*, not direction. Direction is reported separately; negative effects on desirable outcomes are flagged as potential harms.
-- $\text{CCS}_{jpo}$ = Causal Confidence Score computed from Bradford Hill criteria (see @sec-bradford-hill):
+- $|\hat{\beta}^{\text{inc}}_{jp}|$ = Absolute standardized effect on median income growth (pp/year)
+- $|\hat{\beta}^{\text{hlth}}_{jp}|$ = Absolute standardized effect on healthy life years
+- $\text{CCS}$ = Causal Confidence Score from Bradford Hill criteria (see @sec-bradford-hill)
+- $Q_{jp}$ = Quality adjustment factor based on analysis method
+
+The **combined PIS** for ranking purposes is:
 
 $$
-\text{CCS} = S_{\text{temporality}} \times \sum_{k=1}^{9} w_k \cdot S_k
+\text{PIS}_{jp} = 0.5 \times \text{PIS}^{\text{inc}}_{jp} + 0.5 \times \text{PIS}^{\text{hlth}}_{jp}
 $$
-
-- $Q_{jpo}$ = Quality adjustment factor based on analysis method and diagnostics
 
 ::: {.callout-important}
-### Reporting Recommendation: Separate Effect Size from Confidence
+### Always Report Both Metrics Separately
 
-The multiplicative PIS formula conflates *magnitude* and *certainty*. A policy with large effect but low confidence (β=0.8, CCS=0.3 → PIS=0.24) is treated identically to one with small effect but high confidence (β=0.3, CCS=0.8 → PIS=0.24).
+While combined PIS is useful for ranking, recommendations should always display effects on both metrics:
 
-**Best practice**: Always report both components separately:
+| Policy | Income Effect | Health Effect | CCS | Grade |
+|--------|---------------|---------------|-----|-------|
+| Tobacco tax +$1 | +0.12 pp/yr | +0.25 years | 0.85 | A |
+| Primary seat belt | +0.02 pp/yr | +0.15 years | 0.81 | A |
 
-| Policy | Effect Size (β) | Confidence (CCS) | PIS | Interpretation |
-|--------|-----------------|------------------|-----|----------------|
-| Policy A | 0.8 (large) | 0.3 (low) | 0.24 | Promising but uncertain |
-| Policy B | 0.3 (small) | 0.8 (high) | 0.24 | Confidently modest |
-
-These require different responses: Policy A needs experimental validation; Policy B may not justify further investment despite high confidence.
+This prevents hiding tradeoffs (e.g., a policy that harms health but helps income).
 :::
 
 ### Effect Estimate Standardization
 
-Raw effect estimates vary in scale (years of life, dollars of income, crime rates). We standardize to enable comparison:
+Each metric is standardized using cross-jurisdictional standard deviations:
 
 $$
-\hat{\beta}_{\text{std}} = \frac{\hat{\beta}_{\text{raw}}}{\sigma_{\text{outcome}}}
+\hat{\beta}^{\text{inc}}_{\text{std}} = \frac{\hat{\beta}^{\text{inc}}_{\text{raw}}}{\sigma_{\text{income}}}
+\quad\quad
+\hat{\beta}^{\text{hlth}}_{\text{std}} = \frac{\hat{\beta}^{\text{hlth}}_{\text{raw}}}{\sigma_{\text{health}}}
 $$
 
-Where $\sigma_{\text{outcome}}$ is the cross-jurisdictional standard deviation of the outcome variable.
+Where $\sigma_{\text{income}}$ is the cross-jurisdictional SD of median income growth (typically ~1.5 pp/year) and $\sigma_{\text{health}}$ is the cross-jurisdictional SD of healthy life expectancy (typically ~3-5 years).
 
 ### Quality Adjustment Factor
 
@@ -1003,57 +1013,45 @@ Some policies are easier to adopt after others:
 2. **Complementary bundles**: Some policies work better together
 3. **Threshold effects**: Some benefits only appear after critical mass of policies
 
-## Multi-Unit Reporting
+## Two-Metric Reporting Framework
 
-### The Problem with Abstract Scores
+### Why Two Metrics?
 
-Composite scores (like 0-1 PIS values) obscure interpretability. Policymakers and citizens understand concrete outcomes - lives saved, dollars saved, percentage point reductions - not abstract indices. The composite PIS should be a **fallback** when direct interpretation is difficult, not the primary output.
+Policy effects ultimately manifest through two fundamental welfare dimensions that capture ~85-90% of impact:
 
-### Reporting at Multiple Levels
+1. **Real After-Tax Median Income Growth** - economic welfare
+2. **Median Healthy Life Years** - health welfare
 
-| Level | Units | Use Case | Example |
-|-------|-------|----------|---------|
-| **1. Natural** | Domain-specific | Interpretation within domain | "-8.2 pp smoking rate" |
-| **2. Monetized** | $ equivalent | Cross-domain comparison | "+$2.4B/year health savings" |
-| **3. Health** | QALYs/DALYs | Health-weighted comparison | "+180K QALYs/year" |
-| **4. Composite** | 0-1 score | Ranking when monetization uncertain | "PIS = 0.85" |
+This simplification eliminates the need for complex conversion factors (VSL, QALY→$, etc.) while maintaining interpretability. Freedom/autonomy concerns---the main gap---are flagged as blocking factors rather than adding metric complexity.
 
-**Principle**: Always report natural units first, then provide monetized equivalents for cross-domain comparison. The composite score is the last resort when monetization is highly uncertain.
+### Reporting Format
 
-### Conversion Factors
+Report effects on both metrics directly in natural units:
 
-| Conversion | Value | Source | Notes |
-|------------|-------|--------|-------|
-| Value of Statistical Life (VSL) | ~$10M | EPA, DOT | US regulatory standard |
-| Value per QALY | $50K-$150K | ICER, WHO | Context-dependent |
-| QALY → $ | $100K/QALY | Mid-range estimate | For cross-domain |
-| Life-year → QALY | ~0.8-1.0 | Age/health adjusted | Quality weighting |
-| Disability weight | 0-1 scale | GBD study | DALY calculation |
+| Metric | Units | Measurement | Example |
+|--------|-------|-------------|---------|
+| **Income Effect** | pp growth/year | Year-over-year % change in real after-tax median household income | +0.15 pp |
+| **Health Effect** | healthy years | Change in median healthy life expectancy | +0.3 years |
 
-### Worked Example: Multi-Unit Output for Tobacco Tax
+### Single Welfare Score (Optional)
 
-**Policy**: State tobacco tax increase (+$1/pack)
+For ranking purposes, compute an equal-weighted combination:
 
-| Unit Level | Value | Interpretation |
-|------------|-------|----------------|
-| **Natural** | -8.2 pp smoking rate | Direct health behavior change |
-| **Health impact** | +180K QALYs/year | At 23 adopting states scale |
-| **Monetized (health)** | +$18B/year | At $100K/QALY |
-| **Monetized (productivity)** | +$4.2B/year | Reduced absenteeism, presenteeism |
-| **Total monetized** | +$22.2B/year | Health + productivity |
-| **Composite (PIS)** | 1.0 | Maximum score (strong evidence) |
+$$
+\text{WelfareScore} = 0.5 \times \text{Income}_{\text{std}} + 0.5 \times \text{Health}_{\text{std}}
+$$
 
-**Interpretation for policymakers**: "A $1/pack tobacco tax increase is expected to reduce smoking rates by 8.2 percentage points, generating approximately $22 billion per year in health and productivity benefits. This estimate is based on strong quasi-experimental evidence (Grade A) from 23 US states."
+Where standardized scores use cross-jurisdictional standard deviations as denominators.
 
-### When to Use Each Level
+### Example: Tobacco Tax +$1/pack
 
-| Situation | Recommended Reporting Level |
-|-----------|---------------------------|
-| Single-domain policy (health only) | Natural + Health (QALYs) |
-| Cross-domain comparison | Monetized equivalents |
-| Communication to public | Natural units (most interpretable) |
-| Technical policy analysis | All levels with uncertainty |
-| Highly uncertain effects | Composite score + confidence interval |
+| Metric | Effect | Interpretation |
+|--------|--------|----------------|
+| **Income** | +0.12 pp/year | Reduced healthcare spending, fewer sick days |
+| **Health** | +0.25 years | Lower smoking rates → longer healthy life |
+| **Grade** | A | Strong quasi-experimental evidence from 23 states |
+
+**Interpretation**: "A $1/pack tobacco tax increase is expected to boost median income growth by 0.12 percentage points annually and add 0.25 healthy life years at the median. This estimate is based on Grade A evidence from 23 US states."
 
 ## Trial Prioritization
 
@@ -1121,6 +1119,7 @@ For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictio
 | **IMF** | 190 countries | [imf.org/data](https://www.imf.org/en/Data) | Fiscal, monetary indicators |
 
 ### Subnational Data
+
 
 | Country | Source | Coverage |
 |---------|--------|----------|
@@ -1332,14 +1331,14 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 
 ### Texas Policy Inventory (Sample)
 
-| Policy Type | Has Policy? | Current Level | Evidence-Optimal | Recommendation |
-|-------------|-------------|---------------|------------------|----------------|
-| Primary seat belt enforcement | No | N/A | Yes | **ENACT** |
-| Motorcycle helmet requirement | No (partial) | Only under 21 | All ages | **ENACT** |
-| Tobacco tax | Yes | $1.41/pack | ~$2.50/pack | **REPLACE** |
-| Speed limit (rural interstate) | Yes | 85 mph | 70 mph | **REPLACE** |
-| DUI threshold | Yes | 0.08 BAC | 0.08 BAC | **MAINTAIN** |
-| Graduated driver licensing | Yes | 3-stage system | 3-stage system | **MAINTAIN** |
+| Policy | Status | Income Effect | Health Effect | Recommendation | Grade |
+|--------|--------|---------------|---------------|----------------|-------|
+| Primary seat belt | Missing | +0.02 pp/yr | +0.15 years | **ENACT** | A |
+| Motorcycle helmet (all ages) | Partial | +0.01 pp/yr | +0.08 years | **ENACT** | A |
+| Tobacco tax ($1.41→$2.50) | Suboptimal | +0.12 pp/yr | +0.25 years | **REPLACE** | A |
+| Speed limit (85→70 mph) | Excessive | +0.01 pp/yr | +0.06 years | **REPLACE** | B |
+| DUI threshold (0.08 BAC) | Optimal | N/A | N/A | **MAINTAIN** | A |
+| Graduated licensing | Optimal | N/A | N/A | **MAINTAIN** | A |
 
 ### Step 1: Calculate Policy Impact Scores
 
@@ -1347,28 +1346,24 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 
 From meta-analysis of 47 US states (2000-2020):
 
-| Parameter | Value |
-|-----------|-------|
-| Average effect | -1.8 deaths per 100K |
-| Standard error | 0.4 |
-| I² heterogeneity | 28% |
-| Evidence grade | A |
+| Metric | Effect | SE | I² | Grade |
+|--------|--------|----|----|-------|
+| Income (pp/yr) | +0.025 | 0.008 | 28% | A |
+| Health (years) | +0.18 | 0.04 | 28% | A |
 
-**Bradford Hill Criteria Scores**:
+*Income effect derives from reduced healthcare costs and fewer disability-related productivity losses. Health effect converts mortality reduction to median healthy life years.*
+
+**Bradford Hill Criteria Scores** (applies to both metrics):
 
 | Criterion | Score | Rationale |
 |-----------|-------|-----------|
-| Strength | 0.75 | Moderate standardized effect |
+| Strength | 0.75 | Moderate standardized effects on both metrics |
 | Consistency | 0.82 | I² = 28%, consistent across states |
 | Temporality | 0.95 | Clear temporal ordering |
-| Gradient | 0.65 | Binary policy, limited dose-response |
 | Plausibility | 0.90 | Clear mechanism (increased compliance) |
 | Experiment | 0.85 | Multiple synthetic control studies |
-| ... | ... | ... |
 
-**CCS** = 0.81
-
-**PIS** = 0.75 × 0.81 × 0.85 = 0.52 → Grade A
+**CCS** = 0.81 → Grade A
 
 ### Step 2: Apply Context Adjustment for Texas
 
@@ -1376,9 +1371,12 @@ From meta-analysis of 47 US states (2000-2020):
 |--------|-------------|------------|
 | Current seat belt use | 91.5% | Effect may be smaller (already high) |
 | Rural driving proportion | High | Effect may be larger (more severe crashes) |
-| Population | 29.5M | Scale up total impact |
+| Population | 29.5M | Scale up total state-level impact |
 
-**Adjusted expected effect**: -1.5 deaths per 100K (slightly smaller due to already-high compliance)
+**Adjusted expected effects for Texas**:
+
+- Income: +0.02 pp/year (slightly smaller due to already-high compliance)
+- Health: +0.15 years
 
 ### Step 3: Generate Recommendations
 
@@ -1387,27 +1385,29 @@ From meta-analysis of 47 US states (2000-2020):
 ::: {.callout-tip}
 ## ENACT (New Policies to Adopt)
 
-**1. Primary Seat Belt Enforcement Law** (Current: None - secondary enforcement only)
+**1. Primary Seat Belt Enforcement Law** (Current: secondary enforcement only)
 
-- **Expected effect**: -1.5 traffic deaths per 100K population
-- **Monetized impact**: +$1.2B/year (at $10M VSL × 120 lives saved)
+| Metric | Expected Effect | 95% CI |
+|--------|-----------------|--------|
+| **Income** | +0.02 pp/year | [+0.01, +0.03] |
+| **Health** | +0.15 years | [+0.10, +0.20] |
+
 - **Evidence grade**: A
 - **Priority**: High
-- **Recommended level**: State (maximize data; federal preemption prevents city-level)
 - **Blocking factors**: None identified
-- **Similar jurisdictions**: Florida adopted 2009, saw -1.7 deaths/100K
-- **Tracking**: Traffic deaths/100K (FARS), annual, vs. 2020-2024 baseline
+- **Similar jurisdictions**: Florida adopted 2009; saw +0.18 years health effect
 
-**2. Universal Motorcycle Helmet Requirement** (Current: None for adults - partial coverage under 21 only)
+**2. Universal Motorcycle Helmet Requirement** (Current: partial - under 21 only)
 
-- **Expected effect**: -1.0 traffic deaths per 100K
-- **Monetized impact**: +$680M/year
+| Metric | Expected Effect | 95% CI |
+|--------|-----------------|--------|
+| **Income** | +0.01 pp/year | [+0.005, +0.015] |
+| **Health** | +0.08 years | [+0.05, +0.12] |
+
 - **Evidence grade**: A
 - **Priority**: Medium
-- **Recommended level**: State (maximize data)
-- **Blocking factors**: Political (strong rider opposition)
+- **Blocking factors**: Political (autonomy concerns from rider groups)
 - **Similar jurisdictions**: California (all ages since 1992)
-- **Tracking**: Motorcycle fatalities/100K (FARS), annual, vs. 2020-2024 baseline
 
 :::
 
@@ -1416,26 +1416,29 @@ From meta-analysis of 47 US states (2000-2020):
 
 **3. Tobacco Tax: $1.41 → $2.50/pack**
 
-- **Current level**: $1.41/pack (below national median of $1.91)
-- **Recommended level**: $2.50/pack (evidence-optimal range)
-- **Expected effect**: -5.2 pp smoking rate (Texas-adjusted)
-- **Monetized impact**: +$4.8B/year health savings
+| Metric | Expected Effect | 95% CI |
+|--------|-----------------|--------|
+| **Income** | +0.12 pp/year | [+0.08, +0.16] |
+| **Health** | +0.25 years | [+0.18, +0.32] |
+
+- **Current level**: $1.41/pack (below median $1.91)
+- **Recommended level**: $2.50/pack
 - **Evidence grade**: A
 - **Priority**: High
-- **Recommended level**: State (maximize data; city-level preempted)
 - **Blocking factors**: Political (anti-tax sentiment)
-- **Tracking**: Smoking rate (BRFSS), annual, vs. 2020-2024 baseline
 
 **4. Maximum Speed Limit: 85 mph → 70 mph**
 
+| Metric | Expected Effect | 95% CI |
+|--------|-----------------|--------|
+| **Income** | +0.01 pp/year | [+0.005, +0.02] |
+| **Health** | +0.06 years | [+0.03, +0.09] |
+
 - **Current level**: 85 mph (highest in US)
-- **Recommended level**: 70 mph (evidence-optimal)
-- **Expected effect**: -0.8 deaths/100K
-- **Monetized impact**: +$350M/year
+- **Recommended level**: 70 mph
 - **Evidence grade**: B
-- **Priority**: Low (political feasibility concern)
-- **Blocking factors**: Political (driver opposition)
-- **Tracking**: Highway fatalities/100K (FARS), annual, vs. 2020-2024 baseline
+- **Priority**: Low
+- **Blocking factors**: Political (driver opposition), autonomy
 
 :::
 
@@ -1469,34 +1472,28 @@ From meta-analysis of 47 US states (2000-2020):
 
 **Total Expected Welfare Gain by Recommendation Type**
 
-| Type | Recommendation | Monetized Annual Impact | Feasibility |
-|------|----------------|------------------------|-------------|
-| **ENACT** | Primary seat belt law | +$1.2B | High |
-| **ENACT** | Universal helmet law | +$680M | Medium |
-| **REPLACE** | Tobacco tax: $1.41 → $2.50 | +$4.8B | Medium |
-| **REPLACE** | Speed limit: 85 → 70 mph | +$350M | Low |
-| **MAINTAIN** | DUI threshold, GDL | - | N/A |
-| | **Total from changes** | **+$7.0B/year** | |
+| Type | Recommendation | Income Effect | Health Effect | Grade |
+|------|----------------|---------------|---------------|-------|
+| **ENACT** | Primary seat belt | +0.02 pp/yr | +0.15 years | A |
+| **ENACT** | Universal helmet | +0.01 pp/yr | +0.08 years | A |
+| **REPLACE** | Tobacco tax: $1.41→$2.50 | +0.12 pp/yr | +0.25 years | A |
+| **REPLACE** | Speed limit: 85→70 mph | +0.01 pp/yr | +0.06 years | B |
+| **MAINTAIN** | DUI threshold, GDL | N/A | N/A | A |
+| | **Total from changes** | **+0.16 pp/yr** | **+0.54 years** | |
 
-**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas - no harmful policies identified with strong evidence.
+**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas---no harmful policies identified with strong evidence.
+
 
 ### Interpretation
 
-This example demonstrates how OPG transforms generic evidence ("seat belt laws reduce deaths by 1.8/100K on average") into actionable, jurisdiction-specific recommendations ("Texas should ENACT primary seat belt enforcement; expected effect -1.5 deaths/100K, +$1.2B/year").
+This example demonstrates how OPG transforms generic evidence into actionable, jurisdiction-specific recommendations using the two-metric framework:
 
-The four recommendation types provide clarity:
+**Key insight**: If Texas adopted all recommendations, expected effects are:
 
-- **ENACT**: Policies Texas doesn't have (seat belt, helmet)
-- **REPLACE**: Policies Texas has but at wrong levels (tobacco tax, speed limit)
-- **REPEAL**: Harmful policies to remove (none identified)
-- **MAINTAIN**: Policies already evidence-optimal (DUI threshold, GDL)
+- **+0.16 pp/year** boost to median income growth
+- **+0.54 years** added to median healthy life expectancy
 
-The recommendations:
-1. Account for Texas's current policy inventory
-2. Adjust for Texas-specific context (demographics, existing policies)
-3. Flag blocking factors (political, constitutional)
-4. Provide concrete comparisons to similar jurisdictions
-5. Monetize benefits for cross-domain comparison
+The two-metric format makes tradeoffs explicit and enables direct interpretation without complex conversion factors.
 
 ## Appendix B: OPG Analysis Workflow {.appendix}
 
@@ -1608,11 +1605,10 @@ Phase 5: OUTPUT GENERATION
     ├── Maintain list (policies aligned with evidence)
     └── Jurisdictional level and tracking guidance for each
 
-16. Multi-unit reporting
-    ├── Natural units (domain-specific)
-    ├── Monetized equivalents (cross-domain)
-    ├── Health units (QALYs/DALYs)
-    └── Composite PIS (when uncertain)
+16. Two-metric reporting
+    ├── Income effect (pp/year)
+    ├── Health effect (years)
+    └── Combined welfare score (for ranking)
 
 17. Documentation
     ├── Generate jurisdiction-specific reports
@@ -1640,7 +1636,11 @@ Before generating recommendations, verify:
 
 - **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs four recommendation types (enact/replace/repeal/maintain) ranked by expected welfare impact, with recommended jurisdictional level (subsidiarity) and tracking guidance for continuous improvement.
 
-- **Policy Impact Score (PIS)**: Intermediate metric quantifying the strength of evidence that a policy affects an outcome. Integrates effect size, causal confidence (Bradford Hill criteria), and analysis quality. Ranges from 0 to 1; higher indicates stronger evidence.
+- **Policy Impact Score (PIS)**: Intermediate metric quantifying the strength of evidence that a policy affects the two welfare metrics. Computed separately for income and health effects, then combined. Integrates effect size, causal confidence (Bradford Hill criteria), and analysis quality.
+
+- **Real After-Tax Median Income Growth**: Primary economic welfare metric. Year-over-year percentage change in inflation-adjusted, post-tax median household income. Units: percentage points (pp) per year.
+
+- **Median Healthy Life Years**: Primary health welfare metric. Expected years of life in good health at the population median. Units: years.
 
 - **Policy Gap**: Difference between a jurisdiction's current policy status and the evidence-optimal policy. Gaps can be: missing (lacks beneficial policy), harmful (has detrimental policy), suboptimal (continuous policy at wrong level).
 
@@ -1650,7 +1650,7 @@ Before generating recommendations, verify:
 
 - **Jurisdiction**: Geographic or administrative unit where policies are implemented (country, state, province, city, municipality). OPG operates at any level.
 
-- **Blocking Factor**: Constraint that may impede policy adoption: constitutional (requires amendment), federal preemption (superseded by higher law), political (strong opposition), implementation cost (high fixed costs).
+- **Blocking Factor**: Constraint that may impede policy adoption: constitutional (requires amendment), federal preemption (superseded by higher law), political (strong opposition), implementation cost (high fixed costs), autonomy (restricts individual freedom---the primary welfare dimension not captured by the two core metrics).
 
 ### Quasi-Experimental Methods
 
@@ -1710,33 +1710,31 @@ Before generating recommendations, verify:
 
 ## Appendix D: Interpreting Effect Sizes {.appendix}
 
-### Standardized Effect Size Benchmarks
+### Two-Metric Effect Size Benchmarks
 
-| $|\hat{\beta}_{\text{std}}|$ | Interpretation | Policy Example |
-|------------------------------|----------------|----------------|
-| < 0.2 | Small | Most regulatory changes |
-| 0.2 - 0.5 | Medium | Typical tax policy effects |
-| 0.5 - 0.8 | Large | Major reform programs |
-| > 0.8 | Very Large | Transformative policies (rare) |
+| Size | Income (pp/year) | Health (years) | Example |
+|------|------------------|----------------|---------|
+| Small | < 0.05 | < 0.1 | Minor regulatory changes |
+| Medium | 0.05 - 0.15 | 0.1 - 0.3 | Typical tax policy effects |
+| Large | 0.15 - 0.30 | 0.3 - 0.5 | Major reform programs |
+| Very Large | > 0.30 | > 0.5 | Transformative policies (rare) |
 
-### Converting to Interpretable Units
+### Benchmark Calibration
 
-Raw effect estimates should be reported alongside standardized scores:
+These benchmarks are calibrated to cross-jurisdictional variation:
 
-| Outcome | Raw Effect | Standardized | Interpretation |
-|---------|------------|--------------|----------------|
-| Life expectancy | +0.8 years | +0.32 | Medium effect |
-| Unemployment rate | -1.2 pp | -0.45 | Medium effect |
-| GDP per capita | +$1,200 | +0.18 | Small effect |
-| Crime rate | -15 per 100K | -0.61 | Large effect |
+- **Income**: US states vary by ~1.5 pp/year in median income growth
+- **Health**: US states vary by ~3-5 years in healthy life expectancy
+
+A "medium" effect represents ~10% of the cross-state variation; a "large" effect represents ~20%.
 
 ### Confidence Interval Interpretation
 
 | CI Width | Interpretation |
 |----------|----------------|
-| Narrow (< 0.2 SD) | Precise estimate; high confidence |
-| Moderate (0.2-0.5 SD) | Reasonable precision; moderate confidence |
-| Wide (> 0.5 SD) | Imprecise; low confidence in point estimate |
+| Narrow (< 25% of effect) | Precise estimate; high confidence |
+| Moderate (25-50% of effect) | Reasonable precision; moderate confidence |
+| Wide (> 50% of effect) | Imprecise; low confidence in point estimate |
 
 ---
 

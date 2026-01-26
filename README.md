@@ -38,6 +38,13 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 ## Working Papers
 
+### [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
+
+[![Federal Resource Allocation Efficiency Audit](assets/og/federal-efficiency-audit-og-1200x630.jpg)](https://federal-efficiency-audit.warondisease.org)
+
+> Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
+
+
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
@@ -103,7 +110,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 ---
 
-*10 publications indexed.*
+*11 publications indexed.*
 
 ## How to Help
 

@@ -324,6 +324,64 @@ jobs:
 
 
 
+  build-federal-efficiency-audit:
+    name: "Build Federal Resource Allocation Efficiency Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-federal-efficiency-audit-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-federal-efficiency-audit-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+
+        run: quarto install tinytex
+
+      - name: "Render Build Federal Resource Allocation Efficiency Audit"
+        run: python scripts/render-quarto.py federal-efficiency-audit
+        timeout-minutes: 30
+
+
+
+
+
+
   build-iab:
     name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
     runs-on: ubuntu-latest
