@@ -10,7 +10,7 @@ abstract: |
   The Optimal Policy Generator measures policy impact on two fundamental welfare dimensions:
   **real after-tax median income growth** (economic welfare) and **median healthy life years**
   (health welfare). These two metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly
-  interpretable---no complex conversion factors required.
+  interpretable. No complex conversion factors required.
 
   For any jurisdiction, four outputs: ENACT (policies proven elsewhere that you lack). REPLACE
   (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN (policies aligned with
@@ -91,11 +91,11 @@ OPG measures policy impact on two fundamental dimensions that capture the vast m
 
 **Simplicity**: These two metrics are designed to capture the primary welfare dimensions affected by most policies while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
 
-**Coverage gap**: Freedom and autonomy concerns---the main dimension not captured---are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects (equity) are tracked as supplementary indicators where data permits, but are not included in the core welfare function to maintain interpretability.
+**Coverage gap**: Freedom and autonomy concerns (the main dimension not captured) are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects (equity) are tracked as supplementary indicators where data permits, but are not included in the core welfare function to maintain interpretability.
 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
-**Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists---scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
+**Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
 
 ### Scale of Available Natural Experiments
 
@@ -274,7 +274,7 @@ $$
 
 where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are assumed to be second-order.
 
-*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail---for example, when a carbon tax interacts with renewable energy subsidies---the marginal effects may be mis-estimated. Future versions of OPG should incorporate policy interaction terms for known complementary or substitutable policy pairs, with the additive model serving as a baseline.
+*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail (for example, when a carbon tax interacts with renewable energy subsidies), the marginal effects may be mis-estimated. Future versions of OPG should incorporate policy interaction terms for known complementary or substitutable policy pairs, with the additive model serving as a baseline.
 
 **Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
 $$
@@ -503,7 +503,7 @@ Where $N_j$ is the number of jurisdictions with concordant effect direction and 
 
 #### Temporality (Required)
 
-Policy adoption must precede outcome change. This is binary---either satisfied or not:
+Policy adoption must precede outcome change. This is binary (either satisfied or not):
 
 $$
 S_{\text{temporality}} = \begin{cases} 1.0 & \text{if } \delta > 0 \\ 0.0 & \text{otherwise} \end{cases}
@@ -521,7 +521,7 @@ $$
 
 Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome magnitude, and $r_{\text{sig}} = 0.5$. A dose-response correlation of 0.5 yields $S_{\text{gradient}} = 0.5$; correlation of 0.7 yields $\approx 0.66$.
 
-For binary policies, $S_{\text{gradient}} = 0.5$ (neutral---neither supporting nor refuting).
+For binary policies, $S_{\text{gradient}} = 0.5$ (neutral; neither supporting nor refuting).
 
 #### Experiment Quality
 
@@ -581,7 +581,7 @@ $$
 \text{CCS} = S_{\text{temporality}} \times \frac{\sum_{k=1}^{9} w_k \cdot S_k}{\sum_{k=1}^{9} w_k}
 $$
 
-Note: $S_{\text{temporality}}$ acts as a gate---if temporality fails, the entire CCS is zero.
+Note: $S_{\text{temporality}}$ acts as a gate. If temporality fails, the entire CCS is zero.
 
 **Proposed default criterion weights:**
 
@@ -1508,7 +1508,7 @@ From meta-analysis of 47 US states (2000-2020):
 | **MAINTAIN** | DUI threshold, GDL | N/A | N/A | A |
 | | **Total from changes** | **+0.16 pp/yr** | **+0.54 years** | |
 
-**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas---no harmful policies identified with strong evidence.
+**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas; no harmful policies identified with strong evidence.
 
 
 ### Interpretation
@@ -1663,9 +1663,9 @@ Before generating recommendations, verify:
 
 | Term | Definition | See Section |
 |------|------------|-------------|
-| **OPG** | Optimal Policy Generator---produces jurisdiction-specific recommendations | @opg-system-overview |
-| **PIS** | Policy Impact Score---effect × causal confidence × quality | @sec-pis |
-| **CCS** | Causal Confidence Score---weighted Bradford Hill average | @sec-bradford-hill |
+| **OPG** | Optimal Policy Generator: produces jurisdiction-specific recommendations | @opg-system-overview |
+| **PIS** | Policy Impact Score: effect × causal confidence × quality | @sec-pis |
+| **CCS** | Causal Confidence Score: weighted Bradford Hill average | @sec-bradford-hill |
 | **Evidence Grade** | A-F rating based on PIS, heterogeneity, jurisdiction count | @sec-evidence-grading |
 | **Policy Gap** | Difference between current and evidence-optimal policy | @sec-policy-gap |
 | **Blocking Factor** | Constraint on adoption (constitutional, political, etc.) | @sec-blocking-factors |

@@ -136,3 +136,4 @@ Re-read edited sections to verify. Track remaining issues with TodoWrite.
 1. Fix, don't just flag - implement High/Medium issues immediately
 2. Verify by re-reading edited sections
 3. Be specific - vague critiques aren't actionable
+4. If no issues found, say "No changes needed" and stop - don't invent problems
