@@ -105,7 +105,19 @@ grep -o "{{< var [a-z_0-9]* >}}" <file> | sed 's/{{< var //;s/ >}}//' | sort -u
 
 For key calculated values, add: `{{< var parameter_name_latex >}}`
 
-### C. Missing Charts
+### C. Citation Format Check
+
+**Prefer Quarto citations over manual superscripts.**
+
+Check if document uses proper `@citation-key` format from `references.bib`:
+
+If we need a source for a claim see if it is in `references.bib`. If it is not, 
+use the web search tool to find the best source and add it to `references.bib`.
+
+Then use proper Quarto citations in the qmd file.
+
+
+### D. Missing Charts
 
 Check if charts exist for key variables:
 ```bash
