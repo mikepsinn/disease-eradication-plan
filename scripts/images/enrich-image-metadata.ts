@@ -171,10 +171,12 @@ async function main() {
     process.exit(1)
   }
 
-  // Find all images
+  // Find all images (skip GIFs - they're animations, not static images for enrichment)
   console.log('[1/4] Finding images...')
-  let images = await findImages(targetDir)
-  console.log(`  Found ${images.length} images`)
+  let images = await findImages(targetDir, {
+    extensions: ['.png', '.jpg', '.jpeg', '.webp'],
+  })
+  console.log(`  Found ${images.length} images (skipping GIFs)`)
 
   // Filter to only those needing enrichment (unless --all)
   if (!options.all) {

@@ -885,6 +885,104 @@ def run_post_validation(output_dir: str = "_manual/warondisease") -> int:
         return 1
 
 
+def run_pdf_validation(
+    pdf_path: str,
+    skip_llm: bool = False,
+    skip_url_check: bool = True,
+    llm_pages: int = 3,
+    fail_on_warning: bool = False
+) -> int:
+    """
+    Run comprehensive PDF validation using pdf-validation.py.
+
+    Automatically skips LLM validation if GOOGLE_GENERATIVE_AI_API_KEY is not set.
+
+    Args:
+        pdf_path: Path to PDF file to validate
+        skip_llm: Force skip LLM validation even if API key available
+        skip_url_check: Skip external URL validation (default True for speed)
+        llm_pages: Number of pages to sample for LLM validation
+        fail_on_warning: Treat warnings as errors
+
+    Returns:
+        Exit code (0 for success, non-zero for failure)
+    """
+    start_time = time.time()
+
+    log_with_timestamp("=" * 80)
+    log_with_timestamp("RUNNING PDF VALIDATION")
+    log_with_timestamp("=" * 80)
+
+    script_path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "pdf-validation.py"
+    )
+
+    if not os.path.exists(script_path):
+        log_with_timestamp(f"[WARNING] PDF validation script not found: {script_path}")
+        return 0  # Don't fail build if script missing
+
+    # Check if LLM validation should be enabled
+    gemini_key = os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY")
+    if not gemini_key:
+        skip_llm = True
+        log_with_timestamp("[*] LLM validation disabled (GOOGLE_GENERATIVE_AI_API_KEY not set)")
+
+    # Build command
+    cmd = [sys.executable, script_path, "--pdf", pdf_path]
+    if skip_llm:
+        cmd.append("--skip-llm")
+    else:
+        cmd.extend(["--llm-pages", str(llm_pages)])
+    if skip_url_check:
+        cmd.append("--skip-url-check")
+    if fail_on_warning:
+        cmd.append("--fail-on-warning")
+
+    log_with_timestamp(f"[*] Command: {' '.join(cmd)}")
+
+    try:
+        result = subprocess.run(
+            cmd,
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+
+        # Log captured output with timestamps
+        if result.stdout:
+            for line in result.stdout.strip().split("\n"):
+                if line.strip():
+                    log_with_timestamp(line)
+
+        if result.stderr:
+            for line in result.stderr.strip().split("\n"):
+                if line.strip():
+                    log_with_timestamp(line, to_stderr=True)
+
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+
+        if result.returncode != 0:
+            log_with_timestamp(
+                f"\nPDF validation failed with exit code {result.returncode} (took {elapsed_str})",
+                to_stderr=True
+            )
+            return result.returncode
+
+        log_with_timestamp(f"\nPDF validation passed! (took {elapsed_str})")
+        log_with_timestamp("=" * 80)
+        return 0
+
+    except Exception as e:
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+        log_with_timestamp(f"\nError running PDF validation: {e} (took {elapsed_str})", to_stderr=True)
+        return 1
+
+
 def create_latex_parser():
     """Create a parser function for LaTeX compilation phases"""
 

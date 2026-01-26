@@ -1,19 +1,19 @@
 /**
  * Generate images for specific sections within chapters using intelligent analysis
  *
- * NEW APPROACH: Loops through sections programmatically, checking each one individually.
+ * Loops through sections programmatically, checking each one individually.
  * Skips sections that already have images. Asks Gemini Flash for each section whether
  * an image would be valuable - if yes, generates it; if no, moves on.
  *
- * Defaults to bw-academic style (black & white scientific) for professional publications.
+ * Defaults to processing ALL book files if no specific file is provided.
+ * Uses bw-academic style (black & white scientific) for professional publications.
  * Default aspect ratio is 1:1 (square) for consistency with manual generations.
  *
  * Usage:
- *   npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]
- *   npx tsx scripts/images/generate-section-images.ts --all [options]
+ *   npx tsx scripts/images/generate-section-images.ts              # Process all book files
+ *   npx tsx scripts/images/generate-section-images.ts <file.qmd>   # Process specific file
  *
  * Options:
- *   --all                 Process all book QMD files (skips files with existing section images)
  *   --retro-futuristic    Generate in retro-futuristic style (default: bw-academic)
  *   --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)
  *   --dry-run             Show recommendations without generating images
@@ -21,12 +21,10 @@
  *   --limit <n>           Limit to processing n sections (for testing)
  *
  * Examples:
- *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd
- *   npx tsx scripts/images/generate-section-images.ts --all
- *   npx tsx scripts/images/generate-section-images.ts --all --dry-run
- *   npx tsx scripts/images/generate-section-images.ts --all --force
- *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --limit 5
- *   npx tsx scripts/images/generate-section-images.ts knowledge/appendix/invisible-graveyard.qmd --retro-futuristic
+ *   npx tsx scripts/images/generate-section-images.ts                    # All files
+ *   npx tsx scripts/images/generate-section-images.ts --dry-run          # Preview all
+ *   npx tsx scripts/images/generate-section-images.ts --force            # Regenerate all
+ *   npx tsx scripts/images/generate-section-images.ts knowledge/problem.qmd --limit 5
  */
 
 import dotenv from 'dotenv';
@@ -485,26 +483,9 @@ async function processFile(
 
 async function main() {
   const args = process.argv.slice(2);
-  const processAll = args.includes('--all');
-
-  // Show help if no arguments
-  if (args.length === 0 || (args[0].startsWith('--') && !processAll)) {
-    console.error('Usage: npx tsx scripts/images/generate-section-images.ts <file.qmd> [options]');
-    console.error('       npx tsx scripts/images/generate-section-images.ts --all [options]');
-    console.error('');
-    console.error('Options:');
-    console.error('  --all                 Process all book QMD files');
-    console.error('  --retro-futuristic    Use retro-futuristic style (default: bw-academic)');
-    console.error('  --aspect <ratio>      Aspect ratio: 1:1, 3:4, 9:16, 16:9 (default: 1:1)');
-    console.error('  --dry-run             Show recommendations without generating images');
-    console.error('  --force               Delete existing section images and regenerate all');
-    console.error('  --limit <n>           Limit to processing n sections (for testing)');
-    console.error('');
-    console.error('Examples:');
-    console.error('  npx tsx scripts/images/generate-section-images.ts knowledge/problem.qmd --limit 5');
-    console.error('  npx tsx scripts/images/generate-section-images.ts --all --dry-run');
-    process.exit(1);
-  }
+  // Default to --all if no file specified
+  const hasFileArg = args.some(arg => !arg.startsWith('--') && arg.endsWith('.qmd'));
+  const processAll = args.includes('--all') || !hasFileArg;
 
   const dryRun = args.includes('--dry-run');
   const force = args.includes('--force');
@@ -591,10 +572,10 @@ async function main() {
     console.log(`  Sections skipped: ${totalSkipped}`);
   } else {
     // Single file mode
-    const filePath = args.find(arg => !arg.startsWith('--') && arg !== aspectRatio && arg !== String(limit));
+    const filePath = args.find(arg => arg.endsWith('.qmd'));
 
     if (!filePath) {
-      console.error('[ERROR] No file specified');
+      console.error('[ERROR] No .qmd file specified');
       process.exit(1);
     }
 

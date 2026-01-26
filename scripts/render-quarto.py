@@ -61,6 +61,7 @@ from render_utils import (  # type: ignore[import-not-found]
     kill_existing_quarto_processes,
     run_pre_validation,
     run_post_validation,
+    run_pdf_validation,
     validate_pdf_for_python_code
 )
 
@@ -826,6 +827,18 @@ def render_quarto(
                     dest_pdf_path = assets_pdfs_dir / expected_pdf
                     shutil.copy2(pdf_path, dest_pdf_path)
                     print(f"[OK] Copied PDF to: {dest_pdf_path.relative_to(project_root)}")
+
+                    # Run comprehensive PDF validation (LLM if GEMINI key available)
+                    gh_group_start("VALIDATION: COMPREHENSIVE PDF CHECK")
+                    pdf_validation_exit = run_pdf_validation(
+                        str(dest_pdf_path),
+                        skip_url_check=True,  # URLs already checked in post-validation
+                        llm_pages=3,
+                    )
+                    if pdf_validation_exit != 0:
+                        print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)
+                        exit_code = pdf_validation_exit
+                    gh_group_end()
                 else:
                     print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
                     print(f"        Expected at: {pdf_path}", file=sys.stderr)

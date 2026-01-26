@@ -3680,52 +3680,59 @@
       "modified": "2026-01-25T20:03:44.500Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Precision Medicine Comparison for Targeted Genetic Treatment",
-      "description": "A comparative analysis of two medical treatments for a specific patient demographic: women over 50 with Genetic Marker X. Treatment A is shown to have a 92% effectiveness rate with low side effects by specifically targeting the genetic marker, while Treatment B has 65% effectiveness and moderate side effects.",
+      "title": "Effectiveness of Targeted vs. General Medical Treatments",
+      "description": "This diagram compares two medical treatment options for women over 50 with a specific genetic marker. Treatment A is shown as a targeted therapy with 92% effectiveness and low side effects, while Treatment B is a secondary option with 65% effectiveness and moderate side effects affecting multiple systems.",
       "keywords": [
         "precision medicine",
+        "targeted therapy",
         "genetic markers",
         "treatment effectiveness",
+        "side effects",
         "medical research",
-        "targeted therapy",
-        "healthcare data"
+        "personalized medicine"
       ],
-      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X. RANK 1 TREATMENT A. GENETIC MARKER X TARGETED. EFFECTIVENESS 92%. SIDE EFFECTS: LOW. OPTIMAL OUTCOME. RANK 2 TREATMENT B. EFFECTIVENESS 65%. SIDE EFFECTS: MODERATE. SECONDARY OPTION. SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV. WarOnDisease.org.",
-      "qualityScore": 5,
+      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X; RANK 1; TREATMENT A; RANK 2; TREATMENT B; GENETIC MARKER X TARGETED; EFFECTIVENESS 92%; SIDE EFFECTS: LOW; OPTIMAL OUTCOME; EFFECTIVENESS 65%; SIDE EFFECTS: MODERATE; SECONDARY OPTION; SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV; WarOnDisease.org",
+      "qualityScore": 4,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We’ve finally found a way to tailor medicine to your exact genetic code, which is great news for anyone who isn't just a generic blob of cells. It turns out that knowing who the patient is actually helps with the whole 'not dying' part. https://WarOnDisease.org #PrecisionMedicine #GeneticMarkers",
-      "twitterText": "We have the technology to target disease at the molecular level, yet we still use 'vague hope' as a primary healthcare strategy for most people. https://WarOnDisease.org",
-      "linkedInText": "Imagine a world where we didn't just throw the same pills at everyone and hope for the best. It’s called precision medicine, and it’s surprisingly more effective than the 'trial and error' method we’ve used since the Middle Ages. https://WarOnDisease.org",
+      "socialCaption": "We have the technology to target your specific genes with 92% accuracy, but we usually just give you the treatment that makes your hair fall out and your stomach hurt because it's cheaper. Science is marvelous. https://WarOnDisease.org #WarOnDisease #MedicalResearch",
+      "twitterText": "We can target a specific gene with 92% accuracy, or we can just guess and hope your kidneys don't mind the collateral damage. https://WarOnDisease.org",
+      "linkedInText": "Treatment A works almost perfectly. Treatment B works 'mostly' but adds several new problems to your weekly schedule. We currently spend more on perfecting ways to destroy buildings than on making sure everyone gets Treatment A. A fascinating choice by our species. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "instagram",
-        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This slide illustrates the power of precision medicine. By filtering for specific genetic markers, we can identify Treatment A as a far superior option for this specific demographic, boasting 92% effectiveness compared to the standard 65% for general treatments.",
+      "speakerNotes": "This slide illustrates the clear advantage of precision medicine. When we invest in research that allows for targeting specific genetic markers, we don't just increase effectiveness from 65% to 92%; we radically reduce the systemic side effects that plague traditional broad-spectrum treatments.",
       "talkingPoints": [
-        "Precision medicine allows for 92% effectiveness in targeted demographics.",
-        "Generic treatments often result in lower effectiveness and higher side effects.",
-        "Data-driven filtering is the future of oncology and chronic disease management."
+        "Comparison of targeted vs. general treatment outcomes",
+        "92% effectiveness in targeted therapy vs 65% in general secondary options",
+        "Impact of precision medicine on patient quality of life through reduced side effects"
       ],
       "audienceLevel": "healthcare",
-      "altText": "A comparative chart showing Treatment A versus Treatment B for women over 50 with Genetic Marker X. Treatment A is ranked number 1 with 92% effectiveness and low side effects. Treatment B is ranked number 2 with 65% effectiveness and moderate side effects.",
+      "altText": "A comparative diagram showing two treatments for women with genetic marker X. Treatment A targets the marker directly with 92% effectiveness and low side effects. Treatment B is less precise, showing 65% effectiveness and moderate side effects across the body.",
       "emotionalTone": "informative",
-      "callToAction": "Learn more",
+      "callToAction": "Retweet",
       "dataFreshness": "timeless",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "This is a conceptual illustration of precision medicine benefits, not a report on a specific real-world drug.",
+      "factCheckNotes": "The data points are illustrative to represent the concepts of precision medicine vs. traditional therapy rather than a specific clinical trial result.",
       "promptLeakageDetected": true,
       "promptLeakageText": [
         "SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV"
       ],
       "promptLeakageRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' from the bottom of the image.",
-      "metadataEnrichedAt": "2026-01-25T20:03:43.630Z",
-      "metadataCreatedAt": "2026-01-25T18:43:03.255Z"
+      "metadataEnrichedAt": "2026-01-25T23:54:40.502Z",
+      "metadataCreatedAt": "2026-01-25T18:43:03.255Z",
+      "qualityIssues": [
+        "Internal metadata text 'SCIENTIFIC ILLUSTRATION DATABASE' is present in the frame"
+      ],
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "Text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' appears to be prompt leakage or a meta-artifact."
+      ],
+      "imageProblemsRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' from the banner at the bottom of the image."
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.jpg",
@@ -3924,50 +3931,51 @@
       "modified": "2026-01-25T20:04:41.747Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Clinical Outcomes and Safety Profile Analysis",
-      "description": "An infographic summarizing clinical trial results for a neurological treatment based on a study of 4,200 patients. It highlights significant cognitive improvements, including a 35% increase in memory and a 22% increase in executive function, alongside adverse effect data such as headache and fatigue frequencies.",
+      "title": "Clinical Outcomes and Safety Profile for Brain Treatment",
+      "description": "An informational diagram showing the cognitive benefits and safety data of a medical treatment. It highlights a 35% improvement in memory and a 22% increase in executive function, alongside statistics on side effects like headaches and fatigue based on a study of 4,200 patients.",
       "keywords": [
-        "clinical trial",
+        "clinical trials",
         "medical research",
-        "cognitive improvement",
-        "memory enhancement",
+        "cognitive enhancement",
         "safety profile",
-        "adverse effects",
-        "executive function",
+        "brain health",
+        "1% Treaty",
         "War on Disease"
       ],
-      "transcript": "CLINICAL OUTCOMES & SAFETY PROFILE. QUANTIFIED BENEFITS (95% CI). MEMORY IMPROVED +35%. EXECUTIVE FUNCTION IMPROVED +22%. ADVERSE EFFECT FREQUENCIES. HEADACHE: 9% TOTAL. 8% MILD. 1% SEVERE. FATIGUE: 7%. TREATMENT PERSISTENCE. 2.3% DISCONTINUED DUE TO SIDE EFFECTS. BASED ON 4,200 PATIENTS, 95% CONFIDENCE INTERVAL (95% CI). WarOnDisease.org",
+      "transcript": "CLINICAL OUTCOMES & SAFETY PROFILE; QUANTIFIED BENEFITS (95% CI); MEMORY IMPROVED +35%; EXECUTIVE FUNCTION IMPROVED +22%; ADVERSE EFFECT FREQUENCIES; HEADACHE: 9% TOTAL; 8% MILD; 1% SEVERE; FATIGUE: 7%; TREATMENT PERSISTENCE; 2.3% DISCONTINUED DUE TO SIDE EFFECTS; BASED ON 4,200 PATIENTS, 95% CONFIDENCE INTERVAL (95% CI); WarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "Good news: we can improve your memory by 35%. Bad news: you’ll remember more clearly that 7% of the trial participants were just really, really tired. https://WarOnDisease.org #WarOnDisease #MedicalResearch",
-      "twitterText": "We’ve figured out how to make you 22% better at executive functioning, which is great for deciding which of the 9% of people with headaches you want to avoid today. https://WarOnDisease.org",
-      "linkedInText": "Our latest data shows a 35% increase in memory. This is a breakthrough for everyone except the people who owe you money. 2.3% of participants quit the trial, presumably to go find a nap. https://WarOnDisease.org",
+      "socialCaption": "We've discovered how to make people 35% better at remembering things, but we're still choosing to spend that money on making sure there is less to remember. Only 2.3% of people quit the treatment, which is a better retention rate than most gym memberships. #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "We figured out how to make people 35% smarter. Now we just need to be smart enough to fund it. https://WarOnDisease.org",
+      "linkedInText": "The data is clear: we can significantly improve human cognitive function with minimal side effects. It turns out the most difficult side effect to manage is a global preference for funding artillery over Alzheimer's research. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "instagram",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This chart summarizes the clinical data from our study of 4,200 patients. We're seeing significant double-digit gains in memory and executive function, with a very high rate of treatment persistence—over 97% of patients stayed on the protocol despite minor side effects like fatigue.",
+      "speakerNotes": "This slide illustrates the potential ROI of focused medical research. We see a 35% boost in memory and 22% in executive function with very low discontinuation rates. These aren't just numbers; they represent the restoration of human capability that currently lacks the funding it deserves.",
       "talkingPoints": [
-        "35% improvement in memory and 22% improvement in executive function",
-        "97.7% treatment persistence rate among 4,200 patients",
-        "Manageable safety profile with only 1% reporting severe headaches",
-        "Statistically significant results within a 95% confidence interval"
+        "35% increase in memory performance across 4,200 patients",
+        "22% improvement in executive function",
+        "High tolerability with only a 2.3% discontinuation rate",
+        "Statistically significant results with a 95% confidence interval"
       ],
-      "audienceLevel": "healthcare",
-      "altText": "An infographic titled 'Clinical Outcomes & Safety Profile' showing a central human brain with gears inside. Text highlights include a 35% memory improvement and 22% executive function improvement, balanced against a 9% headache rate and 7% fatigue rate.",
+      "audienceLevel": "policymaker",
+      "altText": "A diagram of a human brain with gears inside, showing clinical results: 35% memory improvement and 22% executive function improvement. It includes safety data showing 9% headache frequency and 7% fatigue, with a 2.3% discontinuation rate.",
       "emotionalTone": "informative",
-      "callToAction": "Learn more",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "Internal project data"
+        "WarOnDisease.org"
       ],
-      "factCheckNotes": "This image represents illustrative data for a theoretical medical initiative; percentages and patient counts are specific to the book's 'War on Disease' framework.",
+      "factCheckNotes": "Data represents an illustrative case for the impact of redirected medical research funding as proposed by the 1% Treaty.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T20:04:41.021Z",
-      "metadataCreatedAt": "2026-01-25T19:24:44.479Z"
+      "metadataEnrichedAt": "2026-01-25T23:54:53.462Z",
+      "metadataCreatedAt": "2026-01-25T19:24:44.479Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-safety-timeline-comparison-bw-academic.jpg",
@@ -3982,49 +3990,52 @@
       "modified": "2026-01-25T20:05:01.428Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Drug Safety Monitoring: Reactive vs. Proactive Systems",
-      "description": "A comparative diagram showing the timeline of drug safety monitoring. The 'Current System' example of Vioxx illustrates a five-year delay between approval and recall, resulting in 38,000 to 55,000 deaths due to ignored signals in voluntary reporting. The 'Proposed System' uses automated EHR monitoring to detect safety signals within six months, highlighting a 'Lives Saved Gap' and advocating for proactive surveillance.",
+      "title": "Drug Safety Monitoring Comparison: Reactive vs. Proactive Systems",
+      "description": "A timeline comparison showing the failure of the current voluntary reporting system using the Vioxx recall as an example versus a proposed automated Electronic Health Record (EHR) monitoring system. It highlights how the current system took 5 years and over 38,000 deaths to issue a recall, while the proposed system could detect safety signals within 6 months, creating a significant 'lives saved gap'.",
       "keywords": [
-        "Vioxx",
         "drug safety",
+        "Vioxx recall",
         "EHR monitoring",
         "pharmacovigilance",
         "medical research",
         "public health",
-        "FDA regulation",
-        "data analytics"
+        "clinical data",
+        "proactive surveillance"
       ],
-      "transcript": "CURRENT SYSTEM (Vioxx Example)\n5 YEARS OF VOLUNTARY REPORTING\nYEAR 5\nAPPROVAL (Year 0)\nFAINT SIGNALS IGNORED\nADVERSE EVENTS UNDERREPORTED\nVioxx killed 38,000-55,000 people over 5 years... under the \"safe\" current system...\nRECALL AFTER 38,000+ DEATHS\nPROPOSED SYSTEM (Automated EHR Monitoring)\nLIVES SAVED GAP\nMONTH 6\nAPPROVAL (Year 0)\nAUTOMATED EHR MONITORING\nSIGNAL DETECTION\nALERT ISSUED\nProposed system uses automated EHR monitoring of all patients, detecting safety signals in months instead of years\nSYSTEMIC CHANGE: Proactive surveillance replaces reactive reporting to prevent mass harm.\nWarOnDisease.org",
-      "qualityScore": 4,
+      "transcript": "CURRENT SYSTEM (Vioxx Example)\n5 YEARS OF VOLUNTARY REPORTING -> YEAR 5\nAPPROVAL (Year 0)\nFAINT SIGNALS IGNORED\nADVERSE EVENTS UNDERREPORTED\nVioxx killed 38,000-55,000 people over 5 years... under the \"safe\" current system...\nRECALL AFTER 38,000+ DEATHS\nPROPOSED SYSTEM (Automated EHR Monitoring)\nLIVES SAVED GAP\nAPPROVAL (Year 0)\nAUTOMATED EHR MONITORING\nMONTH 6\nSIGNAL DETECTION\nALERT ISSUED\nProposed system uses automated EHR monitoring of all patients, detecting safety signals in months instead of years\nSYSTEMIC CHANGE: Proactive surveillance replaces reactive reporting to prevent mass harm.\nWarOnDisease.org",
+      "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We've mastered the art of noticing a problem exactly 38,000 deaths too late. It turns out 'waiting and seeing' isn't a great strategy for heart attacks. https://WarOnDisease.org #DrugSafety #Vioxx",
-      "twitterText": "The current system waits 5 years and 38,000 deaths to notice a drug is dangerous. We call this 'voluntary reporting.' I call it a lack of imagination. https://WarOnDisease.org",
-      "linkedInText": "In the corporate world, we call a five-year delay in critical data 'a minor oversight.' In the medical world, we call it 55,000 funerals. Proactive EHR monitoring isn't just better tech; it's basic competence. https://WarOnDisease.org",
+      "socialCaption": "The current system for drug safety relies on people volunteering the information that they are dying. It turns out people are much better at the dying part than the paperwork part. https://WarOnDisease.org #WarOnDisease #MedicalResearch",
+      "twitterText": "We wait 5 years and 38k deaths to recall a drug because paperwork is hard. Maybe we could just use computers? https://WarOnDisease.org",
+      "linkedInText": "The Vioxx recall happened after five years of 'faint signals' being ignored. It is comforting to know that 38,000 lives were the price of admission for a voluntary reporting system that doesn't actually work. Automation might be less dramatic, but it has the annoying side effect of keeping people alive. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "presentation",
-        "facebook"
+        "facebook",
+        "presentation"
       ],
-      "speakerNotes": "This slide contrasts our current 'reactive' drug safety model with a 'proactive' one. Using the Vioxx tragedy as a baseline, we see that relying on voluntary reporting delayed the recall by five years, costing tens of thousands of lives. By switching to automated EHR monitoring, we can close that 'Lives Saved Gap' by identifying fatal side effects in months rather than years.",
+      "speakerNotes": "This chart compares our current reactive drug safety system with a proposed proactive one. Using the Vioxx tragedy as an example, we see that voluntary reporting allowed a dangerous drug to stay on the market for five years, resulting in tens of thousands of deaths. By switching to automated EHR monitoring, we can identify these same safety signals in just six months, closing the 'lives saved gap'.",
       "talkingPoints": [
-        "Vioxx resulted in 38,000-55,000 deaths because safety signals were ignored under a voluntary reporting system.",
-        "Automated EHR monitoring allows for signal detection in 6 months instead of 5 years.",
-        "The 'Lives Saved Gap' represents the human cost of choosing reactive reporting over proactive surveillance."
+        "Voluntary reporting systems are inherently flawed because they rely on busy clinicians to report rare events manually.",
+        "The Vioxx case resulted in an estimated 38,000 to 55,000 deaths because signals were ignored for five years.",
+        "Automated Electronic Health Record (EHR) monitoring can reduce detection time from years to months.",
+        "Transitioning from reactive to proactive surveillance is a systemic change that prevents mass harm."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram comparing the 5-year timeline of the Vioxx recall (38,000+ deaths) under voluntary reporting versus a proposed 6-month timeline using automated EHR monitoring.",
+      "altText": "A comparison diagram showing the current drug safety system taking 5 years and 38,000 deaths to recall Vioxx, versus a proposed automated EHR system that detects signals in 6 months, saving thousands of lives.",
       "emotionalTone": "urgent",
-      "callToAction": "Learn more at WarOnDisease.org",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "Vioxx case study data (FDA/Graham estimates)"
+        "Vioxx clinical data",
+        "FDA reporting history"
       ],
-      "factCheckNotes": "The death estimates for Vioxx (38,000 to 55,000) are widely cited figures from David Graham's FDA testimony and subsequent studies regarding cardiovascular events.",
+      "factCheckNotes": "The death toll for Vioxx (38,000-55,000) is a widely cited estimate from FDA drug safety researchers (Graham et al.) regarding cardiovascular events caused by the drug.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T20:05:00.582Z",
-      "metadataCreatedAt": "2026-01-25T19:25:01.704Z"
+      "metadataEnrichedAt": "2026-01-25T23:55:07.796Z",
+      "metadataCreatedAt": "2026-01-25T19:25:01.704Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg",
@@ -4220,47 +4231,50 @@
       "modified": "2026-01-25T20:06:08.500Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "The Economic Value of Curing Disease",
-      "description": "An estimation chart showing how variables like timeline shift duration, QALY valuation, and discount rates calculate the total economic impact of medical research. The model estimates a total economic value of $84.8 quadrillion from accelerating the prevention of avoidable diseases.",
+      "title": "The $84.8 Quadrillion Economic Value Calculation",
+      "description": "An economic flowchart illustrating how four key variables—timeline shift, QALY valuation, avoidable disease percentage, and discount rates—combine to estimate the total economic value of medical research breakthroughs. The result shown is a staggering $84.8 quadrillion with a calculated 95% confidence interval.",
       "keywords": [
-        "economic value",
+        "Economic Value",
         "QALY",
-        "medical research",
-        "War on Disease",
-        "healthcare economics",
-        "discount rate",
-        "longevity"
+        "Medical Research",
+        "1% Treaty",
+        "Quadrillion",
+        "ROI",
+        "Health Economics"
       ],
-      "transcript": "ECONOMIC VALUE ESTIMATION CHART; TIMELINE SHIFT DURATION; QALY VALUATION; EVENTUALLY AVOIDABLE PERCENTAGE; DISCOUNT RATE; TOTAL ECONOMIC VALUE: $84.8 QUADRILLION; (95% CI: $62.4 QUADRILLION-$97.3 QUADRILLION); WarOnDisease.org",
+      "transcript": "ECONOMIC VALUE ESTIMATION CHART\nTIMELINE SHIFT DURATION\nQALY VALUATION\nEVENTUALLY AVOIDABLE PERCENTAGE\nDISCOUNT RATE\nTOTAL ECONOMIC VALUE: $84.8 QUADRILLION\n(95% CI: $62.4 QUADRILLION-$97.3 QUADRILLION)\nWarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "Economists have finally calculated the price of not dying, and it is roughly eighty-four quadrillion dollars. It’s comforting to know our survival has a line item on a spreadsheet somewhere. #WarOnDisease #Economics https://WarOnDisease.org",
-      "twitterText": "We’ve successfully calculated that human life is worth $84.8 quadrillion. Now we just need to find a planet wealthy enough to buy us. https://WarOnDisease.org",
-      "linkedInText": "Our latest estimation model suggests that accelerating medical research yields an economic value of $84.8 quadrillion. This is excellent news for anyone who enjoys both fiscal growth and remaining a solid rather than a liquid. https://WarOnDisease.org",
+      "socialCaption": "Human life is apparently worth $84.8 quadrillion, which is a lot of money considering most of us can’t afford a decent sandwich. It turns out not dying is the ultimate growth industry. #WarOnDisease #HealthEconomics https://WarOnDisease.org",
+      "twitterText": "The estimated value of curing disease is $84.8 quadrillion. We could buy the whole planet, but we’d probably just use the money to build more spreadsheets. https://WarOnDisease.org",
+      "linkedInText": "Economists have calculated that human life is worth roughly $84 quadrillion. It's a comforting number to think about while you're waiting for an insurance claim to be denied. We've optimized the math; now we just need to optimize the breathing. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
+        "instagram",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "When we run the numbers on accelerating medical breakthroughs, the scale of the 'return on investment' becomes astronomical. By looking at timeline shifts and QALY valuations, we arrive at a global economic value of over 84 quadrillion dollars—essentially the value of time itself reclaimed from disease.",
+      "speakerNotes": "This chart breaks down how we arrive at the $84.8 quadrillion figure. It's the result of modeling four key variables, including QALY—Quality Adjusted Life Years—and timeline shifts in research. Essentially, we are showing the massive financial return on investment for simply choosing not to die of preventable things.",
       "talkingPoints": [
-        "The $84.8 quadrillion figure represents the aggregate value of accelerating cures across all major diseases.",
-        "Four key inputs drive the model: research speed, the value of a healthy year of life (QALY), the percentage of diseases that are theoretically curable, and the discount rate for future value.",
-        "Even the low-end estimate of $62.4 quadrillion dwarfs current global military and space spending combined."
+        "The model aggregates four key variables to estimate global economic gain from medical breakthroughs.",
+        "A total value of $84.8 quadrillion represents the immense ROI of accelerated research.",
+        "The 95% confidence interval remains staggering even at its lowest bound of $62.4 quadrillion."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram titled Economic Value Estimation Chart. It shows four inputs—Timeline Shift Duration, QALY Valuation, Eventually Avoidable Percentage, and Discount Rate—feeding into a central flaming gear with a clock face. An arrow points to the final result: a total economic value of $84.8 quadrillion.",
-      "emotionalTone": "urgent",
-      "callToAction": "Learn more about the 1% Treaty at WarOnDisease.org",
+      "altText": "A diagram titled Economic Value Estimation Chart showing four inputs—Timeline Shift Duration, QALY Valuation, Eventually Avoidable Percentage, and Discount Rate—leading to a total economic value of 84.8 quadrillion dollars.",
+      "emotionalTone": "informative",
+      "callToAction": "4 shares = ~153 lives saved",
       "dataFreshness": "timeless",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "The term 'Quadrillion' is used here in the context of long-term global economic benefit; QALY (Quality-Adjusted Life Year) is a standard metric in health economics.",
+      "factCheckNotes": "This value represents a specific economic model projection for the '1% Treaty' initiative based on global health impact data.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T20:06:07.787Z",
-      "metadataCreatedAt": "2026-01-25T19:26:09.481Z"
+      "metadataEnrichedAt": "2026-01-25T23:55:25.351Z",
+      "metadataCreatedAt": "2026-01-25T19:26:09.481Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-pct-treaty-impact/cost-effectiveness-comparison-of-global-health-interventions-chart.jpg",
@@ -4336,49 +4350,51 @@
       "modified": "2026-01-25T19:55:02.674Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Global Military Budget Redistribution Diagram",
-      "description": "A conceptual flow diagram illustrating the allocation of $27.2 billion redirected from annual global military budgets. The funding is divided into three primary streams: eighty percent for pragmatic clinical trials and research development, ten percent for victory incentive alignment bonds, and ten percent for political incentives.",
+      "title": "Global Military Budget Redistribution Flowchart",
+      "description": "This diagram illustrates the allocation of $27.2 billion annually redirected from global military budgets. The primary distribution assigns 80% ($21.8B) to pragmatic clinical trials including patient subsidies and R&D, while the remaining 20% is split equally between financial incentive bonds and political alignment incentives.",
       "keywords": [
-        "military spending",
-        "medical research funding",
-        "1% treaty",
-        "clinical trials",
-        "global health policy",
-        "pandemic preparedness",
-        "War on Disease"
+        "War on Disease",
+        "Military Spending",
+        "Medical Research Funding",
+        "Clinical Trials",
+        "Public Health Policy",
+        "Healthcare Economics",
+        "Pandemic Preparedness"
       ],
-      "transcript": "GLOBAL MILITARY BUDGET REDISTRIBUTION DIAGRAM. INPUT: $27.2B annually from military budgets worldwide. PRAGMATIC CLINICAL TRIALS 80% | $21.8B. PATIENT SUBSIDIES: The largest portion. RESEARCH & DEVELOPMENT: Funding for breakthrough platform technologies. PANDEMIC PREPAREDNESS: A global insurance policy. VICTORY INCENTIVE ALIGNMENT BOND RETURNS 10% | $2.72B. IAB POLITICAL INCENTIVES 10% | $2.72B. WarOnDisease.org.",
+      "transcript": "GLOBAL MILITARY BUDGET REDISTRIBUTION DIAGRAM. INPUT: $27.2B annually from military budgets worldwide. PRAGMATIC CLINICAL TRIALS 80% | $21.8B. VICTORY INCENTIVE ALIGNMENT BOND RETURNS 10% | $2.72B. IAB POLITICAL INCENTIVES 10% | $2.72B. PATIENT SUBSIDIES: The largest portion. RESEARCH & DEVELOPMENT: Funding for breakthrough platform technologies. PANDEMIC PREPAREDNESS: A global insurance policy. BOND. WarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "We've spent thousands of years perfecting the art of turning people into skeletons. This plan suggests we spend 1% of that budget on keeping the skeletons inside the people for a bit longer. #WarOnDisease #BudgetPriorities",
-      "twitterText": "Humans are very good at spending money on things that explode. This diagram suggests we spend 1% of it on things that don't. It’s a radical idea, I know, but staying alive is becoming quite trendy. #1PercentTreaty",
-      "linkedInText": "Strategic realignment: We have achieved peak efficiency in global destruction. Now, let's explore a 1% hedge into 'not dying of a preventable cough.' The ROI on human existence remains surprisingly high for certain stakeholders. #Innovation #GlobalHealth",
+      "socialCaption": "We’ve spent centuries perfecting the art of blowing things up, but spending 1% of that on not dying from the flu is considered 'radical.' Here is a map of where the money goes when we decide to stop being silly. #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "We’re great at funding the end of the world. Maybe we should try funding the part where we stay in it. https://WarOnDisease.org",
+      "linkedInText": "Currently, we spend trillions on weapons we hope never to use. This diagram shows what happens when we take just 1% of that and spend it on medicine we definitely will use. It turns out, saving lives is surprisingly affordable compared to the alternative. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "instagram",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This diagram outlines the financial flow of the 1% Treaty. By redirecting a small fraction of global military spending—$27.2 billion—we can fund the bulk of necessary clinical trials and pandemic preparedness, while still providing financial and political incentives to ensure global cooperation.",
+      "speakerNotes": "This diagram breaks down the 1% Treaty’s financial flow. We take $27.2 billion from global defense budgets—a tiny fraction—and pump 80% of it into pragmatic clinical trials and patient subsidies to accelerate cures.",
       "talkingPoints": [
-        "Redirection of 1% of global military spending creates a $27.2B annual medical fund.",
-        "80% of funds are dedicated to pragmatic clinical trials and breakthrough R&D.",
-        "The remaining 20% creates alignment through victory bonds and political incentives.",
-        "This shift addresses pandemic preparedness as a global insurance policy."
+        "$27.2B total annual input redirected from global military budgets.",
+        "80% ($21.8B) allocated directly to clinical trials, R&D, and pandemic preparedness.",
+        "10% used for 'Victory Bonds' to align economic interests with health outcomes.",
+        "10% dedicated to political incentives to ensure international treaty compliance."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram showing how $27.2 billion in redirected military funds would be split: 80% to clinical trials and R&D, 10% to incentive bonds, and 10% to political incentives.",
+      "altText": "A complex flowchart showing $27.2 billion from military budgets being redirected: 80% to clinical trials and research, 10% to incentive bonds, and 10% to political incentives.",
       "emotionalTone": "informative",
-      "callToAction": "Learn more at WarOnDisease.org",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "current",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "The $27.2B figure is based on 1% of current global military expenditures, which is consistent with recent SIPRI data showing global military spend exceeding $2 trillion.",
+      "factCheckNotes": "The $27.2B figure represents a theoretical 1% redirection of global military spending based on SIPRI data trends.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:55:01.941Z",
-      "metadataCreatedAt": "2026-01-25T19:26:41.466Z"
+      "metadataEnrichedAt": "2026-01-25T23:55:47.376Z",
+      "metadataCreatedAt": "2026-01-25T19:26:41.466Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg",
@@ -4393,50 +4409,48 @@
       "modified": "2026-01-25T19:55:17.391Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Global Clinical Trials System Comparison: Current vs. 1% Treaty",
-      "description": "This infographic compares the metrics of the current clinical trial system against a proposed model funded by a 1% military spending redirection. It highlights the disparity between the current $41,000 per-patient cost and 17-year drug approval timeline versus a proposed $929 per-patient cost and a massive acceleration in testing 50,000 new treatments.",
+      "title": "Global Clinical Trials System Comparison",
+      "description": "A comparative analysis showing the inefficiencies of the current clinical trial system versus a proposed '1% Treaty' model. The data contrasts the high cost ($41k per patient) and long duration (17 years per drug) of current trials with a potential system that is 44 times cheaper, engages 220 million participants, and tests 50,000 treatments simultaneously.",
       "keywords": [
         "clinical trials",
+        "medical research",
         "1% Treaty",
-        "medical research funding",
-        "drug approval process",
-        "healthcare economics",
-        "War on Disease",
+        "drug approval",
         "pragmatic trials",
-        "medical innovation"
+        "healthcare economics",
+        "War on Disease"
       ],
-      "transcript": "GLOBAL CLINICAL TRIALS SYSTEM COMPARISON. CURRENT SYSTEM: Pivotal Trials: $41k (95% CI: $20K-$120K) per patient. Only 5M participants per year globally. 99.8% of willing participants turned away. 17 Years to approve one drug. WITH A 1% TREATY: Pragmatic Trials: $929 (95% CI: $97-$3K) per patient. 44.1X Cheaper. 220M participants per year. 44X acceleration. Months - Few years. 50,000 new treatments tested. WarOnDisease.org.",
+      "transcript": "GLOBAL CLINICAL TRIALS SYSTEM COMPARISON. CURRENT SYSTEM: Pivotal Trials: $41K (95% CI: $20K-$120K) per patient. Only 5M participants per year globally. 99.8% of willing participants turned away. 17 Years to approve one drug. WITH A 1% TREATY: Pragmatic Trials: $929 (95% CI: $97-$3K) per patient. 44.1X Cheaper. 220M participants per year. 44X Acceleration. Months / Few Years. 50,000 new treatments tested. WarOnDisease.org.",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "The current clinical trial system is slow and expensive, turning away 99.8% of willing participants. By redirecting 1% of military spending to medical research, we could test 50,000 new treatments in just months. #WarOnDisease #MedicalResearch #1PercentTreaty",
-      "twitterText": "We spend 17 years to approve 1 drug while turning away 99.8% of trial participants. The 1% Treaty could make trials 44x faster and cheaper. It's time for a War on Disease. 🧬 #HealthReform #Science #1PercentTreaty",
-      "linkedInText": "Is the current clinical trial system holding back human progress? Currently, it takes 17 years to approve a single drug, with costs exceeding $41,000 per patient. The '1% Treaty' initiative proposes a shift in global priorities that could scale participation to 220 million people and test 50,000 treatments simultaneously. #ClinicalTrials #HealthcareInnovation #PublicPolicy",
+      "socialCaption": "We currently reject 99.8% of people who volunteer for medical research, presumably because we don't want to make the diseases feel unwelcome. Efficiency is hard, but bureaucratic stagnation is a lifestyle choice. #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "It takes 17 years to approve one drug, which is plenty of time for the patient to develop a hobby, like haunting the lab. https://WarOnDisease.org",
+      "linkedInText": "Current clinical trials cost $41,000 per patient and reject 99.8% of volunteers. It’s nice to know that even in the face of global illness, we maintain the strict exclusivity of a high-end night club. There is a better way. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "instagram",
         "presentation"
       ],
-      "speakerNotes": "This slide illustrates the staggering inefficiency of our current drug development pipeline. On the left, you see the current 'bottleneck' where high costs and regulatory hurdles mean we only approve one drug every 17 years. On the right, the 1% Treaty model shows how 'Pragmatic Trials' could drop costs from $41,000 to just $929 per patient, allowing us to test tens of thousands of treatments in a fraction of the time.",
+      "speakerNotes": "This visual illustrates the massive disparity between our current clinical trial infrastructure and what is possible under the 1% Treaty. While we currently spend 17 years to bring a single drug to market, a shift toward pragmatic trials could allow us to test 50,000 treatments in a fraction of the time.",
       "talkingPoints": [
-        "The current system turns away 99.8% of people who want to participate in clinical trials.",
-        "A 1% shift in military spending could make trials 44.1x cheaper.",
-        "Transitioning from 'Pivotal Trials' to 'Pragmatic Trials' allows for massive scaling of participant data.",
-        "The 1% Treaty model targets testing 50,000 new treatments in months or years, rather than decades."
+        "Current pivotal trials are 44 times more expensive than the pragmatic trials proposed by the 1% Treaty.",
+        "We are currently wasting 99.8% of the human capital available for medical research by turning away willing participants.",
+        "The 1% Treaty model scales participation from 5 million to 220 million people annually."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A split infographic comparing 'Current System' vs 'With a 1% Treaty'. The current system shows high costs ($41k/patient), few participants (5M), and long timelines (17 years). The 1% Treaty side shows low costs ($929/patient), high participation (220M), and fast results (months), claiming a 44x acceleration in medical research.",
+      "altText": "A detailed comparison infographic. The left side shows the current medical research system as a slow, expensive bottleneck that rejects most participants and takes 17 years for one drug. The right side shows the 1% Treaty model as a fast, low-cost system involving 220 million people to test 50,000 treatments.",
       "emotionalTone": "urgent",
-      "callToAction": "Learn more at WarOnDisease.org",
-      "dataFreshness": "current",
+      "callToAction": "4 shares = ~153 lives saved",
+      "dataFreshness": "timeless",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "The statistics (17 years for drug approval, $41k per patient) are widely cited industry averages for traditional pivotal trials; the '1% Treaty' figures represent a hypothetical economic projection based on proposed policy changes.",
+      "factCheckNotes": "The costs for pivotal trials vs pragmatic trials are based on specific study models cited in the War on Disease initiative literature regarding redirecting military spending.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:55:16.686Z",
-      "metadataCreatedAt": "2026-01-25T19:26:59.850Z"
+      "metadataEnrichedAt": "2026-01-25T23:56:01.361Z",
+      "metadataCreatedAt": "2026-01-25T19:26:59.850Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-percent-treaty/1-percent-treaty-section-relative-power-balance-bw-academic.jpg",
@@ -4452,49 +4466,53 @@
       "imageType": "other",
       "style": "black and white academic",
       "title": "Global Strategic Balance and Relative Scariness Assessment",
-      "description": "A comparative chart showing the impact of a one percent reduction in the military and nuclear capabilities of the United States, Russia, China, and North Korea. It illustrates that even after minor reductions, the nations maintain sufficient overkill capacity to ensure a continued state of global fear and strategic equilibrium.",
+      "description": "An infographic assessing the nuclear capabilities and 'terror index' of America, Russia, China, and North Korea. It illustrates that even with minor reductions in nuclear stockpiles, the 'overkill capacity' and global fear equilibrium remain unchanged, as each nation retains enough weaponry to maintain its relative level of threat.",
       "keywords": [
-        "nuclear disarmament",
-        "overkill capacity",
-        "strategic balance",
-        "geopolitics",
+        "nuclear stockpiles",
         "military spending",
-        "fear equilibrium",
-        "arms reduction",
-        "global security"
+        "global security",
+        "overkill capacity",
+        "geopolitics",
+        "disarmament",
+        "strategic balance"
       ],
-      "transcript": "GLOBAL STRATEGIC BALANCE & RELATIVE SCARINESS ASSESSMENT (POST-ADJUSTMENT)\n\nAMERICA\nPREV. EST. (6565)\nCURRENT (6,500)\nDELTA: SMALL REDUCTION, SAME FRIGHT. STILL HAS 6,500 NUKES.\n\nRUSSIA\nPREV. EST. (6060)\nCURRENT (6,000)\nDELTA: MINOR ADJUSTMENT. STILL HAS 6,000 NUKES.\n\nCHINA\nTWICE (2.0x)\nOVERKILL CAPACITY (POPULATION MULTIPLIER)\nSTATUS: MULTI-GLOBAL FATALITY LEVEL MAINTAINED. ENOUGH TO KILL EVERYONE TWICE.\n\nNORTH KOREA\nTERROR INDEX\nTERRIFYING (MAX)\n1% LESS (BARELY PERCEPTIBLE)\nSHIFT: STILL TERRIFYING BUT NOW 1% LESS SO.\n\nFEAR EQUILIBRIUM\nCONCLUSION: NOBODY LOSES! EVERYONE KEEPS THE SAME RELATIVE SCARINESS! (EQUILIBRIUM PRESERVED)\n\nWarOnDisease.org",
-      "qualityScore": 5,
+      "transcript": "GLOBAL STRATEGIC BALANCE & RELATIVE SCARINESS ASSESSMENT (POST-ADJUSTMENT)\n\nAMERICA\nPREV. EST. (6565)\nCURRENT (6,500)\nDELTA: SMALL REDUCTION, SAME FRIGHT. STILL HAS 6,500 NUKES.\n\nRUSSIA\nPREV. EST. (6060)\nCURRENT (6,000)\nDELTA: MINOR ADJUSTMENT. STILL HAS 6,000 NUKES.\n\nCHINA\nOVERKILL CAPACITY (POPULATION MULTIPLIER): TWICE (2.0x)\nSTATUS: MULTI-GLOBAL FATALITY LEVEL MAINTAINED. ENOUGH TO KILL EVERYONE TWICE.\n\nNORTH KOREA\nTERROR INDEX\nTERRIFYING (MAX)\n1% LESS (BARELY PERCEPTIBLE)\nSHIFT: STILL TERRIFYING BUT NOW 1% LESS SO.\n\nFEAR EQUILIBRIUM\nCONCLUSION: NOBODY LOSES! EVERYONE KEEPS THE SAME RELATIVE SCARINESS! (EQUILIBRIUM PRESERVED)\nWarOnDisease.org",
+      "qualityScore": 4,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We've successfully reduced our capacity to end the world by 1%, which is great because it means we can now only kill everyone twice instead of 2.02 times. It’s important to have hobbies. #GlobalSecurity #Priorities #Overkill",
-      "twitterText": "Good news: We reduced nuclear stockpiles just enough to still destroy civilization, but with slightly more shelf space. The 'Fear Equilibrium' remains intact, so you can go back to being exactly as terrified as you were yesterday.",
-      "linkedInText": "I'm pleased to announce that our latest strategic optimization has maintained a 100% global fatality rating while achieving a 1% reduction in inventory overhead. We’ve managed to keep the world ending without sacrificing our competitive edge in existential dread. #StrategicPlanning #Efficiency #Innovation",
+      "socialCaption": "Good news: we’ve reduced the global nuclear stockpile by 1%, so now we can only destroy the world slightly more than we already needed to. The equilibrium of being terrified is perfectly preserved. https://WarOnDisease.org #WarOnDisease #MedicalResearch",
+      "twitterText": "We've reduced the number of nukes but kept enough to kill everyone twice. Efficiency is key. https://WarOnDisease.org",
+      "linkedInText": "A 1% reduction in global nuclear stockpiles means we've successfully transitioned from 'total annihilation' to 'total annihilation, but with slightly better bookkeeping.' It’s a win-win for everyone still currently breathing. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "instagram",
         "facebook",
         "presentation"
       ],
-      "speakerNotes": "This visual demonstrates the concept of 'Fear Equilibrium.' When you have enough nuclear weapons to destroy the planet multiple times over, a 1% reduction in spending or inventory doesn't actually change the threat level. It does, however, create a massive surplus of resources that could be redirected to medical research without making anyone 'less safe.'",
+      "speakerNotes": "This assessment shows that a 1% reduction in nuclear spending doesn't actually decrease our safety or change the geopolitical balance. As you can see, the 'overkill capacity' remains intact—we can still kill everyone on Earth twice—meaning the fear equilibrium is preserved while freeing up billions for medical research.",
       "talkingPoints": [
-        "A 1% reduction in nuclear stockpiles leaves the 'Relative Scariness' of major powers unchanged.",
-        "China's overkill capacity remains at 2.0x, ensuring everyone can still be killed twice.",
-        "The 'Fear Equilibrium' is a stable state where minor disarmament yields major financial dividends without shifting the geopolitical balance."
+        "A 1% reduction in nuclear stockpiles has zero impact on strategic deterrence.",
+        "America and Russia still maintain over 6,000 warheads each, far exceeding what is needed for 'fright'.",
+        "The 'Fear Equilibrium' remains stable even when redirecting funds to the War on Disease.",
+        "China's capacity to kill the global population twice remains a constant multiplier."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram comparing the nuclear capabilities and 'terror index' of the US, Russia, China, and North Korea. It shows that a 1% reduction in weapons still leaves enough to destroy the world twice over, resulting in a 'Fear Equilibrium' where no nation feels less threatened than before.",
-      "emotionalTone": "alarming",
-      "callToAction": "Visit WarOnDisease.org to learn about the 1% Treaty.",
+      "altText": "A four-panel infographic comparing the nuclear 'scariness' of the US, Russia, China, and North Korea. It shows that despite 1% reductions, each country maintains its ability to cause global catastrophe, keeping the global 'fear equilibrium' balanced.",
+      "emotionalTone": "neutral",
+      "callToAction": "4 shares = ~153 lives saved",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org"
+        "Approximate nuclear stockpile estimates"
       ],
-      "factCheckNotes": "The nuclear numbers for the US and Russia are approximations of active/stockpiled warheads. The 'kill everyone twice' metric for China and the 'Terror Index' for North Korea are rhetorical illustrations of the concept of overkill rather than literal statistical indices.",
+      "factCheckNotes": "Nuclear warhead counts for the US and Russia are rounded approximations based on treaty-limited and stockpiled figures. The 'overkill' concept is a rhetorical device used to highlight the absurdity of massive stockpiles.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:55:33.794Z",
-      "metadataCreatedAt": "2026-01-25T19:27:25.759Z"
+      "metadataEnrichedAt": "2026-01-25T23:56:20.025Z",
+      "metadataCreatedAt": "2026-01-25T19:27:25.759Z",
+      "qualityIssues": [
+        "Small text in delta descriptions",
+        "Detailed line work may blur at lower resolutions"
+      ],
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/1-percent-treaty/1-percent-treaty-section-threat-assessment-comparison-bw-academic.jpg",
@@ -4634,51 +4652,52 @@
       "modified": "2026-01-25T19:56:28.897Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Breaking Down the Impossible Task of Curing Alzheimer's",
-      "description": "A flowchart detailing the transition of an abstract medical goal into concrete scientific and logistical tasks. It tracks two paths: a technical track involving protein mapping and AlphaFold sequencing, and a clinical track involving trial recruitment and contacting niche global experts.",
+      "title": "Deconstructing the Impossible: The Logistics of Curing Alzheimer's",
+      "description": "A flowchart breaking down the abstract goal of curing Alzheimer's into specific, actionable research and logistical tasks. It tracks two paths: computational protein mapping using AlphaFold and cloud servers, and clinical trial management involving patient recruitment and global researcher collaboration.",
       "keywords": [
         "Alzheimer's research",
         "AlphaFold",
-        "protein folding",
         "clinical trials",
-        "medical funding",
-        "drug development",
-        "War on Disease",
-        "biotechnology"
+        "protein folding",
+        "medical logistics",
+        "cloud computing",
+        "drug discovery",
+        "War on Disease"
       ],
-      "transcript": "CURE ALZHEIMER'S (VAGUE, TERRIFYING, IMPOSSIBLE). MAP PROTEIN STRUCTURES. RUN ALPHAFOLD ON THESE SEQUENCES. RENT COMPUTING TIME. FIND CHEAPEST CLOUD PROVIDER THAT WON'T MYSTERIOUSLY GO DOWN DURING YOUR JOB. TEST DRUG CANDIDATES. RECRUIT TRIAL PARTICIPANTS. FIND PEOPLE AGE 65+ WITH EARLY SYMPTOMS. CONTACT THE 73 RESEARCHERS GLOBALLY WHO STUDY THIS SPECIFIC THING. WarOnDisease.org",
+      "transcript": "CURE ALZHEIMER'S (VAGUE, TERRIFYING, IMPOSSIBLE); MAP PROTEIN STRUCTURES; RUN ALPHAFOLD ON THESE SEQUENCES; RENT COMPUTING TIME; FIND CHEAPEST CLOUD PROVIDER THAT WON'T MYSTERIOUSLY GO DOWN DURING YOUR JOB; TEST DRUG CANDIDATES; RECRUIT TRIAL PARTICIPANTS; FIND PEOPLE AGE 65+ WITH EARLY SYMPTOMS; CONTACT THE 73 RESEARCHERS GLOBALLY WHO STUDY THIS SPECIFIC THING; WarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "Turns out 'Curing Alzheimer’s' is actually just a very long to-do list involving 73 very tired people and a cloud server that hopefully doesn't explode. If we spend enough on tanks, maybe the disease will get intimidated and just leave. #WarOnDisease #Priorities",
-      "twitterText": "Curing Alzheimer’s sounds hard until you realize it’s just eight boxes on a chart. One of them is finding a cloud provider that doesn't crash, which, to be fair, is probably harder than the science part.",
-      "linkedInText": "Strategy is just taking something 'vague, terrifying, and impossible' and breaking it down until it's just an IT procurement problem and an email to 73 people. Efficiency is key when you're trying to outrun human mortality.",
+      "socialCaption": "Curing a disease sounds like a miracle until you realize it's mostly just spreadsheets and cloud servers that keep crashing. If we can fund a fighter jet, we can probably afford to rent some computing time. #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "Curing Alzheimer's is impossible until you break it down into renting server time and emailing the 73 people who actually know what's going on. https://WarOnDisease.org",
+      "linkedInText": "\"Curing Alzheimer's\" is a terrifyingly vague mission statement. \"Renting computing time without the server crashing\" is just a Tuesday. By breaking down impossible goals into specific logistical hurdles, we can actually solve them. We just need the funding to move from the 'vague' to the 'actionable.' https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "instagram",
         "facebook",
         "presentation"
       ],
-      "speakerNotes": "When we talk about the 'War on Disease,' we often get stuck at the top box—the impossible goal. This chart shows the actual workflow: a series of solvable, yet underfunded, logistical hurdles. We aren't lacking the brilliance; we're often just lacking the server time and the headcount to manage the recruitment.",
+      "speakerNotes": "This chart illustrates that 'Curing Alzheimer's' isn't a single event, but a series of logistical and technical steps. When we break it down, we see that the bottlenecks aren't just biological—they are about computing power, recruitment, and connecting a very small number of specialized researchers.",
       "talkingPoints": [
-        "Deconstructing abstract medical goals into manageable technical and logistical tasks.",
-        "The critical role of computational biology tools like AlphaFold in modern research.",
-        "The bottleneck of specialized global expertise and the difficulty of clinical trial recruitment.",
-        "How shifting funding could solve specific, granular problems like computing costs and research coordination."
+        "Transformation of vague medical goals into concrete project management tasks.",
+        "The critical role of high-performance computing and AI tools like AlphaFold in modern medicine.",
+        "The logistical difficulty of recruiting specific patient demographics for trials.",
+        "The reality that highly specialized research often rests on the shoulders of fewer than 100 people globally."
       ],
       "audienceLevel": "general",
-      "altText": "A flowchart showing how the 'vague and impossible' goal of curing Alzheimer's breaks down into two tracks: technical tasks like protein mapping and AlphaFold sequencing, and logistical tasks like recruiting participants and contacting a small group of global specialists.",
+      "altText": "A flowchart titled 'Cure Alzheimer's (Vague, Terrifying, Impossible)' branching into two paths. The left path covers computational biology: mapping proteins, using AlphaFold, and finding reliable cloud computing. The right path covers clinical logistics: testing drugs, recruiting participants over age 65, and contacting the small global pool of specialized researchers.",
       "emotionalTone": "informative",
-      "callToAction": "Visit WarOnDisease.org to learn about redirecting military spending.",
+      "callToAction": "Retweet",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org"
+        "General medical research methodology",
+        "AlphaFold (DeepMind)"
       ],
-      "factCheckNotes": "The reference to '73 researchers' is likely a rhetorical illustration of how small and specialized these scientific communities are, rather than a literal real-time census.",
+      "factCheckNotes": "The number '73 researchers' is likely illustrative of the niche nature of specialized science rather than a literal current census.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:56:28.130Z",
-      "metadataCreatedAt": "2026-01-25T19:28:16.248Z"
+      "metadataEnrichedAt": "2026-01-25T23:56:45.378Z",
+      "metadataCreatedAt": "2026-01-25T19:28:16.248Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg",
@@ -4693,48 +4712,52 @@
       "modified": "2026-01-25T19:56:43.905Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Comparison of Current vs. Proposed Drug Development Paradigms",
-      "description": "A comparative analysis of pharmaceutical development cycles, contrasting the current high-cost, high-risk model against a proposed low-cost, rapid-iteration alternative. The data highlights differences in trial costs, failure rates, development timelines, and economic viability for rare disease treatments.",
+      "title": "Comparison of Current and Proposed Drug Development Paradigms",
+      "description": "A side-by-side comparison of pharmaceutical development models. The current model is characterized by high costs ($2.6 billion per trial), long timelines (10-17 years), and a 90% failure rate that necessitates 'blockbuster' drugs to offset massive risk. The proposed alternative model suggests reducing trial costs to near-zero and development time to 2-3 years, making research into rare diseases profitable and minimizing risk per attempt.",
       "keywords": [
         "drug development",
-        "pharmaceutical economics",
         "clinical trials",
-        "healthcare reform",
-        "medical research funding",
+        "pharmaceutical research",
+        "healthcare economics",
+        "medical innovation",
         "biotechnology",
+        "drug failure rates",
         "War on Disease"
       ],
       "transcript": "COMPARISON OF DRUG DEVELOPMENT PARADIGMS. CURRENT DRUG DEVELOPMENT MODEL: Pay $2.60B (95% CI: $1.50B-$4B) for trials. 90% of drugs fail = $2.3B loss. 10-17 year development. Only blockbusters viable. Massive risk. PROPOSED/ALTERNATIVE MODEL: Pay near-zero for trials. Failure costs almost nothing. 2-3 year development. Rare diseases = profitable. Minimal risk per attempt. WarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We have spent decades perfecting the art of spending $2.6 billion to fail 90% of the time. It is a very expensive way to stay sick. #WarOnDisease #Healthcare #Innovation",
-      "twitterText": "Modern medicine is 17 years of paperwork and $2.6 billion just to find out a pill doesn't work. We could do it in 2 years for near-zero cost, but that would probably ruin the aesthetic of the current catastrophe.",
-      "linkedInText": "The current drug development model ensures that unless your disease is popular enough to be a 'blockbuster,' dying is your most cost-effective option. We are choosing to be slow. It's a bold strategy. #Pharmaceuticals #R&D #HealthPolicy",
+      "socialCaption": "Currently, we spend 17 years and $2.6 billion just to find out a drug doesn't work. We could do it faster and cheaper, but then what would the paperwork industry do? #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "It takes 17 years to make a drug that usually fails anyway. We could fail much faster if we really tried. https://WarOnDisease.org",
+      "linkedInText": "Spending billions to fail at curing diseases is a tradition we seem very attached to. Perhaps we could try failing for less money and more speed to actually help people. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "instagram",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This slide illustrates the crushing inefficiency of our current drug development pipeline compared to the 1% Treaty proposal. We are currently trapped in a high-risk cycle where 17-year development timelines act as a functional death sentence for many patients.",
+      "speakerNotes": "This slide contrasts the 'Blockbuster' model of drug development with a proposed high-velocity model. On the left, you see the current reality: it takes nearly two decades and billions of dollars to bring a drug to market, which is why pharmaceutical companies only hunt for billion-dollar 'blockbuster' drugs. On the right, we see the impact of reducing trial costs: we could address rare diseases and fail fast without financial ruin.",
       "talkingPoints": [
-        "The current model loses $2.3 billion for every successful drug launched.",
-        "Only 'blockbuster' drugs are financially viable under the current $2.6B trial cost structure.",
-        "The proposed model reduces development time from 17 years to under 3 years by slashing trial costs."
+        "The current $2.6B cost per drug is driven largely by a 90% failure rate.",
+        "A 10-17 year development cycle prevents rapid response to emerging health crises.",
+        "Lowering the cost of failure is the only way to make 'orphan' or rare disease research profitable.",
+        "The proposed model focuses on minimizing risk per attempt to increase the total volume of successful treatments."
       ],
       "audienceLevel": "policymaker",
-      "altText": "Infographic comparing two drug development models. The current model shows a $2.6B cost, 90% failure rate, and 17-year timeline. The proposed model shows near-zero trial costs, 3-year timelines, and profitability for rare diseases.",
-      "emotionalTone": "urgent",
-      "callToAction": "Visit WarOnDisease.org to learn more about the 1% Treaty.",
+      "altText": "A two-column infographic comparing the 'Current Drug Development Model' with high costs, long times, and high risk against a 'Proposed/Alternative Model' with low costs, fast timelines, and minimal risk.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "current",
       "dataSources": [
-        "WarOnDisease.org"
+        "Tufts Center for the Study of Drug Development"
       ],
-      "factCheckNotes": "The $2.6 billion figure is a standard industry estimate from the Tufts Center for the Study of Drug Development, though it is frequently debated by consumer advocates. The 'near-zero' cost of the proposed model is a theoretical projection based on the 'War on Disease' initiative's framework.",
+      "factCheckNotes": "The $2.6 billion figure is a widely cited (though sometimes debated) estimate from the Tufts Center for the Study of Drug Development. The 90% failure rate is standard across the industry.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:56:43.165Z",
-      "metadataCreatedAt": "2026-01-25T19:28:42.956Z"
+      "metadataEnrichedAt": "2026-01-25T23:57:04.210Z",
+      "metadataCreatedAt": "2026-01-25T19:28:42.956Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/aligning-incentives/aligning-incentives-section-victory-impact-alignment-bonds-bw-academic.jpg",
@@ -4749,49 +4772,52 @@
       "modified": "2026-01-25T19:57:04.663Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "The 1% Treaty Fund: Value Creation and Distribution Ecosystem",
-      "description": "A conceptual flow diagram showing how the 1% Treaty Fund revenue is distributed among three main stakeholders: Patients & Researchers, Investors, and Politicians. It quantifies the allocation as 80% for subsidized clinical trials and cures, 10% for investor returns, and 10% for political career benefits.",
+      "title": "The 1% Treaty Fund Ecosystem of Value",
+      "description": "This diagram illustrates the distribution of revenue from the 1% Treaty Fund across three major stakeholders. It shows 80% of funding allocated to patients and researchers for clinical trials and cures, while the remaining 20% is split equally to provide high annual returns for investors and career incentives for politicians.",
       "keywords": [
-        "1% Treaty",
-        "War on Disease",
+        "1% Treaty Fund",
         "medical research funding",
+        "healthcare economics",
         "clinical trials",
-        "healthcare investment",
-        "military spending redirection",
-        "biotech ROI",
-        "healthcare policy"
+        "investment returns",
+        "policy incentives",
+        "War on Disease",
+        "value distribution"
       ],
-      "transcript": "THE 1% TREATY FUND: ECOSYSTEM OF VALUE CREATION & DISTRIBUTION; INVESTORS; 272% (95% CI: 180%-430%) annual returns; 10%; 10%; POLITICIANS; Electoral support, career benefits; 1% TREATY FUND REVENUE; 80%; Subsidized pragmatic clinical trials, cures.; PATIENTS & RESEARCHERS; WarOnDisease.org",
+      "transcript": "THE 1% TREATY FUND: ECOSYSTEM OF VALUE CREATION & DISTRIBUTION. INVESTORS: 272% (95% CI: 180%-430%) annual returns. 1% TREATY FUND REVENUE. 10%. 10%. 80%. POLITICIANS: Electoral support, career benefits. PATIENTS & RESEARCHERS: Subsidized pragmatic clinical trials, cures. WarOnDisease.org.",
       "qualityScore": 5,
-      "standaloneScore": 4,
+      "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We've finally figured out how to make keeping people alive as profitable as the alternative. All it took was a 10% finders fee for the people in suits. #WarOnDisease #HealthcareROI",
-      "twitterText": "If we give politicians 10% of the money and investors another 10%, they might accidentally let us cure a few diseases with the leftover 80%. It's called compromise. #1PercentTreaty",
-      "linkedInText": "The data is clear: human survival has a fantastic ROI, provided you allocate the correct percentage to 'career benefits' for the decision-makers. A pragmatic look at the business of not dying.",
+      "socialCaption": "We've discovered that people are much more interested in curing global diseases if you offer them a 272% return and a guaranteed re-election. It’s almost as if self-interest is a more reliable fuel than basic human empathy. #WarOnDisease #MedicalResearch https://WarOnDisease.org",
+      "twitterText": "We found a way to make curing disease profitable for investors and popular for politicians. It's a shame we had to bribe the system to save it, but here we are. https://WarOnDisease.org",
+      "linkedInText": "The 1% Treaty acknowledges a difficult truth: to fund global health, we have to make it worth the while of the people who currently profit from the status quo. By aligning the incentives of investors and politicians with the needs of patients, we turn 'doing good' into a high-yield asset class. https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "presentation",
-        "facebook"
+        "instagram",
+        "facebook",
+        "presentation"
       ],
-      "speakerNotes": "This diagram illustrates the 'engine' of the 1% Treaty. While 80% of the funds go directly to the science of cures, we've intentionally designed the system to provide high returns for private investors and tangible career incentives for politicians to ensure the initiative remains sustainable and bipartisan.",
+      "speakerNotes": "This slide breaks down the 'incentive architecture' of the 1% Treaty. Most of the money—80%—goes exactly where it should: to researchers and patients. However, we allocate 10% to investors and 10% to politicians to ensure the system has the political and financial gravity required to actually exist in the real world.",
       "talkingPoints": [
-        "80% of redirected funds go directly to subsidized pragmatic clinical trials and patient cures.",
-        "Projected investor returns are significant, averaging 272% annually, to attract massive private capital.",
-        "Political alignment is secured by linking research success to electoral support and career longevity."
+        "80% of revenue is dedicated to subsidized clinical trials and curative research.",
+        "Investors are incentivized with a projected 272% annual return to ensure a constant flow of private capital.",
+        "Politicians receive the electoral and career support necessary to champion the initiative.",
+        "The model converts political and financial self-interest into a mechanism for global health."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram showing the flow of the 1% Treaty Fund revenue: 80% goes to Patients and Researchers for cures, 10% goes to Investors for high annual returns, and 10% goes to Politicians for electoral support.",
+      "altText": "A diagram showing the flow of 1% Treaty Fund Revenue from a central gear to three groups: 80% to Patients and Researchers for trials and cures, 10% to Investors for high returns, and 10% to Politicians for electoral support.",
       "emotionalTone": "informative",
-      "callToAction": "Visit WarOnDisease.org to learn more about the initiative.",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "The 272% annual return is a specific projection based on the 1% Treaty model; the '10% to politicians' refers to the systemic benefits of a successful health initiative rather than direct payments.",
+      "factCheckNotes": "The 272% return and the 10/10/80 split are specific components of the 1% Treaty economic proposal described in the source material.",
       "promptLeakageDetected": false,
-      "metadataEnrichedAt": "2026-01-25T19:57:03.892Z",
-      "metadataCreatedAt": "2026-01-25T19:28:56.376Z"
+      "metadataEnrichedAt": "2026-01-25T23:57:19.460Z",
+      "metadataCreatedAt": "2026-01-25T19:28:56.376Z",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/apis-siloed-data.svg",
@@ -5289,7 +5315,7 @@
       "height": 686,
       "format": "png",
       "aspectRatio": "572:343",
-      "modified": "2026-01-25T19:31:27.212Z",
+      "modified": "2026-01-25T21:18:30.239Z",
       "imageType": "other",
       "description": "A black and white screenshot of Charlie Chaplin from the iconic final speech of 'The Great Dictator'. The image features a YouTube play button overlay and serves as a symbolic call for humanity to prioritize science and progress over warfare.",
       "keywords": [
@@ -5557,7 +5583,7 @@
       "height": 1017,
       "format": "png",
       "aspectRatio": "1:1",
-      "modified": "2026-01-25T19:32:45.152Z",
+      "modified": "2026-01-25T21:18:30.242Z",
       "imageType": "other",
       "title": "Collaboration vs Competition in Medical Research Funding",
       "description": "An infographic illustrating the contrast between the current fragmented state of 350,000 competing health apps and the potential medical breakthroughs achievable through $157 billion in collaborative research. It lists specific futuristic health technologies as benefits of cooperation.",
