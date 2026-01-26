@@ -9,7 +9,7 @@ abstract: |
 
   The Optimal Policy Generator measures policy impact on two fundamental welfare dimensions:
   **real after-tax median income growth** (economic welfare) and **median healthy life years**
-  (health welfare). These two metrics capture ~85-90% of policy effects while remaining directly
+  (health welfare). These two metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly
   interpretable---no complex conversion factors required.
 
   For any jurisdiction, four outputs: ENACT (policies proven elsewhere that you lack). REPLACE
@@ -19,8 +19,8 @@ abstract: |
 
   Bradford Hill criteria operationalized into nine quantitative scoring functions. Synthetic control
   and difference-in-differences isolate policy effects from confounders. Agnostic to which party
-  enacted each policy, only whether it worked. Estimated welfare gains: 5-15% of GDP for typical
-  US states.
+  enacted each policy, only whether it worked. Projected welfare gains (under framework assumptions): 5-15% of GDP for typical
+  US states, pending validation.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -58,7 +58,9 @@ format:
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture ~85-90% of policy effects while remaining directly interpretable.
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly interpretable.
+
+**Important limitation**: Until retrospective validation is performed (see @sec-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
 OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify, (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
 
@@ -87,9 +89,9 @@ OPG measures policy impact on two fundamental dimensions that capture the vast m
 
 ### Why Only Two Metrics?
 
-**Simplicity**: These two metrics capture ~85-90% of policy welfare effects while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
+**Simplicity**: These two metrics are designed to capture the primary welfare dimensions affected by most policies while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
 
-**Coverage gap**: Freedom and autonomy concerns---the main dimension not captured---are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored.
+**Coverage gap**: Freedom and autonomy concerns---the main dimension not captured---are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects (equity) are tracked as supplementary indicators where data permits, but are not included in the core welfare function to maintain interpretability.
 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
@@ -197,7 +199,7 @@ Current policy adoption follows a process dominated by political economy dynamic
 4. **Status quo bias**: Existing policies persist regardless of evidence because change requires political capital
 5. **Salience heuristics**: Policies addressing visible problems (terrorism, rare diseases) receive disproportionate resources relative to invisible problems (air pollution, chronic disease)
 
-The result: trillions of dollars in welfare losses from documented policy failures (see Optimocracy paper, Section 2). Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack the systematic, jurisdiction-specific recommendation generation that OPG provides.
+The result: substantial welfare losses from documented policy failures, potentially in the trillions of dollars annually across all jurisdictions. Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack the systematic, jurisdiction-specific recommendation generation that OPG provides.
 
 ### Scale of Available Evidence
 
@@ -212,6 +214,10 @@ This paper makes three primary contributions to the policy evaluation literature
 2. **Taxonomic**: We formalize the four recommendation types and introduce the Policy Impact Score (PIS) as an intermediate metric combining effect magnitude, causal confidence (Bradford Hill criteria), and methodological quality. This provides a standardized approach to evidence aggregation.
 
 3. **Applied**: We demonstrate the complete framework with a worked example for Texas traffic safety policy, showing how generic effect estimates are translated into context-adjusted, prioritized recommendations with blocking factors and tracking guidance.
+
+### Validation Status
+
+This specification describes a *proposed* framework. The methodology requires empirical validation before deployment. Specifically, retrospective studies should assess whether OPG-identified high-priority recommendations correlate with actual welfare improvements in jurisdictions that adopted them (see @sec-validation-framework for proposed validation design). Until such validation is completed, OPG outputs should inform but not replace expert judgment.
 
 ## Related Work
 
@@ -266,7 +272,9 @@ $$
 \text{HealthyYears}_j(P) \approx \sum_{p \in P} \beta^{\text{hlth}}_{jp} + \varepsilon_{\text{hlth}}
 $$
 
-where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are second-order.
+where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are assumed to be second-order.
+
+*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail---for example, when a carbon tax interacts with renewable energy subsidies---the marginal effects may be mis-estimated. Future versions of OPG should incorporate policy interaction terms for known complementary or substitutable policy pairs, with the additive model serving as a baseline.
 
 **Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
 $$
@@ -456,6 +464,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 #### Confidence Weighting by Method
 
+The following weights reflect proposed defaults based on the methodological rigor hierarchy in applied economics. These weights have not been empirically calibrated and should be treated as starting points for implementation.
+
 | Method | Base Confidence Weight | Rationale |
 |--------|----------------------|-----------|
 | Randomized experiment | 1.00 | Gold standard; rare for policies |
@@ -573,7 +583,9 @@ $$
 
 Note: $S_{\text{temporality}}$ acts as a gate---if temporality fails, the entire CCS is zero.
 
-**Default criterion weights:**
+**Proposed default criterion weights:**
+
+These weights represent proposed defaults based on the relative importance of each criterion for causal inference in policy contexts. They can be adjusted based on domain expertise, sensitivity analysis, or empirical calibration. The weights are adapted from the epidemiological Bradford Hill framework and have not been empirically validated for policy applications.
 
 | Criterion | Weight | Rationale |
 |-----------|--------|-----------|
@@ -587,7 +599,7 @@ Note: $S_{\text{temporality}}$ acts as a gate---if temporality fails, the entire
 | Specificity | 0.05 | Targeted effects more credible |
 | Analogy | 0.05 | Transfer learning from similar policies |
 
-These weights sum to 1.0 and can be adjusted based on domain-specific considerations.
+These weights sum to 1.0 and should be treated as starting points subject to refinement through validation studies.
 
 ## Jurisdiction Policy Inventory
 
@@ -1236,7 +1248,7 @@ OPG provides *evidence-weighted recommendations*, not causal proof:
 
 **Important**: The quasi-experimental methods used provide evidence *consistent with* causation under assumptions that are often untestable. Synthetic control assumes the donor pool adequately represents the counterfactual; difference-in-differences assumes parallel trends would have continued; regression discontinuity assumes no manipulation around the threshold. These assumptions cannot be verified from data alone.
 
-## Validation Framework
+## Validation Framework {#sec-validation-framework}
 
 ### The Critical Question
 
@@ -1337,6 +1349,12 @@ The key insight is that centuries of natural policy experiments have already bee
 :::
 
 ## Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
+
+::: {.callout-important}
+### Illustrative Example
+
+This worked example uses **illustrative estimates with synthetic data** to demonstrate the OPG framework. The effect sizes, confidence intervals, and Bradford Hill scores shown are for demonstration purposes only. Actual policy effects would require jurisdiction-specific evidence analysis using real data from the sources described in this specification. Numbers should not be cited as empirical findings.
+:::
 
 ### Overview
 
