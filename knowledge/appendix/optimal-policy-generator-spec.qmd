@@ -60,13 +60,13 @@ format:
 
 This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture ~85-90% of policy effects while remaining directly interpretable.
 
-OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify, (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (including freedom/autonomy constraints).
+OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify, (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
 
 **JEL Classification**: H10, D72, C54, I18, D61
 
 H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
 
-## The Two Welfare Metrics
+## The Two Welfare Metrics {#sec-two-metrics}
 
 OPG measures policy impact on two fundamental dimensions that capture the vast majority of welfare effects:
 
@@ -91,7 +91,7 @@ OPG measures policy impact on two fundamental dimensions that capture the vast m
 
 **Coverage gap**: Freedom and autonomy concerns---the main dimension not captured---are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored.
 
-## The Evidence Base: Centuries of Natural Policy Experiments
+## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
 **Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists---scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
 
@@ -201,15 +201,7 @@ The result: trillions of dollars in welfare losses from documented policy failur
 
 ### Scale of Available Evidence
 
-We have access to:
-
-- **202 countries** with political and economic data spanning **1789 to present** (V-Dem)
-- **167 countries** with regime and stability data from **1800 to present** (Polity V)
-- **36 OECD countries** with detailed policy data from **1960 to present** (CPDS)
-- **Thousands of subnational jurisdictions** (US states, EU regions, Indian states) with policy variation
-- **Millions of policy changes** documented in legislative databases
-
-Even with imperfect causal inference, systematically analyzing this data and translating it to jurisdiction-specific recommendations will produce outcomes orders of magnitude better than the current system.
+The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data and translating it to jurisdiction-specific recommendations will produce outcomes orders of magnitude better than the current system.
 
 ### Contributions
 
@@ -286,13 +278,13 @@ $$
 \Delta_j = (P_j^* \setminus P_j) \cup (P_j \setminus P_j^*)
 $$
 
-where $(P_j^* \setminus P_j)$ represents beneficial policies the jurisdiction lacks (enact candidates) and $(P_j \setminus P_j^*)$ represents harmful policies the jurisdiction has (repeal candidates).
+where $(P_j^* \setminus P_j)$ represents beneficial policies the jurisdiction lacks (enact candidates) and $(P_j \setminus P_j^*)$ represents harmful policies the jurisdiction has (repeal candidates). See @sec-policy-gap for the operational implementation.
 
 *Proof*: Direct consequence of additive separability. Include policy $p$ if and only if $w_j(p) > 0$. ∎
 
 ### Evidence Aggregation Properties
 
-**Proposition 2 (PIS as Precision-Weighted Evidence)**: Under random-effects meta-analysis with between-jurisdiction variance $\tau^2$, the pooled effect estimate $\hat{\beta}_{\text{pooled}}$ is:
+**Proposition 2 (PIS as Precision-Weighted Evidence)**: Under random-effects meta-analysis with between-jurisdiction variance $\tau^2$, the pooled effect estimate $\hat{\beta}_{\text{pooled}}$ is (see @sec-global-pis for implementation):
 $$
 \hat{\beta}_{\text{pooled}} = \frac{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2} \hat{\beta}_j}{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2}}
 $$
@@ -309,7 +301,7 @@ $$
 \text{Var}[\hat{\beta}_j | \hat{\beta}_{\text{pooled}}] > 0.75 \cdot \text{Var}[\hat{\beta}_j]
 $$
 
-meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect.
+meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect. This constraint is operationalized in @sec-evidence-grading.
 
 *Proof*: By definition, $I^2 = \frac{\tau^2}{\tau^2 + \bar{\sigma}^2}$ where $\bar{\sigma}^2$ is typical within-study variance. When $I^2 > 0.75$, between-study variance dominates, and the pooled estimate provides limited information about any individual jurisdiction's true effect. ∎
 
@@ -324,13 +316,13 @@ which is maximized when prior uncertainty is high and decision stakes are large.
 
 *Proof*: Standard Bayesian decision theory [@cartwright2012]. ∎
 
-**Corollary 1 (Trial Prioritization)**: Policies with (1) high prior variance in effect estimates, (2) large potential welfare impact, and (3) low trial cost should be prioritized for experimental validation.
+**Corollary 1 (Trial Prioritization)**: Policies with (1) high prior variance in effect estimates, (2) large potential welfare impact, and (3) low trial cost should be prioritized for experimental validation. See @sec-trial-prioritization for implementation.
 
 ## Core Methodology
 
 ### Policy-Outcome Data Structure
 
-The OPG system uses a relational database schema:
+The OPG system uses a relational database schema. The following is a **reference implementation** showing the conceptual data model; production deployments may vary.
 
 #### Core Tables
 
@@ -635,7 +627,7 @@ Data completeness varies by jurisdiction and policy type:
 
 Recommendations are only generated when policy status is known with reasonable confidence.
 
-## Policy Gap Analysis
+## Policy Gap Analysis {#sec-policy-gap}
 
 ### Comparing Current to Optimal
 
@@ -715,7 +707,7 @@ $$
 
 For continuous policies (taxes, spending levels), **Replace** specifies the change from current to optimal level. **Enact** is reserved for truly new policies that don't exist in the jurisdiction.
 
-### Blocking Factors
+### Blocking Factors {#sec-blocking-factors}
 
 Recommendations flag constraints that may impede adoption:
 
@@ -729,7 +721,7 @@ Recommendations flag constraints that may impede adoption:
 
 **Important**: Blocking factors are flagged but do not filter recommendations. The full evidence-optimal set is always shown; users can filter by feasibility if desired.
 
-### Similar Jurisdictions
+### Similar Jurisdictions {#sec-similar-jurisdictions}
 
 For each recommendation, OPG identifies jurisdictions that:
 1. Had similar characteristics to the target jurisdiction
@@ -737,6 +729,46 @@ For each recommendation, OPG identifies jurisdictions that:
 3. Experienced the predicted effects
 
 This provides concrete examples for policymakers: "Vermont (similar demographics, adopted this in 2015, saw -7.1 pp smoking reduction)."
+
+#### Computing Jurisdiction Similarity
+
+Similarity between jurisdictions $j_1$ and $j_2$ is computed as a weighted sum across three dimensions:
+
+$$
+\text{sim}(j_1, j_2) = w_D \cdot \text{sim}_D(j_1, j_2) + w_P \cdot \text{sim}_P(j_1, j_2) + w_I \cdot \text{sim}_I(j_1, j_2)
+$$
+
+Where default weights are $w_D = 0.4$, $w_P = 0.3$, $w_I = 0.3$.
+
+**Demographic Similarity** ($\text{sim}_D$):
+
+| Variable | Weight | Normalization |
+|----------|--------|---------------|
+| Log GDP per capita | 0.25 | By cross-jurisdiction SD |
+| Population log | 0.15 | By cross-jurisdiction SD |
+| Median age | 0.20 | By cross-jurisdiction SD |
+| Urban population % | 0.15 | By cross-jurisdiction SD |
+| Education (years) | 0.15 | By cross-jurisdiction SD |
+| Gini coefficient | 0.10 | By cross-jurisdiction SD |
+
+$$
+\text{sim}_D = 1 - \frac{\sum_k w_k |z_{j_1,k} - z_{j_2,k}|}{\sum_k w_k \cdot 4}
+$$
+
+Where $z$ values are z-scores and the denominator normalizes to [0,1] (4 SD maximum difference).
+
+**Policy Similarity** ($\text{sim}_P$): Cosine similarity of policy embedding vectors, where each jurisdiction's policy bundle is embedded via weighted sum of individual policy embeddings.
+
+**Institutional Similarity** ($\text{sim}_I$):
+
+| Feature | Comparison |
+|---------|------------|
+| Federal vs. unitary | Binary match (1.0 if same, 0.5 if different) |
+| Legal tradition | Common law, civil law, mixed (1.0/0.5/0.0) |
+| Enforcement capacity | World Bank governance indicator proximity |
+| Corruption level | Transparency International CPI proximity |
+
+**Usage**: Jurisdictions with $\text{sim}(j_1, j_2) > 0.7$ are considered "similar" for evidence transfer purposes. Effect estimates from similar jurisdictions receive higher weight in context adjustment.
 
 ### Recommended Tracking (for OPG Feedback)
 
@@ -863,7 +895,7 @@ For each analysis, we track which confounders were controlled:
 
 The `confounder_sensitivity` field estimates how much the effect estimate might change if uncontrolled confounders were addressed (Oster's delta, [@oster2019]).
 
-## Global (Aggregate) PIS Calculation
+## Global (Aggregate) PIS Calculation {#sec-global-pis}
 
 Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis.
 
@@ -904,7 +936,7 @@ Following standard meta-analysis conventions [@higgins2011]:
 
 High heterogeneity suggests moderators (policy effects vary by context) rather than a single true effect.
 
-### Evidence Grading
+### Evidence Grading {#sec-evidence-grading}
 
 Evidence grades are assigned using explicit thresholds on PIS, heterogeneity ($I^2$), and jurisdiction count ($N_j$):
 
@@ -1013,47 +1045,28 @@ Some policies are easier to adopt after others:
 2. **Complementary bundles**: Some policies work better together
 3. **Threshold effects**: Some benefits only appear after critical mass of policies
 
-## Two-Metric Reporting Framework
+## Effect Size Benchmarks {#sec-effect-benchmarks}
 
-### Why Two Metrics?
+Effect sizes are calibrated to cross-jurisdictional variation to aid interpretation:
 
-Policy effects ultimately manifest through two fundamental welfare dimensions that capture ~85-90% of impact:
+| Size | Income (pp/year) | Health (years) | Example |
+|------|------------------|----------------|---------|
+| Small | < 0.05 | < 0.1 | Minor regulatory changes |
+| Medium | 0.05 - 0.15 | 0.1 - 0.3 | Typical tax policy effects |
+| Large | 0.15 - 0.30 | 0.3 - 0.5 | Major reform programs |
+| Very Large | > 0.30 | > 0.5 | Transformative policies (rare) |
 
-1. **Real After-Tax Median Income Growth** - economic welfare
-2. **Median Healthy Life Years** - health welfare
+**Calibration basis**: US states vary by ~1.5 pp/year in median income growth and ~3-5 years in healthy life expectancy. A "medium" effect represents ~10% of cross-state variation.
 
-This simplification eliminates the need for complex conversion factors (VSL, QALY→$, etc.) while maintaining interpretability. Freedom/autonomy concerns---the main gap---are flagged as blocking factors rather than adding metric complexity.
+**Confidence interval interpretation**:
 
-### Reporting Format
+- **Narrow** (< 25% of effect): Precise estimate; high confidence
+- **Moderate** (25-50% of effect): Reasonable precision
+- **Wide** (> 50% of effect): Imprecise; low confidence
 
-Report effects on both metrics directly in natural units:
+For the complete two-metric framework definition, see @sec-two-metrics.
 
-| Metric | Units | Measurement | Example |
-|--------|-------|-------------|---------|
-| **Income Effect** | pp growth/year | Year-over-year % change in real after-tax median household income | +0.15 pp |
-| **Health Effect** | healthy years | Change in median healthy life expectancy | +0.3 years |
-
-### Single Welfare Score (Optional)
-
-For ranking purposes, compute an equal-weighted combination:
-
-$$
-\text{WelfareScore} = 0.5 \times \text{Income}_{\text{std}} + 0.5 \times \text{Health}_{\text{std}}
-$$
-
-Where standardized scores use cross-jurisdictional standard deviations as denominators.
-
-### Example: Tobacco Tax +$1/pack
-
-| Metric | Effect | Interpretation |
-|--------|--------|----------------|
-| **Income** | +0.12 pp/year | Reduced healthcare spending, fewer sick days |
-| **Health** | +0.25 years | Lower smoking rates → longer healthy life |
-| **Grade** | A | Strong quasi-experimental evidence from 23 states |
-
-**Interpretation**: "A $1/pack tobacco tax increase is expected to boost median income growth by 0.12 percentage points annually and add 0.25 healthy life years at the median. This estimate is based on Grade A evidence from 23 US states."
-
-## Trial Prioritization
+## Trial Prioritization {#sec-trial-prioritization}
 
 ### Value of Information Calculation
 
@@ -1705,36 +1718,6 @@ Before generating recommendations, verify:
 - **Tracking Guidance**: Recommended KPIs and data sources for each recommendation, enabling jurisdictions to report outcomes back to OPG for continuous improvement.
 
 - **Similar Jurisdictions**: Jurisdictions with comparable characteristics that have adopted the recommended policy, used as concrete examples for policymakers.
-
----
-
-## Appendix D: Interpreting Effect Sizes {.appendix}
-
-### Two-Metric Effect Size Benchmarks
-
-| Size | Income (pp/year) | Health (years) | Example |
-|------|------------------|----------------|---------|
-| Small | < 0.05 | < 0.1 | Minor regulatory changes |
-| Medium | 0.05 - 0.15 | 0.1 - 0.3 | Typical tax policy effects |
-| Large | 0.15 - 0.30 | 0.3 - 0.5 | Major reform programs |
-| Very Large | > 0.30 | > 0.5 | Transformative policies (rare) |
-
-### Benchmark Calibration
-
-These benchmarks are calibrated to cross-jurisdictional variation:
-
-- **Income**: US states vary by ~1.5 pp/year in median income growth
-- **Health**: US states vary by ~3-5 years in healthy life expectancy
-
-A "medium" effect represents ~10% of the cross-state variation; a "large" effect represents ~20%.
-
-### Confidence Interval Interpretation
-
-| CI Width | Interpretation |
-|----------|----------------|
-| Narrow (< 25% of effect) | Precise estimate; high confidence |
-| Moderate (25-50% of effect) | Reasonable precision; moderate confidence |
-| Wide (> 50% of effect) | Imprecise; low confidence in point estimate |
 
 ---
 

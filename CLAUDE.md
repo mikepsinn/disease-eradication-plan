@@ -180,4 +180,6 @@ Links only work if target is in `_quarto-manual.yml`. External URLs use full pat
 
 **See `CONTRIBUTING.md` for complete writing guidelines.**
 
+**Do not use em-dashes (—).** Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.
+
 Render and critically review output images whenever you modify figure-generating files.
