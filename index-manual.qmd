@@ -316,7 +316,7 @@ Right now, only {{< var new_disease_first_treatments_per_year >}} diseases per y
 
 Imagine {{< var diseases_without_effective_treatment >}} people standing in line at a pharmacy that serves {{< var new_disease_first_treatments_per_year >}} customers per year. At this rate, the last person in line gets served in ~{{< var status_quo_queue_clearance_years >}}. They'll be dead by then. So will you. So will everyone.
 
-The dFDA is like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
+Pragmatic trials at scale are like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
 
 This is "trial capacity." More trials = more diseases tested = more first effective treatments arrive sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
 
@@ -687,7 +687,7 @@ For humans who peaked at counting on fingers:
 - **You spend**: Zero new dollars (you just move existing dollars from the "making corpses" column to the "preventing corpses" column)
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
 - **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
-- **Lives saved**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (dFDA timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
+- **Lives saved**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
 - **Per life saved**: Society makes net profit
 
 Math says this is the best possible use of a billion dollars.
@@ -698,7 +698,7 @@ This is the only health intervention in history where you PROFIT from saving liv
 
 You're weaponizing capitalism's greatest strength (greed) against humanity's greatest weakness (dying). It's economic jiu-jitsu.
 
-Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives (dFDA timeline shift), operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
+Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives (first treatment timeline shift from increased trial capacity), operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
 
 ### 2nd Best Idea in the World
 
