@@ -119,9 +119,9 @@ BAD examples (never write like this):
 - "We must take action to..." (too earnest)
 
 - "canShareStandalone": boolean - does it make sense shared independently?
-- "socialCaption": 1-2 sentences + 2-3 hashtags (e.g., #WarOnDisease #MedicalResearch). Deadpan punchline. End with https://WarOnDisease.org
-- "twitterText": STRICT 280 char limit (URL counts as 23). Keep it SHORT - one punchy line + URL. If over 280, cut words ruthlessly.
-- "linkedInText": 2-3 sentences of wry gallows humor. End with https://WarOnDisease.org
+- "socialCaption": 1-2 sentences, deadpan punchline. End with https://WarOnDisease.org (no hashtags - they're low-value noise)
+- "twitterText": STRICT 280 char limit (URL counts as 23). NO HASHTAGS - use every character for punchy copy. 
+- "linkedInText": 2-3 sentences of wry gallows humor. Add 1 hashtag at the end (#WarOnDisease). End with https://WarOnDisease.org
 - "targetPlatforms": Array from ["twitter", "linkedin", "instagram", "facebook", "presentation"]
 
 ## Presentations
