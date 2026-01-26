@@ -40,18 +40,18 @@ Read as a hostile peer reviewer skeptical of large claims.
 
 ### Clarity & Concision
 
-Target: 8th-grade reading level. Every sentence should be necessary.
+**Delete ruthlessly.** Target 8th-grade reading level. If a sentence adds nothing new, remove it.
 
-| Cut | Example |
-|-----|---------|
-| **Redundancy** | "past history" -> "history", repeated explanations across sections |
-| **Hedging** | "It could potentially be argued that" -> "This suggests" |
-| **Nominalizations** | "the implementation of" -> "implementing" |
-| **Passive voice** | "was conducted by researchers" -> "researchers conducted" |
+| Delete/Replace | Example |
+|----------------|---------|
+| **Redundancy** | Repeated explanations, "past history" -> "history" |
+| **Hedging/blather** | "It could potentially be argued that" -> delete or "This suggests" |
 | **Filler phrases** | "It is important to note that", "In order to", "the fact that" |
-| **Jargon without definition** | Define on first use or replace with plain English |
+| **Nominalizations** | "the implementation of" -> "implementing" |
+| **Passive voice** | "was conducted by" -> "X conducted" |
+| **Em-dashes (—)** | Replace with period (preferred), comma, parenthesis, or semicolon |
 
-Flag: Sentences >25 words, paragraphs >5 sentences, sections that repeat earlier content.
+Flag and fix: Sentences >25 words, paragraphs >5 sentences, sections repeating earlier content, jargon without definition.
 
 ---
 

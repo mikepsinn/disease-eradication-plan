@@ -409,7 +409,7 @@ policy_recommendations (
 | `treaty` | International agreement | Multilateral cooperation treaty | Binary |
 | `local_ordinance` | Municipal rule | Land use restrictions | Categorical |
 
-### Analysis Methods
+### Analysis Methods {#sec-analysis-methods}
 
 The OPG system supports multiple quasi-experimental designs, reflecting the "credibility revolution" in applied economics [@angrist2010]. Each method is appropriate for different data structures [@imbens2015]:
 
@@ -706,7 +706,7 @@ $$
 \text{Expected Effect}_{jp} = \hat{\beta}_{p} \times \text{Context Adjustment}_{j}
 $$
 
-## Recommendation Generation
+## Recommendation Generation {#sec-recommendation-generation}
 
 ### Recommendation Types
 
@@ -1254,8 +1254,6 @@ OPG provides *evidence-weighted recommendations*, not causal proof:
 
 The ultimate test of OPG validity: **Do jurisdictions that adopt high-priority OPG recommendations see better outcomes than those that don't?**
 
-Until this validation is performed, OPG should be treated as a theoretically-motivated heuristic for prioritization, not a validated predictive tool.
-
 ### Proposed Validation Study
 
 **Design**: Retrospective comparison of OPG predictions against subsequent policy outcomes.
@@ -1335,9 +1333,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ## Conclusion
 
-The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact.
-
-The key insight is that centuries of natural policy experiments have already been conducted---we simply need to harvest the evidence systematically. With 50 US states varying policies over 70 years, 200 countries over two centuries, and thousands of cities and counties making independent policy choices, the data to know what works already exists. OPG transforms this scattered evidence into actionable, jurisdiction-specific guidance.
+The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact. The framework transforms scattered natural experimental evidence into actionable, jurisdiction-specific guidance.
 
 ## Acknowledgments {.unnumbered}
 
@@ -1663,79 +1659,24 @@ Before generating recommendations, verify:
 
 ## Appendix C: Glossary {.appendix}
 
-### Core Concepts
+*Brief definitions for quick reference. See referenced sections for full details.*
 
-- **Optimal Policy Generator (OPG)**: System for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. Outputs four recommendation types (enact/replace/repeal/maintain) ranked by expected welfare impact, with recommended jurisdictional level (subsidiarity) and tracking guidance for continuous improvement.
+| Term | Definition | See Section |
+|------|------------|-------------|
+| **OPG** | Optimal Policy Generator---produces jurisdiction-specific recommendations | @opg-system-overview |
+| **PIS** | Policy Impact Score---effect × causal confidence × quality | @sec-pis |
+| **CCS** | Causal Confidence Score---weighted Bradford Hill average | @sec-bradford-hill |
+| **Evidence Grade** | A-F rating based on PIS, heterogeneity, jurisdiction count | @sec-evidence-grading |
+| **Policy Gap** | Difference between current and evidence-optimal policy | @sec-policy-gap |
+| **Blocking Factor** | Constraint on adoption (constitutional, political, etc.) | @sec-blocking-factors |
+| **I²** | Between-study heterogeneity (>75% = high) | @sec-global-pis |
+| **Synthetic Control** | Weighted donor pool matching pre-treatment trajectory | @sec-analysis-methods |
+| **DiD** | Difference-in-differences under parallel trends | @sec-analysis-methods |
+| **RDD** | Regression discontinuity at eligibility threshold | @sec-analysis-methods |
 
-- **Policy Impact Score (PIS)**: Intermediate metric quantifying the strength of evidence that a policy affects the two welfare metrics. Computed separately for income and health effects, then combined. Integrates effect size, causal confidence (Bradford Hill criteria), and analysis quality.
+**Recommendation types**: ENACT (add new), REPLACE (modify level), REPEAL (remove harmful), MAINTAIN (keep current). See @sec-recommendation-generation.
 
-- **Real After-Tax Median Income Growth**: Primary economic welfare metric. Year-over-year percentage change in inflation-adjusted, post-tax median household income. Units: percentage points (pp) per year.
-
-- **Median Healthy Life Years**: Primary health welfare metric. Expected years of life in good health at the population median. Units: years.
-
-- **Policy Gap**: Difference between a jurisdiction's current policy status and the evidence-optimal policy. Gaps can be: missing (lacks beneficial policy), harmful (has detrimental policy), suboptimal (continuous policy at wrong level).
-
-- **Causal Confidence Score (CCS)**: Weighted average of Bradford Hill criteria scores. Quantifies confidence that observed association reflects true causation rather than confounding, reverse causation, or chance.
-
-- **Evidence Grade**: Letter grade (A-F) summarizing evidence quality. A = strong evidence from multiple high-quality quasi-experiments; F = insufficient or conflicting evidence.
-
-- **Jurisdiction**: Geographic or administrative unit where policies are implemented (country, state, province, city, municipality). OPG operates at any level.
-
-- **Blocking Factor**: Constraint that may impede policy adoption: constitutional (requires amendment), federal preemption (superseded by higher law), political (strong opposition), implementation cost (high fixed costs), autonomy (restricts individual freedom---the primary welfare dimension not captured by the two core metrics).
-
-### Quasi-Experimental Methods
-
-- **Synthetic Control Method**: Constructs a weighted combination of untreated jurisdictions that matches the treated jurisdiction's pre-treatment outcome trajectory. Post-treatment divergence estimates causal effect.
-
-- **Difference-in-Differences (DiD)**: Compares pre-to-post change in treated units to pre-to-post change in control units. Valid under parallel trends assumption.
-
-- **Regression Discontinuity Design (RDD)**: Exploits sharp threshold determining policy eligibility. Compares outcomes just above vs. just below threshold.
-
-- **Event Study**: Estimates treatment effects at each time period relative to policy adoption. Visualizes pre-trends and effect dynamics.
-
-- **Interrupted Time Series (ITS)**: Estimates level and slope changes in a single unit's outcome trajectory following policy implementation.
-
-### Statistical Concepts
-
-- **I² (I-squared)**: Percentage of variance in effect estimates due to true heterogeneity (vs. sampling error). I² > 75% indicates substantial heterogeneity.
-
-- **τ² (tau-squared)**: Estimated between-jurisdiction variance in true effects. Used in random-effects meta-analysis.
-
-- **E-value**: Minimum strength of association an unmeasured confounder would need with both policy and outcome to explain away the observed effect. Higher = more robust.
-
-- **Parallel Trends**: Assumption that treated and control jurisdictions would have followed similar outcome trajectories absent treatment. Untestable but can be assessed via pre-treatment data.
-
-- **Pre-treatment RMSE**: Root mean squared error between synthetic control and actual treated unit before policy implementation. Lower indicates better fit.
-
-### Bradford Hill Criteria (Policy Context)
-
-- **Strength**: Magnitude of the effect estimate (standardized).
-- **Consistency**: Replication across jurisdictions (inverse of I²).
-- **Specificity**: Whether policy affects specific outcomes vs. everything.
-- **Temporality**: Policy adoption precedes outcome change.
-- **Gradient**: Dose-response relationship (for continuous policies like tax rates).
-- **Plausibility**: Economic or behavioral mechanism exists.
-- **Coherence**: Consistent with broader economic theory and evidence.
-- **Experiment**: Quality of quasi-experimental design used.
-- **Analogy**: Similar policies show similar effects.
-
-### Output Concepts
-
-- **Enact List**: New policies the jurisdiction should adopt (policies that don't exist in the jurisdiction but have strong evidence of benefit).
-
-- **Replace List**: Existing policies the jurisdiction should modify (current policy level or approach differs from evidence-optimal; specifies current → recommended change).
-
-- **Repeal List**: Policies the jurisdiction should remove (has evidence of harm, jurisdiction currently has them).
-
-- **Maintain List**: Policies the jurisdiction should keep unchanged (current policy is aligned with evidence).
-
-- **Priority Tier**: Classification of recommendations by urgency and feasibility: Quick Win (high impact, low barriers), Major Reform (high impact, significant barriers), Long-Term (requires structural change), Monitor (needs more evidence).
-
-- **Subsidiarity Principle**: Recommendation to implement policies at the lowest effective jurisdictional level to maximize experimental data collection and minimize harm from policy failures.
-
-- **Tracking Guidance**: Recommended KPIs and data sources for each recommendation, enabling jurisdictions to report outcomes back to OPG for continuous improvement.
-
-- **Similar Jurisdictions**: Jurisdictions with comparable characteristics that have adopted the recommended policy, used as concrete examples for policymakers.
+**Bradford Hill criteria**: Strength, Consistency, Temporality, Gradient, Experiment, Plausibility, Coherence, Analogy, Specificity. See @sec-bradford-hill.
 
 ---
 
