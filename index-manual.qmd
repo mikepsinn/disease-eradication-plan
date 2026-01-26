@@ -312,11 +312,13 @@ But humans have [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd), en
 
 ### The Disease Queue (Why You're Waiting to Not Die)
 
-Imagine {{< var diseases_without_effective_treatment >}} people standing in line at a pharmacy that serves 15 customers per year. That's the current clinical trial system. At this rate, the last person in line gets served in ~{{< var status_quo_queue_clearance_years >}}. They'll be dead by then. So will you. So will everyone.
+Right now, only {{< var new_disease_first_treatments_per_year >}} diseases per year get their first effective treatment. That's it. Fifteen. Out of {{< var diseases_without_effective_treatment >}} that have nothing.
 
-The dFDA is like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Suddenly the line moves {{< var dfda_trial_capacity_multiplier >}} faster. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
+Imagine {{< var diseases_without_effective_treatment >}} people standing in line at a pharmacy that serves {{< var new_disease_first_treatments_per_year >}} customers per year. At this rate, the last person in line gets served in ~{{< var status_quo_queue_clearance_years >}}. They'll be dead by then. So will you. So will everyone.
 
-This is "trial capacity." More trials = more diseases tested = more cures arrive sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
+The dFDA is like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
+
+This is "trial capacity." More trials = more diseases tested = more first effective treatments arrive sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
 
 ### The Cost of War
 
@@ -508,6 +510,8 @@ Even humans, who once thought the Earth was flat and diseases were caused by bad
 
 Scientists discovered that when [3.5% of any population](knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's like a cheat code for democracy that actually works.
 
+![A visual representation of the 3.5% tipping point for social change alongside the four-step viral mechanism for mass recruitment and financial incentives.](/assets/images/index-manual/index-manual-section-the-magic-3-5-number-bw-academic.jpg)
+
 This is how you got:
 
 - Women's suffrage (3.5% of women got angry enough)
@@ -589,6 +593,8 @@ The entire system runs on greed, like capitalism, except instead of destroying t
 *For Every Species of Human*
 
 **Defense Contractors**: "You keep 99% of your murder budget AND get {{< var victory_bond_annual_return_pct >}} returns on the 1%. It's like finding papers in the pocket of pants you're currently wearing. Except the papers multiply. While you're wearing the pants. It's financially inexplicable but legally binding."
+
+![A comparative overview of the financial and social incentives for different stakeholders, highlighting the 272% return on investment and significant lifetime wealth gains for individuals.](/assets/images/index-manual/index-manual-section-personalized-bribery-packages-bw-academic.jpg)
 
 **Insurance Companies**: "Healthy people file zero claims. Sick people file all the claims. We'll let you do the math since you love math.
 
@@ -739,7 +745,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Novel Concept for Humanity*
 
-- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because cures arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years sooner (that's more people than currently exist, which sounds fake but is just math)
+- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years sooner (that's more people than currently exist, which sounds fake but is just math)
 - {{< var combined_peace_health_dividends_annual_for_roi_calc >}} appears annually like magic, except it's just arithmetic
 - Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)
