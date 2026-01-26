@@ -2483,6 +2483,7 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     distribution="normal",  # Well-established WHO methodology with systematic data collection
     std_error=7500,  # ±5%: reflects reporting gaps + cause-of-death coding variance
     latex_symbol=r"Deaths_{disease,daily}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for this well-known WHO statistic
 )  # 150,000 deaths/day from all disease/aging
 
 # ===================================================================
@@ -3298,6 +3299,7 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
     confidence="medium",
     keywords=["150.0m", "250.0m", "410.0m", "1%", "viral referendum", "global survey", "one percent", "campaign budget", "referendum cost", "280m votes", "0.20 per vote", "0.50 per vote"],
     latex_symbol=r"Budget_{viral,base}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for budget components
 )  # Base: $250M (realistic $0.50/vote avg), Range: $150M (optimistic $0.20/vote) to $410M (worst-case $1.05/vote)
 
 TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
@@ -3318,6 +3320,7 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     validation_min=200_000_000,   # Floor: Minimal lobbying (weak opposition)
     validation_max=2_000_000_000,  # Ceiling: Full-scale opposition war chest
     latex_symbol=r"Budget_{lobby,treaty}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for budget components
 )  # $650M total lobbying (outspends pharma + MIC combined)
 
 TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
@@ -3336,6 +3339,7 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
     validation_min=10_000_000,   # Floor: Minimal contingency
     validation_max=150_000_000,  # Ceiling: Major unforeseen costs
     latex_symbol=r"Budget_{reserve}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for budget components
 )  # $50M reserve
 
 # Total campaign cost (calculated from components)
@@ -3359,6 +3363,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     inputs=["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE", "TREATY_CAMPAIGN_BUDGET_LOBBYING", "TREATY_CAMPAIGN_BUDGET_RESERVE"],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"],
     latex_symbol=r"Cost_{campaign}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for this summary cost
 )  # $1B total campaign cost (all VICTORY Incentive Alignment Bonds)
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
@@ -6824,6 +6829,7 @@ TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
     unit="USD",
     keywords=["800.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
     latex_symbol=r"Budget_{PAC,treaty}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for budget components
 )  # billions USD, for Super PACs/politician bribery
 
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
@@ -6851,6 +6857,7 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
     latex_symbol=r"N_{voters,target}",  # LaTeX symbol for equations
+    hide_ci=True,  # CI clutters display for this target figure
 )  # 280M people = 3.5% of 8B (critical mass threshold)
 
 # Historical & Comparison Multipliers

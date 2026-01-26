@@ -40,18 +40,38 @@ Read as a hostile peer reviewer skeptical of large claims.
 
 ### Clarity & Concision
 
-**Delete ruthlessly.** Target 8th-grade reading level. If a sentence adds nothing new, remove it.
+**Write simply for general audience without losing precision.** Target 8th-grade reading level, 10-15 word sentences average. Can a smart 8th-grader understand this? If not, simplify. Never sacrifice accuracy—use precise terms but define immediately. Break complex ideas into 2-3 short sentences. Delete ruthlessly.
 
 | Delete/Replace | Example |
 |----------------|---------|
-| **Redundancy** | Repeated explanations, "past history" -> "history" |
+| **Redundancy** | "past history" -> "history" |
 | **Hedging/blather** | "It could potentially be argued that" -> delete or "This suggests" |
 | **Filler phrases** | "It is important to note that", "In order to", "the fact that" |
 | **Nominalizations** | "the implementation of" -> "implementing" |
 | **Passive voice** | "was conducted by" -> "X conducted" |
 | **Em-dashes (—)** | Replace with period (preferred), comma, parenthesis, or semicolon |
+| **Long sentences** | "X happened, which caused Y, and this led to Z" -> "X happened. This caused Y. Y led to Z." |
 
 Flag and fix: Sentences >25 words, paragraphs >5 sentences, sections repeating earlier content, jargon without definition.
+
+### Appropriate Humor (Philomena Cunk Style)
+
+**Inject deadpan, absurdist humor when it clarifies without detracting from credibility.**
+
+| Use when | Avoid when |
+|----------|------------|
+| Highlighting absurd contradictions/inefficiencies | Methodology sections (maintains rigor) |
+| Making abstract concepts concrete via absurd comparisons | Serious topics (deaths, suffering, failures) |
+| Breaking up dense technical sections | Executive summaries/abstracts |
+| Calling out obvious but unstated truths | If it undermines credibility |
+
+**Style guide:**
+- Deadpan delivery: State absurdities as simple facts
+- Absurd comparisons: "Like trying to solve climate change by asking everyone to think harder"
+- Obvious questions: "Why does this exist? Nobody knows."
+- Understated observations: "This seems inefficient. But it's the system we have."
+
+**Examples:** ❌ "Regulatory delays kill people. LOL." ✅ "Regulatory delays kill people. This is not controversial. Yet the system continues."
 
 ---
 

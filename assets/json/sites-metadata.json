@@ -613,7 +613,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/references.qmd",
@@ -1228,7 +1228,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         }
       ],
       "pageCount": 2
@@ -1495,7 +1495,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         }
       ],
       "pageCount": 2
@@ -2103,7 +2103,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         }
       ],
       "pageCount": 2
@@ -2831,7 +2831,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         }
       ],
       "pageCount": 2
@@ -3034,7 +3034,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         }
       ],
       "pageCount": 2
@@ -5237,6 +5237,7 @@
             "Quality-Adjusted Life Years (QALYs)",
             "Composite Welfare Index",
             "Constitutional Welfare Score: A Concrete Default",
+            "Default Implementation: Two-Metric Welfare Function",
             "Metric Selection Process",
             "The Metric Selection Problem: Where Capture Migrates",
             "Scope and Limits: A Taxonomy of Governance Decisions",
@@ -5287,7 +5288,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/appendix/optimal-policy-generator-spec.qmd",
@@ -5297,8 +5298,6 @@
           "sections": [
             "Abstract",
             "The Two Welfare Metrics",
-            "1. Real After-Tax Median Income Growth",
-            "2. Median Healthy Life Years",
             "Why Only Two Metrics?",
             "The Evidence Base: Centuries of Natural Policy Experiments",
             "Scale of Available Natural Experiments",
@@ -5312,6 +5311,7 @@
             "Why Policy Ranking Fails Today",
             "Scale of Available Evidence",
             "Contributions",
+            "Validation Status",
             "Related Work",
             "Existing Policy Evaluation Frameworks",
             "This Framework's Contribution",
@@ -5364,11 +5364,7 @@
             "Priority Tiers",
             "Political Feasibility Notes",
             "Sequencing Guidance",
-            "Two-Metric Reporting Framework",
-            "Why Two Metrics?",
-            "Reporting Format",
-            "Single Welfare Score (Optional)",
-            "Example: Tobacco Tax +$1/pack",
+            "Effect Size Benchmarks",
             "Trial Prioritization",
             "Value of Information Calculation",
             "Natural Experiment Identification",
@@ -5400,6 +5396,7 @@
             "Acknowledgments",
             "References",
             "Appendix A: Worked Example - Texas Policy Recommendations",
+            "Illustrative Example",
             "Overview",
             "Texas Policy Inventory (Sample)",
             "Step 1: Calculate Policy Impact Scores",
@@ -5414,16 +5411,7 @@
             "Appendix B: OPG Analysis Workflow",
             "Complete OPG Pipeline",
             "Minimum Data Requirements Checklist",
-            "Appendix C: Glossary",
-            "Core Concepts",
-            "Quasi-Experimental Methods",
-            "Statistical Concepts",
-            "Bradford Hill Criteria (Policy Context)",
-            "Output Concepts",
-            "Appendix D: Interpreting Effect Sizes",
-            "Two-Metric Effect Size Benchmarks",
-            "Benchmark Calibration",
-            "Confidence Interval Interpretation"
+            "Appendix C: Glossary"
           ],
           "published": true,
           "lastmod": "2026-01-25"
@@ -6331,7 +6319,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/appendix/invisible-graveyard.qmd",
@@ -7019,7 +7007,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",

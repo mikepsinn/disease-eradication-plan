@@ -223,9 +223,22 @@ This section formalizes the OBG framework as a social planner's optimization pro
 
 ### The Social Planner's Problem
 
-Consider a benevolent social planner allocating a fixed budget $B$ across $n$ spending categories. Let $s_i$ denote spending on category $i$, with $\sum_{i=1}^{n} s_i = B$. Each category generates welfare $W_i(s_i)$ according to a production function that exhibits diminishing marginal returns.
+Consider a benevolent social planner allocating a fixed budget $B$ across $n$ spending categories. Each category generates welfare measured using the [two-metric framework](optimocracy-paper.qmd#sec-two-metric-welfare): real after-tax median income growth and median healthy life years.
 
-**Assumption 1 (Diminishing Returns).** For each category $i$, the welfare function $W_i: \mathbb{R}_+ \to \mathbb{R}_+$ is twice continuously differentiable with $W_i'(s) > 0$ and $W_i''(s) < 0$ for all $s > 0$.
+Let $s_i$ denote spending on category $i$, with $\sum_{i=1}^{n} s_i = B$. Each category produces effects on both welfare metrics:
+
+- $\beta_i^{inc}(s_i)$: Effect on income growth (pp/year)
+- $\beta_i^{hlth}(s_i)$: Effect on healthy life years
+
+Total welfare from category $i$ follows the two-metric welfare function:
+
+$$
+W_i(s_i) = \alpha \cdot \beta_i^{inc}(s_i) + (1-\alpha) \cdot \beta_i^{hlth}(s_i)
+$$
+
+where $\alpha = 0.5$ by default (equal weight to economic and health welfare).
+
+**Assumption 1 (Diminishing Returns).** For each category $i$, both effect functions $\beta_i^{inc}$ and $\beta_i^{hlth}$ are twice continuously differentiable with positive first derivatives and negative second derivatives for all $s > 0$.
 
 The social planner maximizes aggregate welfare:
 

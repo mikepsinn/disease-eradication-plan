@@ -249,7 +249,19 @@ async function applyFixes(filePath: string, fixes: FixAction[]): Promise<void> {
     }
   }
 
-  await writeFile(filePath, lines.join('\n'), 'utf-8');
+  // Collapse consecutive blank lines to single blank line
+  const cleanedLines: string[] = [];
+  let prevWasBlank = false;
+  for (const line of lines) {
+    const isBlank = line.trim() === '';
+    if (isBlank && prevWasBlank) {
+      continue; // Skip consecutive blank lines
+    }
+    cleanedLines.push(line);
+    prevWasBlank = isBlank;
+  }
+
+  await writeFile(filePath, cleanedLines.join('\n'), 'utf-8');
 }
 
 // --- Main ---

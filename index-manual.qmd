@@ -8,7 +8,6 @@ aliases:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 Hello, humans.
 
 I am WISHONIA, which stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. Yes, the acronym is longer than your average tweet. Consider it practice for complex thoughts. Anyway, I've been optimizing resource allocation for another planet for the past 4,297 years, which in Earth time is coincidentally also 4,297 years.
@@ -40,6 +39,8 @@ This is like refusing to breathe unless someone pays you, but somehow it's your 
 ### The Gradual Stupidity Reduction Program
 
 On Wishonia, we stopped having wars all at once, but we're more advanced. Humans are like toddlers who can split atoms. They can't just stop being irrational immediately - that would be like teaching a dog calculus before it learns to sit.
+
+![A timeline illustrating the Gradual Stupidity Reduction Program's 20-year transition from military spending to medical funding and cultural evolution.](/assets/images/index-manual/index-manual-section-the-gradual-stupidity-reduction-program-bw-academic.jpg)
 
 So this book teaches humanity to be less irrational gradually:
 
@@ -138,9 +139,13 @@ The twist: you might do this anyway. Not because it's right (though it is), but 
 
 Everyone's greed aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich.
 
+![A diagram illustrating how the conflicting selfish motives of investors, politicians, voters, and military contractors converge to unintentionally produce a positive outcome for humanity.](/assets/images/index-manual/index-manual-section-the-part-where-humanity-has-no-choice-bw-academic.jpg)
+
 ### Your Two Futures
 
 #### Future A: You Ignore This Book
+
+![A visualization of the massive disparity between global spending on weaponry and medical testing, illustrating the 604:1 ratio and its associated confidence interval.](/assets/images/index-manual/index-manual-section-future-a-you-ignore-this-book-bw-academic.jpg)
 
 - Year 2030: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work
 - Year 2035: Running out of papers for anything
@@ -196,6 +201,8 @@ Every single day, {{< var global_disease_deaths_daily >}} of you permanently dis
 
 Meanwhile, your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials that test which medicines actually save lives. You've tested less than 1% of possible drug-disease combinations using existing safe compounds. The bottleneck isn't basic research. It's testing. And you've decided testing isn't worth funding.
 
+Bed nets are humanity's greatest achievement in not-dying-from-malaria. Redirecting 1% of murder money beats bed nets by {{< var treaty_vs_bed_nets_multiplier >}}. That's like discovering your umbrella also cures cancer.
+
 ::: {.callout-note}
 **Note on terminology**: This ratio compares military spending ({{< var global_military_spending_annual_2024 >}}) to government spending on interventional clinical trials ({{< var global_government_clinical_trials_spending_annual >}}), not total medical research ({{< var global_med_research_spending >}}). Total medical research includes basic research, translational research, and clinical trials. The 1% treaty specifically redirects military spending to pragmatic clinical trials. These are automated, real-world studies far more efficient than traditional research methods.
 :::
@@ -240,6 +247,8 @@ The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} y
 
 The entire system operates on the revolutionary principle that humans will do the right thing if you pay them enough to do it accidentally.
 
+![A relational diagram showing how six distinct entities, ranging from defense contractors to regular humans, reorient their financial incentives toward a central 'Victory Incentive' system.](/assets/images/index-manual/index-manual-section-why-this-works-bw-academic.jpg)
+
 - **Defense contractors:** Keep 99% of their murder budget PLUS get 270% returns on VICTORY Incentive Alignment Bonds. They're literally profiting from peace. This is like convincing a vampire to open a blood bank - counterintuitive but mathematically sound.
 
 - **Pharmaceutical companies:** Instead of paying $48,000 per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving.
@@ -276,7 +285,6 @@ They'll learn in history class that your generation could split atoms, edit gene
 
 Future alien archaeologists will find your civilization and create a museum exhibit called "The Species That Paid to Kill Itself" right between the dinosaurs (who at least had the excuse of a meteor) and the dodo (who at least had the excuse of being delicious).
 
-
 ## The Problem
 
 ### The Daily Deletion Event
@@ -302,9 +310,19 @@ You'd be adorable for thinking that.
 [Humans haven't cured a single disease](knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) in 50 years [@smallpox-eradicated].
 But humans have [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd), enough to end civilization 13 times, just in case the first apocalypse doesn't take.
 
+### The Disease Queue (Why You're Waiting to Not Die)
+
+Imagine {{< var diseases_without_effective_treatment >}} people standing in line at a pharmacy that serves 15 customers per year. That's the current clinical trial system. At this rate, the last person in line gets served in ~{{< var status_quo_queue_clearance_years >}}. They'll be dead by then. So will you. So will everyone.
+
+The dFDA is like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Suddenly the line moves {{< var dfda_trial_capacity_multiplier >}} faster. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
+
+This is "trial capacity." More trials = more diseases tested = more cures arrive sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
+
 ### The Cost of War
 
 Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on stuff designed specifically to make humans stop being alive.
+
+![A comparison chart visualizing the massive disparity between global military spending ($2.72 trillion) and clinical trial investment ($67.5 billion), highlighting the 604:1 spending ratio.](/assets/images/index-manual/index-manual-section-the-cost-of-war-bw-academic.jpg)
 
 This shopping list includes:
 
@@ -336,6 +354,8 @@ Humans have:
 Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m].
 Your chance of dying from disease: 100% (unless you're reading this as a ghost, in which case, congratulations).
 
+![A visual comparison showing the 1,750:1 ratio of death-related spending versus prevention, contrasted with the statistical likelihood of dying from terrorism versus disease.](/assets/images/index-manual/index-manual-section-hilarious-security-priorities-bw-academic.jpg)
+
 But wait.
 It gets dumber.
 
@@ -355,7 +375,7 @@ It gets dumber.
 
 1.  **[A 1% treaty](knowledge/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to the curing dieases through hyper-efficient decentralized clinical trials.
 
-2.  **[A decentralized institutes of health (DIH) treasury](knowledge/solution/dih.qmd)** = Holds the money and uses a new system of collective budgeting called [Wishocracy](knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation rules (e.g., "70% to patient subsidies"), then patients determine specific funding by choosing which trials to join.
+2.  **[The 1% Treaty Fund](knowledge/solution/dih.qmd)** = Holds the money and uses a new system of collective budgeting called [Wishocracy](knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation rules (e.g., "70% to patient subsidies"), then patients determine specific funding by choosing which trials to join.
 3.  **[A decentralized framework for drug assessment](knowledge/solution/dfda.qmd)** = Ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
 
 <!-- {{< include knowledge/figures/three-ingredients-system-diagram.qmd >}} -->
@@ -365,6 +385,8 @@ It gets dumber.
 **Redirect {{< var treaty_annual_funding >}}/year from the War on Humanity to the War on Disease**
 
 Every nation redirects just **1.0%** of their current murder budget to fund hyper-efficient decentralized clinical trials that subsidize patient participation.
+
+![A comparison showing the scale of the $2.72 trillion global military budget relative to the proposed $27.2 billion (1%) redirection for medical research.](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
 
 {{< include knowledge/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
@@ -379,8 +401,6 @@ Nobody tells the 14,000 people involved in making a pencil what to do. They just
 
 ### The 1% Treaty Fund
 
-*Decentralized Institute of Health*
-
 Instead of a committee of 200 bureaucrats giving their friends grants to write papers about diseases, [the 1% Treaty Fund](knowledge/solution/dih.qmd) directly subsidizes patients, letting them choose which trials to fund.
 
 ### A Decentralized Framework for Drug Assessment (dFDA)
@@ -393,8 +413,10 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction at scale (consistent with systematic reviews showing median costs of ~{{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient). Not in theory. In reality. With actual dying people who became not-dying people.
+- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction at scale (consistent with a systematic review of 64 pragmatic trials showing median costs of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]). Not in theory. In reality. With actual dying people who became not-dying people.
 - **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%. 
+
+![A comparison showing the 82-fold cost reduction achieved by the RECOVERY trial model compared to standard FDA Phase 3 costs, alongside a scale visualization of the 30% post-WW2 military spending cut versus the proposed 1% reallocation.](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
 {{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
 
@@ -460,6 +482,8 @@ Here's the deal you offer investors:
 How does money multiply like rabbits? The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget.
 Investors get 10% because they had the revolutionary idea of "what if we didn't all die?"
 
+![A comparison of annual investment returns, illustrating the massive disparity between traditional high-performance funds and the 272% ROI of VICTORY Incentive Alignment Bonds.](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
+
 $$
 \text{Annual Return} = \$27.2\text{B} \times 10\% = \$2.7\text{B}
 $$
@@ -475,6 +499,8 @@ It's the Louisiana Purchase of clinical trials, except instead of buying land fr
 *Make Humans Click a Button to Not Die*
 
 You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on this question: "Pragmatic trials integrated into standard healthcare cost {{< var dfda_trial_cost_reduction_factor >}} less than traditional methods. If all nations redirect just 1% of military spending to fund these trials, everyone gets 1% more security (1% fewer nuclear bombs pointed at you) and access to treatments years sooner. Should your country participate?"
+
+![A comparison showing the 44.1x cost efficiency of pragmatic trials versus traditional methods, alongside a visualization of redirecting 1% of military spending to healthcare research.](/assets/images/index-manual/index-manual-section-step-2-the-great-clicking-bw-academic.jpg)
 
 Even humans, who once thought the Earth was flat and diseases were caused by bad smells, can handle this level of complexity.
 
@@ -516,6 +542,8 @@ Show them a spreadsheet:
 - Moral status: "Medical hero" (fake, but sounds nice)
 - Legacy: "Accidentally saved humanity while getting rich"
 
+![A financial comparison of a $20 million investment versus a $54 million annual return at a 272% rate, including qualitative benefits like moral status and legacy.](/assets/images/index-manual/index-manual-section-your-offer-bw-academic.jpg)
+
 They might switch sides faster than Italy in a world war.
 
 ### Step 4: Purchase Democracy
@@ -544,6 +572,8 @@ But Super PACs alone aren't enough. You need a system that makes supporting the 
 *Everyone Gets Rich and Nobody Dies*
 
 The treaty passes because money often defeats morality, as is tradition.
+
+![An infographic illustrating the distribution of $27.2 billion in annual value and specific benefits across four key stakeholder groups: investors, lobbyists, politicians, and the general public.](/assets/images/index-manual/index-manual-section-step-5-enjoy-bw-academic.jpg)
 
 The {{< var treaty_annual_funding >}}/year money volcano erupts, showering everyone with papers that represent value:
 
@@ -576,11 +606,13 @@ The entire system runs on greed, like capitalism, except instead of destroying t
 
 When you stop paying people to create paperwork about death and start paying them to prevent death, the universe rewards you with impossible returns:
 
-$$
-\text{ROI} = \frac{\text{\$463 in not-dying benefits}}{\text{\$1 in trying}} = 463:1
-$$
+{{< var dfda_roi_rd_only_latex >}}
+
+That's {{< var dfda_roi_rd_only >}} return. From cost savings alone. The conservative number. The full benefit? {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}. Your calculator will display an error. This is correct.
 
 It's like a money printer, except instead of causing inflation it causes people to continue existing.
+
+![A bar chart comparing the return on investment for prevention against other high-yield investment benchmarks.](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
 This beats:
 
@@ -596,11 +628,17 @@ This beats:
 You stop paying smart humans to write grant applications.
 You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
+![A comparison of return-on-investment (ROI) ratios between historical health milestones like smallpox eradication and childhood vaccines against the proposed R&D reform, alongside a visualization of the 44.1x reduction in clinical trial costs.](/assets/images/index-manual/index-manual-section-the-money-fountain-bw-academic.jpg)
+
 - **{{< var dfda_benefit_rd_only_annual >}} in annual R&D cost savings**: {{< var dfda_trial_cost_reduction_factor >}} reduction in clinical trial costs (you were spending {{< var dfda_trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var dfda_trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
 - **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/invisible-graveyard.qmd)
   - **{{< var dfda_efficacy_lag_elimination_dalys >}} averted** from the one-time timeline shift
   - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/invisible-graveyard.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness
   - For context: {{< var global_disease_deaths_daily >}} people die daily from disease and aging. Slower testing and rollout means some fraction of those deaths are avoidable by earlier access to effective treatments ([see regulatory mortality analysis](knowledge/appendix/invisible-graveyard.qmd))
+
+::: {.callout-warning}
+**The Math of Overcaution**: For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
+:::
 
 {{< include knowledge/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
@@ -613,6 +651,8 @@ This beats [smallpox eradication (280:1) and childhood vaccinations (13:1)](know
 {{< include knowledge/figures/self-funding-roi-comparison-column-chart.qmd >}}
 
 When you steal money from the explosion budget instead of other good stuff people want, something beautiful happens: the return on investment becomes ∞.
+
+![A column chart comparing standard high-return investments against a 'self-funding' model where the cost basis reaches zero, resulting in an infinite ROI.](/assets/images/index-manual/index-manual-section-where-math-breaks-bw-academic.jpg)
 
 Not "very big." Not "wow that's a lot." Actually infinite. Like dividing by zero infinite. The kind that makes Excel cry and calculators display "ERROR" and economists question their life choices.
 
@@ -658,6 +698,8 @@ Unlike charity, which requires infinite begging to finite donors, this creates {
 
 The best idea would be converting 100% of military spending to pragmatic clinical trials, achieving immortality by Thursday, and turning Earth into a paradise where disease is just a weird thing they had in museums.
 
+![A comparison of the cost per life saved between traditional charities ($3,500) and the proposed profit-generating intervention system.](/assets/images/index-manual/index-manual-section-2nd-best-idea-in-the-world-bw-academic.jpg)
+
 Unfortunately, that requires humans to stop being humans. So you settle for the 2nd best idea: tricking humans into accidentally saving themselves while trying to get rich.
 
 {{< include knowledge/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
@@ -682,6 +724,8 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 ### Door #1: The Current Plan
 
+![A comparative visualization showing the scale of 150,000 daily preventable deaths compared to other historical tragedies and the $2.72 trillion annual global economic loss.](/assets/images/index-manual/index-manual-section-door-1-the-current-plan-bw-academic.jpg)
+
 *Keep Doing What You're Doing*
 
 - {{< var global_disease_deaths_daily >}} people continue dying every single day from diseases humans could fix (that's fifty 9/11s per day, but nobody's counting because math is hard)
@@ -695,7 +739,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Novel Concept for Humanity*
 
-- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved from dFDA timeline shift ({{< var efficacy_lag_years >}}-year acceleration)
+- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because cures arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years sooner (that's more people than currently exist, which sounds fake but is just math)
 - {{< var combined_peace_health_dividends_annual_for_roi_calc >}} appears annually like magic, except it's just arithmetic
 - Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)
@@ -743,6 +787,8 @@ This is spent on:
 - Arguing about who made them stop (lawyers)
 
 Your revolutionary proposal: Steal **1%** of the murder money for the not-murder money.
+
+![A visualization of the $118.8 trillion global budget, highlighting the massive 99% retained for destructive capacity compared to the proposed 1% reallocation.](/assets/images/index-manual/index-manual-section-the-final-math-bw-academic.jpg)
 
 Countries still keep 99% of their apocalypse capacity. They can still end all life 19 times instead of 20. If you can't successfully end the world with 19 attempts, the 20th probably wasn't going to help.
 

@@ -61,6 +61,7 @@
     "images:sections:all:force": "tsx scripts/images/generate-section-images.ts --all --force",
     "images:sections:retro-futuristic": "tsx scripts/images/generate-section-images.ts --retro-futuristic",
     "images:sections:force": "tsx scripts/images/generate-section-images.ts --force",
+    "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "preview:manual": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --preview",
     "preview:wishocracy": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --preview",
     "preview:iab": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py iab --preview",

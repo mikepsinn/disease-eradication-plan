@@ -786,6 +786,116 @@ The response to "Who chose these metrics?" is: "The Founders did. We're just mea
 
 Citizens may still amend the metric through constitutional process, but the default isn't arbitrary. It's derived from the most widely accepted statement of government purpose in American political philosophy.
 
+### Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
+
+For practical implementation, the Optimocracy framework provides a simplified two-metric system that captures core welfare dimensions without requiring complex conversion factors or contested weighting decisions:
+
+**Metric 1: Real After-Tax Median Income Growth**
+
+- **Definition**: Year-over-year percentage change in inflation-adjusted, post-tax median household income
+- **Units**: Percentage points per year (pp/year)
+- **Sources**: Census Bureau, BLS, national statistical offices
+- **Why median**: Captures typical citizen welfare without billionaire skew
+- **Why after-tax**: Reflects actual purchasing power after government transfers
+- **Why growth rate**: Enables cross-jurisdiction comparison regardless of baseline
+
+**Metric 2: Median Healthy Life Years**
+
+- **Definition**: Expected years of life in good health at the population median
+- **Units**: Years
+- **Sources**: WHO Global Health Observatory, national health surveys (BRFSS in US)
+- **Relationship to QALYs**: Healthy life years ≈ life expectancy × average health utility
+
+**The Welfare Function**
+
+$$
+W_j = \alpha \cdot \text{IncomeGrowth}_j + (1-\alpha) \cdot \text{HealthyYears}_j
+$$
+
+Default weighting: $\alpha = 0.5$ (equal weight to economic and health welfare). Alternative weightings can be selected through democratic process.
+
+**Why These Two Metrics Work**
+
+Most policy effects eventually show up in one or both:
+
+| Policy Domain | How It Flows Through Real After-Tax Median Income |
+|---------------|---------------------------------------------------|
+| Employment | More jobs → higher wages → higher median income |
+| Tax policy | Directly changes after-tax income |
+| Transfer programs | Social Security, EITC → directly change after-tax income |
+| Cost of living | Inflation adjustment captures housing, food, healthcare costs |
+| Market power | Monopoly pricing → lower real income |
+| Education quality | Better skills → better wages → higher income |
+| Crime/instability | Lower productivity → lower wages |
+| Trade policy | Consumer prices, job markets → flow through income |
+
+If GDP rises but median after-tax income doesn't, the policy correctly registers as low-welfare. Gaming this metric is hard because it requires actually improving typical household purchasing power.
+
+| Policy Domain | How It Flows Through Median Healthy Life Years |
+|---------------|------------------------------------------------|
+| Healthcare access | More treatment → longer healthier life |
+| Environmental regulation | Less pollution → fewer respiratory/cancer deaths |
+| Occupational safety | Fewer workplace injuries/deaths |
+| Mental health policy | Suicide prevention, addiction treatment → life years |
+| Public safety | Lower homicide/accident rates → life years |
+| Lifestyle policy | Tobacco/alcohol taxes → behavioral health |
+| Elder care | Quality of late-life health |
+| Food safety | Fewer foodborne illness deaths |
+
+Using *median* (not mean) avoids distortion from extremes like infant mortality or billionaire longevity clinics. It captures what a typical person can expect.
+
+**Why Two Metrics Beat Long Indicator Lists**
+
+Why not track 50 outcomes instead of 2? Three reasons:
+
+1. **Gaming multiplies**: Each additional target creates a new way to cheat. Two broad, hard-to-fake outcomes are easier to audit than 50 narrow ones.
+
+2. **Errors compound**: Composite indices (like HDI's 11 indicators) aggregate noise. Disagreements over weights become proxy wars for policy preferences.
+
+3. **Veto points accumulate**: With 50 metrics, every policy "harms" something. Analysis paralysis replaces action.
+
+Markets figured this out: firms optimize profit, not 200 sub-metrics. Profit combines customer satisfaction, efficiency, and innovation into one number. These two welfare metrics do the same for policy.
+
+**What This Covers**
+
+Most policies affect one or both metrics:
+
+- **Economic policies** (taxes, regulations, trade) primarily affect income growth
+- **Health policies** (healthcare access, public health, safety) primarily affect healthy life years
+- **Many policies** (education, infrastructure) affect both
+
+**Hard Guardrails: What We Constrain, Not Optimize**
+
+Some values shouldn't be targets. They should be constraints. The difference matters: targets get gamed; constraints get respected.
+
+**Primary objectives** (what we optimize):
+
+- Real after-tax median income growth
+- Median healthy life years
+
+**Hard guardrails** (constraints, not targets):
+
+| Guardrail | What It Protects | How It Works |
+|-----------|------------------|--------------|
+| **Catastrophic risk ceiling** | Existential/civilizational continuity | Any policy increasing extinction probability above threshold is blocked, regardless of expected welfare gains |
+| **Irreversibility constraints** | Ecological and institutional foundations | Minimum biodiversity thresholds, aquifer levels, democratic institution integrity. Cannot trade permanent loss for temporary gain |
+| **Subgroup floor** | No sacrifice of minorities | If any identifiable group loses more than X% on either metric, policy requires supermajority or explicit consent |
+| **Liberty presumption** | Autonomy and freedom | Policies restricting individual liberty require higher evidence threshold for welfare benefit |
+
+**Why constraints, not targets?**
+
+If "catastrophic risk reduction" were an optimization target, agencies would inflate risk estimates to justify budgets. As a constraint, it's a binary check: does this policy cross the threshold? Yes or no. Nothing to game.
+
+**Who sets the thresholds?**
+
+Specific thresholds (what probability counts as "catastrophic"? what biodiversity level is "minimum"?) are constitutional-level decisions, like supermajority requirements for amendments. They should come from democratic deliberation, not expert committees.
+
+**What happens when constraints are violated?**
+
+Since Optimocracy is advisory, constraint violations flag policies for human review rather than auto-blocking. The system says: "This policy scores well on welfare but triggers the irreversibility constraint. Human judgment required." Humans keep the final say; the system makes sure nothing slips through unnoticed.
+
+This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
+
 ### Metric Selection Process
 
 The choice of metric is itself a constitutional question that could be resolved through democratic preference aggregation (see companion paper on Wishocracy). Citizens could express preferences over candidate metrics through pairwise comparison, with the winning metric encoded in the Optimocracy constitution.

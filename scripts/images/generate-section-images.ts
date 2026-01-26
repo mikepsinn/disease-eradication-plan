@@ -2,8 +2,17 @@
  * Generate images for specific sections within chapters using intelligent analysis
  *
  * Loops through sections programmatically, checking each one individually.
- * Skips sections that already have images. Asks Gemini Flash for each section whether
- * an image would be valuable - if yes, generates it; if no, moves on.
+ * Asks Gemini Flash for each section whether an image would be valuable.
+ * If yes, generates it; if no, moves on.
+ *
+ * Smart skip logic (avoids unnecessary image generation):
+ *   - Sections with existing visual content:
+ *     - Markdown images: ![alt](path)
+ *     - Python/R code blocks generating charts (matplotlib, plotly, ggplot)
+ *     - Observable JS blocks, Mermaid diagrams
+ *     - HTML <img> tags, Quarto figure shortcodes
+ *   - Structural sections: Introduction, Conclusion, Summary, References, etc.
+ *   - Very short sections (< 200 chars / ~30 words)
  *
  * Defaults to processing ALL book files if no specific file is provided.
  * Uses bw-academic style (black & white scientific) for professional publications.
@@ -46,7 +55,8 @@ interface Section {
   rawContent: string;    // Raw content before variable replacement
   startLine: number;     // Line number where section starts (0-indexed)
   endLine: number;       // Line number where section ends (0-indexed, exclusive)
-  hasImage: boolean;     // Whether section already contains an image
+  hasVisualContent: boolean;  // Whether section already contains visual content
+  visualContentType: string | null;  // Type of visual content found (for logging)
 }
 
 interface ImageRecommendation {
@@ -54,6 +64,82 @@ interface ImageRecommendation {
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart' | null;
   caption: string;          // Natural caption for alt text
   reasoning: string;        // Why this image is/isn't needed
+}
+
+/**
+ * Detect if content contains visual elements (images, charts, diagrams)
+ * Returns the type of visual content found, or null if none
+ */
+function detectVisualContent(content: string): string | null {
+  // Markdown images: ![alt](path)
+  if (/!\[.*?\]\(.*?\)/.test(content)) {
+    return 'markdown-image';
+  }
+
+  // Python code blocks that likely generate charts
+  // Look for matplotlib, plotly, seaborn, altair patterns
+  if (/```\{python\}[\s\S]*?(plt\.|fig\.|px\.|sns\.|alt\.)[\s\S]*?```/i.test(content)) {
+    return 'python-chart';
+  }
+
+  // R code blocks that likely generate plots
+  if (/```\{r\}[\s\S]*?(ggplot|plot\(|geom_)[\s\S]*?```/i.test(content)) {
+    return 'r-plot';
+  }
+
+  // Observable JS blocks (often used for interactive visualizations)
+  if (/```\{ojs\}/.test(content)) {
+    return 'observable-js';
+  }
+
+  // Mermaid diagrams
+  if (/```\{?mermaid\}?/.test(content)) {
+    return 'mermaid-diagram';
+  }
+
+  // HTML img tags
+  if (/<img\s+[^>]*src=/i.test(content)) {
+    return 'html-image';
+  }
+
+  // Quarto figure shortcodes
+  if (/\{\{<\s*figure\s+/.test(content)) {
+    return 'quarto-figure';
+  }
+
+  // Quarto include of image files
+  if (/\{\{<\s*include\s+.*\.(png|jpg|jpeg|gif|svg|webp)/i.test(content)) {
+    return 'quarto-include-image';
+  }
+
+  // Quarto include of QMD files (included content likely has its own images)
+  if (/\{\{<\s*include\s+.*\.qmd/i.test(content)) {
+    return 'quarto-include-qmd';
+  }
+
+  return null;
+}
+
+/**
+ * Check if section title suggests it's structural (intro/conclusion/references)
+ * These sections typically don't benefit from generated images
+ */
+function isStructuralSection(title: string): boolean {
+  const structuralPatterns = [
+    /^introduction$/i,
+    /^conclusion$/i,
+    /^summary$/i,
+    /^references$/i,
+    /^bibliography$/i,
+    /^acknowledgements?$/i,
+    /^appendix$/i,
+    /^table of contents$/i,
+    /^overview$/i,
+    /^preface$/i,
+    /^foreword$/i,
+  ];
+
+  return structuralPatterns.some(pattern => pattern.test(title.trim()));
 }
 
 /**
@@ -70,8 +156,12 @@ function toKebabCase(text: string): string {
  * Parse a file into sections based on markdown headings
  */
 function parseIntoSections(rawContent: string, cleanedContent: string): Section[] {
-  const rawLines = rawContent.split('\n');
-  const cleanedLines = cleanedContent.split('\n');
+  // Normalize line endings (handle Windows \r\n)
+  const normalizedRaw = rawContent.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const normalizedCleaned = cleanedContent.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  const rawLines = normalizedRaw.split('\n');
+  const cleanedLines = normalizedCleaned.split('\n');
   const sections: Section[] = [];
 
   // Find all headings in raw content
@@ -124,8 +214,8 @@ function parseIntoSections(rawContent: string, cleanedContent: string): Section[
       cleanedSectionContent = rawSectionContent;
     }
 
-    // Check if section already has an image
-    const hasImage = /!\[.*?\]\(.*?\)/.test(rawSectionContent);
+    // Check if section already has visual content
+    const visualContentType = detectVisualContent(rawSectionContent);
 
     sections.push({
       heading: current.heading,
@@ -135,7 +225,8 @@ function parseIntoSections(rawContent: string, cleanedContent: string): Section[
       rawContent: rawSectionContent,
       startLine,
       endLine,
-      hasImage,
+      hasVisualContent: visualContentType !== null,
+      visualContentType,
     });
   }
 
@@ -220,10 +311,13 @@ async function generateAndInsertImage(
   const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
   const sectionSlug = toKebabCase(section.title);
 
+  // Strip markdown heading syntax (hash marks) but keep the title text
+  const contentForImage = resolvedContent.replace(/^#{1,6}\s+/, '');
+
   // Simple prompt: just style + full section content. Let the image model figure out the visualization.
   const imagePrompt = `${style.style}
 
-${resolvedContent}`;
+${contentForImage}`;
 
   console.log(`\n  --- GENERATING IMAGE ---`);
   console.log(`  Section: ${section.title}`);
@@ -403,15 +497,22 @@ async function processFile(
   for (const section of sections) {
     if (limitReached) break;
 
-    // Skip if section already has an image (unless force mode)
-    if (section.hasImage && !force) {
-      console.log(`  [SKIP] "${section.title}" - already has image`);
+    // Skip if section already has visual content (unless force mode)
+    if (section.hasVisualContent && !force) {
+      console.log(`  [SKIP] "${section.title}" - already has ${section.visualContentType}`);
       skipped++;
       continue;
     }
 
-    // Skip very short sections (only skip if truly minimal - under 100 chars)
-    if (section.content.length < 100) {
+    // Skip structural sections (intro, conclusion, references, etc.)
+    if (isStructuralSection(section.title)) {
+      console.log(`  [SKIP] "${section.title}" - structural section`);
+      skipped++;
+      continue;
+    }
+
+    // Skip very short sections (under 200 chars / ~30 words)
+    if (section.content.length < 200) {
       console.log(`  [SKIP] "${section.title}" - too short (${section.content.length} chars)`);
       skipped++;
       continue;

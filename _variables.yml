@@ -2585,7 +2585,7 @@
   \ title=\"Total global deaths per day from all disease and aging (WHO Global Burden\
   \ of Disease 2024) | ✓ High confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
   \ (SE: 7.50k deaths/day) | Unit: deaths/day | Click to view details, calculation\
-  \ & sources\">150k deaths/day (95% CI: 137k deaths/day-162k deaths/day)</a>"
+  \ & sources\">150k deaths/day</a>"
 "global_disease_deaths_daily_cite": "@who-global-health-estimates-2024"
 "global_disease_direct_medical_cost_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_disease_direct_medical_cost_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
@@ -4011,7 +4011,7 @@
   \ on grassroots mobilization and earned media, while lobbying requires matching\
   \ or exceeding opposition spending for political viability. | ? Low confidence |\
   \ 95% CI: [$325M, $1.30B] | Dist: Lognormal | Unit: USD | Click to view details,\
-  \ calculation & sources\">$650M (95% CI: $325M-$1.30B)</a>"
+  \ calculation & sources\">$650M</a>"
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_budget_reserve\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Reserve fund\
@@ -4020,7 +4020,7 @@
   \ response, or regulatory delays. Conservative lower bound of $20M (2%) reflects\
   \ transparent budget allocation and predictable referendum/lobbying costs. | ~ Medium\
   \ confidence | 95% CI: [$20M, $150M] | Dist: Lognormal | Unit: USD | Click to view\
-  \ details, calculation & sources\">$100M (95% CI: $20M-$150M)</a>"
+  \ details, calculation & sources\">$100M</a>"
 "treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_budget_super_pacs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Campaign budget\
@@ -4037,7 +4037,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total treaty\
   \ campaign cost (100% VICTORY Incentive Alignment Bonds) | Calculated from 3 inputs\
   \ | ✓ High confidence | Formula: REFERENDUM + LOBBYING + RESERVE | Unit: USD | Click\
-  \ to view details, calculation & sources\">$1B (95% CI: $632M-$1.51B)</a>"
+  \ to view details, calculation & sources\">$1B</a>"
 "treaty_campaign_total_cost_latex": "$$\n\\begin{gathered}\nCost_{campaign} \\\\\n\
   = Budget_{viral,base} + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\\
   $250M + \\$650M + \\$100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
@@ -4048,14 +4048,14 @@
   \ tiered referral payments (varies by virality and marginal cost curve per diffusion\
   \ theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted)\
   \ and biometric verification pricing ($0.15-0.25 at 300M+ scale). | Unit: USD |\
-  \ Core definition\">$250M (95% CI: $150M-$410M)</span>"
+  \ Core definition\">$250M</span>"
 "treaty_campaign_voting_bloc_target": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_voting_bloc_target\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target voting\
   \ bloc size for campaign (3.5% of global population - critical mass for social change)\
   \ | Calculated from 2 inputs | ✓ High confidence | Formula: GLOBAL_POPULATION ×\
   \ 3.5% | Unit: of people | Click to view details, calculation & sources\">280M of\
-  \ people (95% CI: 213M of people-359M of people)</a>"
+  \ people</a>"
 "treaty_campaign_voting_bloc_target_latex": "$$\n\\begin{gathered}\nN_{voters,target}\
   \ \\\\\n= Pop_{global} \\times Threshold_{activism} \\\\\n= 8B \\times 3.5\\% \\\
   \\\n= 280M\n\\end{gathered}\n$$"

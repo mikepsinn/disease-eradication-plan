@@ -70,28 +70,18 @@ H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantit
 
 ## The Two Welfare Metrics {#sec-two-metrics}
 
-OPG measures policy impact on two fundamental dimensions that capture the vast majority of welfare effects:
+OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the Optimocracy Framework:
 
-### 1. Real After-Tax Median Income Growth
+1. **Real after-tax median income growth** (pp/year) - economic welfare
+2. **Median healthy life years** (years) - health welfare
 
-- **Definition**: Year-over-year percentage change in inflation-adjusted, post-tax median household income
-- **Sources**: Census Bureau/BLS (US), national statistical offices (other countries)
-- **Why median**: Captures typical citizen experience, not skewed by billionaires
-- **Why after-tax**: Reflects actual purchasing power after policy interventions
-- **Units**: Percentage points (pp) of annual growth rate
-
-### 2. Median Healthy Life Years
-
-- **Definition**: Expected years of life in good health at the population median
-- **Sources**: WHO Global Health Observatory, national health surveys (BRFSS in US)
-- **Why healthy years**: Quality-adjusted lifespan matters more than raw longevity
-- **Units**: Years of healthy life expectancy
+See the Optimocracy paper for full justification of these metric choices, data sources, and the welfare function formula.
 
 ### Why Only Two Metrics?
 
-**Simplicity**: These two metrics are designed to capture the primary welfare dimensions affected by most policies while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
+**Simplicity**: These two metrics capture the primary welfare dimensions affected by most policies while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
 
-**Coverage gap**: Freedom and autonomy concerns (the main dimension not captured) are handled as blocking factors rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects (equity) are tracked as supplementary indicators where data permits, but are not included in the core welfare function to maintain interpretability.
+**Coverage gap**: Freedom and autonomy concerns are handled as [blocking factors](#sec-blocking-factors) rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects are tracked as supplementary indicators where data permits.
 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
