@@ -2668,7 +2668,7 @@
   \ \\\\\n= \\frac{Spending_{mil}}{Pop_{global}} \\\\\n= \\frac{\\$2.72T}{8B} \\\\\
   \n= \\$340\n\\end{gathered}\n$$"
 "global_military_spending_post_treaty_annual_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_military_spending_post_treaty_annual_2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/1-percent-treaty.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global military\
   \ spending after 1% treaty reduction | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: MILITARY_SPENDING × (1 - REDUCTION) | Unit: USD/year | Click to view\
@@ -2715,7 +2715,7 @@
   \ class=\"parameter-link\" data-source-ref=\"3-5-rule\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Critical mass threshold for social change (3.5%\
   \ rule) | ✓ High confidence | 95% CI: [2.5%, 4.5%] | Dist: Lognormal | Unit: rate\
-  \ | Click to view details, calculation & sources\">3.5% (95% CI: 2.5%-4.5%)</a>"
+  \ | Click to view details, calculation & sources\">3.5%</a>"
 "global_population_activism_threshold_pct_cite": "@3-5-rule"
 "global_symptomatic_disease_treatment_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_symptomatic_disease_treatment_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\

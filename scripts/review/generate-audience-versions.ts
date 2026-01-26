@@ -2,6 +2,7 @@ import { getBookFilesForProcessing } from './utils';
 import { updateFileWithHash } from '../lib/file-utils';
 import { generateGeminiProContent } from '../lib/llm';
 import { validateTransformation, formatValidationResults } from './validation-rules';
+import { HASH_FIELDS } from '../lib/constants';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
@@ -119,8 +120,7 @@ Return the complete .qmd file starting with --- and the YAML frontmatter.`;
   const finalBody = updateQmdLinks(body, audience);
 
   // Write to target file FIRST (so we can inspect output if validation fails)
-  const hashField = 'lastAudienceTransformHash';
-  await updateFileWithHash(targetFilePath, finalBody, finalFrontmatter, hashField);
+  await updateFileWithHash(targetFilePath, finalBody, finalFrontmatter, HASH_FIELDS.AUDIENCE_TRANSFORM);
   console.log(`    ✓ Wrote transformed file`);
 
   // VALIDATE TRANSFORMATION after writing (so we can see the output)

@@ -183,3 +183,40 @@ Links only work if target is in `_quarto-manual.yml`. External URLs use full pat
 **Do not use em-dashes (—).** Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.
 
 Render and critically review output images whenever you modify figure-generating files.
+
+## Automation Architecture
+
+See `scripts/README.md` for complete documentation.
+
+### Quick Commands
+
+| Task | Command |
+|------|---------|
+| Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
+| Find unused params | `npm run param:unused` |
+| Run review checks | `npm run review:run -- file.qmd --checks fact,link` |
+| Validate before render | `npm run validate:pre-render` |
+| Regenerate variables | `npm run generate:everything` |
+
+### Hash Tracking System
+
+Files are tracked using content hashes to avoid reprocessing unchanged files. Hash fields are defined in `scripts/lib/constants.ts`.
+
+**Python integration:** Use `scripts/lib/hash_store.py` for Python scripts to read/write the same hash store.
+
+### Review Framework
+
+Single entry point for all checks:
+```bash
+npx tsx scripts/review/run-checks.ts knowledge/file.qmd --checks fact,link,structure
+npx tsx scripts/review/run-checks.ts --all --checks fact --limit 5
+```
+
+Available checks: `fact`, `link`, `figure`, `structure`, `param`, `latex`, `format`, `nonprofit`
+
+### Hooks
+
+| Hook | Trigger | Purpose |
+|------|---------|---------|
+| `quick-validate.py` | PostToolUse | Validates QMD edits for broken variables/links |
+| `check-pending-work.py` | SessionStart | Shows pending tasks |

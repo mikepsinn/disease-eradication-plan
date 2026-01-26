@@ -25,6 +25,9 @@ export const HASH_FIELDS = {
   INSTRUCTIONAL_VOICE: 'lastInstructionalVoiceHash',
   TONE_ELEVATION: 'lastToneElevationHash',
   TONE_ELEVATION_WITH_HUMOR: 'lastToneElevationWithHumorHash',
+  TONE_DOWN: 'lastToneDownHash',
+  CUSTOM_INSTRUCTION: 'lastCustomInstructionHash',
+  AUDIENCE_TRANSFORM: 'lastAudienceTransformHash',
 
   // WISHONIA-specific hashes
   PARAMETER_CHECK: 'lastParameterCheckHash',

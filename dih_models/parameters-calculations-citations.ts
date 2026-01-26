@@ -3204,7 +3204,7 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   displayName: "Global Military Spending After 1% Treaty Reduction",
   description: "Global military spending after 1% treaty reduction",
   sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/strategy/treaty-adoption-strategy#post-treaty",
+  sourceRef: "https://impact.warondisease.org/knowledge/solution/1-percent-treaty",
   confidence: "high",
   formula: "MILITARY_SPENDING × (1 - REDUCTION)",
   latex: "\\begin{gathered}\nSpending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n= \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}",

@@ -1,6 +1,7 @@
 import { getBookFilesForProcessing } from './utils';
 import { updateFileWithHash } from '../lib/file-utils';
 import { generateGeminiProContent } from '../lib/llm';
+import { HASH_FIELDS } from '../lib/constants';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
@@ -58,8 +59,7 @@ Return the complete .qmd file with the fixes applied. Do NOT wrap in markdown co
   const { data: finalFrontmatter, content: finalBody } = matter.default(cleanedResponse);
 
   // Save the file with a hash to track changes
-  const hashField = 'lastToneDownHash';
-  await updateFileWithHash(filePath, finalBody, finalFrontmatter, hashField);
+  await updateFileWithHash(filePath, finalBody, finalFrontmatter, HASH_FIELDS.TONE_DOWN);
 
   console.log(`  ✓ Updated file`);
 }

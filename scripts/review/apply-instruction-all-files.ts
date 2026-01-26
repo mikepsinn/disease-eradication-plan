@@ -1,6 +1,7 @@
 import { getBookFilesForProcessing } from './utils';
 import { readFileWithMatter, updateFileWithHash } from '../lib/file-utils';
 import { generateGeminiProContent } from '../lib/llm';
+import { HASH_FIELDS } from '../lib/constants';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 
@@ -84,8 +85,7 @@ async function main() {
     instruction = args.join(' ');
   }
 
-  // Generate a hash field name from the instruction (sanitize for use as field name)
-  const hashField = 'lastCustomInstructionHash';
+  const hashField = HASH_FIELDS.CUSTOM_INSTRUCTION;
 
   console.log('='.repeat(80));
   console.log('APPLY INSTRUCTION TO ALL FILES');

@@ -139,3 +139,9 @@ README.html
 .metadata-temp-*
 .exiftool-args-*
 .cache/
+
+# Claude hooks cache/logs
+.claude/hooks/__pycache__/
+
+
+

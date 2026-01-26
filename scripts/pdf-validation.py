@@ -154,6 +154,253 @@ CONTENT_PATTERNS = [
     },
 ]
 
+# AI fix instructions for each error type
+ERROR_FIX_INSTRUCTIONS = {
+    "PDF_CORRUPTED": """
+**Source:** The PDF file itself is corrupted or malformed.
+**Fix:** Re-render the PDF using `python scripts/render-quarto.py <config-name>`.
+If the problem persists, check the Quarto/LaTeX logs for errors.
+""",
+    "EMPTY_PDF": """
+**Source:** The PDF has 0 pages - the render likely failed silently.
+**Fix:** Check the Quarto build logs for errors. Ensure all QMD files compile correctly.
+Run `python scripts/render-quarto.py <config-name> --verbose` to see detailed output.
+""",
+    "PYTHON_ERROR": """
+**Source:** A Python exception (NameError, TypeError, etc.) was printed in the PDF.
+**Fix:** Find the QMD file with the failing Python code block. The error message shows which
+exception occurred. Common causes:
+- Undefined variable (check _variables.yml)
+- Missing import in the Python cell
+- Incorrect function call
+Run the QMD file in isolation to debug: `quarto preview <file>.qmd`
+""",
+    "UNRENDERED_VARIABLE": """
+**Source:** A Quarto variable shortcode `{{< var name >}}` was not replaced.
+**Fix:** Check that the variable exists in `_variables.yml` with the exact name (case-sensitive).
+Run `grep "variable_name" _variables.yml` to verify. If it's a calculated variable,
+run `python scripts/generate-everything-parameters-variables-calculations-references.py`.
+""",
+    "UNRENDERED_PYTHON": """
+**Source:** An inline Python expression `{python} expr` was not evaluated.
+**Fix:** Check the QMD file for malformed inline Python. The syntax should be:
+`{python} expression` with a space after `{python}`. Also verify the Python
+environment has all required packages installed.
+""",
+    "POSIXPATH_LEAKED": """
+**Source:** A Python Path object was converted to string in output instead of its value.
+**Fix:** Find the Python cell that creates a Path object and ensure you're calling
+`str(path)` or accessing `.name` / reading the file contents instead of printing
+the Path object directly.
+""",
+    "LATEX_SOURCE": """
+**Source:** Raw LaTeX commands (\\frac, \\sum, etc.) appear in the PDF as text.
+**Fix:** The LaTeX math was not properly delimited. Ensure math expressions use:
+- Inline: `$expression$` or `\\(expression\\)`
+- Display: `$$expression$$` or `\\[expression\\]`
+Check for missing or mismatched delimiters in the QMD source.
+""",
+    "PYTHON_CODE_LEAKED": """
+**Source:** Python source code (like `print(f"..."`) appears in the PDF.
+**Fix:** A code cell is missing `#| echo: false` or the cell options weren't parsed.
+Add `#| echo: false` to cells that should not show code, or check for YAML
+formatting issues in the cell options block.
+""",
+    "UNDEFINED_VALUE": """
+**Source:** A variable resolved to `$undefined`, `NaN`, or similar placeholder.
+**Fix:** Check _variables.yml for the variable definition. If it's calculated,
+verify the formula in parameters.py doesn't produce NaN (division by zero, etc.).
+Run `python scripts/generate-everything-parameters-variables-calculations-references.py`.
+""",
+    "QMD_LINK": """
+**Source:** A link to a .qmd file appears in the PDF instead of the rendered HTML/anchor.
+**Fix:** Internal links should use `.qmd` extensions in source (Quarto converts them).
+If this error appears, the link target may not be in the book's chapter list (_quarto-*.yml)
+or the link syntax is malformed. Check the href in the source QMD.
+""",
+    "CELL_OPTIONS_LEAKED": """
+**Source:** Cell options like `echo: false` or `#| ` appear as visible text.
+**Fix:** The cell option block may have formatting issues. Ensure options use:
+```
+#| echo: false
+#| warning: false
+```
+Check for invisible characters or incorrect indentation.
+""",
+    "MATPLOTLIB_WARNING": """
+**Source:** A matplotlib font warning was printed during figure generation.
+**Fix:** Add font configuration at the start of plotting cells:
+```python
+import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'DejaVu Sans'
+```
+Or suppress warnings: `import warnings; warnings.filterwarnings('ignore')`
+""",
+    "FRONTMATTER_LEAKED": """
+**Source:** YAML frontmatter metadata (hash values, etc.) leaked into visible content.
+**Fix:** Check the QMD file's frontmatter YAML block. Ensure it's properly delimited
+with `---` at start and end. Also check for inline YAML that should be in frontmatter.
+""",
+    "BLANK_PAGE": """
+**Source:** A page has very little text content (may be intentional for chapters).
+**Fix:** If unintentional, check the source QMD for:
+- Empty sections or divs
+- Images that failed to render (leaving empty space)
+- Page break commands in unexpected locations
+If intentional (chapter starts), this warning can be ignored.
+""",
+    "MISSING_TOC": """
+**Source:** The PDF has no table of contents.
+**Fix:** Add TOC to the Quarto config in _quarto-*.yml:
+```yaml
+format:
+  pdf:
+    toc: true
+    toc-depth: 3
+```
+""",
+    "BROKEN_EXTERNAL_LINK": """
+**Source:** An external URL in the PDF returns HTTP 4xx/5xx error.
+**Fix:** The linked website may be down, moved, or the URL has a typo.
+- Check the URL manually in a browser
+- Update to the correct URL or use web.archive.org snapshot
+- Consider if the link is still necessary
+""",
+    "UNREACHABLE_LINK": """
+**Source:** An external URL could not be reached (timeout, DNS failure, etc.).
+**Fix:** This may be a temporary network issue. Retry validation later.
+If persistent, the domain may no longer exist - find an alternative source.
+""",
+    "MISSING_FIGURE_CAPTION": """
+**Source:** Text references "Figure N" but no corresponding caption was found.
+**Fix:** Check that figures have proper captions in the source:
+```markdown
+![Caption text here](image.png){#fig-label}
+```
+Or the reference may point to a non-existent figure number.
+""",
+    "MISSING_TABLE_CAPTION": """
+**Source:** Text references "Table N" but no corresponding caption was found.
+**Fix:** Ensure tables have captions. In Quarto:
+```markdown
+: Caption text here {#tbl-label}
+
+| Col1 | Col2 |
+|------|------|
+| A    | B    |
+```
+""",
+    "NO_IMAGES": """
+**Source:** A long PDF has no embedded images.
+**Fix:** This may be intentional for text-heavy papers. If images should exist:
+- Check that image files exist at the referenced paths
+- Verify image format is supported (PNG, JPG, PDF)
+- Check Quarto logs for image embedding errors
+""",
+    "TINY_IMAGE": """
+**Source:** An embedded image is unusually small (<10x10 pixels).
+**Fix:** This may be a tracking pixel or malformed image. Check the source
+QMD for the image reference and verify the original file dimensions.
+""",
+}
+
+# Default instruction for unknown error types
+DEFAULT_FIX_INSTRUCTION = """
+**Fix:** Review the error context and check the corresponding QMD source file.
+If the error persists, check Quarto documentation or run with `--verbose` flag.
+"""
+
+
+def write_ai_fix_log(
+    errors_by_type: dict,
+    pdf_path: str,
+    output_dir: Optional[str] = None
+) -> Optional[str]:
+    """
+    Write a markdown log file with AI-actionable fix instructions.
+
+    Returns the path to the log file, or None if no errors.
+    """
+    if not errors_by_type:
+        return None
+
+    # Determine output path
+    if output_dir:
+        log_dir = Path(output_dir)
+    else:
+        # Default to _build_temp in project root
+        log_dir = Path(__file__).parent.parent / "_build_temp"
+
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    # Use PDF name in log filename
+    pdf_name = Path(pdf_path).stem
+    log_path = log_dir / f"pdf-validation-errors-{pdf_name}.md"
+
+    lines = [
+        "# PDF Validation Errors - AI Fix Instructions",
+        "",
+        f"**PDF:** `{pdf_path}`",
+        f"**Generated:** {__import__('datetime').datetime.now().isoformat()}",
+        "",
+        "## Summary",
+        "",
+    ]
+
+    # Count by severity
+    total = sum(len(errs) for errs in errors_by_type.values())
+    critical = sum(
+        len([e for e in errs if e.severity == PDFValidationError.SEVERITY_CRITICAL])
+        for errs in errors_by_type.values()
+    )
+    warnings = sum(
+        len([e for e in errs if e.severity == PDFValidationError.SEVERITY_WARNING])
+        for errs in errors_by_type.values()
+    )
+
+    lines.append(f"- **Total issues:** {total}")
+    lines.append(f"- **Critical:** {critical}")
+    lines.append(f"- **Warnings:** {warnings}")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    # Group by error type with fix instructions
+    for error_type in sorted(errors_by_type.keys()):
+        errors = errors_by_type[error_type]
+        if not errors:
+            continue
+
+        severity = errors[0].severity
+        severity_emoji = "🔴" if severity == "CRITICAL" else "🟡" if severity == "WARNING" else "ℹ️"
+
+        lines.append(f"## {severity_emoji} {error_type} ({len(errors)} issue(s))")
+        lines.append("")
+
+        # Add fix instructions
+        fix_instruction = ERROR_FIX_INSTRUCTIONS.get(error_type, DEFAULT_FIX_INSTRUCTION)
+        lines.append("### How to Fix")
+        lines.append(fix_instruction.strip())
+        lines.append("")
+
+        # List specific occurrences
+        lines.append("### Occurrences")
+        lines.append("")
+        for error in errors[:20]:  # Limit to 20 per type
+            page_info = f"Page {error.page_num}" if error.page_num else "General"
+            lines.append(f"- **{page_info}:** {error.message}")
+            if error.context:
+                # Truncate long context
+                ctx = error.context[:200] + "..." if len(error.context) > 200 else error.context
+                lines.append(f"  - Context: `{ctx}`")
+        if len(errors) > 20:
+            lines.append(f"- ...and {len(errors) - 20} more occurrences")
+        lines.append("")
+
+    # Write file
+    log_path.write_text("\n".join(lines), encoding="utf-8")
+    return str(log_path)
+
 
 class PDFValidator:
     """Comprehensive PDF validator for publication readiness."""
@@ -757,6 +1004,16 @@ def main():
     # Write job summary
     if pdf_files:
         write_job_summary(errors_by_type, str(pdf_files[0]))
+
+    # Write AI fix log file
+    if all_errors and pdf_files:
+        log_path = write_ai_fix_log(errors_by_type, str(pdf_files[0]))
+        if log_path:
+            print(f"\n[AI FIX LOG] Detailed fix instructions written to:")
+            print(f"             {log_path}")
+            print("")
+            print("  To fix these issues, read this file and follow the instructions.")
+            print("  Claude/AI: Use `Read` tool on this file for actionable fix guidance.")
 
     # Determine exit code
     if has_critical:

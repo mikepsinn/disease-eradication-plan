@@ -139,7 +139,6 @@ book:
     # Strategic Implementation
     - part: "Implementation Strategy"
       chapters:
-        - knowledge/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
 

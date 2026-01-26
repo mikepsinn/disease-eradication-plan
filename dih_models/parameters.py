@@ -6262,7 +6262,7 @@ TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 
 GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (1 - TREATY_REDUCTION_PCT),
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty",
+    source_ref="/knowledge/solution/1-percent-treaty.qmd",
     source_type="calculated",  # Derived from military spending and treaty reduction percentage
     description="Global military spending after 1% treaty reduction",
     display_name="Global Military Spending After 1% Treaty Reduction",
@@ -6839,6 +6839,7 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     description="Critical mass threshold for social change (3.5% rule)",
     display_name="Critical Mass Threshold for Social Change",
     unit="rate",
+    hide_ci=True,  
     confidence_interval=(0.025, 0.045),  # Range 2.5-4.5% based on different studies
     distribution="lognormal",
     keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"],

@@ -19,8 +19,8 @@ abstract: |
 
   Bradford Hill criteria operationalized into nine quantitative scoring functions. Synthetic control
   and difference-in-differences isolate policy effects from confounders. Agnostic to which party
-  enacted each policy, only whether it worked. Projected welfare gains (under framework assumptions): 5-15% of GDP for typical
-  US states, pending validation.
+  enacted each policy, only whether it worked. Projected welfare gains under framework assumptions:
+  5-15% of GDP for typical US states (90% CI: 2-25%), pending retrospective validation.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -58,7 +58,11 @@ format:
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly interpretable.
+This specification describes the **Optimal Policy Generator (OPG)**, a proposed framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly interpretable.
+
+**Epistemic status:** OPG is an unvalidated methodological proposal. The framework represents a theoretically-motivated approach to evidence aggregation, not a validated predictive tool. Quantitative claims (e.g., "5-15% of GDP welfare gains") are projections under framework assumptions that require empirical calibration. Terminology like "evidence-supported" indicates consistency with quasi-experimental evidence, not causal proof.
+
+![A conceptual diagram of the Optimal Policy Generator (OPG) framework illustrating the flow from evidence and welfare metrics to the four primary policy outputs: Enact, Replace, Repeal, and Maintain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
 
 **Important limitation**: Until retrospective validation is performed (see @sec-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
@@ -83,6 +87,73 @@ See the Optimocracy paper for full justification of these metric choices, data s
 
 **Coverage gap**: Freedom and autonomy concerns are handled as [blocking factors](#sec-blocking-factors) rather than adding metric complexity. A policy that improves income and health but restricts freedom is flagged, not silently scored. Environmental impacts and distributional effects are tracked as supplementary indicators where data permits.
 
+### Income Metric Definition {#sec-income-definition}
+
+**Real after-tax median income growth** is defined narrowly as: wages, salaries, and self-employment income, minus taxes paid. This metric captures what appears in household budgets.
+
+**What counts as income effects:**
+
+- Wage increases from productivity gains (e.g., fewer sick days → measurably higher wages)
+- Tax changes that directly affect take-home pay
+- Employment effects that translate to wage income
+
+**What does NOT count as income effects:**
+
+- Healthcare cost savings (these are health system efficiency gains, not personal income)
+- Reduced insurance premiums (unless they translate to higher take-home pay via employer pass-through)
+- Quality-of-life improvements that don't appear in wages
+
+**Implication for policy analysis:** This creates genuine tradeoffs that the two-metric framework makes explicit. A tobacco tax, for example, may show:
+
+- **Income effect:** Negative for smokers (direct tax burden), partially offset by productivity gains for those who quit
+- **Health effect:** Positive (reduced smoking → longer healthy life)
+
+The framework does not hide this tradeoff by claiming healthcare cost savings are "income gains." If a policy improves health but costs money, both effects are reported honestly. This is a feature, not a bug: it prevents corner solutions (an infinite tobacco tax would maximize health but devastate income for smokers) and surfaces the welfare tradeoff for democratic deliberation.
+
+### Outcome Translation Methodology {#sec-outcome-translation}
+
+While OPG uses only two terminal metrics (income growth and healthy life years), evidence often measures **surrogate outcomes** (smoking rates, traffic deaths, crime rates). This section specifies how surrogate outcomes are translated to the terminal metrics.
+
+**The translation chain:**
+
+```
+Policy → Proximate Outcome → Intermediate Outcome → Terminal Metric
+```
+
+| Stage | Example (Tobacco Tax) | Example (Seat Belt Law) |
+|-------|----------------------|------------------------|
+| **Proximate** | Cigarette sales (-8%) | Seat belt usage (+15 pp) |
+| **Intermediate** | Smoking prevalence (-3 pp) | Crash fatalities (-11%) |
+| **Terminal** | Healthy life years (+0.25) | Healthy life years (+0.15) |
+
+**Conversion factors must be explicit:**
+
+Each translation step requires a documented conversion factor with source:
+
+| Conversion | Factor | Source | Uncertainty |
+|------------|--------|--------|-------------|
+| 1 pp smoking reduction → healthy life years | +0.083 years | CDC life tables, @jha2013 | ±30% |
+| 1% fatality reduction → healthy life years | +0.015 years | NHTSA data, @blincoe2015 | ±25% |
+| 1 pp employment increase → income growth | +0.12 pp/year | BLS wage data | ±40% |
+
+**Uncertainty propagation:**
+
+When multiple translation steps are chained, uncertainties compound:
+
+$$
+\sigma_{\text{terminal}} = \sqrt{\sum_i \left(\frac{\partial f}{\partial x_i}\right)^2 \sigma_i^2}
+$$
+
+For linear translations, this simplifies to:
+
+$$
+\text{CV}_{\text{terminal}} = \sqrt{\sum_i \text{CV}_i^2}
+$$
+
+Where CV is the coefficient of variation at each translation step. A three-step translation with 30% uncertainty at each step yields ~52% uncertainty in the terminal metric.
+
+**Important clarification:** The claim that "no complex conversion factors are needed" in the abstract refers to the *terminal metrics themselves* (income and health are directly interpretable, unlike utility or welfare indices). Translation from surrogate outcomes to terminal metrics *does* require conversion factors, which must be documented and include uncertainty bounds.
+
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
 **Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
@@ -100,6 +171,8 @@ See the Optimocracy paper for full justification of these metric choices, data s
 Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. Combined, this represents the largest-ever dataset of policy experiments.
 
 ### The OPG Pipeline
+
+![A five-stage data pipeline illustrating the transformation of policy data into ranked recommendations through ingestion, alignment, quasi-experimental analysis, and impact scoring.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-opg-pipeline-bw-academic.jpg)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -133,6 +206,8 @@ Each policy change creates a before/after comparison. Each jurisdiction that did
 
 OPG aggregates fragmented evidence, applies modern causal inference at scale, and produces actionable output.
 
+![A diagram illustrating how four historical barriers (fragmented data, computational limits, older methodologies, and incentive gaps) converge into the OPG three-step workflow of aggregation, causal inference, and output.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-why-this-hasn-t-been-done-before-bw-academic.jpg)
+
 ## System Overview {#opg-system-overview}
 
 ### What Policymakers See
@@ -142,6 +217,8 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 *See [Appendix A](#appendix-a-worked-example---texas-policy-recommendations) for a complete worked example showing jurisdiction-specific recommendations.*
 
 ### What Policy Analysts See
+
+![A conceptual framework illustrating the eight data components (ranging from statistical effect estimates to jurisdictional adjustments) that converge to form a comprehensive policy analysis profile.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-what-policy-analysts-see-bw-academic.jpg)
 
 - **Effect estimates** with standard errors, confidence intervals, and heterogeneity statistics
 - **Policy Impact Scores (PIS)** for each policy-outcome relationship (intermediate metric)
@@ -159,6 +236,8 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 Previous approaches to evidence-based policy produce generic rankings:
 
 > "Tobacco taxes reduce smoking by 8.2 percentage points on average across 23 states..."
+
+![A comparative visualization showing the shift from a single generic national average to a localized dashboard of specific tax rates, health outcomes, and economic impacts for a specific jurisdiction.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-why-generic-policy-scores-are-not-enough-bw-academic.jpg)
 
 This is useful background but doesn't answer the policymaker's question: **"What should MY jurisdiction do?"**
 
@@ -215,6 +294,8 @@ This specification describes a *proposed* framework. The methodology requires em
 
 **Regulatory Impact Analysis (RIA)**: Required by executive order for US federal regulations since 1981 [@hahn2000]. RIA estimates costs and benefits of proposed rules but: (1) applies only to new regulations, not the existing policy stock; (2) lacks systematic cross-jurisdiction evidence aggregation; (3) does not produce jurisdiction-specific recommendations for subnational governments.
 
+![A comparison of major policy evaluation frameworks across key functional dimensions, highlighting the systematic gaps in jurisdiction-specific recommendations and evaluation of existing policy stocks.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-existing-policy-evaluation-frameworks-bw-academic.jpg)
+
 **What Works Clearinghouse (WWC)**: The Institute of Education Sciences operates WWC to review education interventions against methodological standards [@greenwald2017]. WWC demonstrates that systematic evidence synthesis is feasible, but: (1) covers only education; (2) provides generic intervention ratings, not jurisdiction-specific recommendations; (3) does not quantify expected welfare gains.
 
 **Cochrane and Campbell Collaborations**: These systematic review organizations cover healthcare [@higgins2011] and social policy [@petticrew2001] respectively. They represent the gold standard for evidence synthesis but: (1) produce narrative reviews rather than quantitative recommendations; (2) provide no jurisdiction-specific output; (3) operate on slow update cycles (years between reviews).
@@ -264,7 +345,36 @@ $$
 
 where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are assumed to be second-order.
 
-*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail (for example, when a carbon tax interacts with renewable energy subsidies), the marginal effects may be mis-estimated. Future versions of OPG should incorporate policy interaction terms for known complementary or substitutable policy pairs, with the additive model serving as a baseline.
+![A Venn diagram illustrating the Policy Gap as the symmetric difference between a jurisdiction's current policy bundle and its welfare-optimal bundle, identifying specific areas for policy enactment and repeal.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-policy-optimization-problem-bw-academic.jpg)
+
+*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail (for example, when a carbon tax interacts with renewable energy subsidies), the marginal effects may be mis-estimated.
+
+**Policy Interaction Detection:**
+
+OPG flags potential interaction effects using the following heuristics:
+
+1. **Effect heterogeneity test:** If a policy's effect varies significantly depending on whether another policy is present, flag the pair as potentially interacting.
+
+2. **Known interaction database:** Documented policy complementarities and substitutes:
+
+| Policy A | Policy B | Interaction Type | Evidence |
+|----------|----------|-----------------|----------|
+| Seat belt law | Speed limit | Complementary | Both target crash fatalities |
+| Carbon tax | Renewable subsidy | Substitutable | Both reduce emissions; combined effect < sum |
+| Tobacco tax | Smoking ban | Complementary | Reinforce each other |
+| Income tax cut | Sales tax increase | Substitutable | Offsetting fiscal effects |
+
+3. **Sensitivity analysis recommendation:** For high-priority recommendations, report: "How would this recommendation change if policies X and Y interact?" with bounds on combined effect.
+
+**Worked example (policy interaction):**
+
+Seat belt law + Speed limit reduction:
+- Seat belt alone: +0.15 years healthy life
+- Speed limit alone: +0.06 years healthy life
+- Additive prediction: +0.21 years
+- Observed when both present: +0.18 years (interaction term: -0.03 years)
+
+The interaction term is negative because both policies target the same outcome (crash fatalities), creating partial overlap in benefits. OPG reports both the additive prediction and interaction-adjusted estimate when interaction data is available.
 
 **Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
 $$
@@ -300,6 +410,8 @@ $$
 $$
 
 meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect. This constraint is operationalized in @sec-evidence-grading.
+
+![A chart illustrating the impact of heterogeneity on evidence transferability, showing how the proportion of unexplained variance increases as I² passes the 75% threshold.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-evidence-aggregation-properties-bw-academic.jpg)
 
 *Proof*: By definition, $I^2 = \frac{\tau^2}{\tau^2 + \bar{\sigma}^2}$ where $\bar{\sigma}^2$ is typical within-study variance. When $I^2 > 0.75$, between-study variance dominates, and the pooled estimate provides limited information about any individual jurisdiction's true effect. ∎
 
@@ -407,6 +519,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 **Use case**: Single treated jurisdiction, good donor pool of similar untreated jurisdictions.
 
+![A time-series line chart illustrating the synthetic control method, showing the treated jurisdiction and synthetic control units tracking together pre-treatment and diverging after the intervention.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-synthetic-control-method-bw-academic.jpg)
+
 **Method**: Construct a "synthetic" control as a weighted average of untreated jurisdictions that matches the treated jurisdiction's pre-treatment outcome trajectory. Post-treatment divergence estimates the causal effect.
 
 **Quality metrics**:
@@ -419,6 +533,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 **Use case**: Multiple treated jurisdictions, staggered adoption timing, parallel trends assumption plausible.
 
+![A line chart illustrating the Difference-in-Differences framework, showing the parallel trajectories of treatment and control groups and the divergence used to calculate the treatment effect.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-difference-in-differences-did-bw-academic.jpg)
+
 **Method**: Compare pre-post change in treated jurisdictions to pre-post change in control jurisdictions. Difference of differences estimates treatment effect. For settings with staggered adoption, modern estimators account for heterogeneous treatment effects across cohorts [@callaway2021].
 
 **Quality metrics**:
@@ -430,6 +546,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 #### Regression Discontinuity Design (RDD)
 
 **Use case**: Sharp eligibility threshold determines treatment assignment.
+
+![A scatter plot illustrating a regression discontinuity design, showing a jump in the outcome variable at a sharp vertical threshold line with regression curves on either side.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-regression-discontinuity-design-rdd-bw-academic.jpg)
 
 **Method**: Compare outcomes just above vs. just below the threshold. If other characteristics are smooth across the threshold, the discontinuity in outcomes estimates the causal effect.
 
@@ -456,6 +574,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 The following weights reflect proposed defaults based on the methodological rigor hierarchy in applied economics. These weights have not been empirically calibrated and should be treated as starting points for implementation.
 
+![A bar chart showing the hierarchical decline in confidence weights across different research methods, from randomized experiments at 1.00 to cross-sectional studies at 0.25.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-confidence-weighting-by-method-bw-academic.jpg)
+
 | Method | Base Confidence Weight | Rationale |
 |--------|----------------------|-----------|
 | Randomized experiment | 1.00 | Gold standard; rare for policies |
@@ -471,6 +591,8 @@ The following weights reflect proposed defaults based on the methodological rigo
 
 Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
+![A conceptual diagram showing the operationalization of Bradford Hill criteria where multiple qualitative inputs are processed through mathematical saturation functions to produce normalized scores between 0 and 1.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg)
+
 #### Strength of Association
 
 Larger effect estimates provide stronger evidence. We use an exponential saturation function:
@@ -479,7 +601,11 @@ $$
 S_{\text{strength}} = 1 - e^{-|\hat{\beta}_{\text{std}}| / \beta_{\text{sig}}}
 $$
 
-Where $|\hat{\beta}_{\text{std}}|$ is the absolute standardized effect size and $\beta_{\text{sig}} = 0.3$ is a significance threshold (typical medium effect). A standardized effect of 0.3 yields $S_{\text{strength}} \approx 0.63$; effects of 0.6+ yield scores $>0.86$.
+Where $|\hat{\beta}_{\text{std}}|$ is the absolute standardized effect size and $\beta_{\text{sig}} = 0.3$ is the saturation parameter.
+
+**Parameter justification:** The threshold $\beta_{\text{sig}} = 0.3$ corresponds to Cohen's convention for a "medium" effect size in social science [@cohen1988]. This is a starting point; sensitivity analysis shows PIS changes by ±15% when $\beta_{\text{sig}}$ varies from 0.2 to 0.4. A standardized effect of 0.3 yields $S_{\text{strength}} \approx 0.63$; effects of 0.6+ yield scores $>0.86$.
+
+![A line graph illustrating the exponential saturation curve for strength scores, showing how scores approach 1.0 as standardized effect sizes increase beyond the 0.3 threshold.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-strength-of-association-bw-academic.jpg)
 
 #### Consistency Across Jurisdictions
 
@@ -489,7 +615,11 @@ $$
 S_{\text{consistency}} = 1 - e^{-N_j / N_{\text{sig}}}
 $$
 
-Where $N_j$ is the number of jurisdictions with concordant effect direction and $N_{\text{sig}} = 10$. Five concordant jurisdictions yield $S_{\text{consistency}} \approx 0.39$; ten yield $\approx 0.63$.
+Where $N_j$ is the number of jurisdictions with concordant effect direction and $N_{\text{sig}} = 10$ is the saturation parameter.
+
+**Parameter justification:** The threshold $N_{\text{sig}} = 10$ reflects that replication across 10+ independent jurisdictions provides strong evidence against idiosyncratic local effects. This aligns with meta-analytic conventions where 10+ studies enable reliable heterogeneity estimation [@borenstein2009]. Sensitivity analysis shows PIS varies by ±12% when $N_{\text{sig}}$ ranges from 7 to 15. Five concordant jurisdictions yield $S_{\text{consistency}} \approx 0.39$; ten yield $\approx 0.63$.
+
+![A line chart illustrating the relationship between the number of independent jurisdictions and the consistency score, highlighting the specific data points for five and ten jurisdictions.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-consistency-across-jurisdictions-bw-academic.jpg)
 
 #### Temporality (Required)
 
@@ -509,9 +639,13 @@ $$
 S_{\text{gradient}} = \frac{r_{\text{dose}}^2}{r_{\text{dose}}^2 + r_{\text{sig}}^2}
 $$
 
-Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome magnitude, and $r_{\text{sig}} = 0.5$. A dose-response correlation of 0.5 yields $S_{\text{gradient}} = 0.5$; correlation of 0.7 yields $\approx 0.66$.
+Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome magnitude, and $r_{\text{sig}} = 0.5$ is the saturation parameter.
 
-For binary policies, $S_{\text{gradient}} = 0.5$ (neutral; neither supporting nor refuting).
+**Parameter justification:** The threshold $r_{\text{sig}} = 0.5$ reflects that a correlation of 0.5 between policy intensity and outcome represents moderate dose-response evidence. This is analogous to toxicological dose-response standards where monotonic relationships strengthen causal inference [@rothman2008]. Sensitivity analysis shows PIS varies by ±8% when $r_{\text{sig}}$ ranges from 0.3 to 0.7. A dose-response correlation of 0.5 yields $S_{\text{gradient}} = 0.5$; correlation of 0.7 yields $\approx 0.66$.
+
+![A line graph depicting the relationship between policy intensity correlation and the dose-response score, illustrating how the score increases non-linearly from the neutral 0.5 baseline.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-dose-response-gradient-bw-academic.jpg)
+
+**Binary policies:** For binary (yes/no) policies, dose-response cannot be assessed. Rather than defaulting to a neutral score of 0.5, binary policies are marked as "N/A" for gradient and this criterion is **excluded from the CCS calculation** (weights are renormalized across remaining criteria). This prevents binary policies from being systematically penalized relative to continuous policies.
 
 #### Experiment Quality
 
@@ -531,7 +665,21 @@ $$
 S_{\text{plausibility}} = \frac{\sum_i w_i \cdot m_i}{\sum_i w_i}
 $$
 
-Where $m_i \in \{0, 1\}$ indicates whether mechanism component $i$ is satisfied (e.g., behavioral response documented, economic theory predicts direction, no implausible side effects) and $w_i$ are component weights.
+Where $m_i \in \{0, 1\}$ indicates whether mechanism component $i$ is satisfied and $w_i$ are component weights.
+
+**Mechanism component checklist:**
+
+| Component | Weight | Assessment Criterion |
+|-----------|--------|---------------------|
+| Economic theory predicts direction | 0.30 | Peer-reviewed theory paper supports predicted sign |
+| Behavioral response documented | 0.25 | Empirical evidence of behavioral change in response to similar policies |
+| No implausible required assumptions | 0.20 | Mechanism doesn't require assumptions contradicted by evidence |
+| Timing consistent with mechanism | 0.15 | Effect onset matches expected mechanism timeline |
+| Magnitude plausible | 0.10 | Effect size within range predicted by mechanism |
+
+**Scoring procedure:** Each component is scored binary (0 or 1) by literature review. The weighted sum yields $S_{\text{plausibility}} \in [0, 1]$. When expert-validated mechanism assessments are unavailable, this score defaults to 0.5 with a note that mechanism plausibility is unassessed.
+
+![A flowchart showing the process of calculating a plausibility score by validating policy mechanisms through behavioral documentation, economic theory, and side-effect analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-plausibility-mechanistic-bw-academic.jpg)
 
 #### Coherence with Literature
 
@@ -543,6 +691,8 @@ $$
 
 Where $N_{\text{studies}}$ is the count of supporting studies in the literature and $N_{\text{sig}} = 5$. Three supporting studies yield $S_{\text{coherence}} \approx 0.45$; ten yield $\approx 0.86$.
 
+![A line graph illustrating the relationship between the number of supporting studies and the coherence score, showing how the score asymptotically approaches 1.0 with diminishing returns.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-coherence-with-literature-bw-academic.jpg)
+
 #### Analogy to Similar Policies
 
 Evidence transfer from similar policies via embedding similarity:
@@ -552,6 +702,8 @@ S_{\text{analogy}} = \max_{p' \neq p} \left[ \text{sim}(\mathbf{e}_p, \mathbf{e}
 $$
 
 Where $\mathbf{e}_p$ is the policy embedding vector, $\text{sim}(\cdot)$ is cosine similarity, and $\text{PIS}_{p'}$ is the Policy Impact Score of similar policy $p'$. Strong evidence for a similar policy provides partial evidence for the focal policy.
+
+![Conceptual diagram illustrating a focal policy in a vector space being compared to neighboring policies to derive an analogy score based on their similarity and existing impact scores.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-analogy-to-similar-policies-bw-academic.jpg)
 
 #### Specificity
 
@@ -572,6 +724,8 @@ $$
 $$
 
 Note: $S_{\text{temporality}}$ acts as a gate. If temporality fails, the entire CCS is zero.
+
+![A horizontal bar chart illustrating the nine criteria weights for the Causal Confidence Score, ranking them from highest impact to lowest impact.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-causal-confidence-score-ccs-calculation-bw-academic.jpg)
 
 **Proposed default criterion weights:**
 
@@ -636,22 +790,24 @@ Recommendations are only generated when policy status is known with reasonable c
 For each jurisdiction $j$, the policy gap for policy type $p$ is:
 
 $$
-\text{Gap}_{jp} = \text{Evidence-Optimal}_{p} - \text{Current}_{jp}
+\text{Gap}_{jp} = \text{Evidence-Supported}_{p} - \text{Current}_{jp}
 $$
 
 Where:
 
-- **Evidence-Optimal**: What the evidence suggests the jurisdiction should have
+- **Evidence-Supported**: What the evidence suggests the jurisdiction should have
 - **Current**: What the jurisdiction actually has
 
 ### Gap Types
+
+![A comparison chart illustrating policy gaps by plotting current levels against evidence-based optimal thresholds for tobacco taxes and speed limits.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-gap-types-bw-academic.jpg)
 
 | Gap Type | Definition | Example |
 |----------|------------|---------|
 | **Missing policy** | Jurisdiction lacks a policy with strong positive evidence | Texas lacks primary seat belt enforcement |
 | **Harmful policy** | Jurisdiction has a policy with strong negative evidence | Jurisdiction has policy X shown to increase mortality |
-| **Suboptimal strength** | Continuous policy set below evidence-optimal level | Tobacco tax at $1.41 vs. optimal ~$2.50 |
-| **Excessive strength** | Continuous policy set above evidence-optimal level | Speed limit at 85 mph vs. optimal ~70 mph |
+| **Suboptimal strength** | Continuous policy set below evidence-supported level | Tobacco tax at $1.41 vs. optimal ~$2.50 |
+| **Excessive strength** | Continuous policy set above evidence-supported level | Speed limit at 85 mph vs. optimal ~70 mph |
 
 ### Priority Scoring
 
@@ -663,7 +819,7 @@ $$
 
 Where:
 
-- $|\text{Gap}_{jp}|$ = Absolute difference between evidence-optimal and current policy level (normalized to $[0, 1]$)
+- $|\text{Gap}_{jp}|$ = Absolute difference between evidence-supported and current policy level (normalized to $[0, 1]$)
 - $\text{PIS}_p$ = Policy Impact Score (see @sec-pis), capturing effect magnitude and causal confidence
 - $M_{jp}$ = Monetized annual welfare impact, adjusted for jurisdiction $j$'s population and context
 
@@ -681,7 +837,7 @@ High-priority recommendations have:
 2. Strong evidence (Grade A or B; high PIS)
 3. Large expected welfare impact (high M)
 
-### Context Adjustment
+### Context Adjustment {#sec-context-adjustment}
 
 Effect estimates are adjusted for jurisdiction characteristics:
 
@@ -692,8 +848,45 @@ Effect estimates are adjusted for jurisdiction characteristics:
 | **Institutional capacity** | Enforcement capability | Weak institutions → smaller effects |
 | **Cultural factors** | Compliance norms | Varies by society |
 
+**Context Adjustment Algorithm:**
+
+The context adjustment multiplier is computed as:
+
 $$
-\text{Expected Effect}_{jp} = \hat{\beta}_{p} \times \text{Context Adjustment}_{j}
+\text{Context Adjustment}_j = \prod_{k \in \{D, P, I, C\}} \left(1 + \delta_k \cdot d_{jk}\right)
+$$
+
+Where:
+- $d_{jk}$ = Standardized distance between jurisdiction $j$ and the evidence-weighted mean on factor $k$
+- $\delta_k$ = Sensitivity coefficient for factor $k$ (estimated from heterogeneity analysis)
+
+| Factor | $\delta_k$ Default | Quantification Method |
+|--------|-------------------|----------------------|
+| Demographics ($D$) | 0.15 | Mahalanobis distance on age/income/education |
+| Existing policies ($P$) | 0.10 | Policy bundle cosine distance |
+| Institutional ($I$) | 0.20 | World Bank Governance Indicators |
+| Cultural ($C$) | 0.10 | Hofstede dimensions + compliance indices |
+
+**Uncertainty widening:**
+
+When jurisdiction $j$ differs substantially from the evidence base (context adjustment $< 0.7$ or $> 1.3$), confidence intervals are widened:
+
+$$
+\text{CI}_{\text{adjusted}} = \text{CI}_{\text{pooled}} \times \left(1 + 0.5 \times |1 - \text{Context Adjustment}_j|\right)
+$$
+
+This reflects increased uncertainty when extrapolating beyond the observed evidence distribution.
+
+**Worked example:**
+
+Texas tobacco tax recommendation:
+- Evidence base: Primarily northeast/west coast states (higher income, lower smoking rates)
+- Texas demographics: Lower median income, higher baseline smoking
+- Context adjustment: 0.85 (effect likely 15% smaller in Texas context)
+- CI widening: 1.075× (modest extrapolation)
+
+$$
+\text{Expected Effect}_{\text{Texas}} = 0.30 \times 0.85 = 0.25 \text{ healthy years}
 $$
 
 ## Recommendation Generation {#sec-recommendation-generation}
@@ -705,7 +898,7 @@ $$
 | **Enact** | "Add this?" | New policy the jurisdiction doesn't have | "ENACT primary seat belt law" |
 | **Replace** | "Change this?" | Modify existing policy level or approach | "REPLACE tobacco tax: $1.41 → $2.50" |
 | **Repeal** | "Remove this?" | Remove policy with negative evidence | "REPEAL [harmful policy]" |
-| **Maintain** | "Keep this?" | Current policy is evidence-optimal | "MAINTAIN DUI threshold at 0.08 BAC" |
+| **Maintain** | "Keep this?" | Current policy is evidence-supported | "MAINTAIN DUI threshold at 0.08 BAC" |
 
 For continuous policies (taxes, spending levels), **Replace** specifies the change from current to optimal level. **Enact** is reserved for truly new policies that don't exist in the jurisdiction.
 
@@ -713,15 +906,32 @@ For continuous policies (taxes, spending levels), **Replace** specifies the chan
 
 Recommendations flag constraints that may impede adoption:
 
-| Blocking Factor | Description | Example |
-|-----------------|-------------|---------|
-| `constitutional` | Requires constitutional amendment | 2nd Amendment limits on gun regulations |
-| `federal_preemption` | Federal law prevents state/local action | Federal minimum wage floor |
-| `treaty_obligation` | International agreement constrains policy | WTO rules on tariffs |
-| `political_feasibility` | Strong organized opposition | Industry lobbying |
-| `implementation_cost` | High fixed costs to implement | New regulatory agency needed |
+| Blocking Factor | Severity | Description | Example |
+|-----------------|----------|-------------|---------|
+| `constitutional` | **Hard** | Requires constitutional amendment | 2nd Amendment limits on gun regulations |
+| `federal_preemption` | **Hard** | Federal law prevents state/local action | Federal minimum wage floor |
+| `treaty_obligation` | **Hard** | International agreement constrains policy | WTO rules on tariffs |
+| `autonomy_concern` | **Soft** | Restricts individual freedom/choice | Mandatory helmet laws |
+| `political_feasibility` | **Soft** | Strong organized opposition | Industry lobbying |
+| `implementation_cost` | **Soft** | High fixed costs to implement | New regulatory agency needed |
 
-**Important**: Blocking factors are flagged but do not filter recommendations. The full evidence-optimal set is always shown; users can filter by feasibility if desired.
+**Design rationale: Why blocking factors are metadata only**
+
+OPG produces **evidence-based rankings**, not political forecasts. Blocking factors are flagged but do not affect algorithmic priority scores, for three reasons:
+
+1. **Political feasibility shifts over time.** A policy "impossible" in 2020 may be mainstream by 2025. Filtering by current political feasibility would lock in the status quo and fail to surface the evidence-supported set.
+
+2. **Politicians know their context.** An elected official in Texas understands local political dynamics better than any algorithm. OPG provides the evidence; filtering is left to policymaker discretion.
+
+3. **Autonomy tradeoffs require human judgment.** A universal helmet law may save lives but restrict freedom. This is a value judgment, not an evidence question. OPG surfaces the health/income effects; the autonomy tradeoff is for democratic deliberation.
+
+**Hard vs. Soft blocking factors:**
+
+- **Hard blockers** (constitutional, preemption, treaty): These represent legal impossibility at the current jurisdictional level. Recommendations with hard blockers are marked distinctly but still shown, as they may inform advocacy for constitutional change or higher-level policy.
+
+- **Soft blockers** (political, cost, autonomy): These represent practical difficulty, not impossibility. Many transformative policies faced "impossible" political opposition before adoption.
+
+**Important**: The full evidence-supported recommendation set is always shown. Users can filter by blocking factor severity if desired, but the default view shows all recommendations ranked by expected welfare impact.
 
 ### Similar Jurisdictions {#sec-similar-jurisdictions}
 
@@ -741,6 +951,8 @@ $$
 $$
 
 Where default weights are $w_D = 0.4$, $w_P = 0.3$, $w_I = 0.3$.
+
+![A hierarchical diagram showing the calculation of jurisdiction similarity as a weighted aggregation of demographic, policy, and institutional factors, including their respective internal variable weights.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-computing-jurisdiction-similarity-bw-academic.jpg)
 
 **Demographic Similarity** ($\text{sim}_D$):
 
@@ -945,8 +1157,8 @@ Evidence grades are assigned using explicit thresholds on PIS, heterogeneity ($I
 $$
 \text{Grade} = \begin{cases}
 A & \text{if } \text{PIS} \geq 0.80 \text{ AND } I^2 < 0.50 \text{ AND } N_j \geq 5 \\
-B & \text{if } \text{PIS} \geq 0.60 \text{ AND } I^2 < 0.75 \text{ AND } N_j \geq 3 \\
-C & \text{if } \text{PIS} \geq 0.40 \text{ AND } N_j \geq 2 \\
+B & \text{if } \text{PIS} \geq 0.60 \text{ AND } I^2 < 0.50 \text{ AND } N_j \geq 3 \\
+C & \text{if } \text{PIS} \geq 0.40 \text{ AND } I^2 < 0.75 \text{ AND } N_j \geq 2 \\
 D & \text{if } \text{PIS} \geq 0.20 \\
 F & \text{otherwise}
 \end{cases}
@@ -957,10 +1169,22 @@ $$
 | Grade | PIS Threshold | Heterogeneity | Jurisdictions | Interpretation |
 |-------|--------------|---------------|---------------|----------------|
 | **A** | $\geq 0.80$ | $I^2 < 50\%$ | $\geq 5$ | Strong evidence; ready for implementation |
-| **B** | $\geq 0.60$ | $I^2 < 75\%$ | $\geq 3$ | Good evidence; consider piloting |
-| **C** | $\geq 0.40$ | Any | $\geq 2$ | Suggestive evidence; needs validation |
+| **B** | $\geq 0.60$ | $I^2 < 50\%$ | $\geq 3$ | Good evidence; consider piloting |
+| **C** | $\geq 0.40$ | $I^2 < 75\%$ | $\geq 2$ | Suggestive evidence; needs validation |
 | **D** | $\geq 0.20$ | Any | Any | Weak evidence; exploratory only |
 | **F** | $< 0.20$ | Any | Any | Insufficient evidence |
+
+**Threshold calibration methodology:**
+
+These thresholds are proposed defaults requiring retrospective calibration. The calibration procedure:
+
+1. **Historical validation:** Apply OPG grading to policies adopted 10+ years ago with known outcomes
+2. **Target validation rates:** Grade A recommendations should validate at 70%+ rate; Grade B at 50%+
+3. **Threshold adjustment:** If observed validation rates differ from targets, adjust PIS and $I^2$ thresholds
+
+**Heterogeneity threshold rationale:**
+
+The $I^2 < 50\%$ threshold for Grades A and B follows Cochrane Collaboration guidance that heterogeneity above 50% indicates "substantial" variability across studies [@higgins2011]. Grade C allows heterogeneity up to 75% (the "high" threshold) with explicit acknowledgment that effects are context-dependent. Above 75%, pooled estimates provide limited guidance for any specific jurisdiction.
 
 **Additional grade modifiers:**
 
@@ -1135,7 +1359,6 @@ For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictio
 
 ### Subnational Data
 
-
 | Country | Source | Coverage |
 |---------|--------|----------|
 | United States | Census Bureau, BLS, state agencies | 50 states + territories |
@@ -1244,30 +1467,58 @@ OPG provides *evidence-weighted recommendations*, not causal proof:
 
 The ultimate test of OPG validity: **Do jurisdictions that adopt high-priority OPG recommendations see better outcomes than those that don't?**
 
+### Addressing Adoption Bias
+
+A naive retrospective comparison suffers from **adoption bias**: jurisdictions that voluntarily adopt policies may differ systematically from those that don't. States adopting tobacco tax increases may already have anti-smoking momentum, overstating the causal effect of the tax itself.
+
+**Instrumental variable approach:**
+
+To address adoption bias, validation should exploit **exogenous shocks to adoption**:
+
+| Exogenous Shock | Example | Rationale |
+|-----------------|---------|-----------|
+| Court rulings | State court strikes down previous policy | Adoption forced by legal ruling, not political choice |
+| Federal mandates | ACA Medicaid expansion | Compliance driven by federal law, not state preference |
+| Close electoral outcomes | Ballot measure passes 51-49% | Near-randomization around threshold |
+| Leadership turnover | New governor from different party | Adoption reflects leadership change, not underlying trends |
+
+These quasi-random adoption events provide cleaner tests of OPG predictions than voluntary adoption comparisons.
+
 ### Proposed Validation Study
 
-**Design**: Retrospective comparison of OPG predictions against subsequent policy outcomes.
+**Design**: Retrospective prediction using instrumental variable identification.
 
 **Method**:
 
 1. Compute OPG recommendations for all jurisdictions using only data available before a cutoff date (e.g., 2015)
-2. Identify jurisdictions that adopted high-priority recommendations vs. those that didn't after the cutoff
-3. Compare actual outcome changes 2015-2025 in adopting vs. non-adopting jurisdictions
-4. Assess whether high-priority recommendations produced larger improvements
+2. Identify **exogenously-induced** policy adoptions (court rulings, mandates, close votes) after the cutoff
+3. Compare actual outcome changes in adopting jurisdictions to OPG predictions
+4. Assess prediction accuracy and prioritization value
 
-**Success Metrics**:
+**Success Metrics** (strengthened from initial draft):
 
 | Metric | Definition | Target |
 |--------|------------|--------|
-| **Discrimination (AUC)** | Does adopting recommendations predict "welfare improved"? | AUC > 0.65 |
-| **Calibration** | Correlation between predicted effect and actual effect | r > 0.4 |
+| **Discrimination (AUC)** | Does adopting recommendations predict "welfare improved"? | AUC > 0.70 |
+| **Calibration** | Correlation between predicted effect and actual effect | r > 0.5 |
 | **Prioritization value** | High-priority validation rate vs. low-priority rate | Ratio > 2:1 |
-| **False positive rate** | High-priority recommendations that harmed welfare | < 15% |
+| **False positive rate** | High-priority recommendations that harmed welfare | < 10% |
 
 **Expected Outcomes**:
 
-- If high-priority recommendations show validation rate of 50%+ and low-priority show rate < 25%, the system has practical utility
+- If high-priority recommendations show validation rate of 60%+ and low-priority show rate < 30%, the system has practical utility
 - If no discrimination observed, the methodology needs recalibration or fundamental revision
+
+### Prospective Pre-Registration
+
+To prevent hindsight bias, OPG should **publish recommendations before adoption decisions are made**:
+
+1. Quarterly publication of jurisdiction-specific recommendations with timestamps
+2. Public pre-commitment to methodology (no post-hoc adjustments)
+3. Tracking of which recommendations were subsequently adopted
+4. Comparison of pre-registered predictions to actual outcomes
+
+This creates an auditable record that prevents retrofitting methodology to match observed outcomes.
 
 ### Known Limitations Requiring Validation
 
@@ -1275,6 +1526,7 @@ The ultimate test of OPG validity: **Do jurisdictions that adopt high-priority O
 2. **Blocking factor impact**: Are recommendations with blocking factors less likely to be adopted?
 3. **Evidence grade thresholds**: Are the A-F grade cutoffs appropriately calibrated?
 4. **Heterogeneity interpretation**: Does high I² actually indicate context-dependence vs. measurement noise?
+5. **Translation pipeline accuracy**: Do surrogate→terminal metric conversions introduce systematic bias?
 
 ### Continuous Improvement via Adoption Feedback
 
@@ -1288,6 +1540,8 @@ OPG improves through a learning loop:
 6. **Future recommendations** reflect updated evidence
 
 This transforms OPG from a static evidence aggregator into a self-improving system where every adoption strengthens the evidence base. The tracking guidance included with each recommendation standardizes what data jurisdictions should collect and report.
+
+**Important caveat:** The feedback loop is valuable but does not resolve adoption bias. Jurisdictions that implement OPG-recommended policies and report outcomes may be systematically different from those that don't. The instrumental variable approach (exogenous shocks) remains the gold standard for validation.
 
 ## Future Directions
 
@@ -1323,7 +1577,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ## Conclusion
 
-The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-optimal set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact. The framework transforms scattered natural experimental evidence into actionable, jurisdiction-specific guidance.
+The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-supported set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact. The framework transforms scattered natural experimental evidence into actionable, jurisdiction-specific guidance.
 
 ## Acknowledgments {.unnumbered}
 
@@ -1435,14 +1689,31 @@ From meta-analysis of 47 US states (2000-2020):
 
 | Metric | Expected Effect | 95% CI |
 |--------|-----------------|--------|
-| **Income** | +0.12 pp/year | [+0.08, +0.16] |
-| **Health** | +0.25 years | [+0.18, +0.32] |
+| **Income** | **-0.02 pp/year** | [-0.04, +0.01] |
+| **Health** | **+0.25 years** | [+0.18, +0.32] |
 
-- **Current level**: $1.41/pack (below median $1.91)
-- **Recommended level**: $2.50/pack
+- **Current level**: $1.41/pack (illustrative; below median $1.91)
+- **Recommended level**: $2.50/pack (illustrative target)
 - **Evidence grade**: A
 - **Priority**: High
 - **Blocking factors**: Political (anti-tax sentiment)
+
+::: {.callout-note}
+### Tradeoff Demonstration
+
+This recommendation illustrates how the two-metric framework surfaces genuine tradeoffs:
+
+- **Income effect is negative**: The tax directly reduces disposable income for smokers. Productivity gains (fewer sick days) partially offset this, but the net income effect is small and negative.
+- **Health effect is strongly positive**: Reduced smoking leads to longer healthy life expectancy.
+- **Combined welfare is positive**: At equal weighting (α=0.5), the health gain outweighs the income cost.
+
+This demonstrates why the two-metric framework prevents corner solutions:
+- An **infinite tobacco tax** would maximize health but devastate income → not optimal
+- A **zero tobacco tax** would preserve income but harm health → not optimal
+- The **evidence-supported level** balances both dimensions
+
+The recommendation shows where evidence places the optimum, while making the tradeoff explicit for democratic deliberation. Jurisdictions that weight income more heavily may choose a lower tax; those prioritizing health may choose higher.
+:::
 
 **4. Maximum Speed Limit: 85 mph → 70 mph**
 
@@ -1474,7 +1745,7 @@ From meta-analysis of 47 US states (2000-2020):
 **5. DUI Threshold at 0.08 BAC** ✓
 
 - **Current level**: 0.08 BAC (national standard)
-- **Evidence**: Aligned with evidence-optimal level
+- **Evidence**: Aligned with evidence-supported level
 - **Status**: Continue current policy
 
 **6. Graduated Driver Licensing Program** ✓
@@ -1493,13 +1764,12 @@ From meta-analysis of 47 US states (2000-2020):
 |------|----------------|---------------|---------------|-------|
 | **ENACT** | Primary seat belt | +0.02 pp/yr | +0.15 years | A |
 | **ENACT** | Universal helmet | +0.01 pp/yr | +0.08 years | A |
-| **REPLACE** | Tobacco tax: $1.41→$2.50 | +0.12 pp/yr | +0.25 years | A |
+| **REPLACE** | Tobacco tax: $1.41→$2.50 | **-0.02 pp/yr** | +0.25 years | A |
 | **REPLACE** | Speed limit: 85→70 mph | +0.01 pp/yr | +0.06 years | B |
 | **MAINTAIN** | DUI threshold, GDL | N/A | N/A | A |
-| | **Total from changes** | **+0.16 pp/yr** | **+0.54 years** | |
+| | **Total from changes** | **+0.02 pp/yr** | **+0.54 years** | |
 
-**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas; no harmful policies identified with strong evidence.
-
+**Note**: The tobacco tax shows a negative income effect but positive health effect, demonstrating the two-metric framework's ability to surface genuine tradeoffs. MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas; no harmful policies identified with strong evidence.
 
 ### Interpretation
 
@@ -1507,10 +1777,12 @@ This example demonstrates how OPG transforms generic evidence into actionable, j
 
 **Key insight**: If Texas adopted all recommendations, expected effects are:
 
-- **+0.16 pp/year** boost to median income growth
+- **+0.02 pp/year** net change to median income growth (modest positive after tradeoffs)
 - **+0.54 years** added to median healthy life expectancy
 
-The two-metric format makes tradeoffs explicit and enables direct interpretation without complex conversion factors.
+**Critical observation**: The total income effect (+0.02 pp/yr) is much smaller than the total health effect (+0.54 years in relative terms) because the tobacco tax creates a genuine tradeoff. This is a feature, not a bug: it surfaces real policy tensions rather than hiding them behind combined scores.
+
+The two-metric format makes tradeoffs explicit and enables direct interpretation without complex conversion factors. Policymakers can see that the tobacco tax recommendation prioritizes health over income, and adjust their weighting (α) accordingly if they disagree with equal weighting.
 
 ## Appendix B: OPG Analysis Workflow {.appendix}
 
@@ -1596,7 +1868,7 @@ Phase 3: AGGREGATION & PIS CALCULATION
 Phase 4: RECOMMENDATION GENERATION
 ──────────────────────────────────
 12. Policy gap analysis (per jurisdiction)
-    ├── Compare current inventory to evidence-optimal
+    ├── Compare current inventory to evidence-supported
     ├── Calculate gap magnitude
     ├── Identify gap type (missing, harmful, suboptimal)
     └── Flag blocking factors
@@ -1657,7 +1929,7 @@ Before generating recommendations, verify:
 | **PIS** | Policy Impact Score: effect × causal confidence × quality | @sec-pis |
 | **CCS** | Causal Confidence Score: weighted Bradford Hill average | @sec-bradford-hill |
 | **Evidence Grade** | A-F rating based on PIS, heterogeneity, jurisdiction count | @sec-evidence-grading |
-| **Policy Gap** | Difference between current and evidence-optimal policy | @sec-policy-gap |
+| **Policy Gap** | Difference between current and evidence-supported policy | @sec-policy-gap |
 | **Blocking Factor** | Constraint on adoption (constitutional, political, etc.) | @sec-blocking-factors |
 | **I²** | Between-study heterogeneity (>75% = high) | @sec-global-pis |
 | **Synthetic Control** | Weighted donor pool matching pre-treatment trajectory | @sec-analysis-methods |
@@ -1672,7 +1944,4 @@ Before generating recommendations, verify:
 
 **Corresponding Author**: Mike P. Sinn, Decentralized Institutes of Health (mike@warondisease.org)
 
-
 **Data Availability**: This specification describes a methodological framework. Policy databases referenced (V-Dem, Polity V, CPDS, World Bank WDI) are publicly available at URLs provided in Data Sources section. A complete replication package including data extraction scripts, analysis code, and recommendation generation algorithms will be deposited in a public repository upon system deployment.
-
-

@@ -1,6 +1,6 @@
 {
   "totalSites": 12,
-  "totalPages": 104,
+  "totalPages": 103,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -3209,7 +3209,7 @@
             "The Math Of Death"
           ],
           "published": true,
-          "lastmod": "2026-01-23"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/problem/cost-of-war.qmd",
@@ -3962,7 +3962,7 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-24"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/economics/1-pct-treaty-impact.qmd",
@@ -4130,7 +4130,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/call-to-action/your-personal-benefits.qmd",
@@ -4818,7 +4818,7 @@
             "The Math"
           ],
           "published": true,
-          "lastmod": "2026-01-24"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/appendix/real-world-evidence-historical-success.qmd",
@@ -4848,45 +4848,6 @@
             "The \"Correlation Is Not Causation\" Excuse",
             "Impact of Innovative Medicines on Life Expectancy",
             "The Summary"
-          ],
-          "published": true,
-          "lastmod": "2026-01-24"
-        },
-        {
-          "path": "knowledge/strategy/treaty-adoption-strategy.qmd",
-          "url": "https://manual.WarOnDisease.org/strategy/treaty-adoption-strategy.html",
-          "title": "Treaty Adoption Strategy",
-          "description": "How to make 280 million citizens and 195 governments simultaneously demand the same thing",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/treaty-adoption-strategy-og-retro-academic.jpg",
-          "tags": [
-            "strategy",
-            "diplomacy",
-            "grassroots",
-            "mobilization",
-            "3.5-percent-rule"
-          ],
-          "sections": [
-            "The Two-Track System (Bottom-Up Fear + Top-Down Paperwork)",
-            "Track 1: Grassroots (Make Politicians Afraid)",
-            "The Magic Number: }",
-            "Who Joins First (The People Who Actually Care)",
-            "The Cell Model (How Movements Actually Spread)",
-            "The Recruitment Funnel (Turning Awareness Into Action)",
-            "The Toolkit",
-            "Track 2: Diplomatic (Give Governments The Paperwork)",
-            "The Simultaneous Signing Strategy",
-            "Phase 1: Pilot Countries (Prove It Works)",
-            "Phase 2: Major Powers (Make It Real)",
-            "Phase 3: Everyone Else (Peer Pressure)",
-            "The Minimal Ask (So Small It's Hard to Refuse)",
-            "The Enforcement (Smart Contracts)",
-            "Feasibility & Cost: Why This Is Realistic",
-            "How The Tracks Reinforce Each Other",
-            "Grassroots enables diplomacy",
-            "The Coalition (Strange Bedfellows United By Greed)",
-            "The Timeline (How Long Until Treaty)",
-            "Objection Handlers (Addressing Common Pushback)",
-            "The Assessment (How Long This Actually Takes)"
           ],
           "published": true,
           "lastmod": "2026-01-24"
@@ -5299,6 +5260,8 @@
             "Abstract",
             "The Two Welfare Metrics",
             "Why Only Two Metrics?",
+            "Income Metric Definition",
+            "Outcome Translation Methodology",
             "The Evidence Base: Centuries of Natural Policy Experiments",
             "Scale of Available Natural Experiments",
             "The OPG Pipeline",
@@ -5384,7 +5347,9 @@
             "Epistemic Limitations",
             "Validation Framework",
             "The Critical Question",
+            "Addressing Adoption Bias",
             "Proposed Validation Study",
+            "Prospective Pre-Registration",
             "Known Limitations Requiring Validation",
             "Continuous Improvement via Adoption Feedback",
             "Future Directions",
@@ -5404,6 +5369,7 @@
             "Step 3: Generate Recommendations",
             "ENACT (New Policies to Adopt)",
             "REPLACE (Policies to Modify)",
+            "Tradeoff Demonstration",
             "REPEAL (Policies to Remove)",
             "MAINTAIN (No Change Needed)",
             "Step 4: Summary Dashboard",
@@ -5414,7 +5380,7 @@
             "Appendix C: Glossary"
           ],
           "published": true,
-          "lastmod": "2026-01-25"
+          "lastmod": "2026-01-26"
         },
         {
           "path": "knowledge/appendix/optimal-budget-generator-spec.qmd",
@@ -7113,7 +7079,7 @@
           "lastmod": "2026-01-22"
         }
       ],
-      "pageCount": 86
+      "pageCount": 85
     },
     {
       "id": "obg",
