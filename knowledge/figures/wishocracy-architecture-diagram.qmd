@@ -35,19 +35,19 @@ with dot.subgraph(name='cluster_interface') as ci:
 
 with dot.subgraph(name='cluster_layer2') as c2:
     c2.attr(label='LAYER 2: TECHNOCRATIC EXECUTION (How we get it)', style='dashed', color='black')
-    c2.node('GenieDAOs', 'GenieDAOs\n(Expert Teams)', shape='box')
+    c2.node('ServiceProviders', 'ServiceProviders\n(Expert Teams)', shape='box')
     c2.node('Proposals', 'Implementation Proposals\n(Strategies)', shape='box', style='dashed')
     c2.node('Selection', 'Cost-Effectiveness\nReview', shape='diamond')
     c2.node('Action', 'Real-World Action\n(Solutions)', shape='box', penwidth='2')
     
-    c2.edge('GenieDAOs', 'Proposals', label=' Design')
+    c2.edge('ServiceProviders', 'Proposals', label=' Design')
     c2.edge('Proposals', 'Selection', label=' Evaluate')
     c2.edge('Selection', 'Action', label=' Fund')
 
 # -- CONNECT LAYERS --
 
 dot.edge('Priorities', 'Mandate', label=' Defined By')
-dot.edge('Mandate', 'GenieDAOs', label=' Bounties For')
+dot.edge('Mandate', 'ServiceProviders', label=' Bounties For')
 
 # Render
 
