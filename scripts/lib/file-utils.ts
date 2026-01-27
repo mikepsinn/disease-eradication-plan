@@ -752,19 +752,34 @@ export async function getFilesFromAllQuartoConfigs(): Promise<QuartoConfigInfo[]
 export async function getAllQuartoFilesSmallestFirst(): Promise<string[]> {
   const configs = await getFilesFromAllQuartoConfigs();
 
+  console.log(`\n[getAllQuartoFilesSmallestFirst] Found ${configs.length} Quarto configs:`);
+  for (const config of configs) {
+    console.log(`  ${config.configName}: ${config.fileCount} files`);
+    for (const file of config.files) {
+      console.log(`    - ${file}`);
+    }
+  }
+
   // Collect files in order, deduplicating
   const seen = new Set<string>();
   const orderedFiles: string[] = [];
 
   for (const config of configs) {
+    let newFromConfig = 0;
     for (const file of config.files) {
       const normalized = file.replace(/\\/g, '/');
       if (!seen.has(normalized)) {
         seen.add(normalized);
         orderedFiles.push(normalized);
+        newFromConfig++;
       }
     }
+    if (newFromConfig < config.fileCount) {
+      console.log(`  [${config.configName}] Added ${newFromConfig} new files (${config.fileCount - newFromConfig} duplicates skipped)`);
+    }
   }
+
+  console.log(`[getAllQuartoFilesSmallestFirst] Total unique files: ${orderedFiles.length}\n`);
 
   return orderedFiles;
 }
