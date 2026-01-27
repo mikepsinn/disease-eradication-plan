@@ -1,6 +1,6 @@
 ---
-title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align spending with citizen welfare.
+title: 'Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization'
+description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
 abstract: |
   Politicians allocate trillions of dollars annually. They vote on budgets. The problem: what gets you
   reelected, funded, and hired after office is often not what benefits voters. This misalignment costs
@@ -14,9 +14,10 @@ abstract: |
   with recommendations is tracked publicly. When metrics improve, high-alignment politicians receive
   campaign support and career opportunities through Incentive Alignment Bonds.
 
-  The math: reducing decision points from thousands (discretionary line items) to two (metric verification
-  + override accountability) cuts expected capture costs by 97%. The mechanism makes representing voters
-  the winning strategy.
+  The structural advantage: reducing decision points from thousands (discretionary line items) to two
+  (metric verification + override accountability) makes capture dramatically harder. Bribing a thousand
+  committee chairs is easier than corrupting a constitutional process watched by everyone. The mechanism
+  makes representing voters the winning strategy.
 aliases:
   - /optimocracy.html
 author:
@@ -128,7 +129,7 @@ Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delr
 
 ### The Optimocracy Thesis
 
-Optimocracy proposes a radical simplification: **optimize allocation for measurable welfare outcomes**. Instead of asking "what should we fund?" without systematic feedback, Optimocracy asks:
+Optimocracy proposes a radical simplification: **optimize governance for measurable welfare outcomes**. Instead of asking "what should we fund?" and "what policies should we adopt?" without systematic feedback, Optimocracy asks:
 
 1. **What metric should we optimize?** (Default: Health & Wealth; alternatives possible via constitutional process)
 2. **What is the current value of that metric?** (Oracle measurement, continuous)
@@ -202,6 +203,8 @@ Where:
 **Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
 
 Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by constraining discretionary allocation while preserving human override for genuine novelty.
+
+![A bar chart decomposing the total Political Dysfunction Tax into its four constituent sources (cronyism, short-termism, ignorance, and gridlock), showing their relative contributions and 95% confidence intervals.](/assets/images/optimocracy-paper/optimocracy-paper-section-a-formal-model-of-the-political-dysfunction-tax-bw-academic.jpg)
 
 ### Documented Welfare Losses by Policy Domain
 
@@ -286,7 +289,7 @@ The theoretical estimate of 20-40% can be triangulated with bottom-up accounting
 | Fossil fuel subsidies (explicit) | {{< var bad_policy_cost_us_fossil_fuel_explicit >}} | 0.2% | High | @imf-fossilfuel2023 |
 | **Tier 1 Total** | **{{< var bad_policy_cost_us_tier1_total >}}** | **13.6%** | | |
 
-Additional contested costs (Tier 2: occupational licensing, migration restrictions, fossil fuel externalities) add another {{< var bad_policy_cost_us_tier2_total >}}, bringing the total to {{< var bad_policy_cost_total_us >}} ({{< var bad_policy_cost_total_us_pct_gdp >}} of GDP) after applying a 15% overlap discount to avoid double-counting.
+Additional contested costs (Tier 2: occupational licensing, migration restrictions, fossil fuel externalities) add another {{< var bad_policy_cost_us_tier2_total >}}, bringing the total to {{< var bad_policy_cost_total_us >}} ({{< var bad_policy_cost_total_us_pct_gdp >}} of GDP) after applying a 15% overlap discount to avoid double-counting (e.g., housing costs partly reflect regulatory burden already counted; healthcare inefficiency overlaps with drug pricing).
 
 **Key finding:** The bottom-up estimate of {{< var bad_policy_cost_total_us_pct_gdp >}} (95% CI: 11.9%-26.7%) converges with the theoretical estimate of 20-40%, suggesting the Political Dysfunction Tax is not merely theoretical but measurable through specific policy costs.
 
@@ -339,7 +342,7 @@ Currently, lobbyists have thousands of doors to knock on: committee earmarks, ag
 1. **The metric choice**: Corrupting the constitutional process that chose "maximize median income" is like bribing the Founding Fathers. Public, expensive, and rare
 2. **The data sources**: Bribing 3 out of 5 independent oracles to lie about the same number without getting caught requires coordination among strangers who lose money if wrong
 
-**The intuition**: Bribing 1,000 cheap doors costs more than bribing 2 expensive vaults. That's a 97% reduction in corruption's expected payoff. Corruption doesn't disappear. It just gets prohibitively expensive.
+**The intuition**: Bribing 1,000 cheap doors is easier than bribing 2 expensive vaults. Corruption doesn't disappear. It just gets prohibitively expensive.
 
 #### Formal Model
 
@@ -365,13 +368,9 @@ In plain English: the left side is the cost of corrupting Optimocracy (bribing t
 3. **Many independent oracles**: More oracles require exponentially harder collusion
 4. **Metric capture isn't catastrophic**: If choosing the wrong metric is worse than all the earmarks combined, Optimocracy loses
 
-**Numerical example:** Suppose 1,000 budget decisions, each with 10% capture probability and \$1B welfare loss. Total expected capture cost: \$100B. Under Optimocracy with $p_M$ = 0.05, $c_M$ = \$50B, 5 oracles, and $p_O$ = 0.1:
+**What the model shows:** The magnitude of Optimocracy's advantage depends on empirical parameters (capture probabilities, number of decision points, oracle independence) that vary by context. The model doesn't prove Optimocracy always wins. It identifies the *conditions* under which consolidating decision points reduces capture: when N is large, constitutional processes are harder to corrupt than earmarks, and oracles are genuinely independent.
 
-- Metric capture cost: 0.05 × \$50B = \$2.5B
-- Oracle collusion cost: $\binom{5}{3}(0.1)^3$ × \$20B = 10 × 0.001 × \$20B = \$0.2B
-- **Total: \$2.7B vs. \$100B**, a 97% reduction
-
-**Limitations:** This model assumes capture probabilities are independent (may underestimate coordinated attacks); oracle collusion requires simple majority (stronger thresholds reduce risk further), and metric capture cost is bounded (catastrophic metric selection could dominate). The model doesn't prove Optimocracy always wins. It identifies when it does. Real-world calibration of these probabilities is essential.
+**Limitations:** This model assumes capture probabilities are independent (may underestimate coordinated attacks); oracle collusion requires simple majority (stronger thresholds reduce risk further); and metric capture cost is bounded (catastrophic metric selection could dominate). Real-world calibration of these parameters is essential before drawing quantitative conclusions.
 
 ## Theoretical Foundations
 
@@ -661,7 +660,7 @@ This is a real concern. The solution is **genuinely independent data collection 
 - Online voting since 2005
 - 99% of government services available digitally
 - All citizens have digital ID
-- ~45% of votes cast online in recent elections
+- Over 50% of votes cast online in recent elections [@estonia-internet-voting]
 
 Estonia demonstrates that national-scale digital participation with verified identity is not science fiction. It's operational.
 
@@ -1563,13 +1562,13 @@ Not all actors have the same relationship to reform:
 
 **IAB role:** None needed. These actors benefit without compensation.
 
-**Estimated population:** ~10,000 globally with >$100M net worth from productive activity.
+**Estimated population:** Approximately 10,000-20,000 globally with >$100M net worth from productive (non-rent-seeking) activity, based on wealth distribution data [@creditsuisse2023] and estimates of entrepreneurial versus inherited/extractive wealth.
 
 #### Rent-Seekers and Extractors
 
 **Definition:** Those whose income derives from current allocation patterns that would change under optimization.
 
-**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. Aggregate rents from suboptimal allocation are estimated at $2-5T annually across these categories (consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP).
+**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. While precise quantification is methodologically challenging, rough estimates suggest aggregate rents from suboptimal allocation may reach $2-5T annually across these categories (broadly consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP). These figures represent order-of-magnitude estimates rather than precise measurements.
 
 **Relationship to optimal policy:** Losers unless compensated. IABs must compensate these actors or they will block reform.
 
@@ -1640,7 +1639,7 @@ Critics often dismiss governance reforms as "politically impossible." This objec
 |-----------|---------------|
 | Match all lobbying expenditure (1.5×) | $6.6B/year |
 | Match all federal campaign spending | $10B/cycle |
-| Match full Congress career incentives (535 × $10M NPV) | $5.35B one-time |
+| Match full Congress career incentives (535 × ~$10M NPV)^[Post-Congress lobbying compensation averages 10-20× congressional salary [@thenation-revolving-door]; $174K × 15 × 10 years ≈ $10M NPV.] | $5.35B one-time |
 | **Total US maximum reform investment** | **~$25B** |
 
 **Global Estimates:**
@@ -1654,16 +1653,16 @@ Critics often dismiss governance reforms as "politically impossible." This objec
 
 **ROI Analysis:**
 
-For high-net-societal-value reforms like the 1% Treaty (redirecting 1% of military spending to health research), the ROI calculation is striking:
+For high-net-societal-value reforms like the 1% Treaty (redirecting 1% of military spending to health research), the ROI calculation illustrates the scale disparity:
 
-| Political Investment | Expected Benefits | ROI |
-|---------------------|-------------------|-----|
-| $25B (US maximum) | $X trillion NPV | >100,000:1 |
-| $200B (global maximum) | $X quadrillion NPV | >400,000:1 |
+| Political Investment | Expected Benefits | Implied ROI |
+|---------------------|-------------------|-------------|
+| $25B (US maximum) | ~$2.5T NPV (conservative estimate of 1% Treaty benefits) | ~100:1 |
+| $200B (global maximum) | ~$25T NPV (global scale) | ~125:1 |
 
-Political impossibility objections dissolve under quantitative scrutiny. The question is not "is change possible?" but "does the cost of achieving change exceed the value created?" For reforms where welfare gains exceed political costs by five or six orders of magnitude, the "impossibility" objection reveals itself as an arithmetic failure, not a genuine constraint.
+Even with conservative assumptions about achievable welfare gains, the expected returns from political reform investment exceed typical philanthropic ROIs by 1-2 orders of magnitude. Political impossibility objections dissolve under quantitative scrutiny. The question is not "is change possible?" but "does the cost of achieving change exceed the value created?"
 
-This analysis implies that funders treating political reform as "not worth attempting" are making an error equivalent to refusing a 400,000:1 bet because "betting is risky."
+Note: These figures are illustrative. Actual ROI depends on reform success probability, implementation fidelity, and measurement uncertainty. The key insight is that even heavily discounted estimates suggest political reform is dramatically underinvested relative to its expected value.
 
 ### The Natural Reform Coalition
 
@@ -1878,8 +1877,8 @@ This extends beyond budget allocation to evaluate *all policies*: laws, regulati
 | Problem Type | Example | Budget Optimization Handles? |
 |--------------|---------|------------------------------|
 | Program allocation | Too little preventive care | Yes (reallocate budget) |
-| Administrative overhead | $812B/year US billing costs | No (requires regulatory reform) |
-| Drug pricing | US pays 256% of OECD average | No (requires policy change) |
+| Administrative overhead | ~$1T/year US admin costs | No (requires regulatory reform) |
+| Drug pricing | US pays 256% of OECD average [@mulcahy2021] | No (requires policy change) |
 
 PIS uses quasi-experimental methods (synthetic control, difference-in-differences, regression discontinuity) to estimate causal effects of policy changes across centuries of variation in hundreds of jurisdictions.
 
