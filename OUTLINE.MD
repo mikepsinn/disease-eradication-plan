@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 348,817
+**Files:** 86 | **Words:** 348,473
 
 #### index.qmd
 **Title:** Start Here
@@ -3564,21 +3564,14 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
-**Stats:** 2,570 words | 423 lines
+**Stats:** 2,226 words | 369 lines
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
-  - System Architecture & Implementation
-    - Voting Protocol
-      - End-to-End Verifiable System
-    - Technical Infrastructure
-      - Frontend (User Interface)
-      - Backend (Processing)
-      - Data Storage
+  - System Architecture
   - On Stopping People from Cheating (The Hard Part)
     - On Why You Need Multiple Layers of "Prove You're Human"
-    - On Using AI to Catch the Smart Cheaters
-      - Real-Time "You Shall Not Pass" Monitoring
+    - AI-Powered Fraud Detection
     - On Privacy (Or: How Not to Build a Surveillance State)
   - Viral Marketing & Growth Strategy
     - Wearable Marketing
@@ -3611,11 +3604,7 @@
     - Phase 2: Scaling (Months 3-6)
     - Phase 3: Global Launch (Months 7-12)
     - Phase 4: Optimization (Months 13+)
-  - Success Metrics & Monitoring
-    - Primary Metrics
-    - Verification Effectiveness
-    - Fraud Prevention Effectiveness
-    - Secondary Metrics
+  - Success Metrics
   - On Putting It All Together
     - What You're Building
       - The Innovation Part
@@ -7534,6 +7523,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 556,751
+- Total words: 556,407
 - Orphaned files: 21
 - Paper configs: 11
