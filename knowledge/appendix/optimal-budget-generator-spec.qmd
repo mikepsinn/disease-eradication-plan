@@ -93,6 +93,8 @@ A dashboard showing spending gaps by category, with clear recommendations:
 
 ### What Budget Analysts See
 
+![A mockup of a budget analyst dashboard integrating OSL estimates, diminishing returns curves, peer spending comparisons, and evidence quality scores.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-what-budget-analysts-see-bw-academic.jpg)
+
 - **OSL estimates** with confidence intervals and methodology notes
 - **Reference country data** showing peer spending patterns
 - **Diminishing returns curves** where dose-response data exists
@@ -129,7 +131,6 @@ The OBG/BIS framework answers: "Given what we know about returns to spending, wh
 
 ![Architecture of the Optimocracy Framework showing the parallel inputs of budget (OBG) and policy (OPG) generators feeding into the Constitutional Layer.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-system-overview-bw-academic.jpg)
 
-
 The OPG framework (see [Optimal Policy Generator Specification](https://opg.warondisease.org)) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
 
 ## Introduction
@@ -163,7 +164,6 @@ Budget allocation should work the same way. For each spending category:
 - **Above OSL**: Diminishing or negative returns (overinvestment)
 
 **infinite spending on any category doesn't make sense**, even one with high returns. Early childhood education has excellent returns - but spending $10 trillion on it wouldn't produce 10x the benefits of spending $1 trillion. There's an optimal level.
-
 
 ![Conceptual comparison between Recommended Daily Allowances (RDA) in nutrition and Optimal Spending Levels (OSL) in public finance.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-introduction-bw-academic.jpg)
 
@@ -305,7 +305,6 @@ $$
 $$
 
 *where $\hat{\beta}_i^{pooled}$ is the quality-weighted pooled estimate of spending effects.*
-
 
 ![Breakdown of the Budget Impact Score (BIS) components, showing how quality, precision, and recency weights combine to quantify confidence.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
 
@@ -494,6 +493,8 @@ Reference benchmarking provides a **starting point** for OBG estimation, not a d
 
 The fiscal multiplier literature establishes that spending effects vary systematically with scale [@batini2021; @barro2011]. At low spending levels, each additional dollar produces substantial welfare gains. At high spending levels, marginal returns diminish. The OSL is where marginal return equals opportunity cost.
 
+![A graph showing a downward-sloping marginal return curve intersecting with a horizontal line representing the opportunity cost (r) to identify the Optimal Spending Level (OSL).](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-core-concept-bw-academic.jpg)
+
 $$
 \text{OSL}: \frac{\partial \text{Outcome}}{\partial \text{Spending}} = r
 $$
@@ -521,7 +522,6 @@ Outcome
    +-----------------------------------> Spending
          Low            High
 ```
-
 
 ![Theoretical diminishing returns curve illustrating the 'knee' point where marginal welfare gains begin to flatten relative to spending increases.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-modeling-bw-academic.jpg)
 

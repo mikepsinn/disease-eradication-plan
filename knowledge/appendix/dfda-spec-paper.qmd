@@ -67,6 +67,9 @@ image: /assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg
 
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
+![A two-stage methodological pipeline showing the transition from large-scale observational N-of-1 signal detection to causal confirmation via pragmatic randomized trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)
+
+
 We present a comprehensive **two-stage framework** for generating **validated outcome labels** with quantitative effect sizes:
 
 **Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~{{< var dfda_observational_cost_per_patient >}} per patient.
@@ -1444,6 +1447,9 @@ Pragmatic trial results feed back to improve Stage 1 methodology:
 4. **Hyperparameter validation**: Optimal onset delays and durations validated against experimental ground truth
 
 This creates a **learning health system** where observational and experimental evidence continuously refine each other.
+
+![A circular 'Learning Health System' diagram showing the continuous flow between observational Stage 1 models and experimental Stage 2 trials, with specific feedback channels for calibration and validation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-feedback-loop-trial-results-improve-observational-models-bw-academic.jpg)
+
 
 ### Output: Validated Outcome Labels
 

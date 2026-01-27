@@ -52,6 +52,9 @@ The figures below represent **cumulative benefits over the entire acceleration p
 
 **The Problem:** Clinical trials cost billions and take a decade per drug. Most humans die before the drugs that could save them finish paperwork. Out of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
+![Architecture of the dFDA protocol showing the flow from decentralized patient participation and mobile data collection to aggregated treatment rankings and outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
+
+
 **The Solution:** A decentralized framework for drug assessment (dFDA) - an open protocol that enables:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
@@ -73,6 +76,9 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 :::
 
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
+
+![System architecture diagram showing the dFDA protocol as a foundational layer that enables interoperability between EHRs, clinical trial platforms, and consumer health apps through a shared data ecosystem.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
+
 
 ### What You Get
 
@@ -679,6 +685,9 @@ For detailed methodology and assumptions, see [The Human Cost of Regulatory Late
 **The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions.
 
 #### Current System Limitations: Dangerously Blind to Real-World Harms
+
+![Comparison of detection timelines for major drug safety disasters, contrasting the years of delay under voluntary reporting systems with the estimated months required for detection via automated EHR monitoring.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-harms-bw-academic.jpg)
+
 
 ::: {.callout-caution}
 **The current system is not safe - it just appears safe because harms go undetected.**

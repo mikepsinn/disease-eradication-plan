@@ -115,6 +115,8 @@ The framework does not hide this tradeoff by claiming healthcare cost savings ar
 
 While OPG uses only two terminal metrics (income growth and healthy life years), evidence often measures **surrogate outcomes** (smoking rates, traffic deaths, crime rates). This section specifies how surrogate outcomes are translated to the terminal metrics.
 
+![A flowchart illustrating the transition from policy interventions to terminal metrics through proximate and intermediate outcomes, highlighting specific conversion factors and the compounding of uncertainty across the chain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-outcome-translation-methodology-sec-outcome-translation-bw-academic.jpg)
+
 **The translation chain:**
 
 ```
@@ -170,6 +172,8 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 | Cities worldwide | 10,000+ | varies | millions |
 
 Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. Combined, this represents the largest-ever dataset of policy experiments.
+
+![A comparison chart showing the exponential growth in available policy-years across different geographic levels, ranging from 3,500 for US states to millions for cities worldwide.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-natural-experiments-bw-academic.jpg)
 
 ### The OPG Pipeline
 
@@ -280,6 +284,8 @@ The evidence base comprises millions of policy-years of natural experiments acro
 This paper makes three primary contributions to the policy evaluation literature:
 
 1. **Methodological**: We develop a systematic framework for translating quasi-experimental evidence into jurisdiction-specific policy recommendations, extending beyond generic evidence ratings to actionable output in four categories (enact/replace/repeal/maintain).
+
+![A workflow diagram showing the translation of evidence into a Policy Impact Score (PIS) and the subsequent categorization into four policy recommendation types: enact, replace, repeal, or maintain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-contributions-bw-academic.jpg)
 
 2. **Taxonomic**: We formalize the four recommendation types and introduce the Policy Impact Score (PIS) as an intermediate metric combining effect magnitude, causal confidence (Bradford Hill criteria), and methodological quality. This provides a standardized approach to evidence aggregation.
 
@@ -412,8 +418,6 @@ $$
 
 meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect. This constraint is operationalized in @sec-evidence-grading.
 
-![A chart illustrating the impact of heterogeneity on evidence transferability, showing how the proportion of unexplained variance increases as I² passes the 75% threshold.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-evidence-aggregation-properties-bw-academic.jpg)
-
 *Proof*: By definition, $I^2 = \frac{\tau^2}{\tau^2 + \bar{\sigma}^2}$ where $\bar{\sigma}^2$ is typical within-study variance. When $I^2 > 0.75$, between-study variance dominates, and the pooled estimate provides limited information about any individual jurisdiction's true effect. ∎
 
 ### Information Value
@@ -434,6 +438,8 @@ which is maximized when prior uncertainty is high and decision stakes are large.
 ### Policy-Outcome Data Structure
 
 The OPG system uses a relational database schema. The following is a **reference implementation** showing the conceptual data model; production deployments may vary.
+
+![An entity-relationship diagram illustrating the core tables and relational schema of the OPG system's policy-outcome data structure.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-policy-outcome-data-structure-bw-academic.jpg)
 
 #### Core Tables
 
@@ -575,8 +581,6 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 The following weights reflect proposed defaults based on the methodological rigor hierarchy in applied economics. These weights have not been empirically calibrated and should be treated as starting points for implementation.
 
-![A bar chart showing the hierarchical decline in confidence weights across different research methods, from randomized experiments at 1.00 to cross-sectional studies at 0.25.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-confidence-weighting-by-method-bw-academic.jpg)
-
 | Method | Base Confidence Weight | Rationale |
 |--------|----------------------|-----------|
 | Randomized experiment | 1.00 | Gold standard; rare for policies |
@@ -592,8 +596,6 @@ The following weights reflect proposed defaults based on the methodological rigo
 
 Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
-![A conceptual diagram showing the operationalization of Bradford Hill criteria where multiple qualitative inputs are processed through mathematical saturation functions to produce normalized scores between 0 and 1.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg)
-
 #### Strength of Association
 
 Larger effect estimates provide stronger evidence. We use an exponential saturation function:
@@ -606,8 +608,6 @@ Where $|\hat{\beta}_{\text{std}}|$ is the absolute standardized effect size and 
 
 **Parameter justification:** The threshold $\beta_{\text{sig}} = 0.3$ corresponds to Cohen's convention for a "medium" effect size in social science [@cohen1988]. This is a starting point; sensitivity analysis shows PIS changes by ±15% when $\beta_{\text{sig}}$ varies from 0.2 to 0.4. A standardized effect of 0.3 yields $S_{\text{strength}} \approx 0.63$; effects of 0.6+ yield scores $>0.86$.
 
-![A line graph illustrating the exponential saturation curve for strength scores, showing how scores approach 1.0 as standardized effect sizes increase beyond the 0.3 threshold.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-strength-of-association-bw-academic.jpg)
-
 #### Consistency Across Jurisdictions
 
 Replication across contexts provides stronger evidence. Scored by number of independent jurisdiction studies:
@@ -619,8 +619,6 @@ $$
 Where $N_j$ is the number of jurisdictions with concordant effect direction and $N_{\text{sig}} = 10$ is the saturation parameter.
 
 **Parameter justification:** The threshold $N_{\text{sig}} = 10$ reflects that replication across 10+ independent jurisdictions provides strong evidence against idiosyncratic local effects. This aligns with meta-analytic conventions where 10+ studies enable reliable heterogeneity estimation [@borenstein2009]. Sensitivity analysis shows PIS varies by ±12% when $N_{\text{sig}}$ ranges from 7 to 15. Five concordant jurisdictions yield $S_{\text{consistency}} \approx 0.39$; ten yield $\approx 0.63$.
-
-![A line chart illustrating the relationship between the number of independent jurisdictions and the consistency score, highlighting the specific data points for five and ten jurisdictions.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-consistency-across-jurisdictions-bw-academic.jpg)
 
 #### Temporality (Required)
 
@@ -643,8 +641,6 @@ $$
 Where $r_{\text{dose}}$ is the correlation between policy intensity and outcome magnitude, and $r_{\text{sig}} = 0.5$ is the saturation parameter.
 
 **Parameter justification:** The threshold $r_{\text{sig}} = 0.5$ reflects that a correlation of 0.5 between policy intensity and outcome represents moderate dose-response evidence. This is analogous to toxicological dose-response standards where monotonic relationships strengthen causal inference [@rothman2008]. Sensitivity analysis shows PIS varies by ±8% when $r_{\text{sig}}$ ranges from 0.3 to 0.7. A dose-response correlation of 0.5 yields $S_{\text{gradient}} = 0.5$; correlation of 0.7 yields $\approx 0.66$.
-
-![A line graph depicting the relationship between policy intensity correlation and the dose-response score, illustrating how the score increases non-linearly from the neutral 0.5 baseline.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-dose-response-gradient-bw-academic.jpg)
 
 **Binary policies:** For binary (yes/no) policies, dose-response cannot be assessed. Rather than defaulting to a neutral score of 0.5, binary policies are marked as "N/A" for gradient and this criterion is **excluded from the CCS calculation** (weights are renormalized across remaining criteria). This prevents binary policies from being systematically penalized relative to continuous policies.
 
@@ -680,8 +676,6 @@ Where $m_i \in \{0, 1\}$ indicates whether mechanism component $i$ is satisfied 
 
 **Scoring procedure:** Each component is scored binary (0 or 1) by literature review. The weighted sum yields $S_{\text{plausibility}} \in [0, 1]$. When expert-validated mechanism assessments are unavailable, this score defaults to 0.5 with a note that mechanism plausibility is unassessed.
 
-![A flowchart showing the process of calculating a plausibility score by validating policy mechanisms through behavioral documentation, economic theory, and side-effect analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-plausibility-mechanistic-bw-academic.jpg)
-
 #### Coherence with Literature
 
 Consistency with broader economic and social science evidence:
@@ -692,8 +686,6 @@ $$
 
 Where $N_{\text{studies}}$ is the count of supporting studies in the literature and $N_{\text{sig}} = 5$. Three supporting studies yield $S_{\text{coherence}} \approx 0.45$; ten yield $\approx 0.86$.
 
-![A line graph illustrating the relationship between the number of supporting studies and the coherence score, showing how the score asymptotically approaches 1.0 with diminishing returns.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-coherence-with-literature-bw-academic.jpg)
-
 #### Analogy to Similar Policies
 
 Evidence transfer from similar policies via embedding similarity:
@@ -703,8 +695,6 @@ S_{\text{analogy}} = \max_{p' \neq p} \left[ \text{sim}(\mathbf{e}_p, \mathbf{e}
 $$
 
 Where $\mathbf{e}_p$ is the policy embedding vector, $\text{sim}(\cdot)$ is cosine similarity, and $\text{PIS}_{p'}$ is the Policy Impact Score of similar policy $p'$. Strong evidence for a similar policy provides partial evidence for the focal policy.
-
-![Conceptual diagram illustrating a focal policy in a vector space being compared to neighboring policies to derive an analogy score based on their similarity and existing impact scores.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-analogy-to-similar-policies-bw-academic.jpg)
 
 #### Specificity
 
@@ -800,8 +790,6 @@ Where:
 - **Current**: What the jurisdiction actually has
 
 ### Gap Types
-
-![A comparison chart illustrating policy gaps by plotting current levels against evidence-based optimal thresholds for tobacco taxes and speed limits.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-gap-types-bw-academic.jpg)
 
 | Gap Type | Definition | Example |
 |----------|------------|---------|
@@ -953,8 +941,6 @@ $$
 
 Where default weights are $w_D = 0.4$, $w_P = 0.3$, $w_I = 0.3$.
 
-![A hierarchical diagram showing the calculation of jurisdiction similarity as a weighted aggregation of demographic, policy, and institutional factors, including their respective internal variable weights.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-computing-jurisdiction-similarity-bw-academic.jpg)
-
 **Demographic Similarity** ($\text{sim}_D$):
 
 | Variable | Weight | Normalization |
@@ -998,6 +984,8 @@ Each recommendation includes minimal tracking guidance to enable continuous OPG 
 
 This creates a learning loop: OPG recommends → jurisdiction implements → reports outcomes → OPG improves future recommendations.
 
+![A circular flowchart illustrating the four-step learning loop: OPG recommendation, jurisdictional implementation, outcome reporting, and continuous improvement of future guidance.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-recommended-tracking-for-opg-feedback-bw-academic.jpg)
+
 ## Optimal Jurisdictional Level for Policy Implementation
 
 ### The Subsidiarity Principle for Evidence Generation
@@ -1005,6 +993,8 @@ This creates a learning loop: OPG recommends → jurisdiction implements → rep
 OPG recommends policies be implemented at the **lowest jurisdictional level where the policy can be effective**, for two reasons:
 
 1. **Maximize experimental data**: 50 states experimenting > 1 federal policy. 3,000+ counties > 50 states. More jurisdictions = more natural experiments = faster evidence accumulation.
+
+![A hierarchical visualization comparing the volume of data generation and risk potential across federal, state, and county levels.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-subsidiarity-principle-for-evidence-generation-bw-academic.jpg)
 
 2. **Minimize harm from policy failures**: A failed city ordinance affects thousands; a failed federal policy affects hundreds of millions. Lower-level experimentation bounds downside risk.
 
@@ -1037,6 +1027,8 @@ For each policy recommendation, OPG specifies:
 The Policy Impact Score (PIS) is the intermediate metric used to generate recommendations. It quantifies the strength of evidence that a policy affects an outcome, combining effect magnitude, causal confidence, and analysis quality into a single score.
 
 ### Jurisdiction-Level PIS Calculation
+
+![A flowchart illustrating the logic for calculating the combined Policy Impact Score (PIS) by aggregating standardized effect sizes, causal confidence scores, and quality adjustments for both income and health metrics.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-jurisdiction-level-pis-calculation-bw-academic.jpg)
 
 For each jurisdiction $j$ and policy $p$, compute PIS separately for each of the two metrics:
 
@@ -1187,6 +1179,8 @@ These thresholds are proposed defaults requiring retrospective calibration. The 
 
 The $I^2 < 50\%$ threshold for Grades A and B follows Cochrane Collaboration guidance that heterogeneity above 50% indicates "substantial" variability across studies [@higgins2011]. Grade C allows heterogeneity up to 75% (the "high" threshold) with explicit acknowledgment that effects are context-dependent. Above 75%, pooled estimates provide limited guidance for any specific jurisdiction.
 
+![A decision tree illustrating the evidence grading logic based on PIS, heterogeneity, and jurisdiction count, including adjustment modifiers.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-evidence-grading-sec-evidence-grading-bw-academic.jpg)
+
 **Additional grade modifiers:**
 
 - **Conflicting evidence**: Downgrade by 1 letter if direction of effect differs across high-quality studies
@@ -1225,7 +1219,11 @@ For difference-in-differences analyses, we test whether treated and control juri
 3. If p < 0.10, flag as potential parallel trends violation
 4. Report sensitivity: how different would trends need to be to explain away the effect?
 
+![A four-step workflow illustrating the parallel trends testing procedure, including the statistical significance check and subsequent sensitivity reporting.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-parallel-trends-testing-did-bw-academic.jpg)
+
 ### Pre-Treatment Fit (Synthetic Control)
+
+![A workflow diagram outlining the four steps for validating synthetic control fit, including RMSE calculation, placebo comparison, and the conditional logic for flagging poor fits.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-pre-treatment-fit-synthetic-control-bw-academic.jpg)
 
 For synthetic control analyses:
 
@@ -1489,6 +1487,8 @@ These quasi-random adoption events provide cleaner tests of OPG predictions than
 
 **Design**: Retrospective prediction using instrumental variable identification.
 
+![A flowchart illustrating the four-step retrospective validation methodology, from initial data computation through policy identification to final performance assessment.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-proposed-validation-study-bw-academic.jpg)
+
 **Method**:
 
 1. Compute OPG recommendations for all jurisdictions using only data available before a cutoff date (e.g., 2015)
@@ -1521,6 +1521,8 @@ To prevent hindsight bias, OPG should **publish recommendations before adoption 
 
 This creates an auditable record that prevents retrofitting methodology to match observed outcomes.
 
+![A workflow illustrating the four-step pre-registration cycle from methodology commitment to outcome comparison to ensure an auditable record.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-prospective-pre-registration-bw-academic.jpg)
+
 ### Known Limitations Requiring Validation
 
 1. **Context adjustment accuracy**: Do jurisdiction-specific adjustments improve prediction?
@@ -1541,6 +1543,8 @@ OPG improves through a learning loop:
 6. **Future recommendations** reflect updated evidence
 
 This transforms OPG from a static evidence aggregator into a self-improving system where every adoption strengthens the evidence base. The tracking guidance included with each recommendation standardizes what data jurisdictions should collect and report.
+
+![A circular flowchart depicting the six-step learning loop where OPG recommendations lead to jurisdictional adoption and data reporting, which then feeds back into OPG's meta-analysis to refine future policy guidance.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-continuous-improvement-via-adoption-feedback-bw-academic.jpg)
 
 **Important caveat:** The feedback loop is valuable but does not resolve adoption bias. Jurisdictions that implement OPG-recommended policies and report outcomes may be systematically different from those that don't. The instrumental variable approach (exogenous shocks) remains the gold standard for validation.
 
@@ -1570,6 +1574,8 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 4. **Version control**: Track how recommendations change as new data arrives
 
 ### Integration with Decision-Making
+
+![A circular process diagram showing the iterative loop between policy dashboards, uncertainty communication, scenario modeling, and feedback mechanisms.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-integration-with-decision-making-bw-academic.jpg)
 
 1. **Policy dashboard**: Real-time recommendations for policymakers
 2. **Uncertainty communication**: Visualizations that convey confidence appropriately
@@ -1707,6 +1713,8 @@ This recommendation illustrates how the two-metric framework surfaces genuine tr
 - **Income effect is negative**: The tax directly reduces disposable income for smokers. Productivity gains (fewer sick days) partially offset this, but the net income effect is small and negative.
 - **Health effect is strongly positive**: Reduced smoking leads to longer healthy life expectancy.
 - **Combined welfare is positive**: At equal weighting (α=0.5), the health gain outweighs the income cost.
+
+![A two-axis tradeoff visualization plotting income impact against health gains, illustrating the optimal policy point between the extremes of infinite and zero tobacco taxes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-tradeoff-demonstration-bw-academic.jpg)
 
 This demonstrates why the two-metric framework prevents corner solutions:
 - An **infinite tobacco tax** would maximize health but devastate income → not optimal
