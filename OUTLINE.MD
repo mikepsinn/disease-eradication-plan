@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 347,585
+**Files:** 86 | **Words:** 348,817
 
 #### index.qmd
 **Title:** Start Here
@@ -2536,27 +2536,39 @@
 
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
-**Description:** A framework for medical research funding that automates allocation and prioritizes patient choice.
-**Stats:** 1,698 words | 217 lines
+**Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
+**Stats:** 2,930 words | 407 lines
 
-  - The Four Principles
-    - Rule 1: Let Patients Decide What Gets Funded
-    - Rule 2: Pay for Cures, Not for Promises
-    - Rule 3: Make Corruption Mathematically Impossible
-    - Rule 4: Publish Everything (Especially the Failures)
-  - The Core Innovation: Pay for Success
-  - How the Money Flows: The 1% Treaty Fund and Your DIH
+  - The Objective: Total Disease Eradication
+    - Why Current Systems Fail
+  - The Health-Industrial Complex: Coordinating the War on Disease
+    - The Olsonian Problem
+    - SHAEF for the War on Disease
+    - Why This Framing Matters
+  - DIH: The ROI Maximization Protocol
+    - Three Core Functions
+  - The Core Innovation: Pay for Results
+    - The Data Commons: Publish Everything
+  - Governance Modules: Wishocracy + Optimocracy
+    - Wishocracy: Aggregating Preferences
+    - Optimocracy: Maximizing the Metric
+    - Why Both Are Needed
+  - The Incentive Stack: Making ROI the Selfish Choice
+    - How Researchers Get Paid
+    - How Politicians Get Aligned
+  - How the Money Flows
     - The Architecture
-      - A 1% Treaty Fund
-      - Your Decentralized Institutes of Health (DIH)
-      - Your Decentralized Framework for Drug Assessment (dFDA)
-    - How It Actually Works
-    - Why This Prevents Capture
-      - Decentralized alternative
-  - Projected Efficiency Gains
-    - Projected Performance Metrics (Theoretical)
-    - How the Efficiency Gains Could Compound
-      - What This Could Mean in Practice
+    - The Fund Flow
+    - How Allocation Works
+  - What DIH Outsources (and Why)
+  - How Campaigns Plug In
+    - Campaign Lifecycle
+    - Why This Matters
+  - Anti-Capture Design
+    - How DIH Resists Capture
+    - The "New FDA" Risk
+    - Transparent by Default
+  - Summary: The Coordination Layer
 
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
@@ -7522,6 +7534,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 555,519
+- Total words: 556,751
 - Orphaned files: 21
 - Paper configs: 11
