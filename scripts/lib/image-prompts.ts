@@ -13,51 +13,27 @@ export const RETRO_ACADEMIC_STYLE = `Use a retro black and white scientific illu
 export const BW_ACADEMIC_STYLE = `Use a black and white scientific illustration style.`;
 
 /**
- * Text legibility requirements based on Gemini 3 Pro Image best practices
- * Research: ~94% text accuracy achievable with explicit instructions
- */
-const TEXT_LEGIBILITY_RULES = `TEXT: Ensure all text is large and legible.`;
-
-/**
  * Generate OG image prompt (optimized for social media thumbnails)
+ * Simple approach: style + content only, let the model figure out the visualization
  */
 export function buildOgImagePrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
-  return `Please generate an engaging, simple social media image for the following content.
-${style}
-${TEXT_LEGIBILITY_RULES}
-
-Here is the content to illustrate:
----
-${content}
----`;
+  return `${style}\n\n${content}`;
 }
 
 /**
  * Generate infographic prompt (detailed, full-size vertical image)
+ * Simple approach: style + content only, let the model figure out the visualization
  */
 export function buildInfographicPrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
-  return `Please generate a SIMPLE infographic for the following content.
-${style}
-${TEXT_LEGIBILITY_RULES}
-
-Here is the content to illustrate:
----
-${content}
----`;
+  return `${style}\n\n${content}`;
 }
 
 /**
  * Generate presentation slide prompt (PowerPoint-optimized)
+ * Simple approach: style + content only, let the model figure out the visualization
  */
 export function buildSlidePrompt(content: string, style: string = RETRO_FUTURISTIC_STYLE): string {
-  return `Please generate a presentation slide to graphically illustrate the following content.
-${style}
-${TEXT_LEGIBILITY_RULES}
-
-Here is the content to illustrate:
----
-${content}
----`;
+  return `${style}\n\n${content}`;
 }
 
 /**

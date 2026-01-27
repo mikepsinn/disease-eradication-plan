@@ -42,7 +42,7 @@ import fs from 'fs/promises';
 import { existsSync, readdirSync, unlinkSync } from 'fs';
 import { generateGeminiFlashContent } from '../lib/llm';
 import { generateAndSaveImages } from '../lib/gemini-images';
-import { getCleanedContentForLLM, getBookFilesForProcessing, prepareContentForLLM, loadQuartoVariables, replaceQuartoVariables, cleanContentForImagePrompt } from '../lib/file-utils';
+import { getCleanedContentForLLM, getAllQmdFilesWithFrontmatter, prepareContentForLLM, loadQuartoVariables, replaceQuartoVariables, cleanContentForImagePrompt } from '../lib/file-utils';
 import { VisualStyles } from '../lib/image-prompts';
 
 dotenv.config();
@@ -627,9 +627,9 @@ async function main() {
   const options = { dryRun, force, useAcademicStyle, aspectRatio, limit };
 
   if (processAll) {
-    // Batch mode
-    console.log('\n[*] Scanning all book files...');
-    const allFiles = await getBookFilesForProcessing();
+    // Batch mode - process all QMD files with frontmatter (excludes figures/, includes/, templates/)
+    console.log('\n[*] Scanning all QMD files with frontmatter...');
+    const allFiles = await getAllQmdFilesWithFrontmatter();
     const qmdFiles = allFiles.filter(f => !f.endsWith('index.qmd'));
     console.log(`[OK] Found ${qmdFiles.length} QMD files\n`);
 

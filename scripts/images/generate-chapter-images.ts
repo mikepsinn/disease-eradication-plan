@@ -42,7 +42,7 @@ import matter from 'gray-matter';
 import { generateAndSaveImages, ImageMetadata } from '../lib/gemini-images';
 import { generateGeminiFlashContent, generateGeminiProContent } from '../lib/llm';
 import {
-  getBookFilesForProcessing,
+  getAllQmdFilesWithFrontmatter,
   stringifyWithFrontmatter,
   getCleanedContentForLLM,
   extractReferenceImages,
@@ -919,9 +919,9 @@ async function generateBookChapterImages(
   }
   console.log('='.repeat(60) + '\n');
 
-  // Get all book files
-  console.log('[*] Loading book files...');
-  const allBookFiles = await getBookFilesForProcessing();
+  // Get all QMD files with frontmatter (excludes figures/, includes/, templates/)
+  console.log('[*] Loading QMD files with frontmatter...');
+  const allBookFiles = await getAllQmdFilesWithFrontmatter();
 
   // Filter to specific file if provided
   let bookFiles: string[];
