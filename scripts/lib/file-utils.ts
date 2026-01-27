@@ -996,6 +996,54 @@ export function replaceQuartoVariables(
 }
 
 /**
+ * Clean content for AI image generation prompts
+ * More aggressive than cleanContentForLLM - strips all markup that doesn't convey visual meaning
+ * @param content Raw QMD/Markdown content
+ * @returns Clean plain text suitable for image generation prompts
+ */
+export function cleanContentForImagePrompt(content: string): string {
+  return content
+    // Strip heading markers (keep text)
+    .replace(/^#{1,6}\s+/gm, '')
+    // Strip markdown links, keep text: [text](url) -> text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    // Strip reference-style links: [text][ref] -> text
+    .replace(/\[([^\]]+)\]\[[^\]]*\]/g, '$1')
+    // Strip footnote references: [^1], [^note]
+    .replace(/\[\^[^\]]+\]/g, '')
+    // Strip footnote definitions: [^1]: definition...
+    .replace(/^\[\^[^\]]+\]:.*$/gm, '')
+    // Strip citations: [@smith2020]
+    .replace(/\[@[^\]]+\]/g, '')
+    // Strip Quarto cross-references: @fig-name, @tbl-name, @sec-name, @eq-name
+    .replace(/@(fig|tbl|sec|eq|lst|thm)-[\w-]+/g, '')
+    // Strip HTML comments
+    .replace(/<!--[\s\S]*?-->/g, '')
+    // Strip HTML tags, keep content
+    .replace(/<[^>]+>/g, '')
+    // Strip code blocks entirely (not useful for image gen)
+    .replace(/```[\s\S]*?```/g, '')
+    // Strip inline code backticks, keep text
+    .replace(/`([^`]+)`/g, '$1')
+    // Strip image references (we're generating images, not referencing them)
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+    // Strip callout markers but keep content
+    .replace(/^:::\s*\{[^}]*\}\s*$/gm, '')
+    .replace(/^:::\s*$/gm, '')
+    // Strip horizontal rules
+    .replace(/^[-*_]{3,}\s*$/gm, '')
+    // Strip Quarto shortcodes (includes, embeds, etc.) but NOT variables
+    .replace(/\{\{<\s*(?!var\s)[^>]+>\}\}/gi, '')
+    // Strip unresolved Quarto variables (already resolved ones are plain text)
+    .replace(/\{\{<\s*var\s+[^>]+>\}\}/gi, '')
+    // Strip blockquote markers but keep text
+    .replace(/^>\s*/gm, '')
+    // Collapse multiple blank lines
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+/**
  * Clean Quarto/Markdown content for LLM processing
  * Removes document markup, navigation, and structural elements to leave only core content
  * @param content Raw QMD content

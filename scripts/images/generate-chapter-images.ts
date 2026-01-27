@@ -2,28 +2,36 @@
  * Generate OG images, infographics, and slides for book chapters
  * Uses a lock file to prevent multiple instances from running simultaneously
  *
+ * Default behavior:
+ *   - Uses bw-academic style (black & white scientific illustration)
+ *   - Skips files where frontmatter `image` field points to an existing file
+ *   - Skips files that already have all generated images
+ *
  * Usage:
- *   npx tsx scripts/images/generate-chapters.ts [file-filter] [options]
+ *   npx tsx scripts/images/generate-chapter-images.ts [file-filter] [options]
  *
  * Options:
  *   --force                   Regenerate all images even if they already exist
  *   --analyze-first           Use Gemini Flash to analyze if image would be helpful before generating
- *   --academic-style          Generate in academic style (black & white) instead of retro
+ *   --style <name>            Style to use: bw-academic (default), retro-academic, retro-futuristic
  *   --with-reference-images   Extract existing images from QMD and use as reference for generation
  *   --outdated                Only regenerate images that are outdated (outputs detailed report of all files)
  *
  * Examples:
- *   # Force regenerate all images in academic style
- *   npx tsx scripts/images/generate-chapters.ts --force
+ *   # Generate missing images (bw-academic style by default)
+ *   npx tsx scripts/images/generate-chapter-images.ts
  *
  *   # Generate with intelligent analysis for economics.qmd
- *   npx tsx scripts/images/generate-chapters.ts economics --analyze-first --academic-style
+ *   npx tsx scripts/images/generate-chapter-images.ts economics --analyze-first
  *
- *   # Generate all missing images with analysis
- *   npx tsx scripts/images/generate-chapters.ts --analyze-first --academic-style
+ *   # Force regenerate all images
+ *   npx tsx scripts/images/generate-chapter-images.ts --force
  *
  *   # Regenerate only outdated images (shows detailed report first)
- *   npx tsx scripts/images/generate-chapters.ts --outdated
+ *   npx tsx scripts/images/generate-chapter-images.ts --outdated
+ *
+ *   # Use a different style
+ *   npx tsx scripts/images/generate-chapter-images.ts --style retro-futuristic
  */
 
 import dotenv from 'dotenv';
@@ -40,7 +48,8 @@ import {
   extractReferenceImages,
   getSiteUrl,
   loadQuartoVariables,
-  replaceQuartoVariables
+  replaceQuartoVariables,
+  cleanContentForImagePrompt
 } from '../lib/file-utils';
 import { ImagePrompts, VisualStyles, VisualStyleName } from '../lib/image-prompts';
 
@@ -534,12 +543,12 @@ Consider: Does this content have complex relationships, data, processes, or conc
 /**
  * Check if a file needs image regeneration (pre-scan without generating)
  * Returns info about whether regeneration is needed and why
- * NOTE: Only checks academic style since that's what we generate
  */
 async function checkIfNeedsRegeneration(
   filePath: string,
   forceRegenerate: boolean,
-  onlyOutdated: boolean
+  onlyOutdated: boolean,
+  styleName: VisualStyleName = 'bw-academic'
 ): Promise<{ needsRegeneration: boolean; reason: string }> {
   const fileName = path.basename(filePath, '.qmd');
 
@@ -556,13 +565,25 @@ async function checkIfNeedsRegeneration(
     return { needsRegeneration: false, reason: 'no title/description' };
   }
 
+  // Check if frontmatter already has a valid image
+  if (frontmatter.image && !forceRegenerate) {
+    // Resolve image path (handle leading slash)
+    const imagePath = frontmatter.image.startsWith('/')
+      ? path.join(process.cwd(), frontmatter.image)
+      : path.join(process.cwd(), frontmatter.image);
+
+    if (existsSync(imagePath)) {
+      return { needsRegeneration: false, reason: 'frontmatter image exists' };
+    }
+  }
+
   const relativePath = path.relative(process.cwd(), filePath);
   const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
-  // Only check academic style (that's what we generate)
-  const suffix = VisualStyles['bw-academic'].suffix;
+  // Check for the style being generated
+  const suffix = VisualStyles[styleName].suffix;
   const ogPath = path.join(ogOutputDir, `${fileName}-og${suffix}.jpg`);
   const infographicPath = path.join(infographicOutputDir, `${fileName}-infographic${suffix}.jpg`);
   const slidePath = path.join(slideOutputDir, `${fileName}-slide${suffix}.jpg`);
@@ -600,7 +621,7 @@ async function checkIfNeedsRegeneration(
  * @param forceRegenerate If true, regenerate images even if they already exist
  * @param includeReferenceImages If true, extract images from QMD and pass as reference images to Gemini
  * @param analyzeFirst If true, use Gemini Flash to analyze if image would be helpful before generating
- * @param useAcademicStyle If true, generate in academic style instead of retro
+ * @param styleName Visual style to use (default: bw-academic)
  * @param onlyOutdated If true, only regenerate if QMD is newer than existing images (git dates)
  * @param quietSkips If true, don't log skip messages (used when pre-scan already showed what will be processed)
  */
@@ -609,7 +630,7 @@ async function generateImageForFile(
   forceRegenerate = false,
   includeReferenceImages = false,
   analyzeFirst = false,
-  useAcademicStyle = false,
+  styleName: VisualStyleName = 'bw-academic',
   onlyOutdated = false,
   quietSkips = false
 ): Promise<void> {
@@ -629,12 +650,26 @@ async function generateImageForFile(
   const { data: frontmatter, content: body } = matter(fileContent);
 
   // Get cleaned content for LLM (replaces variables, strips markup)
-  const cleanedBody = await getCleanedContentForLLM(filePath);
+  // Then apply image-specific cleaning (strips links, footnotes, code blocks, etc.)
+  const llmCleanedBody = await getCleanedContentForLLM(filePath);
+  const cleanedBody = cleanContentForImagePrompt(llmCleanedBody);
 
   // Skip if no title or description
   if (!frontmatter.title && !frontmatter.description) {
     if (!quietSkips) console.log(`  [SKIP] No title/description`);
     return;
+  }
+
+  // Skip if frontmatter already has a valid image (unless forcing)
+  if (frontmatter.image && !forceRegenerate) {
+    const imagePath = frontmatter.image.startsWith('/')
+      ? path.join(process.cwd(), frontmatter.image)
+      : path.join(process.cwd(), frontmatter.image);
+
+    if (existsSync(imagePath)) {
+      if (!quietSkips) console.log(`  [SKIP] Frontmatter image exists: ${frontmatter.image}`);
+      return;
+    }
   }
 
   // Analyze first if requested
@@ -735,105 +770,84 @@ async function generateImageForFile(
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
-  // Determine which style to use (default to bw-academic only)
-  const stylesToGenerate = useAcademicStyle
-    ? { 'bw-academic': VisualStyles['bw-academic'] }
-    : { 'retro-futuristic': VisualStyles['retro-futuristic'] };
+  // Use the specified style
+  const styleConfig = VisualStyles[styleName];
+  const suffix = styleConfig.suffix;
 
-  // Generate images in selected styles
-  for (const [styleName, styleConfig] of Object.entries(stylesToGenerate)) {
-    const suffix = styleConfig.suffix;
+  // Check if this specific style version exists
+  const hasThisStyleOg = styleExistence[styleName]?.og ?? false;
+  const hasThisStyleInfographic = styleExistence[styleName]?.infographic ?? false;
+  const hasThisStyleSlide = styleExistence[styleName]?.slide ?? false;
 
-    // Check if this specific style version exists
-    const hasThisStyleOg = styleExistence[styleName].og;
-    const hasThisStyleInfographic = styleExistence[styleName].infographic;
-    const hasThisStyleSlide = styleExistence[styleName].slide;
+  // Generate OG image (optimized for social media thumbnails)
+  if (!hasThisStyleOg || forceRegenerate || onlyOutdated) {
+    console.log(`  Generating OG image...`);
+    const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
 
-    // Generate OG image (optimized for social media thumbnails)
-    if (!hasThisStyleOg || forceRegenerate || onlyOutdated) {
-      console.log(`  Generating OG image...`);
-      const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
+    const ogFiles = await generateAndSaveImages({
+      prompt: ogPrompt,
+      aspectRatio: ImagePrompts.og.aspectRatio,
+      outputDir: ogOutputDir,
+      filePrefix: `${fileName}-og${suffix}`,
+      format: 'jpg',
+      referenceImages,
+      metadata: getMetadataForType('og-image'),
+    });
 
-      const ogFiles = await generateAndSaveImages({
-        prompt: ogPrompt,
-        aspectRatio: ImagePrompts.og.aspectRatio,
-        outputDir: ogOutputDir,
-        filePrefix: `${fileName}-og${suffix}`,
-        format: 'jpg',
-        referenceImages,
-        metadata: getMetadataForType('og-image'),
-      });
-
-      if (ogFiles && ogFiles.length > 0) {
-        const imagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] OG: ${path.basename(imagePath)}`);
-
-        // Default to academic style for frontmatter
-        if (styleName === 'academic') {
-          ogImagePath = imagePath;
-        }
-      } else {
-        console.log(`  [WARN] OG image generation failed`);
-      }
+    if (ogFiles && ogFiles.length > 0) {
+      ogImagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] OG: ${path.basename(ogImagePath)}`);
+    } else {
+      console.log(`  [WARN] OG image generation failed`);
     }
+  }
 
-    // Generate infographic (detailed, full-size)
-    if (!hasThisStyleInfographic || forceRegenerate || onlyOutdated) {
-      console.log(`  Generating infographic...`);
-      const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
+  // Generate infographic (detailed, full-size)
+  if (!hasThisStyleInfographic || forceRegenerate || onlyOutdated) {
+    console.log(`  Generating infographic...`);
+    const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
 
-      const infographicFiles = await generateAndSaveImages({
-        prompt: infographicPrompt,
-        aspectRatio: ImagePrompts.infographic.aspectRatio,
-        outputDir: infographicOutputDir,
-        filePrefix: `${fileName}-infographic${suffix}`,
-        format: 'jpg',
-        referenceImages,
-        metadata: getMetadataForType('infographic'),
-      });
+    const infographicFiles = await generateAndSaveImages({
+      prompt: infographicPrompt,
+      aspectRatio: ImagePrompts.infographic.aspectRatio,
+      outputDir: infographicOutputDir,
+      filePrefix: `${fileName}-infographic${suffix}`,
+      format: 'jpg',
+      referenceImages,
+      metadata: getMetadataForType('infographic'),
+    });
 
-      if (infographicFiles && infographicFiles.length > 0) {
-        const imagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Infographic: ${path.basename(imagePath)}`);
-
-        // Use academic style (default)
-        if (styleName === 'academic') {
-          infographicImagePath = imagePath;
-        }
-      } else {
-        console.log(`  [WARN] Infographic generation failed`);
-      }
+    if (infographicFiles && infographicFiles.length > 0) {
+      infographicImagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] Infographic: ${path.basename(infographicImagePath)}`);
+    } else {
+      console.log(`  [WARN] Infographic generation failed`);
     }
+  }
 
-    // Generate slide (PowerPoint-optimized presentation)
-    if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
-      console.log(`  Generating slide...`);
-      console.log(`    Extracting key content for slide...`);
-      // Use baseMetadata which has variables already replaced
-      const slideContent = await extractSlideContent(cleanedBody, baseMetadata.title, baseMetadata.description);
-      const slidePrompt = ImagePrompts.slide.buildPrompt(slideContent, styleConfig.style);
+  // Generate slide (PowerPoint-optimized presentation)
+  if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
+    console.log(`  Generating slide...`);
+    console.log(`    Extracting key content for slide...`);
+    // Use baseMetadata which has variables already replaced
+    const slideContent = await extractSlideContent(cleanedBody, baseMetadata.title, baseMetadata.description);
+    const slidePrompt = ImagePrompts.slide.buildPrompt(slideContent, styleConfig.style);
 
-      const slideFiles = await generateAndSaveImages({
-        prompt: slidePrompt,
-        aspectRatio: ImagePrompts.slide.aspectRatio,
-        outputDir: slideOutputDir,
-        filePrefix: `${fileName}-slide${suffix}`,
-        format: 'jpg',
-        referenceImages,
-        metadata: getMetadataForType('slide'),
-      });
+    const slideFiles = await generateAndSaveImages({
+      prompt: slidePrompt,
+      aspectRatio: ImagePrompts.slide.aspectRatio,
+      outputDir: slideOutputDir,
+      filePrefix: `${fileName}-slide${suffix}`,
+      format: 'jpg',
+      referenceImages,
+      metadata: getMetadataForType('slide'),
+    });
 
-      if (slideFiles && slideFiles.length > 0) {
-        const imagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
-        console.log(`  [OK] Slide: ${path.basename(imagePath)}`);
-
-        // Default to academic style (slides are not typically embedded in QMD)
-        if (styleName === 'academic') {
-          slideImagePath = imagePath;
-        }
-      } else {
-        console.log(`  [WARN] Slide generation failed`);
-      }
+    if (slideFiles && slideFiles.length > 0) {
+      slideImagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] Slide: ${path.basename(slideImagePath)}`);
+    } else {
+      console.log(`  [WARN] Slide generation failed`);
     }
   }
 
@@ -890,7 +904,7 @@ async function generateBookChapterImages(
   fileFilter?: string,
   includeReferenceImages = false,
   analyzeFirst = false,
-  useAcademicStyle = false,
+  styleName: VisualStyleName = 'bw-academic',
   forceRegenerate = false,
   onlyOutdated = false
 ): Promise<void> {
@@ -899,9 +913,7 @@ async function generateBookChapterImages(
   if (analyzeFirst) {
     console.log('Mode: INTELLIGENT ANALYSIS (Gemini Flash decides)');
   }
-  if (useAcademicStyle) {
-    console.log('Style: ACADEMIC (black and white scientific)');
-  }
+  console.log(`Style: ${VisualStyles[styleName].description.toUpperCase()}${styleName === 'bw-academic' ? ' [default]' : ''}`);
   if (onlyOutdated) {
     console.log('Mode: OUTDATED ONLY (regenerate only if QMD is newer than images)');
   }
@@ -955,7 +967,8 @@ async function generateBookChapterImages(
     const { needsRegeneration, reason } = await checkIfNeedsRegeneration(
       filePath,
       forceRegenerate,
-      onlyOutdated
+      onlyOutdated,
+      styleName
     );
 
     if (needsRegeneration) {
@@ -1000,7 +1013,7 @@ async function generateBookChapterImages(
   for (const { path: filePath } of filesToProcess) {
     try {
       // Use quietSkips=true since we already showed the pre-scan summary
-      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, useAcademicStyle, onlyOutdated, true);
+      await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, styleName, onlyOutdated, true);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
@@ -1056,15 +1069,26 @@ async function main() {
   // Check for flags
   const includeReferenceImages = args.includes('--with-reference-images');
   const analyzeFirst = args.includes('--analyze-first');
-  const useAcademicStyle = args.includes('--academic-style');
   const forceRegenerate = args.includes('--force');
   const onlyOutdated = args.includes('--outdated');
 
+  // Parse --style <name> argument
+  let styleName: VisualStyleName = 'bw-academic';
+  const styleIndex = args.indexOf('--style');
+  if (styleIndex !== -1 && args[styleIndex + 1]) {
+    const requestedStyle = args[styleIndex + 1];
+    if (requestedStyle in VisualStyles) {
+      styleName = requestedStyle as VisualStyleName;
+    } else {
+      console.error(`ERROR: Unknown style "${requestedStyle}"`);
+      console.error(`Available styles: ${Object.keys(VisualStyles).join(', ')}`);
+      await releaseLock();
+      process.exit(1);
+    }
+  }
+
   if (analyzeFirst) {
     console.log('[INFO] Using Gemini Flash to analyze if images would be helpful before generating\n');
-  }
-  if (useAcademicStyle) {
-    console.log('[INFO] Generating in academic style (black and white scientific)\n');
   }
   if (forceRegenerate) {
     console.log('[INFO] FORCE MODE - Regenerating all images even if they already exist\n');
@@ -1095,7 +1119,7 @@ async function main() {
     console.log(`[INFO] Reference images from QMD files will be included in generation context\n`);
   }
 
-  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, useAcademicStyle, forceRegenerate, onlyOutdated);
+  await generateBookChapterImages(fileFilter, includeReferenceImages, analyzeFirst, styleName, forceRegenerate, onlyOutdated);
 }
 
 // Run the script

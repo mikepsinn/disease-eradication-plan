@@ -42,7 +42,7 @@ import fs from 'fs/promises';
 import { existsSync, readdirSync, unlinkSync } from 'fs';
 import { generateGeminiFlashContent } from '../lib/llm';
 import { generateAndSaveImages } from '../lib/gemini-images';
-import { getCleanedContentForLLM, getBookFilesForProcessing, prepareContentForLLM, loadQuartoVariables, replaceQuartoVariables } from '../lib/file-utils';
+import { getCleanedContentForLLM, getBookFilesForProcessing, prepareContentForLLM, loadQuartoVariables, replaceQuartoVariables, cleanContentForImagePrompt } from '../lib/file-utils';
 import { VisualStyles } from '../lib/image-prompts';
 
 dotenv.config();
@@ -311,8 +311,8 @@ async function generateAndInsertImage(
   const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
   const sectionSlug = toKebabCase(section.title);
 
-  // Strip markdown heading syntax (hash marks) but keep the title text
-  const contentForImage = resolvedContent.replace(/^#{1,6}\s+/, '');
+  // Clean content for image generation (strips markdown links, footnotes, code blocks, etc.)
+  const contentForImage = cleanContentForImagePrompt(resolvedContent);
 
   // Simple prompt: just style + full section content. Let the image model figure out the visualization.
   const imagePrompt = `${style.style}
