@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 20 parameters used in the analysis, organized by type:
+This appendix documents all 23 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 15
-- Calculated values: 4
-- Core definitions: 1
+- External sources (peer-reviewed): 16
+- Calculated values: 5
+- Core definitions: 2
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (4 parameters) • [External Data Sources](#sec-external) (15 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
+[Calculated Values](#sec-calculated) (5 parameters) • [External Data Sources](#sec-external) (16 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -235,6 +235,30 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bad_policy_cost_us_tier2_total.qmd >}}
+
+:::
+
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual funding from 1% of global military spending redirected to DIH
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*✓ High confidence*
 
 :::
 
@@ -578,6 +602,22 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 :::
 
+### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global military spending in 2024
+
+**Source**: [@global-military-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -603,6 +643,20 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+1% reduction in military spending/war costs from treaty
 
 #### Uncertainty Range
 
