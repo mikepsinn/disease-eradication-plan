@@ -6,6 +6,8 @@ published: false
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+![A Practical Framework for Piloting Aggregated Pairwise Preference Allocation](/assets/infographics/knowledge/appendix/wishocracy-implementation-guide-infographic-bw-academic.jpg)
+
 ::: {.callout-note}
 This implementation guide provides practical details for jurisdictions interested in piloting Wishocracy. For the theoretical foundations and mechanism design, see the [Wishocracy paper](https://wishocracy.warondisease.org).
 :::
@@ -17,6 +19,8 @@ We propose a three-phase pilot design that allows governments to test Wishocracy
 ## **1.1 Phase 1: Advisory Shadow Budget (Months 1-12)**
 
 **Objective:** Establish infrastructure and generate baseline data without affecting actual budget allocation.
+
+![A flowchart mapping the Phase 1 process from citizen participation through the APPA system to the final comparison between the generated shadow budget and the actual bureaucratic budget.](/assets/images/wishocracy-implementation-guide/wishocracy-implementation-guide-section-1-1-phase-1-advisory-shadow-budget-months-1-12-bw-academic.jpg)
 
 **Scope:** A defined portion of discretionary spending (e.g., $10-50 million in a city budget, or a specific department's allocation).
 
@@ -53,6 +57,8 @@ We propose a three-phase pilot design that allows governments to test Wishocracy
 
 **Objective:** Scale successful mechanisms to larger budget shares and additional jurisdictions.
 
+![A logic gate diagram illustrating the five specific quantitative and qualitative benchmarks required to trigger the four available Phase 3 expansion options.](/assets/images/wishocracy-implementation-guide/wishocracy-implementation-guide-section-1-3-phase-3-expanded-implementation-year-3-bw-academic.jpg)
+
 **Conditions for Advancement:**
 
 1. Participation exceeds 5% of eligible population
@@ -75,6 +81,8 @@ The Wishocracy platform requires:
 4. **Aggregation Backend:** Real-time preference aggregation with visualization. Standard statistical packages (R, Python) for analysis.
 5. **Transparency Layer:** Open-source code repository. Public API for data access. Independent audit capabilities.
 
+![A block diagram of the Wishocracy platform architecture illustrating the relationship between the user interface, identity verification, randomization engine, aggregation backend, and transparency layer.](/assets/images/wishocracy-implementation-guide/wishocracy-implementation-guide-section-2-1-platform-architecture-bw-academic.jpg)
+
 ## **2.2 Estimated Costs**
 
 Based on comparable government technology projects and participatory budgeting platform costs:
@@ -95,6 +103,8 @@ Based on comparable government technology projects and participatory budgeting p
 To ensure legitimacy and prevent capture, we recommend the following governance structure:
 
 **Independent Oversight Board:** A five-member board with staggered terms, including representatives from academia (mechanism design expertise), civil society (democratic participation advocacy), government (public administration), technology (security and systems), and citizen representatives (selected by sortition). The board certifies the aggregation algorithm, audits results, and investigates complaints.
+
+![A structural diagram mapping the five-member Independent Oversight Board composition and its relationship to transparency, appeals, and sunset mechanisms.](/assets/images/wishocracy-implementation-guide/wishocracy-implementation-guide-section-3-governance-and-oversight-structure-bw-academic.jpg)
 
 **Transparency Requirements:** All code is open-source. All aggregated (non-individual) preference data is public. Monthly reports on participation, demographics, and results. Annual independent security audit.
 

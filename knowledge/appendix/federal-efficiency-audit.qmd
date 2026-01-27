@@ -1,7 +1,7 @@
 ---
-title: 'Federal Resource Allocation Efficiency Audit'
-subtitle: 'A Systems Analysis of Recoverable Misallocation in U.S. Federal Spending'
-description: 'Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.'
+title: Federal Resource Allocation Efficiency Audit
+subtitle: A Systems Analysis of Recoverable Misallocation in U.S. Federal Spending
+description: Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
 abstract: |
   This report applies systems engineering methodology to quantify allocative inefficiency in U.S. federal spending. We define government efficiency as the rate of converting fiscal inputs into two terminal outcomes: after-tax real median income growth and median healthy life years. Analysis reveals the U.S. system operates at 52-67% efficiency versus 75-85% for OECD benchmark nations. Using Monte Carlo simulation across five subsystems (defense, healthcare, justice, regulatory/tax, and subsidies), we estimate an Aggregate Efficiency Gap of $1.85-3.47 trillion annually (P5-P95 range, mean $2.27T). Closing this gap to OECD median levels would recover approximately $1.5 trillion per year. The economic equivalent of current inefficiency equals 22.7 million QALYs or 165,700 VSL-equivalents annually.
 aliases:
@@ -47,6 +47,9 @@ image: /assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg
 
 This audit applies engineering systems analysis to federal resource allocation. The core finding:
 
+![A comparative bar chart showing the efficiency rating gap between the U.S. and OECD benchmarks, highlighting the $2.27 trillion annual efficiency gap and the equivalent human cost in quality-adjusted life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-executive-summary-bw-academic.jpg)
+
+
 | Metric | U.S. System | OECD Benchmark | Gap |
 |--------|-------------|----------------|-----|
 | **Efficiency Rating** | 52-67% | 75-85%^a^ | 18-33 pp |
@@ -63,9 +66,15 @@ The "human cost" figures are **economic equivalents**, not epidemiological morta
 
 The efficiency gap represents capital that could fund the 1% Treaty ($113B/year) thirteen times over, or 10x current global disease R&D spending.
 
+![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $113B 1% Treaty annual requirement and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
+
+
 ## System Specifications
 
 ### Designed Function
+
+![A flowchart illustrating the conversion process where fiscal inputs like tax revenue and compliance burdens are transformed by the federal government into terminal outcomes of median income growth and healthy life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-designed-function-bw-academic.jpg)
+
 
 The federal government's designed function is to convert fiscal inputs (tax revenue + compliance burden) into citizen welfare. We measure this conversion efficiency using two terminal outcomes:
 
@@ -87,6 +96,9 @@ These two outputs capture all upstream factors that matter:
 
 These are not omissions. They are *upstream variables* that manifest in terminal outcomes. Measuring income + health implicitly captures everything that affects citizen welfare.
 
+![A conceptual diagram showing how multiple upstream factors like security, environment, and education funnel into two terminal outcomes: Income and Healthy Life.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-why-two-metrics-are-sufficient-bw-academic.jpg)
+
+
 ### Input-Output Measurement
 
 **Total System Input:** ~$6.75 trillion annually
@@ -96,6 +108,9 @@ These are not omissions. They are *upstream variables* that manifest in terminal
 - Compliance burden (tax, regulatory): ~$550B [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
 **Efficiency Metric:** Output per dollar of input, benchmarked against OECD peer nations with comparable development levels.
+
+![A breakdown of the $6.75 trillion total system input, showing the proportional distribution of federal revenue, state and local mandates, and regulatory compliance burdens.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-input-output-measurement-bw-academic.jpg)
+
 
 ## Methodology
 
@@ -121,6 +136,9 @@ $$\text{AEG} = \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k}
 
 We employ Monte Carlo simulation to generate confidence intervals, recognizing uncertainty in loss estimates (particularly where data opacity exists, such as the DoD's inability to audit 61% of assets).
 
+![A structural diagram showing the seven categories of efficiency loss aggregating into the AEG, with visual indicators for the high uncertainty (61%) addressed by Monte Carlo simulation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-aggregate-efficiency-gap-calculation-bw-academic.jpg)
+
+
 ::: {.callout-note}
 ## Methodological Caveat: Overlap and Double-Counting
 While subsystem losses are estimated independently, some interdependence exists. For example, housing cost burdens affect health outcomes via stress; incarceration costs overlap with drug enforcement spending. This analysis treats categories as largely additive, which may modestly overstate total losses. However, excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset this bias.
@@ -128,12 +146,18 @@ While subsystem losses are estimated independently, some interdependence exists.
 
 ### Valuation Standards
 
+![A comparison showing the massive scale difference between the $13.7 million Value of Statistical Life (VSL) and the $50,000–$100,000 Quality-Adjusted Life Year (QALY) standards.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-valuation-standards-bw-academic.jpg)
+
+
 - **Value of Statistical Life (VSL):** $13.7 million (US Department of Transportation) [@dot-vsl-2024]
 - **Quality-Adjusted Life Year (QALY):** $50,000-$100,000 (medical cost-effectiveness standard) [@qaly-threshold-history]
 
 ## Subsystem Audit: Defense
 
 The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
+
+![A comparison of the $900 billion U.S. defense budget against the combined military expenditures of the next nine highest-spending nations.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
+
 
 ### Loss Category: Leakage (Audit Failure)
 

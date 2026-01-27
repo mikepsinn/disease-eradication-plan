@@ -29,6 +29,9 @@ Nobody at the FDA chose this. They're executing the law Congress wrote. But the 
 
 Modern medicine saves about **{{< var baseline_lives_saved_annual >}} million lives a year**. The current framework makes those cures wait {{< var efficacy_lag_years >}} after they're proven safe. During those {{< var efficacy_lag_years >}}, the people who needed them die.
 
+![A comparative visualization of deaths caused by regulatory delays, contrasting conservative estimates against reality and scaling the impact by the number of daily 9/11 equivalents.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-line-item-1-deaths-bw-academic.jpg)
+
+
 | | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
 | **Per Year** | 4,000,000 | 12,000,000 |
@@ -43,6 +46,9 @@ Nobody invades anyone over this because regulatory frameworks don't have oil res
 
 Economists invented a term for this: **DALYs** (Disability-Adjusted Life Years). For every person who dies, roughly **20 years** of healthy life disappear. Either they died young, or they spent years suffering first. Usually both.
 
+![A comparative bar chart showing the scale of human suffering in hours per year, contrasting conservative estimates against reality.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-line-item-2-suffering-bw-academic.jpg)
+
+
 | | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
 | **Per Year** | 350 Billion hours of pain | 700 Billion hours of pain |
@@ -55,6 +61,9 @@ Every day, humanity collectively suffers **1 billion hours** of preventable pain
 *How much wealth evaporates while people die and suffer?*
 
 Healthy people work, create, build, and care for families. Dead people don't. Economists value one year of healthy life at **{{< var standard_economic_qaly_value_usd >}}** (this is conservative).
+
+![A comparison bar chart showing the massive disparity between conservative and realistic estimates of daily and annual wealth loss, contrasted against global benchmarks like China's GDP.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-line-item-3-money-bw-academic.jpg)
+
 
 | | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
@@ -79,6 +88,9 @@ The efficacy delay costs more per day than any terrorist attack in history. Ever
 
 **Payment method:** Automatic. You don't get a choice.
 
+![An infographic illustrating the daily human and financial toll of efficacy delay, highlighting 32,000 deaths, 1.9 billion hours of suffering, and $32 billion in economic loss.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-invoice-the-cost-of-efficacy-delay-bw-academic.jpg)
+
+
 **Frequency:** Daily. Forever. Until the law changes.
 :::
 
@@ -89,6 +101,9 @@ The efficacy delay costs more per day than any terrorist attack in history. Ever
 3. **The law says:** "Wait. We need to check if the bus is effective at being a bus. This will take {{< var efficacy_lag_years >}}."
 4. **Meanwhile:** The bus drives off a cliff. Every day.
 5. **The question:** Why not check the bus while driving it?
+
+![A comparison between the current 8.2-year regulatory waiting period (4.85-11.5 year range) and a proposed decentralized framework for concurrent drug assessment.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-the-bus-analogy-bw-academic.jpg)
+
 
 That's your plan. It's a decentralized framework for drug assessment. Check the bus while driving it. Stop driving it off cliffs.
 
@@ -134,11 +149,17 @@ $$D_{total} = M_{daily} \times T_{lag} \times \text{Avoidable\%}$$
 2.  We delayed the solution to these problems by **{{< var efficacy_lag_years >}}**.
 3.  That means we let **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} people** die who would have been saved if we had arrived at the finish line on time.
 
+![A visual breakdown of the calculation showing how 150,000 daily deaths accumulate over an 8.2-year delay to reach 416 million total deaths, including confidence interval ranges.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-step-by-step-for-the-5th-grader-bw-academic.jpg)
+
+
 #### THE SUFFERING EQUATION (DALYs)
 
 *How much life was stolen?*
 
 In this scenario, we don't just calculate "years lost to age 80." If all disease is cured, human lifespan expands significantly (let's conservatively estimate to **100 years** healthy life).
+
+![A comparison of standard life expectancy benchmarks versus a theoretical 100-year healthy lifespan to illustrate the 'stolen' years of life.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-the-suffering-equation-dalys-bw-academic.jpg)
+
 
 ##### The Variables
 
@@ -189,6 +210,9 @@ $$E_{cost} = H_{lost} \times V_{year}$$
 #### SUMMARY: THE "UPPER BOUND" DAILY RECEIPT
 
 If we assume we *will* eventually cure all disease, but the law requires us to wait {{< var efficacy_lag_years >}} extra years for it, this is the bill we pay **every single day**.
+
+![A high-impact dashboard or invoice visualization showing the staggering human and financial costs of a disease-cure delay, including daily deaths, total lives lost, and quadrillion-dollar economic impact alongside their confidence intervals.](/assets/images/regulatory-mortality-analysis-for-humans/regulatory-mortality-analysis-for-humans-section-summary-the-upper-bound-daily-receipt-bw-academic.jpg)
+
 
 **INVOICE: THE COST OF DELAYING THE CURE**
 

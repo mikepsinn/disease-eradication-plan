@@ -1,6 +1,6 @@
 ---
-title: Methodology, Parameters, and Calculations
-description: Parameter definitions, formulas, uncertainty ranges, and data sources.
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
 keywords:
   - health economics methodology
   - clinical trial cost analysis
@@ -20,7 +20,6 @@ format:
     toc-depth: 3
     number-sections: false
     code-fold: true
-image: /assets/og-images/knowledge/appendix/parameters-and-calculations-federal-efficiency-audit-og-bw-academic.jpg
 ---
 
 ## Overview {#sec-parameters-and-calculations}
@@ -34,6 +33,7 @@ This appendix documents all 20 parameters used in the analysis, organized by typ
 ### Quick Navigation
 
 [Calculated Values](#sec-calculated) (4 parameters) • [External Data Sources](#sec-external) (15 parameters) • [Core Definitions](#sec-definitions) (1 parameters)
+
 
 ## Calculated Values {#sec-calculated}
 
@@ -611,6 +611,7 @@ Discount factor to account for overlap between bad policy cost categories. Fossi
 *Core definition*
 
 :::
+
 
 ```{=html}
 <script>

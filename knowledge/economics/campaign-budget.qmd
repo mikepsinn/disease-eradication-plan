@@ -46,6 +46,8 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 The $1B target is overkill-by-design. The actual cost to get governments to sign a piece of paper? Historically, ~$90–140 million.
 
+![A comparison of the $1 billion target budget against historical diplomatic costs, such as the Ottawa Treaty ($15M) and the Nuclear Ban Treaty ($10M), illustrating the massive scale difference.](/assets/images/campaign-budget/campaign-budget-section-the-minimum-viable-budget-bw-academic.jpg)
+
 The Ottawa Treaty (banning landmines) cost $15M in diplomatic paperwork. The Nuclear Ban Treaty: $10M. Countries love signing papers - it makes them look good without doing anything.
 
 See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd) for the full breakdown of why getting signatures is cheap and implementation is where the real money goes.
@@ -57,6 +59,8 @@ See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd) for
 #### Paying Humans to Click
 
 The strategy: Generate referral links, pay people $0.25-0.30 per verified vote, let greed do the marketing.
+
+![A cost-efficiency breakdown comparing the $0.50 blended cost of digital verified voting against the $14.87 traditional petition average, alongside a component chart of referral, verification, and overhead expenses.](/assets/images/campaign-budget/campaign-budget-section-paying-humans-to-click-bw-academic.jpg)
 
 **What $0.50/vote actually buys** (blended cost):
 
@@ -77,7 +81,6 @@ Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedi
 
 **The Clicking Platform**: {{< var campaign_platform_development >}}
 
-
 - Biometric verification (one vote per meat body)
 - 50+ languages (AI translates, humans check for accidental declarations of war)
 - Mobile-first (humans glued to phones anyway)
@@ -92,6 +95,8 @@ When you're paying people real money ($0.25-0.30) for verified referrals, they b
 - Micro-influencers (people trust strangers with 10K followers more than experts)
 
 Alternative: Skip this, increase referral payment to $0.35-0.40, let economics drive virality. PayPal and Dropbox proved you don't need marketing when you're paying real money.
+
+![A breakdown of the project budget allocations for technology, marketing, and community organizing, alongside the tiered referral reward structure ranging from $0.10 to $0.50 per vote.](/assets/images/campaign-budget/campaign-budget-section-payment-structure-bw-academic.jpg)
 
 **Community Organizing** (optional acceleration): {{< var campaign_community_organizing >}}
 
@@ -108,6 +113,8 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 **Total Budget: {{< var treaty_campaign_viral_referendum_base_case >}}**
 
 **The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But to hit {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var global_population_activism_threshold_pct >}} of global population), you need skeptics and the actively resistant.
+
+![A visualization of the tiered cost-per-vote based on the Diffusion of Innovations curve, compared against the significantly higher costs of traditional petition gathering and digital advertising.](/assets/images/campaign-budget/campaign-budget-section-budget-viral-referendum-with-tiered-incentives-base-case-scenario-bw-academic.jpg)
 
 **Diffusion of innovations theory** (Rogers, 2003) predicts increasing marginal costs:
 
@@ -146,6 +153,8 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 ### Professional (Legal) Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
+![A breakdown of the professional lobbying budget and process, illustrating the distribution of funds across regional targets, defense industry co-option, and AI-driven political influence strategies.](/assets/images/campaign-budget/campaign-budget-section-professional-legal-bribery-part-of-var-treaty-campaign-budget-lobbying-lobbying-budget-bw-academic.jpg)
+
 **Lobbying (AI-Targeted)**: $150M
 
 Here's how professional democracy corruption works:
@@ -177,6 +186,8 @@ Defense lobbyists currently work for whoever pays them. So you pay them more:
 - Protect treaty supporters (politics is mean, apparently)
 
 ### Technology (part of {{< var treaty_campaign_viral_referendum_base_case >}} Referendum Budget)
+
+![Breakdown of the $250M technology budget across the dFDA framework, Wishocracy platform, pilot programs, and cloud infrastructure.](/assets/images/campaign-budget/campaign-budget-section-technology-part-of-var-treaty-campaign-viral-referendum-base-case-referendum-budget-bw-academic.jpg)
 
 **Decentralized framework for drug assessment (dFDA)**: $120M
 
@@ -213,6 +224,8 @@ Computers that store everything:
 
 ### Lawyers (AI-Assisted) (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
+![A breakdown of the $100 million AI-assisted legal budget across three categories, displaying the allocated amounts and their respective 95% confidence intervals.](/assets/images/campaign-budget/campaign-budget-section-lawyers-ai-assisted-part-of-var-treaty-campaign-budget-lobbying-lobbying-budget-bw-academic.jpg)
+
 **Legal Work**: {{< var campaign_legal_work >}}
 
 - AI drafts everything (500 pages in 5 minutes)
@@ -233,6 +246,8 @@ Computers that store everything:
 - Whistleblower protection (pay people to report your own violations before others do)
 
 ### Co-opting the Opposition (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
+
+![A horizontal bar chart showing the allocation of funds across defense, healthcare, tech, and endorsements, including the 95% confidence intervals for each budget category.](/assets/images/campaign-budget/campaign-budget-section-co-opting-the-opposition-part-of-var-treaty-campaign-budget-lobbying-lobbying-budget-bw-academic.jpg)
 
 **Defense Industry Conversion**: {{< var campaign_defense_conversion >}}
 
@@ -263,6 +278,8 @@ Turn enemies into allies through superior returns:
 
 ### Operations (overhead across all categories)
 
+![A comparison of operational budget allocations for Core Team, Infrastructure, and Contingency funds, showing both the baseline estimates and their respective confidence intervals.](/assets/images/campaign-budget/campaign-budget-section-operations-overhead-across-all-categories-bw-academic.jpg)
+
 **Core Team**: {{< var campaign_staff_budget >}}
 
 - 20-30 leaders (AI-augmented means fewer humans needed)
@@ -281,6 +298,8 @@ Papers for when plans fail (plans always fail somewhere)
 
 ### Post-Victory Transition: {{< var treaty_campaign_budget_reserve >}}
 
+![A financial breakdown of the $100M post-victory transition budget, illustrating the primary allocations for treaty implementation and scaling preparation with their respective confidence intervals.](/assets/images/campaign-budget/campaign-budget-section-post-victory-transition-var-treaty-campaign-budget-reserve-bw-academic.jpg)
+
 **Treaty Implementation**: {{< var campaign_treaty_implementation >}}
 
 - Help countries implement what they signed (signing is easy, implementing is hard)
@@ -294,6 +313,8 @@ Papers for when plans fail (plans always fail somewhere)
 - Governance launch (democratic system that actually works)
 
 ## Timeline
+
+![A five-year project timeline visualizing the rapid scaling of budget, voter participation, and treaty adoption from the proof-of-concept phase to global implementation.](/assets/images/campaign-budget/campaign-budget-section-timeline-bw-academic.jpg)
 
 **Year 1** ({{< var campaign_phase1_budget >}}): Proof it works
 
@@ -335,7 +356,11 @@ When everyone profits from cooperation, resistance becomes unprofitable:
 
 Capitalism optimizing for the right thing by accident.
 
+![A comparison of AI-driven campaign ROI versus traditional advertising costs, alongside a stakeholder map showing how the incentive structure benefits lobbyists, industry, and the public.](/assets/images/campaign-budget/campaign-budget-section-why-this-works-bw-academic.jpg)
+
 ## Returns
+
+![A visualization comparing a $1 investment against the massive scale of $27.2 billion in annual revenue and the 84.8 million-to-one societal value ratio.](/assets/images/campaign-budget/campaign-budget-section-returns-bw-academic.jpg)
 
 **Per $1 invested**:
 
@@ -348,6 +373,8 @@ Capitalism optimizing for the right thing by accident.
 - {{< var victory_bond_annual_return_pct >}} annual returns until the sun explodes
 
 ## Transparency
+
+![A transparency architecture diagram showing how blockchain data, multi-sig treasury movements, and independent audits converge into a public live dashboard for community oversight.](/assets/images/campaign-budget/campaign-budget-section-transparency-bw-academic.jpg)
 
 **Live Dashboard** (WarOnDisease.org/budget):
 

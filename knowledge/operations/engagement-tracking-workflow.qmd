@@ -1,9 +1,9 @@
 ---
 title: Automated Engagement Tracking Workflow
-description: CRM system using Airtable for automated lead capture, classification, nurturing, and conversion tracking.
+description: CRM system for automated lead capture, classification, nurturing, and conversion tracking.
+image: /assets/og-images/knowledge/operations/engagement-tracking-workflow-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 
 **Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
 **System:** Database + Email + Calendar + Automation
