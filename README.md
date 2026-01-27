@@ -66,11 +66,11 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 > The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
 
 
-### [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](https://optimocracy.warondisease.org)
+### [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
 
-[![Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
+[![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align spending with citizen welfare.
+> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
 
 
 ### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)

@@ -768,7 +768,7 @@ jobs:
 
 
   build-optimocracy:
-    name: "Build Optimocracy: Algorithmic Governance Through Metric"
+    name: "Build Optimocracy: Evidence-Based Governance Through Out"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -816,12 +816,12 @@ jobs:
 
         run: quarto install tinytex
 
-      - name: "Render Build Optimocracy: Algorithmic Governance Through Metric"
+      - name: "Render Build Optimocracy: Evidence-Based Governance Through Out"
         run: python scripts/render-quarto.py optimocracy
         timeout-minutes: 30
 
 
-      - name: "Deploy Build Optimocracy: Algorithmic Governance Through Metric to Netlify (immediate)"
+      - name: "Deploy Build Optimocracy: Evidence-Based Governance Through Out to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
