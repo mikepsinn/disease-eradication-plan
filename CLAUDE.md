@@ -1,5 +1,4 @@
-<!-- AI INSTRUCTIONS: Keep all additions to this file concise, information-dense, and general.
-     Avoid verbose explanations. Use tables for rules. One example per concept max. -->
+<!-- AI: CLAUDE.md edits must be minimal. Tables > prose. No examples unless essential. -->
 
 ## Project Overview
 
@@ -50,6 +49,24 @@ Avoid Unicode characters in print statements. Use ASCII: `->`, `WARNING:`, `[OK]
 ### Error Handling
 
 **NEVER add try/catch blocks** unless absolutely necessary. Let errors propagate and crash loudly.
+
+### Citation Rules (references.bib)
+
+**NEVER add citations without verification:**
+
+1. **WebSearch first** - Find the actual source URL
+2. **WebFetch second** - Verify the URL contains the claimed information
+3. **Extract exact quote** - Copy relevant text into `abstract` field
+4. **Include URL** - Every entry needs `url = {...}` with verified link
+5. **Add urldate** - Record when you accessed it: `urldate = {2026-01-27}`
+
+| Step | Tool | Purpose |
+|------|------|---------|
+| 1 | WebSearch | Find authoritative source |
+| 2 | WebFetch | Verify content matches claim |
+| 3 | Edit | Add BibTeX with verified URL and quote |
+
+**Hookify blocks references.bib edits** until you confirm URL verification. Do NOT fabricate URLs or abstracts.
 
 ## Parameter and Variable System
 

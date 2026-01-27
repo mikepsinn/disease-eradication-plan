@@ -2,6 +2,7 @@
 name: require-citation-urls
 enabled: true
 event: file
+action: block
 conditions:
   - field: file_path
     operator: ends_with
@@ -11,7 +12,7 @@ conditions:
     pattern: "@(article|misc|techreport|online|webpage|inproceedings)"
 ---
 
-⚠️ **Citation URL Requirement**
+🛑 **BLOCKED: Citation URL Verification Required**
 
 You're adding a citation to references.bib. **Every citation should have a verifiable URL.**
 

@@ -677,6 +677,7 @@ class ReferenceID(str, Enum):
     PATRICK_SOON_SHIONG_CANCER_RESEARCH_FOCUS = "patrick-soon-shiong-cancer-research-focus"
     PATRIOT_ACT_PASSAGE = "patriot-act-passage"
     PAYPAL_DROPBOX_REFERRAL_CASE_STUDIES = "paypal-dropbox-referral-case-studies"
+    PCORI_COST_EFFECTIVENESS_PROHIBITION = "pcori-cost-effectiveness-prohibition"
     PDUFA_USER_FEES = "pdufa-user-fees"
     PE_MILITARY_RETURNS = "pe-military-returns"
     PEARL_2009_CAUSALITY = "pearl-2009-causality"

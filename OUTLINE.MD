@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 347,415
+**Files:** 86 | **Words:** 347,585
 
 #### index.qmd
 **Title:** Start Here
@@ -2247,9 +2247,10 @@
 #### knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficent pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 1,694 words | 256 lines
+**Stats:** 1,864 words | 270 lines
 
   - The Allocation Scandal
+  - Why This Allocation Exists
   - The Efficiency Gap: A Tale of Two Trials
     - RECOVER Initiative (NIH Approach)
     - RECOVERY Trial (UK Approach)
@@ -7521,6 +7522,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 555,349
+- Total words: 555,519
 - Orphaned files: 21
 - Paper configs: 11
