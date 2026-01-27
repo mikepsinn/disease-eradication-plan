@@ -49,7 +49,6 @@ This audit applies engineering systems analysis to federal resource allocation. 
 
 ![A comparative bar chart showing the efficiency rating gap between the U.S. and OECD benchmarks, highlighting the $2.27 trillion annual efficiency gap and the equivalent human cost in quality-adjusted life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-executive-summary-bw-academic.jpg)
 
-
 | Metric | U.S. System | OECD Benchmark | Gap |
 |--------|-------------|----------------|-----|
 | **Efficiency Rating** | 52-67% | 75-85%^a^ | 18-33 pp |
@@ -68,13 +67,11 @@ The efficiency gap represents capital that could fund the 1% Treaty ($113B/year)
 
 ![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $113B 1% Treaty annual requirement and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
-
 ## System Specifications
 
 ### Designed Function
 
 ![A flowchart illustrating the conversion process where fiscal inputs like tax revenue and compliance burdens are transformed by the federal government into terminal outcomes of median income growth and healthy life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-designed-function-bw-academic.jpg)
-
 
 The federal government's designed function is to convert fiscal inputs (tax revenue + compliance burden) into citizen welfare. We measure this conversion efficiency using two terminal outcomes:
 
@@ -98,7 +95,6 @@ These are not omissions. They are *upstream variables* that manifest in terminal
 
 ![A conceptual diagram showing how multiple upstream factors like security, environment, and education funnel into two terminal outcomes: Income and Healthy Life.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-why-two-metrics-are-sufficient-bw-academic.jpg)
 
-
 ### Input-Output Measurement
 
 **Total System Input:** ~$6.75 trillion annually
@@ -110,7 +106,6 @@ These are not omissions. They are *upstream variables* that manifest in terminal
 **Efficiency Metric:** Output per dollar of input, benchmarked against OECD peer nations with comparable development levels.
 
 ![A breakdown of the $6.75 trillion total system input, showing the proportional distribution of federal revenue, state and local mandates, and regulatory compliance burdens.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-input-output-measurement-bw-academic.jpg)
-
 
 ## Methodology
 
@@ -138,7 +133,6 @@ We employ Monte Carlo simulation to generate confidence intervals, recognizing u
 
 ![A structural diagram showing the seven categories of efficiency loss aggregating into the AEG, with visual indicators for the high uncertainty (61%) addressed by Monte Carlo simulation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-aggregate-efficiency-gap-calculation-bw-academic.jpg)
 
-
 ::: {.callout-note}
 ## Methodological Caveat: Overlap and Double-Counting
 While subsystem losses are estimated independently, some interdependence exists. For example, housing cost burdens affect health outcomes via stress; incarceration costs overlap with drug enforcement spending. This analysis treats categories as largely additive, which may modestly overstate total losses. However, excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset this bias.
@@ -147,7 +141,6 @@ While subsystem losses are estimated independently, some interdependence exists.
 ### Valuation Standards
 
 ![A comparison showing the massive scale difference between the $13.7 million Value of Statistical Life (VSL) and the $50,000–$100,000 Quality-Adjusted Life Year (QALY) standards.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-valuation-standards-bw-academic.jpg)
-
 
 - **Value of Statistical Life (VSL):** $13.7 million (US Department of Transportation) [@dot-vsl-2024]
 - **Quality-Adjusted Life Year (QALY):** $50,000-$100,000 (medical cost-effectiveness standard) [@qaly-threshold-history]
@@ -158,10 +151,11 @@ The Department of Defense operates as the largest discretionary expenditure node
 
 ![A comparison of the $900 billion U.S. defense budget against the combined military expenditures of the next nine highest-spending nations.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
 
-
 ### Loss Category: Leakage (Audit Failure)
 
 In November 2024, the Pentagon failed its seventh consecutive audit [@pentagon-audit-2024]. The DoD was unable to account for 61-63% of its $3.8 trillion in assets [@audit-pentagon-act-2023], approximately $2.5 trillion in property, equipment, and inventory with unknown status.
+
+![A breakdown of the Department of Defense's $3.8 trillion asset pool showing the 61-63% ($2.5 trillion) portion that is currently unaccounted for, leading to an estimated $125 billion in inventory shrinkage.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-audit-failure-bw-academic.jpg)
 
 The mechanism: fragmented logistics systems where contractors record inventory data, creating principal-agent misalignment [@pentagon-assets-unaccounted]. Without verified asset ledgers, the DoD regularly purchases parts it already owns but cannot locate.
 
@@ -177,9 +171,13 @@ The F-35 program exemplifies "concurrency": producing aircraft before design com
 
 **Estimated conversion inefficiency:** $15-20 billion annually in defect remediation and unflown flight hours.
 
+![A comparison of rising F-35 lifetime sustainment costs against declining availability rates, highlighting the $15-20 billion annual loss from conversion inefficiency.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-conversion-inefficiency-f-35-program-bw-academic.jpg)
+
 ### Loss Category: Idle/Standby (Overseas Basing)
 
 The U.S. maintains approximately 750 military bases in over 80 countries [@npp-military-bases-2025], architecture designed for 1945 geopolitics.
+
+![A bar chart comparing the current $55-80 billion annual cost of overseas base maintenance against the projected $75 billion in potential annual savings from transitioning to an Active Denial strategy.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-standby-overseas-basing-bw-academic.jpg)
 
 - Direct base maintenance: $55-80 billion annually [@npp-military-bases-2025]
 - Personnel premium: $10,000-$40,000 per person above domestic stationing [@overseas-bases-facts]
@@ -196,6 +194,8 @@ The "Overmatch" doctrine requires dominance in every theater simultaneously, cre
 
 Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20 billion annually [@quincy-defense-efficiency-2024].
 
+![A comparison of the projected $965 billion defense budget against the potential $15-20 billion in annual savings from strategic nuclear cuts.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-strategic-misalignment-bw-academic.jpg)
+
 ### Defense Subsystem Summary
 
 | Loss Category | Low Estimate | Mean | High Estimate |
@@ -210,6 +210,8 @@ Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20
 
 U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
 
+![A comparison of healthcare spending as a percentage of GDP between the U.S. (18%) and peer nations (10-11%), highlighting the financial discrepancy linked to administrative overhead.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
+
 ### Loss Category: Friction (Administrative Overhead)
 
 The U.S. spends approximately $1,000 more per person on administrative costs than the average wealthy OECD country [@pgpf-healthcare-comparison]. With 335 million population:
@@ -218,9 +220,13 @@ The U.S. spends approximately $1,000 more per person on administrative costs tha
 
 A 2020 study found U.S. administrative spending at 34.2% of health expenditures versus 17% in Canada [@healthcare-admin-costs-2020]. This overhead does not improve outcomes. It diverts resources from care to paperwork.
 
+![Comparison of healthcare administrative costs showing the U.S. spending 34.2% of expenditures on overhead versus 17% in Canada, alongside the resulting $335 billion in annual excess spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-administrative-overhead-bw-academic.jpg)
+
 ### Loss Category: Leakage (Medicare Advantage Upcoding)
 
 Medicare Advantage functions as a subsidy mechanism via "upcoding": making patients appear sicker than they are to increase capitated payments.
+
+![A comparison of estimated Medicare Advantage overpayments, highlighting the $83 billion annual cost for 2024 against a $1.2 trillion ten-year projection and $7.5 billion in specific fraud categories.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-medicare-advantage-upcoding-bw-academic.jpg)
 
 - MedPAC estimate: $83 billion overpayment in 2024 [@usc-medpac-ma-2024]
 - 10-year projection: $1.2 trillion cumulative overpayment [@crfb-ma-overpayment]
@@ -229,6 +235,8 @@ Medicare Advantage functions as a subsidy mechanism via "upcoding": making patie
 ### Loss Category: Leakage (Improper Payments)
 
 GAO estimates $162 billion in improper payments government-wide in 2024, with 75% concentrated in Medicare and Medicaid [@gao-improper-payments-2024].
+
+![A comparison of government improper payment rates, specifically highlighting the 75% concentration in Medicare and Medicaid against significantly lower private sector fraud benchmarks.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-improper-payments-bw-academic.jpg)
 
 - Medicare Fee-for-Service: ~7.4% improper payment rate
 - Medicaid: often higher
@@ -251,6 +259,8 @@ The drug prohibition regime and resulting incarceration system represent sustain
 ### Loss Category: Conversion Inefficiency (Drug Prohibition)
 
 The federal drug control budget for 2024: nearly $45 billion [@ncdas-drug-statistics-2025]. Total expenditure since 1971: over $1 trillion [@cap-drug-war-numbers].
+
+![A comparison of massive federal drug control spending ($1 trillion cumulative, $45 billion annual) against stagnant usage rates and the shift toward higher-potency drugs like fentanyl under the Iron Law of Prohibition.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-conversion-inefficiency-drug-prohibition-bw-academic.jpg)
 
 **Outcome:** Drug use rates unchanged or increased [@nida-drug-trends]. The market has innovated toward more potent compounds (fentanyl). This is a direct consequence of the "Iron Law of Prohibition," where interdiction shifts production to higher-value-per-weight products.
 
@@ -289,6 +299,9 @@ This mechanism incentivizes revenue-generating enforcement over public safety, i
 ## Subsystem Audit: Regulatory and Tax Compliance
 
 The compliance burden (time and resources consumed meeting federal requirements) represents a substantial unrecorded subtraction from national output.
+
+![A comparison of the escalating economic impacts of mass incarceration, contrasting the $80.7 billion direct public cost against the $1 trillion comprehensive social and economic burden.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
+
 
 ### Loss Category: Friction (Tax Compliance)
 
@@ -518,4 +531,3 @@ Including these factors would increase the efficiency gap estimate substantially
 
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
 :::
-
