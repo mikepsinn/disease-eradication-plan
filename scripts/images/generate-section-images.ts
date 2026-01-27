@@ -64,6 +64,7 @@ interface ImageRecommendation {
   imageType: 'diagram' | 'chart' | 'infographic' | 'flowchart' | null;
   caption: string;          // Natural caption for alt text
   reasoning: string;        // Why this image is/isn't needed
+  rejectionRule?: string;   // Which automatic rejection applied, if any
 }
 
 /**
@@ -118,6 +119,36 @@ function detectVisualContent(content: string): string | null {
   }
 
   return null;
+}
+
+/**
+ * Detect if section contains markdown tables (tables ARE visualizations)
+ */
+function hasTable(content: string): boolean {
+  // Markdown tables: |---|---| pattern with at least 2 columns
+  return /\|[^|]+\|[^|]+\|/.test(content) && /\|-+\|/.test(content);
+}
+
+/**
+ * Detect if section is primarily mathematical (LaTeX equations)
+ * Formulas are self-explanatory and don't need generated images
+ */
+function hasMathEquations(content: string): boolean {
+  // Display math: $$ ... $$ or \[ ... \]
+  const displayMath = /\$\$[\s\S]+?\$\$|\\\[[\s\S]+?\\\]/.test(content);
+  // Count inline math occurrences
+  const inlineMathCount = (content.match(/\$[^$]+\$/g) || []).length;
+  return displayMath || inlineMathCount >= 3;
+}
+
+/**
+ * Detect if section has ASCII diagrams/flowcharts (already visual)
+ */
+function hasAsciiDiagram(content: string): boolean {
+  // Box-drawing characters or arrow patterns
+  return /[┌┐└┘│─├┤┬┴┼]/.test(content) ||
+         /(\+[-=]+\+|[|│]\s+[|│])/.test(content) ||
+         /^.*[→←↑↓▲▼►◄].*$/m.test(content);
 }
 
 /**
@@ -240,31 +271,43 @@ async function evaluateSection(section: Section, variables: Map<string, string>)
   // Resolve Quarto variables in the section content so LLM sees actual values
   const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
 
-  const prompt = `Analyze this section and determine if it would significantly benefit from a visual aid.
+  const prompt = `Analyze if this section would SIGNIFICANTLY benefit from a generated image.
 
 SECTION:
 ---
 ${resolvedContent}
 ---
 
+AUTOMATIC REJECTIONS (answer NO if ANY apply):
+1. Section contains a TABLE - tables ARE the visualization
+2. Section contains MATH EQUATIONS ($$...$$) - formulas are self-explanatory
+3. Section shows a SIMPLE CURVE described by a formula (e.g., "Score = 1 - e^{-x}")
+4. Section has ASCII DIAGRAMS or box-drawing characters
+5. Information is ALREADY CLEAR from text/lists - image would just restate it
+6. Section describes ONE metric threshold or scale (e.g., "I² > 75% means high heterogeneity")
+7. This appears to be ONE STEP of a worked example (limit images per example)
+8. A bar chart would just restate what a table already shows
+
+ONLY recommend YES if:
+- Complex MULTI-ENTITY relationships (5+ interconnected components)
+- COMPARATIVE data across 4+ categories that would benefit from side-by-side visual
+- PROCESS FLOW with conditional branching (not simple linear steps)
+- ARCHITECTURE diagrams showing system components and data flow
+- The image would provide understanding NOT achievable from the text
+
+KEY QUESTION: Would a reader skip the text and understand from JUST the image?
+If the text/table/formula is clearer than any possible image, answer NO.
+
+DEFAULT TO NO unless there is compelling reason for an image.
+
 Respond with JSON only:
 {
   "shouldGenerate": true/false,
   "imageType": "diagram" | "chart" | "infographic" | "flowchart" | null,
   "caption": "<1-2 sentence description for alt text, NO 'Figure X:' prefix>",
-  "reasoning": "<brief explanation>"
+  "reasoning": "<brief explanation>",
+  "rejectionRule": "<which automatic rejection rule applied, or 'none' if recommending>"
 }
-
-ONLY recommend an image if:
-- Quantitative comparisons (2+ numbers to compare, especially with ratios like "604:1" or "50x")
-- Multi-step processes (3+ steps) needing visualization
-- Interconnected relationships (4+ entities) that benefit from a diagram
-- Data-dense content with specific statistics, even if brief
-
-Do NOT recommend images for:
-- Pure narrative/rhetorical content without specific numbers
-- Sections with only 1 number and no comparison
-- Already-visual content (lists that are self-explanatory)
 
 If shouldGenerate is false, set imageType to null.`;
 
@@ -514,6 +557,27 @@ async function processFile(
     // Skip very short sections (under 200 chars / ~30 words)
     if (section.content.length < 200) {
       console.log(`  [SKIP] "${section.title}" - too short (${section.content.length} chars)`);
+      skipped++;
+      continue;
+    }
+
+    // Skip sections with tables (tables ARE visualizations)
+    if (hasTable(section.rawContent)) {
+      console.log(`  [SKIP] "${section.title}" - contains table (tables are visualizations)`);
+      skipped++;
+      continue;
+    }
+
+    // Skip sections with significant math equations (formulas are self-explanatory)
+    if (hasMathEquations(section.rawContent)) {
+      console.log(`  [SKIP] "${section.title}" - contains math equations`);
+      skipped++;
+      continue;
+    }
+
+    // Skip sections with ASCII diagrams (already visual)
+    if (hasAsciiDiagram(section.rawContent)) {
+      console.log(`  [SKIP] "${section.title}" - contains ASCII diagram`);
       skipped++;
       continue;
     }

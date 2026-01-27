@@ -16,7 +16,6 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 
 ![A framework for medical research funding that automates allocation and prioritizes patient choice.](/assets/infographics/knowledge/solution/dih-infographic-retro-academic.jpg)
 
-
 ![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
 
 The NIH spends {{< var nih_annual_budget >}} a year. Scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
@@ -66,7 +65,6 @@ The goal isn't to rely on people being virtuous. It's to design incentives where
 - AI models continuously scan this global data commons, finding patterns and connections humans would miss.
 
 This doubles research efficiency by preventing the same failure twice. It's like a group chat where everyone shares what didn't work, except the group is humanity and the topic is death prevention.
-
 
 ::: {.callout-note icon=false}
 
@@ -151,7 +149,6 @@ No committees. No lobbying. Just millions of pairwise preferences aggregated int
 
 Campaigns that deliver impact get continued funding. Failures get defunded. It's venture capital, but for not dying.
 
-
 ![Flowchart illustrating the distribution of the $27.2B annual budget, from military diversion through investor/political payouts, into the research treasury, and finally allocated to specific campaign types via Wishocracy.](/assets/images/dih/dih-section-financial-flow-and-allocation-logic-bw-academic.jpg)
 
 ### Why This Prevents Capture
@@ -202,7 +199,6 @@ If these improvements are achieved independently, they could multiply:
 This is obviously a theoretical maximum. Real-world implementation would face friction, resistance, and unforeseen problems. But even achieving 10% of this improvement would represent a significant advance.
 
 ![A multiplicative stack diagram showing how four distinct efficiency improvements compound to create a theoretical 800x total improvement in QALY production.](/assets/images/dih/dih-section-compound-efficiency-multipliers-bw-academic.jpg)
-
 
 #### What This Could Mean in Practice
 

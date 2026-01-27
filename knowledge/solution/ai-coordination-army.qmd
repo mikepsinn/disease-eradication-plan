@@ -8,7 +8,6 @@ image: /assets/og-images/knowledge/solution/ai-coordination-army-og-retro-academ
 
 ![How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.](/assets/infographics/knowledge/solution/ai-coordination-army-infographic-retro-academic.jpg)
 
-
 ```{python}
 #| echo: false
 # Import economic parameters (produces output to prevent timeout)
@@ -39,12 +38,13 @@ Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying,
 
 Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget), all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
 
-
 ![Breakdown of the Wishocracy Task Tree, showing how high-level goals translate into executable agent instructions.](/assets/images/ai-coordination-army/ai-coordination-army-section-wishocracy-task-tree-bw-academic.jpg)
 
 ## The Secret to Success: Cross-Sector Coordination (Forces for Good)
 
 *Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors, they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
+
+![A conceptual diagram showing the transition from fragmented, siloed cross-sector communication to a unified architecture where agents from diverse sectors (biotech, government, academia) synchronize through a global Task Tree.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-secret-to-success-cross-sector-coordination-forces-for-good-bw-academic.jpg)
 
 The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
 
@@ -175,6 +175,8 @@ Instead of a marketing team manually A/B testing campaigns one painful experimen
 
 You use "Agent Evaluators" to measure which strategies actually save lives instead of which ones win awards at nonprofit conferences or make board members feel good.
 
+![Architectural overview of an AI node, illustrating how specialized Task Agents utilize shared memory and context to coordinate activities while connecting to external research, government systems, and other nodes via APIs.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-optimize-impact-bw-academic.jpg)
+
 You get real-time data showing which fundraising approaches work (not just which ones the development director learned at their last nonprofit job), which advocacy tactics actually change minds (versus which ones just make activists feel productive), which research collaborations accelerate progress (versus which ones just produce papers no one reads).
 
 You double down on what works. You kill what doesn't. No politics, no "but we've always done it this way," no protecting programs because someone's spouse runs them.
@@ -188,6 +190,8 @@ Your agents pull their missions from Wishocracy's Task Tree, not from brainstorm
 **1. Pick a Task from the Tree:**
 
 Wishocracy's Task Tree breaks "Cure Alzheimer's" (impossible, vague, makes you want to give up) down into executable tasks like "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms."
+
+![An architecture diagram showing a hierarchical Task Tree where distributed agents in different global locations map to specific nodes, each operating on a lead/lag measure feedback loop.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-2-define-each-agent-s-mission-from-the-task-tree-not-from-your-feelings-bw-academic.jpg)
 
 You pick one task. Your agent does *only* that task. It doesn't also try to do social media, write the newsletter, organize events, and somehow also fix the printer. This prevents digital ADHD and the slow death of competence through task overload.
 

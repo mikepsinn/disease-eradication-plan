@@ -18,7 +18,6 @@ image: /assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.
 
 ![Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.](/assets/infographics/knowledge/strategy/global-referendum-infographic-retro-academic.jpg)
 
-
 A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
 
 It is the largest, most powerful political mandate in human history.
@@ -59,6 +58,8 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 #### End-to-End Verifiable System
 
+![Architecture of an end-to-end verifiable voting system showing the data flow from voter encryption and receipt generation to the public bulletin board and anonymizing mixnet.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
+
 - Use an end-to-end verifiable scheme (Helios [@helios-voting] or similar) with individual ballot verification and public bulletin board
 - **Individual Ballot Verification**: Each voter receives cryptographic receipt
 - **Public Bulletin Board**: All ballots published (anonymized) for public audit
@@ -87,7 +88,6 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 - **Geographic Distribution**: Data residency compliance with local regulations
 - **Retention Policies**: Automatic deletion of unnecessary personal data
 - **Backup Systems**: Secure, encrypted backups with geographic distribution
-
 
 ![Architectural flow diagram illustrating the secure data lifecycle from the user frontend through backend processing to encrypted storage and the public bulletin board.](/assets/images/global-referendum/global-referendum-section-system-architecture-bw-academic.jpg)
 
@@ -142,7 +142,6 @@ Sometimes the best verification is humans verifying humans:
 - **Community Attestation**: Local leaders vouch for people without digital IDs
 
 The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted.
-
 
 ![A tiered security model showing the cumulative verification layers, ranging from basic technical checks to biometric and social validation.](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
