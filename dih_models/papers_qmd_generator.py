@@ -170,6 +170,7 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         'description: "Academic papers and working drafts from the Disease Eradication Plan project."',
         "toc: true",
         "toc-depth: 2",
+        "image: /assets/og-images/knowledge/papers-og-bw-academic.jpg",
         "---",
         "",
         "# Papers & Publications",
