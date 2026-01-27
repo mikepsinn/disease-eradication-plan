@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 34 parameters used in the analysis, organized by type:
+This appendix documents all 58 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 25
-- Calculated values: 5
-- Core definitions: 4
+- External sources (peer-reviewed): 28
+- Calculated values: 15
+- Core definitions: 15
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (5 parameters) • [External Data Sources](#sec-external) (25 parameters) • [Core Definitions](#sec-definitions) (4 parameters)
+[Calculated Values](#sec-calculated) (15 parameters) • [External Data Sources](#sec-external) (28 parameters) • [Core Definitions](#sec-definitions) (15 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -235,6 +235,464 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bad_policy_cost_us_tier2_total.qmd >}}
+
+:::
+
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#opex-breakdown](../appendix/dfda-impact-paper#opex-breakdown)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
+
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Reduce_{pct} \\
+= \$60B \times 97.7\% \\
+= \$58.6B \\[0.5em]
+\text{where } Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+
+$$
+\begin{gathered}
+Savings_{RD,ann} \\
+= Benefit_{RD,ann} - OPEX_{dFDA} \\
+= \$58.6B - \$40M \\
+= \$58.6B \\[0.5em]
+\text{where } Benefit_{RD,ann} \\
+= Spending_{trials} \times Reduce_{pct} \\
+= \$60B \times 97.7\% \\
+= \$58.6B \\[0.5em]
+\text{where } Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\% \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#net-savings](../appendix/dfda-impact-paper#net-savings)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Core framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
+- [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1M (95% CI: $14M - $32M)
+
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_annual_opex_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_annual_opex_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_annual_opex_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
+
+:::
+
+### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+NPV_{RD} \\
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#npv-benefit](../appendix/dfda-impact-paper#npv-benefit)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_benefit_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_benefit_rd_only.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of annual opex over 10 years (NPV formula)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
+
+$$
+PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#npv-calculation](../appendix/dfda-impact-paper#npv-calculation)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_pv_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV cost (upfront + PV of annual opex)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
+
+$$
+\begin{gathered}
+Cost_{dFDA,total} \\
+= PV_{OPEX} + Cost_{upfront,total} \\
+= \$342M + \$270M \\
+= \$611M \\[0.5em]
+\text{where } PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M \\[0.5em]
+\text{where } OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M \\[0.5em]
+\text{where } Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#npv-total-cost](../appendix/dfda-impact-paper#npv-total-cost)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
+
+:::
+
+### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Core framework Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
+- [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230M (95% CI: $150M - $350M)
+
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_upfront_cost_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
+
+:::
+
+### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
+
+**Inputs**:
+
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
+
+$$
+\begin{gathered}
+ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0.5em]
+\text{where } NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t} \\[0.5em]
+\text{where } Savings_{RD,ann} \\
+= Benefit_{RD,ann} - OPEX_{dFDA} \\
+= \$58.6B - \$40M \\
+= \$58.6B \\[0.5em]
+\text{where } Benefit_{RD,ann} \\
+= Spending_{trials} \times Reduce_{pct} \\
+= \$60B \times 97.7\% \\
+= \$58.6B \\[0.5em]
+\text{where } Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\% \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Cost_{dFDA,total} \\
+= PV_{OPEX} + Cost_{upfront,total} \\
+= \$342M + \$270M \\
+= \$611M \\[0.5em]
+\text{where } PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M \\[0.5em]
+\text{where } OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M \\[0.5em]
+\text{where } Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#roi-simple](../appendix/dfda-impact-paper#roi-simple)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
+
+:::
+
+### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+
+**Inputs**:
+
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
 
 :::
 
@@ -644,6 +1102,54 @@ Welfare loss from regulatory capture and crony rent-seeking as percentage of pot
 
 :::
 
+### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
+
+**Source**: [@industry-clinical-trial-spending-estimate]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50B, $75B] • Distribution: Lognormal (SE: $10B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $50B and $75B (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Coordination Tax (Olson): 5% {#sec-political_dysfunction_tax_coordination_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -780,6 +1286,30 @@ Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) de
 
 :::
 
+### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -837,6 +1367,232 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Discount factor to account for overlap between bad policy cost categories. Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. Migration restrictions partially captured in labor market inefficiencies.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$11M, $26.5M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $11M and $26.5M (±41%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment Core framework build cost
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25M, $65M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $25M and $65M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_upfront_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment community support costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_community.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_infrastructure.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment maintenance costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_platform_maintenance.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment regulatory coordination costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_regulatory.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_staff.qmd >}}
+
+*Core definition*
+
+:::
+
+### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DIH broader initiatives annual opex (medium case)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$14M, $32M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $14M and $32M (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_annual_opex_initiatives.qmd >}}
+
+*Core definition*
+
+:::
+
+### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DIH broader initiatives upfront cost (medium case)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150M, $350M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $150M and $350M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_upfront_cost_initiatives.qmd >}}
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard time horizon for NPV analysis
 
 #### Uncertainty Range
 

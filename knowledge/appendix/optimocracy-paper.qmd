@@ -1,22 +1,22 @@
 ---
 title: 'Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation'
-description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.
+description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align spending with citizen welfare.
 abstract: |
   Politicians allocate trillions of dollars annually. They vote on budgets. The problem: what gets you
   reelected, funded, and hired after office is often not what benefits voters. This misalignment costs
   20-40% of potential welfare. This amounts to tens of trillions globally, every year.
 
-  Optimocracy: Citizens pick a metric (median income, mortality rate, or a composite). Two frameworks
-  generate evidence-based recommendations. The Optimal Budget Generator determines spending levels using
+  Optimocracy optimizes for Health & Wealth: median healthy life years + real after-tax median income growth.
+  The framework generates evidence-based recommendations. The Optimal Budget Generator determines spending levels using
   reference country benchmarking, diminishing returns modeling, and cost-effectiveness thresholds. The
   Policy Impact Score ranks regulatory reforms using quasi-experimental evidence across centuries of
   policy variation in hundreds of jurisdictions. Politicians vote however they want. Their alignment
-  with recommendations is tracked publicly. When the metric improves, high-alignment politicians receive
+  with recommendations is tracked publicly. When metrics improve, high-alignment politicians receive
   campaign support and career opportunities through Incentive Alignment Bonds.
 
-  The math: reducing decision points from thousands (discretionary line items) to two (metric selection
-  plus verification) cuts expected capture costs by 97%. The mechanism makes representing voters the
-  winning strategy.
+  The math: reducing decision points from thousands (discretionary line items) to two (metric verification
+  + override accountability) cuts expected capture costs by 97%. The mechanism makes representing voters
+  the winning strategy.
 aliases:
   - /optimocracy.html
 author:
@@ -106,7 +106,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 | "Central banks tried this and failed" | Central banks shifted capture from politicians to financial sector. We learn from this: diversify oracles, measure outcomes not inputs. |
 | "Politicians will never give up power" | They don't have to. Wrapper architecture works as advisory layer. IABs make ignoring good advice politically costly. |
 
-**The precedents:** Index funds stopped fund managers from picking stocks. Returns improved and fees dropped. Formula-based programs like Social Security cost-of-living adjustments remove annual political battles over benefits. Both show that removing discretion can improve outcomes. Both also show risks: index funds can be front-run; formulas can be gamed at the design stage. We also examine failures: Soviet planning, COVID policy, credit rating agencies, algorithmic trading, and central banks (which replaced political capture with financial sector capture). The question is comparative: which failure modes are more damaging, and can we design systems that resist capture better than existing ones?
+**The precedents:** Index funds stopped fund managers from picking stocks. Returns improved and fees dropped. Formula-based programs like Social Security cost-of-living adjustments remove annual political battles over benefits. Both show that constraining line-item discretion while preserving oversight can improve outcomes. Both also show risks: index funds can be front-run; formulas can be gamed at the design stage. We also examine failures: Soviet planning, COVID policy, credit rating agencies, algorithmic trading, and central banks (which replaced political capture with financial sector capture). The question is comparative: which failure modes are more damaging, and can we design systems that resist capture better than existing ones?
 
 **The politics:** You can't reallocate resources away from current recipients and expect them to stay quiet. Reform requires compensating those who lose from optimization: paying them to support change rather than block it. We propose Incentive Alignment Bonds: compensation for those currently benefiting from suboptimal allocation, making reform a positive-sum deal rather than a zero-sum fight.
 
@@ -130,17 +130,17 @@ Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delr
 
 Optimocracy proposes a radical simplification: **optimize allocation for measurable welfare outcomes**. Instead of asking "what should we fund?" without systematic feedback, Optimocracy asks:
 
-1. **What metric should we optimize?** (Democratic choice, made once)
+1. **What metric should we optimize?** (Default: Health & Wealth; alternatives possible via constitutional process)
 2. **What is the current value of that metric?** (Oracle measurement, continuous)
 3. **Which allocation maximizes the metric?** (Algorithmic optimization, automatic)
 
-This architecture eliminates the Political Dysfunction Tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (choosing the metric) and for genuinely novel situations.
+This architecture eliminates the Political Dysfunction Tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (metric amendments) and for genuinely novel situations.
 
 ### How It Works in Practice
 
-**Step 1: Citizens vote on the goal (once, constitutionally)**
+**Step 1: Adopt the Health & Wealth metrics (defaults provided, amendments possible)**
 
-Through a constitutional process, citizens select what the government should optimize for (e.g., "maximize median household income" or "maximize healthy life years." This choice is made rarely (like amending a constitution) and requires supermajority support.
+The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These capture most policy effects through two hard-to-game, well-measured outcomes. Citizens can amend these through constitutional process, but the defaults work out of the box. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
 
 **Step 2: A computer system optimizes budget allocation**
 
@@ -201,7 +201,7 @@ Where:
 
 **Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
 
-Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by removing discretionary decisions where these losses are largest.
+Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by constraining discretionary allocation while preserving human override for genuine novelty.
 
 ### Documented Welfare Losses by Policy Domain
 
@@ -895,10 +895,12 @@ This two-metric system is used by both the [Optimal Policy Generator](optimal-po
 
 ### Metric Selection Process
 
-The choice of metric is itself a constitutional question that could be resolved through democratic preference aggregation (see companion paper on Wishocracy). Citizens could express preferences over candidate metrics through pairwise comparison, with the winning metric encoded in the Optimocracy constitution.
+**The framework provides concrete defaults** (Health & Wealth: median healthy life years + real after-tax median income growth) rather than requiring open-ended constitutional deliberation. This reduces capture opportunity: there's no "metric selection battle" to lobby because the defaults are already specified.
+
+Citizens who prefer different metrics can propose amendments through constitutional process, which could use democratic preference aggregation (see companion paper on Wishocracy) with pairwise comparison over candidate metrics. But most jurisdictions can simply adopt the defaults.
 
 This creates a two-layer democracy:
-1. **Wishocracy layer**: Democratic selection of optimization objective
+1. **Wishocracy layer**: Democratic amendment of optimization objective (if desired)
 2. **Optimocracy layer**: Algorithmic optimization of selected objective
 
 ### The Metric Selection Problem: Where Capture Migrates
@@ -918,20 +920,22 @@ Let $C$ represent total capture (resources devoted to influencing policy for pri
 
 **Why Optimocracy still improves outcomes:**
 
-1. **Visibility**: Constitutional debates are high-profile; committee earmarks are obscure. Citizens can monitor one constitutional question more easily than thousands of budget decisions.
+1. **Concrete defaults eliminate the selection battle**: The framework specifies Health & Wealth (median healthy life years + real after-tax median income growth) as defaults. There's no open-ended "which metric should we use?" debate to capture. Lobbyists can't influence a choice that's already been made.
 
-2. **Frequency**: Constitutions change rarely; budgets change annually. Reducing the frequency of capture opportunities reduces total capture even if intensity per opportunity increases.
+2. **Visibility**: Constitutional debates (for those who want to amend the defaults) are high-profile; committee earmarks are obscure. Citizens can monitor one constitutional question more easily than thousands of budget decisions.
 
-3. **Generality**: Metric selection is general (affects everyone equally); allocation decisions are specific (can target benefits). General rules are harder to capture than specific decisions [@buchanan1962].
+3. **Frequency**: Constitutions change rarely; budgets change annually. Reducing the frequency of capture opportunities reduces total capture even if intensity per opportunity increases.
 
-4. **Legitimacy requirements**: Constitutional changes require super-majorities, deliberation, and public justification. Earmarks require only a committee chair's assent.
+4. **Generality**: Metric selection is general (affects everyone equally); allocation decisions are specific (can target benefits). General rules are harder to capture than specific decisions [@buchanan1962].
+
+5. **Legitimacy requirements**: Constitutional changes require super-majorities, deliberation, and public justification. Earmarks require only a committee chair's assent.
 
 **Design implications:**
 
-- Metric selection should be maximally visible and deliberative
-- Initial metric choice is critical; establish norms before scaling
+- Provide concrete defaults rather than requiring metric selection deliberation
+- Metric amendments (if desired) should be maximally visible and deliberative
 - Regular (but not frequent) metric review prevents lock-in
-- Multiple metrics reduce single-point-of-failure capture
+- Two metrics (income + health) reduce single-point-of-failure capture
 
 The honest assessment: Optimocracy reduces but does not eliminate capture. The empirical question is whether capture at metric selection causes less welfare loss than capture at allocation. The theoretical case is strong (one decision point vs. thousands), but empirical validation requires deployment.
 
@@ -1048,7 +1052,7 @@ As analyzed above, capturing metric selection requires winning constitutional-le
 
 **Quantitative comparison:** Under discretionary governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by 1-2 orders of magnitude.
 
-**The index fund precedent:** As detailed in Section 3, removing discretion from fund management (index funds) reduced fees from 1-2% to 0.03-0.10% while improving returns. The same logic applies to governance: remove discretion, reduce capture.
+**The index fund precedent:** As detailed in Section 3, constraining discretion in fund management (index funds) reduced fees from 1-2% to 0.03-0.10% while improving returns. The same logic applies to governance: constrain line-item discretion while preserving override, reduce capture.
 
 ### Time Consistency
 
