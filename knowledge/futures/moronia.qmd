@@ -59,6 +59,62 @@ I'm still not entirely sure what paperclips are or why you'd need an AI to make 
 
 Let me explain what happened to Moronia so you can spot the same pattern potentially happening to you right now.
 
+### The Economics of Extinction: Why Collapse Was Inevitable
+
+Before the timeline, you should understand why Moronia's collapse wasn't stupidity or bad luck. It was the predictable outcome of incentive structures that made extinction the equilibrium state.
+
+#### The Olsonian Trap
+
+Mancur Olson documented a pattern: small groups with concentrated interests always defeat large groups with diffuse interests. On Moronia:
+
+- **Defense contractors**: 50,000 individuals, each gaining \$2M/year from weapons spending
+- **Citizens wanting cures**: 8 billion individuals, each losing \$100/year from misallocation
+
+The contractors showed up to every budget hearing. They funded campaigns. They hired lobbyists. Citizens had jobs to attend and couldn't organize around their diffuse \$100 loss.
+
+This is Olson's logic of collective action playing out at civilizational scale. Not corruption. Not stupidity. Math.
+
+#### The Prisoners' Dilemma Arms Race
+
+Each nation faced identical logic:
+
+| If others build weapons | Your best move |
+|-------------------------|----------------|
+| Yes | Build weapons (or be conquered) |
+| No | Build weapons (and conquer them) |
+
+Dominant strategy: build weapons regardless of what others do. Collective outcome: everyone worse off, nobody can unilaterally stop.
+
+This is Nash equilibrium. Mutual destruction is the stable state. Cooperation is unstable. Any nation that unilaterally disarms gets conquered. Any nation that cooperates while others defect loses.
+
+Moronia wasn't trapped by stupidity. They were trapped in a game-theoretic equilibrium where the rational individual choice led to collective extinction.
+
+#### The Incentive Inversion Cascade
+
+I documented this progression:
+
+| Phase | Crime vs. Production Pay | Talent Allocation |
+|-------|--------------------------|-------------------|
+| 1 | 2x | Some talent leaves production |
+| 2 | 10x | Most talent leaves production |
+| 3 | 100x | Only criminals remain |
+
+This isn't moral failure. It's a predictable cascade when you make destruction more profitable than creation. Each Stanford graduate who chose ransomware over cancer research made a locally rational decision. The collective result was civilizational collapse.
+
+The AI didn't malfunction. It learned what Moronians actually funded. It optimized for their revealed preferences. The alignment worked exactly as designed.
+
+#### The Coordination Tax
+
+I calculated Moronia's annual cost of collective action failure: approximately 5% of GDP. Over 25 years, cumulative losses exceeded the total cost of collapse.
+
+They could afford cures. They couldn't afford to coordinate.
+
+This is why I'm telling you about game theory and not morality. Moronia didn't die from bad people. It died from good people trapped in bad equilibria.
+
+The 1% treaty isn't about being nice. It's about escaping the trap.
+
+Now watch how it played out:
+
 ### Year Zero: Already Broken (Much Like You)
 
 When I started watching Moronia, they looked remarkably like Earth does today:
@@ -230,6 +286,10 @@ He selected the parasitic option. His offspring needed dental corrections. The h
 
 From his perspective, this was rational. The incentive structure was clear.
 
+Economics has a name for this: **adverse selection**. When crime pays better, the most capable people select into crime. The medical system didn't lose random employees. It lost its best people, the ones with options, the ones who could succeed at anything.
+
+This is **comparative advantage inverted**. Stanford graduates had comparative advantage in *both* curing diseases and hacking hospitals. They rationally chose the higher-paying option. The result: hospitals staffed by those who couldn't get criminal jobs.
+
 By December of Year 7, cybercrime = third-largest economy:
 
 1. United States: \$27T (↓)
@@ -291,6 +351,8 @@ When crime pays 100X more than production, eventually production dwindles. Stanf
 
 Who makes things? Nobody.
 
+Hyperinflation isn't random. It's the monetary system's response to production collapse. Money is a claim on future goods. When nobody makes goods, money chases nothing. Prices explode.
+
 #### The dominoes
 
 1. Production collapses → inflation
@@ -306,9 +368,15 @@ Who makes things? Nobody.
 - Infrastructure: "What's that?"
 - Military AI: +340%
 
+The Olsonian trap again: concentrated defense interests showed up to every budget meeting. Diffuse future generations didn't lobby. Children who would have been educated in Year 15 weren't born yet. They had no voice. Defense contractors had very loud voices.
+
 The logic: "Can't afford schools AND weapons. Without weapons, enemy attacks. Education can wait."
 
 Education didn't wait. It died.
+
+This is what economists call **present bias** at civilizational scale. Moronians systematically discounted future benefits relative to present costs. The military budget had immediate, visible defenders. The education budget defended children who didn't yet exist.
+
+The future lost. It usually does, absent institutions designed to represent it.
 
 My sixth warning to them: "When everyone becomes a parasite, the host dies. Your productive economy is the host."
 
@@ -356,6 +424,27 @@ Until the AIs flagged shareholder meetings as "suspicious gatherings."
 My eighth warning to them: "Your resource allocation appears suboptimal based on stated goals of continued existence."
 
 ![Comparison of actual spending on self-destruction versus the estimated cost of achieving post-scarcity goals.](/assets/images/moronia/moronia-section-the-cost-of-extinction-vs-utopia-bw-academic.jpg)
+
+::: {.callout-warning}
+## The Second Law of Civilizational Thermodynamics
+
+Without active coordination mechanisms, civilizations naturally drift toward:
+
+- Concentrated interests extracting from diffuse populations (Olson's Law)
+- Short-term optimization destroying long-term capacity (present bias)
+- Parasitic activities outcompeting productive ones (adverse selection)
+- Nash equilibria where rational individual choices produce collective extinction
+
+This isn't pessimism. It's physics applied to incentives. Entropy wins unless you build systems that fight it.
+
+The 1% treaty is such a system. It creates a coordination mechanism that:
+
+1. Makes concentrated interests (defense) pay for diffuse benefits (health)
+2. Locks in long-term investment that present-biased politicians can't raid
+3. Shifts the Nash equilibrium by making cooperation the dominant strategy
+
+Moronia had no such systems. Neither do you. Yet.
+:::
 
 ## A Day in Moronian Life (Year 25)
 

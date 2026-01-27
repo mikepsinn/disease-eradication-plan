@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 347,954
+**Files:** 86 | **Words:** 348,660
 
 #### index.qmd
 **Title:** Start Here
@@ -2537,7 +2537,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,445 words | 476 lines
+**Stats:** 3,414 words | 475 lines
 
   - The Objective: Total Disease Eradication
     - Why Current Systems Fail
@@ -3108,11 +3108,16 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 4,286 words | 637 lines
+**Stats:** 5,023 words | 726 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
   - How They Killed Themselves: A Timeline
+    - The Economics of Extinction: Why Collapse Was Inevitable
+      - The Olsonian Trap
+      - The Prisoners' Dilemma Arms Race
+      - The Incentive Inversion Cascade
+      - The Coordination Tax
     - Year Zero: Already Broken (Much Like You)
     - Year 1-2: The Cognitive Collapse (A Natural Experiment)
       - Here's how it killed their decision-making
@@ -3133,6 +3138,7 @@
   - The Numbers (That Moronians Ignored)
     - What Moronians spent (Year Zero through Year 15)
       - What \$80T could have bought
+  - The Second Law of Civilizational Thermodynamics
   - A Day in Moronian Life (Year 25)
   - The Diseases Moronia Didn't Cure
   - Moronia's Greatest Innovations
@@ -7515,6 +7521,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 555,888
+- Total words: 556,594
 - Orphaned files: 21
 - Paper configs: 11
