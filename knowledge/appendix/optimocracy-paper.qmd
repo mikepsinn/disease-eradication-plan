@@ -114,7 +114,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 ### Why Information Alone Fails
 
-Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
+Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). Pragmatic clinical trials demonstrate even higher returns ({{< var dfda_roi_rd_only >}} BCR) by generating treatment evidence at a fraction of traditional trial costs [@dfda-impact-paper-2025]. GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
 
 Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
@@ -195,7 +195,7 @@ Substituting empirical estimates:
 Where:
 
 - $\tau_{crony}$: **Crony Tax**, welfare loss from resources flowing to concentrated interests rather than outcome-maximizing alternatives ({{< var crony_tax_pct >}})
-- $\tau_{time}$: **Short-Termism Cost**, welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}}). Politicians facing re-election in 4 years systematically underinvest in goods that pay off over 10-30 years: basic research, infrastructure maintenance, pandemic preparedness, climate mitigation. A bridge that returns 10:1 over 20 years loses to a tax cut that returns 2:1 before the next election.
+- $\tau_{time}$: **Short-Termism Cost**, welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}}). Politicians facing re-election in 4 years systematically underinvest in goods that pay off over 10-30 years: basic research, infrastructure maintenance, pandemic preparedness, climate mitigation.
 - $\tau_{information}$: **Ignorance Cost**, welfare loss from decision-makers lacking relevant knowledge ({{< var political_dysfunction_tax_info_pct >}})
 - $\tau_{coordination}$: **Ideological Gridlock Cost**, welfare loss from inability to commit to welfare-improving policies ({{< var political_dysfunction_tax_coordination_pct >}})
 
@@ -308,14 +308,11 @@ The US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE 
 
 ### Why Information Doesn't Solve the Problem
 
-If the welfare losses are documented, why don't governments act? As noted above, @gilens2014 found that economic elites and organized interests, not average citizens, drive policy outcomes.
-
-The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because doing so doesn't maximize their utility function (reelection probability, campaign contributions, post-office career prospects).
-
-This explains the persistence of obvious inefficiencies:
+If the welfare losses are documented, why don't governments act? As established in the Introduction, the problem is incentives, not information. @gilens2014 found that economic elites and organized interests, not average citizens, drive policy outcomes. This explains the persistence of obvious inefficiencies:
 
 | Intervention | Benefit-Cost Ratio | Political Economy |
 |-------------|-------------------|-------------------|
+| Pragmatic clinical trials | {{< var dfda_roi_rd_only >}} | No concentrated beneficiary; competes with traditional trial industry |
 | Childhood vaccination | 101:1 | No concentrated beneficiary to lobby |
 | Pandemic preparedness | 100:1+ | Benefits are diffuse and probabilistic |
 | Medical research | 45:1 | Competes with defense spending |
@@ -1048,7 +1045,6 @@ Optimocracy collapses this attack surface from thousands of decision points to t
 As analyzed above, capturing metric selection requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair. The asymmetry favors defense: changing the metric requires extraordinary effort; maintaining it requires only ordinary vigilance.
 
 ![Comparison of the lobbying attack surface under current discretionary governance versus the consolidated attack surface under Optimocracy.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
-
 
 **Quantitative comparison:** Under discretionary governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by 1-2 orders of magnitude.
 
@@ -1862,6 +1858,7 @@ The **Budget Impact Score (BIS)** measures our *confidence* in each category's t
 
 | Category | Current | Target | Gap | Evidence |
 |----------|---------|-----|-----|----------|
+| **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) |
 | Vaccinations | $8B | $35B | +$27B | A (RCTs) |
 | Basic research | $45B | $90B | +$45B | B (spillovers) |
 | Military | $850B | $459B | -$391B | C (benchmarks) |
@@ -1933,7 +1930,6 @@ Both frameworks feed into the Constitutional Layer, which binds governance to ev
 The Political Dysfunction Tax (estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
 
 ![Integration of the Optimal Budget Generator (OBG) and Policy Impact Score (PIS) frameworks into the Constitutional Layer.](/assets/images/optimocracy-paper/optimocracy-paper-section-integrated-optimization-framework-bw-academic.jpg)
-
 
 ### Algorithmic Governance Threat Model
 

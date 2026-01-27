@@ -1158,8 +1158,11 @@ export function cleanContentForImagePrompt(content: string): string {
     .replace(/\[\^[^\]]+\]/g, '')
     // Strip footnote definitions: [^1]: definition...
     .replace(/^\[\^[^\]]+\]:.*$/gm, '')
-    // Strip citations: [@smith2020]
-    .replace(/\[@[^\]]+\]/g, '')
+    // Strip bracketed citations and preceding space: " [@smith2020]" -> ""
+    .replace(/\s*\[@[^\]]+\]/g, '')
+    // Strip bare/in-text citations: "@arrow1951 proved" -> "proved"
+    // Matches @key followed by space/punctuation (won't match emails since they have dots)
+    .replace(/@[\w-]+(?=[\s.,;:!?)\]]|$)/g, '')
     // Strip Quarto cross-references: @fig-name, @tbl-name, @sec-name, @eq-name
     .replace(/@(fig|tbl|sec|eq|lst|thm)-[\w-]+/g, '')
     // Strip HTML comments

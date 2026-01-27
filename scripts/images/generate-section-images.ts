@@ -641,16 +641,11 @@ async function main() {
       const filePath = qmdFiles[i];
       const relativePath = path.relative(process.cwd(), filePath);
 
-      // Check if file already has section images (skip unless force)
-      if (!force) {
-        const existingCount = countExistingSectionImages(filePath);
-        if (existingCount > 0) {
-          console.log(`\n[${i + 1}/${qmdFiles.length}] SKIP: ${relativePath} (${existingCount} existing images)`);
-          continue;
-        }
-      }
+      // Log existing section images count (but still process - per-section logic handles skipping)
+      const existingCount = countExistingSectionImages(filePath);
+      const existingNote = existingCount > 0 ? ` (${existingCount} existing section images)` : '';
 
-      console.log(`\n[${i + 1}/${qmdFiles.length}] Processing: ${relativePath}`);
+      console.log(`\n[${i + 1}/${qmdFiles.length}] Processing: ${relativePath}${existingNote}`);
       console.log('-'.repeat(80));
 
       const result = await processFile(filePath, options);
