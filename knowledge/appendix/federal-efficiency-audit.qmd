@@ -63,9 +63,9 @@ This audit applies engineering systems analysis to federal resource allocation. 
 The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ($13.7M) or QALY threshold ($100K) yields a measure of foregone welfare, not literal deaths prevented.
 :::
 
-The efficiency gap represents capital that could fund the 1% Treaty ($113B/year) thirteen times over, or 10x current global disease R&D spending.
+The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) 55 times over, or 10x current global disease R&D spending.
 
-![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $113B 1% Treaty annual requirement and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
+![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $27B 1% Treaty annual funding and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
 ## System Specifications
 
@@ -302,13 +302,11 @@ The compliance burden (time and resources consumed meeting federal requirements)
 
 ![A comparison of the escalating economic impacts of mass incarceration, contrasting the $80.7 billion direct public cost against the $1 trillion comprehensive social and economic burden.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
 
-
 ### Loss Category: Friction (Tax Compliance)
 
 Americans spend 7.1-7.9 billion hours annually complying with the tax code [@ntu-tax-compliance-2025].
 
 ![A comparison showing that U.S. tax compliance costs ($546 billion) exceed total corporate income tax revenue, representing 1.9% of national GDP.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
-
 
 **Total compliance cost:** {{< var bad_policy_cost_us_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
@@ -322,7 +320,6 @@ Local zoning regulations artificially restrict housing supply in high-productivi
 
 ![A visualization of the annual GDP loss attributed to housing misallocation, showing a central estimate of $1.40 trillion within a $1 trillion to $2 trillion confidence interval range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-housing-zoning-misallocation-bw-academic.jpg)
 
-
 **Spatial misallocation cost:** Even conservative estimates point to 2% GDP loss = {{< var bad_policy_cost_us_housing_zoning >}} annually [@housing-misallocation-comment; @hsieh-moretti-correction].
 
 *Note: The original Hsieh-Moretti (2019) estimate of 36% GDP loss was subsequently revised downward by the authors. The 2% figure used here represents a conservative lower bound; even critics of the original methodology acknowledge significant misallocation costs from zoning restrictions.*
@@ -335,12 +332,13 @@ The National Environmental Policy Act forces infrastructure projects into multi-
 
 ![A visualization illustrating the 4.5-year average NEPA review timeline and the resulting $100-140 billion in annual economic losses, highlighting the disproportionate impact on clean energy projects.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-nepa-permitting-delays-bw-academic.jpg)
 
-
 **Delay costs:** $100-140 billion annually in lost returns and capital efficiency [@clearpath-nepa-2024].
 
 NEPA creates a "Green Paradox": delaying clean energy projects (transmission, wind, geothermal) more than fossil fuel projects, undermining stated policy goals.
 
 ### Loss Category: Parasitic (Jones Act)
+
+![A comparison chart showing the $1.2 billion annual cost to Hawaii relative to the estimated national economic impact of the Jones Act, which ranges from $656 million to $19 billion.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-jones-act-bw-academic.jpg)
 
 The Jones Act requires domestic shipping on U.S.-built, U.S.-crewed vessels. Results:
 
@@ -372,11 +370,15 @@ This represents capital transfer to a mature, profitable industry, artificially 
 
 Agricultural subsidies in 2024: $9.3-30 billion [@usafacts-farm-subsidies-2024]. Distribution is regressive. Top 10% of recipients received 65% of payments in 2024 [@ewg-triple-dipping-2024].
 
+![A flowchart depicting the 'Waste Feedback Loop' where regressive agricultural subsidies drive the overproduction of corn and soy, leading to a cycle of processed food consumption, obesity, and increased healthcare expenditures.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-agricultural-subsidies-bw-academic.jpg)
+
 The subsidy structure incentivizes overproduction of corn and soy, which form the backbone of the processed food diet driving the obesity epidemic. This creates a **Waste Feedback Loop**: taxpayer funds subsidize production of cheap calories that make the population sick, requiring additional taxpayer funds to treat the resulting chronic disease (see Healthcare subsystem). Agricultural policy thus amplifies healthcare inefficiency.
 
 ### Loss Category: Negative Work (Tariffs and Corporate Welfare)
 
 **Corporate welfare:** Cato Institute tallies $181 billion annually in grants, loans, and credits to specific businesses [@cato-corporate-welfare].
+
+![A comparison of the annual economic costs of corporate welfare and tariff deadweight loss, highlighting the similar scale of impact between $181 billion in subsidies and the $160 billion loss in output.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-tariffs-and-corporate-welfare-bw-academic.jpg)
 
 **Tariff deadweight loss:** Trump/Biden tariff regimes estimated to reduce long-run GDP by 0.4-0.7% [@taxfoundation-tariffs-2025]. On a $28 trillion economy, 0.4% reduction = {{< var bad_policy_cost_us_tariffs >}} in lost output.
 
@@ -396,6 +398,8 @@ The subsidy structure incentivizes overproduction of corn and soy, which form th
 
 We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo simulation to account for correlated uncertainties.
 
+![A range chart comparing the mean annual efficiency gap across six subsystems, with error bars representing the P10 to P90 uncertainty intervals.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-monte-carlo-simulation-parameters-bw-academic.jpg)
+
 | Subsystem | Distribution | P10 | Mean | P90 | Rationale |
 |-----------|-------------|-----|------|-----|-----------|
 | Defense | Log-Normal | $100B | $210B | $350B | Audit opacity creates high upper-bound risk |
@@ -408,6 +412,8 @@ We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo 
 *Note: Debt interest calculated as portion of net interest ($888B in 2024) [@cbo-long-term-budget-2024] attributable to cumulative efficiency gap.*
 
 ### Simulation Results
+
+![A comparison chart of the FY 2024-2025 Aggregate Efficiency Gap estimates, illustrating the mean value of $5.03 trillion alongside its 95% confidence interval and percentile distributions.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-simulation-results-bw-academic.jpg)
 
 **Aggregate Efficiency Gap (FY 2024-2025):**
 
@@ -451,6 +457,8 @@ $$\text{Efficiency} = \frac{\text{Input} - \text{Gap}}{\text{Input}} = \frac{6.7
 
 Range: 52-67% depending on gap estimate used.
 
+![A comparison chart showing the current efficiency range and mean value relative to the significantly higher OECD benchmark range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-efficiency-rating-calculation-bw-academic.jpg)
+
 **OECD benchmark:** 75-85% efficiency (peer nations achieving comparable outcomes with lower per-capita spending).
 
 ### Human Cost Quantification (Economic Equivalents)
@@ -465,6 +473,8 @@ $$\text{QALY-Equivalents} = \frac{\$2.27 \text{ trillion}}{\$100,000} = 22.7 \te
 
 **Interpretation:** The efficiency gap represents foregone welfare equivalent to 22.7 million quality-adjusted life years annually. This does not mean 165,700 people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
 
+![A comparison showing the $2.27 trillion efficiency gap converted into human cost equivalents: 165,700 value-of-statistical-life (VSL) units and 22.7 million quality-adjusted life years (QALYs).](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-human-cost-quantification-economic-equivalents-bw-academic.jpg)
+
 ## Reallocation Potential
 
 If U.S. efficiency improved to OECD median (80%), approximately **$1.5 trillion annually** becomes available for reallocation.
@@ -473,7 +483,7 @@ If U.S. efficiency improved to OECD median (80%), approximately **$1.5 trillion 
 
 | Initiative | Annual Cost | Efficiency Gap Coverage |
 |------------|-------------|-------------------------|
-| 1% Treaty funding | $113B | 13x covered |
+| 1% Treaty funding | {{< var treaty_annual_funding >}} | 55x covered |
 | Global disease R&D (current) | $150B [@gfinder-2024] | Would 10x |
 | U.S. infrastructure backlog | $2.6T total [@asce-infrastructure-2025] | Covered in <2 years |
 | Global poverty elimination | ~$175B [@worldbank-poverty-2024] | 8x covered |
@@ -537,6 +547,8 @@ Including these factors would increase the efficiency gap estimate substantially
 
 ::: {.callout-note}
 ## See Also
+
+![A visualization showing the 30-52% Global Governance Efficiency range and the $101 trillion in annual unrealized potential across sectors like health, migration, and environmental remediation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-see-also-bw-academic.jpg)
 
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
 :::
