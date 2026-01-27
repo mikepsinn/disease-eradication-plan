@@ -3648,6 +3648,7 @@
             "The Architecture",
             "The Fund Flow",
             "How Allocation Works",
+            "What Gets Funded: Market Failures Only",
             "What DIH Outsources (and Why)",
             "How Campaigns Plug In",
             "Campaign Lifecycle",
@@ -3655,7 +3656,9 @@
             "Anti-Capture Design",
             "How DIH Resists Capture",
             "The \"New FDA\" Risk",
+            "Security Architecture: Multi-Layered Defense",
             "Transparent by Default",
+            "Beyond Medical Research",
             "Summary: The Coordination Layer"
           ],
           "published": true,
@@ -4150,7 +4153,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-01-26"
+          "lastmod": "2026-01-27"
         },
         {
           "path": "knowledge/call-to-action/your-personal-benefits.qmd",
@@ -6755,27 +6758,16 @@
           "path": "knowledge/appendix/governance.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/governance.html",
           "title": "Governance",
-          "description": "How the People Who Pay Get to Vote - The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people who use it.",
+          "description": "Governance architecture for the Decentralized Institutes of Health, including anti-capture mechanisms and security design.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/governance-og-retro-academic.jpg",
           "tags": [
             "governance",
             "wishocracy",
             "dao",
-            "decentralization",
-            "ai",
-            "collective-intelligence",
-            "protocol"
+            "decentralization"
           ],
           "sections": [
-            "DIH Architecture: Single Governance Layer",
-            "Clean Separation: Governance vs Platform",
-            "Your decentralized institutes of health (Governance Layer)",
-            "How Budget Allocation Works",
-            "What Gets Funded: Market Failures Only",
-            "Dive Deeper into the Governance Model",
-            "Security & Anti-Corruption: Building Uncorruptible Institutions",
-            "The Multi-Layered Defense",
-            "Beyond Medical Research: A Template for Uncorruptible Governance"
+            "Content Moved"
           ],
           "published": true,
           "lastmod": "2026-01-27"

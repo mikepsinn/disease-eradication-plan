@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 348,473
+**Files:** 86 | **Words:** 347,954
 
 #### index.qmd
 **Title:** Start Here
@@ -2537,7 +2537,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 2,930 words | 407 lines
+**Stats:** 3,445 words | 476 lines
 
   - The Objective: Total Disease Eradication
     - Why Current Systems Fail
@@ -2560,6 +2560,7 @@
     - The Architecture
     - The Fund Flow
     - How Allocation Works
+    - What Gets Funded: Market Failures Only
   - What DIH Outsources (and Why)
   - How Campaigns Plug In
     - Campaign Lifecycle
@@ -2567,7 +2568,9 @@
   - Anti-Capture Design
     - How DIH Resists Capture
     - The "New FDA" Risk
+    - Security Architecture: Multi-Layered Defense
     - Transparent by Default
+    - Beyond Medical Research
   - Summary: The Coordination Layer
 
 #### knowledge/solution/wishocracy.qmd
@@ -6516,21 +6519,10 @@
 
 #### knowledge/appendix/governance.qmd
 **Title:** Governance
-**Description:** How the People Who Pay Get to Vote - The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people wh...
-**Stats:** 1,144 words | 160 lines
+**Description:** Governance architecture for the Decentralized Institutes of Health, including anti-capture mechanisms and security design.
+**Stats:** 110 words | 29 lines
 
-  - DIH Architecture: Single Governance Layer
-  - Clean Separation: Governance vs Platform
-    - Your decentralized institutes of health (Governance Layer)
-  - How Budget Allocation Works
-    - What Gets Funded: Market Failures Only
-      - Infrastructure (Platform Must Exist First)
-      - True Public Goods (No Revenue Model)
-  - Dive Deeper into the Governance Model
-  - Security & Anti-Corruption: Building Uncorruptible Institutions
-    - The Multi-Layered Defense
-    - Beyond Medical Research: A Template for Uncorruptible Governance
-      - What Else This Could Fix
+  - Content Moved
 
 #### knowledge/appendix/organizational-precedents.qmd
 **Title:** Organizational Precedents & Staffing Models
@@ -7523,6 +7515,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 556,407
+- Total words: 555,888
 - Orphaned files: 21
 - Paper configs: 11

@@ -304,6 +304,25 @@ Within each priority area, [Optimocracy](../appendix/optimocracy-paper.qmd) reco
 
 Campaigns that deliver impact get continued funding. Failures get defunded. It's venture capital for not dying.
 
+### What Gets Funded: Market Failures Only
+
+Since most research allocation is handled automatically (patients choose trials → funding flows there), the 1% Treaty Fund primarily funds **market failures**, things the ecosystem can't handle:
+
+**Infrastructure**
+
+- Development and operations
+- Competing alternative implementations
+- Data commons infrastructure (storage, processing)
+- Security audits and fraud detection systems
+
+**True Public Goods (No Revenue Model)**
+
+- Patient trial participation subsidies
+- Negative results publishing
+- Replication studies
+
+This is minimal by design. The ecosystem eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. DIH only directs the 1% Treaty Fund to cover what the ecosystem truly can't handle.
+
 ## What DIH Outsources (and Why)
 
 DIH is intentionally minimal. It outsources everything operational:
@@ -375,6 +394,42 @@ DIH is designed to make capture economically irrational.
 
 The protocol is designed so that **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
 
+### Security Architecture: Multi-Layered Defense
+
+A {{< var treaty_annual_funding >}} treasury is a massive target. DIH uses defense in depth:
+
+**1. Nobody's in Charge (And That's the Point)**
+
+*Turns out you don't need a CEO when you have math.*
+
+- Every VICTORY Bond holder directly controls treasury through on-chain voting
+- No human signers = no kidnapping, corruption, or coercion targets
+- Smart contracts automatically execute community decisions after 24-72h timelocks
+- Battle-tested approach already managing billions in MakerDAO, Uniswap, Aave
+
+**2. AI-Powered Fraud Detection**
+
+- **Fraud Agent:** Real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
+- **Safety Oracle:** Incident severity scoring with automatic payout holds for affected interventions
+- **Identity Oracle:** Verifies affiliations and conflicts, prevents unauthorized access
+- Manual review queue for flagged actions with whistleblower bounty rewards
+
+**3. Complete Transparency & Auditability**
+
+- All treasury addresses published with real-time public dashboards
+- Immutable transaction logs with standardized disbursement tags
+- Annual smart contract audits and semiannual operational audits with published reports
+- Hash-committed invoices and budgets for full accountability
+
+**4. Recovery & Response Mechanisms**
+
+- Clawbacks for data falsification or trial misconduct
+- Emergency pause capabilities triggered by incident signals
+- Progressive unpause policies tied to remediation completion
+- Guardian modules for pausing non-critical functions under defined conditions
+
+![Defense in depth: decentralized control, AI monitoring, transparency, and recovery mechanisms interact to prevent theft.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
+
 ### Transparent by Default
 
 All information is public:
@@ -385,6 +440,19 @@ All information is public:
 - Every campaign's performance
 
 Corruption requires secrecy. DIH provides radical transparency. Every dollar is tracked on a ledger anyone can read.
+
+### Beyond Medical Research
+
+Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can do the same for schools, roads, or anything else the government currently screws up:
+
+- **Education:** Pay teachers based on whether kids actually learn things
+- **Infrastructure:** Fund roads that don't immediately fall apart
+- **Environment:** Pay for actual carbon reduction, not paperwork
+- **Social Services:** Get help to people who need it without 47 forms
+
+This isn't just about protecting health funding. It's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods. The 1% Treaty Fund becomes the prototype for a new era of public governance, one that eliminates human corruption points entirely while delivering measurable results.
+
+![Uncorruptible DAO governance: token-holder voting flows through smart contracts to funding execution with no human intermediaries.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
 
 ## Summary: The Coordination Layer
 
