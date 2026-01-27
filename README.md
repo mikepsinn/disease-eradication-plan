@@ -70,7 +70,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for pre-agreed welfare outcomes (median income growth, QALYs, composite indices), using immutable algorithmic rules and independent verification systems to align spending with citizen welfare.
+> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes metric-bound allocation systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align spending with citizen welfare.
 
 
 ### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
