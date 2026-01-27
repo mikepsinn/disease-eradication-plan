@@ -192,11 +192,18 @@ See `scripts/README.md` for complete documentation.
 
 | Task | Command |
 |------|---------|
+| View project structure | `python scripts/generate-outline.py` (regenerates `OUTLINE.md`) |
 | Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
 | Find unused params | `npm run param:unused` |
 | Run review checks | `npm run review:run -- file.qmd --checks fact,link` |
 | Validate before render | `npm run validate:pre-render` |
-| Regenerate variables | `npm run generate:everything` |
+| Regenerate everything | `npm run generate:everything` |
+
+### AI Agent Startup
+
+1. **Read `todo.md`** for current priorities
+2. **Read `OUTLINE.md`** for complete project structure (all configs, chapters, orphans, paper citations)
+3. **Check `_analysis/parameter-summary.md`** for parameter reference
 
 ### Hash Tracking System
 

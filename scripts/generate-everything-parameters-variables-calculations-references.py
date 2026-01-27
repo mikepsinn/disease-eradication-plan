@@ -1192,7 +1192,7 @@ def main():
     if generate_outline_script.exists():
         try:
             result = subprocess.run(
-                [sys.executable, str(generate_outline_script), "--output", "OUTLINE-GENERATED.MD"],
+                [sys.executable, str(generate_outline_script)],
                 cwd=str(project_root),
                 capture_output=True,
                 text=True,
@@ -1302,7 +1302,7 @@ def main():
     print("       - README.md (auto-generated from QMD sources)")
     print("       - llms.txt (AI crawler content)")
     print("       - robots.txt (crawler permissions)")
-    print("       - OUTLINE-GENERATED.MD")
+    print("       - OUTLINE.md")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
     print("    2. Render Quarto book to see results")
