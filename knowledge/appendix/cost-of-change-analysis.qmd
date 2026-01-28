@@ -436,9 +436,9 @@ Two governance architectures offer capture resistance:
 
 **Democratic aggregation**: Coalition priorities could be determined through pairwise preference aggregation, allowing all contributors to express preferences over resource allocation. This maintains democratic legitimacy but requires ongoing participation.
 
-**Algorithmic optimization (Optimocracy)**: Alternatively, the coalition could commit to optimizing pre-agreed metrics (e.g., QALYs per dollar, median real income growth) with minimal human discretion. Smart contracts can enforce transparent allocation rules and escrow mechanisms, removing opportunities for insider manipulation. This approach sacrifices flexibility but gains verifiability and capture resistance. See our companion paper on [Optimocracy](https://optimocracy.warondisease.org) for detailed mechanism design.
+**Algorithmic optimization (Optimocracy)**: Alternatively, the coalition could commit to optimizing pre-agreed metrics (e.g., QALYs per dollar, median real income growth) with minimal political discretion. Smart contracts can enforce transparent allocation rules and escrow mechanisms, removing opportunities for insider manipulation. This approach sacrifices flexibility but gains verifiability and capture resistance. See our companion paper on [Optimocracy](https://optimocracy.warondisease.org) for detailed mechanism design.
 
-A hybrid approach (constitutional constraints encoded in smart contracts, algorithmic optimization within those bounds, and democratic governance for edge cases) may offer the best balance. The key principle: minimize human discretion over routine decisions while preserving adaptability for genuinely novel situations.
+A hybrid approach (constitutional constraints encoded in smart contracts, algorithmic optimization within those bounds, and democratic governance for edge cases) may offer the best balance. The key principle: minimize political discretion over routine decisions while preserving adaptability for genuinely novel situations.
 
 ## Conclusion
 

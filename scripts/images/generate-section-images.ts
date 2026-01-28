@@ -272,7 +272,7 @@ async function evaluateSection(section: Section, variables: Map<string, string>)
   // Resolve Quarto variables in the section content so LLM sees actual values
   const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
 
-  const prompt = `Analyze if this section would SIGNIFICANTLY benefit from a generated image.
+  const prompt = `Analyze if this section would benefit from a generated image that helps readers understand the content.
 
 SECTION:
 ---
@@ -280,26 +280,26 @@ ${resolvedContent}
 ---
 
 AUTOMATIC REJECTIONS (answer NO if ANY apply):
-1. Section contains a TABLE - tables ARE the visualization
-2. Section contains MATH EQUATIONS ($$...$$) - formulas are self-explanatory
-3. Section shows a SIMPLE CURVE described by a formula (e.g., "Score = 1 - e^{-x}")
-4. Section has ASCII DIAGRAMS or box-drawing characters
-5. Information is ALREADY CLEAR from text/lists - image would just restate it
-6. Section describes ONE metric threshold or scale (e.g., "I² > 75% means high heterogeneity")
-7. This appears to be ONE STEP of a worked example (limit images per example)
-8. A bar chart would just restate what a table already shows
+1. Section already contains a TABLE - tables are visualizations
+2. Section already has ASCII DIAGRAMS or box-drawing characters
+3. Section is purely definitional (just defines a term without explaining relationships)
+4. Content is a simple list with no relationships between items
 
-ONLY recommend YES if:
-- Complex MULTI-ENTITY relationships (5+ interconnected components)
-- COMPARATIVE data across 4+ categories that would benefit from side-by-side visual
-- PROCESS FLOW with conditional branching (not simple linear steps)
-- ARCHITECTURE diagrams showing system components and data flow
-- The image would provide understanding NOT achievable from the text
+GOOD CANDIDATES for images (answer YES):
+- Process flows or workflows (even 3-4 steps benefit from visualization)
+- Relationships between entities (stakeholders, systems, concepts)
+- Comparisons between approaches, scenarios, or options
+- Hierarchies or organizational structures
+- Timelines or sequences of events
+- Cause-and-effect chains
+- System architectures or data flows
+- Conceptual frameworks or mental models
+- Geographic or spatial relationships
+- Before/after contrasts
 
-KEY QUESTION: Would a reader skip the text and understand from JUST the image?
-If the text/table/formula is clearer than any possible image, answer NO.
+MATH SECTIONS: If section has equations, consider whether a DIAGRAM showing what the equation represents would help (e.g., a cost-benefit diagram even if the formula exists). Answer YES if the visual would clarify the concept.
 
-DEFAULT TO NO unless there is compelling reason for an image.
+KEY PRINCIPLE: Images COMPLEMENT text - they provide a different way to understand the same content. A reader should be able to grasp the concept quickly from the image, then read the text for details.
 
 Respond with JSON only:
 {

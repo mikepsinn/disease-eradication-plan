@@ -1,6 +1,6 @@
 {
-  "totalSites": 12,
-  "totalPages": 103,
+  "totalSites": 13,
+  "totalPages": 104,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -5131,7 +5131,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-01-26"
+          "lastmod": "2026-01-28"
         },
         {
           "path": "knowledge/appendix/wishocracy-paper.qmd",
@@ -5215,12 +5215,9 @@
             "The Constitutional Layer",
             "The Verification Layer",
             "The Execution Layer",
-            "Candidate Metrics",
-            "Median Real Income Growth",
-            "Quality-Adjusted Life Years (QALYs)",
-            "Composite Welfare Index",
-            "Constitutional Welfare Score: A Concrete Default",
+            "Welfare Metrics",
             "Default Implementation: Two-Metric Welfare Function",
+            "Alternative: Constitutional Welfare Score",
             "Metric Defaults",
             "Scope and Limits: A Taxonomy of Governance Decisions",
             "Engaging with the Counter-Literature",
@@ -5240,9 +5237,6 @@
             "Democratic Legitimacy",
             "Optimocracy vs. Direct Existential Risk Work",
             "Testable Predictions",
-            "Cross-Jurisdictional Predictions",
-            "Within-Jurisdiction Predictions",
-            "Optimocracy-Specific Predictions",
             "Rejection Criteria",
             "Hybrid Architectures",
             "The Constrained Discretion Model",
@@ -5257,7 +5251,7 @@
             "Implementation Phases",
             "Realistic Adoption Path",
             "Concrete First Deployment: The GiveWell Outcome Fund",
-            "The Wrapper Architecture: Why Government Adoption Isn't Required",
+            "Why Government Adoption Isn't Required",
             "Conclusion",
             "What About AI?",
             "Appendix A: Technical Specification Sketch",
@@ -5400,7 +5394,7 @@
             "Appendix C: Glossary"
           ],
           "published": true,
-          "lastmod": "2026-01-26"
+          "lastmod": "2026-01-28"
         },
         {
           "path": "knowledge/appendix/optimal-budget-generator-spec.qmd",
@@ -6987,6 +6981,7 @@
             "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
             "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
+            "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
@@ -7449,6 +7444,126 @@
           "title": "Wishocracy",
           "description": "This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.",
           "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/appendix/wishocracy-paper-og-retro-academic.jpg",
+          "sections": [
+            "The Analytic Hierarchy Process",
+            "Quadratic Voting and Preference Intensity",
+            "Collective Intelligence and the Wisdom of Crowds",
+            "Related Work and Positioning in the Literature",
+            "Core Mechanism",
+            "Scenario: The Town Budget",
+            "Formal Properties",
+            "Formal Model",
+            "Computational Complexity and Scalability",
+            "Comparative Information & Welfare Analysis",
+            "Information-Theoretic Superiority",
+            "Welfare Maximization: The \"Median vs. Mean\" Proof",
+            "Principal-Agent Cost Elimination",
+            "Porto Alegre Participatory Budgeting",
+            "Taiwan's Digital Democracy Experiments",
+            "Stanford Participatory Budgeting Platform Research",
+            "Colorado Quadratic Voting Experiment",
+            "Reference Implementation: Wishocracy.org",
+            "Participation and Digital Divide",
+            "Manipulation and Sybil Attacks",
+            "Preference Laundering and Manufactured Consent",
+            "Complexity of Real Policy Trade-offs",
+            "Legitimacy and Accountability",
+            "Failure Modes and Robustness",
+            "References"
+          ],
+          "published": true,
+          "lastmod": "2026-01-24"
+        }
+      ],
+      "pageCount": 1
+    },
+    {
+      "id": "political-dysfunction-tax",
+      "type": "website",
+      "title": "The Political Dysfunction Tax",
+      "description": "Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.",
+      "siteUrl": "https://political-dysfunction-tax.warondisease.org",
+      "favicon": "https://political-dysfunction-tax.warondisease.org/assets/icons/political-dysfunction-tax-favicon.png",
+      "ogImage": "https://political-dysfunction-tax.warondisease.org/assets/og/political-dysfunction-tax-og-1200x630.jpg",
+      "pdfUrl": "https://political-dysfunction-tax.warondisease.org/political-dysfunction-tax.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "version": "1.0",
+      "edition": "Working Draft",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Decentralized Institutes of Health",
+      "publisherUrl": "https://dih.earth",
+      "subject": "Governance Efficiency, Political Economy, Welfare Economics, Public Choice",
+      "category": "Academic Paper, Public Policy, Political Science, Economics",
+      "keywords": [
+        "governance-efficiency",
+        "political-dysfunction",
+        "welfare-economics",
+        "opportunity-cost",
+        "public-choice",
+        "rent-seeking",
+        "clinical-trials",
+        "migration-economics",
+        "regulatory-burden"
+      ],
+      "audience": "Researchers, Policy Makers, Economists, Political Scientists",
+      "format": "Working Paper",
+      "genre": "Political Science, Welfare Economics, Public Policy",
+      "language": "en-US",
+      "twitterSite": "https://x.com/warondisease",
+      "twitterCreator": "https://x.com/warondisease",
+      "indexSource": "knowledge/appendix/political-dysfunction-tax.qmd",
+      "outputDir": "_site/political-dysfunction-tax",
+      "publishing": {
+        "ownSite": {
+          "url": "https://political-dysfunction-tax.warondisease.org",
+          "status": "pending"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "pending",
+            "url": "",
+            "doi": ""
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Journal of Political Economy",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      },
+      "pages": [
+        {
+          "path": "index.qmd",
+          "url": "https://political-dysfunction-tax.warondisease.org/",
+          "title": "Wishocracy",
+          "description": "This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.",
+          "image": "https://political-dysfunction-tax.warondisease.org/assets/og-images/knowledge/appendix/wishocracy-paper-og-retro-academic.jpg",
           "sections": [
             "The Analytic Hierarchy Process",
             "Quadratic Voting and Preference Intensity",

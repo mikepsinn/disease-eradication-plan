@@ -87,6 +87,13 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 > The 1962 efficacy requirement adds 8.2 years to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1.
 
 
+### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+
+[![The Political Dysfunction Tax](assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
+
+> Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
+
+
 ### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
 
 [![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
@@ -110,7 +117,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 ---
 
-*11 publications indexed.*
+*12 publications indexed.*
 
 ## How to Help
 

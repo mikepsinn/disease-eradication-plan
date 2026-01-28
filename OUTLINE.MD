@@ -1,8 +1,8 @@
 # Project Outline
 
 **Quarto Project Overview:**
-- Total configs: 13
-- Total QMD files: 90
+- Total configs: 14
+- Total QMD files: 91
 
 ---
 
@@ -1959,12 +1959,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 19,120
+**Files:** 1 | **Words:** 19,121
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,120 words | 1,703 lines
+**Stats:** 19,121 words | 1,703 lines
 
   - Abstract
   - Introduction
@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 346,283
+**Files:** 86 | **Words:** 345,184
 
 #### index.qmd
 **Title:** Start Here
@@ -3859,7 +3859,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,120 words | 1,703 lines
+**Stats:** 19,121 words | 1,703 lines
 
   - Abstract
   - Introduction
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 16,994 words | 1,795 lines
+**Stats:** 15,861 words | 1,620 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4075,12 +4075,9 @@
     - The Constitutional Layer
     - The Verification Layer
     - The Execution Layer
-  - Candidate Metrics
-    - Median Real Income Growth
-    - Quality-Adjusted Life Years (QALYs)
-    - Composite Welfare Index
-    - Constitutional Welfare Score: A Concrete Default
+  - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
+    - Alternative: Constitutional Welfare Score
     - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
@@ -4100,9 +4097,6 @@
     - Democratic Legitimacy
     - Optimocracy vs. Direct Existential Risk Work
   - Testable Predictions
-    - Cross-Jurisdictional Predictions
-    - Within-Jurisdiction Predictions
-    - Optimocracy-Specific Predictions
     - Rejection Criteria
   - Hybrid Architectures
     - The Constrained Discretion Model
@@ -4120,7 +4114,7 @@
     - Implementation Phases
     - Realistic Adoption Path
     - Concrete First Deployment: The GiveWell Outcome Fund
-    - The Wrapper Architecture: Why Government Adoption Isn't Required
+    - Why Government Adoption Isn't Required
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
@@ -6687,7 +6681,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 885 words | 99 lines
+**Stats:** 918 words | 106 lines
 
 - Papers & Publications
   - Books
@@ -6700,6 +6694,7 @@
     - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
     - [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
     - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
     - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
     - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
     - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
@@ -7109,12 +7104,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 16,994
+**Files:** 1 | **Words:** 15,861
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 16,994 words | 1,795 lines
+**Stats:** 15,861 words | 1,620 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7148,12 +7143,9 @@
     - The Constitutional Layer
     - The Verification Layer
     - The Execution Layer
-  - Candidate Metrics
-    - Median Real Income Growth
-    - Quality-Adjusted Life Years (QALYs)
-    - Composite Welfare Index
-    - Constitutional Welfare Score: A Concrete Default
+  - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
+    - Alternative: Constitutional Welfare Score
     - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
@@ -7173,9 +7165,6 @@
     - Democratic Legitimacy
     - Optimocracy vs. Direct Existential Risk Work
   - Testable Predictions
-    - Cross-Jurisdictional Predictions
-    - Within-Jurisdiction Predictions
-    - Optimocracy-Specific Predictions
     - Rejection Criteria
   - Hybrid Architectures
     - The Constrained Discretion Model
@@ -7193,7 +7182,7 @@
     - Implementation Phases
     - Realistic Adoption Path
     - Concrete First Deployment: The GiveWell Outcome Fund
-    - The Wrapper Architecture: Why Government Adoption Isn't Required
+    - Why Government Adoption Isn't Required
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
@@ -7209,6 +7198,52 @@
       - Defense-in-Depth Architecture
   - Acknowledgments {.unnumbered}
   - References
+
+---
+
+## _quarto-political-dysfunction-tax.yml
+**Title:** The Political Dysfunction Tax
+**Type:** website
+**Files:** 1 | **Words:** 5,447
+
+#### knowledge/appendix/political-dysfunction-tax.qmd
+**Title:** The Political Dysfunction Tax
+**Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
+**Stats:** 5,447 words | 416 lines
+
+  - Introduction: The Mechanism Design of Civilizational Stagnation
+  - Part 1: The Waste Ledger (The "Burned Capital")
+    - Military Overspend: The Cost of Hegemony vs. Security
+      - The Strategic Delta: Dominance vs. Denial
+      - The Compounded Economic Loss
+    - Administrative Bloat and the Friction Economy
+      - The Healthcare Administration Tax
+      - The Compliance Tax of Complexity
+      - Corporate Welfare and Rent-Seeking
+    - Incarceration & Prohibition: The Economics of Human Caging
+      - The Direct Fiscal Cost
+      - The Destruction of Human Capital
+  - Part 2: The Opportunity Ledger (The "Buried Multipliers")
+    - The Health Multiplier: The Trillion-Dollar Graveyard
+      - The Efficiency Shift: From RCTs to PCTs
+      - Valuing the "Lost Years"
+    - The Science Multiplier: The ROI of the Future
+      - The Fusion Gap
+      - The AI Alignment Gap
+    - The Human Capital Multiplier: Unleashing Cognitive Stock
+      - The Lead Anchor
+      - The Migration Arbitrage ("Trillion Dollar Bills")
+  - Part 3: The Calculation ($E$)
+    - The Variables
+    - The Efficiency Score
+  - Comparative Balance Sheet: Status Quo vs. Optimocracy
+  - Analysis and Second-Order Insights
+    - The "Parable of the Broken Window" on Steroids
+    - The "Buried" Health Multiplier is the Critical Failure
+    - Security Theater vs. Solvency
+  - Conclusion
+  - See Also
+    - Works cited
 
 ---
 
@@ -7373,7 +7408,7 @@
 
 ## ORPHANED FILES (not in any config)
 
-*21 QMD files in knowledge/ not in any Quarto config:*
+*20 QMD files in knowledge/ not in any Quarto config:*
 
 #### knowledge/appendix/military-vs-clinical-trials-funding-imbalance.qmd
 - **Title:** Comparative Analysis: Global Military Spending vs. Clinical Trials Investment
@@ -7384,11 +7419,6 @@
 - **Title:** Case Study: Closed-Loop Neuromodulation for Treatment-Resistant Depression
 - **Description:** Quantifying the human cost of post-safety efficacy delays using breakthrough neuromodulation technol...
 - **Words:** 636
-
-#### knowledge/appendix/political-dysfunction-tax.qmd
-- **Title:** The Political Dysfunction Tax
-- **Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a ...
-- **Words:** 5,447
 
 #### knowledge/appendix/regulatory-mortality-analysis-for-humans.qmd
 - **Title:** The Human Cost of Regulatory Latency
@@ -7497,6 +7527,7 @@
 | _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18356210 |
 | _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18356212 |
 | _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356214 |
+| _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | - |
 | _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18205882 |
 
 **Usage:** `[@dfda-impact-paper-2025]` or `@dfda-impact-paper-2025`
@@ -7505,8 +7536,8 @@
 
 ## SUMMARY
 
-- Quarto configs: 13
-- Unique QMD files: 90
-- Total words: 551,633
-- Orphaned files: 21
-- Paper configs: 11
+- Quarto configs: 14
+- Unique QMD files: 91
+- Total words: 554,849
+- Orphaned files: 20
+- Paper configs: 12

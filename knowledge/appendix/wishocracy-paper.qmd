@@ -730,14 +730,14 @@ Wishocracy and Optimocracy represent two distinct approaches to governance refor
 
 ![A conceptual diagram of the hybrid governance architecture showing the flow from citizen preference aggregation via Wishocracy into algorithmic metric optimization via Optimocracy.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-optimocracy-bw-academic.jpg)
 
-- **Optimocracy** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal human discretion. The output is an allocation that executes regardless of political preferences.
+- **Optimocracy** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal political discretion. The output is an allocation that executes regardless of political preferences.
 
 These approaches address different failure modes:
 
 | Failure Mode | Wishocracy Solution | Optimocracy Solution |
 |--------------|--------------------|--------------------|
 | Preference aggregation | RAPPA pairwise comparison | N/A (metric pre-selected) |
-| Capture by interests | Accountability scores | Remove human discretion |
+| Capture by interests | Accountability scores | Remove political discretion |
 | Time-inconsistency | Continuous measurement | Algorithmic commitment |
 | Metric gaming (Goodhart) | Adapts to changing preferences | Vulnerable |
 | Democratic legitimacy | High (citizen input) | Lower (algorithm decides) |
