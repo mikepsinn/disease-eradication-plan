@@ -378,6 +378,25 @@ jobs:
         timeout-minutes: 30
 
 
+      - name: "Deploy Build Federal Resource Allocation Efficiency Audit to Netlify (immediate)"
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/federal-efficiency-audit/_site/federal-efficiency-audit'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy federal-efficiency-audit site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 9a8ec013-54cd-4b7a-9364-fa13dc46bd92
+
+        timeout-minutes: 1
+
 
 
 

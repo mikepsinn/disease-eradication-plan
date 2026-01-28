@@ -16,8 +16,8 @@ dih-render:
   emoji: "📊"
   index-source: knowledge/appendix/federal-efficiency-audit.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  netlify-site-id: ""  # To be configured after Netlify site creation
-  netlify-cname: ""  # DNS: federal-efficiency-audit.warondisease.org -> this
+  netlify-site-id: "9a8ec013-54cd-4b7a-9364-fa13dc46bd92"
+  netlify-cname: "federal-efficiency-audit-warondisease.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Bar chart with efficiency arrow trending upward, minimalist government building silhouette."
 
