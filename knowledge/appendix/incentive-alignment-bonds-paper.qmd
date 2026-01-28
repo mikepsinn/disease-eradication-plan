@@ -85,8 +85,6 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 
 ### Key Results
 
-![A visual summary of the economic leverage and capital asymmetry between diffuse beneficiaries and concentrated opposition, highlighting the 90:1 funding advantage and 230:1 benefit-cost ratio.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
-
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
 - **{{< var victory_bond_annual_return_pct >}} expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
@@ -98,13 +96,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 ### Reader's Guide
 
-**For non-technical readers:** Read Sections 1-2 (problem and solution overview), 6 (governance architecture), and 7-8 (welfare analysis and implementation). The formal model (Section 3) can be skipped; the intuition is provided in Section 2 and visualized in figures.
-
-![A visual roadmap mapping different reader personas (non-technical, economists, and investors) to their specific recommended reading paths through the document sections.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-reader-s-guide-bw-academic.jpg)
-
-**For economists:** Focus on Section 3 (explicit functional forms and numerical calibration), Section 5 (legal architecture), Section 7 (welfare accounting), and Section 8 (bootstrap solution). The calibration in Section 3.3 shows both failure and success cases with realistic parameters.
-
-**For investors and philanthropists:** Read Section 2.2 (ROI calculation), Section 2.3 (capital asymmetry), Section 7.3 (mechanism BCR), and Section 8.1 (bootstrap problem solution). Expected returns derive from proven lobbying economics, not speculative outcomes.
+**Non-technical readers** can skip Section 3 (formal model); the intuition is provided in Section 2. **Economists** should focus on Section 3 (explicit functional forms) and Section 7 (welfare accounting). **Investors** should focus on Section 2.2-2.3 (ROI and capital asymmetry) and Section 8 (bootstrap solution).
 
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or relying on benevolent decision-makers, IABs restructure the incentive environment so that rational self-interest points toward welfare-improving policies.
 
@@ -302,8 +294,6 @@ The empirical criterion is straightforward: if a program's beneficiaries are con
 
 This paper combines three literatures. First, **mechanism design theory** [@hurwicz1972; @myerson1979; @maskin1999] provides tools for designing institutions when agents have private information and act strategically. While mechanism design has transformed market institutions, from spectrum auctions [@milgrom2004] to kidney exchanges [@roth2002], its application to political institutions is limited. We extend this framework to political incentives, treating politicians as strategic agents whose actions (votes) are observable but whose preferences may diverge from social welfare.
 
-![A conceptual map showing the synthesis of mechanism design, public choice theory, and political agency research into a new framework, alongside a comparison with existing policy instruments like Social Impact Bonds and lobbying.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-relation-to-existing-literature-bw-academic.jpg)
-
 Second, **public choice theory** [@buchanan1962; @olson1965] models politicians as utility maximizers rather than benevolent planners. Olson's analysis of concentrated versus diffuse interests explains persistent policy failures but offers limited remedies. We turn Olson's insight into a mechanism: if concentrated benefits cause politicians to favor narrow interests, then *concentrating benefits on the welfare-improving side* can reverse the dynamic.
 
 Third, **campaign finance research** [@spenkuch2018; @stratmann2002; @fowler2020] and **political agency models** [@shepherd2019] document how electoral incentives and career concerns shape politician behavior. We synthesize these findings into a mechanism that systematically exploits these channels for public goods.
@@ -316,8 +306,6 @@ This paper makes four contributions:
 
 1. **Mechanism Design for Governance**: We apply the formal tools of mechanism design theory, developed for auctions, matching markets, and resource allocation, to the problem of political incentives. While mechanism design has transformed economic institutions from spectrum auctions to kidney exchanges, its application to democratic governance is underdeveloped.
 
-![A conceptual diagram illustrating the three-layer legal architecture of Incentive Alignment Bonds and the comparative welfare-improvement framework for resource reallocation.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-contribution-bw-academic.jpg)
-
 2. **A New Financial Instrument**: We define IABs as a distinct class of financial instrument with three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. This distinguishes IABs from Social Impact Bonds (which reward service providers, not politicians), lobbying (which serves narrow interests), and campaign contributions (which lack systematic, ex-ante, universal rules tied to measurable outcomes).
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
@@ -326,9 +314,7 @@ This paper makes four contributions:
 
 ### Roadmap
 
-"Why Previous Approaches Failed" reviews the relevant literature on mechanism design, public choice, Social Impact Bonds, and campaign finance. "The Math" presents the formal model, defining the politician's utility function and proving incentive compatibility. "How IABs Work in Practice" details the three-layer architecture and its legal basis. "What Could Go Wrong" analyzes potential failure modes and limitations. "Where IABs Fit" discusses the broader governance stack. "Beyond Health" extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
-
-![A logical sequence diagram showing the progression of the article from problem identification and formal modeling to practical implementation and risk analysis.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-roadmap-bw-academic.jpg)
+Section 2 reviews why previous approaches failed. Section 3 presents the formal model. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes failure modes. Section 6 discusses the broader governance stack. Section 7 extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
 
 ## Why Previous Approaches Failed {#sec-literature}
 
@@ -388,11 +374,7 @@ Empirical research on campaign finance provides the evidentiary foundation for t
 
 ### Credit Rating Agencies as Governance Mechanisms
 
-Credit rating agencies (CRAs) provide a precedent for private organizations influencing sovereign policy through reputational mechanisms. Moody's, S&P, and Fitch assign sovereign credit ratings that directly affect borrowing costs.
-
-![A comparison diagram showing the structural analogy between Credit Rating Agencies and Independent Assessment Bodies, mapping how objective criteria lead to institutional scores and subsequent market or social responses.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-credit-rating-agencies-as-governance-mechanisms-bw-academic.jpg)
-
-Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable profit-seeking institutions" whose power rivals the IMF or World Bank. Downgrades can trigger crises: Greece, Ireland, and Portugal all experienced accelerated debt crises following CRA downgrades to "junk" status [@desa2023].
+Credit rating agencies (CRAs) provide a precedent for private organizations influencing sovereign policy through reputational mechanisms. Moody's, S&P, and Fitch assign sovereign credit ratings that directly affect borrowing costs. Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable profit-seeking institutions" whose power rivals the IMF or World Bank. Downgrades can trigger crises: Greece, Ireland, and Portugal all experienced accelerated debt crises following CRA downgrades to "junk" status [@desa2023].
 
 The IAB scoring system is structurally analogous to credit ratings: an independent body publishes scores based on objective criteria, and market actors (voters, donors, employers) respond to those scores. The difference is the metric: instead of fiscal sustainability, IABs measure support for measurable public goods.
 
@@ -909,8 +891,6 @@ The IAB architecture is protected by the First Amendment at multiple levels:
 
 1. **Scoring layer:** Publishing voting records and scores based on those records is core political speech. The government cannot prohibit citizens from evaluating and publicizing legislators' voting records.
 
-![A conceptual mapping of the three IAB architecture layers (Scoring, Electoral, and Post-office) to their specific First Amendment legal protections.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-constitutional-protections-bw-academic.jpg)
-
 2. **Electoral layer:** *Citizens United* held that independent expenditures are protected speech. The government cannot limit spending by independent actors to support or oppose candidates based on their policy positions.
 
 3. **Post-office layer:** Private organizations have First Amendment associational rights to set their own membership and employment criteria. A foundation requiring fellows to have supported certain policies is no different from a think tank preferring scholars who share its intellectual orientation.
@@ -1020,32 +1000,7 @@ This criticism deserves a careful response, as it goes to the heart of whether I
 
 **However, the objection retains force:** IABs do not democratize power; they redirect it. Whose conception of "public good" defines the NSV ranking? What prevents IAB funders from capturing the scoring process? What prevents redirected resources from being recaptured by new concentrated interests?
 
-**The structural answer: Wishocracy (Layer 2) solves the allocation capture problem.**
-
-As detailed in Section 6.2.3, once IABs successfully redirect resources to high-NSV domains, **Wishocracy prevents those resources from being captured** by replacing committee allocation with democratic preference aggregation:
-
-1. **Who decides priorities?** All citizens, through pairwise comparisons aggregated via Bradley-Terry model
-2. **What prevents capture of the allocation process?** Random pairwise sampling makes advertising economically infeasible (~0.1% appearance probability per campaign → \$200M advertising cost for rankings shift → cheaper to just do the research)
-3. **What prevents IAB funders from controlling the scoring process?** Layer 0 (Wishocracy for Domain Ranking) combines expert BCR data from multiple independent sources (Copenhagen Consensus, GiveWell, IMF, academic literature) with democratic aggregation via citizen pairwise comparisons. IAB funders cannot capture the domain rankings because that would require capturing all expert organizations AND manipulating millions of citizen preferences. Layer 2 (Wishocracy) then democratizes allocation *within* domains approved via Layer 0 rankings.
-
-**The division of labor:**
-
-- **Layer 0 (Wishocracy for Domain Ranking):** Determine *which domains* should be funded (pragmatic clinical trials vs. military spending vs. climate vs. subsidies). Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings.
-- **Layer 1 (IABs):** Make politicians care about Layer 0 rankings via score-dependent incentives
-- **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate *within approved domains* (30% cancer, 20% Alzheimer's, etc.) without committee capture
-- **Layer 3 (Domain marketplaces):** Market mechanisms determine *specific projects* (which trials, which researchers)
-
-**Residual governance requirements for Layer 0 (Wishocracy for Domain Ranking):**
-
-- **Multiple independent expert organizations:** Copenhagen Consensus, GiveWell, IMF, CBO, academic literature provide BCR data (no monopoly on expertise)
-- **Academic peer review:** BCR methodologies published in peer-reviewed journals, subject to replication
-- **Transparent methodology:** All expert data sources, BCR calculations, and Wishocracy aggregation algorithms publicly available
-- **Democratic aggregation:** Bradley-Terry model aggregates citizen pairwise comparisons; prevents capture of domain prioritization
-- **Anti-gaming:** Random pairwise sampling makes advertising economically infeasible (same mechanism as Layer 2)
-
-**The key innovation:** We don't need a single authoritative answer to "whose conception of public good governs allocation" at Layer 1 because **Layers 0 and 2 democratize that decision**. Layer 0 democratizes *domain* prioritization (medical research vs. military spending). Layer 2 democratizes *within-domain* allocation (Alzheimer's vs. cancer). IABs (Layer 1) solve the *adoption* problem, getting politicians to vote for reallocation based on democratically-determined priorities. This is why the four-layer stack is needed. Each layer addresses a distinct failure mode.
-
-**Democratic legitimacy:** IABs overcome the Olsonian collective action failure at the *adoption* stage, the binding constraint that prevents welfare-improving policies from being considered. Democratic legitimacy is addressed at two levels: **(1) Layer 0** democratizes domain prioritization (which broad areas like medical research, climate, pandemic preparedness should be funded), and **(2) Layer 2** democratizes within-domain allocation (how to allocate within medical research across cancer, Alzheimer's, etc.). Both layers use Wishocracy's pairwise comparison mechanism, ensuring that resource allocation reflects aggregated citizen preferences rather than committee capture or funder control. The mechanism is compatible with democratic governance precisely because domain prioritization, adoption, and allocation are separated across layers.
+**The structural answer:** The four-layer governance stack (Section 6) addresses these concerns. Layer 0 (Wishocracy for Domain Ranking) democratizes *which domains* receive funding via citizen pairwise comparisons aggregated with expert BCR data. Layer 2 (Wishocracy for Within-Domain Allocation) democratizes allocation *within* approved domains. Random pairwise sampling makes advertising economically infeasible (~0.1% appearance probability per campaign → $200M cost to shift rankings → cheaper to just do the research). IABs (Layer 1) solve only the *adoption* problem: getting politicians to vote for reallocation. Democratic legitimacy is addressed at Layers 0 and 2, not Layer 1.
 
 ### Unintended Consequences
 
@@ -1335,8 +1290,6 @@ The Monte Carlo results confirm that the mechanism's BCR remains strongly positi
 ## Conclusion
 
 Incentive Alignment Bonds represent a new application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
-
-**In plain English:** The mechanism makes it personally profitable for politicians to support welfare-improving policies such as pragmatic clinical trials, rather than harmful or low-value programs.
 
 The contribution is fivefold:
 
