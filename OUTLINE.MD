@@ -1959,12 +1959,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 17,296
+**Files:** 1 | **Words:** 17,870
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,296 words | 1,581 lines
+**Stats:** 17,870 words | 1,616 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -2108,7 +2108,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 340,995
+**Files:** 86 | **Words:** 341,569
 
 #### index.qmd
 **Title:** Start Here
@@ -3857,7 +3857,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,296 words | 1,581 lines
+**Stats:** 17,870 words | 1,616 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -7520,6 +7520,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 546,471
+- Total words: 547,619
 - Orphaned files: 20
 - Paper configs: 12

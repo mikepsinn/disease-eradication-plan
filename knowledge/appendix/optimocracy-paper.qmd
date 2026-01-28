@@ -95,6 +95,9 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). Pragmatic clinical trials demonstrate even higher returns ({{< var dfda_roi_rd_only >}} BCR) by generating treatment evidence at a fraction of traditional trial costs [@dfda-impact-paper-2025]. GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
 
+![A conceptual diagram illustrating the 'Incentive Gap' where high-impact cost-benefit data is filtered out by political incentives like reelection and campaign contributions, preventing it from influencing policy decisions.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
+
+
 Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because acting on it doesn't maximize what benefits them personally (reelection probability, campaign contributions, post-office career prospects).
@@ -156,6 +159,9 @@ You don't need superintelligent AI. You need a clear, measurable goal, historica
 This paper makes three contributions to the political economy literature:
 
 1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at {{< var political_dysfunction_tax_total_pct >}} of potential GDP, decomposed into cronyism, short-termism, ignorance, and ideological gridlock.
+
+![A conceptual framework illustrating the three contributions: the decomposition of the Political Dysfunction Tax, the theoretical comparison of governance models, and the three-stage implementation architecture.](/assets/images/optimocracy-paper/optimocracy-paper-section-contributions-bw-academic.jpg)
+
 
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when outcome-optimizing allocation outperforms capture-prone governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 

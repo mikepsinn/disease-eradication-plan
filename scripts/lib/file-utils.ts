@@ -51,6 +51,110 @@ export function getProjectRoot(): string {
 const ROOT_DIR = getProjectRoot();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
+// --- BibTeX Citation Resolution ---
+
+/** Cache for parsed BibTeX references (citation key -> author display name) */
+let bibTexCache: Map<string, string> | null = null;
+
+/**
+ * Parse references.bib and extract author names for each citation key
+ * Uses synchronous file reading for use in sync functions
+ * @returns Map of citation keys to author display names (e.g., "gilens2014" -> "Gilens and Page")
+ */
+function loadBibTexAuthors(): Map<string, string> {
+  if (bibTexCache) {
+    return bibTexCache;
+  }
+
+  bibTexCache = new Map();
+  const bibPath = path.join(ROOT_DIR, 'references.bib');
+
+  try {
+    const content = fsSync.readFileSync(bibPath, 'utf-8');
+
+    // Parse BibTeX entries: @type{key, ... author = {...}, ... }
+    // Match each entry and extract key and author field
+    const entryRegex = /@\w+\{([^,]+),([^@]*?)(?=\n@|\n*$)/gs;
+    let match;
+
+    while ((match = entryRegex.exec(content)) !== null) {
+      const citationKey = match[1].trim();
+      const entryContent = match[2];
+
+      // Extract author field: author = {Name} or author = "Name"
+      const authorMatch = entryContent.match(/author\s*=\s*[{"](.*?)[}"]/i);
+      if (authorMatch) {
+        const authorField = authorMatch[1];
+        // Format author names for display
+        const displayName = formatBibTexAuthors(authorField);
+        bibTexCache.set(citationKey, displayName);
+      }
+    }
+  } catch (error) {
+    console.warn('[WARN] Could not load references.bib for citation resolution');
+  }
+
+  return bibTexCache;
+}
+
+/**
+ * Format BibTeX author field for display
+ * Handles: "Last, First" and "First Last" formats, multiple authors with "and"
+ * @param authorField Raw author field from BibTeX
+ * @returns Formatted author string (e.g., "Gilens and Page", "Smith et al.")
+ */
+function formatBibTexAuthors(authorField: string): string {
+  // Split by " and " to get individual authors
+  const authors = authorField.split(/\s+and\s+/i);
+
+  // Extract last names
+  const lastNames = authors.map(author => {
+    author = author.trim();
+    if (author.includes(',')) {
+      // Format: "Last, First" -> take "Last"
+      return author.split(',')[0].trim();
+    } else {
+      // Format: "First Last" or "First Middle Last" -> take last word
+      const parts = author.split(/\s+/);
+      return parts[parts.length - 1];
+    }
+  });
+
+  // Format based on number of authors
+  if (lastNames.length === 1) {
+    return lastNames[0];
+  } else if (lastNames.length === 2) {
+    return `${lastNames[0]} and ${lastNames[1]}`;
+  } else {
+    return `${lastNames[0]} et al.`;
+  }
+}
+
+/**
+ * Resolve a citation key to author name(s)
+ * Falls back to capitalizing the key if not found in references.bib
+ * @param citationKey The citation key without @ (e.g., "gilens2014")
+ * @returns Author display name (e.g., "Gilens and Page")
+ */
+export function resolveCitationToAuthor(citationKey: string): string {
+  const authors = loadBibTexAuthors();
+  const resolved = authors.get(citationKey);
+
+  if (resolved) {
+    return resolved;
+  }
+
+  // Fallback: extract author name from key (assumes format: authorname####)
+  const keyMatch = citationKey.match(/^([a-zA-Z]+)\d{4}/);
+  if (keyMatch) {
+    const author = keyMatch[1];
+    return author.charAt(0).toUpperCase() + author.slice(1).toLowerCase();
+  }
+
+  // Last resort: return the key as-is
+  return citationKey;
+}
+
 export async function getGitignorePatterns(): Promise<string[]> {
   const gitignorePath = path.join(ROOT_DIR, '.gitignore');
   try {
@@ -1160,9 +1264,11 @@ export function cleanContentForImagePrompt(content: string): string {
     .replace(/^\[\^[^\]]+\]:.*$/gm, '')
     // Strip bracketed citations and preceding space: " [@smith2020]" -> ""
     .replace(/\s*\[@[^\]]+\]/g, '')
-    // Strip bare/in-text citations: "@arrow1951 proved" -> "proved"
-    // Matches @key followed by space/punctuation (won't match emails since they have dots)
-    .replace(/@[\w-]+(?=[\s.,;:!?)\]]|$)/g, '')
+    // Convert bare/in-text citations to author names using references.bib
+    // e.g., "@gilens2014 analyzed" -> "Gilens and Page analyzed"
+    .replace(/@([\w-]+)(?=[\s.,;:!?)\]]|$)/g, (_, citationKey) => {
+      return resolveCitationToAuthor(citationKey);
+    })
     // Strip Quarto cross-references: @fig-name, @tbl-name, @sec-name, @eq-name
     .replace(/@(fig|tbl|sec|eq|lst|thm)-[\w-]+/g, '')
     // Strip HTML comments

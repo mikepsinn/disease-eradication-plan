@@ -8,7 +8,6 @@ image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-re
 
 ![](/assets/infographics/knowledge/appendix/drug-development-cost-analysis-infographic-retro-academic.jpg)
 
-
 ## Executive Summary
 
 The average cost to develop and gain approval for a new drug increased by approximately **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** from the pre-1962 era to 2024, after adjusting for inflation using rigorous academic sources (Baily 1972). This increase far exceeds general inflation and reflects:
@@ -55,6 +54,8 @@ This includes:
 
 FDA approved {{< var current_drug_approvals_per_year >}} new drugs per year (2018-2023 average), down from 60+ per year in the 1950s, despite vastly higher R&D spending.
 
+![A breakdown of the $2.6 billion average cost for drug development, highlighting the impact of clinical failures and long development timelines alongside a comparison of drug approval rates from the 1950s to today.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-current-drug-development-costs-bw-academic.jpg)
+
 ## Inflation-Adjusted Calculations
 
 ### Primary Method: Baily (1972) Academic Study
@@ -93,7 +94,6 @@ $$
 
 This provides an **upper-bound estimate** (213×), but we use the Baily study ({{< var drug_cost_increase_pre1962_to_current_multiplier >}}) as our primary figure due to its superior academic methodology.
 
-
 ![Comparison of inflation-adjusted drug development costs showing a 105x increase from the pre-1962 era to 2024.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-cost-increase-comparison-bw-academic.jpg)
 
 ## Why It's Not Just Inflation
@@ -127,7 +127,6 @@ The Tufts CSDD estimate includes **cost of failures**:
 
 ### 3. Trial Complexity
 
-
 **Pre-1962 (RECOVERY trial equivalent):**
 
 - Simple randomization
@@ -143,6 +142,8 @@ The Tufts CSDD estimate includes **cost of failures**:
 - Cost per patient: ~$4,100
 
 See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for full derivation.
+
+![A side-by-side comparison of clinical trial models, contrasting the simple, low-cost pre-1962 pragmatic approach with the complex, high-cost modern FDA Phase III infrastructure.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-trial-complexity-bw-academic.jpg)
 
 ### 4. Preclinical Requirements
 
@@ -551,5 +552,4 @@ For reproducibility, all calculations use parameters from [`parameters.py`](../a
 | `TRIAL_COST_REDUCTION_FACTOR` | {{< var recovery_trial_cost_reduction_factor >}} | Per-patient cost increase |
 
 See [Parameters & Calculations](../appendix/parameters-and-calculations.qmd) for complete methodology and source links.
-
-
+
