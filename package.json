@@ -174,7 +174,9 @@
     "download:notebooklm": "tsx scripts/download-notebooklm-files.ts",
     "analyze:sizes": "tsx scripts/analyze-file-sizes.ts",
     "netlify:setup": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py",
-    "netlify:list": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py --list"
+    "netlify:list": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py --list",
+    "domain:check": "tsx scripts/check-domain-status.ts",
+    "domain:check:json": "tsx scripts/check-domain-status.ts --json"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

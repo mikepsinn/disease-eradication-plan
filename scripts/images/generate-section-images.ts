@@ -541,44 +541,47 @@ async function processFile(
   for (const section of sections) {
     if (limitReached) break;
 
+    // Resolve variables in title for cleaner logging (do this early for all log messages)
+    const resolvedTitle = replaceQuartoVariables(section.title, variables);
+
     // Skip if section already has visual content (unless force mode)
     if (section.hasVisualContent && !force) {
-      console.log(`  [SKIP] "${section.title}" - already has ${section.visualContentType}`);
+      console.log(`  [SKIP] "${resolvedTitle}" - already has ${section.visualContentType}`);
       skipped++;
       continue;
     }
 
     // Skip structural sections (intro, conclusion, references, etc.)
     if (isStructuralSection(section.title)) {
-      console.log(`  [SKIP] "${section.title}" - structural section`);
+      console.log(`  [SKIP] "${resolvedTitle}" - structural section`);
       skipped++;
       continue;
     }
 
     // Skip very short sections (under 200 chars / ~30 words)
     if (section.content.length < 200) {
-      console.log(`  [SKIP] "${section.title}" - too short (${section.content.length} chars)`);
+      console.log(`  [SKIP] "${resolvedTitle}" - too short (${section.content.length} chars)`);
       skipped++;
       continue;
     }
 
     // Skip sections with tables (tables ARE visualizations)
     if (hasTable(section.rawContent)) {
-      console.log(`  [SKIP] "${section.title}" - contains table (tables are visualizations)`);
+      console.log(`  [SKIP] "${resolvedTitle}" - contains table (tables are visualizations)`);
       skipped++;
       continue;
     }
 
     // Skip sections with significant math equations (formulas are self-explanatory)
     if (hasMathEquations(section.rawContent)) {
-      console.log(`  [SKIP] "${section.title}" - contains math equations`);
+      console.log(`  [SKIP] "${resolvedTitle}" - contains math equations`);
       skipped++;
       continue;
     }
 
     // Skip sections with ASCII diagrams (already visual)
     if (hasAsciiDiagram(section.rawContent)) {
-      console.log(`  [SKIP] "${section.title}" - contains ASCII diagram`);
+      console.log(`  [SKIP] "${resolvedTitle}" - contains ASCII diagram`);
       skipped++;
       continue;
     }
@@ -590,7 +593,7 @@ async function processFile(
       break;
     }
 
-    console.log(`\n  [${evaluated + 1}] Evaluating: "${section.title}" (${section.rawContent.length} chars)`);
+    console.log(`\n  [${evaluated + 1}] Evaluating: "${resolvedTitle}" (${section.rawContent.length} chars)`);
 
     // Ask Gemini if this section needs an image (pass variables for resolution)
     const recommendation = await evaluateSection(section, variables);

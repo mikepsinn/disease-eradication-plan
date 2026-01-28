@@ -1,0 +1,175 @@
+name: Domain Status Check
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: "0 9 * * 1"
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-domains:
+    name: Check Domain Status
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run domain status check
+        id: domain-check
+        continue-on-error: true
+        run: |
+          # Run the check and capture output
+          npx tsx scripts/check-domain-status.ts --json > domain-status.json 2>&1 || true
+
+          # Extract summary for step output
+          if [ -f domain-status.json ]; then
+            UNHEALTHY=$(jq -r '.unhealthy' domain-status.json)
+            TOTAL=$(jq -r '.totalDomains' domain-status.json)
+            echo "unhealthy=$UNHEALTHY" >> $GITHUB_OUTPUT
+            echo "total=$TOTAL" >> $GITHUB_OUTPUT
+
+            # Also show human-readable output in logs
+            echo "=== Domain Status Check Results ==="
+            npx tsx scripts/check-domain-status.ts || true
+          else
+            echo "unhealthy=0" >> $GITHUB_OUTPUT
+            echo "total=0" >> $GITHUB_OUTPUT
+            echo "Error: domain-status.json not created"
+          fi
+
+      - name: Create or update issue if domains are unhealthy
+        if: steps.domain-check.outputs.unhealthy != '0' && steps.domain-check.outputs.unhealthy != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Read the JSON results
+            let results;
+            try {
+              results = JSON.parse(fs.readFileSync('domain-status.json', 'utf8'));
+            } catch (e) {
+              console.log('Could not read domain-status.json:', e);
+              return;
+            }
+
+            const unhealthyDomains = results.results.filter(r =>
+              r.status !== 'ok' && r.status !== 'redirect'
+            );
+
+            if (unhealthyDomains.length === 0) {
+              console.log('No unhealthy domains found');
+              return;
+            }
+
+            // Build issue body
+            const issueBody = `## Domain Status Check Failed
+
+            **Check Time:** ${results.timestamp}
+            **Total Domains:** ${results.totalDomains}
+            **Healthy:** ${results.healthy}
+            **Unhealthy:** ${results.unhealthy}
+
+            ### Unhealthy Domains
+
+            | Domain | Status | Error | Config File |
+            |--------|--------|-------|-------------|
+            ${unhealthyDomains.map(d => `| ${d.siteUrl} | ${d.status} | ${d.error || '-'} | ${d.configFile} |`).join('\n')}
+
+            ### Action Required
+
+            Please investigate the domains listed above. Common issues:
+            - **dns-error**: Domain DNS is not configured or has expired
+            - **timeout**: Server is not responding
+            - **error**: Server returned an error status code
+
+            ---
+            *This issue was automatically created by the [Domain Status Check workflow](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}).*
+            `;
+
+            const issueTitle = `[Automated] Domain Status Check: ${unhealthyDomains.length} domain(s) unhealthy`;
+
+            // Check for existing open issue
+            const { data: existingIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'domain-status',
+              per_page: 1
+            });
+
+            if (existingIssues.length > 0) {
+              // Update existing issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssues[0].number,
+                title: issueTitle,
+                body: issueBody
+              });
+              console.log(`Updated existing issue #${existingIssues[0].number}`);
+            } else {
+              // Create new issue
+              const { data: newIssue } = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['domain-status', 'automated']
+              });
+              console.log(`Created new issue #${newIssue.number}`);
+            }
+
+      - name: Close issue if all domains are healthy
+        if: steps.domain-check.outputs.unhealthy == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Check for existing open issue
+            const { data: existingIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'domain-status',
+              per_page: 1
+            });
+
+            if (existingIssues.length > 0) {
+              // Close the issue with a comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssues[0].number,
+                body: `All domains are now healthy. Closing this issue.\n\n*Automatically closed by [Domain Status Check workflow](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}).*`
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssues[0].number,
+                state: 'closed'
+              });
+              console.log(`Closed issue #${existingIssues[0].number} - all domains healthy`);
+            }
+
+      - name: Upload domain status report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: domain-status-report
+          path: domain-status.json
+          retention-days: 30

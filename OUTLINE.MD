@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,557
+**Files:** 4 | **Words:** 88,532
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1368,7 +1368,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,188 words | 2,635 lines
+**Stats:** 27,163 words | 2,633 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1623,12 +1623,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,698
+**Files:** 1 | **Words:** 11,729
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,698 words | 1,259 lines
+**Stats:** 11,729 words | 1,262 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1959,12 +1959,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 19,120
+**Files:** 1 | **Words:** 19,139
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,120 words | 1,703 lines
+**Stats:** 19,139 words | 1,706 lines
 
   - Abstract
   - Introduction
@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 348,660
+**Files:** 86 | **Words:** 348,481
 
 #### index.qmd
 **Title:** Start Here
@@ -2886,7 +2886,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,188 words | 2,635 lines
+**Stats:** 27,163 words | 2,633 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -3813,7 +3813,7 @@
 #### knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
 **Title:** Right to Trial & FDA Upgrade Act
 **Description:** Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
-**Stats:** 6,642 words | 265 lines
+**Stats:** 6,849 words | 289 lines
 
   - TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
     - SEC. 101. SHORT TITLE
@@ -3859,7 +3859,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,120 words | 1,703 lines
+**Stats:** 19,139 words | 1,706 lines
 
   - Abstract
   - Introduction
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 19,616 words | 1,989 lines
+**Stats:** 19,205 words | 1,945 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4130,7 +4130,6 @@
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
-    - Execution Architecture
     - Verification System Specification
     - Budget and Policy Optimization: Two Complementary Frameworks
       - Budget Optimization: The Optimal Budget Generator (OBG) Framework
@@ -6208,7 +6207,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,698 words | 1,259 lines
+**Stats:** 11,729 words | 1,262 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -7116,12 +7115,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 19,616
+**Files:** 1 | **Words:** 19,205
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 19,616 words | 1,989 lines
+**Stats:** 19,205 words | 1,945 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7210,7 +7209,6 @@
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
-    - Execution Architecture
     - Verification System Specification
     - Budget and Policy Optimization: Two Complementary Frameworks
       - Budget Optimization: The Optimal Budget Generator (OBG) Framework
@@ -7521,6 +7519,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 556,594
+- Total words: 556,029
 - Orphaned files: 21
 - Paper configs: 11
