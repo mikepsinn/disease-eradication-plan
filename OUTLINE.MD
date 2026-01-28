@@ -1959,19 +1959,17 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 19,121
+**Files:** 1 | **Words:** 18,578
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,121 words | 1,703 lines
+**Stats:** 18,578 words | 1,663 lines
 
-  - Abstract
   - Introduction
     - The Information-Incentive Disconnect
     - Key Results
     - Reader's Guide
-    - Key Terms for Non-Economists
     - Definition
     - Why Reallocation, Not Addition
     - Political Change as an Asset Class
@@ -2110,7 +2108,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 342,516
+**Files:** 86 | **Words:** 342,277
 
 #### index.qmd
 **Title:** Start Here
@@ -3859,14 +3857,12 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,121 words | 1,703 lines
+**Stats:** 18,578 words | 1,663 lines
 
-  - Abstract
   - Introduction
     - The Information-Incentive Disconnect
     - Key Results
     - Reader's Guide
-    - Key Terms for Non-Economists
     - Definition
     - Why Reallocation, Not Addition
     - Political Change as an Asset Class
@@ -4041,7 +4037,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,193 words | 1,323 lines
+**Stats:** 13,497 words | 1,359 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7097,12 +7093,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,193
+**Files:** 1 | **Words:** 13,497
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,193 words | 1,323 lines
+**Stats:** 13,497 words | 1,359 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7524,6 +7520,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 549,513
+- Total words: 549,035
 - Orphaned files: 20
 - Paper configs: 12
