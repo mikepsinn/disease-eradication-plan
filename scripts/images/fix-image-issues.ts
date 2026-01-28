@@ -32,7 +32,45 @@ interface ImageIssue {
 }
 
 /**
- * Find images with prompt leakage or figure numbers (NOT quality issues)
+ * Keywords that indicate prompt leakage or meta-artifacts (case-insensitive)
+ */
+const LEAKAGE_KEYWORDS = [
+  'prompt leakage',
+  'scientific illustration',
+  'scientific diagram',
+  'scientific database',
+  'retro',
+  'vintage',
+  'academic',
+  'visualization',
+  'infographic',
+  'high contrast',
+  'minimalist',
+  'aspect ratio',
+  'circa',
+  'confidential',
+  'draft',
+  'sample',
+  'database',
+  'volume',
+  'figure 1',
+  'figure 2',
+  'fig. 1',
+  'fig. 2',
+  'fig 1',
+  'fig 2',
+]
+
+/**
+ * Check if a problem description indicates prompt leakage or figure numbers
+ */
+function isLeakageOrFigureProblem(problem: string): boolean {
+  const lowerProblem = problem.toLowerCase()
+  return LEAKAGE_KEYWORDS.some(keyword => lowerProblem.includes(keyword))
+}
+
+/**
+ * Find images with prompt leakage or figure numbers (NOT typos or quality issues)
  */
 async function findImagesWithIssues(
   targetDir: string,
@@ -55,12 +93,17 @@ async function findImagesWithIssues(
 
     // Only fix images with detected problems (leakage, figure numbers)
     if (metadata.imageProblemsDetected && metadata.imageProblems?.length && metadata.imageProblemsRepairPrompt) {
-      issues.push({
-        filepath: imagePath,
-        relativePath: path.relative(process.cwd(), imagePath),
-        imageProblems: metadata.imageProblems,
-        repairPrompt: metadata.imageProblemsRepairPrompt,
-      })
+      // Filter to only leakage/figure problems (ignore typos from old metadata)
+      const relevantProblems = metadata.imageProblems.filter(isLeakageOrFigureProblem)
+
+      if (relevantProblems.length > 0) {
+        issues.push({
+          filepath: imagePath,
+          relativePath: path.relative(process.cwd(), imagePath),
+          imageProblems: relevantProblems,
+          repairPrompt: metadata.imageProblemsRepairPrompt,
+        })
+      }
     }
 
     if (scanned % 50 === 0) {
@@ -83,12 +126,17 @@ async function editImageWithGemini(
   const base64Image = imageBuffer.toString('base64')
   const mimeType = getMimeType(filepath)
 
+  // Wrap repair prompt with context (same format as edit-image.ts)
+  const fullPrompt = `Edit this image according to these instructions: ${editPrompt}
+
+Keep everything else exactly the same - preserve the overall style, colors, layout, and any elements not mentioned in the instructions. Make ONLY the changes requested.`
+
   const response = await genAI.models.generateContent({
     model: GEMINI_IMAGE_MODEL_ID,
     contents: [
       {
         parts: [
-          { text: editPrompt },
+          { text: fullPrompt },
           {
             inlineData: {
               mimeType,

@@ -77,6 +77,9 @@ In this Act:
    (c) **DSCSA Alignment.** All investigational shipments must utilize the protocol's ledger to satisfy DSCSA traceability.
    (d) **Shared Public Health Infrastructure.** The Protocol shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Protocol by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
+![System architecture of the FDA.gov v2 Decentralized Health Protocol showing the flow of multiomic data from individuals and EHRs through a zero-knowledge backend to federal and international health agencies.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-104-definitions-bw-academic.jpg)
+
+
 ## TITLE II: FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
 
 ### SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS
@@ -130,6 +133,9 @@ In this Act:
 (5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
 (h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Protocol obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
 
+![Architectural diagram of the FDA.gov v2 Decentralized Health Protocol showing the flow between the open API, AI-governance pull-request triage, blockchain ledger components, and multi-stakeholder oversight.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-204-fda-gov-v2-decentralized-health-protocol-and-reference-implementation-bw-academic.jpg)
+
+
 (i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program, funded under § 402(a), to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level data aggregated and analyzed by the Protocol shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
 
 (j) **Metrics & Transparency.** Annual public report: protocol uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores. The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
@@ -153,6 +159,9 @@ In this Act:
 
 (a) **Right.** Beginning 24 months after enactment, any U.S. resident who requests an investigational intervention shall be guaranteed enrolment, remotely if necessary, in at least one pragmatic, decentralized trial arm evaluating that intervention, subject to the safety-based exclusions specified in subsection (c).
 
+![A flowchart illustrating the universal eligibility pathway, showing the decision logic between sponsor-led enrollment with PRV incentives and the 60-day NIH micro-study fallback mechanism.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-301-universal-eligibility-for-investigational-interventions-bw-academic.jpg)
+
+
 (b) **Sponsor Incentive.** The Secretary shall award a **transferable Priority‑Review Voucher (PRV)** under section 524A of the Federal Food, Drug, and Cosmetic Act to any sponsor that, on or before the universal‑enrolment activation date, opens or amends a trial on the **FDA.gov Public Portal** to accept such patient‑directed enrolment and maintains adequate investigational‑product supply. A PRV is forfeited if the sponsor later restricts patient enrolment without a documented safety or manufacturing constraint.
 
 (c) **Safety‑Based Exclusions Only.** Sponsors or IRBs may exclude an individual patient **solely for documented, evidence‑based safety reasons** (e.g., a specific contraindication, allergy, or organ‑system risk) or if investigational‑product supply is demonstrably insufficient. Exclusion rationales must be transmitted to the FDA Dashboard within 7 days and are subject to FDA audit.
@@ -170,9 +179,15 @@ In this Act:
 (c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 CFR § 312.42.
 (d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
 
+![Process flow and system architecture for patient protections, including the e-consent comprehension loop, blockchain record storage, and the real-time safety monitoring data stream.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-302-patient-protections-consent-and-liability-bw-academic.jpg)
+
+
 ### SEC. 303. FAIR ACCESS AND DISCOUNT ALGORITHMS
 
 (a) **Fund.** A revolving Clinical Trial Patient Cost Discount Fund is hereby established within the Treasury, authorized to receive \$2 billion for each of fiscal years 2026 through 2030.
+
+![System architecture diagram illustrating the flow of funds and data between the Treasury, the NIH optimization algorithm, the FDA v2 Protocol portal, trial sponsors, and patients.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-303-fair-access-and-discount-algorithms-bw-academic.jpg)
+
 
 (b) **Discount Allocation Algorithm.** The NIH Director shall develop, publish, and annually recompute a transparent, open-source optimisation model for the allocation of discounts from the Fund. This model shall determine the percentage or amount of discount applicable to patient-borne costs for participation in specific trials available on the FDA v2 Protocol. The primary objectives for discount allocation shall be: (1) maximizing projected quality-adjusted life-years (QALYs) gained per dollar of discount provided; (2) the potential for significant healthcare system cost savings attributable to the research; and (3) the marginal scientific value of the pragmatic clinical trial, including its potential to reduce uncertainty for interventions with limited existing evidence but high potential impact. The algorithm shall dynamically incorporate new evidence on treatment efficacy, safety, and cost-effectiveness generated through the FDA v2 Protocol.
 

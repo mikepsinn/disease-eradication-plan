@@ -229,7 +229,7 @@ def get_netlify_team_slug(token: str) -> str | None:
     return None
 
 
-def create_netlify_site(token: str, config_name: str, title: str, subdomain: str | None = None) -> dict | None:
+def create_netlify_site(token: str, config_name: str, title: str, custom_domain: str | None = None) -> dict | None:
     """
     Create a new Netlify site.
 
@@ -237,15 +237,15 @@ def create_netlify_site(token: str, config_name: str, title: str, subdomain: str
         token: Netlify auth token
         config_name: Config name (for logging)
         title: Site title from Quarto config
-        subdomain: Subdomain to use (from site-url). If None, derives from config_name.
+        custom_domain: Full custom domain to use (e.g., impact.dfda.earth). If None, derives from config_name.
 
     Returns:
         Site data dict with 'id' and 'url', or None on failure
     """
-    if not subdomain:
-        subdomain = config_name.replace("_", "-")
-    site_name = f"{subdomain}-warondisease"  # Netlify site name (globally unique)
-    custom_domain = f"{subdomain}.{BASE_DOMAIN}"
+    if not custom_domain:
+        custom_domain = f"{config_name.replace('_', '-')}.{BASE_DOMAIN}"
+    # Generate site name from the domain (replace dots with dashes for Netlify naming)
+    site_name = custom_domain.replace(".", "-")
 
     # Create site with no build settings (manual deploys only)
     payload = {
@@ -485,6 +485,22 @@ def extract_subdomain_from_url(url: str) -> str | None:
     return None
 
 
+def extract_custom_domain_from_url(url: str) -> str | None:
+    """Extract the full hostname from a site URL to use as custom domain.
+
+    Examples:
+        https://impact.warondisease.org -> impact.warondisease.org
+        https://impact.dfda.earth -> impact.dfda.earth
+    """
+    if not url:
+        return None
+    # Remove protocol
+    url = url.replace("https://", "").replace("http://", "")
+    # Get the hostname part (before any path)
+    hostname = url.split("/")[0].lower()
+    return hostname if hostname else None
+
+
 def discover_configs() -> dict:
     """
     Discover all Quarto configs and their Netlify status.
@@ -533,6 +549,11 @@ def discover_configs() -> dict:
         if not subdomain:
             subdomain = config_name.replace("_", "-")
 
+        # Extract full custom domain from site-url (e.g., impact.dfda.earth)
+        custom_domain = extract_custom_domain_from_url(site_url)
+        if not custom_domain:
+            custom_domain = f"{subdomain}.{BASE_DOMAIN}"
+
         # Check for existing site ID and CNAME
         dih_render = config.get("dih-render", {})
         site_id = dih_render.get("netlify-site-id")
@@ -547,7 +568,8 @@ def discover_configs() -> dict:
             "netlify_cname": netlify_cname,
             "has_site": bool(site_id),
             "site_url": site_url,
-            "subdomain": subdomain,  # The actual subdomain to use (from site-url or config name)
+            "subdomain": subdomain,  # The subdomain part (for warondisease.org sites)
+            "custom_domain": custom_domain,  # The full domain from site-url (e.g., impact.dfda.earth)
         }
 
     return configs
@@ -660,10 +682,9 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
     invalid_sites = []
 
     for name, info in sorted(configs.items()):
-        # Use subdomain from config's site-url (or fallback to config name)
-        subdomain = info.get("subdomain", name.replace("_", "-"))
-        expected_domain = f"{subdomain}.{BASE_DOMAIN}"
-        expected_cname = f"{subdomain}-warondisease.netlify.app"
+        # Use the custom domain directly from site-url in config
+        expected_domain = info.get("custom_domain", f"{name.replace('_', '-')}.{BASE_DOMAIN}")
+        expected_cname = f"{expected_domain.replace('.', '-')}.netlify.app"
 
         print(f"\n{'─' * 90}")
         print(f"CONFIG: {name}")
@@ -705,24 +726,29 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
         else:
             print(f"\n  NETLIFY: [NOT CONFIGURED]")
 
-        # Cloudflare DNS info
+        # Cloudflare DNS info (only for warondisease.org subdomains)
         if cf_token:
             print(f"\n  CLOUDFLARE DNS:")
-            dns_record = dns_records.get(subdomain)
-            if dns_record:
-                record_target = dns_record.get("content", "")
-                proxied = dns_record.get("proxied", False)
-                proxy_status = "proxied (orange cloud)" if proxied else "DNS only (gray cloud)"
-                print(f"    {subdomain}.{BASE_DOMAIN} -> {record_target}")
-                print(f"    Status: {proxy_status}")
+            # Check if this is a warondisease.org subdomain
+            subdomain = info.get("subdomain")  # Only set for warondisease.org domains
+            if subdomain and expected_domain.endswith(f".{BASE_DOMAIN}"):
+                dns_record = dns_records.get(subdomain)
+                if dns_record:
+                    record_target = dns_record.get("content", "")
+                    proxied = dns_record.get("proxied", False)
+                    proxy_status = "proxied (orange cloud)" if proxied else "DNS only (gray cloud)"
+                    print(f"    {subdomain}.{BASE_DOMAIN} -> {record_target}")
+                    print(f"    Status: {proxy_status}")
 
-                # Check if DNS points to correct Netlify site
-                config_cname = info.get("netlify_cname", "")
-                if record_target and config_cname and record_target != config_cname:
-                    print(f"    [WARN] DNS points to {record_target}")
-                    print(f"           Config expects {config_cname}")
+                    # Check if DNS points to correct Netlify site
+                    config_cname = info.get("netlify_cname", "")
+                    if record_target and config_cname and record_target != config_cname:
+                        print(f"    [WARN] DNS points to {record_target}")
+                        print(f"           Config expects {config_cname}")
+                else:
+                    print(f"    [NOT FOUND] No CNAME record for {subdomain}.{BASE_DOMAIN}")
             else:
-                print(f"    [NOT FOUND] No CNAME record for {subdomain}.{BASE_DOMAIN}")
+                print(f"    [INFO] Domain {expected_domain} is not managed by Cloudflare (warondisease.org)")
 
     # Summary
     print(f"\n{'=' * 90}")
@@ -783,11 +809,11 @@ def update_existing_cnames(token: str, configs: dict) -> int:
 
 def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
     """
-    Update Netlify sites to use warondisease.org custom domains.
+    Update Netlify sites to use custom domains from Quarto configs.
 
     For each config with a site ID:
     1. Fetch current site info from Netlify
-    2. Calculate expected custom domain (config_name.warondisease.org)
+    2. Get expected custom domain from config's site-url
     3. Update if different
     4. Also rename the site to match the expected name pattern
 
@@ -802,10 +828,10 @@ def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
         if not site_id:
             continue
 
-        # Use subdomain from config's site-url (or fallback to config name)
-        subdomain = info.get("subdomain", config_name.replace("_", "-"))
-        expected_domain = f"{subdomain}.{BASE_DOMAIN}"
-        expected_site_name = f"{subdomain}-warondisease"
+        # Use the custom domain directly from site-url in config
+        expected_domain = info.get("custom_domain", f"{config_name.replace('_', '-')}.{BASE_DOMAIN}")
+        # Generate site name from the domain (replace dots with dashes for Netlify naming)
+        expected_site_name = expected_domain.replace(".", "-")
 
         print(f"\n[*] {config_name}:")
         print(f"    Site ID: {site_id}")
@@ -892,8 +918,8 @@ def main():
         print(f"\n[1/4] Creating {len(configs_needing_sites)} missing Netlify site(s)...")
         for config_name, info in configs_needing_sites.items():
             print(f"\n  [*] {config_name}: {info['title'][:50]}")
-            subdomain = info.get("subdomain", config_name.replace("_", "-"))
-            site = create_netlify_site(token, config_name, info["title"], subdomain)
+            custom_domain = info.get("custom_domain", f"{config_name.replace('_', '-')}.{BASE_DOMAIN}")
+            site = create_netlify_site(token, config_name, info["title"], custom_domain)
             if site and site.get("id"):
                 netlify_cname = site.get("netlify_subdomain", "")
                 if update_config_with_netlify_info(info["path"], site["id"], netlify_cname):
@@ -907,17 +933,17 @@ def main():
         print("\n[1/4] All configs already have Netlify site IDs")
 
     # ===========================================
-    # STEP 2: Update custom domains to warondisease.org
+    # STEP 2: Update custom domains from Quarto configs
     # ===========================================
-    print(f"\n[2/4] Syncing custom domains to {BASE_DOMAIN}...")
+    print("\n[2/4] Syncing custom domains from site-url in configs...")
     configs_with_sites = {k: v for k, v in configs.items() if v.get("site_id")}
     if configs_with_sites:
         for config_name, info in configs_with_sites.items():
             site_id = info.get("site_id")
-            # Use subdomain from config's site-url (or fallback to config name)
-            subdomain = info.get("subdomain", config_name.replace("_", "-"))
-            expected_domain = f"{subdomain}.{BASE_DOMAIN}"
-            expected_site_name = f"{subdomain}-warondisease"
+            # Use the custom domain directly from site-url in config
+            expected_domain = info.get("custom_domain", f"{config_name.replace('_', '-')}.{BASE_DOMAIN}")
+            # Generate site name from the domain (replace dots with dashes for Netlify naming)
+            expected_site_name = expected_domain.replace(".", "-")
 
             site = get_site_by_id(token, site_id)
             if not site:
