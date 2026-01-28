@@ -54,7 +54,6 @@ The figures below represent **cumulative benefits over the entire acceleration p
 
 ![Architecture of the dFDA protocol showing the flow from decentralized patient participation and mobile data collection to aggregated treatment rankings and outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
-
 **The Solution:** A decentralized framework for drug assessment (dFDA) - an open protocol that enables:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
@@ -79,7 +78,6 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 ![System architecture diagram showing the dFDA protocol as a foundational layer that enables interoperability between EHRs, clinical trial platforms, and consumer health apps through a shared data ecosystem.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
 
-
 ### What You Get
 
 - **Cost Cuts:** Clinical trials cost {{< var dfda_trial_cost_reduction_pct >}} less ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) prove this works. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
@@ -87,7 +85,6 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 - **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift (from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
 ![A comparative impact summary showing the transition from traditional trials to the proposed framework, highlighting a 97.7% cost reduction, a 12.3x increase in trial capacity, and a gain of 565 billion DALYs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
-
 
 ### Key Findings
 
@@ -129,22 +126,6 @@ This is a **capacity vs. backlog model**, not "time travel" or a prediction abou
 - **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 :::
 
-::: {.callout-important}
-## Why These Numbers Are Large (And Why That's Correct)
-
-**The scale of impact reflects the scale of the problem, not methodological error.**
-
-This analysis measures the **total lifetime value** of a permanent infrastructure investment - the same approach used for:
-
-- **Smallpox eradication**: $300M spent → valued at total future lives saved (millions annually, forever), not "lives saved in 1980"
-- **Climate economics**: Social cost of carbon uses infinite-horizon discounting; nobody reports "annual CO2 damage" alone
-- **Infrastructure projects**: Bridges are valued at NPV of all future crossings, not "cars crossed this year"
-
-**The dFDA is infrastructure.** Like eradicating smallpox or building the interstate highway system, its value IS the cumulative impact. Reducing to annual figures would understate the true ROI and mislead policymakers comparing one-shot programs to permanent infrastructure.
-
-**On the "quadrillion" economic value**: This exceeds current global GDP because it measures **welfare gains** (suffering averted, lives extended), not market transactions. Climate change damage estimates similarly exceed GDP. The methodology (Value of Statistical Life × lives saved) is identical to EPA, DOT, and GiveWell standards. If "$89/DALY for bed nets" is credible, so is "$0.84/DALY for dFDA" using the same methodology.
-:::
-
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ---
@@ -174,13 +155,11 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 
 **The Result:** A self-sustaining research ecosystem where participating platforms collect outcome data using standardized schemas, and the protocol aggregates this into continuously-updated treatment rankings available to all participants.
 
-
 ![Operational flow of the decentralized framework, illustrating the cycle between patient participation, data aggregation via the protocol, and the generation of treatment rankings.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-vision-capabilities-ecosystem-bw-academic.jpg)
 
 ### Key Capabilities
 
 ![A federated data architecture diagram showing a central query engine interacting with distributed data sources like Epic, Cerner, and Apple Health, where data remains at the source while insights are aggregated.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-key-capabilities-bw-academic.jpg)
-
 
 - **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
 - **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
@@ -419,99 +398,7 @@ _(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down R
 
 This cost estimate **covers building the protocol infrastructure, not paying patients for trial participation.** Trial participation costs would be handled separately through funding mechanisms (government grants, foundation funding, or sponsor payments). The protocol coordinates information exchange but doesn't move money around directly.
 
-_This estimate excludes costs for governance structure and plugin development (though plugin development could be incentivized via bounties)._
-
-### Enhanced ROM Estimates and Cost Optimization
-
-**Note:** This subsection presents ROM estimates using cost-saving strategies including open-source development, bounty programs, and AI automation.
-
-#### Key Cost-Saving Strategies
-
-- **Open-Source Development:** Global developer contributions under permissive licenses (Apache 2.0/MIT).
-- **Bounty Programs:** Targeted bounties for features, security audits, and integrations.
-- **AI-Automated Development:** AI coding assistants and automated testing to cut development time and costs.
-- **Modular Architecture:** Parallel development of components by different teams/contributors.
-- **Existing Open-Source Components:** Building on and contributing to existing healthcare/blockchain projects.
-
-#### ROM Estimates by Technical Component
-
-1. **Blockchain Supply-Chain Ledger**
-
-   - Components: Zero-knowledge proof implementation, DSCSA integration, IoT device integration
-   - Cost Reduction: Open-source blockchain frameworks, community bounties for core components
-   - **Estimated ROM:** [2M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.5M USD annual maintenance](#enhanced-rom-estimates-and-cost-optimization)
-
-2. **Patient Portal & Treatment Ranking System**
-
-- Components: Real-time ranking algorithm, outcome labels, mobile/SMS/IoT interfaces
-- Cost Reduction: Open-source frontend frameworks, community-developed plugins
-- **Estimated ROM:** [1.5M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.3M USD annual maintenance](#enhanced-rom-estimates-and-cost-optimization)
-
-3. **Interoperability & API Infrastructure**
-
-- Components: FHIR-R5 server, EHR integration adapters, OAuth 2.0 implementation
-- Cost Reduction: Existing open-source healthcare APIs, community-contributed adapters
-- **Estimated ROM:** [1M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.2M USD annual maintenance](#enhanced-rom-estimates-and-cost-optimization)
-
-4. **Security & Compliance**
-
-- Components: FedRAMP-Moderate compliance, annual pen testing, security monitoring
-- Cost Reduction: Bug bounty program, automated security scanning
-- **Estimated ROM:** [0.5M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.5M USD annual](#enhanced-rom-estimates-and-cost-optimization)
-
-5. **AI/ML Capabilities**
-
-- Components: Protocol validation, patient-trial matching, safety signal detection
-- Cost Reduction: Open-source ML models, transfer learning, community datasets
-- **Estimated ROM:** [1M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.3M USD annual](#enhanced-rom-estimates-and-cost-optimization)
-
-6. **Developer & Community Infrastructure**
-
-- Components: Documentation, SDKs, CI/CD pipelines, community support
-- Cost Reduction: Automated documentation generation, community moderation
-- **Estimated ROM:** [0.5M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.2M USD annual maintenance](#enhanced-rom-estimates-and-cost-optimization)
-
-7. **Governance & Transparency**
-
-- Components: Technical Steering Committee operations, public metrics dashboards
-- Cost Reduction: Automated reporting, community governance tools
-- **Estimated ROM:** [0.2M USD upfront](#enhanced-rom-estimates-and-cost-optimization) / [0.1M USD annual](#enhanced-rom-estimates-and-cost-optimization)
-
-**Total Estimated Development (Upfront):** [6.7M USD](#enhanced-rom-estimates-and-cost-optimization)
-**Total Estimated Annual Operations:** [2.1M USD](#enhanced-rom-estimates-and-cost-optimization)
-
-### Cost Optimization Strategies and Risk Mitigation
-
-#### Bounty Program Implementation
-
-- [\$1M annual budget](#cost-optimization-strategies-and-risk-mitigation) for security bounties and feature development
-- Structured as graduated rewards based on impact and complexity
-- Community-voted prioritization of bounty targets
-
-#### Open-Source Community Building
-
-- Developer documentation and starter kits ([\$0.2M initial](#cost-optimization-strategies-and-risk-mitigation))
-- Hackathons and community events ([\$0.3M annual](#cost-optimization-strategies-and-risk-mitigation))
-- Contributor recognition program ([\$0.1M annual](#cost-optimization-strategies-and-risk-mitigation))
-
-#### AI-Assisted Development
-
-- AI code generation and review tools ([\$0.5M initial setup](#cost-optimization-strategies-and-risk-mitigation))
-- Automated testing and validation pipelines ([\$0.3M annual](#cost-optimization-strategies-and-risk-mitigation))
-- Continuous training of domain-specific models ([\$0.2M annual](#cost-optimization-strategies-and-risk-mitigation))
-
-#### Risk Mitigation
-
-- 20% contingency buffer on all estimates
-- Phased rollout with clear milestones
-- Regular third-party security audits
-
-> **Total Estimated ROM with Optimization:**
->
-> - **Upfront (Year 1):** [\$8.5M (including contingency)](#cost-optimization-strategies-and-risk-mitigation)
-> - **Annual Operations (Years 2+):** [\$3.0M (including bounties and community programs)](#cost-optimization-strategies-and-risk-mitigation)
-
-_Note: These estimates assume you use open-source code, get volunteers to help, and let AI do most of the work. This only works if enough people actually contribute and you run the bounty/prize programs well._
+_This estimate excludes costs for governance structure and plugin development._
 
 ### Scenario Based ROM Estimates for Broader Initiative Costs
 
@@ -523,7 +410,7 @@ This table presents point estimates for each scenario, with the overall range of
 | **Bounty & Prize Program (Act SEC. 204(i))** | $1M (Prizes) / ~$0           | $15M (Bounties) / $2M          | $50M (Major Bounties) / $10M  | Success of organic ecosystem growth vs. need to incentivize critical plugin/tool development via bounties. |
 | **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | $60M / $3M                     | $300M / $30M                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
 | **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / $30M                  | Need for training/support beyond protocol adoption, user interface complexity.                               |
-| **DAO Governance Operations**                | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
+| **Governance Operations**                    | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
 | **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding Core framework build/ops.                                        |
 
 {{< include ../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
@@ -694,7 +581,6 @@ For detailed methodology and assumptions, see [The Human Cost of Regulatory Late
 
 ![Comparison of detection timelines for major drug safety disasters, contrasting the years of delay under voluntary reporting systems with the estimated months required for detection via automated EHR monitoring.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-harms-bw-academic.jpg)
 
-
 ::: {.callout-caution}
 **The current system is not safe - it just appears safe because harms go undetected.**
 
@@ -726,7 +612,7 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 3. **Universal Data Collection**: The system automatically collects and publishes outcome data on all treatments, eliminating the publication bias that currently hides negative results.
 
-4. **Faster Adverse Event Detection**: The Vioxx cardiovascular risk took 5 years to detect through voluntary reporting, resulting in 38,000-55,000 estimated deaths. Automated EHR monitoring would have detected the elevated risk within 6-12 months.
+4. **Faster Adverse Event Detection**: Automated EHR pharmacovigilance detects safety signals in months rather than the years required by voluntary reporting systems.
 
 5. **Immediate Mass Notification**: When safety signals are detected, all patients taking the drug receive automated alerts through patient portals, enabling immediate clinical review.
 
@@ -808,38 +694,6 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 {{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
 
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
-
-## Broader Impacts on Medical Progress
-
-1. **Acceleration of Approvals**
-
-   - With continuous, real-time data, new drugs, devices, and off-label uses could gain near-immediate or conditional approvals once efficacy thresholds are met.
-   - Diseases lacking major commercial interest (rare diseases, unpatentable treatments) benefit from much lower trial costs and simpler recruitment.
-
-2. **Personalized Medicine**
-
-   - Aggregating genomic, lifestyle, and medical data at large scale would refine "one-size-fits-all" treatments into personalized regimens.
-   - Feedback loops allow patients and clinicians to see near-real-time outcome data for individuals with similar profiles.
-
-3. **Off-Label & Nutritional Research**
-
-   - Many nutraceuticals and off-patent medications remain under-tested. Lower cost trials create economic incentives to rigorously evaluate them.
-   - Could lead to significant improvements in preventive and integrative healthcare.
-
-4. **Public Health Insights**
-
-   - Constant real-world data ingestion helps identify population-level signals for drug safety, environmental exposures, and dietary patterns.
-   - Better evidence-based guidelines on how foods, supplements, or lifestyle interventions interact with prescribed medications.
-
-5. **Innovation & Competition**
-
-   - Lower barriers to entry for biotech start-ups, universities, and non-profits to test new ideas.
-   - Potential for new revenue streams (e.g., analytics, licensing validated trial frameworks, etc.), leading to reinvestment in R&D.
-
-6. **Healthcare Equity**
-
-   - Decentralized trials let anyone participate, anywhere. More diverse data, less bias.
-   - Opens up access to experimental treatments for everyone, not just the rich.
 
 ## Research Acceleration Mechanism
 
@@ -953,8 +807,6 @@ The calculations below are based on the central ("base case") estimates establis
   - The daily financial loss from this inefficiency is:
 
 {{< var dfda_rd_savings_daily_latex >}}
-
-
 
 #### Discussion of Uncertainty and Key Variables
 
@@ -1108,7 +960,7 @@ The analysis uses the neutral status quo baseline to avoid biasing results in ei
 
 ### Methodology Validation Against Accepted Benchmarks
 
-This analysis uses standard health economics methodology identical to that used by major institutions:
+This analysis uses standard health economics methodology identical to that employed by EPA, DOT, GiveWell, NICE, WHO-CHOICE, and CBO:
 
 | Our Method | Equivalent Standard | Institution Using It |
 |------------|---------------------|---------------------|
@@ -1118,17 +970,7 @@ This analysis uses standard health economics methodology identical to that used 
 | NPV with discount rate | Standard cost-benefit analysis | CBO, OMB Circular A-94 |
 | Long-horizon cumulative impact | Social cost of carbon | EPA, IPCC, Stern Review |
 
-**Key validation points:**
-
-1. **If GiveWell's bed net analysis ($89/DALY) is credible, so is ours.** We use identical methodology - the only difference is scale. Criticizing our numbers without criticizing GiveWell's requires explaining why the same math produces valid results at small scale but invalid results at large scale.
-
-2. **Climate economics routinely reports multi-trillion-dollar figures.** The social cost of carbon, integrated assessment models, and damage estimates from the Stern Review all exceed annual GDP. Our quadrillion-dollar welfare figures use the same infinite-horizon discounting framework.
-
-3. **Smallpox eradication is valued at its total lifetime impact.** Nobody claims the $300M program should only report "lives saved in 1980." Infrastructure investments are valued at cumulative returns, not annual snapshots.
-
-4. **Our uncertainty ranges are wider than most published analyses.** The 95% confidence intervals throughout this paper (e.g., {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} for lives saved) span nearly an order of magnitude. This is more conservative than many published health economics studies that report point estimates without uncertainty.
-
-**The burden of proof**: Critics must explain which specific methodological choice is invalid, not simply object that the numbers "seem too large." Large problems produce large impact estimates when solved.
+The large headline figures reflect the cumulative value of permanent infrastructure, the same methodology used to value smallpox eradication ($300M program valued at total future lives saved) and climate economics (multi-trillion dollar damage estimates that exceed annual GDP). Our 95% confidence intervals span nearly an order of magnitude, wider than most published health economics studies.
 
 ## Appendix Calculation Frameworks and Detailed Analysis
 
@@ -1223,7 +1065,6 @@ The following table provides the data and sources that support the chart. The li
 ### Methodology Notes
 
 <a id="ref_chart_calc"></a>¹ **QALYs per $1M Calculation**:
-
 
 - For a decentralized framework: `(Annual QALYs Gained) / (Annual Cost in Millions)`
 - Ranges reflect conservative to optimistic scenarios accounting for parameter uncertainties

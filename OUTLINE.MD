@@ -1623,12 +1623,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,761
+**Files:** 1 | **Words:** 10,839
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,761 words | 1,265 lines
+**Stats:** 10,839 words | 1,133 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1636,7 +1636,6 @@
     - What You Get
     - Key Findings
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
-  - Why These Numbers Are Large (And Why That's Correct)
   - Vision and Capabilities
     - Core Model: An Open Coordination Protocol
     - Key Capabilities
@@ -1650,14 +1649,6 @@
     - Ecosystem Participants
     - Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
       - Marginal Cost Analysis per User
-    - Enhanced ROM Estimates and Cost Optimization
-      - Key Cost-Saving Strategies
-      - ROM Estimates by Technical Component
-    - Cost Optimization Strategies and Risk Mitigation
-      - Bounty Program Implementation
-      - Open-Source Community Building
-      - AI-Assisted Development
-      - Risk Mitigation
     - Scenario Based ROM Estimates for Broader Initiative Costs
       - Interpretation
       - Revised Summary
@@ -1680,7 +1671,6 @@
       - Key Sources
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
     - Monte Carlo Distributions
-  - Broader Impacts on Medical Progress
   - Research Acceleration Mechanism
     - The Unexplored Therapeutic Frontier
     - Current Exploration Rate vs. Therapeutic Space
@@ -2108,7 +2098,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 341,569
+**Files:** 86 | **Words:** 340,756
 
 #### index.qmd
 **Title:** Start Here
@@ -4037,7 +4027,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,497 words | 1,359 lines
+**Stats:** 13,550 words | 1,365 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -6073,7 +6063,7 @@
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments a...
-**Stats:** 3,181 words | 556 lines
+**Stats:** 3,237 words | 556 lines
 
   - Executive Summary
   - Historical Data Sources
@@ -6184,7 +6174,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,761 words | 1,265 lines
+**Stats:** 10,839 words | 1,133 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6192,7 +6182,6 @@
     - What You Get
     - Key Findings
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
-  - Why These Numbers Are Large (And Why That's Correct)
   - Vision and Capabilities
     - Core Model: An Open Coordination Protocol
     - Key Capabilities
@@ -6206,14 +6195,6 @@
     - Ecosystem Participants
     - Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
       - Marginal Cost Analysis per User
-    - Enhanced ROM Estimates and Cost Optimization
-      - Key Cost-Saving Strategies
-      - ROM Estimates by Technical Component
-    - Cost Optimization Strategies and Risk Mitigation
-      - Bounty Program Implementation
-      - Open-Source Community Building
-      - AI-Assisted Development
-      - Risk Mitigation
     - Scenario Based ROM Estimates for Broader Initiative Costs
       - Interpretation
       - Revised Summary
@@ -6236,7 +6217,6 @@
       - Key Sources
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
     - Monte Carlo Distributions
-  - Broader Impacts on Medical Progress
   - Research Acceleration Mechanism
     - The Unexplored Therapeutic Frontier
     - Current Exploration Rate vs. Therapeutic Space
@@ -7093,12 +7073,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,497
+**Files:** 1 | **Words:** 13,550
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,497 words | 1,359 lines
+**Stats:** 13,550 words | 1,365 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7520,6 +7500,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 547,619
+- Total words: 545,937
 - Orphaned files: 20
 - Paper configs: 12
