@@ -343,24 +343,6 @@ Credit ratings were supposed to be objective, algorithmic assessments of default
 3. **Systemic failure**: AAA-rated mortgage securities collapsed, triggering the 2008 financial crisis
 4. **Capture**: Rating models were "optimized" to give favorable ratings, not accurate risk assessment
 
-**Value-at-Risk Models (1990s-2008):**
-
-VaR models were widely adopted as algorithmic risk management. They failed catastrophically:
-
-1. **Gaming the metric**: Banks optimized portfolios to minimize reported VaR, not actual risk
-2. **Tail risk blindness**: VaR focused on "normal" conditions, ignored rare catastrophic events
-3. **Correlation breakdown**: Models assumed diversification worked in crises (it didn't)
-4. **Regulatory arbitrage**: Banks exploited VaR to reduce capital requirements while increasing real risk
-
-**High-Frequency Trading Algorithms (2010-present):**
-
-Algorithmic trading optimizes for speed and profit extraction. Results include:
-
-1. **Flash crashes**: May 6, 2010 - algorithms caused 1,000-point Dow drop in minutes
-2. **Predatory behavior**: Front-running, quote stuffing, layering (legal but harmful to markets)
-3. **Systemic fragility**: Correlated algorithms create cascading failures
-4. **Zero-sum extraction**: HFT profits come from slower traders, not value creation
-
 #### Synthesis: Boundary Conditions for Algorithmic Governance
 
 The historical record suggests algorithmic governance works under specific conditions:
@@ -482,17 +464,6 @@ The constitutional choice is difficult to change by design. Super-majority requi
 
 Verification systems translate real-world outcomes into data that allocation algorithms can act upon. The critical design challenge is verification capture: if a single entity controls the data feed, they effectively control the allocation.
 
-**Decentralized oracle solutions:**
-
-| Approach | Mechanism | Capture Resistance |
-|----------|-----------|-------------------|
-| **Multi-source aggregation** | Median of multiple independent data providers | Requires capturing majority of sources |
-| **Staking-based validation** | Validators stake collateral, slashed for false reports | Economic penalty for manipulation |
-| **Schelling point games** | Validators rewarded for matching consensus | Game-theoretic truth-telling incentive |
-| **Government statistics** | Use official GDP, health statistics | Trusted but potentially politicized |
-
-For metrics like median income or life expectancy, robust government statistical agencies provide reliable baseline data. For more novel metrics, independent verification networks using multi-source aggregation provide manipulation-resistant data feeds.
-
 **Concrete example** (measuring median income growth):
 
 | Oracle | Source | Reported Value | Stake |
@@ -522,15 +493,6 @@ This is a real concern. The solution is **genuinely independent data collection 
 | **Storage** | Responses stored in tamper-proof distributed system | Immutable, auditable, can't be retroactively altered by captured agencies |
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
 | **Privacy** | Zero-knowledge proofs | Prove you're a unique person without revealing identity |
-
-**Precedent: Estonia demonstrates this can work at national scale.**
-
-- Online voting since 2005
-- 99% of government services available digitally
-- All citizens have digital ID
-- Over 50% of votes cast online in recent elections [@estonia-internet-voting]
-
-Estonia demonstrates that national-scale digital participation with verified identity is not science fiction. It's operational.
 
 **Why individual gaming is irrelevant:**
 
@@ -677,35 +639,6 @@ Since Optimocracy is advisory, constraint violations flag policies for human rev
 
 This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
 
-### Alternative: Constitutional Welfare Score
-
-Rather than leaving metric selection entirely to future constitutional deliberation, we propose a specific default composite grounded in the founding documents' stated purposes of government: **life, liberty, the pursuit of happiness, and the general welfare.**
-
-This framing has significant legitimacy advantages. We're not proposing technocratic optimization but rather *measuring what the Declaration of Independence and Constitution say government is for*.
-
-**Proposed Components:**
-
-| Domain | Constitutional Source | Metrics | Weight | Data Source |
-|--------|----------------------|---------|--------|-------------|
-| **Life** | Declaration: "Life" | Median life expectancy, preventable mortality rate | 25% | Vital statistics (deaths are binary, hard to fake) |
-| **Liberty** | Declaration: "Liberty" | Incarceration rate, regulatory burden index, perceived freedom | 25% | Government data + decentralized surveys |
-| **Happiness** | Declaration: "Pursuit of Happiness" | Life satisfaction, sense of purpose/meaning | 25% | Decentralized citizen surveys (tamper-proof storage) |
-| **General Welfare** | Constitution Preamble | Median real income, healthcare affordability, poverty rate | 25% | Tax records + surveys |
-
-**Why this composite resists gaming:**
-
-1. **Diffusion**: Gaming any single metric moves the composite only 25%. Capturing the entire score requires simultaneously gaming vital statistics, tax records, AND survey infrastructure. This coordination cost far exceeds lobbying a committee chair.
-
-2. **Objective anchors**: Life expectancy and income are grounded in objective data (deaths are binary; income appears in tax records). These anchor the composite against pure survey manipulation.
-
-3. **Multiple data sources**: Each domain combines government statistics with decentralized surveys, creating cross-validation. If official statistics diverge significantly from citizen-reported experience, the discrepancy is visible.
-
-**Why this composite has legitimacy:**
-
-The response to "Who chose these metrics?" is: "The Founders did. We're just measuring what they said government exists to protect." This is a far stronger legitimacy foundation than "a group of economists decided median income was important."
-
-Citizens may still amend the metric through constitutional process, but the default isn't arbitrary. It's derived from the most widely accepted statement of government purpose in American political philosophy.
-
 ### Metric Defaults
 
 **The framework provides concrete defaults**: Health & Wealth (median healthy life years + real after-tax median income growth). Most jurisdictions should simply adopt these defaults. No metric selection debate required.
@@ -722,38 +655,11 @@ Not all governance decisions are suitable for algorithmic optimization. This sec
 
 Before proposing scope boundaries, we must engage with the strongest critiques of technocratic governance.
 
-**James Scott's "Seeing Like a State" [@scott1998]:**
+**Scott [@scott1998]:** "High modernist" schemes fail when they impose simplified models on complex local reality. *Implication:* Optimocracy optimizes aggregate allocation, not local implementation.
 
-Scott argues that "high modernist" schemes fail because they impose legible, simplified models on complex social reality. Central planners see forests as board-feet of timber, ignoring ecological complexity. The result is "mētis" (practical local knowledge) being overridden by "techne" (abstract technical knowledge), with disastrous consequences.
+**Hayek [@hayek1945]:** Distributed knowledge cannot be centrally aggregated; prices do what planning cannot. *Implication:* Optimocracy focuses on collective goods where markets fail, using market prices as information signals where available.
 
-**Implications for Optimocracy:**
-
-- Optimocracy should not attempt to optimize local decisions where mētis is essential
-- Metrics should be outcome-based (did welfare improve?) not process-based (did you follow the plan?)
-- Algorithmic allocation should fund diverse local approaches, not mandate uniform methods
-- Scope should be limited to aggregate resource allocation, not micromanagement
-
-**Hayek's Knowledge Problem [@hayek1945]:**
-
-Hayek argued that central planning cannot succeed because the knowledge needed for economic coordination is distributed across millions of actors and cannot be aggregated by any central authority. Prices aggregate this knowledge; planning destroys it.
-
-**Implications for Optimocracy:**
-
-- Optimocracy should not replace markets for private goods allocation
-- Optimocracy should focus on collective goods where markets fail (public health, research, infrastructure)
-- The optimization algorithm should use market prices where available as information signals
-- Decentralized oracles can aggregate distributed information without central control
-
-**Public Choice Theory [@buchanan1962; @tullock1967]:**
-
-Public choice applies economic analysis to political behavior, showing that voters, politicians, and bureaucrats act on self-interest like economic actors. Government failure is as systematic as market failure.
-
-**Implications for Optimocracy:**
-
-- Public choice explains why capture-prone governance fails (capture, rent-seeking)
-- But algorithmic systems can also be captured (oracle manipulation, metric gaming)
-- The question is comparative: which failure mode is worse?
-- Optimocracy should assume everyone is self-interested and design systems where honest behavior is the profitable choice
+**Public Choice [@buchanan1962; @tullock1967]:** Government failure is as systematic as market failure; everyone is self-interested. *Implication:* Design systems where honest behavior is the profitable choice; the question is comparative (which failure mode is worse?).
 
 ### A Taxonomy of Governance Decisions
 
@@ -907,16 +813,6 @@ As established in the objections table above, the key question is whether gaming
 | School testing | Standardized tests | Significant (teaching to test) | Mixed, but measurable |
 | Hospital metrics | Mortality rates, readmissions | Significant (patient selection) | Improved but distorted |
 
-**Why gaming may be less harmful than capture:**
-
-1. **Gaming improves the metric**: Even if $M$ diverges from $W$, gaming still improves $M$. Capture improves nothing except private interests.
-
-2. **Gaming is visible**: Statistical anomalies reveal gaming. Capture is designed to be invisible.
-
-3. **Gaming has diminishing returns**: As easy gaming opportunities are exhausted, marginal gaming becomes harder. Capture compounds with political power.
-
-4. **Metrics can be updated**: When gaming is detected, metrics can be revised. Captured systems resist reform.
-
 **Critical question: Why should Optimocracy be more like index funds than credit ratings?**
 
 Both index funds and credit rating agencies are outcome-optimizing systems. Index funds have moderate gaming (front-running, index effects) but remain net positive. They outperform 90%+ of active managers despite gaming. Credit ratings had catastrophic gaming (inflated ratings on junk mortgage securities) that contributed to systemic financial crisis. What design features determine which outcome Optimocracy gets?
@@ -951,13 +847,7 @@ The Constitutional Welfare Score's design incorporates these features: composite
 
 5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
 
-**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. Evidence from existing outcome-optimizing systems suggests gaming costs are substantial but bounded:
-
-- **Hospital quality metrics**: Medicare's Hospital Readmissions Reduction Program reduced readmissions but increased observation stays and mortality risk for some conditions, with estimates suggesting 20-40% of measured improvement reflects gaming rather than genuine quality gains [@ody2019; @gupta2018].
-- **School testing**: No Child Left Behind-era testing showed significant teaching-to-test and score manipulation, with studies suggesting 10-25% of score gains were attributable to gaming behaviors rather than learning [@jacob2003; @neal2010].
-- **Index funds**: Gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011].
-
-Extrapolating from these precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%. This wide range reflects genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
+**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. Index fund gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011]. Extrapolating from this and similar precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%. This wide range reflects genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
 
 ### Oracle Capture
 
@@ -986,18 +876,6 @@ The earlier claim that government statistics provide reasonable reliability is o
 Government statistical agencies are not neutral. They face political pressure, budget constraints, and revolving-door incentives. The Bureau of Labor Statistics has ~2,000 employees and a $750M budget - trivial to influence compared to trillions in allocation.
 
 The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (Section 8). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
-
-**Concrete example: Healthcare inefficiency measurement**
-
-Consider the bottom-up policy cost estimates from Section 2. @papanicolas2018 document {{< var bad_policy_cost_us_healthcare_inefficiency >}} in annual excess US healthcare spending compared to peer nations. But this figure depends critically on methodology:
-
-- Different adjustment protocols yield estimates from $800B to $1.8T
-- Choice of peer countries affects the baseline (Japan vs. Germany vs. OECD average)
-- Accounting for quality differences further widens the range
-
-If Optimocracy allocated healthcare reform budgets based on this metric, controlling the measurement methodology would control the reform budget. The entity that defines "healthcare inefficiency" effectively determines how much money flows to healthcare reform. This is a concrete illustration of oracle capture risk.
-
-Similarly, housing/zoning costs ({{< var bad_policy_cost_us_housing_zoning >}} per @hsieh-moretti2019) depend on assumptions about productivity elasticity and counterfactual growth trajectories. Alternative models yield estimates from $800B to $2.2T. The oracle problem is not hypothetical. It's embedded in every measurement we would use for Optimocracy allocation.
 
 **Decentralized oracle solutions and their limits:**
 
@@ -1160,28 +1038,7 @@ This architecture reserves democratic deliberation for decisions that genuinely 
 
 ### Integration with Incentive Alignment Bonds
 
-Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. IABs (detailed in companion paper: [Incentive Alignment Bonds: A Novel Mechanism for Aligning Political Incentives with Public Goods](https://iab.warondisease.org)) create a legal framework for rewarding politicians based on outcome metrics. Optimocracy supplies those metrics.
-
-**The IAB Three-Layer Architecture:**
-
-IABs solve the "this is just bribery" objection through careful legal separation:
-
-| Layer | Function | Legal Form | What It Does |
-|-------|----------|------------|--------------|
-| **A: Scoring** | Outcome measurement | 501(c)(3) research org | Publishes Public Good Scores based on voting records and jurisdiction outcomes |
-| **B: Electoral** | Campaign support | 501(c)(4), PACs, Super PACs | Independent expenditures favoring high-scoring candidates |
-| **C: Post-Office** | Career incentives | Foundations, think tanks | Eligibility criteria for fellowships, advisory boards, speaking circuits |
-
-No layer directly pays politicians. Instead, universal, pre-announced rules systematically advantage those who support welfare-improving policies. The mechanism is incentive-compatible: privately optimal behavior (maximize career outcomes) aligns with socially optimal behavior (support good policy).
-
-**How Optimocracy integrates with IABs:**
-
-1. **Optimocracy defines** the objective function (e.g., median income growth) and publishes recommendations for each major vote
-2. **Politicians vote** however they choose; their alignment with recommendations is tracked publicly
-3. **Verification systems measure** whether the metric improved
-4. **IABs reward** politicians proportionally to their alignment score, gated on metric improvement
-
-**Concrete example:**
+Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. For full IAB mechanism details including the three-layer legal architecture, see [Incentive Alignment Bonds](https://iab.warondisease.org). The integration works as follows:
 
 | Event | What Happens |
 |-------|--------------|
@@ -1234,46 +1091,11 @@ This arithmetic suggests reform can be structured so everyone wins. Even those c
 
 ### A Taxonomy of Affected Parties
 
-Not all actors have the same relationship to reform:
-
-#### Productive Wealth Creators
-
-**Definition:** Those whose wealth derives from creating value (innovation, entrepreneurship, productive investment).
-
-**Examples:** Tech founders, biotech innovators, manufacturing entrepreneurs, productive investors.
-
-**Relationship to optimal policy:** Strong net beneficiaries. They gain from:
-
-- Larger economy = bigger markets
-- Better health R&D = personal longevity
-- Reduced existential risk = their wealth matters long-term
-- Faster innovation = more opportunities
-
-**IAB role:** None needed. These actors benefit without compensation.
-
-**Estimated population:** Approximately 10,000-20,000 globally with >$100M net worth from productive (non-rent-seeking) activity, based on wealth distribution data [@creditsuisse2023] and estimates of entrepreneurial versus inherited/extractive wealth.
-
-#### Rent-Seekers and Extractors
-
-**Definition:** Those whose income derives from current allocation patterns that would change under optimization.
-
-**Examples:** Defense contractors beyond deterrence needs, pharma incumbents protected by regulatory barriers, protected industries behind trade barriers, lobbyists, regulatory consultants. While precise quantification is methodologically challenging, rough estimates suggest aggregate rents from suboptimal allocation may reach $2-5T annually across these categories (broadly consistent with the Crony Tax at {{< var crony_tax_pct >}} of GDP). These figures represent order-of-magnitude estimates rather than precise measurements.
-
-**Relationship to optimal policy:** Losers unless compensated. IABs must compensate these actors or they will block reform.
-
-#### Politicians and Bureaucrats
-
-**Definition:** Those with political authority over resource allocation.
-
-**Current incentives:** Campaign contributions, post-office career prospects, power and status from political control.
-
-**Relationship to optimal policy:** Lose political power but could gain from:
-
-- Longer life (from accelerated medical research)
-- Outcome-based compensation (via IABs)
-- Legacy of reform leadership
-
-**IAB role:** Critical. Politicians must be compensated for supporting reform through outcome-linked payments.
+| Actor Type | Definition | Relationship to Reform | IAB Role |
+|------------|------------|------------------------|----------|
+| **Productive Wealth Creators** | Wealth from innovation, entrepreneurship (~10-20K globally >$100M) | Net beneficiaries: bigger markets, longevity, reduced x-risk | None needed |
+| **Rent-Seekers** | Income from current allocation patterns (defense, pharma, lobbyists; ~$2-5T rents/year) | Losers unless compensated | Must be bought out |
+| **Politicians** | Those with allocation authority | Lose power but gain longevity, IAB payouts, legacy | Critical: outcome-linked payments |
 
 ### IABs as the Coasean Buyout Mechanism
 

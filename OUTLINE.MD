@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 345,184
+**Files:** 86 | **Words:** 343,670
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 15,861 words | 1,620 lines
+**Stats:** 14,347 words | 1,442 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4077,7 +4077,6 @@
     - The Execution Layer
   - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Alternative: Constitutional Welfare Score
     - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
@@ -4104,9 +4103,6 @@
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
     - A Taxonomy of Affected Parties
-      - Productive Wealth Creators
-      - Rent-Seekers and Extractors
-      - Politicians and Bureaucrats
     - IABs as the Coasean Buyout Mechanism
     - The Cost of Political Reform: Quantifying "Political Impossibility"
     - The Natural Reform Coalition
@@ -7104,12 +7100,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 15,861
+**Files:** 1 | **Words:** 14,347
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 15,861 words | 1,620 lines
+**Stats:** 14,347 words | 1,442 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7145,7 +7141,6 @@
     - The Execution Layer
   - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Alternative: Constitutional Welfare Score
     - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
@@ -7172,9 +7167,6 @@
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
     - A Taxonomy of Affected Parties
-      - Productive Wealth Creators
-      - Rent-Seekers and Extractors
-      - Politicians and Bureaucrats
     - IABs as the Coasean Buyout Mechanism
     - The Cost of Political Reform: Quantifying "Political Impossibility"
     - The Natural Reform Coalition
@@ -7538,6 +7530,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 554,849
+- Total words: 551,821
 - Orphaned files: 20
 - Paper configs: 12
