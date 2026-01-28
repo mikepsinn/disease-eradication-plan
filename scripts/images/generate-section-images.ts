@@ -44,6 +44,7 @@ import { generateGeminiFlashContent } from '../lib/llm';
 import { generateAndSaveImages } from '../lib/gemini-images';
 import { getCleanedContentForLLM, getAllQmdFilesWithFrontmatter, prepareContentForLLM, loadQuartoVariables, replaceQuartoVariables, cleanContentForImagePrompt } from '../lib/file-utils';
 import { VisualStyles } from '../lib/image-prompts';
+import { sortFilesByWorstCoverage, analyzeFileCoverage } from './image-coverage';
 
 dotenv.config();
 
@@ -694,8 +695,13 @@ async function main() {
     // Batch mode - process all QMD files with frontmatter (excludes figures/, includes/, templates/)
     console.log('\n[*] Scanning all QMD files with frontmatter...');
     const allFiles = await getAllQmdFilesWithFrontmatter();
-    const qmdFiles = allFiles.filter(f => !f.endsWith('index.qmd'));
-    console.log(`[OK] Found ${qmdFiles.length} QMD files\n`);
+    const unsortedFiles = allFiles.filter(f => !f.endsWith('index.qmd'));
+    console.log(`[OK] Found ${unsortedFiles.length} QMD files`);
+
+    // Sort files by worst image coverage first (highest chars/image ratio)
+    console.log('[*] Analyzing image coverage to prioritize files...');
+    const qmdFiles = await sortFilesByWorstCoverage(unsortedFiles, { quiet: true });
+    console.log('[OK] Files sorted by image coverage (worst first)\n');
 
     let totalEvaluated = 0;
     let totalGenerated = 0;
@@ -705,11 +711,15 @@ async function main() {
       const filePath = qmdFiles[i];
       const relativePath = path.relative(process.cwd(), filePath);
 
+      // Get coverage info for display
+      const coverage = await analyzeFileCoverage(filePath);
+      const coverageNote = ` [${coverage.status}: ${coverage.ratio.toLocaleString()} chars/img]`;
+
       // Log existing section images count (but still process - per-section logic handles skipping)
       const existingCount = countExistingSectionImages(filePath);
-      const existingNote = existingCount > 0 ? ` (${existingCount} existing section images)` : '';
+      const existingNote = existingCount > 0 ? ` (${existingCount} existing)` : '';
 
-      console.log(`\n[${i + 1}/${qmdFiles.length}] Processing: ${relativePath}${existingNote}`);
+      console.log(`\n[${i + 1}/${qmdFiles.length}] Processing: ${relativePath}${coverageNote}${existingNote}`);
       console.log('-'.repeat(80));
 
       const result = await processFile(filePath, options);

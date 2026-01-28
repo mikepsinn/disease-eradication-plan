@@ -40,6 +40,7 @@
     "images:chapter": "tsx scripts/images/generate-chapter-images.ts",
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
+    "images:coverage": "tsx scripts/images/analyze-image-coverage.ts",
     "images:sections": "tsx scripts/images/generate-section-images.ts",
     "images:enrich": "tsx scripts/images/enrich-image-metadata.ts",
     "images:enrich:all": "tsx scripts/images/enrich-image-metadata.ts --all",
