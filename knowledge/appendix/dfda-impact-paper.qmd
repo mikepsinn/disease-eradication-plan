@@ -86,6 +86,9 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
 - **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift (from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
+![A comparative impact summary showing the transition from traditional trials to the proposed framework, highlighting a 97.7% cost reduction, a 12.3x increase in trial capacity, and a gain of 565 billion DALYs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
+
+
 ### Key Findings
 
 | Metric | Value | Context |

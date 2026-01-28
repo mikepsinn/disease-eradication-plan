@@ -744,7 +744,7 @@ These approaches address different failure modes:
 
 A hybrid architecture might use Wishocracy for *metric selection* (citizens choose what to optimize) and Optimocracy for *metric optimization* (algorithms allocate to maximize the chosen metric). This combines democratic legitimacy at the constitutional level with capture resistance at the execution level.
 
-For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Metric-Bound Resource Allocation](https://optimocracy.warondisease.org).
+For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Outcome-Optimizing Resource Allocation](https://optimocracy.warondisease.org).
 
 # **Conclusion**
 

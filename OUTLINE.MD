@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 346,375
+**Files:** 86 | **Words:** 346,283
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,086 words | 1,804 lines
+**Stats:** 16,994 words | 1,795 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4087,7 +4087,7 @@
     - A Taxonomy of Governance Decisions
     - Defining Optimocracy's Proper Scope
     - The 80/20 Architecture
-  - Advantages Over Discretionary Governance
+  - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
     - Transparency and Verifiability
@@ -7109,12 +7109,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 17,086
+**Files:** 1 | **Words:** 16,994
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,086 words | 1,804 lines
+**Stats:** 16,994 words | 1,795 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7160,7 +7160,7 @@
     - A Taxonomy of Governance Decisions
     - Defining Optimocracy's Proper Scope
     - The 80/20 Architecture
-  - Advantages Over Discretionary Governance
+  - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
     - Transparency and Verifiability
@@ -7507,6 +7507,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 551,817
+- Total words: 551,633
 - Orphaned files: 21
 - Paper configs: 11
