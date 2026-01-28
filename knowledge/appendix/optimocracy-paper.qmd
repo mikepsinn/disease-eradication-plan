@@ -123,7 +123,6 @@ The framework optimizes for **Health & Wealth**: median healthy life years (heal
 
 ![A flowchart of the Optimocracy governance cycle showing the feedback loop between algorithmic recommendations, legislative voting, outcome verification by oracles, and the resulting incentive payouts.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-it-works-in-practice-bw-academic.jpg)
 
-
 **Step 2: A computer system optimizes budget allocation**
 
 An optimization system (which could range from simple regression models ("historically, \$1B in early childhood education correlates with \$3B in future income gains") to prediction markets to machine learning) calculates the budget allocation most likely to maximize the chosen metric. The output is not a single number but a complete allocation: "\$X to healthcare, \$Y to infrastructure, \$Z to education, etc."
@@ -392,28 +391,11 @@ Optimocracy should operate in domains where conditions are favorable and defer t
 
 Economists have proven some inconvenient truths about collective choice that constrain *every* governance system, including Optimocracy. The question isn't whether these constraints exist (they do), but whether Optimocracy handles them better than the alternative.
 
-#### Arrow's Impossibility Theorem: You Can't Perfectly Merge Preferences
+#### Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
 
-@arrow1951 proved that no voting rule can simultaneously satisfy transitivity, unanimity, independence of irrelevant alternatives, and non-dictatorship. In plain English: if Alice wants income > health > environment and Bob wants health > environment > income, no voting system can perfectly satisfy both. Someone's priorities get squashed.
+@arrow1951 proved no voting rule perfectly aggregates preferences. @gibbard1973 showed any voting rule can be strategically gamed. These theorems apply to metric selection: there's no "objectively correct" metric, and people will advocate for metrics that favor their interests.
 
-**What this means for Optimocracy:**
-
-1. **Metric selection is inherently political**: There's no "objectively correct" metric. Choosing "maximize median income" over "maximize life expectancy" involves value judgments.
-2. **Composite indices face aggregation problems**: Weighting income vs. health vs. environment can't be determined algorithmically. It requires political choice.
-3. **Democratic legitimacy matters**: Because no neutral aggregation exists, the *process* that selects metrics matters as much as the metrics themselves.
-
-**How Optimocracy responds:** It doesn't claim to solve preference aggregation. It accepts that metric selection is a democratic choice and focuses on ensuring that *once chosen*, metrics are actually optimized rather than captured. The framework provides sensible defaults (Health & Wealth) so most jurisdictions can skip the aggregation problem entirely.
-
-#### Gibbard-Satterthwaite: People Game Votes
-
-The Gibbard-Satterthwaite theorem [@gibbard1973; @satterthwaite1975] shows that any non-dictatorial voting rule with 3+ options can be strategically manipulated. People will vote for metrics that favor their interests, not their true preferences.
-
-**What this means for Optimocracy:**
-
-1. **Strategic metric selection is possible**: Actors may push for metrics that benefit them (e.g., GDP growth favors capital owners over workers)
-2. **Supermajority requirements reduce but don't eliminate manipulation**
-
-**How Optimocracy responds:** It mitigates strategic metric selection through infrequent metric changes (reducing the ROI of gaming), high visibility (making manipulation reputationally costly), and constitutional thresholds (requiring broad coalitions rather than narrow majorities).
+**How Optimocracy responds:** It doesn't claim to solve preference aggregation. It provides sensible defaults (Health & Wealth) so most jurisdictions skip the problem entirely. For those who want different metrics, constitutional amendments require supermajorities and high visibility, making gaming costly.
 
 #### Mechanism Design: Honest Answers Require Honest Incentives
 
@@ -790,54 +772,15 @@ Since Optimocracy is advisory, constraint violations flag policies for human rev
 
 ![Architecture of the two-layer democracy framework showing the metric selection layer defining optimization objectives and the Optimocracy layer executing algorithmic optimization, including the bypass path for default metrics.](/assets/images/optimocracy-paper/optimocracy-paper-section-metric-selection-process-bw-academic.jpg)
 
-
 This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
 
-### Metric Selection Process
+### Metric Defaults
 
-**The framework provides concrete defaults** (Health & Wealth: median healthy life years + real after-tax median income growth) rather than requiring open-ended constitutional deliberation. This reduces capture opportunity: there's no "metric selection battle" to lobby because the defaults are already specified.
+**The framework provides concrete defaults**: Health & Wealth (median healthy life years + real after-tax median income growth). Most jurisdictions should simply adopt these defaults. No metric selection debate required.
 
-Citizens who prefer different metrics can propose amendments through constitutional process (referenda, legislative supermajority, or more sophisticated preference aggregation methods). But most jurisdictions can simply adopt the defaults.
+If citizens prefer different metrics, they can propose amendments through constitutional process. But this is optional, not required. The defaults work out of the box.
 
-This creates a two-layer democracy:
-1. **Metric selection layer**: Democratic choice of optimization objective (if defaults are amended)
-2. **Optimocracy layer**: Algorithmic optimization of selected objective
-
-### The Metric Selection Problem: Where Capture Migrates
-
-A critical objection: if capture is eliminated from allocation decisions, won't it simply migrate to metric selection? This section addresses this challenge directly.
-
-**The objection stated formally:**
-
-Let $C$ represent total capture (resources devoted to influencing policy for private benefit). Under discretionary governance, $C$ is distributed across many decision points. Under Optimocracy, $C$ concentrates at metric selection. If $C$ is conserved, Optimocracy merely relocates rather than reduces capture.
-
-**Why the objection is partially valid:**
-
-1. Metric selection is a high-stakes constitutional choice
-2. Industries will lobby for metrics that favor their interests
-3. The "2% inflation target" was chosen by economists, not citizens; similar capture could occur
-4. Initial metric selection is especially vulnerable before norms are established
-
-**Why Optimocracy still improves outcomes:**
-
-1. **Concrete defaults eliminate the selection battle**: The framework specifies Health & Wealth (median healthy life years + real after-tax median income growth) as defaults. There's no open-ended "which metric should we use?" debate to capture. Lobbyists can't influence a choice that's already been made.
-
-2. **Visibility**: Constitutional debates (for those who want to amend the defaults) are high-profile; committee earmarks are obscure. Citizens can monitor one constitutional question more easily than thousands of budget decisions.
-
-3. **Frequency**: Constitutions change rarely; budgets change annually. Reducing the frequency of capture opportunities reduces total capture even if intensity per opportunity increases.
-
-4. **Generality**: Metric selection is general (affects everyone equally); allocation decisions are specific (can target benefits). General rules are harder to capture than specific decisions [@buchanan1962].
-
-5. **Legitimacy requirements**: Constitutional changes require super-majorities, deliberation, and public justification. Earmarks require only a committee chair's assent.
-
-**Design implications:**
-
-- Provide concrete defaults rather than requiring metric selection deliberation
-- Metric amendments (if desired) should be maximally visible and deliberative
-- Regular (but not frequent) metric review prevents lock-in
-- Two metrics (income + health) reduce single-point-of-failure capture
-
-The honest assessment: Optimocracy reduces but does not eliminate capture. The empirical question is whether capture at metric selection causes less welfare loss than capture at allocation. The theoretical case is strong (one decision point vs. thousands), but empirical validation requires deployment.
+**What about capture migrating to metric selection?** The defaults eliminate this problem. Lobbyists can't influence a choice that's already been made. For those who do want to amend: constitutional debates are high-profile (visible), require supermajorities (hard to capture), and happen rarely (reducing capture opportunities). One high-stakes debate every decade is easier to monitor than thousands of earmarks annually.
 
 ## Scope and Limits: A Taxonomy of Governance Decisions
 
@@ -943,10 +886,10 @@ Under discretionary governance, every allocation decision is a lobbying opportun
 
 Optimocracy collapses this attack surface from thousands of decision points to two:
 
-1. **Metric selection** (rare, high-visibility, constitutional process requiring supermajority; see detailed analysis in Section 5's "Metric Selection Problem")
+1. **Metric amendment** (defaults are provided; amendments require constitutional supermajorities)
 2. **Oracle manipulation** (mitigated by decentralization, staking, and multiple independent sources)
 
-As analyzed above, capturing metric selection requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair. The asymmetry favors defense: changing the metric requires extraordinary effort; maintaining it requires only ordinary vigilance.
+Capturing metric amendment requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair.
 
 ![Comparison of the lobbying attack surface under current discretionary governance versus the consolidated attack surface under Optimocracy.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
@@ -1209,16 +1152,9 @@ The fundamental democratic question is "What kind of society do we want?" It's n
 
 This mirrors how democracy already works in domains we accept as legitimate. Citizens don't vote on monetary policy decisions, FDA drug approvals, or Federal Reserve interest rates. We accept delegation to technocratic institutions for implementation while retaining democratic control over their mandates. Optimocracy extends this principle more consistently.
 
-**3. The constitutional process for metric selection can be as deliberative as we want.**
+**3. Most jurisdictions can just use the defaults.**
 
-Nothing about Optimocracy requires that metric selection be a quick or shallow process. It could involve:
-- Multi-year deliberation with citizen assemblies
-- Extensive public education about tradeoffs between metrics
-- Supermajority requirements ensuring broad consensus
-- Sunset clauses requiring periodic reaffirmation
-- Regional experimentation before national adoption
-
-The goal is to concentrate democratic deliberation where it matters most (fundamental values and priorities) rather than dispersing it across thousands of technical decisions where capture is easy and citizen engagement is impossible.
+The framework provides Health & Wealth (median healthy life years + real after-tax median income growth) as ready-to-use defaults. No metric selection debate required. For those who want different metrics, constitutional amendments are possible but optional.
 
 **4. Legitimacy evolves with demonstrated performance.**
 
@@ -1689,9 +1625,6 @@ The question is not whether Optimocracy is perfect; no governance system is. The
 ### What About AI?
 
 Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. That's metric selection, a fundamentally democratic choice, not a technical problem. Even a superintelligent AI should operate within an Optimocracy-like structure: humans specify objectives democratically, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving democratic legitimacy and human oversight.
-
-![The Optimocracy AI governance architecture showing the iterative loop between democratic metric selection, AI-generated proposals, independent verification systems, and final human approval authority.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
-
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 

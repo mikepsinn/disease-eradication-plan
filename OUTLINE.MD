@@ -1623,12 +1623,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,729
+**Files:** 1 | **Words:** 11,761
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,729 words | 1,262 lines
+**Stats:** 11,761 words | 1,265 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 346,926
+**Files:** 86 | **Words:** 346,375
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,669 words | 1,866 lines
+**Stats:** 17,086 words | 1,804 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4065,8 +4065,7 @@
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow's Impossibility Theorem: You Can't Perfectly Merge Preferences
-      - Gibbard-Satterthwaite: People Game Votes
+      - Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
       - Mechanism Design: Honest Answers Require Honest Incentives
       - The Comparison That Matters
     - Index Funds and Passive Allocation
@@ -4082,8 +4081,7 @@
     - Composite Welfare Index
     - Constitutional Welfare Score: A Concrete Default
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Metric Selection Process
-    - The Metric Selection Problem: Where Capture Migrates
+    - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
     - A Taxonomy of Governance Decisions
@@ -6203,7 +6201,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,729 words | 1,262 lines
+**Stats:** 11,761 words | 1,265 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -7111,12 +7109,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 17,669
+**Files:** 1 | **Words:** 17,086
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,669 words | 1,866 lines
+**Stats:** 17,086 words | 1,804 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7140,8 +7138,7 @@
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow's Impossibility Theorem: You Can't Perfectly Merge Preferences
-      - Gibbard-Satterthwaite: People Game Votes
+      - Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
       - Mechanism Design: Honest Answers Require Honest Incentives
       - The Comparison That Matters
     - Index Funds and Passive Allocation
@@ -7157,8 +7154,7 @@
     - Composite Welfare Index
     - Constitutional Welfare Score: A Concrete Default
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Metric Selection Process
-    - The Metric Selection Problem: Where Capture Migrates
+    - Metric Defaults
   - Scope and Limits: A Taxonomy of Governance Decisions
     - Engaging with the Counter-Literature
     - A Taxonomy of Governance Decisions
@@ -7511,6 +7507,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 552,919
+- Total words: 551,817
 - Orphaned files: 21
 - Paper configs: 11
