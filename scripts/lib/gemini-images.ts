@@ -74,11 +74,20 @@ export interface ImageMetadata {
   /** AI-inferred prompt that could have generated this image (for comparison with actual prompt) */
   inferredPrompt?: string
 
-  /** List of issues/problems identified in the image */
+  /** List of quality issues identified in the image */
   imageIssues?: string[]
 
   /** Suggestions for improving the generation prompt */
   promptImprovements?: string[]
+
+  /** Whether prompt leakage or meta-artifacts were detected */
+  imageProblemsDetected?: boolean
+
+  /** Specific prompt leakage or meta-artifact problems found */
+  imageProblems?: string[]
+
+  /** Combined repair prompt to fix all detected problems */
+  imageProblemsRepairPrompt?: string
 }
 
 // Default metadata values (exported for reuse)
@@ -809,28 +818,31 @@ export async function saveImage(
     generationPrompt, // Always save the generation prompt
   }
 
-  // Always extract transcript and image analysis using shared module
+  // Always run complete metadata analysis (includes prompt leakage detection)
   try {
-    const { analyzeImage } = await import('./image-analysis')
-    const analysis = await analyzeImage(filePath)
+    const { generateCompleteMetadata } = await import('./image-analysis')
+    const analysis = await generateCompleteMetadata(filePath)
 
     if (analysis.transcript) {
       finalMetadata.transcript = analysis.transcript
     }
-    if (analysis.inferredPrompt) {
-      finalMetadata.inferredPrompt = analysis.inferredPrompt
+    if (analysis.qualityIssues && analysis.qualityIssues.length > 0) {
+      finalMetadata.imageIssues = analysis.qualityIssues
     }
-    if (analysis.imageIssues && analysis.imageIssues.length > 0) {
-      finalMetadata.imageIssues = analysis.imageIssues
+    if (analysis.imageProblemsDetected !== undefined) {
+      finalMetadata.imageProblemsDetected = analysis.imageProblemsDetected
     }
-    if (analysis.promptImprovements && analysis.promptImprovements.length > 0) {
-      finalMetadata.promptImprovements = analysis.promptImprovements
+    if (analysis.imageProblems && analysis.imageProblems.length > 0) {
+      finalMetadata.imageProblems = analysis.imageProblems
+    }
+    if (analysis.imageProblemsRepairPrompt) {
+      finalMetadata.imageProblemsRepairPrompt = analysis.imageProblemsRepairPrompt
     }
 
     log.info('Image analysis complete', {
       hasTranscript: !!finalMetadata.transcript,
       issueCount: finalMetadata.imageIssues?.length || 0,
-      improvementCount: finalMetadata.promptImprovements?.length || 0,
+      problemsDetected: !!finalMetadata.imageProblemsDetected,
     })
   } catch (err: any) {
     log.warn('Failed to analyze image', { error: err.message })

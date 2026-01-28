@@ -2150,6 +2150,10 @@
       "language": "en-US",
       "twitterSite": "https://x.com/warondisease",
       "twitterCreator": "https://x.com/warondisease",
+      "netlify": {
+        "siteId": "9a8ec013-54cd-4b7a-9364-fa13dc46bd92",
+        "cname": "federal-efficiency-audit-warondisease.netlify.app"
+      },
       "indexSource": "knowledge/appendix/federal-efficiency-audit.qmd",
       "outputDir": "_site/federal-efficiency-audit",
       "publishing": {
