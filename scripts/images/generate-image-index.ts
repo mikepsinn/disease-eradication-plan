@@ -174,11 +174,13 @@ export async function updateImageInIndex(
   const existingIndex = index.images.findIndex(img => img.path === relativePath);
 
   if (existingIndex >= 0) {
-    // Merge new metadata with existing
+    // Merge new metadata with existing (new values override old)
+    const oldEntry = index.images[existingIndex];
     index.images[existingIndex] = {
-      ...index.images[existingIndex],
+      ...oldEntry,
       ...newMetadata,
     };
+    console.log(`  [INDEX] Updated: ${relativePath} (size: ${oldEntry.sizeBytes} -> ${newMetadata.sizeBytes || oldEntry.sizeBytes})`);
   } else {
     // Image not in index - need to process it fully
     const useExiftool = await isExiftoolAvailable();
@@ -244,10 +246,23 @@ async function main() {
       totalSize += existing.sizeBytes;
       skipped++;
     } else {
-      // File is new or changed - process it
-      const metadata = await processImage(filePath, useExiftool);
-      images.push(metadata);
-      totalSize += metadata.sizeBytes;
+      // File is new or changed - process it to get fresh file metadata
+      const freshMetadata = await processImage(filePath, useExiftool);
+
+      if (existing) {
+        // IMPORTANT: Preserve enriched metadata fields when merging
+        // Fresh file metadata (size, dimensions, EXIF) takes priority
+        // But enriched fields (socialCaption, qualityScore, etc.) are preserved
+        const merged: ImageMetadata = {
+          ...existing,       // Preserve all existing enriched fields
+          ...freshMetadata,  // Overwrite with fresh file metadata
+        };
+        images.push(merged);
+      } else {
+        // New file - no existing metadata to preserve
+        images.push(freshMetadata);
+      }
+      totalSize += freshMetadata.sizeBytes;
       updated++;
     }
 

@@ -19,7 +19,8 @@ import { findImages, getMimeType } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { saveImage, GeneratedImage, ImageMetadata } from '../lib/gemini-images'
 import { generateCompleteMetadata } from '../lib/image-analysis'
-import { updateImageInIndex } from './generate-image-index'
+import { updateImageInIndex, processImage } from './generate-image-index'
+import { isExiftoolAvailable } from '../lib/exiftool-utils'
 import { parseCommonArgs, hasFlag, printHeader, printSummary } from '../lib/cli-utils'
 
 const ASSETS_DIR = path.join(process.cwd(), 'assets', 'images')
@@ -202,11 +203,10 @@ async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | '
       }
       await writeImageMetadata(issue.filepath, clearedMetadata)
 
-      // Update image index with new metadata
-      const fullMetadata = await readImageMetadata(issue.filepath)
-      if (fullMetadata) {
-        await updateImageInIndex(issue.filepath, fullMetadata)
-      }
+      // Update image index with fresh file stats + EXIF metadata
+      const useExiftool = await isExiftoolAvailable()
+      const fullMetadata = await processImage(issue.filepath, useExiftool)
+      await updateImageInIndex(issue.filepath, fullMetadata)
       return 'fixed'
     }
 
@@ -235,11 +235,10 @@ async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | '
     }
     await writeImageMetadata(issue.filepath, clearedMetadata)
 
-    // Update image index with new metadata
-    const fullMetadata = await readImageMetadata(issue.filepath)
-    if (fullMetadata) {
-      await updateImageInIndex(issue.filepath, fullMetadata)
-    }
+    // Update image index with fresh file stats + EXIF metadata
+    const useExiftool = await isExiftoolAvailable()
+    const fullMetadata = await processImage(issue.filepath, useExiftool)
+    await updateImageInIndex(issue.filepath, fullMetadata)
 
     return 'fixed'
   }
