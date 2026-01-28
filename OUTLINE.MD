@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 343,670
+**Files:** 86 | **Words:** 342,516
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 14,347 words | 1,442 lines
+**Stats:** 13,193 words | 1,323 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4061,7 +4061,6 @@
   - Theoretical Foundations
     - Lessons from Technocratic Governance Failures
       - Soviet Central Planning
-      - Singapore's Authoritarian Technocracy
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
@@ -4082,7 +4081,6 @@
     - Engaging with the Counter-Literature
     - A Taxonomy of Governance Decisions
     - Defining Optimocracy's Proper Scope
-    - The 80/20 Architecture
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
@@ -4094,7 +4092,6 @@
     - Oracle Capture
     - Edge Cases and Novelty
     - Democratic Legitimacy
-    - Optimocracy vs. Direct Existential Risk Work
   - Testable Predictions
     - Rejection Criteria
   - Hybrid Architectures
@@ -7100,12 +7097,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 14,347
+**Files:** 1 | **Words:** 13,193
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 14,347 words | 1,442 lines
+**Stats:** 13,193 words | 1,323 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7125,7 +7122,6 @@
   - Theoretical Foundations
     - Lessons from Technocratic Governance Failures
       - Soviet Central Planning
-      - Singapore's Authoritarian Technocracy
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
@@ -7146,7 +7142,6 @@
     - Engaging with the Counter-Literature
     - A Taxonomy of Governance Decisions
     - Defining Optimocracy's Proper Scope
-    - The 80/20 Architecture
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
@@ -7158,7 +7153,6 @@
     - Oracle Capture
     - Edge Cases and Novelty
     - Democratic Legitimacy
-    - Optimocracy vs. Direct Existential Risk Work
   - Testable Predictions
     - Rejection Criteria
   - Hybrid Architectures
@@ -7530,6 +7524,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 551,821
+- Total words: 549,513
 - Orphaned files: 20
 - Paper configs: 12

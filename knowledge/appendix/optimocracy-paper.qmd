@@ -313,23 +313,6 @@ The Soviet system attempted comprehensive optimization: central planners would c
 
 ![A comparison diagram contrasting the failure points of Soviet central planning (centralized information and misaligned incentives) with Optimocracy's proposed solutions of market integration and metric-based accountability.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
 
-#### Singapore's Authoritarian Technocracy
-
-Singapore achieved remarkable economic development under technocratic authoritarian governance. Lee Kuan Yew explicitly rejected democratic constraints in favor of expert-driven policy.
-
-**What worked:**
-
-1. **Long time horizons**: No electoral pressures for short-term thinking
-2. **Merit-based bureaucracy**: Competent officials selected and retained
-3. **Corruption control**: Strong anti-corruption enforcement
-
-**What didn't work (or remains contested):**
-
-1. **Civil liberties**: Speech restrictions, limited political competition
-2. **Accountability**: Errors were not corrected through democratic feedback
-3. **Legitimacy**: Depends on continued performance; no intrinsic democratic mandate
-4. **Replicability**: Required exceptional leadership; unclear if model transfers
-
 #### Failed Algorithmic Governance in Finance
 
 While political systems fail through capture and misalignment, algorithmic systems have their own failure modes. Financial markets provide cautionary tales:
@@ -496,16 +479,7 @@ This is a real concern. The solution is **genuinely independent data collection 
 
 **Why individual gaming is irrelevant:**
 
-With millions of survey responses, one person lying has approximately zero impact on the aggregate. Unlike voting (where one vote could theoretically be decisive), survey responses are aggregated statistically. There is no strategic incentive to misreport because your individual response doesn't affect the outcome.
-
-**Cross-validation architecture:**
-
-The Constitutional Welfare Score combines:
-1. **Objective metrics** (life expectancy from vital statistics, income from tax records) that are hard to fake
-2. **Decentralized surveys** (happiness, perceived freedom) that bypass capturable central agencies
-3. **Government statistics** (for benchmarking and cross-reference)
-
-If official statistics claim income rose 3% but decentralized surveys show citizens reporting financial stress, the discrepancy is visible and investigable. This creates accountability for measurement institutions.
+With millions of survey responses, one person lying has approximately zero impact on the aggregate. Survey responses are aggregated statistically, so there is no strategic incentive to misreport.
 
 ### The Execution Layer
 
@@ -694,27 +668,7 @@ Optimocracy should NOT govern decisions that:
 3. **Require individual judgment**: Due process, rights, case-by-case assessment
 4. **Have existential stakes**: War, constitutional structure, regime legitimacy
 
-### The 80/20 Architecture
-
-We propose a heuristic split where the majority of routine government spending allocation could be governed algorithmically, while a minority requires democratic deliberation. The specific percentages below are illustrative, not empirically derived; rigorous calibration would require detailed analysis of budget categories by measurability, value consensus, and capture vulnerability.
-
-**Candidate algorithmic domains:**
-- Medical research funding allocation
-- Infrastructure maintenance prioritization
-- Education funding formulas
-- Pandemic preparedness investment
-- Environmental protection spending
-
-**Domains requiring deliberation:**
-- New program creation
-- Fundamental policy direction
-- Rights and liberties
-- International relations
-- Constitutional revision
-
-**Note:** The appropriate boundary depends on institutional context and metric quality. Some jurisdictions may find 60% algorithmic allocation feasible; others may achieve 90%. Routine allocation with measurable outcomes is a candidate for algorithmic governance, while novel decisions and value conflicts require democratic deliberation.
-
-This hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while using outcome-optimizing systems for routine allocation.
+The hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while using outcome-optimizing systems for routine allocation.
 
 ## Advantages Over Political Governance
 
@@ -952,22 +906,6 @@ Optimocracy prioritizes outcome legitimacy while preserving process legitimacy o
 
 We have no knock-down argument against this position. We can only note that as outcomes under current governance deteriorate (infrastructure crumbles, climate change accelerates, healthcare costs spiral, life expectancy stagnates), the revealed preference for process over outcomes will be tested. When the choice becomes vivid ("Do you want democratic ritual with declining welfare, or algorithmic allocation with improving welfare?"), we predict most citizens will choose outcomes.
 
-### Optimocracy vs. Direct Existential Risk Work
-
-A sophisticated objection asks: even if Optimocracy improves routine governance, shouldn't resources go directly to existential risk (x-risk) mitigation (AI safety, biosecurity, nuclear security) where the stakes are civilization-ending?
-
-This objection misunderstands the relationship between governance and x-risk. Consider:
-
-**1. Most x-risk mitigation requires political action.** AI regulation, biosecurity investment, nuclear disarmament treaties. These aren't technical problems awaiting solutions. They're policy problems blocked by the same Political Dysfunction Tax that blocks all good policy. The researchers who develop AI alignment techniques still need governments to implement AI governance. Biosecurity experts who identify pandemic risks still need governments to fund preparedness. Nuclear security analysts who model deterrence still need governments to negotiate treaties.
-
-**2. Optimocracy is a meta-level intervention.** Working on specific x-risks is analogous to plugging individual leaks in a failing dam. Optimocracy replaces the dam. A well-functioning Optimocracy would allocate appropriately to *all* x-risks based on expected value calculations, including risks we haven't yet identified. The current system systematically underinvests in low-probability, high-consequence events because the political rewards for prevention are diffuse and delayed while the costs are concentrated and immediate.
-
-**3. Governance improvement has multiplicative returns.** Direct x-risk work affects one risk category. Governance improvement affects *every* policy domain simultaneously: health, climate, poverty, infrastructure, research funding, and existential risk. The expected value calculation favors the intervention with the broader scope.
-
-**4. The portfolio allocation problem is itself an Optimocracy problem.** How much should society invest in AI safety vs. biosecurity vs. nuclear security vs. pandemic preparedness? This is precisely the kind of resource allocation question Optimocracy is designed to answer. Without a functioning mechanism for optimal allocation, even excellent x-risk research gets misallocated, either underfunded (like pandemic preparedness pre-COVID) or misdirected (like security theater post-9/11).
-
-Optimocracy may be the highest-impact path *to* x-risk mitigation, not a competitor to it. Solving the upstream problem of why governments don't implement good policy makes all downstream policy improvements more tractable. This includes x-risk mitigation itself.
-
 ## Testable Predictions
 
 A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation, including index funds outperforming 90%+ of active managers [@spiva2023] and formula programs like Social Security showing lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
@@ -1126,19 +1064,7 @@ Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create
 | Surplus after buyouts | $2-5T | Residual = welfare gain × buyout share − rents |
 | Per-politician average (535 Congress) | $4-9M/year | ($2-5T) / 535 members; assumes equal distribution |
 
-**Methodological caveats:**
-
-1. **Welfare gain estimate**: The $20-50T figure derives from the {{< var political_dysfunction_tax_total_pct >}} Political Dysfunction Tax applied to global GDP. This represents *potential* gains under optimal policy, not guaranteed achievable gains. Realistic implementation would capture a fraction.
-
-2. **Buyout share (20%)**: This is an assumption, not an estimate. The actual share politically feasible for redistribution to reform opponents is unknown and would vary by jurisdiction and reform type.
-
-3. **Rent valuation**: Estimating the value of current rents (lobbying revenue, regulatory capture, career incentives) is notoriously difficult. The $2-5T figure is an order-of-magnitude estimate based on documented lobbying expenditures ($3.5B/year in the US), multiplied by assumed leverage ratios and career value. Different methodologies could yield estimates differing by 5-10x.
-
-4. **Distribution assumption**: The per-politician calculation assumes equal distribution across all 535 members of Congress. In practice, committee chairs and key veto players would require larger payments, while backbenchers might require less.
-
-**The core claim**: Welfare gains from optimal policy *vastly exceed* the rents currently extracted, making Coasean buyouts *arithmetically feasible*. The specific numbers are illustrative, not precise.
-
-For perspective: A senator currently receives ~$174K salary plus ~$5-20M in career post-office value. An IAB payment of $5-10M/year for supporting optimal policy would dominate current incentives.
+These numbers are illustrative, not precise. The core claim: welfare gains from optimal policy vastly exceed the rents currently extracted, making Coasean buyouts arithmetically feasible. A senator currently receives ~$174K salary plus ~$5-20M in career post-office value. An IAB payment of $5-10M/year for supporting optimal policy would dominate current incentives.
 
 ### The Cost of Political Reform: Quantifying "Political Impossibility"
 
@@ -1152,15 +1078,6 @@ Critics often dismiss governance reforms as "politically impossible." This objec
 | Match all federal campaign spending | $10B/cycle |
 | Match full Congress career incentives (535 × ~$10M NPV)^[Post-Congress lobbying compensation averages 10-20× congressional salary [@thenation-revolving-door]; $174K × 15 × 10 years ≈ $10M NPV.] | $5.35B one-time |
 | **Total US maximum reform investment** | **~$25B** |
-
-**Global Estimates:**
-
-| Region | Legislators | Est. Reform Investment |
-|--------|-------------|------------------------|
-| United States | 535 | $25B |
-| European NATO | ~5,000 | $30B |
-| Other major powers | ~10,000 | $45B |
-| **Global total** | ~16,000 | **$100-200B** |
 
 **ROI Analysis:**
 
