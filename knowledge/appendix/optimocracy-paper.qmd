@@ -228,7 +228,6 @@ If the welfare losses are documented, why don't governments act? As established 
 | Pandemic preparedness | 100:1+ | Benefits are diffuse and probabilistic |
 | Medical research | 45:1 | Competes with defense spending |
 | Agricultural subsidies | <1:1 | Concentrated beneficiaries, effective lobby |
-| Fossil fuel subsidies | Negative | Concentrated beneficiaries, effective lobby |
 
 Information about optimal policy is freely available. The Copenhagen Consensus, GiveWell, and academic researchers publish rigorous benefit-cost analyses. Governments ignore this information because acting on it is not politically rewarded.
 
@@ -327,27 +326,9 @@ Singapore achieved remarkable economic development under technocratic authoritar
 - Democratic metric selection provides legitimacy that pure technocracy lacks
 - Optimocracy should constrain allocation, not eliminate political competition
 
-#### Expert-Driven COVID Policy
-
-The COVID-19 pandemic provided a natural experiment in expert-driven governance. Epidemiologists and public health officials gained unprecedented influence over policy.
-
-**What went wrong:**
-
-1. **Narrow optimization**: Experts optimized for COVID deaths, ignoring economic, educational, and mental health costs
-2. **Model uncertainty**: Epidemiological models had wide uncertainty bands that were not communicated
-3. **Value conflicts**: Tradeoffs between lives saved and quality of life required democratic input, not expert decree
-4. **Capture**: Public health establishment had institutional interests in maximizing perceived crisis severity
-
-**Lessons for Optimocracy:**
-
-- Single-metric optimization is dangerous; composite metrics are essential
-- Uncertainty must be transparent; algorithms should not claim false precision
-- Value tradeoffs require democratic input at the constitutional layer
-- Expert communities can be captured by their own institutional interests
-
 #### Failed Algorithmic Governance in Finance
 
-While the previous examples focused on discretionary system failures, algorithmic systems have their own failure modes. Financial markets provide cautionary tales:
+While discretionary systems fail through capture and misalignment, algorithmic systems have their own failure modes. Financial markets provide cautionary tales:
 
 **Credit Rating Agencies (1990s-2008):**
 

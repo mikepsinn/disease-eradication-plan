@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 347,027
+**Files:** 86 | **Words:** 346,885
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,770 words | 1,884 lines
+**Stats:** 17,628 words | 1,865 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4062,7 +4062,6 @@
     - Lessons from Technocratic Governance Failures
       - Soviet Central Planning
       - Singapore's Authoritarian Technocracy
-      - Expert-Driven COVID Policy
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
@@ -7113,12 +7112,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 17,770
+**Files:** 1 | **Words:** 17,628
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,770 words | 1,884 lines
+**Stats:** 17,628 words | 1,865 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7139,7 +7138,6 @@
     - Lessons from Technocratic Governance Failures
       - Soviet Central Planning
       - Singapore's Authoritarian Technocracy
-      - Expert-Driven COVID Policy
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
@@ -7515,6 +7513,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 553,121
+- Total words: 552,837
 - Orphaned files: 21
 - Paper configs: 11

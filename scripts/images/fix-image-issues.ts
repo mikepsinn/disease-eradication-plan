@@ -17,7 +17,7 @@ import path from 'path'
 import { genAI, GEMINI_IMAGE_MODEL_ID } from '../lib/llm'
 import { findImages, getMimeType } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
-import { saveImage, GeneratedImage, ImageMetadata } from '../lib/gemini-images'
+import { saveImage, generateImages, GeneratedImage, ImageMetadata } from '../lib/gemini-images'
 import { generateCompleteMetadata } from '../lib/image-analysis'
 import { updateImageInIndex, processImage, loadIndex } from './generate-image-index'
 import { isExiftoolAvailable } from '../lib/exiftool-utils'
@@ -189,9 +189,114 @@ Keep everything else exactly the same - preserve the overall style, colors, layo
 }
 
 /**
+ * Regenerate an image from scratch using the original prompt
+ * Used as fallback when editing fails
+ */
+async function regenerateImage(
+  filepath: string,
+  problems: string[]
+): Promise<boolean> {
+  // Get original metadata to find the generation prompt
+  const originalMetadata = await readImageMetadata(filepath)
+  const index = await loadIndex()
+  const relativePath = path.relative(process.cwd(), filepath).replace(/\\/g, '/')
+  const indexEntry = index?.images.find(img => img.path === relativePath)
+
+  // Find a prompt to use for regeneration
+  const originalPrompt = originalMetadata?.generationPrompt || indexEntry?.generationPrompt
+  const inferredPrompt = originalMetadata?.inferredPrompt || indexEntry?.inferredPrompt
+
+  if (!originalPrompt && !inferredPrompt) {
+    console.log(`  [REGEN] No original or inferred prompt found - cannot regenerate`)
+    return false
+  }
+
+  // Use original prompt if available, otherwise use inferred
+  let basePrompt = originalPrompt || inferredPrompt || ''
+
+  // Remove [FIXED] or [EDITED] prefixes from previous fix attempts
+  basePrompt = basePrompt.replace(/^\[(FIXED|EDITED)\]\s*/i, '')
+
+  // Build a negative prompt based on the problems
+  const negativeTerms: string[] = []
+  for (const problem of problems) {
+    const lower = problem.toLowerCase()
+    if (lower.includes('figure 1') || lower.includes('fig. 1') || lower.includes('fig 1')) {
+      negativeTerms.push('figure numbers', 'Figure 1', 'Fig. 1')
+    }
+    if (lower.includes('scientific illustration')) {
+      negativeTerms.push('scientific illustration text', 'SCIENTIFIC ILLUSTRATION label')
+    }
+    if (lower.includes('scientific diagram')) {
+      negativeTerms.push('scientific diagram text', 'SCIENTIFIC DIAGRAM label')
+    }
+    if (lower.includes('circa')) {
+      negativeTerms.push('circa dates', 'Circa 2024')
+    }
+    if (lower.includes('database') || lower.includes('volume')) {
+      negativeTerms.push('database labels', 'volume numbers')
+    }
+    if (lower.includes('confidential')) {
+      negativeTerms.push('confidential labels', 'CONFIDENTIAL text')
+    }
+  }
+
+  const negativePrompt = negativeTerms.length > 0
+    ? negativeTerms.join(', ')
+    : 'figure numbers, scientific illustration labels, database text, meta-labels'
+
+  // Add explicit instruction to avoid the problematic elements
+  const cleanPrompt = `${basePrompt}
+
+IMPORTANT: Do NOT include any of the following in the image:
+- Figure numbers (Figure 1, Fig. 1, etc.)
+- Labels like "SCIENTIFIC ILLUSTRATION" or "SCIENTIFIC DIAGRAM"
+- Meta-text like "CIRCA 2024", "DATABASE", "VOLUME"
+- Any text that describes what the image IS rather than what it SHOWS`
+
+  console.log(`  [REGEN] Regenerating with original prompt...`)
+
+  try {
+    const result = await generateImages({
+      prompt: cleanPrompt,
+      count: 1,
+      aspectRatio: '1:1',
+      negativePrompt,
+    })
+
+    if (result.images.length === 0 || !result.images[0].imageBytes) {
+      console.log(`  [REGEN] No image generated`)
+      return false
+    }
+
+    // Preserve existing metadata
+    const metadata: ImageMetadata = {
+      ...(indexEntry || {}),
+      ...(originalMetadata || {}),
+      title: originalMetadata?.title || indexEntry?.title || path.basename(filepath),
+      description: originalMetadata?.description || indexEntry?.description || '',
+      keywords: originalMetadata?.keywords || indexEntry?.keywords || [],
+    }
+
+    await saveImage(
+      result.images[0],
+      filepath,
+      metadata,
+      `[REGENERATED] ${basePrompt.substring(0, 200)}...`,
+      { skipWatermark: false }
+    )
+
+    return true
+  } catch (error: any) {
+    console.log(`  [REGEN] Error: ${error.message}`)
+    return false
+  }
+}
+
+/**
  * Fix an image and verify the fix worked
  */
-async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | 'failed' | 'still_broken'> {
+async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | 'failed' | 'still_broken' | 'regenerated'> {
   console.log(`  Problems: ${issue.imageProblems.join(', ')}`)
   console.log(`  Repair: ${issue.repairPrompt}`)
 
@@ -254,6 +359,26 @@ async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | '
     return 'fixed'
   }
 
+  // Editing failed - try regeneration as fallback
+  console.log(`  [FALLBACK] Editing failed, attempting regeneration...`)
+  const regenerated = await regenerateImage(issue.filepath, issue.imageProblems)
+
+  if (regenerated) {
+    // Clear problem flags and update index
+    const clearedMetadata = {
+      imageProblemsDetected: false,
+      imageProblems: [],
+      imageProblemsRepairPrompt: '',
+    }
+    await writeImageMetadata(issue.filepath, clearedMetadata)
+
+    const useExiftool = await isExiftoolAvailable()
+    const fullMetadata = await processImage(issue.filepath, useExiftool)
+    await updateImageInIndex(issue.filepath, fullMetadata)
+
+    return 'regenerated'
+  }
+
   return 'failed'
 }
 
@@ -300,6 +425,7 @@ async function main() {
   console.log('='.repeat(60))
 
   let fixed = 0
+  let regenerated = 0
   let failed = 0
   let stillBroken = 0
 
@@ -310,10 +436,13 @@ async function main() {
     const result = await fixImage(issue, !skipVerify)
 
     if (result === 'fixed') {
-      console.log(`  [OK] Fixed`)
+      console.log(`  [OK] Fixed (edited)`)
       fixed++
+    } else if (result === 'regenerated') {
+      console.log(`  [OK] Fixed (regenerated)`)
+      regenerated++
     } else if (result === 'still_broken') {
-      console.log(`  [STILL BROKEN] May need regeneration`)
+      console.log(`  [STILL BROKEN] Manual intervention needed`)
       stillBroken++
     } else {
       console.log(`  [FAILED]`)
@@ -325,7 +454,8 @@ async function main() {
   }
 
   printSummary({
-    'Fixed': fixed,
+    'Fixed (edited)': fixed,
+    'Fixed (regenerated)': regenerated,
     'Still broken': stillBroken,
     'Failed': failed,
   })

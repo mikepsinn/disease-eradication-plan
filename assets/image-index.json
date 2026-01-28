@@ -6929,23 +6929,21 @@
       "path": "assets/images/campaign-budget/campaign-budget-section-professional-legal-bribery-part-of-var-treaty-campaign-budget-lobbying-lobbying-budget-bw-academic.jpg",
       "filename": "campaign-budget-section-professional-legal-bribery-part-of-var-treaty-campaign-budget-lobbying-lobbying-budget-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 326161,
-      "size": "318.5 KB",
+      "sizeBytes": 321901,
+      "size": "314.4 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-27T20:43:40.626Z",
+      "modified": "2026-01-28T19:13:39.912Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nProfessional (Legal) Bribery (part of $650M Lobbying Budget)\n\n**Lobbying (AI-Targeted)**: $150M\n\nHere's how professional democracy corruption works:\n\n- AI identifies which humans can be (legally) bribed to change laws\n- You (legally) bribe those specific humans (not all humans, just the useful ones)\n- Focus: US ($50M (95% CI: $35M-$65M)), EU ($40M (95% CI: $28M-$52M)), G20 ($35M)\n- AI writes the laws, lawyers make them legal-sounding\n\n**Buying Defense Lobbyists**: $50M (95% CI: $35M-$65M)\n\nDefense lobbyists currently work for whoever pays them. So you pay them more:\n\n- Top 50 lobbyists get bond offers (become rich by lobbying FOR life instead of death)\n- Defense execs get early bond access (272% beats their stock options)\n- Pension funds get fiduciary obligation (required to take best returns, oops)\n- \"Consulting fees\" to Pentagon retirees (it's not bribery if you call it consulting)\n\n**Super PAC Papers**: $30M (95% CI: $21M-$39M)\n\n- AI finds swing districts (where papers matter most)\n- Targeted ads (you see \"cure cancer,\" your neighbor sees \"lower taxes\")\n- Voter education (facts presented as if they matter)\n\n**Opposition Research**: $25M (95% CI: $17.5M-$32.5M)\n\n- AI monitors what opponents say (robots never sleep)\n- Instant fact-checking (faster than humans can lie)\n- Protect treaty supporters (politics is mean, apparently)",
-      "transcript": "Lobbying (AI-Targeted): $150M. Here's how professional democracy corruption works: AI Identifies humans to change laws. (Legally) Bribe. Specific Useful Human. Focus: US ($50M, 95% CI: $35M-$65M), EU ($40M, 95% CI: $28M-$52M), G20 ($35M). AI writes laws. Lawyers make them legal-sounding. Professional (Legal) Bribery (part of $650M Lobbying Budget). Buying Defense Lobbyists: $50M (95% CI: $35M-$65M). Defense lobbyists currently work for whoever pays them. So you pay them more: Top 50 lobbyists get bond offers (Rich by lobbying FOR life instead of death). Defense execs get early bond access (272% beats stock options). Pension funds get fiduciary obligation (Required to take best returns, oops). “Consulting fees” to Pentagon retirees (Not bribery if consulting). Super PAC Papers: $30M (95% CI: $21M-$39M). AI finds swing districts (where papers matter most). Targeted ads (You see “cure cancer,” neighbor sees “lower taxes”). Voter education (Facts presented as if they matter). Opposition Research: $25M (95% CI: $17.5M-$32.5M). AI monitors what opponents say (robots never sleep). Instant fact-checking (Faster than humans can lie). Protect treaty supporters (Politics is mean, apparently). Figure 1. The Mechanics of Legalized Influence. Scientific Illustration. Circa 2024. WarOnDisease.org",
+      "generationPrompt": "[REGENERATED] Use a black and white scientific illustration style.\n\nProfessional (Legal) Bribery (part of $650M Lobbying Budget)\n\n**Lobbying (AI-Targeted)**: $150M\n\nHere's how professional democracy corruption work...",
+      "transcript": "PROFESSIONAL (LEGAL) BRIBERY (PART OF $650M LOBBYING BUDGET)\n\nLOBBYING (AI-TARGETED): $150M\nAI identifies which humans can be (legally) bribed to change laws\nUS ($50M) (95% CI: $33M-$65M)\nEU ($40M) (95% CI: $28M-$52M)\nG20 ($35M)\nFocus: US, EU, G20\nLAWS\nAI writes the laws, lawyers make them legal-sounding\n\nBUYING DEFENSE LOBBYISTS: $50M (95% CI: $35M-$65M)\nTOP 50 LOBBYISTS\nBOND OFFER\nBECOME RICH BY LOBBYING FOR LIFE\nDEFENSE EXECS\nEARLY BOND ACCESS (272% BEATS STOCK OPTIONS)\nPENSION FUNDS\nFIDUCIARY OBLIGATION (REQUIRED TO TAKE BEST RETURNS, OOPS)\nPENTAGON RETIREES\nCONSULTING FEES (IT'S NOT BRIBERY IF YOU CALL IT CONSULTING)\n\nSUPER PAC PAPERS: $30M (95% CI: $21M-$39M)\nAI finds swing districts (where papers matter most)\nSWING DISTRICTS\nCURE CANCER -> TARGETED ADS\nLOWER TAXES -> TARGETED ADS\nNEWS\nVOTER EDUCATION (FACTS PRESENTED AS IF THEY MATTER)\n\nOPPOSITION RESEARCH: $25M (95% CI: $17.5M-$32.5M)\nROBOTS NEVER SLEEP\nOPPONENTS SAY\nINSTANT FACT-CHECKING (FASTER THAN HUMANS CAN LIE)\nPROTECT TREATY SUPPORTERS\nPOLITICS IS MEAN, APPARENTLY",
       "inferredPrompt": "A professional infographic in the style of a vintage scientific textbook illustration, utilizing black ink on a textured, aged parchment background. The central element is a rectangular box labeled 'Professional (Legal) Bribery' with textured arrows branching out to four quadrants. Top Left: 'Lobbying (AI-Targeted)' with icons of a circuit brain, a magnifying glass over people, and a money bag. Top Right: 'Buying Defense Lobbyists' with icons of a handshake, a business suit, and stacked coins. Bottom Left: 'Super PAC Papers' with a map, an eye, and an open book. Bottom Right: 'Opposition Research' with a robot head, a stopwatch, and a shield. The image features dense, legible serif text and numerical data with confidence intervals. The overall tone is cynical and clinical, framed by a decorative double-line border with a figure caption at the bottom.",
       "imageIssues": [
-        "Icon graphic styles are slightly inconsistent in level of detail",
-        "Minor alignment variations in the bulleted lists",
-        "Cross-hatch shading on the arrows has some typical AI noise/artifacts",
-        "The person icon for 'Pentagon retirees' has slightly distorted line work on the briefcase"
+        "Small text in parenthetical notes",
+        "Busy layout with many overlapping arrows"
       ],
       "promptImprovements": [
         "Specify 'monoline vector style icons' for visual consistency",
@@ -6953,7 +6951,7 @@
         "Add 'sharp high-contrast printing press effect' to enhance readability",
         "Define a specific color palette like 'charcoal gray and sepia' to ensure tonal consistency"
       ],
-      "metadataCreatedAt": "2026-01-27T00:48:16.698Z",
+      "metadataCreatedAt": "2026-01-28T19:13:38.724Z",
       "title": "The Mechanics of Professional (Legal) Bribery for Medical Research",
       "description": "A flowchart detailing the strategic allocation of a $650M lobbying budget to pass a medical research treaty. It breaks down spending into AI-targeted lobbying, hiring defense lobbyists, Super PAC initiatives, and opposition research, including specific cost projections and confidence intervals.",
       "keywords": [
@@ -6997,13 +6995,9 @@
         "WarOnDisease.org internal projections"
       ],
       "factCheckNotes": "The dollar amounts and confidence intervals are projected costs for a specific legislative campaign, not historical spending records.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 label embedded in image",
-        "Prompt leakage: 'Scientific Illustration'",
-        "Prompt leakage: 'Circa 2024'"
-      ],
-      "imageProblemsRepairPrompt": "Remove the entire bottom text line starting with 'Figure 1' and ending with 'Circa 2024'. Also remove the 'WarOnDisease.org' watermark in the bottom right corner.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-01-27T20:43:40.006Z"
     },
     {
