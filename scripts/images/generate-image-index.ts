@@ -302,4 +302,8 @@ async function main() {
   console.log(`  With keywords: ${withKeywords} (${((withKeywords / images.length) * 100).toFixed(0)}%)`);
 }
 
-main().catch(console.error);
+// Only run main if this module is executed directly (not imported)
+import { fileURLToPath } from 'url';
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch(console.error);
+}

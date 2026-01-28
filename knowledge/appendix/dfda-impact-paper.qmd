@@ -176,6 +176,9 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 
 ### Key Capabilities
 
+![A federated data architecture diagram showing a central query engine interacting with distributed data sources like Epic, Cerner, and Apple Health, where data remains at the source while insights are aggregated.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-key-capabilities-bw-academic.jpg)
+
+
 - **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
 - **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
 - **Universal Trial Access**: Any patient can participate from anywhere via phone/computer
