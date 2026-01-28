@@ -121,21 +121,30 @@ This architecture eliminates the Political Dysfunction Tax for decisions within 
 
 The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These capture most policy effects through two hard-to-game, well-measured outcomes. Citizens can amend these through constitutional process, but the defaults work out of the box. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
 
+![A flowchart of the Optimocracy governance cycle showing the feedback loop between algorithmic recommendations, legislative voting, outcome verification by oracles, and the resulting incentive payouts.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-it-works-in-practice-bw-academic.jpg)
+
+
 **Step 2: A computer system optimizes budget allocation**
 
 An optimization system (which could range from simple regression models ("historically, \$1B in early childhood education correlates with \$3B in future income gains") to prediction markets to machine learning) calculates the budget allocation most likely to maximize the chosen metric. The output is not a single number but a complete allocation: "\$X to healthcare, \$Y to infrastructure, \$Z to education, etc."
 
-**Step 3: Politicians vote on the proposed budget**
+**Step 3: Politicians vote (on whatever they want)**
 
-The algorithm proposes a complete budget; legislators vote to accept, reject, or modify it. However, any deviation from the optimized allocation is publicly visible and creates accountability. Politicians remain free to override recommendations, but they must do so transparently, with their deviations recorded and their outcomes tracked.
+Here's the key insight: **politicians don't need to formally adopt Optimocracy for it to work.** The algorithm publishes recommendations for every major vote. Politicians vote however they choose, on whatever bills they choose. The system simply scores their actual votes against the recommendations.
+
+*Ideal scenario:* Legislators formally vote on the algorithm's proposed budget. Deviations are visible and create accountability.
+
+*Realistic scenario:* Politicians ignore the proposal entirely. Optimocracy still publishes "here's what we would have recommended for this appropriations bill." When legislators vote, their alignment with these recommendations is recorded. No government buy-in required.
 
 **Step 4: Independent oracles measure outcomes**
 
 Multiple independent data sources (Census Bureau, Federal Reserve, academic institutions) report whether the metric actually improved. No single entity controls the measurement.
 
-**Step 5: Incentive Alignment Bonds create consequences**
+**Step 5: Incentive Alignment Bonds reward alignment with results**
 
-Optimocracy publishes recommendations for every major budget and policy vote. Politicians' votes are compared to these recommendations and recorded immutably. Those whose voting records align with evidence-based recommendations receive larger IAB payouts when the metric improves. This creates a "political index fund": follow systematic recommendations, get rewarded for results. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to outcomes.
+Politicians' voting records are compared to Optimocracy recommendations and recorded immutably. When the metric improves years later, those whose votes aligned with evidence-based recommendations receive larger [IAB payouts](incentive-alignment-bonds-paper.qmd). This creates a "political index fund": follow systematic recommendations, get rewarded when they work. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to actual outcomes.
+
+The system doesn't require politicians to surrender power. It just makes ignoring good advice increasingly expensive.
 
 You don't need superintelligent AI. You need a clear, measurable goal, historical data on what worked, independent verification, and financial consequences for politicians. As detailed in Section 3, index funds already demonstrate this logic for investing. Systematic rules outperform discretionary management. Optimocracy extends this to governance.
 
@@ -393,7 +402,7 @@ Economists have proven some inconvenient truths about collective choice that con
 2. **Composite indices face aggregation problems**: Weighting income vs. health vs. environment can't be determined algorithmically. It requires political choice.
 3. **Democratic legitimacy matters**: Because no neutral aggregation exists, the *process* that selects metrics matters as much as the metrics themselves.
 
-**How Optimocracy responds:** It doesn't claim to solve preference aggregation. It accepts that metric selection is a democratic choice and focuses on ensuring that *once chosen*, metrics are actually optimized rather than captured. Wishocracy (companion paper) addresses aggregation through randomized pairwise preference elicitation.
+**How Optimocracy responds:** It doesn't claim to solve preference aggregation. It accepts that metric selection is a democratic choice and focuses on ensuring that *once chosen*, metrics are actually optimized rather than captured. The framework provides sensible defaults (Health & Wealth) so most jurisdictions can skip the aggregation problem entirely.
 
 #### Gibbard-Satterthwaite: People Game Votes
 
@@ -779,16 +788,19 @@ Specific thresholds (what probability counts as "catastrophic"? what biodiversit
 
 Since Optimocracy is advisory, constraint violations flag policies for human review rather than auto-blocking. The system says: "This policy scores well on welfare but triggers the irreversibility constraint. Human judgment required." Humans keep the final say; the system makes sure nothing slips through unnoticed.
 
+![Architecture of the two-layer democracy framework showing the metric selection layer defining optimization objectives and the Optimocracy layer executing algorithmic optimization, including the bypass path for default metrics.](/assets/images/optimocracy-paper/optimocracy-paper-section-metric-selection-process-bw-academic.jpg)
+
+
 This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
 
 ### Metric Selection Process
 
 **The framework provides concrete defaults** (Health & Wealth: median healthy life years + real after-tax median income growth) rather than requiring open-ended constitutional deliberation. This reduces capture opportunity: there's no "metric selection battle" to lobby because the defaults are already specified.
 
-Citizens who prefer different metrics can propose amendments through constitutional process, which could use democratic preference aggregation (see companion paper on Wishocracy) with pairwise comparison over candidate metrics. But most jurisdictions can simply adopt the defaults.
+Citizens who prefer different metrics can propose amendments through constitutional process (referenda, legislative supermajority, or more sophisticated preference aggregation methods). But most jurisdictions can simply adopt the defaults.
 
 This creates a two-layer democracy:
-1. **Wishocracy layer**: Democratic amendment of optimization objective (if desired)
+1. **Metric selection layer**: Democratic choice of optimization objective (if defaults are amended)
 2. **Optimocracy layer**: Algorithmic optimization of selected objective
 
 ### The Metric Selection Problem: Where Capture Migrates
@@ -1342,20 +1354,6 @@ The relative size of each layer depends on institutional context and metric qual
 
 This architecture reserves democratic deliberation for decisions that genuinely require it while using metric-bound allocation for routine decisions where optimization is straightforward.
 
-### Integration with Wishocracy
-
-Optimocracy and Wishocracy address complementary problems:
-
-| Dimension | Wishocracy | Optimocracy |
-|-----------|------------|-------------|
-| **Problem solved** | Preference aggregation | Incentive alignment |
-| **Core mechanism** | Pairwise comparison | Metric optimization |
-| **Human role** | Express preferences | Choose metric |
-| **Algorithm role** | Aggregate preferences | Optimize allocation |
-| **Failure mode** | Preference manipulation | Metric gaming |
-
-A combined system might use Wishocracy for metric selection (citizens express preferences over welfare dimensions) and Optimocracy for metric optimization (algorithms allocate to maximize the selected metric).
-
 ### Integration with Incentive Alignment Bonds
 
 Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. IABs (detailed in companion paper: [Incentive Alignment Bonds: A Novel Mechanism for Aligning Political Incentives with Public Goods](https://iab.warondisease.org)) create a legal framework for rewarding politicians based on outcome metrics. Optimocracy supplies those metrics.
@@ -1691,6 +1689,9 @@ The question is not whether Optimocracy is perfect; no governance system is. The
 ### What About AI?
 
 Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. That's metric selection, a fundamentally democratic choice, not a technical problem. Even a superintelligent AI should operate within an Optimocracy-like structure: humans specify objectives democratically, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving democratic legitimacy and human oversight.
+
+![The Optimocracy AI governance architecture showing the iterative loop between democratic metric selection, AI-generated proposals, independent verification systems, and final human approval authority.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
+
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 

@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 346,885
+**Files:** 86 | **Words:** 346,926
 
 #### index.qmd
 **Title:** Start Here
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,628 words | 1,865 lines
+**Stats:** 17,669 words | 1,866 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4108,7 +4108,6 @@
     - Rejection Criteria
   - Hybrid Architectures
     - The Constrained Discretion Model
-    - Integration with Wishocracy
     - Integration with Incentive Alignment Bonds
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
@@ -7112,12 +7111,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 17,628
+**Files:** 1 | **Words:** 17,669
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 17,628 words | 1,865 lines
+**Stats:** 17,669 words | 1,866 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7184,7 +7183,6 @@
     - Rejection Criteria
   - Hybrid Architectures
     - The Constrained Discretion Model
-    - Integration with Wishocracy
     - Integration with Incentive Alignment Bonds
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
@@ -7513,6 +7511,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 552,837
+- Total words: 552,919
 - Orphaned files: 21
 - Paper configs: 11
