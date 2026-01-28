@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 58 parameters used in the analysis, organized by type:
+This appendix documents all 51 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 28
+- External sources (peer-reviewed): 22
 - Calculated values: 15
-- Core definitions: 15
+- Core definitions: 14
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (15 parameters) • [External Data Sources](#sec-external) (28 parameters) • [Core Definitions](#sec-definitions) (15 parameters)
+[Calculated Values](#sec-calculated) (15 parameters) • [External Data Sources](#sec-external) (22 parameters) • [Core Definitions](#sec-definitions) (14 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1222,70 +1222,6 @@ Welfare loss from political time-inconsistency (electoral short-termism). Politi
 
 :::
 
-### Singapore Govt Spending (% GDP): 1500% {#sec-singapore_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.
-
-**Source**: [@imf-singapore-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Singapore Life Expectancy: 84.1 years {#sec-singapore_life_expectancy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
-
-**Source**: [@who-life-expectancy]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Switzerland Govt Spending (% GDP): 3500% {#sec-switzerland_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.
-
-**Source**: [@oecd-govt-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
-
-**Source**: [@who-life-expectancy]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1317,38 +1253,6 @@ Phase 3 cost per patient (median from FDA study)
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 **Source**: [@worldbank-gdp]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### US Govt Spending (% GDP): 3800% {#sec-us_govt_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.
-
-**Source**: [@oecd-govt-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### US Life Expectancy: 77.5 years {#sec-us_life_expectancy_2023}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.
-
-**Source**: [@cdc-life-expectancy]
 
 #### Uncertainty Range
 
@@ -1593,20 +1497,6 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).
 
 #### Uncertainty Range
 

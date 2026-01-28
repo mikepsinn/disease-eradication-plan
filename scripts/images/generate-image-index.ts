@@ -175,12 +175,10 @@ export async function updateImageInIndex(
 
   if (existingIndex >= 0) {
     // Merge new metadata with existing (new values override old)
-    const oldEntry = index.images[existingIndex];
     index.images[existingIndex] = {
-      ...oldEntry,
+      ...index.images[existingIndex],
       ...newMetadata,
     };
-    console.log(`  [INDEX] Updated: ${relativePath} (size: ${oldEntry.sizeBytes} -> ${newMetadata.sizeBytes || oldEntry.sizeBytes})`);
   } else {
     // Image not in index - need to process it fully
     const useExiftool = await isExiftoolAvailable();

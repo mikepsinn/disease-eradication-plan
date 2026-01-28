@@ -1959,12 +1959,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 19,139
+**Files:** 1 | **Words:** 19,120
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,139 words | 1,706 lines
+**Stats:** 19,120 words | 1,703 lines
 
   - Abstract
   - Introduction
@@ -2110,7 +2110,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 348,481
+**Files:** 86 | **Words:** 347,027
 
 #### index.qmd
 **Title:** Start Here
@@ -3859,7 +3859,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 19,139 words | 1,706 lines
+**Stats:** 19,120 words | 1,703 lines
 
   - Abstract
   - Introduction
@@ -4041,7 +4041,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 19,205 words | 1,945 lines
+**Stats:** 17,770 words | 1,884 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4053,9 +4053,7 @@
   - The Scale of Welfare Loss: Empirical Foundations
     - A Formal Model of the Political Dysfunction Tax
     - Documented Welfare Losses by Policy Domain
-    - The Clemens Finding: Migration as Paradigm Case
     - Alternative Estimation: Bottom-Up Policy Cost Accounting
-      - Triangulation Through International Comparison
     - Why Information Doesn't Solve the Problem
     - Implications for Mechanism Design
     - When Does Optimocracy Beat the Status Quo?
@@ -7115,12 +7113,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 19,205
+**Files:** 1 | **Words:** 17,770
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 19,205 words | 1,945 lines
+**Stats:** 17,770 words | 1,884 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7132,9 +7130,7 @@
   - The Scale of Welfare Loss: Empirical Foundations
     - A Formal Model of the Political Dysfunction Tax
     - Documented Welfare Losses by Policy Domain
-    - The Clemens Finding: Migration as Paradigm Case
     - Alternative Estimation: Bottom-Up Policy Cost Accounting
-      - Triangulation Through International Comparison
     - Why Information Doesn't Solve the Problem
     - Implications for Mechanism Design
     - When Does Optimocracy Beat the Status Quo?
@@ -7519,6 +7515,6 @@
 
 - Quarto configs: 13
 - Unique QMD files: 90
-- Total words: 556,029
+- Total words: 553,121
 - Orphaned files: 21
 - Paper configs: 11

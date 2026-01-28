@@ -19,7 +19,7 @@ import { findImages, getMimeType } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { saveImage, GeneratedImage, ImageMetadata } from '../lib/gemini-images'
 import { generateCompleteMetadata } from '../lib/image-analysis'
-import { updateImageInIndex, processImage } from './generate-image-index'
+import { updateImageInIndex, processImage, loadIndex } from './generate-image-index'
 import { isExiftoolAvailable } from '../lib/exiftool-utils'
 import { parseCommonArgs, hasFlag, printHeader, printSummary } from '../lib/cli-utils'
 
@@ -156,12 +156,23 @@ Keep everything else exactly the same - preserve the overall style, colors, layo
 
     for (const part of parts) {
       if (part.inlineData?.data) {
+        // IMPORTANT: Preserve ALL existing metadata, not just title/description/keywords
+        // This includes enriched fields like qualityScore, socialCaption, speakerNotes, etc.
         const originalMetadata = await readImageMetadata(filepath)
 
+        // Also get existing metadata from image-index.json as backup
+        // (in case EXIF doesn't have all fields)
+        const index = await loadIndex()
+        const relativePath = path.relative(process.cwd(), filepath).replace(/\\/g, '/')
+        const indexEntry = index?.images.find(img => img.path === relativePath)
+
+        // Merge: index entry (most complete) + EXIF metadata + minimal defaults
         const metadata: ImageMetadata = {
-          title: originalMetadata?.title || path.basename(filepath),
-          description: originalMetadata?.description || '',
-          keywords: originalMetadata?.keywords || [],
+          ...(indexEntry || {}),           // Preserve all fields from index
+          ...(originalMetadata || {}),     // Overlay with EXIF (may have newer values)
+          title: originalMetadata?.title || indexEntry?.title || path.basename(filepath),
+          description: originalMetadata?.description || indexEntry?.description || '',
+          keywords: originalMetadata?.keywords || indexEntry?.keywords || [],
         }
 
         const generatedImage: GeneratedImage = {
