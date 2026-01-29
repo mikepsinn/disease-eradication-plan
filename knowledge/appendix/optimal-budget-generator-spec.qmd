@@ -175,16 +175,6 @@ Budget allocation should work the same way. For each spending category:
 4. **Priority ranking** for reallocation decisions
 5. **Uncertainty quantification** acknowledging what we don't know
 
-### Contributions
-
-This paper makes three primary contributions to the public finance literature:
-
-1. **Methodological**: We develop a unified framework integrating reference benchmarking, diminishing returns modeling, and cost-effectiveness analysis to estimate optimal spending levels, extending beyond marginal analysis to target-based allocation.
-
-2. **Theoretical**: We formalize the Budget Impact Score (BIS) as a precision-weighted confidence measure that prioritizes allocation decisions by evidence quality rather than lobbying intensity.
-
-3. **Applied**: We demonstrate the framework with worked examples across education, health, and defense spending, identifying systematic patterns of over- and under-investment in US federal allocations.
-
 ## Related Work
 
 The OBG framework builds on and extends several established traditions in public finance and evidence-based policy.
@@ -201,7 +191,7 @@ The OBG framework builds on and extends several established traditions in public
 
 **What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
 
-**Cost-Effectiveness Analysis.** Health economics has developed sophisticated methods for comparing interventions using metrics like QALYs and DALYs [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of three estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
+**Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of three estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
 
 ### Comparative Public Finance
 
@@ -720,7 +710,7 @@ Collect all available causal effect estimates $\{\beta_{i,1}, \beta_{i,2}, ..., 
 | Identification Method | Quality Weight ($w^Q$) |
 |----------------------|------------------------|
 | Randomized controlled trial | 1.00 |
-| Natural experiment (DiD, RDD) | 0.85 |
+| Natural experiment (difference-in-differences, regression discontinuity) | 0.85 |
 | Instrumental variables | 0.70 |
 | Panel with fixed effects | 0.55 |
 | Cross-sectional regression | 0.25 |
@@ -914,7 +904,7 @@ For categories where OSL is uncertain:
 
 After each budget cycle:
 
-1. **Measure outcomes**: Oracles report welfare changes
+1. **Measure outcomes**: Statistical agencies report welfare changes
 2. **Update estimates**: New data refines OSL estimates
 3. **Recalculate priorities**: Gaps and BIS scores updated
 4. **Reallocate**: Next cycle reflects improved evidence
@@ -1086,7 +1076,7 @@ The framework answers three questions:
 2. **How far are we?** Gap analysis shows where current spending diverges from optimal
 3. **How confident are we?** BIS scores evidence quality so policymakers know which OSL estimates are reliable
 
-Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OSL, vaccinations 75% below OSL) toward evidence-based targets will produce welfare gains orders of magnitude larger than current lobbying-driven allocation achieves.
+Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OSL, vaccinations 75% below OSL) toward evidence-based targets should produce substantially larger welfare gains than current lobbying-driven allocation achieves.
 
 ## Acknowledgments {.unnumbered}
 

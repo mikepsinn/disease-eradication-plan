@@ -67,7 +67,14 @@ This specification describes the **Optimal Policy Generator (OPG)**, a proposed 
 
 **Important limitation**: Until retrospective validation is performed (see @sec-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
-OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs: (1) **Enact** - new policies the jurisdiction should adopt, (2) **Replace** - existing policies to modify, (3) **Repeal** - harmful policies to remove, and (4) **Maintain** - current policies aligned with evidence. Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
+OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs:
+
+1. **Enact**: New policies the jurisdiction should adopt
+2. **Replace**: Existing policies to modify
+3. **Repeal**: Harmful policies to remove
+4. **Maintain**: Current policies aligned with evidence
+
+Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
 
 **JEL Classification**: H10, D72, C54, I18, D61
 
@@ -281,9 +288,7 @@ The evidence base comprises millions of policy-years of natural experiments acro
 
 ### Contributions
 
-This paper makes three primary contributions to the policy evaluation literature:
-
-1. **Methodological**: We develop a systematic framework for translating quasi-experimental evidence into jurisdiction-specific policy recommendations, extending beyond generic evidence ratings to actionable output in four categories (enact/replace/repeal/maintain).
+1. **Methodological**: A systematic framework for translating quasi-experimental evidence into jurisdiction-specific policy recommendations, extending beyond generic evidence ratings to actionable output in four categories (enact/replace/repeal/maintain).
 
 ![A workflow diagram showing the translation of evidence into a Policy Impact Score (PIS) and the subsequent categorization into four policy recommendation types: enact, replace, repeal, or maintain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-contributions-bw-academic.jpg)
 
@@ -708,13 +713,13 @@ Where $N_{\text{outcomes}}$ is the number of outcome categories with significant
 
 ### Causal Confidence Score (CCS) Calculation
 
-The aggregate CCS combines all nine criteria with explicit weights:
+The aggregate CCS combines the eight non-temporality criteria with explicit weights, gated by temporality:
 
 $$
-\text{CCS} = S_{\text{temporality}} \times \frac{\sum_{k=1}^{9} w_k \cdot S_k}{\sum_{k=1}^{9} w_k}
+\text{CCS} = S_{\text{temporality}} \times \frac{\sum_{k \neq \text{temp}} w_k \cdot S_k}{\sum_{k \neq \text{temp}} w_k}
 $$
 
-Note: $S_{\text{temporality}}$ acts as a gate. If temporality fails, the entire CCS is zero.
+$S_{\text{temporality}}$ acts as a binary gate: if temporality fails (policy doesn't precede outcome), the entire CCS is zero regardless of other criteria scores.
 
 ![A horizontal bar chart illustrating the nine criteria weights for the Causal Confidence Score, ranking them from highest impact to lowest impact.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-causal-confidence-score-ccs-calculation-bw-academic.jpg)
 
@@ -722,19 +727,19 @@ Note: $S_{\text{temporality}}$ acts as a gate. If temporality fails, the entire 
 
 These weights represent proposed defaults based on the relative importance of each criterion for causal inference in policy contexts. They can be adjusted based on domain expertise, sensitivity analysis, or empirical calibration. The weights are adapted from the epidemiological Bradford Hill framework and have not been empirically validated for policy applications.
 
-| Criterion | Weight | Rationale |
-|-----------|--------|-----------|
-| Temporality | 0.20 | Must be satisfied; gates all other criteria |
-| Experiment | 0.18 | Method quality is primary for causal inference |
-| Consistency | 0.15 | Replication across jurisdictions crucial |
-| Strength | 0.12 | Effect magnitude matters for welfare |
-| Gradient | 0.10 | Dose-response is strong causal evidence |
-| Coherence | 0.08 | Literature support adds confidence |
-| Plausibility | 0.07 | Mechanism existence supports causation |
-| Specificity | 0.05 | Targeted effects more credible |
-| Analogy | 0.05 | Transfer learning from similar policies |
+| Criterion | Weight | Role |
+|-----------|--------|------|
+| Temporality | Gate | Binary prerequisite (must be 1.0 to proceed) |
+| Experiment | 0.225 | Method quality is primary for causal inference |
+| Consistency | 0.19 | Replication across jurisdictions crucial |
+| Strength | 0.15 | Effect magnitude matters for welfare |
+| Gradient | 0.125 | Dose-response is strong causal evidence |
+| Coherence | 0.10 | Literature support adds confidence |
+| Plausibility | 0.09 | Mechanism existence supports causation |
+| Specificity | 0.06 | Targeted effects more credible |
+| Analogy | 0.06 | Transfer learning from similar policies |
 
-These weights sum to 1.0 and should be treated as starting points subject to refinement through validation studies.
+Weights for the eight scored criteria sum to 1.0. Temporality is not weighted because it is a binary gate, not a continuous score.
 
 ## Jurisdiction Policy Inventory
 
@@ -1060,10 +1065,10 @@ While combined PIS is useful for ranking, recommendations should always display 
 
 | Policy | Income Effect | Health Effect | CCS | Grade |
 |--------|---------------|---------------|-----|-------|
-| Tobacco tax +$1 | +0.12 pp/yr | +0.25 years | 0.85 | A |
+| Tobacco tax +$1 | **-0.02 pp/yr** | +0.25 years | 0.85 | A |
 | Primary seat belt | +0.02 pp/yr | +0.15 years | 0.81 | A |
 
-This prevents hiding tradeoffs (e.g., a policy that harms health but helps income).
+This prevents hiding tradeoffs. For example, the tobacco tax has a negative income effect (direct tax burden) but positive health effect (reduced smoking). The two-metric format makes this tradeoff explicit.
 :::
 
 ### Effect Estimate Standardization
@@ -1597,10 +1602,12 @@ The Optimal Policy Generator provides a systematic framework for translating pol
 
 ## Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
 
-::: {.callout-important}
-### Illustrative Example
+::: {.callout-warning}
+### ⚠️ SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
 
-This worked example uses **illustrative estimates with synthetic data** to demonstrate the OPG framework. The effect sizes, confidence intervals, and Bradford Hill scores shown are for demonstration purposes only. Actual policy effects would require jurisdiction-specific evidence analysis using real data from the sources described in this specification. Numbers should not be cited as empirical findings.
+**All numbers in this appendix are fabricated for illustration.** The effect sizes (+0.15 years, +0.02 pp/year, etc.), confidence intervals, and Bradford Hill scores are synthetic placeholders demonstrating the OPG framework's output format. They were not derived from actual data analysis.
+
+**Do not cite these numbers as empirical findings.** Actual policy effects would require jurisdiction-specific evidence analysis using real data from the sources described in this specification.
 :::
 
 ### Overview
@@ -1613,7 +1620,7 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 |--------|--------|---------------|---------------|----------------|-------|
 | Primary seat belt | Missing | +0.02 pp/yr | +0.15 years | **ENACT** | A |
 | Motorcycle helmet (all ages) | Partial | +0.01 pp/yr | +0.08 years | **ENACT** | A |
-| Tobacco tax ($1.41→$2.50) | Suboptimal | +0.12 pp/yr | +0.25 years | **REPLACE** | A |
+| Tobacco tax ($1.41→$2.50) | Suboptimal | **-0.02 pp/yr** | +0.25 years | **REPLACE** | A |
 | Speed limit (85→70 mph) | Excessive | +0.01 pp/yr | +0.06 years | **REPLACE** | B |
 | DUI threshold (0.08 BAC) | Optimal | N/A | N/A | **MAINTAIN** | A |
 | Graduated licensing | Optimal | N/A | N/A | **MAINTAIN** | A |

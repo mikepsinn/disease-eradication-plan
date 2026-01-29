@@ -1615,12 +1615,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 10,196
+**Files:** 1 | **Words:** 9,967
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 10,196 words | 1,071 lines
+**Stats:** 9,967 words | 1,059 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1642,12 +1642,14 @@
       - Marginal Cost Analysis per User
     - Scenario Based ROM Estimates for Broader Initiative Costs
       - Interpretation
-      - Revised Summary
+      - Summary
   - Benefit Analysis - Quantifying the Savings
     - Market Size and Impact
     - Decentralized Trial Costs Modeled on Pragmatic Trials
     - Overall Savings
     - Economic Value of Earlier Access to Treatments
+    - Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+      - Key Sources
     - Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
       - The Efficacy Lag Problem
       - How a Decentralized Framework Eliminates the Efficacy Lag
@@ -1658,8 +1660,6 @@
       - Proposed System Safety Advantages
       - Comparative Safety Surveillance
       - Pooled Liability Insurance
-      - Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
-      - Key Sources
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
     - Monte Carlo Distributions
   - Research Acceleration Mechanism
@@ -2085,7 +2085,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 335,761
+**Files:** 86 | **Words:** 335,482
 
 #### index.qmd
 **Title:** Start Here
@@ -4097,7 +4097,7 @@
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,311 words | 1,957 lines
+**Stats:** 13,348 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4220,7 +4220,7 @@
   - Acknowledgments {.unnumbered}
   - References
   - Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
-    - Illustrative Example
+    - ⚠️ SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
     - Overview
     - Texas Policy Inventory (Sample)
     - Step 1: Calculate Policy Impact Scores
@@ -4241,7 +4241,7 @@
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for ...
-**Stats:** 9,054 words | 1,365 lines
+**Stats:** 8,967 words | 1,355 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -4253,7 +4253,6 @@
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
     - What This Framework Provides
-    - Contributions
   - Related Work
     - Budget Analysis Frameworks
     - Evidence-Based Policy Movement
@@ -6095,7 +6094,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 10,196 words | 1,071 lines
+**Stats:** 9,967 words | 1,059 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6117,12 +6116,14 @@
       - Marginal Cost Analysis per User
     - Scenario Based ROM Estimates for Broader Initiative Costs
       - Interpretation
-      - Revised Summary
+      - Summary
   - Benefit Analysis - Quantifying the Savings
     - Market Size and Impact
     - Decentralized Trial Costs Modeled on Pragmatic Trials
     - Overall Savings
     - Economic Value of Earlier Access to Treatments
+    - Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+      - Key Sources
     - Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
       - The Efficacy Lag Problem
       - How a Decentralized Framework Eliminates the Efficacy Lag
@@ -6133,8 +6134,6 @@
       - Proposed System Safety Advantages
       - Comparative Safety Surveillance
       - Pooled Liability Insurance
-      - Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
-      - Key Sources
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
     - Monte Carlo Distributions
   - Research Acceleration Mechanism
@@ -6720,12 +6719,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 9,054
+**Files:** 1 | **Words:** 8,967
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for ...
-**Stats:** 9,054 words | 1,365 lines
+**Stats:** 8,967 words | 1,355 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -6737,7 +6736,6 @@
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
     - What This Framework Provides
-    - Contributions
   - Related Work
     - Budget Analysis Frameworks
     - Evidence-Based Policy Movement
@@ -6839,12 +6837,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,311
+**Files:** 1 | **Words:** 13,348
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,311 words | 1,957 lines
+**Stats:** 13,348 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -6967,7 +6965,7 @@
   - Acknowledgments {.unnumbered}
   - References
   - Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
-    - Illustrative Example
+    - ⚠️ SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
     - Overview
     - Texas Policy Inventory (Sample)
     - Step 1: Calculate Policy Impact Scores
@@ -7417,6 +7415,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 538,443
+- Total words: 537,885
 - Orphaned files: 20
 - Paper configs: 12

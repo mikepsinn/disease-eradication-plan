@@ -38,16 +38,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 The figures below represent **cumulative benefits over the entire acceleration period** - the total lives saved by addressing this backlog faster. This is the same methodology used to value smallpox eradication (program cost → total future lives saved) and climate infrastructure investments. These are not annual figures; they are the one-time benefit of permanently accelerating medical progress.
 :::
 
-- **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift
-- **Suffering Eliminated**: {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering averted
-- **Cost-Effectiveness**: {{< var dfda_direct_funding_cost_per_daly >}}/DALY - competitive with GiveWell's top interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY), while operating at vastly greater scale
-- **[Dominant Health Intervention](#dfda-icer-analysis---cost-utility-framework)**: This is a cost-saving intervention that both reduces costs AND improves health outcomes
-- **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: Eliminates the {{< var efficacy_lag_years >}} Phase II/III delay **while preserving Phase I safety testing**
-- **DALYs Averted**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination)
-- **Total Economic Value**: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} (lives saved × standard QALY valuation)
-- **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}/year from {{< var dfda_trial_cost_reduction_pct >}} cost reduction in clinical trials
-- **Return on Investment**: {{< var dfda_roi_rd_only >}} (10-year NPV basis)
-
 ## Executive Summary
 
 **The Problem:** Clinical trials cost billions and require a decade per drug. The majority of patients with treatable conditions die before potentially effective treatments complete regulatory approval. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
@@ -84,7 +74,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 - **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
 - **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
 
-![A comparative impact summary showing the transition from traditional trials to the proposed framework, highlighting a 97.7% cost reduction, a 12.3x increase in trial capacity, and a gain of 565 billion DALYs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
+![Before/after comparison showing 97.7% cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
 ### Key Findings
 
@@ -121,8 +111,6 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ---
-
-Below is a health and economic analysis of a decentralized framework for drug assessment (dFDA). This framework functions as **open protocol infrastructure** - standards and APIs that enable existing clinical trial systems to share outcomes and generate treatment effectiveness rankings.
 
 ## Vision and Capabilities
 
@@ -161,10 +149,10 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 
 ### Potential Impact on the Status Quo
 
-- **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.
+- **Speed of Trials**: Reduced overhead and automated data capture compresses timelines.
 - **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
-- **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
-- **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
+- **Scale & Scope**: Enables testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
+- **Innovation Incentives**: Lower R&D costs increase profitability and encourage more entrants/innovation in the life sciences.
 
 ## Addressing Key Concerns
 
@@ -198,7 +186,7 @@ A critical assumption in this analysis is that {{< var eventually_avoidable_deat
 
 **What if this assumption is wrong?**
 
-Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}} ROI from R&D savings alone, independent of health benefits. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
+Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}} ROI from R&D savings alone, independent of health benefits. These deaths will eventually be preventable with sufficient research progress. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
 
 ### Trial Funding Scenario
 
@@ -411,14 +399,14 @@ This table presents point estimates for each scenario, with the overall range of
 
 Even when pursuing efficient strategies, the potential cost for the full initiative for a decentralized framework (beyond the Core framework) varies dramatically based on real-world execution challenges. The Medium Case suggests upfront costs in the low hundreds of millions and annual costs in the low tens of millions, while the Worst Case pushes towards multi-billion dollar upfront figures and annual costs in the hundreds of millions, dominated by integration, plugin funding, and legal costs if automation and community efforts fall short.
 
-#### Revised Summary
+#### Summary
 
 Based on the detailed technical specification, a ROM estimate suggests:
 
 - **Initial Core framework Build (~2.5 years): ~\$37.5 - {{< var dfda_upfront_build_max >}}**
 - **Annual Core framework Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs)** (These framework operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by protocol bounties)
 
-This revised, bottom-up ROM highlights that while the core _protocol infrastructure_ build is achievable within tens of millions, the previously estimated billions likely reflect the total cost of the entire global initiative. This includes massive integration efforts, legal frameworks, global rollout, and the financial ecosystem involving participant contributions and the direct NIH-funded discounts to patient costs.
+The core protocol infrastructure build costs tens of millions; the broader global initiative (integration, legal frameworks, rollout) accounts for the larger cost estimates detailed in the scenario table above.
 
 ## Benefit Analysis - Quantifying the Savings
 
@@ -426,7 +414,7 @@ This section quantifies the potential societal benefits of an infrastructure for
 
 ### Market Size and Impact
 
-The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending can be made more efficient through protocol standardization. If such a framework enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
+The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending is made dramatically more efficient through protocol standardization. If such a framework enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
 
 - **Current Average Costs**: Estimates suggest {{< var pharma_drug_development_cost_current >}} to bring a new drug from discovery through FDA approval, spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
@@ -510,6 +498,45 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 - **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × {{< var standard_economic_qaly_value_usd >}} = **$1.5B**. If 10,000 lives are saved, benefit = 10,000 × {{< var value_of_statistical_life >}} = **$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
+
+### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+
+- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
+- **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
+- **Source/Rationale**:
+  - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
+  - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
+  - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
+  - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
+
+The annual gross R&D savings can be calculated as:
+
+$$
+S_{\text{annual}} = \alpha \cdot R_d
+$$
+
+Where:
+
+- $\alpha \in [0,1]$ is the cost reduction percentage (as decimal)
+- $R_d$ = {{< var global_clinical_trials_spending_annual >}} annual global clinical trial spending
+
+**Base Case Calculation:**
+
+Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}):
+
+{{< var dfda_benefit_rd_only_annual_latex >}}
+
+**Uncertainty Analysis - R&D Savings:**
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Key Sources
+
+- [@dct-cost-reductions-evidence]
+- [@clinical-trial-market-size]
+- [@recovery-trial-cost-reduction]
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
@@ -635,45 +662,6 @@ The irony: **62 amendments designed around a safety crisis created an efficacy b
 
 The {{< var type_ii_error_cost_ratio >}} ratio is not a claim that safety testing is worthless. Phase I safety testing is preserved in this framework. The ratio quantifies the cost of the **efficacy lag** - the years spent proving drugs work *after* we already know they're safe. Even if thalidomide-scale events occurred annually (they do not; thalidomide was exceptional), the analysis demonstrates that faster post-safety access remains favorable.
 :::
-
-#### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
-
-- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
-- **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
-- **Source/Rationale**:
-  - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
-  - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
-  - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
-  - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
-
-The annual gross R&D savings can be calculated as:
-
-$$
-S_{\text{annual}} = \alpha \cdot R_d
-$$
-
-Where:
-
-- $\alpha \in [0,1]$ is the cost reduction percentage (as decimal)
-- $R_d$ = {{< var global_clinical_trials_spending_annual >}} annual global clinical trial spending
-
-**Base Case Calculation:**
-
-Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}):
-
-{{< var dfda_benefit_rd_only_annual_latex >}}
-
-**Uncertainty Analysis - R&D Savings:**
-
-{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
-
-{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
-
-#### Key Sources
-
-- [@dct-cost-reductions-evidence]
-- [@clinical-trial-market-size]
-- [@recovery-trial-cost-reduction]
 
 ## ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
 
