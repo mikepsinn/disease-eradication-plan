@@ -69,7 +69,6 @@ Current pharmacovigilance systems rely primarily on spontaneous adverse event re
 
 ![A two-stage methodological pipeline showing the transition from large-scale observational N-of-1 signal detection to causal confirmation via pragmatic randomized trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)
 
-
 We present a comprehensive **two-stage framework** for generating **validated outcome labels** with quantitative effect sizes:
 
 **Stage 1 (Signal Detection)**: Aggregated N-of-1 observational analysis [@duan-2013-n-of-1; @lillie-2011-n-of-1] integrates data from millions of individual longitudinal natural experiments. The methodology applies temporal precedence analysis with automated hyperparameter optimization, addresses six of nine Bradford Hill causality criteria through a composite Predictor Impact Score (PIS), and produces ranked treatment-outcome hypotheses at ~{{< var dfda_observational_cost_per_patient >}} per patient.
@@ -82,9 +81,9 @@ This two-stage design addresses the fundamental limitations of purely observatio
 
 **Keywords**: pharmacovigilance, real-world evidence, N-of-1 trials, pragmatic trials, causal inference, Bradford Hill criteria, treatment effects, validated outcome labels, comparative effectiveness, precision medicine
 
-## System Overview: From Methodology to Product {#system-overview}
+## System Overview: From Methodology to Implementation {#system-overview}
 
-This paper describes the statistical methodology powering a patient-facing platform best understood as **"Consumer Reports for drugs"** - a searchable database where patients can look up any condition and see every treatment ranked by real-world effectiveness, with quantitative outcome labels showing exactly what happened to people who tried each option.
+This paper describes the statistical methodology powering a patient-facing system best understood as **"Consumer Reports for drugs"** - a searchable database where patients can look up any condition and see every treatment ranked by real-world effectiveness, with quantitative outcome labels showing exactly what happened to people who tried each option.
 
 ### What Patients See
 
@@ -102,8 +101,8 @@ When a patient searches for their condition, they see:
 Any company - pharmaceutical, supplement, food, or intervention - can register a treatment in minutes at zero cost:
 
 1. **Instant Registration**: No approval bottleneck; treatment appears in search results immediately
-2. **Zero Trial Cost**: Patients pay for treatment (covering manufacturing); the platform handles data collection and analysis
-3. **Automatic Liability Coverage**: Built into the platform
+2. **Zero Trial Cost**: Patients pay for treatment (covering manufacturing); the system handles data collection and analysis
+3. **Automatic Liability Coverage**: Built into the system
 4. **Free Clinical Data**: Every patient who tries the treatment generates outcome data worth {{< var traditional_phase3_cost_per_patient >}}/patient in traditional trials
 
 ### Where This Methodology Fits
@@ -113,7 +112,7 @@ The **Predictor Impact Score (PIS)** described in this paper is the engine that 
 - **Stage 1** (this methodology) generates treatment rankings from millions of real-world observations at ~{{< var dfda_observational_cost_per_patient >}}/patient
 - **Stage 2** (pragmatic trials) confirms causation for high-priority signals at ~{{< var dfda_pragmatic_trial_cost_per_patient >}}/patient
 
-The result is a self-improving system where every patient's experience helps the next patient make better decisions - transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a platform where anyone can contribute to medical knowledge.
+The result is a self-improving system where every patient's experience helps the next patient make better decisions, transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a system where anyone can contribute to medical knowledge.
 
 For the complete user-facing vision, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
 
@@ -123,6 +122,8 @@ For the complete user-facing vision, see [A Decentralized Framework for Drug Ass
 
 Every year, {{< var global_annual_deaths_curable_diseases >}} people die from diseases for which treatments exist or could exist. The tragedy is not that we lack medical knowledge. It's that our system for generating and validating that knowledge operates at a fraction of its potential capacity.
 
+![A visualization of the 8.2-year clinical trial delay and its cumulative human cost, comparing the 102 million preventable deaths to the scale of 20th-century war casualties.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-human-cost-of-the-current-system-bw-academic.jpg)
+
 Consider: a treatment that could save lives today takes an average of {{< var efficacy_lag_years >}} to complete Phase 2-4 clinical trials after initial discovery. During this delay, people die waiting. Since 1962, regulatory testing delays for drugs that were eventually approved have contributed to an estimated {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths, more than all wars and conflicts of the 20th century combined.
 
 This is not an argument against safety testing. It is an argument for *better* safety testing: faster, cheaper, more comprehensive, and continuously updated with real-world evidence rather than static pre-market snapshots.
@@ -130,6 +131,8 @@ This is not an argument against safety testing. It is an argument for *better* s
 The framework presented here could eliminate this efficacy lag for existing treatments while simultaneously enabling continuous discovery of new therapeutic relationships. The technology exists. The data exists. What remains is the institutional will to deploy it.
 
 ### The Pharmacovigilance Gap
+
+![A comparison of the three primary pharmacovigilance methods highlighting their respective limitations in scale, speed, cost, and data quality.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-pharmacovigilance-gap-bw-academic.jpg)
 
 Modern pharmacovigilance (the science of detecting, assessing, and preventing adverse effects of pharmaceutical products) faces fundamental limitations:
 
@@ -230,6 +233,8 @@ Variables are organized into semantic categories that inform default processing 
 
 ### Measurement Structure
 
+![A relational diagram showing how a Measurement object acts as a central hub connecting participant, variable, unit, and source identifiers.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-measurement-structure-bw-academic.jpg)
+
 Each measurement includes:
 
 ```
@@ -260,6 +265,8 @@ All measurements are converted to standardized units for cross-source compatibil
 
 **The short version:** We track what people take (treatments, supplements, foods) and how they feel (symptoms, mood, energy) over time. Then we look for patterns: "When people take more of X, does Y get better or worse?" We account for the fact that treatments take time to work (onset delay) and their effects fade (duration of action). The math below makes this rigorous.
 
+![A conceptual diagram showing the relationship between a treatment dose and its impact on symptoms over time, highlighting the onset delay and duration of action.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
+
 ### Data Structure
 
 For each participant $i \in \{1, ..., N\}$, we observe time series of predictor variable $P$ (e.g., treatment) and outcome variable $O$ (e.g., symptom):
@@ -269,7 +276,6 @@ $$P_i = \{(t_{i,1}^P, p_{i,1}), (t_{i,2}^P, p_{i,2}), ..., (t_{i,n_i}^P, p_{i,n_
 $$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_i})\}$$
 
 where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. Our framework handles asynchronous, irregular sampling.
-
 
 ![Temporal alignment diagram illustrating how a single predictor measurement at time t creates an outcome window W(t) defined by onset delay (δ) and duration of action (τ).](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
 
@@ -302,6 +308,8 @@ We employ two complementary strategies depending on variable characteristics:
 
 #### Outcome-Based Pairing (Predictor has Filling Value)
 
+![A timeline diagram showing the relationship between an outcome measurement, the buffer period delta, and the preceding sampling window tau used to calculate predictor values.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-outcome-based-pairing-predictor-has-filling-value-bw-academic.jpg)
+
 When the predictor has a filling value (e.g., zero for "not taken"), we create one pair per outcome measurement:
 
 ```
@@ -320,6 +328,8 @@ For each outcome measurement (t_o, o):
 ```
 
 #### Predictor-Based Pairing (No Filling Value)
+
+![A timeline diagram showing a predictor measurement at time t_p, followed by a time delay delta, leading to an outcome window of length tau where measurements are averaged.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-based-pairing-no-filling-value-bw-academic.jpg)
 
 When the predictor has no filling value, we create one pair per predictor measurement:
 
@@ -357,7 +367,11 @@ To prevent spurious correlations from extended filling periods:
 
 Pairs outside these boundaries are excluded. This prevents filling zeros for a treatment before the participant started tracking it.
 
+![A timeline visualization showing the data inclusion window between the earliest and latest recorded measurements, with data points outside these boundaries marked for exclusion.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-temporal-boundaries-bw-academic.jpg)
+
 #### Conservative Bias
+
+![A conceptual chart showing how zero-filling missing data creates a conservative bias by pulling the measured correlation line toward the null baseline compared to the true effect.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-conservative-bias-bw-academic.jpg)
 
 Our filling strategy is deliberately conservative:
 
@@ -416,6 +430,8 @@ $$r_{\text{Spearman}} = 1 - \frac{6 \sum_{j=1}^{n} d_j^2}{n(n^2 - 1)}$$
 where $d_j = \text{rank}(p_j) - \text{rank}(o_j)$.
 
 #### Forward and Reverse Correlations
+
+![A conceptual diagram illustrating the difference between forward correlation (Predictor to Outcome) and reverse correlation (Outcome to Predictor), highlighting implications like reverse causality and confounding.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-forward-and-reverse-correlations-bw-academic.jpg)
 
 We compute both:
 
@@ -1450,7 +1466,6 @@ This creates a **learning health system** where observational and experimental e
 
 ![A circular 'Learning Health System' diagram showing the continuous flow between observational Stage 1 models and experimental Stage 2 trials, with specific feedback channels for calibration and validation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-feedback-loop-trial-results-improve-observational-models-bw-academic.jpg)
 
-
 ### Output: Validated Outcome Labels
 
 The two-stage pipeline produces **validated outcome labels** combining observational and experimental evidence. @tbl-validated-label-structure shows the data elements captured for each treatment-outcome pair.
@@ -1547,7 +1562,6 @@ The framework consists of five sequential processing layers:
 Complete implementation details, database schemas, and reference code are available in the supplementary materials repository.
 
 ![Data processing pipeline from raw ingestion to aggregated population reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-implementation-guide-bw-academic.jpg)
-
 
 ### Core Algorithm: Pair Generation
 
