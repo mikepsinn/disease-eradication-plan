@@ -38,6 +38,22 @@ Read as a hostile peer reviewer skeptical of large claims.
 | **Logic** | Conclusions follow? Unstated assumptions? Strongest counterargument addressed? |
 | **Framing** | Neutral language? Limitations discussed? Costs AND benefits quantified? |
 
+### Bullshit Detection
+
+| Pattern | Example | Fix |
+|---------|---------|-----|
+| **Problem-solution mismatch** | Defending against Goodhart when metrics are real-world outcomes (income, mortality) that can't be gamed without improvement | Ask: does this problem actually apply here? Cut irrelevant defenses |
+| **Speculative mechanisms** | "staking," "immutable rules," "distributed ledgers," "zero-knowledge proofs" when simpler solutions exist | Replace with realistic mechanisms: institutional diversity, median aggregation, transparency |
+| **Internal contradictions** | "Immutable rules solve X" then later "immutable rules are insufficient" | Grep for key claims, verify consistency throughout |
+| **Overconfident claims** | "trivial to influence," "guaranteed," "impossible" | Soften: "incentive is enormous," "difficult," "unlikely" |
+| **Self-congratulatory framing** | "A sophisticated objection," "The honest assessment:" | Cut framing, state content directly |
+| **Conflated problems** | Treating Goodhart gaming (behavior) and measurement capture (methodology) as same problem | Distinguish clearly; different problems need different solutions |
+| **Over-defense** | 60 lines defending against non-problem, key point buried at end | Lead with "why this doesn't apply," cut irrelevant mitigations |
+| **Unexplained jargon** | "mētis," "Schelling points," "Sybil attacks" | Define inline or replace with plain language |
+| **Academic pomposity** | "This paper makes three contributions," "We formalize the X Condition" | Cut if content is covered elsewhere; keep only if adds navigation value |
+
+**Key question:** For each defense/mitigation, ask "What specific attack does this prevent?" If answer is vague or doesn't apply to actual proposal, cut it.
+
 ### Clarity & Concision
 
 **Write simply for general audience without losing precision.** Target 8th-grade reading level, 10-15 word sentences average. Can a smart 8th-grader understand this? If not, simplify. Never sacrifice accuracy—use precise terms but define immediately. Break complex ideas into 2-3 short sentences. Delete ruthlessly.

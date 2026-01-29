@@ -360,9 +360,9 @@ The Revelation Principle [@myerson1981; @maskin1999] states that any outcome ach
 
 **What this means for Optimocracy:**
 
-1. **Oracles must have skin in the game**: Data reporters need incentives for truth-telling
-2. **Staking mechanisms help**: Economic penalties for detected manipulation create truth-telling incentives
-3. **Perfect honesty may be impossible**: For complex social metrics, verification is costly and manipulation hard to detect
+1. **Data reporters need incentives for truth-telling**: Government agencies have professional and reputational incentives; academics have publication and peer review incentives.
+2. **Multiple independent sources reduce manipulation risk**: Median aggregation excludes outliers; divergence between sources is visible and investigable.
+3. **Perfect honesty may be impossible**: For complex social metrics, verification is costly and manipulation hard to detect.
 
 **How Optimocracy responds:** It uses multi-source aggregation (take the median of independent institutions), institutional diversity (sources with different governance and incentives), and the wrapper architecture (politicians can override manipulated data). We don't claim perfect manipulation resistance, only that manipulation costs exceed the cost of corrupting political systems.
 
@@ -762,58 +762,13 @@ Optimocracy shifts the debate from "whose policy?" to "what works?" The algorith
 
 ## Challenges and Failure Modes
 
-### Goodhart's Law: When Metrics Get Gamed
+### Why Goodhart's Law Doesn't Apply Here
 
-"When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. If you pay teachers based on test scores, they'll teach to the test. If you reward hospitals for low readmission rates, they'll game admissions. This is the central challenge for any outcome-optimizing system.
+"When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. If you pay teachers based on test scores, they'll teach to the test. If you reward hospitals for low readmission rates, they'll game admissions. Goodhart's Law is a legitimate concern for many outcome-optimizing systems.
 
-**Formal statement:** Let $M$ be the measured metric and $W$ be true welfare. Under normal conditions, $\text{Corr}(M, W) > 0$. Metrics correlate with what we actually care about. But when $M$ becomes an optimization target, actors adjust behavior to improve $M$, potentially breaking that correlation: $\text{Corr}(M, W | \text{targeting } M) < \text{Corr}(M, W)$.
+**But it doesn't apply to median income and median healthy life years.**
 
-As established in the objections table above, the key question is whether gaming losses exceed capture losses. Historical evidence:
-
-| Domain | Outcome-Optimizing System | Gaming Observed | Outcome vs. Political |
-|--------|--------------------|-----------------|-----------------------|
-| Monetary policy | Inflation targeting | Some (substitution between price indices) | Dramatically better |
-| Index funds | Market cap weighting | Minimal (front-running, index inclusion effects) | Outperforms 90%+ of active managers |
-| School testing | Standardized tests | Significant (teaching to test) | Mixed, but measurable |
-| Hospital metrics | Mortality rates, readmissions | Significant (patient selection) | Improved but distorted |
-
-**Critical question: Why should Optimocracy be more like index funds than credit ratings?**
-
-Both index funds and credit rating agencies are outcome-optimizing systems. Index funds have moderate gaming (front-running, index effects) but remain net positive. They outperform 90%+ of active managers despite gaming. Credit ratings had catastrophic gaming (inflated ratings on junk mortgage securities) that contributed to systemic financial crisis. What design features determine which outcome Optimocracy gets?
-
-| Feature | Index Funds (Moderate Gaming) | Credit Ratings (Catastrophic Gaming) |
-|---------|------------------------------|-------------------------------------|
-| **Measurement frequency** | Continuous (prices update constantly) | Infrequent (ratings reviewed quarterly/annually) |
-| **Verification** | Immediate (anyone can check prices) | Delayed (true credit quality revealed only in default) |
-| **Multiple sources** | Yes (many exchanges, many analysts) | No (oligopoly of 3 agencies) |
-| **Independence** | High (exchanges compete) | Low (issuers pay for ratings = conflict of interest) |
-| **Feedback loop** | Fast (mispricing corrected quickly) | Slow (years between rating and default) |
-
-**Optimocracy must be designed toward the index fund end:**
-
-1. **Continuous measurement**: Use metrics that update frequently, not annually. Monthly or quarterly data enables faster correction.
-2. **Multiple independent sources**: The Constitutional Welfare Score requires convergence across vital statistics, tax records, AND decentralized surveys. Gaming one source isn't enough.
-3. **Immediate verification**: For objective metrics (deaths, income), data can be cross-checked against multiple records. Gaming requires coordinated falsification across independent systems.
-4. **No issuer-pays conflict**: Unlike credit ratings where rated entities pay for ratings, Optimocracy oracles have no direct financial relationship with those being measured.
-5. **Fast feedback**: Poor outcomes become visible within measurement cycles, not years later.
-
-The Constitutional Welfare Score's design incorporates these features: composite metrics (diffusion), multiple data sources (cross-validation), objective anchors (deaths are binary), and decentralized surveys (no single capturable entity). This positions it toward the index fund end of the spectrum.
-
-**Mitigation strategies with specific mechanisms:**
-
-1. **Composite metrics with negative correlations**: Include dimensions where gaming one hurts another (e.g., income growth + Gini constraint; mortality + quality of life)
-
-2. **Multi-methodology measurement**: Require improvement across surveys, administrative data, and direct measurement. Gaming one methodology is easier than gaming all three.
-
-3. **Lagged and smoothed metrics**: Use 5-year rolling averages rather than annual snapshots. Reduces ability to game timing.
-
-4. **Adversarial auditing**: Fund independent teams to identify gaming opportunities and adjust metrics accordingly.
-
-5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
-
-**Why these specific metrics are robust to Goodhart effects:**
-
-Traditional Goodhart examples (teaching to tests, hospital readmissions, credit ratings) share a key feature: agents can game the metric without improving the underlying reality. Teachers can drill test-taking skills without educating. Hospitals can avoid admitting high-risk patients without improving care. Rating agencies can inflate ratings without securities being safer.
+Traditional Goodhart examples share a key feature: agents can game the metric *without improving the underlying reality*. Teachers can drill test-taking skills without educating. Hospitals can avoid admitting high-risk patients without improving care. Rating agencies can inflate ratings without securities being safer.
 
 Median real after-tax income and median healthy life years are different:
 
@@ -822,7 +777,7 @@ Median real after-tax income and median healthy life years are different:
 - **"Median" resists outlier gaming.** You can't improve the metric by helping billionaires or the already-healthy. Only improvements at the median matter.
 - **Long time horizons resist timing games.** Healthy life years accumulate over decades, not quarters.
 
-The main vulnerability isn't behavioral Goodhart gaming; it's measurement methodology capture (changing how "household" is defined, how inflation is calculated, how health conditions are categorized). This is addressed in the Oracle Capture section below. The risk isn't that actors will game the metric without improving welfare; it's that captured measurement institutions might misreport the metric itself.
+The main vulnerability isn't behavioral Goodhart gaming; it's *measurement methodology capture*: changing how "household" is defined, how inflation is calculated, how health conditions are categorized. This is addressed in the Oracle Capture section below. The risk isn't that actors will game the metric without improving welfare; it's that captured measurement institutions might misreport the metric itself.
 
 ### Oracle Capture
 
@@ -848,7 +803,7 @@ The earlier claim that government statistics provide reasonable reliability is o
 - **GDP**: Imputed values (owner-occupied housing) represent 10%+ of GDP; assumptions matter
 - **Poverty**: Official poverty measure ignores transfers (housing, SNAP); supplemental measure shows 50% higher rate
 
-Government statistical agencies are not neutral. They face political pressure, budget constraints, and revolving-door incentives. The Bureau of Labor Statistics has ~2,000 employees and a $750M budget - trivial to influence compared to trillions in allocation.
+Government statistical agencies are not neutral. They face political pressure, budget constraints, and revolving-door incentives. With trillions in allocation at stake, the incentive to influence measurement is enormous relative to the Bureau of Labor Statistics' ~2,000 employees and $750M budget.
 
 The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (Section 8). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
 
@@ -1196,7 +1151,7 @@ Optimocracy offers a different approach: rather than relying on systems that don
 
 The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
 
-Optimocracy is not utopian. It faces real challenges: Goodhart's Law, oracle capture, edge cases, and democratic legitimacy. But these challenges are addressable through careful mechanism design, hybrid architectures, and iterative implementation.
+Optimocracy is not utopian. It faces real challenges: measurement methodology capture, edge cases, and democratic legitimacy. But these challenges are addressable through institutional diversity, hybrid architectures, and iterative implementation.
 
 The question is not whether Optimocracy is perfect; no governance system is. The question is whether outcome-optimizing algorithmic allocation produces better outcomes than captured allocation. The evidence suggests it does.
 

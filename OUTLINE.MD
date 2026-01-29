@@ -2085,7 +2085,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 336,308
+**Files:** 86 | **Words:** 335,761
 
 #### index.qmd
 **Title:** Start Here
@@ -4011,7 +4011,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,699 words | 1,377 lines
+**Stats:** 13,152 words | 1,332 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4058,7 +4058,7 @@
     - Reduced Coordination Costs
     - Depolarization Through Outcome Focus
   - Challenges and Failure Modes
-    - Goodhart's Law: When Metrics Get Gamed
+    - Why Goodhart's Law Doesn't Apply Here
     - Oracle Capture
     - Edge Cases and Novelty
     - Democratic Legitimacy
@@ -6990,12 +6990,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,699
+**Files:** 1 | **Words:** 13,152
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,699 words | 1,377 lines
+**Stats:** 13,152 words | 1,332 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7042,7 +7042,7 @@
     - Reduced Coordination Costs
     - Depolarization Through Outcome Focus
   - Challenges and Failure Modes
-    - Goodhart's Law: When Metrics Get Gamed
+    - Why Goodhart's Law Doesn't Apply Here
     - Oracle Capture
     - Edge Cases and Novelty
     - Democratic Legitimacy
@@ -7417,6 +7417,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 539,537
+- Total words: 538,443
 - Orphaned files: 20
 - Paper configs: 12
