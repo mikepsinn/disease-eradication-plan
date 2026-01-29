@@ -1304,23 +1304,43 @@ def load_citations_from_bib() -> Set[str]:
 def check_citations(content: str, filepath: str, defined_citations: Set[str]):
     """
     Check for citations that are referenced but not defined in references.bib
-    Pattern: [@citation-id] or @citation-id (in some contexts)
+    Pattern: [@citation-id] or @citation-id (bare citations in text/tables)
     """
     if not defined_citations:
         # Skip if no citations loaded
         return
 
     lines = content.split("\n")
+    in_code_block = False
 
     # Pattern to match Pandoc citations: [@citation-id] or [@cite1; @cite2]
-    citation_pattern = re.compile(r'\[@([^\]]+)\]')
+    bracketed_citation_pattern = re.compile(r'\[@([^\]]+)\]')
+
+    # Pattern to match bare Pandoc citations: @citation-id
+    # Must start with letter, can contain letters, numbers, hyphens, underscores, colons
+    # Uses negative lookbehind to avoid matching email addresses (text@domain)
+    # Excludes Quarto cross-reference prefixes: @sec-, @fig-, @tbl-, @eq-, @thm-, @lst-, @exm-, @def-
+    bare_citation_pattern = re.compile(r'(?<![a-zA-Z0-9_.])@([a-zA-Z][a-zA-Z0-9_:-]*)')
+
+    # Quarto cross-reference prefixes to exclude from bare citation checks
+    quarto_xref_prefixes = ('sec-', 'fig-', 'tbl-', 'eq-', 'thm-', 'lst-', 'exm-', 'def-', 'nte-', 'tip-', 'wrn-', 'imp-', 'cau-', 'prp-', 'cnj-', 'lem-', 'cor-', 'exr-', 'sol-')
 
     for line_index, line in enumerate(lines):
-        # Skip HTML comments and code blocks
-        if re.match(r"^\s*<!--", line.strip()) or line.strip().startswith("```"):
+        # Track code blocks
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
             continue
 
-        matches = citation_pattern.finditer(line)
+        # Skip lines inside code blocks
+        if in_code_block:
+            continue
+
+        # Skip HTML comments
+        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+            continue
+
+        # Check bracketed citations: [@citation-id]
+        matches = bracketed_citation_pattern.finditer(line)
         for match in matches:
             # Extract all citation IDs from the match (handles multiple citations like [@a; @b])
             citation_text = match.group(1)
@@ -1341,6 +1361,32 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
                             context=line.strip()[:80],
                         )
                     )
+
+        # Check bare citations: @citation-id (without brackets)
+        bare_matches = bare_citation_pattern.finditer(line)
+        for match in bare_matches:
+            citation_id = match.group(1)
+
+            # Skip Quarto cross-references (@sec-xxx, @fig-xxx, etc.)
+            if citation_id.startswith(quarto_xref_prefixes):
+                continue
+
+            # Skip if this looks like it's inside an already-matched bracketed citation
+            # (the bare pattern might match the @ inside [@...])
+            match_start = match.start()
+            if match_start > 0 and line[match_start - 1] == '[':
+                continue
+
+            # Check if citation is defined in references.bib
+            if citation_id and citation_id not in defined_citations:
+                errors.append(
+                    ValidationError(
+                        file=filepath,
+                        line=line_index + 1,
+                        message=f"Missing citation: @{citation_id} - not found in references.bib. Search references.bib for correct ID, or add new BibTeX entry to references.bib",
+                        context=line.strip()[:80],
+                    )
+                )
 
 
 def validate_quarto_config():

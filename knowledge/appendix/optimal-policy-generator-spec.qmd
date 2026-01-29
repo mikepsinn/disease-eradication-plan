@@ -213,7 +213,7 @@ OPG aggregates fragmented evidence, applies modern causal inference at scale, an
 
 ![A diagram illustrating how four historical barriers (fragmented data, computational limits, older methodologies, and incentive gaps) converge into the OPG three-step workflow of aggregation, causal inference, and output.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-why-this-hasn-t-been-done-before-bw-academic.jpg)
 
-## System Overview {#opg-system-overview}
+## System Overview {#sec-opg-system-overview}
 
 ### What Policymakers See
 
@@ -1934,7 +1934,7 @@ Before generating recommendations, verify:
 
 | Term | Definition | See Section |
 |------|------------|-------------|
-| **OPG** | Optimal Policy Generator: produces jurisdiction-specific recommendations | @opg-system-overview |
+| **OPG** | Optimal Policy Generator: produces jurisdiction-specific recommendations | @sec-opg-system-overview |
 | **PIS** | Policy Impact Score: effect × causal confidence × quality | @sec-pis |
 | **CCS** | Causal Confidence Score: weighted Bradford Hill average | @sec-bradford-hill |
 | **Evidence Grade** | A-F rating based on PIS, heterogeneity, jurisdiction count | @sec-evidence-grading |
