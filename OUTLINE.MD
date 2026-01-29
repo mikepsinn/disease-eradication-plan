@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,331
+**Files:** 4 | **Words:** 88,412
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1360,7 +1360,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,183 words | 2,634 lines
+**Stats:** 27,264 words | 2,643 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 335,598
+**Files:** 86 | **Words:** 332,348
 
 #### index.qmd
 **Title:** Start Here
@@ -2864,7 +2864,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,183 words | 2,634 lines
+**Stats:** 27,264 words | 2,643 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -4014,15 +4014,12 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 12,032 words | 1,162 lines
+**Stats:** 8,701 words | 949 lines
 
-  - Abstract
-  - Introduction: The Political Dysfunction Problem
-    - Why Information Alone Fails
-    - The Political Dysfunction Tax
-    - The Optimocracy Thesis
-    - How It Works in Practice
-    - Contributions
+  - The Mechanism
+    - Why This Works
+  - The Problem: Political Dysfunction Tax
+  - Why Information Alone Fails
   - The Scale of Welfare Loss: Empirical Foundations
     - A Formal Model of the Political Dysfunction Tax
     - Documented Welfare Losses by Policy Domain
@@ -4032,16 +4029,7 @@
     - When Does Optimocracy Beat the Status Quo?
       - Formal Model
   - Theoretical Foundations
-    - Lessons from Technocratic Governance Failures
-      - Soviet Central Planning
-      - Failed Algorithmic Governance in Finance
-      - Synthesis: Boundary Conditions for Algorithmic Governance
-    - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow and Gibbard-Satterthwaite: Why They Don't Apply Here
-      - Mechanism Design: Honest Answers Require Honest Incentives
-      - The Comparison That Matters
-    - Index Funds and Passive Allocation
-    - Credible Commitment Mechanisms
+    - Precedents That Work
   - Mechanism Design
     - Architecture Overview
     - The Verification Layer
@@ -4051,12 +4039,11 @@
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
-    - Transparency and Verifiability
-    - Reduced Coordination Costs
-    - Depolarization Through Outcome Focus
+    - Transparency
+    - Depolarization
   - Challenges and Failure Modes
     - Why Goodhart's Law Doesn't Apply Here
-    - Oracle Capture
+    - Oracle Capture (The Real Challenge)
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
@@ -4085,6 +4072,15 @@
       - Why "Immutable Rules" Are Insufficient
       - Realistic Security Properties
       - Defense-in-Depth Architecture
+  - Appendix B: Theoretical Background {.appendix}
+    - Historical Precedents: Technocratic Governance Failures
+      - Soviet Central Planning
+      - Credit Rating Agencies (1990s-2008)
+    - Engaging with Impossibility Theorems
+      - Arrow and Gibbard-Satterthwaite
+      - Mechanism Design: The Revelation Principle
+    - Democratic Legitimacy: A Deeper Analysis
+    - Boundary Conditions for Algorithmic Governance
   - Acknowledgments {.unnumbered}
   - References
 
@@ -6985,20 +6981,17 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 12,032
+**Files:** 1 | **Words:** 8,701
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 12,032 words | 1,162 lines
+**Stats:** 8,701 words | 949 lines
 
-  - Abstract
-  - Introduction: The Political Dysfunction Problem
-    - Why Information Alone Fails
-    - The Political Dysfunction Tax
-    - The Optimocracy Thesis
-    - How It Works in Practice
-    - Contributions
+  - The Mechanism
+    - Why This Works
+  - The Problem: Political Dysfunction Tax
+  - Why Information Alone Fails
   - The Scale of Welfare Loss: Empirical Foundations
     - A Formal Model of the Political Dysfunction Tax
     - Documented Welfare Losses by Policy Domain
@@ -7008,16 +7001,7 @@
     - When Does Optimocracy Beat the Status Quo?
       - Formal Model
   - Theoretical Foundations
-    - Lessons from Technocratic Governance Failures
-      - Soviet Central Planning
-      - Failed Algorithmic Governance in Finance
-      - Synthesis: Boundary Conditions for Algorithmic Governance
-    - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow and Gibbard-Satterthwaite: Why They Don't Apply Here
-      - Mechanism Design: Honest Answers Require Honest Incentives
-      - The Comparison That Matters
-    - Index Funds and Passive Allocation
-    - Credible Commitment Mechanisms
+    - Precedents That Work
   - Mechanism Design
     - Architecture Overview
     - The Verification Layer
@@ -7027,12 +7011,11 @@
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
-    - Transparency and Verifiability
-    - Reduced Coordination Costs
-    - Depolarization Through Outcome Focus
+    - Transparency
+    - Depolarization
   - Challenges and Failure Modes
     - Why Goodhart's Law Doesn't Apply Here
-    - Oracle Capture
+    - Oracle Capture (The Real Challenge)
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
@@ -7061,6 +7044,15 @@
       - Why "Immutable Rules" Are Insufficient
       - Realistic Security Properties
       - Defense-in-Depth Architecture
+  - Appendix B: Theoretical Background {.appendix}
+    - Historical Precedents: Technocratic Governance Failures
+      - Soviet Central Planning
+      - Credit Rating Agencies (1990s-2008)
+    - Engaging with Impossibility Theorems
+      - Arrow and Gibbard-Satterthwaite
+      - Mechanism Design: The Revelation Principle
+    - Democratic Legitimacy: A Deeper Analysis
+    - Boundary Conditions for Algorithmic Governance
   - Acknowledgments {.unnumbered}
   - References
 
@@ -7403,6 +7395,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 538,125
+- Total words: 531,625
 - Orphaned files: 20
 - Paper configs: 12
