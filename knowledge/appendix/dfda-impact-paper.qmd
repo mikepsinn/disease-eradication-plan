@@ -108,7 +108,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 **Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
 
-**The Discovery Capacity Model:**
+**The Discovery Capacity Model:** {#the-discovery-capacity-model}
 
 | Parameter | Status Quo | With dFDA | Impact |
 |:---|:---:|:---:|:---|
@@ -173,6 +173,8 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 - **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
 - **Scale & Scope**: Enables testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
 - **Innovation Incentives**: Lower R&D costs increase profitability and encourage more entrants/innovation in the life sciences.
+
+![An infographic illustrating how technological optimizations in clinical trials lead to a virtuous cycle of reduced costs, faster timelines, and increased innovation.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-potential-impact-on-the-status-quo-bw-academic.jpg)
 
 ## Addressing Key Concerns
 
@@ -245,14 +247,7 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](https://iab.warondisease.org) are designed to solve.)
 :::
 
-**Trial Capacity Impact:**
-
-| Metric | Status Quo | With Framework |
-|--------|------------|----------------|
-| **First treatments/year** | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} |
-| **Trial capacity multiplier** | 1× | {{< var dfda_trial_capacity_multiplier >}} |
-| **Time to test all combinations** | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} |
-| **Treatment acceleration** | N/A | {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
+**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. dFDA trial capacity metrics.
 
 **The Untested Treatment Backlog:**
 
@@ -270,6 +265,8 @@ Approximately {{< var diseases_without_effective_treatment >}} lack effective tr
 > - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
 >
 > **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms (Medable, Science 37), EHR systems (Epic, Cerner), academic medical centers, and health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
+
+![A visual representation of the dFDA protocol ecosystem showing how a central interoperability layer connects EHR systems, clinical trial platforms, and medical centers, paired with a breakdown of upfront versus recurring costs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estimates-bw-academic.jpg)
 
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate for the protocol infrastructure that enables decentralized clinical trials.
 
@@ -538,7 +535,6 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved.
 - **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
-- **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × {{< var standard_economic_qaly_value_usd >}} = **$1.5B**. If 10,000 lives are saved, benefit = 10,000 × {{< var value_of_statistical_life >}} = **$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 
 ### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
@@ -607,6 +603,8 @@ Such a framework provides **provisional access post-Phase I** via trial particip
 3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}} pre-market efficacy delay
 
 This eliminates the post-safety efficacy lag (the Phase II/III portion, while preserving Phase I safety testing) by enabling real-world evidence collection during trials.
+
+![A timeline comparison showing how a decentralized framework replaces the traditional multi-year efficacy lag with immediate post-Phase I access and continuous real-world evidence monitoring.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-how-a-decentralized-framework-eliminates-the-efficacy-lag-bw-academic.jpg)
 
 #### Quantified Benefits (One-Time Timeline Shift)
 
@@ -704,19 +702,7 @@ The following table quantifies how automated EHR monitoring would have changed o
 
 The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
 
-**Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs - but causes {{< var type_ii_error_cost_ratio >}}× more deaths through delays.
-
-::: {.callout-warning}
-**The 1962 Amendments Added EFFICACY Requirements, Not Safety**
-
-A common misconception: The 1962 Kefauver-Harris Amendment was passed in response to thalidomide, which caused {{< var thalidomide_cases_worldwide >}} birth defects globally. But thalidomide was never approved in the US - the existing 1938 Food, Drug, and Cosmetic Act already required safety proof.
-
-**What the 1962 amendments actually added was the EFFICACY requirement**: drugs must prove they *work*, not just that they're safe. This created the modern Phase II/III trial structure - years of efficacy testing *after* Phase I safety testing is complete.
-
-The irony: **62 amendments designed around a safety crisis created an efficacy bureaucracy.** The {{< var efficacy_lag_years >}} delay between Phase I safety verification and final approval has postponed access to beneficial treatments for billions of patient-years since 1962 - not because of safety testing, but because of efficacy proving.
-
-The {{< var type_ii_error_cost_ratio >}} ratio is not a claim that safety testing is worthless. Phase I safety testing is preserved in this framework. The ratio quantifies the cost of the **efficacy lag** - the years spent proving drugs work *after* we already know they're safe. Even if thalidomide-scale events occurred annually (they do not; thalidomide was exceptional), the analysis demonstrates that faster post-safety access remains favorable.
-:::
+**Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}}× more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
 
 ## ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
 
@@ -745,31 +731,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 {{< var exploration_ratio_latex >}}
 
-The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap.
-
-### Current Exploration Rate vs. Therapeutic Space
-
-**Under the status quo:**
-
-- **{{< var diseases_without_effective_treatment >}}** currently lack effective treatment
-- **{{< var new_disease_first_treatments_per_year >}}** receive their first effective treatment
-- At this exploration rate, systematically searching the remaining 99%+ of therapeutic space would take **~{{< var status_quo_queue_clearance_years >}}**
-
-{{< var status_quo_queue_clearance_years_latex >}}
-
-This calculation is empirically grounded: only ~5% of {{< var rare_diseases_count_global >}} have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} getting first treatments, most of the therapeutic space remains permanently unexplored.
-
-**With dFDA implementation:**
-
-- Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}, enabling parallel exploration of the therapeutic space
-- Exploration rate: **{{< var dfda_first_treatments_per_year >}}** receiving first treatments (vs {{< var new_disease_first_treatments_per_year >}} status quo)
-- Time to systematically explore disease space: **{{< var dfda_queue_clearance_years >}}** (vs {{< var status_quo_queue_clearance_years >}})
-
-{{< var dfda_first_treatments_per_year_latex >}}
-
-{{< var dfda_queue_clearance_years_latex >}}
-
-Additionally, eliminating the {{< var efficacy_lag_years >}} efficacy lag means discovered treatments reach patients immediately. The **total timeline shift** is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} (discovery acceleration + efficacy lag elimination).
+The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}}× trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
@@ -888,8 +850,6 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
    - Quality-of-life improvements, lower healthcare costs from faster drug innovation, and potentially fewer adverse events from earlier detection.
    - These are positive externalities that can significantly enlarge real ROI from a societal perspective.
-
-
 
 ## Conclusion
 

@@ -1615,12 +1615,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,537
+**Files:** 1 | **Words:** 11,189
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,537 words | 1,219 lines
+**Stats:** 11,189 words | 1,179 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1666,7 +1666,6 @@
     - Monte Carlo Distributions
   - Research Acceleration Mechanism
     - The Unexplored Therapeutic Frontier
-    - Current Exploration Rate vs. Therapeutic Space
     - Addressing the Returns Question: Diminishing, Linear, or Compounding?
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
       - Mathematical Framework: When Would Diminishing Returns Dominate?
@@ -2089,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 335,830
+**Files:** 86 | **Words:** 335,598
 
 #### index.qmd
 **Title:** Start Here
@@ -4015,7 +4014,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 11,916 words | 1,160 lines
+**Stats:** 12,032 words | 1,162 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -6089,7 +6088,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,537 words | 1,219 lines
+**Stats:** 11,189 words | 1,179 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6135,7 +6134,6 @@
     - Monte Carlo Distributions
   - Research Acceleration Mechanism
     - The Unexplored Therapeutic Frontier
-    - Current Exploration Rate vs. Therapeutic Space
     - Addressing the Returns Question: Diminishing, Linear, or Compounding?
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
       - Mathematical Framework: When Would Diminishing Returns Dominate?
@@ -6987,12 +6985,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 11,916
+**Files:** 1 | **Words:** 12,032
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 11,916 words | 1,160 lines
+**Stats:** 12,032 words | 1,162 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7405,6 +7403,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 538,589
+- Total words: 538,125
 - Orphaned files: 20
 - Paper configs: 12
