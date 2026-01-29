@@ -12,7 +12,7 @@ abstract: |
   (health welfare). These two metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly
   interpretable. No complex conversion factors required.
 
-  For any jurisdiction, four outputs: ENACT (policies proven elsewhere that you lack). REPLACE
+  For any jurisdiction, four outputs: ENACT (evidence-supported policies you lack). REPLACE
   (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN (policies aligned with
   evidence). Each recommendation includes expected effects on both metrics, confidence grades,
   and blocking factors (including freedom/autonomy constraints).
@@ -178,7 +178,7 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 | US Counties | 3,000+ | 50+ | 150,000+ |
 | Cities worldwide | 10,000+ | varies | millions |
 
-Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. Combined, this represents the largest-ever dataset of policy experiments.
+Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. This represents a vast, largely untapped evidence base.
 
 ![A comparison chart showing the exponential growth in available policy-years across different geographic levels, ranging from 3,500 for US states to millions for cities worldwide.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-natural-experiments-bw-academic.jpg)
 
@@ -280,11 +280,11 @@ Current policy adoption follows a process dominated by political economy dynamic
 4. **Status quo bias**: Existing policies persist regardless of evidence because change requires political capital
 5. **Salience heuristics**: Policies addressing visible problems (terrorism, rare diseases) receive disproportionate resources relative to invisible problems (air pollution, chronic disease)
 
-The result: substantial welfare losses from documented policy failures, potentially in the trillions of dollars annually across all jurisdictions. Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack the systematic, jurisdiction-specific recommendation generation that OPG provides.
+The result: welfare losses from documented policy failures. Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack systematic, jurisdiction-specific recommendation generation.
 
 ### Scale of Available Evidence
 
-The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data and translating it to jurisdiction-specific recommendations will produce outcomes orders of magnitude better than the current system.
+The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data should improve on the current system of lobbying-driven, ideology-filtered policy adoption. How much improvement is an empirical question requiring validation (see @sec-validation-framework).
 
 ### Contributions
 

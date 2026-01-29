@@ -2085,7 +2085,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 335,482
+**Files:** 86 | **Words:** 335,469
 
 #### index.qmd
 **Title:** Start Here
@@ -4097,7 +4097,7 @@
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,348 words | 1,964 lines
+**Stats:** 13,335 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -6837,12 +6837,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,348
+**Files:** 1 | **Words:** 13,335
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,348 words | 1,964 lines
+**Stats:** 13,335 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -7415,6 +7415,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 537,885
+- Total words: 537,859
 - Orphaned files: 20
 - Paper configs: 12
