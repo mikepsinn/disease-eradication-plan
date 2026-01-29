@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 453 parameters used in the analysis, organized by type:
+This appendix documents all 452 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 183
 - Calculated values: 169
-- Core definitions: 101
+- Core definitions: 100
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (101 parameters)
+[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (100 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -14125,28 +14125,6 @@ Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human
 #### Input Distribution
 
 {{< include ../figures/distribution-human_protein_coding_genes.qmd >}}
-
-*Core definition*
-
-:::
-
-### IAB Bootstrap Campaign Cost: $100M {#sec-iab_bootstrap_campaign_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-[DEPRECATED] Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST ($1B) for consistency with VICTORY bond ROI calculations.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$50M, $200M] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $50M and $200M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-iab_bootstrap_campaign_cost.qmd >}}
 
 *Core definition*
 

@@ -2781,10 +2781,6 @@
   \ | ✓ High confidence | 95% CI: [19.0k genes, 21.0k genes] | Dist: Uniform | Unit:\
   \ genes | Click to view details, calculation & sources\">20.0k genes (95% CI: 19.0k\
   \ genes-21.0k genes)</a>"
-"iab_bootstrap_campaign_cost": "<span class=\"parameter-definition\" title=\"[DEPRECATED]\
-  \ Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST\
-  \ ($1B) for consistency with VICTORY bond ROI calculations. | Unit: USD | Core definition\"\
-  >$100M (95% CI: $50M-$200M)</span>"
 "iab_mechanism_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Estimated annual\
@@ -4884,6 +4880,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "453"
+"total_parameter_count": "452"
 "total_latex_equation_count": "169"
 "total_citation_count": "183"

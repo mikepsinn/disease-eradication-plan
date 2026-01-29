@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,407
+**Files:** 4 | **Words:** 88,296
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,385 words | 14,710 lines
+**Stats:** 54,274 words | 14,688 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -1286,9 +1286,6 @@
     - Human Protein-Coding Genes: 20.0k genes {#sec-human_protein_coding_genes}
       - Uncertainty Range
       - Input Distribution
-    - IAB Bootstrap Campaign Cost: $100M {#sec-iab_bootstrap_campaign_cost}
-      - Uncertainty Range
-      - Input Distribution
     - IAB Mechanism Annual Cost (High Estimate): $750M {#sec-iab_mechanism_annual_cost}
       - Uncertainty Range
       - Input Distribution
@@ -1705,12 +1702,12 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 13,605
+**Files:** 1 | **Words:** 13,613
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,605 words | 1,907 lines
+**Stats:** 13,613 words | 1,907 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -2089,7 +2086,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 337,755
+**Files:** 86 | **Words:** 337,652
 
 #### index.qmd
 **Title:** Start Here
@@ -4358,7 +4355,7 @@
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,605 words | 1,907 lines
+**Stats:** 13,613 words | 1,907 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -4682,7 +4679,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,385 words | 14,710 lines
+**Stats:** 54,274 words | 14,688 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -5913,9 +5910,6 @@
     - Hours Per Day: 24 {#sec-hours_per_day}
     - Hours Per Year: 8.76k {#sec-hours_per_year}
     - Human Protein-Coding Genes: 20.0k genes {#sec-human_protein_coding_genes}
-      - Uncertainty Range
-      - Input Distribution
-    - IAB Bootstrap Campaign Cost: $100M {#sec-iab_bootstrap_campaign_cost}
       - Uncertainty Range
       - Input Distribution
     - IAB Mechanism Annual Cost (High Estimate): $750M {#sec-iab_mechanism_annual_cost}
@@ -7425,6 +7419,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 542,431
+- Total words: 542,225
 - Orphaned files: 20
 - Paper configs: 12

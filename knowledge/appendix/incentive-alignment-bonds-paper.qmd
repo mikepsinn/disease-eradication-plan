@@ -195,7 +195,7 @@ Consider the global capital distribution:
 - **Concentrated interests** (military contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~{{< var concentrated_interest_sector_market_cap_usd >}}[^capital-estimate]
 - **Diffuse beneficiaries** (everyone who would benefit from cures, climate stability, pandemic prevention): Global household wealth ~{{< var global_household_wealth_usd >}} [@creditsuisse2023]
 
-[^capital-estimate]: Conservative estimate based on: Top 100 military contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
+[^capital-estimate]: Conservative estimate: military contractors ~\$2T, fossil fuel companies ~\$2.5T, pharmaceutical companies ~\$4T (though pharma may align with IABs). Total concentrated opposition: \$2T-\$5T depending on domain.
 
 ![Visualizing the 90:1 capital advantage: Global household wealth ($454T) vastly overshadows the combined market cap of concentrated opposition ($5T).](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
 
@@ -1334,13 +1334,7 @@ Raising the first $200M-$500M (Phase 1 of the {{< var treaty_campaign_total_cost
 
 **ROI makes initial funding rational for risk-tolerant capital:**
 
-As shown, a {{< var treaty_campaign_total_cost >}} campaign with 20% success probability passing a {{< var treaty_annual_funding >}}/year treaty ({{< var victory_bond_funding_pct >}} to investors) yields:
-
-$$
-E[V] = 0.20 \times \$2.72\text{B/year} = \$544\text{M/year}
-$$
-
-Expected first-year ROI: 54.4% ($544M ÷ $1B), with the revenue stream continuing in perpetuity. Upon treaty passage, the conditional annual ROI is 272%. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
+As shown in Section 2.1, the expected ROI economics make early investment rational: conditional annual ROI of {{< var victory_bond_annual_return_pct >}} upon treaty passage, with perpetual revenue streams. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
 
 **Capital asymmetry ensures scalability beyond Phase 1:**
 
@@ -1351,7 +1345,7 @@ Phase 1 requires \$200M-$500M to demonstrate traction, which is small relative t
 
 The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If military contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that military contractors exploit becomes accessible to millions of retail investors.
 
-**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 272% conditional ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise {{< var treaty_campaign_total_cost >}}?" but "can we structure the offering legally?"
+**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than {{< var victory_bond_annual_return_pct >}} conditional ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise {{< var treaty_campaign_total_cost >}}?" but "can we structure the offering legally?"
 
 **The race condition:** Concentrated interests can mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
 1. Phase 1 (\$200M-$500M) is raised from high-risk capital (impact funds, crypto whales, patient billionaires)

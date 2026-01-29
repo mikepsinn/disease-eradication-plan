@@ -4712,16 +4712,6 @@ export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
   confidenceInterval: [19000.0, 21000.0],
 };
 
-export const IAB_BOOTSTRAP_CAMPAIGN_COST: Parameter = {
-  value: 100000000.0,
-  unit: "USD",
-  displayName: "IAB Bootstrap Campaign Cost",
-  description: "[DEPRECATED] Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST ($1B) for consistency with VICTORY bond ROI calculations.",
-  sourceType: "definition",
-  confidence: "high",
-  confidenceInterval: [50000000.0, 200000000.0],
-};
-
 export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   value: 750000000.0,
   unit: "USD/year",
@@ -5466,7 +5456,6 @@ export const parameters = {
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   HUMAN_PROTEIN_CODING_GENES,
-  IAB_BOOTSTRAP_CAMPAIGN_COST,
   IAB_MECHANISM_ANNUAL_COST,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
   INSTITUTIONAL_INVESTOR_MIN,
@@ -7416,10 +7405,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 453,
+  total: 452,
   external: 183,
   calculated: 169,
-  definitions: 101,
+  definitions: 100,
   citations: 141,
 } as const;
 
