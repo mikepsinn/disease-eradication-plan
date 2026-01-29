@@ -95,8 +95,6 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). Pragmatic clinical trials demonstrate even higher returns ({{< var dfda_roi_rd_only >}} BCR) by generating treatment evidence at a fraction of traditional trial costs [@dfda-impact-paper-2025]. GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
 
-![A conceptual diagram illustrating the 'Incentive Gap' where high-impact cost-benefit data is filtered out by political incentives like reelection and campaign contributions, preventing it from influencing policy decisions.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
-
 Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because acting on it doesn't maximize what benefits them personally (reelection probability, campaign contributions, post-office career prospects).
@@ -104,8 +102,6 @@ The problem is not information but incentives. Politicians know which programs p
 ### The Political Dysfunction Tax
 
 Current allocation systems show near-zero correlation with measured welfare outcomes, creating systematic divergence from optimal resource distribution. The largest component of this welfare loss is the **Crony Tax** (resources directed toward concentrated interests rather than outcome-maximizing alternatives).
-
-![A visualization of the Political Dysfunction Tax illustrating the gap between potential welfare and actual outcomes caused by rent-seeking, cronyism, and systemic inefficiencies.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-political-dysfunction-tax-bw-academic.jpg)
 
 Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delrosal2011], with some studies finding effects as large as 45% [@laband1988]. Combined with short-termism, ignorance, and ideological gridlock, the total **Political Dysfunction Tax** is estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare (see formal model below).
 
@@ -119,15 +115,11 @@ Optimocracy proposes a radical simplification: **optimize governance for measura
 
 This architecture eliminates the Political Dysfunction Tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (metric amendments) and for genuinely novel situations.
 
-![A flowchart showing the iterative cycle of Optimocracy: democratic metric selection, continuous oracle measurement, and algorithmic allocation for welfare optimization.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-optimocracy-thesis-bw-academic.jpg)
-
 ### How It Works in Practice
 
 **Step 1: Adopt the Health & Wealth metrics (defaults provided, amendments possible)**
 
 The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These capture most policy effects through two hard-to-game, well-measured outcomes. Citizens can amend these through constitutional process, but the defaults work out of the box. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
-
-![System architecture of the Optimocracy framework, illustrating the cyclic relationship between data-driven budget recommendations, political voting, independent outcome verification, and the distribution of Incentive Alignment Bonds.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-it-works-in-practice-bw-academic.jpg)
 
 **Step 2: A computer system optimizes budget allocation**
 
@@ -159,8 +151,6 @@ This paper makes three contributions to the political economy literature:
 
 1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at {{< var political_dysfunction_tax_total_pct >}} of potential GDP, decomposed into cronyism, short-termism, ignorance, and ideological gridlock.
 
-![A conceptual framework illustrating the three contributions: the decomposition of the Political Dysfunction Tax, the theoretical comparison of governance models, and the three-stage implementation architecture.](/assets/images/optimocracy-paper/optimocracy-paper-section-contributions-bw-academic.jpg)
-
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when outcome-optimizing allocation outperforms capture-prone governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 
 3. **Applied**: We propose a concrete implementation architecture combining algorithmic optimization, independent verification systems, and rule-based enforcement, with testable predictions and falsification criteria.
@@ -168,8 +158,6 @@ This paper makes three contributions to the political economy literature:
 ## The Scale of Welfare Loss: Empirical Foundations
 
 Before proposing solutions, we must establish the magnitude of the problem. This section synthesizes peer-reviewed research documenting welfare losses from suboptimal policy. The metaphor "trillion dollar bills on the sidewalk" comes from @olson1996, who showed that differences between rich and poor countries are primarily due to institutions and policies, not factors of production.
-
-![A conceptual visualization of the 'trillion dollar bills on the sidewalk' metaphor, contrasting the impact of institutional quality versus factors of production on national welfare.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
 ### A Formal Model of the Political Dysfunction Tax
 
@@ -256,8 +244,6 @@ The empirical evidence suggests:
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
 
-![A visualization of the 'Political Dysfunction Tax' showing how systemic capture by concentrated interests results in a 20% welfare loss, necessitating a shift toward outcome-optimizing mechanism design.](/assets/images/optimocracy-paper/optimocracy-paper-section-implications-for-mechanism-design-bw-academic.jpg)
-
 This motivates the Optimocracy thesis: if current systems systematically fail to optimize for welfare, outcome-optimizing systems may improve outcomes. The following sections examine precedents, mechanisms, and limitations.
 
 ### When Does Optimocracy Beat the Status Quo?
@@ -268,8 +254,6 @@ Currently, lobbyists have thousands of doors to knock on: committee earmarks, ag
 2. **The data sources**: Bribing 3 out of 5 independent oracles to lie about the same number without getting caught requires coordination among strangers who lose money if wrong
 
 **The intuition**: Bribing 1,000 cheap doors is easier than bribing 2 expensive vaults. Corruption doesn't disappear. It just gets prohibitively expensive.
-
-![A side-by-side comparison of the Status Quo with many vulnerable access points versus Optimocracy's two highly secured and centralized targets.](/assets/images/optimocracy-paper/optimocracy-paper-section-when-does-optimocracy-beat-the-status-quo-bw-academic.jpg)
 
 #### Formal Model
 
@@ -314,8 +298,6 @@ The Soviet system attempted comprehensive optimization: central planners would c
 1. **Knowledge problem** [@hayek1945]: Planners lacked the distributed information that prices aggregate in markets. They couldn't know local conditions, preferences, or production possibilities.
 2. **Incentive problem**: Planners had no personal stake in outcomes and faced perverse incentives (meet quotas, regardless of quality or need).
 3. **Scope problem**: Central planning attempted to optimize *everything*, including decisions where local knowledge is essential.
-
-![A comparison diagram contrasting the failure points of Soviet central planning (centralized information and misaligned incentives) with Optimocracy's proposed solutions of market integration and metric-based accountability.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
 
 #### Failed Algorithmic Governance in Finance
 
@@ -1158,8 +1140,6 @@ The question is not whether Optimocracy is perfect; no governance system is. The
 ### What About AI?
 
 Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. That's metric selection, a fundamentally democratic choice, not a technical problem. Even a superintelligent AI should operate within an Optimocracy-like structure: humans specify objectives democratically, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving democratic legitimacy and human oversight.
-
-![Architecture of an Optimocracy-based AI governance system, illustrating the cycle from democratic metric selection to AI proposal, independent outcome verification, and final human approval.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
