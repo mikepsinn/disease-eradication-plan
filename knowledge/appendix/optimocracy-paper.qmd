@@ -147,7 +147,7 @@ Multiple independent data sources (Census Bureau, Federal Reserve, academic inst
 
 **Step 5: Incentive Alignment Bonds reward alignment with results**
 
-Politicians' voting records are compared to Optimocracy recommendations and recorded immutably. When the metric improves years later, those whose votes aligned with evidence-based recommendations receive larger [IAB payouts](incentive-alignment-bonds-paper.qmd). This creates a "political index fund": follow systematic recommendations, get rewarded when they work. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to actual outcomes.
+Politicians' voting records are compared to Optimocracy recommendations and recorded publicly. When the metric improves years later, those whose votes aligned with evidence-based recommendations receive larger [IAB payouts](incentive-alignment-bonds-paper.qmd). This creates a "political index fund": follow systematic recommendations, get rewarded when they work. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to actual outcomes.
 
 The system doesn't require politicians to surrender power. It just makes ignoring good advice increasingly expensive.
 
@@ -390,11 +390,15 @@ Index funds demonstrate that:
 
 ### Credible Commitment Mechanisms
 
-The missing technology for Optimocracy was credible commitment: the ability to bind future decision-makers to current rules. Traditional constitutions attempt this but are subject to reinterpretation, amendment, and outright violation.
+A key challenge for any governance reform is credible commitment: binding future decision-makers to current rules. Traditional constitutions attempt this but are subject to reinterpretation, amendment, and violation.
 
-Modern self-executing agreements provide cryptographically enforced commitment. Once deployed, these immutable rules execute exactly as written. The rules are publicly auditable, and any deviation is immediately detectable.
+Optimocracy improves on this through transparency and public accountability:
 
-This creates genuine precommitment: a governing coalition can credibly promise that funds will be allocated according to specified rules, and any observer can verify this promise by auditing the published code and parameters.
+1. **Published rules**: Allocation formulas and metric definitions are public. Deviation is immediately visible.
+2. **Independent verification**: Multiple institutions report outcomes. Manipulation requires coordinated fraud.
+3. **Wrapper architecture**: Politicians retain override authority, but overrides are recorded and visible to voters.
+
+This isn't perfect commitment (no system is), but it raises the political cost of deviation by making it visible.
 
 ## Mechanism Design
 
@@ -407,7 +411,7 @@ Optimocracy operates through three layers:
 │                 CONSTITUTIONAL LAYER                     │
 │  - Citizens choose optimization metric                   │
 │  - Democratic process, changed rarely                    │
-│  - Encoded as immutable published rules                  │
+│  - Encoded as published rules (changes require supermajority) │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
@@ -467,7 +471,7 @@ If one source reported +5.0% (an outlier), it would be excluded by the median. T
 
 **The correlated data problem and its solution:**
 
-A sophisticated objection: the five oracles above all ultimately rely on the same underlying data sources (Census surveys, tax records, employer reports). Their errors are correlated, meaning "five independent oracles" is an illusion. If the underlying methodology is captured, all five report the same biased figure.
+An important limitation: the five sources above all ultimately rely on the same underlying data (Census surveys, tax records, employer reports). Their errors are correlated, meaning "five independent sources" may be an illusion. If the underlying methodology is captured, all five report the same biased figure.
 
 This is a real concern. The solution is **genuinely independent data collection via decentralized citizen surveys.**
 
@@ -475,11 +479,11 @@ This is a real concern. The solution is **genuinely independent data collection 
 
 | Component | Implementation | Why It Works |
 |-----------|----------------|--------------|
-| **Identity verification** | Proof of personhood protocols (national digital ID, bank KYC, or similar) | Prevents fake-identity attacks (one person = one response) |
-| **Data collection** | Normal web/mobile interface (distributed ledger is invisible backend) | No technical expertise required |
-| **Storage** | Responses stored in tamper-proof distributed system | Immutable, auditable, can't be retroactively altered by captured agencies |
+| **Identity verification** | National digital ID, bank KYC, or similar | Prevents fake-identity attacks (one person = one response) |
+| **Data collection** | Standard web/mobile interface | No technical expertise required |
+| **Storage** | Secure database with audit logs | Can't be retroactively altered without detection |
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
-| **Privacy** | Zero-knowledge proofs (cryptographic methods that verify claims without revealing underlying data) | Prove you're a unique person without revealing identity |
+| **Privacy** | Anonymization after identity verification | Responses can't be linked to individuals |
 
 **Why individual gaming is irrelevant:**
 
@@ -832,7 +836,7 @@ If adversaries control the data feed, they control the allocation. Optimocracy c
 | **Methodology capture** | Change measurement methodology favorably | Redefine "median household" to shift metric |
 | **Sample selection** | Cherry-pick data sources | Survey only favorable populations |
 | **Timing manipulation** | Delay/accelerate reporting strategically | Report good news before allocation, bad news after |
-| **Validator collusion** | Coordinate among decentralized oracles | Coordination games have multiple equilibria |
+| **Institutional collusion** | Coordinate manipulation across multiple sources | Coordination games have multiple equilibria |
 | **Regulatory capture** | Control the oversight of measurement entities | Pack statistical agencies with political appointees |
 
 **Why government statistics are not safe:**
@@ -848,7 +852,7 @@ Government statistical agencies are not neutral. They face political pressure, b
 
 The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (Section 8). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
 
-**Decentralized oracle solutions and their limits:**
+**Multi-source verification and its limits:**
 
 | Approach | Claimed Benefit | Actual Vulnerability |
 |----------|----------------|---------------------|
@@ -1129,7 +1133,7 @@ The arithmetic favors reform: welfare gains vastly exceed compensation costs, an
 | **Government Pilots** | Partner with reform-minded jurisdictions for limited-scope pilots | 3+ jurisdictions running pilots with measurable welfare improvement |
 | **Broader Adoption** | Scale through demonstrated success and competitive pressure | Major jurisdiction adopts for significant budget share |
 
-The bottleneck is not technology. Immutable rule execution, independent verification networks, and algorithmic governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
+The bottleneck is not technology. Published algorithmic rules, independent verification through existing institutions, and transparent governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
 
 ### Realistic Adoption Path
 
@@ -1190,7 +1194,7 @@ Political governance is not failing because politicians are evil or voters are i
 
 Optimocracy offers a different approach: rather than relying on systems that don't optimize for outcomes, introduce outcome-optimizing allocation for decisions where optimization is feasible. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via transparent rules.
 
-The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Immutable algorithmic rules enable credible commitment that was previously impossible.
+The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
 
 Optimocracy is not utopian. It faces real challenges: Goodhart's Law, oracle capture, edge cases, and democratic legitimacy. But these challenges are addressable through careful mechanism design, hybrid architectures, and iterative implementation.
 

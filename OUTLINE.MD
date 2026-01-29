@@ -2085,7 +2085,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 336,319
+**Files:** 86 | **Words:** 336,308
 
 #### index.qmd
 **Title:** Start Here
@@ -4011,7 +4011,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,710 words | 1,373 lines
+**Stats:** 13,699 words | 1,377 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -6990,12 +6990,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,710
+**Files:** 1 | **Words:** 13,699
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,710 words | 1,373 lines
+**Stats:** 13,699 words | 1,377 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7417,6 +7417,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 539,559
+- Total words: 539,537
 - Orphaned files: 20
 - Paper configs: 12
