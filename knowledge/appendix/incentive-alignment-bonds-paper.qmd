@@ -774,21 +774,7 @@ To assess whether IABs can achieve incentive compatibility, we calibrate the mod
 
 : Calibration Parameters for IAB Model {#tbl-calibration}
 
-**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from military contractors. Under the IAB mechanism with political incentive funding of {{< var iab_political_incentive_funding_annual >}} annually:
-
-*Electoral layer:* If \$50M is allocated to 25 competitive races, each high-scorer receives \$2M in independent expenditure support. At 1 pp per \$1M, this implies $\Delta P_i \approx 2\text{ pp}$. With $\alpha_i = \$1\text{M}$ per pp, the electoral benefit is $\alpha_i \cdot \Delta P_i = \$2\text{M}$.
-
-*Post-office layer:* Moving from Tier 3 to Tier 1 increases expected annual post-office income by \$200K. Given $T = 15$ years and $r = 7\%$, we calculate the present value:
-
-$$
-\Delta Y_i = \$200\text{K} \times \frac{1 - (1.07)^{-15}}{0.07} \approx \$1.8\text{M}
-$$
-
-*Total benefit:* $\alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i \approx \$2\text{M} + \$1.8\text{M} = \$3.8\text{M}$
-
-*Incentive compatibility check:* Since $\$3.8\text{M} > c_i = \$2\text{M}$, the incentive compatibility condition @eq-ic is satisfied. The senator strictly prefers supporting the treaty.
-
-This calibration suggests that IAB funding levels in the billions can overcome concentrated opposition in the millions, consistent with the "lobbying alpha" asymmetry observed empirically.
+Section 3.2 demonstrates that IAB funding levels in the billions can overcome concentrated opposition in the millions, consistent with the "lobbying alpha" asymmetry observed empirically.
 
 ## How IABs Work in Practice {#sec-architecture}
 
@@ -1271,11 +1257,11 @@ IABs' welfare accounting is favorable precisely because they solve the *adoption
 
 **Risks to welfare accounting:**
 
-1. **Crowding out intrinsic motivation:** If IABs make politicians more transactional, could reduce welfare from unscored policies (estimated cost: 5-15% of mechanism benefits)
-2. **Capture of scoring process:** Layer 0 (Wishocracy for Domain Ranking) mitigates this by requiring capture of ALL expert organizations AND manipulation of millions of citizen preferences. Residual risk if citizen participation is low or manipulable via misinformation (estimated probability: 5-15% over 20 years, down from 10-25% with expert-only rankings)
-3. **Regulatory backlash costs:** Legal battles, reputation damage if mechanism is perceived as illegitimate (estimated cost: \$50M-$200M in defensive spending)
+1. **Crowding out intrinsic motivation:** If IABs make politicians more transactional, could reduce welfare from unscored policies
+2. **Capture of scoring process:** Layer 0 (Wishocracy for Domain Ranking) mitigates this by requiring capture of ALL expert organizations AND manipulation of millions of citizen preferences
+3. **Regulatory backlash costs:** Legal battles and reputation damage if mechanism is perceived as illegitimate
 
-Even accounting for these risks (expected cost: ~\$75M/year, down from ~\$100M/year due to reduced capture risk), the net welfare impact remains strongly positive (BCR > 200:1).
+Even accounting for these risks, the net welfare impact remains strongly positive (BCR > 200:1).
 
 #### Sensitivity Analysis of Mechanism BCR
 
