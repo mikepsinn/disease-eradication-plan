@@ -60,7 +60,7 @@ image: /assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.
 
 {{< include ../includes/setup-parameters.qmd >}}
 
-**The Problem in One Sentence:** Current incentive structures reward political actors for things other than improving measured outcomes, so resources flow to those other things regardless of available evidence about what would actually work.
+**The Core Problem:** Current incentive structures reward political actors for things other than improving measured outcomes, so resources flow to those other things regardless of available evidence.
 
 **The Solution:** Lock spending to outcomes. Citizens vote on the goal (e.g., "maximize median income"). Algorithms optimize spending to hit the goal. Independent data sources verify results. Allocation follows the metric, not captured political judgment.
 
@@ -96,7 +96,6 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). Pragmatic clinical trials demonstrate even higher returns ({{< var dfda_roi_rd_only >}} BCR) by generating treatment evidence at a fraction of traditional trial costs [@dfda-impact-paper-2025]. GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
 
 ![A conceptual diagram illustrating the 'Incentive Gap' where high-impact cost-benefit data is filtered out by political incentives like reelection and campaign contributions, preventing it from influencing policy decisions.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
-
 
 Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
@@ -161,7 +160,6 @@ This paper makes three contributions to the political economy literature:
 1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at {{< var political_dysfunction_tax_total_pct >}} of potential GDP, decomposed into cronyism, short-termism, ignorance, and ideological gridlock.
 
 ![A conceptual framework illustrating the three contributions: the decomposition of the Political Dysfunction Tax, the theoretical comparison of governance models, and the three-stage implementation architecture.](/assets/images/optimocracy-paper/optimocracy-paper-section-contributions-bw-academic.jpg)
-
 
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when outcome-optimizing allocation outperforms capture-prone governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 
@@ -467,6 +465,8 @@ Verification systems translate real-world outcomes into data that allocation alg
 
 If Brookings reported +5.0% (an outlier), it would be excluded by the median. If they consistently misreport, other oracles can challenge their stake. The system doesn't require trust in any single institution, only that a majority aren't colluding.
 
+**A note on the hybrid model:** Government sources (Census, Fed) provide baseline data without staking requirements, as they already face accountability through existing institutional mechanisms. Private oracles could participate in a staking system to provide additional verification, though the specific mechanism design (who adjudicates "proven manipulation," what legal framework governs stakes) requires further development.
+
 **The correlated data problem and its solution:**
 
 A sophisticated objection: the five oracles above all ultimately rely on the same underlying data sources (Census surveys, tax records, employer reports). Their errors are correlated, meaning "five independent oracles" is an illusion. If the underlying methodology is captured, all five report the same biased figure.
@@ -477,11 +477,11 @@ This is a real concern. The solution is **genuinely independent data collection 
 
 | Component | Implementation | Why It Works |
 |-----------|----------------|--------------|
-| **Identity verification** | Proof of personhood protocols (national digital ID, bank KYC, or similar) | Prevents Sybil attacks (one person = one response) |
+| **Identity verification** | Proof of personhood protocols (national digital ID, bank KYC, or similar) | Prevents fake-identity attacks (one person = one response) |
 | **Data collection** | Normal web/mobile interface (distributed ledger is invisible backend) | No technical expertise required |
 | **Storage** | Responses stored in tamper-proof distributed system | Immutable, auditable, can't be retroactively altered by captured agencies |
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
-| **Privacy** | Zero-knowledge proofs | Prove you're a unique person without revealing identity |
+| **Privacy** | Zero-knowledge proofs (cryptographic methods that verify claims without revealing underlying data) | Prove you're a unique person without revealing identity |
 
 **Why individual gaming is irrelevant:**
 
@@ -627,6 +627,8 @@ If citizens prefer different metrics, they can propose amendments through consti
 
 **What about capture migrating to metric selection?** The defaults eliminate this problem. Lobbyists can't influence a choice that's already been made. For those who do want to amend: constitutional debates are high-profile (visible), require supermajorities (hard to capture), and happen rarely (reducing capture opportunities). One high-stakes debate every decade is easier to monitor than thousands of earmarks annually.
 
+**The tradeoff:** Constitutional-level changes are extremely difficult to achieve, which provides capture resistance but also makes the system rigid. The US hasn't passed a substantive constitutional amendment since 1971. Optimocracy's metric selection process should be difficult enough to resist casual capture but not so difficult as to be effectively unchangeable; the specific threshold (supermajority requirements, ratification procedures) is itself a design parameter requiring careful calibration.
+
 ## Scope and Limits: A Taxonomy of Governance Decisions
 
 Not all governance decisions are suitable for algorithmic optimization. This section develops a taxonomy distinguishing domains where Optimocracy applies from those requiring democratic deliberation.
@@ -655,7 +657,7 @@ Based on the counter-literature and historical analysis, we propose the followin
 | **War and peace** | No | Existential decisions require democratic legitimacy |
 | **Cultural policy** | No | Values are contested; no neutral metric |
 | **Criminal justice** | No | Due process requires case-by-case judgment |
-| **Local service delivery** | No | Local knowledge essential; mētis over techne |
+| **Local service delivery** | No | Local knowledge essential; practical experience over theoretical expertise |
 
 ### Defining Optimocracy's Proper Scope
 
@@ -669,7 +671,7 @@ Based on this taxonomy, Optimocracy should govern decisions that:
 
 Optimocracy should NOT govern decisions that:
 
-1. **Require local knowledge**: Effective implementation depends on mētis
+1. **Require local knowledge**: Effective implementation depends on practical local experience
 2. **Involve fundamental value conflicts**: No neutral metric exists
 3. **Require individual judgment**: Due process, rights, case-by-case assessment
 4. **Have existential stakes**: War, constitutional structure, regime legitimacy
@@ -689,7 +691,7 @@ Optimocracy collapses this attack surface from thousands of decision points to t
 
 Capturing metric amendment requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair.
 
-**Quantitative comparison:** Under capture-prone governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by 1-2 orders of magnitude.
+**Quantitative comparison:** Under capture-prone governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by an estimated 1-2 orders of magnitude.
 
 ### Time Consistency
 
@@ -807,7 +809,7 @@ The Constitutional Welfare Score's design incorporates these features: composite
 
 5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
 
-**The honest assessment:** Goodhart's Law is real and cannot be eliminated. The question is comparative. Index fund gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011]. Extrapolating from this and similar precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%. This wide range reflects genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
+Goodhart's Law is real and cannot be eliminated. The question is comparative. Index fund gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011]. Extrapolating from this and similar precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%. This wide range reflects genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
 
 ### Oracle Capture
 
@@ -821,7 +823,7 @@ If adversaries control the data feed, they control the allocation. Optimocracy c
 | **Methodology capture** | Change measurement methodology favorably | Redefine "median household" to shift metric |
 | **Sample selection** | Cherry-pick data sources | Survey only favorable populations |
 | **Timing manipulation** | Delay/accelerate reporting strategically | Report good news before allocation, bad news after |
-| **Validator collusion** | Coordinate among decentralized oracles | Schelling point games have multiple equilibria |
+| **Validator collusion** | Coordinate among decentralized oracles | Coordination games have multiple equilibria |
 | **Regulatory capture** | Control the oversight of measurement entities | Pack statistical agencies with political appointees |
 
 **Why government statistics are not safe:**
@@ -843,7 +845,7 @@ The solution is not to trust government statistics less, but to triangulate them
 |----------|----------------|---------------------|
 | **Multi-source aggregation** | Requires capturing majority of sources | Sources often use same underlying data; correlated errors |
 | **Staking-based validation** | Economic penalty for manipulation | Profitable if manipulation gains exceed stake |
-| **Schelling point games** | Game-theoretic truth-telling | Multiple equilibria; coordination on false consensus possible |
+| **Coordination games** | Game-theoretic truth-telling | Multiple equilibria; coordination on false consensus possible |
 | **Reputation weighting** | Punishes historical inaccuracy | Newcomers can't gain weight; incumbents entrenched |
 
 **The hard truth about independent verification:**
@@ -854,8 +856,6 @@ Distributed verification networks work for data where truth is verifiable and im
 2. **Verification is delayed**: Health outcomes take years to observe
 3. **Stakes are enormous**: Trillions in allocation vs. millions in collateral
 4. **Attackers are sophisticated**: Nation-states, not individual cheaters
-
-**The honest assessment:**
 
 Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?" The answer may be yes: oracle capture affects measurement, while allocation capture affects outcomes directly. Additionally, the wrapper architecture (Section 10) converts oracle capture from a catastrophic failure mode to a degraded-performance mode, as politicians can ignore manipulated data.
 
@@ -1341,7 +1341,7 @@ Optimocracy does not claim to eliminate all governance risk. It claims to:
 3. **Reduce political surface**: Fewer decision points where capture can occur
 4. **Enable credible commitment**: Harder (not impossible) to deviate from stated rules
 
-**The honest comparison** isn't "algorithmic governance vs. perfect security." It's "algorithmic governance vs. Congress." Algorithmic system failures are visible, embarrassing, and spawn better security practices. Congressional capture is invisible, legal, and permanent. The Farm Bill has been getting worse since 1933. Neither is perfect, but one system learns from failures.
+**The honest comparison** isn't "algorithmic governance vs. perfect security." It's "algorithmic governance vs. Congress." Algorithmic systems create clearer feedback loops between failure and correction: failures are visible, embarrassing, and spawn better security practices. Congressional capture is often invisible and legal. The Farm Bill has been getting worse since 1933. Neither system is perfect, and the process of updating algorithms in response to failures remains subject to political pressures, but algorithmic systems at least make failures visible.
 
 #### Defense-in-Depth Architecture
 
