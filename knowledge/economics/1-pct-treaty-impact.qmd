@@ -615,7 +615,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
-**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the [economic multiplier effect](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
+**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the [economic multiplier effect](../appendix/personal-lifetime-wealth-calc.qmd).
 
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
@@ -1947,7 +1947,7 @@ The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_
 
 {{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
 
-For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
+For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/personal-lifetime-wealth-calc.qmd).
 
 ## Comparative Effectiveness
 
@@ -2629,4 +2629,4 @@ Treaty adoption depends on:
 ## Conclusion
 
 Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials delivers {{< var dfda_roi_rd_only >}} to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI using standard health economics methodology (NPV, QALYs, ICER). The intervention qualifies as cost-saving and requires no new taxes, only reallocation of existing budgets to higher-ROI activities.
-
+

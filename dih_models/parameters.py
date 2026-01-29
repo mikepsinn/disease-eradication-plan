@@ -7029,7 +7029,7 @@ BOOK_READING_SPEED_WPM = Parameter(
 # Using the lifetime benefit value from your-personal-benefits.qmd
 EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     4_300_000,
-    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    source_ref="/knowledge/appendix/personal-lifetime-wealth-calc.qmd",
     source_type="definition",
     description="Lifetime benefit for age 30 baseline scenario ($4.3M)",
     display_name="Lifetime Benefit for Age 30 Baseline Scenario",
@@ -7576,7 +7576,7 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
         treaty_pct=0.01, current_age=30, annual_income=50000,
         life_extension_override=float(LIFE_EXTENSION_YEARS)
     )["total_lifetime_benefit"],
-    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    source_ref="/knowledge/appendix/personal-lifetime-wealth-calc.qmd",
     source_type="calculated",
     description="Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
     display_name="Personal Lifetime Wealth (Age 30, 1% Treaty)",

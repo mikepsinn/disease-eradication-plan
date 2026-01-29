@@ -2053,7 +2053,7 @@
   \ calculation & sources\">0.6:1 (95% CI: 0.4:1-0.9:1)</a>"
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-effective_hourly_rate_lifetime_benefit\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/personal-lifetime-wealth-calc.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Lifetime benefit\
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
   \ health gains from 1% treaty | Unit: USD | Click to view details, calculation &\
@@ -3312,7 +3312,7 @@
   \\\n= Cost_{vet} \\times Reduce_{treaty} \\\\\n= \\$200B \\times 1\\% \\\\\n= \\\
   $2B\n\\end{gathered}\n$$"
 "personal_lifetime_wealth": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-personal_lifetime_wealth\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/personal-lifetime-wealth-calc.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Personal lifetime\
   \ wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension\
   \ uncertainty (5-50 years) propagates through Monte Carlo to show full range of\

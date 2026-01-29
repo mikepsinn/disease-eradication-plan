@@ -3525,7 +3525,7 @@ export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   displayName: "Personal Lifetime Wealth (Age 30, 1% Treaty)",
   description: "Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
   sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/personal-lifetime-wealth-calc",
   confidence: "medium",
   formula: "NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
   latex: "\\begin{gathered}\nWealth_{lifetime} \\\\\n= \\text{NPV}(\\text{Peace} + \\text{Health} \\\\\n+ \\text{Productivity} + \\text{Earnings})\n\\end{gathered}",
@@ -4654,7 +4654,7 @@ export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   displayName: "Lifetime Benefit for Age 30 Baseline Scenario",
   description: "Lifetime benefit for age 30 baseline scenario ($4.3M)",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/personal-lifetime-wealth-calc",
   confidence: "high",
   formula: "Total lifetime health gains from 1% treaty",
 };

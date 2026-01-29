@@ -6098,7 +6098,7 @@
   - References
   - Technical Parameters
 
-#### knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+#### knowledge/appendix/personal-lifetime-wealth-calc.qmd
 **Title:** Disease Eradication Model - Personal Lifetime Wealth Analysis
 **Description:** Comprehensive analysis showing $4.3M lifetime benefit with 72-year life extension using disease eradication model (20-year scenario)
 **Stats:** 3,365 words | 597 lines
