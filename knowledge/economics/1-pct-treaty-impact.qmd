@@ -2,13 +2,14 @@
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
 description: At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending to pragmatic trials increases capacity {{< var dfda_trial_capacity_multiplier >}}×, reducing this to ~{{< var dfda_queue_clearance_years >}} and delivering treatments decades earlier. Cost-effectiveness {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY (treaty) or {{< var dfda_direct_funding_cost_per_daly >}}/DALY (direct funding) both more cost-effective than bed nets.
 abstract: |
-  {{< var diseases_without_effective_treatment >}} diseases have 0 FDA-approved treatments. At current trial
-  capacity ({{< var new_disease_first_treatments_per_year >}} new first treatments/year), clearing the
-  queue takes ~{{< var status_quo_queue_clearance_years >}}.
+  {{< var diseases_without_effective_treatment >}} diseases have 0 FDA-approved treatments. At current
+  trial
+  capacity ({{< var new_disease_first_treatments_per_year >}} new first treatments/year), exploring
+  the therapeutic search space takes ~{{< var status_quo_queue_clearance_years >}}.
 
   Redirect {{< var treaty_reduction_pct >}} of military spending ({{< var treaty_annual_funding >}}/year)
-  to pragmatic clinical trials. Trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}×. Queue
-  clears in ~{{< var dfda_queue_clearance_years >}} instead of centuries. Average treatment reaches
+  to pragmatic clinical trials. Trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}×. Search
+  space explored in ~{{< var dfda_queue_clearance_years >}} instead of centuries. Average treatment reaches
   patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. Timeline shift saves
   {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, valued at
   {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
@@ -69,14 +70,14 @@ aliases:
 ::: {.callout-note}
 ## Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
 
-This is a **queue/throughput model result**, not "time travel" or a prediction that we will achieve results centuries from now:
+This is a **discovery capacity model result**, not "time travel" or a prediction that we will achieve results centuries from now:
 
-- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to clear this "queue." Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces queue clearance to ~{{< var dfda_queue_clearance_years >}}.
+- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to explore this therapeutic search space. Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces exploration time to ~{{< var dfda_queue_clearance_years >}}.
 - **The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents**: The average time a treatment that *could* be discovered today would have waited under the old system versus the new system.
 - **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 :::
 
-![Comparison of treatment discovery throughput: The status quo acts as a bottleneck taking centuries to clear the disease queue, while the expanded capacity clears the backlog in decades.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-queue-model-bw-academic.jpg)
+![Comparison of treatment discovery throughput: The status quo acts as a bottleneck taking centuries to explore the therapeutic search space, while the expanded capacity explores it in decades.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-queue-model-bw-academic.jpg)
 
 **How the {{< var dfda_trial_capacity_multiplier >}}× capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
@@ -469,7 +470,7 @@ Of {{< var global_disease_deaths_daily >}} daily deaths:
 
 This differs from "currently preventable" deaths (20-30M annually via vaccines, sanitation, behavior change). The {{< var eventually_avoidable_death_pct >}} figure represents maximum achievable with advanced biotechnology over decades, not current interventions.
 
-The lives saved calculation measures **timeline acceleration**, not current curability. With a dFDA's {{< var dfda_trial_capacity_multiplier >}}× trial capacity increase, the average disease receives first treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases - some first treatments arrive much sooner (early in the queue), others somewhat later (end of queue), with {{< var dfda_trial_capacity_treatment_acceleration_years >}} being the average acceleration.
+The lives saved calculation measures **timeline acceleration**, not current curability. With a dFDA's {{< var dfda_trial_capacity_multiplier >}}× trial capacity increase, the average disease receives first treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases: some first treatments arrive much sooner (early in the therapeutic search space), others somewhat later (later in exploration), with {{< var dfda_trial_capacity_treatment_acceleration_years >}} being the average acceleration.
 
 ## Why {{< var treaty_reduction_pct >}} Is Enough
 
@@ -991,21 +992,21 @@ The timeline shift combines two independent effects:
 
 **Component A: Treatment Acceleration from Trial Capacity**
 
-**Step 1: Status quo queue clearance time**
+**Step 1: Status quo time to explore therapeutic search space**
 
 - Diseases without treatment: {{< var diseases_without_effective_treatment >}}
 - Current first treatment rate: {{< var new_disease_first_treatments_per_year >}} diseases/year
-- Queue clearance: {{< var status_quo_queue_clearance_years >}}
+- Time to explore search space: {{< var status_quo_queue_clearance_years >}}
 
 {{< var status_quo_queue_clearance_years_latex >}}
 
-**Step 2: Average wait time in queue**
+**Step 2: Expected time to first treatment**
 
-- Average disease is in middle of queue: {{< var status_quo_avg_years_to_first_treatment >}}
+- Average disease is in middle of the search space: {{< var status_quo_avg_years_to_first_treatment >}}
 
 **Step 3: Accelerated treatment timeline**
 
-With {{< var dfda_trial_capacity_multiplier >}} capacity, queue clears {{< var dfda_trial_capacity_multiplier >}}× faster. The average disease arrives {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier:
+With {{< var dfda_trial_capacity_multiplier >}} capacity, the search space is explored {{< var dfda_trial_capacity_multiplier >}}× faster. The average disease receives treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier:
 
 {{< var dfda_trial_capacity_treatment_acceleration_years_latex >}}
 
@@ -1127,7 +1128,7 @@ The complete ROI includes the full timeline shift health benefits:
 | Claim | Value | Derivation | Inputs |
 |-------|-------|------------|--------|
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Patients fundable ÷ current slots | Funding, trial cost, current capacity |
-| Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Treatment acceleration + efficacy lag | Queue model, multiplier, regulatory data |
+| Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Treatment acceleration + efficacy lag | Discovery capacity model, multiplier, regulatory data |
 | DALYs Averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | DALY burden × avoidable × shift | WHO GBD, avoidability assumption |
 | Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Campaign cost ÷ DALYs | Campaign budget, DALYs |
 | ROI (Conservative) | {{< var dfda_roi_rd_only >}} | NPV benefits ÷ NPV costs | Trial savings, discount rate |
