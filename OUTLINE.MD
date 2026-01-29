@@ -1623,23 +1623,20 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 10,839
+**Files:** 1 | **Words:** 10,168
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 10,839 words | 1,133 lines
+**Stats:** 10,168 words | 1,063 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
   - Protocol, Not Platform
     - What You Get
     - Key Findings
-  - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
-  - Vision and Capabilities
-    - Core Model: An Open Coordination Protocol
-    - Key Capabilities
-    - Potential Impact on the Status Quo
+    - The Ask
+  - Potential Impact on the Status Quo
   - Addressing Key Concerns
     - Why This Differs from Failed Megaprojects
     - Why "Eventually Avoidable" Matters
@@ -1678,9 +1675,7 @@
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
       - The Conservative Default: Linear Assumption
   - Data Sources and Methodological Notes
-  - Daily Opportunity Cost of Inaction {#daily-opportunity-cost-of-inaction}
-      - Base Case: Daily Lost QALYs and Financial Savings
-      - Discussion of Uncertainty and Key Variables
+  - Next Steps
   - Conclusion
     - Disclaimer
   - Verification: Complete Derivation Chains
@@ -2098,7 +2093,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 340,756
+**Files:** 86 | **Words:** 340,085
 
 #### index.qmd
 **Title:** Start Here
@@ -6174,18 +6169,15 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 10,839 words | 1,133 lines
+**Stats:** 10,168 words | 1,063 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
   - Protocol, Not Platform
     - What You Get
     - Key Findings
-  - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
-  - Vision and Capabilities
-    - Core Model: An Open Coordination Protocol
-    - Key Capabilities
-    - Potential Impact on the Status Quo
+    - The Ask
+  - Potential Impact on the Status Quo
   - Addressing Key Concerns
     - Why This Differs from Failed Megaprojects
     - Why "Eventually Avoidable" Matters
@@ -6224,9 +6216,7 @@
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
       - The Conservative Default: Linear Assumption
   - Data Sources and Methodological Notes
-  - Daily Opportunity Cost of Inaction {#daily-opportunity-cost-of-inaction}
-      - Base Case: Daily Lost QALYs and Financial Savings
-      - Discussion of Uncertainty and Key Variables
+  - Next Steps
   - Conclusion
     - Disclaimer
   - Verification: Complete Derivation Chains
@@ -7500,6 +7490,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 545,937
+- Total words: 544,595
 - Orphaned files: 20
 - Paper configs: 12

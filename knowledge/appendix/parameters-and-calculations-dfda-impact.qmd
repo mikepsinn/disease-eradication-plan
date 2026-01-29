@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 118 parameters used in the analysis, organized by type:
+This appendix documents all 117 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 39
-- Calculated values: 56
+- Calculated values: 55
 - Core definitions: 23
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (56 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
+[Calculated Values](#sec-calculated) (55 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1172,53 +1172,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_queue_clearance_years.qmd >}}
-
-:::
-
-### Daily R&D Savings from Trial Cost Reduction: $161M {#sec-dfda_rd_savings_daily}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Daily R&D savings from trial cost reduction (opportunity cost of delay)
-
-**Inputs**:
-
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
-
-$$
-\begin{gathered}
-Savings_{RD,daily} \\
-= Benefit_{RD,ann} \times 0.00274 \\
-= \$58.6B \times 0.00274 \\
-= \$161M \\[0.5em]
-\text{where } Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
-= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
-= 1 - \frac{\$929}{\$41K} \\
-= 97.7\%
-\end{gathered}
-$$
-
-**Methodology**: [../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction](../appendix/dfda-impact-paper#daily-opportunity-cost-of-inaction)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_rd_savings_daily.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_rd_savings_daily.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_rd_savings_daily.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_rd_savings_daily.qmd >}}
 
 :::
 

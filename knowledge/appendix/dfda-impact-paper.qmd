@@ -50,7 +50,7 @@ The figures below represent **cumulative benefits over the entire acceleration p
 
 ## Executive Summary
 
-**The Problem:** Clinical trials cost billions and take a decade per drug. Most humans die before the drugs that could save them finish paperwork. Out of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+**The Problem:** Clinical trials cost billions and require a decade per drug. The majority of patients with treatable conditions die before potentially effective treatments complete regulatory approval. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 ![Architecture of the dFDA protocol showing the flow from decentralized patient participation and mobile data collection to aggregated treatment rankings and outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
@@ -59,7 +59,7 @@ The figures below represent **cumulative benefits over the entire acceleration p
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
 3. **Real-World Data Aggregation**: Outcomes from all participants are aggregated into a unified database
-4. **Treatment Rankings**: Like "Consumer Reports for drugs" - every treatment ranked by real-world effectiveness for each condition
+4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
 5. **Outcome Labels**: "Nutrition facts for drugs" showing exactly what happened to real patients who tried each treatment
 
 ::: {.callout-note}
@@ -80,9 +80,9 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 ### What You Get
 
-- **Cost Cuts:** Clinical trials cost {{< var dfda_trial_cost_reduction_pct >}} less ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) prove this works. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
-- **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
-- **Fewer Dead People:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} extra life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift (from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination), plus faster access, better prevention data, and drugs for diseases companies currently ignore.
+- **Cost Reduction:** Clinical trial costs decrease by {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) demonstrate feasibility. Applied to the {{< var global_clinical_trials_spending_annual >}} annual trial market, this yields [tens of billions in savings](#roi-analysis).
+- **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
+- **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
 
 ![A comparative impact summary showing the transition from traditional trials to the proposed framework, highlighting a 97.7% cost reduction, a 12.3x increase in trial capacity, and a gain of 565 billion DALYs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
@@ -116,15 +116,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 :::
 
-::: {.callout-note}
-## Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
-
-This is a **capacity vs. backlog model**, not "time travel" or a prediction about distant futures:
-
-- **What it means**: If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to work through this backlog. Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces this to ~{{< var dfda_queue_clearance_years >}}.
-- **The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents**: The average time a treatment that *could* be discovered today would have waited under the old system versus the new system.
-- **Why it matters**: Treatments discovered sooner save lives during the intervening period. This cumulative benefit over the acceleration period yields the headline mortality and economic figures.
-:::
+**Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year figure represents a capacity-versus-backlog model. Testing {{< var drug_disease_combinations_possible >}} drug-disease combinations at the current rate ({{< var new_disease_first_treatments_per_year >}}/year) would require ~{{< var status_quo_queue_clearance_years >}}. Scaling capacity {{< var dfda_trial_capacity_multiplier >}}× reduces this to ~{{< var dfda_queue_clearance_years >}}. The timeline shift represents the average acceleration for treatments that could be discovered today; treatments discovered sooner save lives during the intervening period, yielding the headline mortality and economic figures.
 
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the system enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
@@ -641,7 +633,7 @@ A common misconception: The 1962 Kefauver-Harris Amendment was passed in respons
 
 The irony: **62 amendments designed around a safety crisis created an efficacy bureaucracy.** The {{< var efficacy_lag_years >}} delay between Phase I safety verification and final approval has postponed access to beneficial treatments for billions of patient-years since 1962 - not because of safety testing, but because of efficacy proving.
 
-The {{< var type_ii_error_cost_ratio >}} ratio is not a claim that safety testing is worthless. Phase I safety testing is preserved in this framework. The ratio quantifies the cost of the **efficacy lag** - the years spent proving drugs work *after* we already know they're safe. Even if thalidomide-scale events occurred **annually** (they don't - thalidomide was exceptional), the math still favors faster post-safety access.
+The {{< var type_ii_error_cost_ratio >}} ratio is not a claim that safety testing is worthless. Phase I safety testing is preserved in this framework. The ratio quantifies the cost of the **efficacy lag** - the years spent proving drugs work *after* we already know they're safe. Even if thalidomide-scale events occurred annually (they do not; thalidomide was exceptional), the analysis demonstrates that faster post-safety access remains favorable.
 :::
 
 #### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
@@ -791,40 +783,13 @@ If returns are actually compounding (plausible given platform effects), our esti
    - Quality-of-life improvements, lower healthcare costs from faster drug innovation, and potentially fewer adverse events from earlier detection.
    - These are positive externalities that can significantly enlarge real ROI from a societal perspective.
 
-## Daily Opportunity Cost of Inaction {#daily-opportunity-cost-of-inaction}
 
-This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing an infrastructure for a decentralized framework for drug assessment. By translating the annualized benefits identified in this analysis into a daily metric, you can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day such a system is not operational.
-
-#### Base Case: Daily Lost QALYs and Financial Savings
-
-The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
-
-- **Total DALYs at Stake:**
-  - The analysis ([Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org)) projects **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag. This represents the one-time health benefit from accelerating the cure timeline.
-
-- **Daily R&D Waste:**
-  - The analysis ([Gross R&D Savings](#gross-r-and-d-savings-from-implementing-a-decentralized-framework)) projects gross R&D savings of **{{< var dfda_benefit_rd_only_annual >}} per year** by reducing the costs of the **{{< var global_clinical_trials_spending_annual >}} global clinical trial market** by **{{< var dfda_trial_cost_reduction_pct >}}**. This represents value that is currently being spent inefficiently.
-  - The daily financial loss from this inefficiency is:
-
-{{< var dfda_rd_savings_daily_latex >}}
-
-#### Discussion of Uncertainty and Key Variables
-
-The total one-time benefit from eliminating the efficacy lag depends on several key variables:
-
-1. **Adoption Rate:** The calculations above implicitly assume full adoption. As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual, with benefits ramping up over time as the framework becomes standard.
-
-2. **Magnitude of R&D Savings:** The percentage reduction in R&D costs is a critical variable. Our central estimate of {{< var dfda_trial_cost_reduction_pct >}} is based on systematic evidence from multiple pragmatic trials (ADAPTABLE, RECOVERY, PCORnet studies). The Monte Carlo sensitivity analysis captures this uncertainty by sampling from the confidence interval.
-
-3. **Realization of Health Gains:** The link between a more efficient research ecosystem and concrete health outcomes (DALYs) is complex. The estimates are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the impact of such a framework remains a projection.
-
-**Conclusion:** Despite these uncertainties, the analysis consistently shows substantial benefits across all plausible scenarios. The current inefficient clinical research paradigm delays life-saving treatments and wastes resources that could accelerate medical progress.
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to {{< var dfda_trial_cost_reduction_factor >}}), accelerating the pace of approvals, and broadening the scope of what treatments get tested. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront + discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends around {{< var global_clinical_trials_spending_annual >}} per year on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}** once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized model offers the potential to reduce clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, accelerate approval timelines, and expand therapeutic coverage to neglected diseases. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}** at scale.
 
-Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this framework creates personalized healthcare that actually works, globally.
+Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, this framework enables evidence-based personalized medicine at global scale.
 
 ### Disclaimer
 
