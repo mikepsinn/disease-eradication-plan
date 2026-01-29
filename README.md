@@ -33,7 +33,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
-> 6.65k diseases diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year new first treatments/year), clearing the queue takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1×. Queue clears in ~36 years instead of centuries. Average ...
+> 6.65k diseases diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year new first treatments/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1×. Search space explored in ~36 years i...
 
 
 ## Working Papers

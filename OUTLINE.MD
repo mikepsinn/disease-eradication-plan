@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,296
+**Files:** 4 | **Words:** 88,316
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1360,7 +1360,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,163 words | 2,633 lines
+**Stats:** 27,183 words | 2,634 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1615,12 +1615,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 9,967
+**Files:** 1 | **Words:** 11,537
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 9,967 words | 1,059 lines
+**Stats:** 11,537 words | 1,219 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1633,6 +1633,7 @@
     - Potential Impact on the Status Quo
   - Addressing Key Concerns
     - Why This Differs from Failed Megaprojects
+    - Historical Validation: Pre-1962 Physician-Led Efficacy Testing
     - Why "Eventually Avoidable" Matters
     - Trial Funding Scenario
   - Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
@@ -1658,6 +1659,7 @@
     - Safety and Risk Management
       - Current System Limitations: Dangerously Blind to Real-World Harms
       - Proposed System Safety Advantages
+      - Detection Timeline Comparison
       - Comparative Safety Surveillance
       - Pooled Liability Insurance
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
@@ -1667,6 +1669,7 @@
     - Current Exploration Rate vs. Therapeutic Space
     - Addressing the Returns Question: Diminishing, Linear, or Compounding?
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
+      - Mathematical Framework: When Would Diminishing Returns Dominate?
       - The Conservative Default: Linear Assumption
   - Data Sources and Methodological Notes
   - Conclusion
@@ -1683,7 +1686,7 @@
     - Adoption Rate Assumptions
     - Cost Reduction Assumptions
     - Eventually Avoidable Mortality Assumption
-    - Counterfactual Baseline
+    - Counterfactual Baseline Specification
     - Methodology Validation Against Accepted Benchmarks
   - Appendix Calculation Frameworks and Detailed Analysis
     - Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
@@ -1691,6 +1694,7 @@
       - Health Impact Uncertainty Analysis
       - Financial Visualizations
     - Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
+      - QALY Benefit Streams Breakdown
       - DALY Sensitivity Analysis
     - Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
     - Methodology Notes
@@ -2085,7 +2089,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 335,469
+**Files:** 86 | **Words:** 336,767
 
 #### index.qmd
 **Title:** Start Here
@@ -2861,7 +2865,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,163 words | 2,633 lines
+**Stats:** 27,183 words | 2,634 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -4011,7 +4015,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,152 words | 1,332 lines
+**Stats:** 12,861 words | 1,280 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4060,13 +4064,10 @@
   - Challenges and Failure Modes
     - Why Goodhart's Law Doesn't Apply Here
     - Oracle Capture
-    - Edge Cases and Novelty
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
-  - Hybrid Architectures
-    - The Constrained Discretion Model
-    - Integration with Incentive Alignment Bonds
+  - The Wrapper Architecture: Integration with IABs
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
     - A Taxonomy of Affected Parties
@@ -6094,7 +6095,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 9,967 words | 1,059 lines
+**Stats:** 11,537 words | 1,219 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6107,6 +6108,7 @@
     - Potential Impact on the Status Quo
   - Addressing Key Concerns
     - Why This Differs from Failed Megaprojects
+    - Historical Validation: Pre-1962 Physician-Led Efficacy Testing
     - Why "Eventually Avoidable" Matters
     - Trial Funding Scenario
   - Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
@@ -6132,6 +6134,7 @@
     - Safety and Risk Management
       - Current System Limitations: Dangerously Blind to Real-World Harms
       - Proposed System Safety Advantages
+      - Detection Timeline Comparison
       - Comparative Safety Surveillance
       - Pooled Liability Insurance
   - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
@@ -6141,6 +6144,7 @@
     - Current Exploration Rate vs. Therapeutic Space
     - Addressing the Returns Question: Diminishing, Linear, or Compounding?
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
+      - Mathematical Framework: When Would Diminishing Returns Dominate?
       - The Conservative Default: Linear Assumption
   - Data Sources and Methodological Notes
   - Conclusion
@@ -6157,7 +6161,7 @@
     - Adoption Rate Assumptions
     - Cost Reduction Assumptions
     - Eventually Avoidable Mortality Assumption
-    - Counterfactual Baseline
+    - Counterfactual Baseline Specification
     - Methodology Validation Against Accepted Benchmarks
   - Appendix Calculation Frameworks and Detailed Analysis
     - Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
@@ -6165,6 +6169,7 @@
       - Health Impact Uncertainty Analysis
       - Financial Visualizations
     - Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
+      - QALY Benefit Streams Breakdown
       - DALY Sensitivity Analysis
     - Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
     - Methodology Notes
@@ -6566,7 +6571,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 918 words | 106 lines
+**Stats:** 917 words | 106 lines
 
 - Papers & Publications
   - Books
@@ -6988,12 +6993,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,152
+**Files:** 1 | **Words:** 12,861
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,152 words | 1,332 lines
+**Stats:** 12,861 words | 1,280 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7042,13 +7047,10 @@
   - Challenges and Failure Modes
     - Why Goodhart's Law Doesn't Apply Here
     - Oracle Capture
-    - Edge Cases and Novelty
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
-  - Hybrid Architectures
-    - The Constrained Discretion Model
-    - Integration with Incentive Alignment Bonds
+  - The Wrapper Architecture: Integration with IABs
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
     - A Taxonomy of Affected Parties
@@ -7415,6 +7417,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 537,859
+- Total words: 540,456
 - Orphaned files: 20
 - Paper configs: 12

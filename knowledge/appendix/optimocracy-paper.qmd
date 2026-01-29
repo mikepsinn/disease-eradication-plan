@@ -72,7 +72,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 **The mechanism:** Optimocracy proposes rules-based spending tied to outcomes citizens actually want (median income growth, health outcomes). Citizens vote on the goal; algorithms optimize spending to achieve it; independent data sources verify results. No politician decides which contractor gets the earmark. The metric does.
 
-**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. Optimocracy publishes recommendations for each major vote; legislators vote however they choose; their alignment with recommendations is tracked publicly. When outcomes are measured years later, those whose voting records aligned with evidence-based recommendations receive larger payouts via Incentive Alignment Bonds. This is performance pay for politicians: follow the evidence-based "index," get paid when it works. Citizens choose what to optimize (democratic choice, made rarely). Algorithms recommend how (consistent analysis, transparent methodology). Politicians decide whether to follow (accountability, recorded alignment). Human judgment handles genuinely novel situations and value conflicts.
+**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. Optimocracy publishes recommendations for each major vote; legislators vote however they choose; their alignment with recommendations is tracked publicly. When outcomes are measured years later, those whose voting records aligned with evidence-based recommendations receive larger payouts via Incentive Alignment Bonds. This is performance pay for politicians: follow the evidence-based "index," get paid when it works. Citizens choose what to optimize (democratic choice, made rarely). Algorithms recommend how (consistent analysis, transparent methodology). Politicians decide whether to follow (accountability, recorded alignment).
 
 **The depolarization effect:** Current politics rewards tribal opposition. Research shows public support for the *same* policy flips dramatically based on which party controls the White House. Optimocracy shifts the question from "whose policy?" to "what works?" The metric improves or it doesn't. The algorithm doesn't know which party proposed the budget.
 
@@ -83,7 +83,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 | "Goodhart's Law: metrics get gamed" | Traditional Goodhart examples (teaching to test, hospital readmissions) involve gaming metrics *without* improving underlying reality. Median income and median healthy life years are robust: you can't fake purchasing power or mortality at scale. The real risk is measurement methodology capture (addressed under Oracle Capture). |
 | "Who controls the oracles?" | Multiple independent sources (Census, Fed, academics), median aggregation. No single entity controls measurement. |
 | "This is undemocratic" | More democratic: citizens actually get what they voted for. Current system: vote for outcomes, get captured allocation. |
-| "What about edge cases and novel situations?" | Hybrid architecture preserves human discretion. Algorithms handle routine allocation; humans handle genuine novelty. |
+| "What about edge cases and novel situations?" | Politicians always decide. The algorithm only recommends. If recommendations seem wrong for novel situations, politicians ignore them and face public accountability for that choice. |
 | "Central banks tried this and failed" | Central banks shifted capture from politicians to financial sector. We learn from this: diversify oracles, measure outcomes not inputs. |
 | "Politicians will never give up power" | They don't have to. Wrapper architecture works as advisory layer. IABs make ignoring good advice politically costly. |
 
@@ -95,6 +95,8 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). Pragmatic clinical trials demonstrate even higher returns ({{< var dfda_roi_rd_only >}} BCR) by generating treatment evidence at a fraction of traditional trial costs [@dfda-impact-paper-2025]. GiveWell, Open Philanthropy, the IMF, and academic institutions produce similar analyses.
 
+![A conceptual diagram showing the disconnect between high-return evidence and government action, where political incentives such as reelection and campaign contributions act as a barrier to implementing cost-effective programs.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
+
 Yet government spending patterns remain largely unresponsive to this information. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act on this knowledge because acting on it doesn't maximize what benefits them personally (reelection probability, campaign contributions, post-office career prospects).
@@ -102,6 +104,8 @@ The problem is not information but incentives. Politicians know which programs p
 ### The Political Dysfunction Tax
 
 Current allocation systems show near-zero correlation with measured welfare outcomes, creating systematic divergence from optimal resource distribution. The largest component of this welfare loss is the **Crony Tax** (resources directed toward concentrated interests rather than outcome-maximizing alternatives).
+
+![A breakdown of the Political Dysfunction Tax components, illustrating how factors like the Crony Tax and ideological gridlock subtract from potential welfare outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-political-dysfunction-tax-bw-academic.jpg)
 
 Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delrosal2011], with some studies finding effects as large as 45% [@laband1988]. Combined with short-termism, ignorance, and ideological gridlock, the total **Political Dysfunction Tax** is estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare (see formal model below).
 
@@ -120,6 +124,8 @@ This architecture eliminates the Political Dysfunction Tax for decisions within 
 **Step 1: Adopt the Health & Wealth metrics (defaults provided, amendments possible)**
 
 The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These capture most policy effects through two hard-to-game, well-measured outcomes. Citizens can amend these through constitutional process, but the defaults work out of the box. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
+
+![A workflow diagram showing the five-step Optimocracy process, from metric selection and algorithmic recommendations to political voting, outcome measurement, and financial incentive distribution.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-it-works-in-practice-bw-academic.jpg)
 
 **Step 2: A computer system optimizes budget allocation**
 
@@ -150,6 +156,8 @@ You don't need superintelligent AI. You need a clear, measurable goal, historica
 This paper makes three contributions to the political economy literature:
 
 1. **Empirical**: We synthesize evidence on the Political Dysfunction Tax, estimating welfare losses from suboptimal policy at {{< var political_dysfunction_tax_total_pct >}} of potential GDP, decomposed into cronyism, short-termism, ignorance, and ideological gridlock.
+
+![A conceptual framework illustrating the three core contributions: the decomposition of the Political Dysfunction Tax, the theoretical Optimocracy Dominance Condition, and the proposed implementation architecture.](/assets/images/optimocracy-paper/optimocracy-paper-section-contributions-bw-academic.jpg)
 
 2. **Theoretical**: We formalize the Optimocracy Dominance Condition (Proposition 1), identifying when outcome-optimizing allocation outperforms capture-prone governance, and engage with the mechanism design impossibility theorems (Arrow, Gibbard-Satterthwaite) to specify boundary conditions.
 
@@ -186,7 +194,7 @@ Where:
 
 **Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
 
-Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by constraining captured allocation while preserving human override for genuine novelty.
+Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by making evidence-based recommendations public and rewarding politicians who follow them when metrics improve.
 
 ### Documented Welfare Losses by Policy Domain
 
@@ -219,6 +227,8 @@ This pattern (massive welfare losses persisting due to political economy constra
 
 The theoretical estimate of {{< var political_dysfunction_tax_total_pct >}} can be triangulated with bottom-up accounting of documented US policy costs. Our [Federal Resource Allocation Efficiency Audit](federal-efficiency-audit.qmd) enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems, totaling {{< var bad_policy_cost_total_us >}} ({{< var bad_policy_cost_total_us_pct_gdp >}} of GDP, 95% CI: 11.9%-26.7%).
 
+![A comparison showing the convergence between theoretical and bottom-up estimates of the Political Dysfunction Tax, illustrating the overlap in their confidence intervals and the disparity between US and Switzerland spending vs. health outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
+
 **Key finding:** The bottom-up estimate converges with the theoretical estimate of {{< var political_dysfunction_tax_total_pct >}}, suggesting the Political Dysfunction Tax is not merely theoretical but measurable through specific policy costs. International comparisons reinforce this: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
 ### Why Information Doesn't Solve the Problem
@@ -243,6 +253,8 @@ The empirical evidence suggests:
 2. **Information alone is insufficient**: Better data does not change political incentives.
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
+
+![A conceptual diagram showing how political dysfunction and interest capture lead to systemic welfare loss, highlighting the shift toward outcome-optimizing mechanism design.](/assets/images/optimocracy-paper/optimocracy-paper-section-implications-for-mechanism-design-bw-academic.jpg)
 
 This motivates the Optimocracy thesis: if current systems systematically fail to optimize for welfare, outcome-optimizing systems may improve outcomes. The following sections examine precedents, mechanisms, and limitations.
 
@@ -299,7 +311,11 @@ The Soviet system attempted comprehensive optimization: central planners would c
 2. **Incentive problem**: Planners had no personal stake in outcomes and faced perverse incentives (meet quotas, regardless of quality or need).
 3. **Scope problem**: Central planning attempted to optimize *everything*, including decisions where local knowledge is essential.
 
+![A conceptual diagram showing the information bottleneck in central planning, where a central node fails to process distributed local knowledge and align with individual incentives.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
+
 #### Failed Algorithmic Governance in Finance
+
+![A flowchart showing the failure cycle of credit rating agencies, from issuer-driven incentive misalignment to metric gaming and the resulting systemic collapse.](/assets/images/optimocracy-paper/optimocracy-paper-section-failed-algorithmic-governance-in-finance-bw-academic.jpg)
 
 While political systems fail through capture and misalignment, algorithmic systems have their own failure modes. Financial markets provide cautionary tales:
 
@@ -378,7 +394,7 @@ Optimocracy improves on this through transparency and public accountability:
 
 1. **Published rules**: Allocation formulas and metric definitions are public. Deviation is immediately visible.
 2. **Independent verification**: Multiple institutions report outcomes. Manipulation requires coordinated fraud.
-3. **Wrapper architecture**: Politicians retain override authority, but overrides are recorded and visible to voters.
+3. **Wrapper architecture**: Politicians vote freely, but their alignment with recommendations is recorded and visible to voters.
 
 This isn't perfect commitment (no system is), but it raises the political cost of deviation by making it visible.
 
@@ -660,7 +676,7 @@ Optimocracy should NOT govern decisions that:
 3. **Require individual judgment**: Due process, rights, case-by-case assessment
 4. **Have existential stakes**: War, constitutional structure, regime legitimacy
 
-The hybrid architecture (detailed in Section 8) preserves democratic input for genuinely contested decisions while using outcome-optimizing systems for routine allocation.
+The wrapper architecture preserves democratic input for all decisions. Politicians vote freely; the system tracks alignment with recommendations and rewards outcomes.
 
 ## Advantages Over Political Governance
 
@@ -711,7 +727,7 @@ Optimocracy allocation is fully transparent:
 | Allocation results | Buried in budget documents | Published recommendations, real-time |
 | Deviation detection | Requires investigative journalism | Automatic, publicly verifiable |
 
-**Any citizen can verify that allocation follows the rules.** More importantly, deviation is immediately visible. The algorithm's recommendations are public; any politician who overrides them must do so on the record. You can't secretly redirect funds when the optimal allocation is published and deviations are tracked. Transparency creates accountability that closed-door negotiations cannot.
+**Any citizen can verify that allocation follows the rules.** More importantly, deviation is immediately visible. The algorithm's recommendations are public; any politician who ignores them must do so on the record. You can't secretly redirect funds when the optimal allocation is published and deviations are tracked. Transparency creates accountability that closed-door negotiations cannot.
 
 **The audit trail advantage:** When outcomes disappoint, capture-prone governance provides plausible deniability ("the situation was complex," "we had to compromise"). Optimocracy provides an audit trail: here was the metric, here was the data, here was the algorithm, here was the allocation. If outcomes disappoint, we can identify exactly where the model was wrong and improve it. Accountability becomes tractable.
 
@@ -787,7 +803,7 @@ The earlier claim that government statistics provide reasonable reliability is o
 
 Government statistical agencies are not neutral. They face political pressure, budget constraints, and revolving-door incentives. With trillions in allocation at stake, the incentive to influence measurement is enormous relative to the Bureau of Labor Statistics' ~2,000 employees and $750M budget.
 
-The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (Section 8). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
+The solution is not to trust government statistics less, but to triangulate them against decentralized citizen surveys (see Verification Layer in Section 5). If BLS claims unemployment fell but citizen surveys show increased job-seeking and financial stress, the discrepancy is visible and investigable. Government statistics remain useful for methodology consistency and long-term comparability; decentralized surveys provide capture-resistant ground truth that exposes manipulation.
 
 **Multi-source verification and its limits:**
 
@@ -807,7 +823,7 @@ Distributed verification networks work for data where truth is verifiable and im
 3. **Stakes are enormous**: Trillions in allocation vs. millions in collateral
 4. **Attackers are sophisticated**: Nation-states, not individual cheaters
 
-Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?" The answer may be yes: oracle capture affects measurement, while allocation capture affects outcomes directly. Additionally, the wrapper architecture (Section 10) converts oracle capture from a catastrophic failure mode to a degraded-performance mode, as politicians can ignore manipulated data.
+Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?" The answer may be yes: oracle capture affects measurement, while allocation capture affects outcomes directly. Additionally, the wrapper architecture converts oracle capture from a catastrophic failure mode to a degraded-performance mode, as politicians can ignore manipulated data.
 
 **Defense-in-Depth: Making Oracle Capture Difficult**
 
@@ -821,19 +837,6 @@ The primary defense is institutional diversity and redundancy:
 | **Academic replication** | Fund independent researchers to replicate official statistics | Creates adversarial verification with reputational incentives for accuracy. |
 
 **Design principle:** No single defense is sufficient. Layer them so successful manipulation requires defeating multiple independent institutions simultaneously.
-
-### Edge Cases and Novelty
-
-Algorithms optimize within their training distribution. Novel situations (pandemics, wars, technological discontinuities) may fall outside algorithmic bounds.
-
-**Mitigation strategies:**
-
-1. **Exception handling**: Define conditions under which human override is permitted
-2. **Bounded discretion**: Allow human adjustment within specified ranges
-3. **Sunset provisions**: Require periodic democratic reauthorization
-4. **Circuit breakers**: Pause algorithmic allocation during defined crisis conditions
-
-The hybrid architecture (Section 8) addresses this challenge by combining algorithmic optimization for routine decisions with democratic governance for genuine novelty.
 
 ### Democratic Legitimacy
 
@@ -894,42 +897,7 @@ The Optimocracy thesis would be falsified by:
 
 We commit to updating or abandoning the proposal if evidence accumulates against these predictions.
 
-## Hybrid Architectures
-
-Pure Optimocracy (fully outcome-optimizing allocation) is neither feasible nor desirable for all governance functions. A more realistic architecture combines algorithmic and democratic elements:
-
-### The Constrained Discretion Model
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    ALGORITHMIC CORE                      │
-│  - Routine allocation within established categories     │
-│  - Metric optimization with verified outcomes           │
-│  - Rule-based enforcement                               │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│                  BOUNDED DISCRETION                      │
-│  - Novel situations outside algorithmic bounds          │
-│  - Democratic deliberation with transparency            │
-│  - Decisions logged and evaluated against metrics       │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│                CONSTITUTIONAL REVISION                   │
-│  - Metric selection and modification                    │
-│  - Fundamental institutional changes                    │
-│  - Super-majority requirements, deliberative process    │
-└─────────────────────────────────────────────────────────┘
-```
-
-The relative size of each layer depends on institutional context and metric quality. The key principle: routine decisions with measurable outcomes belong in the algorithmic core; novel situations and value conflicts flow to deliberative layers.
-
-This architecture reserves democratic deliberation for decisions that genuinely require it while using outcome-optimizing allocation for routine decisions where optimization is straightforward.
-
-### Integration with Incentive Alignment Bonds
+## The Wrapper Architecture: Integration with IABs
 
 Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. For full IAB mechanism details including the three-layer legal architecture, see [Incentive Alignment Bonds](https://iab.warondisease.org). The integration works as follows:
 
@@ -1121,7 +1089,7 @@ Success here provides proof-of-concept for progressively harder domains: US heal
 
 ### Why Government Adoption Isn't Required
 
-The implementation phases above present government adoption as the goal. But there's a cleaner architecture: **Optimocracy as a permanent advisory layer, with IABs making its recommendations expensive to ignore.** (See IAB integration in Section 10 for the full mechanism.)
+The implementation phases above present government adoption as the goal. But there's a cleaner architecture: **Optimocracy as a permanent advisory layer, with IABs making its recommendations expensive to ignore.** (See The Wrapper Architecture section for the full mechanism.)
 
 Government "adoption" of Optimocracy would be nice, but it's not necessary. The wrapper architecture achieves most of the benefits without requiring politicians to voluntarily surrender control. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
 
@@ -1133,7 +1101,7 @@ Optimocracy offers a different approach: rather than relying on systems that don
 
 The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
 
-Optimocracy is not utopian. It faces real challenges: measurement methodology capture, edge cases, and democratic legitimacy. But these challenges are addressable through institutional diversity, hybrid architectures, and iterative implementation.
+Optimocracy is not utopian. It faces real challenges: measurement methodology capture, edge cases, and democratic legitimacy. But these challenges are addressable through institutional diversity, the wrapper architecture, and iterative implementation.
 
 The question is not whether Optimocracy is perfect; no governance system is. The question is whether outcome-optimizing algorithmic allocation produces better outcomes than captured allocation. The evidence suggests it does.
 
