@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 458 parameters used in the analysis, organized by type:
+This appendix documents all 453 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 186
+- External sources (peer-reviewed): 183
 - Calculated values: 169
-- Core definitions: 103
+- Core definitions: 101
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (186 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
+[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (101 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6684,28 +6684,24 @@ $$
 
 :::
 
-### Personal Lifetime Wealth (Age 30, 1% Treaty): $494K {#sec-personal_lifetime_wealth}
+### Personal Lifetime Wealth (QALY-Based): $3M {#sec-personal_lifetime_wealth}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.
+Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.
 
 **Inputs**:
 
 - [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
-\begin{gathered}
-Wealth_{lifetime} \\
-= \text{NPV}(\text{Peace} + \text{Health} \\
-+ \text{Productivity} + \text{Earnings})
-\end{gathered}
+Wealth_{lifetime} = T_{extend} \times Value_{QALY}
 $$
 
 **Methodology**: [../appendix/personal-lifetime-wealth-calc](../appendix/personal-lifetime-wealth-calc)
 
-*~ Medium confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
@@ -9432,18 +9428,6 @@ Average annual stock market return (10%)
 
 :::
 
-### Average US Hourly Wage: $30 {#sec-average_us_hourly_wage}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average US hourly wage
-
-**Source**: [@average-us-hourly-wage]
-
-*✓ High confidence*
-
-:::
-
 ### Agricultural Subsidies Deadweight Loss: $75B {#sec-bad_policy_cost_us_agricultural_subsidies}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9813,18 +9797,6 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-### Average Reading Speed: 200 words/minute {#sec-book_reading_speed_wpm}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average reading speed (conservative for non-fiction)
-
-**Source**: [@average-reading-speed]
-
-*✓ High confidence*
 
 :::
 
@@ -12490,18 +12462,6 @@ Average disability weight reduction from pharmaceutical treatment. Untreated chr
 
 :::
 
-### Typical CEO Hourly Rate: $10K {#sec-typical_ceo_hourly_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Typical CEO hourly rate
-
-**Source**: [@ceo-compensation]
-
-*✓ High confidence*
-
-:::
-
 ### US Alzheimer's Annual Cost: $355B {#sec-us_alzheimers_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14016,16 +13976,6 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 :::
 
-### Lifetime Benefit for Age 30 Baseline Scenario: $4.30M {#sec-effective_hourly_rate_lifetime_benefit}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Lifetime benefit for age 30 baseline scenario ($4.3M)
-
-*Core definition*
-
-:::
-
 ### Epigenetic Drug Targets: 1.50k targets {#sec-epigenetic_targets_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14184,7 +14134,7 @@ Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.
+[DEPRECATED] Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST ($1B) for consistency with VICTORY bond ROI calculations.
 
 #### Uncertainty Range
 
@@ -14447,16 +14397,6 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 #### Input Distribution
 
 {{< include ../figures/distribution-tested_relationships_estimate.qmd >}}
-
-*Core definition*
-
-:::
-
-### Total Words in the Book: 171k words {#sec-total_book_words}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total words in the book
 
 *Core definition*
 

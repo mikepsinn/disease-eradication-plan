@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 55 parameters used in the analysis, organized by type:
+This appendix documents all 54 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 27
 - Calculated values: 19
-- Core definitions: 9
+- Core definitions: 8
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (27 parameters) • [Core Definitions](#sec-definitions) (9 parameters)
+[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (27 parameters) • [Core Definitions](#sec-definitions) (8 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1647,28 +1647,6 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
-
-*Core definition*
-
-:::
-
-### IAB Bootstrap Campaign Cost: $100M {#sec-iab_bootstrap_campaign_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$50M, $200M] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $50M and $200M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-iab_bootstrap_campaign_cost.qmd >}}
 
 *Core definition*
 

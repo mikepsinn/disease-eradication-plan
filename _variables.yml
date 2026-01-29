@@ -64,11 +64,6 @@
   \ stock market return (10%) | ✓ High confidence | Unit: rate | Click to view details,\
   \ calculation & sources\">10%</a>"
 "average_market_return_pct_cite": "@warren-buffett-career-average-return-20-pct"
-"average_us_hourly_wage": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-average_us_hourly_wage\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-us-hourly-wage\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average US hourly wage | ✓ High confidence\
-  \ | Unit: USD/hour | Click to view details, calculation & sources\">$30</a>"
-"average_us_hourly_wage_cite": "@average-us-hourly-wage"
 "avg_life_extension_per_beneficiary": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-avg_life_extension_per_beneficiary\"\
   \ class=\"parameter-link\" data-source-ref=\"lichtenberg-life-years-saved-2019\"\
   \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Average years\
@@ -290,12 +285,6 @@
   \ | \U0001F4CA Peer-reviewed | 95% CI: [$78, $100] | Dist: Normal | Unit: USD/DALY\
   \ | Click to view details, calculation & sources\">$89 (95% CI: $78-$100)</a>"
 "bed_nets_cost_per_daly_cite": "@givewell-cost-per-life-saved"
-"book_reading_speed_wpm": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-book_reading_speed_wpm\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-reading-speed\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average reading speed (conservative\
-  \ for non-fiction) | ✓ High confidence | Unit: words/minute | Click to view details,\
-  \ calculation & sources\">200 words/minute</a>"
-"book_reading_speed_wpm_cite": "@average-reading-speed"
 "campaign_celebrity_endorsement": "<span class=\"parameter-definition\" title=\"Celebrity\
   \ and influencer endorsements | Unit: USD | Core definition\">$15M (95% CI: $10.5M-$19.5M)</span>"
 "campaign_community_organizing": "<span class=\"parameter-definition\" title=\"Community\
@@ -2052,12 +2041,6 @@
   \ | 95% CI: [0.4:1, 0.9:1] | Dist: Lognormal | Unit: ratio | Click to view details,\
   \ calculation & sources\">0.6:1 (95% CI: 0.4:1-0.9:1)</a>"
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
-"effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-effective_hourly_rate_lifetime_benefit\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/personal-lifetime-wealth-calc.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Lifetime benefit\
-  \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
-  \ health gains from 1% treaty | Unit: USD | Click to view details, calculation &\
-  \ sources\">$4.30M</a>"
 "efficacy_lag_cumulative_excess_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_cumulative_excess_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#scale\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cumulative\
@@ -2798,10 +2781,10 @@
   \ | ✓ High confidence | 95% CI: [19.0k genes, 21.0k genes] | Dist: Uniform | Unit:\
   \ genes | Click to view details, calculation & sources\">20.0k genes (95% CI: 19.0k\
   \ genes-21.0k genes)</a>"
-"iab_bootstrap_campaign_cost": "<span class=\"parameter-definition\" title=\"Bootstrap\
-  \ campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in\
-  \ required lobbying intensity, media spend, and organizational overhead. | Unit:\
-  \ USD | Core definition\">$100M (95% CI: $50M-$200M)</span>"
+"iab_bootstrap_campaign_cost": "<span class=\"parameter-definition\" title=\"[DEPRECATED]\
+  \ Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST\
+  \ ($1B) for consistency with VICTORY bond ROI calculations. | Unit: USD | Core definition\"\
+  >$100M (95% CI: $50M-$200M)</span>"
 "iab_mechanism_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_mechanism_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Estimated annual\
@@ -3313,16 +3296,14 @@
   $2B\n\\end{gathered}\n$$"
 "personal_lifetime_wealth": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-personal_lifetime_wealth\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/personal-lifetime-wealth-calc.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Personal lifetime\
-  \ wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension\
-  \ uncertainty (5-50 years) propagates through Monte Carlo to show full range of\
-  \ outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.\
-  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: NPV(peace_dividend\
-  \ + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)\
-  \ | Unit: usd | Click to view details, calculation & sources\">$494K (95% CI: $194K-$794K)</a>"
-"personal_lifetime_wealth_latex": "$$\n\\begin{gathered}\nWealth_{lifetime} \\\\\n\
-  = \\text{NPV}(\\text{Peace} + \\text{Health} \\\\\n+ \\text{Productivity} + \\text{Earnings})\n\
-  \\end{gathered}\n$$"
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Personal lifetime\
+  \ wealth from life extension valued at standard QALY rate. Simple formula: years\
+  \ of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS\
+  \ (5-100 year range, median 20) propagates through Monte Carlo. | Calculated from\
+  \ 2 inputs | ? Low confidence | Formula: LIFE_EXTENSION_YEARS × STANDARD_ECONOMIC_QALY_VALUE_USD\
+  \ | Unit: USD | Click to view details, calculation & sources\">$3M (95% CI: $259K-$12.1M)</a>"
+"personal_lifetime_wealth_latex": "$$\nWealth_{lifetime} = T_{extend} \\times Value_{QALY}\n\
+  $$"
 "per_capita_chronic_disease_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-per_capita_chronic_disease_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"US per capita chronic disease cost | Calculated\
@@ -3893,10 +3874,6 @@
   \ \\\\\n= 360 \\\\[0.5em]\n\\text{where } N_{thal,US,prevent} \\\\\n= N_{thal,global}\
   \ \\times Pct_{US,1960} \\\\\n= 15{,}000 \\times 6\\% \\\\\n= 900\n\\end{gathered}\n\
   $$"
-"total_book_words": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-total_book_words\"\
-  \ class=\"parameter-link\" data-source-ref=\"book-word-count\" data-source-type=\"\
-  definition\" data-confidence=\"high\" title=\"Total words in the book | ✓ High confidence\
-  \ | Unit: words | Click to view details, calculation & sources\">171k words</a>"
 "total_research_funding_with_treaty": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-total_research_funding_with_treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total global\
@@ -4622,11 +4599,6 @@
   \ \\times N_{thal,US,prevent} \\\\\n= 40\\% \\times 900 \\\\\n= 360 \\\\[0.5em]\n\
   \\text{where } N_{thal,US,prevent} \\\\\n= N_{thal,global} \\times Pct_{US,1960}\
   \ \\\\\n= 15{,}000 \\times 6\\% \\\\\n= 900\n\\end{gathered}\n$$"
-"typical_ceo_hourly_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-typical_ceo_hourly_rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"ceo-compensation\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Typical CEO hourly rate | ✓ High confidence\
-  \ | Unit: USD/hour | Click to view details, calculation & sources\">$10K</a>"
-"typical_ceo_hourly_rate_cite": "@ceo-compensation"
 "unexplored_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-unexplored_ratio\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
@@ -4912,6 +4884,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "458"
+"total_parameter_count": "453"
 "total_latex_equation_count": "169"
-"total_citation_count": "186"
+"total_citation_count": "183"

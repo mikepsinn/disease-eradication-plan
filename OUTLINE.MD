@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,532
+**Files:** 4 | **Words:** 88,407
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,510 words | 14,770 lines
+**Stats:** 54,385 words | 14,710 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -518,7 +518,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Personal Lifetime Wealth (Age 30, 1% Treaty): $494K {#sec-personal_lifetime_wealth}
+    - Personal Lifetime Wealth (QALY-Based): $3M {#sec-personal_lifetime_wealth}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -703,7 +703,6 @@
       - Input Distribution
     - Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
     - Average Annual Stock Market Return: 10% {#sec-average_market_return_pct}
-    - Average US Hourly Wage: $30 {#sec-average_us_hourly_wage}
     - Agricultural Subsidies Deadweight Loss: $75B {#sec-bad_policy_cost_us_agricultural_subsidies}
       - Uncertainty Range
       - Input Distribution
@@ -750,7 +749,6 @@
     - Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
       - Uncertainty Range
       - Input Distribution
-    - Average Reading Speed: 200 words/minute {#sec-book_reading_speed_wpm}
     - Total Annual Value of Unpaid Caregiving in US: $600B {#sec-caregiver_annual_value_total}
     - Number of Unpaid Caregivers in US: 38.0M people {#sec-caregiver_count_us}
     - Average Monthly Hours of Unpaid Family Caregiving in US: 20 hours/month {#sec-caregiver_hours_per_month}
@@ -1069,7 +1067,6 @@
     - Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
       - Uncertainty Range
       - Input Distribution
-    - Typical CEO Hourly Rate: $10K {#sec-typical_ceo_hourly_rate}
     - US Alzheimer's Annual Cost: $355B {#sec-us_alzheimers_annual_cost}
       - Uncertainty Range
       - Input Distribution
@@ -1269,7 +1266,6 @@
       - Uncertainty Range
       - Input Distribution
     - Percentage of Caregiving for Treatable Disease Conditions: 40% {#sec-disease_related_caregiver_pct}
-    - Lifetime Benefit for Age 30 Baseline Scenario: $4.30M {#sec-effective_hourly_rate_lifetime_benefit}
     - Epigenetic Drug Targets: 1.50k targets {#sec-epigenetic_targets_count}
       - Uncertainty Range
       - Input Distribution
@@ -1326,7 +1322,6 @@
     - Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
       - Uncertainty Range
       - Input Distribution
-    - Total Words in the Book: 171k words {#sec-total_book_words}
     - Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
       - Uncertainty Range
       - Input Distribution
@@ -1710,15 +1705,15 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 13,387
+**Files:** 1 | **Words:** 13,605
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,387 words | 1,893 lines
+**Stats:** 13,605 words | 1,907 lines
 
   - Abstract
-  - System Overview: From Methodology to Product {#system-overview}
+  - System Overview: From Methodology to Implementation {#system-overview}
     - What Patients See
     - What Companies See
     - Where This Methodology Fits
@@ -1945,12 +1940,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 17,870
+**Files:** 1 | **Words:** 17,915
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,870 words | 1,616 lines
+**Stats:** 17,915 words | 1,616 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -2094,7 +2089,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 340,113
+**Files:** 86 | **Words:** 337,755
 
 #### index.qmd
 **Title:** Start Here
@@ -3066,7 +3061,7 @@
 #### knowledge/call-to-action/your-personal-benefits.qmd
 **Title:** Your Personal Benefits
 **Description:** What You Actually Get From This
-**Stats:** 677 words | 100 lines
+**Stats:** 434 words | 73 lines
 
   - Your Actual Odds Right Now
   - What You Actually Get
@@ -3076,8 +3071,6 @@
     - The Math
     - Uncertainty Analysis
     - The Bottom Line
-    - What You're Actually Making Per Hour
-      - Time Investment
 
 #### knowledge/futures.qmd
 **Title:** The Two Futures
@@ -3843,7 +3836,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,870 words | 1,616 lines
+**Stats:** 17,915 words | 1,616 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -4365,10 +4358,10 @@
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,387 words | 1,893 lines
+**Stats:** 13,605 words | 1,907 lines
 
   - Abstract
-  - System Overview: From Methodology to Product {#system-overview}
+  - System Overview: From Methodology to Implementation {#system-overview}
     - What Patients See
     - What Companies See
     - Where This Methodology Fits
@@ -4689,7 +4682,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,510 words | 14,770 lines
+**Stats:** 54,385 words | 14,710 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -5154,7 +5147,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Personal Lifetime Wealth (Age 30, 1% Treaty): $494K {#sec-personal_lifetime_wealth}
+    - Personal Lifetime Wealth (QALY-Based): $3M {#sec-personal_lifetime_wealth}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5339,7 +5332,6 @@
       - Input Distribution
     - Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
     - Average Annual Stock Market Return: 10% {#sec-average_market_return_pct}
-    - Average US Hourly Wage: $30 {#sec-average_us_hourly_wage}
     - Agricultural Subsidies Deadweight Loss: $75B {#sec-bad_policy_cost_us_agricultural_subsidies}
       - Uncertainty Range
       - Input Distribution
@@ -5386,7 +5378,6 @@
     - Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
       - Uncertainty Range
       - Input Distribution
-    - Average Reading Speed: 200 words/minute {#sec-book_reading_speed_wpm}
     - Total Annual Value of Unpaid Caregiving in US: $600B {#sec-caregiver_annual_value_total}
     - Number of Unpaid Caregivers in US: 38.0M people {#sec-caregiver_count_us}
     - Average Monthly Hours of Unpaid Family Caregiving in US: 20 hours/month {#sec-caregiver_hours_per_month}
@@ -5705,7 +5696,6 @@
     - Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
       - Uncertainty Range
       - Input Distribution
-    - Typical CEO Hourly Rate: $10K {#sec-typical_ceo_hourly_rate}
     - US Alzheimer's Annual Cost: $355B {#sec-us_alzheimers_annual_cost}
       - Uncertainty Range
       - Input Distribution
@@ -5905,7 +5895,6 @@
       - Uncertainty Range
       - Input Distribution
     - Percentage of Caregiving for Treatable Disease Conditions: 40% {#sec-disease_related_caregiver_pct}
-    - Lifetime Benefit for Age 30 Baseline Scenario: $4.30M {#sec-effective_hourly_rate_lifetime_benefit}
     - Epigenetic Drug Targets: 1.50k targets {#sec-epigenetic_targets_count}
       - Uncertainty Range
       - Input Distribution
@@ -5962,7 +5951,6 @@
     - Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
       - Uncertainty Range
       - Input Distribution
-    - Total Words in the Book: 171k words {#sec-total_book_words}
     - Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
       - Uncertainty Range
       - Input Distribution
@@ -6099,72 +6087,17 @@
   - Technical Parameters
 
 #### knowledge/appendix/personal-lifetime-wealth-calc.qmd
-**Title:** Disease Eradication Model - Personal Lifetime Wealth Analysis
-**Description:** Comprehensive analysis showing $4.3M lifetime benefit with 72-year life extension using disease eradication model (20-year scenario)
-**Stats:** 3,365 words | 597 lines
+**Title:** Personal Lifetime Wealth Calculation
+**Description:** Simple QALY-based calculation showing personal benefit from 1% treaty life extension
+**Stats:** 314 words | 68 lines
 
-  - The Model Components
-    - Disease-by-Disease Eradication (CDC Burden Data)
-      - Why these max potentials?
-    - Aging Reversal Bonus
-    - Healthcare Savings
-    - Productivity Gains
-    - GDP Boost
-    - Extended Earnings
-  - Results: Age 30, $50K Income, 1% treaty
-    - 5-Year Scenario
-    - 10-Year Scenario
-    - 20-Year Scenario (RECOMMENDED DEFAULT)
-    - 40-Year Scenario
-  - Conservative Baselines (For Skeptics)
-    - Evidence-Based Conservative (5yr extension)
-    - Evidence-Based Moderate (10yr extension)
-    - Unified Model with Uncertainty
-      - Why These Are Underestimates
-  - When to Use Each Model
-    - Default Recommendation
-    - For Skeptical/Academic Audiences
-    - For Investor Pitches
-    - For Vision Documents
-  - How to Use in Code
-    - Disease Eradication Model (Recommended)
-    - Conservative Baseline (For Skeptics)
-  - Files Reference
-    - Core Implementation
-    - Documentation
-    - Visualizations
-  - Mathematical Framework
-    - Net Present Value Calculation
-    - Component Formulas
-      - Peace Dividend
-      - Economic Multiplier (Military→Research)
-      - Healthcare Savings
-      - Extended Earnings
-      - Life Extension Formula
-  - Sensitivity Analysis
-    - Reading the Chart
-    - What the Numbers Mean
-    - How This Differs from Conservative Baseline
-  - Demographic Variations
-    - What the Numbers Show
-    - Key Differences vs Conservative Baseline
-  - Component Breakdown
-    - Probabilistic Analysis
-    - Component Mix vs Conservative Model
-  - Life Extension Input Distribution
-  - Wealth Accumulation Over Lifetime
-    - The Power of Extended Life
-      - Understanding the Components
-      - Critical Observations
-    - How This Differs from Conservative Baseline
-  - Treaty Percentage Impact
-  - Key Findings
-    - Exponential Returns from Higher Treaty Percentages
-      - Why This Differs from Conservative Baseline
-      - Political Implications
-  - Model Comparison
-  - Testing
-  - Key Citations
+  - The Simple Formula
+  - Why QALY Valuation?
+  - Uncertainty Analysis
+    - Input Distribution
+    - Output Distribution
+    - Sensitivity Analysis
+    - Exceedance Probability
   - Bottom Line
 
 #### knowledge/appendix/dfda-impact-paper.qmd
@@ -6358,7 +6291,7 @@
 #### knowledge/appendix/fundraising-strategy.qmd
 **Title:** Fundraising Strategy
 **Description:** The {{< var treaty_campaign_total_cost >}} Activation Energy - Comprehensive strategy for raising {{< var treaty_campaign_total_cost >}} through multi-phase approach targeting crypto whales, health bi...
-**Stats:** 4,941 words | 763 lines
+**Stats:** 5,739 words | 862 lines
 
   - Fundraising Strategy: The {{< var treaty_campaign_total_cost >}} Activation Energy
     - On How to Raise {{< var treaty_campaign_total_cost >}} to Unlock {{< var treaty_annual_funding >}}/Year Forever
@@ -7492,6 +7425,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 544,651
+- Total words: 542,431
 - Orphaned files: 20
 - Paper configs: 12

@@ -202,7 +202,7 @@ Multiple meta-analyses demonstrate that well-designed observational studies prod
 
 ### Data Sources
 
-Our framework integrates data from multiple sources, each contributing different variable types:
+Our data integration protocol specifies how data flows from multiple sources, each contributing different variable types:
 
 | Source Category | Examples | Data Types |
 |----------------|----------|------------|
@@ -251,7 +251,7 @@ Measurement {
 
 ### Unit Standardization
 
-All measurements are converted to standardized units for cross-source compatibility:
+The measurement standardization protocol converts all measurements to standardized units for cross-source compatibility:
 
 - Weights → kilograms
 - Distances → meters
@@ -275,7 +275,7 @@ $$P_i = \{(t_{i,1}^P, p_{i,1}), (t_{i,2}^P, p_{i,2}), ..., (t_{i,n_i}^P, p_{i,n_
 
 $$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_i})\}$$
 
-where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. Our framework handles asynchronous, irregular sampling.
+where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. The temporal alignment protocol handles asynchronous, irregular sampling.
 
 ![Temporal alignment diagram illustrating how a single predictor measurement at time t creates an outcome window W(t) defined by onset delay (δ) and duration of action (τ).](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
 
@@ -1550,9 +1550,9 @@ With pragmatic trial integration, the complete framework can:
 
 ### System Architecture
 
-The framework consists of five sequential processing layers:
+The processing protocol defines five sequential layers:
 
-1. **Data Ingestion Layer**: Collects measurements from wearables, health apps, EHR/FHIR systems, manual entry, and environmental sensors
+1. **Data Ingestion Protocol**: Collects measurements from wearables, health apps, EHR/FHIR systems, manual entry, and environmental sensors
 2. **Measurement Normalization**: Standardizes units, timestamps, deduplicates records, and attributes data provenance
 3. **Variable Ontology**: Assigns semantic categories, default temporal parameters ($\delta$, $\tau$), and filling value logic
 4. **Relationship Analysis Engine**: Generates predictor-outcome pairs, performs temporal alignment, computes correlations, and optimizes hyperparameters
@@ -1635,7 +1635,7 @@ The repository includes:
 
 - Analysis engine (Python) with full PIS calculation pipeline
 - Database schemas (PostgreSQL, SQLite) for variable relationships
-- API specifications (OpenAPI 3.0) for data ingestion and querying
+- API protocol (OpenAPI 3.0) for data ingestion and querying
 - Test vectors matching Appendix D worked example
 
 ## Regulatory Considerations

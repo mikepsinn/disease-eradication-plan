@@ -7001,62 +7001,6 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
 )  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 
 
-# ---
-# BOOK READING TIME & HOURLY RATE CALCULATIONS
-# ---
-
-# Book reading time parameters
-# Source: word_count.ps1 output
-TOTAL_BOOK_WORDS = Parameter(
-    171121, source_ref="book-word-count", source_type="definition", description="Total words in the book", unit="words",
-    display_name="Total Words in the Book",
-    keywords=["total", "book", "words", "171k"],
-    latex_symbol=r"N_{words}",  # LaTeX symbol for equations
-)  # Total words in the book
-
-BOOK_READING_SPEED_WPM = Parameter(
-    200,
-    source_ref="average-reading-speed",
-    source_type="external",
-    description="Average reading speed (conservative for non-fiction)",
-    display_name="Average Reading Speed",
-    unit="words/minute",
-    keywords=["low estimate", "faster development", "innovation speed", "research velocity", "cautious", "pessimistic", "worst case"],
-    latex_symbol=r"WPM",  # LaTeX symbol for equations
-)  # Words per minute (conservative for non-fiction)
-
-# Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% treaty)
-# Using the lifetime benefit value from your-personal-benefits.qmd
-EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
-    4_300_000,
-    source_ref="/knowledge/appendix/personal-lifetime-wealth-calc.qmd",
-    source_type="definition",
-    description="Lifetime benefit for age 30 baseline scenario ($4.3M)",
-    display_name="Lifetime Benefit for Age 30 Baseline Scenario",
-    unit="USD",
-    formula="Total lifetime health gains from 1% treaty",
-    keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"],
-    latex_symbol=r"Rate_{benefit,hr}",  # LaTeX symbol for equations
-)
-
-# Comparison benchmarks
-AVERAGE_US_HOURLY_WAGE = Parameter(
-    30,
-    source_ref="average-us-hourly-wage",
-    source_type="external",
-    description="Average US hourly wage",
-    display_name="Average US Hourly Wage",
-    unit="USD/hour",
-    keywords=["average", "hourly", "wage"],
-    latex_symbol=r"Wage_{US}",  # LaTeX symbol for equations
-)  # ~$30/hour average US wage
-
-TYPICAL_CEO_HOURLY_RATE = Parameter(
-    10000, source_ref="ceo-compensation", source_type="external", description="Typical CEO hourly rate", unit="USD/hour",
-    display_name="Typical CEO Hourly Rate",
-    keywords=["typical", "ceo", "hourly", "rate", "10k"],
-    latex_symbol=r"Rate_{CEO}",  # LaTeX symbol for equations
-)  # ~$10,000/hour typical CEO rate
 
 # ---
 # PERSONAL LIFETIME WEALTH CALCULATIONS
@@ -7566,37 +7510,25 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     }
 
 
-# Personal lifetime wealth with uncertainty-driven life extension
-# Uses LIFE_EXTENSION_YEARS parameter which has 80% CI of 5-50 years
-# NOTE: Uses fixed 3% personal discount rate (not NPV_DISCOUNT_RATE_STANDARD)
-# because personal time preference is typically 2-4%, and varying discount rate
-# would swamp all other factors in sensitivity analysis
+# Personal lifetime wealth using simple QALY-based formula
+# Life extension years valued at standard economic QALY rate
+# Simple, traceable, academically standard approach
+# With 20 years (median) × $150K/QALY = $3M
+# Range via Monte Carlo: $750K (5yr) to $15M (100yr)
 PERSONAL_LIFETIME_WEALTH = Parameter(
-    calculate_personal_lifetime_wealth_conservative_baseline(
-        treaty_pct=0.01, current_age=30, annual_income=50000,
-        life_extension_override=float(LIFE_EXTENSION_YEARS)
-    )["total_lifetime_benefit"],
+    float(LIFE_EXTENSION_YEARS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/personal-lifetime-wealth-calc.qmd",
     source_type="calculated",
-    description="Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
-    display_name="Personal Lifetime Wealth (Age 30, 1% Treaty)",
-    unit="usd",
-    formula="NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
-    confidence="medium",
-    keywords=["personal", "lifetime", "wealth", "individual benefit", "age 30", "npv", "life extension"],
-    inputs=[
-        "LIFE_EXTENSION_YEARS",  # Primary driver: 66% of benefit from extended earnings
-        "DFDA_TRIAL_CAPACITY_MULTIPLIER",  # Drives healthcare, productivity, GDP boost (~30%)
-    ],
-    compute=lambda ctx: calculate_personal_lifetime_wealth_conservative_baseline(
-        treaty_pct=0.01,
-        current_age=30,
-        annual_income=50000,
-        discount_rate=0.03,  # Fixed 3% personal discount rate
-        life_extension_override=float(ctx["LIFE_EXTENSION_YEARS"]),
-    )["total_lifetime_benefit"],
-    latex_symbol=r"Wealth_{lifetime}",  # LaTeX symbol for equations
-    latex=r"Wealth_{lifetime} = \text{NPV}(\text{Peace} + \text{Health} + \text{Productivity} + \text{Earnings})",
+    description="Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.",
+    display_name="Personal Lifetime Wealth (QALY-Based)",
+    unit="USD",
+    formula="LIFE_EXTENSION_YEARS × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    confidence="low",
+    keywords=["personal", "lifetime", "wealth", "individual benefit", "qaly", "life extension", "economic value"],
+    inputs=["LIFE_EXTENSION_YEARS", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    compute=lambda ctx: ctx["LIFE_EXTENSION_YEARS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    latex_symbol=r"Wealth_{lifetime}",
+    latex=r"Wealth_{lifetime} = T_{extend} \times Value_{QALY}",
 )
 
 
@@ -8177,15 +8109,3 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     latex_symbol=r"BCR_{IAB}",  # LaTeX symbol for equations
 )  # 303:1
 
-IAB_BOOTSTRAP_CAMPAIGN_COST = Parameter(
-    100e6,  # Base case: $100M
-    source_ref="",
-    source_type="definition",
-    description="Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.",
-    display_name="IAB Bootstrap Campaign Cost",
-    unit="USD",
-    confidence_interval=(50e6, 200e6),  # 95% CI: $50M (optimistic) to $200M (conservative)
-    distribution=DistributionType.LOGNORMAL,  # Right-skewed: costs can exceed estimates more easily than come in under
-    keywords=["campaign", "cost", "bootstrap", "iab", "lobbying"],
-    latex_symbol=r"Cost_{IAB,campaign}",
-)  # $100M base, CI: $50M-$200M

@@ -167,24 +167,24 @@ $$
 E[R] = \frac{P(\text{success}) \times (\text{Redirected Flow} \times \text{Investor Share})}{\text{Campaign Cost}}
 $$
 
-**Illustrative calculation:** If a campaign costs {{< var iab_bootstrap_campaign_cost >}} and has a 20% chance of passing a treaty that redirects {{< var treaty_annual_funding >}}/year (with 10% to investors), the expected annual value is:
+**Illustrative calculation:** If a campaign costs {{< var treaty_campaign_total_cost >}} and has a 20% chance of passing a treaty that redirects {{< var treaty_annual_funding >}}/year (with {{< var victory_bond_funding_pct >}} to investors), the expected annual value is:
 
 $$
-E[V] = 0.20 \times \$2.4\text{ billion} = \$480\text{ million/year}
+E[V] = 0.20 \times \$2.72\text{B} = \$544\text{M/year}
 $$
 
-The expected first-year ROI is {{< var victory_bond_annual_return_pct >}}, with the revenue stream continuing in perpetuity.
+The expected first-year ROI on the {{< var treaty_campaign_total_cost >}} campaign is 54.4% (expected payout divided by campaign cost), with the revenue stream continuing in perpetuity. Upon treaty passage, the conditional ROI is {{< var victory_bond_annual_return_pct >}}.
 
 **Sensitivity to parameter uncertainty:**
 
-| Parameter | Base Case | 95% CI Range | ROI Impact |
-|:----------|:----------|:-------------|:-----------|
-| Success probability | 20% | 10%–40% | 36%–2,076% |
-| Campaign cost | {{< var iab_bootstrap_campaign_cost >}} | $50M–$200M (95% CI) | Scales inversely |
-| Investor share | 10% | 10%–15% | Scales linearly |
-| Treaty size | {{< var treaty_annual_funding >}}/year | 1×–2× base | Scales linearly |
+| Parameter | Base Case | Effect on ROI |
+|:----------|:----------|:--------------|
+| Success probability | 20% (illustrative) | Linear |
+| Campaign cost | {{< var treaty_campaign_total_cost >}} | Inverse |
+| Investor share | {{< var victory_bond_funding_pct >}} | Linear |
+| Treaty size | {{< var treaty_annual_funding >}} | Linear |
 
-Even under conservative assumptions (10% success probability, upper CI bound on campaign cost, 10% investor share, {{< var treaty_annual_funding >}} treaty), expected first-year ROI remains positive at 36%. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
+Even under conservative assumptions (low success probability, upper CI bound on campaign cost, {{< var victory_bond_funding_pct >}} investor share), expected ROI remains comparable to {{< var average_market_return_pct >}} stock market returns, with asymmetric upside. The mechanism is economically rational for risk-tolerant capital across a wide parameter range.
 
 ### The Capital Asymmetry: Why IABs Can Outcompete Incumbent Lobbying
 
@@ -725,7 +725,7 @@ To ground the formal model in concrete terms, consider a hypothetical applicatio
 The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
 - **80%** to the public good itself (pragmatic clinical trials)
-- **10%** to investor returns (perpetual payments to those who funded the campaign to pass the treaty)
+- **{{< var victory_bond_funding_pct >}}** to investor returns (perpetual payments to those who funded the campaign to pass the treaty)
 - **{{< var iab_political_incentive_funding_pct >}}** to political incentives (funding the three-layer architecture)
 
 This allocation structure creates aligned incentives across all participants. Investors who funded the initial campaign receive perpetual returns ({{< var victory_bond_annual_payout >}} annually) as long as the treaty continues, giving them strong incentives to support treaty expansion and defend against repeal. The political incentive allocation ({{< var iab_political_incentive_funding_annual >}} annually) funds the three-layer architecture:
@@ -740,7 +740,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 The self-funding nature matters. The treaty's success generates the resources that sustain both investor returns and political incentives for its continuation and expansion. This creates multiple reinforcing feedback loops:
 
-1. **Investor pressure for expansion:** Investors receiving 10% of {{< var treaty_annual_funding >}} want 10% of double that (if the treaty expands to 2%), creating a constituency that lobbies for treaty growth
+1. **Investor pressure for expansion:** Investors receiving {{< var victory_bond_funding_pct >}} of {{< var treaty_annual_funding >}} want the same share of double that (if the treaty expands to 2%), creating a constituency that lobbies for treaty growth
 2. **Political incentives for continuation:** Politicians who supported the treaty benefit from ongoing electoral and career support, incentivizing them to defend it against repeal
 3. **Escalation dynamics:** Each expansion (1% → 2% → 5%) increases both investor returns and political incentive funding, strengthening the coalition for further expansion
 
@@ -1328,40 +1328,40 @@ If IABs successfully redirect even 1% of military spending ({{< var treaty_annua
 
 The mechanism's survival likely depends on achieving proof-of-concept success (one treaty ratified) before incumbent industries can coordinate effective regulatory opposition. This creates a premium on execution speed and strategic sequencing of target domains.
 
-**Why the Bootstrap Problem is Solvable: Capital Asymmetry and ROI**
+**Why the Initial Fundraising Challenge is Solvable: Capital Asymmetry and ROI**
 
-The bootstrap problem, raising $200M-$500M for initial proof-of-concept before concentrated interests mobilize counter-lobbying, appears daunting until we consider two factors: **(1) the massive ROI potential** and **(2) the capital asymmetry** favoring diffuse beneficiaries.
+Raising the first $200M-$500M (Phase 1 of the {{< var treaty_campaign_total_cost >}} campaign) before concentrated interests mobilize counter-lobbying appears daunting until we consider two factors: **(1) the massive ROI potential** and **(2) the capital asymmetry** favoring diffuse beneficiaries.
 
-**ROI makes bootstrap funding rational for risk-tolerant capital:**
+**ROI makes initial funding rational for risk-tolerant capital:**
 
-As shown, a {{< var treaty_campaign_budget_reserve >}} campaign with 20% success probability passing a {{< var treaty_annual_funding >}}/year treaty ({{< var victory_bond_funding_pct >}} to investors) yields:
+As shown, a {{< var treaty_campaign_total_cost >}} campaign with 20% success probability passing a {{< var treaty_annual_funding >}}/year treaty ({{< var victory_bond_funding_pct >}} to investors) yields:
 
 $$
-E[V] = 0.20 \times \$2.4\text{B/year} = \$480\text{M/year}
+E[V] = 0.20 \times \$2.72\text{B/year} = \$544\text{M/year}
 $$
 
-First-year expected ROI: 272%, with the revenue stream continuing in perpetuity. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
+Expected first-year ROI: 54.4% ($544M ÷ $1B), with the revenue stream continuing in perpetuity. Upon treaty passage, the conditional annual ROI is 272%. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
 
-**Capital asymmetry ensures scalability beyond bootstrap:**
+**Capital asymmetry ensures scalability beyond Phase 1:**
 
-The bootstrap phase requires \$200M-$500M for initial proof-of-concept, which is small relative to the aggregate capital available to diffuse beneficiaries:
+Phase 1 requires \$200M-$500M to demonstrate traction, which is small relative to the aggregate capital available to diffuse beneficiaries:
 
 - **Concentrated opposition** (military contractors, fossil fuel companies): {{< var concentrated_interest_sector_market_cap_usd >}} market cap, spending \$100M-$1B/year on lobbying
 - **Diffuse beneficiaries** (everyone who benefits from cures, climate stability): {{< var global_household_wealth_usd >}} household wealth (Section 2.3)
 
 The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If military contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that military contractors exploit becomes accessible to millions of retail investors.
 
-**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 272% expected ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise \$200M?" but "can we structure the offering legally?"
+**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 272% conditional ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise {{< var treaty_campaign_total_cost >}}?" but "can we structure the offering legally?"
 
 **The race condition:** Concentrated interests can mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
-1. Initial \$200M-$500M is raised from high-risk capital (impact funds, crypto whales, patient billionaires)
-2. Rapid deployment achieves proof-of-concept (one scoring cycle, measurable electoral impact)
-3. Returns materialize (even partial treaty passage increases bond value)
-4. Retail offering opens to millions of diffuse beneficiaries
+1. Phase 1 (\$200M-$500M) is raised from high-risk capital (impact funds, crypto whales, patient billionaires)
+2. Rapid deployment achieves measurable traction (one scoring cycle, measurable electoral impact)
+3. Momentum builds (even partial progress increases bond value through demonstrated efficacy)
+4. Retail offering opens to millions of diffuse beneficiaries for the remaining campaign funding
 
 ...then the mechanism reaches escape velocity before regulatory capture becomes feasible. Defense contractors cannot outspend \$50B+ in mobilized retail capital without bankrupting themselves.
 
-**Conclusion:** The bootstrap problem is solvable because **(a)** ROI economics make initial funding rational for risk-tolerant capital, and **(b)** capital asymmetry ensures that once proof-of-concept succeeds, scaling capital exceeds any plausible counter-lobbying budget. The binding constraint is execution speed, not capital availability.
+**Conclusion:** The initial fundraising challenge is solvable because **(a)** ROI economics make early investment rational for risk-tolerant capital, and **(b)** capital asymmetry ensures that once traction is demonstrated, scaling capital to the full {{< var treaty_campaign_total_cost >}} exceeds any plausible counter-lobbying budget. The binding constraint is execution speed, not capital availability.
 
 Future research should address several open questions: What scoring mechanisms are most robust to gaming? How do IABs interact with existing campaign finance institutions? What governance structures best prevent capture of the scoring layer? Can IABs be adapted to non-democratic political systems? What legal strategies best protect the mechanism from regulatory attack? Empirical testing, beginning with single-issue pilot implementations, will be essential to validate the theoretical framework presented here.
 

@@ -13,7 +13,7 @@ Forget saving humanity. Let's talk about what you, personally, get out of this. 
 
 ## Your Actual Odds Right Now
 
-If you get sick (and you will), your chances of getting into a clinical trial are **0.2%** - that's 1 in 480 people with chronic disease.
+If you get sick (and you will), your chances of getting into a clinical trial are **0.2%**, that's 1 in 480 people with chronic disease.
 
 Half of humanity is willing to participate [@patient-willingness-clinical-trials], but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
@@ -25,7 +25,7 @@ Instead of waiting 17 years for a cure that may never come, you get immediate ac
 
 ## If you're healthy (for now)
 
-As diseases are cured, healthcare costs plummet. A 1% treaty expands clinical trial capacity by {{< var dfda_trial_capacity_multiplier >}}× ({{< var trial_capacity_cumulative_years_20yr >}} trial-capacity-equivalent years in 20 years). That means cancer, heart disease, Alzheimer's - all tackled simultaneously by gene therapy, AI drug discovery, stem cells, and epigenetics.
+As diseases are cured, healthcare costs plummet. A 1% treaty expands clinical trial capacity by {{< var dfda_trial_capacity_multiplier >}}× ({{< var trial_capacity_cumulative_years_20yr >}} trial-capacity-equivalent years in 20 years). That means cancer, heart disease, Alzheimer's, all tackled simultaneously by gene therapy, AI drug discovery, stem cells, and epigenetics.
 
 ### If you have money
 
@@ -37,24 +37,19 @@ Your parents won't die of Alzheimer's. Your children won't have to worry about r
 
 ### The Math
 
-Here's what a typical 30-year-old making $50,000/year gets with 20 years of life extension (median estimate):
+The calculation is simple: **years of healthy life gained × economic value per healthy year**.
 
-{{< include ../figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< var personal_lifetime_wealth_latex >}}
 
+With median estimates:
 
-Where does this come from?
+- **Life extension**: {{< var life_extension_years >}}
+- **QALY value**: {{< var standard_economic_qaly_value_usd >}}
+- **Personal benefit**: {{< var personal_lifetime_wealth >}}
 
-- **Extended Earnings**: You live extra years beyond age 80. That's more years of earning, investing, and compounding.
-- **GDP Boost (Mil→Research)**: Redirecting military spending to research creates GDP growth (post-WW2: {{< var post_ww2_military_cut_pct >}} military cut → 8% GDP growth). This compounds over your extended lifetime.
-- **Healthcare Savings**: Diseases get cured, your insurance premiums drop.
-- **Productivity Gains**: You're healthier, you work better, you earn more.
-
-
-![Visual breakdown of the four economic drivers that contribute to personal wealth accumulation through life extension.](/assets/images/your-personal-benefits/your-personal-benefits-section-wealth-generation-breakdown-bw-academic.jpg)
+This uses the same methodology economists use to evaluate all health interventions.
 
 ### Uncertainty Analysis
-
-Life extension could range from 5 years (conservative, antibiotic precedent) to 50+ years (optimistic, aging reversal). The Monte Carlo analysis shows the full range:
 
 {{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
 
@@ -62,39 +57,16 @@ Life extension could range from 5 years (conservative, antibiotic precedent) to 
 
 ### The Bottom Line
 
-With a median 20-year life extension estimate:
+**Personal benefit**: {{< var personal_lifetime_wealth >}}
 
-- **If you're 30:** ~$1-2M total benefit (range depends on actual life extension achieved)
-- **If you're 25:** Even higher due to more compounding years
-- **If you're 55:** Lower but still substantial
-
-With optimistic 50+ year life extension (aging reversal scenarios), benefits multiply several times.
+The Monte Carlo distribution above shows the full uncertainty range.
 
 This isn't a charity. It's a deal. You're being offered substantial lifetime wealth, extra years of life, and the survival of your loved ones in exchange for supporting a 1% budget reallocation.
 
 It's the best deal anyone has ever offered you.
 
-### What You're Actually Making Per Hour
-
-You're not being asked to donate your time. You're being offered the highest-paying job in human history.
-
-#### Time Investment
-
-- Reading this book: 14.3 hours (171,121 words at 200 words/minute)
-- Taking actions: 0.5 hours ([Vote 2 min + Invest 10 min + Recruit 15 min](three-actions.qmd))
-- **Total: 14.8 hours**
-
-**Effective Hourly Rate: {{< var effective_hourly_rate_lifetime_benefit >}}/hour**
-
-This is:
-
-- **9,700x** the average US wage ({{< var average_us_hourly_wage >}}/hour)
-- **29x** a CEO's hourly rate (~{{< var typical_ceo_hourly_rate >}}/hour)
-
-The catch? You only get paid if the plan works. But if it does, you just made {{< var effective_hourly_rate_lifetime_benefit >}}/hour for 14.8 hours of work.
-
 **Your choice. But choose fast.** While you were reading this, another person just died.
 
 ---
 
-*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](../appendix/personal-lifetime-wealth-calc.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*
+*For detailed calculations and sensitivity analysis, see the [Personal Lifetime Wealth Calculation](../appendix/personal-lifetime-wealth-calc.qmd).*

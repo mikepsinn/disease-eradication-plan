@@ -728,7 +728,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 - Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading), and politicians discover that voting for cures is better for their careers than voting for bombs
 - Healthcare becomes free through trial participation
-- **You personally could get {{< var effective_hourly_rate_lifetime_benefit >}} in lifetime wealth and extra years of life** (yes, you specifically)
+- **You personally could get {{< var personal_lifetime_wealth >}} in lifetime wealth and extra years of life** (yes, you specifically)
 - Death becomes optional (terms and conditions apply)
 
 {{< include knowledge/figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}

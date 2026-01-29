@@ -102,16 +102,6 @@ export const AVERAGE_MARKET_RETURN_PCT: Parameter = {
   confidence: "high",
 };
 
-export const AVERAGE_US_HOURLY_WAGE: Parameter = {
-  value: 30.0,
-  unit: "USD/hour",
-  displayName: "Average US Hourly Wage",
-  description: "Average US hourly wage",
-  sourceType: "external",
-  sourceRef: "average-us-hourly-wage",
-  confidence: "high",
-};
-
 export const BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES: Parameter = {
   value: 75000000000.0,
   unit: "USD",
@@ -302,16 +292,6 @@ export const BED_NETS_COST_PER_DALY: Parameter = {
   confidence: "high",
   confidenceInterval: [78.0, 100.0],
   peerReviewed: true,
-};
-
-export const BOOK_READING_SPEED_WPM: Parameter = {
-  value: 200.0,
-  unit: "words/minute",
-  displayName: "Average Reading Speed",
-  description: "Average reading speed (conservative for non-fiction)",
-  sourceType: "external",
-  sourceRef: "average-reading-speed",
-  confidence: "high",
 };
 
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
@@ -1805,16 +1785,6 @@ export const TREATMENT_DISABILITY_REDUCTION: Parameter = {
   confidence: "medium",
   confidenceInterval: [0.15, 0.35],
   peerReviewed: true,
-};
-
-export const TYPICAL_CEO_HOURLY_RATE: Parameter = {
-  value: 10000.0,
-  unit: "USD/hour",
-  displayName: "Typical CEO Hourly Rate",
-  description: "Typical CEO hourly rate",
-  sourceType: "external",
-  sourceRef: "ceo-compensation",
-  confidence: "high",
 };
 
 export const US_ALZHEIMERS_ANNUAL_COST: Parameter = {
@@ -3520,15 +3490,15 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
-  value: 494010.86520261574,
-  unit: "usd",
-  displayName: "Personal Lifetime Wealth (Age 30, 1% Treaty)",
-  description: "Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
+  value: 3000000.0,
+  unit: "USD",
+  displayName: "Personal Lifetime Wealth (QALY-Based)",
+  description: "Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.",
   sourceType: "calculated",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/personal-lifetime-wealth-calc",
-  confidence: "medium",
-  formula: "NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
-  latex: "\\begin{gathered}\nWealth_{lifetime} \\\\\n= \\text{NPV}(\\text{Peace} + \\text{Health} \\\\\n+ \\text{Productivity} + \\text{Earnings})\n\\end{gathered}",
+  confidence: "low",
+  formula: "LIFE_EXTENSION_YEARS × STANDARD_ECONOMIC_QALY_VALUE_USD",
+  latex: "Wealth_{lifetime} = T_{extend} \\times Value_{QALY}",
 };
 
 export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
@@ -4648,17 +4618,6 @@ export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   confidence: "high",
 };
 
-export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
-  value: 4300000.0,
-  unit: "USD",
-  displayName: "Lifetime Benefit for Age 30 Baseline Scenario",
-  description: "Lifetime benefit for age 30 baseline scenario ($4.3M)",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/personal-lifetime-wealth-calc",
-  confidence: "high",
-  formula: "Total lifetime health gains from 1% treaty",
-};
-
 export const EPIGENETIC_TARGETS_COUNT: Parameter = {
   value: 1500.0,
   unit: "targets",
@@ -4757,7 +4716,7 @@ export const IAB_BOOTSTRAP_CAMPAIGN_COST: Parameter = {
   value: 100000000.0,
   unit: "USD",
   displayName: "IAB Bootstrap Campaign Cost",
-  description: "Bootstrap campaign cost for initial IAB proof-of-concept. Range reflects uncertainty in required lobbying intensity, media spend, and organizational overhead.",
+  description: "[DEPRECATED] Bootstrap campaign cost for initial IAB proof-of-concept. Superseded by TREATY_CAMPAIGN_TOTAL_COST ($1B) for consistency with VICTORY bond ROI calculations.",
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [50000000.0, 200000000.0],
@@ -4922,16 +4881,6 @@ export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/problem/untapped-therapeutic-frontier",
   confidence: "high",
   confidenceInterval: [15000.0, 50000.0],
-};
-
-export const TOTAL_BOOK_WORDS: Parameter = {
-  value: 171121.0,
-  unit: "words",
-  displayName: "Total Words in the Book",
-  description: "Total words in the book",
-  sourceType: "definition",
-  sourceRef: "book-word-count",
-  confidence: "high",
 };
 
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
@@ -5102,7 +5051,6 @@ export const parameters = {
   ADAPTABLE_TRIAL_TOTAL_COST,
   ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE,
   AVERAGE_MARKET_RETURN_PCT,
-  AVERAGE_US_HOURLY_WAGE,
   BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES,
   BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE,
   BAD_POLICY_COST_US_DRUG_WAR,
@@ -5119,7 +5067,6 @@ export const parameters = {
   BAD_POLICY_COST_US_TAX_COMPLIANCE,
   BASELINE_LIVES_SAVED_ANNUAL,
   BED_NETS_COST_PER_DALY,
-  BOOK_READING_SPEED_WPM,
   CAREGIVER_ANNUAL_VALUE_TOTAL,
   CAREGIVER_COUNT_US,
   CAREGIVER_HOURS_PER_MONTH,
@@ -5258,7 +5205,6 @@ export const parameters = {
   TRADITIONAL_PHASE3_COST_PER_PATIENT,
   TREATMENT_ACCELERATION_YEARS_CURRENT,
   TREATMENT_DISABILITY_REDUCTION,
-  TYPICAL_CEO_HOURLY_RATE,
   US_ALZHEIMERS_ANNUAL_COST,
   US_CANCER_ANNUAL_COST,
   US_CHRONIC_DISEASE_SPENDING_ANNUAL,
@@ -5510,7 +5456,6 @@ export const parameters = {
   DIH_NPV_ANNUAL_OPEX_INITIATIVES,
   DIH_NPV_UPFRONT_COST_INITIATIVES,
   DISEASE_RELATED_CAREGIVER_PCT,
-  EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT,
   EPIGENETIC_TARGETS_COUNT,
   EVENTUALLY_AVOIDABLE_DALY_PCT,
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
@@ -5540,7 +5485,6 @@ export const parameters = {
   SECONDS_PER_MINUTE,
   SECONDS_PER_YEAR,
   TESTED_RELATIONSHIPS_ESTIMATE,
-  TOTAL_BOOK_WORDS,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
   TREATY_CAMPAIGN_BUDGET_SUPER_PACS,
@@ -5627,31 +5571,6 @@ export const citations: Record<string, Citation> = {
         URL: "https://pubmed.ncbi.nlm.nih.gov/26276679/",
         note: "Zimmerman et al., Mayo Clinic Proceedings, 2015 | Preskorn et al., Journal of Psychiatric Practice, 2015 | Wolters Kluwer: Antidepressant Trials Exclude Most Real World Patients",
   },
-  "average-reading-speed": {
-        id: "average-reading-speed",
-        type: "webpage",
-        title: "Average reading speed",
-        author: [
-          {
-            literal: "Educational psychology literature"
-          },
-        ],
-        note: "Educational psychology literature",
-  },
-  "average-us-hourly-wage": {
-        id: "average-us-hourly-wage",
-        type: "article-journal",
-        title: "Average US hourly wage",
-        author: [
-          {
-            literal: "BLS"
-          },
-        ],
-        issued: { 'date-parts': [[2024]] },
-        'container-title': "BLS",
-        URL: "https://www.bls.gov/news.release/pdf/ocwage.pdf",
-        note: "BLS, Occupational Employment and Wages May 2024",
-  },
   "bio-clinical-development-2021": {
         id: "bio-clinical-development-2021",
         type: "article-journal",
@@ -5704,20 +5623,6 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2024]] },
         URL: "https://www.census.gov/library/publications/2024/demo/p60-282.html",
         note: "US Census Bureau, 2024, Income in the United States: 2023",
-  },
-  "ceo-compensation": {
-        id: "ceo-compensation",
-        type: "article-journal",
-        title: "CEO compensation",
-        author: [
-          {
-            literal: "EPI"
-          },
-        ],
-        issued: { 'date-parts': [[2024]] },
-        'container-title': "EPI",
-        URL: "https://www.epi.org/blog/ceo-pay-increased-in-2024-and-is-now-281-times-that-of-the-typical-worker-new-epi-landing-page-has-all-the-details/",
-        note: "EPI, CEO Pay 2024",
   },
   "chance-of-dying-from-terrorism-1-in-30m": {
         id: "chance-of-dying-from-terrorism-1-in-30m",
@@ -7511,11 +7416,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 458,
-  external: 186,
+  total: 453,
+  external: 183,
   calculated: 169,
-  definitions: 103,
-  citations: 144,
+  definitions: 101,
+  citations: 141,
 } as const;
 
 // ============================================================================
