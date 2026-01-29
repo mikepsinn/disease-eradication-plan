@@ -6,7 +6,7 @@ abstract: |
 
   Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track politician alignment, (5) Fund accordingly via SuperPAC. Politicians vote however they want. Following evidence gets funded; ignoring it doesn't.
 
-  The structural advantage: bribing 1,000 committee chairs is easier than corrupting multiple independent data sources. The mechanism makes representing voters the winning strategy.
+  The structural advantage: current governance has thousands of capture points (committees, agencies, regulations). Optimocracy consolidates these to a single, harder target: the verification layer. Corrupting five independent data sources requires coordination that corrupting individual committee decisions does not.
 aliases:
   - /optimocracy.html
 author:
@@ -26,7 +26,6 @@ keywords:
   - algorithmic governance
   - metric optimization
   - capture resistance
-  - index funds
   - Goodhart's Law
   - independent verification
 jel:
@@ -67,9 +66,7 @@ Optimocracy is simple:
 
 ### Why This Works
 
-**The index fund analogy:** Index funds outperform 90%+ of active managers by following systematic rules instead of discretionary stock-picking [@spiva2023]. Optimocracy applies the same logic to governance: follow evidence-based recommendations, outperform captured allocation.
-
-**Capture resistance:** Currently, lobbyists have thousands of doors to knock on (committee earmarks, agency decisions, regulatory rulings). Each is cheap to capture. Optimocracy collapses these to one hard target: the data sources measuring health and wealth. Bribing 1,000 cheap doors is easier than bribing one expensive vault with five independent locks. Corruption doesn't disappear; it just gets prohibitively expensive.
+**Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to influence. Optimocracy consolidates these to a single target: the verification layer measuring health and wealth. Corrupting five independent data sources (Census Bureau, Federal Reserve, BLS, academic institutions, citizen surveys) requires coordination across institutions with different governance structures, funding sources, and methodologies. Corruption doesn't disappear; it just becomes prohibitively expensive.
 
 **No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable).
 
@@ -184,11 +181,9 @@ This motivates the Optimocracy thesis: if current systems systematically fail to
 
 ### When Does Optimocracy Beat the Status Quo?
 
-Currently, lobbyists have thousands of doors to knock on: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to capture. Optimocracy collapses these to one hard target: **the data sources**.
+Optimocracy's structural advantage comes from consolidating capture opportunities. The only attack surface is the verification layer itself: coordinating multiple independent institutions to misreport the same metrics, without detection.
 
-There's no metric to corrupt. Health and wealth are what humans universally value. The only attack is bribing multiple independent oracles to lie about the same number without getting caught, requiring coordination among strangers who lose credibility if wrong.
-
-**The intuition**: Bribing 1,000 cheap doors is easier than bribing one expensive vault with five independent locks. Corruption doesn't disappear. It just gets prohibitively expensive.
+Health and wealth are not arbitrary metrics. They are what humans universally value. The challenge for would-be corruptors: coordinate the Census Bureau, Federal Reserve, BLS, academic researchers, and citizen surveys to all report the same biased figure, without any whistleblowers. These institutions have different governance structures, funding sources, and methodologies. Collusion among strangers who lose credibility if caught is fundamentally harder than lobbying a single committee chair.
 
 #### Formal Model
 
@@ -206,7 +201,7 @@ In plain English: the left side is the cost of corrupting Optimocracy (coordinat
 
 **When this works:**
 
-1. **N is large**: More captured decisions = more doors to bribe = higher status quo corruption cost
+1. **N is large**: More decision points = more capture opportunities = higher status quo corruption cost
 2. **Many independent oracles**: More oracles require exponentially harder collusion (5 sources means capturing 3; probability scales as $p_O^3$)
 3. **Oracles are genuinely independent**: Different governance structures, funding sources, methodologies
 
@@ -222,7 +217,7 @@ Previous attempts at technocratic governance (Soviet central planning, credit ra
 
 ### Precedents That Work
 
-**Index funds:** Over 15-year periods, 90%+ of active managers underperform benchmark indices after fees [@spiva2023]. Rule-based allocation outperforms discretionary management. Optimocracy applies this logic to governance.
+**Rule-based allocation:** Systematic approaches consistently outperform discretionary judgment across domains. Over 15-year periods, 90%+ of active fund managers underperform benchmark indices after fees [@spiva2023]. Formula-based programs like Social Security COLA remove annual political battles over adjustments.
 
 **Credible commitment:** Published rules make deviation visible. Multiple institutions report outcomes. Politicians vote freely, but alignment with recommendations is tracked publicly. This raises the political cost of ignoring evidence.
 
@@ -468,7 +463,7 @@ For deeper engagement with democratic theory objections, see [Appendix B](#appen
 
 ## Testable Predictions
 
-A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation, including index funds outperforming 90%+ of active managers [@spiva2023] and formula programs like Social Security showing lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
+A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
 
 **Prediction 1: Private Optimocracy funds will outperform traditional philanthropic allocation on chosen metrics.**
 
@@ -513,8 +508,6 @@ Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. Fo
 | **System validation (ongoing)** | Over years, metrics trend upward. This validates the recommendations, attracting more IAB funding. |
 
 The politician's choice becomes simple: follow evidence-based recommendations and receive campaign support plus career opportunities proportional to your alignment, or follow donor preferences and watch your colleagues get funded and hired. No waiting years for outcomes. IABs convert abstract "doing the right thing" into concrete career advancement.
-
-**The political index fund:** Index funds outperform active management by following systematic rules rather than stock-picking. IABs apply the same logic to politics: politicians who follow evidence-based recommendations (the "index") receive campaign support and career opportunities proportional to their alignment. No need to wait for outcomes. The index's track record over time attracts more funding; individual politicians benefit from following it. This reverses the current incentive structure where following donor preferences provides better career prospects than following citizen welfare. The recommendation is public; the alignment is measurable; the reward is immediate.
 
 ## Political Economy: Making Reform Happen
 
@@ -699,7 +692,7 @@ Political governance is not failing because politicians are evil or voters are i
 
 Optimocracy offers a different approach: rather than relying on systems that don't optimize for outcomes, introduce outcome-optimizing allocation for decisions where optimization is feasible. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via transparent rules.
 
-The precedents are encouraging. Index funds outperform active management through systematic rules. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
+The precedents are encouraging. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
 
 Optimocracy is not utopian. It faces real challenges: measurement methodology capture, edge cases, and democratic legitimacy. But these challenges are addressable through institutional diversity, the wrapper architecture, and iterative implementation.
 
