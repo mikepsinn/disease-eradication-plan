@@ -102,9 +102,33 @@ def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verb
     1. Simple rmtree with retries and delays
     2. Force garbage collection to release file handles
     3. Kill any Python/Quarto processes that might be locking files
+    4. On Windows, use robocopy for directories with very long paths
     """
     if not path.exists():
         return True
+
+    # On Windows, try robocopy trick for long paths first
+    # robocopy /MIR with an empty dir effectively deletes everything
+    if sys.platform == 'win32':
+        try:
+            import tempfile
+            with tempfile.TemporaryDirectory() as empty_dir:
+                result = subprocess.run(
+                    ['robocopy', empty_dir, str(path), '/MIR', '/R:0', '/W:0'],
+                    capture_output=True,
+                    timeout=60
+                )
+                # robocopy returns 0-7 for success, 8+ for errors
+                if result.returncode < 8:
+                    # Now remove the empty directory
+                    try:
+                        path.rmdir()
+                    except Exception:
+                        pass
+                    if not path.exists():
+                        return True
+        except Exception:
+            pass  # Fall through to normal rmtree
 
     for attempt in range(max_retries):
         try:
@@ -112,10 +136,10 @@ def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verb
             gc.collect()
             shutil.rmtree(path)
             return True
-        except PermissionError as e:
+        except (PermissionError, OSError) as e:
             if attempt < max_retries - 1:
                 if verbose:
-                    print(f"[WARN] Directory locked (attempt {attempt + 1}/{max_retries}), retrying in {delay}s...", flush=True)
+                    print(f"[WARN] Directory removal issue (attempt {attempt + 1}/{max_retries}), retrying in {delay}s...", flush=True)
 
                 # On Windows, try to kill processes that might be locking the directory
                 if sys.platform == 'win32' and attempt >= 2:
@@ -139,8 +163,9 @@ def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verb
                 delay *= 1.5  # Exponential backoff
             else:
                 if verbose:
-                    print(f"[ERROR] Failed to remove {path} after {max_retries} attempts: {e}", flush=True)
-                raise
+                    print(f"[WARN] Failed to fully remove {path}, continuing anyway: {e}", flush=True)
+                # Don't raise - just continue, the directory might be partially cleaned
+                return False
     return False
 
 
@@ -526,6 +551,22 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         "nul", "con", "prn", "aux", "com1", "lpt1"
     }
 
+    # On Windows, skip files with paths that would exceed MAX_PATH (260 chars)
+    # This prevents shutil.Error on very long filenames
+    # Account for the extra path length when copying to _build_temp/{config}/
+    extra_path_len = len(str(build_temp)) - len(str(project_root))
+    max_path_len = (250 - extra_path_len) if sys.platform == 'win32' else 4096
+
+    def should_ignore(directory: str, files: List[str]) -> Set[str]:
+        ignored = set()
+        for f in files:
+            if f in ignore_patterns or f.startswith('.'):
+                ignored.add(f)
+            # Check if resulting destination path would be too long
+            elif len(os.path.join(directory, f)) > max_path_len:
+                ignored.add(f)
+        return ignored
+
     if verbose:
         print(f"[*] Copying project files to _build_temp/{config_name}/...", flush=True)
 
@@ -535,10 +576,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
         dest = build_temp / item.name
         if item.is_dir():
-            shutil.copytree(
-                item, dest,
-                ignore=lambda d, f: {x for x in f if x in ignore_patterns or x.startswith('.')}
-            )
+            shutil.copytree(item, dest, ignore=should_ignore)
         else:
             shutil.copy2(item, dest)
 
