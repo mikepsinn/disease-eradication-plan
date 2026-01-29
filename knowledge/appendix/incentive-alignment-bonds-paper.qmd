@@ -91,7 +91,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **{{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (military contractors) by 90:1 (Section 2.3)
 - **{{< var iab_mechanism_benefit_cost_ratio >}} benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
-- **Wishocracy (Layer 2) prevents allocation capture** through random pairwise sampling that makes advertising economically infeasible (Section 6.2.3)
+- **Complementary mechanisms prevent allocation capture** once resources are redirected (Section 6.1)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
 
 ### Reader's Guide
@@ -1002,119 +1002,16 @@ Given these risks, start with a careful pilot. Measure what happens. Scale if it
 
 ### The Four-Layer Governance Stack
 
-IABs do not solve all governance problems. They address one specific failure mode: **how to get welfare-improving policies adopted when concentrated interests oppose them.** To understand IABs' role in the broader challenge of optimal resource allocation, we propose a four-layer governance stack where each layer addresses a distinct problem.
+IABs address one specific failure mode: **how to get welfare-improving policies adopted when concentrated interests oppose them.** They fit within a broader governance stack:
 
-**Layer 0: Wishocracy for Democratic Domain Ranking**
+- **Layer 0 (Domain Ranking):** Expert organizations (Copenhagen Consensus, GiveWell, IMF) provide benefit-cost data; citizens aggregate via pairwise comparisons to produce democratic domain rankings with capture-resistant legitimacy.
+- **Layer 1 (IABs):** Insert rankings into politician utility functions via score-dependent electoral support and career benefits. **This is the binding constraint** and the focus of this paper.
+- **Layer 2 (Within-Domain Allocation):** Once resources are redirected, mechanisms like aggregated pairwise preference allocation [@wishocracy2024] prevent capture by new concentrated interests.
+- **Layer 3 (Project Selection):** Domain-specific marketplaces (prediction markets, prize markets, retroactive public goods funding) allocate to specific projects.
 
-**Problem addressed:** What should we fund? Whose conception of "public good" governs resource allocation?
+**Key insight:** Layer 0 rankings exist but are ignored because they don't appear in politician utility functions. Layers 2-3 cannot function until Layer 1 creates the political conditions for their adoption.
 
-**Solution:** Expert organizations provide benefit-cost data; citizens aggregate via pairwise comparisons to produce democratic domain rankings.
-
-**How it works:**
-
-1. **Expert organizations produce BCR analyses** (this already exists):
-
-| Organization | Focus | Key Outputs |
-|:-------------|:------|:------------|
-| Copenhagen Consensus | Development interventions | BCR rankings since 2004 |
-| GiveWell | Global health | Cost-effectiveness analyses |
-| IMF | Subsidies and fiscal policy | Fossil fuel subsidy database |
-| United for Medical Research | Medical research ROI | NIH impact analyses |
-| Brown University Costs of War | Military spending | Job creation per dollar by sector |
-| Congressional Budget Office | Federal programs | Program evaluations |
-| PNAS / Academic Literature | Externalities | Climate, pollution valuations |
-
-2. **Citizens review data and make pairwise comparisons:** Wishocracy platform shows random pairs of domains (Pragmatic Clinical Trials vs. Military Spending). For each pair, users see synthesized data from multiple expert sources (Copenhagen Consensus BCR: 100:1 vs. 0.7:1; GiveWell analyses; IMF externality estimates; etc.). Citizens choose which domain should receive MORE resources.
-
-3. **Bradley-Terry aggregation produces democratic rankings:** Millions of pairwise comparisons aggregate into a global ranking of domains by democratically-determined priority.
-
-**Key advantages over expert-only rankings:**
-
-- **Prevents capture:** Would need to capture ALL expert organizations + manipulate millions of citizen preferences (much harder than capturing a single scoring organization)
-- **Democratic legitimacy:** Rankings reflect aggregated citizen values after reviewing expert analyses, not unelected technocrats deciding priorities
-- **Value pluralism:** Citizens can weight domains based on diverse values beyond utilitarian BCR (some prioritize climate, others health, etc.)
-- **Anti-gaming:** Random pairwise sampling makes advertising economically infeasible (same mechanism as Layer 2)
-
-**The original problem remains:** Expert rankings exist but don't influence allocation because they don't appear in politician utility functions. **The marginal value of producing another expert ranking is zero.** Wishocracy at Layer 0 solves democratic legitimacy and capture-resistance, but doesn't solve the adoption problem. That requires Layer 1.
-
-**Layer 1: Incentive Alignment Bonds**
-
-**Problem addressed:** How do we make NSV rankings consequential?
-
-**Solution:** Insert rankings into politician utility functions via score-dependent electoral support and career benefits.
-
-**Key innovation:** IABs are the **binding constraint** in the governance stack. Layer 0 (rankings) exists but is ineffective without Layer 1. Layers 2 and 3 (below) cannot function until Layer 1 creates the political conditions for their adoption.
-
-**This is what the current paper specifies:** The three-layer legal architecture (scoring, electoral, post-office) that implements this mechanism.
-
-**Layer 2: Wishocracy (Post-Adoption Allocation)**
-
-**Problem addressed:** Once resources are redirected to high-NSV domains, how do we allocate within those domains without recreating Olsonian capture?
-
-**Solution:** Aggregated Pairwise Preference Allocation, where citizens make simple pairwise comparisons ("Curing Alzheimer's vs. Climate Change?") and a Bradley-Terry model aggregates millions of comparisons into global rankings [@wishocracy2024].
-
-**Why this is separate from IABs:**
-
-- IABs get the treaty passed and resources redirected
-- Wishocracy prevents those resources from being captured by new concentrated interests
-- Example: IAB treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
-
-**Division of labor:**
-
-- **Layer 1 (IABs):** Politicians → Vote for treaty
-- **Layer 2 (Wishocracy):** Citizens → Allocate across diseases/interventions
-
-**Crowdfunding Campaign Evolution:**
-
-The Wishocracy mechanism can be extended beyond government program allocation to replace traditional research grants and contracts entirely. Instead of government bureaucracies deciding which projects to fund, researchers create crowdfunding campaigns. These campaigns explain:
-
-- Why their project creates the greatest marginal net societal value per dollar
-- Evidence they can implement (past results, team credentials, methodology)
-- Expected outcomes and benefit-cost ratios
-
-Citizens then allocate between these campaigns through pairwise comparisons, with the Bradley-Terry model aggregating preferences. Funding flows directly based on aggregated citizen rankings, eliminating government gatekeepers.
-
-**Anti-Gaming Through Random Pairwise Sampling:**
-
-This mechanism addresses the critical failure mode of traditional crowdfunding platforms (Kickstarter, GoFundMe, Indiegogo): **marketing skill matters more than merit.** Campaigns with professional videos, celebrity endorsements, and advertising budgets systematically outperform higher-value projects with poor presentation.
-
-Wishocracy's random pairwise sampling makes advertising economically infeasible.
-
-**The math:** With 10,000 active campaigns and each user completing 50 pairwise comparisons, the probability any specific campaign appears in a given comparison is $\frac{2}{10,000} \approx 0.02\%$, and the probability a user sees a specific campaign in their 50 comparisons is $\approx 0.1\%$. To shift a campaign from the 15th percentile to the top 5% requires approximately 10 million favorable comparisons, which means persuading approximately 200 million users (at 50 comparisons each), at an advertising cost of approximately \$200 million to reach that many users with persuasive content.
-
-**Economic conclusion:** Spending \$200 million on advertising to win research funding is irrational. **It's cheaper to just do the research yourself.** The only cost-effective strategy is to create genuinely high-NSV projects that win pairwise comparisons on merit.
-
-**Contrast with traditional crowdfunding:**
-
-- **Kickstarter:** All campaigns visible on browse pages, search results. A \$100K ad campaign can reach millions of potential backers directly.
-- **Wishocracy:** Each campaign appears in ~0.1% of comparisons. The same \$100K ad campaign increases funding probability by <0.01%.
-
-**Result:** Only merit-based quality matters. Projects rise or fall based on their actual NSV per dollar, not their promotional budget. This solves the "allocation capture problem" at Layer 2: even after IABs redirect resources to high-NSV domains, those resources flow to the highest-value specific projects within each domain.
-
-**Layer 3: Domain-Specific Marketplaces**
-
-**Problem addressed:** Within a specific domain (e.g., cancer research), how do we allocate to specific projects, researchers, and trials?
-
-**Solution:** Market mechanisms like a decentralized framework for drug assessment for clinical trials, prize markets for research breakthroughs, retroactive public goods funding.
-
-**Example cascade:**
-
-1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: pragmatic clinical trials 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank pragmatic clinical trials above military spending
-2. **Layer 1 (IABs):** Politicians pass treaty redirecting {{< var treaty_annual_funding >}} to pragmatic clinical trials based on Layer 0 democratic domain ranking
-3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within pragmatic clinical trials: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
-4. **Layer 3 (a decentralized framework for drug assessment, or dFDA):** Researchers compete in prediction markets; trials funded based on predicted effectiveness
-
-### Why This Sequencing Matters
-
-The four layers must be implemented in order:
-
-1. **Layer 0 (Wishocracy for Domain Ranking) can be built now** using existing expert BCR data. The technology exists (Bradley-Terry aggregation) and the data exists (Copenhagen Consensus, GiveWell, IMF), but the resulting rankings are being ignored
-2. **Layer 1 (IABs) is the binding constraint**; without it, nothing else happens. Politicians ignore Layer 0 rankings and won't adopt Layers 2-3
-3. **Layer 2 and 3 become possible** only after Layer 1 creates political support for new allocation mechanisms
-
-**Common mistake:** Advocates focus on Layers 2 or 3 (better voting systems, prediction markets, AI allocation) without recognizing that **Layer 1 is the bottleneck.** You cannot implement Wishocracy or domain marketplaces if politicians won't vote to fund them in the first place.
-
-**IABs solve the meta-problem:** How do we bootstrap from the current Olsonian equilibrium to one where better governance mechanisms can be adopted?
+**Common mistake:** Advocates focus on Layers 2 or 3 (better voting systems, prediction markets, AI allocation) without recognizing that **Layer 1 is the bottleneck.** You cannot implement better allocation mechanisms if politicians won't vote to fund them in the first place. **IABs solve the meta-problem:** how to bootstrap from the current Olsonian equilibrium to one where better governance mechanisms can be adopted.
 
 ### Comparison to Alternative Governance Mechanisms
 
@@ -1155,15 +1052,7 @@ Optimocracy and IABs can develop in parallel. Private Optimocracy doesn't requir
 
 ### What IABs Do Not Solve
 
-IABs solve the *adoption* problem (the binding constraint that prevents welfare-improving policies from being considered) but not the complete resource allocation problem. The four-layer stack addresses this systematically:
-
-**Problems IABs alone do not solve:**
-
-- **What counts as "public good"?** → **Solved by Layer 0 (Wishocracy for Domain Ranking):** Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings. This combines expert cost-effectiveness analysis with democratic legitimacy while preventing capture of the scoring methodology.
-- **How to allocate within approved domains?** → **Solved by Layer 2:** Wishocracy democratizes allocation via aggregated pairwise preferences, preventing committee capture
-- **Which specific projects to fund?** → **Solved by Layer 3:** Domain-specific marketplaces (a decentralized framework for drug assessment for trials, prize markets for breakthroughs) allocate to specific projects
-- **How to prevent metric corruption?** → **Partially solved by Layers 0 & 2:** Multiple competing scoring orgs (Layer 0) + democratic allocation (Layer 2) reduce single-point-of-failure risk
-- **Democratic legitimacy of wealthy funder influence** → **Solved by Layer 2:** Capital asymmetry (Section 2.3) + Wishocracy (Section 6.2.3) mean millions of retail investors democratize funding, and allocation decisions are made by all citizens via pairwise comparisons, not funders
+IABs solve the *adoption* problem (the binding constraint) but not the complete resource allocation problem. The four-layer stack (Section 6.1) addresses domain ranking, within-domain allocation, and project selection through complementary mechanisms.
 
 **Problems that remain genuinely unsolved:**
 
