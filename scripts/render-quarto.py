@@ -190,6 +190,157 @@ def _extract_files_from_config(config: dict) -> Set[str]:
     return files
 
 
+def _build_paper_url_mapping(project_root: Path) -> Dict[str, str]:
+    """
+    Build mapping from standalone paper QMD paths to their deployed HTTPS URLs.
+
+    Reads all _quarto-*.yml configs and extracts:
+    - dih-render.index-source -> the QMD file path
+    - website.site-url -> the deployed URL
+
+    Returns:
+        Dict mapping QMD path (e.g., 'knowledge/appendix/optimocracy-paper.qmd')
+        to site URL (e.g., 'https://optimocracy.warondisease.org')
+    """
+    # Skip these config types (not standalone papers)
+    skip_configs = {"manual", "book", "test", "base", "shared-defaults"}
+
+    mapping = {}
+
+    for config_path in project_root.glob("_quarto-*.yml"):
+        if "_build_temp" in str(config_path):
+            continue
+
+        key = config_path.stem.replace("_quarto-", "")
+        if key in skip_configs or not key:
+            continue
+
+        try:
+            with open(config_path, encoding="utf-8") as f:
+                config = yaml.safe_load(f)
+        except Exception:
+            continue
+
+        if not config:
+            continue
+
+        # Get index-source from dih-render
+        dih_render = config.get("dih-render", {})
+        index_source = dih_render.get("index-source")
+        if not index_source:
+            continue
+
+        # Get site-url from website section
+        site_url = config.get("website", {}).get("site-url")
+        if not site_url:
+            site_url = config.get("book", {}).get("site-url")
+
+        if not site_url:
+            continue
+
+        # Normalize: remove trailing slash from URL
+        site_url = site_url.rstrip("/")
+        mapping[index_source] = site_url
+
+    return mapping
+
+
+def _rewrite_paper_links(
+    build_temp: Path,
+    project_root: Path,
+    current_config_source: Optional[str],
+    files_to_process: List[str],
+    verbose: bool = True
+) -> int:
+    """
+    Rewrite links to standalone paper QMD files with their deployed HTTPS URLs.
+
+    Args:
+        build_temp: Path to the temp build directory
+        project_root: Path to the project root
+        current_config_source: The index-source of the current config (to avoid self-links)
+        files_to_process: List of QMD files to process
+        verbose: Whether to print status messages
+
+    Returns:
+        Number of links rewritten
+    """
+    mapping = _build_paper_url_mapping(project_root)
+    if not mapping:
+        return 0
+
+    # Remove self-reference from mapping (a paper shouldn't link to its own URL)
+    if current_config_source and current_config_source in mapping:
+        mapping = {k: v for k, v in mapping.items() if k != current_config_source}
+
+    if not mapping:
+        return 0
+
+    links_rewritten = 0
+
+    for file_path_str in files_to_process:
+        qmd_file = build_temp / file_path_str
+        if not qmd_file.exists():
+            continue
+
+        with open(qmd_file, encoding="utf-8") as f:
+            content = f.read()
+
+        original = content
+
+        def rewrite_paper_link(match: re.Match[str]) -> str:
+            nonlocal links_rewritten
+            text, full_path = match.group(1), match.group(2)
+
+            # Skip external links
+            if full_path.startswith(("http://", "https://", "#", "mailto:")):
+                return match.group(0)
+
+            # Skip non-QMD links
+            if ".qmd" not in full_path:
+                return match.group(0)
+
+            # Split path and anchor
+            if "#" in full_path:
+                path_part, anchor = full_path.split("#", 1)
+                anchor = "#" + anchor
+            else:
+                path_part = full_path
+                anchor = ""
+
+            # Normalize path
+            path_normalized = path_part.replace("\\", "/")
+
+            # Try to match against our mapping
+            for qmd_path, site_url in mapping.items():
+                qmd_filename = Path(qmd_path).name
+
+                # Match if:
+                # 1. Full path matches exactly
+                # 2. Path ends with the QMD path
+                # 3. Just the filename matches (for same-directory links)
+                if (path_normalized == qmd_path or
+                    path_normalized.endswith("/" + qmd_path) or
+                    path_normalized.endswith(qmd_filename) or
+                    Path(path_normalized).name == qmd_filename):
+
+                    new_url = site_url + "/" + anchor if anchor else site_url
+                    if verbose:
+                        print(f"    {file_path_str}: {full_path} -> {new_url}")
+                    links_rewritten += 1
+                    return f"[{text}]({new_url})"
+
+            return match.group(0)
+
+        content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", rewrite_paper_link, content)
+
+        if content != original:
+            with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
+                f.write(content)
+
+    return links_rewritten
+
+
 def get_config_metadata(config_name: str) -> Dict[str, Any]:
     """
     Read build configuration from dih-render section of a Quarto config file.
@@ -478,6 +629,29 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
         if param_links_rewritten > 0 and verbose:
             print(f"[OK] Rewrote {param_links_rewritten} paper-specific parameter links for manual build", flush=True)
+
+    # Rewrite links to standalone papers with their deployed HTTPS URLs
+    # This runs for all configs (not just manual) to fix "Unable to resolve link target" warnings
+    with open(project_root / metadata["config_file"], encoding="utf-8") as f:
+        current_cfg = yaml.safe_load(f)
+    current_files = _extract_files_from_config(current_cfg)
+    paper_files_to_process = list(current_files)
+    if (build_temp / "index.qmd").exists():
+        paper_files_to_process.append("index.qmd")
+
+    if verbose:
+        print(f"[*] Rewriting links to standalone papers with HTTPS URLs...", flush=True)
+
+    paper_links_rewritten = _rewrite_paper_links(
+        build_temp=build_temp,
+        project_root=project_root,
+        current_config_source=metadata.get("index_source"),
+        files_to_process=paper_files_to_process,
+        verbose=verbose
+    )
+
+    if paper_links_rewritten > 0 and verbose:
+        print(f"[OK] Rewrote {paper_links_rewritten} paper links to HTTPS URLs", flush=True)
 
     # Cross-site link rewriting
     target_url = metadata.get("target_url")
