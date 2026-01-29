@@ -5415,7 +5415,7 @@ DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
     float(RARE_DISEASES_COUNT_GLOBAL) * 0.95,  # ~6,650 diseases
     source_ref=ReferenceID.RARE_DISEASE_ONLY_5PCT_HAVE_TREATMENT,
     source_type="calculated",
-    description="Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.",
+    description="Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.",
     display_name="Diseases Without Effective Treatment",
     unit="diseases",
     formula="RARE_DISEASES_COUNT_GLOBAL × 0.95",    confidence="medium",
@@ -5444,14 +5444,14 @@ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
     latex_symbol=r"Treatments_{new,ann}",  # LaTeX symbol for equations
 )  # ~15 diseases/year get FIRST treatment
 
-# Time to clear entire disease queue under status quo
-# ~6,650 diseases ÷ ~15 cures/year = ~443 years to cure ALL diseases
+# Time to explore entire therapeutic search space under status quo
+# ~6,650 diseases ÷ ~15 cures/year = ~443 years to find treatments for ALL diseases
 STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
     float(DISEASES_WITHOUT_EFFECTIVE_TREATMENT) / float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR),
     source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
     source_type="calculated",
-    description="Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.",
-    display_name="Status Quo Queue Clearance Time",
+    description="Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.",
+    display_name="Status Quo Therapeutic Space Exploration Time",
     unit="years",
     formula="DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",    confidence="low",
     keywords=["status quo", "queue", "clearance", "total", "years"],
@@ -5461,13 +5461,13 @@ STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
 )  # ~443 years to cure ALL diseases
 
 # Average time to first treatment under current/status quo system (BASELINE)
-# Average disease is in middle of queue, so waits half the queue clearance time
+# Average disease is in middle of the therapeutic space, so waits half the exploration time
 # ~443 years ÷ 2 = ~222 years for the average disease
 STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / 2,
     source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
     source_type="calculated",
-    description="Average years until first treatment discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).",
+    description="Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).",
     display_name="Status Quo Average Years to First Treatment",
     unit="years",
     formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2",    confidence="low",
@@ -5475,16 +5475,16 @@ STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
     inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / 2,
     latex_symbol=r"T_{first,SQ}",  # LaTeX symbol for equations
-)  # ~222 years for average disease (half the queue)
+)  # ~222 years for average disease (half the exploration time)
 
 # Treatment timeline acceleration from dFDA implementation (trial capacity only)
 # Calculated as: Status Quo Baseline × (1 - 1/Speedup)
 # Uses only trial capacity multiplier, not combined with valley of death rescue,
-# because valley of death rescue adds more drug candidates but doesn't directly speed queue processing
+# because valley of death rescue adds more drug candidates but doesn't directly speed therapeutic space exploration
 DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
     float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT) * (1 - 1 / float(DFDA_TRIAL_CAPACITY_MULTIPLIER)),
     source_type="calculated",
-    description="Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.",
+    description="Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.",
     display_name="dFDA Treatment Timeline Acceleration",
     unit="years",
     formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
@@ -5505,7 +5505,7 @@ DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
 DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     source_type="calculated",
-    description="Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster queue processing from increased trial capacity.",
+    description="Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster therapeutic space exploration from increased trial capacity.",
     display_name="Lives Saved from Trial Capacity Increase",
     unit="deaths",
     formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS × AVOIDABLE_PCT",
@@ -5587,12 +5587,12 @@ DFDA_FIRST_TREATMENTS_PER_YEAR = Parameter(
     latex_symbol=r"Treatments_{dFDA,ann}",  # LaTeX symbol for equations
 )
 
-# Time to cure ALL diseases with dFDA
+# Time to explore entire therapeutic space with dFDA
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     source_type="calculated",
-    description="Years to treat all currently untreatable diseases with dFDA implementation. Queue clearance time divided by trial capacity multiplier.",
-    display_name="dFDA Queue Clearance Time",
+    description="Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.",
+    display_name="dFDA Therapeutic Space Exploration Time",
     unit="years",
     formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
     confidence="low",
@@ -6574,18 +6574,18 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
 # What if philanthropists/governments directly funded $21.76B/year instead of
 # spending $1B on a treaty campaign? This shows the cost-effectiveness trade-off.
 
-# NPV of direct funding for queue clearance period
+# NPV of direct funding for therapeutic space exploration period
 DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
-    description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until disease queue is cleared. Funding period is queue clearance time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.",
-    display_name="dFDA Direct Funding NPV (Queue Clearance Period)",
+    description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year therapeutic space exploration period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until the therapeutic space is fully explored. Funding period is exploration time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After exploration completes, the timeline shift benefit (200B DALYs) is fully realized.",
+    display_name="dFDA Direct Funding NPV (Exploration Period)",
     unit="USD",
-    formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = queue clearance time",
-    keywords=["philanthropy", "direct funding", "alternative", "npv", "queue clearance"],
+    formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
+    keywords=["philanthropy", "direct funding", "alternative", "npv", "exploration"],
     inputs=['DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
@@ -6599,7 +6599,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # Derived from NPV and DALYs
-    description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (therapeutic space exploration period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="dFDA Direct Funding Cost per DALY",
     unit="USD/DALY",
     formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
@@ -6649,11 +6649,11 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
     source_ref="/knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # Ratio of cost per DALY metrics
-    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by clearing disease queue 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",
     unit="ratio",
     formula="DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",    confidence="high",
-    keywords=["leverage", "campaign effectiveness", "treaty advantage", "cost comparison", "queue clearance"],
+    keywords=["leverage", "campaign effectiveness", "treaty advantage", "cost comparison", "therapeutic space"],
     inputs=['DFDA_DIRECT_FUNDING_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
     latex_symbol=r"Leverage_{treaty}",  # LaTeX symbol for equations

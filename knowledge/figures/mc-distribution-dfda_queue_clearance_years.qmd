@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Queue Clearance Time (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: dFDA Therapeutic Space Exploration Time (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 19.936743498131438
 p5 = 11.623214603717258
 p50 = 29.673608045531566
 p95 = 77.24732045045442
-display_name = "dFDA Queue Clearance Time"
+display_name = "dFDA Therapeutic Space Exploration Time"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Queue Clearance Time**
+**Simulation Results Summary: dFDA Therapeutic Space Exploration Time**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 19.9 |
 | 90% Confidence Interval | [11.6, 77.2] |
 
-*The histogram shows the distribution of dFDA Queue Clearance Time across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of dFDA Therapeutic Space Exploration Time across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

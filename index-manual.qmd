@@ -308,15 +308,15 @@ You'd be adorable for thinking that.
 [Humans haven't cured a single disease](knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd) in 50 years [@smallpox-eradicated].
 But humans have [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd), enough to end civilization 13 times, just in case the first apocalypse doesn't take.
 
-### The Disease Queue (Why You're Waiting to Not Die)
+### The Unexplored Therapeutic Frontier
 
 Right now, only {{< var new_disease_first_treatments_per_year >}} diseases per year get their first effective treatment. That's it. Fifteen. Out of {{< var diseases_without_effective_treatment >}} that have nothing.
 
-Imagine {{< var diseases_without_effective_treatment >}} people standing in line at a pharmacy that serves {{< var new_disease_first_treatments_per_year >}} customers per year. At this rate, the last person in line gets served in ~{{< var status_quo_queue_clearance_years >}}. They'll be dead by then. So will you. So will everyone.
+Think of the therapeutic search space as all the drug-disease combinations that could work but haven't been tested. At the current discovery rate ({{< var new_disease_first_treatments_per_year >}} first treatments/year), exploring this space would take ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
 
-Pragmatic trials at scale are like opening {{< var dfda_trial_capacity_multiplier >}} more registers. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} wait becomes ~{{< var dfda_queue_clearance_years >}}.
+Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}×. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} exploration time becomes ~{{< var dfda_queue_clearance_years >}}.
 
-This is "trial capacity." More trials = more diseases tested = more first effective treatments arrive sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
+This is "trial capacity." More trials = more of the therapeutic space explored = treatments discovered sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
 
 ### The Cost of War
 

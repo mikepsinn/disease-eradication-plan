@@ -696,14 +696,14 @@
 "dfda_direct_funding_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cost per DALY\
-  \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (queue\
-  \ clearance period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves\
-  \ 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B),\
-  \ avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline\
-  \ shift benefit. Still cost-effective vs bed nets ($89.0/DALY). | Calculated from\
-  \ 2 inputs | ~ Medium confidence | Formula: NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT\
-  \ | Unit: USD/DALY | Click to view details, calculation & sources\">$0.841 (95%\
-  \ CI: $0.242-$1.75)</a>"
+  \ if philanthropists/governments directly funded $21.76B/year for ~46.5 years (therapeutic\
+  \ space exploration period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty\
+  \ achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years\
+  \ (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B\
+  \ DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY). |\
+  \ Calculated from 2 inputs | ~ Medium confidence | Formula: NPV_DIRECT_FUNDING ÷\
+  \ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view details, calculation & sources\"\
+  >$0.841 (95% CI: $0.242-$1.75)</a>"
 "dfda_direct_funding_cost_per_daly_latex": "$$\n\\begin{gathered}\nCost_{direct,DALY}\
   \ = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$475B}{565B} = \\$0.841 \\\\[0.5em]\n\
   \\text{where } NPV_{direct} \\\\\n= \\frac{T_{queue,dFDA}}{Treasury_{RD,ann} \\\
@@ -770,14 +770,14 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-impact-paper.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of direct\
   \ funding ($21.76B/year for medical research after bond/IAB allocations) for the\
-  \ ~46.5-year queue clearance period. Alternative scenario: instead of $1B treaty\
-  \ campaign to unlock government funding, philanthropists/NIH directly fund clinical\
-  \ trials until disease queue is cleared. Funding period is queue clearance time\
-  \ (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years).\
-  \ After queue is cleared, the timeline shift benefit (200B DALYs) is fully realized.\
-  \ | Calculated from 3 inputs | ✓ High confidence | Formula: ANNUAL_FUNDING × [(1\
-  \ - (1 + r)^-T) / r] where T = queue clearance time | Unit: USD | Click to view\
-  \ details, calculation & sources\">$475B (95% CI: $211B-$651B)</a>"
+  \ ~46.5-year therapeutic space exploration period. Alternative scenario: instead\
+  \ of $1B treaty campaign to unlock government funding, philanthropists/NIH directly\
+  \ fund clinical trials until the therapeutic space is fully explored. Funding period\
+  \ is exploration time (46.5 years with 9.5× trial capacity), not timeline shift\
+  \ amount (207 years). After exploration completes, the timeline shift benefit (200B\
+  \ DALYs) is fully realized. | Calculated from 3 inputs | ✓ High confidence | Formula:\
+  \ ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time | Unit: USD\
+  \ | Click to view details, calculation & sources\">$475B (95% CI: $211B-$651B)</a>"
 "dfda_direct_funding_queue_clearance_npv_latex": "$$\nNPV_{direct} = Funding_{ann}\
   \ \\times \\frac{1 - (1+r)^{-T}}{r}\n$$"
 "dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag\"\
@@ -1224,10 +1224,11 @@
 "dfda_pragmatic_trial_cost_per_patient_cite": "@pragmatic-trials-cost-advantage"
 "dfda_queue_clearance_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_queue_clearance_years\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Years to treat all currently untreatable diseases\
-  \ with dFDA implementation. Queue clearance time divided by trial capacity multiplier.\
-  \ | Calculated from 2 inputs | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS\
-  \ ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: years | Click to view details, calculation\
+  \ data-confidence=\"low\" title=\"Years to explore the entire therapeutic search\
+  \ space with dFDA implementation. At increased discovery rate, finding first treatments\
+  \ for all currently untreatable diseases takes ~36 years instead of ~443. | Calculated\
+  \ from 2 inputs | ? Low confidence | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷\
+  \ DFDA_TRIAL_CAPACITY_MULTIPLIER | Unit: years | Click to view details, calculation\
   \ & sources\">36 years (95% CI: 11.6 years-77.2 years)</a>"
 "dfda_queue_clearance_years_latex": "$$\n\\begin{gathered}\nT_{queue,dFDA} = \\frac{T_{queue,SQ}}{k_{capacity}}\
   \ = \\frac{443}{12.3} = 36 \\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}}\
@@ -1480,10 +1481,10 @@
 "dfda_trial_capacity_lives_saved": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dfda_trial_capacity_lives_saved\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"low\" title=\"Total eventually avoidable deaths from trial capacity\
-  \ increase alone. Represents first treatments arriving earlier due to faster queue\
-  \ processing from increased trial capacity. | Calculated from 2 inputs | ? Low confidence\
-  \ | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS ×\
-  \ AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
+  \ increase alone. Represents first treatments arriving earlier due to faster therapeutic\
+  \ space exploration from increased trial capacity. | Calculated from 2 inputs |\
+  \ ? Low confidence | Formula: ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS\
+  \ × AVOIDABLE_PCT | Unit: deaths | Click to view details, calculation & sources\"\
   >10.3B deaths (95% CI: 6.76B deaths-16.0B deaths)</a>"
 "dfda_trial_capacity_lives_saved_latex": "$$\n\\begin{gathered}\nLives_{capacity}\
   \ \\\\\n= Deaths_{disease,daily} \\times T_{accel} \\times 338 \\\\\n= 150{,}000\
@@ -1719,8 +1720,8 @@
   \ due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced\
   \ by the inverse of the capacity multiplier. Uses only trial capacity multiplier\
   \ (not combined with valley of death rescue) because additional candidates don't\
-  \ directly speed queue processing. | Calculated from 2 inputs | ? Low confidence\
-  \ | Formula: STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)\
+  \ directly speed therapeutic space exploration. | Calculated from 2 inputs | ? Low\
+  \ confidence | Formula: STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)\
   \ | Unit: years | Click to view details, calculation & sources\">204 years (95%\
   \ CI: 123 years-350 years)</a>"
 "dfda_trial_capacity_treatment_acceleration_years_latex": "$$\n\\begin{gathered}\n\
@@ -1917,10 +1918,10 @@
   \ class=\"parameter-link\" data-source-ref=\"rare-disease-only-5pct-have-treatment\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Number of diseases\
   \ without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment\
-  \ (per Orphanet 2024). This is the 'queue' of diseases waiting for cures. | Calculated\
-  \ from 1 input | ~ Medium confidence | Formula: RARE_DISEASES_COUNT_GLOBAL × 0.95\
-  \ | Unit: diseases | Click to view details, calculation & sources\">6.65k diseases\
-  \ (95% CI: 5.70k diseases-8.24k diseases)</a>"
+  \ (per Orphanet 2024). This represents the therapeutic search space that remains\
+  \ unexplored. | Calculated from 1 input | ~ Medium confidence | Formula: RARE_DISEASES_COUNT_GLOBAL\
+  \ × 0.95 | Unit: diseases | Click to view details, calculation & sources\">6.65k\
+  \ diseases (95% CI: 5.70k diseases-8.24k diseases)</a>"
 "diseases_without_effective_treatment_latex": "$$\n\\begin{gathered}\nN_{untreated}\
   \ \\\\\n= N_{rare} \\times 0.95 \\\\\n= 7{,}000 \\times 0.95 \\\\\n= 6{,}650\n\\\
   end{gathered}\n$$"
@@ -3689,11 +3690,11 @@
 "status_quo_avg_years_to_first_treatment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-status_quo_avg_years_to_first_treatment\"\
   \ class=\"parameter-link\" data-source-ref=\"status-quo-cure-timeline-estimate\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Average years\
-  \ until first treatment discovered for a typical disease under current system. The\
-  \ average disease is in the middle of the queue, so it waits half the total queue\
-  \ clearance time (~443/2 = ~222 years). | Calculated from 1 input | ? Low confidence\
-  \ | Formula: STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2 | Unit: years | Click to view\
-  \ details, calculation & sources\">222 years (95% CI: 162 years-356 years)</a>"
+  \ until first treatment discovered for a typical disease under current system. At\
+  \ current discovery rates, the average disease waits half the total exploration\
+  \ time (~443/2 = ~222 years). | Calculated from 1 input | ? Low confidence | Formula:\
+  \ STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ 2 | Unit: years | Click to view details, calculation\
+  \ & sources\">222 years (95% CI: 162 years-356 years)</a>"
 "status_quo_avg_years_to_first_treatment_latex": "$$\n\\begin{gathered}\nT_{first,SQ}\
   \ = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222 \\\\[0.5em]\n\\text{where }\
   \ T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15}\
@@ -3701,12 +3702,13 @@
   \ \\times 0.95 = 6{,}650\n\\end{gathered}\n$$"
 "status_quo_queue_clearance_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-status_quo_queue_clearance_years\"\
   \ class=\"parameter-link\" data-source-ref=\"status-quo-cure-timeline-estimate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Years to clear\
-  \ entire queue of diseases without treatment. At current rate of ~15 diseases/year\
-  \ getting first treatments, the queue of ~6,650 would take ~443 years to completely\
-  \ clear. | Calculated from 2 inputs | ? Low confidence | Formula: DISEASES_WITHOUT_EFFECTIVE_TREATMENT\
-  \ ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR | Unit: years | Click to view details,\
-  \ calculation & sources\">443 years (95% CI: 324 years-712 years)</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Years to explore\
+  \ the entire therapeutic search space under current system. At current discovery\
+  \ rate of ~15 diseases/year getting first treatments, finding treatments for all\
+  \ ~6,650 untreated diseases would take ~443 years. | Calculated from 2 inputs |\
+  \ ? Low confidence | Formula: DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR\
+  \ | Unit: years | Click to view details, calculation & sources\">443 years (95%\
+  \ CI: 324 years-712 years)</a>"
 "status_quo_queue_clearance_years_latex": "$$\n\\begin{gathered}\nT_{queue,SQ} = \\\
   frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443 \\\\[0.5em]\n\
   \\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\
@@ -4412,9 +4414,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"How many times\
   \ more cost-effective the treaty campaign is vs direct funding. Treaty achieves\
   \ 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years\
-  \ (queue clearance, NPV: $541.9B), avoiding need for philanthropists/NIH to directly\
+  \ (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly\
   \ commit this amount. Both approaches achieve same 200B DALY timeline shift benefit\
-  \ by clearing disease queue 9.5× faster. Treaty spreads cost across governments\
+  \ by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments\
   \ while building sustainable public funding infrastructure. | Calculated from 2\
   \ inputs | ✓ High confidence | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY\
   \ | Unit: ratio | Click to view details, calculation & sources\">475:1 (95% CI:\

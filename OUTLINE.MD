@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,316
+**Files:** 4 | **Words:** 88,331
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,274 words | 14,688 lines
+**Stats:** 54,289 words | 14,688 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -132,7 +132,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - dFDA Direct Funding NPV (Queue Clearance Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
+    - dFDA Direct Funding NPV (Exploration Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -204,7 +204,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - dFDA Queue Clearance Time: 36 years {#sec-dfda_queue_clearance_years}
+    - dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -558,7 +558,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Status Quo Queue Clearance Time: 443 years {#sec-status_quo_queue_clearance_years}
+    - Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -2089,7 +2089,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 336,767
+**Files:** 86 | **Words:** 337,235
 
 #### index.qmd
 **Title:** Start Here
@@ -4015,7 +4015,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 12,861 words | 1,280 lines
+**Stats:** 13,321 words | 1,331 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4038,14 +4038,14 @@
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
+      - Arrow and Gibbard-Satterthwaite: Why They Don't Apply Here
       - Mechanism Design: Honest Answers Require Honest Incentives
       - The Comparison That Matters
     - Index Funds and Passive Allocation
     - Credible Commitment Mechanisms
   - Mechanism Design
     - Architecture Overview
-    - The Constitutional Layer
+    - The Constraint Layer
     - The Verification Layer
     - The Execution Layer
   - Welfare Metrics
@@ -4677,7 +4677,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,274 words | 14,688 lines
+**Stats:** 54,289 words | 14,688 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -4756,7 +4756,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - dFDA Direct Funding NPV (Queue Clearance Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
+    - dFDA Direct Funding NPV (Exploration Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -4828,7 +4828,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - dFDA Queue Clearance Time: 36 years {#sec-dfda_queue_clearance_years}
+    - dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5182,7 +5182,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Status Quo Queue Clearance Time: 443 years {#sec-status_quo_queue_clearance_years}
+    - Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -6658,7 +6658,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 7,240 words | 790 lines
+**Stats:** 7,233 words | 790 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -6683,7 +6683,7 @@
     - The Alternative
   - The Problem
     - The Daily Deletion Event
-    - The Disease Queue (Why You're Waiting to Not Die)
+    - The Unexplored Therapeutic Frontier
     - The Cost of War
     - Hilarious Security Priorities
   - The Solution
@@ -6993,12 +6993,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 12,861
+**Files:** 1 | **Words:** 13,321
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 12,861 words | 1,280 lines
+**Stats:** 13,321 words | 1,331 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7021,14 +7021,14 @@
       - Failed Algorithmic Governance in Finance
       - Synthesis: Boundary Conditions for Algorithmic Governance
     - Why No Perfect System Exists (And Why That's Fine)
-      - Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
+      - Arrow and Gibbard-Satterthwaite: Why They Don't Apply Here
       - Mechanism Design: Honest Answers Require Honest Incentives
       - The Comparison That Matters
     - Index Funds and Passive Allocation
     - Credible Commitment Mechanisms
   - Mechanism Design
     - Architecture Overview
-    - The Constitutional Layer
+    - The Constraint Layer
     - The Verification Layer
     - The Execution Layer
   - Welfare Metrics
@@ -7417,6 +7417,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 540,456
+- Total words: 541,399
 - Orphaned files: 20
 - Paper configs: 12

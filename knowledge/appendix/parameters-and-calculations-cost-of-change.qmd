@@ -496,7 +496,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed queue processing.
+Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.
 
 **Inputs**:
 
@@ -762,7 +762,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This is the 'queue' of diseases waiting for cures.
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
 
 **Inputs**:
 
@@ -829,11 +829,11 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average years until first treatment discovered for a typical disease under current system. The average disease is in the middle of the queue, so it waits half the total queue clearance time (~443/2 = ~222 years).
+Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).
 
 **Inputs**:
 
-- [Status Quo Queue Clearance Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
@@ -863,11 +863,11 @@ $$
 
 :::
 
-### Status Quo Queue Clearance Time: 443 years {#sec-status_quo_queue_clearance_years}
+### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years to clear entire queue of diseases without treatment. At current rate of ~15 diseases/year getting first treatments, the queue of ~6,650 would take ~443 years to completely clear.
+Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.
 
 **Inputs**:
 
