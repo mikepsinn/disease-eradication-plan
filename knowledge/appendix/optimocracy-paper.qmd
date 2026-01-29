@@ -80,7 +80,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 | Objection | Response |
 |-----------|----------|
-| "Goodhart's Law: metrics get gamed" | Yes, but estimated gaming losses (10-30%) < estimated capture losses ({{< var political_dysfunction_tax_total_pct >}}). Index funds demonstrate outcome-optimizing systems win despite gaming. |
+| "Goodhart's Law: metrics get gamed" | Traditional Goodhart examples (teaching to test, hospital readmissions) involve gaming metrics *without* improving underlying reality. Median income and median healthy life years are robust: you can't fake purchasing power or mortality at scale. The real risk is measurement methodology capture (addressed under Oracle Capture). |
 | "Who controls the oracles?" | Multiple independent sources (Census, Fed, academics), median aggregation. No single entity controls measurement. |
 | "This is undemocratic" | More democratic: citizens actually get what they voted for. Current system: vote for outcomes, get captured allocation. |
 | "What about edge cases and novel situations?" | Hybrid architecture preserves human discretion. Algorithms handle routine allocation; humans handle genuine novelty. |
@@ -364,7 +364,7 @@ The Revelation Principle [@myerson1981; @maskin1999] states that any outcome ach
 2. **Staking mechanisms help**: Economic penalties for detected manipulation create truth-telling incentives
 3. **Perfect honesty may be impossible**: For complex social metrics, verification is costly and manipulation hard to detect
 
-**How Optimocracy responds:** It uses multi-oracle aggregation (take the median of independent sources), staking-based penalties (lie and lose your deposit), and delayed verification (we don't claim perfect manipulation resistance, only that manipulation costs exceed the cost of corrupting political systems).
+**How Optimocracy responds:** It uses multi-source aggregation (take the median of independent institutions), institutional diversity (sources with different governance and incentives), and the wrapper architecture (politicians can override manipulated data). We don't claim perfect manipulation resistance, only that manipulation costs exceed the cost of corrupting political systems.
 
 #### The Comparison That Matters
 
@@ -372,7 +372,7 @@ The Revelation Principle [@myerson1981; @maskin1999] states that any outcome ach
 |---------|-----------|-------------|
 | Preference aggregation | Lobbyists pick winners | Democracy picks the metric once; algorithm pursues it |
 | Strategic gaming | 10,000 earmarks gamed annually | One constitutional vote gamed per decade |
-| Honest reporting | Agencies face political pressure | Oracles lose deposits if caught lying |
+| Honest reporting | Agencies face political pressure | Median aggregation excludes outliers; manipulation visible when sources diverge |
 
 These theorems constrain every governance system, including democracy. Optimocracy doesn't escape them. It moves the gaming opportunity from "which contractor gets this $50M earmark" to "what should the nation optimize for." The second question is harder to corrupt because everyone's watching and it only happens occasionally.
 
@@ -453,19 +453,17 @@ Verification systems translate real-world outcomes into data that allocation alg
 
 **Concrete example** (measuring median income growth):
 
-| Oracle | Source | Reported Value | Stake |
-|--------|--------|----------------|-------|
-| Census Bureau | American Community Survey | +2.1% | (government, no stake) |
-| Federal Reserve | Survey of Consumer Finances | +2.3% | (government, no stake) |
-| Brookings Institution | Independent analysis | +1.9% | $10M staked |
-| University of Michigan | Panel Study of Income Dynamics | +2.2% | $5M staked |
-| Tax Foundation | IRS data analysis | +2.0% | $5M staked |
+| Oracle | Source | Reported Value |
+|--------|--------|----------------|
+| Census Bureau | American Community Survey | +2.1% |
+| Federal Reserve | Survey of Consumer Finances | +2.3% |
+| Bureau of Labor Statistics | Current Population Survey | +1.9% |
+| University of Michigan | Panel Study of Income Dynamics | +2.2% |
+| Tax Foundation | IRS data analysis | +2.0% |
 
 **Aggregation:** Take the median of all five sources → **+2.1%**
 
-If Brookings reported +5.0% (an outlier), it would be excluded by the median. If they consistently misreport, other oracles can challenge their stake. The system doesn't require trust in any single institution, only that a majority aren't colluding.
-
-**A note on the hybrid model:** Government sources (Census, Fed) provide baseline data without staking requirements, as they already face accountability through existing institutional mechanisms. Private oracles could participate in a staking system to provide additional verification, though the specific mechanism design (who adjudicates "proven manipulation," what legal framework governs stakes) requires further development.
+If one source reported +5.0% (an outlier), it would be excluded by the median. The system doesn't require trust in any single institution, only that a majority aren't colluding. Since these institutions have different governance structures, funding sources, and methodologies, coordinated manipulation is difficult.
 
 **The correlated data problem and its solution:**
 
@@ -687,7 +685,7 @@ Under capture-prone governance, every allocation decision is a lobbying opportun
 Optimocracy collapses this attack surface from thousands of decision points to two:
 
 1. **Metric amendment** (defaults are provided; amendments require constitutional supermajorities)
-2. **Oracle manipulation** (mitigated by decentralization, staking, and multiple independent sources)
+2. **Oracle manipulation** (mitigated by institutional diversity and multiple independent sources)
 
 Capturing metric amendment requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair.
 
@@ -809,7 +807,18 @@ The Constitutional Welfare Score's design incorporates these features: composite
 
 5. **Metric uncertainty**: Incorporate confidence intervals into optimization. High-uncertainty metrics receive less weight.
 
-Goodhart's Law is real and cannot be eliminated. The question is comparative. Index fund gaming costs (front-running, index inclusion effects) are estimated at 20-30 basis points annually, roughly 2-3% of total returns [@petajisto2011]. Extrapolating from this and similar precedents, we assume gaming reduces Optimocracy's welfare gains by 10-30%. This wide range reflects genuine uncertainty. Critically, even at the pessimistic end (30% gaming losses), the remaining 70% of welfare gains from eliminating the Political Dysfunction Tax ({{< var political_dysfunction_tax_total_pct >}}) still represents a massive improvement over the status quo. The Crony Tax alone ({{< var crony_tax_pct >}}) likely exceeds gaming losses at any plausible estimate.
+**Why these specific metrics are robust to Goodhart effects:**
+
+Traditional Goodhart examples (teaching to tests, hospital readmissions, credit ratings) share a key feature: agents can game the metric without improving the underlying reality. Teachers can drill test-taking skills without educating. Hospitals can avoid admitting high-risk patients without improving care. Rating agencies can inflate ratings without securities being safer.
+
+Median real after-tax income and median healthy life years are different:
+
+- **You can't fake purchasing power at scale.** The median person either has more money to spend or they don't. Administrative records (tax filings, bank accounts) cross-validate survey responses.
+- **Mortality is binary and hard to fake.** People either die or they don't. Death certificates exist across multiple systems.
+- **"Median" resists outlier gaming.** You can't improve the metric by helping billionaires or the already-healthy. Only improvements at the median matter.
+- **Long time horizons resist timing games.** Healthy life years accumulate over decades, not quarters.
+
+The main vulnerability isn't behavioral Goodhart gaming; it's measurement methodology capture (changing how "household" is defined, how inflation is calculated, how health conditions are categorized). This is addressed in the Oracle Capture section below. The risk isn't that actors will game the metric without improving welfare; it's that captured measurement institutions might misreport the metric itself.
 
 ### Oracle Capture
 
@@ -844,9 +853,9 @@ The solution is not to trust government statistics less, but to triangulate them
 | Approach | Claimed Benefit | Actual Vulnerability |
 |----------|----------------|---------------------|
 | **Multi-source aggregation** | Requires capturing majority of sources | Sources often use same underlying data; correlated errors |
-| **Staking-based validation** | Economic penalty for manipulation | Profitable if manipulation gains exceed stake |
-| **Coordination games** | Game-theoretic truth-telling | Multiple equilibria; coordination on false consensus possible |
-| **Reputation weighting** | Punishes historical inaccuracy | Newcomers can't gain weight; incumbents entrenched |
+| **Institutional diversity** | Different governance = different incentives | All face similar political pressures and revolving doors |
+| **Academic verification** | Researchers have reputation incentives | Depends on funding sources; can be captured indirectly |
+| **International comparison** | Cross-country data provides external check | Different methodologies make comparison difficult |
 
 **The hard truth about independent verification:**
 
@@ -859,19 +868,18 @@ Distributed verification networks work for data where truth is verifiable and im
 
 Oracle capture is not a solvable technical problem. It's a political economy problem rebranded as technical. The question is not "can we prevent oracle capture?" but "is oracle capture less damaging than current capture of allocation decisions?" The answer may be yes: oracle capture affects measurement, while allocation capture affects outcomes directly. Additionally, the wrapper architecture (Section 10) converts oracle capture from a catastrophic failure mode to a degraded-performance mode, as politicians can ignore manipulated data.
 
-**Defense-in-Depth: Making Oracle Capture Structurally Unprofitable**
+**Defense-in-Depth: Making Oracle Capture Difficult**
 
-Beyond the wrapper's fail-safe properties, layered defenses can make oracle manipulation cost more than it's worth:
+The primary defense is institutional diversity and redundancy:
 
 | Defense Layer | Mechanism | Why It Helps |
 |---------------|-----------|--------------|
-| **Adversarial oracle networks** | Competing networks rewarded for detecting manipulation in others. Bounties for proving fraud. | Creates a market for oracle auditing. Manipulation becomes negative-sum: pay to manipulate AND pay bounties when caught. |
-| **Retroactive verification with staking** | Oracles stake funds released only after 6-12 month delay. Proven manipulation = forfeit stake. | Set stake > maximum manipulation gain. Makes manipulation unprofitable by construction. |
-| **Prediction market verification** | Parallel markets on "will this oracle be found manipulated?" Data discounted if manipulation probability exceeds threshold. | Crowdsourced fraud detection with financial incentives for vigilance. |
-| **Physical-world redundancy** | Require agreement across 5+ independent sources (Census, Fed, academic institutions, private data providers). | Capturing one source is easy. Capturing five with different governance and jurisdictions is conspiracy-level hard. |
-| **Commit-reveal schemes** | Oracles cryptographically commit to data before knowing allocation implications. | Prevents strategic real-time manipulation. Data is "locked in" before stakes are known. |
+| **Multiple independent sources** | Require agreement across 5+ sources (Census, Fed, BLS, academic institutions, tax records) | Capturing one agency is feasible. Capturing five with different governance, funding, and incentives is much harder. |
+| **Decentralized citizen surveys** | Direct measurement through distributed survey infrastructure | Provides ground truth that can expose manipulation in official statistics. |
+| **International benchmarking** | Compare US metrics against peer countries using OECD/UN data | Makes domestic manipulation visible when US diverges from international trends without explanation. |
+| **Academic replication** | Fund independent researchers to replicate official statistics | Creates adversarial verification with reputational incentives for accuracy. |
 
-**Design principle:** No single defense is sufficient. Layer them so successful manipulation requires defeating multiple independent mechanisms simultaneously. The cost of coordinated attack across all layers should exceed any plausible gain.
+**Design principle:** No single defense is sufficient. Layer them so successful manipulation requires defeating multiple independent institutions simultaneously.
 
 ### Edge Cases and Novelty
 
@@ -928,10 +936,10 @@ A publishable theory must generate falsifiable predictions. This section present
 - *Expected finding*: Shadow budget shows 30-100% higher welfare per dollar
 - *Timeline*: Testable immediately with existing data
 
-**Prediction 3: Gaming under Optimocracy will be less welfare-reducing than capture under current governance.**
+**Prediction 3: Measurement methodology capture under Optimocracy will be less welfare-reducing than allocation capture under current governance.**
 
-- *Test*: Compare welfare loss from documented metric gaming vs. documented capture/lobbying
-- *Expected finding*: Gaming costs < capture costs
+- *Test*: Compare welfare loss from documented measurement manipulation vs. documented lobbying/capture
+- *Expected finding*: Measurement capture is harder and less damaging than allocation capture
 - *Status*: **Requires careful empirical design**
 
 ### Rejection Criteria
@@ -939,7 +947,7 @@ A publishable theory must generate falsifiable predictions. This section present
 The Optimocracy thesis would be falsified by:
 
 1. **Consistent underperformance**: If outcome-optimizing systems consistently underperform political systems on their target metrics
-2. **Gaming dominance**: If gaming costs exceed 60% of potential welfare gains, eliminating Optimocracy's advantage
+2. **Measurement capture**: If oracle/methodology capture proves as easy and damaging as current allocation capture
 3. **Capture migration**: If capture at metric selection proves as damaging as capture at allocation
 4. **Legitimacy failure**: If citizens reject algorithmic governance even after demonstrated welfare improvements
 
@@ -1209,7 +1217,7 @@ Verification systems must provide:
 3. **Timestamp**: When measurement was taken
 4. **Methodology documentation**: Published commitment to measurement methodology
 
-Multiple verification sources are aggregated using median or stake-weighted average to resist manipulation.
+Multiple verification sources are aggregated using the median to resist manipulation by any single source.
 
 ### Budget and Policy Optimization: Two Complementary Frameworks
 

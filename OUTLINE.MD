@@ -1937,12 +1937,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 17,650
+**Files:** 1 | **Words:** 16,422
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,650 words | 1,596 lines
+**Stats:** 16,422 words | 1,485 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -1992,7 +1992,6 @@
     - Unintended Consequences
   - Where IABs Fit in Democratic Reform {#sec-governance}
     - The Four-Layer Governance Stack
-    - Why This Sequencing Matters
     - Comparison to Alternative Governance Mechanisms
     - What IABs Do Not Solve
   - Beyond Health: Climate, Nuclear Risk, and More {#sec-generalization}
@@ -2086,7 +2085,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 337,387
+**Files:** 86 | **Words:** 336,319
 
 #### index.qmd
 **Title:** Start Here
@@ -3833,7 +3832,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 17,650 words | 1,596 lines
+**Stats:** 16,422 words | 1,485 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -3883,7 +3882,6 @@
     - Unintended Consequences
   - Where IABs Fit in Democratic Reform {#sec-governance}
     - The Four-Layer Governance Stack
-    - Why This Sequencing Matters
     - Comparison to Alternative Governance Mechanisms
     - What IABs Do Not Solve
   - Beyond Health: Climate, Nuclear Risk, and More {#sec-generalization}
@@ -4013,7 +4011,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,550 words | 1,365 lines
+**Stats:** 13,710 words | 1,373 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4110,7 +4108,7 @@
     - Scale of Available Natural Experiments
     - The OPG Pipeline
     - Why This Hasn't Been Done Before
-  - System Overview {#opg-system-overview}
+  - System Overview {#sec-opg-system-overview}
     - What Policymakers See
     - What Policy Analysts See
   - Introduction
@@ -6857,7 +6855,7 @@
     - Scale of Available Natural Experiments
     - The OPG Pipeline
     - Why This Hasn't Been Done Before
-  - System Overview {#opg-system-overview}
+  - System Overview {#sec-opg-system-overview}
     - What Policymakers See
     - What Policy Analysts See
   - Introduction
@@ -6992,12 +6990,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,550
+**Files:** 1 | **Words:** 13,710
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,550 words | 1,365 lines
+**Stats:** 13,710 words | 1,373 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7419,6 +7417,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 541,695
+- Total words: 539,559
 - Orphaned files: 20
 - Paper configs: 12
