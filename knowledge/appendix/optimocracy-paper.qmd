@@ -11,13 +11,12 @@ abstract: |
   reference country benchmarking, diminishing returns modeling, and cost-effectiveness thresholds. The
   Policy Impact Score ranks regulatory reforms using quasi-experimental evidence across centuries of
   policy variation in hundreds of jurisdictions. Politicians vote however they want. Their alignment
-  with recommendations is tracked publicly. When metrics improve, high-alignment politicians receive
-  campaign support and career opportunities through Incentive Alignment Bonds.
+  with recommendations is tracked publicly. Incentive Alignment Bonds provide campaign support and
+  post-office career opportunities proportional to alignment. Follow the recommendations, get funded and hired.
 
-  The structural advantage: reducing decision points from thousands (political line items) to two
-  (metric verification + override accountability) makes capture dramatically harder. Bribing a thousand
-  committee chairs is easier than corrupting a constitutional process watched by everyone. The mechanism
-  makes representing voters the winning strategy.
+  The structural advantage: the only thing left to capture is measurement methodology. Bribing a thousand
+  committee chairs is easier than corrupting multiple independent data sources to lie about the same
+  number. The mechanism makes representing voters the winning strategy.
 aliases:
   - /optimocracy.html
 author:
@@ -72,7 +71,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 **The mechanism:** Optimocracy proposes rules-based spending tied to outcomes citizens actually want (median income growth, health outcomes). Citizens vote on the goal; algorithms optimize spending to achieve it; independent data sources verify results. No politician decides which contractor gets the earmark. The metric does.
 
-**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. Optimocracy publishes recommendations for each major vote; legislators vote however they choose; their alignment with recommendations is tracked publicly. When outcomes are measured years later, those whose voting records aligned with evidence-based recommendations receive larger payouts via Incentive Alignment Bonds. This is performance pay for politicians: follow the evidence-based "index," get paid when it works. Citizens choose what to optimize (democratic choice, made rarely). Algorithms recommend how (consistent analysis, transparent methodology). Politicians decide whether to follow (accountability, recorded alignment).
+**The scope:** This isn't replacing politicians with robots. Politicians still vote on budgets, but they face new incentives. Optimocracy publishes recommendations for each major vote; legislators vote however they choose; their alignment with recommendations is tracked publicly. Incentive Alignment Bonds provide campaign support and post-office career opportunities proportional to alignment scores. Follow the evidence-based "index," get funded and hired. No need to wait years for outcomes. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time." The index's track record attracts IAB funding; individual politicians benefit from following it.
 
 **The depolarization effect:** Current politics rewards tribal opposition. Research shows public support for the *same* policy flips dramatically based on which party controls the White House. Optimocracy shifts the question from "whose policy?" to "what works?" The metric improves or it doesn't. The algorithm doesn't know which party proposed the budget.
 
@@ -113,17 +112,17 @@ Empirical estimates of rent-seeking costs range from 0.2% to 23.7% of GDP [@delr
 
 Optimocracy proposes a radical simplification: **optimize governance for measurable welfare outcomes**. Instead of asking "what should we fund?" and "what policies should we adopt?" without systematic feedback, Optimocracy asks:
 
-1. **What metric should we optimize?** (Default: Health & Wealth; alternatives possible via constitutional process)
-2. **What is the current value of that metric?** (Oracle measurement, continuous)
-3. **Which allocation maximizes the metric?** (Algorithmic optimization, automatic)
+1. **What do we optimize?** Health & Wealth (universal human values)
+2. **What is the current value?** (Oracle measurement, continuous)
+3. **Which allocation maximizes it?** (Algorithmic optimization, automatic)
 
-This architecture eliminates the Political Dysfunction Tax for decisions within algorithmic bounds while preserving democratic input at the constitutional level (metric amendments) and for genuinely novel situations.
+This architecture eliminates the Political Dysfunction Tax by optimizing for what everyone already wants. The algorithm recommends; politicians decide. No new bureaucracy required.
 
 ### How It Works in Practice
 
-**Step 1: Adopt the Health & Wealth metrics (defaults provided, amendments possible)**
+**Step 1: Optimize for Health & Wealth**
 
-The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These capture most policy effects through two hard-to-game, well-measured outcomes. Citizens can amend these through constitutional process, but the defaults work out of the box. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
+The framework optimizes for **Health & Wealth**: median healthy life years (health) + real after-tax median income growth (economic welfare). These aren't arbitrary choices. They're what humans universally value. Most policy effects eventually show up in one or both metrics. See [Two-Metric Welfare Function](#sec-two-metric-welfare) for full specification.
 
 ![A workflow diagram showing the five-step Optimocracy process, from metric selection and algorithmic recommendations to political voting, outcome measurement, and financial incentive distribution.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-it-works-in-practice-bw-academic.jpg)
 
@@ -145,7 +144,7 @@ Multiple independent data sources (Census Bureau, Federal Reserve, academic inst
 
 **Step 5: Incentive Alignment Bonds reward alignment with results**
 
-Politicians' voting records are compared to Optimocracy recommendations and recorded publicly. When the metric improves years later, those whose votes aligned with evidence-based recommendations receive larger [IAB payouts](incentive-alignment-bonds-paper.qmd). This creates a "political index fund": follow systematic recommendations, get rewarded when they work. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time" and compare that to actual outcomes.
+Politicians' voting records are compared to Optimocracy recommendations and recorded publicly. [IABs](incentive-alignment-bonds-paper.qmd) provide campaign support and post-office career opportunities proportional to alignment scores. This creates a "political index fund": follow systematic recommendations, get funded and hired. No waiting years for outcomes. Citizens can see: "Senator X aligned with optimal recommendations 78% of the time." Metric trends over time validate that the recommendations work, attracting more IAB funding.
 
 The system doesn't require politicians to surrender power. It just makes ignoring good advice increasingly expensive.
 
@@ -194,7 +193,7 @@ Where:
 
 **Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
 
-Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by making evidence-based recommendations public and rewarding politicians who follow them when metrics improve.
+Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by making evidence-based recommendations public and rewarding politicians (via campaign support and career opportunities) in proportion to their alignment with those recommendations.
 
 ### Documented Welfare Losses by Policy Domain
 
@@ -260,40 +259,35 @@ This motivates the Optimocracy thesis: if current systems systematically fail to
 
 ### When Does Optimocracy Beat the Status Quo?
 
-Currently, lobbyists have thousands of doors to knock on: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to capture. Optimocracy collapses these to two harder targets:
+Currently, lobbyists have thousands of doors to knock on: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to capture. Optimocracy collapses these to one hard target: **the data sources**.
 
-1. **The metric choice**: Corrupting the constitutional process that chose "maximize median income" is like bribing the Founding Fathers. Public, expensive, and rare
-2. **The data sources**: Bribing 3 out of 5 independent oracles to lie about the same number without getting caught requires coordination among strangers who lose money if wrong
+There's no metric to corrupt. Health and wealth are what humans universally value. The only attack is bribing multiple independent oracles to lie about the same number without getting caught, requiring coordination among strangers who lose credibility if wrong.
 
-**The intuition**: Bribing 1,000 cheap doors is easier than bribing 2 expensive vaults. Corruption doesn't disappear. It just gets prohibitively expensive.
+**The intuition**: Bribing 1,000 cheap doors is easier than bribing one expensive vault with five independent locks. Corruption doesn't disappear. It just gets prohibitively expensive.
 
 #### Formal Model
 
-Let $N$ denote the number of capture-prone allocation decisions under the status quo. Each decision $i$ has capture probability $p_i$ and capture cost $c_i$ (welfare loss when captured). Under Optimocracy, capture opportunities collapse to:
-
-- **Metric selection**: A single constitutional choice with capture probability $p_M$ and capture cost $c_M$
-- **Oracle manipulation**: $K$ independent oracles, each with capture probability $p_O$ and requiring majority collusion
+Let $N$ denote the number of capture-prone allocation decisions under the status quo. Each decision $i$ has capture probability $p_i$ and capture cost $c_i$ (welfare loss when captured). Under Optimocracy, capture opportunity collapses to oracle manipulation: $K$ independent oracles, each with capture probability $p_O$, requiring majority collusion.
 
 **Proposition 1 (Optimocracy Dominance Condition):**
 
 *Optimocracy beats capture-prone governance when:*
 
 $$
-\underbrace{p_M \cdot c_M + \binom{K}{\lceil K/2 \rceil} p_O^{\lceil K/2 \rceil} \cdot c_O}_{\text{Expected capture cost under Optimocracy}} < \underbrace{\sum_{i=1}^{N} p_i \cdot c_i}_{\text{Expected capture cost under status quo}}
+\underbrace{\binom{K}{\lceil K/2 \rceil} p_O^{\lceil K/2 \rceil} \cdot c_O}_{\text{Expected capture cost under Optimocracy}} < \underbrace{\sum_{i=1}^{N} p_i \cdot c_i}_{\text{Expected capture cost under status quo}}
 $$
 
-In plain English: the left side is the cost of corrupting Optimocracy (bribing the metric selection + coordinating oracle collusion). The right side is the cost of corrupting the status quo (bribing all those committee decisions). Optimocracy wins when the left side is smaller.
+In plain English: the left side is the cost of corrupting Optimocracy (coordinating oracle collusion across multiple independent sources). The right side is the cost of corrupting the status quo (bribing all those committee decisions). Optimocracy wins when the left side is smaller.
 
-**When this works** (and when it doesn't):
+**When this works:**
 
 1. **N is large**: More captured decisions = more doors to bribe = higher status quo corruption cost
-2. **Constitutional debates are harder to capture than earmarks**: $p_M < \sum p_i$
-3. **Many independent oracles**: More oracles require exponentially harder collusion
-4. **Metric capture isn't catastrophic**: If choosing the wrong metric is worse than all the earmarks combined, Optimocracy loses
+2. **Many independent oracles**: More oracles require exponentially harder collusion (5 sources means capturing 3; probability scales as $p_O^3$)
+3. **Oracles are genuinely independent**: Different governance structures, funding sources, methodologies
 
-**What the model shows:** The magnitude of Optimocracy's advantage depends on empirical parameters (capture probabilities, number of decision points, oracle independence) that vary by context. The model doesn't prove Optimocracy always wins. It identifies the *conditions* under which consolidating decision points reduces capture: when N is large, constitutional processes are harder to corrupt than earmarks, and oracles are genuinely independent.
+**What the model shows:** The magnitude of Optimocracy's advantage depends on empirical parameters (capture probabilities, number of decision points, oracle independence). The model doesn't prove Optimocracy always wins. It identifies the *conditions* under which consolidating decision points reduces capture.
 
-**Limitations:** This model assumes capture probabilities are independent (may underestimate coordinated attacks); oracle collusion requires simple majority (stronger thresholds reduce risk further); and metric capture cost is bounded (catastrophic metric selection could dominate). Real-world calibration of these parameters is essential before drawing quantitative conclusions.
+**Limitations:** This model assumes capture probabilities are independent (may underestimate coordinated attacks) and oracle collusion requires simple majority (stronger thresholds reduce risk further). Real-world calibration is essential before drawing quantitative conclusions.
 
 ## Theoretical Foundations
 
@@ -346,11 +340,15 @@ Optimocracy should operate in domains where conditions are favorable and defer t
 
 Economists have proven some inconvenient truths about collective choice that constrain *every* governance system, including Optimocracy. The question isn't whether these constraints exist (they do), but whether Optimocracy handles them better than the alternative.
 
-#### Arrow and Gibbard-Satterthwaite: Metric Selection Is Political
+#### Arrow and Gibbard-Satterthwaite: Why They Don't Apply Here
 
-@arrow1951 proved no voting rule perfectly aggregates preferences. @gibbard1973 showed any voting rule can be strategically gamed. These theorems apply to metric selection: there's no "objectively correct" metric, and people will advocate for metrics that favor their interests.
+@arrow1951 proved no voting rule perfectly aggregates conflicting preferences. @gibbard1973 showed any voting rule can be strategically gamed. These theorems matter when preferences genuinely conflict.
 
-**How Optimocracy responds:** It doesn't claim to solve preference aggregation. It provides sensible defaults (Health & Wealth) so most jurisdictions skip the problem entirely. For those who want different metrics, constitutional amendments require supermajorities and high visibility, making gaming costly.
+**But do they conflict here?** Health and wealth are not contested values in the Arrow sense. They are near-universal instrumental goods that enable virtually any conception of the good life. Nobody campaigns on "Vote for me, I'll make you sicker and poorer." Religious and secular, libertarian and socialist, urban and rural voters all want longer healthy lives and more purchasing power. The debate is always about *how* to achieve health and wealth, never *whether* they're good.
+
+We hold these truths to be self-evident: that all people want to live long, healthy lives with sufficient resources to pursue their goals. This isn't preference aggregation. It's recognizing what humans universally value.
+
+**The real problem is measurement, not selection.** Arrow and Gibbard-Satterthwaite are about aggregating votes. If we're not voting on the metric (because health and wealth are axiomatic), these theorems don't apply. The challenge shifts from "what should we optimize?" (self-evident) to "how do we measure it honestly?" (oracle design). Decentralized citizen surveys address the actual problem.
 
 #### Mechanism Design: Honest Answers Require Honest Incentives
 
@@ -368,11 +366,11 @@ The Revelation Principle [@myerson1981; @maskin1999] states that any outcome ach
 
 | Problem | Status Quo | Optimocracy |
 |---------|-----------|-------------|
-| Preference aggregation | Lobbyists pick winners | Democracy picks the metric once; algorithm pursues it |
-| Strategic gaming | 10,000 earmarks gamed annually | One constitutional vote gamed per decade |
-| Honest reporting | Agencies face political pressure | Median aggregation excludes outliers; manipulation visible when sources diverge |
+| Goal selection | Implicit, lobbied, changes constantly | Explicit: health and wealth (universal values) |
+| Strategic gaming | 10,000 earmarks gamed annually | Gaming shifts to measurement (addressed by decentralized surveys) |
+| Honest reporting | Agencies face political pressure | Median aggregation excludes outliers; citizen surveys provide ground truth |
 
-These theorems constrain every governance system, including democracy. Optimocracy doesn't escape them. It moves the gaming opportunity from "which contractor gets this $50M earmark" to "what should the nation optimize for." The second question is harder to corrupt because everyone's watching and it only happens occasionally.
+The theoretical impossibility results constrain systems where preferences genuinely conflict. Health and wealth aren't contested preferences. They're what everyone already wants. The hard problem isn't "what should we optimize?" but "who measures it honestly?" That's an oracle design problem, not a social choice problem.
 
 ### Index Funds and Passive Allocation
 
@@ -402,52 +400,34 @@ This isn't perfect commitment (no system is), but it raises the political cost o
 
 ### Architecture Overview
 
-Optimocracy operates through three layers:
+Optimocracy is purely advisory. It operates through three functions:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                 CONSTITUTIONAL LAYER                     │
-│  - Citizens choose optimization metric                   │
-│  - Democratic process, changed rarely                    │
-│  - Encoded as published rules (changes require supermajority) │
+│                    RECOMMEND                             │
+│  - Algorithm calculates optimal policies/budgets        │
+│  - Optimizes for Health & Wealth (universal values)     │
+│  - Publishes recommendations for every major vote       │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│                 VERIFICATION LAYER                       │
-│  - Independent data feeds                               │
-│  - Measures metric values                               │
-│  - Validates allocation outcomes                        │
+│                      TRACK                               │
+│  - Politicians vote however they want                   │
+│  - System records alignment with recommendations        │
+│  - Voting records are public                            │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│                  EXECUTION LAYER                         │
-│  - Algorithmic optimization                             │
-│  - Rule-based enforcement                               │
-│  - Recommendation tracking                              │
+│                      REWARD                              │
+│  - IABs provide campaign support & career opportunities │
+│  - 80% aligned = 2x the support of 40% aligned          │
+│  - Metric trends validate the system, attract funding   │
 └─────────────────────────────────────────────────────────┘
 ```
 
-### The Constitutional Layer
-
-Citizens, through democratic processes, select the optimization objective. This democratic choice determines what the system optimizes for. Options include:
-
-**Single metrics:**
-- Median real income growth (economic focus)
-- Quality-adjusted life years (health focus)
-- Life satisfaction scores (subjective wellbeing)
-
-**Composite indices:**
-- Weighted combination of income, health, education, environment
-- Social Progress Index components
-- OECD Better Life Index dimensions
-
-**Constrained optimization:**
-- Maximize metric X subject to metric Y ≥ threshold
-- Example: Maximize median income growth subject to Gini coefficient ≤ 0.35
-
-The constitutional choice is difficult to change by design. Super-majority requirements, time delays, and deliberative processes ensure stability while allowing adaptation to genuinely changed circumstances.
+**What about edge cases, catastrophic risks, novel situations?** Politicians handle them. That's their job. The algorithm recommends; politicians decide. If a recommendation seems dangerous or wrong, they ignore it and face public accountability for that choice. The system tracks and rewards, nothing more.
 
 ### The Verification Layer
 
@@ -503,7 +483,7 @@ For simple metrics with known production functions, this optimization is straigh
 2. **Prediction markets**: Aggregate distributed information about allocation effectiveness
 3. **Machine learning**: Learn allocation-outcome mappings from historical data
 
-The execution system publishes the resulting recommendations, tracking politician alignment with evidence-based allocations and measuring outcomes for IAB payouts.
+The execution system publishes recommendations and tracks politician alignment for IAB rewards. Outcome measurement validates the system over time.
 
 For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Optimization Algorithm.
 
@@ -587,96 +567,9 @@ Most policies affect one or both metrics:
 - **Health policies** (healthcare access, public health, safety) primarily affect healthy life years
 - **Many policies** (education, infrastructure) affect both
 
-**Hard Guardrails: What We Constrain, Not Optimize**
-
-Some values shouldn't be targets. They should be constraints. The difference matters: targets get gamed; constraints get respected.
-
-**Primary objectives** (what we optimize):
-
-- Real after-tax median income growth
-- Median healthy life years
-
-**Hard guardrails** (constraints, not targets):
-
-| Guardrail | What It Protects | How It Works |
-|-----------|------------------|--------------|
-| **Catastrophic risk ceiling** | Existential/civilizational continuity | Any policy increasing extinction probability above threshold is blocked, regardless of expected welfare gains |
-| **Irreversibility constraints** | Ecological and institutional foundations | Minimum biodiversity thresholds, aquifer levels, democratic institution integrity. Cannot trade permanent loss for temporary gain |
-| **Subgroup floor** | No sacrifice of minorities | If any identifiable group loses more than X% on either metric, policy requires supermajority or explicit consent |
-| **Liberty presumption** | Autonomy and freedom | Policies restricting individual liberty require higher evidence threshold for welfare benefit |
-
-**Why constraints, not targets?**
-
-If "catastrophic risk reduction" were an optimization target, agencies would inflate risk estimates to justify budgets. As a constraint, it's a binary check: does this policy cross the threshold? Yes or no. Nothing to game.
-
-**Who sets the thresholds?**
-
-Specific thresholds (what probability counts as "catastrophic"? what biodiversity level is "minimum"?) are constitutional-level decisions, like supermajority requirements for amendments. They should come from democratic deliberation, not expert committees.
-
-**What happens when constraints are violated?**
-
-Since Optimocracy is advisory, constraint violations flag policies for human review rather than auto-blocking. The system says: "This policy scores well on welfare but triggers the irreversibility constraint. Human judgment required." Humans keep the final say; the system makes sure nothing slips through unnoticed.
+**What about edge cases?** Politicians handle them. Optimocracy is purely advisory. If a recommendation seems to violate rights, increase catastrophic risk, or harm minorities, politicians ignore it. That's their job. The algorithm recommends what maximizes health and wealth; politicians decide whether to follow.
 
 This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
-
-### Metric Defaults
-
-**The framework provides concrete defaults**: Health & Wealth (median healthy life years + real after-tax median income growth). Most jurisdictions should simply adopt these defaults. No metric selection debate required.
-
-If citizens prefer different metrics, they can propose amendments through constitutional process. But this is optional, not required. The defaults work out of the box.
-
-**What about capture migrating to metric selection?** The defaults eliminate this problem. Lobbyists can't influence a choice that's already been made. For those who do want to amend: constitutional debates are high-profile (visible), require supermajorities (hard to capture), and happen rarely (reducing capture opportunities). One high-stakes debate every decade is easier to monitor than thousands of earmarks annually.
-
-**The tradeoff:** Constitutional-level changes are extremely difficult to achieve, which provides capture resistance but also makes the system rigid. The US hasn't passed a substantive constitutional amendment since 1971. Optimocracy's metric selection process should be difficult enough to resist casual capture but not so difficult as to be effectively unchangeable; the specific threshold (supermajority requirements, ratification procedures) is itself a design parameter requiring careful calibration.
-
-## Scope and Limits: A Taxonomy of Governance Decisions
-
-Not all governance decisions are suitable for algorithmic optimization. This section develops a taxonomy distinguishing domains where Optimocracy applies from those requiring democratic deliberation.
-
-### Engaging with the Counter-Literature
-
-Before proposing scope boundaries, we must engage with the strongest critiques of technocratic governance.
-
-**Scott [@scott1998]:** "High modernist" schemes fail when they impose simplified models on complex local reality. *Implication:* Optimocracy optimizes aggregate allocation, not local implementation.
-
-**Hayek [@hayek1945]:** Distributed knowledge cannot be centrally aggregated; prices do what planning cannot. *Implication:* Optimocracy focuses on collective goods where markets fail, using market prices as information signals where available.
-
-**Public Choice [@buchanan1962; @tullock1967]:** Government failure is as systematic as market failure; everyone is self-interested. *Implication:* Design systems where honest behavior is the profitable choice; the question is comparative (which failure mode is worse?).
-
-### A Taxonomy of Governance Decisions
-
-Based on the counter-literature and historical analysis, we propose the following taxonomy:
-
-| Decision Type | Suitable for Optimocracy? | Rationale |
-|--------------|--------------------------|-----------|
-| **Aggregate resource allocation** | Yes | Capture is primary failure mode; metrics are measurable |
-| **Research funding priorities** | Yes | Long time horizons favor algorithmic commitment |
-| **Infrastructure investment** | Partially | Measurable outcomes, but local knowledge matters |
-| **Regulatory standards** | Partially | Clear metrics possible, but values contested |
-| **Rights and liberties** | No | Irreducible value conflicts; no optimization target |
-| **War and peace** | No | Existential decisions require democratic legitimacy |
-| **Cultural policy** | No | Values are contested; no neutral metric |
-| **Criminal justice** | No | Due process requires case-by-case judgment |
-| **Local service delivery** | No | Local knowledge essential; practical experience over theoretical expertise |
-
-### Defining Optimocracy's Proper Scope
-
-Based on this taxonomy, Optimocracy should govern decisions that:
-
-1. **Are aggregate**: Affecting broad categories, not specific individuals
-2. **Have measurable outcomes**: Welfare effects can be quantified
-3. **Suffer from capture**: Concentrated interests capture political decisions
-4. **Require long time horizons**: Electoral cycles cause underinvestment
-5. **Have value consensus**: Broad agreement that improvement is good
-
-Optimocracy should NOT govern decisions that:
-
-1. **Require local knowledge**: Effective implementation depends on practical local experience
-2. **Involve fundamental value conflicts**: No neutral metric exists
-3. **Require individual judgment**: Due process, rights, case-by-case assessment
-4. **Have existential stakes**: War, constitutional structure, regime legitimacy
-
-The wrapper architecture preserves democratic input for all decisions. Politicians vote freely; the system tracks alignment with recommendations and rewards outcomes.
 
 ## Advantages Over Political Governance
 
@@ -684,14 +577,11 @@ The wrapper architecture preserves democratic input for all decisions. Politicia
 
 Under capture-prone governance, every allocation decision is a lobbying opportunity. The US federal budget contains thousands of line items. Congress has 535 members, each with committee assignments and amendment powers. State and local governments multiply the attack surface further. The result: an industry of 12,000+ registered federal lobbyists spending $4+ billion annually, with estimated returns of 100:1 or higher on lobbying investment [@drutman2015].
 
-Optimocracy collapses this attack surface from thousands of decision points to two:
+Optimocracy collapses this attack surface to one target: **oracle manipulation** (measurement methodology capture).
 
-1. **Metric amendment** (defaults are provided; amendments require constitutional supermajorities)
-2. **Oracle manipulation** (mitigated by institutional diversity and multiple independent sources)
+There's no "metric selection" to corrupt. Health and wealth aren't choices lobbyists made. They're what humans universally value. The only remaining attack is convincing multiple independent data sources to lie about the same number in the same direction without getting caught.
 
-Capturing metric amendment requires winning constitutional-level debates with supermajorities. This is orders of magnitude harder than lobbying a committee chair.
-
-**Quantitative comparison:** Under capture-prone governance, a concentrated interest group needs to influence perhaps 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to either: (a) win a constitutional amendment (requiring 67 senators and 290 representatives, plus 38 state legislatures), or (b) simultaneously corrupt multiple independent oracle providers without detection. The coordination costs for capture increase by an estimated 1-2 orders of magnitude.
+**Quantitative comparison:** Under capture-prone governance, a concentrated interest group needs to influence 5-10 key legislators to capture a budget line item. Under Optimocracy, they need to simultaneously corrupt the Census Bureau, Federal Reserve, BLS, academic institutions, AND decentralized citizen surveys, all without detection. The coordination costs increase by 1-2 orders of magnitude.
 
 ### Time Consistency
 
@@ -735,7 +625,7 @@ Optimocracy allocation is fully transparent:
 
 Under capture-prone governance, achieving good policy requires coordinating millions of citizens to monitor thousands of decisions by hundreds of legislators across dozens of committees on a continuous basis. The information costs are prohibitive; rational ignorance is the only rational response.
 
-**Optimocracy requires citizens to monitor only one thing:** Is the chosen metric improving? If median income is growing and health outcomes are improving, the system is working. If not, the constitutional metric may need revision. This is a question any citizen can answer by looking at a single dashboard.
+**Optimocracy requires citizens to monitor only one thing:** Are health and wealth improving? If median income is growing and health outcomes are improving, the system is working. If not, the algorithm needs better data or different recommendations. This is a question any citizen can answer by looking at a single dashboard.
 
 **The implications for democratic participation:**
 
@@ -744,17 +634,17 @@ Under capture-prone governance, achieving good policy requires coordinating mill
 | Monitoring burden | Thousands of decisions/year | One metric trend |
 | Required expertise | Legislative procedure, economics, policy analysis | "Is the number going up?" |
 | Feedback loop | 2-6 year election cycles | Continuous metric tracking |
-| Accountability clarity | "Who's responsible?" unclear | Algorithm vs. metric selection |
+| Accountability clarity | "Who's responsible?" unclear | Algorithm vs. measurement |
 
-This doesn't eliminate citizen engagement. But it concentrates that engagement on monitoring outcomes rather than dispersing it across questions citizens cannot realistically monitor (how should we achieve it?). The default metrics (Health & Wealth) work out of the box. Citizens who want to propose amendments can, but most jurisdictions should simply adopt the defaults and focus on whether the numbers are improving.
+This doesn't eliminate citizen engagement. It concentrates engagement on what matters: are we getting healthier and wealthier? Citizens monitor outcomes, not process. The metrics (Health & Wealth) reflect universal values. The only remaining question is whether the numbers are improving.
 
 ### Depolarization Through Outcome Focus
 
 Current politics rewards tribal opposition. Politicians gain by making the other side look bad, regardless of policy substance. Research shows public support for identical policies flips dramatically based on which party proposes them.
 
-Optimocracy shifts the debate from "whose policy?" to "what works?" The algorithm doesn't know which party proposed the budget. It only knows whether the metric improved. Politicians are rewarded for outcomes, not for tribal loyalty.
+Optimocracy shifts the debate from "whose policy?" to "what works?" The algorithm doesn't know which party proposed the budget. Politicians are rewarded for alignment with evidence-based recommendations, not for tribal loyalty.
 
-**This creates strange bedfellows for good policy:** Under Optimocracy, a Republican who aligns with evidence-based recommendations gets IAB payouts alongside Democrats who did the same, regardless of which party originally proposed the policy. The incentive to reflexively oppose good policy because the other party proposed it disappears. You're betting against your own wallet when you vote against recommendations that work.
+**This creates strange bedfellows for good policy:** Under Optimocracy, a Republican who aligns with evidence-based recommendations gets IAB support (campaign funding and career opportunities) alongside Democrats who did the same, regardless of which party originally proposed the policy. The incentive to reflexively oppose good policy because the other party proposed it disappears. You're betting against your own career when you vote against recommendations.
 
 **The depolarization mechanism:** When debate centers on "whose team wins?", every issue becomes tribal. When debate centers on "did median income go up?", tribalism has nothing to grab onto. You can't spin the Census Bureau as a Democratic or Republican institution. The number either went up or it didn't.
 
@@ -850,7 +740,7 @@ This may be the most serious objection to Optimocracy. The concern is not whethe
 |----------|-----------|
 | **More democratic, not less** | Current system offers ritual (voting) but delivers oligarchy (@gilens2014). Optimocracy delivers what citizens actually voted for. |
 | **Citizens choose the goal** | The fundamental democratic question is "What society do we want?", not "What should line item 4,372 be?" We already delegate implementation to the Fed and FDA. |
-| **Use the defaults** | Health & Wealth metrics work out of the box. No metric selection debate required. |
+| **Universal values, not imposed preferences** | Health and wealth aren't contested preferences requiring democratic selection. They're what everyone already wants. We're not choosing *for* citizens; we're measuring what they universally value. |
 | **Legitimacy evolves** | Social Security and index funds were controversial initially, accepted once they demonstrated results. |
 | **The alternative is capture** | The realistic choice is captured allocation dressed in democratic ritual, not idealized deliberation. |
 
@@ -860,7 +750,7 @@ These responses don't fully dissolve the legitimacy concern. There is a genuine 
 - **Outcome legitimacy**: governance is legitimate if it produces outcomes citizens want
 - **Process legitimacy**: governance is legitimate if citizens meaningfully participate in decisions
 
-Optimocracy prioritizes outcome legitimacy while preserving process legitimacy only at the constitutional level. Citizens who value process for its own sake (preferring worse outcomes produced democratically over better outcomes produced algorithmically) may never accept Optimocracy.
+Optimocracy prioritizes outcome legitimacy. Process legitimacy is preserved because politicians still decide everything. They just face new incentives (IABs) and new information (recommendations). Citizens who value process for its own sake may never accept even this, but the wrapper architecture preserves their representatives' authority completely.
 
 We have no knock-down argument against this position. We can only note that as outcomes under current governance deteriorate (infrastructure crumbles, climate change accelerates, healthcare costs spiral, life expectancy stagnates), the revealed preference for process over outcomes will be tested. When the choice becomes vivid ("Do you want democratic ritual with declining welfare, or algorithmic allocation with improving welfare?"), we predict most citizens will choose outcomes.
 
@@ -892,7 +782,7 @@ The Optimocracy thesis would be falsified by:
 
 1. **Consistent underperformance**: If outcome-optimizing systems consistently underperform political systems on their target metrics
 2. **Measurement capture**: If oracle/methodology capture proves as easy and damaging as current allocation capture
-3. **Capture migration**: If capture at metric selection proves as damaging as capture at allocation
+3. **Value divergence**: If health and wealth prove NOT to be universal values (if significant populations genuinely prefer to be sicker and poorer)
 4. **Legitimacy failure**: If citizens reject algorithmic governance even after demonstrated welfare improvements
 
 We commit to updating or abandoning the proposal if evidence accumulates against these predictions.
@@ -905,16 +795,14 @@ Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. Fo
 |-------|--------------|
 | **Optimocracy publishes recommendations** | "Support HR-1234 (early childhood funding increase)." "Oppose HR-5678 (regulatory capture provision)." |
 | **Votes recorded** | Senator Smith votes aligned on both (2/2 = 100%). Senator Jones votes misaligned on both (0/2 = 0%). |
-| **Year 3: Metric measured** | Census Bureau, Fed, and academic institutions report median income grew 2.1% (improvement detected) |
-| **Alignment scores calculated** | End-of-term totals: Smith 78% aligned with recommendations. Jones 34% aligned. |
-| **IAB payouts** | Smith receives $2M (high alignment + metric improvement). Jones receives $400K (low alignment, still gets baseline for improvement). |
-| **Public transparency** | Citizens see: "Smith followed evidence-based recommendations 78% of the time. Your income grew 2.1%." |
+| **Alignment scores calculated** | End-of-quarter totals: Smith 78% aligned with recommendations. Jones 34% aligned. |
+| **IAB rewards** | Smith receives 78% campaign support level and top-tier post-office opportunities. Jones receives 34% support level. Benefits proportional to alignment. |
+| **Public transparency** | Citizens see: "Smith followed evidence-based recommendations 78% of the time." |
+| **System validation (ongoing)** | Over years, metrics trend upward. This validates the recommendations, attracting more IAB funding. |
 
-The politician's choice becomes simple: follow evidence-based recommendations and get paid when they work, or follow donor preferences and face both financial loss and public accountability. IABs convert abstract "doing the right thing" into concrete "this is how you make money."
+The politician's choice becomes simple: follow evidence-based recommendations and receive campaign support plus career opportunities proportional to your alignment, or follow donor preferences and watch your colleagues get funded and hired. No waiting years for outcomes. IABs convert abstract "doing the right thing" into concrete career advancement.
 
-This creates a closed loop: politicians are paid for improving outcomes, not for satisfying donors or winning elections.
-
-**The political index fund:** Index funds outperform active management by following systematic rules rather than stock-picking. IABs apply the same logic to politics: politicians who follow evidence-based recommendations (the "index") get rewarded when outcomes improve. No need for perfect information or superhuman judgment. Just follow the recommendation, get paid for results. This reverses the current incentive structure where following donor preferences pays better than following citizen welfare. The recommendation is public; the outcome is measurable; the payout is automatic. Politicians become portfolio managers whose performance is tracked against the benchmark.
+**The political index fund:** Index funds outperform active management by following systematic rules rather than stock-picking. IABs apply the same logic to politics: politicians who follow evidence-based recommendations (the "index") receive campaign support and career opportunities proportional to their alignment. No need to wait for outcomes. The index's track record over time attracts more funding; individual politicians benefit from following it. This reverses the current incentive structure where following donor preferences provides better career prospects than following citizen welfare. The recommendation is public; the alignment is measurable; the reward is immediate.
 
 ## Political Economy: Making Reform Happen
 
@@ -956,7 +844,7 @@ This arithmetic suggests reform can be structured so everyone wins. Even those c
 |------------|------------|------------------------|----------|
 | **Productive Wealth Creators** | Wealth from innovation, entrepreneurship (~10-20K globally >$100M) | Net beneficiaries: bigger markets, longevity, reduced x-risk | None needed |
 | **Rent-Seekers** | Income from current allocation patterns (defense, pharma, lobbyists; ~$2-5T rents/year) | Losers unless compensated | Must be bought out |
-| **Politicians** | Those with allocation authority | Lose power but gain longevity, IAB payouts, legacy | Critical: outcome-linked payments |
+| **Politicians** | Those with allocation authority | Lose power but gain longevity, IAB support, legacy | Critical: alignment-based rewards |
 
 ### IABs as the Coasean Buyout Mechanism
 
@@ -965,17 +853,17 @@ Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create
 **Mechanism:**
 
 1. **Reform coalition raises capital** from those who benefit from optimal policy
-2. **IABs are issued** promising payments to politicians/interests conditional on reform outcomes
-3. **Politicians support reform** because expected IAB payments exceed expected lobbying revenue
-4. **Outcomes are measured** via Optimocracy's oracle layer
-5. **Payments are made** via automated rules based on outcome metrics
+2. **IABs are issued** promising campaign support and career opportunities to politicians proportional to their alignment with recommendations
+3. **Politicians support reform** because expected IAB benefits exceed expected lobbying-based career value
+4. **Alignment is tracked** via Optimocracy's recommendation/voting comparison
+5. **Rewards are delivered** proportional to alignment scores (campaign support during office; career opportunities after)
 
 **Why this isn't corruption:**
 
-- Payments are contingent on public outcomes, not private favors
-- The compensation scheme is transparent and disclosed
-- Voters can see that politicians are paid for welfare improvements
-- The mechanism aligns private incentives with public welfare
+- Rewards (campaign support, career opportunities) are proportional to following public recommendations, not private favors
+- The scoring and support rules are transparent and disclosed
+- Voters can see exactly which recommendations politicians followed
+- The mechanism aligns private incentives with evidence-based policy
 
 **The math:**
 
@@ -987,7 +875,7 @@ Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create
 | Surplus after buyouts | $2-5T | Residual = welfare gain × buyout share − rents |
 | Per-politician average (535 Congress) | $4-9M/year | ($2-5T) / 535 members; assumes equal distribution |
 
-These numbers are illustrative, not precise. The core claim: welfare gains from optimal policy vastly exceed the rents currently extracted, making Coasean buyouts arithmetically feasible. A senator currently receives ~$174K salary plus ~$5-20M in career post-office value. An IAB payment of $5-10M/year for supporting optimal policy would dominate current incentives.
+These numbers are illustrative, not precise. The core claim: welfare gains from optimal policy vastly exceed the rents currently extracted, making Coasean buyouts arithmetically feasible. A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from current lobbying relationships. IAB campaign support plus guaranteed high-status post-office positions (foundation boards, think tank fellowships, advisory roles) for supporting optimal policy would dominate current incentives.
 
 ### The Cost of Political Reform: Quantifying "Political Impossibility"
 
@@ -1073,7 +961,7 @@ We propose a specific first deployment to make Optimocracy actionable rather tha
 | **Metric** | QALYs per dollar, verified by independent health economists |
 | **Verification** | GiveWell evaluations + academic verification + randomized outcome audits |
 | **Allocation algorithm** | Maximize expected QALYs subject to diversification constraints |
-| **Governance** | Stakeholder voting on metric selection; algorithm execution is automatic |
+| **Governance** | Stakeholder input on methodology and constraints; algorithm execution is automatic |
 
 **Success criteria (Year 1-3):**
 1. Achieve measurably higher QALY/$ than comparable traditional foundations
@@ -1107,7 +995,7 @@ The question is not whether Optimocracy is perfect; no governance system is. The
 
 ### What About AI?
 
-Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. That's metric selection, a fundamentally democratic choice, not a technical problem. Even a superintelligent AI should operate within an Optimocracy-like structure: humans specify objectives democratically, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving democratic legitimacy and human oversight.
+Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. Health and wealth are the answer: universal human values, not arbitrary choices. Even a superintelligent AI should operate within an Optimocracy-like structure: optimize for what humans universally value, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving human oversight.
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
@@ -1192,25 +1080,17 @@ For the complete methodology including database schema, Bradford Hill criteria m
 | OBG/BIS | Spending category | Integrated budget recommendations | How much to spend? |
 | PIS | Policy/regulation | Ranked reforms by impact | Which policies to adopt? |
 
-Both frameworks feed into the Constitutional Layer, which binds governance to evidence-based decision rules rather than misaligned political judgment:
+Both frameworks generate recommendations that politicians can follow or ignore:
 
 ```
-+----------------------------------------------------------+
-|                 CONSTITUTIONAL LAYER                       |
-|  Citizens vote on metrics (median income, QALYs, etc.)    |
-+----------------------------------------------------------+
-           |                              |
-           v                              v
 +------------------------+    +------------------------+
 |   Budget Optimization  |    |   Policy Optimization  |
 |   (OBG/BIS Framework)  |    |   (PIS Framework)      |
 |                        |    |                        |
-|   Determines:          |    |   Determines:          |
+|   Recommends:          |    |   Recommends:          |
 |   - Optimal spending   |    |   - Which reforms      |
 |     levels per category|    |     improve welfare    |
 |   - Investment gaps    |    |   - Priority ranking   |
-|   - Reallocation       |    |   - Pilot candidates   |
-|     priorities         |    |                        |
 +------------------------+    +------------------------+
            |                              |
            +------------+  +--------------+

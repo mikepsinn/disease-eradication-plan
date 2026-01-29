@@ -2089,7 +2089,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 337,235
+**Files:** 86 | **Words:** 335,830
 
 #### index.qmd
 **Title:** Start Here
@@ -4015,7 +4015,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,321 words | 1,331 lines
+**Stats:** 11,916 words | 1,160 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -4045,16 +4045,10 @@
     - Credible Commitment Mechanisms
   - Mechanism Design
     - Architecture Overview
-    - The Constraint Layer
     - The Verification Layer
     - The Execution Layer
   - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Metric Defaults
-  - Scope and Limits: A Taxonomy of Governance Decisions
-    - Engaging with the Counter-Literature
-    - A Taxonomy of Governance Decisions
-    - Defining Optimocracy's Proper Scope
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
@@ -6993,12 +6987,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 13,321
+**Files:** 1 | **Words:** 11,916
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 13,321 words | 1,331 lines
+**Stats:** 11,916 words | 1,160 lines
 
   - Abstract
   - Introduction: The Political Dysfunction Problem
@@ -7028,16 +7022,10 @@
     - Credible Commitment Mechanisms
   - Mechanism Design
     - Architecture Overview
-    - The Constraint Layer
     - The Verification Layer
     - The Execution Layer
   - Welfare Metrics
     - Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
-    - Metric Defaults
-  - Scope and Limits: A Taxonomy of Governance Decisions
-    - Engaging with the Counter-Literature
-    - A Taxonomy of Governance Decisions
-    - Defining Optimocracy's Proper Scope
   - Advantages Over Political Governance
     - Capture Resistance
     - Time Consistency
@@ -7417,6 +7405,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 541,399
+- Total words: 538,589
 - Orphaned files: 20
 - Paper configs: 12
