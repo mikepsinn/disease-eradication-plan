@@ -17,10 +17,11 @@ image: /assets/og-images/knowledge/appendix/real-world-evidence-historical-succe
 
 ![](/assets/infographics/knowledge/appendix/real-world-evidence-historical-success-infographic-retro-academic.jpg)
 
-
 ## Historical Evidence: Why Real-World Evidence Works Better
 
 Large-scale efficacy trials based on real-world evidence produce better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
+
+![A comparison showing how real-world evidence trials lead to improved health outcomes compared to traditional pharmaceutical industry-driven randomized controlled trials.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-historical-evidence-why-real-world-evidence-works-better-bw-academic.jpg)
 
 ### 10,000 Years of Dying at 30
 
@@ -39,6 +40,8 @@ Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 ### 1883 – The Year You Figured It Out
 
 Then something changed.
+
+![A flowchart showing the collaborative research process introduced in 1883, from individual physician observations to JAMA peer review and final certification.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1883-the-year-you-figured-it-out-bw-academic.jpg)
 
 In 1883, doctors founded the Journal of the American Medical Association (JAMA) [@jama-founded-1893] and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
 
@@ -84,6 +87,8 @@ Despite this success story for safety regulations, newspaper stories like the on
 
 Effective **safety** regulations were already in place. They worked. America had zero Thalidomide deaths while Europe had thousands. Safety testing succeeded.
 
+![Comparison of drug regulation impact before and after the 1962 Kefauver Harris Amendment, highlighting the shift in efficacy testing from doctors to drug companies and the resulting increases in cost and time.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1962-the-year-you-decided-to-make-everything-worse-bw-academic.jpg)
+
 So naturally, the government responded to this success by adding massive **efficacy** regulations via the 1962 Kefauver Harris Amendment [@kefauver-harris-amendment-1962].
 
 The problem wasn't safety testing - that was fine. The problem was taking over efficacy testing from {{< var pre_1962_physician_count >}} independent doctors and giving it to the drug companies themselves, while making it {{< var recovery_trial_cost_reduction_factor >}} times more expensive and {{< var fda_to_oxford_recovery_trial_time_multiplier >}} times slower.
@@ -108,10 +113,11 @@ The irony: Regulations meant to ensure drugs work did this by:
 2. Requiring small artificial trials
 3. Letting drug companies run their own tests
 
-
 ![Comparison of the decentralized physician-led model (pre-1962) versus the centralized industry-led model (post-1962), highlighting the explosion in costs and procedural changes.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-pre-vs-post-1962-regulations-bw-academic.jpg)
 
 #### What Happened to Efficacy Data
+
+![A comparative visualization showing how 1962 regulations shifted clinical trials toward smaller sample sizes, less representative patient groups, and increased internal conflicts of interest.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-efficacy-data-bw-academic.jpg)
 
 The 1962 regulations, explicitly about ensuring efficacy, massively reduced the quantity and quality of efficacy data:
 
@@ -139,6 +145,8 @@ A {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. For wor
 
 The new regulations created such massive delay that the pharmaceutical industry complained about a "drug lag."
 
+![A cause-and-effect diagram showing how the 1984 patent extensions led to unintended consequences: higher drug prices, reduced availability, and increased safety risks.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-drug-patents-bw-academic.jpg)
+
 Congress "fixed" this by extending drug patent monopolies [@drug-price-competition-act-1984] in 1984.
 
 Kefauver's amendments, meant to make drugs safer and cheaper, instead made them:
@@ -150,6 +158,8 @@ Kefauver's amendments, meant to make drugs safer and cheaper, instead made them:
 #### Decreased Ability to Determine Comparative Efficacy
 
 The placebo-controlled, randomized controlled trial helped gauge individual drug efficacy. However, it makes determining comparative effectiveness much more difficult.
+
+![A conceptual diagram showing two separate clinical trials comparing different drugs to placebos, with a highlighted gap or question mark indicating the missing direct comparison between the two active drugs.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-decreased-ability-to-determine-comparative-efficacy-bw-academic.jpg)
 
 ### What Happened to Life Expectancy (The Part That Matters)
 
@@ -166,7 +176,6 @@ From 1880 to 1960: 3.82 years per decade [@life-expectancy-increase-pre-1962].
 From 1962 onward: 1.54 years per decade [@post-1962-life-expectancy-slowdown].
 
 The break is so clean you can see exactly when Congress decided to "help."
-
 
 ![Life expectancy trends showing a distinct change in slope from 3.82 years/decade gained to 1.54 years/decade gained precisely at the 1962 regulatory intervention.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-life-expectancy-slope-change-1962-bw-academic.jpg)
 
@@ -187,6 +196,8 @@ Diminishing returns don't produce sudden linear breaks. Regulatory changes do.
 ### The "Correlation Is Not Causation" Excuse
 
 True. Correlation alone proves nothing.
+
+![A logic diagram illustrating the three pillars of scientific inference, temporal correlation, mechanism, and temporal precision, used to establish causation between 1962 regulations and life expectancy trends.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-correlation-is-not-causation-excuse-bw-academic.jpg)
 
 But correlation + mechanism + temporal precision is how science works.
 
@@ -216,3 +227,6 @@ More people survive as more treatments are developed. There's a [strong correlat
 - Today: Still stuck with the broken system
 
 Humanity solved medical progress in 1883. Congress broke it in 1962.
+
+![A timeline comparison showing the rate of medical progress, highlighting the sharp decline from 3.82 years of life expectancy gained per decade to 1.54 years following the 1962 Kefauver-Harris Amendment.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-summary-bw-academic.jpg)
+

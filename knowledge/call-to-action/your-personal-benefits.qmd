@@ -8,12 +8,13 @@ image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retr
 
 ![](/assets/infographics/knowledge/call-to-action/your-personal-benefits-infographic-retro-academic.jpg)
 
-
 Forget saving humanity. Let's talk about what you, personally, get out of this. You don't need to be a good person to support this plan. You just need to be selfish.
 
 ## Your Actual Odds Right Now
 
 If you get sick (and you will), your chances of getting into a clinical trial are **0.2%**, that's 1 in 480 people with chronic disease.
+
+![A comparison showing the massive gap between the 50% of people willing to participate in clinical trials and the 0.2% who actually gain access due to system capacity limits.](/assets/images/your-personal-benefits/your-personal-benefits-section-your-actual-odds-right-now-bw-academic.jpg)
 
 Half of humanity is willing to participate [@patient-willingness-clinical-trials], but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
@@ -23,6 +24,8 @@ Half of humanity is willing to participate [@patient-willingness-clinical-trials
 
 Instead of waiting 17 years for a cure that may never come, you get immediate access to subsidized clinical trials for every disease. Your chance of survival goes from near-zero to "actually possible."
 
+![A comparison showing the shift from a 17-year wait for medical cures with near-zero survival odds to immediate access to subsidized clinical trials with increased survival chances.](/assets/images/your-personal-benefits/your-personal-benefits-section-what-you-actually-get-bw-academic.jpg)
+
 ## If you're healthy (for now)
 
 As diseases are cured, healthcare costs plummet. A 1% treaty expands clinical trial capacity by {{< var dfda_trial_capacity_multiplier >}}× ({{< var trial_capacity_cumulative_years_20yr >}} trial-capacity-equivalent years in 20 years). That means cancer, heart disease, Alzheimer's, all tackled simultaneously by gene therapy, AI drug discovery, stem cells, and epigenetics.
@@ -30,6 +33,8 @@ As diseases are cured, healthcare costs plummet. A 1% treaty expands clinical tr
 ### If you have money
 
 [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) offer a projected **{{< var victory_bond_annual_return_pct >}} annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
+
+![A conceptual diagram showing the dual benefits of VICTORY bonds: high financial returns and the acceleration of life-extension research.](/assets/images/your-personal-benefits/your-personal-benefits-section-if-you-have-money-bw-academic.jpg)
 
 #### If you have a family
 
@@ -60,6 +65,8 @@ This uses the same methodology economists use to evaluate all health interventio
 **Personal benefit**: {{< var personal_lifetime_wealth >}}
 
 The Monte Carlo distribution above shows the full uncertainty range.
+
+![An infographic representing 'The Deal': illustrating the small 1% budget reallocation input versus the high-value outputs of $3M wealth, extra life years, and family survival.](/assets/images/your-personal-benefits/your-personal-benefits-section-the-bottom-line-bw-academic.jpg)
 
 This isn't a charity. It's a deal. You're being offered substantial lifetime wealth, extra years of life, and the survival of your loved ones in exchange for supporting a 1% budget reallocation.
 

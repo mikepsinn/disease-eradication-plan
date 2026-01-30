@@ -44,6 +44,8 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 
 #### Net cost to company: $0
 
+![A breakdown of the zero-cost model showing how patient-funded treatment and data contributions offset traditional R&D, data collection, and liability expenses.](/assets/images/dfda/dfda-section-net-cost-to-company-0-bw-academic.jpg)
+
 **Why?**
 
 - Patients pay for treatment (covers manufacturing/delivery)
@@ -52,6 +54,8 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 - Insurance is built-in (eliminates liability cost)
 
 ### The Payment Flow (Or: How Everyone Profits Except Disease)
+
+![A flowchart illustrating the circular flow of payments, subsidies, and refunds between the patient and the Treaty Fund.](/assets/images/dfda/dfda-section-the-payment-flow-or-how-everyone-profits-except-disease-bw-academic.jpg)
 
 **Patient pays:** Treatment cost + Refundable deposit
 **Patient receives:** Subsidy (from a 1% Treaty Fund)
@@ -72,6 +76,8 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 ![Flowchart illustrating the economic loop where patient subsidies and deposits incentivize participation while ensuring zero net cost to the patient and profit for the manufacturer.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
 
 #### Company receives
+
+![A visual breakdown of company gains per patient, illustrating the monthly cash profit alongside the significantly larger valuation of clinical trial data.](/assets/images/dfda/dfda-section-company-receives-bw-academic.jpg)
 
 - $100/month from patient
 - Manufacturing cost: $20/month
@@ -146,6 +152,8 @@ We have the tools to get reliable answers from real-world data. We just have to 
 
 The protocol upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
+![A conceptual comparison between the legacy FDA.gov 'digital cemetery' and the 2.0 upgrade, illustrating the 80% reduction in mortality and the cost-benefit analysis against a fighter jet.](/assets/images/dfda/dfda-section-introducing-fda-gov-2-0-now-with-80-less-death-bw-academic.jpg)
+
 Here's the revolutionary process:
 
 ### Step 1: Type in What's Killing You
@@ -188,6 +196,8 @@ No more guessing which treatment your doctor half-remembers from a conference. J
 
 To complement the real-world data from past patients, the system will integrate a powerful forecasting tool: **live prediction markets**.
 
+![A dashboard visualization showing how diverse market participants contribute to real-time probability percentages for clinical trial outcomes.](/assets/images/dfda/dfda-section-step-2-5-see-the-future-with-financially-backed-predictions-bw-academic.jpg)
+
 This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
 For any given trial, you'll see real-time odds on questions like:
@@ -200,6 +210,8 @@ For any given trial, you'll see real-time odds on questions like:
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
 2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through the dFDA protocol. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
+
+![A feedback loop showing how market predictions are validated against real-world dFDA patient data to resolve bets and improve the accuracy of health insights.](/assets/images/dfda/dfda-section-why-trust-this-bw-academic.jpg)
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -255,6 +267,8 @@ It's what we should have been doing since we invented writing.
 
 Here's what we're NOT doing: building a government platform that competes with existing medical technology companies.
 
+![A conceptual diagram contrasting a centralized 'train' platform with an open 'rail' protocol that connects multiple existing medical technologies and allows for competing implementations.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
+
 Here's what we ARE doing: establishing an open protocol that lets all the existing platforms talk to each other.
 
 Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP - the protocol that lets all websites connect. Same idea.
@@ -282,6 +296,8 @@ Why compete with them? Partner instead.
 - Regional expertise
 
 ### The Integration Consortium
+
+![A stakeholder map illustrating the key categories of partners, EHR vendors, tech giants, DCT platforms, and international health organizations, that form the Integration Consortium.](/assets/images/dfda/dfda-section-the-integration-consortium-bw-academic.jpg)
 
 Before writing code, form partnerships with:
 
@@ -389,6 +405,8 @@ committee_capacity = committee_members * hours_per_day * decisions_per_hour
 
 # Information that actually needs processing
 
+![A visual breakdown showing how the combination of thousands of diseases, hundreds of treatments, and millions of patient variations multiplies into 800 trillion required medical decisions.](/assets/images/dfda/dfda-section-information-that-actually-needs-processing-bw-academic.jpg)
+
 diseases = 10_000
 treatments_per_disease = 100  # Potential treatments to evaluate
 patients = 8_000_000_000
@@ -403,6 +421,8 @@ print(f"Years for FDA to evaluate everything: {years_to_process:,.0f}")
 # Output: 1,369,863 years
 
 # Market processing (parallel, decentralized)
+
+![A diagram illustrating the massive parallel processing power of a decentralized market where 8 billion individual nodes contribute simultaneous decisions to a global system.](/assets/images/dfda/dfda-section-market-processing-parallel-decentralized-bw-academic.jpg)
 
 market_participants = 8_000_000_000
 market_decisions_per_day = market_participants * 1  # One health decision per person
@@ -425,6 +445,8 @@ The FDA doesn't know:
 - Whether **you'd** rather die trying or die waiting (only you can answer this)
 
 But they decide for you anyway.
+
+![An infographic illustrating the disconnect between a centralized regulatory body and the unique, individualized variables of 8 billion people, such as genetics and risk tolerance.](/assets/images/dfda/dfda-section-why-200-people-can-t-replace-8-billion-bw-academic.jpg)
 
 ### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
 
@@ -462,6 +484,8 @@ The only solution is to let patients and doctors make their own decisions, then 
 
 During COVID, while America was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
 
+![A comparative infographic showing the massive disparity in cost, time, and lives saved between traditional clinical trials and the Oxford Recovery Trial approach.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
+
 Cost per patient:
 
 - Normal clinical trials: {{< var traditional_phase3_cost_per_patient >}}
@@ -482,6 +506,8 @@ The FDA's response: "But did they file the correct paperwork?"
 
 The system includes **Clinipedia**: Wikipedia but instead of arguing about whether tomatoes are fruits, we argue about whether they cure cancer.
 
+![A conceptual diagram showing the Clinipedia data loop where patient contributions and treatment outcomes feed into a centralized collaborative encyclopedia.](/assets/images/dfda/dfda-section-wikipedia-for-whether-you-ll-die-bw-academic.jpg)
+
 Every treatment gets a page. Every outcome gets recorded. Every patient contributes data.
 
 Imagine looking up your disease and seeing:
@@ -491,6 +517,8 @@ Imagine looking up your disease and seeing:
 *From Clinipedia, the encyclopedia of not dying*
 
 #### Current Treatments Ranked by Not-Dying Score
+
+![A comparison chart showing the effectiveness percentages and side effects of five different medical treatments based on their 'Not-Dying Score'.](/assets/images/dfda/dfda-section-current-treatments-ranked-by-not-dying-score-bw-academic.jpg)
 
 1. Prayer (3% effective, 0% side effects)
 2. Experimental Drug XJ-47 (67% effective, 30% chance of jazz hands)
@@ -504,9 +532,13 @@ Imagine looking up your disease and seeing:
 
 The system also lets you create your own studies. Got a theory that wearing socks inside-out cures baldness? Create a study. Get a link. Invite your balding friends to join. The system handles the rest. Your data gets published. Who knows, maybe you'll win a Nobel Prize. Or maybe you'll just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
 
+![A workflow diagram illustrating the step-by-step process of creating a study, from formulating a theory to publishing the results.](/assets/images/dfda/dfda-section-become-a-scientist-from-your-couch-bw-academic.jpg)
+
 ## Your Personal Death-Prevention Assistant: The FDAi
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
+
+![A visual representation of the FDAi ecosystem showing data flowing from wearables and medical records into an AI core, resulting in a ranked list of medical treatments by success probability.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
 
 The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
 
@@ -565,6 +597,8 @@ Based on thousands of real patients with real outcomes:
 
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
+![A clean, clinical-style infographic label for the 'Depression Crusher 3000' showing the statistical trade-offs between mood improvement and various side effects.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
+
 **Example: DEPRESSION CRUSHER 3000™**
 
 *Outcome Label*
@@ -603,6 +637,8 @@ Congress will debate this for 17 years, the same time it takes to approve one dr
 
 FDA.gov becomes actually useful. Millions join trials from home. The first "Wikipedia disease" gets cured entirely through crowdsourced trials. The FDA claims credit.
 
+![A flowchart showing the progression from home-based clinical trial participation to crowdsourced medical research and final regulatory validation.](/assets/images/dfda/dfda-section-2027-the-beginning-of-the-end-of-dying-slowly-bw-academic.jpg)
+
 ### 2030: Big Pharma Pivots or Dies
 
 Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums.
@@ -611,6 +647,8 @@ Pharmaceutical companies realize they can't charge $10,000 for pills that cost $
 
 We realize we could have done this all along. We had the internet since 1990. We had computers since 1950. We had writing since 3000 BC.
 
+![A timeline contrasting major human milestones like writing and computers against the persistent 'Paperwork Age,' illustrating the gap between technological potential and bureaucratic reality.](/assets/images/dfda/dfda-section-2035-the-great-revelation-bw-academic.jpg)
+
 We spent 5,000 years letting people die while we filled out forms.
 
 History books will call us "The Paperwork Age" and children will laugh at our stupidity.
@@ -618,6 +656,8 @@ History books will call us "The Paperwork Age" and children will laugh at our st
 ### 2050: Death Becomes Opt-In
 
 Diseases are mostly solved. Death becomes a choice, like smoking or voting Republican. The FDA's job becomes preventing people from becoming immortal too quickly (traffic is bad enough).
+
+![A before-and-after comparison showing the transition from mandatory mortality to an 'opt-in' death model, highlighting the FDA's shift from curing disease to managing population density.](/assets/images/dfda/dfda-section-2050-death-becomes-opt-in-bw-academic.jpg)
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 

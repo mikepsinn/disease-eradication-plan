@@ -139,6 +139,8 @@ The OPG framework (see [Optimal Policy Generator Specification](https://opg.waro
 
 OBG generates evidence-based budget recommendations. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) provide the political implementation mechanism: independent electoral support and post-office career opportunities flow to politicians in proportion to how closely their voting records correlate with OBG recommendations. No money flows directly to politicians. Instead, independent actors (PACs, foundations, think tanks) commit ex-ante to favor high-scorers on public metrics derived from OBG gap analysis.
 
+![A flow diagram illustrating the indirect incentive mechanism where OBG gap analysis informs independent actor support for politicians based on their voting alignment.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-mechanism-bw-academic.jpg)
+
 ## Introduction
 
 ### Why Budget Allocation Fails Today
@@ -220,6 +222,8 @@ The OBG framework builds on and extends several established traditions in public
 ### Evidence-Based Policy Movement
 
 **What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
+
+![A comparison showing how Outcome-Based Governance (OBG) builds upon traditional evidence synthesis and cost-effectiveness analysis by shifting from intervention evaluation to budget-level optimization.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-evidence-based-policy-movement-bw-academic.jpg)
 
 **Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of two estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
 
@@ -533,6 +537,8 @@ Evidence from cross-state variation suggests:
 
 **Metrics affected**: Both real after-tax median income growth (via reduced healthcare costs and improved productivity) and median healthy life years (via better treatments). This dual impact contributes to the exceptionally high returns.
 
+![A comparison of return on investment across different public sectors and a cost-efficiency breakdown between pragmatic and traditional clinical trials.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
+
 Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}} and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}** [@dfda-impact-paper-2025].
 
 The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} per patient versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
@@ -562,6 +568,8 @@ Unlike most spending categories, pragmatic trials show **increasing returns at c
 3. **Learning effects**: Evidence accumulation improves trial design efficiency
 
 The "knee" of the diminishing returns curve is estimated at **$50-100B annually** (vs. current ~$500M), suggesting we are operating far below optimal.
+
+![A conceptual line graph showing returns versus spending for pragmatic trials, highlighting the 'knee' of the curve at $50-100B and the current position at $500M within the increasing returns phase.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-analysis-bw-academic.jpg)
 
 ### Cost-Effectiveness Calculation
 
@@ -661,6 +669,8 @@ All interventions fall well below the conventional $50,000-$150,000 per QALY cos
 ## Budget Impact Score (BIS)
 
 The Budget Impact Score measures **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. The scoring methodology draws on the established evidence hierarchy from the econometrics literature [@angrist2010; @bloom2013].
+
+![A diagram illustrating the hierarchy of causal evidence, showing how different levels of evidence quality determine the Budget Impact Score and overall confidence levels.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-impact-score-bis-bw-academic.jpg)
 
 ### BIS Calculation
 
@@ -918,9 +928,13 @@ These databases enable systematic ranking of interventions by cost-effectiveness
 
 **Mitigation**: Report confidence intervals, use multiple functional forms, acknowledge extrapolation limits.
 
+![A line graph illustrating diminishing returns with a curve flattening out, featuring shaded confidence intervals and a dashed line representing the risks of extrapolation beyond historical data points.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-uncertainty-bw-academic.jpg)
+
 ### Implementation Capacity
 
 Higher spending may not translate to outcomes if implementation capacity is lacking.
+
+![A flow diagram illustrating how spending is successfully converted to outcomes by passing through the filters of implementation assessment and gradual phasing.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-capacity-bw-academic.jpg)
 
 **Mitigation**: Pair spending increases with implementation assessment; phase in gradually.
 
@@ -999,6 +1013,8 @@ The framework's current evidence base consists of the underlying studies cited t
 **Base case**: Use point estimates
 
 Report OSL range across scenarios for policy guidance.
+
+![A comparison chart showing the projected OSL range across pessimistic, base case, and optimistic scenarios based on varying return estimates.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg)
 
 ## Conclusion
 

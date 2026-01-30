@@ -22,6 +22,9 @@ A sophisticated investor must ask: "Is this venture riskier than a standard star
 
 The most critical distinction is the source of risk.
 
+![A comparison of Venture Capital versus Political Arbitrage models, contrasting the market risk of creating new cash flows with the political risk of redirecting existing global military expenditures.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-1-the-core-thesis-political-arbitrage-vs-venture-capital-bw-academic.jpg)
+
+
 - **Venture Capital Risk Profile:** A VC invests in a startup with the primary risk being **Market Risk**. Will customers want the product? Will the market adopt it? Can the company find product-market fit before the money runs out? The vast majority of startups fail here. The entire model is a bet on **creating a new cash flow from scratch.**
 
 - **This Initiative's Risk Profile:** This initiative is a political effort to realign global resources towards critical public goods. The primary risk is **Political Risk**. Will a 1% treaty be ratified? This is not trying to create a new market; this is investing to **redirect a massive, pre-existing cash flow** ($2.72 trillion in annual military spending [@sipri2024]). The "market" is already validated and capitalized.
@@ -54,7 +57,13 @@ Because this risk is so specific, the system has been engineered with specific f
 - **The Problem:** The "collective action problem." Early investors may hesitate, fearing the project won't attract enough total capital to succeed.
 - **The Solution:** All initial funds are held in a transparent smart contract escrow. If the fundraising target is not met by a specific deadline, **all capital is automatically returned to investors.** This completely eliminates the risk of investing in a poorly capitalized, doomed-from-the-start effort.
 
+![A flowchart showing the logic of an assurance contract: investors deposit funds into escrow, leading to either a project payout if the goal is met or an automatic refund if the deadline passes without reaching the target.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-a-the-assurance-contract-mitigates-fundraising-risk-bw-academic.jpg)
+
+
 #### B. Metaculus & Dynamic Pricing (Mitigates **Political Risk**)
+
+![A flowchart showing how real-time probability data from a prediction market like Metaculus dynamically adjusts investment yields based on political risk levels.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-b-metaculus-dynamic-pricing-mitigates-political-risk-bw-academic.jpg)
+
 
 - **The Problem:** Political risk is notoriously difficult to quantify.
 - **The Solution:** The system uses a public prediction market (like Metaculus) to create a real-time, transparent probability of the treaty's success. This data dynamically prices the returns on investment tranches. If the market-perceived risk is high, the offered yield will be higher; if it is low, the yield will be lower. This ensures investors are always being offered a **fair, transparent, and mathematically sound premium for the precise level of political risk they are taking.**
@@ -63,6 +72,9 @@ Because this risk is so specific, the system has been engineered with specific f
 
 - **The Problem:** Political processes can be slow, and investors' capital could be tied up for years before a return is seen.
 - **The Solution:** As detailed in the [Cash Flow Model](../economics/financial-plan.qmd), payouts are aggressively front-loaded. In the first year of treaty inflows, the model is designed to pay out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This dramatically shortens the time an investor's capital is exposed to risk, from a decade down to just a few years.
+
+![A comparison between standard payout timelines and front-loaded payouts, showing how early capital returns reduce the duration of risk exposure from a decade to a few years.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-c-front-loaded-payouts-mitigates-timeline-risk-bw-academic.jpg)
+
 
 #### D. First-Loss Capital (Mitigates **Financial Risk**)
 
@@ -73,6 +85,9 @@ Because this risk is so specific, the system has been engineered with specific f
 ![A 'Capital Stack' waterfall diagram illustrating how the first-loss tranche insulates senior investors from initial downside risk.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-engineered-risk-mitigation-bw-academic.jpg)
 
 ## Conclusion: Is It Less Risky Than a VC Investment?
+
+![A side-by-side comparison of risk structures, contrasting the multiple variables of a traditional venture capital portfolio against a streamlined model focused on political will and engineered safety nets.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-conclusion-is-it-less-risky-than-a-vc-investment-bw-academic.jpg)
+
 
 For a sophisticated investor, the answer is arguably **yes, on a risk-adjusted expected value basis.**
 

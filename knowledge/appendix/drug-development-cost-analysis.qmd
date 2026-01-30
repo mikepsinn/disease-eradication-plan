@@ -33,7 +33,6 @@ This represents the most rigorous academic estimate based on empirical industry 
 
 ![A comparison of pre-1962 drug development cost estimates in 2024 dollars, contrasting the Baily academic study estimate of $24.7 million with the lower Congressional testimony estimate of $12 million.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-pre-1962-drug-development-costs-bw-academic.jpg)
 
-
 **Alternative Estimate: Congressional Testimony (1977)**
 
 The Congressional Record (April 21, 1977) cited **$1.2 million** (1962 dollars) = **$12 million** (2024 dollars). This lower estimate may reflect incomplete cost accounting or different drug types. We use the Baily study as our primary source due to its academic rigor.
@@ -124,7 +123,6 @@ A 12-year delay adds **3.14×** to costs via time value of money alone.
 
 ![A visualization showing a 9:1 ratio of failed drug candidates to successful approvals, highlighting the total capital risk involved in pharmaceutical development.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-higher-failure-rates-bw-academic.jpg)
 
-
 The Tufts CSDD estimate includes **cost of failures**:
 
 - For every approved drug, approximately **9 fail** during development
@@ -164,7 +162,6 @@ Post-1962 regulations added extensive preclinical requirements:
 These requirements added **2-3 years** and **$50-100M** per drug candidate.
 
 ![An infographic showing the five core preclinical requirements and their cumulative impact on drug development time and financial cost.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-preclinical-requirements-bw-academic.jpg)
-
 
 ## Sensitivity Analysis
 
@@ -212,8 +209,9 @@ Our **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate us
 
 ![A scale comparison showing the exponential growth in drug development costs between the 1960s and the 2010s, highlighting the 100x to 400x increase.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-independent-validation-bw-academic.jpg)
 
-
 ## Sanity Checks: Real-World Price Comparisons
+
+![A comparison of price points between products with similar manufacturing complexity but differing regulatory burdens, illustrating the 105:1 cost increase ratio.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-sanity-checks-real-world-price-comparisons-bw-academic.jpg)
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase should manifest in observable price differences between products with similar manufacturing complexity but different regulatory burdens. Here are six independent validations:
 
@@ -223,7 +221,6 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase s
 # === Drug Price Comparisons for Sanity Checks ===
 
 # 1. Generic vs. Brand-Name (Lipitor example)
-
 lipitor_brand_monthly = 175
 lipitor_generic_monthly_low = 10
 lipitor_generic_monthly_high = 20
@@ -231,7 +228,6 @@ lipitor_drop_pct_low = (1 - lipitor_generic_monthly_high / lipitor_brand_monthly
 lipitor_drop_pct_high = (1 - lipitor_generic_monthly_low / lipitor_brand_monthly) * 100
 
 # 2. Supplements vs. Prescription Drugs
-
 vitamin_d_supplement_per_1000iu_low = 0.05
 vitamin_d_supplement_per_1000iu_high = 0.10
 vitamin_d_prescription_per_1000iu_low = 1.50
@@ -253,7 +249,6 @@ niacin_ratio_low = niacin_prescription_per_500mg_low / niacin_supplement_per_500
 niacin_ratio_high = niacin_prescription_per_500mg_high / niacin_supplement_per_500mg
 
 # 3. Compounding Pharmacies
-
 testosterone_compounded_low = 30
 testosterone_compounded_high = 80
 testosterone_fda_low = 400
@@ -269,7 +264,6 @@ thyroid_ratio_low = thyroid_fda_low / thyroid_compounded_high
 thyroid_ratio_high = thyroid_fda_high / thyroid_compounded_low
 
 # 4. Veterinary vs. Human
-
 amoxicillin_vet_low = 0.10
 amoxicillin_vet_high = 0.30
 amoxicillin_human_low = 0.50
@@ -277,8 +271,7 @@ amoxicillin_human_high = 2.00
 amoxicillin_ratio_low = amoxicillin_human_low / amoxicillin_vet_high
 amoxicillin_ratio_high = amoxicillin_human_high / amoxicillin_vet_low
 
-# 5. Orphan Drugs (exposing full {{< var drug_cost_increase_pre1962_to_current_multiplier >}} burden)
-
+# 5. Orphan Drugs
 zolgensma_price = 2_100_000  # One-time treatment
 zolgensma_supportive_care_low = 5_000  # Annual
 zolgensma_supportive_care_high = 10_000  # Annual
@@ -302,7 +295,6 @@ brineura_annual = 700_000
 luxturna_onetime = 850_000
 
 # 6. New Antibiotic Development Economics
-
 new_drug_dev_cost = 2_600_000_000
 rare_infection_patients_annual = 50_000
 amortization_years = 10
@@ -311,7 +303,6 @@ manufacturing_cost_per_dose = 0.50
 antibiotic_regulatory_markup = dev_cost_per_patient / manufacturing_cost_per_dose
 
 # Orphan drug amortization examples
-
 rare_disease_patients_10k = 10_000
 ultra_rare_patients_1k = 1_000
 dev_cost_amortized_10k = new_drug_dev_cost / (rare_disease_patients_10k * amortization_years)
@@ -370,6 +361,8 @@ Compounding pharmacies make custom medications without requiring FDA approval fo
 
 Compounding pharmacies still face quality control requirements but skip the multi-year, multi-billion-dollar FDA approval process. Their lower prices reflect the true manufacturing cost.
 
+![A comparison chart illustrating the significant price difference between compounded medications and FDA-approved alternatives for testosterone and thyroid treatments.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-compounding-pharmacies-custom-manufacturing-without-fda-approval-bw-academic.jpg)
+
 ### 4. Veterinary Drugs vs. Human Drugs (Same Molecule, Different Species)
 
 Some medications exist in both veterinary and human formulations with different regulatory pathways:
@@ -381,6 +374,8 @@ Some medications exist in both veterinary and human formulations with different 
 - **Price ratio: `{python} f"{amoxicillin_ratio_low:.0f}"`-`{python} f"{amoxicillin_ratio_high:.0f}"`×**
 
 **Note:** Price differences also reflect insurance/pharmacy markup systems, but the veterinary pathway faces substantially less regulatory burden than human drug approval.
+
+![A side-by-side comparison of amoxicillin pricing for veterinary versus human use, illustrating the significant price gap despite using the same active molecule.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-veterinary-drugs-vs-human-drugs-same-molecule-different-species-bw-academic.jpg)
 
 ### 5. Orphan Drugs (Full Development Cost Exposure)
 
@@ -473,7 +468,11 @@ The last two comparisons **expose the full {{< var drug_cost_increase_pre1962_to
 
 The magnitude is shocking precisely **because the regulatory burden is that severe**.
 
+![A comparison of regulatory burden estimates showing a dramatic 100x to 400x increase across multiple independent studies.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-that-can-t-be-right-it-s-too-high-bw-academic.jpg)
+
 ### "Doesn't that include marketing costs?"
+
+![A side-by-side comparison illustrating the specific R&D activities included in the $2.6 billion cost figure versus the commercial and post-approval activities that are excluded.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-doesn-t-that-include-marketing-costs-bw-academic.jpg)
 
 **No.** The Tufts CSDD $2.6B figure explicitly **excludes**:
 
@@ -500,6 +499,8 @@ It includes **only**:
 
 ...costs still increased **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** in real terms. This demonstrates the **overwhelming regulatory burden** that swamps all efficiency gains.
 
+![A contrast between massive technological efficiency gains in lab work and computation against the paradoxically skyrocketing real-world cost of drug development.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-what-about-technological-improvements-reducing-costs-bw-academic.jpg)
+
 ## Implications for Policy
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} real cost increase suggests three conclusions:
@@ -523,6 +524,8 @@ Drugs developed under the pre-1962 regime (safety-only testing):
 - **Beta blockers** (propranolol)
 
 These drugs saved **millions of lives** and remain in use today. The thalidomide tragedy was **a safety failure**, not an efficacy failure. The pre-1962 system already required safety testing.
+
+![A visual summary of major medical breakthroughs developed under the pre-1962 safety-only regulatory system, alongside a conceptual distinction between safety and efficacy testing.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-pre-1962-system-wasn-t-broken-bw-academic.jpg)
 
 ### 3. Real-World Evidence Can Reverse This
 

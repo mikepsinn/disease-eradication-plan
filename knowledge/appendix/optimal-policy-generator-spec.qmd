@@ -89,6 +89,8 @@ OPG measures policy impact using the [two-metric welfare function](optimocracy-p
 
 See the Optimocracy paper for full justification of these metric choices, data sources, and the welfare function formula.
 
+![A conceptual diagram illustrating the two pillars of the welfare function: Economic Welfare (income growth) and Health Welfare (healthy life years).](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-two-welfare-metrics-sec-two-metrics-bw-academic.jpg)
+
 ### Why Only Two Metrics?
 
 **Simplicity**: These two metrics capture the primary welfare dimensions affected by most policies while remaining directly interpretable. No complex conversion factors (VSL, QALY→$) are needed.
@@ -167,6 +169,8 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
 **Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
+
+![A conceptual visualization showing how diverse policy data from thousands of jurisdictions over centuries flows into a central system for systematic harvesting and analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-evidence-base-centuries-of-natural-policy-experiments-sec-evidence-base-bw-academic.jpg)
 
 ### Scale of Available Natural Experiments
 
@@ -282,9 +286,13 @@ Current policy adoption follows a process dominated by political economy dynamic
 
 The result: welfare losses from documented policy failures. Evidence-based policy movements have attempted to address these failures [@cartwright2012; @haskins2009], but lack systematic, jurisdiction-specific recommendation generation.
 
+![A conceptual diagram showing how political and psychological barriers like lobbying intensity, status quo bias, and salience heuristics filter evidence, leading to welfare losses in the policy adoption process.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-why-policy-ranking-fails-today-bw-academic.jpg)
+
 ### Scale of Available Evidence
 
 The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data should improve on the current system of lobbying-driven, ideology-filtered policy adoption. How much improvement is an empirical question requiring validation (see @sec-validation-framework).
+
+![A conceptual comparison between the current ideology-driven policy system and a proposed evidence-based framework leveraging data from millions of policy-years across multiple jurisdictional levels.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-evidence-bw-academic.jpg)
 
 ### Contributions
 
@@ -317,6 +325,8 @@ This specification describes a *proposed* framework. The methodology requires em
 **Benefit-Cost Analysis Tradition**: The broader benefit-cost literature [@sunstein2002; @viscusi2018] provides theoretical foundations for policy evaluation but typically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation.
 
 ### This Framework's Contribution
+
+![A comparative overview of the OPG framework's unique contributions, contrasting its jurisdiction-specific, comprehensive policy review process against traditional evaluation methods.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-this-framework-s-contribution-bw-academic.jpg)
 
 OPG differs from existing approaches by:
 
@@ -372,7 +382,7 @@ OPG flags potential interaction effects using the following heuristics:
 | Policy A | Policy B | Interaction Type | Evidence |
 |----------|----------|-----------------|----------|
 | Seat belt law | Speed limit | Complementary | Both target crash fatalities |
-| Carbon tax | Renewable subsidy | Substitutable | Both reduce emissions; combined effect < sum |
+| Nutrition labeling | School lunch programs | Complementary | Both improve dietary outcomes |
 | Tobacco tax | Smoking ban | Complementary | Reinforce each other |
 | Income tax cut | Sales tax increase | Substitutable | Offsetting fiscal effects |
 
@@ -525,6 +535,8 @@ policy_recommendations (
 
 ### Analysis Methods {#sec-analysis-methods}
 
+![A conceptual mapping of quasi-experimental research designs supported by the OPG system, illustrating how different methods align with specific data structures.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-analysis-methods-sec-analysis-methods-bw-academic.jpg)
+
 The OPG system supports multiple quasi-experimental designs, reflecting the "credibility revolution" in applied economics [@angrist2010]. Each method is appropriate for different data structures [@imbens2015]:
 
 #### Synthetic Control Method
@@ -574,6 +586,8 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 **Use case**: Need to visualize pre-trends and dynamic treatment effects.
 
+![A coefficient plot representing an event study with pre-treatment estimates near zero and post-treatment estimates showing the dynamic evolution of treatment effects.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-event-study-interrupted-time-series-bw-academic.jpg)
+
 **Method**: Estimate treatment effects at each time period relative to treatment, including leads (pre-treatment) and lags (post-treatment).
 
 **Quality metrics**:
@@ -600,6 +614,8 @@ The following weights reflect proposed defaults based on the methodological rigo
 ### Bradford Hill Criteria Scoring Functions {#sec-bradford-hill}
 
 Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
+
+![A conceptual diagram showing the mapping process where individual Bradford Hill criteria are processed through saturation functions to yield normalized scores between 0 and 1.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg)
 
 #### Strength of Association
 
@@ -902,7 +918,7 @@ Recommendations flag constraints that may impede adoption:
 
 | Blocking Factor | Severity | Description | Example |
 |-----------------|----------|-------------|---------|
-| `constitutional` | **Hard** | Requires constitutional amendment | 2nd Amendment limits on gun regulations |
+| `constitutional` | **Hard** | Requires constitutional amendment | Takings Clause limits on land use regulations |
 | `federal_preemption` | **Hard** | Federal law prevents state/local action | Federal minimum wage floor |
 | `treaty_obligation` | **Hard** | International agreement constrains policy | WTO rules on tariffs |
 | `autonomy_concern` | **Soft** | Restricts individual freedom/choice | Mandatory helmet laws |
@@ -935,6 +951,8 @@ For each recommendation, OPG identifies jurisdictions that:
 3. Experienced the predicted effects
 
 This provides concrete examples for policymakers: "Vermont (similar demographics, adopted this in 2015, saw -7.1 pp smoking reduction)."
+
+![A visual breakdown of the three criteria used to select peer jurisdictions: matching characteristics, policy adoption, and documented positive outcomes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-similar-jurisdictions-sec-similar-jurisdictions-bw-academic.jpg)
 
 #### Computing Jurisdiction Similarity
 
@@ -1107,6 +1125,8 @@ For each analysis, we track which confounders were controlled:
 
 The `confounder_sensitivity` field estimates how much the effect estimate might change if uncontrolled confounders were addressed (Oster's delta, [@oster2019]).
 
+![A conceptual diagram showing the relationship between a treatment and outcome, distinguishing between controlled confounders and the potential bias introduced by uncontrolled factors.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-confounder-adjustment-bw-academic.jpg)
+
 ## Global (Aggregate) PIS Calculation {#sec-global-pis}
 
 Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis.
@@ -1269,6 +1289,8 @@ While OPG does not filter by political feasibility, it provides context:
 
 ### Sequencing Guidance
 
+![A strategic roadmap showing the progression of policy adoption from immediate quick wins to bundled implementations and reaching critical mass thresholds.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-sequencing-guidance-bw-academic.jpg)
+
 Some policies are easier to adopt after others:
 
 1. **Quick wins first**: Build political capital with easy, high-impact changes
@@ -1321,7 +1343,7 @@ The system automatically identifies potential natural experiments:
 | Border discontinuity | Adjacent jurisdictions with different policies | Minimum wage differences at state borders |
 | Temporal discontinuity | Abrupt policy change | Court ruling invalidating previous policy |
 | Eligibility threshold | Sharp cutoff for policy application | Income threshold for benefit eligibility |
-| Staggered adoption | Different jurisdictions adopting at different times | ACA Medicaid expansion by state |
+| Staggered adoption | Different jurisdictions adopting at different times | Unemployment insurance extensions by state |
 | Lottery | Random assignment (rare) | Charter school lotteries |
 | Court mandate | Externally imposed change | Desegregation orders |
 
@@ -1416,6 +1438,8 @@ Policy effects vary by:
 
 High heterogeneity (I² > 75%) suggests context-dependence rather than universal effects.
 
+![A visualization showing how a single policy can result in diverse outcomes across different jurisdictions based on factors like culture, implementation quality, and timing.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-heterogeneous-effects-bw-academic.jpg)
+
 ### Jurisdiction-Specific Caveats
 
 | Caveat | Description | Mitigation |
@@ -1432,6 +1456,8 @@ High heterogeneity (I² > 75%) suggests context-dependence rather than universal
 - **Adaptation**: Jurisdictions and individuals adapt to policies
 
 The event study design explicitly models dynamic effects; we report both immediate and sustained impact estimates.
+
+![A dynamic impact chart illustrating the progression from short-run immediate effects to long-run sustained effects, accounting for policy drift and adaptation over time.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-time-varying-effects-bw-academic.jpg)
 
 ### Publication Bias
 
@@ -1482,7 +1508,7 @@ To address adoption bias, validation should exploit **exogenous shocks to adopti
 | Exogenous Shock | Example | Rationale |
 |-----------------|---------|-----------|
 | Court rulings | State court strikes down previous policy | Adoption forced by legal ruling, not political choice |
-| Federal mandates | ACA Medicaid expansion | Compliance driven by federal law, not state preference |
+| Federal mandates | Clean Air Act state implementation | Compliance driven by federal law, not state preference |
 | Close electoral outcomes | Ballot measure passes 51-49% | Near-randomization around threshold |
 | Leadership turnover | New governor from different party | Adoption reflects leadership change, not underlying trends |
 
@@ -1557,6 +1583,8 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ### Methodological Improvements
 
+![A conceptual framework illustrating how advanced methodological components like causal discovery, text-as-data, and machine learning integrate into a comprehensive policy evaluation pipeline.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-methodological-improvements-bw-academic.jpg)
+
 1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for policy interaction structure learning
 2. **Propensity score integration**: Covariate adjustment for measured jurisdiction characteristics
 3. **Bayesian hierarchical models**: More principled cross-jurisdiction pooling with uncertainty quantification
@@ -1566,12 +1594,16 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ### Validation Priorities
 
+![A strategic framework illustrating the four validation priorities for OPG predictions, highlighting the hierarchy of methods from retrospective studies to expert reviews.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-validation-priorities-bw-academic.jpg)
+
 1. **Retrospective validation study** (highest priority): Test OPG predictions against subsequent outcomes
 2. **Prospective prediction pre-registration**: Publicly commit to recommendations before policy adoption decisions
 3. **Domain expert review**: Have policy experts assess face validity of rankings
 4. **Cross-validation**: Hold out jurisdictions, predict their outcomes from others
 
 ### Data Infrastructure
+
+![A data infrastructure pipeline illustrating the flow from legislative data collection and NLP processing to standardized outcome harmonization and researcher API access.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-data-infrastructure-bw-academic.jpg)
 
 1. **Automated policy tracking**: NLP pipeline to detect policy changes from legislative databases
 2. **Outcome harmonization**: Standardized outcome definitions across jurisdictions
@@ -1797,6 +1829,8 @@ If Texas adopted all recommendations, expected effects are:
 - **+0.54 years** added to median healthy life expectancy
 
 **Critical observation**: The total income effect (+0.02 pp/yr) is much smaller than the total health effect (+0.54 years in relative terms) because the tobacco tax creates a genuine tradeoff. This is a feature, not a bug: it surfaces real policy tensions rather than hiding them behind combined scores.
+
+![A comparison chart showing the disparate impacts of policy recommendations on income growth versus healthy life expectancy, highlighting the tradeoff between economic and health outcomes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-interpretation-bw-academic.jpg)
 
 The two-metric format makes tradeoffs explicit and enables direct interpretation without complex conversion factors. Policymakers can see that the tobacco tax recommendation prioritizes health over income, and adjust their weighting (α) accordingly if they disagree with equal weighting.
 

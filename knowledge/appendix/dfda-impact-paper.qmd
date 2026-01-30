@@ -636,9 +636,14 @@ The elimination of the post-safety efficacy lag by such a framework achieves a o
 
 {{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
-This represents the **top-down comprehensive estimate** of the health benefits from a decentralized framework from eliminating the post-safety efficacy lag.
+This represents the health benefits from eliminating the post-safety efficacy lag **only**. The efficacy lag ({{< var efficacy_lag_years >}}) is one of two components of the total timeline shift:
 
-For detailed methodology and assumptions, see [The Human Cost of Regulatory Latency](https://invisible-graveyard.warondisease.org).
+1. **Efficacy lag elimination**: {{< var efficacy_lag_years >}} (this section)
+2. **Trial capacity/discovery acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} (from {{< var dfda_trial_capacity_multiplier >}}× more trials)
+
+The **combined total** timeline shift is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, yielding {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. See [Key Findings](#key-findings) for the combined totals.
+
+For detailed methodology and assumptions on efficacy lag, see [The Human Cost of Regulatory Latency](https://invisible-graveyard.warondisease.org).
 
 ### Safety and Risk Management
 

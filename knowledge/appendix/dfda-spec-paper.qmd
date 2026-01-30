@@ -85,6 +85,8 @@ This two-stage design addresses the fundamental limitations of purely observatio
 
 This paper describes the statistical methodology powering a patient-facing system best understood as **"Consumer Reports for drugs"** - a searchable database where patients can look up any condition and see every treatment ranked by real-world effectiveness, with quantitative outcome labels showing exactly what happened to people who tried each option.
 
+![A conceptual diagram showing the flow from raw data and statistical methodology to a user-facing searchable database that ranks drug effectiveness based on real-world outcomes.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-system-overview-from-methodology-to-implementation-system-overview-bw-academic.jpg)
+
 ### What Patients See
 
 When a patient searches for their condition, they see:
@@ -97,6 +99,8 @@ When a patient searches for their condition, they see:
 ![Treatment Rankings Example - Patients see all treatments ranked by real-world effectiveness for their condition](../../assets/images/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
 
 ### What Companies See
+
+![A workflow diagram showing the streamlined process for companies, from instant registration to the generation of high-value clinical data through patient-funded treatments.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-companies-see-bw-academic.jpg)
 
 Any company - pharmaceutical, supplement, food, or intervention - can register a treatment in minutes at zero cost:
 
@@ -1328,6 +1332,8 @@ where $w$ represents importance weights assigned by clinical relevance.
 
 The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framework for assessing causation from observational data. This section details how our framework addresses each criterion.
 
+![A conceptual mapping showing how the proposed framework addresses each of the nine Bradford Hill criteria for causal inference.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
+
 ### Complete Criteria Mapping
 
 | Criterion | How Addressed | Quantitative Metric | In PIS? |
@@ -1728,6 +1734,8 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 **Design**: Retrospective comparison of PIS predictions against published RCT results.
 
+![Workflow of the retrospective validation study comparing PIS predictions against historical RCT results to assess discrimination and calibration.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-proposed-validation-study-bw-academic.jpg)
+
 **Method**:
 1. Identify treatment-outcome pairs where both (a) we have sufficient observational data to compute PIS, and (b) RCT evidence exists
 2. Compute PIS for each pair using only data collected before RCT publication
@@ -1768,6 +1776,8 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 9. **Drug-drug interactions**: Detect combination effects and synergies
 
 ### Validation Priorities
+
+![A four-stage validation roadmap for PIS predictions, illustrating the sequence from retrospective comparisons and prospective studies to expert review and sensitivity benchmarking.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-validation-priorities-bw-academic.jpg)
 
 1. **Retrospective RCT comparison**: Compare PIS predictions to published trial results (highest priority)
 2. **Prospective prediction study**: Pre-register PIS predictions, validate against future RCTs

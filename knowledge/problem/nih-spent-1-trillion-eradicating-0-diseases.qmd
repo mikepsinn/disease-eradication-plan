@@ -18,7 +18,6 @@ image: /assets/og-images/knowledge/problem/nih-spent-1-trillion-eradicating-0-di
 
 ![](/assets/infographics/knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases-infographic-retro-academic.jpg)
 
-
 ![NIH Inefficiency](../../assets/infographics/NIH Inefficiency Infographic.png)
 
 ## The Allocation Scandal
@@ -45,12 +44,13 @@ A [2023 JAMA study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/) analyzed
 
 This isn't just inefficiency. It's a body count.
 
-
 ![Breakdown of NIH spending showing the massive disparity between basic research (84.9%) and actual human clinical trials (3.3%).](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-allocation-scandal-bw-academic.jpg)
 
 ## Why This Allocation Exists
 
 This isn't bureaucratic accident. It's lobbied outcome.
+
+![A conceptual map of the systemic incentives and 'revolving door' relationships between the pharmaceutical industry, government funding agencies, and academia that prioritize basic research over cost-effectiveness trials.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-why-this-allocation-exists-bw-academic.jpg)
 
 Drug companies benefit enormously from NIH funding basic research. Taxpayers absorb the risk; industry patents the successes. But independent pragmatic trials comparing drugs head-to-head? Those threaten blockbuster profits by revealing which treatments actually work best.
 
@@ -68,6 +68,8 @@ The difference between efficient and inefficient trial design isn't theoretical.
 
 ### RECOVER Initiative (NIH Approach)
 
+![A summary of the RECOVER Initiative's metrics, contrasting its $1.665 billion budget and 4-year timeline against the 30,000 patients enrolled and zero completed trials.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-recover-initiative-nih-approach-bw-academic.jpg)
+
 **Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) (source [@recover-budget-update-2-3b])
 **Timeline:** 4 years and counting [@nih-recover-inefficiency]
 **Patients enrolled:** ~30,000 [@recover-initiative-patient-enrollment]
@@ -84,11 +86,15 @@ The difference between efficient and inefficient trial design isn't theoretical.
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This massive efficiency gap is not unique to RECOVERY; a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
+![A comparison between the UK RECOVERY Trial and the NIH RECOVER Initiative, highlighting the 133x difference in cost per patient and the disparity in clinical outcomes.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-recovery-trial-uk-approach-bw-academic.jpg)
+
 This proves the problem isn't that curing disease is hard. The problem is that the NIH funds the wrong things.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
 When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money. You are burning lives.
+
+![A conceptual infographic contrasting the outcomes of allocating $40 billion to low-efficiency research versus high-efficiency clinical trials, highlighting the human lives lost as an opportunity cost.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-the-death-toll-opportunity-cost-of-misallocation-bw-academic.jpg)
 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
@@ -101,7 +107,6 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH mix.
 
 Yet pragmatic trials remain severely underfunded [@pragmatic-trials-cost-advantage] despite the ADAPTABLE trial proving they cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
-
 
 ![Bar chart comparing the cost efficiency of the Standard NIH Portfolio vs. Pragmatic Platform Trials, demonstrating the massive return on investment difference.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-cost-per-qaly-bw-academic.jpg)
 
@@ -143,6 +148,8 @@ Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypot
 We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
 But the **flow** of trials is a trickle.
 
+![A visualization of the 'Stock vs. Flow' crisis illustrating the massive reservoir of potential drug candidates compared to the narrow bottleneck of clinical trial availability and final approvals.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
+
 The result is a system that produces papers, not cures:
 
 - **Papers published:** 2.5 million annually [@nih-annual-papers-published]
@@ -168,7 +175,6 @@ We know everything about how cancer works in mice. We've mapped every pathway, g
 
 ![The 'Funnel of Failure' illustrating the bottleneck between the massive stock of published research and safe molecules versus the trickle of approved treatments.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-translation-funnel-bw-academic.jpg)
 
-
 #### What we don't have: Cures.
 
 Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
@@ -179,7 +185,6 @@ The NIH defends its existence by claiming to produce "Public Goods" (open scienc
 In reality, it spends taxpayers' money to produce "Club Goods" for private industry.
 
 ![A flow diagram of the drug development pipeline showing how taxpayer funding covers high-risk basic research and training, while private industry privatizes the successful outputs through patents, creating a cycle of socialized risk and privatized profit.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
-
 
 **The Scam in Numbers:**
 
@@ -213,6 +218,8 @@ Here's the most damning statistic of all:
 
 That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
 
+![A comparison chart illustrating the disconnect between NIH funding levels and actual disease burden, highlighting the negligible 0.07 correlation.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-the-patient-disconnect-zero-correlation-with-health-outcomes-bw-academic.jpg)
+
 ### What patients want
 
 - Treatments that work
@@ -230,6 +237,8 @@ That's essentially random. You'd get better allocation by throwing darts at a li
 The system optimizes for everything except patient outcomes.
 Because patients don't control the money.
 Committees do.
+
+![A conceptual diagram showing the flow of NIH funding controlled by committees toward institutional goals like papers and overhead, while patient outcomes remain disconnected from the primary incentive loop.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-what-nih-funds-bw-academic.jpg)
 
 ## The Track Record
 
@@ -249,6 +258,8 @@ The problem isn't capability. It's allocation.
 
 The UK RECOVERY trial proved the alternative: {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}, 100 days instead of years, and over 1 million lives saved.
 
+![A comparison between the traditional clinical trial model and the streamlined RECOVERY trial approach, illustrating the dramatic differences in cost, speed, and methodology.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-what-would-actually-work-bw-academic.jpg)
+
 What it requires:
 
 1. **Pay for results:** Cure = payment, no cure = no payment
@@ -265,5 +276,7 @@ You could implement efficient trials tomorrow. But that would upset the grant-wr
 ## The Bottom Line
 
 For $1.1 trillion since 1970, the NIH built the world's most expensive grant-writing academy. Zero diseases eradicated. Millions of papers nobody reads. Thousands of administrators. Hundreds of committees.
+
+![A comparative visualization of the NIH's massive resource inputs and bureaucratic outputs against the lack of eradicated diseases, contrasted with a streamlined alternative model.](/assets/images/nih-spent-1-trillion-eradicating-0-diseases/nih-spent-1-trillion-eradicating-0-diseases-section-the-bottom-line-bw-academic.jpg)
 
 The alternative exists and has been proven to work.

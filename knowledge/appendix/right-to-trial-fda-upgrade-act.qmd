@@ -88,6 +88,9 @@ In this Act:
 (b) **Qualification pathway.** The regulations shall establish a transparent qualification pathway; once a NAM is qualified for a defined context of use, FDA reviewers shall accept data from that method without requiring parallel animal studies.
 (c) **Annual report.** The Commissioner shall publish an annual public report enumerating qualified NAMs, sponsor submissions using NAMs, and areas still requiring animal use with timelines to develop alternatives.
 
+![A flowchart showing the regulatory process for qualifying non-animal test methods, from initial rulemaking to the acceptance of data as primary safety evidence in place of animal studies.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-201-accelerated-adoption-of-alternative-preclinical-test-methods-bw-academic.jpg)
+
+
 ### SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS
 
 (a) **Decentralised Trials Guidance.** Within 1 year the Secretary shall issue final guidance recognising remote visits, tele‑investigator oversight, direct‑to‑patient IMP shipment, and e‑consent, as compliant with 21 CFR Parts 50, 54, and 312.
@@ -95,11 +98,17 @@ In this Act:
 (c) **Real‑World Evidence.** Within 18 months the Secretary shall publish a framework specifying how real‑world data (EHRs, claims, device feeds) integrated via the FDA v2 Protocol may support new indications, post‑marketing commitments, or safety label changes.
 (d) **Training.** FDA shall establish continuing‑education modules to train reviewers in decentralized‑trial oversight, Bayesian statistics, and RWE analytics.
 
+![A conceptual diagram illustrating the four key pillars of clinical trial modernization: decentralized trials, adaptive designs, real-world evidence integration, and regulatory training.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-202-guidance-on-decentralised-adaptive-and-real-world-evidence-trials-bw-academic.jpg)
+
+
 ### SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION
 
 (a) **Patient Experience Integration.** FDA shall revise Patient‑Focused Drug Development guidance to require that every pivotal trial protocol include at least one patient‑reported outcome or patient‑preference study relevant to benefit–risk assessment.
 (b) **Global Work‑sharing.** The Secretary may enter into work‑sharing arrangements with peer regulators (EMA, PMDA, Health Canada) for concurrent review of applications utilising FDA v2 Protocol data.
 (c) **Data Standards Convergence.** The Secretary shall align FDA data standards with HL7 FHIR Release 5, CDISC SDTM v4, and SNOMED‑CT 2025 edition to ensure cross‑border data utility.
+
+![A diagram illustrating the three pillars of modern drug development: integration of patient experience data, concurrent global regulatory review, and the alignment of international data standards.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-203-patient-focused-drug-development-and-global-collaboration-bw-academic.jpg)
+
 
 ### SEC. 204. FDA.gov v2 DECENTRALIZED HEALTH PROTOCOL AND REFERENCE IMPLEMENTATION
 
@@ -149,6 +158,9 @@ In this Act:
 ### SEC. 205. FDA-X PRIZE
 
 (a) **Establishment.** To accelerate the development of the FDA.gov v2 Protocol, the Secretary is authorized to establish an "FDA-X Prize" competition, with a prize purse to be determined by the Secretary, awarded to the entity that first develops and demonstrates a public portal meeting the core requirements outlined in Section 204 and which demonstrates the capacity to achieve at least an **80X reduction** in per-patient trial costs compared to traditional methodologies.
+
+![A flowchart mapping the FDA-X Prize lifecycle, showing the progression from competition establishment to the demonstration of 80X cost reduction and final system integration.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-205-fda-x-prize-bw-academic.jpg)
+
 
 (b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the protocol. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
 (c) **Integration.** If the prize is awarded for a platform that meets a substantial subset of requirements, the Secretary shall ensure its integration with any components developed or procured under Section 204.
@@ -237,11 +249,17 @@ In this Act:
 - **36 months:** Universal enrolment guarantee active; subsidies flowing.
 - **48 months:** First GAO report to Congress.
 
+![A chronological timeline illustrating the four-year implementation phases from the initial 180-day interim rules to the 48-month GAO report.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-403-implementation-timeline-bw-academic.jpg)
+
+
 ### SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION
 
 (a) **Objective.** The Secretary, in coordination with the Secretary of State, shall develop and execute a strategy to transition the governance of the Protocol from the United States government to an independent, international multi-stakeholder body.
 (b) **Report to Congress.** Within 18 months of enactment, the Secretary shall submit a report to Congress outlining this strategy, including: (1) proposed frameworks for a new international governance body; (2) a timeline for transitioning technical and administrative oversight; and (3) a plan for ensuring the long-term sustainability and neutrality of the protocol, including research into and pathways toward cryptographically-secured, on-chain governance models that reduce reliance on a central administrative body.
 (c) **Continued Support.** The United States shall continue to provide technical and financial support for the Protocol during a transition period of no less than 5 years after an international governance body is established.
+
+![A roadmap illustrating the transition of protocol governance from United States government oversight to an international multi-stakeholder body and eventually to a decentralized, on-chain governance model.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-404-strategy-for-global-governance-and-decentralization-bw-academic.jpg)
+
 
 ### SEC. 405. SEVERABILITY
 

@@ -135,6 +135,9 @@ We employ Monte Carlo simulation to generate confidence intervals, recognizing u
 
 ::: {.callout-note}
 ## Methodological Caveat: Overlap and Double-Counting
+
+![A conceptual diagram illustrating the overlaps between subsystem costs like housing and health, contrasted with excluded factors that offset the resulting bias.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-methodological-caveat-overlap-and-double-counting-bw-academic.jpg)
+
 While subsystem losses are estimated independently, some interdependence exists. For example, housing cost burdens affect health outcomes via stress; incarceration costs overlap with drug enforcement spending. This analysis treats categories as largely additive, which may modestly overstate total losses. However, excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset this bias.
 :::
 
@@ -256,6 +259,9 @@ Private financial networks operate with fraud rates orders of magnitude lower.
 
 The drug prohibition regime and resulting incarceration system represent sustained policy failure: intervention that fails to achieve stated objectives while generating substantial negative externalities.
 
+![A conceptual diagram illustrating the failure of the drug prohibition system, showing the gap between intended policy objectives and the actual outcomes of incarceration and negative externalities.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-justice-and-prohibition-bw-academic.jpg)
+
+
 ### Loss Category: Conversion Inefficiency (Drug Prohibition)
 
 The federal drug control budget for 2024: nearly $45 billion [@ncdas-drug-statistics-2025]. Total expenditure since 1971: over $1 trillion [@cap-drug-war-numbers].
@@ -270,6 +276,9 @@ Despite state legalization, federal marijuana enforcement continues at approxima
 
 The U.S. incarcerates at rates unmatched in the developed world, removing prime-age workers from the labor force and degrading human capital.
 
+![A comparison of the tiered economic impacts of mass incarceration, contrasting direct public corrections costs against broader societal burdens and lost lifetime earnings.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
+
+
 **Direct system costs:** $80.7 billion in public corrections expenditure [@prison-policy-economics]
 
 **Economic burden estimates:**
@@ -282,6 +291,9 @@ Lost lifetime earnings per incarcerated person: approximately $500,000 [@prison-
 ### Loss Category: Leakage (Civil Asset Forfeiture)
 
 Civil asset forfeiture allows property seizure without criminal conviction. FY 2024 Treasury Forfeiture Fund: $2.26 billion processed [@treasury-forfeiture-2024].
+
+![A conceptual flow diagram illustrating how civil asset forfeiture redirects property from productive economic activity into a bureaucratic fund, shifting enforcement incentives toward revenue generation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-civil-asset-forfeiture-bw-academic.jpg)
+
 
 This mechanism incentivizes revenue-generating enforcement over public safety, introduces property rights uncertainty, and constitutes wealth transfer from productive activity to bureaucracy.
 
@@ -363,6 +375,9 @@ Direct transfers to profitable industries distort market signals and insulate in
 ### Loss Category: Parasitic (Fossil Fuel Subsidies)
 
 Direct annual subsidies to fossil fuel companies: $10-52 billion [@fractracker-fossil-subsidies-2025].
+
+![A diagram illustrating the flow of fossil fuel subsidies and their resulting impact on market prices and the pace of the energy transition.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-fossil-fuel-subsidies-bw-academic.jpg)
+
 
 This represents capital transfer to a mature, profitable industry, artificially lowering carbon-intensive energy costs relative to alternatives and slowing energy transition.
 
@@ -499,13 +514,22 @@ Why do these losses persist despite apparent obviousness? Several structural fac
 
 Government programs lack market feedback mechanisms. A private firm losing $210 billion annually on inefficient logistics would face bankruptcy. Federal agencies face no equivalent selection pressure.
 
+![A comparison showing the closed feedback loop of a private firm where losses lead to bankruptcy versus the severed feedback loop of a federal agency lacking market selection pressure.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-severed-feedback-loops-bw-academic.jpg)
+
+
 ### Principal-Agent Misalignment
 
 Those administering programs (bureaucrats, contractors) have incentives misaligned with program objectives. Contractors profit from complexity; administrators expand headcount regardless of output.
 
+![A conceptual diagram illustrating the divergence between program objectives and the individual incentives of bureaucrats and contractors.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-principal-agent-misalignment-bw-academic.jpg)
+
+
 ### Measurement Failure
 
 Current accounting measures expenditure, not utility. A dollar spent equals a dollar of "activity" regardless of outcome. Without output measurement, optimization is impossible.
+
+![A comparison between the current accounting model, which equates expenditure directly with activity, and an optimized model that focuses on measuring utility and outcomes.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-measurement-failure-bw-academic.jpg)
+
 
 ### Monopoly Dynamics
 
@@ -537,6 +561,9 @@ Political cycles (2-4 years) misalign with infrastructure and policy cycles (10-
 - International competitiveness losses
 
 Including these factors would increase the efficiency gap estimate substantially.
+
+![A visualization showing the current efficiency gap estimate compared to the significantly larger gap that would exist if excluded factors like implicit subsidies and intergenerational costs were included.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-what-this-analysis-excludes-bw-academic.jpg)
+
 
 ### Methodological Limitations
 

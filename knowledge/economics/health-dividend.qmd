@@ -32,6 +32,9 @@ Here's the breakdown.
 
 Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}} per patient**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
 
+![A comparison showing the dramatic cost reduction from traditional Phase III clinical trials at $41,000 per patient to the Oxford RECOVERY trial model at $500 per patient.](/assets/images/health-dividend/health-dividend-section-the-math-from-var-traditional-phase3-cost-per-patient-to-var-recovery-trial-cost-per-patient-per-patient-bw-academic.jpg)
+
+
 The Oxford RECOVERY trial proved humans can do the same thing for **{{< var recovery_trial_cost_per_patient >}} per patient**. They tested COVID treatments on 40,000+ patients by:
 
 - Using existing hospital staff (revolutionary concept: doctors treating patients)
@@ -44,6 +47,9 @@ Your decentralized framework for drug assessment takes this model global. **80-1
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing).
 
+![A comparison of current global clinical trial spending against potential annual savings under conservative (50% efficiency) and optimistic (95% cost reduction) scenarios.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
+
+
 Conservative estimate: A decentralized framework for drug assessment captures 50% efficiency gains across the market.
 
 - 50% of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
@@ -51,6 +57,9 @@ Conservative estimate: A decentralized framework for drug assessment captures 50
 Optimistic scenarios show up to 95% cost reduction (like RECOVERY achieved), potentially saving up to **$57B annually** (95% of {{< var global_clinical_trials_spending_annual >}}).
 
 ## What {{< var dfda_benefit_rd_only_annual >}} Buys You
+
+![An infographic illustrating how a $58.6 billion budget could be redistributed to fund 10,000 clinical trials, treat 7,000 rare diseases, and drastically reduce drug development time and costs.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
+
 
 With the money saved every year, humans could:
 
@@ -63,11 +72,17 @@ With the money saved every year, humans could:
 
 Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_efficacy_lag_elimination_dalys >}} total** lost to delayed treatments ({{< var dfda_efficacy_lag_elimination_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
 
+![A visualization of the daily opportunity cost of inaction, highlighting the dual impact of $161 million in financial waste and over 54 million DALYs lost annually.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
+
+
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](https://impact.dfda.earth#daily-opportunity-cost-of-inaction).
 
 ## The framework Cost Breakdown
 
 Your decentralized framework for drug assessment costs approximately **{{< var dfda_annual_opex >}} annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
+
+![A cost breakdown chart visualizing the $40M annual operating budget across infrastructure, engineering, and compliance, highlighting the 95% confidence interval range from $27.3M to $55.6M.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
+
 
 **For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](https://impact.dfda.earth).
 
@@ -80,6 +95,9 @@ Your decentralized framework for drug assessment costs approximately **{{< var d
 **PRIMARY estimate**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (including all core benefits)
 
 Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+
+![A comparison of ROI scenarios illustrating the exponential scale difference between conservative R&D savings and the primary estimate including societal benefits.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
+
 
 **For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Financial Analysis Summary](https://impact.dfda.earth#financial-analysis-summary).
 
@@ -103,6 +121,9 @@ Until now. Your decentralized framework for drug assessment changes the game by 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (recommended).
 80x cost reduction per patient.
 {{< var dfda_trial_capacity_multiplier >}}× more trial capacity (43.4M participants annually vs 1.9M currently).
+
+![A comparative infographic showing the massive disparity between the $40M investment and $58.6B in potential savings, alongside the dramatic expansion in clinical trial capacity.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
+
 
 This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving {{< var dfda_benefit_rd_only_annual >}} is worth {{< var dfda_annual_opex >}}, which is like debating whether picking up a hundred-dollar bill is worth bending over.
 

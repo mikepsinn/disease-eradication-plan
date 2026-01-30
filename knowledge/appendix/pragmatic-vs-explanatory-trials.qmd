@@ -14,7 +14,6 @@ image: /assets/og-images/knowledge/appendix/pragmatic-vs-explanatory-trials-og-r
 
 ![](/assets/infographics/knowledge/appendix/pragmatic-vs-explanatory-trials-infographic-retro-academic.jpg)
 
-
 What are Pragmatic Trials?
 
 Pragmatic trials are designed to test interventions in real-world conditions, focusing on:
@@ -37,13 +36,13 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 | Setting              | Routine clinical practice            | Specialized research centers                                                                        |
 | Generalizability     | High                                 | Limited                                                                                             |
 
-
 ![Side-by-side comparison illustrating the structural differences in cost, speed, and scale between pragmatic and traditional explanatory trials.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-key-differences-comparison-bw-academic.jpg)
-
 
 ## Cost Analysis
 
 ### Traditional Explanatory Trials
+
+![A bar chart comparing average costs across clinical trial phases and a comparison of per-patient costs between specific therapeutic areas and the general average.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-traditional-explanatory-trials-bw-academic.jpg)
 
 - Average phase costs ([source](https://www.sofpromed.com/how-much-does-a-clinical-trial-cost)):
   - Phase 1: $4 million
@@ -56,6 +55,8 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ### Pragmatic Trials (RECOVERY & Broader Evidence)
 
+![Comparison of trial costs per patient between pragmatic and traditional methods, highlighting factors like infrastructure use and simplified monitoring that drive the 82-fold cost reduction in the RECOVERY trial.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-pragmatic-trials-recovery-broader-evidence-bw-academic.jpg)
+
 - **Systematic Review**: Median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient across 64 trials {{< var pmc_pragmatic_trial_median_cost_per_patient_cite >}}
 - **RECOVERY Trial**: {{< var recovery_trial_cost_per_patient >}}/patient - a {{< var recovery_trial_cost_reduction_factor >}} cost reduction vs traditional trials {{< var recovery_trial_cost_per_patient_cite >}}
 - Utilized existing healthcare infrastructure
@@ -67,6 +68,8 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ### RECOVERY Trial Metrics
 
+![An infographic illustrating the RECOVERY trial's rapid timeline from concept to policy implementation alongside its massive scale across 200+ hospitals and 47,000+ participants.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-recovery-trial-metrics-bw-academic.jpg)
+
 - 9 days: Concept to first patient enrollment [@recovery-trial-dexamethasone-results]
 - 10 weeks: First life-saving treatment identified [@landray-recovery-trial-quote]
 - 3 hours: Results to policy implementation [@landray-recovery-trial-quote]
@@ -77,6 +80,8 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ### Traditional Trial Metrics
 
+![Key pain points in traditional clinical trials, highlighting the 7.2-year average development timeline and the high rates of enrollment and site-level failure.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-traditional-trial-metrics-bw-academic.jpg)
+
 - Average time from phase 1 to approval: [7.2 years](https://www.bio.org/sites/default/files/legacy/bioorg/docs/Clinical%20Development%20Success%20Rates%202006-2015%20-%20BIO,%20Biomedtracker,%20Amplion%202016.pdf)
 - 80% of trials fail to meet enrollment timelines [@clinical-trial-enrollment-timelines]
 - Up to 50.0% of research sites enroll one or no patients [@clinical-trial-enrollment-timelines]
@@ -84,6 +89,8 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 ## Clinical Impact
 
 ### RECOVERY Trial
+
+![A visual summary of the RECOVERY trial results for dexamethasone, illustrating the 35% mortality reduction for ventilated patients and the timeline from results to saving one million lives globally.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-recovery-trial-bw-academic.jpg)
 
 - Dexamethasone findings [@recovery-trial-dexamethasone-results]:
   - 35% reduction in mortality for ventilated patients
@@ -99,6 +106,8 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 - Limited real-world applicability due to strict inclusion criteria
 
 ## Advantages of Pragmatic Trials
+
+![An infographic highlighting the four key pillars of pragmatic trial advantages: Generalizability, Resource Efficiency, Implementation Speed, and Statistical Power.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-advantages-of-pragmatic-trials-bw-academic.jpg)
 
 1. **Better Generalizability**
 

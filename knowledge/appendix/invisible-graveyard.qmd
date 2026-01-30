@@ -37,7 +37,6 @@ The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} eff
 
 ![A comparison of historical and future mortality costs caused by drug efficacy delays, highlighting the 3,070:1 ratio between Type II and Type I error consequences.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-short-version-bw-academic.jpg)
 
-
 :::
 
 ## Abstract
@@ -45,7 +44,6 @@ The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} eff
 This study quantifies the cumulative mortality and morbidity costs associated with the **Unitary Pre-Market Approval (UPMA)** model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of **{{< var efficacy_lag_years >}}** post-safety verification.
 
 ![A comparative bar chart showing the scale of historical versus future mortality costs and the massive 3,070:1 ratio between Type II and Type I regulatory errors.](/assets/images/invisible-graveyard/invisible-graveyard-section-abstract-bw-academic.jpg)
-
 
 Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs:
 
@@ -111,7 +109,6 @@ The regulatory cost of FDA efficacy requirements was first rigorously quantified
 
 ![A comparison of regulatory impacts on pharmaceutical innovation, showcasing the estimated 50-60% reduction in new drug flow alongside mortality estimates and specific international approval time lags.](/assets/images/invisible-graveyard/invisible-graveyard-section-foundational-economic-analysis-bw-academic.jpg)
 
-
 Wardell [@wardell-1974] documented the emerging "drug lag" between US and UK drug approvals, finding that the UK had access to significantly more new therapeutic agents. His estimate that beta-blockers alone could save 10,000 American lives annually if approved became a landmark finding in regulatory economics.
 
 Gieringer [@gieringer-drug-lag-estimate] synthesized these estimates, calculating 21,000-120,000 lives lost per decade from FDA delay. His work documented specific drug delays: propranolol (approved in the US 3 years after Europe for cardiac use, 10 years later for hypertension), interleukin-2 (7-year gap), and numerous other therapeutics.
@@ -119,6 +116,8 @@ Gieringer [@gieringer-drug-lag-estimate] synthesized these estimates, calculatin
 ### The Current Debate
 
 Contemporary research continues to find significant regulatory costs. The Tufts Center for the Study of Drug Development documents development timelines of {{< var fda_phase_1_to_approval_years >}} and costs of {{< var pharma_drug_development_cost_current >}} per approved drug. BIO's clinical development success rates show only {{< var pharma_success_rate_current_pct >}} of drugs entering Phase I ultimately reach patients.
+
+![A comparison between the FDA's standard regulatory process and expedited pathways, showing the difference in review timelines and the distribution of drug approvals.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-current-debate-bw-academic.jpg)
 
 Critics argue that faster approval pathways (breakthrough therapy designation, accelerated approval) have addressed these concerns. However, these pathways actually support our argument:
 
@@ -146,7 +145,6 @@ The theoretical claim that regulatory delay causes mortality requires empirical 
 Propranolol, the first beta-blocker for treating angina and hypertension, was approved in the UK in 1964. US approval came in 1967 for minor uses, but not until 1973 (angina) and 1976 (hypertension) for cardiovascular indications. Wardell estimated approximately 10,000 Americans died annually during this delay, as the FDA's doors were "essentially closed to cardiovascular drugs for an entire decade" [@wardell-1974]. This single drug's regulatory lag may have caused more American deaths than all other drug-related deaths in that century.
 
 ![A comparative summary of regulatory timelines, mortality statistics, and safety outcomes across three major pharmaceutical case studies: Beta-Blockers, HIV/AIDS, and Hepatitis C.](/assets/images/invisible-graveyard/invisible-graveyard-section-empirical-case-studies-demonstrating-the-causal-mechanism-bw-academic.jpg)
-
 
 **2. HIV/AIDS (1987-1996): Regulatory Reform Under Crisis**
 
@@ -187,7 +185,6 @@ Before calculating regulatory delay costs, we must establish what percentage of 
 
 ![A comparison bar chart showing the gap between current medical preventability and the theoretical maximum potential, highlighting the 30-50% research opportunity margin.](/assets/images/invisible-graveyard/invisible-graveyard-section-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
 
-
 The "Max Potential" column represents **theoretical upper bounds** based on biological precedent and mechanistic understanding, not current medical capability. These estimates extrapolate from:
 
 1. **Demonstrated biological plasticity** (organisms that don't age, mammalian aging reversal)
@@ -223,7 +220,6 @@ The "max potential" estimates above are grounded in peer-reviewed research:
 
 ![A comparison of the potential prevention and reversal rates across major health categories, including aging, cardiovascular disease, cancer, and neurodegenerative conditions, contrasted against the unavoidable baseline of accidental trauma.](/assets/images/invisible-graveyard/invisible-graveyard-section-why-this-upper-bound-the-biological-and-epidemiological-evidence-bw-academic.jpg)
 
-
 2. **Cardiovascular disease is 80-90% preventable.** WHO and Cleveland Clinic data [@cvd-80-percent-preventable] show that addressing lifestyle and environmental risk factors prevents the vast majority of heart attacks and strokes. With gene therapy addressing genetic predisposition, 95% is achievable.
 
 3. **Cancer is 90-95% environmental/lifestyle-driven.** Only 5-10% of cancers are purely genetic [@cancer-30-50-percent-preventable]; the remainder have modifiable causes (tobacco, diet, infections, pollutants). Perfect prevention + early AI detection + immunotherapy approaches 95%.
@@ -244,7 +240,6 @@ The remaining deaths are **fundamentally unavoidable** even with perfect biotech
 These represent the hard physical limits of medicine. Everything else, including "natural death from old age," is an engineering problem with engineering solutions.
 
 ![A comparison of mortality categories showing the 7.37% physical floor of unavoidable deaths versus the remaining addressable mortality through engineering.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-var-fundamentally-unavoidable-death-pct-floor-bw-academic.jpg)
-
 
 ### Data Sources & Parameterization
 
@@ -269,6 +264,8 @@ These represent the hard physical limits of medicine. Everything else, including
 
 3. **Economic Valuation:** *Standard QALY Valuation*.
    - **VSLY (Value of a Statistical Life Year):** Standardized at **{{< var standard_economic_qaly_value_usd >}}** (consistent with project-wide QALY valuations).
+
+![A visualization of the drug development timeline alongside the conversion logic from life-years saved to annual lives saved across major therapeutic areas.](/assets/images/invisible-graveyard/invisible-graveyard-section-data-sources-parameterization-bw-academic.jpg)
 
 ### Uncertainty Quantification Methodology
 
@@ -325,7 +322,11 @@ The assumption is not empirically validated at the aggregate level, though indiv
 
 Mortality counts fail to capture the suffering of patients living with untreated disabilities during the delay period. We calculated **Disability-Adjusted Life Years (DALYs)** using the formula $DALY = YLL + YLD$.
 
+![A diagram illustrating how Disability-Adjusted Life Years (DALYs) are calculated by summing Years of Life Lost (YLL) due to premature mortality and Years Lived with Disability (YLD).](/assets/images/invisible-graveyard/invisible-graveyard-section-morbidity-analysis-dalys-and-qalys-daly-calculation-bw-academic.jpg)
+
 ### Years of Life Lost (YLL)
+
+![A timeline comparison showing the gap between the mean age of preventable death at 62 years and the actuarial life expectancy of 79 years, representing the Years of Life Lost (YLL).](/assets/images/invisible-graveyard/invisible-graveyard-section-years-of-life-lost-yll-bw-academic.jpg)
 
 - **Mean Age of Preventable Death:** {{< var regulatory_delay_mean_age_of_death >}}
 - **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
@@ -352,6 +353,8 @@ Mortality counts fail to capture the suffering of patients living with untreated
 ### Years Lived with Disability - Treatment Beneficiaries {#treatment-morbidity}
 
 The YLD calculation above captures suffering *before death* for those who ultimately died from delayed treatments. However, a much larger population - the **{{< var chronic_disease_treated_patients_annual >}} people annually who receive chronic disease treatment** - also suffered during the {{< var efficacy_lag_years >}} delay before their treatments became available.
+
+![A timeline visualizing the 8.2-year delay period experienced by 982 million people before receiving treatment, illustrating the accumulation of years lived with disability (YLD).](/assets/images/invisible-graveyard/invisible-graveyard-section-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
 
 ::: {.callout-note}
 ## Distinction: Mortality vs. Morbidity Burden
@@ -395,6 +398,8 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 ### Contextualizing the Loss
 
+![A scale comparison showing the $1.19 quadrillion total loss relative to global economic output, including the wide range of the 95% confidence interval.](/assets/images/invisible-graveyard/invisible-graveyard-section-contextualizing-the-loss-bw-academic.jpg)
+
 - **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
 - **Annualized Loss:** Total loss ÷ 62 years represents a substantial fraction of global economic output in lost human capital and foregone productivity
 
@@ -406,6 +411,8 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 ## Methodological Note: Steelmanning the FDA's Position
 
 To ensure this analysis is maximally fair to proponents of current FDA regulation, we deliberately assume the **worst possible case** for Type I errors (harm from approving bad drugs). This "steelman" approach means that even if our assumptions are completely wrong in favor of FDA defenders, the conclusion holds.
+
+![A scale comparison showing the massive disparity between the estimated 7.94 billion DALYs lost to Type II errors (delayed drug access) versus the 2.59 million DALYs saved by Type I protection, even when assuming a Thalidomide-scale disaster occurs every year.](/assets/images/invisible-graveyard/invisible-graveyard-section-methodological-note-steelmanning-the-fda-s-position-bw-academic.jpg)
 
 Specifically, we assume a **Thalidomide-scale catastrophe every single year** in the counterfactual scenario. This is an extraordinarily extreme overestimate for three reasons:
 
@@ -440,6 +447,8 @@ Specifically, we assume a **Thalidomide-scale catastrophe every single year** in
 
 A legitimate concern deserves direct engagement: efficacy requirements may function as indirect safety measures. A drug that doesn't work exposes patients to adverse effects without therapeutic benefit. The risk-benefit ratio becomes infinite when benefit is zero.
 
+![A comparison between the traditional pre-market efficacy mandate and an adaptive regulatory model that uses real-world evidence and post-market monitoring to manage patient risk.](/assets/images/invisible-graveyard/invisible-graveyard-section-acknowledging-the-efficacy-as-safety-argument-bw-academic.jpg)
+
 **Counter-arguments:**
 
 1. **Real-world evidence detects inefficacy faster** than small RCTs with selected populations
@@ -452,6 +461,8 @@ A legitimate concern deserves direct engagement: efficacy requirements may funct
 This analysis acknowledges that Phase II/III trials do catch some drugs that would have caused harm. Three notable examples:
 
 1. **Torcetrapib (2006):** Phase III trial of this CETP inhibitor for cardiovascular disease was terminated early after 82 deaths in the treatment arm vs. 51 in placebo (HR 1.58). The trial caught cardiovascular harm that would have affected millions of patients post-approval [@torcetrapib-illuminate].
+
+![A comparison of drugs successfully halted by Phase III trials alongside a visualization of the 'detection limit' showing the scale difference between trial populations and real-world patient numbers.](/assets/images/invisible-graveyard/invisible-graveyard-section-drugs-appropriately-caught-by-phase-ii-iii-trials-bw-academic.jpg)
 
 2. **Semagacestat (2010):** Phase III trial for Alzheimer's disease found patients on treatment had *worse* cognitive outcomes than placebo, plus increased skin cancers and infections. The trial prevented approval of a drug that would have accelerated cognitive decline [@semagacestat-identity].
 
@@ -494,9 +505,13 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 
 Despite these limitations, the **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase) provides strong inferential evidence that regulatory changes significantly impacted drug development.
 
+![A conceptual diagram showing the 1962 amendments leading to a 70% drop in drug approvals and a 13.4:1 cost increase, while illustrating confounding variables like Medicare and NIH funding that complicate direct attribution.](/assets/images/invisible-graveyard/invisible-graveyard-section-limitations-bw-academic.jpg)
+
 ## Policy Implications
 
 ### The False Trade-off
+
+![A comparison between the perceived trade-off of safety versus speed and the evidence-based reality of drug approval phases.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-false-trade-off-bw-academic.jpg)
 
 The current debate frames drug approval as a choice between:
 
@@ -519,6 +534,8 @@ A superior framework would:
 
 This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} to near-zero while maintaining safety standards.
 
+![A flowchart showing the bifurcated regulatory process, transitioning from Phase I safety testing to immediate provisional approval and continuous real-world monitoring.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-bifurcated-alternative-bw-academic.jpg)
+
 ### Expected Impact
 
 If implemented today, the bifurcated model would:
@@ -528,6 +545,8 @@ If implemented today, the bifurcated model would:
 - **Accelerate treatments for {{< var diseases_without_effective_treatment >}} diseases** currently without effective therapy
 
 See [1% treaty impact analysis](https://impact.warondisease.org) for full quantified cost-benefit analysis.
+
+![A comparative infographic showing the massive reduction in drug development costs and time-to-market, alongside the increase in treatable diseases under the bifurcated model.](/assets/images/invisible-graveyard/invisible-graveyard-section-expected-impact-bw-academic.jpg)
 
 ### International Regulatory Comparison
 
@@ -556,7 +575,6 @@ Japan's conditional approval does NOT eliminate efficacy assessment. It REORDERS
 
 ![A comparative flow diagram showing the traditional regulatory pathway versus Japan's conditional approval architecture, highlighting the shift of efficacy verification to the post-market phase and the active revocation loop.](/assets/images/invisible-graveyard/invisible-graveyard-section-critical-distinction-efficacy-assessment-reordered-not-eliminated-bw-academic.jpg)
 
-
 **The real question for HeartSheet:** During those 9 years, did heart failure patients (who have few alternatives) benefit from access to an unproven treatment? The safety profile was acceptable - efficacy was the issue. This is a genuine tradeoff that merits cost-benefit analysis, not automatic condemnation.
 
 **2024 reforms strengthen, not abandon, conditional approval:** Japan's [June 2024 amendments](https://pmc.ncbi.nlm.nih.gov/articles/PMC12221229/) to the Regenerative Medicine Act add a formal revocation provision that was previously missing. The old system had no legal mechanism to force withdrawal if efficacy wasn't proven - HeartSheet was voluntary. The reforms close this gap while expanding coverage to in vivo gene therapy. Japan is refining conditional approval based on experience, not abandoning it.
@@ -566,6 +584,8 @@ Japan's conditional approval does NOT eliminate efficacy assessment. It REORDERS
 ## Addressing Common Critiques
 
 This analysis will face predictable objections. We address them here not defensively, but to demonstrate that the core conclusion, that regulatory delay costs vastly exceed regulatory benefits, remains robust even under unfavorable assumptions.
+
+![A comparison diagram showing the significant imbalance between high regulatory delay costs and lower regulatory benefits.](/assets/images/invisible-graveyard/invisible-graveyard-section-addressing-common-critiques-bw-academic.jpg)
 
 ### "The PRIMARY Estimate Is Too Speculative"
 
@@ -590,10 +610,11 @@ Even if you **adjust the primary estimate significantly**:
 - Type I benefits: ~{{< var type_i_error_benefit_dalys >}}
 - **The ratio remains extreme across the entire uncertainty distribution**
 
-
 ### "The 'Eventually Preventable' Estimate Is Theoretical"
 
 **Critique:** The claim that {{< var eventually_avoidable_death_pct >}} of deaths are eventually preventable is based on theoretical biological potential, not demonstrated medical capability.
+
+![A conceptual breakdown of the 92.6% theoretical limit for preventable deaths, illustrating the contributions of aging reversal, cardiovascular prevention, and cancer treatment versus unavoidable accidents.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-eventually-preventable-estimate-is-theoretical-bw-academic.jpg)
 
 **Response:**
 
@@ -617,11 +638,15 @@ If regulations delay progress by {{< var efficacy_lag_years >}}, everyone who di
 
 **Critique:** The analysis depends on an unknowable counterfactual: what would have happened without the 1962 amendments.
 
+![A conceptual diagram showing two parallel paths, the observed timeline with the 1962 amendments and the hypothetical counterfactual path, linked by scientific tools like natural experiments and inferential evidence.](/assets/images/invisible-graveyard/invisible-graveyard-section-counterfactual-uncertainty-we-can-t-know-what-would-have-happened-bw-academic.jpg)
+
 **Response:**
 
 Counterfactuals are never directly observable. That's why science uses **natural experiments** and **inferential evidence**. We have both.
 
 #### Natural Experiments
+
+![A comparison of drug approval timelines and patient access models across different regulatory jurisdictions, highlighting the disparity between traditional approval paths and conditional models.](/assets/images/invisible-graveyard/invisible-graveyard-section-natural-experiments-bw-academic.jpg)
 
 **Alternative Regulatory Models:**
 
@@ -696,7 +721,6 @@ The Type II/Type I ratio would need to drop below 1:1 for the FDA's approach to 
 
 ![Comparison of the 'Detection Paradox' showing how small-scale clinical trials fail to detect rare adverse events compared to the proposed active surveillance of real-world patient data.](/assets/images/invisible-graveyard/invisible-graveyard-section-this-ignores-safety-deregulation-would-flood-markets-with-dangerous-drugs-bw-academic.jpg)
 
-
 **Response:**
 
 The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis).
@@ -731,7 +755,6 @@ The pre-1962 system (1938-1962) included:
 
 **The detection paradox:** Pre-market trials on 3,000 selected patients, followed by 6% voluntary post-market reporting, is far **more dangerous** than active surveillance of millions of real-world patients. The current system catches common problems early but misses rare-but-deadly risks until thousands have died.
 
-
 ## Conclusion
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
@@ -744,5 +767,3 @@ The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy re
 The {{< var type_ii_error_cost_ratio >}} ratio demonstrates that these costs dwarf the benefits. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).
 
 The path forward is clear: maintain safety testing, eliminate efficacy delay, and deploy distributed real-world evidence systems.
-
-

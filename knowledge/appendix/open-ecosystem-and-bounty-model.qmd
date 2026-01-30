@@ -33,6 +33,8 @@ Instead, they build the foundation and let others build on top.
 
 ### The Model
 
+![A conceptual diagram showing foundational core infrastructure ('the rails') supporting an ecosystem of diverse, specialized tools ('destinations') built by external developers.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-model-bw-academic.jpg)
+
 - **Build the Rails:** Core infrastructure, APIs, data standards
 - **Not Every Destination:** Developers (companies, academics, individual humans with too much time) build specialized tools
 
@@ -52,13 +54,14 @@ Instead, they build the foundation and let others build on top.
 - Result: Runs most of the internet, all Android phones, world's fastest supercomputers
 - Core team is tiny. Network of contributors is massive.
 
+![A visualization of the Linux ecosystem showing a small core team at the center surrounded by a vast network of global contributors powering the world's digital infrastructure.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-linux-bw-academic.jpg)
+
 #### Browser Extensions
 
 - Chrome/Firefox: Provide APIs
 - Community: Creates extensions
 - Result: 188,000+ Chrome extensions
 - Google didn't build them. Developers did. Because the framework made it profitable or useful.
-
 
 ![Comparison of successful platform models where a small core team enables a massive ecosystem of contributors.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-platform-success-models-bw-academic.jpg)
 
@@ -76,6 +79,8 @@ Everyone wins. Platform scales without the core team building everything.
 
 While an open platform mostly builds itself, sometimes you need specific features that nobody's building yet.
 
+![A comparison between the grant model, which funds proposals and promises, and the bounty model, which issues payment only after functional code is delivered.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-bounties-and-prizes-paying-for-results-not-promises-bw-academic.jpg)
+
 That's where bounties come in.
 
 The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program**. Not grants (pay people who promise to build). Bounties (pay people who actually built it).
@@ -86,6 +91,8 @@ You don't get papers for proposals. You get papers for code that works.
 
 **Critical Features:** Essential tools nobody's building. Pay someone to build it. Problem solved.
 
+![A conceptual diagram illustrating how a bounty system addresses four key areas: critical tool development, security flaw discovery, ecosystem integrations, and innovation through major prizes.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-what-bounties-fund-bw-academic.jpg)
+
 **Security Reporting:** Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked.
 
 **High-Value Integrations:** Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this.
@@ -95,6 +102,8 @@ You don't get papers for proposals. You get papers for code that works.
 ### The Difference
 
 **Grants:** "Here's money. Build something. Let us know how it goes."
+
+![A side-by-side comparison showing the Grant model paying upfront for potential work versus the Bounty model paying only upon successful completion of a specific task.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-difference-bw-academic.jpg)
 
 **Bounties:** "Build this specific thing. If it works, you get paid. If it doesn't, you don't."
 
@@ -108,6 +117,8 @@ This model is proven and cheap for three reasons:
 
 Open-source and platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality].
 
+![A visual comparison showing the relatively low cost of building open-source cores (billions) against the massive economic value they generate (trillions), featuring examples like Linux, Android, and WordPress.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-1-it-s-already-a-multi-trillion-dollar-reality-bw-academic.jpg)
+
 WordPress, Linux, Android, Chrome all built this way. Combined value: trillions. Combined cost to build cores: billions.
 
 The math works.
@@ -115,6 +126,8 @@ The math works.
 ### 2. AI Makes Building Software Radically Cheaper
 
 AI coding assistants (GitHub Copilot, GPT-4, Claude Code) dramatically reduce time and cost to develop software.
+
+![A comparison showing the dramatic reduction in staff and time required for software development projects when moving from traditional methods to AI-assisted workflows.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-2-ai-makes-building-software-radically-cheaper-bw-academic.jpg)
 
 What used to take 10 developers six months: 2 developers can do in six weeks.
 
@@ -132,6 +145,8 @@ Public bodies have a strong track record with bounties and prizes [@us-governmen
 
 All succeeded. All cost less than traditional procurement. All delivered better results.
 
+![A comparison between traditional government procurement and the prize/bounty model, highlighting key success stories like NASA and the DoD that achieved better results at lower costs.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-3-governments-already-do-this-and-it-works-bw-academic.jpg)
+
 Bounties work. Not experimental.
 
 ## What Has to Go Right (Success Factors)
@@ -146,7 +161,6 @@ No users = no developers. No developers = no plugins. No plugins = no users. Dea
 
 **Solution:** Referral rewards drive initial growth. Users attract developers. Developers build tools. Tools attract more users. Flywheel spins.
 
-
 ![The self-reinforcing growth loop required to sustain the platform.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-ecosystem-flywheel-bw-academic.jpg)
 
 ### 2. API Quality and Documentation
@@ -158,6 +172,8 @@ Your framework APIs must be:
 - **Developer-friendly:** Pleasant to use, not torture
 
 Bad APIs kill platforms. Good APIs create billion-dollar economies.
+
+![A comparison showing the divergent paths of platform success driven by high-quality APIs versus platform failure caused by poor API design.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-2-api-quality-and-documentation-bw-academic.jpg)
 
 Non-negotiable.
 
@@ -171,9 +187,13 @@ The bounty process must be:
 
 Corruption kills trust. Trust is the foundation of open-source communities.
 
+![A conceptual diagram showing Transparency, Fairness, and Responsiveness as the three pillars supporting Community Trust in an open-source ecosystem.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-3-transparent-governance-bw-academic.jpg)
+
 ### 4. Clear Roadmap
 
 Your core team must maintain and communicate a clear vision (detailed in [Canonical Roadmap](../strategy/roadmap.qmd)).
+
+![A diagram illustrating the flow of a clear vision from the core team through a roadmap to developers, showing how it acts as 'rails' to maintain development momentum.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-4-clear-roadmap-bw-academic.jpg)
 
 Developers need to know where the rails are going so they can build accordingly.
 
@@ -182,6 +202,8 @@ Ambiguity kills momentum.
 ## The Result
 
 If these four conditions are met, your decentralized framework for drug assessment can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
+
+![A comparison of traditional centralized drug development versus a decentralized framework, highlighting the shift toward a collaborative global network for medical innovation.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-result-bw-academic.jpg)
 
 WordPress proved this works for websites.
 Linux proved it works for operating systems.

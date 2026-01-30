@@ -24,6 +24,9 @@ Understanding the economic value of new therapies is essential for evaluating th
 - The **total annual value** based on the average number of new therapies approved each year.
 - An estimation of the potential value created by **increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}×**.
 
+![A conceptual infographic illustrating the progression from the economic value of a single therapy to total annual value and the projected impact of a 12.3-fold increase in trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-introduction-bw-academic.jpg)
+
+
 ## **Average Economic Value of a New Therapy**
 
 The value of a new therapy can be assessed through market performance and societal benefits:
@@ -44,6 +47,9 @@ The value of a new therapy can be assessed through market performance and societ
 
 What would happen with {{< var dfda_trial_capacity_multiplier >}}× more trial capacity to test treatments simultaneously?
 
+![A visual comparison showing the current baseline of 50 new drug approvals per year versus a massive projected increase resulting from 12.3 times more trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-impact-of-var-dfda-trial-capacity-multiplier-more-trial-capacity-bw-academic.jpg)
+
+
 - **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var dfda_trial_capacity_multiplier >}} = **{{< var dfda_trial_capacity_multiplier >}}× {{< var current_drug_approvals_per_year >}} new therapies annually**.
 - **Projected Economic Value:** This increased capacity could dramatically accelerate cure discovery, though actual approval rates depend on regulatory capacity and market dynamics.
 
@@ -52,6 +58,9 @@ What would happen with {{< var dfda_trial_capacity_multiplier >}}× more trial c
 - **Market Saturation:** Rapid introduction of therapies could lead to **price competition** and reduced per-drug economic value.
 - **Healthcare System Capacity:** The healthcare infrastructure would need **substantial scaling** to manage increased development and distribution.
 - **Societal Benefits:** Beyond direct economic value, accelerated medical progress could lead to **improved health outcomes**, **increased productivity**, and **reduced long-term healthcare costs**.
+
+![A conceptual framework illustrating the three key dimensions of medical therapy acceleration: economic market dynamics, healthcare infrastructure requirements, and broad societal benefits.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-considerations-and-context-bw-academic.jpg)
+
 
 ## **Conclusion**
 

@@ -26,6 +26,9 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 ## Why {{< var treaty_campaign_total_cost >}} Instead of $5B {#ai-assisted-lobbying-250m-25}
 
+![A side-by-side cost comparison between traditional lobbying methods and the proposed AI-assisted model, highlighting the 80% reduction in total expenditure.](/assets/images/campaign-budget/campaign-budget-section-why-var-treaty-campaign-total-cost-instead-of-5b-ai-assisted-lobbying-250m-25-bw-academic.jpg)
+
+
 **Old Way** (throwing papers at humans):
 
 - Lawyers: $100-200M (they charge by the word)
@@ -365,7 +368,7 @@ Capitalism optimizing for the right thing by accident.
 **Per $1 invested**:
 
 - {{< var treaty_annual_funding >}} annual treaty revenue (forever)
-- ${{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} total societal value (lives saved, wealth created, suffering reduced)
+- {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} total societal value (lives saved, wealth created, suffering reduced)
 
 **For bondholders**:
 
@@ -413,5 +416,5 @@ That's a 27:1 return just in redirected military spending.
 But the real return:
 
 - Bondholders: {{< var victory_bond_annual_payout >}}/year forever ({{< var victory_bond_annual_return_pct >}} annually)
-- Society: ${{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} per dollar (cures, wealth, fewer dead people)
+- Society: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} per dollar (cures, wealth, fewer dead people)
 - Humanity: Optional death by 2050

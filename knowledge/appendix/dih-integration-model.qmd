@@ -121,6 +121,9 @@ display(IPImage(str(png_path)))
 
 ### Who Gets What
 
+![A stakeholder map illustrating how doctors, pharmacies, hospitals, and insurers each benefit from clinical trial participation and outcomes.](/assets/images/dih-integration-model/dih-integration-model-section-who-gets-what-bw-academic.jpg)
+
+
 - **Doctors:** CME credits for trial participation
 - **Pharmacies:** Dispensing fees for trial meds
 - **Hospitals:** Infrastructure payments
@@ -181,6 +184,9 @@ display(IPImage(str(png_path)))
 - Full integration
 
 ## Integration Strategy
+
+![A diagram showing the DIH 'experimental treatment insurance layer' as a complementary addition that wraps around existing healthcare infrastructure to enable clinical trial participation.](/assets/images/dih-integration-model/dih-integration-model-section-integration-strategy-bw-academic.jpg)
+
 
 Your decentralized institutes of health (DIH) network isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:
 

@@ -28,6 +28,8 @@ With median estimates:
 
 This approach is transparent, academically standard, and fully traceable. Uncertainty propagates through Monte Carlo analysis to show the full range of outcomes.
 
+![A visual breakdown of the lifetime wealth formula, showing how life extension years and QALY value multiply to determine total personal benefit.](/assets/images/personal-lifetime-wealth-calc/personal-lifetime-wealth-calc-section-the-simple-formula-bw-academic.jpg)
+
 ## Why QALY Valuation?
 
 The Quality-Adjusted Life Year (QALY) is the standard metric in health economics for valuing health improvements. The {{< var standard_economic_qaly_value_usd >}} figure comes from:
@@ -63,5 +65,7 @@ The tornado chart shows which parameters most affect your personal benefit. Life
 ## Bottom Line
 
 The 1% treaty is worth {{< var personal_lifetime_wealth >}} to you personally (median estimate). The distribution above shows the full uncertainty range driven by how much life extension is ultimately achieved.
+
+![A probability distribution chart showing the median value of the 1% treaty at $3M, with a shaded area representing the 95% confidence interval range from $259K to $12.1M.](/assets/images/personal-lifetime-wealth-calc/personal-lifetime-wealth-calc-section-bottom-line-bw-academic.jpg)
 
 This isn't speculation. It's standard health economics applied to research acceleration.

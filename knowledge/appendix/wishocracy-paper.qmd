@@ -273,6 +273,8 @@ This analysis demonstrates that RAPPA scales efficiently to city and even nation
 
 We now formally demonstrate the superiority of RAPPA over Representative Democracy (RepDem) using Information Theory and Social Choice Theory. We model governance as an optimization process where the objective is to minimize the divergence between the distribution of societal needs (preferences) and the distribution of resource allocation.
 
+![A visualization of governance as an optimization process, comparing how RAPPA and Representative Democracy minimize the divergence between societal preferences and resource allocation.](/assets/images/wishocracy-paper/wishocracy-paper-section-comparative-information-welfare-analysis-bw-academic.jpg)
+
 ### **Information-Theoretic Superiority**
 
 Governance can be modeled as a source coding problem. Let $\mathcal{P}$ be the true distribution of societal preferences over $m$ issues. The mechanism must encode $\mathcal{P}$ into a signal transmitted to the allocation engine.

@@ -167,6 +167,8 @@ DIH uses two allocation mechanisms:
 
 - **Patient subsidies (market mechanism):** Research funding follows patient choice. Patients enroll in trials they believe in; funding flows accordingly. Variable subsidy rates ensure rare diseases remain viable. No committees decide "cancer vs Alzheimer's."
 
+![A comparison of the dual governance model in DIH, showing patient-driven market mechanisms for research funding and preference-aggregated 'Wishocracy' for infrastructure development.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
+
 - **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). See the [dedicated page](wishocracy.qmd) for details.
 
 ## The Incentive Stack: Making ROI the Selfish Choice
@@ -187,6 +189,8 @@ Every incentive is ROI-weighted. Not just "do good" but "do the MOST good per do
 ### How Researchers Get Paid
 
 Traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try.
+
+![A side-by-side comparison of research funding models showing the shift from traditional grant proposals to the DIH system of patient subsidies and results-based payments.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
 
 DIH system:
 
@@ -283,6 +287,8 @@ DIH is intentionally minimal. It outsources everything operational:
 dFDA is the primary example of a funded campaign. It's not part of DIH; it's a service provider competing for funding.
 
 ### Campaign Lifecycle
+
+![A circular process diagram showing the six stages of the Campaign Lifecycle, from initial proposal and community voting to funding, execution, and verification.](/assets/images/dih/dih-section-campaign-lifecycle-bw-academic.jpg)
 
 1. **Proposal:** Submit campaign description, budget, milestones
 2. **Wishocracy vote:** Humanity decides priority relative to alternatives

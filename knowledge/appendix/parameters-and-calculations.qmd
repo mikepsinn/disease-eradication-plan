@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 453 parameters used in the analysis, organized by type:
+This appendix documents all 452 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 183
 - Calculated values: 171
-- Core definitions: 99
+- Core definitions: 98
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (171 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (99 parameters)
+[Calculated Values](#sec-calculated) (171 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -14509,16 +14509,6 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 #### Input Distribution
 
 {{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
-
-*Core definition*
-
-:::
-
-### Campaign Budget for Super Pacs and Political Lobbying: $800M {#sec-treaty_campaign_budget_super_pacs}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Campaign budget for Super PACs and political lobbying
 
 *Core definition*
 
