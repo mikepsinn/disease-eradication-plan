@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 333,803
+**Files:** 86 | **Words:** 333,873
 
 #### index.qmd
 **Title:** Start Here
@@ -2663,7 +2663,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 2,657 words | 405 lines
+**Stats:** 2,361 words | 357 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - Their Current Business Model (It's Actually Terrible)
@@ -2672,13 +2672,11 @@
       - The Portfolio Math
       - The PR Victory
       - The Competitive Pressure
-    - The Simple Pitch
     - The Implementation Playbook
   - Insurance Companies: The Accidentally Aligned Industry
     - Their Current Death Spiral
     - Your Salvation Offer
       - The Math They Can't Refuse
-      - The Obvious Math
       - The Implementation
     - Why They're Your Natural Allies
   - Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
@@ -2697,7 +2695,6 @@
     - Your Political Welfare Program
       - The Money Pipeline
       - The Vote Harvest
-      - The Jobs Program
     - The Bipartisan Beauty
   - Billionaires: Self-Interest Meets Self-Preservation
     - What They Really Want
@@ -2705,12 +2702,10 @@
       - The Investment
       - The Legacy
       - The Insurance
-    - Why They'll Invest
   - The Domino Effect: How This Cascade Works
     - The Sequence
     - Why This Can Work: Solving the Collective Action Problem
       - Why the cascade can happen (not "must" happen)
-  - The Master Key: Greed
   - Why This Scales: The Ratchet Effect
 
 #### knowledge/solution/incentive-alignment-bonds.qmd
@@ -3539,7 +3534,7 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
-**Stats:** 2,493 words | 380 lines
+**Stats:** 2,859 words | 414 lines
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
@@ -7351,6 +7346,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 533,610
+- Total words: 533,680
 - Orphaned files: 20
 - Paper configs: 12

@@ -122,6 +122,9 @@ A 12-year delay adds **3.14×** to costs via time value of money alone.
 
 ### 2. Higher Failure Rates
 
+![A visualization showing a 9:1 ratio of failed drug candidates to successful approvals, highlighting the total capital risk involved in pharmaceutical development.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-higher-failure-rates-bw-academic.jpg)
+
+
 The Tufts CSDD estimate includes **cost of failures**:
 
 - For every approved drug, approximately **9 fail** during development
@@ -159,6 +162,9 @@ Post-1962 regulations added extensive preclinical requirements:
 - Good Laboratory Practice (GLP) compliance
 
 These requirements added **2-3 years** and **$50-100M** per drug candidate.
+
+![An infographic showing the five core preclinical requirements and their cumulative impact on drug development time and financial cost.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-preclinical-requirements-bw-academic.jpg)
+
 
 ## Sensitivity Analysis
 
@@ -203,6 +209,9 @@ Academic literature independently confirms this range:
 > Sources: Multiple studies ([Baily 1972](https://samizdathealth.org), [DiMasi et al. 2016](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291), [Tufts CSDD 2014](https://www.globenewswire.com/news-release/2014/11/18/1187467/0/en/Cost-to-Develop-and-Win-Marketing-Approval-for-a-New-Drug-Is-2-6-Billion-According-to-the-Tufts-Center-for-the-Study-of-Drug-Development.html))
 
 Our **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate uses the most rigorous academic source (Baily 1972) and falls within the documented range.
+
+![A scale comparison showing the exponential growth in drug development costs between the 1960s and the 2010s, highlighting the 100x to 400x increase.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-independent-validation-bw-academic.jpg)
+
 
 ## Sanity Checks: Real-World Price Comparisons
 
