@@ -2675,19 +2675,18 @@
 "global_pharma_rd_spending_annual_cite": "@global-pharma-rd-spending-300b"
 "global_political_reform_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_political_reform_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated global\
-  \ advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B +\
-  \ India $8B + others $22B). Upper bound representing full democratic engagement\
-  \ at scale. | ? Low confidence | 95% CI: [$75B, $200B] | Formula: NATO + China +\
-  \ Russia + India + other major spenders | Unit: USD | Click to view details, calculation\
-  \ & sources\">$125B (95% CI: $75B-$200B)</a>"
-"global_political_reform_investment_maximum": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_political_reform_investment_maximum\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Maximum plausible\
-  \ global political reform investment with substantial contingency for hidden channels,\
-  \ opposition counter-spending, and multiple election cycles. Stress-test upper bound.\
-  \ | ? Low confidence | Unit: USD | Click to view details, calculation & sources\"\
-  >$200B</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Estimated global\
+  \ advocacy investment for policy reform. Calculated as US costs × global ratio (based\
+  \ on discretionary spending). Upper bound representing full democratic engagement\
+  \ at scale. | Calculated from 2 inputs | ? Low confidence | Formula: US_POLITICAL_REFORM\
+  \ × GLOBAL_RATIO | Unit: USD | Click to view details, calculation & sources\">$128B\
+  \ (95% CI: $55.2B-$266B)</a>"
+"global_political_reform_investment_latex": "$$\n\\begin{gathered}\nCost_{global,reform}\
+  \ \\\\\n= Cost_{US,total} \\times \\rho_{global/US} \\\\\n= \\$25.5B \\times 5 \\\
+  \\\n= \\$128B \\\\[0.5em]\n\\text{where } Cost_{US,total} \\\\\n= (Cost_{campaign}\
+  \ + Cost_{lobby} \\times 2) \\times \\mu_{effort} \\\\\n+ Cost_{career} \\\\[0.5em]\n\
+  \\text{where } Cost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\
+  \\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}\n$$"
 "global_population_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_population_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-population-8-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population in 2024 | ✓ High confidence\
@@ -2740,6 +2739,14 @@
   $232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Burden_{disease}\
   \ \\\\\n= Cost_{medical,direct} + Loss_{life,disease} \\\\\n+ Loss_{productivity}\
   \ \\\\\n= \\$9.9T + \\$94.2T + \\$5T \\\\\n= \\$109T\n\\end{gathered}\n$$"
+"global_to_us_political_cost_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_to_us_political_cost_ratio\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Ratio of global\
+  \ to US political reform costs. Based on discretionary spending ratio (~9x) discounted\
+  \ by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects\
+  \ uncertainty about non-US political dynamics and hidden influence channels. | ?\
+  \ Low confidence | 95% CI: [3:1, 8:1] | Dist: Lognormal | Unit: ratio | Click to\
+  \ view details, calculation & sources\">5:1 (95% CI: 3:1-8:1)</a>"
 "global_yld_proportion_of_dalys": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_yld_proportion_of_dalys\"\
   \ class=\"parameter-link\" data-source-ref=\"ihme-gbd-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Proportion\
@@ -3031,13 +3038,6 @@
   \ SIPRI. | ✓ High confidence | Unit: USD | Click to view details, calculation &\
   \ sources\">$1.51T</a>"
 "nato_defense_spending_annual_cite": "@sipri2024"
-"nato_political_reform_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-nato_political_reform_investment\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Estimated advocacy\
-  \ investment to achieve policy reform across all NATO member states (US $25B + EU\
-  \ $25B + other NATO $15B). Represents cost of democratic parity with defense industry\
-  \ interests. | ? Low confidence | Formula: US advocacy + EU advocacy + other NATO\
-  \ advocacy | Unit: USD | Click to view details, calculation & sources\">$65B</a>"
 "new_disease_first_treatments_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-new_disease_first_treatments_per_year\"\
   \ class=\"parameter-link\" data-source-ref=\"diseases-getting-first-treatment-annually\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Number of diseases\
@@ -4735,14 +4735,25 @@
   \ GDP (2024) | ✓ High confidence | Unit: rate | Click to view details, calculation\
   \ & sources\">3.5%</a>"
 "us_military_spending_pct_gdp_cite": "@us-military-budget-3-5-pct-gdp"
+"us_political_effort_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_political_effort_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd#uncertainty-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Fraction of campaign\
+  \ + lobbying spending needed to achieve policy reform. Accounts for efficiency gains\
+  \ from coordination, message clarity, and public interest alignment. Range 0.4-1.2\
+  \ reflects uncertainty about political dynamics. | ? Low confidence | 95% CI: [0.4x,\
+  \ 1.2x] | Dist: Lognormal | Unit: multiplier | Click to view details, calculation\
+  \ & sources\">0.7x (95% CI: 0.4x-1.2x)</a>"
 "us_political_reform_investment_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_political_reform_investment_total\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios\"\
-  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Total upper-bound\
-  \ investment for US political reform: Congress advocacy costs ($5.35B) + lobbying\
-  \ parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic\
-  \ parity with incumbent interests. | ? Low confidence | Formula: Congress advocacy\
-  \ + lobbying parity + campaign matching | Unit: USD | Click to view details, calculation\
-  \ & sources\">$25B</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total upper-bound\
+  \ investment for US political reform: (campaign spending + 2 years lobbying) × effort\
+  \ multiplier + Congress career advocacy. Represents cost to achieve democratic parity\
+  \ with incumbent interests. | Calculated from 4 inputs | ? Low confidence | Formula:\
+  \ (CAMPAIGN + LOBBYING×2) × EFFORT_MULTIPLIER + CONGRESS_CAREER | Unit: USD | Click\
+  \ to view details, calculation & sources\">$25.5B (95% CI: $17.3B-$36.3B)</a>"
+"us_political_reform_investment_total_latex": "$$\n\\begin{gathered}\nCost_{US,total}\
+  \ \\\\\n= (Cost_{campaign} \\\\\n+ Cost_{lobby} \\times 2) \\times \\mu_{effort}\
+  \ + Cost_{career}\n\\end{gathered}\n$$"
 "us_population_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_population_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"us-voter-population\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US population in 2024 | ✓ High confidence\
@@ -4770,14 +4781,15 @@
   \ class=\"parameter-link\" data-source-ref=\"fec-2024-summary\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total US federal election spending in\
   \ 2024 cycle including presidential, congressional, party committees, and PACs.\
-  \ Source: FEC Statistical Summary 2024. | ✓ High confidence | Unit: USD | Click\
-  \ to view details, calculation & sources\">$20B</a>"
+  \ Source: FEC Statistical Summary 2024. | ✓ High confidence | 95% CI: [$18B, $22B]\
+  \ | Unit: USD | Click to view details, calculation & sources\">$20B (95% CI: $18B-$22B)</a>"
 "us_total_federal_campaign_spending_2024_cite": "@fec-2024-summary"
 "us_total_lobbying_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_total_lobbying_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"opensecrets-lobbying-2024\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total US federal lobbying expenditure\
-  \ in 2024 (record year). Source: OpenSecrets. | ✓ High confidence | Unit: USD |\
-  \ Click to view details, calculation & sources\">$4.40B</a>"
+  \ in 2024 (record year). Source: OpenSecrets. | ✓ High confidence | 95% CI: [$3.74B,\
+  \ $5.06B] | Unit: USD | Click to view details, calculation & sources\">$4.40B (95%\
+  \ CI: $3.74B-$5.06B)</a>"
 "us_total_lobbying_annual_cite": "@opensecrets-lobbying-2024"
 "us_vs_singapore_spending_gap": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_vs_singapore_spending_gap\"\
   \ class=\"parameter-link\" data-source-ref=\"oecd-govt-spending\" data-source-type=\"\
@@ -4882,6 +4894,8 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view details, calculation & sources\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "452"
-"total_latex_equation_count": "169"
+"_us_base_political_spending": "<span class=\"parameter-link\" title=\"Parameter:\
+  \ _US_BASE_POLITICAL_SPENDING\">28.8B</span>"
+"total_parameter_count": "453"
+"total_latex_equation_count": "171"
 "total_citation_count": "183"

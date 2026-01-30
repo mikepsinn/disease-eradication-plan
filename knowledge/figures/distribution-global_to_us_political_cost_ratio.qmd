@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Global Political Reform Investment"
+#| fig-cap: "Probability Distribution: Global-to-US Political Cost Ratio"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 125000000000.0
-low = 75000000000.0
-high = 200000000000.0
-dist_type = "normal"
-display_name = "Global Political Reform Investment"
-unit = "USD"
+central_value = 5.0
+low = 3.0
+high = 8.0
+dist_type = "lognormal"
+display_name = "Global-to-US Political Cost Ratio"
+unit = "ratio"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-global_political_reform_investment.png')
+output_path = get_figure_output_path('distribution-global_to_us_political_cost_ratio.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

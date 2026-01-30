@@ -1972,6 +1972,7 @@ export const US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024: Parameter = {
   sourceType: "external",
   sourceRef: "fec-2024-summary",
   confidence: "high",
+  confidenceInterval: [18000000000.0, 22000000000.0],
 };
 
 export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
@@ -1982,6 +1983,7 @@ export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
   sourceType: "external",
   sourceRef: "opensecrets-lobbying-2024",
   confidence: "high",
+  confidenceInterval: [3740000000.0, 5060000000.0],
 };
 
 export const VALLEY_OF_DEATH_ATTRITION_PCT: Parameter = {
@@ -3180,6 +3182,18 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   latex: "\\begin{gathered}\nSpending_{mil,post} \\\\\n= Spending_{mil} \\times (1 - Reduce_{treaty}) \\\\\n= \\$2.72T \\times (1 - 1\\%) \\\\\n= \\$2.69T\n\\end{gathered}",
 };
 
+export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
+  value: 127550000000.0,
+  unit: "USD",
+  displayName: "Global Political Reform Investment",
+  description: "Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#global-estimates",
+  confidence: "low",
+  formula: "US_POLITICAL_REFORM × GLOBAL_RATIO",
+  latex: "\\begin{gathered}\nCost_{global,reform} \\\\\n= Cost_{US,total} \\times \\rho_{global/US} \\\\\n= \\$25.5B \\times 5 \\\\\n= \\$128B \\\\[0.5em]\n\\text{where } Cost_{US,total} \\\\\n= (Cost_{campaign} + Cost_{lobby} \\times 2) \\times \\mu_{effort} \\\\\n+ Cost_{career} \\\\[0.5em]\n\\text{where } Cost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
+};
+
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   value: 128657100000000.0,
   unit: "USD/year",
@@ -3990,6 +4004,18 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   latex: "\\begin{gathered}\nCost_{disease,US} \\\\\n= Cost_{ALZ,US} + Cost_{cancer,US} + Cost_{diabetes,US} \\\\\n+ Cost_{heart,US} \\\\\n= \\$355B + \\$208B + \\$327B + \\$363B \\\\\n= \\$1.25T\n\\end{gathered}",
 };
 
+export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
+  value: 25510000000.0,
+  unit: "USD",
+  displayName: "US Political Reform Investment (Total)",
+  description: "Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.",
+  sourceType: "calculated",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#us-political-reform-scenarios",
+  confidence: "low",
+  formula: "(CAMPAIGN + LOBBYING×2) × EFFORT_MULTIPLIER + CONGRESS_CAREER",
+  latex: "\\begin{gathered}\nCost_{US,total} \\\\\n= (Cost_{campaign} \\\\\n+ Cost_{lobby} \\times 2) \\times \\mu_{effort} + Cost_{career}\n\\end{gathered}",
+};
+
 export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
   value: 670000000.0,
   unit: "USD",
@@ -4671,26 +4697,15 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
 };
 
-export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
-  value: 125000000000.0,
-  unit: "USD",
-  displayName: "Global Political Reform Investment",
-  description: "Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
+export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
+  value: 5.0,
+  unit: "ratio",
+  displayName: "Global-to-US Political Cost Ratio",
+  description: "Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.",
   sourceType: "definition",
   sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#global-estimates",
   confidence: "low",
-  formula: "NATO + China + Russia + India + other major spenders",
-  confidenceInterval: [75000000000.0, 200000000000.0],
-};
-
-export const GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM: Parameter = {
-  value: 200000000000.0,
-  unit: "USD",
-  displayName: "Global Political Reform Investment (Maximum)",
-  description: "Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis",
-  confidence: "low",
+  confidenceInterval: [3.0, 8.0],
 };
 
 export const HOURS_PER_DAY: Parameter = {
@@ -4758,17 +4773,6 @@ export const MINUTES_PER_HOUR: Parameter = {
 
 export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
-};
-
-export const NATO_POLITICAL_REFORM_INVESTMENT: Parameter = {
-  value: 65000000000.0,
-  unit: "USD",
-  displayName: "NATO Political Reform Investment",
-  description: "Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#global-estimates",
-  confidence: "low",
-  formula: "US advocacy + EU advocacy + other NATO advocacy",
 };
 
 export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
@@ -4979,15 +4983,15 @@ export const US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND: Parameter = {
   formula: "US_GOVT_SPENDING_PCT_GDP - SWITZERLAND_GOVT_SPENDING_PCT_GDP",
 };
 
-export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
-  value: 25000000000.0,
-  unit: "USD",
-  displayName: "US Political Reform Investment (Total)",
-  description: "Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
+export const US_POLITICAL_EFFORT_MULTIPLIER: Parameter = {
+  value: 0.7,
+  unit: "multiplier",
+  displayName: "Political Effort Multiplier (US)",
+  description: "Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.",
   sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#us-political-reform-scenarios",
+  sourceRef: "https://impact.warondisease.org/knowledge/appendix/cost-of-change-analysis#uncertainty-analysis",
   confidence: "low",
-  formula: "Congress advocacy + lobbying parity + campaign matching",
+  confidenceInterval: [0.4, 1.2],
 };
 
 export const US_VS_SINGAPORE_SPENDING_GAP: Parameter = {
@@ -5030,6 +5034,10 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   description: "Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)",
   sourceType: "definition",
   confidence: "high",
+};
+
+export const _US_BASE_POLITICAL_SPENDING: Parameter = {
+  value: 28800000000.0,
 };
 
 // ============================================================================
@@ -5316,6 +5324,7 @@ export const parameters = {
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
+  GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
@@ -5385,6 +5394,7 @@ export const parameters = {
   UNEXPLORED_RATIO,
   US_CONGRESS_FULL_ADVOCACY_COST,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
+  US_POLITICAL_REFORM_INVESTMENT_TOTAL,
   US_SENATE_TREATY_ADVOCACY_COST,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
@@ -5451,8 +5461,7 @@ export const parameters = {
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
-  GLOBAL_POLITICAL_REFORM_INVESTMENT,
-  GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM,
+  GLOBAL_TO_US_POLITICAL_COST_RATIO,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   HUMAN_PROTEIN_CODING_GENES,
@@ -5462,7 +5471,6 @@ export const parameters = {
   LOBBYIST_BOND_INVESTMENT_MAX,
   MINUTES_PER_HOUR,
   MONTHS_PER_YEAR,
-  NATO_POLITICAL_REFORM_INVESTMENT,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
   PEACE_DIVIDEND_CONFLICT_ELASTICITY,
@@ -5484,11 +5492,12 @@ export const parameters = {
   TRIAL_RELEVANT_DISEASES_COUNT,
   US_CONGRESS_MEMBER_COUNT,
   US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND,
-  US_POLITICAL_REFORM_INVESTMENT_TOTAL,
+  US_POLITICAL_EFFORT_MULTIPLIER,
   US_VS_SINGAPORE_SPENDING_GAP,
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
-  VICTORY_BOND_FUNDING_PCT
+  VICTORY_BOND_FUNDING_PCT,
+  _US_BASE_POLITICAL_SPENDING
 } as const;
 
 /** Union type of all parameter names */
@@ -7405,10 +7414,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 452,
+  total: 453,
   external: 183,
-  calculated: 169,
-  definitions: 100,
+  calculated: 171,
+  definitions: 99,
   citations: 141,
 } as const;
 

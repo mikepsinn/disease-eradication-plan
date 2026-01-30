@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 452 parameters used in the analysis, organized by type:
+This appendix documents all 453 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 183
-- Calculated values: 169
-- Core definitions: 100
+- Calculated values: 171
+- Core definitions: 99
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (100 parameters)
+[Calculated Values](#sec-calculated) (171 parameters) • [External Data Sources](#sec-external) (183 parameters) • [Core Definitions](#sec-definitions) (99 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5317,6 +5317,53 @@ $$
 
 :::
 
+### Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.
+
+**Inputs**:
+
+- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5B
+- [Global-to-US Political Cost Ratio](#sec-global_to_us_political_cost_ratio): 5:1 (95% CI: 3:1 - 8:1)
+
+$$
+\begin{gathered}
+Cost_{global,reform} \\
+= Cost_{US,total} \times \rho_{global/US} \\
+= \$25.5B \times 5 \\
+= \$128B \\[0.5em]
+\text{where } Cost_{US,total} \\
+= (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} \\
++ Cost_{career} \\[0.5em]
+\text{where } Cost_{US,congress} \\
+= N_{congress} \times V_{post-office} \\
+= 535 \times \$10M \\
+= \$5.35B
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/cost-of-change-analysis#global-estimates](../appendix/cost-of-change-analysis#global-estimates)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_political_reform_investment.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_political_reform_investment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_political_reform_investment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_political_reform_investment.qmd >}}
+
+:::
+
 ### Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9206,6 +9253,47 @@ $$
 
 :::
 
+### US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.
+
+**Inputs**:
+
+- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20B (95% CI: $18B - $22B)
+- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.40B (95% CI: $3.74B - $5.06B)
+- [Political Effort Multiplier (US)](#sec-us_political_effort_multiplier): 0.7x (95% CI: 0.4x - 1.2x)
+- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35B
+
+$$
+\begin{gathered}
+Cost_{US,total} \\
+= (Cost_{campaign} \\
++ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/cost-of-change-analysis#us-political-reform-scenarios](../appendix/cost-of-change-analysis#us-political-reform-scenarios)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_political_reform_investment_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_political_reform_investment_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_political_reform_investment_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_political_reform_investment_total.qmd >}}
+
+:::
+
 ### US Senate Treaty Advocacy Cost: $670M {#sec-us_senate_treaty_advocacy_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12802,6 +12890,16 @@ Total US federal election spending in 2024 cycle including presidential, congres
 
 **Source**: [@fec-2024-summary]
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$18B, $22B]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $18B and $22B (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_federal_campaign_spending_2024.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -12813,6 +12911,16 @@ Total US federal election spending in 2024 cycle including presidential, congres
 Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
 
 **Source**: [@opensecrets-lobbying-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.74B, $5.06B]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74B and $5.06B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
 
 *✓ High confidence*
 
@@ -14062,31 +14170,23 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 :::
 
-### Global Political Reform Investment: $125B {#sec-global_political_reform_investment}
+### Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.
+Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$75B, $200B]
+**Technical**: 95% CI: [3:1, 8:1] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $75B and $200B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 3:1 and 8:1 (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-global_political_reform_investment.qmd >}}
-
-*Core definition*
-
-:::
-
-### Global Political Reform Investment (Maximum): $200B {#sec-global_political_reform_investment_maximum}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.
+{{< include ../figures/distribution-global_to_us_political_cost_ratio.qmd >}}
 
 *Core definition*
 
@@ -14195,16 +14295,6 @@ Maximum bond investment for lobbyist incentives
 ### Months Per Year: 12 {#sec-months_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
-
-*Core definition*
-
-:::
-
-### NATO Political Reform Investment: $65B {#sec-nato_political_reform_investment}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.
 
 *Core definition*
 
@@ -14550,11 +14640,23 @@ US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6
 
 :::
 
-### US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
+### Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.
+Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4x, 1.2x] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.4x and 1.2x (±57%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_political_effort_multiplier.qmd >}}
 
 *Core definition*
 
@@ -14611,6 +14713,14 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+###  US Base Political Spending: 28.8B {#sec-_us_base_political_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
 
 *Core definition*
 

@@ -4796,6 +4796,7 @@ US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024 = Parameter(
     display_name="US Federal Campaign Spending (2024)",
     unit="USD",
     confidence="high",
+    confidence_interval=(18_000_000_000, 22_000_000_000),  # ±10% uncertainty
     keywords=["campaign", "election", "political", "spending", "federal", "2024"],
     latex_symbol=r"Cost_{US,campaign}",
 )
@@ -4808,6 +4809,7 @@ US_TOTAL_LOBBYING_ANNUAL = Parameter(
     display_name="US Total Lobbying (2024)",
     unit="USD",
     confidence="high",
+    confidence_interval=(3_740_000_000, 5_060_000_000),  # ±15% uncertainty
     keywords=["lobbying", "political", "spending", "k street", "influence"],
     latex_symbol=r"Cost_{US,lobby}",
 )
@@ -4884,17 +4886,39 @@ US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
     latex_symbol=r"Cost_{US,congress}",
 )
 
-US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
-    25_000_000_000,  # ~$25B total (Congress + match lobbying + campaign parity)
-    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios",
+# What fraction of total political spending (campaign + lobbying) do you need to match?
+# <1 means partial matching is sufficient; >1 means you need to outspend incumbents
+US_POLITICAL_EFFORT_MULTIPLIER = Parameter(
+    0.7,
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#uncertainty-analysis",
     source_type="definition",
-    description="Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.",
+    description="Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.",
+    display_name="Political Effort Multiplier (US)",
+    unit="multiplier",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(0.4, 1.2),
+    keywords=["political reform", "effort", "spending", "matching", "multiplier"],
+    latex_symbol=r"\mu_{effort}",
+)
+
+# Base political spending = one election cycle of campaigns + 2 years of lobbying
+_US_BASE_POLITICAL_SPENDING = float(US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024) + float(US_TOTAL_LOBBYING_ANNUAL) * 2
+
+US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
+    _US_BASE_POLITICAL_SPENDING * float(US_POLITICAL_EFFORT_MULTIPLIER) + float(US_CONGRESS_FULL_ADVOCACY_COST),
+    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#us-political-reform-scenarios",
+    source_type="calculated",
+    description="Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.",
     display_name="US Political Reform Investment (Total)",
     unit="USD",
-    formula="Congress advocacy + lobbying parity + campaign matching",
+    formula="(CAMPAIGN + LOBBYING×2) × EFFORT_MULTIPLIER + CONGRESS_CAREER",
     confidence="low",
     keywords=["political reform", "advocacy", "investment", "democratic parity", "us"],
+    inputs=["US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024", "US_TOTAL_LOBBYING_ANNUAL", "US_POLITICAL_EFFORT_MULTIPLIER", "US_CONGRESS_FULL_ADVOCACY_COST"],
+    compute=lambda ctx: (ctx["US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024"] + ctx["US_TOTAL_LOBBYING_ANNUAL"] * 2) * ctx["US_POLITICAL_EFFORT_MULTIPLIER"] + ctx["US_CONGRESS_FULL_ADVOCACY_COST"],
     latex_symbol=r"Cost_{US,total}",
+    latex=r"Cost_{US,total} = (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}",
 )
 
 # Global Political Costs
@@ -4910,43 +4934,36 @@ NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
     latex_symbol=r"Cost_{NATO,defense}",
 )
 
-NATO_POLITICAL_REFORM_INVESTMENT = Parameter(
-    65_000_000_000,  # ~$65B for all NATO legislators
+# Ratio of global to US political reform costs
+# Based on discretionary government spending: global ~$15T vs US ~$1.7T = ~9x
+# Discounted ~50% because non-US political systems tend to be less transparent/expensive
+GLOBAL_TO_US_POLITICAL_COST_RATIO = Parameter(
+    5.0,
     source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates",
     source_type="definition",
-    description="Estimated advocacy investment to achieve policy reform across all NATO member states (US $25B + EU $25B + other NATO $15B). Represents cost of democratic parity with defense industry interests.",
-    display_name="NATO Political Reform Investment",
-    unit="USD",
-    formula="US advocacy + EU advocacy + other NATO advocacy",
+    description="Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.",
+    display_name="Global-to-US Political Cost Ratio",
+    unit="ratio",
     confidence="low",
-    keywords=["political reform", "advocacy", "nato", "global", "democratic parity"],
-    latex_symbol=r"Cost_{NATO,reform}",
+    distribution="lognormal",
+    confidence_interval=(3.0, 8.0),
+    keywords=["political reform", "global", "ratio", "scaling", "international", "discretionary spending"],
+    latex_symbol=r"\rho_{global/US}",
 )
 
 GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
-    125_000_000_000,  # ~$125B for major military spenders globally
+    float(US_POLITICAL_REFORM_INVESTMENT_TOTAL) * float(GLOBAL_TO_US_POLITICAL_COST_RATIO),
     source_ref="/knowledge/appendix/cost-of-change-analysis.qmd#global-estimates",
-    source_type="definition",
-    description="Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.",
+    source_type="calculated",
+    description="Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.",
     display_name="Global Political Reform Investment",
     unit="USD",
-    formula="NATO + China + Russia + India + other major spenders",
+    formula="US_POLITICAL_REFORM × GLOBAL_RATIO",
     confidence="low",
-    confidence_interval=(75e9, 200e9),  # Wide range due to uncertainty
     keywords=["political reform", "advocacy", "global", "world", "democratic engagement"],
+    inputs=["US_POLITICAL_REFORM_INVESTMENT_TOTAL", "GLOBAL_TO_US_POLITICAL_COST_RATIO"],
+    compute=lambda ctx: ctx["US_POLITICAL_REFORM_INVESTMENT_TOTAL"] * ctx["GLOBAL_TO_US_POLITICAL_COST_RATIO"],
     latex_symbol=r"Cost_{global,reform}",
-)
-
-GLOBAL_POLITICAL_REFORM_INVESTMENT_MAXIMUM = Parameter(
-    200_000_000_000,  # $200B absolute upper bound
-    source_ref="/knowledge/appendix/cost-of-change-analysis.qmd",
-    source_type="definition",
-    description="Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.",
-    display_name="Global Political Reform Investment (Maximum)",
-    unit="USD",
-    confidence="low",
-    keywords=["political reform", "advocacy", "global", "maximum", "stress test"],
-    latex_symbol=r"Cost_{global,max}",
 )
 
 # Breakeven and ROI calculations at various political costs

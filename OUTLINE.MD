@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,834
+**Files:** 4 | **Words:** 89,255
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,289 words | 14,688 lines
+**Stats:** 54,710 words | 14,798 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -421,6 +421,10 @@
       - Monte Carlo Distribution
       - Exceedance Probability
     - Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
+    - Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
+      - Sensitivity Analysis
+      - Monte Carlo Distribution
+      - Exceedance Probability
     - Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -680,6 +684,10 @@
     - US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
       - Sensitivity Analysis
     - US Major Diseases Total Annual Cost: $1.25T {#sec-us_major_diseases_total_annual_cost}
+      - Sensitivity Analysis
+      - Monte Carlo Distribution
+      - Exceedance Probability
+    - US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -1109,7 +1117,11 @@
     - Senators for Treaty Ratification: 67 senators {#sec-us_senators_for_treaty}
       - Uncertainty Range
     - US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+      - Uncertainty Range
+      - Input Distribution
     - US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
+      - Uncertainty Range
+      - Input Distribution
     - Valley of Death Attrition Rate: 40% {#sec-valley_of_death_attrition_pct}
       - Uncertainty Range
       - Input Distribution
@@ -1277,10 +1289,9 @@
       - Input Distribution
     - Minimum Investment for Family Offices: $5M {#sec-family_office_investment_min}
     - Fundamentally Unavoidable Death Percentage: 7.37% {#sec-fundamentally_unavoidable_death_pct}
-    - Global Political Reform Investment: $125B {#sec-global_political_reform_investment}
+    - Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
       - Uncertainty Range
       - Input Distribution
-    - Global Political Reform Investment (Maximum): $200B {#sec-global_political_reform_investment_maximum}
     - Hours Per Day: 24 {#sec-hours_per_day}
     - Hours Per Year: 8.76k {#sec-hours_per_year}
     - Human Protein-Coding Genes: 20.0k genes {#sec-human_protein_coding_genes}
@@ -1295,7 +1306,6 @@
     - Maximum Bond Investment for Lobbyist Incentives: $20M {#sec-lobbyist_bond_investment_max}
     - Minutes Per Hour: 60 {#sec-minutes_per_hour}
     - Months Per Year: 12 {#sec-months_per_year}
-    - NATO Political Reform Investment: $65B {#sec-nato_political_reform_investment}
     - Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
       - Uncertainty Range
     - Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
@@ -1342,7 +1352,9 @@
       - Uncertainty Range
     - US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
       - Uncertainty Range
-    - US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
+    - Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
+      - Uncertainty Range
+      - Input Distribution
     - US-Singapore Spending Gap: 2300% {#sec-us_vs_singapore_spending_gap}
       - Uncertainty Range
     - Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
@@ -1351,6 +1363,7 @@
       - Uncertainty Range
     - Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
       - Uncertainty Range
+    - US Base Political Spending: 28.8B {#sec-_us_base_political_spending}
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
@@ -1558,12 +1571,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 2,324
+**Files:** 1 | **Words:** 2,347
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 2,324 words | 341 lines
+**Stats:** 2,347 words | 324 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1584,12 +1597,9 @@
       - Post-Office Career Value
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
-  - Case Studies
-    - Case Study 1: Military-to-Health Spending Reallocation (1% Treaty)
-    - Case Study 2: Carbon Pricing
-    - Case Study 3: Agricultural Subsidy Reform
-    - Case Study 4: Occupational Licensing Reform
-    - Summary of Case Studies
+    - Uncertainty Analysis {#uncertainty-analysis}
+  - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
+    - Other Policy Domains
   - Limitations
   - Conclusion
   - References
@@ -2072,7 +2082,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 331,894
+**Files:** 86 | **Words:** 330,712
 
 #### index.qmd
 **Title:** Start Here
@@ -3893,7 +3903,7 @@
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 2,324 words | 341 lines
+**Stats:** 2,347 words | 324 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -3914,12 +3924,9 @@
       - Post-Office Career Value
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
-  - Case Studies
-    - Case Study 1: Military-to-Health Spending Reallocation (1% Treaty)
-    - Case Study 2: Carbon Pricing
-    - Case Study 3: Agricultural Subsidy Reform
-    - Case Study 4: Occupational Licensing Reform
-    - Summary of Case Studies
+    - Uncertainty Analysis {#uncertainty-analysis}
+  - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
+    - Other Policy Domains
   - Limitations
   - Conclusion
   - References
@@ -4195,7 +4202,7 @@
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 10,202 words | 1,442 lines
+**Stats:** 8,576 words | 1,219 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -4203,6 +4210,7 @@
   - Example: US Federal Budget Gap Analysis
     - What Budget Analysts See
     - Where This Fits
+    - Implementation Mechanism
   - Introduction
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
@@ -4222,12 +4230,7 @@
     - Summary of Theoretical Results
   - Core Methodology
     - Spending Category Data Structure
-    - Three Methods for OBG Estimation
-  - Reference Country Benchmarking
-    - The Basic Approach
-    - Reference Country Selection Criteria
-    - Worked Example: Early Childhood Education
-    - Limitations of Reference Benchmarking
+    - Two Methods for OSL Estimation
   - Diminishing Returns Modeling
     - The Core Concept
     - Finding the "Knee" of the Curve
@@ -4235,7 +4238,7 @@
     - Worked Example: K-12 Education Spending
   - Worked Example: Pragmatic Clinical Trials
     - The Highest-Return Public Investment
-    - Reference Country Benchmarking
+    - OSL Estimation
     - Diminishing Returns Analysis
     - Cost-Effectiveness Calculation
     - Gap Analysis
@@ -4244,11 +4247,9 @@
     - The Standard Health Economics Approach
     - Building Up from Intervention-Level Data
     - Worked Example: Vaccinations
-  - Budget Impact Score (BIS) as Evidence Quality
-    - Reframing BIS: Confidence in OSL, Not Allocation Driver
+  - Budget Impact Score (BIS)
     - BIS Calculation
     - Evidence Grading from BIS
-    - BIS Does Not Drive Allocation
   - Gap Analysis and Priority Ranking
     - Computing Gaps
     - Priority Score
@@ -4269,13 +4270,11 @@
     - Recommended Pilot Designs
     - Learning Feedback Loop
   - Data Sources
-    - Reference Country Databases
+    - Cross-Country Databases
     - Cost-Effectiveness Databases
     - US Budget Data
   - Limitations
-    - Reference Country Selection Bias
     - Diminishing Returns Uncertainty
-    - Political Feasibility Not Modeled
     - Implementation Capacity
   - Validation Framework
     - Retrospective Validation
@@ -4285,23 +4284,17 @@
   - Sensitivity Analysis
     - Parameter Sensitivity
     - Scenario Analysis
-  - Future Directions
-    - Methodological
-    - Data Infrastructure
-    - Governance Integration
   - Conclusion
   - Acknowledgments {.unnumbered}
   - References
-  - Appendix A: Worked Example - Complete OBG Calculation {.appendix}
-    - Example: US Military Discretionary Spending
-  - Appendix B: Analysis Workflow {.appendix}
+  - Appendix A: Analysis Workflow {.appendix}
     - Complete OBG Analysis Pipeline
-  - Appendix C: Glossary {.appendix}
+  - Appendix B: Glossary {.appendix}
     - Core Concepts
     - Estimation Methods
     - Evidence Quality
     - Output Concepts
-  - Appendix D: Comparison to Actual US Budget {.appendix}
+  - Appendix C: Comparison to Actual US Budget {.appendix}
     - Current US Discretionary Budget vs. OSL Targets
 
 #### knowledge/appendix/dfda-spec-paper.qmd
@@ -4631,7 +4624,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,289 words | 14,688 lines
+**Stats:** 54,710 words | 14,798 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -4999,6 +4992,10 @@
       - Monte Carlo Distribution
       - Exceedance Probability
     - Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
+    - Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
+      - Sensitivity Analysis
+      - Monte Carlo Distribution
+      - Exceedance Probability
     - Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -5258,6 +5255,10 @@
     - US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
       - Sensitivity Analysis
     - US Major Diseases Total Annual Cost: $1.25T {#sec-us_major_diseases_total_annual_cost}
+      - Sensitivity Analysis
+      - Monte Carlo Distribution
+      - Exceedance Probability
+    - US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5687,7 +5688,11 @@
     - Senators for Treaty Ratification: 67 senators {#sec-us_senators_for_treaty}
       - Uncertainty Range
     - US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+      - Uncertainty Range
+      - Input Distribution
     - US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
+      - Uncertainty Range
+      - Input Distribution
     - Valley of Death Attrition Rate: 40% {#sec-valley_of_death_attrition_pct}
       - Uncertainty Range
       - Input Distribution
@@ -5855,10 +5860,9 @@
       - Input Distribution
     - Minimum Investment for Family Offices: $5M {#sec-family_office_investment_min}
     - Fundamentally Unavoidable Death Percentage: 7.37% {#sec-fundamentally_unavoidable_death_pct}
-    - Global Political Reform Investment: $125B {#sec-global_political_reform_investment}
+    - Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
       - Uncertainty Range
       - Input Distribution
-    - Global Political Reform Investment (Maximum): $200B {#sec-global_political_reform_investment_maximum}
     - Hours Per Day: 24 {#sec-hours_per_day}
     - Hours Per Year: 8.76k {#sec-hours_per_year}
     - Human Protein-Coding Genes: 20.0k genes {#sec-human_protein_coding_genes}
@@ -5873,7 +5877,6 @@
     - Maximum Bond Investment for Lobbyist Incentives: $20M {#sec-lobbyist_bond_investment_max}
     - Minutes Per Hour: 60 {#sec-minutes_per_hour}
     - Months Per Year: 12 {#sec-months_per_year}
-    - NATO Political Reform Investment: $65B {#sec-nato_political_reform_investment}
     - Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
       - Uncertainty Range
     - Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
@@ -5920,7 +5923,9 @@
       - Uncertainty Range
     - US Dysfunction Premium vs Switzerland: 300% {#sec-us_dysfunction_premium_vs_switzerland}
       - Uncertainty Range
-    - US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
+    - Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
+      - Uncertainty Range
+      - Input Distribution
     - US-Singapore Spending Gap: 2300% {#sec-us_vs_singapore_spending_gap}
       - Uncertainty Range
     - Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
@@ -5929,6 +5934,7 @@
       - Uncertainty Range
     - Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
       - Uncertainty Range
+    - US Base Political Spending: 28.8B {#sec-_us_base_political_spending}
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
@@ -6677,12 +6683,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 10,202
+**Files:** 1 | **Words:** 8,576
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 10,202 words | 1,442 lines
+**Stats:** 8,576 words | 1,219 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -6690,6 +6696,7 @@
   - Example: US Federal Budget Gap Analysis
     - What Budget Analysts See
     - Where This Fits
+    - Implementation Mechanism
   - Introduction
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
@@ -6709,12 +6716,7 @@
     - Summary of Theoretical Results
   - Core Methodology
     - Spending Category Data Structure
-    - Three Methods for OBG Estimation
-  - Reference Country Benchmarking
-    - The Basic Approach
-    - Reference Country Selection Criteria
-    - Worked Example: Early Childhood Education
-    - Limitations of Reference Benchmarking
+    - Two Methods for OSL Estimation
   - Diminishing Returns Modeling
     - The Core Concept
     - Finding the "Knee" of the Curve
@@ -6722,7 +6724,7 @@
     - Worked Example: K-12 Education Spending
   - Worked Example: Pragmatic Clinical Trials
     - The Highest-Return Public Investment
-    - Reference Country Benchmarking
+    - OSL Estimation
     - Diminishing Returns Analysis
     - Cost-Effectiveness Calculation
     - Gap Analysis
@@ -6731,11 +6733,9 @@
     - The Standard Health Economics Approach
     - Building Up from Intervention-Level Data
     - Worked Example: Vaccinations
-  - Budget Impact Score (BIS) as Evidence Quality
-    - Reframing BIS: Confidence in OSL, Not Allocation Driver
+  - Budget Impact Score (BIS)
     - BIS Calculation
     - Evidence Grading from BIS
-    - BIS Does Not Drive Allocation
   - Gap Analysis and Priority Ranking
     - Computing Gaps
     - Priority Score
@@ -6756,13 +6756,11 @@
     - Recommended Pilot Designs
     - Learning Feedback Loop
   - Data Sources
-    - Reference Country Databases
+    - Cross-Country Databases
     - Cost-Effectiveness Databases
     - US Budget Data
   - Limitations
-    - Reference Country Selection Bias
     - Diminishing Returns Uncertainty
-    - Political Feasibility Not Modeled
     - Implementation Capacity
   - Validation Framework
     - Retrospective Validation
@@ -6772,23 +6770,17 @@
   - Sensitivity Analysis
     - Parameter Sensitivity
     - Scenario Analysis
-  - Future Directions
-    - Methodological
-    - Data Infrastructure
-    - Governance Integration
   - Conclusion
   - Acknowledgments {.unnumbered}
   - References
-  - Appendix A: Worked Example - Complete OBG Calculation {.appendix}
-    - Example: US Military Discretionary Spending
-  - Appendix B: Analysis Workflow {.appendix}
+  - Appendix A: Analysis Workflow {.appendix}
     - Complete OBG Analysis Pipeline
-  - Appendix C: Glossary {.appendix}
+  - Appendix B: Glossary {.appendix}
     - Core Concepts
     - Estimation Methods
     - Evidence Quality
     - Output Concepts
-  - Appendix D: Comparison to Actual US Budget {.appendix}
+  - Appendix C: Comparison to Actual US Budget {.appendix}
     - Current US Discretionary Budget vs. OSL Targets
 
 ---
@@ -7357,6 +7349,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 530,724
+- Total words: 528,360
 - Orphaned files: 20
 - Paper configs: 12

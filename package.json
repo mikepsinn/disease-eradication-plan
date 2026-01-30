@@ -34,6 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
     "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
@@ -52,7 +53,6 @@
     "images:chapter:outdated": "tsx scripts/images/generate-chapter-images.ts --outdated",
     "images:chapter:force": "tsx scripts/images/generate-chapter-images.ts --force",
     "images:all": "npm run images:branding && npm run images:chapter && npm run images:sections",
-    "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:1-pct-treaty-impact:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py 1-pct-treaty-impact --to pdf",
     "render:wishocracy:publish": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --publish",
     "audit-hardcoded": "tsx scripts/audit-hardcoded-all.ts",
