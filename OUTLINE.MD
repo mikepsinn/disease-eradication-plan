@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 334,113
+**Files:** 86 | **Words:** 333,803
 
 #### index.qmd
 **Title:** Start Here
@@ -2663,7 +2663,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 3,066 words | 453 lines
+**Stats:** 2,657 words | 405 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - Their Current Business Model (It's Actually Terrible)
@@ -2699,23 +2699,19 @@
       - The Vote Harvest
       - The Jobs Program
     - The Bipartisan Beauty
-  - Billionaires: The Easiest Marks
+  - Billionaires: Self-Interest Meets Self-Preservation
     - What They Really Want
     - Your Irresistible Package
       - The Investment
       - The Legacy
       - The Insurance
-    - The Conversion Sequence
+    - Why They'll Invest
   - The Domino Effect: How This Cascade Works
     - The Sequence
     - Why This Can Work: Solving the Collective Action Problem
       - Why the cascade can happen (not "must" happen)
   - The Master Key: Greed
-  - The Two-Engine System: Why You Need Both
-    - Engine 1: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (The Initial Alignment)
-    - Engine 2: [Incentive Alignment Bonds](https://iab.warondisease.org) (The Scaling Engine)
-    - VICTORY Impact Alignment Bonds
-    - The Endgame
+  - Why This Scales: The Ratchet Effect
 
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
@@ -3078,7 +3074,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 5,379 words | 771 lines
+**Stats:** 5,519 words | 768 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
@@ -6459,7 +6455,7 @@
 #### knowledge/appendix/command-and-control-systems.qmd
 **Title:** Command & Control Systems
 **Description:** How to build a database that runs a global war (without becoming the Pentagon)
-**Stats:** 2,617 words | 406 lines
+**Stats:** 2,576 words | 386 lines
 
   - The Architecture: Military Organization Without the Military
   - SECTION 1: G-1 (Personnel Command)
@@ -7355,6 +7351,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 533,920
+- Total words: 533,610
 - Orphaned files: 20
 - Paper configs: 12

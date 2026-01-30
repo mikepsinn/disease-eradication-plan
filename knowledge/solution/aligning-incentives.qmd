@@ -24,6 +24,8 @@ For the first time in history, you can align every powerful interest group behin
 
 Defense contractors aren't evil. They're just following the money. Currently, that money comes from building things that explode. You're going to offer them something better.
 
+![A comparison diagram showing the shift in defense contractor focus from kinetic weaponry to positive alternatives, driven by changing financial incentives.](/assets/images/aligning-incentives/aligning-incentives-section-defense-contractors-teaching-merchants-of-death-to-love-life-bw-academic.jpg)
+
 ### Their Current Business Model (It's Actually Terrible)
 
 Look at what they're working with:
@@ -46,6 +48,8 @@ Show them this math:
 
 The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your competitors will buy them and use the profits to destroy you."
 
+![A comparison chart showing the massive yield gap between traditional defense stocks and VICTORY bonds, alongside qualitative benefits like liquidity and public image.](/assets/images/aligning-incentives/aligning-incentives-section-here-s-your-better-offer-victory-incentive-alignment-bonds-bw-academic.jpg)
+
 ### Why They'll Take the Deal
 
 #### The Portfolio Math
@@ -53,7 +57,7 @@ The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your
 - They have billions in pension obligations
 - Current portfolio returns: 6-8% (barely covers inflation)
 - Add {{< var victory_bond_funding_pct >}} VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + {{< var victory_bond_funding_pct >}} at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
-- Their retirees get paid, they get bonuses, everyone wins
+- Their retirees get paid, executives get bonuses, pension obligations get met
 
 #### The PR Victory
 
@@ -69,6 +73,8 @@ Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's su
 ### The Simple Pitch
 
 Keep {{< var defense_sector_retention_pct >}} of your current weapons budget. Invest pension fund money in VICTORY Incentive Alignment Bonds earning {{< var victory_bond_annual_return_pct >}} annual returns. That's 10-30x better than current military stock yields (2-3%). No business pivot required. Just better returns on money you already have.
+
+![A comparison bar chart showing the massive disparity between traditional military stock yields of 2-3% and the projected 272% annual returns from VICTORY bonds.](/assets/images/aligning-incentives/aligning-incentives-section-the-simple-pitch-bw-academic.jpg)
 
 ### The Implementation Playbook
 
@@ -93,21 +99,22 @@ Insurance companies are already on your side. They just don't know it yet. Every
 
 #### The Math They Can't Refuse
 
-| Disease | Current Annual Cost | Cost After Cure | Savings |
-|---------|-------------------|-----------------|---------|
-| Diabetes | {{< var us_diabetes_annual_cost >}} | $0 | {{< var us_diabetes_annual_cost >}}/year forever |
-| Alzheimer's | {{< var us_alzheimers_annual_cost >}} | $0 | {{< var us_alzheimers_annual_cost >}}/year forever |
-| Heart Disease | {{< var us_heart_disease_annual_cost >}} | $0 | {{< var us_heart_disease_annual_cost >}}/year forever |
-| Cancer | {{< var us_cancer_annual_cost >}} | $0 | {{< var us_cancer_annual_cost >}}/year forever |
-| **TOTAL** | **{{< var us_major_diseases_total_annual_cost >}}** | **$0** | **{{< var us_major_diseases_total_annual_cost >}}/year** |
+| Disease | Current Annual Cost | After Cure | Reduction |
+|---------|-------------------|------------|-----------|
+| Diabetes | {{< var us_diabetes_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
+| Alzheimer's | {{< var us_alzheimers_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
+| Heart Disease | {{< var us_heart_disease_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
+| Cancer | {{< var us_cancer_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
+
+Even partial cures dramatically improve their margins. They don't need $0 costs - they need costs to stop rising 7% annually.
 
 #### The Obvious Math
 
 - Every cure = billions they never pay out
-- Healthy customers = pure profit
+- Healthier customers = better margins
 - Lower premiums = competitive advantage
-- No medical bankruptcies = stable business
-- Prevention actually happens = costs plummet
+- Fewer medical bankruptcies = stable customer base
+- Prevention actually happens = costs stabilize
 
 #### The Implementation
 
@@ -125,13 +132,17 @@ Insurance companies are the only industry that profits from human health. Every 
 - **Hospitals want full beds** - Insurance wants empty ones
 - **Doctors want repeat visits** - Insurance wants one-time fixes
 
-You're offering insurance companies their dream: A world where people pay premiums but never get sick.
+You're offering insurance companies a world where chronic disease costs stop compounding at 7% annually.
+
+![A comparison chart showing the conflicting incentives between traditional healthcare providers and insurance companies, highlighting how insurance aligns with long-term patient health.](/assets/images/aligning-incentives/aligning-incentives-section-why-they-re-your-natural-allies-bw-academic.jpg)
 
 ## Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
 
 Pharma companies aren't evil either. They're trapped in a broken business model that rewards treating symptoms forever instead of curing diseases once. Here's how you free them.
 
 ### Their Current Trap
+
+![An infographic illustrating the 'Pharma Trap' by visualizing the extreme funnel of drug development, highlighting the 17-year timeline and $2.6B cost to move from 10,000 compounds to one successful drug.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-trap-bw-academic.jpg)
 
 - **R&D costs**: $2.6B per drug (unsustainable)
 - **Success rate**: 1 in 10,000 compounds work (lottery odds)
@@ -140,6 +151,8 @@ Pharma companies aren't evil either. They're trapped in a broken business model 
 - **Public hatred**: Martin Shkreli is their poster boy
 
 ### The Cost Elimination
+
+![A side-by-side comparison showing the shift from the high-cost, high-risk traditional pharma trial model to a low-cost, scalable decentralized pragmatic trial model.](/assets/images/aligning-incentives/aligning-incentives-section-the-cost-elimination-bw-academic.jpg)
 
 Current model (pharma pays for trials):
 
@@ -150,7 +163,7 @@ Current model (pharma pays for trials):
 
 The new model (using decentralized pragmatic trials):
 
-- Trial cost per participant drops to near-zero (pragmatic design, existing medical records, no dedicated sites)
+- Trial cost drops ~98% (pragmatic design, existing medical records, no dedicated sites)
 - Positive cash flow from day one
 - Can afford to run 100x more trials with same budget
 - Success means profit, failure doesn't bankrupt you
@@ -158,6 +171,8 @@ The new model (using decentralized pragmatic trials):
 ### The Math That Converts Them
 
 #### Current Pharma Economics
+
+![A visual breakdown of pharmaceutical economics illustrating how high development costs and low success rates result in a marginal 1.2% return on investment.](/assets/images/aligning-incentives/aligning-incentives-section-current-pharma-economics-bw-academic.jpg)
 
 - Development cost: {{< var pharma_drug_development_cost_current >}}
 - Success rate: {{< var pharma_success_rate_current_pct >}} (90% fail)
@@ -178,7 +193,7 @@ The main benefit: pragmatic clinical trials become 100x cheaper.
 - Custom data collection infrastructure
 - Regulatory compliance overhead
 
-**A system using your decentralized institutes of health (DIH):** Cost drops to near-zero because:
+**A system using your decentralized institutes of health (DIH):** Cost drops ~98% because:
 
 - Uses existing medical practices (no dedicated sites)
 - Patient's regular doctor enrolls them (one-click)
@@ -186,21 +201,20 @@ The main benefit: pragmatic clinical trials become 100x cheaper.
 - Pragmatic design = minimal monitoring
 - Platform handles regulatory compliance automatically
 
-Result: 50,000-participant trial costs pharma ~$0 instead of $2.4 billion.
+Result: 50,000-participant trial drops from $2.4 billion to under $50 million (regulatory filing, data analysis, platform fees).
 :::
 
 | Current System | A decentralized trials framework |
 |---------------|-----------------|
-| Pay {{< var pharma_drug_development_cost_current >}} for trials | Pay near-zero for trials |
-| 90% of drugs fail = $2.3B loss | Failure costs almost nothing |
+| Pay {{< var pharma_drug_development_cost_current >}} for trials | Pay ~$50M for trials (98% reduction) |
+| 90% of drugs fail = $2.3B loss | Failure costs ~$50M (survivable) |
 | 10-17 year development | 2-3 year development |
 | Only blockbusters viable | Rare diseases = profitable |
-| Massive risk | Minimal risk per attempt |
+| Massive risk | Manageable risk per attempt |
 
 A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics: you profit from TRYING, not just from SUCCEEDING.
 
 ![Side-by-side comparison of the current high-cost pharmaceutical model versus the proposed decentralized low-cost model.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg)
-
 
 ### Pharma's New Business Model: Volume Over Blockbusters
 
@@ -222,11 +236,11 @@ The trade-off: **Lower revenue per drug, but massively more attempts.**
 
 It's Costco vs. luxury boutique. Make money on volume, not margin.
 
-They profit whether the drug works or not. But if it works, they make a fortune.
+Failure doesn't bankrupt them. Success makes them rich. The math finally works for taking risks.
 
 ### How to Get Them Onboard
 
-1. **Start with generic manufacturers** - No R&D costs, pure profit
+1. **Start with generic manufacturers** - No R&D costs, immediate margin
 2. **Add biotechs** - Desperate for cash, will try anything
 3. **Big pharma follows** - Can't let competitors have advantage
 4. **Industry transforms** - Competition shifts from marketing to outcomes
@@ -236,6 +250,8 @@ They profit whether the drug works or not. But if it works, they make a fortune.
 Politicians are the simplest organisms in this ecosystem. They want exactly two things: votes and money. You're going to give them both.
 
 ### Their Current Misery
+
+![A dashboard-style infographic illustrating the 'misery profile' of a modern politician, contrasting high fundraising demands with low approval and actual power.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-misery-bw-academic.jpg)
 
 - **Fundraising**: 70% of their time begging for money
 - **Approval rating**: 18% (everyone hates them)
@@ -275,11 +291,11 @@ This works on everyone:
 - **Libertarians**: "Ends FDA tyranny! Personal freedom!"
 - **Socialists**: "Destroys Big Pharma monopoly! Power to people!"
 
-Everyone can claim victory because everyone actually wins.
+Everyone can claim victory because the framing works for each ideology.
 
-## Billionaires: The Easiest Marks
+## Billionaires: Self-Interest Meets Self-Preservation
 
-Billionaires have everything except the one thing money can't buy: not dying. You're selling longevity with a {{< var victory_bond_annual_return_pct >}} annual return. This is the easiest sale in history.
+Billionaires have everything except the one thing money can't buy: not dying. You're offering returns AND longevity research. The incentives align naturally.
 
 ### What They Really Want
 
@@ -293,13 +309,8 @@ Billionaires have everything except the one thing money can't buy: not dying. Yo
 
 #### The Investment
 
-- VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}}+ returns forever
-- Beats everything in their portfolio
-
-$$
-\text{\$1B investment} \rightarrow \text{\$2.7B annual returns}
-$$
-
+- VICTORY Incentive Alignment Bonds offer returns funded by treaty revenue
+- Beats traditional portfolio yields
 - Compounds into dynastic wealth
 
 #### The Legacy
@@ -316,13 +327,12 @@ $$
 - Every disease cured = their lifespan extended
 - Basically buying protection from biology
 
-### The Conversion Sequence
+### Why They'll Invest
 
-1. **Mortality reminder**: "You have maybe 20 years left"
-2. **Solution offer**: "Unless you fund the cure for aging"
-3. **Investment pitch**: "{{< var victory_bond_annual_return_pct >}} returns while saving humanity"
-4. **Ego stroke**: "Your name on the cure for cancer"
-5. **Close**: "Bezos already committed" (they're competitive)
+- Returns beat everything in their portfolio
+- Legacy outlasts their lifespan
+- They might actually benefit from the cures
+- Competitive pressure once one billionaire moves
 
 ## The Domino Effect: How This Cascade Works
 
@@ -338,8 +348,6 @@ Once you align a few key players, the rest fall automatically:
 6. **Billionaires pile in** (FOMO is powerful)
 7. **Public demands participation** (everyone wants in)
 8. **System flips permanently** (new equilibrium reached)
-
-
 
 ### Why This Can Work: Solving the Collective Action Problem
 
@@ -369,7 +377,6 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ![A virtuous cycle diagram illustrating how IAB funding creates a reinforcing feedback loop between political support, policy success, and increased investor capital.](/assets/images/aligning-incentives/aligning-incentives-section-why-the-cascade-can-happen-not-must-happen-bw-academic.jpg)
 
-
 ## The Master Key: Greed
 
 Don't fight human nature. Weaponize it.
@@ -381,72 +388,17 @@ Don't fight human nature. Weaponize it.
 
 Adam Smith's invisible hand, but for healing instead of widgets.
 
-## The Two-Engine System: Why You Need Both
+## Why This Scales: The Ratchet Effect
 
-Everything above describes how to align incentives for the **initial win**: passing a 1% treaty. But the goal isn't 1%. The goal is eventually redirecting *all* military spending to health. That requires two different engines.
+The mechanisms above get the first 1% treaty passed. But the goal is expansion: 1% → 2% → 5% → eventually much more. The key insight: **political incentive funding grows with treaty size**.
 
-### Engine 1: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (The Initial Alignment)
+| Treaty Level | Political Incentive Funding |
+|:-------------|:---------------------------|
+| 1% | {{< var iab_political_incentive_funding_annual >}}/year |
+| 2% | $5.4B/year |
+| 5% | $13.5B/year |
+| 10% | $27B/year |
 
-VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) solve the **funding problem**:
+Each expansion creates more funding to lobby for the next expansion. Politicians who supported the 1% treaty are rewarded; those rewards grow if they push for 2%. It's a ratchet that only moves in one direction.
 
-- Raise {{< var treaty_campaign_total_cost >}} to fund the campaign
-- Investors get {{< var victory_bond_annual_return_pct >}} returns forever
-- Creates the financial coalition to pass the first treaty
-
-But after the 1% treaty passes, VICTORY Incentive Alignment Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or {{< var victory_bond_funding_pct >}} treaties. Their job is done.
-
-### Engine 2: [Incentive Alignment Bonds](https://iab.warondisease.org) (The Scaling Engine)
-
-{{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
-
-[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the **expansion problem**:
-
-- {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives
-- Politicians who supported the 1% treaty get rewarded with better scores, electoral support, and post-office careers
-- This creates **perpetual pressure** for expansion: 1% → 2% → 5% → 10% → ... → 100%
-
-**IAB funding scales with treaty size.**
-
-| Treaty Level | VICTORY Incentive Alignment Bond Returns | IAB Political Funding |
-|:-------------|:--------------------|:---------------------|
-| 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | {{< var iab_political_incentive_funding_annual >}}/year |
-| 2% | {{< var victory_bond_annual_return_pct >}} (fixed) | $5.4B/year |
-| 5% | {{< var victory_bond_annual_return_pct >}} (fixed) | $13.5B/year |
-| {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_return_pct >}} (fixed) | {{< var treaty_annual_funding >}}/year |
-| 50% | {{< var victory_bond_annual_return_pct >}} (fixed) | $135B/year |
-| 100% | {{< var victory_bond_annual_return_pct >}} (fixed) | $270B/year |
-
-Investor returns are fixed at {{< var victory_bond_annual_return_pct >}}. But political incentive funding **grows with each expansion**, creating a ratchet that only moves in one direction.
-
-### VICTORY Impact Alignment Bonds
-
-**Without VICTORY Impact Alignment Bonds**: No funding for the initial campaign. The treaty never passes.
-
-Even if it the treaty does pass. It stalls at 1-2%. Politicians move on, military lobby regroups, expansion never happens. The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
-
-**With VICTORY Impact Alignment Bond**: Initial funding secures the 1% victory. Then IABs create compounding political pressure that drives expansion for decades. Every politician has career-long incentives to maximize pragmatic clinical trial funding. The military industry eventually pivots entirely to health because that's where the political rewards are
-
-[VICTORY Incentive Alignment Bonds](/knowledge/economics/victory-bonds.qmd) are a specific [Incentive Alignment Bond](/knowledge/solution/incentive-alignment-bonds.qmd) - a single instrument that aligns all three stakeholder types:
-
-| Stakeholder | What They Get | Funding Source |
-|:--|:--------------|:--------------------------|
-| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of the 1% Treaty Fund's revenue |
-| **Politicians** | Electoral support, career benefits | {{< var iab_political_incentive_funding_pct >}} of the 1% Treaty Fund's revenue |
-| **Patients & Researchers** | Subsidized pragmatic clinical trials, cures | {{< var dih_treasury_medical_research_pct >}} of the 1% Treaty Fund's revenue |
-
-The 80/10/10 split is baked into the instrument. Investors fund the campaign. Politicians get career benefits for supporting it (scored on voting records, not health outcomes - because health benefits are global and can't be attributed to any country). Patients get access to cures funded through the 1% Treaty Fund and delivered by a network of decentralized institutes of health. Everyone's self-interest points at the same outcome: expand treaty funding.
-
-
-![Distribution of the 1% Treaty Fund revenue, illustrating the 80/10/10 split between research, investors, and political incentives.](/assets/images/aligning-incentives/aligning-incentives-section-victory-impact-alignment-bonds-bw-academic.jpg)
-
-### The Endgame
-
-At 100% military-to-health redirection:
-
-- $2.7 trillion flows into a 1% Treaty Fund annually
-- $270 billion funds political incentives (more than all current global lobbying combined)
-- $2.16 trillion funds pragmatic clinical trials and new therapies
-- "Support pragmatic clinical trial funding" becomes the single most rewarded political position on Earth
-- War becomes economically obsolete
-
-The 80/10/10 allocation isn't just a funding structure. It's a **political transformation engine** designed to make humanity's transition from war to health economically inevitable.
+See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full mechanism design.
