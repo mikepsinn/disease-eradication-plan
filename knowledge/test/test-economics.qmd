@@ -17,7 +17,7 @@ These use Quarto's `@sec-` cross-reference system. In PDF, clicking these naviga
 - **Link to calculations appendix**: @sec-parameters-and-calculations
 
 ::: {.callout-tip}
-**Key insight**: Standard markdown hyperlinks only work in HTML. For PDF output, use `@sec-` cross-references instead.
+Standard markdown hyperlinks only work in HTML. For PDF output, use `@sec-` cross-references instead.
 :::
 
 ### External Cross-Site Links (Should Become Absolute URLs)

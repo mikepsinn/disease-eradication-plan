@@ -39,6 +39,12 @@ try:
 except ImportError:
     EM_DASH_MESSAGE = 'Em-dash found. Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.'
 
+# Filler phrases that should be removed - just state the point directly
+FILLER_PHRASES = [
+    (r'\*\*[Kk]ey [Ii]nsight:?\*\*:?', 'Filler phrase "Key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
+    (r'\*\*[Tt]he key [Ii]nsight:?\*\*:?', 'Filler phrase "The key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
+]
+
 
 class ValidationError:
     def __init__(self, file: str, line: int, message: str, context: str, column: Optional[int] = None):
@@ -294,6 +300,45 @@ def check_em_dashes(content: str, filepath: str):
                         context=line.strip()[:80],
                     )
                 )
+
+
+def check_filler_phrases(content: str, filepath: str):
+    """
+    Check for filler phrases like "Key insight:" that should be removed.
+    These phrases add no value - just state the point directly.
+    """
+    lines = content.split("\n")
+    in_code_block = False
+
+    for line_index, line in enumerate(lines):
+        # Track code blocks
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+
+        # Skip lines inside code blocks
+        if in_code_block:
+            continue
+
+        # Skip HTML comments
+        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+            continue
+
+        # Check each filler phrase pattern
+        for pattern, message in FILLER_PHRASES:
+            matches = list(re.finditer(pattern, line, re.IGNORECASE))
+            if matches:
+                for match in matches:
+                    column = match.start() + 1
+                    errors.append(
+                        ValidationError(
+                            file=filepath,
+                            line=line_index + 1,
+                            column=column,
+                            message=message,
+                            context=line.strip()[:80],
+                        )
+                    )
 
 
 def check_cross_reference_links(content: str, filepath: str):
@@ -1522,6 +1567,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     # Check em-dashes
     check_em_dashes(content, filepath)
+
+    # Check filler phrases ("Key insight:", etc.)
+    check_filler_phrases(content, filepath)
 
     # Check for hardcoded figure paths
     check_hardcoded_figure_paths(content, filepath)

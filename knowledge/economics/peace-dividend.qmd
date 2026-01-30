@@ -167,7 +167,7 @@ The elasticity parameter (ε = {{< var peace_dividend_conflict_elasticity >}}) c
 - **ε = 1.0**: Full proportionality (baseline assumption)
 - **ε > 1.0**: Shared enemy amplification (redirecting to disease creates unity)
 
-**Key insight**: Even under pessimistic elasticity assumptions (ε = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed.
+Even under pessimistic elasticity assumptions (ε = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed.
 
 ## Key Findings
 

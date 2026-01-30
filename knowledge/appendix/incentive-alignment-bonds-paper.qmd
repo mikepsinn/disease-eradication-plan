@@ -85,6 +85,8 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 
 ### Key Results
 
+![A visual comparison of the $454T beneficiary capital versus $5T opposition capital, highlighting the 90:1 asymmetry and the 230:1 benefit-cost ratio of the IAB mechanism.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
+
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
 - **{{< var victory_bond_annual_return_pct >}} expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
@@ -97,6 +99,8 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 ### Reader's Guide
 
 **Non-technical readers** can skip Section 3 (formal model); the intuition is provided in Section 2. **Economists** should focus on Section 3 (explicit functional forms) and Section 7 (welfare accounting). **Investors** should focus on Section 2.2-2.3 (ROI and capital asymmetry) and Section 8 (bootstrap solution).
+
+![A roadmap mapping reader personas (Non-technical, Economists, and Investors) to the specific sections of the paper most relevant to their interests and expertise.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-reader-s-guide-bw-academic.jpg)
 
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or relying on benevolent decision-makers, IABs restructure the incentive environment so that rational self-interest points toward welfare-improving policies.
 
@@ -294,6 +298,8 @@ The empirical criterion is straightforward: if a program's beneficiaries are con
 
 This paper combines three literatures. First, **mechanism design theory** [@hurwicz1972; @myerson1979; @maskin1999] provides tools for designing institutions when agents have private information and act strategically. While mechanism design has transformed market institutions, from spectrum auctions [@milgrom2004] to kidney exchanges [@roth2002], its application to political institutions is limited. We extend this framework to political incentives, treating politicians as strategic agents whose actions (votes) are observable but whose preferences may diverge from social welfare.
 
+![A conceptual framework illustrating the synthesis of mechanism design, public choice theory, and campaign finance research into the proposed IAB model, alongside a comparison to existing policy tools.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-relation-to-existing-literature-bw-academic.jpg)
+
 Second, **public choice theory** [@buchanan1962; @olson1965] models politicians as utility maximizers rather than benevolent planners. Olson's analysis of concentrated versus diffuse interests explains persistent policy failures but offers limited remedies. We turn Olson's insight into a mechanism: if concentrated benefits cause politicians to favor narrow interests, then *concentrating benefits on the welfare-improving side* can reverse the dynamic.
 
 Third, **campaign finance research** [@spenkuch2018; @stratmann2002; @fowler2020] and **political agency models** [@shepherd2019] document how electoral incentives and career concerns shape politician behavior. We synthesize these findings into a mechanism that systematically exploits these channels for public goods.
@@ -306,6 +312,8 @@ This paper makes four contributions:
 
 1. **Mechanism Design for Governance**: We apply the formal tools of mechanism design theory, developed for auctions, matching markets, and resource allocation, to the problem of political incentives. While mechanism design has transformed economic institutions from spectrum auctions to kidney exchanges, its application to democratic governance is underdeveloped.
 
+![A conceptual framework illustrating the four contributions: the application of mechanism design to governance, the distinct properties of Incentive Alignment Bonds, the three-layer legal architecture, and the welfare-improvement reallocation logic.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-contribution-bw-academic.jpg)
+
 2. **A New Financial Instrument**: We define IABs as a distinct class of financial instrument with three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. This distinguishes IABs from Social Impact Bonds (which reward service providers, not politicians), lobbying (which serves narrow interests), and campaign contributions (which lack systematic, ex-ante, universal rules tied to measurable outcomes).
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
@@ -316,17 +324,19 @@ This paper makes four contributions:
 
 Section 2 reviews why previous approaches failed. Section 3 presents the formal model. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes failure modes. Section 6 discusses the broader governance stack. Section 7 extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
 
+![A logical flowchart illustrating the document's structure, progressing from the analysis of previous failures and formal modeling to the three-layer architecture and its global applications.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-roadmap-bw-academic.jpg)
+
 ## Why Previous Approaches Failed {#sec-literature}
 
 ![A comparison showing how traditional approaches fail through misaligned incentives versus how IABs align self-interest with public interest.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-previous-approaches-failed-sec-literature-bw-academic.jpg)
 
 ### Mechanism Design Theory
 
-The Sveriges Riksbank Prize in Economic Sciences 2007 was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson "for having laid the foundations of mechanism design theory" [@nobelprize2007]. Mechanism design addresses a fundamental problem: how should institutions be designed when agents have private information and may act strategically? Or, in plain English: how do you get selfish people to do the right thing without forcing them?
+The Sveriges Riksbank Prize in Economic Sciences 2007 was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson "for having laid the foundations of mechanism design theory" [@nobelprize2007]. Mechanism design addresses a fundamental problem: how do you get selfish people to do the right thing without forcing them?
 
-Hurwicz [-@hurwicz1972] introduced the concept of **incentive compatibility**: a mechanism is incentive-compatible if truthful revelation (or, more generally, the socially optimal action) is in each agent's self-interest. Translation: the rules make doing the right thing also the profitable thing. The **revelation principle** [@myerson1979] shows that any equilibrium outcome achievable by any mechanism can be achieved by a direct mechanism in which agents truthfully reveal their private information. Maskin's **implementation theory** [-@maskin1999] clarifies when social choice rules can be implemented by mechanisms with unique equilibria.
+Hurwicz [-@hurwicz1972] introduced the concept of **incentive compatibility**: a mechanism is incentive-compatible if the socially optimal action is in each agent's self-interest. The rules make doing the right thing also the profitable thing.
 
-These concepts have been applied extensively to market design: auction theory [@milgrom2004], matching markets [@roth2002], and regulation [@laffont1993]. However, application to political institutions remains limited. This paper extends mechanism design to the domain of political incentives, treating politicians as strategic agents whose private information includes their true policy preferences and whose actions (votes, public statements, bill sponsorship) are observable.
+These concepts have transformed market design: auction theory [@milgrom2004], matching markets [@roth2002], and regulation [@laffont1993]. This paper extends mechanism design to political incentives, treating politicians as strategic agents whose actions (votes, public statements, bill sponsorship) are observable.
 
 ### Public Choice Theory
 
@@ -375,6 +385,8 @@ Empirical research on campaign finance provides the evidentiary foundation for t
 ### Credit Rating Agencies as Governance Mechanisms
 
 Credit rating agencies (CRAs) provide a precedent for private organizations influencing sovereign policy through reputational mechanisms. Moody's, S&P, and Fitch assign sovereign credit ratings that directly affect borrowing costs. Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable profit-seeking institutions" whose power rivals the IMF or World Bank. Downgrades can trigger crises: Greece, Ireland, and Portugal all experienced accelerated debt crises following CRA downgrades to "junk" status [@desa2023].
+
+![A comparison diagram showing the structural analogy between the Credit Rating Agency (CRA) model and the proposed IAB scoring system, mapping how independent evaluations influence market actors.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-credit-rating-agencies-as-governance-mechanisms-bw-academic.jpg)
 
 The IAB scoring system is structurally analogous to credit ratings: an independent body publishes scores based on objective criteria, and market actors (voters, donors, employers) respond to those scores. The difference is the metric: instead of fiscal sustainability, IABs measure support for measurable public goods.
 
@@ -877,6 +889,8 @@ The IAB architecture is protected by the First Amendment at multiple levels:
 
 1. **Scoring layer:** Publishing voting records and scores based on those records is core political speech. The government cannot prohibit citizens from evaluating and publicizing legislators' voting records.
 
+![A diagram mapping the three layers of the IAB architecture (Scoring, Electoral, and Post-office) to their corresponding First Amendment legal protections.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-constitutional-protections-bw-academic.jpg)
+
 2. **Electoral layer:** *Citizens United* held that independent expenditures are protected speech. The government cannot limit spending by independent actors to support or oppose candidates based on their policy positions.
 
 3. **Post-office layer:** Private organizations have First Amendment associational rights to set their own membership and employment criteria. A foundation requiring fellows to have supported certain policies is no different from a think tank preferring scholars who share its intellectual orientation.
@@ -954,6 +968,8 @@ This constraint is less significant than it appears. In a unified bond offering,
 
 ### Gaming and Metric Corruption
 
+![A conceptual diagram showing how political gaming strategies like cheap talk and bill stuffing lead to metric corruption, and how multidimensional scoring acts as a countermeasure to restore metric integrity.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-gaming-and-metric-corruption-bw-academic.jpg)
+
 Any metric can be gamed. Goodhart's Law states: "When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. Potential gaming strategies:
 
 1. **Cheap talk:** Politicians vote symbolically for popular positions but undermine implementation
@@ -1009,7 +1025,7 @@ IABs address one specific failure mode: **how to get welfare-improving policies 
 - **Layer 2 (Within-Domain Allocation):** Once resources are redirected, mechanisms like aggregated pairwise preference allocation [@wishocracy2024] prevent capture by new concentrated interests.
 - **Layer 3 (Project Selection):** Domain-specific marketplaces (prediction markets, prize markets, retroactive public goods funding) allocate to specific projects.
 
-**Key insight:** Layer 0 rankings exist but are ignored because they don't appear in politician utility functions. Layers 2-3 cannot function until Layer 1 creates the political conditions for their adoption.
+Layer 0 rankings exist but are ignored because they don't appear in politician utility functions. Layers 2-3 cannot function until Layer 1 creates the political conditions for their adoption.
 
 **Common mistake:** Advocates focus on Layers 2 or 3 (better voting systems, prediction markets, AI allocation) without recognizing that **Layer 1 is the bottleneck.** You cannot implement better allocation mechanisms if politicians won't vote to fund them in the first place. **IABs solve the meta-problem:** how to bootstrap from the current Olsonian equilibrium to one where better governance mechanisms can be adopted.
 
@@ -1073,6 +1089,8 @@ The IAB architecture is not specific to health policy. It applies to any global 
 
 These conditions identify domains where the mechanism design approach is applicable. The formal requirements (A1–A5) must be satisfied, with domain-specific adaptations to the scoring function $f$ and payoff calibration.
 
+![A conceptual diagram showing the three necessary conditions (measurable outcomes, political control, and diffuse benefits/concentrated costs) that define the applicable domain for the IAB architecture.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-beyond-health-climate-nuclear-risk-and-more-sec-generalization-bw-academic.jpg)
+
 ### The General Template
 
 Any global public good satisfying the above conditions can be "IAB-ified" using the structure in @tbl-template.
@@ -1089,6 +1107,8 @@ Any global public good satisfying the above conditions can be "IAB-ified" using 
 ### Candidate Domains
 
 We briefly survey three domains where IABs are applicable; Appendix B provides detailed specifications.
+
+![A conceptual diagram showing the common structural framework of concentrated opposition costs versus diffuse global benefits across climate change, nuclear disarmament, and pandemic preparedness.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-candidate-domains-bw-academic.jpg)
 
 **Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
 
