@@ -1705,12 +1705,12 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 14,054
+**Files:** 1 | **Words:** 14,154
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,054 words | 1,951 lines
+**Stats:** 14,154 words | 1,953 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 333,381
+**Files:** 86 | **Words:** 334,113
 
 #### index.qmd
 **Title:** Start Here
@@ -3078,7 +3078,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 5,023 words | 726 lines
+**Stats:** 5,379 words | 771 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
@@ -4306,7 +4306,7 @@
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,054 words | 1,951 lines
+**Stats:** 14,154 words | 1,953 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -6459,7 +6459,7 @@
 #### knowledge/appendix/command-and-control-systems.qmd
 **Title:** Command & Control Systems
 **Description:** How to build a database that runs a global war (without becoming the Pentagon)
-**Stats:** 2,341 words | 367 lines
+**Stats:** 2,617 words | 406 lines
 
   - The Architecture: Military Organization Without the Military
   - SECTION 1: G-1 (Personnel Command)
@@ -7355,6 +7355,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 533,088
+- Total words: 533,920
 - Orphaned files: 20
 - Paper configs: 12

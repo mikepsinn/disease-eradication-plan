@@ -1344,7 +1344,6 @@ The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framew
 
 ![A conceptual diagram illustrating how the proposed framework maps to and addresses each of the nine Bradford Hill criteria for causal inference.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
 
-
 ### Quantitative Criteria Details
 
 **Strength**:
@@ -1384,7 +1383,6 @@ Each study can receive user votes:
 
 ![A sequential flowchart illustrating the five automated quality check gates that data must pass through before being included in reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-automated-quality-checks-bw-academic.jpg)
 
-
 Before inclusion in reports:
 
 1. **Variance check**: Minimum 5 value changes in both variables
@@ -1396,7 +1394,6 @@ Before inclusion in reports:
 ### Flagged Study Handling
 
 ![A flowchart showing the lifecycle of a study from initial flagging criteria to exclusion and the potential for reinstatement after data correction.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-flagged-study-handling-bw-academic.jpg)
-
 
 Studies may be flagged for:
 
@@ -1417,7 +1414,6 @@ Flagged studies are:
 **The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. A meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] shows that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var dfda_trial_cost_reduction_factor >}} lower cost. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
 
 ![A workflow diagram showing the two-stage process: Stage 1 filters millions of observational data signals into top candidates, which Stage 2 then validates through low-cost pragmatic trials to establish causation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-stage-2-pragmatic-trial-confirmation-bw-academic.jpg)
-
 
 The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
@@ -1576,7 +1572,6 @@ Even with the two-stage design, certain limitations remain:
 
 ![A conceptual diagram illustrating the iterative framework where observational signals funnel into experimental validation, creating a continuous learning loop for precision medicine.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-this-framework-can-now-do-bw-academic.jpg)
 
-
 With pragmatic trial integration, the complete framework can:
 
 1. **Establish causation**: For high-priority signals, randomization proves causal relationships
@@ -1685,7 +1680,6 @@ The repository includes:
 
 ![A comparison diagram illustrating the complementary relationship between the framework and Randomized Controlled Trials (RCTs), highlighting their distinct roles in drug safety and evidence generation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-positioning-relative-to-rcts-bw-academic.jpg)
 
-
 This framework is **not** intended to:
 
 - Replace RCTs for regulatory approval
@@ -1713,7 +1707,6 @@ This framework **is** intended to:
 
 ![A visual mapping of the FDA Real-World Evidence Framework showing its support for the Sentinel System, post-market commitments, label updates, and comparative effectiveness.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-fda-real-world-evidence-framework-alignment-bw-academic.jpg)
 
-
 The 21st Century Cures Act mandates FDA evaluation of RWE. This framework supports:
 
 - **FDA Sentinel System**: Provides complementary patient-reported data
@@ -1731,13 +1724,9 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 ![A comparison bar chart showing the hypothesized higher replication rates in RCTs for high-PIS relationships versus low-PIS relationships to demonstrate validity.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-critical-question-bw-academic.jpg)
 
-
 ### Proposed Validation Study
 
 **Design**: Retrospective comparison of PIS predictions against published RCT results.
-
-![Flowchart illustrating the validation study process, from identifying treatment-outcome pairs to comparing PIS predictions with RCT results and evaluating success metrics.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-proposed-validation-study-bw-academic.jpg)
-
 
 **Method**:
 1. Identify treatment-outcome pairs where both (a) we have sufficient observational data to compute PIS, and (b) RCT evidence exists
@@ -1763,7 +1752,6 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 3. **Population generalizability**: Do PIS values from health-tracker users predict effects in general populations?
 
 ![A visual summary of the three validation hurdles: causal directionality in treatment, the impact of parameter sensitivity on rankings, and the gap between tracker users and the general population.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-known-limitations-requiring-validation-bw-academic.jpg)
-
 
 ## Future Directions
 
@@ -1934,6 +1922,8 @@ $$\text{PIS}_{\text{agg}} = 0.31 × 0.88 × 0.991 × 1.0 × 0.89 × 0.72 = 0.17$
 **Recommendation**: This relationship warrants monitoring. As more data accumulates or if effect size increases, it could become a candidate for experimental validation. The temporality factor is encouraging. This doesn't appear to be reverse causation.
 
 ## Appendix E: Analysis Workflow
+
+![A flowchart mapping the 14-step sequential analysis workflow, starting from data ingestion and normalization through statistical processing and culminating in population aggregation and report generation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-appendix-e-analysis-workflow-bw-academic.jpg)
 
 1. **Data ingestion**: Collect measurements from all sources
 2. **Normalization**: Standardize units, deduplicate
