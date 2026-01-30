@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,412
+**Files:** 4 | **Words:** 88,834
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1360,7 +1360,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,264 words | 2,643 lines
+**Stats:** 27,686 words | 2,671 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1558,23 +1558,18 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,531
+**Files:** 1 | **Words:** 2,324
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
-**Description:** When critics dismiss policy proposals as "politically impossible," they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying po...
-**Stats:** 3,531 words | 465 lines
+**Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
+**Stats:** 2,324 words | 341 lines
 
   - Introduction
     - The Political Impossibility Objection
     - Political Change as an Investment
     - Contribution and Roadmap
   - Literature Review
-    - Public Choice and Rent-Seeking
-    - Lobbying Returns and Effectiveness
-    - Campaign Finance and Electoral Outcomes
-    - Post-Office Career Incentives
-    - Social Impact Bonds and Outcomes-Based Policy
   - Theoretical Framework
     - The Political Cost Function
     - Campaign Finance Component
@@ -1595,18 +1590,7 @@
     - Case Study 3: Agricultural Subsidy Reform
     - Case Study 4: Occupational Licensing Reform
     - Summary of Case Studies
-  - Limitations and Counterarguments
-    - Uncertainty in Cost Estimates
-    - Legal and Ethical Constraints
-    - Counter-Spending and Escalation
-    - Political Backlash
-    - Moral Objections
-  - Implementation Considerations
-    - The Coordination Problem
-    - Assurance Contracts
-    - Credible Commitment Mechanisms
-    - The Wrapper Architecture
-    - Governance of the Reform Coalition
+  - Limitations
   - Conclusion
   - References
 
@@ -2088,7 +2072,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 332,348
+**Files:** 86 | **Words:** 331,894
 
 #### index.qmd
 **Title:** Start Here
@@ -2864,7 +2848,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 27,264 words | 2,643 lines
+**Stats:** 27,686 words | 2,671 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -3908,19 +3892,14 @@
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
-**Description:** When critics dismiss policy proposals as "politically impossible," they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying po...
-**Stats:** 3,531 words | 465 lines
+**Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
+**Stats:** 2,324 words | 341 lines
 
   - Introduction
     - The Political Impossibility Objection
     - Political Change as an Investment
     - Contribution and Roadmap
   - Literature Review
-    - Public Choice and Rent-Seeking
-    - Lobbying Returns and Effectiveness
-    - Campaign Finance and Electoral Outcomes
-    - Post-Office Career Incentives
-    - Social Impact Bonds and Outcomes-Based Policy
   - Theoretical Framework
     - The Political Cost Function
     - Campaign Finance Component
@@ -3941,18 +3920,7 @@
     - Case Study 3: Agricultural Subsidy Reform
     - Case Study 4: Occupational Licensing Reform
     - Summary of Case Studies
-  - Limitations and Counterarguments
-    - Uncertainty in Cost Estimates
-    - Legal and Ethical Constraints
-    - Counter-Spending and Escalation
-    - Political Backlash
-    - Moral Objections
-  - Implementation Considerations
-    - The Coordination Problem
-    - Assurance Contracts
-    - Credible Commitment Mechanisms
-    - The Wrapper Architecture
-    - Governance of the Reform Coalition
+  - Limitations
   - Conclusion
   - References
 
@@ -4014,7 +3982,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,701 words | 949 lines
+**Stats:** 7,804 words | 831 lines
 
   - The Mechanism
     - Why This Works
@@ -4050,26 +4018,22 @@
   - The Wrapper Architecture: Integration with IABs
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
-    - A Taxonomy of Affected Parties
     - IABs as the Coasean Buyout Mechanism
-    - The Cost of Political Reform: Quantifying "Political Impossibility"
+    - The Cost of Political Reform
     - The Natural Reform Coalition
   - Implementation Pathway
-    - Implementation Phases
-    - Realistic Adoption Path
-    - Concrete First Deployment: The GiveWell Outcome Fund
     - Why Government Adoption Isn't Required
+    - Implementation Strategy
+    - Concrete First Deployment: The GiveWell Outcome Fund
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
-    - Verification System Specification
     - Budget and Policy Optimization: Two Complementary Frameworks
       - Budget Optimization: The Optimal Budget Generator (OBG) Framework
       - Policy Optimization: The Policy Impact Score (PIS) Framework
       - How They Work Together
     - Algorithmic Governance Threat Model
       - Known Failure Modes
-      - Why "Immutable Rules" Are Insufficient
       - Realistic Security Properties
       - Defense-in-Depth Architecture
   - Appendix B: Theoretical Background {.appendix}
@@ -4230,8 +4194,8 @@
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
-**Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for ...
-**Stats:** 8,967 words | 1,355 lines
+**Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
+**Stats:** 10,202 words | 1,442 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -4243,6 +4207,7 @@
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
     - What This Framework Provides
+    - Outcome Metrics: What We're Optimizing
   - Related Work
     - Budget Analysis Frameworks
     - Evidence-Based Policy Movement
@@ -6559,7 +6524,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 917 words | 106 lines
+**Stats:** 910 words | 106 lines
 
 - Papers & Publications
   - Books
@@ -6712,12 +6677,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 8,967
+**Files:** 1 | **Words:** 10,202
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
-**Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' Unlike isolated spending targets, OBG generates integrated budget recommendations that account for ...
-**Stats:** 8,967 words | 1,355 lines
+**Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
+**Stats:** 10,202 words | 1,442 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -6729,6 +6694,7 @@
     - Why Budget Allocation Fails Today
     - The RDA Analogy: Optimal Levels, Not Just Marginal Returns
     - What This Framework Provides
+    - Outcome Metrics: What We're Optimizing
   - Related Work
     - Budget Analysis Frameworks
     - Evidence-Based Policy Movement
@@ -6981,12 +6947,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,701
+**Files:** 1 | **Words:** 7,804
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,701 words | 949 lines
+**Stats:** 7,804 words | 831 lines
 
   - The Mechanism
     - Why This Works
@@ -7022,26 +6988,22 @@
   - The Wrapper Architecture: Integration with IABs
   - Political Economy: Making Reform Happen
     - The Coase Theorem Applied to Governance Reform
-    - A Taxonomy of Affected Parties
     - IABs as the Coasean Buyout Mechanism
-    - The Cost of Political Reform: Quantifying "Political Impossibility"
+    - The Cost of Political Reform
     - The Natural Reform Coalition
   - Implementation Pathway
-    - Implementation Phases
-    - Realistic Adoption Path
-    - Concrete First Deployment: The GiveWell Outcome Fund
     - Why Government Adoption Isn't Required
+    - Implementation Strategy
+    - Concrete First Deployment: The GiveWell Outcome Fund
   - Conclusion
     - What About AI?
   - Appendix A: Technical Specification Sketch
-    - Verification System Specification
     - Budget and Policy Optimization: Two Complementary Frameworks
       - Budget Optimization: The Optimal Budget Generator (OBG) Framework
       - Policy Optimization: The Policy Impact Score (PIS) Framework
       - How They Work Together
     - Algorithmic Governance Threat Model
       - Known Failure Modes
-      - Why "Immutable Rules" Are Insufficient
       - Realistic Security Properties
       - Defense-in-Depth Architecture
   - Appendix B: Theoretical Background {.appendix}
@@ -7395,6 +7357,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 531,625
+- Total words: 530,724
 - Orphaned files: 20
 - Paper configs: 12

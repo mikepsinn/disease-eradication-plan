@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 34 parameters used in the analysis, organized by type:
+This appendix documents all 50 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 9
-- Calculated values: 16
-- Core definitions: 9
+- External sources (peer-reviewed): 14
+- Calculated values: 20
+- Core definitions: 16
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (16 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (9 parameters)
+[Calculated Values](#sec-calculated) (20 parameters) • [External Data Sources](#sec-external) (14 parameters) • [Core Definitions](#sec-definitions) (16 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -925,6 +925,266 @@ $$
 
 :::
 
+### Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
+
+**Inputs**:
+
+- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250M (95% CI: $150M - $410M)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.30B)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100M (95% CI: $20M - $150M)
+
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
+
+:::
+
+### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+
+$$
+\begin{gathered}
+Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \$0.00177 \\[0.5em]
+\text{where } Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/dfda-impact-paper](../appendix/dfda-impact-paper)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+
+$$
+\begin{gathered}
+ROI_{max} = \frac{Value_{max}}{Cost_{campaign}} = \frac{\$84800T}{\$1B} = 84.8M \\[0.5em]
+\text{where } Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+
+**Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Upper-bound advocacy cost to match career incentives for all 535 members of Congress
+
+**Inputs**:
+
+- [US Congress Members](#sec-us_congress_member_count): 535 members
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+
+$$
+\begin{gathered}
+Cost_{US,congress} \\
+= N_{congress} \times V_{post-office} \\
+= 535 \times \$10M \\
+= \$5.35B
+\end{gathered}
+$$
+
+**Methodology**: [../appendix/cost-of-change-analysis#us-political-reform-scenarios](../appendix/cost-of-change-analysis#us-political-reform-scenarios)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
+
+:::
+
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -956,6 +1216,30 @@ $$
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
+
+**Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$78, $100] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
 
 ### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
 
@@ -1105,6 +1389,28 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 :::
 
+### Post-Office Career Value (per politician): $10M {#sec-politician_post_office_career_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.
+
+**Source**: [@opensecrets-revolving-door]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $20M]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5M and $20M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-politician_post_office_career_value.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1144,6 +1450,46 @@ Standard economic value per QALY
 #### Input Distribution
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Senators for Treaty Ratification: 67 senators {#sec-us_senators_for_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
+
+**Source**: [@us-senate-treaties]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.
+
+**Source**: [@fec-2024-summary]
+
+*✓ High confidence*
+
+:::
+
+### US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
+
+**Source**: [@opensecrets-lobbying-2024]
 
 *✓ High confidence*
 
@@ -1285,6 +1631,36 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 :::
 
+### Global Political Reform Investment: $125B {#sec-global_political_reform_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated global advocacy investment for policy reform (NATO $65B + China $20B + Russia $10B + India $8B + others $22B). Upper bound representing full democratic engagement at scale.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$75B, $200B]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $75B and $200B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_political_reform_investment.qmd >}}
+
+*Core definition*
+
+:::
+
+### Global Political Reform Investment (Maximum): $200B {#sec-global_political_reform_investment_maximum}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum plausible global political reform investment with substantial contingency for hidden channels, opposition counter-spending, and multiple election cycles. Stress-test upper bound.
+
+*Core definition*
+
+:::
+
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1299,6 +1675,70 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 :::
 
+### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$325M, $1.30B] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.30B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_lobbying.qmd >}}
+
+*Core definition*
+
+:::
+
+### Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20M, $150M] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20M and $150M (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
+
+*Core definition*
+
+:::
+
+### Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150M, $410M]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
+
+*Core definition*
+
+:::
+
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1308,6 +1748,30 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### US Congress Members: 535 members {#sec-us_congress_member_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total members of US Congress (100 senators + 435 representatives)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### US Political Reform Investment (Total): $25B {#sec-us_political_reform_investment_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total upper-bound investment for US political reform: Congress advocacy costs ($5.35B) + lobbying parity ($5B/year x 4 years) + campaign matching. Represents cost to achieve democratic parity with incumbent interests.
 
 *Core definition*
 
