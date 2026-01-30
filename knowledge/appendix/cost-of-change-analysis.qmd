@@ -1,19 +1,16 @@
 ---
 title: 'The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization'
-description: When critics dismiss policy proposals as "politically impossible," they implicitly claim the cost of achieving political change exceeds its benefits. This paper develops a framework for quantifying political reform investment costs and comparing them to policy benefits, demonstrating that for high-value reforms, even maximum engagement scenarios yield positive expected value.
+description: "What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1."
 abstract: |
-  Policy proposals addressing collective action problems frequently encounter the objection that they are
-  "politically impossible" due to opposition from concentrated interests. This paper argues that political
-  impossibility is not binary but rather a cost that can be quantified and compared to expected benefits.
-  We develop a framework for estimating the maximum plausible cost of achieving policy change through
-  economic incentivization, incorporating campaign finance, lobbying expenditures, and post-office career
-  values. Applying this framework to several case studies (military-to-health spending reallocation,
-  carbon pricing, and agricultural subsidy reform), we find that even maximum democratic engagement scenarios
-  (matching all opposition spending and providing career alternatives for affected legislators) yield ROI exceeding
-  1,000:1 for high net-societal-value policies. The political feasibility objection thus reduces to a
-  capital allocation problem with clear expected value calculations. We discuss implications for reform
-  strategy and briefly note coordination mechanisms that could enable collective action among diffuse
-  beneficiaries.
+  What is the maximum cost to achieve any policy change through legal democratic channels? We estimate
+  $25 billion for the United States and $200 billion globally. These figures represent the upper bound
+  of matching all opposition spending (campaign finance, lobbying) and providing career alternatives
+  for affected legislators. For high net-societal-value policies, even these maximum costs yield
+  extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon
+  pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political
+  impossibility" objection thus reduces to a capital allocation problem. Political change is not
+  impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to
+  the benefits.
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -83,47 +80,17 @@ This paper makes three contributions:
 
 3. **Case studies**: We apply the framework to multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs.
 
-The remainder of the paper proceeds as follows: Section 2 reviews relevant literature. Section 3 presents the theoretical framework. Section 4 details our empirical methodology. Section 5 presents case studies. Section 6 discusses limitations. Section 7 briefly considers implementation mechanisms. Section 8 concludes.
+The remainder proceeds as follows: Section 2 reviews relevant literature. Section 3 presents the theoretical framework. Section 4 details our empirical methodology. Section 5 presents case studies. Section 6 discusses limitations. Section 7 concludes.
 
 ## Literature Review
 
-### Public Choice and Rent-Seeking
+The public choice tradition [@buchanan1962; @tullock1967] models political actors as rational agents responding to incentives. @olson1965 demonstrated that groups with concentrated benefits systematically outcompete larger groups with diffuse benefits, explaining why small industries successfully defend subsidies imposing large aggregate costs on consumers.
 
-The public choice tradition, pioneered by @buchanan1962 and @tullock1967, models political actors as rational agents responding to incentives rather than benevolent social planners. This framework predicts that concentrated interests will invest in political influence while diffuse beneficiaries will remain rationally ignorant [@downs-1957].
+The empirical literature establishes that political investment produces returns. @alexander2009 estimated returns to lobbying for the American Jobs Creation Act at 22,000% ($220 in tax benefits per $1 spent). @drutman2015 documents business-to-public-interest lobbying ratios exceeding 34:1, suggesting sophisticated actors believe lobbying works.
 
-@olson1965 formalized this insight in *The Logic of Collective Action*, demonstrating that groups with concentrated benefits and low coordination costs will systematically outcompete larger groups with diffuse benefits. This explains why small industries successfully defend subsidies that impose large aggregate costs on consumers.
+Campaign finance operates at contestable scale: total US federal election spending in 2024 was {{< var us_total_federal_campaign_spending_2024 >}}. @stratmann2005 finds contributions influence roll-call votes, particularly on low-salience issues.
 
-The rent-seeking literature, beginning with @tullock1967, quantifies the social cost of resources devoted to capturing political rents rather than productive activity. @krueger1974 estimated rent-seeking costs at 7% of GDP in India and Turkey. More recent estimates suggest lobbying alone represents a substantial but smaller share of economic activity [@drutman2015].
-
-### Lobbying Returns and Effectiveness
-
-A critical empirical question is whether political investment actually produces returns. @ansolabehere2003 influentially argued that campaign contributions are better understood as consumption than investment, given their small magnitude relative to policy stakes. However, subsequent research has documented substantial returns to lobbying.
-
-@alexander2009 estimated returns to lobbying for the American Jobs Creation Act at 22,000%, with firms receiving $220 in tax benefits for every $1 spent on lobbying. @richter2009 found that firms lobbying for tax benefits during the 2004 repatriation holiday received effective tax rates 4-8 percentage points lower than non-lobbying firms.
-
-@drutman2015 documents the growth of corporate lobbying from $1.45 billion in 1998 to over $3 billion by 2014, with the ratio of business-to-public-interest lobbying exceeding 34:1. This investment pattern suggests sophisticated actors believe lobbying generates positive returns.
-
-### Campaign Finance and Electoral Outcomes
-
-The relationship between campaign spending and electoral outcomes remains contested. @jacobson1978 established that challenger spending matters more than incumbent spending, suggesting diminishing returns to campaign investment.
-
-More recent work finds meaningful but modest effects. @gerber2011 estimates that a $1 million increase in campaign advertising produces a 0.5 percentage point increase in vote share. @stratmann2005 finds that campaign contributions influence roll-call votes, particularly on narrow issues with low public salience.
-
-For our purposes, campaign finance operates at relatively modest scale. Total US federal election spending in 2024 was approximately $20 billion [@fec-2024-summary], suggesting that this channel of political influence is potentially contestable.
-
-### Post-Office Career Incentives
-
-Beyond direct political spending, legislators respond to career incentives. The "revolving door" between Congress and lobbying is well-documented: @blanes2012 finds that former congressional staffers experience a 24% salary drop when their previous employer loses power, demonstrating the career value of political connections.
-
-@blanes2012 estimates that former US senators who become lobbyists earn substantial premiums, with the value of political connections declining as time since office increases. @eggers2009 finds similar patterns in the UK, where former ministers earn significant private-sector premiums.
-
-These studies establish that legislators face career incentives extending beyond their time in office, a factor typically omitted from analyses of political feasibility.
-
-### Social Impact Bonds and Outcomes-Based Policy
-
-The social impact bond (SIB) literature demonstrates that policy outcomes can be financed through private capital with returns contingent on success [@liebman2011]. While SIBs typically focus on social services rather than political change, they establish the principle that diffuse public benefits can be monetized and used to attract investment.
-
-@gustafsson2013 reviews early SIB implementations, finding mixed results but demonstrating proof-of-concept for outcomes-based financing of public goods.
+Beyond direct spending, legislators respond to career incentives. @blanes2012 documents the "revolving door" value: former senators who become lobbyists earn substantial premiums, with political connection value declining over time. @eggers2009 finds similar patterns internationally. These career incentives are typically omitted from political feasibility analyses.
 
 ## Theoretical Framework
 
@@ -210,11 +177,11 @@ Total US federal election spending in the 2024 cycle:
 | House & Senate candidates | $3.8B | FEC [@fec-2024-summary] |
 | Political party committees | $2.7B | FEC [@fec-2024-summary] |
 | PACs and Super PACs | $15.7B | FEC [@fec-2024-summary] |
-| **Total** | **~$20B** | Combined |
+| **Total** | **{{< var us_total_federal_campaign_spending_2024 >}}** | Combined |
 
 #### Lobbying
 
-Total US lobbying expenditure in 2024: **$4.4 billion** [@opensecrets-lobbying-2024]
+Total US lobbying expenditure in 2024: **{{< var us_total_lobbying_annual >}}**
 
 Top sectors include pharmaceuticals ($387M), finance/insurance ($582M), and defense ($149M).
 
@@ -228,7 +195,7 @@ Based on revolving-door data [@opensecrets-revolving-door; @thenation-revolving-
 | Senator | $174K | $1M-$3M | 6-17x |
 | High-profile members | $174K | $2M-$7M | 11-40x |
 
-Assuming 10-year post-office careers and ~$1M/year average premium, the NPV per legislator is approximately **$8-10 million**.
+Assuming 10-year post-office careers and ~$1M/year average premium, the NPV per legislator is approximately **{{< var politician_post_office_career_value >}}**.
 
 #### US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
 
@@ -239,9 +206,9 @@ These scenarios represent upper-bound costs to achieve democratic parity with in
 | Match defense industry 2:1 | Defense lobby + contributions × 2 | $360M/year |
 | Match ALL lobbying | Total lobbying × 1.5 | $6.6B/year |
 | Match all campaign spending | Federal elections × 1 | $10B/cycle |
-| Match 67 senators' career incentives | 67 × $10M NPV | $670M one-time |
-| Match full Congress career incentives | 535 × $10M NPV | $5.35B one-time |
-| **Total US reform investment** | All components | **~$25B** |
+| Match {{< var us_senators_for_treaty >}} senators' career incentives | {{< var us_senators_for_treaty >}} × {{< var politician_post_office_career_value >}} NPV | $670M one-time |
+| Match full Congress career incentives | {{< var us_congress_member_count >}} × {{< var politician_post_office_career_value >}} NPV | {{< var us_congress_full_advocacy_cost >}} one-time |
+| **Total US reform investment** | All components | **{{< var us_political_reform_investment_total >}}** |
 
 ### Global Estimates {#global-estimates}
 
@@ -249,16 +216,16 @@ Extrapolating to NATO and global political systems:
 
 | Region | Legislators | Est. Reform Investment |
 |--------|-------------|------------------------|
-| United States | 535 | $25B |
+| United States | {{< var us_congress_member_count >}} | {{< var us_political_reform_investment_total >}} |
 | European NATO | ~5,000 | $30B |
 | Other NATO | ~3,000 | $10B |
 | China | ~3,000 (NPC) | $20B |
 | Other major powers | ~5,000 | $15B |
-| **Global total** | ~16,000 | **~$100-125B** |
+| **Global total** | ~16,000 | **{{< var global_political_reform_investment >}}** |
 
 Adding contingency for hidden channels, counter-spending, and multiple election cycles:
 
-**Maximum plausible global political reform investment: $200B**
+**Maximum plausible global political reform investment: {{< var global_political_reform_investment_maximum >}}**
 
 ## Case Studies
 
@@ -276,18 +243,18 @@ We apply the framework to four policy domains, comparing political costs to expe
 | Economic value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} |
 | DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} |
 
-**Political Reform Investment**: $25B (US) to $200B (global maximum)
+**Political Reform Investment**: {{< var us_political_reform_investment_total >}} (US) to {{< var global_political_reform_investment_maximum >}} (global maximum)
 
 **ROI Calculation**:
 
 | Political Investment | ROI | Cost per DALY |
 |---------------------|-----|---------------|
-| $1B (realistic) | 84,800,000:1 | $0.002 |
-| $25B (US max) | 3,390,000:1 | $0.05 |
-| $125B (global) | 678,000:1 | $0.23 |
-| $200B (stress test) | 424,000:1 | $0.36 |
+| {{< var treaty_campaign_total_cost >}} (realistic) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
+| {{< var us_political_reform_investment_total >}} (US max) | 3,390,000:1 | $0.05 |
+| {{< var global_political_reform_investment >}} (global) | 678,000:1 | $0.23 |
+| {{< var global_political_reform_investment_maximum >}} (stress test) | 424,000:1 | $0.36 |
 
-For comparison, GiveWell's cost-effectiveness threshold is ~$50/DALY, and bed nets achieve ~$89/DALY. Even at $200B political cost, this intervention is **139x more cost-effective than bed nets**.
+For comparison, GiveWell's cost-effectiveness threshold is ~$50/DALY, and bed nets achieve ~{{< var bed_nets_cost_per_daly >}}. Even at {{< var global_political_reform_investment_maximum >}} political cost, this intervention is **139x more cost-effective than bed nets**.
 
 ### Case Study 2: Carbon Pricing
 
@@ -329,7 +296,7 @@ For comparison, GiveWell's cost-effectiveness threshold is ~$50/DALY, and bed ne
 
 | Policy | Political Cost | NPV Benefits | ROI |
 |--------|---------------|--------------|-----|
-| 1% Treaty (global) | $200B | $84.8 quadrillion | 424,000:1 |
+| 1% Treaty (global) | {{< var global_political_reform_investment_maximum >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | 424,000:1 |
 | Carbon pricing | $4B | $5T+ | 1,250:1+ |
 | Agricultural reform | $1B | $60B (4yr) | 60:1 |
 | Licensing reform | $1B | $2T (10yr) | 2,000:1 |
@@ -339,106 +306,15 @@ In all cases, even pessimistic political cost estimates yield strongly positive 
 
 ![Logarithmic comparison of political investment costs versus policy benefits across four major domains, highlighting the extreme leverage ratio.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-cost-benefit-asymmetry-bw-academic.jpg)
 
-## Limitations and Counterarguments
+## Limitations
 
-### Uncertainty in Cost Estimates
+**Estimation uncertainty**: Our cost estimates are intentionally conservative upper bounds. Actual costs could exceed estimates if hidden spending channels exist, counter-spending escalates, or coordination costs are higher than expected. However, we calculate maximum democratic parity costs, not marginal costs of change.
 
-Our political cost estimates are necessarily imprecise. Actual costs could exceed our estimates if:
+**Legal constraints**: Our framework assumes legal channels only (campaign contributions, lobbying, independent expenditures, career opportunities). Direct payments constitute bribery. The multi-billion-dollar lobbying industry demonstrates legal channels produce real effects.
 
-- Hidden political spending channels exist beyond reported data
-- Counter-spending by opponents escalates beyond historical patterns
-- Political actors require larger premiums than estimated
-- Coordination costs among reformers exceed expectations
+**Counter-spending**: Affected interests may escalate spending, but industries already spend near optimal levels and cannot exceed their total rents.
 
-However, our estimates are intentionally conservative. We calculate the maximum cost of achieving full democratic parity rather than the marginal cost of achieving policy change. The actual cost is likely lower.
-
-### Legal and Ethical Constraints
-
-Direct payments to legislators constitute bribery. Our framework assumes legal channels: campaign contributions within regulatory limits, lobbying, independent expenditures, and career opportunities that don't condition on specific votes.
-
-These constraints may increase costs or reduce effectiveness compared to a hypothetical unconstrained scenario. However, the existence of a multi-billion-dollar lobbying industry demonstrates that legal influence channels produce real effects.
-
-### Counter-Spending and Escalation
-
-If reform advocates increase political spending, affected interests may respond by increasing their own spending, potentially leading to an arms race. However:
-
-1. Affected industries already spend near their optimal level
-2. The benefit/cost ratio favors reform advocates for high-NSV policies
-3. Escalation has natural limits (industries cannot spend more than their rents)
-
-### Political Backlash
-
-Highly visible attempts to "buy" political outcomes might generate voter backlash, potentially harming reform prospects. This risk can be mitigated through:
-
-- Framing as education and advocacy rather than vote-buying
-- Grassroots mobilization to complement elite influence
-- Transparency about funding sources and goals
-
-### Moral Objections
-
-Some readers may object to analyzing political change as a market transaction. We acknowledge this concern but note:
-
-1. Concentrated interests already treat politics as investment
-2. Declining to invest doesn't preserve neutrality; it cedes the field to incumbents
-3. The alternative (accepting "political impossibility") allows suboptimal policies to persist
-
-Our framework describes reality as it is, not as we might wish it to be.
-
-## Implementation Considerations
-
-The analysis above establishes that political change is economically rational for high-NSV policies. The practical question is how diffuse beneficiaries can coordinate to invest in political change. This is precisely the collective action problem identified by @olson1965.
-
-### The Coordination Problem
-
-Diffuse beneficiaries face a classic free-rider problem: each individual benefits whether or not they contribute to political reform efforts, creating incentive to let others bear the cost. This explains why concentrated interests systematically prevail despite smaller aggregate stakes.
-
-### Assurance Contracts
-
-One solution is the assurance contract or "dominant assurance contract" [@tabarrok1998]: contributors pledge funds that are only collected if a threshold is reached, and may receive a bonus if the threshold fails. This converts a prisoner's dilemma into a coordination game with contribution as the dominant strategy.
-
-Crowdfunding platforms have demonstrated the viability of threshold-based funding for projects with diffuse beneficiaries, though typically for smaller stakes than political reform.
-
-### Credible Commitment Mechanisms
-
-For reform coalitions to function, participants need assurance that:
-
-1. Funds will be used as promised
-2. Success will be rewarded and failure will not be penalized
-3. Other participants will fulfill their commitments
-
-These requirements suggest value in programmable commitment mechanisms that execute automatically based on verifiable conditions, reducing trust requirements among participants.
-
-A detailed treatment of coordination mechanisms for political reform is beyond the scope of this paper. We refer interested readers to our companion paper on Incentive Alignment Bonds, which develops a specific mechanism for aligning incentives between policy reformers, investors, and political actors.
-
-### The Wrapper Architecture
-
-Critically, the mechanisms described here function as a *wrapper* around existing governmental structures rather than a replacement for them. Legislatures continue to vote on budgets, executives continue to enforce laws, and courts continue to adjudicate disputes. What changes is the incentive environment in which these actors operate.
-
-The wrapper provides:
-
-1. **Preference measurement**: Continuous aggregation of citizen preferences through mechanisms like RAPPA (see companion paper on Wishocracy)
-2. **Accountability scoring**: Public metrics comparing politician behavior to measured preferences
-3. **Incentive channeling**: Routing of electoral and career resources based on alignment scores
-
-This architecture requires no constitutional amendments, no transfer of governmental authority, and no cooperation from incumbent politicians. It operates entirely through legal channels (campaign contributions, lobbying, independent expenditures, career opportunities) that already shape political behavior.
-
-
-![Conceptual model of the 'Wrapper Architecture,' illustrating how external incentive structures influence existing government institutions without altering their legal or constitutional authority.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-the-wrapper-mechanism-bw-academic.jpg)
-
-### Governance of the Reform Coalition
-
-A reform coalition aggregating diffuse beneficiary resources faces the same capture risks it seeks to counter. Without robust governance, the coalition itself becomes a target for mission drift, donor capture, or insider self-dealing.
-
-![A governance architecture diagram showing how contributions flow through a hybrid system of smart contract constraints, algorithmic optimization, and democratic oversight for edge cases.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-governance-of-the-reform-coalition-bw-academic.jpg)
-
-
-Two governance architectures offer capture resistance:
-
-**Democratic aggregation**: Coalition priorities could be determined through pairwise preference aggregation, allowing all contributors to express preferences over resource allocation. This maintains democratic legitimacy but requires ongoing participation.
-
-**Algorithmic optimization (Optimocracy)**: Alternatively, the coalition could commit to optimizing pre-agreed metrics (e.g., QALYs per dollar, median real income growth) with minimal political discretion. Smart contracts can enforce transparent allocation rules and escrow mechanisms, removing opportunities for insider manipulation. This approach sacrifices flexibility but gains verifiability and capture resistance. See our companion paper on [Optimocracy](https://optimocracy.warondisease.org) for detailed mechanism design.
-
-A hybrid approach (constitutional constraints encoded in smart contracts, algorithmic optimization within those bounds, and democratic governance for edge cases) may offer the best balance. The key principle: minimize political discretion over routine decisions while preserving adaptability for genuinely novel situations.
+**Political backlash**: Visible attempts to influence outcomes may generate voter backlash. Mitigation requires framing as education and advocacy, grassroots mobilization, and transparency.
 
 ## Conclusion
 
@@ -446,7 +322,7 @@ The "political impossibility" objection to policy reform dissolves under quantit
 
 1. **Political change has a quantifiable cost** composed of campaign finance, lobbying, and career value components that can be estimated from public data.
 
-2. **Even maximum engagement scenarios are bounded**: achieving full democratic parity in the US costs approximately $25B; global parity costs approximately $200B.
+2. **Even maximum engagement scenarios are bounded**: achieving full democratic parity in the US costs {{< var us_political_reform_investment_total >}}; global parity costs {{< var global_political_reform_investment_maximum >}}.
 
 3. **High-NSV policies yield extreme ROI**: for policies like military-to-health reallocation, ROI exceeds 400,000:1 even at maximum political investment.
 

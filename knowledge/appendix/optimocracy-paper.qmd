@@ -68,6 +68,8 @@ Optimocracy is simple:
 
 **Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to influence. Optimocracy consolidates these to a single target: the verification layer measuring health and wealth. Corrupting five independent data sources (Census Bureau, Federal Reserve, BLS, academic institutions, citizen surveys) requires coordination across institutions with different governance structures, funding sources, and methodologies. Corruption doesn't disappear; it just becomes prohibitively expensive.
 
+![A comparison between the current fragmented system of thousands of lobbyist capture points and Optimocracy’s consolidated verification layer protected by multiple independent data sources.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-this-works-bw-academic.jpg)
+
 **No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable).
 
 ## The Problem: Political Dysfunction Tax
@@ -406,7 +408,7 @@ Optimocracy collapses this attack surface to one target: **measurement methodolo
 
 ### Time Consistency
 
-Politicians face 2-6 year horizons; welfare-improving investments often take 15-30 years to pay off. The algorithm weights long-term outcomes appropriately because it doesn't face reelection. Automatic stabilizers (unemployment insurance, progressive taxation) already demonstrate this logic for fiscal policy.
+Politicians face 2-6 year horizons; welfare-improving investments often take 15-30 years to pay off. The algorithm weights long-term outcomes appropriately because it doesn't face reelection.
 
 ### Transparency
 
@@ -422,11 +424,15 @@ Politicians face 2-6 year horizons; welfare-improving investments often take 15-
 
 Current politics rewards tribal opposition. Optimocracy shifts the debate from "whose policy?" to "what works?" The algorithm doesn't know which party proposed the budget. You can't spin the Census Bureau as a Democratic or Republican institution. The number either went up or it didn't.
 
+![A comparison between tribal politics, which focuses on party identity, and Optimocracy, which focuses on objective data outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
+
 ## Challenges and Failure Modes
 
 ### Why Goodhart's Law Doesn't Apply Here
 
 "When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. Traditional Goodhart examples (teaching to test, hospital readmissions) involve gaming metrics *without improving underlying reality*.
+
+![A comparison between traditional metrics vulnerable to behavioral gaming and resilient metrics like median income and healthy life years, highlighting why certain data structures resist Goodhart's Law.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
 **Median income and healthy life years are different:** You can't fake purchasing power at scale; administrative records cross-validate surveys. Mortality is binary and hard to fake. "Median" resists outlier gaming. Long time horizons resist timing games.
 
@@ -455,6 +461,8 @@ If adversaries control the data feed, they control the allocation. This is the m
 
 **The concern:** "The algorithm decided" lacks the felt legitimacy of "we the people decided."
 
+![A conceptual diagram of the Optimocracy wrapper architecture, showing citizens at the top setting goals, politicians providing the decision-making 'wrapper' around algorithmic recommendations, and the resulting alignment with public health and wealth.](/assets/images/optimocracy-paper/optimocracy-paper-section-democratic-legitimacy-bw-academic.jpg)
+
 **The response:** Optimocracy is *more* democratic, not less. The current system offers ritual (voting) but delivers oligarchy (@gilens2014). Optimocracy delivers what citizens actually voted for: health and wealth.
 
 Politicians still decide everything. The algorithm only recommends. Citizens choose the goal; we already delegate implementation to the Fed and FDA. The wrapper architecture preserves representatives' authority completely while making their alignment with evidence visible.
@@ -462,6 +470,8 @@ Politicians still decide everything. The algorithm only recommends. Citizens cho
 For deeper engagement with democratic theory objections, see [Appendix B](#appendix-b-theoretical-background).
 
 ## Testable Predictions
+
+![A comparative visualization showing the predicted performance gains of Optimocracy over traditional allocation methods across philanthropic metrics, government welfare per dollar, and resilience to institutional capture.](/assets/images/optimocracy-paper/optimocracy-paper-section-testable-predictions-bw-academic.jpg)
 
 A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
 
@@ -517,74 +527,19 @@ This section develops the political economy of reform, distinguishing actors who
 
 ### The Coase Theorem Applied to Governance Reform
 
-@coase1960 showed that in the absence of transaction costs, parties will bargain to efficient outcomes regardless of initial property rights. The theorem suggests a strategy for governance reform:
+@coase1960 showed that in the absence of transaction costs, parties will bargain to efficient outcomes regardless of initial property rights. The theorem suggests a strategy for governance reform: if optimal policy generates $X in new value and those currently benefiting from suboptimal allocation would lose $Y where $X >> $Y, there exists a compensation scheme that makes everyone better off.
 
-**The insight:** If optimal policy generates $X in new value and those currently benefiting from suboptimal allocation would lose $Y where $X >> $Y, there exists a compensation scheme that makes everyone better off.
-
-**Formal statement:**
-
-Let $W^*$ be welfare under optimal policy and $W$ be welfare under current policy. Let $R$ be total rents extracted by current beneficiaries. If:
-
-$$
-W^* - W > R
-$$
-
-Then a transfer $T$ exists where $R < T < (W^* - W)$ such that:
-
-1. Reform beneficiaries gain $(W^* - W) - T > 0$
-2. Current rent-extractors receive $T > R$
-3. Everyone is better off
-
-**Application to Optimocracy:**
-
-- Estimated welfare gain from optimal policy: $20-50T annually (Section 2)
-- Estimated rents from suboptimal allocation: $2-5T annually (lobbying, regulatory capture, defense spending)
-- Available compensation budget: $5-15T (half the welfare gain)
-
-This arithmetic suggests reform can be structured so everyone wins. Even those currently benefiting from suboptimal allocation can be compensated and still leave money on the table.
-
-### A Taxonomy of Affected Parties
-
-| Actor Type | Definition | Relationship to Reform | IAB Role |
-|------------|------------|------------------------|----------|
-| **Productive Wealth Creators** | Wealth from innovation, entrepreneurship (~10-20K globally >$100M) | Net beneficiaries: bigger markets, longevity, reduced x-risk | None needed |
-| **Rent-Seekers** | Income from current allocation patterns (defense, pharma, lobbyists; ~$2-5T rents/year) | Losers unless compensated | Must be bought out |
-| **Politicians** | Those with allocation authority | Lose power but gain longevity, IAB support, legacy | Critical: alignment-based rewards |
+**The arithmetic:** Estimated welfare gain from optimal policy is $20-50T annually (Section 2). Estimated rents from suboptimal allocation are $2-5T annually. Even buying out all rent-seekers leaves $15-45T in surplus. This makes Coasean buyouts arithmetically feasible.
 
 ### IABs as the Coasean Buyout Mechanism
 
-Incentive Alignment Bonds (IABs) operationalize the Coasean insight. They create a market for political support:
+Incentive Alignment Bonds (IABs) operationalize this insight by creating a market for political support. The mechanism is detailed in [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd); in brief: IABs promise campaign support and career opportunities to politicians proportional to their alignment with evidence-based recommendations. Alignment is tracked via Optimocracy's recommendation/voting comparison. Politicians can follow donor preferences or follow evidence and receive IAB support. The scoring rules are transparent and published.
 
-**Mechanism:**
+A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from lobbying relationships. IAB campaign support plus high-status post-office positions for supporting optimal policy would dominate current incentives.
 
-1. **Reform coalition raises capital** from those who benefit from optimal policy
-2. **IABs are issued** promising campaign support and career opportunities to politicians proportional to their alignment with recommendations
-3. **Politicians support reform** because expected IAB benefits exceed expected lobbying-based career value
-4. **Alignment is tracked** via Optimocracy's recommendation/voting comparison
-5. **Rewards are delivered** proportional to alignment scores (campaign support during office; career opportunities after)
+### The Cost of Political Reform
 
-**Why this isn't corruption:**
-
-- Rewards (campaign support, career opportunities) are proportional to following public recommendations, not private favors
-- The scoring and support rules are transparent and disclosed
-- Voters can see exactly which recommendations politicians followed
-- The mechanism aligns private incentives with evidence-based policy
-
-**The math:**
-
-| Component | Estimate | Derivation |
-|-----------|----------|------------|
-| Annual welfare gain from optimal policy | $20-50T | Conservative aggregate from Section 2 ({{< var political_dysfunction_tax_total_pct >}} of ~$100T global GDP) |
-| Share available for buyouts (20%) | $4-10T | Assumed political economy constraint; untested |
-| Total rents to buy out | $2-5T | Sum of lobbying ($3.5B/yr), regulatory capture value, career incentives; order-of-magnitude estimate |
-| Surplus after buyouts | $2-5T | Residual = welfare gain × buyout share − rents |
-| Per-politician average (535 Congress) | $4-9M/year | ($2-5T) / 535 members; assumes equal distribution |
-
-These numbers are illustrative, not precise. The core claim: welfare gains from optimal policy vastly exceed the rents currently extracted, making Coasean buyouts arithmetically feasible. A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from current lobbying relationships. IAB campaign support plus guaranteed high-status post-office positions (foundation boards, think tank fellowships, advisory roles) for supporting optimal policy would dominate current incentives.
-
-### The Cost of Political Reform: Quantifying "Political Impossibility"
-
-Critics often dismiss governance reforms as "politically impossible." This objection treats political feasibility as binary rather than as a cost that can be quantified and compared to benefits. In a companion analysis (see [The Price of Political Change](https://cost-of-change.warondisease.org)), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
+Political feasibility is a cost, not a binary. In a companion analysis (see [The Price of Political Change](https://cost-of-change.warondisease.org)), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
 
 **US Political System Reform Investment (Maximum Scenarios):**
 
@@ -595,96 +550,40 @@ Critics often dismiss governance reforms as "politically impossible." This objec
 | Match full Congress career incentives (535 × ~$10M NPV)^[Post-Congress lobbying compensation averages 10-20× congressional salary [@thenation-revolving-door]; $174K × 15 × 10 years ≈ $10M NPV.] | $5.35B one-time |
 | **Total US maximum reform investment** | **~$25B** |
 
-**ROI Analysis:**
-
-For high-net-societal-value reforms like the 1% Treaty (redirecting 1% of military spending to health research), the ROI calculation illustrates the scale disparity:
-
-| Political Investment | Expected Benefits | Implied ROI |
-|---------------------|-------------------|-------------|
-| $25B (US maximum) | ~$2.5T NPV (conservative estimate of 1% Treaty benefits) | ~100:1 |
-| $200B (global maximum) | ~$25T NPV (global scale) | ~125:1 |
-
-Even with conservative assumptions about achievable welfare gains, the expected returns from political reform investment exceed typical philanthropic ROIs by 1-2 orders of magnitude. Political impossibility objections dissolve under quantitative scrutiny. The question is not "is change possible?" but "does the cost of achieving change exceed the value created?"
-
-Note: These figures are illustrative. Actual ROI depends on reform success probability, implementation fidelity, and measurement uncertainty. The key insight is that even heavily discounted estimates suggest political reform is dramatically underinvested relative to its expected value.
+For reforms like the 1% Treaty ($2.5T NPV conservative estimate), this implies ~100:1 ROI. Political reform is dramatically underinvested relative to its expected value.
 
 ### The Natural Reform Coalition
 
-Reform requires three groups working together:
-
-1. **Reform advocates** (philanthropists, effective altruists): Provide initial capital and legitimacy
-2. **Productive elites** (tech founders, innovative entrepreneurs): Provide anchor capital for IABs
-3. **Converted rent-seekers** (politicians accepting outcome-based compensation): Provide political support
-
-The arithmetic favors reform: welfare gains vastly exceed compensation costs, and rent-seekers in different sectors don't coordinate effectively. The question is whether reformers can coordinate faster than opposition can mobilize.
+Reform advocates provide initial capital and legitimacy; productive elites provide anchor capital for IABs; converted politicians provide political support. The arithmetic favors reform: welfare gains vastly exceed compensation costs.
 
 ## Implementation Pathway
 
+### Why Government Adoption Isn't Required
+
+Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
+
+![A conceptual diagram comparing the direct government adoption path with the wrapper architecture model, highlighting how IABs convert funding into economic pressure.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
+
+### Implementation Strategy
+
 **Optimocracy does not require government permission for private fund allocation.** The technology exists today. The strategy: **start private → demonstrate → scale**.
 
-### Implementation Phases
+- **Private Outcome Fund**: Deploy $10M+ for philanthropic capital, prove mechanism works
+- **Shadow Tracking**: Generate counterfactual "what would Optimocracy allocate?" to demonstrate outperformance
+- **Government Pilots**: Partner with reform-minded jurisdictions for limited-scope pilots
+- **Broader Adoption**: Scale through demonstrated success and competitive pressure
 
-| Phase | Objective | Success Metric |
-|-------|-----------|----------------|
-| **Private Outcome Fund** | Deploy for philanthropic capital, prove mechanism works | Fund allocating $10M+ with verifiable metric improvement |
-| **Shadow Tracking** | Generate counterfactual "what would Optimocracy allocate?" | Shadow budget demonstrably outperforms actual allocation |
-| **Government Pilots** | Partner with reform-minded jurisdictions for limited-scope pilots | 3+ jurisdictions running pilots with measurable welfare improvement |
-| **Broader Adoption** | Scale through demonstrated success and competitive pressure | Major jurisdiction adopts for significant budget share |
-
-The bottleneck is not technology. Published algorithmic rules, independent verification through existing institutions, and transparent governance frameworks are production-ready. The bottleneck is coordination: assembling capital, coalition members, and governance structures.
-
-### Realistic Adoption Path
-
-Mass participation follows demonstrated results, not precedes them. Index funds started with institutional adoption, not retail investors. Formula-based programs like Social Security COLA were designed by policymakers, not referendums. Optimocracy will likely follow the same pattern:
-
-1. **Elite adoption**: 20-50 aligned foundations and high-net-worth individuals fund proof-of-concept
-2. **Demonstrated results**: Transparent outcome tracking shows the mechanism works
-3. **Broader legitimacy**: Success attracts mainstream foundations and impact investors
-4. **Mass participation**: Eventually, retail participation becomes viable
-
-Starting small is a feature, not a bug: a $10M outcome fund with 50 committed participants can experiment, fail fast, and improve before scaling.
+The bottleneck is not technology. The bottleneck is coordination: assembling capital, coalition members, and governance structures. Starting small is a feature: a $10M outcome fund with 50 committed participants can experiment, fail fast, and improve before scaling.
 
 ### Concrete First Deployment: The GiveWell Outcome Fund
 
 We propose a specific first deployment to make Optimocracy actionable rather than theoretical.
 
-**Target domain:** Effective altruism / global health philanthropy
+**Target domain:** Effective altruism / global health philanthropy. Why: GiveWell already produces rigorous QALY/$ estimates, the EA community is philosophically committed to outcome optimization, mortality data is increasingly reliable, and the community allocates $1B+ annually.
 
-**Why this domain:**
-- Pre-existing infrastructure: GiveWell and similar organizations already produce rigorous QALY/$ and lives-saved/$ estimates
-- Aligned stakeholders: EA community is philosophically committed to outcome optimization over lobbying-driven judgment
-- Clear metric: Lives saved per dollar, QALYs generated per dollar
-- Verifiable outcomes: Mortality data in intervention countries is increasingly reliable
-- Scale: EA community allocates $1B+ annually; sufficient to demonstrate proof of concept
+**Proposed structure:** Nonprofit foundation with algorithmic allocation rules, $10-50M initial capital from aligned foundations, maximizing expected QALYs verified by GiveWell evaluations + academic verification + randomized outcome audits. Stakeholder input on methodology; algorithm execution is automatic.
 
-**Proposed structure:**
-
-| Component | Specification |
-|-----------|---------------|
-| **Legal entity** | Nonprofit foundation with algorithmic allocation rules |
-| **Initial capital** | $10-50M from aligned foundations and major EA donors |
-| **Metric** | QALYs per dollar, verified by independent health economists |
-| **Verification** | GiveWell evaluations + academic verification + randomized outcome audits |
-| **Allocation algorithm** | Maximize expected QALYs subject to diversification constraints |
-| **Governance** | Stakeholder input on methodology and constraints; algorithm execution is automatic |
-
-**Success criteria (Year 1-3):**
-1. Achieve measurably higher QALY/$ than comparable traditional foundations
-2. Demonstrate transparent, auditable allocation without capture
-3. Attract additional capital based on demonstrated performance
-4. Generate replicable model for other domains
-
-**Why start here:**
-
-GiveWell already functions as a verification system for global health interventions. The EA community already optimizes for measurable outcomes. This deployment is Optimocracy with minimal new infrastructure, primarily adding algorithmic allocation and transparent tracking to existing evaluation frameworks.
-
-Success here provides proof-of-concept for progressively harder domains: US healthcare allocation, infrastructure spending, research funding, and eventually general government budgets.
-
-### Why Government Adoption Isn't Required
-
-The implementation phases above present government adoption as the goal. But there's a cleaner architecture: **Optimocracy as a permanent advisory layer, with IABs making its recommendations expensive to ignore.** (See The Wrapper Architecture section for the full mechanism.)
-
-Government "adoption" of Optimocracy would be nice, but it's not necessary. The wrapper architecture achieves most of the benefits without requiring politicians to voluntarily surrender control. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
+**Success criteria (Year 1-3):** Achieve measurably higher QALY/$ than comparable traditional foundations, demonstrate transparent allocation without capture, attract additional capital, and generate replicable model for progressively harder domains (US healthcare allocation, infrastructure spending, research funding).
 
 ## Conclusion
 
@@ -708,20 +607,11 @@ The urgency grows with each passing year. Deepfakes are eroding the shared factu
 
 ## Appendix A: Technical Specification Sketch
 
-### Verification System Specification
-
-Verification systems must provide:
-
-1. **Metric value**: Current measured value of optimization target
-2. **Confidence interval**: Uncertainty bounds on measurement
-3. **Timestamp**: When measurement was taken
-4. **Methodology documentation**: Published commitment to measurement methodology
-
-Multiple verification sources are aggregated using the median to resist manipulation by any single source.
-
 ### Budget and Policy Optimization: Two Complementary Frameworks
 
 Optimocracy optimizes governance through two complementary mechanisms, each addressing a different aspect of the welfare-maximization problem.
+
+![A conceptual diagram showing how Budget and Policy Optimization serve as the two pillars of the Optimocracy framework to achieve welfare maximization.](/assets/images/optimocracy-paper/optimocracy-paper-section-budget-and-policy-optimization-two-complementary-frameworks-bw-academic.jpg)
 
 #### Budget Optimization: The Optimal Budget Generator (OBG) Framework
 
@@ -823,15 +713,6 @@ Any honest assessment of algorithmic governance must acknowledge potential failu
 | **Administrative compromise** | Capturing upgrade or amendment authority | Multi-party approval, time-locks, transparency requirements | Medium: key management remains hard |
 | **Implementation errors** | Software bugs leading to unintended behavior | Code audits, gradual deployment, bug bounties | Medium: novel variants emerge |
 
-#### Why "Immutable Rules" Are Insufficient
-
-The naive view that immutable algorithmic rules eliminate discretion ignores:
-
-1. **Deployment discretion**: Someone chooses the initial parameters, metric definitions, and verification sources
-2. **Upgrade mechanisms**: Production systems require bug fixes; upgrade authority creates capture risk
-3. **Real-world dependencies**: Execution (disbursing funds to researchers) requires trusted intermediaries
-4. **Legal layer**: States can mandate changes, freeze assets, or prosecute operators regardless of rules
-
 #### Realistic Security Properties
 
 Optimocracy does not claim to eliminate all governance risk. It claims to:
@@ -858,6 +739,8 @@ Production Optimocracy systems should implement:
 
 This appendix provides deeper theoretical context for readers interested in the academic foundations and historical precedents. The main text presents the mechanism; this appendix addresses why alternative approaches have failed and engages with theoretical objections.
 
+![A conceptual framework comparing the proposed mechanism with alternative historical approaches and theoretical foundations.](/assets/images/optimocracy-paper/optimocracy-paper-section-appendix-b-theoretical-background-appendix-bw-academic.jpg)
+
 ### Historical Precedents: Technocratic Governance Failures
 
 #### Soviet Central Planning
@@ -867,6 +750,8 @@ The Soviet system attempted comprehensive optimization: central planners would c
 1. **Knowledge problem** [@hayek1945]: Planners lacked the distributed information that prices aggregate in markets.
 2. **Incentive problem**: Planners had no personal stake in outcomes and faced perverse incentives.
 3. **Scope problem**: Central planning attempted to optimize *everything*, including decisions where local knowledge is essential.
+
+![A comparison between Soviet Central Planning, which manages all market production, and Optimocracy, which provides algorithmic recommendations for budgets and policy while leaving production to the market.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
 
 **Why Optimocracy differs:** Optimocracy doesn't replace markets or local decision-making. It optimizes *budget allocation* and *policy recommendations* where centralized data is sufficient, while preserving market mechanisms for production decisions. The algorithm recommends; politicians and markets decide.
 
@@ -880,11 +765,15 @@ Credit ratings were supposed to be objective, algorithmic assessments of default
 
 **What Optimocracy learns:** Use median aggregation across multiple independent sources with different governance structures. No single entity controls measurement.
 
+![A conceptual diagram contrasting the centralized conflict of interest in traditional credit rating models with the decentralized median aggregation approach.](/assets/images/optimocracy-paper/optimocracy-paper-section-credit-rating-agencies-1990s-2008-bw-academic.jpg)
+
 ### Engaging with Impossibility Theorems
 
 #### Arrow and Gibbard-Satterthwaite
 
 @arrow1951 proved no voting rule perfectly aggregates conflicting preferences. @gibbard1973 showed any voting rule can be strategically gamed.
+
+![A comparison showing the shift from a Social Choice Problem where goals are contested to an Implementation Problem where goals are shared but measurement is the primary challenge.](/assets/images/optimocracy-paper/optimocracy-paper-section-arrow-and-gibbard-satterthwaite-bw-academic.jpg)
 
 **Why these don't apply:** Health and wealth are not contested values in the Arrow sense. They are near-universal instrumental goods. Nobody campaigns on "Vote for me, I'll make you sicker and poorer." The debate is always about *how* to achieve health and wealth, never *whether* they're good.
 
