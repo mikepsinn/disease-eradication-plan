@@ -524,7 +524,6 @@ SYMBOLS = {
     "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED": r"Cost_{camp,amort}",  # FIXED
     "TREATY_CAMPAIGN_BUDGET_LOBBYING": r"Budget_{lobby,treaty}",  # FIXED
     "TREATY_CAMPAIGN_BUDGET_RESERVE": r"Budget_{reserve}",  # FIXED
-    "TREATY_CAMPAIGN_BUDGET_SUPER_PACS": r"Budget_{PAC,treaty}",  # FIXED
     "TREATY_CAMPAIGN_DURATION_YEARS": r"T_{campaign}",  # FIXED
     "TREATY_CAMPAIGN_TOTAL_COST": r"Cost_{campaign}",  # FIXED
     "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE": r"Budget_{viral,base}",  # FIXED

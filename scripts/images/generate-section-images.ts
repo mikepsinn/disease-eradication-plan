@@ -175,6 +175,47 @@ function isStructuralSection(title: string): boolean {
 }
 
 /**
+ * Check if a line index is inside a code block
+ * Returns the line index of the closing ``` if inside, or -1 if not
+ */
+function findCodeBlockEnd(lines: string[], lineIndex: number, sectionStart: number, sectionEnd: number): number {
+  let inCodeBlock = false;
+  let codeBlockEnd = -1;
+
+  for (let i = sectionStart; i < sectionEnd && i < lines.length; i++) {
+    const line = lines[i].trim();
+
+    // Check for code block markers (``` or ```{python} etc.)
+    if (line.startsWith('```')) {
+      if (!inCodeBlock) {
+        // Entering a code block
+        inCodeBlock = true;
+      } else {
+        // Exiting a code block
+        inCodeBlock = false;
+        if (i >= lineIndex) {
+          // We found the end of a code block that contains our target line
+          return -1; // lineIndex is not in a code block anymore
+        }
+      }
+    }
+
+    // If we've passed the target line and we're still in a code block, find where it ends
+    if (i === lineIndex && inCodeBlock) {
+      // Continue to find the end
+      for (let j = i + 1; j < sectionEnd && j < lines.length; j++) {
+        if (lines[j].trim().startsWith('```')) {
+          return j; // Return line after code block ends
+        }
+      }
+      return sectionEnd; // Code block never closes in this section
+    }
+  }
+
+  return -1; // Not inside a code block
+}
+
+/**
  * Convert section title to kebab-case for use in filenames
  */
 function toKebabCase(text: string): string {
@@ -395,26 +436,49 @@ ${contentForImage}`;
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const lines = fileContent.split('\n');
 
-    // Find where to insert the image (after the section heading, before first paragraph ends)
+    // Find where to insert the image (after the section heading, outside code blocks)
     // Insert after the first complete paragraph in the section
     let insertLine = section.startLine + 1;
+
+    // Track code block state while scanning
+    let inCodeBlock = false;
 
     // Skip to end of first paragraph (find blank line or next content)
     for (let i = section.startLine + 1; i < section.endLine; i++) {
       const line = lines[i].trim();
 
+      // Track code blocks - don't insert inside them
+      if (line.startsWith('```')) {
+        inCodeBlock = !inCodeBlock;
+        continue;
+      }
+
+      // Skip if we're inside a code block
+      if (inCodeBlock) continue;
+
       // Skip blank lines at start
       if (line === '') continue;
 
-      // Found content - look for end of this paragraph
+      // Found content outside code block - look for end of this paragraph
       for (let j = i + 1; j < section.endLine; j++) {
         const nextLine = lines[j].trim();
+
+        // Track code blocks in inner loop too
+        if (nextLine.startsWith('```')) {
+          inCodeBlock = !inCodeBlock;
+          continue;
+        }
+
+        // Skip if inside code block
+        if (inCodeBlock) continue;
 
         // End of paragraph (blank line) or end of section
         if (nextLine === '' || j === section.endLine - 1) {
           // Check if current line ends properly (sentence end, not colon/list start)
           const prevLine = lines[j - 1].trim();
-          if (prevLine.endsWith('.') || prevLine.endsWith('!') || prevLine.endsWith('?') || prevLine.endsWith('"')) {
+          // Also make sure previous line isn't inside a code block or a code fence
+          if (!prevLine.startsWith('```') &&
+              (prevLine.endsWith('.') || prevLine.endsWith('!') || prevLine.endsWith('?') || prevLine.endsWith('"'))) {
             insertLine = j;
             break;
           }
@@ -426,6 +490,14 @@ ${contentForImage}`;
         }
       }
       break;
+    }
+
+    // Final safety check: verify insertLine is not inside a code block
+    const codeBlockEnd = findCodeBlockEnd(lines, insertLine, section.startLine, section.endLine);
+    if (codeBlockEnd !== -1) {
+      // We're inside a code block, move to after it
+      insertLine = codeBlockEnd + 1;
+      console.log(`  [INFO] Moved insertion point to after code block (line ${insertLine + 1})`);
     }
 
     // Build image markdown
