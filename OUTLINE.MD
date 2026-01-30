@@ -1571,12 +1571,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,063
+**Files:** 1 | **Words:** 3,064
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,063 words | 406 lines
+**Stats:** 3,064 words | 406 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1604,7 +1604,7 @@
     - Who Can Afford What
     - ROI Comparison
     - Why This Is Rational for Funders
-  - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
+  - Case Study: Military-to-Pragmatic Clinical Trial Reallocation (1% Treaty)
     - Other Policy Domains
   - Limitations
   - Conclusion
@@ -1940,12 +1940,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,638
+**Files:** 1 | **Words:** 16,587
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,638 words | 1,520 lines
+**Stats:** 16,587 words | 1,505 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -2021,12 +2021,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 6,735
+**Files:** 1 | **Words:** 6,733
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 6,735 words | 749 lines
+**Stats:** 6,733 words | 749 lines
 
   - The Short Version
   - Abstract
@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 332,389
+**Files:** 86 | **Words:** 332,696
 
 #### index.qmd
 **Title:** Start Here
@@ -2515,7 +2515,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,414 words | 475 lines
+**Stats:** 3,161 words | 390 lines
 
   - The Objective: Total Disease Eradication
     - Why Current Systems Fail
@@ -2527,27 +2527,21 @@
     - Three Core Functions
   - The Core Innovation: Pay for Results
     - The Data Commons: Publish Everything
-  - Governance Modules: Wishocracy + Optimocracy
-    - Wishocracy: Aggregating Preferences
-    - Optimocracy: Maximizing the Metric
-    - Why Both Are Needed
+  - Governance: Market Mechanism + Wishocracy
   - The Incentive Stack: Making ROI the Selfish Choice
     - How Researchers Get Paid
     - How Politicians Get Aligned
   - How the Money Flows
     - The Architecture
     - The Fund Flow
-    - How Allocation Works
     - What Gets Funded: Market Failures Only
   - What DIH Outsources (and Why)
   - How Campaigns Plug In
     - Campaign Lifecycle
-    - Why This Matters
   - Anti-Capture Design
     - How DIH Resists Capture
     - The "New FDA" Risk
     - Security Architecture: Multi-Layered Defense
-    - Transparent by Default
     - Beyond Medical Research
   - Summary: The Coordination Layer
 
@@ -2669,7 +2663,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 3,060 words | 453 lines
+**Stats:** 3,066 words | 453 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - Their Current Business Model (It's Actually Terrible)
@@ -2726,7 +2720,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** A new financial instrument for aligning political incentives with public goods
-**Stats:** 8,935 words | 1,067 lines
+**Stats:** 8,939 words | 1,067 lines
 
   - A Novel Approach to Political Economy
     - The Core Problem: Good Ideas Die in Committee
@@ -3202,7 +3196,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 2,839 words | 265 lines
+**Stats:** 3,195 words | 292 lines
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     - Step 1: Collect Papers from Rich People
@@ -3737,7 +3731,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 1,985 words | 213 lines
+**Stats:** 2,209 words | 240 lines
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -3835,7 +3829,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,638 words | 1,520 lines
+**Stats:** 16,587 words | 1,505 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -3909,7 +3903,7 @@
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,063 words | 406 lines
+**Stats:** 3,064 words | 406 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -3937,7 +3931,7 @@
     - Who Can Afford What
     - ROI Comparison
     - Why This Is Rational for Funders
-  - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
+  - Case Study: Military-to-Pragmatic Clinical Trial Reallocation (1% Treaty)
     - Other Policy Domains
   - Limitations
   - Conclusion
@@ -4001,7 +3995,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,187 words | 872 lines
+**Stats:** 8,184 words | 872 lines
 
   - The Mechanism
     - Why This Works
@@ -4070,7 +4064,7 @@
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,335 words | 1,964 lines
+**Stats:** 13,333 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4468,7 +4462,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,323 words | 219 lines
+**Stats:** 1,321 words | 219 lines
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: {{< var treaty_annual_funding >}}/Year
@@ -5951,7 +5945,7 @@
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 6,735 words | 749 lines
+**Stats:** 6,733 words | 749 lines
 
   - The Short Version
   - Abstract
@@ -6011,7 +6005,7 @@
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments a...
-**Stats:** 3,237 words | 556 lines
+**Stats:** 3,266 words | 559 lines
 
   - Executive Summary
   - Historical Data Sources
@@ -6800,12 +6794,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,335
+**Files:** 1 | **Words:** 13,333
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,335 words | 1,964 lines
+**Stats:** 13,333 words | 1,964 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -6951,12 +6945,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,187
+**Files:** 1 | **Words:** 8,184
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,187 words | 872 lines
+**Stats:** 8,184 words | 872 lines
 
   - The Mechanism
     - Why This Works
@@ -7073,7 +7067,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 5 | **Words:** 8,128
+**Files:** 5 | **Words:** 8,126
 
 #### index.qmd
 **Title:** Wishocracy
@@ -7154,7 +7148,7 @@
 #### knowledge/test/test-economics.qmd
 **Title:** Test Economics Document
 **Description:** PAGE-LEVEL DESCRIPTION: This is the description from the QMD file frontmatter that should be used for og:description meta tag
-**Stats:** 338 words | 67 lines
+**Stats:** 336 words | 67 lines
 
 - Introduction
   - Link Test Cases
@@ -7361,6 +7355,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 531,714
+- Total words: 531,962
 - Orphaned files: 20
 - Paper configs: 12

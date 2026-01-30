@@ -70,6 +70,9 @@ This one touches military budgets - the sacred cow of national sovereignty. Gove
 Signing the treaty: ~$90M.
 What the treaty unlocks: {{< var treaty_annual_funding >}}/year. Forever.
 
+![A cost-benefit visualization comparing the $90M one-time treaty cost to the $27.2B recurring annual benefit, highlighting the 300:1 return on investment.](/assets/images/treaty-feasibility/treaty-feasibility-section-the-math-bw-academic.jpg)
+
+
 The diplomatic process costs ~0.3% of a single year's funding. Three days of the future annual flow. You're buying a {{< var treaty_annual_funding >}}/year annuity for $90M. That's a 300:1 return on paperwork.
 
 ## How to Make Governments Sign Things
@@ -78,6 +81,9 @@ Politicians move when they see (a) voters demanding it and (b) political safety.
 
 1. **Prove public demand**: Get 3.5% of the population [@3-5-rule] (280M people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that every nonviolent campaign [@3-5-rule] with 3.5%+ participation succeeded. That's not activism - that's a mandate. Hard to ignore 280 million verified humans.
 2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover. Give them studies to wave around.
+
+![A strategic framework showing how the combination of 3.5% public demand and peer-reviewed economic safety models creates the necessary conditions for political mandates.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
+
 
 ### Timeline to "Governments Can't Ignore This"
 
@@ -89,6 +95,9 @@ With ~$60M in seed funding, we can reach "Treaty-Ready" status in **2–3 years*
 
 Once these assets exist, formal negotiations become inevitable.
 
+![A strategic roadmap showing the 2-3 year progression from seed funding through three core pillars (Platform, Modeling, and Coalition) to achieve Treaty-Ready status and formal negotiations.](/assets/images/treaty-feasibility/treaty-feasibility-section-timeline-to-governments-can-t-ignore-this-bw-academic.jpg)
+
+
 ## Conclusion
 
 We aren't trying to buy the treaty. We are buying the **machinery** that makes the treaty inevitable. And that machinery costs about $90M, a rounding error compared to the $140 Trillion/year problem we are solving.
@@ -96,6 +105,9 @@ We aren't trying to buy the treaty. We are buying the **machinery** that makes t
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
 For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
+
+![A comparison of cost-effectiveness showing that the proposed intervention is 503 times more cost-effective than malaria bed nets, even with a low 1% probability of success.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economic-analysis-sec-political-success-probability-bw-academic.jpg)
+
 
 Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.
 
@@ -120,6 +132,9 @@ Even at {{< var political_success_probability >}} probability of success, this i
 5. **Coordination problem**: Benefits require critical mass of participants
 
 ### Why a 1% Treaty Might Beat the Odds
+
+![A conceptual map showing the five strategic drivers (financial, political, legal, moral, and social) that support the adoption of a 1% global health treaty.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-a-1-treaty-might-beat-the-odds-bw-academic.jpg)
+
 
 1. **Self-funding mechanism**: Creates health dividends that exceed the "cost"
 2. **Bipartisan appeal**: Health spending polls better than military across political spectrum
@@ -148,6 +163,9 @@ This is deliberately conservative. An economist reviewing our expected value cal
 
 ### Expected Value Implications
 
+![A visualization of the asymmetric risk-reward profile comparing the intervention's expected value at a 1% success rate against bed nets, showing the capped downside versus the massive potential ROI.](/assets/images/treaty-feasibility/treaty-feasibility-section-expected-value-implications-bw-academic.jpg)
+
+
 At {{< var political_success_probability >}} probability of success:
 
 - **Expected ROI**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}} (still positive)
@@ -161,6 +179,9 @@ The intervention remains economically justified even assuming a 99% chance of fa
 ## Why The Treaty Won't Stop at 1%
 
 Most international commitments stagnate after initial signing. The table above shows 0.7% ODA targets unmet for 50+ years, Kyoto Protocol abandoned, Paris Agreement goals missed. Why expect different from a 1% health treaty?
+
+![A flowchart illustrating the 'scaling engine' where 10% of treaty funding is directed into Incentive Alignment Bonds to drive political incentives and treaty expansion.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-the-treaty-won-t-stop-at-1-bw-academic.jpg)
+
 
 **Because we've built a scaling engine into the mechanism.**
 
@@ -179,6 +200,9 @@ The [80/10/10 funding structure](../solution/incentive-alignment-bonds.qmd) allo
 
 **0.7% ODA failed** because there was no financial mechanism incentivizing expansion. The NGOs pushing for compliance have small budgets and compete with each other.
 
+![A comparison between the traditional NGO-led treaty model and an investor-driven model where financial incentives create a self-reinforcing growth loop.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-this-differs-from-stagnant-treaties-bw-academic.jpg)
+
+
 **The 1% health treaty creates its own expansion lobby** - bond holders who profit when the treaty expands to 2%, then 5%, then 10%. These aren't activists who can be ignored. They're investors with returns tied to treaty growth.
 
 ### The Ratchet Effect
@@ -194,6 +218,9 @@ This is the opposite of typical treaties where political momentum fades after si
 ### Long-Term Feasibility
 
 The $90M campaign gets the 1% treaty signed. But the real question isn't "Can we get 1%?" - it's "Can we eventually redirect most military spending to health?"
+
+![A comparison of two paths: one where the 1% treaty stagnates without a scaling mechanism, and another where Incentive Alignment Bonds create a self-reinforcing flywheel that expands funding toward $2.7 trillion.](/assets/images/treaty-feasibility/treaty-feasibility-section-long-term-feasibility-bw-academic.jpg)
+
 
 With IABs: Yes. The {{< var iab_political_incentive_funding_pct >}} allocation creates a perpetual political engine that makes expansion inevitable once the initial treaty passes. Each percentage point adds more fuel to the engine.
 

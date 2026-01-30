@@ -22,6 +22,8 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 
 The goal is simple: **eliminate all disease**.
 
+![A comparison between the current system's focus on administrative overhead and an optimized system focused on direct research and disease eradication.](/assets/images/dih/dih-section-the-objective-total-disease-eradication-bw-academic.jpg)
+
 The constraint is also simple: **resources are scarce**.
 
 This creates an optimization problem. With limited money, time, and talent, how do you maximize progress toward eradication? Every dollar spent on a low-impact trial is a dollar not spent on a high-impact one. Every researcher writing grant applications is a researcher not curing cancer. Every patient excluded from trials is data we don't collect.
@@ -49,6 +51,8 @@ A decentralized institute of health (DIH) is an alternative design that optimize
 
 Economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**.
 
+![A comparison between the 'Diffuse Model' of disease research where benefits are spread thin and the 'Concentrated Model' of the military-industrial complex, illustrating how DIH aligns stakeholders to replicate defense-style success in health.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
+
 Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits a few thousand pharmaceutical executives a lot. The executives show up to lobby. The 8 billion don't. This is why we've spent 50 years "fighting cancer" while the defense industry got stealth bombers, aircraft carriers, and GPS.
 
 The military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. The result: the most powerful military in human history.
@@ -73,7 +77,7 @@ The solution was SHAEF: Supreme Headquarters Allied Expeditionary Force. Eisenho
 | Individual armies (US, UK, etc.) | Research institutions, pharma, patient groups |
 | Theaters of operation | Disease areas (cancer, aging, infectious disease) |
 | D-Day (unified objective) | Total disease eradication |
-| Resource allocation across fronts | [Wishocracy](wishocracy.qmd) + [Optimocracy](../appendix/optimocracy-paper.qmd) allocation |
+| Resource allocation across fronts | Patient subsidies (market mechanism) + infrastructure governance |
 | Intelligence sharing | Open data commons, mandatory publication |
 | Combined Chiefs of Staff | Algorithmic governance, no single commander to corrupt |
 
@@ -84,6 +88,8 @@ Similarly, DIH doesn't replace existing institutions. Pharma companies remain ph
 ### Why This Framing Matters
 
 The war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes.
+
+![A conceptual comparison showing the current fragmented landscape of medical research with siloed stakeholders versus a unified ecosystem coordinated by a central infrastructure layer.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
 
 - Researchers compete for grants instead of collaborating on cures
 - Pharma companies duplicate efforts and hide failures
@@ -96,6 +102,8 @@ Imagine if D-Day had been run this way. The Americans land at one beach, the Bri
 That's the current war on disease. DIH is the coordination layer that turns scattered skirmishes into a unified campaign.
 
 ## DIH: The ROI Maximization Protocol
+
+![A conceptual diagram showing the DIH protocol as a central coordination hub that aligns funding, researchers, patients, and resources toward the unified goal of disease eradication.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
 
 A DIH is not a platform. It's not an organization. It's a **coordination protocol** with one function:
 
@@ -113,15 +121,19 @@ This means:
 A DIH does exactly three things:
 
 1. **Receive funds** (from the [1% Treaty](1-percent-treaty.qmd), donations, etc.)
-2. **Allocate to maximum-impact uses** (via [Wishocracy](wishocracy.qmd) + [Optimocracy](../appendix/optimocracy-paper.qmd))
+2. **Allocate research via patient subsidies** (market mechanism) and **infrastructure via [Wishocracy](wishocracy.qmd)**
 3. **Verify results and pay proportional to impact**
 
 Everything operational is outsourced. Trial infrastructure? That's [dFDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
+
+![A conceptual architecture showing the DIH as a thin protocol core that receives and allocates funds while outsourcing operational tasks like trial infrastructure and talent matching to external services.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
 Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes.
 
 ::: {.callout-note icon=false}
 ## The Core Innovation: Pay for Results
+
+![A visual comparison showing how funding flows toward tangible outcomes like patient enrollment and successful results, while being restricted for administrative tasks like grant writing.](/assets/images/dih/dih-section-the-core-innovation-pay-for-results-bw-academic.jpg)
 
 Every dollar flows based on results, not promises:
 
@@ -139,6 +151,8 @@ This is how most other industries work. You pay contractors when they build the 
 
 The current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Scientists waste billions repeating mistakes someone else already made.
 
+![A conceptual diagram contrasting the current siloed research environment with the DIH Data Commons model, showing how disparate results flow into a central open repository for AI-driven analysis.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
+
 DIH requires **100% open publication** of all data, positive and negative, as a condition of funding:
 
 - Every trial, every result, every dataset published
@@ -147,52 +161,13 @@ DIH requires **100% open publication** of all data, positive and negative, as a 
 
 This is intelligence sharing in the SHAEF analogy. The Allies won partly because they shared Ultra intercepts across commands. The war on disease loses because everyone guards their failures like trade secrets. A group chat where everyone shares what didn't work, except the group is humanity and the topic is death prevention.
 
-## Governance Modules: Wishocracy + Optimocracy
+## Governance: Market Mechanism + Wishocracy
 
-A DIH answers two questions:
+DIH uses two allocation mechanisms:
 
-1. **What should we fund?** (preferences)
-2. **How do we maximize the chosen metric?** (optimization)
+- **Patient subsidies (market mechanism):** Research funding follows patient choice. Patients enroll in trials they believe in; funding flows accordingly. Variable subsidy rates ensure rare diseases remain viable. No committees decide "cancer vs Alzheimer's."
 
-These are handled by two governance modules.
-
-### Wishocracy: Aggregating Preferences
-
-[Wishocracy](wishocracy.qmd) answers "what should we fund?" through pairwise comparisons. Millions of people make simple choices:
-
-- "What's more important: Cancer research or Alzheimer's research?"
-- "What's more important: Rare disease trials or infrastructure?"
-
-An algorithm aggregates these preferences into funding allocations. No committees. No lobbying. Just distributed intelligence pointed at priorities.
-
-### Optimocracy: Maximizing the Metric
-
-[Optimocracy](../appendix/optimocracy-paper.qmd) answers "how do we maximize the chosen metric?" Once Wishocracy identifies that "reducing cancer deaths" is a priority, Optimocracy determines the optimal allocation:
-
-- Which cancer research approaches have the highest expected ROI?
-- How should funding split between basic research, clinical trials, and implementation?
-- What's the cost-effectiveness threshold for continued funding?
-
-Optimocracy uses evidence-based recommendations from:
-
-- Reference country benchmarking
-- Diminishing returns modeling
-- Cost-effectiveness analysis
-- Prediction markets
-
-The output is a recommended allocation. Humans (via Wishocracy voting) decide whether to accept it. But deviations are tracked publicly, creating accountability.
-
-### Why Both Are Needed
-
-| Question | Tool | Example |
-|:---------|:-----|:--------|
-| What do we value? | Wishocracy | "Prioritize rare diseases over common ones" |
-| How do we achieve it? | Optimocracy | "Fund these 5 rare disease trials with these allocations" |
-
-Wishocracy without Optimocracy: You know what you want but not how to get it.
-Optimocracy without Wishocracy: You optimize but for metrics nobody agreed on.
-
-Together: Democratic goal-setting + evidence-based execution.
+- **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). See the [dedicated page](wishocracy.qmd) for details.
 
 ## The Incentive Stack: Making ROI the Selfish Choice
 
@@ -200,7 +175,7 @@ DIH doesn't rely on altruism. It **pays everyone to do the highest-ROI thing**.
 
 | Actor | Self-Interest | DIH Incentive | ROI Alignment |
 |:------|:--------------|:--------------|:--------------|
-| **Researchers** | Money, prestige | Bounties scale with impact | Higher-impact work = more money |
+| **Researchers** | Money, prestige | Per-patient subsidies (higher for rare diseases) | Attract patients = get paid |
 | **Patients** | Health, compensation | Subsidies scale with trial importance | Joining high-priority trials = more paid |
 | **Politicians** | Re-election, legacy | [IABs](incentive-alignment-bonds.qmd) tied to disease outcomes | Better outcomes = bigger bonus |
 | **Funders** | Impact, returns | Quadratic matching, outcome tracking | High-ROI donations = amplified impact |
@@ -215,11 +190,9 @@ Traditional system: Write a grant proposal. Hope a committee likes it. Get paid 
 
 DIH system:
 
-1. **Per-patient funding:** The more patients who believe in your trial enough to join, the more funding you get.
-2. **Outcome bounties:** Massive prizes for solving big problems (e.g., "$1 billion to the first team to reverse aging by 10 years").
+1. **Per-patient subsidies:** The more patients who believe in your trial enough to join, the more funding you get. Subsidies are paid per enrolled patient.
+2. **Variable subsidy rates:** Rare diseases and high-unmet-need conditions receive higher per-patient subsidies, making them economically viable despite smaller patient pools.
 3. **Results-based continuation:** Deliver results, get more funding. Don't deliver, get defunded.
-
-In the NIH, you get rich by writing proposals. In DIH, you get rich by curing diseases.
 
 **Single-sentence summary:** Pay scientists like you pay plumbers: for fixing the problem, not for explaining why it's hard.
 
@@ -227,7 +200,9 @@ In the NIH, you get rich by writing proposals. In DIH, you get rich by curing di
 
 Politicians optimize for reelection, status, and post-office careers. Not "humans continuing to exist."
 
-[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve this by making "support health spending" the career-optimal move:
+![A conceptual diagram showing how voting records translate into Public Good Scores, which then trigger electoral support and post-office career opportunities.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
+
+[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve this by making "support pragmatic clinical trial funding" the career-optimal move:
 
 - **Public Good Scores** track voting records on health policy
 - **Electoral support** flows to high-scorers via independent PACs
@@ -244,7 +219,7 @@ No bribes. No corruption. Just a standing rule: if you support policies that mea
 **The [1% Treaty Fund](1-percent-treaty.qmd):**
 
 - Holds the treasury (from the [1% Treaty](1-percent-treaty.qmd))
-- Handles ALL budgeting decisions via [Wishocracy](wishocracy.qmd)
+- Allocates between infrastructure and public goods via [Wishocracy](wishocracy.qmd)
 - Funds campaigns, not bureaucracies
 - No CEO, no board, no one to corrupt
 
@@ -252,7 +227,7 @@ No bribes. No corruption. Just a standing rule: if you support policies that mea
 
 - A thin coordination protocol
 - Receives funding *from* the 1% Treaty Fund
-- Allocates via Wishocracy + Optimocracy
+- Research allocation via patient subsidies (market mechanism)
 - Verifies results, pays for outcomes
 
 **The [Decentralized Framework for Drug Assessment (dFDA)](dfda.qmd):**
@@ -270,37 +245,7 @@ A [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}
 |:-----------|:------|:-------|:--------|
 | [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
-| **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Allocated via Wishocracy |
-
-### How Allocation Works
-
-**1. Anyone Can Propose a Campaign**
-
-Submit a proposal: "Fund Alzheimer's research at $X/year" or "Build trial infrastructure for $Y."
-
-**2. Humanity Allocates via Wishocracy**
-
-The global population uses [Wishocracy](wishocracy.qmd) to allocate funds across competing campaigns:
-
-- "What's more important: Cancer research or aging reversal?"
-- "What's more important: EHR integration or security audits?"
-
-Millions of pairwise preferences aggregated into funding allocations.
-
-**3. Optimocracy Recommends Specifics**
-
-Within each priority area, [Optimocracy](../appendix/optimocracy-paper.qmd) recommends optimal allocations based on cost-effectiveness analysis.
-
-**4. Campaigns Compete for Funding**
-
-- **Patient subsidies:** Automatically funded (formulaic, {{< var dih_treasury_trial_subsidies_pct >}} of treasury)
-- **Infrastructure campaigns:** Multiple providers compete (dFDA, data storage, integrations)
-- **Research prizes:** Bounties for specific breakthroughs
-- **Public goods:** Market failures that need direct funding
-
-**5. Results Determine Future Funding**
-
-Campaigns that deliver impact get continued funding. Failures get defunded. It's venture capital for not dying.
+| **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Patient subsidies (market allocation) |
 
 ### What Gets Funded: Market Failures Only
 
@@ -333,15 +278,6 @@ DIH is intentionally minimal. It outsources everything operational:
 | **Trial infrastructure** | dFDA (a funded campaign) | Separate concerns |
 | **Data storage** | Competing providers | Market competition |
 
-**Why stay thin?**
-
-1. **Hard to capture:** Nothing to bribe if there's no operational role
-2. **Easy to fork:** If DIH gets corrupted, spin up a replacement
-3. **Focused:** One job: coordinate fund flows toward maximum impact
-4. **Adaptable:** Swap out components without redesigning the whole system
-
-Code is very bad at embezzlement. You can bribe a committee; you cannot bribe an if-statement.
-
 ## How Campaigns Plug In
 
 dFDA is the primary example of a funded campaign. It's not part of DIH; it's a service provider competing for funding.
@@ -354,16 +290,6 @@ dFDA is the primary example of a funded campaign. It's not part of DIH; it's a s
 4. **Execution:** Campaign delivers services (trials, infrastructure, etc.)
 5. **Verification:** Outcomes measured against milestones
 6. **Continuation:** Results determine next year's funding
-
-### Why This Matters
-
-If dFDA gets captured by pharmaceutical interests, becomes inefficient, or stops delivering, the community can:
-
-1. Reduce its Wishocracy priority
-2. Fund competing implementations
-3. Fork the protocol and start fresh
-
-DIH doesn't depend on any single campaign. It coordinates competition between them.
 
 ## Anti-Capture Design
 
@@ -387,6 +313,8 @@ DIH is designed to make capture economically irrational.
 ### The "New FDA" Risk
 
 **Risk:** "What if dFDA becomes the new FDA, capturing regulatory power?"
+
+![A diagram showing the flow of capital from the 1% Treaty Fund to competing regulatory campaigns, illustrating how a captured framework can be bypassed by diverting funds to an alternative.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
 
 **Mitigation:** dFDA has no budget authority. It's just a campaign competing for funding from the 1% Treaty Fund. If it gets captured, fund a competing framework instead.
 
@@ -428,17 +356,6 @@ A {{< var treaty_annual_funding >}} treasury is a massive target. DIH uses defen
 
 ![Defense in depth: decentralized control, AI monitoring, transparency, and recovery mechanisms interact to prevent theft.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
 
-### Transparent by Default
-
-All information is public:
-
-- Every funding decision
-- Every vote
-- Every outcome measurement
-- Every campaign's performance
-
-Corruption requires secrecy. DIH provides radical transparency. Every dollar is tracked on a ledger anyone can read.
-
 ### Beyond Medical Research
 
 Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can do the same for schools, roads, or anything else the government currently screws up:
@@ -459,14 +376,14 @@ DIH is not trying to be a research institution, a trial platform, or a funding a
 | Component | Function | DIH's Role |
 |:----------|:---------|:-----------|
 | 1% Treaty Fund | Treasury | Receives funds from treaty |
-| Wishocracy | Preference aggregation | Determines priorities |
-| Optimocracy | Allocation optimization | Recommends efficient splits |
+| Patient subsidies | Research allocation | Market mechanism (patients choose trials) |
+| Wishocracy | Infrastructure governance | Allocates between infrastructure/public goods |
 | dFDA | Trial infrastructure | Funded campaign |
 | IABs | Political alignment | Keeps politicians incentivized |
 | VICTORY Bonds | Investor alignment | Funds the campaign |
 
 **The single sentence version:**
 
-> DIH is a coordination protocol that receives funds, allocates them to maximum-impact uses via Wishocracy and Optimocracy, verifies results, and pays proportional to outcomes, making the highest-ROI action the selfish choice for every actor in the system.
+> DIH is a coordination protocol that receives funds, allocates research funding via patient subsidies (market mechanism), governs infrastructure via Wishocracy, verifies results, and pays proportional to outcomes, making the highest-ROI action the selfish choice for every actor.
 
 That's the theory. The rest of this guide explains how you'd actually build it.
