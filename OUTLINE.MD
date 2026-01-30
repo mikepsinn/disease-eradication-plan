@@ -1571,12 +1571,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 2,347
+**Files:** 1 | **Words:** 3,063
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 2,347 words | 324 lines
+**Stats:** 3,063 words | 406 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1598,6 +1598,12 @@
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
     - Uncertainty Analysis {#uncertainty-analysis}
+  - Implications for Major Health Funders {#funder-implications}
+    - Current Philanthropic Efficiency
+    - The Political Reform ROI Calculation
+    - Who Can Afford What
+    - ROI Comparison
+    - Why This Is Rational for Funders
   - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
     - Other Policy Domains
   - Limitations
@@ -1609,12 +1615,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,189
+**Files:** 1 | **Words:** 11,857
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,189 words | 1,179 lines
+**Stats:** 11,857 words | 1,260 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1934,12 +1940,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,422
+**Files:** 1 | **Words:** 16,526
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,422 words | 1,485 lines
+**Stats:** 16,526 words | 1,497 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -2082,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 330,573
+**Files:** 86 | **Words:** 332,444
 
 #### index.qmd
 **Title:** Start Here
@@ -3829,7 +3835,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,422 words | 1,485 lines
+**Stats:** 16,526 words | 1,497 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -3903,7 +3909,7 @@
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 2,347 words | 324 lines
+**Stats:** 3,063 words | 406 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -3925,6 +3931,12 @@
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
     - Uncertainty Analysis {#uncertainty-analysis}
+  - Implications for Major Health Funders {#funder-implications}
+    - Current Philanthropic Efficiency
+    - The Political Reform ROI Calculation
+    - Who Can Afford What
+    - ROI Comparison
+    - Why This Is Rational for Funders
   - Case Study: Military-to-Health Spending Reallocation (1% Treaty)
     - Other Policy Domains
   - Limitations
@@ -3989,7 +4001,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 7,804 words | 831 lines
+**Stats:** 8,187 words | 872 lines
 
   - The Mechanism
     - Why This Works
@@ -4027,7 +4039,7 @@
     - The Coase Theorem Applied to Governance Reform
     - IABs as the Coasean Buyout Mechanism
     - The Cost of Political Reform
-    - The Natural Reform Coalition
+    - The Natural Reform Coalition {#the-natural-reform-coalition}
   - Implementation Pathway
     - Why Government Adoption Isn't Required
     - Implementation Strategy
@@ -6055,7 +6067,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,189 words | 1,179 lines
+**Stats:** 11,857 words | 1,260 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6939,12 +6951,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 7,804
+**Files:** 1 | **Words:** 8,187
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 7,804 words | 831 lines
+**Stats:** 8,187 words | 872 lines
 
   - The Mechanism
     - Why This Works
@@ -6982,7 +6994,7 @@
     - The Coase Theorem Applied to Governance Reform
     - IABs as the Coasean Buyout Mechanism
     - The Cost of Political Reform
-    - The Natural Reform Coalition
+    - The Natural Reform Coalition {#the-natural-reform-coalition}
   - Implementation Pathway
     - Why Government Adoption Isn't Required
     - Implementation Strategy
@@ -7349,6 +7361,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 528,082
+- Total words: 531,824
 - Orphaned files: 20
 - Paper configs: 12

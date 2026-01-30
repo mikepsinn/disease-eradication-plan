@@ -182,6 +182,8 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 
 Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
+![A comparison between the risks of traditional megaprojects and the advantages of the proposed intervention, highlighting the integration of existing infrastructure and feedback loops.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
+
 This intervention differs in four critical ways:
 
 1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
@@ -220,6 +222,8 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 
 A critical assumption in this analysis is that {{< var eventually_avoidable_death_pct >}} of disease deaths are "eventually avoidable" - meaning they could be prevented with sufficient biomedical research over time.
 
+![A visual comparison of historical life expectancy gains alongside a sensitivity analysis showing that high ROI remains even if the percentage of avoidable deaths is significantly lower than estimated.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-eventually-avoidable-matters-bw-academic.jpg)
+
 **Why this assumption is conservative:**
 
 1. **Historical trend**: In 1900, life expectancy was ~47 years. Today it's ~79. Most of that gain came from preventing deaths that were once considered inevitable (infectious disease, childhood mortality, cardiovascular disease).
@@ -235,6 +239,8 @@ Even if only 25% of deaths are eventually avoidable (half our estimate), the fra
 ### Trial Funding Scenario
 
 This analysis models a scenario with {{< var dih_treasury_to_medical_research_annual >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dih_patients_fundable_annually >}} patient-years annually.
+
+![A comparison showing the impact of increased trial funding on the disease treatment backlog, contrasting a 443-year timeline under current capacity with a 36-year timeline under the proposed model.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
 
 ::: {.callout-tip}
 **On the Funding Assumption**: This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure comes from a proposed [1% Treaty](../solution/1-percent-treaty.qmd) redirecting military spending - but this is one mechanism among many:
@@ -451,6 +457,8 @@ The core protocol infrastructure build costs tens of millions; the broader globa
 
 This section quantifies the potential societal benefits of an infrastructure for a decentralized framework for drug assessment, focusing primarily on R&D cost savings and health outcome improvements.
 
+![A conceptual model showing how a decentralized drug assessment framework leads to societal benefits such as R&D cost savings and improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-benefit-analysis-quantifying-the-savings-bw-academic.jpg)
+
 ### Market Size and Impact
 
 The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending is made dramatically more efficient through protocol standardization. If such a framework enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
@@ -536,6 +544,8 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 - **Value of a Statistical Life (VSL):** U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved.
 - **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
+
+![A conceptual breakdown showing how accelerated treatment access creates economic value by combining the Value of a Statistical Life (VSL) for lives saved and Quality-Adjusted Life Year (QALY) metrics for improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
 
 ### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
@@ -634,6 +644,8 @@ For detailed methodology and assumptions, see [The Human Cost of Regulatory Late
 
 **Common concern**: Won't faster trials with lower costs compromise safety?
 
+![A comparison showing how the proposed system enhances safety monitoring across multiple dimensions compared to traditional clinical trial methods.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg)
+
 **The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions.
 
 #### Current System Limitations: Dangerously Blind to Real-World Harms
@@ -666,6 +678,8 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 #### Proposed System Safety Advantages
 
 1. **Preserved Phase I Safety Testing**: Rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}}) is maintained. What changes is eliminating the {{< var efficacy_lag_years >}} efficacy delay *after* safety is verified.
+
+![A comparison between the traditional clinical trial system and the proposed system, highlighting differences in safety monitoring scale, detection speed, and the elimination of efficacy delays.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg)
 
 2. **Continuous Population-Scale Monitoring**: Pragmatic trials with 10,000-100,000+ participants monitored continuously through EHR integration detect safety problems faster than small, time-limited traditional trials. The RECOVERY trial identified both effective treatments (dexamethasone) and harmful ones (hydroxychloroquine) in under 100 days with 47,000 patients.
 
@@ -702,6 +716,8 @@ The following table quantifies how automated EHR monitoring would have changed o
 
 The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
 
+![A comparison of Type I and Type II errors in drug regulation, illustrating the 3,070:1 ratio of deaths from delayed treatment access versus deaths prevented from unsafe drugs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-pooled-liability-insurance-bw-academic.jpg)
+
 **Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}}× more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
 
 ## ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
@@ -720,6 +736,8 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
 
+![A visual comparison showing the scale of research acceleration, contrasting standard discovery progress with the 12.3x multiplier and its 95% confidence interval.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
+
 ### The Unexplored Therapeutic Frontier
 
 The fundamental problem isn't that cures are hard to discover. It's that we're barely looking:
@@ -733,15 +751,21 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}}× trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
+![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations with the tiny 0.3% sliver that has been clinically tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
 A common objection is that "more trials won't produce proportionally more cures" - the diminishing returns hypothesis. This deserves serious consideration, but the evidence suggests the opposite may be true.
+
+![A comparison of three growth trajectories (diminishing, linear, and compounding) showing the relationship between the number of trials and the resulting output of cures.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-addressing-the-returns-question-diminishing-linear-or-compounding-bw-academic.jpg)
 
 #### Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
 
 The diminishing returns objection assumes we've exhausted low-hanging fruit. But we've barely begun:
 
 1. **Single compounds alone**: {{< var drug_disease_combinations_possible >}} possible combinations of known safe compounds × diseases. At current trial capacity, systematically testing these would take **{{< var current_known_safe_exploration_years >}}**. We won't finish until the year 5000+.
+
+![A comparison showing the massive scale of unexplored medical combinations and biological targets versus the tiny fraction currently understood, highlighting the vast remaining potential for discovery.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-diminishing-returns-is-unlikely-we-haven-t-started-looking-bw-academic.jpg)
 
 {{< var current_known_safe_exploration_years_latex >}}
 
@@ -828,6 +852,8 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 **Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}}× more trials produces {{< var dfda_trial_capacity_multiplier >}}× more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
 
+![A comparison of three models of trial discovery: diminishing, linear, and compounding returns, illustrating the linear assumption as the conservative middle ground.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg)
+
 ## Data Sources and Methodological Notes
 
 1. **Cost of Current Drug Development**:
@@ -835,6 +861,8 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
    - Oxford RECOVERY trial: {{< var recovery_trial_cost_per_patient >}}/patient (exceptional NHS/COVID conditions). ADAPTABLE trial: {{< var adaptable_trial_cost_per_patient >}}/patient (typical US pragmatic trial). Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE; confidence interval captures uncertainty.
+
+![A comparison of traditional multi-billion dollar drug development cost estimates versus the significantly lower per-patient costs observed in pragmatic clinical trials.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-data-sources-and-methodological-notes-bw-academic.jpg)
 
 2. **ROI Calculation Method**:
 
@@ -867,6 +895,8 @@ For economist verification, this section provides complete derivation chains for
 
 ### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
+![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under dFDA (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-1-trial-capacity-multiplier-derivation-var-dfda-trial-capacity-multiplier-bw-academic.jpg)
+
 **Step 1: Current trial capacity**
 - Current trial participants: {{< var current_trial_slots_available >}}
 - Current first treatments: {{< var new_disease_first_treatments_per_year >}}
@@ -893,6 +923,8 @@ For economist verification, this section provides complete derivation chains for
 
 ### 3. Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
 
+![A flowchart illustrating the multi-step derivation of total lives saved by combining global daily mortality, the percentage of avoidable deaths, and the total timeline shift period.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-3-lives-saved-derivation-var-dfda-trial-capacity-plus-efficacy-lag-lives-saved-bw-academic.jpg)
+
 **Step 1: Daily mortality from eventually avoidable causes**
 - Global disease deaths: {{< var global_disease_deaths_daily >}}/day
 - Eventually avoidable percentage: {{< var eventually_avoidable_death_pct >}}
@@ -918,7 +950,11 @@ For economist verification, this section provides complete derivation chains for
 
 **Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
 
+![A visual comparison of cost-effectiveness showing the derivation of $0.84 per DALY alongside the $89 benchmark for malaria bed nets.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-4-cost-per-daly-derivation-var-dfda-direct-funding-cost-per-daly-bw-academic.jpg)
+
 ### 5. ROI Derivation ({{< var dfda_roi_rd_only >}})
+
+![A visual breakdown of the ROI calculation showing the massive scale difference between $389 billion in 10-year benefits and $611 million in costs, resulting in a 637:1 ratio.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-5-roi-derivation-var-dfda-roi-rd-only-bw-academic.jpg)
 
 **Step 1: Calculate benefits**
 - Annual R&D savings: {{< var dfda_benefit_rd_only_annual >}}
@@ -950,6 +986,8 @@ This analysis rests on several core assumptions that should be made explicit for
 ### Linear Scaling Assumption
 
 **Assumption:** Each additional dollar of trial funding produces proportional additional discoveries.
+
+![A comparison of linear scaling against diminishing and compounding returns, illustrating why a linear assumption is a conservative model for discovery output relative to funding.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-linear-scaling-assumption-bw-academic.jpg)
 
 **Justification:** This is actually conservative - network effects in data aggregation and platform economics often produce increasing returns. We assume linear to avoid overstating benefits.
 
@@ -1100,6 +1138,8 @@ Transformative potential to create viable research pathways for conditions ignor
 - **Confidence:** Lower. Economic viability of rare disease research is theoretically sound but empirically unproven at scale
 
 **Conservative Approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even when using R&D savings alone ({{< var dfda_roi_rd_only >}} ROI independent of health benefits).
+
+![A breakdown of the three primary value streams (accelerated drug development, preventative care optimization, and rare disease research) that contribute to the total projected DALY impact.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-qaly-benefit-streams-breakdown-bw-academic.jpg)
 
 #### DALY Sensitivity Analysis
 

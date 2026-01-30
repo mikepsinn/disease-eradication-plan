@@ -552,9 +552,50 @@ Political feasibility is a cost, not a binary. In a companion analysis (see [The
 
 For reforms like the 1% Treaty ($2.5T NPV conservative estimate), this implies ~100:1 ROI. Political reform is dramatically underinvested relative to its expected value.
 
-### The Natural Reform Coalition
+### The Natural Reform Coalition {#the-natural-reform-coalition}
 
-Reform advocates provide initial capital and legitimacy; productive elites provide anchor capital for IABs; converted politicians provide political support. The arithmetic favors reform: welfare gains vastly exceed compensation costs.
+The political economy of reform requires identifying actors who would benefit from optimal policy and mobilizing them to overcome opposition.
+
+**Major Health Funders as Anchor Investors**
+
+The most natural funders for political reform are organizations already committed to maximizing health outcomes:
+
+| Funder | Annual Health Spending | Current Focus | Reform Alignment |
+|--------|------------------------|---------------|------------------|
+| Gates Foundation | ~$7B | Global health, disease eradication | High: political reform unlocks orders of magnitude more impact |
+| Wellcome Trust | ~$1.5B | Biomedical research | High: regulatory reform accelerates drug development |
+| Open Philanthropy | ~$500M | GiveWell-style interventions, policy reform | Very high: already funds policy advocacy |
+| Bloomberg Philanthropies | ~$1.5B | Public health, tobacco/obesity | High: policy is their primary lever |
+| Arnold Ventures | ~$500M | Evidence-based policy | Very high: explicitly focused on policy effectiveness |
+
+These funders collectively spend $10B+ annually on health. If even 5% were redirected to political reform infrastructure (IABs, Optimocracy development), it would exceed all current political reform spending.
+
+**The ROI Case for Funders**
+
+The Gates Foundation achieves approximately $50-100 per DALY through direct interventions. A $25B investment in political reform, even at 5% success probability, yields expected cost-effectiveness of ~$0.025 per DALY, roughly 3,000x more cost-effective. This calculation is developed in detail in [The Price of Political Change: Implications for Major Health Funders](cost-of-change-analysis.qmd#funder-implications).
+
+**Why Funders Haven't Invested (Yet)**
+
+Three barriers explain underinvestment in political reform:
+
+1. **Legibility**: Direct interventions have clear attribution ("we funded 10M bed nets"). Political reform success is diffuse and contested.
+
+2. **Reputational risk**: Political engagement risks partisan association. Optimocracy's outcome focus (health and wealth, not ideology) mitigates this.
+
+3. **Coordination failure**: No single funder can reform the political system. IABs provide the coordination mechanism: funders contribute to a pool that rewards outcome-aligned politicians.
+
+**Coalition Structure**
+
+The reform coalition assembles in phases:
+
+| Phase | Actors | Role | Capital |
+|-------|--------|------|---------|
+| Seed | Reform advocates, EA orgs | Initial design, proof of concept | $10-50M |
+| Pilot | Tech billionaires, forward-looking foundations | First IAB deployment | $100M-500M |
+| Scale | Major health funders | Anchor capital for IABs | $1-5B |
+| Victory | Converted politicians, broader coalition | Political implementation | $10-25B |
+
+Reform advocates provide initial capital and legitimacy; major funders provide anchor capital for IABs; converted politicians provide political support. The arithmetic strongly favors reform: welfare gains ($20-50T annually) vastly exceed maximum compensation costs ($25-200B one-time).
 
 ## Implementation Pathway
 
