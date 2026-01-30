@@ -24,9 +24,13 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
 3.  **The Prize:** That 1%, a **{{< var treaty_annual_funding >}}-a-year river of cash**, is redirected to cure all human diseases.
 
+![A visualization showing a 1% slice of the global military budget being redirected into a dedicated fund for curing diseases, demonstrating how a small relative change creates a massive financial resource.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-math-bw-academic.jpg)
+
 {{< var treaty_annual_funding_latex >}}
 
 ### How It Works
+
+![A process diagram showing the flow of funds from the 1% Treaty Fund through decentralized institutes to clinical trials, managed by DAO governance and public transparency ledgers.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
 2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized framework for drug assessment ([dFDA](dfda.qmd))**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}}× cheaper** than the current model
@@ -56,11 +60,15 @@ Everyone keeps the same relative scariness. But the global "we might all die by 
 
 That {{< var treaty_annual_funding >}} pays sick people to try treatments instead of waiting for death.
 
+![A visualization of the resource shift from global risks and weaponry to medical treatments, illustrating the 'Pareto improvement' where safety and health both increase simultaneously.](/assets/images/1-percent-treaty/1-percent-treaty-section-good-thing-1-you-become-safer-bw-academic.jpg)
+
 This is called a Pareto improvement, which is economist-speak for "everybody wins and nobody loses." It's like finding out that eating less poison makes you both less poisoned AND wealthier because poison is expensive.
 
 ### The Dead Capital Problem (Or: Why Bombs Are the Worst Investment Since Tulips)
 
 Here's something nobody tells you: when countries "invest" in military hardware, they're not buying assets. They're buying very expensive paperweights that occasionally explode.
+
+![A comparison between productive investment, which generates ongoing economic value, and military spending, which results in non-circulating 'dead capital.'](/assets/images/1-percent-treaty/1-percent-treaty-section-the-dead-capital-problem-or-why-bombs-are-the-worst-investment-since-tulips-bw-academic.jpg)
 
 #### A bridge
 
@@ -78,6 +86,8 @@ Here's something nobody tells you: when countries "invest" in military hardware,
 
 This is what economists call "dead capital" - resources trapped in a form that can't generate returns. It's like if you converted your house into a pile of TNT. Sure, it's impressive. But you can't live in it, rent it out, or do anything except eventually blow it up, at which point you have neither a house nor TNT.
 
+![A conceptual comparison between 'dead capital' (a missile in a silo) and productive investment (food, housing, and medicine) representing the opportunity cost of military spending.](/assets/images/1-percent-treaty/1-percent-treaty-section-a-missile-bw-academic.jpg)
+
 As President Eisenhower (a 5-star General who knew about killing professionally) put it: *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."*
 
 He literally ran the biggest military in history, and even HE thought you were being ridiculous about this.
@@ -89,6 +99,8 @@ It's not spending. It's stopping wasting.
 ## The Reallocation: How to Redirect {{< var treaty_annual_funding >}} a Year (Legally)
 
 This is how you redirect {{< var treaty_annual_funding >}} a year from the military budget to medicine and dying people get better instead.
+
+![A visual comparison showing $2.72 trillion in global military spending with a highlighted 1% segment representing the $27.2 billion proposed for medical reallocation.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-reallocation-how-to-redirect-var-treaty-annual-funding-a-year-legally-bw-academic.jpg)
 
 !Global military spending by region showing the {{< var global_military_spending_annual_2024 >}} humans spend annually on weapons instead of cures
 
@@ -148,17 +160,13 @@ Every signatory nation contributes exactly 1% of their military budget to **the 
 
 {{< include ../figures/one-percent-treaty-top-country-contributions-column-chart.qmd >}}
 
-#### Article 3: The Enforcement Mechanism
+#### Article 3: The Incentive Mechanism
 
-If you don't pay, everyone else gets to call you names at the UN. Also, your citizens find out you chose bombs over their grandmother's cancer treatment. Good luck with that election.
+Politicians who support the treaty receive [Incentive Alignment Bond](incentive-alignment-bonds.qmd) benefits: campaign funding from the political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) and lucrative post-office career opportunities. Supporting the treaty becomes the career-maximizing choice.
 
 #### Article 4: The Escape Clause
 
-Any nation can leave with 1 year notice. During that year, they have to explain to their citizens why they're choosing death over life. Also, all other nations get to reduce their contributions proportionally, maintaining the balance of terror.
-
-**Article 5: The "What If Someone Cheats" Clause**
-
-Real-time satellite monitoring of military spending. We can see your secret underground bunkers from space, Kevin. We know about the submarines. Pay up.
+Any nation can leave with 1 year notice. All other nations reduce their contributions proportionally, maintaining the balance of power. Nations that remain receive proportionally larger IAB benefits.
 
 ## Why This Is Actually About National Security (No, Really)
 
@@ -192,9 +200,13 @@ It's security policy reframed to address actual threats.
 
 Politicians hate looking weak. It's their biggest fear, right after being caught with their mistress or having to use their own healthcare system.
 
+![A visual representation of political reframing, showing the transformation of a single policy from a negative 'weakness' perception to a positive 'strategic genius' perception.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-rebranding-campaign-from-weakness-to-strategic-genius-bw-academic.jpg)
+
 So you don't frame this as "reducing military spending." You frame it as:
 
 ### "The Strategic Health Defense Initiative"
+
+![A comparison showing the shift from a negative political frame (defense cuts) to a positive strategic frame (biodefense shield).](/assets/images/1-percent-treaty/1-percent-treaty-section-the-strategic-health-defense-initiative-bw-academic.jpg)
 
 - **Old Frame**: "We're cutting defense by 1%" (Political suicide)
 - **New Frame**: "We're building a biodefense shield against the real threats" (Political genius)
@@ -203,6 +215,8 @@ So you don't frame this as "reducing military spending." You frame it as:
 
 **For Conservatives**:
 "This is the ultimate America First policy. We're protecting American lives from the Chinese virus and any future biological threats. It's the Strategic Defense Initiative for the 21st century."
+
+![A hub-and-spoke infographic showing how a single core policy is strategically messaged across different ideological perspectives like national security, economic ROI, and social justice.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-talking-points-that-make-hawks-sound-like-doves-bw-academic.jpg)
 
 **For Liberals**:
 "We're redirecting the tools of war to the cause of healing. This is how we build a more just and equitable world."
@@ -219,33 +233,9 @@ So you don't frame this as "reducing military spending." You frame it as:
 **For Everyone**:
 "Your mom has cancer. This might cure it. Sign here."
 
-## The Implementation Timeline (Or: How to Boil Humanity Slowly)
+## Implementation
 
-### Phase 1: The Whisper Campaign (Months 1-6)
-
-Start rumors in defense circles. "Have you heard about the 1% treaty?" Make it sound like a secret military strategy. Use PowerPoints with lots of arrows.
-
-### Phase 2: The Think Tank Infection (Months 6-12)
-
-Get RAND Corporation and other military think tanks to write impenetrable 400-page reports on "Biosecurity Through Cooperative Threat Reduction." Nobody will read them, but everyone will assume they're important.
-
-### Phase 3: The Media Blitz (Months 12-18)
-
-Leaked documents. "EXCLUSIVE: Secret Pentagon Plan to Save Humanity." Get it on Joe Rogan. Then CNN. Then Fox News, but frame it as owning the libs somehow.
-
-### Phase 4: The Political Theater (Months 18-24)
-
-Congressional hearings where generals explain that biodefense is the real defense. Show charts of Chinese biotech investments. Use words like "asymmetric advantage" and "force multiplication." Politicians nod sagely while understanding nothing.
-
-### Phase 5: The International Cascade (Months 24-36)
-
-Once three major powers sign on, everyone else panics about being left behind. It's like when one kid gets a Pokemon card and suddenly everyone needs Pokemon cards.
-
-Countries that sign early get "Founding Member" status, which means nothing but sounds important.
-
-### Phase 6: The Victory Lap (Month 36+)
-
-Every politician claims credit. Nobody remembers who opposed it. History books call it "inevitable." Everyone pretends they're not surprised it worked.
+For the detailed execution timeline, see the [Roadmap](../strategy/roadmap.qmd).
 
 ## The Money Flow: Where {{< var treaty_annual_funding >}} Actually Goes
 
@@ -278,21 +268,20 @@ Governance is handled by Wishocracy, a system of direct digital democracy detail
 
 ### Year One Projected Outcomes
 
-Right now, [only 5 million people participate in trials annually](../appendix/clinical-trial-participants.qmd) out of 2.4 billion with chronic disease. A 1% treaty changes this:
+Right now, only {{< var current_trial_slots_available >}} participate in drug trials annually) out of {{< var current_disease_patients_global >}} with chronic disease. A 1% treaty changes this:
 
 #### Current System
 
 - Pivotal trials: {{< var traditional_phase3_cost_per_patient >}} per patient
-- Only 5M participants per year globally
-- 99.8% of willing participants turned away
-- 17 years to approve one drug
+- Only {{< var current_trial_slots_available >}} participants per year globally
+- {{< var willing_trial_participants_global >}} willing to participate, but turned away
+- {{< var treatment_acceleration_years_current >}} to approve one drug
 
 #### With a 1% treaty + a decentralized framework for drug assessment
 
-- $110B total funding ({{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty)
+- {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
 - Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient ({{< var dfda_trial_cost_reduction_factor >}}× cheaper)
-- {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} acceleration)
-- Still only using 18% of available willing participants
+- {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}}× capacity increase)
 
 ![Side-by-side comparison of costs, participation rates, and speed between the current model and the proposed framework.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
 
@@ -301,6 +290,8 @@ For detailed impact projections, see the [full economic analysis](../economics/1
 ## The Incentive Structure
 
 The military-industrial complex will LOVE this.
+
+![An infographic illustrating the '1% Pivot' incentive structure, showing how a small shift in defense spending leads to five key benefits: budget retention, high-margin biotech ventures, improved public image, high investment returns, and personal health breakthroughs.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-incentive-structure-bw-academic.jpg)
 
 Why? Because they get to:
 
@@ -322,9 +313,13 @@ They keep their contracts. They keep their profits. They just point 1% of their 
 
 A 1% treaty isn't the goal. It's the beginning. It's the opening wedge that demonstrates a better way to allocate resources. Your multi-generational strategy is to make organized violence less economically necessary. You're not appealing to better angels; you're making peace more profitable than war.
 
+![A conceptual diagram illustrating the 'opening wedge' strategy, where a 1% treaty shifts global resource allocation from organized violence toward a more profitable peace-based economy.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-endgame-reorienting-global-priorities-bw-academic.jpg)
+
 ### The Ratchet Effect: How to Boil a Frog (The Frog is the War Machine)
 
 Once a 1% treaty is signed and the first cures for "untreatable" diseases start rolling out, the system becomes more valuable. This is how you sustain it.
+
+![A circular feedback loop illustrating the 'Ratchet Effect' where medical breakthroughs drive public support, leading to incremental funding shifts from military budgets to global health.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-ratchet-effect-how-to-boil-a-frog-the-frog-is-the-war-machine-bw-academic.jpg)
 
 Every five to ten years, you organize another global vote. The question is simple: "Hey, that worked out great. Grandma's dementia is manageable and we stopped that pandemic before it started. Want to try another half-percent?"
 
@@ -334,39 +329,49 @@ It's a politically tiny ask with an enormous payoff. This creates a feedback loo
 
 Eventually, the economic gravity of the planet will shift. The most talented scientists and engineers will be drawn to the massive opportunities in health and longevity, not designing better ways to blow people up. The world’s biggest investors will realize the greatest returns are found in curing Parkinson's, not in building another aircraft carrier.
 
+![A conceptual shift showing the migration of talent, capital, and national power from military defense toward medical innovation and human longevity.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-economic-gold-rush-bw-academic.jpg)
+
 Nations will find that true power and global influence come not from their capacity for destruction, but from their contributions to human flourishing. The new geopolitical competition won't be about who has the most weapons, but about who achieved the most breakthroughs in medicine.
 
 ### The Vision
 
 The 1% is just the beginning. Once the system proves itself, the feedback loop takes over: cures lead to popular support, which leads to votes for more funding, which leads to more cures. Each success makes the next increment politically easier.
 
+![A circular feedback loop showing how medical cures drive public support, leading to increased funding and further scientific breakthroughs.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-vision-bw-academic.jpg)
+
 For quantitative projections of health and economic impacts, see the [comprehensive analysis](../economics/1-pct-treaty-impact.qmd).
 
-## The Counter-Arguments (And Why They're Stupid)
+## Objections
 
-**"But what if our enemies don't reduce their spending?"**
+For detailed responses to common objections ("This makes us weak!", "This is socialism!", "What if there's a war?", etc.), see the [Frequently Asked Objections](../appendix/faq.qmd).
 
-They do, or they're not part of the treaty. It's simultaneous. Like synchronized swimming, but with less drowning.
+## Avoiding Treaty Pitfalls
 
-**"This makes us weak!"**
+Treaties fail in predictable ways. Here's how this one avoids the common killers:
 
-You still have {{< var defense_sector_retention_pct >}} of your weapons. You can still end the world. You're fine.
+### Reservation Games
 
-**"The military creates jobs!"**
+Countries love to sign treaties then add exceptions that gut them.
 
-So does medical research. More, actually. And the workers don't get PTSD.
+**Solution:** No reservations permitted. All or nothing. Take it or leave it.
 
-**"This is socialism!"**
+### Ratification Delays
 
-No, it's math. Also, the military is already socialism. This is just socialism that saves lives instead of ending them.
+Sign with fanfare, then let it die in committee forever.
 
-**"It's too complicated!"**
+**Solution:** Provisional application. Takes effect on signature. Ratification just formalizes what's already happening.
 
-We put humans on the moon with slide rules. We can figure out how to move money from Column A to Column B.
+### Creative Accounting
 
-**"What if there's a war?"**
+Reclassify "military" spending as "peacekeeping" or "homeland security" to dodge obligations.
 
-There's always a war. We'll still have {{< var defense_sector_retention_pct >}} of your capacity to wage it. Plus, healthy populations fight better. Ask the Spartans. (Actually don't, they're all dead. But you get the point.)
+**Solution:** Total budget percentage based on internationally recognized definitions. AI monitors for classification games. Can't hide spending when satellites can count your tanks.
+
+### Parliamentary Obstacles
+
+Executive signs, legislature refuses to implement.
+
+**Solution:** Self-executing treaty. No implementing legislation needed. Direct effect in domestic law (per the Supremacy Clause in the US, similar provisions elsewhere).
 
 ## Summary
 
@@ -398,13 +403,27 @@ WHEREAS, this is embarrassing;
 
 NOW, THEREFORE, the undersigned nations agree to stop being complete idiots about this, as follows:
 
-**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, starting immediately or whenever their legislature gets around to it, whichever comes first.
+**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund** for allocation to pragmatic clinical trials.
 
-**Article II**: This money shall be used exclusively to cure diseases, extend human life, and make existence less horrible.
+![A visualization of the 1% Treaty showing the redirection of global military funds toward biomedical research, contrasting current spending on weapons with the proposed investment in curing diseases.](/assets/images/1-percent-treaty/1-percent-treaty-section-addendum-the-actual-treaty-text-first-draft-bw-academic.jpg)
 
-**Article III**: Any nation caught spending this money on weapons shall be mocked relentlessly at international gatherings.
+**Article II**: Transfers shall be automatic, immediate, and irrevocable. No "we'll get to it later."
 
-**Article IV**: This treaty shall remain in force until humanity either cures death or causes its own extinction, whichever comes first.
+**Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.
+
+**Article IV**: Compliance shall be verified by blockchain and AI. No creative accounting.
+
+**Article V**: Non-compliant parties lose access to [IAB benefits](incentive-alignment-bonds.qmd) and treaty fund advantages. Your opponents get what you forfeit.
+
+**Article VI**: Success metrics trigger mandatory percentage reviews. When it works, we do more.
+
+**Article VII**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.
+
+**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Good luck with that.
+
+**Article IX**: This treaty supersedes all conflicting domestic law. Yes, even that law.
+
+**Article X**: Entry into force upon signature by two states. We only need two countries brave enough to go first.
 
 IN WITNESS WHEREOF, the undersigned, being of sound mind and tired of watching their loved ones die of preventable diseases, have executed this Treaty.
 
@@ -417,6 +436,4 @@ Signed this day, ____________, in the year of our ongoing confusion.
 
 ---
 
-*P.S. - If your nation doesn't sign this, your citizens will find out you chose bombs over their medical care. Good luck with that.*
-
-*P.P.S. - Yes, this includes space weapons. Nice try.*
+*P.S. - Yes, this includes space weapons. Nice try.*
