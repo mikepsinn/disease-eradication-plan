@@ -52,9 +52,9 @@ That last number isn't arbitrary. It's based on historical data showing that onc
 
 The trick is doing all of these simultaneously, which is harder than it sounds.
 
-## System Architecture
+## System Architecture (Or: Math That Politicians Can't Argue With)
 
-The voting system uses an **end-to-end verifiable scheme** (like Helios [@helios-voting]):
+The voting system uses an **end-to-end verifiable scheme** (like Helios [@helios-voting]). Translation: cryptographic receipts that prove you voted, without proving how you voted. Politicians can claim polls are fake. They cannot claim math is fake. (Some have tried. It doesn't go well.)
 
 - **Individual Verification**: Each voter gets a cryptographic receipt proving their vote was counted
 - **Public Audit**: All ballots published (anonymized) so anyone can verify the total
@@ -121,7 +121,7 @@ The more layers you pass, the more trustworthy your vote. But even Layer 1 gets 
 
 ### AI-Powered Fraud Detection
 
-Some people pass Layers 1 and 2. They have fake IDs, VPNs, and too much free time. Machine learning catches sophisticated fraud that basic checks miss:
+Some people pass Layers 1 and 2. They have fake IDs, VPNs, and a concerning amount of free time. These are the people who would vote 10,000 times to prove a point about election integrity. Machine learning catches them:
 
 - **Pattern Analysis**: Detects suspicious registration timing, geographic clustering, and bot-like behavior
 - **Network Mapping**: Real accounts have genuine social connections; bot farms are suspiciously interconnected
@@ -149,21 +149,23 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ## Viral Marketing & Growth Strategy
 
-### Wearable Marketing
+Getting 280 million people to do anything is hard. Getting 280 million people to click a button to maybe not die? Easier than you'd think.
+
+### Wearable Marketing (Your Body as a Billboard)
 
 #### QR Code T-Shirts
 
 - Custom printing with unique QR codes for each referrer
 - Bulk orders to reduce per-unit costs ($15-25 per shirt)
 - Referral tracking through QR code analytics
-- Catchy slogans: "I'm Making Medical History" or "Ask Me About the Cure"
+- Slogans: "Scan This Before You Die" / "I Voted to Not Die (The Bar Was Low)" / "Ask Me Why You're Still Dying of Curable Diseases"
 - **ROI**: 10-50+ referrals per shirt in high-traffic areas
 
 #### Other Wearable Items
 
-- **Stickers**: High-visibility, low-cost option for laptops, water bottles
-- **Hats/Caps**: Branded headwear with referral links
-- **Temporary Tattoos**: Novel approach for events and gatherings
+- **Stickers**: Laptops, water bottles, foreheads (we don't judge)
+- **Hats/Caps**: For people who want to advertise healthcare while blocking the sun
+- **Temporary Tattoos**: For the commitment-phobic revolutionaries
 
 ### Digital Marketing
 
@@ -176,8 +178,9 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 #### Meme Campaigns
 
-- Create shareable content that spreads organically
-- **Approach**: Humor + health + referral incentives
+Memes are how ideas spread now. This is either depressing or convenient, depending on your perspective. We're choosing convenient.
+
+- **Approach**: Dark humor about dying + referral incentives
 - **Distribution**: Reddit, Twitter, TikTok, Instagram
 - **Tracking**: Meme spread analytics, referral attribution
 
@@ -191,9 +194,9 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 #### Local Meetups
 
-- In-person gatherings to build community and drive referrals
+- In-person gatherings to build community (and prove you're not a bot farm)
 - **Format**: Health talks, networking, referral training
-- **Incentives**: Free food, merchandise, networking opportunities
+- **Incentives**: Free food. Humans will do almost anything for free food. This is known.
 
 #### University Campus Programs
 
@@ -209,14 +212,16 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Cost Analysis & Optimization
 
+How much does it cost to convince someone not to die? Less than you'd think.
+
 #### Per-Tactic Cost Breakdown
 
 | Tactic                  | Initial Cost    | Per-Referral Cost | Viral Coefficient | Notes                                   |
 | ----------------------- | --------------- | ----------------- | ----------------- | --------------------------------------- |
-| QR Code T-Shirts        | $15-25/shirt    | $0.30-0.75        | 0.8-1.2           | High visibility, conversation starter   |
-| Social Media Challenges | $500-2000       | $0.10-0.30        | 1.5-3.0           | High viral potential, low marginal cost |
-| Local Meetups           | $200-1000/event | $0.50-1.00        | 0.5-1.0           | Community building, lower viral spread  |
-| Influencer Partnerships | $100-1000       | $0.20-0.60        | 1.0-2.0           | Leverages existing audiences            |
+| QR Code T-Shirts        | $15-25/shirt    | $0.30-0.75        | 0.8-1.2           | Walking billboard, triggers conversations |
+| Social Media Challenges | $500-2000       | $0.10-0.30        | 1.5-3.0           | Cheap, spreads like disease (ironic)    |
+| Local Meetups           | $200-1000/event | $0.50-1.00        | 0.5-1.0           | Slower but builds real community        |
+| Influencer Partnerships | $100-1000       | $0.20-0.60        | 1.0-2.0           | Borrow someone else's audience          |
 
 #### ROI Optimization
 
@@ -227,7 +232,9 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ## Integration & Auditing Framework
 
-### Integrity and Auditing
+### Integrity and Auditing (Proving You Didn't Cheat)
+
+People will claim you cheated. This is inevitable. The only defense is making cheating mathematically impossible, then publishing the math.
 
 #### Cryptographic Receipts
 
@@ -257,9 +264,11 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 #### Education-First Approach
 
+You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead:
+
 - Reward structured learning paths before voting
-- Reduce low-information participation through education requirements
-- Progressive unlocking of higher reward tiers
+- Progressive unlocking of higher reward tiers (learn more = earn more)
+- Result: Informed participants, not confused button-clickers
 
 ### Legal Positioning
 
@@ -276,6 +285,8 @@ Different regions have different privacy laws, all of which carry massive fines 
 - Cross-border transfer compliance with international standards
 
 ## Implementation Roadmap
+
+Building a global referendum in 12 months sounds insane. It is insane. But so is dying of diseases we know how to prevent, and we've been doing that for decades.
 
 ### Phase 1: Foundation (Months 1-2)
 
@@ -306,14 +317,14 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ## Success Metrics
 
-**Primary targets:**
+**How you know it's working:**
 
-- **280M+ verified participants** ({{< var global_population_activism_threshold_pct >}} global population)
-- **<$0.75 per verified participant** (cheaper than any consumer acquisition)
-- **Viral coefficient >1.0** (self-sustaining growth)
-- **>99% fraud detection** with <1% false positives
+- **280M+ verified participants** (the magic {{< var global_population_activism_threshold_pct >}} threshold)
+- **<$0.75 per verified participant** (cheaper than acquiring a coffee customer, and the product is "not dying")
+- **Viral coefficient >1.0** (each person brings more than one person = snowball)
+- **>99% fraud detection** with <1% false positives (the bots stay out, the humans stay in)
 
-Secondary metrics track geographic distribution, brand awareness, community engagement, and policymaker recognition.
+Secondary metrics track geographic distribution, brand awareness, and whether politicians have started sweating yet.
 
 ## On Putting It All Together
 
@@ -339,7 +350,7 @@ That's cheaper than acquiring a customer for literally any consumer product, and
 
 #### What Success Looks Like
 
-280M+ verified global participants creating a political mandate so large that politicians literally cannot ignore it without losing elections.
+280 million verified humans saying "do this or lose your job" to every politician on Earth. That's not a petition. That's a mandate with teeth.
 
 ### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
@@ -358,7 +369,7 @@ The pattern repeats because once you hit {{< var global_population_activism_thre
 2. The support is distributed (not just one region or demographic)
 3. Opposition becomes politically toxic
 
-The strategy leverages this precedent with a clever twist: subsidized healthcare as the incentive to participate.
+The strategy leverages this precedent with a twist: offer people healthcare they actually want, and watch them voluntarily join the largest political movement in history. No marches required. Just clicking.
 
 People show up for the healthcare. Politicians see 280 million verified supporters. The treaty becomes inevitable.
 

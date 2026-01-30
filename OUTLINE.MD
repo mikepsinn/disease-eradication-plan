@@ -1705,12 +1705,12 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 13,613
+**Files:** 1 | **Words:** 14,054
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,613 words | 1,907 lines
+**Stats:** 14,054 words | 1,951 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -2088,7 +2088,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 332,696
+**Files:** 86 | **Words:** 333,381
 
 #### index.qmd
 **Title:** Start Here
@@ -3196,7 +3196,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,195 words | 292 lines
+**Stats:** 3,172 words | 290 lines
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     - Step 1: Collect Papers from Rich People
@@ -3543,17 +3543,17 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
-**Stats:** 2,226 words | 369 lines
+**Stats:** 2,493 words | 380 lines
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
-  - System Architecture
+  - System Architecture (Or: Math That Politicians Can't Argue With)
   - On Stopping People from Cheating (The Hard Part)
     - On Why You Need Multiple Layers of "Prove You're Human"
     - AI-Powered Fraud Detection
     - On Privacy (Or: How Not to Build a Surveillance State)
   - Viral Marketing & Growth Strategy
-    - Wearable Marketing
+    - Wearable Marketing (Your Body as a Billboard)
       - QR Code T-Shirts
       - Other Wearable Items
     - Digital Marketing
@@ -3568,7 +3568,7 @@
       - Per-Tactic Cost Breakdown
       - ROI Optimization
   - Integration & Auditing Framework
-    - Integrity and Auditing
+    - Integrity and Auditing (Proving You Didn't Cheat)
       - Cryptographic Receipts
       - Public Audit System
       - Observer Program
@@ -4306,7 +4306,7 @@
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 13,613 words | 1,907 lines
+**Stats:** 14,054 words | 1,951 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -7355,6 +7355,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 531,962
+- Total words: 533,088
 - Orphaned files: 20
 - Paper configs: 12

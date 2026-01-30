@@ -114,6 +114,8 @@ The **Predictor Impact Score (PIS)** described in this paper is the engine that 
 
 The result is a self-improving system where every patient's experience helps the next patient make better decisions, transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a system where anyone can contribute to medical knowledge.
 
+![The two-stage Predictor Impact Score pipeline illustrating the flow from low-cost real-world data analysis to high-priority pragmatic trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-where-this-methodology-fits-bw-academic.jpg)
+
 For the complete user-facing vision, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
 
 ## Introduction
@@ -160,6 +162,8 @@ Modern pharmacovigilance (the science of detecting, assessing, and preventing ad
 - Limited to specific questions rather than comprehensive monitoring
 
 ### The Real-World Data Opportunity
+
+![A visual summary of the patient-generated health data ecosystem, showcasing various sources like wearables and apps alongside key data characteristics such as scale and longitudinal structure.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-real-world-data-opportunity-bw-academic.jpg)
 
 The past decade has seen explosive growth in patient-generated health data:
 
@@ -542,6 +546,8 @@ Variable relationships with zero spread are undefined and excluded.
 
 **The short version:** Not all correlations are created equal. If we observe that "people who take Drug X report less pain," how confident should we be? The Predictor Impact Score (PIS) answers this by combining: (1) how strong is the relationship, (2) how many people show it, (3) does the drug come *before* the improvement (not after), and (4) is there a dose-response pattern. High PIS = worth investigating in a clinical trial. Low PIS = probably noise.
 
+![A diagram illustrating the four components (strength of relationship, statistical significance, temporal order, and dose-response) feeding into the Predictor Impact Score to determine if a drug effect is noise or a candidate for clinical trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-impact-score-bw-academic.jpg)
+
 The **Predictor Impact Score (PIS)** is a composite metric that quantifies treatment-outcome relationship strength from patient health data, operationalizing Bradford Hill causality criteria to prioritize drug effects for clinical trial validation. It integrates correlation strength, statistical significance, effect magnitude, and multiple Bradford Hill criteria into a single interpretable score. Higher scores indicate predictors with greater, more reliable impact on the outcome.
 
 > **Citation format**: When citing this metric in academic work, use "Predictor Impact Score" with reference to this methodology document.
@@ -723,6 +729,8 @@ PIS scores range from 0 to approximately 1 (though values slightly above 1 are p
 
 A key output of our analysis is the **optimal daily value**, the predictor value that historically precedes the best outcomes. This enables personalized, precision dosing recommendations.
 
+![A conceptual flow showing how historical data analysis identifies an optimal daily value to achieve personalized precision dosing and superior outcomes.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimal-daily-value-for-precision-dosing-bw-academic.jpg)
+
 #### Value Predicting High Outcome
 
 The **Value Predicting High Outcome** ($V_{\text{high}}$) is the average predictor value observed when the outcome exceeds its mean:
@@ -759,6 +767,8 @@ For interpretability, we also calculate **grouped optimal values** that map to c
 
 This allows recommendations like "400mg of Magnesium" rather than "412.7mg of Magnesium."
 
+![A diagram showing the mapping of precise calculated values to standard, rounded dosing intervals for practical use.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-grouped-optimal-values-bw-academic.jpg)
+
 #### Precision Dosing Recommendations
 
 These optimal values enable personalized recommendations:
@@ -767,6 +777,8 @@ These optimal values enable personalized recommendations:
 > "Your [Outcome] was highest after [Grouped Value Predicting High Outcome] of [Predictor] over the previous [Duration of Action]."
 >
 > Example: "Your Sleep Quality was highest after 400mg of Magnesium over the previous 24 hours."
+
+![A comparison diagram showing the different logic structures for generating personalized dosing recommendations based on whether the health outcome is positive or negative.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-precision-dosing-recommendations-bw-academic.jpg)
 
 **For Negative Valence Outcomes** (where lower is better, e.g., pain, anxiety):
 > "Your [Outcome] was lowest after [Grouped Value Predicting Low Outcome] of [Predictor] over the previous [Duration of Action]."
@@ -808,6 +820,8 @@ For a participant tracking Magnesium supplementation and Sleep Quality:
 4. **Grouping Artifacts**: Rounding to common doses may lose precision
 
 **Best Practice**: Use optimal values as starting points for personal experimentation, not as definitive prescriptions.
+
+![A conceptual diagram showing how population-level 'optimal values' pass through filters like individual variation and context to become personalized starting points for experimentation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-limitations-bw-academic.jpg)
 
 #### Confidence Intervals for Optimal Values
 
@@ -994,6 +1008,8 @@ Not all statistically significant relationships are useful. We apply **quality f
 
 #### Boring Relationship Definition
 
+![A flowchart depicting the decision logic for flagging a data relationship as 'boring' based on five specific rejection criteria.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-boring-relationship-definition-bw-academic.jpg)
+
 A relationship is marked `boring = TRUE` if ANY of:
 
 - Predictor is not controllable AND outcome is not a goal
@@ -1057,9 +1073,13 @@ For each predictor-outcome pair, we test:
 - **Onset delays**: 0, 30min, 1hr, 2hr, 4hr, 8hr, 12hr, 24hr, 48hr, 72hr...
 - **Durations**: 1hr, 4hr, 12hr, 24hr, 48hr, 72hr, 1 week, 2 weeks...
 
+![A heatmap grid visualization showing Onset Delays on one axis and Durations on the other, illustrating the search space used to identify the strongest correlation coefficient.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimization-grid-bw-academic.jpg)
+
 The parameters yielding the strongest |r| are selected, subject to category-specific physiological constraints.
 
 #### Overfitting Protection
+
+![A visual checklist of the four safeguards used to prevent overfitting, highlighting data thresholds, domain constraints, result benchmarking, and directional consistency checks.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-overfitting-protection-bw-academic.jpg)
 
 To prevent spurious optimization:
 1. **Minimum pairs required**: Only optimize if n > 50 pairs
@@ -1090,6 +1110,8 @@ Where $d_i$ = difference in ranks for each pair.
 ## Outcome Label Generation
 
 ### Predictor Analysis Reports
+
+![A sample Predictor Analysis Report visualization showing a horizontal bar chart of factors ranked by their positive or negative impact on a health outcome, including effect sizes and confidence intervals.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-analysis-reports-bw-academic.jpg)
 
 For each outcome variable (e.g., Depression Severity), we generate comprehensive "outcome labels" showing:
 
@@ -1129,6 +1151,8 @@ NO SIGNIFICANT EFFECT
 ```
 
 ### Category-Specific Analysis
+
+![A visual breakdown of the five predictor categories used to organize the analysis: treatments, foods, lifestyle, environment, and comorbid conditions.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-category-specific-analysis-bw-academic.jpg)
 
 Reports are organized by predictor category:
 
@@ -1212,6 +1236,8 @@ The following shows a complete outcome label for depression, demonstrating how t
 ## Treatment Ranking System
 
 ### Within-Category Rankings
+
+![A hierarchical diagram illustrating the three-tier ranking system used for treatments, prioritized by effect size, then confidence level, and finally sample size.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-within-category-rankings-bw-academic.jpg)
 
 For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
 
@@ -1316,6 +1342,9 @@ The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framew
 | **Experiment** | N-of-1 natural experiments | Study design | No |
 | **Analogy** | Similar variable comparison | Narrative | No |
 
+![A conceptual diagram illustrating how the proposed framework maps to and addresses each of the nine Bradford Hill criteria for causal inference.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
+
+
 ### Quantitative Criteria Details
 
 **Strength**:
@@ -1353,6 +1382,9 @@ Each study can receive user votes:
 
 ### Automated Quality Checks
 
+![A sequential flowchart illustrating the five automated quality check gates that data must pass through before being included in reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-automated-quality-checks-bw-academic.jpg)
+
+
 Before inclusion in reports:
 
 1. **Variance check**: Minimum 5 value changes in both variables
@@ -1362,6 +1394,9 @@ Before inclusion in reports:
 5. **Temporal coverage**: Adequate follow-up duration
 
 ### Flagged Study Handling
+
+![A flowchart showing the lifecycle of a study from initial flagging criteria to exclusion and the potential for reinstatement after data correction.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-flagged-study-handling-bw-academic.jpg)
+
 
 Studies may be flagged for:
 
@@ -1380,6 +1415,9 @@ Flagged studies are:
 ## Stage 2: Pragmatic Trial Confirmation
 
 **The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. A meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] shows that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var dfda_trial_cost_reduction_factor >}} lower cost. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
+
+![A workflow diagram showing the two-stage process: Stage 1 filters millions of observational data signals into top candidates, which Stage 2 then validates through low-cost pragmatic trials to establish causation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-stage-2-pragmatic-trial-confirmation-bw-academic.jpg)
+
 
 The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
@@ -1536,6 +1574,9 @@ Even with the two-stage design, certain limitations remain:
 
 ### What This Framework CAN Now Do
 
+![A conceptual diagram illustrating the iterative framework where observational signals funnel into experimental validation, creating a continuous learning loop for precision medicine.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-this-framework-can-now-do-bw-academic.jpg)
+
+
 With pragmatic trial integration, the complete framework can:
 
 1. **Establish causation**: For high-priority signals, randomization proves causal relationships
@@ -1642,6 +1683,9 @@ The repository includes:
 
 ### Positioning Relative to RCTs
 
+![A comparison diagram illustrating the complementary relationship between the framework and Randomized Controlled Trials (RCTs), highlighting their distinct roles in drug safety and evidence generation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-positioning-relative-to-rcts-bw-academic.jpg)
+
+
 This framework is **not** intended to:
 
 - Replace RCTs for regulatory approval
@@ -1667,6 +1711,9 @@ This framework **is** intended to:
 
 ### FDA Real-World Evidence Framework Alignment
 
+![A visual mapping of the FDA Real-World Evidence Framework showing its support for the Sentinel System, post-market commitments, label updates, and comparative effectiveness.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-fda-real-world-evidence-framework-alignment-bw-academic.jpg)
+
+
 The 21st Century Cures Act mandates FDA evaluation of RWE. This framework supports:
 
 - **FDA Sentinel System**: Provides complementary patient-reported data
@@ -1682,9 +1729,15 @@ The ultimate test of PIS validity: **Do high-PIS relationships replicate in RCTs
 
 Until this validation is performed, PIS should be treated as a theoretically-motivated heuristic, not a validated predictive tool.
 
+![A comparison bar chart showing the hypothesized higher replication rates in RCTs for high-PIS relationships versus low-PIS relationships to demonstrate validity.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-critical-question-bw-academic.jpg)
+
+
 ### Proposed Validation Study
 
 **Design**: Retrospective comparison of PIS predictions against published RCT results.
+
+![Flowchart illustrating the validation study process, from identifying treatment-outcome pairs to comparing PIS predictions with RCT results and evaluating success metrics.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-proposed-validation-study-bw-academic.jpg)
+
 
 **Method**:
 1. Identify treatment-outcome pairs where both (a) we have sufficient observational data to compute PIS, and (b) RCT evidence exists
@@ -1708,6 +1761,9 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 1. **Confounding by indication**: Does the temporality factor adequately address reverse causation in treatment contexts?
 2. **Saturation constant sensitivity**: How robust are rankings to ±50% changes in N_sig, n_sig?
 3. **Population generalizability**: Do PIS values from health-tracker users predict effects in general populations?
+
+![A visual summary of the three validation hurdles: causal directionality in treatment, the impact of parameter sensitivity on rankings, and the gap between tracker users and the general population.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-known-limitations-requiring-validation-bw-academic.jpg)
+
 
 ## Future Directions
 
