@@ -1,6 +1,6 @@
 {
   "totalSites": 13,
-  "totalPages": 104,
+  "totalPages": 102,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -3536,7 +3536,7 @@
           ],
           "sections": [
             "A 1% treaty",
-            "Your decentralized institutes of health"
+            "The 1% Treaty Fund"
           ],
           "published": true,
           "lastmod": "2026-01-30"
@@ -3583,6 +3583,11 @@
             "The Economic Gold Rush",
             "The Vision",
             "Objections",
+            "Avoiding Treaty Pitfalls",
+            "Reservation Games",
+            "Ratification Delays",
+            "Creative Accounting",
+            "Parliamentary Obstacles",
             "Summary",
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
@@ -3657,9 +3662,7 @@
             "How It Works: Pairwise Comparisons Between Campaigns",
             "Why This Is Actually Needed (Not \"Just 3 Parameters\")",
             "Why This Actually Works (Math Warning)",
-            "From Priorities to Projects",
-            "We Already Do This, Just Badly",
-            "Democracy's Operating System Upgrade"
+            "From Priorities to Projects"
           ],
           "published": true,
           "lastmod": "2026-01-30"
@@ -4396,52 +4399,6 @@
           "lastmod": "2026-01-30"
         },
         {
-          "path": "knowledge/legal/securities-law.qmd",
-          "url": "https://manual.WarOnDisease.org/legal/securities-law.html",
-          "title": "Securities Law",
-          "description": "How to Sell Hope Without Going to Prison",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/legal/securities-law-og-retro-academic.jpg",
-          "sections": [
-            "The Core Problem: Everything Is a Security",
-            "The Exemptions That Save You",
-            "Regulation D: Your Best Friend",
-            "Accredited Investors: Your Target Market",
-            "Structuring VICTORY Incentive Alignment Bonds: Debt Not Equity",
-            "Debt Advantages",
-            "The Structure",
-            "Why This Works",
-            "The Disclosure Documents: Covering Your Ass",
-            "Required Disclosures",
-            "The Marketing Rules: What You Can and Can't Say",
-            "What You CAN Say (Under 506(c))",
-            "What You CAN'T Say",
-            "The Magic Words That Protect You",
-            "International Complications: Multiple Jurisdictions",
-            "The Swiss Foundation and US C-Corp Structure",
-            "The Regulatory Arbitrage",
-            "The Blockchain Advantage",
-            "The Secondary Market: Making Them Liquid",
-            "Alternative Trading Systems (ATS)",
-            "Token Wrapper Strategy",
-            "Market Making",
-            "Enforcement and Penalties: What Happens If You Screw Up",
-            "Civil Penalties",
-            "Criminal Penalties",
-            "How to Avoid Prison",
-            "The Compliance Infrastructure",
-            "KYC/AML Systems",
-            "Investment Process",
-            "Ongoing Compliance",
-            "The Endgame: Going Public",
-            "The IPO Option",
-            "The Acquisition Option",
-            "Conclusion",
-            "Implementation Resources"
-          ],
-          "published": true,
-          "lastmod": "2026-01-30"
-        },
-        {
           "path": "knowledge/legal/election-law.qmd",
           "url": "https://manual.WarOnDisease.org/legal/election-law.html",
           "title": "Election Law",
@@ -4481,35 +4438,6 @@
             "Phase 3: Ensure Victory (Months 13-18)",
             "Conclusion: Democracy as Designed",
             "Legal Notice"
-          ],
-          "published": true,
-          "lastmod": "2026-01-30"
-        },
-        {
-          "path": "knowledge/legal/treaty-framework.qmd",
-          "url": "https://manual.WarOnDisease.org/legal/treaty-framework.html",
-          "title": "Treaty Framework",
-          "description": "How to use international law and incentive structures to make funding cures more profitable than buying weapons",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/legal/treaty-framework-og-retro-academic.jpg",
-          "sections": [
-            "Why Treaties Matter (Sort Of)",
-            "What Treaties Actually Do",
-            "A 1% treaty Structure",
-            "The Core Provisions",
-            "Key Provisions",
-            "Enforcement (The Hard Part)",
-            "Traditional Mechanisms (Weak)",
-            "The Smart Contract Approach",
-            "What Actually Works (Incentives)",
-            "Avoiding the Pitfalls",
-            "Common Treaty Killers",
-            "The Expansion Framework",
-            "From 1% to More",
-            "The Model Treaty Text",
-            "Preamble",
-            "Operative Clauses",
-            "How This Actually Works",
-            "Implementation Resources"
           ],
           "published": true,
           "lastmod": "2026-01-30"
@@ -6931,7 +6859,7 @@
           "lastmod": "2026-01-26"
         }
       ],
-      "pageCount": 85
+      "pageCount": 83
     },
     {
       "id": "obg",

@@ -15,6 +15,9 @@ Storing clinical trial data costs {{< var dfda_storage_cost_total_per_patient_mo
 
 ### What's Actually Stored
 
+![A visual breakdown of clinical data storage, comparing the relative sizes of patient demographics, trial forms, and high-volume medical imaging to show their contribution to a 1GB total.](/assets/images/data-storage-costs/data-storage-costs-section-what-s-actually-stored-bw-academic.jpg)
+
+
 - Patient demographics and basic information: < 1MB
 - Trial-specific forms and data entries: [1-5MB](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research)
 - Medical imaging (when applicable): [50-500MB](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5840832/)
@@ -73,6 +76,9 @@ The most relevant comparison is to existing large-scale health data platforms:
 
 ### Why Costs Are Lower Than Traditional Platforms
 
+![A comparison between traditional platform overhead and the streamlined architecture of optimized clinical trial data structures, highlighting cost-reduction factors.](/assets/images/data-storage-costs/data-storage-costs-section-why-costs-are-lower-than-traditional-platforms-bw-academic.jpg)
+
+
 1. Focused use case with optimized data types
 2. No need for collaboration tools or email storage
 3. Efficient data structures for clinical trial data
@@ -89,6 +95,9 @@ The most relevant comparison is to existing large-scale health data platforms:
 
 ### Cost Optimization Strategies
 
+![A visual overview of cost optimization strategies showing the relationship between data compression, storage tiering levels, and serverless scaling compute models.](/assets/images/data-storage-costs/data-storage-costs-section-cost-optimization-strategies-bw-academic.jpg)
+
+
 1. Implement efficient data compression
 2. Use tiered storage for older/less accessed data
 3. Optimize image and continuous monitoring data storage
@@ -101,6 +110,9 @@ The most relevant comparison is to existing large-scale health data platforms:
 - Automated systems become more cost-effective at scale
 
 ## Methodology and Limitations
+
+![Conceptual diagram showing how cloud pricing, patient data scaling, and platform overhead combine to produce the order-of-magnitude cost estimates.](/assets/images/data-storage-costs/data-storage-costs-section-methodology-and-limitations-bw-academic.jpg)
+
 
 These estimates are illustrative order-of-magnitude figures based on:
 

@@ -58,6 +58,9 @@ This is your central hub. Every living human who touches the system gets an entr
 - `Notes` (Long Text) - Where you write "difficult but brilliant" or "useless"
 - `Opt-in for Updates` (Checkbox) - Can you spam them with hope?
 
+![A conceptual entity-relationship diagram showing the central Personnel record and its connections to Divisions, Organizations, Engagements, Projects, and VICTORY Bonds.](/assets/images/command-and-control-systems/command-and-control-systems-section-fields-that-matter-bw-academic.jpg)
+
+
 ### Table 2: `Engagements` (The Stalker's Dream Log)
 
 Every interaction, every touchpoint, every time someone did anything. Like your browser history but for saving humanity.
@@ -137,6 +140,9 @@ Every fund, company, nonprofit, and three-letter agency you deal with.
 The organizational structure that makes this chaos manageable.
 
 #### Your command structure
+
+![A conceptual diagram showing the data relationships between a Division and its associated Mandates, Leads, Personnel, and Projects.](/assets/images/command-and-control-systems/command-and-control-systems-section-your-command-structure-bw-academic.jpg)
+
 
 - `Division Name` (Text) - G-1 Personnel, G-4 Treasury, etc.
 - `Mandate` (Long Text) - What they're supposed to accomplish

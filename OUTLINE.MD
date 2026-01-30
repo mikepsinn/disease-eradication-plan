@@ -2,14 +2,14 @@
 
 **Quarto Project Overview:**
 - Total configs: 14
-- Total QMD files: 91
+- Total QMD files: 89
 
 ---
 
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 88,275
+**Files:** 4 | **Words:** 87,791
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1372,7 +1372,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 26,733 words | 2,523 lines
+**Stats:** 26,249 words | 2,485 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1601,12 +1601,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,965
+**Files:** 1 | **Words:** 11,754
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,965 words | 1,251 lines
+**Stats:** 11,754 words | 1,224 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1691,12 +1691,12 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 14,279
+**Files:** 1 | **Words:** 14,260
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,279 words | 1,971 lines
+**Stats:** 14,260 words | 1,963 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -2007,12 +2007,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 7,342
+**Files:** 1 | **Words:** 7,164
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 7,342 words | 821 lines
+**Stats:** 7,164 words | 770 lines
 
   - The Short Version
   - Abstract
@@ -2074,7 +2074,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 350,021
+**Files:** 84 | **Words:** 343,354
 
 #### index.qmd
 **Title:** Start Here
@@ -2120,7 +2120,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 2,597 words | 271 lines
+**Stats:** 2,574 words | 255 lines
 
   - Daily Numbers
   - Where the Money Goes
@@ -2146,7 +2146,7 @@
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,682 words | 491 lines
+**Stats:** 3,658 words | 472 lines
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -2211,7 +2211,7 @@
 #### knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficent pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 2,111 words | 300 lines
+**Stats:** 2,090 words | 283 lines
 
   - The Allocation Scandal
   - Why This Allocation Exists
@@ -2256,7 +2256,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34× more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,569 words | 532 lines
+**Stats:** 4,527 words | 528 lines
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
@@ -2344,7 +2344,7 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 2,923 words | 541 lines
+**Stats:** 2,882 words | 514 lines
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Ancient Rome (3rd Century)
@@ -2427,12 +2427,12 @@
 #### knowledge/solution.qmd
 **Title:** Solution Overview
 **Description:** How to Build Systems That Don't Suck
-**Stats:** 3,027 words | 363 lines
+**Stats:** 2,962 words | 341 lines
 
   - A 1% treaty
-    - Your decentralized institutes of health
+    - The 1% Treaty Fund
       - What the NIH does
-      - What your decentralized institutes of health do
+      - What the 1% Treaty Fund does
         - On Wishocracy
         - Your decentralized framework for drug assessment
         - On Outcome Labels
@@ -2451,7 +2451,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% treaty
 **Description:** How to Redirect {{< var treaty_annual_funding >}} from War to Medicine - The complete guide to a 1% treaty, the binding global accord that redirects {{< var treaty_annual_funding >}} annually from mil...
-**Stats:** 3,494 words | 421 lines
+**Stats:** 3,665 words | 440 lines
 
   - The Math
     - How It Works
@@ -2489,13 +2489,18 @@
     - The Economic Gold Rush
     - The Vision
   - Objections
+  - Avoiding Treaty Pitfalls
+    - Reservation Games
+    - Ratification Delays
+    - Creative Accounting
+    - Parliamentary Obstacles
   - Summary
   - Addendum: The Actual Treaty Text (First Draft)
 
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,255 words | 402 lines
+**Stats:** 3,230 words | 396 lines
 
   - The Objective: Total Disease Eradication
     - Why Current Systems Fail
@@ -2528,7 +2533,7 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to allocate {{< var treaty_annual_funding >}} and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,417 words | 228 lines
+**Stats:** 1,134 words | 149 lines
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
@@ -2540,8 +2545,6 @@
     - Why This Is Actually Needed (Not "Just 3 Parameters")
     - Why This Actually Works (Math Warning)
   - From Priorities to Projects
-  - We Already Do This, Just Badly
-  - Democracy's Operating System Upgrade
 
 #### knowledge/solution/ai-coordination-army.qmd
 **Title:** Building Your AI Coordination Army
@@ -2570,7 +2573,7 @@
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** Increasing trial capacity {{< var dfda_trial_capacity_multiplier >}}× by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
-**Stats:** 4,719 words | 699 lines
+**Stats:** 4,694 words | 676 lines
 
   - The Solution: Consumer Reports for Drugs
     - How Companies Register Treatments (5 Minutes, Zero Approval Needed)
@@ -2624,7 +2627,7 @@
 #### knowledge/solution/war-on-disease.qmd
 **Title:** The War on Disease
 **Description:** Designing the First War to Win
-**Stats:** 1,474 words | 190 lines
+**Stats:** 1,399 words | 171 lines
 
   - On How to Design a War That Actually Ends
     - On Competition Versus Monopoly
@@ -2691,7 +2694,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** A new financial instrument for aligning political incentives with public goods
-**Stats:** 8,450 words | 1,005 lines
+**Stats:** 8,317 words | 951 lines
 
   - A Novel Approach to Political Economy
     - The Core Problem: Good Ideas Die in Committee
@@ -2823,7 +2826,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 26,733 words | 2,523 lines
+**Stats:** 26,249 words | 2,485 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -3006,7 +3009,7 @@
 #### knowledge/call-to-action/your-personal-benefits.qmd
 **Title:** Your Personal Benefits
 **Description:** What You Actually Get From This
-**Stats:** 590 words | 91 lines
+**Stats:** 534 words | 80 lines
 
   - Your Actual Odds Right Now
   - What You Actually Get
@@ -3030,7 +3033,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 5,619 words | 780 lines
+**Stats:** 5,596 words | 774 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
@@ -3082,7 +3085,7 @@
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** How My Planet Works and Why You Should Copy Our Homework
-**Stats:** 2,195 words | 312 lines
+**Stats:** 2,170 words | 299 lines
 
   - How My Planet Works
   - What the Optimized World Looks Like
@@ -3148,7 +3151,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,238 words | 299 lines
+**Stats:** 3,222 words | 294 lines
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     - Step 1: Collect Papers from Rich People
@@ -3202,7 +3205,7 @@
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
 **Description:** How to Stay Out of Prison While Revolutionizing Global Healthcare
-**Stats:** 2,578 words | 436 lines
+**Stats:** 2,555 words | 434 lines
 
   - Entity #1: The 501(c)(3) Public Charity ("The Brain")
     - What It Does
@@ -3239,52 +3242,6 @@
     - Priority Regulations for Modification
       - High-Priority Streamlining Targets
       - Revolutionary Exemptions for Certified Platforms
-
-#### knowledge/legal/securities-law.qmd
-**Title:** Securities Law
-**Description:** How to Sell Hope Without Going to Prison
-**Stats:** 2,081 words | 370 lines
-
-  - The Core Problem: Everything Is a Security
-  - The Exemptions That Save You
-    - Regulation D: Your Best Friend
-      - Rule 506(b): The Quiet Offering
-        - Rule 506(c): The Loud Offering
-    - Accredited Investors: Your Target Market
-  - Structuring VICTORY Incentive Alignment Bonds: Debt Not Equity
-    - Debt Advantages
-    - The Structure
-    - Why This Works
-  - The Disclosure Documents: Covering Your Ass
-    - Required Disclosures
-      - Risk Factors (Make Them Terrifying)
-      - Use of Funds
-      - Conflicts of Interest
-  - The Marketing Rules: What You Can and Can't Say
-    - What You CAN Say (Under 506(c))
-    - What You CAN'T Say
-    - The Magic Words That Protect You
-  - International Complications: Multiple Jurisdictions
-    - The Swiss Foundation and US C-Corp Structure
-    - The Regulatory Arbitrage
-    - The Blockchain Advantage
-  - The Secondary Market: Making Them Liquid
-    - Alternative Trading Systems (ATS)
-    - Token Wrapper Strategy
-    - Market Making
-  - Enforcement and Penalties: What Happens If You Screw Up
-    - Civil Penalties
-    - Criminal Penalties
-    - How to Avoid Prison
-  - The Compliance Infrastructure
-    - KYC/AML Systems
-    - Investment Process
-    - Ongoing Compliance
-  - The Endgame: Going Public
-    - The IPO Option
-    - The Acquisition Option
-  - Conclusion
-  - Implementation Resources
 
 #### knowledge/legal/election-law.qmd
 **Title:** Election Law
@@ -3336,53 +3293,6 @@
     - Phase 3: Ensure Victory (Months 13-18)
   - Conclusion: Democracy as Designed
   - Legal Notice
-
-#### knowledge/legal/treaty-framework.qmd
-**Title:** Treaty Framework
-**Description:** How to use international law and incentive structures to make funding cures more profitable than buying weapons
-**Stats:** 2,054 words | 387 lines
-
-  - Why Treaties Matter (Sort Of)
-    - What Treaties Actually Do
-      - Supremacy Clause (US Constitution, Article VI)
-        - International Law Principle: Pacta Sunt Servanda
-      - The Ratchet Effect
-  - A 1% treaty Structure
-    - The Core Provisions
-      - Article 1: Definitions
-        - Article 2: The Obligation
-          - Article 3: Enforcement
-          - Article 4: Expansion
-    - Key Provisions
-      - The Prisoner's Dilemma Solver
-      - The Political Cover
-      - The Escape Clause That Isn't
-  - Enforcement (The Hard Part)
-    - Traditional Mechanisms (Weak)
-      - Public Transparency
-      - Economic Consequences
-      - Legal Standing
-    - The Smart Contract Approach
-      - Blockchain Treaty Execution
-      - The Oracle Problem
-    - What Actually Works (Incentives)
-  - Avoiding the Pitfalls
-    - Common Treaty Killers
-      - Reservation Games
-      - Ratification Delays
-      - Creative Accounting
-      - Parliamentary Obstacles
-  - The Expansion Framework
-    - From 1% to More
-      - Year 1-2: Proof of Concept
-        - Year 3-5: Possible Expansion
-          - Year 5-10: If Momentum Continues
-          - Long Term: Optimistic Scenario
-  - The Model Treaty Text
-    - Preamble
-    - Operative Clauses
-  - How This Actually Works
-  - Implementation Resources
 
 #### knowledge/economics/victory-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
@@ -3657,7 +3567,7 @@
 #### knowledge/appendix/real-world-evidence-historical-success.qmd
 **Title:** Real-World Evidence Historical Success (Pre-1962)
 **Description:** How decentralized physician trials from 1883-1962 achieved 4 years/decade life expectancy gains, and what happened when the 1962 regulations replaced them with industry-controlled trials
-**Stats:** 1,653 words | 246 lines
+**Stats:** 1,625 words | 233 lines
 
   - Historical Evidence: Why Real-World Evidence Works Better
     - 10,000 Years of Dying at 30
@@ -3892,7 +3802,7 @@
 #### knowledge/appendix/wishocracy-paper.qmd
 **Title:** Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
 **Description:** Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwi...
-**Stats:** 10,671 words | 800 lines
+**Stats:** 10,571 words | 787 lines
 
 - **Abstract**
 - **Introduction: The Preference Aggregation Problem**
@@ -3947,7 +3857,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,558 words | 920 lines
+**Stats:** 8,527 words | 902 lines
 
   - The Mechanism
     - Why This Works
@@ -4016,7 +3926,7 @@
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,855 words | 2,033 lines
+**Stats:** 13,722 words | 1,998 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4160,7 +4070,7 @@
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,650 words | 1,234 lines
+**Stats:** 8,627 words | 1,223 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -4258,7 +4168,7 @@
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,279 words | 1,971 lines
+**Stats:** 14,260 words | 1,963 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -4414,7 +4324,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,424 words | 234 lines
+**Stats:** 1,400 words | 219 lines
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: {{< var treaty_annual_funding >}}/Year
@@ -4489,7 +4399,7 @@
 #### knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
 **Title:** Global Clinical Trial Spending by Phase
 **Description:** A comprehensive breakdown of how much governments, companies, and nonprofits spend on Phase 1, 2, 3, and 4 clinical trials globally each year.
-**Stats:** 2,866 words | 526 lines
+**Stats:** 2,819 words | 497 lines
 
   - The Bottom Line: {{< var global_clinical_trials_spending_annual >}} Annually (2024)
     - Growth trajectory
@@ -5896,7 +5806,7 @@
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 7,342 words | 821 lines
+**Stats:** 7,164 words | 770 lines
 
   - The Short Version
   - Abstract
@@ -5956,7 +5866,7 @@
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments a...
-**Stats:** 3,523 words | 588 lines
+**Stats:** 3,470 words | 571 lines
 
   - Executive Summary
   - Historical Data Sources
@@ -5998,7 +5908,7 @@
 #### knowledge/appendix/personal-lifetime-wealth-calc.qmd
 **Title:** Personal Lifetime Wealth Calculation
 **Description:** Simple QALY-based calculation showing personal benefit from 1% treaty life extension
-**Stats:** 421 words | 80 lines
+**Stats:** 364 words | 72 lines
 
   - The Simple Formula
   - Why QALY Valuation?
@@ -6012,7 +5922,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,965 words | 1,251 lines
+**Stats:** 11,754 words | 1,224 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6140,7 +6050,7 @@
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan: Overview
 **Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,771 words | 242 lines
+**Stats:** 1,686 words | 224 lines
 
   - The Three Financial Pillars
     - Fundraising: How To Raise {{< var treaty_campaign_total_cost >}}
@@ -6384,7 +6294,7 @@
 #### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
 **Title:** How to Not Build Most of It
 **Description:** A dFDA strategy for getting other people to build everything through open APIs and bounties, like WordPress but for not dying.
-**Stats:** 1,374 words | 235 lines
+**Stats:** 1,301 words | 212 lines
 
   - The Core Strategy (How WordPress Beat Expensive Software)
     - The Model
@@ -6546,7 +6456,7 @@
 #### knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
 **Title:** Pragmatic vs Explanatory Trials: A Quantitative Analysis
 **Description:** A comparison of pragmatic and explanatory trials focusing on cost, time, and real-world applicability.
-**Stats:** 751 words | 146 lines
+**Stats:** 727 words | 134 lines
 
   - Key Differences at a Glance
   - Cost Analysis
@@ -6562,7 +6472,7 @@
 
 #### knowledge/appendix/acknowledgments.qmd
 **Title:** Acknowledgments
-**Stats:** 340 words | 49 lines
+**Stats:** 316 words | 45 lines
 
     - Technical Contributors
     - On Standing on Shoulders
@@ -6574,7 +6484,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 7,685 words | 828 lines
+**Stats:** 7,476 words | 805 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -6624,9 +6534,7 @@
     - Step 5: Enjoy
   - The Math
     - The Money Fountain
-    - Where Math Breaks
-      - The Reality-Breaking Equation
-      - Where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} Appears From
+    - The Bed Net Benchmark
     - 2nd Best Idea in the World
   - Choose Your Own Adventure
     - Door #1: The Current Plan
@@ -6640,12 +6548,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 8,650
+**Files:** 1 | **Words:** 8,627
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,650 words | 1,234 lines
+**Stats:** 8,627 words | 1,223 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -6745,12 +6653,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,855
+**Files:** 1 | **Words:** 13,722
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,855 words | 2,033 lines
+**Stats:** 13,722 words | 1,998 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -6896,12 +6804,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,558
+**Files:** 1 | **Words:** 8,527
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,558 words | 920 lines
+**Stats:** 8,527 words | 902 lines
 
   - The Mechanism
     - Why This Works
@@ -7115,12 +7023,12 @@
 ## _quarto-wishocracy.yml
 **Title:** Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
 **Type:** website
-**Files:** 1 | **Words:** 10,671
+**Files:** 1 | **Words:** 10,571
 
 #### knowledge/appendix/wishocracy-paper.qmd
 **Title:** Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
 **Description:** Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwi...
-**Stats:** 10,671 words | 800 lines
+**Stats:** 10,571 words | 787 lines
 
 - **Abstract**
 - **Introduction: The Preference Aggregation Problem**
@@ -7305,7 +7213,7 @@
 ## SUMMARY
 
 - Quarto configs: 14
-- Unique QMD files: 91
-- Total words: 551,659
+- Unique QMD files: 89
+- Total words: 543,813
 - Orphaned files: 20
 - Paper configs: 12
