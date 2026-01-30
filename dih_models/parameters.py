@@ -6837,18 +6837,6 @@ HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
     latex_symbol=r"r_{health/mil}",
 )
 
-TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
-    800_000_000,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="definition",
-    description="Campaign budget for Super PACs and political lobbying",
-    display_name="Campaign Budget for Super Pacs and Political Lobbying",
-    unit="USD",
-    keywords=["800.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
-    latex_symbol=r"Budget_{PAC,treaty}",  # LaTeX symbol for equations
-    hide_ci=True,  # CI clutters display for budget components
-)  # billions USD, for Super PACs/politician bribery
-
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
     source_ref=ReferenceID.N3_5_RULE,

@@ -3996,11 +3996,6 @@
   \ transparent budget allocation and predictable referendum/lobbying costs. | ~ Medium\
   \ confidence | 95% CI: [$20M, $150M] | Dist: Lognormal | Unit: USD | Click to view\
   \ details, calculation & sources\">$100M</a>"
-"treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_budget_super_pacs\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Campaign budget\
-  \ for Super PACs and political lobbying | ✓ High confidence | Unit: USD | Click\
-  \ to view details, calculation & sources\">$800M</a>"
 "treaty_campaign_duration_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_duration_years\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Treaty campaign duration (3-5 year\
@@ -4896,6 +4891,6 @@
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "_us_base_political_spending": "<span class=\"parameter-link\" title=\"Parameter:\
   \ _US_BASE_POLITICAL_SPENDING\">28.8B</span>"
-"total_parameter_count": "453"
+"total_parameter_count": "452"
 "total_latex_equation_count": "171"
 "total_citation_count": "183"

@@ -4899,16 +4899,6 @@ export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
   confidenceInterval: [20000000.0, 150000000.0],
 };
 
-export const TREATY_CAMPAIGN_BUDGET_SUPER_PACS: Parameter = {
-  value: 800000000.0,
-  unit: "USD",
-  displayName: "Campaign Budget for Super Pacs and Political Lobbying",
-  description: "Campaign budget for Super PACs and political lobbying",
-  sourceType: "definition",
-  sourceRef: "https://impact.warondisease.org/knowledge/strategy/roadmap#campaign-budget",
-  confidence: "high",
-};
-
 export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
   value: 4.0,
   unit: "years",
@@ -5484,7 +5474,6 @@ export const parameters = {
   TESTED_RELATIONSHIPS_ESTIMATE,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
   TREATY_CAMPAIGN_BUDGET_RESERVE,
-  TREATY_CAMPAIGN_BUDGET_SUPER_PACS,
   TREATY_CAMPAIGN_DURATION_YEARS,
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE,
   TREATY_REDIRECTED_SPENDING_INFINITE_ROI,
@@ -7414,10 +7403,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 453,
+  total: 452,
   external: 183,
   calculated: 171,
-  definitions: 99,
+  definitions: 98,
   citations: 141,
 } as const;
 
