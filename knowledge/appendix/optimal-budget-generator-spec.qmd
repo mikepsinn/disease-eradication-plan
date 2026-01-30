@@ -221,8 +221,6 @@ The OBG framework builds on and extends several established traditions in public
 
 **What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
 
-![A comparison diagram showing the evolution from intervention-focused evidence synthesis to the integrated budget optimization framework of OBG.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-evidence-based-policy-movement-bw-academic.jpg)
-
 **Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of two estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
 
 ### Comparative Public Finance
@@ -536,8 +534,6 @@ Evidence from cross-state variation suggests:
 **Metrics affected**: Both real after-tax median income growth (via reduced healthcare costs and improved productivity) and median healthy life years (via better treatments). This dual impact contributes to the exceptionally high returns.
 
 Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}} and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}** [@dfda-impact-paper-2025].
-
-![A comparison of public investment returns showing the disproportionately high benefit-cost ratio of pragmatic clinical trials compared to vaccinations and early childhood education, alongside a cost-per-patient comparison with traditional trials.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
 
 The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} per patient versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
 
@@ -926,15 +922,11 @@ These databases enable systematic ranking of interventions by cost-effectiveness
 
 Higher spending may not translate to outcomes if implementation capacity is lacking.
 
-![A visual model showing the relationship between spending, implementation capacity, and outcomes, highlighting the 'Mitigation' path of phased spending and assessments.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-capacity-bw-academic.jpg)
-
 **Mitigation**: Pair spending increases with implementation assessment; phase in gradually.
 
 ## Validation Framework
 
 Rigorous validation is essential for any framework that claims to identify optimal spending levels. This section outlines the validation approach, acknowledging that comprehensive empirical validation remains future work.
-
-![A flowchart showing the iterative validation process, from model hypothesis and data input to empirical testing and refinement of spending levels.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-validation-framework-bw-academic.jpg)
 
 ### Retrospective Validation
 
@@ -1007,8 +999,6 @@ The framework's current evidence base consists of the underlying studies cited t
 **Base case**: Use point estimates
 
 Report OSL range across scenarios for policy guidance.
-
-![A comparison chart showing the variation in OSL outcomes across optimistic, base case, and pessimistic scenarios based on the performance of uncertain categories.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg)
 
 ## Conclusion
 
@@ -1167,8 +1157,6 @@ Phase 5: OUTPUT GENERATION
 ### Output Concepts
 
 - **Priority Score**: Product of gap magnitude and BIS. Used to rank categories for reallocation priority.
-
-![A visualization of output concepts showing how Priority Scores guide ranking, Value of Information directs research funding, and Multi-Unit Reporting translates data into diverse interpretative formats.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-output-concepts-bw-academic.jpg)
 
 - **Value of Information (VOI)**: Expected benefit of additional research on uncertain categories. High-VOI categories warrant pilot funding.
 

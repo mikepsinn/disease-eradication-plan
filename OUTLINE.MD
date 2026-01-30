@@ -2082,7 +2082,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 86 | **Words:** 330,712
+**Files:** 86 | **Words:** 330,573
 
 #### index.qmd
 **Title:** Start Here
@@ -4202,7 +4202,7 @@
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,576 words | 1,219 lines
+**Stats:** 8,437 words | 1,207 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -6683,12 +6683,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 8,576
+**Files:** 1 | **Words:** 8,437
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,576 words | 1,219 lines
+**Stats:** 8,437 words | 1,207 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -7349,6 +7349,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 91
-- Total words: 528,360
+- Total words: 528,082
 - Orphaned files: 20
 - Paper configs: 12
