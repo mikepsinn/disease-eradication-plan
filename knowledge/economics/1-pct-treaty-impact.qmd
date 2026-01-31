@@ -159,22 +159,6 @@ Current medical research faces fundamental capacity constraints that limit our a
 
 Multiple large-scale pragmatic trials and systematic reviews demonstrate that pragmatic trial design maintains scientific rigor while dramatically reducing costs. A Harvard meta-analysis of 108 embedded pragmatic trials found median costs of $97/patient [@embedded-pragmatic-trials-meta-analysis]. The Oxford RECOVERY trial achieved {{< var recovery_trial_cost_per_patient >}}/patient (under exceptional NHS/COVID conditions), while the PCORnet ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient under normal conditions [@pragmatic-trials-cost-advantage]. Our dFDA projections use the conservative ADAPTABLE estimate ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). This {{< var dfda_trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
-### Addressing Skepticism: Why This Differs from Failed Megaprojects
-
-Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
-
-![Architecture of the VICTORY Incentive Alignment Bond mechanism showing how funding flows from the 1% Treaty to align the incentives of investors, politicians, and patients.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-addressing-skepticism-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
-
-This intervention differs in four critical ways:
-
-1. **Empirical grounding**: Cost estimates based on demonstrated pragmatic trial results, not theoretical projections. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial. (RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions; confidence interval captures this range.)
-
-2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
-
-3. **Cost-saving intervention status**: Cost-saving interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
-
-4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
-
 ### Contribution to Literature
 
 **Key Contributions to Health Economics Literature:**
@@ -2660,6 +2644,22 @@ Despite these limitations, several factors support the analysis's robustness:
 **Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
 Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
+
+### Why This Differs from Failed Megaprojects
+
+Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
+
+![Architecture of the VICTORY Incentive Alignment Bond mechanism showing how funding flows from the 1% Treaty to align the incentives of investors, politicians, and patients.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-addressing-skepticism-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
+
+This intervention differs in four critical ways:
+
+1. **Empirical grounding**: Cost estimates based on demonstrated pragmatic trial results, not theoretical projections. Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial. (RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions; confidence interval captures this range.)
+
+2. **Decentralized execution**: Unlike centralized megaprojects vulnerable to corruption and bureaucratic failure, pragmatic trials distribute decision-making across thousands of physicians and millions of patients. No single point of failure.
+
+3. **Cost-saving intervention status**: Cost-saving interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
+
+4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
 
 ## Policy Implications
 
