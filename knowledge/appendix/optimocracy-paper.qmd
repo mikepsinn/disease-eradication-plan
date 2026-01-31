@@ -62,7 +62,7 @@ Optimocracy is simple:
 
 4. **Track politician alignment**: When legislators vote, record how often they align with evidence-based recommendations. Senator Smith: 78% aligned. Senator Jones: 34% aligned.
 
-5. **Fund accordingly**: A SuperPAC ([Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd)) provides campaign support proportional to alignment scores. Follow the evidence, get funded. Ignore it, watch your colleagues get the money.
+5. **Fund accordingly**: A SuperPAC allocates campaign support to maximize expected governance improvement. The algorithm weighs alignment differences between candidates, position power, race competitiveness, and marginal funding effectiveness. Close races with large alignment gaps get priority. Follow evidence, get funded. Ignore it, and resources flow to races where they matter more.
 
 **That's it.** Politicians still vote however they want. The algorithm just recommends and tracks. The SuperPAC makes ignoring good advice expensive.
 
@@ -520,20 +520,55 @@ We commit to updating or abandoning the proposal if evidence accumulates against
 
 ![A conceptual map of the four falsification criteria for the Optimocracy thesis, illustrating potential failure modes across performance, systemic integrity, universal values, and social legitimacy.](/assets/images/optimocracy-paper/optimocracy-paper-section-rejection-criteria-bw-academic.jpg)
 
-## The Wrapper Architecture: Integration with IABs
+## The Wrapper Architecture: How Funding Works
 
-Optimocracy provides the *what*; Incentive Alignment Bonds provide the *how*. For full IAB mechanism details including the three-layer legal architecture, see [Incentive Alignment Bonds](https://iab.warondisease.org). The integration works as follows:
+Optimocracy provides the *what* (evidence-based recommendations); the SuperPAC provides the *how* (making alignment profitable). The integration works as follows:
 
 | Event | What Happens |
 |-------|--------------|
 | **Optimocracy publishes recommendations** | "Support HR-1234 (early childhood funding increase)." "Oppose HR-5678 (regulatory capture provision)." |
 | **Votes recorded** | Senator Smith votes aligned on both (2/2 = 100%). Senator Jones votes misaligned on both (0/2 = 0%). |
 | **Alignment scores calculated** | End-of-quarter totals: Smith 78% aligned with recommendations. Jones 34% aligned. |
-| **IAB rewards** | Smith receives 78% campaign support level and top-tier post-office opportunities. Jones receives 34% support level. Benefits proportional to alignment. |
+| **SuperPAC allocates support** | Algorithm weighs: alignment difference between candidates, position power, race competitiveness, marginal funding impact. Smith's competitive race with high alignment gets priority. |
 | **Public transparency** | Citizens see: "Smith followed evidence-based recommendations 78% of the time." |
-| **System validation (ongoing)** | Over years, metrics trend upward. This validates the recommendations, attracting more IAB funding. |
+| **System validation (ongoing)** | Over years, metrics trend upward. This validates the recommendations, attracting more donations. |
 
-The politician's choice becomes simple: follow evidence-based recommendations and receive campaign support plus career opportunities proportional to your alignment, or follow donor preferences and watch your colleagues get funded and hired. No waiting years for outcomes. IABs convert abstract "doing the right thing" into concrete career advancement.
+**Funding sources:**
+
+1. **Donations (primary):** Donations are high-leverage. Historical lobbying ROI suggests $1 of campaign spending can shift $100+ in policy outcomes. This makes funding Optimocracy more effective than traditional charity.
+
+2. **Incentive Alignment Bonds (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd)), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
+
+### Campaign Funding Allocation Algorithm
+
+The SuperPAC maximizes expected governance improvement per dollar. For each race, calculate:
+
+$$
+E[\Delta G] = \text{alignment\_gap} \times \text{position\_power} \times \text{win\_probability\_shift} \times P(\text{marginal\_dollar\_matters})
+$$
+
+**Factors:**
+
+| Factor | What it measures | Example |
+|--------|------------------|---------|
+| **Alignment gap** | \|candidate_A_score - candidate_B_score\| | 78% vs 34% = 44-point gap |
+| **Position power** | Committee chairs, leadership, swing votes | Health Committee chair = 3× multiplier |
+| **Race competitiveness** | How much can funding shift the outcome? | 48-52 polling = high; 30-70 = zero |
+| **Marginal funding effectiveness** | Diminishing returns as spending increases | First $1M matters more than 10th $1M |
+
+**Allocation priority examples:**
+
+| Race | Alignment Gap | Competitiveness | Position Power | Priority |
+|------|---------------|-----------------|----------------|----------|
+| Senate (Health Cmte chair) | 40 pts | Close (48-52) | High | **Top** |
+| Senate (backbencher) | 40 pts | Close (48-52) | Medium | High |
+| House (swing district) | 30 pts | Close (49-51) | Low | Medium |
+| Senate (safe seat) | 50 pts | Landslide (70-30) | High | **Low** (can't shift outcome) |
+| House (safe seat) | 10 pts | Safe (60-40) | Low | Skip |
+
+A close race with a large alignment gap gets priority over a safe seat, even if the safe-seat candidate has higher absolute alignment. Funding flows where it can actually change outcomes.
+
+**Dynamic reallocation:** As polling shifts during election season, the algorithm reallocates. A race that becomes uncompetitive frees funds for newly competitive races.
 
 ## Political Economy: Making Reform Happen
 
@@ -543,19 +578,23 @@ The empirical case for Optimocracy is strong (Section 2 documented the Political
 
 This section develops the political economy of reform, distinguishing actors who benefit from optimal policy from those who lose, and proposing mechanisms to convert opponents into supporters.
 
-### The Coase Theorem Applied to Governance Reform
+### Why Buying Off the Opposition Works
 
-@coase1960 showed that in the absence of transaction costs, parties will bargain to efficient outcomes regardless of initial property rights. The theorem suggests a strategy for governance reform: if optimal policy generates $X in new value and those currently benefiting from suboptimal allocation would lose $Y where $X >> $Y, there exists a compensation scheme that makes everyone better off.
+Optimal policy creates massive value ($20-50T annually). Those currently benefiting from bad policy would lose much less ($2-5T annually).
 
-**The arithmetic:** Estimated welfare gain from optimal policy is $20-50T annually (Section 2). Estimated rents from suboptimal allocation are $2-5T annually. Even buying out all rent-seekers leaves $15-45T in surplus. This makes Coasean buyouts arithmetically feasible.
+**The math:** Pay off all the losers and you still have $15-45T left over. This is why reform is feasible: the pie is big enough that everyone can get a bigger slice.
 
-### IABs as the Coasean Buyout Mechanism
+(This is the Coase Theorem [@coase1960] applied to governance: when gains vastly exceed losses, compensation makes everyone better off.)
 
-Incentive Alignment Bonds (IABs) operationalize this insight by creating a market for political support. The mechanism is detailed in [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd); in brief: IABs promise campaign support and career opportunities to politicians proportional to their alignment with evidence-based recommendations. Alignment is tracked via Optimocracy's recommendation/voting comparison. Politicians can follow donor preferences or follow evidence and receive IAB support. The scoring rules are transparent and published.
+### How the SuperPAC Makes This Concrete
 
-![A conceptual diagram showing the choice politicians face between traditional donor-driven incentives and the IAB-driven model based on evidence-based policy alignment.](/assets/images/optimocracy-paper/optimocracy-paper-section-iabs-as-the-coasean-buyout-mechanism-bw-academic.jpg)
+The Optimocracy SuperPAC creates a market for political support. It allocates campaign support proportional to politician alignment with evidence-based recommendations. Alignment is tracked via Optimocracy's recommendation/voting comparison. Politicians can follow donor preferences or follow evidence and receive SuperPAC support. The scoring rules are transparent and published.
 
-A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from lobbying relationships. IAB campaign support plus high-status post-office positions for supporting optimal policy would dominate current incentives.
+
+A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from lobbying relationships. SuperPAC campaign support for aligned politicians shifts this calculus: supporting optimal policy becomes the career-maximizing choice.
+
+For specific policy reallocations with concrete funding sources (like the 1% Treaty redirecting military spending to medical research), [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) can scale funding beyond donations by providing investor returns tied to policy success.
+
 
 ### The Cost of Political Reform
 
@@ -588,7 +627,7 @@ The most natural funders for political reform are organizations already committe
 | Bloomberg Philanthropies | ~$1.5B | Public health, tobacco/obesity | High: policy is their primary lever |
 | Arnold Ventures | ~$500M | Evidence-based policy | Very high: explicitly focused on policy effectiveness |
 
-These funders collectively spend $10B+ annually on health. If even 5% were redirected to political reform infrastructure (IABs, Optimocracy development), it would exceed all current political reform spending.
+These funders collectively spend $10B+ annually on health. If even 5% were redirected to political reform infrastructure (the Optimocracy SuperPAC), it would exceed all current political reform spending.
 
 **The ROI Case for Funders**
 
@@ -602,7 +641,7 @@ Three barriers explain underinvestment in political reform:
 
 2. **Reputational risk**: Political engagement risks partisan association. Optimocracy's outcome focus (health and wealth, not ideology) mitigates this.
 
-3. **Coordination failure**: No single funder can reform the political system. IABs provide the coordination mechanism: funders contribute to a pool that rewards outcome-aligned politicians.
+3. **Coordination failure**: No single funder can reform the political system. The SuperPAC provides the coordination mechanism: funders contribute to a pool that rewards outcome-aligned politicians.
 
 **Coalition Structure**
 
@@ -611,19 +650,19 @@ The reform coalition assembles in phases:
 | Phase | Actors | Role | Capital |
 |-------|--------|------|---------|
 | Seed | Reform advocates, EA orgs | Initial design, proof of concept | $10-50M |
-| Pilot | Tech billionaires, forward-looking foundations | First IAB deployment | $100M-500M |
-| Scale | Major health funders | Anchor capital for IABs | $1-5B |
+| Pilot | Tech billionaires, forward-looking foundations | First SuperPAC deployment | $100M-500M |
+| Scale | Major health funders | Anchor capital for SuperPAC + IABs for specific reallocations | $1-5B |
 | Victory | Converted politicians, broader coalition | Political implementation | $10-25B |
 
-Reform advocates provide initial capital and legitimacy; major funders provide anchor capital for IABs; converted politicians provide political support. The arithmetic strongly favors reform: welfare gains ($20-50T annually) vastly exceed maximum compensation costs ($25-200B one-time).
+Reform advocates provide initial capital and legitimacy; major funders provide anchor capital for the SuperPAC; converted politicians provide political support. The arithmetic strongly favors reform: welfare gains ($20-50T annually) vastly exceed maximum compensation costs ($25-200B one-time).
 
 ## Implementation Pathway
 
 ### Why Government Adoption Isn't Required
 
-Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
+Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund the SuperPAC enough to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
 
-![A conceptual diagram comparing the direct government adoption path with the wrapper architecture model, highlighting how IABs convert funding into economic pressure.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
+
 
 ### Implementation Strategy
 
