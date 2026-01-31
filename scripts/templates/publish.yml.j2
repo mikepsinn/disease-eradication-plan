@@ -61,13 +61,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX{% if job.project_type == "book" %} for PDF/EPUB{% endif %}
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.github/workflows/publish.yml') }}{% endraw %}
+          restore-keys: |
+            tinytex-{% raw %}${{ runner.os }}{% endraw %}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX{% if job.project_type == "book" %} for PDF/EPUB{% endif %}
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}
         timeout-minutes: {{ job.timeout_minutes }}
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-{{ job.config_name }}
+          path: |
+            _build_temp/{{ job.config_name }}/*.log
+            _build_temp/{{ job.config_name }}/**/*.log
+          retention-days: 7
 
 {% if job.deploy_to_netlify %}
       - name: "Deploy {{ job.display_name }} to Netlify (immediate)"

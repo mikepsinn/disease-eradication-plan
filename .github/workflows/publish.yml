@@ -74,13 +74,22 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          # Ensure all required packages are installed upfront
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The 1% Treaty: Health and Economic Impact of Redir"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-1-pct-treaty-impact
+          path: |
+            _build_temp/1-pct-treaty-impact/*.log
+            _build_temp/1-pct-treaty-impact/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)"
@@ -151,13 +160,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
         run: python scripts/render-quarto.py cost-of-change
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-cost-of-change
+          path: |
+            _build_temp/cost-of-change/*.log
+            _build_temp/cost-of-change/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
@@ -228,13 +259,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Health and Economic Impact of a Global System "
         run: python scripts/render-quarto.py dfda-impact
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-dfda-impact
+          path: |
+            _build_temp/dfda-impact/*.log
+            _build_temp/dfda-impact/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)"
@@ -305,13 +358,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
         run: python scripts/render-quarto.py dfda-spec
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-dfda-spec
+          path: |
+            _build_temp/dfda-spec/*.log
+            _build_temp/dfda-spec/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)"
@@ -382,13 +457,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Federal Resource Allocation Efficiency Audit"
         run: python scripts/render-quarto.py federal-efficiency-audit
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-federal-efficiency-audit
+          path: |
+            _build_temp/federal-efficiency-audit/*.log
+            _build_temp/federal-efficiency-audit/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Federal Resource Allocation Efficiency Audit to Netlify (immediate)"
@@ -459,13 +556,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-iab
+          path: |
+            _build_temp/iab/*.log
+            _build_temp/iab/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)"
@@ -536,13 +655,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
         run: python scripts/render-quarto.py invisible-graveyard
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-invisible-graveyard
+          path: |
+            _build_temp/invisible-graveyard/*.log
+            _build_temp/invisible-graveyard/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build The Invisible Graveyard: Quantifying the Mortality to Netlify (immediate)"
@@ -626,7 +767,6 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          # Ensure all required packages are installed upfront to avoid mid-build installs
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
@@ -643,6 +783,7 @@ jobs:
             _build_temp/manual/*.log
             _build_temp/manual/**/*.log
           retention-days: 7
+
 
       - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
         if: github.event_name == 'push'
@@ -712,13 +853,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
         run: python scripts/render-quarto.py obg
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-obg
+          path: |
+            _build_temp/obg/*.log
+            _build_temp/obg/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)"
@@ -789,13 +952,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Optimal Policy Generator: Evidence-Based Policy Re"
         run: python scripts/render-quarto.py opg
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-opg
+          path: |
+            _build_temp/opg/*.log
+            _build_temp/opg/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)"
@@ -866,13 +1051,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Optimocracy: Evidence-Based Governance Through Out"
         run: python scripts/render-quarto.py optimocracy
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-optimocracy
+          path: |
+            _build_temp/optimocracy/*.log
+            _build_temp/optimocracy/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Optimocracy: Evidence-Based Governance Through Out to Netlify (immediate)"
@@ -943,13 +1150,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Political Dysfunction Tax"
         run: python scripts/render-quarto.py political-dysfunction-tax
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-political-dysfunction-tax
+          path: |
+            _build_temp/political-dysfunction-tax/*.log
+            _build_temp/political-dysfunction-tax/**/*.log
+          retention-days: 7
 
 
 
@@ -1001,13 +1230,35 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy
         timeout-minutes: 30
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-wishocracy
+          path: |
+            _build_temp/wishocracy/*.log
+            _build_temp/wishocracy/**/*.log
+          retention-days: 7
 
 
       - name: "Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)"
