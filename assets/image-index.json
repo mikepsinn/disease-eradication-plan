@@ -1,7 +1,7 @@
 {
   "totalImages": 2386,
-  "totalSizeBytes": 1192706811,
-  "totalSize": "1137.5 MB",
+  "totalSizeBytes": 1192701805,
+  "totalSize": "1137.4 MB",
   "images": [
     {
       "path": "assets/cover/a-1970s-retro-futuristic-book-cover-how-to-end-war-and-disease.jpeg",
@@ -4631,62 +4631,67 @@
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 381832,
+      "sizeBytes": 381802,
       "size": "372.9 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-31T21:46:11.002Z",
+      "modified": "2026-01-31T22:17:50.738Z",
       "imageType": "other",
       "style": "black and white academic",
       "generationPrompt": "Use a black and white scientific illustration style.\n\nAdoption Pathway\n\nTreaty adoption depends on:\n1. **Political coalition**: Build support among health ministries, fiscal conservatives seeking budget efficiency, and populations demanding better healthcare\n2. **Economic case**: 637:1 (95% CI: 569:1-790:1) ROI makes this profitable, not charitable\n3. **VICTORY Incentive Alignment Bonds**: Fund $1B advocacy campaign, align investor and political incentives\n4. **Diplomatic negotiation**: UN General Assembly or coalition of willing nations\n\n**Timeline**: Highly variable depending on political momentum. Successful precedents range from 18 months (rapid consensus) to 5+ years (extended negotiation). The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.",
-      "transcript": "ADOPTION PATHWAY. 1. POLITICAL COALITION: HEALTH MINISTRIES, FISCAL CONSERVATIVES, POPULATIONS DEMANDING BETTER HEALTHCARE. BUILD SUPPORT. 2. ECONOMIC CASE: COST vs ROI PROFITABLE. 637:1 (95% CI: 539:1-730:1). NOT CHARITABLE. 3. VICTORY INCENTIVE ALIGNMENT BONDS: VICTORY. FUND $1B ADVOCACY CAMPAIGN. INVESTOR INCENTIVES, POLITICAL INCENTIVES. 4. DIPLOMATIC NEGOTIATION: UN GENERAL ASSEMBLY, COALITION OF WILLING NATIONS. TIMELINE: RAPID CONSENSUS: 18 MONTHS. EXTENDED NEGOTIATION: 5+ YEARS. TREATY ADOPTED. TIMELINE: Highly variable depending on political momentum. The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice. WarOnDisease.org.",
+      "transcript": "ADOPTION PATHWAY\n1. POLITICAL COALITION\nHEALTH MINISTRIES\nFISCAL CONSERVATIVES\nPOPULATIONS DEMANDING BETTER HEALTHCARE\nBUILD SUPPORT\n2. ECONOMIC CASE\nCOST vs ROI PROFITABLE\n637:1 (95% CI: 589:1-790:1)\nNOT CHARITABLE\n3. VICTORY INCENTIVE ALIGNMENT BONDS\nVICTORY\nINVESTOR INCENTIVES\nPOLITICAL INCENTIVES\nFUND $1B ADVOCACY CAMPAIGN\n4. DIPLOMATIC NEGOTIATION\nUN GENERAL ASSEMBLY\nCOALITION OF WILLING NATIONS\nTIMELINE\nRAPID CONSENSUS: 18 MONTHS\nTREATY ADOPTED\nEXTENDED NEGOTIATION: 5+ YEARS\nTREATY ADOPTED\nTIMELINE: Highly variable depending on political momentum. The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.\nWarOnDisease.org",
       "imageIssues": [
         "Small text in the confidence interval (95% CI) area",
         "Visual density is high"
       ],
       "metadataCreatedAt": "2026-01-30T07:47:08.909Z",
-      "title": "Adoption Pathway for the Global War on Disease Treaty",
-      "description": "A flowchart detailing the four-stage implementation process for a global medical research treaty, starting with building political coalitions and establishing a 637:1 ROI economic case. The pathway concludes with diplomatic negotiation strategies and timeline projections ranging from 18 months to over 5 years.",
+      "title": "The Adoption Pathway for the War on Disease",
+      "description": "A strategic flowchart detailing the four stages of implementing the 1% Treaty: building political coalitions, establishing the economic ROI of 637:1, issuing Victory Incentive Alignment Bonds, and conducting diplomatic negotiations. It contrasts a 18-month rapid consensus timeline against a traditional 5-year extended negotiation process.",
       "keywords": [
         "1% Treaty",
         "War on Disease",
-        "Global Health Policy",
-        "Medical Research Funding",
-        "Economic ROI",
-        "Incentive Bonds",
-        "Diplomatic Negotiation"
+        "healthcare ROI",
+        "Victory Bonds",
+        "medical research funding",
+        "global health policy",
+        "economic case",
+        "diplomatic negotiation"
       ],
-      "qualityScore": 5,
+      "qualityScore": 4,
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "We have designed a machine that turns political willpower into not dying. It uses gears and math, which is how you know it's serious. https://WarOnDisease.org",
-      "twitterText": "We've made a diagram showing how to stop people from dying. It involves several gears and a scale, so you know it's official. If we follow these steps, we might accidentally end up with a future. https://WarOnDisease.org",
-      "linkedInText": "It turns out that saving millions of lives has a 637:1 return on investment, which is lucky because humanity usually struggles to do things just because they are 'correct.' This adoption pathway shows how to align greed with survival. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "It turns out people are much more interested in not dying once you prove it’s more profitable than the alternative. Here is the flowchart for tricking the world into being sensible. https://WarOnDisease.org",
+      "twitterText": "We've tried appealing to humanity to solve disease, but that was too expensive. Now we're trying math and greed. This adoption pathway shows how a 637:1 ROI can buy us a world where people stop dying for no reason. https://WarOnDisease.org",
+      "linkedInText": "The path to a global medical research treaty isn't paved with good intentions; it's paved with ROI and aligned incentives. By treating health as an investment rather than a cost, we can compress decades of negotiation into 18 months. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "presentation"
+        "presentation",
+        "facebook"
       ],
-      "speakerNotes": "This slide outlines the four-step 'Adoption Pathway' for the 1% Treaty. We start by building a coalition of unlikely allies—fiscal conservatives and health ministries—before moving into a self-funding advocacy model that treats health as a high-yield investment rather than a cost.",
+      "speakerNotes": "This diagram outlines the four stages of the 1% Treaty adoption. By framing the War on Disease as a high-yield investment rather than a charitable expense, we can bridge the gap between health ministries and fiscal conservatives to reach a rapid 18-month consensus.",
       "talkingPoints": [
-        "Aligns fiscal hawks with health advocates by highlighting economic ROI.",
-        "Uses a 637:1 return on investment to shift the narrative from charity to profitability.",
-        "Utilizes Victory Incentive Alignment Bonds to fund the necessary $1B advocacy push.",
-        "Identifies two diplomatic routes: the UN General Assembly or a smaller Coalition of Willing Nations."
+        "The 1% Treaty shifts the focus from 'charity' to an 'economic case' with a 637:1 ROI.",
+        "Victory Incentive Alignment Bonds provide the $1B necessary to fund global advocacy.",
+        "Aligned incentives allow for a 'Rapid Consensus' timeline of 18 months compared to the usual 5+ years for global treaties."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A complex flowchart titled 'Adoption Pathway' illustrating four stages: Political Coalition, Economic Case (637:1 ROI), Victory Incentive Alignment Bonds, and Diplomatic Negotiation, leading to a signed treaty.",
+      "altText": "A detailed technical diagram showing the 4-step adoption pathway for the War on Disease: Political Coalition, Economic Case (637:1 ROI), Victory Bonds, and Diplomatic Negotiation.",
       "emotionalTone": "informative",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "War on Disease initiative economic modeling"
+        "WarOnDisease.org"
       ],
-      "factCheckNotes": "The ROI of 637:1 is a specific calculation based on the economic value of increased life expectancy and reduced disease burden as detailed in the 'War on Disease' proposal.",
+      "factCheckNotes": "The 637:1 ROI figure is a specific projection from the 1% Treaty economic model.",
       "imageProblemsDetected": false,
-      "metadataEnrichedAt": "2026-01-31T21:46:10.125Z"
+      "metadataEnrichedAt": "2026-01-31T22:13:17.438Z",
+      "qualityIssues": [
+        "Information dense layout",
+        "Small statistical subscripts"
+      ]
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg",
@@ -4757,59 +4762,59 @@
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 404510,
-      "size": "395.0 KB",
+      "sizeBytes": 399534,
+      "size": "390.2 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-31T21:46:25.120Z",
+      "modified": "2026-01-31T22:17:50.740Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Effectiveness of Targeted vs. General Medical Treatments",
-      "description": "A comparative analysis showing the outcomes of two medical treatments for women over 50 with a specific genetic marker. Treatment A targets the specific marker with 92% effectiveness and low side effects, while the general Treatment B shows 65% effectiveness and moderate side effects.",
+      "title": "Comparative Effectiveness of Targeted Versus General Medical Treatments",
+      "description": "A comparative diagram showing two treatment options for women over 50 with a specific genetic marker. Treatment A shows 92% effectiveness with low side effects by targeting the genetic marker, while Treatment B shows 65% effectiveness with moderate side effects as a secondary option.",
       "keywords": [
-        "personalized medicine",
         "precision medicine",
         "genetic markers",
         "treatment effectiveness",
         "targeted therapy",
-        "medical outcomes"
+        "medical outcomes",
+        "side effects",
+        "healthcare research"
       ],
-      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X. RANK 1 TREATMENT A. GENETIC MARKER X TARGETED. EFFECTIVENESS 92%. SIDE EFFECTS: LOW. OPTIMAL OUTCOME. RANK 2 TREATMENT B. EFFECTIVENESS 65%. SIDE EFFECTS: MODERATE. SECONDARY OPTION. WarOnDisease.org",
+      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X; RANK 1; TREATMENT A; GENETIC MARKER X TARGETED; EFFECTIVENESS 92%; SIDE EFFECTS: LOW; OPTIMAL OUTCOME; RANK 2; TREATMENT B; EFFECTIVENESS 65%; SIDE EFFECTS: MODERATE; SECONDARY OPTION; WarOnDisease.org",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We've discovered how to target your specific genes to save your life, but we usually stick with the option that makes your hair fall out because it's cheaper. It's like choosing a localized surgery vs. being hit by a bus and hoping the bus knocks the tumor out. https://WarOnDisease.org",
-      "twitterText": "Science has figured out how to target DNA so you don't die. Unfortunately, the budget for making sure you actually get that treatment was spent on a new type of tank that can't drive in the rain. 92% effectiveness is great, if you can find it. https://WarOnDisease.org",
-      "linkedInText": "Personalized medicine allows us to treat patients with incredible precision, yet we continue to fund general treatments that are significantly less effective. Why settle for a 'secondary option' when the 'optimal outcome' is a matter of redirected research funding? #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We've finally narrowed down exactly how to save this specific group of people, which is great news for them and a polite shrug for everyone else. It turns out medicine works better when you actually know who you're treating. https://WarOnDisease.org",
+      "twitterText": "We found a way to make medicine 92% effective for a specific group of people. We call it 'precision medicine,' because calling it 'medicine that actually works' felt a bit too pointed for the marketing department. https://WarOnDisease.org",
+      "linkedInText": "Choosing between a 92% success rate and a 65% success rate with more headaches seems like a difficult decision for a budget committee, but a fairly easy one for the person in the hospital gown. Precision medicine is the future, assuming we decide to fund the future. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This visual demonstrates the stark difference between targeted precision medicine and general treatments. For this specific demographic—women over 50 with Marker X—precision medicine isn't just slightly better; it's the difference between a 92% success rate and a 65% success rate with far more complications.",
+      "speakerNotes": "This slide demonstrates the impact of precision medicine. By identifying 'Genetic Marker X' in women over 50, we can move from a 'Secondary Option' with 65% effectiveness to an 'Optimal Outcome' with 92% effectiveness and significantly fewer side effects.",
       "talkingPoints": [
-        "Targeted therapy (Treatment A) provides a 27% increase in effectiveness over general options.",
-        "The side effect profile is significantly reduced when treatments are matched to genetic markers.",
-        "Redirecting funding toward this type of precision research is the core objective of the 1% Treaty."
+        "Targeted therapy increases effectiveness by 27 percentage points in this demographic",
+        "Specific genetic filtering reduces systemic side effects",
+        "Funding the 'War on Disease' allows for the discovery of more markers like 'X'"
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram comparing Treatment A, which is 92% effective with low side effects by targeting a genetic marker, against Treatment B, which is 65% effective with moderate side effects.",
+      "altText": "A diagram comparing two medical treatments for a specific patient group. Treatment A targets a genetic marker and achieves 92% effectiveness with low side effects. Treatment B is a general secondary option with 65% effectiveness and moderate side effects.",
       "emotionalTone": "informative",
-      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "callToAction": "4 shares = ~153 lives saved",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org"
+        "Illustrative conceptual data for the War on Disease initiative"
       ],
-      "factCheckNotes": "The image illustrates a conceptual model of precision medicine benefits rather than data from a specific named clinical trial.",
+      "factCheckNotes": "The data presented is illustrative of the benefits of precision medicine and targeted oncology/genomics rather than a specific clinical trial result for a drug named 'A'.",
       "promptLeakageDetected": true,
       "promptLeakageText": [
         "SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV"
       ],
       "promptLeakageRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' from the bottom of the image.",
-      "metadataEnrichedAt": "2026-01-31T21:46:24.464Z",
+      "metadataEnrichedAt": "2026-01-31T22:13:32.452Z",
       "metadataCreatedAt": "2026-01-28T17:56:46.339Z",
       "qualityIssues": [
         "Internal metadata text 'SCIENTIFIC ILLUSTRATION DATABASE' is present in the frame"

@@ -54,6 +54,9 @@ interface EnrichmentResult {
 
 /**
  * Check which metadata fields are missing for an image
+ *
+ * Note: Empty arrays are considered VALID (field was evaluated, found nothing).
+ * Only undefined/null means the field was never set.
  */
 async function getMissingFields(imagePath: string): Promise<string[]> {
   const missing: string[] = []
@@ -65,9 +68,8 @@ async function getMissingFields(imagePath: string): Promise<string[]> {
 
   for (const field of ALL_FIELDS) {
     const value = metadata[field]
+    // Only undefined/null means missing - empty arrays are valid (evaluated, no values)
     if (value === undefined || value === null) {
-      missing.push(field)
-    } else if (Array.isArray(value) && value.length === 0) {
       missing.push(field)
     }
   }
@@ -251,7 +253,10 @@ async function main() {
     const relativePath = path.relative(process.cwd(), imagePath)
     processed++
 
+    // Show why this image is being processed (which fields are missing)
+    const missingFields = options.all ? ['(--all flag)'] : await getMissingFields(imagePath)
     console.log(`\n[${processed}/${images.length}] ${relativePath}`)
+    console.log(`  Missing fields: ${missingFields.join(', ')}`)
 
     // Generate all metadata in one API call
     const generated = await generateCompleteMetadata(imagePath)

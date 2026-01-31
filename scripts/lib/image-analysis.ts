@@ -468,54 +468,48 @@ export async function generateCompleteMetadata(
 
   const metadata = extractJsonFromResponse(response, 'complete metadata') as CompleteMetadataResult
 
-  const result: CompleteMetadataResult = {}
+  // Always return all fields with defaults so they're saved to EXIF
+  // This prevents re-enrichment on the next run due to "missing" fields
+  const result: CompleteMetadataResult = {
+    // Core metadata
+    title: metadata.title || '',
+    description: metadata.description || '',
+    keywords: metadata.keywords || [],
+    transcript: (metadata.transcript && metadata.transcript !== '[NO TEXT]')
+      ? metadata.transcript
+      : '',
 
-  // Core metadata
-  if (metadata.title) result.title = metadata.title
-  if (metadata.description) result.description = metadata.description
-  if (metadata.keywords?.length) result.keywords = metadata.keywords
-  if (metadata.transcript && metadata.transcript !== '[NO TEXT]') {
-    result.transcript = metadata.transcript
-  }
+    // Quality assessment
+    qualityScore: metadata.qualityScore || 0,
+    qualityIssues: metadata.qualityIssues || [],
+    standaloneScore: metadata.standaloneScore || 0,
 
-  // Quality assessment (informational only)
-  if (metadata.qualityScore) result.qualityScore = metadata.qualityScore
-  if (metadata.qualityIssues?.length) result.qualityIssues = metadata.qualityIssues
-  if (metadata.standaloneScore) result.standaloneScore = metadata.standaloneScore
+    // Social media
+    canShareStandalone: metadata.canShareStandalone ?? false,
+    socialCaption: metadata.socialCaption || '',
+    twitterText: metadata.twitterText || '',
+    linkedInText: metadata.linkedInText || '',
+    targetPlatforms: metadata.targetPlatforms || [],
 
-  // Social media
-  if (typeof metadata.canShareStandalone === 'boolean') {
-    result.canShareStandalone = metadata.canShareStandalone
-  }
-  if (metadata.socialCaption) result.socialCaption = metadata.socialCaption
-  if (metadata.twitterText) result.twitterText = metadata.twitterText
-  if (metadata.linkedInText) result.linkedInText = metadata.linkedInText
-  if (metadata.targetPlatforms?.length) result.targetPlatforms = metadata.targetPlatforms
+    // Presentations
+    speakerNotes: metadata.speakerNotes || '',
+    talkingPoints: metadata.talkingPoints || [],
+    audienceLevel: metadata.audienceLevel || 'general',
 
-  // Presentations
-  if (metadata.speakerNotes) result.speakerNotes = metadata.speakerNotes
-  if (metadata.talkingPoints?.length) result.talkingPoints = metadata.talkingPoints
-  if (metadata.audienceLevel) result.audienceLevel = metadata.audienceLevel
+    // Accessibility & Tone
+    altText: metadata.altText || '',
+    emotionalTone: metadata.emotionalTone || 'neutral',
+    callToAction: metadata.callToAction || '',
 
-  // Accessibility & Tone
-  if (metadata.altText) result.altText = metadata.altText
-  if (metadata.emotionalTone) result.emotionalTone = metadata.emotionalTone
-  if (metadata.callToAction) result.callToAction = metadata.callToAction
+    // Data Integrity
+    dataFreshness: metadata.dataFreshness || 'timeless',
+    dataSources: metadata.dataSources || [],
+    factCheckNotes: metadata.factCheckNotes || '',
 
-  // Data Integrity
-  if (metadata.dataFreshness) result.dataFreshness = metadata.dataFreshness
-  if (metadata.dataSources?.length) result.dataSources = metadata.dataSources
-  if (metadata.factCheckNotes) result.factCheckNotes = metadata.factCheckNotes
-
-  // Image Problems Detection
-  if (typeof metadata.imageProblemsDetected === 'boolean') {
-    result.imageProblemsDetected = metadata.imageProblemsDetected
-  }
-  if (metadata.imageProblems?.length) {
-    result.imageProblems = metadata.imageProblems
-  }
-  if (metadata.imageProblemsRepairPrompt) {
-    result.imageProblemsRepairPrompt = metadata.imageProblemsRepairPrompt
+    // Image Problems Detection
+    imageProblemsDetected: metadata.imageProblemsDetected ?? false,
+    imageProblems: metadata.imageProblems || [],
+    imageProblemsRepairPrompt: metadata.imageProblemsRepairPrompt || '',
   }
 
   return result
