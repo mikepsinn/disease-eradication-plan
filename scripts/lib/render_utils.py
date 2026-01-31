@@ -27,6 +27,9 @@ try:
 except ImportError:
     PSUTIL_AVAILABLE = False
 
+# Detect if running in GitHub Actions
+IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
+
 
 def setup_quarto_python_env():
     """
@@ -443,8 +446,13 @@ class BuildMonitor:
                 print(timestamped_line, end="")
 
                 # Parse and extract relevant information for summary
-                self.parse_line(line, custom_parsers)
-                # Note: parsed info is already printed above, this is just for tracking
+                parsed_result = self.parse_line(line, custom_parsers)
+
+                # Emit GitHub Actions error annotation for visibility
+                if IN_GITHUB_ACTIONS and parsed_result and parsed_result.startswith("ERROR"):
+                    # Extract clean error message
+                    error_msg = line.strip().replace('\n', ' ')
+                    print(f"::error::{error_msg}", flush=True)
 
                 # Check if watchdog killed the process
                 if self.timed_out:
@@ -532,12 +540,29 @@ class BuildMonitor:
                     self.log(f"  ... and {len(self.warnings) - display_limit} more")
 
             if self.errors:
-                self.log("\nErrors detected:")
+                # Start a new GitHub Actions group for errors (makes it stand out)
+                if IN_GITHUB_ACTIONS:
+                    print("::endgroup::", flush=True)  # End any previous group
+                    print("::group::❌ ERRORS DETECTED - BUILD FAILED", flush=True)
+
+                # Make errors VERY visible
+                self.log("\n" + "!" * 80)
+                self.log("!" * 80)
+                self.log("!!!  ERRORS DETECTED - BUILD FAILED  !!!")
+                self.log("!" * 80)
+                self.log("!" * 80)
                 display_limit = self.max_errors_display if self.max_errors_display > 0 else len(self.errors)
                 for error in self.errors[:display_limit]:
-                    self.log(f"  - {error}")
+                    self.log(f"  {error}")
+                    # Also emit GitHub Actions annotation for each error
+                    if IN_GITHUB_ACTIONS:
+                        print(f"::error::{error}", flush=True)
                 if len(self.errors) > display_limit:
                     self.log(f"  ... and {len(self.errors) - display_limit} more")
+                self.log("!" * 80)
+
+                if IN_GITHUB_ACTIONS:
+                    print("::endgroup::", flush=True)
 
             # Decide final exit code
             if return_code != 0:
