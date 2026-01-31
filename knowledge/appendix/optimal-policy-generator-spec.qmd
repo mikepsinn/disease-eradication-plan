@@ -65,7 +65,7 @@ This specification describes the **Optimal Policy Generator (OPG)**, a proposed 
 
 ![A conceptual diagram of the Optimal Policy Generator (OPG) framework illustrating the flow from evidence and welfare metrics to the four primary policy outputs: Enact, Replace, Repeal, and Maintain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
 
-**Important limitation**: Until retrospective validation is performed (see @sec-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
+**Important limitation**: Until retrospective validation is performed (see @sec-opg-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
 OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs:
 
@@ -290,7 +290,7 @@ The result: welfare losses from documented policy failures. Evidence-based polic
 
 ### Scale of Available Evidence
 
-The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data should improve on the current system of lobbying-driven, ideology-filtered policy adoption. How much improvement is an empirical question requiring validation (see @sec-validation-framework).
+The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data should improve on the current system of lobbying-driven, ideology-filtered policy adoption. How much improvement is an empirical question requiring validation (see @sec-opg-validation-framework).
 
 ![A conceptual comparison between the current ideology-driven policy system and a proposed evidence-based framework leveraging data from millions of policy-years across multiple jurisdictional levels.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-evidence-bw-academic.jpg)
 
@@ -306,7 +306,7 @@ The evidence base comprises millions of policy-years of natural experiments acro
 
 ### Validation Status
 
-This specification describes a *proposed* framework. The methodology requires empirical validation before deployment. Specifically, retrospective studies should assess whether OPG-identified high-priority recommendations correlate with actual welfare improvements in jurisdictions that adopted them (see @sec-validation-framework for proposed validation design). Until such validation is completed, OPG outputs should inform but not replace expert judgment.
+This specification describes a *proposed* framework. The methodology requires empirical validation before deployment. Specifically, retrospective studies should assess whether OPG-identified high-priority recommendations correlate with actual welfare improvements in jurisdictions that adopted them (see @sec-opg-validation-framework for proposed validation design). Until such validation is completed, OPG outputs should inform but not replace expert judgment.
 
 ## Related Work
 
@@ -1491,7 +1491,7 @@ OPG provides *evidence-weighted recommendations*, not causal proof:
 
 **Important**: The quasi-experimental methods used provide evidence *consistent with* causation under assumptions that are often untestable. Synthetic control assumes the donor pool adequately represents the counterfactual; difference-in-differences assumes parallel trends would have continued; regression discontinuity assumes no manipulation around the threshold. These assumptions cannot be verified from data alone.
 
-## Validation Framework {#sec-validation-framework}
+## Validation Framework {#sec-opg-validation-framework}
 
 ### The Critical Question
 

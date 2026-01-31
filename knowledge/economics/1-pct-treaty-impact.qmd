@@ -2461,7 +2461,7 @@ We have empirically tested **{{< var exploration_ratio >}}** of the drug-disease
 
 {{< var unexplored_ratio_latex >}}
 
-##### Uncertainty Analysis
+##### Uncertainty Analysis {#treaty-unexplored-uncertainty-analysis}
 
 {{< include ../figures/tornado-exploration_ratio.qmd >}}
 

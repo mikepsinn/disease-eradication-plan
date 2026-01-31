@@ -710,7 +710,7 @@ The PIS operationalizes six of the nine Bradford Hill criteria for causality [@b
 ::: {.callout-warning}
 ## Provisional Thresholds - Not Yet Validated
 
-The PIS thresholds below are **theoretically motivated heuristics**, not empirically validated cutoffs. Until retrospective validation against RCT outcomes is performed (see @sec-validation-framework), these thresholds should be treated as provisional guidelines for prioritization, not evidence standards.
+The PIS thresholds below are **theoretically motivated heuristics**, not empirically validated cutoffs. Until retrospective validation against RCT outcomes is performed (see @sec-dfda-validation-framework), these thresholds should be treated as provisional guidelines for prioritization, not evidence standards.
 :::
 
 PIS scores range from 0 to approximately 1 (though values slightly above 1 are possible with very strong evidence). Guidelines for interpretation:
@@ -1720,7 +1720,7 @@ The 21st Century Cures Act mandates FDA evaluation of RWE. This framework suppor
 - **Label updates**: Quantitative basis for efficacy/safety updates
 - **Comparative effectiveness**: Treatment rankings within classes
 
-## Validation Framework {#sec-validation-framework}
+## Validation Framework {#sec-dfda-validation-framework}
 
 ### The Critical Question
 

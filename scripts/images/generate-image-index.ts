@@ -201,7 +201,7 @@ export async function updateImageInIndex(
 export async function syncIndex(options?: {
   forceRebuild?: boolean;
   quiet?: boolean;
-}): Promise<{ total: number; skipped: number; updated: number }> {
+}): Promise<{ total: number; skipped: number; updated: number; removed: number }> {
   const forceRebuild = options?.forceRebuild ?? false;
   const quiet = options?.quiet ?? false;
 
@@ -221,6 +221,7 @@ export async function syncIndex(options?: {
   // Load existing index for incremental mode
   const existingIndex = forceRebuild ? null : await loadIndex();
   const existingByPath = new Map<string, ImageMetadata>();
+  const previousCount = existingIndex?.images.length ?? 0;
   if (existingIndex) {
     for (const img of existingIndex.images) {
       existingByPath.set(img.path, img);
@@ -232,6 +233,7 @@ export async function syncIndex(options?: {
   let processed = 0;
   let skipped = 0;
   let updated = 0;
+  let added = 0;
 
   for (const filePath of imageFiles) {
     const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
@@ -258,12 +260,13 @@ export async function syncIndex(options?: {
           ...freshMetadata,  // Overwrite with fresh file metadata
         };
         images.push(merged);
+        updated++;
       } else {
         // New file - no existing metadata to preserve
         images.push(freshMetadata);
+        added++;
       }
       totalSize += freshMetadata.sizeBytes;
-      updated++;
     }
 
     processed++;
@@ -284,11 +287,18 @@ export async function syncIndex(options?: {
 
   await saveIndex(index);
 
+  // Calculate removed: files that were in previous index but not found on disk
+  const removed = previousCount - skipped - updated;
+
   if (!quiet) {
-    console.log(`  [OK] Synced ${images.length} images (${skipped} unchanged, ${updated} updated)`);
+    const parts = [`${skipped} unchanged`];
+    if (added > 0) parts.push(`${added} added`);
+    if (updated > 0) parts.push(`${updated} updated`);
+    if (removed > 0) parts.push(`${removed} removed`);
+    console.log(`  [OK] Synced ${images.length} images (${parts.join(', ')})`);
   }
 
-  return { total: images.length, skipped, updated };
+  return { total: images.length, skipped, updated, removed };
 }
 
 async function main() {
@@ -305,7 +315,7 @@ async function main() {
     console.log('[WARN] exiftool not available - using basic metadata only\n');
   }
 
-  const { total, skipped, updated } = await syncIndex({ forceRebuild, quiet: true });
+  const { total, skipped, updated, removed } = await syncIndex({ forceRebuild, quiet: false });
 
   // Reload index for stats
   const index = await loadIndex();
@@ -321,7 +331,10 @@ async function main() {
   console.log(`  Total images: ${total}`);
   console.log(`  Total size: ${index.totalSize}`);
   console.log(`  Skipped (unchanged): ${skipped}`);
-  console.log(`  Updated/added: ${updated}`);
+  console.log(`  Updated: ${updated}`);
+  if (removed > 0) {
+    console.log(`  Removed (deleted from disk): ${removed}`);
+  }
   console.log(`  Output: ${OUTPUT_FILE}`);
   console.log('='.repeat(60));
 

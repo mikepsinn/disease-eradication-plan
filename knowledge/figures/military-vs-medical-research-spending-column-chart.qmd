@@ -57,10 +57,10 @@ bar_cure = ax.bar(x_positions[1], cure_spending, bar_width,
 
 # Add custom labels
 # Main label inside the 99% bar (white text on black)
-# Note: Use \$ to escape dollar sign, preventing matplotlib mathtext parsing
+# Note: Single $ without closing $ doesn't trigger matplotlib mathtext parsing
 
 ax.text(x_positions[0], military_99_visual * 0.6,
-        f'\${military_total_trillions:.1f}T', ha='center', va='center',
+        f'${military_total_trillions:.1f}T', ha='center', va='center',
         color=COLOR_WHITE, fontsize=56, fontweight='bold')
 ax.text(x_positions[0], military_99_visual * 0.35,
         'Global\nMilitary\nSpending', ha='center', va='center',
@@ -69,7 +69,7 @@ ax.text(x_positions[0], military_99_visual * 0.35,
 # Label above small bar (as it was originally)
 
 ax.text(x_positions[1], cure_spending + (military_total * 0.025),
-        f'\${cure_spending:.0f}B\nCuring Disease', ha='center', va='bottom',
+        f'${cure_spending:.0f}B\nCuring Disease', ha='center', va='bottom',
         color=COLOR_BLACK, fontsize=32, fontweight='bold', linespacing=1.1)
 
 # Set x-axis with category labels

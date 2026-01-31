@@ -231,7 +231,7 @@ We estimate global costs by scaling from the US, which has the most transparent 
 
 The ratio reflects that global discretionary government spending is roughly 9x US discretionary spending (~$15T vs ~$1.7T), discounted by ~50% because non-US political systems tend to be less transparent and potentially less expensive to influence. The wide confidence interval reflects uncertainty about non-US political dynamics and hidden influence channels.
 
-### Uncertainty Analysis {#uncertainty-analysis}
+### Uncertainty Analysis {#cost-of-change-uncertainty-analysis}
 
 These estimates are calculated from input parameters with explicit uncertainty distributions. Monte Carlo simulation propagates uncertainty through the calculation chain.
 
@@ -384,7 +384,7 @@ These estimates use the same methodology: match opposition spending 2-3:1, accou
 ![A conceptual overview of the four primary constraints (legal, financial, political, and organizational) that limit the scope and effectiveness of political influence strategies.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-limitations-bw-academic.jpg)
 
 
-**Counter-spending dynamics**: Affected interests may escalate spending in response. However, industries already spend near optimal levels and cannot exceed their total rents. See [Uncertainty Analysis](#uncertainty-analysis) for quantified ranges.
+**Counter-spending dynamics**: Affected interests may escalate spending in response. However, industries already spend near optimal levels and cannot exceed their total rents. See [Uncertainty Analysis](#cost-of-change-uncertainty-analysis) for quantified ranges.
 
 **Political backlash**: Visible attempts to influence outcomes may generate voter backlash. Mitigation requires framing as education and advocacy, grassroots mobilization, and transparency.
 

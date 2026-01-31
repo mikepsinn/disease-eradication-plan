@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 90,017
+**Files:** 4 | **Words:** 90,018
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1366,7 +1366,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,101 words | 2,802 lines
+**Stats:** 29,102 words | 2,802 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1529,7 +1529,7 @@
       - Why this critique may not apply
       - Distinction
       - The Myth of Diminishing Returns
-        - Uncertainty Analysis
+        - Uncertainty Analysis {#treaty-unexplored-uncertainty-analysis}
     - Pragmatic Trial Internal Validity and Selection Bias
       - Mitigation strategies
     - QALY Calculation Uncertainties
@@ -1592,7 +1592,7 @@
       - Post-Office Career Value
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
-    - Uncertainty Analysis {#uncertainty-analysis}
+    - Uncertainty Analysis {#cost-of-change-uncertainty-analysis}
   - Implications for Major Health Funders {#funder-implications}
     - Current Philanthropic Efficiency
     - The Political Reform ROI Calculation
@@ -1840,7 +1840,7 @@
     - Positioning Relative to RCTs
     - Evidence Hierarchy Integration
     - FDA Real-World Evidence Framework Alignment
-  - Validation Framework {#sec-validation-framework}
+  - Validation Framework {#sec-dfda-validation-framework}
     - The Critical Question
     - Proposed Validation Study
     - Known Limitations Requiring Validation
@@ -2083,7 +2083,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 345,580
+**Files:** 84 | **Words:** 345,583
 
 #### index.qmd
 **Title:** Start Here
@@ -2835,7 +2835,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,101 words | 2,802 lines
+**Stats:** 29,102 words | 2,802 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -2998,7 +2998,7 @@
       - Why this critique may not apply
       - Distinction
       - The Myth of Diminishing Returns
-        - Uncertainty Analysis
+        - Uncertainty Analysis {#treaty-unexplored-uncertainty-analysis}
     - Pragmatic Trial Internal Validity and Selection Bias
       - Mitigation strategies
     - QALY Calculation Uncertainties
@@ -3033,7 +3033,7 @@
 #### knowledge/call-to-action/your-personal-benefits.qmd
 **Title:** Your Personal Benefits
 **Description:** What You Actually Get From This
-**Stats:** 534 words | 80 lines
+**Stats:** 535 words | 80 lines
 
   - Your Actual Odds Right Now
   - What You Actually Get
@@ -3041,7 +3041,7 @@
     - If you have money
       - If you have a family
     - The Math
-    - Uncertainty Analysis
+    - Uncertainty Analysis {#personal-benefits-uncertainty-analysis}
     - The Bottom Line
 
 #### knowledge/futures.qmd
@@ -3810,7 +3810,7 @@
       - Post-Office Career Value
       - US Maximum Reform Investment Scenarios {#us-political-reform-scenarios}
     - Global Estimates {#global-estimates}
-    - Uncertainty Analysis {#uncertainty-analysis}
+    - Uncertainty Analysis {#cost-of-change-uncertainty-analysis}
   - Implications for Major Health Funders {#funder-implications}
     - Current Philanthropic Efficiency
     - The Political Reform ROI Calculation
@@ -4057,7 +4057,7 @@
     - Time-Varying Effects
     - Publication Bias
     - Epistemic Limitations
-  - Validation Framework {#sec-validation-framework}
+  - Validation Framework {#sec-opg-validation-framework}
     - The Critical Question
     - Addressing Adoption Bias
     - Proposed Validation Study
@@ -4327,7 +4327,7 @@
     - Positioning Relative to RCTs
     - Evidence Hierarchy Integration
     - FDA Real-World Evidence Framework Alignment
-  - Validation Framework {#sec-validation-framework}
+  - Validation Framework {#sec-dfda-validation-framework}
     - The Critical Question
     - Proposed Validation Study
     - Known Limitations Requiring Validation
@@ -5926,11 +5926,11 @@
 #### knowledge/appendix/personal-lifetime-wealth-calc.qmd
 **Title:** Personal Lifetime Wealth Calculation
 **Description:** Simple QALY-based calculation showing personal benefit from 1% treaty life extension
-**Stats:** 364 words | 72 lines
+**Stats:** 365 words | 72 lines
 
   - The Simple Formula
   - Why QALY Valuation?
-  - Uncertainty Analysis
+  - Uncertainty Analysis {#personal-wealth-uncertainty-analysis}
     - Input Distribution
     - Output Distribution
     - Sensitivity Analysis
@@ -6783,7 +6783,7 @@
     - Time-Varying Effects
     - Publication Bias
     - Epistemic Limitations
-  - Validation Framework {#sec-validation-framework}
+  - Validation Framework {#sec-opg-validation-framework}
     - The Critical Question
     - Addressing Adoption Bias
     - Proposed Validation Study
@@ -7232,6 +7232,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 548,265
+- Total words: 548,269
 - Orphaned files: 20
 - Paper configs: 12

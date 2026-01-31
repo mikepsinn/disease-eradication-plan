@@ -97,12 +97,12 @@ optimistic_value = format_as_trillions(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECO
 bar_conservative = ax.bar(x_positions[2], health_gains_conservative, bar_width,
                          color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
                          hatch=PATTERN_DIAGONAL,
-                         label=f'Historical Rate (existing drugs only):\n{conservative_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {conservative_deaths_total:.1f}M deaths avoided\n× {yll} YLL × \\${vsly:.0f}k/QALY = {conservative_value}')
+                         label=f'Historical Rate (existing drugs only):\n{conservative_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {conservative_deaths_total:.1f}M deaths avoided\n× {yll} YLL × ${vsly:.0f}k/QALY = {conservative_value}')
 
 bar_primary = ax.bar(x_positions[2], health_gains_primary - health_gains_conservative, bar_width,
                     bottom=health_gains_conservative,
                     color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2.5,
-                    label=f'Lag Elimination (removing 8.2yr efficacy lag):\n{primary_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {primary_deaths_total:.0f}M deaths avoided\n× {yll} YLL × \\${vsly:.0f}k/QALY = {primary_value}')
+                    label=f'Lag Elimination (removing 8.2yr efficacy lag):\n{primary_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {primary_deaths_total:.0f}M deaths avoided\n× {yll} YLL × ${vsly:.0f}k/QALY = {primary_value}')
 
 bar_optimistic = ax.bar(x_positions[2], health_gains_optimistic - health_gains_primary, bar_width,
                        bottom=health_gains_primary,

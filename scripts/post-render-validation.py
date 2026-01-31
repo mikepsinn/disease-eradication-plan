@@ -126,6 +126,13 @@ BLACKLISTED_PATTERNS = [
         "skip_in_scripts": True,
     },
     {
+        "regex": re.compile(r"SyntaxWarning:"),
+        "error_type": "PYTHON_SYNTAX_WARNING",
+        "message": "Python SyntaxWarning in output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+    {
         "regex": re.compile(
             r"lastToneElevationWithHumorHash|lastInstructionalVoiceHash|lastFormattedHash|lastFactCheckHash|lastStyleCheckHash|lastStructureCheckHash|lastLatexCheckHash|lastParamCheckHash"
         ),

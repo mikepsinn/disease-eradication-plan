@@ -39,6 +39,9 @@ try:
 except ImportError:
     EM_DASH_MESSAGE = 'Em-dash found. Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.'
 
+# Import centralized file utilities
+from lib.quarto_file_utils import find_files_by_extension
+
 # Filler phrases that should be removed - just state the point directly
 FILLER_PHRASES = [
     (r'\*\*[Kk]ey [Ii]nsight:?\*\*:?', 'Filler phrase "Key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
@@ -1084,19 +1087,25 @@ def load_anchor_ids(filepath: str) -> Set[str]:
 
         # Pattern to match Quarto explicit anchors in headings: ## Heading {#anchor-name}
         # Matches: # Heading {#anchor-id} or ## Heading {#anchor-id} etc.
-        quarto_anchor_pattern = re.compile(r'^#+\s+.*\{#([^}]+)\}', re.MULTILINE)
+        quarto_anchor_pattern = re.compile(r'^(#+\s+.+)\{#([^}]+)\}', re.MULTILINE)
+        headings_with_explicit_anchors: Set[str] = set()
         quarto_matches = quarto_anchor_pattern.finditer(content)
         for match in quarto_matches:
-            anchor_ids.add(match.group(1))
+            anchor_ids.add(match.group(2))
+            # Track the full heading line (without the anchor) to skip auto-generation
+            headings_with_explicit_anchors.add(match.group(0))
 
         # Also generate auto-anchor IDs from headings (Quarto's default behavior)
         # Pattern: ## Heading Text -> heading-text
+        # BUT skip headings that have explicit anchors (Quarto only uses the explicit one)
         heading_pattern = re.compile(r'^#+\s+(.+)$', re.MULTILINE)
         heading_matches = heading_pattern.finditer(content)
         for match in heading_matches:
+            full_line = match.group(0)
+            # Skip if this heading has an explicit anchor
+            if full_line in headings_with_explicit_anchors:
+                continue
             heading_text = match.group(1).strip()
-            # Remove explicit anchor if present: Heading {#anchor} -> Heading
-            heading_text = re.sub(r'\s*\{#[^}]+\}', '', heading_text)
             # Convert to anchor format: lowercase, replace spaces/special chars with hyphens
             anchor_id = re.sub(r'[^\w\s-]', '', heading_text.lower())
             anchor_id = re.sub(r'[-\s]+', '-', anchor_id)
@@ -1110,33 +1119,6 @@ def load_anchor_ids(filepath: str) -> Set[str]:
         return anchor_ids
 
 
-# Directories to skip during file discovery (faster than filtering after)
-SKIP_DIRS = {"node_modules", "_book", ".quarto", "_site", "__tests__", "_build_temp", ".git", ".venv", "venv", "__pycache__"}
-
-
-def find_files_fast(extensions: Tuple[str, ...], root: str = ".") -> List[str]:
-    """
-    Fast file discovery using os.walk instead of glob.
-    Much faster on Windows, especially for large directory trees.
-
-    Args:
-        extensions: Tuple of file extensions to match (e.g., (".qmd", ".md"))
-        root: Root directory to search from
-
-    Returns:
-        List of file paths matching the extensions
-    """
-    files = []
-    for dirpath, dirnames, filenames in os.walk(root):
-        # Modify dirnames in-place to skip directories (prevents descending into them)
-        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
-
-        for filename in filenames:
-            if filename.endswith(extensions):
-                files.append(os.path.join(dirpath, filename))
-    return files
-
-
 def _load_anchor_ids_worker(filepath: str) -> Tuple[str, Set[str]]:
     """Worker function for parallel anchor ID loading."""
     anchor_ids = load_anchor_ids(filepath)
@@ -1145,14 +1127,14 @@ def _load_anchor_ids_worker(filepath: str) -> Tuple[str, Set[str]]:
 
 def load_all_anchor_ids() -> Dict[str, Set[str]]:
     """
-    Load anchor IDs from all .qmd and .md files in the project.
+    Load anchor IDs from all .qmd files in the project.
     Uses parallel processing for faster loading on multi-core systems.
     Returns a dictionary mapping file paths to sets of anchor IDs.
     """
     anchor_map: Dict[str, Set[str]] = {}
 
-    # Find all .qmd and .md files using fast os.walk
-    all_files = find_files_fast((".qmd", ".md"))
+    # Find all .qmd files using centralized file utilities
+    all_files = find_files_by_extension((".qmd",))
 
     # Load anchor IDs in parallel using ThreadPoolExecutor
     # I/O bound task, so threads work well (no GIL issues for file reading)
@@ -1674,8 +1656,8 @@ def main():
     # Validate _quarto.yml configuration first
     validate_quarto_config()
 
-    # Find all .qmd files using fast os.walk (directory filtering built into SKIP_DIRS)
-    qmd_files = find_files_fast((".qmd",))
+    # Find all .qmd files using centralized file utilities
+    qmd_files = find_files_by_extension((".qmd",))
     # Exclude references.qmd from validation
     qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
     # Exclude index.qmd (use index-book.qmd instead - index.qmd is for website, index-book.qmd is for book)

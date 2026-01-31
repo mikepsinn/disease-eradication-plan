@@ -40,7 +40,7 @@ The Quality-Adjusted Life Year (QALY) is the standard metric in health economics
 
 This means each additional year of healthy life you gain from accelerated medical research is worth {{< var standard_economic_qaly_value_usd >}} in economic terms.
 
-## Uncertainty Analysis
+## Uncertainty Analysis {#personal-wealth-uncertainty-analysis}
 
 The primary source of uncertainty is how many years of life extension the 1% treaty will achieve. The `LIFE_EXTENSION_YEARS` parameter captures this, ranging from conservative (antibiotic precedent) to optimistic (longevity escape velocity) scenarios.
 

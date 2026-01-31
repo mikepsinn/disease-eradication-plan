@@ -323,34 +323,77 @@ def is_syncable_config(config_name: str) -> bool:
 
 def count_qmd_files(config: Dict[str, Any]) -> int:
     """Count QMD files referenced in a Quarto config."""
-    count = 0
+    return len(get_qmd_files_from_config(config))
 
-    def count_items(items):
-        nonlocal count
+
+def get_qmd_files_from_config(config: Dict[str, Any]) -> List[str]:
+    """
+    Get list of QMD file paths referenced in a Quarto config.
+
+    Extracts from book.chapters, project.render, appendices, etc.
+    Returns paths as they appear in the config (relative to project root).
+    """
+    files: List[str] = []
+
+    def extract_items(items):
         if not items:
             return
         for item in items:
             if isinstance(item, str):
                 if item.endswith('.qmd'):
-                    count += 1
+                    files.append(item)
             elif isinstance(item, dict):
                 if 'href' in item and item['href'].endswith('.qmd'):
-                    count += 1
-                for key in ('chapters', 'contents', 'parts'):
+                    files.append(item['href'])
+                for key in ('chapters', 'contents', 'parts', 'appendices'):
                     if key in item:
-                        count_items(item[key])
+                        extract_items(item[key])
 
     # Book format
     book = config.get('book', {})
     if book.get('chapters'):
-        count_items(book['chapters'])
+        extract_items(book['chapters'])
+    if book.get('appendices'):
+        extract_items(book['appendices'])
 
     # Website format
     project = config.get('project', {})
     if project.get('render'):
-        count_items(project['render'])
+        extract_items(project['render'])
 
-    return count
+    return files
+
+
+def get_all_book_qmd_files(project_root: Optional[Path] = None) -> Set[str]:
+    """
+    Get all QMD files that are part of any Quarto book/website config.
+
+    This is the authoritative source for which QMD files matter for
+    duplicate anchor detection and other cross-file validations.
+
+    Returns:
+        Set of normalized file paths relative to project root
+    """
+    if project_root is None:
+        project_root = _find_project_root()
+
+    all_files: Set[str] = set()
+
+    for config_path in get_all_config_paths(project_root):
+        config = _load_config(config_path)
+        if config is None:
+            continue
+
+        # Get QMD files from this config
+        qmd_files = get_qmd_files_from_config(config)
+
+        # Normalize paths
+        for f in qmd_files:
+            # Normalize path separators
+            normalized = f.replace('\\', '/')
+            all_files.add(normalized)
+
+    return all_files
 
 
 if __name__ == "__main__":

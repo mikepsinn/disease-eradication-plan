@@ -974,7 +974,8 @@ def render_quarto(
             gh_group_end()
 
         # 6. Validate and verify outputs in temp directory (skip in preview mode)
-        if not preview and build_temp:
+        # Skip if build already failed - no point validating broken/missing outputs
+        if not preview and build_temp and exit_code == 0:
             gh_group_start("VALIDATING BUILD OUTPUTS")
 
             # Determine output directory in temp build folder
