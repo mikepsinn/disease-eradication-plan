@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 90,016
+**Files:** 4 | **Words:** 90,008
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1366,10 +1366,9 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,100 words | 2,802 lines
+**Stats:** 29,092 words | 2,793 lines
 
   - Abstract
-  - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
   - Key Findings
   - How Pragmatic Trials Increase Safety
   - Introduction
@@ -2083,7 +2082,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 345,831
+**Files:** 84 | **Words:** 345,823
 
 #### index.qmd
 **Title:** Start Here
@@ -2835,10 +2834,9 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,100 words | 2,802 lines
+**Stats:** 29,092 words | 2,793 lines
 
   - Abstract
-  - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
   - Key Findings
   - How Pragmatic Trials Increase Safety
   - Introduction
@@ -7234,6 +7232,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 548,764
+- Total words: 548,748
 - Orphaned files: 20
 - Paper configs: 12
