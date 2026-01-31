@@ -61,9 +61,22 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX for PDF/EPUB
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX for PDF/EPUB
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          # Ensure all required packages are installed upfront
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The 1% Treaty: Health and Economic Impact of Redir"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
@@ -600,14 +613,36 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX for PDF/EPUB
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
 
-        run: quarto install tinytex
+      - name: Install LaTeX for PDF/EPUB
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          # Ensure all required packages are installed upfront to avoid mid-build installs
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build How to End War and Disease"
         run: python scripts/render-quarto.py manual
         timeout-minutes: 75
 
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-manual
+          path: |
+            _build_temp/manual/*.log
+            _build_temp/manual/**/*.log
+          retention-days: 7
 
       - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
         if: github.event_name == 'push'
