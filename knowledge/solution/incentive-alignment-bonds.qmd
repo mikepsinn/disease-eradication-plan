@@ -46,7 +46,6 @@ You've seen the numbers by now:
 
 ![A visual comparison showing 1% of military spending contrasted against hundreds of millions of lives saved and trillions in value, alongside a timeline illustrating the lag between immediate political costs and long-term global benefits.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
 
-
 The 1% Treaty isn't constrained by physics, biology, or money. It's constrained by **politics**, which is like being constrained by your dog's opinion on quantum mechanics except your dog can veto legislation.
 
 No politician wants to be the one who "cut the military." Even by 1%. Even if that 1% cures cancer. The attack ads write themselves: "Senator Johnson voted to WEAKEN AMERICA. His opponent didn't. Vote for literally anyone else."
@@ -65,11 +64,13 @@ If you want different outcomes, you need different incentives. Wishing very hard
 
 Imagine you could say to every politician on Earth:
 
-> "If your country adopts a 1%-style reform and your citizens actually get healthier, we will:
+> "If you vote for a 1%-style reform and your country actually funds it, we will:
 >
 > * upgrade your international reputation (you'll get invited to better parties),
 > * boost your reelection odds (independent campaigns will favor you),
 > * and make your post-office career prospects significantly better than your rivals' (Goldman Sachs boards, prestigious fellowships, that sort of thing)."
+
+![A diagram illustrating the Incentive Alignment Bond cycle: a politician implements reforms, citizens' health improves, and transparent systemic rewards are triggered in response.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-you-need-legal-bribery-that-isn-t-technically-bribery-bw-academic.jpg)
 
 No backroom deals. No suitcases of cash. No prison.
 
@@ -92,7 +93,6 @@ Incentive Alignment Bonds (IABs) are a new class of financial instruments design
 **The key innovation:** IABs align **both** investors and politicians with public-good outcomes through a single instrument. Investors provide capital to pass the policy. Politicians get career benefits for supporting it. The policy outcome funds everything.
 
 ![A conceptual diagram showing the flow of capital and incentives between investors, politicians, and public good outcomes mediated by an Incentive Alignment Bond.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
-
 
 This is mechanism design applied to governance, using the tools economists developed for auctions and markets to solve political economy problems. The insight is that politicians respond to incentives like everyone else; the question is whether those incentives point toward saving lives or toward pleasing lobbies. IABs change what the incentives point at.
 
@@ -126,7 +126,6 @@ Let's walk through the basic structure in four steps.
 
 ![A sequential flowchart illustrating the four-step process of how incentive alignment bonds are structured.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-incentive-alignment-bonds-work-the-simple-version-bw-academic.jpg)
 
-
 #### Step 1: Define a Measurable Outcome
 
 You choose an outcome that:
@@ -134,6 +133,8 @@ You choose an outcome that:
 * Is **measurable** with agreed methods.
 * Is **directly attributable** to policy actions.
 * Matters at scale.
+
+![A comparison diagram showing the distinction between measurable policy metrics (funding flows and votes) and diffuse global outcomes (health improvements).](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-1-define-a-measurable-outcome-bw-academic.jpg)
 
 **Measure funding flows, not downstream health outcomes.** Health benefits are global and diffuse - you can't attribute a cure discovered via a global framework for ubiquitous pragmatic trials to any specific country's funding. But you CAN measure:
 
@@ -153,7 +154,6 @@ Foundations, impact investors, development banks, and perhaps even regular inves
 
 ![A structural diagram illustrating the flow of capital from various investor types into an independent trust for Incentive Alignment Bonds, where payouts are linked to specific public-good performance metrics.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-2-raise-capital-bw-academic.jpg)
 
-
 * The capital raised is held by an independent entity (a trust, fund, or special-purpose vehicle).
 * Buyers know: “This bond pays out if and only if objectively measured public-good targets are hit.”
 
@@ -165,12 +165,12 @@ This is structurally similar to:
 
 #### Step 3: Fund Outcomes, Reward Politicians Indirectly
 
-When a country:
+When a politician:
 
-1. Adopts a 1%-style policy (e.g., reallocating 1% of its military budget to pragmatic clinical trials managed under transparent rules), and
-2. Achieves verified improvements in health outcomes compared to a counterfactual,
+1. Votes for a 1%-style policy (e.g., reallocating 1% of the military budget to pragmatic clinical trials), and
+2. The policy passes and funding actually flows to the treaty fund,
 
-the mechanism triggers **indirect rewards for politicians**:
+the mechanism triggers **indirect rewards**:
 
 * **Public Good Scores** rise (published by independent rating organizations)
 * **Electoral support** increases (independent campaigns favor high-scorers)
@@ -182,23 +182,21 @@ The core principle:
 
 ![A flowchart showing how policy adoption and health outcomes lead to indirect political rewards through independent ratings, voter support, and post-office career opportunities.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-3-fund-outcomes-reward-politicians-indirectly-bw-academic.jpg)
 
-
 This avoids the "that's just bribery" problem entirely. Nobody's getting paid. They're just getting credit for doing their job well, in ways that happen to benefit their careers.
 
 #### Step 4: Make Politicians Care (Without Paying Them)
 
-The magic is that **better health outcomes translate directly into political benefits**.
+The magic is that **supporting 1%-equivalent policies translates directly into political benefits**.
 
 ![A flowchart showing how supporting high-impact health policies triggers a feedback loop of public good scores and media support, ultimately increasing a politician's utility function through reelection, status, and post-office prospects.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-4-make-politicians-care-without-paying-them-bw-academic.jpg)
 
-
 Because:
 
-* Citizens experiencing better health outcomes credit the politicians who made it happen (this is called "democracy working correctly").
+* Citizens who see their country funding cures credit the politicians who made it happen (this is called "democracy working correctly").
 * Independent rating systems give politicians a **Public Good Score** based on:
 
-  * whether they supported the policy, and
-  * whether outcomes improved in their jurisdiction.
+  * whether they voted for 1%-equivalent policies, and
+  * whether funding actually flowed to the treaty fund.
 
 * Media, NGOs, and external coalitions:
 
@@ -226,7 +224,6 @@ The previous section described the *what*. This section describes the *how*, in 
 
 ![A diagram illustrating the three-layer architecture of rule-based, ex-ante mechanisms designed to reward politicians for supporting pro-social policy classes.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-4a-the-three-layer-architecture-how-to-not-go-to-prison-bw-academic.jpg)
 
-
 You cannot legally say "support Bill #XYZ123 and get paid." That's bribery. People go to prison for that. It's also inefficient because you'd have to bribe every politician individually, which doesn't scale.
 
 But you *can* create a system where politicians who support a **class of pro-social policies** systematically get more electoral support, better reputations, and better post-office careers. The trick is: rule-based, ex-ante, universal mechanisms. No targeting individuals. No secret deals. Just standing rules that happen to reward saving lives.
@@ -237,28 +234,19 @@ Here's the architecture:
 
 #### Layer A: Outcome and Policy Scoring (Data Only)
 
-Create an independent scoring system that assigns each politician a **Public Good Score** based on:
-
-**Outcome metrics** (jurisdiction-level):
-
-* DALYs averted
-* Age-standardized mortality reduction
-* Excess mortality trends
-* Disease-specific survival rates
-
-**Policy action metrics** (individual-level):
+Create an independent scoring system that assigns each politician a **Public Good Score** based on their **policy actions** (not downstream health outcomes, which are global and unattributable to any single country):
 
 * Votes in favor of "1%-equivalent" measures
 * Sponsorship of such bills
 * Public commitments and campaign positions
 * Blocking harmful reversals
+* Actual funding flows resulting from their votes
 
 Critical design choice: **Don't tie scores to "The 1% Treaty" specifically.** Define a policy class:
 
 > "Policies that reallocate ≥1% of national military spending into independently governed pragmatic clinical trials with open data and outcome-based evaluation."
 
 ![A conceptual diagram showing how jurisdiction-level outcome metrics and individual-level policy actions feed into a rules-based scoring engine to produce a politician's Public Good Score.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-a-outcome-and-policy-scoring-data-only-bw-academic.jpg)
-
 
 Any politician supporting *any* policy matching this pattern gets credit. This avoids the "paying for your specific bill" problem entirely.
 
@@ -278,7 +266,6 @@ Independent entities, legally separate from the scoring system, can commit **ex 
 * Run comparative campaigns: "Senator Smith scored 23 on the Public Good Index. His opponent scored 78. One of them wants you to keep dying."
 
 ![A conceptual diagram showing how the Public Good Score flows through independent actors like PACs and NGOs to create electoral and reputational consequences for politicians.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-b-electoral-and-reputational-benefits-separate-actors-bw-academic.jpg)
-
 
 **NGOs and media can:**
 
@@ -313,14 +300,13 @@ After politicians leave office, they want prestigious jobs. Board seats. Fellows
 
 ![A flowchart contrasting the traditional corporate revolving door with a performance-based incentive model where post-office career benefits are contingent on health policy adoption and measurable outcomes.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-c-post-office-career-benefits-the-goldman-sachs-board-problem-bw-academic.jpg)
 
-
 You can point it somewhere else.
 
 Foundations, think tanks, and impact funds can establish:
 
-> "Eligibility for certain fellowships, advisory roles, and governance positions is restricted to former leaders from jurisdictions that:
-> 1. Adopted a 1%-equivalent policy during their tenure, and
-> 2. Achieved threshold improvements on agreed health metrics."
+> "Eligibility for certain fellowships, advisory roles, and governance positions is restricted to former leaders who:
+> 1. Voted for 1%-equivalent policies during their tenure, and
+> 2. Maintained a Public Good Score above threshold X."
 
 Politicians know this rule **in advance**. Their calculation becomes:
 
@@ -343,7 +329,6 @@ This separation is not a loophole; it's how the system maintains legitimacy. Eac
 
 ![A conceptual diagram showing the three legally distinct layers (Scoring, Electoral, and Post-office) functioning as separate entities that collectively influence a politician's policy decisions.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-legal-entity-separation-bw-academic.jpg)
 
-
 ### 4b. A Worked Example: How Senator Smith Votes Yes on the 1% Treaty
 
 Abstract mechanisms are great for economists and terrible for everyone else. Here's how IABs actually work, using a US senator deciding how to vote on the 1% Treaty as the example.
@@ -358,7 +343,6 @@ The whole point of this system is to increase two numbers:
 Every politician's score is tied to their impact on these numbers. Vote to increase them? Score goes up. Vote to decrease them? Score goes down. It's that simple.
 
 ![A bar chart illustrating the scaling impact of military spending reallocation, showing the annual dollar amount increasing from $27.2 billion at 1% to over $272 billion at 10%.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-primary-metrics-we-re-maximizing-bw-academic.jpg)
-
 
 #### The Politician's Utility Function
 
@@ -379,11 +363,9 @@ The IAB system makes each of these terms a function of the politician's **Public
 
 ![A conceptual diagram showing how the IAB system's Public Good Score feeds into the three primary drivers of a politician's utility: reelection probability, post-office income, and legacy.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-politician-s-utility-function-bw-academic.jpg)
 
-
 #### The Public Good Score
 
 ![A bar chart comparing the positive and negative point values for various legislative actions, highlighting how different votes impact a politician's Public Good Score.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-public-good-score-bw-academic.jpg)
-
 
 Each politician gets a score based on their **voting record** :
 
@@ -403,12 +385,9 @@ Where:
 | Cut 1% Treaty Fund funding or % | -20 points | +5 points |
 | Procedural support (cloture, etc.) | +5 points | -5 points |
 
-
-
 #### How Score Translates to Utility
 
 ![A visualization of the step-function relationship between a legislative score and its impact on independent campaign spending and post-office career tiers.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-score-translates-to-utility-bw-academic.jpg)
-
 
 Here's where self-interest kicks in:
 
@@ -460,7 +439,6 @@ Senator Smith (R-Texas) is up for reelection in 2026. The 1% Treaty Implementati
 
 ![A data dashboard for Senator Smith showing her Public Good Score of 45 against the Senate median of 52, alongside her 55% reelection probability and projected post-office financial tier.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-setup-bw-academic.jpg)
 
-
 **Her current stats:**
 
 - Public Good Score: 45 (below Senate median of 52)
@@ -501,7 +479,6 @@ Result: Vote no. Obviously.
 
 ![A side-by-side comparison of the political and financial outcomes for Senator Smith based on her vote, illustrating the significant divergence in reelection probability, legislative score, and lifetime earnings.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-new-calculus-with-iabs-bw-academic.jpg)
 
-
 **The math:**
 
 $$
@@ -517,7 +494,6 @@ Result: Vote yes. The math changed.
 1. **Pre-vote**: Senator Smith's staff pulls up her current Public Good Score (45). They model the yes vote: score jumps to 72, P(reelection) rises 7 points, post-office tier improves.
 
 ![A flowchart detailing the multi-step decision-making process of a Senator, tracking how score projections, financial incentives, and constituent data culminate in a final vote.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-actually-happens-bw-academic.jpg)
-
 
 2. **Lobbying meeting**: The old military lobby shows up to threaten. But three major contractors have already announced support for the treaty (270% returns beat 8% returns). The threat is empty.
 
@@ -542,7 +518,6 @@ Result: Vote yes. The math changed.
 She wins reelection by 12 points. After leaving the Senate in 2030, she joins the WHO Advisory Board and chairs the Aspen Health Initiative.
 
 ![A multi-series chart showing the scaling growth of Treaty Fund revenue and bondholder payouts alongside Senator Smith's performance metrics before and after the treaty.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-post-treaty-the-numbers-bw-academic.jpg)
-
 
 **For the primary metrics:**
 
@@ -579,7 +554,6 @@ Everyone's self-interest aligned. No one was bribed. The system just made "vote 
 
 ![A breakdown of the $27.2B annual Treaty Fund distribution, illustrating the allocation between investor returns, political incentive mechanisms, and medical research funding.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-for-victory-incentive-alignment-bond-investors-bw-academic.jpg)
 
-
 This is not cynical. This is public choice theory. It's only cynical if you think politicians should be motivated by pure altruism, in which case I have some bad news about the last 5,000 years of recorded history.
 
 ### Why This Is Not Bribery (Legally Speaking)
@@ -587,7 +561,6 @@ This is not cynical. This is public choice theory. It's only cynical if you thin
 At first glance, this sounds like fancy bribery. "Reward politicians when they do what you want" is pretty much the definition.
 
 ![A comparison diagram illustrating the divergent flows of incentives in bribery (private payment for violating duty) versus Incentive Alignment Bonds (automatic rewards for public duty compliance).](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-is-not-bribery-legally-speaking-bw-academic.jpg)
-
 
 Except it's not, for four reasons that matter to lawyers:
 
@@ -643,12 +616,11 @@ Beautiful, right? Inspiring, even. Also: meaningless without a mechanism. Treati
 
 ![A conceptual diagram illustrating Incentive Alignment Bonds as the operational 'bridge' that converts the 1% Treaty's high-level goals into tangible political incentives, scoring metrics, and global pressure.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-this-plugs-into-the-1-treaty-the-part-where-it-all-comes-together-bw-academic.jpg)
 
-
 Incentive Alignment Bonds provide **the missing political mechanism**:
 
-1. **Scoring the transition.** IABs create public metrics that track which countries are adopting 1%-equivalent policies and achieving results. Politicians get credit (or blame) in a format that's easy to communicate.
+1. **Scoring the transition.** IABs create public metrics that track which politicians voted for 1%-equivalent policies and whether funding actually flowed. Politicians get credit (or blame) in a format that's easy to communicate.
 
-2. **Rewarding early adopters.** Countries that move first and show results get higher Public Good Scores. Their politicians get electoral support from independent campaigns and access to prestigious post-office opportunities. Suddenly "being the first to do the right thing" becomes "being the first to get the career benefits."
+2. **Rewarding early adopters.** Politicians who move first get higher Public Good Scores. They get electoral support from independent campaigns and access to prestigious post-office opportunities. Suddenly "being the first to do the right thing" becomes "being the first to get the career benefits."
 
 3. **Creating political pressure.** High-performing countries get scores, coverage, and external support. Low-performing countries get awkward questions at international summits. Politicians *hate* awkward questions at international summits.
 
@@ -664,7 +636,6 @@ Incentive Alignment Bonds supply the **how**.
 If you've read the [VICTORY Incentive Alignment Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "Are these two different things?"
 
 ![A diagram illustrating the allocation of treaty revenue across the two 'engines' (investors and politicians) and the primary research mission, showing the flow of capital and incentives across pre- and post-treaty phases.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
-
 
 No. **VICTORY Incentive Alignment Bonds are the specific financial instrument that implements the IAB concept.**
 
@@ -684,7 +655,7 @@ The relationship is complementary:
 | Pre-Treaty | VICTORY Incentive Alignment Bonds | Raise capital from investors to fund the campaign |
 | Pre-Treaty | IAB Mechanism | Shows politicians that supporting the treaty improves their scores |
 | Post-Treaty | VICTORY Incentive Alignment Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
-| Post-Treaty | IAB Mechanism | Rewards politicians whose countries actually achieve health improvements |
+| Post-Treaty | IAB Mechanism | Rewards politicians who maintained support and whose countries kept funding flowing |
 
 VICTORY Incentive Alignment Bonds get investors to fund the war. The IAB mechanism gets politicians to fight it (and to keep fighting after victory).
 
@@ -706,22 +677,21 @@ Yes. Obviously. Politicians game everything. That's what they do.
 
 The question isn't "will they try to game it?" The question is "is gaming it harder than just doing the right thing?"
 
-To game IAB metrics, you'd need to:
+The scoring is based on **public voting records** and **verified funding flows**, not health outcomes. To game these metrics, you'd need to:
 
-* Falsify death certificates at scale (hard, people notice when relatives aren't dead)
-* Corrupt multiple independent international health organizations simultaneously (expensive)
-* Maintain the lie across rotating assessors over many years (exhausting)
+* Falsify your own vote (impossible - it's public record in every democracy)
+* Claim you voted yes when you voted no (easily disproven)
+* Pretend funding flowed when it didn't (treasury records are public)
 
-Or you could just... run some clinical trials and save lives. That's actually easier.
+Votes and funding flows are among the hardest metrics to game because they're already tracked by official government sources. The scoring system just aggregates public information.
 
-Gaming is a risk. But it's easier to harden a metric than to harden every informal lobbying channel on Earth. Right now, there are no metrics. The gaming is free and unlimited.
+Gaming is a risk with any metric. But votes and funding flows are orders of magnitude harder to fake than, say, self-reported ESG compliance.
 
 #### Objection 2: "Isn't this just rich people buying policy?"
 
 This is the most important objection, so let's take it seriously instead of hand-waving.
 
 ![A structural diagram of the IAB three-layer architecture, illustrating the separation between funding, objective scoring, and indirect politician benefits.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-2-isn-t-this-just-rich-people-buying-policy-bw-academic.jpg)
-
 
 If IABs are just plutocracy with better marketing, they deserve to fail. Let's see if they are.
 
@@ -739,15 +709,15 @@ If IABs are just plutocracy with better marketing, they deserve to fail. Let's s
 
 **Third, the honest admission:** Yes, wealthy people who fund IABs will have more influence over which public goods get prioritized than people who don't fund IABs. That's true of all philanthropy. The Gates Foundation has more influence over malaria policy than a random person who also cares about malaria. The question is whether that influence is being exercised transparently, toward measurable welfare improvements, through legal and auditable channels. IABs satisfy all three criteria in ways that traditional lobbying does not.
 
-#### Objection 3: "What if governments take the health gains but reverse the policy later?"
+#### Objection 3: "What if politicians pocket the career rewards, then reverse the policy?"
 
 They might. Politicians are humans, and humans have short attention spans and shorter terms.
 
 Countermeasures:
 
-* **Score decay**: Public Good Scores decline if outcomes reverse. Yesterday's hero becomes today's cautionary tale.
-* **Long-term metrics**: Reward durability, not just one-off changes. "You signed a document" is worth less than "you maintained the system for five years."
-* **Political scorecards**: Reversals tank your Public Good Score. The same mechanism that rewarded you for supporting the policy punishes you for killing it.
+* **Score decay**: Public Good Scores decline if you vote to reverse funding. Yesterday's hero becomes today's cautionary tale.
+* **Long-term metrics**: Reward durability, not just one-off votes. "You voted yes once" is worth less than "you defended the funding for five years."
+* **Political scorecards**: Voting to cut funding tanks your Public Good Score. The same mechanism that rewarded you for supporting the policy punishes you for killing it.
 
 You cannot prevent all backsliding. But you can make it expensive enough that it's not the default move.
 
@@ -757,11 +727,10 @@ It doesn't have to start global. Global is the goal. Portugal is the pilot.
 
 ![A flowchart illustrating the multi-stage progression of IAB policy adoption, from pilot countries and measured outcomes to global expansion driven by institutional FOMO.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-4-is-this-realistic-at-a-global-scale-bw-academic.jpg)
 
-
 The path:
 
 1. **One or two pilot countries** adopt a limited 1%-style policy with IAB support. (Portugal, Costa Rica, maybe New Zealand - small, functional democracies with something to prove.)
-2. **Outcomes are measured**; health improves; leaders get invited to better conferences and their scores rise.
+2. **Funding flows are verified**; the policy works; leaders get invited to better conferences and their scores rise.
 3. **Other countries notice** and copy what works, as they already do with credit ratings, trade agreements, and health system reforms. FOMO is a powerful force in international relations.
 
 Credit ratings didn't start as a global system. They started as one guy in the 1800s publishing opinions about railroad bonds. Now Moody's can tank a country's economy with a press release.
@@ -771,6 +740,8 @@ IABs can scale the same way: proof of concept → adoption by early movers → F
 ### Why This Matters for Ending War and Disease
 
 Ending war and disease is not primarily a **scientific** problem; it is a **governance** problem.
+
+![A conceptual diagram illustrating how Incentive Alignment Bonds bridge the gap between governance and global goals by linking objective performance metrics to rewards for political leaders.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-matters-for-ending-war-and-disease-bw-academic.jpg)
 
 We already know:
 
@@ -798,20 +769,6 @@ If ending war and disease is about anything, it is about that:
 
 Incentive Alignment Bonds are one of the simplest, most scalable tools we have to do that.
 
-### Summary: The Mechanism in One Sentence
-
-Create an **independent, outcome-indexed scoring system** where hitting big public-good targets automatically:
-
-* boosts a politician's Public Good Score (visible, comparable, embarrassing if low),
-* increases their electoral support from independent campaigns (they like this),
-* upgrades their post-office career prospects (they like this most),
-
-all via pre-announced, universal rules and independent institutions, so it's legally clean, incentive-compatible, and doesn't give a dollar to anyone.
-
-![A diagram illustrating the feedback loop between public-good outcomes, an independent scoring system, and the resulting reputational, electoral, and career incentives for a politician.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-the-mechanism-in-one-sentence-bw-academic.jpg)
-
-You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
-
 ### Why 10%: The Scaling Engine {#sec-why-ten-pct-scaling-engine}
 
 You might wonder: Why dedicate {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) to political incentives? Isn't that money that could go to pragmatic clinical trials?
@@ -823,7 +780,6 @@ The answer requires understanding what we're actually trying to do.
 The 1% treaty is the **proof of concept**. The endgame is redirecting *most* of global military spending to health. Ideally, 50%, 75%, eventually approaching 100%.
 
 ![A diagram contrasting the intended progression from a 1% proof-of-concept to 100% military spending reallocation against the four primary forces that cause political and economic stagnation.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-goal-isn-t-a-1-treaty-the-goal-is-100-bw-academic.jpg)
-
 
 That doesn't happen automatically. Once the 1% treaty passes:
 
@@ -840,27 +796,23 @@ The {{< var iab_political_incentive_funding_pct >}} IAB allocation creates somet
 
 ![A growth chart illustrating the scaling of treaty fund revenue and political incentives as the treaty level increases from 1% to 100%, highlighting the $270 billion terminal value for political alignment.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-iabs-are-the-political-ratchet-bw-academic.jpg)
 
-
-| Treaty Level | Total Revenue | 1% Treaty Fund Revenue | Research Funding | Political Incentive |
-|:-------------|:--------------|:------------|:-----------------|:--------------------|
-| 1% | {{< var treaty_annual_funding >}} | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_trial_subsidies_annual >}}/year | Politicians rewarded for passage |
+| Treaty Level | Total Revenue | IAB Political Funding (10%) | Research Funding (80%) | Effect |
+|:-------------|:--------------|:----------------------------|:-----------------------|:-------|
+| 1% | {{< var treaty_annual_funding >}} | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
 | 2% | $54B | $5.4B/year | $43.2B/year | Politicians compete to expand |
-| 5% | $135B | $13.5B/year | $108B/year | Defense industry pivots to health |
-| 10% | $270B | $27B/year | $216B/year | War becomes economically obsolete |
-| 25% | $675B | $67.5B/year | $540B/year | Superpowers compete on health outcomes |
-| 50% | $1.35T | $135B/year | $1.08T/year | Global transformation |
-| 100% | $2.7T | $270B/year | $2.16T/year | Full redirection achieved |
+| 5% | $136B | $13.6B/year | $109B/year | Defense industry pivots to health |
+| 10% | $272B | $27.2B/year | $218B/year | War becomes economically obsolete |
+| 25% | $680B | $68B/year | $544B/year | Superpowers compete on health |
+| 50% | $1.36T | $136B/year | $1.09T/year | Global transformation |
+| 100% | $2.72T | $272B/year | $2.18T/year | Full redirection achieved |
 
 At 100% redirection, the IAB mechanism would fund **$270 billion per year** in political incentives. That's more than all current global lobbying combined. It would make "support pragmatic clinical trial funding" the single most rewarded political position on Earth.
-
-
 
 #### The Math Changes Everything
 
 At 1%: "Is {{< var iab_political_incentive_funding_annual >}}/year for political incentives worth it?"
 
 ![A visualization comparing the $270 billion investment in political incentives to the $2.16 trillion in funding it unlocks, illustrating the self-reinforcing engine of growth.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-changes-everything-bw-academic.jpg)
-
 
 At 100%: "$270B/year in political incentives unlocks $2.16 *trillion* per year in funding for pragmatic clinical trials."
 
@@ -882,11 +834,10 @@ But after the 1% treaty passes:
 
 ![A flowchart illustrating the 'political ratchet' mechanism where initial treaty success triggers a feedback loop of rewards and competition, driving sequential expansion from a 1% to a 10% health treaty.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-victory-incentive-alignment-bonds-alone-won-t-scale-bw-academic.jpg)
 
-
 IABs solve the *ongoing* alignment problem:
 
 - Politicians who pushed for 1% see their IAB-funded benefits
-- They see colleagues getting rewarded for health outcomes
+- They see colleagues getting rewarded for supporting treaty expansion
 - They compete to push for 2%, then 5%, then 10%
 - Each expansion increases IAB funding, which increases political pressure, which drives the next expansion
 
@@ -902,7 +853,6 @@ Without IABs, here's the likely trajectory:
 - Year 16+: The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
 
 ![A comparative timeline showing the diverging trajectories of treaty effectiveness, contrasting the stagnation of a fixed 1% treaty against the exponential scaling of IAB-supported policies over 50 years.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-alternative-is-stagnation-bw-academic.jpg)
-
 
 With IABs:
 
@@ -926,6 +876,8 @@ Probably. But if anything, 10% might be conservative for what we're trying to ac
 
 The 1% Treaty is the first application of Incentive Alignment Bonds. It doesn't have to be the last.
 
+![A conceptual framework illustrating the four criteria required to apply Incentive Alignment Bonds to global coordination problems like climate change and pandemic preparedness.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-beyond-the-1-treaty-iabs-as-a-general-governance-tool-bw-academic.jpg)
+
 The core insight, that you can legally align politicians' self-interest with public goods by creating scoring systems, independent electoral support, and post-office career paths, applies to *any* global coordination problem where:
 
 1. **The public good is measurable** (CO₂ emissions, nuclear warheads, pandemic preparedness scores)
@@ -935,53 +887,13 @@ The core insight, that you can legally align politicians' self-interest with pub
 
 That describes most of the problems that could end civilization.
 
-#### Climate Change
+| Domain | Metric (already exists) | Concentrated Opposition | IAB Makes Career-Optimal |
+|:-------|:------------------------|:------------------------|:-------------------------|
+| **Climate** | UNFCCC emissions data | Fossil fuel lobbies | "Vote for emissions cuts" |
+| **Nuclear** | START treaty warhead counts | Defense contractors | "I reduced our arsenal" |
+| **Pandemic** | WHO Joint External Evaluation | Pharma incumbents | "I funded preparedness" |
 
-**The problem:** Politicians know what to do (reduce emissions). They don't do it because fossil fuel lobbies are concentrated and voters won't reward them for costs paid today that benefit people in 2070.
-
-![A flowchart showing how verified emissions data flows into a climate scoring system, triggering campaign funding and post-office career rewards to change political incentives.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-climate-change-bw-academic.jpg)
-
-
-**IAB solution:**
-
-- **Metric:** Verified emissions reductions (already measured by UNFCCC)
-- **Scoring:** Politicians who vote for aggressive climate policy get higher Climate Good Scores
-- **Electoral layer:** Climate PACs commit to $X million in independent support for high-scorers
-- **Post-office layer:** Climate fellowships, green advisory boards, clean energy foundation positions reserved for former leaders with threshold scores
-
-The math changes. "Vote for emissions cuts" stops being a career risk and becomes a career strategy.
-
-#### Nuclear Disarmament
-
-**The problem:** Everyone agrees fewer nukes would be good. No politician wants to be the one who "weakened deterrence." The incentives favor maintaining 5,000+ warheads indefinitely.
-
-![A flowchart illustrating the multi-stage IAB solution that converts verified nuclear warhead reductions into electoral support and prestigious post-office career opportunities.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-nuclear-disarmament-bw-academic.jpg)
-
-
-**IAB solution:**
-
-- **Metric:** Verified warhead reductions (already tracked by START treaties)
-- **Scoring:** Politicians who support arms reduction get higher Nuclear Safety Scores
-- **Electoral layer:** Peace PACs back high-scorers in contested races
-- **Post-office layer:** Arms control advisory positions, Nobel Peace Prize committee visibility, prestigious security fellowships for leaders who governed during verified reductions
-
-Suddenly "I reduced our nuclear arsenal" becomes a *positive* legacy instead of an attack ad waiting to happen.
-
-#### Pandemic Preparedness
-
-**The problem:** Pandemics are rare but catastrophic. Politicians have no incentive to invest in preparedness because the benefits arrive (as non-events) during someone else's term. COVID-19 killed millions partly because preparedness was systematically underfunded.
-
-![A flowchart mapping the incentive structure of the IAB solution, showing how WHO metrics feed into readiness scores which trigger electoral PAC support and post-office career rewards.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-pandemic-preparedness-bw-academic.jpg)
-
-
-**IAB solution:**
-
-- **Metric:** WHO Joint External Evaluation scores (already exist), pandemic response capacity indicators
-- **Scoring:** Politicians who fund preparedness get higher Pandemic Readiness Scores
-- **Electoral layer:** Health security PACs reward high-scorers
-- **Post-office layer:** Global health security fellowships, WHO advisory positions
-
-The same mechanism that makes voting for the 1% Treaty career-optimal makes voting for pandemic preparedness career-optimal.
+The pattern is identical: take an existing metric, build a scoring system, fund electoral support for high-scorers, and reserve post-office positions for leaders who governed well. The academic paper provides detailed treatment of generalization.
 
 #### The General Template
 
@@ -994,43 +906,15 @@ Any global public good can be IAB-ified with this structure:
 | **Electoral layer** | Rewards high-scorers with campaign support | 501(c)(4), PACs, Super PACs |
 | **Post-office layer** | Reserves prestige positions for high-scorers | Foundations, think tanks, advisory boards |
 
-The three-layer architecture (scoring, electoral, post-office) is reusable. The only thing that changes is the metric.
+The three-layer architecture (scoring, electoral, post-office) is reusable. The only thing that changes is the metric. See the [academic paper](../appendix/incentive-alignment-bonds-paper.qmd) for formal treatment of generalization and failure mode analysis.
 
-![A structural diagram of the IAB framework showing the Metric as the input to a three-layer architecture consisting of Scoring, Electoral, and Post-office components.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-general-template-bw-academic.jpg)
-
-
-#### Why This Hasn't Been Done Before
-
-If IABs are so obvious, why hasn't anyone built them?
-
-1. **Social Impact Bonds got there first, but aimed at the wrong target.** SIBs reward *service providers* for *program outcomes*. That's useful for local pilot projects. It doesn't change how politicians vote on trillion-dollar budgets. IABs flip the target: incentivize *politicians* directly.
-
-2. **The three-layer architecture is legally subtle.** You can't just pay politicians; that's bribery. The separation into scoring (data), electoral (independent campaigns), and post-office (eligibility rules) is what makes it legal. Most people proposing "better incentives" haven't worked through the legal structure.
-
-3. **Mechanism design for governance is new.** Economists have been designing mechanisms for auctions, markets, and matching for decades. Applying the same rigor to political incentives is more recent. Political science studies institutions; it rarely *designs* them.
-
-4. **No one's tried it yet.** Many innovations seem obvious in retrospect. Before credit ratings, people thought "you can't just *rate* sovereign debt." Before carbon markets, people thought "you can't *trade* pollution." IABs are at the "this might be crazy" stage that precedes "obviously we should have done this earlier."
-
-#### The Bigger Picture
-
-Incentive Alignment Bonds are not a complete solution to global governance. They're a **tool**, one that can be combined with treaties, international institutions, citizen movements, and other mechanisms.
-
-But they fill a gap that nothing else fills: **systematic, legal, transparent incentives for politicians to support policies with diffuse benefits and concentrated costs.**
-
-The 1% Treaty is the proof of concept. If it works, if we can show that IABs actually change political behavior at scale, the same architecture becomes available for climate, nuclear risk, pandemic preparedness, and every other problem where human extinction is possible but boring.
-
-We're not just building a mechanism to fund pragmatic clinical trials. We're building a template for making politicians care about humanity's long-term survival.
-
-That's worth getting right.
-
-### Summary: What IABs Actually Are
+### Summary
 
 Incentive Alignment Bonds are a new class of financial instrument designed to solve a problem as old as governance: **politicians optimize for reelection and post-office careers, not for humanity's long-term welfare.**
 
 IABs don't try to change human nature. They redirect it.
 
 ![A flowchart illustrating the three-layer architecture of IABs, showing the feedback loop between scoring systems, electoral support, and post-office career paths that aligns political self-interest with public goods.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
-
 
 **The core innovation:**
 
