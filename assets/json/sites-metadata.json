@@ -6,8 +6,8 @@
       "id": "1-pct-treaty-impact",
       "type": "book",
       "title": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
-      "description": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1)×. Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3k:1 (95% CI: 23.7k:1-112k:1)× better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
-      "abstract": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1)×. Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3k:1 (95% CI: 23.7k:1-112k:1)× better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
+      "description": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1). Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3k:1 (95% CI: 23.7k:1-112k:1) better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
+      "abstract": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3:1 (95% CI: 4.19:1-61.3:1). Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3k:1 (95% CI: 23.7k:1-112k:1) better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
       "siteUrl": "https://impact.warondisease.org",
       "favicon": "https://impact.warondisease.org/assets/icons/economics-favicon.png",
       "ogImage": "https://impact.warondisease.org/assets/og/economics-og-1200x630.jpg",
@@ -3339,7 +3339,7 @@
           "sections": [
             "A Note on Blame",
             "Confidence Levels: What We Know vs. What We Model",
-            "The }× Inefficiency Tax",
+            "The } Inefficiency Tax",
             "The }-Year Efficacy Lag",
             "What the 1962 Efficacy Requirements Changed",
             "Detailed Historical Analysis",
@@ -3692,7 +3692,7 @@
           "path": "knowledge/solution/dfda.qmd",
           "url": "https://manual.WarOnDisease.org/solution/dfda.html",
           "title": "A Decentralized Framework for Drug Assessment",
-          "description": "Increasing trial capacity {{< var dfda_trial_capacity_multiplier >}}× by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost",
+          "description": "Increasing trial capacity {{< var dfda_trial_capacity_multiplier >}} by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg",
           "tags": [
             "overview",
@@ -3848,7 +3848,7 @@
             "war-bonds"
           ],
           "sections": [
-            "Oxford RECOVERY: The }× Proof",
+            "Oxford RECOVERY: The } Proof",
             "Switzerland: The 200-Year Peace Dividend",
             "Result",
             "War Bonds: How Capitalism Beat Fascism",
@@ -3949,7 +3949,7 @@
           "path": "knowledge/economics/1-pct-treaty-impact.qmd",
           "url": "https://manual.WarOnDisease.org/economics/1-pct-treaty-impact.html",
           "title": "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials",
-          "description": "At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending to pragmatic trials increases capacity {{< var dfda_trial_capacity_multiplier >}}×, reducing this to ~{{< var dfda_queue_clearance_years >}} and delivering treatments decades earlier. Cost-effectiveness {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY (treaty) or {{< var dfda_direct_funding_cost_per_daly >}}/DALY (direct funding) both more cost-effective than bed nets.",
+          "description": "At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending to pragmatic trials increases capacity {{< var dfda_trial_capacity_multiplier >}}, reducing this to ~{{< var dfda_queue_clearance_years >}} and delivering treatments decades earlier. Cost-effectiveness {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY (treaty) or {{< var dfda_direct_funding_cost_per_daly >}}/DALY (direct funding) both more cost-effective than bed nets.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/economics-og-retro-academic.jpg",
           "tags": [
             "economics",
@@ -4708,7 +4708,7 @@
             "Key RECOVERY Trial Statistics",
             "They Used Regular Hospitals",
             "Proof This Isn't Insane",
-            "Oxford Already Achieved }× Cost Reduction",
+            "Oxford Already Achieved } Cost Reduction",
             "The Oxford RECOVERY Trial",
             "The Math"
           ],
@@ -6345,7 +6345,7 @@
           "path": "knowledge/appendix/economic-value-of-accelerated-treatments.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/economic-value-of-accelerated-treatments.html",
           "title": "Economic Value: Medical Progress",
-          "description": "Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}×.",
+          "description": "Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/economic-value-of-accelerated-treatments-og-retro-academic.jpg",
           "tags": [
             "medical-progress",
@@ -6357,7 +6357,7 @@
             "Introduction",
             "Average Economic Value of a New Therapy",
             "Annual Value Based on Average Approvals",
-            "Impact of }× More Trial Capacity",
+            "Impact of } More Trial Capacity",
             "Considerations and Context",
             "Conclusion",
             "Sources"

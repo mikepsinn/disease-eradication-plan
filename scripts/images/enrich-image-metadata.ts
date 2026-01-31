@@ -26,7 +26,7 @@ import { findImages } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { generateCompleteMetadata, CompleteMetadataResult } from '../lib/image-analysis'
 import { parseCommonArgs, printHeader, printSummary } from '../lib/cli-utils'
-import { updateImagesInIndexBatch, syncIndex } from './generate-image-index'
+import { updateImageInIndex, syncIndex } from './generate-image-index'
 
 const ASSETS_DIR = path.join(process.cwd(), 'assets', 'images')
 
@@ -174,12 +174,12 @@ async function main() {
   }
 
   // Sync index with file metadata first (ensures JSON matches EXIF data)
-  console.log('[1/5] Syncing image index with file metadata...')
+  console.log('[1/4] Syncing image index with file metadata...')
   await syncIndex({ quiet: true })
   console.log('  [OK] Index synced')
 
   // Find all images (skip GIFs - they're animations, not static images for enrichment)
-  console.log('\n[2/5] Finding images...')
+  console.log('\n[2/4] Finding images...')
   let images = await findImages(targetDir, {
     extensions: ['.png', '.jpg', '.jpeg', '.webp'],
   })
@@ -187,7 +187,7 @@ async function main() {
 
   // Filter to only those needing enrichment (unless --all)
   if (!options.all) {
-    console.log('\n[3/5] Checking for missing metadata...')
+    console.log('\n[3/4] Checking for missing metadata...')
     const toProcess: { path: string; missing: string[] }[] = []
 
     for (const img of images) {
@@ -229,7 +229,7 @@ async function main() {
 
     images = toProcess.map(p => p.path)
   } else {
-    console.log('\n[3/5] --all flag set, will regenerate all metadata')
+    console.log('\n[3/4] --all flag set, will regenerate all metadata')
   }
 
   // Apply limit
@@ -244,9 +244,8 @@ async function main() {
   }
 
   // Process images
-  console.log(`\n[4/5] Enriching metadata for ${images.length} images...`)
+  console.log(`\n[4/4] Enriching metadata for ${images.length} images...`)
   const results: EnrichmentResult[] = []
-  const indexUpdates: Array<{ imagePath: string; metadata: Record<string, unknown> }> = []
   let processed = 0
   let enriched = 0
 
@@ -290,10 +289,10 @@ async function main() {
 
       await writeImageMetadata(imagePath, metadataToSave)
 
-      // Collect for batch index update (avoids file locking issues on Windows)
-      indexUpdates.push({ imagePath, metadata: metadataToSave })
+      // Update index immediately (saveIndex has retry logic for file locking)
+      await updateImageInIndex(imagePath, metadataToSave)
 
-      console.log(`  [OK] Saved ${fieldsAdded.length} fields to EXIF`)
+      console.log(`  [OK] Saved ${fieldsAdded.length} fields + updated index`)
       enriched++
     } else if (options.dryRun) {
       console.log(`  [DRY RUN] Would save ${fieldsAdded.length} fields`)
@@ -303,13 +302,6 @@ async function main() {
 
     // Rate limiting - slightly longer for comprehensive analysis
     await new Promise(resolve => setTimeout(resolve, 800))
-  }
-
-  // Batch update the index (single write, avoids file locking issues)
-  if (indexUpdates.length > 0) {
-    console.log(`\n[5/5] Updating image index with ${indexUpdates.length} entries...`)
-    await updateImagesInIndexBatch(indexUpdates)
-    console.log(`  [OK] Index updated`)
   }
 
   // Summary

@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 90,008
+**Files:** 4 | **Words:** 90,007
 
 #### index.qmd
 **Title:** Wishocracy
@@ -1366,7 +1366,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,092 words | 2,793 lines
+**Stats:** 29,091 words | 2,793 lines
 
   - Abstract
   - Key Findings
@@ -1565,12 +1565,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,130
+**Files:** 1 | **Words:** 3,128
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,130 words | 415 lines
+**Stats:** 3,128 words | 415 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1609,12 +1609,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,754
+**Files:** 1 | **Words:** 11,753
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,754 words | 1,224 lines
+**Stats:** 11,753 words | 1,224 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1934,12 +1934,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,607
+**Files:** 1 | **Words:** 16,606
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,607 words | 1,507 lines
+**Stats:** 16,606 words | 1,507 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -2082,7 +2082,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 345,823
+**Files:** 84 | **Words:** 345,812
 
 #### index.qmd
 **Title:** Start Here
@@ -2268,7 +2268,7 @@
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
-  - The {{< var dfda_trial_cost_reduction_factor >}}× Inefficiency Tax
+  - The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
     - The {{< var efficacy_lag_years >}}-Year Efficacy Lag
   - What the 1962 Efficacy Requirements Changed
   - Detailed Historical Analysis
@@ -2580,7 +2580,7 @@
 
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
-**Description:** Increasing trial capacity {{< var dfda_trial_capacity_multiplier >}}× by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
+**Description:** Increasing trial capacity {{< var dfda_trial_capacity_multiplier >}} by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
 **Stats:** 4,694 words | 676 lines
 
   - The Solution: Consumer Reports for Drugs
@@ -2758,7 +2758,7 @@
 **Description:** This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} consistently wins. War bonds proved capitalism bea...
 **Stats:** 1,658 words | 242 lines
 
-  - Oxford RECOVERY: The {{< var recovery_trial_cost_reduction_factor >}}× Proof
+  - Oxford RECOVERY: The {{< var recovery_trial_cost_reduction_factor >}} Proof
   - Switzerland: The 200-Year Peace Dividend
     - Result
   - War Bonds: How Capitalism Beat Fascism
@@ -2834,7 +2834,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,092 words | 2,793 lines
+**Stats:** 29,091 words | 2,793 lines
 
   - Abstract
   - Key Findings
@@ -3582,7 +3582,7 @@
       - The Bottom Line Math
       - Sources and Key Quotes
   - Proof This Isn't Insane
-    - Oxford Already Achieved {{< var recovery_trial_cost_reduction_factor >}}× Cost Reduction
+    - Oxford Already Achieved {{< var recovery_trial_cost_reduction_factor >}} Cost Reduction
     - The Oxford RECOVERY Trial
     - The Math
 
@@ -3713,7 +3713,7 @@
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,607 words | 1,507 lines
+**Stats:** 16,606 words | 1,507 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -3787,7 +3787,7 @@
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,130 words | 415 lines
+**Stats:** 3,128 words | 415 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -4347,7 +4347,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,400 words | 219 lines
+**Stats:** 1,398 words | 219 lines
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: {{< var treaty_annual_funding >}}/Year
@@ -5939,7 +5939,7 @@
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,754 words | 1,224 lines
+**Stats:** 11,753 words | 1,224 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -6021,13 +6021,13 @@
 
 #### knowledge/appendix/economic-value-of-accelerated-treatments.qmd
 **Title:** Economic Value: Medical Progress
-**Description:** Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}×.
+**Description:** Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}.
 **Stats:** 593 words | 75 lines
 
   - **Introduction**
   - **Average Economic Value of a New Therapy**
   - **Annual Value Based on Average Approvals**
-  - **Impact of {{< var dfda_trial_capacity_multiplier >}}× More Trial Capacity**
+  - **Impact of {{< var dfda_trial_capacity_multiplier >}} More Trial Capacity**
   - **Considerations and Context**
   - **Conclusion**
   - **Sources**
@@ -6091,7 +6091,7 @@
 
 #### knowledge/economics/campaign-budget.qmd
 **Title:** Campaign Budget: The {{< var campaign_media_budget_max >}} Legal Bribery Machine
-**Stats:** 2,741 words | 420 lines
+**Stats:** 2,739 words | 420 lines
 
   - Why {{< var treaty_campaign_total_cost >}} Instead of $5B {#ai-assisted-lobbying-250m-25}
     - The Minimum Viable Budget
@@ -6130,7 +6130,7 @@
 #### knowledge/appendix/fundraising-strategy.qmd
 **Title:** Fundraising Strategy
 **Description:** The {{< var treaty_campaign_total_cost >}} Activation Energy - Comprehensive strategy for raising {{< var treaty_campaign_total_cost >}} through multi-phase approach targeting crypto whales, health bi...
-**Stats:** 5,760 words | 865 lines
+**Stats:** 5,759 words | 865 lines
 
   - Fundraising Strategy: The {{< var treaty_campaign_total_cost >}} Activation Energy
     - On How to Raise {{< var treaty_campaign_total_cost >}} to Unlock {{< var treaty_annual_funding >}}/Year Forever
@@ -6501,7 +6501,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 7,476 words | 805 lines
+**Stats:** 7,475 words | 805 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -7232,6 +7232,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 548,748
+- Total words: 548,732
 - Orphaned files: 20
 - Paper configs: 12

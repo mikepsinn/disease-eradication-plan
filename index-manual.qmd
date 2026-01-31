@@ -253,7 +253,7 @@ If the treaty passes, every nation moves 1% of their explosion budget to their n
 
 Clinical trials could suddenly cost {{< var dfda_trial_cost_reduction_factor >}} times less because it doesn't take 17 years of bureaucracy to discover if something stops humans from leaking important fluids.
 
-The {{< var dih_treasury_to_medical_research_annual >}} flowing to pragmatic clinical trials at {{< var dfda_trial_cost_reduction_factor >}} efficiency creates **{{< var dfda_trial_capacity_multiplier >}}× trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
+The {{< var dih_treasury_to_medical_research_annual >}} flowing to pragmatic clinical trials at {{< var dfda_trial_cost_reduction_factor >}} efficiency creates **{{< var dfda_trial_capacity_multiplier >}} trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
 
 The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
 
@@ -336,9 +336,9 @@ Right now, only {{< var new_disease_first_treatments_per_year >}} diseases per y
 
 Think of the therapeutic search space as all the drug-disease combinations that could work but haven't been tested. At the current discovery rate ({{< var new_disease_first_treatments_per_year >}} first treatments/year), exploring this space would take ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
 
-Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}×. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} exploration time becomes ~{{< var dfda_queue_clearance_years >}}.
+Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} exploration time becomes ~{{< var dfda_queue_clearance_years >}}.
 
-This is "trial capacity." More trials = more of the therapeutic space explored = treatments discovered sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} × 365 fewer humans permanently discontinued.
+This is "trial capacity." More trials = more of the therapeutic space explored = treatments discovered sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} 365 fewer humans permanently discontinued.
 
 ### The Cost of War
 
@@ -674,7 +674,7 @@ It's like discovering your umbrella also cures malaria, cancer, and aging, costs
 
 {{< var diseases_without_effective_treatment >}} diseases have zero treatments. At current pace ({{< var new_disease_first_treatments_per_year >}} first treatments/year), testing everything takes {{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
 
-Redirect {{< var treaty_reduction_pct >}} of military spending → trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}× → search space explored in {{< var dfda_queue_clearance_years >}} instead of centuries.
+Redirect {{< var treaty_reduction_pct >}} of military spending → trial capacity jumps {{< var dfda_trial_capacity_multiplier >}} → search space explored in {{< var dfda_queue_clearance_years >}} instead of centuries.
 
 Average treatment reaches patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. That timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
