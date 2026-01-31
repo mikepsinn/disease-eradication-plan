@@ -31,6 +31,143 @@ except ImportError:
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 
 
+def extract_latex_errors(log_dir: str, max_context_lines: int = 20) -> List[str]:
+    """
+    Extract relevant error information from LaTeX log files.
+
+    Searches for .log files and extracts error context including:
+    - LaTeX errors (! Error...)
+    - Runaway arguments
+    - File ended while scanning
+    - Missing files
+    - Package errors
+
+    Args:
+        log_dir: Directory containing LaTeX log files
+        max_context_lines: Maximum lines of context around each error
+
+    Returns:
+        List of formatted error messages with context, sorted by severity
+    """
+    from pathlib import Path
+
+    critical_errors = []  # Fatal errors that stop compilation
+    other_errors = []     # Warnings and non-fatal issues
+    log_path = Path(log_dir)
+
+    if not log_path.exists():
+        return []
+
+    # Find all .log files
+    log_files = list(log_path.glob("**/*.log"))
+
+    # Error patterns to look for (priority order - critical first)
+    # Tuple: (pattern, error_type, is_critical)
+    error_patterns = [
+        # Critical errors (stop compilation)
+        (r"^! .*", "LaTeX Error", True),
+        (r"Runaway argument\?", "Runaway Argument", True),
+        (r"File ended while scanning", "Incomplete Input", True),
+        (r"Emergency stop", "Emergency Stop", True),
+        (r"@writefile", "Aux File Corruption", True),
+        (r"! I can't find file", "Missing File", True),
+        (r"Undefined control sequence", "Undefined Command", True),
+        # Non-critical (warnings)
+        (r"Missing \$ inserted", "Math Mode Error", False),
+        (r"Package .* Error:", "Package Error", False),
+        (r"LaTeX Error:", "LaTeX Error", False),
+    ]
+
+    # Patterns to skip (benign messages)
+    skip_patterns = [
+        r"No file .*\.aux",  # Normal on first run
+        r"No file .*\.toc",  # Normal on first run
+        r"No file .*\.lof",  # Normal on first run
+        r"No file .*\.lot",  # Normal on first run
+        r"Rerun to get",     # Normal LaTeX message
+    ]
+
+    for log_file in log_files:
+        try:
+            with open(log_file, 'r', encoding='utf-8', errors='replace') as f:
+                lines = f.readlines()
+
+            found_patterns = set()  # Track which patterns we've found
+
+            for i, line in enumerate(lines):
+                # Skip benign patterns
+                if any(re.search(skip, line) for skip in skip_patterns):
+                    continue
+
+                for pattern, error_type, is_critical in error_patterns:
+                    # Only capture first occurrence of each error type
+                    if pattern in found_patterns:
+                        continue
+
+                    if re.search(pattern, line):
+                        found_patterns.add(pattern)
+
+                        # Extract context around the error
+                        start = max(0, i - 5)
+                        end = min(len(lines), i + max_context_lines)
+                        context_lines = lines[start:end]
+
+                        # Format the error
+                        severity = "CRITICAL" if is_critical else "WARNING"
+                        error_msg = f"\n{'='*60}\n"
+                        error_msg += f"[{severity}] {error_type} in {log_file.name} (line {i+1})\n"
+                        error_msg += f"{'='*60}\n"
+                        for j, ctx_line in enumerate(context_lines):
+                            line_num = start + j + 1
+                            marker = ">>> " if line_num == i + 1 else "    "
+                            error_msg += f"{marker}{line_num:6d}: {ctx_line.rstrip()}\n"
+
+                        if is_critical:
+                            critical_errors.append(error_msg)
+                        else:
+                            other_errors.append(error_msg)
+
+                        break  # Found a match, check next line
+
+        except Exception as e:
+            other_errors.append(f"Error reading {log_file}: {e}")
+
+    # Return critical errors first
+    return critical_errors + other_errors
+
+
+def print_latex_errors(log_dir: str, max_errors: int = 5) -> None:
+    """
+    Print LaTeX errors to console and emit GitHub Actions annotations.
+
+    Args:
+        log_dir: Directory containing LaTeX log files
+        max_errors: Maximum number of errors to display
+    """
+    errors = extract_latex_errors(log_dir)
+
+    if not errors:
+        print("[*] No LaTeX errors found in log files")
+        return
+
+    print(f"\n{'#'*80}")
+    print("# LATEX ERROR DETAILS (extracted from .log files)")
+    print(f"{'#'*80}\n")
+
+    for i, error in enumerate(errors[:max_errors]):
+        print(error)
+        if IN_GITHUB_ACTIONS:
+            # Emit GitHub Actions error annotation
+            # Extract first line for annotation
+            first_line = error.split('\n')[2] if '\n' in error else error[:200]
+            print(f"::error::LaTeX Error: {first_line.strip()}")
+
+    if len(errors) > max_errors:
+        print(f"\n... and {len(errors) - max_errors} more errors (see full log)")
+
+    print(f"\n{'#'*80}\n")
+
+
 def setup_quarto_python_env():
     """
     Configure Quarto to use virtual environment Python (cross-platform)
@@ -246,6 +383,38 @@ class BuildMonitor:
         self.log_handle.write(formatted_message + "\n")
         self.log_handle.flush()
 
+    def is_noisy_line(self, line: str) -> bool:
+        """
+        Check if a line is noise that should be suppressed from console output.
+
+        These lines are still logged to the log file but not shown to the user.
+        """
+        stripped = line.strip()
+
+        # Skip empty lines
+        if not stripped:
+            return True
+
+        # Skip Jupyter kernel startup messages (various formats)
+        # "Starting dih-project-kernel kernel...Done"
+        # "Starting python3 kernel...Done"
+        if "Starting" in stripped and "kernel" in stripped:
+            return True
+
+        # Skip plain "Done" or "Done." lines (often from kernel startup)
+        if stripped in ["Done", "Done."]:
+            return True
+
+        # Skip Quarto progress dots and other minimal output
+        if stripped in [".", "..", "..."]:
+            return True
+
+        # Skip ipynb conversion messages (not useful to user)
+        if ".quarto_ipynb" in stripped and "Rendering" not in stripped:
+            return True
+
+        return False
+
     def parse_line(
         self, line: str, custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None
     ) -> Optional[str]:
@@ -437,13 +606,14 @@ class BuildMonitor:
                 # Get timestamp for this line
                 timestamp = self.get_timestamp()
 
-                # Write timestamped line to log file
+                # Write timestamped line to log file (always log everything)
                 timestamped_line = f"[{timestamp}] {line}"
                 self.log_handle.write(timestamped_line)
                 self.log_handle.flush()
 
-                # Print timestamped output to console as well
-                print(timestamped_line, end="")
+                # Print to console only if not noisy (kernel messages, empty lines, etc.)
+                if not self.is_noisy_line(line):
+                    print(timestamped_line, end="")
 
                 # Parse and extract relevant information for summary
                 parsed_result = self.parse_line(line, custom_parsers)

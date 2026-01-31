@@ -59,6 +59,7 @@ from render_utils import (  # type: ignore[import-not-found]
     create_latex_parser,
     ensure_jupyter_kernel,
     kill_existing_quarto_processes,
+    print_latex_errors,
     run_pre_validation,
     run_post_validation,
     run_pdf_validation,
@@ -958,6 +959,11 @@ def render_quarto(
 
             if exit_code != 0:
                 print(f"[ERROR] {description} render failed with exit code {exit_code}", file=sys.stderr)
+                # Extract and display LaTeX errors from log files
+                if build_temp and rendering_pdf:
+                    gh_group_start("LATEX ERROR DETAILS")
+                    print_latex_errors(str(build_temp))
+                    gh_group_end()
             else:
                 print(f"[OK] {description} render complete!")
             gh_group_end()

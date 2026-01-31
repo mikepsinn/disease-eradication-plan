@@ -2083,7 +2083,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 345,581
+**Files:** 84 | **Words:** 345,830
 
 #### index.qmd
 **Title:** Start Here
@@ -3881,7 +3881,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,527 words | 902 lines
+**Stats:** 8,776 words | 941 lines
 
   - The Mechanism
     - Why This Works
@@ -3914,10 +3914,11 @@
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
-  - The Wrapper Architecture: Integration with IABs
+  - The Wrapper Architecture: How Funding Works
+    - Campaign Funding Allocation Algorithm
   - Political Economy: Making Reform Happen
-    - The Coase Theorem Applied to Governance Reform
-    - IABs as the Coasean Buyout Mechanism
+    - Why Buying Off the Opposition Works
+    - How the SuperPAC Makes This Concrete
     - The Cost of Political Reform
     - The Natural Reform Coalition {#the-natural-reform-coalition}
   - Implementation Pathway
@@ -6822,12 +6823,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,527
+**Files:** 1 | **Words:** 8,776
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,527 words | 902 lines
+**Stats:** 8,776 words | 941 lines
 
   - The Mechanism
     - Why This Works
@@ -6860,10 +6861,11 @@
     - Democratic Legitimacy
   - Testable Predictions
     - Rejection Criteria
-  - The Wrapper Architecture: Integration with IABs
+  - The Wrapper Architecture: How Funding Works
+    - Campaign Funding Allocation Algorithm
   - Political Economy: Making Reform Happen
-    - The Coase Theorem Applied to Governance Reform
-    - IABs as the Coasean Buyout Mechanism
+    - Why Buying Off the Opposition Works
+    - How the SuperPAC Makes This Concrete
     - The Cost of Political Reform
     - The Natural Reform Coalition {#the-natural-reform-coalition}
   - Implementation Pathway
@@ -7232,6 +7234,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 548,265
+- Total words: 548,763
 - Orphaned files: 20
 - Paper configs: 12
