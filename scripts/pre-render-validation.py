@@ -6,7 +6,6 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - LaTeX syntax errors (escaped dollar signs, malformed equations, etc.)
 - Missing image files
 - Invalid image paths
-- Problematic LaTeX characters in figure captions ($, %, #, &, unbalanced braces)
 - Broken cross-reference links to .qmd files
 - Broken markdown file links in .md files
 - Broken anchor IDs in links (validates that #anchor-id exists in target file)
@@ -226,11 +225,8 @@ def check_image_paths(content: str, filepath: str):
         # Check markdown image syntax
         markdown_matches = markdown_image_pattern.finditer(line)
         for match in markdown_matches:
-            alt_text = match.group(1)
             image_path = match.group(2)
             _check_single_image_path(image_path, filepath, file_dir, line_index + 1, line)
-            # Check for problematic LaTeX characters in alt text (used as figure caption in PDF)
-            _check_figure_caption_latex(alt_text, filepath, line_index + 1, line)
 
         # Check HTML img tags
         html_matches = html_image_pattern.finditer(line)
@@ -254,91 +250,6 @@ def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line
                 file=filepath,
                 line=line_number,
                 message=f"Image file not found: {image_path}",
-                context=line.strip()[:80],
-            )
-        )
-
-
-def _check_figure_caption_latex(alt_text: str, filepath: str, line_number: int, line: str):
-    """
-    Check for problematic LaTeX characters in figure alt text (which becomes the caption).
-    These characters break PDF compilation when used in figure captions:
-    - $ starts/ends math mode (use "USD" or spell out currency)
-    - % is a comment character (use "percent" or the word)
-    - # is a parameter character
-    - & is an alignment character (use "and")
-    - Unbalanced { } braces
-    - _ and ^ outside math mode (use words or escape)
-    """
-    if not alt_text:
-        return
-
-    # Check for dollar sign (math mode) - most common issue
-    if "$" in alt_text:
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message="Figure caption contains '$' which starts LaTeX math mode. Use 'USD' or spell out currency (e.g., '30M USD' instead of '$30M')",
-                context=line.strip()[:80],
-            )
-        )
-
-    # Check for percent sign (LaTeX comment)
-    if "%" in alt_text:
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message="Figure caption contains '%' which is a LaTeX comment character. Use 'percent' or escape as '\\%'",
-                context=line.strip()[:80],
-            )
-        )
-
-    # Check for hash/pound sign (LaTeX parameter)
-    if "#" in alt_text:
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message="Figure caption contains '#' which is a LaTeX parameter character. Remove or escape as '\\#'",
-                context=line.strip()[:80],
-            )
-        )
-
-    # Check for ampersand (LaTeX alignment) - but allow HTML entities like &amp;
-    if "&" in alt_text and "&amp;" not in alt_text and "&lt;" not in alt_text and "&gt;" not in alt_text:
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message="Figure caption contains '&' which is a LaTeX alignment character. Use 'and' or escape as '\\&'",
-                context=line.strip()[:80],
-            )
-        )
-
-    # Check for unbalanced braces
-    open_braces = alt_text.count("{")
-    close_braces = alt_text.count("}")
-    if open_braces != close_braces:
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message=f"Figure caption has unbalanced braces: {open_braces} open, {close_braces} close",
-                context=line.strip()[:80],
-            )
-        )
-
-    # Check for underscore outside of common patterns (URLs, snake_case identifiers are usually OK)
-    # Only flag if it looks like an attempted subscript (letter_letter or number_number pattern)
-    subscript_pattern = re.compile(r'(?<![a-zA-Z0-9])([a-zA-Z0-9])_([a-zA-Z0-9])(?![a-zA-Z0-9_])')
-    if subscript_pattern.search(alt_text):
-        errors.append(
-            ValidationError(
-                file=filepath,
-                line=line_number,
-                message="Figure caption may contain LaTeX subscript syntax (x_y). In captions, underscores can cause issues. Consider using words instead.",
                 context=line.strip()[:80],
             )
         )

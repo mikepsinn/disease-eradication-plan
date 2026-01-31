@@ -136,9 +136,93 @@ def extract_latex_errors(log_dir: str, max_context_lines: int = 20) -> List[str]
     return critical_errors + other_errors
 
 
+def extract_aux_file_contents(log_dir: str, max_lines: int = 50) -> List[str]:
+    """
+    Extract and return contents of aux files that may be corrupted.
+
+    When LaTeX has an @writefile error, it's usually because an aux file
+    from a previous build is corrupted (incomplete/truncated). This function
+    finds aux files and extracts their contents for debugging.
+
+    Args:
+        log_dir: Directory containing LaTeX build output
+        max_lines: Maximum lines to extract from each aux file
+
+    Returns:
+        List of formatted strings with aux file contents
+    """
+    from pathlib import Path
+
+    aux_contents = []
+    log_path = Path(log_dir)
+
+    if not log_path.exists():
+        return []
+
+    # Find all .aux files in the build directory
+    aux_files = list(log_path.glob("**/*.aux"))
+
+    for aux_file in aux_files[:5]:  # Limit to 5 aux files to avoid overwhelming output
+        try:
+            with open(aux_file, 'r', encoding='utf-8', errors='replace') as f:
+                lines = f.readlines()
+
+            # Check for signs of corruption
+            is_corrupted = False
+            corruption_hints = []
+
+            # Check if file ends abruptly (last line incomplete)
+            if lines and not lines[-1].endswith('\n'):
+                is_corrupted = True
+                corruption_hints.append("File ends without newline (incomplete write)")
+
+            # Check for unbalanced braces
+            content = ''.join(lines)
+            open_braces = content.count('{')
+            close_braces = content.count('}')
+            if open_braces != close_braces:
+                is_corrupted = True
+                corruption_hints.append(f"Unbalanced braces: {open_braces} open, {close_braces} close")
+
+            # Check for truncated commands
+            if content.rstrip().endswith(('\\', '{', ',')):
+                is_corrupted = True
+                corruption_hints.append("File ends with incomplete command")
+
+            # Only output if corrupted or specifically requested
+            if is_corrupted:
+                aux_msg = f"\n{'='*60}\n"
+                aux_msg += f"AUX FILE: {aux_file.name} (potentially corrupted)\n"
+                aux_msg += f"Path: {aux_file}\n"
+                aux_msg += f"Size: {aux_file.stat().st_size} bytes, {len(lines)} lines\n"
+                if corruption_hints:
+                    aux_msg += f"Corruption hints: {', '.join(corruption_hints)}\n"
+                aux_msg += f"{'='*60}\n"
+
+                # Show last N lines where corruption likely occurred
+                display_lines = lines[-max_lines:] if len(lines) > max_lines else lines
+                start_line = len(lines) - len(display_lines) + 1
+
+                for j, line in enumerate(display_lines):
+                    line_num = start_line + j
+                    # Highlight the last few lines
+                    marker = ">>> " if j >= len(display_lines) - 3 else "    "
+                    aux_msg += f"{marker}{line_num:6d}: {line.rstrip()}\n"
+
+                aux_contents.append(aux_msg)
+
+        except Exception as e:
+            aux_contents.append(f"Error reading {aux_file}: {e}")
+
+    return aux_contents
+
+
 def print_latex_errors(log_dir: str, max_errors: int = 5) -> None:
     """
     Print LaTeX errors to console and emit GitHub Actions annotations.
+
+    Also extracts and displays aux file contents when @writefile errors
+    are detected (indicates corrupted aux file from previous build).
 
     Args:
         log_dir: Directory containing LaTeX log files
@@ -154,6 +238,9 @@ def print_latex_errors(log_dir: str, max_errors: int = 5) -> None:
     print("# LATEX ERROR DETAILS (extracted from .log files)")
     print(f"{'#'*80}\n")
 
+    # Check if any errors mention aux files or @writefile
+    has_aux_error = any('@writefile' in err.lower() or 'aux' in err.lower() for err in errors)
+
     for i, error in enumerate(errors[:max_errors]):
         print(error)
         if IN_GITHUB_ACTIONS:
@@ -164,6 +251,22 @@ def print_latex_errors(log_dir: str, max_errors: int = 5) -> None:
 
     if len(errors) > max_errors:
         print(f"\n... and {len(errors) - max_errors} more errors (see full log)")
+
+    # If there's an aux file error, extract and display aux file contents
+    if has_aux_error:
+        print(f"\n{'#'*80}")
+        print("# AUX FILE ANALYSIS (potential corruption from interrupted build)")
+        print(f"{'#'*80}")
+        print("\nNOTE: @writefile errors typically occur when an aux file from a")
+        print("previous interrupted build is corrupted. The solution is to delete")
+        print("the _build_temp directory and rebuild from scratch.\n")
+
+        aux_contents = extract_aux_file_contents(log_dir)
+        if aux_contents:
+            for aux_content in aux_contents:
+                print(aux_content)
+        else:
+            print("[*] No corrupted aux files found (corruption may be in .toc, .out, or other files)")
 
     print(f"\n{'#'*80}\n")
 
