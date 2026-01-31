@@ -275,7 +275,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 - Pivotal trials: {{< var traditional_phase3_cost_per_patient >}} per patient
 - Only {{< var current_trial_slots_available >}} participants per year globally
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
-- {{< var treatment_acceleration_years_current >}} to approve one drug
+- {{< var drug_discovery_to_approval_years >}} to approve one drug
 
 #### With a 1% treaty + a decentralized framework for drug assessment
 

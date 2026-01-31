@@ -20,13 +20,13 @@ display_name = "FDA to Oxford RECOVERY Trial Time Multiplier"
 
 # Baseline and units
 
-baseline = 36.4
+baseline = 42.0
 
 # Tornado data from sensitivity analysis
 
 drivers = ['FDA_PHASE_1_TO_APPROVAL_YEARS']
-impacts_low = [-12.399999999999999]
-impacts_high = [11.600000000000001]
+impacts_low = [-18.0]
+impacts_high = [6.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

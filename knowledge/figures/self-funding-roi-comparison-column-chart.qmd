@@ -135,7 +135,7 @@ ax.set_title('When Self-Funded by 1% Military Redirection: Infinite ROI',
 
 # Add explanatory callout with inline LaTeX equation - positioned to the right
 
-total_benefits_formatted = format_parameter_value(TREATY_RECURRING_BENEFITS_ANNUAL, "USD")
+total_benefits_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS, "USD")
 # Extract numeric part (remove $ and any suffix) for LaTeX math rendering
 # Matplotlib's mathtext doesn't support \text{}, so we'll use the formatted value outside math
 # and keep the equation simple with just the structure

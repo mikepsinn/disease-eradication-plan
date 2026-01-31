@@ -107,7 +107,7 @@ SYMBOLS = {
     "COMBINATION_THERAPY_PAIRS": r"N_{combo}",  # FIXED
 
     # COMBINED (1)
-    "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC": r"Dividend_{total,ann}",  # FIXED
+    "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": r"Dividend_{total,ann}",  # FIXED
 
     # CONCENTRATED (1)
     "CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD": r"MarketCap_{defense}",  # FIXED
@@ -517,7 +517,7 @@ SYMBOLS = {
     "TRADITIONAL_PHASE3_COST_PER_PATIENT": r"Cost_{P3,pt}",  # FIXED
 
     # TREATMENT (1)
-    "TREATMENT_ACCELERATION_YEARS_CURRENT": r"T_{accel,curr}",  # FIXED
+    "DRUG_DISCOVERY_TO_APPROVAL_YEARS": r"T_{accel,curr}",  # FIXED
 
     # TREATY (24)
     "TREATY_BENEFIT_MULTIPLIER_VS_VACCINES": r"k_{treaty:vax}",  # FIXED
@@ -535,7 +535,7 @@ SYMBOLS = {
     "TREATY_LIVES_SAVED_ANNUAL_GLOBAL": r"Lives_{treaty,ann}",  # FIXED
     "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": r"Benefit_{peace+RD}",  # FIXED
     "TREATY_QALYS_GAINED_ANNUAL_GLOBAL": r"QALY_{treaty,ann}",  # FIXED
-    "TREATY_RECURRING_BENEFITS_ANNUAL": r"Benefit_{recur,ann}",  # FIXED
+    "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": r"Benefit_{recur,ann}",  # FIXED
     "TREATY_REDIRECTED_SPENDING_INFINITE_ROI": r"ROI_{\infty}",  # FIXED
     "TREATY_REDUCTION_PCT": r"Reduce_{treaty}",  # FIXED
     "TREATY_ROI_EXISTING_DRUGS_ONLY": r"ROI_{drugs}",  # FIXED

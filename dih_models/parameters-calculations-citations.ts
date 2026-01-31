@@ -507,6 +507,18 @@ export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   confidenceInterval: [145500000.0, 242500000.0],
 };
 
+export const DRUG_DISCOVERY_TO_APPROVAL_YEARS: Parameter = {
+  value: 14.0,
+  unit: "years",
+  displayName: "Drug Discovery to Approval Timeline",
+  description: "Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.",
+  sourceType: "external",
+  sourceRef: "bio-clinical-development-2021",
+  confidence: "high",
+  confidenceInterval: [12.0, 17.0],
+  stdError: 1.5,
+};
+
 export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   value: 0.3,
   unit: "percentage",
@@ -605,12 +617,12 @@ export const FDA_GRAS_SUBSTANCES_COUNT: Parameter = {
 };
 
 export const FDA_PHASE_1_TO_APPROVAL_YEARS: Parameter = {
-  value: 9.1,
+  value: 10.5,
   unit: "years",
   displayName: "FDA Phase 1 to Approval Timeline",
-  description: "FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)",
+  description: "FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).",
   sourceType: "external",
-  sourceRef: "fda-approval-timeline-10-years",
+  sourceRef: "bio-clinical-development-2021",
   confidence: "high",
   confidenceInterval: [6.0, 12.0],
   stdError: 2.0,
@@ -1765,16 +1777,6 @@ export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [20000.0, 120000.0],
 };
 
-export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
-  value: 17.0,
-  unit: "years",
-  displayName: "Traditional FDA Drug Development Timeline",
-  description: "Traditional FDA drug development timeline",
-  sourceType: "external",
-  sourceRef: "fda-approval-timeline-10-years",
-  confidence: "high",
-};
-
 export const TREATMENT_DISABILITY_REDUCTION: Parameter = {
   value: 0.25,
   unit: "weight",
@@ -2186,17 +2188,6 @@ export const COMBINATION_THERAPY_PAIRS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
-};
-
-export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
-  value: 172211487804.87805,
-  unit: "USD/year",
-  displayName: "Combined Peace and Health Dividends for ROI Calculation",
-  description: "Combined peace and health dividends for ROI calculation",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "PEACE_DIVIDEND + R&D_SAVINGS",
-  latex: "\\begin{gathered}\nDividend_{total,ann} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}",
 };
 
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
@@ -2981,15 +2972,15 @@ export const EXPLORATION_RATIO: Parameter = {
 };
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
-  value: 36.4,
+  value: 42.0,
   unit: "ratio",
   displayName: "FDA to Oxford RECOVERY Trial Time Multiplier",
-  description: "FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)",
+  description: "FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
   sourceType: "calculated",
   sourceRef: "recovery-trial-82x-cost-reduction",
   confidence: "high",
   formula: "FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-  latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{9.1 \\times 12}{3} = 36.4\n\\end{gathered}",
+  latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{10.5 \\times 12}{3} = 42\n\\end{gathered}",
 };
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -3740,7 +3731,7 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact#better-than-the-best-charities",
   confidence: "high",
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
-  latex: "\\begin{gathered}\nk_{treaty:vax} = \\frac{Dividend_{total,ann}}{Benefit_{vax,ann}} = \\frac{\\$172B}{\\$15B} = 11.5 \\\\[0.5em]\n\\text{where } Dividend_{total,ann} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}",
+  latex: "\\begin{gathered}\nk_{treaty:vax} = \\frac{Benefit_{peace+RD}}{Benefit_{vax,ann}} = \\frac{\\$172B}{\\$15B} = 11.5 \\\\[0.5em]\n\\text{where } Benefit_{peace+RD} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}",
 };
 
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
@@ -3860,18 +3851,6 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   confidence: "high",
   formula: "LIVES_SAVED × QALYS_PER_LIFE",
   latex: "\\begin{gathered}\nQALY_{treaty,ann} \\\\\n= QALY_{life} \\times Lives_{treaty,ann} \\\\\n= 35 \\times 2{,}450 \\\\\n= 85{,}600 \\\\[0.5em]\n\\text{where } Lives_{treaty,ann} \\\\\n= Deaths_{conflict} \\times Reduce_{treaty} \\\\\n= 245{,}000 \\times 1\\% \\\\\n= 2{,}450 \\\\[0.5em]\n\\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}",
-};
-
-export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
-  value: 172211487804.87805,
-  unit: "USD/year",
-  displayName: "1% treaty Recurring Annual Benefits",
-  description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
-  sourceType: "calculated",
-  sourceRef: "https://impact.warondisease.org/knowledge/economics/1-pct-treaty-impact",
-  confidence: "high",
-  formula: "PEACE_DIVIDEND + RD_SAVINGS",
-  latex: "\\begin{gathered}\nBenefit_{recur,ann} \\\\\n= Benefit_{RD,ann} + Benefit_{peace,soc} \\\\\n= \\$58.6B + \\$114B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\% \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}",
 };
 
 export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
@@ -5075,6 +5054,7 @@ export const parameters = {
   DEWORMING_COST_PER_DALY,
   DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
   DRUG_DEVELOPMENT_COST_1980S,
+  DRUG_DISCOVERY_TO_APPROVAL_YEARS,
   DRUG_REPURPOSING_SUCCESS_RATE,
   ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT,
   ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT,
@@ -5191,7 +5171,6 @@ export const parameters = {
   THALIDOMIDE_SURVIVOR_LIFESPAN,
   THALIDOMIDE_US_POPULATION_SHARE_1960,
   TRADITIONAL_PHASE3_COST_PER_PATIENT,
-  TREATMENT_ACCELERATION_YEARS_CURRENT,
   TREATMENT_DISABILITY_REDUCTION,
   US_ALZHEIMERS_ANNUAL_COST,
   US_CANCER_ANNUAL_COST,
@@ -5229,7 +5208,6 @@ export const parameters = {
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
   COMBINATION_THERAPY_DISEASE_SPACE,
   COMBINATION_THERAPY_PAIRS,
-  COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -5372,7 +5350,6 @@ export const parameters = {
   TREATY_LIVES_SAVED_ANNUAL_GLOBAL,
   TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS,
   TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
-  TREATY_RECURRING_BENEFITS_ANNUAL,
   TREATY_ROI_EXISTING_DRUGS_ONLY,
   TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_TOTAL_ANNUAL_COSTS,
@@ -6011,19 +5988,6 @@ export const citations: Record<string, Citation> = {
         'container-title': "Environmental Working Group",
         URL: "https://farm.ewg.org/",
         note: "Environmental Working Group, Farm Subsidy Database | USDA Economic Research Service, Agricultural Subsidies",
-  },
-  "fda-approval-timeline-10-years": {
-        id: "fda-approval-timeline-10-years",
-        type: "article-journal",
-        title: "FDA drug approval timeline",
-        author: [
-          {
-            literal: "Drugs.com"
-          },
-        ],
-        'container-title': "Drugs.com: FDA Drug Approval Process",
-        URL: "https://www.drugs.com/fda-approval-process.html",
-        note: "Drugs.com: FDA Drug Approval Process | FDAReview.org: Drug Development & Approval | PMC: Drugs, Devices, FDA Overview",
   },
   "fda-approved-products-20k": {
         id: "fda-approved-products-20k",
@@ -7403,11 +7367,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 452,
+  total: 450,
   external: 183,
-  calculated: 171,
+  calculated: 169,
   definitions: 98,
-  citations: 141,
+  citations: 140,
 } as const;
 
 // ============================================================================

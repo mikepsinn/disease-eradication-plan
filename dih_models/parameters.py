@@ -1220,10 +1220,10 @@ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
 )
 
 FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
-    9.1,
-    source_ref=ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS,
+    10.5,
+    source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
-    description="FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)",
+    description="FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).",
     display_name="FDA Phase 1 to Approval Timeline",
     unit="years",
     confidence="high",
@@ -1232,7 +1232,7 @@ FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
     confidence_interval=(6.0, 12.0),
     keywords=["fda", "clinical", "development", "timeline", "approval", "phase 1", "phase 2", "phase 3"],
     latex_symbol=r"T_{FDA}",  # LaTeX symbol for equations
-)  # Clinical development + NDA review: ~9 years (per FDA references)
+)  # Clinical development + NDA review: 10.5 years (BIO 2021: Phase 1 + efficacy lag)
 
 POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
     0.70,
@@ -1252,13 +1252,13 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     (FDA_PHASE_1_TO_APPROVAL_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
-    description="FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)",
+    description="FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
     display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
     unit="ratio",
     formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
     latex=r"""\begin{aligned}
 \text{Multiplier}_{RD} &= \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\
-&= \frac{9.1 \times 12}{3} = 36.4
+&= \frac{10.5 \times 12}{3} = 42
 \end{aligned}""",
     confidence="high",
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
@@ -6187,29 +6187,6 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
 )  # ~$12B annual benefit
 
 
-# ===================================================================
-# TREATY BENEFITS (RECURRING ONLY)
-# ===================================================================
-# Peace Dividend + R&D Savings
-# Truly recurring annual benefits = $155.1B/year
-# (Health benefits are one-time timeline shifts, NOT perpetual annual)
-# ===================================================================
-
-TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_ref="/knowledge/economics/1-pct-treaty-impact.qmd",
-    source_type="calculated",
-    description="Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
-    display_name="1% treaty Recurring Annual Benefits",
-    unit="USD/year",
-    formula="PEACE_DIVIDEND + RD_SAVINGS",
-    confidence="high",
-    keywords=["recurring", "annual", "treaty benefits", "peace dividend", "rd savings", "perpetual"],
-    inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL', 'PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT'],
-    compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
-    latex_symbol=r"Benefit_{recur,ann}",  # LaTeX symbol for equations
-)  # $155.1B/year (truly recurring - peace dividend + R&D savings only)
-
 # Three-tier ROI analysis based on TOTAL one-time health benefits
 TREATY_ROI_EXISTING_DRUGS_ONLY = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / TREATY_CAMPAIGN_TOTAL_COST,
@@ -6292,16 +6269,18 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
 )  # $2,690.82B
 
 
-TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
-    17,
-    source_ref=ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS,
+DRUG_DISCOVERY_TO_APPROVAL_YEARS = Parameter(
+    14,
+    source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
-    description="Traditional FDA drug development timeline",
-    display_name="Traditional FDA Drug Development Timeline",
+    description="Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.",
+    display_name="Drug Discovery to Approval Timeline",
     unit="years",
-    keywords=["drug agency", "faster development", "food and drug administration", "innovation speed", "medicines agency", "research velocity", "regulator"],
-    latex_symbol=r"T_{accel,curr}",  # LaTeX symbol for equations
-)  # 12-17 years typical
+    std_error=1.5,
+    confidence_interval=(12, 17),
+    keywords=["drug discovery", "full timeline", "preclinical", "clinical", "fda approval", "development time", "innovation lag"],
+    latex_symbol=r"T_{discovery}",
+)
 
 # ============================================================================
 # REGULATORY MORTALITY COST PARAMETERS
@@ -6959,25 +6938,10 @@ LOBBYIST_SALARY_MAX = Parameter(
     latex_symbol=r"Salary_{lobby,max}",  # LaTeX symbol for equations
 )  # $2M maximum for top lobbyist salaries
 
-# Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
-# This sum is distinct from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS which uses different categories for broader calculation.
-COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_type="calculated",
-    description="Combined peace and health dividends for ROI calculation",
-    display_name="Combined Peace and Health Dividends for ROI Calculation",
-    unit="USD/year",
-    formula="PEACE_DIVIDEND + R&D_SAVINGS",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
-    inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_BENEFIT_RD_ONLY_ANNUAL"],
-    compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
-    latex_symbol=r"Dividend_{total,ann}",  # LaTeX symbol for equations
-)
-
 # Infinite ROI equation - redirected spending means $0 new cost
 # Note: Uses hardcoded latex because float('inf') breaks Monte Carlo simulation
-# The dividend value is calculated dynamically from COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC
-_infinite_roi_dividends = round(float(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC) / 1e9)
+# The dividend value is calculated dynamically from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS
+_infinite_roi_dividends = round(float(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) / 1e9)
 TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
     0,  # Placeholder - conceptual parameter for the latex equation only
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#infinite-roi",
@@ -6992,7 +6956,7 @@ TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
 )
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
-    COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
+    TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
     source_ref="/knowledge/economics/1-pct-treaty-impact.qmd#better-than-the-best-charities",
     source_type="calculated",
     description="Treaty system benefit multiplier vs childhood vaccination programs",
@@ -7000,8 +6964,8 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     unit="ratio",
     formula="TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
     keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple"],
-    inputs=['CHILDHOOD_VACCINATION_ANNUAL_BENEFIT', 'COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC'],
-    compute=lambda ctx: ctx["COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC"] / ctx["CHILDHOOD_VACCINATION_ANNUAL_BENEFIT"],
+    inputs=['CHILDHOOD_VACCINATION_ANNUAL_BENEFIT', 'TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS'],
+    compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["CHILDHOOD_VACCINATION_ANNUAL_BENEFIT"],
     latex_symbol=r"k_{treaty:vax}",  # LaTeX symbol for equations
 )  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 

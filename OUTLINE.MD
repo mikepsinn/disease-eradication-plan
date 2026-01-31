@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Type:** book
-**Files:** 4 | **Words:** 87,791
+**Files:** 4 | **Words:** 89,915
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,683 words | 14,788 lines
+**Stats:** 54,057 words | 14,610 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -96,10 +96,6 @@
       - Sensitivity Analysis
     - Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
       - Sensitivity Analysis
-    - Combined Peace and Health Dividends for ROI Calculation: $172B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -358,7 +354,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - FDA to Oxford RECOVERY Trial Time Multiplier: 36.4:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
+    - FDA to Oxford RECOVERY Trial Time Multiplier: 42:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -641,10 +637,6 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - 1% treaty Recurring Annual Benefits: $172B {#sec-treaty_recurring_benefits_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Treaty ROI - Historical Rate (Existing Drugs): 259k:1 {#sec-treaty_roi_existing_drugs_only}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -797,6 +789,9 @@
     - Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
       - Uncertainty Range
       - Input Distribution
+    - Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
+      - Uncertainty Range
+      - Input Distribution
     - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
     - Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
     - Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
@@ -816,7 +811,7 @@
     - FDA GRAS Substances: 635 substances {#sec-fda_gras_substances_count}
       - Uncertainty Range
       - Input Distribution
-    - FDA Phase 1 to Approval Timeline: 9.1 years {#sec-fda_phase_1_to_approval_years}
+    - FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
       - Uncertainty Range
       - Input Distribution
     - Givewell Average Cost per Life Saved Across Top Charities: $4.50K {#sec-givewell_cost_per_life_avg}
@@ -1071,7 +1066,6 @@
     - Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
       - Uncertainty Range
       - Input Distribution
-    - Traditional FDA Drug Development Timeline: 17 years {#sec-treatment_acceleration_years_current}
     - Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
       - Uncertainty Range
       - Input Distribution
@@ -1372,7 +1366,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 26,249 words | 2,485 lines
+**Stats:** 28,999 words | 2,794 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -1491,6 +1485,21 @@
     - Time Inconsistency and Commitment Credibility
     - Technology Constancy Assumption
     - Data Quality and Availability
+  - Scenario Analysis: Conservative Case
+    - ROI Derivation
+    - Where the Money Comes From
+    - How Treaty Funding Is Allocated
+    - Returns
+        - Uncertainty Analysis: Combined Annual Benefits
+    - Cost-Effectiveness: Cost-Saving Health Intervention
+      - Incremental Cost-Effectiveness Ratio (ICER)
+      - Comparative Cost-Effectiveness vs. GiveWell Top Charities
+    - Self-Funding Mechanism Through Military Budget Redirection
+  - Scenario Analysis: Complete Case
+    - Annual Recurring Benefits Breakdown
+      - Total recurring annual benefits
+      - Complete Case ROI
+    - Trial Capacity Scaling
   - Individual-Level Economic Impact
   - Comparative Effectiveness
     - Comprehensive Comparison
@@ -2074,7 +2083,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 343,354
+**Files:** 84 | **Words:** 345,478
 
 #### index.qmd
 **Title:** Start Here
@@ -2826,7 +2835,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 26,249 words | 2,485 lines
+**Stats:** 28,999 words | 2,794 lines
 
   - Abstract
   - Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure
@@ -2945,6 +2954,21 @@
     - Time Inconsistency and Commitment Credibility
     - Technology Constancy Assumption
     - Data Quality and Availability
+  - Scenario Analysis: Conservative Case
+    - ROI Derivation
+    - Where the Money Comes From
+    - How Treaty Funding Is Allocated
+    - Returns
+        - Uncertainty Analysis: Combined Annual Benefits
+    - Cost-Effectiveness: Cost-Saving Health Intervention
+      - Incremental Cost-Effectiveness Ratio (ICER)
+      - Comparative Cost-Effectiveness vs. GiveWell Top Charities
+    - Self-Funding Mechanism Through Military Budget Redirection
+  - Scenario Analysis: Complete Case
+    - Annual Recurring Benefits Breakdown
+      - Total recurring annual benefits
+      - Complete Case ROI
+    - Trial Capacity Scaling
   - Individual-Level Economic Impact
   - Comparative Effectiveness
     - Comprehensive Comparison
@@ -4492,7 +4516,7 @@
 #### knowledge/appendix/parameters-and-calculations.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 54,683 words | 14,788 lines
+**Stats:** 54,057 words | 14,610 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -4535,10 +4559,6 @@
       - Sensitivity Analysis
     - Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
       - Sensitivity Analysis
-    - Combined Peace and Health Dividends for ROI Calculation: $172B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -4797,7 +4817,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - FDA to Oxford RECOVERY Trial Time Multiplier: 36.4:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
+    - FDA to Oxford RECOVERY Trial Time Multiplier: 42:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5080,10 +5100,6 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - 1% treaty Recurring Annual Benefits: $172B {#sec-treaty_recurring_benefits_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Treaty ROI - Historical Rate (Existing Drugs): 259k:1 {#sec-treaty_roi_existing_drugs_only}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -5236,6 +5252,9 @@
     - Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
       - Uncertainty Range
       - Input Distribution
+    - Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
+      - Uncertainty Range
+      - Input Distribution
     - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
     - Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
     - Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
@@ -5255,7 +5274,7 @@
     - FDA GRAS Substances: 635 substances {#sec-fda_gras_substances_count}
       - Uncertainty Range
       - Input Distribution
-    - FDA Phase 1 to Approval Timeline: 9.1 years {#sec-fda_phase_1_to_approval_years}
+    - FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
       - Uncertainty Range
       - Input Distribution
     - Givewell Average Cost per Life Saved Across Top Charities: $4.50K {#sec-givewell_cost_per_life_avg}
@@ -5510,7 +5529,6 @@
     - Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
       - Uncertainty Range
       - Input Distribution
-    - Traditional FDA Drug Development Timeline: 17 years {#sec-treatment_acceleration_years_current}
     - Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
       - Uncertainty Range
       - Input Distribution
@@ -7214,6 +7232,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 543,813
+- Total words: 548,061
 - Orphaned files: 20
 - Paper configs: 12

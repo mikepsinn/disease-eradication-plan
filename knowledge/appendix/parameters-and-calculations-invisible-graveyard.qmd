@@ -1212,19 +1212,19 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
-### FDA Phase 1 to Approval Timeline: 9.1 years {#sec-fda_phase_1_to_approval_years}
+### FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
+FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).
 
-**Source**: [@fda-approval-timeline-10-years]
+**Source**: [@bio-clinical-development-2021]
 
 #### Uncertainty Range
 
 **Technical**: 95% CI: [6 years, 12 years] • Distribution: Gamma (SE: 2 years)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 years and 12 years (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 years and 12 years (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
 

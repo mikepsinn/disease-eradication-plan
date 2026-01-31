@@ -312,7 +312,7 @@ fig.show()
 
 - **1% treaty Analysis**: {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
 - **Decentralized Trials Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from a `{python} dfda_annual_opex_formatted` decentralized trial framework saving `{python} dfda_rd_gross_savings_annual_formatted` in trial costs
-- **Conservative Case**: Peace dividend + R&D savings from decentralized trials = {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually, {{< var dfda_roi_rd_only >}} ROI
+- **Conservative Case**: Peace dividend + R&D savings from decentralized trials = {{< var treaty_peace_plus_rd_annual_benefits >}} annually, {{< var dfda_roi_rd_only >}} ROI
 - **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
 
 ### Eight Benefit Categories (Complete Case)

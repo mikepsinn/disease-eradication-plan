@@ -464,40 +464,6 @@
   \ safe compounds (n choose 2) | Calculated from 1 input | ✓ High confidence | Formula:\
   \ SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2 | Unit: combinations | Click to view\
   \ details, calculation & sources\">45.1M combinations</a>"
-"combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-combined_peace_health_dividends_annual_for_roi_calc\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Combined peace and health dividends for ROI calculation\
-  \ | Calculated from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + R&D_SAVINGS\
-  \ | Unit: USD/year | Click to view details, calculation & sources\">$172B (95% CI:\
-  \ $140B-$213B)</a>"
-"combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\n\\begin{gathered}\n\
-  Dividend_{total,ann} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B\
-  \ + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\
-  \n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\% \\\\\n\
-  = \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct}\
-  \ + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\
-  \\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total}\
-  \ \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B\
-  \ + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\
-  \\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n\
-  = \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
-  \ \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\\
-  $2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\\
-  times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where\
-  \ } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times\
-  \ \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n\
-  = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport}\
-  \ \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B\
-  \ + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\
-  \n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} +\
-  \ Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\\
-  $616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil}\
-  \ \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet}\
-  \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
-  $3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\\
-  times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\
-  \\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
-  \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "concentrated_interest_sector_market_cap_usd": "<span class=\"parameter-definition\"\
   \ title=\"Estimated combined market capitalization of concentrated interest opposition\
   \ (defense, fossil fuel, etc.) | Unit: USD | Core definition\">$5T</span>"
@@ -2001,6 +1967,15 @@
   \ Lognormal | Unit: USD | Click to view details, calculation & sources\">$194M (95%\
   \ CI: $146M-$242M)</a>"
 "drug_development_cost_1980s_cite": "@pre-1962-drug-costs-timeline"
+"drug_discovery_to_approval_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_discovery_to_approval_years\"\
+  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Full drug development timeline from\
+  \ discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and\
+  \ PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using\
+  \ 14 years as central estimate. | ✓ High confidence | 95% CI: [12 years, 17 years]\
+  \ | Unit: years | Click to view details, calculation & sources\">14 years (95% CI:\
+  \ 12 years-17 years)</a>"
+"drug_discovery_to_approval_years_cite": "@bio-clinical-development-2021"
 "drug_disease_combinations_possible": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drug_disease_combinations_possible\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total possible\
@@ -2204,22 +2179,24 @@
   \ & sources\">635 substances (95% CI: 570 substances-700 substances)</a>"
 "fda_gras_substances_count_cite": "@fda-gras-list-count"
 "fda_phase_1_to_approval_years": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-fda_phase_1_to_approval_years\"\
-  \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval\
-  \ (Phase 1-3 + NDA review) | ✓ High confidence | 95% CI: [6 years, 12 years] | Dist:\
+  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval.\
+  \ Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2\
+  \ years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median\
+  \ (95% CI: 8.2-10.0). | ✓ High confidence | 95% CI: [6 years, 12 years] | Dist:\
   \ Gamma (SE: 2 years) | Unit: years | Click to view details, calculation & sources\"\
-  >9.1 years (95% CI: 6 years-12 years)</a>"
-"fda_phase_1_to_approval_years_cite": "@fda-approval-timeline-10-years"
+  >10.5 years (95% CI: 6 years-12 years)</a>"
+"fda_phase_1_to_approval_years_cite": "@bio-clinical-development-2021"
 "fda_to_oxford_recovery_trial_time_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-fda_to_oxford_recovery_trial_time_multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"FDA approval\
-  \ timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower) | Calculated\
+  \ timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower) | Calculated\
   \ from 2 inputs | ✓ High confidence | Formula: FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR\
   \ ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS | Unit: ratio | Click to view details,\
-  \ calculation & sources\">36.4:1 (95% CI: 24.3:1-48:1)</a>"
+  \ calculation & sources\">42:1 (95% CI: 29.8:1-48:1)</a>"
 "fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\begin{gathered}\n\\text{Multiplier}_{RD}\
-  \ = \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{9.1 \\times 12}{3}\
-  \ = 36.4\n\\end{gathered}\n$$"
+  \ = \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{10.5 \\times\
+  \ 12}{3} = 42\n\\end{gathered}\n$$"
 "fundamentally_unavoidable_death_pct": "<span class=\"parameter-definition\" title=\"\
   Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology\
   \ (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential))\
@@ -3907,12 +3884,6 @@
   \ FDA study) | ✓ High confidence | 95% CI: [$20K, $120K] | Dist: Lognormal | Unit:\
   \ USD/patient | Click to view details, calculation & sources\">$41K (95% CI: $20K-$120K)</a>"
 "traditional_phase3_cost_per_patient_cite": "@trial-costs-fda-study"
-"treatment_acceleration_years_current": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_acceleration_years_current\"\
-  \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
-  \ | ✓ High confidence | Unit: years | Click to view details, calculation & sources\"\
-  >17 years</a>"
-"treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
 "treatment_disability_reduction": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treatment_disability_reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"gbd-disability-weights\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Average\
@@ -3938,33 +3909,33 @@
   \ | Unit: ratio | Click to view details, calculation & sources\">11.5:1 (95% CI:\
   \ 9:1-16.1:1)</a>"
 "treaty_benefit_multiplier_vs_vaccines_latex": "$$\n\\begin{gathered}\nk_{treaty:vax}\
-  \ = \\frac{Dividend_{total,ann}}{Benefit_{vax,ann}} = \\frac{\\$172B}{\\$15B} =\
-  \ 11.5 \\\\[0.5em]\n\\text{where } Dividend_{total,ann} \\\\\n= Benefit_{peace,soc}\
-  \ + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\\
-  text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty}\
-  \ \\\\\n= \\$11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total}\
-  \ \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\
-  \n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict}\
-  \ + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\\
-  $2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where\
-  \ } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n\
-  + Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\
-  \\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000\
-  \ \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human}\
-  \ \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B\
-  \ \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times\
-  \ VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where }\
-  \ Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\
-  \\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B\
-  \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\
-  \\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy}\
-  \ \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B\
-  \ + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect}\
-  \ \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych}\
-  \ \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\\
-  $232B + \\$150B + \\$200B \\\\\n= \\$3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann}\
-  \ \\\\\n= Spending_{trials} \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\%\
-  \ \\\\\n= \\$58.6B \\\\[0.5em]\n\\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
+  \ = \\frac{Benefit_{peace+RD}}{Benefit_{vax,ann}} = \\frac{\\$172B}{\\$15B} = 11.5\
+  \ \\\\[0.5em]\n\\text{where } Benefit_{peace+RD} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann}\
+  \ \\\\\n= \\$114B + \\$58.6B \\\\\n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc}\
+  \ \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\$11.4T \\times 1\\\
+  % \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total} \\\\\n= Cost_{war,direct}\
+  \ + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\n= \\$11.4T \\\\[0.5em]\n\
+  \\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict} + Damage_{infra,total}\
+  \ \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\$2.45T + \\$1.88T + \\$616B\
+  \ + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where } Loss_{life,conflict} \\\
+  \\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n+ Cost_{terror,human} \\\\\n\
+  = \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\\text{where } Cost_{combat,human}\
+  \ \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000 \\times \\$10M \\\\\n= \\\
+  $2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human} \\\\\n= Deaths_{state} \\\
+  times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B \\\\[0.5em]\n\\text{where\
+  \ } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times VSL \\\\\n= 8{,}300 \\times\
+  \ \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where } Damage_{infra,total} \\\\\n\
+  = Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport}\
+  \ \\\\\n+ Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B\
+  \ + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\\text{where } Disruption_{trade} \\\\\
+  \n= Disruption_{currency} + Disruption_{energy} \\\\\n+ Disruption_{shipping} +\
+  \ Disruption_{supply} \\\\\n= \\$57.4B + \\$125B + \\$247B + \\$187B \\\\\n= \\\
+  $616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil}\
+  \ \\\\\n+ Loss_{capital,conflict} + Cost_{psych} \\\\\n+ Cost_{refugee} + Cost_{vet}\
+  \ \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\\
+  $3.7T \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials} \\\
+  times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\
+  \\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
   \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_campaign_annual_cost_amortized\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
@@ -4245,41 +4216,6 @@
   \ \\times Reduce_{treaty} \\\\\n= 245{,}000 \\times 1\\% \\\\\n= 2{,}450 \\\\[0.5em]\n\
   \\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat} + Deaths_{state} + Deaths_{terror}\
   \ \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n= 245{,}000\n\\end{gathered}\n$$"
-"treaty_recurring_benefits_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_recurring_benefits_annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
-  \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
-  \ Note: Health benefits are one-time timeline shifts, NOT included here. | Calculated\
-  \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit:\
-  \ USD/year | Click to view details, calculation & sources\">$172B (95% CI: $140B-$213B)</a>"
-"treaty_recurring_benefits_annual_latex": "$$\n\\begin{gathered}\nBenefit_{recur,ann}\
-  \ \\\\\n= Benefit_{RD,ann} + Benefit_{peace,soc} \\\\\n= \\$58.6B + \\$114B \\\\\
-  \n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{RD,ann} \\\\\n= Spending_{trials}\
-  \ \\times Reduce_{pct} \\\\\n= \\$60B \\times 97.7\\% \\\\\n= \\$58.6B \\\\[0.5em]\n\
-  \\text{where } Reduce_{pct} \\\\\n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}}\
-  \ \\\\\n= 1 - \\frac{\\$929}{\\$41K} \\\\\n= 97.7\\% \\\\[0.5em]\n\\text{where }\
-  \ Benefit_{peace,soc} \\\\\n= Cost_{war,total} \\times Reduce_{treaty} \\\\\n= \\\
-  $11.4T \\times 1\\% \\\\\n= \\$114B \\\\[0.5em]\n\\text{where } Cost_{war,total}\
-  \ \\\\\n= Cost_{war,direct} + Cost_{war,indirect} \\\\\n= \\$7.66T + \\$3.7T \\\\\
-  \n= \\$11.4T \\\\[0.5em]\n\\text{where } Cost_{war,direct} \\\\\n= Loss_{life,conflict}\
-  \ + Damage_{infra,total} \\\\\n+ Disruption_{trade} + Spending_{mil} \\\\\n= \\\
-  $2.45T + \\$1.88T + \\$616B + \\$2.72T \\\\\n= \\$7.66T \\\\[0.5em]\n\\text{where\
-  \ } Loss_{life,conflict} \\\\\n= Cost_{combat,human} + Cost_{state,human} \\\\\n\
-  + Cost_{terror,human} \\\\\n= \\$2.34T + \\$27B + \\$83B \\\\\n= \\$2.45T \\\\[0.5em]\n\
-  \\text{where } Cost_{combat,human} \\\\\n= Deaths_{combat} \\times VSL \\\\\n= 234{,}000\
-  \ \\times \\$10M \\\\\n= \\$2.34T \\\\[0.5em]\n\\text{where } Cost_{state,human}\
-  \ \\\\\n= Deaths_{state} \\times VSL \\\\\n= 2{,}700 \\times \\$10M \\\\\n= \\$27B\
-  \ \\\\[0.5em]\n\\text{where } Cost_{terror,human} \\\\\n= Deaths_{terror} \\times\
-  \ VSL \\\\\n= 8{,}300 \\times \\$10M \\\\\n= \\$83B \\\\[0.5em]\n\\text{where }\
-  \ Damage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\
-  \\\n+ Damage_{health} + Damage_{transport} \\\\\n+ Damage_{water} \\\\\n= \\$298B\
-  \ + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T \\\\[0.5em]\n\
-  \\text{where } Disruption_{trade} \\\\\n= Disruption_{currency} + Disruption_{energy}\
-  \ \\\\\n+ Disruption_{shipping} + Disruption_{supply} \\\\\n= \\$57.4B + \\$125B\
-  \ + \\$247B + \\$187B \\\\\n= \\$616B \\\\[0.5em]\n\\text{where } Cost_{war,indirect}\
-  \ \\\\\n= Damage_{env} + Loss_{growth,mil} \\\\\n+ Loss_{capital,conflict} + Cost_{psych}\
-  \ \\\\\n+ Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\\
-  $232B + \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}\n$$"
 "treaty_redirected_spending_infinite_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_redirected_spending_infinite_roi\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/1-pct-treaty-impact.qmd#infinite-roi\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"ROI when redirecting\
@@ -4891,6 +4827,6 @@
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "_us_base_political_spending": "<span class=\"parameter-link\" title=\"Parameter:\
   \ _US_BASE_POLITICAL_SPENDING\">28.8B</span>"
-"total_parameter_count": "452"
-"total_latex_equation_count": "171"
+"total_parameter_count": "450"
+"total_latex_equation_count": "169"
 "total_citation_count": "183"
