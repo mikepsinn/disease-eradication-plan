@@ -218,6 +218,7 @@ format:
     code-fold: true
     link-citations: true
     smooth-scroll: true
+    code-tools: false
   pdf:
     output-file: "dfda-impact-paper.pdf"
     documentclass: article

@@ -217,6 +217,7 @@ format:
     code-fold: true
     link-citations: true
     smooth-scroll: true
+    code-tools: false
   pdf:
     output-file: "optimocracy-paper.pdf"
     documentclass: article
