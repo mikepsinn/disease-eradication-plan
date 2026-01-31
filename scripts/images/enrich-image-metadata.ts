@@ -26,7 +26,7 @@ import { findImages } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { generateCompleteMetadata, CompleteMetadataResult } from '../lib/image-analysis'
 import { parseCommonArgs, printHeader, printSummary } from '../lib/cli-utils'
-import { updateImageInIndex } from './generate-image-index'
+import { updateImageInIndex, syncIndex } from './generate-image-index'
 
 const ASSETS_DIR = path.join(process.cwd(), 'assets', 'images')
 
@@ -171,8 +171,13 @@ async function main() {
     process.exit(1)
   }
 
+  // Sync index with file metadata first (ensures JSON matches EXIF data)
+  console.log('[1/5] Syncing image index with file metadata...')
+  await syncIndex({ quiet: true })
+  console.log('  [OK] Index synced')
+
   // Find all images (skip GIFs - they're animations, not static images for enrichment)
-  console.log('[1/4] Finding images...')
+  console.log('\n[2/5] Finding images...')
   let images = await findImages(targetDir, {
     extensions: ['.png', '.jpg', '.jpeg', '.webp'],
   })
@@ -180,7 +185,7 @@ async function main() {
 
   // Filter to only those needing enrichment (unless --all)
   if (!options.all) {
-    console.log('\n[2/4] Checking for missing metadata...')
+    console.log('\n[3/5] Checking for missing metadata...')
     const toProcess: { path: string; missing: string[] }[] = []
 
     for (const img of images) {
@@ -222,7 +227,7 @@ async function main() {
 
     images = toProcess.map(p => p.path)
   } else {
-    console.log('\n[2/4] --all flag set, will regenerate all metadata')
+    console.log('\n[3/5] --all flag set, will regenerate all metadata')
   }
 
   // Apply limit
@@ -237,7 +242,7 @@ async function main() {
   }
 
   // Process images
-  console.log(`\n[3/4] Enriching metadata for ${images.length} images...`)
+  console.log(`\n[4/5] Enriching metadata for ${images.length} images...`)
   const results: EnrichmentResult[] = []
   let processed = 0
   let enriched = 0

@@ -856,6 +856,10 @@ export async function saveImage(
   // Add rich metadata AFTER watermark (EXIF, IPTC, XMP for SEO/discoverability)
   await addImageMetadata(filePath, finalMetadata)
 
+  // Update image-index.json with the new image
+  const { updateImageInIndex } = await import('../images/generate-image-index')
+  await updateImageInIndex(filePath, finalMetadata)
+
   log.info('Image saved with metadata', {
     filePath,
     size: compressionResult.finalSize,

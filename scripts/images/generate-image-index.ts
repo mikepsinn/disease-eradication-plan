@@ -193,19 +193,23 @@ export async function updateImageInIndex(
   await saveIndex(index);
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  const forceRebuild = args.includes('--force');
+/**
+ * Sync the image index with files on disk (incremental update)
+ * Reads EXIF metadata from files and updates the index.
+ * Returns stats about what was updated.
+ */
+export async function syncIndex(options?: {
+  forceRebuild?: boolean;
+  quiet?: boolean;
+}): Promise<{ total: number; skipped: number; updated: number }> {
+  const forceRebuild = options?.forceRebuild ?? false;
+  const quiet = options?.quiet ?? false;
 
-  console.log('Generating image index...\n');
-  console.log(`Mode: ${forceRebuild ? 'FULL REBUILD' : 'INCREMENTAL UPDATE'}\n`);
+  if (!quiet) {
+    console.log(`[*] Syncing image index (${forceRebuild ? 'full rebuild' : 'incremental'})...`);
+  }
 
   const useExiftool = await isExiftoolAvailable();
-  if (useExiftool) {
-    console.log('[OK] exiftool available - will extract full metadata\n');
-  } else {
-    console.log('[WARN] exiftool not available - using basic metadata only\n');
-  }
 
   // Find all image files
   const imageFiles = await glob('assets/**/*.{jpg,jpeg,png,gif,webp,svg,ico}', {
@@ -213,8 +217,6 @@ async function main() {
     absolute: true,
     ignore: ['node_modules/**', '_book/**', '.quarto/**'],
   });
-
-  console.log(`Found ${imageFiles.length} image files\n`);
 
   // Load existing index for incremental mode
   const existingIndex = forceRebuild ? null : await loadIndex();
@@ -265,7 +267,7 @@ async function main() {
     }
 
     processed++;
-    if (processed % 100 === 0) {
+    if (!quiet && processed % 100 === 0) {
       console.log(`  Processed ${processed}/${imageFiles.length}...`);
     }
   }
@@ -282,10 +284,42 @@ async function main() {
 
   await saveIndex(index);
 
+  if (!quiet) {
+    console.log(`  [OK] Synced ${images.length} images (${skipped} unchanged, ${updated} updated)`);
+  }
+
+  return { total: images.length, skipped, updated };
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const forceRebuild = args.includes('--force');
+
+  console.log('Generating image index...\n');
+  console.log(`Mode: ${forceRebuild ? 'FULL REBUILD' : 'INCREMENTAL UPDATE'}\n`);
+
+  const useExiftool = await isExiftoolAvailable();
+  if (useExiftool) {
+    console.log('[OK] exiftool available - will extract full metadata\n');
+  } else {
+    console.log('[WARN] exiftool not available - using basic metadata only\n');
+  }
+
+  const { total, skipped, updated } = await syncIndex({ forceRebuild, quiet: true });
+
+  // Reload index for stats
+  const index = await loadIndex();
+  if (!index) {
+    console.error('Failed to load index after sync');
+    process.exit(1);
+  }
+
+  const images = index.images;
+
   console.log('\n' + '='.repeat(60));
   console.log('Summary:');
-  console.log(`  Total images: ${images.length}`);
-  console.log(`  Total size: ${formatBytes(totalSize)}`);
+  console.log(`  Total images: ${total}`);
+  console.log(`  Total size: ${index.totalSize}`);
   console.log(`  Skipped (unchanged): ${skipped}`);
   console.log(`  Updated/added: ${updated}`);
   console.log(`  Output: ${OUTPUT_FILE}`);
@@ -309,10 +343,10 @@ async function main() {
   const withKeywords = images.filter(img => img.keywords && img.keywords.length > 0).length;
 
   console.log('\nMetadata coverage:');
-  console.log(`  With transcript (OCR): ${withTranscript} (${((withTranscript / images.length) * 100).toFixed(0)}%)`);
-  console.log(`  With title: ${withTitle} (${((withTitle / images.length) * 100).toFixed(0)}%)`);
-  console.log(`  With description: ${withDescription} (${((withDescription / images.length) * 100).toFixed(0)}%)`);
-  console.log(`  With keywords: ${withKeywords} (${((withKeywords / images.length) * 100).toFixed(0)}%)`);
+  console.log(`  With transcript (OCR): ${withTranscript} (${((withTranscript / total) * 100).toFixed(0)}%)`);
+  console.log(`  With title: ${withTitle} (${((withTitle / total) * 100).toFixed(0)}%)`);
+  console.log(`  With description: ${withDescription} (${((withDescription / total) * 100).toFixed(0)}%)`);
+  console.log(`  With keywords: ${withKeywords} (${((withKeywords / total) * 100).toFixed(0)}%)`);
 }
 
 // Only run main if this module is executed directly (not imported)

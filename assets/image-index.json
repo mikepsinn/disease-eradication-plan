@@ -1,7 +1,7 @@
 {
-  "totalImages": 1416,
-  "totalSizeBytes": 832524899,
-  "totalSize": "794.0 MB",
+  "totalImages": 1428,
+  "totalSizeBytes": 837076754,
+  "totalSize": "798.3 MB",
   "images": [
     {
       "path": "assets/cover/a-1970s-retro-futuristic-book-cover-how-to-end-war-and-disease.jpeg",
@@ -3772,6 +3772,68 @@
       ]
     },
     {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-1-the-peace-dividend-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-1-the-peace-dividend-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 389704,
+      "size": "380.6 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:54:29.778Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "title": "The Peace Dividend: Economic Gains from Redirecting Military Spending",
+      "description": "A detailed economic diagram explaining how redirecting $27.2 billion (1%) of military spending to medical research generates a $114 billion annual 'Peace Dividend.' It compares the low economic multiplier of military spending (0.6:1) with the high economic multiplier of healthcare research (4.3:1) to show a net GDP gain equivalent to the size of Austria.",
+      "keywords": [
+        "Peace Dividend",
+        "Military Spending",
+        "Medical Research",
+        "Economic Multiplier",
+        "GDP Growth",
+        "War on Disease",
+        "Resource Reallocation",
+        "Healthcare Economics"
+      ],
+      "transcript": "The Peace Dividend. $114B (95% CI: $90.1B-$141B)/year. How the peace dividend is calculated: RESOURCE REALLOCATION. $27.2B (redirected annually). MULTIPLIER DIFFERENTIAL. NET ECONOMIC GAIN. Simply from the multiplier differential, independent of conflict: $114B (95% CI: $90.1B-$141B)/year. STANDARD ECONOMICS: GDP GAINS. A 1% reduction in weapons procurement redirects $114B annually from activities with 0.5-1.0x multipliers to activities with 2-3x multipliers. LOW-MULTIPLIER ACTIVITIES (Weapons Manufacturing, Job Creation, Non-Compounding). HIGH-MULTIPLIER ACTIVITIES (Medical Research, Healthcare Cost Savings, Increased Workforce Productivity). Moving money generates measurable GDP gains. MILITARY SPENDING (Low Multiplier). HEALTHCARE RESEARCH (High Multiplier). Generates 0.6:1 (95% CI: 0.4:1-0.9:1) per dollar spent. Generates 4.3:1 (95% CI: 3:1-6:1) per dollar spent. GLOBAL ECONOMIC CONTEXT. Reallocated from military spending to medical research infrastructure. APPROXIMATELY THE GDP OF AUSTRIA. Military Spending. Medical Research Infrastructure. Note: CI = Confidence Interval. Data based on WarOnDisease.org",
+      "qualityScore": 4,
+      "qualityIssues": [
+        "Cluttered layout with many sub-sections",
+        "Small text in the bottom sections"
+      ],
+      "standaloneScore": 5,
+      "canShareStandalone": true,
+      "socialCaption": "It turns out we’re much better at spending money to break people than we are at spending money to fix them, which is a bit of a shame for the people currently being broken. Redirecting 1% of the budget for blowing things up into medical research would apparently create an entire Austria’s worth of money. https://WarOnDisease.org",
+      "twitterText": "We’re currently spending billions on weapons that have a worse ROI than a used treadmill. If we put 1% of that into curing diseases, we’d gain $114B a year, which is roughly the size of Austria, but with fewer mountains. https://WarOnDisease.org",
+      "linkedInText": "Economists have discovered that weapons don't actually grow the economy as well as curing the people who use them. By moving 1% of military spending to research, we’d see a $114B annual dividend just from the math working better. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "presentation"
+      ],
+      "speakerNotes": "This slide breaks down the 'Peace Dividend'—the pure economic gain achieved by shifting funds from low-multiplier military spending to high-multiplier medical research. Even without accounting for the lives saved, the math alone generates an additional $114 billion in annual GDP simply because medical research provides a much higher return on every dollar spent.",
+      "talkingPoints": [
+        "Military spending has a low economic multiplier of 0.6:1.",
+        "Medical research has a high economic multiplier of 4.3:1.",
+        "Redirecting 1% of military spending results in a $114B annual net gain.",
+        "The scale of this gain is roughly equivalent to the entire GDP of Austria."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "Infographic titled 'The Peace Dividend' showing how redirecting $27.2 billion from military spending to medical research creates a $114 billion annual economic gain. It compares military spending (0.6:1 return) to healthcare research (4.3:1 return) using icons of tanks and soldiers versus scientists and labs.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "current",
+      "dataSources": [
+        "WarOnDisease.org"
+      ],
+      "factCheckNotes": "The economic multipliers (0.6 vs 4.3) are based on specific academic models cited by the War on Disease initiative to highlight the opportunity cost of defense spending.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:54:29.040Z",
+      "metadataCreatedAt": "2026-01-31T02:54:29.286Z"
+    },
+    {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-1-trial-capacity-multiplier-derivation-var-dfda-trial-capacity-multiplier-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-1-trial-capacity-multiplier-derivation-var-dfda-trial-capacity-multiplier-bw-academic.jpg",
       "extension": "jpg",
@@ -4183,6 +4245,204 @@
       ]
     },
     {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-dynamics-game-theoretic-analysis-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-adoption-dynamics-game-theoretic-analysis-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 331001,
+      "size": "323.2 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:54:46.068Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nAdoption Dynamics: Game-Theoretic Analysis\n\nWestern economies are facing a solvency crisis driven by healthcare inflation and aging populations. Traditional approaches face severe constraints: austerity programs cutting benefits generate political backlash, while monetary expansion through Modern Monetary Theory risks inflation. Technological deflation through dramatically reduced clinical trial costs offers an alternative path.\n\nBy collapsing the cost of clinical trials by 44.1x (95% CI: 39.4x-89.1x), we fundamentally alter the cost structure of healthcare. We replace expensive \"chronic disease management\" with cheap \"curative interventions.\" This is the **only mathematically viable path** to long-term fiscal solvency for G7 nations. It is impossible *not* to fund this, because the alternative is national bankruptcy.",
+      "transcript": "ADOPTION DYNAMICS: GAME-THEORETIC ANALYSIS; WESTERN ECONOMIES: HEALTHCARE INFLATION, AGING POPULATIONS; SOLVENCY CRISIS; TRADITIONAL APPROACHES: AUSTERITY PROGRAMS (POLITICAL BACKLASH), MONETARY EXPANSION (INFLATION RISK); SEVERE CONSTRAINTS; TECHNOLOGICAL DEFLATION; COLLAPSED CLINICAL TRIAL COSTS (44.1x, 95% CI: 39.4x-89.1x); FUNDAMENTALLY ALTERED COST STRUCTURE; CURATIVE INTERVENTIONS; CHRONIC DISEASE MANAGEMENT; IMPOSSIBLE NOT TO FUND (ALTERNATIVE: NATIONAL BANKRUPTCY); *ONLY MATHEMATICALLY VIABLE PATH** TO LONG-TERM FISCAL SOLVENCY; Fig 1. Healthcare Solvency Model; WarOnDisease.org",
+      "imageIssues": [
+        "busy decorative border",
+        "figure label embedded in image"
+      ],
+      "metadataCreatedAt": "2026-01-30T07:14:55.147Z",
+      "title": "Adoption Dynamics and Game-Theoretic Analysis of Healthcare Solvency",
+      "description": "This diagram illustrates the economic pressures on Western economies caused by healthcare inflation and aging populations, leading to a solvency crisis. It contrasts failed traditional approaches like austerity with a technological deflation path that reduces clinical trial costs, positioning curative interventions as the only mathematically viable way to achieve long-term fiscal solvency and avoid national bankruptcy.",
+      "keywords": [
+        "healthcare solvency",
+        "clinical trial costs",
+        "game theory",
+        "fiscal policy",
+        "technological deflation",
+        "curative medicine",
+        "economic crisis",
+        "aging population"
+      ],
+      "qualityScore": 4,
+      "qualityIssues": [
+        "busy border elements",
+        "small text in some sub-labels"
+      ],
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "Western economies are currently choosing between national bankruptcy and actually curing diseases. We're leaning toward bankruptcy because it requires less math. https://WarOnDisease.org",
+      "twitterText": "Western economies are currently choosing between national bankruptcy and actually curing diseases. It’s a tough call, as bankruptcy doesn't require any new paperwork. Curative research is the only math that works, but math is notoriously unpopular. https://WarOnDisease.org",
+      "linkedInText": "The math on healthcare is simple: we can't afford to keep people sick, yet as a society, we're surprisingly committed to the attempt. Curative interventions aren't just a moral choice; they're the only way to avoid fiscal collapse. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "presentation"
+      ],
+      "speakerNotes": "This model explains why the current healthcare trajectory is a mathematical dead end for Western nations. While traditional fixes like austerity lead to political backlash and severe constraints, investing in the 'technological deflation' of clinical trials allows us to pivot toward curative interventions—the only path that actually prevents national bankruptcy.",
+      "talkingPoints": [
+        "Aging populations and rising inflation create an unavoidable solvency crisis for traditional healthcare models.",
+        "Traditional fiscal levers like austerity or monetary expansion fail to solve the underlying cost structure.",
+        "Reducing clinical trial costs by 44x shifts the focus from managing chronic illness to providing one-time cures.",
+        "Curative medicine is the primary mechanism for maintaining long-term national fiscal health."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A flowchart titled Adoption Dynamics: Game-Theoretic Analysis. It shows Western economies facing a solvency crisis due to healthcare inflation. It contrasts 'Traditional Approaches' leading to severe constraints with a 'Technological Deflation' path that collapses clinical trial costs, leading to curative interventions and long-term fiscal solvency.",
+      "emotionalTone": "alarming",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "WarOnDisease.org internal research"
+      ],
+      "factCheckNotes": "The 44.1x figure for collapsed clinical trial costs is a specific projection based on the '1% Treaty' model and needs to be cited within the context of the book's methodology.",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "Figure 1 embedded in image"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'Fig 1. Healthcare Solvency Model.' from the bottom right of the image.",
+      "metadataEnrichedAt": "2026-01-31T02:54:45.429Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 377624,
+      "size": "368.8 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:55:14.462Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nAdoption Pathway\n\nTreaty adoption depends on:\n1. **Political coalition**: Build support among health ministries, fiscal conservatives seeking budget efficiency, and populations demanding better healthcare\n2. **Economic case**: 637:1 (95% CI: 569:1-790:1) ROI makes this profitable, not charitable\n3. **VICTORY Incentive Alignment Bonds**: Fund $1B advocacy campaign, align investor and political incentives\n4. **Diplomatic negotiation**: UN General Assembly or coalition of willing nations\n\n**Timeline**: Highly variable depending on political momentum. Successful precedents range from 18 months (rapid consensus) to 5+ years (extended negotiation). The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.",
+      "transcript": "ADOPTION PATHWAY. 1. POLITICAL COALITION. HEALTH MINISTRIES. FISCAL CONSERVATIVES. POPULATIONS DEMANDING BETTER HEALTHCARE. BUILD SUPPORT. 2. ECONOMIC CASE. COST. ROI PROFITABLE. 637:1 (95% CI: 589:1-790:1). NOT CHARITABLE. 3. VICTORY INCENTIVE ALIGNMENT BONDS. VICTORY. FUND $1B ADVOCACY CAMPAIGN. INVESTOR INCENTIVES. POLITICAL INCENTIVES. 4. DIPLOMATIC NEGOTIATION. UN GENERAL ASSEMBLY. COALITION OF WILLING NATIONS. TIMELINE. RAPID CONSENSUS: 18 MONTHS. TREATY ADOPTED. EXTENDED NEGOTIATION: 5+ YEARS. TREATY ADOPTED. TIMELINE: Highly variable depending on political momentum. The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice. WarOnDisease.org",
+      "imageIssues": [
+        "Small text in the confidence interval (95% CI) area",
+        "Visual density is high"
+      ],
+      "metadataCreatedAt": "2026-01-30T07:47:08.909Z",
+      "title": "The Strategic Adoption Pathway for the War on Disease",
+      "description": "This diagram outlines the four-stage process for implementing the 1% Treaty, starting with building a coalition of health ministries and fiscal conservatives. It details the economic case with a 637:1 return on investment, the use of Victory Bonds to fund a global advocacy campaign, and the diplomatic timeline for treaty adoption through the UN or independent nations.",
+      "keywords": [
+        "War on Disease",
+        "1% Treaty",
+        "Victory Bonds",
+        "medical research funding",
+        "healthcare ROI",
+        "global health diplomacy",
+        "investment incentives"
+      ],
+      "qualityScore": 5,
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "Saving the world is remarkably easy once you realize humans only respond to gear-based diagrams and massive returns on investment. It's not charity; it's just a very complicated way to stay alive. https://WarOnDisease.org",
+      "twitterText": "If we want to stop dying of preventable diseases, we have to make it more profitable than the alternative. This four-step plan involves gears, bonds, and convincing politicians that not dying is actually a great fiscal move. https://WarOnDisease.org",
+      "linkedInText": "The path to global health isn't paved with good intentions; it's paved with a 637:1 return on investment. By aligning investor incentives with the basic human desire to not be dead, we might actually get somewhere. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "presentation"
+      ],
+      "speakerNotes": "This slide maps the strategic roadmap for the 'War on Disease' initiative. It demonstrates how we move from initial political support to a signed international agreement by leveraging a self-funding bond model that aligns the interests of fiscal conservatives and international diplomats.",
+      "talkingPoints": [
+        "The 637:1 ROI figure shifts the conversation from charity to high-yield economic investment.",
+        "Victory Bonds provide the $1B necessary to fund the global advocacy required to reach the UN General Assembly.",
+        "The dual-track diplomatic strategy targets both the UN and independent coalitions to ensure adoption within 18 months to 5 years.",
+        "The model is designed to be self-funding, which significantly lowers the political barrier to entry compared to traditional aid."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A flow chart showing a 4-step adoption pathway for a global treaty. It includes building a political coalition, an economic case showing a massive return on investment, issuing Victory Bonds to fund advocacy, and diplomatic negotiations leading to treaty adoption.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "WarOnDisease.org"
+      ],
+      "factCheckNotes": "The ROI (637:1) and confidence intervals are specific model outputs from the 1% Treaty research framework.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:55:13.813Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 326215,
+      "size": "318.6 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:55:31.475Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nBottom Line for Policymakers\n\nThis intervention is **cost-saving**, making it one of the rarest findings in health economics. It doesn't require:\n\n- New taxes\n- Reduced health spending\n- Cuts to popular programs\n- Technological breakthroughs\n\nIt requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at $929 (95% CI: $97-$3K)/patient).\n\nThe political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: Incentive Alignment Bonds that make supporting the treaty more profitable for politicians than opposing it.",
+      "transcript": "BOTTOM LINE FOR POLICYMAKERS. COST-SAVING INTERVENTION (Rare finding in health economics). DOES NOT REQUIRE: NEW TAXES, REDUCED HEALTH SPENDING, CUTS TO POPULAR PROGRAMS, TECHNOLOGICAL BREAKTHROUGHS. REQUIRES ONLY: GOVERNMENT SPENDING (Total). LEAST COST-EFFECTIVE (Military) 99%. MOST COST-EFFECTIVE (Health Intervention: Pragmatic Trials) 1%. PRAGMATIC TRIALS at $929 (95% CI: $97-$3K)/patient. THE POLITICAL CHALLENGE & SOLUTION. ENTRENCHED INTERESTS (Military-Industrial Spending). THE CHALLENGE: NOT ECONOMIC, BUT POLITICAL. INCENTIVE ALIGNMENT BONDS. THE SOLUTION: MAKE SUPPORTING TREATY PROFITABLE FOR POLITICIANS. PROFITABLE. TREATY. WarOnDisease.org.",
+      "imageIssues": [
+        "cluttered bottom section",
+        "small text in confidence interval labels"
+      ],
+      "metadataCreatedAt": "2026-01-30T07:44:27.879Z",
+      "title": "Bottom Line for Policymakers: The 1% Treaty Intervention",
+      "description": "A policy-focused overview showing how redirecting 1% of military spending to pragmatic medical trials creates a cost-saving health intervention. It highlights that the transition requires no new taxes or budget cuts, framing the hurdle as a political incentive problem rather than an economic one.",
+      "keywords": [
+        "1% Treaty",
+        "healthcare economics",
+        "military spending",
+        "pragmatic trials",
+        "public policy",
+        "cost-saving health",
+        "incentive alignment"
+      ],
+      "qualityScore": 4,
+      "qualityIssues": [
+        "Text in the confidence interval callout is quite small",
+        "Visual layout is high-density and might benefit from more whitespace"
+      ],
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "We have already mastered the art of spending trillions on things that explode. It turns out that keeping people alive is actually cheaper, we just have to make it profitable for the people who make the rules. https://WarOnDisease.org",
+      "twitterText": "Usually, saving lives is seen as a budget leak. This plan suggests moving 1% of the 'blowing things up' fund into the 'not dying' fund. It doesn't even require a new tax, which is the only thing more frightening to a politician than a pandemic. https://WarOnDisease.org",
+      "linkedInText": "It is a rare day in economics when you find a way to save lives without raising taxes or cutting popular programs. The only hurdle is that it is currently more profitable to let people stay sick. If we align the incentives, we might accidentally fix things. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This slide addresses the primary concerns of policymakers: cost and political feasibility. We are looking at a rare 'cost-saving intervention' that doesn't require new taxes or cuts to popular programs. The core of the 1% Treaty is shifting 1% of the least cost-effective spending—the military—to the most cost-effective—pragmatic medical trials. The challenge isn't the math; it's the political will, which we solve by aligning incentives.",
+      "talkingPoints": [
+        "Redirecting 1% of military spending avoids the political suicide of new taxes.",
+        "Pragmatic trials offer a massive ROI, costing roughly $929 per patient.",
+        "The transition uses 'Incentive Alignment Bonds' to turn a political hurdle into a profitable solution."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A diagram titled 'Bottom Line for Policymakers' explaining the 1% Treaty. It shows that redirecting 1% of military spending to health trials requires no new taxes and solves the political challenge by making the treaty profitable for politicians through incentive alignment.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "current",
+      "dataSources": [
+        "WarOnDisease.org",
+        "Health Economics research on Pragmatic Trials"
+      ],
+      "factCheckNotes": "The $929 figure and the 1% redirection model are specific to the 1% Treaty proposal framework.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:55:30.849Z"
+    },
+    {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg",
       "extension": "jpg",
@@ -4195,48 +4455,50 @@
       "modified": "2026-01-28T17:57:04.214Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Precision Medicine Comparison for Genetic Marker X",
-      "description": "A comparative medical chart contrasting two treatment options for women over 50 with a specific genetic marker. Treatment A is shown as a targeted, optimal outcome with 92% effectiveness and low side effects, while Treatment B is a secondary option with 65% effectiveness and moderate side effects.",
+      "title": "Comparative Analysis of Targeted vs Broad Medical Treatments",
+      "description": "A comparative diagram showing the outcomes of two different medical treatments for women over 50 with a specific genetic marker. Treatment A is shown as a targeted, high-performing option with 92% effectiveness and low side effects, while Treatment B is a broad-spectrum secondary option with 65% effectiveness and higher systemic side effects.",
       "keywords": [
         "precision medicine",
-        "targeted therapy",
         "genetic markers",
+        "treatment effectiveness",
+        "side effects",
         "medical research",
-        "personalized healthcare"
+        "targeted therapy",
+        "healthcare outcomes"
       ],
-      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X. RANK 1: TREATMENT A. GENETIC MARKER X TARGETED. EFFECTIVENESS 92%. SIDE EFFECTS: LOW. OPTIMAL OUTCOME. RANK 2: TREATMENT B. EFFECTIVENESS 65%. SIDE EFFECTS: MODERATE. SECONDARY OPTION. WarOnDisease.org",
+      "transcript": "FILTER: WOMEN OVER 50 WITH GENETIC MARKER X; RANK 1; TREATMENT A; GENETIC MARKER X TARGETED; EFFECTIVENESS 92%; SIDE EFFECTS: LOW; OPTIMAL OUTCOME; RANK 2; TREATMENT B; EFFECTIVENESS 65%; SIDE EFFECTS: MODERATE; SECONDARY OPTION",
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We've spent trillions learning how to hit a target from space, but hitting a specific cell in the human body is still considered a 'budget luxury.' Here is a chart showing what happens when we actually try. https://WarOnDisease.org",
-      "twitterText": "It turns out that if you look at a person's DNA, you can actually give them medicine that works. It’s a bold new strategy compared to our current method of ‘hoping for the best and ignoring the side effects.’ https://WarOnDisease.org",
-      "linkedInText": "Science has discovered that women over 50 are not, in fact, identical clones, and might require different medicine. If we spent less on tanks and more on this 'targeted' stuff, we might actually live to see the future we're so busy defending. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "Medicine has finally reached a point where we can choose between a treatment that works and one that just makes your hair fall out for no reason. It’s nice to have options. https://WarOnDisease.org",
+      "twitterText": "Science has discovered that targeting the actual problem works better than just hitting everything and hoping for the best. Unfortunately, the 'hitting everything' approach currently has a much better marketing budget. https://WarOnDisease.org",
+      "linkedInText": "In the future, we will use genetic markers to cure diseases with 92% efficiency. In the present, we're still debating if we can afford to stop building tanks long enough to read the instruction manual for our DNA. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This slide illustrates the dramatic difference between precision medicine and broad-spectrum treatments. By using genetic markers to filter patients, we can move from a 65% success rate with significant side effects to a 92% success rate with minimal complications. This is the 'optimal outcome' we are advocating for with increased research funding.",
+      "speakerNotes": "When we apply precision medicine filters, the choice becomes obvious. Treatment A isn't just slightly better; it's a fundamental shift from 'collateral damage' medicine to 'surgical strike' medicine, boasting 92% effectiveness by targeting Marker X specifically.",
       "talkingPoints": [
-        "Precision medicine increases effectiveness from 65% to 92% for specific demographics.",
-        "Targeted therapy significantly reduces patient suffering by minimizing off-target side effects.",
-        "The 'Optimal Outcome' is only possible through dedicated research into genetic markers."
+        "Precision targeting increases effectiveness from 65% to 92% in this demographic.",
+        "Specific genetic markers allow for significant reduction in side-effect profiles compared to broad-spectrum drugs.",
+        "The 'Secondary Option' represents the current status quo that the 1% Treaty aims to replace through dedicated research funding."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A comparative medical diagram for women over 50 with Genetic Marker X. Treatment A (Optimal) shows 92% effectiveness and low side effects. Treatment B (Secondary) shows 65% effectiveness and moderate side effects.",
+      "altText": "A side-by-side comparison of two medical treatments for women over 50 with genetic marker X. Treatment A targets the marker directly with 92% effectiveness and low side effects. Treatment B is less targeted, showing 65% effectiveness and moderate side effects across the body.",
       "emotionalTone": "informative",
-      "callToAction": "4 shares = ~153 lives saved",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org"
+        "WarOnDisease.org research initiative"
       ],
-      "factCheckNotes": "The data is illustrative of the benefits of precision medicine rather than a specific clinical trial result.",
+      "factCheckNotes": "These percentages are illustrative of the delta between precision medicine and broad-spectrum standards of care.",
       "promptLeakageDetected": true,
       "promptLeakageText": [
         "SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV"
       ],
       "promptLeakageRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION DATABASE - VOLUME IV' from the bottom of the image.",
-      "metadataEnrichedAt": "2026-01-30T04:51:17.565Z",
+      "metadataEnrichedAt": "2026-01-31T02:55:45.147Z",
       "metadataCreatedAt": "2026-01-28T17:56:46.339Z",
       "qualityIssues": [
         "Internal metadata text 'SCIENTIFIC ILLUSTRATION DATABASE' is present in the frame"
@@ -4324,6 +4586,129 @@
       ]
     },
     {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 417414,
+      "size": "407.6 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:56:01.308Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nCost Reduction Assumptions\n\n**Assumption:** The methodology of a decentralized framework for drug assessment reduces per-patient trial costs by 97.7% (95% CI: 97.5%-98.9%) (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.",
+      "transcript": "COST REDUCTION ASSUMPTIONS IN DRUG ASSESSMENT. COMPARISON: TRADITIONAL vs. DECENTRALIZED FRAMEWORKS. TRADITIONAL RCTs. HIGH COST PER PATIENT. TRADITIONAL METHODOLOGY: Centralized, Resource-Intensive, High Overhead. COST REDUCTION 97.7% to 95% DECREASE. DECENTRALIZED FRAMEWORK. REDUCED COST. DECENTRALIZED METHODOLOGY: Distributed, Efficient, Lower Overhead. Bar chart showing: Traditional RCT Cost at 100%, Decentralized Framework Cost at 2.3-5%. Reduction range. ASSUMPTION: DECENTRALIZED FRAMEWORK REDUCES PER-PATIENT TRIAL COSTS BY 97.7% (95% CI: 97.5%-98.9%) (CONSERVATIVE) TO 95% (OPTIMISTIC). WarOnDisease.org",
+      "imageIssues": [
+        "complex visual metaphors may distract from data"
+      ],
+      "metadataCreatedAt": "2026-01-30T07:01:49.529Z",
+      "title": "Cost Reduction Assumptions in Drug Assessment Frameworks",
+      "description": "A comparative analysis between traditional centralized clinical trials and decentralized frameworks for drug assessment. The data illustrates a projected reduction in per-patient trial costs ranging from 95% to 97.7% when shifting to distributed, efficient methodologies.",
+      "keywords": [
+        "clinical trials",
+        "drug assessment",
+        "decentralized frameworks",
+        "healthcare economics",
+        "medical research funding",
+        "RCT costs"
+      ],
+      "qualityScore": 4,
+      "qualityIssues": [
+        "Slightly cluttered visual composition with many overlapping elements"
+      ],
+      "standaloneScore": 5,
+      "canShareStandalone": true,
+      "socialCaption": "We've spent decades perfecting the art of making medical research as expensive and slow as possible, which is great news for the diseases. This chart shows what happens if we stop using a giant, paper-clogged machine to test medicine. https://WarOnDisease.org",
+      "twitterText": "We currently test new drugs using an expensive, centralized system that seems to hate efficiency. Moving to decentralized trials could cut costs by 97%. But I suppose the old way is nice if you enjoy paperwork and dying. https://WarOnDisease.org",
+      "linkedInText": "Traditional clinical trials are currently designed with all the speed and thriftiness of a Victorian bureaucracy. Transitioning to decentralized frameworks could cut per-patient costs by over 95%, assuming we actually want people to get better. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "presentation"
+      ],
+      "speakerNotes": "This visual contrasts the massive overhead of traditional centralized clinical trials with the streamlined potential of decentralized frameworks. By moving away from resource-intensive, paper-heavy systems, we estimate a per-patient cost reduction of up to 97.7%, making significantly more research projects financially viable.",
+      "talkingPoints": [
+        "Traditional RCTs are characterized by high overhead and centralized bottlenecks.",
+        "Decentralized models utilize distributed networks to achieve a 95-97% cost reduction per patient.",
+        "The 97.7% figure represents a conservative modeling assumption for modernizing drug assessment."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A diagram comparing traditional drug trials, depicted as a complex, high-cost machine, against decentralized trials, shown as a streamlined network. A bar chart shows costs dropping from 100 percent down to a 2.3 to 5 percent range.",
+      "emotionalTone": "informative",
+      "callToAction": "4 shares = ~153 lives saved",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "War on Disease initiative modeling"
+      ],
+      "factCheckNotes": "The cost reduction figures (95-97.7%) are specific assumptions based on the proposed 'War on Disease' framework rather than current industry averages.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:56:00.679Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-exploration-rate-vs-therapeutic-space-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-current-exploration-rate-vs-therapeutic-space-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 508379,
+      "size": "496.5 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:56:20.762Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "title": "Comparative Timeline for Disease Treatment Exploration",
+      "description": "A comparative analysis showing that under the status quo, it will take ~443 years to systematically explore treatments for the 6.65k diseases currently lacking them. The proposed model, involving dFDA implementation and automated research platforms, suggests a 12.3x increase in trial capacity could reduce this timeline to 36 years, reaching an average disease 204 years earlier.",
+      "keywords": [
+        "medical research timeline",
+        "drug discovery",
+        "dFDA",
+        "rare disease treatment",
+        "trial capacity",
+        "biotechnology",
+        "healthcare infrastructure",
+        "medical innovation"
+      ],
+      "transcript": "Current Exploration Rate vs. Therapeutic Space. Under the Status Quo: 6.65k diseases (95% CI: 5.70k-8.24k) lack effective treatment. 5% of rare diseases with treatments (after 40+ years). Timeline to Systematically Explore Remaining Space: ~443 years (95% CI: 324-712 years). 15 diseases/year (95% CI: 8-30) receive first effective treatment. Average wait for a randomly selected disease: 222 years (95% CI: 162-356 years). Empirically grounded: Only ~5% of rare diseases have treatments. Most space permanently unexplored. With dFDA Implementation: Trial Capacity Increases 12.3x (95% CI: 4.19-61.3x). Valley of death rescue (1.4x) adds more drug candidates. Timeline to Systematically Explore Disease Space: 36 years (95% CI: 11.6-77.2 years). Automated research platforms. 185 diseases/year (95% CI: 107-490) receiving first treatments. Eliminating 8.2 years (95% CI: 4.85-11.5 years) efficacy lag -> Immediate Patient Reach. Average disease receives first treatment 204 years (95% CI: 123-350 years) earlier. Total Timeline Shift: 212 years (95% CI: 135-355 years). Acceleration applies across all diseases, not just well-funded ones. dFDA's universal trial infrastructure removes economic barriers. WarOnDisease.org",
+      "qualityScore": 4,
+      "qualityIssues": [
+        "dense information layout",
+        "small text in secondary labels"
+      ],
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "Humanity has successfully mapped the entire surface of Mars but currently requires 443 years to figure out how to stop us from dying of basic biological errors. It's a bold strategy to assume we’ll all still be here in the year 2467 to collect our prescriptions. https://WarOnDisease.org",
+      "twitterText": "At our current rate, it will take 443 years to find treatments for existing diseases. This is excellent news for anyone planning on being a ghost for the next four centuries. We could do it in 36 years, but that would involve being efficient. https://WarOnDisease.org",
+      "linkedInText": "We have the technology to reduce the disease treatment timeline from 443 years to just 36. Currently, we’ve chosen the 'wait four centuries' option, presumably to give the viruses a fair head start. It's time to treat medical progress like a necessity rather than a hobby. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This slide highlights the staggering inefficiency of our current medical research 'Status Quo.' We are looking at a 443-year timeline to address known diseases, which effectively means abandoning everyone alive today. By implementing decentralized infrastructure and automated platforms, we can compress that timeline to 36 years, bringing the average treatment forward by two centuries.",
+      "talkingPoints": [
+        "6,650 diseases currently lack any effective treatment under the status quo.",
+        "A 12.3x increase in trial capacity is mathematically possible through infrastructure reform.",
+        "Transitioning from a 443-year exploration cycle to a 36-year cycle saves generations of patients.",
+        "The 'Valley of Death' rescue ensures viable drug candidates aren't lost to funding gaps."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A side-by-side infographic comparing 'Under the Status Quo' and 'With dFDA Implementation'. The left shows a dark, mostly unexplored tree representing a 443-year timeline for disease treatments. The right shows a bright, active tree representing a 36-year timeline achieved through automated research and a 12.3x increase in trial capacity.",
+      "emotionalTone": "urgent",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "Internal modeling based on FDA historical approval rates and rare disease prevalence"
+      ],
+      "factCheckNotes": "Statistics include 95% Confidence Intervals; timeline shift calculation accounts for both discovery acceleration and efficacy lag removal.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:56:20.124Z",
+      "metadataCreatedAt": "2026-01-31T02:56:20.391Z"
+    },
+    {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-direct-funding-scenario-bw-academic.jpg",
       "filename": "1-pct-treaty-impact-section-direct-funding-scenario-bw-academic.jpg",
       "extension": "jpg",
@@ -4400,46 +4785,422 @@
       "imageType": "other",
       "style": "black and white academic",
       "generationPrompt": "Use a black and white scientific illustration style.\n\nDisease treatment vs. curing disease\n\n- **Symptomatic treatment**: $8.20T (95% CI: $6.50T-$10T) {{}}/year (managing symptoms, not fixing root causes)\n\n- **Disease burden**: $109T (95% CI: $79.8T-$144T)/year in lost productivity, premature death, disability\n\n{{}}\n\n- **Curative research**: $67.5B (95% CI: $54B-$81B) {{}}/year\n\nThat's 0.0525% (95% CI: 0.0474%-0.0588%) of the disease burden spent on actually fixing the problem:\n\n{{}}",
-      "transcript": "DISEASE TREATMENT (Symptomatic) <-> DISEASE BURDEN\nSYMPTOMATIC TREATMENT\n$8.20T (95% CI: $6.50T-$10T) / year\nMANAGING SYMPTOMS\n(not fixing root causes)\nDISEASE BURDEN\n$109T (95% CI: $79.8T-$144T) / year\nin lost productivity, premature death, disability\nCURING DISEASE (Root Cause)\nCURATIVE RESEARCH\n$67.5B (95% CI: $54B-$81B) / year\n(actually fixing the problem)\nTHE DISPARITY\nCURATIVE RESEARCH ($67.5B)\nDISEASE BURDEN ($109T)\n0.0525% (95% CI: 0.0414%-0.0588%)\nof the disease burden spent on actually fixing the problem: A minuscule fraction.\nWarOnDisease.org",
+      "transcript": "DISEASE TREATMENT (Symptomatic); SYMPTOMATIC TREATMENT; $8.20T (95% CI: $6.50T-$10T)/year; MANAGING SYMPTOMS; (not fixing root causes); DISEASE BURDEN; DISEASE BURDEN; $109T (95% CI: $79.8T-$144T)/year; in lost productivity, premature death, disability; CURING DISEASE (Root Cause); CURATIVE RESEARCH; $67.5B (95% CI: $54B-$81B)/year; (actually fixing the problem); THE DISPARITY; 0.0525% (95% CI: 0.0414%-0.0588%) of the disease burden spent on actually fixing the problem: A minuscule fraction.; CURATIVE RESEARCH ($67.5B); DISEASE BURDEN ($109T); WarOnDisease.org; [Decorative mathematical equations in border]",
       "metadataCreatedAt": "2026-01-29T21:04:25.006Z",
-      "title": "Disparity Between Global Disease Burden and Curative Research Spending",
-      "description": "A comparative analysis showing that while the global economic burden of disease costs $109 trillion annually in lost productivity and disability, only $67.5 billion is spent on curative research. This represents a minuscule 0.0525% investment toward actually fixing the root causes of disease compared to the $8.2 trillion spent on symptomatic management.",
+      "title": "The Economic Disparity of Disease Burden and Curative Research",
+      "description": "This diagram compares the annual global costs of disease treatment ($8.2T) and the broader economic disease burden ($109T) against the investment in curative research ($67.5B). It quantifies that funding for finding root-cause cures represents only 0.0525% of the total economic loss caused by disease.",
       "keywords": [
         "disease burden",
         "medical research funding",
         "healthcare economics",
         "curative research",
+        "1% treaty",
+        "economic loss",
+        "health policy",
         "symptomatic treatment"
       ],
       "qualityScore": 5,
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We spend $109 trillion a year being sick and roughly 0.05% of that trying to not be sick anymore. It's like paying for a lifetime supply of buckets instead of just fixing the leak in the ceiling. https://WarOnDisease.org",
-      "twitterText": "Humans are remarkably good at being crushed by things. We spend $109 trillion on disease burden and only 0.0525% of that on actually curing anything. We’re very efficient at funding the problem and very careful not to fund the solution. https://WarOnDisease.org",
-      "linkedInText": "The global disease burden costs $109T annually in lost productivity and death. We spend $67B on cures. At this rate, we’ll solve the problem right around the time the sun burns out. Until then, we'll keep the treadmill running. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We spend $109 trillion a year on the inconvenience of being sick and dying, but only 0.05% of that on trying to stop it. It’s comforting to know our priorities are mathematically hilarious. https://WarOnDisease.org",
+      "twitterText": "The world loses $109 trillion a year to disease burden, yet we only spend $67 billion on curative research. We aren't fighting a war on disease; we're essentially paying it a very large, annual protection fee. https://WarOnDisease.org",
+      "linkedInText": "The global economic burden of disease is $109 trillion annually. We spend $8 trillion managing symptoms, but just $67 billion—roughly 0.05% of the burden—on finding actual cures. It’s an interesting way to run a planet. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
-        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This visual highlights the 'Disparity Gap.' We are currently trapped in a cycle where we spend trillions on managing symptoms—essentially running on a treadmill—while investing less than one-tenth of one percent of the total disease burden into finding actual cures. The economic math suggests we are effectively choosing to stay sick.",
+      "speakerNotes": "This visualization demonstrates the massive economic mismatch in global health priorities. While the total burden of disease exceeds $100 trillion annually, our investment in curative research—the only thing that actually reduces that burden—is a mere rounding error of about 0.05%.",
       "talkingPoints": [
-        "The $109 trillion disease burden is over 1,600 times larger than the global curative research budget.",
-        "Symptomatic treatment costs $8.2 trillion, yet fails to address root causes.",
-        "Investing just 1% of military spending would more than double the 'minuscule fraction' currently dedicated to cures."
+        "Global disease burden costs $109 trillion annually in lost productivity and death.",
+        "Symptomatic treatment is an $8.2 trillion 'treadmill' that manages symptoms without fixing causes.",
+        "Curative research receives only $67.5 billion per year.",
+        "The investment in cures is just 0.0525% of the total economic burden."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A four-panel diagram showing that symptomatic treatment costs $8.2T and disease burden costs $109T, while curative research receives only $67.5B, making research investment only 0.0525% of the total burden.",
+      "altText": "A four-panel diagram comparing economic health costs. Top left shows $8.2T spent on symptomatic treatment (a person on a hamster wheel). Top right shows $109T in disease burden (a person crushed by a heavy weight). Bottom left shows $67.5B for curative research (a scientist with a microscope). Bottom right shows a scale where curative research is a tiny 0.0525% fraction of the total disease burden.",
       "emotionalTone": "alarming",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "Global Burden of Disease-style economic modeling"
+        "Derived from economic health modeling with 95% Confidence Intervals"
       ],
-      "factCheckNotes": "The $109T figure aligns with broad economic estimates of VSL (Value of a Statistical Life) lost to premature mortality and disability globally.",
+      "factCheckNotes": "The numbers represent global estimates of economic loss and research spending; the ratio calculation (0.0525%) is the central thesis of the War on Disease initiative.",
       "imageProblemsDetected": false,
-      "metadataEnrichedAt": "2026-01-30T04:51:47.114Z"
+      "metadataEnrichedAt": "2026-01-31T02:56:41.256Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-economic-benefits-of-reduced-military-spending-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-economic-benefits-of-reduced-military-spending-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 331600,
+      "size": "323.8 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:57:02.528Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nEconomic benefits of reduced military spending\n\n1. **Direct fiscal savings (Cash):** $27.2B available for productive investment. This is the floor.\n2. **Diplomatic De-escalation (Upside):** Reduced conflict-related economic damage (trade disruption, infrastructure destruction, refugee costs).\n\n**Opportunity Cost & Signal Value**: The argument isn't just that 1% less budget stops 1% of bullets linearly. It's that 1% *redirected* to shared survival goals (curing disease) acts as a **confidence-building measure** (CBM) in arms control theory. It signals a shift from zero-sum competition to positive-sum cooperation.\n\n**Conservative estimate:** Analysis uses $114B (95% CI: $90.1B-$141B) annual peace dividend. Even if conflict intensity doesn't drop linearly, the $27.2B annual cash reallocation is real. The ROI works on the cash alone; peace is a massive bonus.\n\n**Confidence level separation**: The peace dividend calculation separates into two components:\n\n1. **Direct fiscal savings (high confidence)**: $27.2B - The 1% reduction in military budgets ($27.2B) represents direct fiscal savings with high certainty. These funds are immediately available for reallocation.\n\n2. **Conflict reduction benefits (upside scenario)**: $86.4B (95% CI: $62.9B-$113B) - The remaining $86.4B (95% CI: $62.9B-$113B) models the benefits if conflict costs reduce proportionally. While the causal link between marginal budget cuts and conflict intensity is complex, the *directionality* is positive.\n\n{{}}\n\n**Conservative interpretation**: The direct fiscal savings ($27.2B annually) are certain. The \"peace dividend\" is treated as an **upside scenario** in the conservative case, ensuring the economic model doesn't rely on optimistic geopolitical outcomes. The ROI remains positive on R&D savings alone.",
+      "transcript": "ECONOMIC BENEFITS OF REDUCED MILITARY SPENDING\nECONOMIC ROI MACHINE\nMILITARY SPENDING (1% REDUCTION)\nDIRECT FISCAL SAVINGS (Cash)\nFLOOR VALUE. IMMEDIATELY AVAILABLE. HIGH CONFIDENCE.\n$27.2B AVAILABLE FOR PRODUCTIVE INVESTMENT (R&D, Disease Cure)\nCONFIDENCE LEVEL SEPARATION & SIGNAL VALUE\nCONFIDENCE BOUNDARY\n$27.2B (1% Budget Cut) DIRECT FISCAL SAVINGS (High Confidence)\n$86.4B (95% CI: $62.9B-$113B) CONFLICT REDUCTION BENEFITS (Upside Scenario)\nPRODUCTIVE INVESTMENT ROI (Positive on Cash Alone)\nOPPORTUNITY COST & SIGNAL VALUE\nZERO-SUM COMPETITION\nPOSITIVE-SUM COOPERATION (Shared Goals)\nCONFIDENCE-BUILDING (CBM)\nDIPLOMATIC DE-ESCALATION (Upside)\nMASSIVE BONUS. UPSIDE SCENARIO. COMPLEX CAUSALITY.\nREDUCED CONFLICT-RELATED DAMAGE (Trade Disruption, Infrastructure Destruction, Refugee Costs)\nCONSERVATIVE INTERPRETATION: Direct savings ($27.2B annually) are CERTAIN. The Peace Dividend ($86.4B) is treated as an UPSIDE SCENARIO. The economic model does NOT rely on optimistic geopolitical outcomes. ROI REMAINS POSITIVE ON R&D SAVINGS ALONE.\nWarOnDisease.org",
+      "metadataCreatedAt": "2026-01-30T06:53:08.752Z",
+      "title": "The Economic Logic of Redirecting Military Spending",
+      "description": "A flow diagram illustrating the financial outcomes of a 1% reduction in military spending. It differentiates between $27.2 billion in guaranteed direct fiscal savings for medical research and an estimated $86.4 billion in potential 'upside' benefits from reduced global conflict.",
+      "keywords": [
+        "military spending",
+        "peace dividend",
+        "medical research funding",
+        "economic ROI",
+        "fiscal policy",
+        "1% Treaty",
+        "conflict reduction"
+      ],
+      "qualityScore": 5,
+      "standaloneScore": 5,
+      "canShareStandalone": true,
+      "socialCaption": "It turns out that not blowing things up is actually quite profitable, though significantly less cinematic. If we spend 1% less on tanks, we might accidentally cure a disease or two. https://WarOnDisease.org",
+      "twitterText": "If we stop spending 1% of our budget on making people explode, we save $27B for medical research. It's a boring trade-off because microscopes don't look as cool in slow motion, but living longer is a decent consolation prize. https://WarOnDisease.org",
+      "linkedInText": "The ROI on medical research is actually higher than the ROI on landmines, which is a weird thing to have to calculate in a spreadsheet. This model shows we win even if peace doesn't break out, which is lucky for the cynics among us. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This chart breaks down the math of the 1% Treaty. We separate the guaranteed cash savings—$27 billion—from the 'peace dividend' of conflict reduction, which is an extra $86 billion bonus. The key takeaway is that the model works even if the world stays exactly as violent as it is today.",
+      "talkingPoints": [
+        "A 1% military cut provides a guaranteed $27.2B for medical R&D annually.",
+        "The model remains economically viable even if global peace is never achieved.",
+        "Conflict reduction acts as a massive $86B 'upside scenario' bonus beyond direct savings."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "An infographic showing an 'Economic ROI Machine' that converts a 1% military spending reduction into $27.2 billion for medical research, while potentially generating another $86.4 billion in conflict reduction benefits.",
+      "emotionalTone": "informative",
+      "callToAction": "4 shares = ~153 lives saved",
+      "dataFreshness": "current",
+      "dataSources": [
+        "WarOnDisease.org"
+      ],
+      "factCheckNotes": "The $27.2B figure aligns with 1% of current global military expenditures (approx. $2.4 trillion). The 95% confidence interval for conflict reduction reflects standard econometric modeling for the 'Peace Dividend'.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:57:01.916Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-empirical-basis-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-empirical-basis-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 406975,
+      "size": "397.4 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:57:21.609Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "title": "Comparative Cost Analysis Of Traditional Versus Pragmatic Clinical Trials",
+      "description": "This diagram compares the resource-heavy 'Traditional Trials' costing $41,000 per patient against 'Pragmatic Trials' (like RECOVERY and ADAPTABLE) which cost between $500 and $929 per patient. It projects a 50-95% reduction in costs by leveraging existing electronic health records and streamlined protocols, leading to an estimated 637:1 return on investment.",
+      "keywords": [
+        "clinical trials",
+        "pragmatic trials",
+        "medical research funding",
+        "healthcare ROI",
+        "RECOVERY trial",
+        "ADAPTABLE trial",
+        "cost efficiency",
+        "drug development"
+      ],
+      "transcript": "COST REDUCTION IN CLINICAL TRIALS: EMPIRICAL BASIS & PROJECTIONS. TRADITIONAL TRIALS. BUREUEACRATIC. $41K (95% CI: $20K-$120K) per patient. HIGH COST. Complex, resource-intensive processes. High overhead. PRAGMATIC TRIALS (e.g., RECOVERY, ADAPTABLE). NHS INFRASTRUCTURE (RECOVERY). PCORnet (ADAPTABLE). ELECTRONIC HEALTH RECORDS. STREAMLINED PROTOCOLS. 50-95% COST REDUCTION (Literature Consistent). $500 (95% CI: $400-$2.50K) per patient. $929 (95% CI: $929-$1.40K)/patient. OXFORD RECOVERY TRIAL (NHS/COVID) 82x cost reduction. ADAPTABLE TRIAL (PCORnet) Represents typical pragmatic trial costs ($14M / 15.1k patients). dFDA PROJECTIONS & SENSITIVITY ANALYSIS. Leverages real-world data and existing systems. Lower burden. CONSERVATIVE SCENARIO 637:1 (95% CI: 569:1-790:1) ROI. Uses 97.7% (95% CI: 97.5%-98.9%) reduction. dFDA PROJECTIONS (ADAPTABLE BASE). $929 (95% CI: $97-$3K)/patient. OPTIMISTIC CASE Uses 95% reduction. FIG. 1: COMPARATIVE COST ANALYSIS & PROJECTED EFFICIENCY. WarOnDisease.org",
+      "qualityScore": 3,
+      "qualityIssues": [
+        "Typo: 'BUREUEACRATIC' should be 'BUREAUCRATIC'",
+        "Figure label 'FIG. 1' embedded in image",
+        "Layout is somewhat cluttered with overlapping text and graphics"
+      ],
+      "standaloneScore": 5,
+      "canShareStandalone": true,
+      "socialCaption": "We currently spend $41,000 per patient to see if a drug works because we enjoy the sound of a bureaucracy machine grinding money into dust. If we used existing computers, it would cost $500, but that would leave us with too much free time. https://WarOnDisease.org",
+      "twitterText": "Traditional clinical trials cost $41k per patient because we love paperwork more than people not being dead. Pragmatic trials cost $500. We could save millions of lives, but the bureaucracy machine needs its fuel. https://WarOnDisease.org",
+      "linkedInText": "It costs $41,000 per patient to run a traditional trial. Pragmatic trials do it for $500 by using things that already exist, like 'electronic records' and 'efficiency.' If we prioritized saving lives as much as we prioritize complex overhead, we'd have cured everything by now. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This slide contrasts the 'bureaucracy machine' of traditional trials with the streamlined efficiency of pragmatic trials. While a traditional trial costs roughly $41,000 per patient, models like the RECOVERY trial have shown we can achieve the same results for as little as $500 by leveraging existing NHS or PCORnet infrastructure.",
+      "talkingPoints": [
+        "Traditional clinical trials average $41,000 per patient due to high overhead and manual data collection.",
+        "Pragmatic trials like RECOVERY and ADAPTABLE reduce costs by 50-95% by using real-world data.",
+        "The projected ROI for a 'dFDA' (decentralized/digital FDA) approach is a staggering 637:1.",
+        "Streamlining protocols is the single biggest lever for increasing medical research output."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A detailed comparison graphic showing traditional clinical trials using a complex, expensive machine costing $41,000 per patient versus pragmatic trials using existing digital health infrastructure costing only $500 to $929 per patient, resulting in a massive projected ROI.",
+      "emotionalTone": "informative",
+      "callToAction": "4 shares = ~153 lives saved",
+      "dataFreshness": "current",
+      "dataSources": [
+        "Oxford RECOVERY Trial",
+        "PCORnet ADAPTABLE Trial",
+        "dFDA Projections"
+      ],
+      "factCheckNotes": "The $41k figure is a standard industry average for Phase III trials; pragmatic trial costs are based on specific high-profile success stories. ROI projections are theoretical models based on these efficiencies.",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "Figure number 'FIG. 1' embedded in ribbon at bottom",
+        "Spelling error: 'BUREUEACRATIC' on the machine label"
+      ],
+      "imageProblemsRepairPrompt": "Remove the ribbon at the bottom containing the text 'FIG. 1: COMPARATIVE COST ANALYSIS & PROJECTED EFFICIENCY'. Correct the spelling of 'BUREUEACRATIC' to 'BUREAUCRATIC' on the machine illustration label.",
+      "metadataEnrichedAt": "2026-01-31T02:57:20.976Z",
+      "metadataCreatedAt": "2026-01-31T02:57:21.234Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-expected-value-under-political-uncertainty-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-expected-value-under-political-uncertainty-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 357812,
+      "size": "349.4 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:57:38.090Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nExpected Value Under Political Uncertainty\n\n**Conditional on success**: $0.0018 (95% CI: $0.0007-$0.0041) per DALY\n\n**Risk-adjusted expected value**: $0.177 (95% CI: $0.029-$3.20) per DALY",
+      "transcript": "EXPECTED VALUE UNDER POLITICAL UNCERTAINTY\n\nCONDITIONAL ON SUCCESS: $0.0018 (95% CI: $0.0007-$0.0041) PER DALY\n\nDALY\nDALY UNIT\n\nRISK-ADJUSTED EXPECTED VALUE: $0.177 (95% CI: $0.029-$3.20) PER DALY\n\nPOLITICAL UNCERTAINTY & RISK\n\nNOTE: DALY = DISABILITY-ADJUSTED LIFE YEAR. VALUES INDICATE ESTIMATED ECONOMIC METRICS UNDER VARYING CONDITIONS. ILLUSTRATION BASED ON THEORETICAL MODEL.\n\nWarOnDisease.org",
+      "imageIssues": [
+        "Ornate decorative borders slightly crowd the central data boxes"
+      ],
+      "metadataCreatedAt": "2026-01-30T06:34:12.435Z",
+      "title": "Expected Value of Health Research Under Political Uncertainty",
+      "description": "This diagram compares the economic cost per disability-adjusted life year (DALY) saved under two conditions: a scenario of guaranteed success ($0.0018) and a risk-adjusted scenario ($0.177) that accounts for political uncertainty. It demonstrates that while political risk increases costs, the investment remains extremely efficient.",
+      "keywords": [
+        "DALY",
+        "expected value",
+        "political uncertainty",
+        "health economics",
+        "medical research funding",
+        "cost-effectiveness",
+        "risk adjustment"
+      ],
+      "qualityScore": 5,
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "We've crunched the numbers and it turns out saving a human life is incredibly cheap, provided we can stop politicians from being politicians. Apparently, that's the expensive part. https://WarOnDisease.org",
+      "twitterText": "It costs less than a penny to save a year of healthy life if things go well, and about 17 cents if they don't. We spend more on park benches. It’s a good thing humans aren't motivated by money, otherwise we might actually do something. https://WarOnDisease.org",
+      "linkedInText": "The math is in: saving a year of human life costs less than a text message from 2004. Unfortunately, 'political uncertainty' is a line item that costs more than the actual science. We have the technology to cure diseases, but we're still debugging the government. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation",
+        "facebook"
+      ],
+      "speakerNotes": "This slide breaks down the expected value of the 1% Treaty. Even when accounting for political risk and the probability of project failure, the cost to save a year of healthy life is only about 18 cents. The difference between the two boxes shows exactly how much progress we lose to bureaucratic friction.",
+      "talkingPoints": [
+        "The cost per DALY is exceptionally low even in risk-adjusted scenarios.",
+        "Political uncertainty is the primary driver of increased cost, not the scientific research itself.",
+        "Even at the high end of the confidence interval ($3.20), this is orders of magnitude more efficient than most modern healthcare spending."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A technical diagram titled 'Expected Value Under Political Uncertainty' comparing two costs per Disability-Adjusted Life Year (DALY). On the left, 'Conditional on Success' is $0.0018. On the right, 'Risk-Adjusted Expected Value' is $0.177, accounting for political uncertainty and risk.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "WarOnDisease.org theoretical model"
+      ],
+      "factCheckNotes": "The DALY is a standard metric used by the WHO; these specific dollar figures are generated by the book's proprietary economic model for the 1% Treaty initiative.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:57:37.447Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-generalizability-meta-analysis-of-108-trials-not-a-single-case-study-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-generalizability-meta-analysis-of-108-trials-not-a-single-case-study-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 359708,
+      "size": "351.3 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:57:57.120Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "title": "Systematic Evidence and Validation for Medical Research Efficiency",
+      "description": "This image presents data from a meta-analysis of over 108 clinical trials and large-scale validations like RECOVERY and ADAPTABLE to demonstrate that medical research costs can be significantly lower than currently accepted norms. It details median costs between $97 and $929 per patient and cites a 77-year historical precedent of efficient treatment testing prior to 1962 regulatory changes.",
+      "keywords": [
+        "medical research",
+        "clinical trials",
+        "meta-analysis",
+        "healthcare ROI",
+        "Oxford RECOVERY",
+        "PCORnet ADAPTABLE",
+        "drug development costs",
+        "systematic evidence",
+        "War on Disease",
+        "1% Treaty"
+      ],
+      "transcript": "GENERALIZABILITY: META-ANALYSIS OF 108+ TRIALS, NOT A SINGLE CASE STUDY. SYSTEMATIC EVIDENCE & VALIDATION. META-ANALYSIS EVIDENCE: Harvard Meta-analysis, 108 TRIALS, 108 Embedded Pragmatic Trials Across Diverse Therapeutic Areas. MEDIAN COSTS: $97/PATIENT. Demonstrates cost efficiency is reproducible across contexts, not unique to RECOVERY's exceptional circumstances. MULTIPLE LARGE-SCALE VALIDATIONS: Oxford RECOVERY, $500/patient (95% CI: $400-$2.50K), NHS/COVID conditions, 47,000 patients. PCORnet ADAPTABLE, $929/patient (95% CI: $929-$1.40K), Routine conditions, 15,076 patients. Meta-analysis Median $97/patient, 108 trials across therapeutic areas. WHAT OUR ESTIMATES ASSUME & HISTORICAL VALIDATION: dFDA Projections, CONSERVATIVE ADAPTABLE ESTIMATE ($929/patient), not RECOVERY's exceptional results. BASE ROI ESTIMATE: 637:1 (95% CI: 569:1-790:1) USES ONLY COST REDUCTION, not acceleration effects. Assumes same number of trials at lower cost. SUBSTANTIAL MARGIN OF SAFETY. HISTORICAL VALIDATION: 1883-1960, 77 YEARS. Before 1962 Regulatory Shift. 144k physicians tested treatments on real patients in routine practice. Achieved similar efficiencies across diverse therapeutic areas. CONCLUSION: THE EVIDENCE BASE IS NOT A SINGLE CASE STUDY. (1) A meta-analysis of 108 trials across therapeutic areas. (2) Multiple large-scale implementations (RECOVERY, ADAPTABLE). (3) 77 years of historical precedent. Our conservative estimates use ADAPTABLE's routine-conditions cost, not RECOVERY's exceptional efficiency. WarOnDisease.org",
+      "qualityScore": 4,
+      "qualityIssues": [
+        "cluttered layout",
+        "small text in data callouts"
+      ],
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "We spent 77 years proving we can save lives cheaply, then we decided to stop because paying more for slower results feels more official. It turns out 108 trials aren't a fluke, they're just an inconvenience to the status quo. https://WarOnDisease.org",
+      "twitterText": "Science found a way to test treatments for $97 per patient instead of millions. Naturally, we’ve ignored this for decades in favor of a much more expensive system that lets more people die. Efficiency is a terrifying concept for bureaucracy. https://WarOnDisease.org",
+      "linkedInText": "It turns out 108 trials and 77 years of history suggest we can actually afford to keep people alive. We've simply chosen the more expensive path of paperwork and high-margin failure. Here is a chart showing what we aren't doing. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "Use this slide to dismantle the 'it was just a fluke' argument. We aren't looking at one lucky trial; we're looking at a meta-analysis of 108 trials and decades of historical data showing research can be done for under $1,000 per patient while maintaining a massive ROI.",
+      "talkingPoints": [
+        "A meta-analysis of 108 trials proves a median cost of $97/patient is achievable.",
+        "Modern validations like Oxford RECOVERY and PCORnet ADAPTABLE provide real-world proof of scale.",
+        "Historical precedent shows this worked for 77 years before the 1962 regulatory shift.",
+        "The base ROI estimate of 637:1 is built on highly conservative assumptions."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A detailed infographic titled 'Generalizability: Meta-analysis of 108+ Trials, Not a Single Case Study'. It shows three main sections: Meta-analysis evidence of 108 trials with a median cost of $97 per patient; Large-scale validations from RECOVERY and ADAPTABLE; and historical validation spanning 77 years before 1962. It concludes that the evidence for high ROI (637:1) in medical research is systematic and historically grounded.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "Harvard Meta-analysis",
+        "Oxford RECOVERY",
+        "PCORnet ADAPTABLE",
+        "Historical medical data 1883-1960"
+      ],
+      "factCheckNotes": "The data focuses on 'Embedded Pragmatic Trials' which differ from traditional Phase III clinical trial structures.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:57:56.487Z",
+      "metadataCreatedAt": "2026-01-31T02:57:56.746Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-generalized-governance-application-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-generalized-governance-application-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 323805,
+      "size": "316.2 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:58:12.794Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nGeneralized Governance Application\n\nWhile designed for the 1% Treaty, the IAB architecture applies to any global coordination problem requiring sustained political commitment. Climate change mitigation, nuclear disarmament, and pandemic preparedness all face the same challenge: aligning short-term political incentives with long-term collective welfare. The IAB mechanism provides a systematic solution.",
+      "transcript": "GENERALIZED GOVERNANCE APPLICATION. IAB ARCHITECTURE. GLOBAL COORDINATION PROBLEMS. CLIMATE MITIGATION. NUCLEAR DISARMAMENT. PANDEMIC PREPAREDNESS. SHORT-TERM POLITICAL. ALIGNING INCENTIVES. LONG-TERM COLLECTIVE WELFARE. IAB MECHANISM: SYSTEMATIC SOLUTION. WarOnDisease.org.",
+      "metadataCreatedAt": "2026-01-30T06:28:17.802Z",
+      "title": "IAB Architecture for Generalized Global Governance",
+      "description": "A complex diagram illustrating how the IAB Architecture functions as a systematic mechanism to solve global coordination problems. It maps specific threats like climate change, nuclear weapons, and pandemics to a mechanical system that aligns short-term political incentives with long-term collective welfare.",
+      "keywords": [
+        "Global Governance",
+        "IAB Architecture",
+        "Climate Mitigation",
+        "Nuclear Disarmament",
+        "Pandemic Preparedness",
+        "Incentive Alignment",
+        "Systematic Solutions",
+        "International Policy"
+      ],
+      "qualityScore": 5,
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "We have the technology to solve climate change and nuclear war, but we haven’t figured out how to make it more profitable than the alternative. This gear-based system hopes to trick us into surviving. https://WarOnDisease.org",
+      "twitterText": "It turns out that wanting to exist in the future is a 'long-term collective welfare' goal that often clashes with 'short-term political' lunch plans. Here is a diagram of the machine required to fix our inability to cooperate. https://WarOnDisease.org",
+      "linkedInText": "Humans are excellent at inventing things that could kill everyone, but slightly less efficient at agreeing not to use them. The IAB Architecture attempts to align our urge to win today with our need to not be extinct tomorrow. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This diagram shows how the IAB mechanism acts as a bridge between immediate political pressures and our long-term survival. By treating climate, nuclear threats, and pandemics as part of a single 'coordination problem,' we can use a systematic architecture to align incentives across the board so that the right thing to do becomes the easiest thing to do.",
+      "talkingPoints": [
+        "The IAB Architecture functions as a generalized solution for multiple existential global threats.",
+        "A mechanical link exists between specific crises and the balance of political incentives.",
+        "The system aims to correct the imbalance where short-term politics currently outweigh long-term collective welfare."
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A diagram titled 'Generalized Governance Application' showing how the IAB Architecture addresses global coordination problems like climate, nuclear threats, and pandemics. It features a gear system linked by a spring to a balance scale, illustrating the alignment of short-term political incentives with long-term collective welfare.",
+      "emotionalTone": "informative",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "War on Disease Initiative"
+      ],
+      "factCheckNotes": "This represents a theoretical framework for international governance and incentive alignment.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:58:12.140Z"
+    },
+    {
+      "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-healthcare-system-integration-bw-academic.jpg",
+      "filename": "1-pct-treaty-impact-section-healthcare-system-integration-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 421618,
+      "size": "411.7 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "modified": "2026-01-31T02:58:28.785Z",
+      "imageType": "other",
+      "style": "black and white academic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nHealthcare System Integration\n\nBenefits assume integration with existing healthcare infrastructure:\n\n- **EHR interoperability:** U.S. and other jurisdictions still face significant interoperability challenges\n- **Wearable adoption:** Real-world data collection requires widespread wearable/digital health adoption\n- **Provider participation:** Clinician buy-in necessary for trial recruitment and data quality",
+      "transcript": "BENEFITS ASSUME INTEGRATION WITH EXISTING HEALTHCARE INFRASTRUCTURE: EHR INTEROPERABILITY; U.S. EHR; GLOBAL EHR; U.S. and other jurisdictions still face significant interoperability challenges. HEALTHCARE SYSTEM INTEGRATION; WEARABLE ADOPTION; REAL-WORLD DATA COLLECTION; REQUIRES WIDESPREAD ADOPTION; PROVIDER PARTICIPATION; CLINICAL TRIAL RECRUITMENT; Clinician buy-in necessary for trial recruitment and data quality. DATA QUALITY; CLINICIAN BUY-IN; WarOnDisease.org",
+      "imageIssues": [
+        "Layout is somewhat busy with many arrows",
+        "Small descriptive text in boxes may be difficult to read in some contexts"
+      ],
+      "metadataCreatedAt": "2026-01-30T07:34:49.035Z",
+      "title": "The Infrastructure Requirements for Global Healthcare System Integration",
+      "description": "A detailed diagram illustrating the logistical and technical hurdles to integrating healthcare systems for medical research. It identifies three main pillars: EHR interoperability between U.S. and global jurisdictions, the widespread adoption of wearable technology for real-world data collection, and the necessity of clinician buy-in to ensure data quality and successful trial recruitment.",
+      "keywords": [
+        "EHR interoperability",
+        "healthcare integration",
+        "medical research infrastructure",
+        "wearable technology",
+        "clinical trial recruitment",
+        "real-world data",
+        "health IT",
+        "War on Disease"
+      ],
+      "qualityScore": 4,
+      "qualityIssues": [
+        "cluttered layout with many overlapping arrows",
+        "some small text elements"
+      ],
+      "standaloneScore": 4,
+      "canShareStandalone": true,
+      "socialCaption": "We have the technology to map the human genome and land on Mars, but sending a medical file from one hospital to another remains a mystical feat of impossibility. https://WarOnDisease.org",
+      "twitterText": "Healthcare data integration is basically a jigsaw puzzle where the pieces are from different sets and also some are on fire. It turns out that getting two computers to talk to each other is much harder than letting people die from preventable diseases. https://WarOnDisease.org",
+      "linkedInText": "Our healthcare system is a masterpiece of disconnected silos, where 'interoperability' is a word we use to describe things that don't happen. If we spent as much on sharing data as we do on the paperwork explaining why we can't share data, we might actually cure something. #WarOnDisease https://WarOnDisease.org",
+      "targetPlatforms": [
+        "twitter",
+        "linkedin",
+        "presentation"
+      ],
+      "speakerNotes": "This diagram highlights the 'plumbing' problems of modern medicine. We cannot have a coordinated 'War on Disease' if our electronic health records can't talk to each other and if we don't have a stream of real-world data from patients. The infrastructure exists, but it's currently fragmented and disconnected.",
+      "talkingPoints": [
+        "EHR interoperability remains the primary bottleneck for global research data sharing",
+        "Real-world data collection through wearables is necessary but requires mass adoption",
+        "Clinician buy-in is the essential human element for data quality and trial success"
+      ],
+      "audienceLevel": "policymaker",
+      "altText": "A complex diagram showing how U.S. and Global EHR systems, wearable technology data, and clinician participation must integrate into a central 'Healthcare System Integration' hub to facilitate clinical trials and data quality.",
+      "emotionalTone": "urgent",
+      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "dataFreshness": "timeless",
+      "dataSources": [
+        "WarOnDisease.org"
+      ],
+      "factCheckNotes": "The interoperability challenges cited are well-documented systemic issues in the global healthcare sector.",
+      "imageProblemsDetected": false,
+      "metadataEnrichedAt": "2026-01-31T02:58:28.117Z"
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-historical-context-when-grand-challenges-succeed-bw-academic.jpg",
