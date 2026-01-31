@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/economics/victory-bonds-og-retro-academic.jpg
 
 ![](/assets/infographics/knowledge/economics/victory-bonds-infographic-retro-academic.jpg)
 
-> **Related:** [IAB Mechanism Design](../solution/incentive-alignment-bonds.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
+> **Related:** [IAB Mechanism Design](../appendix/incentive-alignment-bonds-paper.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
 
 ![VICTORY Bonds and 1% Treaty](../../assets/infographics/Victory Bonds and 1 Percent Treaty Infographic.png)
 
@@ -27,7 +27,7 @@ You're doing the same thing, except instead of buying bonds to kill Nazis, you'r
 ::: {.callout-note}
 ## VICTORY Incentive Alignment Bonds
 
-[Incentive Alignment Bonds (IABs)](../solution/incentive-alignment-bonds.qmd) are financial instruments that pay out when measurable public-good outcomes improve, translating those outcomes into benefits for the people who made them happen.
+[Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) are financial instruments that pay out when measurable public-good outcomes improve, translating those outcomes into benefits for the people who made them happen.
 
 **VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are the specific implementation** designed to fund and sustain the 1% treaty. They contain two distinct "engines" in a single instrument:
 
@@ -48,7 +48,7 @@ A financial instrument that generates massive returns while accidentally curing 
 - Use those papers to convince politicians that not dying is popular
 - Once the treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to a 1% Treaty Fund
 - Give the rich humans {{< var victory_bond_funding_pct >}} of that ({{< var victory_bond_annual_payout >}}) every year, forever
-- Reserve {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) for [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) that keep politicians aligned
+- Reserve {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) for [political incentive mechanisms](../appendix/incentive-alignment-bonds-paper.qmd) that keep politicians aligned
 - Use the remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to cure the diseases actually killing people
 
 **What you're offering investors:** {{< var victory_bond_annual_return_pct >}} annual returns, which beats everything except insider trading and certain federal crimes
@@ -100,7 +100,7 @@ The treaty passes because you gave the right papers to the right humans in the r
 
 - {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to the 1% Treaty Fund (automatic, no takebacks)
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
-- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) (keeps politicians aligned with curing diseases)
+- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../appendix/incentive-alignment-bonds-paper.qmd) (keeps politicians aligned with curing diseases)
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) automatically goes to curing the diseases actually killing people
 
 Nobody has to vote on this again. The funding is automatic. The papers just flow, forever, like a river made of money.
@@ -255,7 +255,7 @@ Show investors what full treaty adoption delivers:
 Structure the allocation to balance four goals:
 
 1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds ({{< var victory_bond_funding_pct >}} to investors)
-2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) that make supporting the treaty career-optimal for politicians
+2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty career-optimal for politicians
 3. **Fund the mission**: {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) gives researchers substantial capital
 4. **Align all incentives**: Investors, politicians, and researchers all profit from treaty expansion
 

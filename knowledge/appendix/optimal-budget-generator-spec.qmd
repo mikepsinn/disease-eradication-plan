@@ -137,7 +137,7 @@ The OPG framework (see [Optimal Policy Generator Specification](https://opg.waro
 
 ### Implementation Mechanism
 
-OBG generates evidence-based budget recommendations. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) provide the political implementation mechanism: independent electoral support and post-office career opportunities flow to politicians in proportion to how closely their voting records correlate with OBG recommendations. No money flows directly to politicians. Instead, independent actors (PACs, foundations, think tanks) commit ex-ante to favor high-scorers on public metrics derived from OBG gap analysis.
+OBG generates evidence-based budget recommendations. [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) provide the political implementation mechanism: independent electoral support and post-office career opportunities flow to politicians in proportion to how closely their voting records correlate with OBG recommendations. No money flows directly to politicians. Instead, independent actors (PACs, foundations, think tanks) commit ex-ante to favor high-scorers on public metrics derived from OBG gap analysis.
 
 ![A flow diagram illustrating the indirect incentive mechanism where OBG gap analysis informs independent actor support for politicians based on their voting alignment.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-mechanism-bw-academic.jpg)
 
