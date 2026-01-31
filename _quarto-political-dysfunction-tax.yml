@@ -209,7 +209,6 @@ format:
       - file: assets/html/fonts-preload.html
     citation-hover: true
     code-fold: true
-    code-tools: true
     link-citations: true
     smooth-scroll: true
   pdf:

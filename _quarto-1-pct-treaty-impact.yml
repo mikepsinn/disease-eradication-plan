@@ -248,7 +248,6 @@ format:
       - file: assets/html/page-loader.html
     citation-hover: true
     code-fold: true
-    code-tools: true
     link-citations: true
     smooth-scroll: true
   pdf:

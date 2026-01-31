@@ -134,7 +134,7 @@ format:
     # UX enhancements
     smooth-scroll: true     # Smooth scrolling for anchor links
     code-fold: true         # Collapsible code blocks (show/hide)
-    code-tools: true        # Code copy button and source view
+    code-tools: false       # Disable "Code" button in navbar
     # reader-mode: true     # Distraction-free reading (disabled - breaks some layouts)
     css:
       - styles.css
