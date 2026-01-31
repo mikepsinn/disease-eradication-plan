@@ -1,6 +1,6 @@
 ---
 title: 'Economic Value: Medical Progress'
-description: Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}×.
+description: Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}.
 published: true
 tags:
   - medical-progress
@@ -22,7 +22,7 @@ Understanding the economic value of new therapies is essential for evaluating th
 
 - The **average economic value** of a new therapy.
 - The **total annual value** based on the average number of new therapies approved each year.
-- An estimation of the potential value created by **increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}×**.
+- An estimation of the potential value created by **increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}**.
 
 ![A conceptual infographic illustrating the progression from the economic value of a single therapy to total annual value and the projected impact of a 12.3-fold increase in trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-introduction-bw-academic.jpg)
 
@@ -43,14 +43,14 @@ The value of a new therapy can be assessed through market performance and societ
 
 ![A visual breakdown of the annual economic value calculation, illustrating the relationship between 50 yearly drug approvals and the resulting $81 billion in total value.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-annual-value-based-on-average-approvals-bw-academic.jpg)
 
-## **Impact of {{< var dfda_trial_capacity_multiplier >}}× More Trial Capacity**
+## **Impact of {{< var dfda_trial_capacity_multiplier >}} More Trial Capacity**
 
-What would happen with {{< var dfda_trial_capacity_multiplier >}}× more trial capacity to test treatments simultaneously?
+What would happen with {{< var dfda_trial_capacity_multiplier >}} more trial capacity to test treatments simultaneously?
 
 ![A visual comparison showing the current baseline of 50 new drug approvals per year versus a massive projected increase resulting from 12.3 times more trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-impact-of-var-dfda-trial-capacity-multiplier-more-trial-capacity-bw-academic.jpg)
 
 
-- **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var dfda_trial_capacity_multiplier >}} = **{{< var dfda_trial_capacity_multiplier >}}× {{< var current_drug_approvals_per_year >}} new therapies annually**.
+- **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var dfda_trial_capacity_multiplier >}} = **{{< var dfda_trial_capacity_multiplier >}} {{< var current_drug_approvals_per_year >}} new therapies annually**.
 - **Projected Economic Value:** This increased capacity could dramatically accelerate cure discovery, though actual approval rates depend on regulatory capacity and market dynamics.
 
 ## **Considerations and Context**
@@ -64,7 +64,7 @@ What would happen with {{< var dfda_trial_capacity_multiplier >}}× more trial c
 
 ## **Conclusion**
 
-Increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}× through lower-cost decentralized trials (RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient vs {{< var traditional_phase3_cost_per_patient >}} traditional) enables testing far more treatments simultaneously. While market dynamics and system capacities are important considerations, the potential economic and societal impacts underscore the transformative value of advancing medical innovation.
+Increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}} through lower-cost decentralized trials (RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient vs {{< var traditional_phase3_cost_per_patient >}} traditional) enables testing far more treatments simultaneously. While market dynamics and system capacities are important considerations, the potential economic and societal impacts underscore the transformative value of advancing medical innovation.
 
 ![A comparison showing the massive disparity in per-patient costs between traditional trials ($41,000) and decentralized trials like RECOVERY ($500), alongside the resulting 12.3-fold increase in trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-conclusion-bw-academic.jpg)
 

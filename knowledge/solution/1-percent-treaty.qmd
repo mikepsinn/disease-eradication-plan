@@ -33,7 +33,7 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 ![A process diagram showing the flow of funds from the 1% Treaty Fund through decentralized institutes to clinical trials, managed by DAO governance and public transparency ledgers.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
-2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized framework for drug assessment ([dFDA](dfda.qmd))**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}}× cheaper** than the current model
+2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized framework for drug assessment ([dFDA](dfda.qmd))**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -280,8 +280,8 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 #### With a 1% treaty + a decentralized framework for drug assessment
 
 - {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
-- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient ({{< var dfda_trial_cost_reduction_factor >}}× cheaper)
-- {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}}× capacity increase)
+- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
+- {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} capacity increase)
 
 ![Side-by-side comparison of costs, participation rates, and speed between the current model and the proposed framework.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
 

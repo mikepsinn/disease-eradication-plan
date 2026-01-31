@@ -400,7 +400,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - Current: Spend $150M lobbying → Get $750B contracts → 15% margins = $112B profit
 - New model: Spend $150M lobbying for treaty → Keep $2.67T military budget (99%) + earn {{< var victory_bond_annual_return_pct >}} on {{< var treaty_annual_funding >}} health budget
 - Defense budget stays at $2.67T (barely changes)
-- They get NEW income stream: {{< var treaty_annual_funding >}} × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year to VICTORY Incentive Alignment Bondholders
+- They get NEW income stream: {{< var treaty_annual_funding >}} {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year to VICTORY Incentive Alignment Bondholders
 - Plus they can BUY VICTORY Incentive Alignment Bonds with their existing profits
 
 ##### Pros

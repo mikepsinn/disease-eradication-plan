@@ -15,7 +15,7 @@ The average cost to develop and gain approval for a new drug increased by approx
 1. **Longer development timelines** (2-3 years → 10-15 years)
 2. **Higher failure rates** requiring more capital at risk
 3. **More complex regulatory requirements** following the 1962 Kefauver-Harris Amendment
-4. **Stricter efficacy standards** increasing trial costs by {{< var recovery_trial_cost_reduction_factor >}}× per patient
+4. **Stricter efficacy standards** increasing trial costs by {{< var recovery_trial_cost_reduction_factor >}} per patient
 
 This appendix provides transparent calculations, multiple data sources, and sensitivity analysis to support this claim.
 
@@ -175,7 +175,7 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} multiplier depe
 
 {{< include ../figures/tornado-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
-The tornado diagram shows which input assumptions have the largest impact on the calculated {{< var drug_cost_increase_pre1962_to_current_multiplier >}}× multiplier.
+The tornado diagram shows which input assumptions have the largest impact on the calculated {{< var drug_cost_increase_pre1962_to_current_multiplier >}} multiplier.
 
 {{< include ../figures/mc-distribution-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
@@ -531,7 +531,7 @@ These drugs saved **millions of lives** and remain in use today. The thalidomide
 
 The [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated that **simple randomization** can:
 
-- Reduce cost per patient by **{{< var recovery_trial_cost_reduction_factor >}}×**
+- Reduce cost per patient by **{{< var recovery_trial_cost_reduction_factor >}}**
 - Maintain scientific rigor
 - Accelerate results (6 months vs. 5+ years)
 
