@@ -148,17 +148,39 @@ export async function loadIndex(): Promise<ImageIndex | null> {
 }
 
 /**
- * Save index to disk
+ * Save index to disk with retry logic for Windows file locking issues
  */
-export async function saveIndex(index: ImageIndex): Promise<void> {
+export async function saveIndex(index: ImageIndex, maxRetries = 5): Promise<void> {
   const outputPath = path.join(process.cwd(), OUTPUT_FILE);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
-  await fs.writeFile(outputPath, JSON.stringify(index, null, 2));
+
+  let lastError: Error | null = null;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      await fs.writeFile(outputPath, JSON.stringify(index, null, 2));
+      return; // Success
+    } catch (error) {
+      lastError = error as Error;
+      // Check if it's a file locking error (EBUSY, EACCES, UNKNOWN on Windows)
+      const code = (error as NodeJS.ErrnoException).code;
+      if (code === 'EBUSY' || code === 'EACCES' || code === 'UNKNOWN') {
+        const delayMs = Math.min(100 * Math.pow(2, attempt - 1), 2000); // 100ms, 200ms, 400ms, 800ms, 1600ms
+        console.warn(`  [RETRY ${attempt}/${maxRetries}] File locked, waiting ${delayMs}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delayMs));
+      } else {
+        throw error; // Non-retryable error
+      }
+    }
+  }
+  throw lastError; // All retries exhausted
 }
 
 /**
  * Update a single image entry in the index (for incremental updates)
  * This is exported for use by other scripts like enrich-image-metadata.ts
+ *
+ * Note: For batch updates, use updateImagesInIndexBatch() instead to avoid
+ * file locking issues from rapid sequential writes.
  */
 export async function updateImageInIndex(
   imagePath: string,
@@ -189,6 +211,47 @@ export async function updateImageInIndex(
     index.totalSizeBytes = index.images.reduce((sum, img) => sum + img.sizeBytes, 0);
     index.totalSize = formatBytes(index.totalSizeBytes);
   }
+
+  await saveIndex(index);
+}
+
+/**
+ * Batch update multiple images in the index with a single file write
+ * This is more efficient and avoids file locking issues on Windows
+ */
+export async function updateImagesInIndexBatch(
+  updates: Array<{ imagePath: string; metadata: Partial<ImageMetadata> }>
+): Promise<void> {
+  if (updates.length === 0) return;
+
+  const index = await loadIndex();
+  if (!index) {
+    console.error('No existing index found. Run generate-image-index.ts first.');
+    return;
+  }
+
+  const useExiftool = await isExiftoolAvailable();
+
+  for (const { imagePath, metadata } of updates) {
+    const relativePath = path.relative(process.cwd(), imagePath).replace(/\\/g, '/');
+    const existingIndex = index.images.findIndex(img => img.path === relativePath);
+
+    if (existingIndex >= 0) {
+      index.images[existingIndex] = {
+        ...index.images[existingIndex],
+        ...metadata,
+      };
+    } else {
+      const fullMetadata = await processImage(imagePath, useExiftool);
+      index.images.push({ ...fullMetadata, ...metadata });
+    }
+  }
+
+  // Re-sort and update totals
+  index.images.sort((a, b) => a.path.localeCompare(b.path));
+  index.totalImages = index.images.length;
+  index.totalSizeBytes = index.images.reduce((sum, img) => sum + img.sizeBytes, 0);
+  index.totalSize = formatBytes(index.totalSizeBytes);
 
   await saveIndex(index);
 }

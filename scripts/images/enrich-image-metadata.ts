@@ -26,7 +26,7 @@ import { findImages } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
 import { generateCompleteMetadata, CompleteMetadataResult } from '../lib/image-analysis'
 import { parseCommonArgs, printHeader, printSummary } from '../lib/cli-utils'
-import { updateImageInIndex, syncIndex } from './generate-image-index'
+import { updateImagesInIndexBatch, syncIndex } from './generate-image-index'
 
 const ASSETS_DIR = path.join(process.cwd(), 'assets', 'images')
 
@@ -246,6 +246,7 @@ async function main() {
   // Process images
   console.log(`\n[4/5] Enriching metadata for ${images.length} images...`)
   const results: EnrichmentResult[] = []
+  const indexUpdates: Array<{ imagePath: string; metadata: Record<string, unknown> }> = []
   let processed = 0
   let enriched = 0
 
@@ -289,10 +290,10 @@ async function main() {
 
       await writeImageMetadata(imagePath, metadataToSave)
 
-      // Update image-index.json incrementally (fast, no full rebuild)
-      await updateImageInIndex(imagePath, metadataToSave)
+      // Collect for batch index update (avoids file locking issues on Windows)
+      indexUpdates.push({ imagePath, metadata: metadataToSave })
 
-      console.log(`  [OK] Saved ${fieldsAdded.length} fields + updated index`)
+      console.log(`  [OK] Saved ${fieldsAdded.length} fields to EXIF`)
       enriched++
     } else if (options.dryRun) {
       console.log(`  [DRY RUN] Would save ${fieldsAdded.length} fields`)
@@ -302,6 +303,13 @@ async function main() {
 
     // Rate limiting - slightly longer for comprehensive analysis
     await new Promise(resolve => setTimeout(resolve, 800))
+  }
+
+  // Batch update the index (single write, avoids file locking issues)
+  if (indexUpdates.length > 0) {
+    console.log(`\n[5/5] Updating image index with ${indexUpdates.length} entries...`)
+    await updateImagesInIndexBatch(indexUpdates)
+    console.log(`  [OK] Index updated`)
   }
 
   // Summary
