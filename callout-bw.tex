@@ -1,22 +1,28 @@
 % Black and white callout styling for Quarto PDFs
 % Completely overrides Quarto's colored tcolorbox callout styles with grayscale
 % Uses \AtBeginDocument to ensure styles are applied AFTER Quarto's defaults
+% Only applies if tcolorbox is loaded (documents without callouts skip this)
 
+\makeatletter
 \AtBeginDocument{
-  % Override callout color definitions
-  \definecolor{quarto-callout-color}{HTML}{707070}
-  \definecolor{quarto-callout-note-color}{HTML}{5a5a5a}
-  \definecolor{quarto-callout-important-color}{HTML}{4a4a4a}
-  \definecolor{quarto-callout-warning-color}{HTML}{5a5a5a}
-  \definecolor{quarto-callout-tip-color}{HTML}{6a6a6a}
-  \definecolor{quarto-callout-caution-color}{HTML}{4a4a4a}
+  % Only apply styles if tcolorbox is loaded (i.e., document has callouts)
+  \@ifpackageloaded{tcolorbox}{%
+    % Override callout color definitions
+    \definecolor{quarto-callout-color}{HTML}{707070}
+    \definecolor{quarto-callout-note-color}{HTML}{5a5a5a}
+    \definecolor{quarto-callout-important-color}{HTML}{4a4a4a}
+    \definecolor{quarto-callout-warning-color}{HTML}{5a5a5a}
+    \definecolor{quarto-callout-tip-color}{HTML}{6a6a6a}
+    \definecolor{quarto-callout-caution-color}{HTML}{4a4a4a}
 
-  % Redefine the tcolorbox styles for each callout type with grayscale backgrounds
-  \tcbset{
-    quarto-callout-note-color-frame/.style={colframe=gray!60, colback=gray!5},
-    quarto-callout-important-color-frame/.style={colframe=gray!70, colback=gray!5},
-    quarto-callout-warning-color-frame/.style={colframe=gray!60, colback=gray!5},
-    quarto-callout-tip-color-frame/.style={colframe=gray!50, colback=gray!5},
-    quarto-callout-caution-color-frame/.style={colframe=gray!65, colback=gray!5}
-  }
+    % Redefine the tcolorbox styles for each callout type with grayscale backgrounds
+    \tcbset{
+      quarto-callout-note-color-frame/.style={colframe=gray!60, colback=gray!5},
+      quarto-callout-important-color-frame/.style={colframe=gray!70, colback=gray!5},
+      quarto-callout-warning-color-frame/.style={colframe=gray!60, colback=gray!5},
+      quarto-callout-tip-color-frame/.style={colframe=gray!50, colback=gray!5},
+      quarto-callout-caution-color-frame/.style={colframe=gray!65, colback=gray!5}
+    }
+  }{}% Empty else clause - do nothing if tcolorbox not loaded
 }
+\makeatother
