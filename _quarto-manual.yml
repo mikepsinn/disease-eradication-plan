@@ -27,11 +27,11 @@ book:
   title: 'How to End War and Disease'
   author:
     - name: Mike P. Sinn
-      email: feedback@dih.earth
+      email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "Decentralized Institutes of Health (DIH)"
-          url: https://dih.earth
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
   # description: Removed to allow page-level descriptions to override for og:description
   # Original: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
@@ -57,19 +57,19 @@ book:
         contents:
           - href: knowledge/papers.qmd
             text: "All Papers & Publications"
-          - href: knowledge/economics/1-pct-treaty-impact.qmd
+          - href: https://impact.warondisease.org
             text: "Economic Analysis"
           - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
-          - href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+          - href: https://iab.warondisease.org
             text: "Incentive Alignment Bonds"
-          - href: knowledge/appendix/wishocracy-paper.qmd
+          - href: https://wishocracy.warondisease.org
             text: "Wishocracy Paper"
-          - href: knowledge/appendix/optimocracy-paper.qmd
+          - href: https://optimocracy.warondisease.org
             text: "Optimocracy Paper"
-          - href: knowledge/appendix/optimal-policy-generator-spec.qmd
+          - href: https://opg.warondisease.org
             text: "Optimal Policy Generator"
-          - href: knowledge/appendix/optimal-budget-generator-spec.qmd
+          - href: https://obg.warondisease.org
             text: "Optimal Budget Generator"
           - href: knowledge/references.qmd
             text: "References & Citations"
@@ -107,7 +107,8 @@ book:
         - knowledge/proof.qmd # ✅ Part III Intro ~6p
         - knowledge/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
-        - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
+        # STANDALONE PAPER - see impact.warondisease.org
+        # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         - knowledge/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
         - knowledge/futures.qmd # ✅ Intro to Paths ~1p
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
@@ -144,13 +145,14 @@ book:
       chapters:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
-        - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
-        - knowledge/appendix/cost-of-change-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
-        - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
-        - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
-        - knowledge/appendix/optimal-policy-generator-spec.qmd # ✅ Working paper: jurisdiction-specific policy recommendations using quasi-experimental methods
-        - knowledge/appendix/optimal-budget-generator-spec.qmd # ✅ Working paper: OBG/BIS framework for evidence-based budget allocation
-        - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
+        # STANDALONE PAPERS - have their own sites, see knowledge/papers.qmd for links
+        # - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
+        # - knowledge/appendix/cost-of-change-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
+        # - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
+        # - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
+        # - knowledge/appendix/optimal-policy-generator-spec.qmd # ✅ Working paper: jurisdiction-specific policy recommendations using quasi-experimental methods
+        # - knowledge/appendix/optimal-budget-generator-spec.qmd # ✅ Working paper: OBG/BIS framework for evidence-based budget allocation
+        # - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
     # Economic Analysis
     - part: "Economic Analysis"
@@ -165,10 +167,12 @@ book:
     - part: "Detailed Calculations"
       chapters:
         - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
-        - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
+        # STANDALONE PAPER - see graveyard.warondisease.org
+        # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
         - knowledge/appendix/personal-lifetime-wealth-calc.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
-        - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
+        # STANDALONE PAPER - see dfda-impact.warondisease.org
+        # - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
         - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
         - knowledge/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
         - knowledge/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
@@ -246,8 +250,8 @@ metadata:
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
   
   # Publication information
-  publisher: "WarOnDisease.org"
-  publisher-url: "https://manual.WarOnDisease.org"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   
@@ -483,6 +487,13 @@ format:
     colorlinks: true
     link-citations: true
     date: ""
+    include-in-header:
+      - callout-bw.tex
+      - text: |
+          % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
+          % Override the \appendix command to prevent switching to alphabetic numbering
+          \usepackage{etoolbox}
+          \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
     geometry:
       - top=1in
       - bottom=1in
@@ -491,9 +502,3 @@ format:
     variables:
       title: "How to End War and Disease"
       description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
-    include-in-header:
-      text: |
-        % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
-        % Override the \appendix command to prevent switching to alphabetic numbering
-        \usepackage{etoolbox}
-        \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}

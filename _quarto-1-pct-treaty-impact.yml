@@ -32,11 +32,11 @@ book:
   title: "The 1% Treaty: Harnessing Greed to Eradicate Disease"
   author:
     - name: Mike P. Sinn
-      email: feedback@dih.earth
+      email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "Decentralized Institutes of Health (DIH)"
-          url: https://dih.earth
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
   # description: Removed to allow page-level descriptions to override for og:description
   # Original: "Quantitative analysis showing how redirecting 1% of global military spending ($27.2B/year) to pragmatic clinical trials could advance treatment access by 207 years, save 10.5 billion life-years, and generate $30 quadrillion in long-run economic value."
   abstract: "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x (95% CI: 4.19x-61.3x). Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard."
@@ -113,7 +113,7 @@ metadata:
   coi-statement: The author declares no competing interests.
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
   ethics-statement: This research did not involve human subjects or animal experimentation.
-  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The work is supported by the Decentralized Institutes of Health (DIH)."
+  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
@@ -148,8 +148,8 @@ metadata:
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "WarOnDisease.org"
-  publisher-url: "https://WarOnDisease.org"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/mikepsinn"
@@ -260,6 +260,8 @@ format:
     number-sections: false
     colorlinks: true
     link-citations: true
+    include-in-header:
+      - callout-bw.tex
     geometry:
       - top=1in
       - bottom=1in

@@ -17,11 +17,11 @@ book:
   title: 'Test Economics Document'
   author:
     - name: Mike P. Sinn
-      email: feedback@dih.earth
+      email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "Decentralized Institutes of Health (DIH)"
-          url: https://dih.earth
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
   favicon: assets/icons/test-favicon.png
   # description: Removed to allow page-level descriptions to override for og:description
   site-url: https://test.warondisease.org
@@ -90,10 +90,12 @@ format:
     documentclass: report
     echo: false
     toc: true
-    toc-depth: 2
-    number-sections: false
+    toc-depth: 3
+    number-sections: true
     colorlinks: true
     link-citations: true
+    include-in-header:
+      - callout-bw.tex
     geometry:
       - top=1in
       - bottom=1in

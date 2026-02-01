@@ -28,11 +28,11 @@ profiles:
 
 author:
   - name: Mike P. Sinn
-    email: feedback@dih.earth
+    email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "Decentralized Institutes of Health (DIH)"
-        url: https://dih.earth
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
 
 website:
   title: "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization"
@@ -82,7 +82,7 @@ metadata:
   coi-statement: The author declares no competing interests.
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
   ethics-statement: This research did not involve human subjects or animal experimentation.
-  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The work is supported by the Decentralized Institutes of Health (DIH)."
+  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
@@ -106,8 +106,8 @@ metadata:
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "Decentralized Institutes of Health"
-  publisher-url: "https://dih.earth"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/mikepsinn/optimocracy"
@@ -227,6 +227,8 @@ format:
     number-sections: true
     colorlinks: true
     link-citations: true
+    include-in-header:
+      - callout-bw.tex
     geometry:
       - top=1in
       - bottom=1in
