@@ -19,7 +19,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: invisible-graveyard.pdf
   netlify-site-id: "ef37ca63-13e5-4403-bf47-173763af79ab"
-  netlify-cname: "invisible-graveyard-warondisease.netlify.app"
+  netlify-cname: "invisible-graveyard-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A gravestone with a pill on it."
 
@@ -42,6 +42,10 @@ website:
   site-url: https://invisible-graveyard.warondisease.org
   favicon: assets/icons/invisible-graveyard-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/invisible-graveyard.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     left:
       - text: "dFDA Framework"

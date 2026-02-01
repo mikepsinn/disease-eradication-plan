@@ -18,7 +18,7 @@ dih-render:
   index-source: knowledge/appendix/incentive-alignment-bonds-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
-  netlify-cname: "iab-warondisease.netlify.app"
+  netlify-cname: "iab-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letters 'IAB' inside a certificate/ribbon badge shape."
 
@@ -41,6 +41,10 @@ website:
   site-url: https://iab.warondisease.org
   favicon: assets/icons/iab-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/incentive-alignment-bonds-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Calculations"

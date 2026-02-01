@@ -16,8 +16,8 @@ dih-render:
   emoji: "💸"
   index-source: knowledge/appendix/political-dysfunction-tax.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  netlify-site-id: ""  # TODO: Create Netlify site and add ID
-  netlify-cname: "political-dysfunction-tax-warondisease.netlify.app"
+  netlify-site-id: "1c74b376-7837-436e-b57b-8579b7a1939e"
+  netlify-cname: "political-dysfunction-tax-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Political dysfunction tax"
 
@@ -40,6 +40,10 @@ website:
   site-url: https://political-dysfunction-tax.warondisease.org
   favicon: assets/icons/political-dysfunction-tax-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/political-dysfunction-tax.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Calculations"

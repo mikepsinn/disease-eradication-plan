@@ -17,7 +17,7 @@ dih-render:
   index-source: knowledge/appendix/wishocracy-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
-  netlify-cname: "wishocracy-warondisease.netlify.app"
+  netlify-cname: "wishocracy-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letter 'W' with a star above it (wish + star)."
 
@@ -40,6 +40,10 @@ website:
   site-url: https://wishocracy.warondisease.org
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/wishocracy-rappa-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     left:
       - text: "Prototype"

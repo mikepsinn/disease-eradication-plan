@@ -17,7 +17,7 @@ dih-render:
   index-source: knowledge/appendix/optimocracy-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "c6e535bc-4503-4db8-833a-c1b93f5e0f10"
-  netlify-cname: "optimocracy-warondisease.netlify.app"  # DNS: optimocracy.warondisease.org -> this
+  netlify-cname: "optimocracy-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letter 'O' with an upward optimization arrow or checkmark inside."
 
@@ -40,6 +40,10 @@ website:
   site-url: https://optimocracy.warondisease.org
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/optimocracy-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Calculations"

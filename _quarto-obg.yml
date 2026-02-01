@@ -17,7 +17,7 @@ dih-render:
   index-source: knowledge/appendix/optimal-budget-generator-spec.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
-  netlify-cname: "obg-warondisease.netlify.app"  # DNS: obg.warondisease.org -> this
+  netlify-cname: "obg-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A pie chart with optimization arrows pointing upward."
 
@@ -40,6 +40,10 @@ website:
   site-url: https://obg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/obg-framework-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Optimocracy"

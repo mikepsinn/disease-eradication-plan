@@ -17,7 +17,7 @@ dih-render:
   index-source: knowledge/appendix/optimal-policy-generator-spec.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8b9558d9-6a2b-4581-bde7-11d79933d105"
-  netlify-cname: "opg-warondisease.netlify.app"  # DNS: opg.warondisease.org -> this
+  netlify-cname: "opg-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A policy document with a checkmark."
 
@@ -40,6 +40,10 @@ website:
   site-url: https://opg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/opg-framework-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Optimocracy"

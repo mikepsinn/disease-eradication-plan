@@ -19,7 +19,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-spec-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
-  netlify-cname: "dfda-spec-warondisease.netlify.app"
+  netlify-cname: "dfda-spec-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Pill/capsule inside a magnifying glass."
 
@@ -42,6 +42,10 @@ website:
   site-url: https://dfda-spec.warondisease.org
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/dfda-spec-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     left:
       - text: "Prototype"

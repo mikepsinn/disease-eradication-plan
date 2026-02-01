@@ -18,7 +18,7 @@ dih-render:
   index-source: knowledge/appendix/cost-of-change-analysis.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
-  netlify-cname: "cost-of-change-warondisease.netlify.app"
+  netlify-cname: "cost-of-change-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A dollar sign with a change/transformation arrow."
 
@@ -41,6 +41,10 @@ website:
   site-url: https://cost-of-change.warondisease.org
   favicon: assets/icons/favicon.png  # TODO: Create cost-of-change-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/cost-of-change-analysis.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Calculations"

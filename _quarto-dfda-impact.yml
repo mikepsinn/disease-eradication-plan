@@ -19,7 +19,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: dfda-impact-paper.pdf
   netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
-  netlify-cname: "dfda-impact-warondisease.netlify.app"
+  netlify-cname: "impact-dfda-earth.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A pill or capsule with an upward impact arrow."
 
@@ -42,6 +42,10 @@ website:
   site-url: https://impact.dfda.earth
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/dfda-impact-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     left:
       - text: "dFDA Spec"
