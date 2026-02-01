@@ -41,11 +41,6 @@ website:
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   navbar:
-    left:
-      - text: "Paper"
-        href: /
-      - text: "DIH"
-        href: https://dih.earth
     right:
       - icon: file-pdf
         text: "Download PDF"

@@ -49,7 +49,7 @@ book:
           - text: "EPUB"
             href: /How-to-End-War-and-Disease.epub
       - text: "VOTE"
-        href: https://DIH.earth
+        href: https://WarOnDisease.org
   sidebar:
     collapse-level: 1
     contents:
@@ -365,7 +365,7 @@ format:
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
       center: "[PDF](/How-to-End-War-and-Disease.pdf) | [EPUB](/How-to-End-War-and-Disease.epub) | [All Papers](knowledge/papers.qmd)"
-      right: "[DIH.earth](https://dih.earth) | [Vote](https://dih.earth)"
+      right: "[WarOnDisease.org](https://WarOnDisease.org) | [Vote](https://WarOnDisease.org)"
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:
@@ -413,9 +413,6 @@ format:
     #           <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
     #           <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
     #         </p>
-    #         <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-    #           <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
-    #         </p>
     #       </div>
     # include-after-body:
     #   - text: |
@@ -424,9 +421,6 @@ format:
     #           © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
     #           <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
     #           <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
-    #         </p>
-    #         <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-    #           <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
     #         </p>
     #       </footer>
     # include-in-header:

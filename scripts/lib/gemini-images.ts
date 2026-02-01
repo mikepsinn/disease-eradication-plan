@@ -11,6 +11,7 @@ import sharp from 'sharp'
 import { exec, execFile } from 'child_process'
 import { promisify } from 'util'
 import { GEMINI_IMAGE_MODEL_ID } from './llm'
+import { DEFAULT_IMAGE_METADATA } from './image-metadata'
 
 const execAsync = promisify(exec)
 const execFileAsync = promisify(execFile)
@@ -90,15 +91,8 @@ export interface ImageMetadata {
   imageProblemsRepairPrompt?: string
 }
 
-// Default metadata values (exported for reuse)
-export const DEFAULT_METADATA: Partial<ImageMetadata> = {
-  author: 'Mike P. Sinn',
-  copyright: '© Mike P. Sinn - WarOnDisease.org',
-  license: 'CC BY-NC 4.0',
-  licenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
-  website: 'https://WarOnDisease.org',
-  credit: 'WarOnDisease.org / Decentralized Institutes of Health',
-}
+// Default metadata values - re-exported from image-metadata.ts for backwards compatibility
+export const DEFAULT_METADATA = DEFAULT_IMAGE_METADATA
 
 // --- Image Model Cost Configuration ---
 

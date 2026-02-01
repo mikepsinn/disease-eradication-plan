@@ -115,12 +115,6 @@ def verify_link_rewrites(build_temp: Path) -> bool:
             "file": index_content,
             "should_exist": True
         },
-        {
-            "name": "External DIH URL unchanged",
-            "search": "[Decentralized Institutes of Health](https://dih.earth)",
-            "file": index_content,
-            "should_exist": True
-        },
 
         # Test 5: Anchor-only links remain unchanged
         {
