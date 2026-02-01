@@ -136,17 +136,17 @@ def extract_latex_errors(log_dir: str, max_context_lines: int = 20) -> List[str]
     return critical_errors + other_errors
 
 
-def extract_aux_file_contents(log_dir: str, max_lines: int = 50) -> List[str]:
+def extract_aux_file_contents(log_dir: str, max_lines: int = 30) -> List[str]:
     """
-    Extract and return contents of aux files that may be corrupted.
+    Extract and return contents of auxiliary files for debugging.
 
-    When LaTeX has an @writefile error, it's usually because an aux file
-    from a previous build is corrupted (incomplete/truncated). This function
-    finds aux files and extracts their contents for debugging.
+    When LaTeX has an @writefile error, the aux file may contain problematic
+    content (very long lines, special characters, etc.). This function
+    finds aux/toc/out files and extracts their tail for debugging.
 
     Args:
         log_dir: Directory containing LaTeX build output
-        max_lines: Maximum lines to extract from each aux file
+        max_lines: Maximum lines to extract from each file's tail
 
     Returns:
         List of formatted strings with aux file contents
@@ -159,57 +159,61 @@ def extract_aux_file_contents(log_dir: str, max_lines: int = 50) -> List[str]:
     if not log_path.exists():
         return []
 
-    # Find all .aux files in the build directory
-    aux_files = list(log_path.glob("**/*.aux"))
+    # Find auxiliary files - aux, toc, out, lof, lot (all can be corrupted)
+    aux_extensions = ["*.aux", "*.toc", "*.out", "*.lof", "*.lot"]
+    aux_files = []
+    for ext in aux_extensions:
+        aux_files.extend(log_path.glob(ext))  # Top-level only (index.aux, etc.)
 
-    for aux_file in aux_files[:5]:  # Limit to 5 aux files to avoid overwhelming output
+    # Sort by size descending (main files are usually largest)
+    aux_files = sorted(aux_files, key=lambda f: f.stat().st_size, reverse=True)
+
+    for aux_file in aux_files[:3]:  # Show top 3 largest aux files
         try:
+            file_size = aux_file.stat().st_size
+
             with open(aux_file, 'r', encoding='utf-8', errors='replace') as f:
                 lines = f.readlines()
 
-            # Check for signs of corruption
-            is_corrupted = False
+            # Always show the file when debugging @writefile errors
+            aux_msg = f"\n{'='*60}\n"
+            aux_msg += f"FILE: {aux_file.name}\n"
+            aux_msg += f"Size: {file_size:,} bytes, {len(lines):,} lines\n"
+
+            # Check for obvious corruption signs
             corruption_hints = []
+            if lines:
+                content = ''.join(lines)
+                open_braces = content.count('{')
+                close_braces = content.count('}')
+                if open_braces != close_braces:
+                    corruption_hints.append(f"Unbalanced braces: {open_braces} open vs {close_braces} close")
+                if not lines[-1].endswith('\n'):
+                    corruption_hints.append("File ends without newline")
+                if content.rstrip().endswith(('\\', '{', ',')):
+                    corruption_hints.append("Ends with incomplete command")
 
-            # Check if file ends abruptly (last line incomplete)
-            if lines and not lines[-1].endswith('\n'):
-                is_corrupted = True
-                corruption_hints.append("File ends without newline (incomplete write)")
+            if corruption_hints:
+                aux_msg += f"Corruption hints: {', '.join(corruption_hints)}\n"
 
-            # Check for unbalanced braces
-            content = ''.join(lines)
-            open_braces = content.count('{')
-            close_braces = content.count('}')
-            if open_braces != close_braces:
-                is_corrupted = True
-                corruption_hints.append(f"Unbalanced braces: {open_braces} open, {close_braces} close")
+            aux_msg += f"{'='*60}\n"
+            aux_msg += f"LAST {max_lines} LINES:\n"
 
-            # Check for truncated commands
-            if content.rstrip().endswith(('\\', '{', ',')):
-                is_corrupted = True
-                corruption_hints.append("File ends with incomplete command")
+            # Show last N lines
+            display_lines = lines[-max_lines:] if len(lines) > max_lines else lines
+            start_line = len(lines) - len(display_lines) + 1
 
-            # Only output if corrupted or specifically requested
-            if is_corrupted:
-                aux_msg = f"\n{'='*60}\n"
-                aux_msg += f"AUX FILE: {aux_file.name} (potentially corrupted)\n"
-                aux_msg += f"Path: {aux_file}\n"
-                aux_msg += f"Size: {aux_file.stat().st_size} bytes, {len(lines)} lines\n"
-                if corruption_hints:
-                    aux_msg += f"Corruption hints: {', '.join(corruption_hints)}\n"
-                aux_msg += f"{'='*60}\n"
+            for j, line in enumerate(display_lines):
+                line_num = start_line + j
+                # Highlight the last few lines where corruption likely is
+                marker = ">>> " if j >= len(display_lines) - 5 else "    "
+                # Truncate very long lines
+                line_content = line.rstrip()[:200]
+                if len(line.rstrip()) > 200:
+                    line_content += "..."
+                aux_msg += f"{marker}{line_num:6d}: {line_content}\n"
 
-                # Show last N lines where corruption likely occurred
-                display_lines = lines[-max_lines:] if len(lines) > max_lines else lines
-                start_line = len(lines) - len(display_lines) + 1
-
-                for j, line in enumerate(display_lines):
-                    line_num = start_line + j
-                    # Highlight the last few lines
-                    marker = ">>> " if j >= len(display_lines) - 3 else "    "
-                    aux_msg += f"{marker}{line_num:6d}: {line.rstrip()}\n"
-
-                aux_contents.append(aux_msg)
+            aux_contents.append(aux_msg)
 
         except Exception as e:
             aux_contents.append(f"Error reading {aux_file}: {e}")
@@ -255,18 +259,31 @@ def print_latex_errors(log_dir: str, max_errors: int = 5) -> None:
     # If there's an aux file error, extract and display aux file contents
     if has_aux_error:
         print(f"\n{'#'*80}")
-        print("# AUX FILE ANALYSIS (potential corruption from interrupted build)")
+        print("# AUX FILE ANALYSIS")
         print(f"{'#'*80}")
-        print("\nNOTE: @writefile errors typically occur when an aux file from a")
-        print("previous interrupted build is corrupted. The solution is to delete")
-        print("the _build_temp directory and rebuild from scratch.\n")
+        print("\nNOTE: @writefile errors occur when LaTeX encounters unexpected content")
+        print("while writing/reading aux files. Common causes:")
+        print("  - Very long figure captions or titles that break aux file format")
+        print("  - Special characters that aren't properly escaped")
+        print("  - Memory issues during large document compilation")
+        print(f"\nSearching for aux files in: {log_dir}\n")
 
         aux_contents = extract_aux_file_contents(log_dir)
         if aux_contents:
             for aux_content in aux_contents:
                 print(aux_content)
         else:
-            print("[*] No corrupted aux files found (corruption may be in .toc, .out, or other files)")
+            # List what files exist in the directory for debugging
+            from pathlib import Path
+            log_path = Path(log_dir)
+            if log_path.exists():
+                all_files = list(log_path.glob("*"))
+                print(f"[*] No aux/toc/out files found in {log_dir}")
+                print(f"    Files present: {[f.name for f in all_files[:20]]}")
+                if len(all_files) > 20:
+                    print(f"    ... and {len(all_files) - 20} more files")
+            else:
+                print(f"[*] Directory does not exist: {log_dir}")
 
     print(f"\n{'#'*80}\n")
 
