@@ -41,17 +41,12 @@ website:
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true
   navbar:
-    left:
-      - text: "Paper"
-        href: /
-      - text: "Calculations"
-        href: /knowledge/appendix/parameters-and-calculations.html
     right:
       - icon: file-pdf
         text: "Download PDF"
         href: /optimocracy-paper.pdf
-      - text: "References"
-        href: /#references
+      - text: "Calculations"
+        href: /knowledge/appendix/parameters-and-calculations.html
       - text: "War on Disease"
         href: https://WarOnDisease.org
 

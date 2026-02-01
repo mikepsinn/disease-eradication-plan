@@ -44,8 +44,6 @@ website:
   page-navigation: true
   navbar:
     left:
-      - text: "Paper"
-        href: /
       - text: "dFDA Spec"
         href: https://dfda-spec.warondisease.org
       - text: "dFDA App"
@@ -56,10 +54,6 @@ website:
         href: /dfda-impact-paper.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-dfda-impact.qmd
-      - text: "References"
-        href: /#references
-      - text: "Institute for Accelerated Medicine"
-        href: https://acceleratedmedicine.org
       - text: "War on Disease"
         href: https://WarOnDisease.org
 

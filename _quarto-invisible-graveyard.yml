@@ -44,8 +44,6 @@ website:
   page-navigation: true
   navbar:
     left:
-      - text: "Paper"
-        href: /
       - text: "dFDA Framework"
         href: https://dfda-spec.warondisease.org
     right:
@@ -54,8 +52,6 @@ website:
         href: /invisible-graveyard.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd
-      - text: "References"
-        href: /#references
       - text: "War on Disease"
         href: https://WarOnDisease.org
 

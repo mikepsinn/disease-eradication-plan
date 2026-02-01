@@ -42,16 +42,12 @@ website:
   page-navigation: true
   navbar:
     left:
-      - text: "Paper"
-        href: /
       - text: "App"
         href: https://wishocracy.org
     right:
       - icon: file-pdf
         text: "Download PDF"
         href: /wishocracy-rappa-paper.pdf
-      - text: "References"
-        href: /#references
       - text: "War on Disease"
         href: https://WarOnDisease.org
 

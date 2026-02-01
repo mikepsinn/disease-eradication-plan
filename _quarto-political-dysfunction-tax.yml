@@ -41,17 +41,12 @@ website:
   favicon: assets/icons/political-dysfunction-tax-favicon.png
   page-navigation: true
   navbar:
-    left:
-      - text: "Paper"
-        href: /
-      - text: "Calculations"
-        href: /knowledge/appendix/parameters-and-calculations.html
     right:
       - icon: file-pdf
         text: "Download PDF"
         href: /political-dysfunction-tax.pdf
-      - text: "References"
-        href: /#references
+      - text: "Calculations"
+        href: /knowledge/appendix/parameters-and-calculations.html
       - text: "War on Disease"
         href: https://WarOnDisease.org
 

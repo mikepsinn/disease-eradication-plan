@@ -42,17 +42,12 @@ website:
   favicon: assets/icons/iab-favicon.png
   page-navigation: true
   navbar:
-    left:
-      - text: "Paper"
-        href: /
     right:
       - icon: file-pdf
         text: "Download PDF"
         href: /incentive-alignment-bonds-paper.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "References"
-        href: /#references
       - text: "War on Disease"
         href: https://WarOnDisease.org
 
