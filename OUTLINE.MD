@@ -7,9 +7,9 @@
 ---
 
 ## _quarto-1-pct-treaty-impact.yml
-**Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
+**Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 4 | **Words:** 90,007
+**Files:** 4 | **Words:** 90,307
 
 #### index.qmd
 **Title:** Wishocracy
@@ -136,7 +136,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Direct Funding Cost-Effectiveness vs Bed Nets: 106:1 {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
+    - Direct Funding Cost-Effectiveness vs Bed Nets: 106x {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -240,7 +240,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
+    - Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -316,11 +316,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
+    - Drug Cost Increase: 1980s to Current: 13.4x {#sec-drug_cost_increase_1980s_to_current_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Drug Cost Increase: Pre-1962 to Current: 105:1 {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+    - Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -425,7 +425,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Healthcare vs Military Multiplier Ratio: 7.17:1 {#sec-healthcare_vs_military_multiplier_ratio}
+    - Healthcare vs Military Multiplier Ratio: 7.17x {#sec-healthcare_vs_military_multiplier_ratio}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -460,7 +460,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Misallocation Factor: Cost to Kill vs Cost to Save: 2.89k:1 {#sec-misallocation_factor_death_vs_saving}
+    - Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx {#sec-misallocation_factor_death_vs_saving}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -542,7 +542,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
+    - Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -593,7 +593,7 @@
     - Total Testable Therapeutic Space: 51.5M combinations {#sec-total_testable_therapeutic_combinations}
       - Sensitivity Analysis
     - Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-    - Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5:1 {#sec-treaty_benefit_multiplier_vs_vaccines}
+    - Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -621,7 +621,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Expected Cost-Effectiveness vs Bed Nets Multiplier: 503:1 {#sec-treaty_expected_vs_bed_nets_multiplier}
+    - Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -649,11 +649,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Cost-Effectiveness vs Bed Nets Multiplier: 50.3k:1 {#sec-treaty_vs_bed_nets_multiplier}
+    - Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Treaty Campaign Leverage vs Direct Funding: 475:1 {#sec-treaty_vs_direct_funding_leverage}
+    - Treaty Campaign Leverage vs Direct Funding: 475x {#sec-treaty_vs_direct_funding_leverage}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -793,12 +793,12 @@
       - Uncertainty Range
       - Input Distribution
     - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
-    - Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
-    - Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
+    - Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
+    - Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
       - Uncertainty Range
       - Input Distribution
-    - Economic Multiplier for Infrastructure Investment: 1.6:1 {#sec-economic_multiplier_infrastructure_investment}
-    - Economic Multiplier for Military Spending: 0.6:1 {#sec-economic_multiplier_military_spending}
+    - Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
+    - Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
       - Uncertainty Range
       - Input Distribution
     - Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
@@ -1364,15 +1364,15 @@
 **Stats:** 62 words | 22 lines
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
-**Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
+**Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,091 words | 2,793 lines
+**Stats:** 29,391 words | 2,818 lines
 
   - Abstract
   - Key Findings
   - How Pragmatic Trials Increase Safety
   - Introduction
-    - Historical Context: When Grand Challenges Succeed
+    - Historical Precedents for Grand Challenges
     - The Medical Research Bottleneck
     - Contribution to Literature
   - Research Hypothesis
@@ -1397,9 +1397,9 @@
     - Lives Saved
     - DALYs Averted
     - Why "Eventually Avoidable" Matters
-  - Why {{< var treaty_reduction_pct >}} Is Enough
-    - 1. The Peace Dividend
-    - 2. The Research Efficiency Dividend
+  - The Leverage Mechanism: Why {{< var treaty_reduction_pct >}} Is Enough
+    - 1. The Peace Dividend (Multiplier Differential)
+    - 2. The Research Efficiency Dividend (Infrastructure Leverage)
     - 3. 15–40 "NIH equivalents" of new research capacity
   - How It Increases National Security
     - What doesn't change
@@ -1412,12 +1412,12 @@
       - Mechanism Architecture
       - Comparative Static Analysis: Senator Smith
       - Stakeholder Alignment
-      - VICTORY Incentive Alignment Bonds
+      - Incentive Alignment Bonds
       - Legal and Ethical Framework
       - Generalized Governance Application
   - Dominance Analysis
     - Quantitative Comparison
-    - Why This Dominates
+    - Comparative Efficacy Analysis
   - Methodology
   - Cost-Benefit Framework
     - Cost Components
@@ -1428,7 +1428,7 @@
     - Expected Value Under Political Uncertainty
       - Uncertainty in Risk-Adjusted Cost-Effectiveness
       - Uncertainty in Cost-Effectiveness (Conditional on Success)
-    - Treaty Campaign Leverage vs Direct Funding
+    - Policy Advocacy Leverage vs Direct Funding
       - Why Billionaires Buy Lottery Tickets Instead of the Casino
       - Numerical Comparison: Treaty vs Direct Funding
       - Direct Funding Scenario
@@ -1508,11 +1508,11 @@
   - Adoption Dynamics: Game-Theoretic Analysis
   - Implementation Strategy
     - Step 1: Global Mandate (The Philanthropic Catalyst)
-    - Step 2: Sell $1B in VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org)
-    - Step 3: Implment the Legislative Strategy
+    - Step 2: Capitalization via Incentive Alignment Bonds (IABs)
+    - Step 3: Implement the Legislative Strategy
     - Step 4: Build the Infrastructure
-    - Step 5: Eradicate Disease
-    - Campaign Budget Breakdown
+    - Step 5: The Statutory Administration Utility
+    - Implementation Budget Breakdown
   - Detailed Technical References
   - Risk Analysis and Mitigation
     - The "But Politicians Won't Do It" Problem
@@ -2082,7 +2082,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 84 | **Words:** 345,812
+**Files:** 84 | **Words:** 346,092
 
 #### index.qmd
 **Title:** Start Here
@@ -2832,15 +2832,15 @@
   - The Conclusion
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
-**Title:** The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials
+**Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,091 words | 2,793 lines
+**Stats:** 29,391 words | 2,818 lines
 
   - Abstract
   - Key Findings
   - How Pragmatic Trials Increase Safety
   - Introduction
-    - Historical Context: When Grand Challenges Succeed
+    - Historical Precedents for Grand Challenges
     - The Medical Research Bottleneck
     - Contribution to Literature
   - Research Hypothesis
@@ -2865,9 +2865,9 @@
     - Lives Saved
     - DALYs Averted
     - Why "Eventually Avoidable" Matters
-  - Why {{< var treaty_reduction_pct >}} Is Enough
-    - 1. The Peace Dividend
-    - 2. The Research Efficiency Dividend
+  - The Leverage Mechanism: Why {{< var treaty_reduction_pct >}} Is Enough
+    - 1. The Peace Dividend (Multiplier Differential)
+    - 2. The Research Efficiency Dividend (Infrastructure Leverage)
     - 3. 15–40 "NIH equivalents" of new research capacity
   - How It Increases National Security
     - What doesn't change
@@ -2880,12 +2880,12 @@
       - Mechanism Architecture
       - Comparative Static Analysis: Senator Smith
       - Stakeholder Alignment
-      - VICTORY Incentive Alignment Bonds
+      - Incentive Alignment Bonds
       - Legal and Ethical Framework
       - Generalized Governance Application
   - Dominance Analysis
     - Quantitative Comparison
-    - Why This Dominates
+    - Comparative Efficacy Analysis
   - Methodology
   - Cost-Benefit Framework
     - Cost Components
@@ -2896,7 +2896,7 @@
     - Expected Value Under Political Uncertainty
       - Uncertainty in Risk-Adjusted Cost-Effectiveness
       - Uncertainty in Cost-Effectiveness (Conditional on Success)
-    - Treaty Campaign Leverage vs Direct Funding
+    - Policy Advocacy Leverage vs Direct Funding
       - Why Billionaires Buy Lottery Tickets Instead of the Casino
       - Numerical Comparison: Treaty vs Direct Funding
       - Direct Funding Scenario
@@ -2976,11 +2976,11 @@
   - Adoption Dynamics: Game-Theoretic Analysis
   - Implementation Strategy
     - Step 1: Global Mandate (The Philanthropic Catalyst)
-    - Step 2: Sell $1B in VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org)
-    - Step 3: Implment the Legislative Strategy
+    - Step 2: Capitalization via Incentive Alignment Bonds (IABs)
+    - Step 3: Implement the Legislative Strategy
     - Step 4: Build the Infrastructure
-    - Step 5: Eradicate Disease
-    - Campaign Budget Breakdown
+    - Step 5: The Statutory Administration Utility
+    - Implementation Budget Breakdown
   - Detailed Technical References
   - Risk Analysis and Mitigation
     - The "But Politicians Won't Do It" Problem
@@ -4598,7 +4598,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Direct Funding Cost-Effectiveness vs Bed Nets: 106:1 {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
+    - Direct Funding Cost-Effectiveness vs Bed Nets: 106x {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -4702,7 +4702,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
+    - Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -4778,11 +4778,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
+    - Drug Cost Increase: 1980s to Current: 13.4x {#sec-drug_cost_increase_1980s_to_current_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Drug Cost Increase: Pre-1962 to Current: 105:1 {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+    - Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -4887,7 +4887,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Healthcare vs Military Multiplier Ratio: 7.17:1 {#sec-healthcare_vs_military_multiplier_ratio}
+    - Healthcare vs Military Multiplier Ratio: 7.17x {#sec-healthcare_vs_military_multiplier_ratio}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -4922,7 +4922,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Misallocation Factor: Cost to Kill vs Cost to Save: 2.89k:1 {#sec-misallocation_factor_death_vs_saving}
+    - Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx {#sec-misallocation_factor_death_vs_saving}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5004,7 +5004,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
+    - Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5055,7 +5055,7 @@
     - Total Testable Therapeutic Space: 51.5M combinations {#sec-total_testable_therapeutic_combinations}
       - Sensitivity Analysis
     - Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-    - Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5:1 {#sec-treaty_benefit_multiplier_vs_vaccines}
+    - Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5083,7 +5083,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Expected Cost-Effectiveness vs Bed Nets Multiplier: 503:1 {#sec-treaty_expected_vs_bed_nets_multiplier}
+    - Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5111,11 +5111,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Cost-Effectiveness vs Bed Nets Multiplier: 50.3k:1 {#sec-treaty_vs_bed_nets_multiplier}
+    - Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Treaty Campaign Leverage vs Direct Funding: 475:1 {#sec-treaty_vs_direct_funding_leverage}
+    - Treaty Campaign Leverage vs Direct Funding: 475x {#sec-treaty_vs_direct_funding_leverage}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -5255,12 +5255,12 @@
       - Uncertainty Range
       - Input Distribution
     - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
-    - Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
-    - Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
+    - Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
+    - Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
       - Uncertainty Range
       - Input Distribution
-    - Economic Multiplier for Infrastructure Investment: 1.6:1 {#sec-economic_multiplier_infrastructure_investment}
-    - Economic Multiplier for Military Spending: 0.6:1 {#sec-economic_multiplier_military_spending}
+    - Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
+    - Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
       - Uncertainty Range
       - Input Distribution
     - Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
@@ -6414,11 +6414,11 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 910 words | 106 lines
+**Stats:** 890 words | 106 lines
 
 - Papers & Publications
   - Books
-    - [The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials](https://impact.warondisease.org)
+    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
   - Working Papers
     - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
@@ -7211,7 +7211,7 @@
 
 | Config | Title | Citation Key | DOI |
 |--------|-------|--------------|-----|
-| _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Health and Economic Impact of Redir... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161561 |
+| _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161561 |
 | _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18356216 |
 | _quarto-dfda-impact.yml | The Health and Economic Impact of a Global System ... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243915 |
 | _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203376 |
@@ -7232,6 +7232,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 89
-- Total words: 548,732
+- Total words: 549,312
 - Orphaned files: 20
 - Paper configs: 12

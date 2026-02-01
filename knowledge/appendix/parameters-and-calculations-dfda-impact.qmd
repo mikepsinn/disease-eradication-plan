@@ -700,7 +700,7 @@ Diseases per year receiving their first effective treatment with dFDA. Scales pr
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -1109,7 +1109,7 @@ Years to explore the entire therapeutic search space with dFDA implementation. A
 **Inputs**:
 
 - [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -1246,7 +1246,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
+### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1754,7 +1754,7 @@ Years earlier the average first treatment arrives due to dFDA's trial capacity i
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -2130,7 +2130,7 @@ $$
 
 :::
 
-### Drug Cost Increase: Pre-1962 to Current: 105:1 {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+### Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2310,7 +2310,7 @@ $$
 
 :::
 
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
+### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 

@@ -47,7 +47,8 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
     is_ratio = unit_check == "ratio"
 
     # Detect multiplier/factor parameters (should format as Xx)
-    is_multiplier = "multiplier" in unit_check or "factor" in unit_check
+    # Supports unit="multiplier", unit="factor", or unit="x"
+    is_multiplier = "multiplier" in unit_check or "factor" in unit_check or unit_check == "x"
 
     # Check if value is already scaled (e.g. input is in billions)
     is_in_billions = "billion" in unit_check
@@ -253,8 +254,10 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
         # Add unit if requested
         if include_unit and unit:
             # Don't add if already in unit string or processed
-            if unit.lower() in ["usd", "dollar", "billions", "millions", "thousands"]:
-                pass  # Already handled prefix/suffix
+            # Also skip for multiplier-type units which get special formatting
+            unit_lower = unit.lower()
+            if unit_lower in ["usd", "dollar", "billions", "millions", "thousands", "x", "multiplier", "factor", "ratio"]:
+                pass  # Already handled prefix/suffix or special formatting
             else:
                 formatted_num = f"{formatted_num} {unit}"
         

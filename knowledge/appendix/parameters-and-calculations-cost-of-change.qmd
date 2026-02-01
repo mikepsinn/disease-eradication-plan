@@ -83,7 +83,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
+### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -501,7 +501,7 @@ Years earlier the average first treatment arrives due to dFDA's trial capacity i
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}

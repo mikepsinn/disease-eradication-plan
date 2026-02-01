@@ -753,7 +753,7 @@ Combined speedup factor for treatment discovery from dFDA. Trial capacity multip
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [dFDA Valley of Death Rescue Multiplier](#sec-dfda_valley_of_death_rescue_multiplier) 🔢: 1.4x
 
 $$
@@ -1171,7 +1171,7 @@ $$
 
 :::
 
-### Direct Funding Cost-Effectiveness vs Bed Nets: 106:1 {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
+### Direct Funding Cost-Effectiveness vs Bed Nets: 106x {#sec-dfda_direct_funding_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1575,7 +1575,7 @@ Diseases per year receiving their first effective treatment with dFDA. Scales pr
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -2111,7 +2111,7 @@ Years to explore the entire therapeutic search space with dFDA implementation. A
 **Inputs**:
 
 - [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -2499,7 +2499,7 @@ Maximum trials per year possible with trial capacity multiplier
 **Inputs**:
 
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -2820,7 +2820,7 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3:1 {#sec-dfda_trial_capacity_multiplier}
+### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3328,7 +3328,7 @@ Years earlier the average first treatment arrives due to dFDA's trial capacity i
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -4033,7 +4033,7 @@ $$
 
 :::
 
-### Drug Cost Increase: 1980s to Current: 13.4:1 {#sec-drug_cost_increase_1980s_to_current_multiplier}
+### Drug Cost Increase: 1980s to Current: 13.4x {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4073,7 +4073,7 @@ $$
 
 :::
 
-### Drug Cost Increase: Pre-1962 to Current: 105:1 {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+### Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5360,7 +5360,7 @@ $$
 
 :::
 
-### Healthcare vs Military Multiplier Ratio: 7.17:1 {#sec-healthcare_vs_military_multiplier_ratio}
+### Healthcare vs Military Multiplier Ratio: 7.17x {#sec-healthcare_vs_military_multiplier_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5368,8 +5368,8 @@ Ratio of healthcare to military fiscal multipliers. Healthcare investment genera
 
 **Inputs**:
 
-- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3:1 (95% CI: 3:1 - 6:1)
-- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6:1 (95% CI: 0.4:1 - 0.9:1)
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
 $$
 \begin{gathered}
@@ -5842,7 +5842,7 @@ $$
 
 :::
 
-### Misallocation Factor: Cost to Kill vs Cost to Save: 2.89k:1 {#sec-misallocation_factor_death_vs_saving}
+### Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx {#sec-misallocation_factor_death_vs_saving}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -6872,7 +6872,7 @@ $$
 
 :::
 
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5k:1 {#sec-pragmatic_vs_nih_efficiency_multiplier}
+### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7459,7 +7459,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5:1 {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7956,7 +7956,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503:1 {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8425,7 +8425,7 @@ $$
 
 :::
 
-### Cost-Effectiveness vs Bed Nets Multiplier: 50.3k:1 {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8519,7 +8519,7 @@ $$
 
 :::
 
-### Treaty Campaign Leverage vs Direct Funding: 475:1 {#sec-treaty_vs_direct_funding_leverage}
+### Treaty Campaign Leverage vs Direct Funding: 475x {#sec-treaty_vs_direct_funding_leverage}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8743,7 +8743,7 @@ Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3:1
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -10086,7 +10086,7 @@ Percentage of drugs that gain at least one new indication after initial approval
 
 :::
 
-### Economic Multiplier for Education Investment: 2.1:1 {#sec-economic_multiplier_education_investment}
+### Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10098,7 +10098,7 @@ Economic multiplier for education investment (2.1x ROI)
 
 :::
 
-### Economic Multiplier for Healthcare Investment: 4.3:1 {#sec-economic_multiplier_healthcare_investment}
+### Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10108,9 +10108,9 @@ Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3:1, 6:1] • Distribution: Lognormal
+**Technical**: 95% CI: [3x, 6x] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 3:1 and 6:1 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 3x and 6x (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -10122,7 +10122,7 @@ Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6
 
 :::
 
-### Economic Multiplier for Infrastructure Investment: 1.6:1 {#sec-economic_multiplier_infrastructure_investment}
+### Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10134,7 +10134,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 
 :::
 
-### Economic Multiplier for Military Spending: 0.6:1 {#sec-economic_multiplier_military_spending}
+### Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10144,9 +10144,9 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [0.4:1, 0.9:1] • Distribution: Lognormal
+**Technical**: 95% CI: [0.4x, 0.9x] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 0.4:1 and 0.9:1 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4x and 0.9x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

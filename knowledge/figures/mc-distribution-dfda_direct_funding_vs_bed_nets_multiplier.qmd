@@ -24,7 +24,7 @@ p5 = 55.97204284445571
 p50 = 127.95633118128595
 p95 = 329.3043943088647
 display_name = "Direct Funding Cost-Effectiveness vs Bed Nets"
-units = "ratio"
+units = "x"
 
 # Create figure with two subplots
 
@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 106:1 |
-| Mean (expected value) | 151:1 |
-| Median (50th percentile) | 128:1 |
-| Standard Deviation | 91.2:1 |
-| 90% Confidence Interval | [56:1, 329:1] |
+| Baseline (deterministic) | 106x |
+| Mean (expected value) | 151x |
+| Median (50th percentile) | 128x |
+| Standard Deviation | 91.2x |
+| 90% Confidence Interval | [56x, 329x] |
 
 *The histogram shows the distribution of Direct Funding Cost-Effectiveness vs Bed Nets across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

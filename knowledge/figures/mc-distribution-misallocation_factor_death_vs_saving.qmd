@@ -24,7 +24,7 @@ p5 = 2483.0304081542563
 p50 = 2842.8318683369816
 p95 = 3321.5699678139463
 display_name = "Misallocation Factor: Cost to Kill vs Cost to Save"
-units = "ratio"
+units = "x"
 
 # Create figure with two subplots
 
@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.89k:1 |
-| Mean (expected value) | 2.86k:1 |
-| Median (50th percentile) | 2.84k:1 |
-| Standard Deviation | 255:1 |
-| 90% Confidence Interval | [2.48k:1, 3.32k:1] |
+| Baseline (deterministic) | 2.9kx |
+| Mean (expected value) | 2.9kx |
+| Median (50th percentile) | 2.8kx |
+| Standard Deviation | 255x |
+| 90% Confidence Interval | [2.5kx, 3.3kx] |
 
 *The histogram shows the distribution of Misallocation Factor: Cost to Kill vs Cost to Save across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

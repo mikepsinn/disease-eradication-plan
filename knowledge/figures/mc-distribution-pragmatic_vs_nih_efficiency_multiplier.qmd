@@ -24,7 +24,7 @@ p5 = 2257.5415597712376
 p50 = 10129.772885663439
 p95 = 51469.658433120654
 display_name = "Pragmatic Trial Efficiency Multiplier vs NIH"
-units = "ratio"
+units = "x"
 
 # Create figure with two subplots
 
@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 12.5k:1 |
-| Mean (expected value) | 15.8k:1 |
-| Median (50th percentile) | 10.1k:1 |
-| Standard Deviation | 16.2k:1 |
-| 90% Confidence Interval | [2.26k:1, 51.5k:1] |
+| Baseline (deterministic) | 12.5kx |
+| Mean (expected value) | 15.8kx |
+| Median (50th percentile) | 10.1kx |
+| Standard Deviation | 16.2kx |
+| 90% Confidence Interval | [2.3kx, 51.5kx] |
 
 *The histogram shows the distribution of Pragmatic Trial Efficiency Multiplier vs NIH across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

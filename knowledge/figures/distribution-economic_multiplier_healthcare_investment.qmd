@@ -22,7 +22,7 @@ low = 3.0
 high = 6.0
 dist_type = "lognormal"
 display_name = "Economic Multiplier for Healthcare Investment"
-unit = "ratio"
+unit = "x"
 
 # Calculate distribution parameters
 

@@ -823,8 +823,8 @@
   \ data-confidence=\"high\" title=\"How many times more cost-effective direct funding\
   \ is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical\
   \ research is highly cost-effective. | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY | Unit: ratio\
-  \ | Click to view details, calculation & sources\">106:1 (95% CI: 56:1-329:1)</a>"
+  \ | Formula: BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY | Unit: x | Click\
+  \ to view details, calculation & sources\">106x (95% CI: 56x-329x)</a>"
 "dfda_direct_funding_vs_bed_nets_multiplier_latex": "$$\n\\begin{gathered}\nk_{direct,nets}\
   \ = \\frac{Cost_{nets}}{Cost_{direct,DALY}} = \\frac{\\$89}{\\$0.841} = 106 \\\\\
   [0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} =\
@@ -1482,8 +1482,8 @@
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Trial capacity multiplier from DIH funding capacity\
   \ vs. current global trial participation | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: ratio | Click to\
-  \ view details, calculation & sources\">12.3:1 (95% CI: 4.19:1-61.3:1)</a>"
+  \ | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit: x | Click to view\
+  \ details, calculation & sources\">12.3x (95% CI: 4.19x-61.3x)</a>"
 "dfda_trial_capacity_multiplier_latex": "$$\n\\begin{gathered}\nk_{capacity} = \\\
   frac{N_{fundable,ann}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3 \\\\[0.5em]\n\\\
   text{where } N_{fundable,ann} \\\\\n= \\frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}}\
@@ -1945,8 +1945,7 @@
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
   \ 1980s to current ($194M → $2.6B = 13.4x) | Calculated from 2 inputs | ✓ High confidence\
   \ | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S\
-  \ | Unit: ratio | Click to view details, calculation & sources\">13.4:1 (95% CI:\
-  \ 11.9:1-14.7:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">13.4x (95% CI: 11.9x-14.7x)</a>"
 "drug_cost_increase_1980s_to_current_multiplier_latex": "$$\n\\begin{gathered}\nk_{cost,80s}\
   \ \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{dev,80s}} \\\\\n= \\frac{\\$2.6B}{\\$194M}\
   \ \\\\\n= 13.4\n\\end{gathered}\n$$"
@@ -1955,8 +1954,7 @@
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
   \ pre-1962 to current ($24.7M → $2.6B = 105×) | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD\
-  \ | Unit: ratio | Click to view details, calculation & sources\">105:1 (95% CI:\
-  \ 90.6:1-119:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">105x (95% CI: 90.6x-119x)</a>"
 "drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\begin{gathered}\n\
   k_{cost,pre62} \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\\\\n= \\frac{\\\
   $2.6B}{\\$24.7M} \\\\\n= 105\n\\end{gathered}\n$$"
@@ -1994,28 +1992,28 @@
 "economic_multiplier_education_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_education_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"education-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
-  \ for education investment (2.1x ROI) | ✓ High confidence | Unit: ratio | Click\
-  \ to view details, calculation & sources\">2.1:1</a>"
+  \ for education investment (2.1x ROI) | ✓ High confidence | Unit: x | Click to view\
+  \ details, calculation & sources\">2.1x</a>"
 "economic_multiplier_education_investment_cite": "@education-investment-economic-multiplier"
 "economic_multiplier_healthcare_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_healthcare_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"healthcare-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
   \ for healthcare investment (4.3x ROI). Literature range 3.0-6.0×. | ✓ High confidence\
-  \ | 95% CI: [3:1, 6:1] | Dist: Lognormal | Unit: ratio | Click to view details,\
-  \ calculation & sources\">4.3:1 (95% CI: 3:1-6:1)</a>"
+  \ | 95% CI: [3x, 6x] | Dist: Lognormal | Unit: x | Click to view details, calculation\
+  \ & sources\">4.3x (95% CI: 3x-6x)</a>"
 "economic_multiplier_healthcare_investment_cite": "@healthcare-investment-economic-multiplier"
 "economic_multiplier_infrastructure_investment": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_infrastructure_investment\"\
   \ class=\"parameter-link\" data-source-ref=\"infrastructure-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
-  \ for infrastructure investment (1.6x ROI) | ✓ High confidence | Unit: ratio | Click\
-  \ to view details, calculation & sources\">1.6:1</a>"
+  \ for infrastructure investment (1.6x ROI) | ✓ High confidence | Unit: x | Click\
+  \ to view details, calculation & sources\">1.6x</a>"
 "economic_multiplier_infrastructure_investment_cite": "@infrastructure-investment-economic-multiplier"
 "economic_multiplier_military_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-economic_multiplier_military_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"military-spending-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
   \ for military spending (0.6x ROI). Literature range 0.4-1.0×. | ✓ High confidence\
-  \ | 95% CI: [0.4:1, 0.9:1] | Dist: Lognormal | Unit: ratio | Click to view details,\
-  \ calculation & sources\">0.6:1 (95% CI: 0.4:1-0.9:1)</a>"
+  \ | 95% CI: [0.4x, 0.9x] | Dist: Lognormal | Unit: x | Click to view details, calculation\
+  \ & sources\">0.6x (95% CI: 0.4x-0.9x)</a>"
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
 "efficacy_lag_cumulative_excess_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-efficacy_lag_cumulative_excess_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/invisible-graveyard.qmd#scale\"\
@@ -2739,8 +2737,7 @@
   \ to military fiscal multipliers. Healthcare investment generates 7× more economic\
   \ activity per dollar than military spending. | Calculated from 2 inputs | ✓ High\
   \ confidence | Formula: ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING\
-  \ | Unit: ratio | Click to view details, calculation & sources\">7.17:1 (95% CI:\
-  \ 6.83:1-7.57:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">7.17x (95% CI: 6.83x-7.57x)</a>"
 "healthcare_vs_military_multiplier_ratio_latex": "$$\n\\begin{gathered}\nr_{health/mil}\
   \ \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\\
   end{gathered}\n$$"
@@ -2969,8 +2966,8 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Misallocation\
   \ factor: cost to kill vs cost to save | Calculated from 3 inputs | ✓ High confidence\
-  \ | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view\
-  \ details, calculation & sources\">2.89k:1 (95% CI: 2.48k:1-3.32k:1)</a>"
+  \ | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit: x | Click to view details,\
+  \ calculation & sources\">2.9kx (95% CI: 2.5kx-3.3kx)</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\n\\begin{gathered}\nk_{misalloc}\
   \ \\\\\n= \\frac{Cost_{war,total}}{Deaths_{conflict} \\times Cost_{life,RD}} \\\\\
   \n= \\frac{\\$11.4T}{245{,}000 \\times \\$16.1K} \\\\\n= 2{,}890 \\\\[0.5em]\n\\\
@@ -3484,8 +3481,7 @@
   \ (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency\
   \ gap between discovery-focused pragmatic trials and standard research. | Calculated\
   \ from 2 inputs | ~ Medium confidence | Formula: NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY\
-  \ | Unit: ratio | Click to view details, calculation & sources\">12.5k:1 (95% CI:\
-  \ 2.26k:1-51.5k:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">12.5kx (95% CI: 2.3kx-51.5kx)</a>"
 "pragmatic_vs_nih_efficiency_multiplier_latex": "$$\n\\begin{gathered}\nk_{pragmatic:NIH}\
   \ \\\\\n= \\frac{Cost_{NIH,QALY}}{Cost_{pragmatic,QALY}} \\\\\n= \\frac{\\$50K}{\\\
   $4} \\\\\n= 12{,}500 \\\\[0.5em]\n\\text{where } Cost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}}\
@@ -3906,8 +3902,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | Calculated from 2 inputs\
   \ | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT\
-  \ | Unit: ratio | Click to view details, calculation & sources\">11.5:1 (95% CI:\
-  \ 9:1-16.1:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">11.5x (95% CI: 9x-16.1x)</a>"
 "treaty_benefit_multiplier_vs_vaccines_latex": "$$\n\\begin{gathered}\nk_{treaty:vax}\
   \ = \\frac{Benefit_{peace+RD}}{Benefit_{vax,ann}} = \\frac{\\$172B}{\\$15B} = 11.5\
   \ \\\\[0.5em]\n\\text{where } Benefit_{peace+RD} \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann}\
@@ -4124,7 +4119,7 @@
   \ data-confidence=\"low\" title=\"Expected value multiplier vs bed nets (accounts\
   \ for political uncertainty at 1% success rate) | Calculated from 2 inputs | ? Low\
   \ confidence | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY |\
-  \ Unit: ratio | Click to view details, calculation & sources\">503:1 (95% CI: 29.9:1-3.00k:1)</a>"
+  \ Unit: x | Click to view details, calculation & sources\">503x (95% CI: 29.9x-3.0kx)</a>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\n\\begin{gathered}\nE[k_{nets}]\
   \ = \\frac{Cost_{nets}}{E[Cost_{DALY}]} = \\frac{\\$89}{\\$0.177} = 503 \\\\[0.5em]\n\
   \\text{where } E[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\\
@@ -4306,8 +4301,8 @@
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"How many times more cost-effective than bed nets\
   \ (using $89/DALY midpoint estimate) | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: ratio | Click\
-  \ to view details, calculation & sources\">50.3k:1 (95% CI: 23.7k:1-112k:1)</a>"
+  \ | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY | Unit: x | Click to\
+  \ view details, calculation & sources\">50.3kx (95% CI: 23.7kx-111.7kx)</a>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\begin{gathered}\nk_{treaty:nets} \\\\\
   \n= \\frac{Cost_{nets}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$89}{\\$0.00177} \\\
   \\\n= 50{,}300 \\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}}\
@@ -4350,8 +4345,7 @@
   \ by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments\
   \ while building sustainable public funding infrastructure. | Calculated from 2\
   \ inputs | ✓ High confidence | Formula: DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY\
-  \ | Unit: ratio | Click to view details, calculation & sources\">475:1 (95% CI:\
-  \ 329:1-462:1)</a>"
+  \ | Unit: x | Click to view details, calculation & sources\">475x (95% CI: 329x-462x)</a>"
 "treaty_vs_direct_funding_leverage_latex": "$$\n\\begin{gathered}\nLeverage_{treaty}\
   \ \\\\\n= \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} \\\\\n= \\frac{\\$0.841}{\\\
   $0.00177} \\\\\n= 475 \\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}}\

@@ -17,7 +17,7 @@ concurrency:
 jobs:
 
   build-1-pct-treaty-impact:
-    name: "Build The 1% Treaty: Health and Economic Impact of Redir"
+    name: "Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -77,7 +77,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The 1% Treaty: Health and Economic Impact of Redir"
+      - name: "Render Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
         timeout-minutes: 30
 
@@ -92,7 +92,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build The 1% Treaty: Health and Economic Impact of Redir to Netlify (immediate)"
+      - name: "Deploy Build The 1% Treaty: Harnessing Greed to Eradicate Disea to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:

@@ -22,7 +22,7 @@ low = 0.4
 high = 0.9
 dist_type = "lognormal"
 display_name = "Economic Multiplier for Military Spending"
-unit = "ratio"
+unit = "x"
 
 # Calculate distribution parameters
 

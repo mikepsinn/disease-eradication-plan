@@ -24,7 +24,7 @@ p5 = 11.928959521738925
 p50 = 13.25644469796271
 p95 = 14.726959933576214
 display_name = "Drug Cost Increase: 1980s to Current"
-units = "ratio"
+units = "x"
 
 # Create figure with two subplots
 
@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 13.4:1 |
-| Mean (expected value) | 13.3:1 |
-| Median (50th percentile) | 13.3:1 |
-| Standard Deviation | 0.915:1 |
-| 90% Confidence Interval | [11.9:1, 14.7:1] |
+| Baseline (deterministic) | 13.4x |
+| Mean (expected value) | 13.3x |
+| Median (50th percentile) | 13.3x |
+| Standard Deviation | 0.915x |
+| 90% Confidence Interval | [11.9x, 14.7x] |
 
 *The histogram shows the distribution of Drug Cost Increase: 1980s to Current across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

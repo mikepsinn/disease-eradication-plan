@@ -24,7 +24,7 @@ p5 = 6.825557361653207
 p50 = 7.216656464716285
 p95 = 7.569859643543103
 display_name = "Healthcare vs Military Multiplier Ratio"
-units = "ratio"
+units = "x"
 
 # Create figure with two subplots
 
@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.17:1 |
-| Mean (expected value) | 7.21:1 |
-| Median (50th percentile) | 7.22:1 |
-| Standard Deviation | 0.227:1 |
-| 90% Confidence Interval | [6.83:1, 7.57:1] |
+| Baseline (deterministic) | 7.17x |
+| Mean (expected value) | 7.21x |
+| Median (50th percentile) | 7.22x |
+| Standard Deviation | 0.227x |
+| 90% Confidence Interval | [6.83x, 7.57x] |
 
 *The histogram shows the distribution of Healthcare vs Military Multiplier Ratio across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

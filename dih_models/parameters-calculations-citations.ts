@@ -531,7 +531,7 @@ export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
 
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
   value: 2.1,
-  unit: "ratio",
+  unit: "x",
   displayName: "Economic Multiplier for Education Investment",
   description: "Economic multiplier for education investment (2.1x ROI)",
   sourceType: "external",
@@ -541,7 +541,7 @@ export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
 
 export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
   value: 4.3,
-  unit: "ratio",
+  unit: "x",
   displayName: "Economic Multiplier for Healthcare Investment",
   description: "Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.",
   sourceType: "external",
@@ -552,7 +552,7 @@ export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
 
 export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
   value: 1.6,
-  unit: "ratio",
+  unit: "x",
   displayName: "Economic Multiplier for Infrastructure Investment",
   description: "Economic multiplier for infrastructure investment (1.6x ROI)",
   sourceType: "external",
@@ -562,7 +562,7 @@ export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
 
 export const ECONOMIC_MULTIPLIER_MILITARY_SPENDING: Parameter = {
   value: 0.6,
-  unit: "ratio",
+  unit: "x",
   displayName: "Economic Multiplier for Military Spending",
   description: "Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.",
   sourceType: "external",
@@ -2308,7 +2308,7 @@ export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter
 
 export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 105.83061593479944,
-  unit: "ratio",
+  unit: "x",
   displayName: "Direct Funding Cost-Effectiveness vs Bed Nets",
   description: "How many times more cost-effective direct funding is vs bed nets ($89/DALY). Even without treaty leverage, direct funding of medical research is highly cost-effective.",
   sourceType: "calculated",
@@ -2611,7 +2611,7 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
   value: 12.305251827091949,
-  unit: "ratio",
+  unit: "x",
   displayName: "Trial Capacity Multiplier",
   description: "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
   sourceType: "calculated",
@@ -2843,7 +2843,7 @@ export const DRUGS_APPROVED_SINCE_1962: Parameter = {
 
 export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 13.402061855670103,
-  unit: "ratio",
+  unit: "x",
   displayName: "Drug Cost Increase: 1980s to Current",
   description: "Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)",
   sourceType: "calculated",
@@ -2855,7 +2855,7 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 105.26315789473684,
-  unit: "ratio",
+  unit: "x",
   displayName: "Drug Cost Increase: Pre-1962 to Current",
   description: "Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)",
   sourceType: "calculated",
@@ -3199,7 +3199,7 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
 
 export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
   value: 7.166666666666667,
-  unit: "ratio",
+  unit: "x",
   displayName: "Healthcare vs Military Multiplier Ratio",
   description: "Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more economic activity per dollar than military spending.",
   sourceType: "calculated",
@@ -3318,7 +3318,7 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
 
 export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   value: 2889.0596892886347,
-  unit: "ratio",
+  unit: "x",
   displayName: "Misallocation Factor: Cost to Kill vs Cost to Save",
   description: "Misallocation factor: cost to kill vs cost to save",
   sourceType: "calculated",
@@ -3566,7 +3566,7 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
 
 export const PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER: Parameter = {
   value: 12500.0,
-  unit: "ratio",
+  unit: "x",
   displayName: "Pragmatic Trial Efficiency Multiplier vs NIH",
   description: "How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.",
   sourceType: "calculated",
@@ -3724,7 +3724,7 @@ export const TREATY_ANNUAL_FUNDING: Parameter = {
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   value: 11.480765853658538,
-  unit: "ratio",
+  unit: "x",
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
   sourceType: "calculated",
@@ -3808,7 +3808,7 @@ export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 502.98824895180394,
-  unit: "ratio",
+  unit: "x",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
   description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
   sourceType: "calculated",
@@ -3891,7 +3891,7 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 50298.82489518039,
-  unit: "ratio",
+  unit: "x",
   displayName: "Cost-Effectiveness vs Bed Nets Multiplier",
   description: "How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
   sourceType: "calculated",
@@ -3902,7 +3902,7 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
 
 export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
   value: 475.2766905010616,
-  unit: "ratio",
+  unit: "x",
   displayName: "Treaty Campaign Leverage vs Direct Funding",
   description: "How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
   sourceType: "calculated",
