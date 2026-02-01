@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Not necessary because cline can use .cursor/rules/content-standards.mdc
 #echo "📋 Copying GUIDES to .clinerules..."
 #pnpm copy-guides
