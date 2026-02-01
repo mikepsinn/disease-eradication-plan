@@ -89,6 +89,12 @@ jobs:
           path: |
             _build_temp/{{ job.config_name }}/*.log
             _build_temp/{{ job.config_name }}/**/*.log
+            _build_temp/{{ job.config_name }}/*.aux
+            _build_temp/{{ job.config_name }}/**/*.aux
+            _build_temp/{{ job.config_name }}/*.toc
+            _build_temp/{{ job.config_name }}/**/*.toc
+            _build_temp/{{ job.config_name }}/*.out
+            _build_temp/{{ job.config_name }}/**/*.out
           retention-days: 7
 
 {% if job.deploy_to_netlify %}
