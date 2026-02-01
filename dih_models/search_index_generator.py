@@ -15,9 +15,11 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 
-# Set UTF-8 encoding for stdout on Windows
+from dih_models.variable_replacement import load_variables
+
+# Set UTF-8 encoding for stdout on Windows (reconfigure exists on TextIOWrapper at runtime)
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    getattr(sys.stdout, 'reconfigure', lambda **kwargs: None)(encoding='utf-8')
 
 
 class SearchIndexEntry:
@@ -105,9 +107,15 @@ class SearchIndexGenerator:
     # Configs to skip (test configs, base config that gets overwritten)
     SKIP_CONFIGS = {'_quarto.yml', '_quarto-test.yml'}
 
-    def __init__(self, project_root: Path):
+    def __init__(self, project_root: Path, variables: Optional[Dict[str, str]] = None):
         self.project_root = project_root
         self.parser = QMDParser()
+        # Load variables from _variables.yml if not provided
+        if variables is None:
+            variables_path = project_root / '_variables.yml'
+            self.variables = load_variables(variables_path) if variables_path.exists() else {}
+        else:
+            self.variables = variables
         self.quarto_configs = self._discover_quarto_configs()
 
     def _discover_quarto_configs(self) -> Dict[str, Dict[str, Any]]:
@@ -178,12 +186,17 @@ class SearchIndexGenerator:
                     print(f"[WARN] Skipping {config_path.name}: no files/chapters defined")
                     continue
 
+                # Get index-source from dih-render section (used to copy actual content to index.qmd)
+                dih_render = quarto_yaml.get('dih-render', {})
+                index_source = dih_render.get('index-source')
+
                 configs[config_name] = {
                     'config_file': config_path.name,
                     'output_dir': output_dir,
                     'base_url': base_url,
                     'chapters': files,  # Store files list (works for both types)
                     'project_type': project_type,
+                    'index_source': index_source,  # Path to actual source file for index.qmd
                 }
 
                 print(f"[OK] Loaded config: {config_name} ({config_path.name}) [{project_type}]")
@@ -251,10 +264,47 @@ class SearchIndexGenerator:
 
         return f"/{url_path}"
 
+    def _replace_variables_strict(self, text: str, source_path: Path) -> str:
+        """Replace Quarto variables, raising error if any are missing.
+
+        Args:
+            text: Text containing {{< var name >}} patterns
+            source_path: Path to source file (for error messages)
+
+        Returns:
+            Text with variables replaced
+
+        Raises:
+            ValueError: If a variable is referenced but not defined
+        """
+        pattern = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
+
+        def replacer(match):
+            var_name = match.group(1)
+            if var_name not in self.variables:
+                raise ValueError(
+                    f"Missing variable '{var_name}' in {source_path.relative_to(self.project_root)}"
+                )
+            return self.variables[var_name]
+
+        return pattern.sub(replacer, text)
+
     def parse_qmd_file(self, qmd_path: Path, config_name: str) -> Optional[SearchIndexEntry]:
         """Parse a single QMD file and create search index entry."""
         try:
-            with open(qmd_path, 'r', encoding='utf-8') as f:
+            # For index.qmd, use index-source if defined in config
+            # This is because index.qmd gets overwritten by the render script with content
+            # from the actual source file specified in dih-render.index-source
+            config = self.quarto_configs.get(config_name)
+            actual_source_path = qmd_path
+
+            if qmd_path.name == 'index.qmd' and config and config.get('index_source'):
+                source_path = self.project_root / config['index_source']
+                if source_path.exists():
+                    actual_source_path = source_path
+                    print(f"  [*] Using index-source: {config['index_source']}")
+
+            with open(actual_source_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
             # Extract frontmatter
@@ -262,11 +312,14 @@ class SearchIndexGenerator:
             if not frontmatter:
                 frontmatter = {}
 
-            # Get title (required)
+            # Get title and apply variable replacement (strict mode - crash on missing)
             title = frontmatter.get('title', qmd_path.stem.replace('-', ' ').title())
+            title = self._replace_variables_strict(title, qmd_path)
 
-            # Get description
+            # Get description and apply variable replacement
             description = frontmatter.get('description') or frontmatter.get('abstract')
+            if description:
+                description = self._replace_variables_strict(description, qmd_path)
 
             # Get tags
             tags = frontmatter.get('tags', [])
@@ -276,8 +329,9 @@ class SearchIndexGenerator:
             # Get image
             image = frontmatter.get('image')
 
-            # Extract sections
+            # Extract sections and apply variable replacement
             sections = self.parser.extract_sections(content)
+            sections = [self._replace_variables_strict(s, qmd_path) for s in sections]
 
             # Get published status
             published = frontmatter.get('published', True)
@@ -371,17 +425,19 @@ class SearchIndexGenerator:
         return output_files
 
 
-def generate_search_indexes(project_root: Path) -> Dict[str, Path]:
+def generate_search_indexes(project_root: Path, variables: Optional[Dict[str, str]] = None) -> Dict[str, Path]:
     """
     Main entry point for search index generation.
 
     Args:
         project_root: Path to project root directory
+        variables: Optional dict of variable names to values. If not provided,
+                   loads from _variables.yml in project_root.
 
     Returns:
         Dict mapping config names to output file paths
     """
-    generator = SearchIndexGenerator(project_root)
+    generator = SearchIndexGenerator(project_root, variables)
     return generator.generate_all_indexes()
 
 
