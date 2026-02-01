@@ -91,7 +91,8 @@ class QMDParser:
             if match:
                 heading = match.group(1).strip()
                 # Remove markdown formatting and anchors/attributes
-                heading = re.sub(r'\{[^}]+\}', '', heading)  # {#anchor}, {.unnumbered}, {.class}
+                # BUT preserve Quarto variables {{< var ... >}} for later replacement
+                heading = re.sub(r'\{(?![{<])[^}]+\}', '', heading)  # {#anchor}, {.unnumbered}, {.class}
                 heading = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', heading)  # Links
                 heading = re.sub(r'[*_`]', '', heading)  # Bold, italic, code
                 heading = heading.strip()
@@ -289,6 +290,30 @@ class SearchIndexGenerator:
 
         return pattern.sub(replacer, text)
 
+    def _replace_variables_in_headings(self, content: str, source_path: Path) -> str:
+        """Replace Quarto variables only in heading lines.
+
+        This preserves variables in code blocks, LaTeX, etc. while ensuring
+        heading variables are replaced before markdown stripping mangles them.
+
+        Args:
+            content: Full file content
+            source_path: Path to source file (for error messages)
+
+        Returns:
+            Content with variables replaced in headings only
+        """
+        lines = content.split('\n')
+        result = []
+
+        for line in lines:
+            # Only process heading lines (h2, h3)
+            if re.match(r'^#{2,3}\s+', line):
+                line = self._replace_variables_strict(line, source_path)
+            result.append(line)
+
+        return '\n'.join(result)
+
     def parse_qmd_file(self, qmd_path: Path, config_name: str) -> Optional[SearchIndexEntry]:
         """Parse a single QMD file and create search index entry."""
         try:
@@ -329,9 +354,10 @@ class SearchIndexGenerator:
             # Get image
             image = frontmatter.get('image')
 
-            # Extract sections and apply variable replacement
-            sections = self.parser.extract_sections(content)
-            sections = [self._replace_variables_strict(s, qmd_path) for s in sections]
+            # Apply variable replacement to content BEFORE extracting sections
+            # This ensures variable names with underscores aren't mangled by markdown stripping
+            content_for_sections = self._replace_variables_in_headings(content, qmd_path)
+            sections = self.parser.extract_sections(content_for_sections)
 
             # Get published status
             published = frontmatter.get('published', True)
