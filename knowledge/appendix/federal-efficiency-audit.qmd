@@ -65,7 +65,7 @@ The "human cost" figures are **economic equivalents**, not epidemiological morta
 
 The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) 55 times over, or 10x current global disease R&D spending.
 
-![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $27B 1% Treaty annual funding and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
+![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the $27B 1\% Treaty annual funding and current global disease R&D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
 ## System Specifications
 
@@ -131,7 +131,7 @@ $$\text{AEG} = \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k}
 
 We employ Monte Carlo simulation to generate confidence intervals, recognizing uncertainty in loss estimates (particularly where data opacity exists, such as the DoD's inability to audit 61% of assets).
 
-![A structural diagram showing the seven categories of efficiency loss aggregating into the AEG, with visual indicators for the high uncertainty (61%) addressed by Monte Carlo simulation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-aggregate-efficiency-gap-calculation-bw-academic.jpg)
+![A structural diagram showing the seven categories of efficiency loss aggregating into the AEG, with visual indicators for the high uncertainty (61\%) addressed by Monte Carlo simulation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-aggregate-efficiency-gap-calculation-bw-academic.jpg)
 
 ::: {.callout-note}
 ## Methodological Caveat: Overlap and Double-Counting
@@ -158,7 +158,7 @@ The Department of Defense operates as the largest discretionary expenditure node
 
 In November 2024, the Pentagon failed its seventh consecutive audit [@pentagon-audit-2024]. The DoD was unable to account for 61-63% of its $3.8 trillion in assets [@audit-pentagon-act-2023], approximately $2.5 trillion in property, equipment, and inventory with unknown status.
 
-![A breakdown of the Department of Defense's $3.8 trillion asset pool showing the 61-63% ($2.5 trillion) portion that is currently unaccounted for, leading to an estimated $125 billion in inventory shrinkage.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-audit-failure-bw-academic.jpg)
+![A breakdown of the Department of Defense's $3.8 trillion asset pool showing the 61-63\% ($2.5 trillion) portion that is currently unaccounted for, leading to an estimated $125 billion in inventory shrinkage.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-audit-failure-bw-academic.jpg)
 
 The mechanism: fragmented logistics systems where contractors record inventory data, creating principal-agent misalignment [@pentagon-assets-unaccounted]. Without verified asset ledgers, the DoD regularly purchases parts it already owns but cannot locate.
 
@@ -213,7 +213,7 @@ Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20
 
 U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
 
-![A comparison of healthcare spending as a percentage of GDP between the U.S. (18%) and peer nations (10-11%), highlighting the financial discrepancy linked to administrative overhead.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
+![A comparison of healthcare spending as a percentage of GDP between the U.S. (18\%) and peer nations (10-11\%), highlighting the financial discrepancy linked to administrative overhead.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
 
 ### Loss Category: Friction (Administrative Overhead)
 
@@ -223,7 +223,7 @@ The U.S. spends approximately $1,000 more per person on administrative costs tha
 
 A 2020 study found U.S. administrative spending at 34.2% of health expenditures versus 17% in Canada [@healthcare-admin-costs-2020]. This overhead does not improve outcomes. It diverts resources from care to paperwork.
 
-![Comparison of healthcare administrative costs showing the U.S. spending 34.2% of expenditures on overhead versus 17% in Canada, alongside the resulting $335 billion in annual excess spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-administrative-overhead-bw-academic.jpg)
+![Comparison of healthcare administrative costs showing the U.S. spending 34.2\% of expenditures on overhead versus 17\% in Canada, alongside the resulting $335 billion in annual excess spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-administrative-overhead-bw-academic.jpg)
 
 ### Loss Category: Leakage (Medicare Advantage Upcoding)
 
@@ -239,7 +239,7 @@ Medicare Advantage functions as a subsidy mechanism via "upcoding": making patie
 
 GAO estimates $162 billion in improper payments government-wide in 2024, with 75% concentrated in Medicare and Medicaid [@gao-improper-payments-2024].
 
-![A comparison of government improper payment rates, specifically highlighting the 75% concentration in Medicare and Medicaid against significantly lower private sector fraud benchmarks.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-improper-payments-bw-academic.jpg)
+![A comparison of government improper payment rates, specifically highlighting the 75\% concentration in Medicare and Medicaid against significantly lower private sector fraud benchmarks.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-improper-payments-bw-academic.jpg)
 
 - Medicare Fee-for-Service: ~7.4% improper payment rate
 - Medicaid: often higher
@@ -318,7 +318,7 @@ The compliance burden (time and resources consumed meeting federal requirements)
 
 Americans spend 7.1-7.9 billion hours annually complying with the tax code [@ntu-tax-compliance-2025].
 
-![A comparison showing that U.S. tax compliance costs ($546 billion) exceed total corporate income tax revenue, representing 1.9% of national GDP.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
+![A comparison showing that U.S. tax compliance costs ($546 billion) exceed total corporate income tax revenue, representing 1.9\% of national GDP.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
 
 **Total compliance cost:** {{< var bad_policy_cost_us_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
@@ -428,7 +428,7 @@ We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo 
 
 ### Simulation Results
 
-![A comparison chart of the FY 2024-2025 Aggregate Efficiency Gap estimates, illustrating the mean value of $5.03 trillion alongside its 95% confidence interval and percentile distributions.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-simulation-results-bw-academic.jpg)
+![A comparison chart of the FY 2024-2025 Aggregate Efficiency Gap estimates, illustrating the mean value of $5.03 trillion alongside its 95\% confidence interval and percentile distributions.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-simulation-results-bw-academic.jpg)
 
 **Aggregate Efficiency Gap (FY 2024-2025):**
 
@@ -575,7 +575,7 @@ Including these factors would increase the efficiency gap estimate substantially
 ::: {.callout-note}
 ## See Also
 
-![A visualization showing the 30-52% Global Governance Efficiency range and the $101 trillion in annual unrealized potential across sectors like health, migration, and environmental remediation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-see-also-bw-academic.jpg)
+![A visualization showing the 30-52\% Global Governance Efficiency range and the $101 trillion in annual unrealized potential across sectors like health, migration, and environmental remediation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-see-also-bw-academic.jpg)
 
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
 :::

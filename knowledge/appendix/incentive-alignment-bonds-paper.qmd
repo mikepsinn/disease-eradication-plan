@@ -81,7 +81,7 @@ The result is a systematic distortion of democratic governance. The U.S. Constit
 
 Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero. Whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
-![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at around 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
+![The relationship between public support and policy adoption. Whether a policy has 0\% or 100\% public support, its probability of adoption remains flat at around 30\%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
 ### Key Results
 
@@ -744,7 +744,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 **Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
-![Flow of funds from a 1% military redirect ($27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
+![Flow of funds from a 1\% military redirect ($27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
 
 **Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 

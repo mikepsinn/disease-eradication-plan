@@ -287,7 +287,7 @@ C_{Rep} \approx \frac{\log_2(k)}{T \text{ years}} \approx 0
 $$
 This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem"). This theoretical result aligns with empirical findings by @gilens2014, who analyzed 1,779 policy outcomes and found that "average citizens have little or no independent influence" on policy.
 
-![The flatline of democracy: Public support (0% to 100%) has near-zero impact on the probability of policy adoption (flat at ~30%), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
+![The flatline of democracy: Public support (0\% to 100\%) has near-zero impact on the probability of policy adoption (flat at ~30\%), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
 **Wishocracy (High-Bandwidth Channel):**
 
@@ -410,7 +410,7 @@ BCR estimates are contested and often politically coded. The same program may ha
 
 A naive implementation of RAPPA requires $\frac{n(n-1)}{2}$ pairwise comparisons for $n$ categories. For 10 categories, this means 45 pairs per participant (cognitively burdensome and likely to produce survey fatigue).
 
-![A comparison showing the reduction in required pairwise comparisons from 45 to 21 when 3 out of 10 categories are filtered, representing a 53% decrease in cognitive load.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
+![A comparison showing the reduction in required pairwise comparisons from 45 to 21 when 3 out of 10 categories are filtered, representing a 53\% decrease in cognitive load.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
 
 The reference implementation adds a preliminary question: "Should the government fund [category] at all?" Participants can respond Yes, No, or Unsure. Categories marked "No" are excluded from that participant's pairwise comparisons.
 

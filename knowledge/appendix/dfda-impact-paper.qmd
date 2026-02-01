@@ -74,7 +74,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 - **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
 - **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
 
-![Before/after comparison showing 97.7% cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
+![Before/after comparison showing 97.7\% cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
 ### Key Findings
 
@@ -741,7 +741,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
 
-![A visual comparison showing the scale of research acceleration, contrasting standard discovery progress with the 12.3x multiplier and its 95% confidence interval.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
+![A visual comparison showing the scale of research acceleration, contrasting standard discovery progress with the 12.3x multiplier and its 95\% confidence interval.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
 
 ### The Unexplored Therapeutic Frontier
 
@@ -756,7 +756,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}} trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
-![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations with the tiny 0.3% sliver that has been clinically tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations with the tiny 0.3\% sliver that has been clinically tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
