@@ -5,11 +5,14 @@
  * This script automates the process of renaming QMD files by:
  * 1. Renaming the file on disk
  * 2. Adding a Quarto alias to the old name (so old links still work)
- * 3. Updating all _quarto*.yml config files
- * 4. Updating all markdown links in QMD files
- * 5. Updating path references in TypeScript/JavaScript files
- * 6. Updating path references in Python files
- * 7. Updating path references in documentation files
+ * 3. Renaming the associated image folder (assets/images/{qmd-name}/)
+ * 4. Renaming all images with the old prefix to use the new prefix
+ * 5. Updating all _quarto*.yml config files
+ * 6. Updating all markdown links in QMD files
+ * 7. Updating all image references in QMD and other files
+ * 8. Updating path references in TypeScript/JavaScript files
+ * 9. Updating path references in Python files
+ * 10. Updating path references in documentation files
  *
  * Usage:
  *   npx tsx scripts/rename-qmd.ts <old_path> <new_path> [--dry-run]
@@ -48,6 +51,9 @@ interface RenameStats {
   docUpdates: number;
   yamlUpdates: number;
   jsonUpdates: number;
+  imageUpdates: number;
+  imagesRenamed: number;
+  imageFolderRenamed: boolean;
   filesModified: string[];
   aliasAdded: boolean;
 }
@@ -560,6 +566,170 @@ async function updateJsonFiles(
 }
 
 /**
+ * Get the image folder path for a QMD file
+ * Example: knowledge/problem/cost-of-war.qmd -> assets/images/cost-of-war
+ */
+function getImageFolderPath(qmdPath: string): string {
+  const basename = path.basename(qmdPath, '.qmd');
+  return `assets/images/${basename}`;
+}
+
+/**
+ * Rename images in a folder, replacing the old prefix with the new prefix
+ * Example: old-name-section-foo.jpg -> new-name-section-foo.jpg
+ */
+async function renameImagesInFolder(
+  folderPath: string,
+  oldPrefix: string,
+  newPrefix: string,
+  dryRun: boolean
+): Promise<{ renamed: number; files: string[] }> {
+  const absoluteFolderPath = path.join(PROJECT_ROOT, folderPath);
+
+  if (!fsSync.existsSync(absoluteFolderPath)) {
+    return { renamed: 0, files: [] };
+  }
+
+  const files = await fs.readdir(absoluteFolderPath);
+  const renamedFiles: string[] = [];
+  let renamedCount = 0;
+
+  for (const file of files) {
+    // Check if the file starts with the old prefix
+    if (file.startsWith(oldPrefix + '-') || file === oldPrefix + '.jpg' || file === oldPrefix + '.png' || file === oldPrefix + '.webp') {
+      const newFileName = file.replace(new RegExp(`^${escapeRegExp(oldPrefix)}`), newPrefix);
+      const oldFilePath = path.join(absoluteFolderPath, file);
+      const newFilePath = path.join(absoluteFolderPath, newFileName);
+
+      if (!dryRun) {
+        await fs.rename(oldFilePath, newFilePath);
+      }
+
+      renamedFiles.push(`${file} -> ${newFileName}`);
+      renamedCount++;
+    }
+  }
+
+  return { renamed: renamedCount, files: renamedFiles };
+}
+
+/**
+ * Rename the image folder for a QMD file
+ * Example: assets/images/old-name -> assets/images/new-name
+ */
+async function renameImageFolder(
+  oldQmdPath: string,
+  newQmdPath: string,
+  dryRun: boolean
+): Promise<{ folderRenamed: boolean; imagesRenamed: number; imageFiles: string[] }> {
+  const oldBasename = path.basename(oldQmdPath, '.qmd');
+  const newBasename = path.basename(newQmdPath, '.qmd');
+
+  // If basenames are the same (just moving to different directory), no image rename needed
+  if (oldBasename === newBasename) {
+    return { folderRenamed: false, imagesRenamed: 0, imageFiles: [] };
+  }
+
+  const oldFolderPath = getImageFolderPath(oldQmdPath);
+  const newFolderPath = getImageFolderPath(newQmdPath);
+  const absoluteOldFolder = path.join(PROJECT_ROOT, oldFolderPath);
+  const absoluteNewFolder = path.join(PROJECT_ROOT, newFolderPath);
+
+  // Check if old folder exists
+  if (!fsSync.existsSync(absoluteOldFolder)) {
+    console.log(`   No image folder found at: ${oldFolderPath}`);
+    return { folderRenamed: false, imagesRenamed: 0, imageFiles: [] };
+  }
+
+  // First rename images inside the folder (before renaming the folder itself)
+  const imageResult = await renameImagesInFolder(oldFolderPath, oldBasename, newBasename, dryRun);
+
+  // Then rename the folder
+  if (!dryRun) {
+    // Check if target folder already exists
+    if (fsSync.existsSync(absoluteNewFolder)) {
+      console.log(`   Warning: Target folder already exists: ${newFolderPath}`);
+      console.log(`   Images were renamed but folder was not moved`);
+      return { folderRenamed: false, imagesRenamed: imageResult.renamed, imageFiles: imageResult.files };
+    }
+    await fs.rename(absoluteOldFolder, absoluteNewFolder);
+  }
+
+  console.log(`   Renamed folder: ${oldFolderPath} -> ${newFolderPath}`);
+
+  return { folderRenamed: true, imagesRenamed: imageResult.renamed, imageFiles: imageResult.files };
+}
+
+/**
+ * Update image references in all files
+ * Matches: ![alt](path/to/old-name/old-name-section-foo.jpg)
+ */
+async function updateImageReferences(
+  oldQmdPath: string,
+  newQmdPath: string,
+  dryRun: boolean
+): Promise<{ count: number; files: string[] }> {
+  const oldBasename = path.basename(oldQmdPath, '.qmd');
+  const newBasename = path.basename(newQmdPath, '.qmd');
+
+  // If basenames are the same, no image reference updates needed
+  if (oldBasename === newBasename) {
+    return { count: 0, files: [] };
+  }
+
+  const oldFolderPath = `assets/images/${oldBasename}`;
+  const newFolderPath = `assets/images/${newBasename}`;
+
+  // Find all files that might contain image references
+  const files = await glob('**/*.{qmd,md,yml,yaml,json,ts,js,py}', {
+    cwd: PROJECT_ROOT,
+    absolute: true,
+    ignore: ['**/node_modules/**', '**/.venv/**', '**/_site/**', '**/_book/**', '**/_build_temp/**'],
+  });
+
+  let totalCount = 0;
+  const modifiedFiles: string[] = [];
+
+  for (const file of files) {
+    const content = await fs.readFile(file, 'utf-8');
+    let newContent = content;
+    let changes = 0;
+
+    // Pattern 1: Update folder path in image references
+    // e.g., /assets/images/old-name/ -> /assets/images/new-name/
+    const folderRegex = new RegExp(escapeRegExp(oldFolderPath), 'g');
+    const folderMatches = newContent.match(folderRegex);
+    if (folderMatches) {
+      newContent = newContent.replace(folderRegex, newFolderPath);
+      changes += folderMatches.length;
+    }
+
+    // Pattern 2: Update image filename prefixes within the new folder path
+    // e.g., old-name-section-foo.jpg -> new-name-section-foo.jpg
+    // This handles cases where the folder path was already updated but filenames weren't
+    const imageNameRegex = new RegExp(
+      `(${escapeRegExp(newFolderPath)}/)${escapeRegExp(oldBasename)}(-[^)\\s"']+)`,
+      'g'
+    );
+    const imageNameMatches = newContent.match(imageNameRegex);
+    if (imageNameMatches) {
+      newContent = newContent.replace(imageNameRegex, `$1${newBasename}$2`);
+      changes += imageNameMatches.length;
+    }
+
+    if (changes > 0) {
+      if (!dryRun) {
+        await fs.writeFile(file, newContent, 'utf-8');
+      }
+      totalCount += changes;
+      modifiedFiles.push(path.relative(PROJECT_ROOT, file));
+    }
+  }
+
+  return { count: totalCount, files: modifiedFiles };
+}
+
+/**
  * Rename the file on disk
  */
 async function renameFile(oldPath: string, newPath: string, dryRun: boolean): Promise<void> {
@@ -594,6 +764,9 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
     docUpdates: 0,
     yamlUpdates: 0,
     jsonUpdates: 0,
+    imageUpdates: 0,
+    imagesRenamed: 0,
+    imageFolderRenamed: false,
     filesModified: [],
     aliasAdded: false,
   };
@@ -620,8 +793,25 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
     // Step 3: Add Quarto alias to the renamed file
     console.log('\n📋 Step 3: Adding Quarto alias...');
     stats.aliasAdded = await addQuartoAlias(newPath, oldPath, dryRun);
+
+    // Step 3b: Rename image folder and images
+    console.log('\n📋 Step 3b: Renaming image folder and images...');
+    const imageResult = await renameImageFolder(oldPath, newPath, dryRun);
+    stats.imageFolderRenamed = imageResult.folderRenamed;
+    stats.imagesRenamed = imageResult.imagesRenamed;
+    if (imageResult.imagesRenamed > 0) {
+      console.log(`   Renamed ${imageResult.imagesRenamed} image(s):`);
+      for (const file of imageResult.imageFiles.slice(0, 5)) {
+        console.log(`     ${file}`);
+      }
+      if (imageResult.imageFiles.length > 5) {
+        console.log(`     ... and ${imageResult.imageFiles.length - 5} more`);
+      }
+    } else if (!imageResult.folderRenamed) {
+      console.log('   No image folder to rename');
+    }
   } else {
-    console.log('📋 Skipping steps 1-3 (file operations) - update refs only mode');
+    console.log('📋 Skipping steps 1-3b (file operations) - update refs only mode');
   }
 
   // Step 4: Update Quarto config files
@@ -745,6 +935,22 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
     console.log('   No references found in JSON files');
   }
 
+  // Step 11: Update image references (folder paths and image filenames)
+  console.log('\n📋 Step 11: Updating image references...');
+  const imageRefResult = await updateImageReferences(oldPath, newPath, dryRun);
+  if (imageRefResult.count > 0) {
+    stats.imageUpdates = imageRefResult.count;
+    stats.filesModified.push(...imageRefResult.files);
+    for (const file of imageRefResult.files.slice(0, 5)) {
+      console.log(`   Updated ${file}`);
+    }
+    if (imageRefResult.files.length > 5) {
+      console.log(`   ... and ${imageRefResult.files.length - 5} more files with image references`);
+    }
+  } else {
+    console.log('   No image references to update');
+  }
+
   // Deduplicate files modified list
   stats.filesModified = [...new Set(stats.filesModified)];
 
@@ -754,8 +960,11 @@ async function renameQmdFile(options: RenameOptions): Promise<void> {
   console.log('━'.repeat(80));
   console.log(`File renamed:          ${oldPath} -> ${newPath}`);
   console.log(`Alias added:           ${stats.aliasAdded ? 'Yes' : 'No (already existed)'}`);
+  console.log(`Image folder renamed:  ${stats.imageFolderRenamed ? 'Yes' : 'No'}`);
+  console.log(`Images renamed:        ${stats.imagesRenamed}`);
   console.log(`Quarto config updates: ${stats.quartoConfigUpdates}`);
   console.log(`QMD link updates:      ${stats.qmdLinkUpdates}`);
+  console.log(`Image ref updates:     ${stats.imageUpdates}`);
   console.log(`TypeScript/JS updates: ${stats.tsJsUpdates}`);
   console.log(`Python updates:        ${stats.pythonUpdates}`);
   console.log(`Documentation updates: ${stats.docUpdates}`);
