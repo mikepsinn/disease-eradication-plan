@@ -6,7 +6,7 @@
  * npm: https://www.npmjs.com/package/@google/genai
  */
 
-import { GoogleGenAI } from '@google/genai'
+import { GoogleGenAI, HarmCategory, HarmBlockThreshold } from '@google/genai'
 import sharp from 'sharp'
 import { exec, execFile } from 'child_process'
 import { promisify } from 'util'
@@ -722,6 +722,15 @@ export async function generateImages(
       const response = await client.models.generateContent({
         model,
         contents: contentParts,
+        config: {
+          responseModalities: ['IMAGE'],
+          safetySettings: [
+            { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+          ],
+        },
       })
 
       // Extract image from response
@@ -759,6 +768,102 @@ export async function generateImages(
       prompt: prompt.substring(0, 100),
     })
     throw new Error(`Image generation failed: ${error.message || String(error)}`)
+  }
+}
+
+/**
+ * Edit result from Gemini API
+ */
+export type ImageEditResult = 'success' | 'policy_blocked' | 'no_image' | 'error'
+
+/**
+ * Edit image response with image data
+ */
+export interface ImageEditResponse {
+  result: ImageEditResult
+  imageBytes?: string
+  error?: string
+}
+
+/**
+ * Edit an existing image using Gemini
+ *
+ * @param imageBase64 - Base64-encoded image data
+ * @param mimeType - MIME type of the image (e.g., 'image/jpeg')
+ * @param editInstructions - Natural language instructions for editing
+ * @returns Edit result with image data if successful
+ *
+ * @example
+ * ```typescript
+ * const imageBuffer = await fs.readFile('image.jpg')
+ * const result = await editImage(
+ *   imageBuffer.toString('base64'),
+ *   'image/jpeg',
+ *   'Remove the text in the top right corner'
+ * )
+ * if (result.result === 'success' && result.imageBytes) {
+ *   await fs.writeFile('edited.jpg', Buffer.from(result.imageBytes, 'base64'))
+ * }
+ * ```
+ */
+export async function editImage(
+  imageBase64: string,
+  mimeType: string,
+  editInstructions: string
+): Promise<ImageEditResponse> {
+  const client = getClient()
+  const prompt = `Edit this image: ${editInstructions}`
+
+  try {
+    const response = await client.models.generateContent({
+      model: GEMINI_IMAGE_MODEL_ID,
+      contents: [
+        {
+          parts: [
+            { text: prompt },
+            {
+              inlineData: {
+                mimeType,
+                data: imageBase64,
+              },
+            },
+          ],
+        },
+      ],
+      config: {
+        responseModalities: ['IMAGE'],
+        safetySettings: [
+          { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+          { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+          { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+          { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+        ],
+      },
+    })
+
+    // Check for content policy blocks
+    const promptFeedback = (response as any).promptFeedback
+    if (promptFeedback?.blockReason) {
+      log.warn('Image edit blocked by content policy', { reason: promptFeedback.blockReason })
+      return { result: 'policy_blocked', error: promptFeedback.blockReason }
+    }
+
+    // Extract edited image from response
+    if (response.candidates && response.candidates.length > 0) {
+      const candidate = response.candidates[0]
+      const parts = candidate.content?.parts || []
+
+      for (const part of parts) {
+        if (part.inlineData?.data) {
+          return { result: 'success', imageBytes: part.inlineData.data }
+        }
+      }
+    }
+
+    return { result: 'no_image', error: 'No image returned from API' }
+  } catch (error: any) {
+    log.error('Failed to edit image', { error: error.message })
+    return { result: 'error', error: error.message }
   }
 }
 

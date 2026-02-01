@@ -14,23 +14,19 @@
  * Options:
  *   --output <path>     Save edited image to different path (default: overwrites original)
  *   --no-backup         Don't create a backup of the original
- *   --no-transcript     Skip extracting transcript after edit
  */
 
 import fs from 'fs/promises'
 import path from 'path'
-import { genAI, GEMINI_IMAGE_MODEL_ID } from '../lib/llm'
-import { saveImage, ImageMetadata, GeneratedImage } from '../lib/gemini-images'
-
-// Shared utilities
-import { getMimeType, isSupportedImage, validateImageFile } from '../lib/image-file-utils'
+import { editImage, saveImage, ImageMetadata, GeneratedImage } from '../lib/gemini-images'
+import { getMimeType, validateImageFile } from '../lib/image-file-utils'
 import { readImageMetadata } from '../lib/exiftool-utils'
 import { getArgValue, hasFlag, getPositionalArgs, printHeader } from '../lib/cli-utils'
 
 /**
- * Edit an image using Gemini
+ * Edit an image file using the shared editImage function
  */
-async function editImage(
+async function editImageFile(
   imagePath: string,
   editInstructions: string,
   outputPath: string,
@@ -55,76 +51,39 @@ async function editImage(
   const originalMetadata = await readImageMetadata(imagePath)
   console.log(`Original metadata: ${originalMetadata ? 'Found' : 'None'}`)
 
-  // Build the edit prompt
-  const editPrompt = `Edit this image according to these instructions: ${editInstructions}
+  // Use shared editImage function
+  const result = await editImage(base64Image, mimeType, editInstructions)
 
-Keep everything else exactly the same - preserve the overall style, colors, layout, and any elements not mentioned in the instructions. Make ONLY the changes requested.`
-
-  console.log(`\nSending to Gemini (${GEMINI_IMAGE_MODEL_ID})...`)
-
-  try {
-    // Call Gemini with the image and edit request
-    const response = await genAI.models.generateContent({
-      model: GEMINI_IMAGE_MODEL_ID,
-      contents: [
-        {
-          parts: [
-            { text: editPrompt },
-            {
-              inlineData: {
-                mimeType,
-                data: base64Image,
-              },
-            },
-          ],
-        },
-      ],
-    })
-
-    // Extract the edited image from response
-    if (response.candidates && response.candidates.length > 0) {
-      const candidate = response.candidates[0]
-      const parts = candidate.content?.parts || []
-
-      for (const part of parts) {
-        if (part.inlineData?.data) {
-          // Build metadata for the edited image
-          const metadata: ImageMetadata = {
-            title: originalMetadata?.title || path.basename(imagePath),
-            description: originalMetadata?.description || '',
-            keywords: originalMetadata?.keywords || [],
-          }
-
-          // Build the edit description for the prompt field
-          const originalPrompt = originalMetadata?.generationPrompt
-          const editDescription = originalPrompt
-            ? `[EDITED] Original: ${originalPrompt}. Edit: ${editInstructions}`
-            : `[EDITED] Edit: ${editInstructions}`
-
-          // Save the edited image
-          const generatedImage: GeneratedImage = {
-            imageBytes: part.inlineData.data,
-          }
-
-          await saveImage(generatedImage, outputPath, metadata, editDescription, { skipWatermark: true })
-
-          console.log(`\n[OK] Edited image saved: ${outputPath}`)
-          return { success: true }
-        }
-      }
-
-      // Check if there's a text response (might be an error or explanation)
-      for (const part of parts) {
-        if (part.text) {
-          console.log(`\nModel response: ${part.text}`)
-        }
-      }
-    }
-
-    return { success: false, error: 'No edited image returned from Gemini' }
-  } catch (error: any) {
-    return { success: false, error: error.message }
+  if (result.result === 'policy_blocked') {
+    return { success: false, error: `Content policy blocked: ${result.error}` }
   }
+
+  if (result.result !== 'success' || !result.imageBytes) {
+    return { success: false, error: result.error || 'No edited image returned' }
+  }
+
+  // Build metadata for the edited image
+  const metadata: ImageMetadata = {
+    title: originalMetadata?.title || path.basename(imagePath),
+    description: originalMetadata?.description || '',
+    keywords: originalMetadata?.keywords || [],
+  }
+
+  // Build the edit description for the prompt field
+  const originalPrompt = originalMetadata?.generationPrompt
+  const editDescription = originalPrompt
+    ? `[EDITED] Original: ${originalPrompt}. Edit: ${editInstructions}`
+    : `[EDITED] ${editInstructions}`
+
+  // Save the edited image
+  const generatedImage: GeneratedImage = {
+    imageBytes: result.imageBytes,
+  }
+
+  await saveImage(generatedImage, outputPath, metadata, editDescription, { skipWatermark: true })
+
+  console.log(`\n[OK] Edited image saved: ${outputPath}`)
+  return { success: true }
 }
 
 async function main() {
@@ -133,7 +92,6 @@ async function main() {
   // Parse arguments
   const outputPath = getArgValue(args, 'output', ['o'])
   const noBackup = hasFlag(args, 'no-backup')
-  const noTranscript = hasFlag(args, 'no-transcript')
   const positionalArgs = getPositionalArgs(args)
 
   if (positionalArgs.length < 2) {
@@ -152,7 +110,6 @@ Examples:
 Options:
   --output <path>     Save edited image to different path (default: overwrites original)
   --no-backup         Don't create a backup of the original
-  --no-transcript     Skip extracting transcript after edit
 `)
     process.exit(1)
   }
@@ -174,7 +131,7 @@ Options:
   console.log(`Instructions: ${editInstructions}`)
   console.log(`Backup: ${!noBackup}`)
 
-  const result = await editImage(imagePath, editInstructions, finalOutputPath, !noBackup)
+  const result = await editImageFile(imagePath, editInstructions, finalOutputPath, !noBackup)
 
   if (!result.success) {
     console.error(`\n[ERROR] ${result.error}`)

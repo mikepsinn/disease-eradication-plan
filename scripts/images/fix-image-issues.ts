@@ -14,10 +14,9 @@
 
 import fs from 'fs/promises'
 import path from 'path'
-import { genAI, GEMINI_IMAGE_MODEL_ID } from '../lib/llm'
 import { findImages, getMimeType } from '../lib/image-file-utils'
 import { readImageMetadata, writeImageMetadata } from '../lib/exiftool-utils'
-import { saveImage, generateImages, GeneratedImage, ImageMetadata } from '../lib/gemini-images'
+import { editImage, saveImage, generateImages, GeneratedImage, ImageMetadata, ImageEditResult } from '../lib/gemini-images'
 import { generateCompleteMetadata } from '../lib/image-analysis'
 import { updateImageInIndex, processImage, loadIndex } from './generate-image-index'
 import { isExiftoolAvailable } from '../lib/exiftool-utils'
@@ -118,74 +117,48 @@ async function findImagesWithIssues(
 }
 
 /**
- * Edit an image using Gemini to fix all issues in one pass
+ * Edit an image using the shared editImage function
  */
 async function editImageWithGemini(
   filepath: string,
   editPrompt: string
-): Promise<boolean> {
+): Promise<ImageEditResult> {
   const imageBuffer = await fs.readFile(filepath)
   const base64Image = imageBuffer.toString('base64')
   const mimeType = getMimeType(filepath)
 
-  // Wrap repair prompt with context (same format as edit-image.ts)
-  const fullPrompt = `Edit this image according to these instructions: ${editPrompt}
+  // Use shared editImage function
+  const result = await editImage(base64Image, mimeType, editPrompt)
 
-Keep everything else exactly the same - preserve the overall style, colors, layout, and any elements not mentioned in the instructions. Make ONLY the changes requested.`
-
-  const response = await genAI.models.generateContent({
-    model: GEMINI_IMAGE_MODEL_ID,
-    contents: [
-      {
-        parts: [
-          { text: fullPrompt },
-          {
-            inlineData: {
-              mimeType,
-              data: base64Image,
-            },
-          },
-        ],
-      },
-    ],
-  })
-
-  if (response.candidates && response.candidates.length > 0) {
-    const candidate = response.candidates[0]
-    const parts = candidate.content?.parts || []
-
-    for (const part of parts) {
-      if (part.inlineData?.data) {
-        // IMPORTANT: Preserve ALL existing metadata, not just title/description/keywords
-        // This includes enriched fields like qualityScore, socialCaption, speakerNotes, etc.
-        const originalMetadata = await readImageMetadata(filepath)
-
-        // Also get existing metadata from image-index.json as backup
-        // (in case EXIF doesn't have all fields)
-        const index = await loadIndex()
-        const relativePath = path.relative(process.cwd(), filepath).replace(/\\/g, '/')
-        const indexEntry = index?.images.find(img => img.path === relativePath)
-
-        // Merge: index entry (most complete) + EXIF metadata + minimal defaults
-        const metadata: ImageMetadata = {
-          ...(indexEntry || {}),           // Preserve all fields from index
-          ...(originalMetadata || {}),     // Overlay with EXIF (may have newer values)
-          title: originalMetadata?.title || indexEntry?.title || path.basename(filepath),
-          description: originalMetadata?.description || indexEntry?.description || '',
-          keywords: originalMetadata?.keywords || indexEntry?.keywords || [],
-        }
-
-        const generatedImage: GeneratedImage = {
-          imageBytes: part.inlineData.data,
-        }
-
-        await saveImage(generatedImage, filepath, metadata, `[FIXED] ${editPrompt}`, { skipWatermark: false })
-        return true
-      }
-    }
+  if (result.result === 'policy_blocked') {
+    console.log(`  [BLOCKED] Content policy: ${result.error}`)
+    return 'policy_blocked'
   }
 
-  return false
+  if (result.result !== 'success' || !result.imageBytes) {
+    return result.result
+  }
+
+  // Preserve existing metadata
+  const originalMetadata = await readImageMetadata(filepath)
+  const index = await loadIndex()
+  const relativePath = path.relative(process.cwd(), filepath).replace(/\\/g, '/')
+  const indexEntry = index?.images.find(img => img.path === relativePath)
+
+  const metadata: ImageMetadata = {
+    ...(indexEntry || {}),
+    ...(originalMetadata || {}),
+    title: originalMetadata?.title || indexEntry?.title || path.basename(filepath),
+    description: originalMetadata?.description || indexEntry?.description || '',
+    keywords: originalMetadata?.keywords || indexEntry?.keywords || [],
+  }
+
+  const generatedImage: GeneratedImage = {
+    imageBytes: result.imageBytes,
+  }
+
+  await saveImage(generatedImage, filepath, metadata, `[FIXED] ${editPrompt}`, { skipWatermark: false })
+  return 'success'
 }
 
 /**
@@ -202,17 +175,32 @@ async function regenerateImage(
   const relativePath = path.relative(process.cwd(), filepath).replace(/\\/g, '/')
   const indexEntry = index?.images.find(img => img.path === relativePath)
 
-  // Find a prompt to use for regeneration
+  // Find a prompt to use for regeneration (priority: original > inferred > description)
   const originalPrompt = originalMetadata?.generationPrompt || indexEntry?.generationPrompt
   const inferredPrompt = originalMetadata?.inferredPrompt || indexEntry?.inferredPrompt
+  const description = originalMetadata?.description || indexEntry?.description
+  const style = indexEntry?.style || ''
+  const title = originalMetadata?.title || indexEntry?.title || ''
 
-  if (!originalPrompt && !inferredPrompt) {
-    console.log(`  [REGEN] No original or inferred prompt found - cannot regenerate`)
+  if (!originalPrompt && !inferredPrompt && !description) {
+    console.log(`  [REGEN] No prompt or description found - cannot regenerate`)
     return false
   }
 
-  // Use original prompt if available, otherwise use inferred
+  // Use original prompt if available, otherwise inferred, otherwise build from description
   let basePrompt = originalPrompt || inferredPrompt || ''
+
+  if (!basePrompt && description) {
+    // Build a prompt from description + style + title
+    basePrompt = description
+    if (style) {
+      basePrompt += `. Style: ${style}`
+    }
+    if (title && !description.includes(title)) {
+      basePrompt = `${title}. ${basePrompt}`
+    }
+    console.log(`  [REGEN] Using description as prompt: ${basePrompt.substring(0, 100)}...`)
+  }
 
   // Remove [FIXED] or [EDITED] prefixes from previous fix attempts
   basePrompt = basePrompt.replace(/^\[(FIXED|EDITED)\]\s*/i, '')
@@ -296,19 +284,25 @@ IMPORTANT: Do NOT include any of the following in the image:
 /**
  * Fix an image and verify the fix worked
  */
-async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | 'failed' | 'still_broken' | 'regenerated'> {
+async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | 'failed' | 'still_broken' | 'regenerated' | 'policy_blocked'> {
   console.log(`  Problems: ${issue.imageProblems.join(', ')}`)
   console.log(`  Repair: ${issue.repairPrompt}`)
 
   // Attempt fix
+  let wasBlocked = false
   for (let attempt = 1; attempt <= MAX_FIX_ATTEMPTS; attempt++) {
     console.log(`  Attempt ${attempt}/${MAX_FIX_ATTEMPTS}...`)
 
-    const edited = await editImageWithGemini(issue.filepath, issue.repairPrompt)
-    if (!edited) {
+    const result = await editImageWithGemini(issue.filepath, issue.repairPrompt)
+    if (result === 'policy_blocked') {
+      wasBlocked = true
+      break // Don't retry policy blocks
+    }
+    if (result !== 'success') {
       console.log(`  [ERROR] Gemini returned no image`)
       continue
     }
+    // Success - fall through to verification
 
     // Skip verification if disabled
     if (!verify) {
@@ -359,7 +353,9 @@ async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | '
     return 'fixed'
   }
 
-  // Editing failed - try regeneration as fallback
+  // Editing failed (or policy blocked) - try regeneration as fallback
+  // Note: Regeneration may work even when editing was policy-blocked,
+  // since regeneration only sends a text prompt (no existing image)
   console.log(`  [FALLBACK] Editing failed, attempting regeneration...`)
   const regenerated = await regenerateImage(issue.filepath, issue.imageProblems)
 
@@ -379,7 +375,8 @@ async function fixImage(issue: ImageIssue, verify: boolean): Promise<'fixed' | '
     return 'regenerated'
   }
 
-  return 'failed'
+  // Return appropriate status based on why editing failed
+  return wasBlocked ? 'policy_blocked' : 'failed'
 }
 
 async function main() {
@@ -428,6 +425,7 @@ async function main() {
   let regenerated = 0
   let failed = 0
   let stillBroken = 0
+  let policyBlocked = 0
 
   for (let i = 0; i < issues.length; i++) {
     const issue = issues[i]
@@ -444,6 +442,9 @@ async function main() {
     } else if (result === 'still_broken') {
       console.log(`  [STILL BROKEN] Manual intervention needed`)
       stillBroken++
+    } else if (result === 'policy_blocked') {
+      console.log(`  [BLOCKED] Content policy - manual fix needed`)
+      policyBlocked++
     } else {
       console.log(`  [FAILED]`)
       failed++
@@ -456,11 +457,12 @@ async function main() {
   printSummary({
     'Fixed (edited)': fixed,
     'Fixed (regenerated)': regenerated,
+    'Policy blocked': policyBlocked,
     'Still broken': stillBroken,
     'Failed': failed,
   })
 
-  if (stillBroken > 0) {
+  if (stillBroken > 0 || policyBlocked > 0) {
     process.exit(1)
   }
 }

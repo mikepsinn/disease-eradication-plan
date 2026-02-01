@@ -15,6 +15,25 @@ Testing if using ANY variable from _variables.yml triggers citation warnings for
 - Test metric: 100%
 - Sample value: $1,000,000
 
+## Callout Test
+
+Testing callout rendering in PDF:
+
+::: {.callout-note}
+## This is a Note Callout
+This tests whether callouts render correctly in both HTML and PDF output.
+:::
+
+::: {.callout-warning}
+## Warning Example
+This is a warning callout with important information about the 3.5\% threshold for social change.
+:::
+
+::: {.callout-tip}
+## Pro Tip
+The treaty redirects 1\% of military spending to medical research, potentially saving millions of lives.
+:::
+
 ## Simple Variable Test
 
 One simple variable to verify the system works without heavy Monte Carlo charts:
