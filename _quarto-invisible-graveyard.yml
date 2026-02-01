@@ -47,12 +47,9 @@ website:
       - text: "dFDA Framework"
         href: https://dfda-spec.warondisease.org
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /invisible-graveyard.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
 
 execute:

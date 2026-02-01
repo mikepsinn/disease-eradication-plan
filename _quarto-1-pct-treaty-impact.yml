@@ -49,12 +49,9 @@ book:
     - knowledge/references.qmd
   navbar:
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /1-percent-treaty-impact.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
   sidebar:
     collapse-level: 1

@@ -47,12 +47,9 @@ website:
       - text: "dFDA App"
         href: https://dfda.earth
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /dfda-spec-paper.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
 
 execute:

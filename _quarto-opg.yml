@@ -42,12 +42,9 @@ website:
   page-navigation: true
   navbar:
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /opg-framework-paper.pdf
       - text: "Optimocracy"
         href: https://optimocracy.warondisease.org
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
 
 execute:

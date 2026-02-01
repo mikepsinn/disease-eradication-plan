@@ -42,12 +42,9 @@ website:
   page-navigation: true
   navbar:
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /federal-efficiency-audit.pdf
       - text: "Calculations"
         href: /knowledge/appendix/parameters-and-calculations.html
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
 
 execute:

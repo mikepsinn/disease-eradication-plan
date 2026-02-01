@@ -43,12 +43,9 @@ website:
   page-navigation: true
   navbar:
     right:
-      - icon: file-pdf
-        text: "Download PDF"
-        href: /cost-of-change-analysis.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "War on Disease"
+      - text: "VOTE"
         href: https://WarOnDisease.org
 
 execute:
