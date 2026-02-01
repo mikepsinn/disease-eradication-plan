@@ -85,6 +85,7 @@ dih-index.html
 .claude/settings.local.json
 .jupyter_cache/
 *.tex
+!callout-bw.tex
 *.aux
 
 # Netlify
