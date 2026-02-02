@@ -2,14 +2,14 @@
 
 **Quarto Project Overview:**
 - Total configs: 14
-- Total QMD files: 90
+- Total QMD files: 82
 
 ---
 
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 4 | **Words:** 67,172
+**Files:** 4 | **Words:** 67,066
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 30,903 words | 8,182 lines
+**Stats:** 30,797 words | 8,076 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -988,12 +988,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,758
+**Files:** 1 | **Words:** 11,734
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,758 words | 1,224 lines
+**Stats:** 11,734 words | 1,222 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1005,7 +1005,6 @@
     - Key Capabilities
     - Potential Impact on the Status Quo
   - Addressing Key Concerns
-    - Why This Differs from Failed Megaprojects
     - Historical Validation: Pre-1962 Physician-Led Efficacy Testing
     - Why "Eventually Avoidable" Matters
     - Trial Funding Scenario
@@ -1072,6 +1071,7 @@
     - Methodology Notes
     - Data Limitations
   - Comparison to Other Major Public Investments
+  - Why This Differs from Failed Megaprojects
 
 ---
 
@@ -1461,7 +1461,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 74 | **Words:** 200,691
+**Files:** 66 | **Words:** 160,640
 
 #### index.qmd
 **Title:** Start Here
@@ -2952,90 +2952,6 @@
     - The Math
       - Translation
 
-#### knowledge/appendix/global-government-medical-research-spending.qmd
-**Title:** Medical Research Spending: The {{< var global_med_research_spending >}} Lie
-**Description:** A comprehensive breakdown of how little humanity invests in not dying, distinguishing broad "research" from actual cures.
-**Stats:** 954 words | 140 lines
-
-  - The Broad Number vs. The Real Number
-    - The Accounting Trick
-    - The Real Number: {{< var global_government_clinical_trials_spending_annual >}}
-  - The 604x Disparity
-  - The Industry Trap
-  - Broad R&D Breakdown: The Hall of Shame
-    - United States: The Alleged Leader
-    - China: The Rising Power
-    - European Union
-    - The Rest of the World
-  - Conclusion: A Species-Wide Failure
-
-#### knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-**Title:** Global Clinical Trial Spending by Phase
-**Description:** A comprehensive breakdown of how much governments, companies, and nonprofits spend on Phase 1, 2, 3, and 4 clinical trials globally each year.
-**Stats:** 2,825 words | 497 lines
-
-  - The Bottom Line: {{< var global_clinical_trials_spending_annual >}} Annually (2024)
-    - Growth trajectory
-  - How Many People Participate? The Missing Data
-    - What we know
-      - Regional snapshots
-  - Spending by Clinical Trial Phase
-    - Phase 3: The Money Pit
-      - Cost per trial
-      - Cost per patient
-      - As percentage of total drug development
-    - Phase 2: The Middle Child
-      - Cost per trial
-      - Cost per patient
-      - As percentage of total drug development
-      - Trial characteristics
-    - Phase 1: The Safety Gauntlet
-      - Cost per trial
-      - Cost per patient
-      - As percentage of total drug development
-      - Trial characteristics
-    - Phase 4: The Forgotten Phase
-      - Key facts
-      - Why it matters
-  - Who's Paying: Funding Source Breakdown
-    - Private Industry: The Heavy Hitter
-      - Global pharmaceutical R&D
-      - Top spenders (2024 R&D budgets)
-      - Regional breakdown
-    - Government: The Seed Investor
-      - United States (NIH)
-      - NIH trial distribution
-      - European Union
-      - China
-      - Other major government funders
-    - Nonprofit Foundations: The Niche Players
-      - Major players (2024)
-      - Gates Foundation
-      - Wellcome Trust
-      - Other major nonprofit funders
-      - Special initiatives
-  - The Brutal Economics: Cost Per Approved Drug
-    - Breakdown by phase (industry average)
-      - Success rates (the depressing math)
-  - Regional Market Distribution
-    - North America: The Dominant Player
-      - United States
-    - Asia-Pacific: The Rising Giant
-      - China
-      - Why China is winning
-      - Other Asia-Pacific
-    - Europe: The Steady Player
-      - Market share: ~25-30% of global market
-  - What This Actually Means
-    - The Good News
-      - The Bad News
-      - The Context
-  - The Efficiency Paradox
-    - Current system
-      - The waste
-  - Summary Table
-  - The Path Forward
-
 #### knowledge/appendix/clinical-trial-participants.qmd
 **Title:** The 0.06% Problem - Who Actually Gets to Try New Treatments
 **Description:** Humans spend {{< var global_clinical_trials_spending_annual >}} a year on clinical trials. About 5 million people participate globally. That's 0.06% of humanity.
@@ -3061,846 +2977,6 @@
     - The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research) among disease patients.
 
 ### Detailed Calculations
-
-#### knowledge/appendix/parameters-and-calculations-manual.qmd
-**Title:** Methodology, Parameters, and Calculations
-**Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 32,492 words | 8,885 lines
-
-  - Overview {#sec-parameters-and-calculations}
-    - Quick Navigation
-  - Calculated Values {#sec-calculated}
-    - Clinical Trial Cost Per Approved Drug: $1.20B {#sec-clinical_trial_cost_per_approved_drug}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Cost Per Clinical Trial Participant: $31.6K {#sec-clinical_trial_cost_per_participant_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Combination Therapy Space: 45.1B combinations {#sec-combination_therapy_disease_space}
-      - Sensitivity Analysis
-    - Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
-      - Sensitivity Analysis
-    - Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Known Safe Exploration Time (Current): 2.88k years {#sec-current_known_safe_exploration_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Current Patient Participation Rate in Clinical Trials: 0.0792% {#sec-current_patient_participation_rate}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Known Safe Exploration Time (dFDA): 234 years {#sec-dfda_known_safe_exploration_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Daily R&D Savings from Trial Cost Reduction: $161M {#sec-dfda_rd_savings_daily}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Infrastructure Cost per Patient (Annual): $8.64 {#sec-dfda_storage_cost_total_per_patient_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Infrastructure Cost per Patient (Monthly): $0.720 {#sec-dfda_storage_cost_total_per_patient_monthly}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Maximum Trials per Year: 40.6k trials/year {#sec-dfda_trials_per_year_capacity}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA Average Total Timeline Shift: 212 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_treatment_acceleration_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Patients Fundable Annually: 23.4M patients/year {#sec-dih_patients_fundable_annually}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Medical Research Percentage of Treaty Funding: 80% {#sec-dih_treasury_medical_research_pct}
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
-    - Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Possible Drug-Disease Combinations: 9.50M combinations {#sec-drug_disease_combinations_possible}
-      - Sensitivity Analysis
-    - Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - FDA to Oxford RECOVERY Trial Time Multiplier: 42:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Conflict Deaths Globally: 245k deaths/year {#sec-global_annual_conflict_deaths_total}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Cost of State Violence Deaths: $27B {#sec-global_annual_human_cost_state_violence}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Cost of Terror Deaths: $83B {#sec-global_annual_human_cost_terror_attacks}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Human Life Losses from Conflict: $2.45T {#sec-global_annual_human_life_losses_conflict}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Infrastructure Destruction: $1.88T {#sec-global_annual_infrastructure_destruction_conflict}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Direct War Costs: $7.66T {#sec-global_annual_war_direct_costs_total}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Annual Indirect War Costs: $3.70T {#sec-global_annual_war_indirect_costs_total}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Total Economic Burden of Disease Globally: $109T {#sec-global_disease_economic_burden_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Per Capita Military Spending Globally: $340 {#sec-global_military_spending_per_capita_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
-    - Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
-    - Ratio of Industry to Government Clinical Trials Spending: 12.3:1 {#sec-industry_vs_government_clinical_trials_spending_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Ratio of Military to Clinical Trials Spending: 45.3:1 {#sec-military_to_clinical_trials_spending_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Ratio of Military Spending to Medical Research Spending: 40.3:1 {#sec-military_vs_medical_research_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Direct War Costs: $76.6B {#sec-peace_dividend_direct_costs}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Environmental Damage: $1B {#sec-peace_dividend_environmental}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Human Casualties: $24.5B {#sec-peace_dividend_human_casualties}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Indirect War Costs: $37B {#sec-peace_dividend_indirect_costs}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Infrastructure Destruction: $18.8B {#sec-peace_dividend_infrastructure}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Lost Economic Growth: $27.2B {#sec-peace_dividend_lost_economic_growth}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Lost Human Capital: $3B {#sec-peace_dividend_lost_human_capital}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in PTSD and Mental Health Costs: $2.32B {#sec-peace_dividend_ptsd}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Refugee Support Costs: $1.50B {#sec-peace_dividend_refugee_support}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Trade Disruption: $6.16B {#sec-peace_dividend_trade_disruption}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B {#sec-peace_dividend_veteran_healthcare}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Personal Lifetime Wealth (QALY-Based): $3M {#sec-personal_lifetime_wealth}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - RECOVERY Trial Total QALYs Generated: 5.00M QALYs {#sec-recovery_trial_total_qalys_generated}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-    - Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Target Voting Bloc Size for Campaign: 280M of people {#sec-treaty_campaign_voting_bloc_target}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Expected Treaty ROI (Risk-Adjusted): 848k:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Cumulative Trial Capacity Years Over 20 Years: 246 years {#sec-trial_capacity_cumulative_years_20yr}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Ratio of Type Ii Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Unexplored Therapeutic Frontier: 99.7% {#sec-unexplored_ratio}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
-    - Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272% {#sec-victory_bond_annual_return_pct}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-    - Global Patients Willing to Participate in Clinical Trials: 1.08B people {#sec-willing_trial_participants_global}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
-  - External Data Sources {#sec-external}
-    - ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
-    - Average Annual Stock Market Return: 10% {#sec-average_market_return_pct}
-    - Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
-      - Uncertainty Range
-      - Input Distribution
-    - Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
-      - Uncertainty Range
-      - Input Distribution
-    - CPI Multiplier: 1980 to 2024: 3.8:1 {#sec-cpi_multiplier_1980_to_2024}
-      - Uncertainty Range
-      - Input Distribution
-    - Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-    - Global Population with Chronic Diseases: 2.40B people {#sec-current_disease_patients_global}
-      - Uncertainty Range
-      - Input Distribution
-    - Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
-      - Uncertainty Range
-      - Input Distribution
-    - Current Global Clinical Trials per Year: 3.30k trials/year {#sec-current_trials_per_year}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Defense Industry Lobbying Spending: $127M {#sec-defense_lobbying_annual}
-    - dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
-      - Uncertainty Range
-      - Input Distribution
-    - Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
-      - Uncertainty Range
-      - Input Distribution
-    - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
-    - Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
-    - Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
-      - Uncertainty Range
-      - Input Distribution
-    - Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
-    - Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
-      - Uncertainty Range
-      - Input Distribution
-    - Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
-      - Uncertainty Range
-      - Input Distribution
-    - FDA-Approved Drug Products: 20.0k products {#sec-fda_approved_products_count}
-    - FDA-Approved Unique Active Ingredients: 1.65k compounds {#sec-fda_approved_unique_active_ingredients}
-      - Uncertainty Range
-      - Input Distribution
-    - FDA GRAS Substances: 635 substances {#sec-fda_gras_substances_count}
-      - Uncertainty Range
-      - Input Distribution
-    - FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Deaths from Active Combat Worldwide: 234k deaths/year {#sec-global_annual_conflict_deaths_active_combat}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Deaths from State Violence: 2.70k deaths/year {#sec-global_annual_conflict_deaths_state_violence}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Deaths from Terror Attacks Globally: 8.30k deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Communications from Conflict: $298B {#sec-global_annual_infrastructure_damage_communications_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Education Facilities from Conflict: $234B {#sec-global_annual_infrastructure_damage_education_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Energy Systems from Conflict: $422B {#sec-global_annual_infrastructure_damage_energy_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166B {#sec-global_annual_infrastructure_damage_healthcare_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Transportation from Conflict: $487B {#sec-global_annual_infrastructure_damage_transportation_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Infrastructure Damage to Water Systems from Conflict: $268B {#sec-global_annual_infrastructure_damage_water_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72T {#sec-global_annual_lost_economic_growth_military_spending}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Lost Productivity from Conflict Casualties: $300B {#sec-global_annual_lost_human_capital_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual PTSD and Mental Health Costs from Conflict: $232B {#sec-global_annual_psychological_impact_costs_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Refugee Support Costs: $150B {#sec-global_annual_refugee_support_costs}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Trade Disruption Costs from Currency Instability: $57.4B {#sec-global_annual_trade_disruption_currency_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Trade Disruption Costs from Energy Price Volatility: $125B {#sec-global_annual_trade_disruption_energy_price_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Trade Disruption Costs from Shipping Disruptions: $247B {#sec-global_annual_trade_disruption_shipping_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Trade Disruption Costs from Supply Chain Disruptions: $187B {#sec-global_annual_trade_disruption_supply_chain_conflict}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Veteran Healthcare Costs: $200B {#sec-global_annual_veteran_healthcare_costs}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Annual Direct Medical Costs of Disease: $9.90T {#sec-global_disease_direct_medical_cost_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Annual Economic Value of Human Life Lost to Disease: $94.2T {#sec-global_disease_human_life_value_loss_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Annual Productivity Loss from Disease: $5T {#sec-global_disease_productivity_loss_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Global Government Spending on Clinical Trials: $4.50B {#sec-global_government_clinical_trials_spending_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Household Wealth: $454T {#sec-global_household_wealth_usd}
-    - Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Government Medical Research Spending: $67.5B {#sec-global_med_research_spending}
-      - Uncertainty Range
-      - Input Distribution
-    - Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
-      - Uncertainty Range
-    - Annual Global Pharmaceutical R&D Spending: $300B {#sec-global_pharma_rd_spending_annual}
-    - Global Population in 2024: 8.00B of people {#sec-global_population_2024}
-      - Uncertainty Range
-      - Input Distribution
-    - Critical Mass Threshold for Social Change: 3.5% {#sec-global_population_activism_threshold_pct}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Global Spending on Symptomatic Disease Treatment: $8.20T {#sec-global_symptomatic_disease_treatment_annual}
-      - Uncertainty Range
-      - Input Distribution
-    - Human Interactome Targeted by Drugs: 12% {#sec-human_interactome_targeted_pct}
-    - ICD-10 Total Codes: 14.0k codes {#sec-icd_10_total_codes}
-    - Life Extension from Treaty Research Acceleration: 20 years {#sec-life_extension_years}
-      - Uncertainty Range
-      - Input Distribution
-    - Maximum Annual Lobbyist Salary Range: $2M {#sec-lobbyist_salary_max}
-    - Minimum Annual Lobbyist Salary Range: $500K {#sec-lobbyist_salary_min_k}
-    - Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
-      - Uncertainty Range
-      - Input Distribution
-    - NIH Annual Budget: $47B {#sec-nih_annual_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - NIH Clinical Trials Spending Percentage: 3.3% {#sec-nih_clinical_trials_spending_pct}
-      - Uncertainty Range
-      - Input Distribution
-    - NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
-      - Uncertainty Range
-      - Input Distribution
-    - Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
-      - Uncertainty Range
-    - Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
-      - Uncertainty Range
-      - Input Distribution
-    - Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
-      - Uncertainty Range
-      - Input Distribution
-    - Pharma Average Drug Revenue (Current System): $6.70B {#sec-pharma_drug_revenue_average_current}
-    - Pharma ROI (Current System): 1.2% {#sec-pharma_roi_current_system_pct}
-    - Pharma Drug Success Rate (Current System): 10% {#sec-pharma_success_rate_current_pct}
-    - Phase I-Passed Compounds Globally: 7.50k compounds {#sec-phase_1_passed_compounds_global}
-      - Uncertainty Range
-      - Input Distribution
-    - Phase I Safety Trial Duration: 2.3 years {#sec-phase_1_safety_duration_years}
-    - Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
-    - Pragmatic Trial Median Cost per Patient (PMC Review): $97 {#sec-pmc_pragmatic_trial_median_cost_per_patient}
-      - Uncertainty Range
-      - Input Distribution
-    - Political Success Probability: 1% {#sec-political_success_probability}
-      - Uncertainty Range
-      - Input Distribution
-    - Post-1962 Drug Approval Reduction: 70% {#sec-post_1962_drug_approval_reduction_pct}
-    - Percentage Military Spending Cut After WW2: 30% {#sec-post_ww2_military_cut_pct}
-    - Pre-1962 Drug Development Cost (1980 Dollars): $6.50M {#sec-pre_1962_drug_development_cost_1980_usd}
-      - Uncertainty Range
-      - Input Distribution
-    - Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
-      - Uncertainty Range
-      - Input Distribution
-    - Pre-1962 Physician Count (Unverified): 144k physicians {#sec-pre_1962_physician_count}
-    - Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
-      - Uncertainty Range
-      - Input Distribution
-    - Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
-      - Uncertainty Range
-      - Input Distribution
-    - RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
-      - Uncertainty Range
-      - Input Distribution
-    - RECOVERY Trial Total Cost: $20M {#sec-recovery_trial_total_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
-      - Uncertainty Range
-      - Input Distribution
-    - Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years {#sec-regulatory_delay_suffering_period_years}
-      - Uncertainty Range
-      - Input Distribution
-    - Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
-      - Uncertainty Range
-      - Input Distribution
-    - Annual Cost of Sugar Subsidies per Person: $10 {#sec-sugar_subsidy_cost_per_person_annual}
-    - Switzerland's Defense Spending as Percentage of GDP: 0.7% {#sec-switzerland_defense_spending_pct}
-    - Switzerland GDP per Capita: $93K {#sec-switzerland_gdp_per_capita_k}
-    - Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
-      - Uncertainty Range
-      - Input Distribution
-    - Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
-      - Uncertainty Range
-      - Input Distribution
-    - Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
-      - Uncertainty Range
-      - Input Distribution
-    - Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
-      - Uncertainty Range
-      - Input Distribution
-    - US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
-      - Uncertainty Range
-      - Input Distribution
-    - Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
-      - Uncertainty Range
-      - Input Distribution
-    - US Alzheimer's Annual Cost: $355B {#sec-us_alzheimers_annual_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - US Cancer Annual Cost: $208B {#sec-us_cancer_annual_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - US Diabetes Annual Cost: $327B {#sec-us_diabetes_annual_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - US Heart Disease Annual Cost: $363B {#sec-us_heart_disease_annual_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - US Military Spending as Percentage of GDP: 3.5% {#sec-us_military_spending_pct_gdp}
-    - Value of Statistical Life: $10M {#sec-value_of_statistical_life}
-      - Uncertainty Range
-      - Input Distribution
-  - Core Definitions {#sec-definitions}
-    - Approved Drug-Disease Pairings: 1.75k pairings {#sec-approved_drug_disease_pairings}
-      - Uncertainty Range
-      - Input Distribution
-    - Celebrity and Influencer Endorsements: $15M {#sec-campaign_celebrity_endorsement}
-      - Uncertainty Range
-      - Input Distribution
-    - Community Organizing and Ambassador Program Budget: $30M {#sec-campaign_community_organizing}
-      - Uncertainty Range
-      - Input Distribution
-    - Contingency Fund for Unexpected Costs: $50M {#sec-campaign_contingency}
-      - Uncertainty Range
-      - Input Distribution
-    - Defense Industry Conversion Program: $50M {#sec-campaign_defense_conversion}
-      - Uncertainty Range
-      - Input Distribution
-    - Budget for Co-Opting Defense Industry Lobbyists: $50M {#sec-campaign_defense_lobbyist_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Healthcare Industry Alignment and Partnerships: $35M {#sec-campaign_healthcare_alignment}
-      - Uncertainty Range
-      - Input Distribution
-    - Campaign Operational Infrastructure: $20M {#sec-campaign_infrastructure}
-      - Uncertainty Range
-      - Input Distribution
-    - AI-Assisted Legal Work Budget: $50M {#sec-campaign_legal_ai_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Legal Defense Fund: $20M {#sec-campaign_legal_defense}
-      - Uncertainty Range
-      - Input Distribution
-    - Legal Drafting and Compliance Work: $60M {#sec-campaign_legal_work}
-      - Uncertainty Range
-      - Input Distribution
-    - EU Lobbying Campaign Budget: $40M {#sec-campaign_lobbying_eu}
-      - Uncertainty Range
-      - Input Distribution
-    - G20 Countries Lobbying Budget: $35M {#sec-campaign_lobbying_g20_millions}
-    - US Lobbying Campaign Budget: $50M {#sec-campaign_lobbying_us}
-      - Uncertainty Range
-      - Input Distribution
-    - Maximum Mass Media Campaign Budget: $1B {#sec-campaign_media_budget_max}
-      - Uncertainty Range
-      - Input Distribution
-    - Minimum Mass Media Campaign Budget: $500M {#sec-campaign_media_budget_min}
-      - Uncertainty Range
-      - Input Distribution
-    - Opposition Research and Rapid Response: $25M {#sec-campaign_opposition_research}
-      - Uncertainty Range
-      - Input Distribution
-    - Phase 1 Campaign Budget: $200M {#sec-campaign_phase1_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Phase 2 Campaign Budget: $500M {#sec-campaign_phase2_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Pilot Program Testing in Small Countries: $30M {#sec-campaign_pilot_programs}
-      - Uncertainty Range
-      - Input Distribution
-    - Voting Platform and Technology Development: $35M {#sec-campaign_platform_development}
-      - Uncertainty Range
-      - Input Distribution
-    - Regulatory Compliance and Navigation: $20M {#sec-campaign_regulatory_navigation}
-      - Uncertainty Range
-      - Input Distribution
-    - Scaling Preparation and Blueprints: $30M {#sec-campaign_scaling_prep}
-      - Uncertainty Range
-      - Input Distribution
-    - Campaign Core Team Staff Budget: $40M {#sec-campaign_staff_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Super PAC Campaign Expenditures: $30M {#sec-campaign_super_pac_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Tech Industry Partnerships and Infrastructure: $25M {#sec-campaign_tech_partnerships}
-      - Uncertainty Range
-      - Input Distribution
-    - Post-Victory Treaty Implementation Support: $40M {#sec-campaign_treaty_implementation}
-      - Uncertainty Range
-      - Input Distribution
-    - Viral Marketing Content Creation Budget: $40M {#sec-campaign_viral_content_budget}
-      - Uncertainty Range
-      - Input Distribution
-    - Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
-    - Mid-Range Funding for Commercial Dct Platform: $500M {#sec-dct_platform_funding_medium}
-    - Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
-    - Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
-      - Uncertainty Range
-      - Input Distribution
-    - Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
-      - Uncertainty Range
-      - Input Distribution
-    - Backup/Redundancy Cost per Patient (Monthly): $0.200 {#sec-dfda_storage_cost_backup_per_patient_monthly}
-      - Uncertainty Range
-      - Input Distribution
-    - Compute/API Cost per Patient (Monthly): $0.200 {#sec-dfda_storage_cost_compute_per_patient_monthly}
-      - Uncertainty Range
-      - Input Distribution
-    - Database Cost per Patient (Monthly): $0.300 {#sec-dfda_storage_cost_database_per_patient_monthly}
-      - Uncertainty Range
-      - Input Distribution
-    - Raw Storage Cost per Patient (Monthly): $0.020 {#sec-dfda_storage_cost_raw_per_patient_monthly}
-      - Uncertainty Range
-      - Input Distribution
-    - Decentralized Framework for Drug Assessment Target Cost per Patient in USD: $1K {#sec-dfda_target_cost_per_patient_usd}
-    - DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
-      - Uncertainty Range
-      - Input Distribution
-    - DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
-      - Uncertainty Range
-      - Input Distribution
-    - Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
-      - Uncertainty Range
-      - Input Distribution
-    - Minimum Investment for Family Offices: $5M {#sec-family_office_investment_min}
-    - IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
-      - Uncertainty Range
-    - Minimum Investment for Institutional Investors: $10M {#sec-institutional_investor_min}
-    - Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
-      - Uncertainty Range
-    - Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
-      - Uncertainty Range
-    - Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
-      - Uncertainty Range
-      - Input Distribution
-    - QALYs per COVID Death Averted: 5 QALYs/death {#sec-qalys_per_covid_death_averted}
-      - Uncertainty Range
-      - Input Distribution
-    - Safe Compounds Available for Testing: 9.50k compounds {#sec-safe_compounds_count}
-      - Uncertainty Range
-      - Input Distribution
-    - Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
-      - Uncertainty Range
-      - Input Distribution
-    - Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
-      - Uncertainty Range
-      - Input Distribution
-    - Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
-      - Uncertainty Range
-      - Input Distribution
-    - Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
-      - Uncertainty Range
-      - Input Distribution
-    - 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
-      - Uncertainty Range
-    - Trial-Relevant Diseases: 1.00k diseases {#sec-trial_relevant_diseases_count}
-      - Uncertainty Range
-      - Input Distribution
-    - Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
-      - Uncertainty Range
 
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
@@ -3978,27 +3054,6 @@
 
   - Comparison Table
     - Key
-  - Conclusion
-
-#### knowledge/appendix/data-storage-costs.qmd
-**Title:** Data Storage Costs for Decentralized Clinical Trials
-**Description:** Why cloud storage costs less than coffee
-**Stats:** 1,079 words | 163 lines
-
-  - How Much Space One Patient Takes
-    - What's Actually Stored
-  - Cost Analysis {#cost-analysis}
-    - Infrastructure Costs (Per Patient/Month)
-    - Stage 1 Observational Analysis Cost
-    - Comparable Real-World Systems
-    - Consumer Platform Comparisons
-    - Why Costs Are Lower Than Traditional Platforms
-  - Additional Considerations
-    - Fixed Costs
-    - Cost Optimization Strategies
-    - Scaling Benefits
-  - Methodology and Limitations
-    - True Cost by Scale
   - Conclusion
 
 ### Financial Planning
@@ -4182,13 +3237,6 @@
 
 ### Governance & Organization
 
-#### knowledge/appendix/governance.qmd
-**Title:** Governance
-**Description:** Governance architecture for the Decentralized Institutes of Health, including anti-capture mechanisms and security design.
-**Stats:** 110 words | 29 lines
-
-  - Content Moved
-
 #### knowledge/appendix/organizational-precedents.qmd
 **Title:** Organizational Precedents & Staffing Models
 **Description:** An analysis of the organizational structures and staffing models of key precedents, The Global Fund, the ICBL, and MakerDAO, to inform the DIH's own team structure.
@@ -4200,24 +3248,6 @@
     - Illustrative Org Chart & Key Roles
   - Precedent: MakerDAO (The Decentralized Protocol)
     - Illustrative "Org Chart" (Core Units)
-
-#### knowledge/operations/careers/hiring-plan.qmd
-**Title:** Hiring Plan & Team Roadmap
-**Description:** Phase-based hiring plan for core team structure and scaling strategy to execute a 1% treaty and launch the DIH.
-**Stats:** 1,197 words | 127 lines
-
-    - The Philosophy: A Lean Activation Team
-    - Compensation Philosophy
-    - Phase 1: Seed (Core Team Headcount: ~20)
-      - Leadership & Operations (5 Roles)
-        - Product, Design, & Community (3 Roles)
-          - Political & Growth (4 Roles)
-          - Platform & Technology (7 Roles)
-          - Finance & Economics (4 Roles)
-    - Phase 2: Series A (Scaled Team Headcount: ~50)
-      - New Roles to be Hired
-    - Phase 3: Growth (Full Team Headcount: ~75-100)
-      - New Roles to be Hired
 
 #### knowledge/appendix/dih-integration-model.qmd
 **Title:** DIH Healthcare Integration Model
@@ -4350,26 +3380,6 @@
 
 ### Additional References
 
-#### knowledge/papers.qmd
-**Title:** Papers & Publications
-**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 884 words | 102 lines
-
-  - Books
-    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-  - Working Papers
-    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
-    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
-    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
-    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
-    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
-    - [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
-    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
-    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
-    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
-    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
-    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
-
 #### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
 **Title:** Estimated Lives Saved by Increased Drug Accessibility
 **Description:** Table estimating the number of lives that could be saved annually by increasing accessibility to certain drugs
@@ -4377,36 +3387,6 @@
 
   - **Notes on Estimates:**
   - **Additional Sources:**
-
-#### knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
-**Title:** The Cost of a Nuclear Bomb vs. The Cost of a Human Life
-**Description:** A quantitative analysis of the cost per death for a modern nuclear weapon, and the potential human cost of a $2.69 trillion military budget.
-**Stats:** 1,353 words | 234 lines
-
-  - On The Price of a City-Destroying Weapon
-  - On How Many People One Bomb Kills
-    - The Simulation
-  - On The Math That Makes You Uncomfortable
-    - Translation
-  - On What Happens After We Give 1% to Pragmatic Clinical Trials
-    - Step 1: How many bombs?
-      - Step 2: How many deaths?
-      - Translation
-        - Overkill capacity: 20× Earth's population
-          - Twenty times.
-  - On The Summary (In Case You Skipped The Math)
-    - What Nuclear Weapons Cost
-      - What A 1% treaty Changes
-  - On Comparing Different Ways to Kill People (The Efficiency Rankings)
-    - Small Arms (Rifles/Machine Guns)
-    - Artillery (155mm Howitzer Shells)
-    - Precision-Guided Munitions
-      - Excalibur GPS-Guided Artillery
-      - Air-Launched Missiles
-    - Nuclear Weapons (The Winner)
-    - The Leaderboard (Most to Least "Efficient")
-      - The Math That Proves We're Insane
-      - The Point
 
 #### knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
 **Title:** Pragmatic vs Explanatory Trials: A Quantitative Analysis
@@ -4439,7 +3419,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 7,489 words | 805 lines
+**Stats:** 8,332 words | 886 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -4486,6 +3466,11 @@
       - Your Offer
     - Step 4: Purchase Democracy
       - Incentive Alignment Bonds
+        - How It Works (The Scoring System)
+        - The Senator Smith Thought Experiment
+        - VICTORY Bonds: Making Greed Point at Cures
+        - Why This Isn't Bribery (Technically)
+        - Why This Works for Any Problem
     - Step 5: Enjoy
   - The Math
     - The Money Fountain
@@ -5044,7 +4029,27 @@
 
 ## ORPHANED FILES (not in any config)
 
-*20 QMD files in knowledge/ not in any Quarto config:*
+*27 QMD files in knowledge/ not in any Quarto config:*
+
+#### knowledge/appendix/data-storage-costs.qmd
+- **Title:** Data Storage Costs for Decentralized Clinical Trials
+- **Description:** Why cloud storage costs less than coffee
+- **Words:** 1,079
+
+#### knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+- **Title:** Global Clinical Trial Spending by Phase
+- **Description:** A comprehensive breakdown of how much governments, companies, and nonprofits spend on Phase 1, 2, 3,...
+- **Words:** 2,825
+
+#### knowledge/appendix/global-government-medical-research-spending.qmd
+- **Title:** Medical Research Spending: The {{< var global_med_research_spending >}} Lie
+- **Description:** A comprehensive breakdown of how little humanity invests in not dying, distinguishing broad "researc...
+- **Words:** 954
+
+#### knowledge/appendix/governance.qmd
+- **Title:** Governance
+- **Description:** Governance architecture for the Decentralized Institutes of Health, including anti-capture mechanism...
+- **Words:** 110
 
 #### knowledge/appendix/military-vs-clinical-trials-funding-imbalance.qmd
 - **Title:** Comparative Analysis: Global Military Spending vs. Clinical Trials Investment
@@ -5055,6 +4060,11 @@
 - **Title:** Case Study: Closed-Loop Neuromodulation for Treatment-Resistant Depression
 - **Description:** Quantifying the human cost of post-safety efficacy delays using breakthrough neuromodulation technol...
 - **Words:** 636
+
+#### knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
+- **Title:** The Cost of a Nuclear Bomb vs. The Cost of a Human Life
+- **Description:** A quantitative analysis of the cost per death for a modern nuclear weapon, and the potential human c...
+- **Words:** 1,353
 
 #### knowledge/appendix/regulatory-mortality-analysis-for-humans.qmd
 - **Title:** The Human Cost of Regulatory Latency
@@ -5105,6 +4115,11 @@
 - **Description:** Help more people vote by running referrals, leaderboards, and partner lists.
 - **Words:** 221
 
+#### knowledge/operations/careers/hiring-plan.qmd
+- **Title:** Hiring Plan & Team Roadmap
+- **Description:** Phase-based hiring plan for core team structure and scaling strategy to execute a 1% treaty and laun...
+- **Words:** 1,197
+
 #### knowledge/operations/careers/peace-dividend-analytics-lead.qmd
 - **Title:** Peace Dividend Analytics Lead - Value Capture & Public Dashboards
 - **Description:** Show the money we save. Keep the calculators and methods clear and public.
@@ -5145,6 +4160,11 @@
 - **Description:** Outlines the initial steps, legal structure, pre-seed fundraising, and core team hiring required to ...
 - **Words:** 614
 
+#### knowledge/papers.qmd
+- **Title:** Papers & Publications
+- **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
+- **Words:** 884
+
 ---
 
 ## PAPER CITATIONS (for Quarto cross-references)
@@ -5173,7 +4193,7 @@
 ## SUMMARY
 
 - Quarto configs: 14
-- Unique QMD files: 90
-- Total words: 380,752
-- Orphaned files: 20
+- Unique QMD files: 82
+- Total words: 340,571
+- Orphaned files: 27
 - Paper configs: 12

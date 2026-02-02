@@ -42,7 +42,7 @@ The figures below represent **cumulative benefits over the entire acceleration p
 
 **The Problem:** Clinical trials cost billions and require a decade per drug. The majority of patients with treatable conditions die before potentially effective treatments complete regulatory approval. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-![Architecture of the dFDA protocol showing the flow from decentralized patient participation and mobile data collection to aggregated treatment rankings and outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
+![Architecture of the protocol showing the flow from decentralized patient participation and mobile data collection to aggregated treatment rankings and outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
 **The Solution:** A decentralized framework for drug assessment (dFDA) - an open protocol that enables:
 
@@ -55,7 +55,7 @@ The figures below represent **cumulative benefits over the entire acceleration p
 ::: {.callout-note}
 ## Protocol, Not Platform
 
-The dFDA is **protocol infrastructure** - open standards that existing systems adopt, not a competing service:
+This framework is **protocol infrastructure**, open standards that existing systems adopt, not a competing service:
 
 - **What it IS**: Open standards for trial data exchange, outcome reporting, and treatment ranking - like HTTP for clinical trials, or FHIR for health data
 - **What it is NOT**: A SaaS product that competes with Medable, Science 37, or other clinical trial platforms
@@ -66,7 +66,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
 
-![System architecture diagram showing the dFDA protocol as a foundational layer that enables interoperability between EHRs, clinical trial platforms, and consumer health apps through a shared data ecosystem.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
+![System architecture diagram showing the protocol as a foundational layer that enables interoperability between EHRs, clinical trial platforms, and consumer health apps through a shared data ecosystem.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
 
 ### What You Get
 
@@ -110,7 +110,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 **The Discovery Capacity Model:** {#the-discovery-capacity-model}
 
-| Parameter | Status Quo | With dFDA | Impact |
+| Parameter | Status Quo | Proposed | Impact |
 |:---|:---:|:---:|:---|
 | **Untreated diseases** | {{< var diseases_without_effective_treatment >}} | {{< var diseases_without_effective_treatment >}} | Same backlog |
 | **Discovery rate** (first treatments/year) | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} | {{< var dfda_trial_capacity_multiplier >}} faster |
@@ -119,7 +119,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 
 **Why treatments arriving sooner saves lives:**
 
-A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with dFDA. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
+A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
 
 **The two components:**
 
@@ -136,7 +136,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 ### Core Model: An Open Coordination Protocol
 
-The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to:
+The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 **For Treatment Providers (via compliant platforms):**
 
@@ -198,7 +198,7 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 
 **The thalidomide success story:** Thalidomide is often cited as justification for the 1962 amendments, but the US *already* blocked thalidomide under existing 1938 safety regulations. The FDA's Frances Kelsey refused approval based on inadequate safety data, not efficacy requirements. The 1962 amendments added *efficacy* proof requirements, not additional safety testing.
 
-**Implications:** The dFDA model returns to decentralized physician-led efficacy testing but with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting the same 50-95% cost reductions that the pre-1962 system achieved.
+**Implications:** This model returns to decentralized physician-led efficacy testing but with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting the same 50-95% cost reductions that the pre-1962 system achieved.
 
 ### Why "Eventually Avoidable" Matters
 
@@ -235,7 +235,7 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](https://iab.warondisease.org) are designed to solve.)
 :::
 
-**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. dFDA trial capacity metrics.
+**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. framework trial capacity metrics.
 
 **The Untested Treatment Backlog:**
 
@@ -245,7 +245,7 @@ Approximately {{< var diseases_without_effective_treatment >}} lack effective tr
 
 > **Protocol Infrastructure Costs**
 >
-> The dFDA is protocol infrastructure - open standards and APIs that existing clinical trial systems adopt. This is analogous to HTTP enabling any browser to access any website, or FHIR enabling health data interoperability.
+> This is protocol infrastructure, open standards and APIs that existing clinical trial systems adopt. This is analogous to HTTP enabling any browser to access any website, or FHIR enabling health data interoperability.
 >
 > - **Upfront protocol/API build:** \$15–25M
 > - **Annual protocol operations:** \$5–12M
@@ -254,7 +254,7 @@ Approximately {{< var diseases_without_effective_treatment >}} lack effective tr
 >
 > **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms (Medable, Science 37), EHR systems (Epic, Cerner), academic medical centers, and health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
 
-![A visual representation of the dFDA protocol ecosystem showing how a central interoperability layer connects EHR systems, clinical trial platforms, and medical centers, paired with a breakdown of upfront versus recurring costs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estimates-bw-academic.jpg)
+![A visual representation of the protocol ecosystem showing how a central interoperability layer connects EHR systems, clinical trial platforms, and medical centers, paired with a breakdown of upfront versus recurring costs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estimates-bw-academic.jpg)
 
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate for the protocol infrastructure that enables decentralized clinical trials.
 
@@ -464,7 +464,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 
-- **dFDA Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
+- **Framework Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
 **Input: Pragmatic Trial Cost Distribution**
 
@@ -824,7 +824,7 @@ $$
 
 **Timeline to Crossover:**
 
-At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with dFDA. For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take millions of years.
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take millions of years.
 
 **Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
@@ -882,13 +882,13 @@ For economist verification, this section provides complete derivation chains for
 
 ### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
-![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under dFDA (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-1-trial-capacity-multiplier-derivation-trial-capacity-multiplier-bw-academic.jpg)
+![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under the framework (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-1-trial-capacity-multiplier-derivation-trial-capacity-multiplier-bw-academic.jpg)
 
 **Step 1: Current trial capacity**
 - Current trial participants: {{< var current_trial_slots_available >}}
 - Current first treatments: {{< var new_disease_first_treatments_per_year >}}
 
-**Step 2: Funded capacity with dFDA**
+**Step 2: Funded capacity with framework**
 - Annual trial funding: {{< var dih_treasury_to_medical_research_annual >}}
 - Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
 - Fundable patients: {{< var dih_patients_fundable_annually >}}
@@ -1016,11 +1016,11 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Alternative counterfactual scenarios:**
 
-1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of dFDA is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing dFDA's attributable benefit to ~74% of projections.
+1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the framework is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the framework's attributable benefit to ~74% of projections.
 
 2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost paradigm.
 
-3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The dFDA ROI of {{< var dfda_roi_rd_only >}} substantially exceeds this threshold.
+3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The framework ROI of {{< var dfda_roi_rd_only >}} substantially exceeds this threshold.
 
 **Methodological note:** The analysis uses the neutral status quo baseline to avoid biasing results in either direction. Sensitivity analysis (tornado diagrams) demonstrates robustness across baseline assumptions.
 
