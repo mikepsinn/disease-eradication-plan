@@ -195,7 +195,7 @@ Data from [ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api):
 | Phase 3 | 8,989 | 6,548,474 | 237 | $5,650 |
 | Phase 4 | 5,790 | 2,718,541 | 90 | $6,437 |
 
-(Cost per patient calculated from [phase spending estimates](global-clinical-trial-spending-by-phase.qmd) divided by participant counts)
+(Cost per patient calculated from phase spending estimates divided by participant counts)
 
 ## What a 1% Treaty Could Do
 
@@ -263,4 +263,4 @@ The 99.92% of disease patients (99.82% of willing participants) who don't get ac
 
 ---
 
-**Methodology:** Primary source: IQVIA 2022 report [@global-trial-participant-capacity] showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api). Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). See [spending breakdown](global-clinical-trial-spending-by-phase.qmd).
+**Methodology:** Primary source: IQVIA 2022 report [@global-trial-participant-capacity] showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api). Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). 
