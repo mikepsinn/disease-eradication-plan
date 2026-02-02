@@ -595,7 +595,88 @@ But Super PACs alone aren't enough. You need a system that makes supporting the 
 
 #### Incentive Alignment Bonds
 
-{{< include knowledge/includes/incentive-alignment-bonds-overview.qmd >}}
+**The Part Where You Hack the Politicians' Brains**
+
+Here's a fun fact about human politicians: they don't optimize for "humans continuing to exist." They optimize for:
+
+1. Getting reelected (requires papers)
+2. Looking important (requires people noticing them)
+3. Getting rich after leaving office (requires favors from rich people)
+
+Notice "keeping constituents alive" isn't on the list. This isn't because politicians are evil. It's because evolution optimized humans for status, not species survival. You can't fix this with awareness campaigns. That's like trying to convince a dog to stop chasing squirrels by explaining ecology.
+
+[Incentive Alignment Bonds (IABs)](knowledge/appendix/incentive-alignment-bonds-paper.qmd) are financial instruments that make "save lives" and "advance career" point in the same direction. It's bribery, but you call it something else, so it's legal. Humans are very particular about what you call things.
+
+##### How It Works (The Scoring System)
+
+You give politicians a score based on how they vote. Not on health outcomes (too complicated), just on whether they voted YES or NO on treaty funding. When a politician votes YES:
+
+- Their **Public Good Score** goes up (it's like a credit score but for not killing people)
+- **Electoral support** materializes (independent campaigns suddenly remember they exist)
+- **Post-office opportunities** unlock (fancy jobs after they stop being politicians)
+
+No papers go directly to politicians. That would be "bribery." Instead, papers go to people who give them reputation, electoral advantage, and career advancement. This is called "not bribery" because the papers took a detour.
+
+##### The Senator Smith Thought Experiment
+
+Senator Smith (R-Texas) is deciding how to vote on the 1% Treaty. Let's examine his thought process. (I'm using "thought" loosely here.)
+
+**Without IABs:**
+
+| Vote Yes | Vote No |
+|:---------|:--------|
+| Attack ads: "Smith voted to WEAKEN AMERICA" | Safe from weapons lobby attacks |
+| Defense contractors fund opponent | Defense contractors fund Smith |
+| Benefits arrive in 10 years (Smith might be dead) | Costs arrive never (perfect!) |
+
+Result: Vote no. This is called "rational self-interest" and it's why humanity can't have nice things.
+
+**With IABs:**
+
+| If Smith votes YES | If Smith votes NO |
+|:-------------------|:------------------|
+| Public Good Score: 45 → 72 | Score: 45 → 30 (yikes) |
+| P(reelection): 55% → 62% | P(reelection): 55% → 48% |
+| $2M independent campaign support | $2M goes to opponent (double yikes) |
+| Post-office tier: 3 → 1 | Stuck at tier 3 forever |
+| Expected post-office income: $200K → $500K/yr | Attack ads: "Smith voted AGAINST curing your grandmother" |
+
+Result: Vote yes. Smith didn't become a better person. The math just changed. This is much more reliable than hoping politicians develop souls.
+
+##### VICTORY Bonds: Making Greed Point at Cures
+
+[VICTORY Incentive Alignment Bonds](knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty. They align everyone's greed with the same outcome:
+
+| Stakeholder | What They Want | What They Get | Why They'll Play Along |
+|:--|:--|:--|:--|
+| **Investors** | More papers | {{< var victory_bond_annual_return_pct >}} annual returns | Greed |
+| **Politicians** | Power and status | Career advancement | Vanity |
+| **Patients** | To not die | Cures | Survival instinct |
+
+Investors fund the campaign ({{< var treaty_campaign_total_cost >}}). Politicians get career benefits for supporting it. Patients get cures. Everyone's self-interest accidentally saves humanity. It's like a Rube Goldberg machine where greed goes in and medicine comes out.
+
+##### Why This Isn't Bribery (Technically)
+
+Humans have very specific rules about what counts as bribery. Here's why IABs don't qualify:
+
+1. **No one is paid to break a duty** - You're paying them to DO their duty (fund public health). This is apparently fine.
+2. **Rules are announced in advance** - If you tell everyone you're going to reward certain behavior before they do it, it's "incentive design." If you do it after, it's "corruption." Timing is everything.
+3. **No papers go directly to politicians** - The papers go to scores, which go to electoral support, which goes to winning, which goes to power. It's like money laundering but with extra steps and somehow legal.
+4. **Everything is based on public votes** - No secret deals. Just publicly announced rewards for publicly recorded behavior. Bribery requires secrecy. This is the opposite: bribery so transparent it becomes policy.
+
+Bribery corrupts alignment. IABs create alignment. Same mechanism, different direction. Humans are fine with this because you called it something different.
+
+##### Why This Works for Any Problem
+
+The beautiful thing about IABs: they're not specific to health. The same architecture works for any problem where:
+
+- Politicians need to do something good
+- But doing the good thing currently hurts their careers
+- And you have enough papers to change the math
+
+Climate change? Same system. Nuclear disarmament? Same system. Pandemic preparedness? Same system.
+
+The 1% Treaty is just the proof of concept. Once humanity sees that "hack politicians' incentives" works better than "hope politicians become good people," you can apply it to everything. It's like teaching a toddler that treats work better than tantrums, except the toddler controls nuclear weapons.
 
 ### Step 5: Enjoy
 
