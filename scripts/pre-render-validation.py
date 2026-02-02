@@ -18,6 +18,10 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Figure files with YAML frontmatter (knowledge/figures/*.qmd should not have frontmatter)
 - Unclosed code blocks (missing closing ```) which cause code to leak into output
 - Duplicate _latex variables (same equation appearing multiple times indicates redundancy)
+- Figure caption LaTeX safety (prevents 'File ended while scanning use of \\@writefile' errors)
+  - Double-backslash before % # & $ in captions (breaks LaTeX aux files)
+  - Unbalanced braces in captions
+  - Excessively long captions (>500 chars)
 
 Runs automatically via _quarto.yml pre-render hook
 """
@@ -680,6 +684,102 @@ def check_hardcoded_figure_paths(content: str, filepath: str):
                     context=line.strip()[:80],
                 )
             )
+
+
+def check_figure_caption_latex_safety(content: str, filepath: str):
+    """
+    Check figure captions for content that will break LaTeX aux file generation.
+    These issues cause 'File ended while scanning use of \\@writefile' errors.
+
+    Root causes include:
+    - Double-backslash before special chars (\\%) becomes \\textbackslash % where % starts a comment
+    - Unbalanced braces in captions
+    - Very long captions that may cause buffer issues
+    """
+    lines = content.split("\n")
+
+    # Pattern to extract figure captions: ![caption text](path)
+    caption_pattern = re.compile(r'!\[([^\]]*)\]\([^)]+\)')
+
+    # Pattern for HTML img alt text
+    html_img_pattern = re.compile(r'<img[^>]+alt=["\']([^"\']*)["\']', re.IGNORECASE)
+
+    # Problematic patterns in captions
+    # Double-backslash before special chars - becomes \textbackslash + special char
+    # which can break LaTeX in various ways (% starts comment, # is param char, etc.)
+    # Note: To match TWO literal backslashes in regex, we need FOUR backslash chars in the pattern
+    # Using non-raw strings: 8 backslashes in source = 4 backslash chars = matches 2 literal backslashes
+    caption_issues = [
+        ("\\\\\\\\%", 'Double-backslash percent (\\\\%) in caption - becomes \\textbackslash % which starts a LaTeX comment and truncates the rest. Use % without backslashes in captions.'),
+        ("\\\\\\\\#", 'Double-backslash hash (\\\\#) in caption - may cause LaTeX issues. Use # without backslashes in captions.'),
+        ("\\\\\\\\&", 'Double-backslash ampersand (\\\\&) in caption - may cause LaTeX issues. Use & without backslashes in captions.'),
+        ("\\\\\\\\\\$", 'Double-backslash dollar (\\\\$) in caption - may cause LaTeX issues. Use $ without backslashes in captions.'),
+    ]
+
+    def check_caption(caption: str, line_index: int, line: str):
+        """Check a single caption for issues"""
+        # Check for problematic patterns
+        for pattern, message in caption_issues:
+            if re.search(pattern, caption):
+                errors.append(
+                    ValidationError(
+                        file=filepath,
+                        line=line_index + 1,
+                        message=message,
+                        context=line.strip()[:80],
+                    )
+                )
+
+        # Check for unbalanced braces in caption
+        brace_count = 0
+        for char in caption:
+            if char == '{':
+                brace_count += 1
+            elif char == '}':
+                brace_count -= 1
+            if brace_count < 0:
+                errors.append(
+                    ValidationError(
+                        file=filepath,
+                        line=line_index + 1,
+                        message="Unbalanced braces in figure caption - extra closing brace '}' found",
+                        context=line.strip()[:80],
+                    )
+                )
+                break
+        if brace_count > 0:
+            errors.append(
+                ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message="Unbalanced braces in figure caption - missing closing brace '}'",
+                    context=line.strip()[:80],
+                )
+            )
+
+        # Check caption length (warn if very long - may cause buffer issues)
+        if len(caption) > 500:
+            errors.append(
+                ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f"Figure caption is very long ({len(caption)} chars) - may cause LaTeX buffer issues. Consider shortening.",
+                    context=caption[:60] + "...",
+                )
+            )
+
+    for line_index, line in enumerate(lines):
+        # Check markdown image captions
+        matches = caption_pattern.finditer(line)
+        for match in matches:
+            caption = match.group(1)
+            check_caption(caption, line_index, line)
+
+        # Check HTML img alt text
+        html_matches = html_img_pattern.finditer(line)
+        for match in html_matches:
+            alt_text = match.group(1)
+            check_caption(alt_text, line_index, line)
 
 
 def check_gif_references(content: str, filepath: str):
@@ -1532,6 +1632,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     # Check image paths
     check_image_paths(content, filepath)
+
+    # Check figure captions for LaTeX safety (prevents aux file corruption)
+    check_figure_caption_latex_safety(content, filepath)
 
     # Check cross-reference links
     check_cross_reference_links(content, filepath)
