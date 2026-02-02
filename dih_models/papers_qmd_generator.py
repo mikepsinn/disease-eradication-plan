@@ -173,8 +173,6 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         "image: /assets/og-images/knowledge/papers-og-bw-academic.jpg",
         "---",
         "",
-        "# Papers & Publications",
-        "",
         "This page provides an index of all academic papers, working drafts, and publications",
         "produced as part of the Disease Eradication Plan project.",
         "",
@@ -200,8 +198,6 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
     lines.extend([
         "",
         "---",
-        "",
-        f"*{len(papers)} publications indexed.*",
         "",
     ])
 

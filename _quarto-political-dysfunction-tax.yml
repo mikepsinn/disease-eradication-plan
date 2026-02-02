@@ -46,8 +46,6 @@ website:
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
-      - text: "Calculations"
-        href: /knowledge/appendix/parameters-and-calculations.html
       - text: "VOTE"
         href: https://WarOnDisease.org
 

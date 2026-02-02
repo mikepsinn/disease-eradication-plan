@@ -10,6 +10,7 @@ project:
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd
+    - knowledge/appendix/parameters-and-calculations-optimocracy.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
@@ -47,7 +48,7 @@ website:
   navbar:
     right:
       - text: "Calculations"
-        href: /knowledge/appendix/parameters-and-calculations.html
+        href: knowledge/appendix/parameters-and-calculations-optimocracy.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
 
