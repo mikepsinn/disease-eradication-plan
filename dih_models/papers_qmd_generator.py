@@ -21,6 +21,11 @@ from typing import Any, Dict, List, Optional
 
 import yaml
 
+# Add scripts directory to path for latex_utils import
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+
+from lib.latex_utils import sanitize_for_latex
+
 
 def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
     """
@@ -225,8 +230,10 @@ def _format_paper_entry(paper: Dict[str, Any]) -> List[str]:
     lines.append("")
 
     # OG image as clickable thumbnail
+    # Sanitize title for use in image caption (LaTeX compatibility)
     if paper.get("og_image"):
-        lines.append(f"[![{title}]({paper['og_image']})]({site_url})")
+        safe_title = sanitize_for_latex(title)
+        lines.append(f"[![{safe_title}]({paper['og_image']})]({site_url})")
         lines.append("")
 
     # Description

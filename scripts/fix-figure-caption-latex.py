@@ -29,53 +29,7 @@ if sys.platform == 'win32':
 sys.path.insert(0, str(Path(__file__).parent))
 
 from lib.quarto_file_utils import get_all_qmd_files, find_project_root
-
-
-def sanitize_caption(caption: str) -> str:
-    """
-    Sanitize a figure caption for LaTeX compatibility.
-
-    Replacements:
-      - \\% or % -> " percent" (with smart spacing)
-      - \\$ or $ -> removed (just the symbol)
-      - & -> " and "
-      - _ -> "-" (in subscript patterns)
-    """
-    result = caption
-
-    # First normalize escaped versions
-    result = result.replace('\\%', '%')
-    result = result.replace('\\$', '$')
-    result = result.replace('\\&', '&')
-    result = result.replace('\\_', '_')
-
-    # Replace % with " percent" (smart spacing)
-    # Pattern: number followed by % (e.g., "3.5%" -> "3.5 percent")
-    result = re.sub(r'(\d)%', r'\1 percent', result)
-    # Any remaining % (shouldn't be common)
-    result = result.replace('%', ' percent')
-    # Clean up double spaces
-    result = re.sub(r' +percent', ' percent', result)
-
-    # Remove $ entirely (e.g., "$27.2B" -> "27.2B")
-    # Pattern: $number - just remove the $
-    result = re.sub(r'\$(\d)', r'\1', result)
-    # Any remaining $ (shouldn't be common)
-    result = result.replace('$', '')
-
-    # Replace & with " and "
-    result = re.sub(r'\s*&\s*', ' and ', result)
-
-    # Replace _ in subscript-like patterns (e.g., "t_p" -> "t-p")
-    # Only replace _ between alphanumeric characters
-    result = re.sub(r'(\w)_(\w)', r'\1-\2', result)
-    # Any remaining underscores
-    result = result.replace('_', '-')
-
-    # Clean up any double spaces created
-    result = re.sub(r'  +', ' ', result)
-
-    return result
+from lib.latex_utils import sanitize_for_latex, has_latex_unsafe_chars
 
 
 def process_file(filepath: Path, apply_fix: bool = False) -> list:
@@ -101,10 +55,10 @@ def process_file(filepath: Path, apply_fix: bool = False) -> list:
         caption = match.group(1)
 
         # Check if caption has any problematic characters
-        if not any(c in caption for c in ['%', '$', '&', '_', '\\%', '\\$', '\\&', '\\_']):
+        if not has_latex_unsafe_chars(caption):
             return full_match
 
-        sanitized = sanitize_caption(caption)
+        sanitized = sanitize_for_latex(caption)
 
         if sanitized != caption:
             # Record the change
