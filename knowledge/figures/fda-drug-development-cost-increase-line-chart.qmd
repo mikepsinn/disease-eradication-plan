@@ -27,7 +27,7 @@ df_costs = df_costs[df_costs['Cost to Develop 1 New Drug (Inflation Adjusted to 
 
 # Clean the cost column - remove $ and convert to numeric
 
-df_costs['Cost'] = df_costs['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].replace('[\$,]', '', regex=True)
+df_costs['Cost'] = df_costs['Cost to Develop 1 New Drug (Inflation Adjusted to 2020 USD)'].replace(r'[\$,]', '', regex=True)
 df_costs['Cost'] = pd.to_numeric(df_costs['Cost'], errors='coerce')
 df_costs = df_costs[df_costs['Cost'].notna()]
 

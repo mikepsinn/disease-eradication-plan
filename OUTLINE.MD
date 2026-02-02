@@ -1461,7 +1461,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 66 | **Words:** 160,640
+**Files:** 66 | **Words:** 160,637
 
 #### index.qmd
 **Title:** Start Here
@@ -2955,7 +2955,7 @@
 #### knowledge/appendix/clinical-trial-participants.qmd
 **Title:** The 0.06% Problem - Who Actually Gets to Try New Treatments
 **Description:** Humans spend {{< var global_clinical_trials_spending_annual >}} a year on clinical trials. About 5 million people participate globally. That's 0.06% of humanity.
-**Stats:** 1,856 words | 266 lines
+**Stats:** 1,853 words | 266 lines
 
   - Enrollment Data from ClinicalTrials.gov
     - US Trials (Cumulative)
@@ -4194,6 +4194,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 340,573
+- Total words: 340,570
 - Orphaned files: 27
 - Paper configs: 12
