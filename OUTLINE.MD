@@ -1461,7 +1461,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 74 | **Words:** 222,097
+**Files:** 74 | **Words:** 222,090
 
 #### index.qmd
 **Title:** Start Here
@@ -4821,9 +4821,8 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 890 words | 106 lines
+**Stats:** 883 words | 102 lines
 
-- Papers & Publications
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
   - Working Papers
@@ -5643,6 +5642,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 90
-- Total words: 402,128
+- Total words: 402,121
 - Orphaned files: 20
 - Paper configs: 12

@@ -52,7 +52,7 @@ book:
             text: "All Papers & Publications"
           - href: https://impact.warondisease.org
             text: "Economic Analysis"
-          - href: knowledge/appendix/parameters-and-calculations.qmd
+          - href: knowledge/appendix/parameters-and-calculations-manual.qmd
             text: "Parameters & Calculations"
           - href: https://iab.warondisease.org
             text: "Incentive Alignment Bonds"
@@ -159,7 +159,7 @@ book:
 
     - part: "Detailed Calculations"
       chapters:
-        - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
+        - knowledge/appendix/parameters-and-calculations-manual.qmd # ✅ AUTO-GENERATED filtered parameter reference (274 params used in manual)
         # STANDALONE PAPER - see graveyard.warondisease.org
         # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p

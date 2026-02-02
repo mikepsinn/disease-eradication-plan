@@ -1160,9 +1160,9 @@ def main():
     generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data)
     print()
 
-    # Generate per-paper filtered parameters-and-calculations files
-    # Each paper gets only the parameters it uses (plus their transitive dependencies)
-    print("[*] Generating per-paper parameters-and-calculations files...")
+    # Generate filtered parameters-and-calculations files for all Quarto configs
+    # Each config (book, manual, papers) gets only the parameters it uses (plus transitive dependencies)
+    print("[*] Generating per-config parameters-and-calculations files...")
     paper_params_results = generate_all_paper_parameters_qmd(
         project_root=project_root,
         parameters=parameters,
@@ -1171,9 +1171,9 @@ def main():
         citation_data=citation_data
     )
     if paper_params_results:
-        print(f"[OK] Generated {len(paper_params_results)} paper-specific parameter appendices")
+        print(f"[OK] Generated {len(paper_params_results)} config-specific parameter appendices")
     else:
-        print("[*] No standalone papers found or no parameters to include")
+        print("[*] No configs found or no parameters to include")
     print()
 
     # Optionally inject citations

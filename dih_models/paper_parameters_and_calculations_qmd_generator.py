@@ -107,12 +107,15 @@ def generate_all_paper_parameters_qmd(
     citation_data: Optional[Dict[str, Dict[str, Any]]] = None
 ) -> Dict[str, int]:
     """
-    Generate filtered parameters-and-calculations QMD files for all standalone papers.
+    Generate filtered parameters-and-calculations QMD files for all Quarto configs.
 
-    For each paper defined in _quarto-*.yml configs:
-    1. Scans all QMD files to find used variables
+    For each config defined in _quarto-*.yml (including book, manual, and standalone papers):
+    1. Scans all QMD files listed in the config to find used variables
     2. Traces dependencies to find all required parameters
-    3. Generates parameters-and-calculations-{paper}.qmd with only needed parameters
+    3. Generates parameters-and-calculations-{config}.qmd with only needed parameters
+
+    This ensures each output (book, manual, individual papers) gets a focused appendix
+    containing only the parameters actually used in that document.
 
     Args:
         project_root: Path to project root
@@ -133,17 +136,9 @@ def generate_all_paper_parameters_qmd(
         if bib_path.exists():
             citation_data = parse_references_bib(bib_path)
 
-    # Find all standalone paper configs
+    # Find all Quarto configs (including book and manual)
     for config_file in project_root.glob("_quarto-*.yml"):
         config_name = config_file.stem.replace("_quarto-", "")
-
-        # Skip book config (it uses the full parameters file)
-        if config_name == "book":
-            continue
-
-        # Skip manual config (it's the main book, uses full parameters file)
-        if config_name == "manual":
-            continue
 
         with open(config_file, encoding='utf-8') as f:
             config = yaml.safe_load(f)
