@@ -25194,7 +25194,7 @@
       "imageProblems": [
         "Header 'Appendix E: Analysis Workflow' is embedded"
       ],
-      "imageProblemsRepairPrompt": "Remove the header text 'Appendix E: Analysis Workflow' from the top of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Appendix E:' from the start of the header at the top of the image.",
       "metadataEnrichedAt": "2026-02-01T00:05:52.117Z"
     },
     {
@@ -40807,7 +40807,7 @@
         "Title 'DIAGRAM: NONPROFIT vs. FOR-PROFIT COORDINATION' is embedded",
         "Footer 'ILLUSTRATION: ENTITY INTERACTION & SEPARATION FRAMEWORK' is embedded"
       ],
-      "imageProblemsRepairPrompt": "Remove the top title 'DIAGRAM: NONPROFIT vs. FOR-PROFIT COORDINATION' and the bottom title 'ILLUSTRATION: ENTITY INTERACTION & SEPARATION FRAMEWORK' from the image.",
+      "imageProblemsRepairPrompt": "Remove 'DIAGRAM:' from the start of the top title and remove 'ILLUSTRATION:' from the start of the bottom title.",
       "metadataEnrichedAt": "2026-02-01T01:13:27.601Z",
       "metadataCreatedAt": "2026-02-01T01:13:27.836Z"
     },
@@ -41774,7 +41774,7 @@
       "imageProblems": [
         "Template label 'TEMPLATE 3: FOUNDATIONS (MISSION MULTIPLICATION)' embedded at the top"
       ],
-      "imageProblemsRepairPrompt": "Remove the banner at the top containing the text 'TEMPLATE 3: FOUNDATIONS (MISSION MULTIPLICATION)' and center the main headline.",
+      "imageProblemsRepairPrompt": "Remove 'TEMPLATE 3:' from the start of the banner at the top.",
       "metadataEnrichedAt": "2026-02-01T01:18:07.979Z"
     },
     {
@@ -42865,7 +42865,7 @@
       "imageProblems": [
         "Chapter header 'PART 5: BREAKING THE CHAINS' is embedded in the image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'PART 5: BREAKING THE CHAINS' from the top of the image.",
+      "imageProblemsRepairPrompt": "Remove 'PART 5:' from the start of the title at the top of the image.",
       "metadataEnrichedAt": "2026-02-01T01:23:26.037Z"
     },
     {
@@ -45917,7 +45917,7 @@
       "imageProblems": [
         "Caption label 'ILLUSTRATION: NETWORKED HEALTH COMMUNITIES - ENGAGEMENT MODEL' embedded in image frame"
       ],
-      "imageProblemsRepairPrompt": "Remove the decorative text banner at the bottom that reads 'ILLUSTRATION: NETWORKED HEALTH COMMUNITIES - ENGAGEMENT MODEL'.",
+      "imageProblemsRepairPrompt": "Remove 'ILLUSTRATION:' from the start of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T01:39:02.276Z"
     },
     {
@@ -48189,7 +48189,7 @@
         "Figure number 'Fig. 3.1' embedded in image",
         "Duplicate text 'REGIONAL HUBS (Latin America)' on the left and right nodes"
       ],
-      "imageProblemsRepairPrompt": "Remove the box containing 'Fig. 3.1 Organizational Evolution & Decentralization Diagram' and the source info from the bottom right. Correct the duplicate 'REGIONAL HUBS (Latin America)' on the left side of the diagram to represent a different region or leave it blank.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 3.1' from the start of the caption. Correct the duplicate 'REGIONAL HUBS (Latin America)' on the left side of the diagram to represent a different region or leave it blank.",
       "metadataEnrichedAt": "2026-02-01T01:50:22.881Z"
     },
     {
@@ -48818,7 +48818,7 @@
         "Typo: 'volatiie'",
         "Typo: 'PUNCN CARD'"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE RAILROAD MANIA (19th C.)' and 'FIGURE EARLY TECH BOOM (20th C.)'. Correct the typo 'volatiie' to 'volatile' in the top-left quadrant and 'PUNCN CARD' to 'PUNCH CARD' in the bottom-right quadrant.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE' from the start of 'RAILROAD MANIA' and 'EARLY TECH BOOM' labels. Fix typos: 'volatiie' to 'volatile', 'PUNCN CARD' to 'PUNCH CARD'.",
       "metadataEnrichedAt": "2026-02-01T20:02:58.684Z",
       "imageIssues": [
         "Spelling error: 'volatlie' instead of volatile",
@@ -51380,7 +51380,7 @@
       "imageProblems": [
         "Figure B caption embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Figure B. Scientific model of independent electoral support mechanism based on public scores, avoiding explicit candidate exchange.' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure B.' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T02:19:15.948Z"
     },
     {
@@ -53119,7 +53119,7 @@
       "imageProblems": [
         "Figure number 'Fig. 4' embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the box at the bottom center containing the text 'Fig. 4: The Scaling Mechanism'.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 4:' from the start of the caption at the bottom center.",
       "metadataEnrichedAt": "2026-02-01T02:06:32.530Z",
       "metadataCreatedAt": "2026-02-01T02:06:32.774Z"
     },
@@ -55571,7 +55571,7 @@
       "imageProblems": [
         "Figure 3.1 label is embedded in the image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIG. 3.1: THE \"BRIBE THE BRIBERS\" PROTOCOL' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 3.1:' from the start of the caption at the bottom center.",
       "metadataEnrichedAt": "2026-02-01T02:27:51.062Z"
     },
     {
@@ -61522,7 +61522,7 @@
       "imageProblems": [
         "'SECTION 2: POWERS' title embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'SECTION 2: POWERS' from the top of the image.",
+      "imageProblemsRepairPrompt": "Remove 'SECTION 2:' from the start of the title at the top of the image.",
       "metadataEnrichedAt": "2026-02-01T02:58:13.190Z"
     },
     {
@@ -61730,7 +61730,7 @@
       "imageProblems": [
         "Section header 'SECTION 3: GOVERNANCE' is embedded in the image"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'SECTION 3: GOVERNANCE' text from the top of the image.",
+      "imageProblemsRepairPrompt": "Remove 'SECTION 3:' from the start of the title at the top of the image.",
       "metadataEnrichedAt": "2026-02-01T02:59:04.670Z"
     },
     {
@@ -67380,7 +67380,7 @@
       "imageProblems": [
         "Illustration numbering 'ILLUSTRATION NO. 1' embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'ILLUSTRATION NO. 1: EFFICIENCY IN RESOURCE ALLOCATION' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'ILLUSTRATION NO. 1:' from the start of the caption at the bottom center.",
       "metadataEnrichedAt": "2026-02-01T20:12:54.260Z"
     },
     {
@@ -69471,67 +69471,64 @@
       "path": "assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-what-bounties-fund-bw-academic.jpg",
       "filename": "open-ecosystem-and-bounty-model-section-what-bounties-fund-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 435740,
-      "size": "425.5 KB",
+      "sizeBytes": 423064,
+      "size": "413.1 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-30T15:05:22.023Z",
+      "modified": "2026-02-01T23:57:02.864Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nWhat Bounties Fund\n\n**Critical Features:** Essential tools nobody's building. Pay someone to build it. Problem solved.\n\n**Security Reporting:** Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked.\n\n**High-Value Integrations:** Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this.\n\n**Major Prizes:** Big money for big achievements. Want a critical component? Offer $1M to whoever builds it best. Competition drives innovation.",
-      "transcript": "What Bounties Fund. Critical Features: Essential tools nobody's building. Pay someone to build it. Problem solved. Figure 1: Essential Tool Development. FUNDING. Security Reporting: Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked. Figure 2: Vulnerability Disclosure. REWARD. $ High-Value Integrations: Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this. MAJOR EHR SYSTEMS. NATIONAL HEALTH REGISTRIES. FUNDED CONNECTOR. Figure 3: System Interoperability. Major Prizes: Big money for big achievements. Want a critical component? Offer $1M to whoever builds it best. Competition drives innovation. $1M. Figure 4: Grand Challenge Incentive. WarOnDisease.org",
+      "generationPrompt": "[FIXED] Remove 'Figure 1: Essential Tool Development', 'Figure 2: Vulnerability Disclosure', 'Figure 3: System Interoperability', and 'Figure 4: Grand Challenge Incentive' labels from the bottom of each panel.",
+      "transcript": "What Bounties Fund. Critical Features: Essential tools nobody's building. Pay someone to build it. Problem solved. FUNDING. Security Reporting: Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked. REWARD. High-Value Integrations: Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this. MAJOR EHR SYSTEMS. NATIONAL HEALTH REGISTRIES. FUNDED CONNECTOR. Major Prizes: Big money for big achievements. Want a critical component? Offer $1M to whoever builds it best. Competition drives innovation. $1M. WarOnDisease.org",
       "imageIssues": [
         "Embedded figure numbers"
       ],
-      "metadataCreatedAt": "2026-01-30T15:05:21.542Z",
-      "title": "How Bounties Accelerate Medical Research Infrastructure",
-      "description": "A four-panel diagram explaining the application of financial bounties to solve bottlenecks in medical research: developing essential tools, reporting security vulnerabilities, building interoperable system connectors, and offering grand prizes for major technical achievements.",
+      "metadataCreatedAt": "2026-02-01T23:56:41.744Z",
+      "title": "Incentivizing Progress: What Innovation Bounties Fund",
+      "description": "A four-panel explanation of how financial bounties can accelerate medical research and infrastructure. It covers funding for essential missing tools, bug bounties for system security, connectors for fragmented health data systems, and large-scale prizes for major technological achievements.",
       "keywords": [
+        "innovation bounties",
         "medical research funding",
-        "software bounties",
-        "EHR interoperability",
-        "vulnerability disclosure",
-        "innovation prizes",
+        "EHR integration",
+        "security reporting",
+        "incentive structures",
+        "healthcare infrastructure",
         "War on Disease",
-        "health technology"
+        "prizes"
       ],
-      "qualityScore": 4,
-      "qualityIssues": [
-        "Figure numbers (Figure 1, 2, etc.) are embedded directly in the image, making it less flexible for reordering."
-      ],
+      "qualityScore": 5,
+      "qualityIssues": [],
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "Humanity has mastered the art of paying people to find bugs in apps that deliver pizza. Applying that same logic to the infrastructure keeping us alive seems like a radical idea, but here we are. https://WarOnDisease.org",
-      "twitterText": "Paying someone to build a tool that saves lives is much more efficient than hoping it happens by accident while they're procrastinating at their day job. It’s called a bounty, and it’s cheaper than the alternative (dying). https://WarOnDisease.org",
-      "linkedInText": "We have the technology to solve most diseases, but we don't have the software connectors to let the computers talk to each other. Apparently, 'saving everyone' isn't a strong enough market incentive, so we're trying money instead. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We've spent centuries waiting for people to do things for the greater good, only to find out they'd rather have a bag of money. It turns out paying people is a breakthrough technology in getting things done. https://WarOnDisease.org",
+      "twitterText": "It turns out people are much more likely to solve complex medical problems if you give them money, rather than just asking nicely and hoping for the best. Here are four ways to bribe our way into a healthier future. https://WarOnDisease.org",
+      "linkedInText": "The market has failed to build the connectors and security our healthcare system needs because no one wants to be the first to pay for it. Bounties turn 'someone should do that' into 'I'm doing that for the million dollars.' A radical idea, I know. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This slide breaks down how we use targeted bounties to solve the 'tragedy of the commons' in medical software. Instead of waiting for a market that doesn't exist to build essential infrastructure, we use the 1% fund to create direct incentives for tools, security, and interoperability.",
+      "speakerNotes": "When we talk about funding, we often think of traditional grants, but bounties are often more efficient for overcoming specific technical hurdles. This model proposes four categories: building missing features, securing systems through white-hat hacking, integrating fragmented data silos, and offering grand prizes for major milestones.",
       "talkingPoints": [
-        "Filling the gap in essential tool development that currently lacks a commercial business model.",
-        "Securing sensitive medical data through proactive bug bounty programs.",
-        "Solving the interoperability crisis by funding the 'connectors' between siloed EHR systems.",
-        "Using grand prizes ($1M+) to gamify and accelerate high-stakes technical breakthroughs."
+        "Bounties solve the first-mover disadvantage in building shared healthcare infrastructure.",
+        "Security is significantly cheaper to buy upfront than to recover after a data breach.",
+        "Grand prizes create competition that often generates research value far exceeding the cost of the prize itself."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A four-panel educational diagram explaining how financial bounties can fund essential health tech tools, security reporting, EHR system integrations, and grand prize innovation challenges.",
+      "altText": "A four-panel infographic titled 'What Bounties Fund'. Panels describe funding for critical features, security reporting via bug bounties, high-value integrations between EHR systems and registries, and million-dollar major prizes for technical achievements.",
       "emotionalTone": "informative",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org"
+        "War on Disease Initiative"
       ],
-      "factCheckNotes": "The $1M figure is illustrative of a typical 'Grand Prize' incentive structure in technology development.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1, Figure 2, Figure 3, and Figure 4 labels are embedded in the image."
-      ],
-      "imageProblemsRepairPrompt": "Remove 'Figure 1: Essential Tool Development', 'Figure 2: Vulnerability Disclosure', 'Figure 3: System Interoperability', and 'Figure 4: Grand Challenge Incentive' labels from the bottom of each panel.",
+      "factCheckNotes": "The concepts represent standard incentive prize models (like the XPRIZE) applied to healthcare; the $1M figure is illustrative of a prize tier.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T20:22:41.252Z"
     },
     {
@@ -69607,12 +69604,14 @@
       "modified": "2026-01-29T20:32:00.946Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nAbstract\n\nThis specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare outcomes.\n\n**JEL Classification**: H50, H61, D61, I18, C18\n\nUnlike marginal-return frameworks that ask \"where should we invest the next dollar?\", OBG asks \"what should the complete budget allocation be?\" Each category has a target level - too little means underinvestment, too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.\n\nThe framework combines three evidence sources: (1) **reference country benchmarking** using high-performing peer jurisdictions, (2) **diminishing returns modeling** from dose-response studies, and (3) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.\n\nThe result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with 637:1 (95% CI: 569:1-790:1) benefit-cost ratio), followed by vaccinations, basic research, and early childhood education.",
-      "transcript": "Optimal Budget Generator (OBG) Framework. Abstract: This specification describes the Optimal Budget Generator (OBG) framework, a systematic approach to generating integrated budget recommendations that maximize welfare outcomes. JEL Classification: H50, H61, D61, I18, C18. TOTAL BUDGET ALLOCATION (ZERO-SUM). TRADITIONAL APPROACH Where to invest the next dollar? Category A (Marginal Return). OBG APPROACH What should the complete budget allocation be? Category A (Target Level), Category C (Target Level), Category D (Target Level). Under-investment, Optimal Level, Diminishing Returns. EVIDENCE SOURCES & MODELING. 1. REFERENCE COUNTRY BENCHMARKING. 2. DIMINISHING RETURNS MODELING. 3. COST-EFFECTIVENESS THRESHOLD ANALYSIS. INTEGRATED RECOMMENDATIONS. BUDGET IMPACT SCORE (BIS). GAP ANALYSIS & REALLOCATION. SEVERELY UNDERINVESTED: 9,900% below optimal. 637:1 (95% CI: 569:1-790:1) Benefit-Cost Ratio. Pragmatic Clinical Trials, Vaccinations, Basic Research, Early Childhood Education. REALLOCATION. EVIDENCE-BASED OPTIMAL LEVEL. Figure 1: The Optimal Budget Generator (OBG) Framework. Source: Proposed OBG Framework Specification. WarOnDisease.org",
+      "generationPrompt": "[FIXED] Remove the text 'Figure 1: The Optimal Budget Generator (OBG) Framework.' and 'Source: Proposed OBG Framework Specification.' from the bottom area of the image.",
+      "transcript": "Optimal Budget Generator (OBG) Framework. Abstract: This specification describes the Optimal Budget Generator (OBG) framework, a systematic approach to generating integrated budget recommendations that maximize welfare outcomes. JEL Classification: H50, H61, D61, I18, C18. TOTAL BUDGET ALLOCATION (ZERO-SUM). TRADITIONAL APPROACH Where to invest the next dollar? Category A (Marginal Return). OBG APPROACH What should the completa budget allocation be? Category A (Taryel Level), Category C (Target Level), Category D (Target Level). Under-investment, Optimai Lsvet, Dmninishing Returns. BALANCE TRADEOFFS. EVIDENCE SOURCES & MODELING: 1. REFERENCE COUNTRY BENCHMARRING, 2. DIMINISHING RETURNS MODELING, 3. COST-EFFECTIVENESS THRESHOLD ANALYSIS. BUDGET IMPACT SCORE (BIS). Low Confidence, High Confidence. INTEGRATED RECOMMENDATIONS GAP ANALYSIS & REALLOCATION. SEVERELY UNDERINVESTED: 9 30DA helow opttmal. 637:1 (95% CI: 569:1-790:1) Benetit Cost Ratio. Pragmatlc Clinical Trials, Vaccinations, Basic Research, Early Childhood Educolion. REALLOCATION. EVIDENCE-BASED OPTIMAL LEVEL. WarOnDisease.org",
       "imageIssues": [
-        "Text is dense and may be hard to read on mobile devices"
+        "Numerous significant spelling errors throughout the diagram (e.g., 'Taryel', 'Lsvel', 'BENCHMARRING', 'Benetit', 'Educolion')",
+        "Inconsistent font rendering in some labels",
+        "Text in 'Diminishing Returns Modeling' box is slightly cramped"
       ],
-      "metadataCreatedAt": "2026-01-29T20:32:00.449Z",
+      "metadataCreatedAt": "2026-02-01T23:57:39.522Z",
       "title": "The Optimal Budget Generator Framework for Resource Allocation",
       "description": "A comprehensive flowchart illustrating the Optimal Budget Generator (OBG) framework, which uses evidence-based modeling to optimize budget allocation for maximum welfare. The diagram compares traditional marginal return approaches with a target-level approach that identifies severe under-investment in areas like clinical trials, vaccinations, and basic research.",
       "keywords": [
@@ -69657,71 +69656,81 @@
       "factCheckNotes": "The figure of 9,900% under-investment is a specific calculation within the War on Disease initiative's economic model regarding clinical trial funding.",
       "imageProblemsDetected": true,
       "imageProblems": [
-        "Figure 1 label embedded in image",
-        "Source text embedded in image"
+        "Spelling error: 'completa' instead of 'complete'",
+        "Spelling error: 'Taryel' instead of 'Target'",
+        "Spelling error: 'Lsvel' and 'Lsvet' instead of 'Level'",
+        "Spelling error: 'BENCHMARRING' instead of 'BENCHMARKING'",
+        "Spelling error: 'juriadiclions' instead of 'jurisdictions'",
+        "Spelling error: 'Benetit' instead of 'Benefit'",
+        "Spelling error: 'Educolion' instead of 'Education'",
+        "Spelling error: 'Pragmatlc' instead of 'Pragmatic'"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Figure 1: The Optimal Budget Generator (OBG) Framework.' and 'Source: Proposed OBG Framework Specification.' from the bottom area of the image.",
+      "imageProblemsRepairPrompt": "Correct the following spelling errors in the diagram: change 'completa' to 'complete', 'Taryel' to 'Target', 'Lsvel' and 'Lsvet' to 'Level', 'Optimai' to 'Optimal', 'Dmninishing' to 'Diminishing', 'Retume' to 'Returns', 'BENCHMARRING' to 'BENCHMARKING', 'juriadiclions' to 'jurisdictions', 'Dese' to 'Dose', 'Gotimal' to 'Optimal', 'STfechvs' to 'Effectiveness', 'helow opttmal' to 'below optimal', 'Benetit' to 'Benefit', 'Pragmatlc' to 'Pragmatic', and 'Educolion' to 'Education'.",
       "metadataEnrichedAt": "2026-02-01T20:23:13.695Z"
     },
     {
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg",
       "filename": "optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 170178,
-      "size": "166.2 KB",
+      "sizeBytes": 301402,
+      "size": "294.3 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-24T02:06:11.047Z",
+      "modified": "2026-02-01T23:59:53.342Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Methodology for the 1% Treaty Medical Research Initiative",
-      "description": "A comprehensive five-phase flowchart detailing the scientific process for redirecting military budgets to medical research. It tracks progress from initial data collection and budget ingestion through OBG estimation, evidence quality grading, gap analysis, and final output generation.",
+      "title": "1% Treaty Analytical Framework and Methodology",
+      "description": "A five-phase flowchart detailing the systematic process for analyzing the redirection of military funds to medical research. The process transitions from data collection and cost-effectiveness estimation through evidence grading and gap analysis, culminating in a final report.",
       "keywords": [
         "medical research funding",
-        "military budget redirection",
-        "scientific methodology",
-        "cost-effectiveness analysis",
-        "global health policy",
-        "impact modeling",
-        "evidence-based medicine"
+        "1% Treaty",
+        "War on Disease",
+        "healthcare economics",
+        "resource reallocation",
+        "analytical framework",
+        "budget data analysis",
+        "evidence-based policy"
       ],
-      "transcript": "SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION. PHASE 1: DATA COLLECTION. Budget data ingestion. Reference country data. Effect estimate data. PHASE 2: OBG ESTIMATION. Reference benchmarking. Diminishing returns modeling. Cost-effectiveness analysis. Method reconciliation. PHASE 3: EVIDENCE QUALITY. BIS calculation. Evidence grading. PHASE 4: GAP ANALYSIS. Compute gaps. Priority ranking. PHASE 5: OUTPUT GENERATION. Multi-unit reporting. Sensitivity analysis. Documentation. FINAL REPORT. WarOnDisease.org",
+      "transcript": "1% TREATY ANALYTICAL FRAMEWORK\nPHASE 1: DATA COLLECTION\nBudget data ingestion, Reference country data, Effect estimate data\nPHASE 2: OBG ESTIMATION\nReference benchmarking, Diminishing returns modeling, Cost-effectiveness analysis, Method reconciliation\nPHASE 3: EVIDENCE QUALITY\nBIS calculation, Evidence grading\nPHASE 4: GAP ANALYSIS\nCompute gaps, Priority ranking\nPHASE 5: OUTPUT GENERATION\nMulti-unit reporting, Sensitivity analysis, Documentation\nFINAL REPORT\nWarOnDisease.org",
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "Humanity has spent thousands of years perfecting the science of ending lives, but it turns out saving them requires a five-phase flowchart. It’s a lot of work to not die, but we’ve mapped out the paperwork for you. https://WarOnDisease.org",
-      "twitterText": "We have very efficient ways of ending lives, but saving them requires a five-phase flowchart and several types of data ingestion. It's a lot of work to not die, but we've mapped out the paperwork for you. https://WarOnDisease.org",
-      "linkedInText": "To move 1% of the world's 'exploding things' budget into 'not dying' budget, we first have to endure a rigorous five-phase estimation process. It’s comforting to know that saving millions of lives is at least as complicated as a tax return. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We have a five-phase analytical framework for deciding not to let people die of things we can cure. It involves a lot of boxes and arrows, which is how you know it’s serious. https://WarOnDisease.org",
+      "twitterText": "Here is a complicated diagram showing the exact process for moving money from things that kill people to things that don’t. It turns out \"just doing it\" requires at least five phases of paperwork. https://WarOnDisease.org",
+      "linkedInText": "Most people think saving millions of lives is as simple as spending money on medicine instead of landmines. In reality, it requires a robust analytical framework including diminishing returns modeling and multi-unit reporting. Efficiency is key when people are dying. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This flowchart outlines the rigorous five-phase methodology used to calculate the impact of the 1% Treaty. We start with raw budget data and apply diminishing returns modeling and evidence grading to ensure that our final report on lives saved is scientifically defensible and transparent.",
+      "speakerNotes": "This slide outlines our five-phase approach to the 1% Treaty analysis, moving from raw budget data to a finalized report. This framework ensures that every dollar redirected from military spending to medical research is backed by rigorous evidence grading and gap analysis.",
       "talkingPoints": [
-        "Multi-phase analytical approach to ensure data integrity",
-        "Incorporates diminishing returns modeling to stay realistic about research outcomes",
-        "Standardized evidence grading (BIS calculation) ensures conservative estimates"
+        "Phase 1 focuses on standardizing global budget and effect data to create a baseline.",
+        "Phase 2 utilizes diminishing returns modeling to identify the 'sweet spot' for cost-effectiveness.",
+        "The final output provides a transparent, audit-ready roadmap for resource allocation across different diseases."
       ],
-      "audienceLevel": "researcher",
-      "altText": "A detailed scientific flowchart showing the five phases of the War on Disease research process: Data Collection, OBG Estimation, Evidence Quality, Gap Analysis, and Output Generation, concluding in a Final Report.",
+      "audienceLevel": "policymaker",
+      "altText": "A flowchart titled 1% Treaty Analytical Framework showing 5 phases: Data Collection, OBG Estimation, Evidence Quality, Gap Analysis, and Output Generation, leading to a Final Report.",
       "emotionalTone": "informative",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org methodology"
+        "War on Disease initiative"
       ],
-      "factCheckNotes": "The acronyms OBG and BIS are specific to the internal modeling framework of the 1% Treaty initiative.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Title contains 'PROCESS VISUALIZATION' which is meta-descriptive",
-        "Title contains 'SCIENTIFIC FLOWCHART' which is meta-descriptive"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION' from the top of the image and replace it with '1% TREATY ANALYTICAL FRAMEWORK'.",
-      "metadataEnrichedAt": "2026-02-01T20:23:32.246Z"
+      "factCheckNotes": "The acronyms OBG and BIS are specific to the 1% Treaty methodology and represent internal metrics for budget goals and evidence quality.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
+      "metadataEnrichedAt": "2026-02-01T20:23:32.246Z",
+      "metadataCreatedAt": "2026-02-01T23:59:36.807Z",
+      "generationPrompt": "[FIXED] Remove 'SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION' from the top of the image and replace it with '1% TREATY ANALYTICAL FRAMEWORK'.",
+      "imageIssues": [
+        "Small text in Phase 2 icons",
+        "High information density may be difficult for mobile viewing"
+      ]
     },
     {
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-analysis-frameworks-bw-academic.jpg",
@@ -70100,61 +70109,59 @@
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-modeling-bw-academic.jpg",
       "filename": "optimal-budget-generator-spec-section-diminishing-returns-modeling-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 159376,
-      "size": "155.6 KB",
+      "sizeBytes": 295037,
+      "size": "288.1 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-24T02:06:11.184Z",
+      "modified": "2026-02-02T00:00:44.896Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Spending vs. Outcome: The Law of Diminishing Returns",
-      "description": "A graph illustrating the relationship between spending and results, showing a steep initial increase in outcome for low spending followed by a 'knee' where the curve flattens. It demonstrates that initial investments yield high marginal returns, while excessive spending leads to minimal gains.",
+      "title": "Diminishing Returns of Spending on Outcome Achievement",
+      "description": "This graph illustrates how the marginal return on spending decreases as total investment increases. It identifies a 'knee of the curve' around $2000 where the initial steep gains in outcomes transition into a flat slope of minimal improvement.",
       "keywords": [
         "diminishing returns",
         "marginal utility",
-        "resource allocation",
-        "efficiency",
         "cost-benefit analysis",
-        "economic theory",
-        "funding"
+        "spending efficiency",
+        "resource allocation"
       ],
-      "transcript": "FIGURE 1: Spending vs. Outcome – Diminishing Returns; Outcome (Y-axis); 100; 80; 60; 40; 20; 0; Low Spending; High Spending; Knee of the curve; Steep slope: High marginal return; Flat slope: Low marginal return; Spending (X-axis); 0; $1000; $2000; $3000; $4000; $5000; WarOnDisease.org",
-      "qualityScore": 5,
-      "qualityIssues": [],
+      "transcript": "Outcome, 100, 80, 60, 40, 20, 0, Spending, $1000, $2000, $3000, $4000, $5000, Low Spending, High Spending, Steep slope: High marginal return, Knee of the curve, Flat slope: Low marginal return, WarOnDisease.org",
+      "qualityScore": 4,
+      "qualityIssues": [
+        "heavy cross-hatching in background can be slightly distracting"
+      ],
       "standaloneScore": 5,
       "canShareStandalone": true,
-      "socialCaption": "We’ve mastered the art of spending the most money for the least possible progress. It's called the 'knee of the curve,' though it feels more like a kick in the teeth. https://WarOnDisease.org",
-      "twitterText": "This graph explains why throwing money at a problem eventually stops working. Unfortunately, we usually start throwing the serious money right as the line goes flat. It’s like buying a second parachute after you’ve already landed. https://WarOnDisease.org",
-      "linkedInText": "Efficiency in spending usually peaks right before the bureaucracy sets in. Once you hit the 'knee of the curve,' every extra dollar is just buying more paperwork and fewer cures. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "Most people stop buying things when they stop working, but national defense budgets aren't most people. We’ve reached the point of diminishing returns, and we’re still accelerating. https://WarOnDisease.org",
+      "twitterText": "We are currently spending billions in the 'flat' part of the curve where nothing happens, because apparently, efficiency is a sign of weakness. If we spent this on disease, we might accidentally help someone. https://WarOnDisease.org",
+      "linkedInText": "In business, we call this the law of diminishing returns. In government, we call it the annual budget. We’re overpaying for results we already have while ignoring the areas where a single dollar could save a life. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
+        "facebook",
         "presentation"
       ],
-      "speakerNotes": "This graph illustrates why the first billion dollars spent on a problem matters a lot more than the fiftieth. We are looking for that 'knee of the curve'—the sweet spot where our investment actually buys us a future instead of just more spreadsheets.",
+      "speakerNotes": "This graph visualizes why current spending priorities are mathematically inefficient. We are stuck in the 'flat slope' of the curve, where huge investments yield almost no additional benefit, while critical areas like medical research are still in the 'steep slope' phase where small investments could save millions of lives.",
       "talkingPoints": [
-        "The 'knee of the curve' represents the point where additional investment ceases to be efficient.",
-        "Most high-impact medical breakthroughs occur in the 'Steep slope' region of initial research funding.",
-        "Over-funding certain mature sectors leads to the 'Flat slope' where results stagnate despite increased budgets."
+        "The 'knee of the curve' represents the optimal point of investment efficiency.",
+        "Current military spending is deep into the zone of diminishing returns.",
+        "Redirecting just 1% of the budget to medical research shifts capital from a low-return zone to a high-return zone."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A line graph showing diminishing returns. The vertical axis represents Outcome and the horizontal axis represents Spending. The curve rises sharply at first, labeled 'High marginal return,' then hits a 'Knee of the curve' and flattens out, labeled 'Low marginal return.'",
-      "emotionalTone": "neutral",
+      "altText": "Line graph showing 'Outcome' on the vertical axis and 'Spending' on the horizontal axis. A curve rises steeply from zero, labeled 'High marginal return,' then bends at a 'Knee of the curve' and flattens out into a 'Low marginal return' zone as spending increases beyond $2000.",
+      "emotionalTone": "informative",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
-      "dataSources": [
-        "Economic theory of diminishing marginal utility"
-      ],
-      "factCheckNotes": "This is a conceptual economic model rather than a specific data set of a single project.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 title embedded in image",
-        "Redundant axis labels (Y-axis/X-axis text)"
-      ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE 1: Spending vs. Outcome – Diminishing Returns' from the top. Remove the parenthetical '(Y-axis)' and '(X-axis)' from the axis labels.",
-      "metadataEnrichedAt": "2026-02-01T20:25:34.039Z"
+      "dataSources": [],
+      "factCheckNotes": "This is a conceptual diagram illustrating the economic principle of diminishing returns rather than a plot of specific empirical data points.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
+      "metadataEnrichedAt": "2026-02-01T20:25:34.039Z",
+      "metadataCreatedAt": "2026-02-02T00:00:44.509Z",
+      "generationPrompt": "[FIXED] Remove the text 'FIGURE 1: Spending vs. Outcome – Diminishing Returns' from the top. Remove the parenthetical '(Y-axis)' and '(X-axis)' from the axis labels."
     },
     {
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-uncertainty-bw-academic.jpg",
@@ -70287,10 +70294,8 @@
       ],
       "factCheckNotes": "The diagram correctly identifies the major international bodies for evidence synthesis (Cochrane and Campbell) and standard economic metrics (QALY/DALY).",
       "imageProblemsDetected": true,
-      "imageProblems": [
-        "Redundant/duplicate boxes for 'HEALTH: COCHRANE COLLABORATION' and 'SOCIAL POLICY: CAMPBELL COLLABORATION' on the left side of the diagram."
-      ],
-      "imageProblemsRepairPrompt": "Remove the redundant middle-left boxes labeled 'HEALTH: COCHRANE COLLABORATION' and 'SOCIAL POLICY: CAMPBELL COLLABORATION'. Consolidate the flow so the top boxes lead directly into the 'SYSTEMATIC REVIEWS' magnifying glass icon.",
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T20:26:09.045Z"
     },
     {
@@ -70898,62 +70903,63 @@
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg",
       "filename": "optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 399192,
-      "size": "389.8 KB",
+      "sizeBytes": 400451,
+      "size": "391.1 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-30T14:47:27.554Z",
+      "modified": "2026-02-02T00:01:36.906Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nScenario Analysis\n\n**Optimistic scenario**: All uncertain categories have high returns\n**Pessimistic scenario**: Uncertain categories have low/zero returns\n**Base case**: Use point estimates\n\nReport OSL range across scenarios for policy guidance.",
-      "transcript": "FIGURE 1. SCENARIO ANALYSIS: OSL RANGE PROJECTION & POLICY GUIDANCE. OPTIMISTIC SCENARIO (High Returns). UNCERTAIN CAT. A. UNCERTAIN CAT. B. HIGH RETURNS (++). HIGH (STABLE). OSL OUTCOME. OSL RANGE: UPPER BOUND. Policy implication: Seek growth opportunities. BASE CASE (Point Estimates). UNCERTAIN CAT. A. UNCERTAIN CAT. B. POINT ESTIMATE (~). MEDIUM (MODERATE). OSL OUTCOME. OSL RANGE: CENTRAL ESTIMATE. Policy implication: Plan for expected value, monitor deviations. PESSIMISTIC SCENARIO (Low/Zero Returns). UNCERTAIN CAT. A. UNCERTAIN CAT. B. LOW/ZERO RETURNS (--/0). LOW (VOLATILE). OSL OUTCOME. OSL RANGE: LOWER BOUND. Policy implication: Build resilience, prepare contingencies. OVERALL OSL RANGE FOR POLICY GUIDANCE. LOWER BOUND (Pessimistic). BASE CASE (Point Est.). UPPER BOUND (Optimistic). TOTAL UNCERTAINTY RANGE. POLICY NOTE: Acknowledge the full range. Effective guidance requires robust strategies resilient to the lower bound while allowing for upside potential. Do not rely solely on the point estimate. WarOnDisease.org.",
-      "metadataCreatedAt": "2026-01-30T14:47:27.088Z",
-      "title": "OSL Scenario Analysis and Policy Guidance",
-      "description": "A comprehensive diagram illustrating three potential outcomes for OSL—Optimistic, Base Case, and Pessimistic—based on various uncertain categories. It maps these scenarios to specific policy implications, ranging from seeking growth to building resilience, and summarizes the total uncertainty range for strategic planning.",
+      "generationPrompt": "[FIXED] Remove 'FIGURE 1.' from the top header and 'WarOnDisease.org' from the bottom right corner.",
+      "transcript": "SCENARIO ANALYSIS: OSL RANGE PROJECTION & POLICY GUIDANCE\n\nOPTIMISTIC SCENARIO (High Returns)\nUNCERTAIN CAT. A\nUNCERTAIN CAT. B\nHIGH RETURNS (++)\nOSL OUTCOME HIGH (STABLE)\nOSL RANGE: UPPER BOUND. Policy implication: Seek growth opportunities.\n\nBASE CASE (Point Estimates)\nUNCERTAIN CAT. A\nUNCERTAIN CAT. B\nPOINT ESTIMATE (~)\nOSL OUTCOME MEDIUM (MODERATE)\nOSL RANGE: CENTRAL ESTIMATE. Policy implication: Plan for expected value, monitor deviations.\n\nPESSIMISTIC SCENARIO (Low/Zero Returns)\nUNCERTAIN CAT. A\nUNCERTAIN CAT. B\nLOW/ZERO RETURNS (--/0)\nOSL OUTCOME LOW (VOLATILE)\nOSL RANGE: LOWER BOUND. Policy implication: Build resilience, prepare contingencies.\n\nOVERALL OSL RANGE FOR POLICY GUIDANCE\nLOWER BOUND (Pessimistic)\nBASE CASE (Point Est.)\nUPPER BOUND (Optimistic)\nTOTAL UNCERTAINTY RANGE\n\nPOLICY NOTE: Acknowledge the full range. Effective guidance requires robust strategies resilient to the lower bound while allowing for upside potential. Do not rely solely on the point estimate.\n\nWarOnDisease.org",
+      "metadataCreatedAt": "2026-02-02T00:01:17.088Z",
+      "title": "Scenario Analysis for OSL Range Projection and Policy Guidance",
+      "description": "A detailed diagram outlining three potential outcomes—Optimistic, Base Case, and Pessimistic—for OSL projections based on uncertain categories and return levels. It provides specific policy implications for each scenario, emphasizing the need to plan for a total uncertainty range rather than relying on a single point estimate.",
       "keywords": [
-        "OSL",
+        "OSL range projection",
         "scenario analysis",
         "policy guidance",
-        "uncertainty range",
-        "risk management",
+        "uncertainty management",
+        "risk assessment",
         "strategic planning",
+        "economic modeling",
         "War on Disease"
       ],
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 3,
       "canShareStandalone": true,
-      "socialCaption": "Humanity has mastered the art of calculating exactly how much we might fail. At least we have a nice chart for the end of the world. https://WarOnDisease.org",
-      "twitterText": "We’ve created a precise range for how many people might die if we don’t fund research. The good news is the chart is very symmetrical. The bad news is the chart exists. https://WarOnDisease.org",
-      "linkedInText": "It’s important to plan for every scenario, from 'everything is fine' to 'total systemic collapse.' We find that having a policy note for the apocalypse makes the boardroom feel much more organized. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We've mapped out every possible future for our survival, from 'great' to 'extinct'. It’s good to have options, even if most of them involve a lot of paperwork. https://WarOnDisease.org",
+      "twitterText": "Human survival is apparently a spectrum ranging from \"moderately okay\" to \"let's not talk about it.\" Here is a chart explaining how to plan for both, just in case we decide to stay alive. https://WarOnDisease.org",
+      "linkedInText": "To provide effective policy guidance, one must account for the full range of outcomes, including the one where everyone dies. It's important to be thorough when documenting our own obsolescence. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This chart breaks down the potential outcomes for our Scientific Leverage. It shows why we can't just look at the middle-of-the-road estimate; we have to build systems that work even if things go poorly while still being ready for a breakthrough.",
+      "speakerNotes": "When we look at OSL projections, we shouldn't just look at the middle of the road. This chart breaks down the optimistic, base, and pessimistic scenarios, showing that 'success' depends on how we handle uncertainty. The key takeaway is to build strategies that don't fall apart if the pessimistic case hits.",
       "talkingPoints": [
-        "Distinction between optimistic, base, and pessimistic outcomes for OSL",
-        "Policy shifts from seeking growth to building resilience based on specific return indicators",
-        "The necessity of accounting for the total uncertainty range rather than just a point estimate"
+        "Comparing high-return vs low-return scenarios for OSL outcomes",
+        "The inherent danger of relying on single point estimates in policy making",
+        "Specific policy responses for different levels of outcome volatility",
+        "Acknowledging the full uncertainty range as a prerequisite for robust strategy"
       ],
       "audienceLevel": "policymaker",
-      "altText": "A diagram showing three scenarios—Optimistic, Base Case, and Pessimistic—for OSL outcomes. Each scenario flowcharts uncertain categories into return levels and provides policy advice. A final section shows the total uncertainty range as a horizontal bar.",
+      "altText": "A flowchart diagram titled 'Scenario Analysis: OSL Range Projection & Policy Guidance.' It compares Optimistic, Base Case, and Pessimistic scenarios using dial gauges and flow arrows. The bottom section shows a bar representing the 'Total Uncertainty Range' and advises against relying on single point estimates for policy.",
       "emotionalTone": "informative",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
-      "dataSources": [
-        "WarOnDisease.org"
-      ],
-      "factCheckNotes": "The acronym OSL (likely Overall Scientific Leverage) requires the accompanying book text for a full definition of the metric.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 embedded in image"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' from the top header and 'WarOnDisease.org' from the bottom right corner.",
-      "metadataEnrichedAt": "2026-02-01T20:29:19.292Z"
+      "dataSources": [],
+      "factCheckNotes": "OSL is a specific metric defined within the 'War on Disease' framework, likely referring to Saved Lives or similar health outcomes.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
+      "metadataEnrichedAt": "2026-02-01T20:29:19.292Z",
+      "imageIssues": [
+        "Acronym 'OSL' is not defined within the graphic itself"
+      ]
     },
     {
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-spending-category-data-structure-bw-academic.jpg",
@@ -71638,63 +71644,60 @@
       "path": "assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg",
       "filename": "optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 332130,
-      "size": "324.3 KB",
+      "sizeBytes": 304587,
+      "size": "297.4 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-30T12:14:08.426Z",
+      "modified": "2026-02-02T00:02:31.962Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nBradford Hill Criteria Scoring Functions\n\nBradford Hill's criteria for causality, originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.",
-      "transcript": "BRADFORD HILL CRITERIA SCORING FUNCTIONS. Operationalized as Saturation Functions (Score: 0 to 1). 1. STRENGTH: Cause (C) -> M -> Effect (E). S = M / (Ks + M). Association Magnitude (M). 2. CONSISTENCY: Replication Count (N). S = 1 - e^-λc*N. 3. SPECIFICITY: Causal Precision (P). S = pk / (Ksp + pk). 4. TEMPORALITY: Time Delay (Δt). S = H(Δt) * (1 - ε(Δt)). 5. BIOLOGICAL GRADIENT: Dose/Exposure (D). S = Dn / (KBg^n + Dn). 6. PLAUSIBILITY: Mechanistic Evidence (Mec). S = Mec / (Kpl + Mec). 7. COHERENCE: Theoretical Fit (Fit). S = 1 / (1 + e^-kco(Fit-F0)). 8. EXPERIMENT: Experimental Support (Exp). S = Exp / (Kex + Exp). 9. ANALOGY: Analogous Similarity (Sim). S = Sim / (Kan + Sim). Fig. 1. Schematic representation of Bradford Hill criteria operationalized as normalized saturation scoring functions. The score S ∈ [0, 1] reflects the degree of evidence for each criterion, with 1 representing maximal support for causality. K and λ parameters determine the shape and saturation point of each function. WarOnDisease.org",
-      "metadataCreatedAt": "2026-01-30T12:14:07.926Z",
-      "title": "Bradford Hill Criteria Operationalized Scoring Functions",
-      "description": "A comprehensive grid illustrating nine mathematical saturation functions used to score the Bradford Hill criteria for causality. Each criterion—Strength, Consistency, Specificity, Temporality, Biological Gradient, Plausibility, Coherence, Experiment, and Analogy—is represented by a conceptual diagram, a saturation curve graph ranging from 0 to 1, and a corresponding algebraic formula.",
+      "generationPrompt": "[FIXED] Remove 'Fig. 1.' and the three lines of caption text at the bottom. Keep the 'WarOnDisease.org' URL in the corner.",
+      "transcript": "BRADFORD HILL CRITERIA SCORING FUNCTIONS. Operationalized as Saturation Functions (Score: 0 to 1). 1. STRENGTH. Cause (C) -> M -> Effect (E). Score (S). Association Magnitude (M). S = M / (Ks + M). 2. CONSISTENCY. Replication Count (N). S = 1 - e^(-λc * N). 3. SPECIFICITY. Causal Precision (P). S = P^k / (Ksp + P^k). 4. TEMPORALITY. Cause -> Δt > 0 -> Effect. Time Delay (Δt). S = H(Δt) * (1 - ε(Δt)). 5. BIOLOGICAL GRADIENT. Dose/Exposure (D). S = D^n / (Kbg^n + D^n). 6. PLAUSIBILITY. Mechanistic Evidence (Mec). S = Mec / (Kpl + Mec). 7. COHERENCE. Theoretical Fit (Fit). S = 1 / (1 + e^-kco(Fit - F0)). 8. EXPERIMENT. Experimental Support (Exp). S = Exp / (Kex + Exp). 9. ANALOGY. Analogous Similarity (Sim). S = Sim / (Kan + Sim). WarOnDisease.org",
+      "metadataCreatedAt": "2026-02-02T00:02:11.277Z",
+      "title": "Bradford Hill Criteria Scored as Saturation Functions",
+      "description": "A comprehensive mathematical framework illustrating the nine Bradford Hill criteria for establishing causation. Each criterion—Strength, Consistency, Specificity, Temporality, Biological Gradient, Plausibility, Coherence, Experiment, and Analogy—is represented by a conceptual diagram, a saturation graph scoring evidence from 0 to 1, and a corresponding mathematical formula.",
       "keywords": [
-        "Bradford Hill criteria",
-        "causality",
+        "Bradford Hill Criteria",
+        "causal inference",
         "epidemiology",
-        "mathematical modeling",
-        "medical research",
         "saturation functions",
-        "statistical evidence",
-        "War on Disease"
+        "medical research",
+        "scientific methodology",
+        "evidence-based medicine"
       ],
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "We have successfully reduced the mystery of why things kill us into nine handy mathematical functions, so we can be very precise about our impending doom. https://WarOnDisease.org",
-      "twitterText": "We’ve turned the concept of 'cause and effect' into nine distinct math equations. Now we can calculate exactly how much we’re dying with scientific precision, which is much more efficient than just being healthy. https://WarOnDisease.org",
-      "linkedInText": "It is comforting to know that while we wait for funding to solve global diseases, we have highly optimized saturation functions to measure our lack of progress. Scientifically proven indifference is the best kind. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "Humanity has successfully turned the concept of 'cause and effect' into a series of math problems that we can use to ignore obvious problems with 99% accuracy. It turns out that even if you score a perfect 1.0 on the Plausibility scale, the disease still won't read your paper. https://WarOnDisease.org",
+      "twitterText": "We’ve mathematically perfected the art of proving that diseases kill people. Here are the nine specific ways to show that a cause has an effect, just in case the actual deaths weren't evidence enough. https://WarOnDisease.org",
+      "linkedInText": "While we debate the 'theoretical fit' and 'analogous similarity' of why people are dying, the biology isn't waiting for a peer-reviewed consensus. Here is the math we use to turn human tragedy into a manageable score between zero and one. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This slide demonstrates how the qualitative Bradford Hill criteria, traditionally used in epidemiology, can be operationalized into quantitative scoring functions. By using saturation curves, we can assign a value between 0 and 1 to different types of evidence, allowing for a more standardized approach to prioritizing medical research and policy interventions.",
+      "speakerNotes": "This framework operationalizes the classic Bradford Hill criteria—the gold standard for determining causation—into quantifiable saturation functions. By scoring evidence from 0 to 1 across these nine dimensions, we can transition from subjective expert opinion to a data-driven model for prioritizing medical interventions.",
       "talkingPoints": [
-        "Conversion of qualitative causal criteria into quantitative mathematical models",
-        "Standardization of evidence across nine distinct dimensions of proof",
-        "Use of saturation functions to represent the law of diminishing returns in evidence accumulation",
-        "Framework for objective prioritization in the 'War on Disease' initiative"
+        "Converts qualitative epidemiological criteria into quantitative scoring functions.",
+        "Uses saturation curves to represent how additional evidence provides diminishing marginal returns to certainty.",
+        "Provides a standardized language for evaluating the weight of evidence in the 'War on Disease' initiative.",
+        "Covers nine distinct dimensions from biological gradient to experimental support."
       ],
       "audienceLevel": "researcher",
-      "altText": "A 3x3 grid of nine panels, each defining a Bradford Hill criterion for causality. Each panel contains a conceptual diagram of a cause-effect relationship, a graph showing a score from 0 to 1 on the y-axis against a variable on the x-axis, and a mathematical formula for the saturation function.",
-      "emotionalTone": "neutral",
-      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "altText": "A 3x3 grid showing mathematical models for the nine Bradford Hill criteria: Strength, Consistency, Specificity, Temporality, Biological Gradient, Plausibility, Coherence, Experiment, and Analogy. Each box contains a symbolic diagram, a saturation graph, and a formula for scoring evidence.",
+      "emotionalTone": "informative",
+      "callToAction": "Retweet",
       "dataFreshness": "timeless",
       "dataSources": [
-        "Austin Bradford Hill, 'The Environment and Disease: Association or Causation?' (1965)"
+        "Sir Austin Bradford Hill (1965)"
       ],
-      "factCheckNotes": "The Bradford Hill criteria are a standard in epidemiology; the specific mathematical 'operationalization' into saturation functions shown here is a modern application/interpretation used by the War on Disease initiative to facilitate data-driven scoring.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 caption embedded in image"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'Fig. 1.' and the three lines of caption text at the bottom. Keep the 'WarOnDisease.org' URL in the corner.",
+      "factCheckNotes": "The Bradford Hill criteria are foundational in epidemiology; the 'operationalization' into specific saturation formulas (like Hill functions or sigmoids) is a common modeling choice in quantitative synthesis.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T20:32:20.348Z"
     },
     {
@@ -72221,71 +72224,67 @@
       "path": "assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-existing-policy-evaluation-frameworks-bw-academic.jpg",
       "filename": "optimal-policy-generator-spec-section-existing-policy-evaluation-frameworks-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 367065,
-      "size": "358.5 KB",
+      "sizeBytes": 366389,
+      "size": "357.8 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
       "aspectRatio": "1:1",
-      "modified": "2026-01-26T19:01:42.489Z",
+      "modified": "2026-02-02T00:03:29.427Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Comparison of Existing Policy Evaluation Frameworks and Limitations",
-      "description": "An analytical chart comparing five major policy evaluation frameworks including Regulatory Impact Analysis (RIA), What Works Clearinghouse (WWC), Cochrane & Campbell Collaborations, the Congressional Budget Office (CBO), and the Benefit-Cost Analysis tradition. Each framework is presented with its primary function, academic citations, and a list of specific limitations regarding scope, proactivity, and jurisdictional relevance, concluding with an empty panel featuring a question mark.",
+      "title": "Comparison of Existing Policy Evaluation Frameworks and Their Limitations",
+      "description": "A comparative grid evaluating five established policy frameworks: Regulatory Impact Analysis (RIA), What Works Clearinghouse (WWC), Cochrane & Campbell Collaborations, the Congressional Budget Office (CBO), and the Benefit-Cost Analysis Tradition. Each section details the framework's purpose alongside specific limitations regarding scope, speed, and focus, ending with a question mark symbolizing a missing piece in current policy evaluation.",
       "keywords": [
         "policy evaluation",
-        "evidence-based medicine",
-        "fiscal scoring",
-        "cost-benefit analysis",
-        "regulatory impact",
-        "systematic reviews",
-        "government efficiency"
+        "evidence-based policy",
+        "Regulatory Impact Analysis",
+        "Congressional Budget Office",
+        "Cochrane Collaboration",
+        "benefit-cost analysis",
+        "welfare gains",
+        "War on Disease"
       ],
-      "transcript": "EXISTING POLICY EVALUATION FRAMEWORKS; Regulatory Impact Analysis (RIA); Required by executive order for US federal regulations since 1981 [@hahn2000]. Estimates costs/benefits of proposed rules. Limitations (1) Applies only to new regulations, not existing stock. (2) Lacks systematic cross-jurisdiction evidence aggregation. (3) Does not produce jurisdiction-specific recommendations. What Works Clearinghouse (WWC); Reviews education interventions against methodological standards [@greenwald2017]. Demonstrates systematic evidence synthesis is feasible. Limitations (1) Covers only education. (2) Provides generic ratings, not jurisdiction-specific recommendations. (3) Does not quantify expected welfare gains. Cochrane & Campbell Collaborations; Systematic reviews cover healthcare [@higgins2011] and social policy [@petticrew2001]. Gold standard for evidence synthesis. Limitations (1) Produce narrative reviews, not quantitative recommendations. (2) Provide no jurisdiction-specific output. (3) Operate on slow update cycles. Congressional Budget Office (CBO); Provides nonpartisan fiscal scoring of proposed legislation. Valuable for budget discipline. Limitations (1) Estimates budgetary effects rather than welfare. (2) Evaluates what is proposed, not what should be. (3) Reactive rather than proactive. Benefit-Cost Analysis Tradition; @sunstein2002; @viscusi2018. Provides theoretical foundations for policy evaluation. Focuses on individual assessment. Limitations: Typically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation. Figure 1. Overview of existing policy evaluation frameworks and their limitations in a black and white scientific illustration style. WarOnDisease.org",
-      "qualityScore": 4,
-      "qualityIssues": [
-        "Contains embedded figure number and style description text",
-        "High density of text may be difficult for some mobile viewers"
-      ],
+      "transcript": "EXISTING POLICY EVALUATION FRAMEWORKS\n\nRegulatory Impact Analysis (RIA)\nRequired by executive order for US federal regulations since 1981 [@hahn2000]. Estimates costs/benefits of proposed rules.\nLimitations\n(1) Applies only to new regulations, not existing stock.\n(2) Lacks systematic cross-jurisdiction evidence aggregation.\n(3) Does not produce jurisdiction-specific recommendations.\n\nWhat Works Clearinghouse (WWC)\nReviews education interventions against methodological standards [@greenwald2017]. Demonstrates systematic evidence synthesis is feasible.\nLimitations\n(1) Covers only education.\n(2) Provides generic ratings, not jurisdiction-specific recommendations.\n(3) Does not quantify expected welfare gains.\n\nCochrane & Campbell Collaborations\nSystematic reviews cover healthcare [@higgins2011] and social policy [@petticrew2001]. Gold standard for evidence synthesis.\nLimitations\n(1) Produce narrative reviews, not quantitative recommendations.\n(2) Provide no jurisdiction-specific output.\n(3) Operate on slow update cycles.\n\nCongressional Budget Office (CBO)\nProvides nonpartisan fiscal scoring of proposed legislation. Valuable for budget discipline.\nLimitations\n(1) Estimates budgetary effects rather than welfare.\n(2) Evaluates what is proposed, not what should be.\n(3) Reactive rather than proactive.\n\nBenefit-Cost Analysis Tradition\n@sunstein2002; @viscusi2018\nProvides theoretical foundations for policy evaluation. Focuses on individual assessment.\nLimitations\nTypically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation.\n\n?\n\nWarOnDisease.org",
+      "qualityScore": 5,
+      "qualityIssues": [],
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "We have successfully invented five different ways to explain why things are too difficult to change. We are very efficient at calculating exactly how much it costs to do nothing. https://WarOnDisease.org",
-      "twitterText": "We have five different ways to explain why things are too difficult to change. We are very efficient at calculating exactly how much it costs to do nothing. We're still looking for the framework that accounts for 'not dying.' https://WarOnDisease.org",
-      "linkedInText": "Humanity has perfected the art of nonpartisan fiscal scoring and narrative reviews, ensuring we know exactly why we can't afford to save lives. It's a gold standard in bureaucratic paralysis. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We have created very efficient systems for counting money and auditing schools, but we still haven't quite figured out how to measure the value of people not being dead. It's a bit of a gap in the paperwork. https://WarOnDisease.org",
+      "twitterText": "We have world-class frameworks for fiscal scoring, educational reviews, and weighing the cost of new rules. We just don't have one for deciding if humanity should survive. A minor administrative oversight. https://WarOnDisease.org",
+      "linkedInText": "Humanity has mastered the art of evaluating the status quo while carefully avoiding any proactive plan for what we actually need to accomplish. Our current policy frameworks are excellent at looking backward; we are still waiting on a system that looks forward. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This slide outlines the current landscape of policy evaluation. While frameworks like the CBO or Cochrane reviews are excellent at what they do, they are almost all reactive, siloed by sector, or slow to update. The question mark in the final box represents the vacuum we are trying to fill with the 1% Treaty—a proactive, cross-jurisdiction mechanism for prioritizing medical research.",
+      "speakerNotes": "When looking at the current landscape of policy evaluation, we see several robust frameworks, but each has a 'blind spot' regarding global health crises. The RIA only looks at new rules, the CBO only looks at budgets, and Cochrane is often too slow for active policy-making. We are currently missing a proactive, welfare-focused framework that can recommend what we SHOULD be doing rather than just scoring what is already on the table.",
       "talkingPoints": [
-        "Existing frameworks like RIA only look at NEW rules, ignoring the massive 'stock' of existing inefficient policies.",
-        "The CBO focuses on fiscal cost to the government, not the broader welfare or 'value of life' gains from curing diseases.",
-        "Most current systems are 'reactive'—they wait for a politician to propose something rather than identifying the most lives saved per dollar first.",
-        "We lack a global 'search engine' for high-impact policy recommendations."
+        "Current frameworks like the CBO and RIA are reactive, evaluating existing proposals rather than generating new ones.",
+        "Scientific reviews like Cochrane provide the 'gold standard' for evidence but lack the speed and jurisdiction-specific output required for urgent policy shifts.",
+        "None of the existing models successfully quantify global welfare gains across different jurisdictions.",
+        "The final question mark represents the '1% Treaty'—a missing framework for proactive, systematic investment in human longevity."
       ],
       "audienceLevel": "policymaker",
-      "altText": "A 2x3 grid comparing policy evaluation frameworks. RIA, WWC, Cochrane, CBO, and Benefit-Cost Analysis are shown with icons like scales, magnifying glasses, and the Capitol building. Each has a list of limitations, such as being 'reactive' or 'jurisdiction-blind.' The final cell is empty with a large question mark.",
+      "altText": "A 2x3 grid comparing five policy evaluation frameworks (RIA, WWC, Cochrane, CBO, Benefit-Cost Analysis) and their limitations, with a large question mark in the final panel.",
       "emotionalTone": "neutral",
       "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
       "dataFreshness": "timeless",
       "dataSources": [
-        "Hahn 2000",
-        "Greenwald 2017",
-        "Higgins 2011",
-        "Petticrew 2001",
-        "Sunstein 2002",
-        "Viscusi 2018"
+        "Hahn (2000)",
+        "Greenwald (2017)",
+        "Higgins (2011)",
+        "Petticrew (2001)",
+        "Sunstein (2002)",
+        "Viscusi (2018)"
       ],
-      "factCheckNotes": "The citations are standard academic references for these specific policy evaluation bodies and economic traditions.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 caption embedded in image",
-        "Prompt leakage: 'in a black and white scientific illustration style' text visible",
-        "WarOnDisease.org URL text overlaps footer line"
-      ],
-      "imageProblemsRepairPrompt": "Remove the bottom text that says 'Figure 1. Overview of existing policy evaluation frameworks and their limitations in a black and white scientific illustration style.' and the 'WarOnDisease.org' URL from the bottom right corner.",
-      "metadataEnrichedAt": "2026-02-01T20:34:50.834Z"
+      "factCheckNotes": "The citations refer to established academic literature on regulatory and economic policy evaluation.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
+      "metadataEnrichedAt": "2026-02-01T20:34:50.834Z",
+      "metadataCreatedAt": "2026-02-02T00:03:10.361Z",
+      "generationPrompt": "[FIXED] Remove the bottom text that says 'Figure 1. Overview of existing policy evaluation frameworks and their limitations in a black and white scientific illustration style.' and the 'WarOnDisease.org' URL from the bottom right corner."
     },
     {
       "path": "assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-heterogeneous-effects-bw-academic.jpg",
@@ -73235,7 +73234,7 @@
       "imageProblems": [
         "Figure 1 label embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'Figure 1' caption box and the 'WarOnDisease.org' footer text from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure 1' from the start of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T20:39:00.028Z"
     },
     {
@@ -74195,7 +74194,7 @@
         "Figure 1 banner embedded in image",
         "Misspelled technical labels in the lens section (LASENS, SYTICAL, ANTURAIY, CONKVXNT)"
       ],
-      "imageProblemsRepairPrompt": "Remove the bottom banner starting with 'FIGURE 1:'. In the lens diagram on the left, correct the following misspelled text: change 'LASENS' to 'LENSES', 'SYTICAL CONTROL' to 'STATISTICAL CONTROL', 'ANTURAIY FILTERS' to 'AUXILIARY FILTERS', and 'CONKVXNT FILTER' to 'CONCURRENT FILTER'.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1:' from the start of the caption at the bottom. Fix typos: 'LASENS' to 'LENSES', 'SYTICAL CONTROL' to 'STATISTICAL CONTROL', 'ANTURAIY FILTERS' to 'AUXILIARY FILTERS', 'CONKVXNT FILTER' to 'CONCURRENT FILTER'.",
       "metadataEnrichedAt": "2026-02-01T20:43:01.394Z"
     },
     {
@@ -75500,7 +75499,7 @@
       "imageProblems": [
         "Figure number 'Fig. 3.1' embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'Fig. 3.1: The Reform Process Diagram' from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 3.1:' from the start of the caption at the bottom right corner.",
       "metadataEnrichedAt": "2026-02-01T20:49:25.560Z"
     },
     {
@@ -75630,7 +75629,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIGURE 1. COMPARATIVE SECURITY DYNAMICS' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' from the start of the caption at the bottom center of the image.",
       "metadataEnrichedAt": "2026-02-01T20:50:03.600Z"
     },
     {
@@ -75950,7 +75949,7 @@
       "imageProblems": [
         "Figure 1 caption embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the entire text block starting with 'FIGURE 1' and ending with '20% of potential welfare' from the bottom of the image, leaving only the 'WarOnDisease.org' URL in the corner.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T20:51:42.231Z"
     },
     {
@@ -77605,7 +77604,7 @@
         "Figure 1 embedded in image",
         "Source data attribution embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the bottom text that says 'Figure 1. Illustrative breakdown of the Peace Dividend’s constituent cost categories. Source: [Theoretical Model Data]'",
+      "imageProblemsRepairPrompt": "Remove 'Figure 1.' from the start of the caption and remove 'Source: [Theoretical Model Data]' from the end.",
       "metadataEnrichedAt": "2026-02-01T21:00:01.175Z"
     },
     {
@@ -79380,7 +79379,7 @@
       "imageProblems": [
         "Figure 1 caption embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Fig. 1: Diagram illustrating the cyclical, self-defeating economic structure of punitive drug policy.' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 1:' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T21:06:56.425Z"
     },
     {
@@ -79459,7 +79458,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE 1. THE GLOBAL GOVERNANCE EFFICIENCY SCORE (E) AND THE POLITICAL DYSFUNCTION TAX (Tpd)' from the bottom margin.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' from the start of the caption at the bottom margin.",
       "metadataEnrichedAt": "2026-02-01T21:07:12.967Z"
     },
     {
@@ -79704,7 +79703,7 @@
       "imageProblems": [
         "Figure 1.1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Figure 1.1: Resource Allocation & Strategic Impact' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure 1.1:' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T21:08:25.413Z"
     },
     {
@@ -82284,7 +82283,7 @@
         "Prompt leakage footer 'A SCIENTIFIC ILLUSTRATION OF PRECEDENT AND INNOVATION.'",
         "Redundant logo/URL at very bottom right might be cropped or doubled"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'B. ' from the main title. Remove the entire footer box that says 'A SCIENTIFIC ILLUSTRATION OF PRECEDENT AND INNOVATION.' Keep the bottom right URL.",
+      "imageProblemsRepairPrompt": "Remove 'B. ' from the start of the main title. Remove 'A SCIENTIFIC ILLUSTRATION OF' from the footer, keeping 'PRECEDENT AND INNOVATION'.",
       "metadataEnrichedAt": "2026-02-01T21:20:32.963Z"
     },
     {
@@ -82476,7 +82475,7 @@
         "Prompt leakage: 'SCIENTIFIC ILLUSTRATION' in subtitle",
         "File name artifact: 'us-post-wwii-gdp-growth-8-pct' in a banner"
       ],
-      "imageProblemsRepairPrompt": "Remove the line 'SCIENTIFIC ILLUSTRATION: ECONOMIC SHIFT & EXPANSION (1945-1955)'. Remove the banner at the bottom of the right-hand bar chart containing the text 'us-post-wwii-gdp-growth-8-pct'.",
+      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC ILLUSTRATION:' from the start of the caption. Remove the banner containing 'us-post-wwii-gdp-growth-8-pct' from the bottom.",
       "metadataEnrichedAt": "2026-02-01T21:21:29.892Z"
     },
     {
@@ -82788,7 +82787,7 @@
       "imageProblems": [
         "Figure 1 caption embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE 1: THE MECHANICS OF SOCIAL CHANGE - A HARVARD STUDY INTERPRETATION' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1:' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T21:23:00.900Z"
     },
     {
@@ -84149,7 +84148,7 @@
         "Figure 1 embedded in image",
         "Figure 2 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIGURE 1. COMPARATIVE COST ANALYSIS & EFFICIENCY GAIN' and 'FIGURE 2. ACCELERATED TRIAL OUTCOME & IMPACT' headers from the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' and 'FIGURE 2.' prefixes from the headers in the image.",
       "metadataEnrichedAt": "2026-02-01T21:30:13.628Z"
     },
     {
@@ -85029,7 +85028,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'Fig. 1: The Illusion of Control in the Digital Age. (A study in cognitive dissonance).' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 1:' from the start of the caption and remove '(A study in cognitive dissonance).' from the end.",
       "metadataEnrichedAt": "2026-02-01T21:34:46.426Z"
     },
     {
@@ -86855,7 +86854,7 @@
       "imageProblems": [
         "Figure 4 caption embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE 4: MECHANISM OF CONTINUAL EXPANSION (ILLUSTRATIVE MODEL).' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 4:' from the start of the caption at the bottom center of the image.",
       "metadataEnrichedAt": "2026-02-01T21:43:19.862Z"
     },
     {
@@ -88575,7 +88574,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text '- Fig. 1: A Comparative Study of Approaches.' from the bottom text box.",
+      "imageProblemsRepairPrompt": "Remove '- Fig. 1:' from the start of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T21:51:38.208Z"
     },
     {
@@ -89434,7 +89433,7 @@
         "Fig. 1: The Voting Interface embedded in image",
         "Fig. 2: The Cumulative Effect embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Fig. 1: The Voting Interface' and 'Fig. 2: The Cumulative Effect' along with their associated leader lines from the left side of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 1:' and 'Fig. 2:' prefixes from the captions on the left side of the image.",
       "metadataEnrichedAt": "2026-02-01T21:55:39.303Z"
     },
     {
@@ -90497,7 +90496,7 @@
         "Figure 3 embedded in image",
         "Scientific illustration credit included in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'Fig. 3: Dynamics of Potential Treaty Expansion (Years 3-5). Scientific illustration by A. Moreau, 1885.' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Fig. 3:' from the start of the caption and remove 'Scientific illustration by A. Moreau, 1885.' from the end.",
       "metadataEnrichedAt": "2026-02-01T22:01:04.213Z"
     },
     {
@@ -90622,7 +90621,7 @@
         "Figure 1 embedded in image",
         "Source text visible in bottom margin"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Figure 1. A schematic representation of the pharmaceutical industry's influence on policy and pricing. Source: Scientific Illustration Archives.' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure 1.' from the start of the caption and remove 'Source: Scientific Illustration Archives.' from the end.",
       "metadataEnrichedAt": "2026-02-01T22:01:43.355Z"
     },
     {
@@ -90944,7 +90943,7 @@
         "Fig. 1 embedded in image",
         "prompt-like metadata in bottom right"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'SCIENTIFIC ILLUSTRATION - Fig. 1: Power & Policy Correlation (B/W)' and the accompanying book icon from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC ILLUSTRATION - Fig. 1:' from the start of the caption at the bottom right corner.",
       "metadataEnrichedAt": "2026-02-01T22:03:28.376Z"
     },
     {
@@ -91132,7 +91131,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'Figure 1. Process Diagram of Regulatory Capture via Lobbying Investment' text from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure 1.' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T22:04:26.248Z"
     },
     {
@@ -92482,7 +92481,7 @@
         "Gibberish AI text 'NIDHES?' in center panel",
         "Garbled text on books in Libertarian panel"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIG. 1: THE ILLUSION OF CHOICE IN POLITICAL SYSTEMS' from the bottom center. Remove the gibberish text 'NIDHES?' from the Democrat panel and replace with 'DEMOCRAT CITIES'. Fix the garbled text on the books held by the Libertarians to be blank or read 'TAXATION IS THEFT'.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' from the start of the caption at the bottom center. Replace 'NIDHES?' with 'DEMOCRAT CITIES' in the Democrat panel.",
       "metadataEnrichedAt": "2026-02-01T22:10:51.587Z"
     },
     {
@@ -93255,7 +93254,7 @@
       "imageProblems": [
         "Box labeled 'SCIENTIFIC ILLUSTRATION' in bottom right corner"
       ],
-      "imageProblemsRepairPrompt": "Remove the box labeled 'SCIENTIFIC ILLUSTRATION: THE COMBINATION THERAPY' from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC ILLUSTRATION:' from the start of the caption at the bottom right corner.",
       "metadataEnrichedAt": "2026-02-01T22:14:41.802Z"
     },
     {
@@ -94309,7 +94308,7 @@
         "Scientific illustration text visible",
         "Year 2024 text visible"
       ],
-      "imageProblemsRepairPrompt": "Remove the entire bottom caption bar starting with 'FIGURE 1' and ending with 'YEAR 2024'. Maintain the background grid pattern where the text was removed.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1' from the start of the caption and remove 'YEAR 2024' from the end.",
       "metadataEnrichedAt": "2026-02-01T22:19:58.695Z"
     },
     {
@@ -94923,7 +94922,7 @@
         "Figure 4 embedded in image",
         "footer text 'SCIENTIFIC FINANCIAL DIAGRAMS - EST. 1888 -'"
       ],
-      "imageProblemsRepairPrompt": "Remove the title 'FIGURE 4: STRUCTURAL SCHEMATIC OF THE BOND INSTRUMENT' and the footer 'SCIENTIFIC FINANCIAL DIAGRAMS - EST. 1888 -' from the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 4:' from the start of the title and remove 'SCIENTIFIC FINANCIAL DIAGRAMS - EST. 1888 -' from the footer.",
       "metadataEnrichedAt": "2026-02-01T22:22:53.612Z"
     },
     {
@@ -95239,7 +95238,7 @@
       "imageProblems": [
         "Figure 1 embedded in image: (Fig. 1: The Perpetual Nature as the Entire Point)"
       ],
-      "imageProblemsRepairPrompt": "Remove the text '(Fig. 1: The Perpetual Nature as the Entire Point)' from the bottom caption box.",
+      "imageProblemsRepairPrompt": "Remove '(Fig. 1:' and the closing ')' from the caption, keeping the descriptive text.",
       "metadataEnrichedAt": "2026-02-01T22:24:29.645Z"
     },
     {
@@ -95498,7 +95497,7 @@
         "Figure number 'FIGURE 1' is embedded in the image",
         "URL watermark 'WarOnDisease.org' in bottom right corner"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIGURE 1. DIAGRAM OF PROPOSED PAPER ACCUMULATION SYSTEM.' from the bottom border and remove the 'WarOnDisease.org' watermark from the bottom right corner.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' from the start of the caption at the bottom border.",
       "metadataEnrichedAt": "2026-02-01T22:25:58.172Z"
     },
     {
@@ -95686,7 +95685,7 @@
         "Figure numbers 1-3 embedded in the image",
         "Prompts or meta-labels in footer ('ECONOMIC MEMES', 'SCHEMATIC')"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIG. 1:', 'FIG. 2:', and 'FIG. 3:' from the top left of each panel. Remove the text 'ECONOMIC MEMES: A SCIENTIFIC INQUIRY INTO PRIORITIES (SCHEMATIC)' from the bottom border.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:', 'FIG. 2:', and 'FIG. 3:' from the top left of each panel. Remove '(SCHEMATIC)' from the end of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T22:26:49.876Z"
     },
     {
@@ -96076,7 +96075,7 @@
         "Figure 2.1 caption embedded in image",
         "Source attribution embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'Figure 2.1: Time-Series Analysis of Campaign Progression. Source: Global Campaign Science Institute.' from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "Remove 'Figure 2.1:' from the start of the caption and remove 'Source: Global Campaign Science Institute.' from the end.",
       "metadataEnrichedAt": "2026-02-01T22:28:40.163Z"
     },
     {
@@ -96199,7 +96198,7 @@
       "imageProblems": [
         "Figure 1.1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'PROCESS FLOW DIAGRAM - FIGURE 1.1' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'PROCESS FLOW DIAGRAM - FIGURE 1.1' prefix from the bottom center.",
       "metadataEnrichedAt": "2026-02-01T22:29:18.110Z"
     },
     {
@@ -96516,7 +96515,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIGURE 1. DIAGRAMMATIC REPRESENTATION OF THE DUAL OBJECTIVES IN “THE WAR ON DISEASE”.' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1.' from the start of the caption at the bottom of the image.",
       "metadataEnrichedAt": "2026-02-01T22:30:45.454Z"
     },
     {
@@ -96705,7 +96704,7 @@
         "Figure 2 embedded in image",
         "Figure 3 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove the labels 'FIGURE 1: BUREAUCRATIC GUESSWORK', 'FIGURE 2: THE FAILURE ECONOMY', and 'FIGURE 3: THE SINGLE POINT OF FAILURE' from the diagram.",
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1:', 'FIGURE 2:', and 'FIGURE 3:' prefixes from the diagram labels.",
       "metadataEnrichedAt": "2026-02-01T22:31:37.883Z"
     },
     {
@@ -97454,7 +97453,7 @@
         "Text artifact 'sitotoes' on the right side",
         "Incorrect text 'preferences over voters' on the right side"
       ],
-      "imageProblemsRepairPrompt": "Remove 'Figure A.1: Wishocracy Architecture Diagram' from the bottom center. On the right side of Layer 1, change the text 'Citizens express preferences over voters based on their welfare sitotoes' to 'Citizens express preferences over outcomes based on their welfare valuations' to match the left side.",
+      "imageProblemsRepairPrompt": "Remove 'Figure A.1:' from the start of the caption at the bottom center. On the right side of Layer 1, change 'sitotoes' to 'valuations'.",
       "metadataEnrichedAt": "2026-02-01T22:36:23.500Z"
     },
     {

@@ -137,9 +137,7 @@ The OPG framework (see [Optimal Policy Generator Specification](https://opg.waro
 
 ### Implementation Mechanism
 
-OBG generates evidence-based budget recommendations. [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) provide the political implementation mechanism: independent electoral support and post-office career opportunities flow to politicians in proportion to how closely their voting records correlate with OBG recommendations. No money flows directly to politicians. Instead, independent actors (PACs, foundations, think tanks) commit ex-ante to favor high-scorers on public metrics derived from OBG gap analysis.
-
-![A flow diagram illustrating the indirect incentive mechanism where OBG gap analysis informs independent actor support for politicians based on their voting alignment.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-mechanism-bw-academic.jpg)
+This specification focuses on generating evidence-based budget recommendations. Political implementation mechanisms are discussed separately in [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
 ## Introduction
 
@@ -604,8 +602,6 @@ $$
 $$
 
 This exceeds vaccinations (25.7), basic research (31.5), and even military reallocation (222.5 in absolute terms, but negative direction).
-
-**Recommendation**: Pragmatic clinical trials represent the single most underinvested category in the federal budget. The 1% Treaty proposal to redirect {{< var treaty_annual_funding >}} from military spending to health research, with pragmatic trials as the primary mechanism, would capture returns far higher than current allocation achieves.
 
 ## Cost-Effectiveness Threshold Analysis
 

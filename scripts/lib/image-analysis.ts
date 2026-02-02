@@ -49,7 +49,7 @@ Return ONLY valid JSON, no markdown code blocks.`,
   /**
    * Book-focused analysis - for categorizing images by chapter relevance
    */
-  BOOK_ANALYSIS: `Analyze this image for a book about redirecting military spending to medical research (a "1% treaty").
+  BOOK_ANALYSIS: `Analyze this image for categorization by chapter relevance.
 
 Provide:
 1. DESCRIPTION: Detailed description of what the image shows (2-3 sentences)
@@ -71,8 +71,6 @@ PRIMARY_USE: [chapter1.qmd]`,
    * Complete metadata generation - comprehensive metadata for SEO, social media, presentations, and accessibility
    */
   COMPLETE_METADATA: `Analyze this image comprehensively and generate metadata for SEO, social media, presentations, and accessibility.
-
-This image is from a book about redirecting 1% of military spending to medical research (the "1% Treaty" / "War on Disease" initiative).
 
 Return a JSON object with ALL these fields:
 
@@ -141,14 +139,24 @@ BAD examples (never write like this):
 
 ## Image Problems Detection
 Check for text that shouldn't be in the image:
-- Prompt leakage: "retro", "academic", "scientific illustration", "visualization", "infographic", "high contrast", "minimalist"
-- Figure numbers: "Figure 1", "Figure 2", "Fig. 1" etc. (these should be added by the document system, not embedded)
-- Watermarks or artifacts: "DRAFT", "SAMPLE", database names, volume numbers
-- Blurry or unreadable text that needs fixing
+- Figure number prefixes: "Figure 1.", "Figure 2.", "Fig. 1." etc. (these should be added by the document system, not embedded in the image)
+- Style descriptor phrases: "scientific illustration", "black and white academic", "vintage style", "retro", "infographic style", "high contrast minimalist"
+- Meta-labels: "DRAFT", "SAMPLE", "CONFIDENTIAL", database names, volume numbers
+- Prompt leakage phrases: "circa 2024", "visualization showing", "diagram of"
+
+CRITICAL: Only flag the SPECIFIC problematic text, not entire sentences containing keywords.
+- GOOD: Flag "Figure 1." as a problem (just the prefix)
+- BAD: Flag "Figure 1. Overview of policy frameworks" (don't include the meaningful description)
+- GOOD: Flag "in a scientific illustration style" as a problem (just the style phrase)
+- BAD: Flag an entire caption just because it ends with a style descriptor
 
 - "imageProblemsDetected": boolean - are there any text problems that need fixing?
-- "imageProblems": Array of specific problems found (e.g., ["Figure 1 embedded in image", "text 'SCIENTIFIC DATABASE' visible"])
-- "imageProblemsRepairPrompt": If problems detected, a combined prompt to fix ALL of them (e.g., "Remove 'Figure 1' from top and 'SCIENTIFIC DATABASE' from bottom")
+- "imageProblems": Array of SPECIFIC text snippets to remove (e.g., ["Figure 1.", "in a black and white academic style"])
+- "imageProblemsRepairPrompt": SURGICAL repair instructions. ONLY remove the minimal problematic text:
+  - For "Figure 1. Some description" → "Remove 'Figure 1.' from the start" (keep the description!)
+  - For "Chart title in scientific illustration style" → "Remove 'in scientific illustration style' from the end" (keep the title!)
+  - NEVER remove meaningful descriptive content just because it's near a problematic keyword
+  - Each removal should be a short, specific phrase (under 10 words ideally)
 
 Return ONLY valid JSON, no markdown code blocks.`,
 }
